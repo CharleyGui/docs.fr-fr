@@ -2,14 +2,14 @@
 title: Attributs courants
 ms.date: 07/20/2015
 ms.assetid: 11fe4894-1bf9-4525-a36b-cddcd3a5d22b
-ms.openlocfilehash: 2889411779a275baa8c91862d4cac2f820d660d0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 57ef8f103d64a51d896f46d2889d78ec99ff3223
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353526"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400717"
 ---
-# <a name="common-attributes-visual-basic"></a>Attributs communs (Visual Basic)
+# <a name="common-attributes-visual-basic"></a>Attributs courants (Visual Basic)
 
 Cette rubrique décrit les attributs les plus couramment utilisés dans les programmes Visual Basic.
 
@@ -23,7 +23,7 @@ Cette rubrique décrit les attributs les plus couramment utilisés dans les prog
 
 - [Attributs Visual Basic](#VB)
 
-## <a name="Global"></a> Attributs globaux
+## <a name="global-attributes"></a><a name="Global"></a>Attributs globaux
 
 La plupart des attributs sont appliqués à des éléments de langage spécifiques, tels que les classes ou les méthodes. Toutefois, certains attributs sont globaux : ils s’appliquent à la totalité d’un assembly ou d’un module. Par exemple, l’attribut <xref:System.Reflection.AssemblyVersionAttribute> peut être utilisé pour incorporer des informations de version dans un assembly, de la manière suivante :
 
@@ -31,9 +31,9 @@ La plupart des attributs sont appliqués à des éléments de langage spécifiqu
 <Assembly: AssemblyVersion("1.0.0.0")>
 ```
 
-Les attributs globaux apparaissent dans le code source après les instructions de `Imports` de niveau supérieur et avant les déclarations de type, de module ou d’espace de noms. Les attributs globaux peuvent apparaître dans plusieurs fichiers sources, mais les fichiers doivent être compilés en un seul passage. Pour les projets Visual Basic, les attributs globaux sont généralement placés dans le fichier AssemblyInfo. vb (le fichier est créé automatiquement lorsque vous créez un projet dans Visual Studio).
+Les attributs globaux apparaissent dans le code source après les instructions de niveau supérieur `Imports` et avant les déclarations de type, de module ou d’espace de noms. Les attributs globaux peuvent apparaître dans plusieurs fichiers sources, mais les fichiers doivent être compilés en un seul passage. Pour les projets Visual Basic, les attributs globaux sont généralement placés dans le fichier AssemblyInfo. vb (le fichier est créé automatiquement lorsque vous créez un projet dans Visual Studio).
 
-Les attributs d’assembly sont des valeurs qui fournissent des informations sur un assembly. Ils sont classés en plusieurs catégories :
+Les attributs d’assembly sont des valeurs qui fournissent des informations sur un assembly. Ils sont répartis dans les catégories suivantes :
 
 - Attributs d’identité de l’assembly
 
@@ -47,7 +47,7 @@ Trois attributs (avec un nom fort, le cas échéant), déterminent l’identité
 
 Le tableau suivant présente les attributs d’identité.
 
-|Attribut|Fonction|
+|Attribut|Objectif|
 |---------------|-------------|
 |<xref:System.Reflection.AssemblyName>|Décrit intégralement l’identité d’un assembly.|
 |<xref:System.Reflection.AssemblyVersionAttribute>|Spécifie la version d’un assembly.|
@@ -58,7 +58,7 @@ Le tableau suivant présente les attributs d’identité.
 
 Vous pouvez utiliser les attributs d’informations pour fournir des informations supplémentaires sur le produit ou la société de l’assembly. Le tableau suivant présente les attributs d’informations définis dans l’espace de noms <xref:System.Reflection?displayProperty=nameWithType>.
 
-|Attribut|Fonction|
+|Attribut|Objectif|
 |---------------|-------------|
 |<xref:System.Reflection.AssemblyProductAttribute>|Définit un attribut personnalisé qui spécifie un nom de produit pour un manifeste d’assembly.|
 |<xref:System.Reflection.AssemblyTrademarkAttribute>|Définit un attribut personnalisé qui spécifie une marque pour un manifeste d’assembly.|
@@ -72,16 +72,16 @@ Vous pouvez utiliser les attributs d’informations pour fournir des information
 
 Vous pouvez utiliser les attributs de manifeste de l’assembly pour fournir des informations dans le manifeste de l’assembly. Cela inclut le titre, la description, l’alias par défaut et la configuration. Le tableau suivant présente les attributs de manifeste de l’assembly définis dans l’espace de noms <xref:System.Reflection?displayProperty=nameWithType>.
 
-|Attribut|Fonction|
+|Attribut|Objectif|
 |---------------|-------------|
 |<xref:System.Reflection.AssemblyTitleAttribute>|Définit un attribut personnalisé qui spécifie un titre d’assembly pour un manifeste d’assembly.|
 |<xref:System.Reflection.AssemblyDescriptionAttribute>|Définit un attribut personnalisé qui spécifie une description d’assembly pour un manifeste d’assembly.|
 |<xref:System.Reflection.AssemblyConfigurationAttribute>|Définit un attribut personnalisé qui spécifie une configuration d’assembly (telles que retail ou debug) pour un manifeste d’assembly.|
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Définit un alias par défaut convivial pour un manifeste d’assembly.|
 
-## <a name="Obsolete"></a> Attribut Obsolete
+## <a name="obsolete-attribute"></a><a name="Obsolete"></a>Attribut Obsolete
 
-L’attribut `Obsolete` est utilisé pour marquer une entité de programme comme étant une entité dont l’utilisation n’est plus recommandée. Chaque utilisation d’une entité marquée comme obsolète génère par la suite un avertissement ou une erreur, selon la façon dont l’attribut est configuré. Exemple :
+L’attribut `Obsolete` est utilisé pour marquer une entité de programme comme étant une entité dont l’utilisation n’est plus recommandée. Chaque utilisation d’une entité marquée comme obsolète génère par la suite un avertissement ou une erreur, selon la façon dont l’attribut est configuré. Par exemple :
 
 ```vb
 <System.Obsolete("use class B")>
@@ -122,7 +122,7 @@ L’attribut `Obsolete` peut être utilisé sans arguments, mais il est recomman
 
 `Obsolete` est un attribut à usage unique et peut être appliqué à toute entité qui autorise des attributs. `Obsolete` est un alias pour <xref:System.ObsoleteAttribute>.
 
-## <a name="Conditional"></a> Attribut Conditional
+## <a name="conditional-attribute"></a><a name="Conditional"></a>Attribut Conditional
 
 Avec l’attribut `Conditional`, l’exécution d’une méthode dépend d’un identificateur de prétraitement. L’attribut `Conditional` est un alias pour <xref:System.Diagnostics.ConditionalAttribute>, et peut être appliqué à une méthode ou une classe d’attributs.
 
@@ -218,7 +218,7 @@ Class SampleClass
 End Class
 ```
 
-## <a name="CallerInfo"></a> Attributs d’informations de l’appelant
+## <a name="caller-info-attributes"></a><a name="CallerInfo"></a>Attributs d’informations de l’appelant
 
 À l'aide des attributs d'informations de l'appelant, vous pouvez obtenir des informations sur l'appelant d'une méthode. Vous pouvez obtenir le chemin du fichier de code source, le numéro de ligne dans le code source, ainsi que le nom de membre de l’appelant.
 
@@ -226,17 +226,17 @@ Pour obtenir des informations de membre de l’appelant, vous utilisez les attri
 
 |Attribut|Description|Type|
 |---|---|---|
-|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin complet du fichier source qui contient l’appelant. C’est le chemin au moment de la compilation.|`String`|
+|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin d’accès complet du fichier source qui contient l’appelant. C’est le chemin au moment de la compilation.|`String`|
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Numéro de ligne dans le fichier source à partir duquel la méthode est appelée.|`Integer`|
-|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Nom de la méthode ou nom de la propriété de l’appelant. Pour plus d’informations, consultez [informations relatives à l’appelant (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).|`String`|
+|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Nom de la méthode ou nom de la propriété de l’appelant. Pour plus d’informations, consultez [informations relatives à l’appelant (Visual Basic)](../caller-information.md).|`String`|
 
-Pour plus d’informations sur les attributs d’informations de l’appelant, consultez [informations relatives à l’appelant (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).
+Pour plus d’informations sur les attributs d’informations de l’appelant, consultez [informations relatives à l’appelant (Visual Basic)](../caller-information.md).
 
-## <a name="VB"></a>Attributs Visual Basic
+## <a name="visual-basic-attributes"></a><a name="VB"></a>Attributs Visual Basic
 
 Le tableau suivant répertorie les attributs qui sont spécifiques à Visual Basic.
 
-|Attribut|Fonction|
+|Attribut|Objectif|
 |---------------|-------------|
 |<xref:Microsoft.VisualBasic.ComClassAttribute>|Indique au compilateur que la classe doit être exposée en tant qu’objet COM.|
 |<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|Permet aux membres du module d’être accessibles uniquement à l’aide de la qualification nécessaire pour le module.|
@@ -245,11 +245,11 @@ Le tableau suivant répertorie les attributs qui sont spécifiques à Visual Bas
 
 ### <a name="comclassattribute"></a>Attribut
 
-Utilisez `COMClassAttribute` pour simplifier le processus de création de composants COM à partir de Visual Basic. Les objets COM sont très différents des assemblys .NET Framework, et sans `COMClassAttribute`, vous devez suivre un certain nombre d’étapes pour générer un objet COM à partir de Visual Basic. Pour les classes marquées avec `COMClassAttribute`, le compilateur effectue automatiquement un grand nombre de ces étapes.
+Utilisez `COMClassAttribute` pour simplifier le processus de création de composants COM à partir de Visual Basic. Les objets COM sont très différents des assemblys .NET Framework, et sans `COMClassAttribute` , vous devez suivre un certain nombre d’étapes pour générer un objet com à partir de Visual Basic. Pour les classes marquées avec `COMClassAttribute` , le compilateur effectue automatiquement un grand nombre de ces étapes.
 
 ### <a name="hidemodulenameattribute"></a>HideModuleNameAttribute
 
-Utilisez `HideModuleNameAttribute` pour permettre aux membres du module d’être accessibles en utilisant uniquement la qualification nécessaire pour le module.
+Utilisez `HideModuleNameAttribute` pour permettre aux membres de module d’être accessibles en utilisant uniquement la qualification nécessaire pour le module.
 
 ### <a name="vbfixedstringattribute"></a>VBFixedStringAttribute
 
@@ -273,7 +273,7 @@ Utilisez `VBFixedArrayAttribute` pour déclarer des tableaux dont la taille est 
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Guide de programmation Visual Basic](../../index.md)
 - [Attributs](../../../../standard/attributes/index.md)
-- [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Accéder à des attributs à l’aide de la réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [Réflexion (Visual Basic)](../reflection.md)
+- [Accéder à des attributs à l’aide de la réflexion (Visual Basic)](accessing-attributes-by-using-reflection.md)

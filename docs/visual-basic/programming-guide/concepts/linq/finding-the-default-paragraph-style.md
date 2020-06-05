@@ -2,20 +2,20 @@
 title: Recherche du style de paragraphe par défaut
 ms.date: 07/20/2015
 ms.assetid: 9d094a4a-ec8c-41b0-b7ab-a3deb2a01d45
-ms.openlocfilehash: c3c92c7ae6f80082265d8516e62118595a341790
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b70ae72c293d00c4f7b7a2601bfd20b85702b6d5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353450"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398075"
 ---
 # <a name="finding-the-default-paragraph-style-visual-basic"></a>Recherche du style de paragraphe par défaut (Visual Basic)
-La première tâche du didacticiel Manipulation d'informations dans un document WordprocessingML consiste à rechercher le style par défaut des paragraphes dans le document.  
+La première tâche du didacticiel Manipulation d’informations dans un document WordprocessingML consiste à rechercher le style par défaut des paragraphes dans le document.  
   
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
- L'exemple suivant ouvre un document WordprocessingML Office Open XML, recherche les parties document et style du package, puis exécute une requête qui recherche le nom du style par défaut. Pour plus d’informations sur les packages de documents Office Open XML et leurs parties, consultez [Détails des documents WordprocessingML Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).  
+ L'exemple suivant ouvre un document WordprocessingML Office Open XML, recherche les parties document et style du package, puis exécute une requête qui recherche le nom du style par défaut. Pour plus d’informations sur les packages de documents Office Open XML et leurs parties, consultez [Détails des documents WordprocessingML Office Open XML (Visual Basic)](details-of-office-open-xml-wordprocessingml-documents.md).  
   
  La requête recherche un nœud nommé `w:style` qui possède un attribut nommé `w:type` avec la valeur « paragraph » et un attribut nommé `w:default` avec la valeur « 1 ». Étant donné qu'il n'y aura qu'un seul nœud XML avec ces attributs, la requête utilise l'opérateur <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> pour convertir une collection en singleton. Elle obtient ensuite la valeur de l'attribut avec le nom `w:styleId`.  
   
@@ -80,7 +80,7 @@ End Module
 ```  
   
 ### <a name="comments"></a>Commentaires  
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```console  
 The default style is: Normal  
@@ -89,8 +89,8 @@ The default style is: Normal
 ## <a name="next-steps"></a>Étapes suivantes  
  Dans l'exemple suivant, nous allons créer une requête similaire qui recherche tous les paragraphes d'un document et leurs styles :  
   
-- [Récupération des paragraphes et de leurs styles (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
+- [Récupération des paragraphes et de leurs styles (Visual Basic)](retrieving-the-paragraphs-and-their-styles.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)

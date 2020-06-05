@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC30616
 ms.assetid: e7658ebc-da45-451b-a409-a0f8915f0beb
-ms.openlocfilehash: 4312abef83728f432e2f6a492e5acad3450719b1
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 474a920c9cfdfba7a8157320d9c88b8677958425
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71592060"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406519"
 ---
-# <a name="variable-variablename-hides-a-variable-in-an-enclosing-block"></a>La variable' \<variablename > 'masque une variable dans un bloc englobant
+# <a name="variable-variablename-hides-a-variable-in-an-enclosing-block"></a>La variable '\<variablename>'masque une variable dans un bloc englobant
 Une variable comprise dans un bloc porte le même nom qu’une autre variable locale.  
   
  **ID d’erreur :** BC30616  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Renommez la variable dans le bloc délimité afin qu’elle ne soit pas la même que les autres variables locales. Exemple :  
+- Renommez la variable dans le bloc délimité afin qu’elle ne soit pas la même que les autres variables locales. Par exemple :  
   
     ```vb  
     Dim a, b, x As Integer  
@@ -30,11 +30,11 @@ Une variable comprise dans un bloc porte le même nom qu’une autre variable lo
     End If  
     ```  
   
-- Une cause courante de cette erreur est l’utilisation de `Catch e As Exception` à l’intérieur d’un gestionnaire d’événements. Si c’est le cas, nommez la variable de bloc `Catch` `ex` au lieu de `e`.  
+- Une cause courante de cette erreur est l’utilisation de `Catch e As Exception` dans un gestionnaire d’événements. Si c’est le cas, nommez la `Catch` variable de bloc `ex` plutôt que `e` .  
   
-- Une autre source courante de cette erreur est une tentative d’accès à une variable locale déclarée dans un bloc `Try` dans un bloc `Catch` séparé. Pour corriger cela, déclarez la variable en dehors de la structure `Try...Catch...Finally`.  
+- Une autre source courante de cette erreur est une tentative d’accès à une variable locale déclarée dans un `Try` bloc dans un `Catch` bloc séparé. Pour corriger cela, déclarez la variable en dehors de la `Try...Catch...Finally` structure.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Try...Catch...Finally (instruction)](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
-- [Déclaration de variable](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
+- [Try...Catch...Finally (instruction)](../statements/try-catch-finally-statement.md)
+- [Déclaration de variable](../../programming-guide/language-features/variables/variable-declaration.md)

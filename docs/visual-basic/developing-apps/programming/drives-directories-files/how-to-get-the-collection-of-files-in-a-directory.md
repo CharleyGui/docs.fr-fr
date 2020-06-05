@@ -1,16 +1,16 @@
 ---
-title: 'Comment : placer la collection de fichiers dans un répertoire'
+title: 'Procédure : placer la collection de fichiers dans un répertoire'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - folders, working with
 - files [Visual Basic], accessing
 ms.assetid: 6c8ba7e8-dd37-4853-92bf-762b67c98160
-ms.openlocfilehash: bb07ae25b413334f94456b378f0a2339402ac668
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 055151d4b3e3aba6be9b9b03ac9abffc6eb7b734
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74335334"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401613"
 ---
 # <a name="how-to-get-the-collection-of-files-in-a-directory-in-visual-basic"></a>Guide pratique pour obtenir la collection de fichiers dans un répertoire en Visual Basic
 
@@ -51,5 +51,5 @@ Les surcharges de la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetF
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A>
-- [Comment : rechercher des fichiers avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)
-- [Comment : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
+- [Procédure : rechercher des fichiers avec un modèle spécifique](how-to-find-files-with-a-specific-pattern.md)
+- [Procédure : rechercher des sous-répertoires avec un modèle spécifique](how-to-find-subdirectories-with-a-specific-pattern.md)

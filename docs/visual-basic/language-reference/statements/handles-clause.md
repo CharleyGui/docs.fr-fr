@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - Handles keyword [Visual Basic]
 ms.assetid: 1b051c0e-f499-42f6-acb5-6f4f27824b40
-ms.openlocfilehash: 2fecad919722f3da25c48f133a9c92b5e683d5e4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: df786e4b0f0ab3795592ea57f7af17695b086cfa
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345908"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404574"
 ---
 # <a name="handles-clause-visual-basic"></a>Handles, clause (Visual Basic)
 Déclare qu'une procédure gère un événement spécifié.  
@@ -23,7 +23,7 @@ Déclare qu'une procédure gère un événement spécifié.
 proceduredeclaration Handles eventlist  
 ```  
   
-## <a name="parts"></a>Composants  
+## <a name="parts"></a>Éléments  
  `proceduredeclaration`  
  Déclaration de procédure `Sub` pour la procédure qui gérera l'événement.  
   
@@ -33,9 +33,9 @@ proceduredeclaration Handles eventlist
 ## <a name="remarks"></a>Notes  
  Utilisez le mot clé `Handles` à la fin d'une déclaration de procédure pour que celle-ci gère les événements déclenchés par une variable objet déclarée à l'aide du mot clé `WithEvents` . Le mot clé `Handles` peut également être utilisé dans une classe dérivée pour gérer des événements à partir d'une classe de base.  
   
- Le mot clé `Handles` et l'instruction `AddHandler` vous permettent de spécifier que des procédures particulières gèrent des événements particuliers, mais il existe des différences. Utilisez le mot clé `Handles` quand vous définissez une procédure pour indiquer qu'elle gère un événement particulier. L'instruction `AddHandler` connecte les procédures aux événements au moment de l'exécution. Pour plus d’informations, consultez l' [instruction AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md).  
+ Le mot clé `Handles` et l'instruction `AddHandler` vous permettent de spécifier que des procédures particulières gèrent des événements particuliers, mais il existe des différences. Utilisez le mot clé `Handles` quand vous définissez une procédure pour indiquer qu'elle gère un événement particulier. L'instruction `AddHandler` connecte les procédures aux événements au moment de l'exécution. Pour plus d’informations, consultez l' [instruction AddHandler](addhandler-statement.md).  
   
- Pour les événements personnalisés, l’application appelle l’accesseur `AddHandler` de l’événement quand elle ajoute la procédure comme gestionnaire d’événements. Pour plus d’informations sur les événements personnalisés, consultez [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
+ Pour les événements personnalisés, l’application appelle l’accesseur `AddHandler` de l’événement quand elle ajoute la procédure comme gestionnaire d’événements. Pour plus d’informations sur les événements personnalisés, consultez [Event Statement](event-statement.md).  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbVbalrEvents#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#2)]  
@@ -56,9 +56,9 @@ proceduredeclaration Handles eventlist
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)
-- [AddHandler (instruction)](../../../visual-basic/language-reference/statements/addhandler-statement.md)
-- [RemoveHandler (instruction)](../../../visual-basic/language-reference/statements/removehandler-statement.md)
-- [Event (instruction)](../../../visual-basic/language-reference/statements/event-statement.md)
-- [RaiseEvent (instruction)](../../../visual-basic/language-reference/statements/raiseevent-statement.md)
-- [Événements](../../../visual-basic/programming-guide/language-features/events/index.md)
+- [WithEvents](../modifiers/withevents.md)
+- [AddHandler, instruction](addhandler-statement.md)
+- [RemoveHandler, instruction](removehandler-statement.md)
+- [Event, instruction](event-statement.md)
+- [RaiseEvent, instruction](raiseevent-statement.md)
+- [Événements](../../programming-guide/language-features/events/index.md)

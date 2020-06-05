@@ -6,12 +6,12 @@ helpviewer_keywords:
 - persistence [Visual Basic], persisting user settings [Visual Basic]
 - user settings [Visual Basic], persisting
 ms.assetid: 0e5e6415-b6e2-4602-9be0-a65fa167d007
-ms.openlocfilehash: b1026e400015ff7807144dca8e9ce6d72fe3d18e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 817111060259bdfbbb26d9f8eafeae439e1f651f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74329639"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410151"
 ---
 # <a name="how-to-persist-user-settings-in-visual-basic"></a>Guide pratique pour rendre persistants les paramètres utilisateur en Visual Basic
 
@@ -19,7 +19,7 @@ Vous pouvez utiliser la méthode `My.Settings.Save` pour rendre persistantes les
   
  En règle générale, les applications sont conçues pour rendre persistantes les modifications apportées aux paramètres utilisateur quand l’application s’arrête. Cela est dû au fait que l’enregistrement des paramètres peut prendre, en fonction de plusieurs facteurs, plusieurs secondes.  
   
- Pour plus d’informations, consultez [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ Pour plus d’informations, consultez [My.Settings, objet](../../../language-reference/objects/my-settings-object.md).  
   
 > [!NOTE]
 > Bien que vous puissiez modifier et enregistrer les valeurs des paramètres de portée utilisateur au moment de l’exécution, les paramètres de portée application sont en lecture seule et ne peuvent pas être modifiés par programmation. Vous pouvez changer les paramètres de portée application lors de la création de l’application, par l’intermédiaire du **Concepteur de projet**, ou en modifiant le fichier de configuration de l’application. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
@@ -34,8 +34,8 @@ Vous pouvez utiliser la méthode `My.Settings.Save` pour rendre persistantes les
   
 ## <a name="see-also"></a>Voir aussi
 
-- [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md)
-- [Guide pratique pour lire des paramètres d’application en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
-- [Guide pratique pour modifier les paramètres utilisateur en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
-- [Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)
+- [My.Settings, objet](../../../language-reference/objects/my-settings-object.md)
+- [Guide pratique pour lire des paramètres d’application en Visual Basic](how-to-read-application-settings.md)
+- [Guide pratique pour modifier les paramètres utilisateur en Visual Basic](how-to-change-user-settings.md)
+- [Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic](how-to-create-property-grids-for-user-settings.md)
 - [Gestion des paramètres d'une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet)

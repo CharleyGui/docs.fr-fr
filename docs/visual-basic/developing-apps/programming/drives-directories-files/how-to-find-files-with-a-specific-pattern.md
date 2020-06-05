@@ -1,17 +1,17 @@
 ---
-title: 'Comment : rechercher des fichiers avec un modèle spécifique'
+title: 'Procédure : rechercher des fichiers avec un modèle spécifique'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], finding
 - pattern matching
 - patterns, matching
 ms.assetid: 25e3b71d-b844-4293-9e4e-f06c5836b5cc
-ms.openlocfilehash: 5faaa16615f52714db3de6853786990265716501
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 71073672ed14cb2d5df5b5365266b718c59cb18f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348759"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401639"
 ---
 # <a name="how-to-find-files-with-a-specific-pattern-in-visual-basic"></a>Guide pratique pour rechercher des fichiers avec un modèle spécifique en Visual Basic
 
@@ -51,6 +51,6 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A>
-- [Comment : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
-- [Dépannage : lecture et écriture dans des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
-- [Comment : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+- [Procédure : rechercher des sous-répertoires avec un modèle spécifique](how-to-find-subdirectories-with-a-specific-pattern.md)
+- [Résolution des problèmes : lecture et écriture dans des fichiers texte](troubleshooting-reading-from-and-writing-to-text-files.md)
+- [Procédure : placer la collection de fichiers dans un répertoire](how-to-get-the-collection-of-files-in-a-directory.md)

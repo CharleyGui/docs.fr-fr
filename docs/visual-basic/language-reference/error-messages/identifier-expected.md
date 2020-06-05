@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30203
 ms.assetid: c05162ee-55d0-4d7f-84bb-e7758d4c5081
-ms.openlocfilehash: 619b1c55ef035530c6854fa15763fb9c187565a6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e33450e921f1859c97edf1fbf123a0a95267767f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662025"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402886"
 ---
 # <a name="identifier-expected"></a>Identificateur attendu
-Un élément de programmation qui n’est pas un nom d’élément déclaré reconnaissable se produit lorsque le contexte nécessite un nom d’élément. Il se peut qu’un attribut a été spécifié à un endroit différent au début de l’instruction.  
+Un élément de programmation qui n’est pas un nom d’élément déclaré reconnaissable se produit lorsque le contexte requiert un nom d’élément. L’une des causes possibles est qu’un attribut a été spécifié ailleurs qu’au début de l’instruction.  
   
  **ID d’erreur :** BC30203  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Vérifiez que tous les attributs dans l’instruction sont placés au début.  
+- Vérifiez que tous les attributs de l’instruction sont placés au début.  
   
-- Vérifiez que tous les noms d’éléments dans l’instruction sont correctement orthographiés.  
+- Vérifiez que tous les noms d’éléments de l’instruction sont correctement orthographiés.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Noms d’éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
-- [Vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)
+- [Vue d’ensemble des attributs](../../programming-guide/concepts/attributes/index.md)

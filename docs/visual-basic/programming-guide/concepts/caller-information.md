@@ -2,21 +2,21 @@
 title: Informations relatives à l'appelant
 ms.date: 07/20/2015
 ms.assetid: 15d556eb-4d0c-4497-98a3-7f60abb7d6a1
-ms.openlocfilehash: 7c87b540a68f4d0219918fed66de6c1b635104a9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 93fb1e327d65ac19f293a2f77b7d5712fc5e8d2f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349473"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400666"
 ---
-# <a name="caller-information-visual-basic"></a>Informations sur l’appelant (Visual Basic)
+# <a name="caller-information-visual-basic"></a>Informations relatives à l’appelant (Visual Basic)
 À l'aide des attributs d'informations de l'appelant, vous pouvez obtenir des informations sur l'appelant d'une méthode. Vous pouvez obtenir le chemin d'accès du fichier de code source, le numéro de ligne dans le code source, puis le nom du membre de l'appelant. Ces informations sont utiles pour suivre, déboguer, et créer des outils de diagnostic.  
   
  Pour obtenir ces informations, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs, qui a une valeur par défaut. Le tableau suivant répertorie les attributs d'informations de l'appelant définis dans l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> :  
   
 |Attribut|Description|Type|  
 |---|---|---|  
-|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin complet du fichier source qui contient l’appelant. C’est le chemin du fichier au moment de la compilation.|`String`|  
+|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin d’accès complet du fichier source qui contient l’appelant. C’est le chemin du fichier au moment de la compilation.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Numéro de ligne dans le fichier source dans lequel la méthode est appelée.|`Integer`|  
 |<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Méthode ou nom de la propriété de l'appelant. Consultez [Noms de membres](#MEMBERNAMES), plus loin dans cette rubrique.|`String`|  
   
@@ -55,7 +55,7 @@ End Sub
   
  Vous pouvez fournir explicitement les arguments facultatifs pour contrôler ou masquer des informations de l'appelant.  
   
-### <a name="MEMBERNAMES"></a> Noms de membres  
+### <a name="member-names"></a><a name="MEMBERNAMES"></a>Noms de membres  
  Vous pouvez utiliser l'attribut `CallerMemberName` pour éviter de spécifier le nom du membre comme argument de `String` à la méthode appelée. Vous évitez ainsi le problème que la **refactorisation de changement de nom** ne modifie pas les valeurs `String`. Cet avantage est particulièrement utile pour les tâches suivantes :  
   
 - Utilisation du traçage et des programmes de diagnostic.  
@@ -76,7 +76,7 @@ End Sub
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Attributs (Visual Basic)](../../../visual-basic/language-reference/attributes.md)
-- [Attributs courants (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)
-- [Paramètres facultatifs](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
-- [Concepts de programmation (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)
+- [Attributs (Visual Basic)](../../language-reference/attributes.md)
+- [Attributs courants (Visual Basic)](attributes/common-attributes.md)
+- [Paramètres facultatifs](../language-features/procedures/optional-parameters.md)
+- [Concepts de programmation (Visual Basic)](index.md)

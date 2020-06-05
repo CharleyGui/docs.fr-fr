@@ -8,12 +8,12 @@ helpviewer_keywords:
 - registry keys [Visual Basic], reading from
 - registry [Visual Basic], reading
 ms.assetid: 775d0a57-68c9-464e-8949-9a39bd29cc64
-ms.openlocfilehash: 73c32aefe06a68bb42fcb5f4615da0927e57e892
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74069b111f4316eb81c74f5e62c1fbff6ab8f4b8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345613"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401847"
 ---
 # <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Guide pratique pour lire une valeur à partir d'une clé de Registre en Visual Basic
 
@@ -59,4 +59,4 @@ La méthode `GetValue` de l’objet `My.Computer.Registry` peut être utilisée 
 
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>
 - <xref:Microsoft.Win32.RegistryHive>
-- [Lecture et écriture dans le Registre](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+- [Lecture et écriture dans le Registre](reading-from-and-writing-to-the-registry.md)

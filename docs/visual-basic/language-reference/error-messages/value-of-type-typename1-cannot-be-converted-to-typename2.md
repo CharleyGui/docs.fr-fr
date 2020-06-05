@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC30955
 ms.assetid: 966b61eb-441e-48b0-bedf-ca95384ecb8b
-ms.openlocfilehash: 027cccc9ad406d5bc2fd686ddeb4c674dc8f3c90
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f6b35efbc445887c537b94dd299b317a28e5f689
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64621202"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406558"
 ---
-# <a name="value-of-type-typename1-cannot-be-converted-to-typename2"></a>Valeur de type '\<nom_type1 >' ne peut pas être convertie en '\<nom_type2 >'
-Valeur de type '\<nom_type1 >' ne peut pas être convertie en '\<nom_type2 >'. Incompatibilité de type peut être dû à la combinaison d’une référence de fichier avec une référence de projet à l’assembly '\<nom_assembly >'. Essayez de remplacer la référence de fichier à '\<filepath >' dans le projet '\<nom_projet1 >' avec une référence de projet à '\<nom_projet2 >'.  
+# <a name="value-of-type-typename1-cannot-be-converted-to-typename2"></a>La valeur de type '\<typename1>' ne peut pas être convertie en '\<typename2>'
+Impossible de convertir la valeur de type' ' \<typename1> en' \<typename2> '. Une incompatibilité de type peut être due à la combinaison d’une référence de fichier et d’une référence de projet à l’assembly' \<assemblyname> '. Essayez de remplacer la référence de fichier à' \<filepath> 'dans \<projectname1> le projet' 'par une référence de projet à' \<projectname2> '.  
   
- Dans une situation où un projet fait une référence de projet et une référence de fichier, le compilateur ne peut pas garantir qu’un type peut être converti vers un autre.  
+ Dans le cas où un projet fait à la fois une référence de projet et une référence de fichier, le compilateur ne peut pas garantir qu’un type peut être converti en un autre.  
   
  Le pseudo-code suivant illustre une situation qui peut générer cette erreur.  
   
@@ -47,19 +47,19 @@ Valeur de type '\<nom_type1 >' ne peut pas être convertie en '\<nom_type2 >'. I
   
  `End Class`  
   
- Projet `P1` établit une référence de projet indirecte via le projet `P2` au projet `P3`et également une référence de fichier directe à `P3`. La déclaration de `commonObject` utilise la référence de fichier à `P3`, tandis que l’appel à `P2.getCommonClass` utilise la référence de projet `P3`.  
+ Project `P1` fait une référence de projet indirecte par `P2` le biais du projet à Project `P3` , ainsi qu’une référence de fichier directe à `P3` . La déclaration de `commonObject` utilise la référence de fichier à `P3` , tandis que l’appel à `P2.getCommonClass` utilise la référence de projet à `P3` .  
   
- Le problème dans ce cas est que la référence de fichier Spécifie un chemin d’accès et le nom du fichier de sortie de `P3` (en général, p3.dll), tandis que les références de projet identifient le projet source (`P3`) par le nom du projet. Pour cette raison, le compilateur ne peut pas garantir que le type `P3.commonClass` provient le même code source, les deux références différentes.  
+ Dans ce cas, le problème est que la référence de fichier spécifie un chemin et un nom de fichier pour le fichier de sortie de `P3` (généralement P3. dll), tandis que les références de projet identifient le projet source ( `P3` ) par nom de projet. Pour cette raison, le compilateur ne peut pas garantir que le type `P3.commonClass` provient du même code source via les deux références différentes.  
   
- Cette situation se produit généralement lorsque les références de projet et les références de fichier sont combinés. Dans l’illustration précédente, le problème se produirait pas si `P1` crée une référence de projet directe pour `P3` au lieu d’une référence de fichier.  
+ Cette situation se produit généralement lorsque les références de projet et les références de fichier sont mélangées. Dans l’illustration précédente, le problème ne se produisait pas si `P1` vous avez effectué une référence de projet directe à `P3` au lieu d’une référence de fichier.  
   
  **ID d’erreur :** BC30955  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Modifiez la référence de fichier à une référence de projet.  
+- Remplacez la référence de fichier par une référence de projet.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Conversions de type en Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Conversions de type en Visual Basic](../../programming-guide/language-features/data-types/type-conversions.md)
 - [Gestion des références dans un projet](/visualstudio/ide/managing-references-in-a-project)
