@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC42324
 ms.assetid: b5c2c4bd-3b2a-4a73-aaeb-55728eb03b68
-ms.openlocfilehash: 3335da503b6fb9c33e44266997cc945214a3a365
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: aa3e1d6281af22b301a4697b265ed3fbf23e3de4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913073"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373912"
 ---
 # <a name="using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results"></a>L’utilisation de la variable d’itération dans une expression lambda peut provoquer des résultats inattendus
 L’utilisation de la variable d’itération dans une expression lambda peut avoir des résultats inattendus. Au lieu de cela, créez une variable locale dans la boucle et affectez-lui la valeur de la variable d’itération.  
   
- Cet avertissement s’affiche lorsque vous utilisez une variable d’itération de boucle dans une expression lambda qui est déclarée à l’intérieur de la boucle. Par exemple, l’exemple suivant provoque l’avertissement apparaît.  
+ Cet avertissement apparaît lorsque vous utilisez une variable d’itération de boucle dans une expression lambda qui est déclarée à l’intérieur de la boucle. Par exemple, l’exemple suivant provoque l’affichage de l’avertissement.  
   
 ```vb  
 For i As Integer = 1 To 10  
@@ -26,7 +26,7 @@ For i As Integer = 1 To 10
 Next  
 ```  
   
- L’exemple suivant montre les résultats inattendus peuvent se produire.  
+ L’exemple suivant montre les résultats inattendus qui peuvent se produire.  
   
 ```vb  
 Module Module1  
@@ -45,7 +45,7 @@ Module Module1
 End Module  
 ```  
   
- Le `For` boucle crée un tableau d’expressions lambda, chacune d'entre elles retourne la valeur de la variable d’itération de boucle `i`. Lorsque les expressions lambda sont évaluées dans le `For Each` boucle, vous attendez peut-être à voir 0, 1, 2, 3 et 4 affichés, les valeurs consécutives de `i` dans le `For` boucle. Au lieu de cela, vous voyez la valeur finale de `i` affichée cinq fois :  
+ La `For` boucle crée un tableau d’expressions lambda, chacune d’elles retournant la valeur de la variable d’itération de la boucle `i` . Lorsque les expressions lambda sont évaluées dans la `For Each` boucle, vous pouvez vous attendre à ce que 0, 1, 2, 3 et 4 s’affichent, les valeurs successives de `i` dans la `For` boucle. Au lieu de cela, vous voyez la valeur finale de l' `i` affichage cinq fois :  
   
  `5`  
   
@@ -63,7 +63,7 @@ End Module
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Affectez la valeur de la variable d’itération à une variable locale et utilisez la variable locale dans l’expression lambda.  
+- Assignez la valeur de la variable d’itération à une variable locale et utilisez la variable locale dans l’expression lambda.  
   
 ```vb  
 Module Module1  
@@ -85,4 +85,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+- [Expressions lambda](../../programming-guide/language-features/procedures/lambda-expressions.md)
