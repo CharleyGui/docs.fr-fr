@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Optional keyword [Visual Basic], contexts
 - Optional keyword [Visual Basic]
 ms.assetid: 4571ce88-a539-4115-b230-54eb277c6aa7
-ms.openlocfilehash: a16dae35bf4bc84d95501624c4f023f390a8dda8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c46d06dba61158d7362d736731161be306af3f10
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351435"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392143"
 ---
 # <a name="optional-visual-basic"></a>Optional (Visual Basic)
 
@@ -21,25 +21,25 @@ Spécifie qu’un argument de procédure peut être omis lorsque la procédure e
 
 ## <a name="remarks"></a>Notes
 
-Pour chaque paramètre facultatif, vous devez spécifier une expression constante comme valeur par défaut de ce paramètre. Si l’expression prend la valeur [Nothing](../../../visual-basic/language-reference/nothing.md), la valeur par défaut du type de données value est utilisée comme valeur par défaut du paramètre.
+Pour chaque paramètre facultatif, vous devez spécifier une expression constante comme valeur par défaut de ce paramètre. Si l’expression prend la valeur [Nothing](../nothing.md), la valeur par défaut du type de données value est utilisée comme valeur par défaut du paramètre.
 
 Si la liste de paramètres contient un paramètre facultatif, chaque paramètre qui le suit doit également être facultatif.
 
 Le modificateur `Optional` peut être utilisé dans les contextes suivants :
 
-- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare Statement](../statements/declare-statement.md)
 
-- [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Function (instruction)](../statements/function-statement.md)
 
-- [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Property Statement](../statements/property-statement.md)
 
-- [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)
-
-> [!NOTE]
-> Lors de l’appel d’une procédure avec ou sans paramètres facultatifs, vous pouvez passer des arguments par position ou par nom. Pour plus d’informations, consultez [passage des arguments par position et par nom](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).
+- [Sub (instruction)](../statements/sub-statement.md)
 
 > [!NOTE]
-> Vous pouvez également définir une procédure avec des paramètres facultatifs à l’aide de la surcharge. Si vous avez un paramètre facultatif, vous pouvez définir deux versions surchargées de la procédure, une qui accepte le paramètre et une autre qui ne l’est pas. Pour plus d'informations, consultez [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).
+> Lors de l’appel d’une procédure avec ou sans paramètres facultatifs, vous pouvez passer des arguments par position ou par nom. Pour plus d’informations, consultez [passage des arguments par position et par nom](../../programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).
+
+> [!NOTE]
+> Vous pouvez également définir une procédure avec des paramètres facultatifs à l’aide de la surcharge. Si vous avez un paramètre facultatif, vous pouvez définir deux versions surchargées de la procédure, une qui accepte le paramètre et une autre qui ne l’est pas. Pour plus d'informations, consultez [Procedure Overloading](../../programming-guide/language-features/procedures/procedure-overloading.md).
 
 ## <a name="example"></a>Exemple
 
@@ -72,6 +72,6 @@ L’exemple suivant montre comment appeler une procédure avec des arguments pas
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Liste de paramètres](../../../visual-basic/language-reference/statements/parameter-list.md)
-- [Paramètres facultatifs](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
+- [Liste de paramètres](../statements/parameter-list.md)
+- [Paramètres facultatifs](../../programming-guide/language-features/procedures/optional-parameters.md)
+- [Mots clés](../keywords/index.md)
