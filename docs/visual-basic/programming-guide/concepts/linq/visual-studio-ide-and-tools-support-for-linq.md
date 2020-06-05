@@ -2,17 +2,17 @@
 title: Outils et IDE Visual Studio prenant en charge LINQ
 ms.date: 07/20/2015
 ms.assetid: e3bfe0d9-4a79-49cf-a31c-93297c688829
-ms.openlocfilehash: 36c3b051a0e8577a5e622f4cdf986945043dbdc1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ec9c4acf75a32caa7a078782702c0c8c52386702
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351033"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413282"
 ---
-# <a name="visual-studio-ide-and-tools-support-for-linq-visual-basic"></a>Prise en charge des outils et de l’IDE Visual Studio pour LINQ (Visual Basic)
+# <a name="visual-studio-ide-and-tools-support-for-linq-visual-basic"></a>Prise en charge de LINQ par les outils et l’IDE Visual Studio (Visual Basic)
 L’environnement de développement intégré (IDE) Visual Studio fournit les fonctionnalités suivantes qui prennent en charge le développement d’applications LINQ :  
   
-## <a name="object-relational-designer"></a>Concepteur Objet/Relationnel  
+## <a name="object-relational-designer"></a>Object Relational Designer  
  Le Concepteur Objet Relationnel est un outil de conception visuelle que vous pouvez utiliser dans les applications [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md) pour générer des classes dans Visual Basic qui représentent les données relationnelles dans une base de données sous-jacente. Pour plus d’informations, consultez [Outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="sqlmetal-command-line-tool"></a>Outil en ligne de commande SQLMetal  
@@ -26,4 +26,4 @@ L’environnement de développement intégré (IDE) Visual Studio fournit les fo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [LINQ (Language-Integrated Query) (Visual Basic)](index.md)

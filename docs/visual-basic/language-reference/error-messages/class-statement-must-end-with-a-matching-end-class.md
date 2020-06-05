@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30481
 ms.assetid: 583f3029-bc3a-4e06-866f-92dbecc46f19
-ms.openlocfilehash: 559595e9902ec2f0a19fd6b13e2c89fa1c2b52d7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 01c231f577d21028e9ef92f37c7ac5f7f1fe2aa3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602414"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415386"
 ---
 # <a name="class-statement-must-end-with-a-matching-end-class"></a>Une instruction 'Class' doit se terminer par une 'End Class' correspondante
-`Class` permet de lancer un `Class` bloquer ; il ne peut donc apparaître au début du bloc, avec une mise en correspondance `End Class` instruction fin du bloc. Soit vous avez un redondant `Class` instruction, ou vous n’avez pas terminé votre `Class` bloc avec `End Class`.  
+`Class`est utilisé pour initier un `Class` bloc. il ne peut donc apparaître qu’au début du bloc, avec une instruction correspondante qui `End Class` termine le bloc. Soit vous avez une instruction redondante `Class` , soit vous n’avez pas terminé votre `Class` bloc avec `End Class` .  
   
  **ID d’erreur :** BC30481  
   
@@ -23,9 +23,9 @@ ms.locfileid: "64602414"
   
 - Recherchez et supprimez l’instruction `Class` inutile.  
   
-- Conclure le `Class` bloc avec une mise en correspondance `End Class`.  
+- Conclut le `Class` bloc avec un correspondant `End Class` .  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fin \<mot clé > instruction](../../../visual-basic/language-reference/statements/end-keyword-statement.md)
-- [Class (instruction)](../../../visual-basic/language-reference/statements/class-statement.md)
+- [End ( \<keyword> instruction)](../statements/end-keyword-statement.md)
+- [Class (instruction)](../statements/class-statement.md)

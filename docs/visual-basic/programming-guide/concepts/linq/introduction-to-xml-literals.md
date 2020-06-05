@@ -1,20 +1,20 @@
 ---
-title: Introduction aux littérales XML dans Visual Basic2
+title: Introduction aux littéraux XML dans Visual BASIC2
 ms.date: 07/20/2015
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-ms.openlocfilehash: 9f5c54574e51c537d9ea58d307afda10736d0d88
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 8b92d22727c50274d57a5e407a0ca42807de3a94
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266948"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397582"
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Introduction aux littéraux XML en Visual Basic
-Cette section fournit des informations sur la création d’arbres XML dans Visual Basic.  
+Cette section fournit des informations sur la création d’arborescences XML dans Visual Basic.  
   
- Pour plus d’informations sur l’utilisation des résultats des requêtes LINQ comme contenu d’un arbre XML, voir [Construction fonctionnelle (LINQ à XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
+ Pour plus d’informations sur l’utilisation des résultats de requêtes LINQ comme contenu pour une arborescence XML, consultez [construction fonctionnelle (LINQ to XML) (Visual Basic)](functional-construction-linq-to-xml.md).  
   
- Pour plus d’informations sur les littérals XML dans Visual Basic, voir [Aperçu de LINQ à XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
+ Pour plus d’informations sur les littéraux XML dans Visual Basic, consultez [vue d’ensemble des LINQ to XML dans Visual Basic](../../language-features/xml/overview-of-linq-to-xml.md).  
   
 ## <a name="creating-xml-trees"></a>Création d'arborescences XML  
  L'exemple suivant montre comment créer un objet <xref:System.Xml.Linq.XElement>, dans le cas présent `contacts` :  
@@ -197,4 +197,4 @@ Child2 was attached
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création d’arbres XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Création d’arborescences XML (Visual Basic)](creating-xml-trees.md)

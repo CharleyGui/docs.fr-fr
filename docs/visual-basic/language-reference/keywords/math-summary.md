@@ -7,17 +7,17 @@ helpviewer_keywords:
 - math functions, Visual Basic
 - math functions
 ms.assetid: 6abf2dd7-92d2-488a-8e2b-819be9b30c3f
-ms.openlocfilehash: 21c6d35b4e6aa17bb29be1c1e4b5e88a5fb389d8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ef0e014745ec99afbce16824e65587276bc145e4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348494"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373445"
 ---
 # <a name="math-summary-visual-basic"></a>Liste des mots clés mathématiques (Visual Basic)
 Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|élément Language|  
+|Action|Élément du langage|  
 |------------|----------------------|  
 |Dérivez les fonctions trigonométriques.|<xref:System.Math.Atan%2A>, <xref:System.Math.Cos%2A>, <xref:System.Math.Sin%2A>, <xref:System.Math.Tan%2A>|  
 |Calculs généraux.|<xref:System.Math.Exp%2A>, <xref:System.Math.Log%2A>, <xref:System.Math.Sqrt%2A>|  
@@ -28,6 +28,6 @@ Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtim
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions mathématiques dérivées](../../../visual-basic/language-reference/keywords/derived-math-functions.md)
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
-- [Membres de la bibliothèque runtime Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+- [Fonctions mathématiques dérivées](derived-math-functions.md)
+- [Mots clés](index.md)
+- [Membres de la bibliothèque runtime Visual Basic](../runtime-library-members.md)

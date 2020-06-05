@@ -36,12 +36,12 @@ helpviewer_keywords:
 - UL literal type characters [Visual Basic]
 - literal types [Visual Basic], default
 ms.assetid: 6353cb9b-6ee4-4af6-a5a8-88ce39f90cc5
-ms.openlocfilehash: 628461c8136946dd902c0a52048eee7c516c52cd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a48260694c1dfcbbb8f804f220fe89b1663c7319
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352928"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84393076"
 ---
 # <a name="type-characters-visual-basic"></a>Caractères de type (Visual Basic)
 
@@ -62,9 +62,9 @@ Visual Basic fournit un ensemble de *caractères de type d’identificateur* que
 |`#`|`Double`|`Dim X#`|  
 |`$`|`String`|`Dim V$ = "Secret"`|  
   
- Il n’existe aucun caractère de type d’identificateur pour les types de données `Boolean`, `Byte`, `Char`, `Date`, `Object`, `SByte`, `Short`, `UInteger`, `ULong`ou `UShort`, ou pour tous les types de données composites tels que les tableaux ou les structures.
+ Il n’existe aucun caractère de type d’identificateur pour les `Boolean` `Byte` types de données,, `Char` , `Date` ,,,,, `Object` `SByte` `Short` `UInteger` `ULong` ou `UShort` , ou pour tous les types de données composites tels que les tableaux ou les structures.
 
-Dans certains cas, vous pouvez ajouter le caractère `$` à une fonction Visual Basic, par exemple `Left$` au lieu de `Left`, pour obtenir une valeur retournée de type `String`.
+Dans certains cas, vous pouvez ajouter le `$` caractère à une fonction Visual Basic, par exemple `Left$` au lieu de `Left` , pour obtenir une valeur retournée de type `String` .
 
 Dans tous les cas, le caractère de type d’identificateur doit suivre immédiatement le nom de l’identificateur.
 
@@ -79,7 +79,7 @@ La forme d’un littéral tel qu’il apparaît dans votre code détermine norma
 |Forme textuelle du littéral|Type de données par défaut|Exemple|  
 |-----------------------------|-----------------------|-------------|  
 |Numérique, aucune partie fractionnaire|`Integer`|`2147483647`|  
-|Numérique, aucune partie fractionnaire, trop grande pour `Integer`|`Long`|`2147483648`|  
+|Numérique, aucune partie fractionnaire, trop grande pour`Integer`|`Long`|`2147483648`|  
 |Numérique, partie fractionnaire|`Double`|`1.2`|  
 |délimité par des guillemets doubles ;|`String`|`"A"`|  
 |Entre les signes dièse|`Date`|`#5/17/1993 9:32 AM#`|  
@@ -101,15 +101,15 @@ Visual Basic fournit un ensemble de *caractères de type de littéral*, que vous
 |`UL`|`ULong`|`N = 347UL`|
 |`C`|`Char`|`Q = "."C`|
 
-Il n’existe aucun caractère de type de littéral pour les types de données `Boolean`, `Byte`, `Date`, `Object`, `SByte`ou `String`, ou pour tous les types de données composites tels que les tableaux ou les structures.
+Il n’existe aucun caractère de type de littéral pour les `Boolean` `Byte` types de données,, `Date` , `Object` , `SByte` ou `String` , ou pour tous les types de données composites tels que les tableaux ou les structures.
 
-Les littéraux peuvent également utiliser les caractères de type d’identificateur (`%`, `&`, `@`, `!`, `#`, `$`), comme les variables, les constantes et les expressions. Toutefois, les caractères de type de littéral (`S`, `I`, `L`, `D`, `F`, `R`, `C`) ne peuvent être utilisés qu’avec des littéraux.
+Les littéraux peuvent également utiliser les caractères de type d’identificateur ( `%` , `&` ,, `@` `!` , `#` , `$` ), comme les variables, les constantes et les expressions. Toutefois, les caractères de type de littéral ( `S` , `I` , `L` , `D` , `F` , `R` , `C` ) ne peuvent être utilisés qu’avec des littéraux.
 
 Dans tous les cas, le caractère de type de littéral doit suivre immédiatement la valeur littérale.
 
 ## <a name="hexadecimal-binary-and-octal-literals"></a>Littéraux hexadécimaux, binaires et octaux
 
-Le compilateur interprète normalement un littéral d’entier comme étant dans le système de nombre décimal (base 10). Vous pouvez également définir un littéral d’entier comme nombre hexadécimal (base 16) avec le préfixe `&H`, comme nombre binaire (base 2) avec le préfixe `&B` et comme nombre octal (base 8) avec le préfixe `&O`. Les chiffres qui suivent le préfixe doivent être appropriés pour le système de nombres. Le tableau suivant illustre cela.  
+Le compilateur interprète normalement un littéral d’entier comme étant dans le système de nombre décimal (base 10). Vous pouvez également définir un littéral d’entier comme nombre hexadécimal (base 16) avec le `&H` préfixe, en tant que nombre binaire (base 2) avec le `&B` préfixe, et en tant que nombre octal (base 8) avec le `&O` préfixe. Les chiffres qui suivent le préfixe doivent être appropriés pour le système de nombres. Le tableau suivant illustre cela.  
   
 |Base numérique|Préfixe|Valeurs de chiffres valides|Exemple|
 |-----------------|------------|------------------------|-------------|
@@ -117,13 +117,13 @@ Le compilateur interprète normalement un littéral d’entier comme étant dans
 |Binaire (base 2)|`&B`|0-1|`&B01111100`|
 |Octale (base 8)|`&O`|0-7|`&O77`|
 
-À partir de Visual Basic 2017, vous pouvez utiliser le caractère de soulignement (`_`) comme séparateur de groupes pour améliorer la lisibilité d’un littéral intégral. L’exemple suivant utilise le caractère `_` pour regrouper un littéral binaire en groupes 8 bits :
+À partir de Visual Basic 2017, vous pouvez utiliser le caractère de soulignement ( `_` ) comme séparateur de groupes pour améliorer la lisibilité d’un littéral intégral. L’exemple suivant utilise le `_` caractère pour regrouper un littéral binaire en groupes 8 bits :
 
 ```vb
 Dim number As Integer = &B00100010_11000101_11001111_11001101
 ```
 
-Vous pouvez suivre un littéral préfixé avec un caractère de type littéral. L’exemple suivant illustre cela.
+Vous pouvez suivre un littéral préfixé avec un caractère de type littéral. L'exemple suivant illustre cela.
 
 ```vb
 Dim counter As Short = &H8000S
@@ -132,7 +132,7 @@ Dim flags As UShort = &H8000US
 
 Dans l’exemple précédent, `counter` a la valeur décimale-32768 et `flags` a la valeur décimale + 32768.
 
-À compter de Visual Basic 15,5, vous pouvez également utiliser le caractère de soulignement (`_`) comme séparateur de début entre le préfixe et les chiffres hexadécimaux, binaires ou octaux. Exemple :
+À compter de Visual Basic 15,5, vous pouvez également utiliser le trait de soulignement ( `_` ) comme séparateur de début entre le préfixe et les chiffres hexadécimaux, binaires ou octaux. Par exemple :
 
 ```vb
 Dim number As Integer = &H_C305_F860
@@ -142,10 +142,10 @@ Dim number As Integer = &H_C305_F860
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Types de données élémentaires](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
-- [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
-- [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Déclaration de variable](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Types de données](../../../../visual-basic/language-reference/data-types/index.md)
+- [Types de données](index.md)
+- [Types de données élémentaires](elementary-data-types.md)
+- [Types valeur et types référence](value-types-and-reference-types.md)
+- [Conversions de type en Visual Basic](type-conversions.md)
+- [Dépannage des types de données](troubleshooting-data-types.md)
+- [Déclaration de variable](../variables/variable-declaration.md)
+- [Types de données](../../../language-reference/data-types/index.md)

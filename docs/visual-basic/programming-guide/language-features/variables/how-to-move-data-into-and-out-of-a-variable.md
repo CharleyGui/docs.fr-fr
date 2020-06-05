@@ -5,12 +5,12 @@ helpviewer_keywords:
 - variables [Visual Basic], retrieving values
 - variables [Visual Basic], storing data
 ms.assetid: 93744f46-bf78-4fa0-9640-1de01bc38d9a
-ms.openlocfilehash: bc5a7377a5e2e4c7ebe7291fd5f0093c4d6e996d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fe19a6160623aa9ea867becdf7a15b51319abf45
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346900"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410436"
 ---
 # <a name="how-to-move-data-into-and-out-of-a-variable-visual-basic"></a>Comment : placer des données dans et en dehors d'une variable (Visual Basic)
 
@@ -22,7 +22,7 @@ Vous stockez une valeur dans une variable en plaçant le nom de la variable sur 
 
 - Utilisez le nom de la variable sur le côté gauche d’une instruction d’assignation.
 
-    L’exemple suivant définit la valeur de la variable `alpha`.
+    L’exemple suivant définit la valeur de la variable `alpha` .
 
     ```vb
     alpha = (beta * 6.27) / (gamma + 2.1)
@@ -40,9 +40,9 @@ Vous récupérez la valeur d’une variable en incluant le nom de la variable da
 
   \- ou -
 
-- Utilisez le nom de variable après le signe égal (`=`) dans une instruction d’assignation.
+- Utilisez le nom de variable après le signe égal ( `=` ) dans une instruction d’assignation.
 
-  L’exemple suivant lit la valeur de la variable `startValue` puis utilise la valeur de la variable `counter` dans une expression.
+  L’exemple suivant lit la valeur de la variable `startValue` , puis utilise la valeur de la variable `counter` dans une expression.
 
   ```vb
   counter = startValue
@@ -53,6 +53,6 @@ Vous récupérez la valeur d’une variable en incluant le nom de la variable da
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Variables](../../../../visual-basic/programming-guide/language-features/variables/index.md)
-- [Déclaration de variable](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
+- [Variables](index.md)
+- [Déclaration de variable](variable-declaration.md)
+- [Variables objets](object-variables.md)

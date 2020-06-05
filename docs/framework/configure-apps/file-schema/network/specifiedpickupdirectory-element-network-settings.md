@@ -9,20 +9,20 @@ helpviewer_keywords:
 - <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
 ms.openlocfilehash: 4b0cbaf9a7bfe2a9b1610811f4201253d219a6b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0a798a7e9680e2d0a5a81a3eaa203870ea782883
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/03/2020
 ms.locfileid: "79154606"
 ---
-# <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedPickupDirectory> Element (Paramètres réseau)
-Configure l’annuaire local pour un serveur Simple Mail Transport Protocol (SMTP).  
+# <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedPickupDirectory>, élément (paramètres réseau)
+Configure le répertoire local pour un serveur SMTP (simple mail transport Protocol).  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<mailSettings>**](mailsettings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>smtp**](smtp-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<>spécifiéPickupDirectory**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<smtp>**](smtp-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<specifiedPickupDirectory>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ Configure l’annuaire local pour un serveur Simple Mail Transport Protocol (SMT
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`pickupDirectoryLocation`|L’annuaire où les applications enregistrent le courrier électronique pour le traitement ultérieur par le serveur SMTP.|  
+|`pickupDirectoryLocation`|Répertoire dans lequel les applications enregistrent des messages électroniques en vue d’un traitement ultérieur par le serveur SMTP.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -48,13 +48,13 @@ Configure l’annuaire local pour un serveur Simple Mail Transport Protocol (SMT
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<smtp> Element (Paramètres réseau)](smtp-element-network-settings.md)|Configure les options d’envoi de courrier simple par protocole de transport de courrier (SMTP).|  
+|[\<smtp>, Élément (paramètres réseau)](smtp-element-network-settings.md)|Configure les options d’envoi de courrier SMTP (simple mail transport Protocol).|  
   
-## <a name="remarks"></a>Notes   
- L’attribut `specifiedPickupDirectory` définit l’annuaire lorsque les applications enregistrent les messages postaux à traiter par le serveur SMTP.  
+## <a name="remarks"></a>Notes  
+ L' `specifiedPickupDirectory` attribut définit le répertoire dans lequel les applications enregistrent les messages électroniques à traiter par le serveur SMTP.  
   
-## <a name="example"></a> Exemple  
- L’exemple suivant spécifie c: 'maildrop comme répertoire de ramassage de courrier.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant spécifie c:\maildrop comme répertoire de collecte des messages.  
   
 ```xml  
 <configuration>  
@@ -75,4 +75,4 @@ Configure l’annuaire local pour un serveur Simple Mail Transport Protocol (SMT
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement?displayProperty=nameWithType>
-- [Paramètres réseau Schema](index.md)
+- [Schéma des paramètres réseau](index.md)

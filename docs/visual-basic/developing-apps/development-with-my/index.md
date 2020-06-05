@@ -9,12 +9,12 @@ helpviewer_keywords:
 - My feature
 - Visual Basic, programming in
 ms.assetid: f1d04509-5e46-4551-9f9f-94334a121fca
-ms.openlocfilehash: 2ee9373098d4355628a43ec46302c97c26de5bf9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3befac591de8fbc7250777a8b87247ee395abf25
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330283"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411704"
 ---
 # <a name="development-with-my-visual-basic"></a>Développement avec My (Visual Basic)
 
@@ -28,19 +28,19 @@ Visual Basic propose de nouvelles fonctionnalités pour le développement rapid
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Exécution de tâches avec My.Application, My.Computer et My.User](../../../visual-basic/developing-apps/development-with-my/performing-tasks-with-my-application-my-computer-and-my-user.md)  
+ [Exécution de tâches avec My.Application, My.Computer et My.User](performing-tasks-with-my-application-my-computer-and-my-user.md)  
  Décrit les trois objets `My` centraux, `My.Application`, `My.Computer` et `My.User`, qui permettent d’accéder aux informations et aux fonctionnalités  
   
- [Instances d’objets par défaut fournies par My.Forms et My.WebServices](../../../visual-basic/developing-apps/development-with-my/default-object-instances-provided-by-my-forms-and-my-webservices.md)  
+ [Instances d’objets par défaut fournies par My.Forms et My.WebServices](default-object-instances-provided-by-my-forms-and-my-webservices.md)  
  Décrit les objets `My.Forms` et `My.WebServices` qui fournissent l’accès aux formulaires, sources de données et services Web XML utilisés par votre application.  
   
- [Développement rapide d’application avec My.Resources et My.Settings](../../../visual-basic/developing-apps/development-with-my/rapid-application-development-with-my-resources-and-my-settings.md)  
+ [Développement rapide d’application avec My.Resources et My.Settings](rapid-application-development-with-my-resources-and-my-settings.md)  
  Décrit les objets `My.Resources` et `My.Settings`, qui fournissent l’accès aux ressources et aux paramètres d’une application.  
   
- [Vue d’ensemble du modèle d’application Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
+ [Vue d'ensemble du modèle d'application Visual Basic](overview-of-the-visual-basic-application-model.md)  
  Décrit le modèle de démarrage/d’arrêt de l’application Visual Basic.  
   
- [Comment My dépend du type de projet](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
+ [Comment My dépend du type de projet](how-my-depends-on-project-type.md)  
  Donne des détails sur les fonctionnalités `My` qui sont disponibles dans différents types de projets.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -48,6 +48,6 @@ Visual Basic propose de nouvelles fonctionnalités pour le développement rapid
 - <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>
 - <xref:Microsoft.VisualBasic.Devices.Computer>
 - <xref:Microsoft.VisualBasic.ApplicationServices.User>
-- [My.Forms, objet](../../../visual-basic/language-reference/objects/my-forms-object.md)
-- [My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)
-- [Comment My dépend du type de projet](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)
+- [My.Forms, objet](../../language-reference/objects/my-forms-object.md)
+- [My.WebServices, objet](../../language-reference/objects/my-webservices-object.md)
+- [Comment My dépend du type de projet](how-my-depends-on-project-type.md)

@@ -2,15 +2,15 @@
 title: Sécurité LINQ to XML
 ms.date: 07/20/2015
 ms.assetid: d99b4af2-d447-4a3b-991b-6da0231a8637
-ms.openlocfilehash: 01b03dc5792981d41d16cc7b551892bd6fe2bcde
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2be3e2df81af046035832794766f3317e1e96e35
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74331743"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84368528"
 ---
 # <a name="linq-to-xml-security-visual-basic"></a>Sécurité LINQ to XML (Visual Basic)
-Cette rubrique décrit les problèmes de sécurité associés à LINQ to XML. En outre, elle fournit quelques conseils pour limiter l’exposition en termes de sécurité.  
+Cette rubrique décrit les problèmes de sécurité associés à LINQ to XML. De plus, elle fournit quelques conseils pour réduire l'exposition aux risques de sécurité.  
   
 ## <a name="linq-to-xml-security-overview"></a>Vue d'ensemble de la sécurité LINQ to XML  
  LINQ to XML est conçu plus à des fins de commodité de programmation que pour les applications côté serveur présentant des exigences de sécurité strictes. La plupart des scénarios XML impliquent le traitement de documents XML approuvés plutôt que le traitement de documents XML non approuvés chargés sur un serveur. LINQ to XML est optimisé pour ces scénarios.  
@@ -47,7 +47,7 @@ Cette rubrique décrit les problèmes de sécurité associés à LINQ to XML. En
 - Effectuez une validation soigneuse avant de construire des expressions XPath dynamiques.  
   
 ## <a name="linq-to-xml-security-issues"></a>Problèmes de sécurité liés à LINQ to XML  
- Les problèmes de sécurité évoqués dans cette rubrique ne sont pas présentés dans un ordre particulier. Tous ces problèmes sont importants et doivent être traités en conséquence.  
+ Les problèmes de sécurité mentionnés dans cette rubrique ne sont pas présentés dans un ordre particulier. Tous ces problèmes sont importants et doivent être traités en conséquence.  
   
  Une attaque par élévation de privilège réussie procure à un assembly malveillant davantage de contrôle sur son environnement. Une attaque par élévation de privilège réussie peut entraîner une divulgation des données, un déni de service et plus encore.  
   
@@ -56,7 +56,7 @@ Cette rubrique décrit les problèmes de sécurité associés à LINQ to XML. En
  Les attaques par déni de service font en sorte que l'analyseur XML ou LINQ to XML consomment des quantités de mémoire ou un temps processeur excessifs. Les attaques par déni de service sont considérés comme étant moins graves que les attaques par élévation de privilège ou les attaques par divulgation de données. Elles sont néanmoins importantes dans un scénario dans lequel un serveur doit traiter des documents XML provenant de sources non approuvées.  
   
 ### <a name="exceptions-and-error-messages-might-reveal-data"></a>Les exceptions et messages d'erreur peuvent révéler des données  
- La description d'une erreur peut révéler des données, par exemple les données transformées, des noms de fichiers ou des détails d'implémentation. Les messages d'erreur ne doivent pas être exposés aux appelants qui ne sont pas approuvés. Vous devez intercepter toutes les erreurs et les signaler avec vos messages d’erreur personnalisés.  
+ La description d'une erreur peut révéler des données, par exemple les données transformées, des noms de fichiers ou des détails d'implémentation. Les messages d'erreur ne doivent pas être exposés aux appelants qui ne sont pas approuvés. Vous devez intercepter toutes les erreurs et les signaler avec vos propres messages d'erreur personnalisés.  
   
 ### <a name="do-not-call-codeaccesspermissionsassert-in-an-event-handler"></a>N'appelez pas CodeAccessPermissions.Assert dans un gestionnaire d'événements  
  Un assembly peut avoir des autorisations inférieures ou supérieures. Un assembly qui a des autorisations supérieures dispose d'un meilleur contrôle sur l'ordinateur et ses environnements.  
@@ -66,22 +66,22 @@ Cette rubrique décrit les problèmes de sécurité associés à LINQ to XML. En
  Microsoft recommande de ne jamais appeler <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=nameWithType> dans un gestionnaire d'événements.  
   
 ### <a name="dtds-are-not-secure"></a>Les DTD ne sont pas sécurisés  
- Dans les DTD, les entités ne sont pas sécurisées. Un document XML malveillant contenant une DTD peut entraîner l’utilisation de toute la mémoire et de tout le temps processeur par l’analyseur, ce qui constitue une attaque par déni de service. Par conséquent, dans LINQ to XML, le traitement des DTD est désactivé par défaut. Vous ne devez pas accepter de DTD provenant de sources non approuvées.  
+ Les entités dans les DTD, par nature, ne sont pas sécurisées. Il est possible qu'un document XML malveillant contenant un DTD oblige l'analyseur à utiliser toute la mémoire et le temps processeur, ce qui constitue une attaque par déni de service. Par conséquent, dans LINQ to XML, le traitement des DTD est désactivé par défaut. Vous ne devez pas accepter de DTD provenant de sources non approuvées.  
   
- L'un des exemples de l'acceptation de DTD provenant de sources non approuvées est une application Web qui autorise les utilisateurs Web à télécharger un fichier XML qui fait référence à un DTD et un fichier DTD. Lors de la validation du fichier, une DTD malveillante pourrait déclencher une attaque par déni de service sur votre serveur. Un autre exemple consiste à faire référence à un DTD sur un partage réseau qui autorise également l'accès FTP anonyme.  
+ L'un des exemples de l'acceptation de DTD provenant de sources non approuvées est une application Web qui autorise les utilisateurs Web à télécharger un fichier XML qui fait référence à un DTD et un fichier DTD. Lors de la validation du fichier, un DTD malveillant pourrait déclencher une attaque par déni de service sur votre serveur. Un autre exemple consiste à faire référence à un DTD sur un partage réseau qui autorise également l'accès FTP anonyme.  
   
-### <a name="avoid-excessive-buffer-allocation"></a>Éviter l'allocation excessive de mémoire tampon  
+### <a name="avoid-excessive-buffer-allocation"></a>Évitez l'allocation de mémoire tampon excessive  
  Les développeurs d'applications doivent savoir que les sources de données extrêmement volumineuses peuvent entraîner un épuisement des ressources et des attaques par déni de service.  
   
  Si un utilisateur malveillant soumet ou télécharge un très grand document XML, il pourrait utiliser LINQ to XML pour consommer des ressources système excessives. Cela peut constituer une attaque par déni de service. Pour éviter ce problème, vous pouvez définir la propriété <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> et créer un lecteur limité quant à la taille des documents qu'il peut charger. Vous utilisez ensuite le lecteur pour créer l'arborescence XML.  
   
- Par exemple, si vous savez que la taille maximale attendue de vos documents XML provenant d'une source non approuvée sera inférieure à 50 Ko, affectez à la propriété <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> la valeur 100 000. Cela ne gênera pas le traitement de documents XML et, dans le même temps, atténuera le risque d’attaques par déni de service dues à des documents téléchargés susceptibles de consommer de grandes quantités de mémoire.  
+ Par exemple, si vous savez que la taille maximale attendue de vos documents XML provenant d'une source non approuvée sera inférieure à 50 Ko, affectez à la propriété <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> la valeur 100 000. Cela ne gênera pas le traitement de vos documents XML mais atténuera les menaces d'attaques par déni de service dans lesquelles des documents téléchargés pourraient consommer de grandes quantités de mémoire.  
   
 ### <a name="avoid-excess-entity-expansion"></a>Évitez l'extension d'entité excessive  
  L'une des attaques par déni de service connues en cas d'utilisation d'un DTD est un document qui provoque une extension d'entité excessive. Pour éviter ce problème, vous pouvez définir la propriété <xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A?displayProperty=nameWithType> et créer un lecteur limité quant au nombre de caractères résultant de l'extension d'entité. Vous utilisez ensuite le lecteur pour créer l'arborescence XML.  
   
-### <a name="limit-the-depth-of-the-xml-hierarchy"></a>Limitation de la profondeur de la hiérarchie XML  
- Une attaque par déni de service peut se produire quand un document soumis présente une profondeur de hiérarchie excessive. Pour éviter ce problème, vous pouvez encapsuler un objet <xref:System.Xml.XmlReader> dans votre propre classe qui compte la profondeur d'éléments. Si la profondeur dépasse un niveau raisonnable prédéterminé, vous pouvez terminer le traitement du document malveillant.  
+### <a name="limit-the-depth-of-the-xml-hierarchy"></a>Limitez la profondeur de la hiérarchie XML  
+ Une attaque par déni de service peut également se produire lorsqu'un document soumis possède une profondeur de hiérarchie excessive. Pour éviter ce problème, vous pouvez encapsuler un objet <xref:System.Xml.XmlReader> dans votre propre classe qui compte la profondeur d'éléments. Si la profondeur dépasse un niveau raisonnable prédéterminé, vous pouvez terminer le traitement du document malveillant.  
   
 ### <a name="protect-against-untrusted-xmlreader-or-xmlwriter-implementations"></a>Protégez-vous contre les implémentations XmlReader ou XmlWriter non approuvées  
  Les administrateurs doivent vérifier que toute implémentation <xref:System.Xml.XmlReader> ou <xref:System.Xml.XmlWriter> fournie par une source externe possède des noms forts et a été inscrite dans la configuration de l'ordinateur. Cela empêche le chargement de tout code malveillant se faisant passer pour un lecteur ou un writer.  
@@ -101,4 +101,4 @@ Cette rubrique décrit les problèmes de sécurité associés à LINQ to XML. En
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [Guide de programmation (LINQ to XML) (Visual Basic)](programming-guide-linq-to-xml.md)

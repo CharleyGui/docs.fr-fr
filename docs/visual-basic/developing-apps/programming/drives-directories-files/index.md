@@ -9,12 +9,12 @@ helpviewer_keywords:
 - files [Visual Basic], accessing
 - directories [Visual Studio], processing
 ms.assetid: f1db14c8-a4fd-4d0b-8323-c7cb29d688c2
-ms.openlocfilehash: 790cf5aa2d3fde779fcc24c0c9f1fc9c4c42331b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b69c65621f3849b07bd31f569fc4ae9fe04b50a6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74333946"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411562"
 ---
 # <a name="processing-drives-directories-and-files-visual-basic"></a>Manipulation de lecteurs, de répertoires et de fichiers (Visual Basic)
 
@@ -22,21 +22,21 @@ Vous pouvez utiliser Visual Basic pour manipuler des lecteurs, des dossiers et d
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Accès au fichier avec Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)  
+ [Accès au fichier avec Visual Basic](file-access.md)  
  Explique comment utiliser l’objet `My.Computer.FileSystem` pour manipuler des fichiers, des lecteurs et des dossiers.  
   
- [Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)  
+ [Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)](basics-of-net-framework-file-io-and-the-file-system.md)  
  Fournit une vue d’ensemble des concepts d’E/S de fichier dans le .NET Framework, à savoir les flux, le stockage isolé, les événements de fichier, les attributs de fichier et l’accès aux fichiers.  
   
- [Procédure pas à pas : manipulation de fichiers à l'aide de méthodes du .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
+ [Procédure pas à pas : manipulation de fichiers à l’aide de méthodes .NET Framework](walkthrough-manipulating-files-by-using-net-framework-methods.md)  
  Montre comment utiliser le .NET Framework pour manipuler des fichiers et des dossiers.  
   
- [Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ [Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic](walkthrough-manipulating-files-and-directories.md)  
  Montre comment utiliser l’objet `My.Computer.FileSystem` pour manipuler des fichiers et des dossiers.  
   
 ## <a name="related-sections"></a>Sections connexes  
 
- [Structure de programme et conventions de code](../../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [Structure de programme et conventions de code](../../../programming-guide/program-structure/program-structure-and-code-conventions.md)  
  Fournit des indications relatives à la structure physique et l’apparence des programmes.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
