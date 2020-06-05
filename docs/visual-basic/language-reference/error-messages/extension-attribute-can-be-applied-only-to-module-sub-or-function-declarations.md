@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
-ms.openlocfilehash: 2ed3a10cdf941bb8d1d7c00379736e04e8cad4d7
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 9b8f49c498699a8f7d1c4b329e82258501aa0c47
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583183"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363096"
 ---
 # <a name="extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations"></a>L'attribut 'Extension' ne peut être appliqué qu'aux déclarations 'Module', 'Sub' ou 'Function'
 
-La seule façon d’étendre un type de données dans Visual Basic consiste à définir une méthode d’extension dans un module standard. La méthode d’extension peut être une procédure `Sub` ou `Function`. Toutes les méthodes d’extension doivent être marquées avec l’attribut d’extension, `<Extension()>`, à partir de l’espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType>. Éventuellement, un module qui contient une méthode d’extension peut être marqué de la même façon. Aucune autre utilisation de l’attribut d’extension n’est valide.
+La seule façon d’étendre un type de données dans Visual Basic consiste à définir une méthode d’extension dans un module standard. La méthode d’extension peut être une `Sub` procédure ou une `Function` procédure. Toutes les méthodes d’extension doivent être marquées avec l’attribut d’extension, `<Extension()>` , à partir de l' <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> espace de noms. Éventuellement, un module qui contient une méthode d’extension peut être marqué de la même façon. Aucune autre utilisation de l’attribut d’extension n’est valide.
 
 **ID d’erreur :** BC36550
 
@@ -28,7 +28,7 @@ La seule façon d’étendre un type de données dans Visual Basic consiste à d
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant définit une méthode de `Print` pour le type de données `String`.
+L’exemple suivant définit une `Print` méthode pour le `String` type de données.
 
 ```vb
 Imports StringUtility
@@ -46,6 +46,6 @@ End Namespace
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md)
-- [Méthodes d’extension](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
-- [Module (instruction)](../../../visual-basic/language-reference/statements/module-statement.md)
+- [Vue d’ensemble des attributs](../../programming-guide/concepts/attributes/index.md)
+- [Méthodes d’extension](../../programming-guide/language-features/procedures/extension-methods.md)
+- [Module, instruction](../statements/module-statement.md)

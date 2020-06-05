@@ -1,5 +1,5 @@
 ---
-title: "Comment : créer une copie d'un fichier dans un autre répertoire"
+title: 'Procédure : créer une copie d’un fichier dans un autre répertoire'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.FileSystem.CopyFile method, copying files [Visual Basic]
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - CopyFile method [Visual Basic], copying files in Visual Basic
 - I/O [Visual Basic], copying files
 ms.assetid: 88e2145c-d414-45a5-ad03-6f5d58ecca26
-ms.openlocfilehash: e9a14e1f3743979548b92a3db653d09a470a1875
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3b4b41e105d6bb6a17fbb688aa4718b33c23b9d6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348832"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401691"
 ---
 # <a name="how-to-create-a-copy-of-a-file-in-a-different-directory-in-visual-basic"></a>Guide pratique pour créer une copie d'un fichier dans un autre répertoire en Visual Basic
 
@@ -61,7 +61,7 @@ La méthode `My.Computer.FileSystem.CopyFile` permet de copier des fichiers. Ses
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>
 - <xref:Microsoft.VisualBasic.FileIO.UICancelOption>
-- [Comment : copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
-- [Comment : créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
-- [Comment : copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)
-- [Comment : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+- [Procédure : copier des fichiers avec un modèle spécifique dans un répertoire](how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
+- [Procédure : créer une copie d’un fichier dans le même répertoire](how-to-create-a-copy-of-a-file-in-the-same-directory.md)
+- [Procédure : copier un répertoire vers un autre répertoire](how-to-copy-a-directory-to-another-directory.md)
+- [Procédure : renommer un fichier](how-to-rename-a-file.md)

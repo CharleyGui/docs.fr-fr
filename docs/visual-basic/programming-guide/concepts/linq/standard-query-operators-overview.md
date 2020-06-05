@@ -2,12 +2,12 @@
 title: Vue d'ensemble des opérateurs de requête standard
 ms.date: 07/20/2015
 ms.assetid: 302bd39e-2ec1-495b-94bf-37d370d6f05f
-ms.openlocfilehash: 0f68d175b526a9da86853272c47b5e7d7b4a5992
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 7c229a576f6695282473352d6253d2c699c76604
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201081"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406779"
 ---
 # <a name="standard-query-operators-overview-visual-basic"></a>Vue d’ensemble des opérateurs de requête standard (Visual Basic)
 
@@ -66,7 +66,7 @@ MsgBox(output.ToString())
 
 ## <a name="query-expression-syntax"></a>Syntaxe d’expression de requête
 
-Certains des opérateurs de requête standard les plus fréquemment utilisés ont une syntaxe de mot clé C# et Visual Basic Language dédiée qui leur permet d’être appelés dans le cadre d’une *expression*de *requête* . Pour plus d’informations sur les opérateurs de requête standard qui ont des mots clés dédiés et leurs syntaxes correspondantes, consultez [syntaxe des expressions de requête pour les opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md).
+Certains des opérateurs de requête standard les plus fréquemment utilisés ont une syntaxe de mot clé C# et Visual Basic Language dédiée qui leur permet d’être appelés dans le cadre d’une *expression*de *requête* . Pour plus d’informations sur les opérateurs de requête standard qui ont des mots clés dédiés et leurs syntaxes correspondantes, consultez [syntaxe des expressions de requête pour les opérateurs de requête standard (Visual Basic)](query-expression-syntax-for-standard-query-operators.md).
 
 ## <a name="extending-the-standard-query-operators"></a>Extension des opérateurs de requête standard
 
@@ -76,39 +76,39 @@ Vous pouvez augmenter l’ensemble d’opérateurs de requête standard en créa
 
 Les liens suivants renvoient à des rubriques contenant des informations supplémentaires sur les divers opérateurs de requête standard, selon leurs fonctionnalités.
 
-- [Tri des données](../../../../visual-basic/programming-guide/concepts/linq/sorting-data.md)
+- [Tri des données](sorting-data.md)
 
-- [Opérations de définition (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/set-operations.md)
+- [Opérations de définition (Visual Basic)](set-operations.md)
 
-- [Filtrage des données (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/filtering-data.md)
+- [Filtrage des données (Visual Basic)](filtering-data.md)
 
-- [Opérations de quantificateur (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md)
+- [Opérations de quantificateur (Visual Basic)](quantifier-operations.md)
 
-- [Opérations de projection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)
+- [Opérations de projection (Visual Basic)](projection-operations.md)
 
-- [Partitionnement des données (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/partitioning-data.md)
+- [Partitionnement des données (Visual Basic)](partitioning-data.md)
 
-- [Opérations de jointure (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md)
+- [Opérations de jointure (Visual Basic)](join-operations.md)
 
-- [Regroupement de données (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/grouping-data.md)
+- [Regroupement de données (Visual Basic)](grouping-data.md)
 
-- [Opérations de génération (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/generation-operations.md)
+- [Opérations de génération (Visual Basic)](generation-operations.md)
 
-- [Opérations d’égalité (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/equality-operations.md)
+- [Opérations d’égalité (Visual Basic)](equality-operations.md)
 
-- [Opérations d’élément (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/element-operations.md)
+- [Opérations d’élément (Visual Basic)](element-operations.md)
 
-- [Conversion des types de données (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/converting-data-types.md)
+- [Conversion des types de données (Visual Basic)](converting-data-types.md)
 
-- [Opérations de concaténation (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/concatenation-operations.md)
+- [Opérations de concaténation (Visual Basic)](concatenation-operations.md)
 
-- [Opérations d’agrégation (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/aggregation-operations.md)
+- [Opérations d’agrégation (Visual Basic)](aggregation-operations.md)
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.Enumerable>
 - <xref:System.Linq.Queryable>
-- [Introduction à LINQ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)
-- [Syntaxe des expressions de requête pour les opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
-- [Classification des opérateurs de requête standard par mode d’exécution (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md)
-- [Méthodes d’extension](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
+- [Introduction à LINQ (Visual Basic)](introduction-to-linq.md)
+- [Syntaxe des expressions de requête pour les opérateurs de requête standard (Visual Basic)](query-expression-syntax-for-standard-query-operators.md)
+- [Classification des opérateurs de requête standard par mode d’exécution (Visual Basic)](classification-of-standard-query-operators-by-manner-of-execution.md)
+- [Méthodes d’extension](../../language-features/procedures/extension-methods.md)
