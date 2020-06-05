@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Mid statement [Visual Basic]
 - strings [Visual Basic], replacing
 ms.assetid: 2b82d7a8-9646-4cb0-bec5-80abc98297bf
-ms.openlocfilehash: eeef4c13743b75a3d5e61ac46afb94d9ea105b7a
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 90408fd8a8cfc9b74c8422d0571d61f8534403f3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348029"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404449"
 ---
 # <a name="mid-statement"></a>Mid, instruction
-Remplace un nombre spécifié de caractères dans une variable `String` par des caractères d’une autre chaîne.  
+Remplace un nombre spécifié de caractères dans une `String` variable par des caractères d’une autre chaîne.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,47 +30,47 @@ Mid( _
 ) = StringExpression  
 ```  
   
-## <a name="parts"></a>Composants  
+## <a name="parts"></a>Éléments  
  `Target`  
- Requis. Nom de la variable `String` à modifier.  
+ Obligatoire. Nom de la `String` variable à modifier.  
   
  `Start`  
- Requis. expression `Integer`. Position du caractère dans `Target` où commence le remplacement de texte. `Start` utilise un index de base un.  
+ Obligatoire. Expression `Integer`. Position du caractère dans `Target` où commence le remplacement de texte. `Start`utilise un index de base un.  
   
  `Length`  
- Ce paramètre est facultatif. expression `Integer`. Nombre de caractères à remplacer. En cas d’omission, tous les `String` sont utilisés.  
+ Facultatif. Expression `Integer`. Nombre de caractères à remplacer. En cas d’omission, All `String` est utilisé.  
   
  `StringExpression`  
- Requis. expression `String` qui remplace une partie de `Target`.  
+ Obligatoire. `String`expression qui remplace une partie de `Target` .  
   
 ## <a name="exceptions"></a>Exceptions  
   
-|Type d’exception|Condition|  
+|Type d'exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.ArgumentException>|`Start` < = 0 ou `Length` < 0.|  
+|<xref:System.ArgumentException>|`Start`<= 0 ou `Length` < 0.|  
   
 ## <a name="remarks"></a>Notes  
- Le nombre de caractères remplacés est toujours inférieur ou égal au nombre de caractères dans `Target`.  
+ Le nombre de caractères remplacés est toujours inférieur ou égal au nombre de caractères dans `Target` .  
   
- Visual Basic a une fonction <xref:Microsoft.VisualBasic.Strings.Mid%2A> et une instruction `Mid`. Ces éléments agissent tous deux sur un nombre spécifié de caractères dans une chaîne, mais la fonction `Mid` retourne les caractères lorsque l’instruction `Mid` remplace les caractères. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Strings.Mid%2A>.  
+ Visual Basic a une <xref:Microsoft.VisualBasic.Strings.Mid%2A> fonction et une `Mid` instruction. Ces éléments agissent tous deux sur un nombre spécifié de caractères dans une chaîne, mais la `Mid` fonction retourne les caractères lorsque l' `Mid` instruction remplace les caractères. Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.Strings.Mid%2A>.  
   
 > [!NOTE]
-> L’instruction `MidB` des versions antérieures de Visual Basic remplace une sous-chaîne en octets plutôt que des caractères. Il est principalement utilisé pour convertir des chaînes dans des applications DBCS (Double-Byte Character Set). Toutes les chaînes Visual Basic sont au format Unicode et `MidB` ne sont plus prises en charge.  
+> L' `MidB` instruction des versions antérieures de Visual Basic remplace une sous-chaîne en octets plutôt que des caractères. Il est principalement utilisé pour convertir des chaînes dans des applications DBCS (Double-Byte Character Set). Toutes les chaînes Visual Basic sont au format Unicode et ne `MidB` sont plus prises en charge.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise l’instruction `Mid` pour remplacer un nombre spécifié de caractères dans une variable String par des caractères d’une autre chaîne.  
+ Cet exemple utilise l' `Mid` instruction pour remplacer un nombre spécifié de caractères dans une variable String par des caractères d’une autre chaîne.  
   
  [!code-vb[VbVbalrStrings#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#5)]  
   
-## <a name="requirements"></a>Configuration requise  
- **Espace de noms :** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+## <a name="requirements"></a>Spécifications  
+ **Espace de noms :** [Microsoft. VisualBasic](../runtime-library-members.md)  
   
- **Module :** `Strings`  
+ **Module :**`Strings`  
   
  **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.Strings.Mid%2A>
-- [Chaînes](../../../visual-basic/programming-guide/language-features/strings/index.md)
-- [Introduction aux chaînes en Visual Basic](../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+- [Chaînes](../../programming-guide/language-features/strings/index.md)
+- [Introduction aux chaînes en Visual Basic](../../programming-guide/language-features/strings/introduction-to-strings.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - text files [Visual Basic], writing event information to a text file
 - events [Visual Basic], writing event information to a text file
 ms.assetid: 9ca7cc03-bf99-4933-9e5e-61ee28e9a6b4
-ms.openlocfilehash: c3c81e331eb3d8ee450ba0cac38e57976846ee63
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6e83f8450ca7be8a2dcd5ff43eab3dd2ec0d2f1b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74352073"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410060"
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>Guide pratique pour écrire des informations sur des événements dans un fichier texte (Visual Basic)
 
@@ -29,11 +29,11 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
 
     2. Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **Fichier de configuration de l’application**.
 
-    3. Cliquez sur **Ajouter**.
+    3. Cliquez sur **Add**.
 
 2. Recherchez la section `<listeners>` dans le fichier de configuration de l’application.
 
-     Vous pouvez trouver la section \<listeners> dans la section \<source> avec l’attribut de nom « DefaultSource », qui est imbriquée dans la section \<system.diagnostics>, elle-même imbriquée sous la section \<configuration> de plus haut niveau.
+     Vous pouvez trouver la section \<listeners> dans la section \<source> avec l’attribut de nom « DefaultSource », qui est imbriquée dans la section \<system.diagnostics> , elle-même imbriquée sous la section \<configuration> de plus haut niveau.
 
 3. Ajoutez cet élément à cette section `<listeners>` :
 
@@ -62,7 +62,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
 
 ### <a name="to-write-event-information-to-the-file-log"></a>Pour écrire des informations sur les événements dans le journal du fichier
 
-Utilisez la méthode `My.Application.Log.WriteEntry` ou `My.Application.Log.WriteException` pour écrire des informations dans le journal du fichier. Pour plus d’informations, consultez [Guide pratique pour écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) et [Guide pratique pour enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Utilisez la méthode `My.Application.Log.WriteEntry` ou `My.Application.Log.WriteException` pour écrire des informations dans le journal du fichier. Pour plus d’informations, consultez [Guide pratique pour écrire des messages de journal](how-to-write-log-messages.md) et [Guide pratique pour enregistrer des exceptions](how-to-log-exceptions.md).
 
 Une fois l’écouteur de journalisation du fichier configuré pour un assembly, il reçoit tous les messages écrits par `My.Application.Log` à partir de cet assembly.
 
@@ -71,5 +71,5 @@ Une fois l’écouteur de journalisation du fichier configuré pour un assembly,
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Procédure : journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Utilisation des journaux des applications](working-with-application-logs.md)
+- [Procédure : journaliser des exceptions](how-to-log-exceptions.md)

@@ -2,12 +2,12 @@
 title: Utilisation de la variance dans les interfaces pour les collections génériques
 ms.date: 07/20/2015
 ms.assetid: c867fcea-7462-4995-b9c5-542feec74036
-ms.openlocfilehash: 6ee133dfd61d7d7a88243ca592642ff21e0c2223
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b762ce42215f9b24371313446637e95962677bfb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349020"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375639"
 ---
 # <a name="using-variance-in-interfaces-for-generic-collections-visual-basic"></a>Utilisation de la variance dans les interfaces pour les collections génériques (Visual Basic)
 
@@ -15,7 +15,7 @@ Une interface covariante permet à ses méthodes de retourner des types plus dé
 
 Dans .NET Framework 4, plusieurs interfaces existantes sont devenues covariantes et contravariantes. Celles-ci comprennent <xref:System.Collections.Generic.IEnumerable%601> et <xref:System.IComparable%601>. Cela vous permet de réutiliser des méthodes qui fonctionnent avec les collections génériques de types de base pour les collections de types dérivés.
 
-Pour obtenir la liste des interfaces de type Variant dans le .NET Framework, consultez [variance dans les interfaces génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).
+Pour obtenir la liste des interfaces de type Variant dans le .NET Framework, consultez [variance dans les interfaces génériques (Visual Basic)](variance-in-generic-interfaces.md).
 
 ## <a name="converting-generic-collections"></a>Conversion de collections génériques
 
@@ -53,7 +53,7 @@ End Sub
 
 ## <a name="comparing-generic-collections"></a>Comparaison de collections génériques
 
-L’exemple suivant illustre les avantages de la prise en charge de la contravariance dans l’interface <xref:System.Collections.Generic.IComparer%601>. La classe `PersonComparer` implémente l'interface `IComparer(Of Person)`. Toutefois, vous pouvez réutiliser cette classe pour comparer une séquence d’objets de type `Employee`, car `Employee` hérite de `Person`.
+L’exemple suivant illustre les avantages de la prise en charge de la contravariance dans l’interface <xref:System.Collections.Generic.IComparer%601>. La classe `PersonComparer` implémente l’interface `IComparer(Of Person)`. Toutefois, vous pouvez réutiliser cette classe pour comparer une séquence d’objets de type `Employee`, car `Employee` hérite de `Person`.
 
 ```vb
 ' Simple hierarchy of classes.
@@ -114,4 +114,4 @@ End Sub
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Variance dans les interfaces génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
+- [Variance dans les interfaces génériques (Visual Basic)](variance-in-generic-interfaces.md)

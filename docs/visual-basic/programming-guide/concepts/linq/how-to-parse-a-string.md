@@ -1,19 +1,19 @@
 ---
-title: 'Comment : analyser une chaîne'
+title: 'Procédure : analyser une chaîne'
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-ms.openlocfilehash: 31bae00eb3ebf0d8e64fc657693e8c0767c4f5d4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0a9076fc516bb8e6bc74732ca252fabfeda43d53
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344496"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398010"
 ---
 # <a name="how-to-parse-a-string-visual-basic"></a>Comment : analyser une chaîne (Visual Basic)
-Cette rubrique montre comment créer une arborescence XML dans C#.  
+Cette rubrique montre comment créer une arborescence XML en C#.  
   
 ## <a name="example"></a>Exemple  
- Vous pouvez analyser une chaîne dans Visual Basic à l’aide de la méthode `XElement.Parse`. Toutefois, il est plus efficace d'utiliser des littéraux XML, comme illustré dans le code suivant, car leur impact sur les performances n'est pas aussi sévère que l'analyse de code XML à partir d'une chaîne.  
+ Vous pouvez analyser une chaîne dans Visual Basic à l’aide de la `XElement.Parse` méthode. Toutefois, il est plus efficace d'utiliser des littéraux XML, comme illustré dans le code suivant, car leur impact sur les performances n'est pas aussi sévère que l'analyse de code XML à partir d'une chaîne.  
   
  En utilisant des littéraux XML, vous pouvez simplement copier et coller votre code XML dans votre programme Visual Basic.  
   
@@ -51,4 +51,4 @@ Dim contacts as XElement = _
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analyse XML (Visual Basic)](parsing-xml.md)

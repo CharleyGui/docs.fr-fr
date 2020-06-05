@@ -1,5 +1,5 @@
 ---
-title: 'Comment : appeler une fonction Windows qui possède des types non signés'
+title: 'Procédure : Appeler une fonction Windows qui accepte des types non signés'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Windows functions [Visual Basic], calling
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - data types [Visual Basic], numeric
 - unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-ms.openlocfilehash: 790c680744e2100a40a7cea8b8cef80c68d586bb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f30b78a2f0c38f233796e18006c889438dce4c58
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348731"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396828"
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Comment : appeler une fonction Windows qui possède des types non signés (Visual Basic)
 
@@ -27,15 +27,15 @@ Si vous utilisez une classe, un module ou une structure qui a des membres de typ
 
 ## <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>Pour appeler une fonction Windows qui accepte un type non signé
 
-1. Utilisez une [instruction DECLARE](../../../visual-basic/language-reference/statements/declare-statement.md) pour indiquer Visual Basic la bibliothèque qui contient la fonction, son nom dans cette bibliothèque, son ordre d’appel, et comment convertir des chaînes lors de son appel.
+1. Utilisez une [instruction DECLARE](../../language-reference/statements/declare-statement.md) pour indiquer Visual Basic la bibliothèque qui contient la fonction, son nom dans cette bibliothèque, son ordre d’appel, et comment convertir des chaînes lors de son appel.
 
-2. Dans l’instruction `Declare`, utilisez `UInteger`, `ULong`, `UShort`ou `Byte` comme il convient pour chaque paramètre avec un type non signé.
+2. Dans l' `Declare` instruction, utilisez `UInteger` , `ULong` , `UShort` ou, `Byte` selon le cas, pour chaque paramètre avec un type non signé.
 
 3. Consultez la documentation de la fonction Windows que vous appelez pour rechercher les noms et les valeurs des constantes qu’elle utilise. Un grand nombre d’entre eux sont définis dans le fichier WinUser. h.
 
-4. Déclarez les constantes nécessaires dans votre code. De nombreuses constantes Windows sont des valeurs non signées de 32 bits, et vous devez déclarer ces `As UInteger`.
+4. Déclarez les constantes nécessaires dans votre code. De nombreuses constantes Windows sont des valeurs non signées de 32 bits, et vous devez les déclarer `As UInteger` .
 
-5. Appelez la fonction de manière normale. L’exemple suivant appelle la fonction Windows `MessageBox`, qui accepte un argument entier non signé.
+5. Appelez la fonction de manière normale. L’exemple suivant appelle la fonction Windows `MessageBox` , qui accepte un argument d’entier non signé.
 
     ```vb
     Public Class windowsMessage
@@ -60,7 +60,7 @@ Si vous utilisez une classe, un module ou une structure qui a des membres de typ
     End Class
     ```
 
-     Vous pouvez tester la fonction `messageThroughWindows` à l’aide du code suivant.
+     Vous pouvez tester la fonction `messageThroughWindows` avec le code suivant.
 
     ```vb
     Public Sub consumeWindowsMessage()
@@ -70,7 +70,7 @@ Si vous utilisez une classe, un module ou une structure qui a des membres de typ
     ```
 
     > [!CAUTION]
-    > Les types de données `UInteger`, `ULong`, `UShort`et `SByte` ne font pas partie de l' [indépendance du langage et des composants indépendants du langage](../../../standard/language-independence-and-language-independent-components.md) (CLS). par conséquent, le code conforme CLS ne peut pas consommer un composant qui les utilise.
+    > Les `UInteger` `ULong` `UShort` types de données,, et ne `SByte` font pas partie de l' [indépendance du langage et des composants indépendants du langage](../../../standard/language-independence-and-language-independent-components.md) (CLS). par conséquent, le code conforme CLS ne peut pas consommer un composant qui les utilise.
 
     > [!IMPORTANT]
     > Le fait d’appeler du code non managé, tel que l’interface de programmation d’applications (API) Windows, expose votre code à des risques de sécurité potentiels.
@@ -80,8 +80,8 @@ Si vous utilisez une classe, un module ou une structure qui a des membres de typ
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](../../../visual-basic/language-reference/data-types/index.md)
-- [Integer (type de données)](../../../visual-basic/language-reference/data-types/integer-data-type.md)
-- [UInteger (type de données)](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)
-- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
-- [Procédure pas à pas : appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)
+- [Types de données](../../language-reference/data-types/index.md)
+- [Entier (type de données)](../../language-reference/data-types/integer-data-type.md)
+- [UInteger (type de données)](../../language-reference/data-types/uinteger-data-type.md)
+- [Declare Statement](../../language-reference/statements/declare-statement.md)
+- [Procédure pas à pas : Appel des API Windows](walkthrough-calling-windows-apis.md)

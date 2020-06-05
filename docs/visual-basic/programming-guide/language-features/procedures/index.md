@@ -8,21 +8,21 @@ helpviewer_keywords:
 - structured code [Visual Basic], procedures
 - procedures
 ms.assetid: 9effbcf0-80a0-4d1a-98f4-2c6920592766
-ms.openlocfilehash: b959f4b6986bc325c97c7cbe9aeee0341832f6cc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c0d9921704570c6984b203817aed8f5546b2f936
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345990"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408788"
 ---
 # <a name="procedures-in-visual-basic"></a>Procédures dans Visual Basic
-Une *procédure* est un bloc de Visual Basic instructions encadrées par une instruction de déclaration (`Function`, `Sub`, `Operator`, `Get`, `Set`) et une déclaration `End` correspondante. Toutes les instructions exécutables dans Visual Basic doivent se trouver dans une procédure.  
+Une *procédure* est un bloc de Visual Basic instructions encadrées par une instruction de déclaration ( `Function` , `Sub` ,, `Operator` `Get` , `Set` ) et une `End` déclaration correspondante. Toutes les instructions exécutables dans Visual Basic doivent se trouver dans une procédure.  
   
 ## <a name="calling-a-procedure"></a>Appel d’une procédure  
  Vous appelez une procédure à partir d’une autre partie du code. Il s’agit d’un *appel de procédure*. Une fois la procédure exécutée, elle renvoie le contrôle au code qui l’a appelée, opération qui se nomme *appel du code*. Le code appelant est une instruction ou une expression au sein d’une instruction, qui désigne la procédure par nom et lui transfère le contrôle.  
   
 ## <a name="returning-from-a-procedure"></a>Retour d’une procédure  
- Une procédure retourne le contrôle au code appelant lorsqu’elle est terminée. Pour cela, elle peut utiliser une [instruction de retour](../../../../visual-basic/language-reference/statements/return-statement.md), l’instruction [Exit Statement](../../../../visual-basic/language-reference/statements/exit-statement.md) correspondant à la procédure, ou l’instruction [End \<keyword> Statement](../../../../visual-basic/language-reference/statements/end-keyword-statement.md). Le contrôle passe ensuite au code appelant après le point de l’appel de procédure.  
+ Une procédure retourne le contrôle au code appelant lorsqu’elle est terminée. Pour ce faire, il peut utiliser une [instruction return](../../../language-reference/statements/return-statement.md), l’instruction de [sortie](../../../language-reference/statements/exit-statement.md) appropriée pour la procédure ou l’instruction [end de \<keyword> ](../../../language-reference/statements/end-keyword-statement.md) la procédure. Le contrôle passe ensuite au code appelant après le point de l’appel de procédure.  
   
 - Avec une instruction `Return`, le contrôle retourne immédiatement au code appelant. Les instructions qui suivent l’instruction `Return` ne s’exécutent pas. Vous pouvez utiliser plusieurs instructions `Return` dans la même procédure.  
   
@@ -48,7 +48,7 @@ Une *procédure* est un bloc de Visual Basic instructions encadrées par une ins
   
 - Les [procédures Operator](./operator-procedures.md) définissent le comportement d’un opérateur standard lorsqu’un ou les deux opérandes représentent une structure ou classe qui vient d’être définie.  
   
-- Les [procédures génériques dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md) définissent un ou plusieurs *paramètres de type* en plus de leurs paramètres normaux, et le code appelant peut donc passer des types de données spécifiques chaque fois qu’il effectue un appel.  
+- Les [procédures génériques dans Visual Basic](../data-types/generic-procedures.md) définissent un ou plusieurs *paramètres de type* en plus de leurs paramètres normaux, et le code appelant peut donc passer des types de données spécifiques chaque fois qu’il effectue un appel.  
   
 ## <a name="procedures-and-structured-code"></a>Procédures et code structuré  
  Chaque ligne de code exécutable dans votre application doit figurer à l’intérieur d’une procédure, par exemple `Main`, `calculate`, ou `Button1_Click`. Si vous décomposez des procédures complexes en procédures plus simples, votre application devient plus lisible.  
@@ -64,12 +64,12 @@ Une *procédure* est un bloc de Visual Basic instructions encadrées par une ins
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide pratique : créer une procédure](./how-to-create-a-procedure.md)
-- [Procédures Sub](./sub-procedures.md)
-- [Procédures Function](./function-procedures.md)
-- [Procédures de propriété](./property-procedures.md)
-- [Procédures d’opérateur](./operator-procedures.md)
+- [Sub, procédures](./sub-procedures.md)
+- [Function, procédures](./function-procedures.md)
+- [Procédures Property](./property-procedures.md)
+- [Procédures d'opérateur](./operator-procedures.md)
 - [Paramètres et arguments d’une procédure](./procedure-parameters-and-arguments.md)
 - [Procédures récursives](./recursive-procedures.md)
 - [Surcharge de procédure](./procedure-overloading.md)
-- [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
-- [Objets et classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Generic Procedures in Visual Basic](../data-types/generic-procedures.md)
+- [Objets et classes](../objects-and-classes/index.md)
