@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : création d’objets COM'
+title: 'Procédure pas à pas : Création d’objets COM'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop [Visual Basic], creating COM objects
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-ms.openlocfilehash: 5d00aff07358a0c40159fde9c12c70e0842d848b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: bb312317b2bbcb77bed9e3966db6d9fd5db79e4c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74338617"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396738"
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Procédure pas à pas : création d'objets COM avec Visual Basic
 Lors de la création d’applications ou de composants, il est préférable de créer des assemblys .NET Framework. Toutefois, Visual Basic permet également d’exposer facilement un composant .NET Framework à COM. Cela vous permet de fournir de nouveaux composants pour les suites d’applications antérieures qui requièrent des composants COM. Cette procédure pas à pas montre comment utiliser Visual Basic pour exposer des objets .NET Framework en tant qu’objets COM, avec et sans le modèle de classe COM.  
@@ -21,7 +21,7 @@ Lors de la création d’applications ou de composants, il est préférable de c
  Le moyen le plus simple d’exposer des objets COM consiste à utiliser le modèle de classe COM. Le modèle de classe COM crée une nouvelle classe, puis configure votre projet pour générer la couche d’interopérabilité et la classe en tant qu’objet COM et l’inscrire auprès du système d’exploitation.  
   
 > [!NOTE]
-> Bien que vous puissiez également exposer une classe créée dans Visual Basic en tant qu’objet COM pour le code non managé à utiliser, il ne s’agit pas d’un objet COM réel et ne peut pas être utilisé par Visual Basic. Pour plus d’informations, consultez [interopérabilité COM dans les Applications .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
+> Bien que vous puissiez également exposer une classe créée dans Visual Basic en tant qu’objet COM pour le code non managé à utiliser, il ne s’agit pas d’un objet COM réel et ne peut pas être utilisé par Visual Basic. Pour plus d’informations, consultez [interopérabilité COM dans les Applications .NET Framework](com-interoperability-in-net-framework-applications.md).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -58,43 +58,43 @@ Lors de la création d’applications ou de composants, il est préférable de c
   
 1. Dans **Explorateur de solutions**, double-cliquez sur **Class1. vb** pour afficher son code.  
   
-2. Renommez la classe `ComClass1`.  
+2. Renommez la classe en `ComClass1`.  
   
-3. Ajoutez les constantes suivantes à `ComClass1`. Ils stockent les constantes d’identificateur global unique (GUID) que les objets COM doivent avoir.  
+3. Ajoutez les constantes suivantes à `ComClass1` . Ils stockent les constantes d’identificateur global unique (GUID) que les objets COM doivent avoir.  
   
      [!code-vb[VbVbalrInterop#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#2)]  
   
 4. Dans le menu **Outils**, cliquez sur **Créer un Guid**. Dans la boîte de dialogue **Créer un Guid**, cliquez sur **Format du Registre**, puis sur **Copier**. Cliquez sur **Quitter**.  
   
-5. Remplacez la chaîne vide du `ClassId` par le GUID, en supprimant les accolades de début et de fin. Par exemple, si le GUID fourni par Guidgen est `"{2C8B0AEE-02C9-486e-B809-C780A11530FE}"`, votre code doit se présenter comme suit.  
+5. Remplacez la chaîne vide pour `ClassId` par le GUID, en supprimant les accolades de début et de fin. Par exemple, si le GUID fourni par Guidgen est, `"{2C8B0AEE-02C9-486e-B809-C780A11530FE}"` votre code doit se présenter comme suit.  
   
      [!code-vb[VbVbalrInterop#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#3)]  
   
-6. Répétez les étapes précédentes pour les constantes `InterfaceId` et `EventsId`, comme dans l’exemple suivant.  
+6. Répétez les étapes précédentes pour `InterfaceId` les `EventsId` constantes et, comme dans l’exemple suivant.  
   
      [!code-vb[VbVbalrInterop#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#4)]  
   
     > [!NOTE]
     > Assurez-vous que les GUID sont nouveaux et uniques. dans le cas contraire, votre composant COM risque d’entrer en conflit avec d’autres composants COM.  
   
-7. Ajoutez l’attribut `ComClass` à `ComClass1`, en spécifiant les GUID pour l’ID de classe, l’ID d’interface et l’ID des événements, comme dans l’exemple suivant :  
+7. Ajoutez l' `ComClass` attribut à `ComClass1` , en spécifiant les GUID pour l’ID de classe, l’ID d’interface et l’ID d’événements, comme dans l’exemple suivant :  
   
      [!code-vb[VbVbalrInterop#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#5)]  
   
-8. Les classes COM doivent avoir un constructeur `Public Sub New()` sans paramètre ou la classe ne sera pas inscrite correctement. Ajoutez un constructeur sans paramètre à la classe :  
+8. Les classes COM doivent avoir un constructeur sans paramètre `Public Sub New()` ou la classe ne sera pas inscrite correctement. Ajoutez un constructeur sans paramètre à la classe :  
   
      [!code-vb[VbVbalrInterop#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#6)]  
   
-9. Ajoutez des propriétés, des méthodes et des événements à la classe, en la terminant par une instruction `End Class`. Dans le menu **générer** , sélectionnez **générer la solution** . Visual Basic génère l’assembly et inscrit l’objet COM auprès du système d’exploitation.  
+9. Ajoutez des propriétés, des méthodes et des événements à la classe, en la terminant par une `End Class` instruction. Dans le menu **générer** , sélectionnez **générer la solution** . Visual Basic génère l’assembly et inscrit l’objet COM auprès du système d’exploitation.  
   
     > [!NOTE]
-    > Les objets COM que vous générez avec Visual Basic ne peuvent pas être utilisés par d’autres applications Visual Basic, car il ne s’agit pas d’objets COM véritables. Toute tentative d’ajout de références à ces objets COM génère une erreur. Pour plus d’informations, consultez [interopérabilité COM dans les Applications .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
+    > Les objets COM que vous générez avec Visual Basic ne peuvent pas être utilisés par d’autres applications Visual Basic, car il ne s’agit pas d’objets COM véritables. Toute tentative d’ajout de références à ces objets COM génère une erreur. Pour plus d’informations, consultez [interopérabilité COM dans les Applications .NET Framework](com-interoperability-in-net-framework-applications.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.ComClassAttribute>
-- [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)
-- [Procédure pas à pas : implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
-- [#Region (directive)](../../../visual-basic/language-reference/directives/region-directive.md)
-- [Interopérabilité COM dans les applications .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)
-- [Dépannage des problèmes liés à l’interopérabilité](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
+- [COM Interop](index.md)
+- [Procédure pas à pas : Implémentation de l’héritage avec les objets COM](walkthrough-implementing-inheritance-with-com-objects.md)
+- [#Region directive](../../language-reference/directives/region-directive.md)
+- [Interopérabilité COM dans les applications .NET Framework](com-interoperability-in-net-framework-applications.md)
+- [Dépannage de l’interopérabilité](troubleshooting-interoperability.md)

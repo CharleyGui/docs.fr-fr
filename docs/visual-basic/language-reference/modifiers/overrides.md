@@ -13,12 +13,12 @@ helpviewer_keywords:
 - overriding, Overrides keyword
 - properties [Visual Basic], overriding
 ms.assetid: 9f5e6144-ce10-465e-842b-1a8f8760af90
-ms.openlocfilehash: 04f1cb27d6a8366c2dd13f8fdc1d975d382f1cfd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 657f838b2959a5b6a7cef5ff18295a4ada709e9a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351385"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392026"
 ---
 # <a name="overrides-visual-basic"></a>Overrides (Visual Basic)
 
@@ -30,7 +30,7 @@ Spécifie qu'une propriété ou procédure substitue une propriété ou procédu
 
 - **Modificateurs combinés.** Vous ne pouvez pas spécifier `Overrides` avec `Shadows` ou `Shared` dans la même déclaration. Comme un élément de substitution est implicitement substituable, vous ne pouvez pas combiner `Overridable` avec `Overrides`.
 
-- **Signatures correspondantes.** La signature de cette déclaration doit correspondre exactement à la *signature* de la propriété ou de la procédure qu’elle remplace. Cela signifie que les listes de paramètres doivent avoir le même nombre de paramètres, dans le même ordre, avec les mêmes types de données.
+- **Correspondance entre signatures.** La signature de cette déclaration doit correspondre exactement à la *signature* de la propriété ou de la procédure qu’elle remplace. Cela signifie que les listes de paramètres doivent avoir le même nombre de paramètres, dans le même ordre, avec les mêmes types de données.
 
   Outre la signature, la déclaration de substitution doit également correspondre exactement à ce qui suit :
 
@@ -42,30 +42,30 @@ Spécifie qu'une propriété ou procédure substitue une propriété ou procédu
 
 - **Correspondance supplémentaire.** Cette déclaration doit non seulement correspondre à la signature de la version de la classe de base, mais aussi lui correspondre selon les critères suivants :
 
-  - Modificateur de niveau d’accès (par exemple, [public](../../../visual-basic/language-reference/modifiers/public.md))
+  - Modificateur de niveau d’accès (par exemple, [public](public.md))
 
-  - Mécanisme de passage de chaque paramètre ([ByVal](../../../visual-basic/language-reference/modifiers/byval.md) ou [ByRef](../../../visual-basic/language-reference/modifiers/byref.md))
+  - Mécanisme de passage de chaque paramètre ([ByVal](byval.md) ou [ByRef](byref.md))
 
   - Listes de contraintes pour chaque paramètre de type d'une procédure générique
 
-- **Occultation et substitution.** L'occultation et la substitution redéfinissent toutes les deux un élément hérité, mais il existe des différences importantes entre ces deux approches. Pour plus d’informations, consultez [occultation dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).
+- **Occultation et substitution.** L'occultation et la substitution redéfinissent toutes les deux un élément hérité, mais il existe des différences importantes entre ces deux approches. Pour plus d’informations, consultez [occultation dans Visual Basic](../../programming-guide/language-features/declared-elements/shadowing.md).
 
 Si vous utilisez `Overrides`, le compilateur ajoute implicitement `Overloads` afin que vos API de bibliothèque fonctionnent plus facilement avec C#.
 
 Le modificateur `Overrides` peut être utilisé dans les contextes suivants :
 
-- [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Function (instruction)](../statements/function-statement.md)
 
-- [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Property Statement](../statements/property-statement.md)
 
-- [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Sub (instruction)](../statements/sub-statement.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)
-- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)
-- [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
-- [Occultation dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
-- [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [Liste de types](../../../visual-basic/language-reference/statements/type-list.md)
+- [MustOverride](mustoverride.md)
+- [NotOverridable](notoverridable.md)
+- [Overridable](overridable.md)
+- [Mots clés](../keywords/index.md)
+- [Occultation dans Visual Basic](../../programming-guide/language-features/declared-elements/shadowing.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [Type List](../statements/type-list.md)

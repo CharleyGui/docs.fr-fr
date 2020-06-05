@@ -9,18 +9,18 @@ helpviewer_keywords:
 - streams
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
-ms.openlocfilehash: 5d60d0089d042c0be343c741c26de0b4b7778d6d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 187a20617ec901e722a30ebfa571e4a55ed0b5c3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348942"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401795"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)
 
 Les classes de l’espace de noms <xref:System.IO> sont utilisées pour travailler avec les lecteurs, les fichiers et les répertoires.
 
-L’espace de noms <xref:System.IO> contient les classes <xref:System.IO.File> et <xref:System.IO.Directory>, qui fournissent la fonctionnalité .NET Framework permettant de manipuler des fichiers et des répertoires. Les méthodes de ces objets étant des membres statiques ou partagés, vous pouvez les utiliser directement sans créer d’abord une instance de la classe. Les classes <xref:System.IO.FileInfo> et <xref:System.IO.DirectoryInfo>, familières aux utilisateurs de la fonctionnalité `My`, sont associées à ces classes. Pour utiliser ces classes, vous devez qualifier complètement les noms ou importer les espaces de noms appropriés en incluant les instructions `Imports` au début du code affecté. Pour plus d’informations, consultez [Instruction Imports (espace de noms et type .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).
+L’espace de noms <xref:System.IO> contient les classes <xref:System.IO.File> et <xref:System.IO.Directory>, qui fournissent la fonctionnalité .NET Framework permettant de manipuler des fichiers et des répertoires. Les méthodes de ces objets étant des membres statiques ou partagés, vous pouvez les utiliser directement sans créer d’abord une instance de la classe. Les classes <xref:System.IO.FileInfo> et <xref:System.IO.DirectoryInfo>, familières aux utilisateurs de la fonctionnalité `My`, sont associées à ces classes. Pour utiliser ces classes, vous devez qualifier complètement les noms ou importer les espaces de noms appropriés en incluant les instructions `Imports` au début du code affecté. Pour plus d’informations, consultez [Instruction Imports (espace de noms et type .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md).
 
 > [!NOTE]
 > Les autres rubriques de cette section utilisent l’objet `My.Computer.FileSystem` au lieu des classes `System.IO` pour travailler avec des lecteurs, des fichiers et des répertoires. L’objet `My.Computer.FileSystem` est destiné principalement à une utilisation dans des programmes Visual Basic. Les classes `System.IO` sont destinées à être utilisées par tout langage qui prend en charge le .NET Framework, notamment Visual Basic.
@@ -35,9 +35,9 @@ Le .NET Framework utilise des flux pour prendre en charge la lecture et l’écr
 
 Les données contenues dans le flux peuvent provenir de la mémoire, d’un fichier ou d’un socket TCP/IP. Des opérations fondamentales peuvent être appliquées aux flux :
 
-- **Lecture**. Vous pouvez lire à partir d’un flux, autrement dit transférer des données du flux vers une structure de données, telle qu’une chaîne ou un tableau d’octets.
+- **Lecture en lecture**. Vous pouvez lire à partir d’un flux, autrement dit transférer des données du flux vers une structure de données, telle qu’une chaîne ou un tableau d’octets.
 
-- **Écriture**. Vous pouvez écrire dans un flux, autrement dit transférer des données d’une source de données vers le flux.
+- **Écriture en écriture**. Vous pouvez écrire dans un flux, autrement dit transférer des données d’une source de données vers le flux.
 
 - **Recherche**. Vous pouvez interroger et modifier votre position dans le flux.
 
@@ -62,7 +62,7 @@ Le tableau suivant répertorie les tâches couramment accomplies avec un flux :
 |À|Consultez|
 |---|---|
 |Lire et écrire dans un fichier de données|[Procédure : lire et écrire dans un fichier de données créé récemment](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
-|Lire le texte d’un fichier|[Procédure : lire le texte d’un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
+|Lire du texte dans un fichier|[Procédure : lire le texte d’un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
 |Écrire du texte dans un fichier|[Procédure : écrire du texte dans un fichier](../../../../standard/io/how-to-write-text-to-a-file.md)|
 |Lire les caractères d’une chaîne|[Procédure : lire les caractères d’une chaîne](../../../../standard/io/how-to-read-characters-from-a-string.md)|
 |Écrire des caractères dans une chaîne|[Procédure : écrire des caractères dans une chaîne](../../../../standard/io/how-to-write-characters-to-a-string.md)|
@@ -82,7 +82,7 @@ Le tableau suivant répertorie les tâches qui impliquent l’accès aux fichier
 |Ouvrir un fichier journal et y ajouter du texte|[Procédure : ouvrir un fichier journal et y ajouter des éléments](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
 |Déterminer les attributs d’un fichier|<xref:System.IO.FileAttributes>|
 
-## <a name="file-permissions"></a>Autorisations de fichiers
+## <a name="file-permissions"></a>Autorisations de fichier
 
 Vous pouvez contrôler l’accès aux fichiers et aux répertoires avec la classe <xref:System.Security.Permissions.FileIOPermission>. Cela peut être particulièrement important pour les développeurs qui travaillent avec des Web Forms, qui s’exécutent par défaut dans le contexte d’un compte d’utilisateur local spécial nommé ASPNET, créé dans le cadre des installations d’ASP.NET et .NET Framework. Quand une telle application demande l’accès à une ressource, le compte d’utilisateur ASPNET dispose d’autorisations limitées, ce qui peut empêcher l’utilisateur d’effectuer des actions telles que l’écriture dans un fichier à partir d’une application web. Pour plus d’informations, consultez <xref:System.Security.Permissions.FileIOPermission>.
 
@@ -111,4 +111,4 @@ Le composant <xref:System.IO.FileSystemWatcher> vous permet de surveiller les mo
 - [Composition de flux](../../../../standard/io/composing-streams.md)
 - [E/s de fichier et de flux](../../../../standard/io/index.md)
 - [E/s de fichier asynchrones](../../../../standard/io/asynchronous-file-i-o.md)
-- [Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)
+- [Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)](classes-used-in-net-framework-file-io-and-the-file-system.md)

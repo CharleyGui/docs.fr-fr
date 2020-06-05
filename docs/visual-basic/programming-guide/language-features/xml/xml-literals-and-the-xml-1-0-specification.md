@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - XML literals [Visual Basic], XML 1.0 specification
 ms.assetid: 46f046e5-293c-41a3-b893-4e5f6e32e78a
-ms.openlocfilehash: d5dd90899c8a3c4fb4670258e7ff636822c479da
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1200e9ada45adce267c61f821bc7e2bde211cdc3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346182"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403276"
 ---
 # <a name="xml-literals-and-the-xml-10-specification-visual-basic"></a>Littéraux XML et spécification XML 1.0 (Visual Basic)
 La syntaxe de littéral XML dans Visual Basic prend en charge la majeure partie de la spécification Extensible Markup Language (XML) 1,0. Pour plus d’informations sur la spécification XML 1,0, consultez [Extensible Markup Language (XML) 1,0](https://www.w3.org/TR/xml) sur le site Web de W3C.  
@@ -30,6 +30,6 @@ La syntaxe de littéral XML dans Visual Basic prend en charge la majeure partie 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
-- [Littéral de document XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
-- [Littéral d’élément XML](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
+- [Création de code XML dans Visual Basic](creating-xml.md)
+- [Littéral de document XML](../../../language-reference/xml-literals/xml-document-literal.md)
+- [Littéral d’élément XML](../../../language-reference/xml-literals/xml-element-literal.md)

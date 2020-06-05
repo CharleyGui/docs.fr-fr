@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /removeintchecks compiler option [Visual Basic]
 - -removeintchecks compiler option [Visual Basic]
 ms.assetid: c1835bd5-1e38-4fba-bd2f-6984774765d4
-ms.openlocfilehash: bea6ca24ea6da9000267e754d52fe0ca152f7d7f
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: ec4722cb7088819dae95ca1b7cbc1469d957a7aa
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005231"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400472"
 ---
 # <a name="-removeintchecks"></a>-removeintchecks
 Active ou désactive la vérification des erreurs de dépassement de capacité pour les opérations sur les entiers.  
@@ -29,7 +29,7 @@ Active ou désactive la vérification des erreurs de dépassement de capacité p
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|Facultatif. Avec `-removeintchecks-` l’option, le compilateur vérifie tous les calculs d’entiers pour les erreurs de dépassement de capacité. Par défaut, il s’agit de `-removeintchecks-`.<br /><br /> Le `-removeintchecks` fait `-removeintchecks+` de spécifier ou d’empêcher la vérification des erreurs et peut accélérer le calcul des entiers. Toutefois, sans vérification des erreurs, et si les capacités des types de données sont dépassées, des résultats incorrects peuvent être stockés sans déclencher d’erreur.|  
+|`+` &#124; `-`|Facultatif. `-removeintchecks-`Avec l’option, le compilateur vérifie tous les calculs d’entiers pour les erreurs de dépassement de capacité. Par défaut, il s’agit de `-removeintchecks-`.<br /><br /> Le `-removeintchecks` fait de spécifier ou d' `-removeintchecks+` empêcher la vérification des erreurs et peut accélérer le calcul des entiers. Toutefois, sans vérification des erreurs, et si les capacités des types de données sont dépassées, des résultats incorrects peuvent être stockés sans déclencher d’erreur.|  
   
 |Pour définir-removeintchecks (dans l’environnement de développement intégré Visual Studio|  
 |---|  
@@ -44,5 +44,5 @@ vbc -removeintchecks+ test.vb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Compilateur de ligne de commande de Visual Basic](index.md)
+- [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)

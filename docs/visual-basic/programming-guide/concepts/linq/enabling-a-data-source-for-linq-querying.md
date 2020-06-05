@@ -2,20 +2,20 @@
 title: Activation d’une source de données pour LINQ Querying2
 ms.date: 07/20/2015
 ms.assetid: c412f0cf-ff0e-4993-ab3d-1b49e23f00f8
-ms.openlocfilehash: ecd43b371a8e907e9bcfc8687c04bdd0350235ac
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 4ab0e2a2fc3d04eb375a4646e4133e6e5cbb47db
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636885"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375302"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>Activation d'une source de données pour l'interrogation LINQ
 
 Il existe plusieurs façons d’étendre LINQ pour permettre l’interrogation de toute source de données dans le modèle LINQ. La source de données peut être une structure de données, un service Web, un système de fichiers ou une base de données, par exemple. Le modèle LINQ permet aux clients d’interroger facilement une source de données pour laquelle l’interrogation LINQ est activée, car la syntaxe et le modèle de la requête ne changent pas. Les façons dont LINQ peut être étendu à ces sources de données sont les suivantes :
 
-- Implémentation de l’interface <xref:System.Collections.Generic.IEnumerable%601> dans un type pour permettre l’interrogation LINQ to Objects de ce type.
+- Implémentation de l' <xref:System.Collections.Generic.IEnumerable%601> interface dans un type pour permettre LINQ to Objects interrogation de ce type.
 
-- Création de méthodes d’opérateur de requête standard, telles que <xref:System.Linq.Enumerable.Where%2A> et <xref:System.Linq.Enumerable.Select%2A> qui étendent un type, pour activer l’interrogation LINQ personnalisée de ce type.
+- Création de méthodes d’opérateur de requête standard telles que <xref:System.Linq.Enumerable.Where%2A> et <xref:System.Linq.Enumerable.Select%2A> qui étendent un type, pour activer l’interrogation LINQ personnalisée de ce type.
 
 - Création d'un fournisseur pour votre source de données qui implémente l'interface <xref:System.Linq.IQueryable%601>. Un fournisseur qui implémente cette interface reçoit des requêtes LINQ sous la forme d’arborescences d’expression, qu’il peut exécuter de façon personnalisée, par exemple à distance.
 
@@ -26,10 +26,10 @@ Cette rubrique décrit ces options.
 ## <a name="how-to-enable-linq-querying-of-your-data-source"></a>Comment activer l'interrogation LINQ de votre source de données
 
 ### <a name="in-memory-data"></a>Données en mémoire
- Vous pouvez activer l’interrogation LINQ des données en mémoire de deux manières. Si les données sont d’un type qui implémente <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez interroger les données à l’aide de LINQ to Objects. S’il est inutile d’activer l’énumération de votre type en implémentant l’interface <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez définir des méthodes d’opérateur de requête standard LINQ dans ce type ou créer des méthodes d’opérateur de requête standard LINQ qui étendent le type. Les implémentations personnalisées des opérateurs de requête standard doivent utiliser l'exécution différée pour retourner les résultats.
+ Vous pouvez activer l’interrogation LINQ des données en mémoire de deux manières. Si les données sont d’un type qui implémente <xref:System.Collections.Generic.IEnumerable%601> , vous pouvez interroger les données à l’aide de LINQ to Objects. S’il est inutile d’activer l’énumération de votre type en implémentant l' <xref:System.Collections.Generic.IEnumerable%601> interface, vous pouvez définir des méthodes d’opérateur de requête standard LINQ dans ce type ou créer des méthodes d’opérateur de requête standard LINQ qui étendent le type. Les implémentations personnalisées des opérateurs de requête standard doivent utiliser l'exécution différée pour retourner les résultats.
 
 ### <a name="remote-data"></a>Données distantes
- La meilleure option pour activer l’interrogation LINQ d’une source de données distante est d’implémenter l’interface <xref:System.Linq.IQueryable%601>. Toutefois, cette méthode diffère de l'extension d'un fournisseur tel que [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] pour une source de données. Aucun modèle de fournisseur pour l’extension des technologies LINQ existantes, comme [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], à d’autres types de source de données n’est disponible dans Visual Studio 2008.
+ La meilleure option pour activer l’interrogation LINQ d’une source de données distante est d’implémenter l' <xref:System.Linq.IQueryable%601> interface. Toutefois, cette méthode diffère de l'extension d'un fournisseur tel que [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] pour une source de données. Aucun modèle de fournisseur pour l’extension des technologies LINQ existantes, tel que [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] , à d’autres types de source de données n’est disponible dans Visual Studio 2008.
 
 ## <a name="iqueryable-linq-providers"></a>Fournisseurs LINQ IQueryable
  Les fournisseurs LINQ qui implémentent <xref:System.Linq.IQueryable%601> peuvent varier considérablement dans leur complexité. Cette section décrit les différents niveaux de complexité.
@@ -38,12 +38,12 @@ Cette rubrique décrit ces options.
 
  Un fournisseur `IQueryable` de complexité moyenne peut cibler une source de données qui possède un langage de requête partiellement expressif. S'il cible un service Web, il peut interagir avec plusieurs méthodes du service Web et sélectionner la méthode d'appel en fonction de la question posée par la requête. Un fournisseur de complexité moyenne aurait un système plus sophistiqué que celui d'un fournisseur simple, qui serait néanmoins un système de type fixe. Par exemple, le fournisseur peut exposer des types qui ont des relations un-à-plusieurs qui peuvent être parcourues, mais il ne fournirait pas de technologie de mappage pour les types définis par l'utilisateur.
 
- Un fournisseur de `IQueryable` complexe, tel que le fournisseur [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], peut traduire des requêtes LINQ complètes en un langage de requête expressif, tel que SQL. Un fournisseur complexe est plus général qu'un fournisseur moins complexe, car il peut gérer une plus grande gamme de questions dans la requête. Il possède également un système de type ouvert et doit donc contenir une infrastructure étendue pour mapper les types définis par l'utilisateur. Développer un fournisseur complexe est une tâche difficile.
+ Un `IQueryable` fournisseur complexe, tel que le [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] fournisseur, peut traduire des requêtes LINQ complètes en un langage de requête expressif, tel que SQL. Un fournisseur complexe est plus général qu'un fournisseur moins complexe, car il peut gérer une plus grande gamme de questions dans la requête. Il possède également un système de type ouvert et doit donc contenir une infrastructure étendue pour mapper les types définis par l'utilisateur. Développer un fournisseur complexe est une tâche difficile.
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.IQueryable%601>
 - <xref:System.Collections.Generic.IEnumerable%601>
 - <xref:System.Linq.Enumerable>
-- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](standard-query-operators-overview.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)

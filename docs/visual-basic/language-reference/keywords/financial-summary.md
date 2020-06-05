@@ -5,17 +5,17 @@ helpviewer_keywords:
 - financial functions
 - payment
 ms.assetid: 474f973e-7103-42b7-aa4d-367c935e07e1
-ms.openlocfilehash: b0a930d4d39ea55feaa9f6cdb799717b7e98019b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3b96dbfb3c5c218e1d63ef56735c9887ba28b489
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349807"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373717"
 ---
 # <a name="financial-summary-visual-basic"></a>Liste des mots clés financiers (Visual Basic)
 Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|élément Language|  
+|Action|Élément du langage|  
 |------------|----------------------|  
 |Calculez l’amortissement.|<xref:Microsoft.VisualBasic.Financial.DDB%2A>, <xref:Microsoft.VisualBasic.Financial.SLN%2A>, <xref:Microsoft.VisualBasic.Financial.SYD%2A>|  
 |Calculez la valeur future.|<xref:Microsoft.VisualBasic.Financial.FV%2A>|  
@@ -27,5 +27,5 @@ Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtim
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
-- [Membres de la bibliothèque runtime Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+- [Mots clés](index.md)
+- [Membres de la bibliothèque runtime Visual Basic](../runtime-library-members.md)

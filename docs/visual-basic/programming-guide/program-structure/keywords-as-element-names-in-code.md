@@ -1,5 +1,5 @@
 ---
-title: Utilisation des mots clés comme noms d'éléments dans le code
+title: Mots clés comme noms d’éléments dans le code
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, naming conventions
@@ -7,19 +7,19 @@ helpviewer_keywords:
 - name conflicts [Visual Basic]
 - element names [Visual Basic], in code
 ms.assetid: 2e4e8e02-23f7-49b9-a1c8-2b0402b6b525
-ms.openlocfilehash: 4cdcda7c5c78481af1633bf29d75070c521ab393
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a98f0b027700717b414d58e1284ddec655eb25f7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347393"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403224"
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a>Utilisation des mots clés comme noms d'éléments dans le code (Visual Basic)
-Tout élément de programme (par exemple, une variable, une classe ou un membre) peut avoir le même nom qu’un mot clé restreint. Par exemple, vous pouvez créer une variable nommée `Loop`. Toutefois, pour faire référence à votre version de celle-ci (qui porte le même nom que le mot clé `Loop` restreint), vous devez la faire précéder d’une chaîne de qualification complète ou la placer entre crochets (`[ ]`), comme le montre l’exemple suivant.  
+Tout élément de programme (par exemple, une variable, une classe ou un membre) peut avoir le même nom qu’un mot clé restreint. Par exemple, vous pouvez créer une variable nommée `Loop` . Toutefois, pour faire référence à votre version de, qui porte le même nom que le `Loop` mot clé Restricted, vous devez le faire précéder d’une chaîne de qualification complète ou la placer entre crochets ( `[ ]` ), comme le montre l’exemple suivant.  
   
  [!code-vb[VbVbcnConventions#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#8)]  
   
- Si vous n’effectuez pas l’une de ces opérations, Visual Basic suppose l’utilisation du mot clé `Loop` intrinsèque et génère une erreur, comme dans l’exemple suivant :  
+ Si vous n’effectuez pas l’une de ces opérations, Visual Basic suppose l’utilisation du `Loop` mot clé Intrinsic et génère une erreur, comme dans l’exemple suivant :  
   
  `' The following statement causes a compiler error.`  
   
@@ -32,6 +32,6 @@ Tout élément de programme (par exemple, une variable, une classe ou un membre)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Conventions d’affectation de noms Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
-- [Structure de programme et conventions de codage](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
+- [Conventions d'affectation de noms Visual Basic](naming-conventions.md)
+- [Structure de programme et conventions de code](program-structure-and-code-conventions.md)
+- [Mots clés](../../language-reference/keywords/index.md)
