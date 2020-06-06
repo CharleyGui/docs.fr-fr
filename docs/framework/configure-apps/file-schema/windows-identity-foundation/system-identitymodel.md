@@ -4,48 +4,48 @@ ms.date: 03/30/2017
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
 author: BrucePerlerMS
 ms.openlocfilehash: a54f5ce86aee1a5e831c0b10aa1471d4a82f40a5
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70251791"
 ---
-# <a name="systemidentitymodel"></a><span data-ttu-id="746fb-102">\<system.identityModel></span><span class="sxs-lookup"><span data-stu-id="746fb-102">\<system.identityModel></span></span>
-<span data-ttu-id="746fb-103">Fournit la configuration permettant d’activer les options de Windows Identity Foundation (WIF) dans les applications.</span><span class="sxs-lookup"><span data-stu-id="746fb-103">Provides configuration for enabling Windows Identity Foundation (WIF) options in applications.</span></span>  
+# \<system.identityModel>
+<span data-ttu-id="3d2c6-102">Fournit la configuration permettant d’activer les options de Windows Identity Foundation (WIF) dans les applications.</span><span class="sxs-lookup"><span data-stu-id="3d2c6-102">Provides configuration for enabling Windows Identity Foundation (WIF) options in applications.</span></span>  
   
-<span data-ttu-id="746fb-104">[ **\<configuration>** ](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="746fb-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="746fb-105">&nbsp;&nbsp; **\<System. identityModel >**</span><span class="sxs-lookup"><span data-stu-id="746fb-105">&nbsp;&nbsp;**\<system.identityModel>**</span></span>  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;**\<system.identityModel>**  
   
-## <a name="syntax"></a><span data-ttu-id="746fb-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="746fb-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3d2c6-103">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3d2c6-103">Syntax</span></span>  
   
 ```xml  
 <system.identityModel>  
 </system.identityModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="746fb-107">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="746fb-107">Attributes and Elements</span></span>  
- <span data-ttu-id="746fb-108">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="746fb-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="3d2c6-104">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="3d2c6-104">Attributes and Elements</span></span>  
+ <span data-ttu-id="3d2c6-105">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="3d2c6-105">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="746fb-109">Attributs</span><span class="sxs-lookup"><span data-stu-id="746fb-109">Attributes</span></span>  
- <span data-ttu-id="746fb-110">Aucun</span><span class="sxs-lookup"><span data-stu-id="746fb-110">None</span></span>  
+### <a name="attributes"></a><span data-ttu-id="3d2c6-106">Attributs</span><span class="sxs-lookup"><span data-stu-id="3d2c6-106">Attributes</span></span>  
+ <span data-ttu-id="3d2c6-107">Aucune</span><span class="sxs-lookup"><span data-stu-id="3d2c6-107">None</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="746fb-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="746fb-111">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="3d2c6-108">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="3d2c6-108">Child Elements</span></span>  
   
-|<span data-ttu-id="746fb-112">Élément</span><span class="sxs-lookup"><span data-stu-id="746fb-112">Element</span></span>|<span data-ttu-id="746fb-113">Description</span><span class="sxs-lookup"><span data-stu-id="746fb-113">Description</span></span>|  
+|<span data-ttu-id="3d2c6-109">Élément</span><span class="sxs-lookup"><span data-stu-id="3d2c6-109">Element</span></span>|<span data-ttu-id="3d2c6-110">Description</span><span class="sxs-lookup"><span data-stu-id="3d2c6-110">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="746fb-114">\<identityConfiguration></span><span class="sxs-lookup"><span data-stu-id="746fb-114">\<identityConfiguration></span></span>](identityconfiguration.md)|<span data-ttu-id="746fb-115">Spécifie les paramètres d’identité au niveau du service.</span><span class="sxs-lookup"><span data-stu-id="746fb-115">Specifies service-level identity settings.</span></span>|  
+|[\<identityConfiguration>](identityconfiguration.md)|<span data-ttu-id="3d2c6-111">Spécifie les paramètres d’identité au niveau du service.</span><span class="sxs-lookup"><span data-stu-id="3d2c6-111">Specifies service-level identity settings.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="746fb-116">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="746fb-116">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="3d2c6-112">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="3d2c6-112">Parent Elements</span></span>  
   
-|<span data-ttu-id="746fb-117">Élément</span><span class="sxs-lookup"><span data-stu-id="746fb-117">Element</span></span>|<span data-ttu-id="746fb-118">Description</span><span class="sxs-lookup"><span data-stu-id="746fb-118">Description</span></span>|  
+|<span data-ttu-id="3d2c6-113">Élément</span><span class="sxs-lookup"><span data-stu-id="3d2c6-113">Element</span></span>|<span data-ttu-id="3d2c6-114">Description</span><span class="sxs-lookup"><span data-stu-id="3d2c6-114">Description</span></span>|  
 |-------------|-----------------|  
-|`<configuration>`|<span data-ttu-id="746fb-119">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="746fb-119">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`<configuration>`|<span data-ttu-id="3d2c6-115">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="3d2c6-115">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="746fb-120">Notes</span><span class="sxs-lookup"><span data-stu-id="746fb-120">Remarks</span></span>  
- <span data-ttu-id="746fb-121">Ajoutez une `<system.identityModel>` section au fichier de configuration pour configurer un service ou une application pour utiliser Windows Identity Foundation (WIF).</span><span class="sxs-lookup"><span data-stu-id="746fb-121">Add a `<system.identityModel>` section to the configuration file to configure a service or application to use Windows Identity Foundation (WIF).</span></span> <span data-ttu-id="746fb-122">L' `<system.identityModel>` élément est représenté par la <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> classe.</span><span class="sxs-lookup"><span data-stu-id="746fb-122">The `<system.identityModel>` element is represented by the <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> class.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3d2c6-116">Remarques</span><span class="sxs-lookup"><span data-stu-id="3d2c6-116">Remarks</span></span>  
+ <span data-ttu-id="3d2c6-117">Ajoutez une `<system.identityModel>` section au fichier de configuration pour configurer un service ou une application pour utiliser Windows Identity Foundation (WIF).</span><span class="sxs-lookup"><span data-stu-id="3d2c6-117">Add a `<system.identityModel>` section to the configuration file to configure a service or application to use Windows Identity Foundation (WIF).</span></span> <span data-ttu-id="3d2c6-118">L' `<system.identityModel>` élément est représenté par la <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> classe.</span><span class="sxs-lookup"><span data-stu-id="3d2c6-118">The `<system.identityModel>` element is represented by the <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="746fb-123">Exemples</span><span class="sxs-lookup"><span data-stu-id="746fb-123">Example</span></span>  
- <span data-ttu-id="746fb-124">L’exemple suivant montre comment ajouter une `<system.identityModel>` section à un fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="746fb-124">The following example shows how to add a `<system.identityModel>` section to a configuration file.</span></span> <span data-ttu-id="746fb-125">Vous devez d’abord ajouter la section de configuration et la Déclaration `<configSections>` d’espace de noms sous l’élément.</span><span class="sxs-lookup"><span data-stu-id="746fb-125">You must first add the configuration section and namespace declaration under the `<configSections>` element.</span></span> <span data-ttu-id="746fb-126">Vous pouvez ensuite ajouter l' `<system.IdentityModel>` élément à votre fichier de configuration pour spécifier une ou plusieurs configurations d’identité.</span><span class="sxs-lookup"><span data-stu-id="746fb-126">Then you can add the `<system.IdentityModel>` element to your configuration file to specify one or more identity configurations.</span></span>  
+## <a name="example"></a><span data-ttu-id="3d2c6-119">Exemple</span><span class="sxs-lookup"><span data-stu-id="3d2c6-119">Example</span></span>  
+ <span data-ttu-id="3d2c6-120">L’exemple suivant montre comment ajouter une `<system.identityModel>` section à un fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="3d2c6-120">The following example shows how to add a `<system.identityModel>` section to a configuration file.</span></span> <span data-ttu-id="3d2c6-121">Vous devez d’abord ajouter la section de configuration et la déclaration d’espace de noms sous l' `<configSections>` élément.</span><span class="sxs-lookup"><span data-stu-id="3d2c6-121">You must first add the configuration section and namespace declaration under the `<configSections>` element.</span></span> <span data-ttu-id="3d2c6-122">Vous pouvez ensuite ajouter l' `<system.IdentityModel>` élément à votre fichier de configuration pour spécifier une ou plusieurs configurations d’identité.</span><span class="sxs-lookup"><span data-stu-id="3d2c6-122">Then you can add the `<system.IdentityModel>` element to your configuration file to specify one or more identity configurations.</span></span>  
   
 ```xml  
 <configuration>  
@@ -76,6 +76,6 @@ ms.locfileid: "70251791"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="746fb-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="746fb-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3d2c6-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3d2c6-123">See also</span></span>
 
 - <xref:System.IdentityModel.Configuration.SystemIdentityModelSection>
