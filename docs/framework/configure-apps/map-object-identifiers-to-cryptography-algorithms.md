@@ -9,10 +9,10 @@ helpviewer_keywords:
 - cryptography, mapping object identifiers
 ms.assetid: c9673f81-bf9e-47fd-bc6f-6bc1c1c4c15e
 ms.openlocfilehash: a5aebac2d392d4540581dfe7c7afff0819968ac0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69912543"
 ---
 # <a name="mapping-object-identifiers-to-cryptography-algorithms"></a>Mappage d'identificateurs d'objet à des algorithmes de chiffrement
@@ -38,9 +38,9 @@ Les signatures numériques garantissent que les données ne sont pas falsifiées
 </configuration>  
 ```  
   
- [ L'\<élément oidEntry >](./file-schema/cryptography/oidentry-element.md) contient deux attributs. L’attribut **OID** est le numéro de l’identificateur d’objet. L’attribut **Name** est la valeur de l’attribut **Name** de l' [ \<élément élément nameEntry >](./file-schema/cryptography/nameentry-element.md). Il doit y avoir un mappage d’un nom d’algorithme à une classe avant qu’un identificateur d’objet puisse être mappé à un nom simple.  
+ L' [ \<oidEntry> élément](./file-schema/cryptography/oidentry-element.md) contient deux attributs. L’attribut **OID** est le numéro de l’identificateur d’objet. L’attribut **Name** est la valeur de l’attribut **Name** de l' [ \<nameEntry> élément](./file-schema/cryptography/nameentry-element.md). Il doit y avoir un mappage d’un nom d’algorithme à une classe avant qu’un identificateur d’objet puisse être mappé à un nom simple.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration des classes de chiffrement](configure-cryptography-classes.md)
-- [Cryptographic Services](../../standard/security/cryptographic-services.md)
+- [Configuration de classes de chiffrement](configure-cryptography-classes.md)
+- [Services de chiffrement](../../standard/security/cryptographic-services.md)

@@ -10,10 +10,10 @@ helpviewer_keywords:
 - default cryptography
 ms.assetid: eee3ccb8-2c0d-4f35-b38d-6892a46c14e5
 ms.openlocfilehash: e53f4c5c9e24fb25b43b7f27b80ab984214eeac2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69927771"
 ---
 # <a name="configuring-cryptography-classes"></a>Configuration de classes de chiffrement
@@ -26,8 +26,8 @@ Le SDK Windows permet aux administrateurs de l’ordinateur de configurer les al
  [Mappage d'identificateurs d'objet à des algorithmes de chiffrement](map-object-identifiers-to-cryptography-algorithms.md)  
  Décrit comment mapper un identificateur d’objet à un algorithme de chiffrement.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Cryptographic Services](../../standard/security/cryptographic-services.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Services de chiffrement](../../standard/security/cryptographic-services.md)  
  Fournit une vue d’ensemble des services de chiffrement fournis par le SDK Windows.  
   
  [Schéma des paramètres de chiffrement](./file-schema/cryptography/index.md)  

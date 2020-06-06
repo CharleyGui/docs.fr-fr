@@ -3,18 +3,18 @@ title: <diagnostics>
 ms.date: 03/30/2017
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
 ms.openlocfilehash: 2749bc6c66d491a8a160d98b508fb43aa027b806
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70398039"
 ---
-# <a name="diagnostics"></a>\<diagnostics>
+# \<diagnostics>
 L'élément `diagnostics` définit des paramètres qui peuvent être utilisés par un administrateur à des fins d'inspection et de contrôle au moment de l'exécution.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<> de diagnostic**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<diagnostics>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,7 +48,7 @@ L'élément `diagnostics` définit des paramètres qui peuvent être utilisés p
 |Attribut|Description|  
 |---------------|-----------------|  
 |etwProviderId|Chaîne qui spécifie l'identificateur du fournisseur de suivi d'événements, qui écrit des événements dans les sessions ETW.|  
-|performanceCounters|Spécifie si les compteurs de performance de l'assembly sont activés. Les valeurs valides sont les suivantes :<br /><br /> Préférable Les compteurs de performance sont désactivés.<br />ServiceOnly Seuls les compteurs de performance pertinents pour ce service sont activés.<br />Tous les Les compteurs de performance peuvent être affichés pendant l'exécution.<br />Valeurs Un compteur de performance unique de l'instance _WCF_Admin est créé. Cette instance est employée pour activer la collection de données SQM utilisée par l’infrastructure. Aucune des valeurs du compteur de cette instance n'est mise à jour et par conséquent toutes resteront à zéro. Il s'agit de la valeur par défaut si aucune configuration n'est présente pour WCF.|  
+|performanceCounters|Spécifie si les compteurs de performance de l'assembly sont activés. Les valeurs valides sont les suivantes :<br /><br /> -OFF : les compteurs de performances sont désactivés.<br />-ServiceOnly : seuls les compteurs de performance pertinents pour ce service sont activés.<br />-All : les compteurs de performances peuvent être affichés au moment de l’exécution.<br />-Default : une instance de compteur de performance unique _WCF_Admin est créée. Cette instance est employée pour activer la collection de données SQM utilisée par l’infrastructure. Aucune des valeurs du compteur de cette instance n'est mise à jour et par conséquent toutes resteront à zéro. Il s'agit de la valeur par défaut si aucune configuration n'est présente pour WCF.|  
 |wmiProviderEnabled|Valeur booléenne qui spécifie si le fournisseur WMI de l'assembly est activé. Le fournisseur WMI est requis pour que l’utilisateur puisse obtenir l’accès au moment de l’exécution aux fonctionnalités d’inspection et de contrôle de Windows Communication Foundation (WCF). Par défaut, il s’agit de `false`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -64,10 +64,10 @@ L'élément `diagnostics` définit des paramètres qui peuvent être utilisés p
 |-------------|-----------------|  
 |serviceModel|Élément racine de tous les éléments de configuration WCF.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  La section `diagnostics` définit les paramètres de diagnostic pour tous les services situés dans un assembly. Il est impossible de définir des paramètres de diagnostic distincts au niveau du service à moins qu'il n'y ait qu'un seul service dans l'assembly. Les attributs sont définis d’après les exigences de la section.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```xml  
 <diagnostics wmiProviderEnabled="false"

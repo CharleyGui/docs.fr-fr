@@ -3,22 +3,22 @@ title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
 ms.openlocfilehash: 26537980a6be5c0fe12661d93a6ba5fe862ceb4e
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70398156"
 ---
-# <a name="channelpoolsettings"></a>\<channelPoolSettings>
+# \<channelPoolSettings>
 Spécifie les paramètres du pool du canal pour une liaison personnalisée.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> oneWay**](oneway.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<channelPoolSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<oneWay>**](oneway.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<channelPoolSettings>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +37,7 @@ Spécifie les paramètres du pool du canal pour une liaison personnalisée.
 |---------------|-----------------|  
 |`idleTimeout`|<xref:System.TimeSpan> positif qui spécifie la période maximale d'inactivité des canaux du pool avant leur déconnexion. La valeur par défaut est 00:02:00.|  
 |`leaseTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps après lequel un canal, lorsqu'il est retourné au pool, est fermé. La valeur par défaut est 00:10:00.|  
-|`maxOutboundChannelsPerEndpoint`|Entier positif qui spécifie le nombre maximal de canaux qui peuvent être stockés dans le pool pour chaque point de terminaison distant. La valeur par défaut est 10.|  
+|`maxOutboundChannelsPerEndpoint`|Entier positif qui spécifie le nombre maximal de canaux qui peuvent être stockés dans le pool pour chaque point de terminaison distant. La valeur par défaut est de 10.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -48,7 +48,7 @@ Spécifie les paramètres du pool du canal pour une liaison personnalisée.
 |-------------|-----------------|  
 |[\<oneWay>](oneway.md)|Active le routage de paquets pour une liaison personnalisée.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Les quotas sont utilisés comme un mécanisme de stratégie pour empêcher une consommation excessive de ressources. Ils empêchent les attaques par déni de service (DOS) qui sont malveillantes ou involontaires. Utilisez cet élément lors de la définition de quotas de canal sur un canal personnalisé.  
   
  `ChannelPoolSettings` spécifie trois quotas :  

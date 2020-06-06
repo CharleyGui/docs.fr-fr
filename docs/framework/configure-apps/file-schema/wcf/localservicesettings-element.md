@@ -1,24 +1,24 @@
 ---
-title: <localServiceSettings>, élément
+title: <localServiceSettings> (élément)
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
 ms.openlocfilehash: 4883fd563ecf989d67c369085df4fc43d0c5f078
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400305"
 ---
-# <a name="localservicesettings-element"></a>\<localServiceSettings >, élément
+# <a name="localservicesettings-element"></a>\<localServiceSettings>, élément
 Spécifie les paramètres de sécurité d’un service local pour cette liaison.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<localServiceSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<localServiceSettings>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +49,7 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
 |Attribut|Description|  
 |---------------|-----------------|  
 |`detectReplays`|Valeur booléenne qui spécifie si les attaques par relecture contre le canal sont détectées et traitées automatiquement. Par défaut, il s’agit de `false`.|  
-|`inactivityTimeout`|<xref:System.TimeSpan> positif qui spécifie la durée d'inactivité du canal avant qu'il n'expire. La valeur par défaut est « 01:00:00 ».|  
+|`inactivityTimeout`|Positif <xref:System.TimeSpan> qui spécifie la durée d’inactivité pendant laquelle le canal attend avant d’expirer. La valeur par défaut est « 01:00:00 ».|  
 |`issuedCookieLifeTime`|<xref:System.TimeSpan> qui spécifie la durée de vie de tous les nouveaux cookies de sécurité. Les cookies qui dépassent leur durée de vie sont recyclés et doivent être renégociés. La valeur par défaut est « 10:00:00 ».|  
 |`maxCachedCookies`|Entier positif qui spécifie le nombre maximal de cookies pouvant être mis en cache. La valeur par défaut est 1000.|  
 |`maxClockSkew`|<xref:System.TimeSpan> qui spécifie la différence de temps maximale entre les horloges système des deux parties communicantes. La valeur par défaut est « 00:05:00 ».<br /><br /> Lorsque la valeur par défaut est définie, le récepteur accepte des messages dont l'horodatage d'envoi diffère au maximum de 5 minutes de son horodatage de réception. Les messages qui échouent au test de l'heure d'envoi sont rejetés. Ce paramètre est utilisé conjointement à l'attribut `replayWindow`.|  
@@ -70,10 +70,10 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<> de sécurité](security-of-custombinding.md)|Spécifie les options de sécurité d’une liaison personnalisée.|  
+|[\<security>](security-of-custombinding.md)|Spécifie les options de sécurité d’une liaison personnalisée.|  
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|Spécifie les valeurs par défaut utilisées pour initialiser un service de conversation sécurisé.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Les paramètres sont locaux car ils ne sont pas publiés dans le cadre de la stratégie de sécurité du service et n'affectent pas la liaison du client.  
   
  Les attributs suivants de l'élément `localServiceSecuritySettings` peuvent aider à atténuer une attaque de sécurité par déni de service (DOS) :  
@@ -99,5 +99,5 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Guide pratique pour Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Sécurité de liaison personnalisée](../../../wcf/samples/custom-binding-security.md)
+- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Custom Binding Security](../../../wcf/samples/custom-binding-security.md)

@@ -11,19 +11,19 @@ helpviewer_keywords:
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
 ms.openlocfilehash: afa1aef8ea71f43a136987ec5b6e1925c6d9fb40
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154723"
 ---
-# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<supprimer> Element pour webRequestModules (Paramètres réseau)
+# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<remove>, élément de webRequestModules (paramètres réseau)
 Supprime un module de demande Web personnalisé de l’application.  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<webRequestModules>**](webrequestmodules-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<supprimer>**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ Supprime un module de demande Web personnalisé de l’application.
   
 |**Attribut**|**Description**|  
 |-------------------|---------------------|  
-|`prefix`|Le préfixe URI pour les demandes traitées par ce module de demande Web.|  
+|`prefix`|Préfixe URI pour les requêtes gérées par ce module de demande Web.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Élément**|**Description**|  
+|**Appartient**|**Description**|  
 |-----------------|---------------------|  
-|[webRequestModules](webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations aux hôtes du réseau.|  
+|[webRequestModules](webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.|  
   
-## <a name="remarks"></a>Notes   
- L’élément `remove` supprime le module de demande Web enregistré pour le préfixe URI spécifié.  
+## <a name="remarks"></a>Remarques  
+ L' `remove` élément supprime le module de demande Web inscrit pour le préfixe URI spécifié.  
   
- La valeur `prefix` de l’attribut doit être les personnages principaux d’une URI valide - par exemple, "`http`" " ou "`http://www.contoso.com`"  
+ La valeur de l' `prefix` attribut doit être les caractères de début d’un URI valide, par exemple, « `http` » ou « `http://www.contoso.com` ».  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
-L’exemple suivant supprime le module de demande Web existant pour HTTP, puis `www.contoso.com`enregistre un nouveau module de demande Web personnalisé pour les demandes HTTP à .
+L’exemple suivant supprime le module de demande Web existant pour HTTP, puis inscrit un nouveau module de demande Web personnalisé pour les requêtes HTTP à `www.contoso.com` .
   
 ```xml  
 <configuration>  
@@ -80,4 +80,4 @@ L’exemple suivant supprime le module de demande Web existant pour HTTP, puis `
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net.WebRequest>
-- [Paramètres réseau Schema](index.md)
+- [Schéma des paramètres réseau](index.md)

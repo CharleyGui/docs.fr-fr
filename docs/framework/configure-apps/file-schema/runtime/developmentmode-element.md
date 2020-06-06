@@ -10,18 +10,18 @@ helpviewer_keywords:
 - <developmentMode> element
 ms.assetid: 60e79a8c-415a-497d-be29-b9d0fd9bdee3
 ms.openlocfilehash: 4a062da31740edb8f0c7a4f4db8b09800c687587
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73117628"
 ---
-# <a name="developmentmode-element"></a>\<élément mode developmentmode >
+# <a name="developmentmode-element"></a>Élément \<developmentMode>
 Indique si le runtime recherche des assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<mode developmentmode** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<developmentMode>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +40,13 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
   
 ## <a name="developerinstallation-attribute"></a>Attribut developerInstallation  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |**true**|Recherche les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.|  
-|**false**|Ne recherche pas les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH. Il s’agit de la valeur par défaut|  
+|**false**|Ne recherche pas les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH. Il s'agit du paramètre par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -55,7 +55,7 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Utilisez ce paramètre uniquement au moment du développement. Le runtime ne vérifie pas les versions des assemblys avec nom fort qui se trouvent dans DEVPATH. Il utilise simplement le premier assembly qu’il trouve.  
   
 ## <a name="example"></a>Exemple  
@@ -73,4 +73,4 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
 
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [Comment : localiser des assemblys à l'aide de DEVPATH](../../how-to-locate-assemblies-by-using-devpath.md)
+- [Procédure : Localiser des assemblys à l’aide de DEVPATH](../../how-to-locate-assemblies-by-using-devpath.md)

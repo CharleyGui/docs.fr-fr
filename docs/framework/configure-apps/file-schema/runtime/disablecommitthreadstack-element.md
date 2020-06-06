@@ -9,18 +9,18 @@ helpviewer_keywords:
 - disableCommitThreadStack element
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
 ms.openlocfilehash: 8aefb8a20d6a95c5b8062d0c03dcb28a3557ca3d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73117475"
 ---
-# <a name="disablecommitthreadstack-element"></a>\<élément disableCommitThreadStack >
+# <a name="disablecommitthreadstack-element"></a>Élément \<disableCommitThreadStack>
 Spécifie si la pile des threads complète est validée quand un thread est démarré.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCommitThreadStack** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<disableCommitThreadStack>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,13 +39,13 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |0|Ne pas désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
 |1|Désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -54,7 +54,7 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Le comportement par défaut du Common Language Runtime consiste à valider la pile des threads complète quand un thread est démarré. Si un grand nombre de threads doivent être créés sur un serveur disposant d’une mémoire limitée, et que la plupart de ces threads utilisent très peu d’espace de pile, les performances du serveur peuvent être améliorées si le Common Language Runtime ne valide pas la pile des threads complète immédiatement quand un thread est démarré.  
   
 > [!NOTE]
@@ -74,4 +74,4 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - binary serialization, selective serialization
 ms.assetid: 39c56635-95d2-4afd-aff1-b022e7649bb3
 ms.openlocfilehash: 74113979f0ebe77319ae308c2a669e91d8cb4209
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84278413"
 ---
 # <a name="selective-serialization"></a>Sérialisation sélective

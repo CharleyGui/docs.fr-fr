@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: 42c7f291-2ec3-43c5-8872-35897ff3c660
 author: BrucePerlerMS
 ms.openlocfilehash: 653dd9cfadbfd33f5371b77172199b946321bc8c
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70251854"
 ---
-# <a name="servicecertificate"></a>\<serviceCertificate>
+# \<serviceCertificate>
 Configure le certificat X. 509 utilisé pour chiffrer et déchiffrer les jetons.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel. services >** ](system-identitymodel-services.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<federationConfiguration >** ](federationconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceCertificate >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel.services>**](system-identitymodel-services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<federationConfiguration>**](federationconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<serviceCertificate>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +33,7 @@ Configure le certificat X. 509 utilisé pour chiffrer et déchiffrer les jetons.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucune  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -48,7 +48,7 @@ Configure le certificat X. 509 utilisé pour chiffrer et déchiffrer les jetons.
 |[\<federationConfiguration>](federationconfiguration.md)|Contient les paramètres qui configurent le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> (Sam).|  
   
 ## <a name="example"></a>Exemple  
- Le code XML suivant montre l’utilisation de \<l’élément serviceCertificate >. Le code XML est extrait de `CustomToken` l’exemple.  
+ Le code XML suivant montre l’utilisation de l' \<serviceCertificate> élément. Le code XML est extrait de l' `CustomToken` exemple.  
   
 ```xml  
 <serviceCertificate>  

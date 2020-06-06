@@ -8,10 +8,10 @@ helpviewer_keywords:
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
 ms.openlocfilehash: f69e80592e9321de64421b977a63b83d8be2ad9e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84289484"
 ---
 # <a name="systemxmlserialization-element"></a>Élément \<system.xml.serialization>
@@ -71,7 +71,7 @@ L'exemple de code suivant illustre comment spécifier le mode de sérialisation 
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [Schéma du fichier de configuration](../../framework/configure-apps/file-schema/index.md)
+- [Schéma des fichiers de configuration](../../framework/configure-apps/file-schema/index.md)
 - [\<dateTimeSerialization>Appartient](datetimeserialization-element.md)
 - [\<schemaImporterExtensions>Appartient](schemaimporterextensions-element.md)
 - [\<add>, Élément de\<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)

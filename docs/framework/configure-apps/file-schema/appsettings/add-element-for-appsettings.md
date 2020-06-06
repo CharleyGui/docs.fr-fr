@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <add> Element
 ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
 ms.openlocfilehash: 5c7de79ec626966e71d461dd3865b294a8979db2
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77214809"
 ---
-# <a name="add-element-for-appsettings"></a>\<ajoutez > élément pour \<appSettings >
+# <a name="add-element-for-appsettings"></a>\<add>, élément de \<appSettings>
 
 Ajoute un paramètre d’application personnalisé.
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<ajouter des >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<appSettings>**](appsettings-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,7 +41,7 @@ Ajoute un paramètre d’application personnalisé.
 
 |     | Description |
 | --- | ----------- |
-| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | Contient des paramètres d’application personnalisés, tels que des chemins d’accès, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application. |
+| [**\<appSettings>**](appsettings-element-for-configuration.md) | Contient des paramètres d’application personnalisés, tels que des chemins d’accès, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -57,7 +57,7 @@ L’exemple suivant montre comment ajouter un paramètre de configuration person
 </appSettings>
 ```
 
-L’exemple suivant utilise l’élément `<add>` pour définir deux paramètres de compatibilité dans une application ASP.NET :
+L’exemple suivant utilise l' `<add>` élément pour définir deux paramètres de compatibilité dans une application ASP.net :
 
 ```xml
 <appSettings>

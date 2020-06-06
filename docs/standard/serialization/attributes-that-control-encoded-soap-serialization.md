@@ -10,10 +10,10 @@ helpviewer_keywords:
 - serialization, attributes
 ms.assetid: 93ee258c-9c0f-4a08-897c-c10db7a00f91
 ms.openlocfilehash: d9a4631189d348c02ab36054257a54c9c4673018
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84289666"
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP

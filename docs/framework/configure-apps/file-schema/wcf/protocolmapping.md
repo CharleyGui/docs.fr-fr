@@ -3,18 +3,18 @@ title: <protocolMapping>
 ms.date: 03/30/2017
 ms.assetid: 5076644b-1f33-4f26-9488-87de9fcda04c
 ms.openlocfilehash: be4224ef1a8b17653df8123aaf89e105a496355a
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400022"
 ---
-# <a name="protocolmapping"></a>\<protocolMapping>
-Représente une section de configuration permettant de définir un ensemble de mappages de protocole par défaut entre des schémas de protocole de transport (par exemple, http, net. TCP, net. pipe, etc.) et des liaisons WCF. Lors de la création de points de terminaison par défaut au moment de l’exécution, Windows Communication Foundation (WCF) examine les mappages configurés et décide de la liaison à utiliser pour une adresse de base particulière.  
+# \<protocolMapping>
+Représente une section de configuration permettant de définir un ensemble de mappages de protocole par défaut entre des schémas de protocole de transport (par exemple, http, net.tcp, net.pipe, etc.) et des liaisons WCF. Lors de la création de points de terminaison par défaut au moment de l’exécution, Windows Communication Foundation (WCF) examine les mappages configurés et décide de la liaison à utiliser pour une adresse de base particulière.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<protocolMapping >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<protocolMapping>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ Représente une section de configuration permettant de définir un ensemble de m
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<filtres>](filters-of-routing.md)|Contient un mappage de protocole par défaut entre un schéma de protocole de transport (par exemple, http, net. TCP, net. pipe, etc.) et une liaison WCF.|  
+|[\<filters>](filters-of-routing.md)|Contient un mappage de protocole par défaut entre un schéma de protocole de transport (par exemple, http, net.tcp, net.pipe, etc.) et une liaison WCF.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

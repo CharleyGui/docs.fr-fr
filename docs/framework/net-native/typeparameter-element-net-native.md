@@ -1,15 +1,15 @@
 ---
-title: Élément <TypeParameter> (.NET Native)
+title: <TypeParameter>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: d37bb1b7-1ddc-4c6d-8ecf-583f804a2479
 ms.openlocfilehash: c69b535f3a01c287d30189138130066fc10a77e2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128926"
 ---
-# <a name="typeparameter-element-net-native"></a>\<élément TypeParameter > (.NET Native)
+# <a name="typeparameter-element-net-native"></a>\<TypeParameter>, Élément (.NET Native)
 Applique la stratégie au type représenté par un argument Type passé à une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -49,18 +49,18 @@ Applique la stratégie au type représenté par un argument Type passé à une m
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*nom_paramètre*|Nom du paramètre de type <xref:System.Type>. Par exemple, pour la signature de méthode `Type.GetInterfaceMap(Type interfaceType)`, la valeur de l'attribut `Name` est « interfaceType ».|  
+|*parameter_name*|Nom du paramètre de type <xref:System.Type>. Par exemple, pour la signature de méthode `Type.GetInterfaceMap(Type interfaceType)`, la valeur de l'attribut `Name` est « interfaceType ».|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -68,8 +68,8 @@ Applique la stratégie au type représenté par un argument Type passé à une m
 |-------------|-----------------|  
 |[\<Method>](method-element-net-native.md)|Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.|  
   
-## <a name="remarks"></a>Notes  
- L’élément `<TypeParameter>` est similaire à l’élément [\<Parameter>](parameter-element-net-native.md), à ceci près qu’il peut uniquement être appliqué à des paramètres de type <xref:System.Type>. Il applique la stratégie à tout type représenté au moment de l'exécution par l'argument de type spécifié par l'attribut `Name`.  
+## <a name="remarks"></a>Remarques  
+ L' `<TypeParameter>` élément est semblable à l' [\<Parameter>](parameter-element-net-native.md) élément, à ceci près qu’il ne peut être appliqué qu’aux paramètres de type <xref:System.Type> . Il applique la stratégie à tout type représenté au moment de l'exécution par l'argument de type spécifié par l'attribut `Name`.  
   
  Par exemple, le sérialiseur JSON NewtonSoft inclut une méthode `JsonConvert.DeserializeObject(String value, Type type)` statique. Les directives de réflexion suivantes :  
   
@@ -94,7 +94,7 @@ Object obj = JsonConvert.DeserializeObject(data, t);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Method>, élément](method-element-net-native.md)
+- [\<Method>Appartient](method-element-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)

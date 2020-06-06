@@ -10,10 +10,10 @@ api_type:
 - Assembly
 ms.assetid: 6b44b13c-7a23-4df2-8f9f-45e2b1430002
 ms.openlocfilehash: 99f2eb9447bdf43cb57cfe86f35d2c09044ed470
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69947629"
 ---
 # <a name="microsoftvisualstudioactivitiesasrclientactivitybuilderctor"></a>Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder..ctor
@@ -27,7 +27,7 @@ public ClientActivityBuilder(OperationDescription operationDescription, string c
   
 ## <a name="parameters"></a>Paramètres  
   
-## <a name="parameter-values"></a>Valeurs du paramètre  
+## <a name="parameter-values"></a>Valeurs des paramètres  
  *operationDescription*  
   
  Décrit l'opération à effectuer dans l'activité de workflow qui doit être générée, notamment le nom de l'opération, le type de retour et les informations de paramètre. La valeur de ce paramètre ne doit pas être **null**. Elle doit décrire une opération synchrone qui utilise un contrat de message et prend un argument avec un message. Si ces conditions ne sont pas satisfaites, le résultat d'exécution du constructeur et des autres méthodes de cette classe est indéfini.  

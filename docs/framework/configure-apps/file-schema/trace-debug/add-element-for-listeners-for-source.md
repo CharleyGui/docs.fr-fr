@@ -1,5 +1,5 @@
 ---
-title: <add>Élément <listeners> pour pour<source>
+title: <add>, Élément de <listeners> pour<source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/add
@@ -9,21 +9,21 @@ helpviewer_keywords:
 - <add> element for <listeners> for <source>
 ms.assetid: 4ce36ac1-81ef-48e8-b8b2-b5a5b0e2adcb
 ms.openlocfilehash: 883eef32172c5a7f900197995b4c57c3d5a84e19
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153683"
 ---
-# <a name="add-element-for-listeners-for-source"></a>\<ajouter> Element pour \<les auditeurs \<> pour les> de source
+# <a name="add-element-for-listeners-for-source"></a>\<add>, Élément de \<listeners> pour\<source>
 Ajoute un écouteur à la collection `Listeners` pour une source de trace.  
 
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<sources>**](sources-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<source>**](source-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<auditeurs>**](listeners-element-for-source.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<ajouter>**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<listeners>**](listeners-element-for-source.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,17 +40,17 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`type`|Attribut requis, sauf si vous faites référence `sharedListeners` à un auditeur dans la collection, auquel cas vous n’avez qu’à vous y référer par son nom (voir l’exemple ). [Example](#example)<br /><br /> Spécifie le type de l’auditeur. Vous devez utiliser une chaîne qui répond aux exigences spécifiées dans [le spécifier des noms de type entièrement qualifiés](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
-|`initializeData`|Attribut facultatif.<br /><br /> La chaîne passa au constructeur pour la classe spécifiée. A <xref:System.Configuration.ConfigurationException> est jeté si la classe n’a pas un constructeur qui prend une ficelle.|  
-|`name`|Attribut facultatif.<br /><br /> Spécifie le nom de l’auditeur.|  
-|`traceOutputOptions`|Attribut facultatif.<br /><br /> Spécifie la valeur de la <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> propriété pour l’auditeur de traces.|  
-|[attributs personnalisés]|Attributs facultatifs.<br /><br /> Spécifie la valeur des attributs <xref:System.Diagnostics.TraceListener.GetSupportedAttributes%2A> spécifiques à l’auditeur identifiés par la méthode de cet auditeur. <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>est un exemple d’attribut <xref:System.Diagnostics.DelimitedListTraceListener> supplémentaire unique à la classe.|  
+|`type`|Attribut obligatoire, sauf si vous référencez un écouteur dans la `sharedListeners` collection, auquel cas vous devez uniquement faire référence à celui-ci par son nom (Voir l' [exemple](#example)).<br /><br /> Spécifie le type de l’écouteur. Vous devez utiliser une chaîne qui répond aux exigences spécifiées dans [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe spécifiée. Une <xref:System.Configuration.ConfigurationException> exception est levée si la classe n’a pas de constructeur qui prend une chaîne.|  
+|`name`|Attribut facultatif.<br /><br /> Spécifie le nom de l’écouteur.|  
+|`traceOutputOptions`|Attribut facultatif.<br /><br /> Spécifie la <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> valeur de la propriété pour l’écouteur de la trace.|  
+|[attributs personnalisés]|Attributs facultatifs.<br /><br /> Spécifie la valeur des attributs spécifiques de l’écouteur identifiés par la <xref:System.Diagnostics.TraceListener.GetSupportedAttributes%2A> méthode pour cet écouteur. <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>est un exemple d’attribut supplémentaire unique à la <xref:System.Diagnostics.DelimitedListTraceListener> classe.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<filtrer>](filter-element-for-add-for-listeners-for-source.md)|Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source de trace.|  
+|[\<filter>](filter-element-for-add-for-listeners-for-source.md)|Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source de trace.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -60,37 +60,37 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
 |`sources`|Contient les sources de trace qui lancent des messages de traçage.|  
 |`source`|Spécifie une source de trace qui lance des messages de traçage.|  
-|`listeners`|Spécifie les auditeurs qui recueillent, stockent et acheminent les messages.|  
+|`listeners`|Spécifie les écouteurs qui collectent, stockent et acheminent les messages.|  
   
-## <a name="remarks"></a>Notes   
- Les classes d’auditeur expédiées avec <xref:System.Diagnostics.TraceListener> le cadre .NET dérivent de la classe.  
+## <a name="remarks"></a>Remarques  
+ Les classes d’écouteur fournies avec le .NET Framework dérivent de la <xref:System.Diagnostics.TraceListener> classe.  
   
- Si vous ne `name` spécifiez pas <xref:System.Diagnostics.TraceListener.Name%2A> l’attribut de l’auditeur de trace, la propriété de l’auditeur de traces manque à une chaîne vide («).). Si votre application n’a qu’un seul auditeur, vous pouvez l’ajouter sans spécifier un nom, et vous pouvez la supprimer en spécifiant une chaîne vide pour le nom. Toutefois, si votre application a plus d’un auditeur, vous devez spécifier un nom unique pour <xref:System.Diagnostics.TraceSource.Listeners%2A?displayProperty=nameWithType> chaque auditeur de traces, ce qui vous permet d’identifier et de gérer les auditeurs de traces individuelles dans la collection.  
-  
-> [!NOTE]
-> L’ajout de plus d’un auditeur de traces du même type et avec le même `Listeners` nom n’entraîne qu’un seul auditeur de trace de ce type et le nom ajouté à la collection. Cependant, vous pouvez programmer de `Listeners` façon programmatique plusieurs auditeurs identiques à la collection.  
-  
- La valeur `initializeData` de l’attribut dépend du type d’auditeur que vous créez. Pas tous les auditeurs `initializeData`trace exigent que vous spécifiez .  
+ Si vous ne spécifiez pas l' `name` attribut de l’écouteur de la trace, la <xref:System.Diagnostics.TraceListener.Name%2A> propriété de l’écouteur de la trace est définie par défaut sur une chaîne vide (""). Si votre application n’a qu’un seul écouteur, vous pouvez l’ajouter sans spécifier de nom et vous pouvez la supprimer en spécifiant une chaîne vide pour le nom. Toutefois, si votre application a plusieurs écouteurs, vous devez spécifier un nom unique pour chaque écouteur de suivi, ce qui vous permet d’identifier et de gérer des écouteurs de suivi individuels dans la <xref:System.Diagnostics.TraceSource.Listeners%2A?displayProperty=nameWithType> collection.  
   
 > [!NOTE]
-> Lorsque vous `initializeData` utilisez l’attribut, vous pouvez obtenir l’avertissement compilateur "L’attribut 'initializeData' n’est pas déclaré." Cet avertissement se produit parce que les paramètres <xref:System.Diagnostics.TraceListener>de configuration sont `initializeData` validés par rapport à la classe de base abstraite , qui ne reconnaît pas l’attribut. Typiquement, vous pouvez ignorer cet avertissement pour les implémentations d’auditeur de trace qui ont un constructeur qui prend un paramètre.  
+> L’ajout de plusieurs écouteurs de suivi du même type et portant le même nom n’entraîne l’ajout d’un seul écouteur de suivi de ce type et d’un même nom à la `Listeners` collection. Toutefois, vous pouvez ajouter par programmation plusieurs écouteurs identiques à la `Listeners` collection.  
   
- Le tableau suivant montre les auditeurs trace qui sont inclus dans `initializeData` le cadre .NET et décrit la valeur de leurs attributs.  
+ La valeur de l' `initializeData` attribut dépend du type d’écouteur que vous créez. Tous les écouteurs de suivi ne nécessitent pas que vous spécifiiez `initializeData` .  
   
-|Cours d’auditeur de trace|initialiser la valeur d’attribut deData|  
+> [!NOTE]
+> Lorsque vous utilisez l' `initializeData` attribut, vous pouvez recevoir l’avertissement du compilateur « l’attribut’initializeData’n’est pas déclaré. » Cet avertissement se produit parce que les paramètres de configuration sont validés par rapport à la classe de base abstraite <xref:System.Diagnostics.TraceListener> , qui ne reconnaît pas l' `initializeData` attribut. En règle générale, vous pouvez ignorer cet avertissement pour les implémentations d’écouteurs de trace qui ont un constructeur qui prend un paramètre.  
+  
+ Le tableau suivant répertorie les écouteurs de suivi inclus avec le .NET Framework et décrit la valeur de leurs `initializeData` attributs.  
+  
+|Classe d’écouteur de suivi|valeur de l’attribut initializeData|  
 |--------------------------|------------------------------------|  
-|<xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>|La `useErrorStream` valeur <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A> pour le constructeur.  Définissez `initializeData` l’attribut à «`true`écrire la sortie de trace et de débaillement au flux d’erreurs standard ; l’a`false`fixé à " d’écrire au flux de sortie standard.|  
+|<xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>|`useErrorStream`Valeur du <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A> constructeur.  Affectez à l’attribut la valeur « `initializeData` `true` » pour écrire la sortie de trace et de débogage dans le flux d’erreur standard ; affectez-lui la valeur « `false` » pour écrire dans le flux de sortie standard.|  
 |<xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType>|Nom du fichier vers lequel <xref:System.Diagnostics.DelimitedListTraceListener> écrit.|  
 |<xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>|Nom d'une source existante de journal des événements.|  
-|<xref:System.Diagnostics.EventSchemaTraceListener?displayProperty=nameWithType>|Le nom du fichier <xref:System.Diagnostics.EventSchemaTraceListener> à qui le nom écrit.|  
-|<xref:System.Diagnostics.TextWriterTraceListener?displayProperty=nameWithType>|Le nom du fichier <xref:System.Diagnostics.TextWriterTraceListener> à qui le nom écrit.|  
-|<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|Le nom du fichier <xref:System.Diagnostics.XmlWriterTraceListener> à qui le nom écrit.|  
+|<xref:System.Diagnostics.EventSchemaTraceListener?displayProperty=nameWithType>|Nom du fichier <xref:System.Diagnostics.EventSchemaTraceListener> dans lequel écrit.|  
+|<xref:System.Diagnostics.TextWriterTraceListener?displayProperty=nameWithType>|Nom du fichier <xref:System.Diagnostics.TextWriterTraceListener> dans lequel écrit.|  
+|<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|Nom du fichier <xref:System.Diagnostics.XmlWriterTraceListener> dans lequel écrit.|  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de la machine (Machine.config) et le fichier de configuration d’application.  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
-## <a name="example"></a> Exemple  
- L’exemple suivant montre `<add>` comment utiliser `console` des `textListener` éléments `Listeners` pour ajouter `TraceSourceApp`les auditeurs et à la collection pour la source de traces . L’auditeur `textListener` écrit trace sortie au fichier myListener.log.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser des `<add>` éléments pour ajouter les écouteurs `console` et `textListener` la `Listeners` collection pour la source de trace `TraceSourceApp` . L' `textListener` écouteur écrit la sortie de trace dans le fichier myListener. log.  
   
 ```xml  
 <configuration>  
@@ -122,5 +122,5 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TraceListener>
-- [Trace et Debug Paramètres Schema](index.md)
+- [Schéma des paramètres de traçage et de débogage](index.md)
 - [Écouteurs de suivi](../../../debug-trace-profile/trace-listeners.md)

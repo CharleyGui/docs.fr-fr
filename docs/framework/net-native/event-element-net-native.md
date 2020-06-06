@@ -1,15 +1,15 @@
 ---
-title: <Event>Élément (.NET Native)
+title: <Event>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: e53b029c-9d6d-4c0a-9cdc-5cfca8a5ca47
 ms.openlocfilehash: 60da48d5872d7ce61afcffa7977411bc6e1efc7f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79181036"
 ---
-# <a name="event-element-net-native"></a>\<Événement> Element (.NET Native)
+# <a name="event-element-net-native"></a>\<Event>, Élément (.NET Native)
 Applique la stratégie de réflexion runtime à un événement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,7 +35,7 @@ Applique la stratégie de réflexion runtime à un événement.
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|*method_name*|Nom de l'événement. Le type de l’événement est défini par le [ \<parent Type>](type-element-net-native.md) ou [ \<TypeInstantiation>](typeinstantiation-element-net-native.md) élément.|  
+|*method_name*|Nom de l'événement. Le type de l’événement est défini par l' [\<Type>](type-element-net-native.md) élément parent ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
@@ -53,11 +53,11 @@ Applique la stratégie de réflexion runtime à un événement.
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Si la stratégie d'un événement n'est pas définie explicitement, elle hérite la stratégie runtime de son élément parent.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

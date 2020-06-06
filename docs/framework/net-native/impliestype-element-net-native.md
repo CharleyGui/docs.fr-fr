@@ -1,15 +1,15 @@
 ---
-title: <ImpliesType>Élément (.NET Native)
+title: <ImpliesType>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
 ms.openlocfilehash: 57f4208233cd5e8544b4f1c254e3b0e0eaacd508
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79181013"
 ---
-# <a name="impliestype-element-net-native"></a>\<ImpliesType> Element (.NET Native)
+# <a name="impliestype-element-net-native"></a>\<ImpliesType>, Élément (.NET Native)
 Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode ou au type conteneur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -68,9 +68,9 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
 |-------------|-----------------|  
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
-|[\<Méthode>](method-element-net-native.md)|Applique la stratégie de réflexion à une méthode.|  
+|[\<Method>](method-element-net-native.md)|Applique la stratégie de réflexion à une méthode.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  L'élément `<ImpliesType>` est essentiellement conçu pour une utilisation par des bibliothèques. Il traite le scénario suivant :  
   
 - Si une routine a besoin de réfléchir un type, elle doit nécessairement réfléchir un second type.  
@@ -89,7 +89,7 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
  Cette directive n'a d'effet que si une instanciation d'`Explicit` possède un paramètre de stratégie `Dynamic` défini. Par exemple, si c'est le cas pour `Explicit<Int32>`, `Implicit<Int32>` est instancié avec ses membres publics associés à une racine, et leurs métadonnées sont accessibles pour une programmation dynamique.  
   
- Voici un exemple concret qui s'applique à au moins un sérialiseur. Les directives saisissent l’exigence selon `IList<`laquelle la réflexion sur quelque chose dactylographie comme *quelque chose* `>` consiste également à réfléchir sur le type `List<` *de quelque chose* `>` correspondant sans exiger aucune annotation par application.  
+ Voici un exemple concret qui s'applique à au moins un sérialiseur. Les directives capturent l’exigence selon laquelle la réflexion sur un type de texte `IList<` *something* `>` implique également la réflexion sur le type d' `List<` *opération* correspondant `>` sans nécessiter d’annotation par application.  
   
 ```xml  
 <Type Name="System.Collections.Generic.IList{T}">  
@@ -110,6 +110,6 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

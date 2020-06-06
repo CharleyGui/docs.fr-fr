@@ -3,13 +3,13 @@ title: <claimTypeRequirements> pour <message>
 ms.date: 03/30/2017
 ms.assetid: f95c5ecd-abb6-4b77-a6d7-a38727f4a142
 ms.openlocfilehash: db6717022bf3af0c4922818668595dd3937e9c71
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "61704405"
 ---
-# <a name="claimtyperequirements-for-message"></a>\<claimTypeRequirements > pour \<message >
+# <a name="claimtyperequirements-for-message"></a>\<claimTypeRequirements> pour \<message>
 Spécifie une collection de types de revendications requis.  
   
  La collection est utilisée par le service pour spécifier toutes les revendications obligatoires et facultatives qui doivent se trouver dans le jeton émis que le client utilise pour accéder au service. Le service expose les types de revendication obligatoires dans les métadonnées si la publication WSDL est activée mais WCF ne requiert pas que le jeton émis contienne les types de revendication spécifiés. Les services qui souhaitent appliquer l'obligation de présence des types de revendication obligatoires doivent le faire à l'aide de la stratégie d'autorisation.  

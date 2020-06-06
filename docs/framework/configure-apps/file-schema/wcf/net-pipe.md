@@ -3,18 +3,18 @@ title: <net.pipe>
 ms.date: 03/30/2017
 ms.assetid: 6a0f0318-f8f6-466c-9fae-199d7274a82e
 ms.openlocfilehash: dd984b2ab89060451b1b2d02c324e803766908ce
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70397717"
 ---
-# <a name="netpipe"></a>\<net.pipe>
+# \<net.pipe>
 Spécifie les paramètres de configuration du service d'activation du canal nommé, qui gère la durée de vie de la connexion du canal nommé et les demandes d'activation qui arrivent par des canaux nommés.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel. activation >** ](system-servicemodel-activation.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<> net. pipe**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel.activation>**](system-servicemodel-activation.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<net.pipe>**  
   
 ## <a name="syntax"></a>Syntaxe  
   

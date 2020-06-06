@@ -22,10 +22,10 @@ helpviewer_keywords:
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
 ms.openlocfilehash: 35ed53fc480e218df595794f80af2458f3ecec38
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73039157"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma des fichiers de configuration pour le .NET Framework
@@ -39,13 +39,13 @@ Pour plus d’informations sur les types, le format et l’emplacement des fichi
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[ **\<** élément de configuration](configuration-element.md)\
+[**\<configuration>** Appartient](configuration-element.md)\
 Élément de niveau supérieur pour tous les fichiers de configuration.
 
-[ **\<élément > assemblyBinding** ](assemblybinding-element-for-configuration.md)\
+[**\<assemblyBinding>** Appartient](assemblybinding-element-for-configuration.md)\
 Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.
 
-[ **\<élément > linkedConfiguration** ](linkedconfiguration-element.md)\
+[**\<linkedConfiguration>** Appartient](linkedconfiguration-element.md)\
 Spécifie un fichier de configuration à inclure.
 
 [Schéma des paramètres de démarrage](./startup/index.md)\
@@ -60,7 +60,7 @@ Spécifie un fichier de configuration à inclure.
 [Schéma des paramètres de chiffrement](./cryptography/index.md)\
 Éléments qui mappent des noms d’algorithmes conviviaux aux classes qui implémentent des algorithmes de chiffrement.
 
-[Schéma des sections de Configuration](configuration-sections-schema.md)\
+[Schéma des sections de configuration](configuration-sections-schema.md)\
 Éléments utilisés pour créer et utiliser des sections de configuration pour les paramètres personnalisés.
 
 [Schéma des paramètres de trace et de débogage](./trace-debug/index.md)\
@@ -69,37 +69,37 @@ Spécifie un fichier de configuration à inclure.
 [Schéma des paramètres du fournisseur de langage et du compilateur](./compiler/index.md)\
 Éléments qui spécifient la configuration du compilateur pour les fournisseurs de langages disponibles.
 
-[Schéma des paramètres](application-settings-schema.md) de l’application\
+[Schéma des paramètres de l’application](application-settings-schema.md)\
 Éléments qui permettent à une application Windows Forms ou ASP.NET de stocker et d’extraire des paramètres de portée application et de portée utilisateur.
 
-[Schéma des paramètres](./appsettings/index.md) de l’application\
+[Schéma des paramètres de l’application](./appsettings/index.md)\
 Contient des paramètres d’application personnalisés, tels que des chemins d’accès, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application.
 
-\ du [schéma des paramètres Web](./web/index.md)
+[Schéma des paramètres Web](./web/index.md)\
 Éléments permettant de configurer la façon dont ASP.NET fonctionne avec une application hôte telle qu’IIS. Utilisé dans les fichiers *Aspnet.config*.
 
-[Schéma de Configuration Windows Forms](winforms/index.md)\
+[Schéma de configuration de Windows Forms](winforms/index.md)\
 Tous les éléments de la section de configuration de l’application Windows Forms, qui comprend des personnalisations telles que la prise en charge de plusieurs moniteurs et de la haute résolution.
 
 [Schéma de configuration WCF](./wcf/index.md)\
 Tous les éléments qui vous permettent de configurer les applications clientes et de service WCF.
 
-\ de [la syntaxe de directive WCF](./wcf-directive/index.md)
-Décrit la directive `@ServiceHost`, qui définit des attributs spécifiques à la page utilisés par le compilateur. svc.
+[Syntaxe de directive WCF](./wcf-directive/index.md)\
+Décrit la `@ServiceHost` directive, qui définit des attributs spécifiques à la page utilisés par le compilateur. svc.
 
-[Schéma de configuration de Windows Identity Foundation](windows-identity-foundation/index.md)\
+[Schéma de configuration de WIF](windows-identity-foundation/index.md)\
 Tous les éléments du schéma de configuration de Windows Identity Foundation (WIF).
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 [Schéma des paramètres de communication à distance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100))\
 Décrit les éléments qui configurent les applications client-serveur qui implémentent la communication à distance.
 
-\ du [schéma des paramètres ASP.net](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))
+[Schéma des paramètres ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))\
 Décrit les éléments qui contrôlent le comportement d'applications web ASP.NET.
 
-\ du [schéma des paramètres des services Web](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))
+[Schéma des paramètres des services Web](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))\
 Décrit les éléments qui contrôlent le comportement des services web ASP.NET et de leurs clients.
 
-[Configuration d'applications .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\
-Décrit comment configurer la sécurité, les liaisons d'assembly et la communication à distance dans le .NET Framework.
+[Configuration des applications .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\
+Décrit comment configurer la sécurité, les liaisons d’assembly et la communication à distance dans le .NET Framework.

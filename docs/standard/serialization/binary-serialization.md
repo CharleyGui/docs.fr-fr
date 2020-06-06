@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
 author: ViktorHofer
 ms.openlocfilehash: c735d30920fd3c8cd13243b4a5a29489ce05b262
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84289692"
 ---
 # <a name="binary-serialization"></a>Sérialisation binaire

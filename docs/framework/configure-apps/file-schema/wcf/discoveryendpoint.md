@@ -3,20 +3,20 @@ title: <discoveryEndpoint>
 ms.date: 03/30/2017
 ms.assetid: fae2f48b-a635-4e4b-859d-a1432ac37e1c
 ms.openlocfilehash: 32b14f8fb3235040a51455f2099a403c8312c699
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855397"
 ---
-# <a name="discoveryendpoint"></a>\<discoveryEndpoint>
+# \<discoveryEndpoint>
 
 Cet élément de configuration définit un point de terminaison standard avec un contrat de découverte fixe. Lorsqu'il est ajouté à la configuration du service, il spécifie où écouter les messages de découverte. Lorsqu'il est ajouté à la configuration client, il spécifie où envoyer les requêtes de découverte.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<standardEndpoints >** ](standardendpoints.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<discoveryEndpoint >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<standardEndpoints>**](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<discoveryEndpoint>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 | Attribut        | Description |  
 | ---------------- | ----------- |  
-| discoveryMode    | Chaîne qui spécifie le mode de protocole de découverte. Les valeurs valides sont « adhoc » et « Managed ». En mode managé, le protocole repose sur un proxy de découverte, qui fait office de référentiel des services détectables. Le mode ad hoc nécessite que le protocole utilise le mécanisme de multidiffusion UDP pour rechercher les services disponibles. Pour plus d’informations sur la propriété, <xref:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode%2A>consultez. |  
+| discoveryMode    | Chaîne qui spécifie le mode de protocole de découverte. Les valeurs valides sont « adhoc » et « Managed ». En mode managé, le protocole repose sur un proxy de découverte, qui fait office de référentiel des services détectables. Le mode ad hoc nécessite que le protocole utilise le mécanisme de multidiffusion UDP pour rechercher les services disponibles. Pour plus d’informations sur la propriété, consultez <xref:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode%2A> . |  
 | discoveryVersion | Chaîne qui spécifie l'une des deux versions du protocole WS-Discovery. Les valeurs valides sont WSDiscovery11 et WSDiscoveryApril2005. Cette valeur est de type <xref:System.ServiceModel.Discovery.DiscoveryVersion>. |  
 | maxResponseDelay | Valeur Timespan qui indique la valeur maximale du délai d'attente du protocole de découverte avant l'envoi de certains messages, tels que ceux de type Probe Match ou Resolve Match.<br /><br /> Si tous les messages ProbeMatches sont envoyés en même temps, une tempête de réseau peut en résulter. Pour empêcher cet effet, les messages ProbeMatches sont envoyés avec un délai aléatoire entre chaque message ProbeMatch. Le délai aléatoire est compris entre 0 et la valeur définie par cet attribut. Si l'attribut a la valeur 0, les messages ProbeMatches sont envoyés dans une boucle serrée sans délai. Sinon, les messages ProbeMatches sont envoyés avec un délai aléatoire de sorte que la durée totale nécessaire à l'envoi de tous les messages ProbeMatches ne dépasse pas le maxResponseDelay. Cette valeur est uniquement pertinente pour les services, elle n'est pas utilisée par les clients. |  
 | `name`           | Chaîne qui spécifie le nom de la configuration du point de terminaison standard. Le nom est utilisé dans l'attribut `endpointConfiguration` du point de terminaison de service pour lier un point de terminaison standard à sa configuration. |  

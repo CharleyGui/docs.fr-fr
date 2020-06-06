@@ -9,18 +9,18 @@ helpviewer_keywords:
 - oidMap element
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
 ms.openlocfilehash: a28eaf68fe1e6ab3f26592eee5ae2d0f2e7a3256
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155165"
 ---
-# <a name="oidmap-element"></a>\<oidMap> Element
-Contient des cartographies ASN.1 d’identifiant d’objet (OID) aux classes.  
+# <a name="oidmap-element"></a>Élément \<oidMap>
+Contient les mappages de l’identificateur d’objet (OID) ASN. 1 aux classes.  
 
 [**\<configuration>**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<>mscorlib**](mscorlib-element-for-cryptography-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<cryptographieSettings>**](cryptographysettings-element.md)\
+&nbsp;&nbsp;[**\<mscorlib>**](mscorlib-element-for-cryptography-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<cryptographySettings>**](cryptographysettings-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<oidMap>**
 
 ## <a name="syntax"></a>Syntaxe  
@@ -40,7 +40,7 @@ Contient des cartographies ASN.1 d’identifiant d’objet (OID) aux classes.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<oidEntry>](oidentry-element.md)|Cartes d’un ASN.1 OID à un nom amical.|  
+|[\<oidEntry>](oidentry-element.md)|Mappe un OID ASN. 1 à un nom convivial.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -48,10 +48,10 @@ Contient des cartographies ASN.1 d’identifiant d’objet (OID) aux classes.
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`cryptographySettings`|Contient des paramètres de chiffrement.|  
-|`mscorlib`|Contient `cryptographySettings` l’élément.|  
+|`mscorlib`|Contient l' `cryptographySettings` élément.|  
   
-## <a name="example"></a> Exemple  
- L’exemple suivant montre comment utiliser ** \<l’élément oidMap>** pour contenir une cartographie d’un OID pour l’algorithme de hachage RIPEMD-160 à une implémentation de cet algorithme de hachage.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser l' **\<oidMap>** élément pour contenir un mappage d’un OID pour l’algorithme de hachage RIPEMD-160 à une implémentation de cet algorithme de hachage.  
   
 ```xml  
 <configuration>  
@@ -75,8 +75,8 @@ Contient des cartographies ASN.1 d’identifiant d’objet (OID) aux classes.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration Fichier Schema](../index.md)
-- [Paramètres de cryptographie Schema](index.md)
-- [Cryptographic Services](../../../../standard/security/cryptographic-services.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Schéma des paramètres de chiffrement](index.md)
+- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)
 - [Configuration de classes de chiffrement](../../configure-cryptography-classes.md)
 - [Mappage d'identificateurs d'objet à des algorithmes de chiffrement](../../map-object-identifiers-to-cryptography-algorithms.md)

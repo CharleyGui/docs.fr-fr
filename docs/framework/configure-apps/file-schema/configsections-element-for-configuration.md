@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
 ms.openlocfilehash: 55116f1fe6fdffffea8f26d8a4de783c7305ada3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155347"
 ---
-# <a name="configsections-element-for-configuration"></a>\<les> élément de configuration \<>
+# <a name="configsections-element-for-configuration"></a>\<configSections>, élément de \<configuration>
 
-Contient la section de configuration et les déclarations d’espace nom.
+Contient la section de configuration et les déclarations d’espace de noms.
 
-configuration &nbsp; &nbsp;>[** \<**](configuration-element.md) ** \<configSections>**
+[**\<configuration>**](configuration-element.md) &nbsp;&nbsp;**\<configSections>**
 
 ## <a name="attributes"></a>Attributs
 
-None
+Aucune
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -35,17 +35,17 @@ None
 |     | Description |
 | --- | ----------- |
 | [**\<section>**](section-element.md) | Contient une déclaration de section de configuration. |
-| [**\<sectionGroupe>**](sectiongroup-element-for-configsections.md) | Définit un espace de nom pour les sections de configuration. |
-| [**\<supprimer>**](remove-element-for-configsections.md) | Supprime une section prédéfinie ou un groupe de section. |
-| [**\<clair>**](clear-element-for-configsections.md) | Efface toutes les sections et les groupes de section précédemment définis. |
+| [**\<sectionGroup>**](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
+| [**\<remove>**](remove-element-for-configsections.md) | Supprime un groupe de sections ou de sections prédéfini. |
+| [**\<clear>**](clear-element-for-configsections.md) | Efface toutes les sections et tous les groupes de sections précédemment définis. |
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
-Si cet élément est dans un fichier de configuration, ** \<** il doit être le premier élément enfant de la configuration>élément.
+Si cet élément se trouve dans un fichier de configuration, il doit s’agir du premier élément enfant de l' **\<configuration>** élément.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment définir une section de configuration et définir les paramètres de cette section :
+L’exemple suivant montre comment définir une section de configuration et définir les paramètres de cette section :
 
 ```xml
 <configuration>
@@ -61,8 +61,8 @@ L’exemple suivant montre comment définir une section de configuration et déf
 
 ## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration de machine (*Machine.config*), et les fichiers *Web.config* qui ne sont pas au niveau de l’annuaire d’application.
+Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le cadre .NET](index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

@@ -4,10 +4,10 @@ description: La sérialisation peut être utilisée pour capturer l’état d’
 ms.date: 08/07/2017
 ms.assetid: e1ff4740-20a1-4c76-a8ad-d857db307054
 ms.openlocfilehash: 35addd2dd2bed8ce878f2f159f1caefe89922d88
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84291316"
 ---
 # <a name="serialization-concepts"></a>Concepts de la sérialisation

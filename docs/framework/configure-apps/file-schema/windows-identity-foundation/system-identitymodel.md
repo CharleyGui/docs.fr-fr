@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
 author: BrucePerlerMS
 ms.openlocfilehash: a54f5ce86aee1a5e831c0b10aa1471d4a82f40a5
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70251791"
 ---
-# <a name="systemidentitymodel"></a>\<system.identityModel>
+# \<system.identityModel>
 Fournit la configuration permettant d’activer les options de Windows Identity Foundation (WIF) dans les applications.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp; **\<System. identityModel >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;**\<system.identityModel>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,7 +27,7 @@ Fournit la configuration permettant d’activer les options de Windows Identity 
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucune  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -41,11 +41,11 @@ Fournit la configuration permettant d’activer les options de Windows Identity 
 |-------------|-----------------|  
 |`<configuration>`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Ajoutez une `<system.identityModel>` section au fichier de configuration pour configurer un service ou une application pour utiliser Windows Identity Foundation (WIF). L' `<system.identityModel>` élément est représenté par la <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> classe.  
   
-## <a name="example"></a>Exemples  
- L’exemple suivant montre comment ajouter une `<system.identityModel>` section à un fichier de configuration. Vous devez d’abord ajouter la section de configuration et la Déclaration `<configSections>` d’espace de noms sous l’élément. Vous pouvez ensuite ajouter l' `<system.IdentityModel>` élément à votre fichier de configuration pour spécifier une ou plusieurs configurations d’identité.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment ajouter une `<system.identityModel>` section à un fichier de configuration. Vous devez d’abord ajouter la section de configuration et la déclaration d’espace de noms sous l' `<configSections>` élément. Vous pouvez ensuite ajouter l' `<system.IdentityModel>` élément à votre fichier de configuration pour spécifier une ou plusieurs configurations d’identité.  
   
 ```xml  
 <configuration>  

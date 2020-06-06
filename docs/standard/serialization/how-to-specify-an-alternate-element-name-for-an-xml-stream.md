@@ -14,10 +14,10 @@ helpviewer_keywords:
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
 ms.openlocfilehash: d7e482ee6e1e1a7318ab05766508537d4b87789e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84289588"
 ---
 # <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Comment : spécifier un nom d'élément différent pour un flux XML

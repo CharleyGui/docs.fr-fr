@@ -7,25 +7,25 @@ helpviewer_keywords:
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
 ms.openlocfilehash: ead69d1e850050214c15295134c06ff6f66e9760
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "81646031"
 ---
 # <a name="specifying-an-assemblys-location"></a>Spécification de l'emplacement d'un assembly
-Il y a deux façons de spécifier l’emplacement d’une assemblée :  
+Il existe deux façons de spécifier l’emplacement d’un assembly :  
   
-- Utilisation du [ \<codeBase>](./file-schema/runtime/codebase-element.md) élément.  
+- À l’aide de l' [\<codeBase>](./file-schema/runtime/codebase-element.md) élément.  
   
-- Utilisation de [ \<l’élément de sondage>.](./file-schema/runtime/probing-element.md)  
+- À l’aide de l' [\<probing>](./file-schema/runtime/probing-element.md) élément.  
   
- Vous pouvez également utiliser [l’outil de configuration cadre .NET (Mscorcfg.msc)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) pour spécifier les emplacements d’assemblage ou spécifier les emplacements de l’heure d’exécution de langue commune pour sonder les assemblages.  
+ Vous pouvez également utiliser l' [outil de Configuration .NET Framework (Mscorcfg. msc)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) pour spécifier des emplacements d’assembly ou spécifier des emplacements pour le Common Language Runtime pour détecter les assemblys.  
   
-## <a name="using-the-codebase-element"></a>Utilisation \<du codeBase> Element  
- Vous pouvez utiliser le ** \<codeBase>** élément uniquement dans la configuration de la machine ou les fichiers de stratégie de l’éditeur qui rediriger également la version d’assemblage. Lorsque le temps d’exécution détermine la version d’assemblage à utiliser, il applique le paramètre de base de code du fichier qui détermine la version. Si aucune base de code n’est indiquée, les sondes de temps d’exécution pour l’assemblage de la manière normale. Pour plus de détails, voir [Comment les assemblages De localisation de Runtime](../deployment/how-the-runtime-locates-assemblies.md).  
+## <a name="using-the-codebase-element"></a>Utilisation de l' \<codeBase> élément  
+ Vous pouvez utiliser l' **\<codeBase>** élément uniquement dans la configuration de l’ordinateur ou dans les fichiers de stratégie de l’éditeur qui redirigent également la version de l’assembly. Lorsque le runtime détermine la version de l’assembly à utiliser, il applique le paramètre de base du code à partir du fichier qui détermine la version. Si aucune base de code n’est indiquée, le runtime détecte l’assembly de manière normale. Pour plus d’informations, consultez [Comment le runtime localise les assemblys](../deployment/how-the-runtime-locates-assemblies.md).  
   
- L’exemple suivant montre comment spécifier l’emplacement d’une assemblée.  
+ L’exemple suivant montre comment spécifier l’emplacement d’un assembly.  
   
 ```xml  
 <configuration>  
@@ -43,15 +43,15 @@ Il y a deux façons de spécifier l’emplacement d’une assemblée :
 </configuration>  
 ```  
   
- **L’attribut de version** est exigé pour toutes les assemblées nommées fort, mais doit être omise pour les assemblées qui ne sont pas nommées fort. Le ** \<codeBase>** élément nécessite l’attribut **href.** Vous ne pouvez pas spécifier les plages de version dans l’élément ** \<codeBase>.**  
+ L’attribut **version** est requis pour tous les assemblys avec nom fort, mais doit être omis pour les assemblys qui ne portent pas un nom fort. L' **\<codeBase>** élément requiert l’attribut **href** . Vous ne pouvez pas spécifier de plages de versions dans l' **\<codeBase>** élément.  
   
 > [!NOTE]
-> Si vous fournissez un indice de base de code pour une assemblée qui n’est pas solidement nommée, l’indice doit indiquer la base d’application ou une sous-direction de l’annuaire de base d’application.  
+> Si vous fournissez un indicateur de base de code pour un assembly qui n’a pas un nom fort, l’indicateur doit pointer vers la base de l’application ou vers un sous-répertoire du répertoire de base de l’application.  
   
-## <a name="using-the-probing-element"></a>Utilisation \<de l’élément> de sondage  
- Le temps d’exécution localise les assemblages qui n’ont pas de base de code en sondant. Pour plus d’informations sur l’enquête, voir [Comment les assemblages Runtime Locates](../deployment/how-the-runtime-locates-assemblies.md).  
+## <a name="using-the-probing-element"></a>Utilisation de l' \<probing> élément  
+ Le runtime localise les assemblys qui n’ont pas de base de code en procédant à une détection. Pour plus d’informations sur la détection, voir [Comment le runtime localise les assemblys](../deployment/how-the-runtime-locates-assemblies.md).  
   
- Vous pouvez [ \<](./file-schema/runtime/probing-element.md) utiliser l’élément de sondage>dans le fichier de configuration d’application pour spécifier les sous-directions que l’heure d’exécution doit rechercher lors de la localisation d’un assemblage. L’exemple suivant montre comment spécifier les répertoires que l’heure d’exécution doit rechercher.  
+ Vous pouvez utiliser l' [\<probing>](./file-schema/runtime/probing-element.md) élément dans le fichier de configuration de l’application pour spécifier les sous-répertoires que le runtime doit rechercher lors de la localisation d’un assembly. L’exemple suivant montre comment spécifier les répertoires dans lesquels le runtime doit effectuer des recherches.  
   
 ```xml  
 <configuration>  
@@ -63,7 +63,7 @@ Il y a deux façons de spécifier l’emplacement d’une assemblée :
 </configuration>  
 ```  
   
- **L’attribut PrivatePath** contient les répertoires que le temps d’exécution doit rechercher des assemblages. Si l’application est située à C : Fichiers de programme MyApp, l’exécution recherchera des assemblages qui ne spécifient pas une base de code dans C : Fichiers de programme- MyApp’Bin, C : Fichiers de programme -MyApp’Bin2-Subbin, et C : Fichiers de programme-MyApp-Bin3. Les répertoires spécifiés dans **privatePath** doivent être des sous-directeurs de l’annuaire de base d’application.  
+ L’attribut **privatePath** contient les répertoires dans lesquels le runtime doit rechercher des assemblys. Si l’application se trouve dans C:\Program Files\MyApp, le runtime recherche les assemblys qui ne spécifient pas de base de code dans C:\Program Files\MyApp\Bin, C:\Program Files\MyApp\Bin2\Subbin et C:\Program Files\MyApp\Bin3. Les répertoires spécifiés dans **privatePath** doivent être des sous-répertoires du répertoire de base de l’application.  
   
 ## <a name="see-also"></a>Voir aussi
 

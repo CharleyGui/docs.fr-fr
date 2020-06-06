@@ -9,18 +9,18 @@ helpviewer_keywords:
 - container tags, <assemblyBinding> element
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
 ms.openlocfilehash: 202b063ad3f0f9696cdc12aff434d61fe5a813e6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154320"
 ---
-# <a name="assemblybinding-element-for-runtime"></a>\<assemblageBinding> Element pour \<les> de temps d’exécution
+# <a name="assemblybinding-element-for-runtime"></a>\<assemblyBinding>, élément de \<runtime>
 Contient des informations à propos de la redirection des versions d'assemblys et de l'emplacement de ces derniers.  
   
 [**\<configuration>**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<>de temps d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;**\<assemblageBinding>**  
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<assemblyBinding>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ Contient des informations à propos de la redirection des versions d'assemblys e
 |Attribut|Description|  
 |---------------|-----------------|  
 |**xmlns**|Attribut requis.<br /><br /> Spécifie l'espace de noms XML requis pour la liaison d'assembly. Utilisez la chaîne « urn:schemas-microsoft-com:asm.v1 » comme valeur.|  
-|**s’appliqueTo**|Spécifie la version du runtime à laquelle s'applique la redirection d'assembly .NET Framework. Cet attribut facultatif utilise un numéro de version .NET Framework pour indiquer la version à laquelle il s'applique. Si l’attribut **appliesTo** n’est pas spécifié, l’élément **\<assemblyBinding>** s’applique à toutes les versions du .NET Framework. **L’attribut appliesTo** a été introduit dans la version cadre .NET 1.1; il est ignoré par la version cadre .NET 1.0. Cela signifie ** \<** que tous les éléments de>de assemblage sont appliqués lors de l’utilisation de la version cadre .NET 1.0, même si un attribut **appliqueTo** est spécifié.|  
+|**appliesTo**|Spécifie la version du runtime à laquelle s'applique la redirection d'assembly .NET Framework. Cet attribut facultatif utilise un numéro de version .NET Framework pour indiquer la version à laquelle il s'applique. Si aucun attribut **appliesTo** n’est spécifié, l' **\<assemblyBinding>** élément s’applique à toutes les versions du .NET Framework. L’attribut **appliesTo** a été introduit dans .NET Framework version 1,1 ; elle est ignorée par la version de .NET Framework 1,0. Cela signifie que tous les **\<assemblyBinding>** éléments sont appliqués lors de l’utilisation de la version 1,0 de .NET Framework, même si un attribut **appliesTo** est spécifié.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<dépendantAssembly>](dependentassembly-element.md)|Encapsule la stratégie de liaison et l'emplacement d'un assembly. Utilisez ** \<** une étiquette>dépendante pour chaque assemblage.|  
-|[\<sonder>](probing-element.md)|Spécifie les sous-répertoires interrogés par le Common Language Runtime lors du chargement des assemblys.|  
-|[\<éditeurPolicy>](publisherpolicy-element.md)|Spécifie si le runtime applique la stratégie de l'éditeur.|  
-|[\<qualifierAssembly>](qualifyassembly-element.md)|Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quand un nom partiel est utilisé.|  
+|[\<dependentAssembly>](dependentassembly-element.md)|Encapsule la stratégie de liaison et l'emplacement d'un assembly. Utilisez une **\<dependentAssembly>** balise pour chaque assembly.|  
+|[\<probing>](probing-element.md)|Spécifie les sous-répertoires interrogés par le Common Language Runtime lors du chargement des assemblys.|  
+|[\<publisherPolicy>](publisherpolicy-element.md)|Spécifie si le runtime applique la stratégie de l'éditeur.|  
+|[\<qualifyAssembly>](qualifyassembly-element.md)|Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quand un nom partiel est utilisé.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -56,7 +56,7 @@ Contient des informations à propos de la redirection des versions d'assemblys e
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant montre comment rediriger une version d'assembly vers une autre et fournir une base de code.  
   
 ```xml  
@@ -77,7 +77,7 @@ Contient des informations à propos de la redirection des versions d'assemblys e
 </configuration>  
 ```  
   
- L’exemple suivant montre comment utiliser **l’attribut appliesTo** pour rediriger la liaison d’un assemblage cadre .NET.  
+ L’exemple suivant montre comment utiliser l’attribut **appliesTo** pour rediriger la liaison d’un assembly de .NET Framework.  
   
 ```xml  
 <runtime>  
@@ -92,6 +92,6 @@ Contient des informations à propos de la redirection des versions d'assemblys e
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d'exécution](index.md)
-- [Configuration Fichier Schema](../index.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
 - [Redirection des versions d'assemblys](../../redirect-assembly-versions.md)
