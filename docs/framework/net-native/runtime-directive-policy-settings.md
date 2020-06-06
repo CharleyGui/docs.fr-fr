@@ -3,10 +3,10 @@ title: Paramètres de stratégie de directive runtime
 ms.date: 03/30/2017
 ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
 ms.openlocfilehash: 7a8933decaec45e8000f3f3d1717847f333deddd
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "76738495"
 ---
 # <a name="runtime-directive-policy-settings"></a>Paramètres de stratégie de directive runtime
@@ -16,7 +16,7 @@ ms.locfileid: "76738495"
 
 Les paramètres de stratégie des directives runtime pour .NET Native déterminent la disponibilité des métadonnées pour les types et les membres de type au moment de l'exécution. Sans les métadonnées nécessaires, les opérations qui reposent sur la réflexion, la sérialisation, la désérialisation ou le marshaling de types .NET Framework vers COM ou Windows Runtime peuvent échouer et lever une exception. Les exceptions les plus courantes sont [MissingMetadataException](missingmetadataexception-class-net-native.md) et, dans le cas de l’interopérabilité, [MissingInteropDataException](missinginteropdataexception-class-net-native.md).
 
-Les paramètres de stratégie runtime sont contrôlés par un fichier de directives runtime (.rd.xml). Chaque directive runtime définit la stratégie pour un élément de programme particulier, par exemple un assembly (élément [\<Assembly>](assembly-element-net-native.md)), un type (élément [\<Type>](type-element-net-native.md)) ou une méthode (élément [\<Method>](method-element-net-native.md)). La directive inclut un ou plusieurs attributs qui définissent les types de stratégie de réflexion, les types de stratégie de sérialisation et les types de stratégie d'interopérabilité décrits dans la section suivante. La valeur de l'attribut définit le paramètre de stratégie.
+Les paramètres de stratégie runtime sont contrôlés par un fichier de directives runtime (.rd.xml). Chaque directive Runtime définit la stratégie pour un élément de programme particulier, par exemple un assembly (l' [\<Assembly>](assembly-element-net-native.md) élément), un type (l' [\<Type>](type-element-net-native.md) élément) ou une méthode (l' [\<Method>](method-element-net-native.md) élément). La directive inclut un ou plusieurs attributs qui définissent les types de stratégie de réflexion, les types de stratégie de sérialisation et les types de stratégie d'interopérabilité décrits dans la section suivante. La valeur de l'attribut définit le paramètre de stratégie.
 
 ## <a name="policy-types"></a>Types de stratégie
 
@@ -32,7 +32,7 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   Le tableau suivant répertorie les types de stratégie de réflexion et les éléments de programme avec lesquels ils peuvent être utilisés.
 
-  |Élément|Activer|Parcourir|Dynamic|
+  |Élément|Activer|Parcourir|Dynamique|
   |-------------|--------------|------------|-------------|
   |[\<Application>](application-element-net-native.md)|✔️|✔️|✔️|
   |[\<Assembly>](assembly-element-net-native.md)|✔️|✔️|✔️|
@@ -63,7 +63,7 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   Le tableau suivant répertorie les types de stratégie de sérialisation et les éléments de programme avec lesquels ils peuvent être utilisés.
 
-  |Élément|Sérialiser|DataContractSerializer|DataContractJsonSerializer|XmlSerializer|
+  |Élément|Sérialisation|DataContractSerializer|DataContractJsonSerializer|XmlSerializer|
   |-------------|---------------|----------------------------|--------------------------------|-------------------|
   |[\<Application>](application-element-net-native.md)|✔️|✔️|✔️|✔️|
   |[\<Assembly>](assembly-element-net-native.md)|✔️|✔️|✔️|✔️|

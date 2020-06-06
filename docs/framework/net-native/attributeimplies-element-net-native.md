@@ -1,15 +1,15 @@
 ---
-title: <AttributeImplies>Élément (.NET Native)
+title: <AttributeImplies>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 82db7193-a860-418b-84fc-fff2fdf2e025
 ms.openlocfilehash: 2ab1fdc71bc43f61f69a0d9b7bea7acb35e14ea5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79181067"
 ---
-# <a name="attributeimplies-element-net-native"></a>\<AttributImplies> Element (.NET Native)
+# <a name="attributeimplies-element-net-native"></a>\<AttributeImplies>, Élément (.NET Native)
 Définit la stratégie pour les éléments de code auxquels l'attribut conteneur est appliqué.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -60,14 +60,14 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
 |-------------|-----------------|  
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  L'élément `<AttributeImplies>` est utilisé si son type conteneur est un attribut (autrement dit, une classe dérivée de <xref:System.Attribute?displayProperty=nameWithType>). Si l'attribut est appliqué à un élément de programme particulier, la stratégie définie par l'élément `<AttributeImplies>` s'applique à cet élément de programme.  
   
  Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs, même si un au moins doit être présent.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Type> Élément](type-element-net-native.md)
-- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [\<Type>Appartient](type-element-net-native.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

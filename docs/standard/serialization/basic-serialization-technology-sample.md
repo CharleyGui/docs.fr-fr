@@ -4,10 +4,10 @@ description: Cet exemple illustre la capacité du CLR à sérialiser un graphiqu
 ms.date: 03/30/2017
 ms.assetid: 9d824e16-08d1-4a36-bc7f-2388c1f75f34
 ms.openlocfilehash: 3f2273e6afb3a72f9734444ffe92d30871fb762b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84276567"
 ---
 # <a name="basic-serialization-technology-sample"></a>Sérialisation de base, exemple de technologie
@@ -43,7 +43,7 @@ Pour plus d'informations sur la sérialisation, consultez les commentaires inclu
   > [!NOTE]
   > Cet exemple génère une application console. Vous devez la lancer à l'aide de l'invite de commandes pour pouvoir afficher sa sortie.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 L'exemple d'application accepte des paramètres de ligne de commande indiquant le test à exécuter. Pour sérialiser une liste de 10 nœuds dans un fichier nommé **Test.xml** à l’aide du formateur SOAP, utilisez les paramètres **sx Test.xml 10**.
 

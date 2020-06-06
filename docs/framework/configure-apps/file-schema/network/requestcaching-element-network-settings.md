@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
 ms.openlocfilehash: afee69eb894518b1c88483e34a1d64d452019244
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74802130"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching>, élément (paramètres réseau)
 Contrôle le mécanisme de mise en cache pour les demandes réseau.  
   
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<requestCaching** >  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<requestCaching>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +49,7 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
   
 ## <a name="policylevel-attribute"></a>policyLevel (attribut)  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |`Default`|Retourne la ressource mise en cache si la ressource est actualisée, si la longueur du contenu est exacte et si les attributs d’expiration, de modification et de longueur du contenu sont présents.|  
 |`BypassCache`|Retourne la ressource à partir du serveur.|  
@@ -65,7 +65,7 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
 |Élément|Description|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Indique si la mise en cache HTTP est active et décrit la stratégie de mise en cache par défaut.|  
-|[\<defaultFtpCachePolicy >, élément (paramètres réseau)](defaultftpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Indique si la mise en cache FTP est active et décrit la stratégie de mise en cache par défaut.|  
+|[\<defaultFtpCachePolicy>, Élément (paramètres réseau)](defaultftpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Indique si la mise en cache FTP est active et décrit la stratégie de mise en cache par défaut.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

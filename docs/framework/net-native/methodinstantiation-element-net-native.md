@@ -1,15 +1,15 @@
 ---
-title: Élément <MethodInstantiation> (.NET Native)
+title: <MethodInstantiation>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: a3355d78-2a88-4109-8521-830d7cae260a
 ms.openlocfilehash: f19bd3c20088431bcbbafac298398b82a664bee9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128327"
 ---
-# <a name="methodinstantiation-element-net-native"></a>\<élément MethodInstantiation > (.NET Native)
+# <a name="methodinstantiation-element-net-native"></a>\<MethodInstantiation>, Élément (.NET Native)
 Applique la stratégie de réflexion runtime à une méthode générique construite.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,30 +37,30 @@ Applique la stratégie de réflexion runtime à une méthode générique constru
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*nom_méthode*|Nom de la méthode. Le type de la méthode est défini par le [\<Type>](type-element-net-native.md) parent ou l’élément [\<TypeInstantiation>](typeinstantiation-element-net-native.md).|  
+|*method_name*|Le nom de la méthode. Le type de la méthode est défini par l' [\<Type>](type-element-net-native.md) élément parent ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .|  
   
 ## <a name="signature-attribute"></a>Attribut de signature  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*signature_méthode*|Spécifie les paramètres nommés de la méthode. Si plusieurs paramètres sont présents, ils sont séparés par des virgules.|  
   
 ## <a name="arguments-attribute"></a>Attribut Arguments  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*arguments_méthode*|Spécifie les arguments de type générique. Si plusieurs arguments sont présents, ils sont séparés par des virgules. Chaque argument doit être composé du nom de type qualifié complet.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie pour la méthode. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -69,7 +69,7 @@ Applique la stratégie de réflexion runtime à une méthode générique constru
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L'élément `<MethodInstantiation>` remplace la stratégie de réflexion runtime de la méthode générique ouverte correspondante.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -77,4 +77,4 @@ Applique la stratégie de réflexion runtime à une méthode générique constru
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
-- [\<Method>, élément](method-element-net-native.md)
+- [\<Method>Appartient](method-element-net-native.md)

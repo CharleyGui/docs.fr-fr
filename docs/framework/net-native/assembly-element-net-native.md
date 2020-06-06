@@ -1,15 +1,15 @@
 ---
-title: <Assembly>Élément (.NET Native)
+title: <Assembly>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
 ms.openlocfilehash: f3cf65b185b1db3289a0dbb785c2b91431951cc2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79181078"
 ---
-# <a name="assembly-element-net-native"></a>\<Assemblage> Element (.NET Native)
+# <a name="assembly-element-net-native"></a>\<Assembly>, Élément (.NET Native)
 Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -71,13 +71,13 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<>d’application](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. [ \<L’élément d’application>](application-element-net-native.md) peut avoir zéro, un ou plusieurs `<Assembly>` éléments.|  
-|[\<>de bibliothèque](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. La [ \<Bibliothèque>](library-element-net-native.md) élément peut avoir `<Assembly>` zéro ou un élément.|  
+|[\<Application>](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L' [\<Application>](application-element-net-native.md) élément peut avoir zéro, un ou plusieurs `<Assembly>` éléments.|  
+|[\<Library>](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L' [\<Library>](library-element-net-native.md) élément peut avoir zéro ou un `<Assembly>` élément.|  
   
-## <a name="remarks"></a>Notes   
- L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly. Il diffère de l’élément [ \<>de la Bibliothèque,](library-element-net-native.md) qui spécifie une bibliothèque, mais dépend de ses éléments pour enfants pour définir la politique de réflexion sur le temps d’exécution. L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.  
+## <a name="remarks"></a>Remarques  
+ L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly. Il diffère de l' [\<Library>](library-element-net-native.md) élément, qui spécifie une bibliothèque, mais qui dépend de ses éléments enfants pour définir la stratégie de réflexion du Runtime. L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.  
   
- L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`. L’élément `<Assembly>` doit être un enfant de [ \<l’élément>d’application.](application-element-net-native.md)  
+ L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`. L' `<Assembly>` élément doit être un enfant de l' [\<Application>](application-element-net-native.md) élément.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -92,5 +92,5 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
 ## <a name="see-also"></a>Voir aussi
 
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
-- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
 ms.openlocfilehash: f3c1a1670139a8262dea449bfff99c7c1c19f088
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088944"
 ---
-# <a name="assert-element"></a>\<déclarer > élément
+# <a name="assert-element"></a>Élément \<assert>
 Indique si une boîte de message doit s’afficher quand vous appelez la méthode <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> ; spécifie également le nom du fichier dans lequel écrire les messages.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<Assert >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<assert>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +40,13 @@ Indique si une boîte de message doit s’afficher quand vous appelez la méthod
   
 ## <a name="assertuienabled-attribute"></a>Attribut AssertUiEnabled  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |`true`|Affiche la boîte de message. Il s'agit de la valeur par défaut.|  
 |`false`|N’affiche pas la boîte de message.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -55,11 +55,11 @@ Indique si une boîte de message doit s’afficher quand vous appelez la méthod
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
-## <a name="remarks"></a>Notes  
- Les deux attributs de l’élément **\<Assert >** sont facultatifs. Vous pouvez désactiver les boîtes de message sans spécifier de fichier dans lequel écrire les messages, ou vous pouvez spécifier un fichier dans lequel écrire les messages tout en laissant les boîtes de message activées.  
+## <a name="remarks"></a>Remarques  
+ Les deux attributs de l' **\<assert>** élément sont facultatifs. Vous pouvez désactiver les boîtes de message sans spécifier de fichier dans lequel écrire les messages, ou vous pouvez spécifier un fichier dans lequel écrire les messages tout en laissant les boîtes de message activées.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment désactiver l’affichage des boîtes de message lorsque vous appelez **Debug. Assert** et écrire les messages dans `c:\log.txt`.  
+ L’exemple suivant montre comment désactiver l’affichage des boîtes de message lorsque vous appelez **Debug. Assert** et écrire les messages dans `c:\log.txt` .  
   
 ```xml  
 <configuration>  
@@ -72,4 +72,4 @@ Indique si une boîte de message doit s’afficher quand vous appelez la méthod
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Diagnostics.Debug>
-- [Schéma des paramètres de trace et de débogage](index.md)
+- [Schéma des paramètres de traçage et de débogage](index.md)

@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <sectionGroup> Element
 ms.assetid: 6c27f9e2-809c-4bc9-aca9-72f90360e7a3
 ms.openlocfilehash: eb221027470fe6e485f8fcc4b939b71e4f219712
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77215262"
 ---
-# <a name="sectiongroup-element-for-configsections"></a>\<l’élément sectionGroup > pour \<configSections >
+# <a name="sectiongroup-element-for-configsections"></a>\<sectionGroup>, élément de \<configSections>
 
 Définit un espace de noms pour les sections de configuration.
 
-[ **\<configuration>** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<sectionGroup >**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<sectionGroup>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,17 +40,17 @@ Définit un espace de noms pour les sections de configuration.
 
 |     | Description |
 | --- | ----------- |
-| [ **\<configSections >** Appartient](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
+| [**\<configSections>** Appartient](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
 |     | Description |
 | --- | ----------- |
-| [ **\<section >** ](section-element.md) | Contient une déclaration de section de configuration. |
+| [**\<section>**](section-element.md) | Contient une déclaration de section de configuration. |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-La déclaration d’un groupe de sections crée une étiquette de conteneur pour les sections de configuration et s’assure qu’il n’existe aucun conflit de noms avec les sections de configuration définies par une autre personne. Vous pouvez imbriquer des éléments de **> de\<sectionGroup** les uns dans les autres.
+La déclaration d’un groupe de sections crée une étiquette de conteneur pour les sections de configuration et s’assure qu’il n’existe aucun conflit de noms avec les sections de configuration définies par une autre personne. Vous pouvez imbriquer **\<sectionGroup>** des éléments les uns dans les autres.
 
 ## <a name="example"></a>Exemple
 

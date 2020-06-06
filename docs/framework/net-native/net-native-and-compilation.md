@@ -3,10 +3,10 @@ title: Compilation et .NET natif
 ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 ms.openlocfilehash: cf5c9f05b2f2cb4ca15e4add5b53bc9bdca757a3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128248"
 ---
 # <a name="net-native-and-compilation"></a>Compilation et .NET natif
@@ -58,9 +58,9 @@ Au cours de la conversion d'une application du langage intermédiaire en code na
 
 L’application résultante produite par la chaîne d’outils .NET Native est écrite dans un répertoire nommé ilc.out, lui-même situé dans le répertoire Debug ou Release de votre répertoire de projet. Elle se compose des fichiers suivants :
 
-- *\<nom_application>* .exe, un exécutable stub qui cède le contrôle à une exportation `Main` spéciale dans *\<nom_application>* .dll.
+- *\<appName>*. exe, un exécutable stub qui transfère simplement le contrôle à une `Main` exportation spéciale dans *\<appName>* . dll.
 
-- *\<nom_application>* .dll, une bibliothèque de liens dynamiques Windows qui contient le code de votre application, ainsi que du code provenant de la bibliothèque de classes .NET Framework et de toute bibliothèque tierce avec laquelle il existe une dépendance.  Elle contient également le code de prise en charge, tel que le code nécessaire pour interagir avec Windows et sérialiser les objets de votre application.
+- *\<appName>*. dll, une bibliothèque de liens dynamiques Windows qui contient l’ensemble de votre code d’application, ainsi que le code de la bibliothèque de classes .NET Framework et des bibliothèques tierces sur lesquelles vous avez une dépendance.  Elle contient également le code de prise en charge, tel que le code nécessaire pour interagir avec Windows et sérialiser les objets de votre application.
 
 - mrt100_app.dll, un runtime refactorisé qui fournit des services d’exécution tels que le garbage collection.
 
@@ -105,6 +105,6 @@ Le [générateur d’images natives](../tools/ngen-exe-native-image-generator.md
 ## <a name="see-also"></a>Voir aussi
 
 - [Métadonnées et composants autodescriptifs](../../standard/metadata-and-self-describing-components.md)
-- [À l’intérieur de .NET Native (vidéo Channel 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
+- [Inside .NET Native (vidéo Channel 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
 - [Réflexion et .NET Native](reflection-and-net-native.md)
 - [Résolution des problèmes généraux liés à .NET Native](net-native-general-troubleshooting.md)

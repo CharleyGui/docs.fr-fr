@@ -3,10 +3,10 @@ title: Guide de référence du fichier de configuration des directives runtime (
 ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 ms.openlocfilehash: e74d34693446cca645003a9f93bc1777849e3182
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "76738409"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Guide de référence du fichier de configuration des directives runtime (rd.xml)
@@ -225,7 +225,7 @@ Si deux éléments dans des fichiers de directives runtime différents essaient 
 
 1. Si l'élément `Excluded` est présent, il a la priorité.
 
-2. `Required` est prioritaire sur `Required`Not Required{3}.
+2. `Required` est prioritaire sur `Required`.
 
 3. `All` est prioritaire sur `PublicAndInternal`, lui-même prioritaire sur `Public`.
 
@@ -445,7 +445,7 @@ L'application de la stratégie `Serialize` à un champ implique les modification
 
 #### <a name="the-effect-of-xmlserializer-datacontractserializer-and-datacontractjsonserializer-policies"></a>Effet des stratégies XmlSerializer, DataContractSerializer et DataContractJsonSerializer
 
-Contrairement à la stratégie de `Serialize`, qui est destinée aux sérialiseurs basés sur la réflexion, les stratégies <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>et <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> sont utilisées pour activer un ensemble de sérialiseurs connus de la chaîne d’outils .NET Native. Ces sérialiseurs ne sont pas implémentés à l'aide de la réflexion, mais le jeu de types qui peuvent être sérialisés au moment de l'exécution est déterminé de la même manière que les types pouvant faire l'objet d'une réflexion.
+Contrairement à la `Serialize` stratégie, qui est destinée aux sérialiseurs basés sur la réflexion, les <xref:System.Xml.Serialization.XmlSerializer> <xref:System.Runtime.Serialization.DataContractSerializer> stratégies, et <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> sont utilisées pour activer un ensemble de sérialiseurs qui sont connus de la chaîne d’outils .net native. Ces sérialiseurs ne sont pas implémentés à l'aide de la réflexion, mais le jeu de types qui peuvent être sérialisés au moment de l'exécution est déterminé de la même manière que les types pouvant faire l'objet d'une réflexion.
 
 Appliquer une de ces stratégies à un type permet de sérialiser celui-ci avec le sérialiseur correspondant. En outre, tous les types que le moteur de sérialisation peut déterminer de manière statique comme nécessitant une sérialisation sont également sérialisables.
 
