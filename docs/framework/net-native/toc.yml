@@ -3,12 +3,12 @@
   items:
     - name: Compilation et .NET natif
       href: net-native-and-compilation.md
-    - name: Commencer
+    - name: Prise en main
       href: getting-started-with-net-native.md
       items:
-        - name: "Exemple\_: résolution des problèmes de programmation dynamique"
+        - name: 'Exemple : Résolution des problèmes de programmation dynamique'
           href: example-troubleshooting-dynamic-programming.md
-        - name: "Exemple\_: gestion des exceptions pendant la liaison de données"
+        - name: 'Exemple : Gestion des exceptions pendant la liaison de données'
           href: example-handling-exceptions-when-binding-data.md
         - name: Exceptions du runtime dans les applications natives .NET
           href: runtime-exceptions-in-net-native-apps.md

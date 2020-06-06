@@ -4,9 +4,9 @@
     - name: '<appSettings>, élément de <configuration>'
       href: appsettings-element-for-configuration.md
       items:
-        - name: '<add>, élément'
+        - name: <add> (élément)
           href: add-element-for-appsettings.md
-        - name: '<clear>, élément'
+        - name: <clear> (élément)
           href: clear-element-for-appsettings.md
         - name: '<remove>, élément'
           href: remove-element-for-appsettings.md
