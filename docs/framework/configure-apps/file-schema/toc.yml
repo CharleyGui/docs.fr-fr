@@ -9,7 +9,7 @@
       href: linkedconfiguration-element.md
     - name: Élément <configSections>
       href: configsections-element-for-configuration.md
-    - name: '<clear>, élément de <configSections>'
+    - name: Élément <clear> pour <configSections>
       href: clear-element-for-configsections.md
     - name: '<remove>, élément de <configSections>'
       href: remove-element-for-configsections.md
@@ -29,7 +29,7 @@
       href: section-element.md
     - name: Schéma des paramètres d’application
       href: appsettings/index.md
-    - name: Schéma des paramètres d'application
+    - name: Schéma des paramètres d’application
       href: application-settings-schema.md
     - name: Schéma des paramètres du fournisseur de langage et du compilateur
       href: compiler/index.md
