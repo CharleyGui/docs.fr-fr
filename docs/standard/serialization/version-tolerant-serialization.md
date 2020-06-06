@@ -15,10 +15,10 @@ helpviewer_keywords:
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
 ms.openlocfilehash: afc822e1f8873bac069f6634fdf1d4665d392e69
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "83762589"
 ---
 # <a name="version-tolerant-serialization"></a>Sérialisation avec tolérance de version

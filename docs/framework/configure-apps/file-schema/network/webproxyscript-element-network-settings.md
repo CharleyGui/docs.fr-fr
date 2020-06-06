@@ -9,19 +9,19 @@ helpviewer_keywords:
 - webProxyScript element
 ms.assetid: a13c26db-6218-4af3-9696-38f24b23bfac
 ms.openlocfilehash: dbad888cd0537f63c09840ac1053f924db9ea9bc
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089064"
 ---
-# <a name="webproxyscript-element-network-settings"></a>\<webProxyScript >, élément (paramètres réseau)
+# <a name="webproxyscript-element-network-settings"></a>\<webProxyScript>, élément (paramètres réseau)
 Configure les caractéristiques du script utilisé pour découvrir les proxys Web.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**paramètres**](settings-element-network-settings.md)\<
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**webProxyScript >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<settings>**](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<webProxyScript>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,15 +41,15 @@ Configure les caractéristiques du script utilisé pour découvrir les proxys We
 |`downloadTimeout`|Spécifie la durée maximale de téléchargement du script en heures, minutes et secondes. La valeur par défaut est d’une minute.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[Paramètres](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
+|[settings](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

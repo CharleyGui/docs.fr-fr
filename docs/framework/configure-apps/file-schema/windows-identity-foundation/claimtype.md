@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: d17b5831-9a2c-45c4-b0d1-68f48e72e861
 author: BrucePerlerMS
 ms.openlocfilehash: a46e9129bd27319abb4d7519444568af622170fc
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70252069"
 ---
-# <a name="claimtype"></a>\<claimType>
+# \<claimType>
 Spécifie une revendication unique ou facultative pour les jetons de sécurité entrants.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<claimTypeRequired >** ](claimtyperequired.md)\  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> claimType**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<claimTypeRequired>**](claimtyperequired.md)\  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<claimType>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,11 +39,11 @@ Spécifie une revendication unique ou facultative pour les jetons de sécurité 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|type|Type de revendication. Généralement un URI. Requis.|  
+|type|Type de revendication. Généralement un URI. Obligatoire.|  
 |facultatif|Valeur booléenne qui spécifie si le type de revendication est facultatif. facultatif.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun  
+ Aucune  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - <schemaImporterExtensions> element
 ms.assetid: 465ef2a0-f909-4ac1-9a56-0ead5c849698
 ms.openlocfilehash: c46c5cb6e01463723f0f2ce3873fb4a6ec0b4e60
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84278400"
 ---
 # <a name="schemaimporterextensions-element"></a>Élément \<schemaImporterExtensions>
@@ -55,7 +55,7 @@ Contient des types utilisés par le <xref:System.Xml.Serialization.XmlSchemaImpo
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [Schéma du fichier de configuration](../../framework/configure-apps/file-schema/index.md)
+- [Schéma des fichiers de configuration](../../framework/configure-apps/file-schema/index.md)
 - [\<dateTimeSerialization>Appartient](datetimeserialization-element.md)
 - [\<add>, Élément de\<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)
 - [\<system.xml.serialization>Appartient](system-xml-serialization-element.md)

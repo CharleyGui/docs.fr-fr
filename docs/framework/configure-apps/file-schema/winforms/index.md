@@ -3,10 +3,10 @@ title: Section de configuration de Windows Forms
 ms.date: 04/07/2017
 ms.assetid: 6eb142d5-fc98-40e2-9d90-84733f2a27ba
 ms.openlocfilehash: 4de61ae3cb5eb8a3fc226881e2b7f842030dfddf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79151830"
 ---
 # <a name="windows-forms-configuration-section"></a>Section de configuration de Windows Forms
@@ -44,13 +44,13 @@ Aucun.
 ---------|---------|
 [\<configuration>](../configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le common language runtime et les applications Windows Forms. |
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 À compter du .NET Framework 4.7, l’élément `<System.Windows.Forms.ApplicationConfigurationSection>` vous permet de configurer des applications Windows Forms pour tirer parti des fonctionnalités ajoutées dans les dernières versions du .NET Framework.
 
-L’élément `<System.Windows.Forms.ApplicationConfigurationSection>` peut inclure [`<add>`](windows-forms-add-configuration-element.md) un ou plusieurs éléments pour enfants, dont chacun définit un paramètre de configuration spécifique.
+L' `<System.Windows.Forms.ApplicationConfigurationSection>` élément peut inclure un ou plusieurs [`<add>`](windows-forms-add-configuration-element.md) éléments enfants, chacun d’eux définissant un paramètre de configuration spécifique.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration Fichier Schema](../index.md)
-- [Support DPI élevé dans les formulaires Windows](../../../winforms/high-dpi-support-in-windows-forms.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Prise en charge des résolutions élevées en Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md)

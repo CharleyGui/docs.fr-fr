@@ -3,21 +3,21 @@ title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
 ms.openlocfilehash: f2c1335795ffd3cb395a7006bfaeb3cf7b39636b
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77448619"
 ---
-# <a name="tcptransport"></a>\<tcpTransport >
+# \<tcpTransport>
 Définit un transport TCP qui peut être utilisé par un canal pour transférer des messages pour une liaison personnalisée.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> System. serviceModel**](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<>\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **>\**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**tcpTransport >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<tcpTransport>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -67,15 +67,15 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 |connectionPoolSettings|Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucune  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[liaison de \<>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
+|[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Ce transport utilise des URI au format "net.tcp://nom_hôte:port/chemin". Les autres composants URI sont facultatifs.  
   
  L'élément `tcpTransport` constitue le point de départ pour créer une liaison personnalisée qui implémente le protocole de transport TCP. Ce transport est optimisé pour les communications entre WCF et WCF.  
@@ -87,8 +87,8 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 - <xref:System.ServiceModel.Channels.TransportBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - [Transports](../../../wcf/feature-details/transports.md)
-- [Choix d’un transport](../../../wcf/feature-details/choosing-a-transport.md)
-- [Bindings](../../../wcf/bindings.md)
+- [Choix d'un transport](../../../wcf/feature-details/choosing-a-transport.md)
+- [Liaisons](../../../wcf/bindings.md)
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding >](custombinding.md)
+- [\<customBinding>](custombinding.md)

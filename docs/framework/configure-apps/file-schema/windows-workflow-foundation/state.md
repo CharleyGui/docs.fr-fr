@@ -4,26 +4,26 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 619414f2-61c2-4427-9977-d05009e343db
 ms.openlocfilehash: 7af75182cf38a6acb8a31b71e8b7b42103f8046b
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70398641"
 ---
-# <a name="state"></a>\<state>
+# \<state>
 Représente une collection d’états faisant l’objet d’un abonnement dans l’instance de flux de travail suivie lors de la création des enregistrements de suivi.  
   
  Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<requise. > ServiceModel**](system-servicemodel-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<suivi des >** ](tracking.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<trackingProfile >** ](trackingprofile.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de flux de travail**](workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<workflowInstanceQueries >** ](workflowinstancequeries.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<workflowInstanceQuery >** ](workflowinstancequery.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<États >** ](states.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> d’État**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<tracking>**](tracking.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<trackingProfile>**](trackingprofile.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflow>**](workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflowInstanceQueries>**](workflowinstancequeries.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflowInstanceQuery>**](workflowinstancequery.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<states>**](states.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<state>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -61,7 +61,7 @@ Représente une collection d’états faisant l’objet d’un abonnement dans l
 |-------------|-----------------|  
 |[\<states>](states.md)|Collection d'états faisant l'objet d'un abonnement dans l'instance de flux de travail suivie lors de la création des enregistrements de suivi.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Les enregistrements retournés sont filtrés par états dans cette collection.  
   
  Les valeurs d'état possibles sont décrites dans le tableau suivant.  
@@ -69,15 +69,15 @@ Représente une collection d’états faisant l’objet d’un abonnement dans l
 |État|Description|  
 |-----------|-----------------|  
 |Abandonné|L'instance de flux de travail est abandonnée.|  
-|Terminé|L'instance de flux de travail est terminée.|  
-|Supprimé|L'instance de flux de travail est supprimée.|  
-|Inactif|L'instance de workflow est inactive.|  
+|Effectué|L'instance de flux de travail est terminée.|  
+|Deleted|L'instance de flux de travail est supprimée.|  
+|Idle|L'instance de workflow est inactive.|  
 |Persistant|L'instance de flux de travail est persistante.|  
 |Repris|L'instance de flux de travail est reprise.|  
 |Démarré|L'instance de flux de travail est démarrée.|  
 |UnhandledException|L'instance de flux de travail a rencontré une exception non gérée.|  
-|Non chargé|L'instance de flux de travail est déchargée.|  
-|Canceled|L'instance de flux de travail est annulée.|  
+|Unloaded|L'instance de flux de travail est déchargée.|  
+|Opération annulée|L'instance de flux de travail est annulée.|  
 |Interrompu|L'instance de workflow est interrompue.|  
 |Arrêté|L'instance de flux de travail est arrêtée.|  
 |Unsuspended|L'instance de flux de travail est non interrompue.|  

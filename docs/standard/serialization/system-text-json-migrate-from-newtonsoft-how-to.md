@@ -12,10 +12,10 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 ms.openlocfilehash: fe370b34d311816a815f3b2d419751ac7871f013
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "83703583"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Comment migrer de Newtonsoft.Json versSystem.Text.Json
@@ -73,13 +73,13 @@ Le tableau suivant répertorie les `Newtonsoft.Json` fonctionnalités et les `Sy
 | Méthode `JsonConvert.PopulateObject`                   | ⚠️[Non pris en charge, solution de contournement](#populate-existing-objects) |
 | `ObjectCreationHandling`paramètre global               | ⚠️[Non pris en charge, solution de contournement](#reuse-rather-than-replace-properties) |
 | Ajouter aux collections sans Setters                    | ⚠️[Non pris en charge, solution de contournement](#add-to-collections-without-setters) |
-| `PreserveReferencesHandling`paramètre global           | ❌ [Non prise en charge](#preserve-object-references-and-handle-loops) |
-| `ReferenceLoopHandling`paramètre global                | ❌ [Non prise en charge](#preserve-object-references-and-handle-loops) |
-| Prise en charge des `System.Runtime.Serialization` attributs | ❌ [Non prise en charge](#systemruntimeserialization-attributes) |
-| `MissingMemberHandling`paramètre global                | ❌ [Non prise en charge](#missingmemberhandling) |
-| Autoriser les noms de propriété sans guillemets                   | ❌ [Non prise en charge](#json-strings-property-names-and-string-values) |
-| Autoriser les guillemets simples autour des valeurs de chaîne              | ❌ [Non prise en charge](#json-strings-property-names-and-string-values) |
-| Autoriser les valeurs non-chaîne JSON pour les propriétés de chaîne    | ❌ [Non prise en charge](#non-string-values-for-string-properties) |
+| `PreserveReferencesHandling`paramètre global           | ❌[Non pris en charge](#preserve-object-references-and-handle-loops) |
+| `ReferenceLoopHandling`paramètre global                | ❌[Non pris en charge](#preserve-object-references-and-handle-loops) |
+| Prise en charge des `System.Runtime.Serialization` attributs | ❌[Non pris en charge](#systemruntimeserialization-attributes) |
+| `MissingMemberHandling`paramètre global                | ❌[Non pris en charge](#missingmemberhandling) |
+| Autoriser les noms de propriété sans guillemets                   | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
+| Autoriser les guillemets simples autour des valeurs de chaîne              | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
+| Autoriser les valeurs non-chaîne JSON pour les propriétés de chaîne    | ❌[Non pris en charge](#non-string-values-for-string-properties) |
 
 Il ne s’agit pas d’une liste exhaustive des `Newtonsoft.Json` fonctionnalités. La liste comprend un grand nombre des scénarios qui ont été demandés dans les [problèmes GitHub](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) ou les publications [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) . Si vous implémentez une solution de contournement pour l’un des scénarios répertoriés ici qui n’a pas d’exemple de code, et si vous souhaitez partager votre solution, sélectionnez **cette page** dans la section **Commentaires** en bas de cette page. Cela crée un problème dans le référentiel GitHub de cette documentation et le répertorie également dans la section **Commentaires** sur cette page.
 

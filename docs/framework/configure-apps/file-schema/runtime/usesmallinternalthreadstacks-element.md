@@ -6,18 +6,18 @@ helpviewer_keywords:
 - <UseSmallInternalThreadStacks> element
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
 ms.openlocfilehash: 2fd776ce8605e6dcf288dcb3852ded16638a1873
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73114924"
 ---
-# <a name="usesmallinternalthreadstacks-element"></a>\<élément UseSmallInternalThreadStacks >
+# <a name="usesmallinternalthreadstacks-element"></a>Élément \<UseSmallInternalThreadStacks>
 Demande que le common language runtime (CLR) réduit l’utilisation de la mémoire en spécifiant des tailles de pile explicites lorsqu’il crée certains threads qu’il utilise en interne, au lieu d’utiliser la taille de pile par défaut pour ces threads.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<UseSmallInternalThreadStacks** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<UseSmallInternalThreadStacks>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +36,13 @@ Demande que le common language runtime (CLR) réduit l’utilisation de la mémo
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |true|Demander des tailles de pile explicites.|  
-|False|Utilisez la taille de pile par défaut. Il s’agit de la valeur par défaut pour le .NET Framework 4.|  
+|false|Utilisez la taille de pile par défaut. Il s’agit de la valeur par défaut pour le .NET Framework 4.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -51,7 +51,7 @@ Demande que le common language runtime (CLR) réduit l’utilisation de la mémo
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Cet élément de configuration est utilisé pour demander une utilisation réduite de la mémoire virtuelle dans un processus, car les tailles de thread explicites utilisées par le CLR pour ses threads internes, si la demande est honorée, sont inférieures à la taille par défaut.  
   
 > [!IMPORTANT]
@@ -73,4 +73,4 @@ Demande que le common language runtime (CLR) réduit l’utilisation de la mémo
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)

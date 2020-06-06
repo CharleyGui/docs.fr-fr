@@ -7,40 +7,40 @@ helpviewer_keywords:
 - custom element
 ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 ms.openlocfilehash: e5c5c6cf5744aa385e6f6700cad623751a4d7427
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77215479"
 ---
 # <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>Élément personnalisé pour NameValueSectionHandler et DictionarySectionHandler
 
-Définit les paramètres des sections de configuration personnalisées qui utilisent les classes <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler>.
+Définit des paramètres pour les sections de configuration personnalisées qui utilisent les <xref:System.Configuration.NameValueSectionHandler> <xref:System.Configuration.DictionarySectionHandler> classes et.
 
-[ **\<configuration>** ](configuration-element.md)\
-&nbsp;&nbsp; **\<** de la >
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;**\<sectionName>**
 
 ## <a name="attributes"></a>Attributs
 
-None
+Aucune
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ----------- |
-| [ **\<configuration>** ](configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
+| [**\<configuration>**](configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
 |     | Description |
 | --- | ----------- |
-| [ **\<ajouter des >** ](add-element-for-custom-2.md) pour <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler>  | Ajoute des paramètres d’application personnalisés. |
-| [ **\<supprimer >** ](remove-element-for-custom-2.md) pour <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler> | Supprime un paramètre défini précédemment. |
-| [ **\<> Clear**](clear-element-for-custom-2.md) pour <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler> | Efface tous les paramètres précédemment définis dans une section. |
+| [**\<add>**](add-element-for-custom-2.md)pour <xref:System.Configuration.NameValueSectionHandler> et<xref:System.Configuration.DictionarySectionHandler>  | Ajoute des paramètres d’application personnalisés. |
+| [**\<remove>**](remove-element-for-custom-2.md)pour <xref:System.Configuration.NameValueSectionHandler> et<xref:System.Configuration.DictionarySectionHandler> | Supprime un paramètre défini précédemment. |
+| [**\<clear>**](clear-element-for-custom-2.md)pour <xref:System.Configuration.NameValueSectionHandler> et<xref:System.Configuration.DictionarySectionHandler> | Efface tous les paramètres précédemment définis dans une section. |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-L’élément\<de l’élément de **>** est un élément personnalisé défini par un **\<section >** balise dans l’élément **\<configSections >** .
+L' **\<sectionName>** élément est un élément personnalisé défini par une **\<section>** balise dans l' **\<configSections>** élément.
 
 Le tableau suivant indique le type d’objet retourné par la méthode ConfigurationSettings. GetConfig pour chaque gestionnaire de section de configuration :
 
@@ -51,9 +51,9 @@ Le tableau suivant indique le type d’objet retourné par la méthode Configura
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment déclarer des sections qui utilisent les classes <xref:System.Configuration.DictionarySectionHandler> et <xref:System.Configuration.NameValueSectionHandler>.
+L’exemple suivant montre comment déclarer des sections qui utilisent les <xref:System.Configuration.DictionarySectionHandler> <xref:System.Configuration.NameValueSectionHandler> classes et.
 
-Le premier élément personnalisé est **\<dictionarySample >** , qui contient les paramètres lus par la classe <xref:System.Configuration.DictionarySectionHandler> de l’assembly `System.dll`. Le deuxième élément personnalisé est **\<mySection >** , qui contient les paramètres lus par la classe <xref:System.Configuration.NameValueSectionHandler> de l’assembly `System.dll`.
+Le premier élément personnalisé est **\<dictionarySample>** , qui contient les paramètres lus par la <xref:System.Configuration.DictionarySectionHandler> classe dans l' `System.dll` assembly. Le deuxième élément personnalisé est **\<mySection>** , qui contient les paramètres lus par la <xref:System.Configuration.NameValueSectionHandler> classe dans l' `System.dll` assembly.
 
 ```xml
 <configuration>

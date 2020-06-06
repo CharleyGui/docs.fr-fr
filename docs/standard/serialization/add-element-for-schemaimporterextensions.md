@@ -1,5 +1,5 @@
 ---
-title: Élément <add> pour <schemaImporterExtensions>
+title: <add>, élément de <schemaImporterExtensions>
 description: L' <add> élément ajoute les types utilisés par la classe XmlSchemaImporter pour le mappage des types XSD aux types .NET Framework.
 ms.date: 03/30/2017
 helpviewer_keywords:
@@ -7,13 +7,13 @@ helpviewer_keywords:
 - <add> element for <schemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
 ms.openlocfilehash: 6fd8113ad39a22c927035fca574151ae8f002685
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84288327"
 ---
-# <a name="add-element-for-schemaimporterextensions"></a>Élément \<add> pour \<schemaImporterExtensions>
+# <a name="add-element-for-schemaimporterextensions"></a>\<add>, élément de \<schemaImporterExtensions>
 Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter> pour mapper des types XSD en types .NET Framework. Pour plus d’informations sur les fichiers de configuration, consultez [Schéma des fichiers de configuration](../../framework/configure-apps/file-schema/index.md).  
   
  \<configuration>  

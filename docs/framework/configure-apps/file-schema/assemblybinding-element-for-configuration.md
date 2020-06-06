@@ -8,17 +8,17 @@ helpviewer_keywords:
 - <assemblyBinding> Element
 ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
 ms.openlocfilehash: 21cf5e749b0dae310c3326f8abf82c6678fc97e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155477"
 ---
-# <a name="assemblybinding-element-for-configuration"></a>\<assemblageBinding> élément pour \<la configuration>
+# <a name="assemblybinding-element-for-configuration"></a>\<assemblyBinding>, élément de \<configuration>
 
 Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.
 
-configuration &nbsp; &nbsp;>[** \<**](configuration-element.md) ** \<assemblageBinding>**
+[**\<configuration>**](configuration-element.md) &nbsp;&nbsp;**\<assemblyBinding>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -46,16 +46,16 @@ configuration &nbsp; &nbsp;>[** \<**](configuration-element.md) ** \<assemblageB
 | --- | ----------- |
 | [**\<linkedConfiguration>**](linkedconfiguration-element.md) | Spécifie un fichier de configuration à inclure. |
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
-[** \<L’élément linkedConfiguration>**](linkedconfiguration-element.md) simplifie la gestion des assemblages de composants en permettant aux fichiers de configuration d’application d’inclure des fichiers de configuration d’assemblage dans des endroits bien connus, plutôt que de dupliquer les paramètres de configuration d’assemblage.
+L' [**\<linkedConfiguration>**](linkedconfiguration-element.md) élément simplifie la gestion des assemblys de composants en permettant aux fichiers de configuration de l’application d’inclure des fichiers de configuration d’assembly dans des emplacements bien connus, plutôt que de dupliquer des paramètres de configuration d’assembly.
 
 > [!NOTE]
-> ** \<L’élément linkedConfiguration>** n’est pas pris en charge pour les applications avec Windows côte à côte manifestes.
+> L' **\<linkedConfiguration>** élément n’est pas pris en charge pour les applications avec des manifestes côte à côte Windows.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment inclure un fichier de configuration sur le disque dur local :
+L’exemple suivant montre comment inclure un fichier de configuration sur le disque dur local :
 
 ```xml
 <configuration>
@@ -67,4 +67,4 @@ L’exemple suivant montre comment inclure un fichier de configuration sur le di
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le cadre .NET](index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

@@ -11,13 +11,13 @@ helpviewer_keywords:
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
 ms.openlocfilehash: 7d8a989219d84e8604e767456c84c0092bc73b22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153164"
 ---
-# <a name="trace-element"></a>\<trace> Élément
+# <a name="trace-element"></a>Élément \<trace>
 Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -39,29 +39,29 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`autoflush`|Attribut facultatif.<br /><br /> Précise si les auditeurs trace automatiquement rincer le tampon de sortie après chaque opération d’écriture.|  
-|`indentsize`|Attribut facultatif.<br /><br /> Spécifie le nombre d’espaces à en retrait.|  
-|`useGlobalLock`|Attribut facultatif.<br /><br /> Indique si le verrou global doit être utilisé.|  
+|`autoflush`|Attribut facultatif.<br /><br /> Spécifie si les écouteurs de la trace vident automatiquement la mémoire tampon de sortie après chaque opération d’écriture.|  
+|`indentsize`|Attribut facultatif.<br /><br /> Spécifie le nombre d’espaces à mettre en retrait.|  
+|`useGlobalLock`|Attribut facultatif.<br /><br /> Indique si le verrouillage global doit être utilisé.|  
   
-## <a name="autoflush-attribute"></a>Attribut autoflush  
-  
-|Valeur|Description|  
-|-----------|-----------------|  
-|`false`|Ne chasse pas automatiquement le tampon de sortie. Il s’agit de la valeur par défaut.|  
-|`true`|Rincer automatiquement le tampon de sortie.|  
-  
-## <a name="usegloballock-attribute"></a>utilisationGlobalLock Attribut  
+## <a name="autoflush-attribute"></a>Attribut de vidage automatique  
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|`false`|N’utilise pas le verrou global si l’auditeur est sans danger de thread; autrement, utilise le verrou global.|  
-|`true`|Utilise le verrou global indépendamment du fait que l’auditeur soit sans danger pour le thread. Il s’agit de la valeur par défaut.|  
+|`false`|N’efface pas automatiquement la mémoire tampon de sortie. Il s'agit de la valeur par défaut.|  
+|`true`|Vide automatiquement la mémoire tampon de sortie.|  
+  
+## <a name="usegloballock-attribute"></a>Attribut useGlobalLock  
+  
+|Valeur|Description|  
+|-----------|-----------------|  
+|`false`|N’utilise pas le verrou global si l’écouteur est thread-safe ; dans le cas contraire, utilise le verrou global.|  
+|`true`|Utilise le verrou global indépendamment du fait que l’écouteur soit thread-safe. Il s'agit de la valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<auditeurs>](listeners-element-for-trace.md)|Spécifie un auditeur qui recueille, stocke et achemine les messages.|  
+|[\<listeners>](listeners-element-for-trace.md)|Spécifie un écouteur qui collecte, stocke et achemine des messages.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -70,8 +70,8 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
-## <a name="example"></a> Exemple  
- L’exemple suivant montre `<trace>` comment utiliser l’élément pour ajouter l’auditeur `MyListener` à la `Listeners` collection. `MyListener`crée un fichier `MyListener.log` qui est nommé et écrit la sortie au fichier. L’attribut `useGlobalLock` est `false`défini à , ce qui provoque la serrure globale de ne pas être utilisé si l’auditeur trace est thread safe. L’attribut `autoflush` est `true`défini à , ce qui provoque l’auditeur <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> trace d’écrire au fichier indépendamment du fait que la méthode est appelée. L’attribut `indentsize` est réglé à 0 (zéro), ce qui provoque <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> l’auditeur à l’auditeur à l’indent zéro espace lorsque la méthode est appelée.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser l' `<trace>` élément pour ajouter l’écouteur `MyListener` à la `Listeners` collection. `MyListener`crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. L' `useGlobalLock` attribut a la valeur `false` , ce qui empêche l’utilisation du verrou global si l’écouteur de la trace est thread-safe. L' `autoflush` attribut a la valeur `true` , ce qui amène l’écouteur de la trace à écrire dans le fichier, que la <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> méthode soit appelée ou non. L' `indentsize` attribut a la valeur 0 (zéro), ce qui amène l’écouteur à mettre en retrait les espaces nuls lorsque la <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> méthode est appelée.  
   
 ```xml  
 <configuration>  
@@ -91,4 +91,4 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
-- [Trace et Debug Paramètres Schema](index.md)
+- [Schéma des paramètres de traçage et de débogage](index.md)

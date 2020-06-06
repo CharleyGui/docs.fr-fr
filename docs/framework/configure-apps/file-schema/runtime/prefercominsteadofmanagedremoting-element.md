@@ -6,18 +6,18 @@ helpviewer_keywords:
 - PreferComInsteadOfManagedRemoting element
 ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
 ms.openlocfilehash: 1376df4efd56734f2b8da9bd76033afcce8a285b
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77452251"
 ---
-# <a name="prefercominsteadofmanagedremoting-element"></a>\<élément PreferComInsteadOfManagedRemoting >
+# <a name="prefercominsteadofmanagedremoting-element"></a>Élément \<PreferComInsteadOfManagedRemoting>
 Spécifie si le runtime utilisera COM Interop au lieu de la communication à distance pour tous les appels au-delà des limites du domaine d’application.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<PreferComInsteadOfManagedRemoting** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<PreferComInsteadOfManagedRemoting>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,11 +38,11 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|`false`|Le runtime utilise la communication à distance au-delà des limites du domaine d’application. Il s’agit de la valeur par défaut.|  
+|`false`|Le runtime utilise la communication à distance au-delà des limites du domaine d’application. Il s'agit de la valeur par défaut.|  
 |`true`|Le runtime utilisera COM Interop à travers les limites du domaine d’application.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None.  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -51,12 +51,12 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Notes  
- Lorsque vous affectez à l’attribut `enabled` la valeur `true`, le runtime se comporte comme suit :  
+## <a name="remarks"></a>Remarques  
+ Lorsque vous affectez `enabled` à l’attribut la valeur `true` , le runtime se comporte comme suit :  
   
 - Le runtime n’appelle pas [IUnknown :: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pour une interface [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) lorsqu’une interface [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) entre dans le domaine via une interface com. Au lieu de cela, il construit un wrapper RCW ( [Runtime Callable Wrapper](../../../../standard/native-interop/runtime-callable-wrapper.md) ) autour de l’objet.  
   
-- Le runtime retourne E_NOINTERFACE lorsqu’il reçoit un appel de `QueryInterface` pour une interface [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) pour tout wrapper CCW ( [COM Callable Wrapper](../../../../standard/native-interop/com-callable-wrapper.md) ) qui a été créé dans ce domaine.  
+- Le runtime retourne E_NOINTERFACE lorsqu’il reçoit un `QueryInterface` appel pour une interface [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) pour tout [wrapper CCW (COM Callable Wrapper](../../../../standard/native-interop/com-callable-wrapper.md) ) qui a été créé dans ce domaine.  
   
  Ces deux comportements garantissent que tous les appels sur les interfaces COM entre les objets gérés au-delà des limites du domaine d’application utilisent COM et COM Interop au lieu de la communication à distance.  
   
@@ -74,4 +74,4 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)

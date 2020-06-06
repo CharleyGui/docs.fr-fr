@@ -15,10 +15,10 @@ helpviewer_keywords:
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
 ms.openlocfilehash: 98cc4a983c9703e6c5ab132f6110a327c6081b6c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84289627"
 ---
 # <a name="examples-of-xml-serialization"></a>Exemples de sérialisation XML

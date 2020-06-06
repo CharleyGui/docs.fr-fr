@@ -7,17 +7,17 @@ helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
 ms.openlocfilehash: a40f35838655f6021af0b2e966335803ec8c16b4
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "80635397"
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Élément personnalisé pour SingleTagSectionHandler
 
-Définit les paramètres d’une section de \<configuration personnalisée qui est <xref:System.Configuration.SingleTagSectionHandler> définie par une section> élément et utilise la classe.
+Définit des paramètres dans une section de configuration personnalisée qui est définie par un \<section> élément et utilise la <xref:System.Configuration.SingleTagSectionHandler> classe.
 
-&nbsp; &nbsp; [** \<section**](configuration-element.md) *>Name \<>*
+[**\<configuration>**](configuration-element.md) &nbsp;&nbsp;*\<sectionName>*
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,11 +41,11 @@ None
 
 ## <a name="remarks"></a>Notes
 
-La ** \<sectionName>** élément est un élément personnalisé défini par une [** \<section>**](section-element.md) tag dans les [** \<configSections>**](configsections-element-for-configuration.md) élément. Le système de <xref:System.Collections.IDictionary> configuration renvoie un objet lorsque vous appelez <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
+L' **\<sectionName>** élément est un élément personnalisé défini par une [**\<section>**](section-element.md) balise dans l' [**\<configSections>**](configsections-element-for-configuration.md) élément. Le système de configuration retourne un <xref:System.Collections.IDictionary> objet lorsque vous appelez <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType> .
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant déclare un élément personnalisé appelé <xref:System.Configuration.SingleTagSectionHandler> ** \<sampleSection>** qui contient des paramètres lus par la classe :
+L’exemple suivant déclare un élément personnalisé appelé **\<sampleSection>** qui contient des paramètres lus par la <xref:System.Configuration.SingleTagSectionHandler> classe :
 
 ```xml
 <configuration>
@@ -61,8 +61,8 @@ L’exemple suivant déclare un élément personnalisé appelé <xref:System.Con
 
 ## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration d’application, le fichier de configuration de la machine (*Machine.config*), et les fichiers *Web.config* qui ne sont pas au niveau de l’annuaire d’application.
+Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le cadre .NET](index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

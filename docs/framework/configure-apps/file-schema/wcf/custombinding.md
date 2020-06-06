@@ -3,20 +3,20 @@ title: <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
 ms.openlocfilehash: cdaaacf0dfa75209d001f6e8d6ac7175816048aa
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74140799"
 ---
-# <a name="custombinding"></a>\<customBinding >
+# \<customBinding>
 
 Fournit le contrôle total sur la pile de messagerie pour l'utilisateur.
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**customBinding >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<customBinding>**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -191,13 +191,13 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<compositeDuplex >](compositeduplex.md)|Spécifie la messagerie bidirectionnelle pour la liaison personnalisée. Il est utilisé avec les transports qui n'autorisent pas nativement les communications duplex, comme HTTP. En revanche, TCP autorise nativement les communications duplex et ne requiert pas l'utilisation de cet élément de liaison pour permettre au service de renvoyer des messages à un client.<br /><br /> Le client doit exposer une adresse pour que le service puisse entrer en contact avec lui et établir une connexion. Cette adresse cliente est fournie par l'attribut `ClientBaseAddress`.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|
-|[\<pnrpPeerResolver >](pnrppeerresolver.md)|Spécifie un programme de résolution de nom d’homologue PNRP (Peer Name Resolution Protocol). Cet élément est de type <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|
-|[\<reliableSession >](reliablesession.md)|Spécifie le paramètre de WS-Reliable Messaging. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery). Cet élément est de type <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|
-|[> de sécurité \<](security-of-custombinding.md)|Spécifie les options de sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.SecurityElement>.|
-|[\<section sslStreamSecurity >](sslstreamsecurity.md)|Spécifie les paramètres de sécurité pour une liaison de flux de données SSL. Cet élément est de type <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|
-|[\<transactionFlow >](transactionflow.md)|Spécifie que le flux de la transaction des prises en charge de la liaison, ainsi que le protocole à utiliser par l’attribut `transactionProtocol`. Cet élément est de type <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|
-|[\<par windowsStreamSecurity >](windowsstreamsecurity.md)|Spécifie les options permettant de transmettre en continu la sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|
+|[\<compositeDuplex>](compositeduplex.md)|Spécifie la messagerie bidirectionnelle pour la liaison personnalisée. Il est utilisé avec les transports qui n'autorisent pas nativement les communications duplex, comme HTTP. En revanche, TCP autorise nativement les communications duplex et ne requiert pas l'utilisation de cet élément de liaison pour permettre au service de renvoyer des messages à un client.<br /><br /> Le client doit exposer une adresse pour que le service puisse entrer en contact avec lui et établir une connexion. Cette adresse cliente est fournie par l'attribut `ClientBaseAddress`.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|
+|[\<pnrpPeerResolver>](pnrppeerresolver.md)|Spécifie un programme de résolution de nom d’homologue PNRP (Peer Name Resolution Protocol). Cet élément est de type <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|
+|[\<reliableSession>](reliablesession.md)|Spécifie le paramètre de WS-Reliable Messaging. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery). Cet élément est de type <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|
+|[\<security>](security-of-custombinding.md)|Spécifie les options de sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.SecurityElement>.|
+|[\<sslStreamSecurity>](sslstreamsecurity.md)|Spécifie les paramètres de sécurité pour une liaison de flux de données SSL. Cet élément est de type <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|
+|[\<transactionFlow>](transactionflow.md)|Spécifie que le flux de la transaction des prises en charge de la liaison, ainsi que le protocole à utiliser par l’attribut `transactionProtocol`. Cet élément est de type <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|
+|[\<windowsStreamSecurity>](windowsstreamsecurity.md)|Spécifie les options permettant de transmettre en continu la sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -205,7 +205,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |-------------|-----------------|
 |liaisons|Contient toutes les liaisons pour les applications de Windows Communication Foundation.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Les liaisons personnalisées permettent d'exercer un contrôle total sur la pile de messagerie WCF. Les liaisons spécialement conçues peuvent être créées en ajoutant des éléments de configuration pour des entités spécifiques. Par exemple, l’utilisateur peut associer les sections `httpsTransport`, `reliableSession` et `security` pour créer une liaison fiable et sécurisée basée sur https.
 
@@ -281,13 +281,13 @@ Le tableau suivant récapitule les options de chaque couche.
 
 |Couche|Options|Obligatoire|
 |-----------|-------------|--------------|
-|Flux de transaction|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|Non|
-|Fiabilité|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|Non|
-|Sécurité|Symétrique, asymétrique, au niveau du transport|Non|
-|Modification de la forme|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|Non|
-|Mises à niveau de transport|Flux SSL, flux Windows, programme de résolution d'homologue|Non|
-|Encodage|Text, Binary, MTOM, Custom|Oui|
-|Transport|TCP, canaux nommés, HTTP, HTTPS, versions de MSMQ, personnalisé|Oui|
+|Flux de transaction|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|No|
+|Fiabilité|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|No|
+|Sécurité|Symétrique, asymétrique, au niveau du transport|No|
+|Modification de la forme|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|No|
+|Mises à niveau de transport|Flux SSL, flux Windows, programme de résolution d'homologue|No|
+|Encodage|Text, Binary, MTOM, Custom|Yes|
+|Transport|TCP, canaux nommés, HTTP, HTTPS, versions de MSMQ, personnalisé|Yes|
 
 De plus, vous pouvez définir vos propres éléments de liaison et les insérer entre chacune des couches définies précédentes.
 
@@ -299,7 +299,7 @@ Pour plus d’informations sur l’utilisation d’une liaison personnalisée po
 - <xref:System.ServiceModel.Channels.BindingElement>
 - <xref:System.ServiceModel.Configuration.BindingsSection>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [liaison de \<](bindings.md)
+- [\<binding>](bindings.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)

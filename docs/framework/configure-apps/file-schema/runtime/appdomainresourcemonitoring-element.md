@@ -6,17 +6,17 @@ helpviewer_keywords:
 - <appDomainResourceMonitoring> element
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
 ms.openlocfilehash: 3c6092b6c34bb13c0ad0e66df2d3b7e65ac3de7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154374"
 ---
-# <a name="appdomainresourcemonitoring-element"></a>\<appDomainResourceMonitoring> Element
+# <a name="appdomainresourcemonitoring-element"></a>Élément \<appDomainResourceMonitoring>
 Demande au runtime de collecter des statistiques sur tous les domaines d’application du processus sur toute sa durée.  
   
 [**\<configuration>**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<>de temps d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;**\<appDomainResourceMonitoring>**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,14 +33,14 @@ Demande au runtime de collecter des statistiques sur tous les domaines d’appli
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Précise si le temps d’exécution recueille des statistiques pour la surveillance des ressources de domaine d’application.|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie si le runtime collecte des statistiques pour l’analyse des ressources du domaine d’application.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|`true`|Les statistiques relatives à la surveillance des ressources du domaine des applications sont recueillies.|  
-|`false`|Les statistiques relatives à la surveillance des ressources du domaine des applications ne sont pas recueillies.|  
+|`true`|Les statistiques relatives à l’analyse des ressources de domaine d’application sont collectées.|  
+|`false`|Les statistiques pour l’analyse des ressources de domaine d’application ne sont pas collectées.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -52,15 +52,15 @@ Demande au runtime de collecter des statistiques sur tous les domaines d’appli
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Notes   
- La surveillance des ressources de domaine d’application est disponible via la classe de domaine d’application gérée, l’interface [ICLRAppDomainResourceMonitor](../../../unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) et le traçage d’événements pour Windows (ETW). Lorsque la surveillance est activée, des statistiques sont collectées pour tous les domaines d’application dans le processus pour la durée du processus.  
+## <a name="remarks"></a>Remarques  
+ L’analyse des ressources de domaine d’application est disponible via la classe de domaine d’application managée, l’interface [ICLRAppDomainResourceMonitor](../../../unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) d’hébergement et le suivi d’événements pour Windows (ETW). Lorsque l’analyse est activée, les statistiques sont collectées pour tous les domaines d’application du processus pendant toute la durée de vie du processus.  
   
- Pour permettre la surveillance à <xref:System.AppDomain.MonitoringIsEnabled%2A> partir du code géré, utilisez la propriété.  
+ Pour activer l’analyse à partir du code managé, utilisez la <xref:System.AppDomain.MonitoringIsEnabled%2A> propriété.  
   
- Cet élément de configuration n’est disponible que dans le cadre .NET 4 et plus tard.  
+ Cet élément de configuration n’est disponible que dans le .NET Framework 4 et versions ultérieures.  
   
-## <a name="example"></a> Exemple  
- L’exemple suivant montre comment activer la surveillance des ressources de domaine d’application.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment activer la surveillance des ressources du domaine d’application.  
   
 ```xml  
 <configuration>  
@@ -73,5 +73,5 @@ Demande au runtime de collecter des statistiques sur tous les domaines d’appli
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>
-- [Schéma des paramètres d'exécution](index.md)
-- [Configuration Fichier Schema](../index.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma du fichier de configuration](../index.md)

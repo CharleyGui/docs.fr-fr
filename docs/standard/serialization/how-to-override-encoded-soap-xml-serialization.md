@@ -7,10 +7,10 @@ helpviewer_keywords:
 - SOAP, overriding encoded XML serialization
 ms.assetid: d0791df8-04e3-46b4-a6be-fe0ed09267e8
 ms.openlocfilehash: 50688cb25294f14a9dd4596258eb95adf93cdb41
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84277984"
 ---
 # <a name="how-to-override-encoded-soap-xml-serialization"></a>Comment : substituer la sérialisation XML encodée selon le protocole SOAP

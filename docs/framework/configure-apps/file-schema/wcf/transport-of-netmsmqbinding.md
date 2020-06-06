@@ -3,22 +3,22 @@ title: <transport> de <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
 ms.openlocfilehash: cc47c01cccc931e81ba57ab37ad9e3accfaa693b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152929"
 ---
-# <a name="transport-of-netmsmqbinding"></a>\<> de transport \<de> netMsmqBinding
+# <a name="transport-of-netmsmqbinding"></a>\<transport> de \<netMsmqBinding>
 Définit les paramètres de sécurité de transport.  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<liaisons>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<netMsmqBinding>**](netmsmqbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<>contraignantes**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>de sécurité**](security-of-netmsmqbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<>de transport**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-netmsmqbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<transport>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,19 +42,19 @@ Définit les paramètres de sécurité de transport.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|msmqAuthenticationMode|Spécifie comment le message doit être authentifié par le transport MSMQ. Les valeurs valides sont les suivantes :<br /><br /> - Aucun: Pas d’authentification.<br />- WindowsDomain: Le mécanisme d’authentification utilise Active Directory pour récupérer le certificat X.509 pour l’identifiant de sécurité associé au message. Il est ensuite utilisé pour vérifier l'ACL de la file d'attente afin de s'assurer que l'utilisateur a l'autorisation en écriture dans la file d'attente.<br />- Certificat : Le canal récupère le certificat dans le magasin de certificats.<br /><br /> Par défaut, il s’agit de `WindowsDomain`.<br /><br /> Si cet attribut a la valeur `None`, l'attribut `msmqProtectionLevel` doit également être défini à `None`. Cet attribut est de type <xref:System.ServiceModel.MsmqAuthenticationMode>|  
-|msmqEncryptionAlgorithm|Spécifie l'algorithme à utiliser pour le chiffrement des messages sur le câble lors du transfert de messages entre des gestionnaires de file d'attente de messages. Les valeurs valides sont les suivantes :<br /><br /> - RC4Stream<br />- AES<br />- La valeur `RC4Stream`par défaut est . Cet attribut est de type <xref:System.ServiceModel.MsmqEncryptionAlgorithm>.|  
-|msmqProtectionLevel|Spécifie la façon dont les messages sont sécurisés au niveau du transport MSMQ. Le chiffrement garantit l'intégrité des messages, tandis que la signature et le chiffrement garantissent à la fois l'intégrité et le non-rejet des messages. C’est-à-dire, le message est en effet venu de l’expéditeur et l’expéditeur est qui ils disent qu’ils sont. Les valeurs valides sont les suivantes :<br /><br /> - Aucun: Pas de protection.<br />- Signe : Les messages sont signés.<br />- CryptAndSign : Les messages sont cryptés et signés.<br />- La `Sign`valeur par défaut est .|  
-|msmqSecureHashAlgorithm|Spécifie l’algorithme de hachage à utiliser pour calculer le condensat de message. Les valeurs valides sont les suivantes :<br /><br /> - MD5<br />- SHA1<br />- SHA256<br />- SHA512<br /><br /> Par défaut, il s’agit de `SHA1`. Cet attribut est de type <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.<br>En raison de problèmes de collision avec MD5 et SHA1, Microsoft recommande SHA256 ou mieux.|  
+|msmqAuthenticationMode|Spécifie comment le message doit être authentifié par le transport MSMQ. Les valeurs valides sont les suivantes :<br /><br /> -None : aucune authentification.<br />-WindowsDomain : le mécanisme d’authentification utilise Active Directory pour récupérer le certificat X. 509 pour l’identificateur de sécurité associé au message. Il est ensuite utilisé pour vérifier l'ACL de la file d'attente afin de s'assurer que l'utilisateur a l'autorisation en écriture dans la file d'attente.<br />-Certificat : le canal récupère le certificat à partir du magasin de certificats.<br /><br /> Par défaut, il s’agit de `WindowsDomain`.<br /><br /> Si cet attribut a la valeur `None`, l'attribut `msmqProtectionLevel` doit également être défini à `None`. Cet attribut est de type <xref:System.ServiceModel.MsmqAuthenticationMode>|  
+|msmqEncryptionAlgorithm|Spécifie l'algorithme à utiliser pour le chiffrement des messages sur le câble lors du transfert de messages entre des gestionnaires de file d'attente de messages. Les valeurs valides sont les suivantes :<br /><br /> -RC4Stream<br />-AES<br />-La valeur par défaut est `RC4Stream` . Cet attribut est de type <xref:System.ServiceModel.MsmqEncryptionAlgorithm>.|  
+|msmqProtectionLevel|Spécifie la façon dont les messages sont sécurisés au niveau du transport MSMQ. Le chiffrement garantit l'intégrité des messages, tandis que la signature et le chiffrement garantissent à la fois l'intégrité et le non-rejet des messages. Autrement dit, le message provient en effet de l’expéditeur et l’expéditeur est bien celui qu’il prétend être. Les valeurs valides sont les suivantes :<br /><br /> -None : aucune protection.<br />-Sign : les messages sont signés.<br />-EncryptAndSign : les messages sont chiffrés et signés.<br />-La valeur par défaut est `Sign` .|  
+|msmqSecureHashAlgorithm|Spécifie l’algorithme de hachage à utiliser pour calculer le condensat de message. Les valeurs valides sont les suivantes :<br /><br /> -MD5<br />-SHA1<br />-SHA256<br />-SHA512<br /><br /> Par défaut, il s’agit de `SHA1`. Cet attribut est de type <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.<br>En raison de problèmes de collision avec MD5 et SHA1, Microsoft recommande SHA256 ou une meilleure solution.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucune  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<>de sécurité](security-of-netmsmqbinding.md)|Définit les paramètres de sécurité de transport pour les transports de mise en file d'attente.|  
+|[\<security>](security-of-netmsmqbinding.md)|Définit les paramètres de sécurité de transport pour les transports de mise en file d'attente.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -67,4 +67,4 @@ Définit les paramètres de sécurité de transport.
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<>contraignantes](bindings.md)
+- [\<binding>](bindings.md)

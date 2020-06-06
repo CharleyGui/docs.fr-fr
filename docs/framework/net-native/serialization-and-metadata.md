@@ -3,10 +3,10 @@ title: Sérialisation et métadonnées
 ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
 ms.openlocfilehash: cc9adf0e6627ef3190e74fea5d4f0f3afd581811
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "81389229"
 ---
 # <a name="serialization-and-metadata"></a>Sérialisation et métadonnées
@@ -15,7 +15,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
 - Sérialiseurs tiers basés sur la réflexion. Ils nécessitent des modifications dans votre fichier de directives runtime et sont décrits dans la section suivante.  
   
-- Sérialisateurs non-réflexion-basés trouvés dans la bibliothèque de classe cadre .NET. Ceux-ci peuvent nécessiter des modifications dans votre fichier de directives runtime et sont décrits dans la section [Sérialiseurs Microsoft](#Microsoft).  
+- Sérialiseurs non basés sur la réflexion trouvés dans la bibliothèque de classes .NET Framework. Ceux-ci peuvent nécessiter des modifications dans votre fichier de directives runtime et sont décrits dans la section [Sérialiseurs Microsoft](#Microsoft).  
   
 <a name="ThirdParty"></a>
 ## <a name="third-party-serializers"></a>Sérialiseurs tiers
@@ -28,7 +28,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 <Namespace Name="App.Models" Serialize="Required PublicAndInternal" />  
 ```  
   
- Pour plus d’informations sur la syntaxe utilisée dans l’exemple, voir [ \<Namespace> Element](namespace-element-net-native.md).  
+ Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez [ \<Namespace> élément](namespace-element-net-native.md).  
   
 <a name="Microsoft"></a>
 ## <a name="microsoft-serializers"></a>Sérialiseurs Microsoft
@@ -37,15 +37,15 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
 ### <a name="typeof-used-in-the-constructor"></a>typeof utilisé dans le constructeur
 
- Si vous appelez un constructeur de ces classes de sérialisation et que vous incluez l’opérateur [de type Cmd](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) dans l’appel de méthode, **vous n’avez pas à effectuer de travail supplémentaire.** Par exemple, dans chacun des appels suivants d'un constructeur de classe de sérialisation, le mot clé `typeof` est utilisé dans le cadre de l'expression passée au constructeur.  
+ Si vous appelez un constructeur de ces classes de sérialisation et incluez l’opérateur C# [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) dans l’appel de méthode, **vous n’avez pas à effectuer d’autres tâches**. Par exemple, dans chacun des appels suivants d'un constructeur de classe de sérialisation, le mot clé `typeof` est utilisé dans le cadre de l'expression passée au constructeur.  
   
  [!code-csharp[ProjectN#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#5)]  
   
- Le compilateur .NET Native gérera automatiquement ce code.  
+ Le compilateur .NET Native gère automatiquement ce code.  
   
 ### <a name="typeof-used-outside-the-constructor"></a>typeof utilisé à l'extérieur du constructeur
 
- Si vous appelez un constructeur de ces classes de sérialisation et utilisez l’opérateur <xref:System.Type> de type [Cmd](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) en dehors de l’expression fournie au paramètre du constructeur, comme dans le code suivant, le compilateur natif .NET ne peut pas résoudre le type :  
+ Si vous appelez un constructeur de ces classes de sérialisation et que vous utilisez l’opérateur C# [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) en dehors de l’expression fournie au paramètre du constructeur <xref:System.Type> , comme dans le code suivant, le compilateur .net Native ne peut pas résoudre le type :  
   
  [!code-csharp[ProjectN#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#6)]  
   
@@ -55,21 +55,21 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 <Type Name="DataSet" Browse="Required Public" />  
 ```  
   
- De même, si vous appelez <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29> un constructeur tel <xref:System.Type> que et fournissez une gamme d’objets supplémentaires pour sérialiser, comme dans le code suivant, le compilateur natif .NET ne peut pas résoudre ces types.  
+ De même, si vous appelez un constructeur tel que <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29> et que vous fournissez un tableau d' <xref:System.Type> objets supplémentaires à sérialiser, comme dans le code suivant, le compilateur .net Native ne peut pas résoudre ces types.  
   
  [!code-csharp[ProjectN#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#7)]  
   
-Ajoutez des entrées telles que les suivantes pour chaque type au fichier des directives d’exécution :  
+Ajoutez des entrées telles que les suivantes pour chaque type au fichier de directives Runtime :  
   
 ```xml  
 <Type Name="t" Browse="Required Public" />  
 ```  
   
-Pour plus d’informations sur la [ \<](type-element-net-native.md)syntaxe utilisée dans l’exemple, voir Type> Element .  
+Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez [ \<Type> élément](type-element-net-native.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
-- [\<Type> Élément](type-element-net-native.md)
-- [\<Article de> Namespace](namespace-element-net-native.md)
+- [\<Type>Appartient](type-element-net-native.md)
+- [\<Namespace>Appartient](namespace-element-net-native.md)

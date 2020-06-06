@@ -3,10 +3,10 @@ title: Résolution des problèmes généraux liés à .NET Native
 ms.date: 03/30/2017
 ms.assetid: ee8c5e17-35ea-48a1-8767-83298caac1e8
 ms.openlocfilehash: 2bea81e380fed6c456898e9883658ef874c8dd97
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128237"
 ---
 # <a name="net-native-general-troubleshooting"></a>Résolution des problèmes généraux liés à .NET Native
@@ -29,7 +29,7 @@ Cette rubrique décrit comment résoudre les problèmes potentiels que vous pouv
 
   **Résolution :** Si le compilateur .NET Native est appelé, vous remarquerez des temps de génération plus longs et le gestionnaire des tâches affichera différents processus de .NET Native composant, tels que ILC. exe et nutc_driver. exe.
 
-  Une fois que vous avez correctement généré votre projet avec .NET Native, vous trouverez la sortie sous obj\\*config*\ *ARCH*\\*ProjectName*. ilc\out.  Le contenu du package natif final se trouve sous bin\\*arch*\\*config*\AppX. Il se trouve sous \bin\\*arch*\\*config*\AppX si vous avez déployé l’application.
+  Une fois que vous avez correctement généré votre projet avec .net native, vous trouverez la sortie sous obj \\ *config* \  *ARCH* \\ *ProjectName*. ilc\out.  Le contenu du package natif final se trouve sous bin \\ *ARCH* \\ *config*\AppX. Le contenu du package natif final se trouve sous \bin \\ *ARCH* \\ *config*\AppX si vous avez déployé l’application.
 
 - **Problème :** Votre application .NET Native lève des exceptions runtime (généralement des exceptions [MissingMetadataException](missingmetadataexception-class-net-native.md) ou [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)) qu’elle n’a pas levées lors de la compilation sans .NET Native.
 

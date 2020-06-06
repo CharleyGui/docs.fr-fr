@@ -5,19 +5,19 @@ helpviewer_keywords:
 - gcHeapCount element
 - <gcHeapCount> element
 ms.openlocfilehash: 3d6cac4185af182758cb82e6bfd9d96ed24869b4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74283069"
 ---
-# <a name="gcheapcount-element"></a>\<élément GCHeapCount >
+# <a name="gcheapcount-element"></a>\<GCHeapCount>, élément
 
 Spécifie le nombre de segments/threads à utiliser pour le garbage collection serveur.
 
-\<> de configuration \
-&nbsp;&nbsp;\<Runtime > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapCount >
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapCount>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -44,7 +44,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ### <a name="child-elements"></a>Éléments enfants
 
-None.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -53,7 +53,7 @@ None.
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Par défaut, les threads de garbage collection de serveur sont affinités avec leur processeur respectif, de sorte qu’il existe un tas GC, un thread GC de serveur et un thread de garbage collection de serveur d’arrière-plan pour chaque processeur. À compter de .NET Framework 4.6.2, vous pouvez utiliser l’élément **GCHeapCount** pour limiter le nombre de segments de mémoire utilisés par votre application pour le garbage collector du serveur. Limiter le nombre de segments de mémoire utilisés pour le garbage collection de serveur est particulièrement utile pour les systèmes qui exécutent plusieurs instances d’une application serveur.
 
@@ -98,6 +98,6 @@ L’exemple suivant n’affinité pas les threads GC du serveur et limite le nom
 - <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>
 - [Élément GCNoAffinitize](gcnoaffinitize-element.md)
 - [Élément GCHeapAffinitizeMask](gcheapaffinitizemask-element.md)
-- [Notions de base du garbage collection](../../../../standard/garbage-collection/fundamentals.md)
+- [Notions de base de garbage collection](../../../../standard/garbage-collection/fundamentals.md)
 - [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)

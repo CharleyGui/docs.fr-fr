@@ -1,19 +1,19 @@
 ---
-title: Élément <Application> (.NET Native)
+title: <Application>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
 ms.openlocfilehash: e26826b3d8674b536ab0897182da58bc02cfd00b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128515"
 ---
-# <a name="application-element-net-native"></a>\<, élément d' > d’application (.NET Native)
+# <a name="application-element-net-native"></a>\<Application>, Élément (.NET Native)
 Sert de conteneur pour les types à l'échelle de l'application et pour les membres de type dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution, et applique la stratégie de réflexion runtime à tous les éléments de programme dans une application.  
   
- \<Directives>, élément  
-\<Application>, élément (rd.xml)  
+ Élément \<Directives>  
+\<Application>, Élément (Rd. Xml)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,7 +50,7 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
   
 ## <a name="all-attributes"></a>Tous les attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre de cette stratégie à appliquer aux types dans l'application. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
@@ -61,7 +61,7 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
 |[\<Assembly>](assembly-element-net-native.md)|Applique la stratégie à tous les types d'un assembly particulier.|  
 |[\<Namespace>](namespace-element-net-native.md)|Applique la stratégie à tous les types d'un espace de noms particulier.|  
 |[\<Type>](type-element-net-native.md)|Applique la stratégie à un type particulier, tel qu'une classe ou une structure.|  
-|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie à un type générique construit. Par exemple, vous pouvez utiliser un élément [\<TypeInstantiation>](typeinstantiation-element-net-native.md) afin de définir une stratégie pour un type `List<String>`.|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie à un type générique construit. Par exemple, un [\<TypeInstantiation>](typeinstantiation-element-net-native.md) élément peut être utilisé pour définir la stratégie d’un `List<String>` type.|  
 |[\<Method>](method-element-net-native.md)|Applique la stratégie à une méthode sur un type particulier.|  
 |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)|Applique la stratégie à une méthode générique construite.|  
 |[\<Property>](property-element-net-native.md)|Applique la stratégie à une propriété sur un type particulier.|  
@@ -74,18 +74,18 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
 |-------------|-----------------|  
 |[\<Directives>](directives-element-net-native.md)|Élément racine d'un fichier de directives de runtime.|  
   
-## <a name="remarks"></a>Notes  
- L’élément [\<Directives>](directives-element-net-native.md) peut contenir zéro ou un élément `<Application>`. Un même fichier de directives de réflexion ne peut pas contenir plusieurs éléments `<Application>`.  
+## <a name="remarks"></a>Remarques  
+ L' [\<Directives>](directives-element-net-native.md) élément peut contenir zéro ou un `<Application>` élément. Un même fichier de directives de réflexion ne peut pas contenir plusieurs éléments `<Application>`.  
   
  Un élément `<Application>` peut être utilisé de deux manières différentes :  
   
-- En tant que conteneur pour définir des éléments de programme dont les métadonnées sont nécessaires au moment de l'exécution. Dans ce cas, l'élément `<Application>` n'a pas besoin d'attributs. Au moment de la compilation, les outils du compilateur recherchent dans toutes les bibliothèques, y compris les bibliothèques principales du .NET Framework, les éléments de programme identifiés par les éléments enfants de l'élément `<Application>`. En revanche, les outils du compilateur ne recherchent les éléments de programme identifiés par les éléments enfants de [\<Library>](library-element-net-native.md) que dans la bibliothèque désignée par l’élément [\<Library>](library-element-net-native.md).  
+- En tant que conteneur pour définir des éléments de programme dont les métadonnées sont nécessaires au moment de l'exécution. Dans ce cas, l'élément `<Application>` n'a pas besoin d'attributs. Au moment de la compilation, les outils du compilateur recherchent dans toutes les bibliothèques, y compris les bibliothèques principales du .NET Framework, les éléments de programme identifiés par les éléments enfants de l'élément `<Application>`. En revanche, les outils du compilateur recherchent uniquement la bibliothèque désignée par l' [\<Library>](library-element-net-native.md) élément pour les éléments de programme identifiés par les éléments enfants de [\<Library>](library-element-net-native.md) .  
   
-- En tant qu'élément qui définit la stratégie à l'échelle de l'application pour la réflexion, la sérialisation et l'interopérabilité. Les attributs de l’élément `<Application>` définissent la stratégie à l’échelle de l’application, qui peut être substituée par les éléments enfants définis par l’élément `<Application>` ou [\<Library>](library-element-net-native.md).  
+- En tant qu'élément qui définit la stratégie à l'échelle de l'application pour la réflexion, la sérialisation et l'interopérabilité. Les attributs de l' `<Application>` élément définissent la stratégie au niveau de l’application, qui peut être substituée par les éléments enfants définis par l' `<Application>` [\<Library>](library-element-net-native.md) élément ou.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Élément > de la bibliothèque \<](library-element-net-native.md)
-- [\<, directives >, élément](directives-element-net-native.md)
+- [\<Library>Appartient](library-element-net-native.md)
+- [\<Directives>Appartient](directives-element-net-native.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
