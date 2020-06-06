@@ -3,19 +3,19 @@ title: <service>
 ms.date: 03/30/2017
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
 ms.openlocfilehash: c12f57d68de870123d92c8a101e2999c24bb988f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855021"
 ---
-# <a name="service"></a>\<service>
+# \<service>
 L'élément `service` contient les paramètres d'un service Windows Communication Foundation (WCF). Il contient également les points de terminaison qui exposent le service.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<services >** ](services.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de service**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<services>**](services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<service>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,14 +48,14 @@ L'élément `service` contient les paramètres d'un service Windows Communicatio
 |-------------|-----------------|  
 |[\<services>](services.md)|Élément racine de tous les éléments de configuration WCF.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Les services sont définis dans la section `services` du fichier de configuration. Un assembly peut contenir n'importe quel nombre de services. Chacun dispose de sa propre section de configuration de `service`. Cette section et son contenu définissent le contrat de service, le comportement et les points de terminaison de ce service en particulier.  
   
  L'élément `behaviorConfiguration` est également facultatif. Il identifie le comportement que le service adopte. Le comportement spécifié dans cet attribut doit créer une liaison avec un comportement dans la portée du même fichier de configuration.  
   
  Chaque service expose un ou plusieurs points de terminaison, qui ont leurs propres adresse et liaison. Toutes les liaisons utilisées dans le fichier de configuration doivent être définies dans l'étendue du fichier. La liaison est liée aux points de terminaison grâce à la combinaison des attributs `name` et `bindingConfiguration`. L'attribut `name` décrit la section dans laquelle la liaison est définie. L'attribut `bindingConfiguration` définit quelle configuration de la section de liaison est utilisée. Une section de liaison peut définir plusieurs configurations.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Il s'agit d'un exemple de configuration de service.  
   
 ```xml  

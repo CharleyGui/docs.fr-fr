@@ -1,15 +1,15 @@
 ---
-title: Élément <Field> (.NET Native)
+title: <Field>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 6a14125f-1a8d-41a1-8a32-659ca0ad12de
 ms.openlocfilehash: 2a63b88c399a999cd00750dee1614352cea10e80
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128421"
 ---
-# <a name="field-element-net-native"></a>\<élément > Field (.NET Native)
+# <a name="field-element-net-native"></a>\<Field>, Élément (.NET Native)
 Applique la stratégie de réflexion runtime à un champ.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,18 +35,18 @@ Applique la stratégie de réflexion runtime à un champ.
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*nom_méthode*|Nom du champ. Le type du champ est défini par l’élément [\<Type>](type-element-net-native.md) ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) parent.|  
+|*method_name*|Nom du champ. Le type du champ est défini par l’élément parent [\<Type>](type-element-net-native.md) ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie pour le champ. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -55,7 +55,7 @@ Applique la stratégie de réflexion runtime à un champ.
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Si la stratégie d'un champ n'est pas définie explicitement, elle hérite la stratégie runtime de son élément parent.  
   
 ## <a name="see-also"></a>Voir aussi

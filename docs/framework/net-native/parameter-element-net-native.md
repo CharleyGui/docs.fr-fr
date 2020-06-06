@@ -1,15 +1,15 @@
 ---
-title: Élément <Parameter> (.NET Native)
+title: <Parameter>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 22aaa1f3-596f-4733-93db-f4bcabcb5240
 ms.openlocfilehash: c6dfc347d44a794ee8496c45ca879f9daab12b22
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128200"
 ---
-# <a name="parameter-element-net-native"></a>\<, paramètre >, élément (.NET Native)
+# <a name="parameter-element-net-native"></a>\<Parameter>, Élément (.NET Native)
 Applique la stratégie de réflexion au type de l’argument passé à une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,7 +35,7 @@ Applique la stratégie de réflexion au type de l’argument passé à une méth
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Général|Attribut requis. Nom du paramètre. Par exemple, pour la signature de méthode `String.CompareTo(Object value)`, la valeur de l'attribut `Name` est « value ».|  
+|`Name`|Général|Attribut requis. Le nom du paramètre. Par exemple, pour la signature de méthode `String.CompareTo(Object value)`, la valeur de l'attribut `Name` est « value ».|  
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
@@ -49,18 +49,18 @@ Applique la stratégie de réflexion au type de l’argument passé à une méth
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*nom_paramètre*|Nom du paramètre de méthode auquel la stratégie est appliquée. Par exemple, pour la signature de méthode `String.CompareTo(Object value)`, la valeur de l'attribut `Name` est « value ».|  
+|*parameter_name*|Nom du paramètre de méthode auquel la stratégie est appliquée. Par exemple, pour la signature de méthode `String.CompareTo(Object value)`, la valeur de l'attribut `Name` est « value ».|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -68,12 +68,12 @@ Applique la stratégie de réflexion au type de l’argument passé à une méth
 |-------------|-----------------|  
 |[\<Method>](method-element-net-native.md)|Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.|  
   
-## <a name="remarks"></a>Notes  
- L’élément `<Parameter>` est un enfant de l’élément [\<Method>](method-element-net-native.md) et est utilisé pour appliquer la stratégie à un paramètre de méthode particulier. Le paramètre de méthode spécifique est défini par le nom plutôt que par le type. Au moins un attribut qui représente un type de stratégie, tel que `Activate` ou `Dynamic`, doit être présent.  
+## <a name="remarks"></a>Remarques  
+ L' `<Parameter>` élément est un enfant de l' [\<Method>](method-element-net-native.md) élément et est utilisé pour appliquer la stratégie à un paramètre de méthode particulier. Le paramètre de méthode spécifique est défini par le nom plutôt que par le type. Au moins un attribut qui représente un type de stratégie, tel que `Activate` ou `Dynamic`, doit être présent.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Method>, élément](method-element-net-native.md)
+- [\<Method>Appartient](method-element-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)

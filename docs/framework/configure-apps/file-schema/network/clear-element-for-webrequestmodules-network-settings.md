@@ -11,19 +11,19 @@ helpviewer_keywords:
 - clear element, webRequestModules
 ms.assetid: 48f38bcb-f30c-4b74-a8f0-1a3caf1aa96f
 ms.openlocfilehash: 5832d120824df75d374fc94cb0aa4e08189cb965
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088498"
 ---
-# <a name="clear-element-for-webrequestmodules-network-settings"></a>\<Clear > élément de webRequestModules (paramètres réseau)
+# <a name="clear-element-for-webrequestmodules-network-settings"></a>\<clear>, élément de webRequestModules (paramètres réseau)
 Supprime tous les modules de demande Web inscrits de l’application.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**Clear** >
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<webRequestModules>**](webrequestmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ Supprime tous les modules de demande Web inscrits de l’application.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Élément**|**Description**|  
+|**Appartient**|**Description**|  
 |-----------------|---------------------|  
 |[webRequestModules](webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.|  
   
-## <a name="remarks"></a>Notes  
- L’élément `clear` supprime tous les modules de demande Web inscrits qui ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
+## <a name="remarks"></a>Remarques  
+ L' `clear` élément supprime tous les modules de demande Web inscrits qui ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

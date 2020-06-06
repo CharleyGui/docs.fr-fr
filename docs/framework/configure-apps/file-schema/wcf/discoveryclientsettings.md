@@ -3,21 +3,21 @@ title: <discoveryClientSettings>
 ms.date: 03/30/2017
 ms.assetid: 02e1b823-a8bb-4074-90d5-8599f71e8f9d
 ms.openlocfilehash: 929c5d170bfc27160e3e15b8bd2f9f26e0ed8975
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855414"
 ---
-# <a name="discoveryclientsettings"></a>\<discoveryClientSettings>
+# \<discoveryClientSettings>
 Contient les paramètres requis par une application pour participer au processus de découverte de service en tant que client.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<standardEndpoints >** ](standardendpoints.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<dynamicEndpoint >** ](dynamicendpoint.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<standardEndpoint >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<discoveryClientSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<standardEndpoints>**](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<dynamicEndpoint>**](dynamicendpoint.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<standardEndpoint>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<discoveryClientSettings>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,7 +59,7 @@ Contient les paramètres requis par une application pour participer au processus
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](standardendpoints.md)|Élément de configuration qui fournit un jeu de critères utilisé par une application cliente pour rechercher un service de découverte. Vous pouvez regrouper les critères dans des critères de recherche (en spécifiant les services que vous recherchez) et rechercher les critères de fin (la durée de la recherche en dernier).|  
+|[\<standardEndpoints>](standardendpoints.md)|Élément de configuration qui fournit un jeu de critères utilisé par une application cliente pour rechercher un service de découverte. Les critères peuvent être regroupés en critères de recherche (spécifiant les services recherchés) et critères d'arrêt de la recherche (durée de la recherche).|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

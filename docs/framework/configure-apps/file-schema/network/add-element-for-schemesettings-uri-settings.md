@@ -3,19 +3,19 @@ title: <add>, élément de schemeSettings (paramètres d’URI)
 ms.date: 03/30/2017
 ms.assetid: 594a7b3b-af23-4cfa-b616-0b2dddb1a705
 ms.openlocfilehash: ed40098e8d4c2d1298771e67a618b8d04f59c912
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74087715"
 ---
-# <a name="add-element-for-schemesettings-uri-settings"></a>\<ajouter un élément > pour schemeSettings (paramètres d’URI)
+# <a name="add-element-for-schemesettings-uri-settings"></a>\<add>, élément de schemeSettings (paramètres d’URI)
 Ajoute un paramètre de schéma pour un nom de schéma.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<uri >** ](uri-element-uri-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<schemeSettings**](schemesettings-element-uri-settings.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**ajouter >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<uri>**](uri-element-uri-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<schemeSettings>**](schemesettings-element-uri-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +37,21 @@ Ajoute un paramètre de schéma pour un nom de schéma.
   
 ## <a name="attribute-name-attribute"></a>{Nom de l’attribut} Attribut  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |genericUriParserOptions|Options de l’analyseur pour ce schéma. La seule valeur prise en charge est genericUriParserOptions = "DontUnescapePathDotsAndSlashes".|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- aucune.  
+ Aucune  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<schemeSettings, élément (paramètres d’Uri)](schemesettings-element-uri-settings.md)|Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.|  
+|[\<schemeSettings>, Élément (paramètres d’URI)](schemesettings-element-uri-settings.md)|Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.|  
   
-## <a name="remarks"></a>Notes  
- Par défaut, la classe <xref:System.Uri?displayProperty=nameWithType> annule les délimiteurs de chemin d’accès encodés de pourcentage avant l’exécution de la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
+## <a name="remarks"></a>Remarques  
+ Par défaut, la <xref:System.Uri?displayProperty=nameWithType> classe annule l’échappement des délimiteurs de chemin d’accès encodés en pourcentage avant d’exécuter la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -59,7 +59,7 @@ Ajoute un paramètre de schéma pour un nom de schéma.
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- C’est pourquoi <xref:System.Uri?displayProperty=nameWithType> classe First annule les délimiteurs de chemin d’accès, puis applique la compression de chemin d’accès. Le résultat de la transmission de l’URL malveillante ci-dessus à <xref:System.Uri?displayProperty=nameWithType> constructeur de classe génère l’URI suivant :  
+ Pour cette raison, la <xref:System.Uri?displayProperty=nameWithType> classe First annule les délimiteurs de chemin d’accès, puis applique la compression de chemin d’accès. Le résultat de la transmission de l’URL malveillante ci-dessus au <xref:System.Uri?displayProperty=nameWithType> constructeur de classe génère l’URI suivant :  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -69,7 +69,7 @@ Ajoute un paramètre de schéma pour un nom de schéma.
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant illustre une configuration utilisée par la classe <xref:System.Uri> pour prendre en charge l’échappement des délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
+ L’exemple suivant illustre une configuration utilisée par la <xref:System.Uri> classe pour prendre en charge la non-échappement des délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
   
 ```xml  
 <configuration>  

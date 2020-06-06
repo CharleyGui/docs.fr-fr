@@ -1,15 +1,15 @@
 ---
-title: Élément <TypeInstantiation> (.NET Native)
+title: <TypeInstantiation>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
 ms.openlocfilehash: 9069856b3d8739724d148b5eea5d4188c8b8b9e1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128680"
 ---
-# <a name="typeinstantiation-element-net-native"></a>\<élément TypeInstantiation > (.NET Native)
+# <a name="typeinstantiation-element-net-native"></a>\<TypeInstantiation>, Élément (.NET Native)
 Applique la stratégie de réflexion runtime à un type générique construit.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -51,19 +51,19 @@ Applique la stratégie de réflexion runtime à un type générique construit.
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*type_name*|Nom du type. Si cet élément `<TypeInstantiation>` est l’enfant d’un élément [\<Namespace>](namespace-element-net-native.md), d’un élément [\<<Type>](type-element-net-native.md) ou d’un autre élément `<TypeInstantiation>`, *type_name* peut spécifier le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet. Le nom du type n'est pas décoré. Par exemple, pour un objet <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, l'élément `<TypeInstantiation>` peut apparaître comme suit :<br /><br /> `\<TypeInstantiation Name=System.Collections.Generic.List Dynamic="Required Public" />`|  
+|*type_name*|Nom du type. Si cet `<TypeInstantiation>` élément est l’enfant d’un élément, d' [\<Namespace>](namespace-element-net-native.md) un [\<Type>](type-element-net-native.md) élément ou d’un autre `<TypeInstantiation>` élément, *type_name* pouvez spécifier le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet. Le nom du type n'est pas décoré. Par exemple, pour un objet <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, l'élément `<TypeInstantiation>` peut apparaître comme suit :<br /><br /> `\<TypeInstantiation Name=System.Collections.Generic.List Dynamic="Required Public" />`|  
   
 ## <a name="arguments-attribute"></a>Attribut Arguments  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*type_argument*|Spécifie les arguments de type générique. Si plusieurs arguments sont présents, ils sont séparés par des virgules. Chaque argument doit être composé du nom de type qualifié complet.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie pour le type générique construit. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
@@ -91,17 +91,17 @@ Applique la stratégie de réflexion runtime à un type générique construit.
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |`<TypeInstantiation>`|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs. Toutefois, au moins un doit être présent.  
   
- Si un élément `<TypeInstantiation>` est l’enfant d’un élément [\<Assembly>](assembly-element-net-native.md), [\<Namespace>](namespace-element-net-native.md) ou [\<Type>](type-element-net-native.md), il se substitue aux paramètres de stratégie définis par l’élément parent. Si un élément [\<Type>](type-element-net-native.md) spécifie une définition de type générique correspondante, l’élément `<TypeInstantiation>` se substitue à la stratégie de réflexion du runtime uniquement pour les instanciations du type générique construit spécifié.  
+ Si un `<TypeInstantiation>` élément est l’enfant d’un [\<Assembly>](assembly-element-net-native.md) [\<Namespace>](namespace-element-net-native.md) élément, ou, il se [\<Type>](type-element-net-native.md) substitue aux paramètres de stratégie définis par l’élément parent. Si un [\<Type>](type-element-net-native.md) élément définit une définition de type générique correspondante, l' `<TypeInstantiation>` élément se substitue à la stratégie de réflexion Runtime uniquement pour les instanciations du type générique construit spécifié.  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant utilise la réflexion pour récupérer la définition de type générique construit d'un objet <xref:System.Collections.Generic.Dictionary%602>. Il utilise également la réflexion pour afficher des informations sur les objets <xref:System.Type> qui représentent des types génériques construits et des définitions de type générique. La variable `b` dans l’exemple est un contrôle <xref:Windows.UI.Xaml.Controls.TextBlock>.  
+ L'exemple suivant utilise la réflexion pour récupérer la définition de type générique construit d'un objet <xref:System.Collections.Generic.Dictionary%602>. Il utilise également la réflexion pour afficher des informations sur les objets <xref:System.Type> qui représentent des types génériques construits et des définitions de type générique. La variable `b` de l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle.  
   
  [!code-csharp[ProjectN_Reflection#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/makegenerictype1.cs#2)]  
   
- Après la compilation avec la chaîne d’outils .NET Native, l’exemple lève une exception [MissingMetadataException](missingmetadataexception-class-net-native.md) sur la ligne qui appelle la méthode <xref:System.Type.GetGenericTypeDefinition%2A?displayProperty=nameWithType>. Vous pouvez éliminer l'exception et fournir les métadonnées nécessaires en ajoutant l'élément `<TypeInstantiation>` suivant au fichier de directives runtime :  
+ Après la compilation avec la chaîne d’outils .NET Native, l’exemple lève une exception [MissingMetadataException](missingmetadataexception-class-net-native.md) sur la ligne qui appelle la <xref:System.Type.GetGenericTypeDefinition%2A?displayProperty=nameWithType> méthode. Vous pouvez éliminer l'exception et fournir les métadonnées nécessaires en ajoutant l'élément `<TypeInstantiation>` suivant au fichier de directives runtime :  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  

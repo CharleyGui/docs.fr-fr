@@ -3,21 +3,21 @@ title: <sslStreamSecurity>
 ms.date: 03/30/2017
 ms.assetid: 430a378b-a742-4858-8a12-9f9b235fd627
 ms.openlocfilehash: c5c7ec2b18143ff4d71540a60e24b8225ca4db16
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73738592"
 ---
-# <a name="sslstreamsecurity"></a>\<section sslStreamSecurity >
+# \<sslStreamSecurity>
 Représente un élément de liaison personnalisé qui prend en charge la sécurité de canal à l'aide d'un flux SSL.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**section sslstreamsecurity >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<sslStreamSecurity>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,17 +33,17 @@ Représente un élément de liaison personnalisé qui prend en charge la sécuri
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|requireClientCertificate|Valeur booléenne qui spécifie si un certificat client est requis pour cette liaison. La valeur par défaut est `false`,|  
-|sslProtocols|Valeur d'indicateur d'énumération SslProtocols qui spécifie les protocoles SSL pris en charge. La valeur par défaut&#124;est&#124;Ssl3&#124;TLS Tls11 Tls12.|  
+|requireClientCertificate|Valeur booléenne qui spécifie si un certificat client est requis pour cette liaison. Par défaut, il s’agit de `false`.|  
+|sslProtocols|Valeur d'indicateur d'énumération SslProtocols qui spécifie les protocoles SSL pris en charge. La valeur par défaut est Ssl3&#124;TLS&#124;Tls11&#124;Tls12.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[liaison de \<](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
+|[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -53,4 +53,4 @@ Représente un élément de liaison personnalisé qui prend en charge la sécuri
 - [Liaisons](../../../wcf/bindings.md)
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding >](custombinding.md)
+- [\<customBinding>](custombinding.md)

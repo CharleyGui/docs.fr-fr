@@ -1,24 +1,24 @@
 ---
-title: < élément Crst_DisableSpinWait >
+title: Élément <Crst_DisableSpinWait>
 ms.date: 04/18/2019
 f1_keywords:
 - Crst_DisableSpinWait
 helpviewer_keywords:
 - Crst_DisableSpinWait element
 ms.openlocfilehash: 0683081183081e249b2a9c89e1a6a15f638fb339
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73117636"
 ---
-# <a name="crst_disablespinwait-element"></a>\<élément Crst_DisableSpinWait >
+# <a name="crst_disablespinwait-element"></a>\<Crst_DisableSpinWait> (élément)
 
 Spécifie s’il faut désactiver l’attente de spin pour une section critique en cas de conflit.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<Crst_DisableSpinWait** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<Crst_DisableSpinWait>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |1|Désactivez l’attente de spin quand une section critique ne peut pas être acquise.|  
-|0|Ne désactivez pas l’attente de spin quand une section critique ne peut pas être acquise. Valeur par défaut.|  
+|0|Ne désactivez pas l’attente de spin quand une section critique ne peut pas être acquise. Il s’agit de la valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -68,4 +68,4 @@ L’exemple suivant désactive l’attente de spin-Wait dans les sections critiq
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)

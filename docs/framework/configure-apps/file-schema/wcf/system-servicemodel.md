@@ -9,17 +9,17 @@ helpviewer_keywords:
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
 ms.openlocfilehash: 2125ce00b0e23f2e93ff251549f9c1276892b16b
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70399452"
 ---
-# <a name="systemservicemodel"></a>\<system.serviceModel>
+# \<system.serviceModel>
 Cette section de configuration contient tous les éléments de configuration de l’Windows Communication Foundation (WCF) ServiceModel.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp; **\<System. serviceModel >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;**\<system.serviceModel>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,7 +58,7 @@ Cette section de configuration contient tous les éléments de configuration de 
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucune  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -68,11 +68,11 @@ Cette section de configuration contient tous les éléments de configuration de 
 |[\<bindings>](bindings.md)|Cette section contient une collection de liaisons standard et personnalisées. Chaque entrée est identifiée par son `name` unique. Les services utilisent les liaisons en les liant à l’aide de `name`.|  
 |[\<client>](client.md)|Cette section contient la liste des points de terminaison utilisés par un client pour se connecter à un service.|  
 |[\<comContracts>](comcontracts.md)|Cette section définit des contrats COM activés pour interagir avec WCF et COM.|  
-|[\<commonBehaviors>](commonbehaviors.md)|Cette section peut uniquement être définie dans le fichier machine.config. Elle définit deux collections enfants nommées `endpointBehaviors` et `serviceBehaviors`.  Chaque collection définit des éléments de comportement consommés respectivement par tous les services et points de terminaison WCF sur l’ordinateur.  Si un comportement est défini dans `<commonBehaviors>` les sections et `<behaviors>` , le comportement de la \<section > des comportements est préféré.|  
+|[\<commonBehaviors>](commonbehaviors.md)|Cette section peut uniquement être définie dans le fichier machine.config. Elle définit deux collections enfants nommées `endpointBehaviors` et `serviceBehaviors`.  Chaque collection définit des éléments de comportement consommés respectivement par tous les services et points de terminaison WCF sur l’ordinateur.  Si un comportement est défini dans les sections `<commonBehaviors>` et `<behaviors>`, le comportement dans la section \<behaviors> a la préférence.|  
 |[\<diagnostics>](diagnostics.md)|Cette section contient les paramètres des fonctionnalités de diagnostic de WCF. L'utilisateur peut activer/désactiver le suivi, les compteurs de performance et le fournisseur WMI et ajouter des filtres de messages personnalisés.|  
 |[\<extensions>](extensions-section.md)|Cette section contient une collection d’extensions qui permettent à l’utilisateur de créer des liaisons, des comportements et d’autres aspects d’extensions définis par l’utilisateur.|  
-|[\<protocolMapping>](protocolmapping.md)|Cette section définit un ensemble de mappages de protocole par défaut entre des schémas de protocole de transport (par exemple, http, net. TCP, net. pipe, etc.) et des liaisons WCF.|  
-|[\<routing>](routing.md)|Cette section définit un ensemble de filtres de routage qui déterminent le type de Windows Communication Foundation (WCF<xref:System.ServiceModel.Dispatcher.MessageFilter> ) à utiliser lors de l’évaluation des messages entrants, ainsi que les tables de routage qui définissent les points de terminaison cibles auxquels envoyer des messages lorsqu’un filtrer les correspondances.|  
+|[\<protocolMapping>](protocolmapping.md)|Cette section définit un ensemble de mappages de protocole par défaut entre des schémas de protocole de transport (par exemple, http, net.tcp, net.pipe, etc.) et des liaisons WCF.|  
+|[\<routing>](routing.md)|Cette section définit un ensemble de filtres de routage, qui déterminent le type de Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.MessageFilter> à utiliser lors de l’évaluation des messages entrants, ainsi que les tables de routage qui définissent les points de terminaison cibles auxquels envoyer des messages lorsqu’un filtre correspond.|  
 |[\<serviceHostingEnvironment>](servicehostingenvironment.md)|Cette section définit le type instancié par l'environnement d'hébergement de service pour un transport particulier. Si cette section est vide, le type par défaut est utilisé.|  
 |[\<services>](services.md)|Cette section contient une collection de services. Pour chaque service défini dans l'assembly, cet élément contient un élément `service` indiquant les paramètres du service.|  
 |[\<standardEndpoints>](standardendpoints.md)|Cette section définit une collection de points de terminaison standard, qui sont des points de terminaison préconfigurés réutilisables. Un point de terminaison standard possède un ou plusieurs attributs d’adresse, de liaison et de contrat ayant une valeur fixe. Par exemple, dans le point de terminaison de découverte, le contrat est fixe. Vous pouvez également utiliser des points de terminaison standard pour étendre le point de terminaison de service avec de nouvelles propriétés, ce qui revient à définir des liaisons personnalisées.|
@@ -84,10 +84,10 @@ Cette section de configuration contient tous les éléments de configuration de 
 |-------------|-----------------|  
 |\<configuration>|Élément racine correspondant à tous les éléments de configuration qui se trouvent dans un fichier de configuration .NET.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  WCF n’ajoute pas d’éléments aux sections de configuration d’autres produits.  
   
- Les services WCF sont définis dans `services` la section du fichier de configuration. Un assembly peut contenir n'importe quel nombre de services. Chacun dispose de sa propre section de configuration de `service`. Cette section et son contenu définissent le contrat, le comportement et les points de terminaison du service en question.  
+ Les services WCF sont définis dans la `services` section du fichier de configuration. Un assembly peut contenir n'importe quel nombre de services. Chacun dispose de sa propre section de configuration de `service`. Cette section et son contenu définissent le contrat, le comportement et les points de terminaison du service en question.  
   
  Seul l'attribut `name` d'un service est requis.  Par défaut, le nom d'un service décrit le type CLR sous-jacent utilisé pour implémenter un service ; toutefois, vous pouvez modifier la propriété ConfigurationName d'un <xref:System.ServiceModel.ServiceContractAttribute> pour remplacer la spécification de type CLR.  
   

@@ -5,19 +5,19 @@ helpviewer_keywords:
 - gcHeapCount element
 - <gcHeapCount> element
 ms.openlocfilehash: 09d6523fb10692dd3617a3827d5bccf112bc632b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73978381"
 ---
-# <a name="gcheapaffinitizemask-element"></a>\<élément GCHeapAffinitizeMask >
+# <a name="gcheapaffinitizemask-element"></a>\<GCHeapAffinitizeMask>, élément
 
 Définit l’affinité entre les tas GC et les processeurs individuels.
 
-\<> de configuration \
-&nbsp;&nbsp;\<Runtime > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapAffinitizeMask >
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapAffinitizeMask>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,13 +38,13 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 #### <a name="enabled-attribute"></a>attribut activé
 
-|valeur|Description|
+|Valeur|Description|
 |-----------|-----------------|
 |`nnnn`|Valeur décimale qui forme un masque de masque définissant l’affinité entre les segments de mémoire GC du serveur et les processeurs individuels. |
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucun(e).
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -53,17 +53,17 @@ Aucun(e).
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Par défaut, les threads de garbage collection de serveur sont affinités avec leur processeur respectif, de sorte qu’il existe un tas GC, un thread GC de serveur et un thread de garbage collection de serveur d’arrière-plan pour chaque processeur. À compter de .NET Framework 4.6.2, vous pouvez utiliser l’élément **GCHeapAffinitizeMask** pour contrôler l’affinité entre les tas et les processeurs de garbage collection de serveur lorsque le nombre de segments est limité par l’élément **GCHeapCount** .
 
 **GCHeapAffinitizeMask** est généralement utilisé avec deux autres indicateurs :
 
-- [GCNoAffinitize](gcnoaffinitize-element.md), qui contrôle si les threads/segments de mémoire GC du serveur sont affinité avec des processeurs. L’attribut `enabled` de l’élément [GCNoAffinitize](gcnoaffinitize-element.md) doit être `false` (sa valeur par défaut) pour que le paramètre **GCHeapAffinitizeMask** soit utilisé.
+- [GCNoAffinitize](gcnoaffinitize-element.md), qui contrôle si les threads/segments de mémoire GC du serveur sont affinité avec des processeurs. L' `enabled` attribut de l’élément [GCNoAffinitize](gcnoaffinitize-element.md) doit être `false` (sa valeur par défaut) pour que le paramètre **GCHeapAffinitizeMask** soit utilisé.
 
 - [GCHeapCount](gcheapcount-element.md), qui limite le nombre de segments de mémoire utilisés par le processus pour le garbage collection de serveur. Par défaut, il existe un tas pour chaque processeur.
 
-**nnnn** est un masque de bits exprimé sous la forme d’une valeur décimale. Le bit 0 de l’octet 0 représente le processeur 0, le bit 1 de l’octet 0 représente le processeur 1, et ainsi de suite. Exemple :
+**nnnn** est un masque de bits exprimé sous la forme d’une valeur décimale. Le bit 0 de l’octet 0 représente le processeur 0, le bit 1 de l’octet 0 représente le processeur 1, et ainsi de suite. Par exemple :
 
 ```xml
 <GCHeapAffinitizeMask enabled="1023"/>
@@ -90,6 +90,6 @@ L’exemple suivant indique qu’une application utilise le garbage collection d
 - <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>
 - [Élément GCNoAffinitize](gcnoaffinitize-element.md)
 - [Élément GCHeapCount](gcheapcount-element.md)
-- [Notions de base du garbage collection](../../../../standard/garbage-collection/fundamentals.md)
+- [Notions de base de garbage collection](../../../../standard/garbage-collection/fundamentals.md)
 - [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)

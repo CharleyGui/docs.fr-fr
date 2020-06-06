@@ -10,21 +10,21 @@ helpviewer_keywords:
 - codeBase element
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
 ms.openlocfilehash: 475b7df55ed509157c1da0aeb8f979de238c72b5
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70971886"
 ---
-# <a name="codebase-element"></a>\<Élément codebais >
+# <a name="codebase-element"></a>Élément \<codeBase>
 
 Spécifie où le common language runtime peut trouver un assembly.
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> dependentAssembly**](dependentassembly-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<codeBase>**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<assemblyBinding>**](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<dependentAssembly>**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<codeBase>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -64,13 +64,13 @@ Aucun.
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 |`System.web`|Spécifie l'élément racine de la section de configuration ASP.NET.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-Pour que le runtime utilise le  **\<paramètre CODEBASE >** dans un fichier de configuration machine ou un fichier de stratégie d’éditeur, le fichier doit également rediriger la version de l’assembly. Les fichiers de configuration de l’application peuvent avoir un paramètre code base sans rediriger la version de l’assembly. Après avoir déterminé la version de l’assembly à utiliser, le runtime applique le paramètre de code base du fichier qui détermine la version. Si aucun code base n’est indiqué, le runtime détecte l’assembly de la façon habituelle.
+Pour que le runtime utilise le **\<codeBase>** paramètre dans un fichier de configuration machine ou un fichier de stratégie d’éditeur, le fichier doit également rediriger la version de l’assembly. Les fichiers de configuration de l’application peuvent avoir un paramètre code base sans rediriger la version de l’assembly. Après avoir déterminé la version de l’assembly à utiliser, le runtime applique le paramètre de code base du fichier qui détermine la version. Si aucun code base n’est indiqué, le runtime détecte l’assembly de la façon habituelle.
 
 Si l’assembly a un nom fort, le paramètre de code base peut se trouver n’importe où sur l’intranet local ou sur Internet. Si l’assembly est un assembly privé, le paramètre de code base doit être un chemin d’accès relatif au répertoire de l’application.
 
-Pour les assemblys sans nom fort, la version est ignorée et le chargeur utilise la première apparence \<du code base > dans \<le > dependentAssembly. S’il y a une entrée dans le fichier de configuration de l’application qui redirige la liaison vers un autre assembly, la redirection aura la priorité, même si la version de l’assembly ne correspond pas à la demande de liaison.
+Pour les assemblys sans nom fort, la version est ignorée et le chargeur utilise la première apparence de \<codebase> à l’intérieur de \<dependentAssembly> . S’il y a une entrée dans le fichier de configuration de l’application qui redirige la liaison vers un autre assembly, la redirection aura la priorité, même si la version de l’assembly ne correspond pas à la demande de liaison.
 
 ## <a name="example"></a>Exemple
 
@@ -95,6 +95,6 @@ L’exemple suivant montre comment spécifier où le runtime peut trouver un ass
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Spécifier l’emplacement d’un assembly](../../../../standard/assembly/location.md)
-- [Méthode de localisation des assemblys par le runtime](../../../deployment/how-the-runtime-locates-assemblies.md)
+- [Comment le runtime localise les assemblys](../../../deployment/how-the-runtime-locates-assemblies.md)

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
 ms.openlocfilehash: 4e8bf23ce39edadf80f019315c690b597b3d7361
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089230"
 ---
-# <a name="mailsettings-element-network-settings"></a>\<mailSettings >, élément (paramètres réseau)
+# <a name="mailsettings-element-network-settings"></a>\<mailSettings>, élément (paramètres réseau)
 Configure les options d’envoi de courrier.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<mailSettings** >
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<mailSettings>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ Configure les options d’envoi de courrier.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|[\<l’élément de > SMTP (paramètres réseau)](smtp-element-network-settings.md)|Configure les options de protocole de transport de messagerie simple.|  
+|[\<smtp>, Élément (paramètres réseau)](smtp-element-network-settings.md)|Configure les options de protocole de transport de messagerie simple.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Élément**|**Description**|  
+|**Appartient**|**Description**|  
 |-----------------|---------------------|  
-|[\<system.Net>, élément (Paramètres réseau)](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
+|[\<system.Net>, Élément (paramètres réseau)](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant spécifie les paramètres SMTP appropriés pour envoyer des messages électroniques à l’aide des informations d’identification réseau par défaut.  

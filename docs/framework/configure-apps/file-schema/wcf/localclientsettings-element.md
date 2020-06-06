@@ -1,24 +1,24 @@
 ---
-title: <localClientSettings>, élément
+title: <localClientSettings> (élément)
 ms.date: 03/30/2017
 ms.assetid: 4680ace5-f4e1-4fcb-b9d8-a4a4af5cd7ae
 ms.openlocfilehash: 3ec0394943c030a8866087c98a912682a2a2112e
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400318"
 ---
-# <a name="localclientsettings-element"></a>\<localClientSettings >, élément
+# <a name="localclientsettings-element"></a>\<localClientSettings>, élément
 Spécifie les paramètres de sécurité d’un client local pour cette liaison.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<localClientSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<localClientSettings>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,16 +58,16 @@ Spécifie les paramètres de sécurité d’un client local pour cette liaison.
 |`timestampValidityDuration`|<xref:System.TimeSpan> positif qui spécifie la durée de validité d'un horodatage. La valeur par défaut est « 00:15:00 ».|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun  
+ Aucune  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<> de sécurité](security-of-custombinding.md)|Spécifie les options de sécurité d’une liaison personnalisée.|  
+|[\<security>](security-of-custombinding.md)|Spécifie les options de sécurité d’une liaison personnalisée.|  
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|Spécifie les valeurs par défaut utilisées pour initialiser un service de conversation sécurisé.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Les paramètres sont locaux dans le sens où ils ne dérivent pas de la stratégie de sécurité du service.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -81,5 +81,5 @@ Spécifie les paramètres de sécurité d’un client local pour cette liaison.
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Guide pratique : Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Sécurité de liaison personnalisée](../../../wcf/samples/custom-binding-security.md)
+- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Custom Binding Security](../../../wcf/samples/custom-binding-security.md)

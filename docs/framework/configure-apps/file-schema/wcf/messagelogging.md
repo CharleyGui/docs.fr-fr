@@ -3,19 +3,19 @@ title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
 ms.openlocfilehash: 9291c38af28c18d20e23e34e8316b4a9fe523123
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855125"
 ---
-# <a name="messagelogging"></a>\<messageLogging>
+# \<messageLogging>
 Cet élément définit les paramètres pour les fonctions d'enregistrement des messages de Windows Communication Foundation (WCF).  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de diagnostic**](diagnostics.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<messageLogging >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<diagnostics>**](diagnostics.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<messageLogging>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -62,7 +62,7 @@ Cet élément définit les paramètres pour les fonctions d'enregistrement des m
 |-------------|-----------------|  
 |diagnostics|Définit des paramètres WCF pour l'inspection et le contrôle au moment de l'exécution pour l'administrateur.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Les messages sont entrés à trois niveaux différents dans la pile : les messages de service, de transport et incorrects. Chaque niveau peut être activé séparément.  
   
  Les filtres XPath peuvent être ajoutés afin d’enregistrer des messages spécifiques aux niveaux de transport et de service. Si aucun filtre n'est défini, tous les messages sont enregistrés. Les filtres sont appliqués uniquement aux en-têtes du message. Le corps est ignoré. WCF ignore le corps du message pour améliorer la performance. Si vous souhaitez filtrer le contenu du corps, vous pouvez créer un écouteur personnalisé avec un filtre approprié.  
@@ -107,7 +107,7 @@ Cet élément définit les paramètres pour les fonctions d'enregistrement des m
 </system.diagnostics>
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```xml  
 <messageLogging logEntireMessage="true"

@@ -3,23 +3,23 @@ title: <messageSenderAuthentication>
 ms.date: 03/30/2017
 ms.assetid: ea62fc06-55fb-42e0-aa2b-8867bdf4b415
 ms.openlocfilehash: c6183a8d27d56c7199b815ccb31b06f983a51b33
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70398398"
 ---
-# <a name="messagesenderauthentication"></a>\<messageSenderAuthentication>
+# \<messageSenderAuthentication>
 Spécifie les paramètres d'authentification pour le certificat homologue utilisé par l'expéditeur d'un message.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCredentials >** ](servicecredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> homologues**](peer-of-servicecredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<messageSenderAuthentication >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceCredentials>**](servicecredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<peer>**](peer-of-servicecredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<messageSenderAuthentication>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,8 +51,8 @@ Spécifie les paramètres d'authentification pour le certificat homologue utilis
 |-------------|-----------------|  
 |[\<peer>](peer-of-servicecredentials.md)|Spécifie les informations d'identification actuelles d'un nœud homologue.|  
   
-## <a name="remarks"></a>Notes  
- Cet élément doit être configuré si l'authentification des messages est sélectionnée. Pour les canaux de sortie, chaque message est signé à l’aide du certificat fourni par [ \<le certificat >](certificate-element.md). Avant d'être remis à l'application, tous les messages sont vérifiés par rapport aux informations d'identification de message à l'aide du validateur spécifié par l'attribut `customCertificateValidatorType` de cet élément. Le validateur peut accepter ou rejeter les informations d'identification.  
+## <a name="remarks"></a>Remarques  
+ Cet élément doit être configuré si l'authentification des messages est sélectionnée. Pour les canaux de sortie, chaque message est signé à l’aide du certificat fourni par [\<certificate>](certificate-element.md) . Avant d'être remis à l'application, tous les messages sont vérifiés par rapport aux informations d'identification de message à l'aide du validateur spécifié par l'attribut `customCertificateValidatorType` de cet élément. Le validateur peut accepter ou rejeter les informations d'identification.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -60,8 +60,8 @@ Spécifie les paramètres d'authentification pour le certificat homologue utilis
 - <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>
 - <xref:System.ServiceModel.Security.PeerCredential.MessageSenderAuthentication%2A>
 - <xref:System.ServiceModel.Configuration.PeerCredentialElement.MessageSenderAuthentication%2A>
-- [Utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md)
+- [Working with Certificates](../../../wcf/feature-details/working-with-certificates.md)
 - [Réseaux homologues](../../../wcf/feature-details/peer-to-peer-networking.md)
-- [canal homologue l’authentification des messages](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
-- [canal homologue l’authentification personnalisée](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
+- [Peer Channel Message Authentication](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
+- [Peer Channel Custom Authentication](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
 - [Sécurisation des applications de canal homologue](../../../wcf/feature-details/securing-peer-channel-applications.md)

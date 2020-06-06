@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <remove> Element
 ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
 ms.openlocfilehash: 83abbdbf0d3e4dfd16c0e8c649200c4ecc7329f7
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77215497"
 ---
-# <a name="remove-element-for-appsettings"></a>\<supprimer > élément de \<appSettings >
+# <a name="remove-element-for-appsettings"></a>\<remove>, élément de \<appSettings>
 
 Supprime les paramètres d’application personnalisés.
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<supprimer >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<appSettings>**](appsettings-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,7 +40,7 @@ Supprime les paramètres d’application personnalisés.
 
 |     | Description |
 | --- | ----------- |
-| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | Contient des paramètres d’application personnalisés, tels que des chemins d’accès, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application. |
+| [**\<appSettings>**](appsettings-element-for-configuration.md) | Contient des paramètres d’application personnalisés, tels que des chemins d’accès, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -48,7 +48,7 @@ None
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment supprimer un paramètre de configuration personnalisé pour `ApplicationName`:
+L’exemple suivant montre comment supprimer un paramètre de configuration personnalisé pour `ApplicationName` :
 
 ```xml
 <appSettings>

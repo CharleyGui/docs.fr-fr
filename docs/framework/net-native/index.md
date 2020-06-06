@@ -9,10 +9,10 @@ helpviewer_keywords:
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
 ms.openlocfilehash: 1f176e81905fe68c6d740a13240fe814659a7a59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128373"
 ---
 # <a name="compiling-apps-with-net-native"></a>Compilation d'applications avec .NET Native
@@ -40,22 +40,22 @@ Pour les utilisateurs de vos applications, .NET Native offre les avantages suiva
 > [!IMPORTANT]
 > Pour la grande majorité des applications et des scénarios, .NET Native offre des temps de démarrage nettement plus rapides et des performances supérieures par rapport à une application compilée en IL ou à une image NGEN. Toutefois, vos résultats peuvent varier. Pour vous assurer que votre application a bénéficié des améliorations des performances de .NET Native, vous devez comparer ses performances à celles de la version native non-.NET de votre application. Pour plus d’informations, consultez [vue d’ensemble des sessions de performance](https://docs.microsoft.com/visualstudio/profiling/performance-session-overview).
 
-Mais .NET Native implique plus qu’une compilation en code natif. Il transforme la façon dont les applications .NET Framework sont intégrées et exécutées. En particulier :
+Mais .NET Native implique plus qu’une compilation en code natif. Il transforme la façon dont les applications .NET Framework sont intégrées et exécutées. En particulier :
 
 - Pendant la précompilation, les parties nécessaires de .NET Framework sont liées statiquement dans votre application. Cela permet à l'application de s'exécuter avec les bibliothèques app-local de .NET Framework et au compilateur d'effectuer une analyse globale pour procurer des gains de performance. Ainsi, les applications se lancent systématiquement plus rapidement même après une mise à jour de .NET Framework.
 
 - Le .NET Native Runtime est optimisé pour la précompilation statique et, dans la plupart des cas, offre des performances supérieures. Dans le même temps, il conserve les fonctionnalités de réflexion principales, si productives au regard des développeurs.
 
-- .NET Native utilise le même back end que le C++ compilateur, qui est optimisé pour les scénarios de précompilation statique.
+- .NET Native utilise le même back end que le compilateur C++, qui est optimisé pour les scénarios de précompilation statique.
 
-.NET Native est en mesure de tirer parti des avantages C++ en C++ termes de performances de pour les développeurs de code géré, car il utilise les mêmes outils ou des outils similaires, comme indiqué dans ce tableau.
+.NET Native est en mesure d’apporter les avantages en termes de performances de C++ aux développeurs de code managé, car il utilise les mêmes outils ou des outils similaires que C++, comme indiqué dans ce tableau.
 
 ||.NET Native|C++|
 |-|----------------------------------------------------------------|-----------|
 |Bibliothèques|.NET Framework + Windows Runtime|Win32 + Windows Runtime|
 |Compilateur|Compilateur d'optimisation UTC|Compilateur d'optimisation UTC|
 |Déployé|Fichiers binaires prêts à être exécutés|Fichiers binaires prêts à être exécutés (ASM)|
-|Exécution|MRT.dll (Runtime CLR minimal)|CRT.dll (Runtime C)|
+|Runtime|MRT.dll (Runtime CLR minimal)|CRT.dll (Runtime C)|
 
 Pour les applications Windows pour Windows 10, vous devez charger les binaires de compilation de code .NET Native contenus dans les packages d’application (fichiers .aspx) vers le Windows Store.
 
@@ -69,7 +69,7 @@ Pour plus d'informations sur le développement d'applications avec la compilatio
 
 - [Réflexion et .NET Native](reflection-and-net-native.md)
 
-  - [API qui s’appuient sur la réflexion](apis-that-rely-on-reflection.md)
+  - [API qui s'appuient sur la réflexion](apis-that-rely-on-reflection.md)
 
   - [Informations de référence sur les API de réflexion](net-native-reflection-api-reference.md)
 

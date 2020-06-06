@@ -25,10 +25,10 @@ helpviewer_keywords:
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
 ms.openlocfilehash: b2da9600e6947a1efcb13fc8b1127665cea63071
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70972200"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Configuration des applications à l'aide de fichiers de configuration
@@ -40,7 +40,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
  Cette rubrique décrit la syntaxe des fichiers de configuration et fournit des informations sur les trois types de fichiers de configuration : ordinateur, application et sécurité.  
   
 ## <a name="configuration-file-format"></a>Format des fichiers de configuration  
- Les fichiers de configuration contiennent des éléments qui sont des structures de données logiques qui définissent des informations de configuration. Dans un fichier de configuration, vous utilisez des balises pour indiquer le début et la fin d'un élément. Par exemple, l’élément `<runtime>` se compose d’`<runtime>`*éléments enfants*`</runtime>`. Un élément vide s’écrirait ainsi : `<runtime/>` ou `<runtime></runtime>`.  
+ Les fichiers de configuration contiennent des éléments qui sont des structures de données logiques qui définissent des informations de configuration. Dans un fichier de configuration, vous utilisez des balises pour indiquer le début et la fin d'un élément. Par exemple, l' `<runtime>` élément se compose d' `<runtime>` *éléments enfants* `</runtime>` . Un élément vide s’écrirait ainsi : `<runtime/>` ou `<runtime></runtime>`.  
   
  Comme avec tous les fichiers XML, la syntaxe des fichiers de configuration respecte la casse.  
   
@@ -54,7 +54,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 ## <a name="machine-configuration-files"></a>Fichiers de configuration machine  
  Le fichier de configuration machine, Machine.config, contient des paramètres qui s'appliquent à l'ordinateur tout entier. Ce fichier se trouve dans le répertoire %*chemin d'installation du runtime*%\Config. Machine.config contient les paramètres de configuration d’une liaison d’assembly à l’échelle de l’ordinateur, de [canaux de communication à distance ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100)) intégrés et d’ASP.NET.  
   
- Le système de configuration recherche d’abord l’élément [ **\<appSettings>** ](./file-schema/appsettings/index.md) et les autres sections de configuration éventuellement définies par un développeur dans le fichier de configuration machine. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
+ Le système de configuration recherche d’abord dans le fichier de configuration de l’ordinateur l' [ **\<appSettings>** élément](./file-schema/appsettings/index.md) et les autres sections de configuration qu’un développeur peut définir. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
   
 > [!NOTE]
 > Le déploiement d'une application utilisant XCOPY ne copiera pas les paramètres dans le fichier de configuration machine.  
@@ -101,7 +101,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 - Fichier de configuration de la stratégie de l’utilisateur : %USERPROFILE%\Application data\Microsoft\CLR security config\v*xx.xx*\Security.config  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique pour Localiser des assemblys à l’aide de DEVPATH](how-to-locate-assemblies-by-using-devpath.md)  
+ [Procédure : Localiser des assemblys à l’aide de DEVPATH](how-to-locate-assemblies-by-using-devpath.md)  
  Explique comment demander au runtime d'utiliser la variable d'environnement DEVPATH pour rechercher les assemblys.  
   
  [Redirection des versions d'assemblys](redirect-assembly-versions.md)  
@@ -110,10 +110,10 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
  [Spécification de l'emplacement d'un assembly](specify-assembly-location.md)  
  Explique comment spécifier l'endroit où le runtime doit rechercher un assembly.  
   
- [Configuration des classes de chiffrement](configure-cryptography-classes.md)  
+ [Configuration de classes de chiffrement](configure-cryptography-classes.md)  
  Décrit la manière d'associer un nom d'algorithme à une classe de chiffrement et un identificateur d'objet à un algorithme de chiffrement.  
   
- [Guide pratique : Créer une stratégie d’éditeur](how-to-create-a-publisher-policy.md)  
+ [Procédure : Créer une stratégie d’éditeur](how-to-create-a-publisher-policy.md)  
  Explique quand et comment ajouter un fichier de stratégie de l'éditeur pour spécifier la redirection de l'assembly et les paramètres de base du code.  
   
  [Schéma des fichiers de configuration](./file-schema/index.md)  
@@ -126,5 +126,5 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 - [Redirection des versions d'assemblys](redirect-assembly-versions.md)
 - [Administration de site web ASP.NET](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
 - [Gestion des stratégies de sécurité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
-- [Caspol.exe (outil de stratégie de sécurité d’accès du code)](../tools/caspol-exe-code-access-security-policy-tool.md)
+- [Caspol. exe (outil stratégie de sécurité d’accès du code)](../tools/caspol-exe-code-access-security-policy-tool.md)
 - [Assemblys dans .NET](../../standard/assembly/index.md)

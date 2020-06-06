@@ -3,17 +3,17 @@ title: <comContracts>
 ms.date: 03/30/2017
 ms.assetid: 42e74148-223d-4888-a8ed-1d928527eb09
 ms.openlocfilehash: d061d48374a8745dc61e1ca156e4fcbbccee5ef7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69919474"
 ---
-# <a name="comcontracts"></a>\<comContracts>
+# \<comContracts>
 La section de configuration `comContracts` contient des éléments qui vous permettent de spécifier différentes propriétés d'un contrat de service d'intégration COM+.  
   
 ## <a name="specifying-namespace-and-contract"></a>Spécification d'espace de noms et de contrat  
- Les contrats de service d’intégration com+ sont actuellement `http://tempuri.org` restreints à l’espace de noms et le nom de contrat est dérivé de l’interface com de prise en charge. Toutefois, vous pouvez en spécifier d'autres à l'aide de la section `comContracts` du fichier de configuration.  
+ Les contrats de service d’intégration COM+ sont actuellement restreints à l' `http://tempuri.org` espace de noms et le nom de contrat est dérivé de l’interface com de prise en charge. Toutefois, vous pouvez en spécifier d'autres à l'aide de la section `comContracts` du fichier de configuration.  
   
  Par exemple, vous pouvez utiliser la configuration suivante pour spécifier l’espace de noms et le nom du contrat de service, aussi bien qu’une option pour mettre en vigueur l’utilisation sur les liaisons de session.  
   
@@ -31,7 +31,7 @@ La section de configuration `comContracts` contient des éléments qui vous perm
   
  Lorsque cette section est vide, l'initialisation de service applique un espace de noms et un nom de contrat par défaut à partir de l'ID d'interface COM de prise en charge.  
   
- En outre, vous pouvez utiliser l' [ \<élément ExposedMethod >](exposedmethod.md) pour spécifier les méthodes com+ exposées lorsque l’interface sur un composant com+ est exposée en tant que service Web. Vous pouvez également utiliser l' [ \<> persistableTypes](persistabletypes.md) pour spécifier les types persistants utilisés dans l’intégration. Enfin, vous pouvez utiliser l' [ \<élément UserDefinedType >](userdefinedtype.md) pour inclure les types définis par l’utilisateur (UDT) qui doivent être inclus dans le contrat de service.  
+ En outre, vous pouvez utiliser l' [\<exposedMethod>](exposedmethod.md) élément pour spécifier des méthodes com+ exposées lorsque l’interface sur un composant com+ est exposée en tant que service Web. Vous pouvez également utiliser le [\<persistableTypes>](persistabletypes.md) pour spécifier les types persistants utilisés dans l’intégration. Enfin, vous pouvez utiliser l' [\<userDefinedType>](userdefinedtype.md) élément pour inclure des types définis par l’utilisateur (UDT) qui doivent être inclus dans le contrat de service.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -42,4 +42,4 @@ La section de configuration `comContracts` contient des éléments qui vous perm
 - [\<userDefinedType>](userdefinedtype.md)
 - [\<comContract>](comcontract.md)
 - [Intégration à des applications COM+](../../../wcf/feature-details/integrating-with-com-plus-applications.md)
-- [Guide pratique : Configurer les paramètres du service COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)
+- [Comment : configurer des paramètres de service COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)

@@ -3,22 +3,22 @@ title: <transport> de <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
 ms.openlocfilehash: e8016eb9058f132722587368f1f8c7c03220af4a
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73732792"
 ---
-# <a name="transport-of-webhttpbinding"></a>\<> de transport de \<webHttpBinding >
+# <a name="transport-of-webhttpbinding"></a>\<transport> de \<webHttpBinding>
 Définit les paramètres de sécurité au niveau du transport pour un point de terminaison de service configuré pour recevoir des demandes HTTP.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webHttpBinding >** ](webhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **&nbsp;&nbsp;\<** ](security-of-webhttpbinding.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<webHttpBinding>**](webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<transport>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ Définit les paramètres de sécurité au niveau du transport pour un point de t
 </webHttpBinding>
 ```  
   
-## <a name="type"></a>Tapez  
+## <a name="type"></a>Type  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
@@ -57,7 +57,7 @@ Définit les paramètres de sécurité au niveau du transport pour un point de t
   
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |`None`|La sécurité est désactivée.|  
 |`Basic`|Utilise l'authentification de base.|  
@@ -68,7 +68,7 @@ Définit les paramètres de sécurité au niveau du transport pour un point de t
   
 ## <a name="proxycredentialtype-attribute"></a>Attribut proxyCredentialType  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |`None`|La sécurité est désactivée.|  
 |`Basic`|Utilise l'authentification de base.|  
@@ -77,13 +77,13 @@ Définit les paramètres de sécurité au niveau du transport pour un point de t
 |`Windows`|Utilise l'authentification intégrée Windows.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[> de sécurité \<](security-of-webhttpbinding.md)|Représente les fonctionnalités de sécurité de l’élément [\<wsHttpBinding >](wshttpbinding.md) .|  
+|[\<security>](security-of-webhttpbinding.md)|Représente les fonctionnalités de sécurité de l' [\<wsHttpBinding>](wshttpbinding.md) élément.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -91,9 +91,9 @@ Définit les paramètres de sécurité au niveau du transport pour un point de t
 - <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>
 - <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>
 - <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
-- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [liaison de \<](bindings.md)
-- [Modèle de programmation HTTP web WCF](../../../wcf/feature-details/wcf-web-http-programming-model.md)
+- [\<binding>](bindings.md)
+- [Modèle de programmation HTTP Web WCF](../../../wcf/feature-details/wcf-web-http-programming-model.md)

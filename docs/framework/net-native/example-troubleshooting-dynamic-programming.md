@@ -1,15 +1,15 @@
 ---
-title: 'Exemple : résolution des problèmes de programmation dynamique'
+title: 'Exemple : Résolution des problèmes de programmation dynamique'
 ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 ms.openlocfilehash: ff179854066d024a89cb5a84a19d0b9bb054d6e5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128440"
 ---
-# <a name="example-troubleshooting-dynamic-programming"></a>Exemple : résolution des problèmes de programmation dynamique
+# <a name="example-troubleshooting-dynamic-programming"></a>Exemple : Résolution des problèmes de programmation dynamique
 > [!NOTE]
 > Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).  
   
@@ -48,7 +48,7 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
   
  Dans ce cas, l'ajout d'une directive runtime pour `App.Core.ViewModels` a résolu le problème. Le problème était dû à un appel d’API en direction de la méthode <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> ayant retourné **null**, et l’application a ignoré silencieusement le problème jusqu’à ce qu’un incident se produise.  
   
- En programmation dynamique, une bonne pratique lors de l’utilisation des API de réflexion sous .NET Native consiste à utiliser les surcharges <xref:System.Type.GetType%2A?displayProperty=nameWithType> qui lèvent une exception en cas d’échec.  
+ En programmation dynamique, il est recommandé d’utiliser les <xref:System.Type.GetType%2A?displayProperty=nameWithType> surcharges qui lèvent une exception en cas d’échec lors de l’utilisation des API de réflexion sous .net native.  
   
 ## <a name="is-this-an-isolated-case"></a>S'agit-il d'un cas isolé ?  
  D'autres problèmes peuvent également survenir pendant l'utilisation d'`App.Core.ViewModels`.  Vous devez décider s'il est nécessaire d'identifier et de corriger chaque exception de métadonnées manquantes, ou d'économiser du temps et d'ajouter des directives pour une classe de types plus grande.  En l'occurrence, ajouter des métadonnées `dynamic` pour `App.Core.ViewModels` peut être la meilleure méthode si l'augmentation résultante de la taille du fichier binaire de sortie n'est pas un problème.  
@@ -58,5 +58,5 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bien démarrer](getting-started-with-net-native.md)
-- [Exemple : gestion des exceptions pendant la liaison de données](example-handling-exceptions-when-binding-data.md)
+- [Prise en main](getting-started-with-net-native.md)
+- [Exemple : Gestion des exceptions pendant la liaison de données](example-handling-exceptions-when-binding-data.md)

@@ -11,20 +11,20 @@ helpviewer_keywords:
 - bypasslist, clear element
 ms.assetid: 301584ca-a914-4100-b180-3b288d3b099e
 ms.openlocfilehash: c25477c2c99be66b34b07e1f7e50115bfa8d14e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154931"
 ---
-# <a name="clear-element-for-bypasslist-network-settings"></a>\<élément clair> pour la bypasslist (Paramètres réseau)
-Efface la liste de dérivation par procuration.  
+# <a name="clear-element-for-bypasslist-network-settings"></a>\<clear>, élément de bypasslist (paramètres réseau)
+Efface la liste de contournement du proxy.  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<défautProxy>**](defaultproxy-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>de la liste de contournement**](bypasslist-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<clair>**
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<defaultProxy>**](defaultproxy-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<bypasslist>**](bypasslist-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,18 +43,18 @@ Efface la liste de dérivation par procuration.
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Élément**|**Description**|  
+|**Appartient**|**Description**|  
 |-----------------|---------------------|  
-|[bypasslist](bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas un proxy.|  
+|[BypassList](bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas de proxy.|  
   
-## <a name="remarks"></a>Notes   
- L’élément `clear` efface toutes les entrées de la liste de contournement.  
+## <a name="remarks"></a>Remarques  
+ L' `clear` élément efface toutes les entrées de la liste de contournement.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a> Exemple  
- L’exemple suivant efface la liste de contournement, puis ajoute deux adresses à la liste de contournement. Le premier contourne le proxy pour tous les serveurs du domaine contoso.com ; le second contourne le proxy pour tous les serveurs dont l’adresse IP commence par 192.168.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant efface la liste de contournement, puis ajoute deux adresses à la liste de contournement. La première contourne le proxy pour tous les serveurs dans le domaine contoso.com. la deuxième contourne le proxy pour tous les serveurs dont l’adresse IP commence par 192,168.  
   
 ```xml  
 <configuration>  
@@ -73,4 +73,4 @@ Efface la liste de dérivation par procuration.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Paramètres réseau Schema](index.md)
+- [Schéma des paramètres réseau](index.md)

@@ -3,22 +3,22 @@ title: <issuedTokenAuthentication> de <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: 5c2e288f-f603-4d13-839a-0fd6d1981bec
 ms.openlocfilehash: 6d468a27ee05fb4dd8cf087d10e5d170783d3454
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400356"
 ---
-# <a name="issuedtokenauthentication-of-servicecredentials"></a>\<IssuedTokenAuthentication > de \<ServiceCredentials >
+# <a name="issuedtokenauthentication-of-servicecredentials"></a>\<issuedTokenAuthentication> de \<serviceCredentials>
 Indique un jeton personnalisé émis en tant qu'informations d'identification du service.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCredentials >** ](servicecredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<issuedTokenAuthentication >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceCredentials>**](servicecredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<issuedTokenAuthentication>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -70,10 +70,10 @@ Indique un jeton personnalisé émis en tant qu'informations d'identification du
 |-------------|-----------------|  
 |[\<serviceCredentials>](servicecredentials.md)|Spécifie les informations d’identification à utiliser pour authentifier le service, ainsi que les paramètres liés à la validation des informations d’identification du client.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Le scénario de jeton émis comporte trois étapes. Lors de la première phase, un client qui tente d’accéder à un service est appelé *service de jeton sécurisé*. Le service d'émission de jeton sécurisé authentifie ensuite le client et émet par la suite un jeton au client, généralement un jeton SAML (Security Assertions Markup Language). Le client retourne ensuite au service avec le jeton. Le service recherche dans le jeton les données lui permettant de l'authentifier, et par conséquent d'authentifier le client. Pour authentifier le jeton, le service doit connaître le certificat utilisé par le service d'émission de jeton sécurisé.  
   
- Cet élément est le référentiel pour les certificats de service d'émission de jeton sécurisé de ce type. Pour ajouter des certificats, utilisez la [ \<> knownCertificates](knowncertificates.md). Insérez un [ \<> d’ajout](add-of-knowncertificates.md) pour chaque certificat, comme indiqué dans l’exemple suivant.  
+ Cet élément est le référentiel pour les certificats de service d'émission de jeton sécurisé de ce type. Pour ajouter des certificats, utilisez le [\<knownCertificates>](knowncertificates.md) . Insérez un [\<add>](add-of-knowncertificates.md) pour chaque certificat, comme indiqué dans l’exemple suivant.  
   
 ```xml  
 <issuedTokenAuthentication>
@@ -88,7 +88,7 @@ Indique un jeton personnalisé émis en tant qu'informations d'identification du
   
  Par défaut, les certificats doivent être obtenus auprès d'un service d'émission de jeton sécurisé. Ces certificats « connus » garantissent que seuls les clients légitimes peuvent accéder à un service.  
   
- Pour plus d’informations sur l’utilisation de cet élément [de configuration, consultez Procédure : Configurez les informations d'](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)identification sur un service FS (Federation Service).  
+ Pour plus d’informations sur l’utilisation de cet élément de configuration, consultez [Comment : configurer des informations d’identification sur un service FS (Federation Service)](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -99,5 +99,5 @@ Indique un jeton personnalisé émis en tant qu'informations d'identification du
 - <xref:System.ServiceModel.Configuration.IssuedTokenServiceElement>
 - <xref:System.ServiceModel.Description.ServiceCredentials.IssuedTokenAuthentication%2A>
 - <xref:System.ServiceModel.Security.IssuedTokenServiceCredential>
-- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
-- [Guide pratique : Configurer les informations d’identification sur un service FS (Federation Service)](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Comment : configurer des informations d'identification sur un service FS (Federation Service)](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)

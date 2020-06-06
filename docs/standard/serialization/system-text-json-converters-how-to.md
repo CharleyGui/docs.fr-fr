@@ -11,10 +11,10 @@ helpviewer_keywords:
 - objects, serializing
 - converters
 ms.openlocfilehash: abda23ea538c2c0da6ada4f359ce745602dca45d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84279761"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON (marshaling) dans .NET

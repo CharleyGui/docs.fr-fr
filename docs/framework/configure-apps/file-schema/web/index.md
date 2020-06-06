@@ -10,10 +10,10 @@ helpviewer_keywords:
 - configuration schema [.NET Framework], Web settings
 ms.assetid: ae1ac356-267d-4753-8d7a-7a04eb45a9be
 ms.openlocfilehash: 030841330ff37cddb0c9e3e466a55a4be098e784
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088788"
 ---
 # <a name="web-settings-schema"></a>Schéma des paramètres web
@@ -25,9 +25,9 @@ Les paramètres web sont contenus dans les fichiers Aspnet.config, qui se trouve
   
 Les paramètres web ne sont utilisés dans aucun autre des fichiers de configuration, tels que le fichier machine.config, le fichier racine Web.config ou les fichiers Web.config au niveau de l’application.  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> System. web**](system-web-element-web-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ApplicationPool** >](applicationpool-element-web-settings.md)
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.web>**](system-web-element-web-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<applicationPool>**](applicationpool-element-web-settings.md)
 
 |Élément|Description|  
 |-------------|-----------------|  
@@ -36,4 +36,4 @@ Les paramètres web ne sont utilisés dans aucun autre des fichiers de configura
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)

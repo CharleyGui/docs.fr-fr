@@ -3,21 +3,21 @@ title: <transactionFlow>
 ms.date: 03/30/2017
 ms.assetid: 8c7b4c5b-ace3-4fe3-89ff-7b13c9aacd13
 ms.openlocfilehash: f5bcd142fb2b032ea179bcbba68fee53b98d2d77
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73736318"
 ---
-# <a name="transactionflow"></a>\<transactionFlow >
+# \<transactionFlow>
 Spécifie le support du flux de la transaction pour la liaison personnalisée.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**transactionFlow >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<transactionFlow>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,18 +32,18 @@ Spécifie le support du flux de la transaction pour la liaison personnalisée.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|transactionProtocol|Spécifie le protocole de transaction à utiliser. Les valeurs valides sont les suivantes :<br /><br /> -OleTransactions<br />-WSAtomicTransactionOctober2004<br /><br /> La valeur par défaut est OleTransactions.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.TransactionProtocol>.|  
+|transactionProtocol|Spécifie le protocole de transaction à utiliser. Les valeurs valides sont les suivantes :<br /><br /> -OleTransactions<br />-WSAtomicTransactionOctober2004<br /><br /> La valeur par défaut est OleTransactions.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.TransactionProtocol>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[liaison de \<](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
+|[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Cet élément vous permet d’activer ou de désactiver le flux de transactions entrantes dans les paramètres de liaison d’un point de terminaison, ainsi que de spécifier le format de protocole souhaité pour les transactions entrantes. Pour plus d’informations sur l’utilisation de cet élément de configuration, consultez [Configuration des transactions ServiceModel](../../../wcf/feature-details/servicemodel-transaction-configuration.md) et [activation du workflow de transaction](../../../wcf/feature-details/enabling-transaction-flow.md).  
   
 > [!CAUTION]
@@ -59,4 +59,4 @@ Spécifie le support du flux de la transaction pour la liaison personnalisée.
 - [Liaisons](../../../wcf/bindings.md)
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding >](custombinding.md)
+- [\<customBinding>](custombinding.md)

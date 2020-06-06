@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 ms.assetid: 17514d95-f0f5-4789-8e28-346640dc227c
 author: BrucePerlerMS
 ms.openlocfilehash: 4bf8ad2f70499edfc72dd9fcd9a5d8a0aafbbc66
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70251936"
 ---
-# <a name="nameclaimtype"></a>\<nameClaimType>
-Définit le type de revendication qui spécifie la <xref:System.Security.Principal.IIdentity.Name%2A> propriété. Le type de revendication est utilisé pour rechercher un <xref:System.Security.Claims.Claim> objet dans la collection <xref:System.Security.Claims.ClaimsIdentity> d’objets retournés par la <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> méthode de ce gestionnaire de jetons. La valeur de la revendication correspondante est ensuite définie en tant que nom du <xref:System.Security.Principal.IIdentity> généré à partir de ce gestionnaire de jetons.  
+# \<nameClaimType>
+Définit le type de revendication qui spécifie la <xref:System.Security.Principal.IIdentity.Name%2A> propriété. Le type de revendication est utilisé pour rechercher un <xref:System.Security.Claims.Claim> objet dans la collection d' <xref:System.Security.Claims.ClaimsIdentity> objets retournés par la <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> méthode de ce gestionnaire de jetons. La valeur de la revendication correspondante est ensuite définie en tant que nom du <xref:System.Security.Principal.IIdentity> généré à partir de ce gestionnaire de jetons.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlers >** ](securitytokenhandlers.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Ajouter >** ](add.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<samlSecurityTokenRequirement >** ](samlsecuritytokenrequirement.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<nameClaimType >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<securityTokenHandlers>**](securitytokenhandlers.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<add>**](add.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<samlSecurityTokenRequirement>**](samlsecuritytokenrequirement.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<nameClaimType>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,18 +45,18 @@ Définit le type de revendication qui spécifie la <xref:System.Security.Princip
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|value|Chaîne qui spécifie l’URI qui représente le type de revendication de la revendication à utiliser pour <xref:System.Security.Principal.IIdentity.Name%2A> la propriété. Requis.|  
+|value|Chaîne qui spécifie l’URI qui représente le type de revendication de la revendication à utiliser pour la <xref:System.Security.Principal.IIdentity.Name%2A> propriété. Obligatoire.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun  
+ Aucune  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<samlSecurityTokenRequirement>](samlsecuritytokenrequirement.md)|Fournit la configuration pour <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> la classe, <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> la classe ou une classe dérivée de l’une de ces classes.|  
+|[\<samlSecurityTokenRequirement>](samlsecuritytokenrequirement.md)|Fournit la configuration pour la <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> classe, la <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> classe ou une classe dérivée de l’une de ces classes.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L' `<nameClaimType>` élément définit la <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement.NameClaimType%2A> propriété lorsqu’un <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> objet est initialisé à partir de la configuration.  
   
 ## <a name="example"></a>Exemple  

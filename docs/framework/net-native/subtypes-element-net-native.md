@@ -1,15 +1,15 @@
 ---
-title: <Subtypes>Élément (.NET Native)
+title: <Subtypes>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 ms.openlocfilehash: bb719449f3769c5dbbde6d05efdb865c18bb4ab2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79180933"
 ---
-# <a name="subtypes-element-net-native"></a>\<Sous-types> Element (.NET Native)
+# <a name="subtypes-element-net-native"></a>\<Subtypes>, Élément (.NET Native)
 Applique la stratégie runtime à toutes les classes héritées du type conteneur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -60,12 +60,12 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
 |-------------|-----------------|  
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  L'élément `<Subtypes>` applique la stratégie à tous les sous-types de son type conteneur. Utilisez-le pour appliquer des stratégies distinctes aux types dérivés et à leurs classes de base.  
   
  Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs, même si un au moins doit être présent.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant définit une classe nommée `BaseClass` et une sous-classe nommée `Derived1`.  
   
  [!code-csharp[ProjectN_Reflection#4](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/subtypes.cs#4)]  
@@ -89,7 +89,7 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Type> Élément](type-element-net-native.md)
-- [Informations de référence sur le fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [\<Type>Appartient](type-element-net-native.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

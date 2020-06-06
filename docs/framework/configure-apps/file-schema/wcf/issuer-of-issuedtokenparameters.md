@@ -3,23 +3,23 @@ title: <issuer> de <issuedTokenParameters>
 ms.date: 03/30/2017
 ms.assetid: d6a95f32-d58c-40fc-8658-dd92564d3c90
 ms.openlocfilehash: bdd5ad45984fae7b39defe82c4af75845dfda1b6
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70397941"
 ---
-# <a name="issuer-of-issuedtokenparameters"></a>\<> de l’émetteur \<de la > issuedTokenParameters
+# <a name="issuer-of-issuedtokenparameters"></a>\<issuer> de \<issuedTokenParameters>
 Spécifie le service d'émission de jeton de sécurité (STS) qui émet des jetons de sécurité.  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<issuedTokenParameters >** ](issuedtokenparameters.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<émetteur >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<issuedTokenParameters>**](issuedtokenparameters.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<issuer>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,7 +34,7 @@ Spécifie le service d'émission de jeton de sécurité (STS) qui émet des jeto
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|adresse|Chaîne requise. URL du service STS.|  
+|address|Chaîne obligatoire. URL du service STS.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -62,5 +62,5 @@ Spécifie le service d'émission de jeton de sécurité (STS) qui émet des jeto
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Guide pratique pour Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Sécurité de liaison personnalisée](../../../wcf/samples/custom-binding-security.md)
+- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Custom Binding Security](../../../wcf/samples/custom-binding-security.md)
