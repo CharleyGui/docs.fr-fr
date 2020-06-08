@@ -1,5 +1,6 @@
 ---
 title: Exemple de socket client synchrone
+description: Cet exemple .NET Framework programme crée un client qui se connecte à un serveur à l’aide d’un socket synchrone. Elle envoie une chaîne et affiche une réponse.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - synchronous client sockets
 - sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
-ms.openlocfilehash: d55d875546ff34bc38b13f792668cd00309c6e34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7455307441045360bc62cee50f13d106df4d005e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180673"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502117"
 ---
 # <a name="synchronous-client-socket-example"></a>Exemple de socket client synchrone
 L’exemple de programme suivant crée un client qui se connecte à un serveur. Le client est créé avec un socket synchrone. L’exécution de l’application cliente est donc suspendue jusqu’à ce que le serveur retourne une réponse. L’application envoie une chaîne au serveur, puis affiche la chaîne retournée par le serveur sur la console.  

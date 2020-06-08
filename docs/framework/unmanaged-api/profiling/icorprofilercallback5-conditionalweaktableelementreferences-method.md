@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 532c7a02-a9de-4cea-bb2b-7f470da594de
 topic_type:
 - apiref
-ms.openlocfilehash: ad721d28f6a7dc6ae0370ce10178990cb02fb9f9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 17fbc99b30921f795c1f7ff882ec73432aade8c6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430050"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499244"
 ---
 # <a name="icorprofilercallback5conditionalweaktableelementreferences-method"></a>ICorProfilerCallback5::ConditionalWeakTableElementReferences, méthode
 
@@ -46,7 +46,7 @@ HRESULT ConditionalWeakTableElementReferences(
 [en entrée] Un tableau d'ID d'objets, chacun contenant l'`ObjectID` pour l'élément principal de la paire de handles dépendants.
 
 `valueRefIds`\
-[en entrée] Un tableau d'ID d'objets, chacun contenant l'`ObjectID` pour l'élément secondaire de la paire de handles dépendants. (`keyRefIds[i]` garde `valueRefIds[i]` actif.)
+[en entrée] Un tableau d'ID d'objets, chacun contenant l'`ObjectID` pour l'élément secondaire de la paire de handles dépendants. ( `keyRefIds[i]` reste `valueRefIds[i]` actif.)
 
 `rootIds`\
 [en entrée] Un tableau de valeurs de `GCHandleID` qui pointent vers un entier contenant des informations supplémentaires sur la racine de garbage collection.
@@ -78,17 +78,17 @@ HRESULT Callback5Impl::ConditionalWeakTableElementReferences(
 }
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-Un profileur pour le .NET Framework 4,5 ou les versions ultérieures implémente l’interface [ICorProfilerCallback5](icorprofilercallback5-interface.md) et enregistre les dépendances spécifiées par la méthode `ConditionalWeakTableElementReferences`. `ICorProfilerCallback5` fournit l’ensemble complet des dépendances entre les objets actifs représentés par les entrées `ConditionalWeakTable`. Ces dépendances et les références de champ de membre spécifiées par la méthode [ICorProfilerCallback :: ObjectReferences](icorprofilercallback-objectreferences-method.md) permettent à un profileur managé de générer le graphique d’objet complet d’objets actifs.
+Un profileur pour le .NET Framework 4,5 ou les versions ultérieures implémente l’interface [ICorProfilerCallback5](icorprofilercallback5-interface.md) et enregistre les dépendances spécifiées par la `ConditionalWeakTableElementReferences` méthode. `ICorProfilerCallback5`fournit l’ensemble complet des dépendances entre les objets actifs représentés par les `ConditionalWeakTable` entrées. Ces dépendances et les références de champ de membre spécifiées par la méthode [ICorProfilerCallback :: ObjectReferences](icorprofilercallback-objectreferences-method.md) permettent à un profileur managé de générer le graphique d’objet complet d’objets actifs.
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** CorProf.idl, CorProf.h
 
-**Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]
+**Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

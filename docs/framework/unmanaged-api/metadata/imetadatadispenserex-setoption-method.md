@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9f1c7ccd-7fb2-41d8-aa00-24b823376527
 topic_type:
 - apiref
-ms.openlocfilehash: 0cb0dee7db7faa4c1324d705218934489ec6a4b6
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 28aea8534eed3bcd1f645844e28849be89e130d0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005854"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501324"
 ---
 # <a name="imetadatadispenserexsetoption-method"></a>IMetaDataDispenserEx::SetOption, méthode
 Définit l’option spécifiée sur une valeur donnée pour la portée de métadonnées actuelle. L’option contrôle la manière dont les appels à la portée de métadonnées actuelle sont gérés.  
@@ -46,11 +46,11 @@ HRESULT SetOption (
   
 |GUID|Description|`pValue`Paramètre|  
 |----------|-----------------|------------------------|  
-|MetaDataCheckDuplicatesFor|Contrôle les éléments dont les doublons sont vérifiés. Chaque fois que vous appelez une méthode [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) qui crée un nouvel élément, vous pouvez demander à la méthode de vérifier si l’élément existe déjà dans la portée actuelle. Par exemple, vous pouvez vérifier l’existence d' `mdMethodDef` éléments. dans ce cas, quand vous appelez [IMetaDataEmit ::D efinemethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md), il vérifie que la méthode n’existe pas déjà dans l’étendue actuelle. Cette vérification utilise la clé qui identifie de façon unique une méthode donnée : le type de parent, le nom et la signature.|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l’énumération [corcheckduplicatesfor,](corcheckduplicatesfor-enumeration.md) .|  
+|MetaDataCheckDuplicatesFor|Contrôle les éléments dont les doublons sont vérifiés. Chaque fois que vous appelez une méthode [IMetaDataEmit](imetadataemit-interface.md) qui crée un nouvel élément, vous pouvez demander à la méthode de vérifier si l’élément existe déjà dans la portée actuelle. Par exemple, vous pouvez vérifier l’existence d' `mdMethodDef` éléments. dans ce cas, quand vous appelez [IMetaDataEmit ::D efinemethod](imetadataemit-definemethod-method.md), il vérifie que la méthode n’existe pas déjà dans l’étendue actuelle. Cette vérification utilise la clé qui identifie de façon unique une méthode donnée : le type de parent, le nom et la signature.|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l’énumération [corcheckduplicatesfor,](corcheckduplicatesfor-enumeration.md) .|  
 |MetaDataRefToDefCheck|Contrôle les éléments référencés qui sont convertis en définitions. Par défaut, le moteur de métadonnées optimise le code en convertissant un élément référencé en sa définition si l’élément référencé est réellement défini dans l’étendue actuelle.|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l’énumération [CorRefToDefCheck,](correftodefcheck-enumeration.md) .|  
-|MetaDataNotificationForTokenMovement|Contrôle les remappages de jetons qui se produisent pendant une fusion de métadonnées générer des rappels. Utilisez la méthode [IMetaDataEmit :: SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) pour établir votre interface [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) .|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l’énumération [CorNotificationForTokenMovement,](cornotificationfortokenmovement-enumeration.md) .|  
+|MetaDataNotificationForTokenMovement|Contrôle les remappages de jetons qui se produisent pendant une fusion de métadonnées générer des rappels. Utilisez la méthode [IMetaDataEmit :: SetHandler](imetadataemit-sethandler-method.md) pour établir votre interface [IMapToken](imaptoken-interface.md) .|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l’énumération [CorNotificationForTokenMovement,](cornotificationfortokenmovement-enumeration.md) .|  
 |MetaDataSetENC|Contrôle le comportement de Edit-and-continue (ENC). Un seul mode de comportement peut être défini à la fois.|Doit être une variante de type UI4 et doit contenir une valeur de l’énumération [CorSetENC,](corsetenc-enumeration.md) . La valeur n’est pas un masque de masque.|  
-|MetaDataErrorIfEmitOutOfOrder|Les contrôles qui génèrent des erreurs émises en désordre génèrent des rappels. L’émission de métadonnées dans le désordre n’est pas irrécupérable ; Toutefois, si vous émettez des métadonnées dans un ordre qui est favorisé par le moteur de métadonnées, les métadonnées sont plus compactes et peuvent donc être recherchées plus efficacement. Utilisez la `IMetaDataEmit::SetHandler` méthode pour établir votre interface [IMetaDataError](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md) .|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l’énumération [CorErrorIfEmitOutOfOrder,](corerrorifemitoutoforder-enumeration.md) .|  
+|MetaDataErrorIfEmitOutOfOrder|Les contrôles qui génèrent des erreurs émises en désordre génèrent des rappels. L’émission de métadonnées dans le désordre n’est pas irrécupérable ; Toutefois, si vous émettez des métadonnées dans un ordre qui est favorisé par le moteur de métadonnées, les métadonnées sont plus compactes et peuvent donc être recherchées plus efficacement. Utilisez la `IMetaDataEmit::SetHandler` méthode pour établir votre interface [IMetaDataError](imetadataerror-interface.md) .|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l’énumération [CorErrorIfEmitOutOfOrder,](corerrorifemitoutoforder-enumeration.md) .|  
 |MetaDataImportOption|Contrôle les genres d’éléments qui ont été supprimés pendant l’extraction de ENC par un énumérateur.|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l’énumération [corimportoptions,](corimportoptions-enumeration.md) .|  
 |MetaDataThreadSafetyOptions|Contrôle si le moteur de métadonnées obtient des verrous de lecture/écriture, garantissant ainsi la sécurité des threads. Par défaut, le moteur suppose que l’accès est monothread par l’appelant, de sorte qu’aucun verrou n’est obtenu. Les clients sont chargés de maintenir la synchronisation de threads appropriée lors de l’utilisation de l’API de métadonnées.|Doit être une variante de type UI4 et doit contenir une valeur de l’énumération [CorThreadSafetyOptions,](corthreadsafetyoptions-enumeration.md) . La valeur n’est pas un masque de masque.|  
 |MetaDataGenerateTCEAdapters|Contrôle si l’importateur de bibliothèques de types doit générer les adaptateurs d’événements (TCE) étroitement couplés pour les conteneurs de points de connexion COM.|Doit être une variante de type BOOL. Si `pValue` a la valeur `true` , l’importateur de bibliothèques de types génère les adaptateurs TCE.|  
@@ -60,7 +60,7 @@ HRESULT SetOption (
 |MetaDataMergerOptions|Spécifie les options de fusion des métadonnées.|Doit être une variante de type UI4 et doit contenir une combinaison des valeurs de l' `MergeFlags` énumération, qui est décrite dans le fichier corhdr. h.|  
 |MetaDataPreserveLocalRefs|Désactive l’optimisation des références locales dans les définitions.|Doit contenir une combinaison des valeurs de l’énumération [corlocalrefpreservation,](corlocalrefpreservation-enumeration.md) .|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  

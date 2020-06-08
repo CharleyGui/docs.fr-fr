@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 15cfc300-8231-4ecb-9a04-19851c3eb484
 topic_type:
 - apiref
-ms.openlocfilehash: f7a943627e2087e6b8c78ced9fc32824843d44fc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0a21924008bcbfa0894218f57aee559a564f8003
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175133"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499972"
 ---
 # <a name="icorprofilercallbackremotingclientreceivingreply-method"></a>ICorProfilerCallback::RemotingClientReceivingReply, méthode
-Informe le profileur que la partie serveur d’un appel de remotage est terminée et que le client reçoit maintenant et est sur le point de traiter la réponse.  
+Indique au profileur que la partie côté serveur d’un appel de communication à distance est terminée et que le client reçoit et est à présent en train de traiter la réponse.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,27 +35,27 @@ HRESULT RemotingClientReceivingReply(
   
 ## <a name="parameters"></a>Paramètres  
  `pCookie`  
- [dans] Une valeur qui correspondra à la valeur fournie dans [ICorProfilerCallback::RemotingServerSendingReply](icorprofilercallback-remotingserversendingreply-method.md) dans ces conditions:  
+ dans Valeur qui correspond à la valeur fournie dans [ICorProfilerCallback :: RemotingServerSendingReply,](icorprofilercallback-remotingserversendingreply-method.md) dans les conditions suivantes :  
   
-- La remotage des cookies GUID est active.  
+- Les cookies du GUID de communication à distance sont actifs.  
   
-- Le canal réussit à transmettre le message.  
+- Le canal parvient à transmettre le message.  
   
 - Les cookies GUID sont actifs sur le processus côté serveur.  
   
- Cela permet un jumelage facile d’appels de remotage.  
+ Cela permet d’associer facilement les appels de communication à distance.  
   
  `fIsAsync`  
- [dans] Une valeur `true` qui est si l’appel est asynchrone; autrement, `false`.  
+ dans Valeur qui est `true` si l’appel est asynchrone ; sinon, `false` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

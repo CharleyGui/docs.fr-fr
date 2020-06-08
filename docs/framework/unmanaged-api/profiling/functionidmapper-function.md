@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: b8205b60-1893-4303-8cff-7ac5a00892aa
 topic_type:
 - apiref
-ms.openlocfilehash: 0cf2014d7007593c51868eff0b488fdab136e362
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: afc818dfe625bfc329ceb1660539eb119702a90d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175172"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500674"
 ---
 # <a name="functionidmapper-function"></a>FunctionIDMapper (fonction)
-Informe le profileur que l’identifiant donné d’une fonction peut être remapped à un ID alternatif à utiliser dans le [FunctionEnter2](functionenter2-function.md), [FunctionLeave2](functionleave2-function.md), et [FunctionTailcall2](functiontailcall2-function.md) rappels pour cette fonction. `FunctionIDMapper` permet également au profileur d'indiquer s'il souhaite recevoir des rappels pour cette fonction.  
+Notifie le profileur que l’identificateur donné d’une fonction peut être remappé à un autre ID à utiliser dans les rappels [FunctionEnter2](functionenter2-function.md), [FunctionLeave2](functionleave2-function.md)et [FunctionTailcall2](functiontailcall2-function.md) pour cette fonction. `FunctionIDMapper` permet également au profileur d'indiquer s'il souhaite recevoir des rappels pour cette fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,32 +37,32 @@ UINT_PTR __stdcall FunctionIDMapper (
 
 - `funcId`
 
-  \[dans] L’identifiant de fonction à remapped.
+  \[in] identificateur de fonction à remapper.
 
 - `pbHookFunction`
 
-  \[out] Un pointeur à une valeur `true` que le `FunctionEnter2`profileur fixe à s’il veut recevoir , `FunctionLeave2`, et `FunctionTailcall2` les rappels; autrement, il définit `false`cette valeur à .
+  \[out] pointeur vers une valeur à laquelle le profileur affecte `true` s’il souhaite recevoir `FunctionEnter2` des `FunctionLeave2` `FunctionTailcall2` rappels, et ; sinon, il définit cette valeur sur `false` .
 
-## <a name="return-value"></a>Valeur de retour  
- Le profileur retourne une valeur que le moteur d'exécution utilise comme autre identificateur de fonction. La valeur de retour ne peut pas être null, sauf si `false` est retourné dans `pbHookFunction`. Dans le cas contraire, une valeur de rendement nul produira des résultats imprévisibles, y compris peut-être arrêter le processus.  
+## <a name="return-value"></a>Valeur renvoyée  
+ Le profileur retourne une valeur que le moteur d'exécution utilise comme autre identificateur de fonction. La valeur de retour ne peut pas être null, sauf si `false` est retourné dans `pbHookFunction`. Sinon, une valeur de retour NULL produira des résultats imprévisibles, y compris éventuellement l’arrêt du processus.  
   
-## <a name="remarks"></a>Notes   
- La `FunctionIDMapper` fonction est un rappel. Il est implémenté par le profileur pour remap une id de fonction à un autre identifiant qui est plus utile pour le profileur. Le `FunctionIDMapper` renvoi de l’ID alternatif à utiliser pour une fonction donnée. Le moteur d’exécution honore alors la demande du profileur en passant cette pièce d’identité `clientData` alternative, `FunctionEnter2` `FunctionLeave2`en `FunctionTailcall2` plus de l’ID de fonction traditionnelle, de retour au profileur dans le paramètre de la , , et les crochets, pour identifier la fonction pour laquelle le crochet est appelé.  
+## <a name="remarks"></a>Remarques  
+ La `FunctionIDMapper` fonction est un rappel. Elle est implémentée par le profileur pour remapper un ID de fonction à un autre identificateur qui est plus utile pour le profileur. `FunctionIDMapper`Retourne l’ID de remplacement à utiliser pour toute fonction donnée. Le moteur d’exécution honore ensuite la demande du profileur en passant cet ID alternatif, en plus de l’ID de fonction traditionnel, au profileur dans le `clientData` paramètre `FunctionEnter2` des `FunctionLeave2` `FunctionTailcall2` raccordements, et, pour identifier la fonction pour laquelle le hook est appelé.  
   
- Vous pouvez utiliser la méthode [ICorProfilerInfo::SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md) `FunctionIDMapper` pour spécifier la mise en œuvre de la fonction. Vous ne `ICorProfilerInfo::SetFunctionIDMapper` pouvez appeler la méthode qu’une seule fois, et nous vous recommandons de le faire dans [l’ICorProfilerCallback::Initialize](icorprofilercallback-initialize-method.md) callback.  
+ Vous pouvez utiliser la méthode [ICorProfilerInfo :: SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md) pour spécifier l’implémentation de la `FunctionIDMapper` fonction. Vous pouvez appeler la `ICorProfilerInfo::SetFunctionIDMapper` méthode une seule fois, et nous vous recommandons de le faire dans le rappel [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md) .  
   
- Par défaut, on suppose qu’un profileur qui fixe le drapeau COR_PRF_MONITOR_ENTERLEAVE en utilisant [ICorProfilerInfo::SetEventMask](icorprofilerinfo-seteventmask-method.md), et qui définit les crochets via [ICorProfilerInfo::SetEnterLeaveFunctionHooks](icorprofilerinfo-setenterleavefunctionhooks-method.md) ou [ICorProfilerInfo2::SetEnterLeaveFunctionHooks2](icorprofilerinfo2-setenterleavefunctionhooks2-method.md), devrait recevoir le `FunctionEnter2`, `FunctionLeave2`, et `FunctionTailcall2` les rappels pour chaque fonction. Cependant, les profileurs peuvent mettre en œuvre `FunctionIDMapper` pour éviter `pbHookFunction` `false`sélectivement de recevoir ces rappels pour certaines fonctions en définissant à .  
+ Par défaut, il est supposé qu’un profileur qui définit l’indicateur COR_PRF_MONITOR_ENTERLEAVE à l’aide de [ICorProfilerInfo :: SetEventMask](icorprofilerinfo-seteventmask-method.md)et qui définit des raccordements via [ICorProfilerInfo :: SetEnterLeaveFunctionHooks](icorprofilerinfo-setenterleavefunctionhooks-method.md) ou [ICorProfilerInfo2 :: SetEnterLeaveFunctionHooks2,](icorprofilerinfo2-setenterleavefunctionhooks2-method.md), doit recevoir les `FunctionEnter2` `FunctionLeave2` `FunctionTailcall2` rappels, et pour chaque fonction. Toutefois, les profileurs peuvent implémenter `FunctionIDMapper` pour ne pas recevoir de manière sélective ces rappels pour certaines fonctions en affectant à la valeur `pbHookFunction` `false` .  
   
- Les profileurs doivent tolérer les cas où plusieurs threads d’une application profilée appellent la même méthode/fonction simultanément. Dans de tels cas, le `FunctionIDMapper` profileur peut `FunctionID`recevoir plusieurs rappels pour la même . Le profileur devrait être certain de retourner les mêmes valeurs de ce `FunctionID`rappel quand il est appelé plusieurs fois avec le même .  
+ Les profileurs doivent être tolérants dans les cas où plusieurs threads d’une application profilée appellent la même méthode/fonction simultanément. Dans ce cas, le profileur peut recevoir plusieurs `FunctionIDMapper` rappels pour le même `FunctionID` . Le profileur doit être certain de retourner les mêmes valeurs à partir de ce rappel lorsqu’il est appelé plusieurs fois avec le même `FunctionID` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** CorProf.idl  
+ **En-tête :** CorProf. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

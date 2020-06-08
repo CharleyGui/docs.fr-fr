@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d7888aa9-dfaa-420f-9f99-e06ab35ca482
 topic_type:
 - apiref
-ms.openlocfilehash: 66195ea9df4c8e9ce847b38f7d020a3bebffcd37
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 488069f3ea16352cb7bb5e81b9a726637a7a65f8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865179"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499361"
 ---
 # <a name="icorprofilercallback4rejiterror-method"></a>ICorProfilerCallback4::ReJITError, méthode
 Notifie le profileur que le compilateur juste-à-temps (JIT) a rencontré une erreur dans le processus de recompilation.  
@@ -35,12 +35,12 @@ HRESULT ReJITError(
     [in] HRESULT     hrStatus);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `moduleID`  
- dans `ModuleID` dans lequel la tentative de recompilation a échoué.  
+ dans `ModuleID`Dans lequel la tentative de recompilation a échoué.  
   
  `methodId`  
- dans `MethodDef` de la méthode sur laquelle la tentative de recompilation a échoué.  
+ dans `MethodDef`De la méthode sur laquelle la tentative de recompilation a échoué.  
   
  `functionId`  
  dans Instance de fonction qui est recompilée ou marquée pour la recompilation. Cette valeur peut être `NULL` si l’échec s’est produit par méthode au lieu d’une base par instanciation (par exemple, si le profileur a spécifié un jeton de métadonnées non valide pour la méthode à recompiler).  
@@ -48,28 +48,28 @@ HRESULT ReJITError(
  `hrStatus`  
  dans HRESULT qui indique la nature de l’échec. Pour obtenir la liste des valeurs, consultez la section HRESULT d’État.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  Les valeurs retournées depuis ce rappel sont ignorées.  
   
 ## <a name="status-hresults"></a>HRESULT d'état  
   
 |HRESULT du tableau d'états|Description|  
 |--------------------------|-----------------|  
-|E_INVALIDARG|Le jeton `moduleID` ou `methodDef` est `NULL`.|  
+|E_INVALIDARG|Le `moduleID` `methodDef` jeton ou est `NULL` .|  
 |CORPROF_E_DATAINCOMPLETE|Le module n'est pas encore totalement chargé ou il est en cours de déchargement.|  
-|CORPROF_E_MODULE_IS_DYNAMIC|Le module spécifié a été généré dynamiquement (par exemple, par `Reflection.Emit`) et n’est donc pas pris en charge par cette méthode.|  
-|CORPROF_E_FUNCTION_IS_COLLECTIBLE|La méthode est instanciée dans un assembly pouvant être collecté et ne peut donc pas être recompilée. Notez que les types et les fonctions définis dans un contexte non réfléchissant (par exemple, `List<MyCollectibleStruct>`) peuvent être instanciés dans un assembly pouvant être collecté.|  
+|CORPROF_E_MODULE_IS_DYNAMIC|Le module spécifié a été généré dynamiquement (par exemple, par `Reflection.Emit` ) et n’est donc pas pris en charge par cette méthode.|  
+|CORPROF_E_FUNCTION_IS_COLLECTIBLE|La méthode est instanciée dans un assembly pouvant être collecté et ne peut donc pas être recompilée. Notez que les types et les fonctions définis dans un contexte de non-réflexion (par exemple, `List<MyCollectibleStruct>` ) peuvent être instanciés dans un assembly pouvant être collecté.|  
 |E_OUTOFMEMORY|La mémoire du CLR est insuffisante lors de la tentative de marquage de la méthode spécifiée pour la recompilation JIT.|  
-|Autre|Le système d'exploitation a retourné un échec en dehors du contrôle du CLR. Par exemple, si un appel système pour modifier la protection d’accès d’une page de mémoire échoue, l’erreur du système d’exploitation s’affiche.|  
+|Autres|Le système d'exploitation a retourné un échec en dehors du contrôle du CLR. Par exemple, si un appel système pour modifier la protection d’accès d’une page de mémoire échoue, l’erreur du système d’exploitation s’affiche.|  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

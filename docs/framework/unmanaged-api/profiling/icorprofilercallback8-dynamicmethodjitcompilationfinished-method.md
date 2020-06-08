@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8::DynamicMethodJITCompilationLa méthode
+title: ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationFinished
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationFinished
@@ -8,17 +8,17 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: c2e9489654a0fe5fa65ec638ed0f991a6c01415a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 554cc93de934061e87322c7557e05545e5e7bc62
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175107"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499075"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationLa méthode
-[Soutenu dans le cadre .NET 4.7 et les versions ultérieures]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationFinished
+[Pris en charge dans le .NET Framework 4,7 et versions ultérieures]  
   
-Informe le profileur chaque fois que la compilation JIT d’une méthode dynamique est terminée.  
+Notifie le profileur chaque fois que la compilation JIT d’une méthode dynamique est terminée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,28 +32,28 @@ HRESULT DynamicMethodJITCompilationFinished(
   
 ## <a name="parameters"></a>Paramètres  
 [in] `functionId`  
-L’identifiant de la fonction mémoire pour laquelle la compilation JIT est commencée.
+Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.
 
-[dans] `hrStatus` Une valeur qui indique si la compilation JIT a été couronnée de succès.
+[in] `hrStatus` Valeur qui indique si la compilation JIT a réussi.
 
-[dans] `fIsSafeToBlock` pour indiquer que le blocage peut faire attendre le temps d’exécution pour que le fil d’appel revienne de ce 
- `true` rappel; `false` pour indiquer que le blocage n’affectera pas le fonctionnement de l’exécution.  
+[in] `fIsSafeToBlock` 
+ `true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false`pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
 
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
 
-Ce rappel est déclenché chaque fois que la compilation JIT d’une méthode dynamique est terminée. Cela comprend divers talons IL et méthodes LCG. Son objectif est de fournir aux auteurs de profileur suffisamment d’informations pour identifier la méthode compilée aux utilisateurs.
+Ce rappel est déclenché chaque fois que la compilation JIT d’une méthode dynamique est terminée. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
 
 > [!NOTE]
-> `functionId`les valeurs ne peuvent pas être utilisées pour résoudre leurs jetons de métadonnées, parce que les méthodes dynamiques n’ont pas de métadonnées.
+> `functionId`les valeurs ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
 
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: fac7b480-7adb-4450-a5e9-690fed81ffae
 topic_type:
 - apiref
-ms.openlocfilehash: 048fe687e4d979576896f5310bddc855b40bb695
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ab9d7eb6f5760b43fe805443bbe1ea4a95c72069
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175224"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501064"
 ---
 # <a name="osinfo-structure"></a>OSINFO, structure
-Contient des détails sur le système d’exploitation d’un assemblage ou d’un module.  
+Contient des détails sur le système d’exploitation d’un assembly ou d’un module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,23 @@ typedef struct {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`dwOSPlatformId`|L’une des valeurs d’identification `GetVersionEx`définies par la fonction plate-forme Microsoft Windows . Les valeurs suivantes sont admises :<br /><br /> - VER_PLATFORM_WIN32s, ou 0x0000, pour spécifier Microsoft Windows 3.1.<br />- VER_PLATFORM_WIN32_WINDOWS, ou 0x0001, pour spécifier Windows 95, Windows 98, ou les systèmes d’exploitation descendus d’eux.<br />- VER_PLATFORM_WIN32_NT, ou 0x0002, pour spécifier Windows NT ou les systèmes d’exploitation descendus de lui.|  
-|`dwOSMajorVersion`|La version majeure du système d’exploitation, ou une valeur NULL pour indiquer n’importe quelle version.|  
+|`dwOSPlatformId`|L’une des valeurs d’identificateur définie par la fonction de la plate-forme Microsoft Windows `GetVersionEx` . Les valeurs suivantes sont admises :<br /><br /> -VER_PLATFORM_WIN32s, ou 0x0000, pour spécifier Microsoft Windows 3,1.<br />-VER_PLATFORM_WIN32_WINDOWS, ou 0x0001, pour spécifier les systèmes d’exploitation Windows 95, Windows 98 ou décroissants.<br />-VER_PLATFORM_WIN32_NT, ou 0x0002, pour spécifier les systèmes d’exploitation Windows NT ou décroissants.|  
+|`dwOSMajorVersion`|La version principale du système d’exploitation, ou une valeur NULL pour indiquer n’importe quelle version.|  
 |`dwOSMinorVersion`|La version mineure du système d’exploitation, ou une valeur NULL pour indiquer n’importe quelle version.|  
   
-## <a name="remarks"></a>Notes   
- `OSINFO`est basé `OSVERSIONINFOEX` sur la structure qui est utilisée `GetVersionEx`dans les appels à la fonction plate-forme Microsoft Windows . Cette structure est utilisée par la structure ASSEMBLYMETADATA pour indiquer son support du système d’exploitation.  
+## <a name="remarks"></a>Remarques  
+ `OSINFO`est basé sur la `OSVERSIONINFOEX` structure utilisée dans les appels à la fonction de la plate-forme Microsoft Windows `GetVersionEx` . Cette structure est utilisée par la structure ASSEMBLYMETADATA pour indiquer sa prise en charge par le système d’exploitation.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
-- [IMetaDataAssemblyEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [Structures de métadonnées](metadata-structures.md)
+- [IMetaDataAssemblyEmit, interface](imetadataassemblyemit-interface.md)

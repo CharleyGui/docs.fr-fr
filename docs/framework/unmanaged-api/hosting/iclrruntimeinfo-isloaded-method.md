@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: fdc5a3a7-71ff-4025-99a1-59e4ee0bfe1b
 topic_type:
 - apiref
-ms.openlocfilehash: 3275a69683a312340f35841815685066def10b23
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 45e27ac3c2d4912d2ed3e5d43ea3020b9db5dbdc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762524"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504028"
 ---
 # <a name="iclrruntimeinfoisloaded-method"></a>ICLRRuntimeInfo::IsLoaded, méthode
 Indique si le common language runtime (CLR) associé à l’interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) est chargé dans un processus. Un Runtime peut être chargé sans également être démarré.  
@@ -40,7 +40,7 @@ HRESULT IsLoaded(
  `pbLoaded`  
  [out] `true` Si le CLR est chargé dans le processus ; Sinon, `false` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -48,7 +48,7 @@ HRESULT IsLoaded(
 |S_OK|La commande s'est correctement terminée.|  
 |E_POINTER|`pbLoaded` a la valeur null.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Cette méthode est à compatibilité descendante avec les fonctions et interfaces suivantes :  
   
 - [ICorRuntimeHost](icorruntimehost-interface.md) , interface (dans l’API d’hébergement .NET Framework version 1).  
@@ -57,11 +57,11 @@ HRESULT IsLoaded(
   
 - Fonctions déconseillées `CorBindTo*` (consultez [fonctions d’hébergement CLR dépréciées](deprecated-clr-hosting-functions.md) dans l’API d’hébergement .NET Framework 2,0).  
   
- Un hôte peut appeler l’une des fonctions dépréciées `CorBindTo*` , telles que la fonction [CorBindToRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) , pour instancier une version spécifique du CLR. L’hôte peut ensuite appeler la méthode [ICLRMetaHost :: GetRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-getruntime-method.md) et spécifier le même numéro de version pour obtenir une interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) .  
+ Un hôte peut appeler l’une des fonctions dépréciées `CorBindTo*` , telles que la fonction [CorBindToRuntime](corbindtoruntime-function.md) , pour instancier une version spécifique du CLR. L’hôte peut ensuite appeler la méthode [ICLRMetaHost :: GetRuntime](iclrmetahost-getruntime-method.md) et spécifier le même numéro de version pour obtenir une interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) .  
   
  Si l’hôte appelle ensuite la `IsLoaded` méthode sur l’interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) retournée, `pbLoaded` retourne `true` ; sinon, il retourne `false` .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
@@ -74,4 +74,4 @@ HRESULT IsLoaded(
 
 - [ICLRRuntimeInfo, interface](iclrruntimeinfo-interface.md)
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hébergement](index.md)
+- [Hosting](index.md)

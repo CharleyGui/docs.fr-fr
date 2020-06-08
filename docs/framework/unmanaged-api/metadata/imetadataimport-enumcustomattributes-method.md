@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 798513a0-68b1-4d04-bc5b-782a4445ea68
 topic_type:
 - apiref
-ms.openlocfilehash: 61b5678a546bdbadbcc6d8ee86447cb17ce72b99
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9b0da8a06259fe99da52497da3011da94289d301
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175523"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492315"
 ---
 # <a name="imetadataimportenumcustomattributes-method"></a>IMetaDataImport::EnumCustomAttributes, méthode
-Énumère les jetons personnalisés d’attribut-définition associés au type ou au membre spécifié.  
+Énumère les jetons de définition d’attribut personnalisés associés au type ou au membre spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,40 +40,40 @@ HRESULT EnumCustomAttributes (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur retourné.  
+ [in, out] Pointeur vers l’énumérateur retourné.  
   
  `tk`  
- [dans] Un jeton pour la portée de l’énumération, ou zéro pour tous les attributs personnalisés.  
+ dans Jeton pour la portée de l’énumération, ou zéro pour tous les attributs personnalisés.  
   
  `tkType`  
- [dans] Un jeton pour le constructeur du type d’attributs à `null` énumérer, ou pour tous les types.  
+ dans Jeton pour le constructeur du type des attributs à énumérer, ou `null` pour tous les types.  
   
  `rCustomAttributes`  
- [out] Une gamme de jetons d’attribut personnalisés.  
+ à Tableau de jetons d’attributs personnalisés.  
   
  `cMax`  
  [in] Taille maximale du tableau `rCustomAttributes`.  
   
  `pcCustomAttributes`  
- [out, facultatif] Le nombre réel de valeurs `rCustomAttributes`symboliques est retournée dans .  
+ [out, optional] Nombre réel de valeurs de jeton retournées dans `rCustomAttributes` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumCustomAttributes`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas d’attributs personnalisés à énumérer. Dans ce `pcCustomAttributes` cas, c’est zéro.|  
+|`S_FALSE`|Il n’existe aucun attribut personnalisé à énumérer. Dans ce cas, `pcCustomAttributes` est égal à zéro.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

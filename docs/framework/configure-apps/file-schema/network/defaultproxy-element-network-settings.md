@@ -1,5 +1,6 @@
 ---
 title: <defaultProxy>, élément (paramètres réseau)
+description: L' <defaultProxy> élément paramètres réseau configure le serveur proxy http (Hypertext Transfer Protocol) dans le .NET Framework.
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#defaultProxy
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - defaultProxy element
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
-ms.openlocfilehash: 0945629c1395917bc1cf825f2ba84d20afa99957
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 915fdc96dbd4d417f9c9e6aa3ff96de3026491ef
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71698207"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504600"
 ---
 # <a name="defaultproxy-element-network-settings"></a>\<defaultProxy>, élément (paramètres réseau)
 Configure le serveur proxy HTTP (Hypertext Transfer Protocol).  

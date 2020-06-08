@@ -1,15 +1,16 @@
 ---
 title: FTP - .NET
+description: En savoir plus sur la prise en charge complète du protocole FTP fourni par le .NET Framework à l’aide des classes FtpWebRequest et FtpWebResponse.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - FTP
 ms.assetid: 9b43f8b4-89d7-46a7-89fc-71aca916dd32
-ms.openlocfilehash: d945f03077a863d9e1baa6b59fe8a908566aba5a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d21ca43cd1041df358dc5e2add9560fb33e85d83
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "61642878"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502585"
 ---
 # <a name="ftp"></a>FTP
 
@@ -25,6 +26,6 @@ Si un proxy (spécifié par la propriété <xref:System.Net.FtpWebRequest.Proxy%
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Accès à Internet par le biais d’un proxy](accessing-the-internet-through-a-proxy.md)
+- [Accès à Internet via un proxy](accessing-the-internet-through-a-proxy.md)
 - [Exemples de programmation réseau](network-programming-samples.md)
 - [Utilisation de protocoles d’application](using-application-protocols.md)

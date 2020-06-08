@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8d4ff73e-739b-40f6-9349-359fbc99c2f9
 topic_type:
 - apiref
-ms.openlocfilehash: 8446960d0746a864c44febbbe4a4d0313d6dcd4d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 7a6553de31d4f9627809af7691218c39dc734c6f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616708"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501662"
 ---
 # <a name="cor_gc_stats-structure"></a>COR_GC_STATS, structure
 Fournit des statistiques sur le mécanisme de garbage collection du common language runtime (CLR).  
@@ -58,8 +58,8 @@ typedef struct _COR_GC_STATS {
 |`KBytesPromotedFromGen0`|Taille, en kilo-octets, des objets promus de la génération zéro à la génération 1.|  
 |`KBytesPromotedFromGen1`|Taille, en kilo-octets, des objets promus de la génération 1 à la génération 2.|  
   
-## <a name="remarks"></a>Notes  
- La méthode [ICLRGCManager :: GetStats](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) exige que le `Flags` champ de la `COR_GC_STATS` structure soit défini sur une ou plusieurs valeurs de l’énumération [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) pour spécifier les statistiques à définir.  
+## <a name="remarks"></a>Remarques  
+ La méthode [ICLRGCManager :: GetStats](iclrgcmanager-getstats-method.md) exige que le `Flags` champ de la `COR_GC_STATS` structure soit défini sur une ou plusieurs valeurs de l’énumération [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) pour spécifier les statistiques à définir.  
   
  Le tableau suivant mappe les statistiques fournies par cette structure aux deux [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) valeurs d’énumération, `COR_GC_COUNTS` et `COR_GC_MEMORYUSAGE` .  
   
@@ -75,7 +75,7 @@ GCStats.Flags = COR_GC_COUNTS | COR_GC_MEMORYUSAGE;
 pCLRGCManager->GetStats(&GCStats);  
 ```  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl  

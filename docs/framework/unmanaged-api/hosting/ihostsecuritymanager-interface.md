@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c3be2cbd-2d93-438b-9888-9a0251b63c03
 topic_type:
 - apiref
-ms.openlocfilehash: b2c334c7a757c2f4044d08787bdae93ffc2804e4
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 237fe23493460df77a79ba3aed9f0a809cd8aa23
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803893"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501467"
 ---
 # <a name="ihostsecuritymanager-interface"></a>IHostSecurityManager, interface
 Fournit des méthodes qui autorisent l’accès et le contrôle sur le contexte de sécurité du thread en cours d’exécution.  
@@ -28,14 +28,14 @@ Fournit des méthodes qui autorisent l’accès et le contrôle sur le contexte 
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetSecurityContext, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-getsecuritycontext-method.md)|Obtient le [IHostSecurityContext](ihostsecuritycontext-interface.md) demandé à partir de l’hôte.|  
+|[GetSecurityContext, méthode](ihostsecuritymanager-getsecuritycontext-method.md)|Obtient le [IHostSecurityContext](ihostsecuritycontext-interface.md) demandé à partir de l’hôte.|  
 |[ImpersonateLoggedOnUser, méthode](ihostsecuritymanager-impersonateloggedonuser-method.md)|Demande que le code soit exécuté à l’aide des informations d’identification de l’identité de l’utilisateur actuel.|  
 |[OpenThreadToken, méthode](ihostsecuritymanager-openthreadtoken-method.md)|Ouvre le jeton d’accès discrétionnaire associé au thread actuel.|  
 |[RevertToSelf, méthode](ihostsecuritymanager-reverttoself-method.md)|Termine l’emprunt d’identité de l’identité de l’utilisateur actuel et retourne le jeton de thread d’origine.|  
 |[SetSecurityContext, méthode](ihostsecuritymanager-setsecuritycontext-method.md)|Définit le contexte de sécurité pour le thread en cours d’exécution.|  
 |[SetThreadToken, méthode](ihostsecuritymanager-setthreadtoken-method.md)|Définit un handle pour le thread en cours d’exécution.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Un hôte peut contrôler tout l’accès du code aux jetons de thread à la fois par le common language runtime (CLR) et le code utilisateur. Il peut également s’assurer que les informations de contexte de sécurité complètes sont transmises sur des opérations asynchrones ou des points de code avec accès restreint au code. `IHostSecurityContext`encapsule ces informations de contexte de sécurité, qui sont opaques pour le CLR.  
   
  Le CLR gère le contexte de thread managé en interne. Il interroge la spécifique au processus `IHostSecurityManager` dans les situations suivantes :  
@@ -48,7 +48,7 @@ Fournit des méthodes qui autorisent l’accès et le contrôle sur le contexte 
   
 - Dans la maintenance des ports de terminaison d’e/s.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
