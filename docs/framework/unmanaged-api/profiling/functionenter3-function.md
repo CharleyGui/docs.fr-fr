@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ef782c53-dae7-4990-b4ad-fddb1e690d4e
 topic_type:
 - apiref
-ms.openlocfilehash: 3ba014cbae4a71713f29968f0137ac053033c661
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: b435e1a3504dd623421f977ffc48264f8b0dcb5a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866955"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500700"
 ---
 # <a name="functionenter3-function"></a>FunctionEnter3, fonction
 Indique au profileur que le contrôle est passé à une fonction.  
@@ -30,16 +30,16 @@ Indique au profileur que le contrôle est passé à une fonction.
 void __stdcall FunctionEnter3(FunctionOrRemappedID functionOrRemappedID);  
 ```  
   
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - `functionOrRemappedID`
 
   \[in] identificateur de la fonction vers laquelle le contrôle est passé.
 
-## <a name="remarks"></a>Notes  
- La fonction de rappel `FunctionEnter3` notifie le profileur lorsque des fonctions sont appelées, mais ne prend pas en charge l’inspection des arguments. Utilisez la [méthode ICorProfilerInfo3 :: SetEnterLeaveFunctionHooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) pour inscrire votre implémentation de cette fonction.  
+## <a name="remarks"></a>Remarques  
+ La `FunctionEnter3` fonction de rappel indique au profileur que les fonctions sont appelées, mais ne prend pas en charge l’inspection des arguments. Utilisez la [méthode ICorProfilerInfo3 :: SetEnterLeaveFunctionHooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) pour inscrire votre implémentation de cette fonction.  
   
- La fonction `FunctionEnter3` est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l’attribut de classe de stockage `__declspec(naked)`.  
+ La `FunctionEnter3` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec(naked)` attribut de classe de stockage.  
   
  Le moteur d’exécution n’enregistre aucun registre avant d’appeler cette fonction.  
   
@@ -47,14 +47,14 @@ void __stdcall FunctionEnter3(FunctionOrRemappedID functionOrRemappedID);
   
 - À la sortie, vous devez restaurer la pile en dépilant tous les paramètres qui ont été envoyés par son appelant.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -63,8 +63,8 @@ void __stdcall FunctionEnter3(FunctionOrRemappedID functionOrRemappedID);
 - [FunctionEnter3WithInfo](functionenter3withinfo-function.md)
 - [FunctionLeave3WithInfo](functionleave3withinfo-function.md)
 - [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)
-- [SetEnterLeaveFunctionHooks3](icorprofilerinfo3-setenterleavefunctionhooks3-method.md)
-- [SetEnterLeaveFunctionHooks3WithInfo](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)
+- [Setenterleavefunctionhooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md)
+- [Setenterleavefunctionhooks3withinfo,](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)
 - [SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md)
-- [SetFunctionIDMapper2](icorprofilerinfo3-setfunctionidmapper2-method.md)
-- [Fonctions statiques globales de profilage](profiling-global-static-functions.md)
+- [Setfunctionidmapper2,](icorprofilerinfo3-setfunctionidmapper2-method.md)
+- [Fonctions statiques globales du profilage](profiling-global-static-functions.md)

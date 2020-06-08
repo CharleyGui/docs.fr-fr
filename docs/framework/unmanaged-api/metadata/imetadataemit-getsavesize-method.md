@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8aea2e2c-23a3-4cda-9a06-e19f97383830
 topic_type:
 - apiref
-ms.openlocfilehash: 22c0a317777a12294ba7a90f7af1ceeca3ad0a47
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 0a283c837e23ab1aafd3545df1dfe8a267de0557
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009260"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501285"
 ---
 # <a name="imetadataemitgetsavesize-method"></a>IMetaDataEmit::GetSaveSize, méthode
 Obtient la taille estimée en binaire de l’assembly et de ses métadonnées dans la portée actuelle.  
@@ -50,11 +50,11 @@ HRESULT GetSaveSize (
 ## <a name="remarks"></a>Remarques  
  `GetSaveSize`calcule l’espace requis, en octets, pour enregistrer l’assembly et toutes ses métadonnées dans l’étendue actuelle. (Un appel à la méthode [IMetaDataEmit :: SaveToStream,](imetadataemit-savetostream-method.md) émettra ce nombre d’octets.)  
   
- Si l’appelant implémente l’interface [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) (via [IMetaDataEmit :: SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) ou [IMetaDataEmit :: Merge](imetadataemit-merge-method.md)), `GetSaveSize` effectue deux passes sur les métadonnées pour les optimiser et les compresser. Dans le cas contraire, aucune optimisation n’est effectuée.  
+ Si l’appelant implémente l’interface [IMapToken](imaptoken-interface.md) (via [IMetaDataEmit :: SetHandler](imetadataemit-sethandler-method.md) ou [IMetaDataEmit :: Merge](imetadataemit-merge-method.md)), `GetSaveSize` effectue deux passes sur les métadonnées pour les optimiser et les compresser. Dans le cas contraire, aucune optimisation n’est effectuée.  
   
  Si l’optimisation est effectuée, la première passe trie simplement les structures de métadonnées pour régler les performances des recherches au moment de l’importation. En général, cette étape entraîne le déplacement des enregistrements, avec l’effet secondaire que les jetons conservés par l’outil pour référence ultérieure sont invalidés. Toutefois, les métadonnées n’informent pas l’appelant de ces modifications de jeton jusqu’à la deuxième passe. Au cours de la deuxième passe, différentes optimisations sont effectuées pour réduire la taille globale des métadonnées, telles que l’optimisation des jetons (liaison précoce) `mdTypeRef` et des `mdMemberRef` jetons lorsque la référence est un type ou un membre déclaré dans la portée de métadonnées actuelle. Dans cette étape, un autre mappage de jetons est effectué. Après cette étape, le moteur de métadonnées avertit l’appelant, via son `IMapToken` interface, des valeurs de jeton modifiées.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  

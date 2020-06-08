@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9caea662-0167-4267-b14a-2fa42c3be4ea
 topic_type:
 - apiref
-ms.openlocfilehash: b6ca7c619d32e69ffac20b80561171d0320db2d4
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 7a2a5080872f49a84e36c53ac337d91738c15e45
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008376"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501337"
 ---
 # <a name="imetadataconverter-interface"></a>IMetaDataConverter, interface
 Fournit des méthodes pour mapper des bibliothèques de types à leurs signatures de métadonnées et effectuer la conversion entre les deux.  
@@ -28,11 +28,11 @@ Fournit des méthodes pour mapper des bibliothèques de types à leurs signature
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetMetaDataFromTypeInfo, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataconverter-getmetadatafromtypeinfo-method.md)|Obtient un pointeur vers une instance [IMetaDataImport](imetadataimport-interface.md) qui représente la signature de métadonnées pour la bibliothèque de types référencée par l' `ITypeInfo` instance spécifiée.|  
+|[GetMetaDataFromTypeInfo, méthode](imetadataconverter-getmetadatafromtypeinfo-method.md)|Obtient un pointeur vers une instance [IMetaDataImport](imetadataimport-interface.md) qui représente la signature de métadonnées pour la bibliothèque de types référencée par l' `ITypeInfo` instance spécifiée.|  
 |[GetMetaDataFromTypeLib, méthode](imetadataconverter-getmetadatafromtypelib-method.md)|Obtient un pointeur vers une `IMetaDataImport` instance qui représente la signature de métadonnées pour la bibliothèque de types représentée par l' `ITypeLib` instance spécifiée.|  
 |[GetTypeLibFromMetaData, méthode](imetadataconverter-gettypelibfrommetadata-method.md)|Obtient un pointeur vers une `ITypeLib` instance de qui représente la bibliothèque de types qui contient les noms de module et de bibliothèque spécifiés.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  

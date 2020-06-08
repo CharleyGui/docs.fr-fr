@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ea422217-988b-4acd-b2db-c55357938275
 topic_type:
 - apiref
-ms.openlocfilehash: 190bcacc84646cfd9294cf2b6b53b0474f38758f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 58ab9ee9381fce4d7af1910df6c8d3bb813bcf13
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177215"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490889"
 ---
 # <a name="imetadataimportgetrva-method"></a>IMetaDataImport::GetRVA, méthode
-Obtient l’adresse virtuelle relative (RVA) et les drapeaux de mise en œuvre de la méthode ou du champ représentés par le jeton spécifié.  
+Obtient l’adresse virtuelle relative (RVA) et les indicateurs d’implémentation de la méthode ou du champ représenté par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +37,24 @@ HRESULT GetRVA (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [dans] Un jeton de métadonnées MethodDef ou FieldDef qui représente l’objet de code pour retourner le RVA. Si le jeton est un FieldDef, le champ doit être une variable globale.  
+ dans Un jeton de métadonnées MethodDef ou FieldDef qui représente l’objet de code pour lequel retourner l’adresse RVA. Si le jeton est un FieldDef, le champ doit être une variable globale.  
   
  `pulCodeRVA`  
- [out] Un pointeur vers l’adresse virtuelle relative de l’objet de code représenté par le jeton.  
+ à Pointeur vers l’adresse virtuelle relative de l’objet de code représenté par le jeton.  
   
  `pdwImplFlags`  
- [out] Un pointeur pour les drapeaux de mise en œuvre pour la méthode. Cette valeur est un peumask de l’énumération [CorMethodImpl.](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md) La valeur `pdwImplFlags` de est `tk` valide seulement si est un jeton MethodDef.  
+ à Pointeur vers les indicateurs d’implémentation de la méthode. Cette valeur est un masque de masque de l’énumération [CorMethodImpl,](cormethodimpl-enumeration.md) . La valeur de `pdwImplFlags` est valide uniquement si `tk` est un jeton MethodDef.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

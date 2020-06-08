@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1e48243f-5de6-4bd6-a1d0-e1d248bca4b8
 topic_type:
 - apiref
-ms.openlocfilehash: 3bedb2c5f55f608b1153272437c0f55b730c2dfc
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 55955cd47bd32fb4294b0b8e852dd692702bd74f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866854"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500531"
 ---
 # <a name="functiontailcall3-function"></a>FunctionTailcall3, fonction
 Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction.  
@@ -30,16 +30,16 @@ Indique au profileur que la fonction en cours d’exécution est sur le paragrap
 void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);  
 ```  
   
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - `functionOrRemappedID`
 
   \[in] identificateur de la fonction en cours d’exécution qui est sur le paragraphe d’effectuer un appel tail.
 
-## <a name="remarks"></a>Notes  
- La fonction de rappel `FunctionTailcall3` notifie le profileur lorsque des fonctions sont appelées. Utilisez la [méthode ICorProfilerInfo3 :: SetEnterLeaveFunctionHooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) pour inscrire votre implémentation de cette fonction.  
+## <a name="remarks"></a>Remarques  
+ La `FunctionTailcall3` fonction de rappel indique au profileur que les fonctions sont appelées. Utilisez la [méthode ICorProfilerInfo3 :: SetEnterLeaveFunctionHooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) pour inscrire votre implémentation de cette fonction.  
   
- La fonction `FunctionTailcall3` est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l’attribut de classe de stockage `__declspec(naked)`.  
+ La `FunctionTailcall3` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec(naked)` attribut de classe de stockage.  
   
  Le moteur d’exécution n’enregistre aucun registre avant d’appeler cette fonction.  
   
@@ -47,18 +47,18 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
   
 - À la sortie, vous devez restaurer la pile en dépilant tous les paramètres qui ont été envoyés par son appelant.  
   
- L’implémentation de `FunctionTailcall3` ne doit pas être bloquée, car elle retardera garbage collection. L’implémentation ne doit pas essayer un garbage collection, car la pile n’est peut-être pas dans un État garbage collection. Si une garbage collection est tentée, le runtime se bloque jusqu’à ce que `FunctionTailcall3` retourne.  
+ L’implémentation de ne `FunctionTailcall3` doit pas se bloquer, car elle retardera garbage collection. L’implémentation ne doit pas essayer un garbage collection, car la pile n’est peut-être pas dans un État garbage collection. Si une garbage collection est tentée, le runtime se bloque jusqu’à ce que `FunctionTailcall3` retourne la valeur.  
   
- La fonction `FunctionTailcall3` ne doit pas appeler dans du code managé ou provoquer une allocation de mémoire managée de quelque manière que ce soit.  
+ La `FunctionTailcall3` fonction ne doit pas appeler dans du code managé ou provoquer une allocation de mémoire managée de quelque manière que ce soit.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -67,8 +67,8 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
 - [FunctionEnter3WithInfo](functionenter3withinfo-function.md)
 - [FunctionLeave3WithInfo](functionleave3withinfo-function.md)
 - [FunctionTailcall3WithInfo, fonction](functiontailcall3withinfo-function.md)
-- [SetEnterLeaveFunctionHooks3](icorprofilerinfo3-setenterleavefunctionhooks3-method.md)
-- [SetEnterLeaveFunctionHooks3WithInfo](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)
+- [Setenterleavefunctionhooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md)
+- [Setenterleavefunctionhooks3withinfo,](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)
 - [SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md)
-- [SetFunctionIDMapper2](icorprofilerinfo3-setfunctionidmapper2-method.md)
-- [Fonctions statiques globales de profilage](profiling-global-static-functions.md)
+- [Setfunctionidmapper2,](icorprofilerinfo3-setfunctionidmapper2-method.md)
+- [Fonctions statiques globales du profilage](profiling-global-static-functions.md)

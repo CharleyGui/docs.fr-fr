@@ -1,5 +1,6 @@
 ---
 title: Utilisation de flux sur le réseau
+description: Le .NET Framework représente des ressources réseau sous forme de flux. La classe NetworkStream implémente la classe Stream pour une utilisation avec les ressources réseau.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - Internet, streams
 - streams
 ms.assetid: 02b05fba-7235-45ce-94e5-060436ee0875
-ms.openlocfilehash: 7d5a2e3eec9b49731a09f6eb41a8d8500a59b45c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f8d35b43c9b46a77bfd0c78f7d0118093b6fe824
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180625"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501974"
 ---
 # <a name="using-streams-on-the-network"></a>Utilisation de flux sur le réseau
 Dans .NET Framework, les ressources réseau sont représentées sous forme de flux. .NET Framework traite les flux de manière générique, ce qui offre les avantages suivants :  
@@ -35,7 +36,7 @@ Dans .NET Framework, les ressources réseau sont représentées sous forme de fl
   
  L’espace de noms <xref:System.Net.Sockets> contient une classe **NetworkStream** qui implémente la classe <xref:System.IO.Stream> spécifiquement pour une utilisation avec les ressources réseau. Les classes dans l’espace de noms <xref:System.Net.Sockets> utilisent la classe **NetworkStream** pour représenter les flux.  
   
- Pour envoyer des données sur le réseau à l’aide du flux retourné, appelez <xref:System.Net.WebRequest.GetRequestStream%2A> sur votre <xref:System.Net.WebRequest>. Le **WebRequest** enverra des en-têtes de demande au serveur ; alors vous pouvez envoyer des données <xref:System.IO.Stream.BeginWrite%2A>à <xref:System.IO.Stream.EndWrite%2A>la <xref:System.IO.Stream.Write%2A> ressource réseau en appelant le , , ou la méthode sur le flux retourné. Avec certains protocoles, tels que HTTP, vous devez définir des propriétés spécifiques au protocole avant d’envoyer des données. L’exemple de code suivant montre comment définir les propriétés du protocole HTTP pour l’envoi de données. Il suppose que la variable `sendData` contient les données à envoyer et que la variable `sendLength` représente le nombre d’octets de données à envoyer.  
+ Pour envoyer des données sur le réseau à l’aide du flux retourné, appelez <xref:System.Net.WebRequest.GetRequestStream%2A> sur votre <xref:System.Net.WebRequest>. **WebRequest** enverra des en-têtes de demande au serveur. Ensuite, vous pouvez envoyer des données à la ressource réseau en appelant la <xref:System.IO.Stream.BeginWrite%2A> <xref:System.IO.Stream.EndWrite%2A> méthode, ou <xref:System.IO.Stream.Write%2A> sur le flux retourné. Avec certains protocoles, tels que HTTP, vous devez définir des propriétés spécifiques au protocole avant d’envoyer des données. L’exemple de code suivant montre comment définir les propriétés du protocole HTTP pour l’envoi de données. Il suppose que la variable `sendData` contient les données à envoyer et que la variable `sendLength` représente le nombre d’octets de données à envoyer.  
   
 ```csharp  
 HttpWebRequest request =

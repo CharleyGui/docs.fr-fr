@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’outil Analyseur de portabilité .NE
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 815ac8e0f0c4392a3d89530947b0739d06a0b95d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7fe5aafe1ad8bf87883ebe27f2aa4fb102a01e45
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278361"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501796"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
@@ -32,6 +32,23 @@ Pour commencer à utiliser l’Analyseur de portabilité .NET dans Visual Studio
 ![Capture d’écran de l’analyseur de portabilité.](./media/portability-analyzer/portability-screenshot.png)
 
 Vous pouvez aussi utiliser l’application console ApiPort et la télécharger à partir du [référentiel ApiPort](https://aka.ms/apiportdownload). Vous pouvez utiliser l’option de commande `listTargets` pour afficher la liste des cibles disponibles, puis sélectionner les plateformes cibles en spécifiant l’option de commande `-t` ou `--target`.
+
+> [!IMPORTANT]
+> S’il n’y a aucun résultat lors de l’exécution de l’outil, les cibles par défaut peuvent ne pas être disponibles. Si vous rencontrez ce problème, assurez-vous d’ajouter des cibles explicites.
+
+### <a name="solution-wide-view"></a>Vue étendue de la solution
+
+Une étape utile pour analyser une solution avec de nombreux projets consiste à visualiser les dépendances pour comprendre quel sous-ensemble d’assemblys dépend de quoi. La recommandation générale consiste à appliquer les résultats de l’analyse dans une approche ascendante, en commençant par les nœuds terminaux dans un graphique de dépendance.
+
+Pour récupérer ce code, vous pouvez exécuter la commande suivante :
+
+```
+ApiPort.exe analyze -r DGML -f [directory or file]
+```
+
+Un résultat de ce type ressemble à ce qui suit quand il est ouvert dans Visual Studio :
+
+![Capture d’écran de l’analyse DGML.](./media/portability-analyzer/dgml-example.png)
 
 ### <a name="analyze-portability"></a>Analyser la portabilité
 Pour analyser l’ensemble de votre projet dans Visual Studio, cliquez avec le bouton droit sur votre projet dans l’**Explorateur de solutions** et sélectionnez **Analyser la portabilité des assemblys**. Sinon, accédez au menu **Analyser** et sélectionnez **Analyser la portabilité des assemblys**. À partir de là, sélectionnez l’exécutable ou la DLL de votre projet.

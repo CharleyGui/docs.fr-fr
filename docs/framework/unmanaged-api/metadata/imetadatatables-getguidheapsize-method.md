@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e875cbee-1ad9-4f1a-bf03-38cdb8ff371a
 topic_type:
 - apiref
-ms.openlocfilehash: cf455b3fb34d8eed78ffaadffad621062c2b9b22
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 71a75defa72e4fe3594b4d0ceff45273b3a35395
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443494"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490352"
 ---
 # <a name="imetadatatablesgetguidheapsize-method"></a>IMetaDataTables::GetGuidHeapSize, méthode
 Obtient la taille, en octets, du tas GUID.  
@@ -38,15 +38,15 @@ HRESULT GetGuidHeapSize (
  à Pointeur vers la taille, en octets, du tas GUID.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataTables, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables, interface](imetadatatables-interface.md)
+- [IMetaDataTables2, interface](imetadatatables2-interface.md)

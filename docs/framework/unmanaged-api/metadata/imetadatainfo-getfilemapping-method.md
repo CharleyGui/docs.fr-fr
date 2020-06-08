@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2868dfec-c992-4606-88bb-a8e0b6b18271
 topic_type:
 - apiref
-ms.openlocfilehash: 0f5bdf97132c05e765cd6fa423a19bb996105d28
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5ef5d9ae3da4dff13a461162f0ba3466d3d8192c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175263"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501259"
 ---
 # <a name="imetadatainfogetfilemapping-method"></a>IMetaDataInfo::GetFileMapping, méthode
-Obtient la région de mémoire du fichier cartographié, et le type de cartographie.  
+Obtient la région de la mémoire du fichier mappé et le type de mappage.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,41 +37,41 @@ HRESULT GetFileMapping (
   
 ## <a name="parameters"></a>Paramètres  
  `ppvData`  
- [out] Un pointeur pour le début du fichier cartographié.  
+ à Pointeur vers le début du fichier mappé.  
   
  `pcbData`  
- [out] La taille de la région cartographiée. Si `pdwMappingType` `fmFlat`c’est, c’est la taille du fichier.  
+ à Taille de la région mappée. Si `pdwMappingType` a `fmFlat` la valeur, il s’agit de la taille du fichier.  
   
  `pdwMappingType`  
- [out] Une valeur [De CorFileMapping](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md) qui indique le type de cartographie. La mise en œuvre actuelle de l’heure de course de langue commune (CLR) revient `fmFlat`toujours . Les autres valeurs sont réservées pour un usage ultérieur. Toutefois, vous devez toujours vérifier la valeur retournée, car d’autres valeurs peuvent être activées dans les versions futures ou les versions de service.  
+ à Valeur [CorFileMapping,](corfilemapping-enumeration.md) qui indique le type de mappage. L’implémentation actuelle du common language runtime (CLR) retourne toujours `fmFlat` . Les autres valeurs sont réservées pour un usage ultérieur. Toutefois, vous devez toujours vérifier la valeur renvoyée, car d’autres valeurs peuvent être activées dans les versions ultérieures ou les versions de service.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|Toutes les sorties sont remplies.|  
-|`E_INVALIDARG`|NULL a été adopté comme une valeur d’argument.|  
-|`COR_E_NOTSUPPORTED`|La mise en œuvre du CLR ne peut pas fournir d’informations sur la région de la mémoire. Ceci peut se produire pour les raisons suivantes :<br /><br /> - Le champ d’application `ofWrite` des `ofCopyMemory` métadonnées a été ouvert avec le ou le drapeau.<br />- La portée des métadonnées a été ouverte sans le `ofReadOnly` drapeau.<br />- La méthode [IMetaDataDispenser::OpenScopeOnMemory](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) méthode a été utilisé pour ouvrir seulement la partie métadonnées du fichier.<br />- Le fichier n’est pas un fichier portable exécutable (PE). **Note:**  Ces conditions dépendent de la mise en œuvre du CLR et risquent d’être affaiblies dans les versions futures du CLR.|  
+|`E_INVALIDARG`|La valeur NULL a été transmise en tant que valeur d’argument.|  
+|`COR_E_NOTSUPPORTED`|L’implémentation du CLR ne peut pas fournir d’informations sur la région de la mémoire. Ceci peut se produire pour les raisons suivantes :<br /><br /> -La portée des métadonnées a été ouverte avec l' `ofWrite` `ofCopyMemory` indicateur ou.<br />-La portée des métadonnées a été ouverte sans l' `ofReadOnly` indicateur.<br />-La méthode [IMetaDataDispenser :: OpenScopeOnMemory](imetadatadispenser-openscopeonmemory-method.md) a été utilisée pour ouvrir uniquement la partie métadonnées du fichier.<br />-Le fichier n’est pas un fichier exécutable portable (PE). **Remarque :**  Ces conditions dépendent de l’implémentation du CLR et sont susceptibles d’être assouplies dans les futures versions du CLR.|  
   
-## <a name="remarks"></a>Notes   
- La mémoire `ppvData` qui pointe vers est valable seulement tant que la portée sous-jacente des métadonnées est ouverte.  
+## <a name="remarks"></a>Remarques  
+ La mémoire `ppvData` vers laquelle pointe est valide uniquement tant que la portée des métadonnées sous-jacentes est ouverte.  
   
- Pour que cette méthode fonctionne, lorsque vous cartographiez les métadonnées d’un fichier sur disque en mémoire en appelant la `ofReadOnly` méthode [IMetaDataDispenser ::OpenScope](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) méthode, vous devez spécifier le drapeau et vous ne devez pas spécifier le ou `ofWrite` `ofCopyMemory` le drapeau.  
+ Pour que cette méthode fonctionne, lorsque vous mappez les métadonnées d’un fichier sur disque en mémoire en appelant la méthode [IMetaDataDispenser :: OpenScope](imetadatadispenser-openscope-method.md) , vous devez spécifier l' `ofReadOnly` indicateur et vous ne devez pas spécifier l' `ofWrite` `ofCopyMemory` indicateur ou.  
   
- Le choix du type de cartographie des fichiers pour chaque portée est spécifique à une mise en œuvre donnée du CLR. Il ne peut pas être défini par l’utilisateur. La mise en œuvre `fmFlat` `pdwMappingType`actuelle du CLR revient toujours, mais cela peut changer dans les versions futures du CLR ou dans les versions de service futures d’une version donnée. Vous devez toujours vérifier `pdwMappingType`la valeur retournée, parce que différents types auront des mises en page et des compensations différentes.  
+ Le choix du type de mappage de fichier pour chaque étendue est spécifique à une implémentation donnée du CLR. Il ne peut pas être défini par l’utilisateur. L’implémentation actuelle du CLR retourne toujours `fmFlat` dans `pdwMappingType` , mais cela peut changer dans les futures versions du CLR ou dans les futures versions de service d’une version donnée. Vous devez toujours vérifier la valeur retournée dans `pdwMappingType` , car les différents types auront des dispositions et des décalages différents.  
   
- Le passage de NULL pour l’un ou l’autre des trois paramètres n’est pas pris en charge. La méthode `E_INVALIDARG`revient, et aucune des sorties n’est remplie. Ignorer le type de cartographie ou la taille de la région peut entraîner une interruption anormale du programme.  
+ La transmission de NULL pour l’un des trois paramètres n’est pas prise en charge. La méthode retourne `E_INVALIDARG` , et aucune des sorties n’est remplie. Si vous ignorez le type de mappage ou la taille de la région, vous risquez de provoquer un arrêt anormal du programme.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataInfo, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-interface.md)
-- [CorFileMapping, énumération](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)
+- [IMetaDataInfo, interface](imetadatainfo-interface.md)
+- [CorFileMapping, énumération](corfilemapping-enumeration.md)

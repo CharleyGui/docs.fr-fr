@@ -1,5 +1,6 @@
 ---
 title: Programmation réseau dans le .NET Framework
+description: Utilisez ces ressources pour intégrer l’implémentation en couche, extensible et managée des services Internet fournis par le .NET Framework dans vos applications.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Networking
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-ms.openlocfilehash: 1e7f0123ab07fd4e83eea957b72bf79eeeecef2b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 117fce887a04def7f9b3f7654a8e9e675ea462d2
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74204696"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502403"
 ---
 # <a name="network-programming-in-the-net-framework"></a>Programmation réseau dans le .NET Framework
 Microsoft .NET Framework fournit une implémentation en couche, extensible et managée des services Internet que vous pouvez intégrer rapidement et facilement à vos applications. Les applications réseau peuvent générer des protocoles enfichables pour tirer parti automatiquement de nouveaux protocoles Internet, ou elles peuvent utiliser une implémentation managée de l'interface Windows Socket pour fonctionner au niveau du socket.  
@@ -31,7 +32,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  [Utilisation de protocoles d’application](using-application-protocols.md)  
  Décrit les applications de programmation qui tirent parti des protocoles réseau comme TCP, UDP, et HTTP.  
   
- [Version 6 du protocole Internet](internet-protocol-version-6.md)  
+ [Protocole Internet version 6](internet-protocol-version-6.md)  
  Décrit les avantages du protocole IPv6 (Internet Protocol version 6) par rapport à la version actuelle de la suite des protocoles Internet (IPv4), décrit l’adressage IPv6, le routage et la configuration automatique, et comment activer et désactiver IPv6.  
   
  [Configuration des applications Internet](configuring-internet-applications.md)  
@@ -49,13 +50,13 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  [Pratiques recommandées pour les classes System.Net](best-practices-for-system-net-classes.md)  
  Fournit des conseils et des astuces pour profiter au mieux de vos applications Web.  
   
- [Accès à Internet par le biais d’un proxy](accessing-the-internet-through-a-proxy.md)  
+ [Accès à Internet via un proxy](accessing-the-internet-through-a-proxy.md)  
  Décrit comment configurer des proxies.  
   
  [NetworkInformation](networkinformation.md)  
  Explique comment collecter des informations sur les événements, les modifications, les statistiques et les propriétés réseau et explique également comment déterminer si un hôte distant est accessible ou non à l'aide de la classe <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> .  
   
- [Modifications apportées à l’espace nom System.Uri dans la version 2.0](changes-to-the-system-uri-namespace-in-version-2-0.md)  
+ [Modifications apportées à l’espace de noms System. URI dans la version 2,0](changes-to-the-system-uri-namespace-in-version-2-0.md)  
  Décrit plusieurs modifications apportées à la classe <xref:System.Uri?displayProperty=nameWithType> dans la version 2.0 pour corriger les comportements incorrects, améliorer la convivialité et la sécurité.  
   
  [Prise en charge de l’identifiant de ressource internationalisée dans System.Uri](international-resource-identifier-support-in-system-uri.md)  
@@ -64,7 +65,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  [Améliorations des performances de socket dans la version 3.5](socket-performance-enhancements-in-version-3-5.md)  
  Décrit un ensemble d'améliorations apportées à la classe <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> dans la version 3.5, 3.0 SP1 et 2.0 SP1 qui fournit un autre modèle asynchrone pouvant être utilisé par les applications de socket spécialisées très performantes.  
   
- [protocole PNRP](peer-name-resolution-protocol.md)  
+ [Protocole PNRP (Peer Name Resolution Protocol)](peer-name-resolution-protocol.md)  
  Décrit l’ajout de la prise en charge à la version 3.5 pour prendre en charge le protocole PNRP (Peer Name Resolution Protocol), une inscription de noms dynamiques et sans serveur et un protocole de résolution de noms. Ces nouvelles fonctionnalités sont prises en charge par l'espace de noms <xref:System.Net.PeerToPeer?displayProperty=nameWithType> .  
   
  [Collaboration pair à pair](peer-to-peer-collaboration.md)  
@@ -80,7 +81,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  Décrit les améliorations apportées aux espaces de noms <xref:System.Net?displayProperty=nameWithType>, <xref:System.Net.NetworkInformation?displayProperty=nameWithType>, et <xref:System.Net.Sockets?displayProperty=nameWithType> pour prendre en charge le parcours NAT avec IPv6 et Teredo.  
   
  [Isolement réseau pour les applications du Windows Store](network-isolation-for-windows-store-apps.md)  
- Décrit l’impact de l’isolement <xref:System.Net> <xref:System.Net.Http>du <xref:System.Net.Http.Headers> réseau lorsque les classes dans le , , et les espaces nominaux sont utilisés dans Windows 8.x Store applications.  
+ Décrit l’impact de l’isolement réseau lorsque les classes <xref:System.Net> des <xref:System.Net.Http> espaces de <xref:System.Net.Http.Headers> noms, et sont utilisées dans les applications du Windows 8. x Store.  
   
  [Exemples de programmation réseau](network-programming-samples.md)  
  Liens vers des exemples téléchargeables de programmation qui utilisent des classes dans les espaces de noms <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.PeerToPeer>, <xref:System.Net.Security>, <xref:System.Net.Sockets> .  

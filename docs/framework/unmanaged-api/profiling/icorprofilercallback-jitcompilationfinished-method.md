@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8dcd7537-d0c6-498c-8a56-2c060310ef65
 topic_type:
 - apiref
-ms.openlocfilehash: f1cfef464569b577923fbb16624c99358998d29c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 0da67f0d4be779cc21481d03a21209620289888e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866245"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500055"
 ---
 # <a name="icorprofilercallbackjitcompilationfinished-method"></a>ICorProfilerCallback::JITCompilationFinished, méthode
 Notifie le profileur que le compilateur juste-à-temps (JIT) a terminé la compilation d’une fonction.  
@@ -34,7 +34,7 @@ HRESULT JITCompilationFinished(
     [in] BOOL       fIsSafeToBlock);  
 ```  
   
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - `functionId`
 
@@ -42,22 +42,22 @@ HRESULT JITCompilationFinished(
 
 - `hrStatus`
 
-  \[dans] valeur indiquant si la compilation a réussi.
+  \[in] valeur indiquant si la compilation a réussi.
 
 - `fIsSafeToBlock`
 
-  \[in] valeur indiquant au profileur si le blocage affecte le fonctionnement du Runtime. La valeur est `true` si le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; Sinon, `false`.
+  \[in] valeur indiquant au profileur si le blocage affecte le fonctionnement du Runtime. La valeur est `true` si le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; sinon, `false` .
 
-  Bien qu’une valeur de `true` n’endommage pas le runtime, elle peut incliner les résultats de profilage.
+  Bien qu’une valeur de n' `true` endommage pas le runtime, elle peut incliner les résultats de profilage.
 
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

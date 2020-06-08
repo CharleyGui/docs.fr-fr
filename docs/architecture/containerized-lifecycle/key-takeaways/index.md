@@ -2,12 +2,12 @@
 title: Points importants à retenir
 description: Passez en revue les points importants à retenir pour le guide.
 ms.date: 04/20/2020
-ms.openlocfilehash: 2aa0b3a9ca59a55a7493b86647f334f4438eaa3e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 51662c52ce0917aa89b86151cf7cab5f13f846e6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447015"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502780"
 ---
 # <a name="key-takeaways"></a>Points importants à retenir
 
@@ -23,4 +23,5 @@ ms.locfileid: "84447015"
 
 - Azure DevOps Services simplifie considérablement votre environnement DevOps en effectuant un déploiement sur des environnements Docker à partir de vos pipelines CI/CD. Cette instruction s’applique aux environnements Docker simples ainsi qu’aux orchestrateurs de microservices et de conteneurs avancés basés sur Azure.
 
-> [!div class="step-by-step"][previous](.. /run-manage-monitor-docker-environments/monitor-containerized-application-services.md)
+> [!div class="step-by-step"]
+> [premier](../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 01837955-ce1e-4068-b338-fd473bd77d1d
 topic_type:
 - apiref
-ms.openlocfilehash: 6ea7605e062eb77e0488b3a9561c4d83be16fa7d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 273922e00c3e5319d5a03652cc77b69f4479ea67
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436712"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503521"
 ---
 # <a name="imetadataimportgettyperefprops-method"></a>IMetaDataImport::GetTypeRefProps, méthode
-Obtient les métadonnées associées au <xref:System.Type> référencé par le jeton TypeRef spécifié.  
+Obtient les métadonnées associées à la <xref:System.Type> référencée par le jeton TypeRef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,21 +48,21 @@ HRESULT GetTypeRefProps (
  à Mémoire tampon contenant le nom de type.  
   
  `cchName`  
- dans Taille demandée en caractères larges de `szName`.  
+ dans Taille demandée en caractères larges de `szName` .  
   
  `pchName`  
- à Taille retournée en caractères larges de `szName`.  
+ à Taille retournée en caractères larges de `szName` .  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

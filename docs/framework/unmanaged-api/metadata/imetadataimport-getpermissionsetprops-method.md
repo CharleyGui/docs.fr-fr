@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9855f0e4-12c0-4d3d-ab5d-d6bc52d25eae
 topic_type:
 - apiref
-ms.openlocfilehash: 5faf1a6ae89045b2ef17fab789ee6e5bf23eecf2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 54c75156c32e5b40aa933ef6530b2cc33edf7de4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175341"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490989"
 ---
 # <a name="imetadataimportgetpermissionsetprops-method"></a>IMetaDataImport::GetPermissionSetProps, méthode
-Obtient les métadonnées <xref:System.Security.PermissionSet?displayProperty=nameWithType> associées à la représentation par le jeton autorisation spécifié.  
+Obtient les métadonnées associées au <xref:System.Security.PermissionSet?displayProperty=nameWithType> représenté par le jeton d’autorisation spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ HRESULT GetPermissionSetProps (
   
 ## <a name="parameters"></a>Paramètres  
  `pm`  
- [dans] Le jeton de métadonnées d’autorisation qui représente l’ensemble d’autorisation pour obtenir les propriétés de métadonnées pour.  
+ dans Jeton de métadonnées d’autorisation qui représente le jeu d’autorisations pour lequel obtenir les propriétés de métadonnées.  
   
  `pdwAction`  
- [out] Un pointeur à l’ensemble d’autorisation.  
+ à Pointeur vers le jeu d’autorisations.  
   
  `ppvPermission`  
- [out] Un pointeur à la signature des métadonnées binaires de l’ensemble d’autorisation.  
+ à Pointeur vers la signature de métadonnées binaires du jeu d’autorisations.  
   
  `pcbPermission`  
- [out] La taille dans `ppvPermission`les octets de .  
+ à Taille en octets de `ppvPermission` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Security.PermissionSet>
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

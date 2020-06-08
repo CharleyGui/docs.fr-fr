@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dda867b5-1050-49ba-b01c-fcc83b7a5617
 topic_type:
 - apiref
-ms.openlocfilehash: 3dd82588cf2dbf92fdda66fd7674c17ddc8b7306
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bc7f1740d666211b63cd93e6f1c0e6955f61ec5d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177186"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503456"
 ---
 # <a name="imetadataimportresetenum-method"></a>IMetaDataImport::ResetEnum Method
 Réinitialise l'énumérateur spécifié à la position spécifiée.  
@@ -36,21 +36,21 @@ HRESULT ResetEnum (
   
 ## <a name="parameters"></a>Paramètres  
  `hEnum`  
- [dans] L’enumérateur à réinitialiser.  
+ dans Énumérateur à réinitialiser.  
   
  `ulPos`  
- [dans] La nouvelle position à laquelle placer l’énumérateur.  
+ dans Nouvelle position à laquelle placer l’énumérateur.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 72822b95-a7fb-485e-9d55-1cb016d9a458
 topic_type:
 - apiref
-ms.openlocfilehash: ec33e55f840fe735091364ebc35cb7b7c165c10a
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 409a21238f172e5ecdaa8d5bfa237a9f3fe46345
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76867181"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500908"
 ---
 # <a name="cor_prf_gc_reason-enumeration"></a>COR_PRF_GC_REASON, énumération
 Indique la raison pour laquelle une récupération de mémoire se produit.  
@@ -33,21 +33,21 @@ typedef enum {
 } COR_PRF_GC_REASON;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Membres  
   
-|Member|Description|  
+|Membre|Description|  
 |------------|-----------------|  
-|`COR_PRF_GC_INDUCED`|La garbage collection a été induite par une méthode <xref:System.GC.Collect%2A>.|  
+|`COR_PRF_GC_INDUCED`|La garbage collection a été induite par une <xref:System.GC.Collect%2A> méthode.|  
 |`COR_PRF_GC_OTHER`|La raison n’est pas spécifiée.|  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

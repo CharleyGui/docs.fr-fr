@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: aaac8f98-5cf4-42c7-b04b-556cce367e36
 topic_type:
 - apiref
-ms.openlocfilehash: f14dff33217656c35379a214f007ccb3642ef4b1
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: b79c8dd9f27805e00535dde53c6ee9f5ee457b42
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866453"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500261"
 ---
 # <a name="icorprofilercallbackexceptionclrcatcherexecute-method"></a>ICorProfilerCallback::ExceptionCLRCatcherExecute, méthode
-Appelée lorsqu’un bloc `catch` pour une exception est exécuté à l’intérieur du common language runtime (CLR) lui-même. Cette méthode est obsolète dans la version 2,0 de .NET Framework.  
+Appelée lorsqu’un `catch` bloc pour une exception est exécuté à l’intérieur du Common Language Runtime (CLR) lui-même. Cette méthode est obsolète dans la version 2,0 de .NET Framework.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,8 +31,8 @@ Appelée lorsqu’un bloc `catch` pour une exception est exécuté à l’intér
 HRESULT ExceptionCLRCatcherExecute();  
 ```  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   

@@ -1,13 +1,14 @@
 ---
 title: Sélection et validation de certificats
+description: Découvrez les différentes façons dont les classes System.Net offrent pour sélectionner et valider des certificats pour les connexions SSL/TLS.
 ms.date: 03/30/2017
 ms.assetid: c933aca2-4cd0-4ff1-9df9-267143f25a6f
-ms.openlocfilehash: aea47360ab1bb9dad446a5a7b19a91ea688953c4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2dc63413f5c3a5fadd0d62ad61f0b887697c6a45
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71048749"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502650"
 ---
 # <a name="certificate-selection-and-validation"></a>Sélection et validation de certificats
 Les classes <xref:System.Net> prennent en charge plusieurs manières de sélectionner et de valider <xref:System.Security.Cryptography.X509Certificates> pour les connexions SSL (Secure Socket Layer). Un client peut sélectionner un ou plusieurs certificats pour s’authentifier auprès d’un serveur. Un serveur peut exiger qu’un certificat client ait un ou plusieurs attributs spécifiques pour l’authentification.  

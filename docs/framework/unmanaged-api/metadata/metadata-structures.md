@@ -6,12 +6,12 @@ helpviewer_keywords:
 - unmanaged structures [.NET Framework], metadata
 - metadata structures [.NET Framework]
 ms.assetid: 3eeaec36-5e1a-4a62-9de3-ea3942f67d04
-ms.openlocfilehash: 663abfdad79b8e4878ee598587a1f3484f5afccc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fbb9727523aa175f10a05b3ba4f54ac64b790f8e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444610"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84489546"
 ---
 # <a name="metadata-structures"></a>Structures de métadonnées
 Cette section décrit les structures non managées utilisées par l'API de métadonnées.  
@@ -20,23 +20,23 @@ Cette section décrit les structures non managées utilisées par l'API de méta
  ASSEMBLYMETADATA  
  Stocke les métadonnées de l'assembly pour une utilisation ultérieure.  
   
- [COR_FIELD_OFFSET, structure](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md)  
+ [COR_FIELD_OFFSET, structure](cor-field-offset-structure.md)  
  Stocke l'offset, dans une classe, du champ spécifié.  
   
- [COR_NATIVE_LINK, structure](../../../../docs/framework/unmanaged-api/metadata/cor-native-link-structure.md)  
+ [COR_NATIVE_LINK, structure](cor-native-link-structure.md)  
  Contient des informations utilisées pour lier du code natif.  
   
- [CVStruct, structure](../../../../docs/framework/unmanaged-api/metadata/cvstruct-structure.md)  
+ [CVStruct, structure](cvstruct-structure.md)  
  Contient des informations utilisées lors de l'installation d'un module ou d'une image composite.  
   
- [OSINFO, structure](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md)  
+ [OSINFO, structure](osinfo-structure.md)  
  Contient des informations sur le système d'exploitation.  
   
 ## <a name="related-sections"></a>Sections connexes  
- [Interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
+ [Interfaces de métadonnées](metadata-interfaces.md)  
   
- [Fonctions statiques globales des métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  
+ [Fonctions statiques globales des métadonnées](metadata-global-static-functions.md)  
   
- [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
+ [Énumérations de métadonnées](metadata-enumerations.md)  
   
- [Unions de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)
+ [Unions de métadonnées](metadata-unions.md)

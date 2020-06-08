@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 625c3dd5-a3f0-442c-adde-310dadbb5054
 topic_type:
 - apiref
-ms.openlocfilehash: f97490e89e835716911072dbad5f70d8e55e76e6
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 162def0d703ea81efc3df3ea5ee08b58e34822e6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805028"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501571"
 ---
 # <a name="ihostassemblystoreprovideassembly-method"></a>IHostAssemblyStore::ProvideAssembly, méthode
-Obtient une référence à un assembly qui n’est pas référencé par l' [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) retourné par [IHostAssemblyManager :: GetNonHostStoreAssemblies](ihostassemblymanager-getnonhoststoreassemblies-method.md). Le common language runtime (CLR) appelle `ProvideAssembly` pour chaque assembly qui n’apparaît pas dans la liste.  
+Obtient une référence à un assembly qui n’est pas référencé par l' [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) retourné par [IHostAssemblyManager :: GetNonHostStoreAssemblies](ihostassemblymanager-getnonhoststoreassemblies-method.md). Le common language runtime (CLR) appelle `ProvideAssembly` pour chaque assembly qui n’apparaît pas dans la liste.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,7 +53,7 @@ HRESULT ProvideAssembly (
  `ppStmPDB`  
  à Pointeur vers l’adresse d’un `IStream` qui contient les informations de débogage de programme (PDB), ou null si le fichier. pdb est introuvable.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -66,10 +66,10 @@ HRESULT ProvideAssembly (
 |COR_E_FILENOTFOUND (0x80070002)|L’assembly demandé est introuvable.|  
 |E_NOT_SUFFICIENT_BUFFER|La taille de la mémoire tampon spécifiée par `pAssemblyId` n’est pas assez grande pour contenir l’identificateur que l’hôte souhaite retourner.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  La valeur d’identité retournée pour `pAssemblyId` est spécifiée par l’hôte. Les identificateurs doivent être uniques dans la durée de vie d’un processus. Le CLR utilise cette valeur comme identificateur unique pour le flux. Il vérifie chaque valeur par rapport aux valeurs `pAssemblyId` retournées par d’autres appels à `ProvideAssembly` . Si l’hôte retourne la même `pAssemblyId` valeur pour un autre `IStream` , le CLR vérifie si le contenu de ce flux a déjà été mappé. Dans ce cas, le runtime charge la copie existante de l’image au lieu d’en mapper une nouvelle.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

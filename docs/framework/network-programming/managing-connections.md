@@ -1,5 +1,6 @@
 ---
 title: Gestion des connexions
+description: Découvrez comment les applications qui utilisent HTTP pour les ressources de données peuvent utiliser les classes .NET Framework ServicePoint et ServicePointManager pour gérer les connexions.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - downloading Internet resources, connections
 - ServicePointManager class, about ServicePointManager class
 ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
-ms.openlocfilehash: 11c17c6893800fce8bbff8f49b3a207c161bcdfa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 124dff1b104e323b929d13f73cf17d740e747c32
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047647"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502286"
 ---
 # <a name="managing-connections"></a>Gestion des connexions
 Les applications qui utilisent HTTP pour se connecter aux ressources de données peuvent utiliser les classes <xref:System.Net.ServicePoint> et <xref:System.Net.ServicePointManager> du .NET Framework pour gérer les connexions à Internet et les aider à atteindre des performances et une évolutivité optimales.  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0ea73055-ece0-4151-a094-414c88ef8941
 topic_type:
 - apiref
-ms.openlocfilehash: a61254ba751e47b0089a3f7528aca337a32e2db3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 00693f1a87334620442e8865e76183b2dab68878
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175367"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503612"
 ---
 # <a name="imetadataimportgetmemberrefprops-method"></a>IMetaDataImport::GetMemberRefProps, méthode
 Obtient les métadonnées associées au membre référencé par le jeton spécifié.  
@@ -41,36 +41,36 @@ HRESULT GetMemberRefProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mr`  
- [dans] Le membreRef symbolique de retourner les métadonnées associées pour.  
+ dans Jeton MemberRef pour lequel retourner les métadonnées associées.  
   
  `ptk`  
- [out] Un typeDef ou TypeRef, ou un jeton TypeSpec qui représente la classe qui déclare le membre, ou un jeton ModuleRef qui représente la classe de module qui déclare le membre, ou un MethodDef qui représente le membre.  
+ à Un jeton TypeDef ou TypeRef, ou TypeSpec qui représente la classe qui déclare le membre, ou un jeton ModuleRef qui représente la classe de module qui déclare le membre, ou un MethodDef qui représente le membre.  
   
  `szMember`  
- [out] Un tampon de chaîne pour le nom du membre.  
+ à Mémoire tampon de chaîne pour le nom du membre.  
   
  `cchMember`  
- [dans] La taille demandée `szMember`en caractères larges de .  
+ dans Taille demandée en caractères larges de `szMember` .  
   
  `pchMember`  
- [out] La taille retournée dans `szMember`de larges caractères de .  
+ à Taille retournée en caractères larges de `szMember` .  
   
  `ppvSibBlob`  
- [out] Un pointeur à la signature des métadonnées binaires pour le membre.  
+ à Pointeur vers la signature de métadonnées binaires pour le membre.  
   
  `pbSig`  
- [out] La taille dans `ppvSigBlob`les octets de .  
+ à Taille en octets de `ppvSigBlob` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

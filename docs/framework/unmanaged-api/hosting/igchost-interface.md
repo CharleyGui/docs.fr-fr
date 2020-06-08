@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 9ad70ffd-6963-4ab2-8c84-3d86c3fb8deb
 topic_type:
 - apiref
-ms.openlocfilehash: 9d6c9d22f4e50c21e2f41b7efd402907ff5843db
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 6b6f2dbaa49c29f6614e9c39a3f408d4d1453983
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805219"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501623"
 ---
 # <a name="igchost-interface"></a>IGCHost, interface
 Fournit des méthodes pour obtenir des informations sur le système de garbage collection et pour contrôler certains aspects de garbage collection.  
   
 > [!NOTE]
-> À partir de la .NET Framework 4,5, vous pouvez utiliser la méthode [IGCHost2 :: setgcstartuplimitsex,](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md) pour définir la taille d’un segment garbage collection et la taille maximale de la génération 0 du système garbage collection sur des valeurs supérieures à la `DWORD` limite imposée par la méthode [SetGCStartupLimits (](igchost-setgcstartuplimits-method.md) .  
+> À partir de la .NET Framework 4,5, vous pouvez utiliser la méthode [IGCHost2 :: setgcstartuplimitsex,](igchost2-setgcstartuplimitsex-method.md) pour définir la taille d’un segment garbage collection et la taille maximale de la génération 0 du système garbage collection sur des valeurs supérieures à la `DWORD` limite imposée par la méthode [SetGCStartupLimits (](igchost-setgcstartuplimits-method.md) .  
   
 > [!NOTE]
 > Cette interface n’est destinée qu’à une utilisation par des experts. Cela peut affecter les performances d’une application si elle est utilisée de manière incorrecte.  
@@ -40,7 +40,7 @@ Fournit des méthodes pour obtenir des informations sur le système de garbage c
 |[SetGCStartupLimits, méthode](igchost-setgcstartuplimits-method.md)|Définit la taille du segment et la taille maximale de la génération 0.|  
 |[SetVirtualMemLimit, méthode](igchost-setvirtualmemlimit-method.md)|Définit la taille maximale de la mémoire virtuelle du Runtime.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl, GCHost. h  

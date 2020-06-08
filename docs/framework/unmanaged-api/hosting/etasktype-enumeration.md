@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: aa527b31-89d4-41f2-ad6f-63b76950b7df
 topic_type:
 - apiref
-ms.openlocfilehash: 435d23d4a56d6ea98e3d368f0a5aa37c73e31d96
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 0fa72568df77c4916a3c6676e1dcca7c0c616c4a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616162"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493316"
 ---
 # <a name="etasktype-enumeration"></a>ETaskType, énumération
-Contient des valeurs qui indiquent le type de tâche représenté par une interface [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) ou [IHostTask](ihosttask-interface.md) .  
+Contient des valeurs qui indiquent le type de tâche représenté par une interface [ICLRTask](iclrtask-interface.md) ou [IHostTask](ihosttask-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,7 +58,7 @@ typedef enum ETaskType {
 |`TT_UNKNOWN`|La tâche est inconnue.|  
 |`TT_USER`|L’interface représente une tâche utilisateur.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

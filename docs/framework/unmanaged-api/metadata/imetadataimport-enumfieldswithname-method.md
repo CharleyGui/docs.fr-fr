@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 42145e8d-000f-4d0b-ae43-c08201190fa2
 topic_type:
 - apiref
-ms.openlocfilehash: bb8b531a884c9d3c2f33aa4aec5c4dbeaafe2b66
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 68261b165847a5c3ee29adbc4908451fb00c5443
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177342"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492263"
 ---
 # <a name="imetadataimportenumfieldswithname-method"></a>IMetaDataImport::EnumFieldsWithName, méthode
 Énumère les jetons FieldDef du type spécifié avec le nom spécifié.  
@@ -40,43 +40,43 @@ HRESULT EnumFieldsWithName (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `cl`  
- [dans] Le jeton du type dont les champs doivent être énumérés.  
+ dans Jeton du type dont les champs doivent être énumérés.  
   
  `szName`  
- [dans] Le nom de champ qui limite la portée de l’énumération.  
+ dans Nom du champ qui limite la portée de l’énumération.  
   
  `rFields`  
- [out] Array utilisé pour stocker les jetons FieldDef.  
+ à Tableau utilisé pour stocker les jetons FieldDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rFields`.  
   
  `pcTokens`  
- [out] Le nombre réel de jetons FieldDef retourné dans `rFields`.  
+ à Nombre réel de jetons FieldDef retournés dans `rFields` .  
   
-## <a name="remarks"></a>Notes   
- Contrairement à [IMetaDataImport::EnumFields](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` jette tous les jetons de champ qui n’ont pas le nom spécifié.  
+## <a name="remarks"></a>Remarques  
+ Contrairement à [IMetaDataImport :: EnumFields](imetadataimport-enumfields-method.md), `EnumFieldsWithName` ignore tous les jetons de champ qui n’ont pas le nom spécifié.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumFieldsWithName`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de champs à énumérer. Dans ce `pcTokens` cas, c’est zéro.|  
+|`S_FALSE`|Il n’y a aucun champ à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

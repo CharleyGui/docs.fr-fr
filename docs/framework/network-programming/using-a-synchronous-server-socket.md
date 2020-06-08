@@ -1,5 +1,6 @@
 ---
 title: Utilisation d’un socket serveur synchrone
+description: Cet exemple montre un socket serveur synchrone dans .NET Framework, qui interrompt une application jusqu’à ce qu’une demande de connexion soit reçue sur le Socket.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,19 +18,19 @@ helpviewer_keywords:
 - sockets, synchronous server sockets
 - Internet, sockets
 ms.assetid: d1ce882e-653e-41f5-9289-844ec855b804
-ms.openlocfilehash: cbc02c755ceefa8f31439f121a98978b82f33fa2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e7d32595f554b32ecc72bbb1f1a469ad5935467
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047033"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502052"
 ---
 # <a name="using-a-synchronous-server-socket"></a>Utilisation d’un socket serveur synchrone
 Les sockets serveur synchrones interrompent l’exécution de l’application jusqu’à la réception d’une demande de connexion sur le socket. Les sockets serveur synchrones ne sont pas appropriés pour les applications dont l’exécution nécessite une utilisation intensive du réseau, mais ils peuvent être utiles pour les applications réseau simples.  
   
  Après qu’un <xref:System.Net.Sockets.Socket> a été défini pour écouter un point de terminaison à l’aide des méthodes <xref:System.Net.Sockets.Socket.Bind%2A> et <xref:System.Net.Sockets.Socket.Listen%2A>, il est prêt à accepter les demandes de connexion entrantes à l’aide de la méthode <xref:System.Net.Sockets.Socket.Accept%2A>. L’exécution de l’application est interrompue jusqu’à la réception d’une demande de connexion après l’appel de la méthode **Accept**.  
   
- Après la réception d’une demande de connexion, **Accept** retourne une nouvelle instance **Socket** qui est associée au client qui se connecte. L’exemple suivant lit les données reçues du client, les affiche sur la console et les renvoie au client. Le **Socket** ne spécifie pas de protocole de messagerie. La chaîne « \<EOF> » marque donc la fin des données du message. L’exemple suppose qu’un **Socket** nommé `listener` a été initialisé et associé à un point de terminaison.  
+ Après la réception d’une demande de connexion, **Accept** retourne une nouvelle instance **Socket** qui est associée au client qui se connecte. L’exemple suivant lit les données reçues du client, les affiche sur la console et les renvoie au client. Le **Socket** ne spécifie aucun protocole de messagerie, donc la chaîne « \<EOF> » marque la fin des données du message. L’exemple suppose qu’un **Socket** nommé `listener` a été initialisé et associé à un point de terminaison.  
   
 ```vb  
 Console.WriteLine("Waiting for a connection...")  

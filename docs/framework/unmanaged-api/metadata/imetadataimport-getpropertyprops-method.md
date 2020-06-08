@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: dc0ff3e6-7e7d-4f6c-948d-52b28f5cb78c
 topic_type:
 - apiref
-ms.openlocfilehash: 5fc71bf240b89afadbf8f2ba10906322921bdda2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cac5aaa7ed13b6a48b36ad550da8b73d0deb2ee7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175328"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491041"
 ---
 # <a name="imetadataimportgetpropertyprops-method"></a>IMetaDataImport::GetPropertyProps, méthode
-Obtient les métadonnées pour la propriété représentée par le jeton spécifié.  
+Obtient les métadonnées de la propriété représentée par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,63 +50,63 @@ HRESULT GetPropertyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `prop`  
- [dans] Un jeton qui représente la propriété pour retourner les métadonnées.  
+ dans Jeton qui représente la propriété dont les métadonnées doivent être retournées.  
   
  `pClass`  
- [out] Un pointeur sur le jeton TypeDef qui représente le type qui implémente la propriété.  
+ à Pointeur vers le jeton TypeDef qui représente le type qui implémente la propriété.  
   
  `szProperty`  
- [out] Un tampon pour tenir le nom de la propriété.  
+ à Mémoire tampon destinée à contenir le nom de la propriété.  
   
  `cchProperty`  
- [dans] La taille en `szProperty`caractères larges de .  
+ dans Taille en caractères larges de `szProperty` .  
   
  `pchProperty`  
- [out] Le nombre de personnages `szProperty`larges retournés dans .  
+ à Nombre de caractères larges retournés dans `szProperty` .  
   
  `pdwPropFlags`  
- [out] Un pointeur à tous les drapeaux d’attribut appliqués à la propriété. Cette valeur est un peumask de l’énumération [CorPropertyAttr.](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md)  
+ à Pointeur vers tous les indicateurs d’attribut appliqués à la propriété. Cette valeur est un masque de masque de l’énumération [CorPropertyAttr,](corpropertyattr-enumeration.md) .  
   
  `ppvSig`  
- [out] Un pointeur à la signature des métadonnées de la propriété.  
+ à Pointeur vers la signature de métadonnées de la propriété.  
   
  `pbSig`  
- [out] Le nombre d’octets retournés dans `ppvSig`.  
+ à Nombre d’octets retournés dans `ppvSig` .  
   
  `pdwCPlusTypeFlag`  
- [out] Un drapeau spécifiant le type de la constante qui est la valeur par défaut de la propriété. Cette valeur provient de l’énumération De CorElementType.  
+ à Indicateur spécifiant le type de la constante qui est la valeur par défaut de la propriété. Cette valeur provient de l’énumération CorElementType.  
   
  `ppDefaultValue`  
- [out] Un pointeur aux octets qui stockent la valeur par défaut pour cette propriété.  
+ à Pointeur vers les octets qui stockent la valeur par défaut de cette propriété.  
   
  `pcchDefaultValue`  
- [out] La taille en `ppDefaultValue`caractères `pdwCPlusTypeFlag` larges de , si est ELEMENT_TYPE_STRING; autrement, cette valeur n’est pas pertinente. Dans ce cas, `ppDefaultValue` la durée de la durée est `pdwCPlusTypeFlag`déduite du type spécifié par .  
+ à Taille en caractères larges de `ppDefaultValue` , si `pdwCPlusTypeFlag` est ELEMENT_TYPE_STRING ; sinon, cette valeur n’est pas pertinente. Dans ce cas, la longueur de `ppDefaultValue` est déduite du type spécifié par `pdwCPlusTypeFlag` .  
   
  `pmdSetter`  
- [out] Un pointeur pour le jeton MethodDef qui représente la méthode d’accesseur défini pour la propriété.  
+ à Pointeur vers le jeton MethodDef qui représente la méthode d’accesseur Set pour la propriété.  
   
  `pmdGetter`  
- [out] Un pointeur pour le jeton MethodDef qui représente la méthode d’accès pour la propriété.  
+ à Pointeur vers le jeton MethodDef qui représente la méthode d’accesseur get pour la propriété.  
   
  `rmdOtherMethod`  
- [out] Un tableau de jetons MethodDef qui représentent d’autres méthodes associées à la propriété.  
+ à Tableau de jetons MethodDef qui représentent d’autres méthodes associées à la propriété.  
   
  `cMax`  
- [in] Taille maximale du tableau `rmdOtherMethod`. Si vous ne fournissez pas un tableau assez grand pour contenir toutes les méthodes, ils sont ignorés sans avertissement.  
+ [in] Taille maximale du tableau `rmdOtherMethod`. Si vous ne fournissez pas un tableau suffisamment grand pour contenir toutes les méthodes, elles sont ignorées sans avertissement.  
   
  `pcOtherMethod`  
- [out] Le nombre de jetons MethodDef retournés dans `rmdOtherMethod`.  
+ à Nombre de jetons MethodDef retournés dans `rmdOtherMethod` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

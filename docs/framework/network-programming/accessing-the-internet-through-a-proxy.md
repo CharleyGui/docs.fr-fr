@@ -1,5 +1,6 @@
 ---
 title: Accès à Internet via un proxy
+description: Découvrez comment configurer une instance de proxy pour permettre à votre application de .NET Framework de communiquer avec le proxy Web.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Networking
@@ -12,19 +13,19 @@ helpviewer_keywords:
 - Internet, proxy instances
 - Network Resources
 ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
-ms.openlocfilehash: 76566d06cac81d8ba4138369c6ee3ef807a99634
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 77f46cdcedbeb9b1809621d64f239a6681e82590
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71049047"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502741"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Accès à Internet via un proxy
 Si votre site utilise un proxy pour fournir l’accès à Internet, vous devez configurer une instance de proxy pour permettre à votre application de communiquer avec le proxy web.  
   
  Cette section comprend les rubriques suivantes :  
   
-- [Proxy Configuration](proxy-configuration.md)  
+- [Configuration du proxy](proxy-configuration.md)  
   
 - [Détection automatique de proxy](automatic-proxy-detection.md)  
   

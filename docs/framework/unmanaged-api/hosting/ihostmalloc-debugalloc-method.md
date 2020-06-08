@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0bfbc527-bea2-43ce-b041-69186f4440dd
 topic_type:
 - apiref
-ms.openlocfilehash: 8475362ede5ea28009d5abc54c286d6f2a6fed0f
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 3f85e7c7fd54079ddce37f739a3a7bc0fa830d31
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804635"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493290"
 ---
 # <a name="ihostmallocdebugalloc-method"></a>IHostMAlloc::DebugAlloc, méthode
 Demande que l’hôte alloue la quantité de mémoire spécifiée à partir du tas et effectue également le suivi de l’emplacement où la mémoire a été allouée.  
@@ -53,7 +53,7 @@ HRESULT DebugAlloc (
  `ppMem`  
  à Pointeur vers la mémoire allouée, ou null si la demande n’a pas pu être effectuée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -65,10 +65,10 @@ HRESULT DebugAlloc (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour terminer la demande d’allocation.|  
   
-## <a name="remarks"></a>Notes  
- Le CLR obtient un pointeur d’interface vers une instance [IHostMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) en appelant la méthode [IHostMemoryManager :: CreateMAlloc](ihostmemorymanager-createmalloc-method.md) . `DebugAlloc`permet au runtime d’obtenir des informations de fichier de code à utiliser pendant le débogage.  
+## <a name="remarks"></a>Remarques  
+ Le CLR obtient un pointeur d’interface vers une instance [IHostMalloc](ihostmalloc-interface.md) en appelant la méthode [IHostMemoryManager :: CreateMAlloc](ihostmemorymanager-createmalloc-method.md) . `DebugAlloc`permet au runtime d’obtenir des informations de fichier de code à utiliser pendant le débogage.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

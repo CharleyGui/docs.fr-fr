@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d2250b38-c76a-40ce-80c8-ba45149886e8
 topic_type:
 - apiref
-ms.openlocfilehash: 0dc2f625da7f4e37583f198c8d6dba86f6dcdb10
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 9a1440be7011130b16d7112ae15026eb74856190
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805065"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501589"
 ---
 # <a name="ihostassemblymanagergetnonhoststoreassemblies-method"></a>IHostAssemblyManager::GetNonHostStoreAssemblies, méthode
 Obtient un pointeur d’interface vers un [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) qui représente la liste des assemblys que l’hôte attend que le Common Language Runtime (CLR) se charge.  
@@ -37,7 +37,7 @@ HRESULT GetNonHostStoreAssemblies (
  `ppReferenceList`  
  à Pointeur vers l’adresse d’un `ICLRAssemblyReferenceList` qui contient une liste de références aux assemblys que l’hôte attend que le CLR se charge.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -49,14 +49,14 @@ HRESULT GetNonHostStoreAssemblies (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour créer la liste des références pour le demandé `ICLRAssemblyReferenceList` .|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Le CLR résout les références à l’aide de l’ensemble d’instructions suivant :  
   
 - Tout d’abord, il consulte la liste des références d’assembly retournées par `GetNonHostStoreAssemblies` .  
   
 - Si l’assembly apparaît dans la liste, le CLR s’y lie normalement.  
   
-- Si l’assembly n’apparaît pas dans la liste et que l’hôte a fourni une implémentation de [IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md), le CLR appelle [IHostAssemblyStore ::P rovideassembly](ihostassemblystore-provideassembly-method.md) pour permettre à l’hôte de fournir l’assembly auquel effectuer la liaison.  
+- Si l’assembly n’apparaît pas dans la liste et que l’hôte a fourni une implémentation de [IHostAssemblyStore](ihostassemblystore-interface.md), le CLR appelle [IHostAssemblyStore ::P rovideassembly](ihostassemblystore-provideassembly-method.md) pour permettre à l’hôte de fournir l’assembly auquel effectuer la liaison.  
   
 - Dans le cas contraire, le CLR ne peut pas être lié à l’assembly.  
   
@@ -65,7 +65,7 @@ HRESULT GetNonHostStoreAssemblies (
 > [!NOTE]
 > Lors de l’initialisation, le CLR `GetNonHostStoreAssemblies` n’appelle qu’une seule fois. La méthode n’est pas appelée à nouveau.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

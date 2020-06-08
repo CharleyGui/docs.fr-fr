@@ -1,5 +1,6 @@
 ---
 title: Détection automatique de proxy
+description: En savoir plus sur la détection automatique de proxy, où le système identifie un serveur proxy Web et l’utilise pour envoyer des demandes pour le compte du client.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-ms.openlocfilehash: 4c5bc9e0efb39032d388d141e8bccf3e520ebd45
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dbd5d7fa671ae5ec3b7dc00205f0c9d8381bb3ce
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180900"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502693"
 ---
 # <a name="automatic-proxy-detection"></a>Détection automatique de proxy
 La détection automatique de proxy est un processus par lequel un serveur proxy web est identifié par le système et utilisé pour envoyer des demandes pour le compte du client. Cette fonctionnalité est également connue sous le nom de Découverte automatique de proxy Web (WPAD, Web Proxy Auto-Discovery). Quand la détection automatique de proxy est activée, le système tente de localiser un script de configuration de proxy qui est chargé de retourner l’ensemble des proxys pouvant être utilisés pour la requête. Si le script de configuration de proxy est trouvé, il est téléchargé, compilé et exécuté sur l’ordinateur local quand les informations de proxy, le flux de requête ou la réponse sont obtenus pour une requête qui utilise une instance de <xref:System.Net.WebProxy>.  
@@ -44,7 +45,7 @@ La détection automatique de proxy est un processus par lequel un serveur proxy 
   
  Les proxys sont configurés sur la base de chaque connectoid. Un connectoid est un élément dans la boîte de dialogue de connexion réseau. Il peut s’agir d’un appareil réseau physique (un modem ou une carte Ethernet) ou d’une interface virtuelle (par exemple, une connexion VPN qui s’exécute sur un appareil réseau). Quand un connectoid change (par exemple quand une connexion sans fil change un point d’accès, ou qu’un réseau VPN est activé), l’algorithme de détection de proxy est réexécuté.  
   
- Par défaut, les paramètres de proxy d’Internet Explorer sont utilisés pour détecter le serveur proxy. Si votre application s’exécute sous un compte non interactif (sans moyen pratique de configurer les paramètres de proxy IE), ou si vous [ \<](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) souhaitez utiliser des paramètres proxy différents des paramètres IE, vous pouvez configurer votre proxy en créant un fichier de configuration avec les éléments de> Element (Paramètres réseau) et [ \<proxy> Element (Paramètres réseau)](../configure-apps/file-schema/network/proxy-element-network-settings.md) définis.  
+ Par défaut, les paramètres de proxy d’Internet Explorer sont utilisés pour détecter le serveur proxy. Si votre application s’exécute sous un compte non interactif (sans un moyen pratique de configurer les paramètres du proxy IE), ou si vous souhaitez utiliser des paramètres de proxy différents des paramètres d’IE, vous pouvez configurer votre proxy en créant un fichier de configuration avec les éléments [ \<defaultProxy> élément (paramètres réseau)](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) et [ \<proxy> élément (paramètres réseau)](../configure-apps/file-schema/network/proxy-element-network-settings.md) définis.  
   
  Pour les requêtes que vous créez, vous pouvez désactiver la détection automatique de proxy au niveau de la requête en utilisant un <xref:System.Net.WebRequest.Proxy%2A> null avec votre requête, comme indiqué dans l’exemple de code suivant.  
   
@@ -71,4 +72,4 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.WebRequest>
-- [\<system.Net> Element (Paramètres réseau)](../configure-apps/file-schema/network/system-net-element-network-settings.md)
+- [\<system.Net>, Élément (paramètres réseau)](../configure-apps/file-schema/network/system-net-element-network-settings.md)

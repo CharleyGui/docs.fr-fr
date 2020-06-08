@@ -1,5 +1,6 @@
 ---
 title: Exemple de socket serveur synchrone
+description: Cet exemple .NET Framework programme crée un serveur qui reçoit des connexions à partir de clients à l’aide d’un socket synchrone. Elle reçoit et renvoie une chaîne.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-ms.openlocfilehash: e8924051a7087ac26793722457f934e58a75f23d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e2fb91dc493b2da4c68a98ac8a62494e78a9fd1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180659"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502104"
 ---
 # <a name="synchronous-server-socket-example"></a>Exemple de socket serveur synchrone
-L’exemple de programme suivant crée un serveur qui reçoit les demandes de connexion des clients. Le serveur est créé avec un socket synchrone. L’exécution de l’application serveur est donc suspendue jusqu’à la réception d’une connexion à partir d’un client. L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client. La chaîne reçue du client doit contenir la chaîne « \<EOF> » qui indique la fin du message.  
+L’exemple de programme suivant crée un serveur qui reçoit les demandes de connexion des clients. Le serveur est créé avec un socket synchrone. L’exécution de l’application serveur est donc suspendue jusqu’à la réception d’une connexion à partir d’un client. L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client. La chaîne du client doit contenir la chaîne « \<EOF> » pour signaler la fin du message.  
   
 ```vb  
 Imports System  

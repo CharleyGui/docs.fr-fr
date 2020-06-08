@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e97c97a6-6e4f-41f5-9af1-9b3cf3bdbd6b
 topic_type:
 - apiref
-ms.openlocfilehash: b8a65b0748fec0e474d8b3b5dc03473fbd716108
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 68cdefe7ab362b26bbf060fa46766068eb0d7094
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177331"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503755"
 ---
 # <a name="imetadataimportenummemberrefs-method"></a>IMetaDataImport::EnumMemberRefs, méthode
 Énumère les jetons MemberRef représentant les membres du type spécifié.  
@@ -39,37 +39,37 @@ HRESULT EnumMemberRefs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `tkParent`  
- [dans] Un jeton TypeDef, TypeRef, MethodDef ou ModuleRef pour le type dont les membres doivent être énumérés.  
+ dans Jeton TypeDef, TypeRef, MethodDef ou ModuleRef pour le type dont les membres doivent être énumérés.  
   
  `rMemberRefs`  
- [out] Le tableau utilisé pour stocker les jetons MemberRef.  
+ à Tableau utilisé pour stocker les jetons MemberRef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rMemberRefs`.  
   
  `pcTokens`  
- [out] Le nombre réel de jetons MemberRef retournés dans `rMemberRefs`.  
+ à Nombre réel de jetons MemberRef retournés dans `rMemberRefs` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumMemberRefs`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de jetons MemberRef à énumérer. Dans ce `pcTokens` cas, est à zéro.|  
+|`S_FALSE`|Il n’y a aucun Jeton MemberRef à énumérer. Dans ce cas, `pcTokens` est à zéro.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

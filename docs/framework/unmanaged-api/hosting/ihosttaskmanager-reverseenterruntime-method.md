@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b1e26bff-d3ea-436e-9867-29720df999f4
 topic_type:
 - apiref
-ms.openlocfilehash: 41955bd2f64d53e3620dede6b6da4cef2aab45f4
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1981fdf25440a296801bdbd06c41ebcb4b87e870
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842294"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501391"
 ---
 # <a name="ihosttaskmanagerreverseenterruntime-method"></a>IHostTaskManager::ReverseEnterRuntime, méthode
 Indique à l’hôte qu’un appel est effectué dans le common language runtime (CLR) à partir du code non managé.  
@@ -47,7 +47,7 @@ HRESULT ReverseEnterRuntime ();
  Si l’appel dans le CLR est effectué à partir d’une séquence provenant du code managé, chaque appel à `ReverseEnterRuntime` correspond à un appel à [ReverseLeaveRuntime](ihosttaskmanager-reverseleaveruntime-method.md).  
   
 > [!NOTE]
-> Les appels peuvent provenir du code non managé sans être imbriqués. Dans ce cas, il n’y a aucun appel à [EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](ihosttaskmanager-leaveruntime-method.md)ou `ReverseLeaveRuntime` , et le nombre d’appels à `ReverseEnterRuntime` n’est pas égal au nombre d’appels à `ReverseLeaveRuntime` .  
+> Les appels peuvent provenir du code non managé sans être imbriqués. Dans ce cas, il n’y a aucun appel à [EnterRuntime](ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](ihosttaskmanager-leaveruntime-method.md)ou `ReverseLeaveRuntime` , et le nombre d’appels à `ReverseEnterRuntime` n’est pas égal au nombre d’appels à `ReverseLeaveRuntime` .  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  

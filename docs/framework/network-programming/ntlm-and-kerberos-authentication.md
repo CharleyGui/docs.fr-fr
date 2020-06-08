@@ -1,5 +1,6 @@
 ---
 title: Authentification NTLM et Kerberos
+description: Découvrez comment l’authentification NTLM par défaut et l’authentification Kerberos fonctionnent pour une application .NET Framework et en savoir plus sur l’authentification NTLM non définie par défaut.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,12 +20,12 @@ helpviewer_keywords:
 - classes [.NET Framework], authentication
 - client authentication, NTLM
 ms.assetid: 9ef65560-f596-4469-bcce-f4d5407b55cd
-ms.openlocfilehash: 372101763bdd84b454e6e2db3ec6cf0ebdf3f991
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d91ebca084d84acd4eb8facb82ff08679ec35cd0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180701"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502234"
 ---
 # <a name="ntlm-and-kerberos-authentication"></a>Authentification NTLM et Kerberos
 Par défaut, l’authentification NTLM et l’authentification Kerberos utilisent les informations d’identification utilisateur de Microsoft Windows NT qui sont associées à l’application appelante pour tenter l’authentification auprès du serveur. Lorsque vous utilisez l’authentification NTLM qui n’est pas celle par défaut, l’application définit le type d’authentification sur NTLM et utilise un objet <xref:System.Net.NetworkCredential> pour passer le nom d’utilisateur, le mot de passe et le domaine à l’hôte, comme indiqué dans l’exemple suivant.  
@@ -64,5 +65,5 @@ WReq.Credentials = CredentialCache.DefaultCredentials;
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Authentification de base et de digest](basic-and-digest-authentication.md)
+- [Authentification de base et Digest](basic-and-digest-authentication.md)
 - [Authentification Internet](internet-authentication.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3fb8e178-342b-4c89-9bcf-f7f834e6cb77
 topic_type:
 - apiref
-ms.openlocfilehash: 20c7a90f27defa18a5ef311d1f3a549b81fc5c40
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cc3bc5140da0634b5172f6253de3de37bff487f1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175484"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492032"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers, méthode
 Énumère les jetons MemberRef représentant les membres du type spécifié.  
@@ -39,42 +39,42 @@ HRESULT EnumMembers (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `cl`  
- [dans] Un jeton TypeDef représentant le type dont les membres doivent être énumérés.  
+ dans Jeton TypeDef représentant le type dont les membres doivent être énumérés.  
   
  `rMembers`  
- [out] Le tableau utilisé pour contenir les jetons MemberDef.  
+ à Tableau utilisé pour contenir les jetons MemberDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rMembers`.  
   
  `pcTokens`  
- [out] Le nombre réel de jetons MemberDef retournés dans `rMembers`.  
+ à Nombre réel de jetons MemberDef retournés dans `rMembers` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumMembers`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de jetons MemberDef à énumérer. Dans ce `pcTokens` cas, c’est zéro.|  
+|`S_FALSE`|Il n’y a aucun jeton MemberDef à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
-## <a name="remarks"></a>Notes   
- Lors de l’énumération des `EnumMembers` collections de membres pour une classe, retourne uniquement les membres (champs et méthodes, mais **pas** les propriétés ou les événements) définis directement sur la classe. Il ne renvoie aucun membre dont la classe hérite, même si la classe fournit une mise en œuvre pour les membres hérités. Pour énumérer les membres hérités, l’appelant doit marcher explicitement sur la chaîne de l’héritage. Notez que les règles de la chaîne d’héritage peuvent varier en fonction de la langue ou du compilateur qui émettait les métadonnées originales.
+## <a name="remarks"></a>Remarques  
+ Lors de l’énumération des collections de membres pour une classe, `EnumMembers` retourne uniquement les membres (champs et méthodes, mais **pas** les propriétés ou les événements) définis directement sur la classe. Elle ne retourne pas les membres que la classe hérite, même si la classe fournit une implémentation pour ces membres hérités. Pour énumérer les membres hérités, l’appelant doit parcourir explicitement la chaîne d’héritage. Notez que les règles de la chaîne d’héritage peuvent varier selon le langage ou le compilateur qui a émis les métadonnées d’origine.
 
- Les propriétés et les `EnumMembers`événements ne sont pas énumérés par . Pour les énumérer, utilisez [EnumProperties](imetadataimport-enumproperties-method.md) ou [EnumEvents](imetadataimport-enumevents-method.md).
+ Les propriétés et les événements ne sont pas énumérés par `EnumMembers` . Pour les énumérer, utilisez [EnumProperties,](imetadataimport-enumproperties-method.md) ou [EnumEvents,](imetadataimport-enumevents-method.md).
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

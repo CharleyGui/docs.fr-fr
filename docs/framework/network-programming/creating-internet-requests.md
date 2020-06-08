@@ -1,5 +1,6 @@
 ---
 title: Création de requêtes Internet
+description: Découvrez comment les applications créent des instances WebRequest via WebRequest. Create, une méthode statique qui crée une classe dérivée basée sur le modèle URI qui lui est passé.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WebRequest class, sending and receiving data
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - Internet, requesting data
 - data requests, creating requests
 ms.assetid: faab683e-3f1e-4eee-b5e9-59f7245033d5
-ms.openlocfilehash: 80e3a6bd199691df9391e88d5a64fab5df2a08a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 598ef9d44737ef6b33af833cbfb7788170165588
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71048619"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502624"
 ---
 # <a name="creating-internet-requests"></a>Création de requêtes Internet
 Les applications créent des instances de <xref:System.Net.WebRequest> par le biais de la méthode <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>. Il s’agit d’une méthode statique qui crée une classe dérivée de **WebRequest** basée sur le schéma d’URI qui lui est passé.  
@@ -25,7 +26,7 @@ Les applications créent des instances de <xref:System.Net.WebRequest> par le bi
   
  Le .NET Framework fournit également les classes <xref:System.Net.FileWebRequest> et <xref:System.Net.FileWebResponse> afin de gérer les requêtes pour les ressources qui utilisent le schéma d’URI « file: ». De même, les classes <xref:System.Net.FtpWebRequest> et <xref:System.Net.FtpWebResponse> sont fournies pour gérer les requêtes pour les ressources qui utilisent le schéma d’URI « ftp: ». Si votre requête concerne une ressource qui utilise l’un de ces schémas, vous pouvez utiliser la méthode **WebRequest.Create** pour obtenir un objet avec lequel effectuer votre requête.  
   
- Pour gérer les requêtes qui utilisent d’autres protocoles au niveau de l’application, vous devez implémenter des classes propres au protocole dérivées de **WebRequest** et **WebResponse**. Pour plus d’informations, voir [Protocoles pluggables de programmation](programming-pluggable-protocols.md).  
+ Pour gérer les requêtes qui utilisent d’autres protocoles au niveau de l’application, vous devez implémenter des classes propres au protocole dérivées de **WebRequest** et **WebResponse**. Pour plus d’informations, consultez [programmation de protocoles enfichables](programming-pluggable-protocols.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

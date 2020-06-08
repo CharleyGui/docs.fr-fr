@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e0667ef7-1d31-4c89-a2d3-d426f023f8d2
 topic_type:
 - apiref
-ms.openlocfilehash: 4a258ce9121a287929ca5bc39c480f1ca2596e78
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3c7c3525f2f8753241c9a206e4cf5e552bf06efe
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437462"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503623"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps, méthode
 Obtient les métadonnées associées à la méthode référencée par le jeton MethodDef spécifié.  
@@ -53,10 +53,10 @@ HRESULT GetMethodProps (
  à Pointeur vers une mémoire tampon qui a le nom de la méthode.  
   
  `cchMethod`  
- dans Taille de `szMethod`demandée.  
+ dans Taille demandée de `szMethod` .  
   
  `pchMethod`  
- à Pointeur vers la taille en caractères larges de `szMethod`, ou dans le cas d’une troncation, le nombre réel de caractères larges dans le nom de la méthode.  
+ à Pointeur vers la taille en caractères larges de `szMethod` , ou dans le cas d’une troncation, le nombre réel de caractères larges dans le nom de la méthode.  
   
  `pdwAttr`  
  à Pointeur vers tous les indicateurs associés à la méthode.  
@@ -65,7 +65,7 @@ HRESULT GetMethodProps (
  à Pointeur vers la signature de métadonnées binaires de la méthode.  
   
  `pcbSigBlob`  
- à Pointeur vers la taille en octets de `ppvSigBlob`.  
+ à Pointeur vers la taille en octets de `ppvSigBlob` .  
   
  `pulCodeRVA`  
  à Pointeur vers l’adresse virtuelle relative de la méthode.  
@@ -74,15 +74,15 @@ HRESULT GetMethodProps (
  à Pointeur vers tous les indicateurs d’implémentation de la méthode.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b60f1f59-9825-4b57-961f-d2979518e6a7
 topic_type:
 - apiref
-ms.openlocfilehash: 5bc5752d4d2b772b1d18f438c4daaa1b8938da9e
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 8cbac3b4ad25ba7dc01413f0c1b44541c43b3999
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842346"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503872"
 ---
 # <a name="ihosttaskmanagercallneedshosthook-method"></a>IHostTaskManager::CallNeedsHostHook, méthode
 Permet à l’hôte de spécifier si le common language runtime (CLR) peut incorporer l’appel spécifié à une fonction non managée.  
@@ -55,7 +55,7 @@ HRESULT CallNeedsHostHook (
 ## <a name="remarks"></a>Remarques  
  Pour optimiser l’exécution du code, le CLR effectue une analyse de chaque appel de code non managé pendant la compilation pour déterminer si l’appel peut être Inline. `CallNeedsHostHook`permet à l’hôte de substituer cette décision en exigeant qu’un appel à une fonction non managée soit raccordé. Si l’hôte requiert un Hook, le runtime n’incorpore pas l’appel.  
   
- L’hôte nécessite généralement un raccordement à l’endroit où il doit ajuster un État à virgule flottante, ou à la réception d’une notification indiquant qu’un appel passe à un État où l’hôte ne peut pas suivre les demandes de mémoire du runtime ou les verrous pris. Lorsque l’hôte requiert que l’appel soit raccordé, le runtime avertit l’hôte des transitions vers et à partir du code managé en utilisant des appels à [EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md), [ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md)et [ReverseLeaveRuntime](ihosttaskmanager-reverseleaveruntime-method.md).  
+ L’hôte nécessite généralement un raccordement à l’endroit où il doit ajuster un État à virgule flottante, ou à la réception d’une notification indiquant qu’un appel passe à un État où l’hôte ne peut pas suivre les demandes de mémoire du runtime ou les verrous pris. Lorsque l’hôte requiert que l’appel soit raccordé, le runtime avertit l’hôte des transitions vers et à partir du code managé en utilisant des appels à [EnterRuntime](ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](ihosttaskmanager-leaveruntime-method.md), [ReverseEnterRuntime](ihosttaskmanager-reverseenterruntime-method.md)et [ReverseLeaveRuntime](ihosttaskmanager-reverseleaveruntime-method.md).  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  

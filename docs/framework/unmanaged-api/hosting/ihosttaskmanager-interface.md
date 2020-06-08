@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4a0b05b9-3ef1-4607-b7c8-bd4dd43647a0
 topic_type:
 - apiref
-ms.openlocfilehash: b742f717f4caa0ba23d5a4c1438ed3ce4dcc60d7
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 190908c675b96b8ea2d81fb0203aa16a80d6a8b4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842255"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501396"
 ---
 # <a name="ihosttaskmanager-interface"></a>IHostTaskManager, interface
 Fournit des méthodes qui permettent au common language runtime (CLR) d’utiliser des tâches via l’hôte au lieu d’utiliser le thread de système d’exploitation standard ou les fonctions Fiber.  
@@ -40,7 +40,7 @@ Fournit des méthodes qui permettent au common language runtime (CLR) d’utilis
 |[LeaveRuntime, méthode](ihosttaskmanager-leaveruntime-method.md)|Avertit l’hôte que le code managé va effectuer un appel à une fonction non managée.|  
 |[ReverseEnterRuntime, méthode](ihosttaskmanager-reverseenterruntime-method.md)|Indique à l’hôte qu’un appel est effectué dans le common language runtime (CLR) à partir du code non managé.|  
 |[ReverseLeaveRuntime, méthode](ihosttaskmanager-reverseleaveruntime-method.md)|Avertit l’hôte que le contrôle quitte le CLR et entre une fonction non managée qui a été, à son tour, appelée à partir du code managé.|  
-|[SetCLRTaskManager, méthode](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-setclrtaskmanager-method.md)|Fournit à l’hôte un pointeur d’interface vers une instance [ICLRTaskManager](iclrtaskmanager-interface.md) implémentée par le CLR.|  
+|[SetCLRTaskManager, méthode](ihosttaskmanager-setclrtaskmanager-method.md)|Fournit à l’hôte un pointeur d’interface vers une instance [ICLRTaskManager](iclrtaskmanager-interface.md) implémentée par le CLR.|  
 |[SetLocale, méthode](ihosttaskmanager-setlocale-method.md)|Avertit l’hôte que le CLR a modifié les paramètres régionaux de la tâche actuelle.|  
 |[SetStackGuarantee, méthode](ihosttaskmanager-setstackguarantee-method.md)|Réservé à un usage interne uniquement.|  
 |[SetUILocale, méthode](ihosttaskmanager-setuilocale-method.md)|Avertit l’hôte que les paramètres régionaux de l’interface utilisateur ont été modifiés sur la tâche actuelle.|  

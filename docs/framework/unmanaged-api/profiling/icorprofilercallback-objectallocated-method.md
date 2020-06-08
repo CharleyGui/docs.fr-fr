@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: eb412622-77cc-4abd-a2cd-c910fe8edd54
 topic_type:
 - apiref
-ms.openlocfilehash: 38d9e83e9fa0e9cd0586fb10a6fd79c29bead4a6
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 9a402b7dfc3ece9d38994ed897162fe0d81ff0b9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866102"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503300"
 ---
 # <a name="icorprofilercallbackobjectallocated-method"></a>ICorProfilerCallback::ObjectAllocated, méthode
 Indique au profileur que la mémoire dans le tas a été allouée pour un objet.  
@@ -33,24 +33,24 @@ HRESULT ObjectAllocated(
     [in] ClassID classId);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `objectId`  
  dans ID de l’objet pour lequel la mémoire a été allouée.  
   
  `classId`  
  dans ID de la classe dont l’objet est une instance.  
   
-## <a name="remarks"></a>Notes  
- La méthode `ObjectedAllocated` n’est pas appelée pour les allocations à partir de la pile ou de la mémoire non managée. Le paramètre `classId` peut faire référence à une classe dans du code managé qui n’a pas encore été chargée. Le profileur reçoit un rappel de charge de classe pour cette classe immédiatement après le rappel `ObjectAllocated`.  
+## <a name="remarks"></a>Remarques  
+ La `ObjectedAllocated` méthode n’est pas appelée pour les allocations à partir de la pile ou de la mémoire non managée. Le `classId` paramètre peut faire référence à une classe dans du code managé qui n’a pas encore été chargée. Le profileur reçoit un rappel de charge de classe pour cette classe immédiatement après le `ObjectAllocated` rappel.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ce259d1d-cd81-4490-a7a1-0d0ea0804872
 topic_type:
 - apiref
-ms.openlocfilehash: 1e881b4a55a99bac3f9ca0e8db1556807b888f13
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8622920a81f4b469361ffa879f7a4eeda697cab9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616961"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504223"
 ---
 # <a name="iclrgcmanagergetstats-method"></a>ICLRGCManager::GetStats, méthode
 Obtient un jeu de statistiques actuelles sur le système de garbage collection du common language runtime.  
@@ -37,7 +37,7 @@ HRESULT GetStats (
  `pStats`  
  [in, out] Instance [COR_GC_STATS](cor-gc-stats-structure.md) qui contient les statistiques demandées.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -48,10 +48,10 @@ HRESULT GetStats (
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois que la méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Le CLR calcule et retourne uniquement les statistiques qui sont spécifiées par le `Flags` champ de `pStats` .  
   
- Définissez le `Flags` champ sur une ou plusieurs valeurs de l’énumération [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) pour spécifier les statistiques de la structure [COR_GC_STATS](cor-gc-stats-structure.md) à définir.  
+ Définissez le `Flags` champ sur une ou plusieurs valeurs de l’énumération [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) pour spécifier les statistiques de la structure [COR_GC_STATS](cor-gc-stats-structure.md) à définir.  
   
  Voici un exemple d’utilisation :  
   
@@ -61,7 +61,7 @@ GCStats.Flags = COR_GC_COUNTS | COR_GC_MEMORYUSAGE;
 pCLRGCManager->GetStats(&GCStats);  
 ```  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
@@ -80,4 +80,4 @@ pCLRGCManager->GetStats(&GCStats);
 - [ICLRGCManager, interface](iclrgcmanager-interface.md)
 - [Interfaces d'hébergement du CLR](clr-hosting-interfaces.md)
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hébergement](index.md)
+- [Hosting](index.md)

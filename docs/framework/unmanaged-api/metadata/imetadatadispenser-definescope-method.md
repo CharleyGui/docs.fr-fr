@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: af28db02-29af-45ac-aec6-8d6c6123c2ff
 topic_type:
 - apiref
-ms.openlocfilehash: 021ef8de602d6dd928f49e69e36f8d4a61425745
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 12a32b5d2f0647ea2d9b696d08d6644e30be0c65
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008363"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501350"
 ---
 # <a name="imetadatadispenserdefinescope-method"></a>IMetaDataDispenser::DefineScope, méthode
 Crée une zone en mémoire dans laquelle vous pouvez créer des métadonnées.  
@@ -54,9 +54,9 @@ HRESULT DefineScope (
 ## <a name="remarks"></a>Remarques  
  `DefineScope`crée un ensemble de tables de métadonnées en mémoire, génère un GUID unique (identificateur de version de module, ou MVID) pour les métadonnées, et crée une entrée dans la table de module pour l’unité de compilation en cours d’émission.  
   
- Vous pouvez attacher des attributs à la portée de métadonnées dans son ensemble à l’aide de la méthode [IMetaDataEmit :: SetModuleProps,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmoduleprops-method.md) ou [IMetaDataEmit ::D efinecustomattribute](imetadataemit-definecustomattribute-method.md) , selon le cas.  
+ Vous pouvez attacher des attributs à la portée de métadonnées dans son ensemble à l’aide de la méthode [IMetaDataEmit :: SetModuleProps,](imetadataemit-setmoduleprops-method.md) ou [IMetaDataEmit ::D efinecustomattribute](imetadataemit-definecustomattribute-method.md) , selon le cas.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  

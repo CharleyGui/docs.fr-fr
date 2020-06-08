@@ -1,5 +1,6 @@
 ---
 title: Utilisation d’un socket client asynchrone
+description: Cet exemple montre un socket client asynchrone. .NET Framework la programmation asynchrone permet à une application de continuer à s’exécuter pendant le traitement d’une connexion.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
-ms.openlocfilehash: 748745ca6799005dccdbfcbcc37a8c2a38f2a88e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9cf46e9519bcecf4d7a20ff99b86fa5f66af2087
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180649"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502039"
 ---
 # <a name="using-an-asynchronous-client-socket"></a>Utilisation d’un socket client asynchrone
 Un socket client asynchrone n’interrompt pas l’exécution de l’application durant les opérations réseau. Au lieu de cela, il utilise le modèle de programmation asynchrone standard de .NET Framework pour traiter la connexion réseau sur un thread pendant que l’application continue de s’exécuter sur le thread d’origine. Les sockets asynchrones sont appropriés pour les applications qui utilisent le réseau de manière intensive ou qui ne peuvent pas être interrompues en attendant la fin des opérations réseau.  

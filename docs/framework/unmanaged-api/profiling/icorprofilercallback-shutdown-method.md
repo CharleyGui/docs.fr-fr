@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1ea194f0-a331-4855-a2ce-37393b8e5f84
 topic_type:
 - apiref
-ms.openlocfilehash: 490f9dd5446a51bd07881cdb9825d737e380a63e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f6873de1a864489d144a671b1a9e1349eaf77d15
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865855"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503178"
 ---
 # <a name="icorprofilercallbackshutdown-method"></a>ICorProfilerCallback::Shutdown, méthode
 Notifie le profileur que l’application est en cours d’arrêt.  
@@ -32,20 +32,20 @@ HRESULT Shutdown();
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le code du profileur ne peut pas appeler sans risque les méthodes de l’interface [ICorProfilerInfo](icorprofilerinfo-interface.md) après l’appel de la méthode `Shutdown`. Tous les appels aux méthodes `ICorProfilerInfo` entraînent un comportement indéfini après le retour de la méthode `Shutdown`. Certains événements immuables peuvent encore se produire après l’arrêt ; le profileur doit effectuer un retour immédiatement lorsque cela se produit.  
+ Le code du profileur ne peut pas appeler sans risque les méthodes de l’interface [ICorProfilerInfo](icorprofilerinfo-interface.md) après l’appel de la `Shutdown` méthode. Tous les appels aux `ICorProfilerInfo` méthodes entraînent un comportement indéfini après le `Shutdown` retour de la méthode. Certains événements immuables peuvent encore se produire après l’arrêt ; le profileur doit effectuer un retour immédiatement lorsque cela se produit.  
   
- La méthode `Shutdown` est appelée uniquement si l’application managée en cours de profilage a démarré en tant que code managé (autrement dit, le frame initial sur la pile de processus est managé). Si l’application a démarré en tant que code non managé mais est ensuite basculée dans le code managé, créant ainsi une instance du common language runtime (CLR), `Shutdown` ne sera pas appelé. Dans ce cas, le profileur doit inclure dans sa bibliothèque une routine de `DllMain` qui utilise la valeur DLL_PROCESS_DETACH pour libérer des ressources et effectuer le traitement du nettoyage de ses données, telles que le vidage des traces sur le disque, etc.  
+ La `Shutdown` méthode est appelée uniquement si l’application managée en cours de profilage a démarré en tant que code managé (autrement dit, le frame initial sur la pile de processus est managé). Si l’application a démarré en tant que code non managé mais est ensuite basculée dans le code managé, la création d’une instance du common language runtime (CLR) ne sera `Shutdown` pas appelée. Dans ce cas, le profileur doit inclure dans sa bibliothèque une `DllMain` routine qui utilise la valeur DLL_PROCESS_DETACH pour libérer des ressources et effectuer le traitement du nettoyage de ses données, telles que le vidage des traces sur le disque, etc.  
   
- En général, le profileur doit faire face à des arrêts inattendus. Par exemple, un processus peut être arrêté par Win32 `TerminateProcess` méthode (déclaré dans Winbase. h). Dans d’autres cas, le CLR arrêtera certains threads managés (threads d’arrière-plan) sans fournir de messages de destruction ordonnés pour eux.  
+ En général, le profileur doit faire face à des arrêts inattendus. Par exemple, un processus peut être arrêté par la `TerminateProcess` méthode Win32 (déclarée dans Winbase. h). Dans d’autres cas, le CLR arrêtera certains threads managés (threads d’arrière-plan) sans fournir de messages de destruction ordonnés pour eux.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

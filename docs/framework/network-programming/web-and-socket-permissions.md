@@ -1,5 +1,6 @@
 ---
 title: Autorisations web et socket
+description: Découvrez comment les classes WebPermission et SocketPermission assurent la sécurité Internet pour l’utilisation de l’espace de noms System.Net dans l' .NET Framework.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Networking
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - positions [.NET Framework], granting
 ms.assetid: d51ad8cb-03ae-4a51-bfcd-cfcf6b98afa9
-ms.openlocfilehash: d1b993acbf20eac244e596075c3f826bba3211a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 08ae360e8097f7281631da2a3f9846994dfbf5b6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71046866"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501896"
 ---
 # <a name="web-and-socket-permissions"></a>Autorisations web et socket
 La sécurité Internet pour les applications utilisant l’espace de noms <xref:System.Net> est apportée par les classes <xref:System.Net.WebPermission> et <xref:System.Net.SocketPermission>. La classe **WebPermission** détermine si une application est autorisée à demander des données à partir d’un URI ou d’utiliser un URI sur Internet. La classe **SocketPermission** détermine si une application est autorisée à utiliser un <xref:System.Net.Sockets.Socket> pour accepter des données sur un port local ou pour communiquer avec des appareils distants utilisant un protocole de transport à une autre adresse, en fonction de l’hôte, du numéro de port et du protocole de transport du socket.  

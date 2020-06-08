@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cd93a48d-1fed-4706-bec6-a05dc3b64fbd
 topic_type:
 - apiref
-ms.openlocfilehash: fd7f149e806727d849cdceb3ffbc5dc7392fcf1d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8feba8e67f3a90dd48fd957065a9c166c204b87c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177411"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492731"
 ---
 # <a name="imetadataemit2setgenericparamprops-method"></a>IMetaDataEmit2::SetGenericParamProps, méthode
-Définit la valeur de la propriété pour la définition de paramètre générique référencée par le jeton spécifié.  
+Définit des valeurs de propriété pour la définition de paramètre générique référencée par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,30 +39,30 @@ HRESULT SetGenericParamProps (
   
 ## <a name="parameters"></a>Paramètres  
  `gp`  
- [dans] Le jeton pour la définition de paramètre générique pour laquelle définir les valeurs.  
+ dans Jeton pour la définition de paramètre générique pour laquelle définir des valeurs.  
   
  `dwParamFlags`  
- [dans] Une valeur de l’énumération [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) qui décrit le type pour le paramètre générique.  
+ dans Valeur de l’énumération [CorGenericParamAttr,](corgenericparamattr-enumeration.md) qui décrit le type du paramètre générique.  
   
  `szName`  
- [in] Facultatif. Le nom du paramètre pour lequel définir des valeurs.  
+ [in] Facultatif. Nom du paramètre pour lequel des valeurs doivent être définies.  
   
  `reserved`  
- [dans] Réservé à l’extensibility future.  
+ dans Réservé pour une future extensibilité.  
   
  `rtkConstraints`  
- [in] Facultatif. Un éventail de contraintes de type à durée nulle. Les membres du `mdTypeDef` `mdTypeRef`tableau `mdTypeSpec` doivent être un jeton, ou métadonnées.  
+ [in] Facultatif. Tableau de contraintes de type se terminant par zéro. Les membres de tableau doivent être un `mdTypeDef` `mdTypeRef` jeton de `mdTypeSpec` métadonnées, ou.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)
