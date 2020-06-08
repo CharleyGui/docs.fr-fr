@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 665f3cfc-cd6f-4880-906c-ea65ad384783
 topic_type:
 - apiref
-ms.openlocfilehash: 1b85c48859ac29738347d112dd0466a76bfdfd2c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 295d3d440529623f4569fd6c5f4debe7e4558990
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865335"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499439"
 ---
 # <a name="icorprofilercallback4-interface"></a>ICorProfilerCallback4, interface
 Fournit des méthodes de rappel que le common language runtime (CLR) utilise pour communiquer des informations au profileur.  
@@ -37,14 +37,14 @@ Fournit des méthodes de rappel que le common language runtime (CLR) utilise pou
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

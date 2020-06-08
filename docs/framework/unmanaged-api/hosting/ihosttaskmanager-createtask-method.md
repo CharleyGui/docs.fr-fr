@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a6f8ad36-61e1-42b0-9db2-add575646d18
 topic_type:
 - apiref
-ms.openlocfilehash: 7079a915c0402df62afa5648317619af82c943b0
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 4037ffe63d8ebfca67cbd0b3293d36be7481b1bd
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841980"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501415"
 ---
 # <a name="ihosttaskmanagercreatetask-method"></a>IHostTaskManager::CreateTask, méthode
 Demande que l’hôte crée une nouvelle tâche.  
@@ -47,7 +47,7 @@ HRESULT CreateTask (
  dans Pointeur vers les données utilisateur à passer à la fonction, ou null si la fonction n’accepte aucun paramètre.  
   
  `ppTask`  
- à Pointeur vers l’adresse d’une instance [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) créée par l’hôte, ou null si la tâche ne peut pas être créée. La tâche reste dans un état suspendu jusqu’à ce qu’elle soit explicitement démarrée par un appel à [IHostTask :: Start](ihosttask-start-method.md).  
+ à Pointeur vers l’adresse d’une instance [IHostTask](ihosttask-interface.md) créée par l’hôte, ou null si la tâche ne peut pas être créée. La tâche reste dans un état suspendu jusqu’à ce qu’elle soit explicitement démarrée par un appel à [IHostTask :: Start](ihosttask-start-method.md).  
   
 ## <a name="return-value"></a>Valeur renvoyée  
   

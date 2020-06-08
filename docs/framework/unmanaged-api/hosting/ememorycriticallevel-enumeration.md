@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2ca8a7a2-7b54-4ba3-8e73-277c7df485f3
 topic_type:
 - apiref
-ms.openlocfilehash: 248f1d281697923e2da14517ca174fe615bba4ff
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 359dd84032fce920892631dda2615f63aa54fa6b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616201"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504379"
 ---
 # <a name="ememorycriticallevel-enumeration"></a>EMemoryCriticalLevel, énumération
 Contient des valeurs qui indiquent l’impact d’un échec lorsqu’une allocation de mémoire spécifique a été demandée, mais ne peut pas être satisfaite.  
@@ -42,10 +42,10 @@ typedef enum {
 |`eProcessCritical`|Indique que l’allocation est essentielle à l’exécution du code managé dans le processus. Cette valeur est utilisée lors du démarrage et lors de l’exécution des finaliseurs. Si la mémoire ne peut pas être allouée, le CLR ne peut pas fonctionner dans le processus. Si l’allocation échoue, le CLR est effectivement désactivé. Tous les appels suivants dans le CLR échouent avec HOST_E_CLRNOTAVAILABLE.|  
 |`eTaskCritical`|Indique que l’allocation est essentielle à l’exécution de la tâche qui a demandé l’allocation. Si la mémoire ne peut pas être allouée, le CLR ne peut pas garantir que la tâche peut être exécutée. En cas de défaillance, le CLR déclenche une <xref:System.Threading.ThreadAbortException> sur le thread du système d’opération physique.|  
   
-## <a name="remarks"></a>Notes  
- Les méthodes d’allocation de mémoire définies dans les interfaces [IHostMemoryManager](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md) et [IHostMalloc](ihostmalloc-interface.md) prennent un paramètre de ce type. En fonction de la gravité d’un échec, un hôte peut décider s’il faut faire échouer la demande d’allocation immédiatement ou attendre qu’elle soit satisfaite.  
+## <a name="remarks"></a>Remarques  
+ Les méthodes d’allocation de mémoire définies dans les interfaces [IHostMemoryManager](ihostmemorymanager-interface.md) et [IHostMalloc](ihostmalloc-interface.md) prennent un paramètre de ce type. En fonction de la gravité d’un échec, un hôte peut décider s’il faut faire échouer la demande d’allocation immédiatement ou attendre qu’elle soit satisfaite.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

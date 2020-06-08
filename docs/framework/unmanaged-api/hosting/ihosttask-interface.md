@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a71dbbd5-64b8-47eb-9f03-8e8c85fbe2bc
 topic_type:
 - apiref
-ms.openlocfilehash: f8f476f681764a46700dd5ec83c8f9b2739f18f6
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1b7209a36f8e9d6f02bd4cc1882adeef8af30c3d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842489"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503919"
 ---
 # <a name="ihosttask-interface"></a>IHostTask, interface
 Fournit des méthodes qui permettent au common language runtime (CLR) de communiquer avec l’hôte pour gérer des tâches.  
@@ -30,8 +30,8 @@ Fournit des méthodes qui permettent au common language runtime (CLR) de communi
 |------------|-----------------|  
 |[Alert, méthode](ihosttask-alert-method.md)|Demande que l’hôte réactive la tâche représentée par l' `IHostTask` instance actuelle, afin que la tâche puisse être abandonnée.|  
 |[GetPriority, méthode](ihosttask-getpriority-method.md)|Obtient le niveau de priorité de thread de la tâche représentée par l' `IHostTask` instance actuelle.|  
-|[Join, méthode](../../../../docs/framework/unmanaged-api/hosting/ihosttask-join-method.md)|Bloque la tâche appelante jusqu’à ce que la tâche représentée par l' `IHostTask` instance actuelle se termine, que l’intervalle de temps spécifié s’écoule, ou que la méthode [IHostTask :: Alert](ihosttask-alert-method.md) soit appelée.|  
-|[SetCLRTask, méthode](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md)|Associe une instance d' [interface ICLRTask](iclrtask-interface.md) à l' `IHostTask` instance actuelle.|  
+|[Join, méthode](ihosttask-join-method.md)|Bloque la tâche appelante jusqu’à ce que la tâche représentée par l' `IHostTask` instance actuelle se termine, que l’intervalle de temps spécifié s’écoule, ou que la méthode [IHostTask :: Alert](ihosttask-alert-method.md) soit appelée.|  
+|[SetCLRTask, méthode](ihosttask-setclrtask-method.md)|Associe une instance d' [interface ICLRTask](iclrtask-interface.md) à l' `IHostTask` instance actuelle.|  
 |[SetPriority, méthode](ihosttask-setpriority-method.md)|Demande que l’hôte ajuste le niveau de priorité de thread pour la tâche représentée par l' `IHostTask` instance actuelle.|  
 |[Start, méthode](ihosttask-start-method.md)|Demande que l’hôte déplace la tâche représentée par l' `IHostTask` instance actuelle d’un état suspendu à un état actif, dans lequel le code peut être exécuté.|  
   

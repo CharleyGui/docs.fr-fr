@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0117e080-05f9-4772-885d-e1847230947c
 topic_type:
 - apiref
-ms.openlocfilehash: 8841fab0517353849ef99594bcbd03dda772c766
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 426b39aa3d1ada5ae44565a742b70681a7bcf6d3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616500"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493433"
 ---
 # <a name="_corvalidateimage-function"></a>_CorValidateImage, fonction
 Valide les images de modules managés et notifie le chargeur du système d’exploitation après qu’elles ont été chargées.  
@@ -40,7 +40,7 @@ STDAPI _CorValidateImage (
  `FileName`  
  dans Nom de fichier de l’image.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  Cette fonction retourne les valeurs standard `E_INVALIDARG` , `E_OUTOFMEMORY` , `E_UNEXPECTED` et `E_FAIL` , ainsi que les valeurs suivantes.  
   
 |Valeur de retour|Description|  
@@ -48,7 +48,7 @@ STDAPI _CorValidateImage (
 |`STATUS_INVALID_IMAGE_FORMAT`|L’image n’est pas valide. Cette valeur a le HRESULT 0xC000007BL.|  
 |`STATUS_SUCCESS`|L’image est valide. Cette valeur a le HRESULT 0x00000000L.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Dans Windows XP et versions ultérieures, le chargeur du système d’exploitation recherche les modules managés en examinant le bit du répertoire du descripteur COM dans l’en-tête COFF (Common Object File Format). Un bit défini indique un module managé. Si le chargeur détecte un module managé, il charge MsCorEE. dll et appelle `_CorValidateImage` , qui effectue les actions suivantes :  
   
 - Confirme que l’image est un module managé valide.  
@@ -59,7 +59,7 @@ STDAPI _CorValidateImage (
   
 - Retourne au chargeur lorsque les images de modules managés sont chargées.  
   
- Pour les images exécutables, le chargeur du système d’exploitation appelle ensuite la fonction [_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) , quel que soit le point d’entrée spécifié dans le fichier exécutable. Pour les images d’assembly DLL, le chargeur appelle la fonction [_CorDllMain](cordllmain-function.md) .  
+ Pour les images exécutables, le chargeur du système d’exploitation appelle ensuite la fonction [_CorExeMain](corexemain-function.md) , quel que soit le point d’entrée spécifié dans le fichier exécutable. Pour les images d’assembly DLL, le chargeur appelle la fonction [_CorDllMain](cordllmain-function.md) .  
   
  `_CorExeMain`ou `_CorDllMain` effectue les actions suivantes :  
   
@@ -71,7 +71,7 @@ STDAPI _CorValidateImage (
   
  Le chargeur appelle la fonction [_CorImageUnloading](corimageunloading-function.md) lorsque les images de modules managés sont déchargées. Toutefois, cette fonction n’exécute aucune action ; elle retourne simplement.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  

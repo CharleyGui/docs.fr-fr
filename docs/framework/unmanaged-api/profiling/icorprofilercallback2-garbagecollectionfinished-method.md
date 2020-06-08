@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1a5758ea-2354-43c0-92a3-32c9909d64e1
 topic_type:
 - apiref
-ms.openlocfilehash: 30f2e675532848c2dbb1f055a0f1489cf3b2baa1
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 47f25dbb1f88dbf580b096246016cd46f2d0d89c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865790"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499822"
 ---
 # <a name="icorprofilercallback2garbagecollectionfinished-method"></a>ICorProfilerCallback2::GarbageCollectionFinished, méthode
 Notifie le profileur que garbage collection est terminé et que tous les rappels de garbage collection ont été émis pour celui-ci.  
@@ -32,16 +32,16 @@ HRESULT GarbageCollectionFinished();
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le profileur peut inspecter en toute sécurité les objets dans leurs emplacements finaux lorsque la méthode `GarbageCollectionFinished` est appelée.  
+ Le profileur peut inspecter en toute sécurité les objets dans leurs emplacements finaux lorsque la `GarbageCollectionFinished` méthode est appelée.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6105c13e-d9cd-44d2-a95a-924e042830c7
 topic_type:
 - apiref
-ms.openlocfilehash: 348ca9d157a668dcd180076475f1fe9861197174
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 4c015d77deb4e6ed3d43074f2903e26b687de84f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616661"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493563"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime, fonction
 Charge le common language runtime (CLR) dans un processus à l’aide des informations de version stockées dans un fichier XML. Le format du fichier XML est modélisé après le fichier de configuration d’application standard. Pour plus d’informations sur les fichiers de configuration, consultez [Schéma des fichiers de configuration](../../configure-apps/file-schema/index.md).  
@@ -42,12 +42,12 @@ HRESULT CorBindToCurrentRuntime (
  `pwszFileName`  
  dans Nom d’un fichier de configuration d’application qui spécifie la version du CLR à charger. Si le nom de fichier n’est pas qualifié complet, il est supposé être dans le même répertoire que l’exécutable qui effectue l’appel.  
   
- La version du runtime à charger est décrite par l’attribut version dans l’élément [ \< requiredRuntime>](../../configure-apps/file-schema/startup/requiredruntime-element.md) du fichier de configuration.  
+ La version du runtime à charger est décrite par l’attribut version dans l' [\<requiredRuntime>](../../configure-apps/file-schema/startup/requiredruntime-element.md) élément du fichier de configuration.  
   
  Si aucune version n’est spécifiée, ou si l' `<requiredRuntime>` élément est introuvable, la dernière version du CLR qui est installée sur l’ordinateur est chargée.  
   
  `rclsid`  
- dans `CLSID`De la coclasse qui implémente l’interface [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) ou [ICLRRuntimeHost](iclrruntimehost-interface.md) . Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
+ dans `CLSID`De la coclasse qui implémente l’interface [ICorRuntimeHost](icorruntimehost-interface.md) ou [ICLRRuntimeHost](iclrruntimehost-interface.md) . Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
   
  `riid`  
  dans `IID`De l’interface que vous demandez. Les valeurs prises en charge sont IID_ICorRuntimeHost ou IID_ICLRRuntimeHost.  
@@ -55,7 +55,7 @@ HRESULT CorBindToCurrentRuntime (
  `ppv`  
  à Pointeur d’interface retourné.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

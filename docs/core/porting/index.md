@@ -3,12 +3,12 @@ title: Déplacer du .NET Framework à .NET Core
 description: Présentation du processus de portage et d’outils qui peuvent s’avérer utiles lors du portage d’un projet .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: c6797a5b3a97ddd01f86498d896e859baf8997be
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: 74fe4519e41a07bc78a4dc346f8d1b52b5c7d092
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158282"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502767"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Vue d’ensemble du Portage à partir de .NET Framework vers .NET Core
 
@@ -39,6 +39,9 @@ Pour identifier les projets de commande à migrer, vous pouvez utiliser les outi
 
 - Les [diagrammes de dépendance dans Visual Studio](/visualstudio/modeling/create-layer-diagrams-from-your-code) peuvent créer un graphique orienté du code dans une solution.
 - Exécutez `msbuild _SolutionPath_ /t:GenerateRestoreGraphFile /p:RestoreGraphOutputPath=graph.dg.json` pour générer un document JSON qui comprend la liste des références de projet.
+- Exécutez l' [Analyseur de portabilité .net](../../standard/analyzers/portability-analyzer.md) avec le `-r DGML` commutateur pour récupérer un diagramme de dépendance des assemblys. Vous pourrez trouver plus d’informations [ici](../../standard/analyzers/portability-analyzer.md#solution-wide-view).
+
+Une fois que vous avez des informations sur les dépendances, vous pouvez utiliser ces informations pour démarrer à partir des nœuds terminaux et travailler dans l’arborescence des dépendances en appliquant les étapes de la section suivante.
 
 ## <a name="per-project-steps"></a>Par étape de projet
 
@@ -46,7 +49,7 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
 1. Convertissez toutes vos `packages.config` dépendances au format [PackageReference](/nuget/consume-packages/package-references-in-project-files) avec l' [outil de conversion dans Visual Studio](/nuget/consume-packages/migrate-packages-config-to-package-reference).
 
-   Cette étape implique la conversion de vos dépendances `packages.config` à partir du format hérité. `packages.config`ne fonctionne pas sur .NET Core, cette conversion est donc nécessaire si vous avez des dépendances de package. Elle nécessite également uniquement les dépendances que vous utilisez directement dans un projet, ce qui facilite les étapes ultérieures en réduisant le nombre de dépendances que vous devez gérer.
+   Cette étape implique la conversion de vos dépendances à partir du `packages.config` format hérité. `packages.config`ne fonctionne pas sur .NET Core, cette conversion est donc nécessaire si vous avez des dépendances de package. Elle nécessite également uniquement les dépendances que vous utilisez directement dans un projet, ce qui facilite les étapes ultérieures en réduisant le nombre de dépendances que vous devez gérer.
 
 1. Convertissez votre fichier projet vers la nouvelle structure de fichiers de style SDK. Vous pouvez créer des projets pour .NET Core et copier des fichiers sources, ou essayer de convertir votre fichier projet existant à l’aide d’un outil.
 
@@ -66,7 +69,7 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
    Lors de la lecture des rapports générés par l’analyseur, les informations importantes sont les API réelles qui sont utilisées et pas nécessairement le pourcentage de prise en charge de la plateforme cible. De nombreuses API ont des options équivalentes dans .NET Standard/Core, et par conséquent, il est important de comprendre les scénarios dont votre bibliothèque ou votre application a besoin pour déterminer l’implication de la portabilité.
 
-   Dans certains cas, les API ne sont pas équivalentes et vous devez effectuer certaines directives de préprocesseur du compilateur (autrement dit `#if NET45`,) pour ajouter des plateformes au cas particulier. À ce stade, votre projet sera toujours ciblé .NET Framework. Pour chacun de ces cas ciblés, il est recommandé d’utiliser des conditions bien connues qui peuvent être comprises comme un scénario.  Par exemple, la prise en charge d’AppDomain dans .NET Core est limitée, mais pour le scénario de chargement et de déchargement des assemblys, il existe une nouvelle API qui n’est pas disponible dans .NET Core. Voici un moyen courant de gérer cela dans le code :
+   Dans certains cas, les API ne sont pas équivalentes et vous devez effectuer certaines directives de préprocesseur du compilateur (autrement dit, `#if NET45` ) pour ajouter des plateformes au cas particulier. À ce stade, votre projet sera toujours ciblé .NET Framework. Pour chacun de ces cas ciblés, il est recommandé d’utiliser des conditions bien connues qui peuvent être comprises comme un scénario.  Par exemple, la prise en charge d’AppDomain dans .NET Core est limitée, mais pour le scénario de chargement et de déchargement des assemblys, il existe une nouvelle API qui n’est pas disponible dans .NET Core. Voici un moyen courant de gérer cela dans le code :
 
    ```csharp
    #if FEATURE_APPDOMAIN_LOADING
@@ -78,9 +81,9 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
    #endif
    ```
 
-1. Installez l' [analyseur d’API .net](../../standard/analyzers/api-analyzer.md) dans vos projets pour identifier les API <xref:System.PlatformNotSupportedException> qui lèvent sur certaines plateformes et d’autres problèmes de compatibilité potentiels.
+1. Installez l' [analyseur d’API .net](../../standard/analyzers/api-analyzer.md) dans vos projets pour identifier les API qui lèvent <xref:System.PlatformNotSupportedException> sur certaines plateformes et d’autres problèmes de compatibilité potentiels.
 
-   Cet outil est similaire à l’analyseur de portabilité, mais au lieu d’analyser si le code peut être généré sur .NET Core, il analyse si vous utilisez une API d’une manière qui lève <xref:System.PlatformNotSupportedException> une au moment de l’exécution. Bien que cela ne soit pas courant si vous passez de .NET Framework 4.7.2 ou une version ultérieure, il est préférable de vérifier. Pour plus d’informations sur les API qui lèvent des exceptions sur .NET Core, consultez [API qui lèvent toujours des exceptions sur .net Core](../compatibility/unsupported-apis.md).
+   Cet outil est similaire à l’analyseur de portabilité, mais au lieu d’analyser si le code peut être généré sur .NET Core, il analyse si vous utilisez une API d’une manière qui lève une <xref:System.PlatformNotSupportedException> au moment de l’exécution. Bien que cela ne soit pas courant si vous passez de .NET Framework 4.7.2 ou une version ultérieure, il est préférable de vérifier. Pour plus d’informations sur les API qui lèvent des exceptions sur .NET Core, consultez [API qui lèvent toujours des exceptions sur .net Core](../compatibility/unsupported-apis.md).
 
 1. À ce stade, vous pouvez basculer vers le ciblage de .NET Core (généralement pour les applications) ou .NET Standard (pour les bibliothèques).
 
@@ -109,6 +112,6 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 ## <a name="next-steps"></a>Étapes suivantes
 
 > [!div class="nextstepaction"]
-> [Analyser les dépendances](third-party-deps.md)
-> package[NuGet package](../deploying/creating-nuget-packages.md)
-> [ASP.net to ASP.net Core migration](/aspnet/core/migration/proper-to-2x)
+> [Analyser les dépendances](third-party-deps.md) 
+>  Package [NuGet package](../deploying/creating-nuget-packages.md) 
+>  [Migration de ASP.net vers ASP.net Core](/aspnet/core/migration/proper-to-2x)

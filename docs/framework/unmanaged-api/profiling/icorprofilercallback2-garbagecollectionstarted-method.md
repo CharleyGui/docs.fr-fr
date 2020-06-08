@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 44eef087-f21f-4fe2-b481-f8a0ee022e7d
 topic_type:
 - apiref
-ms.openlocfilehash: c90c790c519cc0c422657e6e2d8040a365fbf48c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f025f4c0bc0ec8e11decddcdf64be50f68955266
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865777"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499803"
 ---
 # <a name="icorprofilercallback2garbagecollectionstarted-method"></a>ICorProfilerCallback2::GarbageCollectionStarted, méthode
 Notifie le profileur de code que garbage collection a démarré.  
@@ -34,31 +34,31 @@ HRESULT GarbageCollectionStarted(
     [in] COR_PRF_GC_REASON reason);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `cGenerations`  
- dans Nombre total d’entrées dans le tableau de `generationCollected`.  
+ dans Nombre total d’entrées dans le `generationCollected` tableau.  
   
  `generationCollected`  
- dans Tableau de valeurs booléennes, qui sont `true` si la génération qui correspond à l’index de tableau est collectée par ce garbage collection ; Sinon, `false`.  
+ dans Tableau de valeurs booléennes, qui sont `true` si la génération qui correspond à l’index de tableau est collectée par cette garbage collection ; sinon, `false` .  
   
  Le tableau est indexé par une valeur de l’énumération [COR_PRF_GC_GENERATION](cor-prf-gc-generation-enumeration.md) , qui indique la génération.  
   
  `reason`  
  dans Valeur de l’énumération [COR_PRF_GC_REASON](cor-prf-gc-reason-enumeration.md) qui indique la raison pour laquelle l’garbage collection a été induite.  
   
-## <a name="remarks"></a>Notes  
- Tous les rappels relatifs à ce garbage collection se produisent entre le rappel `GarbageCollectionStarted` et le rappel [ICorProfilerCallback2 :: GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) correspondant. Ces rappels n’ont pas besoin de se produire sur le même thread.  
+## <a name="remarks"></a>Remarques  
+ Tous les rappels relatifs à cet garbage collection se produisent entre le `GarbageCollectionStarted` rappel et le rappel [ICorProfilerCallback2 :: GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) correspondant. Ces rappels n’ont pas besoin de se produire sur le même thread.  
   
- Le profileur peut inspecter en toute sécurité les objets dans leurs emplacements d’origine pendant le rappel de `GarbageCollectionStarted`. Le garbage collector commence à déplacer des objets après le retour de `GarbageCollectionStarted`. Une fois que le profileur a retourné à partir de ce rappel, le profileur doit considérer tous les ID d’objet comme non valides jusqu’à ce qu’il reçoive un rappel `ICorProfilerCallback2::GarbageCollectionFinished`.  
+ Le profileur peut inspecter en toute sécurité les objets dans leurs emplacements d’origine pendant le `GarbageCollectionStarted` rappel. Le garbage collector commence à déplacer les objets après le retour de `GarbageCollectionStarted` . Une fois que le profileur a retourné à partir de ce rappel, le profileur doit considérer tous les ID d’objet comme non valides jusqu’à ce qu’il reçoive un `ICorProfilerCallback2::GarbageCollectionFinished` rappel.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

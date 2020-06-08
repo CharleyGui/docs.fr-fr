@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2a9e0ea7-a9e2-4817-b1c4-fcf15b215ea9
 topic_type:
 - apiref
-ms.openlocfilehash: 05d8c44655d8670194035c336bd62ae5d53bfec3
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 3dc5f04504cca632892c16d31c92a33935b356e0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862969"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497333"
 ---
 # <a name="icorprofilerinfo2getappdomainstaticaddress-method"></a>ICorProfilerInfo2::GetAppDomainStaticAddress, méthode
 Obtient l’adresse du champ statique du domaine d’application spécifié qui est dans la portée du domaine d’application spécifié.  
@@ -35,7 +35,7 @@ RESULT GetAppDomainStaticAddress(
     [out] void **ppAddress);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `classId`  
  dans ID de classe de la classe qui contient le champ statique de domaine d’application demandé.  
   
@@ -48,8 +48,8 @@ RESULT GetAppDomainStaticAddress(
  `ppAddress`  
  à Pointeur vers l’adresse du champ statique qui est dans le domaine d’application spécifié.  
   
-## <a name="remarks"></a>Notes  
- La méthode `GetAppDomainStaticAddress` peut retourner l’un des éléments suivants :  
+## <a name="remarks"></a>Remarques  
+ La `GetAppDomainStaticAddress` méthode peut retourner l’un des éléments suivants :  
   
 - CORPROF_E_DATAINCOMPLETE HRESULT si aucune adresse n’a été assignée au champ statique donné dans le contexte spécifié.  
   
@@ -57,14 +57,14 @@ RESULT GetAppDomainStaticAddress(
   
  Avant la fin du constructeur de classe d’une classe, `GetAppDomainStaticAddress` retourne CORPROF_E_DATAINCOMPLETE pour tous ses champs statiques, bien que certains champs statiques soient déjà initialisés et que les objets de racine garbage collection.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

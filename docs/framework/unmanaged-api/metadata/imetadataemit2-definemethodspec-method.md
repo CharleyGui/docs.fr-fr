@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3c24e552-fc69-4971-b65a-a3e4b5f7f1e8
 topic_type:
 - apiref
-ms.openlocfilehash: a5d9342b8bfe650106ccf9daf2a91dfbcd575446
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e067dc4943e6847177c13a683703e3a649a49e4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175536"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503816"
 ---
 # <a name="imetadataemit2definemethodspec-method"></a>IMetaDataEmit2::DefineMethodSpec, méthode
-Crée un exemple générique d’une méthode, et obtient un jeton à la définition.  
+Crée une instance générique d’une méthode et obtient un jeton pour la définition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT DefineMethodSpec (
   
 ## <a name="parameters"></a>Paramètres  
  `tkParent`  
- [dans] Un jeton pour la méthode de créer l’instance générique. Le jeton doit `mdMethodDef` être `mdMemberRef`de type ou .  
+ dans Jeton pour la méthode pour laquelle créer l’instance générique. Le jeton doit être de type `mdMethodDef` ou `mdMemberRef` .  
   
  `pvSigBlob`  
- [dans] Un pointeur à la signature binaire COM DE la méthode.  
+ dans Pointeur vers la signature COM+ binaire de la méthode.  
   
  `cbSibBlob`  
- [dans] La taille, dans les `pvSigBlob`octets, de .  
+ dans Taille, en octets, de `pvSigBlob` .  
   
  `pmi`  
- [out] Un jeton à la définition de signature des métadonnées de la méthode.  
+ à Jeton pour la définition de signature de métadonnées de la méthode.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)

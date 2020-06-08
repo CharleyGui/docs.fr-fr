@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3e2102c5-48b7-4c0e-b805-7e2b5e156e3d
 topic_type:
 - apiref
-ms.openlocfilehash: 514f227e3c0c385f61090079d2f5214dac9b3924
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: fbf6ce8c8c9628b08872058a794fb0e005764ab1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004528"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501298"
 ---
 # <a name="imetadataemitdefinemethod-method"></a>IMetaDataEmit::DefineMethod, méthode
 Crée une définition pour une méthode ou une fonction globale avec la signature spécifiée et retourne un jeton à cette définition de méthode.  
@@ -81,7 +81,7 @@ HRESULT DefineMethod (
  Vous ne devez pas définir de méthodes en double. Autrement dit, vous ne devez pas appeler `DefineMethod` avec un jeu de valeurs en double dans les `td` `wzName` paramètres, et `pvSig` . (Ces trois paramètres définissent ensemble la méthode de manière unique.). Toutefois, vous pouvez utiliser un triple dupliqué fourni qui, pour l’une des définitions de méthode, vous définissez le `mdPrivateScope` bit dans le `dwMethodFlags` paramètre. (Le `mdPrivateScope` bit signifie que le compilateur n’émet pas de référence à cette définition de méthode.)  
   
 ## <a name="method-implementation-information"></a>Informations d’implémentation de la méthode  
- Les informations sur l’implémentation de la méthode sont souvent inconnues au moment où la méthode est déclarée. Par conséquent, vous n’avez pas besoin de passer des valeurs dans les `ulCodeRVA` paramètres et lors de l' `dwImplFlags` appel de `DefineMethod` . Les valeurs peuvent être fournies ultérieurement via [IMetaDataEmit :: SetMethodImplFlags,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmethodimplflags-method.md) ou [IMetaDataEmit :: SetRVA](imetadataemit-setrva-method.md), selon le cas.  
+ Les informations sur l’implémentation de la méthode sont souvent inconnues au moment où la méthode est déclarée. Par conséquent, vous n’avez pas besoin de passer des valeurs dans les `ulCodeRVA` paramètres et lors de l' `dwImplFlags` appel de `DefineMethod` . Les valeurs peuvent être fournies ultérieurement via [IMetaDataEmit :: SetMethodImplFlags,](imetadataemit-setmethodimplflags-method.md) ou [IMetaDataEmit :: SetRVA](imetadataemit-setrva-method.md), selon le cas.  
   
  Dans certaines situations, telles que l’appel de la plateforme (PInvoke) ou les scénarios de COM Interop, le corps de la méthode n’est pas fourni et `ulCodeRVA` doit être défini sur zéro. Dans ces situations, la méthode ne doit pas être marquée comme abstract, car le runtime localise l’implémentation.  
   
@@ -101,7 +101,7 @@ HRESULT DefineMethod (
 |`ulCodeRVA`||0|  
 |`dwImplFlags`|Définissez `miCil` et `miManaged`.|Définissez `miNative` et `miUnmanaged`.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4c02ec37-cdf0-46b2-890e-235092741236
 topic_type:
 - apiref
-ms.openlocfilehash: 8a9fdcd650e18bb91e2a4e30e5a22fb2a991d25c
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: a3018d8477d5abd7d03ad8675503624d2e44e8f4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703496"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504132"
 ---
 # <a name="iclroneventmanagerunregisteractiononevent-method"></a>ICLROnEventManager::UnregisterActionOnEvent, méthode
 Annule l’inscription d’un pointeur de rappel précédemment inscrit pour l’événement spécifié.  
@@ -39,9 +39,9 @@ HRESULT UnregisterActionOnEvent (
  dans L’une des valeurs [EClrEvent](eclrevent-enumeration.md) , indiquant l’événement pour lequel annuler l’inscription du pointeur de rappel décrit par `pAction` .  
   
  `pAction`  
- dans Pointeur vers un objet [IActionOnCLREvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) qui a été passé en tant que paramètre à la méthode [RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md) .  
+ dans Pointeur vers un objet [IActionOnCLREvent](iactiononclrevent-interface.md) qui a été passé en tant que paramètre à la méthode [RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md) .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -52,7 +52,7 @@ HRESULT UnregisterActionOnEvent (
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois que la méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

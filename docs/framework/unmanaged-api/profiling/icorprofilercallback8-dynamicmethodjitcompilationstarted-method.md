@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8::DynamicMethodJITCompilationLa méthode
+title: ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationStarted
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationStarted
@@ -8,17 +8,17 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: e8b1a243b691d8d5eb364fd16821fd9156505c60
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a4c434c5d458602db8a4d582b239d6e57def6ace
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177044"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498997"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationLa méthode
-[Soutenu dans le cadre .NET 4.7 et les versions ultérieures]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationStarted
+[Pris en charge dans le .NET Framework 4,7 et versions ultérieures]  
   
-Informe le profileur chaque fois que la compilation JIT d’une méthode dynamique a commencé.  
+Notifie le profileur chaque fois que la compilation JIT d’une méthode dynamique a démarré.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,32 +33,32 @@ HRESULT DynamicMethodJITCompilationStarted(
   
 ## <a name="parameters"></a>Paramètres  
 [in] `functionId`  
-L’identifiant de la fonction mémoire pour laquelle la compilation JIT est commencée.
+Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.
 
-[dans] `fIsSafeToBlock` pour indiquer que le blocage peut faire attendre le temps d’exécution pour que le fil d’appel revienne de ce 
- `true` rappel; `false` pour indiquer que le blocage n’affectera pas le fonctionnement de l’exécution.  
+[in] `fIsSafeToBlock` 
+ `true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false`pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
 
-[dans] `pILHeader` Un pointeur au premier byte de l’en-tête il de la méthode.
+[in] `pILHeader` Pointeur vers le premier octet de l’en-tête IL de la méthode.
 
-[dans] `cbILHeader` Le nombre d’octets dans l’en-tête de l’IL.
+[in] `cbILHeader` Nombre d’octets dans l’en-tête IL.
 
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
 
-Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilée par JIT. Cela comprend divers talons IL et méthodes LCG. Son objectif est de fournir aux auteurs de profileur suffisamment d’informations pour identifier la méthode compilée aux utilisateurs.
+Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilée juste-à-temps. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
 
 > [!NOTE]
-> `functionId`les valeurs ne peuvent pas être utilisées pour résoudre leurs jetons de métadonnées, parce que les méthodes dynamiques n’ont pas de métadonnées.
+> `functionId`les valeurs ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
 
-Le `pILHeader` pointeur n’est valable que pendant le rappel.
+Le `pILHeader` pointeur est valide uniquement pendant le rappel.
 
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

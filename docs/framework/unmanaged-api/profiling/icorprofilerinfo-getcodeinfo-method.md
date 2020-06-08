@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 90140b0f-a926-4a7e-b6fa-23e05f703cce
 topic_type:
 - apiref
-ms.openlocfilehash: 583189cd667af142ab7d0934be34411644dac936
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: eb6efc738b270f8f76d7130a12af4927fb6220ce
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863918"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498360"
 ---
 # <a name="icorprofilerinfogetcodeinfo-method"></a>ICorProfilerInfo::GetCodeInfo, méthode
 Obtient l'étendue de code natif associée à l'ID de la fonction spécifiée.  
@@ -36,7 +36,7 @@ HRESULT GetCodeInfo(
     [out] ULONG      *pcSize);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `functionId`  
  [in] ID de la fonction à laquelle le code natif est associé.  
   
@@ -46,13 +46,13 @@ HRESULT GetCodeInfo(
  `pcSize`  
  [out] Pointeur vers un entier qui spécifie la taille, en octets, du code natif.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Pour optimiser la performance, le runtime dans la version 2.0 du .NET Framework fractionne le code natif précompilé d'une fonction en plusieurs régions. Par conséquent, la méthode `GetCodeInfo` est obsolète dans .NET Framework 2.0, car elle ne peut pas gérer l'étendue du code natif d'une fonction. Les profileurs doivent utiliser la méthode `ICorProfilerInfo2::GetCodeInfo2` plus générale à la place.  
   
  Cette fonction utilise des mémoires tampons allouées par l'appelant.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   

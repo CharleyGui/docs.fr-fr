@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7c9e9120-3104-42f0-86ce-19a025f20dcc
 topic_type:
 - apiref
-ms.openlocfilehash: 7410f91a853f3a677a105dc2e12a86d723c9fad6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea451bdd645d2d4dea4c5dd00408e0bc51804803
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177321"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492068"
 ---
 # <a name="imetadataimportenummemberswithname-method"></a>IMetaDataImport::EnumMembersWithName, méthode
 Énumère les jetons MemberDef représentant les membres du type spécifié avec le nom spécifié.  
@@ -40,43 +40,43 @@ HRESULT EnumMembersWithName (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `cl`  
- [dans] Un jeton TypeDef représentant le type avec des membres à énumérer.  
+ dans Jeton TypeDef représentant le type avec des membres à énumérer.  
   
  `szName`  
- [dans] Le nom du membre qui limite la portée de l’énumérateur.  
+ dans Nom du membre qui limite la portée de l’énumérateur.  
   
  `rMembers`  
- [out] Le tableau utilisé pour stocker les jetons MemberDef.  
+ à Tableau utilisé pour stocker les jetons MemberDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rMembers`.  
   
  `pcTokens`  
- [out] Le nombre réel de jetons MemberDef retournés dans `rMembers`.  
+ à Nombre réel de jetons MemberDef retournés dans `rMembers` .  
   
-## <a name="remarks"></a>Notes   
- Cette méthode énumère les champs et les méthodes, mais pas les propriétés ou les événements. Contrairement à [IMetaDataImport::EnumMembers](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md), `EnumMembersWithName` jette tous les jetons de champ et de membre qui n’ont pas le nom spécifié.  
+## <a name="remarks"></a>Remarques  
+ Cette méthode énumère les champs et les méthodes, mais pas les propriétés ou les événements. Contrairement à [IMetaDataImport :: EnumMembers,](imetadataimport-enummembers-method.md), `EnumMembersWithName` ignore tous les jetons de champ et de membre qui n’ont pas le nom spécifié.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumTypeDefs`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de jetons MemberDef à énumérer. Dans ce `pcTokens` cas, c’est zéro.|  
+|`S_FALSE`|Il n’y a aucun jeton MemberDef à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

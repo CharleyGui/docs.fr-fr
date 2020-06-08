@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f8e498f8-f93a-4b82-bd22-55bdbf5e8d45
 topic_type:
 - apiref
-ms.openlocfilehash: 096489fcdc9d604e003386501c22967b45ba6d7f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 2248f99b76aaabff4bd3dc78b6e777a95692bb9c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861097"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494518"
 ---
 # <a name="icorprofilerobjectenumskip-method"></a>ICorProfilerObjectEnum::Skip, méthode
 Avance le curseur de cet énumérateur de sa position actuelle afin que le nombre d’éléments spécifié soit ignoré.  
@@ -33,21 +33,21 @@ HRESULT Skip (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `celt`  
  dans Nombre d’éléments à ignorer.  
   
-## <a name="remarks"></a>Notes  
- La nouvelle position du curseur de cet énumérateur est : (position actuelle) + `celt`.  
+## <a name="remarks"></a>Remarques  
+ La nouvelle position du curseur de cet énumérateur est : (position actuelle) + `celt` .  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

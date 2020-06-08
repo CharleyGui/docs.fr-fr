@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 909aa530-2e3b-4d0a-a38a-a2750e535d7d
 topic_type:
 - apiref
-ms.openlocfilehash: bd7ba7ff10918e5953ea8ae89a60af3115af48a3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e6921a0f6420546ba1e866e37a7a7cb129a77c67
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437685"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491457"
 ---
 # <a name="imetadataimportgetcustomattributebyname-method"></a>IMetaDataImport::GetCustomAttributeByName, méthode
 Obtient l’attribut personnalisé, en fonction de son nom et de son propriétaire.  
@@ -47,21 +47,21 @@ HRESULT GetCustomAttributeByName (
  à Pointeur vers un tableau de données qui est la valeur de l’attribut personnalisé.  
   
  `pcbData`  
- à Taille en octets des données retournées dans *`ppData`.  
+ à Taille en octets des données retournées dans * `ppData` .  
   
-## <a name="remarks"></a>Notes  
- Il est légal de définir plusieurs attributs personnalisés pour le même propriétaire ; ils peuvent même avoir le même nom. Toutefois, `GetCustomAttributeByName` ne retourne qu’une seule instance. (`GetCustomAttributeByName` retourne la première instance qu’il rencontre.) Pour rechercher toutes les instances d’un attribut personnalisé, appelez la méthode [IMetaDataImport :: EnumCustomAttributes (](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) .  
+## <a name="remarks"></a>Remarques  
+ Il est légal de définir plusieurs attributs personnalisés pour le même propriétaire ; ils peuvent même avoir le même nom. Toutefois, `GetCustomAttributeByName` ne retourne qu’une seule instance. ( `GetCustomAttributeByName` retourne la première instance qu’il rencontre.) Pour rechercher toutes les instances d’un attribut personnalisé, appelez la méthode [IMetaDataImport :: EnumCustomAttributes (](imetadataimport-enumcustomattributes-method.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

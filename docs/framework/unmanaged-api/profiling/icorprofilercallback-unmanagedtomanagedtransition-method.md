@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ade2cc01-9b81-4e09-a5f9-b3b9dda27e96
 topic_type:
 - apiref
-ms.openlocfilehash: c381d4a85a1e836f1972060c8182dd698bb27550
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 8734fa9c9418b818cbe14ebe87ce2af6fa59c078
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76870533"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499842"
 ---
 # <a name="icorprofilercallbackunmanagedtomanagedtransition-method"></a>ICorProfilerCallback::UnmanagedToManagedTransition, méthode
 Notifie le profileur qu’une transition du code non managé au code managé s’est produite.  
@@ -33,26 +33,26 @@ HRESULT UnmanagedToManagedTransition(
     [in] COR_PRF_TRANSITION_REASON reason);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `functionId`  
  dans ID de la fonction appelée.  
   
  `reason`  
  dans Valeur de l’énumération [COR_PRF_TRANSITION_REASON](cor-prf-transition-reason-enumeration.md) qui indique si la transition s’est produite en raison d’un appel dans du code managé à partir de code non managé, ou à cause d’un retour d’une fonction non managée appelée par une fonction managée.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Si la valeur de `reason` est COR_PRF_TRANSITION_RETURN et `functionId` n’est pas null, l’ID de fonction est celui de la fonction non managée et n’aura jamais été compilé à l’aide du compilateur juste-à-temps (JIT). Des informations de base sont associées aux fonctions non managées, telles qu’un nom et des métadonnées.  
   
  Si la valeur de `reason` est COR_PRF_TRANSITION_CALL, il est possible que la fonction appelée (autrement dit, la fonction managée) n’ait pas encore été compilée juste-à-temps.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
