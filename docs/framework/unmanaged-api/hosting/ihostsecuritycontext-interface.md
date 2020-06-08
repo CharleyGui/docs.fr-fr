@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 88e2eac0-8ccb-404f-abbc-287d55159842
 topic_type:
 - apiref
-ms.openlocfilehash: bf8e725908177d9a15407b096f68cbcb947c7a01
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: f6e25bfe11880730f6f447ccc0406d716d185624
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804153"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501493"
 ---
 # <a name="ihostsecuritycontext-interface"></a>IHostSecurityContext, interface
 Permet à l’common language runtime (CLR) de conserver les informations de contexte de sécurité implémentées par l’hôte.  
@@ -28,12 +28,12 @@ Permet à l’common language runtime (CLR) de conserver les informations de con
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Capture, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-capture-method.md)|Obtient un clone de l' `IHostSecurityContext` instance retournée à partir d’un appel à [IHostSecurityManager :: GetSecurityContext](ihostsecuritymanager-getsecuritycontext-method.md).|  
+|[Capture, méthode](ihostsecuritycontext-capture-method.md)|Obtient un clone de l' `IHostSecurityContext` instance retournée à partir d’un appel à [IHostSecurityManager :: GetSecurityContext](ihostsecuritymanager-getsecuritycontext-method.md).|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Un hôte peut contrôler tout l’accès du code aux jetons de thread à la fois par le CLR et le code utilisateur. Il peut également s’assurer que les informations de contexte de sécurité complètes sont transmises sur des opérations asynchrones ou des points de code avec accès restreint au code. `IHostSecurityContext`encapsule ces informations de contexte de sécurité, qui sont opaques pour le Runtime. Le Runtime Capture ces informations à l’aide de `Capture` et les déplace à travers la répartition des éléments de travail du pool de threads, l’exécution du finaliseur et les constructeurs de module et de classe.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

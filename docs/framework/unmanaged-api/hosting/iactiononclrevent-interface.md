@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: b5f9b41e-7301-429c-911f-21d5422292b3
 topic_type:
 - apiref
-ms.openlocfilehash: 4e72cd8bee2cb4f35155d7b99cfe8d9cf63f463a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f577e9252d97ec188ff1076fd8340336b16c8257
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616071"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504327"
 ---
 # <a name="iactiononclrevent-interface"></a>IActionOnCLREvent, interface
-Fournit la méthode [IActionOnCLREvent :: OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) , qui exécute des rappels sur les événements qui ont été inscrits à l’aide d’un appel à la méthode [ICLROnEventManager :: RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md) .  
+Fournit la méthode [IActionOnCLREvent :: OnEvent](iactiononclrevent-onevent-method.md) , qui exécute des rappels sur les événements qui ont été inscrits à l’aide d’un appel à la méthode [ICLROnEventManager :: RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md) .  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -30,7 +30,7 @@ Fournit la méthode [IActionOnCLREvent :: OnEvent](../../../../docs/framework/u
 |------------|-----------------|  
 |[OnEvent, méthode](iactiononclrevent-onevent-method.md)|Exécute un rappel pour un événement inscrit.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-ms.openlocfilehash: b535fdd5027a26cc4dd0eafec9883f0186773dd1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 910c40413075131765a37e00703ac892e3f39641
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175497"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492185"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls, méthode
-Énumère toutes les interfaces mises `TypeDef`en œuvre par les spécifiés .
+Énumère toutes les interfaces implémentées par le spécifié `TypeDef` .
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,41 +39,41 @@ HRESULT EnumInterfaceImpls (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `td`  
- [dans] Le jeton du TypeDef dont les jetons MethodDef représentant les implémentations d’interface doivent être énumérés.  
+ dans Jeton du TypeDef dont les jetons MethodDef représentant des implémentations d’interface doivent être énumérés.  
   
  `rImpls`  
- [out] Le tableau utilisé pour stocker les jetons MethodDef.  
+ à Tableau utilisé pour stocker les jetons MethodDef.  
   
  `cMax`  
- [dans] La longueur maximale `rImpls` du tableau.  
+ dans Longueur maximale du `rImpls` tableau.  
   
  `pcImpls`  
- [out] Le nombre réel de jetons retournés dans `rImpls`.  
+ à Nombre réel de jetons retournés dans `rImpls` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumInterfaceImpls`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de jetons MethodDef à énumérer. Dans ce `pcImpls` cas, est réglé à zéro.|  
+|`S_FALSE`|Il n’y a aucun jeton MethodDef à énumérer. Dans ce cas, `pcImpls` a la valeur zéro.|  
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
-L’énumération renvoie `mdInterfaceImpl` une collection de jetons pour `TypeDef`chaque interface implémentée par le spécifié . Les jetons d’interface sont retournés dans `DefineTypeDef` l’ordre les interfaces ont été spécifiées (par ou). `SetTypeDefProps` Propriétés des `mdInterfaceImpl` jetons retournés peuvent être interrogés à l’aide [de GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md).
+L’énumération retourne une collection de `mdInterfaceImpl` jetons pour chaque interface implémentée par le spécifié `TypeDef` . Les jetons d’interface sont retournés dans l’ordre dans lequel les interfaces ont été spécifiées (par le biais de `DefineTypeDef` ou `SetTypeDefProps` ). Les propriétés des jetons retournés `mdInterfaceImpl` peuvent être interrogées à l’aide de [GetInterfaceImplProps,](imetadataimport-getinterfaceimplprops-method.md).
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

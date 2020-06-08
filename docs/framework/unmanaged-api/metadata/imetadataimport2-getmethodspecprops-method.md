@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9544b711-e669-4eaf-8630-ee862e5e4489
 topic_type:
 - apiref
-ms.openlocfilehash: 0bfbfec930c193ea05a01bd5bd9f46d2ec6714b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 079d9245526ff7914d1cbd6a91f0f2d96a690af5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175289"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490443"
 ---
 # <a name="imetadataimport2getmethodspecprops-method"></a>IMetaDataImport2::GetMethodSpecProps, méthode
-Obtient la signature des métadonnées de la méthode référencée par le jeton MethodSpec spécifié.  
+Obtient la signature de métadonnées de la méthode référencée par le jeton MethodSpec spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT GetMethodSpecProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mi`  
- [dans] Un jeton MethodSpec qui représente l’instantanéisation de la méthode.  
+ dans Jeton MethodSpec qui représente l’instanciation de la méthode.  
   
  `tkParent`  
- [out] Un pointeur sur le jeton MethodDef ou MethodRef qui représente la définition de la méthode.  
+ à Pointeur vers le jeton MethodDef ou MethodRef qui représente la définition de méthode.  
   
  `ppvSigBlob`  
- [out] Un pointeur à la signature de métadonnées binaires de la méthode.  
+ à Pointeur vers la signature de métadonnées binaires de la méthode.  
   
  `pcbSigBlob`  
- [out] La taille, dans les `ppvSigBlob`octets, de .  
+ à Taille, en octets, de `ppvSigBlob` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - profiling interfaces [.NET Framework]
 - interfaces [.NET Framework profiling]
 ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
-ms.openlocfilehash: 8b6b9acff2945e2d8fd684bfa31e4af086ea5ab9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f073794b4fdf89f289b70fed9967ee37b5f4e133
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868146"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494031"
 ---
 # <a name="profiling-interfaces"></a>Interfaces de profilage
 Cette section décrit les interfaces non managées qui vous permettent de profiler un programme exécuté par le CLR (Common Language Runtime).  
@@ -41,7 +41,7 @@ Cette section décrit les interfaces non managées qui vous permettent de profil
  [ICorProfilerCallback6, interface](icorprofilercallback6-interface.md)  
  Fournit une méthode de rappel utilisée par le CLR pour envoyer une notification à un profileur quand un assembly est en cours de chargement.  
   
- [ICorProfilerCallback7, interface](icorprofilercallback7-interface.md)  
+ [Interface ICorProfilerCallback7](icorprofilercallback7-interface.md)  
  Fournit une méthode de rappel que le common language runtime utilise pour informer le profileur que le flux de symboles associé à un module en mémoire est mis à jour.  
 
 [ICorProfilerCallback8, interface](icorprofilercallback8-interface.md)  
@@ -63,7 +63,7 @@ Fournit une méthode de rappel que le common language runtime utilise pour infor
  Étend l'interface `ICorProfilerInfo` avec des méthodes prises en charge dans .NET Framework 2.0 et ultérieur.  
   
  [ICorProfilerInfo3, interface](icorprofilerinfo3-interface.md)  
- Étend l’interface `ICorProfilerInfo2` avec les méthodes prises en charge dans le .NET Framework 4 et versions ultérieures.  
+ Étend l' `ICorProfilerInfo2` interface avec des méthodes prises en charge dans le .NET Framework 4 et versions ultérieures.  
   
  [ICorProfilerInfo4, interface](icorprofilerinfo4-interface.md)  
  Fournit des méthodes utilisées par les profileurs de code pour communiquer avec le CLR pour contrôler la surveillance des événements et demander des informations.  
@@ -81,7 +81,7 @@ Fournit une méthode de rappel que le common language runtime utilise pour infor
  Fournit des méthodes pour boucler séquentiellement dans une collection de modules chargés par l’application ou par le profileur.  
   
  [ICorProfilerObjectEnum, interface](icorprofilerobjectenum-interface.md)  
- Fournit des méthodes pour itérer séquentiellement au sein d’une collection d’objets figés qui sont générés par [Ngen. exe (Native Image Generator)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
+ Fournit des méthodes pour itérer séquentiellement au sein d’une collection d’objets figés qui sont générés par [Ngen. exe (Native Image Generator)](../../tools/ngen-exe-native-image-generator.md).  
   
  [ICorProfilerThreadEnum, interface](icorprofilerthreadenum-interface.md)  
  Fournit des méthodes pour boucler séquentiellement dans une collection de threads dans le CLR.  
@@ -89,10 +89,10 @@ Fournit une méthode de rappel que le common language runtime utilise pour infor
  [IMethodMalloc, interface](imethodmalloc-interface.md)  
  Fournit la méthode [Alloc](imethodmalloc-alloc-method.md) pour allouer de la mémoire pour un nouveau corps de fonction MSIL (Microsoft Intermediate Language).  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Vue d’ensemble du profilage](profiling-overview.md)  
   
- [Fonctions statiques globales de profilage](profiling-global-static-functions.md)  
+ [Fonctions statiques globales du profilage](profiling-global-static-functions.md)  
   
  [Énumérations de profilage](profiling-enumerations.md)  
   

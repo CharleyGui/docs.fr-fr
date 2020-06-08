@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 634ac28c-a5b7-4fc3-af84-256c24ca8177
 topic_type:
 - apiref
-ms.openlocfilehash: 9069498a4f62f4d9dbb50a7075323b14c3cc5ab9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ba15440df79dded95a8afa9438657d064e167f36
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868445"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495968"
 ---
 # <a name="icorprofilerinfo4getrejitids-method"></a>ICorProfilerInfo4::GetReJITIDs, méthode
 Retourne un tableau d’ID identifiant toutes les versions recompilées juste-à-temps de la fonction spécifiée qui sont toujours allouées. Cela inclut les versions recompilées par le JIT des fonctions qui ont été annulées par la suite, mais qui n’ont pas encore été libérées (par exemple, quand le domaine d’application qui contient la fonction restaurée est toujours utilisé).  
@@ -35,12 +35,12 @@ HRESULT GetReJITIDs (
      [out, size_is(cReJitIds), length_is(*pcReJitIds)]   ReJITID        reJitIds[]);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `functionId`  
- dans `FunctionID` de l’instance de fonction pour laquelle énumérer les versions.  
+ dans `FunctionID`De l’instance de fonction pour laquelle énumérer les versions.  
   
  `cReJitIds`  
- dans Nombre d’ID recompilés par le compilateur JIT alloués dans le tableau `reJitIds`.  
+ dans Nombre d’ID recompilés par le compilateur JIT alloués dans le `reJitIds` tableau.  
   
  `pcReJitIds`  
  à Nombre réel d’ID recompilés juste-à-temps.  
@@ -48,17 +48,17 @@ HRESULT GetReJITIDs (
  `reJitIds`  
  à Tableau alloué par l’appelant qui contient les ID recompilés juste-à-temps pour la fonction spécifiée.  
   
-## <a name="remarks"></a>Notes  
- `GetReJITIDs` énumère les ID recompilés JIT actifs pour une instance de fonction donnée. Il suit le même modèle d’utilisation que les autres fonctions de `ICorProfilerInfo` qui acceptent les mémoires tampons allouées par l’appelant.  
+## <a name="remarks"></a>Remarques  
+ `GetReJITIDs`énumère les ID recompilés JIT actifs pour une instance de fonction donnée. Il suit le même modèle d’utilisation que les autres `ICorProfilerInfo` fonctions qui acceptent les mémoires tampons allouées par l’appelant.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

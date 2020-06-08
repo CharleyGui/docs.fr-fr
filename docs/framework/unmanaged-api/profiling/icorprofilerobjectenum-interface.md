@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 13e1651c-9523-40ef-bfd7-87fb94519f8b
 topic_type:
 - apiref
-ms.openlocfilehash: fce89cc2b3b0104ba017b7df9105dea3f6ec4e91
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 5ebe99dd8d1d7ec73cd140991a4b13dfa381791d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868224"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494642"
 ---
 # <a name="icorprofilerobjectenum-interface"></a>ICorProfilerObjectEnum, interface
-Fournit des méthodes pour itérer séquentiellement au sein d’une collection d’objets figés qui sont générés par le [Générateur d’images natives de Ngen. exe (Native Image Generator)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
+Fournit des méthodes pour itérer séquentiellement au sein d’une collection d’objets figés qui sont générés par le [Générateur d’images natives de Ngen. exe (Native Image Generator)](../../tools/ngen-exe-native-image-generator.md).  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -34,19 +34,19 @@ Fournit des méthodes pour itérer séquentiellement au sein d’une collection 
 |[Reset, méthode](icorprofilerobjectenum-reset-method.md)|Déplace le curseur de cet énumérateur à la position de départ de la séquence.|  
 |[Skip, méthode](icorprofilerobjectenum-skip-method.md)|Avance le curseur de cet énumérateur de sa position actuelle afin que le nombre d’éléments spécifié soit ignoré.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L'interface `ICorProfilerObjectEnum` est un énumérateur. Elle permet au récepteur d’un tableau de récupérer des éléments de l’expéditeur à une fréquence appropriée pour le récepteur. En d’autres termes, le récepteur est en mesure de contrôler explicitement le déroulement des éléments du tableau, évitant ainsi les problèmes liés à la transmission de grands tableaux en tant que paramètres de méthode.  
   
- Utilisez [ICorProfilerInfo2 :: EnumModuleFrozenObjects (](icorprofilerinfo2-enummodulefrozenobjects-method.md) pour obtenir un pointeur vers l’interface `ICorProfilerObjectEnum`.  
+ Utilisez [ICorProfilerInfo2 :: EnumModuleFrozenObjects (](icorprofilerinfo2-enummodulefrozenobjects-method.md) pour obtenir un pointeur vers l' `ICorProfilerObjectEnum` interface.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
