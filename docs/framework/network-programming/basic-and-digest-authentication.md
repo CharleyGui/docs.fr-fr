@@ -1,5 +1,6 @@
 ---
 title: Authentification de base et authentification Digest
+description: Apprenez à utiliser l’authentification de base et Digest, où une application fournit un nom d’utilisateur et un mot de passe dans l’objet WebRequest qu’elle utilise pour demander des données.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,12 +20,12 @@ helpviewer_keywords:
 - network resources, authentication
 - user authentication, digest
 ms.assetid: 8cce2742-8d52-4643-9dd2-64ddf38aa878
-ms.openlocfilehash: 9a1ad701e1e8f4ee9966ebd56922c29e2bae7a03
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7772430b508b52a63d716550b69018385418c132
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71048899"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502694"
 ---
 # <a name="basic-and-digest-authentication"></a>Authentification de base et authentification Digest
 L’implémentation <xref:System.Net> de l’authentification de base et Digest est conforme à RFC2617 – Authentification HTTP : authentification de base et authentification Digest (disponible sur site web du [World Wide Web Consortium](https://www.w3.org)).  
@@ -48,5 +49,5 @@ WReq.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Authentification du NTLM et de Kerberos](ntlm-and-kerberos-authentication.md)
+- [Authentification NTLM et Kerberos](ntlm-and-kerberos-authentication.md)
 - [Authentification Internet](internet-authentication.md)

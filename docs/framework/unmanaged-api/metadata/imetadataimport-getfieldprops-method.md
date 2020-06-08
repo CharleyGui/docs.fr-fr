@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7b0e9b10-8cef-4ba6-8432-40bf63e65ab1
 topic_type:
 - apiref
-ms.openlocfilehash: 8c3f98a124dbbcae3b0500932a2357ed1757951f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2bd05b49c3d51ac13865997910c99cc0cd5ca2d9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177246"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491242"
 ---
 # <a name="imetadataimportgetfieldprops-method"></a>IMetaDataImport::GetFieldProps, méthode
 Obtient les métadonnées associées au champ référencé par le jeton FieldDef spécifié.  
@@ -45,48 +45,48 @@ HRESULT GetFieldProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mb`  
- [dans] Un jeton FieldDef qui représente le champ pour obtenir des métadonnées associées pour.  
+ dans Jeton FieldDef qui représente le champ pour lequel obtenir les métadonnées associées.  
   
  `pClass`  
- [out] Un pointeur à un jeton TypeDef qui représente le type de la classe que le champ appartient à.  
+ à Pointeur vers un jeton TypeDef qui représente le type de la classe à laquelle le champ appartient.  
   
  `szField`  
- [out] Le nom du champ.  
+ à Nom du champ.  
   
  `cchField`  
- [dans] La taille en caractères larges de la mémoire tampon pour *szField*.  
+ dans Taille en caractères larges de la mémoire tampon pour *szField*.  
   
  `pchField`  
- [out] La taille réelle du tampon retourné.  
+ à Taille réelle de la mémoire tampon retournée.  
   
  `pdwAttr`  
- [out] Drapeaux associés aux métadonnées du terrain.  
+ à Indicateurs associés aux métadonnées du champ.  
   
  `ppvSigBlob`  
- [dans] Un pointeur à la valeur des métadonnées binaires qui décrit le champ.  
+ dans Pointeur vers la valeur de métadonnées binaires qui décrit le champ.  
   
  `pcbSigBlob`  
- [out] La taille dans `ppvSigBlob`les octets de .  
+ à Taille en octets de `ppvSigBlob` .  
   
  `pdwCPlusTypeFlag`  
- [out] Un drapeau qui spécifie le type de valeur du champ.  
+ à Indicateur qui spécifie le type de valeur du champ.  
   
  `ppValue`  
- [out] Une valeur constante pour le terrain.  
+ à Valeur constante pour le champ.  
   
  `pcchValue`  
- [out] La taille en `ppValue`chars de , ou zéro si aucune chaîne n’existe.  
+ à Taille en caractères de `ppValue` , ou zéro si aucune chaîne n’existe.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

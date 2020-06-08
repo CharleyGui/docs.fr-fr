@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7f230961-23a6-4d56-ad2d-7a876d65705f
 topic_type:
 - apiref
-ms.openlocfilehash: a6e483d820d183afc8ba6a68fc4635730ffd1e51
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 2a3f5bb0c54935e524cc955a5e11aac75b0c0923
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76869319"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497554"
 ---
 # <a name="icorprofilerinfoisarrayclass-method"></a>ICorProfilerInfo::IsArrayClass, méthode
 Détermine si la classe spécifiée est une classe de tableau.  
@@ -35,7 +35,7 @@ HRESULT IsArrayClass(
     [out] ULONG          *pcRank);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `classId`  
  dans ID de la classe à examiner.  
   
@@ -48,17 +48,17 @@ HRESULT IsArrayClass(
  `pcRank`  
  à Pointeur vers un entier qui indique le rang (autrement dit, le nombre de dimensions) du tableau.  
   
-## <a name="remarks"></a>Notes  
- Si la classe spécifiée est une classe de tableau, la méthode `IsArrayClass` retourne un S_OK HRESULT et des valeurs pour tous les paramètres de sortie non null. Sinon, elle retourne S_FALSE.  
+## <a name="remarks"></a>Remarques  
+ Si la classe spécifiée est une classe de tableau, la `IsArrayClass` méthode retourne un S_OK HRESULT et des valeurs pour tous les paramètres de sortie non null. Sinon, elle retourne S_FALSE.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
