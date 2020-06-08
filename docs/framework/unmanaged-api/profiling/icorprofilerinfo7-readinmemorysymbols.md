@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerInfo7::ReadInMemorySymbols
+title: 'ICorProfilerInfo7 :: ReadInMemorySymbols'
 ms.date: 03/30/2017
 api_name:
 - ICorProfilerInfo7.ReadInMemorySymbols
@@ -10,14 +10,14 @@ api_location:
 api_type:
 - COM
 ms.assetid: 1745a0b9-8332-4777-a670-b549bff3b901
-ms.openlocfilehash: 53c01d2db44f4d0adf1ba5b9cc225ab49581aa5d
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 6732457220d795bbf8ae54277ef9f5c07cf96359
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868341"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495357"
 ---
-# <a name="icorprofilerinfo7readinmemorysymbols"></a>ICorProfilerInfo7::ReadInMemorySymbols
+# <a name="icorprofilerinfo7readinmemorysymbols"></a>ICorProfilerInfo7 :: ReadInMemorySymbols
 [Prise en charge dans le .NET Framework 4.6.1 et versions ultérieures]  
   
  Lit les octets d’un flux de symboles en mémoire.  
@@ -34,7 +34,7 @@ HRESULT ReadInMemorySymbols(
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `moduleId`  
  dans Identificateur du module contenant le flux en mémoire.  
   
@@ -42,7 +42,7 @@ HRESULT ReadInMemorySymbols(
  dans Offset dans le flux en mémoire à partir duquel commencer la lecture des octets.  
   
  `pSymbolBytes`  
- à Pointeur vers la mémoire tampon dans laquelle les données seront copiées. La mémoire tampon doit avoir `countSymbolBytes` d’espace disponible.  
+ à Pointeur vers la mémoire tampon dans laquelle les données seront copiées. La mémoire tampon doit avoir un `countSymbolBytes` espace disponible.  
   
  `countSymbolBytes`  
  dans Nombre d’octets à copier.  
@@ -50,25 +50,25 @@ HRESULT ReadInMemorySymbols(
  `pCountSymbolBytesRead`  
  à Lorsque la méthode est retournée, contient le nombre réel d’octets lus.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  `S_OK`, si un nombre d’octets différent de zéro a été lu.  
   
- `CORPROF_E_MODULE_IS_DYNAMIC`, si le module a été créé à l’aide de <xref:System.Reflection.Emit>.  
+ `CORPROF_E_MODULE_IS_DYNAMIC`Si le module a été créé à l’aide de <xref:System.Reflection.Emit> .  
   
-## <a name="remarks"></a>Notes  
- La méthode `ReadInMemorySymbols` tente de lire `countSymbolBytes` de données à partir du décalage `symbolsReadOffset` dans le flux en mémoire. Les données sont copiées vers `pSymbolBytes`, qui est censée avoir `countSymbolBytes` d’espace disponible.     `pCountSymbolsBytesRead` contient le nombre réel d’octets lus, qui peut être inférieur à `countSymbolBytes` si la fin du flux est atteinte.  
+## <a name="remarks"></a>Remarques  
+ La `ReadInMemorySymbols` méthode tente de lire `countSymbolBytes` des données en commençant à `symbolsReadOffset` l’offset dans le flux en mémoire. Les données sont copiées vers `pSymbolBytes` , ce qui est supposé avoir un `countSymbolBytes` espace disponible.     `pCountSymbolsBytesRead`contient le nombre réel d’octets lus, qui peut être inférieur à `countSymbolBytes` si la fin du flux est atteinte.  
   
 > [!NOTE]
-> L’implémentation actuelle ne prend pas en charge la réflexion. Emit. Si le module a été créé à l’aide de Reflection. Emit, la méthode retourne `CORPROF_E_MODULE_IS_DYNAMIC`.  
+> L’implémentation actuelle ne prend pas en charge la réflexion. Emit. Si le module a été créé à l’aide de Reflection. Emit, la méthode retourne `CORPROF_E_MODULE_IS_DYNAMIC` .  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

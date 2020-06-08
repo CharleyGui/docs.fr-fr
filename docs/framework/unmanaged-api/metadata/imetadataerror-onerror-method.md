@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c1e744b8-a6fb-4d9c-a971-8babc875d8f0
 topic_type:
 - apiref
-ms.openlocfilehash: 489fa217744e41ccb5d27d088790131c15e1ee52
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d2252f58af1a319d953fb320a99fad1cfec3dca0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177400"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492718"
 ---
 # <a name="imetadataerroronerror-method"></a>IMetaDataError::OnError, méthode
-Fournit la notification des erreurs qui se produisent pendant la fusion des métadonnées.  
+Fournit une notification des erreurs qui se produisent pendant la fusion des métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ HRESULT OnError (
   
 ## <a name="parameters"></a>Paramètres  
  `hrError`  
- [dans] La valeur d’erreur HRESULT est revenue à la méthode d’appel.  
+ dans Valeur d’erreur HRESULT retournée à la méthode d’appel.  
   
  `token`  
- [dans] Les métadonnées symboliques de l’objet de code qui a été fusionné lorsque l’erreur s’est produite.  
+ dans Jeton de métadonnées de l’objet de code qui a été fusionné lorsque l’erreur s’est produite.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataError, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md)
+- [IMetaDataError, interface](imetadataerror-interface.md)

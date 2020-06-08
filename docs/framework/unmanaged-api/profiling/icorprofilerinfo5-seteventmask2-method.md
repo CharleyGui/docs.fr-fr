@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 05dbbe2b-049c-4a60-be69-2ad7a949405e
 topic_type:
 - apiref
-ms.openlocfilehash: 10e84b729c8af607165009a8591a69dbc1afcb1e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 8027cdcde8281c363207e309bf65fcd90c03b626
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868380"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495617"
 ---
 # <a name="icorprofilerinfo5seteventmask2-method"></a>ICorProfilerInfo5::SetEventMask2, méthode
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -31,26 +31,26 @@ HRESULT SetEventMask2(        [in] DWORD dwEventsLow,        [in] DWORD dwEvents
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `dwEventsLow`  
  [en entrée] Une valeur de 4 octets qui spécifie les catégories des événements. Chaque bit contrôle une fonctionnalité, un comportement ou un type d'événement différents. Les bits sont décrits dans l’énumération [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) .  
   
  `dwEventsHigh`  
  [en entrée] Une valeur de 4 octets qui spécifie les catégories des événements.  Chaque bit contrôle une fonctionnalité, un comportement ou un type d'événement différents. Les bits sont décrits dans l’énumération [COR_PRF_HIGH_MONITOR](cor-prf-high-monitor-enumeration.md) .  
   
-## <a name="remarks"></a>Notes  
- La méthode `SetEventMask2` est utilisée pour définir les rappels auxquels le profileur s'abonne. En général, vous appelez la méthode [GetEventMask2](icorprofilerinfo5-geteventmask2-method.md) pour déterminer les bits qui sont définis, effectuez une `pdwEventsLow` logique ou de ses valeurs de `pdwEventsHigh` et des nouveaux bits que vous voulez définir, puis appelez la méthode `SetEventMask2`.  
+## <a name="remarks"></a>Remarques  
+ La méthode `SetEventMask2` est utilisée pour définir les rappels auxquels le profileur s'abonne. En général, vous appelez la méthode [GetEventMask2](icorprofilerinfo5-geteventmask2-method.md) pour déterminer les bits qui sont définis, effectuez une ou logique de ses `pdwEventsLow` `pdwEventsHigh` valeurs et et de tous les nouveaux bits que vous voulez définir, puis appelez la `SetEventMask2` méthode.  
   
  Cette méthode est l’alternative recommandée à la méthode [SetEventMask](icorprofilerinfo-seteventmask-method.md) .  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

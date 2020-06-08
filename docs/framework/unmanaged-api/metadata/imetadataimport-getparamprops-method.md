@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4d5e5f00-bcab-4f41-b191-176511a186a7
 topic_type:
 - apiref
-ms.openlocfilehash: bb73ccdd9eee4b5a655a56b5d6757e0c6003fbc9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c2abf2813c6e1a9db4264bded32d9cb9c58a2bcb
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437124"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491054"
 ---
 # <a name="imetadataimportgetparamprops-method"></a>IMetaDataImport::GetParamProps, méthode
 Obtient les valeurs de métadonnées pour le paramètre référencé par le jeton ParamDef spécifié.  
@@ -56,16 +56,16 @@ HRESULT GetParamProps (
  à Mémoire tampon destinée à contenir le nom du paramètre.  
   
  `cchName`  
- dans Taille demandée en caractères larges de `szName`.  
+ dans Taille demandée en caractères larges de `szName` .  
   
  `pchName`  
- à Taille retournée en caractères larges de `szName`.  
+ à Taille retournée en caractères larges de `szName` .  
   
  `pdwAttr`  
- à Pointeur vers tous les indicateurs d’attribut associés au paramètre. Il s’agit d’un masque de ré`CorParamAttr` valeurs.  
+ à Pointeur vers tous les indicateurs d’attribut associés au paramètre. Il s’agit d’un masque de `CorParamAttr` valeur de valeurs.  
   
  `pdwCPlusTypeFlag`  
- à Pointeur vers un indicateur spécifiant que le paramètre est un <xref:System.ValueType>.  
+ à Pointeur vers un indicateur spécifiant que le paramètre est un <xref:System.ValueType> .  
   
  `ppValue`  
  à Pointeur vers une chaîne constante retournée par le paramètre.  
@@ -73,20 +73,20 @@ HRESULT GetParamProps (
  `pcchValue`  
  à Taille de `ppValue` en caractères larges, ou zéro si `ppValue` ne contient pas de chaîne.  
   
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Les valeurs de séquence dans `pulSequence` commencent par 1 pour les paramètres. Une valeur de retour a un numéro de séquence égal à 0.
 
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

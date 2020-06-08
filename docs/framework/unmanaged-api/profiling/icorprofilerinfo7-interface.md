@@ -2,12 +2,12 @@
 title: ICorProfilerInfo7, interface
 ms.date: 03/30/2017
 ms.assetid: cf37c462-73c5-412a-a7f8-bb26ca746313
-ms.openlocfilehash: f80f310c10bae33583cb7cd2048ede4f5efbe14c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 0e9f76717aeff27e863245faac241927e7495076
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861747"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495487"
 ---
 # <a name="icorprofilerinfo7-interface"></a>ICorProfilerInfo7, interface
 [Prise en charge dans le .NET Framework 4.6.1 et versions ultérieures]  
@@ -18,16 +18,16 @@ ms.locfileid: "76861747"
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[ApplyMetaData, méthode](icorprofilerinfo7-applymetadata-method.md)|Applique les métadonnées nouvellement définies par les méthodes `IMetadataEmit::Define*` à un module spécifié.|  
+|[ApplyMetaData, méthode](icorprofilerinfo7-applymetadata-method.md)|Applique les métadonnées nouvellement définies par les `IMetadataEmit::Define*` méthodes à un module spécifié.|  
 |[GetInMemorySymbolsLength, méthode](icorprofilerinfo7-getinmemorysymbolslength-method.md)|Retourne la longueur d’un flux de symboles en mémoire.|  
 |[ReadInMemorySymbols](icorprofilerinfo7-readinmemorysymbols.md)|Lit les octets d’un flux de symboles en mémoire.|  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

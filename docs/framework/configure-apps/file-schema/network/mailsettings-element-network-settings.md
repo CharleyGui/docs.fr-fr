@@ -1,5 +1,6 @@
 ---
 title: <mailSettings>, élément (paramètres réseau)
+description: L' <mailSettings> élément paramètres réseau configure les options d’envoi de courrier dans la .NET Framework.
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#mailSettings
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - mailSettings element
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
-ms.openlocfilehash: 4e8bf23ce39edadf80f019315c690b597b3d7361
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ce7b8564e4ee5ea73d42259612c077420d36645b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74089230"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504561"
 ---
 # <a name="mailsettings-element-network-settings"></a>\<mailSettings>, élément (paramètres réseau)
 Configure les options d’envoi de courrier.  
