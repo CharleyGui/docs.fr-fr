@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: ea3dc625-5650-4bf4-8e67-01e42be065b1
 topic_type:
 - apiref
-ms.openlocfilehash: 367584a01e368dc591c2e93acfcc6574f2fa1ec0
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 5e50255342abae43565fd3556964c24ba4385eb8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866318"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500128"
 ---
-# <a name="icorprofilercallbackexceptionunwindfunctionenter-method"></a><span data-ttu-id="d0df3-102">ICorProfilerCallback::ExceptionUnwindFunctionEnter, méthode</span><span class="sxs-lookup"><span data-stu-id="d0df3-102">ICorProfilerCallback::ExceptionUnwindFunctionEnter Method</span></span>
-<span data-ttu-id="d0df3-103">Notifie le profileur que la phase de déroulement de la gestion des exceptions a commencé à dérouler une fonction.</span><span class="sxs-lookup"><span data-stu-id="d0df3-103">Notifies the profiler that the unwind phase of exception handling has begun to unwind a function.</span></span>  
+# <a name="icorprofilercallbackexceptionunwindfunctionenter-method"></a><span data-ttu-id="73712-102">ICorProfilerCallback::ExceptionUnwindFunctionEnter, méthode</span><span class="sxs-lookup"><span data-stu-id="73712-102">ICorProfilerCallback::ExceptionUnwindFunctionEnter Method</span></span>
+<span data-ttu-id="73712-103">Notifie le profileur que la phase de déroulement de la gestion des exceptions a commencé à dérouler une fonction.</span><span class="sxs-lookup"><span data-stu-id="73712-103">Notifies the profiler that the unwind phase of exception handling has begun to unwind a function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d0df3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d0df3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="73712-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="73712-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT ExceptionUnwindFunctionEnter(  
     [in] FunctionID functionId);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d0df3-105">Parameters</span><span class="sxs-lookup"><span data-stu-id="d0df3-105">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="73712-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="73712-105">Parameters</span></span>
 
 - `functionId`
 
-  <span data-ttu-id="d0df3-106">\[in] ID de la fonction qui est déroulée.</span><span class="sxs-lookup"><span data-stu-id="d0df3-106">\[in] The ID of the function that is being unwound.</span></span>
+  <span data-ttu-id="73712-106">\[in] ID de la fonction qui est déroulée.</span><span class="sxs-lookup"><span data-stu-id="73712-106">\[in] The ID of the function that is being unwound.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="d0df3-107">Notes</span><span class="sxs-lookup"><span data-stu-id="d0df3-107">Remarks</span></span>  
- <span data-ttu-id="d0df3-108">Le profileur ne doit pas se bloquer dans son implémentation de cette méthode, car la pile n’est peut-être pas dans un État qui autorise garbage collection, et par conséquent, Preemptive garbage collection ne peut pas être activé.</span><span class="sxs-lookup"><span data-stu-id="d0df3-108">The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled.</span></span> <span data-ttu-id="d0df3-109">Si le profileur est bloqué ici et que garbage collection est tentée, le runtime se bloque jusqu’à ce que ce rappel soit retourné.</span><span class="sxs-lookup"><span data-stu-id="d0df3-109">If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="73712-107">Remarques</span><span class="sxs-lookup"><span data-stu-id="73712-107">Remarks</span></span>  
+ <span data-ttu-id="73712-108">Le profileur ne doit pas se bloquer dans son implémentation de cette méthode, car la pile n’est peut-être pas dans un État qui autorise garbage collection, et par conséquent, Preemptive garbage collection ne peut pas être activé.</span><span class="sxs-lookup"><span data-stu-id="73712-108">The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled.</span></span> <span data-ttu-id="73712-109">Si le profileur est bloqué ici et que garbage collection est tentée, le runtime se bloque jusqu’à ce que ce rappel soit retourné.</span><span class="sxs-lookup"><span data-stu-id="73712-109">If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.</span></span>  
   
- <span data-ttu-id="d0df3-110">L’implémentation du profileur de cette méthode ne doit pas appeler dans du code managé ou de quelque manière qu’elle provoque une allocation de mémoire managée.</span><span class="sxs-lookup"><span data-stu-id="d0df3-110">The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.</span></span>  
+ <span data-ttu-id="73712-110">L’implémentation du profileur de cette méthode ne doit pas appeler dans du code managé ou de quelque manière qu’elle provoque une allocation de mémoire managée.</span><span class="sxs-lookup"><span data-stu-id="73712-110">The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d0df3-111">Configuration requise pour</span><span class="sxs-lookup"><span data-stu-id="d0df3-111">Requirements</span></span>  
- <span data-ttu-id="d0df3-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d0df3-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="73712-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="73712-111">Requirements</span></span>  
+ <span data-ttu-id="73712-112">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="73712-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d0df3-113">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="d0df3-113">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="73712-113">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="73712-113">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="d0df3-114">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d0df3-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="73712-114">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="73712-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d0df3-115">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d0df3-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="73712-115">**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="73712-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d0df3-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d0df3-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="73712-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="73712-116">See also</span></span>
 
-- [<span data-ttu-id="d0df3-117">ICorProfilerCallback, interface</span><span class="sxs-lookup"><span data-stu-id="d0df3-117">ICorProfilerCallback Interface</span></span>](icorprofilercallback-interface.md)
-- [<span data-ttu-id="d0df3-118">ExceptionUnwindFunctionLeave, méthode</span><span class="sxs-lookup"><span data-stu-id="d0df3-118">ExceptionUnwindFunctionLeave Method</span></span>](icorprofilercallback-exceptionunwindfunctionleave-method.md)
+- [<span data-ttu-id="73712-117">ICorProfilerCallback, interface</span><span class="sxs-lookup"><span data-stu-id="73712-117">ICorProfilerCallback Interface</span></span>](icorprofilercallback-interface.md)
+- [<span data-ttu-id="73712-118">ExceptionUnwindFunctionLeave, méthode</span><span class="sxs-lookup"><span data-stu-id="73712-118">ExceptionUnwindFunctionLeave Method</span></span>](icorprofilercallback-exceptionunwindfunctionleave-method.md)
