@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: eb3187d7-74cf-44b1-aeeb-7a8d2b60e3b7
 topic_type:
 - apiref
-ms.openlocfilehash: ff9827174e43fd62f3a995e9f477c6fff66b227a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c991c0af845bc6825db6b3bf258fe0809d5db804
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449953"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503692"
 ---
-# <a name="imetadataimportenumunresolvedmethods-method"></a><span data-ttu-id="d0faf-102">IMetaDataImport::EnumUnresolvedMethods, méthode</span><span class="sxs-lookup"><span data-stu-id="d0faf-102">IMetaDataImport::EnumUnresolvedMethods Method</span></span>
-<span data-ttu-id="d0faf-103">Énumère les jetons MemberDef représentant les méthodes non résolues dans la portée des métadonnées actuelle.</span><span class="sxs-lookup"><span data-stu-id="d0faf-103">Enumerates MemberDef tokens representing the unresolved methods in the current metadata scope.</span></span>  
+# <a name="imetadataimportenumunresolvedmethods-method"></a><span data-ttu-id="82348-102">IMetaDataImport::EnumUnresolvedMethods, méthode</span><span class="sxs-lookup"><span data-stu-id="82348-102">IMetaDataImport::EnumUnresolvedMethods Method</span></span>
+<span data-ttu-id="82348-103">Énumère les jetons MemberDef représentant les méthodes non résolues dans la portée des métadonnées actuelle.</span><span class="sxs-lookup"><span data-stu-id="82348-103">Enumerates MemberDef tokens representing the unresolved methods in the current metadata scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d0faf-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d0faf-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="82348-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="82348-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT EnumUnresolvedMethods (  
@@ -36,41 +36,41 @@ HRESULT EnumUnresolvedMethods (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d0faf-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d0faf-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="82348-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="82348-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="d0faf-106">[in, out] Pointeur vers l’énumérateur.</span><span class="sxs-lookup"><span data-stu-id="d0faf-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="d0faf-107">Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.</span><span class="sxs-lookup"><span data-stu-id="d0faf-107">This must be NULL for the first call of this method.</span></span>  
+ <span data-ttu-id="82348-106">[in, out] Pointeur vers l’énumérateur.</span><span class="sxs-lookup"><span data-stu-id="82348-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="82348-107">Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.</span><span class="sxs-lookup"><span data-stu-id="82348-107">This must be NULL for the first call of this method.</span></span>  
   
  `rMethods`  
- <span data-ttu-id="d0faf-108">à Tableau utilisé pour stocker les jetons MemberDef.</span><span class="sxs-lookup"><span data-stu-id="d0faf-108">[out] The array used to store the MemberDef tokens.</span></span>  
+ <span data-ttu-id="82348-108">à Tableau utilisé pour stocker les jetons MemberDef.</span><span class="sxs-lookup"><span data-stu-id="82348-108">[out] The array used to store the MemberDef tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="d0faf-109">[in] Taille maximale du tableau `rMethods`.</span><span class="sxs-lookup"><span data-stu-id="d0faf-109">[in] The maximum size of the `rMethods` array.</span></span>  
+ <span data-ttu-id="82348-109">[in] Taille maximale du tableau `rMethods`.</span><span class="sxs-lookup"><span data-stu-id="82348-109">[in] The maximum size of the `rMethods` array.</span></span>  
   
  `pcTokens`  
- <span data-ttu-id="d0faf-110">à Nombre de jetons MemberDef retournés dans `rMethods`.</span><span class="sxs-lookup"><span data-stu-id="d0faf-110">[out] The number of MemberDef tokens returned in `rMethods`.</span></span>  
+ <span data-ttu-id="82348-110">à Nombre de jetons MemberDef retournés dans `rMethods` .</span><span class="sxs-lookup"><span data-stu-id="82348-110">[out] The number of MemberDef tokens returned in `rMethods`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="d0faf-111">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="d0faf-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="82348-111">Valeur renvoyée</span><span class="sxs-lookup"><span data-stu-id="82348-111">Return Value</span></span>  
   
-|<span data-ttu-id="d0faf-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="d0faf-112">HRESULT</span></span>|<span data-ttu-id="d0faf-113">Description</span><span class="sxs-lookup"><span data-stu-id="d0faf-113">Description</span></span>|  
+|<span data-ttu-id="82348-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="82348-112">HRESULT</span></span>|<span data-ttu-id="82348-113">Description</span><span class="sxs-lookup"><span data-stu-id="82348-113">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="d0faf-114">`EnumUnresolvedMethods` retourné avec succès.</span><span class="sxs-lookup"><span data-stu-id="d0faf-114">`EnumUnresolvedMethods` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="d0faf-115">Il n’y a aucun jeton à énumérer.</span><span class="sxs-lookup"><span data-stu-id="d0faf-115">There are no tokens to enumerate.</span></span> <span data-ttu-id="d0faf-116">Dans ce cas, `pcTokens` est égal à zéro.</span><span class="sxs-lookup"><span data-stu-id="d0faf-116">In that case, `pcTokens` is zero.</span></span>|  
+|`S_OK`|<span data-ttu-id="82348-114">`EnumUnresolvedMethods`retourné avec succès.</span><span class="sxs-lookup"><span data-stu-id="82348-114">`EnumUnresolvedMethods` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="82348-115">Il n’y a aucun jeton à énumérer.</span><span class="sxs-lookup"><span data-stu-id="82348-115">There are no tokens to enumerate.</span></span> <span data-ttu-id="82348-116">Dans ce cas, `pcTokens` est égal à zéro.</span><span class="sxs-lookup"><span data-stu-id="82348-116">In that case, `pcTokens` is zero.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="d0faf-117">Notes</span><span class="sxs-lookup"><span data-stu-id="d0faf-117">Remarks</span></span>  
- <span data-ttu-id="d0faf-118">Une méthode non résolue est une méthode qui a été déclarée mais qui n’est pas implémentée.</span><span class="sxs-lookup"><span data-stu-id="d0faf-118">An unresolved method is one that has been declared but not implemented.</span></span> <span data-ttu-id="d0faf-119">Une méthode est incluse dans l’énumération si la méthode est marquée `miForwardRef` et `mdPinvokeImpl` ou `miRuntime` a la valeur zéro.</span><span class="sxs-lookup"><span data-stu-id="d0faf-119">A method is included in the enumeration if the method is marked `miForwardRef` and either `mdPinvokeImpl` or `miRuntime` is set to zero.</span></span> <span data-ttu-id="d0faf-120">En d’autres termes, une méthode non résolue est une méthode de classe marquée `miForwardRef` mais qui n’est pas implémentée dans du code non managé (atteinte via PInvoke), ni implémentée en interne par le runtime lui-même</span><span class="sxs-lookup"><span data-stu-id="d0faf-120">In other words, an unresolved method is a class method that is marked `miForwardRef` but which is not implemented in unmanaged code (reached via PInvoke) nor implemented internally by the runtime itself</span></span>  
+## <a name="remarks"></a><span data-ttu-id="82348-117">Remarques</span><span class="sxs-lookup"><span data-stu-id="82348-117">Remarks</span></span>  
+ <span data-ttu-id="82348-118">Une méthode non résolue est une méthode qui a été déclarée mais qui n’est pas implémentée.</span><span class="sxs-lookup"><span data-stu-id="82348-118">An unresolved method is one that has been declared but not implemented.</span></span> <span data-ttu-id="82348-119">Une méthode est incluse dans l’énumération si la méthode est marquée `miForwardRef` et si `mdPinvokeImpl` ou a la `miRuntime` valeur zéro.</span><span class="sxs-lookup"><span data-stu-id="82348-119">A method is included in the enumeration if the method is marked `miForwardRef` and either `mdPinvokeImpl` or `miRuntime` is set to zero.</span></span> <span data-ttu-id="82348-120">En d’autres termes, une méthode non résolue est une méthode de classe marquée `miForwardRef` mais qui n’est pas implémentée dans du code non managé (atteinte via PInvoke), ni implémentée en interne par le runtime lui-même</span><span class="sxs-lookup"><span data-stu-id="82348-120">In other words, an unresolved method is a class method that is marked `miForwardRef` but which is not implemented in unmanaged code (reached via PInvoke) nor implemented internally by the runtime itself</span></span>  
   
- <span data-ttu-id="d0faf-121">L’énumération exclut toutes les méthodes définies au niveau de la portée du module (globales) ou dans les interfaces ou les classes abstraites.</span><span class="sxs-lookup"><span data-stu-id="d0faf-121">The enumeration excludes all methods that are defined either at module scope (globals) or in interfaces or abstract classes.</span></span>  
+ <span data-ttu-id="82348-121">L’énumération exclut toutes les méthodes définies au niveau de la portée du module (globales) ou dans les interfaces ou les classes abstraites.</span><span class="sxs-lookup"><span data-stu-id="82348-121">The enumeration excludes all methods that are defined either at module scope (globals) or in interfaces or abstract classes.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d0faf-122">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d0faf-122">Requirements</span></span>  
- <span data-ttu-id="d0faf-123">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d0faf-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="82348-122">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="82348-122">Requirements</span></span>  
+ <span data-ttu-id="82348-123">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="82348-123">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d0faf-124">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="d0faf-124">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="82348-124">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="82348-124">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="d0faf-125">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="d0faf-125">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="82348-125">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="82348-125">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="d0faf-126">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d0faf-126">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="82348-126">**Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="82348-126">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d0faf-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d0faf-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="82348-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="82348-127">See also</span></span>
 
-- [<span data-ttu-id="d0faf-128">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="d0faf-128">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="d0faf-129">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="d0faf-129">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="82348-128">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="82348-128">IMetaDataImport Interface</span></span>](imetadataimport-interface.md)
+- [<span data-ttu-id="82348-129">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="82348-129">IMetaDataImport2 Interface</span></span>](imetadataimport2-interface.md)
