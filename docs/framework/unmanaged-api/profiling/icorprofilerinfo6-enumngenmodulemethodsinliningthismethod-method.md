@@ -2,12 +2,12 @@
 title: ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod, méthode
 ms.date: 03/30/2017
 ms.assetid: b933dfe6-7833-40cb-aad8-40842dc3034f
-ms.openlocfilehash: 103fe1b6845edfe0a364db979557db63511f6ee3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8ed3f305deceacb976aeff994db1588f9e1ce1fb
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130385"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495526"
 ---
 # <a name="icorprofilerinfo6enumngenmodulemethodsinliningthismethod-method"></a>ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod, méthode
 
@@ -31,55 +31,55 @@ HRESULT EnumNgenModuleMethodsInliningThisMethod(
 dans Identificateur d’un module NGen.
 
 `inlineeModuleId`\
-dans Identificateur d’un module qui définit `inlineeMethodId`. Pour plus d'informations, consultez la section Notes.
+dans Identificateur d’un module qui définit `inlineeMethodId` . Pour plus d'informations, consultez la section Remarques.
 
 `inlineeMethodId`\
-dans Identificateur d’une méthode Inline. Pour plus d'informations, consultez la section Notes.
+dans Identificateur d’une méthode Inline. Pour plus d'informations, consultez la section Remarques.
 
 `incompleteData`\
-à Indicateur qui spécifie si `ppEnum` contient toutes les méthodes qui entourent une méthode donnée.  Pour plus d'informations, consultez la section Notes.
+à Indicateur qui signale si `ppEnum` contient toutes les méthodes incorporant une méthode donnée.  Pour plus d'informations, consultez la section Remarques.
 
 `ppEnum`\
 à Pointeur vers l’adresse d’un énumérateur
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-`inlineeModuleId` et `inlineeMethodId` forment ensemble l’identificateur complet de la méthode qui peut être Inline. Par exemple, supposons que le module `A` définit une méthode `Simple.Add`:
+`inlineeModuleId`et `inlineeMethodId` forment ensemble l’identificateur complet de la méthode qui peut être Inline. Par exemple, supposons que module `A` définit une méthode `Simple.Add` :
 
 ```csharp
 Simple.Add(int a, int b)
 { return a + b; }
 ```
 
-et le module B définissent `Fancy.AddTwice`:
+et le module B définit `Fancy.AddTwice` :
 
 ```csharp
 Fancy.AddTwice(int a, int b)
 { return Simple.Add(a,b) + Simple.Add(a,b); }
 ```
 
-Laisse également supposer que `Fancy.AddTwice` Inline l’appel à `SimpleAdd`. Un profileur peut utiliser cet énumérateur pour rechercher toutes les méthodes définies dans le module B en ligne `Simple.Add`, et le résultat doit énumérer `AddTwice`.  `inlineeModuleId` est l’identificateur de module `A`et `inlineeMethodId` est l’identificateur de `Simple.Add(int a, int b)`.
+Laisse également supposer que `Fancy.AddTwice` l’appel à est inline `SimpleAdd` . Un profileur peut utiliser cet énumérateur pour rechercher toutes les méthodes définies dans le module B en ligne `Simple.Add` , et le résultat doit être énuméré `AddTwice` .  `inlineeModuleId`est l’identificateur du module `A` et `inlineeMethodId` est l’identificateur de `Simple.Add(int a, int b)` .
 
 Si `incompleteData` a la valeur true après le retour de la fonction, l’énumérateur ne contient pas toutes les méthodes qui entourent une méthode donnée. Cela peut se produire lorsqu’une ou plusieurs dépendances directes ou indirectes du module Inlines n’ont pas encore été chargées. Si un profileur a besoin de données précises, il doit réessayer plus tard lorsque d’autres modules sont chargés, de préférence lors du chargement de chaque module.
 
-La méthode `EnumNgenModuleMethodsInliningThisMethod` peut être utilisée pour contourner les limitations relatives à l’incorporation de ReJIT. ReJIT permet à un profileur de modifier l’implémentation d’une méthode, puis de lui créer un nouveau code à la volée. Par exemple, nous pourrions modifier `Simple.Add` comme suit :
+La `EnumNgenModuleMethodsInliningThisMethod` méthode peut être utilisée pour contourner les limitations relatives à l’incorporation de ReJIT. ReJIT permet à un profileur de modifier l’implémentation d’une méthode, puis de lui créer un nouveau code à la volée. Par exemple, nous pourrions modifier `Simple.Add` les éléments suivants :
 
 ```csharp
 Simple.Add(int a, int b)
 { return 42; }
 ```
 
-Toutefois, étant donné que `Fancy.AddTwice` a déjà inséré des `Simple.Add`, il continue d’avoir le même comportement qu’avant. Pour contourner cette limitation, l’appelant doit rechercher toutes les méthodes de tous les modules qui Inline `Simple.Add` et utiliser `ICorProfilerInfo5::RequestRejit` sur chacune de ces méthodes. Lorsque les méthodes sont recompilées, elles ont le nouveau comportement de `Simple.Add` au lieu de l’ancien comportement.
+Toutefois, étant donné que `Fancy.AddTwice` a déjà été inclus `Simple.Add` , il continue à avoir le même comportement qu’avant. Pour contourner cette limitation, l’appelant doit rechercher toutes les méthodes de tous les modules qui sont inline `Simple.Add` et utilisent `ICorProfilerInfo5::RequestRejit` sur chacune de ces méthodes. Lorsque les méthodes sont recompilées, elles ont le nouveau comportement de `Simple.Add` au lieu de l’ancien comportement.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** CorProf.idl, CorProf.h
 
 **Bibliothèque :** CorGuids.lib
 
-**Versions du .NET Framework :** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]
+**Versions de .NET Framework :**[!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

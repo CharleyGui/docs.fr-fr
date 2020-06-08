@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cc7b0e5b-48c3-4509-8ebb-611ddb1f7ec2
 topic_type:
 - apiref
-ms.openlocfilehash: c8ac959c192814562488ab916c8462b0baa0d8e6
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 9cf9d48bf50ffc1fc56270c13215acfef6d9c3af
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703649"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504054"
 ---
 # <a name="iclrruntimeinfogetinterface-method"></a>ICLRRuntimeInfo::GetInterface, méthode
-Charge le CLR dans le processus en cours et retourne des pointeurs d’interface de Runtime, tels que [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md), [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)et [IMetaDataDispenserEx](../metadata/imetadatadispenser-interface.md).  
+Charge le CLR dans le processus en cours et retourne des pointeurs d’interface de Runtime, tels que [ICLRRuntimeHost](iclrruntimehost-interface.md), [ICLRStrongName](iclrstrongname-interface.md)et [IMetaDataDispenserEx](../metadata/imetadatadispenser-interface.md).  
   
  Cette méthode remplace toutes les `CorBindTo` fonctions * dans la section [fonctions d’hébergement CLR déconseillées](deprecated-clr-hosting-functions.md) .  
   
@@ -46,7 +46,7 @@ HRESULT GetInterface(
  `ppUnk`  
  à Pointeur vers l’interface interrogée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -56,7 +56,7 @@ HRESULT GetInterface(
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour traiter la demande.|  
 |CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Un Runtime différent était déjà lié à la stratégie d’activation héritée du CLR version 2.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Cette méthode provoque le chargement du CLR mais pas son initialisation.  
   
  Le tableau suivant indique les combinaisons prises en charge pour `rclsid` et `riid` .  
@@ -72,7 +72,7 @@ HRESULT GetInterface(
 |||  
 |CLSID_CLRStrongName|IID_ICLRStrongName|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
@@ -85,4 +85,4 @@ HRESULT GetInterface(
 
 - [ICLRRuntimeInfo, interface](iclrruntimeinfo-interface.md)
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hébergement](index.md)
+- [Hosting](index.md)

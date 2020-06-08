@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: b3a44df3-578a-4451-b55e-70c8e7695f5e
 topic_type:
 - apiref
-ms.openlocfilehash: 419baaf64397830ef86cfd9e5c3437e3f5b57795
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: b1327e13006ca4b3f9074c1348b1817c9a1b3728
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763005"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503950"
 ---
 # <a name="iclrtask-interface"></a>ICLRTask, interface
 Fournit des méthodes qui permettent à l’hôte de faire des demandes du common language runtime (CLR) ou de fournir une notification au CLR sur la tâche associée.  
@@ -40,12 +40,12 @@ Fournit des méthodes qui permettent à l’hôte de faire des demandes du commo
 |[SwitchOut, méthode](iclrtask-switchout-method.md)|Notifie le CLR que la tâche représentée par l' `ICLRTask` instance actuelle n’est plus dans un état opérationnel.|  
 |[YieldTask, méthode](iclrtask-yieldtask-method.md)|Demande que le CLR rende le temps processeur disponible pour d’autres tâches. Le CLR ne garantit pas que la tâche sera placée dans un État où elle peut générer du temps de traitement.|  
   
-## <a name="remarks"></a>Notes  
- Un `ICLRTask` est la représentation d’une tâche pour le CLR. À tout moment pendant l’exécution du code, une tâche peut être décrite comme en cours d’exécution ou en attente d’exécution. L’hôte appelle la `ICLRTask::SwitchIn` méthode pour informer le CLR que la tâche représentée par l' `ICLRTask` instance actuelle est désormais dans un état de fonctionnement. Après un appel à `ICLRTask::SwitchIn` , l’hôte peut planifier la tâche sur n’importe quel thread de système d’exploitation, sauf dans les cas où le runtime requiert l’affinité de thread, comme spécifié par les appels aux méthodes [IHostTaskManager :: BeginThreadAffinity](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-beginthreadaffinity-method.md) et [IHostTaskManager :: EndThreadAffinity](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-endthreadaffinity-method.md) . Un certain temps plus tard, le système d’exploitation peut décider de supprimer la tâche du thread et de la placer dans un état de non-exécution. Par exemple, cela peut se produire chaque fois que la tâche bloque sur les primitives de synchronisation, ou attend la fin des opérations d’e/s. L’hôte appelle [SwitchOut](iclrtask-switchout-method.md) pour informer le CLR que la tâche représentée par l' `ICLRTask` instance actuelle n’est plus dans un état opérationnel.  
+## <a name="remarks"></a>Remarques  
+ Un `ICLRTask` est la représentation d’une tâche pour le CLR. À tout moment pendant l’exécution du code, une tâche peut être décrite comme en cours d’exécution ou en attente d’exécution. L’hôte appelle la `ICLRTask::SwitchIn` méthode pour informer le CLR que la tâche représentée par l' `ICLRTask` instance actuelle est désormais dans un état de fonctionnement. Après un appel à `ICLRTask::SwitchIn` , l’hôte peut planifier la tâche sur n’importe quel thread de système d’exploitation, sauf dans les cas où le runtime requiert l’affinité de thread, comme spécifié par les appels aux méthodes [IHostTaskManager :: BeginThreadAffinity](ihosttaskmanager-beginthreadaffinity-method.md) et [IHostTaskManager :: EndThreadAffinity](ihosttaskmanager-endthreadaffinity-method.md) . Un certain temps plus tard, le système d’exploitation peut décider de supprimer la tâche du thread et de la placer dans un état de non-exécution. Par exemple, cela peut se produire chaque fois que la tâche bloque sur les primitives de synchronisation, ou attend la fin des opérations d’e/s. L’hôte appelle [SwitchOut](iclrtask-switchout-method.md) pour informer le CLR que la tâche représentée par l' `ICLRTask` instance actuelle n’est plus dans un état opérationnel.  
   
  Une tâche se termine généralement à la fin de l’exécution du code. À ce moment-là, l’hôte appelle `ICLRTask::ExitTask` pour détruire le associé `ICLRTask` . Toutefois, les tâches peuvent également être recyclées à l’aide d’un appel à `ICLRTask::Reset` , ce qui permet `ICLRTask` à l’instance d’être réutilisée. Cette approche empêche la surcharge liée à la création et à la destruction répétées d’instances.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c2f45801-dd38-4b78-b6b7-64397dc73f83
 topic_type:
 - apiref
-ms.openlocfilehash: 3e13b17fb03530730a78f6889309f1993419574b
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 13ce44c9c7a04b870278bc8926dd9fe5daf10bc3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866210"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500011"
 ---
 # <a name="icorprofilercallbackjitinlining-method"></a>ICorProfilerCallback::JITInlining, méthode
 Indique au profileur que le compilateur juste-à-temps (JIT) est sur le point d’insérer une fonction en ligne avec une autre fonction.  
@@ -34,29 +34,29 @@ HRESULT JITInlining(
     [out] BOOL      *pfShouldInline);  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `callerId`  
- dans ID de la fonction dans laquelle la fonction `calleeId` sera insérée.  
+ dans ID de la fonction dans laquelle la `calleeId` fonction sera insérée.  
   
  `calleeId`  
  dans ID de la fonction à insérer.  
   
  `pfShouldInline`  
- [out] `true` pour permettre l’insertion ; Sinon, `false`.  
+ [out] `true` pour permettre l’insertion ; Sinon, `false` .  
   
-## <a name="remarks"></a>Notes  
- Le profileur peut définir `pfShouldInline` sur `false` pour empêcher l’insertion de la fonction `calleeId` dans la fonction `callerId`. En outre, le profileur peut désactiver globalement l’insertion inline à l’aide de la COR_PRF_DISABLE_INLINING valeur de l’énumération [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) .  
+## <a name="remarks"></a>Remarques  
+ Le profileur peut avoir la valeur pour `pfShouldInline` `false` empêcher l’insertion de la `calleeId` fonction dans la `callerId` fonction. En outre, le profileur peut désactiver globalement l’insertion inline à l’aide de la COR_PRF_DISABLE_INLINING valeur de l’énumération [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) .  
   
- Les fonctions insérées Inline ne déclenchent pas d’événements pour l’entrée ou la sortie. Par conséquent, le profileur doit définir `pfShouldInline` à `false` afin de produire un graphique des appels précis. La définition de `pfShouldInline` sur `false` affecte les performances, car l’insertion inline augmente généralement la vitesse et réduit le nombre d’événements de compilation JIT distincts pour la méthode insérée.  
+ Les fonctions insérées Inline ne déclenchent pas d’événements pour l’entrée ou la sortie. Par conséquent, le profileur doit définir sur afin de `pfShouldInline` `false` produire un graphique des appels précis. La définition de la valeur `pfShouldInline` sur `false` affecte les performances, car l’insertion inline augmente généralement la vitesse et réduit le nombre d’événements de compilation JIT distincts pour la méthode insérée.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

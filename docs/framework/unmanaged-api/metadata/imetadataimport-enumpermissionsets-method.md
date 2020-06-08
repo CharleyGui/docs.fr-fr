@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 347d7e5c-c90f-45ad-bd1e-2c7912b0b19c
 topic_type:
 - apiref
-ms.openlocfilehash: e628cf5dab8006b0df0ab6c60dc995cd0c6bb29d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 79b1493d262288c1d85a56538810e35a73441595
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175445"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491755"
 ---
 # <a name="imetadataimportenumpermissionsets-method"></a>IMetaDataImport::EnumPermissionSets, méthode
 Énumère les autorisations pour les objets inclus dans une portée des métadonnées spécifiée.  
@@ -40,40 +40,40 @@ HRESULT EnumPermissionSets
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `tk`  
- [dans] Un jeton de métadonnées qui limite la portée de la recherche, ou NULL pour rechercher la portée la plus large possible.  
+ dans Un jeton de métadonnées qui limite l’étendue de la recherche, ou NULL pour effectuer une recherche dans l’étendue la plus étendue possible.  
   
  `dwActions`  
- [dans] Drapeaux représentant <xref:System.Security.Permissions.SecurityAction> les valeurs `rPermission`à inclure dans , ou zéro pour retourner toutes les actions.  
+ dans Indicateurs représentant les <xref:System.Security.Permissions.SecurityAction> valeurs à inclure dans `rPermission` , ou zéro pour retourner toutes les actions.  
   
  `rPermission`  
- [out] Le tableau utilisé pour stocker les jetons d’autorisation.  
+ à Tableau utilisé pour stocker les jetons d’autorisation.  
   
  `cMax`  
  [in] Taille maximale du tableau `rPermission`.  
   
  `pcTokens`  
- [out] Le nombre de jetons `rPermission`d’autorisation retournés dans .  
+ à Nombre de jetons d’autorisation retournés dans `rPermission` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumPermissionSets`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de jetons à énumérer. Dans ce `pcTokens` cas, c’est zéro.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

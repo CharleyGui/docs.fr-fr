@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 60573ad7-8821-4721-a068-3f7a6d25926a
 topic_type:
 - apiref
-ms.openlocfilehash: 4fed7dbe4ec8343a3854d1f277e3228b14c0bf21
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 39343ffc88fc9b421b916e33e3e75e4e34fc233d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450028"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503789"
 ---
 # <a name="imetadataimportenumproperties-method"></a>IMetaDataImport::EnumProperties, méthode
 Énumère les jetons PropertyDef représentant les propriétés du type référencé par le jeton TypeDef spécifié.  
@@ -51,25 +51,25 @@ HRESULT EnumProperties (
  [in] Taille maximale du tableau `rProperties`.  
   
  `pcProperties`  
- à Nombre de jetons PropertyDef retournés dans `rProperties`.  
+ à Nombre de jetons PropertyDef retournés dans `rProperties` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumProperties` retourné avec succès.|  
+|`S_OK`|`EnumProperties`retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcProperties` est égal à zéro.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

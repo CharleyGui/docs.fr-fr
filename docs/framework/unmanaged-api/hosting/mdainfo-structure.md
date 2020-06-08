@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fb8c14f7-d461-43d1-8b47-adb6723b9b93
 topic_type:
 - apiref
-ms.openlocfilehash: 33b3044c7b5237e586fdb993a16b6144c271782c
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 517e0ae7fb5d5151f94f82d9146ebbf40bad2ef9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007713"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503859"
 ---
 # <a name="mdainfo-structure"></a>MDAInfo, structure
 Fournit des détails sur l' `Event_MDAFired` événement, qui déclenche la création d’un Assistant Débogage managé (MDA).  
@@ -45,13 +45,13 @@ typedef struct _MDAInfo {
   
  Le Runtime effectue les étapes suivantes lorsqu’un événement qui déclenche la création d’un Assistant Débogage managé est déclenché :  
   
-- Si l’hôte n’a pas inscrit une instance [IActionOnCLREvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) en appelant [ICLROnEventManager :: RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md) pour être averti d’un `Event_MDAFired` événement, le runtime continue avec son comportement par défaut, non hébergé.  
+- Si l’hôte n’a pas inscrit une instance [IActionOnCLREvent](iactiononclrevent-interface.md) en appelant [ICLROnEventManager :: RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md) pour être averti d’un `Event_MDAFired` événement, le runtime continue avec son comportement par défaut, non hébergé.  
   
 - Si l’hôte a inscrit un gestionnaire pour cet événement, le runtime vérifie si un débogueur est attaché au processus. Si c’est le cas, le runtime s’arrête dans le débogueur. Quand le débogueur continue, il appelle l’hôte. Si aucun débogueur n’est attaché, le runtime appelle `IActionOnCLREvent::OnEvent` et passe un pointeur vers une `MDAInfo` instance en tant que `data` paramètre.  
   
  L’hôte peut choisir d’activer les MDA et de recevoir une notification lorsqu’un Assistant Débogage managé est activé. Cela donne à l’hôte la possibilité de substituer le comportement par défaut et d’abandonner le thread managé qui a déclenché l’événement, afin de l’empêcher de corrompre l’état du processus. Pour plus d’informations sur l’utilisation des MDA, consultez [diagnostic des erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. idl  
