@@ -1,5 +1,6 @@
 ---
 title: Utilisation du protocole Secure Sockets Layer
+description: En savoir plus sur la façon dont System.Net et l’extension des classes utilisent le protocole SSL pour chiffrer la connexion de plusieurs protocoles réseau dans le .NET Framework.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - receiving data, Secure Sockets Layer
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
-ms.openlocfilehash: ef2abc7574aea1b4f77ff93545ad84678c66ce48
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67330962382e768849cbf67d5f412ea80f65569d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71046902"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501987"
 ---
 # <a name="using-secure-sockets-layer"></a>Utilisation du protocole Secure Sockets Layer
 Les classes <xref:System.Net> utilisent le protocole SSL (Secure Sockets Layer) pour chiffrer les connexions avec différents protocoles réseau.  
@@ -31,7 +32,7 @@ Les classes <xref:System.Net> utilisent le protocole SSL (Secure Sockets Layer) 
   
  La classe <xref:System.Net.Security.SslStream> fournit une abstraction de flux de données pour le protocole SSL et offre de nombreuses façons de configurer la connexion SSL.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ### <a name="code"></a>Code  
   

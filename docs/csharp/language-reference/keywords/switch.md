@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: a4e6f8e43c2ec8c867af9f78bd83b435b78c73d5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9335399be2d4909a02fecbf2959c6f5608664732
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446761"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493667"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
@@ -86,7 +86,7 @@ L’exécution de la liste d’instructions dans la section de commutation avec 
 
 Chaque étiquette case spécifie un modèle à comparer à l’expression de correspondance (la variable `caseSwitch` dans les exemples précédents). S’ils correspondent, le contrôle est transféré à la section de commutation qui contient la **première** étiquette case correspondante. Si aucun modèle d’étiquette case ne correspond à l’expression de correspondance, le contrôle est transféré à la section comportant l’étiquette case `default`, s’il y en a une. En l’absence de cas `default`, aucune instruction d’aucune section switch n’est exécutée et le contrôle est transféré hors de l’instruction `switch`.
 
-Pour plus d’informations sur l’instruction `switch` et les critères spéciaux, consultez la section [Critères spéciaux avec l’instruction `switch`](#pattern).
+Pour plus d’informations sur l’instruction `switch` et les critères spéciaux, consultez la section [Critères spéciaux avec l’instruction `switch`](#pattern-matching with-the-switch-statement).
 
 Étant donné que C# 6 ne prend en charge que le modèle de constante et n’autorise pas la répétition de valeurs constantes, les étiquettes case définissent des valeurs qui s’excluent mutuellement, et un seul modèle peut correspondre à l’expression utilisée. Par conséquent, l’ordre dans lequel les instructions `case` apparaissent n’a pas d’importance.
 
@@ -100,7 +100,7 @@ Vous pouvez corriger ce problème et éliminer l’avertissement du compilateur 
 
 - en modifiant l’ordre des sections de commutation ;
 
-- en utilisant une [clause when](#when) dans l’étiquette `case`.
+- en utilisant une [clause when](#the-case-statement-and-the-when-clause) dans l’étiquette `case`.
 
 ## <a name="the-default-case"></a>Étiquette case `default`
 
@@ -108,7 +108,7 @@ L’étiquette case `default` spécifie la section switch à exécuter si l’ex
 
 L’étiquette case `default` peut apparaître à n’importe quelle position dans l’instruction `switch`. Quelle que soit sa position dans le code source, il est toujours évalué en dernier, une fois que toutes les étiquettes `case` ont été évaluées.
 
-## <a name="pattern-matching-with-the-switch-statement"></a><a name="pattern"></a> Critères spéciaux avec l’instruction `switch`
+## <a name="pattern-matching-with-the-switch-statement"></a> Critères spéciaux avec l’instruction `switch`
 
 Chaque instruction `case` définit un modèle qui, s’il correspond à l’expression de correspondance, entraîne l’exécution de la section de commutation qui le contient. Toutes les versions de C# prennent en charge le modèle de constante. Les autres modèles sont pris en charge à compter de C# 7.0.
 
@@ -185,7 +185,7 @@ Sans critères spéciaux, ce code peut être écrit comme suit. L’utilisation 
 
 [!code-csharp[type-pattern2#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
 
-## <a name="the-case-statement-and-the-when-clause"></a><a name="when" /> L’instruction `case` et la clause `when`
+## <a name="the-case-statement-and-the-when-clause"></a>Instruction `case` et clause `when`
 
 À compter de C# 7.0, comme les instructions case ne s’excluent pas nécessairement mutuellement, vous pouvez ajouter une clause `when` pour spécifier une condition supplémentaire qui doit être satisfaite pour que l’instruction case soit évaluée à true. La clause `when` peut être toute expression qui retourne une valeur booléenne.
 

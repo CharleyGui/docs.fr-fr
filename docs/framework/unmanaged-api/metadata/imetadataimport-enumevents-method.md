@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e1efedcb-3dd7-42ae-a399-21c24728aec5
 topic_type:
 - apiref
-ms.openlocfilehash: bd50d63b1f7080f510c29f90979b7b36242af1c0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 53b1234a176cade5876d70da0cb4eadc18802c69
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177368"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492302"
 ---
 # <a name="imetadataimportenumevents-method"></a>IMetaDataImport::EnumEvents, méthode
 Énumère les jetons de définition d'événements pour le jeton TypeDef spécifié.  
@@ -39,37 +39,37 @@ HRESULT EnumEvents (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `td`  
- [dans] Le jeton TypeDef dont les définitions d’événements doivent être énumérées.  
+ dans Jeton TypeDef dont les définitions d’événements doivent être énumérées.  
   
  `rEvents`  
- [out] La gamme d’événements retournés.  
+ à Tableau d’événements retournés.  
   
  `cMax`  
  [in] Taille maximale du tableau `rEvents`.  
   
  `pcEvents`  
- [out] Le nombre réel d’événements retournés dans `rEvents`.  
+ à Nombre réel d’événements retournés dans `rEvents` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumEvents`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas d’événements à énumérer. Dans ce `pcEvents` cas, c’est zéro.|  
+|`S_FALSE`|Il n’y a aucun événement à énumérer. Dans ce cas, `pcEvents` est égal à zéro.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

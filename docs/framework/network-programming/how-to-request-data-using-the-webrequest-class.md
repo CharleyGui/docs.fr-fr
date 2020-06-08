@@ -1,5 +1,6 @@
 ---
-title: 'Comment : Demander des données en utilisant la classe WebRequest'
+title: 'Comment : demander des données à l’aide de la classe WebRequest'
+description: Apprenez à demander une ressource, telle qu’une page Web ou un fichier, à partir d’un serveur à l’aide de la classe WebRequest dans le .NET Framework.
 ms.date: 03/21/2019
 dev_langs:
 - csharp
@@ -11,14 +12,14 @@ helpviewer_keywords:
 - receiving data, using WebRequest class
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
-ms.openlocfilehash: e670a2a503ce704eff847e9e0b3ee340ab52fe62
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5dcc1a7dad226288e3f74969b86e2dd457c0eed0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71048167"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502468"
 ---
-# <a name="how-to-request-data-by-using-the-webrequest-class"></a>Comment : Demander des données en utilisant la classe WebRequest
+# <a name="how-to-request-data-by-using-the-webrequest-class"></a>Comment : demander des données à l’aide de la classe WebRequest
 
 La procédure suivante décrit les étapes nécessaires pour demander une ressource, comme une page web ou un fichier, auprès d’un serveur. La ressource doit être identifiée par un URI.
 
@@ -91,7 +92,7 @@ La procédure suivante décrit les étapes nécessaires pour demander une ressou
     response.Close()
     ```
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant montre comment créer une demande auprès d’un serveur web et lire les données dans sa réponse :
 
@@ -100,8 +101,8 @@ L’exemple de code suivant montre comment créer une demande auprès d’un ser
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de demandes sur Internet](creating-internet-requests.md)
-- [Utilisation de streams sur le réseau](using-streams-on-the-network.md)
+- [Création de requêtes Internet](creating-internet-requests.md)
+- [Utilisation de flux sur le réseau](using-streams-on-the-network.md)
 - [Accès à Internet via un proxy](accessing-the-internet-through-a-proxy.md)
 - [Demande de données](requesting-data.md)
-- [Comment : Envoyer des données en utilisant la classe WebRequest](how-to-send-data-using-the-webrequest-class.md)
+- [Comment : envoyer des données à l’aide de la classe WebRequest](how-to-send-data-using-the-webrequest-class.md)

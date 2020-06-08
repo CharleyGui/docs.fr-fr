@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9929817e-acc9-40b7-960c-598664e04b60
 topic_type:
 - apiref
-ms.openlocfilehash: b9a51a85bd17e527d4c04b69ca65100a7069607f
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: b270a6691d4e4ee4a5d0b42f424694eb7993e4e7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703715"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504145"
 ---
 # <a name="iclrmetahostquerylegacyv2runtimebinding-method"></a>ICLRMetaHost::QueryLegacyV2RuntimeBinding, méthode
-Retourne une interface qui représente un runtime auquel une stratégie d’activation héritée a été liée, par exemple, en utilisant l' `useLegacyV2RuntimeActivationPolicy` attribut sur l’entrée du fichier de configuration de l' [ \< élément de démarrage>](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) , en utilisant directement les API d’activation héritées ou en appelant la méthode [ICLRRuntimeInfo :: BindAsLegacyV2Runtime,](iclrruntimeinfo-bindaslegacyv2runtime-method.md) .  
+Retourne une interface qui représente un runtime auquel une stratégie d’activation héritée a été liée, par exemple à l’aide de l' `useLegacyV2RuntimeActivationPolicy` attribut sur l’entrée du fichier de configuration de l' [ \<startup> élément](../../configure-apps/file-schema/startup/startup-element.md) , en utilisant directement les API d’activation héritées ou en appelant la méthode [ICLRRuntimeInfo :: BindAsLegacyV2Runtime,](iclrruntimeinfo-bindaslegacyv2runtime-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ HRESULT QueryLegacyV2RuntimeBinding (
  `ppUnk`  
  [out] Obligatoire. Lorsque cette méthode est retournée, contient un pointeur vers l’interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) qui représente un Runtime lié à une stratégie d’activation héritée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -63,4 +63,4 @@ HRESULT QueryLegacyV2RuntimeBinding (
 ## <a name="see-also"></a>Voir aussi
 
 - [ICLRMetaHost, interface](iclrmetahost-interface.md)
-- [Hébergement](index.md)
+- [Hosting](index.md)

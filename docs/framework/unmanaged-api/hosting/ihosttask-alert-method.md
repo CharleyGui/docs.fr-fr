@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5245d4b5-b6c3-48df-9cb9-8caf059f43fb
 topic_type:
 - apiref
-ms.openlocfilehash: 7271fe8e28da0bb5fd878aae5d36ab703e64ebf0
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: c95b787101d4d0302ce4d2a5cd3bdc7e11f9cd63
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803020"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501428"
 ---
 # <a name="ihosttaskalert-method"></a>IHostTask::Alert, méthode
 Demande que l’hôte réactive la tâche représentée par l’instance [IHostTask](ihosttask-interface.md) actuelle, afin que la tâche puisse être abandonnée.  
@@ -42,13 +42,13 @@ HRESULT Alert ();
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Le CLR appelle la `Alert` méthode quand <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> est appelé à partir du code utilisateur ou lorsque le <xref:System.AppDomain> associé à l’objet actuel <xref:System.Threading.Thread> s’arrête. L’hôte doit être retourné immédiatement, car l’appel est effectué de façon asynchrone. Si l’hôte ne peut pas alerter la tâche immédiatement, il doit se réveiller la prochaine fois qu’il entre dans un État dans lequel il peut être alerté.  
   
 > [!NOTE]
-> `Alert`affecte uniquement les tâches auxquelles le runtime a passé une [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) valeur de WAIT_ALERTABLE à des méthodes telles que [join](ihosttask-join-method.md).  
+> `Alert`affecte uniquement les tâches auxquelles le runtime a passé une [WAIT_OPTION](wait-option-enumeration.md) valeur de WAIT_ALERTABLE à des méthodes telles que [join](ihosttask-join-method.md).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

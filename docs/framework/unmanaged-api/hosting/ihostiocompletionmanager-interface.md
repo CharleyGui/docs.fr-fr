@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c28d1983-83f7-46e2-990f-dbb9dc07c818
 topic_type:
 - apiref
-ms.openlocfilehash: 90675d9be71342efa903767abbf63102b40a2c35
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 095872f8d4bd4f7d3351b8b3e3f8f8445b615cd8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804688"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501534"
 ---
 # <a name="ihostiocompletionmanager-interface"></a>IHostIoCompletionManager, interface
 Fournit des méthodes qui permettent au common language runtime (CLR) d’interagir avec les ports de terminaison d’e/s fournis par l’hôte.  
@@ -36,14 +36,14 @@ Fournit des méthodes qui permettent au common language runtime (CLR) d’intera
 |[GetMaxThreads, méthode](ihostiocompletionmanager-getmaxthreads-method.md)|Obtient le nombre maximal de threads que l’hôte peut allouer aux demandes d’e/s de service.|  
 |[GetMinThreads, méthode](ihostiocompletionmanager-getminthreads-method.md)|Obtient le nombre minimal de threads que l’hôte fournit pour traiter les demandes d’e/s.|  
 |[InitializeHostOverlapped, méthode](ihostiocompletionmanager-initializehostoverlapped-method.md)|Fournit à l’hôte la possibilité d’initialiser toutes les données personnalisées relatives à une demande d’e/s.|  
-|[SetCLRIoCompletionManager, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setclriocompletionmanager-method.md)|Fournit à l’hôte un pointeur d’interface vers une instance [ICLRIoCompletionManager](iclriocompletionmanager-interface.md) implémentée par le CLR.|  
+|[SetCLRIoCompletionManager, méthode](ihostiocompletionmanager-setclriocompletionmanager-method.md)|Fournit à l’hôte un pointeur d’interface vers une instance [ICLRIoCompletionManager](iclriocompletionmanager-interface.md) implémentée par le CLR.|  
 |[SetMaxThreads, méthode](ihostiocompletionmanager-setmaxthreads-method.md)|Définit le nombre maximal de threads que l’hôte alloue aux demandes d’e/s de service.|  
 |[SetMinThreads, méthode](ihostiocompletionmanager-setminthreads-method.md)|Définit le nombre minimal de threads que l’hôte doit allouer à l’achèvement d’e/s.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  `IHostIoCompletionManager`correspond à l' `ICLRIoCompletionManager` interface implémentée par le CLR. Le CLR appelle les méthodes de `IHostIoCompletionManager` pour lier des handles aux ports fournis par l’hôte, et l’hôte appelle les méthodes de `ICLRIoCompletionManager` pour signaler l’achèvement des demandes d’e/s.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

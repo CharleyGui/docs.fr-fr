@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d6ece160-26ad-4d39-abd7-05acd6f78c48
 topic_type:
 - apiref
-ms.openlocfilehash: 0eb1f57e3505f9ce5bb8b831d30c3891e51097c3
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: b7a068efcf20b2028e9c193567d15b59e582febf
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158565"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500921"
 ---
 # <a name="cor_prf_gc_generation-enumeration"></a>COR_PRF_GC_GENERATION, énumération
 Identifie une génération de garbage collection.  
@@ -46,7 +46,7 @@ typedef enum {
 |`COR_PRF_GC_LARGE_OBJECT_HEAP`|L’objet est stocké dans le tas d’objets volumineux.|  
 |`COR_PRF_GC_PINNED_OBJECT_HEAP`|L’objet est stocké dans le tas d’objets épinglés.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Le garbage collector améliore les performances de gestion de la mémoire en divisant les objets en générations en fonction de leur âge. Le « garbage collector » utilise actuellement trois générations, numérotées 0, 1 et 2, et deux segments de tas spéciaux, un pour les objets volumineux et un pour les objets épinglés.
   
  Les objets dont la taille est supérieure à une valeur de seuil sont stockés dans le tas d’objets volumineux. Les objets épinglés peuvent être alloués au tas d’objets épinglés afin d’éviter les coûts de performance liés à leur allocation sur les tas normaux. Les autres objets alloués commencent à appartenir à la génération 0. Tous les objets qui existent après garbage collection se produisent dans la génération 0 sont promus à la génération 1. Les objets qui existent après garbage collection se produisent dans la génération 1 sont déplacés dans la génération 2.  
@@ -55,8 +55,8 @@ typedef enum {
   
  L' `COR_PRF_GC_GENERATION` énumération est utilisée par la structure [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   

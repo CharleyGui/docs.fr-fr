@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 94667c1c-6d58-4aa7-b74e-530b11e2a276
 topic_type:
 - apiref
-ms.openlocfilehash: f5a736d80f36afb8d0a643d4a4e36c9abff01995
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ff97e419c5309fa7cb820cb7e82db96fee34f30c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445429"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501272"
 ---
 # <a name="imetadatatablesgetblob-method"></a>IMetaDataTables::GetBlob, méthode
 Obtient un pointeur vers l’objet BLOB (Binary Large Object) situé à l’index de colonne spécifié.  
@@ -37,24 +37,24 @@ HRESULT GetBlob (
   
 ## <a name="parameters"></a>Paramètres  
  `ixBlob`  
- dans Adresse mémoire à partir de laquelle récupérer `ppData`.  
+ dans Adresse mémoire à partir de laquelle effectuer l’extraction `ppData` .  
   
  `pcbData`  
- à Pointeur vers la taille, en octets, de `ppData`.  
+ à Pointeur vers la taille, en octets, de `ppData` .  
   
  `ppData`  
  à Pointeur vers un pointeur vers les données binaires récupérées.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataTables, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables, interface](imetadatatables-interface.md)
+- [IMetaDataTables2, interface](imetadatatables2-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: aae9fb17-5d01-41da-9773-1b5b5b642d81
 topic_type:
 - apiref
-ms.openlocfilehash: dcf2ce8bdb7cec1f567e548ff3314e160fffe9fd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e66b63ffa4ed25e861cff6bd9eb6065f57ff807f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616630"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493498"
 ---
 # <a name="corbindtoruntimeex-function"></a>CorBindToRuntimeEx, fonction
 Permet aux hôtes non managés de charger le common language runtime (CLR) dans un processus. Les fonctions [CorBindToRuntime](corbindtoruntime-function.md) et `CorBindToRuntimeEx` effectuent la même opération, mais la `CorBindToRuntimeEx` fonction vous permet de définir des indicateurs pour spécifier le comportement du CLR.  
@@ -102,7 +102,7 @@ HRESULT CorBindToRuntimeEx (
  Pour obtenir une description de ces indicateurs, consultez l’énumération [STARTUP_FLAGS](startup-flags-enumeration.md) .  
   
  `rclsid`  
- dans `CLSID`De la coclasse qui implémente l’interface [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) ou [ICLRRuntimeHost](iclrruntimehost-interface.md) . Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
+ dans `CLSID`De la coclasse qui implémente l’interface [ICorRuntimeHost](icorruntimehost-interface.md) ou [ICLRRuntimeHost](iclrruntimehost-interface.md) . Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
   
  `riid`  
  dans `IID`De l’interface demandée à partir de `rclsid` . Les valeurs prises en charge sont IID_ICorRuntimeHost ou IID_ICLRRuntimeHost.  
@@ -110,7 +110,7 @@ HRESULT CorBindToRuntimeEx (
  `ppv`  
  à Pointeur d’interface retourné à `riid` .  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Si `pwszVersion` spécifie une version du runtime qui n’existe pas, `CorBindToRuntimeEx` retourne une valeur HRESULT de CLR_E_SHIM_RUNTIMELOAD.  
   
 ## <a name="execution-context-and-flow-of-windows-identity"></a>Contexte d’exécution et le workflow de l’identité Windows  
@@ -122,13 +122,13 @@ HRESULT CorBindToRuntimeEx (
   
 2. En remplaçant le mode de traitement par défaut par le mode de compatibilité de la version 1, où l' <xref:System.Security.Principal.WindowsIdentity> objet n’est pas transmis sur un point asynchrone, quels que soient les <xref:System.Threading.ExecutionContext> paramètres du thread en cours. La façon dont vous modifiez le mode par défaut varie selon que vous utilisez un exécutable managé ou une interface d’hébergement non managée pour charger le CLR :  
   
-    1. Pour les exécutables managés, vous devez affecter la valeur `enabled` à l’attribut de l’élément [ \< legacyImpersonationPolicy>](../../configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) `true` .  
+    1. Pour les exécutables managés, vous devez affecter `enabled` à l’attribut de l’élément la valeur [\<legacyImpersonationPolicy>](../../configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) `true` .  
   
     2. Pour les interfaces d’hébergement non managées, définissez l' `STARTUP_LEGACY_IMPERSONATION` indicateur dans le `startupFlags` paramètre lors de l’appel de la `CorBindToRuntimeEx` fonction.  
   
      Le mode de compatibilité de la version 1 s’applique à l’ensemble du processus et à tous les domaines d’application du processus.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

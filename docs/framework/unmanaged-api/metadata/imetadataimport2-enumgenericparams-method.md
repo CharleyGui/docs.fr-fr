@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b50488a5-3cf0-483c-82dc-2892a3ec61ac
 topic_type:
 - apiref
-ms.openlocfilehash: 55709e79cd8bdb36fe1e32ee8a699fccb1b1bbc8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 093e3edf0a3c06222ebc56a4876fca08d1b7578f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175302"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490726"
 ---
 # <a name="imetadataimport2enumgenericparams-method"></a>IMetaDataImport2::EnumGenericParams, méthode
-Obtient un enumérateur pour une gamme de jetons de paramètres génériques associés au jeton typeDef ou MethodDef spécifié.  
+Obtient un énumérateur pour un tableau de jetons de paramètres génériques associés au jeton TypeDef ou MethodDef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,37 +39,37 @@ HRESULT EnumGenericParams (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `tk`  
- [dans] Le jeton TypeDef ou MethodDef dont les paramètres génériques doivent être énumérés.  
+ dans Jeton TypeDef ou MethodDef dont les paramètres génériques doivent être énumérés.  
   
  `rGenericParams`  
- [out] La gamme de paramètres génériques à énumérer.  
+ à Tableau de paramètres génériques à énumérer.  
   
  `cMax`  
- [dans] Le nombre maximum demandé de jetons à placer dans `rGenericParams`.  
+ dans Nombre maximal de jetons demandés à placer dans `rGenericParams` .  
   
  `pcGenericParams`  
- [out] Le nombre retourné de jetons placés en `rGenericParams`.  
+ à Nombre retourné de jetons placés dans `rGenericParams` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumGenericParams`retourné avec succès.|  
-|`S_FALSE`|`phEnum`n’a pas d’éléments membres. Dans ce `pcGenericParams` cas, est réglé à 0 (zéro).|  
+|`S_FALSE`|`phEnum`n’a aucun élément membre. Dans ce cas, `pcGenericParams` a la valeur 0 (zéro).|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)

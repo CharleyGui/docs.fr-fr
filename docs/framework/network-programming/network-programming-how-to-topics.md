@@ -1,5 +1,6 @@
 ---
 title: Rubriques "Comment" relatives à la programmation réseau
+description: Utilisez ces Articles de procédure pour en savoir plus sur les différentes facettes de la programmation réseau dans le .NET Framework.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - network resources
@@ -7,17 +8,17 @@ helpviewer_keywords:
 - networking how-tos [.NET Framework]
 - network
 ms.assetid: 8fd6c675-9ea6-4fad-a412-e2c2c1f233d8
-ms.openlocfilehash: 5f8f1a3ca9aaf4bea56f342857d2df0bb18a9ba8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f091f0f675fcf22cb7c6be83a5766fcc8d279be7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047631"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502273"
 ---
 # <a name="network-programming-how-to-topics"></a>Rubriques "Comment" relatives à la programmation réseau
 La liste suivante comprend des liens vers les guides pratiques de la documentation conceptuelle relative à la programmation réseau.  
   
- **Demande de données :**  
+ **Demande de données :**  
   
 - [Guide pratique pour demander une page web et récupérer les résultats sous forme de flux](how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)  
   
@@ -41,11 +42,11 @@ La liste suivante comprend des liens vers les guides pratiques de la documentati
   
 - [Comment : télécharger des fichiers avec FTP](how-to-download-files-with-ftp.md)  
   
-- [Comment : Télécharger des fichiers avec FTP](how-to-upload-files-with-ftp.md)  
+- [Procédure : charger des fichiers avec FTP](how-to-upload-files-with-ftp.md)  
   
-- [Comment : Énumérer les contenus de l’annuaire avec FTP](how-to-list-directory-contents-with-ftp.md)  
+- [Comment : répertorier le contenu d’un répertoire avec FTP](how-to-list-directory-contents-with-ftp.md)  
   
- **Version 6 du protocole Internet :**  
+ **Protocole Internet version 6 :**  
   
 - [Comment : modifier le fichier de configuration de l’ordinateur pour activer la prise en charge IPv6](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)  
   
@@ -63,13 +64,13 @@ La liste suivante comprend des liens vers les guides pratiques de la documentati
   
 - [Guide pratique pour définir une stratégie de cache pour une requête](how-to-set-cache-policy-for-a-request.md)  
   
- **Utilisation de Procurations :**  
+ **Utilisation des proxys :**  
   
 - [Guide pratique pour permettre à un WebRequest d’utiliser un proxy pour communiquer avec Internet](how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
   
 - [Comment : remplacer une sélection de proxy global](how-to-override-a-global-proxy-selection.md)  
   
- **Informations réseau :**  
+ **Informations réseau :**  
   
 - [Guide pratique pour détecter la disponibilité réseau et les changements d’adresse](how-to-detect-network-availability-and-address-changes.md)  
   

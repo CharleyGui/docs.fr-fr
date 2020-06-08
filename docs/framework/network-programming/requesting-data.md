@@ -1,5 +1,6 @@
 ---
 title: Demande de données
+description: Découvrez comment les protocoles enfichables vous permettent de développer des applications qui utilisent une seule interface pour récupérer des données de plusieurs protocoles.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - receiving data, about receiving data
 - Internet, requesting data
 ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
-ms.openlocfilehash: 1f367caf7656a83597b6262a5746686df15d33b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 19350d685a81d56657ca0a117d61b50ae24fab6a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047313"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502182"
 ---
 # <a name="requesting-data"></a>Demande de données
 Lorsque vous développez des applications destinées à être exécutées dans l’environnement d’exploitation distribué qu’est l’Internet d’aujourd’hui, il est nécessaire d’employer une méthode facile et efficace pour récupérer les données à partir de ressources de tous types. Les protocoles enfichables vous permettent de développer des applications qui utilisent une même interface pour récupérer les données à partir de plusieurs protocoles Internet.  

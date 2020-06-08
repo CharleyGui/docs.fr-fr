@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47b2a3b6-907d-43dc-858d-1ae7dca1316a
 topic_type:
 - apiref
-ms.openlocfilehash: 1868d13a9dbb73dbdf64e49c395bdbff02ce89d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e4401ea8a70e7ace8d8efc5e0a6d29f6db51b3df
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177455"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503807"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a>IMetaDataEmit2::DefineGenericParam, méthode
-Crée une définition pour un paramètre de type générique, et obtient un jeton à ce paramètre de type générique.  
+Crée une définition pour un paramètre de type générique et obtient un jeton pour ce paramètre de type générique.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ HRESULT DefineGenericParam (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [dans] Un `mdTypeDef` `mdMethodDef` ou un jeton qui représente la méthode ou le constructeur pour lequel définir un paramètre générique.  
+ dans `mdTypeDef`Jeton ou `mdMethodDef` qui représente la méthode ou le constructeur pour lequel définir un paramètre générique.  
   
  `ulParamSeq`  
- [dans] L’index du paramètre générique.  
+ dans Index du paramètre générique.  
   
  `dwParamFlags`  
- [dans] Une valeur de l’énumération [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) qui décrit le type pour le paramètre générique.  
+ dans Valeur de l’énumération [CorGenericParamAttr,](corgenericparamattr-enumeration.md) qui décrit le type du paramètre générique.  
   
  `szname`  
- [dans] Le nom du paramètre.  
+ dans Nom du paramètre.  
   
  `reserved`  
- [dans] Ce paramètre est réservé à l’extéabilité future.  
+ dans Ce paramètre est réservé pour une future extensibilité.  
   
  `rtkConstraints`  
- [dans] Un éventail de contraintes de type à durée nulle. Les membres du `mdTypeDef` `mdTypeRef`tableau `mdTypeSpec` doivent être un jeton, ou métadonnées.  
+ dans Tableau de contraintes de type se terminant par zéro. Les membres de tableau doivent être un `mdTypeDef` `mdTypeRef` jeton de `mdTypeSpec` métadonnées, ou.  
   
  `pgp`  
- [out] Un jeton qui représente le paramètre générique.  
+ à Jeton qui représente le paramètre générique.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Utilisé comme ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)

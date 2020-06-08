@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 37b95cce-9bfb-4ecf-a00b-33dcba782c67
 topic_type:
 - apiref
-ms.openlocfilehash: e07210203d8a8010890eeb511ff1c08821bfc4a7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: fa2b5052a1d569487f0c6c72699ff9ab571beefc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616331"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504392"
 ---
 # <a name="eclrfailure-enumeration"></a>EClrFailure, énumération
 Décrit l’ensemble des échecs pour lesquels un hôte peut définir des actions de stratégie.  
@@ -50,10 +50,10 @@ typedef enum {
 |`FAIL_AccessViolation`|Une tentative de lecture ou d’écriture de mémoire protégée a été effectuée. Non pris en charge dans le .NET Framework 4.|  
 |`FAIL_CodeContract`|Un échec de contrat de code s’est produit. Consultez la section [contrats de code](../../debug-trace-profile/code-contracts.md).|  
   
-## <a name="remarks"></a>Notes  
- Consultez la méthode [ICLRPolicyManager :: SetActionOnFailure](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setactiononfailure-method.md) pour obtenir la liste des valeurs [EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) que l’hôte peut utiliser pour spécifier les actions de stratégie pour les conditions d’échec. Pour plus d’informations sur les régions de code critiques et non critiques, consultez [EClrOperation](eclroperation-enumeration.md).  
+## <a name="remarks"></a>Remarques  
+ Consultez la méthode [ICLRPolicyManager :: SetActionOnFailure](iclrpolicymanager-setactiononfailure-method.md) pour obtenir la liste des valeurs [EPolicyAction](epolicyaction-enumeration.md) que l’hôte peut utiliser pour spécifier les actions de stratégie pour les conditions d’échec. Pour plus d’informations sur les régions de code critiques et non critiques, consultez [EClrOperation](eclroperation-enumeration.md).  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 962fc293-8ded-4b3b-90ce-2c21a4f1b244
 topic_type:
 - apiref
-ms.openlocfilehash: 4c57a3fde3565a21800c60794b6c2d1c7616ddd8
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 2f83bc5b114b746958f936c311efa823d88441d1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007999"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503885"
 ---
 # <a name="wait_option-enumeration"></a>WAIT_OPTION, énumération
 Contient des valeurs qui indiquent l’action qu’un hôte doit effectuer si une opération demandée par le common language runtime (CLR) se bloque.  
@@ -43,9 +43,9 @@ typedef enum {
 |`WAIT_NOTINDEADLOCK`|Indique à l’hôte que la demande de synchronisation spécifiée ne peut pas être interrompue par un hôte. Autrement dit, l’hôte ne peut pas retourner `HOST_E_DEADLOCK` .|  
   
 ## <a name="remarks"></a>Remarques  
- Les méthodes [IHostTaskManager :: Sleep](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) et [IHostTaskManager :: SwitchToTask,](ihosttaskmanager-switchtotask-method.md) prennent toutes deux un paramètre de ce type.  
+ Les méthodes [IHostTaskManager :: Sleep](ihosttaskmanager-sleep-method.md) et [IHostTaskManager :: SwitchToTask,](ihosttaskmanager-switchtotask-method.md) prennent toutes deux un paramètre de ce type.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

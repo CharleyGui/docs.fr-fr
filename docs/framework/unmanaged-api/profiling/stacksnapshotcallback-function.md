@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d0f235b2-91fe-4f82-b7d5-e5c64186eea8
 topic_type:
 - apiref
-ms.openlocfilehash: 49e154ade91ea1a207645f924bd8aea1dbdb635c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: a0f5316900dedc6c8983f9e670f60767ed783a40
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868120"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493992"
 ---
 # <a name="stacksnapshotcallback-function"></a>StackSnapshotCallback (fonction)
 Fournit au profileur des informations sur chaque frame managé et chaque série de frames non managés sur la pile pendant un parcours de pile, qui est initié par la méthode [ICorProfilerInfo2 ::D ostacksnapshot](icorprofilerinfo2-dostacksnapshot-method.md) .  
@@ -37,7 +37,7 @@ HRESULT __stdcall StackSnapshotCallback (
 );  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `funcId`  
  dans Si cette valeur est égale à zéro, ce rappel est destiné à une exécution de frames non managés. dans le cas contraire, il s’agit de l’identificateur d’une fonction managée et ce rappel est destiné à un frame managé.  
   
@@ -45,34 +45,34 @@ HRESULT __stdcall StackSnapshotCallback (
  dans Valeur du pointeur d’instruction de code natif dans le frame.  
   
  `frameInfo`  
- dans Valeur `COR_PRF_FRAME_INFO` qui référence des informations sur le frame de pile. Cette valeur est valide pour une utilisation uniquement pendant ce rappel.  
+ dans `COR_PRF_FRAME_INFO`Valeur qui référence les informations relatives au frame de pile. Cette valeur est valide pour une utilisation uniquement pendant ce rappel.  
   
  `contextSize`  
- dans Taille de la structure `CONTEXT`, qui est référencée par le paramètre `context`.  
+ dans Taille de la `CONTEXT` structure, qui est référencée par le `context` paramètre.  
   
  `context`  
- dans Pointeur vers une structure de `CONTEXT` Win32 qui représente l’état de l’UC pour ce frame.  
+ dans Pointeur vers une structure Win32 `CONTEXT` qui représente l’état de l’UC pour ce frame.  
   
- Le paramètre `context` est valide uniquement si l’indicateur COR_PRF_SNAPSHOT_CONTEXT a été passé dans `ICorProfilerInfo2::DoStackSnapshot`.  
+ Le `context` paramètre n’est valide que si l’indicateur COR_PRF_SNAPSHOT_CONTEXT a été passé `ICorProfilerInfo2::DoStackSnapshot` .  
   
  `clientData`  
- dans Pointeur vers les données du client, qui est transmis directement à partir de `ICorProfilerInfo2::DoStackSnapshot`.  
+ dans Pointeur vers les données du client, qui est passé directement à partir de `ICorProfilerInfo2::DoStackSnapshot` .  
   
-## <a name="remarks"></a>Notes  
- La fonction `StackSnapshotCallback` est implémentée par le writer du profileur. Vous devez limiter la complexité du travail effectué dans `StackSnapshotCallback`. Par exemple, lorsque vous utilisez `ICorProfilerInfo2::DoStackSnapshot` de manière asynchrone, le thread cible peut contenir des verrous. Si le code dans `StackSnapshotCallback` requiert les mêmes verrous, un interblocage peut se défaire.  
+## <a name="remarks"></a>Remarques  
+ La `StackSnapshotCallback` fonction est implémentée par le writer du profileur. Vous devez limiter la complexité du travail effectué dans `StackSnapshotCallback` . Par exemple, lors de l’utilisation `ICorProfilerInfo2::DoStackSnapshot` de de manière asynchrone, le thread cible peut contenir des verrous. Si le code dans `StackSnapshotCallback` requiert les mêmes verrous, un blocage peut se défaire.  
   
- La méthode `ICorProfilerInfo2::DoStackSnapshot` appelle la fonction `StackSnapshotCallback` une fois par frame managé ou une fois par exécution de frames non managés. Si `StackSnapshotCallback` est appelée pour une série de frames non managés, le profileur peut utiliser le contexte de Registre (référencé par le paramètre `context`) pour effectuer son propre parcours de pile non managé. Dans ce cas, la structure de `CONTEXT` Win32 représente l’état du processeur pour le dernier frame ayant fait l’objet d’un push dans l’exécution de frames non managés. Bien que la structure de `CONTEXT` Win32 comprenne des valeurs pour tous les registres, vous devez vous fier uniquement aux valeurs du registre de pointeur de pile, du registre de pointeur de frame, du registre de pointeur d’instruction et des registres d’entiers non volatiles (autrement dit, conservés).  
+ La `ICorProfilerInfo2::DoStackSnapshot` méthode appelle la `StackSnapshotCallback` fonction une fois par frame managé ou une fois par exécution de frames non managés. Si `StackSnapshotCallback` est appelé pour une exécution de frames non managés, le profileur peut utiliser le contexte de Registre (référencé par le `context` paramètre) pour effectuer son propre parcours de pile non managé. Dans ce cas, la `CONTEXT` structure Win32 représente l’état du processeur pour le dernier frame ayant fait l’objet d’un push dans l’exécution de frames non managés. Bien que la `CONTEXT` structure Win32 comprenne des valeurs pour tous les registres, vous devez vous appuyer uniquement sur les valeurs du registre de pointeur de pile, du registre de pointeur de frame, du registre de pointeur d’instruction et des registres d’entiers non volatils (autrement dit, conservés).  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [DoStackSnapshot, méthode](icorprofilerinfo2-dostacksnapshot-method.md)
-- [Fonctions statiques globales de profilage](profiling-global-static-functions.md)
+- [Fonctions statiques globales du profilage](profiling-global-static-functions.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5c826ba3-8258-49bc-a417-78807915fcaf
 topic_type:
 - apiref
-ms.openlocfilehash: afb25ad9e1760f390aa8dfb3e1de39ea60f185c2
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 9d1c7f4f5b881f7f55539602c152b557a7950472
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616617"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504405"
 ---
 # <a name="corbindtoruntimehost-function"></a>CorBindToRuntimeHost, fonction
 Permet aux hôtes de charger une version spécifiée du common language runtime (CLR) dans un processus.  
@@ -69,7 +69,7 @@ HRESULT CorBindToRuntimeHost (
  dans Jeu d’indicateurs qui contrôle les garbage collection simultanées, le code indépendant du domaine et le comportement du `pwszVersion` paramètre. La valeur par défaut est un domaine unique si aucun indicateur n’est défini. Pour obtenir la liste des valeurs prises en charge, consultez l' [énumération STARTUP_FLAGS](startup-flags-enumeration.md).  
   
  `rclsid`  
- dans `CLSID`De la coclasse qui implémente l’interface [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) ou [ICLRRuntimeHost](iclrruntimehost-interface.md) . Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
+ dans `CLSID`De la coclasse qui implémente l’interface [ICorRuntimeHost](icorruntimehost-interface.md) ou [ICLRRuntimeHost](iclrruntimehost-interface.md) . Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
   
  `riid`  
  dans `IID`De l’interface que vous demandez. Les valeurs prises en charge sont IID_ICorRuntimeHost ou IID_ICLRRuntimeHost.  
@@ -77,7 +77,7 @@ HRESULT CorBindToRuntimeHost (
  `ppv`  
  à Pointeur d’interface vers la version du runtime qui a été chargée.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. idl  

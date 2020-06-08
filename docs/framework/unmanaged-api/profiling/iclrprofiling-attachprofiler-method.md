@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 535a6839-c443-405b-a6f4-e2af90725d5b
 topic_type:
 - apiref
-ms.openlocfilehash: 29aecd530d18b931420467e9127bcbf96d3a4a5f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 48ac09e1862ae58e79707235e891f72920de1251
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866762"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500557"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler, méthode
 Attache le profileur spécifié au processus spécifié.  
@@ -37,19 +37,19 @@ HRESULT AttachProfiler(
   [in] UINT cbClientData);                          // optional  
 ```  
   
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - `dwProfileeProcessID`
 
-  \[dans] ID de processus du processus auquel le profileur doit être attaché. Sur un ordinateur 64 bits, le nombre de bits du processus profilé doit correspondre au nombre de bits du processus déclencheur qui appelle `AttachProfiler`. Si le compte d'utilisateur sous lequel `AttachProfiler` est appelé dispose de privilèges d'administrateur, le processus cible peut être n'importe quel processus sur le système. Sinon, le processus cible doit appartenir au même compte d'utilisateur.
+  \[in] ID de processus du processus auquel le profileur doit être attaché. Sur un ordinateur 64 bits, le nombre de bits du processus profilé doit correspondre au nombre de bits du processus déclencheur qui appelle `AttachProfiler`. Si le compte d'utilisateur sous lequel `AttachProfiler` est appelé dispose de privilèges d'administrateur, le processus cible peut être n'importe quel processus sur le système. Sinon, le processus cible doit appartenir au même compte d'utilisateur.
 
 - `dwMillisecondsMax`
 
-  \[dans] durée, en millisecondes, pour l’exécution de `AttachProfiler`. Le processus déclencheur doit passer un délai d'attente suffisant pour permettre au profileur spécifique de terminer son initialisation.
+  \[in] durée, en millisecondes, pour l’exécution de `AttachProfiler` . Le processus déclencheur doit passer un délai d'attente suffisant pour permettre au profileur spécifique de terminer son initialisation.
   
 - `pClsidProfiler`
 
-  \[dans] pointeur vers le CLSID du profileur à charger. Le processus déclencheur peut réutiliser cette mémoire suite au retour d'`AttachProfiler`.
+  \[in] pointeur vers le CLSID du profileur à charger. Le processus déclencheur peut réutiliser cette mémoire suite au retour d'`AttachProfiler`.
 
 - `wszProfilerPath`
 
@@ -61,9 +61,9 @@ HRESULT AttachProfiler(
 
 - `cbClientData`
 
-  \[in] taille, en octets, des données vers lesquelles `pvClientData` pointe.
+  \[in] taille, en octets, des données `pvClientData` vers lesquelles pointe.
 
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
  Cette méthode retourne les HRESULT suivants.  
   
 |HRESULT|Description|  
@@ -81,19 +81,19 @@ HRESULT AttachProfiler(
 |E_FAIL|Un autre échec non spécifié s'est produit.|  
 |Autres codes d'erreur|Si la méthode [ICorProfilerCallback3 :: InitializeForAttach](icorprofilercallback3-initializeforattach-method.md) du profileur retourne un HRESULT qui indique un échec, `AttachProfiler` retourne ce même HRESULT. Dans ce cas, E_NOTIMPL est converti en CORPROF_E_PROFILER_NOT_ATTACHABLE.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
   
 ## <a name="memory-management"></a>Gestion de la mémoire  
  Conformément aux conventions COM, l'appelant d'`AttachProfiler` (par exemple, le code déclencheur créé par le développeur du profileur) est chargé de l'allocation et de la libération de la mémoire pour les données vers lesquelles le paramètre `pvClientData` pointe. Quand le CLR exécute l'appel `AttachProfiler`, il fait une copie de la mémoire vers laquelle `pvClientData` pointe et la transmet au processus cible. Quand le CLR à l'intérieur du processus cible reçoit sa propre copie du bloc `pvClientData`, il passe le bloc au générateur de profils via la méthode `InitializeForAttach`, puis libère sa copie du bloc `pvClientData` du processus cible.  
   
-## <a name="requirements"></a>Configuration requise pour  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

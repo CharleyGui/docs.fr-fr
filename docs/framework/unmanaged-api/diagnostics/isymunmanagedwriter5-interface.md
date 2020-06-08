@@ -2,12 +2,12 @@
 title: ISymUnmanagedWriter5, interface
 ms.date: 03/30/2017
 ms.assetid: 15b8526e-4f5d-475c-a1e3-d8b2d145c879
-ms.openlocfilehash: bdc630c3c94c7d03b736efa0a95665f10aac7c6e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d9204457b71b670e1c96ed228ad11116bdf41fe6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609428"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493576"
 ---
 # <a name="isymunmanagedwriter5-interface"></a>ISymUnmanagedWriter5, interface
 Interface ISymUnmanagedWriter5.  
@@ -24,10 +24,10 @@ Interface ISymUnmanagedWriter5.
 |Méthode|Description|  
 |------------|-----------------|  
 |[CloseMapTokensToSourceSpans, méthode](isymunmanagedwriter5-closemaptokenstosourcespans-method.md)|Fermez la section de données personnalisées spéciale pour les informations de mappage de l’étendue Token-to-source. Une fois fermé, aucune autre information de mappage ne peut être ajoutée.|  
-|[MapTokenToSourceSpan, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-maptokentosourcespan-method.md)|Mappe le jeton de métadonnées donné à l’étendue de ligne source donnée dans le fichier source spécifié.<br /><br /> Doit être appelé entre les appels à la [méthode openmaptokenstosourcespans,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md) et à la [méthode closemaptokenstosourcespans,](isymunmanagedwriter5-closemaptokenstosourcespans-method.md).|  
+|[MapTokenToSourceSpan, méthode](isymunmanagedwriter5-maptokentosourcespan-method.md)|Mappe le jeton de métadonnées donné à l’étendue de ligne source donnée dans le fichier source spécifié.<br /><br /> Doit être appelé entre les appels à la [méthode openmaptokenstosourcespans,](isymunmanagedwriter5-openmaptokenstosourcespans-method.md) et à la [méthode closemaptokenstosourcespans,](isymunmanagedwriter5-closemaptokenstosourcespans-method.md).|  
 |[OpenMapTokensToSourceSpans, méthode](isymunmanagedwriter5-openmaptokenstosourcespans-method.md)|Ouvrez une section de données personnalisées spéciale pour émettre des informations de mappage de jeton-à-source dans. L’ouverture de cette section quand une méthode est déjà ouverte, ou vice versa, est une erreur.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

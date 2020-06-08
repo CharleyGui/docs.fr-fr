@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0970f10c-4304-4c12-91c0-83e51455afb4
 topic_type:
 - apiref
-ms.openlocfilehash: a216a2925382016adeb100554bdceefdf3ee902b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: bbf5e299285071ba6d43fd2c40fc724d19bc7b2a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616058"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504353"
 ---
 # <a name="iactiononclreventonevent-method"></a>IActionOnCLREvent::OnEvent, méthode
 Exécute des rappels sur les événements qui ont été inscrits à l’aide d’un appel à la méthode [ICLROnEventManager :: RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md) .  
@@ -41,7 +41,7 @@ HRESULT OnEvent (
  `data`  
  dans Pointeur vers un objet qui contient des détails sur `event` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -52,12 +52,12 @@ HRESULT OnEvent (
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué attendait dessus.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants à toute méthode d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Le `data` paramètre est un pointeur vers un objet de type non spécifié. Si le `event` paramètre a la valeur `Event_DomainUnload` , `data` est l’identificateur numérique pour le <xref:System.AppDomain> qui a été déchargé. L’hôte peut prendre les mesures appropriées à l’aide de cet identificateur comme clé.  
   
- Si `event` est `Event_MDAFired` , `data` est un pointeur vers une instance [MDAInfo](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md) qui contient la sortie de message d’un Assistant Débogage managé (MDA). Les MDA sont une fonctionnalité du CLR qui permet aux développeurs de déboguer, en générant des messages XML sur les événements qui, sinon, sont difficiles à intercepter. Ces messages peuvent être particulièrement utiles lors du débogage de transitions entre du code managé et du code non managé. Pour plus d’informations, consultez [diagnostic des erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
+ Si `event` est `Event_MDAFired` , `data` est un pointeur vers une instance [MDAInfo](mdainfo-structure.md) qui contient la sortie de message d’un Assistant Débogage managé (MDA). Les MDA sont une fonctionnalité du CLR qui permet aux développeurs de déboguer, en générant des messages XML sur les événements qui, sinon, sont difficiles à intercepter. Ces messages peuvent être particulièrement utiles lors du débogage de transitions entre du code managé et du code non managé. Pour plus d’informations, consultez [diagnostic des erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 49e647be-9d63-4250-9d11-704e2a400d1b
 topic_type:
 - apiref
-ms.openlocfilehash: 51d34e68851bc6a60d25f643f63d112396abdc4e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 8e31f0a649fd1ca80d6557a0a7176549c67bf203
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209069"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501922"
 ---
 # <a name="icordebugmanagedcallback2createconnection-method"></a>ICorDebugManagedCallback2::CreateConnection, méthode
 Notifie le débogueur qu’une nouvelle connexion a été créée.  
@@ -45,14 +45,14 @@ HRESULT CreateConnection (
  `pConnName`  
  dans Pointeur vers le nom de la nouvelle connexion.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
  Un `CreateConnection` rappel est déclenché dans l’un des cas suivants :  
   
 - Quand un débogueur est attaché à un processus qui contient des connexions. Dans ce cas, le runtime génère et distribue un `CreateConnection` événement et un événement [ICorDebugManagedCallback2 :: ChangeConnection,](icordebugmanagedcallback2-changeconnection-method.md) pour chaque connexion dans le processus.  
   
-- Lorsqu’un hôte appelle [ICLRDebugManager :: BeginConnection](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-beginconnection-method.md) dans l' [API d’hébergement](../hosting/index.md).  
+- Lorsqu’un hôte appelle [ICLRDebugManager :: BeginConnection](../hosting/iclrdebugmanager-beginconnection-method.md) dans l' [API d’hébergement](../hosting/index.md).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

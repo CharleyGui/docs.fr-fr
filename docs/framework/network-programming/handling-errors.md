@@ -1,5 +1,6 @@
 ---
 title: Gestion des erreurs
+description: Découvrez les exceptions spécifiques au système et au Web levées par WebRequest et WebResponse. Utilisez la propriété Status pour comprendre et résoudre le problème.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -31,12 +32,12 @@ helpviewer_keywords:
 - ConnectionClosed enumeration member
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
-ms.openlocfilehash: f5be5d8e14d7aa2d98009fc10c9cce314e745ed1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 786b2bd8bc4d1b394bcfe920053b2f4f55d1cdea
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180873"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502572"
 ---
 # <a name="handling-errors"></a>Gestion des erreurs
 
@@ -58,7 +59,7 @@ Le tableau suivant décrit les valeurs possibles pour la propriété **Status**.
 |SecureChannelFailure|Une erreur s’est produite dans un lien de canal sécurisé.|  
 |SendFailure|Une demande complète n’a pas pu être envoyée au serveur distant.|  
 |ServerProtocolViolation|La réponse du serveur n’était pas une réponse HTTP valide.|  
-|Succès|Aucune erreur n’a été rencontrée.|  
+|Opération réussie|Aucune erreur n’a été rencontrée.|  
 |Délai d'expiration|Aucune réponse n’a été reçue pendant le délai défini pour la demande.|  
 |TrustFailure|Un certificat de serveur n’a pas pu être validé.|  
 |MessageLengthLimitExceeded|Un message a été reçu qui dépassait la limite spécifiée lors de l’envoi d’une demande ou de la réception d’une réponse du serveur.|  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e0f865d-88b5-44bd-be35-492622e5e08e
 topic_type:
 - apiref
-ms.openlocfilehash: e766cec8fd84713e12c43cd1095650ed5b757bcb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b8fabea78f85448e39fc6d31f0a7969458343877
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175471"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492005"
 ---
 # <a name="imetadataimportenummethodimpls-method"></a>IMetaDataImport::EnumMethodImpls, méthode
 Énumère les jetons MethodBody et MethodDeclaration représentant les méthodes du type spécifié.  
@@ -40,40 +40,40 @@ HRESULT EnumMethodImpls (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [dans, dehors] Un pointeur à l’enumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `td`  
- [dans] Un jeton TypeDef pour le type dont les implémentations de méthode pour énumérer.  
+ dans Jeton TypeDef pour le type dont les implémentations de méthode doivent être énumérées.  
   
  `rMethodBody`  
- [out] Le tableau pour stocker les jetons MethodBody.  
+ à Tableau pour stocker les jetons MethodBody.  
   
  `rMethodDecl`  
- [out] Le tableau pour stocker les jetons MethodDeclaration.  
+ à Tableau pour stocker les jetons MethodDeclaration.  
   
  `cMax`  
- [dans] La taille maximale `rMethodBody` `rMethodDecl` de la et les tableaux.  
+ dans Taille maximale des `rMethodBody` `rMethodDecl` tableaux et.  
   
  `pcTokens`  
- [dans] Le nombre réel de `rMethodBody` `rMethodDecl`méthodes retournées et .  
+ dans Nombre réel de méthodes retournées dans `rMethodBody` et `rMethodDecl` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumMethodImpls`retourné avec succès.|  
-|`S_FALSE`|Il n’y a pas de jetons de méthode pour énumérer. Dans ce `pcTokens` cas, c’est zéro.|  
+|`S_FALSE`|Il n’y a aucun jeton de méthode à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

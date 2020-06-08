@@ -1,5 +1,6 @@
 ---
 title: <servicePointManager>, élément (paramètres réseau)
+description: L' <servicePointManager> élément paramètres réseau configure les connexions aux options des ressources réseau dans le .NET Framework.
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#servicePointManager
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - servicePointManager element
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
-ms.openlocfilehash: b7333016fea2d46285d3c98181c0ca4904c376f8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: eb27716ec7c2936f32a7e4d4c983d1e175c4d044
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74089127"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504522"
 ---
 # <a name="servicepointmanager-element-network-settings"></a>\<servicePointManager>, élément (paramètres réseau)
 Configure les connexions aux ressources réseau.  

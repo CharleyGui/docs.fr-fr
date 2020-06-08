@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 036db5e7-8211-4645-9a34-03d1a89be955
 topic_type:
 - apiref
-ms.openlocfilehash: 219d3196e3b2125033a23623b7e77e31c6f1ff03
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 24fe8fd65b36e133b767cd07c8602aa1ea7b9dfc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440481"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493099"
 ---
 # <a name="imetadataemit2getdeltasavesize-method"></a>IMetaDataEmit2::GetDeltaSaveSize, méthode
 Obtient une valeur indiquant toute modification de la taille des métadonnées résultant de la session de modification et de continuation actuelle.  
@@ -36,21 +36,21 @@ HRESULT GetDeltaSaveSize (
   
 ## <a name="parameters"></a>Paramètres  
  `fSave`  
- dans L’une des valeurs [CorSaveSize,](../../../../docs/framework/unmanaged-api/metadata/corsavesize-enumeration.md) , indiquant le niveau de précision souhaité. Pour la version .NET Framework 2,0, ce paramètre est ignoré.  
+ dans L’une des valeurs [CorSaveSize,](corsavesize-enumeration.md) , indiquant le niveau de précision souhaité. Pour la version .NET Framework 2,0, ce paramètre est ignoré.  
   
  `pdwSaveSize`  
  à Modification de la taille des métadonnées.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataEmit2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2, interface](imetadataemit2-interface.md)
+- [IMetaDataEmit, interface](imetadataemit-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f759f87a-18ae-4c1a-8300-29b803432d0a
 topic_type:
 - apiref
-ms.openlocfilehash: a6aff37a480460bfed7064d59b4c5276daf3207c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 1cf4d82200709971201da60d06d0cb929641a104
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212501"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501883"
 ---
 # <a name="icordebugmodulegettoken-method"></a>ICorDebugModule::GetToken, méthode
 Obtient le jeton pour l’entrée de table pour ce module.  
@@ -37,10 +37,10 @@ HRESULT GetToken(
  `pToken`  
  à Pointeur vers le `mdModule` jeton qui référence les métadonnées du module.  
   
-## <a name="remarks"></a>Remarks  
- Le jeton peut être passé aux interfaces d’importation de métadonnées [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md), [IMetaDataImport2](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)et [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) .  
+## <a name="remarks"></a>Remarques  
+ Le jeton peut être passé aux interfaces d’importation de métadonnées [IMetaDataImport](../metadata/imetadataimport-interface.md), [IMetaDataImport2](../metadata/imetadataimport2-interface.md)et [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

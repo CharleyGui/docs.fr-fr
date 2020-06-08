@@ -1,5 +1,6 @@
 ---
 title: Activation du suivi réseau
+description: Découvrez comment activer le traçage réseau, qui fournit des informations sur les appels de méthode et le trafic réseau pour une application managée dans la .NET Framework.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - trace destinations
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-ms.openlocfilehash: 61ffd422463ca70cc34c39dd216ce8e660809dcb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4ad0b23fc93ddcdc11cebcc556d12148df5e8ae2
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180878"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502598"
 ---
 # <a name="enabling-network-tracing"></a>Activation du suivi réseau
 Le traçage réseau fournit l’accès aux informations sur les appels de méthodes et le trafic réseau généré par une application managée. Vous devez effectuer les tâches suivantes pour activer le traçage réseau dans votre application :  

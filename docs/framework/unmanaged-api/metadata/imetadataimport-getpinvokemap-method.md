@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b8685c1e-b80c-4198-8eb3-748d6f48a99e
 topic_type:
 - apiref
-ms.openlocfilehash: c458fef77b49f522ca21dd5487731f4d43588cea
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8409e56b5ec4dbe47035a0555b6b7ce175b517ee
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437102"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490976"
 ---
 # <a name="imetadataimportgetpinvokemap-method"></a>IMetaDataImport::GetPinvokeMap, méthode
 Obtient un jeton ModuleRef pour représenter l'assembly cible d'un appel PInvoke.  
@@ -43,30 +43,30 @@ HRESULT GetPinvokeMap (
  dans Jeton FieldDef ou MethodDef pour lequel obtenir les métadonnées de mappage PInvoke.  
   
  `pdwMappingFlags`  
- à Pointeur vers les indicateurs utilisés pour le mappage. Cette valeur est un masque de masque de l’énumération [CorPinvokeMap,](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md) .  
+ à Pointeur vers les indicateurs utilisés pour le mappage. Cette valeur est un masque de masque de l’énumération [CorPinvokeMap,](corpinvokemap-enumeration.md) .  
   
  `szImportName`  
  à Nom de la DLL cible non managée.  
   
  `cchImportName`  
- dans Taille en caractères larges de `szImportName`.  
+ dans Taille en caractères larges de `szImportName` .  
   
  `pchImportName`  
- à Nombre de caractères larges retournés dans `szImportName`.  
+ à Nombre de caractères larges retournés dans `szImportName` .  
   
  `pmrImportDLL`  
  à Pointeur vers un jeton ModuleRef qui représente la bibliothèque d’objets cibles non managée.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
  **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

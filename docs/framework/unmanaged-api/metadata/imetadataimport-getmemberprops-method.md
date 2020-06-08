@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 42790918-4142-4938-b8f4-a56979a55846
 topic_type:
 - apiref
-ms.openlocfilehash: 72e14ea0414ebdeb8f54a4bdef8ce5208fc8ef72
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0357444aa8fa38bce5a7175cf6aacfe1a2b2b16e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177231"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503638"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps, méthode
-Obtient les informations stockées dans les métadonnées pour une définition spécifiée du <xref:System.Type> membre, y compris le nom, la signature binaire et l’adresse virtuelle relative, du membre référencé par le jeton spécifié des métadonnées. Il s’agit d’une méthode d’aide simple: si *mb* est un MethodDef, puis **GetMethodProps** est appelé; si *mb* est un FieldDef, alors **GetFieldProps** est appelé. Voir ces autres méthodes pour plus de détails.
+Obtient les informations stockées dans les métadonnées pour une définition de membre spécifiée, y compris le nom, la signature binaire et l’adresse virtuelle relative, du <xref:System.Type> membre référencé par le jeton de métadonnées spécifié. Il s’agit d’une méthode d’assistance simple : si *Mo* est un MethodDef, **GetMethodProps,** est appelé ; Si *Mo* est un FieldDef, **GetFieldProps,** est appelé. Pour plus d’informations, consultez ces autres méthodes.
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,54 +47,54 @@ HRESULT GetMemberProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mb`  
- [dans] Le jeton qui fait référence au membre pour obtenir les métadonnées associées pour.  
+ dans Jeton qui référence le membre pour lequel obtenir les métadonnées associées.  
   
  `pClass`  
- [out] Un pointeur vers le jeton des métadonnées qui représente la classe du membre.  
+ à Pointeur vers le jeton de métadonnées qui représente la classe du membre.  
   
  `szMember`  
- [out] Le nom du membre.  
+ à Nom du membre.  
   
  `cchMember`  
- [dans] La taille en caractères larges du `szMember` tampon.  
+ dans Taille en caractères larges de la `szMember` mémoire tampon.  
   
  `pchMember`  
- [out] La taille dans les caractères larges du nom retourné.  
+ à Taille en caractères larges du nom retourné.  
   
  `pdwAttr`  
- [out] Toutes les valeurs du drapeau s’appliquaient au membre.  
+ à Toutes les valeurs d’indicateur appliquées au membre.  
   
  `ppvSigBlob`  
- [out] Un pointeur à la signature binaire métadonnées du membre.  
+ à Pointeur vers la signature de métadonnées binaires du membre.  
   
  `pcbSigBlob`  
- [out] La taille dans `ppvSigBlob`les octets de .  
+ à Taille en octets de `ppvSigBlob` .  
   
  `pulCodeRVA`  
- [out] Un pointeur à l’adresse virtuelle relative du membre.  
+ à Pointeur vers l’adresse virtuelle relative du membre.  
   
  `pdwImplFlags`  
- [out] Tous les indicateurs de mise en œuvre de méthode associés au membre.  
+ à Indicateurs d’implémentation de méthode associés au membre.  
   
  `pdwCPlusTypeFlag`  
- [out] Un drapeau qui <xref:System.ValueType>marque un . C’est l’une des `ELEMENT_TYPE_*` valeurs.
+ à Indicateur qui marque un <xref:System.ValueType> . Il s’agit de l’une des `ELEMENT_TYPE_*` valeurs.
   
  `ppValue`  
- [out] Une valeur de chaîne constante retournée par ce membre.  
+ à Valeur de chaîne constante retournée par ce membre.  
   
  `pcchValue`  
- [out] La taille dans `ppValue`les caractères de , ou zéro si `ppValue` ne tient pas une chaîne.  
+ à Taille en caractères de `ppValue` , ou zéro si `ppValue` ne contient pas de chaîne.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

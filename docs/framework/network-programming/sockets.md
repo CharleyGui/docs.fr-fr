@@ -1,5 +1,6 @@
 ---
-title: sockets
+title: Sockets
+description: En savoir plus sur la classe de Socket .NET Framework, qui est une version de code managé des services de socket fournis par l’API Winsock32.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application protocols, sockets
@@ -15,14 +16,14 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 10d22735-bd37-42c1-a2be-c1932f979a7d
-ms.openlocfilehash: cffad6b4677a880bd63f5ae0232c639f7a262c59
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b44409a0fafc770625be55881ccef3b57045acef
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047254"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502130"
 ---
-# <a name="sockets"></a>sockets
+# <a name="sockets"></a>Sockets
 L’espace de noms <xref:System.Net.Sockets> contient une implémentation managée de l’interface Windows Sockets. Toutes les autres classes d’accès réseau dans l’espace de noms <xref:System.Net> s’appuient sur cette implémentation de sockets.  
   
  La classe <xref:System.Net.Sockets.Socket> du .NET Framework est une version de code managé des services de socket fournis par l’API Winsock32. Dans la plupart des cas, les méthodes de la classe **Socket** ne font que marshaler les données dans leurs équivalents Win32 natifs et gérer les vérifications de sécurité nécessaires.  

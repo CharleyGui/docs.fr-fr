@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8f35414d-f40b-4b99-8768-9adb675c622a
 topic_type:
 - apiref
-ms.openlocfilehash: e02d7dd4b287d027b633ae9bf2e98e036062bdd0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 36c0ffef2d984604be4ae19899e8f3f912cee123
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175406"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491470"
 ---
 # <a name="imetadataimportgetclasslayout-method"></a>IMetaDataImport::GetClassLayout, méthode
 Obtient les informations de disposition pour la classe référencée par le jeton TypeDef spécifié.  
@@ -40,33 +40,33 @@ HRESULT GetClassLayout  (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [dans] Le jeton TypeDef pour la classe avec la mise en page à revenir.  
+ dans Jeton TypeDef pour la classe avec la disposition à retourner.  
   
  `pdwPackSize`  
- [out] L’une des valeurs 1, 2, 4, 8 ou 16, représentant la taille du pack de la classe.  
+ à L’une des valeurs 1, 2, 4, 8 ou 16, représentant la taille de Pack de la classe.  
   
  `rFieldOffset`  
- [out] Un éventail de [valeurs COR_FIELD_OFFSET.](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md)  
+ à Tableau de valeurs [COR_FIELD_OFFSET](cor-field-offset-structure.md) .  
   
  `cMax`  
  [in] Taille maximale du tableau `rFieldOffset`.  
   
  `pcFieldOffset`  
- [out] Le nombre d’éléments retournés dans `rFieldOffset`.  
+ à Nombre d’éléments retournés dans `rFieldOffset` .  
   
  `pulClassSize`  
- [out] La taille dans les octets `td`de la classe représentée par .  
+ à Taille en octets de la classe représentée par `td` .  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

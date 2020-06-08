@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b558e766-4c11-4628-ae47-b4e0a1800168
 topic_type:
 - apiref
-ms.openlocfilehash: f46033b9e643ef6b4a0063c4995b8c024b8c1f7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f1784c9f3085ce188f9e540887dd02064f8448f3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175354"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503574"
 ---
 # <a name="imetadataimportgetmodulerefprops-method"></a>IMetaDataImport::GetModuleRefProps, méthode
 Obtient le nom du module référencé par le jeton de métadonnées spécifié.  
@@ -38,27 +38,27 @@ HRESULT GetModuleRefProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mur`  
- [dans] Les métadonnées ModuleRef qui fait référence au module pour obtenir des informations sur les métadonnées.  
+ dans Jeton de métadonnées ModuleRef qui référence le module pour lequel obtenir les informations de métadonnées.  
   
  `szName`  
- [out] Un tampon pour tenir le nom du module.  
+ à Mémoire tampon destinée à contenir le nom du module.  
   
  `cchName`  
- [dans] La taille `szName` demandée en caractères larges.  
+ dans Taille demandée de `szName` en caractères larges.  
   
  `pchName`  
- [out] La taille `szName` retournée de dans les caractères larges.  
+ à Taille retournée de `szName` en caractères larges.  
   
-## <a name="requirements"></a>Spécifications  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Cor.h (en)  
+ **En-tête :** Cor. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IMetaDataImport, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2, interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport, interface](imetadataimport-interface.md)
+- [IMetaDataImport2, interface](imetadataimport2-interface.md)

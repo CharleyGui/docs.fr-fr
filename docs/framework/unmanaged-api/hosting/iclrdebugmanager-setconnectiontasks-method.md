@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b38bbc9a-872c-41a9-b8c3-ca011d25456a
 topic_type:
 - apiref
-ms.openlocfilehash: 81b6f009ea61294f398a21c4def927ef2609f32b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f63b761497b3e9a19a9b939b45acf60d5a7d37b0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615743"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504236"
 ---
 # <a name="iclrdebugmanagersetconnectiontasks-method"></a>ICLRDebugManager::SetConnectionTasks, méthode
 Associe une liste d’instances d' [ICLRTask](iclrtask-interface.md) à un identificateur et un nom convivial.  
@@ -45,7 +45,7 @@ HRESULT SetConnectionTasks (
  `ppCLRTask`  
  dans Tableau de `ICLRTask` pointeurs à associer à la connexion identifiée par `id` . Ce tableau doit contenir au moins un membre.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -57,13 +57,13 @@ HRESULT SetConnectionTasks (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois que la méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |E_INVALIDARG|[BeginConnection](iclrdebugmanager-beginconnection-method.md) n’a pas été appelé à l’aide de la valeur de `id` , ou `dwCount` ou `id` est égal à zéro, ou l’un des éléments de a la valeur `ppCLRTask` null.|  
   
-## <a name="remarks"></a>Notes  
- [ICLRDebugManager](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md) fournit trois méthodes, `BeginConnection` , `SetConnectionTasks` et [EndConnection](iclrdebugmanager-endconnection-method.md), pour associer des listes de tâches à des identificateurs et des noms conviviaux.  
+## <a name="remarks"></a>Remarques  
+ [ICLRDebugManager](iclrdebugmanager-interface.md) fournit trois méthodes, `BeginConnection` , `SetConnectionTasks` et [EndConnection](iclrdebugmanager-endconnection-method.md), pour associer des listes de tâches à des identificateurs et des noms conviviaux.  
   
 > [!IMPORTANT]
 > Ces trois méthodes doivent être appelées dans un ordre spécifique pour chaque ensemble de tâches. `BeginConnection`est appelé en premier pour établir une nouvelle connexion. `SetConnectionTasks`est appelé ensuite pour fournir l’ensemble des tâches à associer à cette connexion. `EndConnection`est appelé en dernier pour supprimer l’association entre la liste des tâches et l’identificateur et le nom convivial. Toutefois, les appels de différentes connexions peuvent être imbriqués.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

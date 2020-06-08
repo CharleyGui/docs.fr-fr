@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4db97cf9-e4c1-4233-8efa-cbdc0e14a8e4
 topic_type:
 - apiref
-ms.openlocfilehash: 05902436c09d082f90af01f48c7e918650317ce7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: d2693a94f02214df6d7265b26e3d70d91adcf8a7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009416"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503833"
 ---
 # <a name="imetadataassemblyimportfindassembliesbyname-method"></a>IMetaDataAssemblyImport::FindAssembliesByName, méthode
 Obtient un tableau d’assemblys avec le `szAssemblyName` paramètre spécifié, à l’aide des règles standard utilisées par le Common Language Runtime (CLR) pour la résolution des références.  
@@ -67,13 +67,13 @@ HRESULT FindAssembliesByName (
 ## <a name="remarks"></a>Remarques  
  Étant donné un nom d’assembly, la `FindAssembliesByName` méthode recherche l’assembly en suivant les règles standard pour la résolution des références d’assembly. (Pour plus d’informations, consultez [Comment le runtime localise les assemblys](../../deployment/how-the-runtime-locates-assemblies.md).) `FindAssembliesByName`permet à l’appelant de configurer différents aspects du contexte du programme de résolution d’assembly, tels que la base de l’application et le chemin de recherche privé.  
   
- La `FindAssembliesByName` méthode requiert l’initialisation du CLR dans le processus afin d’appeler la logique de résolution d’assembly. Par conséquent, vous devez appeler [CoInitializeEE,](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) (en passant COINITEE_DEFAULT) avant d’appeler `FindAssembliesByName` , puis suivre un appel à [CoUninitializeCor,](../hosting/couninitializecor-function.md).  
+ La `FindAssembliesByName` méthode requiert l’initialisation du CLR dans le processus afin d’appeler la logique de résolution d’assembly. Par conséquent, vous devez appeler [CoInitializeEE,](../hosting/coinitializeee-function.md) (en passant COINITEE_DEFAULT) avant d’appeler `FindAssembliesByName` , puis suivre un appel à [CoUninitializeCor,](../hosting/couninitializecor-function.md).  
   
  `FindAssembliesByName`retourne un pointeur [IMetaDataImport](imetadataimport-interface.md) vers le fichier contenant le manifeste d’assembly pour le nom de l’assembly qui est passé. Si le nom de l’assembly donné n’est pas complètement spécifié (par exemple, s’il n’inclut pas de version), plusieurs assemblys peuvent être retournés.  
   
  `FindAssembliesByName`est couramment utilisé par un compilateur qui tente de trouver un assembly référencé au moment de la compilation.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  

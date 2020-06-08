@@ -1,5 +1,6 @@
 ---
 title: Utilisation d’un socket serveur asynchrone
+description: Cet exemple montre un socket serveur asynchrone. La classe Socket utilise .NET Framework programmation asynchrone pour traiter les demandes de service réseau.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-ms.openlocfilehash: 467804e685d800643c421ed1aad040a842b42886
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b85afb3ffdf69973eff37ccbb067b470ed44e3a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180635"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502026"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Utilisation d’un socket serveur asynchrone
 Les sockets serveur asynchrones utilisent le modèle de programmation asynchrone de .NET Framework pour traiter les demandes de service réseau. La classe <xref:System.Net.Sockets.Socket> respecte la convention de nommage standard de .NET Framework pour les méthodes asynchrones. Par exemple, la méthode synchrone <xref:System.Net.Sockets.Socket.Accept%2A> correspond aux méthodes asynchrones <xref:System.Net.Sockets.Socket.BeginAccept%2A> et <xref:System.Net.Sockets.Socket.EndAccept%2A>.  
@@ -272,5 +273,5 @@ public static void ReadCallback(IAsyncResult ar)
 
 - [Utilisation d’un socket serveur synchrone](using-a-synchronous-server-socket.md)
 - [Exemple de socket serveur asynchrone](asynchronous-server-socket-example.md)
-- [Thread](../../standard/threading/index.md)
+- [Threads](../../standard/threading/index.md)
 - [Écoute avec des sockets](listening-with-sockets.md)
