@@ -1,80 +1,80 @@
 ---
-title: Données de formation de charge pour Model Builder
-description: Découvrez comment charger les données de formation à partir d’une base de données SQL Server ou d’un fichier à utiliser dans l’un des scénarios Model Builder pour ML.NET.
+title: Charger les données d’apprentissage pour le générateur de modèles
+description: Découvrez comment charger des données d’apprentissage à partir d’une base de données SQL Server ou d’un fichier pour les utiliser dans l’un des scénarios de générateur de modèles pour ML.NET.
 ms.date: 10/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to, mlnet-tooling
-ms.openlocfilehash: 23de2d06090f4c1eaa2c79178ba4c346698d45e1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64e366b3c66427ccd2810324abeb880f6cb9ebc1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78849157"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602204"
 ---
-# <a name="load-training-data-into-model-builder"></a>Charger les données de formation dans Model Builder
+# <a name="load-training-data-into-model-builder"></a>Charger les données d’apprentissage dans le générateur de modèles
 
-Découvrez comment charger vos jeux de données de formation à partir d’un fichier ou d’une base de données SQL Server pour une utilisation dans l’un des scénarios Model Builder pour ML.NET. Les scénarios Model Builder peuvent utiliser les bases de données SQL Server, les fichiers d’images et les formats de fichiers CSV ou TSV comme données de formation.
+Découvrez comment charger vos jeux de données d’apprentissage à partir d’un fichier ou d’une base de données SQL Server pour une utilisation dans l’un des scénarios de générateur de modèles pour ML.NET. Les scénarios de générateur de modèles peuvent utiliser des SQL Server des bases de données, des fichiers image et des formats de fichier CSV ou TSV en tant que données d’apprentissage.
 
-## <a name="training-dataset-limitations-in-model-builder"></a>Limitations de jeu de données de formation dans Le constructeur modèle
+## <a name="training-dataset-limitations-in-model-builder"></a>Limitations des jeux de données de formation dans le générateur de modèles
 
-Modèle Builder limite la quantité et le type de données que vous pouvez utiliser pour les modèles de formation :
+Le générateur de modèles limite la quantité et le type de données que vous pouvez utiliser pour les modèles d’apprentissage :
 
-- Données SQL Server : 100 000 lignes
-- Fichiers CSV et TSV : aucune limite de taille
-- Images: PNG et JPG seulement.
+- SQL Server données : 100 000 lignes
+- Fichiers CSV et TSV : aucune limite de taille
+- Images : PNG et JPG uniquement.
 
-## <a name="model-builder-scenarios"></a>Scénarios De constructeur de modèles
+## <a name="model-builder-scenarios"></a>Scénarios de générateur de modèles
 
-Model Builder vous aide à créer des modèles pour les scénarios d’apprentissage automatique suivants :
+Le générateur de modèles vous permet de créer des modèles pour les scénarios de Machine Learning suivants :
 
-- Analyse du sentiment (classification binaire) : Classer les données textuelles en deux catégories.
-- Classification des questions (classification multiclasse) : Classer les données textuelles en 3 catégories ou plus.
-- Prévision des prix (régression) : Prédire une valeur numérique.
-- Classification des images (apprentissage profond) : Catégoriser les images en fonction des caractéristiques.
-- Scénario personnalisé : Construisez des scénarios personnalisés à partir de vos données à l’aide de la régression, de la classification et d’autres tâches.
+- Analyse des sentiments (classification binaire) : classifier les données textuelles en deux catégories.
+- Classification des problèmes (classification multiclasse) : classifier les données textuelles en 3 catégories ou plus.
+- Prédiction de prix (régression) : prédire une valeur numérique.
+- Classification des images (apprentissage profond) : classer les images en fonction des caractéristiques.
+- Scénario personnalisé : créez des scénarios personnalisés à partir de vos données à l’aide de la régression, de la classification et d’autres tâches.
 
-Cet article couvre les scénarios de classification et de régression avec des données textuelles ou numériques, ainsi que des scénarios de classification d’images.
+Cet article traite des scénarios de classification et de régression avec des données textuelles ou numériques, ainsi que des scénarios de classification d’images.
 
-## <a name="load-text-or-numeric-data-from-a-file"></a>Charger le texte ou les données numériques d’un fichier
+## <a name="load-text-or-numeric-data-from-a-file"></a>Charger du texte ou des données numériques à partir d’un fichier
 
-Vous pouvez charger des données textuelles ou numériques à partir d’un fichier dans Model Builder. Il accepte les formats de fichiers délimités par virgule (CSV) ou délimités par onglet (TSV).
+Vous pouvez charger du texte ou des données numériques d’un fichier dans le générateur de modèles. Il accepte les formats de fichiers CSV (délimité par des virgules) ou TSV (délimité par des tabulations).
 
-1. Dans l’étape de données de Model Builder, sélectionnez **Fichier** à partir de la baisse de la source de données.
-2. Sélectionnez le bouton à côté de la boîte de texte **Select,** et utilisez File Explorer pour parcourir et sélectionner le fichier de données.
-3. Choisissez une catégorie dans la **colonne pour prédire (label)** dropdown.
-4. À partir du décrochage **des colonnes d’entrée (Caractéristiques),** confirmez que les colonnes de données que vous souhaitez inclure sont vérifiées.
+1. À l’étape données du générateur de modèles, sélectionnez **fichier** dans la liste déroulante source de données.
+2. Sélectionnez le bouton en regard de la zone de texte **Sélectionner un fichier** , puis utilisez l’Explorateur de fichiers pour parcourir et sélectionner le fichier de données.
+3. Choisissez une catégorie dans la liste déroulante **colonne à prédire (étiquette)** .
+4. Dans la liste déroulante **colonnes d’entrée (fonctionnalités)** , vérifiez que les colonnes de données que vous souhaitez inclure sont cochées.
 
-Vous avez terminé la mise en place de votre fichier source de données pour Model Builder. Sélectionnez le lien **Train** pour passer à l’étape suivante dans Model Builder.
+Vous avez terminé la configuration de votre fichier de source de données pour le générateur de modèles. Sélectionnez le lien **train** pour passer à l’étape suivante dans le générateur de modèles.
 
-## <a name="load-data-from-a-sql-server-database"></a>Chargez les données d’une base de données SQL Server
+## <a name="load-data-from-a-sql-server-database"></a>Charger des données à partir d’une base de données SQL Server
 
-Model Builder prend en charge le chargement des données des bases de données LOCALEs et éloignées DE SQL Server.
+Le générateur de modèles prend en charge le chargement de données à partir de bases de données locales et distantes SQL Server.
 
-Pour charger les données d’une base de données SQL Server dans Module Builder :
+Pour charger des données à partir d’une base de données SQL Server dans module Builder :
 
-1. Dans l’étape de données de Model Builder, sélectionnez **SQL Server** à partir de la source de données.
-1. Sélectionnez le bouton à côté de la boîte **texte de base de données Connect to SQL Server.**
-    1. Dans le dialogue **Choisissez les données,** sélectionnez **Microsoft SQL Server Database File**.
-    1. Décochez **la toujours utiliser cette** boîte à cocher de sélection et sélectionnez **Continuer**
-    1. Dans le dialogue **Connection Properties,** **sélectionnez Browse** et sélectionnez les téléchargements . Fichier MDF.
+1. À l’étape données du générateur de modèles, sélectionnez **SQL Server** dans la liste déroulante source de données.
+1. Sélectionnez le bouton en regard de la zone **de texte connexion à SQL Server base de données** .
+    1. Dans la boîte de dialogue **choisir des données** , sélectionnez **Microsoft SQL Server fichier de base de données**.
+    1. Décochez la case **toujours utiliser cette sélection** et sélectionnez **Continuer**
+    1. Dans la boîte de dialogue **Propriétés de connexion** , sélectionnez **Parcourir** et sélectionnez le téléchargé. Fichier MDF.
     1. Sélectionnez **OK**.
-1. Choisissez le nom de jeu de données de la décroche du nom de **table.**
-1. De la **colonne à prédire (label)** dropdown, choisissez la catégorie de données sur laquelle vous souhaitez faire une prédiction.
-1. À partir du décrochage **des colonnes d’entrée (Caractéristiques),** confirmez les colonnes que vous souhaitez inclure sont vérifiées.
+1. Choisissez le nom du DataSet dans la liste déroulante nom de la **table** .
+1. Dans la liste déroulante **colonne à prédire (étiquette)** , choisissez la catégorie de données sur laquelle vous souhaitez effectuer une prédiction.
+1. Dans la liste déroulante **colonnes d’entrée (fonctionnalités)** , vérifiez que les colonnes que vous souhaitez inclure sont cochées.
 
-Vous avez terminé la mise en place de votre fichier source de données pour Model Builder. Sélectionnez le lien **Train** pour passer à l’étape suivante dans Model Builder.
+Vous avez terminé la configuration de votre fichier de source de données pour le générateur de modèles. Sélectionnez le lien **train** pour passer à l’étape suivante dans le générateur de modèles.
 
-## <a name="set-up-image-data-files"></a>Configurer des fichiers de données d’image
+## <a name="set-up-image-data-files"></a>Configurer des fichiers de données image
 
-Model Builder s’attend à ce que les données d’image soient des fichiers JPG ou PNG organisés dans des dossiers correspondant aux catégories de la classification.
+Le générateur de modèles s’attend à ce que les données de l’image soient des fichiers JPG ou PNG organisés dans des dossiers qui correspondent aux catégories de la classification.
 
-Pour charger des images dans Model Builder, offrez le chemin vers un répertoire de haut niveau unique :
+Pour charger des images dans le générateur de modèles, indiquez le chemin d’accès à un répertoire de niveau supérieur unique :
 
-- Ce répertoire de haut niveau contient un sous-pli pour chacune des catégories à prévoir.
-- Chaque sous-pliage contient les fichiers d’image appartenant à sa catégorie.
+- Ce répertoire de niveau supérieur contient un sous-dossier pour chacune des catégories à prédire.
+- Chaque sous-dossier contient les fichiers image appartenant à sa catégorie.
 
-Dans la structure du dossier illustrée ci-dessous, le répertoire de haut niveau est *flower_photos*. Il y a cinq sous-directeurs correspondant aux catégories que vous voulez prédire : marguerite, pissenlit, roses, tournesols et tulipes. Chacune de ces sous-directions contient des images appartenant à sa catégorie respective.
+Dans la structure de dossiers illustrée ci-dessous, le répertoire de niveau supérieur est *flower_photos*. Il y a cinq sous-répertoires correspondant aux catégories que vous souhaitez prédire : marguerites, dandelion, roses, tournesols et tulipes. Chacun de ces sous-répertoires contient des images appartenant à sa catégorie respective.
 
 ```text
 \---flower_photos
@@ -106,9 +106,9 @@ Dans la structure du dossier illustrée ci-dessous, le répertoire de haut nivea
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Suivez ces tutoriels pour créer des applications d’apprentissage automatique avec Model Builder :
+Suivez ces didacticiels pour créer des applications Machine Learning avec le générateur de modèles :
 
 - [Prédire des prix à l’aide de la régression](../tutorials/predict-prices-with-model-builder.md)
-- [Analyser le sentiment dans une application web à l’aide de la classification binaire](../tutorials/sentiment-analysis-model-builder.md )
+- [Analyser les sentiments dans une application Web à l’aide de la classification binaire](../tutorials/sentiment-analysis-model-builder.md)
 
-Si vous entraînez un modèle à l’aide de code, [apprenez à charger des données à l’aide de l’API ML.NET](load-data-ml-net.md).
+Si vous effectuez l’apprentissage d’un modèle à l’aide de code, [Découvrez comment charger des données à l’aide de l’API ml.net](load-data-ml-net.md).

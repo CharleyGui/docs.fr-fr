@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 01470bd7f317acca068b3c1be1c751e3050ee7e8
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: fd78f2cd8266f94c577801623a84b56919c82973
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320211"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600852"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Présentation de Windows Communication Foundation
 Windows Communication Foundation (WCF) est une infrastructure permettant de créer des applications orientées service. À l’aide de WCF, vous pouvez envoyer des données sous forme de messages asynchrones d’un point de terminaison de service à un autre. Un point de terminaison de service peut faire partie d'un service disponible en continu et hébergé par IIS, ou il peut s'agir d'un service hébergé dans une application. Un point de terminaison peut être un client d'un service qui demande des données auprès d'un point de terminaison de service. Les messages peuvent être simplement constitués d'un caractère ou d'un mot unique envoyé au format XML, ou se présenter sous la forme d'un flux de données binaires plus complexe. Voici quelques exemples de scénarios :
@@ -52,11 +52,11 @@ WCF comprend l’ensemble de fonctionnalités suivant. Pour plus d’information
 
 - **Contrats de données**
 
-     Étant donné que WCF est construit à l’aide de la .NET Framework, il comprend également des méthodes conviviales de code pour fournir les contrats que vous souhaitez appliquer. Le contrat de données représente l'un des types universels de contrats. Par nature, lorsque vous codez votre service à l'aide de Visual C# ou de Visual Basic, la méthode la plus simple de gérer les données consiste à créer des classes qui représentent une entité de données dotée de propriétés. WCF comprend un système complet permettant d’utiliser les données de cette manière simple. Une fois que vous avez créé les classes qui représentent les données, votre service génère automatiquement les métadonnées qui permettent aux clients de se conformer aux types de données que vous avez conçus. Pour plus d’informations, consultez [utilisation de contrats de données](../../../docs/framework/wcf/feature-details/using-data-contracts.md).
+     Étant donné que WCF est construit à l’aide de la .NET Framework, il comprend également des méthodes conviviales de code pour fournir les contrats que vous souhaitez appliquer. Le contrat de données représente l'un des types universels de contrats. Par nature, lorsque vous codez votre service à l'aide de Visual C# ou de Visual Basic, la méthode la plus simple de gérer les données consiste à créer des classes qui représentent une entité de données dotée de propriétés. WCF comprend un système complet permettant d’utiliser les données de cette manière simple. Une fois que vous avez créé les classes qui représentent les données, votre service génère automatiquement les métadonnées qui permettent aux clients de se conformer aux types de données que vous avez conçus. Pour plus d’informations, consultez [utilisation de contrats de données](feature-details/using-data-contracts.md).
 
-- **Security**
+- **Sécurité**
 
-     Les messages peuvent être chiffrés afin de protéger la confidentialité. Par ailleurs, vous pouvez demander aux utilisateurs de s'authentifier avant de pouvoir recevoir des messages. La sécurité peut être implémentée à l'aide de normes célèbres, telles que SSL ou WS-SecureConversation. Pour plus d’informations, consultez l’article [Sécurité](./feature-details/security.md).
+     Les messages peuvent être chiffrés afin de protéger la confidentialité. Par ailleurs, vous pouvez demander aux utilisateurs de s'authentifier avant de pouvoir recevoir des messages. La sécurité peut être implémentée à l'aide de normes célèbres, telles que SSL ou WS-SecureConversation. Pour plus d’informations, consultez [Sécurité](./feature-details/security.md).
 
 - **Transports et encodages variés**
 
@@ -72,7 +72,7 @@ WCF comprend l’ensemble de fonctionnalités suivant. Pour plus d’information
 
 - **Transactions**
 
-     WCF prend également en charge les transactions à l’aide de l’un des trois modèles de transaction : WS-AtomicTransactions, des API de l’espace de noms <xref:System.Transactions> et de Microsoft Distributed Transaction Coordinator. Pour plus d’informations sur la prise en charge des transactions dans WCF, consultez [transactions](./feature-details/transactions-in-wcf.md).
+     WCF prend également en charge les transactions à l’aide de l’un des trois modèles de transaction : WS-AtomicTransactions, les API de l' <xref:System.Transactions> espace de noms et Microsoft Distributed Transaction Coordinator. Pour plus d’informations sur la prise en charge des transactions dans WCF, consultez [transactions](./feature-details/transactions-in-wcf.md).
 
 - **Prise en charge d'AJAX et de REST**
 
@@ -100,7 +100,7 @@ Les fonctionnalités d’hébergement du serveur d’applications Windows Server
 - [Concepts fondamentaux de Windows Communication Foundation](fundamental-concepts.md)
 - [Architecture Windows Communication Foundation](architecture.md)
 - [Conseils et bonnes pratiques](guidelines-and-best-practices.md)
-- [Didacticiel Bien démarrer](getting-started-tutorial.md)
+- [Didacticiel Prise en main](getting-started-tutorial.md)
 - [Guide de la documentation](guide-to-the-documentation.md)
 - [Programmation WCF de base](basic-wcf-programming.md)
 - [Exemples Windows Communication Foundation](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751514%28v=vs.90%29)

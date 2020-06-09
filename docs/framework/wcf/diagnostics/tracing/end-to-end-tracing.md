@@ -2,32 +2,32 @@
 title: Suivi de bout en bout
 ms.date: 03/30/2017
 ms.assetid: f5ac7fc7-f97c-4313-b068-54e0c471b2aa
-ms.openlocfilehash: fd2964b39c758e41620fb453ddd8f61a1aa550aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fc8fc448bdcf94ab25349f6b34961a34e5ed2a5a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912533"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598578"
 ---
 # <a name="end-to-end-tracing"></a>Suivi de bout en bout
-Bout en bout (e2e) suivi permet aux développeurs de suivre l’exécution de code dans l’infrastructure Windows Communication Foundation (WCF) pour examiner pourquoi un chemin d’accès du code a échoué, ou pour assurer le suivi détaillé pour l’analyse de performances et de planification de capacité. Windows Communication Foundation (WCF) fournit trois mécanismes de corrélation pour aider à diagnostiquer la cause d’une erreur : activités, transferts et propagation.  
+Le suivi de bout en bout (E2E) permet aux développeurs de suivre l’exécution du code dans l’infrastructure Windows Communication Foundation (WCF) pour rechercher la raison de l’échec d’un chemin de code ou pour fournir un suivi détaillé pour la planification de la capacité et l’analyse des performances. Windows Communication Foundation (WCF) fournit trois mécanismes de corrélation pour aider à diagnostiquer la cause d’une erreur : activités, transferts et propagation.  
   
- Consultez [les scénarios de suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md) pour obtenir la liste de scénarios de suivi de bout en bout et de leur activité correspondante et de traçage de conception.  
+ Consultez [scénarios de suivi de bout](end-to-end-tracing-scenarios.md) en bout pour obtenir une liste de scénarios de suivi de bout en bout, ainsi que leur conception d’activité et de suivi respective.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Activité](../../../../../docs/framework/wcf/diagnostics/tracing/activity.md):  Décrit les suivis d’activité dans le modèle de suivi de Windows Communication Foundation (WCF).  
+ [Activity](activity.md): décrit les suivis d’activité dans le modèle de suivi Windows Communication Foundation (WCF).  
   
- [Transfert](../../../../../docs/framework/wcf/diagnostics/tracing/transfer.md):  Décrit le transfert dans le modèle de suivi de Windows Communication Foundation (WCF) et à l’aide de transfert pour corréler des activités au sein de points de terminaison.  
+ [Transfert](transfer.md): décrit le transfert dans le modèle de suivi Windows Communication Foundation (WCF) et l’utilisation de Transfer pour mettre en corrélation les activités au sein des points de terminaison.  
   
- [La propagation](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md):  Décrit la propagation d’activité dans Windows Communication Foundation (WCF) modèle de suivi et à l’aide de la propagation pour corréler des activités sur les points de terminaison.  
+ [Propagation](propagation.md): décrit la propagation d’activité dans le modèle de suivi Windows Communication Foundation (WCF) et l’utilisation de la propagation pour corréler des activités sur des points de terminaison.  
   
- [Liste des types de suivis](../../../../../docs/framework/wcf/diagnostics/tracing/trace-type-summary.md)  
+ [Liste des types de suivis](trace-type-summary.md)  
   
  Fournit un résumé de tous les types de suivi d'activité  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration du suivi](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [Scénarios de suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [Outil Service Trace Viewer (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Configuration du traçage](configuring-tracing.md)
+- [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Scénarios de suivi de bout en bout](end-to-end-tracing-scenarios.md)
+- [Outil Service Trace Viewer (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

@@ -2,12 +2,12 @@
 title: System.ServiceModel.PortSharing.PortSharingDupHandleGranted
 ms.date: 03/30/2017
 ms.assetid: dde8a393-f31a-4e6d-b483-001b389e2df9
-ms.openlocfilehash: a497461452f0212175f63fc9e90c1887d5cc131a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75ff4889c0d4b09da20e8918aee20e090ba9e5ac
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61860813"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598071"
 ---
 # <a name="systemservicemodelportsharingportsharingduphandlegranted"></a>System.ServiceModel.PortSharing.PortSharingDupHandleGranted
 System.ServiceModel.PortSharing.PortSharingDupHandleGranted  
@@ -17,6 +17,6 @@ System.ServiceModel.PortSharing.PortSharingDupHandleGranted
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Suivi](index.md)
+- [Utilisation du suivi pour résoudre les problèmes posés par votre application](using-tracing-to-troubleshoot-your-application.md)
+- [Administration et diagnostics](../index.md)

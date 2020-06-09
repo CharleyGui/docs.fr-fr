@@ -2,12 +2,12 @@
 title: Ajout d'états en ligne et hors connexion
 ms.date: 03/30/2017
 ms.assetid: 05e5f51d-81b6-4c17-b364-9dda447a5fce
-ms.openlocfilehash: 74b113d64003756982a6b5701d9601c3116a9046
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: da170bbc22d04dcbf5f7cd4ac084a004bb4b026e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960643"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597681"
 ---
 # <a name="adding-online-and-offline-status"></a>Ajout d'états en ligne et hors connexion
 Dans de nombreux cas, il est important qu'une application surveille les informations relatives à l'état d'une connexion de canal homologue. Vous pouvez obtenir ces informations en appelant la méthode `GetProperty` depuis une implémentation de l'interface <xref:System.ServiceModel.IOnlineStatus>. Un objet implémenté sur cette interface peut en effet surveiller l'état de la connexion ou s'inscrire à des gestionnaires d'événements, tels que `OnOnline` et `OnOffline`. Cet objet réagira immédiatement à toutes modifications de l'état en ligne.  
@@ -19,4 +19,4 @@ Dans de nombreux cas, il est important qu'une application surveille les informat
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création d’une application de canal homologue](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [Création d'une application de canal homologue](building-a-peer-channel-application.md)

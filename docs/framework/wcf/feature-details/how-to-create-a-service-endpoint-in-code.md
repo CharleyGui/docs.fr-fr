@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : créer un point de terminaison de Service dans le code'
+title: 'Comment : créer un point de terminaison de service dans le code'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3fbb22fa-2930-48b8-b437-def1de87c6a0
-ms.openlocfilehash: 9b7b983122b9e30fd7c6b0d0c517a9483b8881c5
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 25ea843df7871d730926fe7b9aac9f21d58e263e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301467"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598929"
 ---
-# <a name="how-to-create-a-service-endpoint-in-code"></a>Procédure : créer un point de terminaison de Service dans le code
+# <a name="how-to-create-a-service-endpoint-in-code"></a>Comment : créer un point de terminaison de service dans le code
 Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est défini dans du code, où il est spécifié que le service doit utiliser la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
  Il est généralement conseillé de spécifier de façon déclarative les informations de liaison et d'adresse dans la configuration plutôt que de manière impérative dans le code. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. Plus généralement, le fait de laisser les informations de liaison et d’adresse hors du code leur permet de changer sans nécessiter de recompilation ou de redéploiement de l’application.  
@@ -39,13 +39,13 @@ Dans cet exemple, un contrat `ICalculator` est défini pour un service de calcul
      [!code-csharp[c_HowTo_CodeServiceBinding#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#6)]
      [!code-vb[c_HowTo_CodeServiceBinding#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#6)]  
   
-     Spécifier la liaison dans le code, mais utiliser les points de terminaison par défaut fournis par le runtime, transmettre l’adresse de base au constructeur lors de la création du <xref:System.ServiceModel.ServiceHost>et n’appelez pas <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A?displayProperty=nameWithType>.  
+     Pour spécifier la liaison dans le code, mais pour utiliser les points de terminaison par défaut fournis par le runtime, transmettez l’adresse de base au constructeur lors de la création de <xref:System.ServiceModel.ServiceHost> et n’appelez pas <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A?displayProperty=nameWithType> .  
   
      [!code-csharp[c_HowTo_CodeServiceBinding#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#7)]
      [!code-vb[c_HowTo_CodeServiceBinding#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#7)]  
   
-     Pour plus d’informations sur les points de terminaison par défaut, consultez [Simplified Configuration](../../../../docs/framework/wcf/simplified-configuration.md) et [Simplified Configuration for WCF Services](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+     Pour plus d’informations sur les points de terminaison par défaut, consultez [configuration simplifiée](../simplified-configuration.md) et [configuration simplifiée pour les services WCF](../samples/simplified-configuration-for-wcf-services.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Spécifier une liaison de Service dans le Code](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md)
+- [Guide pratique pour spécifier une liaison de service dans le code](../how-to-specify-a-service-binding-in-code.md)

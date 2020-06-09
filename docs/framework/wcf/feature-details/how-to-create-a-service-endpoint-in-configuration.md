@@ -2,15 +2,15 @@
 title: 'Comment : créer un point de terminaison de service dans la configuration.'
 ms.date: 06/16/2016
 ms.assetid: f474e25d-2a27-4f31-84c5-395c442b8e70
-ms.openlocfilehash: 5935f798004de3ec049b9c9f0300675e1660f462
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 56b29da0c147eb9e73a08e2875e33e384da729ed
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81464131"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598916"
 ---
 # <a name="how-to-create-a-service-endpoint-in-configuration"></a>Comment : créer un point de terminaison de service dans la configuration.
-Les points de terminaison permettent aux clients d’accéder aux fonctionnalités qu’offre un service de la Windows Communication Foundation (WCF). Vous pouvez définir un ou plusieurs points de terminaison pour un service en utilisant une combinaison d'adresses de point de terminaison relative et absolue. Si vous ne définissez aucun point de terminaison de service, le runtime vous en fournit automatiquement par défaut. Cette rubrique montre comment ajouter des points de terminaison en utilisant un fichier de configuration qui contient à la fois des adresses absolues et relatives.  
+Les points de terminaison fournissent aux clients un accès aux fonctionnalités offertes par un service Windows Communication Foundation (WCF). Vous pouvez définir un ou plusieurs points de terminaison pour un service en utilisant une combinaison d'adresses de point de terminaison relative et absolue. Si vous ne définissez aucun point de terminaison de service, le runtime vous en fournit automatiquement par défaut. Cette rubrique montre comment ajouter des points de terminaison en utilisant un fichier de configuration qui contient à la fois des adresses absolues et relatives.  
   
 ## <a name="example"></a>Exemple  
  La configuration de service suivante spécifie une adresse de base et cinq points de terminaison.  
@@ -81,7 +81,7 @@ Les points de terminaison permettent aux clients d’accéder aux fonctionnalit�
 ```  
   
 ## <a name="example"></a>Exemple  
- La première définition de point de terminaison affichée dans l'exemple suivant spécifie une adresse relative, ce qui signifie que l'adresse de point de terminaison est une combinaison de l'adresse de base et de l'adresse relative selon les règles de composition de l'URI (Uniform Resource Identifier). L'adresse relative est vide (""), donc l'adresse de point de terminaison est la même que l'adresse de base. L’adresse de `http://localhost:8000/servicemodelsamples/service`point de terminaison réelle est .  
+ La première définition de point de terminaison affichée dans l'exemple suivant spécifie une adresse relative, ce qui signifie que l'adresse de point de terminaison est une combinaison de l'adresse de base et de l'adresse relative selon les règles de composition de l'URI (Uniform Resource Identifier). L'adresse relative est vide (""), donc l'adresse de point de terminaison est la même que l'adresse de base. L’adresse du point de terminaison réel est `http://localhost:8000/servicemodelsamples/service` .  
   
 ```xml  
 <endpoint address=""
@@ -90,7 +90,7 @@ Les points de terminaison permettent aux clients d’accéder aux fonctionnalit�
 ```  
   
 ## <a name="example"></a>Exemple  
- La deuxième définition de point de terminaison spécifie également une adresse relative, comme affiché dans l'exemple de configuration suivant. L'adresse relative, "test", est ajoutée à l'adresse de base. L’adresse de `http://localhost:8000/servicemodelsamples/service/test`point de terminaison réelle est .  
+ La deuxième définition de point de terminaison spécifie également une adresse relative, comme affiché dans l'exemple de configuration suivant. L'adresse relative, "test", est ajoutée à l'adresse de base. L’adresse du point de terminaison réel est `http://localhost:8000/servicemodelsamples/service/test` .  
   
 ```xml  
 <endpoint address="/test"  
@@ -99,7 +99,7 @@ Les points de terminaison permettent aux clients d’accéder aux fonctionnalit�
 ```  
   
 ## <a name="example"></a>Exemple  
- La troisième définition de point de terminaison spécifie une adresse absolue, comme affiché dans l'exemple de configuration suivant. L'adresse de base ne joue aucun rôle dans l'adresse. L’adresse de `http://localhost:8001/hello/servicemodelsamples`point de terminaison réelle est .  
+ La troisième définition de point de terminaison spécifie une adresse absolue, comme affiché dans l'exemple de configuration suivant. L'adresse de base ne joue aucun rôle dans l'adresse. L’adresse du point de terminaison réel est `http://localhost:8001/hello/servicemodelsamples` .  
   
 ```xml  
 <endpoint address="http://localhost:8001/hello/servicemodelsamples"  
@@ -117,7 +117,7 @@ Les points de terminaison permettent aux clients d’accéder aux fonctionnalit�
 ```  
   
 ## <a name="example"></a>Exemple  
- Pour utiliser les points de terminaison par défaut fournis par le runtime, ne spécifiez aucun point de terminaison de service dans le code ou dans le fichier de configuration. Dans cet exemple, le runtime crée les points de terminaison par défaut lors de l'ouverture du service. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Pour utiliser les points de terminaison par défaut fournis par le runtime, ne spécifiez aucun point de terminaison de service dans le code ou dans le fichier de configuration. Dans cet exemple, le runtime crée les points de terminaison par défaut lors de l'ouverture du service. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../samples/simplified-configuration-for-wcf-services.md).  
   
 ```xml  
 <configuration>  

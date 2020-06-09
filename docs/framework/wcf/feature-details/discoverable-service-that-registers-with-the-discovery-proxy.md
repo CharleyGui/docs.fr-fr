@@ -1,16 +1,16 @@
 ---
-title: 'Procédure : implémenter un service détectable qui s’enregistre auprès du proxy de détection'
+title: "Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte."
 ms.date: 03/30/2017
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-ms.openlocfilehash: 053ace300610cd4129c4541f4e2658ac8d09da85
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bf878dff59a9a258567ff99098b0b3f8761194e2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626982"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599228"
 ---
-# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Procédure : implémenter un service détectable qui s’enregistre auprès du proxy de détection
-Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent comment implémenter un proxy de découverte. Dans la rubrique précédente, [Comment : Implémenter un Proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), vous avez implémenté un proxy de découverte. Dans cette rubrique, vous créez un service WCF qui envoie des messages d’annonce (`Hello` et `Bye`) au proxy de découverte, ce qui provoque son inscrire et désinscrire lui-même avec le proxy de découverte.
+# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte.
+Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent comment implémenter un proxy de découverte. Dans la rubrique précédente, [Comment : implémenter un proxy de découverte](how-to-implement-a-discovery-proxy.md), vous avez implémenté un proxy de découverte. Dans cette rubrique, vous allez créer un service WCF qui envoie des messages `Hello` d’annonce (et `Bye` ) au proxy de découverte, ce qui lui permet de s’inscrire et d’annuler son inscription auprès du proxy de découverte.
 
 ### <a name="to-define-the-service-contract"></a>Pour définir le contrat de service
 
@@ -156,7 +156,7 @@ Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent 
     }
     ```
 
-Vous avez terminé l'implémentation d'un service détectable. Passez à [Comment : Implémenter une Application cliente qui utilise le Proxy de découverte pour rechercher un Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).
+Vous avez terminé l'implémentation d'un service détectable. Continuez sur [Comment : implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service](client-app-discovery-proxy-to-find-a-service.md).
 
 ## <a name="example"></a>Exemple
  Les éléments suivants représentent l'intégralité du code utilisé dans cette rubrique.
@@ -291,6 +291,6 @@ namespace Microsoft.Samples.Discovery
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)
-- [Guide pratique pour Implémenter un Proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
-- [Guide pratique pour Implémenter une Application cliente qui utilise le Proxy de découverte pour rechercher un Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+- [Discovery WCF](wcf-discovery.md)
+- [Procédure : implémenter un proxy de découverte](how-to-implement-a-discovery-proxy.md)
+- [Procédure : implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service](client-app-discovery-proxy-to-find-a-service.md)

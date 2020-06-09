@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer un service d’émission de jeton de sécurité'
+title: 'Comment : créer un service de jeton de sécurité'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,29 +8,29 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
-ms.openlocfilehash: 39c54c5d91c38e43fd7d0b1205537948e84a0782
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1cfcca524e5dd2b0c1560eb7600795766e2db1d6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587531"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598955"
 ---
-# <a name="how-to-create-a-security-token-service"></a>Procédure : créer un service d’émission de jeton de sécurité
+# <a name="how-to-create-a-security-token-service"></a>Comment : créer un service de jeton de sécurité
 Un service de jeton de sécurité implémente le protocole défini dans la spécification WS-Trust. Ce protocole définit des formats de message et des modèles d’échange de message pour émettre, renouveler, annuler et valider des jetons de sécurité. Un service de jeton de sécurité donné fournit une ou plusieurs de ces fonctions. Cette rubrique examine le scénario le plus courant : l'implémentation de l'émission de jeton.  
   
 ## <a name="issuing-tokens"></a>Émission de jetons  
- La spécification WS-Trust définit des formats de message, basés sur l'élément de schéma XSD (XML Schema Definition) `RequestSecurityToken` et sur l'élément de schéma XSD `RequestSecurityTokenResponse` pour réaliser une émission de jetons. De plus, elle définit les URI (Uniform Resource Identifier) d'action associés. L’action associé à un URI le `RequestSecurityToken` message est `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue`. L’action associé à un URI le `RequestSecurityTokenResponse` message est `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue`.  
+ La spécification WS-Trust définit des formats de message, basés sur l'élément de schéma XSD (XML Schema Definition) `RequestSecurityToken` et sur l'élément de schéma XSD `RequestSecurityTokenResponse` pour réaliser une émission de jetons. De plus, elle définit les URI (Uniform Resource Identifier) d'action associés. L’URI d’action associé au `RequestSecurityToken` message est `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue` . L’URI d’action associé au `RequestSecurityTokenResponse` message est `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue` .  
   
 ### <a name="request-message-structure"></a>Structure d'un message de demande  
  La structure d'un message de demande d'émission se compose en général des éléments suivants :  
   
-- Une demande de taper l’URI avec la valeur `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue`.
+- URI de type de requête avec la valeur `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue` .
   
-- Un URI de type de jeton. Pour les jetons Security Assertions Markup Language (SAML) 1.1, la valeur de cet URI est `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`.  
+- Un URI de type de jeton. Pour les jetons SAML (Security Assertions Markup Language) 1,1, la valeur de cet URI est `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1` .  
   
 - Une valeur de taille de clé qui indique le nombre de bits inclus dans la clé à associer au jeton émis.  
   
-- Un URI de type de clé. Pour les clés symétriques, la valeur de cet URI est `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey`.  
+- Un URI de type de clé. Pour les clés symétriques, la valeur de cet URI est `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey` .  
   
  De plus, plusieurs autres éléments peuvent être présents :  
   
@@ -98,7 +98,7 @@ Un service de jeton de sécurité implémente le protocole défini dans la spéc
  [!code-csharp[c_CreateSTS#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#4)]
  [!code-vb[c_CreateSTS#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#4)]  
   
- Pour plus d’informations, consultez [Federation, exemple](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ Pour plus d’informations, consultez [exemple de Fédération](../samples/federation-sample.md).  
   
 ## <a name="creating-response-messages"></a>Création de messages de réponse  
  Une fois que le service de jeton de sécurité traite la demande d'émission et construit le jeton à émettre avec la clé de vérification, le message de réponse doit être construit, qui inclut au moins le jeton demandé, le jeton de preuve et des références au jeton émis. Le jeton émis est en général un <xref:System.IdentityModel.Tokens.SamlSecurityToken> créé à partir de <xref:System.IdentityModel.Tokens.SamlAssertion>, comme le montre l'exemple ci-dessous.  
@@ -111,7 +111,7 @@ Un service de jeton de sécurité implémente le protocole défini dans la spéc
  [!code-csharp[c_CreateSTS#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#6)]
  [!code-vb[c_CreateSTS#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#6)]  
   
- Pour plus d’informations sur la façon de construire le jeton de preuve lorsque le client et le service de jeton de sécurité fournissent tous deux matériel de clé pour la clé partagée, consultez [Federation, exemple](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ Pour plus d’informations sur la façon de construire le jeton de preuve lorsque le client et le service de jeton de sécurité fournissent tous deux un matériel de clé pour la clé partagée, consultez [exemple de Fédération](../samples/federation-sample.md).  
   
  Les références au jeton émis sont construites en créant des instances de la classe <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>.  
   
@@ -121,7 +121,7 @@ Un service de jeton de sécurité implémente le protocole défini dans la spéc
  Ensuite, ces différentes valeurs sont sérialisées dans le message de réponse retourné au client.  
   
 ## <a name="example"></a>Exemple  
- Pour le code complet pour un service de jeton de sécurité, consultez [Federation, exemple](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ Pour obtenir le code complet d’un service d’analyse de jeton de sécurité, consultez [exemple de Fédération](../samples/federation-sample.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -132,4 +132,4 @@ Un service de jeton de sécurité implémente le protocole défini dans la spéc
 - <xref:System.IdentityModel.Tokens.SamlAssertion>
 - <xref:System.ServiceModel.Security.Tokens.BinarySecretSecurityToken>
 - <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>
-- [Exemple de fédération](../../../../docs/framework/wcf/samples/federation-sample.md)
+- [Federation, exemple](../samples/federation-sample.md)

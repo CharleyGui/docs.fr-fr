@@ -2,12 +2,12 @@
 title: Recherche de découverte et FindCriteria
 ms.date: 03/30/2017
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
-ms.openlocfilehash: da4c3c4a1d765e4f91b03f4f8fc1a73c3fea1535
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 1d6a0e3fcca45c3fe57aab84b0f2b6b86fabb404
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964833"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599176"
 ---
 # <a name="discovery-find-and-findcriteria"></a>Recherche de découverte et FindCriteria
 
@@ -31,7 +31,7 @@ Les critères de recherche incluent :
 
   - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact?displayProperty=nameWithType> fait une comparaison de chaînes de base sensible à la casse.
 
-  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType> correspond à des segments séparés par « / ». Une recherche de `http://contoso/building1` correspond à un service avec une étendue `http://contoso/building/floor1`. Notez qu’il ne correspond pas `http://contoso/building100` car les deux derniers segments ne correspondent pas.
+  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType>correspond aux segments séparés par « / ». Une recherche `http://contoso/building1` correspond à un service avec une étendue `http://contoso/building/floor1` . Notez qu’elle ne correspond pas `http://contoso/building100` , car les deux derniers segments ne correspondent pas.
 
   - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap?displayProperty=nameWithType> établit une correspondance des étendues par segments à l'aide d'une URL LDAP.
 
@@ -70,7 +70,7 @@ Console.WriteLine("Found {0} ICalculatorService endpoint(s).", findResponse.Endp
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [Utilisation du canal client de découverte](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)
-- [Découverte avec étendues](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)
-- [Basic](../../../../docs/framework/wcf/samples/basic-sample.md)
+- [Vue d'ensemble de la découverte WCF](wcf-discovery-overview.md)
+- [Utilisation du canal client de découverte](using-the-discovery-client-channel.md)
+- [Découverte avec étendues](../samples/discovery-with-scopes-sample.md)
+- [De base](../samples/basic-sample.md)

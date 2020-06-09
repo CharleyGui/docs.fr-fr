@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-ms.openlocfilehash: d567674baa92ad096b10a1199fa3f04f05939df5
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 0d69af40e4b9a0133e44b64b45466f9aac84ffe2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991170"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598747"
 ---
 # <a name="one-way-services"></a>Services monodirectionnels
 Le comportement par défaut d'une opération de service est le modèle demande-réponse. Dans un modèle demande-réponse, le client attend le message de réponse, même si l'opération de service est représentée dans le code en tant que méthode `void`. Avec une opération monodirectionnelle, un seul message est transmis. Le récepteur n'envoie pas de message de réponse, l'expéditeur n'en attend pas.  
@@ -20,7 +20,7 @@ Le comportement par défaut d'une opération de service est le modèle demande-r
   
 - Lorsque le client doit appeler des opérations et n'est pas affecté par le résultat de l'opération au niveau de l'opération.  
   
-- Lorsque vous utilisez la classe <xref:System.ServiceModel.NetMsmqBinding> ou <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. (Pour plus d’informations sur ce scénario, consultez [files d’attente dans WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).)  
+- Lorsque vous utilisez la classe <xref:System.ServiceModel.NetMsmqBinding> ou <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. (Pour plus d’informations sur ce scénario, consultez [files d’attente dans WCF](queues-in-wcf.md).)  
   
  Lorsqu'une opération est monodirectionnelle, il n'y a pas de message pour renvoyer des informations sur l'erreur au client. Vous pouvez détecter des conditions d’erreur à l’aide de fonctionnalités de la liaison sous-jacente, telle que les sessions fiables, ou en concevant un contrat de service duplex qui utilise deux opérations monodirectionnelles : un contrat monodirectionnel du client au service afin d’appeler l’opération de service, et un autre contrat monodirectionnel entre le service et le client afin que le service puisse renvoyer des erreurs au client à l’aide d’un rappel que le client implémente.  
   
@@ -41,7 +41,7 @@ public interface IOneWayCalculator
 }  
 ```  
   
- Pour obtenir un exemple complet, consultez l’exemple [unidirectionnel](../../../../docs/framework/wcf/samples/one-way.md) .  
+ Pour obtenir un exemple complet, consultez l’exemple [unidirectionnel](../samples/one-way.md) .  
   
 ## <a name="clients-blocking-with-one-way-operations"></a>Blocage de clients à l'aide d'opérations monodirectionnelles  
  Il est important de se rendre compte que bien que certaines applications monodirectionnelles retournent dès que les données sortantes sont écrites dans la connexion réseau, dans plusieurs scénarios, l’implémentation d’une liaison ou d’un service peut provoquer le blocage d’un client WCF à l’aide d’opérations unidirectionnelles. Dans les applications clientes WCF, l’objet client WCF ne retourne pas de valeur tant que les données sortantes n’ont pas été écrites dans la connexion réseau. Cela se vérifie pour l'ensemble des modèles d'échange de messages, dont les opérations monodirectionnelles ; cela signifie que les problèmes d'écriture de données sur le transport empêchent le client de retourner. Selon le problème, le résultat peut être une exception ou un retard d'envoi des messages au service.  
@@ -56,4 +56,4 @@ public interface IOneWayCalculator
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Unidirectionnel](../../../../docs/framework/wcf/samples/one-way.md)
+- [One-Way](../samples/one-way.md)

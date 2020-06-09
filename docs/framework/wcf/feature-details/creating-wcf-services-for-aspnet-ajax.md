@@ -2,12 +2,12 @@
 title: Création de services WCF pour ASP.NET AJAX
 ms.date: 03/30/2017
 ms.assetid: 04c0402c-e617-4ba5-aedf-d17692234776
-ms.openlocfilehash: 2ec4d2f1f2fb3a6a184a524ed0134360407b4649
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 8c82d4c61b32572fd1ad7d8f19e939273cc2280b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964063"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599306"
 ---
 # <a name="creating-wcf-services-for-aspnet-ajax"></a>Création de services WCF pour ASP.NET AJAX
 
@@ -21,13 +21,13 @@ Si vous utilisez Visual Studio, vous pouvez utiliser un modèle prédéfini pour
 
 Si vous n'utilisez pas les modèles Visual Studio, vous pouvez créer un point de terminaison ASP.NET AJAX de deux manières :
 
-- Créez le point de terminaison à l'aide de l'activation d'hôte dynamique sans utiliser de configuration. Il s'agit de l'approche la plus simple si vous n'êtes pas familier avec le système de configuration WCF. Pour plus d’informations, consultez [Comment : ajouter un point de terminaison ASP.NET AJAX sans utiliser la configuration](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).
+- Créez le point de terminaison à l'aide de l'activation d'hôte dynamique sans utiliser de configuration. Il s'agit de l'approche la plus simple si vous n'êtes pas familier avec le système de configuration WCF. Pour plus d’informations, consultez [Comment : ajouter un point de terminaison ASP.NET AJAX sans utiliser la configuration](how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).
 
-- Ajoutez un point de terminaison compatible AJAX à un service WCF à l’aide de la configuration. Pour plus d’informations, consultez [Comment : utiliser la configuration pour ajouter un point de terminaison AJAX ASP.net](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md).
+- Ajoutez un point de terminaison compatible AJAX à un service WCF à l’aide de la configuration. Pour plus d’informations, consultez [Comment : utiliser la configuration pour ajouter un point de terminaison AJAX ASP.net](how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md).
 
-Le modèle de programmation Web décrit dans la [vue d’ensemble du modèle de programmation http Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md) peut être utilisé avec les services ASP.NET AJAX. Plus précisément :
+Le modèle de programmation Web décrit dans la [vue d’ensemble du modèle de programmation http Web WCF](wcf-web-http-programming-model-overview.md) peut être utilisé avec les services ASP.NET AJAX. Plus précisément :
 
-- Vous pouvez utiliser les attributs <xref:System.ServiceModel.Web.WebGetAttribute> et <xref:System.ServiceModel.Web.WebInvokeAttribute> pour choisir entre les verbes HTTP GET et HTTP POST. Correctement utilisés, ils permettent d'améliorer considérablement la performance de votre application. Pour plus d’informations, consultez [Comment : choisir entre des demandes HTTP http et http pour les points de terminaison ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md).
+- Vous pouvez utiliser les attributs <xref:System.ServiceModel.Web.WebGetAttribute> et <xref:System.ServiceModel.Web.WebInvokeAttribute> pour choisir entre les verbes HTTP GET et HTTP POST. Correctement utilisés, ils permettent d'améliorer considérablement la performance de votre application. Pour plus d’informations, consultez [Comment : choisir entre des demandes HTTP http et http pour les points de terminaison ASP.NET AJAX](http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md).
 
 - Vous pouvez utiliser les propriétés <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> et <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> pour que votre service retourne des données XML au lieu du format JSON (JavaScript Object Notation) par défaut. Effectuée dans le cadre de l'infrastructure ASP.NET AJAX, cette opération permet au client JavaScript de recevoir un objet XML DOM.
 
@@ -52,15 +52,15 @@ Le modèle de programmation Web décrit dans la [vue d’ensemble du modèle de 
 
  Des scénarios plus avancés requièrent des détails supplémentaires sur la prise en charge d’AJAX dans WCF :
 
-- Pour comprendre comment les données sont transférées entre un client de page AJAX et un service WCF à l’aide de JavaScript, et pour plus d’informations sur la façon dont les types de .NET Framework sont mappés aux types JavaScript, consultez [prise en charge de JSON et d’autres formats de transfert de données](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md).
+- Pour comprendre comment les données sont transférées entre un client de page AJAX et un service WCF à l’aide de JavaScript, et pour plus d’informations sur la façon dont les types de .NET Framework sont mappés aux types JavaScript, consultez [prise en charge de JSON et d’autres formats de transfert de données](support-for-json-and-other-data-transfer-formats.md).
 
 - Pour tirer parti des fonctionnalités ASP.NET, par exemple, l’authentification basée sur URL et l’accès aux informations de session ASP.NET, vous pouvez activer le mode de compatibilité ASP.NET par la configuration.
 
-Les points de terminaison AJAX dans WCF peuvent même être consommés sans l’infrastructure AJAX ASP.NET. Pour ce faire, vous devez comprendre l’architecture de prise en charge de la prise en charge d’AJAX dans WCF. Pour une description de cette architecture, consultez [modèle objet de programmation http Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md). Pour obtenir un exemple de code illustrant cette approche, consultez le [service Ajax avec JSON et XML](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md).
+Les points de terminaison AJAX dans WCF peuvent même être consommés sans l’infrastructure AJAX ASP.NET. Pour ce faire, vous devez comprendre l’architecture de prise en charge de la prise en charge d’AJAX dans WCF. Pour une description de cette architecture, consultez [modèle objet de programmation http Web WCF](wcf-web-http-programming-object-model.md). Pour obtenir un exemple de code illustrant cette approche, consultez le [service Ajax avec JSON et XML](../samples/ajax-service-with-json-and-xml-sample.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
-- [Guide pratique pour ajouter un point de terminaison AJAX ASP.NET sans utiliser de configuration](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md)
-- [Guide pratique pour utiliser la configuration pour ajouter un point de terminaison AJAX ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)
-- [Guide pratique pour choisir entre des demandes HTTP POST et HTTP GET pour des points de terminaison AJAX ASP.NET](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md)
+- [Modèle de programmation HTTP Web WCF](wcf-web-http-programming-model.md)
+- [Guide pratique pour ajouter un point de terminaison AJAX ASP.NET sans utiliser de configuration](how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md)
+- [Comment : utiliser la configuration pour ajouter un point de terminaison AJAX ASP.NET](how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)
+- [Comment : choisir entre des demandes HTTP POST et HTTP GET pour des points de terminaison AJAX ASP.NET](http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md)

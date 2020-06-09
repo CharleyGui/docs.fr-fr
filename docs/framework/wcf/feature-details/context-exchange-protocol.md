@@ -2,15 +2,15 @@
 title: Protocole d'échange de contexte
 ms.date: 03/30/2017
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
-ms.openlocfilehash: 00adb68d96f77ce0953811d13b5377ec4ed1e0ea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 86d2a19b086fbd5d6be6f1a084bfd7aaace0e250
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185262"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597434"
 ---
 # <a name="context-exchange-protocol"></a>Protocole d'échange de contexte
-Cette section décrit le protocole d’échange de contexte introduit dans la version .NET Framework version 3.5 de la Windows Communication Foundation (WCF). Ce protocole permet au canal client d'accepter un contexte fourni par un service et de l'appliquer à toutes les demandes ultérieures à ce service envoyées sur la même instance de canal client. L'implémentation du protocole d'échange de contexte peut utiliser l'un des deux mécanismes suivants pour propager le contexte entre le serveur et le client : les cookies HTTP ou un en-tête SOAP.  
+Cette section décrit le protocole d’échange de contexte introduit dans Windows Communication Foundation (WCF) version .NET Framework version 3,5. Ce protocole permet au canal client d'accepter un contexte fourni par un service et de l'appliquer à toutes les demandes ultérieures à ce service envoyées sur la même instance de canal client. L'implémentation du protocole d'échange de contexte peut utiliser l'un des deux mécanismes suivants pour propager le contexte entre le serveur et le client : les cookies HTTP ou un en-tête SOAP.  
   
  Le protocole d'échange de contexte est implémenté dans une couche de canal personnalisée. Le canal communique le contexte depuis et vers la couche d'application à l'aide d'une propriété <xref:System.ServiceModel.Channels.ContextMessageProperty>. Pour la transmission entre des points de terminaison, la valeur du contexte est soit sérialisée comme un en-tête SOAP à la couche du canal, soit convertie depuis ou vers des propriétés de message qui représentent une réponse et une demande HTTP. Dans le dernier cas, l'une des couches du canal sous-jacents convertie les propriétés de message de réponse et de demande HTTP vers et depuis des cookies HTTP, respectivement. Le choix du mécanisme utilisé pour échanger le contexte s'effectue à l'aide de la propriété <xref:System.ServiceModel.Channels.ContextExchangeMechanism> sur le <xref:System.ServiceModel.Channels.ContextBindingElement>. Les valeurs valides sont `HttpCookie` ou `SoapHeader`.  
   
@@ -69,4 +69,4 @@ Cette section décrit le protocole d’échange de contexte introduit dans la ve
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de l'interopérabilité des protocoles de services Web](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)
+- [Guide de l'interopérabilité des protocoles de services Web](web-services-protocols-interoperability-guide.md)
