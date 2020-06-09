@@ -2,12 +2,12 @@
 title: Concepts de sécurité utilisés dans WCF
 ms.date: 03/30/2017
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-ms.openlocfilehash: faf7b44c0ff1b207a7b017163ad2b032f26199b8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f852ba4e1100103289bc5fd879b19ebd40443b8d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743877"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595178"
 ---
 # <a name="security-concepts-used-in-wcf"></a>Concepts de sécurité utilisés dans WCF
 La sécurité Windows Communication Foundation (WCF) repose sur des concepts déjà utilisés et déployés dans diverses infrastructures de sécurité.  
@@ -20,7 +20,7 @@ Le groupe Microsoft Patterns and Practices a rédigé un livre blanc détaillé 
   
 ## <a name="industry-wide-security-specifications"></a>Spécifications de sécurité de l'industrie  
   
-### <a name="public-key-infrastructure"></a>Infrastructure à clé publique  
+### <a name="public-key-infrastructure"></a>Infrastructure à clé publique (PKI)  
 
 L’infrastructure à clé publique (PKI) est un système de certificats numériques, d’autorités de certification et d’autres autorités d’enregistrement qui vérifient et authentifient chaque partie impliquée dans une transaction électronique via l’utilisation du chiffrement à clé publique.
   
@@ -31,7 +31,7 @@ L’infrastructure à clé publique (PKI) est un système de certificats numéri
  Les certificats X.509 constituent un formulaire d'informations d'identification principal utilisé dans les applications de sécurité. Pour plus d’informations sur les certificats X. 509, consultez [certificats de clé publique x. 509](/windows/win32/seccertenroll/about-x-509-public-key-certificates). Les certificats X.509 sont stockés dans un magasin de certificats. Un ordinateur qui exécute Windows a plusieurs types de magasins de certificats, chacun ayant un but différent. Pour plus d’informations sur les différents magasins, consultez [magasins de certificats](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
 ## <a name="web-services-security-specifications"></a>Spécifications Web Services Security  
- Les liaisons définies par le système prennent en charge plusieurs spécifications de sécurité communément utilisées pour les services Web. Pour obtenir la liste complète des liaisons fournies par le système et les spécifications des services Web qu’elles prennent en charge, consultez [protocoles de services Web pris en charge par les liaisons d’interopérabilité fournies par le système](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md) .  
+ Les liaisons définies par le système prennent en charge plusieurs spécifications de sécurité communément utilisées pour les services Web. Pour obtenir la liste complète des liaisons fournies par le système et les spécifications des services Web qu’elles prennent en charge, consultez [protocoles de services Web pris en charge par les liaisons d’interopérabilité fournies par le système](web-services-protocols-supported-by-system-provided-interoperability-bindings.md) .  
   
 ## <a name="access-control-mechanisms"></a>Mécanismes de contrôle d'accès  
  WCF offre plusieurs méthodes pour contrôler l'accès à un service ou à une opération. Parmi celles-ci :  
@@ -42,13 +42,13 @@ L’infrastructure à clé publique (PKI) est un système de certificats numéri
   
 3. Fournisseur de rôle ASP.NET  
   
-4. Gestionnaire d’autorisations  
+4. Gestionnaire d'autorisations  
   
 5. Modèle d'identité  
   
- Pour plus d’informations sur ces rubriques, consultez [Access Control mécanismes](../../../../docs/framework/wcf/feature-details/access-control-mechanisms.md)  
+ Pour plus d’informations sur ces rubriques, consultez [Access Control mécanismes](access-control-mechanisms.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Présentation de la sécurité](security-overview.md)
+- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-ms.openlocfilehash: f8d399859e4f861158ab74db9ed410aec280dbe2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 86fa38b281d8944797fa858f8c67f0b60c733be8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586676"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595542"
 ---
 # <a name="enumeration-types-in-data-contracts"></a>Types énumération dans les contrats de données
 Les énumérations peuvent être exprimées dans le modèle de contrat de données. Cette rubrique décrit plusieurs exemples qui expliquent le modèle de programmation.  
@@ -30,7 +30,7 @@ Les énumérations peuvent être exprimées dans le modèle de contrat de donné
  Vous pouvez utiliser comme d'habitude les propriétés <xref:System.Runtime.Serialization.DataContractAttribute> (<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> et <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>) pour les contrats de données de l'énumération.  
   
 ### <a name="enumeration-member-values"></a>Valeurs de membre de l'énumération  
- En général, le contrat de données inclut des noms de membre de l'énumération, pas des valeurs numériques. Toutefois, lorsque vous utilisez le modèle de contrat de données, si le côté réception est un client WCF, le schéma exporté conserve les valeurs numériques. Notez que cela n’est pas le cas lorsque vous utilisez le [à l’aide de la classe XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
+ En général, le contrat de données inclut des noms de membre de l'énumération, pas des valeurs numériques. Toutefois, lorsque vous utilisez le modèle de contrat de données, si le côté réception est un client WCF, le schéma exporté conserve les valeurs numériques. Notez que ce n’est pas le cas lors de l’utilisation de l’utilisation de la [classe XmlSerializer](using-the-xmlserializer-class.md).  
   
  Dans l'exemple précédent, si `condition` a la valeur `Used` et que les données sont sérialisées en XML, le XML résultant est `<condition>Used</condition>` et pas `<condition>1</condition>`. Par conséquent, le contrat de données suivant est équivalent au contrat de données de `CarConditionEnum`.  
   
@@ -39,7 +39,7 @@ Les énumérations peuvent être exprimées dans le modèle de contrat de donné
   
  Par exemple, vous pouvez utiliser `CarConditionEnum` côté envoi et `CarConditionWithNumbers` côté réception. Même si le côté envoi utilise la valeur « 1 » pour `Used` et le côté réception la valeur « 20 », la représentation XML est `<condition>Used</condition>` pour les deux côtés.  
   
- Pour qu'il soit inclus dans le contrat de données, vous devez appliquer l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>. Dans le .NET Framework, vous pouvez toujours appliquer la valeur spéciale 0 (zéro) à une énumération, qui est également la valeur par défaut pour toute énumération. Cependant, même cette valeur zéro spéciale ne peut pas être sérialisée sauf si elle est marquée avec l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.  
+ Pour qu'il soit inclus dans le contrat de données, vous devez appliquer l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>. Dans l' .NET Framework, vous pouvez toujours appliquer la valeur spéciale 0 (zéro) à une énumération, qui est également la valeur par défaut pour toute énumération. Cependant, même cette valeur zéro spéciale ne peut pas être sérialisée sauf si elle est marquée avec l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.  
   
  Il existe deux exceptions :  
   
@@ -81,7 +81,7 @@ Les énumérations peuvent être exprimées dans le modèle de contrat de donné
   
 1. Essayez de rechercher un membre de l'énumération (auquel est appliqué l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>) qui correspond à la valeur numérique. Une fois trouvé, envoyez une liste qui contient seulement ce membre.  
   
-2. Essayez de décomposer la valeur numérique en une somme de manière à obtenir des membres de l'énumération (à chacun desquels est appliqué l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>) qui correspondent à chaque partie de la somme. Envoyez la liste de tous ces membres. Notez que le *algorithme gourmand* est utilisé pour rechercher cette somme, et il n’y a donc aucune garantie que cette somme est trouvée, même si elle est présente. Pour éviter ce problème, assurez-vous que les valeurs numériques des membres de l'énumération sont à la puissance de deux.  
+2. Essayez de décomposer la valeur numérique en une somme de manière à obtenir des membres de l'énumération (à chacun desquels est appliqué l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>) qui correspondent à chaque partie de la somme. Envoyez la liste de tous ces membres. Notez que l' *algorithme gourmand* est utilisé pour trouver une telle somme. par conséquent, il n’est pas garanti qu’une telle somme soit trouvée même si elle est présente. Pour éviter ce problème, assurez-vous que les valeurs numériques des membres de l'énumération sont à la puissance de deux.  
   
 3. Si les deux étapes précédentes échouent et que la valeur numérique est différente de zéro, levez une <xref:System.Runtime.Serialization.SerializationException>. Si la valeur numérique est égale à zéro, envoyez la liste vide.  
   
@@ -99,5 +99,5 @@ Les énumérations peuvent être exprimées dans le modèle de contrat de donné
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
-- [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [Spécification du transfert de données dans des contrats de service](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+- [Using Data Contracts](using-data-contracts.md)
+- [Specifying Data Transfer in Service Contracts](specifying-data-transfer-in-service-contracts.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Dans CustomPeerResolverService : Inscription de clients'
+title: 'Dans CustomPeerResolverService : Inscriptions des clients'
 ms.date: 03/30/2017
 ms.assetid: 40236953-a916-4236-84a6-928859e1331a
-ms.openlocfilehash: 3d1e1c6493da54bc3ae0e74a33985da59382ea52
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ce694408edbb40309d1750be49b8414ebcbce3f7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619777"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596836"
 ---
-# <a name="inside-the-custompeerresolverservice-client-registrations"></a>Dans CustomPeerResolverService : Inscription de clients
+# <a name="inside-the-custompeerresolverservice-client-registrations"></a>Dans CustomPeerResolverService : Inscriptions des clients
 Chaque nœud de la maille publie ses informations sur le point de terminaison sur le service de résolution par le biais de la fonction `Register`. Le service de résolution stocke ces informations comme un enregistrement d'inscription. Cet enregistrement contient un identificateur unique (RegistrationID) et les informations sur le point de terminaison (PeerNodeAddress) concernant le nœud.  
   
 ## <a name="stale-records-and-expiration-time"></a>Enregistrements périmés et heure d'expiration  
@@ -26,13 +26,13 @@ Chaque nœud de la maille publie ses informations sur le point de terminaison su
   
  Pour implémenter votre propre service de résolution, vous devez écrire une fonction de maintenance qui supprime les enregistrements d'inscription périmés. Pour ce faire, plusieurs méthodes sont possibles :  
   
-- **Maintenance périodique**: Définir un minuteur à sonner régulièrement et parcourez votre magasin de données pour supprimer les anciens enregistrements. Le <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService> utilise cette approche.  
+- **Maintenance périodique**: définissez un minuteur pour qu’il s’arrête régulièrement et parcourez votre magasin de données pour supprimer les anciens enregistrements. Le <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService> utilise cette approche.  
   
-- **Suppression passive**: Au lieu de rechercher activement les enregistrements périmés à intervalles réguliers, vous pouvez identifier et supprimer les enregistrements obsolètes lorsque votre service exécute déjà une autre fonction. Cela peut ralentir potentiellement le temps de réponse aux demandes des clients de programme de résolution, mais il élimine la nécessité de définir une minuterie, et peut être plus efficace si peu de nœuds sont supposés quitter la maille sans appeler `Unregister`.  
+- **Suppression passive**: au lieu de rechercher activement les enregistrements obsolètes à intervalles réguliers, vous pouvez identifier et supprimer les enregistrements obsolètes lorsque votre service exécute déjà une autre fonction. Cela peut ralentir potentiellement le temps de réponse aux demandes des clients de programme de résolution, mais il élimine la nécessité de définir une minuterie, et peut être plus efficace si peu de nœuds sont supposés quitter la maille sans appeler `Unregister`.  
   
 ## <a name="registrationlifetime-and-refresh"></a>RegistrationLifetime et Refresh  
  Lorsqu'un nœud s'inscrit auprès d'un service de résolution, il reçoit de ce dernier un objet <xref:System.ServiceModel.PeerResolvers.RegisterResponseInfo>. Cet objet a une propriété `RegistrationLifetime` qui indique au nœud combien de temps il reste avant que l'inscription expire et sa suppression par le service de résolution. Par exemple, si `RegistrationLifetime` est égal à 2 minutes, le nœud doit appeler `Refresh` dans moins de 2 minutes afin de garantir que l'enregistrement reste actualisé et ne soit pas supprimé. Lorsque le service de résolution reçoit une demande `Refresh`, il examine l'enregistrement et réinitialise l'heure d'expiration. Refresh retourne un objet <xref:System.ServiceModel.PeerResolvers.RefreshResponseInfo> avec une propriété `RegistrationLifetime`.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmes de résolution d’homologue](../../../../docs/framework/wcf/feature-details/peer-resolvers.md)
+- [Programmes de résolution d'homologue](peer-resolvers.md)

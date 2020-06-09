@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.PeerNodeAuthenticationFailure
 ms.date: 03/30/2017
 ms.assetid: 0b50f782-ca06-4a82-aa7f-71f78ddc5177
-ms.openlocfilehash: 315122914ebcb3e8e4d72c8d976026a126306168
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cb7019f1e4b47bde7c98b0109afa7b0125b7ef63
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949888"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84577303"
 ---
 # <a name="systemservicemodelchannelspeernodeauthenticationfailure"></a>System.ServiceModel.Channels.PeerNodeAuthenticationFailure
 Une négociation de sécurité avec un voisin potentiel n'a pas réussi.  
@@ -17,12 +17,12 @@ Une négociation de sécurité avec un voisin potentiel n'a pas réussi.
   
  PeerChannel reconnaît un seul type de jeton pour les certificats d'identification X.509 puissants qui fournissent un modèle d'identité performant basé sur le type d'authentification et d'autorisation qui peut être implémenté. PeerChannel prend également en charge les applications simples via l'utilisation de mots de passe. Les mots de passe peuvent uniquement être utilisés pour autoriser l'entrée à la session, mais ne peuvent pas l'être pour effectuer l'authentification des messages. Cela et dû au fait qu'un jeton symétrique partagé par un groupe d'homologues est difficile à utiliser et s'avère inapproprié pour l'authentification de la source.  
   
-## <a name="troubleshooting"></a>Résolution des problèmes  
+## <a name="troubleshooting"></a>Dépannage  
  Vérifiez que tous les voisins ont les informations d'identification de sécurité appropriées.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurité de canal homologue](../../../../../docs/framework/wcf/feature-details/peer-channel-security.md)
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Sécurité de canal homologue](../../feature-details/peer-channel-security.md)
+- [Suivi](index.md)
+- [Utilisation du suivi pour résoudre les problèmes posés par votre application](using-tracing-to-troubleshoot-your-application.md)
+- [Administration et diagnostics](../index.md)

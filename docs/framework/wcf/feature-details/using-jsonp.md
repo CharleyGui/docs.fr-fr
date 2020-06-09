@@ -2,12 +2,12 @@
 title: Utilisation de JSONP
 ms.date: 03/30/2017
 ms.assetid: f386718c-b4ba-4931-a610-40c27a46672a
-ms.openlocfilehash: 622fbdbf2674aea552cfd57f528d7cc5168cfda8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 82290319b5d8b58708f0b2ebf40522ee76127b84
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61932832"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594957"
 ---
 # <a name="using-jsonp"></a>Utilisation de JSONP
 
@@ -17,7 +17,7 @@ JSON Padding (JSONP) est un mécanisme qui active la prise en charge de scripts 
 callback({"a" = \\"b\\"});
 ```
 
-Dans l'exemple précédent la charge utile JSON, `{"a" = \\"b\\"}`, est encapsulée dans un appel de fonction, `callback`. La fonction de rappel doit déjà être définie dans la page web actuelle. Le type de contenu d’une réponse JSONP est `application/javascript`.
+Dans l'exemple précédent la charge utile JSON, `{"a" = \\"b\\"}`, est encapsulée dans un appel de fonction, `callback`. La fonction de rappel doit déjà être définie dans la page web actuelle. Le type de contenu d’une réponse JSONP est `application/javascript` .
 
 JSONP n'est pas activé automatiquement. Pour l'activer, affectez à l'attribut `javascriptCallbackEnabled` la valeur `true` sur l'un des points de terminaison standard HTTP (<xref:System.ServiceModel.Description.WebHttpEndpoint> ou <xref:System.ServiceModel.Description.WebScriptEndpoint>), comme le montre l'exemple suivant.
 
@@ -86,4 +86,4 @@ Les validations suivantes sont effectuées lorsque JSONP est activé :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble du modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [Vue d'ensemble du modèle de programmation Web HTTP WCF](wcf-web-http-programming-model-overview.md)

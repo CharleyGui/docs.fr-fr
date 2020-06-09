@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
-ms.openlocfilehash: b226eed9218207cde99add61ef1f3eb64b459009
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f90906b4c3fc1d1d76977451abfb238bb33fb581
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184304"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595113"
 ---
 # <a name="trusted-subsystem"></a>Sous-système approuvé
 Un client accède à un ou plusieurs services Web distribués sur un réseau. Les services Web sont conçus afin que l'accès aux ressources supplémentaires (telles que les bases de données ou autres services Web) soit encapsulé dans la logique métier du service Web. Ces ressources doivent être protégées contre tout accès non autorisé. L'illustration suivante présente un processus de sous-système approuvé.  
   
- ![Sous-système de confiance](../../../../docs/framework/wcf/feature-details/media/wcfc-trustedsubsystemc.gif "wcfc_TrustedSubsystemc")  
+ ![Sous-système approuvé](media/wcfc-trustedsubsystemc.gif "wcfc_TrustedSubsystemc")  
   
  Les étapes suivantes décrivent le processus de sous-système approuvé tel qu'il est présenté :  
   
@@ -38,7 +38,7 @@ Un client accède à un ou plusieurs services Web distribués sur un réseau. Le
 |Intégrité|Oui|  
 |Confidentialité|Oui|  
 |Transport|HTTP entre client et le service du sous-système approuvé.<br /><br /> NET.TCP entre le service du sous-système approuvé et la ressource (service principal).|  
-|Liaison|<xref:System.ServiceModel.WSHttpBinding><xref:System.ServiceModel.NetTcpBinding> [et \<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
+|Liaison|<xref:System.ServiceModel.WSHttpBinding>les<xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
   
 ## <a name="resource-back-end-service"></a>Ressource (service principal)  
   
@@ -212,5 +212,5 @@ Un client accède à un ou plusieurs services Web distribués sur un réseau. Le
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Présentation de la sécurité](security-overview.md)
 - [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

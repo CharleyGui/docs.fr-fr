@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.PrematureDatagramEof
 ms.date: 03/30/2017
 ms.assetid: ec07be8b-b537-4090-be7e-086679dba78d
-ms.openlocfilehash: be7c9917f5c7f6dd8e271a1fd8b2d88d4e302481
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6281189530706ca43cc09b0c1d8d6b99e8fe6074
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936849"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593969"
 ---
 # <a name="systemservicemodelchannelsprematuredatagrameof"></a>System.ServiceModel.Channels.PrematureDatagramEof
 System.ServiceModel.Channels.PrematureDatagramEof  
@@ -17,6 +17,6 @@ System.ServiceModel.Channels.PrematureDatagramEof
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Suivi](index.md)
+- [Utilisation du suivi pour résoudre les problèmes posés par votre application](using-tracing-to-troubleshoot-your-application.md)
+- [Administration et diagnostics](../index.md)

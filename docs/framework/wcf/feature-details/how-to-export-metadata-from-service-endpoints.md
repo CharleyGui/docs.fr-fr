@@ -1,25 +1,25 @@
 ---
-title: 'Procédure : exporter des métadonnées à partir de points de terminaison de service'
+title: 'Comment : exporter des métadonnées à partir de points de terminaison de service'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b6c4dfd0-f270-43ec-961a-e16eb6af2f2c
-ms.openlocfilehash: 6bf2eb3d295f9cbf6a7e13a612d5846ceaa75ab4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 58e86e5566775048e081bfb4ac217a7747b98a35
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778298"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579408"
 ---
-# <a name="how-to-export-metadata-from-service-endpoints"></a>Procédure : exporter des métadonnées à partir de points de terminaison de service
+# <a name="how-to-export-metadata-from-service-endpoints"></a>Comment : exporter des métadonnées à partir de points de terminaison de service
 Cette rubrique explique comment exporter des métadonnées à partir de points de terminaison de service.  
   
 ### <a name="to-export-metadata-from-service-endpoints"></a>Pour exporter des métadonnées à partir de points de terminaison de service  
   
 1. Créez un nouveau projet d'application console Visual Studio. Ajoutez le code affiché aux étapes suivantes dans le fichier Program.cs généré dans la méthode main().  
   
-2. Créer un <xref:System.ServiceModel.Description.WsdlExporter>.  
+2. Créez un <xref:System.ServiceModel.Description.WsdlExporter>.  
   
      [!code-csharp[S_UEWsdlExporter#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#1)]
      [!code-vb[S_UEWsdlExporter#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#1)]  
@@ -57,6 +57,6 @@ Cette rubrique explique comment exporter des métadonnées à partir de points d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de l’architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)
-- [Utilisation des métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)
-- [Points de terminaison : Adresses, liaisons et contrats](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Vue d'ensemble de l'architecture de métadonnées](metadata-architecture-overview.md)
+- [Utilisation des métadonnées](using-metadata.md)
+- [Points de terminaison : adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)

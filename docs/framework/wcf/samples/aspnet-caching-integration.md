@@ -2,18 +2,18 @@
 title: ASP.NET Caching Integration
 ms.date: 03/30/2017
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
-ms.openlocfilehash: 23c10e56dba7daec2d1027de92e8252c8fe69055
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: c541f3caad8a500b9fdb33d00b58706bac876e37
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716178"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594749"
 ---
 # <a name="aspnet-caching-integration"></a>ASP.NET Caching Integration
 
 Cet exemple montre comment utiliser le cache de sortie ASP.NET avec le modèle de programmation HTTP Web WCF. Cette rubrique met l’accent sur la fonctionnalité d’intégration du cache de sortie ASP.NET.
 
-## <a name="demonstrates"></a>Montre
+## <a name="demonstrates"></a>Illustre
 
 Intégration au cache de sortie ASP.NET
 
@@ -22,19 +22,19 @@ Intégration au cache de sortie ASP.NET
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AspNetCachingIntegration`
 
-## <a name="discussion"></a>Discussion
+## <a name="discussion"></a>Discussions
 
-L’exemple utilise la <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> pour utiliser la mise en cache de sortie ASP.NET avec le service Windows Communication Foundation (WCF). L'<xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> est appliqué aux opérations de service et fournit le nom d'un profil de cache dans un fichier de configuration qui doit être appliqué aux réponses de l'opération donnée.
+L’exemple utilise le <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> pour utiliser la mise en cache de sortie ASP.net avec le service Windows Communication Foundation (WCF). L'<xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> est appliqué aux opérations de service et fournit le nom d'un profil de cache dans un fichier de configuration qui doit être appliqué aux réponses de l'opération donnée.
 
-Dans le fichier Service.cs de l’exemple de projet de service, les opérations `GetCustomer` et `GetCustomers` sont marquées avec le <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>, qui fournit le nom de profil de cache « CacheFor60Seconds ». Dans le fichier Web. config du projet de service, le profil de cache « CacheFor60Seconds » est fourni sous l’élément <`caching`> de <`system.web`>. Pour ce profil de cache, la valeur de l’attribut `duration` est « 60 », donc les réponses associées à ce profil sont mises en cache dans le cache de sortie ASP.NET pendant 60 secondes. En outre, pour ce profil de cache, l’attribut `varmByParam` est défini sur « format », de sorte que les réponses des demandes avec des valeurs différentes pour le paramètre de chaîne de requête `format` sont mises en cache séparément. Enfin, l’attribut `varyByHeader` du profil de cache est défini sur « accepter », de sorte que les réponses des demandes avec différentes valeurs d’en-tête Accept soient mises en cache séparément.
+Dans le fichier Service.cs de l’exemple de projet de service, `GetCustomer` les `GetCustomers` opérations et sont marquées avec le <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> , qui fournit le nom de profil de cache « CacheFor60Seconds ». Dans le fichier Web. config du projet de service, le profil de cache « CacheFor60Seconds » est fourni sous l' `caching` élément < > de < `system.web` >. Pour ce profil de cache, la valeur de l' `duration` attribut est « 60 », donc les réponses associées à ce profil sont mises en cache dans le cache de sortie ASP.net pendant 60 secondes. En outre, pour ce profil de cache, l' `varmByParam` attribut est défini sur « format », de sorte que les réponses des demandes avec des valeurs différentes pour le `format` paramètre de chaîne de requête sont mises en cache séparément. Enfin, l’attribut du profil de cache `varyByHeader` est défini sur « accepter », de sorte que les réponses des demandes avec des valeurs d’en-tête Accept différentes sont mises en cache séparément.
 
-Le fichier program.cs du projet Client montre comment un tel client peut être créé à l'aide de <xref:System.Net.HttpWebRequest>. Notez qu'il ne s'agit là que de l'un des moyens d'accéder à un service WCF. Il est également possible d’accéder au service à l’aide d’autres classes de .NET Framework, telles que la fabrique de canal WCF et <xref:System.Net.WebClient>. D’autres exemples du kit de développement logiciel (SDK), tels que l’exemple de [service http de base](../../../../docs/framework/wcf/samples/basic-http-service.md) , montrent comment utiliser ces classes pour communiquer avec un service WCF.
+Le fichier program.cs du projet Client montre comment un tel client peut être créé à l'aide de <xref:System.Net.HttpWebRequest>. Notez qu'il ne s'agit là que de l'un des moyens d'accéder à un service WCF. Il est également possible d’accéder au service à l’aide d’autres classes de .NET Framework telles que la fabrique de canal WCF et <xref:System.Net.WebClient> . D’autres exemples du kit de développement logiciel (SDK), tels que l’exemple de [service http de base](basic-http-service.md) , montrent comment utiliser ces classes pour communiquer avec un service WCF.
 
-## <a name="to-run-the-sample"></a>Pour exécuter l’exemple
+## <a name="to-run-the-sample"></a>Exécution de l'exemple
 
 Cet exemple est composé de trois projets :
 
@@ -46,7 +46,7 @@ Cet exemple est composé de trois projets :
 
 Lorsque l'application console Client s'exécute, le client adresse des requêtes au service et affiche les informations pertinentes des réponses dans la fenêtre de console.
 
-#### <a name="to-run-the-sample"></a>Pour exécuter l’exemple
+#### <a name="to-run-the-sample"></a>Exécution de l'exemple
 
 1. Ouvrez la solution de l'exemple ASP.NET Caching Integration.
 

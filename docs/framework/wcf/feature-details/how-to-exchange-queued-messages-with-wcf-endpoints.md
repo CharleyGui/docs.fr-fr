@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : échanger des messages mis en file d’attente avec des points de terminaison WCF'
+title: "Comment : échanger des messages en file d'attente avec des points de terminaison WCF"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-ms.openlocfilehash: 09b21c9483b4f2716409b560dbbb478fe5a6badd
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 7da7ba1b680bae2b29eeff8fe669e097ea8eda32
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972222"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595373"
 ---
-# <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Procédure : échanger des messages mis en file d’attente avec des points de terminaison WCF
+# <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Comment : échanger des messages en file d'attente avec des points de terminaison WCF
 Les files d’attente garantissent que la messagerie fiable peut se produire entre un client et un service de Windows Communication Foundation (WCF), même si le service n’est pas disponible au moment de la communication. Les procédures suivantes montrent comment garantir une communication durable entre un client et un service à l’aide de la liaison mise en file d’attente standard lors de l’implémentation du service WCF.  
   
- Cette section explique comment utiliser <xref:System.ServiceModel.NetMsmqBinding> pour la communication mise en file d’attente entre un client WCF et un service WCF.  
+ Cette section explique comment utiliser pour la communication mise en <xref:System.ServiceModel.NetMsmqBinding> file d’attente entre un client WCF et un service WCF.  
   
 ### <a name="to-use-queuing-in-a-wcf-service"></a>Pour utiliser la mise en file d'attente dans un service WCF  
   
@@ -58,7 +58,7 @@ Les files d’attente garantissent que la messagerie fiable peut se produire ent
   
 2. Définissez un <xref:System.ServiceModel.Description.ServiceEndpoint> dans la configuration qui spécifie l’adresse et utilise la liaison <xref:System.ServiceModel.NetMsmqBinding> standard, comme illustré dans l’exemple suivant.  
 
-3. Créez une étendue de transaction pour écrire dans la file d’attente transactionnelle, appelez `SubmitPurchaseOrder` l’opération et fermez le client WCF, comme indiqué dans l’exemple suivant.  
+3. Créez une étendue de transaction pour écrire dans la file d’attente transactionnelle, appelez l' `SubmitPurchaseOrder` opération et fermez le client WCF, comme indiqué dans l’exemple suivant.  
   
      [!code-csharp[S_Msmq_Transacted#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#8)]
      [!code-vb[S_Msmq_Transacted#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#8)]  
@@ -78,10 +78,10 @@ Les files d’attente garantissent que la messagerie fiable peut se produire ent
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.NetMsmqBinding>
-- [Liaison MSMQ de transaction](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)
-- [Mise en file d’attente dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [Guide pratique pour Échanger des messages avec des points de terminaison WCF et des applications de Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Windows Communication Foundation vers Message Queuing](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
-- [Installation de Message Queuing (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [Message Queuing vers Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
-- [Sécurité du message sur Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
+- [Transacted MSMQ Binding](../samples/transacted-msmq-binding.md)
+- [Mise en file d'attente dans WCF](queuing-in-wcf.md)
+- [Comment : échanger des messages avec des points de terminaison WCF et des applications Message Queuing](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Windows Communication Foundation to Message Queuing](../samples/wcf-to-message-queuing.md)
+- [Installation de Message Queuing (MSMQ)](../samples/installing-message-queuing-msmq.md)
+- [Message Queuing to Windows Communication Foundation](../samples/message-queuing-to-wcf.md)
+- [Message Security over Message Queuing](../samples/message-security-over-message-queuing.md)

@@ -6,35 +6,35 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-ms.openlocfilehash: 5b15d56c7150a8478bc32651538903778e3b877d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 840e4a5d365f2adbaf335c1061a580665a39824d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184793"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595321"
 ---
 # <a name="how-to-use-the-aspnet-membership-provider"></a>Comment : utiliser le fournisseur d'appartenances ASP.NET
 
-Le fournisseur d’adhésion ASP.NET est une fonctionnalité qui permet aux développeurs ASP.NET de créer des sites Web qui permettent aux utilisateurs de créer des combinaisons uniques de noms d’utilisateur et de mots de passe. Grâce à cette fonctionnalité, les utilisateurs peuvent établir un compte avec le site et disposer d'un accès exclusif à celui-ci et à ses services. Cette approche diffère de la sécurité Windows, qui requiert que les utilisateurs disposent de comptes dans un domaine Windows. Au lieu de cela, tout utilisateur qui fournit ses informations d’identification (le nom d’utilisateur / combinaison mot de passe) peut utiliser le site et ses services.
+Le fournisseur d’appartenances ASP.NET est une fonctionnalité qui permet aux développeurs ASP.NET de créer des sites Web permettant aux utilisateurs de créer des combinaisons uniques de nom d’utilisateur et de mot de passe. Grâce à cette fonctionnalité, les utilisateurs peuvent établir un compte avec le site et disposer d'un accès exclusif à celui-ci et à ses services. Cette approche diffère de la sécurité Windows, qui requiert que les utilisateurs disposent de comptes dans un domaine Windows. Au lieu de cela, tout utilisateur qui fournit ses informations d’identification (combinaison nom d’utilisateur/mot de passe) peut utiliser le site et ses services.
 
-Pour une demande d’exemple, voir [Adhésion et Fournisseur de rôle](../../../../docs/framework/wcf/samples/membership-and-role-provider.md). Pour plus d’informations sur l’utilisation de la fonction ASP.NET fournisseur de rôles, voir [comment : Utilisez le fournisseur de rôle ASP.NET avec un service](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).
+Pour obtenir un exemple d’application, consultez [appartenance et fournisseur de rôles](../samples/membership-and-role-provider.md). Pour plus d’informations sur l’utilisation de la fonctionnalité de fournisseur de rôles ASP.NET, consultez [Comment : utiliser le fournisseur de rôles ASP.net avec un service](how-to-use-the-aspnet-role-provider-with-a-service.md).
 
 La fonctionnalité d’appartenance requiert l’utilisation d’une base de données SQL Server pour stocker les informations utilisateur. La fonctionnalité inclut également des méthodes qui consistent à poser une question aux utilisateurs qui ont oublié leur mot de passe.
 
-Les développeurs de la Windows Communication Foundation (WCF) peuvent profiter de ces fonctionnalités à des fins de sécurité. Lorsqu’ils sont intégrés dans une application WCF, les utilisateurs doivent fournir une combinaison nom d’utilisateur/mot de passe à l’application client WCF. Pour transférer les données au service WCF, utilisez une liaison qui prend <xref:System.ServiceModel.WSHttpBinding> en charge les informations d’identification du nom d’utilisateur/mot de `UserName`passe, telles que la (en configuration, le [ \<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) et définissez le type d’identification du client à . Sur le service, la sécurité WCF authentifie l’utilisateur en fonction du nom d’utilisateur et du mot de passe, et attribue également le rôle spécifié par le rôle ASP.NET.
+Les développeurs Windows Communication Foundation (WCF) peuvent tirer parti de ces fonctionnalités à des fins de sécurité. Lorsqu’ils sont intégrés à une application WCF, les utilisateurs doivent fournir une combinaison nom d’utilisateur/mot de passe à l’application cliente WCF. Pour transférer les données vers le service WCF, utilisez une liaison qui prend en charge les informations d’identification de nom d’utilisateur/mot de passe, telles que <xref:System.ServiceModel.WSHttpBinding> (dans la configuration, [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) ) et définissez le type d’informations d’identification du client sur `UserName` . Sur le service, la sécurité WCF authentifie l’utilisateur en fonction du nom d’utilisateur et du mot de passe, et attribue également le rôle spécifié par le rôle ASP.NET.
 
 > [!NOTE]
-> WCF ne fournit pas de méthodes pour remplir la base de données avec des combinaisons nom d’utilisateur/mot de passe ou d’autres informations utilisateur.
+> WCF ne fournit pas de méthodes pour remplir la base de données avec des combinaisons nom d’utilisateur/mot de passe ou autres informations utilisateur.
 
 ### <a name="to-configure-the-membership-provider"></a>Pour configurer le fournisseur d'appartenances
 
-1. Dans le fichier Web.config, sous `system.web` l’élément> <, créez `membership` un élément <>.
+1. Dans le fichier Web. config, sous l' `system.web` élément < >, créez un `membership` élément < >.
 
 2. Sous l'élément `<membership>`, créez un élément `<providers>`.
 
-3. Comme un enfant à `providers` la <> élément, `<clear />` ajouter un élément pour rincer la collecte des fournisseurs.
+3. En tant qu’enfant de l' `providers` élément <>, ajoutez un `<clear />` élément pour vider la collection de fournisseurs.
 
-4. Sous `<clear />` l’élément, créer un `add` <> élément avec les attributs suivants `name` `type`définis à des valeurs `passwordFormat`appropriées: , , , `connectionStringName` `applicationName`, `enablePasswordRetrieval`, `enablePasswordReset` `requiresQuestionAndAnswer`, , `requiresUniqueEmail`, et . L'attribut `name` est utilisé ultérieurement comme valeur dans le fichier de configuration. L'exemple suivant lui affecte la valeur `SqlMembershipProvider`.
+4. Sous l' `<clear />` élément, créez un <`add` élément> avec les attributs suivants définis sur les valeurs appropriées : `name` , `type` ,,,, `connectionStringName` `applicationName` `enablePasswordRetrieval` `enablePasswordReset` , `requiresQuestionAndAnswer` , `requiresUniqueEmail` et `passwordFormat` . L'attribut `name` est utilisé ultérieurement comme valeur dans le fichier de configuration. L'exemple suivant lui affecte la valeur `SqlMembershipProvider`.
 
     L'exemple suivant présente la section de configuration.
 
@@ -59,13 +59,13 @@ Les développeurs de la Windows Communication Foundation (WCF) peuvent profiter 
 
 ### <a name="to-configure-service-security-to-accept-the-user-namepassword-combination"></a>Pour configurer la sécurité de service afin d'accepter la combinaison nom d'utilisateur/mot de passe
 
-1. Dans le fichier de configuration, sous l’élément [ \<system.serviceModel>,](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) ajoutez une [ \<fixation>](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) élément.
+1. Dans le fichier de configuration, sous l' [\<system.serviceModel>](../../configure-apps/file-schema/wcf/system-servicemodel.md) élément, ajoutez un [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) élément.
 
-2. Ajoutez un [ \<>wsHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) à la section des fixations. Pour plus d’informations sur la création d’un élément de liaison WCF, voir [Comment : Spécifier une liaison de service dans la configuration](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).
+2. Ajoutez un [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) à la section Bindings. Pour plus d’informations sur la création d’un élément de liaison WCF, consultez [Comment : spécifier une liaison de service dans la configuration](../how-to-specify-a-service-binding-in-configuration.md).
 
 3. Affectez à l'attribut `mode` de l'élément `<security>` la valeur `Message`.
 
-4. Définissez `clientCredentialType` l’attribut de `message` l’élément <`UserName`> à . Cela spécifie qu'une paire nom d'utilisateur/mot de passe sera utilisée comme information d'identification du client.
+4. Affectez `clientCredentialType` à l’attribut de l’élément <> la valeur `message` `UserName` . Cela spécifie qu'une paire nom d'utilisateur/mot de passe sera utilisée comme information d'identification du client.
 
     L’exemple suivant présente le code de configuration de la liaison.
 
@@ -86,20 +86,20 @@ Les développeurs de la Windows Communication Foundation (WCF) peuvent profiter 
 
 ### <a name="to-configure-a-service-to-use-the-membership-provider"></a>Pour configurer un service permettant d'utiliser le fournisseur d'appartenances
 
-1. Comme un enfant `<system.serviceModel>` à l’élément, ajouter un [ \<comportement>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) élément
+1. En tant qu’enfant de l' `<system.serviceModel>` élément, ajoutez un [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) élément
 
-2. Ajouter un [ \<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) à l’élément `behaviors` <>.
+2. Ajoutez un [\<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md) à l' `behaviors` élément <>.
 
-3. Ajoutez [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) un comportement>et `name` définissez l’attribut à une valeur appropriée.
+3. Ajoutez un [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) et affectez `name` à l’attribut une valeur appropriée.
 
-4. Ajoutez un [ \<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) à l’élément `behavior`> <.
+4. Ajoutez un [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) à l' `behavior` élément <>.
 
-5. Ajoutez un [ \<utilisateurNameAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) à `<serviceCredentials>` l’élément.
+5. Ajoutez un [\<userNameAuthentication>](../../configure-apps/file-schema/wcf/usernameauthentication.md) à l' `<serviceCredentials>` élément.
 
 6. Affectez à l'attribut `userNamePasswordValidationMode` la valeur `MembershipProvider`.
 
     > [!IMPORTANT]
-    > Si `userNamePasswordValidationMode` la valeur n’est pas définie, WCF utilise l’authentification Windows au lieu du fournisseur d’adhésion ASP.NET.
+    > Si la `userNamePasswordValidationMode` valeur n’est pas définie, WCF utilise l’authentification Windows au lieu du fournisseur d’appartenances ASP.net.
 
 7. Affectez à l'attribut `membershipProviderName` le nom du fournisseur (spécifié lors de l'ajout du fournisseur dans la première procédure de cette rubrique). L'exemple suivant présente le fragment `<serviceCredentials>` à ce point.
 
@@ -117,7 +117,7 @@ Les développeurs de la Windows Communication Foundation (WCF) peuvent profiter 
     </behaviors>
     ```
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Le code suivant montre la configuration d’un service qui utilise la fonctionnalité d’appartenance ASP.
 
@@ -158,5 +158,5 @@ Le code suivant montre la configuration d’un service qui utilise la fonctionna
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : utiliser le fournisseur de rôle ASP.NET avec un service](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)
-- [Fournisseur d’appartenances et de rôles](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)
+- [Comment : utiliser le fournisseur de rôle ASP.NET avec un service](how-to-use-the-aspnet-role-provider-with-a-service.md)
+- [Membership and Role Provider](../samples/membership-and-role-provider.md)

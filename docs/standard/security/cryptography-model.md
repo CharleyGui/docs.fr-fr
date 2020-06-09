@@ -1,17 +1,18 @@
 ---
 title: Modèle de chiffrement de .NET Framework
+description: Passez en revue les implémentations des algorithmes de chiffrement habituels dans .NET. Découvrez le modèle de chiffrement extensible de l’héritage d’objets, de la conception de flux & de la configuration.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: c2d28abacd34736764b69be750a850a0f2e8db85
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 11af4c15c8b291df898a3c2416faa15875eab70b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288379"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596317"
 ---
 # <a name="net-framework-cryptography-model"></a>Modèle de chiffrement de .NET Framework
 

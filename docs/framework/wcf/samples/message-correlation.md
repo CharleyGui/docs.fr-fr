@@ -2,12 +2,12 @@
 title: Message Correlation
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 9ded0886920f9f0b3d2f9b441061253b42a1c567
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 84b10b507f9fdaa7c53cf937bb132c8cc0aac33f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76747170"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591630"
 ---
 # <a name="message-correlation"></a>Message Correlation
 
@@ -17,7 +17,7 @@ Cet exemple montre comment une application Message Queuing (MSMQ) peut envoyer u
 
  Le contrat de service `IOrderProcessor` définit une opération de service unidirectionnelle qui convient à l'utilisation de la mise en file d'attente. Un message MSMQ n'ayant pas d'en-tête Action, il n'est donc pas possible de mapper automatiquement des messages MSMQ différents aux contrats d'opération. Par conséquent, il ne peut y avoir qu'un seul contrat d'opération dans ce cas. Si vous souhaitez définir plusieurs contrats d'opération dans le service, l'application doit fournir des informations sur l'en-tête dans le message MSMQ (par exemple, l'étiquette ou correlationID) qui peut être utilisé pour déterminer le contrat d'opération à distribuer.
 
- En outre, le message MSMQ ne contient pas d'informations concernant les en-têtes qui sont mappés à différents paramètres du contrat d'opération. Par conséquent, il ne peut y avoir qu'un seul paramètre dans le contrat d'opération. Le paramètre est de type <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, qui contient le message MSMQ sous-jacent. Le type « T » dans la classe `MsmqMessage<T>` représente les données sérialisées dans le corps du message MSMQ. Dans cet exemple, le type `PurchaseOrder` est sérialisé dans le corps du message MSMQ.
+ En outre, le message MSMQ ne contient pas d'informations concernant les en-têtes qui sont mappés à différents paramètres du contrat d'opération. Par conséquent, il ne peut y avoir qu'un seul paramètre dans le contrat d'opération. Le paramètre est de type <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> , qui contient le message MSMQ sous-jacent. Le type « T » dans la classe `MsmqMessage<T>` représente les données sérialisées dans le corps du message MSMQ. Dans cet exemple, le type `PurchaseOrder` est sérialisé dans le corps du message MSMQ.
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -68,7 +68,7 @@ public class OrderProcessorService : IOrderProcessor
 
  Le service utilise un client `OrderResponseClient` personnalisé pour envoyer le message MSMQ à la file d'attente. Étant donné que l’application qui reçoit et traite le message est une application MSMQ et non une application WCF, il n’existe pas de contrat de service implicite entre les deux applications. Par conséquent, nous ne pouvons pas créer de proxy à l'aide de l'outil Svcutil.exe dans ce scénario.
 
- Le proxy personnalisé est fondamentalement le même pour toutes les applications WCF qui utilisent la liaison `msmqIntegrationBinding` pour envoyer des messages. Contrairement aux autres proxys, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.
+ Le proxy personnalisé est fondamentalement le même pour toutes les applications WCF qui utilisent la `msmqIntegrationBinding` liaison pour envoyer des messages. Contrairement aux autres proxys, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -272,7 +272,7 @@ static void DisplayOrderStatus()
 
 ## <a name="set-up-build-and-run-the-sample"></a>Configurer, générer et exécuter l’exemple
 
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
 
 2. Si le service est exécuté en premier, il vérifie que la file d'attente existe. Si la file d'attente n'existe pas, le service en crée une. Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ. Procédez comme suit pour créer une file d'attente dans Windows 2008 :
 
@@ -286,9 +286,9 @@ static void DisplayOrderStatus()
 
     5. Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d’attente.
 
-3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-4. Pour exécuter l’exemple dans une configuration à un seul ordinateur, suivez les instructions de la procédure d' [exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Pour exécuter l’exemple dans une configuration à un seul ordinateur, suivez les instructions de la procédure d' [exécution des exemples de Windows Communication Foundation](running-the-samples.md).
 
 ## <a name="run-the-sample-across-computers"></a>Exécuter l’exemple sur plusieurs ordinateurs
 
@@ -309,11 +309,11 @@ static void DisplayOrderStatus()
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Mise en file d’attente dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Mise en file d'attente dans WCF](../feature-details/queuing-in-wcf.md)
 - [Message Queuing](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

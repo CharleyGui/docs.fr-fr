@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished
 ms.date: 03/30/2017
 ms.assetid: 16cb428d-d886-4789-a961-6fded4b0dbba
-ms.openlocfilehash: bffaed4976d82202eaea9ce50f6d389548fdabfd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b9a3703e49c3932f62fcfb6994c9028b074bbe8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998008"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594411"
 ---
 # <a name="microsofttransactionstransactionbridgecoordinatorstatemachinefinished"></a>Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished
 La machine à états pour un enrôlement de coordinateur est passée à l'état Finished.  
@@ -17,6 +17,6 @@ La machine à états pour un enrôlement de coordinateur est passée à l'état 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Suivi](index.md)
+- [Utilisation du suivi pour résoudre les problèmes posés par votre application](using-tracing-to-troubleshoot-your-application.md)
+- [Administration et diagnostics](../index.md)

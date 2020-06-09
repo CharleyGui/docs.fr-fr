@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Service Transaction Behavior Sample [Windows Communication Foundation]
 ms.assetid: 1a9842a3-e84d-427c-b6ac-6999cbbc2612
-ms.openlocfilehash: 38ad03d64d95e0653fba8018c59c62db9a698096
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 0be5bf0dbe6416febb898fb5150c5a516c8b0969
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715106"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591525"
 ---
 # <a name="service-transaction-behavior"></a>Service Transaction Behavior
 
-Cet exemple illustre l’utilisation d’une transaction coordonnée par le client et les paramètres de ServiceBehaviorAttribute et OperationBehaviorAttribute pour contrôler le comportement de la transaction du service. Cet exemple est basé sur la [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice, mais qui est étendu pour conserver un journal du serveur des opérations effectuées dans une table de base de données et un total des exécutions avec état pour les opérations de calculatrice. Les écritures rendues persistantes dans la table du journal de serveur dépendent du résultat d'une transaction coordonnée par le client : si la transaction cliente ne se complète pas, la transaction de service Web garantit que les mises à jour de la base de données ne sont pas validées.
+Cet exemple illustre l’utilisation d’une transaction coordonnée par le client et les paramètres de ServiceBehaviorAttribute et OperationBehaviorAttribute pour contrôler le comportement de la transaction du service. Cet exemple est basé sur la [prise en main](getting-started-sample.md) qui implémente un service de calculatrice, mais qui est étendu pour conserver un journal du serveur des opérations effectuées dans une table de base de données et un total des exécutions avec état pour les opérations de calculatrice. Les écritures rendues persistantes dans la table du journal de serveur dépendent du résultat d'une transaction coordonnée par le client : si la transaction cliente ne se complète pas, la transaction de service Web garantit que les mises à jour de la base de données ne sont pas validées.
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
@@ -101,7 +101,7 @@ Sur le service, il y a trois attributs qui affectent le comportement de la trans
 
   - La propriété `ReleaseServiceInstanceOnTransactionComplete` spécifie si l'instance de service sous-jacente est recyclée à la fin de l'exécution d'une transaction. Si elle a la valeur `false`, le service maintient la même instance de service à travers les demandes de l'opération. Cela est nécessaire pour maintenir le total évolutif. Si elle a la valeur `true`, une nouvelle instance est générée après chaque action complétée.
 
-  - La propriété `TransactionAutoCompleteOnSessionClose` spécifie si les transactions en attente sont exécutées lorsque la session se ferme. En lui affectant la valeur `false`, les opérations individuelles doivent soit affecter à la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete?displayProperty=nameWithType> la valeur `true`, soit exiger explicitement un appel à la méthode <xref:System.ServiceModel.OperationContext.SetTransactionComplete?displayProperty=nameWithType> pour terminer les transactions. Cet exemple illustre les deux approches.
+  - La propriété `TransactionAutoCompleteOnSessionClose` spécifie si les transactions en attente sont exécutées lorsque la session se ferme. En lui affectant `false` la valeur, les opérations individuelles sont requises pour affecter à la propriété la valeur <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete?displayProperty=nameWithType> `true` ou pour exiger explicitement un appel à la <xref:System.ServiceModel.OperationContext.SetTransactionComplete?displayProperty=nameWithType> méthode pour terminer des transactions. Cet exemple illustre les deux approches.
 
 - Sur le `ServiceContractAttribute` :
 
@@ -209,11 +209,11 @@ Le résultat est toujours le même : aucune des opérations exécutées dans ce
 
 1. Vérifiez que vous avez installé SQL Server 2005 Express Edition ou SQL Server 2005. Dans le fichier App.config du service, le `connectionString` de la base de données peut être défini ou les interactions avec la base de données peuvent être désactivées en affectant `usingSql` à la valeur `false` d'appSettings.
 
-2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).
 
-Si vous exécutez l’exemple sur plusieurs ordinateurs, vous devez configurer le Distributed Transaction Coordinator Microsoft (MSDTC) pour activer le workflow de transaction réseau et utiliser l’outil WsatConfig. exe pour activer le réseau de transactions Windows Communication Foundation (WCF). supporter.
+Si vous exécutez l’exemple sur plusieurs ordinateurs, vous devez configurer le Distributed Transaction Coordinator Microsoft (MSDTC) pour activer le workflow de transaction réseau et utiliser l’outil WsatConfig. exe pour activer la prise en charge réseau des transactions Windows Communication Foundation (WCF).
 
 ### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample-across-machines"></a>Pour configurer le Microsoft Distributed Transaction Coordinator (MSDTC) de manière à prendre en charge l’exécution de l’exemple sur plusieurs ordinateurs
 
@@ -262,6 +262,6 @@ Si vous exécutez l’exemple sur plusieurs ordinateurs, vous devez configurer l
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Transactions`

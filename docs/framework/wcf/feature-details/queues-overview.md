@@ -4,23 +4,23 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
-ms.openlocfilehash: 78d80a88153ee15f7ab152da44801c77900f874d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3e75b6d5926b65a93204241eb7c71ca23a5694af
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184598"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596719"
 ---
 # <a name="queues-overview"></a>Vue d’ensemble des files d’attente
 
-Cette section présente les concepts généraux et principaux relatifs à la communication mise en file d'attente. Les sections suivantes entrent dans les détails sur la façon dont les concepts de file d’attente décrits ici se manifestent dans Windows Communication Foundation (WCF).  
+Cette section présente les concepts généraux et principaux relatifs à la communication mise en file d'attente. Les sections suivantes décrivent en détail comment les concepts de mise en file d’attente décrits ici se manifestent dans Windows Communication Foundation (WCF).  
   
 ## <a name="basic-queuing-concepts"></a>Concepts de base de la mise en file d'attente  
  Lors de la conception d'une application distribuée, le choix du bon transport pour la communication entre les services et les clients est important. Plusieurs facteurs affectent le type de transport à utiliser. Un facteur important, l'isolement entre le service, le client et le transport, détermine l'utilisation d'un transport de mise en file d'attente ou d'un transport direct, tel que TCP ou HTTP. En raison de la nature des transports directs tels que TCP et HTTP, la communication s'arrête complètement si le service ou le client cessent de fonctionner ou en cas de défaillance du réseau. Le service, le client et le réseau doivent s'exécuter en même temps pour que l'application fonctionne. Les transports de mise en file d'attente fournissent l'isolement, ce qui signifie qu'en cas de défaillance du service ou du client ou des liaisons de communication entre ces derniers, le client et le service peuvent continuer à fonctionner.  
   
- Les files d'attente fournissent une communication fiable même en cas de défaillance des correspondants ou du réseau. Les files d'attente capturent et remettent les messages échangés entre les correspondants. Les files d'attente sont généralement soutenues par un type de magasin, ce qui peut être volatile ou durable. Les files d'attente stockent les messages d'un client pour le compte d'un service et transmettent ultérieurement ces messages au service. Les files d'attente d'indirection fournissent un isolement garanti des défaillances pour chaque correspondant, ce qui fait d'elles le mécanisme de communication par défaut préféré pour les systèmes à forte disponibilité et les services déconnectés. L'indirection est la conséquence d'une latence élevée. *La latence* est le délai entre le moment où le client envoie un message et le temps que le service le reçoit. Cela signifie qu'une fois un message envoyé, vous ne savez pas quand celui-ci peut être traité. La plupart des applications en file d'attente s'accommodent d'une latence élevée. L'illustration suivante montre un modèle conceptuel de la communication en file d'attente.  
+ Les files d'attente fournissent une communication fiable même en cas de défaillance des correspondants ou du réseau. Les files d'attente capturent et remettent les messages échangés entre les correspondants. Les files d'attente sont généralement soutenues par un type de magasin, ce qui peut être volatile ou durable. Les files d'attente stockent les messages d'un client pour le compte d'un service et transmettent ultérieurement ces messages au service. Les files d'attente d'indirection fournissent un isolement garanti des défaillances pour chaque correspondant, ce qui fait d'elles le mécanisme de communication par défaut préféré pour les systèmes à forte disponibilité et les services déconnectés. L'indirection est la conséquence d'une latence élevée. La *latence* est le délai entre le moment où le client envoie un message et le moment où il est reçu par le service. Cela signifie qu'une fois un message envoyé, vous ne savez pas quand celui-ci peut être traité. La plupart des applications en file d'attente s'accommodent d'une latence élevée. L'illustration suivante montre un modèle conceptuel de la communication en file d'attente.  
   
- ![Modèle de communication en file d'attente](../../../../docs/framework/wcf/feature-details/media/qconceptual-figure1c.gif "QConceptual-Figure1c")  
+ ![Modèle de communication en file d'attente](media/qconceptual-figure1c.gif "QConceptual-Figure1c")  
   
  Modèle conceptuel de la communication en file d'attente  
   
@@ -28,14 +28,14 @@ Cette section présente les concepts généraux et principaux relatifs à la com
   
  Lorsqu'un client envoie un message à une file d'attente, il adresse le message à la file d'attente cible qui est la file d'attente gérée par le gestionnaire de files d'attente du service. Le gestionnaire de files d'attente sur le client envoie le message à une file d'attente de transmission (ou sortante). La file d'attente de transmission est une file d'attente sur le gestionnaire de files d'attente client qui stocke des messages pour la transmission à la file d'attente cible. Le gestionnaire de files d'attente recherche ensuite un chemin d'accès au gestionnaire de files d'attente qui possède la file d'attente cible et lui transfère le message. Pour garantir une communication fiable, les gestionnaires de files d'attente implémentent un protocole de transfert fiable pour empêcher la perte de données. Le gestionnaire de file d'attente de destination accepte les messages adressés aux files d'attente cibles qu'il possède et stocke les messages. Le service effectue une demande de lecture de la file d'attente cible ; le gestionnaire de files d'attente remet alors le message à l'application de destination. L'illustration suivante montre la communication entre les quatre correspondants.  
   
- ![Diagramme d'application mise en file d'attente](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distributed-Queue-Figure")  
+ ![Diagramme d'application mise en file d'attente](media/distributed-queue-figure.jpg "File d’attente distribuée-figure")  
   
  Communication en file d'attente dans un scénario de déploiement typique  
   
  Ainsi, le gestionnaire de files d'attente fournit l'isolement nécessaire qui autorise la défaillance possible de l'expéditeur et du récepteur de manière indépendante sans affecter la communication elle-même. L'avantage de l'indirection supplémentaire fournie par les files d'attente permet aussi à plusieurs instances d'application de lire la même file d'attente et aux nœuds d'obtenir un débit plus élevé. Par conséquent, il n'est pas rare de faire appel aux files d'attente pour répondre à des exigences de débit et d'échelle supérieures.  
   
 ## <a name="queues-and-transactions"></a>Files d’attente et transactions  
- Les transactions vous permettent de regrouper un jeu d'opérations pour que toutes les opérations échouent si une seule opération échoue. Un exemple de la façon d’utiliser les transactions est lorsqu’une personne utilise un guichet automatique pour transférer 1 000 $ de son compte d’épargne à son compte chèque. Cela entraîne les opérations suivantes :  
+ Les transactions vous permettent de regrouper un jeu d'opérations pour que toutes les opérations échouent si une seule opération échoue. Voici un exemple d’utilisation de transactions : lorsqu’une personne utilise une ATM pour transférer $1 000 de son compte d’épargne vers son compte courant. Cela entraîne les opérations suivantes :  
   
 - Le retrait de 1 000 € du compte épargne.  
   
@@ -47,7 +47,7 @@ Cette section présente les concepts généraux et principaux relatifs à la com
   
  En raison d'une latence élevée, lorsque vous envoyez un message, vous ne pouvez pas connaître le temps nécessaire pour que celui-ci atteigne sa file d'attente cible, ni le temps qu'il faudra au service pour le traiter. De ce fait, il est souhaitable de ne pas utiliser une transaction unique pour envoyer le message, le recevoir puis le traiter. Cela crée une transaction qui reste invalidée durant une période indéterminée. Lorsqu'un client et un service communiquent par l'intermédiaire d'une file d'attente à l'aide d'une transaction, deux transactions sont impliquées : une sur le client et une sur le service. L’illustration suivante montre les limites de la transaction dans une communication en file d’attente standard.  
   
- ![File d'attente avec transactions](../../../../docs/framework/wcf/feature-details/media/qwithtransactions-figure3.gif "QWithTransactions-Figure3")  
+ ![File d'attente avec transactions](media/qwithtransactions-figure3.gif "QWithTransactions-Figure3")  
   
  La communication en file d’attente affiche des transactions distinctes pour la capture et la remise.  
   
@@ -76,11 +76,11 @@ Cette section présente les concepts généraux et principaux relatifs à la com
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mise en file d'attente dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [Sessions and Queues](../../../../docs/framework/wcf/samples/sessions-and-queues.md)
-- [Dead Letter Queues](../../../../docs/framework/wcf/samples/dead-letter-queues.md)
-- [Communications mises en file d’attente volatiles](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)
-- [Windows Communication Foundation vers Message Queuing](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
-- [Installation de Message Queuing (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [Message Queuing vers Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
-- [Sécurité du message sur Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
+- [Mise en file d'attente dans WCF](queuing-in-wcf.md)
+- [Sessions and Queues](../samples/sessions-and-queues.md)
+- [Dead Letter Queues](../samples/dead-letter-queues.md)
+- [Volatile Queued Communication](../samples/volatile-queued-communication.md)
+- [Windows Communication Foundation to Message Queuing](../samples/wcf-to-message-queuing.md)
+- [Installation de Message Queuing (MSMQ)](../samples/installing-message-queuing-msmq.md)
+- [Message Queuing to Windows Communication Foundation](../samples/message-queuing-to-wcf.md)
+- [Message Security over Message Queuing](../samples/message-security-over-message-queuing.md)

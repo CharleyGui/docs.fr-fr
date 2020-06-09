@@ -2,21 +2,21 @@
 title: CustomChannelsTester
 ms.date: 03/30/2017
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
-ms.openlocfilehash: c23bd3eddd49972b7083347fed88d4e70707ae58
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9123167e0f97592592765f7b4a4aa768064fc173
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183807"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596602"
 ---
 # <a name="customchannelstester"></a>CustomChannelsTester
 `CustomChannelsTester` est un outil utilisé pour tester vos implémentations de canal personnalisées sur un jeu de contrats de service prédéfinis. Vous pouvez sélectionner le jeu de contrats de service et le transmettre à l'outil à l'aide d'un fichier XML. L'outil génère ensuite le service et le client qui effectue vos implémentations de canal personnalisées pendant l'échange de messages.  
   
 ### <a name="to-build-the-tool"></a>Pour générer l'outil  
   
-1. Pour construire la solution, suivez les instructions dans [la construction des échantillons de la Fondation De communication Windows](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](building-the-samples.md).  
   
-2. La génération de la solution crée trois fichiers : CustomChannelsTester.exe, TestSpec.xml et SampleRun.cmd. Le fichier SampleRun.cmd dispose d’une ligne de commande d’échantillons qui montre comment utiliser cet outil pour tester [l’échantillon Transport: UDP.](../../../../docs/framework/wcf/samples/transport-udp.md)  
+2. La génération de la solution crée trois fichiers : CustomChannelsTester.exe, TestSpec.xml et SampleRun.cmd. Le fichier SampleRun. cmd contient un exemple de ligne de commande qui montre comment utiliser cet outil pour tester l’exemple [transport : UDP](transport-udp.md) .  
   
 ### <a name="to-run-the-tool"></a>Pour exécuter l'outil  
   
@@ -28,7 +28,7 @@ ms.locfileid: "79183807"
   
      L'utilisation de l'option `/binding` est obligatoire.  
   
-     `/dll`est nécessaire si la « liaison » n’est pas une liaison fournie par le système fournie par la Windows Communication Foundation (WCF).  
+     `/dll`est requis si la « liaison » n’est pas une liaison fournie par le système fournie par Windows Communication Foundation (WCF).  
   
      `/testspec` est facultatif.  
   
