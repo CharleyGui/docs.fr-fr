@@ -1,20 +1,20 @@
 ---
-title: 'Procédure : créer un service qui accepte des données arbitraires à l’aide du modèle de programmation REST WCF'
+title: "Procédure : créer un service qui accepte des données arbitraires à l'aide du modèle de programmation REST WCF"
 ms.date: 03/30/2017
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
-ms.openlocfilehash: a1c30491f6c5b0a91f93a6f26417f9dc2b996a48
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d908651f7815c102b45ea106f5bec4c07d869950
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614805"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601333"
 ---
-# <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>Procédure : créer un service qui accepte des données arbitraires à l’aide du modèle de programmation REST WCF
-Les développeurs doivent parfois avoir le contrôle total de la manière dont les données sont retournées à partir d'une opération de service. C’est le cas lorsqu’une opération de service doit retourner de données dans un format non pris en charge que byWCF. Cette rubrique explique à l’aide du modèle de programmation WCF REST pour créer un service qui reçoit des données arbitraires.  
+# <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>Procédure : créer un service qui accepte des données arbitraires à l'aide du modèle de programmation REST WCF
+Les développeurs doivent parfois avoir le contrôle total de la manière dont les données sont retournées à partir d'une opération de service. C’est le cas lorsqu’une opération de service doit retourner des données dans un format non pris en charge byWCF. Cette rubrique décrit l’utilisation du modèle de programmation REST WCF pour créer un service qui reçoit des données arbitraires.  
   
 ### <a name="to-implement-the-service-contract"></a>Pour implémenter le contrat de service  
   
-1. Définition du contrat de service. L'opération qui reçoit les données arbitraires doit avoir un paramètre de type <xref:System.IO.Stream>. De plus, ce paramètre doit être le seul paramètre passé dans le corps de la demande. L'opération décrite dans cet exemple prend également un paramètre de nom de fichier. Ce paramètre est passé dans l'URL de la demande. Vous pouvez préciser qu'un paramètre soit passé dans l'URL en spécifiant un <xref:System.UriTemplate> dans <xref:System.ServiceModel.Web.WebInvokeAttribute>. Dans ce cas, que l’URI utilisé pour appeler cette méthode se termine par « UploadFile/nom de fichier quelconque ». La partie « {filename} » du modèle URI Spécifie que le paramètre de nom de fichier pour l’opération est transmis dans l’URI utilisé pour appeler l’opération.  
+1. Définition du contrat de service. L'opération qui reçoit les données arbitraires doit avoir un paramètre de type <xref:System.IO.Stream>. De plus, ce paramètre doit être le seul paramètre passé dans le corps de la demande. L'opération décrite dans cet exemple prend également un paramètre de nom de fichier. Ce paramètre est passé dans l'URL de la demande. Vous pouvez préciser qu'un paramètre soit passé dans l'URL en spécifiant un <xref:System.UriTemplate> dans <xref:System.ServiceModel.Web.WebInvokeAttribute>. Dans ce cas, l’URI utilisé pour appeler cette méthode se termine par « UploadFile/some-filename ». La partie « {filename} » du modèle URI spécifie que le paramètre de nom de fichier pour l’opération est passé dans l’URI utilisé pour appeler l’opération.  
   
     ```csharp  
      [ServiceContract]  
@@ -195,6 +195,6 @@ namespace ReceiveRawData
   
 ## <a name="see-also"></a>Voir aussi
 
-- [UriTemplate et UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)
-- [Modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
-- [Vue d’ensemble du modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [UriTemplate et UriTemplateTable](uritemplate-and-uritemplatetable.md)
+- [Modèle de programmation HTTP Web WCF](wcf-web-http-programming-model.md)
+- [Vue d'ensemble du modèle de programmation Web HTTP WCF](wcf-web-http-programming-model-overview.md)

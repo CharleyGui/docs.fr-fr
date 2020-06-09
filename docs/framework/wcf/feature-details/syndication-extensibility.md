@@ -2,12 +2,12 @@
 title: Extensibilité de la syndication
 ms.date: 03/30/2017
 ms.assetid: 4d941175-74a2-4b15-81b3-086e8a95d25f
-ms.openlocfilehash: 688b31f3c87b7c9ad4842cfe6834b0dbc9e5b85b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5e8f47b45897f46e15847c793c986e953523e66b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585950"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600722"
 ---
 # <a name="syndication-extensibility"></a>Extensibilité de la syndication
 L'API de syndication est conçue pour fournir un modèle de programmation neutre en ce qui concerne le format qui autorise l'écriture du contenu syndiqué sur le câble dans divers formats. Le modèle de données abstrait inclut les classes suivantes :  
@@ -24,7 +24,7 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
  Ces classes mappent précisément aux constructions définies dans la spécification Atom 1.0, bien que certains noms soient différents.  
   
- L’une des fonctionnalités clés de protocoles de syndication est l’extensibilité. Atom 1.0 et RSS 2.0 ajoutent des attributs et des éléments aux flux de syndication des attributs et des éléments qui ne sont pas définis dans les spécifications. Le modèle de programmation de syndication de Windows Communication Foundation (WCF) fournit les méthodes suivantes de l’utilisation des attributs personnalisés, ainsi que les accès faiblement typé et dériver une nouvelle classe.  
+ L’une des fonctionnalités clés de protocoles de syndication est l’extensibilité. Atom 1.0 et RSS 2.0 ajoutent des attributs et des éléments aux flux de syndication des attributs et des éléments qui ne sont pas définis dans les spécifications. Le modèle de programmation de syndication de Windows Communication Foundation (WCF) offre les moyens suivants d’utiliser des attributs personnalisés et des extensions, un accès faiblement typé et la dérivation d’une nouvelle classe.  
   
 ## <a name="loosely-typed-access"></a>Accès peu typé  
  L’ajout des extensions en dérivant une classe nouvelle requiert l’écriture de code supplémentaire. Une autre option accède aux extensions d’une manière peu typée. Tous les types définis dans le modèle de données abstraites de syndication contiennent des propriétés nommées `AttributeExtensions` et `ElementExtensions` (avec une exception, <xref:System.ServiceModel.Syndication.SyndicationContent> possède une propriété `AttributeExtensions` mais aucune propriété `ElementExtensions` ). Ces propriétés sont des collections d'extensions non traitées par les méthodes `TryParseAttribute` et `TryParseElement`, respectivement. Vous pouvez accéder à ces extensions non traitées en appelant <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection.ReadElementExtensions%2A?displayProperty=nameWithType> sur la propriété `ElementExtensions` de <xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>, <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationPerson> et <xref:System.ServiceModel.Syndication.SyndicationCategory>. Ce jeu de méthodes recherche toutes les extensions avec le nom et l'espace de noms spécifiés, les désérialise individuellement dans les instances de `TExtension` et les retourne comme une collection d'objets `TExtension`.  
@@ -46,5 +46,5 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la syndication WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
-- [Architecture de syndication](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)
+- [Vue d’ensemble de la syndication WCF](wcf-syndication-overview.md)
+- [Architecture de syndication](architecture-of-syndication.md)

@@ -2,15 +2,15 @@
 title: "Procédure : créer un service qui retourne des données arbitraires à l'aide du modèle de programmation Web HTTP WCF"
 ms.date: 03/30/2017
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-ms.openlocfilehash: c85ab6725876a2d523a18c817ce3fd89f0d2285a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9753fbc9b333cb7e89ddc8dff030cb1f62ede23b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184480"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600359"
 ---
 # <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>Procédure : créer un service qui retourne des données arbitraires à l'aide du modèle de programmation Web HTTP WCF
-Les développeurs doivent parfois avoir le contrôle total de la manière dont les données sont retournées à partir d'une opération de service. C’est le cas lorsqu’une opération de service doit retourner des données dans un format non pris en charge par WCF. Ce sujet traite de l’utilisation du modèle de programmation HTTP DE WCF WEB pour créer un tel service. Ce service a une opération qui retourne un flux de données.  
+Les développeurs doivent parfois avoir le contrôle total de la manière dont les données sont retournées à partir d'une opération de service. C’est le cas lorsqu’une opération de service doit retourner des données dans un format non pris en charge par WCF. Cette rubrique décrit l’utilisation du modèle de programmation HTTP WEB WCF pour créer un tel service. Ce service a une opération qui retourne un flux de données.  
   
 ### <a name="to-implement-the-service-contract"></a>Pour implémenter le contrat de service  
   
@@ -25,7 +25,7 @@ Les développeurs doivent parfois avoir le contrôle total de la manière dont l
         }  
     ```  
   
-     Étant donné que <xref:System.IO.Stream>la méthode renvoie un , WCF suppose que l’opération a un contrôle complet sur les octets qui sont retournés de l’opération de service et il ne s’applique pas de formatage aux données qui sont retournées.  
+     Étant donné que la méthode retourne un <xref:System.IO.Stream> , WCF suppose que l’opération a un contrôle total sur les octets retournés par l’opération de service et qu’elle n’applique aucune mise en forme aux données retournées.  
   
 2. Implémentez le contrat de service. Le contrat a une seule opération (`GetImage`). Cette méthode génère une image bitmap, puis l'enregistre dans un <xref:System.IO.MemoryStream> au format .jpg. L'opération retourne ensuite ce flux de données à l'appelant.  
   
@@ -53,7 +53,7 @@ Les développeurs doivent parfois avoir le contrôle total de la manière dont l
   
      Observez l'avant-dernière ligne de code : `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
   
-     Cela définit l’en-tête de type de contenu à `"image/jpeg"`. Bien que cet exemple indique comment retourner un fichier .jpg, il peut être modifié pour retourner tout type de données requis, dans n'importe quel format. L'opération doit extraire ou générer les données, puis les écrire dans un flux de données.  
+     Cela affecte à l’en-tête de type de contenu la valeur `"image/jpeg"` . Bien que cet exemple indique comment retourner un fichier .jpg, il peut être modifié pour retourner tout type de données requis, dans n'importe quel format. L'opération doit extraire ou générer les données, puis les écrire dans un flux de données.  
   
 ### <a name="to-host-the-service"></a>Pour héberger le service  
   
@@ -107,7 +107,7 @@ Les développeurs doivent parfois avoir le contrôle total de la manière dont l
   
 2. Ouvrez Internet Explorer et tapez `http://localhost:8000/Service/GetImage?width=50&height=40`. Un rectangle jaune traversé en son centre par une ligne diagonale bleue devrait apparaître.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'intégralité du code utilisé dans cette rubrique est présentée ci-dessous.  
   
 ```csharp  
@@ -177,4 +177,4 @@ namespace RawImageService
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle de programmation HTTP Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Modèle de programmation HTTP Web WCF](wcf-web-http-programming-model.md)

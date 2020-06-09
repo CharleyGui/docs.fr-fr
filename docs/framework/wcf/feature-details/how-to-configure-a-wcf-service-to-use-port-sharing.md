@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6400bc71-a858-4ac2-8d5a-caa72d3b5482
-ms.openlocfilehash: cd8d76137ac195e452a7d66fb6ddbeda405a922f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28f2858d68de99839d7fec66b0fe4528d7e42325
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185097"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579525"
 ---
 # <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>Comment : configurer un service Windows Communication Foundation pour utiliser le partage de ports
-La façon la plus simple d’utiliser net.tcp:// partage de port dans votre <xref:System.ServiceModel.NetTcpBinding>application Windows Communication Foundation (WCF) est d’exposer un service en utilisant le .  
+Le moyen le plus simple d’utiliser le partage de ports net. TCP://dans votre application Windows Communication Foundation (WCF) consiste à exposer un service à l’aide de <xref:System.ServiceModel.NetTcpBinding> .  
   
  Cette liaison fournit une propriété <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> qui contrôle si le partage de ports net.tcp:// est activé pour le service configuré avec cette liaison.  
   
@@ -21,7 +21,7 @@ La façon la plus simple d’utiliser net.tcp:// partage de port dans votre <xre
   
 ### <a name="to-enable-nettcp-port-sharing-on-a-nettcpbinding-in-code"></a>Pour activer le partage de ports net.tcp:// sur une liaison NetTcpBinding dans du code  
   
-1. Créer un service pour `IMyService` mettre en `MyService`œuvre un contrat appelé et l’appeler , .  
+1. Créez un service pour implémenter un contrat appelé `IMyService` et l’appeler `MyService` ,.  
   
      [!code-csharp[c_ConfigurePortSharing#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_configureportsharing/cs/source.cs#1)]
      [!code-vb[c_ConfigurePortSharing#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_configureportsharing/vb/source.vb#1)]  
@@ -62,5 +62,5 @@ La façon la plus simple d’utiliser net.tcp:// partage de port dans votre <xre
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)
-- [Comment : activer le service de partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)
+- [Partage de ports Net.TCP](net-tcp-port-sharing.md)
+- [Comment : activer le service de partage de ports Net.TCP](how-to-enable-the-net-tcp-port-sharing-service.md)

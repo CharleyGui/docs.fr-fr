@@ -2,12 +2,12 @@
 title: Durable Instance Context
 ms.date: 03/30/2017
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-ms.openlocfilehash: d70617fef7ebe0a94e22e858ee403d5d4f1840e3
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 567ca62d48e80993328548b11f8b59c4fcd355fe
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728406"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600592"
 ---
 # <a name="durable-instance-context"></a>Durable Instance Context
 
@@ -49,7 +49,7 @@ class DurableInstanceContextChannelBase
 }
 ```
 
-Ces deux méthodes utilisent des implémentations `IContextManager` pour écrire et lire l'ID de contexte vers ou à partir du message  (`IContextManager` est une interface personnalisée utilisée pour définir le contrat pour tous les gestionnaires de contexte.) Le canal peut inclure l’ID de contexte dans un en-tête SOAP personnalisé ou dans un en-tête de cookie HTTP. Chaque implémentation de gestionnaire de contexte hérite de la classe `ContextManagerBase` qui contient les fonctionnalités communes de tous les gestionnaires de contexte. La méthode `GetContextId` de cette classe permet de générer l'ID de contexte à partir du client. Lorsqu'un ID de contexte est généré pour la première fois, cette méthode l'enregistre dans un fichier texte dont le nom est construit par l'adresse du point de terminaison distant (les caractères de nom de fichier non valides dans les URI classiques sont remplacés par des caractères @).
+Ces deux méthodes utilisent des implémentations `IContextManager` pour écrire et lire l'ID de contexte vers ou à partir du message  ( `IContextManager` est une interface personnalisée utilisée pour définir le contrat pour tous les gestionnaires de contexte.) Le canal peut inclure l’ID de contexte dans un en-tête SOAP personnalisé ou dans un en-tête de cookie HTTP. Chaque implémentation de gestionnaire de contexte hérite de la classe `ContextManagerBase` qui contient les fonctionnalités communes de tous les gestionnaires de contexte. La méthode `GetContextId` de cette classe permet de générer l'ID de contexte à partir du client. Lorsqu'un ID de contexte est généré pour la première fois, cette méthode l'enregistre dans un fichier texte dont le nom est construit par l'adresse du point de terminaison distant (les caractères de nom de fichier non valides dans les URI classiques sont remplacés par des caractères @).
 
 Par la suite, lorsque l'ID de contexte est requis pour le même point de terminaison distant, il vérifie si un fichier approprié existe. Si c'est le cas, il lit l'ID de contexte et retourne. Sinon, il retourne un ID de contexte généré récemment et l'enregistre dans un fichier. Avec la configuration par défaut, ces fichiers sont placés dans un répertoire appelé ContextStore, qui réside dans le répertoire Temp de l’utilisateur actuel. Toutefois, cet emplacement est configurable à l’aide de l’élément de liaison.
 
@@ -89,7 +89,7 @@ message.Properties.Add(DurableInstanceContextUtility.ContextIdProperty, contextI
 
 Avant de poursuivre, il est important de comprendre l’utilisation de la collection `Properties` dans la classe `Message`. En général, cette collection `Properties` est utilisée lors du passage des données des niveaux inférieurs aux niveaux supérieurs de la couche de canal. De cette manière, les données souhaitées peuvent être fournies aux niveaux supérieurs de façon cohérente, quels que soient les détails du protocole. En d’autres termes, la couche de canal peut envoyer et recevoir l’ID de contexte comme un en-tête SOAP ou un en-tête de cookie HTTP. Mais il n’est pas nécessaire que les niveaux supérieurs connaissent ces détails car la couche de canal rend ces informations disponibles dans la collection `Properties`.
 
-La classe `DurableInstanceContextChannelBase` étant maintenant en place, l'ensemble des dix interfaces nécessaires (IOutputChannel, IInputChannel, IOutputSessionChannel, IInputSessionChannel, IRequestChannel, IReplyChannel, IRequestSessionChannel, IReplySessionChannel, IDuplexChannel, IDuplexSessionChannel) doivent être implémentées. Elles ressemblent à chaque modèle d’échange de messages disponible (datagramme, simplex, duplex et leurs variantes de session). Chacune de ces implémentations hérite de la classe de base décrite précédemment `ApplyContext` et `ReadContextId` appelle et de manière appropriée. Par exemple, `DurableInstanceContextOutputChannel`, qui implémente l'interface IOutputChannel, appelle la méthode `ApplyContext` de chaque méthode qui envoie les messages.
+La classe `DurableInstanceContextChannelBase` étant maintenant en place, l'ensemble des dix interfaces nécessaires (IOutputChannel, IInputChannel, IOutputSessionChannel, IInputSessionChannel, IRequestChannel, IReplyChannel, IRequestSessionChannel, IReplySessionChannel, IDuplexChannel, IDuplexSessionChannel) doivent être implémentées. Elles ressemblent à chaque modèle d’échange de messages disponible (datagramme, simplex, duplex et leurs variantes de session). Chacune de ces implémentations hérite de la classe de base décrite précédemment et appelle `ApplyContext` et de `ReadContextId` manière appropriée. Par exemple, `DurableInstanceContextOutputChannel`, qui implémente l'interface IOutputChannel, appelle la méthode `ApplyContext` de chaque méthode qui envoie les messages.
 
 ```csharp
 public void Send(Message message, TimeSpan timeout)
@@ -100,7 +100,7 @@ public void Send(Message message, TimeSpan timeout)
 }
 ```
 
-En revanche,, `DurableInstanceContextInputChannel` qui implémente l' `IInputChannel` interface, appelle la `ReadContextId` méthode dans chaque méthode, qui reçoit les messages.
+En revanche,, `DurableInstanceContextInputChannel` qui implémente l’interface, `IInputChannel` appelle la `ReadContextId` méthode dans chaque méthode, qui reçoit les messages.
 
 ```csharp
 public Message Receive(TimeSpan timeout)
@@ -122,7 +122,7 @@ if (isFirstMessage)
 }
 ```
 
-Ces implémentations de canal sont ensuite ajoutées au runtime du canal WCF par `DurableInstanceContextBindingElement` la classe `DurableInstanceContextBindingElementSection` et la classe de manière appropriée. Consultez la documentation de l’exemple de canal [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md) pour plus d’informations sur les éléments de liaison et les sections d’éléments de liaison.
+Ces implémentations de canal sont ensuite ajoutées au runtime du canal WCF par la `DurableInstanceContextBindingElement` classe et la `DurableInstanceContextBindingElementSection` classe de manière appropriée. Consultez la documentation de l’exemple de canal [HttpCookieSession](httpcookiesession.md) pour plus d’informations sur les éléments de liaison et les sections d’éléments de liaison.
 
 ## <a name="service-model-layer-extensions"></a>Extensions de la couche de modèle de service
 
@@ -234,13 +234,13 @@ L'infrastructure nécessaire pour lire et écrire des instances à partir du sto
 
 La première étape de ce processus consiste à enregistrer l'ID de contexte, qui a traversé la couche de canal jusqu'au InstanceContext actuel. InstanceContext est un composant d’exécution qui agit comme lien entre le répartiteur WCF et l’instance de service. Il permet de fournir un comportement et un état supplémentaires à l'instance de service. Cet aspect est essentiel car dans la communication de session, l'ID de contexte est envoyé uniquement avec le premier message.
 
-WCF permet d’étendre son composant d’exécution InstanceContext en ajoutant un nouvel État et un nouveau comportement à l’aide de son modèle d’objet extensible. Le modèle d’objet extensible est utilisé dans WCF pour étendre des classes d’exécution existantes avec de nouvelles fonctionnalités ou pour ajouter de nouvelles fonctionnalités d’État à un objet. Il existe trois interfaces dans le modèle d’objet extensible-\<IExtensibleObject t>,\<IExtension t> et IExtensionCollection\<t> :
+WCF permet d’étendre son composant d’exécution InstanceContext en ajoutant un nouvel État et un nouveau comportement à l’aide de son modèle d’objet extensible. Le modèle d’objet extensible est utilisé dans WCF pour étendre des classes d’exécution existantes avec de nouvelles fonctionnalités ou pour ajouter de nouvelles fonctionnalités d’État à un objet. Il existe trois interfaces dans le modèle d’objet extensible-IExtensibleObject \<T> , IExtension \<T> et IExtensionCollection \<T> :
 
-- L’interface\<IExtensibleObject T> est implémentée par des objets qui autorisent les extensions qui personnalisent leurs fonctionnalités.
+- L' \<T> interface IExtensibleObject est implémentée par des objets qui autorisent les extensions qui personnalisent leurs fonctionnalités.
 
-- L’interface\<IExtension T> est implémentée par des objets qui sont des extensions de classes de type T.
+- L' \<T> interface IExtension est implémentée par des objets qui sont des extensions de classes de type T.
 
-- L’interface\<IExtensionCollection T> est une collection de IExtensions qui permet de récupérer des IExtensions à l’aide de leur type.
+- L' \<T> interface IExtensionCollection est une collection de IExtensions qui permet de récupérer des IExtensions par leur type.
 
 Par conséquent, vous devez créer une classe InstanceContextExtension qui implémente l'interface IExtension et définit l'état requis pour enregistrer l'ID de contexte. Cette classe fournit également l'état permettant de conserver le gestionnaire de stockage utilisé. Une fois que le nouvel état est enregistré, il ne doit pas être possible de le modifier. L'état est donc fourni et enregistré dans l'instance au moment de sa construction et n'est ensuite accessible qu'en lecture seule.
 
@@ -282,7 +282,7 @@ public void Initialize(InstanceContext instanceContext, Message message)
 
 Comme décrit précédemment, l'ID de contexte est lu à partir de la collection `Properties` de la classe `Message`, puis il est passé au constructeur de la classe d'extension. Cette étape montre comment les informations peuvent être échangées entre les couches de façon cohérente.
 
-L'étape importante suivante consiste à substituer le processus de création d'instance de service. WCF permet d’implémenter des comportements d’instanciation personnalisés et de les raccorder au runtime à l’aide de l’interface IInstanceProvider. Pour ce faire, la nouvelle classe `InstanceProvider` est implémentée. Le type de service attendu à partir du fournisseur d’instance est accepté dans le constructeur. Il est par la suite utilisé pour créer des instances. Dans l' `GetInstance` implémentation, une instance d’un gestionnaire de stockage est créée à la recherche d’une instance persistante. Si elle retourne `null`, une nouvelle instance du type de service est instanciée et retournée à l’appelant.
+L'étape importante suivante consiste à substituer le processus de création d'instance de service. WCF permet d’implémenter des comportements d’instanciation personnalisés et de les raccorder au runtime à l’aide de l’interface IInstanceProvider. Pour ce faire, la nouvelle classe `InstanceProvider` est implémentée. Le type de service attendu à partir du fournisseur d’instance est accepté dans le constructeur. Il est par la suite utilisé pour créer des instances. Dans l' `GetInstance` implémentation, une instance d’un gestionnaire de stockage est créée à la recherche d’une instance persistante. Si elle retourne `null` , une nouvelle instance du type de service est instanciée et retournée à l’appelant.
 
 ```csharp
 public object GetInstance(InstanceContext instanceContext, Message message)
@@ -302,11 +302,11 @@ public object GetInstance(InstanceContext instanceContext, Message message)
 }
 ```
 
-L’étape importante suivante consiste à installer les `InstanceContextExtension`classes `InstanceContextInitializer`, et `InstanceProvider` dans le runtime du modèle de service. Un attribut personnalisé peut être utilisé pour marquer les classes d'implémentation de service afin d'installer le comportement. `DurableInstanceContextAttribute` contient l'implémentation pour cet attribut et implémente l'interface `IServiceBehavior` afin d'étendre l'ensemble de l'exécution du service.
+L’étape importante suivante consiste à installer les `InstanceContextExtension` `InstanceContextInitializer` classes, et `InstanceProvider` dans le runtime du modèle de service. Un attribut personnalisé peut être utilisé pour marquer les classes d'implémentation de service afin d'installer le comportement. `DurableInstanceContextAttribute` contient l'implémentation pour cet attribut et implémente l'interface `IServiceBehavior` afin d'étendre l'ensemble de l'exécution du service.
 
 Cette classe possède une propriété qui accepte le type du gestionnaire de stockage à utiliser. De cette façon, l’implémentation permet aux utilisateurs de spécifier leur propre `IStorageManager` implémentation en tant que paramètre de cet attribut.
 
-Dans l' `ApplyDispatchBehavior` implémentation, le `InstanceContextMode` de l’attribut `ServiceBehavior` actuel est en cours de vérification. Si cette propriété a pour valeur Singleton, l'activation de l'instanciation fiable n'est pas possible et une exception `InvalidOperationException` est levée pour notifier l'hôte.
+Dans l' `ApplyDispatchBehavior` implémentation, le `InstanceContextMode` de l' `ServiceBehavior` attribut actuel est en cours de vérification. Si cette propriété a pour valeur Singleton, l'activation de l'instanciation fiable n'est pas possible et une exception `InvalidOperationException` est levée pour notifier l'hôte.
 
 ```csharp
 ServiceBehaviorAttribute serviceBehavior =
@@ -351,7 +351,7 @@ En résumé des étapes effectuées jusqu'à présent, cet exemple a produit un 
 
 Il reste donc à enregistrer l'instance de service dans le stockage persistant. Comme indiqué précédemment, les fonctionnalités requises pour enregistrer l'état dans une implémentation `IStorageManager` existent déjà. Nous devons maintenant intégrer ce avec le runtime WCF. Un autre attribut est requis et est applicable aux méthodes de la classe d'implémentation de service. Cet attribut est supposé s'appliquer aux méthodes qui modifient l'état de l'instance de service.
 
-La classe `SaveStateAttribute` implémente ces fonctionnalités. Il implémente également `IOperationBehavior` la classe pour modifier le runtime WCF pour chaque opération. Quand une méthode est marquée avec cet attribut, le runtime WCF appelle la `ApplyBehavior` méthode pendant la construction de `DispatchOperation` la appropriée. Cette implémentation de méthode comporte une seule ligne de code :
+La classe `SaveStateAttribute` implémente ces fonctionnalités. Il implémente également `IOperationBehavior` la classe pour modifier le runtime WCF pour chaque opération. Quand une méthode est marquée avec cet attribut, le runtime WCF appelle la `ApplyBehavior` méthode pendant la construction de la appropriée `DispatchOperation` . Cette implémentation de méthode comporte une seule ligne de code :
 
 ```csharp
 dispatch.Invoker = new OperationInvoker(dispatch.Invoker);
@@ -444,11 +444,11 @@ Press ENTER to shut down client
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](building-the-samples.md).
 
-3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).
 
 > [!NOTE]
 > Vous devez exécuter SQL Server 2005 ou SQL Express 2005 pour exécuter cet exemple. Si vous exécutez SQL Server 2005, vous devez modifier la configuration de la chaîne de connexion du service. Lors de l'exécution sur plusieurs ordinateurs, SQL Server est uniquement requis sur l'ordinateur serveur.
@@ -458,6 +458,6 @@ Press ENTER to shut down client
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Durable`

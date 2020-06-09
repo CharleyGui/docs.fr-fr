@@ -2,12 +2,12 @@
 title: Architecture d'activation WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-ms.openlocfilehash: 67ddcd97ac75ddeb0765c38bb9ce7b5e8f039272
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cfbfd91f9e7bc2e1b4f8485d5ae22c1fb2b5228b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184253"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600670"
 ---
 # <a name="was-activation-architecture"></a>Architecture d'activation WAS
 Cette rubrique détaille et décrit les composants du service d'activation des processus de Windows (également appelé WAS).  
@@ -27,17 +27,17 @@ Cette rubrique détaille et décrit les composants du service d'activation des p
   
  Lorsque le service WAS active une instance de processus de traitement, il charge les gestionnaires de protocoles de processus requis dans le processus de traitement et utilise le gestionnaire d'application pour créer un domaine d'application destiné à héberger l'application. Le domaine d'application charge le code de l'application ainsi que les gestionnaires de protocoles AppDomain requis par l'application.  
   
- ![Capture d’écran qui montre l’architecture WAS.](./media/was-activation-architecture/windows-process-application-service-architecture.gif)  
+ ![Capture d’écran montrant l’architecture WAS.](./media/was-activation-architecture/windows-process-application-service-architecture.gif)  
   
 ### <a name="listener-adapters"></a>Adaptateurs d'écouteur  
- Les adaptateurs d'écouteur sont des services Windows individuels qui implémentent la logique de la communication réseau utilisée pour recevoir les messages à l'aide du protocole réseau sur lequel ils écoutent. Le tableau suivant répertorie les adaptateurs de l’auditeur pour les protocoles de la Windows Communication Foundation (WCF).  
+ Les adaptateurs d'écouteur sont des services Windows individuels qui implémentent la logique de la communication réseau utilisée pour recevoir les messages à l'aide du protocole réseau sur lequel ils écoutent. Le tableau suivant répertorie les adaptateurs d’écouteur pour les protocoles Windows Communication Foundation (WCF).  
   
-|Nom du service d'adaptateur de l'écouteur|Protocol|Notes|  
+|Nom du service d'adaptateur de l'écouteur|Protocol|Remarques|  
 |-----------------------------------|--------------|-----------|  
-|W3SVC|http|Composant commun qui fournit l’activation HTTP pour l’IIS 7.0 et le WCF.|  
+|W3SVC|http|Composant commun qui fournit l’activation HTTP pour IIS 7,0 et WCF.|  
 |NetTcpActivator|net.tcp|Dépend du service NetTcpPortSharing.|  
 |NetPipeActivator|net.pipe||  
-|NetMsmqActivator|net.msmq|Pour une utilisation avec des applications de file d’attente de message basées sur WCF.|  
+|NetMsmqActivator|net.msmq|Pour une utilisation avec des applications Message Queuing basées sur WCF.|  
 |NetMsmqActivator|msmq.formatname|Assure la compatibilité descendante avec les applications Message Queuing existantes.|  
   
  Les adaptateurs d'écouteur pour des protocoles spécifiques sont enregistrés lors de l'installation dans le fichier applicationHost.config, comme l'illustre l'exemple XML suivant.  
@@ -87,5 +87,5 @@ Cette rubrique détaille et décrit les composants du service d'activation des p
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration du service WAS pour une utilisation avec WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
+- [Configuration du service WAS pour une utilisation avec WCF](configuring-the-wpa--service-for-use-with-wcf.md)
 - [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

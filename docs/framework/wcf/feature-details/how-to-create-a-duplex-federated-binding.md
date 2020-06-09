@@ -2,60 +2,60 @@
 title: 'Comment : créer une liaison fédérée duplex'
 ms.date: 03/30/2017
 ms.assetid: 4331d2bc-5455-492a-9189-634a82597726
-ms.openlocfilehash: 3ecd9e2dbeb30bb255cbf66488b50a9b20219431
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: e93651ce9fe9dae55c299fcb061da6bdc4b6bc5e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141720"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598968"
 ---
 # <a name="how-to-create-a-duplex-federated-binding"></a>Comment : créer une liaison fédérée duplex
 
 <xref:System.ServiceModel.WSFederationHttpBinding> ne prend en charge que le datagramme et les contrats d'échange de demande/message de réponse. Pour utiliser le contrat d'échange de messages duplex, vous devez créer une liaison personnalisée. Les procédures suivantes indiquent comment faire ceci dans la configuration, à l'aide de la sécurité de mode de transmission de messages pour les transports HTTP et TCP, et à l'aide de la sécurité de mode mixte pour le transport TCP. L’exemple de code illustrant les 3 liaisons est présenté à la fin de cette rubrique.
 
-Vous pouvez également créer la liaison dans le code. Pour obtenir une description de la pile d’éléments de liaison à créer, consultez [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).
+Vous pouvez également créer la liaison dans le code. Pour obtenir une description de la pile d’éléments de liaison à créer, consultez [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md).
 
 ## <a name="to-create-a-duplex-federated-custom-binding-with-http"></a>Pour créer une liaison personnalisée fédérée duplex avec HTTP
 
-1. Dans le [\<liaisons >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) nœud du fichier de configuration, créez un élément [\<CustomBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) .
+1. Dans le [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) nœud du fichier de configuration, créez un [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) élément.
 
-2. À l’intérieur de l’élément [\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) , créez un élément de [liaison\<](../../configure-apps/file-schema/wcf/bindings.md) avec l’attribut `name` défini sur `FederationDuplexHttpMessageSecurityBinding`.
+2. À l’intérieur de l' [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) élément, créez un [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) élément dont l' `name` attribut a la valeur `FederationDuplexHttpMessageSecurityBinding` .
 
-3. À l’intérieur de l’élément de [> de liaison\<](../../configure-apps/file-schema/wcf/bindings.md) , créez un élément [\<Security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) avec l’attribut `authenticationMode` défini sur `SecureConversation`.
+3. À l’intérieur de l' [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) élément, créez un [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément dont l' `authenticationMode` attribut a la valeur `SecureConversation` .
 
-4. Dans l’élément [\<security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) , créez un élément [\<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) avec l’attribut `authenticationMode` défini sur `IssuedTokenForCertificate` ou `IssuedTokenForSslNegotiated`.
+4. À l’intérieur de l' [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément, créez un [\<secureConversationBootstrap>](../../configure-apps/file-schema/wcf/secureconversationbootstrap.md) élément dont l' `authenticationMode` attribut a la valeur `IssuedTokenForCertificate` ou `IssuedTokenForSslNegotiated` .
 
-5. Après l’élément [\<security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) , créez un élément [\<CompositeDuplex >](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) vide.
+5. Après l' [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément, créez un [\<compositeDuplex>](../../configure-apps/file-schema/wcf/compositeduplex.md) élément vide.
 
-6. À la suite de l’élément [\<compositeDuplex >](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) , créez un élément [\<oneWay >](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) vide.
+6. Après l' [\<compositeDuplex>](../../configure-apps/file-schema/wcf/compositeduplex.md) élément, créez un [\<oneWay>](../../configure-apps/file-schema/wcf/oneway.md) élément vide.
 
-7. À la suite de l’élément [\<oneWay >](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) , créez un élément [\<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md) vide.
+7. Après l' [\<oneWay>](../../configure-apps/file-schema/wcf/oneway.md) élément, créez un [\<httpTransport>](../../configure-apps/file-schema/wcf/httptransport.md) élément vide.
 
 ## <a name="to-create-a-duplex-federated-custom-binding-with-tcp-message-security-mode"></a>Pour créer une liaison personnalisée fédérée duplex avec le mode de sécurité de message TCP
 
-1. Dans le [\<liaisons >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) nœud du fichier de configuration, créez un élément [\<CustomBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) .
+1. Dans le [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) nœud du fichier de configuration, créez un [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) élément.
 
-2. À l’intérieur de l’élément [\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) , créez un élément de [liaison\<](../../configure-apps/file-schema/wcf/bindings.md) avec l’attribut `name` défini sur `FederationDuplexTcpMessageSecurityBinding`.
+2. À l’intérieur de l' [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) élément, créez un [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) élément dont l' `name` attribut a la valeur `FederationDuplexTcpMessageSecurityBinding` .
 
-3. À l’intérieur de l’élément de [> de liaison\<](../../configure-apps/file-schema/wcf/bindings.md) , créez un élément [\<Security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) avec l’attribut `authenticationMode` défini sur `SecureConversation`.
+3. À l’intérieur de l' [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) élément, créez un [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément dont l' `authenticationMode` attribut a la valeur `SecureConversation` .
 
-4. Dans l’élément [\<security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) , créez un élément [\<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) avec l’attribut `authenticationMode` défini sur `IssuedTokenForCertificate` ou `IssuedTokenForSslNegotiated`.
+4. À l’intérieur de l' [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément, créez un [\<secureConversationBootstrap>](../../configure-apps/file-schema/wcf/secureconversationbootstrap.md) élément dont l' `authenticationMode` attribut a la valeur `IssuedTokenForCertificate` ou `IssuedTokenForSslNegotiated` .
 
-5. Après l’élément [\<security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) , créez un élément [\<TcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) vide.
+5. Après l' [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément, créez un [\<tcpTransport>](../../configure-apps/file-schema/wcf/tcptransport.md) élément vide.
 
 ## <a name="to-create-a-duplex-federated-custom-binding-with-tcp-mixed-security-mode"></a>Pour créer une liaison personnalisée fédérée duplex avec le mode de sécurité mixte TCP
 
-1. Dans le [\<liaisons >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) nœud du fichier de configuration, créez un élément [\<CustomBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) .
+1. Dans le [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) nœud du fichier de configuration, créez un [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) élément.
 
-2. À l’intérieur de l’élément [\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) , créez un élément de [liaison\<](../../configure-apps/file-schema/wcf/bindings.md) avec l’attribut `name` défini sur `FederationDuplexTcpTransportSecurityWithMessageCredentialBinding`.
+2. À l’intérieur de l' [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) élément, créez un [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) élément dont l' `name` attribut a la valeur `FederationDuplexTcpTransportSecurityWithMessageCredentialBinding` .
 
-3. À l’intérieur de l’élément de [> de liaison\<](../../configure-apps/file-schema/wcf/bindings.md) , créez un élément [\<Security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) avec l’attribut `authenticationMode` défini sur `SecureConversation`.
+3. À l’intérieur de l' [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) élément, créez un [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément dont l' `authenticationMode` attribut a la valeur `SecureConversation` .
 
-4. Dans l’élément [\<security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) , créez un élément [\<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) avec l’attribut `authenticationMode` défini sur `IssuedTokenForCertificate` ou `IssuedTokenForSslNegotiated`.
+4. À l’intérieur de l' [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément, créez un [\<secureConversationBootstrap>](../../configure-apps/file-schema/wcf/secureconversationbootstrap.md) élément dont l' `authenticationMode` attribut a la valeur `IssuedTokenForCertificate` ou `IssuedTokenForSslNegotiated` .
 
-5. Après l’élément [\<security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) , créez un élément [\<section sslStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) vide.
+5. Après l' [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) élément, créez un [\<sslStreamSecurity>](../../configure-apps/file-schema/wcf/sslstreamsecurity.md) élément vide.
 
-6. À la suite de l’élément [\<section sslstreamsecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) , créez un élément [\<TcpTransport](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) vide.
+6. Après l' [\<sslStreamSecurity>](../../configure-apps/file-schema/wcf/sslstreamsecurity.md) élément, créez un [\<tcpTransport>](../../configure-apps/file-schema/wcf/tcptransport.md) élément vide.
 
 ## <a name="code-sample"></a>Exemple de code
 

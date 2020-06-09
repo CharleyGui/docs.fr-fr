@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : s’authentifier avec un nom d’utilisateur et un mot de passe'
+title: "Comment : authentifier à l'aide d'un nom d'utilisateur et d'un mot de passe"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-ms.openlocfilehash: 33205f9e12fcee53f2f29b63b836ea0cbc792025
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: e8dc9177afc590a6467855decfa8450b37c6fc77
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834735"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601281"
 ---
-# <a name="how-to-authenticate-with-a-user-name-and-password"></a>Procédure : s’authentifier avec un nom d’utilisateur et un mot de passe
+# <a name="how-to-authenticate-with-a-user-name-and-password"></a>Comment : authentifier à l'aide d'un nom d'utilisateur et d'un mot de passe
 
-Cette rubrique montre comment permettre à un service Windows Communication Foundation (WCF) d’authentifier un client avec un nom d’utilisateur et un mot de passe de domaine Windows. Elle suppose que vous disposez d'un service WCF auto-hébergé fonctionnel. Pour obtenir un exemple de création d’un service WCF auto-hébergé de base, consultez le [didacticiel prise en main](../../../../docs/framework/wcf/getting-started-tutorial.md). Cette rubrique suppose que le service est configuré dans le code. Si vous souhaitez voir un exemple de configuration d’un service similaire à l’aide d’un fichier de configuration, consultez [nom d’utilisateur de sécurité du message](../samples/message-security-user-name.md).
+Cette rubrique montre comment permettre à un service Windows Communication Foundation (WCF) d’authentifier un client avec un nom d’utilisateur et un mot de passe de domaine Windows. Elle suppose que vous disposez d'un service WCF auto-hébergé fonctionnel. Pour obtenir un exemple de création d’un service WCF auto-hébergé de base, consultez le [didacticiel prise en main](../getting-started-tutorial.md). Cette rubrique suppose que le service est configuré dans le code. Si vous souhaitez voir un exemple de configuration d’un service similaire à l’aide d’un fichier de configuration, consultez [nom d’utilisateur de sécurité du message](../samples/message-security-user-name.md).
 
 Pour configurer un service afin d'authentifier ses clients à l'aide du nom d'utilisateur et du mot de passe de domaine Windows, utilisez <xref:System.ServiceModel.WSHttpBinding> et affectez la valeur `Security.Mode` à sa propriété `Message`. En outre, vous devez spécifier un certificat X509 qui sera utilisé pour chiffrer le nom d'utilisateur et le mot de passe lors de leur envoi du client au service.
 
@@ -40,7 +40,7 @@ Sur le client, vous devez demander à l'utilisateur le nom d'utilisateur et le m
     // ...
     ```
 
-    Vous pouvez utiliser votre propre certificat ; il vous suffit de modifier le code pour faire référence à votre certificat. Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md). Assurez-vous que le certificat se trouve dans le magasin de certificats Personnes approuvées de l'ordinateur local. Pour ce faire, vous pouvez exécuter MMC. exe et sélectionner l’élément de menu **fichier**, **Ajouter/supprimer un composant logiciel enfichable..** .. Dans la boîte de dialogue **Ajouter ou supprimer des composants logiciels enfichables** , sélectionnez le **composant logiciel enfichable Certificats** , puis cliquez sur **Ajouter**. Dans la boîte de dialogue composant logiciel enfichable Certificats, sélectionnez **compte d’ordinateur**. Par défaut, le certificat généré à partir de l'exemple de nom d'utilisateur de sécurité du message se trouve dans le dossier Personal/Certificates.  Elle est indiquée comme « localhost » sous la colonne délivré à dans la fenêtre MMC. Glissez-déposez le certificat dans le dossier **personnes autorisées** . Cela permettra à WCF de traiter le certificat comme un certificat approuvé lorsque vous effectuez l'authentification.
+    Vous pouvez utiliser votre propre certificat ; il vous suffit de modifier le code pour faire référence à votre certificat. Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Assurez-vous que le certificat se trouve dans le magasin de certificats Personnes approuvées de l'ordinateur local. Pour ce faire, vous pouvez exécuter MMC. exe et sélectionner l’élément de menu **fichier**, **Ajouter/supprimer un composant logiciel enfichable..** .. Dans la boîte de dialogue **Ajouter ou supprimer des composants logiciels enfichables** , sélectionnez le **composant logiciel enfichable Certificats** , puis cliquez sur **Ajouter**. Dans la boîte de dialogue composant logiciel enfichable Certificats, sélectionnez **compte d’ordinateur**. Par défaut, le certificat généré à partir de l'exemple de nom d'utilisateur de sécurité du message se trouve dans le dossier Personal/Certificates.  Elle est indiquée comme « localhost » sous la colonne délivré à dans la fenêtre MMC. Glissez-déposez le certificat dans le dossier **personnes autorisées** . Cela permettra à WCF de traiter le certificat comme un certificat approuvé lorsque vous effectuez l'authentification.
 
 ## <a name="to-call-the-service-passing-username-and-password"></a>Pour appeler le service en passant le nom d'utilisateur et le mot de passe
 
@@ -91,6 +91,6 @@ Sur le client, vous devez demander à l'utilisateur le nom d'utilisateur et le m
 - <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>
 - <xref:System.ServiceModel.WSHttpSecurity.Mode%2A>
 - <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A>
-- [Sécurité de transport avec authentification de base](transport-security-with-basic-authentication.md)
+- [Sécurité de transport avec l'authentification de base](transport-security-with-basic-authentication.md)
 - [Sécurité des applications distribuées](distributed-application-security.md)
 - [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md)

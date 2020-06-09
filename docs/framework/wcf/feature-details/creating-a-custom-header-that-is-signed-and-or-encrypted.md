@@ -2,12 +2,12 @@
 title: Création d’un en-tête personnalisé signé et/ou chiffré
 ms.date: 03/30/2017
 ms.assetid: e8668b37-c79f-4714-9de5-afcb88b9ff02
-ms.openlocfilehash: d737647f8c0442a3d6fa0d077a1ffe2c251ea043
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 0adb4100bca1add2c23ff2c802ddb5e2cb1c368c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856178"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579656"
 ---
 # <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Création d’un en-tête personnalisé signé et/ou chiffré
 Si vous appelez un service autre que WCF à l'aide d'un client WCF, il est parfois nécessaire d'utiliser des en-têtes SOAP personnalisés. Un bogue de canonisation dans WCF empêche les en-têtes personnalisés qui sont signés et chiffrés de fonctionner avec un service non-WCF. Le problème est causé par la canonisation incorrecte des espaces de noms XML par défaut. Ceci pose problème uniquement si vous appelez des services autres que WCF avec en-têtes personnalisés qui sont signés et/ou chiffrés.  Lorsque le service reçoit le message contenant l'en-tête personnalisé signé et/ou chiffré, il n'est pas en mesure de vérifier la signature. Cette solution de contournement évite le bogue de canonisation, permet l'interopérabilité avec les services autres que WCF, mais n'empêche pas l'interopérabilité avec les services WCF.  
@@ -58,6 +58,6 @@ public  class MyMessageContract
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrat de message par défaut](../../../../docs/framework/wcf/samples/default-message-contract.md)
-- [Contrats de message](../../../../docs/framework/wcf/samples/message-contracts.md)
-- [Utilisation de contrats de message](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)
+- [Default Message Contract](../samples/default-message-contract.md)
+- [Contrats de message](../samples/message-contracts.md)
+- [Utilisation de contrats de message](using-message-contracts.md)

@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: 7eb640576bc00bc767ba16f8dc4a5d5952a479c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b02d1efc98f02390555861871d280f9800ced1e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184723"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598877"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Service et client Internet non sécurisés
-L’illustration suivante montre un exemple de client et de service publics et non sécurisés de la Windows Communication Foundation (WCF) :  
+L’illustration suivante montre un exemple de service et client public, non sécurisé Windows Communication Foundation (WCF) :  
   
- ![Capture d’écran qui montre un scénario Internet non sécurisé](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
+ ![Capture d’écran montrant un scénario Internet non sécurisé](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
   
 |Caractéristique|Description|  
 |--------------------|-----------------|  
 |Mode de sécurité|None|  
 |Transport|HTTP|  
-|Liaison|<xref:System.ServiceModel.BasicHttpBinding>dans le code, ou la [ \<baseHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) élément dans la configuration.|  
+|Liaison|<xref:System.ServiceModel.BasicHttpBinding>dans le code ou [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) dans l’élément de la configuration.|  
 |Interopérabilité|Avec les clients de service Web et les services existants|  
-|Authentication|None|  
+|Authentification|None|  
 |Intégrité|None|  
 |Confidentialité|None|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -68,7 +68,7 @@ L’illustration suivante montre un exemple de client et de service publics et n
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
@@ -78,7 +78,7 @@ L’illustration suivante montre un exemple de client et de service publics et n
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Code  
- Le code suivant affiche un client WCF de base qui accède à un critère d’évaluation non sécurisé.  
+ Le code suivant illustre un client WCF de base qui accède à un point de terminaison non sécurisé.  
   
  [!code-csharp[C_UnsecuredClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#1)]
  [!code-vb[C_UnsecuredClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#1)]  
@@ -111,6 +111,6 @@ L’illustration suivante montre un exemple de client et de service publics et n
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Scénarios de sécurité courants](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
-- [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Scénarios de sécurité courants](common-security-scenarios.md)
+- [Présentation de la sécurité](security-overview.md)
 - [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

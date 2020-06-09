@@ -1,5 +1,6 @@
 ---
 title: Types de collections couramment utilisés
+description: Découvrez les types de collections couramment utilisés dans .NET, tels que les tables de hachage, les files d’attente, les piles, les conteneurs, les dictionnaires et les listes.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-ms.openlocfilehash: 47e54bb76c65dd5acc8ce1921ee385a5cb55cf95
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d0f2abc71524408c2bd2fa35a1a2dde0e664d273
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287989"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600839"
 ---
 # <a name="commonly-used-collection-types"></a>Types de collections couramment utilisés
 Les types de collections sont des variations courantes des collections de données, telles que les tables de hachage, les files d’attente, les piles, les conteneurs, les dictionnaires et les listes.  
@@ -39,7 +40,7 @@ Les types de collections sont des variations courantes des collections de donné
 |[Types de collections triées](sorted-collection-types.md)|Décrit les classes qui fournissent une fonctionnalité de tri pour les listes et les ensembles.|  
 |[Génériques](../generics/index.md)|Décrit la fonctionnalité génériques, notamment les collections, délégués et interfaces génériques fournis par le .NET Framework. Fournit des liens vers de la documentation sur les fonctionnalités pour C#, Visual Basic et Visual C++, ainsi que vers des technologies de prise en charge comme la réflexion.|  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Collections?displayProperty=nameWithType>  
   
  <xref:System.Collections.Generic?displayProperty=nameWithType>  
