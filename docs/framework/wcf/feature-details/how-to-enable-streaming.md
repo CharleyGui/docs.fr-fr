@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-ms.openlocfilehash: 1d1eaa1ebf41ef86478dda795b3b199239cd37b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c2c22ab699a996f4bc40d0b5f620ddd92ffe8059
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184936"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593228"
 ---
 # <a name="how-to-enable-streaming"></a>Comment : activer la diffusion en continu
-Windows Communication Foundation (WCF) peut envoyer des messages en utilisant des transferts tamponnés ou en streaming. En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire. En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis. Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série. Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
+Windows Communication Foundation (WCF) peut envoyer des messages à l’aide de transferts mis en mémoire tampon ou en continu. En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire. En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis. Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série. Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
   
  Pour activer la diffusion en continu, définissez le `OperationContract` convenablement et activez la diffusion en continu au niveau du transport.  
   
@@ -76,5 +76,5 @@ Windows Communication Foundation (WCF) peut envoyer des messages en utilisant de
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Grandes données et streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
-- [Flux](../../../../docs/framework/wcf/samples/stream.md)
+- [Données volumineuses et diffusion en continu](large-data-and-streaming.md)
+- [STREAM](../samples/stream.md)

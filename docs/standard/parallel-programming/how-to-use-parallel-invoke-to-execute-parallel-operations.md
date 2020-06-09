@@ -1,5 +1,6 @@
 ---
 title: 'Procédure : utiliser Parallel_Invoke pour exécuter des opérations parallèles'
+description: Consultez Comment utiliser la méthode Parallel. Invoke dans la bibliothèque parallèle de tâches (TPL), qui effectue des opérations parallèles sur une source de données partagée dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - task parallelism in .NET
 - parallel programming, task parallelism
 ms.assetid: 6b3ecd79-dec9-4ce1-abf4-62e5392a59c6
-ms.openlocfilehash: 2b353fb8cb5e04ee4cab6b49f55539ecb40fab4f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 084ade48b1406d23a11eb311739525f35ac973df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290796"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596343"
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>Procédure : utiliser Parallel_Invoke pour exécuter des opérations parallèles
 

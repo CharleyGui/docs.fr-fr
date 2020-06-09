@@ -2,18 +2,18 @@
 title: Federation, exemple
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 9ec462f88c0e3a039b7f288554be3e28f13ece08
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 00cb9a13a01687fb41f1d5c09f277d582f706e3b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144667"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594684"
 ---
 # <a name="federation-sample"></a>Federation, exemple
 Cet exemple présente la sécurité fédérée :  
   
 ## <a name="sample-details"></a>Détails de l'exemple  
- Windows Communication Foundation (WCF) fournit un soutien pour le `wsFederationHttpBinding`déploiement d’architectures de sécurité fédérées à travers le . `wsFederationHttpBinding` fournit une liaison sécurisée, fiable et interopérable qui implique l'utilisation de HTTP comme mécanisme de transport sous-jacent pour la communication demande/réponse, le format de câble d'encodage étant Text/XML. Pour plus d’informations sur la Fédération dans WCF, voir [Fédération](../../../../docs/framework/wcf/feature-details/federation.md).  
+ Windows Communication Foundation (WCF) prend en charge le déploiement d’architectures de sécurité fédérée via le `wsFederationHttpBinding` . `wsFederationHttpBinding` fournit une liaison sécurisée, fiable et interopérable qui implique l'utilisation de HTTP comme mécanisme de transport sous-jacent pour la communication demande/réponse, le format de câble d'encodage étant Text/XML. Pour plus d’informations sur la Fédération dans WCF, consultez [Federation](../feature-details/federation.md).  
   
  Le scénario comporte 4 parties :  
   
@@ -82,22 +82,22 @@ Cet exemple présente la sécurité fédérée :
  Suivez les instructions suivantes sur la configuration et l'exécution de cet exemple.  
   
 > [!NOTE]
-> Vous devez avoir e des autorisations à l’annuaire **wwwroot** pour exécuter cet échantillon.  
+> Pour exécuter cet exemple, vous devez disposer d’autorisations en écriture sur le répertoire **wwwroot** .  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
 1. Ouvrez la fenêtre de commande de Kit de développement SDK. Dans le chemin d’accès de l’exemple, exécutez Setup.bat. Cette opération crée les répertoires virtuels requis pour l'exemple et installe les certificats requis avec les autorisations appropriées.  
   
     > [!NOTE]
-    > Le fichier de commandes Setup.bat est conçu pour s'exécuter à partir d'une invite de commandes du Kit de développement Windows SDK. La variable d'environnement du Kit de développement MS SDK doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable est définie automatiquement dans une invite de commandes du Kit de développement logiciel Windows. Sur Windows Vista, vous devez vous assurer que la compatibilité de gestion IIS 6.0 est installée parce que la configuration utilise des scripts d’administrateur IIS. L’exécution du script de configuration sur Windows Vista nécessite des privilèges d’administrateur.  
+    > Le fichier de commandes Setup.bat est conçu pour s'exécuter à partir d'une invite de commandes du Kit de développement Windows SDK. La variable d'environnement du Kit de développement MS SDK doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable est définie automatiquement dans une invite de commandes du Kit de développement logiciel Windows. Sur Windows Vista, vous devez vous assurer que la compatibilité avec la gestion IIS 6,0 est installée, car la configuration utilise des scripts d’administrateur IIS. L’exécution du script d’installation sur Windows Vista nécessite des privilèges d’administrateur.  
   
-2. Ouvrez FederationSample.sln dans Visual Studio et sélectionnez **Build Solution** dans le menu **Build.** Cette opération génère les fichiers de projet communs, le service Bookstore, le STS Bookstore, le STS HomeRealm, et les déploie dans IIS. Elle génère également l’application cliente Bookstore et place le fichier exécutable BookStoreClient.exe dans le dossier FederationSample\BookStoreClient\bin\Debug.  
+2. Ouvrez FederationSample. sln dans Visual Studio et sélectionnez **générer la solution** dans le menu **générer** . Cette opération génère les fichiers de projet communs, le service Bookstore, le STS Bookstore, le STS HomeRealm, et les déploie dans IIS. Elle génère également l’application cliente Bookstore et place le fichier exécutable BookStoreClient.exe dans le dossier FederationSample\BookStoreClient\bin\Debug.  
   
 3. Double-cliquez sur BookStoreClient.exe. La fenêtre BookStoreClient s'affiche.  
   
-4. Vous pouvez parcourir les livres disponibles dans la librairie en cliquant **sur Parcourir les livres**.  
+4. Vous pouvez parcourir les livres disponibles dans la librairie en cliquant sur **Parcourir les livres**.  
   
-5. Pour acheter un livre particulier, sélectionnez le livre dans la liste et cliquez sur **Buy Book**. L'application démarre et s'authentifie à l'aide de l'authentification Windows avec le STS HomeRealm.  
+5. Pour acheter un livre particulier, sélectionnez le livre dans la liste et cliquez sur **acheter un livre**. L'application démarre et s'authentifie à l'aide de l'authentification Windows avec le STS HomeRealm.  
   
      L'exemple est configuré pour permettre aux utilisateurs d'acheter des livres pour un montant égal ou inférieur à 15 dollars. Si un client tente d'acheter des livres pour un montant supérieur à 15 dollars, il reçoit un message du service BookStore indiquant que l'accès est refusé.  
   
@@ -113,6 +113,6 @@ Cet exemple présente la sécurité fédérée :
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Federation`  

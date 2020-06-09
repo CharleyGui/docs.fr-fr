@@ -2,43 +2,43 @@
 title: Gestion
 ms.date: 03/30/2017
 ms.assetid: 52f4825b-91a2-4f23-94f4-cfd76a7980cf
-ms.openlocfilehash: b5bb0b72f5290548bb844ac4f00b6fbbd9891cb7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 53c53252e5798ffb01d42b143971a66d1c067851
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787541"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591785"
 ---
 # <a name="management"></a>Gestion
-Cette section contient des exemples qui illustrent la gestion de Windows Communication Foundation (WCF).  
+Cette section contient des exemples qui illustrent la gestion Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Services WCF et suivi des événements pour Windows](../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)  
- Montre comment utiliser le traçage analytique dans WCF pour émettre des événements Event Tracing for Windows (ETW).  
+ [WCF Services et suivi d'événements Windows](wcf-services-and-event-tracing-for-windows.md)  
+ Montre comment utiliser le traçage analytique dans WCF pour émettre des événements dans Suivi d’v nements pour Windows (ETW).  
   
- [Suivi analytique WCF](../../../../docs/framework/wcf/samples/wcf-analytic-tracing.md)  
- Montre comment ajouter vos propres événements de traçage dans le flux de traces analytiques que WCF est écrit dans ETW dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
+ [traçage analytique [WCF]](wcf-analytic-tracing.md)  
+ Montre comment ajouter vos propres événements de suivi dans le flux de suivis analytiques que WCF écrit dans ETW [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] .  
   
- [Suivi circulaire](../../../../docs/framework/wcf/samples/circular-tracing.md)  
+ [Circular Tracing](circular-tracing.md)  
  Illustre l'implémentation d'un écouteur de suivi mis en mémoire tampon circulaire.  
   
- [Suivi ETW](../../../../docs/framework/wcf/samples/etw-tracing.md)  
+ [ETW Tracing](etw-tracing.md)  
  Montre comment implémenter le suivi de bout en bout à l'aide du suivi d'événements pour Windows.  
   
- [Extension du suivi](../../../../docs/framework/wcf/samples/extending-tracing.md)  
- Montre comment étendre la fonctionnalité de suivi WCF en écrivant les suivis d’activité définis par l’utilisateur dans le code client et le service.  
+ [Extending Tracing](extending-tracing.md)  
+ Montre comment étendre la fonctionnalité de suivi WCF en écrivant des suivis d’activité définis par l’utilisateur dans le code du client et du service.  
   
- [Verrouillage de sécurité PII](../../../../docs/framework/wcf/samples/pii-security-lockdown.md)  
+ [PII Security Lockdown](pii-security-lockdown.md)  
  Montre comment contrôler plusieurs fonctionnalités liées à la sécurité d’un service WCF.  
   
- [Utilisation des compteurs de performance](../../../../docs/framework/wcf/samples/using-performance-counters.md)  
+ [Using Performance Counters](using-performance-counters.md)  
  Montre comment accéder aux compteurs de performance WCF et comment créer des compteurs de performances définis par l’utilisateur.  
   
- [Suivi et journalisation des messages](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md)  
+ [Tracing and Message Logging](tracing-and-message-logging.md)  
  Montre comment activer l'enregistrement des suivis et des messages.  
   
- [Validation de la sécurité](../../../../docs/framework/wcf/samples/security-validation.md)  
+ [Security Validation](security-validation.md)  
  Montre comment utiliser un comportement personnalisé pour valider des services sur un ordinateur afin de garantir qu'ils répondent à des critères spécifiques.  
   
- [Fournisseur WMI](../../../../docs/framework/wcf/samples/wmi-provider.md)  
- Montre comment collecter des données à partir des services WCF lors de l’exécution en utilisant le fournisseur Windows Management Instrumentation (WMI) qui est intégré à WCF.
+ [WMI Provider](wmi-provider.md)  
+ Montre comment collecter des données à partir des services WCF au moment de l’exécution à l’aide du fournisseur Windows Management Instrumentation (WMI) intégré à WCF.

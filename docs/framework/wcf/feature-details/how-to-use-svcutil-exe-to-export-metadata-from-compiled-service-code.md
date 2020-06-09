@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : utiliser Svcutil.exe pour exporter des métadonnées de code de service compilé'
+title: 'Comment : utiliser Svcutil.exe pour exporter des métadonnées à partir de code de service compilé'
 ms.date: 03/30/2017
 ms.assetid: 95d0aed3-16a2-4398-89bb-39418eeb7355
-ms.openlocfilehash: 2d1b70931fe70dfd605e182d4b23a151bc8130a3
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 9acefdec63a6f518ead6cdbcb19ebc8c75609dd6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991181"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595360"
 ---
-# <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a>Procédure : utiliser Svcutil.exe pour exporter des métadonnées de code de service compilé
+# <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a>Comment : utiliser Svcutil.exe pour exporter des métadonnées à partir de code de service compilé
 Svcutil.exe peut exporter les métadonnées pour des services, des contrats et des types de données dans des assemblys compilés, comme suit :  
   
-- Pour exporter les métadonnées pour tous les contrats de service compilés pour un ensemble d'assemblys en utilisant Svcutil.exe, spécifiez les assemblys en tant que paramètres d'entrée. Il s’agit du comportement par défaut.  
+- Pour exporter les métadonnées pour tous les contrats de service compilés pour un ensemble d'assemblys en utilisant Svcutil.exe, spécifiez les assemblys en tant que paramètres d'entrée. Il s'agit du comportement par défaut.  
   
 - Pour exporter les métadonnées pour un service compilé en utilisant Svcutil.exe, spécifiez le ou les assemblys de service en tant que paramètres d'entrée. Vous devez utiliser l'option `/serviceName` pour indiquer le nom de configuration du service que vous souhaitez exporter. Svcutil.exe charge automatiquement le fichier de configuration pour l'assembly exécutable spécifié.  
   
@@ -75,7 +75,7 @@ Svcutil.exe peut exporter les métadonnées pour des services, des contrats et d
     svcutil.exe /dataContractOnly Contracts.dll  
     ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple ci-dessous montre comment générer les métadonnées pour l'implémentation et la configuration d'un service simple.  
   
  Pour exporter les métadonnées pour le contrat de service :  
@@ -168,5 +168,5 @@ public class MyService : IPersonFinder
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outil ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [Exportation et importation de métadonnées](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)
+- [Outil Service Model Metadata Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Exportation et importation de métadonnées](exporting-and-importing-metadata.md)

@@ -2,12 +2,12 @@
 title: Sécurité de canal homologue
 ms.date: 03/30/2017
 ms.assetid: 2c59b164-3729-44f0-a967-f247c42de662
-ms.openlocfilehash: bc17c35bf088472cfbf36b2c6d7c868c8cc85f20
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8015f41254d17f908f3665db65af3d82eaa2b6a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769393"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576081"
 ---
 # <a name="peer-channel-security"></a>Sécurité de canal homologue
 Le canal homologue active divers types d'applications distribuées qui dépendent de la messagerie entre plusieurs parties. Certains exemples incluent la distribution de contenu Internet, où une source fiable distribue du contenu (tel que des supports ou mises à jour logicielles), un groupe d’amis échange de la musique et des photos, ou une équipe de collègues modifie de manière collaborative un document. Chacun de ces scénarios requiert un modèle de sécurité unique. Le modèle de sécurité du canal homologue est conçu pour gérer ces scénarios et fournit un modèle de sécurité complet adapté aux besoins spécifiques des divers modèles d'identité, d'authentification et d'autorisation.  
@@ -35,6 +35,6 @@ Le canal homologue active divers types d'applications distribuées qui dépenden
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des applications de canal homologue](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
-- [Concepts de canal homologue](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
-- [Création d’une application de canal homologue](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [Sécurisation des applications de canal homologue](securing-peer-channel-applications.md)
+- [Concepts relatifs au canal homologue](peer-channel-concepts.md)
+- [Création d'une application de canal homologue](building-a-peer-channel-application.md)

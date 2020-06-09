@@ -2,12 +2,12 @@
 title: System.ServiceModel.Activation.MessageQueueUnregisterSucceeded
 ms.date: 03/30/2017
 ms.assetid: c2e344a4-3b10-430b-bdf3-b065777861bb
-ms.openlocfilehash: 0334b223922c0bce95ca28151b6fde5e7d800ded
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f2733c973b745fa62b3ce524f0b2a5577da8c3a8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792533"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84582775"
 ---
 # <a name="systemservicemodelactivationmessagequeueunregistersucceeded"></a>System.ServiceModel.Activation.MessageQueueUnregisterSucceeded
 System.ServiceModel.Activation.MessageQueueUnregisterSucceeded  
@@ -17,6 +17,6 @@ System.ServiceModel.Activation.MessageQueueUnregisterSucceeded
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Suivi](index.md)
+- [Utilisation du suivi pour résoudre les problèmes posés par votre application](using-tracing-to-troubleshoot-your-application.md)
+- [Administration et diagnostics](../index.md)

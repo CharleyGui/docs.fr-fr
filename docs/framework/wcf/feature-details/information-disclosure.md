@@ -1,15 +1,15 @@
 ---
-title: Divulgation d'informations
+title: Divulgation d’informations
 ms.date: 03/30/2017
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-ms.openlocfilehash: 0bcf1aa04d7ba7477a6c3f1559a77bbda1f974af
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: a58ac4dd3715052031c7fb5c1da480c0d01396ea
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76211957"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596862"
 ---
-# <a name="information-disclosure"></a>Divulgation d'informations
+# <a name="information-disclosure"></a>Divulgation d’informations
 
 La divulgation d'informations permet à un intrus d'obtenir des informations précieuses à propos d'un système. Par conséquent, examinez toujours les informations que vous révélez et demandez-vous si elles peuvent être utilisées par un utilisateur malveillant. Vous trouverez ci-dessous la liste des attaques par divulgation d’informations possibles et les moyens d’atténuation pour chacune d’elles.
 
@@ -19,7 +19,7 @@ Si vous utilisez la sécurité au niveau du message sur une couche transport HTT
 
 ## <a name="policy-information"></a>Informations de stratégie
 
-Il est important de sécuriser la stratégie, surtout dans les scénarios de fédération dans lesquels les spécifications sensibles des jetons émis ou les informations de l'émetteur de jetons sont exposées dans la stratégie. Dans ces cas, il est recommandé de sécuriser le point de terminaison de stratégie du service fédéré pour empêcher les intrus d'obtenir des informations à propos du service, tel que le type de revendications à placer dans le jeton émis, ou de rediriger les clients vers des émetteurs de jetons malveillants. Par exemple, un intrus pourrait découvrir des paires de nom d'utilisateur/mot de passe en reconfigurant la chaîne de confiance fédérée afin qu'elle se termine dans un émetteur qui exécute une attaque de « l'homme du milieu » (« man-in-the-middle »). Il est également recommandé que les clients fédérés qui obtiennent leurs liaisons grâce à la récupération de la stratégie vérifient qu'ils approuvent les émetteurs de la chaîne de confiance fédérée obtenue. Pour plus d’informations sur les scénarios de Fédération, consultez [Federation](../../../../docs/framework/wcf/feature-details/federation.md).
+Il est important de sécuriser la stratégie, surtout dans les scénarios de fédération dans lesquels les spécifications sensibles des jetons émis ou les informations de l'émetteur de jetons sont exposées dans la stratégie. Dans ces cas, il est recommandé de sécuriser le point de terminaison de stratégie du service fédéré pour empêcher les intrus d'obtenir des informations à propos du service, tel que le type de revendications à placer dans le jeton émis, ou de rediriger les clients vers des émetteurs de jetons malveillants. Par exemple, un intrus pourrait découvrir des paires de nom d'utilisateur/mot de passe en reconfigurant la chaîne de confiance fédérée afin qu'elle se termine dans un émetteur qui exécute une attaque de « l'homme du milieu » (« man-in-the-middle »). Il est également recommandé que les clients fédérés qui obtiennent leurs liaisons grâce à la récupération de la stratégie vérifient qu'ils approuvent les émetteurs de la chaîne de confiance fédérée obtenue. Pour plus d’informations sur les scénarios de Fédération, consultez [Federation](federation.md).
 
 ## <a name="memory-dumps-can-reveal-claim-information"></a>Les images mémoire peuvent révéler des informations de revendication
 
@@ -55,7 +55,7 @@ Par défaut, dans l'environnement de domaine Windows, l'authentification Windows
 
 Lorsque vous créez un client, le fait de spécifier des informations d'identification du client sans un nom de domaine ou de spécifier une identité de serveur non valide provoque l'utilisation de NTLM au lieu du protocole Kerberos (si la propriété `AllowNtlm` a la valeur `true`). Vu que NTLM ne procède pas à l'authentification du serveur, les informations peuvent potentiellement être divulguées.
 
-Par exemple, il est possible de spécifier les informations d’identification du client Windows sans un nom de domaine, comme illustré C# dans le code visuel suivant.
+Par exemple, il est possible de spécifier les informations d’identification du client Windows sans un nom de domaine, comme indiqué dans le code Visual C# suivant.
 
 ```csharp
 MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCredential("username", "password");
@@ -63,13 +63,13 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
 
 Le code ne spécifie pas de nom de domaine, et par conséquent, NTLM sera utilisé.
 
-Si le domaine est spécifié, mais qu’un nom de principal du service non valide est spécifié à l’aide de la fonctionnalité d’identité du point de terminaison, alors NTLM est utilisé. Pour plus d’informations sur la spécification de l’identité du point de terminaison, consultez [identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).
+Si le domaine est spécifié, mais qu’un nom de principal du service non valide est spécifié à l’aide de la fonctionnalité d’identité du point de terminaison, alors NTLM est utilisé. Pour plus d’informations sur la spécification de l’identité du point de terminaison, consultez [identité du service et authentification](service-identity-and-authentication.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Considérations relatives à la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [Élévation de privilèges](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
-- [Déni de service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [Falsification](../../../../docs/framework/wcf/feature-details/tampering.md)
-- [Scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
-- [Attaques par relecture](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+- [Security Considerations](security-considerations-in-wcf.md)
+- [Élévation de privilège](elevation-of-privilege.md)
+- [Déni de service](denial-of-service.md)
+- [Falsification](tampering.md)
+- [Scénarios non pris en charge](unsupported-scenarios.md)
+- [Attaques par relecture](replay-attacks.md)
