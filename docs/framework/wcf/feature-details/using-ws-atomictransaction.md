@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF]
 ms.assetid: 04a4c200-0af0-4c5d-a3d9-87cb7339e054
-ms.openlocfilehash: e01f5b683bebe1f4cdf282c56aa3049b6da794ee
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 71090efbb096bc3b7b3d6bcf40ff496b78ac6252
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637474"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600683"
 ---
 # <a name="using-ws-atomictransaction"></a>Utilisation de WS-AtomicTransaction
 WS-AtomicTransaction (WS-AT) est un protocole de transaction interopérable. Ce protocole vous permet de transférer des transactions distribuées à l'aide de messages de service Web et d'assurer la coordination d'infrastructures de transaction hétérogènes de manière interopérable. WS-AT utilise un protocole de validation en deux phases pour un résultat atomique entre les applications distribuées, les gestionnaires de transactions et les gestionnaires de ressources.  
   
- L’implémentation de WS-AT fournit Windows Communication Foundation (WCF) inclut un service de protocole dans le Gestionnaire de transactions Microsoft Distributed Transaction Coordinator (MSDTC). À l’aide de WS-AT, les applications WCF peuvent transférer des transactions à d’autres applications, y compris les services Web interopérables créés à l’aide d’une technologie tierce.  
+ L’implémentation WS-AT Windows Communication Foundation (WCF) fournit inclut un service de protocole intégré au gestionnaire de transactions Microsoft Distributed Transaction Coordinator (MSDTC). À l’aide de WS-AT, les applications WCF peuvent transmettre des transactions à d’autres applications, y compris des services Web interopérables construits à l’aide de technologies tierces.  
   
- Lorsqu’une transaction est transférée entre une application cliente et une application serveur, le protocole utilisé dépend de la liaison exposée par le serveur sur le point de terminaison sélectionné par le client. Certains par défaut des liaisons fournies par le système WCF à spécifier le `OleTransactions` protocole en tant que le format de la propagation de transaction, tandis que d’autres utilisateurs par défaut à la spécification WS-AT. Vous pouvez également modifier le protocole de transaction utilisé par les liaisons en programmant le protocole de votre choix.  
+ Lorsqu’une transaction est transférée entre une application cliente et une application serveur, le protocole utilisé dépend de la liaison exposée par le serveur sur le point de terminaison sélectionné par le client. Certaines liaisons fournies par le système WCF spécifient par défaut le `OleTransactions` protocole comme format de propagation de transaction, tandis que d’autres spécifient par défaut WS-AT. Vous pouvez également modifier le protocole de transaction utilisé par les liaisons en programmant le protocole de votre choix.  
   
  Le choix du protocole a des conséquences sur :  
   
@@ -24,8 +24,8 @@ WS-AtomicTransaction (WS-AT) est un protocole de transaction interopérable. Ce 
   
 - Le protocole réseau utilisé pour exécuter le protocole de validation en deux phases entre le gestionnaire de transactions du client et la transaction du serveur et ainsi déterminer le résultat final de la transaction.  
   
- Si le serveur et client sont écrits à l’aide de WCF, il est inutile d’utiliser WS-AT. Il vous suffit en effet d'utiliser les paramètres par défaut de `NetTcpBinding` et d'activer l'attribut `TransactionFlow` pour que le protocole `OleTransactions` soit utilisé à la place. Pour plus d’informations, consultez [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md). En revanche, si vous transférez des transactions vers des services Web construits à l’aide de technologies tierces, vous devez utiliser le protocole WS-AT.  
+ Si le serveur et le client sont écrits à l’aide de WCF, vous n’avez pas besoin d’utiliser WS-AT. Il vous suffit en effet d'utiliser les paramètres par défaut de `NetTcpBinding` et d'activer l'attribut `TransactionFlow` pour que le protocole `OleTransactions` soit utilisé à la place. Pour plus d’informations, consultez [\<netTcpBinding>](../../configure-apps/file-schema/wcf/nettcpbinding.md). En revanche, si vous transférez des transactions vers des services Web construits à l’aide de technologies tierces, vous devez utiliser le protocole WS-AT.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration de la prise en charge WS-Atomic Transaction](../../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
+- [Configuration de la prise en charge WS-Atomic Transaction](configuring-ws-atomic-transaction-support.md)

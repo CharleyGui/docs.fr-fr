@@ -1,5 +1,6 @@
 ---
 title: Comparer des chaînes dans . NET
+description: En savoir plus sur les méthodes de comparaison de chaînes dans .NET. En savoir plus sur les méthodes compare, CompareOrdinal, CompareTo, StartsWith, EndsWith, Equals, IndexOf, & LastIndexOf.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,12 +19,12 @@ helpviewer_keywords:
 - Equals method
 - StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
-ms.openlocfilehash: 7997f3098265b76f8fe2ef4fc7ab0e17f6e81d69
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5ed73d18341c3b9c6e61e12fdf322b9a67affd4a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289328"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602191"
 ---
 # <a name="comparing-strings-in-net"></a>Comparer des chaînes dans . NET
 .NET fournit plusieurs méthodes permettant de comparer les valeurs de chaînes. Le tableau suivant répertorie et décrit les méthodes de comparaison de valeurs.  
@@ -42,7 +43,7 @@ ms.locfileid: "84289328"
 ## <a name="compare"></a>Comparer  
  La méthode statique <xref:System.String.Compare%2A?displayProperty=nameWithType> fournit un moyen de comparer deux chaînes de façon approfondie. Cette méthode prend en compte la culture. Vous pouvez utiliser cette fonction pour comparer deux chaînes ou les sous-chaînes de deux chaînes. En outre, des surcharges sont fournies, qui prennent ou non en compte les différences de casse et de culture. Le tableau suivant montre les trois valeurs entières que cette méthode peut retourner.  
   
-|Valeur retournée|Condition|  
+|Valeur de retour|Condition|  
 |------------------|---------------|  
 |Entier négatif|La première chaîne précède la seconde chaîne dans l'ordre de tri.<br /><br /> -ou-<br /><br /> La première chaîne est `null`.|  
 |0|La première chaîne et la seconde chaîne sont égales.<br /><br /> -ou-<br /><br /> Les deux chaînes sont `null`.|  

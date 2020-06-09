@@ -2,21 +2,21 @@
 title: System.ServiceModel.Channels.PnrpRegisteredAddresses
 ms.date: 03/30/2017
 ms.assetid: b770e042-0555-4668-9b41-e20da092c16a
-ms.openlocfilehash: dbce3ae75034e27b4851c31229119d35ca8b170f
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: a6c6588d2f882ad15cde85800490924d2f51d96e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424691"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599540"
 ---
 # <a name="systemservicemodelchannelspnrpregisteredaddresses"></a>System.ServiceModel.Channels.PnrpRegisteredAddresses
 Le programme de résolution Pnrp a enregistré les adresses du nœud local.  
   
 ## <a name="description"></a>Description  
- Ce suivi se produit une fois que le service PNRP inscrit avec succès les adresses du nœud local.  
+ Ce suivi se produit une fois que le service PNRP a inscrit les adresses du nœud local.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Suivi](index.md)
+- [Utilisation du suivi pour résoudre les problèmes posés par votre application](using-tracing-to-troubleshoot-your-application.md)
+- [Administration et diagnostics](../index.md)

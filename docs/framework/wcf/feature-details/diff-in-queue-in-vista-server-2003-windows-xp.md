@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF], differences in operating systems
 ms.assetid: aa809d93-d0a3-4ae6-a726-d015cca37c04
-ms.openlocfilehash: 0d7b952382b50daae0291ed6afb22bb612447670
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: abd81b5e7bf611fc6b4f446a82628b83130f2d54
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920145"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599202"
 ---
 # <a name="differences-in-queuing-features-in-windows-vista-windows-server-2003-and-windows-xp"></a>Différences entre les fonctionnalités de mise en file d’attente dans Windows Vista, Windows Server 2003 et Windows XP
 Cette rubrique résume les différences de la fonctionnalité de files d’attente Windows Communication Foundation (WCF) entre Windows Vista, Windows Server 2003 et Windows XP.  
@@ -26,7 +26,7 @@ Cette rubrique résume les différences de la fonctionnalité de files d’atten
   
  Les principales différences entre les Message Queuing (MSMQ) sur Windows Vista, Windows Server 2003 et Windows XP qui concernent la gestion des messages incohérents sont les suivantes :  
   
-- MSMQ dans Windows Vista prend en charge les sous-files d’attente, tandis que Windows Server 2003 et Windows XP ne prennent pas en charge les sous-files d’attente. Les sous-files d'attente sont utilisées dans la gestion des messages incohérents. Les files d'attente de nouvel essai et la file d'attente de messages incohérents sont des sous-files d'attente de la file d'attente de l'application créée en fonction des paramètres de gestion des messages incohérents. `MaxRetryCycles` définit le nombre de sous-files de nouvel essai à créer. Par conséquent, lors de l’exécution sur Windows Server 2003 ou Windows XP, les `MaxRetryCycles` sont ignorés et `ReceiveErrorHandling.Move` n’est pas autorisé.  
+- MSMQ dans Windows Vista prend en charge les sous-files d’attente, tandis que Windows Server 2003 et Windows XP ne prennent pas en charge les sous-files d’attente. Les sous-files d'attente sont utilisées dans la gestion des messages incohérents. Les files d'attente de nouvel essai et la file d'attente de messages incohérents sont des sous-files d'attente de la file d'attente de l'application créée en fonction des paramètres de gestion des messages incohérents. `MaxRetryCycles` définit le nombre de sous-files de nouvel essai à créer. Par conséquent, lors de l’exécution sur Windows Server 2003 ou Windows XP, `MaxRetryCycles` est ignoré et `ReceiveErrorHandling.Move` n’est pas autorisé.  
   
 - MSMQ dans Windows Vista prend en charge l’accusé de réception négatif, contrairement à Windows Server 2003 et Windows XP. Un accusé de réception négatif provenant du gestionnaire de files d'attente de destination provoque le placement du message rejeté dans la file d'attente de lettres mortes par le gestionnaire de files d'attente source. Par conséquent, `ReceiveErrorHandling.Reject` n’est pas autorisé avec Windows Server 2003 et Windows XP.  
   
@@ -37,5 +37,5 @@ Cette rubrique résume les différences de la fonctionnalité de files d’atten
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de files d’attente de lettres mortes pour gérer des défaillances de transfert de messages](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)
-- [Gestion des messages incohérents](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)
+- [Utilisation de files d'attente de lettres mortes pour gérer des défaillances de transfert de messages](using-dead-letter-queues-to-handle-message-transfer-failures.md)
+- [Gestion des messages incohérents](poison-message-handling.md)

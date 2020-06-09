@@ -2,12 +2,12 @@
 title: WSDL et stratégie
 ms.date: 03/30/2017
 ms.assetid: cea87440-3519-4640-8494-b8a2b0e88c84
-ms.openlocfilehash: b032f91999695d848f20fac5009047dcc2e20451
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 201920a8ebf639c74acfb20b2e990c8bbc0c5b55
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144680"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600099"
 ---
 # <a name="wsdl-and-policy"></a>WSDL et stratégie
 Cette rubrique Windows Communication Foundation traite des détails de l’implémentation WSDL 1,1, WS-Policy et WS-PolicyAttachment (WCF), ainsi que des assertions WS-Policy et des extensions WSDL 1,1 supplémentaires introduites par WCF.  
@@ -74,6 +74,6 @@ Cette rubrique Windows Communication Foundation traite des détails de l’impl�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Publication WSDL personnalisée](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md)
-- [Guide pratique pour exporter un WSDL personnalisé](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)
-- [Guide pratique pour importer un WSDL personnalisé](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)
+- [Publication WSDL personnalisée](../samples/custom-wsdl-publication.md)
+- [Guide pratique pour exporter un WSDL personnalisé](../extending/how-to-export-custom-wsdl.md)
+- [Guide pratique pour importer un WSDL personnalisé](../extending/how-to-import-custom-wsdl.md)

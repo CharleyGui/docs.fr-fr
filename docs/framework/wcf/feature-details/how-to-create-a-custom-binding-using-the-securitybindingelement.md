@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement'
+title: 'Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
-ms.openlocfilehash: da67d923b36d673c87c90ba79b72ad4e1fc64a0c
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 15fdd50b05bd2217cb9819373cd1c015da52b15b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988759"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599007"
 ---
-# <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement
-Windows Communication Foundation (WCF) comprend plusieurs liaisons fournies par le système qui peuvent être configurées, mais n’offrent pas une flexibilité totale lors de la configuration de toutes les options de sécurité prises en charge par WCF. Cette rubrique montre comment créer une liaison personnalisée directement à partir d'éléments de liaison individuels et met en évidence certains des paramètres de sécurité qui peuvent être spécifiés lors de la création d'une liaison de ce type. Pour plus d’informations sur la création de liaisons personnalisées, consultez [extension des liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md).  
+# <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement
+Windows Communication Foundation (WCF) comprend plusieurs liaisons fournies par le système qui peuvent être configurées, mais n’offrent pas une flexibilité totale lors de la configuration de toutes les options de sécurité prises en charge par WCF. Cette rubrique montre comment créer une liaison personnalisée directement à partir d'éléments de liaison individuels et met en évidence certains des paramètres de sécurité qui peuvent être spécifiés lors de la création d'une liaison de ce type. Pour plus d’informations sur la création de liaisons personnalisées, consultez [extension des liaisons](../extending/extending-bindings.md).  
   
 > [!WARNING]
 > <xref:System.ServiceModel.Channels.SecurityBindingElement> ne prend pas en charge la forme de canal <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, qui est la forme de canal par défaut utilisée par le transport TCP lorsque <xref:System.ServiceModel.TransferMode> a la valeur <xref:System.ServiceModel.TransferMode.Buffered>. Vous devez définir <xref:System.ServiceModel.TransferMode> à <xref:System.ServiceModel.TransferMode.Streamed> pour utiliser <xref:System.ServiceModel.Channels.SecurityBindingElement> dans ce scénario.  
@@ -25,7 +25,7 @@ Windows Communication Foundation (WCF) comprend plusieurs liaisons fournies par 
   
  En revanche, pour créer une liaison personnalisée, les éléments de liaison sont créés et configurés, puis une <xref:System.ServiceModel.Channels.CustomBinding> est créée à partir des éléments de liaison.  
   
- Pour ce faire, vous ajoutez les éléments de liaison individuels à une collection représentée par une instance de la classe <xref:System.ServiceModel.Channels.BindingElementCollection>, puis vous affectez à la propriété `Elements` de `CustomBinding` une valeur égale à cet objet. Vous devez ajouter les éléments de liaison dans l’ordre suivant: Flux de transaction, session fiable, sécurité, duplex composite, unidirectionnel, sécurité de flux, encodage de message et transport. Notez que les éléments de liaison répertoriés ne sont pas tous requis dans chaque liaison.  
+ Pour ce faire, vous ajoutez les éléments de liaison individuels à une collection représentée par une instance de la classe <xref:System.ServiceModel.Channels.BindingElementCollection>, puis vous affectez à la propriété `Elements` de `CustomBinding` une valeur égale à cet objet. Vous devez ajouter les éléments de liaison dans l'ordre suivant : flux de transaction, session fiable, sécurité, duplex composite, unidirectionnel, sécurité de flux de données, encodage de message et transport. Notez que les éléments de liaison répertoriés ne sont pas tous requis dans chaque liaison.  
   
 ## <a name="securitybindingelement"></a>SecurityBindingElement  
  Trois éléments de liaison concernent la sécurité au niveau des messages et tous sont dérivés de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>. Il s'agit de <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> et <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. Le <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> est utilisé pour assurer une sécurité en mode mixte. Les deux autres éléments sont utilisés lorsque la couche message fournit la sécurité.  
@@ -75,9 +75,9 @@ Windows Communication Foundation (WCF) comprend plusieurs liaisons fournies par 
 |||StreamSecurityBindingElement de SSL ou Windows|StreamSecurityBindingElement de SSL ou Windows|StreamSecurityBindingElement de SSL ou Windows|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
   
- Notez qu'il existe de nombreux paramètres configurables sur SecurityBindingElements. Pour plus d’informations, consultez [modes d’authentification SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md).  
+ Notez qu'il existe de nombreux paramètres configurables sur SecurityBindingElements. Pour plus d’informations, consultez [modes d’authentification SecurityBindingElement](securitybindingelement-authentication-modes.md).  
   
- Pour plus d’informations, consultez [conversations sécurisées et sessions sécurisées](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md).  
+ Pour plus d’informations, consultez [conversations sécurisées et sessions sécurisées](secure-conversations-and-secure-sessions.md).  
   
 ## <a name="procedures"></a>Procédures  
   
@@ -112,5 +112,5 @@ Windows Communication Foundation (WCF) comprend plusieurs liaisons fournies par 
 - <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Liaisons fournies par le système](../../../../docs/framework/wcf/system-provided-bindings.md)
+- [Extension de liaisons](../extending/extending-bindings.md)
+- [Liaisons fournies par le système](../system-provided-bindings.md)

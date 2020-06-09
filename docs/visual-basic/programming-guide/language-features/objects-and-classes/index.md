@@ -5,12 +5,12 @@ helpviewer_keywords:
 - classes [Visual Basic]
 - objects [Visual Basic]
 ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
-ms.openlocfilehash: 10e257a1cbc8778565a9838aeef423522f9d2970
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9e3cf262ef617a1ae5ee92bcc3d6fd5c691602f9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290615"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600411"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Objets et classes dans Visual Basic
 
@@ -59,7 +59,7 @@ Vous devez créer un objet avant de pouvoir accéder à ses membres, à l’exce
 > [!NOTE]
 > Si possible, vous devez déclarer la variable comme étant du type de classe que vous avez l’intention de lui attribuer. Il s’agit de la *liaison anticipée*. Si vous ne connaissez pas le type de classe au moment de la compilation, vous pouvez utiliser la *liaison tardive* en déclarant la variable comme étant de [type de données Object](../../../language-reference/data-types/object-data-type.md). Toutefois, la liaison tardive peut ralentir les performances et limiter l’accès aux membres de l’objet de l’exécution. Pour plus d’informations, consultez [Déclaration des variables objets](../variables/object-variable-declaration.md).
 
-### <a name="multiple-instances"></a>Instances multiples
+### <a name="multiple-instances"></a>Plusieurs instances
 
 Les objets nouvellement créés à partir d’une classe sont souvent identiques. Dès qu’ils existent en tant qu’objets individuels, toutefois, leurs variables et propriétés sont modifiables indépendamment des autres instances. Par exemple, si vous ajoutez trois cases à cocher à un formulaire, chaque objet de case à cocher est une instance de la classe <xref:System.Windows.Forms.CheckBox>. Les objets <xref:System.Windows.Forms.CheckBox> individuels partagent un ensemble commun de caractéristiques et de fonctionnalités (propriétés, variables, procédures et événements) définies par la classe. Toutefois, chacun possède son propre nom, peut être séparément activé et désactivé, et peut être placé dans un autre emplacement sur le formulaire.
 
@@ -110,7 +110,7 @@ Utilisez les champs quand :
 
 - La propriété est un type de données `String`, et il n’existe aucune contrainte quant à la taille ou la valeur de la chaîne.
 
-- Pour plus d’informations, consultez [Procédures de propriété](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md).
+- Pour plus d’informations, consultez [Procédures de propriété](../procedures/property-procedures.md).
 
 > [!TIP]
 > Conservez toujours les champs non constants privés. Si vous souhaitez le rendre public, utilisez une propriété à la place.
@@ -252,7 +252,7 @@ Assurez-vous que le compilateur peut accéder à la classe à partir de laquelle
 
 Les objets peuvent également être liés par une *relation d’imbrication*. Les objets conteneur encapsulent de manière logique d’autres objets. Par exemple, l’objet <xref:System.OperatingSystem> contient de manière logique un objet <xref:System.Version>, qu’il retourne via sa propriété <xref:System.OperatingSystem.Version%2A>. Notez que l’objet conteneur ne contient physiquement aucun autre objet.
 
-#### <a name="collections"></a>Regroupements
+#### <a name="collections"></a>Collections
 
 Un type particulier de relation d’imbrication d’objet est représenté par les *collections*. Les collections sont des groupes d’objets similaires qui peuvent être énumérés. Visual Basic prend en charge une syntaxe spécifique dans le [... Instruction suivante](../../../language-reference/statements/for-each-next-statement.md) qui vous permet d’itérer au sein des éléments d’une collection. En outre, les collections vous permettent souvent d’utiliser un <xref:Microsoft.VisualBasic.Collection.Item%2A> pour récupérer des éléments à l’aide de leur index ou en les associant à une chaîne unique. Les collections peuvent être plus faciles à utiliser que les tableaux car elles vous permettent d’ajouter ou de supprimer des éléments sans utiliser d’index. En raison de leur simplicité d’utilisation, les collections sont souvent utilisées pour stocker les formulaires et les commandes.
 

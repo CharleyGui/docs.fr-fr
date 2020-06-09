@@ -2,15 +2,15 @@
 title: Falsification
 ms.date: 03/30/2017
 ms.assetid: 3bad93be-60bb-4f89-96ab-a1c3dc7c0fad
-ms.openlocfilehash: 7a4265c30a6713f9557de2b3d1e99c87b7dd3e58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e618ab369a46d403aa8db26c4b472e2be3634785
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703385"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600709"
 ---
 # <a name="tampering"></a>Falsification
-*Falsification* est l’action de modification d’un message ou la remise d’un message et à l’aide de ce message modifié à un usage autre que celles prévues pour.  
+La *falsification* est l’action consistant à modifier un message ou à remettre un message, et à utiliser le message modifié à des fins autres que celles prévues.  
   
 ## <a name="do-not-disable-ws-addressing"></a>Ne pas désactiver WS-Addressing  
  La spécification WS-Addressing fournit des en-têtes d'adresse sur chaque message, ce qui permet au destinataire d'un message de vérifier l'expéditeur de celui-ci. Vous pouvez désactiver cette fonctionnalité en affectant <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> à la propriété <xref:System.ServiceModel.Channels.AddressingVersion.None%2A>.  
@@ -21,9 +21,9 @@ ms.locfileid: "61703385"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Considérations relatives à la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [Divulgation d’informations](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
-- [Élévation de privilèges](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
-- [Déni de service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [Scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
-- [Attaques par relecture](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+- [Security Considerations](security-considerations-in-wcf.md)
+- [Divulgation d’informations](information-disclosure.md)
+- [Élévation de privilège](elevation-of-privilege.md)
+- [Déni de service](denial-of-service.md)
+- [Scénarios non pris en charge](unsupported-scenarios.md)
+- [Attaques par relecture](replay-attacks.md)

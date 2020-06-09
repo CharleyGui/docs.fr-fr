@@ -2,12 +2,12 @@
 title: 'Procédure : contrôle des versions du service'
 ms.date: 03/30/2017
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
-ms.openlocfilehash: f1178a0bedfe8665d7b3ec463e99183809538c28
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: beb7de63d300ad7986bfc59093006b074b9456ba
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81464115"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586934"
 ---
 # <a name="how-to-service-versioning"></a>Procédure : contrôle des versions du service
 Cette rubrique présente les étapes de base nécessaires pour créer une configuration de routage qui route les messages vers des versions différentes du même service. Dans cet exemple, les messages sont routés vers deux versions différentes d'un service de calculatrice, `roundingCalc` (v1) et `regularCalc` (v2). Les deux implémentations prennent en charge les mêmes opérations ; toutefois, le service le plus ancien, `roundingCalc`, arrondit tous les calculs à la valeur entière la plus proche avant de les retourner. Une application cliente doit être en mesure d'indiquer s'il faut utiliser le service `regularCalc` plus récent.  
@@ -69,7 +69,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
         </client>  
     ```  
   
-2. Définissez les filtres utilisés pour router les messages vers les points de terminaison de destination.  Pour cet exemple, le filtre XPath est utilisé pour détecter la valeur de l’en-tête personnalisé "CalcVer" pour déterminer à quelle version le message doit être acheminé. Un filtre XPath est également utilisé pour détecter les messages qui ne contiennent pas l’en-tête "CalcVer". L'exemple suivant définit les filtres et la table d'espace de noms nécessaires.  
+2. Définissez les filtres utilisés pour router les messages vers les points de terminaison de destination.  Pour cet exemple, le filtre XPath est utilisé pour détecter la valeur de l’en-tête personnalisé « CalcVer » afin de déterminer la version vers laquelle le message doit être routé. Un filtre XPath est également utilisé pour détecter les messages qui ne contiennent pas l’en-tête « CalcVer ». L'exemple suivant définit les filtres et la table d'espace de noms nécessaires.  
   
     ```xml  
     <!-- use the namespace table element to define a prefix for our custom namespace-->  
@@ -94,9 +94,9 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     ```  
   
     > [!NOTE]
-    > Le préfixe s12 namespace est défini par défaut dans `http://www.w3.org/2003/05/soap-envelope`le tableau namespace, et représente l’espace nom .
+    > Le préfixe d’espace de noms S12 est défini par défaut dans la table d’espace de noms et représente l’espace de noms `http://www.w3.org/2003/05/soap-envelope` .
   
-3. Définissez la table de filtres, qui associe chaque filtre à un point de terminaison client. Si le message contient l’en-tête "CalcVer" d’une valeur de 1, il sera envoyé au service régulierCalc. Si l'en-tête contient la valeur 2, il sera envoyé au service roundingCalc. Si aucun en-tête n'est présent, le message sera routé vers regularCalc.  
+3. Définissez la table de filtres, qui associe chaque filtre à un point de terminaison client. Si le message contient l’en-tête « CalcVer » avec la valeur 1, il sera envoyé au service regularCalc. Si l'en-tête contient la valeur 2, il sera envoyé au service roundingCalc. Si aucun en-tête n'est présent, le message sera routé vers regularCalc.  
   
      Les éléments suivants définissent la table de filtres et ajoutent les filtres définis précédemment.  
   
@@ -117,7 +117,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     </filterTables>  
     ```  
   
-4. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant démontre `filterTable1` l’association avec les critères de service :  
+4. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant illustre l’Association `filterTable1` avec les points de terminaison de service :  
   
     ```xml  
     <behaviors>  
@@ -326,4 +326,4 @@ namespace Microsoft.Samples.AdvancedFilters
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Services de routage](../../../../docs/framework/wcf/samples/routing-services.md)
+- [Services de routage](../samples/routing-services.md)

@@ -6,22 +6,22 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: 6751513b72f732bd7392de11a203467a9ead1bce
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a07d7c6da71f4195cb1641ae8ac7585b4158ed63
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743346"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600969"
 ---
 # <a name="wcf-security-terminology"></a>Terminologie relative à la sécurité dans WCF
 La terminologie utilisée pour aborder la sécurité peut vous sembler peu familière. Cette rubrique explique rapidement certains des termes relatifs à la sécurité, mais ne fournit pas d'informations complètes pour chaque élément.  
   
- Pour plus d’informations sur les termes utilisés dans la documentation de Windows Communication Foundation (WCF), consultez [concepts fondamentaux du Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md).  
+ Pour plus d’informations sur les termes utilisés dans la documentation de Windows Communication Foundation (WCF), consultez [concepts fondamentaux du Windows Communication Foundation](../fundamental-concepts.md).  
   
  liste de contrôle d'accès (ACL, Access Control List)  
  Liste des protections de sécurité qui s'appliquent à un objet. (Un objet peut être un fichier, un processus, un événement ou tout autre ayant un descripteur de sécurité.) Une entrée dans une liste de contrôle d’accès (ACL) est une entrée de contrôle d’accès (ACE). Il y a deux types de listes ACL : discrétionnaire et système.  
   
- authentification  
+ Authentification  
  Processus de vérification qu'un utilisateur, ordinateur, service, ou processus est celui ou ce qu'il prétend être.  
   
  autorisation  
@@ -56,7 +56,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  signature numérique  
  Données qui lient l'identité d'un expéditeur aux informations qui sont envoyées. Une signature numérique peut être fournie avec tout message, fichier, ou autre information encodée numériquement, ou transmise séparément. Les signatures numériques sont utilisées dans les environnements de clé publique et fournissent des services d'authentification et d'intégrité.  
   
- encoding  
+ encodage  
  Processus de transformation de données en un flux de bits. L'encodage fait partie du processus de sérialisation qui convertit des données en un flux de uns et zéros.  
   
  paire de clés d'échange  
@@ -74,10 +74,10 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  autorité de sécurité locale (Local Security Authority ou LSA)  
  Sous-système protégé qui authentifie des utilisateurs et ouvre une session sur le système local. L'autorité de sécurité locale conserve également des informations à propos de tous les aspects de la sécurité locale sur un système, collectivement connus comme la stratégie de sécurité locale du système.  
   
- Négocier  
+ Negotiate  
  Fournisseur de prise en charge de la sécurité (SSP) qui agit comme une couche d'application entre le SSPI (Security Support Provider Interface) et d'autres SSP. Lorsqu'une application appelle un SSPI à se connecter à un réseau, il peut spécifier un SSP pour traiter la demande. Si l'application spécifie `Negotiate`, `Negotiate` analyse la demande et choisit le meilleur SSP pour gérer la demande selon la stratégie de sécurité configurée par client.  
   
- valeur à usage unique  
+ nonce  
  Valeur générée aléatoirement utilisée pour lutter contre les attaques de « lecture ».  
   
  non répudiation  
@@ -89,16 +89,16 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  PKCS #7  
  Norme de syntaxe de message de chiffrement. Syntaxe générale des données auxquelles le chiffrement peut être appliqué, telles que les signatures numériques et le chiffrement. Elle fournit également la syntaxe pour diffuser au message des certificats ou des listes de révocation de certificats et d'autres attributs de message, tels que les horodatages.  
   
- texte brut  
+ plaintext  
  Message non chiffré. Les messages en texte clair sont parfois appelés messages en *texte clair* .  
   
- privilege  
+ privilège  
  Droit d'un utilisateur à exécuter différentes opérations relatives au système, telles que l'arrêt du système, le chargement de pilotes de périphériques, ou la modification de l'heure système. Le jeton d'accès d'un utilisateur contient une liste des privilèges détenus par l'utilisateur ou le groupe d'utilisateurs.  
   
  clé privée  
  Moitié secrète d'une paire de clés utilisée dans un algorithme de clé publique. Les clés privées sont utilisées en général pour chiffrer une clé de session symétrique, signer numériquement un message ou déchiffrer un message qui a été chiffré avec la clé publique correspondante. Consultez également « clé publique ».  
   
- SAP  
+ processus  
  Contexte de sécurité dans lequel une application s'exécute. En général, le contexte de sécurité est associé à un utilisateur, donc toutes les applications qui s'exécutent dans un processus donné récupèrent les autorisations et les privilèges de l'utilisateur à qui elles appartiennent.  
   
  paire de clés publique/privée  
@@ -126,7 +126,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Protocole pour les communications réseau sécurisées à l'aide d'une combinaison de technologies de clés publique et secrète.  
   
  contexte de sécurité  
- Les attributs ou règles de sécurité qui sont actuellement en vigueur. Par exemple, l'utilisateur actuel connecté à l'ordinateur ou le code confidentiel entré par l'utilisateur d'une carte à puce. Pour le SSPI, un contexte de sécurité est une structure de données opaque qui contient des données de sécurité pertinentes à une connexion, telles qu'une clé de session ou une indication de la durée de la session.  
+ Attributs ou règles de sécurité actuellement en vigueur. Par exemple, l'utilisateur actuel connecté à l'ordinateur ou le code confidentiel entré par l'utilisateur d'une carte à puce. Pour le SSPI, un contexte de sécurité est une structure de données opaque qui contient des données de sécurité pertinentes à une connexion, telles qu'une clé de session ou une indication de la durée de la session.  
   
  principal de sécurité  
  Entité reconnue par le système de sécurité. Les entités peuvent inclure des utilisateurs humains ainsi que des processus autonomes.  
@@ -183,6 +183,6 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md)
-- [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Concepts fondamentaux de Windows Communication Foundation](../fundamental-concepts.md)
+- [Concepts de sécurité](security-concepts.md)
+- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

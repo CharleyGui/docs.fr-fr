@@ -2,21 +2,21 @@
 title: Dead Letter Queues
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: eab1c52f4d0b3d0f82cf561a9478ea8233598e1c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ea2ea530db8745c3802f9f39793ffd77ddd0008
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144946"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575288"
 ---
 # <a name="dead-letter-queues"></a>Dead Letter Queues
-Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être remis. Il est basé sur l’échantillon [de liaison DE LA MSMQ transigée.](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) Cet exemple utilise la liaison `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
+Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être remis. Il est basé sur l’exemple de [liaison MSMQ transactionnelle](transacted-msmq-binding.md) . Cet exemple utilise la liaison `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
 
 > [!NOTE]
-> Cet exemple démontre chaque file d’attente de lettre morte d’application qui n’est disponible que sur Windows Vista. L’échantillon peut être modifié pour utiliser les files d’attente à l’échelle du système par défaut pour MSMQ 3.0 sur Windows Server 2003 et Windows XP.
+> Cet exemple illustre la file d’attente de lettres mortes d’une application qui est uniquement disponible sur Windows Vista. L’exemple peut être modifié pour utiliser les files d’attente par défaut à l’ensemble du système pour MSMQ 3,0 sur Windows Server 2003 et Windows XP.
 
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.
 
@@ -30,9 +30,9 @@ Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être r
 
 - `System`  la file d'attente de lettres mortes du système est utilisée pour stocker les lettres mortes. La file d'attente de lettres mortes du système est partagée par toutes les applications exécutées sur l'ordinateur.
 
-- `Custom` : une file d'attente de lettres mortes personnalisée spécifiée à l'aide de la propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> est utilisée pour stocker des messages morts. Cette fonctionnalité n’est disponible que sur Windows Vista. Elle est utilisée lorsque l'application doit utiliser sa propre file d'attente de lettres mortes au lieu de la partager avec d'autres applications exécutées sur le même ordinateur.
+- `Custom` : une file d'attente de lettres mortes personnalisée spécifiée à l'aide de la propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> est utilisée pour stocker des messages morts. Cette fonctionnalité est disponible uniquement sur Windows Vista. Elle est utilisée lorsque l'application doit utiliser sa propre file d'attente de lettres mortes au lieu de la partager avec d'autres applications exécutées sur le même ordinateur.
 
-- La propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> permet d'exprimer la file d'attente spécifique à utiliser comme file d'attente de lettres mortes. Ceci n’est disponible que dans Windows Vista.
+- La propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> permet d'exprimer la file d'attente spécifique à utiliser comme file d'attente de lettres mortes. Disponible uniquement dans Windows Vista.
 
  Dans cet exemple, le client envoie un lot de messages au service à partir de l’étendue d’une transaction et indique un valeur arbitraire faible de durée de vie pour ces messages (approximativement 2 secondes). Le client indique également la file d'attente de lettres mortes personnalisée à utiliser pour mettre les messages qui ont expiré en file d'attente.
 
@@ -49,7 +49,7 @@ public interface IOrderProcessor
 }
 ```
 
- Le code de service de l’échantillon est celui de la [liaison MSMQ transacted](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).
+ Le code de service dans l’exemple est celui de la [liaison MSMQ traitée](transacted-msmq-binding.md).
 
  La communication avec le service a lieu dans l'étendue d'une transaction. Le service lit des messages à partir de la file d'attente, effectue l'opération puis affiche les résultats de cette dernière. L'application crée également une file d'attente de lettres mortes pour les messages de lettres mortes.
 
@@ -169,9 +169,9 @@ public void SubmitPurchaseOrder(PurchaseOrder po)
 }
 ```
 
- Les messages dans la file d'attente de lettres mortes sont des messages adressés au service qui est le traite le message. Par conséquent, lorsque le service de message mort-lettre lit les messages de la file d’attente, la couche de canal de la Fondation de communication Windows (WCF) trouve l’inadéquation dans les points de terminaison et n’envoie pas le message. Dans ce cas, le message est adressé au service de traitement des commandes mais est reçu par le service de lettres mortes. Pour recevoir un message adressé à un point de terminaison différent, un filtre d'adresse pouvant correspondre à n'importe quelle adresse est spécifié dans `ServiceBehavior`. Cela est requis pour traiter correctement les messages lus à partir de la file d'attente de lettres mortes.
+ Les messages dans la file d'attente de lettres mortes sont des messages adressés au service qui est le traite le message. Par conséquent, lorsque le service de message de lettres mortes lit des messages à partir de la file d’attente, la couche de canal Windows Communication Foundation (WCF) recherche l’incompatibilité dans les points de terminaison et ne distribue pas le message. Dans ce cas, le message est adressé au service de traitement des commandes mais est reçu par le service de lettres mortes. Pour recevoir un message adressé à un point de terminaison différent, un filtre d'adresse pouvant correspondre à n'importe quelle adresse est spécifié dans `ServiceBehavior`. Cela est requis pour traiter correctement les messages lus à partir de la file d'attente de lettres mortes.
 
- Dans cet échantillon, le service de message de lettre morte résend le message si la raison de l’échec est que le message a été chronométré. Pour toutes les autres raisons, il affiche la défaillance de livraison, comme indiqué dans le code de l’échantillon suivant :
+ Dans cet exemple, le service de message de lettres mortes renvoie le message si la raison de l’échec est que le message a expiré. Pour toutes les autres raisons, il affiche l’échec de la remise, comme indiqué dans l’exemple de code suivant :
 
 ```csharp
 // Service class that implements the service contract.
@@ -310,23 +310,23 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
 
 2. Si le service est exécuté en premier, il vérifie que la file d'attente existe. Si la file d'attente n'existe pas, le service en crée une. Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ. Procédez comme suit pour créer une file d'attente dans Windows 2008 :
 
-    1. Open Server Manager dans Visual Studio 2012.
+    1. Ouvrez Gestionnaire de serveur dans Visual Studio 2012.
 
-    2. Élargissez l’onglet **Caractéristiques.**
+    2. Développez l’onglet **fonctionnalités** .
 
-    3. Cliquez à droite **Files d’attente de messages privés**, et sélectionnez **Nouveau**, **File d’attente privée**.
+    3. Cliquez avec le bouton droit sur **files d’attente de messages privées**, puis sélectionnez **nouveau**, **file d’attente privée**.
 
-    4. Vérifiez la **case Transactionnelle.**
+    4. Activez la case à cocher **transactionnelle** .
 
-    5. Entrez `ServiceModelSamplesTransacted` comme le nom de la nouvelle file d’attente.
+    5. Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d’attente.
 
-3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-4. Pour exécuter l’échantillon dans une configuration mono-ou cross-ordinateur changer les noms de file d’attente de manière appropriée, en remplaçant localhost avec le nom complet de l’ordinateur et suivre les instructions dans [l’exécution des échantillons de la Fondation de communication Windows](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, modifiez les noms de file d’attente de manière appropriée, en remplaçant localhost par le nom complet de l’ordinateur et suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).
 
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail
 
@@ -357,6 +357,6 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\DeadLetter`  

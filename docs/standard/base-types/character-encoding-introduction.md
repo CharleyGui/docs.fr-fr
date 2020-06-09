@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 helpviewer_keywords:
 - encoding, understanding
-ms.openlocfilehash: 1b6ec6a7275408d4a8061c0de92cdf6e82dd533a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 85349e1e1c4eca4dd3ef7980f48350a4145fca24
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288041"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599865"
 ---
 # <a name="character-encoding-in-net"></a>Encodage de caractères dans .NET
 
@@ -109,7 +109,7 @@ Voici quelques exemples d’affectations de point de code, avec des liens vers l
 
 |Decimal|Hex       |Exemple|Description|
 |------:|----------|-------|-----------|
-|10     | `U+000A` |NON APPLICABLE| [SAUT DE LIGNE](https://www.unicode.org/charts/PDF/U0000.pdf) |
+|10     | `U+000A` |N/A| [SAUT DE LIGNE](https://www.unicode.org/charts/PDF/U0000.pdf) |
 |65     | `U+0061` | a | [LETTRE MINUSCULE LATINE A](https://www.unicode.org/charts/PDF/U0000.pdf) |
 |562    | `U+0232` | Ȳ | [LETTRE MAJUSCULE LATINE Y AVEC MACRON](https://www.unicode.org/charts/PDF/U0180.pdf) |
 |68 675 | `U+10C43`| 𐱃 | [ANCIENNE LETTRE TURQUE ORKHON À](https://www.unicode.org/charts/PDF/U10C00.pdf) |
@@ -250,7 +250,7 @@ Examinez les `string` instances « a », « á ». « á » et « `👩�
 
 * Le string « á » ressemble à « á », mais il est représenté par deux valeurs scalaires et contient `char` deux instances.
 
-  * `U+0065 LATIN SMALL LETTER A`
+  * `U+0061 LATIN SMALL LETTER A`
   * `U+0301 COMBINING ACUTE ACCENT`
 
 * Enfin, le string « `👩🏽‍🚒` » est représenté par quatre valeurs scalaires et contient sept `char` instances.

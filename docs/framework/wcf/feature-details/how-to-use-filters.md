@@ -2,12 +2,12 @@
 title: 'Procédure : utiliser des filtres'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-ms.openlocfilehash: 34ea961b0ef5db51efcae0b86f2c06171d6d756c
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 434171138e75a0f4c336cd80cc2beb574b10001e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81464099"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598890"
 ---
 # <a name="how-to-use-filters"></a>Procédure : utiliser des filtres
 Cette rubrique décrit les étapes de base requises pour créer une configuration de routage qui utilise plusieurs filtres. Dans cet exemple, les messages sont routés vers deux implémentations d'un service de calculatrice, regularCalc et roundingCalc. Les deux implémentations prennent en charge les mêmes opérations ; toutefois, l'un des services arrondit tous les calculs à la valeur entière la plus proche avant de les retourner. Une application cliente doit être en mesure d'indiquer s'il faut utiliser la version arrondie de ce service ; si aucune préférence de service n'est exprimée, le message est équilibré entre les deux services. Les opérations exposées par les deux services sont :  
@@ -71,7 +71,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
     </services>  
     ```  
   
-     Avec cette configuration, le service de routage expose trois points de terminaison distincts. En fonction des choix d'exécution, l'application cliente envoie des messages à l'une de ces adresses. Les messages arrivant à l’un des critères de service « virtuels » (« arrondissement/calculatrice » ou « régulier/calculatrice ») sont transmis à la mise en œuvre correspondante de la calculatrice. Si l'application cliente n'envoie pas la demande à un point de terminaison particulier, le message est adressé au point de terminaison général. Indépendamment du point de terminaison retenu, l'application cliente peut choisir également d'inclure l'en-tête personnalisé pour indiquer que le message doit être envoyé à l'implémentation de la calculatrice d'arrondi.  
+     Avec cette configuration, le service de routage expose trois points de terminaison distincts. En fonction des choix d'exécution, l'application cliente envoie des messages à l'une de ces adresses. Les messages arrivant à l’un des points de terminaison de service « virtuels » (« rounding/Calculator » ou « Regular/Calculator ») sont transmis à l’implémentation de calculatrice correspondante. Si l'application cliente n'envoie pas la demande à un point de terminaison particulier, le message est adressé au point de terminaison général. Indépendamment du point de terminaison retenu, l'application cliente peut choisir également d'inclure l'en-tête personnalisé pour indiquer que le message doit être envoyé à l'implémentation de la calculatrice d'arrondi.  
   
 2. L'exemple suivant définit les points de terminaison clients (destination) vers lesquels le service de routage route des messages.  
   
@@ -93,7 +93,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
   
 ### <a name="define-filters"></a>Définir les filtres  
   
-1. Pour acheminer les messages en fonction de l’en-tête personnalisé "RoundingCalculator" que l’application client ajoute au message, définissez un filtre qui utilise une requête XPath pour vérifier la présence de cet en-tête. Parce que cet en-tête est défini en utilisant un espace de nom personnalisé, ajoutez également une entrée namespace qui définit un préfixe personnalisé namespace de "custom" qui est utilisé dans la requête XPath. L'exemple suivant définit la section de routage nécessaire, la table d'espace de noms et le filtre XPath.  
+1. Pour acheminer les messages en fonction de l’en-tête personnalisé « RoundingCalculator » que l’application cliente ajoute au message, définissez un filtre qui utilise une requête XPath pour vérifier la présence de cet en-tête. Étant donné que cet en-tête est défini à l’aide d’un espace de noms personnalisé, ajoutez également une entrée d’espace de noms qui définit un préfixe d’espace de noms personnalisé « Custom » qui est utilisé dans la requête XPath. L'exemple suivant définit la section de routage nécessaire, la table d'espace de noms et le filtre XPath.  
   
     ```xml  
     <routing>  
@@ -110,21 +110,21 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
     </routing>  
     ```  
   
-     Ce **MessageFilter** recherche un en-tête RoundingCalculator dans le message qui contient une valeur de "arrondi". Cet en-tête est défini par le client pour indiquer que le message doit être routé vers le service roundingCalc.  
+     Ce **MessageFilter** recherche un en-tête RoundingCalculator dans le message qui contient la valeur « arrondissement ». Cet en-tête est défini par le client pour indiquer que le message doit être routé vers le service roundingCalc.  
   
     > [!NOTE]
-    > Le préfixe s12 namespace est défini par défaut dans `http://www.w3.org/2003/05/soap-envelope`le tableau namespace, et représente l’espace nom .
+    > Le préfixe d’espace de noms S12 est défini par défaut dans la table d’espace de noms et représente l’espace de noms `http://www.w3.org/2003/05/soap-envelope` .
   
-2. Vous devez également définir des filtres qui recherchent des messages reçus sur les deux points de terminaison virtuels. Le premier critère d’évaluation virtuel est le point de terminaison « régulier/calculateur ». Le client peut envoyer des demandes à ce point de terminaison pour indiquer que le message doit être routé vers le service regularCalc. La configuration suivante définit un filtre qui utilise l'objet <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> pour déterminer si le message est arrivé par un point de terminaison dont le nom est spécifié dans FilterData.  
+2. Vous devez également définir des filtres qui recherchent des messages reçus sur les deux points de terminaison virtuels. Le premier point de terminaison virtuel est le point de terminaison « Regular/Calculator ». Le client peut envoyer des demandes à ce point de terminaison pour indiquer que le message doit être routé vers le service regularCalc. La configuration suivante définit un filtre qui utilise l'objet <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> pour déterminer si le message est arrivé par un point de terminaison dont le nom est spécifié dans FilterData.  
   
     ```xml  
     <!--define an endpoint name filter looking for messages that show up on the virtual regular calculator endpoint-->  
     <filter name="EndpointNameFilter" filterType="EndpointName" filterData="calculatorEndpoint"/>  
     ```  
   
-     Si un message est reçu par le point de terminaison `true`de service nommé « calculatorEndpoint », ce filtre évalue à .  
+     Si un message est reçu par le point de terminaison de service nommé « calculatorEndpoint », ce filtre prend la valeur `true` .  
   
-3. Ensuite, définissez un filtre qui recherche les messages envoyés à l'adresse du roundingEndpoint. Le client peut envoyer des demandes à ce point de terminaison pour indiquer que le message doit être routé vers le service roundingCalc. La configuration suivante définit un <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> filtre qui utilise le pour déterminer si le message est arrivé au point de terminaison "arrondi/calculatrice".  
+3. Ensuite, définissez un filtre qui recherche les messages envoyés à l'adresse du roundingEndpoint. Le client peut envoyer des demandes à ce point de terminaison pour indiquer que le message doit être routé vers le service roundingCalc. La configuration suivante définit un filtre qui utilise <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> pour déterminer si le message est arrivé au point de terminaison « arrondi/calculatrice ».  
   
     ```xml  
     <!--define a filter looking for messages that show up with the address prefix.  The corresponds to the rounding calc virtual endpoint-->  
@@ -132,7 +132,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
             filterData="http://localhost/routingservice/router/rounding/"/>  
     ```  
   
-     Si un message est reçu à `http://localhost/routingservice/router/rounding/` une adresse qui commence par alors ce filtre évalue à **vrai**. Étant donné que l’adresse `http://localhost/routingservice/router` de base utilisée par cette configuration est et que l’adresse spécifiée pour `http://localhost/routingservice/router/rounding/calculator`le point d’arrondissement est « arrondi/calculatrice », l’adresse complète utilisée pour communiquer avec ce point de terminaison est, qui correspond à ce filtre.  
+     Si un message est reçu à une adresse qui commence par `http://localhost/routingservice/router/rounding/` , ce filtre prend la **valeur true**. Étant donné que l’adresse de base utilisée par cette configuration est `http://localhost/routingservice/router` et que l’adresse spécifiée pour le roundingEndpoint est « arrondi/calculatrice », l’adresse complète utilisée pour communiquer avec ce point de terminaison est `http://localhost/routingservice/router/rounding/calculator` , qui correspond à ce filtre.  
   
     > [!NOTE]
     > Le filtre PrefixEndpointAddress n'évalue pas le nom d'hôte lorsqu'il effectue une correspondance, parce qu'il peut être fait référence à un hôte unique à l'aide de divers noms d'hôte qui tous peuvent constituer des moyens valides de faire référence à l'hôte à partir de l'application cliente. Par exemple, tous les éléments suivants peuvent faire référence au même hôte :  
@@ -142,7 +142,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
     > - `www.contoso.com`  
     > - ContosoWeb01  
   
-4. Le filtre définitif doit prendre en charge le routage des messages qui arrivent au point de terminaison général sans en-tête personnalisé. Pour ce scénario, les messages doivent alterner entre les services roundingCalc et regularCalc. Pour prendre en charge le routage « round robin » de ces messages, utilisez un filtre personnalisé qui permet à une instance de filtre de correspondre à chaque message traité.  Les éléments suivants définissent deux instances d'un RoundRobinMessageFilter, qui sont regroupées pour indiquer qu'elles doivent alterner entre elles.  
+4. Le filtre définitif doit prendre en charge le routage des messages qui arrivent au point de terminaison général sans en-tête personnalisé. Pour ce scénario, les messages doivent alterner entre les services roundingCalc et regularCalc. Pour prendre en charge le routage par tourniquet (Round Robin) de ces messages, utilisez un filtre personnalisé qui permet à une instance de filtre de correspondre pour chaque message traité.  Les éléments suivants définissent deux instances d'un RoundRobinMessageFilter, qui sont regroupées pour indiquer qu'elles doivent alterner entre elles.  
   
     ```xml  
     <!-- Set up the custom message filters.  In this example,   
@@ -156,7 +156,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
                     filterData="group1"/>  
     ```  
   
-     Au moment de l’exécution, ce type de filtre alterne entre toutes les instances de filtre définies de ce type qui sont configurées comme un même groupe dans une collection. Cela provoque des messages traités par `true` ce `RoundRobinFilter1` `RoundRobinFilter2`filtre personnalisé à alterner entre le retour pour et .  
+     Au moment de l’exécution, ce type de filtre alterne entre toutes les instances de filtre définies de ce type qui sont configurées comme un même groupe dans une collection. Cela entraîne le remplacement des messages traités par ce filtre personnalisé entre le retour `true` de `RoundRobinFilter1` et de `RoundRobinFilter2` .  
   
 ### <a name="define-filter-tables"></a>Définir des tables de filtres  
   
@@ -165,7 +165,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
     > [!NOTE]
     > Si la spécification d'une priorité de filtre vous permet de contrôler l'ordre dans lequel les filtres sont traités, elle peut aussi nuire aux performances du service de routage. Si possible, construisez la logique de filtre de manière à ne pas être obligé de recourir aux priorités de filtre.  
   
-     Ce qui suit définit la table de filtre et ajoute le "XPathFilter" défini plus tôt à la table avec une priorité de 2. Cette entrée précise également que `XPathFilter` si le message correspond au message, le message sera acheminé vers le `roundingCalcEndpoint`.  
+     Les éléments suivants définissent la table de filtres et ajoutent la valeur « XPathFilter » définie précédemment à la table, avec une priorité de 2. Cette entrée spécifie également que si le `XPathFilter` correspond au message, le message est routé vers le `roundingCalcEndpoint` .  
   
     ```xml  
     <routing>  
@@ -327,4 +327,4 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Services de routage](../../../../docs/framework/wcf/samples/routing-services.md)
+- [Services de routage](../samples/routing-services.md)

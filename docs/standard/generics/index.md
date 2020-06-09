@@ -1,5 +1,6 @@
 ---
 title: Génériques en .NET
+description: En savoir plus sur les génériques dans .NET. Définissez & utiliser des génériques, Découvrez leurs avantages & les inconvénients, Découvrez la prise en charge des langages & de la bibliothèque de classes, et bien plus encore.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -26,12 +27,12 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: d7f606126237d4d045f55dde03c125455c8a8634
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 91bb96c04c8a5d410f0a88c7e8eedf622fe66c94
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84275956"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599813"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
@@ -144,7 +145,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
 |[Introduction aux génériques](../../csharp/programming-guide/generics/index.md)|Fournit une vue d'ensemble de la définition et de l'utilisation des types génériques pour les utilisateurs de C#.|  
 |[Vue d’ensemble des génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Explique la fonction des génériques pour les utilisateurs C++, y compris les différences entre les génériques et les modèles.|  
 
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Collections.Generic>  
   
  <xref:System.Collections.ObjectModel>  

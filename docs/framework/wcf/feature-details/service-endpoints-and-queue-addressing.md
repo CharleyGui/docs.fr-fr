@@ -2,17 +2,17 @@
 title: Points de terminaison de service et adressage de files d'attente
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: 8b323993a698dac219e0f2be43e9b508a19065dd
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: a17e680732cd257fbdfd95eb09df8c53f5894400
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202423"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600385"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Points de terminaison de service et adressage de files d'attente
 Cette rubrique discute comment les clients adressent des services qui lisent à partir des files d'attente et comment les points de terminaison de service mappent aux files d'attente. En guise de rappel, l’illustration suivante montre le déploiement d’applications en file d’attente Classic Windows Communication Foundation (WCF).  
   
- ![Diagramme d'application mise en file d'attente](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "File d’attente distribuée-figure")  
+ ![Diagramme d'application mise en file d'attente](media/distributed-queue-figure.jpg "File d’attente distribuée-figure")  
   
  Pour pouvoir adresser le message au service, le client adresse le message à la file d'attente cible. Pour pouvoir lire des messages depuis la file d'attente, il définit son adresse d'écoute à la file d'attente cible. L’adressage dans WCF est Uniform Resource Identifier (URI), tandis que les noms de files d’attente Message Queuing (MSMQ) ne sont pas basés sur un URI. C’est pourquoi il est essentiel de comprendre comment traiter les files d’attente créées dans MSMQ à l’aide de WCF.  
   
@@ -46,7 +46,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  L'adresse de la file d'attente est utilisée comme URI d'écoute par l'écouteur pour la lecture des messages. En d'autres termes, l'adresse de la file d'attente est équivalente au port d'écoute de socket TCP.  
   
- Un point de terminaison qui lit à partir d'une file d'attente doit spécifier l'adresse de la file d'attente à l'aide du même schéma que celui spécifié précédemment lors de l'ouverture du ServiceHost. Pour obtenir des exemples, consultez [liaison net MSMQ](../../../../docs/framework/wcf/samples/net-msmq-binding.md).  
+ Un point de terminaison qui lit à partir d'une file d'attente doit spécifier l'adresse de la file d'attente à l'aide du même schéma que celui spécifié précédemment lors de l'ouverture du ServiceHost. Pour obtenir des exemples, consultez [liaison net MSMQ](../samples/net-msmq-binding.md).  
   
 ### <a name="multiple-contracts-in-a-queue"></a>Contrats multiples dans une file d'attente  
  Les messages dans une file d'attente peuvent implémenter des contrats différents. Dans ce cas, il est essentiel que l'une des conditions suivantes soit remplie pour lire et traiter avec succès tous les messages :  
@@ -89,7 +89,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  NET. msmq://localhost/[Private/] \<*custom-dead-letter-queue-name*> .  
   
- Un service WCF vérifie que tous les messages qu’il reçoit ont été adressés à la file d’attente particulière sur laquelle il écoute. Si la file d'attente de destination du message ne correspond pas à la file d'attente dans laquelle il se trouve, le service ne traite pas le message. Il s'agit d'un problème que les services qui écoutent une file d'attente de lettres mortes doivent être capables de gérer car tout message présent dans la file d'attente de lettres mortes était destiné à être remis autre part. Pour lire des messages à partir d'une file d'attente de lettres mortes ou d'une file d'attente de messages incohérents, un `ServiceBehavior` avec le paramètre <xref:System.ServiceModel.AddressFilterMode.Any> doit être utilisé. Pour obtenir un exemple, consultez [files d’attente de lettres mortes](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
+ Un service WCF vérifie que tous les messages qu’il reçoit ont été adressés à la file d’attente particulière sur laquelle il écoute. Si la file d'attente de destination du message ne correspond pas à la file d'attente dans laquelle il se trouve, le service ne traite pas le message. Il s'agit d'un problème que les services qui écoutent une file d'attente de lettres mortes doivent être capables de gérer car tout message présent dans la file d'attente de lettres mortes était destiné à être remis autre part. Pour lire des messages à partir d'une file d'attente de lettres mortes ou d'une file d'attente de messages incohérents, un `ServiceBehavior` avec le paramètre <xref:System.ServiceModel.AddressFilterMode.Any> doit être utilisé. Pour obtenir un exemple, consultez [files d’attente de lettres mortes](../samples/dead-letter-queues.md).  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding et adressage de service  
  Le `MsmqIntegrationBinding` est utilisé pour la communication avec les applications MSMQ traditionnelles. Pour faciliter l’interopérabilité avec une application MSMQ existante, WCF prend uniquement en charge l’adressage de nom de format. Par conséquent, les messages envoyés à l’aide de cette liaison doivent se conformer au schéma d’URI suivant :  
@@ -106,4 +106,4 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Hébergement sur le Web d'une application en file d'attente](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+- [Hébergement sur le Web d'une application en file d'attente](web-hosting-a-queued-application.md)

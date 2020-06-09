@@ -2,34 +2,34 @@
 title: Découverte (exemples)
 ms.date: 03/30/2017
 ms.assetid: 522a00b4-a789-4e8c-b8d7-a4c3d863a182
-ms.openlocfilehash: bf01e3fec15ddae0d0901b3c2dc91d3d6109fc97
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb5471db6f4feb61798926ae1466a3bebac7e959
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772916"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600579"
 ---
 # <a name="discovery-samples"></a>Découverte (exemples)
 Cette section contient des exemples liés à la fonctionnalité Découverte.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Annonces](../../../../docs/framework/wcf/samples/announcements-sample.md)  
+ [Annonces](announcements-sample.md)  
  Montre comment utiliser des annonces avec la fonctionnalité de découverte.  
   
- [Basic](../../../../docs/framework/wcf/samples/basic-sample.md)  
+ [De base](basic-sample.md)  
  Montre comment rendre un service détectable par programmation et comment le rechercher à l'aide du <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  
   
- [Configuration](../../../../docs/framework/wcf/samples/configuration-sample.md)  
+ [Configuration](configuration-sample.md)  
  Montre comment utiliser un fichier de configuration pour rendre un service détectable et comment utiliser un <xref:System.ServiceModel.Discovery.DynamicEndpoint> via la configuration pour rechercher ce service.  
   
- [Découverte avec étendues](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
+ [Découverte avec étendues](discovery-with-scopes-sample.md)  
  Montre comment utiliser des portées pour catégoriser des points de terminaison détectables et comment utiliser <xref:System.ServiceModel.Discovery.DiscoveryClient> pour rechercher des points de terminaison de façon asynchrone.  
   
- [Critères de recherche personnalisés](../../../../docs/framework/wcf/samples/custom-find-criteria.md)  
+ [Custom Find Criteria](custom-find-criteria.md)  
  Montre comment créer une correspondance de portée personnalisée à l'aide de la logique et comment implémenter un service de découverte personnalisé.  
   
- [Exemple de découverte de workflow](../../../../docs/framework/wcf/samples/workflow-discovery-sample.md)  
+ [Exemple Workflow Discovery](workflow-discovery-sample.md)  
  Montre comment rendre un service de workflow détectable et comment créer une activité de code personnalisée qui recherche un service particulier.  
   
- [Service de routeur de découverte](../../../../docs/framework/wcf/samples/discovery-router-service.md)  
+ [Discovery Router Service](discovery-router-service.md)  
  Montre comment transférer des messages de découverte à un autre point de terminaison.

@@ -2,15 +2,15 @@
 title: Protocoles de transaction version 1.0
 ms.date: 03/30/2017
 ms.assetid: 034679af-0002-402e-98a8-ef73dcd71bb6
-ms.openlocfilehash: 6063c643be4c60e9830a020d10ac9fbcd236dac2
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: f725361b9a90c9336b763cc7f292ae043e445966
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144771"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598708"
 ---
 # <a name="transaction-protocols-version-10"></a>Protocoles de transaction version 1.0
-Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de la transaction WS-Atomic et les protocoles WS-coordination. Pour plus d’informations sur la version 1,1, consultez [protocoles de transaction](../../../../docs/framework/wcf/feature-details/transaction-protocols.md).  
+Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de la transaction WS-Atomic et les protocoles WS-coordination. Pour plus d’informations sur la version 1,1, consultez [protocoles de transaction](transaction-protocols.md).  
   
 |Spécification/Document|Lien|  
 |-----------------------------|----------|  
@@ -99,7 +99,7 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
 #### <a name="activation-message-binding-configuration"></a>Configuration de liaison de message d’activation  
  En général, les messages d’activation ne participent pas à l’interopérabilité car ils se produisent habituellement entre une application et son gestionnaire de transactions local.  
   
- B1221 : WCF utilise la liaison HTTPs duplex (décrite dans [protocoles de messagerie](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) pour les messages d’activation. Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08.  
+ B1221 : WCF utilise la liaison HTTPs duplex (décrite dans [protocoles de messagerie](messaging-protocols.md)) pour les messages d’activation. Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08.  
   
  La spécification WS-Atomic Transaction, section 8, fournit des informations supplémentaires sur la corrélation et les modèles d'échange de messages.  
   
@@ -110,11 +110,11 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
  Un nouvel `t:IssuedTokens` en-tête doit être généré pour être attaché au `wscoor:CreateCoordinationContextResponse` message sortant.  
   
 #### <a name="registration-message-binding-configuration"></a>Configuration de liaison de message d'inscription  
- B1231 : WCF utilise la liaison HTTPs duplex (décrite dans [protocoles de messagerie](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)). Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08.  
+ B1231 : WCF utilise la liaison HTTPs duplex (décrite dans [protocoles de messagerie](messaging-protocols.md)). Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08.  
   
  WS-AtomicTransaction, section 8, fournit des informations supplémentaires sur la corrélation et des descriptions des modèles d’échange de messages.  
   
- R1232 : `wscoor:Register` les messages sortants doivent utiliser le `IssuedTokenOverTransport` mode d’authentification décrit dans [protocoles de sécurité](../../../../docs/framework/wcf/feature-details/security-protocols.md).  
+ R1232 : `wscoor:Register` les messages sortants doivent utiliser le `IssuedTokenOverTransport` mode d’authentification décrit dans [protocoles de sécurité](security-protocols.md).  
   
  L' `wsse:Timestamp` élément doit être signé à l’aide du `SecurityContextToken STx` émis. Cette signature est une preuve de possession du jeton associée à une transaction spécifique et est utilisée pour authentifier un participant qui s’inscrit à la transaction. Le message RegistrationResponse est renvoyé sur HTTPS.  
   
@@ -250,7 +250,7 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
 ### <a name="registration-messages"></a>Messages d'inscription  
  Les messages suivants sont des messages d'inscription.  
   
-#### <a name="register"></a>S’inscrire  
+#### <a name="register"></a>Inscrire  
   
 ```xml  
 <s:Envelope>  

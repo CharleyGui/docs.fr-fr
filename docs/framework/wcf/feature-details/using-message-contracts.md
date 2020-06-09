@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
-ms.openlocfilehash: 18d0ea97f1de40044d40fa85c9792c809fb73346
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1b102b97c62df0bb8b031ded0f9165a11f8a8911
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959883"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600268"
 ---
 # <a name="using-message-contracts"></a>Utilisation de contrats de message
-En général, lors de la création d’applications Windows Communication Foundation (WCF), les développeurs prêtent une attention particulière aux structures de données et aux problèmes de sérialisation, et n’ont pas besoin de se préoccuper de la structure des messages dans lesquels les données sont transportées. Pour ces applications, créer des contrats de données pour les paramètres ou les valeurs de retour est une procédure simple. (Pour plus d’informations, consultez [spécification d’transfert de données dans les contrats de service](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  
+En général, lors de la création d’applications Windows Communication Foundation (WCF), les développeurs prêtent une attention particulière aux structures de données et aux problèmes de sérialisation, et n’ont pas besoin de se préoccuper de la structure des messages dans lesquels les données sont transportées. Pour ces applications, créer des contrats de données pour les paramètres ou les valeurs de retour est une procédure simple. (Pour plus d’informations, consultez [spécification d’transfert de données dans les contrats de service](specifying-data-transfer-in-service-contracts.md).)  
   
  Toutefois, le contrôle complet sur la structure d'un message SOAP est parfois aussi important que celui sur son contenu. Cela se vérifie tout particulièrement lorsque l'interopérabilité est importante ou pour contrôler spécifiquement des problèmes de sécurité au niveau du message ou de la partie de message. Dans ce cas, vous pouvez créer un *contrat de message* qui vous permet de spécifier la structure du message SOAP précis requis.  
   
@@ -31,7 +31,7 @@ En général, lors de la création d’applications Windows Communication Founda
 public BankingTransactionResponse PostBankingTransaction(BankingTransaction bt);  
 ```  
   
- Habituellement, un contrat de données est suffisant pour définir le schéma des messages. Par exemple, cela est suffisant pour la plupart des applications dans l'exemple précédent si `BankingTransaction` et `BankingTransactionResponse` ont des contrats de données pour définir le contenu des messages SOAP sous-jacents. Pour plus d’informations sur les contrats de données, consultez [utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Habituellement, un contrat de données est suffisant pour définir le schéma des messages. Par exemple, cela est suffisant pour la plupart des applications dans l'exemple précédent si `BankingTransaction` et `BankingTransactionResponse` ont des contrats de données pour définir le contenu des messages SOAP sous-jacents. Pour plus d’informations sur les contrats de données, consultez [utilisation de contrats de données](using-data-contracts.md).  
   
  Toutefois, il peut parfois s'avérer nécessaire de contrôler de manière précise la façon dont la structure du message SOAP est transmise sur le réseau. Le scénario le plus courant dans ce cas consiste à insérer des en-têtes SOAP personnalisés. Un autre consiste à définir des propriétés de sécurité pour le corps et les en-têtes du message, c'est à-dire, à déterminer si ces éléments sont chiffrés et signés numériquement. Enfin, certaines piles SOAP tiers requièrent que les messages soient dans un format spécifique. Les opérations de style de messagerie fournissent ce contrôle.  
   
@@ -154,7 +154,7 @@ public class BankingTransaction
 > La présence de plusieurs parties de corps de messages non encapsulées n'est pas conforme à WS-I Basic Profile 1.1 et n'est pas recommandée lors de la conception de nouveaux contrats de message. Toutefois, il peut s'avérer nécessaire d'avoir plusieurs parties de corps du message non encapsulées dans certains scénarios d'interopérabilité spécifiques. Si vous prévoyez de transmettre plusieurs éléments de données dans un corps de message, il est recommandé d'utiliser le mode (encapsulé) par défaut. La présence de plusieurs en-têtes de message dans des messages non encapsulés est complètement acceptable.  
   
 ## <a name="using-custom-types-inside-message-contracts"></a>Utilisation de types personnalisés dans des contrats de message  
- Chaque partie de corps de message et en-tête de message individuel est sérialisé (converti en XML) à l'aide du moteur de sérialisation choisi du contrat de service dans lequel le message est utilisé. Le moteur de sérialisation par défaut, `XmlFormatter`, peut gérer n'importe quel type ayant un contrat de données, soit explicitement (en ayant <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>) ou implicitement (en étant un type primitif, en ayant <xref:System.SerializableAttribute?displayProperty=nameWithType>, etc.). Pour plus d’informations, consultez [utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Chaque partie de corps de message et en-tête de message individuel est sérialisé (converti en XML) à l'aide du moteur de sérialisation choisi du contrat de service dans lequel le message est utilisé. Le moteur de sérialisation par défaut, `XmlFormatter`, peut gérer n'importe quel type ayant un contrat de données, soit explicitement (en ayant <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>) ou implicitement (en étant un type primitif, en ayant <xref:System.SerializableAttribute?displayProperty=nameWithType>, etc.). Pour plus d’informations, consultez [utilisation de contrats de données](using-data-contracts.md).  
   
  Dans l'exemple précédent, les types `Operation` et `BankingTransactionData` doivent avoir un contrat de données, et `transactionDate` est sérialisable car <xref:System.DateTime> est un type primitif (et a ainsi un contrat de données implicite).  
   
@@ -250,7 +250,7 @@ public class PatientRecord
   
 - `Relay`  
   
- L'attribut `Actor` ou `Role` spécifie l'URI (Uniform Resource Identifier) du nœud auquel un en-tête donné est destiné. L'attribut `MustUnderstand` spécifie si le nœud qui traite cet en-tête doit le comprendre. L'attribut `Relay` spécifie si l'en-tête sera relayé aux nœuds en aval. WCF n’effectue aucun traitement de ces attributs sur les messages entrants, à l' `MustUnderstand` exception de l’attribut, tel que spécifié dans la section «contrôle de version des contrats de message» plus loin dans cette rubrique. Toutefois, il vous permet de lire et d'écrire ces attributs si nécessaire, comme dans la description suivante.  
+ L'attribut `Actor` ou `Role` spécifie l'URI (Uniform Resource Identifier) du nœud auquel un en-tête donné est destiné. L'attribut `MustUnderstand` spécifie si le nœud qui traite cet en-tête doit le comprendre. L'attribut `Relay` spécifie si l'en-tête sera relayé aux nœuds en aval. WCF n’effectue aucun traitement de ces attributs sur les messages entrants, à l’exception de l' `MustUnderstand` attribut, tel que spécifié dans la section « contrôle de version des contrats de message » plus loin dans cette rubrique. Toutefois, il vous permet de lire et d'écrire ces attributs si nécessaire, comme dans la description suivante.  
   
  Lors de l'envoi d'un message, ces attributs ne sont pas émis par défaut. Vous pouvez modifier ce paramètre de deux façons : La première méthode consiste à affecter statiquement aux attributs les valeurs souhaitées en modifiant les propriétés <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A?displayProperty=nameWithType> et <xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A?displayProperty=nameWithType>, tel qu'indiqué dans l'exemple de code suivant. (Notez qu'il n'y a pas de propriété `Role` ; la définition de la propriété <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> entraîne l'émission de l'attribut `Role` si vous utilisez SOAP 1.2).  
   
@@ -303,7 +303,7 @@ bt.documentApprover.MustUnderstand = false; // override the static default of 't
  Lorsqu'un message est reçu puis renvoyé, les paramètres d'attribut SOAP font l'aller-retour uniquement pour les en-têtes du type <xref:System.ServiceModel.MessageHeader%601>.  
   
 ## <a name="order-of-soap-body-parts"></a>Ordre des parties de corps SOAP  
- Dans certains cas, il peut s'avérer nécessaire de contrôler l'ordre des parties du corps. L'ordre des éléments du corps est alphabétique par défaut, mais peut être contrôlé par la propriété <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A?displayProperty=nameWithType>. Cette propriété a la même sémantique que la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A?displayProperty=nameWithType>, à l'exception du comportement dans les scénarios d'héritage (dans les contrats de message, les membres du corps du type de base ne sont pas triés avant les membres du corps du type dérivé). Pour plus d’informations, consultez [commande des membres de données](../../../../docs/framework/wcf/feature-details/data-member-order.md).  
+ Dans certains cas, il peut s'avérer nécessaire de contrôler l'ordre des parties du corps. L'ordre des éléments du corps est alphabétique par défaut, mais peut être contrôlé par la propriété <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A?displayProperty=nameWithType>. Cette propriété a la même sémantique que la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A?displayProperty=nameWithType>, à l'exception du comportement dans les scénarios d'héritage (dans les contrats de message, les membres du corps du type de base ne sont pas triés avant les membres du corps du type dérivé). Pour plus d’informations, consultez [commande des membres de données](data-member-order.md).  
   
  Dans l'exemple suivant, `amount` viendrait normalement en premier car c'est le premier dans l'ordre alphabétique. Cependant, la propriété <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A> le met en troisième position.  
   
@@ -323,7 +323,7 @@ public class BankingTransaction
   
  Les règles suivantes s'appliquent pour le contrôle de version des en-têtes :  
   
-- WCF n’objet pas les en-têtes manquants: les membres correspondants sont conservés à leurs valeurs par défaut.  
+- WCF n’objet pas les en-têtes manquants : les membres correspondants sont conservés à leurs valeurs par défaut.  
   
 - WCF ignore également les en-têtes supplémentaires inattendus. La seule exception à cette règle est si l'en-tête supplémentaire a un attribut `MustUnderstand` défini à `true` dans le message SOAP entrant ; dans ce cas, une exception est levée car un en-tête qui doit être compris ne peut pas être traité.  
   
@@ -359,7 +359,7 @@ public class PatientRecord : PersonRecord
  La classe `PatientRecord` décrit un message avec un en-tête appelé `ID`. L'en-tête correspond à `personID` et non pas au membre `patientID`, car le membre le plus de base est choisi. Par conséquent, le champ `patientID` est inutile dans ce cas. Le corps du message contient l'élément `diagnosis` suivi par l'élément `patientName`, car il s'agit de l'ordre alphabétique. Notez que l'exemple présente un modèle qui est fortement déconseillé : les contrats de message de base et dérivés ont tous deux des parties de corps de message.  
   
 ## <a name="wsdl-considerations"></a>Considérations sur WSDL  
- Lors de la génération d’un contrat WSDL (Web Services Description Language) à partir d’un service qui utilise des contrats de message, il est important de se souvenir que les fonctionnalités de contrat de message ne sont pas toutes répercutées dans le WSDL résultant. Considérez les points suivants :  
+ Lors de la génération d’un contrat WSDL (Web Services Description Language) à partir d’un service qui utilise des contrats de message, il est important de se souvenir que les fonctionnalités de contrat de message ne sont pas toutes répercutées dans le WSDL résultant. Observez les points suivants :  
   
 - WSDL ne peut pas exprimer le concept d'un tableau d'en-têtes. Lors de la création de messages avec un tableau d'en-têtes à l'aide de <xref:System.ServiceModel.MessageHeaderArrayAttribute>, le WSDL résultant ne reflète qu'un seul en-tête au lieu du tableau.  
   
@@ -409,7 +409,7 @@ public class PatientRecord : PersonRecord
   
  Après avoir sérialisé le message à l'aide de l'encodage SOAP, `changedFrom` et `changedTo` ne contiennent pas leurs propres copies de `p`, mais pointent à la place sur la copie à l'intérieur de l'élément `changedBy`.  
   
-## <a name="performance-considerations"></a>Considérations sur les performances  
+## <a name="performance-considerations"></a>Considérations relatives aux performances  
  Chaque partie de corps du message et en-tête de message est sérialisé indépendamment des autres. Par conséquent, des espaces de noms identiques peuvent être à nouveau déclarés pour chaque en-tête et partie du corps. Pour améliorer les performances, tout particulièrement en termes de taille du message sur le câble, consolidez plusieurs en-têtes et parties de corps dans un en-tête ou une partie de corps unique. Par exemple, à la place du code suivant :  
   
 ```csharp  
@@ -449,5 +449,5 @@ public class OperationDetails
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [Conception et implémentation de services](../../../../docs/framework/wcf/designing-and-implementing-services.md)
+- [Using Data Contracts](using-data-contracts.md)
+- [Conception et implémentation de services](../designing-and-implementing-services.md)
