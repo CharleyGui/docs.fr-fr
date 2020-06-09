@@ -1,5 +1,5 @@
 ---
-title: Débogage d'erreurs d'authentification Windows.
+title: Débogage d'erreurs d'authentification Windows
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 4a5e56f6b7f33a4c6f29aa384635737eeee37ddd
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: eb3274b98234324bd47aa456feb4845da5a7f3a9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77095032"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599280"
 ---
 # <a name="debug-windows-authentication-errors"></a>Erreurs d’authentification Windows de débogage
 
@@ -37,11 +37,11 @@ Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurit
   
  Les en-têtes du tableau présentent les types de compte possibles utilisés par le serveur. La colonne de gauche présente les types de compte possibles utilisés par le client.  
   
-||Utilisateur local|Système Local|Utilisateur du domaine|Ordinateur de domaine|  
+||Utilisateur local|Système Local|Utilisateur de domaine|Ordinateur de domaine|  
 |-|----------------|------------------|-----------------|--------------------|  
 |Utilisateur local|NTLM|NTLM|NTLM|NTLM|  
 |Système Local|NTLM anonyme|NTLM anonyme|NTLM anonyme|NTLM anonyme|  
-|Utilisateur du domaine|NTLM|NTLM|Kerberos|Kerberos|  
+|Utilisateur de domaine|NTLM|NTLM|Kerberos|Kerberos|  
 |Ordinateur de domaine|NTLM|NTLM|Kerberos|Kerberos|  
   
  Plus précisément, les quatre types de comptes incluent :  
@@ -63,7 +63,7 @@ Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurit
 ### <a name="kerberos-protocol"></a>Protocole Kerberos  
   
 #### <a name="spnupn-problems-with-the-kerberos-protocol"></a>Problèmes de SPN/UPN rencontrés avec le protocole Kerberos  
- Si vous utilisez l'authentification Windows, et que le protocole Kerberos est utilisé ou négocié par SSPI, l'URL utilisée par le point de terminaison client doit inclure le nom de domaine complet de l'hôte du service dans l'URL de service. Cela suppose que le compte sous lequel le service s’exécute a accès à la clé du nom de principal du service (SPN) de l’ordinateur (par défaut) qui est créée lorsque l’ordinateur est ajouté au domaine Active Directory, ce qui est le plus souvent effectué en exécutant le service sous le Compte de service réseau. Si le service n'a pas accès à la clé SPN de l'ordinateur, vous devez fournir le SPN correct ou un nom d'utilisateur principal (UPN, User Principal Name) du compte sous lequel le service s'exécute dans l'identité de point de terminaison du client. Pour plus d’informations sur le fonctionnement de WCF avec SPN et UPN, consultez [identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Si vous utilisez l'authentification Windows, et que le protocole Kerberos est utilisé ou négocié par SSPI, l'URL utilisée par le point de terminaison client doit inclure le nom de domaine complet de l'hôte du service dans l'URL de service. Cela suppose que le compte sous lequel le service s'exécute a accès à la clé SPN (Service Principal Name) par défaut de l'ordinateur créée lorsque celui-ci est ajouté au domaine Active Directory, ce qui s'effectue le plus souvent en exécutant le service sous le compte Service Réseau. Si le service n'a pas accès à la clé SPN de l'ordinateur, vous devez fournir le SPN correct ou un nom d'utilisateur principal (UPN, User Principal Name) du compte sous lequel le service s'exécute dans l'identité de point de terminaison du client. Pour plus d’informations sur le fonctionnement de WCF avec SPN et UPN, consultez [identité du service et authentification](service-identity-and-authentication.md).  
   
  Dans les scénarios d'équilibrage de charge, tels que les batteries de serveurs Web ou les jardins Web, une pratique courante consiste à définir un compte unique pour chaque application, assigner un SPN à ce compte et veiller à ce que tous les services de l'application s'exécutent sous ce compte.  
   
@@ -94,12 +94,12 @@ Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurit
   
     1. Effectuez cette opération dans le code, à l'aide de l'instruction suivante : `ChannelFactory.Credentials.Windows.AllowNtlm = false`  
   
-    2. Vous pouvez également effectuer cette opération dans le fichier de configuration en affectant `allowNtlm` à l'attribut `false`. Cet attribut est contenu dans le [\<windows >](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md).  
+    2. Vous pouvez également effectuer cette opération dans le fichier de configuration en affectant `allowNtlm` à l'attribut `false`. Cet attribut est contenu dans le [\<windows>](../../configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md) .  
   
 ### <a name="ntlm-protocol"></a>Protocole NTLM  
   
 #### <a name="negotiate-ssp-falls-back-to-ntlm-but-ntlm-is-disabled"></a>Négociation du retour de SSP à NTLM, mais NTLM est désactivé  
- La propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> est définie sur `false`, ce qui amène Windows Communication Foundation (WCF) à lever un meilleur effort pour lever une exception si NTLM est utilisé. Si vous affectez à cette propriété la valeur `false`, vous risquez de ne pas empêcher l’envoi des informations d’identification NTLM sur le réseau.  
+ La <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> propriété a la valeur `false` , ce qui amène Windows Communication Foundation (WCF) à lever un meilleur effort pour lever une exception si NTLM est utilisé. L’affectation de la valeur à cette propriété `false` peut ne pas empêcher l’envoi des informations d’identification NTLM sur le réseau.  
   
  La section suivante indique comment désactiver le retour à NTLM.  
   
@@ -122,7 +122,7 @@ Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurit
  [!code-csharp[C_DebuggingWindowsAuth#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_debuggingwindowsauth/cs/source.cs#6)]
  [!code-vb[C_DebuggingWindowsAuth#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#6)]  
   
- Pour plus d’informations sur l’emprunt d’identité, consultez [délégation et emprunt d’identité](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Pour plus d’informations sur l’emprunt d’identité, consultez [délégation et emprunt d’identité](delegation-and-impersonation-with-wcf.md).  
   
  Le client s'exécute également en tant que service Windows, à l'aide du compte intégré SYSTEM.  
   
@@ -151,5 +151,5 @@ Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurit
 - <xref:System.ServiceModel.Security.WindowsServiceCredential>
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
 - <xref:System.ServiceModel.ClientBase%601>
-- [Délégation et emprunt d’identité](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)
-- [Scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+- [Délégation et emprunt d'identité](delegation-and-impersonation-with-wcf.md)
+- [Scénarios non pris en charge](unsupported-scenarios.md)

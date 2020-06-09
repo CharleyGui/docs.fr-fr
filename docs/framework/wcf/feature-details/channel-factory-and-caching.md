@@ -2,12 +2,12 @@
 title: Fabrication de canal et mise en cache
 ms.date: 03/30/2017
 ms.assetid: 954f030e-091c-4c0e-a7a2-10f9a6b1f529
-ms.openlocfilehash: 98b77071204e2c2f98609e6c5bb1ca84a896dd58
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5b8348a98b484ca08e3dbeba141dc49825c8c071
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040198"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587363"
 ---
 # <a name="channel-factory-and-caching"></a>Fabrication de canal et mise en cache
 
@@ -26,7 +26,7 @@ Pour réduire cette surcharge, WCF peut mettre en cache les fabriques de canaux 
 > [!TIP]
 > Vous disposez d'un contrôle direct sur la création de fabrique de canaux lorsque vous utilisez la classe <xref:System.ServiceModel.ChannelFactory%601> directement.
 
-Les proxies clients WCF générés avec l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) sont dérivés de <xref:System.ServiceModel.ClientBase%601>. <xref:System.ServiceModel.ClientBase%601> définit une propriété <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A> statique qui définit le comportement de mise en cache de la fabrique de canaux. Les paramètres de cache sont faits pour un type spécifique. Par exemple, l' `ClientBase<ITest>.CacheSettings` affectation de l’une des valeurs définies ci-dessous affecte uniquement les proxy/ClientBase `ITest`de type. Le paramètre de cache pour un <xref:System.ServiceModel.ClientBase%601> particulier est immuable dès que la première instance de proxy/ClientBase est créée.
+Les proxies clients WCF générés avec l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) sont dérivés de <xref:System.ServiceModel.ClientBase%601> . <xref:System.ServiceModel.ClientBase%601> définit une propriété <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A> statique qui définit le comportement de mise en cache de la fabrique de canaux. Les paramètres de cache sont faits pour un type spécifique. Par exemple, l’affectation de `ClientBase<ITest>.CacheSettings` l’une des valeurs définies ci-dessous affecte uniquement les proxy/ClientBase de type `ITest` . Le paramètre de cache pour un <xref:System.ServiceModel.ClientBase%601> particulier est immuable dès que la première instance de proxy/ClientBase est créée.
 
 ## <a name="specifying-caching-behavior"></a>Spécifier le comportement de mise en cache
 
@@ -34,8 +34,8 @@ Le comportement de mise en cache est spécifié en affectant à la propriété <
 
 |Valeur de paramètre de cache|Description|
 |-------------------------|-----------------|
-|<xref:System.ServiceModel.CacheSetting.AlwaysOn>|Toutes les instances de <xref:System.ServiceModel.ClientBase%601> du domaine d'application peuvent participer à la mise en cache. Le développeur a déterminé qu'il n'y a aucune conséquence défavorable à la mise en cache sur la sécurité. La mise en cache ne sera pas désactivée même si <xref:System.ServiceModel.ClientBase%601> les propriétés «sensibles à la sécurité» sont accessibles. Les propriétés «sensibles à la sécurité» <xref:System.ServiceModel.ClientBase%601> de <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> <xref:System.ServiceModel.ClientBase%601.Endpoint%2A> sont et <xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A>.|
-|<xref:System.ServiceModel.CacheSetting.Default>|Seules les instances de <xref:System.ServiceModel.ClientBase%601> créées à partir des points de terminaison définis dans les fichiers de configuration participent à la mise en cache dans le domaine d'application. Les instances de <xref:System.ServiceModel.ClientBase%601> créées par programme dans ce domaine d'application ne participent pas à la mise en cache. En outre, la mise en cache est désactivée pour une instance de <xref:System.ServiceModel.ClientBase%601> une fois qu’une de ses propriétés «sensibles à la sécurité» est accédée.|
+|<xref:System.ServiceModel.CacheSetting.AlwaysOn>|Toutes les instances de <xref:System.ServiceModel.ClientBase%601> du domaine d'application peuvent participer à la mise en cache. Le développeur a déterminé qu'il n'y a aucune conséquence défavorable à la mise en cache sur la sécurité. La mise en cache ne sera pas désactivée même si les propriétés « sensibles à la sécurité » <xref:System.ServiceModel.ClientBase%601> sont accessibles. Les propriétés « sensibles à la sécurité » <xref:System.ServiceModel.ClientBase%601> de <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> sont <xref:System.ServiceModel.ClientBase%601.Endpoint%2A> et <xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A> .|
+|<xref:System.ServiceModel.CacheSetting.Default>|Seules les instances de <xref:System.ServiceModel.ClientBase%601> créées à partir des points de terminaison définis dans les fichiers de configuration participent à la mise en cache dans le domaine d'application. Les instances de <xref:System.ServiceModel.ClientBase%601> créées par programme dans ce domaine d'application ne participent pas à la mise en cache. En outre, la mise en cache est désactivée pour une instance de <xref:System.ServiceModel.ClientBase%601> une fois qu’une de ses propriétés « sensibles à la sécurité » est accédée.|
 |<xref:System.ServiceModel.CacheSetting.AlwaysOff>|La mise en cache est désactivée pour toutes les instances de <xref:System.ServiceModel.ClientBase%601> d'un type spécifique dans le domaine d'application concerné.|
 
 Les extraits de code suivants montrent comment utiliser la propriété <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A>.
@@ -116,7 +116,7 @@ Dans l'exemple ci-dessus, toutes les instances de `TestClient` utilisent différ
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.ClientBase%601>
-- [Génération de clients](../../../../docs/framework/wcf/building-clients.md)
-- [Clients](../../../../docs/framework/wcf/feature-details/clients.md)
-- [Accès aux services à l’aide d’un client WCF](../../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)
-- [Guide pratique : Utiliser l’ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)
+- [Génération de clients](../building-clients.md)
+- [Clients](clients.md)
+- [Accès aux services à l’aide d’un client WCF](../accessing-services-using-a-wcf-client.md)
+- [Comment : utiliser la classe ChannelFactory](how-to-use-the-channelfactory.md)

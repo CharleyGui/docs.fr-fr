@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <summary> C# XML tag
 - summary C# XML tag
 ms.assetid: b4c43d92-2067-4eac-a59a-d32f5248c08b
-ms.openlocfilehash: e1a8c9d61e61eae7ba6bf7f0c1b9d2a8dc8a4171
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f6984c60e6a7132e94c5c91837535484b12f93c5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287205"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590616"
 ---
 # <a name="summary-c-programming-guide"></a>\<summary>(Guide de programmation C#)
 
@@ -29,7 +29,7 @@ ms.locfileid: "84287205"
 
   Résumé de l’objet.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarks
 
 La `<summary>` balise doit être utilisée pour décrire un type ou un membre de type. Utilisez [\<remarks>](./remarks.md) pour ajouter des informations supplémentaires à une description de type. Utilisez l’[attribut cref](./cref-attribute.md) pour activer des outils de documentation tels que [DocFX](https://dotnet.github.io/docfx/) et [Sandcastle](https://github.com/EWSoftware/SHFB) afin de créer des liens hypertexte internes aux pages de documentation pour les éléments de code.
 
@@ -56,8 +56,8 @@ L’exemple précédent génère le fichier XML suivant.
         <member name="M:TestClass.DoWork(System.Int32)">
             <summary>DoWork is a method in the TestClass class.
             <para>Here's how you could make a second paragraph in a description. <see cref="M:System.Console.WriteLine(System.String)"/> for information about output statements.</para>
-            <seealso cref="M:TestClass.Main"/>
             </summary>
+            <seealso cref="M:TestClass.Main"/>
         </member>
         <member name="M:TestClass.Main">
             text for Main

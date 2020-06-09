@@ -2,12 +2,12 @@
 title: Net.TCP Port Sharing, exemple
 ms.date: 03/30/2017
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
-ms.openlocfilehash: ac90a50c6fe06a643881da2889fdea308404508e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6c196380951d0da912cd937e3ebc38a03f80489c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144290"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84584309"
 ---
 # <a name="nettcp-port-sharing-sample"></a>Net.TCP Port Sharing, exemple
 Le protocole TCP/IP utilise un numéro à 16 bits, appelé un port, pour différencier des connexions vers des applications réseau multiples qui s'exécutent sur le même ordinateur. Si une application écoute un port, tout le trafic TCP de ce port va à cette application. Les autres applications ne peuvent pas écouter en même temps ce port.  
@@ -17,15 +17,15 @@ Le protocole TCP/IP utilise un numéro à 16 bits, appelé un port, pour différ
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\PortSharing`  
   
  De nombreux protocoles utilisent un numéro de port standard ou par défaut. Par exemple, le protocole HTTP utilise en général le port TCP 80. Internet Information Services (IIS) a un écouteur qui partage un port entre plusieurs applications HTTP. IIS écoute directement le port et envoie les messages à l'application appropriée en fonction des informations du flux de messages. Cela permet à plusieurs applications HTTP d'utiliser le même numéro de port sans devoir rivaliser pour réserver le port pour recevoir des messages.  
   
- NetTcp Port Sharing est une fonctionnalité de la Windows Communication Foundation (WCF) qui permet de la même permettre à plusieurs applications réseau de partager un seul port. Le service de partage de ports NetTcp accepte les connexions utilisant le protocole net.tcp et transfère les messages en fonction de leur adresse de destination.  
+ Le partage de ports NetTcp est une fonctionnalité de Windows Communication Foundation (WCF) qui permet de la même manière à plusieurs applications réseau de partager un port unique. Le service de partage de ports NetTcp accepte les connexions utilisant le protocole net.tcp et transfère les messages en fonction de leur adresse de destination.  
   
- Le service de partage de ports NetTcp n'est pas activé par défaut. Avant d'exécuter cet exemple, vous devez activer le service manuellement. Pour plus d’informations, voir [Comment : Activez le service de partage de port Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md). Si le service est désactivé, une exception est levée lorsque l'application serveur est démarrée.  
+ Le service de partage de ports NetTcp n'est pas activé par défaut. Avant d'exécuter cet exemple, vous devez activer le service manuellement. Pour plus d’informations, consultez [Comment : activer le service de partage de ports net. TCP](../feature-details/how-to-enable-the-net-tcp-port-sharing-service.md). Si le service est désactivé, une exception est levée lorsque l'application serveur est démarrée.  
   
 ```console
 Unhandled Exception: System.ServiceModel.CommunicationException: The TransportManager failed to listen on the supplied URI using the NetTcpPortSharing service: failed to start the service because it is disabled. An administrator can enable it by running 'sc.exe config NetTcpPortSharing start= demand'.. ---> System.InvalidOperationException: Cannot start service NetTcpPortSharing on computer '.'. ---> System.ComponentModel.Win32Exception: The service cannot be started, either because it is disabled or because it has no enabled devices associated with it  
@@ -125,16 +125,16 @@ Press <ENTER> to terminate client.
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Installez ASP.NET 4.0 à l’aide de la commande suivante.  
+1. Installez ASP.NET 4,0 à l’aide de la commande suivante.  
   
     ```console  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
+2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).  
   
 3. Activez le service de partage de ports NetTcp comme décrit précédemment dans la section d'introduction.  
   
-4. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).  
   
-5. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md). Les détails d'exécution spécifiques de cet exemple sont inclus dans la section Exécution de l'exemple ci-dessus.  
+5. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md). Les détails d'exécution spécifiques de cet exemple sont inclus dans la section Exécution de l'exemple ci-dessus.  

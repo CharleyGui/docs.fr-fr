@@ -2,15 +2,15 @@
 title: ConcurrencyMode Reentrant
 ms.date: 03/30/2017
 ms.assetid: b2046c38-53d8-4a6c-a084-d6c7091d92b1
-ms.openlocfilehash: 613a1ed827173b3915892dda54dd20ebabdf6dcf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67e719afd40b52f37c777cf9791291a16878592f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183892"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600086"
 ---
 # <a name="concurrencymode-reentrant"></a>ConcurrencyMode Reentrant
-Cet exemple illustre la nécessité d'utiliser ConcurrencyMode.Reentrant sur une implémentation de service et les conséquences d'une telle utilisation. ConcurrencyMode.Reentrant implique que le service (plus exactement l'interface de rappel) traite un seul message à la fois à un instant donné (traitement similaire à celui proposé par le mode `ConcurencyMode.Single`). Pour assurer la sécurité des threads, Windows `InstanceContext` Communication Foundation (WCF) verrouille le traitement d’un message afin qu’aucun autre message ne puisse être traité. En mode ConcurrencyMode.Reentrant, le contexte `InstanceContext` est déverrouillé juste avant que le service n'effectue un appel externe, autorisant ainsi le prochain appel (lequel peut être réentrant tel qu'illustré dans l'exemple) et l'obtention du verrouillage lorsque le service reçoit la réponse à son appel. L'exemple illustre ce comportement en montrant comment un client et un service peuvent s'envoyer des messages en utilisant un contrat duplex.  
+Cet exemple illustre la nécessité d'utiliser ConcurrencyMode.Reentrant sur une implémentation de service et les conséquences d'une telle utilisation. ConcurrencyMode.Reentrant implique que le service (plus exactement l'interface de rappel) traite un seul message à la fois à un instant donné (traitement similaire à celui proposé par le mode `ConcurencyMode.Single`). Pour garantir la sécurité des threads, Windows Communication Foundation (WCF) verrouille le `InstanceContext` traitement d’un message afin qu’aucun autre message ne puisse être traité. En mode ConcurrencyMode.Reentrant, le contexte `InstanceContext` est déverrouillé juste avant que le service n'effectue un appel externe, autorisant ainsi le prochain appel (lequel peut être réentrant tel qu'illustré dans l'exemple) et l'obtention du verrouillage lorsque le service reçoit la réponse à son appel. L'exemple illustre ce comportement en montrant comment un client et un service peuvent s'envoyer des messages en utilisant un contrat duplex.  
   
  Le contrat défini correspond à un contrat duplex dans lequel la méthode `Ping` est implémentée par le service et la méthode de rappel `Pong` par le client. Le client appelle la méthode `Ping` du serveur à l'aide d'un compteur de cycles initiant par la même l'appel. Le service s'assure que la valeur du compteur de cycles n'est pas égale à zéro, puis appelle la méthode de rappel `Pong` tout en décrémentant la valeur de ce compteur. Ce processus est illustré par l'exemple de code suivant.  
   
@@ -46,14 +46,14 @@ public void Pong(int ticks)
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).  
   
-3. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).  
   
-## <a name="demonstrates"></a>Illustre le  
- Pour exécuter l'exemple et générer les projets de client et de serveur. Ouvrez ensuite deux fenêtres de commande \<et modifiez les répertoires pour l’échantillon \<>-CS-Service-bin-debug et échantillonnez>-CS-Client-bin-debug répertoires. Ensuite, commencez le `service.exe` service en tapant, puis invoquez le Client.exe avec la valeur initiale des tiques passées comme un argument d’entrée. Le code suivant illustre le résultat pour 10 cycles.  
+## <a name="demonstrates"></a>Illustre  
+ Pour exécuter l'exemple et générer les projets de client et de serveur. Ouvrez ensuite deux fenêtres de commande et remplacez les répertoires par les \<sample> \<sample> répertoires \CS\Service\bin\debug et \CS\Client\bin\debug. Ensuite, démarrez le service en tapant `service.exe` , puis appelez client. exe avec la valeur initiale des graduations transmise en tant qu’argument d’entrée. Le code suivant illustre le résultat pour 10 cycles.  
   
 ```console  
 Prompt>Service.exe  
@@ -78,6 +78,6 @@ Pong: Ticks = 1
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Reentrant`  

@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: 2fa13a12a377cc16a95318367605d8b5d92769a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 591f7db0f6b4e928a991961d3bc7c404f41028bf
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184685"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579278"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Service et client intranet non sécurisés
-L’illustration suivante représente un service simple de la Windows Communication Foundation (WCF) développé pour fournir des informations sur un réseau privé sécurisé à une application WCF. La sécurité n’est pas nécessaire parce que les données sont de faible importance, le réseau devrait être intrinsèquement sécurisé, ou la sécurité est fournie par une couche en dessous de l’infrastructure WCF.  
+L’illustration suivante représente un service simple Windows Communication Foundation (WCF) développé pour fournir des informations sur un réseau privé sécurisé à une application WCF. La sécurité n’est pas nécessaire, car les données sont de faible importance, le réseau est supposé être sécurisé par nature, ou la sécurité est fournie par une couche sous l’infrastructure WCF.  
   
- ![Scénario de client et de service non sécurisé Intranet.](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
+ ![Scénario de client et de service intranet non sécurisé.](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
   
 |Caractéristique|Description|  
 |--------------------|-----------------|  
 |Mode de sécurité|None|  
 |Transport|TCP|  
 |Liaison|<xref:System.ServiceModel.NetTcpBinding>|  
-|Interopérabilité|WCF seulement|  
-|Authentication|None|  
+|Interopérabilité|WCF uniquement|  
+|Authentification|None|  
 |Intégrité|None|  
 |Confidentialité|None|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -71,7 +71,7 @@ L’illustration suivante représente un service simple de la Windows Communicat
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
@@ -81,7 +81,7 @@ L’illustration suivante représente un service simple de la Windows Communicat
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Code  
- Le code suivant montre un client WCF de base qui accède à un point de terminaison non sécurisé en utilisant le protocole TCP.  
+ Le code suivant illustre un client WCF de base qui accède à un point de terminaison non sécurisé à l’aide du protocole TCP.  
   
  [!code-csharp[C_UnsecuredClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#2)]
  [!code-vb[C_UnsecuredClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#2)]  
@@ -115,5 +115,5 @@ L’illustration suivante représente un service simple de la Windows Communicat
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.NetTcpBinding>
-- [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Présentation de la sécurité](security-overview.md)
 - [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

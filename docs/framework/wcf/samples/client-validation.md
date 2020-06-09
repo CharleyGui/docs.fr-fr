@@ -2,23 +2,23 @@
 title: Client Validation
 ms.date: 03/30/2017
 ms.assetid: f0c1f805-1a81-4d0d-a112-bf5e2e87a631
-ms.openlocfilehash: 641d5e84c09575574ff6b06888d156c4b4aa0a38
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: dce11ec2e3ef552c0c53e1faf89a12bc13b66ae0
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040115"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585322"
 ---
 # <a name="client-validation"></a>Client Validation
 Les services publient fréquemment des métadonnées pour activer la génération et la configuration automatiques de types de proxy clients. Lorsque le service n'est pas approuvé, les applications clientes doivent valider que les métadonnées se conforment à la stratégie de l'application cliente en ce qui concerne la sécurité, les transactions, le type de contrat de service, etc. L'exemple suivant montre comment écrire un comportement de point de terminaison client qui valide le point de terminaison de service pour garantir que ce dernier est fiable.  
   
  Le service expose quatre points de terminaison de service. Le premier point de terminaison utilise WSDualHttpBinding, le deuxième utilise l’authentification NTLM, le troisième active le flux de transaction et le quatrième utilise l’authentification basée sur les certificats.  
   
- Le client utilise la classe <xref:System.ServiceModel.Description.MetadataResolver> pour récupérer les métadonnées pour le service. Le client met en vigueur une stratégie d’interdiction des liaisons duplex, d’authentification NTLM et de flux de transaction à l’aide d’un comportement de validation. Pour chaque <xref:System.ServiceModel.Description.ServiceEndpoint> instance importée à partir des métadonnées du service, l’application cliente `InternetClientValidatorBehavior` ajoute une instance du <xref:System.ServiceModel.Description.ServiceEndpoint> comportement de point de terminaison au avant de tenter d’utiliser un client Windows Communication Foundation (WCF) pour se connecter à point de terminaison. La méthode `Validate` du comportement s'exécute avant qu'une opération sur le service soit appelée et met en vigueur la stratégie du client en levant `InvalidOperationExceptions`.  
+ Le client utilise la classe <xref:System.ServiceModel.Description.MetadataResolver> pour récupérer les métadonnées pour le service. Le client met en vigueur une stratégie d’interdiction des liaisons duplex, d’authentification NTLM et de flux de transaction à l’aide d’un comportement de validation. Pour chaque <xref:System.ServiceModel.Description.ServiceEndpoint> instance importée à partir des métadonnées du service, l’application cliente ajoute une instance du `InternetClientValidatorBehavior` comportement de point de terminaison au <xref:System.ServiceModel.Description.ServiceEndpoint> avant de tenter d’utiliser un client Windows Communication Foundation (WCF) pour se connecter au point de terminaison. La méthode `Validate` du comportement s'exécute avant qu'une opération sur le service soit appelée et met en vigueur la stratégie du client en levant `InvalidOperationExceptions`.  
   
 ### <a name="to-build-the-sample"></a>Pour générer l'exemple  
   
-1. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](building-the-samples.md).  
   
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur  
   
@@ -34,15 +34,15 @@ Les services publient fréquemment des métadonnées pour activer la génératio
   
 ### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
-1. Sur le serveur, dans un Invite de commandes développeur pour Visual Studio exécuter avec des privilèges d’administrateur `setup.bat service`, tapez. L' `setup.bat` exécution avec `service` l’argument crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé service. cer.  
+1. Sur le serveur, dans un Invite de commandes développeur pour Visual Studio exécuter avec des privilèges d’administrateur, tapez `setup.bat service` . `setup.bat`L’exécution avec l' `service` argument crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé service. cer.  
   
-2. Sur le serveur, modifiez le fichier App.config en fonction du nouveau nom du certificat. Autrement dit, remplacez l' `findValue` attribut de l' [ \<élément serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) par le nom de domaine complet de l’ordinateur.  
+2. Sur le serveur, modifiez le fichier App.config en fonction du nouveau nom du certificat. Autrement dit, remplacez l' `findValue` attribut de l' [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) élément par le nom de domaine complet de l’ordinateur.  
   
 3. Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.  
   
-4. Sur le client, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur, `setup.bat client`puis tapez. L' `setup.bat` exécution avec `client` l’argument crée un certificat client nommé client.com et exporte le certificat client vers un fichier nommé client. cer.  
+4. Sur le client, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur, puis tapez `setup.bat client` . `setup.bat`L’exécution avec l' `client` argument crée un certificat client nommé client.com et exporte le certificat client vers un fichier nommé client. cer.  
   
-5. Dans le fichier client.cs, modifiez la valeur de l'adresse du point de terminaison MEX et `findValue` pour que le certificat de serveur par défaut corresponde à la nouvelle adresse de votre service. Pour ce faire, remplacez localhost par le nom de domaine complet du serveur. Régénérez.  
+5. Dans le fichier client.cs, modifiez la valeur de l'adresse du point de terminaison MEX et `findValue` pour que le certificat de serveur par défaut corresponde à la nouvelle adresse de votre service. Pour ce faire, remplacez localhost par le nom de domaine complet du serveur. Rebuild (Regénération).  
   
 6. Copiez le fichier Client.cer du répertoire client dans le répertoire de service sur le serveur.  
   
@@ -65,4 +65,4 @@ Les services publient fréquemment des métadonnées pour activer la génératio
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)
+- [Utilisation des métadonnées](../feature-details/using-metadata.md)

@@ -1,5 +1,6 @@
 ---
 title: Pièges potentiels dans le parallélisme des données et des tâches
+description: Découvrez les pièges potentiels dans le parallélisme des données et des tâches, car le parallélisme augmente la complexité qui n’est pas rencontrée dans le code séquentiel.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallel programming, pitfalls
 ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
-ms.openlocfilehash: 00b4c89440223d229a06b0192032c9abcf931d58
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 05d934b80e60a8630db5b70e16a07c014598487a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291693"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599761"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Pièges potentiels dans le parallélisme des données et des tâches
 Dans de nombreux cas, <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> permettent une amélioration significative des performances par rapport à des boucles séquentielles ordinaires. Toutefois, le travail de la parallélisation de la boucle présente une certaine complexité pouvant entraîner des problèmes qui, dans du code séquentiel, ne sont pas si courants ou ne surviennent pas du tout. Cette rubrique répertorie les pratiques à éviter lorsque vous écrivez des boucles parallèles.  

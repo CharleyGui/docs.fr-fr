@@ -2,16 +2,16 @@
 title: MSMQ Activation
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 805ab78908b4d1146cce94cac5357bafbb35c832
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0dbd24a612d56c0fe88066f625be2a8369b7df5b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744792"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602535"
 ---
 # <a name="msmq-activation"></a>MSMQ Activation
 
-Cet exemple illustre comment héberger des applications dans le service d'activation des processus Windows (WAS, Windows Process Activation Service), qui sont lues à partir d'une file d'attente de messages. Cet exemple utilise le `netMsmqBinding` et est basé sur l’exemple de [communication bidirectionnelle](../../../../docs/framework/wcf/samples/two-way-communication.md) . Dans cet exemple, le service est une application hébergée par le Web et le client est auto-hébergé. Les résultats, qui s'affichent sur la console, permettent d'observer le statut des bons de commande envoyés.
+Cet exemple illustre comment héberger des applications dans le service d'activation des processus Windows (WAS, Windows Process Activation Service), qui sont lues à partir d'une file d'attente de messages. Cet exemple utilise `netMsmqBinding` et est basé sur l’exemple de [communication bidirectionnelle](two-way-communication.md) . Dans cet exemple, le service est une application hébergée par le Web et le client est auto-hébergé. Les résultats, qui s'affichent sur la console, permettent d'observer le statut des bons de commande envoyés.
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
@@ -19,11 +19,11 @@ Cet exemple illustre comment héberger des applications dans le service d'activa
 > [!NOTE]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
-> \<Lecteurinstall >: \ WF_WCF_Samples
+> \<InstallDrive>: \ WF_WCF_Samples
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples WCF et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples et WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.
 >
-> \<Lecteurinstall >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
+> \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
 
 Le service WAS (Windows Process Activation Service), le nouveau mécanisme d’activation de processus pour Windows Server 2008, fournit des fonctionnalités de type IIS qui étaient auparavant uniquement disponibles pour les applications basées sur HTTP aux applications qui utilisent des protocoles non-HTTP. Windows Communication Foundation (WCF) utilise l’interface d’adaptateur d’écouteur pour communiquer les demandes d’activation reçues sur les protocoles non-HTTP pris en charge par WCF, tels que TCP, les canaux nommés et MSMQ. Les fonctionnalités de réception des demandes sur les protocoles non-HTTP sont hébergées par les services Windows managés qui s'exécutent dans SMSvcHost.exe.
 
@@ -214,7 +214,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
 1. Assurez-vous qu’IIS 7,0 est installé, car il est requis pour l’activation WAS.
 
-2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). En outre, vous devez installer les composants d’activation non HTTP WCF :
+2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md). En outre, vous devez installer les composants d’activation non HTTP WCF :
 
     1. Dans le menu **Démarrer**, cliquez sur **Panneau de configuration**.
 
@@ -226,7 +226,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
     5. Développez le nœud **Microsoft .NET Framework 3,0** et cochez la Windows Communication Foundation fonctionnalité d' **activation non-http** .
 
-3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
 4. Exécutez le client en exécutant client.exe depuis une fenêtre de commande. Cette exécution génère la file d'attente et envoie un message à celle-ci. Laissez le client s'exécuter pour connaître le résultat de la lecture de ce message par le service.
 
@@ -267,11 +267,11 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         > [!NOTE]
         > Cette commande est une ligne unique de texte.
 
-        Cette commande permet d’accéder à l’application/servicemodelsamples à l’aide de `http://localhost/servicemodelsamples` et `net.msmq://localhost/servicemodelsamples`.
+        Cette commande permet d’accéder à l’application/servicemodelsamples à l’aide `http://localhost/servicemodelsamples` de et `net.msmq://localhost/servicemodelsamples` .
 
-7. Si vous ne l'avez pas fait précédemment, assurez-vous que le service d'activation MSMQ est activé. Dans le menu **Démarrer** , cliquez sur **exécuter**, puis tapez `Services.msc`. Recherchez l' **adaptateur d’écouteur net. MSMQ**dans la liste des services. Effectuez un clic droit et sélectionnez **Propriétés**. Définissez le **type de démarrage** sur **automatique**, cliquez sur **appliquer** , puis cliquez sur le bouton **Démarrer** . Cette étape doit être effectuée à une seule reprise, avant la première utilisation du service d'adaptateur de l'écouteur Net.Msmq.
+7. Si vous ne l'avez pas fait précédemment, assurez-vous que le service d'activation MSMQ est activé. Dans le menu **Démarrer** , cliquez sur **exécuter**, puis tapez `Services.msc` . Recherchez l' **adaptateur d’écouteur net. MSMQ**dans la liste des services. Effectuez un clic droit et sélectionnez **Propriétés**. Définissez le **type de démarrage** sur **automatique**, cliquez sur **appliquer** , puis cliquez sur le bouton **Démarrer** . Cette étape doit être effectuée à une seule reprise, avant la première utilisation du service d'adaptateur de l'écouteur Net.Msmq.
 
-8. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). En outre, modifiez le code du client qui envoie le bon de commande en fonction du nom de l'ordinateur figurant dans l'URI de la file d'attente lors de l'envoi de ce bon. Utilisez le code suivant :
+8. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md). En outre, modifiez le code du client qui envoie le bon de commande en fonction du nom de l'ordinateur figurant dans l'URI de la file d'attente lors de l'envoi de ce bon. Utilisez le code suivant :
 
     ```csharp
     client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");
