@@ -2,12 +2,12 @@
 title: Architecture de syndication
 ms.date: 03/30/2017
 ms.assetid: ed4ca86e-e3d8-4acb-87aa-1921fbc353be
-ms.openlocfilehash: 5f93c7a11ed37e411fc584c8de16f141336c7f43
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 718778993a953ae819a2bee5a4a050a81d3a4b84
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952642"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587519"
 ---
 # <a name="architecture-of-syndication"></a>Architecture de syndication
 L'API de syndication est conçue pour fournir un modèle de programmation neutre en ce qui concerne le format qui autorise l'écriture du contenu syndiqué sur le fil dans divers formats. Le modèle de données abstrait inclut les classes suivantes :  
@@ -24,13 +24,13 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
  Ces classes mappent précisément aux constructions définies dans la spécification Atom 1.0, bien que certains noms soient différents.  
   
- Dans Windows Communication Foundation (WCF), les flux de syndication sont modelés comme un autre type d’opération de service, un où le type de retour est l' <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>une des classes dérivées de. La récupération d'un flux est modelée comme un échange de messages de demande-réponse. Un client envoie une demande au service et le service répond. Le message de requête est défini sur un protocole d'infrastructure (HTTP brut, par exemple) et le message de réponse contient une charge utile qui se compose d'un format de syndication (RSS 2.0 ou Atom 1.0) communément compris. Les services qui implémentent ces échanges de messages sont appelés « services de syndication ».  
+ Dans Windows Communication Foundation (WCF), les flux de syndication sont modelés comme un autre type d’opération de service, un où le type de retour est l’une des classes dérivées de <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> . La récupération d'un flux est modelée comme un échange de messages de demande-réponse. Un client envoie une demande au service et le service répond. Le message de requête est défini sur un protocole d'infrastructure (HTTP brut, par exemple) et le message de réponse contient une charge utile qui se compose d'un format de syndication (RSS 2.0 ou Atom 1.0) communément compris. Les services qui implémentent ces échanges de messages sont appelés « services de syndication ».  
   
  Le contrat pour un service de syndication se compose d'un jeu d'opérations qui retourne une instance de la classe <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. L'exemple suivant montre une déclaration d'interface pour un service de syndication.  
   
  [!code-csharp[S_UE_SyndicationBoth#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_syndicationboth/cs/service.cs#0)]  
   
- La prise en charge de la syndication repose sur le modèle de programmation WCF Rest <xref:System.ServiceModel.WebHttpBinding> qui définit la liaison utilisée conjointement avec <xref:System.ServiceModel.Description.WebHttpBehavior> pour rendre les flux disponibles en tant que services. Pour plus d’informations sur le modèle de programmation WCF REST, consultez [vue d’ensemble du modèle de programmation http Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md).  
+ La prise en charge de la syndication repose sur le modèle de programmation WCF REST qui définit la <xref:System.ServiceModel.WebHttpBinding> liaison utilisée conjointement avec <xref:System.ServiceModel.Description.WebHttpBehavior> pour rendre les flux disponibles en tant que services. Pour plus d’informations sur le modèle de programmation WCF REST, consultez [vue d’ensemble du modèle de programmation http Web WCF](wcf-web-http-programming-model-overview.md).  
   
 > [!NOTE]
 > La spécification Atom 1.0 permet de spécifier des fractions de seconde dans l'un de ses constructeurs Date. Lors de la sérialisation et de la désérialisation de l’implémentation WCF, les fractions de seconde sont ignorées.  
@@ -40,7 +40,7 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
  Classes de formatage :  
   
-|Classe|Description|  
+|Class|Description|  
 |-----------|-----------------|  
 |<xref:System.ServiceModel.Syndication.Atom10FeedFormatter>|Classe chargée de sérialiser une instance <xref:System.ServiceModel.Syndication.SyndicationFeed> au format Atom 1.0.|  
 |<xref:System.ServiceModel.Syndication.Atom10FeedFormatter%601>|Classe chargée de sérialiser des classes dérivées de <xref:System.ServiceModel.Syndication.SyndicationFeed> au format Atom 1.0.|  
@@ -53,12 +53,12 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
  Classes de modèle objet :  
   
-|Classe|Description|  
+|Class|Description|  
 |-----------|-----------------|  
 |<xref:System.ServiceModel.Syndication.SyndicationCategory>|Classe qui représente la catégorie d'un flux de syndication.|  
 |<xref:System.ServiceModel.Syndication.SyndicationContent>|Classe de base qui représente le contenu de syndication.|  
 |<xref:System.ServiceModel.Syndication.SyndicationElementExtension>|Classe représentant une extension d’élément de syndication.|  
-|<xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection>|Collection d'objets <xref:System.ServiceModel.Syndication.SyndicationElementExtension>.|  
+|<xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection>|Collection d’objets <xref:System.ServiceModel.Syndication.SyndicationElementExtension>.|  
 |<xref:System.ServiceModel.Syndication.SyndicationFeed>|Classe qui représente un objet de flux de niveau supérieur.|  
 |<xref:System.ServiceModel.Syndication.SyndicationItem>|Classe qui représente un élément de flux.|  
 |<xref:System.ServiceModel.Syndication.SyndicationLink>|Classe qui représente un lien dans un flux ou un élément de syndication.|  
@@ -75,10 +75,10 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
 ## <a name="extensibility"></a>Extensibilité  
   
-- L’une des fonctionnalités clés de protocoles de syndication est l’extensibilité. Atom 1.0 et RSS 2.0 vous permettent d'ajouter aux flux de syndication des attributs et des éléments qui ne sont pas définis dans les spécifications. Le modèle de programmation de syndication WCF offre deux façons d’utiliser des attributs personnalisés et des extensions: la dérivation d’une nouvelle classe et l’accès faiblement typé. Pour plus d’informations, consultez [extensibilité](../../../../docs/framework/wcf/feature-details/syndication-extensibility.md)de la syndication.  
+- L’une des fonctionnalités clés de protocoles de syndication est l’extensibilité. Atom 1.0 et RSS 2.0 vous permettent d'ajouter aux flux de syndication des attributs et des éléments qui ne sont pas définis dans les spécifications. Le modèle de programmation de syndication WCF offre deux façons d’utiliser des attributs personnalisés et des extensions : la dérivation d’une nouvelle classe et l’accès faiblement typé. Pour plus d’informations, consultez extensibilité de la [syndication](syndication-extensibility.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la syndication WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
-- [Comment le modèle objet Syndication WCF est mappé à Atom et RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)
-- [Modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Vue d’ensemble de la syndication WCF](wcf-syndication-overview.md)
+- [Comment le modèle objet Syndication WCF est mappé à Atom et RSS](how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)
+- [Modèle de programmation HTTP Web WCF](wcf-web-http-programming-model.md)

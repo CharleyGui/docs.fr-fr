@@ -2,21 +2,21 @@
 title: Utilisation de NetHttpBinding
 ms.date: 03/30/2017
 ms.assetid: fe134acf-ceca-49de-84a9-05a37e3841f1
-ms.openlocfilehash: 82222dbfa3f35ed00d0173f2bc927c32e9e98470
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac6fc658731d032051f2dfd4058397f9b9a55828
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184231"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585634"
 ---
 # <a name="using-the-nethttpbinding"></a>Utilisation de NetHttpBinding
 <xref:System.ServiceModel.NetHttpBinding> est une liaison conçue pour consommer des services HTTP ou WebSocket et utilise l'encodage binaire par défaut. <xref:System.ServiceModel.NetHttpBinding> détecte si elle est utilisée avec un contrat demande-réponse ou un contrat duplex et modifie son comportement pour le faire correspondre - elle utilise HTTP pour les contrats de demande-réponse et WebSockets pour les contrats duplex. Vous pouvez substituer ce comportement au moyen du paramètre <xref:System.ServiceModel.Channels.WebSocketTransportUsage> :  
   
-1. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Always>- Cela oblige WebSockets à être utilisés même pour les contrats de demande-réponse.  
+1. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Always>: Force l’utilisation de WebSockets même pour les contrats demande-réponse.  
   
-2. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Never>- Cela empêche l’utilisation de WebSockets. Toute tentative d'utiliser un contrat duplex avec ce paramètre entraîne une exception.  
+2. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Never>: Empêche l’utilisation de WebSocket. Toute tentative d'utiliser un contrat duplex avec ce paramètre entraîne une exception.  
   
-3. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.WhenDuplex>- Il s’agit de la valeur par défaut et se comporte comme décrit ci-dessus.  
+3. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.WhenDuplex>-Il s’agit de la valeur par défaut et se comporte comme décrit ci-dessus.  
   
  <xref:System.ServiceModel.NetHttpBinding> prend en charge les sessions fiables en mode HTTP et en mode WebSocket. Les sessions en mode WebSocket sont fournies par le transport.  
   
@@ -60,7 +60,7 @@ ServiceHost svchost = new ServiceHost(typeof(Service1), baseAddress);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration de liaisons pour les services](../../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)
-- [Liaisons](../../../../docs/framework/wcf/feature-details/bindings.md)
-- [Liaisons fournies par le système](../../../../docs/framework/wcf/system-provided-bindings.md)
-- [Services duplex](../../../../docs/framework/wcf/feature-details/duplex-services.md)
+- [Configuration de liaisons pour les services](../configuring-bindings-for-wcf-services.md)
+- [Liaisons](bindings.md)
+- [Liaisons fournies par le système](../system-provided-bindings.md)
+- [Services duplex](duplex-services.md)
