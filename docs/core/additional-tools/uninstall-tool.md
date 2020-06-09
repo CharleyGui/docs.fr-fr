@@ -3,12 +3,12 @@ title: Outil de désinstallation
 description: Vue d’ensemble de l’outil de désinstallation de .NET Core, outil guidé qui permet le nettoyage contrôlé des kits de développement logiciel (SDK) .NET Core et des runtimes.
 author: sfoslund
 ms.date: 05/27/2020
-ms.openlocfilehash: 4e70fd3438b582bd5a0d6a52d7e58ed5e07f8811
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: dcfa12a3ec5fe0e8a29c5897ee4c71bfc7352eda
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446904"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590797"
 ---
 # <a name="net-core-uninstall-tool"></a>Outil de désinstallation de .NET Core
 
@@ -27,7 +27,7 @@ En raison de ces limitations, l’outil peut ne pas être en mesure de désinsta
 
 ## <a name="install-the-tool"></a>Installer l’outil
 
-Vous pouvez télécharger l’outil de désinstallation de .NET Core à partir d' [ici](https://aka.ms/dotnet-core-uninstall-tool) et rechercher le code source dans le référentiel GitHub [dotnet/CLI-Lab](https://github.com/dotnet/cli-lab) .
+Vous pouvez télécharger l’outil de désinstallation de .NET Core à partir de [la page des versions de l’outil](https://aka.ms/dotnet-core-uninstall-tool) et rechercher le code source dans le référentiel GitHub [dotnet/CLI-Lab](https://github.com/dotnet/cli-lab) .
 
 > [!NOTE]
 > L’outil nécessite une élévation pour désinstaller les kits de développement logiciel (SDK) .NET Core et les runtimes. Par conséquent, il doit être installé dans un répertoire protégé en écriture, tel que *C:\Program Files* sur Windows ou */usr/local/bin* sur MacOS. Consultez également [l’accès avec élévation de privilèges pour les commandes dotnet](../tools/elevated-access.md). Pour plus d’informations, consultez les [instructions d’installation détaillées](https://aka.ms/dotnet-core-uninstall-tool).
@@ -88,7 +88,7 @@ dotnet-core-uninstall list [options]
 
   Répertorie tous les kits de développement logiciel (SDK) .NET Core x86 et les runtimes qui peuvent être désinstallés avec cet outil.
 
-## <a name="macos"></a>[macOS](#tab/macos)
+## <a name="macos"></a>[MacOS](#tab/macos)
 
 * **`--runtime`**
 
@@ -221,7 +221,7 @@ Remarques :
 2. `--all`, `--all-below` , `--all-but` , `--all-but-latest` , `--all-lower-patches` , `--all-previews` , `--all-previews-but-latest` , `--major-minor` et `[<VERSION>...]` sont exclusifs.
 3. Si `--x64` ou `--x86` n’est pas spécifié, les paramètres x64 et x86 seront supprimés.
 
-## <a name="macos"></a>[macOS](#tab/macos)
+## <a name="macos"></a>[MacOS](#tab/macos)
 
 * **`--all`**
 
@@ -403,7 +403,7 @@ Remarques :
 2. `--all`, `--all-below` , `--all-but` , `--all-but-latest` , `--all-lower-patches` , `--all-previews` , `--all-previews-but-latest` , `--major-minor` et `[<VERSION>...]` sont exclusifs.
 3. Si `--x64` ou `--x86` n’est pas spécifié, les paramètres x64 et x86 seront supprimés.
 
-## <a name="macos"></a>[macOS](#tab/macos)
+## <a name="macos"></a>[MacOS](#tab/macos)
 
 * **`--all`**
 
@@ -518,9 +518,9 @@ Dans certains cas, vous n’avez plus besoin de la et vous souhaiterez `NuGetFal
 
 1. Ouvrez la boîte de dialogue **Ajout/Suppression de programmes**.
 2. Recherchez `Microsoft .NET Core SDK Uninstall Tool`.
-3. Sélectionner **Désinstaller**.
+3. Sélectionnez **Désinstaller**.
 
-## <a name="macos"></a>[macOS](#tab/macos)
+## <a name="macos"></a>[MacOS](#tab/macos)
 
 Supprimez le fichier *dotnet-Core-Uninstall. tar. gz* téléchargé à partir du répertoire où il a été installé. Si vous dézippéz le contenu de ce fichier dans un autre répertoire, veillez à supprimer également ce contenu.
 

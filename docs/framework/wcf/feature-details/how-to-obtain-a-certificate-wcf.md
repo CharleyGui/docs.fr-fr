@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], obtaining
 ms.assetid: d53762fd-15ea-42dc-b0ea-6a6597aa23f7
-ms.openlocfilehash: bfe6dcfe6850ee17a7bbb59f3a6ccad6c3c3e7d7
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: d020f3e97023d07abb572d30dd53896bfec1da46
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964241"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597018"
 ---
 # <a name="how-to-obtain-a-certificate-wcf"></a>Comment : obtenir un certificat (WCF)
 Pour utiliser l’une des fonctionnalités de Windows Communication Foundation (WCF) de qui utilisent des certificats X. 509, vous devez tout d’abord obtenir des certificats.  
   
 ### <a name="to-obtain-an-x509-certificate"></a>Pour obtenir un certificat X.509  
   
-1. Choisissez l'une des valeurs suivantes :  
+1. Choisissez l’un des éléments suivants :  
   
     - Achetez un certificat auprès d'une autorité de certification, telle que VeriSign, Inc.  
   
@@ -29,5 +29,5 @@ Pour utiliser l’une des fonctionnalités de Windows Communication Foundation (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Guide pratique pour créer des certificats temporaires à utiliser au cours du développement](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
+- [Working with Certificates](working-with-certificates.md)
+- [Guide pratique pour créer des certificats temporaires à utiliser au cours du développement](how-to-create-temporary-certificates-for-use-during-development.md)

@@ -2,12 +2,12 @@
 title: "Comment : créer une information d'identification de prise en charge"
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: 3f33bf5a78c575237ee4bc609a482a81fd30fc53
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: b8e7ddcd6118c77e14e090a0b1fa8d65aeb8e3df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964558"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597148"
 ---
 # <a name="how-to-create-a-supporting-credential"></a>Comment : créer une information d'identification de prise en charge
 Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plusieurs informations d'identification. Par exemple, un service peut exiger du client non seulement un nom d'utilisateur et un mot de passe, mais également une information d'identification qui prouve que le client a plus de 18 ans. La deuxième information d’identification est une *information d’identification de prise en charge*. Cette rubrique explique comment implémenter ces informations d’identification dans un client Windows Communication Foundation (WCF).  
@@ -27,7 +27,7 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
 ## <a name="endorsing-signing-and-encrypting"></a>Endossement, signature et chiffrement  
  Les informations d’identification de prise en charge entraînent la transmission d’un *jeton de prise en charge* dans le message. La spécification WS-SecurityPolicy définit quatre façons de joindre un jeton de prise en charge au message, comme décrit dans le tableau suivant.  
   
-|Fonction|Description|  
+|Objectif|Description|  
 |-------------|-----------------|  
 |Signé|Le jeton de prise en charge est inclus dans l'en-tête de sécurité et est signé par la signature de message.|  
 |Endossement|Un *jeton d’endossement* signe la signature du message.|  
@@ -35,7 +35,7 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
 |Signé et chiffrement|Les jetons de prise en charge chiffrés et signés sont des jetons de prise en charge signés qui sont également chiffrés lorsqu'ils apparaissent dans le `wsse:SecurityHeader`.|  
   
 ## <a name="programming-supporting-credentials"></a>Programmation d'informations d'identification de prise en charge  
- Pour créer un service qui utilise des jetons de prise en charge, vous devez créer un [\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md). (Pour plus d’informations, consultez [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).)  
+ Pour créer un service qui utilise des jetons de prise en charge, vous devez créer un [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) . (Pour plus d’informations, consultez [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md).)  
   
  La première étape de création d’une liaison personnalisée consiste à créer un élément de liaison de sécurité, qui peut être l’un des trois types suivants :  
   
@@ -55,7 +55,7 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
   
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A>  
   
-#### <a name="scopes"></a>Portées  
+#### <a name="scopes"></a>Étendues  
  Il existe deux étendues pour les informations d'identification de prise en charge :  
   
 - Les *jetons de prise en charge du point de terminaison* prennent en charge toutes les opérations d’un point de terminaison. Autrement dit, l'information d'identification que le jeton de prise en charge représente peut être utilisée chaque fois qu'une opération de point de terminaison est appelée.  
@@ -82,4 +82,4 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

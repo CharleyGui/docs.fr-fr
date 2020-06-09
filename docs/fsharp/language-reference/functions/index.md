@@ -1,13 +1,13 @@
 ---
 title: Fonctions
-description: Découvrez les fonctions dans F# et comment F# prend en charge les constructions de programmation fonctionnelle courantes.
+description: 'En savoir plus sur les fonctions en F # et sur la façon dont F # prend en charge les constructions de programmation fonctionnelle courantes.'
 ms.date: 05/16/2016
-ms.openlocfilehash: c6b8307f51ffcdc77fe4352b2305fca1f247ccbb
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: e49183e0634dee1750757abadbfe9e9c824f51a8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423957"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596472"
 ---
 # <a name="functions"></a>Fonctions
 
@@ -36,7 +36,7 @@ let f x = x + 1
 
 Dans l’exemple précédent, le nom de la fonction est `f`, l’argument est `x`, dont le type est `int`, le corps de la fonction est `x + 1`, et la valeur de retour est de type `int`.
 
-Les fonctions peuvent être marquées comme étant `inline`. Pour plus d’informations sur `inline`, consultez [Fonctions inline](../functions/inline-functions.md).
+Les fonctions peuvent être marquées comme étant `inline`. Pour plus d’informations sur `inline`, consultez [Fonctions inline](inline-functions.md).
 
 ## <a name="scope"></a>Étendue
 
@@ -142,7 +142,7 @@ Une *expression lambda* est une fonction sans nom. Dans les exemples précédent
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet112.fs)]
 
-Pour définir des expressions lambda, utilisez le mot clé `fun`. Une expression lambda ressemble à une définition de fonction, sauf que le jeton `->` est utilisé à la place du jeton `=` pour séparer la liste d’arguments du corps de la fonction. Comme dans une définition de fonction normale, les types d’argument peuvent être déduits ou spécifiés explicitement, et le type de retour de l’expression lambda est déduit du type de la dernière expression dans le corps. Pour plus d’informations, consultez [Expressions lambda : mot clé `fun`](../functions/lambda-expressions-the-fun-keyword.md).
+Pour définir des expressions lambda, utilisez le mot clé `fun`. Une expression lambda ressemble à une définition de fonction, sauf que le jeton `->` est utilisé à la place du jeton `=` pour séparer la liste d’arguments du corps de la fonction. Comme dans une définition de fonction normale, les types d’argument peuvent être déduits ou spécifiés explicitement, et le type de retour de l’expression lambda est déduit du type de la dernière expression dans le corps. Pour plus d’informations, consultez [Expressions lambda : mot clé `fun`](lambda-expressions-the-fun-keyword.md).
 
 ## <a name="function-composition-and-pipelining"></a>Composition de fonction et traitement « pipeline »
 
@@ -205,4 +205,4 @@ Vous pouvez surcharger les méthodes d’un type, mais pas les fonctions. Pour p
 ## <a name="see-also"></a>Voir aussi
 
 - [Valeurs](../values/index.md)
-- [Informations de référence sur le langage F#](../index.md)
+- [Informations de référence sur le langage F #](../index.md)

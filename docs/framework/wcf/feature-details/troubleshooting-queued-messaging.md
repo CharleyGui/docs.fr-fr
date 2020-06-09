@@ -2,12 +2,12 @@
 title: Résolution des problèmes de messagerie en file d'attente
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 7990d4b9847ee2f35b9fe6269bb211763c4c80b6
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: f695af3d2ad498e1f5975e1a396f1e7b05bf63bc
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77095006"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595126"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Résolution des problèmes de messagerie en file d'attente
 
@@ -17,17 +17,17 @@ Cette section contient des questions courantes et une aide pour la résolution d
 
 **Q :** J’ai utilisé la version bêta 1 de WCF et j’ai installé le correctif MSMQ. Est-ce que je dois supprimer le correctif logiciel ?
 
-**R :** Oui. Ce correctif logiciel n'est plus pris en charge. WCF fonctionne désormais sur MSMQ sans nécessiter de correctif logiciel.
+**R :** Oui. Ce correctif logiciel n'est plus pris en charge. WCF fonctionne désormais sur MSMQ sans nécessiter de correctif logiciel.
 
-**Q :** Il existe deux liaisons pour MSMQ : <xref:System.ServiceModel.NetMsmqBinding> et <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. Laquelle dois-je utiliser et à quel moment ?
+**Q :** Il existe deux liaisons pour MSMQ : <xref:System.ServiceModel.NetMsmqBinding> et <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> . Laquelle dois-je utiliser et à quel moment ?
 
-**R :** Utilisez la <xref:System.ServiceModel.NetMsmqBinding> lorsque vous souhaitez utiliser MSMQ comme transport pour la communication en file d’attente entre deux applications WCF. Utilisez la <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> lorsque vous souhaitez utiliser des applications MSMQ existantes pour communiquer avec les nouvelles applications WCF.
+**R :** Utilisez le <xref:System.ServiceModel.NetMsmqBinding> lorsque vous souhaitez utiliser MSMQ comme transport pour la communication en file d’attente entre deux applications WCF. Utilisez le <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> lorsque vous souhaitez utiliser des applications MSMQ existantes pour communiquer avec les nouvelles applications WCF.
 
-**Q :** Dois-je mettre à niveau MSMQ pour utiliser les liaisons <xref:System.ServiceModel.NetMsmqBinding> et `MsmqIntegration` ?
+**Q :** Dois-je mettre à niveau MSMQ pour utiliser <xref:System.ServiceModel.NetMsmqBinding> les `MsmqIntegration` liaisons et ?
 
 **R :** Non. Les deux liaisons fonctionnent avec MSMQ 3,0 sur Windows XP et Windows Server 2003. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez une mise à niveau vers MSMQ 4,0 dans Windows Vista.
 
-**Q :** Quelles sont les fonctionnalités des liaisons <xref:System.ServiceModel.NetMsmqBinding> et <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> sont disponibles dans MSMQ 4,0, mais pas dans MSMQ 3,0 ?
+**Q :** Quelles sont les fonctionnalités <xref:System.ServiceModel.NetMsmqBinding> des <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> liaisons et sont disponibles dans MSMQ 4,0, mais pas dans MSMQ 3,0 ?
 
 **R :** Les fonctionnalités suivantes sont disponibles dans MSMQ 4,0, mais pas dans MSMQ 3,0 :
 
@@ -37,11 +37,11 @@ Cette section contient des questions courantes et une aide pour la résolution d
 
 - Seul MSMQ 4.0 prend en charge la lecture transactionnelle à distance.
 
-Pour plus d’informations, consultez différences entre les [fonctionnalités de mise en file d’attente dans Windows Vista, Windows Server 2003 et Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md).
+Pour plus d’informations, consultez différences entre les [fonctionnalités de mise en file d’attente dans Windows Vista, Windows Server 2003 et Windows XP](diff-in-queue-in-vista-server-2003-windows-xp.md).
 
 **Q :** Puis-je utiliser MSMQ 3,0 sur l’un des côtés d’une communication en file d’attente et MSMQ 4,0 de l’autre côté ?
 
-**R :** Oui.
+**R :** Oui.
 
 **Q :** Je souhaite intégrer des applications MSMQ existantes à de nouveaux clients ou serveurs WCF. Est-ce que je dois mettre à niveau les deux côtés de mon infrastructure MSMQ ?
 
@@ -51,11 +51,11 @@ Pour plus d’informations, consultez différences entre les [fonctionnalités d
 
 Cette section contient les solutions aux problèmes les plus courants. Certains problèmes correspondant à des restrictions connues sont également décrits dans les notes de publication.
 
-**Q :** J’essaie d’utiliser une file d’attente privée et j’obtiens l’exception suivante : `System.InvalidOperationException`: l’URL n’est pas valide. L'URL de la file d'attente ne peut pas contenir le caractère « $ ». Utilisez la syntaxe dans net.msmq://machine/private/queueName pour adresser une file d'attente privée.
+**Q :** J’essaie d’utiliser une file d’attente privée et j’obtiens l’exception suivante : `System.InvalidOperationException` : l’URL n’est pas valide. L'URL de la file d'attente ne peut pas contenir le caractère « $ ». Utilisez la syntaxe dans net.msmq://machine/private/queueName pour adresser une file d'attente privée.
 
-**R :** Vérifiez la file d’attente Uniform Resource Identifier (URI) dans votre configuration et votre code. N'utilisez pas le caractère « $ » dans l'URI. Par exemple, pour adresser une file d’attente privée nommée OrdersQueue, spécifiez l’URI en tant que `net.msmq://localhost/private/ordersQueue`.
+**R :** Vérifiez la file d’attente Uniform Resource Identifier (URI) dans votre configuration et votre code. N'utilisez pas le caractère « $ » dans l'URI. Par exemple, pour adresser une file d’attente privée nommée OrdersQueue, spécifiez l’URI sous la forme `net.msmq://localhost/private/ordersQueue` .
 
-**Q :** L’appel de `ServiceHost.Open()` sur mon application en file d’attente lève l’exception suivante : `System.ArgumentException`: une adresse de base ne peut pas contenir une chaîne de requête d’URI. Pourquoi ?
+**Q :** `ServiceHost.Open()`L’appel de sur mon application en file d’attente lève l’exception suivante : `System.ArgumentException` : une adresse de base ne peut pas contenir une chaîne de requête URI. Pourquoi ?
 
 **R :** Vérifiez l’URI de la file d’attente dans votre fichier de configuration et dans votre code. Alors que les files d'attente MSMQ prennent en charge l'utilisation du caractère '?', les Uri interprètent ce dernier comme le début d'une requête de chaîne. Pour éviter ce problème, utilisez des noms de file d'attente qui ne comportent pas de caractère '?'.
 
@@ -65,13 +65,13 @@ Cette section contient les solutions aux problèmes les plus courants. Certains 
 
 - Vérifiez que les spécifications de la file d’attente transactionnelle sont compatibles avec les garanties spécifiées. Notez les principes suivants :
 
-  - Vous pouvez envoyer des messages durables (datagrammes et sessions) avec des garanties « exactement une fois » (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`) uniquement à une file d’attente transactionnelle.
+  - Vous pouvez envoyer des messages durables (datagrammes et sessions) avec des garanties « exactement une fois » ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `true` ) uniquement à une file d’attente transactionnelle.
 
   - Vous pouvez envoyer des sessions uniquement avec des garanties « exactly-once ».
 
   - Une transaction est requise pour recevoir des messages dans une session provenant d’une file d’attente transactionnelle.
 
-  - Vous pouvez envoyer ou recevoir des messages volatils ou durables (datagrammes uniquement) sans garanties (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`) qu’à une file d’attente non transactionnelle.
+  - Vous pouvez envoyer ou recevoir des messages volatils ou durables (datagrammes uniquement) sans garanties ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `false` ) uniquement à une file d’attente non transactionnelle.
 
 - Vérifiez la file d'attente de lettres mortes. Si vous y trouvez les messages, déterminez pourquoi ils n'ont pas été remis.
 
@@ -83,13 +83,13 @@ Cette section contient les solutions aux problèmes les plus courants. Certains 
 
 **Q :** Est-il toujours nécessaire de définir une file d’attente de lettres mortes personnalisée, ou existe-t-il une file d’attente de lettres mortes par défaut ?
 
-**R :** Si les assurances sont « exactement une fois » (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`) et si vous ne spécifiez pas de file d’attente de lettres mortes personnalisée, la valeur par défaut est une file d’attente de lettres mortes transactionnelle à l’ensemble du système.
+**R :** Si les garanties sont « exactement une fois » ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `true` ) et si vous ne spécifiez pas de file d’attente de lettres mortes personnalisée, la valeur par défaut est une file d’attente de lettres mortes transactionnelle à l’ensemble du système.
 
-Si les garanties sont None (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`), la valeur par défaut est aucune fonctionnalité de file d’attente de lettres mortes.
+Si les garanties sont None ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `false` ), la valeur par défaut est aucune fonctionnalité de file d’attente de lettres mortes.
 
 **Q :** Mon service lève une exception dans SvcHost. Open avec un message « EndpointListener Requirements ne peut pas être respecté par ListenerFactory ». Pourquoi ?
 
-R. Consultez votre contrat de service. Vous avez peut-être oublié de placer « IsOneWay =`true`» sur toutes les opérations de service. Les files d'attente prennent uniquement en charge les opérations de service monodirectionnelles.
+R. Consultez votre contrat de service. Vous avez peut-être oublié de placer « IsOneWay = `true` » sur toutes les opérations de service. Les files d'attente prennent uniquement en charge les opérations de service monodirectionnelles.
 
 **Q :** Il y a des messages dans la file d’attente, mais aucune opération de service n’est appelée. Quel est le problème ?
 
@@ -107,13 +107,13 @@ R. Consultez votre contrat de service. Vous avez peut-être oublié de placer «
     sc sidtype NetMsmqActivator unrestricted
     ```
 
-Pour les problèmes d’hôte Web non liés à la sécurité, reportez-vous à : [hébergement Web d’une application en file d’attente](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md).
+Pour les problèmes d’hôte Web non liés à la sécurité, reportez-vous à : [hébergement Web d’une application en file d’attente](web-hosting-a-queued-application.md).
 
 **Q :** Quel est le moyen le plus simple d’accéder aux sessions ?
 
-**R :** Définissez la saisie semi-automatique =`true` sur l’opération qui correspond au dernier message de la session, puis définissez la saisie semi-automatique =`false` sur toutes les opérations de service restantes.
+**R :** Définissez la saisie semi-automatique = `true` sur l’opération qui correspond au dernier message de la session, puis définissez la saisie semi-automatique = `false` sur toutes les opérations de service restantes.
 
-**Q :** Pourquoi mon service lève-t-il une `ProtocolException` lors de la lecture d’une file d’attente contenant à la fois des messages de session en file d’attente et des messages de datagramme en file d’attente ?
+**Q :** Pourquoi mon service lève-t-il un `ProtocolException` lors de la lecture d’une file d’attente contenant à la fois des messages de session en file d’attente et des messages de datagramme en file d’attente ?
 
 **R :** Il existe une différence fondamentale dans la façon dont les messages de session en file d’attente et les messages de datagramme en file d’attente sont composés. De ce fait, un service conçu pour lire un message de session en file d'attente ne peut pas recevoir de message de datagramme en file d'attente et un service conçu pour lire un message de datagramme en file d'attente ne peut pas recevoir de message de session. La tentative de lire les deux types de messages à partir de la même file d'attente lève l'exception suivante :
 
@@ -144,7 +144,7 @@ La file d'attente de lettres mortes du système, ainsi que toutes les files d'at
 
 **R :** Par défaut, les messages sont signés à l’aide d’un certificat MSMQ interne qui requiert le service d’annuaire Active Directory. En mode groupe de travail, parce qu'Active Directory n'est pas disponible, la signature des messages échoue. Par conséquent, le message arrive dans la file d’attente de lettres mortes et la cause de l’échec, par exemple « signature incorrecte », est indiquée.
 
-La solution à ce problème consiste à désactiver la sécurité. Pour ce faire, définissez <xref:System.ServiceModel.NetMsmqSecurity.Mode%2A> = <xref:System.ServiceModel.NetMsmqSecurityMode.None> pour qu’il fonctionne en mode groupe de travail.
+La solution à ce problème consiste à désactiver la sécurité. <xref:System.ServiceModel.NetMsmqSecurity.Mode%2A>  =  <xref:System.ServiceModel.NetMsmqSecurityMode.None> Pour ce faire, vous pouvez configurer pour qu’il fonctionne en mode groupe de travail.
 
 Une autre solution consiste à obtenir <xref:System.ServiceModel.MsmqTransportSecurity> de la propriété <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A> et à lui affecter la valeur <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>, puis à définir le certificat client.
 
@@ -154,11 +154,11 @@ Une autre solution consiste à installer MSMQ avec l'intégration Active Directo
 
 **R :** Cela signifie que le certificat de Active Directory pour l’expéditeur doit être renouvelé. Pour ce faire, ouvrez le **panneau de configuration**, **Outils d’administration**, gestion de l' **ordinateur**, cliquez avec le bouton droit sur **MSMQ**, puis sélectionnez **Propriétés**. Sélectionnez l’onglet **certificat utilisateur** , puis cliquez sur le bouton **renouveler** .
 
-**Q :** Lorsque j’envoie un message à l’aide de <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> et que vous spécifiez le certificat à utiliser, j’obtiens un message « certificat non valide ». Comment la corriger ?
+**Q :** Lorsque j’envoie un message à l’aide <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> de et que vous spécifiez le certificat à utiliser, j’obtiens un message « certificat non valide ». Comment la corriger ?
 
 **R :** Vous ne pouvez pas utiliser un magasin de certificats de l’ordinateur local avec le mode certificat. Vous devez copier le certificat du magasin de certificats de l'ordinateur vers le magasin de l'utilisateur actuel à l'aide du composant logiciel enfichable Certificat. Pour obtenir le composant logiciel enfichable Certificat :
 
-1. Cliquez sur **Démarrer**, sélectionnez **exécuter**, tapez `mmc`, puis cliquez sur **OK**.
+1. Cliquez sur **Démarrer**, sélectionnez **exécuter**, tapez `mmc` , puis cliquez sur **OK**.
 
 2. Dans **Microsoft Management Console**, ouvrez le menu **fichier** et sélectionnez **Ajouter/supprimer un composant logiciel enfichable**.
 
@@ -192,7 +192,7 @@ Une autre solution consiste à installer MSMQ avec l'intégration Active Directo
 
 - Vérifiez le mode d’authentification pour communiquer avec le gestionnaire de transactions. Si vous êtes en mode groupe de travail, vous devez sélectionner « aucune authentification requise ». Si vous êtes en mode de domaine, vous devez sélectionner « authentification mutuelle requise ».
 
-  ![Activation des transactions XA](../../../../docs/framework/wcf/feature-details/media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")
+  ![Activation des transactions XA](media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")
 
 - Assurez-vous que MSDTC figure dans la liste des exceptions dans les paramètres du **pare-feu de connexion Internet** .
 
@@ -204,8 +204,8 @@ Une autre solution consiste à installer MSMQ avec l'intégration Active Directo
 
 **Q :** Puis-je utiliser le service d’activation MSMQ pour activer des applications basées sur des messages dans une file d’attente sur un ordinateur distant ?
 
-**R :** Oui. Pour cela, vous devez configurer le service d'activation MSMQ afin qu'il s'exécute comme un service réseau, puis ajouter l'accès au service réseau à la file d'attente sur l'ordinateur distant.
+**R :** Oui. Pour cela, vous devez configurer le service d'activation MSMQ afin qu'il s'exécute comme un service réseau, puis ajouter l'accès au service réseau à la file d'attente sur l'ordinateur distant.
 
 ## <a name="using-custom-msmq-bindings-with-receivecontext-enabled"></a>Utilisation de liaisons MSMQ personnalisées avec ReceiveContext activé
 
-Lors de l’utilisation d’une liaison MSMQ personnalisée avec <xref:System.ServiceModel.Channels.ReceiveContext> activé, le traitement d’un message entrant utilise un thread de pool de threads, car le MSMQ natif ne prend pas en charge l’achèvement d’e/s pour les réceptions <xref:System.ServiceModel.Channels.ReceiveContext> asynchrones. Cela est dû au fait que le traitement d’un tel message utilise des transactions internes pour <xref:System.ServiceModel.Channels.ReceiveContext> et que MSMQ ne prend pas en charge le traitement asynchrone. Pour contourner ce problème, vous pouvez ajouter un <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> au point de terminaison pour forcer le traitement synchrone ou affecter la valeur 1 à <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A>.
+Lors de l’utilisation d’une liaison MSMQ personnalisée avec <xref:System.ServiceModel.Channels.ReceiveContext> activé, le traitement d’un message entrant utilise un thread de pool de threads, car le MSMQ natif ne prend pas en charge l’exécution d’e/s pour les <xref:System.ServiceModel.Channels.ReceiveContext> réceptions asynchrones. Cela est dû au fait que le traitement d’un tel message utilise des transactions internes pour <xref:System.ServiceModel.Channels.ReceiveContext> et que MSMQ ne prend pas en charge le traitement asynchrone. Pour contourner ce problème, vous pouvez ajouter un <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> au point de terminaison pour forcer le traitement synchrone ou la valeur <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> 1.

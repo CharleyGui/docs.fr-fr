@@ -2,12 +2,12 @@
 title: Instructions d'installation du certificat de serveur des services Internet (IIS)
 ms.date: 03/30/2017
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-ms.openlocfilehash: 300d689925d60998ef475ad63f3878bf6d066850
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 301a10c615a13a42e1a6e1b89d2724476ca4fbae
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989854"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594658"
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>Instructions d'installation du certificat de serveur des services Internet (IIS)
 Pour pouvoir exécuter les exemples qui utilisent la communication sécurisée avec les services Internet (IIS), vous devez créer et installer un certificat de serveur.  
@@ -34,9 +34,9 @@ makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exc
   
 5. Effectuez toutes les étapes de l'Assistant. Sélectionnez l'option d'assignation de certificat. Sélectionnez le certificat ServiceModelSamples-HTTPS-Server dans la liste de certificats qui s'affiche.  
   
-     ![Assistant Certificat IIS](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")  
+     ![Assistant Certificat d'IIS](media/iiscertificate-wizard.GIF "IISCertificate_Wizard")  
   
-6. Testez l’accès au service dans un navigateur à l’aide de l' `https://localhost/servicemodelsamples/service.svc`adresse https.  
+6. Testez l’accès au service dans un navigateur à l’aide de l’adresse HTTPs `https://localhost/servicemodelsamples/service.svc` .  
   
 #### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a>Si SSL a été configuré précédemment via l'utilisation du fichier Httpcfg.exe :  
   
@@ -65,7 +65,7 @@ PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");
   
 5. Sélectionnez le **serveur servicemodelsamples-https-Server** dans la liste déroulante **certificat SSL** , puis cliquez sur **OK**.  
   
-6. Testez l’accès au service dans un navigateur à l’aide de l' `https://localhost/servicemodelsamples/service.svc`adresse https.  
+6. Testez l’accès au service dans un navigateur à l’aide de l’adresse HTTPs `https://localhost/servicemodelsamples/service.svc` .  
   
 > [!NOTE]
 > Étant donné que le certificat de test que vous venez d'installer n'est pas un certificat approuvé, vous risquez de recevoir des avertissements de sécurité Internet Explorer supplémentaires lorsque vous recherchez des adresses Web locales sécurisées à l'aide de ce certificat.  
