@@ -2,18 +2,18 @@
 title: 'Transport: Custom Transactions over UDP Sample'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: ba9fb91623606d3aaba5ba56784b20bb92d343a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ce1e6f0aedff46aaf58e22d8c23c37b03f8789dd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143796"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596537"
 ---
-# <a name="transport-custom-transactions-over-udp-sample"></a><span data-ttu-id="a0123-102">Transport: Custom Transactions over UDP Sample</span><span class="sxs-lookup"><span data-stu-id="a0123-102">Transport: Custom Transactions over UDP Sample</span></span>
-<span data-ttu-id="a0123-103">Cet échantillon est basé sur [l’échantillon Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) dans la Windows Communication Foundation (WCF)[Transport Extensibility](../../../../docs/framework/wcf/samples/transport-extensibility.md).</span><span class="sxs-lookup"><span data-stu-id="a0123-103">This sample is based on the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample in the Windows Communication Foundation (WCF)[Transport Extensibility](../../../../docs/framework/wcf/samples/transport-extensibility.md).</span></span> <span data-ttu-id="a0123-104">Il étend l’exemple UDP Transport afin de prendre en charge le flux de transactions personnalisé et présente l’utilisation de la propriété <xref:System.ServiceModel.Channels.TransactionMessageProperty>.</span><span class="sxs-lookup"><span data-stu-id="a0123-104">It extends the UDP Transport sample to support custom transaction flow and demonstrates the use of the <xref:System.ServiceModel.Channels.TransactionMessageProperty> property.</span></span>  
+# <a name="transport-custom-transactions-over-udp-sample"></a><span data-ttu-id="d66bc-102">Transport: Custom Transactions over UDP Sample</span><span class="sxs-lookup"><span data-stu-id="d66bc-102">Transport: Custom Transactions over UDP Sample</span></span>
+<span data-ttu-id="d66bc-103">Cet exemple est basé sur l’exemple [transport : UDP](transport-udp.md) dans l'[extensibilité du transport](transport-extensibility.md)Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="d66bc-103">This sample is based on the [Transport: UDP](transport-udp.md) sample in the Windows Communication Foundation (WCF)[Transport Extensibility](transport-extensibility.md).</span></span> <span data-ttu-id="d66bc-104">Il étend l’exemple UDP Transport afin de prendre en charge le flux de transactions personnalisé et présente l’utilisation de la propriété <xref:System.ServiceModel.Channels.TransactionMessageProperty>.</span><span class="sxs-lookup"><span data-stu-id="d66bc-104">It extends the UDP Transport sample to support custom transaction flow and demonstrates the use of the <xref:System.ServiceModel.Channels.TransactionMessageProperty> property.</span></span>  
   
-## <a name="code-changes-in-the-udp-transport-sample"></a><span data-ttu-id="a0123-105">Modifications du code dans l'exemple UDP Transport</span><span class="sxs-lookup"><span data-stu-id="a0123-105">Code Changes in the UDP Transport Sample</span></span>  
- <span data-ttu-id="a0123-106">Pour illustrer le flux de transactions, l'exemple modifie le contrat de service de `ICalculatorContract` afin qu'une portée de transaction soit requise pour `CalculatorService.Add()`.</span><span class="sxs-lookup"><span data-stu-id="a0123-106">To demonstrate transaction flow, the sample changes the service contract for `ICalculatorContract` to require a transaction scope for `CalculatorService.Add()`.</span></span> <span data-ttu-id="a0123-107">L'exemple ajoute également un paramètre `System.Guid` supplémentaire au contrat de l'opération `Add`.</span><span class="sxs-lookup"><span data-stu-id="a0123-107">The sample also adds an extra `System.Guid` parameter to the contract of the `Add` operation.</span></span> <span data-ttu-id="a0123-108">Ce paramètre permet de transmettre l’identificateur de la transaction cliente au service.</span><span class="sxs-lookup"><span data-stu-id="a0123-108">This parameter is used to pass the identifier of the client transaction to the service.</span></span>  
+## <a name="code-changes-in-the-udp-transport-sample"></a><span data-ttu-id="d66bc-105">Modifications du code dans l'exemple UDP Transport</span><span class="sxs-lookup"><span data-stu-id="d66bc-105">Code Changes in the UDP Transport Sample</span></span>  
+ <span data-ttu-id="d66bc-106">Pour illustrer le flux de transactions, l'exemple modifie le contrat de service de `ICalculatorContract` afin qu'une portée de transaction soit requise pour `CalculatorService.Add()`.</span><span class="sxs-lookup"><span data-stu-id="d66bc-106">To demonstrate transaction flow, the sample changes the service contract for `ICalculatorContract` to require a transaction scope for `CalculatorService.Add()`.</span></span> <span data-ttu-id="d66bc-107">L'exemple ajoute également un paramètre `System.Guid` supplémentaire au contrat de l'opération `Add`.</span><span class="sxs-lookup"><span data-stu-id="d66bc-107">The sample also adds an extra `System.Guid` parameter to the contract of the `Add` operation.</span></span> <span data-ttu-id="d66bc-108">Ce paramètre permet de transmettre l’identificateur de la transaction cliente au service.</span><span class="sxs-lookup"><span data-stu-id="d66bc-108">This parameter is used to pass the identifier of the client transaction to the service.</span></span>  
   
 ```csharp  
 class CalculatorService : IDatagramContract, ICalculatorContract  
@@ -38,7 +38,7 @@ class CalculatorService : IDatagramContract, ICalculatorContract
 }  
 ```  
   
- <span data-ttu-id="a0123-109">[L’échantillon Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) utilise des paquets UDP pour transmettre des messages entre un client et un service.</span><span class="sxs-lookup"><span data-stu-id="a0123-109">The [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample uses UDP packets to pass messages between a client and a service.</span></span> <span data-ttu-id="a0123-110">[L’échantillon de transport personnalisé : Transport](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) utilise le même mécanisme pour transporter les messages, mais lorsqu’une transaction est effectuée, elle est insérée dans le paquet UDP avec le message codé.</span><span class="sxs-lookup"><span data-stu-id="a0123-110">The [Transport: Custom Transport Sample](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) uses the same mechanism to transport messages, but when a transaction is flowed, it is inserted into the UDP packet along with the encoded message.</span></span>  
+ <span data-ttu-id="d66bc-109">L’exemple [transport : UDP](transport-udp.md) utilise des paquets UDP pour transmettre des messages entre un client et un service.</span><span class="sxs-lookup"><span data-stu-id="d66bc-109">The [Transport: UDP](transport-udp.md) sample uses UDP packets to pass messages between a client and a service.</span></span> <span data-ttu-id="d66bc-110">L' [exemple transport : Custom transport](transport-custom-transactions-over-udp-sample.md) utilise le même mécanisme pour transporter les messages, mais lorsqu’une transaction est passée, elle est insérée dans le paquet UDP avec le message encodé.</span><span class="sxs-lookup"><span data-stu-id="d66bc-110">The [Transport: Custom Transport Sample](transport-custom-transactions-over-udp-sample.md) uses the same mechanism to transport messages, but when a transaction is flowed, it is inserted into the UDP packet along with the encoded message.</span></span>  
   
 ```csharp  
 byte[] txmsgBuffer = TransactionMessageBuffer.WriteTransactionMessageBuffer(txPropToken, messageBuffer);  
@@ -46,13 +46,13 @@ byte[] txmsgBuffer = TransactionMessageBuffer.WriteTransactionMessageBuffer(txPr
 int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
- <span data-ttu-id="a0123-111">`TransactionMessageBuffer.WriteTransactionMessageBuffer` est une méthode d'assistance qui contient de nouvelles fonctionnalités permettant de fusionner le jeton de propagation de la transaction actuelle avec l'entité de message, et de le placer dans une mémoire tampon.</span><span class="sxs-lookup"><span data-stu-id="a0123-111">`TransactionMessageBuffer.WriteTransactionMessageBuffer` is a helper method that contains new functionality to merge the propagation token for the current transaction with the message entity and place it into a buffer.</span></span>  
+ <span data-ttu-id="d66bc-111">`TransactionMessageBuffer.WriteTransactionMessageBuffer` est une méthode d'assistance qui contient de nouvelles fonctionnalités permettant de fusionner le jeton de propagation de la transaction actuelle avec l'entité de message, et de le placer dans une mémoire tampon.</span><span class="sxs-lookup"><span data-stu-id="d66bc-111">`TransactionMessageBuffer.WriteTransactionMessageBuffer` is a helper method that contains new functionality to merge the propagation token for the current transaction with the message entity and place it into a buffer.</span></span>  
   
- <span data-ttu-id="a0123-112">Pour le transport personnalisé des flux de transactions, la mise en œuvre du client doit savoir quelles opérations de service nécessitent un flux de transaction et transmettre ces informations à WCF.</span><span class="sxs-lookup"><span data-stu-id="a0123-112">For custom transaction flow transport, the client implementation must know what service operations require transaction flow and to pass this information to WCF.</span></span> <span data-ttu-id="a0123-113">Un mécanisme doit également permettre de transmettre la transaction utilisateur à la couche de transport.</span><span class="sxs-lookup"><span data-stu-id="a0123-113">There should also be a mechanism for transmitting the user transaction to the transport layer.</span></span> <span data-ttu-id="a0123-114">Cet échantillon utilise des « inspecteurs de messages WCF » pour obtenir cette information.</span><span class="sxs-lookup"><span data-stu-id="a0123-114">This sample uses "WCF message inspectors" to obtain this information.</span></span> <span data-ttu-id="a0123-115">L’inspecteur de message client implémenté ici et appelé `TransactionFlowInspector` effectue les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="a0123-115">The client message inspector implemented here, which is called `TransactionFlowInspector`, performs the following tasks:</span></span>  
+ <span data-ttu-id="d66bc-112">Pour le transport de workflow de transaction personnalisé, l’implémentation du client doit connaître les opérations de service qui nécessitent un workflow de transaction et transmettre ces informations à WCF.</span><span class="sxs-lookup"><span data-stu-id="d66bc-112">For custom transaction flow transport, the client implementation must know what service operations require transaction flow and to pass this information to WCF.</span></span> <span data-ttu-id="d66bc-113">Un mécanisme doit également permettre de transmettre la transaction utilisateur à la couche de transport.</span><span class="sxs-lookup"><span data-stu-id="d66bc-113">There should also be a mechanism for transmitting the user transaction to the transport layer.</span></span> <span data-ttu-id="d66bc-114">Cet exemple utilise des « inspecteurs de messages WCF » pour obtenir ces informations.</span><span class="sxs-lookup"><span data-stu-id="d66bc-114">This sample uses "WCF message inspectors" to obtain this information.</span></span> <span data-ttu-id="d66bc-115">L’inspecteur de message client implémenté ici et appelé `TransactionFlowInspector` effectue les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="d66bc-115">The client message inspector implemented here, which is called `TransactionFlowInspector`, performs the following tasks:</span></span>  
   
-- <span data-ttu-id="a0123-116">Il détermine si une transaction doit être transmise pour une action de message donnée (cette opération a lieu dans `IsTxFlowRequiredForThisOperation()`).</span><span class="sxs-lookup"><span data-stu-id="a0123-116">Determines whether a transaction must be flowed for a given message action (this takes place in `IsTxFlowRequiredForThisOperation()`).</span></span>  
+- <span data-ttu-id="d66bc-116">Il détermine si une transaction doit être transmise pour une action de message donnée (cette opération a lieu dans `IsTxFlowRequiredForThisOperation()`).</span><span class="sxs-lookup"><span data-stu-id="d66bc-116">Determines whether a transaction must be flowed for a given message action (this takes place in `IsTxFlowRequiredForThisOperation()`).</span></span>  
   
-- <span data-ttu-id="a0123-117">Il joint la transaction ambiante actuelle au message à l’aide de `TransactionFlowProperty`, si une transaction doit être transmise (cette opération s’effectue dans `BeforeSendRequest()`).</span><span class="sxs-lookup"><span data-stu-id="a0123-117">Attaches the current ambient transaction to the message using `TransactionFlowProperty`, if a transaction is required to be flowed (this is done in `BeforeSendRequest()`).</span></span>  
+- <span data-ttu-id="d66bc-117">Il joint la transaction ambiante actuelle au message à l’aide de `TransactionFlowProperty`, si une transaction doit être transmise (cette opération s’effectue dans `BeforeSendRequest()`).</span><span class="sxs-lookup"><span data-stu-id="d66bc-117">Attaches the current ambient transaction to the message using `TransactionFlowProperty`, if a transaction is required to be flowed (this is done in `BeforeSendRequest()`).</span></span>  
   
 ```csharp  
 public class TransactionFlowInspector : IClientMessageInspector  
@@ -92,7 +92,7 @@ public class TransactionFlowInspector : IClientMessageInspector
 }  
 ```  
   
- <span data-ttu-id="a0123-118">Le `TransactionFlowInspector` lui-même est passé à l'infrastructure à l'aide d'un comportement personnalisé : `TransactionFlowBehavior`.</span><span class="sxs-lookup"><span data-stu-id="a0123-118">The `TransactionFlowInspector` itself is passed to the framework using a custom behavior: the `TransactionFlowBehavior`.</span></span>  
+ <span data-ttu-id="d66bc-118">Le `TransactionFlowInspector` lui-même est passé à l'infrastructure à l'aide d'un comportement personnalisé : `TransactionFlowBehavior`.</span><span class="sxs-lookup"><span data-stu-id="d66bc-118">The `TransactionFlowInspector` itself is passed to the framework using a custom behavior: the `TransactionFlowBehavior`.</span></span>  
   
 ```csharp  
 public class TransactionFlowBehavior : IEndpointBehavior  
@@ -117,7 +117,7 @@ public class TransactionFlowBehavior : IEndpointBehavior
 }  
 ```  
   
- <span data-ttu-id="a0123-119">Le mécanisme précédent étant en place, le code utilisateur crée un `TransactionScope` avant d'appeler l'opération de service.</span><span class="sxs-lookup"><span data-stu-id="a0123-119">With the preceding mechanism in place, the user code creates a `TransactionScope` before calling the service operation.</span></span> <span data-ttu-id="a0123-120">L'inspecteur de message veille à ce que la transaction soit passée au transport si elle doit être transmise à l'opération de service.</span><span class="sxs-lookup"><span data-stu-id="a0123-120">The message inspector ensures that the transaction is passed to the transport in case it is required to be flowed to the service operation.</span></span>  
+ <span data-ttu-id="d66bc-119">Le mécanisme précédent étant en place, le code utilisateur crée un `TransactionScope` avant d'appeler l'opération de service.</span><span class="sxs-lookup"><span data-stu-id="d66bc-119">With the preceding mechanism in place, the user code creates a `TransactionScope` before calling the service operation.</span></span> <span data-ttu-id="d66bc-120">L'inspecteur de message veille à ce que la transaction soit passée au transport si elle doit être transmise à l'opération de service.</span><span class="sxs-lookup"><span data-stu-id="d66bc-120">The message inspector ensures that the transaction is passed to the transport in case it is required to be flowed to the service operation.</span></span>  
   
 ```csharp  
 CalculatorContractClient calculatorClient = new CalculatorContractClient("SampleProfileUdpBinding_ICalculatorContract");  
@@ -151,7 +151,7 @@ catch (Exception)
 }  
 ```  
   
- <span data-ttu-id="a0123-121">Après réception d'un paquet UDP émanant du client, le service désérialise ce paquet afin d'extraire le message et éventuellement une transaction.</span><span class="sxs-lookup"><span data-stu-id="a0123-121">Upon receiving a UDP packet from the client, the service deserializes it to extract the message and possibly a transaction.</span></span>  
+ <span data-ttu-id="d66bc-121">Après réception d'un paquet UDP émanant du client, le service désérialise ce paquet afin d'extraire le message et éventuellement une transaction.</span><span class="sxs-lookup"><span data-stu-id="d66bc-121">Upon receiving a UDP packet from the client, the service deserializes it to extract the message and possibly a transaction.</span></span>  
   
 ```csharp  
 count = listenSocket.EndReceiveFrom(result, ref dummy);  
@@ -159,9 +159,9 @@ count = listenSocket.EndReceiveFrom(result, ref dummy);
 // read the transaction and message                       TransactionMessageBuffer.ReadTransactionMessageBuffer(buffer, count, out transaction, out msg);  
 ```  
   
- <span data-ttu-id="a0123-122">`TransactionMessageBuffer.ReadTransactionMessageBuffer()` est la méthode d'assistance qui annule le processus de sérialisation effectué par `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.</span><span class="sxs-lookup"><span data-stu-id="a0123-122">`TransactionMessageBuffer.ReadTransactionMessageBuffer()` is the helper method that reverses the serialization process performed by `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.</span></span>  
+ <span data-ttu-id="d66bc-122">`TransactionMessageBuffer.ReadTransactionMessageBuffer()` est la méthode d'assistance qui annule le processus de sérialisation effectué par `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.</span><span class="sxs-lookup"><span data-stu-id="d66bc-122">`TransactionMessageBuffer.ReadTransactionMessageBuffer()` is the helper method that reverses the serialization process performed by `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.</span></span>  
   
- <span data-ttu-id="a0123-123">Si une transaction a été transmise, elle est ajoutée au message dans `TransactionMessageProperty`.</span><span class="sxs-lookup"><span data-stu-id="a0123-123">If a transaction was flowed in, it is appended to the message in the `TransactionMessageProperty`.</span></span>  
+ <span data-ttu-id="d66bc-123">Si une transaction a été transmise, elle est ajoutée au message dans `TransactionMessageProperty`.</span><span class="sxs-lookup"><span data-stu-id="d66bc-123">If a transaction was flowed in, it is appended to the message in the `TransactionMessageProperty`.</span></span>  
   
 ```csharp  
 message = MessageEncoderFactory.Encoder.ReadMessage(msg, bufferManager);  
@@ -172,15 +172,15 @@ if (transaction != null)
 }  
 ```  
   
- <span data-ttu-id="a0123-124">Cela garantit que le répartiteur sélectionne la transaction au moment de la distribution et l’utilise lors de l’appel de l’opération de service traitée par le message.</span><span class="sxs-lookup"><span data-stu-id="a0123-124">This ensures that the dispatcher picks up the transaction at dispatch time and uses it when calling the service operation addressed by the message.</span></span>  
+ <span data-ttu-id="d66bc-124">Cela garantit que le répartiteur sélectionne la transaction au moment de la distribution et l’utilise lors de l’appel de l’opération de service traitée par le message.</span><span class="sxs-lookup"><span data-stu-id="d66bc-124">This ensures that the dispatcher picks up the transaction at dispatch time and uses it when calling the service operation addressed by the message.</span></span>  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="a0123-125">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="a0123-125">To set up, build, and run the sample</span></span>  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="d66bc-125">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="d66bc-125">To set up, build, and run the sample</span></span>  
   
-1. <span data-ttu-id="a0123-126">Pour construire la solution, suivez les instructions dans [la construction des échantillons de la Fondation De communication Windows](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="a0123-126">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+1. <span data-ttu-id="d66bc-126">Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="d66bc-126">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](building-the-samples.md).</span></span>  
   
-2. <span data-ttu-id="a0123-127">L’échantillon actuel doit être exécuté de la même façon que l’échantillon [transport: UDP.](../../../../docs/framework/wcf/samples/transport-udp.md)</span><span class="sxs-lookup"><span data-stu-id="a0123-127">The current sample should be run similarly to the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span> <span data-ttu-id="a0123-128">Pour l'exécuter, démarrez le service avec UdpTestService.exe.</span><span class="sxs-lookup"><span data-stu-id="a0123-128">To run it, start the service with UdpTestService.exe.</span></span> <span data-ttu-id="a0123-129">Si vous exécutez Windows Vista, vous devez commencer le service avec des privilèges élevés.</span><span class="sxs-lookup"><span data-stu-id="a0123-129">If you are running Windows Vista, you must start the service with elevated privileges.</span></span> <span data-ttu-id="a0123-130">Pour ce faire, cliquez à droite UdpTestService.exe dans File Explorer et cliquez sur **Run en tant qu’administrateur**.</span><span class="sxs-lookup"><span data-stu-id="a0123-130">To do so, right-click UdpTestService.exe in File Explorer and click **Run as administrator**.</span></span>  
+2. <span data-ttu-id="d66bc-127">L’exemple actuel doit être exécuté de la même façon que l’exemple [transport : UDP](transport-udp.md) .</span><span class="sxs-lookup"><span data-stu-id="d66bc-127">The current sample should be run similarly to the [Transport: UDP](transport-udp.md) sample.</span></span> <span data-ttu-id="d66bc-128">Pour l'exécuter, démarrez le service avec UdpTestService.exe.</span><span class="sxs-lookup"><span data-stu-id="d66bc-128">To run it, start the service with UdpTestService.exe.</span></span> <span data-ttu-id="d66bc-129">Si vous exécutez Windows Vista, vous devez démarrer le service avec des privilèges élevés.</span><span class="sxs-lookup"><span data-stu-id="d66bc-129">If you are running Windows Vista, you must start the service with elevated privileges.</span></span> <span data-ttu-id="d66bc-130">Pour ce faire, cliquez avec le bouton droit sur UdpTestService. exe dans l’Explorateur de fichiers, puis cliquez sur **exécuter en tant qu’administrateur**.</span><span class="sxs-lookup"><span data-stu-id="d66bc-130">To do so, right-click UdpTestService.exe in File Explorer and click **Run as administrator**.</span></span>  
   
-3. <span data-ttu-id="a0123-131">La sortie suivante est alors générée.</span><span class="sxs-lookup"><span data-stu-id="a0123-131">This produces the following output.</span></span>  
+3. <span data-ttu-id="d66bc-131">La sortie suivante est alors générée.</span><span class="sxs-lookup"><span data-stu-id="d66bc-131">This produces the following output.</span></span>  
   
     ```console  
     Testing Udp From Code.  
@@ -188,7 +188,7 @@ if (transaction != null)
     Press <ENTER> to terminate the service and start service from config...  
     ```  
   
-4. <span data-ttu-id="a0123-132">À ce stade, vous pouvez démarrer le client en exécutant UdpTestClient.exe.</span><span class="sxs-lookup"><span data-stu-id="a0123-132">At this time, you can start the client by running UdpTestClient.exe.</span></span> <span data-ttu-id="a0123-133">La sortie générée par le client se présente comme suit.</span><span class="sxs-lookup"><span data-stu-id="a0123-133">The output produced by the client is as follows.</span></span>  
+4. <span data-ttu-id="d66bc-132">À ce stade, vous pouvez démarrer le client en exécutant UdpTestClient.exe.</span><span class="sxs-lookup"><span data-stu-id="d66bc-132">At this time, you can start the client by running UdpTestClient.exe.</span></span> <span data-ttu-id="d66bc-133">La sortie générée par le client se présente comme suit.</span><span class="sxs-lookup"><span data-stu-id="d66bc-133">The output produced by the client is as follows.</span></span>  
   
     ```console
     0  
@@ -199,7 +199,7 @@ if (transaction != null)
     Press <ENTER> to complete test.  
     ```  
   
-5. <span data-ttu-id="a0123-134">La sortie du service se présente comme suit.</span><span class="sxs-lookup"><span data-stu-id="a0123-134">The service output is as follows.</span></span>  
+5. <span data-ttu-id="d66bc-134">La sortie du service se présente comme suit.</span><span class="sxs-lookup"><span data-stu-id="d66bc-134">The service output is as follows.</span></span>  
   
     ```console
     Hello, world!  
@@ -219,9 +219,9 @@ if (transaction != null)
        adding 4 + 8  
     ```  
   
-6. <span data-ttu-id="a0123-135">L’application de service affiche le message `The client transaction has flowed to the service` si elle peut faire correspondre l’identificateur de transaction envoyé par le client (dans le paramètre `clientTransactionId` de l’opération `CalculatorService.Add()`) à l’identificateur de la transaction de service.</span><span class="sxs-lookup"><span data-stu-id="a0123-135">The service application displays the message `The client transaction has flowed to the service` if it can match the transaction identifier sent by the client, in the `clientTransactionId` parameter of the `CalculatorService.Add()` operation, to the identifier of the service transaction.</span></span> <span data-ttu-id="a0123-136">Une correspondance est obtenue uniquement si la transaction cliente est transmise au service.</span><span class="sxs-lookup"><span data-stu-id="a0123-136">A match is obtained only if the client transaction has flowed to the service.</span></span>  
+6. <span data-ttu-id="d66bc-135">L’application de service affiche le message `The client transaction has flowed to the service` si elle peut faire correspondre l’identificateur de transaction envoyé par le client (dans le paramètre `clientTransactionId` de l’opération `CalculatorService.Add()`) à l’identificateur de la transaction de service.</span><span class="sxs-lookup"><span data-stu-id="d66bc-135">The service application displays the message `The client transaction has flowed to the service` if it can match the transaction identifier sent by the client, in the `clientTransactionId` parameter of the `CalculatorService.Add()` operation, to the identifier of the service transaction.</span></span> <span data-ttu-id="d66bc-136">Une correspondance est obtenue uniquement si la transaction cliente est transmise au service.</span><span class="sxs-lookup"><span data-stu-id="d66bc-136">A match is obtained only if the client transaction has flowed to the service.</span></span>  
   
-7. <span data-ttu-id="a0123-137">Pour exécuter l'application cliente sur des points de terminaison publiés à l'aide de la configuration, appuyez sur ENTRÉE dans la fenêtre d'application de service, puis réexécutez le client test.</span><span class="sxs-lookup"><span data-stu-id="a0123-137">To run the client application against endpoints published using configuration, press ENTER on the service application window and then run the test client again.</span></span> <span data-ttu-id="a0123-138">La sortie suivante doit s'afficher sur le service.</span><span class="sxs-lookup"><span data-stu-id="a0123-138">You should see the following output on the service.</span></span>  
+7. <span data-ttu-id="d66bc-137">Pour exécuter l'application cliente sur des points de terminaison publiés à l'aide de la configuration, appuyez sur ENTRÉE dans la fenêtre d'application de service, puis réexécutez le client test.</span><span class="sxs-lookup"><span data-stu-id="d66bc-137">To run the client application against endpoints published using configuration, press ENTER on the service application window and then run the test client again.</span></span> <span data-ttu-id="d66bc-138">La sortie suivante doit s'afficher sur le service.</span><span class="sxs-lookup"><span data-stu-id="d66bc-138">You should see the following output on the service.</span></span>  
   
     ```console  
     Testing Udp From Config.  
@@ -229,15 +229,15 @@ if (transaction != null)
     Press <ENTER> to terminate the service and exit...  
     ```  
   
-8. <span data-ttu-id="a0123-139">L'exécution du client sur le service génère maintenant une sortie similaire à la précédente.</span><span class="sxs-lookup"><span data-stu-id="a0123-139">Running the client against the service now produces similar output as before.</span></span>  
+8. <span data-ttu-id="d66bc-139">L'exécution du client sur le service génère maintenant une sortie similaire à la précédente.</span><span class="sxs-lookup"><span data-stu-id="d66bc-139">Running the client against the service now produces similar output as before.</span></span>  
   
-9. <span data-ttu-id="a0123-140">Pour régénérer la configuration et le code client à l'aide de Svcutil.exe, démarrez l'application de service, puis exécutez la commande Svcutil.exe suivante à partir du répertoire racine de l'exemple.</span><span class="sxs-lookup"><span data-stu-id="a0123-140">To regenerate the client code and configuration using Svcutil.exe, start the service application and then run the following Svcutil.exe command from the root directory of the sample.</span></span>  
+9. <span data-ttu-id="d66bc-140">Pour régénérer la configuration et le code client à l'aide de Svcutil.exe, démarrez l'application de service, puis exécutez la commande Svcutil.exe suivante à partir du répertoire racine de l'exemple.</span><span class="sxs-lookup"><span data-stu-id="d66bc-140">To regenerate the client code and configuration using Svcutil.exe, start the service application and then run the following Svcutil.exe command from the root directory of the sample.</span></span>  
   
     ```console  
     svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
     ```  
   
-10. <span data-ttu-id="a0123-141">Svcutil.exe ne générant pas de configuration d’extension de liaison pour `sampleProfileUdpBinding`, vous devez donc l’ajouter manuellement.</span><span class="sxs-lookup"><span data-stu-id="a0123-141">Note that Svcutil.exe does not generate the binding extension configuration for the `sampleProfileUdpBinding`; you must add it manually.</span></span>  
+10. <span data-ttu-id="d66bc-141">Svcutil.exe ne générant pas de configuration d’extension de liaison pour `sampleProfileUdpBinding`, vous devez donc l’ajouter manuellement.</span><span class="sxs-lookup"><span data-stu-id="d66bc-141">Note that Svcutil.exe does not generate the binding extension configuration for the `sampleProfileUdpBinding`; you must add it manually.</span></span>  
   
     ```xml  
     <configuration>  
@@ -254,14 +254,14 @@ if (transaction != null)
     ```  
   
 > [!IMPORTANT]
-> <span data-ttu-id="a0123-142">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="a0123-142">The samples may already be installed on your machine.</span></span> <span data-ttu-id="a0123-143">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="a0123-143">Check for the following (default) directory before continuing.</span></span>  
+> <span data-ttu-id="d66bc-142">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="d66bc-142">The samples may already be installed on your machine.</span></span> <span data-ttu-id="d66bc-143">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="d66bc-143">Check for the following (default) directory before continuing.</span></span>  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> <span data-ttu-id="a0123-144">Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons.</span><span class="sxs-lookup"><span data-stu-id="a0123-144">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="a0123-145">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="a0123-145">This sample is located in the following directory.</span></span>  
+> <span data-ttu-id="d66bc-144">Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="d66bc-144">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="d66bc-145">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="d66bc-145">This sample is located in the following directory.</span></span>  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transactions\TransactionMessagePropertyUDPTransport`  
   
-## <a name="see-also"></a><span data-ttu-id="a0123-146">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a0123-146">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d66bc-146">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d66bc-146">See also</span></span>
 
-- [<span data-ttu-id="a0123-147">Transport : UDP</span><span class="sxs-lookup"><span data-stu-id="a0123-147">Transport: UDP</span></span>](../../../../docs/framework/wcf/samples/transport-udp.md)
+- [<span data-ttu-id="d66bc-147">Transport : UDP</span><span class="sxs-lookup"><span data-stu-id="d66bc-147">Transport: UDP</span></span>](transport-udp.md)

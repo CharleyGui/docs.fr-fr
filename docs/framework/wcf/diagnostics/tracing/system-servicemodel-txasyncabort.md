@@ -2,24 +2,24 @@
 title: System.ServiceModel.TxAsyncAbort
 ms.date: 03/30/2017
 ms.assetid: bce47ff2-abd0-4b58-8667-ebf1ef3580b8
-ms.openlocfilehash: a6989da7b457e819a49d7c27e8732c7f33dc51b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5147f22f1ca6d9b6b366297d691a4f963f407021
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768750"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576588"
 ---
-# <a name="systemservicemodeltxasyncabort"></a><span data-ttu-id="9f4b3-102">System.ServiceModel.TxAsyncAbort</span><span class="sxs-lookup"><span data-stu-id="9f4b3-102">System.ServiceModel.TxAsyncAbort</span></span>
-<span data-ttu-id="9f4b3-103">La transaction spécifiée a été abandonnée de façon asynchrone.</span><span class="sxs-lookup"><span data-stu-id="9f4b3-103">The specified transaction was asynchronously aborted.</span></span>  
+# <a name="systemservicemodeltxasyncabort"></a><span data-ttu-id="9c7ab-102">System.ServiceModel.TxAsyncAbort</span><span class="sxs-lookup"><span data-stu-id="9c7ab-102">System.ServiceModel.TxAsyncAbort</span></span>
+<span data-ttu-id="9c7ab-103">La transaction spécifiée a été abandonnée de façon asynchrone.</span><span class="sxs-lookup"><span data-stu-id="9c7ab-103">The specified transaction was asynchronously aborted.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="9f4b3-104">Description</span><span class="sxs-lookup"><span data-stu-id="9f4b3-104">Description</span></span>  
- <span data-ttu-id="9f4b3-105">La transaction courante a été abandonnée car un autre participant a voté Abort, le délai a été dépassé et une autre erreur s’est produite à l’intérieur du participant d’une transaction.</span><span class="sxs-lookup"><span data-stu-id="9f4b3-105">The current transaction was aborted due to another participant voting for Abort, time-outs occurring, or another error inside the participant of a transaction.</span></span>  
+## <a name="description"></a><span data-ttu-id="9c7ab-104">Description</span><span class="sxs-lookup"><span data-stu-id="9c7ab-104">Description</span></span>  
+ <span data-ttu-id="9c7ab-105">La transaction courante a été abandonnée car un autre participant a voté Abort, le délai a été dépassé et une autre erreur s’est produite à l’intérieur du participant d’une transaction.</span><span class="sxs-lookup"><span data-stu-id="9c7ab-105">The current transaction was aborted due to another participant voting for Abort, time-outs occurring, or another error inside the participant of a transaction.</span></span>  
   
-## <a name="troubleshooting"></a><span data-ttu-id="9f4b3-106">Résolution des problèmes</span><span class="sxs-lookup"><span data-stu-id="9f4b3-106">Troubleshooting</span></span>  
- <span data-ttu-id="9f4b3-107">Vérifiez tous les journaux système si cet abandon est inattendu afin de déterminer la vraie raison de l'abandon.</span><span class="sxs-lookup"><span data-stu-id="9f4b3-107">Check all system logs if this abort is unexpected to determine the real reason for the abort.</span></span>  
+## <a name="troubleshooting"></a><span data-ttu-id="9c7ab-106">Dépannage</span><span class="sxs-lookup"><span data-stu-id="9c7ab-106">Troubleshooting</span></span>  
+ <span data-ttu-id="9c7ab-107">Vérifiez tous les journaux système si cet abandon est inattendu afin de déterminer la vraie raison de l'abandon.</span><span class="sxs-lookup"><span data-stu-id="9c7ab-107">Check all system logs if this abort is unexpected to determine the real reason for the abort.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9f4b3-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9f4b3-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9c7ab-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9c7ab-108">See also</span></span>
 
-- [<span data-ttu-id="9f4b3-109">Suivi</span><span class="sxs-lookup"><span data-stu-id="9f4b3-109">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="9f4b3-110">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="9f4b3-110">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="9f4b3-111">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="9f4b3-111">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="9c7ab-109">Suivi</span><span class="sxs-lookup"><span data-stu-id="9c7ab-109">Tracing</span></span>](index.md)
+- [<span data-ttu-id="9c7ab-110">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="9c7ab-110">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="9c7ab-111">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="9c7ab-111">Administration and Diagnostics</span></span>](../index.md)
