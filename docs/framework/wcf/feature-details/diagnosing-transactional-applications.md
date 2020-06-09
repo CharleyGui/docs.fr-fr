@@ -2,24 +2,24 @@
 title: Diagnostic d’applications transactionnelles
 ms.date: 03/30/2017
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
-ms.openlocfilehash: 9a4f064d903092b04f8885fb00b56e18c9cfeb74
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fb3a83083e876cf697621ba70dcf7dd67636f83a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751118"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599215"
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnostic d’applications transactionnelles
-Cette rubrique décrit comment utiliser la gestion de Windows Communication Foundation (WCF) et de la fonctionnalité de diagnostic pour résoudre les problèmes d’une application transactionnelle.  
+Cette rubrique décrit comment utiliser la fonctionnalité de diagnostic et de gestion Windows Communication Foundation (WCF) pour dépanner une application transactionnelle.  
   
-## <a name="performance-counters"></a>Compteurs de performances  
- WCF fournit un ensemble standard de compteurs de performance pour mesurer les performances de votre application transactionnelle. Pour plus d’informations, consultez [Compteurs de performance](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md).  
+## <a name="performance-counters"></a>Compteurs de performance  
+ WCF fournit un ensemble standard de compteurs de performances pour mesurer les performances de votre application transactionnelle. Pour plus d’informations, consultez [Compteurs de performances](../diagnostics/performance-counters/index.md).  
   
  Les compteurs de performance sont définis à trois niveaux différents : service, point de terminaison et opération, tel que décrit dans les tableaux suivants.  
   
 ### <a name="service-performance-counters"></a>Compteurs de performance de service  
   
-|Compteur de performance|Description|  
+|Compteur de performances|Description|  
 |-------------------------|-----------------|  
 |Transactions passées|Nombre de transactions passées aux opérations dans ce service. Ce compteur est incrémenté chaque fois qu'une transaction est présente dans le message envoyé au service.|  
 |Transactions passées par seconde|Nombre de transactions passées aux opérations dans ce service par seconde. Ce compteur est incrémenté chaque fois qu'une transaction est présente dans le message envoyé au service.|  
@@ -32,20 +32,20 @@ Cette rubrique décrit comment utiliser la gestion de Windows Communication Foun
   
 ### <a name="endpoint-performance-counters"></a>Compteurs de performance de point de terminaison  
   
-|Compteur de performance|Description|  
+|Compteur de performances|Description|  
 |-------------------------|-----------------|  
 |Transactions passées|Nombre de transactions passées à des opérations au niveau de ce point de terminaison. Ce compteur est incrémenté chaque fois qu’une transaction est présente dans le message envoyé au point de terminaison.|  
 |Transactions passées par seconde|Nombre de transactions passées à des opérations au niveau de ce point de terminaison par seconde. Ce compteur est incrémenté chaque fois qu’une transaction est présente dans le message envoyé au point de terminaison.|  
   
 ### <a name="operation-performance-counters"></a>Compteurs de performance d'opération  
   
-|Compteur de performance|Description|  
+|Compteur de performances|Description|  
 |-------------------------|-----------------|  
 |Transactions passées|Nombre de transactions passées à des opérations au niveau de ce point de terminaison. Ce compteur est incrémenté chaque fois qu’une transaction est présente dans le message envoyé au point de terminaison.|  
 |Transactions passées par seconde|Nombre de transactions passées à des opérations au niveau de ce point de terminaison par seconde. Ce compteur est incrémenté chaque fois qu’une transaction est présente dans le message envoyé au point de terminaison.|  
   
-## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation  
- WCF expose des données d’inspection d’un service en cours d’exécution via un fournisseur de services WCF Windows Management Instrumentation (WMI). Pour plus d’informations sur l’accès aux données WMI, consultez [à l’aide de Windows Management Instrumentation pour les Diagnostics](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+## <a name="windows-management-instrumentation"></a>WMI (Windows Management Instrumentation)  
+ WCF expose les données d’inspection d’un service au moment de l’exécution via un fournisseur WMI (Windows Management Instrumentation WCF). Pour plus d’informations sur l’accès aux données WMI, consultez [utilisation de Windows Management Instrumentation pour les diagnostics](../diagnostics/wmi/index.md).  
   
  Un certain nombre de propriétés WMI en lecture seule indiquent les paramètres de transaction appliqués pour un service. Les tableaux suivants répertorient l'ensemble de ces paramètres.  
   
@@ -87,13 +87,13 @@ Cette rubrique décrit comment utiliser la gestion de Windows Communication Foun
 ## <a name="tracing"></a>Traçage  
  Les suivis vous permettent de surveiller et d'analyser les erreurs dans vos applications transactionnelles. Pour activer le suivi, procédez comme suit :  
   
-- Suivi de WCF standard  
+- Suivi WCF standard  
   
-     Ce type de suivi est identique à celui n’importe quelle application WCF. Pour plus d'informations, consultez [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
+     Ce type de suivi est le même que pour le suivi d’une application WCF. Pour plus d'informations, consultez [Configuring Tracing](../diagnostics/tracing/configuring-tracing.md).  
   
 - Suivi WS-AtomicTransaction  
   
-     Suivi de WS-AtomicTransaction peut être activé à l’aide de la [(wsatConfig.exe) de l’utilitaire de Configuration WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Un suivi de ce type permet de connaître l’état des transactions et des participants d’un système. Pour activer également le suivi du modèle de service interne, affectez une valeur valide de l'énumération `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` à la clé de registre <xref:System.Diagnostics.SourceLevels>. Vous pouvez activer l’enregistrement des messages dans la même façon que d’autres applications WCF.  
+     Le suivi WS-AtomicTransaction peut être activé à l’aide de l' [utilitaire de configuration WS-AtomicTransaction (WsatConfig. exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Un suivi de ce type permet de connaître l’état des transactions et des participants d’un système. Pour activer également le suivi du modèle de service interne, affectez une valeur valide de l'énumération `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` à la clé de registre <xref:System.Diagnostics.SourceLevels>. Vous pouvez activer la journalisation des messages de la même façon que pour les autres applications WCF.  
   
 - Suivi `System.Transactions`  
   
@@ -118,10 +118,10 @@ Cette rubrique décrit comment utiliser la gestion de Windows Communication Foun
     </configuration>  
     ```  
   
-     Cela permet également le suivi de WCF, WCF utilise également le <xref:System.Transactions> infrastructure.  
+     Cela permet également le suivi WCF, car WCF utilise également l' <xref:System.Transactions> infrastructure.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Administration et diagnostics](../../../../docs/framework/wcf/diagnostics/index.md)
-- [Configuration du suivi](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [Utilitaire de configuration WS-AtomicTransaction (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [Administration et diagnostics](../diagnostics/index.md)
+- [Configuration du traçage](../diagnostics/tracing/configuring-tracing.md)
+- [Utilitaire de configuration WS-AtomicTransaction (wsatConfig.exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md)

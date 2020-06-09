@@ -2,12 +2,12 @@
 title: Custom Binding Security
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: b0b293c58e13f7add6f2cb49ea3c108a86292691
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: eb575594cec9ea714578bc104344acc14b00e9df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990008"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592461"
 ---
 # <a name="custom-binding-security"></a>Custom Binding Security
 
@@ -24,7 +24,7 @@ La configuration du service définit une liaison personnalisée prenant en charg
 
 - Sécurité de message Windows.
 
-La configuration de la liaison personnalisée active le transport sécurisé en activant simultanément la sécurité de niveau message. L’ordre des éléments de liaison est important pour la définition d’une liaison personnalisée, car chacun représente une couche dans la pile de canaux (consultez [liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md)). La liaison personnalisée est définie dans les fichiers de configuration du service et du client, tel qu'illustré dans l'exemple de configuration suivant.
+La configuration de la liaison personnalisée active le transport sécurisé en activant simultanément la sécurité de niveau message. L’ordre des éléments de liaison est important pour la définition d’une liaison personnalisée, car chacun représente une couche dans la pile de canaux (consultez [liaisons personnalisées](../extending/custom-bindings.md)). La liaison personnalisée est définie dans les fichiers de configuration du service et du client, tel qu'illustré dans l'exemple de configuration suivant.
 
 ```xml
 <bindings>
@@ -58,7 +58,7 @@ La liaison personnalisée utilise un certificat de service afin d’authentifier
 </behaviors>
 ```
 
-En outre, la liaison personnalisée utilise la sécurité de niveau message avec le type d’informations d’identification Windows, c’est-à-dire le type par défaut. Cette tâche est effectuée par l’élément de liaison `security`. Le client et le service sont tous deux authentifiés à l'aide de la sécurité au niveau du message si le mécanisme d'authentification Kerberos est disponible. Cela se produit à condition toutefois que l'exemple soit exécuté dans l'environnement Active Directory. Si le mécanisme d'authentification Kerberos n'est pas disponible, l'authentification NTLM est utilisée. NTLM authentifie le client au service mais n'authentifie pas le service au client. L'élément de liaison `security` est configuré pour utiliser un type `SecureConversation` `authenticationType`, ce qui entraîne la création d'une session de sécurité à la fois au niveau du client et du service. Ceci est nécessaire pour permettre au contrat duplex du service de fonctionner.
+En outre, la liaison personnalisée utilise la sécurité de niveau message avec le type d’informations d’identification Windows, c’est-à-dire le type par défaut. Cette tâche est effectuée par l’élément de liaison `security`. Le client et le service sont tous deux authentifiés à l'aide de la sécurité au niveau du message si le mécanisme d'authentification Kerberos est disponible. Cela se produit à condition toutefois que l'exemple soit exécuté dans l'environnement Active Directory. Si le mécanisme d'authentification Kerberos n'est pas disponible, l'authentification NTLM est utilisée. NTLM authentifie le client au service mais n'authentifie pas le service au client. L' `security` élément de liaison est configuré pour utiliser `SecureConversation` `authenticationType` , ce qui entraîne la création d’une session de sécurité sur le client et le service. Ceci est nécessaire pour permettre au contrat duplex du service de fonctionner.
 
 Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console cliente. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.
 
@@ -106,11 +106,11 @@ Les informations suivantes fournissent une vue d'ensemble des différentes secti
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur
 
@@ -135,22 +135,22 @@ Les informations suivantes fournissent une vue d'ensemble des différentes secti
 
     3. Copiez les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.
 
-    4. Exécutez la commande suivante dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d' `Setup.bat service`administrateur :. L'exécution de cette commande crée un certificat de service dont le nom du sujet correspond au nom de l'ordinateur sur lequel le fichier de commandes a été exécuté.
+    4. Exécutez la commande suivante dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur : `Setup.bat service` . L'exécution de cette commande crée un certificat de service dont le nom du sujet correspond au nom de l'ordinateur sur lequel le fichier de commandes a été exécuté.
 
         > [!NOTE]
         > Le fichier de commandes Setup.bat est conçu pour s'exécuter à partir d'une invite de commandes de Visual Studio 2010. La variable d'environnement PATH doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable est définie automatiquement dans une invite de commandes de Visual Studio 2010.
 
-    5. Modifiez le [ \<> serviceCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) dans le fichier service. exe. config pour refléter le nom du sujet du certificat généré à l’étape précédente.
+    5. Modifiez le [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) contenu du fichier service. exe. config pour qu’il reflète le nom du sujet du certificat généré à l’étape précédente.
 
     6. Exécutez Service.exe à partir d'une invite de commandes.
 
-2. Sur l'ordinateur client :
+2. Sur l’ordinateur client :
 
     1. Copiez les fichiers programme du client à partir du dossier \client\bin\ sur l'ordinateur client. Copiez également le fichier Cleanup.bat.
 
     2. Exécutez Cleanup.bat pour supprimer tous les anciens certificats d'exemples précédents.
 
-    3. Exportez le certificat du service en ouvrant une invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et en exécutant la commande suivante sur l' `%SERVER_NAME%` ordinateur de service (remplacez par le nom complet de l’ordinateur où le service est en cours d’exécution) :
+    3. Exportez le certificat du service en ouvrant une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et en exécutant la commande suivante sur l’ordinateur de service (remplacez `%SERVER_NAME%` par le nom complet de l’ordinateur sur lequel le service est en cours d’exécution) :
 
         ```console
         certmgr -put -r LocalMachine -s My -c -n %SERVER_NAME% %SERVER_NAME%.cer
@@ -158,7 +158,7 @@ Les informations suivantes fournissent une vue d'ensemble des différentes secti
 
     4. Copiez le fichier % SERVER_NAME%.cer sur l'ordinateur client (remplacez %SERVER_NAME% par le nom complet de l'ordinateur où le service s'exécute).
 
-    5. Importez le certificat du service en ouvrant une Invite de commandes développeur pour Visual Studio avec des privilèges d’administration, puis en exécutant la commande suivante sur l’ordinateur client (remplacez% SERVER_NAME% par le nom complet de l’ordinateur sur lequel le le service est en cours d’exécution) :
+    5. Importez le certificat du service en ouvrant une Invite de commandes développeur pour Visual Studio avec des privilèges d’administration, puis en exécutant la commande suivante sur l’ordinateur client (remplacez% SERVER_NAME% par le nom complet de l’ordinateur sur lequel le service est en cours d’exécution) :
 
         ```console
         certmgr.exe -add -c %SERVER_NAME%.cer -s -r CurrentUser TrustedPeople
@@ -179,7 +179,7 @@ Les informations suivantes fournissent une vue d'ensemble des différentes secti
         </client>
         ```
 
-    7. Si le service s'exécute dans un environnement de domaine sous un compte autre que NetworkService ou LocalSystem, vous devrez peut-être modifier l'identité de son point de terminaison dans le fichier App.config du client afin de lui affecter une identité UPN ou SPN adaptée au compte utilisé pour l'exécuter. Pour plus d’informations sur l’identité du point de terminaison, consultez la rubrique [identité et authentification du service](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md) .
+    7. Si le service s'exécute dans un environnement de domaine sous un compte autre que NetworkService ou LocalSystem, vous devrez peut-être modifier l'identité de son point de terminaison dans le fichier App.config du client afin de lui affecter une identité UPN ou SPN adaptée au compte utilisé pour l'exécuter. Pour plus d’informations sur l’identité du point de terminaison, consultez la rubrique [identité et authentification du service](../feature-details/service-identity-and-authentication.md) .
 
     8. Exécutez Client.exe à partir d'une invite de commandes.
 

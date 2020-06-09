@@ -1,16 +1,17 @@
 ---
 title: Tâches d’E/S courantes
+description: Découvrez comment effectuer des tâches de fichiers courantes & des tâches de répertoire courantes à l’aide de classes & méthodes dans l’espace de noms System.IO dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - I/O, common tasks
 ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
-ms.openlocfilehash: 9474d6c0340583e285a6dc47933c602f799f121d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4b97b4e464622e482a9ef45e143865ee82e6b5d4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287420"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598604"
 ---
 # <a name="common-io-tasks"></a>Tâches d’E/S courantes
 L'espace de noms <xref:System.IO> fournit plusieurs classes qui permettent d'exécuter différentes actions, telles que la lecture et l'écriture, sur des fichiers, des répertoires et des flux de données. Pour plus d’informations, consultez [e/s de fichier et de flux](index.md).  

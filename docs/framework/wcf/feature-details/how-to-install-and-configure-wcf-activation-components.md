@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: e71664b4361ba28a50b29499585b20a8adbaefd2
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: f7a846b076691394cb855e4978e890cdcac76eb2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964467"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597031"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Comment : installer et configurer des composants d'activation WCF
 
@@ -19,11 +19,11 @@ Cette rubrique décrit les étapes nécessaires à la configuration du service d
 
 - Configurer le service WAS pour prendre en charge un protocole non HTTP. La procédure suivante configure Windows Vista pour l’activation TCP.
 
-Après l’installation et la configuration de WAS, consultez [Comment : héberger un service WCF dans was](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) pour les procédures de création d’un service WCF qui expose un point de terminaison non-http qui utilise was.
+Après l’installation et la configuration de WAS, consultez [Comment : héberger un service WCF dans was](how-to-host-a-wcf-service-in-was.md) pour les procédures de création d’un service WCF qui expose un point de terminaison non-http qui utilise was.
 
 ## <a name="to-install-the-wcf-non-http-activation-components"></a>Pour installer les composants d'activation non HTTP WCF
 
-1. Cliquez sur le bouton **Démarrer** , puis sur **panneau de configuration**.
+1. Cliquez sur **Démarrer**, puis sur **Panneau de configuration**.
 
 2. Cliquez sur **Programmes** puis sur **Programmes et fonctionnalités**.
 
@@ -52,7 +52,7 @@ Après l’installation et la configuration de WAS, consultez [Comment : héber
     ```
 
     > [!NOTE]
-    > Cette commande est une ligne unique de texte. Cette commande permet d’accéder à l’application\<*WCF*> à l’aide de `http://localhost/<WCF Application>` et `net.tcp://localhost/<WCF Application>`.
+    > Cette commande est une ligne unique de texte. Cette commande permet \<*WCF Application*> d’accéder à l’application/à l’aide de `http://localhost/<WCF Application>` et de `net.tcp://localhost/<WCF Application>` .
 
      Supprimez la liaison de site net.tcp que vous avez ajoutée dans le cadre de cet exemple.
 
@@ -103,7 +103,7 @@ Après l’installation et la configuration de WAS, consultez [Comment : héber
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Activation TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
-- [Activation MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md)
-- [Activation de NamedPipe](../../../../docs/framework/wcf/samples/namedpipe-activation.md)
+- [TCP Activation](../samples/tcp-activation.md)
+- [MSMQ Activation](../samples/msmq-activation.md)
+- [NamedPipe Activation](../samples/namedpipe-activation.md)
 - [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

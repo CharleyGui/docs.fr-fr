@@ -1,5 +1,6 @@
 ---
 title: E/S sur fichier asynchrones
+description: En savoir plus sur les e/s de fichier asynchrones dans .NET. Découvrez les méthodes Async pour simplifier les opérations asynchrones, telles que ReadAsync, WriteAsync, etc.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,16 +18,16 @@ helpviewer_keywords:
 - multiple I/O requests
 - data streams, synchronous streams
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
-ms.openlocfilehash: 66e7d01f37a1119b9d2076a9131aa40f26d15625
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9506a366b6f1e363ec13550e5ed68c7176dd4d0a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708189"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598617"
 ---
 # <a name="asynchronous-file-io"></a>E/S sur fichier asynchrones
 
-Les opérations asynchrones vous permettent d'exécuter des opérations d'E/S consommant beaucoup de ressources sans bloquer le thread principal. Cette considération de performance est particulièrement importante dans une application Windows 8.x Store ou une application de bureau où une opération de flux fastidieuse peut bloquer le thread d’interface utilisateur et faire apparaître votre application comme si elle ne fonctionnait pas.
+Les opérations asynchrones vous permettent d'exécuter des opérations d'E/S consommant beaucoup de ressources sans bloquer le thread principal. Cette considération de performance est particulièrement importante dans une application de Windows 8. x Store ou une application de bureau où une opération de flux de temps peut bloquer le thread d’interface utilisateur et faire apparaître votre application comme si elle ne fonctionnait pas.
 
 Depuis .NET Framework 4.5, les types d’E/S incluent des méthodes asynchrones pour simplifier les opérations asynchrones. Une méthode asynchrone contient `Async` dans son nom, comme <xref:System.IO.Stream.ReadAsync%2A>, <xref:System.IO.Stream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.FlushAsync%2A>, <xref:System.IO.TextReader.ReadLineAsync%2A>, et <xref:System.IO.TextReader.ReadToEndAsync%2A>. Ces méthodes asynchrones sont implémentées sur les classes de flux, telles que <xref:System.IO.Stream>, <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>, et les classes qui sont utilisées pour lire ou écrire dans des flux, comme <xref:System.IO.TextReader> et l' <xref:System.IO.TextWriter>.
 
@@ -50,7 +51,7 @@ L'exemple suivant est semblable au précédent, mais utilise des objets <xref:Sy
 [!code-csharp[Asynchronous_File_IO_async#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example2.cs#2)]
 [!code-vb[Asynchronous_File_IO_async#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example2.vb#2)]
 
-L’exemple suivant montre le fichier de code et le fichier XAML qui sont utilisés pour ouvrir un fichier comme un <xref:System.IO.Stream> <xref:System.IO.StreamReader> dans une application Windows 8.x Store, et lire son contenu en utilisant une instance de la classe. Il utilise des méthodes asynchrones pour ouvrir le fichier en tant que flux et lire son contenu.
+L’exemple suivant montre le fichier code-behind et le fichier XAML utilisés pour ouvrir un fichier en tant que <xref:System.IO.Stream> dans une application du Windows 8. x Store et lire son contenu à l’aide d’une instance de la <xref:System.IO.StreamReader> classe. Il utilise des méthodes asynchrones pour ouvrir le fichier en tant que flux et lire son contenu.
 
 [!code-csharp[System.IO.WindowsRuntimeStorageExtensions#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestorageextensions/cs/blankpage.xaml.cs#2)]
 [!code-vb[System.IO.WindowsRuntimeStorageExtensions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestorageextensions/vb/blankpage.xaml.vb#2)]
@@ -60,6 +61,6 @@ L’exemple suivant montre le fichier de code et le fichier XAML qui sont utilis
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IO.Stream>
-- [Fichier et stream I/O](index.md)
-- [Programmation asynchrone avec async et attente (C)](../../csharp/programming-guide/concepts/async/index.md)
+- [E/s de fichier et de flux](index.md)
+- [Programmation asynchrone avec Async et await (C#)](../../csharp/programming-guide/concepts/async/index.md)
 - [Programmation asynchrone avec Async et Await (Visual Basic)](../../visual-basic/programming-guide/concepts/async/index.md)
