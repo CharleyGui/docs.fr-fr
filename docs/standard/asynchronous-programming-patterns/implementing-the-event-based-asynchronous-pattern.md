@@ -1,5 +1,6 @@
 ---
 title: Implémentation du modèle asynchrone basé sur des événements
+description: Découvrez comment implémenter le modèle asynchrone basé sur les événements (EAP) dans .NET. EAP est un moyen standard d’empaqueter une classe qui a des fonctionnalités asynchrones.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: 484050b45b5da72386e9ac29805d7faf0ca9cbd6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9ffb2e2f426e2d2d97998a89a3e8d306de4f29ca
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289380"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84583659"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implémentation du modèle asynchrone basé sur des événements
 

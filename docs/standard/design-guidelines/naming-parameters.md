@@ -1,17 +1,18 @@
 ---
 title: Attribution d'un nom à des paramètres
+description: Découvrez les instructions relatives à la dénomination des paramètres. Par exemple, utilisez des noms de paramètres descriptifs & casse mixte, & envisagez d’attribuer un nom en fonction de la signification au lieu de type.
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - parameters, names
 - names [.NET Framework], parameters
 ms.assetid: ca3c956e-725a-441b-b4e3-eab5d472f41c
-ms.openlocfilehash: 0d5c5cd144fbae88439ee981fbdb6e30ff487005
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 54f37c4d6a0f9a6931fa69d612bf0e45bf1f2ce7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290160"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84583516"
 ---
 # <a name="naming-parameters"></a>Attribution d'un nom à des paramètres
 Au-delà de la raison évidente de la lisibilité, il est important de suivre les instructions pour les noms de paramètres, car les paramètres sont affichés dans la documentation et dans le concepteur quand les outils de conception visuelle proposent IntelliSense et la fonctionnalité de navigation des classes.

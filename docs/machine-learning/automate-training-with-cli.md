@@ -1,14 +1,14 @@
 ---
 title: Automatiser l’entraînement du modèle avec l’interface CLI ML.NET
 description: Découvrez comment utiliser l’outil CLI ML.NET pour entraîner automatiquement le meilleur modèle à partir de la ligne de commande.
-ms.date: 12/17/2019
+ms.date: 06/03/2020
 ms.custom: how-to, mlnet-tooling
-ms.openlocfilehash: 2e8bade898adfc3fc4af92c880b62c646343eb2f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: d7c6102c2257be1daa613fde0edabce83d04b414
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212410"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589658"
 ---
 # <a name="automate-model-training-with-the-mlnet-cli"></a>Automatiser l’entraînement du modèle avec l’interface CLI ML.NET
 
@@ -33,24 +33,24 @@ Vous pouvez générer ces ressources à partir de vos propres jeux de données s
 
 La CLI ML.NET prend en charge les tâches de ML suivantes :
 
-- `binary-classification`
-- `multiclass-classification`
-- `regression`
-- À l’avenir, elle prendra d’autres tâches de machine learning comme `recommendation`, `ranking`, `anomaly-detection`, `clustering`
+- classification (binaire et multi-classe)
+- régression
+- Recommandation
+- Demain : autres tâches Machine Learning telles que la classification des images, le classement, la détection des anomalies, le clustering
 
-Exemple d'utilisation :
+Exemple d’utilisation (scénario de classification) :
 
 ```console
-mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
+mlnet classification --dataset "yelp_labelled.txt" --label-col 1 --has-header false --train-time 10
 ```
 
-![image](media/automate-training-with-cli/cli-model-generation.gif)
+![image](media/automate-training-with-cli/mlnet-classification-powershell.gif)
 
 Vous pouvez l’exécuter de la même façon sur *Windows PowerShell*, *MacOS/Linux bash*ou *Windows cmd*. Toutefois, l’autocomplétion via la touche tab (suggestions de paramètres) ne fonctionne pas sur *Windows CMD*.
 
 ## <a name="output-assets-generated"></a>Ressources générées en sortie
 
-La commande `auto-train` de l’interface CLI génère les ressources suivantes dans le dossier de sortie :
+Les commandes de tâche ML dans l’interface CLI génèrent les ressources suivantes dans le dossier de sortie :
 
 - Un fichier .zip de modèle sérialisé (le « meilleur modèle »), prêt à être utilisé pour effectuer des prédictions.
 - Une solution C# contenant :
@@ -68,23 +68,15 @@ Quand vous générez un « meilleur modèle » à l’aide de l’outil CLI, v
 
 Ici, ces métriques sont regroupées par tâche ML, ce qui vous permet de comprendre la qualité de votre « meilleur modèle » généré automatiquement.
 
-### <a name="metrics-for-binary-classification-models"></a>Métriques pour les modèles de classification binaire
+### <a name="metrics-for-classification-models"></a>Métriques pour les modèles de classification
 
-La capture d’écran suivante liste les métriques des tâches ML de classification binaire pour les cinq meilleurs modèles trouvés par l’outil CLI :
-
-![image](media/automate-training-with-cli/cli-binary-classification-metrics.png)
-
-La précision est une mesure populaire pour les problèmes de classification, mais la précision n’est pas toujours la meilleure mesure pour sélectionner le meilleur modèle à partir de, comme expliqué dans les références suivantes. Dans certains cas, vous aurez besoin d’évaluer la qualité de votre modèle à l’aide d’autres métriques.
-
-Pour explorer et comprendre les métriques générées par l’interface CLI, consultez [mesures d’évaluation pour la classification binaire](resources/metrics.md#evaluation-metrics-for-binary-classification).
-
-### <a name="metrics-for-multi-class-classification-models"></a>Métriques pour les modèles de classification multiclasse
-
-La capture d’écran suivante liste les métriques des tâches ML de classification multiclasse pour les cinq meilleurs modèles trouvés par l’outil CLI :
+L’exemple suivant affiche la liste des métriques de classification pour les cinq principaux modèles trouvés par l’interface CLI :
 
 ![image](media/automate-training-with-cli/cli-multiclass-classification-metrics.png)
 
-Pour explorer et comprendre les métriques générées par l’interface CLI, consultez [mesures d’évaluation pour la classification multiclasse](resources/metrics.md#evaluation-metrics-for-multi-class-classification).
+ La précision est une mesure populaire pour les problèmes de classification, mais la précision n’est pas toujours la meilleure mesure pour sélectionner le meilleur modèle à partir de, comme expliqué dans les références suivantes. Dans certains cas, vous aurez besoin d’évaluer la qualité de votre modèle à l’aide d’autres métriques.
+
+Pour explorer et comprendre les métriques générées par l’interface CLI, consultez [mesures d’évaluation pour la classification](resources/metrics.md#evaluation-metrics-for-multi-class-classification).
 
 ### <a name="metrics-for-regression-and-recommendation-models"></a>Métriques pour les modèles de régression et de recommandation
 

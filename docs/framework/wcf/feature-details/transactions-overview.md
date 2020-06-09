@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, transactions
 - Windows Communication Foundation, transactions
 ms.assetid: c7757854-1207-4019-8b31-552578b7d570
-ms.openlocfilehash: 1c3589b336ee8982cd6d694112e4c1f784f59ad2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a8e3306612e016568ad7cfd5138ab538af771a17
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585786"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585829"
 ---
 # <a name="windows-communication-foundation-transactions-overview"></a>Vue d’ensemble des transactions Windows Communication Foundation
 Les transactions permettent de regrouper un ensemble d’actions ou d’opérations dans une unité d’exécution unique et indivisible. Une transaction est une collection d'opérations avec les propriétés suivantes :  
@@ -20,15 +20,15 @@ Les transactions permettent de regrouper un ensemble d’actions ou d’opérati
   
 - Cohérence. Cela garantit que les modifications effectuées sous une transaction représentent une transformation d'un état cohérent à un autre. Par exemple, une transaction qui transfère de l’argent d’un compte chèques à un compte épargne ne modifie pas la somme d’argent dans le compte bancaire global.  
   
-- Isolement. Cela empêche une transaction d’observer des modifications non validées appartenant à d’autres transactions simultanées. L’isolation fournit une abstraction de l’accès concurrentiel tout en garantissant qu’une transaction ne peut pas avoir d’impact inattendu sur l’exécution d’une autre transaction.  
+- Isolement : Cela empêche une transaction d’observer des modifications non validées appartenant à d’autres transactions simultanées. L’isolation fournit une abstraction de l’accès concurrentiel tout en garantissant qu’une transaction ne peut pas avoir d’impact inattendu sur l’exécution d’une autre transaction.  
   
 - Durabilité. Cela signifie qu’une fois validées, les mises à jour des ressources managées (telles qu’un enregistrement de base de données) seront persistantes en cas de défaillance.  
   
- Windows Communication Foundation (WCF) fournit un ensemble rich de fonctionnalités qui vous permettent de créer des transactions distribuées dans votre application de service Web.  
+ Windows Communication Foundation (WCF) fournit un ensemble complet de fonctionnalités qui vous permettent de créer des transactions distribuées dans votre application de service Web.  
   
- WCF implémente la prise en charge le protocole WS-AtomicTransaction (WS-AT) qui permet aux applications WCF pour transférer des transactions aux applications interopérables, telles que les services Web interopérables créés à l’aide d’une technologie tierce. WCF implémente également la prise en charge pour le protocole OLE Transactions, qui peut être utilisé dans les scénarios où vous n’avez pas besoin des fonctionnalités d’interopérabilité pour activer le flux de transaction.  
+ WCF implémente la prise en charge du protocole WS-AtomicTransaction (WS-AT) qui permet aux applications WCF de transmettre des transactions à des applications interopérables, telles que des services Web interopérables construits à l’aide de technologies tierces. WCF implémente également la prise en charge du protocole de transactions OLE, qui peut être utilisé dans les scénarios où vous n’avez pas besoin de fonctionnalités d’interopérabilité pour activer le workflow de transaction.  
   
- Vous pouvez utiliser un fichier de configuration d’application pour configurer des liaisons afin d’activer ou de désactiver le flux de transaction, ainsi que pour définir le protocole de transaction souhaité sur une liaison. De plus, vous pouvez définir des délais d’expiration de transaction au niveau du service à l’aide du fichier de configuration. Pour plus d’informations, consultez [l’activation de flux de Transaction](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md).  
+ Vous pouvez utiliser un fichier de configuration d’application pour configurer des liaisons afin d’activer ou de désactiver le flux de transaction, ainsi que pour définir le protocole de transaction souhaité sur une liaison. De plus, vous pouvez définir des délais d’expiration de transaction au niveau du service à l’aide du fichier de configuration. Pour plus d’informations, consultez [activation du workflow de transaction](enabling-transaction-flow.md).  
   
  Les attributs de transaction dans l’espace de noms <xref:System.ServiceModel> vous permettent d’effectuer les opérations suivantes :  
   
@@ -38,9 +38,9 @@ Les transactions permettent de regrouper un ensemble d’actions ou d’opérati
   
 - utiliser les attributs <xref:System.ServiceModel.ServiceContractAttribute> et <xref:System.ServiceModel.OperationContractAttribute> sur une méthode de contrat pour exiger, autoriser ou refuser le flux de transaction.  
   
- Pour plus d’informations, consultez [attributs de Transaction ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
+ Pour plus d’informations, consultez [attributs de transaction ServiceModel](servicemodel-transaction-attributes.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Attributs de transaction ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)
-- [Activation du flux de transaction](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)
+- [Attributs de transaction ServiceModel](servicemodel-transaction-attributes.md)
+- [Activation du flux de transaction](enabling-transaction-flow.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : configurer une confirmation de signature'
+title: 'Comment : configurer une confirmation de signature'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,18 +8,18 @@ helpviewer_keywords:
 - signature confirmation
 - WCF, security
 ms.assetid: 2424c137-c7c2-4aa9-8d5d-a066e12fefda
-ms.openlocfilehash: 6f44ae5e3615df7f529a25f4097ef042feba544d
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 9423922753efee7aac32e430f97307c715e43464
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425434"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586913"
 ---
-# <a name="how-to-set-up-a-signature-confirmation"></a>Procédure : configurer une confirmation de signature
+# <a name="how-to-set-up-a-signature-confirmation"></a>Comment : configurer une confirmation de signature
 
-*Confirmation de signature* est un mécanisme pour un initiateur de message pour vous assurer qu’une réponse reçue a été générée en réponse au message d’origine de l’expéditeur. La confirmation de signature est définie dans la spécification WS-Security 1.1. Si un point de terminaison prend en charge WS-Security 1.0, vous ne pouvez pas utiliser la confirmation de signature.
+La *confirmation de signature* est un mécanisme permettant à un initiateur de message de s’assurer qu’une réponse reçue a été générée en réponse au message d’origine de l’expéditeur. La confirmation de signature est définie dans la spécification WS-Security 1.1. Si un point de terminaison prend en charge WS-Security 1.0, vous ne pouvez pas utiliser la confirmation de signature.
 
-Les procédures suivantes spécifient comment activer la confirmation de signature à l'aide de <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. Vous pouvez utiliser la même procédure avec <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>. La procédure repose sur les étapes de base indiquées dans [Comment : Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).
+Les procédures suivantes spécifient comment activer la confirmation de signature à l'aide de <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. Vous pouvez utiliser la même procédure avec <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>. La procédure s’appuie sur les étapes de base de la procédure [: créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md).
 
 ### <a name="to-enable-signature-confirmation-in-code"></a>Pour activer la confirmation de signature dans le code
 
@@ -27,11 +27,11 @@ Les procédures suivantes spécifient comment activer la confirmation de signatu
 
 2. Créez une instance de la <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> classe.
 
-3. Affectez <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> à `true`.
+3. Définissez <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> sur `true`.
 
 4. Ajoutez l’élément de sécurité à la collection de liaisons.
 
-5. Créer une liaison personnalisée, tel que spécifié dans [Comment : Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).
+5. Créez une liaison personnalisée, comme indiqué dans [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md).
 
 ### <a name="to-enable-signature-confirmation-in-configuration"></a>Pour activer la confirmation de signature dans la configuration
 
@@ -43,9 +43,9 @@ Les procédures suivantes spécifient comment activer la confirmation de signatu
 
 4. Ajoutez un élément enfant `<security>` et affectez `requireSignatureConfirmation` à l'attribut `true`.
 
-5. Facultatif. Pour activer la confirmation de signature pendant le démarrage, ajoutez un [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) élément enfant et définissez le `requireSignatureConfirmation` attribut `true`.
+5. Facultatif. Pour activer la confirmation de signature pendant le démarrage, ajoutez un [\<secureConversationBootstrap>](../../configure-apps/file-schema/wcf/secureconversationbootstrap.md) élément enfant et affectez à l’attribut la valeur `requireSignatureConfirmation` `true` .
 
-6. Ajoutez un élément de transport approprié. L’exemple suivant ajoute un [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md):
+6. Ajoutez un élément de transport approprié. L’exemple suivant ajoute un [\<httpTransport>](../../configure-apps/file-schema/wcf/httptransport.md) :
 
     ```xml
     <bindings>
@@ -73,5 +73,5 @@ Le code suivant crée une instance de <xref:System.ServiceModel.Channels.Symmetr
 - <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A>
-- [Guide pratique pour Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Guide pratique pour Créer un SecurityBindingElement pour un Mode d’authentification spécifié](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Comment : créer un SecurityBindingElement pour un mode d'authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

@@ -1,50 +1,50 @@
 ---
-title: Basic2
+title: De base2
 ms.date: 03/30/2017
 ms.assetid: 04e4d3bd-ab89-4b50-8f42-2a4430751a9c
-ms.openlocfilehash: 72540a1a36a8807a1644c10448210ddc8bf15b75
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c6c1dcfaebd74e7cc401b555e834bca2ac8da856
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944116"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575678"
 ---
-# <a name="basic"></a>Basic
-Cette section comprend les sections d’exemples qui illustrent les fonctionnalités de base Windows Communication Foundation (WCF).  
+# <a name="basic"></a>De base
+Cette section comprend des sections d’exemples qui illustrent les fonctionnalités de base de Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
- Montre comment implémenter un service et un client standard à l’aide de WCF.  
+ [Prise en main](getting-started-sample.md)  
+ Montre comment implémenter un service classique et un client standard à l’aide de WCF.  
   
- [AJAX](../../../../docs/framework/wcf/samples/ajax.md)  
+ [AJAX](ajax.md)  
  Indique comment utiliser AJAX (Asynchronous JavaScript And XML).  
   
- [Liaison](../../../../docs/framework/wcf/samples/binding.md)  
+ [Liaison](binding.md)  
  Indique comment utiliser l'attribut de liaison d'un élément de point de terminaison.  
   
- [Client](../../../../docs/framework/wcf/samples/client.md)  
- Montre les applications clientes WCF.  
+ [Client](client.md)  
+ Présente les applications clientes WCF.  
   
- [Contrat](../../../../docs/framework/wcf/samples/contract.md)  
+ [Contrat](contract.md)  
  Illustre des contrats de données.  
   
- [Découverte](../../../../docs/framework/wcf/samples/discovery-samples.md)  
+ [Découverte](discovery-samples.md)  
  Illustre la découverte WCF.  
   
- [Gestion](../../../../docs/framework/wcf/samples/management.md)  
- Illustre la gestion de WCF.  
+ [Gestion](management.md)  
+ Illustre la gestion WCF.  
   
- [Services de routage](../../../../docs/framework/wcf/samples/routing-services.md)  
- Montre les services de routage WCF.  
+ [Services de routage](routing-services.md)  
+ Illustre les services de routage WCF.  
   
- [Sécurité](../../../../docs/framework/wcf/samples/security-in-wcf.md)  
+ [Sécurité](security-in-wcf.md)  
  Illustre la sécurité WCF.  
   
- [Services](../../../../docs/framework/wcf/samples/services.md)  
- Montre les services WCF.  
+ [Services](services.md)  
+ Illustre les services WCF.  
   
- [Syndication](../../../../docs/framework/wcf/samples/syndication.md)  
- Syndication de DemonstratesWCF.  
+ [Syndication](syndication.md)  
+ Syndication DemonstratesWCF.  
   
- [Web](../../../../docs/framework/wcf/samples/web.md)  
+ [Web](web.md)  
  Illustre l’hébergement Web dans WCF.
