@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.DurableParticipantReplayWhilePreparing
 ms.date: 03/30/2017
 ms.assetid: 10ef3876-6f8e-4d4e-8444-f47847b64795
-ms.openlocfilehash: 93354fbdd0c1726280526ca07a8b3dd1c57c8a25
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 31fb8d466c76c7490aa80dfcab089332af4036a2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486770"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589130"
 ---
 # <a name="microsofttransactionstransactionbridgedurableparticipantreplaywhilepreparing"></a>Microsoft.Transactions.TransactionBridge.DurableParticipantReplayWhilePreparing
 Le service de protocole WS-AT a reçu un message Replay d'un participant durable n'ayant pas répondu au message Prepared. Par conséquent, la transaction a été abandonnée.  
@@ -15,12 +15,12 @@ Le service de protocole WS-AT a reçu un message Replay d'un participant durable
 ## <a name="description"></a>Description  
  Un suivi est généré si un message Replay est reçu lorsqu'un participant durable est encore en cours de préparation. Il s’agit d’un message illégal pour cet état et la transaction va être abandonnée.  
   
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
-Réception de cette erreur peut indiquer qu’un participant Durable (y compris le subalterne) a récupéré à partir de l’échec ; Toutefois, il n’est pas sûr du résultat et demande son état.  
+La réception de cette erreur peut indiquer qu’un participant durable (y compris subalterne subordonné) a récupéré d’une défaillance ; Toutefois, il ne garantit pas le résultat de la transaction et demande son état.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Suivi](index.md)
+- [Utilisation du suivi pour résoudre les problèmes posés par votre application](using-tracing-to-troubleshoot-your-application.md)
+- [Administration et diagnostics](../index.md)

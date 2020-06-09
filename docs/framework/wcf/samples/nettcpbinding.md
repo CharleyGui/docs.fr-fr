@@ -2,19 +2,19 @@
 title: NetTCPBinding
 ms.date: 03/30/2017
 ms.assetid: 1690b42f-acfd-4bb3-8f0d-0b17cd5ca36c
-ms.openlocfilehash: bab4f89d197f18a5294c6d48998f2ae6e905151a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0b1c288abddfb1707728e61e774618399a8b24c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972404"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84584140"
 ---
 # <a name="nettcpbinding"></a>NetTCPBinding
-Cette section contient des exemples qui illustrent l’utilisation de liaison TCP dans Windows Communication Foundation (WCF).  
+Cette section contient des exemples qui illustrent l’utilisation de la liaison TCP dans Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [NetTcpBinding par défaut](../../../../docs/framework/wcf/samples/default-nettcpbinding.md)  
+ [Default NetTcpBinding](default-nettcpbinding.md)  
  Illustre l’utilisation de la liaison <xref:System.ServiceModel.NetTcpBinding>.  
   
- [Exemple de partage de ports Net.TCP](../../../../docs/framework/wcf/samples/net-tcp-port-sharing-sample.md)  
- Montre le port TCP de partage dans WCF.
+ [Net.TCP Port Sharing, exemple](net-tcp-port-sharing-sample.md)  
+ Illustre le partage de ports TCP dans WCF.

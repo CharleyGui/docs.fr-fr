@@ -2,18 +2,18 @@
 title: Transférer
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-ms.openlocfilehash: e0ebfff97cd33e7a588a1ab92399a97a0fbec039
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 52b0cf35a2f8bab17252d3711f3143738c2bc39c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185706"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587766"
 ---
 # <a name="transfer"></a>Transférer
-Ce sujet décrit le transfert dans le modèle de traçage des activités de la Windows Communication Foundation (WCF).  
+Cette rubrique décrit le transfert dans le modèle de suivi d’activité Windows Communication Foundation (WCF).  
   
 ## <a name="transfer-definition"></a>Définition d'un transfert  
- Les transferts entre activités représentent des liens de causalité entre événements dans les activités connexes dans des points de terminaison. Deux activités sont liées à des transferts lorsqu'un contrôle circule entre ces activités, par exemple, un appel de méthode qui traverse des limites d'activité. Dans WCF, lorsque les octets arrivent sur le service, l’activité Listen At est transférée à l’activité Des octets reçoivent où l’objet de message est créé. Pour une liste de scénarios de traçage de bout en bout, ainsi que leur activité respective et leur conception de traçage, voir [scénarios de traçage](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)de bout en bout .  
+ Les transferts entre activités représentent des liens de causalité entre événements dans les activités connexes dans des points de terminaison. Deux activités sont liées à des transferts lorsqu'un contrôle circule entre ces activités, par exemple, un appel de méthode qui traverse des limites d'activité. Dans WCF, lorsque les octets sont entrants sur le service, l’activité Listen at est transférée à l’activité Receive octets où l’objet message est créé. Pour obtenir la liste des scénarios de suivi de bout en bout, et leur conception d’activité et de suivi respective, consultez [scénarios de suivi de bout](end-to-end-tracing-scenarios.md)en bout.  
   
  Pour émettre des suivis de transfert, appliquez le paramètre `ActivityTracing` sur la source de suivi, tel que le montre le code de configuration suivant.  
   
@@ -26,7 +26,7 @@ Ce sujet décrit le transfert dans le modèle de traçage des activités de la W
   
  Un suivi de transfert est émis de l'activité M vers l'activité N, lorsqu'il existe un flux de contrôle entre M et N. Par exemple, N exécute une tâche pour M à cause d'un appel de méthode franchissant les limites des activités. N existe peut-être déjà ou a été créé. N est généré par M lorsque N est une nouvelle activité qui exécute une tâche pour M.  
   
- Un transfert de M à N peut pas être suivi d'un transfert réciproque de N à M. Cela est dû au fait que M peut générer une tâche dans N sans assurer le suivi de l'exécution de cette tâche par N. En fait, M peut se terminer avant que N n’ait achevé sa tâche. Cela se produit dans l’activité "Open ServiceHost" (M) qui engendre les activités de l’auditeur (N) et se termine ensuite. Un transfert de N à M indique que N a achevé la tâche liée à M.  
+ Un transfert de M à N peut pas être suivi d'un transfert réciproque de N à M. Cela est dû au fait que M peut générer une tâche dans N sans assurer le suivi de l'exécution de cette tâche par N. En fait, M peut se terminer avant que N n’ait achevé sa tâche. Cela se produit dans l’activité « Open ServiceHost » (M) qui génère des activités d’écouteur (N), puis se termine. Un transfert de N à M indique que N a achevé la tâche liée à M.  
   
  N peut continuer à effectuer d'autres traitements non liés à M, par exemple, une activité d'authentificateur existante (N) qui continue à recevoir des demandes de connexion (M) provenant de différentes activités de connexion.  
   
@@ -104,7 +104,7 @@ ts.TraceEvent(TraceEventType.Resume, 667, "Resume: Activity " + i-1);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration du traçage](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [Scénarios de suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [Outil Service Trace Viewer (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Configuration du traçage](configuring-tracing.md)
+- [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Scénarios de suivi de bout en bout](end-to-end-tracing-scenarios.md)
+- [Outil Service Trace Viewer (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)
