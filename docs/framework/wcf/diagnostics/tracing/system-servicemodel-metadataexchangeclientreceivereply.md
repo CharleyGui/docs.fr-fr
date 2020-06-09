@@ -2,21 +2,21 @@
 title: System.ServiceModel.MetadataExchangeClientReceiveReply
 ms.date: 03/30/2017
 ms.assetid: 24edae24-8ced-43c4-948b-f400ba42b2a5
-ms.openlocfilehash: 981e8b28011b9c97b1abe80e34b787f765bb4642
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2a1677904c857f8fe6cfaa2ce5a4787db41fed6c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61927008"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598110"
 ---
-# <a name="systemservicemodelmetadataexchangeclientreceivereply"></a><span data-ttu-id="7e866-102">System.ServiceModel.MetadataExchangeClientReceiveReply</span><span class="sxs-lookup"><span data-stu-id="7e866-102">System.ServiceModel.MetadataExchangeClientReceiveReply</span></span>
-<span data-ttu-id="7e866-103">System.ServiceModel.MetadataExchangeClientReceiveReply</span><span class="sxs-lookup"><span data-stu-id="7e866-103">System.ServiceModel.MetadataExchangeClientReceiveReply</span></span>  
+# <a name="systemservicemodelmetadataexchangeclientreceivereply"></a><span data-ttu-id="8c968-102">System.ServiceModel.MetadataExchangeClientReceiveReply</span><span class="sxs-lookup"><span data-stu-id="8c968-102">System.ServiceModel.MetadataExchangeClientReceiveReply</span></span>
+<span data-ttu-id="8c968-103">System.ServiceModel.MetadataExchangeClientReceiveReply</span><span class="sxs-lookup"><span data-stu-id="8c968-103">System.ServiceModel.MetadataExchangeClientReceiveReply</span></span>  
   
-## <a name="description"></a><span data-ttu-id="7e866-104">Description</span><span class="sxs-lookup"><span data-stu-id="7e866-104">Description</span></span>  
- <span data-ttu-id="7e866-105">MetadataExchangeClient a reçu une réponse.</span><span class="sxs-lookup"><span data-stu-id="7e866-105">The MetadataExchangeClient received a reply.</span></span>  
+## <a name="description"></a><span data-ttu-id="8c968-104">Description</span><span class="sxs-lookup"><span data-stu-id="8c968-104">Description</span></span>  
+ <span data-ttu-id="8c968-105">MetadataExchangeClient a reçu une réponse.</span><span class="sxs-lookup"><span data-stu-id="8c968-105">The MetadataExchangeClient received a reply.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7e866-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7e866-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8c968-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8c968-106">See also</span></span>
 
-- [<span data-ttu-id="7e866-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="7e866-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="7e866-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="7e866-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="7e866-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="7e866-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="8c968-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="8c968-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="8c968-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="8c968-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="8c968-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="8c968-109">Administration and Diagnostics</span></span>](../index.md)
