@@ -2,21 +2,21 @@
 title: System.ServiceModel.OverridingDuplicateConfigurationKey
 ms.date: 03/30/2017
 ms.assetid: 7d11700b-c035-467e-af02-686bca3b207a
-ms.openlocfilehash: ce5679ef736fcf1e2c6ed9e002d51ebf0185c64e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bbdf51259cb219ef3873d3f905684bcd6515577f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926878"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598084"
 ---
-# <a name="systemservicemodeloverridingduplicateconfigurationkey"></a><span data-ttu-id="15886-102">System.ServiceModel.OverridingDuplicateConfigurationKey</span><span class="sxs-lookup"><span data-stu-id="15886-102">System.ServiceModel.OverridingDuplicateConfigurationKey</span></span>
-<span data-ttu-id="15886-103">System.ServiceModel.OverridingDuplicateConfigurationKey</span><span class="sxs-lookup"><span data-stu-id="15886-103">System.ServiceModel.OverridingDuplicateConfigurationKey</span></span>  
+# <a name="systemservicemodeloverridingduplicateconfigurationkey"></a><span data-ttu-id="0776e-102">System.ServiceModel.OverridingDuplicateConfigurationKey</span><span class="sxs-lookup"><span data-stu-id="0776e-102">System.ServiceModel.OverridingDuplicateConfigurationKey</span></span>
+<span data-ttu-id="0776e-103">System.ServiceModel.OverridingDuplicateConfigurationKey</span><span class="sxs-lookup"><span data-stu-id="0776e-103">System.ServiceModel.OverridingDuplicateConfigurationKey</span></span>  
   
-## <a name="description"></a><span data-ttu-id="15886-104">Description</span><span class="sxs-lookup"><span data-stu-id="15886-104">Description</span></span>  
- <span data-ttu-id="15886-105">Le système de configuration a détecté une clé en double dans une étendue de configuration différente et la remplace par la valeur la plus récente.</span><span class="sxs-lookup"><span data-stu-id="15886-105">The configuration system has detected a duplicate key in a different configuration scope and is overriding with the more recent value.</span></span>  
+## <a name="description"></a><span data-ttu-id="0776e-104">Description</span><span class="sxs-lookup"><span data-stu-id="0776e-104">Description</span></span>  
+ <span data-ttu-id="0776e-105">Le système de configuration a détecté une clé en double dans une étendue de configuration différente et la remplace par la valeur la plus récente.</span><span class="sxs-lookup"><span data-stu-id="0776e-105">The configuration system has detected a duplicate key in a different configuration scope and is overriding with the more recent value.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="15886-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="15886-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0776e-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0776e-106">See also</span></span>
 
-- [<span data-ttu-id="15886-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="15886-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="15886-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="15886-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="15886-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="15886-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="0776e-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="0776e-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="0776e-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="0776e-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="0776e-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="0776e-109">Administration and Diagnostics</span></span>](../index.md)
