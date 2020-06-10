@@ -9,17 +9,17 @@ helpviewer_keywords:
 - versioning [WCF]
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
-ms.openlocfilehash: 309cd891fd2d764314060e49a401bd1d8f7b8d32
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 493efab41e2c6763eb95df8662e6254d9e0df2f2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963267"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593501"
 ---
 # <a name="data-contract-versioning"></a>Contrôle de version des contrats de données
-À mesure que les applications évoluent, il peut s'avérer nécessaire de modifier les contrats de données utilisés par les services. Cette rubrique explique comment assigner des versions aux contrats de données. Cette rubrique décrit les mécanismes de contrôle de version des contrats de données. Pour obtenir une vue d’ensemble complète et des instructions de contrôle de [version normatives, consultez meilleures pratiques: Contrôle de version](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)des contrats de données.  
+À mesure que les applications évoluent, il peut s'avérer nécessaire de modifier les contrats de données utilisés par les services. Cette rubrique explique comment assigner des versions aux contrats de données. Cette rubrique décrit les mécanismes de contrôle de version des contrats de données. Pour obtenir une vue d’ensemble complète et des instructions de contrôle de version normatives, consultez [meilleures pratiques :](../best-practices-data-contract-versioning.md)contrôle de version des contrats de données.  
   
-## <a name="breaking-vs-nonbreaking-changes"></a>Avec rupture et Modifications sans rupture  
+## <a name="breaking-vs-nonbreaking-changes"></a>Modifications avec et sans rupture  
  Les modifications apportées à un contrat de données peuvent être avec ou sans rupture. Lorsqu'un contrat de données est modifié sans rupture, une application utilisant l'ancienne version du contrat peut communiquer avec une application utilisant la version plus récente, et vice versa. D'autre part, une modification avec rupture empêche la communication dans une ou les deux directions.  
   
  Les modifications apportées à un type qui n'affectent pas la façon dont il est transmis sont dites « sans rupture ». Les modifications de ce type n'affectent pas le contrat de données, mais uniquement le type sous-jacent. Par exemple, vous pouvez modifier le nom d'un champ sans rupture si vous affectez ensuite le nom de l'ancienne version à la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A> de <xref:System.Runtime.Serialization.DataMemberAttribute>. Le code suivant présente la version 1 d'un contrat de données.  
@@ -47,9 +47,9 @@ ms.locfileid: "69963267"
 ## <a name="adding-and-removing-data-members"></a>Ajout et suppression de membres de données  
  Dans la plupart des cas, l'ajout ou la suppression d'un membre de données n'est pas une modification avec rupture, sauf si vous exigez la validité stricte du schéma (nouvelles instances qui valident l'ancien schéma).  
   
- Lorsqu'un type avec un champ supplémentaire est désérialisé dans un type avec un champ manquant, les informations supplémentaires sont ignorées. (Elles peuvent également être stockées à des fins d’aller-retour; pour plus d’informations, consultez [contrats de données à compatibilité ascendante](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)).  
+ Lorsqu'un type avec un champ supplémentaire est désérialisé dans un type avec un champ manquant, les informations supplémentaires sont ignorées. (Elles peuvent également être stockées à des fins d’aller-retour ; pour plus d’informations, consultez [contrats de données à compatibilité ascendante](forward-compatible-data-contracts.md)).  
   
- Lorsqu'un type avec un champ manquant est désérialisé dans un type avec un champ supplémentaire, le champ supplémentaire conserve sa valeur par défaut, généralement zéro ou `null`. (La valeur par défaut peut être modifiée. pour plus d’informations, consultez rappels de [sérialisation avec tolérance de version](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).)  
+ Lorsqu'un type avec un champ manquant est désérialisé dans un type avec un champ supplémentaire, le champ supplémentaire conserve sa valeur par défaut, généralement zéro ou `null`. (La valeur par défaut peut être modifiée. pour plus d’informations, consultez [rappels de sérialisation avec tolérance de version](version-tolerant-serialization-callbacks.md).)  
   
  Par exemple, vous pouvez utiliser la classe `CarV1` sur un client et la classe `CarV2` sur un service, ou la classe `CarV1` sur un service et la classe `CarV2` sur un client.  
   
@@ -88,14 +88,14 @@ ms.locfileid: "69963267"
 > Même si la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> a la valeur `true`, les données entrantes peuvent être null ou zéro, et un type doit être préparé à gérer cette éventualité. N'utilisez pas <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> comme mécanisme de sécurité pour vous protéger contre les données entrantes incorrectes.  
   
 ## <a name="omitted-default-values"></a>Valeurs par défaut omises  
- Il est possible (bien que cela ne soit pas recommandé `EmitDefaultValue` ) d’affecter la valeur à `false`la propriété de l’attribut DataMemberAttribute, comme décrit dans [valeurs par défaut des données membres](../../../../docs/framework/wcf/feature-details/data-member-default-values.md). Si ce paramètre est `false`, le membre de données ne sera pas émis s'il est défini à sa valeur par défaut (généralement null ou zéro). Cela n'est pas compatible avec les membres de données requis dans les différentes versions à deux niveaux :  
+ Il est possible (bien que cela ne soit pas recommandé) d’affecter la valeur `EmitDefaultValue` à la propriété de l’attribut DataMemberAttribute `false` , comme décrit dans [valeurs par défaut des données membres](data-member-default-values.md). Si ce paramètre est `false`, le membre de données ne sera pas émis s'il est défini à sa valeur par défaut (généralement null ou zéro). Cela n'est pas compatible avec les membres de données requis dans les différentes versions à deux niveaux :  
   
 - Un contrat de données avec un membre de données requis dans une version ne peut pas recevoir de données par défaut (null ou zéro) d'une autre version dans laquelle le membre de données a `EmitDefaultValue` à la valeur `false`.  
   
 - Un membre de données requis qui a `EmitDefaultValue` à la valeur `false` ne peut pas être utilisé pour sérialiser sa valeur par défaut (null ou zéro), mais peut recevoir une valeur de ce type lors de la désérialisation. Cela crée un problème d'aller-retour (les données peuvent être lues mais ne peuvent pas être ensuite écrites). Par conséquent, si `IsRequired` a la valeur `true` et `EmitDefaultValue` a la valeur `false` dans une version, la même combinaison doit s'appliquer à toutes les autres versions de sorte qu'aucune version du contrat de données ne puisse générer de valeur qui ne se traduise pas par un aller-retour.  
   
 ## <a name="schema-considerations"></a>Considérations sur le schéma  
- Pour obtenir une explication sur le schéma produit pour les types de contrat de données, consultez [Référence du schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+ Pour obtenir une explication sur le schéma produit pour les types de contrat de données, consultez [Référence du schéma de contrat de données](data-contract-schema-reference.md).  
   
  Le schéma que WCF génère pour les types de contrat de données n’apporte aucune provision pour le contrôle de version. En d'autres termes, le schéma exporté à partir d'une version spécifique d'un type contient uniquement les membres de données présents dans cette version. L'implémentation de l'interface <xref:System.Runtime.Serialization.IExtensibleDataObject> ne modifie pas le schéma pour un type.  
   
@@ -103,16 +103,16 @@ ms.locfileid: "69963267"
   
  Un grand nombre des modifications considérées comme étant sans rupture sont en fait avec rupture si une adhésion stricte au schéma est requise. Dans l'exemple précédent, une instance `CarV1` avec l'élément `Model` uniquement validerait par rapport au schéma `CarV2` (lequel a `Model` et `Horsepower`, mais les deux sont facultatifs). Cependant, l'inverse n'est pas vrai : une instance `CarV2` échouerait la validation par rapport au schéma `CarV1`.  
   
- L'aller-retour implique également des considérations supplémentaires. Pour plus d’informations, consultez la section «Considérations relatives au schéma» dans les [contrats de données à compatibilité ascendante](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ L'aller-retour implique également des considérations supplémentaires. Pour plus d’informations, consultez la section « Considérations relatives au schéma » dans les [contrats de données à compatibilité ascendante](forward-compatible-data-contracts.md).  
   
 ### <a name="other-permitted-changes"></a>Autres modifications autorisées  
- L'implémentation de l'interface <xref:System.Runtime.Serialization.IExtensibleDataObject> est une modification sans rupture. Toutefois, la prise en charge de l'aller-retour n'existe pas pour les versions du type antérieures à celle dans laquelle <xref:System.Runtime.Serialization.IExtensibleDataObject> a été implémenté. Pour plus d’informations, consultez [Contrats de données compatibles avec des versions ultérieures](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ L'implémentation de l'interface <xref:System.Runtime.Serialization.IExtensibleDataObject> est une modification sans rupture. Toutefois, la prise en charge de l'aller-retour n'existe pas pour les versions du type antérieures à celle dans laquelle <xref:System.Runtime.Serialization.IExtensibleDataObject> a été implémenté. Pour plus d’informations, consultez [Contrats de données compatibles avec des versions ultérieures](forward-compatible-data-contracts.md).  
   
 ## <a name="enumerations"></a>Énumérations  
- L'ajout ou la suppression d'un membre d'énumération est une modification avec rupture. La modification du nom d'un membre d'énumération est avec rupture, sauf si son nom de contrat est conservé en utilisant l'attribut `EnumMemberAttribute`. Pour plus d’informations, consultez [types énumération dans les contrats de données](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
+ L'ajout ou la suppression d'un membre d'énumération est une modification avec rupture. La modification du nom d'un membre d'énumération est avec rupture, sauf si son nom de contrat est conservé en utilisant l'attribut `EnumMemberAttribute`. Pour plus d’informations, consultez [types énumération dans les contrats de données](enumeration-types-in-data-contracts.md).  
   
 ## <a name="collections"></a>Collections  
- La plupart des modifications de collection sont sans rupture car la plupart des types de collections sont interchangeables les uns avec les autres dans le modèle de contrat de données. Toutefois, la personnalisation d'une collection non personnalisée, ou vice versa, est une modification avec rupture. De plus, la modification des paramètres de personnalisation de la collection est une modification avec rupture ; en d'autres termes, la modification de l'espace de noms et du nom de contrat de données, du nom d'élément répétitif, du nom d'élément clé et du nom d'élément de valeur. Pour plus d’informations sur la personnalisation des collections, consultez [types de collections dans les contrats de données](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).  
+ La plupart des modifications de collection sont sans rupture car la plupart des types de collections sont interchangeables les uns avec les autres dans le modèle de contrat de données. Toutefois, la personnalisation d'une collection non personnalisée, ou vice versa, est une modification avec rupture. De plus, la modification des paramètres de personnalisation de la collection est une modification avec rupture ; en d'autres termes, la modification de l'espace de noms et du nom de contrat de données, du nom d'élément répétitif, du nom d'élément clé et du nom d'élément de valeur. Pour plus d’informations sur la personnalisation des collections, consultez [types de collections dans les contrats de données](collection-types-in-data-contracts.md).  
 Naturellement, la modification du contrat de données de contenu d’une collection (par exemple, la modification d’une liste d’entiers en une liste de chaînes) est une modification avec rupture.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -125,8 +125,8 @@ Naturellement, la modification du contrat de données de contenu d’une collect
 - <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A>
 - <xref:System.Runtime.Serialization.SerializationException>
 - <xref:System.Runtime.Serialization.IExtensibleDataObject>
-- [Rappels de sérialisation avec tolérance de version](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)
-- [Meilleures pratiques: Contrôle de version des contrats de données](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)
-- [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [Équivalence des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
-- [Contrats de données à compatibilité ascendante](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)
+- [Rappels de sérialisation avec tolérance de version](version-tolerant-serialization-callbacks.md)
+- [Meilleures pratiques : contrôle de version des contrats de données](../best-practices-data-contract-versioning.md)
+- [Using Data Contracts](using-data-contracts.md)
+- [Data Contract Equivalence](data-contract-equivalence.md)
+- [Contrats de données à compatibilité ascendante](forward-compatible-data-contracts.md)

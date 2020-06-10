@@ -1,15 +1,15 @@
 ---
-title: 'Custom Message Encoder: Compression Encoder'
+title: 'Encodeur de message personnalisé : Encodeur de compression'
 ms.date: 03/30/2017
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-ms.openlocfilehash: 80dd29569897be501d76024a081f38ec5add4ff7
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: db20ec20579d6fcb0ec202920db0d7781b0676df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716845"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600618"
 ---
-# <a name="custom-message-encoder-compression-encoder"></a>Custom Message Encoder: Compression Encoder
+# <a name="custom-message-encoder-compression-encoder"></a>Encodeur de message personnalisé : Encodeur de compression
 
 Cet exemple montre comment implémenter un encodeur personnalisé à l’aide de la plateforme Windows Communication Foundation (WCF).
 
@@ -18,7 +18,7 @@ Cet exemple montre comment implémenter un encodeur personnalisé à l’aide de
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`
 
@@ -224,7 +224,7 @@ binding.Namespace = "http://tempuri.org/bindings";
 
 Même si cela peut s'avérer suffisant pour la majorité de scénarios utilisateur, la prise en charge d'une configuration de fichier est critique si un service doit être hébergé sur le Web. Pour prendre en charge le scénario hébergé sur le Web, vous devez développer un gestionnaire de configuration personnalisé afin de permettre la configuration d'un élément de liaison personnalisé dans un fichier.
 
-Vous pouvez créer un gestionnaire de configuration pour l’élément de liaison en plus du système de configuration. Ce gestionnaire de configuration doit dériver de la classe <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. L' <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.BindingElementType?displayProperty=nameWithType> indique au système de configuration le type d’élément de liaison à créer pour cette section. Tous les aspects de `BindingElement` qui peuvent être définis doivent être exposés en tant que propriétés dans la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. Le <xref:System.Configuration.ConfigurationPropertyAttribute> aide à mapper les attributs d’élément de configuration aux propriétés et à définir des valeurs par défaut si des attributs sont manquants. Après avoir chargé et appliqué les valeurs de la configuration aux propriétés, la méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A?displayProperty=nameWithType> est appelée et convertit les propriétés en instance concrète d'un élément de liaison. La méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A?displayProperty=nameWithType> est utilisée pour convertir les propriétés sur le <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> classe dérivée en valeurs à définir sur l’élément de liaison nouvellement créé.
+Vous pouvez créer un gestionnaire de configuration pour l’élément de liaison en plus du système de configuration. Ce gestionnaire de configuration doit dériver de la classe <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.BindingElementType?displayProperty=nameWithType>Indique au système de configuration le type d’élément de liaison à créer pour cette section. Tous les aspects de `BindingElement` qui peuvent être définis doivent être exposés en tant que propriétés dans la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. L' <xref:System.Configuration.ConfigurationPropertyAttribute> aide à mapper les attributs d’élément de configuration aux propriétés et à définir des valeurs par défaut si des attributs sont manquants. Après avoir chargé et appliqué les valeurs de la configuration aux propriétés, la méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A?displayProperty=nameWithType> est appelée et convertit les propriétés en instance concrète d'un élément de liaison. La <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A?displayProperty=nameWithType> méthode permet de convertir les propriétés sur la <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> classe dérivée en valeurs à définir sur l’élément de liaison nouvellement créé.
 
 L'exemple de code suivant présente l'implémentation de `GZipMessageEncodingElement`.
 
@@ -295,7 +295,7 @@ Ce gestionnaire de configuration mappe à la représentation suivante dans le fi
 <gzipMessageEncoding innerMessageEncoding="textMessageEncoding" />
 ```
 
-Pour utiliser ce gestionnaire de configuration, il doit être enregistré dans l’élément [\<System. serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) , comme indiqué dans l’exemple de configuration suivant.
+Pour utiliser ce gestionnaire de configuration, il doit être enregistré dans l' [\<system.serviceModel>](../../configure-apps/file-schema/wcf/system-servicemodel.md) élément, comme illustré dans l’exemple de configuration suivant.
 
 ```xml
 <extensions>
@@ -342,17 +342,17 @@ Press <ENTER> to terminate client.
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable
     ```
 
-2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
 
-3. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](building-the-samples.md).
 
-4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`

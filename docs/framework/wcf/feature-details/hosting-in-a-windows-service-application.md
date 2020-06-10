@@ -2,12 +2,12 @@
 title: Hébergement dans une application de service Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: a07aade4619b644dadd1d5acdcb5252b305b94d0
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: ba49d123508ceb8da677d1e9c67721e4f86aa7c3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964492"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597330"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hébergement dans une application de service Windows
 Les services Windows (autrefois connus comme services Windows NT) fournissent un modèle de processus particulièrement adapté aux applications qui doivent exister dans un exécutable à durée d’exécution longue et n’affichent aucune forme d’interface utilisateur. La durée de vie de processus d'une application de service Windows est gérée par le gestionnaire de contrôle des services (SCM) qui vous autorise à démarrer, arrêter et suspendre les applications de service Windows. Vous pouvez configurer un processus de service Windows pour qu’il démarre automatiquement lorsque l’ordinateur démarre, ce qui en fait un environnement d’hébergement approprié pour les applications « Always on ». Pour plus d’informations sur les applications de service Windows, consultez [applications de service Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -30,7 +30,7 @@ Les services Windows (autrefois connus comme services Windows NT) fournissent u
   
     - Remplacez <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> pour ouvrir une ou plusieurs instances de <xref:System.ServiceModel.ServiceHost>. Une même application de service Windows peut héberger plusieurs services WCF qui démarrent et s’arrêtent en tant que groupe.  
   
-    - Remplacez <xref:System.ServiceProcess.ServiceBase.OnStop%2A> pour appeler <xref:System.ServiceModel.Channels.CommunicationObject.Closed> sur le <xref:System.ServiceModel.ServiceHost> tous les services WCF en cours d’exécution qui ont été démarrés pendant <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29>.  
+    - Substituez <xref:System.ServiceProcess.ServiceBase.OnStop%2A> pour appeler <xref:System.ServiceModel.Channels.CommunicationObject.Closed> sur <xref:System.ServiceModel.ServiceHost> tous les services WCF en cours d’exécution qui ont été démarrés pendant <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> .  
   
     - Abonnez-vous à l'événement <xref:System.ServiceModel.Channels.CommunicationObject.Faulted> de <xref:System.ServiceModel.ServiceHost> et utilisez la classe <xref:System.ServiceProcess.ServiceController> pour interrompre l'application de service Windows en cas d'erreur.  
   
@@ -40,7 +40,7 @@ Les services Windows (autrefois connus comme services Windows NT) fournissent u
 
 - <xref:System.ServiceProcess>
 - [Procédure pas à pas : création d’une application de service Windows dans le Concepteur de composants](https://go.microsoft.com/fwlink/?LinkId=94875)
-- [Guide pratique pour héberger un service WCF dans un service Windows managé](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
-- [Hôte de service Windows](../../../../docs/framework/wcf/samples/windows-service-host.md)
-- [Architecture de programmation d’une application de service](https://go.microsoft.com/fwlink/?LinkId=94876)
+- [Comment : héberger un service WCF dans un service Windows managé](how-to-host-a-wcf-service-in-a-managed-windows-service.md)
+- [Windows Service Host](../samples/windows-service-host.md)
+- [Architecture de programmation d'une application de service](https://go.microsoft.com/fwlink/?LinkId=94876)
 - [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

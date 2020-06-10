@@ -2,12 +2,12 @@
 title: Publication WSDL personnalisée
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-ms.openlocfilehash: ae6d5fdf243d5000090e993bd3353c6180d0ccaa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b18ac2f72d58c768b3784e1c414a71cdaec50c01
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79145057"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596693"
 ---
 # <a name="custom-wsdl-publication"></a>Publication WSDL personnalisée
 Cet exemple montre comment :  
@@ -18,7 +18,7 @@ Cet exemple montre comment :
   
 - Implémenter <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> et <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> sur un comportement de contrat personnalisé et un comportement d’opération personnalisé, respectivement, pour écrire des annotations importées en tant que commentaires dans le CodeDom pour le contrat et l’opération importés ;  
   
-- Utilisez <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> le téléchargement de la <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> WSDL, un pour importer le WSDL <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> en utilisant l’importateur personnalisé WSDL, et le pour générer Windows Communication Foundation (WCF) code client avec les annotations WSDL comme // et «» commentaires dans C et Visual Basic.  
+- Utilisez le <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> pour télécharger le WSDL, un <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> pour importer le WSDL à l’aide de l’importateur WSDL personnalisé, et le <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> pour générer le code client Windows Communication Foundation (WCF) avec les annotations WSDL en tant que commentaires///et' ' 'en C# et Visual Basic.  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
@@ -234,7 +234,7 @@ public void GenerateOperation(OperationContractGenerationContext context)
 </client>  
 ```  
   
- Une fois que l’importateur personnalisé a été spécifié, le système <xref:System.ServiceModel.Description.WsdlImporter> de métadonnées WCF charge l’importateur personnalisé dans n’importe quel créé à cette fin. Cet exemple utilise le <xref:System.ServiceModel.Description.MetadataExchangeClient> pour télécharger les métadonnées, l'<xref:System.ServiceModel.Description.WsdlImporter> correctement configuré pour importer les métadonnées à l'aide de l'importateur personnalisé que l'exemple crée, et le <xref:System.ServiceModel.Description.ServiceContractGenerator> pour compiler les informations de contrat modifiées à la fois dans le code client Visual Basic et C# qui peut être utilisé dans Visual Studio pour prendre en charge Intellisense ou être compilé dans la documentation XML.  
+ Une fois que l’importateur personnalisé a été spécifié, le système de métadonnées WCF charge l’importateur personnalisé dans n’importe quel <xref:System.ServiceModel.Description.WsdlImporter> objet créé à cet effet. Cet exemple utilise le <xref:System.ServiceModel.Description.MetadataExchangeClient> pour télécharger les métadonnées, l'<xref:System.ServiceModel.Description.WsdlImporter> correctement configuré pour importer les métadonnées à l'aide de l'importateur personnalisé que l'exemple crée, et le <xref:System.ServiceModel.Description.ServiceContractGenerator> pour compiler les informations de contrat modifiées à la fois dans le code client Visual Basic et C# qui peut être utilisé dans Visual Studio pour prendre en charge Intellisense ou être compilé dans la documentation XML.  
   
 ```csharp
 /// From WSDL Documentation:  
@@ -292,17 +292,17 @@ public interface ICalculator
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).  
   
-3. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Metadata\WsdlDocumentation`  

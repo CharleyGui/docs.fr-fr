@@ -1,17 +1,17 @@
 ---
-title: 'Procédure : utiliser l’outil de configuration de modèle de service COM+'
+title: "Comment : utiliser l'outil de configuration de modèle de service COM+"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], using service model configuration tool
 ms.assetid: 7e68cd8d-5fda-4641-b92f-290db874376e
-ms.openlocfilehash: 67bacade0435f1c63bc79b3282f6bded55b67304
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: f9e761bafd84726b51a2010a932c68c67c37f899
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991583"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595282"
 ---
-# <a name="how-to-use-the-com-service-model-configuration-tool"></a>Procédure : utiliser l’outil de configuration de modèle de service COM+
+# <a name="how-to-use-the-com-service-model-configuration-tool"></a>Comment : utiliser l'outil de configuration de modèle de service COM+
 Une fois que vous avez sélectionné un mode d'hébergement approprié, utilisez l'outil en ligne de commande de configuration de modèle de service COM+ (ComSvcConfig.exe) pour configurer les interfaces d'application qui seront exposées en tant que services Web.  
   
 > [!NOTE]
@@ -19,7 +19,7 @@ Une fois que vous avez sélectionné un mode d'hébergement approprié, utilisez
   
  Lorsque vous utilisez ComSvcConfig.exe sur un ordinateur Windows 7 pour configurer un service Web de façon à utiliser la dernière version de modèle de service (v4.5), exécutez les étapes suivantes :  
   
-1. Affectez à la `[HKEY_LOCAL_COMPUTER\SOFTWARE\Microsoft\.NETFramework]\OnlyUseLatestCLR` clé de Registre une valeur DWORD 0x00000001.  
+1. Affectez à la clé de Registre `[HKEY_LOCAL_COMPUTER\SOFTWARE\Microsoft\.NETFramework]\OnlyUseLatestCLR` une valeur DWORD 0x00000001.  
   
 2. Exécutez comsvcconfig.exe.  
   
@@ -41,7 +41,7 @@ Une fois que vous avez sélectionné un mode d'hébergement approprié, utilisez
   
      La commande ajoute l'interface `IFinances` du composant `ItemOrders.IFinancial` (depuis l'application COM+ OnlineStore) à l'ensemble des interfaces qui seront exposées en tant que services Web. Le service utilise le mode d'hébergement COM+, et requiert par conséquent l'activation d'application explicite.  
   
-     Si le caractère générique astérisque\*() peut être utilisé pour le composant et l’interface, évitez de l’utiliser, car vous souhaiterez peut-être exposer uniquement les fonctionnalités sélectionnées en tant que service Web. En cas d'exécution avec une version ultérieure de ce composant, l'utilisation du caractère générique peut exposer involontairement des interfaces qui étaient peut-être absentes lorsque la syntaxe de configuration a été déterminée.  
+     Si le caractère générique astérisque ( \* ) peut être utilisé pour le composant et l’interface, évitez de l’utiliser, car vous souhaiterez peut-être exposer uniquement les fonctionnalités sélectionnées en tant que service Web. En cas d'exécution avec une version ultérieure de ce composant, l'utilisation du caractère générique peut exposer involontairement des interfaces qui étaient peut-être absentes lorsque la syntaxe de configuration a été déterminée.  
   
      L'option /verbose fait en sorte que l'outil affiche des avertissements en plus des éventuelles erreurs.  
   
@@ -111,4 +111,4 @@ Une fois que vous avez sélectionné un mode d'hébergement approprié, utilisez
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de l’intégration à des applications COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)
+- [Vue d’ensemble de l’intégration aux applications COM+](integrating-with-com-plus-applications-overview.md)

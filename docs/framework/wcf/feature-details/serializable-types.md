@@ -2,12 +2,12 @@
 title: Types sérialisables
 ms.date: 03/30/2017
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
-ms.openlocfilehash: 0913d523e93505934b1cf231284e356baba5ded3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e65fcb93c5c36bb289b825cef58b3adc6f5155f5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591675"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586102"
 ---
 # <a name="serializable-types"></a>Types sérialisables
 Par défaut, <xref:System.Runtime.Serialization.DataContractSerializer> sérialise tous les types accessibles publiquement. Toutes les propriétés et tous les champs publics en lecture/écriture du type sont sérialisés.  
@@ -36,7 +36,7 @@ Par défaut, <xref:System.Runtime.Serialization.DataContractSerializer> sériali
 - Pour annuler le processus de sérialisation des membres publics, des propriétés ou des champs, appliquez l'attribut <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> à ce membre.  
   
 ## <a name="inheritance"></a>Héritage  
- Les types non marqués (type sans attribut <xref:System.Runtime.Serialization.DataContractAttribute>) peuvent hériter des types qui ont cet attribut. Toutefois, l'inverse n'est pas permis : les types avec l'attribut ne peuvent pas hériter de types non marqués. Cette règle est appliquée principalement pour garantir la compatibilité descendante avec le code écrit dans les versions antérieures du .NET Framework.  
+ Les types non marqués (type sans attribut <xref:System.Runtime.Serialization.DataContractAttribute>) peuvent hériter des types qui ont cet attribut. Toutefois, l'inverse n'est pas permis : les types avec l'attribut ne peuvent pas hériter de types non marqués. Cette règle est appliquée principalement pour garantir la compatibilité descendante avec le code écrit dans les versions antérieures de .NET Framework.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -44,4 +44,4 @@ Par défaut, <xref:System.Runtime.Serialization.DataContractSerializer> sériali
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [Types pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [Types pris en charge par le sérialiseur de contrat de données](types-supported-by-the-data-contract-serializer.md)
