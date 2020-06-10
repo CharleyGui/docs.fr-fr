@@ -1,23 +1,23 @@
 ---
-title: Refus de service
+title: Déni de service
 ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: 55120430a9aaafe7d8bbf2b26f07806e4f1aa44a
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 1c1778ace6abc332517786f910d0442eeed577c9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964423"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599267"
 ---
-# <a name="denial-of-service"></a>Refus de service
+# <a name="denial-of-service"></a>Déni de service
 Un déni de service se produit lorsqu'un système est saturé au point que le traitement des messages est impossible ou extrêmement lent.  
   
 ## <a name="excess-memory-consumption"></a>Consommation de mémoire excessive  
  La lecture d'un document XML contenant un grand nombre de noms locaux uniques, d'espaces de noms ou de préfixes peut poser problème. Si vous utilisez une classe dérivée de <xref:System.Xml.XmlReader> et que vous appelez la propriété <xref:System.Xml.XmlReader.LocalName%2A>, <xref:System.Xml.XmlReader.Prefix%2A> ou <xref:System.Xml.XmlReader.NamespaceURI%2A> pour chaque élément, la chaîne retournée est ajoutée à <xref:System.Xml.NameTable>. La collection détenue par <xref:System.Xml.NameTable> ne diminue jamais en taille et crée une « fuite de mémoire » virtuelle des handles de chaîne.  
   
- Pour limiter les risques, vous pouvez :  
+ Les solutions d’atténuation sont les suivantes :  
   
 - Dérivez de la classe <xref:System.Xml.NameTable> et appliquez un quota de taille maximale. (Vous ne pouvez pas empêcher l'utilisation d'un <xref:System.Xml.NameTable> ou basculer <xref:System.Xml.NameTable> lorsqu'il est plein.)  
   
@@ -44,10 +44,10 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
 ## <a name="auditing-event-log-can-be-filled"></a>Risque de saturation du journal des événements d'audit  
  Si un utilisateur malveillant se rend compte que l'audit est activé, l'intrus peut envoyer des messages non valides pour forcer l'écriture d'entrées d'audit. Si le journal d'audit se remplit de cette manière, le système d'audit échoue.  
   
- Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations sur l’utilisation de l’observateur d’événements pour afficher et gérer les journaux des événements, consultez [Observateur d’événements](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11)). Pour plus d’informations, consultez [audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+ Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations sur l’utilisation de l’observateur d’événements pour afficher et gérer les journaux des événements, consultez [Observateur d’événements](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11)). Pour plus d’informations, consultez [audit](auditing-security-events.md).  
   
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Les implémentations non valides de IAuthorizationPolicy peuvent provoquer le blocage du service  
- L’appel de la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> sur une implémentation défaillante de l’interface <xref:System.IdentityModel.Policy.IAuthorizationPolicy> peut empêcher le service de répondre.  
+ L’appel <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> de la méthode sur une implémentation défaillante de l' <xref:System.IdentityModel.Policy.IAuthorizationPolicy> interface peut provoquer le blocage du service.  
   
  Atténuation : utilisez uniquement un code de confiance. Autrement dit, utilisez uniquement un code que vous avez vous-même écrit et testé, ou qui provient d'un fournisseur approuvé. N’autorisez pas les extensions non fiables de <xref:System.IdentityModel.Policy.IAuthorizationPolicy> à s’intégrer à votre code sans prendre toutes les précautions requises. Cela s'applique à toutes les extensions utilisées dans une implémentation de service. WCF ne fait aucune distinction entre le code d’application et le code étranger qui est connecté à l’aide de points d’extensibilité.  
   
@@ -59,7 +59,7 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
   
  L’impact est que les services WCF peuvent ne pas s’ouvrir sur des domaines avec inscription automatique. Cela est dû au fait que les critères de recherche d'informations d'identification X.509 du service par défaut peuvent être ambigus car il existe plusieurs certificats portant le nom DNS (Domain Name System) complet de l'ordinateur. Un certificat peut provenir de l'inscription automatique tandis qu'un autre peut être un certificat auto-publié.  
   
- Pour atténuer ce risque, référencez le certificat exact à utiliser à l’aide d’un critère de recherche plus précis sur le [\<> ServiceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). Par exemple, utilisez l'option <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> et spécifiez le certificat par son empreinte numérique unique (hachage).  
+ Pour atténuer ce risque, référencez le certificat exact à utiliser à l’aide d’un critère de recherche plus précis sur le [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) . Par exemple, utilisez l'option <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> et spécifiez le certificat par son empreinte numérique unique (hachage).  
   
  Pour plus d’informations sur la fonctionnalité d’inscription automatique, consultez [inscription automatique des certificats dans Windows Server 2003](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc778954(v%3dws.10)).  
   
@@ -75,16 +75,16 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
  Lorsqu'un client est correctement authentifié par un service et qu'une session sécurisée est établie avec ce dernier, le service effectue le suivi de la session jusqu'à ce qu'elle soit annulée par le client ou qu'elle expire. Chaque session établie est décomptée du nombre maximal de sessions simultanées actives pour un service. Lorsque cette limite est atteinte, les clients qui essaient de créer une session avec ce service sont rejetés jusqu'à ce qu'une ou plusieurs sessions actives expirent ou soient annulées par un client. Un client peut ouvrir plusieurs sessions sur un service, chacune de ces sessions étant décomptée du nombre limite.  
   
 > [!NOTE]
-> Lorsque vous utilisez des sessions avec état, le paragraphe précédent ne s’applique pas. Pour plus d’informations sur les sessions avec état, consultez [Comment : créer un jeton de contexte de sécurité pour une session sécurisée](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+> Lorsque vous utilisez des sessions avec état, le paragraphe précédent ne s’applique pas. Pour plus d’informations sur les sessions avec état, consultez [Comment : créer un jeton de contexte de sécurité pour une session sécurisée](how-to-create-a-security-context-token-for-a-secure-session.md).  
   
  Pour atténuer ce risque, paramétrez le nombre maximal de sessions actives et la durée de vie maximale d'une session en définissant la propriété <xref:System.ServiceModel.Channels.SecurityBindingElement> de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Considérations relatives à la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [Divulgation d’informations](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
-- [Élévation de privilèges](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
-- [Déni de service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [Attaques par relecture](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
-- [Falsification](../../../../docs/framework/wcf/feature-details/tampering.md)
-- [Scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+- [Security Considerations](security-considerations-in-wcf.md)
+- [Divulgation d’informations](information-disclosure.md)
+- [Élévation de privilège](elevation-of-privilege.md)
+- [Déni de service](denial-of-service.md)
+- [Attaques par relecture](replay-attacks.md)
+- [Falsification](tampering.md)
+- [Scénarios non pris en charge](unsupported-scenarios.md)

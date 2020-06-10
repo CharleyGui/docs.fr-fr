@@ -1,41 +1,41 @@
 ---
-ms.openlocfilehash: 4340ed7444681b4601dea50c93926b0ee0c07eec
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 7723892a33bf7dd8e475b2f696db5d9ab287e182
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134106"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602991"
 ---
 
-Les paquets ajoutés aux flux de gestionnaire de `{product}-{type}-{version}`paquets sont nommés dans un format hackable: .
+Les packages ajoutés aux flux du gestionnaire de package sont nommés dans un format pirate : `{product}-{type}-{version}` .
 
-- **Produit**\
-Le type de produit .NET à installer. Les options valides sont les suivantes :
+- **production**\
+Type de produit .NET à installer. Les options valides sont les suivantes :
 
   - dotnet
   - aspnetcore
 
-- **Type**\
-Choisit le SDK ou l’heure d’exécution. Les options valides sont les suivantes :
+- **entrer**\
+Choisit le kit de développement logiciel (SDK) ou le Runtime. Les options valides sont les suivantes :
 
   - SDK
   - runtime
 
 - **Version**\
-La version du SDK ou l’heure d’exécution à installer. Cet article donnera toujours les instructions pour la dernière version prise en charge. Les options valides sont n’importe quelle version libérée, telles que :
+Version du kit de développement logiciel (SDK) ou du runtime à installer. Cet article fournira toujours les instructions relatives à la dernière version prise en charge. Les options valides sont toutes les versions publiées, par exemple :
 
   - 3.1
   - 3.0
   - 2.1
 
-  Il est possible que le SDK/runtime que vous essayez de télécharger n’est pas disponible pour votre distribution Linux. Pour une liste de distributions prises en charge, voir [.NET Core dépendances et exigences](../dependencies.md?pivots=os-linux).
+  Il est possible que le kit de développement logiciel (SDK)/Runtime que vous essayez de télécharger ne soit pas disponible pour votre distribution Linux. Pour obtenir la liste des distributions prises en charge, consultez [dépendances et exigences de .net Core](../linux.md).
 
 ### <a name="examples"></a>Exemples
 
-- Installer le ASP.NET cœur 3.1 temps d’exécution:`aspnetcore-runtime-3.1`
-- Installer le temps d’exécution .NET Core 2.1 :`dotnet-runtime-2.1`
-- Installer le .NET Core 3.1 SDK:`dotnet-sdk-3.1`
+- Installez le ASP.NET Core 3,1 Runtime :`aspnetcore-runtime-3.1`
+- Installez le Runtime .NET Core 2,1 :`dotnet-runtime-2.1`
+- Installez le kit de développement logiciel (SDK) .NET Core 3,1 :`dotnet-sdk-3.1`
 
-### <a name="package-missing"></a>Paquet manquant
+### <a name="package-missing"></a>Package manquant
 
-Si la combinaison de versions de paquet ne fonctionne pas, elle n’est pas disponible. Par exemple, il n’y a pas de ASP.NET Core SDK, les composants SDK sont inclus avec le SDK core .NET. La `aspnetcore-sdk-2.2` valeur est incorrecte et doit être `dotnet-sdk-2.2`. Pour une liste de distributions Linux prises en charge par .NET Core, voir [.NET Core dépendances et exigences](../dependencies.md?pivots=os-linux).
+Si la combinaison package-version ne fonctionne pas, elle n’est pas disponible. Par exemple, il n’existe pas de ASP.NET Core SDK, les composants du kit de développement logiciel (SDK) sont inclus dans le kit SDK .NET Core. La valeur `aspnetcore-sdk-2.2` est incorrecte et doit être `dotnet-sdk-2.2` . Pour obtenir la liste des distributions Linux prises en charge par .NET Core, consultez [dépendances et exigences de .net Core](../linux.md).

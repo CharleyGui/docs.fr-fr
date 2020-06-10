@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - routing [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
-ms.openlocfilehash: 334e9fe7ca6931f87c75023f3322638b36001b6a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 455a6e42aea064d48846994b4e729b90667bc8e1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923068"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590499"
 ---
 # <a name="routing-scenarios"></a>Scénarios de routage
 Bien que le service de routage soit entièrement personnalisable, concevoir une logique de routage efficace lors de la création d'une configuration à partir de zéro peut s'avérer difficile.  Toutefois, il existe plusieurs scénarios courants que suivent la plupart des configurations de service de routage. Bien que ces scénarios puissent ne pas s'appliquer directement à votre configuration spécifique, comprendre comment configurer le service de routage en vue de gérer ces scénarios vous permet de mieux maîtriser le fonctionnement du service de routage.  
@@ -34,17 +34,17 @@ Bien que le service de routage soit entièrement personnalisable, concevoir une 
   
  En utilisant le service de routage, vous pouvez exposer un point de terminaison pour recevoir les messages d'applications clientes, puis router chaque message vers la version appropriée du service, en fonction du contenu du message. L'implémentation de base implique d'ajouter au message un en-tête personnalisé, indiquant la version du service qui doit traiter le message. Le service de routage peut utiliser le XPathMessageFilter pour vérifier si un en-tête personnalisé est présent dans chaque message et router le message vers le point de terminaison de destination approprié.  
   
- Pour connaître les étapes à suivre pour créer une configuration de contrôle de [version de service, consultez Procédure: Contrôle de version](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)du service.
+ Pour connaître les étapes permettant de créer une configuration de contrôle de version de service, consultez Guide pratique pour le contrôle [de version de service](how-to-service-versioning.md).
   
 ### <a name="service-data-partitioning"></a>Partitionnement des données du service  
  Lors de la conception d'un environnement distribué, il est souvent préférable de répartir la charge de traitement entre plusieurs ordinateurs, afin d'assurer un haut niveau de disponibilité, de diminuer la charge de traitement sur les ordinateurs individuels, ou de fournir des ressources dédiées à un sous-ensemble spécifique de messages. Bien que le service de routage ne remplace pas une solution d'équilibrage de charge dédiée, sa capacité à effectuer des routages basés sur le contenu peut être utilisée pour router vers des destinations spécifiques des messages qui par ailleurs sont semblables. Par exemple, vous pouvez avoir besoin de traiter les messages d'un client spécifique séparément de ceux d'autres clients.  
   
- Pour connaître les étapes permettant de créer une configuration de partitionnement des données [du service, consultez Procédure: Partitionnement des données](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)du service.  
+ Pour connaître les étapes permettant de créer une configuration de partitionnement des données du service, consultez [Comment : traiter le partitionnement des données](how-to-service-data-partitioning.md).  
   
 ### <a name="dynamic-routing"></a>Routage dynamique  
  Il est souvent préférable de modifier la configuration du routage pour satisfaire l'évolution des besoins professionnels : par exemple ajouter un itinéraire à la nouvelle version d'un service, modifier les critères de routage, ou modifier le point de terminaison de destination vers lequel le filtre route un message particulier. Le service de routage permet d'effectuer ces modifications via l'objet <xref:System.ServiceModel.Routing.RoutingExtension>, qui fournit une nouvelle RoutingConfiguration au moment de l'exécution. La nouvelle configuration entre immédiatement en vigueur, mais n'affecte que les nouvelles sessions traitées par le service de routage.  
   
- Pour connaître les étapes à suivre pour implémenter le [routage dynamique, consultez Procédure: Mise à](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)jour dynamique.
+ Pour connaître les étapes à suivre pour implémenter le routage dynamique, consultez [procédure : mise à jour dynamique](how-to-dynamic-update.md).
   
 ### <a name="multicast"></a>Multidiffusion  
  Lors du routage de messages, vous routez habituellement chaque message vers un point de terminaison de destination spécifique.  Toutefois, vous pouvez avoir besoin occasionnellement de router une copie du message vers plusieurs points de terminaison de destination. Pour effectuer un routage en multidiffusion, les conditions suivantes doivent être remplies :  
@@ -63,17 +63,17 @@ Bien que le service de routage soit entièrement personnalisable, concevoir une 
   
  Le service de routage tente de remédier à ce problème en fournissant de robustes fonctions de gestion des erreurs pour les messages confrontés à des pannes réseau ou des défaillances de communication. En créant une liste de points de terminaison de destination possibles et en associant cette liste à chaque filtre de messages, vous évitez le point de défaillance unique dû au fait de n'avoir qu'une seule destination possible. En cas de panne, le service de routage essaie de remettre le message au prochain point de terminaison de la liste, jusqu'à ce que le message soit remis, qu'une défaillance non liée à la communication se produise ou que tous les points de terminaison soient épuisés.  
   
- Pour connaître les étapes permettant de configurer la gestion des [erreurs, consultez Procédure: Gestion des](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)erreurs.
+ Pour plus d’informations sur la procédure de configuration de la gestion des erreurs, consultez [procédure : gestion des erreurs](how-to-error-handling.md).
   
 ### <a name="in-this-section"></a>Dans cette section  
- [Guide pratique pour Contrôle de version de service](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
+ [Procédure : contrôle des versions du service](how-to-service-versioning.md)  
   
- [Guide pratique pour Partitionnement des données du service](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
+ [Procédure : partitionnement des données du service](how-to-service-data-partitioning.md)  
   
- [Guide pratique pour Mise à jour dynamique](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
+ [Guide pratique pour effectuer une mise à jour dynamique](how-to-dynamic-update.md)  
   
- [Guide pratique pour Gestion des erreurs](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
+ [Procédure : gestion des erreurs](how-to-error-handling.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction au routage](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
+- [Introduction au routage](routing-introduction.md)

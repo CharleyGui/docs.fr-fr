@@ -2,24 +2,24 @@
 title: Sécurisation des messages à l'aide de la sécurité de message
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: a6b062d0d6a74ce2a2ff9afa7e8a0a18853dbd22
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 70c645101033c31da01d79f624ab03ce328dd3a6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746446"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589979"
 ---
 # <a name="securing-messages-using-message-security"></a>Sécurisation des messages à l'aide de la sécurité de message
-Cette section traite de la sécurité des messages WCF lors de l’utilisation de <xref:System.ServiceModel.NetMsmqBinding>.  
+Cette section traite de la sécurité des messages WCF lors de l’utilisation de <xref:System.ServiceModel.NetMsmqBinding> .  
   
 > [!NOTE]
-> Avant de lire cette rubrique, il est recommandé de lire [concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
+> Avant de lire cette rubrique, il est recommandé de lire [concepts de sécurité](security-concepts.md).  
   
  L’illustration suivante fournit un modèle conceptuel de communication en file d’attente à l’aide de WCF. Cette illustration et la terminologie permettent d'expliquer  
   
  les concepts de sécurité de transport.  
   
- ![Diagramme d’application en file d’attente](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "File d’attente distribuée-figure")  
+ ![Diagramme d'application mise en file d'attente](media/distributed-queue-figure.jpg "File d’attente distribuée-figure")  
   
  Lors de l’envoi de messages en file d’attente à l’aide de WCF, le message WCF est joint en tant que corps du message de Message Queuing (MSMQ). Alors que la sécurité de transport sécurise le message MSMQ entier, la sécurité de message (ou SOAP) sécurise uniquement le corps du message MSMQ.  
   
@@ -65,7 +65,7 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des messages à l’aide de la sécurité de transport](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)
-- [Sécurité du message sur Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
-- [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des messages à l'aide de la sécurité de transport](securing-messages-using-transport-security.md)
+- [Message Security over Message Queuing](../samples/message-security-over-message-queuing.md)
+- [Concepts de sécurité](security-concepts.md)
+- [Securing Services and Clients](securing-services-and-clients.md)

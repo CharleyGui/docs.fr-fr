@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: 698a5134683341fedf2a37f7d6383770e14c232c
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: dbd51abbc30b1010f7c4f206aad9a773eca0a714
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964800"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593176"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Comment : héberger un service WCF dans un service Windows managé
 
@@ -18,7 +18,7 @@ Cette rubrique décrit les étapes de base requises pour créer un service Windo
 
 Les services Windows peuvent être gérés avec Microsoft.ManagementConsole.SnapIn dans MMC (Microsoft Management Console) et peuvent être configurés pour démarrer automatiquement lorsque le système démarre. Cette option d’hébergement consiste à inscrire le domaine d’application (AppDomain) qui héberge un service WCF en tant que service Windows géré afin que la durée de vie du processus soit contrôlée par le gestionnaire de contrôle des services (SCM) pour les services Windows.
 
-Le code du service inclut l'implémentation du contrat de service, d'une classe de service Windows et d'une classe Installer. La classe d’implémentation de service, `CalculatorService`, est un service WCF. Le `CalculatorWindowsService` est un service Windows. Pour prétendre au titre de service Windows, la classe hérite de la `ServiceBase` et implémente les méthodes `OnStart` et `OnStop`. Dans la méthode `OnStart`, un objet <xref:System.ServiceModel.ServiceHost> est créé pour le type `CalculatorService` et est ouvert. Dans la méthode `OnStop`, le service est arrêté et éliminé. L'hôte est également chargé de fournir une adresse de base à l'hôte de service, qui a été configuré dans les paramètres d'application. La classe Installer, qui hérite de <xref:System.Configuration.Install.Installer>, permet à l'outil Installutil.exe d'installer le programme comme un service Windows.
+Le code du service inclut l'implémentation du contrat de service, d'une classe de service Windows et d'une classe Installer. La classe d’implémentation de service, `CalculatorService` , est un service WCF. Le `CalculatorWindowsService` est un service Windows. Pour prétendre au titre de service Windows, la classe hérite de la `ServiceBase` et implémente les méthodes `OnStart` et `OnStop`. Dans la méthode `OnStart`, un objet <xref:System.ServiceModel.ServiceHost> est créé pour le type `CalculatorService` et est ouvert. Dans la méthode `OnStop`, le service est arrêté et éliminé. L'hôte est également chargé de fournir une adresse de base à l'hôte de service, qui a été configuré dans les paramètres d'application. La classe Installer, qui hérite de <xref:System.Configuration.Install.Installer>, permet à l'outil Installutil.exe d'installer le programme comme un service Windows.
 
 ## <a name="construct-the-service-and-provide-the-hosting-code"></a>Construction du service et ajout du code d'hébergement
 
@@ -26,7 +26,7 @@ Le code du service inclut l'implémentation du contrat de service, d'une classe 
 
 2. Renommez Program.cs en Service.cs.
 
-3. Remplacez l’espace de noms par `Microsoft.ServiceModel.Samples`.
+3. Remplacez l’espace de noms par `Microsoft.ServiceModel.Samples` .
 
 4. Ajoutez des références aux assemblys suivants :
 
@@ -112,7 +112,7 @@ Le code du service inclut l'implémentation du contrat de service, d'une classe 
 
      Cliquez avec le bouton droit sur le fichier app. config dans le **Explorateur de solutions** , puis sélectionnez **Propriétés**. Sous **copier dans le répertoire de sortie** , sélectionnez **copier si plus récent**.
 
-     L'exemple spécifie explicitement les points de terminaison dans le fichier de configuration. Si vous n'ajoutez pas de points de terminaison au service, le runtime ajoute les points de terminaison par défaut. Dans cet exemple, étant donné que le service a un <xref:System.ServiceModel.Description.ServiceMetadataBehavior> défini sur la valeur `true`, la publication des métadonnées est également activée pour votre service. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).
+     L'exemple spécifie explicitement les points de terminaison dans le fichier de configuration. Si vous n'ajoutez pas de points de terminaison au service, le runtime ajoute les points de terminaison par défaut. Dans cet exemple, étant donné que le service a un <xref:System.ServiceModel.Description.ServiceMetadataBehavior> défini sur la valeur `true`, la publication des métadonnées est également activée pour votre service. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../samples/simplified-configuration-for-wcf-services.md).
 
 ## <a name="install-and-run-the-service"></a>Démarrez et exécutez le service.
 
@@ -135,7 +135,7 @@ Comme pour l'option d'auto-hébergement, l'environnement d'hébergement du servi
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md)
-- [Hébergement dans une application managée](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)
-- [Hébergement de services](../../../../docs/framework/wcf/hosting-services.md)
+- [Configuration simplifiée](../simplified-configuration.md)
+- [Hébergement dans une application managée](hosting-in-a-managed-application.md)
+- [Hébergement de services](../hosting-services.md)
 - [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
