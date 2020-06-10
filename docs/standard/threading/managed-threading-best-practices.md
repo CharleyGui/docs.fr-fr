@@ -1,5 +1,6 @@
 ---
 title: Meilleures pratiques pour le threading managé
+description: Découvrez les meilleures pratiques de Threading managé dans .NET. Travaillez avec des situations difficiles, telles que la coordination de nombreux threads ou la gestion des threads de blocage.
 ms.date: 10/15/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: 30d746d739654ecad2b485b9d69cfe300caca2ff
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: fa0af1461ba568583127316934b9d55577dd4c5a
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291186"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662821"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
 Le multithreading nécessite une programmation attentive. Pour réduire la complexité de la plupart des tâches, il vous suffit de mettre en file d’attente les requêtes à exécuter par les threads d’un pool de threads. Cet article vous permet de remédier aux situations plus complexes, telles que la coordination du travail de plusieurs threads ou la gestion des threads bloqués.  
@@ -174,5 +175,5 @@ Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Thread](index.md)
+- [Threads](index.md)
 - [Threads et threads](threads-and-threading.md)

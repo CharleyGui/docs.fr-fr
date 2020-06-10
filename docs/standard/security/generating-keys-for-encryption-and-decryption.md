@@ -1,5 +1,6 @@
 ---
 title: Génération de clés pour le chiffrement et le déchiffrement
+description: Découvrez comment créer et gérer des clés symétriques et asymétriques pour le chiffrement et le déchiffrement dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - asymmetric keys [.NET Framework]
 - cryptography [.NET Framework], keys
 ms.assetid: c197dfc9-a453-4226-898d-37a16638056e
-ms.openlocfilehash: 992ac30310d138e04b8408497c5e49166a356ab4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f8c3633d18e200037235502487d0d91d42083241
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291537"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84661807"
 ---
 # <a name="generating-keys-for-encryption-and-decryption"></a>Génération de clés pour le chiffrement et le déchiffrement
 La création et la gestion des clés constituent une part importante du processus de chiffrement. Les algorithmes symétriques nécessitent la création d'une clé et d'un vecteur d'initialisation. La clé ne doit pas être divulguée aux personnes qui ne sont pas autorisées à déchiffrer vos données. Le vecteur d'initialisation peut être divulgué, mais doit être modifié à chaque session. Les algorithmes asymétriques nécessitent la création d'une clé publique et d'une clé privée. La clé publique peut être donnée à tout le monde. Toutefois, la clé privée ne doit être connue que de la partie chargée du déchiffrement des données chiffrées à l'aide de la clé publique. Cette section décrit comment générer et gérer des clés pour les algorithmes symétriques et asymétriques.  

@@ -1,5 +1,6 @@
 ---
 title: Présentation des bibliothèques de classes .NET
+description: En savoir plus sur la bibliothèque de classes .NET. Les implémentations de .NET incluent des classes, des interfaces, des délégués et des types de valeur pour fournir l’accès aux fonctionnalités du système.
 ms.date: 02/08/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-ms.openlocfilehash: b076298a5a5f90a3c2dd39e4c5c9684e02a291c4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7eb9aa9714dcb920118a6422b9f6c78775bf1a5c
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289237"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662925"
 ---
 # <a name="net-class-library-overview"></a>Présentation des bibliothèques de classes .NET
 
@@ -64,7 +65,7 @@ Les implémentations .NET incluent des classes, des interfaces, des délégués 
   
  .NET fournit un ensemble complet d'interfaces, ainsi que des classes abstraites et concrètes (non abstraites). Vous pouvez utiliser les classes concrètes telles quelles ou, dans de nombreux cas, en dériver vos propres classes. Pour utiliser les fonctionnalités d’une interface, vous pouvez créer une classe qui implémente l’interface ou dériver une classe de l’une des classes .NET qui implémentent l’interface.  
   
-## <a name="naming-conventions"></a>Conventions d'attribution d'un nom
+## <a name="naming-conventions"></a>Conventions d’affectation de noms
 
  Les types .NET utilisent un schéma de nommage dans lequel les points indiquent une hiérarchie. Cette technique regroupe les types associés en espaces de noms de sorte qu'ils peuvent être recherchés et référencés plus facilement. La première partie du nom complet (jusqu'au point le plus à droite) constitue le nom de l'espace de noms. La dernière partie du nom est le nom du type. Par exemple, `System.Collections.Generic.List<T>` représente le type `List<T>`, qui appartient à l’espace de noms `System.Collections.Generic`. Les types dans <xref:System.Collections.Generic> peuvent être utilisés pour manipuler des collections génériques.  
   
@@ -95,13 +96,13 @@ Les implémentations .NET incluent des classes, des interfaces, des délégués 
 ||<xref:System.UInt32>|Entier non signé 32 bits.<br /><br /> Non conforme CLS.|**UInteger**|**uint**|**nombre entier non signé**<br /> -ou-<br /> **unsigned long**|**uint32**|  
 ||<xref:System.UInt64>|Entier non signé 64 bits.<br /><br /> Non conforme CLS.|**Correspondante**|**correspondante**|**unsigned __int64**|**uint64**|  
 |Virgule flottante|<xref:System.Single>|Nombre à virgule flottante (32 bits) simple précision.|**Unique**|**float**|**float**|**float32**<br> or<br>**single**|  
-||<xref:System.Double>|Nombre à virgule flottante (64 bits) double précision.|**Cliquer**|**double**|**double**|**float**<br> or <br> **double**|  
+||<xref:System.Double>|Nombre à virgule flottante (64 bits) double précision.|**Double**|**double**|**double**|**float**<br> or <br> **double**|  
 |Logical|<xref:System.Boolean>|Valeur booléenne (true ou false).|**Booléen**|**bool**|**bool**|**bool**|  
 |Autres|<xref:System.Char>|Caractère Unicode (16 bits).|**Char**|**char**|**wchar_t**|**char**|  
 ||<xref:System.Decimal>|Valeur décimale (128 bits).|**Décimal**|**decimal**|**Décimal**|**decimal**|  
 ||<xref:System.IntPtr>|Entier signé dont la taille dépend de la plateforme sous-jacente (valeur 32 bits sur une plateforme 32 bits et valeur 64 bits sur une plateforme 64 bits).|**IntPtr**<br /><br /> Pas de type intégré.|**IntPtr**<br /><br /> Pas de type intégré.|**IntPtr**<br /><br /> Pas de type intégré.|**unativeint**|  
 ||<xref:System.UIntPtr>|Entier non signé dont la taille dépend de la plateforme sous-jacente (valeur 32 bits sur une plateforme 32 bits et valeur 64 bits sur une plateforme 64 bits).<br /><br /> Non conforme CLS.|**UIntPtr**<br /><br /> Pas de type intégré.|**UIntPtr**<br /><br /> Pas de type intégré.|**UIntPtr**<br /><br /> Pas de type intégré.|**unativeint**|  
-||<xref:System.Object>|Racine de la hiérarchie d'objet.|**Objet**|**object**|**Objet ^**|**obj**|  
+||<xref:System.Object>|Racine de la hiérarchie d'objet.|**Object**|**object**|**Objet ^**|**obj**|  
 ||<xref:System.String>|Chaîne immuable à longueur fixe de caractères Unicode.|**Chaîne**|**string**|**Chaîne ^**|**string**|  
   
  En plus des types de données de base, l'espace de noms <xref:System> contient plus de 100 classes, de celles qui gèrent les exceptions à celles qui traitent des principaux concepts relatifs au runtime, tels que les domaines d'application et le « garbage collector ». L'espace de noms <xref:System> contient également de nombreux espaces de noms de deuxième niveau.  

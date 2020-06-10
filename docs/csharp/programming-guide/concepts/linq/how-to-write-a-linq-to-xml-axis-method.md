@@ -1,18 +1,19 @@
 ---
-title: Comment écrire une méthode d’axe LINQ à XML (C)
+title: Comment écrire une méthode d’axe LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 50aef06b-1d22-4718-a18a-21237e26d7c1
-ms.openlocfilehash: 7810afd1a181523fb30f6702993bc0ad469f66aa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf1542471f44115bd787e7be6c8ffb836a842a4f
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168542"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662444"
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a>Comment écrire une méthode d’axe LINQ à XML (C)
-Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collections à partir d’une arborescence XML. Pour cela, l'un des meilleurs moyens consiste à écrire une méthode d'extension qui retourne une collection d'éléments ou d'attributs. Vous pouvez écrire votre méthode d’extension de façon à retourner des sous-ensembles spécifiques d’éléments ou d’attributs, selon les exigences de votre application.  
+# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a>Comment écrire une méthode d’axe LINQ to XML (C#)
+
+Une [méthode d’axe](linq-to-xml-axes-overview.md) XML récupère une collection d’éléments XML à partir d’un document XML ou d’un élément ancêtre. Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collections à partir d’une arborescence XML. Pour cela, l'un des meilleurs moyens consiste à écrire une méthode d'extension qui retourne une collection d'éléments ou d'attributs. Vous pouvez écrire votre méthode d’extension de façon à retourner des sous-ensembles spécifiques d’éléments ou d’attributs, selon les exigences de votre application.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant utilise deux méthodes d’extension. La première méthode d'extension, `GetXPath`, opère sur <xref:System.Xml.Linq.XObject> et retourne une expression XPath qui, après évaluation, retourne le nœud ou l'attribut. La deuxième méthode d'extension, `Find`, opère sur <xref:System.Xml.Linq.XElement>. Elle retourne une collection d'objets <xref:System.Xml.Linq.XAttribute> et <xref:System.Xml.Linq.XElement> qui contiennent du texte spécifié.  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  

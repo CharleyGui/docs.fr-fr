@@ -1,17 +1,18 @@
 ---
 title: Utilisation des threads et du threading
+description: En savoir plus sur l’utilisation des threads et du Threading dans .NET, vous pouvez écrire des applications pour effectuer de nombreuses opérations en même temps (multithreading).
 ms.date: 08/08/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
-ms.openlocfilehash: 14159ff9a6ca39108aec14b0ad46004e95fa3cf2
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: c092994818c9105a555acaf63ceba4b8e99bcada
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588427"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663029"
 ---
 # <a name="using-threads-and-threading"></a>Utilisation des threads et du threading
 
@@ -28,13 +29,13 @@ Pour créer un thread, vous devez créer une instance de la classe <xref:System.
 
 ## <a name="how-to-stop-a-thread"></a>Comment arrêter un thread
 
-Pour mettre fin à l’exécution d’un thread, utilisez le <xref:System.Threading.CancellationToken?displayProperty=nameWithType>. Il fournit un moyen unifié d’arrêter les fils en coopération. Pour plus d’informations, consultez [Annulation dans les threads managés](cancellation-in-managed-threads.md).
+Pour mettre fin à l’exécution d’un thread, utilisez <xref:System.Threading.CancellationToken?displayProperty=nameWithType> . Il offre un moyen unifié d’arrêter les threads de manière coopérative. Pour plus d’informations, consultez [Annulation dans les threads managés](cancellation-in-managed-threads.md).
 
-Parfois, il n’est pas possible d’arrêter un thread en coopération, car il exécute un code tiers non conçu pour l’annulation coopérative. Dans ce cas, vous voudrez peut-être mettre fin à son exécution de force. Pour mettre fin à l’exécution d’un thread <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> de force, dans .NET Framework vous pouvez utiliser la méthode. Cette méthode lève une <xref:System.Threading.ThreadAbortException> sur le thread sur lequel elle est appelée. Pour plus d’informations, consultez [Destruction de threads](destroying-threads.md). La <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> méthode n’est pas prise en charge dans .NET Core. Si vous avez besoin de mettre fin à l’exécution du code tiers <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>de force dans .NET Core, l’exécuter dans le processus séparé et l’utiliser .
+Parfois, il n’est pas possible d’arrêter un thread de manière coopérative, car il exécute du code tiers non conçu pour l’annulation coopérative. Dans ce cas, vous souhaiterez peut-être mettre fin à l’exécution de force. Pour mettre fin à l’exécution d’un thread de force, dans .NET Framework vous pouvez utiliser la <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> méthode. Cette méthode lève une <xref:System.Threading.ThreadAbortException> sur le thread sur lequel elle est appelée. Pour plus d’informations, consultez [Destruction de threads](destroying-threads.md). La <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> méthode n’est pas prise en charge dans .net core. Si vous devez mettre fin à l’exécution de code tiers de force dans .NET Core, exécutez-le dans le processus distinct et utilisez <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType> .
 
-Le <xref:System.Threading.CancellationToken?displayProperty=nameWithType> n’est pas disponible avant .NET Framework 4. Pour arrêter un thread dans les anciennes versions .NET Framework, vous devez implémenter l’annulation coopérative manuellement en utilisant les techniques de synchronisation des threads. Par exemple, vous pouvez créer `shouldStop` le champ boolean volatil et l’utiliser pour demander le code exécuté par le thread pour s’arrêter. Pour plus d’informations, voir <xref:System.Threading.Volatile?displayProperty=nameWithType> [volatile](../../csharp/language-reference/keywords/volatile.md) dans C Référence et .
+Le <xref:System.Threading.CancellationToken?displayProperty=nameWithType> n’est pas disponible avant le .NET Framework 4. Pour arrêter un thread dans les anciennes versions de .NET Framework, vous devez implémenter l’annulation coopérative manuellement à l’aide des techniques de synchronisation de threads. Par exemple, vous pouvez créer le champ booléen volatile `shouldStop` et l’utiliser pour demander l’arrêt du code exécuté par le thread. Pour plus d’informations, consultez [volatile](../../csharp/language-reference/keywords/volatile.md) in C# Reference et <xref:System.Threading.Volatile?displayProperty=nameWithType> .
 
-Utilisez <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> la méthode pour faire attendre le fil d’appel pour la fin du fil arrêté.
+Utilisez la <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> méthode pour que le thread appelant attende la fin du thread en cours d’arrêt.
 
 ## <a name="how-to-pause-or-interrupt-a-thread"></a>Comment suspendre ou interrompre un thread
 
@@ -55,5 +56,5 @@ Le tableau suivant présente certaines des propriétés de <xref:System.Threadin
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Thread?displayProperty=nameWithType>
-- [Fils et threading](threads-and-threading.md)
+- [Threads et threads](threads-and-threading.md)
 - [Programmation parallèle](../parallel-programming/index.md)

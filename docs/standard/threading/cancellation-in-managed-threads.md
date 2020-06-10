@@ -1,5 +1,6 @@
 ---
 title: Annulation dans les threads managés
+description: Comprendre l’annulation dans les threads managés. En savoir plus sur les jetons d’annulation dans l’annulation coopérative des opérations synchrones asynchrones ou à long terme.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-ms.openlocfilehash: e56d0f71afdc9281271b7d15316a133e7c720bd0
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9af4a64e50eff65023d5ed5bda868af2f8323a96
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277880"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662834"
 ---
 # <a name="cancellation-in-managed-threads"></a>Annulation dans les threads managés
 À compter de .NET Framework 4, le .NET Framework utilise un modèle unifié pour l’annulation coopérative des opérations asynchrones ou des opérations synchrones de longue durée. Ce modèle est basé sur un objet léger appelé jeton d'annulation. L'objet qui appelle une ou plusieurs opérations annulables, par exemple en créant de nouveaux threads ou de nouvelles tâches, passe le jeton à chaque opération. Chaque opération peut, à son tour, passer des copies du jeton à d'autres opérations. Ultérieurement, l'objet qui a créé le jeton peut l'utiliser pour demander que les opérations arrêtent leur action. Seul l'objet demandeur peut émettre la demande d'annulation. Chaque écouteur est chargé d'accepter la demande et d'y répondre de manière appropriée et en temps voulu.  

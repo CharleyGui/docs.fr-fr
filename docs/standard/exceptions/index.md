@@ -1,5 +1,6 @@
 ---
 title: Gestion et levée d’exceptions dans .NET
+description: Apprenez à gérer et à lever des exceptions dans .NET. Les opérations .NET indiquent l’échec des applications en cas d’exceptions.
 ms.date: 06/19/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - exceptions [.NET]
 - common language runtime, exceptions
 ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
-ms.openlocfilehash: 8e78b2a8d7a815637e143eeb88bcfb51ded33771
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 89d88e3128917125d1a09466ed4e230604d6978c
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75741354"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662769"
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>Gestion et levée d’exceptions dans .NET
 
@@ -46,7 +47,7 @@ Les exceptions offrent des avantages par rapport à d’autres méthodes de noti
 
 Le tableau suivant répertorie certaines exceptions courantes avec des exemples de cause possible.
 
-| Type d'exception | Description |  Exemple |
+| Type d'exception | Description | Exemple |
 | -------------- | ----------- | ------- |
 | <xref:System.Exception> | Classe de base pour toutes les exceptions. | Aucun (utilisez une classe dérivée de cette exception). |
 | <xref:System.IndexOutOfRangeException> | Levée par le runtime uniquement en cas d’indexation incorrecte du tableau. | Indexation d’un tableau en dehors de sa plage valide : <br /> `arr[arr.Length+1]` |
@@ -58,13 +59,13 @@ Le tableau suivant répertorie certaines exceptions courantes avec des exemples 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Catégorie d’exception et propriétés](exception-class-and-properties.md)
+- [Classe et propriétés d’exception](exception-class-and-properties.md)
 - [Guide pratique pour utiliser le bloc try/catch pour intercepter des exceptions](how-to-use-the-try-catch-block-to-catch-exceptions.md)
-- [Comment : Utiliser des exceptions spécifiques dans un bloc de capture](how-to-use-specific-exceptions-in-a-catch-block.md)
-- [Comment : Jeter explicitement des exceptions](how-to-explicitly-throw-exceptions.md)
-- [Comment : Créer des exceptions définies par l’utilisateur](how-to-create-user-defined-exceptions.md)
+- [Comment : utiliser des exceptions spécifiques dans un bloc catch](how-to-use-specific-exceptions-in-a-catch-block.md)
+- [Comment : lever explicitement des exceptions](how-to-explicitly-throw-exceptions.md)
+- [Comment : créer des exceptions définies par l’utilisateur](how-to-create-user-defined-exceptions.md)
 - [Utilisation de gestionnaires filtrés par l'utilisateur](using-user-filtered-exception-handlers.md)
-- [Comment: Utiliser enfin des blocs](how-to-use-finally-blocks.md)
+- [Comment : utiliser des blocs finally](how-to-use-finally-blocks.md)
 - [Gestion des exceptions COM Interop](handling-com-interop-exceptions.md)
 - [Meilleures pratiques pour les exceptions](best-practices-for-exceptions.md)
 - [What Every Dev needs to Know About Exceptions in the Runtime](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/exceptions.md)

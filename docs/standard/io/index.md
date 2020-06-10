@@ -1,5 +1,6 @@
 ---
 title: E/S de fichiers et de flux - .NET
+description: Découvrez les principes de base des e/s de fichier et de flux, qui sont le transfert de données vers ou à partir d’un support de stockage, dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-ms.openlocfilehash: 3c69e0fd23b1f8bc11fe908c66ba492f31a53f30
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2761d17846009ba06a2ffb1fc58b430f3ec9a949
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75706593"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662717"
 ---
 # <a name="file-and-stream-io"></a>Fichier et flux de données E/S
 
@@ -97,7 +98,7 @@ Voir [Comment : lire du texte dans un fichier](how-to-read-text-from-a-file.md)
 
 ## <a name="asynchronous-io-operations"></a>Opérations d’E/S asynchrones
 
-La lecture ou l'écriture de grandes quantités de données peut consommer beaucoup de ressources. Vous devez effectuer ces tâches de façon asynchrone si votre application doit rester réactive aux actions de l'utilisateur. Avec les opérations d'E/S synchrones, le thread d'interface utilisateur est bloqué jusqu'à ce que l'opération consommatrice de ressources soit terminée.  Utilisez les opérations asynchrones I/O lors du développement d’applications Windows 8.x Store pour éviter de créer l’impression que votre application a cessé de fonctionner.
+La lecture ou l'écriture de grandes quantités de données peut consommer beaucoup de ressources. Vous devez effectuer ces tâches de façon asynchrone si votre application doit rester réactive aux actions de l'utilisateur. Avec les opérations d'E/S synchrones, le thread d'interface utilisateur est bloqué jusqu'à ce que l'opération consommatrice de ressources soit terminée.  Utilisez des opérations d’e/s asynchrones lors du développement d’applications Windows 8. x Store pour éviter de créer l’impression que votre application a cessé de fonctionner.
 
 Les membres asynchrones contiennent `Async` dans leurs noms, comme les méthodes <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.FlushAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A>. Utilisez ces méthodes avec `async` et les mots clés `await`.
 
@@ -127,7 +128,7 @@ Voir [Comment : compresser et extraire des fichiers](how-to-compress-and-extrac
 
 Le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. Le stockage fournit un système de fichiers virtuel qui est isolé par utilisateur, assembly et (éventuellement) domaine. Le stockage isolé est particulièrement utile lorsque votre application n'a pas l'autorisation d'accès aux fichiers utilisateur. Enregistrez les paramètres ou les fichiers de votre application d'une façon contrôlée par la stratégie de sécurité de l'ordinateur.
 
-Le stockage isolé n’est pas disponible pour les applications Windows 8.x Store; au lieu de cela, <xref:Windows.Storage?displayProperty=nameWithType> utilisez des classes de données d’application dans l’espace nom. Pour plus d’informations, consultez [Données de l’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29).
+Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store ; au lieu de cela, utilisez les classes de données d’application dans l' <xref:Windows.Storage?displayProperty=nameWithType> espace de noms. Pour plus d’informations, consultez [Données de l’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29).
 
 Les classes suivantes sont fréquemment utilisées lors d'une implémentation de stockage isolé :
 
@@ -141,11 +142,11 @@ Voir [Stockage isolé](isolated-storage.md).
 
 ## <a name="io-operations-in-windows-store-apps"></a>Opérations d’E/S dans les applications Windows Store
 
-Le .NET pour Windows 8.x Store applications contient de nombreux types pour la lecture et l’écriture aux flux; toutefois, cet ensemble n’inclut pas tous les types .NET Framework I/O.
+Le .NET pour les applications du Windows 8. x Store contient un grand nombre des types pour la lecture et l’écriture dans les flux. Toutefois, cet ensemble n’inclut pas tous les types d’e/s .NET Framework.
 
-Quelques différences importantes à noter lors de l’utilisation des opérations I /O dans windows 8.x Store applications:
+Voici quelques différences importantes à noter lors de l’utilisation d’opérations d’e/s dans les applications du Windows 8. x Store :
 
-- Les types spécifiquement liés aux <xref:System.IO.File> <xref:System.IO.FileInfo>opérations <xref:System.IO.Directory> <xref:System.IO.DirectoryInfo>de fichiers, tels que , , et , ne sont pas inclus dans le .NET pour Windows 8.x Store applications. À la place, utilisez les types dans l’espace de noms <xref:Windows.Storage?displayProperty=nameWithType> de Windows Runtime, par exemple <xref:Windows.Storage.StorageFile> et <xref:Windows.Storage.StorageFolder>.
+- Les types spécifiquement associés à des opérations de fichier, tels que <xref:System.IO.File> , <xref:System.IO.FileInfo> <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo> , ne sont pas inclus dans .net pour les applications du Windows 8. x Store. À la place, utilisez les types dans l’espace de noms <xref:Windows.Storage?displayProperty=nameWithType> de Windows Runtime, par exemple <xref:Windows.Storage.StorageFile> et <xref:Windows.Storage.StorageFolder>.
 
 - Le stockage isolé n'est pas disponible ; à la place, utilisez les [données d'application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)).
 
@@ -153,31 +154,31 @@ Quelques différences importantes à noter lors de l’utilisation des opératio
 
 - Les types de compression <xref:System.IO.Compression.ZipFile> et <xref:System.IO.Compression.ZipFileExtensions> basés sur le chemin d’accès ne sont pas disponibles. À la place, utilisez les types dans l’espace de noms <xref:Windows.Storage.Compression?displayProperty=nameWithType>.
 
-Vous pouvez convertir entre les flux .NET Framework et les flux Windows Runtime, si nécessaire. Pour plus d’informations, voir [Comment : Convertir entre .NET Framework Streams et Windows Runtime Streams](how-to-convert-between-dotnet-streams-and-winrt-streams.md) ou <xref:System.IO.WindowsRuntimeStreamExtensions>.
+Vous pouvez convertir entre les flux .NET Framework et les flux Windows Runtime, si nécessaire. Pour plus d’informations, consultez [Comment : effectuer une conversion entre des flux de .NET Framework et des flux de Windows Runtime](how-to-convert-between-dotnet-streams-and-winrt-streams.md) ou <xref:System.IO.WindowsRuntimeStreamExtensions> .
 
-Pour plus d’informations sur les opérations I/O dans une application Windows 8.x Store, voir [Quickstart: Reading and writing files](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)).
+Pour plus d’informations sur les opérations d’e/s dans une application du Windows 8. x Store, consultez [démarrage rapide : lecture et écriture de fichiers](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)).
 
 ## <a name="io-and-security"></a>E/S et sécurité
 
 Lorsque vous utilisez les classes de l’espace de noms <xref:System.IO?displayProperty=nameWithType>, vous devez suivre les exigences de sécurité du système d’exploitation telles que les listes de contrôle d’accès (ACL) pour contrôler l’accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](how-to-add-or-remove-access-control-list-entries.md).
 
-Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. Utilisez plutôt [le stockage isolé](isolated-storage.md) pour les applications cadres .NET traditionnelles ou utilisez les données [d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) pour les applications Windows 8.x Store.
+Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. Au lieu de cela, utilisez le [stockage isolé](isolated-storage.md) pour les applications de .NET Framework traditionnelles ou utilisez les [données d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) pour les applications du Windows 8. x Store.
 
 La vérification de sécurité n'est exécutée qu'à la création du flux. Par conséquent, n'ouvrez pas de flux pour le passer ensuite à du code ou à des domaines d'application d'un niveau de sécurité inférieur.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Tâches courantes I/O](common-i-o-tasks.md)\
+- [Tâches d’e/s courantes](common-i-o-tasks.md)\
 Présente les tâches d’E/S associées aux fichiers, aux répertoires et aux flux, et des liens vers du contenu et des exemples appropriés pour chaque tâche.
 
-- [Fichier asynchrone I/O](asynchronous-file-i-o.md)\
+- [E/s de fichier asynchrones](asynchronous-file-i-o.md)\
 Décrit les opérations élémentaires des E/S asynchrones et leurs avantages en termes de performances.
 
 - [Stockage isolé](isolated-storage.md)\
 Décrit un dispositif de stockage des données qui assure l'isolation et la sécurité en définissant des solutions standardisées visant à associer le code aux données enregistrées.
 
-- [Tuyaux](pipe-operations.md)\
+- [Canaux](pipe-operations.md)\
 Décrit des opérations de canal nommé et anonyme dans le .NET Framework.
 
-- [Fichiers cartographiés par la mémoire](memory-mapped-files.md)\
+- [Fichiers mappés en mémoire](memory-mapped-files.md)\
 Décrit les fichiers mappés en mémoire, qui contiennent le contenu de fichiers stockés sur le disque dans la mémoire virtuelle. Vous pouvez utiliser des fichiers mappés en mémoire afin de modifier des fichiers très volumineux et de créer la mémoire partagée pour la communication entre processus.

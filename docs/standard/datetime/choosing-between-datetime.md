@@ -1,5 +1,6 @@
 ---
 title: Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
+description: Découvrez comment choisir entre les types DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo pour représenter les informations de date et d’heure dans .NET.
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - time zones [.NET Framework], type options
 - DateTime structure
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
-ms.openlocfilehash: 5091d7104f400ae186d1a0ca94df9d2722f95b20
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0b89d0fd36af00796105af50f51803c90cce2605
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286143"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662808"
 ---
 # <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
 

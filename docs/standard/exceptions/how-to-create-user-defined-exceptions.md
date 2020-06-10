@@ -1,5 +1,6 @@
 ---
 title: "Comment : créer des exceptions définies par l'utilisateur"
+description: Découvrez comment créer des exceptions définies par l’utilisateur, qui sont une alternative à la hiérarchie des classes d’exception dérivées de la classe de base exception dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - exceptions, examples
 - exceptions, user-defined
 ms.assetid: 25819a5a-f915-4fc8-b924-a76915674e04
-ms.openlocfilehash: 6de00490a17fff005dd50a7acc5247089c073f68
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14eb6246ba4347f33766f7dff36463f2bf996330
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708873"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662795"
 ---
 # <a name="how-to-create-user-defined-exceptions"></a>Guide pratique pour créer des exceptions définies par l’utilisateur
 

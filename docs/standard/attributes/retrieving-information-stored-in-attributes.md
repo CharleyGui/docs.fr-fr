@@ -1,5 +1,6 @@
 ---
 title: Récupération des informations stockées dans les attributs
+description: Apprenez à récupérer des informations stockées dans des attributs, par exemple pour une instance d’attribut, de nombreuses instances pour la même portée, & de nombreuses instances pour différentes étendues.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - multiple attribute instances
 - attributes [.NET Framework], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-ms.openlocfilehash: fc8dcb38471d80d01d1f87993783af3d24868506
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cf147a0ae6833039247c4c0878996973cc3db545
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276132"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84661859"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Récupération des informations stockées dans les attributs
 La récupération d’un attribut personnalisé est un processus simple. Tout d’abord, déclarez une instance de l’attribut que vous souhaitez récupérer. Ensuite, utilisez la méthode <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> pour initialiser le nouvel attribut à la valeur de l’attribut que vous souhaitez récupérer. Une fois le nouvel attribut initialisé, vous utilisez simplement ses propriétés pour obtenir les valeurs.  

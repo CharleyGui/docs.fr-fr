@@ -1,5 +1,6 @@
 ---
 title: Modèle de design observateur
+description: En savoir plus sur le modèle de conception observateur dans .NET. Ce modèle permet à un abonné de s’inscrire auprès d’un fournisseur et de recevoir des notifications d’un fournisseur.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 5794cd1ec9b63a6e151b35c28e09e29f86dcfac6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4edcd2645b28095f4bd18f4918b9afa5c893bd39
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291264"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662730"
 ---
 # <a name="observer-design-pattern"></a>Modèle de design observateur
 

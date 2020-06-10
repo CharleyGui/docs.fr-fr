@@ -1,5 +1,6 @@
 ---
 title: Covariance et contravariance dans les génériques
+description: En savoir plus sur la covariance, qui vous permet d’utiliser un type plus dérivé, et la contravariance, qui vous permet d’utiliser un type moins dérivé, dans des génériques .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: b11b5fc93d9b7289e62d6abc9d3ca19027a107c5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 12de1554bb6e33b69d0d2bba24001e7e4c2d8a65
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287556"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663042"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Covariance et contravariance dans les génériques
  La covariance et la contravariance sont des termes qui font référence à la possibilité d’utiliser un type plus dérivé (plus spécifique) ou moins dérivé (moins spécifique) que celui spécifié à l’origine. Les paramètres de type générique prennent en charge la covariance et la contravariance afin de fournir une meilleure flexibilité dans l'assignation et l'utilisation des types génériques. Lorsque vous faites référence à un système de type, la covariance, la contravariance et l'invariance ont les définitions suivantes. Les exemples supposent qu'une classe de base est nommée `Base` et qu'une classe dérivée est nommée `Derived`.  

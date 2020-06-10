@@ -1,5 +1,6 @@
 ---
 title: 'Procédure : utiliser des canaux nommés pour la communication entre processus en réseau'
+description: Consultez deux exemples d’utilisation de canaux nommés pour la communication entre processus entre un serveur de canal et un ou plusieurs clients de canal dans un réseau.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - impersonation [.NET Framework], named pipes
 - full duplex communication [.NET Framework], named pipes
 ms.assetid: 4e4d7e64-9f1b-4026-98f7-20488ac7b42b
-ms.openlocfilehash: bebfd136245fd7b577ffcd71954f46ca82bfc72d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a529d1d44a903df36099a59e07f4582554d230f2
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291745"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662561"
 ---
 # <a name="how-to-use-named-pipes-for-network-interprocess-communication"></a>Procédure : utiliser des canaux nommés pour la communication entre processus en réseau
 Les canaux nommés fournissent la communication entre un serveur de canaux et un ou plusieurs clients de canaux. Ils offrent plus de fonctionnalités que les canaux anonymes, qui fournissent la communication entre processus sur un ordinateur local. Les canaux nommés prennent en charge la communication en duplex intégrale sur un réseau et plusieurs instances de serveur, la communication basée sur message et l’emprunt d’identité du client, ce qui permet aux processus de connexion d’utiliser leur propre jeu d’autorisations sur des serveurs distants.  

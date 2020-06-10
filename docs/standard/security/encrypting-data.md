@@ -1,5 +1,6 @@
 ---
 title: Chiffrement de données
+description: En savoir plus sur le chiffrement des données dans .NET. Vous pouvez utiliser le chiffrement symétrique sur les flux, ou vous pouvez utiliser le chiffrement asymétrique sur un petit nombre d’octets.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: 3230836b93ea191e5de27717a918038f2f8dead6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6cebdecd461f28f8228ebb8440dbff218dc211db
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288353"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662522"
 ---
 # <a name="encrypting-data"></a>Chiffrement de données
 Le chiffrement symétrique et le chiffrement asymétrique utilisent des processus différents. Le chiffrement symétrique est effectué sur des flux. Il est donc utile pour le chiffrement de grandes quantités de données. Le chiffrement asymétrique s'effectue sur un petit nombre d'octets. Il n'est donc utile que pour les petites quantités de données.  

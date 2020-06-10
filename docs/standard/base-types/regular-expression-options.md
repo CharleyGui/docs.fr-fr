@@ -1,5 +1,6 @@
 ---
 title: Options des expressions régulières
+description: Découvrez comment utiliser les options des expressions régulières dans .NET, telles que la correspondance non sensible à la casse, le mode multiligne et le mode de droite à gauche.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,18 +13,18 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: 8c742c855234bfd9653bb57036c41e7ccce66295
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 268e05c2212539b030ccc3c7195f618bb3afa707
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289289"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662873"
 ---
 # <a name="regular-expression-options"></a>Options des expressions régulières
 
 Par défaut, la comparaison d’une chaîne d’entrée avec des caractères littéraux dans un modèle d’expression régulière respecte la casse, l’espace blanc dans un modèle d’expression régulière est interprété comme un espace blanc littéral et les groupes de capture dans une expression régulière sont nommés de manière implicite aussi bien qu’explicite. Vous pouvez modifier ces aspects, ainsi que d'autres, du comportement par défaut des expressions régulières en spécifiant des options d'expression régulière. Ces options, qui sont répertoriées dans le tableau suivant, peuvent être incluses inline dans le cadre du modèle d’expression régulière ou fournies à un constructeur de classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> ou à une méthode de mise en correspondance de modèle statique en tant que valeur d’énumération <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
 
-|Membre RegexOptions|Caractère inline|Résultat|
+|Membre RegexOptions|Caractère inline|Effet|
 |-------------------------|----------------------|------------|
 |<xref:System.Text.RegularExpressions.RegexOptions.None>|Non disponible|Utilise le comportement par défaut. Pour plus d’informations, consultez [Options par défaut](#default-options).|
 |<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>|`i`|Utilise la correspondance qui ne respecte pas la casse. Pour plus d’informations, consultez [Correspondance qui ne respecte pas la casse](#case-insensitive-matching).|
@@ -110,7 +111,7 @@ Les sections suivantes répertorient les options prises en charge par les expres
 
 ## <a name="default-options"></a>Options par défaut
 
-L'option <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> indique qu'aucune option n'a été spécifiée et que le moteur d'expression régulière utilise son comportement par défaut. Notamment :
+L'option <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> indique qu'aucune option n'a été spécifiée et que le moteur d'expression régulière utilise son comportement par défaut. Ce dernier est détaillé ci-après :
 
 - Le modèle est interprété en tant qu'expression régulière canonique, plutôt qu'en tant qu'expression régulière ECMAScript.
 

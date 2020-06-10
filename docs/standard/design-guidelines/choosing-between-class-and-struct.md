@@ -1,5 +1,6 @@
 ---
 title: Choix entre classe et structure
+description: Apprenez à décider s’il est possible de concevoir un type en tant que classe ou de concevoir un type en tant que struct. Comprendre comment les types référence et les types valeur diffèrent dans .NET.
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - classes [.NET Framework], vs. structures
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
-ms.openlocfilehash: 4b4a619214fe6ba49f21a88cd132dcb3f2704608
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9d757e77292c1226fbe2328cce082033ae8f7003
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280359"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662600"
 ---
 # <a name="choosing-between-class-and-struct"></a>Choix entre classe et structure
 L’une des décisions de conception de base de chaque concepteur d’infrastructure est de concevoir un type en tant que classe (type référence) ou en tant que struct (un type valeur). Il est essentiel de bien comprendre les différences de comportement des types de référence et des types de valeur pour faire ce choix.

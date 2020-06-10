@@ -1,5 +1,6 @@
 ---
 title: Fichiers mappés en mémoire
+description: Explorez les fichiers mappés en mémoire dans .NET, qui contiennent le contenu du fichier dans la mémoire virtuelle, et autorisez les applications à modifier le fichier en écrivant directement dans la mémoire.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - memory-mapped files
 - inter-process communication
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
-ms.openlocfilehash: 1a8c087449ed623e93f8c8ea467200f5e3e7e70f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: db63c15357b0670c55b1174b91b02e2f49a0c4c1
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278790"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84661977"
 ---
 # <a name="memory-mapped-files"></a>Fichiers mappés en mémoire
 Un fichier mappé en mémoire comporte le contenu d'un fichier en mémoire virtuelle. Ce mappage entre un fichier et un espace mémoire permet à une application incluant plusieurs processus de modifier le fichier en lisant et en écrivant directement dans la mémoire. À compter de .NET Framework 4, vous pouvez utiliser du code managé pour accéder aux fichiers mappés en mémoire de la même façon que les fonctions Windows natives accèdent à des fichiers mappés en mémoire, comme décrit dans [Gestion des fichiers mappés en mémoire](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10)).  

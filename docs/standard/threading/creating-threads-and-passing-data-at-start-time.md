@@ -1,5 +1,6 @@
 ---
 title: Création de threads et passage de données au démarrage
+description: Apprenez à créer des threads et à passer des données à l’heure de début d’un processus de système d’exploitation dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - threading [.NET Framework], passing data to threads
 - threading [.NET Framework], retrieving data from threads
 ms.assetid: 52b32222-e185-4f42-91a7-eaca65c0ab6d
-ms.openlocfilehash: a628cbb4c9ec8e1c9ccd9fd73e72a82ecf2b2836
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 811028d3c853441ff3a61d3628a44e5c65ba7059
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138101"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84661912"
 ---
 # <a name="creating-threads-and-passing-data-at-start-time"></a>Création de threads et passage de données au démarrage
 
@@ -63,5 +64,5 @@ Ni le délégué <xref:System.Threading.ThreadStart> ni le délégué <xref:Syst
 - <xref:System.Threading.ThreadStart>
 - <xref:System.Threading.ParameterizedThreadStart>
 - <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>
-- [Thread](index.md)
+- [Threads](index.md)
 - [Utilisation des threads et du threading](using-threads-and-threading.md)

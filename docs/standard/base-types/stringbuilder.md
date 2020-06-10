@@ -1,5 +1,6 @@
 ---
 title: Utilisation de la classe StringBuilder dans .NET
+description: Découvrez comment utiliser la classe StringBuilder dans .NET. Utilisez cette classe pour modifier une chaîne sans créer un nouvel objet.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - Insert method
 - strings [.NET Framework], StringBuilder object
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
-ms.openlocfilehash: a8116013cc20ead3be13763ce72999d2c608dbce
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b10d1c4579f10ca4fb84797ee67342825aaa9c32
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289263"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662938"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>Utilisation de la classe StringBuilder dans .NET
 L’objet <xref:System.String> est immuable. Chaque fois que vous utilisez l’une des méthodes de la classe <xref:System.String?displayProperty=nameWithType>, vous créez un nouvel objet string en mémoire, ce qui nécessite une nouvelle allocation d’espace pour ce nouvel objet. Si vous devez effectuer des modifications répétées sur une chaîne, la surcharge associée à la création d’un objet <xref:System.String> peut être coûteuse. Vous pouvez utiliser la classe <xref:System.Text.StringBuilder?displayProperty=nameWithType> quand vous voulez modifier une chaîne sans créer d’objet. Par exemple, la classe <xref:System.Text.StringBuilder> permet d’améliorer les performances quand il s’agit de concaténer un grand nombre de chaînes dans une boucle.  

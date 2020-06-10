@@ -1,5 +1,6 @@
 ---
 title: "Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary"
+description: Lisez un exemple illustrant comment ajouter, récupérer, mettre à jour et supprimer des éléments de la classe de collection ConcurrentDictionary<TKey, TValue> dans .NET.
 ms.date: 05/04/2020
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-ms.openlocfilehash: 6c093e907e43f9f2b978624a986dfe5d8a49869f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 827eb9db984289929c591046a4713419c9587312
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287898"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662860"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary
 

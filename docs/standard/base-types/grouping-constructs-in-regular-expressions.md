@@ -1,5 +1,6 @@
 ---
 title: Constructions de regroupement dans les expressions régulières
+description: Apprenez à utiliser les constructions de regroupement dans .NET. Les constructions de regroupement détourent les sous-expressions d’une expression régulière et capturent les sous-chaînes d’une chaîne d’entrée.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-ms.openlocfilehash: 5be98a5a213592b169bee430d84c4fc3a1d5fcef
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d737e5758ee7a940aeea3ded9a7937d687393116
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290524"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662626"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Constructions de regroupement dans les expressions régulières
 Les constructions de regroupement délimitent les sous-expressions d'une expression régulière et capturent les sous-chaînes d'une chaîne d'entrée. Utilisez les constructions de regroupement pour effectuer les opérations suivantes :  

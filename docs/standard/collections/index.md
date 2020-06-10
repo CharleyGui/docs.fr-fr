@@ -1,5 +1,6 @@
 ---
 title: Collections et structures de données
+description: Découvrez comment utiliser les collections et les structures de données dans .NET. Utilisez des collections génériques et non génériques dans des opérations thread-safe.
 ms.date: 04/30/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 0b87121a4a2003d3f85cf58f6d93f156fc121e54
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3d5b16dccdd9867293a52c74a2d379c807fd93e7
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287950"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662743"
 ---
 # <a name="collections-and-data-structures"></a>Collections et structures de données
 
@@ -108,7 +109,7 @@ En outre, `SortedSet<T>` a la même complexité que `ImmutableSortedSet<T>` . En
 |System.Collections.Immutable|Présente les collections immuables et fournit des liens vers les types de collection.|
 
 <a name="BKMK_Reference"></a>
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Informations de référence
 <xref:System.Array?displayProperty=nameWithType>
 <xref:System.Collections?displayProperty=nameWithType>
 <xref:System.Collections.Concurrent?displayProperty=nameWithType>
