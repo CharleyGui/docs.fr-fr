@@ -2,12 +2,12 @@
 title: System.ServiceModel.Activation.MessageQueueDuplicatedPipe
 ms.date: 03/30/2017
 ms.assetid: 97c4e6a3-6673-4eb7-a8b2-fc8c6d782ddf
-ms.openlocfilehash: f7ea447091e71b43d18554a0a3cd3fa98e5dc5b1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 972ad6e32e2d49575bc607215b746af6e8b30b87
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784330"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596179"
 ---
 # <a name="systemservicemodelactivationmessagequeueduplicatedpipe"></a>System.ServiceModel.Activation.MessageQueueDuplicatedPipe
 System.ServiceModel.Activation.MessageQueueDuplicatedPipe  
@@ -17,6 +17,6 @@ System.ServiceModel.Activation.MessageQueueDuplicatedPipe
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Suivi](index.md)
+- [Utilisation du suivi pour résoudre les problèmes posés par votre application](using-tracing-to-troubleshoot-your-application.md)
+- [Administration et diagnostics](../index.md)

@@ -1,5 +1,6 @@
 ---
 title: "Procédure pas à pas : création d'une application de chiffrement"
+description: Parcourez la création d’une application de chiffrement. Découvrez comment chiffrer et déchiffrer le contenu d’une application Windows Forms.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - cryptography [NET Framework], cryptographic application example
 - cryptography [NET Framework], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-ms.openlocfilehash: 246028566c59e5c8a77b26a21729d3f143d38d07
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 72116227fbec2435d428ad2bbdb4cc74e5c3663f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289705"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602178"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Procédure pas à pas : création d'une application de chiffrement
 Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. Les exemples de code sont conçus pour une application Windows Forms. Cette application ne montre pas de scénarios du monde réel, tels que l'utilisation de cartes à puce. Elle montre les principes fondamentaux du chiffrement et du déchiffrement.  

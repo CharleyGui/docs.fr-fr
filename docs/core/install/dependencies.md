@@ -3,14 +3,14 @@ title: Dépendances de kit SDK .NET Core et d’exécution-.NET Core
 description: Décrit en détail la configuration requise pour le système d’exploitation et l’architecture de l’UC pour installer le kit SDK .NET Core et le runtime sur Windows, Linux et macOS.
 author: leecow
 ms.author: leecow
-ms.date: 04/30/2020
+ms.date: 06/01/2020
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 280aa1431686ff99257580bb024a84b1e57f85c0
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 81f6ab436428d71f71d9fd0f560bd2b0512a519b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895491"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590758"
 ---
 # <a name="net-core-dependencies-and-requirements"></a>Dépendances et exigences de .NET Core
 
@@ -23,7 +23,7 @@ Cet article détaille les systèmes d’exploitation et l’architecture du proc
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
 
-# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
+# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
 
 Les versions de Windows suivantes sont prises en charge avec .NET Core 3,1 :
 
@@ -39,7 +39,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 3,1 :
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 3,1 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 3,1](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).
 
-# <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
+# <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
 
 *.NET Core 3,0 n’est pas pris en charge pour le moment. Pour plus d’informations, consultez la [stratégie de support .net Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
@@ -57,7 +57,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 3,0 :
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 3,0 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 3,0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
 
-# <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
+# <a name="net-core-22"></a>[.NET Core 2,2](#tab/netcore22)
 
 *.NET Core 2,2 n’est pas pris en charge pour le moment. Pour plus d’informations, consultez la [stratégie de support .net Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
@@ -120,13 +120,13 @@ La configuration requise ci-dessus est également requise si vous rencontrez l�
 >
 > \- ou -
 >
-> La bibliothèque *hostfxr. dll* a été trouvée, mais son chargement à partir de *C :\\\<path_to_app>\\hostfxr. dll* a échoué.
+> La bibliothèque *hostfxr. dll* a été trouvée, mais son chargement à partir de *C : \\ \<path_to_app> \\ hostfxr. dll* a échoué.
 
 ::: zone-end
 
 ::: zone pivot="os-linux"
 
-# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
+# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
 
 .NET Core 3,1 traite Linux comme un système d’exploitation unique. Il existe une seule version Linux (par architecture de puce) pour les distributions Linux prises en charge.
 
@@ -155,7 +155,7 @@ Pour plus d’informations sur l’installation de .NET Core 3,1 sur ARM64 (kern
 > [!IMPORTANT]
 > La prise en charge de ARM64 nécessite Linux kernel 4,14 ou une version ultérieure. Certaines distributions Linux répondent à cette exigence, contrairement à d’autres. Par exemple, Ubuntu 18,04 est pris en charge, mais Ubuntu 16,04 ne le fait pas.
 
-# <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
+# <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
 
 *.NET Core 3,0 n’est pas pris en charge pour le moment. Pour plus d’informations, consultez la [stratégie de support .net Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
@@ -183,7 +183,7 @@ Pour plus d’informations sur les systèmes d’exploitation, les distributions
 
 Pour plus d’informations sur l’installation de .NET Core 3.0 sur ARM64, consultez [Installation de .NET Core 3.0 sur Linux ARM64](https://gist.github.com/richlander/467813274cea8abc624553ee72b28213).
 
-# <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
+# <a name="net-core-22"></a>[.NET Core 2,2](#tab/netcore22)
 
 *.NET Core 2,2 n’est pas pris en charge pour le moment. Pour plus d’informations, consultez la [stratégie de support .net Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
@@ -262,7 +262,7 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 - libgdiplus (version 6.0.1 ou ultérieure)
 
 > [!WARNING]
-> La plupart des versions d’Ubuntu incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+> La plupart des versions d’Ubuntu incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ### <a name="centos-and-fedora"></a>CentOS et Fedora
 
@@ -289,7 +289,7 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 - libgdiplus (version 6.0.1 ou ultérieure)
 
 > [!WARNING]
-> La plupart des versions de CentOS et Fedora incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+> La plupart des versions de CentOS et Fedora incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ### <a name="alpine"></a>Alpine
 

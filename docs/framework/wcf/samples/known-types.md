@@ -2,12 +2,12 @@
 title: Known Types
 ms.date: 03/30/2017
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
-ms.openlocfilehash: b75f540694eaeea90367f1720d5747f71d0a392d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dae271384905df890b2f42196d6e0aadad66be6f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144615"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591837"
 ---
 # <a name="known-types"></a>Known Types
 Cet exemple montre comment spécifier des informations sur les types dérivés d'un contrat de données. Les contrats de données vous permettent de transférer des données structurées vers des services et à partir de ceux-ci. Dans la programmation orientée objet, un type qui hérite d'un autre peut être utilisé à la place de celui d'origine. Dans la  programmation orientée service, ce sont les schémas et non pas les types qui sont communiqués et par conséquent, la relation entre les types n'est pas conservée. L'attribut <xref:System.Runtime.Serialization.KnownTypeAttribute> permet d'inclure les informations sur les types dérivés dans le contrat de données. Si ce mécanisme n'est pas utilisé, un type dérivé ne peut pas être envoyé ou reçu là où un type de base est attendu.  
@@ -71,7 +71,7 @@ public class ComplexNumberWithMagnitude : ComplexNumber
 }  
 ```  
   
- Pour démontrer la fonction de type connu, le service `ComplexNumberWithMagnitude` est implémenté de telle sorte qu’il ne renvoie qu’un seul pour l’addition et la soustraction. (Même si le contrat spécifie `ComplexNumber`, cela est autorisé en raison de l'attribut `KnownTypeAttribute`). La multiplication et la `ComplexNumber` division retournent toujours le type de base.  
+ Pour illustrer la fonctionnalité des types connus, le service est implémenté de manière à retourner un `ComplexNumberWithMagnitude` seul pour l’addition et la soustraction. (Même si le contrat spécifie `ComplexNumber`, cela est autorisé en raison de l'attribut `KnownTypeAttribute`). La multiplication et la Division retournent toujours le type de base `ComplexNumber` .  
   
 ```csharp
 public class DataContractCalculatorService : IDataContractCalculator  
@@ -114,7 +114,7 @@ public class DataContractCalculatorService : IDataContractCalculator
 }  
 ```  
   
- Sur le client, le contrat de service et le contrat de données sont définis dans le fichier source generatedClient.cs, qui est généré par [l’outil utilitaire de métadonnées de servicemodel (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) à partir de métadonnées de service. L'attribut <xref:System.Runtime.Serialization.KnownTypeAttribute> étant spécifié dans le contrat de données du service, le client peut recevoir à la fois les classes `ComplexNumber` et `ComplexNumberWithMagnitude` lors de l'utilisation du service. Le client détecte s'il a obtenu un `ComplexNumberWithMagnitude` et génère la sortie appropriée :  
+ Sur le client, le contrat de service et le contrat de données sont définis dans le fichier source generatedClient.cs, qui est généré par l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) à partir des métadonnées de service. L'attribut <xref:System.Runtime.Serialization.KnownTypeAttribute> étant spécifié dans le contrat de données du service, le client peut recevoir à la fois les classes `ComplexNumber` et `ComplexNumberWithMagnitude` lors de l'utilisation du service. Le client détecte s'il a obtenu un `ComplexNumberWithMagnitude` et génère la sortie appropriée :  
   
 ```csharp
 // Create a client  
@@ -156,17 +156,17 @@ No magnitude was sent from the service
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les échantillons de la Fondation De communication Windows.](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).  
   
-3. Pour exécuter l’échantillon dans une configuration mono-ou cross-machine, suivez les instructions dans [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownTypes`  

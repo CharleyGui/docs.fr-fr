@@ -2,12 +2,12 @@
 title: Procédure pour créer un service WCF qui communique sur WebSockets
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: d420ac8fcb98ddec195093be8ae25be37443da4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5aade8e3fb2049521ed06f5f1a148be2e4636e36
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184973"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597109"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Procédure pour créer un service WCF qui communique sur WebSockets
 Les services et les clients WCF peuvent utiliser la liaison <xref:System.ServiceModel.NetHttpBinding> pour communiquer sur WebSockets.  WebSockets est utilisé lorsque <xref:System.ServiceModel.NetHttpBinding> détermine que le contrat de service définit un contrat de rappel. Cette rubrique décrit comment implémenter un service WCF et un client qui utilise <xref:System.ServiceModel.NetHttpBinding> pour communiquer sur WebSockets.  
@@ -160,7 +160,7 @@ Les services et les clients WCF peuvent utiliser la liaison <xref:System.Service
   
          Il n'y a aucune opération particulière à effectuer dans la configuration du client, il suffit de spécifier point de terminaison côté client à l'aide de `NetHttpBinding`.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'intégralité du code utilisé dans cette rubrique est présentée ci-dessous.  
   
 ```csharp  
@@ -320,5 +320,5 @@ namespace Client
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations synchrones et asynchrones](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)
-- [Utilisation de NetHttpBinding](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)
+- [Opérations synchrones et asynchrones](../synchronous-and-asynchronous-operations.md)
+- [Utilisation de NetHttpBinding](using-the-nethttpbinding.md)
