@@ -1,15 +1,15 @@
 ---
-title: Test d’une bibliothèque de classes .NET Standard avec .NET Core dans Visual Studio Code
+title: Test d’une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio Code
 description: Créez un projet de test unitaire pour une bibliothèque de classes .NET Core. Vérifiez que la bibliothèque de classes .NET Core fonctionne correctement avec les tests unitaires.
-ms.date: 05/29/2020
-ms.openlocfilehash: be227453bd441028cc6ce348c00fad944140238f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.date: 06/08/2020
+ms.openlocfilehash: a61fd952eea2dec0d5a9f351d3f3d01c738e8fad
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292188"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701031"
 ---
-# <a name="tutorial-test-a-net-standard-library-with-net-core-in-visual-studio-code"></a>Didacticiel : tester une bibliothèque .NET Standard avec .NET Core dans Visual Studio Code
+# <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>Didacticiel : tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio Code
 
 Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un projet de test à une solution.
 
@@ -19,7 +19,9 @@ Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un pro
 
 ## <a name="create-a-unit-test-project"></a>Créer un projet de test unitaire
 
-1. Ouvrez Visual Studio Code.
+Les tests unitaires effectuent des tests logiciels automatisés pendant le développement et la publication. L’infrastructure de test que vous utilisez dans ce didacticiel est MSTest. [MSTest](https://github.com/Microsoft/testfx-docs) est l’un des trois frameworks de test que vous pouvez choisir. Les autres sont [xUnit](https://xunit.net/) et [nunit](https://nunit.org/).
+
+1. Démarrez Visual Studio Code.
 
 1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard dans Visual Studio](library-with-visual-studio.md).
 
@@ -55,16 +57,17 @@ Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un pro
 
    Chaque méthode marquée avec [[TestMethod]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute) dans une classe de test marquée avec [[TestClass]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute) est exécutée automatiquement lorsque le test unitaire est exécuté.
 
-   > [!NOTE]
-   > MSTest est l’un des trois frameworks de test que vous pouvez choisir. Les autres sont xUnit et nUnit.
-
 1. Ajoutez le projet de test à la solution.
 
    ```dotnetcli
    dotnet sln add StringLibraryTest/StringLibraryTest.csproj
    ```
 
-1. Créez une référence de projet au projet de bibliothèque de classes en exécutant la commande suivante :
+## <a name="add-a-project-reference"></a>Ajouter une référence au projet
+
+Pour que le projet de test fonctionne avec la `StringLibrary` classe, ajoutez une référence au projet dans le `StringLibraryTest` projet `StringLibrary` .
+
+1. Exécutez la commande suivante :
 
    ```dotnetcli
    dotnet add StringLibraryTest/StringLibraryTest.csproj reference StringLibrary/StringLibrary.csproj
@@ -89,7 +92,7 @@ Dans le test de la méthode `StringLibrary.StartsWithUpper`, vous voulez fournir
 
 Dans la mesure où votre méthode de bibliothèque gère les chaînes, vous voulez également vous assurer qu’elle gère correctement une [chaîne vide ( `String.Empty` )](xref:System.String.Empty) et une et une `null` chaîne. Une chaîne vide est une chaîne qui n’a pas de caractères et dont <xref:System.String.Length> a la valeur 0. Une `null` chaîne est une chaîne qui n’a pas été initialisée. Vous pouvez appeler `StartsWithUpper` directement comme méthode statique et passer un seul <xref:System.String> argument. Vous pouvez aussi appeler `StartsWithUpper` en tant que méthode d’extension sur une `string` variable assignée à `null` .
 
-Vous allez définir trois méthodes, chacune appelant une <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> méthode à plusieurs reprises pour chaque élément d’un tableau de chaînes. Étant donné que la méthode de test échoue dès qu’elle trouve le premier échec, vous appelez une surcharge de méthode qui vous permet de passer une chaîne qui indique la valeur de chaîne utilisée dans l’appel de méthode.
+Vous allez définir trois méthodes, chacune appelant une <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> méthode pour chaque élément d’un tableau de chaînes. Vous appellerez une surcharge de méthode qui vous permet de spécifier un message d’erreur à afficher en cas d’échec du test. Le message identifie la chaîne à l’origine de l’échec.
 
 Pour créer les méthodes de test:
 
@@ -122,7 +125,7 @@ Pour créer les méthodes de test:
 
 ## <a name="handle-test-failures"></a>Gérer les échecs de test
 
-Si vous effectuez un développement piloté par les tests (TDD), vous écrivez d’abord des tests et ils échouent la première fois que vous les exécutez. Ensuite, vous ajoutez du code à l’application qui effectue la tentative de test. Dans ce cas, vous avez créé le test après avoir écrit le code d’application qu’il a validé, donc vous n’avez pas vu le test échouer. Pour vérifier qu’un test échoue quand vous pensez qu’il échoue, ajoutez une valeur non valide à l’entrée de test.
+Si vous effectuez un développement piloté par les tests (TDD), vous écrivez d’abord des tests et ils échouent la première fois que vous les exécutez. Ensuite, vous ajoutez du code à l’application qui effectue la tentative de test. Pour ce didacticiel, vous avez créé le test après avoir écrit le code d’application qu’il valide, donc vous n’avez pas vu le test échouer. Pour vérifier qu’un test échoue quand vous pensez qu’il échoue, ajoutez une valeur non valide à l’entrée de test.
 
 1. Modifiez le tableau `words` dans la méthode `TestDoesNotStartWithUpper` en y incluant la chaîne « Erreur ».
 
@@ -137,7 +140,7 @@ Si vous effectuez un développement piloté par les tests (TDD), vous écrivez d
    dotnet test StringLibraryTest/StringLibraryTest.csproj
    ```
 
-   La sortie du terminal indique qu’un test échoue et fournit un message d’erreur pour le test qui a échoué.
+   La sortie du terminal indique qu’un test échoue et génère un message d’erreur pour le test qui a échoué : «Assert. IsFalse a échoué. « Erreur » : false ; réel : True » était attendu ». En raison de l’échec, aucune chaîne du tableau après « erreur » n’a été testée.
 
    ```
    Starting test execution, please wait...
@@ -157,7 +160,7 @@ Si vous effectuez un développement piloté par les tests (TDD), vous écrivez d
    Total time: 1.7825 Seconds
    ```
 
-1. Annulez la modification que vous avez effectuée à l’étape 1 en supprimant la chaîne « Error ». Réexécutez le test et les tests réussissent.
+1. Supprimez la chaîne « Error » que vous avez ajoutée à l’étape 1. Réexécutez le test et les tests réussissent.
 
 ## <a name="test-the-release-version-of-the-library"></a>Tester la version Release de la bibliothèque
 
@@ -173,7 +176,7 @@ Maintenant que les tests ont tous réussi lors de l’exécution de la version D
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
+* [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

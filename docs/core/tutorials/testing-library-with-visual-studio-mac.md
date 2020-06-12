@@ -1,45 +1,41 @@
 ---
-title: Tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio
+title: Test d’une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio pour Mac
 description: Créez un projet de test unitaire pour une bibliothèque de classes .NET Core. Vérifiez que la bibliothèque de classes .NET Core fonctionne correctement avec les tests unitaires.
 ms.date: 06/08/2020
-dev_langs:
-- csharp
-- vb
-ms.custom: vs-dotnet
-ms.openlocfilehash: f20b089fd22794d5aaeff34502e960fe41a565e1
+ms.openlocfilehash: a183049623df44cbb8c4abd47ce6e78d91adae12
 ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 06/11/2020
-ms.locfileid: "84700967"
+ms.locfileid: "84713608"
 ---
-# <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Didacticiel : tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio
+# <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio
 
 Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un projet de test à une solution.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard dans Visual Studio](library-with-visual-studio.md).
+- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard dans Visual Studio pour Mac](library-with-visual-studio-mac.md).
 
 ## <a name="create-a-unit-test-project"></a>Créer un projet de test unitaire
 
 Les tests unitaires effectuent des tests logiciels automatisés pendant le développement et la publication. [MSTest](https://github.com/Microsoft/testfx-docs) est l’un des trois frameworks de test que vous pouvez choisir. Les autres sont [xUnit](https://xunit.net/) et [nunit](https://nunit.org/).
 
-1. Démarrez Visual Studio.
+1. Démarrez Visual Studio pour Mac.
 
-1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard dans Visual Studio](library-with-visual-studio.md).
+1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET Standard dans Visual Studio pour Mac](library-with-visual-studio-mac.md).
 
-1. Ajoutez un nouveau projet de test unitaire nommé « StringLibraryTest » à la solution.
+1. Dans le panneau **solutions** , cliquez sur la solution en <kbd>appuyant sur la touche Ctrl</kbd> `ClassLibraryProjects` et sélectionnez **Ajouter**  >  **un nouveau projet**.
 
-   1. Cliquez avec le bouton droit sur la solution dans **Explorateur de solutions** , puis sélectionnez **Ajouter**  >  **un nouveau projet**.
+1. Dans la boîte de dialogue **nouveau projet** , sélectionnez **tests** à partir du nœud **Web et** de la console. Sélectionnez le **projet MSTest** suivi de **Next**.
 
-   1. Dans la page **Ajouter un nouveau projet** , entrez **MSTest** dans la zone de recherche. Choisissez **C#** ou **Visual Basic** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme.
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-project.png" alt-text="Boîte de dialogue Nouveau projet Mac de Visual Studio création d’un projet de test":::
 
-   1. Choisissez le modèle **projet de test MSTest (.net Core)** , puis choisissez **suivant**.
+1. Sélectionnez **.net Core 3,1**. Nommez le nouveau projet « StringLibraryTest » et sélectionnez **créer**.
 
-   1. Dans la page **configurer votre nouveau projet** , entrez **StringLibraryTest** dans la zone **nom du projet** . Choisissez ensuite **Créer**.
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-new-project-name.png" alt-text="Boîte de dialogue Nouveau projet dans Visual Studio pour Mac indiquant le nom du projet":::
 
-1. Visual Studio crée le projet et ouvre le fichier de classe dans la fenêtre de code avec le code suivant. Si la langue que vous souhaitez utiliser n’est pas affichée, modifiez le sélecteur de langue en haut de la page.
+   Visual Studio crée un fichier de classe avec le code suivant :
 
    ```csharp
    using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -57,37 +53,23 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
    }
    ```
 
-   ```vb
-   Imports Microsoft.VisualStudio.TestTools.UnitTesting
-
-   Namespace StringLibraryTest
-       <TestClass>
-       Public Class UnitTest1
-           <TestMethod>
-           Sub TestSub()
-
-           End Sub
-       End Class
-   End Namespace
-   ```
-
    Le code source créé par le modèle de test unitaire effectue les opérations suivantes :
 
    - Il importe l’espace de noms <xref:Microsoft.VisualStudio.TestTools.UnitTesting?displayProperty=nameWithType>, qui contient les types utilisés pour les tests unitaires.
    - Il applique l’attribut <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> à la classe `UnitTest1`.
-   - Il applique l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> attribut à définir `TestMethod1` en C# ou `TestSub` dans Visual Basic.
+   - Il applique l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> attribut à `TestMethod1` .
 
    Chaque méthode marquée avec [[TestMethod]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute) dans une classe de test marquée avec [[TestClass]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute) est exécutée automatiquement lorsque le test unitaire est exécuté.
 
 ## <a name="add-a-project-reference"></a>Ajouter une référence au projet
 
-Pour que le projet de test fonctionne avec la `StringLibrary` classe, ajoutez une référence dans le projet **StringLibraryTest** au `StringLibrary` projet.
+Pour que le projet de test fonctionne avec la `StringLibrary` classe, ajoutez une référence au `StringLibrary` projet.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud **dépendances** du projet **StringLibraryTest** et sélectionnez **Ajouter une référence de projet** dans le menu contextuel.
+1. Dans le panneau **solutions** , cliquez sur **dépendances** <kbd>CTRL</kbd>+ clic sous **StringLibraryTest**. Sélectionnez **Ajouter une référence** dans le menu contextuel.
 
-1. Dans la boîte de dialogue **Gestionnaire de références** , développez le nœud **projets** , puis activez la case à cocher en regard de **StringLibrary**. L’ajout d’une référence à l' `StringLibrary` assembly permet au compilateur de rechercher des méthodes **StringLibrary** lors de la compilation du projet **StringLibraryTest** .
+1. Dans la boîte de dialogue **références** , sélectionnez le projet **StringLibrary** . Sélectionnez **OK**.
 
-1. Sélectionnez **OK**.
+      :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-edit-references.png" alt-text="Boîte de dialogue Modifier les références dans Visual Studio pour Mac":::
 
 ## <a name="add-and-run-unit-test-methods"></a>Ajouter et exécuter des méthodes de test unitaire
 
@@ -112,31 +94,31 @@ Vous allez définir trois méthodes, chacune appelant une <xref:Microsoft.Visual
 
 Pour créer les méthodes de test:
 
-1. Dans la fenêtre de code *UnitTest1.cs* ou *UnitTest1. vb* , remplacez le code par le code suivant :
+1. Ouvrez le fichier *UnitTest1.cs* et remplacez le code par le code suivant :
 
    :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/StringLibraryTest/UnitTest1.cs":::
-   :::code language="vb" source="./snippets/library-with-visual-studio/vb/StringLibraryTest/UnitTest1.vb":::
 
    Le test de caractères majuscules dans la `TestStartsWithUpper` méthode comprend la lettre majuscule grecque alpha (u + 0391) et la lettre majuscule cyrillique em (u + 041C). Le test de caractères minuscules dans la `TestDoesNotStartWithUpper` méthode comprend la lettre minuscule grecque alpha (u + 03B1) et la lettre minuscule cyrillique gué (u + 0433).
 
-1. Dans la barre de menus, sélectionnez **fichier**  >  **Enregistrer UnitTest1.cs sous** ou enregistrer le **fichier**  >  **UnitTest1. VB sous**. Dans la boîte de dialogue **Enregistrer le fichier sous**, cliquez sur la flèche à côté du bouton **Enregistrer**, puis choisissez **Enregistrer avec l’encodage**.
+1. Dans la barre de menus, sélectionnez **fichier**  >  **Enregistrer sous**. Dans la boîte de dialogue, assurez-vous que l' **encodage** est défini sur **Unicode (UTF-8)**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Boîte de dialogue Enregistrer le fichier sous Visual Studio](./media/testing-library-with-visual-studio/save-file-as-dialog.png)
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/save-file-as-dialog.png" alt-text="Boîte de dialogue Enregistrer le fichier sous Visual Studio":::
 
-1. Dans la boîte de dialogue **Confirmer l’enregistrement sous**, sélectionnez le bouton **Oui** pour enregistrer le fichier.
-
-1. Dans la boîte de dialogue **Options d’enregistrement avancées**, sélectionnez **Unicode (UTF-8 avec signature) - Page de codes 65001** dans la liste déroulante **Encodage**, puis sélectionnez **OK**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Boîte de dialogue Options d’enregistrement avancées dans Visual Studio](./media/testing-library-with-visual-studio/advanced-save-options.png)
+1. Lorsque vous êtes invité à remplacer le fichier existant, sélectionnez **remplacer**.
 
    Si vous ne parvenez pas à enregistrer votre code source dans un fichier encodé en UTF-8, Visual Studio peut l’enregistrer en tant que fichier ASCII. Lorsque cela se produit, le runtime ne décode pas correctement les caractères UTF8 en dehors de la plage ASCII, et les résultats des tests ne sont pas corrects.
 
-1. Dans la barre de menus, sélectionnez **tester**  >  **exécuter tous les tests**. Si la fenêtre **Explorateur de tests** ne s’ouvre pas, ouvrez-la en sélectionnant **tester**l'  >  **Explorateur de tests**. Les trois tests sont listés dans la section **Tests réussis** et la section **Résumé** indique le résultat de la série de tests.
+1. Ouvrez le panneau **Tests unitaires** sur le côté droit de l’écran. Sélectionnez **Afficher**  >  les**tests** dans le menu.
 
-   > [!div class="mx-imgBorder"]
-   > ![Fenêtre Explorateur de tests avec tests réussis](./media/testing-library-with-visual-studio/test-explorer-window.png)
+1. Cliquez sur l’icône **Ancrer** pour garder le panneau ouvert.
+
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-dock-icon.png" alt-text="Icône Ancrer du panneau Tests unitaires Visual Studio pour Mac":::
+
+1. Cliquez sur le bouton **Tout exécuter**.
+
+   Tous les tests sont concluants.
+
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-pass.png" alt-text="Visual Studio pour Mac réussites de tests attendues":::
 
 ## <a name="handle-test-failures"></a>Gérer les échecs de test
 
@@ -149,23 +131,17 @@ Si vous effectuez un développement piloté par les tests (TDD), vous écrivez d
                       "1234", ".", ";", " " };
    ```
 
-   ```vb
-   Dim words() As String = { "alphabet", "Error", "zebra", "abc", "αυτοκινητοβιομηχανία", "государство",
-                      "1234", ".", ";", " " }
+1. Réexécutez les tests.
 
-   ```
+   Cette fois-ci, la fenêtre de l' **Explorateur de tests** indique que deux tests ont réussi et un échec.
 
-1. Exécutez le test en sélectionnant **test**  >  **exécuter tous les tests** dans la barre de menus. La fenêtre **Explorateur de tests** indique que deux tests ont réussi et qu’un test a échoué.
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/failed-test-window.png" alt-text="Fenêtre Explorateur de tests avec tests ayant échoué":::
 
-   > [!div class="mx-imgBorder"]
-   > ![Fenêtre Explorateur de tests avec tests ayant échoué](./media/testing-library-with-visual-studio/failed-test-window.png)
+1. <kbd>CTRL</kbd>+ clic sur le test ayant échoué, `TestDoesNotStartWithUpper` , puis sélectionnez **Afficher** le panneau résultats dans le menu contextuel.
 
-1. Sélectionnez le test qui a échoué, `TestDoesNotStartWith` .
+   Le panneau **résultats** affiche le message produit par l’assertion : «Assert. IsFalse a échoué. « Erreur » : false ; réel : True » était attendu ». En raison de l’échec, aucune chaîne du tableau après « erreur » n’a été testée.
 
-   La fenêtre **Explorateur de tests** affiche le message généré par l’assertion : « Échec de Assert.IsFalse. « Erreur » : false ; réel : True » était attendu ». En raison de l’échec, aucune chaîne du tableau après « erreur » n’a été testée.
-
-   > [!div class="mx-imgBorder"]
-   > ![Fenêtre Explorateur de tests présentant l’échec de l’assertion IsFalse](./media/testing-library-with-visual-studio/failed-test-detail.png)
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-failure.png" alt-text="Fenêtre Explorateur de tests présentant l’échec de l’assertion IsFalse":::
 
 1. Supprimez la chaîne « Error » que vous avez ajoutée à l’étape 1. Réexécutez le test et les tests réussissent.
 
@@ -177,19 +153,22 @@ Pour tester la version Release :
 
 1. Dans la barre d’outils de Visual Studio, modifiez la configuration de build de **Debug** à **Release**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Barre d’outils Visual Studio avec version Release mise en surbrillance](./media/testing-library-with-visual-studio/visual-studio-toolbar-release.png)
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-toolbar-release.png" alt-text="Barre d’outils Visual Studio avec version Release mise en surbrillance":::
 
-1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **StringLibrary** et sélectionnez **Générer** dans le menu contextuel pour recompiler la bibliothèque.
+1. Dans le panneau **solutions** , <kbd>cliquez</kbd>sur le projet **StringLibrary** , puis sélectionnez **générer** dans le menu contextuel pour recompiler la bibliothèque.
 
-   > [!div class="mx-imgBorder"]
-   > ![Menu contextuel de StringLibrary avec commande build](./media/testing-library-with-visual-studio/build-library-context-menu.png)
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/build-library-context-menu.png" alt-text="Menu contextuel de StringLibrary avec commande build":::
 
-1. Exécutez les tests unitaires en choisissant **test exécuter**  >  **tous les tests** dans la barre de menus. Les tests réussissent.
+1. Réexécutez les tests unitaires.
+
+   Les tests réussissent.
+
+## <a name="debug-tests"></a>Déboguer les tests
+
+Vous pouvez utiliser le même processus que celui présenté dans [Didacticiel : déboguer une application console .net core à l’aide de Visual Studio pour Mac](debugging-with-visual-studio-mac.md) pour déboguer le code à l’aide de votre projet de test unitaire. Au lieu de démarrer le projet d’application <kbd>Showcase, cliquez</kbd>sur le projet **StringLibraryTests** , puis sélectionnez **Démarrer le débogage du projet** dans le menu contextuel. Visual Studio démarre le projet de test avec le débogueur attaché. L’exécution s’arrêtera à un point d’arrêt que vous avez ajouté au projet de test ou au code de bibliothèque sous-jacent.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Concepts de base des tests unitaires-Visual Studio](/visualstudio/test/unit-test-basics)
 * [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
 
 ## <a name="next-steps"></a>Étapes suivantes
@@ -197,14 +176,14 @@ Pour tester la version Release :
 Dans ce didacticiel, vous avez testé une bibliothèque de classes. Vous pouvez mettre la bibliothèque à la disposition d’autres personnes en la publiant sur [NuGet](https://nuget.org) en tant que package. Pour en savoir plus, suivez un didacticiel NuGet :
 
 > [!div class="nextstepaction"]
-> [Créer et publier un package NuGet à l’aide de Visual Studio](/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli)
+> [Créer et publier un package (interface CLI dotnet)](/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli)
 
 Si vous publiez une bibliothèque en tant que package NuGet, d’autres peuvent l’installer et l’utiliser. Pour en savoir plus, suivez un didacticiel NuGet :
 
 > [!div class="nextstepaction"]
-> [Installer et utiliser un package dans Visual Studio](/nuget/quickstart/install-and-use-a-package-in-visual-studio)
+> [Installer et utiliser un package dans Visual Studio pour Mac](/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
 
 Une bibliothèque n’a pas besoin d’être distribuée en tant que package. Il peut être fourni avec une application console qui l’utilise. Pour savoir comment publier une application console, consultez le didacticiel précédent dans cette série :
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core avec Visual Studio](publishing-with-visual-studio.md)
+> [Publier une application console .NET Core avec Visual Studio pour Mac](publishing-with-visual-studio-mac.md)

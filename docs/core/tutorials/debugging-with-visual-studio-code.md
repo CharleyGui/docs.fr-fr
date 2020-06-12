@@ -1,13 +1,13 @@
 ---
-title: Déboguer une application console .NET Core avec Visual Studio Code
-description: Découvrez comment déboguer une application console .NET Core avec Visual Studio Code.
+title: Déboguer une application console .NET Core à l’aide de Visual Studio Code
+description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 82b2798397d702aa2a50c04bf6e4d569b97e3666
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 40e9b114df1bd12fb05bfb773781d6009d087a06
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241511"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84702125"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio Code
 
@@ -19,25 +19,25 @@ Ce didacticiel présente les outils de débogage disponibles dans Visual Studio 
 
 ## <a name="use-debug-build-configuration"></a>Utiliser la configuration de build Debug
 
-*Debug* et *Release* sont deux des configurations de build de .net core. Vous utilisez la configuration de build Debug pour le débogage et la configuration Release pour la distribution de la version finale.
+*Debug* et *Release* sont des configurations de build intégrées de .net core. Vous utilisez la configuration de build Debug pour le débogage et la configuration Release pour la distribution de la version finale.
 
 Dans la configuration Debug, un programme est compilé avec des informations de débogage symboliques complètes et aucune optimisation. L'optimisation complique le débogage, étant donné que la relation entre le code source et les instructions générées est plus complexe. La configuration Release d’un programme n’a pas d’informations de débogage symboliques et est entièrement optimisée.
 
- Par défaut, Visual Studio Code utilise la configuration de build Debug. vous n’avez donc pas besoin de le modifier avant le débogage.
+Par défaut, Visual Studio Code paramètres de lancement utilisent la configuration de build Debug. vous n’avez donc pas besoin de le modifier avant de procéder au débogage.
+
+1. Démarrez Visual Studio Code.
+
+1. Ouvrez le dossier du projet que vous avez créé dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
 
 ## <a name="set-a-breakpoint"></a>Définir un point d'arrêt
 
-Un point d’arrêt interrompt temporairement l’exécution de l’application *avant* l’exécution de la ligne avec le point d’arrêt.
-
-1. Ouvrez Visual Studio Code.
-
-1. Ouvrez le dossier du projet *HelloWorld* que vous avez créé dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
+Un *point d’arrêt* interrompt temporairement l’exécution de l’application avant l’exécution de la ligne avec le point d’arrêt.
 
 1. Ouvrez le fichier *Program.cs* .
 
-1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code. La marge de gauche se trouve à gauche des numéros de ligne. Vous pouvez également définir un point d’arrêt en plaçant le curseur dans la ligne de code, puis en appuyant sur <kbd>F9</kbd>.
+1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code. La marge de gauche se trouve à gauche des numéros de ligne. Les autres méthodes de définition d’un point d’arrêt sont les suivantes : Appuyez sur <kbd>F9</kbd> ou sélectionnez **exécuter**  >  **basculer le point d’arrêt** dans le menu pendant que la ligne de code est sélectionnée.
 
-   Comme le montre l’illustration suivante, Visual Studio Code indique la ligne sur laquelle le point d’arrêt est défini en affichant un point rouge dans la marge de gauche.
+   Visual Studio Code indique la ligne sur laquelle le point d’arrêt est défini en affichant un point rouge dans la marge de gauche.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/breakpoint-set.png" alt-text="Point d’arrêt défini":::
 
@@ -45,7 +45,7 @@ Un point d’arrêt interrompt temporairement l’exécution de l’application 
 
 Le point d’arrêt se trouve après un `Console.ReadLine` appel de méthode. Le **console de débogage** n’accepte pas les entrées de terminal pour un programme en cours d’exécution. Pour gérer l’entrée de terminal pendant le débogage, vous pouvez utiliser le terminal intégré (l’une des Visual Studio Code Windows) ou un terminal externe. Pour ce didacticiel, vous utilisez le terminal intégré.
 
-1. Ouvrez *. vscode/Launch. JSON*.
+1. Ouvrez *. vscode/launch.jssur*.
 
 1. Remplacez le `console` paramètre par `integratedTerminal` .
 
@@ -69,7 +69,7 @@ Le point d’arrêt se trouve après un `Console.ReadLine` appel de méthode. Le
 
    :::image type="content" source="media/debugging-with-visual-studio-code/select-debug-pane.png" alt-text="Ouvrir l’onglet Débogage dans Visual Studio Code":::
 
-1. Démarrez le débogage en sélectionnant la flèche verte en haut du volet, en regard de **lancement de .net Core (console)**.  Une autre façon de démarrer le débogage consiste à appuyer sur <kbd>F5</kbd>.
+1. Sélectionnez la flèche verte en haut du volet, en regard de **lancement de .net Core (console)**. Une autre façon de démarrer le programme en mode débogage consiste à choisir **exécuter**  >  **Démarrer le débogage** dans le menu.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/start-debugging.png" alt-text="Démarrer le débogage":::
 
@@ -83,7 +83,7 @@ Le point d’arrêt se trouve après un `Console.ReadLine` appel de méthode. Le
 
    :::image type="content" source="media/debugging-with-visual-studio-code/breakpoint-hit.png" alt-text="Point d’arrêt atteint, avec des variables locales":::
 
-## <a name="change-variable-values"></a>Modifier les valeurs des variables
+## <a name="use-the-debug-console"></a>Utilisez la Console de débogage
 
 La fenêtre **console de débogage** vous permet d’interagir avec l’application que vous déboguez. Vous pouvez modifier la valeur des variables pour voir comment elles affectent votre programme.
 
@@ -127,7 +127,7 @@ Le programme affiche la chaîne que l’utilisateur entre. Que se passe-t-il si 
 
    Chaque fois que le point d’arrêt est atteint, le débogueur appelle la `String.IsNullOrEmpty(name)` méthode et s’arrête sur cette ligne uniquement si l’appel de la méthode retourne `true` .
 
-   Au lieu d’une expression conditionnelle, vous pouvez spécifier un *nombre d’accès*, qui interrompt l’exécution du programme avant qu’une instruction soit exécutée un nombre spécifié de fois, ou une condition de *filtre*qui interrompt l’exécution du programme en fonction d’attributs tels que l’identificateur de thread, le nom de processus ou le nom de thread.
+   Au lieu d’une expression conditionnelle, vous pouvez spécifier un *nombre d’accès*, qui interrompt l’exécution du programme avant qu’une instruction soit exécutée un nombre de fois spécifié. Une autre option consiste à spécifier une *condition de filtre*, qui interrompt l’exécution du programme en fonction d’attributs tels qu’un identificateur de thread, un nom de processus ou un nom de thread.
 
 1. Démarrez le programme avec le débogage en appuyant sur <kbd>F5</kbd>.
 
@@ -149,7 +149,7 @@ Le programme affiche la chaîne que l’utilisateur entre. Que se passe-t-il si 
 
 1. Sélectionnez l’onglet **Terminal** , puis appuyez sur n’importe quelle touche pour quitter le programme et arrêter le débogage.
 
-1. Effacez le point d’arrêt en cliquant sur le point dans la marge de gauche de la fenêtre de code. Pour supprimer un point d’arrêt, vous pouvez également appuyer sur <kbd>F9</kbd> pendant que la ligne de code est sélectionnée.
+1. Effacez le point d’arrêt en cliquant sur le point dans la marge de gauche de la fenêtre de code. Pour supprimer un point d’arrêt, vous pouvez d’autres façons d’appuyer sur <kbd>F9</kbd> ou de choisir **exécuter > basculer le point d’arrêt** dans le menu pendant que la ligne de code est sélectionnée.
 
 1. Si vous recevez un avertissement indiquant que la condition de point d’arrêt sera perdue, sélectionnez **supprimer le point d’arrêt**.
 
@@ -165,17 +165,17 @@ Visual Studio Code vous permet également d’effectuer un pas à pas détaillé
 
    À ce stade, la fenêtre **variables** indique que le `args` tableau est vide, et `name` possède les `date` valeurs par défaut.
 
-1. Sélectionnez **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/step-into.png" alt-text="Bouton pas à pas détaillé":::
 
    Visual Studio Code met en surbrillance la ligne suivante.
 
-1. Sélectionnez **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    Visual Studio Code exécute le `Console.WriteLine` pour l’invite de nom et met en surbrillance la ligne suivante d’exécution. La ligne suivante est le `Console.ReadLine` pour le `name` . La fenêtre **variables** est inchangée et l’onglet **Terminal** affiche « quel est votre nom ? ». prompt.
 
-1. Sélectionnez **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    Visual Studio met en surbrillance l' `name` attribution de variable. La fenêtre **variables** affiche `name` toujours `null` .
 
@@ -183,19 +183,19 @@ Visual Studio Code vous permet également d’effectuer un pas à pas détaillé
 
    L’onglet **Terminal** peut ne pas afficher la chaîne que vous entrez lors de son entrée, mais la <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> méthode capture votre entrée.
 
-1. Sélectionnez **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    Visual Studio Code met en surbrillance l' `date` attribution de variable. La fenêtre **variables** affiche la valeur retournée par l’appel à la <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> méthode. L’onglet **Terminal** affiche la chaîne que vous avez entrée à l’invite.
 
-1. Sélectionnez **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    La fenêtre **variables** affiche la valeur de la `date` variable après l’assignation de la <xref:System.DateTime.Now?displayProperty=nameWithType> propriété.
 
-1. Sélectionnez **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    Visual Studio Code appelle la <xref:System.Console.WriteLine(System.String,System.Object,System.Object)?displayProperty=nameWithType> méthode. La fenêtre de console affiche la chaîne mise en forme.
 
-1. Sélectionnez **pas à pas sortant** ou appuyez sur <kbd>MAJ</kbd> + <kbd>F11</kbd>.
+1. Sélectionnez **exécuter**le  >  **pas à pas sortant** ou appuyez sur <kbd>MAJ</kbd> + <kbd>F11</kbd>.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/step-out.png" alt-text="Bouton de pas à pas sortant":::
 
@@ -205,7 +205,7 @@ Visual Studio Code vous permet également d’effectuer un pas à pas détaillé
 
 1. Appuyez sur n’importe quelle touche pour quitter le programme.
 
-## <a name="select-release-build-configuration"></a>Sélectionner la configuration de la build Release
+## <a name="use-release-build-configuration"></a>Utiliser la configuration de build Release
 
 Une fois que vous avez testé la version Debug de votre application, vous devez également compiler et tester la version Release. La version Release intègre des optimisations du compilateur qui peuvent affecter le comportement d’une application. Par exemple, les optimisations du compilateur conçues pour améliorer les performances peuvent créer des conditions de concurrence dans les applications multithread.
 

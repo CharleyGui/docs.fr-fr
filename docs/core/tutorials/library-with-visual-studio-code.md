@@ -1,22 +1,19 @@
 ---
-title: Créer une bibliothèque de classes .NET Standard dans Visual Studio Code
+title: Créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio Code
 description: Découvrez comment créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio Code.
-ms.date: 05/29/2020
-ms.openlocfilehash: 5720ac374d50ef27a07d463e57af1bd95a352d83
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.date: 06/08/2020
+ms.openlocfilehash: f7d2319bcea58f63ca40e43ba39745bdf1b394ce
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446950"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701797"
 ---
-# <a name="tutorial-create-a-net-standard-library-in-visual-studio-code"></a>Didacticiel : créer une bibliothèque de .NET Standard dans Visual Studio Code
-
-Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Une bibliothèque de classes qui cible .NET Standard 2,0 permet à votre bibliothèque d’être appelée par n’importe quelle implémentation .NET qui prend en charge cette version de .NET Standard. Lorsque vous avez terminé votre bibliothèque de classes, vous pouvez décider si vous souhaitez la distribuer en tant que package NuGet ou l’inclure en tant que composant groupé avec une ou plusieurs applications.
-
-> [!NOTE]
-> Pour obtenir la liste des versions de .NET Standard et les plateformes qu’elles prennent en charge, consultez [.NET standard](../../standard/net-standard.md).
+# <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio Code
 
 Dans ce didacticiel, vous allez créer une bibliothèque d’utilitaire simple qui contient une méthode de gestion de chaîne unique. Vous l’implémentez en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) pour pouvoir l’appeler comme s’il s’agissait d’un membre de la <xref:System.String> classe.
+
+Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Une bibliothèque de classes qui cible .NET Standard 2,0 permet à votre bibliothèque d’être appelée par n’importe quelle implémentation .NET qui prend en charge cette version de .NET Standard. Lorsque vous avez terminé votre bibliothèque de classes, vous pouvez la distribuer en tant que composant tiers ou en tant que composant groupé avec une ou plusieurs applications.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -27,9 +24,11 @@ Dans ce didacticiel, vous allez créer une bibliothèque d’utilitaire simple q
 
 Commencez par créer une solution vide dans laquelle placer le projet de bibliothèque de classes. Une solution sert de conteneur pour un ou plusieurs projets. Vous ajouterez des projets connexes supplémentaires à la même solution.
 
-1. Ouvrez Visual Studio Code.
+1. Démarrez Visual Studio Code.
 
-1. Sélectionnez **fichier**  >  **ouvrir le dossier** / **Ouvrir...** dans le menu principal, créez un dossier *ClassLibraryProjects* , puis cliquez sur **Sélectionner un dossier** / **ouvrir**.
+1. **File**  >  Dans le menu principal, sélectionnez fichier**ouvrir le dossier** (**Ouvrir...** sur MacOS).
+
+1. Dans la boîte de dialogue **ouvrir un dossier** , créez un dossier *ClassLibraryProjects* , puis cliquez sur **Sélectionner un dossier** (**ouvrir** sur MacOS).
 
 1. Ouvrez le **Terminal** dans Visual Studio code en sélectionnant **Afficher**le  >  **Terminal** dans le menu principal.
 
@@ -156,7 +155,21 @@ Ajoutez une application console qui utilise la bibliothèque de classes. L’app
    Project `ShowCase\ShowCase.csproj` added to the solution.
    ```
 
-1. Initialement, le nouveau projet d’application console n’a pas accès à la bibliothèque de classes. Pour lui permettre d’appeler des méthodes dans la bibliothèque de classes, créez une référence de projet au projet de bibliothèque de classes en exécutant la commande suivante :
+1. Ouvrez *Showcase/Program. cs* et remplacez tout le code par le code suivant.
+
+   :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/ShowCase/Program.cs":::
+
+   Le code utilise la variable `row` pour comptabiliser le nombre de lignes de données écrites dans la fenêtre de console. Lorsqu’il est supérieur ou égal à 25, le code efface la fenêtre de console et affiche un message à l’utilisateur.
+
+   Le programme invite l’utilisateur à entrer une chaîne. Il indique si la chaîne commence par une majuscule. Si l’utilisateur appuie sur la touche <kbd>entrée</kbd> sans entrer de chaîne, l’application se termine et la fenêtre de console se ferme.
+
+1. Enregistrez vos modifications.
+
+## <a name="add-a-project-reference"></a>Ajouter une référence au projet
+
+Initialement, le nouveau projet d’application console n’a pas accès à la bibliothèque de classes. Pour lui permettre d’appeler des méthodes dans la bibliothèque de classes, créez une référence de projet au projet de bibliothèque de classes.
+
+1. Exécutez la commande suivante :
 
    ```dotnetcli
    dotnet add ShowCase/Showcase.csproj reference StringLibrary/StringLibrary.csproj
@@ -168,17 +181,9 @@ Ajoutez une application console qui utilise la bibliothèque de classes. L’app
    Reference `..\StringLibrary\StringLibrary.csproj` added to the project.
    ```
 
-1. Ouvrez *Showcase/Program. cs* et remplacez tout le code par le code suivant.
+## <a name="run-the-app"></a>Exécuter l’application
 
-   :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/ShowCase/Program.cs":::
-
-   Le code utilise la variable `row` pour comptabiliser le nombre de lignes de données écrites dans la fenêtre de console. Lorsqu’il est supérieur ou égal à 25, le code efface la fenêtre de console et affiche un message à l’utilisateur.
-
-   Le programme invite l’utilisateur à entrer une chaîne. Il indique si la chaîne commence par une majuscule. Si l’utilisateur appuie sur la touche entrée sans entrer de chaîne, l’application se termine et la fenêtre de console se ferme.
-
-1. Enregistrez vos modifications.
-
-1. Exécutez le programme.
+1. Exécutez la commande suivante dans le terminal :
 
    ```dotnetcli
    dotnet run --project ShowCase/ShowCase.csproj
@@ -203,10 +208,11 @@ Ajoutez une application console qui utilise la bibliothèque de classes. L’app
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Développer des bibliothèques avec le CLI .NET Core](libraries.md)
+* [.NET standard versions et les plateformes qu’ils prennent en charge](../../standard/net-standard.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce didacticiel, vous avez créé une solution, ajouté un projet de bibliothèque et ajouté un projet d’application console qui utilise la bibliothèque. Dans le didacticiel suivant, vous allez ajouter un projet de test unitaire à la solution.
 
 > [!div class="nextstepaction"]
-> [Tester une bibliothèque .NET Standard avec .NET Core dans Visual Studio Code](testing-library-with-visual-studio-code.md)
+> [Tester une bibliothèque .NET Standard avec .NET Core à l’aide de Visual Studio Code](testing-library-with-visual-studio-code.md)

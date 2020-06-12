@@ -1,15 +1,15 @@
 ---
-title: Publier une application Hello World .NET Core avec Visual Studio Code
+title: Publier une application console .NET Core à l’aide de Visual Studio Code
 description: La publication crée l’ensemble des fichiers nécessaires à l’exécution d’une application .NET Core.
-ms.date: 05/28/2020
-ms.openlocfilehash: b49b12bf41e3ea7be8dbc459eb7d9b1fbef25790
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.date: 06/08/2020
+ms.openlocfilehash: 442d08c9b016407327ba30db0aae78b5cf6b6fe3
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84246681"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701448"
 ---
-# <a name="tutorial-publish-a-net-core-console-application-with-visual-studio-code"></a>Didacticiel : publier une application console .NET Core avec Visual Studio Code
+# <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : publier une application console .NET Core à l’aide de Visual Studio Code
 
 Ce didacticiel montre comment publier une application console afin que d’autres utilisateurs puissent l’exécuter. La publication crée l’ensemble des fichiers nécessaires à l’exécution d’une application. Pour déployer les fichiers, copiez-les sur l’ordinateur cible.
 
@@ -21,7 +21,7 @@ Le CLI .NET Core est utilisé pour publier l’application. vous pouvez donc sui
 
 ## <a name="publish-the-app"></a>Publier l’application
 
-1. Ouvrez Visual Studio Code.
+1. Démarrez Visual Studio Code.
 
 1. Ouvrez le dossier du projet *HelloWorld* que vous avez créé dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
 
@@ -71,7 +71,7 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
       Il s’agit de la version de [déploiement dépendante du Framework](../deploying/deploy-with-cli.md#framework-dependent-deployment) de l’application. Pour exécuter cette bibliothèque de liens dynamiques, entrez `dotnet HelloWorld.dll` à l’invite de commandes. Cette méthode d’exécution de l’application fonctionne sur toutes les plateformes sur lesquelles le Runtime .NET Core est installé.
 
-   * *HelloWorld. exe* (*HelloWorld* sur Linux, non créé sur MacOS.)
+   * *HelloWorld.exe* (*HelloWorld* sur Linux, non créé sur MacOS.)
 
       Il s’agit de la version [exécutable dépendante du Framework](../deploying/deploy-with-cli.md#framework-dependent-executable) de l’application. Le fichier est spécifique au système d’exploitation.
 
@@ -85,7 +85,7 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
 ## <a name="run-the-published-app"></a>Exécuter l’application publiée
 
-1. Dans l' **Explorateur**, cliquez avec le bouton droit sur le dossier de *publication* (ou <kbd>Appuyez sur CTRL</kbd>+ clic sur MacOS), puis sélectionnez **ouvrir dans Terminal**.
+1. Dans l' **Explorateur**, cliquez avec le bouton droit sur le dossier de *publication* (<kbd>CTRL</kbd>+ clic sur MacOS), puis sélectionnez **ouvrir dans Terminal**.
 
    :::image type="content" source="media/publishing-with-visual-studio-code/open-in-terminal.png" alt-text="Menu contextuel avec ouverture dans le terminal":::
 
@@ -109,10 +109,7 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez publié une application console. Pour savoir comment créer des bibliothèques, consultez [développer des bibliothèques avec le CLI .net Core](libraries.md).
-
-<!--In the next tutorial, you create a class library.
+Dans ce didacticiel, vous avez publié une application console. Dans le didacticiel suivant, vous allez créer une bibliothèque de classes.
 
 > [!div class="nextstepaction"]
-> [Create a .NET Standard library in Visual Studio](library-with-visual-studio.md)
--->
+> [Créer une bibliothèque de .NET Standard dans Visual Studio pour Mac](library-with-visual-studio-mac.md)
