@@ -1,5 +1,6 @@
 ---
 title: Vue d’ensemble du modèle asynchrone basé sur des événements
+description: Passez en revue les modèles asynchrones basés sur les événements (EAPs) dans .NET, ce qui rend disponibles les avantages des applications multithread, mais masque certaines complexités de conception.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: f4aac5afbb13cafa7bb0e9c1eb6bbd92ac41bf8c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 18fbdb29e5a1fb02601dea00964538144c07122c
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289419"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768857"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Vue d’ensemble du modèle asynchrone basé sur des événements
 Les applications qui effectuent de nombreuses tâches simultanément tout en réagissant aux interventions de l’utilisateur nécessitent souvent une conception utilisant plusieurs threads. L’espace de noms <xref:System.Threading> fournit tous les outils nécessaires à la création d’applications multithread de hautes performances, mais l’utilisation de ces outils suppose une connaissance approfondie du génie logiciel multithread. Pour les applications multithread relativement simples, le composant <xref:System.ComponentModel.BackgroundWorker> fournit une solution simple. Pour les applications asynchrones plus sophistiquées, envisagez l’implémentation d’une classe obéissant au modèle asynchrone basé sur les événements.  

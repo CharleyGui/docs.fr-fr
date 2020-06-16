@@ -1,5 +1,6 @@
 ---
 title: Conventions générales d'affectation de noms
+description: Utilisez les conventions d’appellation générales relatives au choix de mots, des instructions sur l’utilisation des abréviations et des acronymes, ainsi que des conseils sur l’évitement des noms spécifiques à une langue.
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - names [.NET Framework], type names
 - names [.NET Framework], acronyms
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
-ms.openlocfilehash: c90987fd28d5157cfb7f7eea4680b5ab4be1a200
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b7f06a57c57800afcfa7febf9452094b4ad5ddc1
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290952"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769078"
 ---
 # <a name="general-naming-conventions"></a>Conventions générales d'affectation de noms
 
@@ -62,18 +63,18 @@ Cette section décrit les conventions d’affectation de noms générales relati
 |---------|------------------|-----------|---------|
 |**sbyte**|**SByte**|**char**|**SByte**|
 |**byte**|**Poids**|**unsigned char**|**Poids**|
-|**Résumé**|**Court**|**Résumé**|**Int16**|
+|**short**|**Résumé**|**short**|**Int16**|
 |**ushort**|**UInt16**|**unsigned short**|**UInt16**|
 |**int**|**Integer**|**int**|**Int32**|
 |**uint**|**UInt32**|**nombre entier non signé**|**UInt32**|
 |**long**|**Long**|**__int64**|**Int64**|
 |**correspondante**|**UInt64**|**unsigned __int64**|**UInt64**|
 |**float**|**Unique**|**float**|**Unique**|
-|**double**|**Cliquer**|**double**|**Cliquer**|
+|**double**|**Double**|**double**|**Double**|
 |**bool**|**Booléen**|**bool**|**Booléen**|
 |**char**|**Char**|**wchar_t**|**Char**|
 |**string**|**Chaîne**|**Chaîne**|**Chaîne**|
-|**object**|**Objet**|**Objet**|**Objet**|
+|**object**|**Object**|**Object**|**Object**|
 
  ✔️ Utilisez un nom commun, tel que `value` ou `item` , au lieu de répéter le nom de type, dans les rares cas où un identificateur n’a aucune signification sémantique et que le type du paramètre n’est pas important.
 

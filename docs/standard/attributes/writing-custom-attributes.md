@@ -1,5 +1,6 @@
 ---
 title: Écriture des attributs personnalisés
+description: Concevez vos propres attributs personnalisés dans .NET. Les attributs personnalisés sont essentiellement des classes dérivées directement ou indirectement de System. Attribute.
 ms.date: 07/17/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-ms.openlocfilehash: d05df02bfc75e9aeb2c583a831bcee8b7b971206
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3cae8de9b76aa9953b21ad2e23ad003e97555aa9
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276127"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768480"
 ---
 # <a name="writing-custom-attributes"></a>Écriture des attributs personnalisés
 Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de maîtriser les nombreux nouveaux concepts. Si vous êtes familiarisé avec la programmation orientée objet et savez concevoir des classes, vous possédez déjà la plupart des connaissances nécessaires. Les attributs personnalisés sont essentiellement des classes traditionnelles qui dérivent directement ou indirectement de <xref:System.Attribute?displayProperty=nameWithType>. Tout comme les classes traditionnelles, les attributs personnalisés contiennent des méthodes qui stockent et récupèrent les données.  

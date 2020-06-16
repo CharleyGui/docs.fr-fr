@@ -1,5 +1,6 @@
 ---
 title: Conversion entre DateTime et DateTimeOffset
+description: Effectuer une conversion entre des valeurs DateTimeOffset et des valeurs DateTime dans .NET. La structure DateTimeOffset fournit plus de prise en plus de fuseau horaire que la structure DateTime.
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - Date data type, converting
 - local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-ms.openlocfilehash: 7607d1d9dfc4f8f286262952599f96e4872db9c9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cf55db7c22ad2495bdbeb3202fcefb89bae42d69
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278218"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768675"
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>Conversion entre DateTime et DateTimeOffset
 

@@ -1,5 +1,6 @@
 ---
 title: Chaînes de format TimeSpan standard
+description: Passez en revue les chaînes de format TimeSpan standard, qui utilisent un spécificateur de format unique pour définir la représentation textuelle d’une valeur TimeSpan dans .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET Framework], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: 2ed9ca7337e40b5520ddbfc92925c5bedb45f701
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 31e4158d42d794e830d9acfe666729846c43a1ee
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289276"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768116"
 ---
 # <a name="standard-timespan-format-strings"></a>Chaînes de format TimeSpan standard
 
@@ -58,8 +59,8 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 |*-*|Signe négatif facultatif, qui indique un intervalle de temps négatif.|  
 |*d*|Nombre facultatif de jours, sans zéros non significatifs.|  
 |*hh*|Nombre d'heures, allant de "00" à "23".|  
-|*MM*|Nombre de minutes, allant de "00" à "59".|  
-|*ss*|Nombre de secondes, allant de "0" à "59".|  
+|*mm*|Nombre de minutes, allant de "00" à "59".|  
+|*sécurité*|Nombre de secondes, allant de "0" à "59".|  
 |*fffffff*|Partie fractionnaire facultative d'une seconde.  Sa valeur peut varier de "0000001" (une graduation ou un dix-millionième de seconde) à "9999999" (9 999 999 dix-millionièmes de seconde ou une seconde moins une graduation).|  
   
  Contrairement aux spécificateurs de format "g" et "G", le spécificateur de format "c" ne dépend pas de la culture. Il produit la représentation sous forme de chaîne d’une valeur <xref:System.TimeSpan> qui est invariante et commune à toutes les versions du .NET Framework antérieures à .NET Framework 4. "c" est la chaîne de format <xref:System.TimeSpan> par défaut. La méthode <xref:System.TimeSpan.ToString?displayProperty=nameWithType> met en forme une valeur d'intervalle de temps à l'aide de la chaîne de format "c".  
@@ -84,8 +85,8 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 |*-*|Signe négatif facultatif, qui indique un intervalle de temps négatif.|  
 |*d*|Nombre facultatif de jours, sans zéros non significatifs.|  
 |*h*|Nombre d'heures, allant de "0" à "23", sans zéros non significatifs.|  
-|*MM*|Nombre de minutes, allant de "00" à "59".|  
-|*ss*|Nombre de secondes, allant de "00" à "59".|  
+|*mm*|Nombre de minutes, allant de "00" à "59".|  
+|*sécurité*|Nombre de secondes, allant de "00" à "59".|  
 |*.*|Séparateur des fractions de seconde. Il équivaut à la propriété <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> de la culture spécifiée, sans substitutions par l'utilisateur.|  
 |*FFFFFFF*|Fractions de seconde. Le moins de chiffres possible sont affichés.|  
   
@@ -108,8 +109,8 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 |*-*|Signe négatif facultatif, qui indique un intervalle de temps négatif.|  
 |*d*|Nombre de jours, sans zéros non significatifs.|  
 |*hh*|Nombre d'heures, allant de "00" à "23".|  
-|*MM*|Nombre de minutes, allant de "00" à "59".|  
-|*ss*|Nombre de secondes, allant de "00" à "59".|  
+|*mm*|Nombre de minutes, allant de "00" à "59".|  
+|*sécurité*|Nombre de secondes, allant de "00" à "59".|  
 |*.*|Séparateur des fractions de seconde. Il équivaut à la propriété <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> de la culture spécifiée, sans substitutions par l'utilisateur.|  
 |*fffffff*|Fractions de seconde.|  
   

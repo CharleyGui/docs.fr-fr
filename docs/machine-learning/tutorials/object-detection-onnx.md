@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 199245aa0017d9232e3c9889c7845c3b9ec9877b
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: b4f6457c4fab8549b3efec2e25f7c23213698414
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144745"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767778"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Didacticiel : détecter des objets à l’aide de ONNX dans ML.NET
 
@@ -94,7 +94,7 @@ Maintenant que vous avez une compréhension générale de ce qu’est ONNX et de
     - Choisissez « nuget.org » comme source du package, sélectionnez l’onglet Parcourir et recherchez **Microsoft.ML**.
     - Sélectionnez le bouton **Installer**.
     - Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
-    - Répétez ces étapes pour **Microsoft.ML.ImageAnalytics** et **Microsoft.ML.OnnxTransformer**.
+    - Répétez ces étapes pour **Microsoft. ml. ImageAnalytics**, **Microsoft. ml. OnnxTransformer** et **Microsoft. ml. OnnxRuntime**.
 
 ### <a name="prepare-your-data-and-pre-trained-model"></a>Préparer vos données et votre modèle préentraîné
 
@@ -665,7 +665,7 @@ Après l’instruction try-catch, ajoutez une logique supplémentaire pour indiq
 
 [!code-csharp [EndProcessLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L62-L63)]
 
-Et c’est tout !
+C’est tout !
 
 ## <a name="results"></a>Résultats
 
@@ -705,7 +705,7 @@ Pour voir les images avec les rectangles englobants, accédez au répertoire `as
 
 ![Exemple d’image traitée d’une salle de repas](./media/object-detection-onnx/dinning-room-table-chairs.png)
 
-Félicitations ! Vous avez créé un modèle Machine Learning pour la détection d’objets en réutilisant un modèle `ONNX` préentraîné dans ML.NET.
+Félicitations ! Vous avez créé un modèle Machine Learning pour la détection d’objets en réutilisant un modèle `ONNX` préentraîné dans ML.NET.
 
 Vous pouvez trouver le code source de ce didacticiel dans le référentiel [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx) .
 

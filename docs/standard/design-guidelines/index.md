@@ -1,5 +1,6 @@
 ---
 title: Règles de conception de .NET Framework
+description: Consultez les instructions de conception d’infrastructure pour la conception de bibliothèques qui étendent et interagissent avec .NET, pour garantir la cohérence et la facilité d’utilisation des API.
 titleSuffix: ''
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], about
 - class library design guidelines [.NET Framework]
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
-ms.openlocfilehash: 5a4edca70844a2b2a3972381b34efe85664f353d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 17998adb1d18579f6763a80a82944e742e284e4e
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276034"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769065"
 ---
 # <a name="framework-design-guidelines"></a>Règles de conception de .NET Framework
 Cette section fournit des instructions pour concevoir des bibliothèques qui étendent et interagissent avec l' .NET Framework. L’objectif est d’aider les concepteurs de bibliothèques à garantir la cohérence et la facilité d’utilisation des API en fournissant un modèle de programmation unifié qui est indépendant du langage de programmation utilisé pour le développement. Nous vous recommandons de suivre ces instructions de conception lors du développement de classes et de composants qui étendent les .NET Framework. Une conception incohérente de la bibliothèque affecte la productivité des développeurs et déconseille l’adoption.  

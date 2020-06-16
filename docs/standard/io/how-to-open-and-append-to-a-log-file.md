@@ -1,5 +1,6 @@
 ---
 title: 'Procédure : ouvrir un fichier journal et y ajouter des éléments'
+description: Ouvrez et ajoutez à un fichier journal à l’aide des classes StreamWriter et StreamReader dans .NET, qui écrivent des caractères dans les flux et les lisent.
 ms.date: 01/21/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - log files, appending to
 - I/O [.NET Framework], log files
 ms.assetid: 74423362-1721-49cb-aa0a-e04005f72a06
-ms.openlocfilehash: 025c35344b9262e1f2fa6da87b68e46e21a54222
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a66dadd24cc327824e91df733f11a23112cd384a
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291823"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769169"
 ---
 # <a name="how-to-open-and-append-to-a-log-file"></a>Procédure : ouvrir un fichier journal et y ajouter des éléments
 <xref:System.IO.StreamWriter> et <xref:System.IO.StreamReader> écrivent des caractères dans et lisent des caractères à partir des flux. L’exemple de code suivant ouvre le fichier *log.txt* pour l’entrée, ou crée le fichier s’il n’existe pas déjà, puis ajoute les informations à la fin du fichier. Ensuite, l’exemple écrit le contenu du fichier dans la sortie standard en vue de son affichage.

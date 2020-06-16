@@ -1,17 +1,18 @@
 ---
 title: Requêtes et espaces de noms XPath
+description: En savoir plus sur les requêtes XPath & les espaces de noms. Les requêtes XPath connaissent les espaces de noms dans un document XML & peuvent utiliser des préfixes d’espaces de noms pour qualifier des noms d’attributs d’élément &.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: ef6402be-2f8e-4be2-8d3e-a80891cdef8b
-ms.openlocfilehash: d3314a7ff4cf957dac4cd8ad0416aad434b19af2
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e8533d372a747432201dfbc4d879ecd3fbceaf8e
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283193"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769247"
 ---
 # <a name="xpath-queries-and-namespaces"></a>Requêtes et espaces de noms XPath
 Les requêtes XPath reconnaissent les espaces de noms d’un document XML et peuvent utiliser les préfixes d’espace de noms pour qualifier des noms d’éléments et d’attributs. Le fait de qualifier des noms d’éléments et d’attributs avec un préfixe d’espace de noms permet de limiter les nœuds retournés par une requête XPath aux nœuds qui appartiennent à un espace de noms spécifique.  

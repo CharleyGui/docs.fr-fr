@@ -1,5 +1,6 @@
 ---
 title: Comparaisons et tris dans les collections
+description: Les comparaisons &es sont triées à l’aide des classes System. Collections dans .NET, ce qui permet de trouver un élément pour supprimer ou retourner la valeur d’une paire clé-valeur.
 ms.date: 04/30/2020
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: cb9dd3e8af570251b8bcd2e450e686ad69ab78c4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: aa001e8469947a532d77059bd52024c6b47b508e
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287976"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769195"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Comparaisons et tris dans les collections
 

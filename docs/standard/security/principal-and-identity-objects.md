@@ -1,5 +1,6 @@
 ---
 title: Objets Principal et Identity
+description: En savoir plus sur les objets d’identité, qui représentent des utilisateurs dans .NET. En savoir plus sur les objets principal, qui encapsulent à la fois un objet Identity & un rôle.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - security [.NET Framework], principals
 - WindowsPrincipal objects
 ms.assetid: aa5930ad-f3d7-40aa-b6f6-c6edcd5c64f7
-ms.openlocfilehash: cece51370fb269121e776e865275cd464c1af095
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5fd3f1c80f22c1ebe7b2c10653ee137f00321de8
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291225"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768844"
 ---
 # <a name="principal-and-identity-objects"></a>Objets Principal et Identity
 Le code managé peut découvrir l’identité ou le rôle d’un principal à l’aide d’un <xref:System.Security.Principal.IPrincipal> objet, qui contient une référence à un <xref:System.Security.Principal.IIdentity> objet. Il peut être utile de comparer des objets identity et principal à des concepts familiers comme les comptes des utilisateurs et des groupes. Dans la plupart des environnements de réseau, les comptes d’utilisateur représentent des personnes ou des programmes, tandis que les comptes de groupe représentent des catégories d’utilisateurs et les droits qu’ils possèdent. De même, les objets identity .NET Framework représentent des utilisateurs, tandis que les rôles représentent des appartenances et des contextes de sécurité. Dans le .NET Framework, l’objet principal encapsule un objet identity et un rôle. Les applications .NET Framework accordent des droits au principal en fonction de son identité ou, plus fréquemment, de son appartenance au rôle.  

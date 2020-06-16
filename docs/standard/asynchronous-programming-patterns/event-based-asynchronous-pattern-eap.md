@@ -1,5 +1,6 @@
 ---
 title: Modèle asynchrone basé sur les événements (EAP)
+description: Consultez des liens vers des articles sur le modèle asynchrone basé sur les événements (EAP) dans .NET, tels que l’implémentation, les meilleures pratiques, l’implémentation d’un client EAP, et bien plus encore.
 ms.date: 07/23/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - asynchronous programming, design patterns
 - asynchronous programming
 ms.assetid: c6baed9f-2a25-4728-9a9a-53b7b14840cf
-ms.openlocfilehash: 604e7a944579a284004817009b06c11b268d5daf
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 03b4d914d72b96b882c774565654c022b145b5f2
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289432"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768870"
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>Modèle asynchrone basé sur les événements (EAP)
 
@@ -44,7 +45,7 @@ Il existe plusieurs façons d’exposer des fonctionnalités asynchrones à du c
  [Comment : utiliser des composants qui prennent en charge le modèle asynchrone basé sur des événements](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
  Explique comment créer un composant qui prend en charge le modèle asynchrone basé sur les événements.  
   
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Informations de référence
 
  <xref:System.ComponentModel.AsyncOperation>  
  Décrit la classe <xref:System.ComponentModel.AsyncOperation> et propose des liens vers tous ses membres.  
@@ -60,7 +61,7 @@ Il existe plusieurs façons d’exposer des fonctionnalités asynchrones à du c
  [Bibliothèque parallèle de tâches](../parallel-programming/task-parallel-library-tpl.md)  
  Décrit un modèle de programmation pour les opérations asynchrones et parallèles.  
   
- [Thread](../threading/index.md)  
+ [Threads](../threading/index.md)  
  Décrit les fonctionnalités de multithreading dans .NET.  
   
 ## <a name="see-also"></a>Voir aussi

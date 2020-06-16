@@ -1,5 +1,6 @@
 ---
 title: Conversion de type dans le .NET Framework
+description: En savoir plus sur la conversion de type dans .NET, qui crée une valeur dans un nouveau type équivalent à la valeur de l’ancien type, mais peut ne pas conserver l’identité de l’original.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -24,12 +25,12 @@ helpviewer_keywords:
 - Implicit operator
 - data types [.NET Framework], converting
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
-ms.openlocfilehash: 33b8c49033c901917e674879048558799f484194
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 11345081610459dbf053d846aa04369301010732
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291654"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769221"
 ---
 # <a name="type-conversion-in-the-net-framework"></a>Conversion de type dans le .NET Framework
 Chaque valeur a un type associé qui définit des attributs, tels la quantité d'espace allouée à la valeur, la plage de valeurs possibles et les membres qu'il rend disponibles. De nombreuses valeurs peuvent être exprimées sous forme de plusieurs types. Par exemple, la valeur 4 peut être exprimée sous forme d'un entier ou d'une valeur à virgule flottante. La conversion de type crée une valeur dans un nouveau type qui est équivalente à la valeur d'un ancien type, mais ne préserve pas nécessairement l'identité (ou la valeur exacte) de l'objet d'origine.  

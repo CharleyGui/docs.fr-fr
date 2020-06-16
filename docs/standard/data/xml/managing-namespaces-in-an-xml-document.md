@@ -1,14 +1,15 @@
 ---
 title: Gestion d'espaces de noms dans un document XML
+description: Découvrez comment gérer les espaces de noms dans un document XML. Les espaces de noms XML associent les noms d'éléments et d'attributs dans un document XML à des URI prédéfinis et personnalisés.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: b60e773183bd008c99022946a2ec53932234fe23
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3a3abd2e932b1afecab85e285b0e2c42eb1eb20f
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289146"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769260"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Gestion d'espaces de noms dans un document XML
 Les espaces de noms XML associent les noms d'éléments et d'attributs dans un document XML à des URI prédéfinis et personnalisés. Pour créer ces associations, définissez des préfixes pour des URI d'espace de noms et utilisez ces préfixes pour qualifier des noms d'élément et d'attribut dans des données XML. Les espaces de noms empêchent les conflits entre les noms d'élément et d'attribut et permettent aux éléments et attributs de même nom d'être gérés différemment et validés différemment.  

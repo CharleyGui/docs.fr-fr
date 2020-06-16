@@ -1,5 +1,6 @@
 ---
 title: 'Procédure : annuler une boucle Parallel.For ou ForEach'
+description: Annulez une boucle Parallel. for ou Parallel. ForEach dans .NET en fournissant un objet de jeton d’annulation à la méthode dans le paramètre ParallelOptions.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - parallel foreach loop, how to cancel
 - parallel for loops, how to cancel
 ms.assetid: 9d19b591-ea95-4418-8ea7-b6266af9905b
-ms.openlocfilehash: d29137127dd47844f8f08d3ac689cf2827d9efe2
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0a22794f3c45e685a80d36a42ecd849461936c7b
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288223"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768987"
 ---
 # <a name="how-to-cancel-a-parallelfor-or-foreach-loop"></a>Procédure : annuler une boucle Parallel.For ou ForEach
 Les méthodes <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> prennent en charge l'annulation via l'utilisation de jetons d'annulation. Pour plus d'informations sur l'annulation en général, consultez [Annulation](../threading/cancellation-in-managed-threads.md). Dans une boucle parallèle, vous fournissez <xref:System.Threading.CancellationToken> à la méthode dans le paramètre <xref:System.Threading.Tasks.ParallelOptions> et vous joignez l’appel parallèle dans un bloc try-catch.  

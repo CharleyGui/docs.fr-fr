@@ -1,5 +1,6 @@
 ---
 title: Modèle objet d'expression régulière
+description: Passez en revue le modèle objet d’expression régulière dans .NET. Utilisez le moteur d’expression régulière, & objets & collections liées à la correspondance, au regroupement & à la capture.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -35,12 +36,12 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: ad7957fd555c1de8fe47c092d3eb399a803fb1fb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 43672b85ecb64a15179881ec23c7fadd13d64868
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290900"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768051"
 ---
 # <a name="the-regular-expression-object-model"></a>Modèle objet d'expression régulière
 <a name="introduction"></a> Cette rubrique décrit le modèle objet utilisé avec les expressions régulières .NET. Il contient les sections suivantes :  

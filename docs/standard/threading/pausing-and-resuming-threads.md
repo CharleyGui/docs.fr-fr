@@ -1,5 +1,6 @@
 ---
 title: Suspension et interruption de threads
+description: Découvrez comment suspendre & les threads d’interruption dans .NET. Découvrez comment utiliser des méthodes telles que thread. Sleep & thread. Interrupt, & des exceptions telles que ThreadInterruptedException.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - threading [.NET Framework], pausing
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
-ms.openlocfilehash: 369631603791d90c51244c1dc9907b9d8ec17364
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f7f414ec716bac5f1e840c5e8a0946024e059fb6
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291160"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769117"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Suspension et interruption de threads
 
@@ -52,6 +53,6 @@ Les méthodes les plus courantes permettant de synchroniser les activités de th
 - <xref:System.Threading.Thread>
 - <xref:System.Threading.ThreadInterruptedException>
 - <xref:System.Threading.ThreadAbortException>
-- [Thread](index.md)
+- [Threads](index.md)
 - [Utilisation des threads et du threading](using-threads-and-threading.md)
 - [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md)

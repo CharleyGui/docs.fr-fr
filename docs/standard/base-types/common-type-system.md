@@ -1,6 +1,6 @@
 ---
 title: Système de type commun
-description: Découvrez plus en détail le système de type dans .NET.
+description: Explorez le système de type dans .NET. En savoir plus sur les types dans .NET (types valeur ou types référence), la définition de type, les membres de type et les caractéristiques des membres de type.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: a1aa244d470402823fc22e12cb5e32bbbdcd87fe
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: db0ecd59f122228d33b74be6dec51371413d68b3
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289341"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767830"
 ---
 # <a name="common-type-system"></a>Système de type commun
 
@@ -221,7 +221,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
 - [Propriétés](#properties)  
   
-- [Leurs](#methods)  
+- [Méthodes](#methods)  
   
 - [Constructeurs](#constructors)  
   
@@ -306,6 +306,6 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Navigateur de l’API .NET](/dotnet/api)
+- [Explorateur d’API .NET](/dotnet/api)
 - [Common Language Runtime](../clr.md)
 - [Conversion de type dans .NET](type-conversion.md)

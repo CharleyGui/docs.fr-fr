@@ -1,16 +1,17 @@
 ---
 title: Collections thread-safe
+description: Prise en main des collections thread-safe à l’aide de l’espace de noms System. Collections. concurrent dans .NET, qui comprend des classes de collection à thread sécurisée et évolutives.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-ms.openlocfilehash: 7af59cf0fdbe8d5c7d7d586b4b86992ae1dc7601
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3a252124ade4c43961c06697367bbc4ca5d0c9cb
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290368"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768584"
 ---
 # <a name="thread-safe-collections"></a>Collections thread-safe
 .NET Framework 4 introduit l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, qui contient plusieurs classes de collection qui sont à la fois thread-safe et scalables. Plusieurs threads peuvent, sans risque et de façon efficace, ajouter ou supprimer des éléments dans ces collections, sans nécessiter une synchronisation supplémentaire dans le code utilisateur. Quand vous écrivez du code, utilisez des classes de collections simultanées si plusieurs threads écrivent en même temps dans la collection. Si vous lisez seulement dans une collection partagée, vous pouvez utiliser les classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Nous vous recommandons de ne pas utiliser les classes de collections 1.0, à moins que vous ne deviez cibler le runtime .NET Framework 1.1 ou une version antérieure.  
@@ -53,5 +54,5 @@ ms.locfileid: "84290368"
 |[Comment : utiliser des tableaux de collections de blocage dans un pipeline](how-to-use-arrays-of-blockingcollections.md)|Décrit comment utiliser simultanément plusieurs collections de blocage pour implémenter un pipeline.|  
 |[Guide pratique pour créer un pool d'objets à l'aide d'un ConcurrentBag](how-to-create-an-object-pool.md)|Montre comment utiliser un conteneur simultané pour améliorer les performances dans les scénarios où vous pouvez réutiliser des objets au lieu d’en créer continuellement de nouveaux.|  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>

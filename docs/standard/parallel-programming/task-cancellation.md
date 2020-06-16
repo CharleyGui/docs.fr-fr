@@ -1,5 +1,6 @@
 ---
 title: Annulation de tâches
+description: Comprendre l’annulation de tâches, qui est prise en charge dans les classes Task et Task <TResult> à l’aide de jetons d’annulation dans .net.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - tasks, cancellation
 - asynchronous task cancellation
 ms.assetid: 3ecf1ea9-e399-4a6a-a0d6-8475f48dcb28
-ms.openlocfilehash: 9f17b11699195e5b2186d008ebefce306834ea8d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1d9b7b35341961c27107f007e0eafa51ef49e232
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285272"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768662"
 ---
 # <a name="task-cancellation"></a>Annulation de tâches
 Les classes <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> prennent en charge l'annulation via l'utilisation de jetons d'annulation dans .NET Framework. Pour plus d’informations, consultez [annulation dans les threads managés](../threading/cancellation-in-managed-threads.md). Dans les classes de tâche, l'annulation implique une coopération entre le délégué d'utilisateur, qui représente une opération annulable et le code qui a demandé l'annulation.  Une annulation réussie implique la demande du code appelant la méthode <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType>, et le délégué d'utilisateur terminant l'opération dans le délai imparti. Vous pouvez terminer l'opération à l'aide de l'une des options suivantes :  

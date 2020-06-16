@@ -1,5 +1,6 @@
 ---
 title: Développement interplateforme avec la bibliothèque de classes portable
+description: Créez des bibliothèques et des applications multiplateformes pour les plateformes Microsoft rapidement et facilement en utilisant le type de projet de bibliothèque de classes portable dans .NET.
 ms.date: 09/17/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - targeting multiple platforms
 - multiple platforms, targeting
 ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
-ms.openlocfilehash: 033c9bc6e506d0ae2b9f20fedb72d1b7f29e434b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: be1a49f7da7ce98f9e5e3ff8d927ce5230bfa8d8
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288912"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769143"
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Développement multiplateforme avec la bibliothèque de classes portables
 

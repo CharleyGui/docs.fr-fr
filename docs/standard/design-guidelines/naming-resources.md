@@ -1,5 +1,6 @@
 ---
 title: Attribution d'un nom à des ressources
+description: Passez en revue les instructions d’affectation de noms pour les ressources dans .NET, qui sont similaires aux instructions relatives aux propriétés d’attribution de noms.
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - global applications, naming guidelines
 - international applications, naming guidelines
 ms.assetid: 8b0e97f3-7877-44fd-bc76-e05d36d5d79c
-ms.openlocfilehash: 762ba99c4751ba40f5f33e99455cf950af35cdf6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 765337bcf9fad4f9a8c9272a15b5c77d02770471
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290147"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768246"
 ---
 # <a name="naming-resources"></a>Attribution d'un nom à des ressources
 Étant donné que les ressources localisables peuvent être référencées par le biais de certains objets comme s’il s’agissait de propriétés, les instructions d’affectation de noms pour les ressources sont similaires aux instructions de propriété.

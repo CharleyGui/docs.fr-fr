@@ -1,5 +1,6 @@
 ---
 title: Exceptions dans les threads managés
+description: Découvrez comment les exceptions non gérées sont gérées dans .NET. Avec .NET version 2,0, la plupart des exceptions de threads non gérées se poursuivent naturellement et mènent à l’arrêt de l’application.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - threading [.NET Framework],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: 56900ddab5e1e6ee5375c8979dc19694d4ad9c54
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2facb68c77815de7a6fb97ab8f2ee683ffbad724
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279696"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767882"
 ---
 # <a name="exceptions-in-managed-threads"></a>Exceptions dans les threads managés
 À partir du .NET Framework version 2.0, le common language runtime permet à la plupart des exceptions non prises en charge dans les threads de poursuivre naturellement. Dans la plupart des cas, cela signifie que l’exception non prise en charge provoque l’arrêt de l’application.  

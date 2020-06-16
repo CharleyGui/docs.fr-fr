@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 06/03/2020
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: 64190546157bc9386314a3080c5364fd854d7704
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: aab59463daad30748277602b9ab1d8ca2f3fa1f5
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602229"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767674"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -94,8 +94,6 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
     - le **temps d’exploration/de formation ciblé** pour l’expérience est de **10 secondes**
 
     La CLI affiche une sortie de ce type :
-
-    <!-- markdownlint-disable MD023 MD025 -->
 
     ![Classification de l’interface CLI ML.NET sur PowerShell](./media/mlnet-cli/mlnet-classification-powershell.gif)
 
