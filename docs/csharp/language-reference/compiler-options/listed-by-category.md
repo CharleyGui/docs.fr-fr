@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: ffa5372678362e47eb59d8b041da55c79bf8475d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1e78b920eb6a1eae870a425b91711ac9d87b6530
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447041"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84811679"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Options du compilateur C# par catégorie
 
@@ -67,7 +67,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |[-errorreport](errorreport-compiler-option.md)|Définit le comportement de signalement d'erreurs.|
 |[-fullpaths](fullpaths-compiler-option.md)|Spécifie le chemin d'accès absolu au fichier de sortie du compilateur.|
 |[-nowarn](nowarn-compiler-option.md)|Supprime la génération par le compilateur des avertissements spécifiés.|
-|[-Nullable](nullable-compiler-option.md)|Spécifie l’option de contexte Nullable.|
+|[-nullable](nullable-compiler-option.md)|Spécifie l’option de contexte Nullable.|
 |[-warn](warn-compiler-option.md)|Définit le niveau d'avertissement.|
 |[-warnaserror](warnaserror-compiler-option.md)|Transforme les avertissements en erreurs.|
 |RuleSet\<file>|Spécifiez un fichier ruleset qui désactive des diagnostics spécifiques.|
@@ -107,7 +107,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |[-unsafe](unsafe-compiler-option.md)|Active la compilation du code qui utilise le mot clé [unsafe](../keywords/unsafe.md).|
 |[-utf8output](utf8output-compiler-option.md)|Affiche les résultats de la compilation au format d'encodage UTF-8.|
 |-parallel[+&#124;-]|Indique s'il faut utiliser la build simultanée (+).|
-|-checksumalgorithm:\<alg>|Spécifiez l'algorithme de calcul de la somme de contrôle du fichier source stockée dans le fichier PDB.  Les valeurs prises en charge sont : SHA1 (par défaut) ou SHA256.<br>En raison de problèmes de collision avec SHA-1, Microsoft recommande SHA-256.|
+|-checksumalgorithm:\<alg>|Spécifiez l'algorithme de calcul de la somme de contrôle du fichier source stockée dans le fichier PDB.  Les valeurs prises en charge sont : SHA256 (valeur par défaut) ou SHA1.<br>En raison de problèmes de collision avec SHA-1, Microsoft recommande SHA-256.|
 
 ## <a name="obsolete-options"></a>Options obsolètes
 

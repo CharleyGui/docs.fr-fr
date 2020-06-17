@@ -6,12 +6,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 5db2797870b6c2e1998f17f1d8e4df8aa3f95c9e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 0f9c0f053e531a44640084a35dc5d8e844ee0b46
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241407"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803186"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Méthodes d’extension (Guide de programmation C#)
 
@@ -54,7 +54,7 @@ En général, vous appellerez probablement les méthodes d’extension beaucoup 
 using System.Linq;
 ```
 
-(Vous devrez peut-être également ajouter une référence à System. Core. dll.) Vous remarquerez que les opérateurs de requête standard apparaissent désormais dans IntelliSense comme des méthodes supplémentaires disponibles pour la plupart des <xref:System.Collections.Generic.IEnumerable%601> types.
+(Vous devrez peut-être également ajouter une référence à System.Core.dll.) Vous remarquerez que les opérateurs de requête standard apparaissent désormais dans IntelliSense comme des méthodes supplémentaires disponibles pour la plupart des <xref:System.Collections.Generic.IEnumerable%601> types.
 
 ## <a name="binding-extension-methods-at-compile-time"></a>Liaison de méthodes d’extension à la compilation
 
@@ -80,7 +80,7 @@ Dans le passé, il était courant de créer des « classes de collection » im
 
 Lorsque vous utilisez une architecture d’oignon ou une autre conception d’application en couches, il est courant d’avoir un ensemble d’entités de domaine ou de Transfert de données objets qui peuvent être utilisés pour communiquer à travers les limites de l’application. Ces objets ne contiennent généralement aucune fonctionnalité, ou uniquement des fonctionnalités minimales qui s’appliquent à toutes les couches de l’application. Les méthodes d’extension peuvent être utilisées pour ajouter des fonctionnalités spécifiques à chaque couche d’application sans avoir à charger l’objet avec des méthodes qui ne sont pas nécessaires ou qui veulent dans d’autres couches.
 
-```aspx-csharp
+```csharp
 public class DomainEntity
 {
     public int Id { get; set; }
