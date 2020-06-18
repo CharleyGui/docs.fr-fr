@@ -4,12 +4,12 @@ description: En savoir plus sur les distributions Linux qui prennent en charge l
 author: thraka
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: fbb057825395d4e024f99e1abbd1a6e65ba1dce7
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: e668ad733481c2d9b73994b6344b38768f5851fe
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768351"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903374"
 ---
 # <a name="install-net-core-on-linux"></a>Installer .NET Core sur Linux
 
@@ -78,6 +78,8 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 | ✔️ [9](linux-debian.md#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ❌ [8](linux-debian.md#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 
+Pour plus d’informations, consultez [installer .net Core sur Debian](linux-debian.md).
+
 ## <a name="fedora"></a>Fedora
 
 Fedora utilise FND comme gestionnaire de package.
@@ -113,6 +115,8 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |----------------------------|---------------|---------------|----------------|
 | ✔️ [15](linux-opensuse.md#opensuse-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 
+Pour plus d’informations, consultez [installer .net Core sur openSUSE](linux-opensuse.md).
+
 ## <a name="red-hat"></a>Red Hat
 
 Red Hat Enterprise Linux (RHEL) utilise yum (RHEL 7) et FND (RHEL 8) comme gestionnaire de package.
@@ -128,6 +132,8 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 | ✔️ [8](linux-rhel.md#rhel-8-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [7](linux-rhel.md#rhel-7-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 
+Pour plus d’informations, consultez [installer .net Core sur RHEL](linux-rhel.md).
+
 ## <a name="sles"></a>SLES
 
 SLES utilise zypper comme gestionnaire de package.
@@ -142,6 +148,8 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |------------------------|---------------|---------------|----------------|
 | ✔️ [15](linux-sles.md#sles-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [12 SP2](linux-sles.md#sles-12-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
+
+Pour plus d’informations, consultez [installer .net Core sur SLES](linux-sles.md).
 
 ## <a name="ubuntu"></a>Ubuntu
 

@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’outil Analyseur de portabilité .NE
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 7fe5aafe1ad8bf87883ebe27f2aa4fb102a01e45
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d2a9551565e9ef0a2ed76960c869829fc2e86a1f
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501796"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903608"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
@@ -32,9 +32,6 @@ Pour commencer à utiliser l’Analyseur de portabilité .NET dans Visual Studio
 ![Capture d’écran de l’analyseur de portabilité.](./media/portability-analyzer/portability-screenshot.png)
 
 Vous pouvez aussi utiliser l’application console ApiPort et la télécharger à partir du [référentiel ApiPort](https://aka.ms/apiportdownload). Vous pouvez utiliser l’option de commande `listTargets` pour afficher la liste des cibles disponibles, puis sélectionner les plateformes cibles en spécifiant l’option de commande `-t` ou `--target`.
-
-> [!IMPORTANT]
-> S’il n’y a aucun résultat lors de l’exécution de l’outil, les cibles par défaut peuvent ne pas être disponibles. Si vous rencontrez ce problème, assurez-vous d’ajouter des cibles explicites.
 
 ### <a name="solution-wide-view"></a>Vue étendue de la solution
 
