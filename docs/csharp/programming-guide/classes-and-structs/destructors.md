@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: a266cfd5996aca7b7a6b297b0775526cf38b8f64
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 62fc531a8064a8a5cb144a89aa9975b3199db976
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241420"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990114"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
 Les finaliseurs (également appelés **destructeurs**) servent à effectuer les derniers nettoyages nécessaires lorsqu’une instance de classe est collectée par le récupérateur de mémoire.  
@@ -52,24 +52,24 @@ protected override void Finalize()
 }  
 ```  
   
- Cela signifie que la méthode `Finalize` est appelée de manière récursive pour toutes les instances de la chaîne d’héritage, de la plus dérivée à la moins dérivée.  
+ Cette conception signifie que la `Finalize` méthode est appelée de manière récursive pour toutes les instances dans la chaîne d’héritage, de la plus dérivée à la moins dérivée.  
   
 > [!NOTE]
 > Les finaliseurs vides ne doivent pas être utilisés. Quand une classe contient un finaliseur, une entrée est créée dans la file d’attente `Finalize`. Quand le finaliseur est appelé, le récupérateur de mémoire est appelé pour traiter la file d’attente. Un finaliseur vide entraîne une perte de performances inutile.  
   
- Le programmeur n’a aucun contrôle sur le moment où le finaliseur est appelé, car celui-ci est déterminé par le récupérateur de mémoire. Le récupérateur de mémoire recherche les objets qui ne sont plus utilisés par l’application. S’il considère qu’un objet peut être finalisé, il appelle le finaliseur (s’il y en a un) et libère la mémoire utilisée pour stocker l’objet.
+ Le programmeur n’a aucun contrôle sur le moment où le finaliseur est appelé ; le garbage collector décide quand l’appeler. Le récupérateur de mémoire recherche les objets qui ne sont plus utilisés par l’application. S’il considère qu’un objet peut être finalisé, il appelle le finaliseur (s’il y en a un) et libère la mémoire utilisée pour stocker l’objet.
 
  Dans les applications .NET Framework (mais pas dans les applications .NET Core), les finaliseurs sont également appelés quand le programme se termine.
   
- Il est possible de forcer le nettoyage de la mémoire en appelant <xref:System.GC.Collect%2A>, mais la plupart du temps c’est à éviter car cela peut créer des problèmes de performances.  
+ Il est possible de forcer l’garbage collection en appelant <xref:System.GC.Collect%2A> , mais la plupart du temps, cet appel doit être évité, car il peut créer des problèmes de performances.  
   
 ## <a name="using-finalizers-to-release-resources"></a>Utiliser des finaliseurs pour libérer des ressources  
- En général, C# ne nécessite pas autant de gestion de mémoire que quand vous développez avec un langage qui ne cible pas un runtime avec nettoyage de la mémoire. Cela est dû au fait que le garbage collector .NET gère implicitement l’allocation et la libération de mémoire pour vos objets. Toutefois, quand votre application encapsule des ressources non managées, telles que des fenêtres, des fichiers et des connexions réseau, vous devez utiliser des finaliseurs pour libérer ces ressources. Quand l’objet peut être finalisé, le récupérateur de mémoire exécute la méthode `Finalize` de l’objet.
+ En général, C# ne nécessite pas autant de gestion de la mémoire de la part du développeur que de langages qui ne ciblent pas un Runtime avec garbage collection. Cela est dû au fait que le garbage collector .NET gère implicitement l’allocation et la libération de mémoire pour vos objets. Toutefois, quand votre application encapsule des ressources non managées, telles que des fenêtres, des fichiers et des connexions réseau, vous devez utiliser des finaliseurs pour libérer ces ressources. Quand l’objet peut être finalisé, le récupérateur de mémoire exécute la méthode `Finalize` de l’objet.
   
 ## <a name="explicit-release-of-resources"></a>Libération explicite de ressources  
- Si votre application utilise une ressource externe coûteuse, nous vous recommandons également de proposer un moyen de libérer explicitement la ressource avant que le récupérateur de mémoire ne libère l’objet. Pour cela, vous devez implémenter une méthode `Dispose` à partir de l’interface <xref:System.IDisposable> qui effectue le nettoyage nécessaire pour l’objet. Cela peut améliorer considérablement les performances de l’application. Même avec ce contrôle explicite des ressources, le finaliseur devient un dispositif de protection pour nettoyer les ressources si l’appel à la méthode `Dispose` a échoué.  
+ Si votre application utilise une ressource externe coûteuse, nous vous recommandons également de proposer un moyen de libérer explicitement la ressource avant que le récupérateur de mémoire ne libère l’objet. Pour libérer la ressource, implémentez une `Dispose` méthode à partir de l' <xref:System.IDisposable> interface qui effectue le nettoyage nécessaire pour l’objet. Cela peut améliorer considérablement les performances de l’application. Même avec ce contrôle explicite sur les ressources, le finaliseur devient un dispositif de protection pour nettoyer les ressources si l’appel à la `Dispose` méthode échoue.  
   
- Pour plus d’informations sur le nettoyage des ressources, consultez les rubriques suivantes :  
+ Pour plus d’informations sur le nettoyage des ressources, consultez les articles suivants :  
   
 - [Nettoyage des ressources non managées](../../../standard/garbage-collection/unmanaged.md)  
   

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: d59f368f21964c07d371df604f0728fa6ca8ac00
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 438188b6d694bdeab772c43ef92e5621c68facff
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307031"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990218"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 
@@ -50,7 +50,7 @@ La liste suivante résume les concepts importants de la mémoire CLR.
 
 - La mémoire virtuelle peut être dans trois états :
 
-  | État | Description |
+  | State | Description |
   |---------|---------|
   | Gratuit | Il n'existe aucune référence au bloc de mémoire et celui-ci est disponible pour allocation. |
   | Réservé | Le bloc de mémoire est disponible pour votre utilisation et ne peut pas être utilisé pour une autre demande d'allocation. Toutefois, vous ne pouvez pas stocker de données dans ce bloc de mémoire tant qu'il n'est pas validé. |
@@ -60,7 +60,7 @@ La liste suivante résume les concepts importants de la mémoire CLR.
 
 - Vous pouvez manquer de mémoire s’il n’y a pas suffisamment d’espace d’adressage virtuel à réserver ou d’espace physique à valider.
 
-  Le fichier d’échange est utilisé même si la sollicitation de la mémoire physique (c’est-à-dire, la demande de mémoire physique) est faible. La première fois que la sollicitation de la mémoire physique est élevée, le système d’exploitation doit libérer de l’espace dans la mémoire physique pour stocker les données, et il sauvegarde certaines des données qui se trouvent dans la mémoire physique dans le fichier d’échange. Ces données ne sont pas paginées tant qu’elles ne sont pas nécessaires, il est donc possible de rencontrer la pagination dans les situations où la sollicitation de la mémoire physique est faible.
+  Le fichier d’échange est utilisé même si la sollicitation de la mémoire physique (c’est-à-dire, la demande de mémoire physique) est faible. La première fois que la sollicitation de la mémoire physique est élevée, le système d’exploitation doit libérer de la place dans la mémoire physique pour stocker les données, et il sauvegarde certaines des données qui se trouvent dans la mémoire physique dans le fichier d’échange. Ces données ne sont pas paginées tant qu’elles ne sont pas nécessaires, il est donc possible de rencontrer la pagination dans les situations où la sollicitation de la mémoire physique est faible.
   
 ### <a name="memory-allocation"></a>Allocation de mémoire
 
@@ -160,12 +160,12 @@ Les générations éphémères sont allouées dans le segment de mémoire appel�
 
 La taille du segment éphémère varie selon qu’il s’agit d’un système 32 bits ou 64 bits et du type de garbage collector en cours d’exécution (station de[travail ou GC de serveur](workstation-server-gc.md)). Le tableau suivant indique les tailles par défaut du segment éphémère.
 
-|GC station de travail/serveur|32 bits|64 bits|
+|GC station de travail/serveur|32 bits|64 bits|
 |-|-------------|-------------|
 |Garbage collector pour station de travail|16 Mo|256 octets|
-|Garbage collector pour serveur|64 Mo|4 Go|
-|Garbage collector pour serveur > 4 processeurs logiques|32 Mo|2 Go|
-|Garbage collector pour serveur > 8 processeurs logiques|16 Mo|1 Go|
+|Garbage collector pour serveur|64 Mo|4 Go|
+|Garbage collector pour serveur > 4 processeurs logiques|32 Mo|2 Go|
+|Garbage collector pour serveur > 8 processeurs logiques|16 Mo|1 Go|
 
 Le segment éphémère peut inclure des objets de la génération 2. Les objets de génération 2 peuvent utiliser plusieurs segments (autant que votre processus en requiert et que la mémoire en autorise).
 

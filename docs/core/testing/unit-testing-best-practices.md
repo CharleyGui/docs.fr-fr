@@ -4,12 +4,12 @@ description: Découvrez les bonnes pratiques pour écrire des tests unitaires qu
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 586373381bcb18384cbf29bb2ca2bd220a2b2d3d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9115ff69b269e3723820fd8505d1a9f8ca278d12
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240959"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989378"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Meilleures pratiques pour les tests unitaires avec .NET Core et .NET Standard
 
@@ -43,11 +43,17 @@ L’écriture de tests pour votre code permet de le découpler de manière natur
 
 ## <a name="characteristics-of-a-good-unit-test"></a>Caractéristiques d’un bon test unitaire
 
-- **Rapide**. Il n’est pas rare pour des projets matures de comporter des milliers de tests unitaires. Les tests unitaires doivent durer très peu de temps. Millisecondes.
+- **Rapidement**. Il n’est pas rare pour des projets matures de comporter des milliers de tests unitaires. Les tests unitaires doivent durer très peu de temps. Millisecondes.
 - **Isolé**. Les tests unitaires sont autonomes et peuvent être exécutés de manière isolée. Ils ne dépendent d’aucun facteur externe, par exemple un système de fichiers ou une base de données.
-- **Répétable**. L’exécution d’un test unitaire doit être cohérente avec ses résultats. En d’autres termes, il retourne toujours le même résultat si vous ne changez rien entre les exécutions.
+- **Renouvelable**. L’exécution d’un test unitaire doit être cohérente avec ses résultats. En d’autres termes, il retourne toujours le même résultat si vous ne changez rien entre les exécutions.
 - **Autovérification**. Le test doit pouvoir détecter automatiquement son état de réussite ou d’échec sans aucune interaction humaine.
 - **Délai approprié**. Écrire un test unitaire ne doit pas prendre un temps disproportionné par rapport au code testé. Si vous trouvez que le test du code prend beaucoup de temps par rapport à son écriture, optez pour une conception plus facile à tester.
+
+## <a name="code-coverage"></a>Couverture du code
+
+Un pourcentage élevé de couverture du code est souvent associé à une qualité de code supérieure. Toutefois, la mesure elle-même *ne peut pas* déterminer la qualité du code. La définition d’un objectif de pourcentage de couverture du code trop ambitieux peut être contre-productive. Imaginez un projet complexe avec des milliers de branches conditionnelles et imaginez que vous définissez un objectif de couverture du code de 95%. Actuellement, le projet gère la couverture du code de 90%. La durée nécessaire à la prise en compte de tous les cas de périphérie dans les 5% restants peut être une entreprise importante, et la proposition de valeur est rapidement réduite.
+
+Un pourcentage élevé de couverture du code n’est pas un indicateur de réussite et n’implique pas non plus la haute qualité du code. Jusst représente la quantité de code qui est couverte par les tests unitaires. Pour plus d’informations, consultez [couverture du code de test unitaire](unit-testing-code-coverage.md).
 
 ## <a name="lets-speak-the-same-language"></a>Parlons la même langue
 Le terme *mock* (élément fictif) est malheureusement utilisé à très mauvais escient quand il s’agit de tests. Voici une définition des types les plus courants de *fakes* (éléments fictifs) pour l’écriture de tests unitaires :
@@ -111,7 +117,7 @@ Le nom de votre test doit être composé de trois parties :
 - Scénario de test utilisé
 - Comportement attendu quand le scénario est appelé
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Les standards de nommage sont importants, car ils expriment explicitement la finalité du test.
 
@@ -127,10 +133,10 @@ Les tests ne se limitent pas à la vérification du bon fonctionnement de votre 
 **Organisation, Action, Assertion** est un modèle courant pour les tests unitaires. Comme son nom l’indique, il comporte trois actions principales :
 
 - *Organisation*, création et configuration des objets selon les besoins
-- *Agissez* sur un objet.
+- *Agir* sur un objet.
 - *Assertion* de ce qui est prévu
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Permet de séparer clairement ce qui est testé des étapes *organisation* et *assertion*.
 - Moins de risques de mélanger les assertions avec le code de l’étape « Action ».
@@ -146,7 +152,7 @@ La lisibilité est l’un des aspects les plus importants durant l’écriture d
 ### <a name="write-minimally-passing-tests"></a>Écrire des tests concluants minimaux
 L’entrée à utiliser dans un test unitaire doit être la plus simple possible pour vérifier le comportement testé.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Les tests deviennent plus résilients face aux futurs changements du code base.
 - Plus proche du comportement de test que de l’implémentation.
@@ -162,7 +168,7 @@ Les tests qui contiennent plus d’informations que nécessaire pour être réus
 ### <a name="avoid-magic-strings"></a>Éviter les chaînes magiques
 Le nommage des variables dans les tests unitaires est aussi important, sinon plus, que le nommage des variables dans le code de production. Les tests unitaires ne doivent pas contenir de chaînes magiques.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Évite au lecteur du test d’inspecter le code de production pour déterminer ce qui rend la valeur spéciale.
 - Montre explicitement ce que vous essayez de *prouver* et non ce que vous essayez d’*accomplir*.
@@ -181,7 +187,7 @@ Les chaînes magiques peuvent être sources de confusion pour le lecteur de vos 
 ### <a name="avoid-logic-in-tests"></a>Éviter la logique dans les tests
 Durant l’écriture des tests unitaires, évitez la concaténation manuelle des chaînes et les conditions logiques telles que `if`, `while`, `for`, `switch`, etc.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Moins de risques d’introduire un bogue dans vos tests.
 - Concentrez-vous sur le résultat final plutôt que sur les détails de l’implémentation.
@@ -200,7 +206,7 @@ Quand vous introduisez une logique dans votre suite de tests, le risque d’intr
 ### <a name="prefer-helper-methods-to-setup-and-teardown"></a>Préférez les méthodes d’assistance à setup et teardown
 Si vous avez besoin d’un objet ou d’un état similaire pour vos tests, préférez une méthode d’assistance aux attributs Setup et Teardown, s’ils existent.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Moins de confusion durant la lecture des tests, car l’ensemble du code est visible à partir de chaque test.
 - Moins de risques d’effectuer une configuration excessive ou insuffisante pour le test donné.
@@ -235,7 +241,7 @@ Durant l’écriture des tests, essayez d’inclure uniquement une instruction A
 - Créez un test distinct pour chaque assertion.
 - Utilisez des tests paramétrables.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - En cas d’échec d’une instruction Assert, les assertions qui suivent ne sont pas évaluées.
 - Permet de vérifier que vous n’effectuez pas l’assertion de plusieurs cas dans vos tests.

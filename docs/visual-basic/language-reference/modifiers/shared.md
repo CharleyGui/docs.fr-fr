@@ -11,12 +11,12 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-ms.openlocfilehash: d8c9879ea2f62bfbeaa378d0aaee806623ea1c55
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b51c88e1af3a720912af8ba6aaf8ae4016af9cfa
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579110"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990196"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 
@@ -24,7 +24,7 @@ Spécifie qu’un ou plusieurs éléments de programmation déclarés sont assoc
 
 ## <a name="when-to-use-shared"></a>Quand utiliser le partagé
 
-Le partage d’un membre d’une classe ou d’une structure le rend disponible pour chaque instance, plutôt que *non partagée*, où chaque instance conserve sa propre copie. Cela est utile, par exemple, si la valeur d’une variable s’applique à l’application entière. Si vous déclarez cette variable comme étant `Shared` , toutes les instances accèdent au même emplacement de stockage et si une instance modifie la valeur de la variable, toutes les instances accèdent à la valeur mise à jour.
+Le partage d’un membre d’une classe ou d’une structure le rend disponible pour chaque instance, plutôt que *non partagée*, où chaque instance conserve sa propre copie. Le partage est utile, par exemple, si la valeur d’une variable s’applique à l’application entière. Si vous déclarez cette variable comme étant `Shared` , toutes les instances accèdent au même emplacement de stockage et si une instance modifie la valeur de la variable, toutes les instances accèdent à la valeur mise à jour.
 
 Le partage ne modifie pas le niveau d’accès d’un membre. Par exemple, un membre de classe peut être partagé et privé (accessible uniquement à partir de la classe), ou non partagé et public. Pour plus d’informations, consultez [niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
 
@@ -50,7 +50,7 @@ Le partage ne modifie pas le niveau d’accès d’un membre. Par exemple, un me
 
 - **Accès par le biais d’une variable d’instance.** Il est possible d’accéder à un élément Shared en le qualifiant avec le nom d’une variable qui contient une instance spécifique de sa classe ou structure. Bien que cela fonctionne généralement comme prévu, le compilateur génère un message d’avertissement et donne l’accès par le biais du nom de la classe ou de la structure au lieu de la variable.
 
-- **Accès par le biais d’une expression d’instance.** Si vous accédez à un élément partagé par le biais d’une expression qui retourne une instance de sa classe ou structure, le compilateur effectue l’accès via le nom de la classe ou de la structure au lieu d’évaluer l’expression. Cela produit des résultats inattendus si vous avez souhaité que l’expression effectue d’autres actions et retourne l’instance. L'exemple suivant illustre ce comportement.
+- **Accès par le biais d’une expression d’instance.** Si vous accédez à un élément partagé par le biais d’une expression qui retourne une instance de sa classe ou structure, le compilateur effectue l’accès via le nom de la classe ou de la structure au lieu d’évaluer l’expression. Cet accès produit des résultats inattendus si vous avez souhaité que l’expression effectue d’autres actions et retourne l’instance. L’exemple suivant illustre cette situation.
   
     ```vb
     Sub Main()

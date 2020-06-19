@@ -2,12 +2,12 @@
 title: Création d’interfaces génériques de type variant (C#)
 ms.date: 07/20/2015
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
-ms.openlocfilehash: 27760fd73c8c40fc108106b87b2102ab5e07263c
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: a8e3e010c0e5d5490aee35603cad4fd6c1dc29e0
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241381"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990047"
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>Création d’interfaces génériques de type variant (C#)
 
@@ -144,9 +144,9 @@ interface ICovariant<out T> { }
 
 ### <a name="avoiding-ambiguity"></a>Éviter l’ambiguïté
 
-Quand vous implémentez des interfaces génériques de type variant, la variance peut parfois mener à une certaine ambiguïté. Cela doit être évité.
+Quand vous implémentez des interfaces génériques de type variant, la variance peut parfois mener à une certaine ambiguïté. Cette ambiguïté doit être évitée.
 
-Par exemple, si vous implémentez explicitement la même interface générique de type variant avec des paramètres de type générique différents dans une classe, cela peut être source d’ambiguïté. Le compilateur ne génère pas d’erreur dans ce cas, mais l’implémentation d’interface qui sera choisie lors de l’exécution ne lui est pas spécifiée. Des bogues subtils peuvent alors apparaître dans votre code. Prenons l’exemple de code suivant.
+Par exemple, si vous implémentez explicitement la même interface générique de type variant avec des paramètres de type générique différents dans une classe, cela peut être source d’ambiguïté. Le compilateur ne génère pas d’erreur dans ce cas, mais il n’est pas spécifié, quelle que soit l’implémentation de l’interface, qui sera choisie au moment de l’exécution. Cette ambiguïté peut entraîner des bogues subtils dans votre code. Prenons l’exemple de code suivant.
 
 ```csharp
 // Simple class hierarchy.

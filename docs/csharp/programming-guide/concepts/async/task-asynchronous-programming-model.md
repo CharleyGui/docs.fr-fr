@@ -2,12 +2,12 @@
 title: Modèle de programmation asynchrone des tâches avec async et await (C#)
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: d575a369a3c9766938e3996c527e27539e3e62e2
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 90bee745a393ac35ac968e9f4f6b6c83ad8fbb46
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241953"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990075"
 ---
 # <a name="task-asynchronous-programming-model"></a>Modèle de programmation asynchrone des tâches
 
@@ -170,7 +170,7 @@ Une méthode Async contient généralement une ou plusieurs occurrences d’un `
 
 `async` et `await` sont des mots clés contextuels. Pour plus d'informations et pour obtenir des exemples, consultez les rubriques suivantes :
 
-- [async](../../../language-reference/keywords/async.md)
+- [Suppr](../../../language-reference/keywords/async.md)
 - [await](../../../language-reference/operators/await.md)
 
 ## <a name="return-types-and-parameters"></a><a name="BKMK_ReturnTypesandParameters"></a>Types de retour et paramètres
@@ -234,7 +234,7 @@ Les API asynchrones dans la programmation Windows Runtime ont l’un des types d
 
 ## <a name="naming-convention"></a><a name="BKMK_NamingConvention"></a>Convention d’affectation de noms
 
-Par convention, les méthodes qui retournent généralement des types awaitable (par exemple, `Task`, `Task<T>`, `ValueTask`, `ValueTask<T>`) doivent avoir des noms qui se terminent par « Async ». Les méthodes qui démarrent une opération asynchrone, mais qui ne retournent pas un type awaitable ne doivent pas avoir un nom qui se termine par « Async ». Cependant, leur nom peut commencer par « Begin », « Start » ou un autre mot suggérant que cette méthode ne retourne pas ou ne lève pas le résultat de l’opération.
+Par Convention, les méthodes qui retournent des types habituellement await (par exemple,,, `Task` `Task<T>` `ValueTask` `ValueTask<T>` ) doivent avoir des noms qui se terminent par « Async ». Les méthodes qui démarrent une opération asynchrone, mais qui ne retournent pas un type awaitable ne doivent pas avoir un nom qui se termine par « Async ». Cependant, leur nom peut commencer par « Begin », « Start » ou un autre mot suggérant que cette méthode ne retourne pas ou ne lève pas le résultat de l’opération.
 
 Vous pouvez ignorer la convention où un événement, une classe de base, ou un contrat d'interface suggère un nom différent. Par exemple, vous ne devez pas renommer les gestionnaires d’événements communs, tels que `Button1_Click` .
 
@@ -245,7 +245,7 @@ Vous pouvez ignorer la convention où un événement, une classe de base, ou un 
 |[Procédure pas à pas : accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)|Montre comment convertir une solution WPF synchrone en une solution WPF asynchrone. L’application télécharge une série de sites web.|[Exemple Async : Accès à la procédure web](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)|
 |[Comment étendre la procédure pas à pas Async à l’aide de Task. WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)|Ajoute <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> à la procédure précédente. L'utilisation de `WhenAll` démarre tous les téléchargements en même temps.||
 |[Comment effectuer plusieurs requêtes Web en parallèle en utilisant Async et await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)|Explique comment démarrer plusieurs tâches en même temps.|[Exemple Async : effectuer plusieurs requêtes web en parallèle](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e)|
-|[Types de retour async (C#)](./async-return-types.md)|Décrit les types que les méthodes async peuvent retourner et explique quand chaque type est approprié.||
+|[Types de retour async (C#)](./async-return-types.md)|Illustre les types que les méthodes Async peuvent retourner et explique quand chaque type est approprié.||
 |[Workflow de contrôle dans les programmes Async (C#)](./control-flow-in-async-programs.md)|Effectue le suivi en détail du flux de contrôle via une série d'expressions await dans un programme asynchrone.|[Exemple Async : flux de contrôle dans les programmes Async](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)|
 |[Réglage de votre application asynchrone (C#)](./fine-tuning-your-async-application.md)|Indique comment ajouter les fonctionnalités suivantes à votre solution async :<br /><br /> - [Annuler une tâche asynchrone ou une liste de tâches (C#)](./cancel-an-async-task-or-a-list-of-tasks.md)<br />- [Annuler des tâches asynchrones après une période de temps (C#)](./cancel-async-tasks-after-a-period-of-time.md)<br />- [Annuler les tâches asynchrones restantes une fois l’opération terminée (C#)](./cancel-remaining-async-tasks-after-one-is-complete.md)<br />- [Démarrer plusieurs tâches Async et les traiter à mesure qu’elles sont terminées (C#)](./start-multiple-async-tasks-and-process-them-as-they-complete.md)|[Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)|
 |[Gestion de la réentrance dans Async Apps (C#)](./handling-reentrancy-in-async-apps.md)|Montre comment gérer les cas dans lesquels une opération asynchrone active est redémarrée pendant son exécution.||
@@ -263,7 +263,7 @@ Le code suivant est le fichier *MainWindow.Xaml.cs* de l’application WPF que c
 
 ## <a name="see-also"></a>Voir aussi
 
-- [async](../../../language-reference/keywords/async.md)
+- [Suppr](../../../language-reference/keywords/async.md)
 - [await](../../../language-reference/operators/await.md)
 - [Programmation asynchrone](../../../async.md)
 - [Vue d’ensemble Async](../../../../standard/async.md)

@@ -7,16 +7,16 @@ helpviewer_keywords:
 - rapid application development (RAD), My.Forms
 - rapid application development (RAD), My.WebServices
 ms.assetid: de930027-9108-4f0c-b97c-5e7db4d6ef79
-ms.openlocfilehash: 847724450ee2bc8bc591371f71171e8ba4ed9337
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 141f2f5f98499498d3c6732f7ae8d0abe6259ed9
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411738"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990245"
 ---
 # <a name="default-object-instances-provided-by-myforms-and-mywebservices-visual-basic"></a>Instances d'objets par défaut fournies par My.Forms et My.WebServices (Visual Basic)
 
-Les objets [My. Forms](../../language-reference/objects/my-forms-object.md) et [My. WebServices](../../language-reference/objects/my-webservices-object.md) fournissent un accès aux formulaires, aux sources de données et aux services Web XML utilisés par votre application. Pour ce faire, ils fournissent des collections d' *instances par défaut* de chacun de ces objets.  
+Les objets [My. Forms](../../language-reference/objects/my-forms-object.md) et [My. WebServices](../../language-reference/objects/my-webservices-object.md) fournissent un accès aux formulaires, aux sources de données et aux services Web XML utilisés par votre application. Ils fournissent l’accès par le biais de regroupements d' *instances par défaut* de chacun de ces objets.  
   
 ## <a name="default-instances"></a>Instances par défaut  
 

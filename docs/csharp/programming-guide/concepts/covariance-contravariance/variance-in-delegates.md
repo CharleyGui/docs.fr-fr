@@ -2,12 +2,12 @@
 title: Variance dans les délégués (C#)
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: d41c0d3d54df96031fc7989e0fdc78e9f358a40a
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 7370813179040f54e65adf3b568a1fd914223f1d
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241342"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990035"
 ---
 # <a name="variance-in-delegates-c"></a>Variance dans les délégués (C#)
 .NET Framework 3.5 a introduit la prise en charge de la variance pour faire correspondre les signatures de méthode aux types délégués pour tous les délégués dans C#. Cela signifie que vous pouvez assigner aux délégués non seulement les méthodes ayant des signatures correspondantes, mais également des méthodes qui retournent des types plus dérivés (covariance) ou qui acceptent des paramètres ayant des types moins dérivés (contravariance) que ceux spécifiés par le type délégué. Cela inclut à la fois des délégués génériques et non génériques.  
@@ -158,7 +158,8 @@ dvariant("test");
 ```  
   
 ### <a name="combining-variant-generic-delegates"></a>Combinaison des délégués génériques variants  
- Vous ne devez pas combiner les délégués variants. La méthode <xref:System.Delegate.Combine%2A> ne prend pas en charge la conversion des délégués variants et nécessite le même type pour tous les délégués. Il peut s’ensuivre une exception runtime quand vous combinez les délégués à l’aide de la méthode <xref:System.Delegate.Combine%2A> ou de l’opérateur `+`, comme dans l’exemple de code suivant.  
+
+Ne combinez pas les délégués variants. La méthode <xref:System.Delegate.Combine%2A> ne prend pas en charge la conversion des délégués variants et nécessite le même type pour tous les délégués. Il peut s’ensuivre une exception runtime quand vous combinez les délégués à l’aide de la méthode <xref:System.Delegate.Combine%2A> ou de l’opérateur `+`, comme dans l’exemple de code suivant.  
   
 ```csharp  
 Action<object> actObj = x => Console.WriteLine("object: {0}", x);  

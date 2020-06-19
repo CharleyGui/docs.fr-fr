@@ -5,12 +5,12 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: 8134c0af55d74e57dcfce8c7174265b8c9902feb
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 780503288d3474cd99a595bdbd52c3a5abba5308
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307070"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990234"
 ---
 # <a name="background-garbage-collection"></a>garbage collection d’arrière-plan
 
@@ -57,7 +57,7 @@ L’illustration suivante montre les garbage collection de *serveur* d’arrièr
 
 Dans les garbage collection de station de travail ou de serveur, vous pouvez [activer des garbage collection simultanées](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md), ce qui permet aux threads de s’exécuter simultanément avec un thread dédié qui exécute le garbage collection pour la majeure partie de la durée de la collection. Cette option affecte uniquement les garbage collections de génération 2. les générations 0 et 1 sont toujours non simultanées car elles se terminent rapidement.
 
-Le garbage collection simultané permet aux applications interactives d'être plus réactives en réduisant les pauses d'une collection. Les threads managés peuvent continuer à s'exécuter une grande partie de la durée du garbage collection simultané. Cela génère des pauses plus courtes pendant l'opération garbage collection.
+Le garbage collection simultané permet aux applications interactives d'être plus réactives en réduisant les pauses d'une collection. Les threads managés peuvent continuer à s'exécuter une grande partie de la durée du garbage collection simultané. Cette conception produit des pauses plus courtes pendant qu’un garbage collection se produit.
 
 Le garbage collection simultané est exécuté sur un thread dédié. Par défaut, le CLR exécute des garbage collection de station de travail avec des garbage collection simultanées activées sur des ordinateurs monoprocesseurs et multiprocesseurs.
 

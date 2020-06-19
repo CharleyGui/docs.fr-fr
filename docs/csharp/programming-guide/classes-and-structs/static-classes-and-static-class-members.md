@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: f5e355d66d9b022a037d53e1241e76282852888e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 71cbf8278b3a8092e93a8ae3d8be291540f16cc3
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241459"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990097"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Classes statiques et membres de classe statique (Guide de programmation C#)
 
@@ -54,7 +54,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  La création d’une classe statique est par conséquent très semblable à la création d’une classe contenant uniquement des membres statiques et un constructeur privé. Un constructeur privé empêche la classe d’être instanciée. L’avantage de l’utilisation d’une classe statique est que le compilateur peut vérifier qu’aucun membre d’instance n’a été ajouté par erreur. Le compilateur garantit que les instances de cette classe ne peuvent pas être créées.  
   
- Les classes statiques sont scellées (sealed) et ne peuvent par conséquent pas être héritées. Elles ne peuvent hériter d’aucune classe à part <xref:System.Object>. Les classes statiques ne peuvent pas contenir un constructeur d’instance. Toutefois, elles peuvent contenir un constructeur statique. Les classes non statiques doivent également définir un constructeur statique si la classe contient des membres statiques qui requièrent une initialisation non triviale. Pour plus d’informations, consultez [Constructeurs statiques](./static-constructors.md).  
+ Les classes statiques sont scellées (sealed) et ne peuvent par conséquent pas être héritées. Elles ne peuvent hériter d’aucune classe à part <xref:System.Object>. Les classes static ne peuvent pas contenir un constructeur d’instance. Toutefois, ils peuvent contenir un constructeur statique. Les classes non statiques doivent également définir un constructeur statique si la classe contient des membres statiques qui requièrent une initialisation non triviale. Pour plus d’informations, consultez [Constructeurs statiques](./static-constructors.md).  
   
 ## <a name="example"></a>Exemple  
  Voici un exemple d’une classe statique qui contient deux méthodes qui convertissent la température des degrés Celsius en degrés Fahrenheit et des degrés Fahrenheit en degrés Celsius :  
@@ -62,15 +62,15 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
   
 ## <a name="static-members"></a>Membres static  
- Une classe non statique peut contenir des méthodes, des champs, des propriétés ou des événements statiques. Le membre statique peut être appelé sur une classe même quand aucune instance de la classe n’a été créée. Le membre statique est toujours accessible par le nom de la classe, et non par le nom de l’instance. Une seule copie d’un membre statique existe, quel que soit le nombre d’instances de la classe qui ont été créées. Les méthodes et propriétés statiques ne peuvent pas accéder à des champs ou des événements non statiques dans leur type contenant. Elles ne peuvent pas non plus accéder à une variable d’instance d’un objet quelconque à moins qu’elle soit passée explicitement dans un paramètre de méthode.  
+ Une classe non statique peut contenir des méthodes, des champs, des propriétés ou des événements statiques. Le membre statique peut être appelé sur une classe même quand aucune instance de la classe n’a été créée. Le membre statique est toujours accessible par le nom de la classe, et non par le nom de l’instance. Une seule copie d’un membre statique existe, quel que soit le nombre d’instances de la classe qui ont été créées. Les méthodes et les propriétés statiques ne peuvent pas accéder à des champs et des événements non statiques dans leur type conteneur, et elles ne peuvent pas accéder à une variable d’instance de n’importe quel objet, sauf si elle est explicitement passée dans un paramètre de méthode.  
   
  Il est plus courant de déclarer une classe non statique avec certains membres statiques que de déclarer une classe entière comme statique. Deux utilisations courantes des champs statiques consistent à conserver un décompte du nombre d’objets qui ont été instanciés ou à stocker une valeur qui doit être partagée entre toutes les instances.  
   
  Les méthodes statiques peuvent être surchargées mais pas substituées, car elles appartiennent à la classe et non pas à une instance de la classe.  
   
- Bien qu’un champ ne puisse pas être déclaré en tant que `static const`, un champ [const](../../language-reference/keywords/const.md) est essentiellement statique dans son comportement. Il appartient au type, pas aux instances du type. Par conséquent, les champs const sont accessibles à l’aide de la même notation `ClassName.MemberName` utilisée pour les champs statiques. Aucune instance d’objet n’est requise.  
+ Bien qu’un champ ne puisse pas être déclaré en tant que `static const`, un champ [const](../../language-reference/keywords/const.md) est essentiellement statique dans son comportement. Il appartient au type, pas aux instances du type. Par conséquent, `const` les champs sont accessibles à l’aide de la même `ClassName.MemberName` notation que celle utilisée pour les champs statiques. Aucune instance d’objet n’est requise.  
   
- C# ne prend pas en charge les variables locales statiques (variables déclarées dans la portée de la méthode).  
+ C# ne prend pas en charge les variables locales statiques (autrement dit, les variables déclarées dans la portée de la méthode).  
   
  Vous déclarez des membres de classe statique en utilisant le mot clé `static` avant le type de retour du membre, comme illustré dans l’exemple suivant :  
   
@@ -82,7 +82,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  Si votre classe contient des champs statiques, fournissez un constructeur statique qui les initialise quand la classe est chargée.  
   
- Un appel à une méthode statique génère une instruction d’appel en langage MSIL (Microsoft Intermediate Language), alors qu’un appel à une méthode d’instance génère une instruction `callvirt`, qui vérifie également l’existence de références d’objet Null. Toutefois, la plupart du temps, l’écart de performances entre les deux n’est pas significatif.  
+ Un appel à une méthode statique génère une instruction d’appel en langage MSIL (Microsoft Intermediate Language), tandis qu’un appel à une méthode d’instance génère une `callvirt` instruction, qui vérifie également les références d’objet null. Toutefois, la plupart du temps, l’écart de performances entre les deux n’est pas significatif.  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
@@ -91,7 +91,7 @@ Pour plus d’informations, voir [Classes statiques](~/_csharplang/spec/classes.
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [static](../../language-reference/keywords/static.md)
+- [statique](../../language-reference/keywords/static.md)
 - [Classes](./classes.md)
 - [type](../../language-reference/keywords/class.md)
 - [Constructeurs statiques](./static-constructors.md)
