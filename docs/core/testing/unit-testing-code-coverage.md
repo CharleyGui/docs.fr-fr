@@ -4,12 +4,12 @@ description: Découvrez comment utiliser les fonctionnalités de couverture du c
 author: IEvangelist
 ms.author: dapine
 ms.date: 06/16/2020
-ms.openlocfilehash: 47f10ae367f511d5d02d32bfcb35bf4775a3e946
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: d19975283bf60e5cf3a9656c1b6f7966e12d2176
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990278"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105416"
 ---
 # <a name="use-code-coverage-for-unit-testing"></a>Utiliser la couverture du code pour les tests unitaires
 
@@ -266,10 +266,11 @@ Voici l’exemple *coverage.cobertura.xml* fichier.
 > Vous pouvez également utiliser le package MSBuild si votre système de génération utilise déjà MSBuild. À partir de l’invite de commandes, remplacez les répertoires par le projet *xUnit. coverlet. MSBuild* , puis exécutez la `dotnet test` commande :
 >
 > ```dotnetcli
-> dotnet test --collect:"XPlat Code Coverage"
+> dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
 > ```
 >
-> Le fichier *coverage.cobertura.xml* résultant est output.
+> Le fichier *coverage.cobertura.xml* résultant est output.  
+> Vous pouvez suivre le guide integraton de MSBuild [ici](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md)
 
 ## <a name="generate-reports"></a>Génération de rapports
 
