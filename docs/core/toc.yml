@@ -29,6 +29,8 @@ items:
             href: install/linux.md
           - name: Ubuntu
             href: install/linux-ubuntu.md
+          - name: Alpine
+            href: install/linux-alpine.md
           - name: CentOS
             href: install/linux-centos.md
           - name: Debian
@@ -403,25 +405,25 @@ items:
         href: testing/unit-testing-best-practices.md
       - name: xUnit
         items:
-          - name: 'Test unitaire C#'
+          - name: Test unitaire C#
             href: testing/unit-testing-with-dotnet-test.md
-          - name: 'Test unitaire F#'
+          - name: Test unitaire F#
             href: testing/unit-testing-fsharp-with-dotnet-test.md
           - name: Test unitaire VB
             href: testing/unit-testing-visual-basic-with-dotnet-test.md
       - name: NUnit
         items:
-          - name: 'Test unitaire C#'
+          - name: Test unitaire C#
             href: testing/unit-testing-with-nunit.md
-          - name: 'Test unitaire F#'
+          - name: Test unitaire F#
             href: testing/unit-testing-fsharp-with-nunit.md
           - name: Test unitaire VB
             href: testing/unit-testing-visual-basic-with-nunit.md
       - name: MSTest
         items:
-          - name: 'Test unitaire C#'
+          - name: Test unitaire C#
             href: testing/unit-testing-with-mstest.md
-          - name: 'Test unitaire F#'
+          - name: Test unitaire F#
             href: testing/unit-testing-fsharp-with-mstest.md
           - name: Test unitaire VB
             href: testing/unit-testing-visual-basic-with-mstest.md
@@ -429,6 +431,8 @@ items:
         href: testing/selective-unit-tests.md
       - name: Trier les tests unitaires
         href: testing/order-unit-tests.md
+      - name: Couverture du code de test unitaire
+        href: testing/unit-testing-code-coverage.md
       - name: Sortie publiée des tests unitaires
         href: testing/unit-testing-published-output.md
       - name: Test unitaire en direct sur des projets .NET Core avec Visual Studio
