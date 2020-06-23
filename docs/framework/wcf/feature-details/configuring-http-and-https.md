@@ -1,35 +1,36 @@
 ---
 title: Configuration de HTTP et HTTPS
+description: Découvrez comment configurer HTTP/HTTPs pour permettre aux services WCF et aux clients de communiquer. Configurez une inscription d’URL et une exception de pare-feu à l’aide de Netsh.exe.
 ms.date: 04/08/2019
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: f7fd2bad6ced09b638cc1bb5d539fab1b9ce7d25
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fbff78ff8e2c5c4fa73a56a3fdc15163596aa985
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75336696"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245139"
 ---
 # <a name="configuring-http-and-https"></a>Configuration de HTTP et HTTPS
 
 Les services et les clients WCF peuvent communiquer sur HTTP et HTTPS. Les paramètres HTTP/HTTPS sont configurés à l'aide d'IIS (Internet Information Services) ou d'un outil de ligne de commande. Lorsqu'un service WCF est hébergé sous IIS, des paramètres HTTP ou HTTPS peuvent être configurés dans IIS (avec l'outil inetmgr.exe). Si un service WCF est auto-hébergé, les paramètres HTTP ou HTTPS sont configurés à l'aide d'un outil de ligne de commande.
 
-Au minimum, vous souhaitez configurer une inscription d’URL et ajouter une exception de pare-feu pour l’URL que votre service utilisera. Vous pouvez configurer ces paramètres à l’aide de l’outil netsh. exe.
+Au minimum, vous souhaitez configurer une inscription d’URL et ajouter une exception de pare-feu pour l’URL que votre service utilisera. Vous pouvez configurer ces paramètres à l’aide de l’outil Netsh.exe.
 
 ## <a name="configuring-namespace-reservations"></a>Configuration des réservations d’espaces de noms
 
-La réservation d'espace de noms assigne les droits d'une partie de l'espace de noms de l'URL HTTP à un groupe d'utilisateurs particulier. Cette réservation donne aux utilisateurs concernés le droit de créer des services qui écoutent sur cette partie de l'espace de noms. Les réservations sont des préfixes d’URL, ce qui signifie que la réservation couvre tous les sous-chemins du chemin de réservation. Les réservations d'espace de noms autorisent deux façons d'utiliser des caractères génériques. La documentation de l’API du serveur HTTP décrit l' [ordre de résolution entre les revendications d’espace de noms qui impliquent des caractères génériques](/windows/desktop/Http/routing-incoming-requests).
+La réservation d'espace de noms assigne les droits d'une partie de l'espace de noms de l'URL HTTP à un groupe d'utilisateurs particulier. Une réservation leur donne le droit de créer des services qui écoutent sur cette partie de l'espace de noms. Les réservations sont des préfixes d’URL, ce qui signifie que la réservation couvre tous les sous-chemins du chemin de réservation. Les réservations d'espace de noms autorisent deux façons d'utiliser des caractères génériques. La documentation de l’API du serveur HTTP décrit l' [ordre de résolution entre les revendications d’espace de noms qui impliquent des caractères génériques](/windows/desktop/Http/routing-incoming-requests).
 
 Une application exécutée peut créer une demande similaire pour ajouter des inscriptions d'espace de noms. Les inscriptions et les réservations rivalisent pour les parties de l'espace de noms. Une réservation peut avoir priorité sur une inscription en fonction de l’ordre de résolution indiqué dans l' [ordre de résolution entre les revendications d’espace de noms qui impliquent des caractères génériques](/windows/desktop/Http/routing-incoming-requests). Dans ce cas, la réservation empêche à l'application courante de recevoir des demandes.
 
-L’exemple suivant utilise l’outil netsh. exe :
+L’exemple suivant utilise l’outil Netsh.exe :
 
 ```console
 netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
 ```
 
-Cette commande ajoute une réservation d’URL pour l’espace de noms d’URL spécifié pour le compte domaine\utilisateur. Pour plus d’informations sur l’utilisation de la commande netsh, tapez `netsh http add urlacl /?` dans une invite de commandes et appuyez sur entrée.
+Cette commande ajoute une réservation d’URL pour l’espace de noms d’URL spécifié pour le compte domaine\utilisateur. Pour plus d’informations sur l’utilisation de la commande netsh, tapez `netsh http add urlacl /?` une invite de commandes et appuyez sur entrée.
 
 ## <a name="configuring-a-firewall-exception"></a>Configuration d’une exception de pare-feu
 
@@ -57,9 +58,9 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
 
 Lors de l'utilisation de <xref:System.ServiceModel.WSDualHttpBinding>, la connexion cliente utilise des valeurs par défaut qui sont compatibles avec les réservations d'espace de noms et le pare-feu de Windows. Si vous choisissez de personnaliser l'adresse cliente de base d'une connexion double, vous devez également configurer ces paramètres HTTP sur le client pour qu'ils correspondent à la nouvelle adresse.
 
-L’API du serveur HTTP contient des paramètres de configuration avancés qui ne sont pas disponibles via HttpCfg. Ces paramètres sont maintenus dans le registre et s'appliquent à toutes les applications exécutées sur les systèmes utilisant les API de serveur HTTP. Pour plus d’informations sur ces paramètres, consultez [paramètres de registre http. sys pour IIS](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows). La plupart des utilisateurs n’ont pas besoin de modifier ces paramètres.
+L’API du serveur HTTP contient des paramètres de configuration avancés qui ne sont pas disponibles via HttpCfg. Ces paramètres sont maintenus dans le registre et s'appliquent à toutes les applications exécutées sur les systèmes utilisant les API de serveur HTTP. Pour plus d’informations sur ces paramètres, consultez [Http.sys paramètres de Registre pour IIS](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows). La plupart des utilisateurs n’ont pas besoin de modifier ces paramètres.
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.WSDualHttpBinding>
-- [Guide pratique pour configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md)
+- [Comment : configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md)

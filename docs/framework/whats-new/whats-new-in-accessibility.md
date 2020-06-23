@@ -7,12 +7,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: 4243599f44749e7b38ebe78ca88b8ec2a9390650
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 8a85614e441ba6e5782cbbbf5fe12432c053a101
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249719"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244151"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 
@@ -78,7 +78,7 @@ Les applications qui ciblent des versions du .NET Framework à compter du 4.7.1 
 
 - [Concepteur de flux de travail Windows Workflow Foundation (WF)](#wf48)
 
-<a name="winforms48" />
+<a name="winforms48"></a>
 
 ### <a name="windows-forms"></a>Windows Forms
 
@@ -169,7 +169,7 @@ La figure suivante montre l’info-bulle lorsque l’utilisateur a sélectionné
 
 ![Capture d’écran de l’info-bulle lorsque l’utilisateur accède à un bouton à l’aide du clavier.](./media/whats-new-in-accessibility/select-tooltip-with-keyboard.png)
 
-<a name="wpf48" />
+<a name="wpf48"></a>
 
 ### <a name="windows-presentation-foundation-wpf"></a>Windows Presentation Foundation (WPF)
 
@@ -305,7 +305,7 @@ Les valeurs automatiques sont fournies uniquement si l’application cible .NET 
 </configuration>
 ```
 
-<a name="wf48" />
+<a name="wf48"></a>
 
 ### <a name="windows-workflow-foundation-wf-workflow-designer"></a>Concepteur de flux de travail Windows Workflow Foundation (WF)
 

@@ -1,5 +1,6 @@
 ---
 title: Récupération d'informations d'installation à partir d'un domaine d'application
+description: Récupérez les informations d’installation d’un domaine d’application dans .NET à l’aide de la classe System. AppDomain ou de l’objet AppDomainSetup.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - retrieving setup information
 - application domains, retrieving setup information
 ms.assetid: 5cdb12ae-1e37-4a62-8ec7-93d6dcc6e8d9
-ms.openlocfilehash: 4d06a8a3ccfa35af283323478ee44a7da63d896d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 06bf6b5901736b87852492f48a9d8972490b8304
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119737"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903465"
 ---
 # <a name="retrieving-setup-information-from-an-application-domain"></a>Récupération d'informations d'installation à partir d'un domaine d'application
 Chaque instance d’un domaine d’application se compose des deux propriétés et d’informations <xref:System.AppDomainSetup>. Vous pouvez récupérer les informations d’installation à partir d’un domaine d’application à l’aide de la classe <xref:System.AppDomain?displayProperty=nameWithType>. Cette classe fournit plusieurs membres qui récupèrent les informations de configuration sur un domaine d’application.  
@@ -37,4 +38,4 @@ Chaque instance d’un domaine d’application se compose des deux propriétés 
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation avec des domaines d’application](application-domains.md#programming-with-application-domains)
-- [Utilisation des domaines d’application](use.md)
+- [Utilisation des domaines d'application](use.md)

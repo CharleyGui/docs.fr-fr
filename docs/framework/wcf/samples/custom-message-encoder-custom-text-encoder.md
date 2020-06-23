@@ -1,13 +1,14 @@
 ---
 title: 'Encodeur de message personnalisé : Encodeur de texte personnalisé'
+description: Utilisez cet exemple pour implémenter un encodeur de message texte personnalisé à l’aide de WCF. Cet encodeur prend en charge tous les encodages de caractères pris en charge par la plateforme pour l’interopérabilité.
 ms.date: 03/30/2017
 ms.assetid: 68ff5c74-3d33-4b44-bcae-e1d2f5dea0de
-ms.openlocfilehash: b60fa2a84520ad208d435a0c9284c19b5de8e989
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 88ddc79e6cc1df654aea851cedb0e60c6fbcd017
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600605"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246270"
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>Encodeur de message personnalisé : Encodeur de texte personnalisé
 

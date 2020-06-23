@@ -1,5 +1,6 @@
 ---
 title: Utilisation des certificats
+description: En savoir plus sur les fonctionnalités de certificat numérique X. 509 et leur utilisation dans WCF. Les ressources de cet article peuvent expliquer ces concepts plus en détail.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: e61437efd87c30758c36d642bb9269ad2966c951
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8090e84b33e2a6f442d387c7012e6ccdc2900dd1
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600112"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246400"
 ---
 # <a name="working-with-certificates"></a>Utilisation des certificats
 
@@ -72,7 +73,7 @@ Les certificats numériques sont utilisés pour authentifier une entité en s’
 
 Lorsque vous créez un nouveau service, il est possible que vous utilisiez un certificat non émis par un certificat racine approuvé ou que le certificat émetteur lui-même ne figure pas dans le magasin Autorités de certification racine approuvées. Vous pouvez désactiver le mécanisme assurant la vérification de la chaîne d'approbation d'un certificat uniquement à des fins de développement. Pour ce faire, affectez à la propriété `CertificateValidationMode``PeerTrust` ou `PeerOrChainTrust`. L'un et l'autre des modes ci-dessus permettent de spécifier que le certificat doit s'auto-publier (approbation homologue) ou faire partie d'une chaîne d'approbation. Vous pouvez définir la propriété de n'importe laquelle des classes suivantes.
 
-|Class|Propriété|
+|Classe|Propriété|
 |-----------|--------------|
 |<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
 |<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|

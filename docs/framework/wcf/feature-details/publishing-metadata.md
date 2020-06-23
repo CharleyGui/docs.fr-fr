@@ -1,15 +1,16 @@
 ---
 title: Publication de métadonnées
+description: Découvrez comment les services WCF publient les métadonnées en publiant un ou plusieurs points de terminaison de métadonnées, ce qui rend les métadonnées disponibles à l’aide des protocoles standard.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - metadata [WCF], publishing
 ms.assetid: 3a56831a-cabc-45c0-bd02-12e2e9bd7313
-ms.openlocfilehash: 456eecde88fec182d3234c20a4f01971fd045bb8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2aa6d877db4e5b09b4c594e6e87b63fb6c04703b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596758"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244957"
 ---
 # <a name="publishing-metadata"></a>Publication de métadonnées
 Les services Windows Communication Foundation (WCF) publient les métadonnées en publiant un ou plusieurs points de terminaison de métadonnées. La publication de métadonnées de service permet d'accéder à celles-ci à l'aide de protocoles standardisés, tels que WS-MetadataExchange (MEX) et les requêtes HTTP/GET. Les points de terminaison de métadonnées sont semblables aux autres points de terminaison de service dans le sens où ils ont une adresse, une liaison et un contrat, et qu’ils peuvent être ajoutés à un hôte de service via la configuration ou du code impératif.  
@@ -22,7 +23,7 @@ Les services Windows Communication Foundation (WCF) publient les métadonnées e
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> ajoute une instance <xref:System.ServiceModel.Description.ServiceMetadataExtension> comme extension à votre hôte de service. <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> fournit l'implémentation pour les protocoles de publication de métadonnées. Vous pouvez également utiliser <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> pour obtenir les métadonnées de service au moment de l'exécution en accédant à la propriété <xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A?displayProperty=nameWithType>.  
   
 ### <a name="mex-metadata-endpoints"></a>Points de terminaison de métadonnées MEX  
- Pour ajouter des points de terminaison de métadonnées qui utilisent le protocole MEX, ajoutez des points de terminaison de service à votre hôte de service qui utilisent le contrat de service nommé `IMetadataExchange`. WCF comprend une <xref:System.ServiceModel.Description.IMetadataExchange> interface avec ce nom de contrat de service que vous pouvez utiliser dans le cadre du modèle de programmation WCF. Les points de terminaison WS-MetadataExchange (ou points de terminaison MEX) peuvent utiliser l’une des quatre liaisons par défaut que les méthodes de fabrique statiques exposent sur la <xref:System.ServiceModel.Description.MetadataExchangeBindings> classe pour correspondre aux liaisons par défaut utilisées par les outils WCF tels que Svcutil. exe. Vous pouvez également configurer des points de terminaison de métadonnées MEX à l’aide de votre propre liaison personnalisée.  
+ Pour ajouter des points de terminaison de métadonnées qui utilisent le protocole MEX, ajoutez des points de terminaison de service à votre hôte de service qui utilisent le contrat de service nommé `IMetadataExchange`. WCF comprend une <xref:System.ServiceModel.Description.IMetadataExchange> interface avec ce nom de contrat de service que vous pouvez utiliser dans le cadre du modèle de programmation WCF. Les points de terminaison WS-MetadataExchange (ou points de terminaison MEX) peuvent utiliser l’une des quatre liaisons par défaut que les méthodes de fabrique statiques exposent sur la <xref:System.ServiceModel.Description.MetadataExchangeBindings> classe pour correspondre aux liaisons par défaut utilisées par les outils WCF, tels que Svcutil.exe. Vous pouvez également configurer des points de terminaison de métadonnées MEX à l’aide de votre propre liaison personnalisée.  
   
 ### <a name="http-get-metadata-endpoints"></a>Points de terminaison de métadonnées HTTP GET  
  Pour ajouter un point de terminaison de métadonnées à votre service qui répond aux requêtes HTTP/GET, affectez <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> à la propriété <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> sur `true`. Vous pouvez également configurer un point de terminaison de métadonnées qui utilise HTTPS en affectant <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> à la propriété <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> sur `true`.  

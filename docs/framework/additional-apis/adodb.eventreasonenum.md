@@ -1,5 +1,6 @@
 ---
-title: Énumération EventReason (adodb)
+title: Énumération EventReason (ADODB)
+description: Obtenir des informations sur l’énumération EventReason dans .NET. Cette énumération se trouve dans l’espace de noms ADODB et l’assembly ADODB (dans la bibliothèque de adodb.dll).
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,14 +10,14 @@ api_location:
 - adodb.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 0d02fb683335cf0db7d73d9d3ea545e65ca384a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bbb616625777e0193af4da10770502da904f401a
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675466"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989896"
 ---
-# <a name="eventreason-enumeration"></a>Énumération de EventReason
+# <a name="eventreason-enumeration"></a>Énumération EventReason
 
 ```csharp
 [GuidAttribute("00000531-0000-0010-8000-00AA006D2EA4")]
@@ -25,7 +26,7 @@ public enum EventReasonEnum
 
 ## <a name="members"></a>Membres
 
-| Nom de membre  | Description  |
+| Nom du membre  | Description  |
 |---|---|
 |adRsnAddNew  |   |
 |adRsnDelete  |   |
@@ -42,8 +43,8 @@ public enum EventReasonEnum
 | adRsnMovePrevious  |   |
 | adRsnMoveLast  |   |
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** `adodb`
+**Espace de noms :** `adodb`
 
-**Assembly :** adodb (dans adodb.dll)
+**Assembly :** ADODB (en adodb.dll)

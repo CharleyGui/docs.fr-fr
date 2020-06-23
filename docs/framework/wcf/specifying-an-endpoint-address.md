@@ -1,5 +1,6 @@
 ---
 title: Spécification d'une adresse de point de terminaison
+description: En savoir plus sur une adresse de point de terminaison, une partie d’un ServiceEndpoint dans WCF. Toutes les communications avec un service WCF se produisent par le biais de ses points de terminaison.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-ms.openlocfilehash: 5ec6432d2f9cc7bf8619f59bad470c6b2cb190e0
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: e1bd9e5a27d1bc86d2d3e04ee82221a27a4e1fa8
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441017"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245982"
 ---
 # <a name="specifying-an-endpoint-address"></a>Spécification d'une adresse de point de terminaison
 
@@ -42,13 +43,13 @@ Lorsque vous hébergez avec les services IIS, vous ne gérez pas l'instance <xr
 
 ## <a name="defining-endpoint-addresses-in-configuration"></a>Définition des adresses de point de terminaison dans la configuration
 
-Pour définir un point de terminaison dans un fichier de configuration, utilisez l’élément de [ \< point de terminaison>](../configure-apps/file-schema/wcf/endpoint-element.md) .
+Pour définir un point de terminaison dans un fichier de configuration, utilisez l' [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md) élément.
 
 [!code-xml[S_UEHelloWorld#5](./snippets/specifying-an-endpoint-address/serviceapp2.config#5)]
 
-Lorsque la <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> méthode est appelée (autrement dit, lorsque l’application d’hébergement tente de démarrer le service), le système recherche un élément de [ \<>de service](../configure-apps/file-schema/wcf/service.md) avec un attribut de nom qui spécifie «UE. Samples. HelloService». Si l’élément de [ \<>du service](../configure-apps/file-schema/wcf/service.md) est trouvé, le système charge la classe spécifiée et crée des points de terminaison à l’aide des définitions de point de terminaison fournies dans le fichier de configuration. Ce mécanisme vous permet de charger et de démarrer un service avec deux lignes de code tout en laissant la liaison et les informations d’adressage hors de votre code. L'avantage de cette approche est que ces modifications peuvent être apportées sans devoir recompiler ou redéployer l'application.
+Lorsque la <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> méthode est appelée (autrement dit, lorsque l’application d’hébergement tente de démarrer le service), le système recherche un [\<service>](../configure-apps/file-schema/wcf/service.md) élément avec un attribut de nom qui spécifie «UE. Samples. HelloService». Si l' [\<service>](../configure-apps/file-schema/wcf/service.md) élément est trouvé, le système charge la classe spécifiée et crée des points de terminaison à l’aide des définitions de point de terminaison fournies dans le fichier de configuration. Ce mécanisme vous permet de charger et de démarrer un service avec deux lignes de code tout en laissant la liaison et les informations d’adressage hors de votre code. L'avantage de cette approche est que ces modifications peuvent être apportées sans devoir recompiler ou redéployer l'application.
 
-Les en-têtes facultatifs sont déclarés dans les [ \< en-têtes>](../configure-apps/file-schema/wcf/headers-element.md). Voici un exemple des éléments utilisés pour spécifier des points de terminaison pour un service dans un fichier de configuration qui fait la distinction entre deux en-têtes : les clients « or » de `http://tempuri1.org/` et les clients « standard » de `http://tempuri2.org/` . Le client qui appelle ce service doit disposer des [ \< en-têtes appropriés>](../configure-apps/file-schema/wcf/headers-element.md) dans son fichier de configuration.
+Les en-têtes facultatifs sont déclarés dans un [\<headers>](../configure-apps/file-schema/wcf/headers-element.md) . Voici un exemple des éléments utilisés pour spécifier des points de terminaison pour un service dans un fichier de configuration qui fait la distinction entre deux en-têtes : les clients « or » de `http://tempuri1.org/` et les clients « standard » de `http://tempuri2.org/` . Le client qui appelle ce service doit disposer de la appropriée [\<headers>](../configure-apps/file-schema/wcf/headers-element.md) dans son fichier de configuration.
 
 [!code-xml[S_UEHelloWorld#1](./snippets/specifying-an-endpoint-address/serviceapp.config#1)]
 
@@ -91,4 +92,4 @@ Si des points de terminaison sont fournis explicitement, les points de terminais
 - <xref:System.ServiceModel.EndpointAddress>
 - [Identité du service et authentification](./feature-details/service-identity-and-authentication.md)
 - [Vue d'ensemble de la création de points de terminaison](endpoint-creation-overview.md)
-- [Hébergement](./feature-details/hosting.md)
+- [Hosting](./feature-details/hosting.md)

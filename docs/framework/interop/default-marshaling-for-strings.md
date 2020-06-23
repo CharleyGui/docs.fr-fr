@@ -1,5 +1,6 @@
 ---
 title: Marshaling par défaut pour les chaînes
+description: Examinez le comportement de marshaling par défaut pour les chaînes d’interfaces, d’appel de code non managé, de structures & de mémoires tampons de chaînes de longueur fixe dans .NET.
 ms.date: 03/20/2019
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - strings, interop marshaling
 - interop marshaling, strings
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
-ms.openlocfilehash: 49f2d871a42db484e20f0bfc35634a0e8b959c2e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 440a49730f351b820cd68a741e79f94434f585c8
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123549"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904115"
 ---
 # <a name="default-marshaling-for-strings"></a>Marshaling par défaut pour les chaînes
 
@@ -27,7 +28,7 @@ Le tableau suivant montre les options de marshaling pour le type de données Str
 
 |Type d'énumération|Description du format non managé|
 |----------------------|-------------------------------------|
-|`UnmanagedType.BStr` (par défaut)|`BSTR` de style COM avec une longueur prédéfinie et des caractères Unicode.|
+|`UnmanagedType.BStr` (valeur par défaut)|`BSTR` de style COM avec une longueur prédéfinie et des caractères Unicode.|
 |`UnmanagedType.LPStr`|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
 |`UnmanagedType.LPWStr`|Pointeur vers un tableau de caractères Unicode terminé par un caractère null.|
 
@@ -88,7 +89,7 @@ Le tableau suivant répertorie les options de marshaling pour les chaînes quand
 |----------------------|-------------------------------------|
 |`UnmanagedType.AnsiBStr`|`BSTR` de style COM avec une longueur prédéfinie et des caractères ANSI.|
 |`UnmanagedType.BStr`|`BSTR` de style COM avec une longueur prédéfinie et des caractères Unicode.|
-|`UnmanagedType.LPStr` (par défaut)|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
+|`UnmanagedType.LPStr` (valeur par défaut)|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
 |`UnmanagedType.LPTStr`|Pointeur vers un tableau de caractères dépendant de la plateforme se terminant par un caractère Null.|
 |`UnmanagedType.LPUTF8Str`|Pointeur vers un tableau de caractères encodés UTF-8 terminé par un caractère null.|
 |`UnmanagedType.LPWStr`|Pointeur vers un tableau de caractères Unicode terminé par un caractère null.|
@@ -145,7 +146,7 @@ Les chaînes sont des membres valides de structures. Toutefois, les mémoires ta
 |Type d'énumération|Description du format non managé|
 |----------------------|-------------------------------------|
 |`UnmanagedType.BStr`|`BSTR` de style COM avec une longueur prédéfinie et des caractères Unicode.|
-|`UnmanagedType.LPStr` (par défaut)|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
+|`UnmanagedType.LPStr` (valeur par défaut)|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
 |`UnmanagedType.LPTStr`|Pointeur vers un tableau de caractères dépendant de la plateforme se terminant par un caractère Null.|
 |`UnmanagedType.LPUTF8Str`|Pointeur vers un tableau de caractères encodés UTF-8 terminé par un caractère null.|
 |`UnmanagedType.LPWStr`|Pointeur vers un tableau de caractères Unicode terminé par un caractère null.|
@@ -232,7 +233,7 @@ Dans certains cas, une mémoire tampon de caractères de longueur fixe doit êtr
 
 La solution consiste à passer une mémoire tampon <xref:System.Text.StringBuilder> comme argument plutôt que comme <xref:System.String>. Un `StringBuilder` peut être déréférencé et modifié par l'appelé à condition qu'il ne dépasse pas la capacité de `StringBuilder`. Il peut également être initialisé à une longueur fixe. Par exemple, si vous initialisez une mémoire tampon `StringBuilder` avec une capacité de `N`, le marshaleur fournira une mémoire tampon de (`N`+ 1) caractères. Le +1 tient compte du fait que la chaîne non managée possède un terminateur Null, contrairement à `StringBuilder`.
 
-Par exemple, la fonction [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) API Windows (définie dans *winuser. h*) requiert que l’appelant passe une mémoire tampon de caractères de longueur fixe à laquelle la fonction écrit le texte de la fenêtre. `LpString` pointe vers une mémoire tampon allouée par l'appelant de taille `nMaxCount`. L'appelant est censé allouer la mémoire tampon et définir l'argument `nMaxCount` sur la taille de la mémoire tampon allouée. L’exemple suivant illustre la déclaration de fonction `GetWindowText` définie dans *winuser.h*.
+Par exemple, la [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) fonction API Windows (définie dans *winuser. h*) requiert que l’appelant passe une mémoire tampon de caractères de longueur fixe à laquelle la fonction écrit le texte de la fenêtre. `LpString` pointe vers une mémoire tampon allouée par l'appelant de taille `nMaxCount`. L'appelant est censé allouer la mémoire tampon et définir l'argument `nMaxCount` sur la taille de la mémoire tampon allouée. L’exemple suivant illustre la déclaration de fonction `GetWindowText` définie dans *winuser.h*.
 
 ```cpp
 int GetWindowText(
@@ -288,7 +289,7 @@ End Class
 ## <a name="see-also"></a>Voir aussi
 
 - [comportement de marshaling par défaut](default-marshaling-behavior.md)
-- [Marshaling des chaînes](marshaling-strings.md)
-- [Types blittable et non blittable](blittable-and-non-blittable-types.md)
+- [Marshaling de chaînes](marshaling-strings.md)
+- [types blittable et non blittable](blittable-and-non-blittable-types.md)
 - [Attributs directionnels](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [copie et épinglage](copying-and-pinning.md)

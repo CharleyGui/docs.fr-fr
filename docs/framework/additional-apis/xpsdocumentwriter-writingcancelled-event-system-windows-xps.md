@@ -1,5 +1,6 @@
 ---
-title: XpsDocumentWriter._WritingCancelled Event (System.Windows.Xps)
+title: XpsDocumentWriter. _WritingCancelled, événement (System. Windows. Xps)
+description: En savoir plus sur l’événement XpsDocumentWriter. _WritingCancelled, qui se produit lorsqu’une opération d’écriture XPS (XML Paper Specification) ou WriteAsync est annulée dans .NET.
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,18 +12,18 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 79f9d3c4163b05719d2296d30b87a35a4c282212
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e07085ed3573f01acdb63962ca868debb7b49fa
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155607"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903491"
 ---
-# <a name="xpsdocumentwriter_writingcancelled-event"></a>XpsDocumentWriter. \_WritingCancelled Event (en)
+# <a name="xpsdocumentwriter_writingcancelled-event"></a>XpsDocumentWriter. \_ Événement WritingCancelled
 
 Se produit lorsqu'une opération <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> ou <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> est annulée.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ``` csharp
 internal event WritingCancelledEventHandler _WritingCancelled
@@ -30,8 +31,8 @@ internal event WritingCancelledEventHandler _WritingCancelled
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**<xref:System.Windows.Xps>
+**Espace de noms :** <xref:System.Windows.Xps>
 
-**Assemblée:** System.Printing (in system.printing.dll)
+**Assembly :** System. Printing (en system.printing.dll)
 
-**.NET Versions du Cadre:** Disponible depuis 3.0
+**Versions de .NET Framework :** Disponible depuis 3,0

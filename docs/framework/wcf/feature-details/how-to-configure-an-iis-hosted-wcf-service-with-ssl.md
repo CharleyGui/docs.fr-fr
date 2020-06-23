@@ -1,13 +1,14 @@
 ---
 title: 'Procédure : configurer un service WCF hébergé par IIS avec SSL'
+description: Découvrez comment configurer un service WCF hébergé par IIS pour utiliser la sécurité de transport HTTP, qui requiert un certificat inscrit auprès d’IIS.
 ms.date: 03/30/2017
 ms.assetid: df2fe31f-a4bb-4024-92ca-b74ba055e038
-ms.openlocfilehash: fb3e87021c3dce1172250f33fd302916920af74d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8dc4692863d93e407a122c0ba93ae38323b8b213
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597226"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245256"
 ---
 # <a name="how-to-configure-an-iis-hosted-wcf-service-with-ssl"></a>Procédure : configurer un service WCF hébergé par IIS avec SSL
 Cette rubrique décrit comment installer un service WCF hébergé par IIS pour utiliser la sécurité de transport HTTP. La sécurité de transport HTTP requiert un certificat SSL à enregistrer avec IIS. Si vous n’avez pas de certificat SSL, vous pouvez utiliser IIS pour générer un certificat de test. Vous devez ensuite ajouter une liaison SSL au site web et configurer les propriétés d’authentification du site web. Enfin, vous devez configurer le service WCF pour utiliser HTTPS.  

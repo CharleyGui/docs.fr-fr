@@ -1,5 +1,6 @@
 ---
 title: Identité du service et authentification
+description: En savoir plus sur l’identité de point de terminaison d’un service, valeur générée à partir du service WSDL, que WCF utilise pour authentifier le service.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-ms.openlocfilehash: 6c12c3aadf53f9fddef2f0b0124994db15565cb5
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ae217b4a2c3432321c7ef2e663922a87b82acbea
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600372"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246569"
 ---
 # <a name="service-identity-and-authentication"></a>Identité du service et authentification
 L’identité du *point de terminaison* d’un service est une valeur générée à partir du service Web Services Description Language (WSDL). Cette valeur, propagée à tout client, est utilisée pour authentifier le service. Une fois que le client a initialisé une communication à un point de terminaison et le service s'authentifie au client, le client compare la valeur de l'identité du point de terminaison avec la valeur réelle que le processus d'authentification du point de terminaison a retournée. Si elles correspondent, le client est assuré qu'il a contacté le point de terminaison du service attendu. Cela fonctionne comme une protection contre le *phishing* en empêchant un client d’être redirigé vers un point de terminaison hébergé par un service malveillant.  
@@ -32,7 +33,7 @@ L’identité du *point de terminaison* d’un service est une valeur générée
   
  Le traitement de l'identité sur le client est analogue à l'authentification du client sur le service. Un service sécurisé n'exécute pas de code jusqu'à ce que les informations d'identification du client aient été authentifiées. De la même façon, le client n'envoie pas de messages au service jusqu'à ce que les informations d'identification du service aient été authentifiées sur la base de ce qui est déjà connu via métadonnées du service.  
   
- La propriété <xref:System.ServiceModel.EndpointAddress.Identity%2A> de la classe <xref:System.ServiceModel.EndpointAddress> représente l'identité du service appelé par le client. Le service publie <xref:System.ServiceModel.EndpointAddress.Identity%2A> dans ses métadonnées. Lorsque le développeur client exécute l' [outil ServiceModel Metadata Utility (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) sur le point de terminaison de service, la configuration générée contient la valeur de la propriété du service <xref:System.ServiceModel.EndpointAddress.Identity%2A> . L’infrastructure WCF (si elle est configurée avec la sécurité) vérifie que le service possède l’identité spécifiée.  
+ La propriété <xref:System.ServiceModel.EndpointAddress.Identity%2A> de la classe <xref:System.ServiceModel.EndpointAddress> représente l'identité du service appelé par le client. Le service publie <xref:System.ServiceModel.EndpointAddress.Identity%2A> dans ses métadonnées. Lorsque le développeur client exécute l' [outil ServiceModel Metadata Utility (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) sur le point de terminaison de service, la configuration générée contient la valeur de la propriété du service <xref:System.ServiceModel.EndpointAddress.Identity%2A> . L’infrastructure WCF (si elle est configurée avec la sécurité) vérifie que le service possède l’identité spécifiée.  
   
 > [!IMPORTANT]
 > Les métadonnées contiennent l'identité attendue du service, il est par conséquent recommandé d'exposer les métadonnées du service de manière sécurisée, par exemple, en créant un point de terminaison HTTPS. Pour plus d’informations, consultez [Comment : sécuriser des points de terminaison de métadonnées](how-to-secure-metadata-endpoints.md).  
@@ -64,7 +65,7 @@ L’identité du *point de terminaison* d’un service est une valeur générée
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
   
 ## <a name="specifying-identity-at-the-client"></a>Spécification de l'identité au client  
- Au moment du design, un développeur client utilise généralement l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer la configuration du client. Le fichier de configuration généré (prévu pour une utilisation par le client) contient l'identité du serveur. Par exemple, le code suivant est généré à partir d'un service qui spécifie une identité DNS, comme illustré dans l'exemple précédent. Notez que la valeur de l'identité du point de terminaison du client correspond à celle du service. Dans ce cas, lorsque le client reçoit les informations d'identification Windows (Kerberos) pour le service, il s'attend à ce que la valeur soit `contoso.com`.  
+ Au moment du design, un développeur client utilise généralement l' [outil ServiceModel Metadata Utility (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer la configuration du client. Le fichier de configuration généré (prévu pour une utilisation par le client) contient l'identité du serveur. Par exemple, le code suivant est généré à partir d'un service qui spécifie une identité DNS, comme illustré dans l'exemple précédent. Notez que la valeur de l'identité du point de terminaison du client correspond à celle du service. Dans ce cas, lorsque le client reçoit les informations d'identification Windows (Kerberos) pour le service, il s'attend à ce que la valeur soit `contoso.com`.  
 
  Si, au lieu de Windows, le service spécifie un certificat pour le type d'information d'identification du client, alors, la propriété DNS du certificat est supposée être la valeur `contoso.com`. (Ou si la propriété DNS est `null`, le nom de sujet du certificat doit être `contoso.com`.)  
   

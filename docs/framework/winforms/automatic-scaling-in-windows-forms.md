@@ -1,16 +1,17 @@
 ---
 title: Mise à l’échelle automatique
+description: En savoir plus sur la façon dont la mise à l’échelle automatique permet d’afficher correctement un formulaire et ses contrôles, conçus sur un ordinateur, sur un autre ordinateur.
 ms.date: 06/15/2017
 helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-ms.openlocfilehash: 96dbbb5ed20027e25f1bde89748710766ec06506
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 93d6b9097c85d7fa7ca88b405ee3d3654e51304b
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76732377"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903686"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Mise à l’échelle automatique dans Windows Forms
 
@@ -40,13 +41,13 @@ Les versions 1,0 et 1,1 du .NET Framework pris en charge la mise à l’échelle
 
 Même si ce mécanisme était suffisant dans la plupart des cas, il souffrait des limitations suivantes :
 
-- Étant donné que la propriété <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> représente la taille de police de base sous forme de valeurs entières, des erreurs d’arrondi apparaissent clairement quand un formulaire passe par plusieurs résolutions.
+- Étant donné que la <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> propriété représente la taille de police de base sous forme de valeurs entières, des erreurs d’arrondi apparaissent clairement quand un formulaire passe par plusieurs résolutions.
 
 - La mise à l'échelle automatique était implémentée uniquement dans la classe <xref:System.Windows.Forms.Form>, et non dans la classe <xref:System.Windows.Forms.ContainerControl>. Ainsi, les contrôles utilisateur étaient mis à l’échelle correctement uniquement quand le contrôle utilisateur était conçu à la même résolution que le formulaire et quand il était placé dans le formulaire au moment du design.
 
 - Les formulaires et leurs contrôles enfants pouvaient uniquement être conçus simultanément par plusieurs développeurs si la résolution de leurs ordinateurs était identique. De même, cela rendait l’héritage d’un formulaire dépendant de la résolution associée au formulaire parent.
 
-- Il n’est pas compatible avec les gestionnaires de mise en page plus récents introduits avec la version 2,0 de .NET Framework, tels que <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windows.Forms.TableLayoutPanel>.
+- Il n’est pas compatible avec les gestionnaires de mise en page plus récents introduits avec la version 2,0 de .NET Framework, tels que <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windows.Forms.TableLayoutPanel> .
 
 - Il ne prenait pas en charge la mise à l’échelle basée directement sur la résolution d’affichage requise pour la compatibilité avec le .NET Compact Framework.
 

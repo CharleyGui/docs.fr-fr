@@ -1,15 +1,16 @@
 ---
 title: <wsHttpBinding>
+description: Définit une liaison HTTP sécurisée, fiable et interopérable adaptée aux contrats de service non duplex, qui implémente WS-Reliable Messaging et WS-Security.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - wsHttpBinding Element
 ms.assetid: 0eee8ced-ad68-427d-b95a-97260e98deed
-ms.openlocfilehash: a71ad2a2279eabbcf917df58d7bedec0e728f9e5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d603f699145622cb1b70ecf99ea542572e841eac
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74140396"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243982"
 ---
 # \<wsHttpBinding>
 Définit une liaison sécurisée, fiable, interopérable adaptée aux contrats de service non duplex. La liaison implémente les spécifications suivantes : WS-ReliableMessaging pour la fiabilité et WS-Security pour la sécurité et l'authentification des messages. Le protocole de transport est HTTP et l'encodage de message est Text/XML.  
@@ -19,7 +20,7 @@ Définit une liaison sécurisée, fiable, interopérable adaptée aux contrats d
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<wsHttpBinding>**  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```xml  
 <wsHttpBinding>

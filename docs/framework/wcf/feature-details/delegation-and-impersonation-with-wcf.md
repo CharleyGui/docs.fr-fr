@@ -1,5 +1,6 @@
 ---
 title: Délégation et emprunt d'identité avec WCF
+description: Découvrez les méthodes d’emprunt d’identité et de délégation que WCF utilise pour limiter l’accès client aux ressources d’un domaine de service.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: e491925fdbe8d44df8e0c64b563eb92569453e35
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7f8d3695a36a43ca6bf796b141c07f6d2d088354
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599254"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245074"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Délégation et emprunt d'identité avec WCF
 L'*emprunt d'identité* est une technique courante utilisée par les services pour restreindre l'accès du client aux ressources d'un domaine de service. Les ressources de domaine de service peuvent être des ressources d'ordinateur, telles que des fichiers locaux (emprunt d'identité), ou une ressource sur un autre ordinateur, tel qu'un partage de fichiers (délégation). Pour obtenir un exemple d'application, consultez [Impersonating the Client](../samples/impersonating-the-client.md). Pour obtenir un exemple sur l’utilisation de l’emprunt d’identité, consultez [How to: Impersonate a Client on a Service](../how-to-impersonate-a-client-on-a-service.md).  
@@ -118,8 +119,8 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
 |Identification|n/a|n/a|Identification|  
 |Emprunt d'identité|Oui|n/a|Emprunt d'identité|  
 |Emprunt d'identité|Non|n/a|Identification|  
-|Delegation|Oui|Oui|Delegation|  
-|Delegation|Oui|Non|Emprunt d'identité|  
+|Delegation|Yes|Yes|Delegation|  
+|Delegation|Yes|No|Emprunt d'identité|  
 |Delegation|Non|n/a|Identification|  
   
 ## <a name="impersonation-level-obtained-from-user-name-credentials-and-cached-token-impersonation"></a>Niveau d'emprunt d'identité obtenu à partir des informations d'identification de nom d'utilisateur et emprunt d'identité avec jeton mis en cache  
@@ -127,16 +128,16 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
   
 |`AllowedImpersonationLevel`|Le Service a `SeImpersonatePrivilege`|Le Service et le client sont capables de délégation|Jeton `ImpersonationLevel`mis en cache|  
 |---------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|n/a|Oui|Oui|Delegation|  
-|n/a|Oui|Non|Emprunt d'identité|  
+|n/a|Yes|Yes|Delegation|  
+|n/a|Yes|No|Emprunt d'identité|  
 |n/a|Non|n/a|Identification|  
   
 ## <a name="impersonation-level-obtained-from-s4u-based-impersonation"></a>Niveau d'emprunt d'identité obtenu à partir de l'emprunt d'identité basé sur S4U  
   
 |Le Service a `SeTcbPrivilege`|Le Service a `SeImpersonatePrivilege`|Le Service et le client sont capables de délégation|Jeton `ImpersonationLevel`mis en cache|  
 |----------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|Oui|Oui|n/a|Emprunt d'identité|  
-|Oui|Non|n/a|Identification|  
+|Yes|Oui|n/a|Emprunt d'identité|  
+|Yes|Non|n/a|Identification|  
 |Non|n/a|n/a|Identification|  
   
 ## <a name="mapping-a-client-certificate-to-a-windows-account"></a>Mappage d'un certificat client à un compte Windows  
@@ -180,8 +181,8 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 |Niveau d'emprunt d'identité|Le service peut effectuer une délégation interprocessus|Le service peut effectuer une délégation sur plusieurs ordinateurs|  
 |-------------------------|---------------------------------------------------|---------------------------------------------------|  
 |<xref:System.Security.Principal.TokenImpersonationLevel.Identification>|Non|Non|  
-|<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>|Oui|Non|  
-|<xref:System.Security.Principal.TokenImpersonationLevel.Delegation>|Oui|Oui|  
+|<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>|Oui|No|  
+|<xref:System.Security.Principal.TokenImpersonationLevel.Delegation>|Oui|Yes|  
   
  L'exemple de code suivant montre comment utiliser la délégation.  
   

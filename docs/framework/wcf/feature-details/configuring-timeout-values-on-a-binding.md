@@ -1,13 +1,14 @@
 ---
 title: configuration de valeurs du délai d'attente sur une liaison
+description: Apprenez à gérer les paramètres de délai d’attente pour les liaisons WCF afin d’améliorer les performances, la facilité d’utilisation et la sécurité de votre service.
 ms.date: 03/30/2017
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-ms.openlocfilehash: 968e80bbd4b50d72d089a325f8e3fe498de2eac2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c41824a242d9b42290183cd70b9acf5b8ee59e6b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185290"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245113"
 ---
 # <a name="configuring-timeout-values-on-a-binding"></a>configuration de valeurs du délai d'attente sur une liaison
 Il existe plusieurs paramètres de délai d'attente disponibles dans les liaisons WCF. Définir ces paramètres de délai d'attente correctement peut non seulement améliorer les performances de votre service, mais également jouer un rôle dans la facilité d'utilisation et la sécurité de ce dernier. Les délais d'attente suivants sont disponibles sur les liaisons WCF :  
@@ -79,13 +80,13 @@ public static void Main()
   
 1. SendTimeout – utilisé pour initialiser OperationTimeout, qui détermine le processus entier pour envoyer un message, y compris recevoir un message de réponse pour une opération de service de demande/réponse. Ce délai d'attente s'applique également lors de l'envoi des messages de réponse d'une méthode du contrat de rappel.  
   
-2. OpenTimeout - utilisé lors de l’ouverture des canaux lorsqu’aucune valeur de délai d’attente explicite n’est spécifiée.  
+2. OpenTimeout : utilisé lors de l’ouverture de canaux quand aucune valeur de délai d’attente explicite n’est spécifiée.  
   
-3. CloseTimeout - utilisé lors de la fermeture des canaux lorsqu’aucune valeur de délai d’attente explicite n’est spécifiée.  
+3. CloseTimeout : utilisé lors de la fermeture des canaux quand aucune valeur de délai d’attente explicite n’est spécifiée.  
   
-4. RecevoirTimeout - n’est pas utilisé.  
+4. ReceiveTimeout – n’est pas utilisé.  
   
-### <a name="service-side-timeouts"></a>Temps d’arrêt côté service  
+### <a name="service-side-timeouts"></a>Délais d’attente côté service  
  Du côté service :  
   
 1. SendTimeout, OpenTimeout, CloseTimeout sont les mêmes que sur le client.  

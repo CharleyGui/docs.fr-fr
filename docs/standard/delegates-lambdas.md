@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: 43e896bfe267299d3b0cb12a8f71e42fe2c87a88
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 184c9f61fd8456b22e8ecb262c131793160b49b0
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280788"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244008"
 ---
 # <a name="delegates-and-lambdas"></a>Délégués et expressions lambda
 
@@ -108,7 +108,7 @@ public class Program
 
 Comme vous pouvez le voir, le corps du délégué n’est qu’un ensemble d’expressions, comme tout autre délégué. Mais au lieu d’être une définition distincte, nous l’avons introduite _ad hoc_ dans notre appel à la <xref:System.Collections.Generic.List%601.FindAll%2A?displayProperty=nameWithType> méthode.
 
-Toutefois, même avec cette approche, nous avons encore beaucoup de code inutile. C’est là que les *expressions lambda* interviennent. Les expressions lambda, ou simplement des « lambdas », ont été introduites en C# 3,0 comme un des blocs de construction de base de LINQ (Language Integrated Query). Il s’agit simplement d’une syntaxe plus pratique pour l’utilisation des délégués. Elles déclarent une signature et un corps de méthode, mais n’ont pas d’identité formelle propre, sauf si elles sont assignées à un délégué. Contrairement aux délégués, elles peuvent être directement affectées comme côté gauche de l’inscription d’un événement, ou dans plusieurs clauses et méthodes LINQ.
+Toutefois, même avec cette approche, nous avons encore beaucoup de code inutile. C’est là que les *expressions lambda* interviennent. Les expressions lambda, ou simplement des « lambdas », ont été introduites en C# 3,0 comme un des blocs de construction de base de LINQ (Language Integrated Query). Il s’agit simplement d’une syntaxe plus pratique pour l’utilisation des délégués. Elles déclarent une signature et un corps de méthode, mais n’ont pas d’identité formelle propre, sauf si elles sont assignées à un délégué. Contrairement aux délégués, ils peuvent être directement assignés comme partie droite de l’inscription des événements ou dans différentes clauses et méthodes LINQ.
 
 Dans la mesure où une expression lambda est simplement une autre façon de spécifier un délégué, nous pouvons réécrire l’exemple ci-dessus pour utiliser une expression lambda au lieu d’un délégué anonyme.
 

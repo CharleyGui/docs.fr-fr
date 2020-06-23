@@ -8,22 +8,23 @@ helpviewer_keywords:
 - dynamic properties
 - user preferences [Windows Forms], tracking
 ms.assetid: 0dd8bca5-a6bf-4ac4-8eec-5725d08b38dc
-ms.openlocfilehash: 369495322328350bc06827b87598160469d864bb
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 72a15736fd21d1d626f88e728d70b7dd7ee6768f
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307057"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990180"
 ---
 # <a name="application-settings-overview"></a>Vue d'ensemble des paramètres d'application
-Cette rubrique explique comment créer et stocker des données de paramètres pour le compte de votre application et de vos utilisateurs.
+
+Cet article explique comment créer et stocker des données de paramètres pour le compte de votre application et de vos utilisateurs.
 
  La fonctionnalité Paramètres des applications de Windows Forms simplifie la création, le stockage et la gestion des applications personnalisées et des préférences utilisateur sur l’ordinateur client. Avec les paramètres des applications Windows Forms, vous pouvez stocker non seulement des données d'application telles que des chaînes de connexion de base de données, mais également des données spécifiques à l'utilisateur, telles que les préférences des applications utilisateur. À l'aide de Visual Studio ou de code managé personnalisé, vous pouvez créer de nouveaux paramètres, les lire et écrire sur disque, les lier à des propriétés sur vos formulaires et valider les données des paramètres avant le chargement et l'enregistrement.
 
  Les paramètres d’application permettent aux développeurs d’enregistrer l’État dans leur application à l’aide de très peu de code personnalisé, et remplacent les propriétés dynamiques dans les versions précédentes du .NET Framework. Les paramètres des applications contiennent de nombreuses améliorations par rapport aux propriétés dynamiques, qui sont en lecture seule, à liaison tardive et nécessitent davantage de programmation personnalisée. Les classes de propriétés dynamiques ont été conservées dans .NET Framework 2,0, mais il s’agit simplement de classes de Shell qui encapsulent de manière dynamique les classes de paramètres d’application.
 
 ## <a name="what-are-application-settings"></a>Présentation des paramètres d'application
- Vos applications Windows Forms nécessitent souvent des données critiques pour l'exécution de l'application, mais que vous ne souhaitez pas inclure directement dans le code de l'application. Si votre application utilise un service web ou un serveur de bases de données, vous souhaiterez peut-être stocker ces informations dans un fichier distinct, pour pouvoir le modifier à l'avenir sans recompilation. De même, vos applications peuvent nécessiter le stockage des données spécifiques à l'utilisateur actuel. La plupart des applications, par exemple, offrent des préférences utilisateur qui permettent de personnaliser leur apparence et leur comportement.
+ Vos applications Windows Forms requièrent souvent des données qui sont essentielles à l’exécution de l’application, mais que vous ne souhaitez pas inclure directement dans le code de l’application. Si votre application utilise un service Web ou un serveur de base de données, vous souhaiterez peut-être stocker ces informations dans un fichier distinct, afin de pouvoir les modifier ultérieurement sans recompiler. De même, vos applications peuvent nécessiter le stockage des données spécifiques à l'utilisateur actuel. La plupart des applications, par exemple, offrent des préférences utilisateur qui permettent de personnaliser leur apparence et leur comportement.
 
  Les paramètres d'application répondent à ces deux besoins en fournissant un mécanisme simple de stockage des paramètres de portée application et de portée utilisateur sur l'ordinateur client. Avec Visual Studio ou un éditeur de code, vous définissez un paramètre pour une propriété donnée en spécifiant son nom, son type de données et sa portée (application ou utilisateur). Vous pouvez même placer des paramètres connexes dans des groupes nommés pour faciliter leur utilisation et leur lisibilité. Une fois définis, ces paramètres sont conservés et lus en mémoire automatiquement au moment de l'exécution. Une architecture enfichable permet de modifier le mécanisme de persistance, mais par défaut le système de fichiers local est utilisé.
 

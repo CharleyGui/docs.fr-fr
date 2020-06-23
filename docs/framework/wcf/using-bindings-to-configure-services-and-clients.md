@@ -1,15 +1,16 @@
 ---
 title: Utilisation de liaisons pour configurer des services et des clients
+description: Les liaisons contiennent des informations de configuration utilisées par les clients ou services WFC. Découvrez comment définir des liaisons et comment spécifier une liaison pour un point de terminaison de service.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-ms.openlocfilehash: dd83072d3a1c76279fcc00ea5b0a4a41e278e10a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 60db37d4381191314e9d5588dd61015a7078e84d
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321511"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245932"
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>Utilisation de liaisons pour configurer des services et des clients
 Les liaisons sont des objets qui spécifient les détails de communication requis pour se connecter à un point de terminaison. Plus spécifiquement, les liaisons contiennent des informations de configuration utilisées pour créer l’exécution du client ou du service en définissant les caractéristiques des transports, les formats de transmission (encodage de message) et les protocoles à utiliser pour le point de terminaison ou canal client respectif. Pour créer un service de Windows Communication Foundation (WCF) opérationnel, chaque point de terminaison dans le service requiert une liaison. Cette rubrique explique ce que sont les liaisons, comment elles sont définies et comment une liaison particulière est spécifiée pour un point de terminaison.  
@@ -33,14 +34,14 @@ Les liaisons sont des objets qui spécifient les détails de communication requi
   
 - <xref:System.ServiceModel.WSHttpBinding> : liaison de protocole HTTP adaptée à la connexion à des points de terminaison conformes aux protocoles de spécification des services Web.  
   
-- <xref:System.ServiceModel.NetNamedPipeBinding> : utilise les technologies d’encodage binaire .NET et de tramage conjointement avec le transport de canal nommé Windows pour se connecter à d’autres points de terminaison WCF sur le même ordinateur.  
+- <xref:System.ServiceModel.NetNamedPipeBinding>: Utilise les technologies d’encodage binaire .NET et de tramage conjointement avec le transport de canal nommé Windows pour se connecter à d’autres points de terminaison WCF sur le même ordinateur.  
   
-- <xref:System.ServiceModel.NetMsmqBinding> : utilise les technologies d’encodage binaire .NET et de tramage conjointement avec le Message Queuing (également appelé MSMQ) pour créer des connexions de message en file d’attente avec d’autres points de terminaison WCF.  
+- <xref:System.ServiceModel.NetMsmqBinding>: Utilise les technologies d’encodage binaire .NET et de tramage conjointement avec le Message Queuing (également appelé MSMQ) pour créer des connexions de message en file d’attente avec d’autres points de terminaison WCF.  
   
  Pour obtenir la liste complète des liaisons fournies par le système, avec des descriptions, consultez [liaisons fournies par le système](system-provided-bindings.md).  
   
 ## <a name="custom-bindings"></a>Liaisons personnalisées  
- Si la collection de liaisons fournie par le système n'a pas la combinaison correcte de fonctionnalités requises par une application de service, vous pouvez créer une liaison <xref:System.ServiceModel.Channels.CustomBinding>. Pour plus d’informations sur les éléments d’une liaison <xref:System.ServiceModel.Channels.CustomBinding>, consultez [\<customBinding >](../configure-apps/file-schema/wcf/custombinding.md) et [liaisons personnalisées](./extending/custom-bindings.md).  
+ Si la collection de liaisons fournie par le système n'a pas la combinaison correcte de fonctionnalités requises par une application de service, vous pouvez créer une liaison <xref:System.ServiceModel.Channels.CustomBinding>. Pour plus d’informations sur les éléments d’une <xref:System.ServiceModel.Channels.CustomBinding> liaison, consultez [\<customBinding>](../configure-apps/file-schema/wcf/custombinding.md) et [liaisons personnalisées](./extending/custom-bindings.md).  
   
 ## <a name="using-bindings"></a>Utilisation des liaisons  
  L’utilisation des liaisons implique deux étapes simples :  
@@ -58,7 +59,7 @@ Les liaisons sont des objets qui spécifient les détails de communication requi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la création de points de terminaison](endpoint-creation-overview.md)
+- [Vue d'ensemble de la création de points de terminaison](endpoint-creation-overview.md)
 - [Guide pratique pour spécifier une liaison de service dans la configuration](how-to-specify-a-service-binding-in-configuration.md)
 - [Guide pratique pour spécifier une liaison de service dans le code](how-to-specify-a-service-binding-in-code.md)
 - [Guide pratique pour spécifier une liaison client dans la configuration](how-to-specify-a-client-binding-in-configuration.md)

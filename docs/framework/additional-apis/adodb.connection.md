@@ -1,5 +1,6 @@
 ---
-title: Interface de connexion (adodb)
+title: Interface de connexion (ADODB)
+description: Consultez les informations de référence sur l’interface de connexion dans .NET. Cette interface se trouve dans l’espace de noms ADODB et l’assembly ADODB (dans la bibliothèque de adodb.dll).
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - adodb.dll
 api_type:
 - Assembly
-ms.openlocfilehash: cb80fb7071398e07e1d86aa920fae1895ea34081
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e1889715b6cd11746056558b76e21f6226d4161f
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156205"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989944"
 ---
 # <a name="connection-interface"></a>Interface de connexion
 
@@ -26,6 +27,6 @@ public interface Connection : _Connection,
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**`adodb`
+**Espace de noms :** `adodb`
 
-**Assemblée:** adodb (en adodb.dll)
+**Assembly :** ADODB (en adodb.dll)

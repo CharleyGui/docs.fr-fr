@@ -1,5 +1,6 @@
 ---
 title: Utilisation de composants de service avec le Global Assembly Cache
+description: Utilisez les composants de service (composants COM+ de code managé) avec le Global Assembly Cache dans .NET. Vérifiez si les services CLR et COM+ peuvent gérer des composants non-GAC.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - serviced components, global assembly cache
 - global assembly cache, serviced components
 ms.assetid: 3423e5d9-234c-4571-8161-e35f6d130128
-ms.openlocfilehash: 99627cb14088f037c58bfa1eec72bd4f88d06011
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6b7371865b7b1cedda0ee03b2cc28c74b5c3da0b
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119766"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104475"
 ---
 # <a name="using-serviced-components-with-the-global-assembly-cache"></a>Utilisation de composants de service avec le Global Assembly Cache
 Les composants pris en charge (composants COM+ de code managé) doivent être placés dans le Global Assembly Cache. Dans certains scénarios, le Common Language Runtime et les services COM+ peuvent gérer des composants pris en charge qui ne sont pas dans le Global Assembly Cache ; dans d’autres scénarios, cela est impossible. Les scénarios suivants illustrent ce principe :  
@@ -25,5 +26,5 @@ Les composants pris en charge (composants COM+ de code managé) doivent être pl
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation d’assemblys et du Global Assembly Cache](working-with-assemblies-and-the-gac.md)
-- [Gacutil. exe (Outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)
+- [Utilisation d'assemblys et du Global Assembly Cache](working-with-assemblies-and-the-gac.md)
+- [Gacutil.exe (Outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)

@@ -1,5 +1,6 @@
 ---
-title: Énumération EventStatus (adodb)
+title: Énumération EventStatus (ADODB)
+description: Obtenir des informations sur l’énumération EventStatus dans .NET. Cette énumération se trouve dans l’espace de noms ADODB et l’assembly ADODB (dans la bibliothèque de adodb.dll).
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,14 +10,14 @@ api_location:
 - adodb.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 1eddac7f9b813ea76e8347deb6f4bd7548abe504
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7effa55efb104c9203e7051ef998b03ff3315e93
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706193"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989847"
 ---
-# <a name="eventstatus-enumeration"></a>Énumération de EventStatus
+# <a name="eventstatus-enumeration"></a>Énumération EventStatus
 
 ```csharp
 [GuidAttribute("00000530-0000-0010-8000-00AA006D2EA4")]
@@ -25,7 +26,7 @@ public enum EventStatusEnum
 
 ## <a name="members"></a>Membres
 
-| Nom de membre  | Description  |
+| Nom du membre  | Description  |
 |---|---|
 |adStatusOK  |   |
 |adStatusErrorsOccurred  |   |
@@ -34,8 +35,8 @@ public enum EventStatusEnum
 |adStatusCancel  |   |
 |adStatusUnwantedEvent  |   |
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** `adodb`
+**Espace de noms :** `adodb`
 
-**Assembly :** adodb (dans adodb.dll)
+**Assembly :** ADODB (en adodb.dll)

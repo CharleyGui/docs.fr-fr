@@ -1,13 +1,14 @@
 ---
 title: Service Trace Viewer Tool (SvcTraceViewer.exe)
+description: Utilisez Service Trace Viewer pour fusionner, afficher et filtrer les messages de trace dans le journal afin de pouvoir diagnostiquer, réparer et vérifier les problèmes de service WCF.
 ms.date: 03/30/2017
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-ms.openlocfilehash: 543b0e714343cdb8078861ceb31e4f8035e20afd
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 0ad6094965291a965346522688a8334abbd4e6b3
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321210"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244567"
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Service Trace Viewer Tool (SvcTraceViewer.exe)
 
@@ -17,7 +18,7 @@ L’outil Windows Communication Foundation (WCF) Service Trace Viewer vous aide 
 
 Les suivis de diagnostic vous fournissent des informations qui affichent ce qui arrive pendant le fonctionnement de votre application. Comme son nom l'indique, il permet de suivre le fonctionnement de la source à la destination, ainsi qu'au niveau de points intermédiaires.
 
-Vous pouvez configurer le suivi à l’aide du fichier de configuration de l’application : Web. config pour les applications hébergées sur le Web ou *appname*. config pour les applications auto-hébergées. Voici un exemple :
+Vous pouvez configurer le suivi à l’aide du fichier de configuration de l’application, soit Web.config pour les applications hébergées sur le Web, soit *appname*. config pour les applications auto-hébergées. Voici un exemple :
 
 ```xml
 <system.diagnostics>
@@ -36,7 +37,7 @@ Vous pouvez configurer le suivi à l’aide du fichier de configuration de l’a
 </system.diagnostics>
 ```
 
-Dans cet exemple, le nom et le type de l'écouteur de suivi sont spécifiés. L'écouteur est nommé `sdt` et l'écouteur de suivi standard de .NET Framework (System.Diagnostics.XmlWriterTraceListener) est ajouté comme type. L’attribut `initializeData` est utilisé pour définir le nom du fichier journal de cet écouteur sur `SdrConfigExample.e2e`. Pour le fichier journal, vous pouvez substituer un chemin d'accès complet par un nom de fichier simple.
+Dans cet exemple, le nom et le type de l'écouteur de suivi sont spécifiés. L'écouteur est nommé `sdt` et l'écouteur de suivi standard de .NET Framework (System.Diagnostics.XmlWriterTraceListener) est ajouté comme type. L' `initializeData` attribut est utilisé pour définir le nom du fichier journal de cet écouteur `SdrConfigExample.e2e` . Pour le fichier journal, vous pouvez substituer un chemin d'accès complet par un nom de fichier simple.
 
 Cet exemple crée un fichier dans le répertoire racine appelé SdrConfigExample.e2e. Lorsque vous utilisez la visionneuse de trace pour ouvrir le fichier comme décrit dans la section « ouverture et affichage des fichiers de trace WCF », vous pouvez voir tous les messages qui ont été envoyés.
 
@@ -44,16 +45,16 @@ Le niveau de suivi est contrôlé par le paramètre `switchValue`. Les niveaux d
 
 |Niveau de suivi|Description|
 |-----------------|-----------------|
-|Critical|-Journalise les entrées de journal des événements et les échecs rapides et les informations de corrélation de suivi. Les éléments suivants sont quelques exemples de l'utilisation du  niveau critique :<br />-Votre AppDomain s’est déroulé en raison d’une exception non gérée.<br />-Votre application ne démarre pas.<br />-Le message à l’origine de l’échec provient du processus MyApp. exe.|
+|Critique|-Journalise les entrées de journal des événements et les échecs rapides et les informations de corrélation de suivi. Les éléments suivants sont quelques exemples de l'utilisation du  niveau critique :<br />-Votre AppDomain s’est déroulé en raison d’une exception non gérée.<br />-Votre application ne démarre pas.<br />-Le message à l’origine de l’échec provient du processus MyApp.exe.|
 |Erreur|-Journalise toutes les exceptions. Vous pouvez utiliser le niveau Erreur dans les situations suivantes :<br />-Votre code s’est bloqué en raison d’une exception de cast non valide.<br />-Une exception « échec de la création du point de terminaison » est à l’origine de l’échec du démarrage de votre application.|
-|Warning|: Il existe une condition qui peut entraîner une erreur ou une défaillance critique. Vous pouvez utiliser ce niveau dans les situations suivantes :<br />-L’application reçoit davantage de demandes que ses paramètres de limitation le permet.<br />-La file d’attente de réception est à 98% de sa capacité configurée.|
-|Informations|-Les messages utiles pour la surveillance et le diagnostic de l’état du système, la mesure des performances ou le profilage sont générés. Vous pouvez utiliser ces informations pour la planification de capacité et la gestion des performances. Vous pouvez utiliser ce niveau dans les situations suivantes :<br />-Une erreur s’est produite après que le message a atteint le domaine d’application AppDomain et a été désérialisé.<br />-Une erreur s’est produite lors de la création de la liaison HTTP.|
-|Verbose|-Suivi au niveau du débogage pour le code utilisateur et la maintenance. Définissez ce niveau lorsque :<br />-Vous ne savez pas quelle méthode dans votre code a été appelée lorsque l’échec s’est produit.<br />-Un point de terminaison incorrect a été configuré et le service n’a pas pu démarrer car l’entrée dans le magasin de réservations est verrouillée.|
+|Avertissement|: Il existe une condition qui peut entraîner une erreur ou une défaillance critique. Vous pouvez utiliser ce niveau dans les situations suivantes :<br />-L’application reçoit davantage de demandes que ses paramètres de limitation le permet.<br />-La file d’attente de réception est à 98% de sa capacité configurée.|
+|Information|-Les messages utiles pour la surveillance et le diagnostic de l’état du système, la mesure des performances ou le profilage sont générés. Vous pouvez utiliser ces informations pour la planification de capacité et la gestion des performances. Vous pouvez utiliser ce niveau dans les situations suivantes :<br />-Une erreur s’est produite après que le message a atteint le domaine d’application AppDomain et a été désérialisé.<br />-Une erreur s’est produite lors de la création de la liaison HTTP.|
+|Commentaires|-Suivi au niveau du débogage pour le code utilisateur et la maintenance. Définissez ce niveau lorsque :<br />-Vous ne savez pas quelle méthode dans votre code a été appelée lorsque l’échec s’est produit.<br />-Un point de terminaison incorrect a été configuré et le service n’a pas pu démarrer car l’entrée dans le magasin de réservations est verrouillée.|
 |ActivityTracing|Transfert d'événements entre des activités de traitement et des composants.<br /><br /> Ce niveau permet aux administrateurs et aux développeurs de corréler des applications dans le même domaine d'application.<br /><br /> -Traces pour les limites d’activité : Start/Stop.<br />-Suivis pour les transferts.|
 
  Vous pouvez utiliser `add` pour indiquer les nom et type de l'écouteur de suivi à utiliser. Dans l'exemple de configuration, l'écouteur est nommé `sdt` et l'écouteur de suivi standard de .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) est ajouté comme type. Utilisez `initializeData` pour définir le nom du fichier journal de cet écouteur. Vous pouvez également remplacer un chemin qualifié complet par un nom de fichier simple.
 
-À partir de .NET Framework 4,8, les contrôles de zone de liste déroulante de certains thèmes à contraste élevé s’affichent dans la couleur correcte. Vous pouvez désactiver cette modification en supprimant le paramètre suivant dans le fichier *svcTraceViewer. exe. config* :
+À partir de .NET Framework 4,8, les contrôles de zone de liste déroulante de certains thèmes à contraste élevé s’affichent dans la couleur correcte. Vous pouvez désactiver cette modification en supprimant le paramètre suivant dans le fichier *svcTraceViewer.exe.config* :
 
 ```xml
 <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false" />
@@ -73,9 +74,9 @@ Service Trace Viewer prend en charge trois types de fichier :
 
  Service Trace Viewer permet d’ouvrir tout fichier de suivi pris en charge, d’ajouter et d’intégrer des fichiers de suivi supplémentaires ou d’ouvrir et de fusionner simultanément un groupe de fichiers de suivi.
 
-##### <a name="to-open-a-trace-file"></a>Pour ouvrir un fichier de suivi
+##### <a name="to-open-a-trace-file"></a>Pour ouvrir un fichier de trace
 
-1. Démarrez Service Trace Viewer à l’aide d’une fenêtre de commande pour accéder à votre emplacement d’installation WCF (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin), puis tapez `SvcTraceViewer.exe`.
+1. Démarrez Service Trace Viewer à l’aide d’une fenêtre de commande pour accéder à votre emplacement d’installation WCF (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin), puis tapez `SvcTraceViewer.exe` .
 
 > [!NOTE]
 > L'outil Service Trace Viewer peut être associé à deux types de fichier : .svclog et .stvproj. Vous pouvez utiliser deux paramètres dans la ligne de commande pour inscrire et supprimer l’inscription des extensions de fichier.
@@ -189,7 +190,7 @@ Pour développer ou réduire des transferts d‘activité
 4. Un « - » s’affiche à gauche de l’icône de transfert. Cliquez sur le signe « - » ou appuyez sur Ctrl et « - » pour réduire le transfert d’activité.
 
 > [!NOTE]
-> Lorsqu'une activité se compose de plusieurs transferts et que vous développez l'un des transferts, les activités entre l'activité racine et la nouvelle activité s'affichent. Ces nouvelles activités apparaissent sous forme réduite. Si vous souhaitez consulter les détails de ces activités, développez-les verticalement en cliquant sur l’icône de développement dans l’en-tête du graphique.
+>  Lorsqu'une activité se compose de plusieurs transferts et que vous développez l'un des transferts, les activités entre l'activité racine et la nouvelle activité s'affichent. Ces nouvelles activités apparaissent sous forme réduite. Si vous souhaitez consulter les détails de ces activités, développez-les verticalement en cliquant sur l’icône de développement dans l’en-tête du graphique.
 
 ###### <a name="expanding-or-collapsing-activities-vertically"></a>Développement ou réduction verticaux des activités
 
@@ -231,7 +232,7 @@ Le volet supérieur droit de Service Trace Viewer est le Volet Trace. Il répert
 
 Vous pouvez copier le code XML brut de la trace dans le presse-papiers en cliquant avec le bouton droit sur une trace et en sélectionnant **copier la trace dans le presse-papiers**.
 
-##### <a name="detail-pane"></a>Volet Détails
+##### <a name="detail-pane"></a>Volet d'informations
 
 Le volet gauche inférieur du Service Trace Viewer est le volet Détails. Il se compose de trois onglets pour afficher les détails de suivi.
 
@@ -291,11 +292,11 @@ Vous pouvez cliquer sur un suivi existant et créer un filtre en fonction de la 
 
 2. Cliquez sur le bouton **créer un filtre personnalisé** situé en haut du volet de suivi.
 
-3. Dans la boîte de dialogue qui s'affiche, entrez un nom pour votre filtre. Dans cet exemple, entrez `Thread ID`. Vous pouvez également fournir une description de votre filtre.
+3. Dans la boîte de dialogue qui s'affiche, entrez un nom pour votre filtre. Dans cet exemple, entrez `Thread ID` . Vous pouvez également fournir une description de votre filtre.
 
-4. L’arborescence sur la gauche affiche la structure de l’enregistrement de suivi que vous avez sélectionné lors de la première étape. Naviguez jusqu'à l'élément pour lequel vous souhaitez créer une condition. Dans cet exemple, accédez au ThreadID à localiser dans le nœud XPath : /E2ETraceEvent/System/Execution/@ThreadID. Double-cliquez sur l'attribut ThreadID dans l'arborescence. Cela crée à droite de la boîte de dialogue une expression pour l'attribut.
+4. L’arborescence sur la gauche affiche la structure de l’enregistrement de suivi que vous avez sélectionné lors de la première étape. Naviguez jusqu'à l'élément pour lequel vous souhaitez créer une condition. Dans cet exemple, accédez au ThreadID à localiser dans le nœud XPath : /E2ETraceEvent/System/Execution/@ThreadID . Double-cliquez sur l'attribut ThreadID dans l'arborescence. Cela crée à droite de la boîte de dialogue une expression pour l'attribut.
 
-5. Modifiez le champ de paramètre pour la condition ThreadID de None en « {0} ». Cette étape permet de configurer la valeur de ThreadID lorsque le filtre est appliqué (voir la section Comment appliquer un filtre). Vous pouvez définir jusqu'à quatre paramètres. Les conditions sont associées à l'aide de l'opérateur OR.
+5. Modifiez le champ de paramètre pour la condition ThreadID de None en « {0} ». Cette étape permet de configurer la valeur de ThreadID lorsque le filtre est appliqué (voir la section Comment appliquer un filtre). Vous pouvez définir jusqu'à quatre paramètres. Les conditions sont associées à l'aide de l'opérateur OR.
 
 6. Cliquez sur **OK** pour créer le filtre.
 
@@ -322,7 +323,7 @@ Une fois qu'un filtre personnalisé a été créé, il est accessible via la bar
 
 2. Cliquez sur **Filtrer maintenant**et observez le résultat de l’opération.
 
-Si votre filtre utilise plusieurs paramètres, entrez-les en utilisant « ; » comme séparateur dans le champ **Rechercher** . Par exemple, la chaîne suivante définit trois paramètres : '1;findValue;text'. La visionneuse applique « 1 » au paramètre {0} du filtre. 'findValue’et’text’sont appliqués à {1} et à {2}, respectivement.
+Si votre filtre utilise plusieurs paramètres, entrez-les en utilisant « ; » comme séparateur dans le champ **Rechercher** . Par exemple, la chaîne suivante définit trois paramètres : '1;findValue;text'. La visionneuse applique « 1 » au {0} paramètre du filtre. 'findValue’et’text’sont appliqués {1} respectivement à et {2} .
 
 ###### <a name="sharing-custom-filters"></a>Partage de filtres personnalisés
 
@@ -342,7 +343,7 @@ Pour exporter un filtre personnalisé :
 
 2. Dans la boîte de dialogue qui s'affiche, sélectionnez le filtre que vous souhaitez exporter.
 
-3. Cliquez sur le bouton **Exporter** .
+3. Cliquez sur le bouton **Exporter**.
 
 4. Spécifiez le nom et l’emplacement du fichier de définition de filtre personnalisé (. stvcf), puis cliquez sur le bouton **Enregistrer** .
 
@@ -451,45 +452,45 @@ La liste suivante répertorie les icônes que l’outil Service Trace Viewer uti
 
 |Icône|Description|
 |----------|-----------------|
-|![Suivi d’avertissement](./media/7457c4ed-8383-4ac7-bada-bcb27409da58.gif "7457c4ed-8383-4AC7-Bada-bcb27409da58")|Suivi d'avertissement : suivi émis au niveau avertissement|
-|![Suivi des erreurs](./media/7d908807-4967-4f6d-9226-d52125db69ca.gif "7d908807-4967-4f6d-9226-d52125db69ca")|Suivi d'erreur: suivi émis au niveau erreur.|
-|![Trace de démarrage de l’activité :](./media/8a728f91-5f80-4a95-afe8-0b6acd6e0317.gif "8a728f91-5f80-4a95-AFE8-0b6acd6e0317")|Suivi de démarrage d'activité : suivi qui marque le début d'une activité. Il contient le nom de l'activité. En tant que concepteur ou développeur d'applications, vous devez définir un suivi de démarrage d'activité par ID d'activité par processus ou thread.<br /><br /> Si l'ID d'activité est propagé à travers des sources de suivi pour la corrélation de suivis, vous pouvez consulter plusieurs démarrages pour le même ID d'activité (un par source de suivi). Le suivi de démarrage est émis si le suivi d'activités est activé pour la source de suivi.|
-|![Suivi d’arrêt d’activité](./media/a0493e95-653e-4af8-84a4-4d09a400bc31.gif "a0493e95-653e-4af8-84A4-4d09a400bc31")|Suivi d'arrêt d'activité : suivi qui marque la fin d'une activité. . Il contient le nom de l'activité. En tant que concepteur ou développeur d'applications, vous devez définir un suivi d'arrêt d'activité par ID d'activité par source de suivi. Aucun suivi de source de suivi n'apparaît après le suivi d'arrêt d'activité émis par la source de suivi, sauf si la granularité de l'heure du suivi n'est pas suffisamment réduite. Lorsque cela se produit, deux suivis portant la même heure, y compris un arrêt, peuvent être entrelacés lorsqu'ils sont affichés. Si l'ID d'activité est propagé à travers les sources de suivi pour la corrélation de suivis, vous pouvez consulter plusieurs arrêts pour le même ID d'activité (un par source de suivi). Le suivi d'arrêt est émis si le suivi d'activités est activé pour la source de suivi.|
-|![Suivi d’interruption d’activité](./media/6f7f4191-df2b-4592-8998-8379769e2d32.gif "6f7f4191-df2b-4592-8998-8379769e2d32")|Suivi d'interruption d'activité : suivi qui marque l'heure à laquelle une activité marque une pause. Aucun suivi n'est émis pendant l'interruption d'une activité, jusqu'à ce que l'activité reprenne. Une activité interrompue indique qu'aucun traitement ne parvient à cette activité au niveau de la source de suivi. Les suivis d'interruption/reprise sont utiles pour effecteur des profilages. Le suivi d'interruption est émis si le suivi d'activités est activé pour la source de suivi.|
-|![Suivi de l’activité reprendre la trace](./media/1060d9d2-c9c8-4e0a-9988-cdc2f7030f17.gif "1060d9d2-c9c8-4E0A-9988-cdc2f7030f17")|Suivi de reprise d'activité : suivi qui marque l'heure à laquelle une activité reprend après avoir été interrompue. Les suivis peuvent être émis de nouveau dans cette activité. Les suivis d'interruption/reprise sont utiles pour effecteur des profilages. Le suivi de reprise est émis si le suivi d'activités est activé pour la source de suivi.|
-|![Transférer](./media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-F362-4ae5-bb8d-9f6f3ca036a5")|Transfert : un suivi est émis lorsque le flux de contrôle logique est transféré d'une activité à une autre. L'activité dont provient le transfert peut continuer à fonctionner en parallèle de l'activité vers laquelle le transfert se dirige. Le suivi de transfert est émis si le suivi d'activités est activé pour la source de suivi.|
-|![Transfert à partir de](./media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-B344-4F36-a20d-195999bda741")|Transfert De : suivi qui définit un transfert d'une autre activité vers l'activité actuelle.|
+|![Suivi d'avertissement](./media/7457c4ed-8383-4ac7-bada-bcb27409da58.gif "7457c4ed-8383-4ac7-bada-bcb27409da58")|Suivi d'avertissement : suivi émis au niveau avertissement|
+|![Suivi d'erreur](./media/7d908807-4967-4f6d-9226-d52125db69ca.gif "7d908807-4967-4f6d-9226-d52125db69ca")|Suivi d'erreur: suivi émis au niveau erreur.|
+|![Suivi de démarrage d'activité :](./media/8a728f91-5f80-4a95-afe8-0b6acd6e0317.gif "8a728f91-5f80-4a95-afe8-0b6acd6e0317")|Suivi de démarrage d'activité : suivi qui marque le début d'une activité. Il contient le nom de l'activité. En tant que concepteur ou développeur d'applications, vous devez définir un suivi de démarrage d'activité par ID d'activité par processus ou thread.<br /><br /> Si l'ID d'activité est propagé à travers des sources de suivi pour la corrélation de suivis, vous pouvez consulter plusieurs démarrages pour le même ID d'activité (un par source de suivi). Le suivi de démarrage est émis si le suivi d'activités est activé pour la source de suivi.|
+|![Suivi d'arrêt d'activité](./media/a0493e95-653e-4af8-84a4-4d09a400bc31.gif "a0493e95-653e-4af8-84a4-4d09a400bc31")|Suivi d'arrêt d'activité : suivi qui marque la fin d'une activité. . Il contient le nom de l'activité. En tant que concepteur ou développeur d'applications, vous devez définir un suivi d'arrêt d'activité par ID d'activité par source de suivi. Aucun suivi de source de suivi n'apparaît après le suivi d'arrêt d'activité émis par la source de suivi, sauf si la granularité de l'heure du suivi n'est pas suffisamment réduite. Lorsque cela se produit, deux suivis portant la même heure, y compris un arrêt, peuvent être entrelacés lorsqu'ils sont affichés. Si l'ID d'activité est propagé à travers les sources de suivi pour la corrélation de suivis, vous pouvez consulter plusieurs arrêts pour le même ID d'activité (un par source de suivi). Le suivi d'arrêt est émis si le suivi d'activités est activé pour la source de suivi.|
+|![Suivi d'interruption d'activité](./media/6f7f4191-df2b-4592-8998-8379769e2d32.gif "6f7f4191-df2b-4592-8998-8379769e2d32")|Suivi d'interruption d'activité : suivi qui marque l'heure à laquelle une activité marque une pause. Aucun suivi n'est émis pendant l'interruption d'une activité, jusqu'à ce que l'activité reprenne. Une activité interrompue indique qu'aucun traitement ne parvient à cette activité au niveau de la source de suivi. Les suivis d'interruption/reprise sont utiles pour effecteur des profilages. Le suivi d'interruption est émis si le suivi d'activités est activé pour la source de suivi.|
+|![Suivi de reprise d'activité](./media/1060d9d2-c9c8-4e0a-9988-cdc2f7030f17.gif "1060d9d2-c9c8-4E0A-9988-cdc2f7030f17")|Suivi de reprise d'activité : suivi qui marque l'heure à laquelle une activité reprend après avoir été interrompue. Les suivis peuvent être émis de nouveau dans cette activité. Les suivis d'interruption/reprise sont utiles pour effecteur des profilages. Le suivi de reprise est émis si le suivi d'activités est activé pour la source de suivi.|
+|![Transférer](./media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Transfert : un suivi est émis lorsque le flux de contrôle logique est transféré d'une activité à une autre. L'activité dont provient le transfert peut continuer à fonctionner en parallèle de l'activité vers laquelle le transfert se dirige. Le suivi de transfert est émis si le suivi d'activités est activé pour la source de suivi.|
+|![Transférer de](./media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-b344-4f36-a20d-195999bda741")|Transfert De : suivi qui définit un transfert d'une autre activité vers l'activité actuelle.|
 |![Transférer vers](./media/74255b6e-7c47-46ef-8e53-870c76b04c3f.gif "74255b6e-7c47-46ef-8e53-870c76b04c3f")|Transfert A : suivi qui définit un transfert de flux de contrôle logique de l'activité actuelle vers une autre activité.|
 
 ### <a name="wcf-traces"></a>Suivis WCF
 
 |Icône|Description|
 |----------|-----------------|
-|![Suivi du journal des messages](./media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Suivi du journal des messages : suivi émis lorsqu’un message WCF est enregistré par la fonctionnalité de journalisation des messages, lorsque la source de suivi `System.ServiceModel.MessageLogging` est activée. Un clic sur ce suivi permet d'afficher le message. Il existe quatre points d'enregistrement configurables pour un message : ServiceLevelSendRequest, TransportSend, TransportReceive et ServiceLevelReceiveRequest, qui peut également être spécifié par l'attribut `messageSource` dans le suivi du journal des messages.|
-|![Suivi du message reçu](./media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41EC-B1c3-ac56b4dfa35c")|Trace message received : suivi émis lors de la réception d’un message WCF, si la source de suivi `System.ServiceModel` est activée au niveau des informations ou du niveau de détail. Ce suivi est essentiel pour afficher la flèche de la corrélation des messages dans la vue du **graphique** d’activité.|
-|(./media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387") de ![trace du message envoyé]|Trace du message envoyé : suivi émis lorsqu’un message WCF est envoyé si la source de suivi `System.ServiceModel` est activée au niveau des informations ou du niveau de détail. Ce suivi est essentiel pour afficher la flèche de la corrélation des messages dans la vue du **graphique** d’activité.|
+|![Suivi du journal des messages](./media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Suivi du journal des messages : suivi émis lorsqu’un message WCF est enregistré par la fonctionnalité de journalisation des messages, lorsque la `System.ServiceModel.MessageLogging` source de suivi est activée. Un clic sur ce suivi permet d'afficher le message. Il existe quatre points d'enregistrement configurables pour un message : ServiceLevelSendRequest, TransportSend, TransportReceive et ServiceLevelReceiveRequest, qui peut également être spécifié par l'attribut `messageSource` dans le suivi du journal des messages.|
+|![Suivi de message reçu](./media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c")|Trace message received : suivi émis lors de la réception d’un message WCF, si la `System.ServiceModel` source de suivi est activée au niveau des informations ou du niveau de détail. Ce suivi est essentiel pour afficher la flèche de la corrélation des messages dans la vue du **graphique** d’activité.|
+|![Trace du message envoyé](./media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387")|Trace du message envoyé : suivi émis lorsqu’un message WCF est envoyé si la `System.ServiceModel` source de suivi est activée au niveau des informations ou des commentaires. Ce suivi est essentiel pour afficher la flèche de la corrélation des messages dans la vue du **graphique** d’activité.|
 
 ### <a name="activities"></a>Activités
 
 |Icône|Description|
 |----------|-----------------|
-|![](./media/wcfc-defaultactivityc.gif "Wcfc_defaultActivityc") d’activité|Activité : indique que l'activité actuelle est une activité générique.|
-|(./media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9") de l' ![activité racine]|Activité racine : indique l'activité racine d'un processus.|
+|![Activité](./media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Activité : indique que l'activité actuelle est une activité générique.|
+|![Activité racine](./media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Activité racine : indique l'activité racine d'un processus.|
 
 ### <a name="wcf-activities"></a>Activités WCF
 
 |Icône|Description|
 |----------|-----------------|
-|![](./media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46E5-822d-56222fff61d1") activité de l’environnement|Activité de l’environnement : activité qui crée, ouvre ou ferme un hôte ou un client WCF. Les erreurs qui se sont produites pendant ces phases apparaîtront dans cette activité.|
-|(./media/d7b135f6-ec7d-45d7-9913-037ab30e4c26.gif "D7b135f6-ec7d-45D7-9913-037ab30e4c26") de l' ![activité Listen]|Activité d'écoute : activité qui enregistre les suivis relatifs à un écouteur. À l'intérieur de cette activité, vous pouvez consulter des informations et des demandes de connexion relatives à l'écouteur.|
-|(./media/2f628580-b80f-45a7-925b-616c96426c0e.gif "2f628580-b80f-45a7-925b-616c96426c0e") de l' ![activité Receive octets]|Activité Recevoir des octets : activité qui regroupe toutes les traces en rapport avec les octets entrants et sortants sur une connexion entre deux points de terminaison. Cette activité est essentielle pour la corrélation avec les activités de transport qui propagent leur ID d'activité tel que http.sys. Les erreurs de connexion telles que les abandons apparaîtront dans cette activité.|
-|![Traiter l’activité des messages](./media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Activité traiter le message : activité qui regroupe les traces associées à la création d’un message WCF. Les erreurs dues à une mauvaise enveloppe ou à un message erroné apparaîtront dans cette activité. À l'intérieur de cette activité, vous pouvez contrôler les en-têtes de message à afficher si un ID d'activité a été propagé à partir de l'appelant. Si cela se vérifie, lors du transfert vers l'activité Traiter l'action (l'icône suivante), vous pouvez également assigner à cette activité l'ID d'activité propagé pour la corrélation entre l'appelant et les suivis d'appelé.|
+|![Activité d'environnement](./media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1")|Activité de l’environnement : activité qui crée, ouvre ou ferme un hôte ou un client WCF. Les erreurs qui se sont produites pendant ces phases apparaîtront dans cette activité.|
+|![Activité d'écoute](./media/d7b135f6-ec7d-45d7-9913-037ab30e4c26.gif "d7b135f6-ec7d-45d7-9913-037ab30e4c26")|Activité d'écoute : activité qui enregistre les suivis relatifs à un écouteur. À l'intérieur de cette activité, vous pouvez consulter des informations et des demandes de connexion relatives à l'écouteur.|
+|![Activité Recevoir des octets](./media/2f628580-b80f-45a7-925b-616c96426c0e.gif "2f628580-b80f-45a7-925b-616c96426c0e")|Activité Recevoir des octets : activité qui regroupe toutes les traces en rapport avec les octets entrants et sortants sur une connexion entre deux points de terminaison. Cette activité est essentielle pour la corrélation avec les activités de transport qui propagent leur ID d'activité tel que http.sys. Les erreurs de connexion telles que les abandons apparaîtront dans cette activité.|
+|![Activité de traitement de message](./media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Activité traiter le message : activité qui regroupe les traces associées à la création d’un message WCF. Les erreurs dues à une mauvaise enveloppe ou à un message erroné apparaîtront dans cette activité. À l'intérieur de cette activité, vous pouvez contrôler les en-têtes de message à afficher si un ID d'activité a été propagé à partir de l'appelant. Si cela se vérifie, lors du transfert vers l'activité Traiter l'action (l'icône suivante), vous pouvez également assigner à cette activité l'ID d'activité propagé pour la corrélation entre l'appelant et les suivis d'appelé.|
 |![Suivi du journal des messages](./media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Activité traiter l’action : activité qui regroupe toutes les traces associées à une demande WCF entre deux points de terminaison. Si `propagateActivity` a la valeur `true` sur les deux points de terminaison de la configuration, tous les suivis des deux points de terminaison sont fusionnés au sein d'une activité, à des fins de corrélation directe. Cette activité contiendra des erreurs en raison du traitement du transport ou de la sécurité, au niveau de la limite du code utilisateur (si une réponse existe).|
-|![Traiter l’activité des messages](./media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Activité Exécuter le code utilisateur : activité qui regroupe les suivis de code utilisateur pour le traitement d'une demande.|
+|![Activité de traitement de message](./media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Activité Exécuter le code utilisateur : activité qui regroupe les suivis de code utilisateur pour le traitement d'une demande.|
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
-Si vous n’êtes pas autorisé à écrire dans le registre, vous recevez le message d’erreur suivant : « Microsoft Service Trace Viewer n’a pas été inscrit sur le système » lorsque vous utilisez la commande « `svctraceviewer /register` » pour inscrire l’outil. Si cela se produit, vous devez vous connecter en utilisant un compte qui possède un accès en écriture au registre.
+Si vous n’êtes pas autorisé à écrire dans le registre, vous recevez le message d’erreur suivant : « Microsoft Service Trace Viewer n’a pas été inscrit au système » lorsque vous utilisez la `svctraceviewer /register` commande «» pour inscrire l’outil. Si cela se produit, vous devez vous connecter en utilisant un compte qui possède un accès en écriture au registre.
 
 De plus, l'outil Service Trace Viewer écrit certains paramètres (par exemple, filtres personnalisés et options du filtre) dans le fichier SvcTraceViewer.exe., dans son dossier assembly. Si vous ne disposez pas d'une autorisation de lecture pour le fichier, vous pouvez malgré tout lancer l'outil, mais vous ne pouvez pas charger les paramètres.
 
@@ -500,5 +501,5 @@ Si vous ouvrez un journal des suivis créé à l'aide d'un système d'exploitati
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](./diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [Configuration du suivi](./diagnostics/tracing/configuring-tracing.md)
+- [Configuration du traçage](./diagnostics/tracing/configuring-tracing.md)
 - [Suivi de bout en bout](./diagnostics/tracing/end-to-end-tracing.md)

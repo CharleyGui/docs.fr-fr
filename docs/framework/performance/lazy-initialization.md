@@ -1,5 +1,6 @@
 ---
 title: Initialisation tardive
+description: Explorez l’initialisation tardive dans .NET, une amélioration des performances qui signifie que la création d’un objet est différée jusqu’à ce que l’objet soit utilisé pour la première fois.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,15 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - lazy initialization in .NET, introduction
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
-ms.openlocfilehash: 4f2b585dded6e20bb604f623217c6d1f1505c097
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 355fa326fc19e9a50a74e21ace0a6353f5c740c5
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180565"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904232"
 ---
 # <a name="lazy-initialization"></a>Initialisation tardive
-*L’initialisation tardive* d’un objet signifie que sa création est différée jusqu’à sa première utilisation. (Pour ce sujet, les termes *initialisation paresseuse* et *instantanéisation paresseuse* sont synonymes.) L’initialisation paresseuse est principalement utilisée pour améliorer les performances, éviter le calcul inutile et réduire les exigences de mémoire du programme. Voici les scénarios les plus courants :  
+*L’initialisation tardive* d’un objet signifie que sa création est différée jusqu’à sa première utilisation. (Pour cette rubrique, les termes *initialisation tardive* et *instanciation différée* sont synonymes.) L’initialisation tardive est principalement utilisée pour améliorer les performances, éviter le calcul du gaspillage et réduire les besoins en mémoire du programme. Voici les scénarios les plus courants :  
   
 - Lorsqu’un objet est coûteux à créer, et qu’il est possible que le programme ne l’utilise pas. Par exemple, supposons que vous ayez en mémoire un objet `Customer` avec une propriété `Orders` contenant un grand tableau d’objets `Order` qui, pour être initialisé, nécessite une connexion de base de données. Si l’utilisateur ne demande jamais à afficher les commandes ou à utiliser les données dans un calcul, il est inutile d’utiliser la mémoire système ou les cycles de calcul pour les créer. En utilisant `Lazy<Orders>` pour déclarer l’objet `Orders` en vue de son initialisation tardive, vous évitez de gaspiller les ressources système lorsque l’objet n’est pas utilisé.  
   
@@ -32,7 +33,7 @@ ms.locfileid: "79180565"
 |<xref:System.Threading.LazyInitializer>|Fournit des méthodes `static` avancées (`Shared` en Visual Basic) pour l’initialisation tardive des objets, sans la surcharge d’une classe.|  
   
 ## <a name="basic-lazy-initialization"></a>Initialisation tardive de base  
- Pour définir un type initialisé tardivement (par exemple, `MyType`), utilisez `Lazy<MyType>` (`Lazy(Of MyType)` en Visual Basic), comme illustré dans l’exemple suivant. Si aucun délégué n’est passé dans le constructeur <xref:System.Lazy%601>, le type encapsulé est créé à l’aide de <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> lors du premier accès à la propriété de la valeur. Si le type n’a pas de constructeur sans paramètres, une exception de temps d’exécution est lancée.  
+ Pour définir un type initialisé tardivement (par exemple, `MyType`), utilisez `Lazy<MyType>` (`Lazy(Of MyType)` en Visual Basic), comme illustré dans l’exemple suivant. Si aucun délégué n’est passé dans le constructeur <xref:System.Lazy%601>, le type encapsulé est créé à l’aide de <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> lors du premier accès à la propriété de la valeur. Si le type n’a pas de constructeur sans paramètre, une exception Runtime est levée.  
   
  Dans l’exemple suivant, supposons que `Orders` soit une classe qui contienne un tableau d’objets `Order` récupérés à partir d’une base de données. Un objet `Customer` contient une instance de `Orders`, mais en fonction des actions de l’utilisateur, les données de l’objet `Orders` peuvent ne pas être nécessaires.  
   
@@ -49,7 +50,7 @@ ms.locfileid: "79180565"
  [!code-csharp[Lazy#3](../../../samples/snippets/csharp/VS_Snippets_Misc/lazy/cs/cs_lazycodefile.cs#3)]
  [!code-vb[Lazy#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/lazy/vb/lazy_vb.vb#3)]  
   
- Un objet <xref:System.Lazy%601> retourne toujours le même objet (ou la même valeur) qui a été utilisé lors de son initialisation. Par conséquent, la propriété <xref:System.Lazy%601.Value%2A> est en lecture seule. Si <xref:System.Lazy%601.Value%2A> stocke un type référence, vous ne pouvez pas lui attribuer un nouvel objet (Toutefois, vous pouvez modifier la valeur de ses champs publics et propriétés settable.) Si <xref:System.Lazy%601.Value%2A> stocke un type de valeur, vous ne pouvez pas modifier sa valeur. Toutefois, vous pouvez créer une variable en rappelant le constructeur de variable à l’aide de nouveaux arguments.  
+ Un objet <xref:System.Lazy%601> retourne toujours le même objet (ou la même valeur) qui a été utilisé lors de son initialisation. Par conséquent, la propriété <xref:System.Lazy%601.Value%2A> est en lecture seule. Si <xref:System.Lazy%601.Value%2A> stocke un type référence, vous ne pouvez pas lui attribuer un nouvel objet (Toutefois, vous pouvez modifier la valeur de ses propriétés et champs publics définissables.) Si <xref:System.Lazy%601.Value%2A> stocke un type valeur, vous ne pouvez pas modifier sa valeur. Toutefois, vous pouvez créer une variable en rappelant le constructeur de variable à l’aide de nouveaux arguments.  
   
  [!code-csharp[Lazy#4](../../../samples/snippets/csharp/VS_Snippets_Misc/lazy/cs/cs_lazycodefile.cs#4)]
  [!code-vb[Lazy#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/lazy/vb/lazy_vb.vb#4)]  
@@ -73,7 +74,7 @@ ms.locfileid: "79180565"
   
  Certains constructeurs <xref:System.Lazy%601> ont un paramètre <xref:System.Threading.LazyThreadSafetyMode> nommé `mode`. Ces constructeurs fournissent un mode de cohérence de thread supplémentaire. Le tableau suivant montre comment la cohérence de thread d’un objet <xref:System.Lazy%601> est affectée par les paramètres du constructeur qui spécifient la cohérence de thread. Chaque constructeur comprend un tel paramètre.  
   
-|Cohérence de thread de l’objet|`LazyThreadSafetyMode``mode` paramètre|Paramètre `isThreadSafe` booléen|Aucun paramètre de cohérence de thread|  
+|Cohérence de thread de l’objet|`LazyThreadSafetyMode``mode`paramètre|Paramètre `isThreadSafe` booléen|Aucun paramètre de cohérence de thread|  
 |---------------------------------|---------------------------------------------|--------------------------------------|---------------------------------|  
 |Entièrement thread-safe. Seul un thread à la fois tente d’initialiser la valeur.|<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>|`true`|Oui.|  
 |Non thread-safe.|<xref:System.Threading.LazyThreadSafetyMode.None>|`false`|Non applicable.|  
@@ -85,9 +86,9 @@ ms.locfileid: "79180565"
   
 <a name="ExceptionsInLazyObjects"></a>
 ## <a name="exceptions-in-lazy-objects"></a>Exceptions des objets différés  
- Comme indiqué précédemment, un objet <xref:System.Lazy%601> retourne toujours le même objet (ou la même valeur) avec lequel il a été initialisé. De fait, la propriété <xref:System.Lazy%601.Value%2A> est en lecture seule. Si vous activez la mise en cache des exceptions, cette immuabilité s’étend également au comportement des exceptions. Si un objet initialisé paresseux a activé la mise en cache d’exception et jette une exception de sa méthode d’initialisation lorsque la propriété est accessible pour la <xref:System.Lazy%601.Value%2A> première fois, cette même exception est lancée sur chaque tentative ultérieure d’accéder à la <xref:System.Lazy%601.Value%2A> propriété. En d’autres termes, le constructeur du type encapsulé n’est jamais rappelé, même dans les scénarios multithreads. Par conséquent, l’objet <xref:System.Lazy%601> ne peut pas lever une exception lors d’un accès et retourner une valeur lors d’un accès ultérieur.  
+ Comme indiqué précédemment, un objet <xref:System.Lazy%601> retourne toujours le même objet (ou la même valeur) avec lequel il a été initialisé. De fait, la propriété <xref:System.Lazy%601.Value%2A> est en lecture seule. Si vous activez la mise en cache des exceptions, cette immuabilité s’étend également au comportement des exceptions. Si la mise en cache des exceptions est activée pour un objet initialisé tardive et qu’une exception est levée à partir de sa méthode d’initialisation lors du <xref:System.Lazy%601.Value%2A> premier accès à la propriété, cette même exception est levée à chaque tentative suivante d’accès à la <xref:System.Lazy%601.Value%2A> propriété. En d’autres termes, le constructeur du type encapsulé n’est jamais rappelé, même dans les scénarios multithreads. Par conséquent, l’objet <xref:System.Lazy%601> ne peut pas lever une exception lors d’un accès et retourner une valeur lors d’un accès ultérieur.  
   
- La mise en cache des exceptions est activée lorsque vous utilisez un constructeur <xref:System.Lazy%601?displayProperty=nameWithType> qui accepte une méthode d’initialisation (un paramètre `valueFactory`). Par exemple, elle est activée lorsque vous utilisez le constructeur `Lazy(T)(Func(T))`. Si le constructeur accepte également une valeur <xref:System.Threading.LazyThreadSafetyMode> (un paramètre `mode`), spécifiez <xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication?displayProperty=nameWithType> ou <xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType>. La spécification d’une méthode d’initialisation permet la mise en cache des exceptions pour ces deux modes. La méthode d’initialisation peut être très simple. Par exemple, il peut appeler le `T` `new Lazy<Contents>(() => new Contents(), mode)` constructeur sans paramètres `New Lazy(Of Contents)(Function() New Contents())` pour : en C, ou dans Visual Basic. Si vous utilisez un constructeur <xref:System.Lazy%601?displayProperty=nameWithType> qui ne spécifie pas de méthode d’initialisation, les exceptions levées par le constructeur sans paramètre pour `T` ne sont pas mises en cache. Pour plus d’informations, consultez l’énumération <xref:System.Threading.LazyThreadSafetyMode>.  
+ La mise en cache des exceptions est activée lorsque vous utilisez un constructeur <xref:System.Lazy%601?displayProperty=nameWithType> qui accepte une méthode d’initialisation (un paramètre `valueFactory`). Par exemple, elle est activée lorsque vous utilisez le constructeur `Lazy(T)(Func(T))`. Si le constructeur accepte également une valeur <xref:System.Threading.LazyThreadSafetyMode> (un paramètre `mode`), spécifiez <xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication?displayProperty=nameWithType> ou <xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType>. La spécification d’une méthode d’initialisation permet la mise en cache des exceptions pour ces deux modes. La méthode d’initialisation peut être très simple. Par exemple, il peut appeler le constructeur sans paramètre pour `T` : `new Lazy<Contents>(() => new Contents(), mode)` en C#, ou `New Lazy(Of Contents)(Function() New Contents())` dans Visual Basic. Si vous utilisez un constructeur <xref:System.Lazy%601?displayProperty=nameWithType> qui ne spécifie pas de méthode d’initialisation, les exceptions levées par le constructeur sans paramètre pour `T` ne sont pas mises en cache. Pour plus d’informations, consultez l’énumération <xref:System.Threading.LazyThreadSafetyMode>.  
   
 > [!NOTE]
 > Si vous créez un objet <xref:System.Lazy%601> avec le paramètre de constructeur `isThreadSafe` défini sur `false` ou le paramètre de constructeur `mode` défini sur <xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType>, vous devez accéder à l’objet <xref:System.Lazy%601> à partir d’un thread unique ou fournir votre propre synchronisation. Cela s’applique à tous les aspects de l’objet, y compris la mise en cache des exceptions.  
@@ -98,12 +99,12 @@ ms.locfileid: "79180565"
   
 |Constructeur|Mode de cohérence de thread|Utilise la méthode d’initialisation|Exceptions mises en cache|  
 |-----------------|------------------------|--------------------------------|---------------------------|  
-|Lazy(T)()|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|Non |Non |  
+|Lazy(T)()|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|Non|Non|  
 |Lazy(T)(Func(T))|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|Oui|Oui|  
-|Lazy(T)(Boolean)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) ou `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|Non |Non |  
+|Lazy(T)(Boolean)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) ou `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|Non|Non|  
 |Lazy(T)(Func(T), Boolean)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) ou `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|Oui|Oui|  
-|Lazy(T)(LazyThreadSafetyMode)|Spécifié par l’utilisateur|Non |Non |  
-|Lazy(T)(Func(T), LazyThreadSafetyMode)|Spécifié par l’utilisateur|Oui|Non, si l’utilisateur spécifie <xref:System.Threading.LazyThreadSafetyMode.PublicationOnly> ; sinon, Oui.|  
+|Lazy(T)(LazyThreadSafetyMode)|Spécifié par l’utilisateur|Non|Non|  
+|Lazy(T)(Func(T), LazyThreadSafetyMode)|Spécifié par l’utilisateur|Yes|Non, si l’utilisateur spécifie <xref:System.Threading.LazyThreadSafetyMode.PublicationOnly> ; sinon, Oui.|  
   
 ## <a name="implementing-a-lazy-initialized-property"></a>Implémentation d’une propriété à initialisation tardive  
  Pour implémenter une propriété publique à l’aide de l’initialisation tardive, définissez le champ de stockage de la propriété comme un <xref:System.Lazy%601>, puis retournez la propriété <xref:System.Lazy%601.Value%2A> à partir de l’accesseur `get` de la propriété.  
@@ -152,7 +153,7 @@ ms.locfileid: "79180565"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Base de threading gérée](../../standard/threading/managed-threading-basics.md)
-- [Fils et threading](../../standard/threading/threads-and-threading.md)
+- [Concepts de base du threading managé](../../standard/threading/managed-threading-basics.md)
+- [Threads et threads](../../standard/threading/threads-and-threading.md)
 - [Bibliothèque parallèle de tâches](../../standard/parallel-programming/task-parallel-library-tpl.md)
 - [Comment : effectuer une initialisation tardive d'objets](how-to-perform-lazy-initialization-of-objects.md)

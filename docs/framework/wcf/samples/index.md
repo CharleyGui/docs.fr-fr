@@ -1,15 +1,16 @@
 ---
-title: Exemples de Windows Communication Foundation (WCF)
+title: Exemples Windows Communication Foundation (WCF)
+description: Téléchargez des exemples Windows Communication Foundation (WCF) pour .NET Framework 4. Les exemples fournissent des instructions sur les différents aspects de WCF.
 ms.date: 09/24/2018
 ms.assetid: 89d4efce-7832-4dd5-82a8-0e574b3302f9
-ms.openlocfilehash: 2d11db7bfaa473a7c4fd27e91b95a965dcf9bee7
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: a73f13ef66d61174a5a7e1761031898fcdf55703
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715767"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244307"
 ---
-# <a name="windows-communication-foundation-wcf-samples"></a>Exemples de Windows Communication Foundation (WCF)
+# <a name="windows-communication-foundation-wcf-samples"></a>Exemples Windows Communication Foundation (WCF)
 
 Vous pouvez télécharger [des exemples Windows Communication Foundation (WCF) pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459). Les exemples fournissent des instructions sur les différents aspects de Windows Communication Foundation (WCF).
   

@@ -1,5 +1,6 @@
 ---
 title: Getting Started, exemple
+description: Découvrez comment implémenter un service standard et un client standard à l’aide de WCF. Cet exemple constitue la base de tous les autres exemples de technologie de base.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: fc4a7e9acb15f77140732638b2982dd4a9dae9ce
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b23be1b33f227154b916429c063ec4106229bb3c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84575184"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246231"
 ---
 # <a name="getting-started-sample"></a>Getting Started, exemple
 
@@ -32,7 +33,7 @@ L’exemple Prise en main montre comment implémenter un service classique et un
 
 Le service décrit les opérations qu'il effectue dans un contrat de service qu'il expose publiquement sous forme de métadonnées. Le service contient également le code pour implémenter les opérations.
 
-Le client contient une définition du contrat de service et une classe proxy permettant d'accéder au service. Le code proxy est généré à partir des métadonnées du service à l’aide de l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).
+Le client contient une définition du contrat de service et une classe proxy permettant d'accéder au service. Le code proxy est généré à partir des métadonnées du service à l’aide de l' [outil utilitaire de métadonnées ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).
 
 Sur Windows Vista, le service est hébergé dans le service d’activation Windows (WAS). Sur Windows XP et Windows Server 2003, il est hébergé par Internet Information Services (IIS) et ASP.NET. L'hébergement d'un service dans les services IIS ou WAS lui permet d'être activé automatiquement lorsqu'il est accédé pour la première fois.
 
@@ -174,7 +175,7 @@ Par défaut, l'infrastructure n'expose pas de métadonnées. Par conséquent, le
 </system.serviceModel>
 ```
 
-Le client communique à l’aide d’un type de contrat donné à l’aide d’une classe de client générée par l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Ce client généré est contenu dans le fichier generatedClient.cs ou generatedClient.vb. Cet utilitaire récupère les métadonnées pour un service donné et génère un client destiné à être utilisé par l'application cliente pour communiquer à l'aide d'un type de contrat donné. Le service hébergé doit être disponible pour générer le code client, car il permet de récupérer les métadonnées mises à jour.
+Le client communique à l’aide d’un type de contrat donné à l’aide d’une classe de client générée par l' [outil utilitaire de métadonnées ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Ce client généré est contenu dans le fichier generatedClient.cs ou generatedClient.vb. Cet utilitaire récupère les métadonnées pour un service donné et génère un client destiné à être utilisé par l'application cliente pour communiquer à l'aide d'un type de contrat donné. Le service hébergé doit être disponible pour générer le code client, car il permet de récupérer les métadonnées mises à jour.
 
  Exécutez la commande suivante à partir de l'invite de commandes du Kit de développement SDK du répertoire client pour générer le proxy typé :
 

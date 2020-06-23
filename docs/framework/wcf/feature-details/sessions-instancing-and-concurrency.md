@@ -1,13 +1,14 @@
 ---
 title: Sessions, instanciation et accès concurrentiel
+description: Découvrez les sessions, l’instanciation et l’accès concurrentiel, comment les utiliser et les interactions entre eux dans WFC.
 ms.date: 03/30/2017
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-ms.openlocfilehash: 070e9ed25e2c0cce1309fb27e3f6a02bb01f3d2c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 41eef5a962c702eebd6b9a34607b542ec6bbd97b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600320"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246543"
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Sessions, instanciation et accès concurrentiel
 Une *session* est une corrélation de tous les messages envoyés entre deux points de terminaison. L'*instanciation* fait référence au contrôle de la durée de vie des objets de service définis par l'utilisateur et de leurs objets <xref:System.ServiceModel.InstanceContext> connexes. La*concurrence* est le terme donné au contrôle du nombre des threads qui s'exécutent simultanément dans un <xref:System.ServiceModel.InstanceContext> .  
@@ -37,7 +38,7 @@ Une *session* est une corrélation de tous les messages envoyés entre deux poin
   
  Les applications clientes et de service interagissent avec les sessions de manière différente. Les applications clientes initialisent des sessions, puis reçoivent et traitent les messages envoyés dans la session. Les applications de service peuvent utiliser des sessions comme point d'extensibilité pour ajouter un comportement supplémentaire. Pour ce faire, utilisez directement <xref:System.ServiceModel.InstanceContext> ou implémentez un fournisseur de contexte d'instance personnalisé.  
   
-## <a name="instancing"></a>instanciation  
+## <a name="instancing"></a>Instancing  
  Le comportement d'instanciation (défini à l'aide de propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> ) contrôle la façon dont le <xref:System.ServiceModel.InstanceContext> est créé en réponse à des messages entrants. Par défaut, chaque <xref:System.ServiceModel.InstanceContext> est associé à un objet de service défini par l'utilisateur ; par conséquent (dans le cas par défaut), la définition de la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> contrôle également l'instanciation des objets de service définis par l'utilisateur. L'énumération <xref:System.ServiceModel.InstanceContextMode> définit les modes d'instanciation.  
   
  Les modes d'instanciation disponibles sont les suivants :  
@@ -113,5 +114,5 @@ public class CalculatorService : ICalculatorConcurrency
 - [Comment : créer un service qui requiert des sessions](how-to-create-a-service-that-requires-sessions.md)
 - [Guide pratique pour contrôler l’instanciation de service](how-to-control-service-instancing.md)
 - [Concurrency](../samples/concurrency.md)
-- [instanciation](../samples/instancing.md)
+- [Instancing](../samples/instancing.md)
 - [Session](../samples/session.md)

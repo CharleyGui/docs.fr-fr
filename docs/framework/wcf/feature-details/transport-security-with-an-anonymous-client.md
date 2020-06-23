@@ -1,16 +1,17 @@
 ---
 title: Sécurité de transport avec un client anonyme
+description: Passez en revue ce scénario WCF, qui utilise la sécurité de transport pour authentifier un serveur à l’aide d’un certificat approuvé par le client. Le client n’est pas authentifié.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: c3e44c87dfa70ac3a7acc5a83ac596efc22b6155
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 08cfb8c1a5581f17a251224430018764bed80b0f
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344756"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245009"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>Sécurité de transport avec un client anonyme
 
@@ -20,21 +21,21 @@ Pour obtenir un exemple d’application, consultez la page relative à la [sécu
 
 Pour plus d’informations sur l’utilisation d’un certificat avec un service, consultez [utilisation des certificats](working-with-certificates.md) et [procédure : configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md).
 
-![Sécurité des transports avec un client anonyme](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
+![Utilisation de la sécurité de transport avec un client anonyme](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
 
 |Caractéristique|Description|
 |--------------------|-----------------|
 |Mode de sécurité|Transport|
 |Interopérabilité|Avec les services Web et les clients existants|
-|Authentification (serveur)<br /><br /> Authentification (client)|Oui<br /><br /> Niveau de l’application (aucune prise en charge WCF)|
-|Intégrité|Oui|
-|Confidentialité|Oui|
+|Authentification (serveur)<br /><br /> Authentification (client)|Yes<br /><br /> Niveau de l’application (aucune prise en charge WCF)|
+|Intégrité|Yes|
+|Confidentialité|Yes|
 |Transport|HTTPS|
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|
 
 ## <a name="service"></a>Service
 
-La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :
+La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :
 
 - Créez un service autonome à l'aide du code sans configuration.
 
@@ -80,7 +81,7 @@ Le code ci-dessous configure le même point de terminaison en utilisant la confi
 
 ## <a name="client"></a>Client
 
-La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :
+La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :
 
 - Créez un client autonome à l'aide du code (et du code client).
 
@@ -123,7 +124,7 @@ La configuration suivante peut être utilisée à la place du code pour paramét
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la sécurité](security-overview.md)
-- [Sécurité de transport WS](../samples/ws-transport-security.md)
-- [Vue d’ensemble de la sécurité de transport](transport-security-overview.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Présentation de la sécurité](security-overview.md)
+- [WS Transport Security](../samples/ws-transport-security.md)
+- [Vue d'ensemble de la sécurité des transports](transport-security-overview.md)
+- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

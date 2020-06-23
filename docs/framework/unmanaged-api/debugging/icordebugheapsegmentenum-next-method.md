@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 51625fd0-7399-49c7-b22b-5dfb05451fe6
 topic_type:
 - apiref
-ms.openlocfilehash: c9999961ec20a31cf82d5ad60104bcdd04c340d1
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 3d4e44eefaf99a40b9c4f1c45e7dd81192f8b607
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210174"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904271"
 ---
 # <a name="icordebugheapsegmentenumnext-method"></a>ICorDebugHeapSegmentEnum::Next, méthode
-Obtient le nombre spécifié d’instances de [COR_HEAPOBJECT](cor-heapobject-structure.md) qui contiennent des informations sur les régions de mémoire du tas managé.  
+Obtient le nombre spécifié d’instances de [COR_SEGMENT](cor-segment-structure.md) qui contiennent des informations sur les régions de mémoire du tas managé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,10 +39,10 @@ HRESULT Next(
  dans Nombre de segments à récupérer.  
   
  segments  
- à Tableau de pointeurs, chacun pointant vers un objet [COR_HEAPOBJECT](cor-heapobject-structure.md) qui fournit des informations sur une zone de mémoire dans le tas managé.  
+ à Tableau de pointeurs, chacun pointant vers un objet [COR_SEGMENT](cor-segment-structure.md) qui fournit des informations sur une zone de mémoire dans le tas managé.  
   
  pceltFetched  
- à Pointeur vers le nombre d’objets [COR_HEAPOBJECT](cor-heapobject-structure.md) réellement retournés dans `segments` . Cette valeur peut être `null` si `celt` est égal à 1.  
+ à Pointeur vers le nombre d’objets [COR_SEGMENT](cor-segment-structure.md) réellement retournés dans `segments` . Cette valeur peut être `null` si `celt` est égal à 1.  
   
 ## <a name="remarks"></a>Notes  
   
