@@ -1,5 +1,6 @@
 ---
-title: HttpWebRequest._CoreResponse Champ
+title: HttpWebRequest. _CoreResponse Field
+description: En savoir plus sur le champ HttpWebRequest. _CoreResponse dans .NET. Ce champ est un objet CoreResponseData ou exception contenant le résultat de l’analyse de la réponse HTTP.
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,32 +11,32 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: b275f3eece96ac8a9ae3fb0ebd030c8d79e21fc1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5093ec7ed2c3b94931dcd622ae9ccdb42feffa18
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155919"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989746"
 ---
-# <a name="httpwebrequest_coreresponse-field"></a><span data-ttu-id="2522d-102">HttpWebRequest. \_Champ CoreResponse</span><span class="sxs-lookup"><span data-stu-id="2522d-102">HttpWebRequest.\_CoreResponse Field</span></span>
+# <a name="httpwebrequest_coreresponse-field"></a><span data-ttu-id="056e7-104">HttpWebRequest. \_ Champ CoreResponse</span><span class="sxs-lookup"><span data-stu-id="056e7-104">HttpWebRequest.\_CoreResponse Field</span></span>
 
-<span data-ttu-id="2522d-103">`HttpWebRequest._CoreResponse`est un objet (soit un [CoreResponseData](coreresponsedata.md) ou un <xref:System.Exception>) contenant le résultat de l’analyse de réponse HTTP.</span><span class="sxs-lookup"><span data-stu-id="2522d-103">`HttpWebRequest._CoreResponse` is an object (either a [CoreResponseData](coreresponsedata.md) or an <xref:System.Exception>) containing the result of HTTP response parsing.</span></span>
+<span data-ttu-id="056e7-105">`HttpWebRequest._CoreResponse`est un objet ( [CoreResponseData](coreresponsedata.md) ou <xref:System.Exception> ) qui contient le résultat de l’analyse de la réponse http.</span><span class="sxs-lookup"><span data-stu-id="056e7-105">`HttpWebRequest._CoreResponse` is an object (either a [CoreResponseData](coreresponsedata.md) or an <xref:System.Exception>) containing the result of HTTP response parsing.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="2522d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2522d-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="056e7-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="056e7-106">Syntax</span></span>
   
 ```csharp
 private object _CoreResponse
 ```
 
 > [!WARNING]
-> <span data-ttu-id="2522d-105">Cette API n’est pas destinée à être utilisée directement dans votre code.</span><span class="sxs-lookup"><span data-stu-id="2522d-105">This API is not meant to be used directly in your code.</span></span> <span data-ttu-id="2522d-106">Au lieu de <xref:System.Diagnostics.DiagnosticSource> cela, vous devriez utiliser un code de réseautage pour crocheter.</span><span class="sxs-lookup"><span data-stu-id="2522d-106">Instead, you should use a <xref:System.Diagnostics.DiagnosticSource> to hook networking code.</span></span> <span data-ttu-id="2522d-107">Voir [Le guide de l’utilisateur de DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).</span><span class="sxs-lookup"><span data-stu-id="2522d-107">See [DiagnosticSource User's Guide](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).</span></span>
+> <span data-ttu-id="056e7-107">Cette API n’est pas destinée à être utilisée directement dans votre code.</span><span class="sxs-lookup"><span data-stu-id="056e7-107">This API is not meant to be used directly in your code.</span></span> <span data-ttu-id="056e7-108">Au lieu de cela, vous devez utiliser un <xref:System.Diagnostics.DiagnosticSource> pour raccorder du code de mise en réseau.</span><span class="sxs-lookup"><span data-stu-id="056e7-108">Instead, you should use a <xref:System.Diagnostics.DiagnosticSource> to hook networking code.</span></span> <span data-ttu-id="056e7-109">Consultez le [Guide de l’utilisateur DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).</span><span class="sxs-lookup"><span data-stu-id="056e7-109">See [DiagnosticSource User's Guide](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).</span></span>
 >
-> <span data-ttu-id="2522d-108">Microsoft ne prend en charge l’utilisation de cette classe dans une application de production en aucune circonstance.</span><span class="sxs-lookup"><span data-stu-id="2522d-108">Microsoft does not support the use of this class in a production application under any circumstance.</span></span>
+> <span data-ttu-id="056e7-110">Microsoft ne prend pas en charge l’utilisation de cette classe dans une application de production en l’absence de toute circonstance.</span><span class="sxs-lookup"><span data-stu-id="056e7-110">Microsoft does not support the use of this class in a production application under any circumstance.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="2522d-109">Spécifications</span><span class="sxs-lookup"><span data-stu-id="2522d-109">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="056e7-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="056e7-111">Requirements</span></span>
 
-<span data-ttu-id="2522d-110">**Espace nom:**<xref:System.Net></span><span class="sxs-lookup"><span data-stu-id="2522d-110">**Namespace:** <xref:System.Net></span></span>
+<span data-ttu-id="056e7-112">**Espace de noms :** <xref:System.Net></span><span class="sxs-lookup"><span data-stu-id="056e7-112">**Namespace:** <xref:System.Net></span></span>
 
-<span data-ttu-id="2522d-111">**Assemblée:** Système (dans System.dll)</span><span class="sxs-lookup"><span data-stu-id="2522d-111">**Assembly:** System (in System.dll)</span></span>
+<span data-ttu-id="056e7-113">**Assembly :** Système (en System.dll)</span><span class="sxs-lookup"><span data-stu-id="056e7-113">**Assembly:** System (in System.dll)</span></span>
 
-<span data-ttu-id="2522d-112">**.NET Versions du Cadre:** Disponible depuis 2.0.</span><span class="sxs-lookup"><span data-stu-id="2522d-112">**.NET Framework versions:** Available since 2.0.</span></span>
+<span data-ttu-id="056e7-114">**Versions de .NET Framework :** Disponible depuis 2,0.</span><span class="sxs-lookup"><span data-stu-id="056e7-114">**.NET Framework versions:** Available since 2.0.</span></span>
