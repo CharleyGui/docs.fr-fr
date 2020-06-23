@@ -4,12 +4,12 @@ description: Découvrez comment implémenter des fonctions définies par l’uti
 ms.date: 06/11/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 96597c7e2d45dfdf8406b0d3e80daad270996b97
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: fe3dec187f94f84adb1217c39ff6aabc4b4db1c5
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105594"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85142015"
 ---
 # <a name="create-user-defined-functions-udf-in-net-for-apache-spark"></a>Créer des fonctions définies par l’utilisateur (UDF) dans .NET pour Apache Spark
 
@@ -61,7 +61,7 @@ Pour mieux comprendre comment implémenter des fonctions définies par l’utili
 
 ## <a name="udf-serialization"></a>Sérialisation UDF
 
-Comme les fonctions définies par l’utilisateur sont des fonctions qui doivent être exécutées sur les Workers, elles doivent être sérialisées et envoyées aux employés dans le cadre de la charge utile du pilote. Le [délégué](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), qui est une référence à la méthode, doit être sérialisé ainsi que sa [cible](https://docs.microsoft.com/en-us/dotnet/api/system.delegate.target?view=netframework-4.8) , qui est l’instance de classe sur laquelle le délégué actuel appelle la méthode d’instance. Passez en revue cet [exemple de code dans GitHub](https://github.com/dotnet/spark/blob/master/src/csharp/Microsoft.Spark/Utils/CommandSerDe.cs#L149) pour mieux comprendre le fonctionnement de la sérialisation UDF.
+Comme les fonctions définies par l’utilisateur sont des fonctions qui doivent être exécutées sur les Workers, elles doivent être sérialisées et envoyées aux employés dans le cadre de la charge utile du pilote. Le [délégué](../../csharp/programming-guide/delegates/index.md), qui est une référence à la méthode, doit être sérialisé ainsi que sa [cible](xref:System.Delegate.Target%2A), qui est l’instance de classe sur laquelle le délégué actuel appelle la méthode d’instance. Passez en revue cet [exemple de code dans GitHub](https://github.com/dotnet/spark/blob/master/src/csharp/Microsoft.Spark/Utils/CommandSerDe.cs#L149) pour mieux comprendre le fonctionnement de la sérialisation UDF.
 
 .NET pour Apache Spark utilise .NET Core, qui ne prend pas en charge la sérialisation des délégués. Au lieu de cela, la réflexion est utilisée pour sérialiser la cible où le délégué est défini. Lorsque plusieurs délégués sont définis dans une étendue commune, ils ont une fermeture partagée qui devient la cible de la réflexion pour la sérialisation.
 

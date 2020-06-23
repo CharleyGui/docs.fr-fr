@@ -2,16 +2,16 @@
 title: Scripts dotnet-install
 description: En savoir plus sur les scripts dotnet-install pour installer les kit SDK .NET Core et le runtime partagé.
 ms.date: 04/30/2020
-ms.openlocfilehash: 9f5cef9cfcca1d8b344021efe803c063a7393f8e
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 464e6fafa1c2e661892bcb3b35ba172ca1d7e76b
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802726"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141241"
 ---
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet-install.ps1` | `dotnet-install.sh`-Script utilisé pour installer le kit SDK .NET Core et le runtime partagé.
 
@@ -28,7 +28,7 @@ dotnet-install.ps1 [-Architecture <ARCHITECTURE>] [-AzureFeed]
     [-SkipNonVersionedFiles] [-UncachedFeed] [-Verbose]
     [-Version <VERSION>]
 
-dotnet-install.ps1 -Help
+Get-Help ./dotnet-install.ps1
 ```
 
 Linux/macOS :
@@ -94,9 +94,9 @@ Les scripts d’installation ne mettent pas à jour le registre sur Windows. Ils
 
   Valeur utilisée comme chaîne de requête à ajouter au flux Azure. Elle permet de changer l’URL afin d’utiliser des comptes de stockage d’objets blob non publics.
 
-- **`-Help|--help`**
+- **`--help`**
 
-  Affiche l’aide pour le script.
+  Affiche l’aide pour le script. S’applique uniquement au script bash. Pour PowerShell, utilisez `Get-Help ./dotnet-install.ps1` .
 
 - **`-InstallDir|--install-dir <DIRECTORY>`**
 
@@ -104,7 +104,7 @@ Les scripts d’installation ne mettent pas à jour le registre sur Windows. Ils
 
 - **`-JSonFile|--jsonfile <JSONFILE>`**
 
-  Spécifie le chemin d’accès à un fichier [global. JSON](global-json.md) qui sera utilisé pour déterminer la version du kit de développement logiciel (SDK). Le fichier *global. JSON* doit avoir une valeur pour `sdk:version` .
+  Spécifie le chemin d’accès à un [global.js](global-json.md) fichier qui sera utilisé pour déterminer la version du kit de développement logiciel (SDK). La *global.jssur* le fichier doit avoir une valeur pour `sdk:version` .
 
 - **`-NoCdn|--no-cdn`**
 
