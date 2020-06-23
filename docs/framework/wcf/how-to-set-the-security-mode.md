@@ -1,5 +1,6 @@
 ---
 title: 'Comment : définir le mode de sécurité'
+description: 'Découvrez comment définir les trois modes de sécurité WCF courants sur la plupart des liaisons prédéfinies : transport, message et TransportWithMessageCredential.'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: 6e01dd9f-b5dd-4474-b24c-06e124de4ff7
-ms.openlocfilehash: 9b9e25cbafb6387b4584a21fd642d80bc41cd8dc
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 2f834e1930b7676592f6cbc29a577424d75ebc01
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320895"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244541"
 ---
 # <a name="how-to-set-the-security-mode"></a>Comment : définir le mode de sécurité
 
@@ -56,7 +57,7 @@ La définition de la propriété `ClientCredentialType` dépend de la valeur aff
 
 1. Créez une instance de la liaison.
 
-2. Affectez à la propriété `Mode` la valeur `Transport`.
+2. Attribuez à la propriété `Mode` la valeur `Transport`.
 
 3. Affectez à la propriété `ClientCredential` une valeur appropriée. L'exemple de code suivant affecte à la propriété la valeur `Windows`.
 
@@ -67,7 +68,7 @@ La définition de la propriété `ClientCredentialType` dépend de la valeur aff
 
 1. Créez une instance de la liaison.
 
-2. Affectez à la propriété `Mode` la valeur `Message`.
+2. Attribuez à la propriété `Mode` la valeur `Message`.
 
 3. Affectez à la propriété `ClientCredential` une valeur appropriée. L'exemple de code suivant affecte à la propriété la valeur `Certificate`.
 
@@ -76,9 +77,9 @@ La définition de la propriété `ClientCredentialType` dépend de la valeur aff
 
 ### <a name="to-set-the-mode-and-clientcredentialtype-property-in-configuration"></a>Pour définir le mode et la propriété ClientCredentialType dans la configuration
 
-1. Ajoutez un élément de liaison approprié aux [liaisons\<>](../configure-apps/file-schema/wcf/bindings.md) élément du fichier de configuration. L’exemple suivant ajoute un élément [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) .
+1. Ajoutez un élément de liaison approprié à l' [\<bindings>](../configure-apps/file-schema/wcf/bindings.md) élément du fichier de configuration. L’exemple suivant ajoute un [\<wsHttpBinding>](../configure-apps/file-schema/wcf/wshttpbinding.md) élément.
 
-2. Ajoutez un élément `<binding>` et affectez à son attribut `name` une valeur appropriée.
+2. Ajoutez un `<binding>` élément et affectez `name` à son attribut une valeur appropriée.
 
 3. Ajoutez un élément `<security>`, puis affectez à l'attribut `mode` les valeurs `Message`, `Transport`ou `TransportWithMessageCredential`.
 
@@ -118,12 +119,12 @@ Pour plus d’informations, consultez [Comment : utiliser la sécurité de tran
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour configurer un port avec un certificat SSL](./feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
-- [Guide pratique pour utiliser des informations d’identification de sécurité de transport et de message](./feature-details/how-to-use-transport-security-and-message-credentials.md)
+- [Comment : configurer un port avec un certificat SSL](./feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
+- [Comment : utiliser des informations d'identification de sécurité de transport et de message](./feature-details/how-to-use-transport-security-and-message-credentials.md)
 - [Sécurité de transport](./feature-details/transport-security.md)
-- [Sécurité de message](./feature-details/message-security-in-wcf.md)
-- [Vue d’ensemble de la sécurité](./feature-details/security-overview.md)
+- [Sécurité des messages](./feature-details/message-security-in-wcf.md)
+- [Présentation de la sécurité](./feature-details/security-overview.md)
 - [Liaisons fournies par le système](system-provided-bindings.md)
-- [> de sécurité \<](../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
-- [> de sécurité \<](../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
-- [> de sécurité \<](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [\<security>](../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
+- [\<security>](../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
+- [\<security>](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)

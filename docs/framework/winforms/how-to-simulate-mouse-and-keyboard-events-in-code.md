@@ -1,5 +1,6 @@
 ---
-title: 'Comment : simuler des événements de la souris et du clavier dans le code'
+title: 'Procédure : simuler des événements de souris et de clavier dans le code'
+description: Découvrez comment utiliser les options Windows Forms permet de simuler par programmation les entrées de souris et de clavier.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: 52f89df8d7f28f0e00c3becd9005b46e52b5532c
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 9b453787f7fa7f5041f75e04d65557a0a3838bee
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960204"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904362"
 ---
-# <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Comment : simuler des événements de la souris et du clavier dans le code
+# <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Procédure : simuler des événements de souris et de clavier dans le code
 
 Windows Forms fournit plusieurs options pour simuler par programmation l'entrée de souris et de clavier. Cette rubrique offre une vue d'ensemble de ces options.
 
@@ -94,4 +95,4 @@ Cet exemple nécessite :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Entrées d’utilisateur dans les Windows Forms](user-input-in-windows-forms.md)
+- [Entrées d'utilisateur dans les Windows Forms](user-input-in-windows-forms.md)

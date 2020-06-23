@@ -1,16 +1,17 @@
 ---
 title: "Comment : spécifier des valeurs d'informations d'identification du client"
+description: Découvrez comment un service WCF peut spécifier comment un client est authentifié auprès de ce service. Cet exemple spécifie un certificat X. 509 et un mode de transport.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 82293d7f-471a-4549-8f19-0be890e7b074
-ms.openlocfilehash: 2417c2dd16224d6cbf00d3f1f4a8958420830b6c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 75a21a7dc083282f6b2fe839167ff1b2eddfb373
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319863"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244450"
 ---
 # <a name="how-to-specify-client-credential-values"></a>Comment : spécifier des valeurs d'informations d'identification du client
 
@@ -18,13 +19,13 @@ ms.locfileid: "72319863"
 
 ## <a name="to-determine-the-client-credential-type"></a>Pour déterminer le type d'informations d'identification du client
 
-1. Récupérez les métadonnées à partir du point de terminaison des métadonnées du service. Les métadonnées se composent généralement de deux fichiers : le code client dans le langage de programmation de votre choix (la valeur par défaut est Visual C#) et un fichier de configuration XML. L'une des manières permettant de récupérer des métadonnées consiste à utiliser l'outil Svcutil.exe pour retourner le code client et la configuration cliente. Pour plus d’informations, consultez [récupération des métadonnées](./feature-details/retrieving-metadata.md) et [outil utilitaire de métadonnées ServiceModel (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md).
+1. Récupérez les métadonnées à partir du point de terminaison des métadonnées du service. Les métadonnées se composent généralement de deux fichiers : le code client dans le langage de programmation de votre choix (la valeur par défaut est Visual C#) et un fichier de configuration XML. L'une des manières permettant de récupérer des métadonnées consiste à utiliser l'outil Svcutil.exe pour retourner le code client et la configuration cliente. Pour plus d’informations, consultez [récupération des métadonnées](./feature-details/retrieving-metadata.md) et [outil utilitaire de métadonnées ServiceModel (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md).
 
 2. Ouvrez le fichier de configuration XML. Si vous utilisez l'outil Svcutil.exe, le nom par défaut du fichier est Output.config.
 
-3. Recherchez l’élément **\<security >** avec l’attribut **mode** ( **\<Security mode =** `MessageOrTransport` **>** , où `MessageOrTransport` est défini sur l’un des modes de sécurité.
+3. Recherchez l' **\<security>** élément avec l’attribut **mode** ( **\<security mode =**`MessageOrTransport`**>** où `MessageOrTransport` est défini sur l’un des modes de sécurité.
 
-4. Recherchez l'élément enfant qui correspond à la valeur de mode. Par exemple, si le mode est défini sur **message**, recherchez le **\<message >** contenu dans l’élément **\<de > de sécurité** .
+4. Recherchez l'élément enfant qui correspond à la valeur de mode. Par exemple, si le mode est défini sur **message**, recherchez l' **\<message>** élément contenu dans l' **\<security>** élément.
 
 5. Notez la valeur assignée à l’attribut **ClientCredentialType** . La valeur réelle dépend du mode utilisé, du transport ou du message.
 
@@ -41,11 +42,11 @@ Le code XML suivant montre la configuration pour un client utilisant la sécurit
 
 ## <a name="example-tcp-transport-mode-with-certificate-as-client-credential"></a>Exemple : mode de transport TCP avec certificat comme informations d'identification du client
 
-Cet exemple définit le mode de sécurité sur le mode Transport et définit la valeur d'informations d'identification du client sur un certificat X.509. Les procédures suivantes montrent comment définir la valeur d'information d'identification du client sur le client dans le code et dans la configuration. Cela suppose que vous avez utilisé l' [outil ServiceModel Metadata Utility (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) pour retourner les métadonnées (code et configuration) du service. Pour plus d’informations, consultez [Comment : créer un client](how-to-create-a-wcf-client.md).
+Cet exemple définit le mode de sécurité sur le mode Transport et définit la valeur d'informations d'identification du client sur un certificat X.509. Les procédures suivantes montrent comment définir la valeur d'information d'identification du client sur le client dans le code et dans la configuration. Cela suppose que vous avez utilisé l' [outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) pour retourner les métadonnées (code et configuration) du service. Pour plus d’informations, consultez [Comment : créer un client](how-to-create-a-wcf-client.md).
 
 ### <a name="to-specify-the-client-credential-value-on-the-client-in-code"></a>Pour spécifier la valeur d'information d'identification du client sur le client dans le code
 
-1. Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer le code et la configuration à partir du service.
+1. Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer le code et la configuration à partir du service.
 
 2. Créez une instance du client WCF à l’aide du code généré.
 
@@ -58,11 +59,11 @@ Cet exemple définit le mode de sécurité sur le mode Transport et définit la 
 
 ### <a name="to-specify-the-client-credential-value-on-the-client-in-configuration"></a>Pour spécifier la valeur d'information d'identification du client sur le client dans la configuration
 
-1. Ajoutez un élément de [> de comportement\<](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) à l’élément de [> comportements\<](../configure-apps/file-schema/wcf/behaviors.md) .
+1. Ajoutez un [\<behavior>](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) élément à l' [\<behaviors>](../configure-apps/file-schema/wcf/behaviors.md) élément.
 
-2. Ajoutez un élément [\<clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) à l’élément comportements de l' [\<>](../configure-apps/file-schema/wcf/behaviors.md) . Assurez-vous d'affecter à l'attribut `name` requis une valeur appropriée.
+2. Ajoutez un [\<clientCredentials>](../configure-apps/file-schema/wcf/clientcredentials.md) élément à l' [\<behaviors>](../configure-apps/file-schema/wcf/behaviors.md) élément. Assurez-vous d'affecter à l'attribut `name` requis une valeur appropriée.
 
-3. Ajoutez un élément [\<clientCertificate >](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md) à l’élément [\<ClientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) .
+3. Ajoutez un [\<clientCertificate>](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md) élément à l' [\<clientCredentials>](../configure-apps/file-schema/wcf/clientcredentials.md) élément.
 
 4. Affectez aux attributs suivants des valeurs appropriées : `storeLocation`, `storeName`, `x509FindType` et `findValue`, comme illustré dans le code suivant. Pour plus d’informations sur les certificats, consultez [Utilisation de certificats](./feature-details/working-with-certificates.md).
 
@@ -81,7 +82,7 @@ Cet exemple définit le mode de sécurité sur le mode Transport et définit la 
     </behaviors>
     ```
 
-5. Lorsque vous configurez le client, spécifiez le comportement en définissant l'attribut `behaviorConfiguration` de l'élément `<endpoint>`, comme illustré dans le code suivant. L’élément de point de terminaison est un enfant de l’élément de [> du client\<](../configure-apps/file-schema/wcf/client.md) . Spécifiez également le nom de la configuration de liaison en affectant à l’attribut `bindingConfiguration` la liaison pour le client. Si vous utilisez un fichier de configuration généré, le nom de la liaison est généré automatiquement. Dans cet exemple, le nom est `"tcpBindingWithCredential"`.
+5. Lorsque vous configurez le client, spécifiez le comportement en définissant l'attribut `behaviorConfiguration` de l'élément `<endpoint>`, comme illustré dans le code suivant. L’élément de point de terminaison est un enfant de l' [\<client>](../configure-apps/file-schema/wcf/client.md) élément. Spécifiez également le nom de la configuration de liaison en affectant à l’attribut `bindingConfiguration` la liaison pour le client. Si vous utilisez un fichier de configuration généré, le nom de la liaison est généré automatiquement. Dans cet exemple, il s'agit du nom `"tcpBindingWithCredential"`.
 
     ```xml
     <client>
@@ -101,12 +102,12 @@ Cet exemple définit le mode de sécurité sur le mode Transport et définit la 
 - <xref:System.ServiceModel.ClientBase%601>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>
 - [Programmation de la sécurité dans WCF](./feature-details/programming-wcf-security.md)
-- [Sélection d’un type d’informations d’identification](./feature-details/selecting-a-credential-type.md)
-- [Outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [Utilisation des certificats](./feature-details/working-with-certificates.md)
+- [Sélection d'un type d'informations d'identification](./feature-details/selecting-a-credential-type.md)
+- [Outil Service Model Metadata Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Working with Certificates](./feature-details/working-with-certificates.md)
 - [Guide pratique pour créer un client](how-to-create-a-wcf-client.md)
 - [\<netTcpBinding>](../configure-apps/file-schema/wcf/nettcpbinding.md)
-- [> de sécurité \<](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [\<security>](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
 - [\<message>](../configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)
 - [\<behavior>](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)
 - [\<behaviors>](../configure-apps/file-schema/wcf/behaviors.md)

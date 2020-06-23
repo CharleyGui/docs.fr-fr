@@ -1,19 +1,20 @@
 ---
 title: Paramètres recommandés pour le suivi et l'enregistrement des messages
+description: Découvrez les paramètres de suivi et de journalisation des messages recommandés pour différents environnements d’exploitation dans WCF.
 ms.date: 03/30/2017
 ms.assetid: c6aca6e8-704e-4779-a9ef-50c46850249e
-ms.openlocfilehash: 9d2586570a3f590735c2a8e1ca176580886c8d92
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 71067a4d6f4cec65a148a8162c40e44d82b85784
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84578914"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245323"
 ---
 # <a name="recommended-settings-for-tracing-and-message-logging"></a>Paramètres recommandés pour le suivi et l'enregistrement des messages
 Cette rubrique décrit les paramètres de suivi et d'enregistrement des messages recommandés pour différents environnements d'exploitation.  
   
 ## <a name="recommended-settings-for-a-production-environment"></a>Paramètres recommandés pour un environnement de production  
- Pour un environnement de production, si vous utilisez les sources de suivi WCF, affectez à `switchValue` la valeur Warning. Si vous utilisez la source de suivi WCF `System.ServiceModel`, affectez à l'attribut `switchValue` la valeur `Warning` et à l'attribut `propagateActivity` la valeur `true`. Si vous utilisez une source de suivi définie par l'utilisateur, affectez à l'attribut `switchValue` la valeur `Warning, ActivityTracing`. Vous pouvez effectuer cette opération manuellement à l’aide de l' [outil Éditeur de configuration (SvcConfigEditor. exe)](../../configuration-editor-tool-svcconfigeditor-exe.md). Si vous ne prévoyez pas d'augmentation des performances, vous pouvez affecter la valeur `switchValue` à l'attribut `Information` dans tous les cas mentionnés précédemment, ce qui génère une quantité assez élevée de données de suivi. L'exemple suivant illustre ces paramètres recommandés.  
+ Pour un environnement de production, si vous utilisez les sources de suivi WCF, affectez à `switchValue` la valeur Warning. Si vous utilisez la source de suivi WCF `System.ServiceModel`, affectez à l'attribut `switchValue` la valeur `Warning` et à l'attribut `propagateActivity` la valeur `true`. Si vous utilisez une source de suivi définie par l'utilisateur, affectez à l'attribut `switchValue` la valeur `Warning, ActivityTracing`. Vous pouvez effectuer cette opération manuellement à l’aide de l' [outil Éditeur de configuration (SvcConfigEditor.exe)](../../configuration-editor-tool-svcconfigeditor-exe.md). Si vous ne prévoyez pas d'augmentation des performances, vous pouvez affecter la valeur `switchValue` à l'attribut `Information` dans tous les cas mentionnés précédemment, ce qui génère une quantité assez élevée de données de suivi. L'exemple suivant illustre ces paramètres recommandés.  
   
 ```xml  
 <configuration>  

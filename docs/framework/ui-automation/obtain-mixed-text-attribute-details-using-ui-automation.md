@@ -1,16 +1,17 @@
 ---
 title: Obtenir des détails d'attribut de texte mixte à l'aide d'UI Automation
+description: Obtenez des détails d’attribut de texte mixte à l’aide des classes UI Automation managées dans l’espace de noms System. Windows. Automation de l’API .NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d0e4c005-abd1-42bb-92a4-5faf87097311
-ms.openlocfilehash: 9f2cba1f602cedf3a13bd909b4dc2f1a7b4ab972
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 111d110be9365c4a58f2bd2b033c1ff4e3a6a95d
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443122"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903855"
 ---
 # <a name="obtain-mixed-text-attribute-details-using-ui-automation"></a>Obtenir des détails d'attribut de texte mixte à l'aide d'UI Automation
 > [!NOTE]
@@ -28,9 +29,9 @@ ms.locfileid: "74443122"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de TextPattern d’UI Automation](ui-automation-textpattern-overview.md)
-- [Ajouter du contenu à une zone de texte à l’aide d’UI Automation](add-content-to-a-text-box-using-ui-automation.md)
-- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](find-and-highlight-text-using-ui-automation.md)
-- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [Vue d'ensemble de TextPattern d'UI Automation](ui-automation-textpattern-overview.md)
+- [Ajouter du contenu à une zone de texte à l'aide d'UI Automation](add-content-to-a-text-box-using-ui-automation.md)
+- [Rechercher et mettre un texte en surbrillance à l'aide d'UI Automation](find-and-highlight-text-using-ui-automation.md)
+- [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
 - [Obtenir des attributs de texte à l’aide d’UI Automation](obtain-text-attributes-using-ui-automation.md)

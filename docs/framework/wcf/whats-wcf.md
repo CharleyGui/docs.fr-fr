@@ -1,17 +1,18 @@
 ---
 title: Présentation de Windows Communication Foundation
+description: En savoir plus sur le Windows Communication Foundation, qui est une infrastructure pour la création d’applications orientées service.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], technology overview
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: fd78f2cd8266f94c577801623a84b56919c82973
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 84cb45d62409769a79fa6a401fdb1aa6934c4099
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600852"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245607"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Présentation de Windows Communication Foundation
 Windows Communication Foundation (WCF) est une infrastructure permettant de créer des applications orientées service. À l’aide de WCF, vous pouvez envoyer des données sous forme de messages asynchrones d’un point de terminaison de service à un autre. Un point de terminaison de service peut faire partie d'un service disponible en continu et hébergé par IIS, ou il peut s'agir d'un service hébergé dans une application. Un point de terminaison peut être un client d'un service qui demande des données auprès d'un point de terminaison de service. Les messages peuvent être simplement constitués d'un caractère ou d'un mot unique envoyé au format XML, ou se présenter sous la forme d'un flux de données binaires plus complexe. Voici quelques exemples de scénarios :

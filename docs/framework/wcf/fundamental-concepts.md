@@ -1,5 +1,6 @@
 ---
 title: Concepts fondamentaux concernant Windows Communication Foundation
+description: En savoir plus sur les notions de base de l’architecture de Windows Communication Foundation (WCF) avec cette explication de haut niveau.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF [WCF], concepts
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: 360479a2ba17c4542d61a737856d23992296e276
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 93e75942487a1a81a8b0e8ecd8d9d666610152dc
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802313"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244672"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Concepts fondamentaux concernant Windows Communication Foundation
 
@@ -60,8 +61,8 @@ Les autres concepts et termes utilisés dans la documentation WCF sont les suiva
 **Service**  
  Construction qui expose un ou plusieurs points de terminaison, chacun de ces derniers exposant une ou plusieurs opérations de service.
 
-**Endpoint**  
- Construction à laquelle les messages sont envoyés ou de laquelle ils sont reçus (ou les deux). Il comprend un emplacement (une adresse) qui définit où les messages peuvent être envoyés, une spécification du mécanisme de communication (une liaison) qui décrit la façon dont les messages doivent être envoyés et une définition pour un ensemble de messages qui peuvent être envoyés ou reçus (ou les deux) à ce emplacement (contrat de service) qui décrit le message qui peut être envoyé.
+**Point de terminaison**  
+ Construction à laquelle les messages sont envoyés ou de laquelle ils sont reçus (ou les deux). Il comprend un emplacement (une adresse) qui définit où les messages peuvent être envoyés, une spécification du mécanisme de communication (une liaison) qui décrit la façon dont les messages doivent être envoyés et une définition pour un ensemble de messages qui peuvent être envoyés ou reçus (ou les deux) à cet emplacement (un contrat de service) qui décrit le message qui peut être envoyé.
 
 Un service WCF est exposé au monde extérieur comme une collection de points de terminaison.
 
@@ -80,17 +81,17 @@ L'adresse de point de terminaison vous permet de créer des adresses uniques pou
 HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 ```
 
-**Liaison**  
+**Liant**  
  Définit la façon dont un point de terminaison communique avec le monde. Elle est construite à l'aide d'un ensemble de composants appelés éléments de liaison qui « s'empilent » les uns sur les autres pour créer l'infrastructure de communication. Au minimum, une liaison définit le transport (HTTP ou TCP par exemple) et l'encodage utilisés (tel que texte ou binaire). Une liaison peut contenir des éléments de liaison qui spécifient des informations détaillées comme les mécanismes de sécurité utilisés pour sécuriser les messages, ou le modèle de message utilisé par un point de terminaison. Pour plus d’informations, consultez [Configuration des services](configuring-services.md).
 
 **Élément de liaison**  
  Représente un composant particulier de la liaison, tel qu’un transport, un encodage, une implémentation d’un protocole au niveau de l’infrastructure (comme WS-ReliableMessaging) ou tout autre composant de la pile de communication.
 
-**Comportements**  
+**comportements**  
  Composant qui contrôle plusieurs aspects de l'exécution d'un service, d'un point de terminaison, d'une opération particulière ou d'un client. Les comportements sont groupés en fonction de leur portée : les comportements courants affectent tous les points de terminaison globalement, les comportements de service affectent uniquement des aspects relatifs à un service, les comportements de point de terminaison affectent uniquement des propriétés connexes à un point de terminaison, et les comportements au niveau de l'opération affectent des opérations particulières. Par exemple, le comportement de service « limitation » spécifie comment un service réagit lorsqu'un trop grand nombre de messages menace de submerger ses fonctions de traitement. Un comportement de point de terminaison, en revanche, contrôle uniquement les aspects pertinents aux points de terminaison, par exemple comment et où rechercher une information d'identification de sécurité.
 
 **Liaisons fournies par le système**  
- WCF inclut plusieurs liaisons fournies par le système. Il s'agit de collections d'éléments de liaison optimisés pour des scénarios spécifiques. Par exemple, le <xref:System.ServiceModel.WSHttpBinding> est conçu pour l’interopérabilité avec les services qui implémentent différentes spécifications WS-\*. Ces liaisons prédéfinies vous font gagner du temps en vous présentant uniquement les options qui peuvent être appliquées correctement au scénario spécifique. Si une liaison prédéfinie ne satisfait pas vos spécifications, vous pouvez créer votre propre liaison personnalisée.
+ WCF inclut plusieurs liaisons fournies par le système. Il s'agit de collections d'éléments de liaison optimisés pour des scénarios spécifiques. Par exemple, le <xref:System.ServiceModel.WSHttpBinding> est conçu pour l’interopérabilité avec les services qui implémentent différentes \* spécifications WS. Ces liaisons prédéfinies vous font gagner du temps en vous présentant uniquement les options qui peuvent être appliquées correctement au scénario spécifique. Si une liaison prédéfinie ne satisfait pas vos spécifications, vous pouvez créer votre propre liaison personnalisée.
 
 **Configuration et codage**  
  Le contrôle d'une application peut être réalisé par l'encodage, par la configuration, ou par les deux. La configuration a l'avantage de permettre à quelqu'un d'autre que le développeur (par exemple, un administrateur réseau) de définir les paramètres de client et de service après que le code a été écrit et sans devoir le recompiler. La configuration vous permet non seulement de définir des valeurs comme des adresses de point de terminaison, mais aussi de procéder à un contrôle approfondi en vous permettant d'ajouter des points de terminaison, des liaisons et des comportements. L'encodage permet au développeur de conserver un contrôle étroit sur tous les composants du service ou client, et tous les paramètres définis par la configuration peuvent être inspectés et si besoin être remplacés par le code.
@@ -101,7 +102,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 **Contrat de service**  
  Joint plusieurs opérations connexes dans une unité fonctionnelle unique. Il peut définir des paramètres au niveau du service, tels que l'espace de noms du service, un contrat de rappel correspondant et d'autres paramètres de ce type. Dans la plupart des cas, le contrat est défini en créant une interface dans le langage de programmation de votre choix et en appliquant l'attribut <xref:System.ServiceModel.ServiceContractAttribute> à l'interface. Le code de service réel résulte de l'implémentation de l'interface.
 
-**Contrat d’opération**  
+**Contrat d'opération**  
  Un contrat d'opération définit les paramètres et le type de retour d'une opération. Lorsque vous créez une interface qui définit le contrat de service, vous indiquez un contrat d'opération en appliquant l'attribut <xref:System.ServiceModel.OperationContractAttribute> à chaque définition de méthode qui fait partie du contrat. Les opérations peuvent être conçues de manière à prendre un message unique et à renvoyer un message unique, ou à prendre un jeu de types et à renvoyer un type. Dans ce cas, le système détermine le format des messages qui doivent être échangés pour cette opération.
 
 **Contrat de message**  
@@ -113,7 +114,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 **Contrat de données**  
  Descriptions dans les métadonnées des types de données utilisés par un service. Cela permet à d'autres d'interagir avec le service. Les types de données peuvent être utilisés dans n’importe quelle partie d’un message, par exemple comme paramètres ou types de retour. Si le service n'utilise que des types simples, l'utilisation explicite des contrats de données est inutile.
 
-**Hébergement**  
+**Hosting**  
  Un service doit être hébergé dans un processus. Un _hôte_ est une application qui contrôle la durée de vie du service. Les services peuvent être auto-hébergés ou gérés par un processus d'hébergement existant.
 
 **Service auto-hébergé**  
@@ -122,29 +123,29 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 **Processus d’hébergement**  
  Application conçue pour héberger des services. Ces derniers incluent les services IIS (Internet Information Services), les services WAS (Windows Activation Services) et les services Windows. Dans ces scénarios hébergés, l'hôte contrôle la durée de vie du service. Par exemple, vous pouvez installer un répertoire virtuel qui contient l'assembly de service et le fichier de configuration à l'aide d'IIS. Lorsqu'un message est reçu, IIS démarre le service et contrôle sa durée de vie.
 
-**Instanciation**  
+**Instancing**  
  Un service dispose d'un modèle d'instanciation. Il existe trois modèles d'instanciation : « unique », dans lequel un objet CLR unique prend en charge tous les clients ; « par appel », dans lequel un nouvel objet CLR est créé pour gérer chaque appel du client ; et « par session », dans lequel un ensemble d'objets CLR est créé, un pour chaque session. Le choix d’un modèle d’instanciation dépend des spécifications de l’application et du modèle d’utilisation attendu du service.
 
 **Application cliente**  
  Programme qui échange des messages avec un ou plusieurs points de terminaison. L'application cliente commence par créer l'instance d'un client WCF et appelle les méthodes de ce client. Il est important de noter qu'une même application peut être à la fois un client et un service.
 
-**Canal**  
+**Channel**  
  Implémentation concrète d'un élément de liaison. La liaison représente la configuration, et le canal est l’implémentation associée à cette configuration. Par conséquent, un canal est associé à chaque élément de liaison. Les canaux s’empilent les uns sur les autres pour créer l’implémentation concrète de la liaison : la pile de canaux.
 
-**Client WCF**  
- Construction d’application cliente qui expose les opérations de service en tant que méthodes (dans le .NET Framework langage de programmation de votre choix, tel C#que Visual Basic ou visuel). N'importe quelle application peut accueillir un client WCF, y compris une application hébergeant un service. Par conséquent, il est possible de créer un service qui inclut des clients WCF d'autres services.
+**Client WCF (WCF client)**  
+ Construction d’application cliente qui expose les opérations de service en tant que méthodes (dans le langage de programmation .NET Framework de votre choix, comme Visual Basic ou Visual C#). N'importe quelle application peut accueillir un client WCF, y compris une application hébergeant un service. Par conséquent, il est possible de créer un service qui inclut des clients WCF d'autres services.
 
-Un client WCF peut être généré automatiquement à l’aide de l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) et en le faisant pointer sur un service en cours d’exécution qui publie des métadonnées.
+Un client WCF peut être généré automatiquement à l’aide de l' [outil utilitaire de métadonnées ServiceModel (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) et en le faisant pointer sur un service en cours d’exécution qui publie des métadonnées.
 
 **Métadonnées**  
- Dans un service, décrivent les caractéristiques du service qu'une entité externe doit comprendre pour communiquer avec ce service. Les métadonnées peuvent être consommées par l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer un client WCF et la configuration associée qu’une application cliente peut utiliser pour interagir avec le service.
+ Dans un service, décrivent les caractéristiques du service qu'une entité externe doit comprendre pour communiquer avec ce service. Les métadonnées peuvent être consommées par l' [outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer un client WCF et la configuration associée qu’une application cliente peut utiliser pour interagir avec le service.
 
 Les métadonnées exposées par le service incluent des documents de schéma XML qui définissent le contrat de données du service, et des documents WSDL qui décrivent les méthodes du service.
 
 En cas d'activation, les métadonnées du service sont générées automatiquement par WCF par inspection du service et de ses points de terminaison. Pour publier les métadonnées d'un service, vous devez explicitement activer le comportement des métadonnées.
 
-**Security**  
- Dans WCF, comprend la confidentialité (chiffrement des messages pour empêcher l’espionnage), l’intégrité (la détection de la falsification du message), l’authentification (la validation des serveurs et des clients) et l’autorisation (le contrôle de l’accès à ressources). Ces fonctions sont fournies par l’utilisation de mécanismes de sécurité existants, tels que TLS sur HTTP (également appelé HTTPs), ou en implémentant une ou plusieurs des diverses spécifications de sécurité WS-\*.
+**Sécurité**  
+ Dans WCF, comprend la confidentialité (chiffrement des messages pour empêcher l’espionnage), l’intégrité (la détection de la falsification du message), l’authentification (la validation des serveurs et des clients) et l’autorisation (le contrôle de l’accès aux ressources). Ces fonctions sont fournies par l’utilisation de mécanismes de sécurité existants, tels que TLS sur HTTP (également appelé HTTPs), ou en implémentant une ou plusieurs des diverses spécifications WS- \* Security.
 
 **Mode de sécurité du transport**  
  Spécifie que la confidentialité, l'intégrité et l'authentification sont assurées par les mécanismes de la couche de transport (tels que HTTPS). Lors de l'utilisation d'un transport comme le HTTPS, ce mode a l'avantage d'être efficace en termes de performances, et d'être bien compris grâce à sa prédominance sur Internet. L’inconvénient est que ce type de sécurité est appliqué séparément sur chaque saut dans la voie de communication, et rend la communication susceptible d’être victime d’une attaque de « l’homme du milieu ».
@@ -155,7 +156,7 @@ En cas d'activation, les métadonnées du service sont générées automatiqueme
 **Transport avec le mode de sécurité des informations d’identification de message**  
  Spécifie l'utilisation de la couche de transport pour assurer la confidentialité, l'authentification et l'intégrité des messages, tandis que chacun des messages peut contenir plusieurs informations d'identification (revendications) requises par les récepteurs du message.
 
-**\* WS**  
+**Web\***  
  Abrégé pour l'ensemble croissant des spécifications de services Web (WS), telles que WS-Security, WS-ReliableMessaging et ainsi de suite, implémentées dans WCF.
 
 ## <a name="see-also"></a>Voir aussi

@@ -1,5 +1,6 @@
 ---
 title: Ordre des événements
+description: Découvrez plus d’informations sur l’ordre des événements dans Windows Forms au cours de plusieurs étapes importantes dans la durée de vie des applications et des contrôles.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - events [Windows Forms], order of
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - validation events [Windows Forms], order of
 - application startup event order
 ms.assetid: e81db09b-4453-437f-b78a-62d7cd5c9829
-ms.openlocfilehash: 618ac5a6a6a32ae1a53fc60ac80700d7648c81a7
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: b16d544d11500b2c684e87a915fc4b8eec071faa
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734861"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904336"
 ---
 # <a name="order-of-events-in-windows-forms"></a>Ordre des événements dans les Windows Forms
 L'ordre dans lequel les événements sont déclenchés dans les applications Windows Forms est particulièrement intéressant pour les développeurs soucieux de gérer chacun de ces événements tour à tour. Quand une situation nécessite une gestion méticuleuse des événements, par exemple quand vous redessinez certaines parties du formulaire, une connaissance de l'ordre exact dans lequel les événements sont déclenchés au moment de l'exécution est nécessaire. Cette rubrique fournit des détails sur l'ordre des événements durant plusieurs phases importantes de la durée de vie des applications et des contrôles. Pour plus d’informations sur l’ordre des événements d’entrée de souris, consultez [événements de souris dans Windows Forms](mouse-events-in-windows-forms.md). Pour obtenir une vue d’ensemble des événements dans Windows Forms, consultez [vue d’ensemble des événements](events-overview-windows-forms.md). Pour plus d’informations sur la composition de gestionnaires d’événements, consultez [vue d’ensemble des gestionnaires d’événements](event-handlers-overview-windows-forms.md).  
@@ -82,4 +83,4 @@ L'ordre dans lequel les événements sont déclenchés dans les applications Win
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md)
+- [Création de gestionnaires d'événements dans les Windows Forms](creating-event-handlers-in-windows-forms.md)

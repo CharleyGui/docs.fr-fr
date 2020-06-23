@@ -1,13 +1,14 @@
 ---
 title: ETW Tracing
+description: Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l’aide de Suivi d’v nements pour Windows (ETW) et du ETWTraceListener.
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: 0bdbf6699a0cfa3dce58abda4c989fb25d764459
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 210186285ed749a5d1567becd6738939b0bd9d03
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600556"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244424"
 ---
 # <a name="etw-tracing"></a>ETW Tracing
 Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide du suivi d'événements pour Windows (ETW, Event Tracing for Windows) et du `ETWTraceListener` fourni dans cet exemple. L’exemple est basé sur le [prise en main](getting-started-sample.md) et comprend le suivi ETW.  
@@ -52,7 +53,7 @@ Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique. Pour plus d’informations sur ces outils, consultez.<https://go.microsoft.com/fwlink/?LinkId=56580>  
   
- Lorsque l'écouteur ETWTraceListener est utilisé, les suivis sont enregistrés dans des fichiers .etl binaires. Si le suivi ServiceModel est activé, tous les suivis générés apparaissent dans le même fichier. Utilisez l' [outil Service Trace Viewer (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) pour afficher les fichiers journaux. etl et. svclog. La visionneuse affiche une vue de bout en bout du système, ce qui permet de suivre un message de sa source à ses destination et point de consommation.  
+ Lorsque l'écouteur ETWTraceListener est utilisé, les suivis sont enregistrés dans des fichiers .etl binaires. Si le suivi ServiceModel est activé, tous les suivis générés apparaissent dans le même fichier. Utilisez l' [outil Service Trace Viewer (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) pour afficher les fichiers journaux. etl et. svclog. La visionneuse affiche une vue de bout en bout du système, ce qui permet de suivre un message de sa source à ses destination et point de consommation.  
   
  L'écouteur de suivi ETW prend en charge l'enregistrement circulaire. Pour activer cette fonctionnalité, accédez à **Démarrer**, **exécuter** et tapez `cmd` pour démarrer une console de commandes. Dans la commande suivante, remplacez le paramètre `<logfilename>` par le nom de votre fichier journal.  
   
@@ -74,7 +75,7 @@ logman start Wcf
 logman stop Wcf  
 ```  
   
- Ce processus génère des journaux circulaires binaires que vous pouvez traiter avec l’outil de votre choix, y compris l' [outil Service Trace Viewer (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) ou tracerpt.  
+ Ce processus génère des journaux circulaires binaires que vous pouvez traiter avec l’outil de votre choix, y compris l' [outil Service Trace Viewer (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) ou tracerpt.  
   
  Vous pouvez également consulter l’exemple de [traçage circulaire](circular-tracing.md) pour plus d’informations sur un autre écouteur afin d’effectuer une journalisation circulaire.  
   

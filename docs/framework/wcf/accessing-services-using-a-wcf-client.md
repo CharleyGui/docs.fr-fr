@@ -1,5 +1,6 @@
 ---
 title: Accès aux services à l'aide d'un client WCF
+description: Découvrez comment créer un proxy client WCF pour votre service WCF. Une application cliente utilise le proxy client pour communiquer avec le service.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: 462d9a3923009f0124c2b90b6fa86dfa9869a3c5
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 25446a89a0b5657d32d77e2d0d57f58f36bed71b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72316534"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245542"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Accès aux services à l'aide d'un client WCF
 
@@ -26,10 +27,10 @@ Une fois que vous avez créé un service, l’étape suivante consiste à créer
 
 3. Instanciez le proxy client WCF.
 
-Le proxy client WCF peut être généré manuellement à l’aide de l’outil Service Model Metadata Utility (SvcUtil. exe) pour plus d’informations, consultez [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md). Le proxy client WCF peut également être généré dans Visual Studio à l’aide de la fonctionnalité **Ajouter une référence de service** . Pour générer le proxy client WCF à l'aide de l'une de ces méthodes, le service doit s'exécuter. Si le service est auto-hébergé, vous devez exécuter l'hôte. Si le service est hébergé dans IIS/WAS, aucune action n'est nécessaire.
+Le proxy client WCF peut être généré manuellement à l’aide de l’outil Service Model Metadata Utility (SvcUtil.exe). pour plus d’informations, consultez [outil ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md). Le proxy client WCF peut également être généré dans Visual Studio à l’aide de la fonctionnalité **Ajouter une référence de service** . Pour générer le proxy client WCF à l'aide de l'une de ces méthodes, le service doit s'exécuter. Si le service est auto-hébergé, vous devez exécuter l'hôte. Si le service est hébergé dans IIS/WAS, aucune action n'est nécessaire.
 
 ## <a name="servicemodel-metadata-utility-tool"></a>Outil Service Model Metadata Tool
- L' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) est un outil de ligne de commande permettant de générer du code à partir de métadonnées. Voici un exemple d'utilisation d'une commande Svcutil.exe de base.
+ L' [outil ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) est un outil en ligne de commande permettant de générer du code à partir de métadonnées. Voici un exemple d'utilisation d'une commande Svcutil.exe de base.
 
 ```console
 Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -56,7 +57,7 @@ Svcutil.exe <file1 [,file2]>
 
 ## <a name="add-service-reference-in-visual-studio"></a>Ajouter une référence de service dans Visual Studio
 
- Lorsque le service est en cours d’exécution, cliquez avec le bouton droit sur le projet qui contiendra le proxy client WCF et sélectionnez **Ajouter**une**référence de service** > . Dans la **boîte de dialogue Ajouter une référence de service**, tapez l’URL du service que vous souhaitez appeler, puis cliquez sur le bouton **OK** . La boîte de dialogue affiche une liste de services disponibles à l'adresse que vous spécifiez. Double-cliquez sur le service pour afficher les contrats et les opérations disponibles, spécifiez un espace de noms pour le code généré, puis cliquez sur le bouton **OK** .
+ Lorsque le service est en cours d’exécution, cliquez avec le bouton droit sur le projet qui contiendra le proxy client WCF et sélectionnez **Ajouter**une  >  **référence de service**. Dans la **boîte de dialogue Ajouter une référence de service**, tapez l’URL du service que vous souhaitez appeler, puis cliquez sur le bouton **OK** . La boîte de dialogue affiche une liste de services disponibles à l'adresse que vous spécifiez. Double-cliquez sur le service pour afficher les contrats et les opérations disponibles, spécifiez un espace de noms pour le code généré, puis cliquez sur le bouton **OK** .
 
 ## <a name="example"></a>Exemple
  L'exemple de code suivant montre un contrat de service créé pour un service.
@@ -176,7 +177,7 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 
 ## <a name="debugging-exceptions-thrown-by-a-client"></a>Débogage d'exceptions levées par un Client
 
-De nombreuses exceptions levées par un client WCF sont provoquées par une exception sur le service. En voici quelques exemples :
+De nombreuses exceptions levées par un client WCF sont provoquées par une exception sur le service. Quelques exemples :
 
 - <xref:System.Net.Sockets.SocketException> : une connexion existante a été arrêtée de force par l'hôte distant.
 
@@ -189,11 +190,11 @@ Lorsque ces types d'exceptions se produisent, le meilleur moyen de les résoudre
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide pratique pour créer un client](how-to-create-a-wcf-client.md)
-- [Guide pratique pour accéder aux services ayant un contrat duplex](./feature-details/how-to-access-services-with-a-duplex-contract.md)
-- [Guide pratique pour appeler des opérations de service de façon asynchrone](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)
-- [Guide pratique pour accéder aux services avec des contrats unidirectionnels et demande-réponse](./feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
-- [Guide pratique pour accéder à un service WSE 3.0](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
+- [Comment : accéder aux services ayant un contrat duplex](./feature-details/how-to-access-services-with-a-duplex-contract.md)
+- [Comment : appeler des opérations de service de façon asynchrone](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)
+- [Comment : accéder aux services avec des contrats unidirectionnels et demande-réponse](./feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
+- [Comment : accéder à un service WSE 3.0](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
 - [Fonctionnement du code client généré](./feature-details/understanding-generated-client-code.md)
-- [Guide pratique pour améliorer le temps de démarrage des applications clientes WCF à l’aide de XmlSerializer](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+- [Comment : améliorer le temps de démarrage des applications clientes WCF à l'aide de XmlSerializer](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
 - [Spécification du comportement du client au moment de l’exécution](specifying-client-run-time-behavior.md)
 - [Configuration des comportements clients](configuring-client-behaviors.md)

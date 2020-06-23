@@ -1,17 +1,18 @@
 ---
 title: Hôte de service WCF (WcfSvcHost.exe)
+description: Utilisez l’hôte de service WCF pour héberger et tester un service que vous avez implémenté. Vous pouvez tester le service à l’aide du client test WCF ou de votre propre client.
 ms.date: 03/30/2017
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-ms.openlocfilehash: b8fb32111a80178f5eb92411eb4990decb645bb6
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: efc9512766d2a9cc814083ab632226d98917bf4e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837738"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245724"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hôte de service WCF (WcfSvcHost.exe)
 
-Windows Communication Foundation (WCF) Service Host (WcfSvcHost. exe) vous permet de lancer le débogueur Visual Studio (F5) pour héberger et tester automatiquement un service que vous avez implémenté. Vous pouvez ensuite tester le service à l’aide du client test WCF (WcfTestClient. exe) ou de votre propre client pour rechercher et corriger les erreurs potentielles.
+L’hôte de service (WcfSvcHost.exe) Windows Communication Foundation (WCF) vous permet de lancer le débogueur Visual Studio (F5) pour héberger et tester automatiquement un service que vous avez implémenté. Vous pouvez ensuite tester le service à l’aide du client test WCF (WcfTestClient.exe) ou de votre propre client pour rechercher et corriger les erreurs potentielles.
 
 ## <a name="wcf-service-host"></a>Hôte de service WCF
 
@@ -51,7 +52,7 @@ Pour vous assurer que le client test WCF est utilisé, cliquez avec le bouton dr
 
 #### <a name="using-a-custom-client"></a>Utilisation d'un client personnalisé
 
-Pour utiliser un client personnalisé, cliquez avec le bouton droit sur votre projet dans l' **Explorateur de solutions** dans Visual Studio, sélectionnez **Propriétés**, puis sélectionnez l’onglet **Déboguer** . cliquez sur **démarrer le projet** et modifiez le paramètre `/client` dans la boîte de dialogue arguments de **ligne de commande** pour pointer vers votre client personnalisé, comme indiqué dans l’exemple suivant.
+Pour utiliser un client personnalisé, cliquez avec le bouton droit sur votre projet dans l' **Explorateur de solutions** dans Visual Studio, sélectionnez **Propriétés**, puis sélectionnez l’onglet **Déboguer** . cliquez sur **Démarrer le projet** et modifiez le `/client` paramètre dans la boîte de dialogue **arguments de ligne de commande** pour pointer vers votre client personnalisé, comme indiqué dans l’exemple suivant.
 
 `/client:"path/CustomClient.exe"`
 
@@ -111,15 +112,15 @@ Vous pouvez arrêter l’hôte de service WCF de l’une des quatre manières su
 
 ## <a name="using-service-host-without-administrator-privilege"></a>Utilisation de l'hôte de service sans privilège d'administrateur
 
-Pour permettre aux utilisateurs sans privilège d’administrateur de développer des services WCF, une liste de contrôle d’accès Access Control (ACL) est créée pour l’espace de noms « http://+:8731/Design_Time_Addresses » pendant l’installation de Visual Studio. La liste ACL a la valeur (UI), qui inclut tous les utilisateurs interactifs ayant ouvert une session sur l'ordinateur. Les administrateurs peuvent ajouter ou supprimer des utilisateurs de cette liste de contrôle d’accès, ou ouvrir des ports supplémentaires. Cette liste de contrôle d’accès permet aux utilisateurs d’utiliser l’hôte auto du service WCF (wcfSvcHost. exe) sans leur accorder des privilèges d’administrateur.
+Pour permettre aux utilisateurs sans privilège d’administrateur de développer des services WCF, une liste de contrôle d’accès (ACL) (liste Access Control) est créée pour l’espace de noms « http://+:8731/Design_Time_Addresses » pendant l’installation de Visual Studio. La liste ACL a la valeur (UI), qui inclut tous les utilisateurs interactifs ayant ouvert une session sur l'ordinateur. Les administrateurs peuvent ajouter ou supprimer des utilisateurs de cette liste de contrôle d’accès, ou ouvrir des ports supplémentaires. Cette liste de contrôle d’accès permet aux utilisateurs d’utiliser l’hôte auto du service WCF (wcfSvcHost.exe) sans leur accorder des privilèges d’administrateur.
 
-Vous pouvez modifier l’accès à l’aide de l’outil netsh. exe dans Windows Vista sous le compte d’administrateur avec élévation de privilèges. Ceci est un exemple d'utilisation de netsh.exe .
+Vous pouvez modifier l’accès à l’aide de l’outil netsh.exe dans Windows Vista sous le compte d’administrateur avec élévation de privilèges. Ceci est un exemple d'utilisation de netsh.exe .
 
 ```console
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
 ```
 
-Pour plus d’informations sur netsh. exe, consultez «[utilisation de l’outil netsh. exe et des commutateurs de ligne de commande](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10))».
+Pour plus d’informations sur la netsh.exe, consultez «[utilisation de l’outil Netsh.exe et des commutateurs de ligne de commande](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10))».
 
 ## <a name="see-also"></a>Voir aussi
 

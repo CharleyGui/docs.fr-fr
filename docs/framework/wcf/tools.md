@@ -1,16 +1,17 @@
 ---
 title: Outils de Windows Communication Foundation
+description: Découvrez les outils WCF conçus pour faciliter la création, le déploiement et la gestion d’applications WCF. Exécutez ces outils à partir d’une invite de commandes.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF, tools
 - Windows Communication Foundation, tools
 ms.assetid: 399a47b4-bfea-434b-8e83-f76b5063d79d
-ms.openlocfilehash: edd54c93207456156ef2520a00ad567cd087d89c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: acc142e8e3108a827b63cf013b818d30b5dcaa52
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321368"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245965"
 ---
 # <a name="windows-communication-foundation-tools"></a>Outils de Windows Communication Foundation
 Les outils Microsoft Windows Communication Foundation (WCF) sont conçus pour faciliter la création, le déploiement et la gestion d’applications WCF. Cette section contient des informations détaillées sur ces outils. Notez que ces outils ne sont pas pris en charge.  
@@ -21,9 +22,9 @@ Les outils Microsoft Windows Communication Foundation (WCF) sont conçus pour fa
   
 |Outil|Description|  
 |----------|-----------------|  
-|[Outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)|Génère le code de modèle de service à partir des documents de métadonnées et des documents de métadonnées issus du code de modèle de service.|  
+|[Outil Service Model Metadata Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)|Génère le code de modèle de service à partir des documents de métadonnées et des documents de métadonnées issus du code de modèle de service.|  
 |[Outil de recherche de clé privée (FindPrivateKey.exe)](find-private-key-tool-findprivatekey-exe.md)|Récupère la clé privée dans le magasin spécifié.|  
-|[Outil d’inscription ServiceModel (ServiceModelReg.exe)](servicemodelreg-exe.md)|Gère l'inscription et l'annulation de l'inscription de ServiceModel sur un ordinateur unique.|  
+|[Outil d'inscription ServiceModel (ServiceModelReg.exe)](servicemodelreg-exe.md)|Gère l'inscription et l'annulation de l'inscription de ServiceModel sur un ordinateur unique.|  
 |[Outil de configuration de modèle de service COM+ (ComSvcConfig.exe)](com-service-model-configuration-tool-comsvcconfig-exe.md)|Configure les interfaces COM+ à exposer en tant que services Web.|  
 |[Outil Éditeur de configuration (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md)|Crée et modifie les paramètres de configuration pour les services WCF.|  
 |[Outil Service Trace Viewer (SvcTraceViewer.exe)](service-trace-viewer-tool-svctraceviewer-exe.md)|Vous aide à afficher, à regrouper et à filtrer les messages de suivi, afin que vous puissiez diagnostiquer, réparer et vérifier des problèmes rencontrés au niveau des services WCF.|  

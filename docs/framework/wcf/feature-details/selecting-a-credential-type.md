@@ -1,13 +1,14 @@
 ---
 title: Sélection d'un type d'informations d'identification
+description: Découvrez les informations d’identification, comment elles sont utilisées dans WCF et comment sélectionner les informations d’identification correctes pour votre application afin d’établir une identité ou des fonctionnalités demandées.
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-ms.openlocfilehash: 7bcc5f407077b32d85b7f1e5f7ddbc5aba4b80c1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7a8a6880e5fc3982bb7f470c34a77c771c26effd
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586193"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244918"
 ---
 # <a name="selecting-a-credential-type"></a>Sélection d'un type d'informations d'identification
 Les *informations d’identification* sont utilisées par le Windows Communication Foundation de données (WCF) pour établir une identité ou des fonctionnalités demandées. Par exemple, un passeport est une information d'identification émise par un gouvernement pour établir la citoyenneté dans un pays ou une région. Dans WCF, les informations d’identification peuvent prendre plusieurs formes, telles que les jetons de nom d’utilisateur et les certificats X. 509. Cette rubrique décrit les informations d’identification, comment elles sont utilisées dans WCF et comment sélectionner les informations d’identification appropriées pour votre application.  

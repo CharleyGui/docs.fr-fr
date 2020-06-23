@@ -1,5 +1,6 @@
 ---
-title: ServicePointManager.s_ServicePointTable Champ
+title: ServicePointManager. s_ServicePointTable Field
+description: En savoir plus sur le champ ServicePointManager. s_ServicePointTable dans .NET. Ce champ de table de hachage contient des connexions HTTP actives (ServicePoints) dans AppDomain.
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +11,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 24459679-291c-401a-9def-e42b29466fcf
-ms.openlocfilehash: 6a56ecd6fc85005f5987c3c2ad0d1680ca63c398
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9462ae10125dd37706f786a1f2cef78e62fbabcc
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155810"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989545"
 ---
-# <a name="servicepointmanagers_servicepointtable-field"></a>ServicePointManager.s\_ServicePointTable Field (en anglais)
+# <a name="servicepointmanagers_servicepointtable-field"></a>Champ ServicePointManager. s \_ ServicePointTable
 
-`ServicePointManager.s_ServicePointTable`est <xref:System.Collections.Hashtable> un qui contient la liste<xref:System.Net.ServicePoint>des connexions HTTP actives (s) dans le <xref:System.AppDomain>.
+`ServicePointManager.s_ServicePointTable`est un <xref:System.Collections.Hashtable> qui contient la liste des connexions http actives <xref:System.Net.ServicePoint> dans le <xref:System.AppDomain> .
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp  
 private static Hashtable s_ServicePointTable
@@ -30,12 +31,12 @@ private static Hashtable s_ServicePointTable
 > [!WARNING]
 > Le `ServicePointManager.s_ServicePointTable` champ est privé et n’est pas destiné à être utilisé directement dans votre code.
 >
-> Microsoft ne prend en charge l’utilisation de ce champ dans une application de production en aucune circonstance.
+> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**<xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
-**Assemblée:** Système (dans System.dll)
+**Assembly :** Système (en System.dll)
 
-**.NET Versions du Cadre:** Disponible depuis 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

@@ -1,16 +1,17 @@
 ---
 title: 'Comment : héberger un service WCF dans une application managée'
+description: Découvrez comment héberger un service WCF dans une application managée en créant un service auto-hébergé et en le testant.
 ms.date: 09/17/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
-ms.openlocfilehash: e3adcad6ba70aa64b797325cd45a043301d7e680
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 7d1d61b683f60a6c643d2a2f03d367a6ae6c6c15
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320978"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246166"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-app"></a>Comment : héberger un service WCF dans une application gérée
 
@@ -28,9 +29,9 @@ La procédure suivante montre comment implémenter un service auto-hébergé dan
 
 1. Créez une application de console :
 
-   1. Ouvrez Visual Studio et sélectionnez **nouveau** > **projet** dans le menu **fichier** .
+   1. Ouvrez Visual Studio et sélectionnez **nouveau**  >  **projet** dans le menu **fichier** .
 
-   2. Dans la liste **modèles installés** , sélectionnez **Visual C#**  ou **Visual Basic**, puis sélectionnez **Bureau Windows**.
+   2. Dans la liste **modèles installés** , sélectionnez **Visual C#** ou **Visual Basic**, puis sélectionnez **Bureau Windows**.
 
    3. Sélectionnez le modèle **application console** . Tapez `SelfHost` dans la zone **nom** , puis choisissez **OK**.
 
@@ -65,16 +66,16 @@ La procédure suivante montre comment implémenter un service auto-hébergé dan
     > [!NOTE]
     > Cet exemple utilise les points de terminaison par défaut et aucun fichier de configuration n'est requis pour ce service. Si aucun point de terminaison n'est configuré, le runtime en crée un pour chaque adresse de base pour chaque contrat de service implémenté par le service. Pour plus d’informations sur les points de terminaison par défaut, consultez [configuration simplifiée](simplified-configuration.md) et [configuration simplifiée pour les services WCF](./samples/simplified-configuration-for-wcf-services.md).
 
-7. Appuyez sur **Ctrl**+**Shift**+**B** pour générer la solution.
+7. Appuyez sur **CTRL** + **MAJ** + **B** pour générer la solution.
 
-## <a name="test-the-service"></a>Tester le service
+## <a name="test-the-service"></a>Testez le service
 
-1. Appuyez sur **Ctrl**+**F5** pour exécuter le service.
+1. Appuyez sur **CTRL** + **F5** pour exécuter le service.
 
 2. Ouvrez le **client test WCF**.
 
     > [!TIP]
-    > Pour ouvrir le **client test WCF**, ouvrez invite de commandes développeur pour Visual Studio et exécutez **WcfTestClient. exe**.
+    > Pour ouvrir le **client test WCF**, ouvrez invite de commandes développeur pour Visual Studio et exécutez **WcfTestClient.exe**.
 
 3. Sélectionnez **Ajouter un service** dans le menu **fichier** .
 
@@ -99,11 +100,11 @@ L'exemple suivant crée un objet <xref:System.ServiceModel.ServiceHost> pour hé
 - <xref:System.Uri>
 - <xref:System.Configuration.ConfigurationManager.AppSettings%2A>
 - <xref:System.Configuration.ConfigurationManager>
-- [How to: Host a WCF Service in IIS (Comment : héberger un service WCF dans IIS)](./feature-details/how-to-host-a-wcf-service-in-iis.md)
-- [Auto-hébergement](./samples/self-host.md)
+- [Comment : héberger un service WCF dans IIS](./feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [Self-Host](./samples/self-host.md)
 - [Hébergement de services](hosting-services.md)
 - [Guide pratique pour définir un contrat de service](how-to-define-a-wcf-service-contract.md)
 - [Guide pratique pour implémenter un contrat de service](how-to-implement-a-wcf-contract.md)
-- [Outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Outil Service Model Metadata Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Utilisation de liaisons pour configurer des services et des clients](using-bindings-to-configure-services-and-clients.md)
 - [Liaisons fournies par le système](system-provided-bindings.md)

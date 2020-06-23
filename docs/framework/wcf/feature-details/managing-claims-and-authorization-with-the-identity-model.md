@@ -1,5 +1,6 @@
 ---
 title: Gestion des revendications et autorisation avec le modèle d'identité
+description: Découvrez les principaux concepts de programmation pour le modèle d’identité WCF, un modèle basé sur les revendications pour l’exécution de l’autorisation.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authorization [WCF]
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-ms.openlocfilehash: f9138102435aab07e5c1771ce5dba85bacbcac99
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0d5687f8ac5021c008254f0f5cc453eda5e538c7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586349"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245126"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Gestion des revendications et autorisation avec le modèle d'identité
 Une autorisation correspond au processus permettant d'identifier les entités autorisées à changer ou à consulter des ressources informatiques ou à y accéder d'une manière ou d'une autre. Par exemple, dans une entreprise, seuls les responsables peuvent avoir accès aux fichiers des employés. Windows Communication Foundation (WCF) prend en charge deux mécanismes d’exécution du traitement des autorisations. Le premier mécanisme vous permet de contrôler les processus d'autorisation à l'aide des constructions CLR (Common Language Runtime) existantes. Le second est un modèle basé sur les revendications appelé *modèle d’identité*. WCF utilise le modèle d’identité pour créer des revendications à partir des messages entrants ; Les classes de modèle d’identité peuvent être étendues pour prendre en charge de nouveaux types de revendication pour les schémas d’autorisation personnalisés. Cette rubrique présente les principaux concepts de programmation de la fonctionnalité modèle d’identité et répertorie les principales classes utilisées par cette fonctionnalité.  
@@ -75,7 +76,7 @@ Une autorisation correspond au processus permettant d'identifier les entités au
 ## <a name="claims"></a>Revendications  
  Le modèle d'identité est un système basé sur des revendications. Les revendications décrivent les fonctions associées aux entités d'un système. Ces entités correspondent le plus souvent aux utilisateurs de ce système. L'ensemble de revendications associées à une entité donnée est en fait une sorte de clé. Les différentes revendications définissent la forme et les caractéristiques particulières de cette clé, de même qu'une véritable clé est façonnée selon des caractéristiques physiques particulières pour pouvoir ouvrir la serrure d'une porte donnée. Les revendications sont utilisées pour accéder aux ressources. Les autorisations d'accès à une ressource protégée donnée sont accordées en comparant les revendications requises pour y accéder à celles de l'entité tentant d'y accéder.  
   
- Les revendications définissent les droits des entités par rapport à certaines valeurs. Ces droits peuvent correspondre à « lecture », « écriture » ou « exécution ». Les valeurs peuvent correspondre à une base de données, à une boîte aux lettres ou à une propriété. Un type est également défini pour les revendications. Le type et le droit définis pour les revendications déterminent les types de tâches qu'elles peuvent exécuter sur les valeurs. Par exemple, une revendication de type « file », avec le droit « Read » sur la valeur « Biographie. doc », indique que l’entité à laquelle cette revendication est associée dispose d’un accès en lecture au fichier Biographie. doc. Une revendication de type « Name », avec « PossessProperty » de droite sur la valeur « Martin », indique que l’entité avec laquelle cette revendication est associée possède une propriété Name avec la valeur « Martin ».  
+ Les revendications définissent les droits des entités par rapport à certaines valeurs. Ces droits peuvent correspondre à « lecture », « écriture » ou « exécution ». Les valeurs peuvent correspondre à une base de données, à une boîte aux lettres ou à une propriété. Un type est également défini pour les revendications. Le type et le droit définis pour les revendications déterminent les types de tâches qu'elles peuvent exécuter sur les valeurs. Par exemple, une revendication de type « file », avec le droit « Read » sur la valeur « Biography.doc », indique que l’entité à laquelle une telle revendication est associée dispose d’un accès en lecture au fichier Biography.doc. Une revendication de type « Name », avec « PossessProperty » de droite sur la valeur « Martin », indique que l’entité avec laquelle cette revendication est associée possède une propriété Name avec la valeur « Martin ».  
   
  Bien que les divers types et droits de revendication soient définis dans le cadre du modèle d'identité, ce système est extensible, ce qui permet à d'autres systèmes de définir d'autres types et droits de revendication comme requis par dessus l'infrastructure de ce modèle.  
   
@@ -130,7 +131,7 @@ Une autorisation correspond au processus permettant d'identifier les entités au
 ## <a name="identity-model-programming"></a>Programmation du modèle d'identité  
  La table suivante décrit le modèle d'objet utilisé pour programmer les extensions du modèle d'identité. Toutes ces classes existent dans <xref:System.IdentityModel.Policy> ou dans les espaces de noms <xref:System.IdentityModel.Claims>.  
   
-|Class|Description|  
+|Classe|Description|  
 |-----------|-----------------|  
 |Composant d'autorisation|Classe du modèle d'identité qui implémente l'interface <xref:System.IdentityModel.Policy.IAuthorizationComponent>.|  
 |<xref:System.IdentityModel.Policy.IAuthorizationComponent>|Interface qui fournit une propriété de type chaîne en lecture seule unique : ID. La valeur de cette propriété est unique pour chaque instance du système qui implémente cette interface.|  
@@ -144,7 +145,7 @@ Une autorisation correspond au processus permettant d'identifier les entités au
   
  Les classes suivantes sont également utilisées pour la programmation du modèle d'identité, mais ne figurent pas dans les espaces de noms <xref:System.IdentityModel.Policy> et <xref:System.IdentityModel.Claims>.  
   
-|Class|Description|  
+|Classe|Description|  
 |-----------|-----------------|  
 |<xref:System.ServiceModel.ServiceAuthorizationManager>|Classe qui fournit une méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> permettant d'effectuer les contrôles d'autorisation basés sur les revendications pour chaque opération d'un service. Vous devez dériver une classe de la classe et remplacer la méthode.|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>|Classe sealed qui fournit diverses propriétés définissant le comportement d'un service des contrôles d'autorisation.|  

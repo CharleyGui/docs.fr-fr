@@ -1,21 +1,22 @@
 ---
 title: Exécution de la récupération
+description: Effectuez la récupération dans .NET. Le gestionnaire des ressources permet de résoudre les inscriptions de transactions durables en réinscrivant le participant à la transaction après l’échec de la ressource.
 ms.date: 03/30/2017
 ms.assetid: 6dd17bf6-ba42-460a-a44b-8046f52b10d0
-ms.openlocfilehash: fe0e096c31b2ef62a1bc50d40c87f2e12c87343f
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: bb00d2f574cc2651b733f3308cf2ffc6b430cc31
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205885"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141963"
 ---
 # <a name="performing-recovery"></a>Exécution de la récupération
 Un gestionnaire de ressources facilite la résolution d’inscriptions durables à une transaction en réinscrivant le participant à la transaction après défaillance de la ressource.  
   
 ## <a name="the-recovery-process"></a>Processus de récupération  
- Pour procéder à l'inscription durable d'une ressource (décrite par implémentation de l'interface <xref:System.Transactions.IEnlistmentNotification>) pouvant être utilisée pour une éventuelle récupération, appelez la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A>. Vous devez également communiquer à la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> l'identificateur d'un gestionnaire de ressources (un <xref:System.Guid>) utilisé pour identifier systématiquement le participant à la transaction en cas de défaillance de la ressource. Pour cette raison, le <xref:System.Guid> fourni à l’appel d’inscription initial doit être identique au paramètre *resourceManagerIdentifier* dans l’appel pendant <xref:System.Transactions.TransactionManager.Reenlist%2A> la récupération. sous peine de lever une exception <xref:System.Transactions.TransactionException>. Pour plus d’informations sur les inscriptions durables, consultez [inscription de ressources en tant que participants dans une transaction](enlisting-resources-as-participants-in-a-transaction.md) .  
+ Pour procéder à l'inscription durable d'une ressource (décrite par implémentation de l'interface <xref:System.Transactions.IEnlistmentNotification>) pouvant être utilisée pour une éventuelle récupération, appelez la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A>. Vous devez également communiquer à la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> l'identificateur d'un gestionnaire de ressources (un <xref:System.Guid>) utilisé pour identifier systématiquement le participant à la transaction en cas de défaillance de la ressource. Pour cette raison, le <xref:System.Guid> fourni à l’appel d’inscription initial doit être identique au paramètre *resourceManagerIdentifier* dans l' <xref:System.Transactions.TransactionManager.Reenlist%2A> appel pendant la récupération. sous peine de lever une exception <xref:System.Transactions.TransactionException>. Pour plus d’informations sur les inscriptions durables, consultez [inscription de ressources en tant que participants dans une transaction](enlisting-resources-as-participants-in-a-transaction.md) .  
   
- Au cours de la phase de préparation (phase 1) du protocole 2PC, lorsque l'implémentation du gestionnaire de ressources durables reçoit la notification <xref:System.Transactions.IEnlistmentNotification.Prepare%2A>, elle doit consigner son enregistrement de préparation. L'enregistrement doit contenir toutes les informations nécessaires pour terminer la transaction en cours de validation. L’enregistrement de préparation est ensuite accessible lors de la récupération en extrayant <xref:System.Transactions.PreparingEnlistment.RecoveryInformation%2A> la propriété du rappel *PreparingEnlistment* . Il n'est pas nécessaire d'effectuer la journalisation de l'enregistrement au sein de la méthode <xref:System.Transactions.IEnlistmentNotification.Prepare%2A> puisque le gestionnaire de ressources peut le faire au niveau d'un thread de travail.  
+ Au cours de la phase de préparation (phase 1) du protocole 2PC, lorsque l'implémentation du gestionnaire de ressources durables reçoit la notification <xref:System.Transactions.IEnlistmentNotification.Prepare%2A>, elle doit consigner son enregistrement de préparation. L'enregistrement doit contenir toutes les informations nécessaires pour terminer la transaction en cours de validation. L’enregistrement de préparation est ensuite accessible lors de la récupération en extrayant la <xref:System.Transactions.PreparingEnlistment.RecoveryInformation%2A> propriété du rappel *PreparingEnlistment* . Il n'est pas nécessaire d'effectuer la journalisation de l'enregistrement au sein de la méthode <xref:System.Transactions.IEnlistmentNotification.Prepare%2A> puisque le gestionnaire de ressources peut le faire au niveau d'un thread de travail.  
   
  Le processus de récupération se divise en deux étapes :  
   
@@ -31,4 +32,4 @@ Un gestionnaire de ressources facilite la résolution d’inscriptions durables 
 ### <a name="step-2---completing-the-recovery"></a>Étape 2 : Fin de la récupération  
  Une fois toutes les réinscriptions effectuées, le gestionnaire des ressources appelle la méthode <xref:System.Transactions.TransactionManager.RecoveryComplete%2A>. Cette méthode termine la récupération et informe le gestionnaire de transactions que le gestionnaire de ressources ne présente plus de transactions incertaines. Cela permet d'éviter que le gestionnaire de ressources ne rappelle la méthode <xref:System.Transactions.TransactionManager.Reenlist%2A>.  
   
- Il n'est pas nécessaire que le gestionnaire de ressources ait résolu toutes les transactions incertaines avant de procéder aux inscriptions à de nouvelles transactions. La première étape peut être effectuée à tout moment une fois que le gestionnaire de ressources a établi une relation avec le gestionnaire <xref:System.Transactions.TransactionManager.RecoveryComplete%2A> de transactions, mais après que a été appelé (étape 2); l’étape 1 ne peut pas être réexécutée. L'étape 2 peut être répétée plusieurs fois sans affecter le résultat des transactions.
+ Il n'est pas nécessaire que le gestionnaire de ressources ait résolu toutes les transactions incertaines avant de procéder aux inscriptions à de nouvelles transactions. La première étape peut être effectuée à tout moment une fois que le gestionnaire de ressources a établi une relation avec le gestionnaire de transactions, mais après que <xref:System.Transactions.TransactionManager.RecoveryComplete%2A> a été appelé (étape 2); l’étape 1 ne peut pas être réexécutée. L'étape 2 peut être répétée plusieurs fois sans affecter le résultat des transactions.

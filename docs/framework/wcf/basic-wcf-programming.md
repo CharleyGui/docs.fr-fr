@@ -1,5 +1,6 @@
 ---
 title: Programmation WCF de base
+description: Reportez-vous à ces articles pour développer des applications Windows Communication Foundation, du cycle de vie de programmation de base au dépannage.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - basic programming [WCF]
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], basic programming
 - Windows Communication Foundation [WCF], programming
 ms.assetid: 3ae3d498-f43c-4ecc-8cc0-6cbe36b62593
-ms.openlocfilehash: eff565fa18e3360170584395adcf2a3e7029ac07
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 6f4de39494902dcffcb25f75a6ff9f57b28547ff
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960934"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245516"
 ---
 # <a name="basic-wcf-programming"></a>Programmation WCF de base
 
@@ -21,13 +22,13 @@ Cette section présente les notions de base de la création d’applications Win
 
 ## <a name="in-this-section"></a>Dans cette section
 
- \ [du cycle de vie de programmation de base](basic-programming-lifecycle.md)
+ [Cycle de vie de programmation de base](basic-programming-lifecycle.md)\
  Décrit le cycle de vie de la conception, de la génération et du déploiement d’applications clientes et de services WCF.
 
  [Conception et implémentation de services](designing-and-implementing-services.md)\
  Décrit comment concevoir et implémenter un contrat de service, choisir un modèle d’échange de messages, spécifier un contrat d’erreur, et d’autres aspects de base des services.
 
- [Configuring Services](configuring-services.md)\
+ [Configuration des services](configuring-services.md)\
  Décrit comment configurer un service WCF pour prendre en charge les spécifications de contrat, personnaliser le comportement d’exécution local et indiquer l’adresse pour publier le service.
 
  [Services d’hébergement](hosting-services.md)\
@@ -39,25 +40,25 @@ Cette section présente les notions de base de la création d’applications Win
  [Présentation de l’extensibilité](introduction-to-extensibility.md)\
  Décrit comment étendre WCF pour créer des solutions personnalisées.
 
- \ [démarrage rapide de WCF Troubleshooting](wcf-troubleshooting-quickstart.md)
+ [Démarrage rapide de WCF Troubleshooting](wcf-troubleshooting-quickstart.md)\
  Décrit quelques-uns des problèmes les plus courants, les actions possibles pour les résoudre et où trouver davantage d'informations sur le problème rencontré.
 
  [WCF et API Web ASP.NET](wcf-and-aspnet-web-api.md)\
  Traite des deux technologies, de la manière dont elles sont en rapport l'une avec l'autre et indique quand les utiliser.
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Informations de référence
 
 - <xref:System.ServiceModel>
 - <xref:System.ServiceModel.Channels>
 - <xref:System.ServiceModel.Description>
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 - [Vue d’ensemble conceptuelle](conceptual-overview.md)
-- [Didacticiel Bien démarrer](getting-started-tutorial.md)
+- [Didacticiel Prise en main](getting-started-tutorial.md)
 - [Conseils et bonnes pratiques](guidelines-and-best-practices.md)
-- [Outils Windows Communication Foundation](tools.md)
-- [Exemples de Windows Communication Foundation (WCF)](./samples/index.md)
-- [Bien démarrer](./samples/getting-started-sample.md)
-- [Hébergement IIS à l’aide de code en ligne](./samples/iis-hosting-using-inline-code.md)
-- [Auto-hébergement](./samples/self-host.md)
+- [Outils de Windows Communication Foundation](tools.md)
+- [Exemples Windows Communication Foundation (WCF)](./samples/index.md)
+- [Prise en main](./samples/getting-started-sample.md)
+- [IIS Hosting Using Inline Code](./samples/iis-hosting-using-inline-code.md)
+- [Self-Host](./samples/self-host.md)

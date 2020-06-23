@@ -1,13 +1,14 @@
 ---
 title: Instructions sur les pare-feu
+description: Découvrez comment activer des ports ou des programmes dans le pare-feu pour les exemples WCF. Utilisez l’une de ces procédures, en fonction de vos besoins et de votre environnement de sécurité.
 ms.date: 03/30/2017
 ms.assetid: a7dc429f-65ac-4faf-974a-77d5fb977fe1
-ms.openlocfilehash: 343fa695039f6767f6ab33daa4e3cc51e8db5e47
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: de55d067960b8f2096c129f6feaf037219e06a96
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899642"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246139"
 ---
 # <a name="firewall-instructions"></a>Instructions du pare-feu
 
@@ -26,16 +27,16 @@ Si vous ne savez pas quelle procédure utiliser, choisissez la première option.
 
 ## <a name="enable-samples-programs-in-advance"></a>Activer les exemples de programmes à l’avance
 
-1. Générez l'exemple.
+1. Générez l’exemple.
 
-2. Choisissez **démarrer** > **exécuter**, puis entrez `firewall.cpl`. L’applet du **panneau de configuration du pare-feu Windows** s’ouvre.
+2. Choisissez **Démarrer**l'  >  **exécution**, puis entrez `firewall.cpl` . L’applet du **panneau de configuration du pare-feu Windows** s’ouvre.
 
     > [!NOTE]
     > Pour exécuter des exemples qui requièrent la capacité de communiquer via le Pare-feu Windows, vous devez disposer des autorisations nécessaires pour modifier les paramètres du Pare-feu Windows. Si certains paramètres du pare-feu ne sont pas disponibles et que votre ordinateur est connecté à un domaine, il est possible que votre administrateur système contrôle ces paramètres au moyen d'une stratégie de groupe.
 
 3. Effectuez l’une des étapes suivantes spécifiques à l’opération pour autoriser un programme via le pare-feu Windows :
 
-    - Sur Windows 7 ou Windows Server 2008 R2, cliquez sur **autoriser un programme ou une fonctionnalité via le pare-feu Windows**. Cliquez sur **modifier les paramètres** > **autoriser un autre programme**.
+    - Sur Windows 7 ou Windows Server 2008 R2, cliquez sur **autoriser un programme ou une fonctionnalité via le pare-feu Windows**. Cliquez sur **modifier les paramètres**  >  **autoriser un autre programme**.
 
     - Sur Windows Vista ou Windows Server 2008, cliquez sur **autoriser un programme via le pare-feu Windows**.
 
@@ -49,7 +50,7 @@ Si vous ne savez pas quelle procédure utiliser, choisissez la première option.
 
 ## <a name="enable-a-port-range-in-advance"></a>Activer une plage de ports à l’avance
 
-1. Choisissez **démarrer** > **exécuter**, puis entrez `firewall.cpl`. L’applet du **panneau de configuration du pare-feu Windows** s’ouvre.
+1. Choisissez **Démarrer**l'  >  **exécution**, puis entrez `firewall.cpl` . L’applet du **panneau de configuration du pare-feu Windows** s’ouvre.
 
 2. Sur Windows 7 ou Windows Server 2008 R2, procédez comme suit.
 
@@ -63,13 +64,13 @@ Si vous ne savez pas quelle procédure utiliser, choisissez la première option.
 
     5. Sélectionnez **TCP** et entrez `8000, 8001, 8002, 8003, 9000, 80, 443` dans le champ **ports locaux spécifiques** .
 
-    6. Cliquez sur **Next**.
+    6. Cliquez sur **Suivant**.
 
     7. Sélectionnez **autoriser la connexion**, puis cliquez sur **suivant** .
 
     8. Sélectionnez **domaine** et **privé**, puis cliquez sur **suivant**.
 
-    9. Nommez cette règle `WCF-WF 4.0 Samples`, puis cliquez sur **Terminer**.
+    9. Nommez cette règle `WCF-WF 4.0 Samples` , puis cliquez sur **Terminer**.
 
     10. Cliquez sur **règles de trafic sortant** et répétez les étapes c à h.
 

@@ -1,5 +1,6 @@
 ---
-title: HttpWebRequest._AutoRedirects Champ
+title: HttpWebRequest. _AutoRedirects Field
+description: En savoir plus sur le champ HttpWebRequest. _AutoRedirects dans .NET. Ce champ est une valeur Int32 qui reflète le nombre de redirections effectuées pour une requête Web HTTP.
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +11,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: bd58e91c-4e35-4866-9d55-75ff58c3ed73
-ms.openlocfilehash: ff4b9b430bdb9ebc82a945012dcb53ed83b1e48f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 62c765a26424a5c0a96f291aae0a6ccdf0546d46
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156296"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989966"
 ---
-# <a name="httpwebrequest_autoredirects-field"></a>HttpWebRequest. \_Champ AutoRedirects
+# <a name="httpwebrequest_autoredirects-field"></a>HttpWebRequest. \_ Champ AutoRedirects
 
-`HttpWebRequest._AutoRedirects`est <xref:System.Int32> un qui reflète le nombre <xref:System.Net.HttpWebRequest>de redirections faites pour cela .
+`HttpWebRequest._AutoRedirects`est un <xref:System.Int32> qui reflète le nombre de redirections effectuées pour ce <xref:System.Net.HttpWebRequest> .
 
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```csharp  
 private int _AutoRedirects
@@ -30,12 +31,12 @@ private int _AutoRedirects
 > [!WARNING]
 > Le `HttpWebRequest._AutoRedirects` champ est interne et n’est pas destiné à être utilisé directement dans votre code.
 >
-> Microsoft ne prend en charge l’utilisation de ce champ dans une application de production en aucune circonstance.
+> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**<xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
-**Assemblée:** Système (dans System.dll)
+**Assembly :** Système (en System.dll)
 
-**.NET Versions du Cadre:** Disponible depuis 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

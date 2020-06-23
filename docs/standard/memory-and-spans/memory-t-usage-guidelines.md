@@ -5,12 +5,12 @@ ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: cb9075a12bb8d842cd8e937e74f8869c910fc0ab
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: d9a50fa18e027b6df7415438e1a5584003f7a094
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201939"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245594"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Instructions d’utilisation de la mémoire\<T> et de l’étendue\<T>
 
@@ -121,7 +121,7 @@ L’utilisation d’un paramètre de type <xref:System.Span%601> au lieu d’un 
 
 Vous devrez parfois utiliser un paramètre <xref:System.Memory%601> au lieu d’un paramètre <xref:System.Span%601>, même si vous êtes entièrement synchrone. Il est possible qu’une API dont vous dépendez n’accepte que des arguments <xref:System.Memory%601>. C’est bien, mais tenez compte des compromis impliqués par l’utilisation synchrone de <xref:System.Memory%601>.
 
-<a name="rule-2" />
+<a name="rule-2"></a>
 
 **#2 de règle : utilisez ReadOnlySpan \<T> ou ReadOnlyMemory \<T> si la mémoire tampon doit être en lecture seule.**
 

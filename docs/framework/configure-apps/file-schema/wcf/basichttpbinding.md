@@ -1,15 +1,16 @@
 ---
 title: <basicHttpBinding>
+description: Définit une liaison qu’un service WCF peut utiliser pour configurer et exposer des points de terminaison afin de communiquer avec les services conformes au profil WS-I Basic Profile 1,1.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - basicHttpBinding Element
 ms.assetid: 85cf1a4f-26c2-48c7-bda6-6c960d5d3fb3
-ms.openlocfilehash: ab8dca7f7065d7c174e38ad3a88ea15e39351bed
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5b2ce1973966468107d7aa4de545a976c67b13ed
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84202044"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244021"
 ---
 # \<basicHttpBinding>
 Représente une liaison qu’un service Windows Communication Foundation (WCF) peut utiliser pour configurer et exposer des points de terminaison capables de communiquer avec des clients et services web basés sur ASMX, ainsi qu’avec d’autres services conformes au profil WS-I Basic Profile 1.1.  
@@ -19,7 +20,7 @@ Représente une liaison qu’un service Windows Communication Foundation (WCF) p
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<basicHttpBinding>**  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```xml  
 <basicHttpBinding>

@@ -1,16 +1,17 @@
 ---
 title: WCF et API Web ASP.NET
+description: Découvrez si WCF ou le API Web ASP.NET est mieux adapté à vos besoins en comparant les principales fonctionnalités de chaque technologie.
 ms.date: 03/30/2017
 ms.assetid: 08ceded3-fd9a-4467-9715-c4cbd9c7228e
-ms.openlocfilehash: e058b2ea5e9188c365c679ae46c4d7c9de45e4b9
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: de8d1905866c860da96983c2f3d52599e3342403
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452563"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245959"
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF et API Web ASP.NET
-WCF est le modèle de programmation unifié de Microsoft permettant de générer des applications orientées service. Il permet aux développeurs de générer des solutions transactionnelles sécurisées et fiables qui s'intègrent à plusieurs plateformes et interagissent avec les investissements existants. [API Web ASP.net](https://www.asp.net/web-api) est une infrastructure qui facilite la création de services http qui atteignent un large éventail de clients, y compris des navigateurs et des appareils mobiles. ASP.NET Web API est la plateforme idéale pour développer des applications RESTful sous .NET Framework. Cette rubrique vous aider à déterminer quelle technologie est la plus adaptée vos besoins.  
+WCF est le modèle de programmation unifié de Microsoft permettant de générer des applications orientées service. Il permet aux développeurs de générer des solutions transactionnelles sécurisées et fiables qui s'intègrent à plusieurs plateformes et interagissent avec les investissements existants. [API Web ASP.net](https://www.asp.net/web-api) est une infrastructure qui facilite la création de services http qui atteignent un large éventail de clients, y compris des navigateurs et des appareils mobiles. L'API Web ASP.NET est une plate-forme idéale pour générer des applications RESTful sur le .NET Framework. Cette rubrique vous aider à déterminer quelle technologie est la plus adaptée vos besoins.  
   
 ## <a name="choosing-which-technology-to-use"></a>Choix de la technologie à utiliser  
  Le tableau suivant décrit les principales fonctionnalités de chaque technologie.  

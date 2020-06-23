@@ -1,5 +1,6 @@
 ---
-title: Guide pratique pour recevoir des notifications des exceptions de première chance
+title: 'Procédure : recevoir des notifications des exceptions de première chance'
+description: Obtenir des notifications d’exceptions de première chance dans .NET via l’événement FirstChanceException de la classe AppDomain, avant que le CLR ne recherche des gestionnaires d’exceptions.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +9,14 @@ helpviewer_keywords:
 - first-chance exception notifications
 - exceptions, first chance notifications
 ms.assetid: 66f002b8-a97d-4a6e-a503-2cec01689113
-ms.openlocfilehash: da60dfca424f7c10e810b5e083ff7fa63a688218
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e8b5ae5fb69c7befd329316aee11523f79d73fcd
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119876"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104744"
 ---
-# <a name="how-to-receive-first-chance-exception-notifications"></a>Guide pratique pour recevoir des notifications des exceptions de première chance
+# <a name="how-to-receive-first-chance-exception-notifications"></a>Procédure : recevoir des notifications des exceptions de première chance
 L’événement <xref:System.AppDomain.FirstChanceException> de la classe <xref:System.AppDomain> vous permet de recevoir la notification qu’une exception a été levée, avant que le Common Language Runtime n’ait commencé à rechercher des gestionnaires d’exceptions.
 
  L’événement est déclenché au niveau du domaine d’application. Étant donné qu’un thread d’exécution peut traverser plusieurs domaines d’application, une exception qui n’est pas gérée dans un domaine d’application pourrait être gérée dans un autre domaine d’application. La notification se produit dans chaque domaine d’application qui a ajouté un gestionnaire pour l’événement, jusqu’à ce qu’un domaine d’application gère l’exception.

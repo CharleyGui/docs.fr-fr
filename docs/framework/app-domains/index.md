@@ -1,5 +1,6 @@
 ---
 title: Programmation à l'aide de domaines d'application et d'assemblys
+description: Familiarisez-vous avec la programmation avec les domaines d’application et les assemblys dans .NET. Consultez les liens vers des rubriques de procédures & des exemples sur la création de domaines d’application & assemblys.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], programming
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - application domains, programming
 - programming application domains
 ms.assetid: 96d3b8e3-bef8-4da0-9a81-9841e23a94e9
-ms.openlocfilehash: 3f66eacaf30f8001cdbf3a486e5ce1c878712e2f
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 1c28fe0abeb279a1dbbc6dcf043c1780c72d79df
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644274"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903436"
 ---
 # <a name="programming-with-application-domains-and-assemblies"></a>Programmation à l'aide de domaines d'application et d'assemblys
 
@@ -22,10 +23,10 @@ Toutefois, si vous créez une application qui hébergera le Common Language Runt
   
 ## <a name="in-this-section"></a>Dans cette section  
 
-[Rubriques Guide pratique relatives aux domaines d'application et aux assemblys](application-domains-and-assemblies-how-to-topics.md)  
+[Rubriques Comment relatives aux domaines d'application et aux assemblys](application-domains-and-assemblies-how-to-topics.md)  
 Fournit des liens vers toutes les rubriques Guide pratique de la documentation conceptuelle pour la programmation avec des domaines d’application et des assemblys.  
   
-[Utilisation des domaines d’application](use.md)  
+[Utilisation des domaines d'application](use.md)  
 Fournit des exemples de création, de configuration et d’utilisation des domaines d’application.  
   
 [Programmation à l’aide d’assemblys](../../standard/assembly/index.md)  

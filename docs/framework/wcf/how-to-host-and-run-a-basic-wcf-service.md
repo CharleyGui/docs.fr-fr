@@ -1,5 +1,6 @@
 ---
 title: 'Didacticiel : héberger et exécuter un service Windows Communication Foundation de base'
+description: Découvrez comment héberger un service WCF dans une application console dans le cadre d’une série d’articles qui vous permettent de commencer à créer une application WCF.
 ms.date: 03/19/2019
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - WCF services [WCF]
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-ms.openlocfilehash: 872844487578843492e05dd2abb87b50e0bec91c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5318991087e71430523681d601d3b38c4513027b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291394"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246127"
 ---
 # <a name="tutorial-host-and-run-a-basic-windows-communication-foundation-service"></a>Didacticiel : héberger et exécuter un service Windows Communication Foundation de base
 
@@ -194,7 +195,7 @@ Apportez les modifications suivantes au code :
 
 1. Générez la solution, puis exécutez l’application console **GettingStartedHost** à partir de Visual Studio.
 
-    Le service doit être exécuté avec des privilèges d’administrateur. Étant donné que vous avez ouvert Visual Studio avec des privilèges d’administrateur, lorsque vous exécutez **GettingStartedHost** dans Visual Studio, l’application est également exécutée avec des privilèges d’administrateur. Vous pouvez également ouvrir une nouvelle invite de commandes en tant qu’administrateur (sélectionnez **plus**  >  **exécuter en tant qu’administrateur** dans le menu contextuel) et exécutez **GettingStartedHost. exe** dans celui-ci.
+    Le service doit être exécuté avec des privilèges d’administrateur. Étant donné que vous avez ouvert Visual Studio avec des privilèges d’administrateur, lorsque vous exécutez **GettingStartedHost** dans Visual Studio, l’application est également exécutée avec des privilèges d’administrateur. Vous pouvez également ouvrir une nouvelle invite de commandes en tant qu’administrateur (sélectionnez **plus**  >  **exécuter en tant qu’administrateur** dans le menu contextuel) et exécutez **GettingStartedHost.exe** dans celle-ci.
 
 2. Ouvrez un navigateur Web et accédez à la page du service à l’adresse `http://localhost:8000/GettingStarted/CalculatorService` .
 

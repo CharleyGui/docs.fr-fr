@@ -1,17 +1,18 @@
 ---
 title: Utilisation des domaines d'application
+description: Utilisez des domaines d’application, qui fournissent une unité d’isolation pour le common language runtime (CLR). Les domaines d’application sont créés et exécutés à l’intérieur d’un processus.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application domains, about
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-ms.openlocfilehash: 6ee02a3f27a645f19fd6a327052939586fac4aa9
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: df2a63716904ebfc6ee163121a1f07e53aa07514
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645436"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105179"
 ---
 # <a name="using-application-domains"></a>Utilisation des domaines d'application
 
@@ -21,19 +22,19 @@ Pour la plupart des applications, vous n’êtes pas obligé de créer votre pro
   
 ## <a name="in-this-section"></a>Dans cette section  
 
-[Guide pratique pour créer un domaine d’application](how-to-create-an-application-domain.md)  
+[Procédure : créer un domaine d’application](how-to-create-an-application-domain.md)  
 Décrit comment créer un domaine d’application par programmation.  
   
-[Comment : décharger un domaine d'application](how-to-unload-an-application-domain.md)  
+[Procédure : décharger un domaine d’application](how-to-unload-an-application-domain.md)  
 Décrit comment décharger un domaine d’application par programmation.  
   
-[Guide pratique pour configurer un domaine d’application](how-to-configure-an-application-domain.md)  
+[Procédure : configurer un domaine d’application](how-to-configure-an-application-domain.md)  
 Propose une introduction à la configuration d’un domaine d’application.  
   
 [Récupération d'informations d'installation à partir d'un domaine d'application](retrieve-setup-information.md)  
 Décrit comment récupérer les informations de configuration d’un domaine d’application.  
   
-[Guide pratique pour charger des assemblys dans un domaine d’application](how-to-load-assemblies-into-an-application-domain.md)  
+[Procédure : charger des assemblys dans un domaine d’application](how-to-load-assemblies-into-an-application-domain.md)  
 Décrit comment charger un assembly dans un domaine d’application.  
   
 [Guide pratique pour obtenir des informations relatives au type et aux membres à partir d'un assembly](../reflection-and-codedom/get-type-member-information.md)  
@@ -42,7 +43,7 @@ Décrit comment récupérer des informations sur un assembly.
 [Clichés instantanés d'assemblys](shadow-copy-assemblies.md)  
 Décrit comment utiliser des clichés instantanés pour mettre à jour des assemblys pendant leur utilisation, et comment configurer des clichés instantanés.  
   
-[Guide pratique pour recevoir des notifications des exceptions de première chance](how-to-receive-first-chance-exception-notifications.md)  
+[Procédure : recevoir des notifications des exceptions de première chance](how-to-receive-first-chance-exception-notifications.md)  
 Explique comment recevoir une notification indiquant qu’une exception a été levée, avant que le common language runtime ne commence à rechercher des gestionnaires d’exceptions.  
   
 [Résoudre les chargements d'assemblys](../../standard/assembly/resolve-loads.md)  

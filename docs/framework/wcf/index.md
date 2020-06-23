@@ -1,16 +1,17 @@
 ---
 title: Windows Communication Foundation
+description: Découvrez comment WCF, modèle de programmation pour les applications orientées service, vous permet de créer des solutions transactionnelles sécurisées et fiables.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation [WCF]
 - WCF [WCF]
 ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
-ms.openlocfilehash: 836913dd35d127d181c753341a7c39c453242a8f
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: dc4218e830c34e44536bbb816af9c1b35b4b5b07
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552679"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244294"
 ---
 # <a name="develop-service-oriented-applications-with-wcf"></a>Développement d’applications orientées service avec WCF
 
@@ -24,7 +25,7 @@ Cette section de la documentation contient des informations sur Windows Communic
  [Fonctionnalités de simplification de WCF](wcf-simplification-features.md)\
  Décrit les nouvelles fonctionnalités qui facilitent l’écriture d’applications WCF.
 
- [Guide de la Documentation](guide-to-the-documentation.md)\
+ [Guide de la documentation](guide-to-the-documentation.md)\
  Description de la documentation WCF
 
  [Vue d’ensemble conceptuelle](conceptual-overview.md)\
@@ -39,13 +40,13 @@ Cette section de la documentation contient des informations sur Windows Communic
  [Détails des fonctionnalités WCF](./feature-details/index.md)\
  Affiche des rubriques qui vous permettent de choisir la ou les fonctionnalités WCF que vous devez utiliser.
 
- [Extension](./extending/index.md) de\ WCF
+ [Extension de WCF](./extending/index.md)\
  Décrit comment modifier et étendre des composants d'exécution WCF
 
  [Instructions et meilleures pratiques](guidelines-and-best-practices.md)\
  Fournit des conseils pour la création d'applications Windows Communication Foundation (WCF).
 
- \ d' [administration et de diagnostics](./diagnostics/index.md)
+ [Administration et diagnostics](./diagnostics/index.md)\
  Décrit les fonctionnalités de diagnostic de WCF
 
  [Ressources de système d’exploitation requises par WCF](operating-system-resources-required-by-wcf.md)\
@@ -66,7 +67,7 @@ Cette section de la documentation contient des informations sur Windows Communic
  [Exemples de Windows Communication Foundation](./samples/index.md)\
  Exemples qui fournissent des instructions sur les différents aspects de Windows Communication Foundation
 
- [Windows Communication Foundation glossaire](glossary.md)\
+ [Glossaire Windows Communication Foundation](glossary.md)\
  Affiche une liste des termes spécifiques à WCF
 
  [Référence générale](general-reference.md)\

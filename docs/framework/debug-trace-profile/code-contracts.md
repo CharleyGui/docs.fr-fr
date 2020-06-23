@@ -1,5 +1,6 @@
 ---
 title: Contrats de code
+description: Explorez les contrats de code, qui fournissent un moyen de spécifier des conditions préalables, des post-conditions et des invariants d’objet dans votre code .NET.
 ms.date: 09/05/2018
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - Code contracts
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
-ms.openlocfilehash: b60f992cf9d934ed622c89a49c491a80377fb6fe
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 60f794373af75bd3f745c224e0a8c7a84192e4c4
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216713"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904141"
 ---
 # <a name="code-contracts"></a>Contrats de code
 
@@ -67,7 +68,7 @@ if (x == null) throw new ...
 Contract.EndContractBlock(); // All previous "if" checks are preconditions
 ```
 
-Notez que la condition du test précédent est une condition préalable négative (La condition préalable réelle serait `x != null`.) Une condition préalable négative est très restreinte : elle doit être écrite comme indiqué dans l’exemple précédent. autrement dit, il ne doit pas contenir de clauses `else`, et le corps de la clause `then` doit être une seule instruction `throw`. Le test `if` est soumis aux règles de pureté et à celles de visibilité (voir [Indications relatives à l’utilisation](#usage_guidelines)), mais l’expression `throw` est soumise uniquement aux règles de pureté. Toutefois, le type de l'exception levée doit être aussi visible que la méthode dans laquelle le contrat se produit.
+Notez que la condition du test précédent est une condition préalable négative (La condition préalable réelle est `x != null` .) Une condition préalable négative est très restreinte : elle doit être écrite comme indiqué dans l’exemple précédent. autrement dit, il ne doit pas contenir `else` de clauses, et le corps de la `then` clause doit être une `throw` instruction unique. Le test `if` est soumis aux règles de pureté et à celles de visibilité (voir [Indications relatives à l’utilisation](#usage_guidelines)), mais l’expression `throw` est soumise uniquement aux règles de pureté. Toutefois, le type de l'exception levée doit être aussi visible que la méthode dans laquelle le contrat se produit.
 
 ## <a name="postconditions"></a>Postconditions
 
@@ -101,7 +102,7 @@ Les méthodes suivantes peuvent être utilisées uniquement au sein de post-cond
 
 - Vous pouvez faire référence aux valeurs de retour de la méthode dans les post-conditions à l'aide de l'expression `Contract.Result<T>()`, où `T` est remplacé par le type de retour de la méthode. Si le compilateur ne peut pas déduire le type, vous devez le fournir explicitement. Par exemple, le compilateur C# ne peut pas déduire les types des méthodes qui ne prennent pas d'arguments. Il nécessite donc la post-condition suivante : `Contract.Ensures(0 <Contract.Result<int>())`. Les méthodes possédant le type de retour `void` ne peuvent pas faire référence à `Contract.Result<T>()` dans leurs post-conditions.
 
-- Une valeur de « pré-état » dans une post-condition fait référence à la valeur d'une expression au début d'une méthode ou d'une propriété. Elle utilise l'expression `Contract.OldValue<T>(e)`, où `T` est le type de `e`. Vous pouvez omettre l'argument de type générique chaque fois que le compilateur est en mesure de déduire son type (Par exemple, le C# compilateur déduit toujours le type, car il accepte un argument.) Il existe plusieurs restrictions sur ce qui peut se produire dans `e` et les contextes dans lesquels une expression ancienne peut apparaître. Une expression ancienne ne peut pas contenir une autre expression ancienne. Encore plus important, une expression ancienne doit faire référence à une valeur qui a existé dans l'état de condition préalable de la méthode. En d'autres termes, il doit s'agir d'une expression qui peut être évaluée tant que la condition préalable de la méthode est `true`. Voici plusieurs instances de cette règle :
+- Une valeur de « pré-état » dans une post-condition fait référence à la valeur d'une expression au début d'une méthode ou d'une propriété. Elle utilise l'expression `Contract.OldValue<T>(e)`, où `T` est le type de `e`. Vous pouvez omettre l'argument de type générique chaque fois que le compilateur est en mesure de déduire son type (Par exemple, le compilateur C# déduit toujours le type, car il accepte un argument.) Il existe plusieurs restrictions sur ce qui peut se produire dans `e` et les contextes dans lesquels une expression ancienne peut apparaître. Une expression ancienne ne peut pas contenir une autre expression ancienne. Encore plus important, une expression ancienne doit faire référence à une valeur qui a existé dans l'état de condition préalable de la méthode. En d'autres termes, il doit s'agir d'une expression qui peut être évaluée tant que la condition préalable de la méthode est `true`. Voici plusieurs instances de cette règle :
 
   - La valeur doit exister dans l'état de condition préalable de la méthode. Pour pouvoir référencer un champ sur un objet, les conditions préalables doivent garantir que l’objet est toujours non null.
 
@@ -145,7 +146,7 @@ Les méthodes suivantes peuvent être utilisées uniquement au sein de post-cond
       Comme avec la méthode <xref:System.Diagnostics.Contracts.Contract.OldValue%2A>, vous pouvez omettre le paramètre de type générique chaque fois que le compilateur est en mesure de déduire son type. Le module de réécriture de contrat remplace l'appel de méthode par la valeur du paramètre `out`. La méthode <xref:System.Diagnostics.Contracts.Contract.ValueAtReturn%2A> peut apparaître uniquement dans des post-conditions. L’argument de la méthode doit être un paramètre `out` ou un champ d’un paramètre `out` de structure. Ce dernier est également utile pour faire référence aux champs dans la post-condition d'un constructeur de structure.
 
       > [!NOTE]
-      > Actuellement, les outils d'analyse de contrat de code ne vérifient pas si les paramètres `out` sont correctement initialisés et ignorent leur mention dans la post-condition. Si, dans l'exemple précédent, la ligne après le contrat avait utilisé la valeur de `x` au lieu de lui assigner un nombre entier, un compilateur n'aurait donc pas généré l'erreur correspondante. Toutefois, dans une build où le symbole de préprocesseur CONTRACTS_FULL n'est pas défini (tel qu'une version finale), le compilateur génère une erreur.
+      > Actuellement, les outils d'analyse de contrat de code ne vérifient pas si les paramètres `out` sont correctement initialisés et ignorent leur mention dans la post-condition. Si, dans l'exemple précédent, la ligne après le contrat avait utilisé la valeur de `x` au lieu de lui assigner un nombre entier, un compilateur n'aurait donc pas généré l'erreur correspondante. Toutefois, dans une build où le symbole de préprocesseur CONTRACTS_FULL n’est pas défini (telle qu’une build de mise en production), le compilateur génère une erreur.
 
 ## <a name="invariants"></a>Invariants
 
@@ -163,7 +164,7 @@ protected void ObjectInvariant ()
 }
 ```
 
-Les invariants sont définis de façon conditionnelle par le symbole de préprocesseur CONTRACTS_FULL. Ils sont vérifiés au moment de l'exécution à la fin de chaque méthode publique. Si un invariant spécifie une méthode publique dans la même classe, la vérification d'invariant prévue normalement à la fin de cette méthode publique est désactivée. À la place, la vérification se produit uniquement à la fin de l'appel de méthode le plus à l'extérieur de cette classe. Cela se produit également si la classe est à nouveau entrée à cause d'un appel à une méthode sur une autre classe. Les invariants ne sont pas vérifiés pour un finaliseur d’objet et une implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>.
+Les invariants sont définis de façon conditionnelle par le symbole de préprocesseur CONTRACTS_FULL. Ils sont vérifiés au moment de l'exécution à la fin de chaque méthode publique. Si un invariant spécifie une méthode publique dans la même classe, la vérification d'invariant prévue normalement à la fin de cette méthode publique est désactivée. À la place, la vérification se produit uniquement à la fin de l'appel de méthode le plus à l'extérieur de cette classe. Cela se produit également si la classe est à nouveau entrée à cause d'un appel à une méthode sur une autre classe. Les invariants ne sont pas vérifiés pour un finaliseur d’objet et une <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implémentation.
 
 <a name="usage_guidelines"></a>
 

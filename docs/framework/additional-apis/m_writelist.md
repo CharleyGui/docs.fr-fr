@@ -1,5 +1,6 @@
 ---
-title: Connection.m_WriteList Field
+title: Connection. m_WriteList Field
+description: Obtenir des informations sur le champ Connection. m_WriteList dans .NET. Ce champ ArrayList contient des objets HttpWebRequest mis en file d’attente pour être envoyés via HTTP.
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +11,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 235503c1-1d01-4f59-895f-ae2cf15b3345
-ms.openlocfilehash: 6c60831ddf23ce8ac9afcf244383d24732c3ef8b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a627cb062036e3ab098c2d6e97f9a77ebfa75a33
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155835"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989594"
 ---
-# <a name="connectionm_writelist-field"></a>Connection.m\_Champ WriteList
+# <a name="connectionm_writelist-field"></a>Champ Connection. m \_ WriteList
 
-`Connection.m_WriteList`est <xref:System.Collections.ArrayList> un <xref:System.Net.HttpWebRequest> des objets qui sont mis en file d’attente pour être envoyé sur HTTP.
+`Connection.m_WriteList`est un <xref:System.Collections.ArrayList> des <xref:System.Net.HttpWebRequest> objets mis en file d’attente pour être envoyés via http.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp  
 private ArrayList m_WriteList
@@ -30,12 +31,12 @@ private ArrayList m_WriteList
 > [!WARNING]
 > Le `Connection.m_WriteList` champ est privé et n’est pas destiné à être utilisé directement dans votre code.
 >
-> Microsoft ne prend en charge l’utilisation de ce champ dans une application de production en aucune circonstance.
+> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**<xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
-**Assemblée:** Système (dans System.dll)
+**Assembly :** Système (en System.dll)
 
-**.NET Versions du Cadre:** Disponible depuis 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

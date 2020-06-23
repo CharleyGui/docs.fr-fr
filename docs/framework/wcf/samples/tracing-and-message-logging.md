@@ -1,18 +1,19 @@
 ---
 title: Tracing and Message Logging
+description: Découvrez comment utiliser l’outil Service Trace Viewer (SvcTraceViewer.exe) pour afficher les traces et les journaux de messages à l’aide de cet exemple WFC.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-ms.openlocfilehash: 9af50f138a2788fc7af0ce5d07e95df49d6675cb
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bb49334252c2415223b0f8f5559a6dc838d175e3
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602646"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246023"
 ---
 # <a name="tracing-and-message-logging"></a>Tracing and Message Logging
-Cet exemple illustre comment activer l'enregistrement des suivis et des messages. Les journaux de suivi et de message résultants sont affichés à l’aide de l' [outil Service Trace Viewer (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Cet exemple est basé sur le [prise en main](getting-started-sample.md).  
+Cet exemple illustre comment activer l'enregistrement des suivis et des messages. Les suivis et journaux des messages résultants sont affichés à l’aide de l' [outil Service Trace Viewer (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Cet exemple est basé sur le [prise en main](getting-started-sample.md).  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  

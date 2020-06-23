@@ -1,5 +1,6 @@
 ---
-title: 'Tutorial: Définir un contrat de service Windows Communication Foundation'
+title: 'Didacticiel : définir un contrat de service Windows Communication Foundation'
+description: Découvrez comment définir un contrat de service dans le cadre d’une série d’articles qui vous aideront à créer une application WCF.
 ms.date: 03/19/2019
 helpviewer_keywords:
 - service contracts [WCF], defining
@@ -7,55 +8,55 @@ dev_langs:
 - CSharp
 - VB
 ms.assetid: 67bf05b7-1d08-4911-83b7-a45d0b036fc3
-ms.openlocfilehash: 7c1c42c4f22a1a9627c147440e8e198551470b7b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5cb371da8c7180b8c4cbf5ac11468fbb8e0e13cc
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184093"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246309"
 ---
-# <a name="tutorial-define-a-windows-communication-foundation-service-contract"></a>Tutorial: Définir un contrat de service Windows Communication Foundation
+# <a name="tutorial-define-a-windows-communication-foundation-service-contract"></a>Didacticiel : définir un contrat de service Windows Communication Foundation
 
-Ce tutoriel décrit la première des cinq tâches requises pour créer une application de base de la Windows Communication Foundation (WCF). Pour un aperçu des tutoriels, voir [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).
+Ce didacticiel décrit la première des cinq tâches requises pour créer une application de base Windows Communication Foundation (WCF). Pour obtenir une vue d’ensemble des didacticiels, consultez [Didacticiel : prise en main des applications Windows Communication Foundation](getting-started-tutorial.md).
 
-Lorsque vous créez un service WCF, votre première tâche est de définir un contrat de service. Le contrat de service spécifie les opérations prises en charge par le service. Une opération peut être considérée comme une méthode de service Web. Vous créez des contrats de service en définissant une interface de base visuelle ou C. Une interface a les caractéristiques suivantes :
+Lorsque vous créez un service WCF, votre première tâche consiste à définir un contrat de service. Le contrat de service spécifie les opérations prises en charge par le service. Une opération peut être considérée comme une méthode de service Web. Vous créez des contrats de service en définissant une interface C# ou Visual Basic. Une interface possède les caractéristiques suivantes :
 
 - Chaque méthode dans l'interface correspond à une opération de service spécifique.
-- Pour chaque interface, vous <xref:System.ServiceModel.ServiceContractAttribute> devez appliquer l’attribut.
-- Pour chaque opération/méthode, vous <xref:System.ServiceModel.OperationContractAttribute> devez appliquer l’attribut.
+- Pour chaque interface, vous devez appliquer l' <xref:System.ServiceModel.ServiceContractAttribute> attribut.
+- Pour chaque opération/méthode, vous devez appliquer l' <xref:System.ServiceModel.OperationContractAttribute> attribut.
 
 Dans ce tutoriel, vous allez apprendre à :
 > [!div class="checklist"]
 >
-> - Créez un projet **de bibliothèque de services WCF.**
+> - Créez un projet de **bibliothèque de service WCF** .
 > - Définissez une interface de contrat de service.
 
-## <a name="create-a-wcf-service-library-project-and-define-a-service-contract-interface"></a>Créer un projet de bibliothèque de services WCF et définir une interface de contrat de service
+## <a name="create-a-wcf-service-library-project-and-define-a-service-contract-interface"></a>Créer un projet de bibliothèque de service WCF et définir une interface de contrat de service
 
-1. Ouvrez Visual Studio en tant qu’administrateur. Pour ce faire, sélectionnez le programme Visual Studio dans le menu **Démarrer,** puis sélectionnez **More** > **Run comme administrateur** du menu raccourci.
+1. Ouvrez Visual Studio en tant qu’administrateur. Pour ce faire, sélectionnez le programme Visual Studio dans le menu **Démarrer** , puis sélectionnez **plus**  >  **exécuter en tant qu’administrateur** dans le menu contextuel.
 
-2. Créez un projet **de bibliothèque de services WCF.**
+2. Créez un projet de **bibliothèque de service WCF** .
 
    1. Dans le menu **Fichier**, sélectionnez **Nouveau** > **Projet**.
 
-   2. Dans le **dialogue du nouveau projet,** sur le côté gauche, étendre **Visual C ou** **Visual Basic**, puis sélectionnez la catégorie **WCF.** Visual Studio affiche une liste de modèles de projet dans la section centrale de la fenêtre. Sélectionnez **WCF Service Library**.
+   2. Dans la boîte de dialogue **nouveau projet** , sur le côté gauche, développez **Visual C#** ou **Visual Basic**, puis sélectionnez la catégorie **WCF** . Visual Studio affiche une liste de modèles de projet dans la section centrale de la fenêtre. Sélectionnez **bibliothèque de services WCF**.
 
       > [!NOTE]
-      > Si vous ne voyez pas la catégorie du modèle de projet **WCF,** vous devrez peut-être installer le composant **Windows Communication Foundation** de Visual Studio. Dans la boîte de dialogue **New Project,** sélectionnez le lien **Open Visual Studio Install** sur le côté gauche. Sélectionnez **l’onglet Composants individuels,** puis trouvez et sélectionnez **la Fondation de communication Windows** dans la catégorie des activités de **développement.** Choisissez **Modifier** pour commencer à installer le composant.
+      > Si vous ne voyez pas la catégorie de modèle de projet **WCF** , vous devrez peut-être installer le composant **Windows Communication Foundation** de Visual Studio. Dans la boîte de dialogue **nouveau projet** , sélectionnez le lien **ouvrir le Visual Studio installer** sur le côté gauche. Sélectionnez l’onglet **composants individuels** , puis recherchez et sélectionnez **Windows Communication Foundation** sous la catégorie **activités de développement** . Choisissez **modifier** pour commencer l’installation du composant.
 
-   3. Dans la partie inférieure de la fenêtre, entrez *GettingStartedLib* pour le **nom** et *GettingStarted* pour le **nom solution**.
+   3. Dans la section inférieure de la fenêtre, entrez *GettingStartedLib* pour le **nom** et *gettingstarted* pour le **nom**de la solution.
 
    4. Sélectionnez **OK**.
 
-      Visual Studio crée le projet, qui dispose de trois fichiers: *IService1.cs* (ou *IService1.vb* pour un projet visual Basic), *Service1.cs* (ou *Service1.vb* pour un projet de base visuelle), et *App.config*. Visual Studio définit ces fichiers comme suit :
+      Visual Studio crée le projet, qui contient trois fichiers : *IService1.cs* (ou *IService1. vb* pour un projet Visual Basic), *Service1.cs* (ou *Service1. vb* pour un projet Visual Basic) et *App.config*. Visual Studio définit ces fichiers comme suit :
       - Le fichier *IService1* contient la définition par défaut du contrat de service.
-      - Le fichier *Service1* contient la mise en œuvre par défaut du contrat de service.
-      - Le fichier *App.config* contient les informations de configuration nécessaires pour charger le service par défaut avec l’outil Visual Studio WCF Service Host. Pour plus d’informations sur l’outil WCF Service Host, voir [WCF Service Host (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md).
+      - Le fichier *Service1* contient l’implémentation par défaut du contrat de service.
+      - Le fichier *App.config* contient les informations de configuration nécessaires au chargement du service par défaut avec l’outil hôte de service WCF de Visual Studio. Pour plus d’informations sur l’outil hôte de service WCF, voir [hôte de service WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md).
 
       > [!NOTE]
-      > Si vous avez installé Visual Studio avec les paramètres de l’environnement du développeur Visual Basic, la solution peut être cachée. Si tel est le cas, sélectionnez **options** dans le menu **Tools,** sélectionnez **projets et solutions** > **générales** dans la fenêtre **Options.** Sélectionnez **Toujours afficher la solution**. Vérifiez également que **enregistrer de nouveaux projets une fois créé** est sélectionné.
+      > Si vous avez installé Visual Studio avec Visual Basic paramètres d’environnement de développement, la solution peut être masquée. Si c’est le cas, sélectionnez **options** dans le menu **Outils** , puis sélectionnez **projets et solutions**  >  **général** dans la fenêtre **options** . Sélectionnez **toujours afficher la solution**. Vérifiez également que l’option **enregistrer les nouveaux projets lors de la création** est sélectionnée.
 
-3. De **Solution Explorer**, ouvrez le fichier **IService1.cs** ou **IService1.vb,** et remplacez son code par le code suivant :
+3. À partir de **Explorateur de solutions**, ouvrez le fichier **IService1.cs** ou **IService1. vb** et remplacez son code par le code suivant :
 
     ```csharp
     using System;
@@ -98,17 +99,17 @@ Dans ce tutoriel, vous allez apprendre à :
     End Namespace
     ```
 
-     Ce contrat définit une calculatrice en ligne. Notez `ICalculator` que l’interface est marquée avec l’attribut <xref:System.ServiceModel.ServiceContractAttribute> (simplifié comme `ServiceContract`). Cet attribut définit un espace de nom pour désambiguer le nom du contrat. Le code marque chaque <xref:System.ServiceModel.OperationContractAttribute> opération de `OperationContract`calculatrice avec l’attribut (simplifié comme ).
+     Ce contrat définit une calculatrice en ligne. Notez `ICalculator` que l’interface est marquée avec l' <xref:System.ServiceModel.ServiceContractAttribute> attribut (simplifiée en tant que `ServiceContract` ). Cet attribut définit un espace de noms pour lever toute ambiguïté sur le nom du contrat. Le code marque chaque opération de calculatrice avec l' <xref:System.ServiceModel.OperationContractAttribute> attribut (simplifié comme `OperationContract` ).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
-> - Créez un projet de bibliothèque de services WCF.
+> - Créez un projet de bibliothèque de service WCF.
 > - Définissez une interface de contrat de service.
 
-Avancez au tutoriel suivant pour apprendre à mettre en œuvre le contrat de service WCF.
+Passez au didacticiel suivant pour découvrir comment implémenter le contrat de service WCF.
 
 > [!div class="nextstepaction"]
-> [Tutorial: Mettre en œuvre un contrat de service WCF](how-to-implement-a-wcf-contract.md)
+> [Didacticiel : implémenter un contrat de service WCF](how-to-implement-a-wcf-contract.md)

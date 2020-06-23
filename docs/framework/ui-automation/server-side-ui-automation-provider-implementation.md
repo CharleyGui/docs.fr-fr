@@ -1,17 +1,18 @@
 ---
 title: Implémentation de fournisseur UI Automation côté serveur
+description: Découvrez comment implémenter un fournisseur UI Automation côté serveur pour un contrôle personnalisé dans .NET. L’implémentation de pour les éléments WPF et non WPF est différente.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - server-side UI Automation provider implementation
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: 8a52d84f7152b9cb431ad0aa97c88b143463be2d
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ea1b5e668e29d854233d4dde4c0e6152d591da97
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789621"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903894"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté serveur
 
@@ -20,11 +21,11 @@ ms.locfileid: "76789621"
 
 Cette section explique comment implémenter un fournisseur UI Automation côté serveur pour un contrôle personnalisé.
 
-L’implémentation pour les éléments Windows Presentation Foundation (WPF) et les éléments non WPF (tels que ceux conçus pour Windows Forms) est fondamentalement différente. Les éléments WPF assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] par le biais d’une classe dérivée de <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-WPF assurent la prise en charge via des implémentations d’interfaces de fournisseur.
+L’implémentation pour les éléments Windows Presentation Foundation (WPF) et les éléments non WPF (tels que ceux conçus pour Windows Forms) est fondamentalement différente. Les éléments WPF assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] via une classe dérivée de <xref:System.Windows.Automation.Peers.AutomationPeer> . Les éléments non-WPF assurent la prise en charge via des implémentations d’interfaces de fournisseur.
 
 <a name="Security_Considerations"></a>
 
-## <a name="security-considerations"></a>Considérations sur la sécurité
+## <a name="security-considerations"></a>Considérations relatives à la sécurité
 
 Les fournisseurs doivent être écrits de manière à pouvoir travailler dans un environnement de confiance partielle. Étant donné qu'UIAutomationClient.dll n'est pas configuré pour s'exécuter avec un niveau de confiance partielle, le code de votre fournisseur ne doit pas référencer cet assembly. S'il le fait, le code risque de s'exécuter dans un environnement de confiance totale mais d'échouer dans un environnement de confiance partielle.
 
@@ -40,7 +41,7 @@ Pour plus d'informations sur ce sujet, consultez [UI Automation d'un contrôle p
 
 ## <a name="provider-implementation-by-non-wpf-elements"></a>Implémentation de fournisseur par des éléments non-WPF
 
-Les contrôles personnalisés qui ne font pas partie de l’infrastructure WPF, mais qui sont écrits en code managé (le plus souvent, il s’agit de contrôles Windows Forms), assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] en implémentant des interfaces. Chaque élément doit implémenter au moins une des interfaces répertoriées dans le premier tableau de la section suivante. De plus, si l'élément prend en charge un ou plusieurs modèles de contrôle, il doit implémenter l'interface appropriée pour chaque modèle de contrôle.
+Les contrôles personnalisés qui ne font pas partie de l’infrastructure WPF, mais qui sont écrits en code managé (le plus souvent, il s’agit de contrôles Windows Forms), fournissent une prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] en implémentant des interfaces. Chaque élément doit implémenter au moins une des interfaces répertoriées dans le premier tableau de la section suivante. De plus, si l’élément prend en charge un ou plusieurs modèles de contrôle, il doit implémenter l’interface appropriée pour chaque modèle de contrôle.
 
 Le projet de votre fournisseur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] doit référencer les assemblys suivants :
 
@@ -59,7 +60,7 @@ Chaque fournisseur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharpt
 |Interface|Description|
 |---------------|-----------------|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderSimple>|Fournit les fonctionnalités pour un contrôle simple hébergé dans une fenêtre, y compris une prise en charge pour les modèles de contrôle et les propriétés.|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|Hérite de <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>. Ajoute des fonctionnalités pour un élément d'un contrôle complexe, y compris celles permettant de naviguer dans le fragment, de définir le focus et de retourner le rectangle englobant de l'élément.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|Hérite de <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>. Ajoute des fonctionnalités pour un élément d’un contrôle complexe, y compris celles permettant de naviguer dans le fragment, de définir le focus et de retourner le rectangle englobant de l’élément.|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>|Hérite de <xref:System.Windows.Automation.Provider.IRawElementProviderFragment>. Ajoute des fonctionnalités pour l'élément racine d'un contrôle complexe, y compris la localisation d'un élément enfant à des coordonnées spécifiées et la définition de l'état du focus pour l'ensemble du contrôle.|
 
 Les interfaces suivantes fournissent des fonctionnalités supplémentaires, mais leur implémentation n'est pas obligatoire.
@@ -77,14 +78,14 @@ Toutes les autres interfaces de l’espace de noms <xref:System.Windows.Automati
 
 Pour communiquer avec [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], votre contrôle doit implémenter les principaux domaines de fonctionnalités suivants :
 
-|Fonctionnalité|Implémentation|
+|Fonctionnalités|Implémentation|
 |-------------------|--------------------|
-|Exposer le fournisseur à [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|En réponse à un message WM_GETOBJECT envoyé à la fenêtre de contrôle, retournez l'objet qui implémente <xref:System.Windows.Automation.Provider.IRawElementProviderSimple> (ou une interface dérivée). Pour les fragments, il doit s'agir du fournisseur pour la racine du fragment.|
+|Exposer le fournisseur à [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|En réponse à un message WM_GETOBJECT envoyé à la fenêtre de contrôle, retournez l'objet qui implémente <xref:System.Windows.Automation.Provider.IRawElementProviderSimple> (ou une interface dérivée). Pour les fragments, il doit s’agir du fournisseur pour la racine du fragment.|
 |Fournir des valeurs de propriété|Implémentez <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A> pour fournir ou substituer des valeurs.|
 |Permettre au client d'interagir avec le contrôle|Implémentez des interfaces qui prennent en charge des modèles de contrôle, tels qu’ <xref:System.Windows.Automation.Provider.IInvokeProvider>. Retournez ces fournisseurs de modèles dans votre implémentation de <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A>.|
 |Déclencher des événements|Appelez une des méthodes statiques d' <xref:System.Windows.Automation.Provider.AutomationInteropProvider> pour déclencher un événement que le client pourra écouter.|
 |Activer la navigation et le focus dans un fragment|Implémentez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> pour chaque élément du fragment (sauf pour les éléments qui ne font pas partie d'un fragment).|
-|Activer le focus et l'emplacement d'un élément enfant dans un fragment|Implémentez <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>. (Sauf pour les éléments qui ne sont pas des racines de fragment.)|
+|Activer le focus et l’emplacement d’un élément enfant dans un fragment|Implémentez <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>. (Sauf pour les éléments qui ne sont pas des racines de fragment.)|
 
 <a name="Property_Values_in_Non_WPF_Providers"></a>
 
@@ -115,9 +116,9 @@ Habituellement, les fournisseurs de contrôles basés sur HWND n'ont pas besoin 
 - <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty>
 
 > [!NOTE]
-> La <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> d'un simple élément ou d'une racine de fragment hébergé dans une fenêtre est obtenue depuis la fenêtre ; toutefois, les éléments fragments sous la racine (tels que des éléments de liste dans une zone de liste) doivent fournir leurs propres identificateurs. Pour plus d'informations, consultez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.
+> La <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> d'un simple élément ou d'une racine de fragment hébergé dans une fenêtre est obtenue depuis la fenêtre ; toutefois, les éléments fragments sous la racine (tels que des éléments de liste dans une zone de liste) doivent fournir leurs propres identificateurs. Pour plus d’informations, consultez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.
 >
-> Le <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> doit être retourné pour les fournisseurs hébergés dans un contrôle Windows Forms. Dans ce cas, le fournisseur de fenêtre par défaut ne pourra peut-être pas récupérer la bonne valeur.
+> La <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> doit être retournée pour les fournisseurs hébergés dans un contrôle de Windows Forms. Dans ce cas, le fournisseur de fenêtre par défaut ne pourra peut-être pas récupérer la bonne valeur.
 >
 > La <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> est généralement fournie par le fournisseur hôte. Par exemple, si un contrôle personnalisé est dérivé de <xref:System.Windows.Forms.Control>, le nom est dérivé de la propriété `Text` du contrôle.
 
@@ -142,7 +143,7 @@ Pour optimiser les performances, un fournisseur peut déclencher des événement
 |Méthode|Description|
 |------------|-----------------|
 |<xref:System.Windows.Automation.Provider.AutomationInteropProvider.ClientsAreListening%2A>|Cette propriété statique spécifie si des applications clientes se sont abonnées à des événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|L'implémentation de cette interface par le fournisseur sur une racine de fragment lui permet d'être avertie quand des clients enregistrent et annulent l'enregistrement de gestionnaires d'événements pour les événements situés sur le fragment.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|L’implémentation de cette interface par le fournisseur sur une racine de fragment lui permet d’être avertie quand des clients enregistrent et annulent l’enregistrement de gestionnaires d’événements pour les événements situés sur le fragment.|
 
 <a name="Non_WPF_Provider_Navigation"></a>
 
@@ -191,9 +192,9 @@ Pour cela, le fournisseur de la racine du fragment pour le rebar expose un jeu d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
+- [Vue d'ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
 - [Exposer un fournisseur UI Automation côté serveur](expose-a-server-side-ui-automation-provider.md)
-- [Retourner les propriétés d’un fournisseur UI Automation](return-properties-from-a-ui-automation-provider.md)
-- [Déclencher des événements à partir d’un fournisseur UI Automation](raise-events-from-a-ui-automation-provider.md)
+- [Retourner les propriétés d'un fournisseur UI Automation](return-properties-from-a-ui-automation-provider.md)
+- [Déclencher des événements à partir d'un fournisseur UI Automation](raise-events-from-a-ui-automation-provider.md)
 - [Activer la navigation dans un fournisseur de fragment UI Automation](enable-navigation-in-a-ui-automation-fragment-provider.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)

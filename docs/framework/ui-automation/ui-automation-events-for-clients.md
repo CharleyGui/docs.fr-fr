@@ -1,16 +1,17 @@
 ---
 title: Événements UI Automation pour les clients
+description: Découvrez comment les événements UI Automation Microsoft sont utilisés par les clients UI Automation dans .NET. UI Automation permet aux clients de s’abonner à des événements intéressants.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, events for clients
 - events, UI Automation clients
 ms.assetid: b909e388-3f24-4997-b6d4-bd9c35c2dc27
-ms.openlocfilehash: d7105e9211c35e7d6125c3017e8b4b829a25b128
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84568cf228a30535ec603cdad5bddbfd5697be0a
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179908"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903738"
 ---
 # <a name="ui-automation-events-for-clients"></a>Événements UI Automation pour les clients
 > [!NOTE]
@@ -23,9 +24,9 @@ ms.locfileid: "79179908"
  L’efficacité est également améliorée par la possibilité d’écouter des événements uniquement dans une portée définie. Par exemple, un client peut écouter des événements de modification de focus sur tous les éléments [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] de l’arborescence ou sur un seul élément et ses descendants.  
   
 > [!NOTE]
-> Ne supposez pas que tous les événements possibles sont déclenchés par un fournisseur [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]. Par exemple, tous les changements de propriété ne font pas augmenter les événements par les fournisseurs de proxy standard pour les formulaires Windows et les contrôles Win32.  
+> Ne supposez pas que tous les événements possibles sont déclenchés par un fournisseur [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]. Par exemple, toutes les modifications de propriété n’entraînent pas le déclenchement d’événements par les fournisseurs de proxy standard pour les contrôles Windows Forms et Win32.  
   
- Pour une vue [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] plus large des événements, voir [UI Automation Events Aperçu](ui-automation-events-overview.md).  
+ Pour une vue d’ensemble plus large des [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] événements, consultez [UI Automation Events Overview](ui-automation-events-overview.md).  
   
 <a name="Subscribing_to_Events"></a>
 ## <a name="subscribing-to-events"></a>Abonnement à des événements  
@@ -55,11 +56,11 @@ ms.locfileid: "79179908"
 |<xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>|Annule l’inscription d’un gestionnaire d’événements qui a été inscrit à l’aide de <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>.|  
 |<xref:System.Windows.Automation.Automation.RemoveAllEventHandlers%2A>|Annule l’inscription de tous les gestionnaires d’événements inscrits.|  
   
- Par exemple, [codez-vous pour les événements d’automatisation de l’interface utilisateur](subscribe-to-ui-automation-events.md).  
+ Pour obtenir un exemple de code, consultez [s’abonner à des événements UI Automation](subscribe-to-ui-automation-events.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [S'abonner à des événements UI Automation](subscribe-to-ui-automation-events.md)
 - [Vue d'ensemble des événements UI Automation](ui-automation-events-overview.md)
 - [Vue d'ensemble des propriétés UI Automation](ui-automation-properties-overview.md)
-- [Échantillon TrackFocus](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FocusTracker)
+- [Exemple TrackFocus](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FocusTracker)

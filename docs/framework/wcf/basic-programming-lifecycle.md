@@ -1,15 +1,16 @@
 ---
 title: Cycle de vie de la programmation de base
+description: En savoir plus sur les tâches de création d’une application WCF. WCF permet aux applications de communiquer sur le même ordinateur, sur des réseaux ou sur différentes plateformes d’application.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
-ms.openlocfilehash: fe578ba3c655c9c9ea8398b9b2e4d4f974153c8e
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c672827fff780fd263f5355520bb6ccf02bb902e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320827"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245529"
 ---
 # <a name="basic-programming-lifecycle"></a>Cycle de vie de la programmation de base
 Windows Communication Foundation (WCF) permet aux applications de communiquer si elles se trouvent sur le même ordinateur, sur Internet ou sur différentes plateformes d’application. Cette rubrique décrit les tâches requises pour générer une application WCF. Pour obtenir un exemple d’application fonctionnel, consultez [prise en main didacticiel](getting-started-tutorial.md).  

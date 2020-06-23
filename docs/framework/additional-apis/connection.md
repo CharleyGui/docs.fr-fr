@@ -1,5 +1,6 @@
 ---
 title: Classe de connexion (System.Net)
+description: En savoir plus sur la classe Connection dans .NET. Cette classe analyse les réponses du serveur, les demandes de file d’attente et les demandes de pipeline. Il se trouve dans l’espace de noms System.NET.
 ms.date: 05/01/2017
 ms.technology: dotnet-networking
 topic_type:
@@ -11,18 +12,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 6f0b8902-f31c-4ab9-a8c9-de43228995ec
-ms.openlocfilehash: dc0a594f7ae2bb9fc1883ec7ef672805bbc08778
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cb28724ed782fc5395dc74e9c59249ebdea44ddf
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156179"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989832"
 ---
 # <a name="connection-class"></a>Connection, classe
 
 La `Connection` classe analyse les réponses du serveur, les demandes de file d’attente et les demandes de pipeline.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp  
 internal class Connection : PooledStream
@@ -31,12 +32,12 @@ internal class Connection : PooledStream
 > [!WARNING]
 > La `Connection` classe est interne et n’est pas destinée à être utilisée directement dans votre code.
 >
-> Microsoft ne prend en charge l’utilisation de cette classe dans une application de production en aucune circonstance.
+> Microsoft ne prend pas en charge l’utilisation de cette classe dans une application de production en l’absence de toute circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**<xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
-**Assemblée:** Système (dans System.dll)
+**Assembly :** Système (en System.dll)
 
-**.NET Versions du Cadre:** Disponible depuis 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

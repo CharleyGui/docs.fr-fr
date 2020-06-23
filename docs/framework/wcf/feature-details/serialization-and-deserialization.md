@@ -1,16 +1,17 @@
 ---
 title: Sérialisation et désérialisation
+description: En savoir plus sur le moteur de sérialisation WCF, qui se traduit par des objets .NET Framework et XML, dans les deux sens.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-ms.openlocfilehash: 8d62fe1cb646bfa00f3fd2e694f08d9fed297bc2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3927c17a2548a094a63ffd95ff8a3701403de281
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600423"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244905"
 ---
 # <a name="serialization-and-deserialization"></a>Sérialisation et désérialisation
 Windows Communication Foundation (WCF) comprend un nouveau moteur de sérialisation, le <xref:System.Runtime.Serialization.DataContractSerializer> . Le <xref:System.Runtime.Serialization.DataContractSerializer> traduit entre les objets .NET Framework et XML, dans les deux sens. Cette rubrique explique comment le sérialiseur fonctionne.  

@@ -1,5 +1,6 @@
 ---
 title: ConnectionGroup, classe
+description: En savoir plus sur la classe ConnectionGroup, qui regroupe les connexions dans le contexte ServicePoint et est utilisée pour gérer le contexte des ressources réseau dans .NET.
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +11,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 25c08217-fdeb-44b9-9cd6-1b4955d6e602
-ms.openlocfilehash: 8ebc97112d2044efca85520ee942ed0f587529ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7121713b26880f2490b40d59d92d431a567519b3
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156153"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989820"
 ---
 # <a name="connectiongroup-class"></a>ConnectionGroup, classe
 
-La `ConnectionGroup` classe regroupe une liste <xref:System.Net.ServicePoint> de connexions dans le contexte et est utilisée pour maintenir le contexte des ressources réseau (par exemple, des procurations et des clients distincts).
+La `ConnectionGroup` classe regroupe une liste de connexions dans le <xref:System.Net.ServicePoint> contexte et est utilisée pour gérer le contexte des ressources réseau (par exemple, les proxies et les clients distincts).
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp  
 internal class ConnectionGroup
@@ -30,12 +31,12 @@ internal class ConnectionGroup
 > [!WARNING]
 > La `ConnectionGroup` classe est interne et n’est pas destinée à être utilisée directement dans votre code.
 >
-> Microsoft ne prend en charge l’utilisation de cette classe dans une application de production en aucune circonstance.
+> Microsoft ne prend pas en charge l’utilisation de cette classe dans une application de production en l’absence de toute circonstance.
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**<xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
-**Assemblée:** Système (dans System.dll)
+**Assembly :** Système (en System.dll)
 
-**.NET Versions du Cadre:** Disponible depuis 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.
