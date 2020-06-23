@@ -1,16 +1,17 @@
 ---
 title: Sécurité de transport avec l'authentification Windows
+description: Passez en revue ce scénario, qui montre un client/service WCF sécurisé par la sécurité Windows. Dans cet exemple, un service intranet affiche des informations sur les ressources humaines.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-ms.openlocfilehash: 6703da4f97cba38ee0dc334d3010ca509d1fb3ef
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b6134d4cbdff0c1adea704a7f3aaff7e40fd75ec
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598695"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244762"
 ---
 # <a name="transport-security-with-windows-authentication"></a>Sécurité de transport avec l'authentification Windows
 Le scénario suivant montre un client et un service Windows Communication Foundation (WCF) sécurisés par la sécurité Windows. Pour plus d’informations sur la programmation, consultez [Comment : sécuriser un service avec des informations d’identification Windows](../how-to-secure-a-service-with-windows-credentials.md).  
@@ -24,13 +25,13 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 |Mode de sécurité|Transport|  
 |Interopérabilité|WCF uniquement|  
 |Authentification (serveur)<br /><br /> Authentification (client)|Oui (à l'aide de l'authentification intégrée Windows)<br /><br /> Oui (à l'aide de l'authentification intégrée Windows)|  
-|Intégrité|Oui|  
-|Confidentialité|Oui|  
+|Intégrité|Yes|  
+|Confidentialité|Yes|  
 |Transport|NET.TCP|  
 |Liaison|<xref:System.ServiceModel.NetTcpBinding>|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -74,7 +75,7 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   

@@ -1,5 +1,6 @@
 ---
-title: XpsDocumentWriter._WritingProgressChanged Event (System.Windows.Xps)
+title: XpsDocumentWriter. _WritingProgressChanged, événement (System. Windows. Xps)
+description: Passez en revue l’événement XpsDocumentWriter. _WritingProgressChanged, qui se produit lorsque l’enregistreur de document XPS (XML Paper Specification) met à jour sa progression dans .NET.
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,18 +12,18 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 4d61a11ec6546ed4e1b0011d541f10fec4f86b68
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a54f1fbc04d7f1ada6bf893f2e8bfb9d98d372df
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155581"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105034"
 ---
-# <a name="xpsdocumentwriter_writingprogresschanged-event"></a>XpsDocumentWriter. \_WritingProgressChanged Event (en)
+# <a name="xpsdocumentwriter_writingprogresschanged-event"></a>XpsDocumentWriter. \_ Événement WritingProgressChanged
 
 Se produit lorsque le <xref:System.Windows.Xps.XpsDocumentWriter> met à jour sa progression.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ``` csharp
 internal event WritingProgressChangedEventHandler _WritingProgressChanged
@@ -30,8 +31,8 @@ internal event WritingProgressChangedEventHandler _WritingProgressChanged
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**<xref:System.Windows.Xps>
+**Espace de noms :** <xref:System.Windows.Xps>
 
-**Assemblée:** System.Printing (in system.printing.dll)
+**Assembly :** System. Printing (en system.printing.dll)
 
-**.NET Versions du Cadre:** Disponible depuis 3.0
+**Versions de .NET Framework :** Disponible depuis 3,0

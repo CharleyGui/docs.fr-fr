@@ -1,5 +1,6 @@
 ---
-title: XpsDocumentWriter.raise__WritingCancelled Méthode (System.Windows.Xps)
+title: XpsDocumentWriter. raise__WritingCancelled, méthode (System. Windows. Xps)
+description: Comprendre la méthode XpsDocumentWriter. raise__WritingCancelled, qui déclenche l’événement WritingCancelled pour un document XPS (XML Paper Specification) dans .NET.
 ms.date: 12/12/2007
 api_location:
 - system.printing.dll
@@ -9,14 +10,14 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 8cede25e9041d99ac3c601000e4afbef666a897c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5436be347792209780c4b3b617f26f731d98ac90
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155721"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105248"
 ---
-# <a name="xpsdocumentwriterraise__writingcancelled-method"></a>XpsDocumentWriter.raise\_\_WritingCancelled Method XpsDocumentWriter.raise WritingCancelled Method XpsDocumentWriter.raise WritingCancelled Method Xps
+# <a name="xpsdocumentwriterraise__writingcancelled-method"></a>XpsDocumentWriter. Raise, \_ \_ méthode WritingCancelled
 
 Déclenche l'événement <xref:System.Windows.Xps.XpsDocumentWriter.WritingCancelled>.
 
@@ -37,8 +38,8 @@ public void raise__WritingCancelled (object value0,
 
 ## <a name="requirements"></a>Spécifications
 
-**Espace nom:**<xref:System.Windows.Xps>
+**Espace de noms :** <xref:System.Windows.Xps>
 
-**Assemblée:** System.Printing (in system.printing.dll)
+**Assembly :** System. Printing (en system.printing.dll)
 
-**.NET Versions du Cadre:** 3.0
+**Versions de .NET Framework :** 3,0

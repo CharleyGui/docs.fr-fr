@@ -1,16 +1,17 @@
 ---
 title: Activer ou désactiver les redirections de liaison générées automatiquement
+description: Lisez comment activer ou désactiver la redirection de liaison automatique. Cette fonctionnalité affecte les applications de bureau et les applications Web ciblant .NET 4.5.1 ou une version ultérieure.
 ms.date: 10/30/2018
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
-ms.openlocfilehash: 178d5070dd7018bbc0fce474cdd0b31ba3d17f77
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: edee95f6c3b2c2d74c4f1b68e0a65e5cb0e85f54
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69913032"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105392"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>Procédure : Activer et désactiver la redirection de liaison automatique
 
@@ -18,7 +19,7 @@ Quand vous compilez des applications dans Visual Studio qui ciblent le .NET Fram
 
 ## <a name="disable-automatic-binding-redirects-in-desktop-apps"></a>Désactiver les redirections de liaison automatiques dans les applications de bureau
 
-Les redirections de liaison automatiques sont activées par défaut pour les applications de bureau Windows qui ciblent le .NET Framework 4.5.1 et les versions ultérieures. Les redirections de liaison sont ajoutées au fichier de configuration de sortie (**app. config**) lorsque l’application est compilée et remplacent l’unification d’assemblys qui pourrait autrement se produire. Le fichier **app. config** source n’est pas modifié. Vous pouvez désactiver cette fonctionnalité en modifiant le fichier projet de l’application ou en désélectionnant une case à cocher dans les propriétés du projet dans Visual Studio.
+Les redirections de liaison automatiques sont activées par défaut pour les applications de bureau Windows qui ciblent le .NET Framework 4.5.1 et les versions ultérieures. Les redirections de liaison sont ajoutées au fichier de configuration de sortie (**app.config**) lorsque l’application est compilée et remplacent l’unification de l’assembly qui, sinon, peut avoir lieu. Le fichier **app.config** source n’est pas modifié. Vous pouvez désactiver cette fonctionnalité en modifiant le fichier projet de l’application ou en désélectionnant une case à cocher dans les propriétés du projet dans Visual Studio.
 
 ### <a name="disable-through-project-properties"></a>Désactiver via les propriétés du projet
 
@@ -85,9 +86,9 @@ Vous pouvez activer les redirections de liaison automatiques dans les applicatio
 
 ## <a name="enable-automatic-binding-redirects-in-web-apps"></a>Activer les redirections de liaison automatiques dans les applications Web
 
-Les redirections de liaison automatiques sont implémentées différemment pour les applications web. Étant donné que le fichier de configuration source (**Web. config**) doit être modifié pour les applications Web, les redirections de liaison ne sont pas automatiquement ajoutées au fichier de configuration. Toutefois, Visual Studio vous informe des éventuels conflits de liaison et vous pouvez ajouter des redirections de liaison pour résoudre ces conflits. Étant donné que vous êtes toujours invité à ajouter des redirections de liaison, vous n’avez pas besoin de désactiver explicitement cette fonctionnalité pour une application Web.
+Les redirections de liaison automatiques sont implémentées différemment pour les applications web. Étant donné que le fichier de configuration source (**web.config**) doit être modifié pour les applications Web, les redirections de liaison ne sont pas automatiquement ajoutées au fichier de configuration. Toutefois, Visual Studio vous informe des éventuels conflits de liaison et vous pouvez ajouter des redirections de liaison pour résoudre ces conflits. Étant donné que vous êtes toujours invité à ajouter des redirections de liaison, vous n’avez pas besoin de désactiver explicitement cette fonctionnalité pour une application Web.
 
-Pour ajouter des redirections de liaison à un fichier **Web. config** :
+Pour ajouter des redirections de liaison à un fichier de **web.config** :
 
 1. Dans Visual Studio, compilez l'application et vérifiez les avertissements sur la génération.
 
@@ -95,7 +96,7 @@ Pour ajouter des redirections de liaison à un fichier **Web. config** :
 
 2. En cas de conflit de liaison d’assembly, un avertissement s’affiche. Double-cliquez sur l’avertissement ou sélectionnez l’avertissement et appuyez sur **entrée**.
 
-   Une boîte de dialogue qui vous permet d’ajouter automatiquement les redirections de liaison nécessaires vers le fichier **Web. config** source s’affiche.
+   Une boîte de dialogue qui vous permet d’ajouter automatiquement les redirections de liaison nécessaires vers le fichier **web.config** source s’affiche.
 
    ![Boîte de dialogue des autorisations de redirection de liaison](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
 

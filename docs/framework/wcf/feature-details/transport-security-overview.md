@@ -1,16 +1,17 @@
 ---
 title: Vue d'ensemble de la sécurité des transports
+description: Découvrez les principaux mécanismes de sécurité de transport dans les liaisons fournies par le système WCF. Ces mécanismes de sécurité dépendent de la liaison et du transport utilisés.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: 5c6b6389122b32ed8db701020a8c13ba17225867
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6302a949e8d0a041446b75dd3769b8ba2d1fc2b5
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585686"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244827"
 ---
 # <a name="transport-security-overview"></a>Vue d'ensemble de la sécurité des transports
 Les mécanismes de sécurité de transport dans Windows Communication Foundation (WCF) dépendent de la liaison et du transport utilisés. Par exemple, lors de l'utilisation de la classe <xref:System.ServiceModel.WSHttpBinding>, le transport correspond à HTTP et le mécanisme principal utilisé pour sécuriser ce transport correspond à SSL (Secure Sockets Layer) sur HTTP, c'est-à-dire à HTTPS. Cette rubrique présente les principaux mécanismes de sécurité de transport utilisés dans les liaisons fournies par le système WCF.  

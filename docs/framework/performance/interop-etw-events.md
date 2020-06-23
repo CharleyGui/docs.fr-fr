@@ -1,16 +1,17 @@
 ---
 title: Événements ETW d'interopérabilité
+description: Passez en revue les événements d’interopérabilité ETW (suivi d’événements pour Windows), qui capturent des informations sur la génération de stub MSIL (Microsoft Intermediate Language) & la mise en cache dans .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interop events [.NET Framework]
 - ETW, interop events (CLR)
 ms.assetid: eb6eac2e-45f4-4923-a32c-38f203da66df
-ms.openlocfilehash: 80fd1f7487dbe3925b875e728eaeddac86927ad4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9dac9bc70cd070eb3e94969ce47ce24325a6f89d
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716016"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904245"
 ---
 # <a name="interop-etw-events"></a>Événements ETW d'interopérabilité
 Les événements d'interopérabilité capturent des informations sur la création et la mise en cache du stub MSIL (Microsoft Intermediate Language).  
@@ -19,21 +20,21 @@ Les événements d'interopérabilité capturent des informations sur la créatio
 
 Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`InteropKeyword` (0x2000)|Informatif(4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Moment du déclenchement|  
+|Événement|ID de l'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`ILStubGenerated`|88|Le stub MSIL a été généré.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
-|ModuleID|win:UInt16|Identificateur du module|  
+|ModuleID|win:UInt16|Identificateur de module.|  
 |StubMethodID|win:UInt64|Identificateur de la méthode stub|  
 |StubFlags|win:UInt64|Indicateurs du stub :<br /><br /> 0x1 – Interopérabilité inversée.<br /><br /> 0x2 – COM Interop<br /><br /> 0x4 – Stub généré par NGen.exe.<br /><br /> 0x8 – Délégué<br /><br /> 0x10 : argument de variable.<br /><br /> 0x20 – Appelé non managé|  
 |ManagedInteropMethodToken|win:UInt32|Jeton de la méthode d’interopérabilité managée|  
@@ -49,21 +50,21 @@ Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informatio
 
 Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`InteropKeyword` (0x2000)|Informatif(4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Moment du déclenchement|  
+|Événement|ID de l'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`ILStubCacheHit`|89|Le cache MSIL a fait l’objet d’un accès.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
-|ModuleID|win:UInt16|Identificateur du module|  
+|ModuleID|win:UInt16|Identificateur de module.|  
 |StubMethodID|win:UInt64|Identificateur de la méthode stub|  
 |ManagedInteropMethodToken|win:UInt32|Jeton de la méthode d’interopérabilité managée|  
 |ManagedInteropMethodNameSpace|win:UnicodeString|Espace de noms de la méthode d’interopérabilité managée|  

@@ -1,15 +1,16 @@
 ---
 title: "Comment : authentifier à l'aide d'un nom d'utilisateur et d'un mot de passe"
+description: Découvrez comment permettre à un service WCF d’authentifier un client à l’aide d’un nom d’utilisateur et d’un mot de passe de domaine Windows, avec des exemples de code.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-ms.openlocfilehash: e8dc9177afc590a6467855decfa8450b37c6fc77
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1f938f8041b2577b3705266948f29b42f23a6fd7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601281"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247245"
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>Comment : authentifier à l'aide d'un nom d'utilisateur et d'un mot de passe
 
@@ -32,7 +33,7 @@ Sur le client, vous devez demander à l'utilisateur le nom d'utilisateur et le m
     // ...
     ```
 
-2. Spécifiez le certificat de serveur utilisé pour chiffrer les informations de nom d'utilisateur et mot de passe envoyées sur le réseau. Ce code doit suivre immédiatement le code ci-dessus. L’exemple suivant utilise le certificat créé par le fichier Setup. bat à partir de l’exemple de [nom d’utilisateur de sécurité de message](../samples/message-security-user-name.md) :
+2. Spécifiez le certificat de serveur utilisé pour chiffrer les informations de nom d'utilisateur et mot de passe envoyées sur le réseau. Ce code doit suivre immédiatement le code ci-dessus. L’exemple suivant utilise le certificat créé par le fichier setup.bat à partir de l’exemple de [nom d’utilisateur de sécurité de message](../samples/message-security-user-name.md) :
 
     ```csharp
     // ...
@@ -40,7 +41,7 @@ Sur le client, vous devez demander à l'utilisateur le nom d'utilisateur et le m
     // ...
     ```
 
-    Vous pouvez utiliser votre propre certificat ; il vous suffit de modifier le code pour faire référence à votre certificat. Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Assurez-vous que le certificat se trouve dans le magasin de certificats Personnes approuvées de l'ordinateur local. Pour ce faire, vous pouvez exécuter MMC. exe et sélectionner l’élément de menu **fichier**, **Ajouter/supprimer un composant logiciel enfichable..** .. Dans la boîte de dialogue **Ajouter ou supprimer des composants logiciels enfichables** , sélectionnez le **composant logiciel enfichable Certificats** , puis cliquez sur **Ajouter**. Dans la boîte de dialogue composant logiciel enfichable Certificats, sélectionnez **compte d’ordinateur**. Par défaut, le certificat généré à partir de l'exemple de nom d'utilisateur de sécurité du message se trouve dans le dossier Personal/Certificates.  Elle est indiquée comme « localhost » sous la colonne délivré à dans la fenêtre MMC. Glissez-déposez le certificat dans le dossier **personnes autorisées** . Cela permettra à WCF de traiter le certificat comme un certificat approuvé lorsque vous effectuez l'authentification.
+    Vous pouvez utiliser votre propre certificat ; il vous suffit de modifier le code pour faire référence à votre certificat. Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Assurez-vous que le certificat se trouve dans le magasin de certificats Personnes approuvées de l'ordinateur local. Pour ce faire, vous pouvez exécuter mmc.exe et sélectionner l’élément de menu **fichier**, **Ajouter/supprimer un composant logiciel enfichable...** . Dans la boîte de dialogue **Ajouter ou supprimer des composants logiciels enfichables** , sélectionnez le **composant logiciel enfichable Certificats** , puis cliquez sur **Ajouter**. Dans la boîte de dialogue composant logiciel enfichable Certificats, sélectionnez **compte d’ordinateur**. Par défaut, le certificat généré à partir de l'exemple de nom d'utilisateur de sécurité du message se trouve dans le dossier Personal/Certificates.  Elle est indiquée comme « localhost » sous la colonne délivré à dans la fenêtre MMC. Glissez-déposez le certificat dans le dossier **personnes autorisées** . Cela permettra à WCF de traiter le certificat comme un certificat approuvé lorsque vous effectuez l'authentification.
 
 ## <a name="to-call-the-service-passing-username-and-password"></a>Pour appeler le service en passant le nom d'utilisateur et le mot de passe
 

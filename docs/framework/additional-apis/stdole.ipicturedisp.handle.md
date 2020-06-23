@@ -1,5 +1,6 @@
 ---
-title: Propriété IPictureDisp.Handle (stdole)
+title: IPictureDisp. handle, propriété (stdole)
+description: En savoir plus sur la propriété IPictureDisp. handle dans .NET. Cette propriété se trouve dans l’espace de noms stdole et l’assembly stdole (dans la bibliothèque de stdole.dll).
 ms.date: 02/22/2019
 topic_type:
 - apiref
@@ -10,12 +11,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 27a081b0faee348d8ff2064aa473fef315ee5d1c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c75cb2b28801924987d42fe442fee492245fe809
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634405"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105311"
 ---
 # <a name="ipicturedisphandle-property"></a>IPictureDisp.Handle, propriété
 
@@ -23,12 +24,12 @@ ms.locfileid: "65634405"
 int Handle { get; }
 ```
 
-## <a name="property-value"></a>Valeur de propriété
+## <a name="property-value"></a>Valeur de la propriété
 
 <xref:System.Int32>\
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** `stdole`
+**Espace de noms :** `stdole`
 
-**Assembly :** stdole (dans stdole.dll)
+**Assembly :** stdole (en stdole.dll)

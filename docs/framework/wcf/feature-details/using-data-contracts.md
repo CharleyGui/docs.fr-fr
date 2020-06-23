@@ -1,5 +1,6 @@
 ---
 title: Utilisation de contrats de données
+description: En savoir plus sur un contrat de données, qui définit, pour chaque paramètre ou type de retour, les données qui sont sérialisées pour être échangées entre un client et un serveur WCF.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - WCF, data
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
-ms.openlocfilehash: 0d11b48d3021bf0d92d74ab67bc18c2bdd2bdd0e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 80ea2a8bd67c627fbe11ee07e640704c1a41ef7b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594996"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244723"
 ---
 # <a name="using-data-contracts"></a>Utilisation de contrats de données
 Un *contrat de données* est un accord en bonne et due forme entre un service et un client qui décrit de manière abstraite les données à échanger. Autrement dit, pour communiquer, le client et le service n'ont pas besoin de partager les mêmes types, mais uniquement les mêmes contrats de données. Un contrat de données définit précisément, pour chaque type de paramètre ou de retour, les données qui doivent être sérialisées (converties en données XML) pour être échangées.  
@@ -35,7 +36,7 @@ Un *contrat de données* est un accord en bonne et due forme entre un service et
  [!code-csharp[C_DataContract#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#2)]
  [!code-vb[C_DataContract#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#2)]  
   
-### <a name="notes"></a>Remarques  
+### <a name="notes"></a>Notes  
  Les remarques suivantes fournissent des éléments à prendre en compte lors de la création de contrats de données :  
   
 - L'attribut <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> est honoré uniquement lorsqu'il est utilisé avec des types non marqués. Cela inclut les types qui ne sont pas marqués avec l'un des attributs <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute>ou <xref:System.Runtime.Serialization.EnumMemberAttribute> , ou qui sont marqués comme sérialisables par tout autre moyen (par exemple, objet <xref:System.Xml.Serialization.IXmlSerializable>).  

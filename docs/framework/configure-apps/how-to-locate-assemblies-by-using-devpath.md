@@ -1,5 +1,6 @@
 ---
 title: 'Procédure : Localiser des assemblys à l’aide de DEVPATH'
+description: Testez le bon fonctionnement d’un assembly partagé avec de nombreuses applications dans .NET en utilisant un fichier de configuration d’ordinateur XML et la variable d’environnement DEVPATH.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DEVPATH
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 44d2eadf-7eec-443c-a2ac-d601fd919e17
-ms.openlocfilehash: 6fa864f814d6a9ce04f2bce92c61cd0075ab5145
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 50b61eedddabd660b1834565a61738f460ae9ff9
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69913000"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105377"
 ---
 # <a name="how-to-locate-assemblies-by-using-devpath"></a>Procédure : Localiser des assemblys à l’aide de DEVPATH
 Les développeurs peuvent souhaiter s’assurer qu’un assembly partagé qu’ils génèrent fonctionne correctement avec plusieurs applications. Au lieu de placer continuellement l’assembly dans le Global Assembly Cache pendant le cycle de développement, le développeur peut créer une variable d’environnement DEVPATH qui pointe vers le répertoire de sortie de génération de l’assembly.  

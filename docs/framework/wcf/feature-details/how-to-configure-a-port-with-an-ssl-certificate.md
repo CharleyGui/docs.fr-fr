@@ -1,5 +1,6 @@
 ---
 title: 'Comment : configurer un port avec un certificat SSL'
+description: Découvrez comment configurer un port avec un certificat X. 509, requis pour un service WCF auto-hébergé avec la classe WSHttpBinding à l’aide de la sécurité de transport.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-ms.openlocfilehash: 30b24c4ff06cc7249d3ddb6d95549a574e313f52
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0eccdf916dae7b886cbc4e6563e6dfe17039c321
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579616"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247180"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Comment : configurer un port avec un certificat SSL
 
@@ -22,22 +23,22 @@ Lorsque vous créez un service de Windows Communication Foundation (WCF) auto-h�
   
  Pour configurer un port, l'outil que vous utilisez dépend du système d'exploitation qui s'exécute sur votre ordinateur.  
   
- Si vous exécutez Windows Server 2003, utilisez l’outil HttpCfg. exe. Sur Windows Server 2003, cet outil est installé. Pour plus d’informations, consultez [vue d’ensemble de Httpcfg](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10)). La [documentation](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) sur les outils de support de Windows explique la syntaxe de l’outil HttpCfg. exe.  
+ Si vous exécutez Windows Server 2003, utilisez l’outil HttpCfg.exe. Sur Windows Server 2003, cet outil est installé. Pour plus d’informations, consultez [vue d’ensemble de Httpcfg](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10)). La [documentation](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) sur les outils de support de Windows explique la syntaxe de l’outil Httpcfg.exe.  
   
- Si vous exécutez Windows Vista, utilisez l’outil netsh. exe qui est déjà installé.
+ Si vous exécutez Windows Vista, utilisez l’outil Netsh.exe qui est déjà installé.
   
 > [!NOTE]
 > La modification des certificats stockés sur l’ordinateur requiert des privilèges d’administrateur.  
   
 ## <a name="determine-how-ports-are-configured"></a>Déterminer le mode de configuration des ports  
   
-1. Dans Windows Server 2003 ou Windows XP, utilisez l’outil HttpCfg. exe pour afficher la configuration de port actuelle, à l’aide des commutateurs de **requête** et **SSL** , comme indiqué dans l’exemple suivant.  
+1. Dans Windows Server 2003 ou Windows XP, utilisez l’outil HttpCfg.exe pour afficher la configuration de port actuelle, à l’aide des commutateurs de **requête** et **SSL** , comme indiqué dans l’exemple suivant.  
   
     ```console
     httpcfg query ssl  
     ```  
   
-2. Dans Windows Vista, utilisez l’outil netsh. exe pour afficher la configuration de port actuelle, comme indiqué dans l’exemple suivant.  
+2. Dans Windows Vista, utilisez l’outil Netsh.exe pour afficher la configuration de port actuelle, comme indiqué dans l’exemple suivant.  
   
     ```console  
     netsh http show sslcert  
@@ -55,7 +56,7 @@ Lorsque vous créez un service de Windows Communication Foundation (WCF) auto-h�
   
 ## <a name="bind-an-ssl-certificate-to-a-port-number"></a>Lier un certificat SSL à un numéro de port  
   
-1. Dans Windows Server 2003 ou Windows XP, utilisez l’outil HttpCfg. exe en mode « set » sur le magasin protocole SSL (SSL) pour lier le certificat à un numéro de port. L'outil utilise l'empreinte numérique pour identifier le certificat, comme indiqué dans l'exemple suivant.  
+1. Dans Windows Server 2003 ou Windows XP, utilisez l’outil HttpCfg.exe en mode « set » sur le magasin protocole SSL (SSL) pour lier le certificat à un numéro de port. L'outil utilise l'empreinte numérique pour identifier le certificat, comme indiqué dans l'exemple suivant.  
   
     ```console  
     httpcfg set ssl -i 0.0.0.0:8012 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
@@ -65,7 +66,7 @@ Lorsque vous créez un service de Windows Communication Foundation (WCF) auto-h�
   
     - Le commutateur **-h** spécifie l’empreinte numérique du certificat.  
   
-2. Dans Windows Vista, utilisez l’outil netsh. exe, comme indiqué dans l’exemple suivant.  
+2. Dans Windows Vista, utilisez l’outil Netsh.exe, comme indiqué dans l’exemple suivant.  
   
     ```console  
     netsh http add sslcert ipport=0.0.0.0:8000 certhash=0000000000003ed9cd0c315bbb6dc1c08da5e6 appid={00112233-4455-6677-8899-AABBCCDDEEFF}
@@ -73,13 +74,13 @@ Lorsque vous créez un service de Windows Communication Foundation (WCF) auto-h�
   
     - Le paramètre **certhash** spécifie l’empreinte numérique du certificat.  
   
-    - Le paramètre **ipport** spécifie l’adresse IP et le port, et fonctionne comme le commutateur **-i** de l’outil HttpCfg. exe décrit.  
+    - Le paramètre **ipport** spécifie l’adresse IP et le port, et fonctionne de la même façon que le commutateur **-i** de l’outil Httpcfg.exe décrit.  
   
     - Le paramètre **AppID** est un GUID qui peut être utilisé pour identifier l’application propriétaire.  
   
 ## <a name="bind-an-ssl-certificate-to-a-port-number-and-support-client-certificates"></a>Lier un certificat SSL à un numéro de port et prendre en charge les certificats clients  
   
-1. Dans Windows Server 2003 ou Windows XP, pour prendre en charge les clients qui s’authentifient avec des certificats X. 509 au niveau de la couche de transport, suivez la procédure précédente, mais transmettez un paramètre de ligne de commande supplémentaire à HttpCfg. exe, comme indiqué dans l’exemple suivant.  
+1. Dans Windows Server 2003 ou Windows XP, pour prendre en charge les clients qui s’authentifient avec des certificats X. 509 au niveau de la couche de transport, suivez la procédure précédente, mais transmettez un paramètre de ligne de commande supplémentaire à HttpCfg.exe, comme illustré dans l’exemple suivant.  
   
     ```console  
     httpcfg set ssl -i 0.0.0.0:8012 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6 -f 2  
@@ -101,13 +102,13 @@ Lorsque vous créez un service de Windows Communication Foundation (WCF) auto-h�
     httpcfg query ssl>myMachinePorts.txt  
     ```
   
-2. Dans Windows Server 2003 ou Windows XP, utilisez l’outil HttpCfg. exe avec les mots clés **Delete** et **SSL** . Utilisez le commutateur **-i** pour spécifier le `IP` `port` nombre : et le commutateur **-h** pour spécifier l’empreinte numérique.  
+2. Dans Windows Server 2003 ou Windows XP, utilisez l’outil HttpCfg.exe avec les mots clés **Delete** et **SSL** . Utilisez le commutateur **-i** pour spécifier le `IP` `port` nombre : et le commutateur **-h** pour spécifier l’empreinte numérique.  
   
     ```console  
     httpcfg delete ssl -i 0.0.0.0:8005 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
     ```  
   
-3. Dans Windows Vista, utilisez l’outil netsh. exe, comme indiqué dans l’exemple suivant.  
+3. Dans Windows Vista, utilisez l’outil Netsh.exe, comme indiqué dans l’exemple suivant.  
   
     ```console  
     Netsh http delete sslcert ipport=0.0.0.0:8005  

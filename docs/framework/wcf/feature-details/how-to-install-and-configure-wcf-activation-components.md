@@ -1,15 +1,16 @@
 ---
 title: "Comment : installer et configurer des composants d'activation WCF"
+description: Découvrez comment configurer le service d’activation des processus Windows (WAS) sur Windows Vista pour héberger des services WCF qui ne communiquent pas via HTTP.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: f7a846b076691394cb855e4978e890cdcac76eb2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 84a0dcc4fed28ebd7a536bdabfcdc389be6072d8
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597031"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246881"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Comment : installer et configurer des composants d'activation WCF
 
@@ -35,7 +36,7 @@ Après l’installation et la configuration de WAS, consultez [Comment : héber
 
 ## <a name="to-configure-the-was-to-support-tcp-activation"></a>Pour configurer le service WAS pour prendre en charge l'activation TCP
 
-1. Pour assurer la prise en charge de l'activation de net.tcp, le site Web par défaut doit d'abord être lié à un port net.tcp. Pour ce faire, vous pouvez utiliser Appcmd. exe, qui est installé avec l’ensemble d’outils de gestion d’IIS 7,0. Dans une fenêtre d'invite de commandes au niveau de l'administrateur, exécutez la commande suivante.
+1. Pour assurer la prise en charge de l'activation de net.tcp, le site Web par défaut doit d'abord être lié à un port net.tcp. Pour ce faire, vous pouvez utiliser Appcmd.exe, qui est installé avec l’ensemble d’outils de gestion d’IIS 7,0. Dans une fenêtre d'invite de commandes au niveau de l'administrateur, exécutez la commande suivante.
 
     ```console
     %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']

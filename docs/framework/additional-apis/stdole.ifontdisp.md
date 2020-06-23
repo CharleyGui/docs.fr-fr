@@ -1,5 +1,6 @@
 ---
-title: IFontDisp Interface (stdole)
+title: IFontDisp, interface (stdole)
+description: Consultez les informations de référence sur l’interface IFontDisp dans .NET. Cette interface se trouve dans l’espace de noms stdole et l’assembly stdole (dans la bibliothèque de stdole.dll).
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,14 +10,14 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 82d487b599401188f42d6a4dc6856030d5a2eef6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f2e955997c66dc4db0de804ee6eded02735a3276
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675258"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105328"
 ---
-# <a name="ipicturefont-interface"></a>Interface de IPictureFont
+# <a name="ifontdisp-interface"></a>IFontDisp, interface
 
 ```csharp
 [GuidAttribute("BEF6E003-A874-101A-8BBA-00AA00300CAB")]
@@ -24,8 +25,8 @@ ms.locfileid: "61675258"
 public interface IFontDisp
 ```
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** `stdole`
+**Espace de noms :** `stdole`
 
-**Assembly :** stdole (dans stdole.dll)
+**Assembly :** stdole (en stdole.dll)

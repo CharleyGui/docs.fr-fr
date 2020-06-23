@@ -1,16 +1,17 @@
 ---
 title: Autorisation de sécurité pour la redirection de liaison d’assembly
+description: En savoir plus sur l’autorisation de sécurité requise pour la redirection de liaison d’assembly explicite dans un fichier de configuration d’application dans .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 24a5cdff-7ed9-4195-93f3-edf6899019fc
-ms.openlocfilehash: b59689e78f901637674c0a1df28ed74411e8e7c7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a8596bcac4efb0aea07efcfde6726d8bbf148c24
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69921375"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105089"
 ---
 # <a name="assembly-binding-redirection-security-permission"></a>Autorisation de sécurité pour la redirection de liaison d’assembly
 La redirection de liaison d’assembly explicite dans un fichier de configuration de l’application nécessite une autorisation de sécurité. Cela s'applique à la redirection des assemblys .NET Framework et des assemblys tiers. L’autorisation est accordée en définissant l' <xref:System.Security.Permissions.SecurityPermissionFlag> indicateur sur <xref:System.Security.Permissions.SecurityPermission> . Les assemblys managés n’ont pas d’autorisations par défaut.  
@@ -28,7 +29,7 @@ La redirection de liaison d’assembly explicite dans un fichier de configuratio
 |Zone Internet|**OFF**|  
 |Zones non approuvées|**OFF**|  
   
- Un administrateur peut modifier ces paramètres de sécurité pour prendre en charge ou restreindre des scénarios spécifiques sur un ordinateur donné. Il n’existe aucun outil permettant de modifier le paramètre d’indicateur **BindingRedirects** à partir de la valeur par défaut ; un administrateur doit modifier manuellement le fichier Security. config sur l’ordinateur de l’utilisateur.  
+ Un administrateur peut modifier ces paramètres de sécurité pour prendre en charge ou restreindre des scénarios spécifiques sur un ordinateur donné. Il n’existe aucun outil permettant de modifier le paramètre d’indicateur **BindingRedirects** à partir de la valeur par défaut ; un administrateur doit modifier manuellement le fichier Security.config sur l’ordinateur d’un utilisateur.  
   
 ## <a name="see-also"></a>Voir aussi
 

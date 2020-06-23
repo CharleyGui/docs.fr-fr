@@ -1,5 +1,6 @@
 ---
 title: Utilisation d'assemblys et du Global Assembly Cache
+description: Travaillez avec les assemblys et le Global Assembly Cache (GAC) dans .NET. Examinez les raisons pour lesquelles vous pouvez souhaiter installer un assembly dans le GAC.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), benefits
 - access control lists [.NET Framework]
 ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
-ms.openlocfilehash: 7834fbc4d74b44c4bc5204ac451e92cac22e1ef5
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 16cfd9faf02d5b58acad1cc0cf19be61c9814d35
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645419"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105160"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Utilisation d'assemblys et du Global Assembly Cache
 
@@ -48,10 +49,10 @@ Vous pouvez souhaiter installer un assembly dans le Global Assembly Cache pour p
 [Comment : installer un assembly dans le global assembly cache](install-assembly-into-gac.md)  
 Décrit les façons d’installer un assembly dans le Global Assembly Cache.  
   
-[Guide pratique pour visualiser le contenu du Global Assembly Cache](how-to-view-the-contents-of-the-gac.md)  
+[Procédure : Visualiser le contenu du Global Assembly Cache](how-to-view-the-contents-of-the-gac.md)  
 Explique comment utiliser [Gacutil.exe (outil Global Assembly Cache](../tools/gacutil-exe-gac-tool.md) pour visualiser le contenu du Global Assembly Cache.  
   
-[Guide pratique pour supprimer un assembly du Global Assembly Cache](how-to-remove-an-assembly-from-the-gac.md)  
+[Procédure : supprimer un assembly du Global Assembly Cache](how-to-remove-an-assembly-from-the-gac.md)  
 Explique comment utiliser [Gacutil.exe (outil Global Assembly Cache](../tools/gacutil-exe-gac-tool.md) pour supprimer un assembly du Global Assembly Cache.  
   
 [Utilisation de composants de service avec le Global Assembly Cache](use-serviced-components-with-the-gac.md)  
@@ -62,7 +63,7 @@ Explique pourquoi les composants traités (composants COM+ managés) doivent êt
 [Création d’assemblys](../../standard/assembly/create.md)  
 Fournit une vue d’ensemble de la création d’assemblys.  
   
-[Global assembly cache](gac.md)  
+[Global Assembly Cache](gac.md)  
 Décrit le Global Assembly Cache.  
   
 [Guide pratique pour afficher le contenu d’un assembly](../../standard/assembly/view-contents.md)  

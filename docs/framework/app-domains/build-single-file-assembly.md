@@ -1,5 +1,6 @@
 ---
 title: 'Comment : générer un assembly à fichier unique .NET Framework'
+description: Découvrez comment créer un assembly à fichier unique dans .NET. Un assembly à fichier unique peut être une bibliothèque (. dll) qui cible .NET, ou il peut s’agir d’un fichier exécutable (. exe).
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, single-file assemblies
@@ -13,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a6063221-43a5-4d3e-814c-288a4ec69aec
-ms.openlocfilehash: b7cb06da74a21dab6f60f0d4c3ac1748fcbe4526
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 482a973631e899b8d4bfc4640eef1ea26173605e
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644299"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104926"
 ---
 # <a name="how-to-build-a-net-framework-single-file-assembly"></a>Comment : générer un assembly à fichier unique .NET Framework
 
@@ -33,11 +34,11 @@ Les procédures suivantes montrent comment créer des assemblys à fichier uniqu
 
 Saisissez ensuite la commande suivante dans l’invite de commandes :
 
-\<*nom du*> \<*module* de commande du compilateur>
+\<*compiler command*> \<*module name*>
 
 Dans cette commande, *commande_du_compilateur* est la commande du compilateur pour le langage utilisé dans votre module de code, et *nom_du_module* est le nom du module de code à compiler dans l’assembly.
 
-L’exemple suivant crée un assembly nommé *myCode. exe* à partir d’un `myCode`module de code appelé.
+L’exemple suivant crée un assembly nommé *myCode.exe* à partir d’un module de code appelé `myCode` .
 
 ```csharp
 csc myCode.cs
@@ -51,11 +52,11 @@ vbc myCode.vb
 
 Saisissez ensuite la commande suivante dans l’invite de commandes :
 
-\<*commande*> du compilateur **/out :**\<nom de*fichier*> \<nom du*module*>
+\<*compiler command*>**/out :** \<*file name*>\<*module name*>
 
 Dans cette commande, *commande_du_compilateur* est la commande du compilateur pour le langage utilisé dans votre module de code, *nom_du_fichier* est le nom du fichier de sortie, et *nom_du_module* est le nom du module de code à compiler dans l’assembly.
 
-L’exemple suivant crée un assembly nommé *myAssembly. exe* à partir d’un `myCode`module de code appelé.
+L’exemple suivant crée un assembly nommé *myAssembly.exe* à partir d’un module de code appelé `myCode` .
 
 ```csharp
 csc -out:myAssembly.exe myCode.cs
@@ -70,11 +71,11 @@ vbc -out:myAssembly.exe myCode.vb
 
 Pour créer un assembly de bibliothèque, à l’invite de commandes, tapez la commande suivante :
 
-\<*commande*> du compilateur **-** \< *nom du module* t :Library>
+\<*compiler command*>**-t :Library**\<*module name*>
 
 Dans cette commande, *commande_du_compilateur* est la commande du compilateur pour le langage utilisé dans votre module de code, et *nom_du_module* est le nom du module de code à compiler dans l’assembly. Vous pouvez également utiliser d’autres options du compilateur, telles que l’option **-out:**.
 
-L’exemple suivant crée un assembly de bibliothèque nommé *myCodeAssembly. dll* à partir d' `myCode`un module de code appelé.
+L’exemple suivant crée un assembly de bibliothèque nommé *myCodeAssembly.dll* à partir d’un module de code appelé `myCode` .
 
 ```csharp
 csc -out:myCodeLibrary.dll -t:library myCode.cs
@@ -88,5 +89,5 @@ vbc -out:myCodeLibrary.dll -t:library myCode.vb
 
 - [Créer des assemblys](../../standard/assembly/create.md)
 - [Assemblys multifichiers](multifile-assemblies.md)
-- [Comment : générer un assembly multifichier](build-multifile-assembly.md)
+- [Procédure : Générer un assembly multifichier](build-multifile-assembly.md)
 - [Programmer avec des assemblys](../../standard/assembly/index.md)

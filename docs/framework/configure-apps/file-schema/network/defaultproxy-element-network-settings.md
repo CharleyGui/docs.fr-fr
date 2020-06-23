@@ -9,12 +9,12 @@ helpviewer_keywords:
 - defaultProxy element
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
-ms.openlocfilehash: 915fdc96dbd4d417f9c9e6aa3ff96de3026491ef
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 85004d49ce7605b050709a3019592ec696a7bada
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504600"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141629"
 ---
 # <a name="defaultproxy-element-network-settings"></a>\<defaultProxy>, élément (paramètres réseau)
 Configure le serveur proxy HTTP (Hypertext Transfer Protocol).  
@@ -23,12 +23,12 @@ Configure le serveur proxy HTTP (Hypertext Transfer Protocol).
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
 &nbsp;&nbsp;&nbsp;&nbsp;**\<defaultProxy>**  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```xml  
 <defaultProxy  
-  enabled="true|false"  
-  useDefaultCredentials="true|false">  
+  enabled="True|False"  
+  useDefaultCredentials="True|False">  
     <bypasslist>...</bypasslist>  
     <proxy>...</proxy>  
     <module>...</module>  
@@ -40,14 +40,14 @@ Configure le serveur proxy HTTP (Hypertext Transfer Protocol).
   
 ### <a name="attributes"></a>Attributs  
   
-|**Appartient**|**Description**|  
+|**Élément**|**Description**|  
 |-----------------|---------------------|  
-|`enabled`|Spécifie si un proxy web est utilisé. La valeur par défaut est `true`.|  
-|`useDefaultCredentials`|Spécifie si les informations d'identification par défaut associées à cet hôte sont utilisées pour accéder au proxy web. La valeur par défaut est `false`.|  
+|`enabled`|Spécifie si un proxy web est utilisé. La valeur par défaut est `True`.|  
+|`useDefaultCredentials`|Spécifie si les informations d'identification par défaut associées à cet hôte sont utilisées pour accéder au proxy web. La valeur par défaut est `False`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
-|**Appartient**|**Description**|  
+|**Élément**|**Description**|  
 |-----------------|---------------------|  
 |[BypassList](bypasslist-element-network-settings.md)|Fournit un ensemble d'expressions régulières décrivant les adresses qui n'utilisent pas le proxy.|  
 |[modules](module-element-network-settings.md)|Ajoute un nouveau module proxy à l'application.|  
@@ -55,7 +55,7 @@ Configure le serveur proxy HTTP (Hypertext Transfer Protocol).
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Élément**|**Description**|  
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
@@ -75,9 +75,9 @@ Configure le serveur proxy HTTP (Hypertext Transfer Protocol).
   <system.net>  
     <defaultProxy>  
       <proxy  
-        usesystemdefault="true"  
+        usesystemdefault="True"  
         proxyaddress="http://192.168.1.10:3128"  
-        bypassonlocal="true"  
+        bypassonlocal="True"  
       />  
       <bypasslist>  
         <add address="[a-z]+\.contoso\.com$" />  

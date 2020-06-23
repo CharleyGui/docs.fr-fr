@@ -1,5 +1,6 @@
 ---
 title: "Comment : sécuriser un service à l'aide d'informations d'identification Windows"
+description: Découvrez comment activer la sécurité de transport sur un service WCF résidant dans un domaine Windows et appelé par des clients dans le même domaine.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
-ms.openlocfilehash: d02e697b23b6c745a59f3c9c37dd9c565f2f710e
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 8ef164e1475bfd5f047a99426a2bed43a7aa7353
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320919"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244631"
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Comment : sécuriser un service à l'aide d'informations d'identification Windows
 
@@ -53,11 +54,11 @@ Il s’agit de la deuxième procédure, qui indique comment utiliser la liaison 
 
 1. Insérez le code de cette procédure après celui de la procédure précédente.
 
-2. Créez une variable <xref:System.Type> nommée `contractType` et assignez-lui le type de l'interface (`ICalculator`). Quand vous utilisez Visual Basic, utilisez l’opérateur `GetType` ; Lorsque vous C#utilisez, utilisez le mot clé `typeof`.
+2. Créez une variable <xref:System.Type> nommée `contractType` et assignez-lui le type de l'interface (`ICalculator`). Quand vous utilisez Visual Basic, utilisez l' `GetType` opérateur. quand vous utilisez C#, utilisez le `typeof` mot clé.
 
 3. Créez une deuxième variable <xref:System.Type> nommée `serviceType` et assignez-lui le type du contrat implémenté (`Calculator`).
 
-4. Créez une instance de la classe <xref:System.Uri> nommée `baseAddress` avec l'adresse de base du service. L'adresse de base doit avoir un schéma qui correspond au transport. Dans ce cas, le schéma de transport est HTTP, et l’adresse comprend l’Uniform Resource Identifier spéciale (URI) « localhost » et un numéro de port (8036), ainsi qu’une adresse de point de terminaison de base («serviceModelSamples/) : `http://localhost:8036/serviceModelSamples/`.
+4. Créez une instance de la classe <xref:System.Uri> nommée `baseAddress` avec l'adresse de base du service. L'adresse de base doit avoir un schéma qui correspond au transport. Dans ce cas, le schéma de transport est HTTP, et l’adresse comprend l’Uniform Resource Identifier spéciale (URI) « localhost » et un numéro de port (8036), ainsi qu’une adresse de point de terminaison de base («serviceModelSamples/) : `http://localhost:8036/serviceModelSamples/` .
 
 5. Créez une instance de la classe <xref:System.ServiceModel.ServiceHost> avec les variables `serviceType` et `baseAddress`.
 
@@ -70,7 +71,7 @@ Il s’agit de la deuxième procédure, qui indique comment utiliser la liaison 
 
 ### <a name="using-the-binding-in-a-client"></a>Utilisation de la liaison sur un client
 
-Cette procédure indique comment générer un proxy qui communique avec le service. Le proxy est généré avec l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) qui utilise les métadonnées de service pour créer le proxy.
+Cette procédure indique comment générer un proxy qui communique avec le service. Le proxy est généré avec l' [outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) qui utilise les métadonnées de service pour créer le proxy.
 
 Cette procédure crée également une instance de la classe <xref:System.ServiceModel.WSHttpBinding> pour communiquer avec le service, puis appelle ce dernier.
 
@@ -78,7 +79,7 @@ Cet exemple utilise uniquement du code pour créer le client. Vous pouvez aussi,
 
 #### <a name="to-use-a-binding-in-a-client-with-code"></a>Pour utiliser une liaison sur un client avec le code
 
-1. Utilisez l'outil SvcUtil.exe pour générer le code du proxy à partir des métadonnées du service. Pour plus d’informations, consultez [Comment : créer un client](how-to-create-a-wcf-client.md). Le code proxy généré hérite de la classe <xref:System.ServiceModel.ClientBase%601>, qui garantit que chaque client dispose des constructeurs, méthodes et propriétés nécessaires pour communiquer avec un service WCF. Dans cet exemple, le code généré inclut la classe `CalculatorClient`, qui implémente l'interface `ICalculator`, activant ainsi la compatibilité avec le code de service.
+1. Utilisez l'outil SvcUtil.exe pour générer le code du proxy à partir des métadonnées du service. Pour plus d’informations, consultez [Comment : créer un client](how-to-create-a-wcf-client.md). Le code proxy généré hérite de la <xref:System.ServiceModel.ClientBase%601> classe, ce qui garantit que chaque client dispose des constructeurs, méthodes et propriétés nécessaires pour communiquer avec un service WCF. Dans cet exemple, le code généré inclut la classe `CalculatorClient`, qui implémente l'interface `ICalculator`, activant ainsi la compatibilité avec le code de service.
 
 2. Le code de cette procédure est inséré au début de la méthode `Main` du programme client.
 
@@ -106,13 +107,13 @@ Si vous n’avez pas encore défini de service, consultez [conception et implém
 
 #### <a name="to-enable-transfer-security-on-a-service-in-a-windows-domain-using-configuration"></a>Pour activer la sécurité de transfert sur un service dans un domaine Windows à l'aide de la configuration
 
-1. Ajoutez un élément [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) à la section de l’élément [\<bindings >](../configure-apps/file-schema/wcf/bindings.md) du fichier de configuration.
+1. Ajoutez un [\<wsHttpBinding>](../configure-apps/file-schema/wcf/wshttpbinding.md) élément à la [\<bindings>](../configure-apps/file-schema/wcf/bindings.md) section de l’élément du fichier de configuration.
 
-2. Ajoutez un élément < `binding` > à l’élément < `WSHttpBinding` > et affectez à l’attribut `configurationName` une valeur appropriée à votre application.
+2. Ajoutez un `binding` élément <> à l' `WSHttpBinding` élément> <et affectez `configurationName` à l’attribut une valeur appropriée à votre application.
 
-3. Ajoutez un élément < `security` > et affectez à l’attribut `mode` la valeur message.
+3. Ajoutez un `security` élément <> et affectez `mode` à l’attribut la valeur message.
 
-4. Ajoutez un élément < `message` > et affectez à l’attribut `clientCredentialType` la valeur Windows.
+4. Ajoutez un `message` élément <> et affectez `clientCredentialType` à l’attribut la valeur Windows.
 
 5. Dans le fichier de configuration du service, remplacez la section `<bindings>` par le code suivant. Si vous n’avez pas encore de fichier de configuration de service, consultez [utilisation de liaisons pour configurer des services et des clients](using-bindings-to-configure-services-and-clients.md).
 
@@ -136,7 +137,7 @@ Cette procédure indique comment générer deux fichiers : un proxy qui communi
 
 1. Utilisez l'outil SvcUtil.exe pour générer le code proxy et le fichier de configuration à partir des métadonnées du service. Pour plus d’informations, consultez [Comment : créer un client](how-to-create-a-wcf-client.md).
 
-2. Remplacez la section [\<bindings >](../configure-apps/file-schema/wcf/bindings.md) du fichier de configuration généré par le code de configuration de la section précédente.
+2. Remplacez la [\<bindings>](../configure-apps/file-schema/wcf/bindings.md) section du fichier de configuration généré par le code de configuration de la section précédente.
 
 3. Le code de la procédure est inséré au début de la méthode `Main` du programme client.
 
@@ -158,7 +159,7 @@ Cette procédure indique comment générer deux fichiers : un proxy qui communi
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.WSHttpBinding>
-- [Outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Outil Service Model Metadata Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Guide pratique pour créer un client](how-to-create-a-wcf-client.md)
 - [Sécurisation de services](securing-services.md)
-- [Vue d’ensemble de la sécurité](./feature-details/security-overview.md)
+- [Présentation de la sécurité](./feature-details/security-overview.md)

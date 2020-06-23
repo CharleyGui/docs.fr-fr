@@ -12,12 +12,12 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-ms.openlocfilehash: d1c8b69223ab470d505d9f8007bc01b29fdc66b8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4d62f5736e9aa469be49d101e85851bc01b7c159
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502208"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141603"
 ---
 # <a name="proxy-configuration"></a>Configuration du proxy
 Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut retourner une ressource demandée à partir de son cache ou transférer la demande au serveur sur lequel réside la ressource. Les proxies peuvent améliorer les performances réseau en réduisant le nombre de demandes envoyées aux serveurs distants. Les proxies peuvent également être utilisés pour restreindre l'accès aux ressources.  
@@ -67,7 +67,7 @@ Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut
 <system.net>  
     <defaultProxy>  
         <proxy  proxyaddress="http://proxy.contoso.com:3128"  
-                bypassonlocal="true"  
+                bypassonlocal="True"  
         />  
         <bypasslist>  
             <add address="[a-z]+.blueyonderairlines.com$" />  
