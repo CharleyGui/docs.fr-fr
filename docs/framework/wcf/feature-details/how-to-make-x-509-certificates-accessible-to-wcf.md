@@ -30,10 +30,10 @@ Pour rendre un certificat X. 509 accessible à Windows Communication Foundation 
   
         |Utilisation d'un certificat X.509|Clé privée|  
         |---------------------------|-----------------|  
-        |Signature numérique d'un message SOAP sortant.|Yes|  
-        |Vérification de la signature d'un message SOAP entrant.|No|  
-        |Chiffrement d'un message SOAP sortant.|No|  
-        |Déchiffrement d'un message SOAP entrant.|Yes|  
+        |Signature numérique d'un message SOAP sortant.|Oui|  
+        |Vérification de la signature d'un message SOAP entrant.|Non|  
+        |Chiffrement d'un message SOAP sortant.|Non|  
+        |Déchiffrement d'un message SOAP entrant.|Oui|  
   
     2. Déterminez l'emplacement et le nom du magasin de certificats dans lequel le certificat est stocké.  
   

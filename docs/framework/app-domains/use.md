@@ -49,7 +49,7 @@ Explique comment recevoir une notification indiquant qu’une exception a été 
 [Résoudre les chargements d'assemblys](../../standard/assembly/resolve-loads.md)  
 Offre des conseils sur l’utilisation de l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour résoudre les échecs de chargement de l’assembly.  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
 
 <xref:System.AppDomain>  
 Représente un domaine d’application. Fournit des méthodes pour la création et le contrôle des domaines d’application.  

@@ -28,7 +28,7 @@ Cette rubrique résume les informations sur le système de messagerie Windows Co
  [Architecture Windows Communication Foundation](architecture.md)\
  Représentation graphique de l’architecture WCF.
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 <xref:System.ServiceModel>
 

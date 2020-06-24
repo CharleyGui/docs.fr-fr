@@ -21,7 +21,7 @@ Ce didacticiel décrit la deuxième des cinq tâches nécessaires à la créatio
 
 L’étape suivante de la création d’une application WCF consiste à ajouter du code pour implémenter l’interface de service WCF que vous avez créée à l’étape précédente. Dans cette étape, vous allez créer une classe nommée `CalculatorService` qui implémente l’interface définie par l’utilisateur `ICalculator` . Chaque méthode dans le code suivant appelle une opération de calculatrice et écrit du texte dans la console pour la tester.
 
-Dans ce tutoriel, vous allez apprendre à :
+Dans ce tutoriel, vous allez découvrir comment :
 > [!div class="checklist"]
 >
 > - Ajoutez du code pour implémenter le contrat de service WCF.
