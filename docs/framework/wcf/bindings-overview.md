@@ -1,26 +1,27 @@
 ---
 title: Vue d’ensemble des liaisons Windows Communication Foundation
+description: En savoir plus sur les liaisons, qui spécifient comment se connecter à un service WCF, y compris les éléments d’une liaison et comment spécifier une liaison pour un point de terminaison de service.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: 8c1e44609a0a20ffcec55af43e49ee62b0842378
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: da8050c4e9aeb111de3a54315b3650bcf09f23ed
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320757"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247712"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vue d’ensemble des liaisons Windows Communication Foundation
-Les liaisons sont des objets utilisés pour spécifier les détails de communication requis pour se connecter au point de terminaison d’un service Windows Communication Foundation (WCF). Chaque point de terminaison dans un service WCF requiert qu’une liaison soit correctement spécifiée. Cette rubrique décrit les types de détails de communication définis par les liaisons, les éléments d’une liaison, les liaisons incluses dans WCF et comment une liaison peut être spécifiée pour un point de terminaison.  
+Les liaisons sont des objets utilisés pour spécifier les détails de communication requis pour se connecter au point de terminaison d’un service Windows Communication Foundation (WCF). Chaque point de terminaison d'un service WCF requiert la définition correcte d'une liaison. Cette rubrique décrit les types de détails de communication définis par les liaisons, les éléments d’une liaison, les liaisons incluses dans WCF et comment une liaison peut être spécifiée pour un point de terminaison.  
   
 ## <a name="what-a-binding-defines"></a>Ce que définit une liaison  
  Les informations contenues dans une liaison peuvent être basiques ou très complexes. La liaison la plus basique spécifie uniquement le protocole de transport (par exemple HTTP) qui doit être utilisé pour se connecter au point de terminaison. Plus généralement, les informations qu’une liaison contient concernant la connexion à un point de terminaison appartiennent à l’une des catégories suivantes :  
   
- **Relatifs**  
+ **Protocoles**  
  Détermine le mécanisme de sécurité utilisé : soit une fonction de messagerie fiable, soit des paramètres de flux de contexte de transaction.  
   
- **Coda**  
+ **Encodage**  
  Détermine l'encodage de message (par exemple, texte ou binaire).  
   
  **Transport**  
@@ -36,16 +37,16 @@ Les liaisons sont des objets utilisés pour spécifier les détails de communica
   
 - <xref:System.ServiceModel.WSHttpBinding>: une liaison interopérable adaptée à la connexion à des points de terminaison conformes aux protocoles WS-*.  
   
-- <xref:System.ServiceModel.NetNamedPipeBinding> : utilise la .NET Framework pour se connecter à d’autres points de terminaison WCF sur le même ordinateur.  
+- <xref:System.ServiceModel.NetNamedPipeBinding>: Utilise la .NET Framework pour se connecter à d’autres points de terminaison WCF sur le même ordinateur.  
   
-- <xref:System.ServiceModel.NetMsmqBinding> : utilise la .NET Framework pour créer des connexions de message en file d’attente avec d’autres points de terminaison WCF.  
+- <xref:System.ServiceModel.NetMsmqBinding>: Utilise la .NET Framework pour créer des connexions de message en file d’attente avec d’autres points de terminaison WCF.  
 
-- <xref:System.ServiceModel.NetTcpBinding> : cette liaison offre des performances supérieures à celles des liaisons HTTP et est idéale pour une utilisation dans un réseau local.
+- <xref:System.ServiceModel.NetTcpBinding>: Cette liaison offre des performances supérieures à celles des liaisons HTTP et est idéale pour une utilisation dans un réseau local.
   
  Pour obtenir une liste complète, avec des descriptions, de toutes les liaisons fournies par WCF, consultez [liaisons fournies](system-provided-bindings.md)par le système.  
   
 ## <a name="using-your-own-bindings"></a>Utilisation de vos propres liaisons  
- Si aucune des liaisons fournies par le système ne possède la bonne combinaison de fonctionnalités requise par une application de service, vous pouvez créer votre propre liaison. Il existe deux manières de procéder. Vous pouvez soit créer une liaison à partir d'éléments de liaison préexistants à l'aide d'un objet <xref:System.ServiceModel.Channels.CustomBinding>, soit créer une liaison entièrement définie par l'utilisateur en dérivant de la liaison <xref:System.ServiceModel.Channels.Binding>. Pour plus d’informations sur la création de votre propre liaison à l’aide de ces deux approches, consultez [liaisons personnalisées](./extending/custom-bindings.md) et [création de liaisons définies par l’utilisateur](./extending/creating-user-defined-bindings.md).  
+ Si aucune des liaisons fournies par le système ne possède la bonne combinaison de fonctionnalités requise par une application de service, vous pouvez créer votre propre liaison. Il existe deux façons d'effectuer cette opération. Vous pouvez soit créer une liaison à partir d'éléments de liaison préexistants à l'aide d'un objet <xref:System.ServiceModel.Channels.CustomBinding>, soit créer une liaison entièrement définie par l'utilisateur en dérivant de la liaison <xref:System.ServiceModel.Channels.Binding>. Pour plus d’informations sur la création de votre propre liaison à l’aide de ces deux approches, consultez [liaisons personnalisées](./extending/custom-bindings.md) et [création de liaisons définies par l’utilisateur](./extending/creating-user-defined-bindings.md).  
   
 ## <a name="using-bindings"></a>Utilisation des liaisons  
  L’utilisation des liaisons implique deux étapes simples :  

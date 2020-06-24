@@ -1,26 +1,27 @@
 ---
 title: WCF Data Services 4.5
+description: En savoir plus sur WCF Data Services, un composant .NET Framework qui prend en charge les services pour exposer et consommer des données à l’aide de la sémantique REST.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: aace683b1a105445b5a3ba3de0a6a671859588b5
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: ca6b196e8c910f97ead6d1df5b6c0dd6c49c68a4
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937442"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247751"
 ---
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 
-WCF Data Services (autrefois appelé « ADO.NET Data Services ») est un composant de la .NET Framework qui vous permet de créer des services qui utilisent le Open Data Protocol (OData) pour exposer et consommer des données sur le Web ou l’intranet à l’aide de la sémantique de [Representational State Transfer (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). OData expose des données en tant que ressources qui sont adressables à l'aide d'URI. Les données sont accessibles et modifiées en utilisant des mots HTTP standard (GET, PUT, POST et DELETE). OData utilise les conventions de relation d’entité de la [Entity Data Model](../adonet/entity-data-model.md) pour exposer des ressources sous la forme d’ensembles d’entités liés par des associations.
+WCF Data Services (autrefois appelé « ADO.NET Data Services ») est un composant de la .NET Framework qui vous permet de créer des services qui utilisent le Open Data Protocol (OData) pour exposer et consommer des données sur le Web ou l’intranet à l’aide de la sémantique de [Representational State Transfer (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). OData expose les données sous forme de ressources adressables par des URI. Les données sont accessibles et modifiables à l'aide des verbes HTTP standard GET, PUT, POST et DELETE. OData utilise les conventions de relation d’entité de la [Entity Data Model](../adonet/entity-data-model.md) pour exposer des ressources sous la forme d’ensembles d’entités liés par des associations.
 
-WCF Data Services utilise le protocole OData pour l’adressage et la mise à jour des ressources. De cette façon, vous pouvez accéder à ces services à partir de n’importe quel client qui prend en charge OData. OData vous permet de demander et d’écrire des données dans les ressources à l’aide de formats de transfert connus : Atom, un ensemble de normes pour l’échange et la mise à jour de données au format XML, et le format JSON (JavaScript Object Notation), un format d’échange de données textuel utilisé largement dans AJAX applications.
+WCF Data Services utilise le protocole OData pour l’adressage et la mise à jour des ressources. De cette façon, vous pouvez accéder à ces services à partir de n’importe quel client qui prend en charge OData. OData vous permet de demander et d’écrire des données dans les ressources à l’aide de formats de transfert connus : Atom, un ensemble de normes pour l’échange et la mise à jour de données au format XML, et le format JSON (JavaScript Object Notation), un format d’échange de données textuel utilisé largement dans les applications AJAX.
 
 WCF Data Services pouvez exposer des données provenant de différentes sources en tant que flux OData. Les outils Visual Studio facilitent la création d’un service OData à l’aide d’un modèle de données ADO.NET Entity Framework. Vous pouvez également créer des flux OData basés sur des classes common language runtime (CLR) et même des données à liaison tardive ou non typées.
 
-WCF Data Services comprend également un ensemble de bibliothèques clientes, un pour les applications clientes générales .NET Framework et une autre pour les applications basées sur Silverlight. Ces bibliothèques clientes fournissent un modèle de programmation basé sur les objets lorsque vous accédez à un flux OData à partir d’environnements tels que les .NET Framework et Silverlight.
+WCF Data Services comprend également un ensemble de bibliothèques clientes, un pour les applications clientes générales .NET Framework et une autre pour les applications basées sur Silverlight. Ces bibliothèques clientes fournissent un modèle de programmation basé sur des objets lorsque vous accédez à un flux OData depuis des environnements tels que .NET Framework et Silverlight.
 
 ## <a name="where-should-i-start"></a>Où est-ce que je dois démarrer ?
 
@@ -30,7 +31,7 @@ Je veux rentrer dans le vif du sujet...
 
 - [Démarrage rapide](quickstart-wcf-data-services.md)
 
-- [Bien démarrer](getting-started-with-wcf-data-services.md)
+- [Prise en main](getting-started-with-wcf-data-services.md)
 
 Montrez-moi un peu de code...
 
@@ -53,13 +54,13 @@ Je souhaite voir des exemples de bout en bout...
 
 Qu'en est-il de l'intégration avec Visual Studio ?
 
-- [Génération de la bibliothèque cliente du service de données](generating-the-data-service-client-library-wcf-data-services.md)
+- [Génération de la bibliothèque client service de données](generating-the-data-service-client-library-wcf-data-services.md)
 
 - [Création du service de données](creating-the-data-service.md)
 
 - [Fournisseur Entity Framework](entity-framework-provider-wcf-data-services.md)
 
-Comment puis-je l'utiliser ?
+À quoi sert PIM ?
 
 - [Vue d’ensemble](wcf-data-services-overview.md)
 
@@ -89,15 +90,15 @@ Fournit une vue d’ensemble des fonctionnalités et fonctionnalités disponible
 
 Décrit les nouvelles fonctionnalités de WCF Data Services et la prise en charge des nouvelles fonctionnalités OData.
 
-[Bien démarrer](getting-started-with-wcf-data-services.md)
+[Prise en main](getting-started-with-wcf-data-services.md)
 
 Décrit comment exposer et consommer des flux OData à l’aide de WCF Data Services.
 
-[Définition de WCF Data Services](defining-wcf-data-services.md)
+[Définition des services de données WCF](defining-wcf-data-services.md)
 
 Décrit comment créer et configurer un service de données qui expose des flux OData.
 
-[Bibliothèque cliente WCF Data Services](wcf-data-services-client-library.md)
+[Bibliothèque client services de données WCF](wcf-data-services-client-library.md)
 
 Décrit comment utiliser des bibliothèques clientes pour consommer des flux OData à partir d’une application cliente .NET Framework.
 

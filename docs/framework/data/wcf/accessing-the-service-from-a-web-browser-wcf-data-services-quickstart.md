@@ -1,13 +1,14 @@
 ---
 title: Accès au service à partir d'un navigateur Web (démarrage rapide des services de données WCF)
+description: Apprenez à démarrer WCF Data Services dans Visual Studio et à désactiver la lecture de flux dans un navigateur. Obtient le document de définition de service et les ressources du service de données Access.
 ms.date: 03/30/2017
 ms.assetid: 5a6fa180-3094-4e6e-ba2b-8c80975d18d1
-ms.openlocfilehash: d89f84cd3ea4f56bbae34cbefe0c3891df96fa8b
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 713436c31bc3f622c4f44a83e33fff3fcbba1c1c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894335"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247776"
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>Accès au service à partir d'un navigateur Web (démarrage rapide des services de données WCF)
 
@@ -74,8 +75,8 @@ Il s’agit de la deuxième tâche du démarrage rapide WCF Data Services. Au co
 Vous avez correctement accédé à la WCF Data Services à partir d’un navigateur Web, le navigateur émettant des demandes HTTP obtenir aux ressources spécifiées. Un navigateur Web fournit un moyen simple d'expérimenter la syntaxe d'adressage des demandes et d'afficher les résultats. Toutefois, un service des données de production n'est pas accessible en général par cette méthode. Généralement, les applications interagissent avec le service de données par le biais de code d'application ou de langages de script. Ensuite, vous allez créer une application cliente qui utilise des bibliothèques clientes pour accéder aux ressources du service des données comme s'il s'agissait d'objets CLR (Common Language runtime) :
 
 > [!div class="nextstepaction"]
-> [Création de l’application cliente du .NET Framework](creating-the-dotnet-client-application-wcf-data-services-quickstart.md)
+> [Création de l'application cliente du .NET Framework](creating-the-dotnet-client-application-wcf-data-services-quickstart.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Accès aux ressources d’un service de données](accessing-data-service-resources-wcf-data-services.md)
+- [Accès aux ressources d'un service de données](accessing-data-service-resources-wcf-data-services.md)

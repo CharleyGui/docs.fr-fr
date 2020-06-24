@@ -1,15 +1,16 @@
 ---
 title: Configuration de la journalisation des messages
+description: Découvrez comment configurer l’enregistrement des messages, notamment comment activer la journalisation, les niveaux de journalisation, les filtres de messages et comment configurer un écouteur personnalisé dans WCF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-ms.openlocfilehash: 283f43239d6cf5aea5ea668397a52313ff526e2a
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 5203f19a18e5fa6b0ed7f68e1d1de0447da41abd
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345182"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247660"
 ---
 # <a name="configuring-message-logging"></a>Configuration de la journalisation des messages
 
@@ -17,7 +18,7 @@ Cette rubrique contient des instructions permettant de configurer l'enregistreme
 
 ## <a name="enabling-message-logging"></a>Activation de la journalisation des messages
 
-Windows Communication Foundation (WCF) ne enregistre pas de messages par défaut. Pour activer la journalisation des messages, vous devez ajouter un écouteur de suivi à la source de suivi `System.ServiceModel.MessageLogging` et définir les attributs de l'élément `<messagelogging>` dans le fichier de configuration.
+Windows Communication Foundation (WCF) n’enregistre pas les messages par défaut. Pour activer la journalisation des messages, vous devez ajouter un écouteur de suivi à la source de suivi `System.ServiceModel.MessageLogging` et définir les attributs de l'élément `<messagelogging>` dans le fichier de configuration.
 
 L'exemple suivant indique comment activer la journalisation et spécifier des options supplémentaires.
 
@@ -47,7 +48,7 @@ L'exemple suivant indique comment activer la journalisation et spécifier des op
 </system.serviceModel>
 ```
 
-Pour plus d’informations sur les paramètres de connexion de messages, voir [Paramètres recommandés pour le traçage et l’enregistrement des messages](./tracing/recommended-settings-for-tracing-and-message-logging.md).
+Pour plus d’informations sur les paramètres de journalisation des messages, consultez [paramètres recommandés pour le suivi et la journalisation des messages](./tracing/recommended-settings-for-tracing-and-message-logging.md).
 
 Vous pouvez utiliser la méthode `add` afin d'indiquer le nom et type de l'écouteur de suivi à utiliser. Dans l'exemple de configuration, nous avons attribué le nom « messages » à l'écouteur et ajouté l'écouteur de suivi standard .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) comme type à utiliser. Si vous utilisez `System.Diagnostics.XmlWriterTraceListener`, vous devez spécifier l'emplacement et le nom du fichier de sortie dans le fichier de configuration. Pour ce faire, il suffit d'affecter le nom du fichier journal à `initializeData`. Si cette consigne n'est pas respectée, le système lèvera une exception. Vous pouvez également implémenter un écouteur personnalisé qui enregistrera les journaux dans un fichier par défaut.
 
@@ -63,7 +64,7 @@ L'attribut `switchValue` d'une `source` est uniquement valable dans le cadre du 
 </source>
 ```
 
-Si vous souhaitez désactiver la source de suivi, vous devrez utiliser à la place les attributs `logMessagesAtServiceLevel`, `logMalformedMessages`et `logMessagesAtTransportLevel` de l'élément `messageLogging`. Vous devez affecter à tous ces attributs la valeur `false`. Pour ce faire, il suffit d'utiliser le fichier de configuration figurant dans l'exemple de code précédent avec l'Éditeur de configuration ou WMI. Pour plus d’informations sur l’outil Configuration Editor, voir [Configuration Editor Tool (SvcConfigEditor.exe)](../configuration-editor-tool-svcconfigeditor-exe.md). Pour plus d’informations sur WMI, voir [Utiliser l’instrumentation de gestion Windows pour les diagnostics](./wmi/index.md).
+Si vous souhaitez désactiver la source de suivi, vous devrez utiliser à la place les attributs `logMessagesAtServiceLevel`, `logMalformedMessages`et `logMessagesAtTransportLevel` de l'élément `messageLogging`. Vous devez affecter à tous ces attributs la valeur `false`. Pour ce faire, il suffit d'utiliser le fichier de configuration figurant dans l'exemple de code précédent avec l'Éditeur de configuration ou WMI. Pour plus d’informations sur l’outil Éditeur de configuration, consultez [outil Éditeur de configuration (SvcConfigEditor.exe)](../configuration-editor-tool-svcconfigeditor-exe.md). Pour plus d’informations sur WMI, consultez [utilisation de Windows Management Instrumentation pour les diagnostics](./wmi/index.md).
 
 ## <a name="logging-levels-and-options"></a>Niveaux d'enregistrement et options supplémentaires
 
@@ -71,7 +72,7 @@ Pour les messages entrants, leur enregistrement intervient immédiatement après
 
 Pour les messages sortants, leur enregistrement intervient immédiatement après leur départ du code utilisateur et immédiatement avant leur transmission.
 
-WCF enregistre les messages à deux niveaux différents, le service et le transport. Les messages erronés sont également enregistrés. Ces trois niveaux sont indépendants les uns des autres et peuvent être activés séparément dans la configuration.
+WCF journalise les messages à deux niveaux, service et transport différents. Les messages erronés sont également enregistrés. Ces trois niveaux sont indépendants les uns des autres et peuvent être activés séparément dans la configuration.
 
 Vous pouvez contrôler le niveau d'enregistrement en définissant les attributs `logMessagesAtServiceLevel`, `logMalformedMessages` et `logMessagesAtTransportLevel` de l'élément `messageLogging`.
 
@@ -85,7 +86,7 @@ Les messages enregistrés à ce niveau sont prêts à être encodés ou décodé
 
 ### <a name="malformed-level"></a>Niveau erreurs
 
-Les messages malformés sont des messages qui sont rejetés par la pile WCF à n’importe quelle étape du traitement. Les messages mal formés sont enregistrés en l'état : sous leur forme chiffrée lorsqu'ils le sont, dans un langage XML incorrect et ainsi de suite. `maxSizeOfMessageToLog` définit la taille du message à enregistrer sous forme de CDATA. Par défaut, `maxSizeOfMessageToLog` est égal à 256K. Pour plus d’informations sur cet attribut, consultez la section Autres options.
+Les messages mal formés sont des messages qui sont rejetés par la pile WCF à tout moment du traitement. Les messages mal formés sont enregistrés en l'état : sous leur forme chiffrée lorsqu'ils le sont, dans un langage XML incorrect et ainsi de suite. `maxSizeOfMessageToLog` définit la taille du message à enregistrer sous forme de CDATA. Par défaut, `maxSizeOfMessageToLog` est égal à 256K. Pour plus d’informations sur cet attribut, consultez la section autres options.
 
 ### <a name="other-options"></a>Autres options
 
@@ -102,11 +103,11 @@ Outre les niveaux d'enregistrement, l'utilisateur peut spécifier les options su
 
 Si aucun écouteur de suivi n'est défini dans le fichier de configuration, aucune sortie d'enregistrement n'est générée, quel que soit le niveau d'enregistrement spécifié.
 
-Les options de journalisation des messages, telles que les attributs présentés de cette section, peuvent être changées en cours d'exécution à l'aide de Windows Management Instrumentation (WMI). Cela peut être fait en accédant à l’instance [AppDomainInfo,](./wmi/appdomaininfo.md) qui expose ces propriétés Boolean: `LogMessagesAtServiceLevel`, `LogMessagesAtTransportLevel`et `LogMalformedMessages`. Par conséquent, si vous configurez un écouteur de suivi pour l'enregistrement des messages, mais affectez la valeur `false` à ces options dans la configuration, vous pourrez leur affecter ultérieurement la valeur `true` pendant l'exécution de l'application. Ceci permet en fait d'activer l'enregistrement des messages pendant l'exécution. De la même façon, si vous activez l'enregistrement des messages dans votre fichier de configuration, vous pouvez le désactiver pendant l'exécution à l'aide de WMI. Pour plus d’informations, voir [Utiliser l’instrumentation de gestion Windows pour les diagnostics](./wmi/index.md).
+Les options de journalisation des messages, telles que les attributs présentés de cette section, peuvent être changées en cours d'exécution à l'aide de Windows Management Instrumentation (WMI). Pour ce faire, vous pouvez accéder à l’instance [AppDomainInfo](./wmi/appdomaininfo.md) , qui expose ces propriétés booléennes : `LogMessagesAtServiceLevel` , `LogMessagesAtTransportLevel` et `LogMalformedMessages` . Par conséquent, si vous configurez un écouteur de suivi pour l'enregistrement des messages, mais affectez la valeur `false` à ces options dans la configuration, vous pourrez leur affecter ultérieurement la valeur `true` pendant l'exécution de l'application. Ceci permet en fait d'activer l'enregistrement des messages pendant l'exécution. De la même façon, si vous activez l'enregistrement des messages dans votre fichier de configuration, vous pouvez le désactiver pendant l'exécution à l'aide de WMI. Pour plus d’informations, consultez [utilisation de Windows Management Instrumentation pour les diagnostics](./wmi/index.md).
 
 Le champ `source` d'un journal de message indique le contexte de journalisation des messages : envoi / réception d'un message de demande, demande-réponse ou demande unidirectionnelle au niveau de la couche de modèle de service ou de transport, ou message mal formé.
 
-Pour les messages `source` malformés, est égal à `Malformed`. Dans les autres cas, la valeur de ce champ varie en fonction du contexte.
+Pour les messages incorrects, `source` est égal à `Malformed` . Dans les autres cas, la valeur de ce champ varie en fonction du contexte.
 
 Dans le cadre d'une demande-réponse
 

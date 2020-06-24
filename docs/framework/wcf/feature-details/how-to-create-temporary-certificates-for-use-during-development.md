@@ -1,16 +1,17 @@
 ---
 title: 'Comment : créer des certificats temporaires à utiliser au cours du développement'
+description: Découvrez comment utiliser une applet de commande PowerShell pour créer deux certificats X. 509 temporaires à utiliser lors du développement d’un client ou service WCF sécurisé.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 9e01ccb29ad017a2657ab08b54d7f01ef4564481
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 0a21548386639a9f6a8c8572e5d7928ffdb270d6
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964536"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247037"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Comment : créer des certificats temporaires à utiliser au cours du développement
 
@@ -62,7 +63,7 @@ Une fois qu'un certificat auto-signé est créé, vous pouvez l'installer dans l
 
 ### <a name="to-install-a-self-signed-certificate-in-the-trusted-root-certification-authorities"></a>Pour installer un certificat auto-signé dans les Autorités de certification racines de confiance
 
-1. Ouvrez le composant logiciel enfichable Certificat. Pour plus d’informations, consultez [Guide pratique pour afficher des certificats à l’aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md).
+1. Ouvrez le composant logiciel enfichable Certificat. Pour plus d’informations, consultez la page [Affichage de certificats à l’aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md).
 
 2. Ouvrez le dossier pour stocker le certificat, soit **Ordinateur local** , soit **Utilisateur actuel**.
 
@@ -114,6 +115,6 @@ Veillez à supprimer tous les certificats d'autorité racines temporaires des do
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des certificats](working-with-certificates.md)
-- [Guide pratique pour afficher des certificats à l’aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [Working with Certificates](working-with-certificates.md)
+- [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
 - [Securing Services and Clients](securing-services-and-clients.md)

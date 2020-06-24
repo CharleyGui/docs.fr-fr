@@ -1,5 +1,6 @@
 ---
 title: Types énumération dans les contrats de données
+description: Découvrez comment le modèle de contrat de données exprime les énumérations dans le cadre du modèle de programmation WFC.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-ms.openlocfilehash: 86fa38b281d8944797fa858f8c67f0b60c733be8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ff3184a285e88d47d4545a38a6c74b2f209827fb
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595542"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247297"
 ---
 # <a name="enumeration-types-in-data-contracts"></a>Types énumération dans les contrats de données
 Les énumérations peuvent être exprimées dans le modèle de contrat de données. Cette rubrique décrit plusieurs exemples qui expliquent le modèle de programmation.  

@@ -1,25 +1,26 @@
 ---
 title: Validation d'une transaction en une phase unique et en plusieurs phases
+description: En savoir plus sur la validation des transactions en une ou deux phases dans .NET. Une validation en deux phases (2PC) doit être effectuée si la transaction implique plusieurs ressources.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 694ea153-e4db-41ae-96ac-9ac66dcb69a9
-ms.openlocfilehash: 8d6c51249f104d35573507a9477a24d66d770693
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f4486998f347bf1db6d22433e6e48b553609c18
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174431"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141822"
 ---
 # <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>Validation d'une transaction en une phase unique et en plusieurs phases
-Les ressources utilisées dans une transaction sont managées par un gestionnaire de ressources, dont les actions sont coordonnées par un gestionnaire de transactions. Les [Ressources enrôlées en tant que participants à un](enlisting-resources-as-participants-in-a-transaction.md) sujet de transaction discutent de la façon dont une ressource (ou plusieurs ressources) peut être enrôlée dans une transaction. Elle traite de la coordination de la validation d'une transaction entre les ressources inscrites.  
+Les ressources utilisées dans une transaction sont managées par un gestionnaire de ressources, dont les actions sont coordonnées par un gestionnaire de transactions. La rubrique [inscription de ressources en tant que participants dans une transaction](enlisting-resources-as-participants-in-a-transaction.md) explique comment une ressource (ou plusieurs ressources) peut être inscrite dans une transaction. Elle traite de la coordination de la validation d'une transaction entre les ressources inscrites.  
   
  À la fin de la transaction, l'application requiert que la transaction soit validée ou restaurée. Le gestionnaire de transactions doit éliminer tous les risques, par exemple des gestionnaires de ressources votant pour la validation de la transaction et d'autres votant pour sa restauration.  
   
- Si votre transaction implique plusieurs ressources, vous devez effectuer une validation en deux phases (2PC). Le protocole de validation en deux phases (une phase de préparation et une phase de validation) garantit, à la fin de la transaction, l'entière validation ou restauration de l'ensemble des modifications apportées aux ressources. Tous les participants sont ensuite informés du résultat final. Pour une discussion détaillée du protocole d’engagement en deux phases, veuillez consulter le livre «*Traitement des transactions : Concepts et techniques (Morgan Kaufmann Series in Data Management Systems) ISBN:1558601902*» de Jim Gray.  
+ Si votre transaction implique plusieurs ressources, vous devez effectuer une validation en deux phases (2PC). Le protocole de validation en deux phases (une phase de préparation et une phase de validation) garantit, à la fin de la transaction, l'entière validation ou restauration de l'ensemble des modifications apportées aux ressources. Tous les participants sont ensuite informés du résultat final. Pour une présentation détaillée du protocole de validation en deux phases, consultez le livre traitant des*transactions : concepts et techniques (série Morgan Kaufmann dans gestion des données Systems) ISBN : 1558601902*» de Jim Gray.  
   
- Vous pouvez également optimiser les performances de votre transaction en suivant le protocole de validation en une phase. Pour plus d’informations, voir [Optimisation à l’aide d’un engagement de phase unique et d’une notification à phase unique promotable](optimization-spc-and-promotable-spn.md).  
+ Vous pouvez également optimiser les performances de votre transaction en suivant le protocole de validation en une phase. Pour plus d’informations, consultez [optimisation à l’aide de la validation à phase unique et de la notification à phase unique pouvant être promue](optimization-spc-and-promotable-spn.md).  
   
  Pour être informé du résultat d'une transaction sans participer au vote, inscrivez-vous à l'événement <xref:System.Transactions.Transaction.TransactionCompleted>.  
   
@@ -107,7 +108,7 @@ public void InDoubt (Enlistment enlistment)
 ```  
   
 ## <a name="single-phase-commit-optimization"></a>Optimisation de la validation en une phase  
- Le protocole de validation en une phase est plus efficace lors de l'exécution car toutes les mises à jour sont effectuées sans coordination explicite. Pour plus d’informations sur ce protocole, voir [Optimisation à l’aide d’un engagement de phase unique et d’une notification à phase unique promotable](optimization-spc-and-promotable-spn.md).  
+ Le protocole de validation en une phase est plus efficace lors de l'exécution car toutes les mises à jour sont effectuées sans coordination explicite. Pour plus d’informations sur ce protocole, consultez [optimisation à l’aide de la validation à phase unique et de la notification à phase unique pouvant être promue](optimization-spc-and-promotable-spn.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

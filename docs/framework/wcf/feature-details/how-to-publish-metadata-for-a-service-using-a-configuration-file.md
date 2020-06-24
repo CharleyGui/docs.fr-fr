@@ -1,13 +1,14 @@
 ---
 title: "Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration"
+description: Découvrez comment publier des métadonnées pour un service WCF à l’aide d’un fichier de configuration. La publication permet aux clients d’obtenir ces métadonnées à l’aide d’une requête d’extraction ou HTTP/obtenir.
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-ms.openlocfilehash: 976e1e0bb2c6479f7599165a1c6fe83bae4e17c1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d5d425be7f02a204476c4f6e81441aca9ea39fcc
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596979"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246816"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration
 Il s’agit de l’une des deux rubriques de procédures qui illustrent la publication de métadonnées pour un service Windows Communication Foundation (WCF). Il y a deux façons de spécifier comment un service doit publier des métadonnées : à l'aide d'un fichier de configuration et à l'aide du code. Cette rubrique montre comment publier des métadonnées pour un service à l'aide d'un fichier de configuration.  

@@ -1,13 +1,14 @@
 ---
 title: Optimisation à l'aide de la validation à phase unique et de la notification de phase unique pouvant être promue
+description: Optimiser les performances à l’aide de la validation à phase unique et de la notification de phase unique pouvant être promue. En savoir plus sur l’infrastructure System. transactions dans .NET.
 ms.date: 03/30/2017
 ms.assetid: 57beaf1a-fb4d-441a-ab1d-bc0c14ce7899
-ms.openlocfilehash: f486315b8a8c90e6616ca95fb6be4b2ae3719b7e
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 89ce82e673340c93254983c078f78a2501129383
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205897"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141976"
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimisation à l'aide de la validation à phase unique et de la notification de phase unique pouvant être promue
 
@@ -34,7 +35,7 @@ Si la transaction <xref:System.Transactions> nécessite d'être remontée (pour 
 > [!NOTE]
 > Les traces **TransactionCommitted** (générées lorsqu’une validation est appelée sur la transaction remontée) contiennent l’ID d’activité de la transaction DTC.
 
-Pour plus d’informations sur la remontée de la gestion, consultez remontée de la [gestion des transactions](transaction-management-escalation.md).
+Pour plus d’informations sur la remontée de la gestion, consultez [remontée](transaction-management-escalation.md)de la gestion des transactions.
 
 ## <a name="transaction-management-escalation-scenario"></a>Scénario de remontée de la gestion des transactions
 
@@ -58,7 +59,7 @@ Dans ce scénario,
 
 ## <a name="single-phase-commit-optimization"></a>Optimisation de la validation en une phase
 
-Le protocole de validation en une phase est plus efficace lors de l'exécution car toutes les mises à jour sont effectuées sans coordination explicite. Pour tirer partie de cette optimisation, implémentez un gestionnaire de ressources via l'interface <xref:System.Transactions.ISinglePhaseNotification> pour la ressource et inscrivez-vous à une transaction à l'aide de la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> ou <xref:System.Transactions.Transaction.EnlistVolatile%2A>. Plus précisément, le paramètre *EnlistmentOptions* doit être <xref:System.Transactions.EnlistmentOptions.None> égal à pour garantir qu’une validation à phase unique serait effectuée.
+Le protocole de validation en une phase est plus efficace lors de l'exécution car toutes les mises à jour sont effectuées sans coordination explicite. Pour tirer partie de cette optimisation, implémentez un gestionnaire de ressources via l'interface <xref:System.Transactions.ISinglePhaseNotification> pour la ressource et inscrivez-vous à une transaction à l'aide de la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> ou <xref:System.Transactions.Transaction.EnlistVolatile%2A>. Plus précisément, le paramètre *EnlistmentOptions* doit être égal à pour <xref:System.Transactions.EnlistmentOptions.None> garantir qu’une validation à phase unique serait effectuée.
 
 L'interface <xref:System.Transactions.ISinglePhaseNotification> étant dérivée de l'interface <xref:System.Transactions.IEnlistmentNotification>, si votre gestionnaire de ressources ne peut pas prétendre à la validation en une phase, il peut tout de même recevoir les notifications relatives à la validation en deux phases. Si votre gestionnaire de ressources reçoit une notification <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A> du gestionnaire de transactions, il doit tenter d'effectuer le nécessaire pour la validation et informer le gestionnaire de transactions de la validation ou de la restauration de la transaction en appelant la méthode <xref:System.Transactions.SinglePhaseEnlistment.Committed%2A>, <xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A> ou <xref:System.Transactions.SinglePhaseEnlistment.InDoubt%2A> pour le paramètre <xref:System.Transactions.SinglePhaseEnlistment>. À ce stade, une réponse de la <xref:System.Transactions.Enlistment.Done%2A> pour l'inscription implique la sémantique ReadOnly. Par conséquent, ne répondez pas à la <xref:System.Transactions.Enlistment.Done%2A> en plus des autres méthodes.
 

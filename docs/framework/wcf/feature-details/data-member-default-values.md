@@ -1,5 +1,6 @@
 ---
 title: Valeurs par défaut des membres de données
+description: Découvrez comment omettre un membre de données des données sérialisées lorsqu’il a une valeur .NET Framework par défaut. WCF peut améliorer les performances en ne sérialisant pas de valeur par défaut.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-ms.openlocfilehash: e4eaaec880ecfcff24d9d5b4e8347a84738e070b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 97946a6b7da14efdcb5229b4cc5d0799eb8d7723
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593476"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247375"
 ---
 # <a name="data-member-default-values"></a>Valeurs par défaut des membres de données
 Dans le .NET Framework, les types ont un concept de *valeurs par défaut*. Ainsi, la valeur par défaut d'un type référence est `null`, et celle d'un type entier est zéro. Il est parfois préférable d'omettre un membre de données des données sérialisées lorsqu'il est défini à sa valeur par défaut. Le membre ayant une valeur par défaut, il n'est pas nécessaire de sérialiser une valeur réelle ; cela présente un avantage en termes de performance.  

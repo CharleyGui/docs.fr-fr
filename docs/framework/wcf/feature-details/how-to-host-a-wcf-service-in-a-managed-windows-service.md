@@ -1,16 +1,17 @@
 ---
 title: 'Comment : héberger un service WCF dans un service Windows managé'
+description: Découvrez comment créer un service WCF hébergé par un service Windows. Cette option d'hébergement est disponible dans toutes les versions de Windows.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: dbd51abbc30b1010f7c4f206aad9a773eca0a714
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4e07aa7aac82fae5cfd1bfc759ef724cf87a873a
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593176"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246934"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Comment : héberger un service WCF dans un service Windows managé
 
@@ -110,7 +111,7 @@ Le code du service inclut l'implémentation du contrat de service, d'une classe 
     </configuration>
     ```
 
-     Cliquez avec le bouton droit sur le fichier app. config dans le **Explorateur de solutions** , puis sélectionnez **Propriétés**. Sous **copier dans le répertoire de sortie** , sélectionnez **copier si plus récent**.
+     Cliquez avec le bouton droit sur le fichier App.config dans le **Explorateur de solutions** et sélectionnez **Propriétés**. Sous **copier dans le répertoire de sortie** , sélectionnez **copier si plus récent**.
 
      L'exemple spécifie explicitement les points de terminaison dans le fichier de configuration. Si vous n'ajoutez pas de points de terminaison au service, le runtime ajoute les points de terminaison par défaut. Dans cet exemple, étant donné que le service a un <xref:System.ServiceModel.Description.ServiceMetadataBehavior> défini sur la valeur `true`, la publication des métadonnées est également activée pour votre service. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../samples/simplified-configuration-for-wcf-services.md).
 

@@ -5,16 +5,19 @@ helpviewer_keywords:
 - constrained execution regions
 - CERs
 ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
-ms.openlocfilehash: fde2bab99f156ddffec678022a58e7b14e0af01e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3161f77399030c287649ee5757814963b6afb7cf
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716173"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247725"
 ---
 # <a name="constrained-execution-regions"></a>régions d'exécution limitée
 Une région d’exécution limitée (CER, Constrained Execution Region) fait partie d’un mécanisme pour la création de code managé fiable. Elle définit une zone dans laquelle le Common Language Runtime (CLR) ne peut pas lever d’exceptions hors-bande qui empêcheraient le code dans la zone de s’exécuter dans son intégralité. Dans cette région, le code utilisateur ne peut pas exécuter de code qui entraînerait la levée d’exceptions hors-bande. La méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> doit précéder immédiatement un bloc `try`, et marque les blocs `catch`, `finally` et `fault` en tant que régions d’exécution limitée. Une fois marqué comme région limitée, le code doit appeler uniquement du code avec des contrats de fiabilité forts, et il ne doit pas allouer ou effectuer des appels virtuels à des méthodes non préparées ou non fiables, sauf s’il est prêt à gérer les échecs. Le CLR retarde les abandons de thread pour le code qui s’exécute dans une région CER.  
-  
+
+> [!IMPORTANT]
+> CER est pris en charge uniquement dans .NET Framework. Cet article ne s’applique pas à .NET Core ou .NET 5 et versions ultérieures.
+
  Les régions d’exécution limitée sont utilisées sous des formes différentes dans le CLR en plus d’un bloc `try` annoté, notamment sous forme de finaliseurs critiques exécutés dans des classes dérivées de la classe <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject> et de code exécuté à l’aide de la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>.  
   
 ## <a name="cer-advance-preparation"></a>Préparation avancée de région CER  
@@ -102,7 +105,7 @@ Une région d’exécution limitée (CER, Constrained Execution Region) fait par
   
 - <xref:System.Threading.Monitor.Enter%2A> ou <xref:System.IO.FileStream.Lock%2A>.  
   
-- Vérifications de sécurité N’effectuez pas de demande, mais uniquement des demandes de liaison.  
+- Vérifications de sécurité. N’effectuez pas de demande, mais uniquement des demandes de liaison.  
   
 - <xref:System.Reflection.Emit.OpCodes.Isinst> et <xref:System.Reflection.Emit.OpCodes.Castclass> pour les proxys et les objets COM  
   
@@ -114,4 +117,4 @@ Une région d’exécution limitée (CER, Constrained Execution Region) fait par
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bonnes pratiques relatives à la fiabilité](reliability-best-practices.md)
+- [Meilleures pratiques pour la fiabilité](reliability-best-practices.md)

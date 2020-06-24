@@ -1,5 +1,6 @@
 ---
 title: Types connus de contrats de données
+description: Découvrez comment le modèle de contrat de données utilise la classe KnownTypeAttribute pour spécifier les types à inclure pendant la désérialisation dans WCF.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: b7d78def4d656dea59af5400c7ed7deeef28cd0c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 52b0caaaac976893dcf5ef5c228ccc4f53bdbe9e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597447"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247479"
 ---
 # <a name="data-contract-known-types"></a>Types connus de contrats de données
 La classe <xref:System.Runtime.Serialization.KnownTypeAttribute> vous permet de spécifier, en avance, les types qui doivent être inclus pour être pris en compte pendant la désérialisation. Pour obtenir un exemple fonctionnel, consultez l’exemple [Known Types](../samples/known-types.md) .  
@@ -67,7 +68,7 @@ La classe <xref:System.Runtime.Serialization.KnownTypeAttribute> vous permet de 
  [!code-csharp[C_KnownTypeAttribute#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#4)]
  [!code-vb[C_KnownTypeAttribute#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#4)]  
   
-#### <a name="example-3"></a>Example 3  
+#### <a name="example-3"></a>Exemple 3  
  Dans l'exemple suivant, un <xref:System.Collections.Hashtable> stocke en interne son contenu sous la forme d'un <xref:System.Object>. Pour désérialiser une table de hachage correctement, le moteur de désérialisation doit connaître le jeu de types possibles qui peuvent se produire à cet endroit. Dans ce cas, nous savons à l'avance que seuls les objets `Book` et `Magazine` sont stockés dans le `Catalog`, par conséquent ils sont ajoutés à l'aide de l'attribut <xref:System.Runtime.Serialization.KnownTypeAttribute> .  
   
  [!code-csharp[C_KnownTypeAttribute#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#5)]

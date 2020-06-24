@@ -1,17 +1,18 @@
 ---
 title: "Comment : utiliser le fournisseur d'appartenances ASP.NET"
+description: Découvrez comment le fournisseur d’appartenances ASP.NET prend en charge les sites Web qui permettent aux utilisateurs de créer un nom d’utilisateur et un mot de passe pour l’accès sans disposer d’un compte de domaine Windows.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF and ASP.NET
 - WCF, authorization
 - WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-ms.openlocfilehash: 840e4a5d365f2adbaf335c1061a580665a39824d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6d527993dcf1fc5d5cd39bf22c3e772baf60e62f
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595321"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246725"
 ---
 # <a name="how-to-use-the-aspnet-membership-provider"></a>Comment : utiliser le fournisseur d'appartenances ASP.NET
 
@@ -28,7 +29,7 @@ Les développeurs Windows Communication Foundation (WCF) peuvent tirer parti de 
 
 ### <a name="to-configure-the-membership-provider"></a>Pour configurer le fournisseur d'appartenances
 
-1. Dans le fichier Web. config, sous l' `system.web` élément < >, créez un `membership` élément < >.
+1. Dans le fichier Web.config, sous l' `system.web` élément <>, créez un <`membership`> élément.
 
 2. Sous l'élément `<membership>`, créez un élément `<providers>`.
 

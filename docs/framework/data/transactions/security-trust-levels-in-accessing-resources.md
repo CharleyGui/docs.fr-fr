@@ -1,13 +1,14 @@
 ---
 title: Niveaux de confiance de sécurité dans l'accès aux ressources
+description: Comprendre les niveaux de confiance de sécurité pour accéder aux ressources dans .NET. Il existe 3 niveaux de confiance principaux pour System. transactions.
 ms.date: 03/30/2017
 ms.assetid: fb5be924-317d-4d69-b33a-3d18ecfb9d6e
-ms.openlocfilehash: 7070d82c430b762059153c544e26478dc2d7ae39
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 64f298460bde99181ab8dc8be13ae95aaa846299
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205869"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141950"
 ---
 # <a name="security-trust-levels-in-accessing-resources"></a>Niveaux de confiance de sécurité dans l'accès aux ressources
 Cette rubrique présente la restriction de l'accès aux types de ressources exposés par <xref:System.Transactions>.  
@@ -26,7 +27,7 @@ Cette rubrique présente la restriction de l'accès aux types de ressources expo
 ## <a name="trust-levels"></a>Niveaux de confiance  
   
 ### <a name="aptca-partial-trust"></a>APTCA (confiance partielle)  
- L' <xref:System.Transactions> assembly peut être appelé par du code d’un niveau de confiance partiel, car il a été marqué avec l’attribut **AllowPartiallyTrustedCallers** (APTCA). Cet attribut supprime essentiellement le implicite <xref:System.Security.Permissions.SecurityAction.LinkDemand> pour le jeu d’autorisations **FullTrust** qui, sinon, est automatiquement placé sur chaque méthode accessible publiquement dans chaque type. Toutefois, certains types et membres requièrent encore des autorisations plus élevées.  
+ L' <xref:System.Transactions> assembly peut être appelé par du code d’un niveau de confiance partiel, car il a été marqué avec l’attribut **ALLOWPARTIALLYTRUSTEDCALLERS** (APTCA). Cet attribut supprime essentiellement le implicite <xref:System.Security.Permissions.SecurityAction.LinkDemand> pour le jeu d’autorisations **FullTrust** qui, sinon, est automatiquement placé sur chaque méthode accessible publiquement dans chaque type. Toutefois, certains types et membres requièrent encore des autorisations plus élevées.  
   
  L'attribut APTCA permet aux applications d'utiliser des transactions en confiance partielle au sein d'un domaine d'application unique. Cela active les transactions non remontées et les inscriptions volatiles qui peuvent être utilisées pour la gestion des erreurs. Une table de hachage traitée et l'application qui l'utilise en sont des exemples. Il est possible d'ajouter ou de supprimer des données de la table de hachage sous une seule transaction. En cas de restauration ultérieure de la transaction, toutes les modifications apportées à la table de hachage sous cette transaction peuvent être annulées.  
   

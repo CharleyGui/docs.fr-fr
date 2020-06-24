@@ -1,16 +1,17 @@
 ---
 title: 'Comment : créer un point de terminaison de service dans le code'
+description: Découvrez comment implémenter un service dans une classe et définir son point de terminaison par programme. Dans WCF, les points de terminaison sont généralement définis dans un fichier de configuration.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3fbb22fa-2930-48b8-b437-def1de87c6a0
-ms.openlocfilehash: 25ea843df7871d730926fe7b9aac9f21d58e263e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3b2ff2a17975bc381db61edc2c0f85f67edd3325
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598929"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247050"
 ---
 # <a name="how-to-create-a-service-endpoint-in-code"></a>Comment : créer un point de terminaison de service dans le code
 Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est défini dans du code, où il est spécifié que le service doit utiliser la classe <xref:System.ServiceModel.BasicHttpBinding>.  

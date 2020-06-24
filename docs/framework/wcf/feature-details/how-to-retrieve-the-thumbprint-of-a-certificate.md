@@ -1,15 +1,16 @@
 ---
 title: "Comment : récupérer l'empreinte numérique d'un certificat"
+description: Découvrez comment spécifier des revendications trouvées dans un certificat X. 509, ce qui est nécessaire lors du développement d’une application WCF qui utilise des certificats pour l’authentification.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], retrieving thumbprint
 ms.assetid: da3101aa-78cd-4c34-9652-d1f24777eeab
-ms.openlocfilehash: f59fad86287e89b0a573a6e3ee8420f384b0bc3b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 87c696323af442021af267f0d8c523418e2234f7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601203"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246777"
 ---
 # <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>Comment : récupérer l'empreinte numérique d'un certificat
 Lors de l’écriture d’une application Windows Communication Foundation (WCF) qui utilise un certificat X. 509 pour l’authentification, il est souvent nécessaire de spécifier les revendications trouvées dans le certificat. Par exemple, vous devez fournir une revendication d'empreinte numérique lors de l'utilisation de l'énumération <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> dans la méthode <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> . La recherche de la valeur de revendication s'effectue en deux étapes. En premier lieu, ouvrez le composant logiciel enfichable MMC (Microsoft Management Console) pour les certificats. (Consultez [Comment : afficher des certificats avec le composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md).) Deuxièmement, comme décrit ici, Rechercher un certificat approprié et copier son empreinte numérique (ou d’autres valeurs de revendication).  

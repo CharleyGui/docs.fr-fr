@@ -1,5 +1,6 @@
 ---
 title: "Comment : utiliser un validateur de nom d'utilisateur et de mot de passe personnalisé"
+description: Découvrez comment incorporer un validateur de mot de passe personnalisé pour les applications WFC à la place de la validation du nom d’utilisateur et du mot de passe Windows par défaut.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF, username and password
 ms.assetid: 8e08b74b-fa44-4018-b63d-0d0805f85e3f
-ms.openlocfilehash: 5ada34ca2d0d757ea333fed60aef179d6578356c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7f69db7bf8248593b64cdae4378983c2460de597
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601177"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246790"
 ---
 # <a name="how-to-use-a-custom-user-name-and-password-validator"></a>Comment : utiliser un validateur de nom d'utilisateur et de mot de passe personnalisé
 

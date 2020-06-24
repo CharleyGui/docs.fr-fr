@@ -1,22 +1,23 @@
 ---
 title: Services duplex
+description: Découvrez comment créer un contrat de service duplex dans WCF, ce qui permet aux deux points de terminaison d’envoyer des messages entre eux via un canal créé par le client.
 ms.date: 05/09/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: 4fd8b679dcd4ac9efce5fa915118736b15206068
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: a43bb63a0ccf1a34b79dce755c19f7ed4cb6c16c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834769"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247349"
 ---
 # <a name="duplex-services"></a>Services duplex
 
 Un contrat de service duplex est un modèle d'échange de messages dans lequel les deux points de terminaison peuvent envoyer indépendamment des messages à l'autre. Un service duplex peut, par conséquent, renvoyer des messages au point de terminaison client, en fournissant un comportement de type événement. La communication duplex se produit lorsqu'un client se connecte à un service et lui fournit un canal sur lequel il peut lui renvoyer des messages. Notez que le comportement de type événement des services duplex ne fonctionne que dans une session.
 
-Pour créer un contrat duplex, créez une paire d'interfaces. La première est l'interface de contrat de service qui décrit les opérations qu'un client peut appeler. Ce contrat de service doit spécifier un *contrat* de rappel <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> dans la propriété. Le contrat de rappel est l'interface qui définit les opérations que le service peut appeler sur le point de terminaison client. Un contrat duplex ne requiert pas de session, bien que les liaisons duplex fournies par le système en utilisent.
+Pour créer un contrat duplex, créez une paire d'interfaces. La première est l'interface de contrat de service qui décrit les opérations qu'un client peut appeler. Ce contrat de service doit spécifier un *contrat de rappel* dans la <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> propriété. Le contrat de rappel est l'interface qui définit les opérations que le service peut appeler sur le point de terminaison client. Un contrat duplex ne requiert pas de session, bien que les liaisons duplex fournies par le système en utilisent.
 
 Voici un exemple de contrat duplex :
 
@@ -93,4 +94,4 @@ L'exemple de code suivant indique comment spécifier l'adresse de point de termi
 
 - [Duplex](../samples/duplex.md)
 - [Spécification du comportement du client au moment de l’exécution](../specifying-client-run-time-behavior.md)
-- [Guide pratique pour Créer une fabrication de canal et l’utiliser pour créer et gérer des canaux](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)
+- [Guide pratique pour créer et utiliser une fabrique de canaux pour créer et gérer des canaux](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)
