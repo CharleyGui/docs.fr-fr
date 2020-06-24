@@ -6,4 +6,4 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 05/15/2019
 ms.locfileid: "65670826"
 ---
-<span data-ttu-id="c7165-101">Automation de l'interface utilisateur</span><span class="sxs-lookup"><span data-stu-id="c7165-101">UI Automation</span></span>
+<span data-ttu-id="06c36-101">Automatisation de l’interface utilisateur</span><span class="sxs-lookup"><span data-stu-id="06c36-101">UI Automation</span></span>
