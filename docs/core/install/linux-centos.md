@@ -1,15 +1,15 @@
 ---
 title: Installer .NET Core sur CentOS-.NET Core
 description: Montre les différentes façons d’installer kit SDK .NET Core et le Runtime .NET Core sur CentOS.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 743bd4ce47fdecef512f9605d8ec5503eb6da9ba
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9f4de70b4989be1d162f384518a015816a3e75a9
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84603138"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324896"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-centos"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur CentOS
 
@@ -72,7 +72,7 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 [!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
 

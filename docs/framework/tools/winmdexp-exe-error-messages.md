@@ -158,19 +158,20 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool, error messages
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
-ms.openlocfilehash: 5fb5abe84d43df85be557a2bec2245284a74024b
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 1b44273bd5a8868ba426d9ac0eabbefcb725e70f
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904193"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325615"
 ---
-# <a name="winmdexpexe-error-messages"></a>Messages d'erreur Winmdexp.exe
+# <a name="winmdexpexe-error-messages"></a>Messages d’erreur de Winmdexp.exe
+
 Le processus de génération appelle [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md) quand vous utilisez le modèle de composant **Windows Runtime Component** dans Visual Studio 2012, et les messages d’erreur de Winmdexp.exe apparaissent donc dans la **liste d’erreurs**. Winmdexp.exe fonctionne sur un module compilé avec l’option `/target:winmdobj`. Comme il nécessite un module compilé en entrée, ses messages d’erreur ne s’affichent pas, sauf si la compilation réussit.  
   
  Les messages d’erreur sont conçus pour contenir toutes les informations dont vous avez besoin pour résoudre les conditions d’erreur qu’ils signalent. Toutefois, certains problèmes nécessitent plus d’informations que celles qui sont contenues dans le message. Vous trouverez des informations supplémentaires sur le [diagnostic des conditions d’erreur du composant Windows Runtime](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).  
   
- Si l’erreur n’est pas abordée dans cet article et que vous pensez que le message ne contient pas suffisamment d’informations pour résoudre le problème, utilisez le lien de commentaires dans cet article et incluez-y le message d’erreur. Vous pouvez également signaler un bogue sur le [site Web](https://developercommunity.visualstudio.com/)de la communauté des développeurs. Vous pouvez également rechercher plus d’informations sur les [Forums Microsoft](https://social.msdn.microsoft.com/Forums/).  
+ Si votre erreur n’est pas abordée dans cet article et que vous estimez que le message ne contient pas suffisamment d’informations pour résoudre le problème, utilisez le lien de commentaires de cet article et incluez le message d’erreur. Vous pouvez également signaler un bogue sur le [site Web](https://developercommunity.visualstudio.com/)de la communauté des développeurs. Vous pouvez également rechercher plus d’informations sur les [Forums Microsoft](https://social.msdn.microsoft.com/Forums/).  
   
 ## <a name="see-also"></a>Voir aussi
 

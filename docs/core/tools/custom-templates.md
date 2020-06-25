@@ -1,14 +1,14 @@
 ---
 title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
-author: thraka
+author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: 56fcbfbc168143007f0772ce8a12347f7e25e50b
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: cabe220917e7ff688a2c2d2df56d9bc7f8afdf56
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005312"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324506"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
@@ -36,7 +36,7 @@ dotnet new --list
 Un modèle est constitué des éléments suivants :
 
 - Dossiers et fichiers sources.
-- Un fichier de configuration (*template. JSON*).
+- Un fichier de configuration (*template.jssur*).
 
 ### <a name="source-files-and-folders"></a>Dossiers et fichiers sources
 

@@ -4,12 +4,12 @@ description: Découvrez les bonnes pratiques pour écrire des tests unitaires qu
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 9115ff69b269e3723820fd8505d1a9f8ca278d12
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 8a879c16e48dfde617f9cd20f58cab96039361f0
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84989378"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324479"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Meilleures pratiques pour les tests unitaires avec .NET Core et .NET Standard
 
@@ -24,7 +24,7 @@ Par [John Reese](https://reese.dev) avec des remerciements particuliers à [Roy 
 ### <a name="less-time-performing-functional-tests"></a>Moins de temps pour effectuer des tests fonctionnels
 Les tests fonctionnels sont coûteux. Ils impliquent généralement d’ouvrir l’application et d’effectuer une série d’étapes que vous (ou quelqu’un d’autre) devez suivre pour valider le comportement attendu. Dans la mesure où le testeur ne connaît pas toujours ces étapes, il doit contacter une personne plus compétente dans le domaine concerné pour effectuer le test. Le test lui-même peut prendre quelques secondes pour des changements mineurs, ou quelques minutes pour des changements plus importants. Enfin, ce processus doit être répété pour chaque changement apporté au système.
 
-Les tests unitaires, en revanche, prennent quelques millisecondes. Vous pouvez les exécuter en appuyant sur un bouton sans nécessairement connaître le système dans son ensemble. La réussite ou non du test dépend du programme d’exécution de tests et non de la personne qui effectue le test.
+Les tests unitaires, en revanche, prennent des millisecondes, peuvent être exécutés en appuyant sur un bouton et ne nécessitent pas nécessairement une connaissance du système de grande taille. La réussite ou non du test dépend du programme d’exécution de tests et non de la personne qui effectue le test.
 
 ### <a name="protection-against-regression"></a>Protection contre la régression
 Les défauts de régression sont des défauts introduits quand un changement est apporté à l’application. Il est courant pour les testeurs de tester non seulement les nouvelles fonctionnalités, mais également les fonctionnalités antérieures afin de vérifier que ces dernières fonctionnent toujours comme prévu.
@@ -53,14 +53,14 @@ L’écriture de tests pour votre code permet de le découpler de manière natur
 
 Un pourcentage élevé de couverture du code est souvent associé à une qualité de code supérieure. Toutefois, la mesure elle-même *ne peut pas* déterminer la qualité du code. La définition d’un objectif de pourcentage de couverture du code trop ambitieux peut être contre-productive. Imaginez un projet complexe avec des milliers de branches conditionnelles et imaginez que vous définissez un objectif de couverture du code de 95%. Actuellement, le projet gère la couverture du code de 90%. La durée nécessaire à la prise en compte de tous les cas de périphérie dans les 5% restants peut être une entreprise importante, et la proposition de valeur est rapidement réduite.
 
-Un pourcentage élevé de couverture du code n’est pas un indicateur de réussite et n’implique pas non plus la haute qualité du code. Jusst représente la quantité de code qui est couverte par les tests unitaires. Pour plus d’informations, consultez [couverture du code de test unitaire](unit-testing-code-coverage.md).
+Un pourcentage élevé de couverture du code n’est pas un indicateur de réussite et n’implique pas non plus la haute qualité du code. Il représente simplement la quantité de code qui est couverte par les tests unitaires. Pour plus d’informations, consultez [couverture du code de test unitaire](unit-testing-code-coverage.md).
 
 ## <a name="lets-speak-the-same-language"></a>Parlons la même langue
-Le terme *mock* (élément fictif) est malheureusement utilisé à très mauvais escient quand il s’agit de tests. Voici une définition des types les plus courants de *fakes* (éléments fictifs) pour l’écriture de tests unitaires :
+Le terme *simulacre* n’est pas souvent utilisé de façon inutilisée pour parler des tests. Les points suivants définissent les types de *substituts* les plus courants lors de l’écriture de tests unitaires :
 
-*Fake* - Il s’agit d’un terme générique qui permet de décrire un stub ou un mock (objet fictif). Seul le contexte permet de déterminer s’il s’agit d’un stub ou d’un mock (objet fictif). En d’autres termes, un fake (élément fictif) peut être un stub ou un mob (objet fictif).
+*Factice* : un substitut est un terme générique qui peut être utilisé pour décrire un objet de type stub ou factice. Qu’il s’agisse d’un stub ou d’un simulacre dépend du contexte dans lequel il est utilisé. En d’autres termes, un fake (élément fictif) peut être un stub ou un mob (objet fictif).
 
-*Mock* - Il s’agit d’un objet fictif du système qui détermine la réussite ou l’échec d’un test unitaire. Un mock commence par être un Fake jusqu’à ce qu’il soit différencié par une assertion.
+*Mock* - Il s’agit d’un objet fictif du système qui détermine la réussite ou l’échec d’un test unitaire. Un simulacre commence comme un substitut jusqu’à ce qu’il soit déclaré.
 
 *Stub* - Un stub permet de remplacer de manière contrôlée une dépendance existante (ou collaborateur) dans le système. À l’aide d’un stub, vous pouvez tester votre code sans avoir à gérer directement la dépendance. Par défaut, un fake commence comme par être un stub.
 
@@ -75,7 +75,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-Il s’agit d’un exemple de stub appelé mock. Dans le cas présent, il s’agit bien d’un stub. Vous passez simplement Order pour instancier `Purchase` (le système testé). Le nom `MockOrder` est également très trompeur, car encore une fois, order n’est pas un mock.
+Il s’agit d’un exemple de stub appelé mock. Dans le cas présent, il s’agit bien d’un stub. Vous passez simplement Order pour instancier `Purchase` (le système testé). Le nom `MockOrder` est également trompeur, car l’ordre n’est plus un simulacre.
 
 Il existe une meilleure approche
 
@@ -88,7 +88,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-En renommant la classe en `FakeOrder`, vous avez rendu celle-ci beaucoup plus générique. Vous pouvez utiliser la classe en tant que mock ou stub. Selon ce qui est le plus approprié pour le cas de test. Dans l’exemple ci-dessus, `FakeOrder` est utilisé en tant que stub. Vous n’utilisez pas `FakeOrder` sous quelque forme que ce soit durant l’assertion. `FakeOrder` a simplement été passé à la classe `Purchase` pour répondre aux exigences du constructeur.
+En renommant la classe en `FakeOrder`, vous avez rendu celle-ci beaucoup plus générique. Vous pouvez utiliser la classe en tant que mock ou stub. Selon ce qui est le plus approprié pour le cas de test. Dans l’exemple ci-dessus, `FakeOrder` est utilisé en tant que stub. Vous n’utilisez pas `FakeOrder` sous quelque forme que ce soit durant l’assertion. `FakeOrder`a été passé dans la `Purchase` classe pour satisfaire les spécifications du constructeur.
 
 Pour l’utiliser en tant que Mock, vous pouvez faire quelque chose qui ressemble à ceci
 
@@ -157,7 +157,7 @@ L’entrée à utiliser dans un test unitaire doit être la plus simple possible
 - Les tests deviennent plus résilients face aux futurs changements du code base.
 - Plus proche du comportement de test que de l’implémentation.
 
-Les tests qui contiennent plus d’informations que nécessaire pour être réussis ont plus de chances d’introduire des erreurs et peuvent rendre l’intention moins claire. Quand vous écrivez des tests, vous devez vous concentrer sur le comportement. La définition de propriétés supplémentaires pour les modèles ou l’utilisation de valeurs différentes de zéro quand cela n’est pas nécessaire, ne fait que nuire à ce que vous essayez de prouver.
+Les tests qui contiennent plus d’informations que nécessaire pour être réussis ont plus de chances d’introduire des erreurs et peuvent rendre l’intention moins claire. Lorsque vous écrivez des tests, vous souhaitez vous concentrer sur le comportement. La définition de propriétés supplémentaires pour les modèles ou l’utilisation de valeurs différentes de zéro quand cela n’est pas nécessaire, ne fait que nuire à ce que vous essayez de prouver.
 
 #### <a name="bad"></a>Mauvais :
 [!code-csharp[BeforeMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeMinimallyPassing)]
@@ -210,7 +210,7 @@ Si vous avez besoin d’un objet ou d’un état similaire pour vos tests, préf
 
 - Moins de confusion durant la lecture des tests, car l’ensemble du code est visible à partir de chaque test.
 - Moins de risques d’effectuer une configuration excessive ou insuffisante pour le test donné.
-- Moins de risques de partager l’état entre les tests, ce qui entraîne la création de dépendances indésirables entre eux.
+- Moins de chances de partager l’état entre les tests, ce qui crée des dépendances indésirables entre eux.
 
 Dans les frameworks de tests unitaires, `Setup` est appelé avant chaque test unitaire de votre suite de tests. Bien que certains puissent le voir comme un outil utile, cela aboutit généralement à des tests compliqués et difficiles à lire. Chaque test a généralement des exigences différentes pour être opérationnel. Malheureusement, `Setup` vous oblige à utiliser exactement les mêmes exigences pour chaque test.
 
@@ -294,7 +294,7 @@ public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
 Ainsi, si vous voyez une méthode privée, recherchez la méthode publique et écrivez vos tests par rapport à cette méthode. Le fait qu’une méthode privée retourne le résultat attendu ne signifie pas que le système qui appelle la méthode privée utilise ce résultat correctement.
 
 ### <a name="stub-static-references"></a>Références statiques de stub
-L’un des principes d’un test unitaire est qu’il doit avoir le contrôle total du système testé. Cela peut être problématique quand le code de production inclut des appels à des références statiques (par exemple `DateTime.Now`). Examinez le code suivant
+L’un des principes d’un test unitaire est qu’il doit avoir le contrôle total du système testé. Cela peut être problématique lorsque le code de production comprend des appels à des références statiques (par exemple, `DateTime.Now` ). Examinez le code suivant
 
 ```csharp
 public int GetDiscountedPrice(int price)

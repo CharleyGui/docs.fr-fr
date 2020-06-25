@@ -1,15 +1,15 @@
 ---
 title: Installer .NET Core sur RHEL-.NET Core
 description: Montre les différentes façons d’installer kit SDK .NET Core et le Runtime .NET Core sur RHEL.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 7ae55f881cd0c877cf1db24be7a4ee23320e21a8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4a406fe1834c16bab9a5548b69206b51270b33fa
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84603040"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324710"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-rhel"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur RHEL
 
@@ -98,7 +98,7 @@ Comme alternative au runtime ASP.NET Core, vous pouvez installer le Runtime .NET
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 [!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
 

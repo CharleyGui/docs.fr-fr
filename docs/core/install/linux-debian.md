@@ -1,15 +1,15 @@
 ---
 title: Installer .NET Core sur Debian-.NET Core
 description: Montre les différentes façons d’installer kit SDK .NET Core et le Runtime .NET Core sur Debian.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c66d8e1daad4e59a766781b7117600352879b724
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ded9d2be72e8ec476d5ace752e44d92eb0ee1028
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84603054"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324924"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur Debian
 
@@ -31,7 +31,7 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [10](#debian-10-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [9](#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌[8](#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌ [8](#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 
 Les versions suivantes de .NET Core ne sont plus prises en charge. Les téléchargements sont toujours publiés :
 
@@ -125,7 +125,7 @@ sudo apt-get update; \
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 [!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
 

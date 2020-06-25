@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: 725441f5399f72b6457af461d51419c35077f4c2
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: d1ea0fc3573714347580a2aaded2d0f3118681a8
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662912"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324183"
 ---
 # <a name="how-to-compare-strings-in-c"></a>Comment comparer des chaînes en C\#
 
@@ -41,7 +41,7 @@ effectue une comparaison ordinale respectant la casse et, si nécessaire, utilis
 
 La comparaison ordinale par défaut ne prend pas en compte les règles linguistiques lors de la comparaison de chaînes. Elle compare la valeur binaire de chaque objet <xref:System.Char> dans les deux chaînes. La comparaison ordinale par défaut respecte ainsi également la casse.
 
-Notez que le test d’égalité avec <xref:System.String.Equals%2A?displayProperty=nameWithType> et les `==` `!=` opérateurs et diffère de la comparaison de chaînes à l’aide des <xref:System.String.CompareTo%2A?displayProperty=nameWithType> <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)> méthodes et. Tandis que les tests d’égalité effectuent une comparaison ordinale respectant la casse, les méthodes de comparaison effectuent une comparaison respectant la casse et dépendante de la culture à l’aide de la culture actuelle. Étant donné que les méthodes de comparaison par défaut effectuent souvent différents types de comparaisons, nous vous recommandons de toujours indiquer clairement l’intention de votre code en appelant une surcharge qui spécifie explicitement le type de comparaison à effectuer.
+Le test d’égalité avec <xref:System.String.Equals%2A?displayProperty=nameWithType> et les `==` `!=` opérateurs et diffère de la comparaison de chaînes à l’aide des <xref:System.String.CompareTo%2A?displayProperty=nameWithType> <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)> méthodes et. Tandis que les tests d’égalité effectuent une comparaison ordinale respectant la casse, les méthodes de comparaison effectuent une comparaison respectant la casse et dépendante de la culture à l’aide de la culture actuelle. Étant donné que les méthodes de comparaison par défaut effectuent souvent différents types de comparaisons, nous vous recommandons de toujours indiquer clairement l’intention de votre code en appelant une surcharge qui spécifie explicitement le type de comparaison à effectuer.
 
 ## <a name="case-insensitive-ordinal-comparisons"></a>Comparaisons ordinales ne respectant pas la casse
 
@@ -55,11 +55,11 @@ Lorsque vous effectuez une comparaison ordinale ne respectant pas la casse, ces 
 ## <a name="linguistic-comparisons"></a>Comparaisons linguistiques
 
 Les chaînes peuvent aussi être triées à l’aide de règles linguistiques pour la culture actuelle.
-C'est ce qu’on appelle parfois « Ordre de tri par mot ». Quand vous effectuez une comparaison linguistique, certains caractères Unicode non alphanumériques peuvent avoir une pondération spéciale. Par exemple, le trait d’union « - » peut avoir une très petite pondération pour que « co-op » et « coop » apparaissent à côté dans l’ordre de tri. Par ailleurs, certains caractères Unicode peuvent être équivalents à une séquence d’instances <xref:System.Char>. L’exemple suivant utilise la phrase « Ils dansent dans la rue » en allemand avec « ss » (U+0073 U+0073) dans une chaîne et « ß » (U+00DF) dans une autre. Du point de vue linguistique (dans Windows), « ss » équivaut à l’Esszet allemand : le caractère « ß » dans les cultures « en-US » et « de-DE ».
+C'est ce qu’on appelle parfois « Ordre de tri par mot ». Quand vous effectuez une comparaison linguistique, certains caractères Unicode non alphanumériques peuvent avoir une pondération spéciale. Par exemple, le trait d’Union « - » peut avoir un poids faible affecté, de sorte que « co-op » et « Coop » s’affichent à côté l’un de l’autre dans l’ordre de tri. Par ailleurs, certains caractères Unicode peuvent être équivalents à une séquence d’instances <xref:System.Char>. L’exemple suivant utilise la phrase « Ils dansent dans la rue » en allemand avec « ss » (U+0073 U+0073) dans une chaîne et « ß » (U+00DF) dans une autre. Du point de vue linguistique (dans Windows), « ss » équivaut à l’Esszet allemand : le caractère « ß » dans les cultures « en-US » et « de-DE ».
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet3":::
 
-Cet exemple illustre les comparaisons linguistiques dépendantes du système d’exploitation. L’hôte de la fenêtre interactive est un hôte Linux. Les comparaisons linguistiques et ordinales produisent les mêmes résultats. Si vous exécutez cet exemple sur un hôte Windows, vous devez voir la sortie suivante :
+Cet exemple illustre les comparaisons linguistiques dépendantes du système d’exploitation. L’hôte de la fenêtre interactive est un hôte Linux. Les comparaisons linguistiques et ordinales produisent les mêmes résultats. Si vous exécutez ce même exemple sur un hôte Windows, la sortie suivante s’affiche :
 
 ```console
 <coop> is less than <co-op> using invariant culture
@@ -81,7 +81,7 @@ La culture utilisée affecte les comparaisons linguistiques. L’exemple suivant
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet4":::
 
-Les comparaisons dépendantes de la culture sont généralement utilisées pour comparer et trier des chaînes entrées par plusieurs utilisateurs. Les caractères et les conventions de tri de ces chaînes peuvent varier selon les paramètres régionaux de l’ordinateur de l’utilisateur. Même les chaînes qui contiennent des caractères identiques peuvent être triées différemment selon la culture du thread actuel. Par ailleurs, essayez cet exemple de code localement sur un ordinateur Windows et vous obtenez les résultats suivants :
+Les comparaisons dépendantes de la culture sont généralement utilisées pour comparer et trier des chaînes entrées par plusieurs utilisateurs. Les caractères et les conventions de tri de ces chaînes peuvent varier selon les paramètres régionaux de l’ordinateur de l’utilisateur. Même les chaînes qui contiennent des caractères identiques peuvent être triées différemment selon la culture du thread actuel. En outre, essayez cet exemple de code localement sur un ordinateur Windows et vous obtiendrez les résultats suivants :
 
 ```console
 <coop> is less than <co-op> using en-US culture
@@ -92,7 +92,7 @@ Les comparaisons dépendantes de la culture sont généralement utilisées pour 
 <co-op> is less than <cop> using ordinal comparison
 ```
 
-Les comparaisons linguistiques sont dépendantes de la culture actuelle et du système d’exploitation. Vous devez en tenir compte quand vous utilisez les comparaisons de chaînes.
+Les comparaisons linguistiques sont dépendantes de la culture actuelle et du système d’exploitation. Prenez cela en compte lorsque vous travaillez avec des comparaisons de chaînes.
 
 ## <a name="linguistic-sorting-and-searching-strings-in-arrays"></a>Tri linguistique et recherche de chaînes dans des tableaux
 
@@ -102,13 +102,13 @@ Cet exemple montre comment trier un tableau de chaînes à l’aide de la cultur
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet5":::
 
-Une fois que le tableau est trié, vous pouvez rechercher des entrées à l’aide d’une recherche binaire. Une recherche binaire commence au milieu de la collection pour déterminer la moitié de la collection qui doit contenir la chaîne recherchée. Chaque comparaison ultérieure divise à son tour en deux la partie restante de la collection.  Le tableau est trié à l’aide de <xref:System.StringComparer.CurrentCulture?displayProperty=nameWithType>. La fonction locale `ShowWhere` affiche des informations sur l’emplacement de la chaîne. Si la chaîne est introuvable, la valeur retournée indique l’emplacement où elle devrait se trouver.
+Une fois que le tableau est trié, vous pouvez rechercher des entrées à l’aide d’une recherche binaire. Une recherche binaire commence au milieu de la collection pour déterminer la moitié de la collection qui doit contenir la chaîne recherchée. Chaque comparaison ultérieure divise à son tour en deux la partie restante de la collection.  Le tableau est trié à l’aide de <xref:System.StringComparer.CurrentCulture?displayProperty=nameWithType>. La fonction locale `ShowWhere` affiche des informations sur l’emplacement de la chaîne. Si la chaîne est introuvable, la valeur retournée indique où elle serait si elle a été trouvée.
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet6":::
 
 ## <a name="ordinal-sorting-and-searching-in-collections"></a>Tri ordinal et recherche dans des collections
 
-Le code suivant utilise la classe de collection <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> pour stocker les chaînes. Les chaînes sont triées à l’aide de la méthode <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType>. Cette méthode a besoin d’un délégué qui compare et trie les deux chaînes. La méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> fournit cette fonction de comparaison. Exécutez l’exemple et observez l’ordre. Cette opération de tri utilise un tri ordinal respectant la casse. Vous devez utiliser les méthodes statiques <xref:System.String.Compare%2A?displayProperty=nameWithType> pour spécifier des règles de comparaison différentes.
+Le code suivant utilise la classe de collection <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> pour stocker les chaînes. Les chaînes sont triées à l’aide de la méthode <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType>. Cette méthode a besoin d’un délégué qui compare et trie les deux chaînes. La méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> fournit cette fonction de comparaison. Exécutez l’exemple et observez l’ordre. Cette opération de tri utilise un tri ordinal qui respecte la casse. Vous devez utiliser les méthodes statiques <xref:System.String.Compare%2A?displayProperty=nameWithType> pour spécifier des règles de comparaison différentes.
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet7":::
 
@@ -122,7 +122,7 @@ Les classes de collection telles que <xref:System.Collections.Hashtable?displayP
 
 ## <a name="reference-equality-and-string-interning"></a>Égalité de référence et centralisation des chaînes
 
-Aucun des exemples n’a utilisé <xref:System.Object.ReferenceEquals%2A>. Cette méthode détermine si deux chaînes sont le même objet. Cela peut entraîner des résultats incohérents dans les comparaisons de chaînes. L’exemple suivant illustre la fonctionnalité de *centralisation des chaînes* du langage C#. Lorsqu’un programme déclare plusieurs variables de chaînes identiques, le compilateur les stocke au même emplacement. En appelant la méthode <xref:System.Object.ReferenceEquals%2A>, vous pouvez voir que les deux chaînes référencent le même objet en mémoire. Utilisez la méthode <xref:System.String.Copy%2A?displayProperty=nameWithType> pour éviter la centralisation. Une fois la copie effectuée, les deux chaînes ont différents emplacements de stockage, même si elles ont la même valeur. Exécutez l’exemple suivant pour montrer que les chaînes `a` et `b` sont *centralisées*, ce qui signifie qu’elles partagent le même stockage. Les chaînes `a` et `c` ne le sont pas.
+Aucun des exemples n’a utilisé <xref:System.Object.ReferenceEquals%2A>. Cette méthode détermine si deux chaînes sont le même objet, ce qui peut entraîner des résultats incohérents dans les comparaisons de chaînes. L’exemple suivant illustre la fonctionnalité de *centralisation des chaînes* du langage C#. Lorsqu’un programme déclare plusieurs variables de chaînes identiques, le compilateur les stocke au même emplacement. En appelant la méthode <xref:System.Object.ReferenceEquals%2A>, vous pouvez voir que les deux chaînes référencent le même objet en mémoire. Utilisez la méthode <xref:System.String.Copy%2A?displayProperty=nameWithType> pour éviter la centralisation. Une fois la copie effectuée, les deux chaînes ont différents emplacements de stockage, même si elles ont la même valeur. Exécutez l’exemple suivant pour montrer que les chaînes `a` et `b` sont *centralisées*, ce qui signifie qu’elles partagent le même stockage. Les chaînes `a` et `c` ne le sont pas.
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet9":::
 

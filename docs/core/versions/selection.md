@@ -1,15 +1,15 @@
 ---
 title: Sélectionner la version .NET Core à utiliser
 description: Découvrez comment .NET Core recherche et choisit automatiquement les versions du runtime pour votre programme. En outre, cet article vous apprend à forcer l’utiliser d’une version spécifique.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 03/24/2020
-ms.openlocfilehash: 3c3d9b4ec5a68c88bdd0a45acfb49191f22abda4
-ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+ms.openlocfilehash: 5e855adc72f0e75e6f31643f8a8618e6d91be06e
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82595726"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324355"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Sélectionner la version .NET Core à utiliser
 
@@ -38,7 +38,7 @@ Vous pouvez tirer parti des fonctionnalités et des améliorations du dernier ki
 
 À de rares occasions, vous pouvez être amené à utiliser une version antérieure du kit SDK. Vous devez dans ce cas spécifier cette version dans un [ fichier *global.json*](../tools/global-json.md). La stratégie « utiliser la dernière version » signifie que vous utilisez uniquement *global.json* pour spécifier une version du kit SDK .NET Core antérieure à la dernière version installée.
 
-*global.json* peut être placé n’importe où dans la hiérarchie des fichiers. L’interface CLI effectue une recherche vers le haut dans le répertoire du projet et s’arrête au premier fichier *global.json* trouvé. Vous pouvez contrôler les projets auxquels un fichier *global.json* donné s’applique par son emplacement dans le système de fichiers. L’interface CLI .NET recherche un fichier *global.json* de manière itérative en parcourant le chemin de bas en haut dans le répertoire de travail actif. Le premier fichier *global.json* trouvé spécifie la version utilisée. Si cette version du kit de développement logiciel (SDK) est installée, cette version est utilisée. Si le kit de développement logiciel (SDK) spécifié dans *global. JSON* est introuvable, l’interface CLI .NET utilise des [règles de correspondance](../tools/global-json.md#matching-rules) pour sélectionner un kit de développement logiciel (SDK) compatible, ou échoue si aucune n’est trouvée.
+*global.json* peut être placé n’importe où dans la hiérarchie des fichiers. L’interface CLI effectue une recherche vers le haut dans le répertoire du projet et s’arrête au premier fichier *global.json* trouvé. Vous pouvez contrôler les projets auxquels un fichier *global.json* donné s’applique par son emplacement dans le système de fichiers. L’interface CLI .NET recherche un fichier *global.json* de manière itérative en parcourant le chemin de bas en haut dans le répertoire de travail actif. Le premier fichier *global.json* trouvé spécifie la version utilisée. Si cette version du kit de développement logiciel (SDK) est installée, cette version est utilisée. Si le kit de développement logiciel (SDK) spécifié dans le *global.jssur* est introuvable, l’interface CLI .NET utilise des [règles de correspondance](../tools/global-json.md#matching-rules) pour sélectionner un kit de développement logiciel (SDK) compatible, ou échoue si aucune n’est trouvée.
 
 L’exemple suivant présente la syntaxe du fichier *global.json* :
 
@@ -72,13 +72,13 @@ Vous pouvez générer votre projet par rapport à plusieurs TFM. S’il est plus
 <TargetFrameworks>netcoreapp3.0;net47</TargetFrameworks>
 ```
 
-Un kit SDK donné prend en charge un ensemble fixe de versions de .Net Framework, plafonné à la version cible de .Net Framework du runtime qu’il intègre. Par exemple, le kit de développement logiciel (SDK) .NET Core 3,0 comprend le Runtime .NET Core 3,0, `netcoreapp3.0` qui est une implémentation du Framework cible. Le kit de développement logiciel ( `netcoreapp2.1`SDK `netcoreapp2.2`) `netcoreapp3.0`.net Core 3,0 `netcoreapp3.1` prend en charge,,, mais pas (ou une version ultérieure). Vous installez le kit de développement logiciel (SDK) `netcoreapp3.1`.net Core 3,1 pour générer pour.
+Un kit SDK donné prend en charge un ensemble fixe de versions de .Net Framework, plafonné à la version cible de .Net Framework du runtime qu’il intègre. Par exemple, le kit de développement logiciel (SDK) .NET Core 3,0 comprend le Runtime .NET Core 3,0, qui est une implémentation du `netcoreapp3.0` Framework cible. Le kit de développement logiciel (SDK) .net Core 3,0 prend en charge `netcoreapp2.1` , `netcoreapp2.2` , `netcoreapp3.0` , mais pas `netcoreapp3.1` (ou une version ultérieure). Vous installez le kit de développement logiciel (SDK) .NET Core 3,1 pour générer pour `netcoreapp3.1` .
 
-Les versions cibles de .Net Framework Standard sont également plafonnées à la version cible de .Net Framework du runtime intégré au kit SDK. Le kit de développement logiciel (SDK) .NET `netstandard2.1`Core 3,1 est limité à. Pour plus d'informations, consultez [.NET Standard](../../standard/net-standard.md).
+Les versions cibles de .Net Framework Standard sont également plafonnées à la version cible de .Net Framework du runtime intégré au kit SDK. Le kit de développement logiciel (SDK) .NET Core 3,1 est limité à `netstandard2.1` . Pour plus d'informations, consultez [.NET Standard](../../standard/net-standard.md).
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Les applications dépendantes du framework font l’objet d’une restauration par progression
 
-Quand vous exécutez une application à partir de [`dotnet run`](../tools/dotnet-run.md)la source avec, à partir d’un [`dotnet myapp.dll`](../tools/dotnet.md#description) [**déploiement dépendant du Framework**](../deploying/index.md#publish-runtime-dependent) avec, ou à partir d' `myapp.exe`un [**exécutable dépendant du Framework**](../deploying/index.md#publish-runtime-dependent) avec, l' `dotnet` exécutable est l' **hôte** de l’application.
+Quand vous exécutez une application à partir de [`dotnet run`](../tools/dotnet-run.md) la source avec, à partir d’un [**déploiement dépendant du Framework**](../deploying/index.md#publish-runtime-dependent) avec [`dotnet myapp.dll`](../tools/dotnet.md#description) , ou à partir d’un [**exécutable dépendant du Framework**](../deploying/index.md#publish-runtime-dependent) avec `myapp.exe` , l' `dotnet` exécutable est l' **hôte** de l’application.
 
 L’hôte choisit la dernière version de correctif installée sur la machine. Par exemple, si vous avez spécifié `netcoreapp3.0` dans votre fichier projet et que `3.0.4` est le dernier runtime .NET installé, le runtime `3.0.4` est utilisé.
 
@@ -103,7 +103,7 @@ Il est possible que 3.0.5 et 3.1.0 se comportent différemment, en particulier p
 
 Vous pouvez publier une application en tant que [**distribution autonome**](../deploying/index.md#publish-self-contained). Cette approche regroupe le runtime et les bibliothèques .NET Core avec votre application. Les déploiements autonomes ne dépendent pas des environnements d’exécution. La sélection de la version du runtime se produit au moment de la publication, et non au moment de l’exécution.
 
-Le processus de publication sélectionne la dernière version de correctif de la famille de runtime donnée. Par exemple, `dotnet publish` sélectionnera .net Core 3.0.4 s’il s’agit de la dernière version du correctif dans la famille de Runtime .net Core 3,0. La version cible de .Net Framework (y compris les derniers correctifs de sécurité installés) est empaquetée avec l’application.
+Le processus de publication sélectionne la dernière version de correctif de la famille de runtime donnée. Par exemple, `dotnet publish` sélectionnera .net Core 3.0.4 s’il s’agit de la dernière version du correctif dans la famille de Runtime .net core 3,0. La version cible de .Net Framework (y compris les derniers correctifs de sécurité installés) est empaquetée avec l’application.
 
 Si la version minimale spécifiée pour une application n’est pas satisfaire, il s’agit d’une erreur. `dotnet publish` se lie à la dernière version de correctif de runtime (au sein d’une famille de version principale.secondaire donnée). `dotnet publish` ne prend pas en charge la sémantique de restauration par progression de `dotnet run`. Pour plus d’informations sur les correctifs et les déploiements autonomes, consultez l’article relatif à la [sélection de correctif de runtime](../deploying/runtime-patch-selection.md) dans le déploiement d’applications .NET Core.
 

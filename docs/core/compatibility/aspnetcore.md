@@ -2,15 +2,15 @@
 title: Modifications avec rupture ASP.NET Core
 titleSuffix: ''
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 06/11/2020
+ms.date: 06/23/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: a6ddf97f907a1cba57e51d6fd516d1f94272f725
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: cf6b2eb46504c12aa670ccfc68531598dd9705a3
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803270"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325458"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -45,15 +45,18 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 - [HTTP : modifications de l’infrastructure du corps de la réponse](#http-response-body-infrastructure-changes)
 - [HTTP : certaines valeurs par défaut de SameSite de cookie ont été modifiées](#http-some-cookie-samesite-defaults-changed-to-none)
 - [HTTP : e/s synchrone désactivée par défaut](#http-synchronous-io-disabled-in-all-servers)
+- [HttpSys : la renégociation de certificat client est désactivée par défaut](#httpsys-client-certificate-renegotiation-disabled-by-default)
 - [Identité : surcharge de la méthode AddDefaultUI supprimée](#identity-adddefaultui-method-overload-removed)
 - [Identité : modification de la version du bootstrap de l’interface utilisateur](#identity-default-bootstrap-version-of-ui-changed)
 - [Identité : SignInAsync lève une exception pour l’identité non authentifiée](#identity-signinasync-throws-exception-for-unauthenticated-identity)
 - [Identité : le constructeur SignInManager accepte le nouveau paramètre](#identity-signinmanager-constructor-accepts-new-parameter)
 - [Identité : l’interface utilisateur utilise la fonctionnalité de ressources Web statiques](#identity-ui-uses-static-web-assets-feature)
+- [IIS : les chaînes de requête d’intergiciel UrlRewrite sont conservées](#iis-urlrewrite-middleware-query-strings-are-preserved)
 - [Kestrel : modifications de configuration au moment de l’exécution détectées par défaut](#kestrel-configuration-changes-at-run-time-detected-by-default)
 - [Kestrel : adaptateurs de connexion supprimés](#kestrel-connection-adapters-removed)
 - [Kestrel : les versions de protocole TLS prises en charge par défaut ont été modifiées](#kestrel-default-supported-tls-protocol-versions-changed)
 - [Kestrel : un assembly HTTPs vide a été supprimé](#kestrel-empty-https-assembly-removed)
+- [Kestrel : HTTP/2 désactivé sur TLS sur des versions de Windows incompatibles](#kestrel-http2-disabled-over-tls-on-incompatible-windows-versions)
 - [Kestrel : les en-têtes de demande de code de fin sont déplacés vers la nouvelle collection](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel : modifications apportées à la couche d’abstraction de transport](#kestrel-transport-abstractions-removed-and-made-public)
 - [Localisation : API marquées comme obsolètes](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
@@ -100,10 +103,22 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 ***
 
+[!INCLUDE[HttpSys: Client certificate renegotiation disabled by default](~/includes/core-changes/aspnetcore/5.0/httpsys-client-certificate-renegotiation-disabled-by-default.md)]
+
+***
+
+[!INCLUDE[IIS: UrlRewrite middleware query strings are preserved](~/includes/core-changes/aspnetcore/5.0/iis-urlrewrite-middleware-query-strings-are-preserved.md)]
+
+***
+
 [!INCLUDE[Kestrel: Configuration changes at run time detected by default](~/includes/core-changes/aspnetcore/5.0/kestrel-configuration-changes-at-run-time-detected-by-default.md)]
 
 ***
 [!INCLUDE[Kestrel: Default supported TLS protocol versions changed](~/includes/core-changes/aspnetcore/5.0/kestrel-default-supported-tls-protocol-versions-changed.md)]
+
+***
+
+[!INCLUDE[Kestrel: HTTP/2 disabled over TLS on incompatible Windows versions](~/includes/core-changes/aspnetcore/5.0/kestrel-disables-http2-over-tls.md)]
 
 ***
 

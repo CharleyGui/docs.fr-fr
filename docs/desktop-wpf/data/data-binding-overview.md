@@ -1,18 +1,18 @@
 ---
 title: Vue d’ensemble de la liaison de données
 description: En savoir plus sur les différentes sources de données que vous pouvez ajouter à votre projet dans Windows Presentation Foundation pour .NET Core. Les sources de données peuvent être liées à des éléments XAML pour créer des applications dynamiques.
-author: thraka
+author: adegeo
 ms.date: 09/19/2019
 ms.author: adegeo
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 4f7119ab8286e80160a500481675f83dfaef7713
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 829c93e97990b87e6e568614236de9708ef080d9
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662977"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325757"
 ---
 # <a name="data-binding-overview-in-wpf"></a>Vue d’ensemble de la liaison de données dans WPF
 

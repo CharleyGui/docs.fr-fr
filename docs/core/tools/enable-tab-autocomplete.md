@@ -1,23 +1,23 @@
 ---
 title: Activer la saisie semi-automatique via la touche Tab
 description: Cet article vous explique comment activer la saisie semi-automatique via la touche TAB pour l’interface CLI .NET Core dans PowerShell, Bash et zsh.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 11/03/2019
-ms.openlocfilehash: 31328be14811760bc8d7fb527e0d55abfe6b1493
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 491e1ca34c20c3994a571fc2deff7392c6bdb3f2
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156749"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324389"
 ---
 # <a name="how-to-enable-tab-completion-for-the-net-core-cli"></a>Activation de la saisie semi-automatique via la touche TAB pour l’interface CLI .NET Core
 
-**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-Cet article décrit comment configurer la saisie semi-automatique via la touche TAB pour trois des interpréteurs de commandes : PowerShell, Bash et zsh. Pour les autres coquilles, consultez leur documentation sur la façon de configurer l’achèvement de l’onglet.
+Cet article décrit comment configurer la saisie semi-automatique via la touche TAB pour trois des interpréteurs de commandes : PowerShell, Bash et zsh. Pour les autres shells, reportez-vous à leur documentation sur la configuration de la saisie semi-automatique par tabulation.
 
-Une fois configuré, l’achèvement de l’onglet `dotnet` pour le CLI de base .NET est déclenché par la saisie d’une commande dans la coquille, puis en appuyant sur la clé TAB. La ligne de commande actuelle est envoyée à la commande `dotnet complete`, et les résultats sont traités par votre interpréteur de commandes. Vous pouvez tester les résultats sans activer la saisie semi-automatique via la touche TAB en envoyant une instruction directement à la commande `dotnet complete`. Par exemple :
+Une fois la configuration terminée, la saisie semi-automatique via la touche Tab pour le CLI .NET Core est déclenchée en tapant une `dotnet` commande dans l’interpréteur de commandes, puis en appuyant sur la touche Tab. La ligne de commande actuelle est envoyée à la commande `dotnet complete`, et les résultats sont traités par votre interpréteur de commandes. Vous pouvez tester les résultats sans activer la saisie semi-automatique via la touche TAB en envoyant une instruction directement à la commande `dotnet complete`. Par exemple :
 
 ```console
 > dotnet complete "dotnet a"

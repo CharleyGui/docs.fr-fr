@@ -1,37 +1,37 @@
 ---
 title: Créer un pack de modèles pour dotnet new
 description: Découvrez comment créer un fichier csproj qui générera un pack de modèles pour la commande dotnet new.
-author: thraka
+author: adegeo
 ms.date: 12/10/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 5bc926861dd6a501d7c2d24bd5f7c4116cc78b2c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 25264fff42c47f5bb660f68f85dbb123b5b2608c
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503493"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324327"
 ---
-# <a name="tutorial-create-a-template-pack"></a>Tutorial: Créer un pack de modèles
+# <a name="tutorial-create-a-template-pack"></a>Didacticiel : créer un pack de modèles
 
-Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce tutoriel est la troisième partie d’une série qui vous apprend à créer, `dotnet new` installer et désinstaller les modèles pour une utilisation avec la commande.
+Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce didacticiel est la troisième partie d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la `dotnet new` commande.
 
 Dans cette partie de la série, vous découvrirez comment :
 
 > [!div class="checklist"]
 >
-> * Créer \*un projet .csproj pour construire un pack de modèles
+> * Créer un \* projet. csproj pour générer un pack de modèles
 > * Configurer le fichier projet pour la compression
 > * Installer un modèle à partir d’un fichier NuGet
 > * Désinstaller un modèle par ID de package
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 * Complétez la [première partie](cli-templates-create-item-template.md) et la [deuxième partie](cli-templates-create-project-template.md) de cette série de tutoriels.
 
-  Ce tutoriel utilise les deux modèles créés dans les deux premières parties. Vous pouvez utiliser un modèle différent tant que vous copiez le modèle, comme un dossier, dans le dossier _de travail-modèles.\\ _
+  Ce tutoriel utilise les deux modèles créés dans les deux premières parties. Vous pouvez utiliser un autre modèle à condition de copier le modèle, en tant que dossier, dans le _dossier \\ working\templates_ .
 
-* Ouvrez un terminal et naviguez vers le dossier _de travail.\\ _
+* Ouvrez un terminal et accédez au dossier _de \\ travail_ .
 
 ## <a name="create-a-template-pack-project"></a>Créer un projet de pack de modèles
 
@@ -49,7 +49,7 @@ Dans votre terminal, accédez au dossier _working_. Créez un nouveau projet et 
 dotnet new console -n templatepack -o .
 ```
 
-Le `-n` paramètre définit le nom de fichier _.csproj_ à _templatepack.csproj_. Le `-o` paramètre crée les fichiers dans l’annuaire actuel. Vous devez voir un résultat similaire à la sortie suivante.
+Le `-n` paramètre définit le nom de fichier _. csproj_ sur _templatepack. csproj_. Le `-o` paramètre crée les fichiers dans le répertoire actif. Vous devez voir un résultat similaire à la sortie suivante.
 
 ```dotnetcli
 dotnet new console -n templatepack -o .

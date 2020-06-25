@@ -1,15 +1,15 @@
 ---
 title: Installer .NET Core sur SLES-.NET Core
 description: Montre les différentes façons d’installer kit SDK .NET Core et le Runtime .NET Core sur SLES.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 9816e1f0253be58dc04c1302f334a7ea0b810810
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: e1a2490c1d653eb07aebdd51e34e1bf462906482
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768394"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324699"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-sles"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur SLES
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: f5fd61452d6f83bd035b5c6930bd09673c0ded23
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 34f9f2df11f9b7c51fcec2f8475a50ccf4c5e220
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662951"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324130"
 ---
 # <a name="how-to-search-strings"></a>Comment rechercher des chaînes
 
@@ -23,11 +23,11 @@ Le type [string](../language-reference/builtin-types/reference-types.md#the-stri
 
 ## <a name="does-a-string-contain-text"></a>Une chaîne contient-elle un certain texte ?
 
-Les méthodes <xref:System.String.Contains%2A?displayProperty=nameWithType>, <xref:System.String.StartsWith%2A?displayProperty=nameWithType> et <xref:System.String.EndsWith%2A?displayProperty=nameWithType> recherchent un texte spécifique dans une chaîne. L’exemple suivant montre chacune de ces méthodes et une variante qui utilise une recherche sans respecter la casse :
+Les <xref:System.String.Contains%2A?displayProperty=nameWithType> <xref:System.String.StartsWith%2A?displayProperty=nameWithType> méthodes, et <xref:System.String.EndsWith%2A?displayProperty=nameWithType> recherchent un texte spécifique dans une chaîne. L’exemple suivant illustre chacune de ces méthodes et une variation qui utilise une recherche ne respectant pas la casse :
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs" id="Snippet1":::
 
-L’exemple précédent montre un point important de l’utilisation de ces méthodes. Par défaut, les recherches **respectent la casse**. Vous utilisez la valeur d’énumération <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> pour spécifier une recherche qui ne respecte pas la casse.
+L’exemple précédent montre un point important de l’utilisation de ces méthodes. Par défaut, les recherches **respectent la casse**. Vous utilisez la <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> valeur d’énumération pour spécifier une recherche qui ne respecte pas la casse.
 
 ## <a name="where-does-the-sought-text-occur-in-a-string"></a>Où le texte recherché se trouve-t-il dans une chaîne ?
 
@@ -41,7 +41,7 @@ La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithTyp
 
 L’exemple de code suivant recherche le mot « the » ou « their » dans une phrase, indépendamment de la casse. La méthode statique <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> effectue la recherche. Vous lui passez la chaîne à rechercher et un modèle de recherche. Dans ce cas, un troisième argument spécifie que la recherche est insensible à la casse. Pour plus d’informations, consultez <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
 
-Le modèle de recherche décrit le texte que vous recherchez. Le tableau suivant décrit chaque élément du modèle de recherche. (Le tableau ci-dessous utilise une barre oblique inversée [`\`] qui, dans une chaîne C#, doit être précédée d’un caractère d’échappement sous la forme `\\`).
+Le modèle de recherche décrit le texte que vous recherchez. Le tableau suivant décrit chaque élément du modèle de recherche. (Le tableau ci-dessous utilise le seul `\` qui doit être placé `\\` dans une séquence d’échappement comme dans une chaîne C#).
 
 | Modèle  | Signification                          |
 |----------|----------------------------------|

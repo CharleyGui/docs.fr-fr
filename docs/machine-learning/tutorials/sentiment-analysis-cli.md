@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 06/03/2020
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: aab59463daad30748277602b9ab1d8ca2f3fa1f5
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: fcd325d518b276ccb042f3702db978e9189715b8
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767674"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326021"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -52,7 +52,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
 2. Copiez le fichier `yelp_labelled.txt` dans un dossier que vous avez créé précédemment (par exemple, `/cli-test`).
 
-3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Par exemple :
+3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Par exemple :
 
     ```console
     cd /cli-test
@@ -175,7 +175,7 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
         ```
 
     - La ligne de code suivante utilise la `ConsumeModel.Predict()` méthode sur les données d’entrée spécifiées pour effectuer une prédiction et retourner les résultats (selon le schéma ModelOutput.cs).
-    - Les dernières lignes de code impriment le propriétés des exemples de données (dans ce cas, le commentaire), ainsi que la prédiction de sentiment et les scores correspondants pour un sentiment positif (1) et un sentiment négatif (2).
+    - Les dernières lignes de code impriment les propriétés des exemples de données (dans ce cas, le commentaire), ainsi que la prédiction de sentiment et les scores correspondants pour un sentiment positif (1) et un sentiment négatif (2).
 
 1. Exécutez le projet, soit en utilisant l’exemple de données initialement chargé de la première ligne du jeu de données, soit en fournissant votre propre exemple de données personnalisées codées en dur. Vous devez obtenir une prédiction comparable à ceci :
 

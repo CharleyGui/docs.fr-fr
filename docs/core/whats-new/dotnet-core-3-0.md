@@ -3,15 +3,15 @@ title: Nouveautés de .NET Core 3.0
 description: Découvrez les nouvelles fonctionnalités de .NET Core 3.0.
 dev_langs:
 - csharp
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 422cb7b20e2644ab44f9573f101fb6b53ab1dd2f
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 7caeaaa834dc827998d7d1bc3a25ba4e194996f4
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378825"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324409"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -257,14 +257,14 @@ Les outils locaux s’appuient sur un nom de fichier manifeste `dotnet-tools.jso
 
 Pour les outils locaux et globaux, une version compatible du runtime est requise. De nombreux outils actuellement sur NuGet.org ciblent le runtime .NET Core 2.1. Pour installer ces outils de façon locale ou globale, vous devez toujours installer le [runtime NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
 
-### <a name="new-globaljson-options"></a>Nouvelles options global. JSON
+### <a name="new-globaljson-options"></a>Nouvelle global.jssur options
 
-Le fichier *global. JSON* présente de nouvelles options qui offrent plus de flexibilité lorsque vous essayez de définir la version de la kit SDK .net Core utilisée. Les nouvelles options sont les suivantes :
+La *global.jssur* le fichier a de nouvelles options qui offrent davantage de flexibilité quand vous essayez de définir la version de la kit SDK .net Core utilisée. Les nouvelles options sont les suivantes :
 
 - `allowPrerelease`: Indique si le programme de résolution du SDK doit prendre en compte les versions préliminaires lorsque vous sélectionnez la version du kit de développement logiciel (SDK) à utiliser.
 - `rollForward`: Indique la stratégie de restauration par progression à utiliser lors de la sélection d’une version du kit de développement logiciel (SDK), en tant que solution de secours quand une version spécifique du kit de développement logiciel est manquante ou en tant que directive pour utiliser une version plus récente.
 
-Pour plus d’informations sur les modifications, y compris les valeurs par défaut, les valeurs prises en charge et les nouvelles règles de correspondance, consultez [vue d’ensemble de Global. JSON](../tools/global-json.md).
+Pour plus d’informations sur les modifications, y compris les valeurs par défaut, les valeurs prises en charge et les nouvelles règles de correspondance, consultez [global.jsdans vue d’ensemble](../tools/global-json.md).
 
 ### <a name="smaller-garbage-collection-heap-sizes"></a>Tailles de tas de garbage collection plus petites
 
@@ -512,7 +512,7 @@ Pour plus d’informations, consultez [intrinsèques dépendants de la plateform
 
 ### <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 
-À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Par exemple :
+À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Par exemple :
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");
@@ -539,13 +539,13 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### <a name="fast-built-in-json-support"></a>Prise en charge JSON intégrée rapide
 
-Les utilisateurs .NET ont largement utilisé [Newtonsoft. JSON](https://www.newtonsoft.com/json) et d’autres bibliothèques JSON populaires, qui continuent d’être de bons choix. `Newtonsoft.Json`utilise des chaînes .NET comme type de données de base, UTF-16 en coulisses.
+Les utilisateurs .NET ont largement utilisé [Newtonsoft.Jssur](https://www.newtonsoft.com/json) et d’autres bibliothèques JSON populaires, qui continuent d’être de bons choix. `Newtonsoft.Json`utilise des chaînes .NET comme type de données de base, UTF-16 en coulisses.
 
 La nouvelle prise en charge de JSON intégrée est la haute performance, une faible allocation et fonctionne avec du texte JSON encodé en UTF-8. Pour plus d’informations sur l' <xref:System.Text.Json> espace de noms et les types, consultez les articles suivants :
 
 * [Sérialisation JSON dans .NET-vue d’ensemble](../../standard/serialization/system-text-json-overview.md)
 * [Comment sérialiser et désérialiser JSON dans .net](../../standard/serialization/system-text-json-how-to.md).
-* [Comment migrer de Newtonsoft. JSON vers System. Text. JSON](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Migration de Newtonsoft.Jsvers System.Text.Jssur](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
 
 ### <a name="http2-support"></a>Assistance HTTP/2
 

@@ -6,30 +6,31 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-ms.openlocfilehash: cea9c038896d07d526874e2ae4c33e479eaa3963
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 499af6d7b8de1decbcffefe0a3b1420cc548488a
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769130"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326041"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Quand utiliser une collection thread-safe
-.NET Framework 4 propose cinq nouveaux types de collection spécialement conçus pour prendre en charge les opérations d’ajout et de suppression multithread. Pour garantir la cohérence de thread, ces nouveaux types utilisent différentes sortes de mécanismes de verrouillage et de synchronisation sans verrou efficaces. La synchronisation ajoute une surcharge à une opération. La quantité de la surcharge dépend du genre de synchronisation utilisé, du genre d’opérations exécutées et d’autres facteurs tels que le nombre de threads qui tentent d’accéder simultanément à la collection.  
+
+.NET Framework 4 a introduit cinq types de collection spécialement conçus pour prendre en charge les opérations d’ajout et de suppression multithread. Pour assurer la sécurité des threads, ces types utilisent différents types de mécanismes de verrouillage et de synchronisation sans verrou efficaces. La synchronisation ajoute une surcharge à une opération. La quantité de la surcharge dépend du genre de synchronisation utilisé, du genre d’opérations exécutées et d’autres facteurs tels que le nombre de threads qui tentent d’accéder simultanément à la collection.  
   
  Dans certains scénarios, la surcharge de synchronisation est négligeable et permet au type multithread de s’exécuter beaucoup plus rapidement et d’évoluer beaucoup mieux que son équivalent qui n’est pas thread-safe quand il est protégé par un verrou externe. Dans d’autres scénarios, la surcharge peut entraîner une exécution et une scalabilité du type thread-safe à peu près identiques, ou même plus lentes, que celles de la version du type qui n’est pas thread-safe et qui est verrouillée de manière externe.  
   
  Les sections suivantes fournissent des recommandations générales concernant le moment où utiliser une collection thread-safe ou son équivalent non thread-safe qui a un verrou fourni par l’utilisateur autour de ses opérations de lecture et d’écriture. Étant donné que les performances peuvent varier en fonction de nombreux facteurs, ces recommandations ne sont pas spécifiques et ne sont pas nécessairement valables dans toutes les circonstances. Si les performances sont très importantes, la meilleure façon de déterminer le type de collection à utiliser consiste à mesurer les performances en fonction de configurations et de charges d’ordinateur représentatives. Ce document utilise les termes suivants :  
   
- *Scénario producteur-consommateur pur*  
+ *Scénario producteur-consommateur pur*\
  Tout thread donné ajoute ou supprime des éléments, mais pas les deux.  
   
- *Scénario producteur-consommateur mixte*  
+ *Scénario producteur-consommateur mixte*\
  Tout thread donné ajoute et supprime des éléments.  
   
- *Accélération*  
+ *Accélération*\
  Performances algorithmiques plus rapides par rapport à un autre type dans le même scénario.  
   
- *Extensibilité*  
+ *Évolutivité*\
  Augmentation des performances proportionnelle au nombre de cœurs de l’ordinateur. Un algorithme évolutif s’exécute plus vite sur huit cœurs que sur deux cœurs.  
   
 ## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue (T) vs. queue (T)  

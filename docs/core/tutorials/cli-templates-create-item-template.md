@@ -1,18 +1,18 @@
 ---
 title: Créer un modèle d’élément pour la commande dotnet new - CLI .NET Core
 description: Découvrez comment créer un modèle d’élément pour la commande dotnet new. Les modèles d’élément peuvent contenir n’importe quel nombre de fichiers.
-author: thraka
+author: adegeo
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 5f4038e863d9bb59df470d3516c08fd2ad29c078
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b804d26b2f33d4d600c17de2f7f71101a0f9c98
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503559"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324371"
 ---
-# <a name="tutorial-create-an-item-template"></a>Tutorial: Créer un modèle d’élément
+# <a name="tutorial-create-an-item-template"></a>Didacticiel : créer un modèle d’élément
 
 Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce tutoriel est le premier d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la commande `dotnet new`.
 
@@ -26,7 +26,7 @@ Dans cette partie de la série, vous découvrirez comment :
 > * Tester un modèle d’élément
 > * Désinstaller un modèle d'élément
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 * [SDK .NET Core 2.2](https://dotnet.microsoft.com/download) ou versions ultérieures.
 * Lisez l’article de référence [Modèles personnalisés pour dotnet new](../tools/custom-templates.md).
@@ -41,7 +41,7 @@ Cette série utilise un « dossier de travail » dans lequel se trouve votre s
 
 Tout d’abord, créez le dossier parent, le nom n’a pas d’importance. Puis, créez un sous-dossier nommé _working_. Dans le dossier _working_, créez un sous-dossier nommé _templates_.
 
-Ensuite, créez un dossier sous le dossier parent nommé _test_. La structure du dossier doit ressembler à ce qui suit.
+Ensuite, créez un dossier sous le dossier parent nommé _test_. La structure des dossiers doit ressembler à ce qui suit.
 
 ```console
 parent_folder
@@ -99,7 +99,7 @@ working
                 template.json
 ```
 
-Ouvrez le _template.json_ avec votre éditeur de texte préféré et collez dans le code JSON suivant et enregistrez-le.
+Ouvrez le _template.jsdans_ avec votre éditeur de texte préféré et collez le code JSON suivant et enregistrez-le.
 
 ```json
 {
@@ -123,7 +123,7 @@ L’élément `classifications` représente la colonne **tags** que vous voyez l
 Maintenant que vous avez un fichier _.template.config/template.json_ valide, votre modèle est prêt à être installé. Dans votre terminal, accédez au dossier _extensions_ et exécutez la commande suivante pour installer le modèle situé dans le dossier actuel :
 
 * **Sur Windows**:`dotnet new -i .\`
-* **Sur Linux ou macOS**:`dotnet new -i ./`
+* **Sur Linux ou MacOS**:`dotnet new -i ./`
 
 Cette commande génère la liste des modèles installés, qui doivent inclure le vôtre.
 
@@ -155,7 +155,7 @@ Maintenant que vous avez un modèle d’élément installé, testez-le. Accédez
 dotnet new console
 ```
 
-Vous obtenez la sortie similaire à ce qui suit.
+Vous recevez une sortie similaire à ce qui suit.
 
 ```console
 The template "Console Application" was created successfully.
@@ -167,13 +167,13 @@ Running 'dotnet restore' on C:\test\test.csproj...
 Restore succeeded.
 ```
 
-Exécuter le projet avec.
+Exécutez le projet avec.
 
 ```dotnetcli
 dotnet run
 ```
 
-Vous obtenez la sortie suivante.
+Vous recevez la sortie suivante.
 
 ```console
 Hello World!
@@ -185,7 +185,7 @@ Ensuite, exécutez `dotnet new stringext` pour générer _CommonExtensions.cs_ �
 dotnet new stringext
 ```
 
-Vous obtenez la sortie suivante.
+Vous recevez la sortie suivante.
 
 ```console
 The template "Example templates: string extensions" was created successfully.
@@ -203,7 +203,7 @@ Réexécutez le programme et vous verrez que le résultat est inversé.
 dotnet run
 ```
 
-Vous obtenez la sortie suivante.
+Vous recevez la sortie suivante.
 
 ```console
 !dlroW olleH
@@ -219,7 +219,7 @@ Félicitations ! Vous avez créé et déployé un modèle d’élément avec .NE
 dotnet new -u
 ```
 
-Vous obtenez la sortie similaire à ce qui suit.
+Vous recevez une sortie similaire à ce qui suit.
 
 ```console
 Template Instantiation Commands for .NET Core CLI

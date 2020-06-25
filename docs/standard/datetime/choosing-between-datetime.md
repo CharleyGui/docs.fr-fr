@@ -1,6 +1,6 @@
 ---
-title: Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
-description: Découvrez comment choisir entre les types DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo pour représenter les informations de date et d’heure dans .NET.
+title: Comparer DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
+description: Découvrez les différences entre les types DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo pour représenter les informations de date et d’heure dans .NET.
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,16 +14,16 @@ helpviewer_keywords:
 - time zones [.NET Framework], type options
 - DateTime structure
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
-ms.openlocfilehash: 0b89d0fd36af00796105af50f51803c90cce2605
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 03d00fb802032b981a5ebe80f7166eba0fb54a60
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662808"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326058"
 ---
-# <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
+# <a name="choose-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
 
-Les applications .NET qui utilisent des informations de date et d’heure sont très diverses et peuvent utiliser ces informations de plusieurs façons. Les utilisations les plus courantes des informations de date et d'heure sont une ou plusieurs parmi les suivantes :
+Les applications .NET peuvent utiliser les informations de date et d’heure de plusieurs façons. Les utilisations les plus courantes des informations de date et d’heure sont les suivantes :
 
 - Pour refléter seulement une date, les informations d'heure n'étant pas importantes.
 
@@ -33,7 +33,7 @@ Les applications .NET qui utilisent des informations de date et d’heure sont t
 
 - Pour récupérer des informations de date et d’heure à partir de sources en dehors de .NET, en général, où les informations de date et d’heure sont stockées dans un type de données simple.
 
-- Pour identifier de façon univoque et non ambiguë un point unique dans le temps. Certaines applications requièrent qu'une date/heure soit ambiguë seulement sur le système hôte. D'autres requièrent qu'elle soit non ambiguë entre les systèmes (autrement dit, une date sérialisée sur un système peut être désérialisée de manière significative et utilisée sur un autre système n'importe où dans le monde).
+- Pour identifier de façon univoque et non ambiguë un point unique dans le temps. Certaines applications requièrent qu’une date et une heure ne soient pas ambiguës sur le système hôte. D’autres applications requièrent une non-ambiguïté entre les systèmes (autrement dit, une date sérialisée sur un système peut être désérialisée de manière significative et utilisée sur un autre système n’importe où dans le monde).
 
 - Pour conserver plusieurs dates/heures ayant un lien les unes avec les autres (comme la date/heure locale du demandeur et la date/heure de réception par le serveur d'une demande web).
 
@@ -48,7 +48,7 @@ Les applications .NET qui utilisent des informations de date et d’heure sont t
 
 Une valeur <xref:System.DateTime> définit une date/heure spécifique. Il inclut une <xref:System.DateTime.Kind%2A> propriété qui fournit des informations limitées sur le fuseau horaire auquel cette date et cette heure appartiennent. La valeur <xref:System.DateTimeKind> retournée par la propriété <xref:System.DateTime.Kind%2A> indique si la valeur <xref:System.DateTime> représente la date/heure locale (<xref:System.DateTimeKind.Local?displayProperty=nameWithType>), la date/heure UTC (<xref:System.DateTimeKind.Utc?displayProperty=nameWithType>) ou une date/heure non spécifiée (<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>).
 
-La structure <xref:System.DateTime> convient pour les applications qui :
+La <xref:System.DateTime> structure convient aux applications présentant une ou plusieurs des caractéristiques suivantes :
 
 - Utilisent seulement des dates.
 
@@ -73,7 +73,7 @@ Sauf si une valeur <xref:System.DateTime> particulière représente le temps UTC
 
 La structure <xref:System.DateTimeOffset> représente une valeur de date et d'heure, ainsi qu'un décalage qui indique de combien cette valeur diffère du temps UTC. Ainsi, la valeur toujours identifie toujours de façon non ambiguë un point unique dans le temps.
 
-Le type <xref:System.DateTimeOffset> comprend toutes les fonctionnalités du type <xref:System.DateTime> , ainsi que la gestion des fuseaux horaires. Cela convient aux applications qui effectuent les opérations suivantes :
+Le type <xref:System.DateTimeOffset> comprend toutes les fonctionnalités du type <xref:System.DateTime> , ainsi que la gestion des fuseaux horaires. Cela le rend approprié pour les applications qui :
 
 - Identifient de façon univoque et non ambiguë un point unique dans le temps. Le type <xref:System.DateTimeOffset> peut être utilisé pour définir de façon non ambiguë la signification de "maintenant", pour consigner les dates/heures des transactions, pour consigner les dates/heures des événements système ou des événements d'une application, et pour enregistrer les dates/heures de création et de modification des fichiers.
 
@@ -82,14 +82,14 @@ Le type <xref:System.DateTimeOffset> comprend toutes les fonctionnalités du typ
 - Conservent plusieurs dates/heures ayant un lien entre elles, comme les dates/heures qui sont stockées sous la forme de deux valeurs distinctes ou de deux membres d'une structure.
 
 > [!NOTE]
-> Ces utilisations pour des valeurs <xref:System.DateTimeOffset> sont beaucoup plus courantes que celles pour les valeurs <xref:System.DateTime> . Par conséquent, <xref:System.DateTimeOffset> doit être considéré comme le type de date et d'heure par défaut pour le développement d'applications.
+> Ces utilisations pour des valeurs <xref:System.DateTimeOffset> sont beaucoup plus courantes que celles pour les valeurs <xref:System.DateTime> . Par conséquent, considérez <xref:System.DateTimeOffset> comme le type de date et d’heure par défaut pour le développement d’applications.
 
-Une valeur <xref:System.DateTimeOffset> n'est pas liée à un fuseau horaire particulier, mais peut provenir de n'importe quel fuseau horaire. Pour illustrer cela, l'exemple suivant répertorie les fuseaux horaires auxquels plusieurs valeurs <xref:System.DateTimeOffset> (y compris une Heure du Pacifique locale) peuvent appartenir.
+Une <xref:System.DateTimeOffset> valeur n’est pas liée à un fuseau horaire particulier, mais peut provenir de différents fuseaux horaires. L’exemple suivant répertorie les fuseaux horaires auxquels plusieurs <xref:System.DateTimeOffset> valeurs (y compris une heure locale du Pacifique) peuvent appartenir.
 
 [!code-csharp[System.DateTimeOffset.Conceptual#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual1.cs#1)]
 [!code-vb[System.DateTimeOffset.Conceptual#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual1.vb#1)]
 
-La sortie montre que chaque valeur de date et d'heure de cet exemple peut appartenir à au moins trois fuseaux horaires différents. La valeur <xref:System.DateTimeOffset> de 6/10/2007 indique que si une valeur de date/heure représente une heure d'été, son décalage avec le temps UTC ne correspond pas nécessairement au décalage UTC de base du fuseau horaire d'origine ou au décalage avec le temps UTC indiqué par son nom d'affichage. Cela signifie que, comme une valeur <xref:System.DateTimeOffset> n'est pas fortement couplée avec son fuseau horaire, elle ne peut pas refléter la transition d'un fuseau horaire vers et depuis l'heure d'été. Ceci peut être particulièrement problématique quand des calculs de date et d'heure sont utilisés pour manipuler une valeur <xref:System.DateTimeOffset> . Pour plus d’informations sur la façon d’effectuer des opérations arithmétiques de date et d’heure d’une manière qui prend en compte les règles d’ajustement d’un fuseau horaire, consultez [exécution d’opérations arithmétiques avec des dates et des heures](performing-arithmetic-operations.md).
+La sortie montre que chaque valeur de date et d'heure de cet exemple peut appartenir à au moins trois fuseaux horaires différents. La <xref:System.DateTimeOffset> valeur de 6/10/2007 indique que si une valeur de date et d’heure représente une heure d’été, son décalage par rapport à l’heure UTC ne correspond pas nécessairement au décalage UTC de base du fuseau horaire d’origine ou au décalage par rapport à l’heure UTC trouvée dans son nom d’affichage. Comme une <xref:System.DateTimeOffset> valeur unique n’est pas étroitement couplée avec son fuseau horaire, elle ne peut pas refléter la transition d’un fuseau horaire vers et depuis l’heure d’été. Cela peut être problématique lorsque des opérations arithmétiques de date et d’heure sont utilisées pour manipuler une <xref:System.DateTimeOffset> valeur. Pour plus d’informations sur la façon d’effectuer des opérations arithmétiques de date et d’heure d’une manière qui prend en compte les règles d’ajustement d’un fuseau horaire, consultez [exécution d’opérations arithmétiques avec des dates et des heures](performing-arithmetic-operations.md).
 
 ## <a name="the-timespan-structure"></a>La structure TimeSpan
 
@@ -117,7 +117,7 @@ La classe <xref:System.TimeZoneInfo> class represents any of the Earth's time zo
 
 Dans certains cas, tirer parti de la classe <xref:System.TimeZoneInfo> peut nécessiter du travail de développement supplémentaire. Si les valeurs de date et d’heure ne sont pas étroitement couplées avec les fuseaux horaires auxquels elles appartiennent, un travail supplémentaire est nécessaire. À moins que votre application ne fournisse un mécanisme de liaison d’une date et d’une heure avec son fuseau horaire associé, il est facile pour une valeur de date et d’heure particulière de se dissocier de son fuseau horaire. Une méthode pour lier ces informations consiste à définir une classe ou une structure qui contient à la fois la date/heure et son objet de fuseau horaire associé.
 
-Tirer parti de la prise en charge des fuseaux horaires dans .NET est possible seulement si le fuseau horaire auquel appartient une valeur de date/heure est connu quand cet objet de date/heure est instancié. Ce n'est pas souvent le cas, en particulier dans les applications web ou réseau.
+Pour tirer parti de la prise en charge des fuseaux horaires dans .NET, vous devez connaître le fuseau horaire auquel une valeur de date et d’heure appartient quand cet objet de date et d’heure est instancié. Le fuseau horaire est souvent inconnu, en particulier dans les applications Web ou réseau.
 
 ## <a name="see-also"></a>Voir aussi
 

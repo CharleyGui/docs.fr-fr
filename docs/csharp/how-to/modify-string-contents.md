@@ -3,16 +3,16 @@ title: Comment modifier le contenu d’une chaîne-Guide C#
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: a32665b67cfa73aa7d4753a1427c6955827e1b86
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: e607a8a2e96a73f64463d75a75a2bfe3f518d118
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663003"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324163"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Comment modifier le contenu d’une chaîne en C\#
 
-Cet article présente plusieurs techniques pour produire un `string` en modifiant un `string` existant. Toutes les techniques présentées retournent le résultat des modifications sous la forme d’un nouvel objet `string`. Pour illustrer clairement ceci, tous les exemples stockent le résultat dans une nouvelle variable. Vous pouvez ensuite examiner le `string` d’origine et le `string` résultant de la modification quand vous exécutez chaque exemple.
+Cet article présente plusieurs techniques pour produire un `string` en modifiant un `string` existant. Toutes les techniques présentées retournent le résultat des modifications sous la forme d’un nouvel objet `string`. Pour démontrer que les chaînes d’origine et modifiées sont des instances distinctes, les exemples stockent le résultat dans une nouvelle variable. Vous pouvez examiner les originaux `string` et les nouveaux, modifiés `string` lorsque vous exécutez chaque exemple.
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
@@ -68,7 +68,7 @@ L’exemple suivant montre comment remplacer un jeu de caractères dans une cha�
 
 :::code language="csharp" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet7":::
 
-Vous pouvez modifier une chaîne dans un bloc fixe avec du code non sécurisé, mais il est **fortement** déconseillé de modifier le contenu de la chaîne après la création d’une chaîne. Cela entraînera une rupture des choses de manière imprévisible. Par exemple, si quelqu’un met en interne une chaîne qui a le même contenu que le vôtre, il obtiendra votre copie et ne s’attendra pas à ce que vous modifiiez sa chaîne.
+Vous pouvez modifier une chaîne dans un bloc fixed avec du code unsafe, mais il est **fortement** déconseillé de modifier le contenu de la chaîne après la création d’une chaîne. Cela entraînera une rupture des choses de manière imprévisible. Par exemple, si quelqu’un effectue une chaîne qui a le même contenu que le vôtre, il obtient votre copie et ne s’attend pas à ce que vous modifiiez sa chaîne.
 
 ## <a name="see-also"></a>Voir aussi
 

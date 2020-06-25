@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary"
+title: ajouter et supprimer des éléments d’un ConcurrentDictionary
 description: Lisez un exemple illustrant comment ajouter, récupérer, mettre à jour et supprimer des éléments de la classe de collection ConcurrentDictionary<TKey, TValue> dans .NET.
 ms.date: 05/04/2020
 ms.technology: dotnet-standard
@@ -9,14 +9,14 @@ dev_langs:
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-ms.openlocfilehash: 827eb9db984289929c591046a4713419c9587312
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 0bfc17d93ea3088a7b2e4209e25003856770b9e7
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662860"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325963"
 ---
-# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary
+# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Ajout et suppression d’éléments d’un ConcurrentDictionary
 
 Cet exemple montre comment ajouter, extraire, mettre à jour et supprimer des éléments dans un <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Cette classe de collection est une implémentation thread-safe. Nous vous recommandons de l’utiliser chaque fois que plusieurs threads tentent d’accéder aux éléments de façon simultanée.
 
@@ -37,7 +37,7 @@ L’exemple suivant utilise deux instances de<xref:System.Threading.Tasks.Task> 
 
 <xref:System.Collections.Concurrent.ConcurrentDictionary%602> est conçu pour les scénarios multithreads. Vous n’avez pas besoin d’utiliser des verrous dans votre code pour ajouter ou supprimer des éléments dans la collection. Toutefois, il est toujours possible pour un thread de récupérer une valeur et pour un autre thread de mettre à jour immédiatement la collection en donnant une nouvelle valeur à la même clé.
 
-En outre, bien que toutes les méthodes de <xref:System.Collections.Concurrent.ConcurrentDictionary%602> soient thread-safe, toutes les méthodes sont atomiques, en particulier <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>. Le délégué utilisateur passé à ces méthodes est appelé en dehors du verrou interne du dictionnaire (cette opération est effectuée pour empêcher du code inconnu de bloquer tous les threads). Par conséquent, la séquence d’événements suivante peut se produire :
+En outre, bien que toutes les méthodes de <xref:System.Collections.Concurrent.ConcurrentDictionary%602> soient thread-safe, toutes les méthodes sont atomiques, en particulier <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>. Pour empêcher du code inconnu de bloquer tous les threads, le délégué utilisateur passé à ces méthodes est appelé en dehors du verrou interne du dictionnaire. Par conséquent, il est possible que cette séquence d’événements se produise :
 
 1. le _ThreadA_ appelle <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> , ne trouve aucun élément et crée un nouvel élément à ajouter en appelant le `valueFactory` délégué.
 
