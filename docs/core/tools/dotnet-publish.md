@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 697746291a8b34a856433049fe7264ad0ea4af7a
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 61cfcf06586f3ac66526de69a17b8aef3cf0c795
+ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761900"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85365581"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -37,8 +37,8 @@ dotnet publish -h|--help
 `dotnet publish` compile l’application, parcourt ses dépendances spécifiées dans le fichier projet et publie l’ensemble de fichiers obtenus dans un répertoire. La sortie inclut les ressources suivantes :
 
 - Le code de langage intermédiaire (IL) dans un assembly avec l’extension *dll*.
-- Un fichier *. DEPS. JSON* qui contient toutes les dépendances du projet.
-- Un fichier *. runtimeconfig. JSON* qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, garbage collection type).
+- *.deps.jssur* un fichier qui comprend toutes les dépendances du projet.
+- *.runtimeconfig.jssur* un fichier qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, garbage collection type).
 - Les dépendances de l’application, qui sont copiées à partir du cache NuGet dans le dossier de sortie.
 
 La sortie de la commande `dotnet publish` est prête pour le déploiement sur un système d’hébergement (par exemple, un serveur, PC, Mac, ordinateur portable) à des fins d’exécution. Il s’agit de la seule façon officiellement prise en charge pour préparer l’application au déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement. Pour plus d’informations, consultez [publier des applications .net core avec le CLI .net Core](../deploying/deploy-with-cli.md).
@@ -49,7 +49,7 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 ### <a name="msbuild"></a>MSBuild
 
-La commande `dotnet publish` appelle MSBuild, qui appelle la cible de `Publish`. Les paramètres passés à `dotnet publish` sont passés à MSBuild. Les paramètres `-c` et `-o` correspondent aux propriétés `Configuration` et `OutputPath` de MSBuild, respectivement.
+La commande `dotnet publish` appelle MSBuild, qui appelle la cible de `Publish`. Les paramètres passés à `dotnet publish` sont passés à MSBuild. Les paramètres `-c` et `-o` correspondent aux propriétés `Configuration` et `PublishDir` de MSBuild, respectivement.
 
 La `dotnet publish` commande accepte les options MSBuild, comme `-p` pour définir des propriétés et `-l` pour définir un enregistreur d’événements. Par exemple, vous pouvez définir une propriété MSBuild en utilisant le format : `-p:<NAME>=<VALUE>` . Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* , par exemple :
 
@@ -229,7 +229,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 - [Vue d’ensemble de la publication d’applications .NET Core](../deploying/index.md)
 - [Publier des applications .NET Core avec le CLI .NET Core](../deploying/deploy-with-cli.md)
-- [Versions cibles de .NET Framework](../../standard/frameworks.md)
+- [Frameworks cibles](../../standard/frameworks.md)
 - [Catalogue des identificateurs de Runtime (RID)](../rid-catalog.md)
 - [Utilisation de la notaire Catalina macOS](../install/macos-notarization-issues.md)
 - [Structure de répertoires d’une application publiée](/aspnet/core/hosting/directory-structure)
