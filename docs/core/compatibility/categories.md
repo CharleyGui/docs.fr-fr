@@ -1,24 +1,24 @@
 ---
-title: Catégories de changements cassants
-description: Découvrez comment les changements cassants sont catégorisés dans .NET Core.
+title: Compatibilité
+description: En savoir plus sur la façon dont les modifications du code peuvent affecter la compatibilité dans .NET.
 ms.date: 06/10/2019
-ms.openlocfilehash: b273ebbb82da803cde66ea34760aa1779c6c1ca5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1cf14b7ff4143367653bd1c305cc1dda6711f980
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093043"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415691"
 ---
-# <a name="breaking-change-categories"></a>Catégories de changements cassants
+# <a name="how-code-changes-can-affect-compatibility"></a>Comment les modifications du code peuvent affecter la compatibilité
 
-*Compatibilité* fait référence à la possibilité de compiler ou d’exécuter du code sur une version d’une implémentation de .NET autre que celle avec laquelle le code a été développé à l’origine. Un changement particulier peut affecter la compatibilité de six façons différentes. Les [types individuels de changements](index.md) qui sont pris en considération lors de l’évaluation de la compatibilité entrent dans les catégories suivantes :
+*Compatibilité* fait référence à la possibilité de compiler ou d’exécuter du code sur une version d’une implémentation de .NET autre que celle avec laquelle le code a été développé à l’origine. Une [modification particulière](index.md) peut affecter la compatibilité de six façons différentes :
 
-- [changement comportemental](#behavioral-change)
-- [compatibilité binaire](#binary-compatibility)
-- [compatibilité source](#source-compatibility)
-- [compatibilité de conception-temps](#design-time-compatibility)
-- [Rétrocompatibilité](#backwards-compatibility)
-- [compatibilité vers l’avant](#forward-compatibility) (pas un objectif de .NET Core)
+- [Changements de comportement](#behavioral-change)
+- [Compatibilité binaire](#binary-compatibility)
+- [Compatibilité source](#source-compatibility)
+- [Compatibilité au moment du design](#design-time-compatibility)
+- [Compatibilité descendante](#backwards-compatibility)
+- [Compatibilité ascendante](#forward-compatibility) (pas un objectif de .net Core)
 
 ## <a name="behavioral-change"></a>Changements de comportement
 
@@ -42,7 +42,7 @@ La compatibilité au moment du design fait référence à la préservation de l�
 
 La compatibilité descendante fait référence à la capacité d’un consommateur existant d’une API à s’exécuter avec une nouvelle version tout en se comportant de la même façon. Les changements de comportement et les changements de compatibilité binaire affectent la compatibilité descendante. Si un consommateur ne peut pas s’exécuter ou se comporte différemment lors de l’exécution avec une version plus récente de l’API, l’API est *incompatible au niveau descendant*.
 
-Les modifications qui affectent la compatibilité à l’envers sont déconseillées, car les développeurs s’attendent à une compatibilité à l’envers dans les versions plus récents d’une API.
+Les modifications qui affectent la compatibilité descendante sont déconseillées, car les développeurs s’attendent à une compatibilité descendante dans les versions plus récentes d’une API.
 
 ## <a name="forward-compatibility"></a>Compatibilité ascendante
 

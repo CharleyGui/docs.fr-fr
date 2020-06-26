@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé gcManagedToUnmanaged
+description: Passez en revue l’Assistant Débogage managé gcManagedToUnmanaged. Cet Assistant Débogage managé peut s’activer en raison d’une garbage collection prématurée pendant la transition vers du code non managé.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), garbage collection
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - garbage collection, run-time errors
 ms.assetid: 7417f837-805e-4fed-a430-ca919c8421dc
-ms.openlocfilehash: f7e6334e20a6e0db1d52307a833de0ecd0d74cc4
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 76c621a1f2bb780d38228f2a84d4c77441774770
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217478"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415912"
 ---
 # <a name="gcmanagedtounmanaged-mda"></a>Assistant Débogage managé gcManagedToUnmanaged
 L'Assistant Débogage managé (MDA) `gcManagedToUnmanaged` déclenche une opération garbage collection chaque fois qu'un thread effectue la transition du code managé au code non managé.  
@@ -25,7 +26,7 @@ L'Assistant Débogage managé (MDA) `gcManagedToUnmanaged` déclenche une opéra
 ## <a name="symptoms"></a>Symptômes  
  Un composant utilisateur non managé lève une violation d'accès lors de la tentative d'utilisation d'un objet managé qui avait été exposé à COM. L’objet COM semble avoir été libéré. La violation d'accès est non déterministe.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Si un composant non managé n'effectue pas correctement le décompte de références d'un objet COM managé, le runtime peut collecter un objet managé exposé à COM lorsque le composant non managé détient encore une référence à l'objet. Le runtime appelle <xref:System.Runtime.InteropServices.Marshal.Release%2A> pendant les opérations garbage collection. Par conséquent, si le composant utilisateur a recours à l’objet avant l’opération garbage collection, il n’aura pas encore été collecté. Cela explique le non-déterminisme.  
   
 ## <a name="resolution"></a>Résolution  
@@ -51,5 +52,5 @@ L'Assistant Débogage managé (MDA) `gcManagedToUnmanaged` déclenche une opéra
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)
 - [gcUnmanagedToManaged](gcunmanagedtomanaged-mda.md)

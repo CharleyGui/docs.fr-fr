@@ -1,16 +1,17 @@
 ---
 title: Activation du débogage JIT-attach
+description: Activez le débogage d’attachement juste-à-temps (JIT) pour attacher un débogueur à un processus lorsque vous rencontrez des erreurs. Elle peut être déclenchée par certaines méthodes ou fonctions.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT-attach debugging
 - debugging [.NET Framework], JIT-attach debugging
 ms.assetid: f91fc5f7-de5a-4f23-b6ac-f450e63c662e
-ms.openlocfilehash: 7adf1316a36d781439d364746fa11795a7fe165a
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: d1190c51a9cc6b5322ec832e0d35bc01dc855b12
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217535"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416042"
 ---
 # <a name="enabling-jit-attach-debugging"></a>Activation du débogage JIT-attach
 Débogage JIT-attach est l’expression utilisée pour décrire l’attachement d’un débogueur à un processus quand vous rencontrez des erreurs. Le débogage JIT-attach peut aussi être déclenché par des méthodes ou des fonctions spécifiques.  

@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé dllMainReturnsFalse
+description: En savoir plus sur l’Assistant Débogage managé dllMainReturnsFalse dans .NET. Cet Assistant Débogage managé est activé si l’initialisation de la DLL a échoué.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - managed debugging assistants (MDAs), DllMain returns false
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - DllMain function
 - MDAs (managed debugging assistants), DllMain returns false
 ms.assetid: e2abdd04-f571-4b97-8c16-2221b8588429
-ms.openlocfilehash: 0b413521e0a2dc06c2ff0be642f080eaf541202f
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 21d5e37d6823876e07cf5b2cbb881c1cf8b47b11
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216444"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416055"
 ---
 # <a name="dllmainreturnsfalse-mda"></a>Assistant Débogage managé dllMainReturnsFalse
 L’Assistant Débogage managé `dllMainReturnsFalse` est activé si la fonction `DllMain` managée d’un assembly utilisateur, appelée avec la raison DLL_PROCESS_ATTACH, retourne FALSE.  
@@ -20,7 +21,7 @@ L’Assistant Débogage managé `dllMainReturnsFalse` est activé si la fonction
 ## <a name="symptoms"></a>Symptômes  
  La fonction `DllMain` a retourné FALSE, indiquant qu’elle ne s’est pas exécuté correctement. Cela peut entraîner des problèmes indéterminés, car les fonctions `DllMain` contiennent généralement du code d’initialisation important.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  La fonction `DllMain` est appelée avec la raison DLL_PROCESS_ATTACH pour l’initialisation de DLL lors du chargement. Si elle retourne FALSE, cela signifie que l’initialisation de la DLL a échoué.  
   
 ## <a name="resolution"></a>Résolution  

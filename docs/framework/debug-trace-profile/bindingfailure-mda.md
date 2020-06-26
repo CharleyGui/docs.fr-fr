@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé bindingFailure
+description: En savoir plus sur l’Assistant Débogage managé (MDA) bindingFailure, qui est activé lorsqu’un assembly ne parvient pas à se charger dans .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - binding failure
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), binding failures
 - BindingFailure MDA
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
-ms.openlocfilehash: e3a9a915d25cbe5f052f039055167cf3ae4bf424
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 98c7947c7e5d2a1f0af8c26744d3b292ed8cb4c4
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216919"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415626"
 ---
 # <a name="bindingfailure-mda"></a>Assistant Débogage managé bindingFailure
 
@@ -24,7 +25,7 @@ L’Assistant débogage managé (MDA) `bindingFailure` est activé quand le char
 
 Le code a tenté de charger un assembly à l’aide d’une référence statique ou de l’une des méthodes de chargeur, telles que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>. L’assembly n’est pas chargé et une exception <xref:System.IO.FileNotFoundException> ou <xref:System.IO.FileLoadException> est levée.
 
-## <a name="cause"></a>Cause :
+## <a name="cause"></a>Cause
 
 Un échec de liaison se produit quand le runtime ne peut pas charger un assembly. Un échec de liaison peut être dû à l’une des situations suivantes :
 
@@ -80,7 +81,7 @@ Le nom complet ou le chemin demandé peut être vide si ces données n’étaien
 
 ## <a name="example"></a>Exemple
 
-L’exemple de code suivant montre une situation qui peut activer cet Assistant Débogage managé :
+L’exemple de code suivant illustre une situation qui peut activer cet Assistant Débogage managé :
 
 ```csharp
 using System;

@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé gcUnmanagedToManaged
+description: Passez en revue l’Assistant Débogage managé gcManagedToUnmanaged dans .NET. Cet Assistant Débogage managé peut s’activer en raison d’une altération du tas de mémoire pendant la transition vers du code managé.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), garbage collection
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - garbage collection, run-time errors
 - unmanaged to managed garbage collection
 ms.assetid: 103eb3a3-1cf0-4406-8a9a-a7798fdc22d1
-ms.openlocfilehash: dd4080870ae88da8d4e2055369cd36f3981f2eac
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 320d55224e6a204d330447d6c68eabe0fa6cf892
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216456"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415899"
 ---
 # <a name="gcunmanagedtomanaged-mda"></a>Assistant Débogage managé gcUnmanagedToManaged
 L'Assistant Débogage managé (MDA) `gcUnmanagedToManaged` déclenche une opération garbage collection chaque fois qu'un thread effectue la transition du code non managé au code managé.  
@@ -25,7 +26,7 @@ L'Assistant Débogage managé (MDA) `gcUnmanagedToManaged` déclenche une opéra
 ## <a name="symptoms"></a>Symptômes  
  Une application exécutant des composants utilisateur non managés à l'aide de COM et d'appels de code non managé provoque une violation d'accès non déterministe dans le CLR.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Si une application exécute des composants utilisateur non managés, il se peut que ces composants aient endommagé le tas obtenu à l'issue d'une opération garbage collection. Cela provoque une violation d'accès dans le CLR quand le garbage collector tente de parcourir le graphique d'objet.  
   
 ## <a name="resolution"></a>Résolution  
@@ -52,4 +53,4 @@ L'Assistant Débogage managé (MDA) `gcUnmanagedToManaged` déclenche une opéra
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
 - [gcManagedToUnmanaged](gcmanagedtounmanaged-mda.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

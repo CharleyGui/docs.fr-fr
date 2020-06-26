@@ -1,5 +1,6 @@
 ---
 title: dateTimeInvalidLocalFormat (MDA)
+description: Passez en revue l’Assistant Débogage managé dateTimeInvalidLocalFormat (MDA) qui est activé quand une valeur DateTime stockée en UTC obtient un format DateTime local uniquement.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dates [.NET Framework], formatting
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - time formatting
 - UTC formatting
 ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
-ms.openlocfilehash: b01f030c474e426cb87fb907f99f241eeb76a7fd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d092b93af55d2cdf14e9284d8cffcdc8440cbf81
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174756"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415990"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat (MDA)
 L’Assistant Débogage managé (MDA, Managed Debugging Assistant) `dateTimeInvalidLocalFormat` est activé quand une instance de <xref:System.DateTime> stockée en temps universel (UTC, Universal Coordinated Time) est mise en forme à l’aide d’un format conçu uniquement pour des instances de <xref:System.DateTime> locales. Cet Assistant Débogage managé n’est pas activé pour les instances de <xref:System.DateTime> par défaut ou non spécifiées.  
@@ -30,7 +31,7 @@ DateTime myDateTime = DateTime.UtcNow;
 Serialize(myDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffffzzz"));  
 ```  
   
-### <a name="cause"></a>Cause :  
+### <a name="cause"></a>Cause  
  Le format « z » pour la méthode <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> inclut l’offset de fuseau horaire local, par exemple, « +10:00 » pour l’heure de Sydney. Comme tel, il ne produit un résultat significatif que si <xref:System.DateTime> a une valeur locale. S’il s’agit d’une valeur en heure UTC, <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> inclut l’offset de fuseau horaire local, mais il n’affiche pas et n’ajuste pas le spécificateur de fuseau horaire.  
   
 ### <a name="resolution"></a>Résolution  
@@ -64,7 +65,7 @@ Serialize(myDateTime.ToString("o"));
 </mdaConfig>  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Prenons l’exemple d’une application qui sérialise indirectement une valeur <xref:System.DateTime> en temps universel en utilisant la classe <xref:System.Xml.XmlConvert> ou <xref:System.Data.DataSet> de la manière suivante.  
   
 ```csharp

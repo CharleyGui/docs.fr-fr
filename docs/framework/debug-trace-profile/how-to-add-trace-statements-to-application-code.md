@@ -1,5 +1,6 @@
 ---
 title: "Comment : ajouter des instructions de traçage dans le code d'une application"
+description: Découvrez comment ajouter des instructions de suivi au code d’application dans .NET. Les méthodes utilisées le plus souvent pour le suivi sont les méthodes d’écriture de la sortie dans les écouteurs.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - trace switches, conditional writes based on switches
 - WriteIf method
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
-ms.openlocfilehash: 9903a0357d1d8ceade21b590fd54c8cab517f134
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0c75a8775649aabe73b02187c4604d2eb3a8435b
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174743"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415886"
 ---
 # <a name="how-to-add-trace-statements-to-application-code"></a>Comment : ajouter des instructions de traçage dans le code d'une application
 Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permettant d’écrire la sortie dans des écouteurs : **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert** et **Fail**. Ces méthodes peuvent être réparties en deux catégories : **Write**, **WriteLine** et **Fail** émettent toutes la sortie de manière inconditionnelle, tandis que **WriteIf**, **WriteLineIf** et **Assert** testent une condition booléenne, et écrivent ou n’écrivent pas en fonction de la valeur de la condition. **WriteIf** et **WriteLineIf** émettent une sortie si la condition est `true` et **Assert** émet une sortie si la condition est `false`.  

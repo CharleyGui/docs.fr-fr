@@ -1,5 +1,6 @@
 ---
 title: callbackOnCollectedDelegate (MDA)
+description: Passez en revue l’Assistant Débogage managé (MDA) callbackOnCollectedDelegate dans .NET, qui est appelé si un rappel se produit après que le délégué a été récupéré par le garbage collector.
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - garbage collection, run-time errors
 - delegates [.NET Framework], garbage collection
 ms.assetid: 398b0ce0-5cc9-4518-978d-b8263aa21e5b
-ms.openlocfilehash: d4ca777fa5b41433eec227762fe315f22ab33cf6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 32f02a4e65455f11f3bfa9260caae8b4e48f494e
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174223"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416029"
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate (MDA)
 L'Assistant Débogage managé (MDA) `callbackOnCollectedDelegate` est activé si un délégué est marshalé du code managé vers du code non managé en tant que pointeur de fonction et si un rappel est placé sur ce pointeur de fonction après la récupération du délégué par le garbage collector.  
@@ -29,7 +30,7 @@ L'Assistant Débogage managé (MDA) `callbackOnCollectedDelegate` est activé si
   
  Les échecs ne surviennent pas de façon cohérente : tantôt l'appel sur le pointeur de fonction aboutit, tantôt il échoue. Un échec peut se produire dans une situation de surcharge uniquement ou sur un nombre aléatoire de tentatives.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Le délégué à partir duquel le pointeur de fonction a été créé et ensuite exposé au code non managé a été récupéré par le garbage collector. Quand le composant non managé tente d'appeler sur le pointeur de fonction, il génère une violation d'accès.  
   
  L'échec est aléatoire, car il dépend du moment où l'opération garbage collection se produit. Si un délégué peut faire l'objet d'une opération garbage collection, celle-ci peut avoir lieu après le rappel et, dans ce cas, l'appel aboutit. Dans d'autres cas où l'opération garbage collection se produit avant le rappel, le rappel génère une violation d'accès et le programme s'arrête.  
@@ -56,7 +57,7 @@ L'Assistant Débogage managé (MDA) `callbackOnCollectedDelegate` est activé si
 </mdaConfig>  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre une situation qui peut activer cet Assistant Débogage managé :  
   
 ```cpp

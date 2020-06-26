@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé dirtyCastAndCallOnInterface
+description: Passez en revue l’Assistant Débogage managé dirtyCastAndCallOnInterface, qui est appelé lorsque des appels vtable à liaison anticipée sont effectués sur des interfaces de classe uniquement à liaison tardive.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - managed debugging assistants (MDAs), early bound calls AutoDispatch
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), early bound calls AutoDispatch
 - EarlyBoundCallOnAutorDispatchClassInteface MDA
 ms.assetid: aa388ed3-7e3d-48ea-a0b5-c47ae19cec38
-ms.openlocfilehash: 6e4f0074958e8a6a8ca322968e9c29e89481c0c8
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 2ed5589909915a261a22c48490e469ae52659c8c
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216510"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416068"
 ---
 # <a name="dirtycastandcalloninterface-mda"></a>Assistant Débogage managé dirtyCastAndCallOnInterface
 L'Assistant Débogage managé (MDA) `dirtyCastAndCallOnInterface` est activé quand une tentative d'appel à liaison anticipée par un vtable est effectuée sur une interface de classes qui a été marquée comme étant à liaison tardive uniquement.  
@@ -23,7 +24,7 @@ L'Assistant Débogage managé (MDA) `dirtyCastAndCallOnInterface` est activé qu
 ## <a name="symptoms"></a>Symptômes  
  Une application lève une violation d'accès ou a un comportement inattendu quand un appel à liaison anticipée est placé via COM dans le CLR.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Le code tente un appel à liaison anticipée par un vtable via une interface de classes qui est à liaison tardive uniquement. Notez que, par défaut, les interfaces de classes sont identifiées comme étant à liaison tardive uniquement. Elles peuvent également être identifiées comme étant à liaison tardive à l'aide de l'attribut <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> défini à la valeur <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch> (`[ClassInterface(ClassInterfaceType.AutoDispatch)]`).  
   
 ## <a name="resolution"></a>Résolution  

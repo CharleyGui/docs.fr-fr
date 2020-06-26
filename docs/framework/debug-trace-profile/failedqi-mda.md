@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé failedQI
+description: Passez en revue l’Assistant Débogage managé (MDA) failedQI dans .NET, qui peut être activé lorsqu’un cast sur un appel COM ou un appel COM à partir d’un wrapper RCW (Runtime Callable Wrapper) échoue.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - failed QueryInterface
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), failed QueryInterface
 - managed debugging assistants (MDAs), failed QueryInterface
 ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
-ms.openlocfilehash: 4c36ec514645a38ef1228e76bdf6dbd06e886bae
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 2d7f14c67d47e58bcb88eab4621df63d7c598a7a
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217508"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415938"
 ---
 # <a name="failedqi-mda"></a>Assistant Débogage managé failedQI
 L'Assistant Débogage managé (MDA) `failedQI` est activé quand le runtime appelle `QueryInterface` sur un pointeur d'interface COM au nom d'un wrapper RCW et que l'appel à `QueryInterface` échoue.  
@@ -21,7 +22,7 @@ L'Assistant Débogage managé (MDA) `failedQI` est activé quand le runtime appe
 ## <a name="symptoms"></a>Symptômes  
  Un cast sur un RCW échoue ou un appel à COM à partir d'un RCW échoue de manière inattendue.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
   
 - L'appel est effectué à partir du contexte incorrect.  
   
@@ -52,4 +53,4 @@ L'Assistant Débogage managé (MDA) `failedQI` est activé quand le runtime appe
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

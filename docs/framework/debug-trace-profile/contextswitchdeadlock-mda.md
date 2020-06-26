@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé contextSwitchDeadlock
+description: En savoir plus sur l’Assistant Débogage managé (MDA) contextSwitchDeadlock dans .NET, qui est activé lorsqu’un blocage est détecté pendant une transition de contexte COM.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - deadlocks [.NET Framework]
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - message pumping
 - context switching deadlocks
 ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
-ms.openlocfilehash: e3fc4a2cb35cdcc713ba0ef362071083af08a27b
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 52db4f2c88bac4e8cac621cca989fa10acb43f94
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217559"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416016"
 ---
 # <a name="contextswitchdeadlock-mda"></a>Assistant Débogage managé contextSwitchDeadlock
 
@@ -27,7 +28,7 @@ L'Assistant Débogage managé `contextSwitchDeadlock` est activé quand un inter
 
 Le symptôme le plus courant est l'absence de retour suite à un appel sur un composant COM non managé à partir d'un code managé.  Un autre symptôme est l'augmentation de l'utilisation de la mémoire dans le temps.
 
-## <a name="cause"></a>Cause :
+## <a name="cause"></a>Cause
 
 La cause la plus probable est qu'un thread cloisonné ne pompe pas les messages. Soit le thread cloisonné attend sans pomper les messages, soit il effectue des opérations de longue durée qui empêchent le pompage de la file d'attente des messages.
 
@@ -74,4 +75,4 @@ Message décrivant le contexte actuel et le contexte cible.
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)
