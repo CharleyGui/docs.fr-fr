@@ -1,15 +1,15 @@
 ---
 title: Déployer une application .NET pour Apache Spark sur Databricks
 description: Découvrez comment déployer une application .NET pour Apache Spark sur Databricks.
-ms.date: 05/12/2020
+ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4010f363e8ba606a7294ea32dc34587da6d6c8aa
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 9e0b99b6706bf51adaa6e3795d1c81179e14cb7a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202242"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618335"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Databricks
 
@@ -23,6 +23,8 @@ Dans ce tutoriel, vous allez apprendre à :
 > - Publiez votre application .NET pour Apache Spark.
 > - Créez un travail Spark et un cluster Spark.
 > - Exécutez votre application sur le cluster Spark.
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -135,7 +137,7 @@ Ensuite, vous publiez le *mySparkApp* créé dans [.net pour Apache Spark-bien d
 
    **Sur Windows :**
 
-   Accédez à mySparkApp/bin/Release/netcoreapp 3.1/Ubuntu. 16.04-x64. Ensuite, cliquez avec le bouton droit sur le dossier de **publication** et sélectionnez **Envoyer vers > dossier compressé (zippé)**. Nommez le nouveau dossier **Publish. zip**.
+   Accédez à mySparkApp/bin/Release/netcoreapp 3.1/Ubuntu. 16.04-x64. Ensuite, cliquez avec le bouton droit sur le dossier de **publication** et sélectionnez **Envoyer vers > dossier compressé (zippé)**. Nommez le nouveau dossier **publish.zip**.
 
    **Sur Linux, exécutez la commande ci-dessous :**
 
@@ -155,7 +157,7 @@ Dans cette section, vous téléchargez plusieurs fichiers sur DBFS afin que votr
    databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/   Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
    ```
 
-2. Exécutez les commandes suivantes pour télécharger les fichiers restants dont votre cluster a besoin pour exécuter votre application : le dossier de publication compressé, *Input. txt*et *Microsoft-Spark-2.4. x-0.3.1. jar*.
+2. Exécutez les commandes suivantes pour télécharger les fichiers restants dont votre cluster a besoin pour exécuter votre application : le dossier de publication compressé, *input.txt*et *Microsoft-Spark-2.4. x-0.3.1. jar*.
 
    ```console
    cd mySparkApp

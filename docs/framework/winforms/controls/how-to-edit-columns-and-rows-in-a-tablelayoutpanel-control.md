@@ -1,5 +1,6 @@
 ---
 title: 'Comment : modifier des colonnes et des lignes dans un contrôle TableLayoutPanel'
+description: Découvrez comment utiliser la boîte de dialogue Styles de lignes et de colonnes pour modifier les lignes et les colonnes de vos contrôles Windows Forms.
 ms.date: 03/30/2017
 f1_keywords:
 - net.ComponentModel.StyleCollectionEditor
@@ -8,27 +9,27 @@ helpviewer_keywords:
 - TableLayoutPanel control [Windows Forms], editing
 - rows [Windows Forms], editing
 ms.assetid: c367ed43-40dc-49eb-9e0f-ba70e83dfec0
-ms.openlocfilehash: 4473b20eea57088104a51eb1b6c080219223d214
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: cfd2ca4be5d5a2658a9a129d911f1dba9670ccfd
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628642"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619349"
 ---
 # <a name="how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control"></a>Comment : modifier des colonnes et des lignes dans un contrôle TableLayoutPanel
 
-Vous pouvez utiliser l’éditeur de collections du contrôle <xref:System.Windows.Forms.TableLayoutPanel>, appelé boîte de dialogue **styles de colonne et de ligne** , pour modifier les lignes et les colonnes de vos contrôles.
+Vous pouvez utiliser l’éditeur de collections du <xref:System.Windows.Forms.TableLayoutPanel> contrôle, appelé boîte de dialogue **styles de colonne et de ligne** , pour modifier les lignes et les colonnes de vos contrôles.
 
 > [!NOTE]
-> Si vous souhaitez qu’un contrôle s’étende sur plusieurs lignes ou colonnes, définissez les propriétés `RowSpan` et `ColumnSpan` sur le contrôle. Pour plus d'informations, consultez [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
+> Si vous souhaitez qu’un contrôle s’étende sur plusieurs lignes ou colonnes, définissez les `RowSpan` `ColumnSpan` Propriétés et sur le contrôle. Pour plus d'informations, consultez [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
 >
-> Si vous souhaitez aligner un contrôle dans une cellule ou si vous souhaitez étirer un contrôle dans une cellule, utilisez la propriété <xref:System.Windows.Forms.Control.Anchor%2A> du contrôle. Pour plus d'informations, consultez [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
+> Si vous souhaitez aligner un contrôle dans une cellule ou si vous souhaitez étirer un contrôle dans une cellule, utilisez la propriété du contrôle <xref:System.Windows.Forms.Control.Anchor%2A> . Pour plus d'informations, consultez [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
 
 ## <a name="to-edit-rows-and-columns"></a>Pour modifier des lignes et des colonnes
 
 1. Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **boîte à outils** vers le formulaire.
 
-2. Cliquez sur le glyphe actions du concepteur du contrôle <xref:System.Windows.Forms.TableLayoutPanel> (![petite flèche noire](./media/designer-actions-glyph.gif)) et sélectionnez **modifier les lignes et les colonnes** pour ouvrir la boîte de dialogue **styles de ligne** et de colonne. Vous pouvez également cliquer avec le bouton droit sur le contrôle <xref:System.Windows.Forms.TableLayoutPanel> et sélectionner **modifier les lignes et les colonnes** dans le menu contextuel.
+2. Cliquez sur le <xref:System.Windows.Forms.TableLayoutPanel> glyphe actions du concepteur du contrôle ( ![ petite flèche noire ](./media/designer-actions-glyph.gif) ) et sélectionnez **modifier les lignes et les colonnes** pour ouvrir la boîte de dialogue Styles de ligne et de **colonne** . Vous pouvez également cliquer avec le bouton droit sur le <xref:System.Windows.Forms.TableLayoutPanel> contrôle et sélectionner **modifier les lignes et les colonnes** dans le menu contextuel.
 
 3. Pour ajouter ou supprimer des colonnes, sélectionnez **colonnes** dans la zone de liste déroulante **type de membre** .
 

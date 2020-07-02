@@ -1,19 +1,20 @@
 ---
-title: "Comment : générer des assemblys PIA à l'aide de Tlbimp.exe"
+title: 'Procédure : générer des assemblys PIA à l’aide de Tlbimp.exe'
+description: Découvrez comment générer des assemblys PIA à l’aide de l’importateur de bibliothèques de types (Tlbimp.exe) fourni par le SDK Windows.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - primary interop assemblies, generating
 - Tlbimp.exe
 - Type Library Importer
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
-ms.openlocfilehash: e46295b89b042452cb6e303302a8b88d68d58426
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 779b4863b6f1513f3566d4ab31660d88cda1039b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123907"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619128"
 ---
-# <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Comment : générer des assemblys PIA à l'aide de Tlbimp.exe
+# <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Procédure : générer des assemblys PIA à l’aide de Tlbimp.exe
 
 Il existe deux manières de générer un assembly PIA :
 
@@ -69,4 +70,4 @@ tlbimp MyLib.tlb /primary /keyfile:CompanyB.snk /namespace:CompanyB.MyLib /refer
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : enregistrer des assemblys PIA](how-to-register-primary-interop-assemblies.md)
+- [Procédure : enregistrer des assemblys PIA](how-to-register-primary-interop-assemblies.md)

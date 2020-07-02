@@ -1,5 +1,6 @@
 ---
-title: 'Comment : implémenter des fonctions de rappel'
+title: 'Procédure : implémenter des fonctions de rappel'
+description: Consultez Comment implémenter des fonctions de rappel. Dans cet exemple, une application managée, à l’aide de l’appel de code non managé, imprime la valeur de handle pour chaque fenêtre sur un ordinateur.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +9,14 @@ dev_langs:
 helpviewer_keywords:
 - callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
-ms.openlocfilehash: b7aae1e70ac736d60bed1e79291235db1c220281
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 31c657372e760c8d57f9714b20178967ad85fcd3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181416"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619115"
 ---
-# <a name="how-to-implement-callback-functions"></a>Comment : implémenter des fonctions de rappel
+# <a name="how-to-implement-callback-functions"></a>Procédure : implémenter des fonctions de rappel
 La procédure et l'exemple suivants montrent comment une application managée peut, à l'aide de l'appel de code non managé, imprimer la valeur de handle de chaque fenêtre sur l'ordinateur local. En particulier, ils utilisent la fonction **EnumWindows** pour parcourir la liste des fenêtres et une fonction de rappel managée (nommée CallBack) pour imprimer la valeur du handle des fenêtres.  
   
 ### <a name="to-implement-a-callback-function"></a>Pour implémenter une fonction de rappel  

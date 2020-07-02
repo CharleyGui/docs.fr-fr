@@ -10,12 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 3d4315a09869b77b4ae8cbb43646f9a96280b678
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4715a27a94ac86c5e4955c0e8be95c6ee4a28507
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173469"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619700"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (référence C#)
 
@@ -139,9 +139,9 @@ Pour intercepter l'exception, attendez la tâche dans un bloc `try`, puis interc
 
 Une tâche peut être dans un état d'erreur car plusieurs exceptions se sont produites dans la méthode async attendue. Par exemple, la tâche peut être le résultat d'un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Quand vous attendez une telle tâche, une seule des exceptions est interceptée et vous ne pouvez pas prévoir laquelle. Pour obtenir un exemple, consultez la section [Exemple Task.WhenAll](#taskwhenall-example).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-Dans l'exemple suivant, le bloc `try` contient un appel à la méthode `ProcessString` qui risque de provoquer une exception. La clause `catch` clause contient le gestionnaire d'exceptions qui affiche simplement un message à l'écran. Quand l'instruction `throw` est appelée depuis `MyMethod`, le système recherche l'instruction `catch` et affiche le message `Exception caught`.
+Dans l'exemple suivant, le bloc `try` contient un appel à la méthode `ProcessString` qui risque de provoquer une exception. La clause `catch` clause contient le gestionnaire d'exceptions qui affiche simplement un message à l'écran. Quand l'instruction `throw` est appelée depuis `ProcessString`, le système recherche l'instruction `catch` et affiche le message `Exception caught`.
 
 [!code-csharp[csrefKeywordsExceptions#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsExceptions/CS/csrefKeywordsExceptions.cs#2)]
 
@@ -179,10 +179,10 @@ Pour plus d’informations, consultez la section [Instruction try](~/_csharplang
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Instructions try, throw et catch (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
-- [Jeter](throw.md)
+- [lever](throw.md)
 - [try-finally](try-finally.md)
-- [Comment : Jeter explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+- [Comment : lever explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

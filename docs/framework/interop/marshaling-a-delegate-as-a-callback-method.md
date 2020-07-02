@@ -1,5 +1,6 @@
 ---
 title: Marshaling d'un délégué comme méthode de rappel
+description: Apprenez à marshaler un délégué comme méthode de rappel. Consultez un exemple de passage de délégués à une fonction non managée qui attend des pointeurs de fonction.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - data marshaling, Callback sample
 - marshaling, Callback sample
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
-ms.openlocfilehash: c71c89e5797745144a2baed2d4846e3d9f9f26be
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bf9ef3b9d48c0869dcc96820c3a2fb6fb608479e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73114015"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618946"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Marshaling d'un délégué comme méthode de rappel
 Cet exemple montre comment passer des délégués à une fonction non managée qui attend des pointeurs de fonction. Un délégué est une classe qui peut contenir une référence à une méthode, et qui équivaut à un pointeur de fonction de type sécurisé ou à une fonction de rappel.

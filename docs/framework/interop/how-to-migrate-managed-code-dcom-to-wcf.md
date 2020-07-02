@@ -1,15 +1,16 @@
 ---
-title: 'Comment : migrer DCOM de code managé vers WCF'
+title: 'Procédure : Migrer du code DCOM managé vers WCF'
+description: Migrez les appels de code managé DCOM (Distributed Component Object Model) entre les serveurs et les clients vers Windows Communication Foundation (WCF).
 ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
-ms.openlocfilehash: 2576e88c25ae381e90ec7d613efb648048145b3b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cc6ac1dd01e17bb184d1f1faca372134d6130d33
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181393"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619089"
 ---
-# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Comment : migrer DCOM de code managé vers WCF
+# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Procédure : Migrer du code DCOM managé vers WCF
 Pour des raisons de sécurité, il est recommandé d'utiliser Windows Communication Foundation (WCF) plutôt que le modèle DCOM pour les appels de code managé entre serveurs et clients dans un environnement distribué. Cet article explique comment migrer du code DCOM vers WCF pour les scénarios suivants.  
   
 - Le service distant retourne un objet par valeur au client  

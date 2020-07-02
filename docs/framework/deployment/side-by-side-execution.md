@@ -1,15 +1,16 @@
 ---
 title: Exécution côte à côte dans .NET Framework
+description: Explorez l’exécution côte à côte dans .NET. L’exécution côte à côte vous permet d’exécuter de nombreuses versions d’une application ou d’un composant sur le même ordinateur.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
-ms.openlocfilehash: e965702943149d3ed34be39bb2923ad52dcf90ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6cd6fb73b27957fdea85cd9a92bf2aa3bafda1ce
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181645"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619401"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Exécution côte à côte dans .NET Framework
 
@@ -61,7 +62,7 @@ L'en-tête du fichier exécutable portable (PE) de chaque application et composa
   
 ### <a name="runtime-version-information-in-the-application-configuration-file"></a>Informations de version du runtime dans le fichier de configuration de l'application  
 
-En plus des informations fournies dans l'en-tête du fichier PE, une application peut être déployée avec un fichier de configuration qui fournit des informations de version du runtime. Le fichier de configuration d'application est un fichier XML créé par le développeur de l'application et livré avec l'application. Le [ \<dépassement requis> Élément](../configure-apps/file-schema/startup/requiredruntime-element.md) de la [ \<section start-up>](../configure-apps/file-schema/startup/startup-element.md), s’il est présent dans ce fichier, précise quelles versions de l’heure d’exécution et quelles versions d’un composant l’application prend en charge. Vous pouvez également utiliser ce fichier à des fins de test pour vérifier la compatibilité de l'application avec différentes versions du runtime.  
+En plus des informations fournies dans l'en-tête du fichier PE, une application peut être déployée avec un fichier de configuration qui fournit des informations de version du runtime. Le fichier de configuration d'application est un fichier XML créé par le développeur de l'application et livré avec l'application. L' [ \<requiredRuntime> élément](../configure-apps/file-schema/startup/requiredruntime-element.md) de la [ \<startup> section](../configure-apps/file-schema/startup/startup-element.md), s’il est présent dans ce fichier, spécifie les versions du runtime et les versions d’un composant prises en charge par l’application. Vous pouvez également utiliser ce fichier à des fins de test pour vérifier la compatibilité de l'application avec différentes versions du runtime.  
   
 Le runtime peut aussi utiliser un fichier de configuration de l'application pour interagir avec du code non managé, y compris des applications COM et COM+. Le fichier de configuration de l'application s'applique à l'ensemble du code managé que vous activez par l'intermédiaire de COM. Il peut spécifier les versions du runtime qu'il prend en charge ainsi que les redirections d'assemblys. Par défaut, les applications COM Interop qui appellent du code managé utilisent la version du runtime la plus récente installée sur l'ordinateur.  
   
@@ -81,7 +82,7 @@ Le runtime se base sur le fichier de configuration de l'application et l'en-têt
   
 S'il existe un fichier de configuration de l'application, le runtime détermine la version appropriée du runtime à charger à partir des résultats du processus suivant :  
   
-1. Le temps d’exécution examine l’élément [ \<d’élément de> d’arrêt](../configure-apps/file-schema/startup/supportedruntime-element.md) supporté dans le fichier de configuration d’application. Si une ou plusieurs des versions de temps d’exécution prises en charge spécifiées dans ** \<l’élément de>deruntime pris** en charge sont présentes, le temps d’exécution charge la version de temps d’exécution spécifiée par le premier ** \<élément de>SupportRuntime.** Si cette version n’est pas disponible, l’exécution examine l’élément ** \<de>de prise en charge** suivant et tente de charger la version de durée spécifiée. Si cette version de temps d’exécution n’est pas disponible, les éléments ** \<>de prise en charge** ultérieures sont examinés. Si aucune des versions du runtime prises en charge n'est disponible, le runtime ne peut pas charger de version du runtime et affiche un message à l'utilisateur (voir l'étape 3).  
+1. Le runtime examine l’élément [ \<supportedRuntime> élément](../configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de l’application. Si une ou plusieurs des versions du runtime prises en charge spécifiées dans l' **\<supportedRuntime>** élément sont présentes, le runtime charge la version du runtime spécifiée par le premier **\<supportedRuntime>** élément. Si cette version n’est pas disponible, le runtime examine l' **\<supportedRuntime>** élément suivant et tente de charger la version du runtime spécifiée. Si cette version du runtime n’est pas disponible, **\<supportedRuntime>** les éléments suivants sont examinés. Si aucune des versions du runtime prises en charge n'est disponible, le runtime ne peut pas charger de version du runtime et affiche un message à l'utilisateur (voir l'étape 3).  
   
 2. Le runtime lit l'en-tête du fichier PE du fichier exécutable de l'application. Si la version du runtime spécifiée par l'en-tête du fichier PE est disponible, le runtime la charge. Sinon, le runtime recherche une version du runtime que Microsoft a déterminé comme compatible avec la version du runtime spécifiée dans l'en-tête du fichier PE. Si cette version est introuvable, le processus continue jusqu'à l'étape 3.  
   
@@ -97,7 +98,7 @@ S'il existe un fichier de configuration de l'application, le runtime détermine 
 
 Du fait qu'elles représentent une source potentielle de problèmes pour l'exécution côte à côte, les références d'assembly partiellement qualifiées ne peuvent s'utiliser que pour les liaisons à des assemblys au sein du répertoire d'une application. Dans la mesure du possible, n'utilisez pas de références d'assembly partiellement qualifiées dans votre code.  
   
-Pour atténuer les références d’assemblage partiellement qualifiées dans le code, vous pouvez utiliser [ \<l’élément qualifieAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) dans un fichier de configuration d’application pour qualifier pleinement les références d’assemblage partiellement qualifiées qui se produisent dans le code. Utilisez ** \<l’élément qualifieAssembly>** pour spécifier uniquement les champs qui n’ont pas été définis dans la référence partielle. L’identité de l’assembly indiquée dans l’attribut **fullName** doit contenir toutes les informations nécessaires pour qualifier l’assembly avec un nom complet : le nom de l’assembly, la clé publique, la culture et la version.  
+Pour atténuer les références d’assembly partiellement qualifiées dans le code, vous pouvez utiliser l' [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) élément dans un fichier de configuration de l’application pour qualifier entièrement les références d’assembly partiellement qualifiées qui se produisent dans le code. Utilisez l' **\<qualifyAssembly>** élément pour spécifier uniquement les champs qui n’ont pas été définis dans la référence partielle. L’identité de l’assembly indiquée dans l’attribut **fullName** doit contenir toutes les informations nécessaires pour qualifier l’assembly avec un nom complet : le nom de l’assembly, la clé publique, la culture et la version.  
   
  L'exemple suivant illustre l'entrée du fichier de configuration de l'application qui permet de qualifier un assembly nommé `myAssembly` avec un nom complet.  
   
@@ -120,7 +121,7 @@ publicKeyToken=...,
   
 |Intitulé|Description|  
 |-----------|-----------------|  
-|[Comment : activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)|Explique comment lier une application à une version spécifique d'un assembly.|  
+|[Procédure : Activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)|Explique comment lier une application à une version spécifique d'un assembly.|  
 |[Configuration de la redirection de liaison d’assembly](configuring-assembly-binding-redirection.md)|Explique comment rediriger les références de liaison d’assembly vers une version spécifique des assemblys du .NET Framework.|  
 |[Exécution côte à côte in-process](in-process-side-by-side-execution.md)|Explique comment utiliser l'activation d'hôte du runtime côte à côte in-process pour exécuter plusieurs versions du CLR dans un même processus.|  
 |[Assemblys dans .NET](../../standard/assembly/index.md)|Fournit une vue d'ensemble conceptuelle des assemblys.|  
@@ -128,4 +129,4 @@ publicKeyToken=...,
   
 ## <a name="reference"></a>Informations de référence  
 
-[\<supportedRuntime> Element](../configure-apps/file-schema/startup/supportedruntime-element.md)
+[\<supportedRuntime>Appartient](../configure-apps/file-schema/startup/supportedruntime-element.md)

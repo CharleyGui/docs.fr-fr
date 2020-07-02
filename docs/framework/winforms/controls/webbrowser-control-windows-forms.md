@@ -1,20 +1,21 @@
 ---
 title: WebBrowser, contrôle
+description: Découvrez comment le contrôle WebBrowser Windows Forms héberge les pages Web et fournit des fonctionnalités de navigation Web à votre application.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WebBrowser control [Windows Forms]
 - Web pages [Windows Forms], hosting in applications
 - Web pages [Windows Forms], Windows Forms controls
 ms.assetid: 12667861-5b5b-46bc-8fb5-675e25264c9f
-ms.openlocfilehash: b2dc9d124623d8018356c147c34ac6bc8da82209
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 3961a4071929a1688b3f9c1e9b2d30835b487f89
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739992"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619674"
 ---
 # <a name="webbrowser-control-windows-forms"></a>WebBrowser, contrôle (Windows Forms)
-Le contrôle Windows Forms `WebBrowser` héberge des pages Web et fournit des fonctionnalités de navigation Web à votre application.  
+Le `WebBrowser` contrôle Windows Forms héberge des pages Web et fournit des fonctionnalités de navigation Web à votre application.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble du contrôle WebBrowser](webbrowser-control-overview.md)  
@@ -38,10 +39,10 @@ Le contrôle Windows Forms `WebBrowser` héberge des pages Web et fournit des fo
  [Guide pratique pour implémenter la communication bidirectionnelle entre le code DHTML et le code d'application cliente](implement-two-way-com-between-dhtml-and-client.md)  
  Décrit comment configurer une communication bidirectionnelle entre votre code d’application et DHTML dans une page Web hébergée par le contrôle.  
   
- [Utilisation du modèle DOM HTML managé](using-the-managed-html-document-object-model.md)  
- Fournit des rubriques qui décrivent comment manipuler ou créer des pages HTML hébergées par le contrôle <xref:System.Windows.Forms.WebBrowser>.  
+ [Utilisation du modèle objet de document HTML managé](using-the-managed-html-document-object-model.md)  
+ Fournit des rubriques qui décrivent comment manipuler ou créer des pages HTML hébergées par le <xref:System.Windows.Forms.WebBrowser> contrôle.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
  Classe <xref:System.Windows.Forms.WebBrowser>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
@@ -80,4 +81,4 @@ Le contrôle Windows Forms `WebBrowser` héberge des pages Web et fournit des fo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)
+- [Contrôles à utiliser sur Windows Forms](controls-to-use-on-windows-forms.md)

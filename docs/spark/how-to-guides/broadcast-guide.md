@@ -1,21 +1,23 @@
 ---
 title: Utiliser des variables de diffusion dans .NET pour Apache Spark
 description: Découvrez comment utiliser des variables de diffusion dans .NET pour les applications Apache Spark.
-ms.date: 06/11/2020
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 391e32cda14a9b3186ac96800351ddcb39a3d359
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: d86b160855cc4d3f3a6502f5606d4766b7c06aa0
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105595"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617854"
 ---
 # <a name="use-broadcast-variables-in-net-for-apache-spark"></a>Utiliser des variables de diffusion dans .NET pour Apache Spark
 
 Dans cet article, vous allez apprendre à utiliser des variables de diffusion dans .NET pour Apache Spark. Les [variables de diffusion en Apache Spark](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) sont des mécanismes de partage de variables entre les exécuteurs qui sont destinés à être en lecture seule. Les variables de diffusion vous permettent de conserver une variable en lecture seule mise en cache sur chaque ordinateur plutôt que de lui envoyer une copie avec des tâches. Vous pouvez utiliser des variables de diffusion pour octroyer à chaque nœud une copie d’un jeu de données d’entrée volumineux de manière efficace.
 
 Étant donné que les données ne sont envoyées qu’une seule fois, les variables de diffusion présentent des avantages en matière de performances par rapport aux variables locales qui sont expédiées aux exécuteurs avec chaque tâche. Reportez-vous à la [documentation relative à la variable officielle](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) pour obtenir une compréhension plus approfondie des variables de diffusion et de la raison pour laquelle elles sont utilisées.
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="create-broadcast-variables"></a>Créer des variables de diffusion
 

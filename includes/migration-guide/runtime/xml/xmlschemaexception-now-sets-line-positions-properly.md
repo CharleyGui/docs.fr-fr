@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: a5b3e325c13d2f56532ebc6ebb5c259d565a4952
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c3e39e49747be709977d7fba3c39b59f5575c40d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379626"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620503"
 ---
 ### <a name="xmlschemaexception-now-sets-line-positions-properly"></a>XmlSchemaException définit désormais les positions de ligne correctement
 
-|   |   |
-|---|---|
-|Détails|Si la valeur <xref:System.Xml.Linq.LoadOptions.SetLineInfo> est passée à la méthode Load et qu’une erreur de validation se produit, les propriétés <xref:System.Xml.Schema.XmlSchemaException.LineNumber> et <xref:System.Xml.Schema.XmlSchemaException.LinePosition> contiennent désormais les informations de ligne.|
-|Suggestion|Le code de gestion des exceptions qui suppose que <xref:System.Xml.Schema.XmlSchemaException.LineNumber> et <xref:System.Xml.Schema.XmlSchemaException.LinePosition> ne seront pas définies doit être modifié, car ces propriétés seront maintenant définies correctement quand SetLineInfo est utilisé lors du chargement du code XML.|
-|Portée|Microsoft Edge|
-|Version|4.5|
-|Type|Runtime|
-|API affectées|<ul><li><xref:System.Xml.Linq.LoadOptions.SetLineInfo?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Détails
+
+Si la valeur <xref:System.Xml.Linq.LoadOptions.SetLineInfo> est passée à la méthode Load et qu’une erreur de validation se produit, les propriétés <xref:System.Xml.Schema.XmlSchemaException.LineNumber> et <xref:System.Xml.Schema.XmlSchemaException.LinePosition> contiennent désormais les informations de ligne.
+
+#### <a name="suggestion"></a>Suggestion
+
+Le code de gestion des exceptions qui suppose que <xref:System.Xml.Schema.XmlSchemaException.LineNumber> et <xref:System.Xml.Schema.XmlSchemaException.LinePosition> ne seront pas définies doit être modifié, car ces propriétés seront maintenant définies correctement quand SetLineInfo est utilisé lors du chargement du code XML.
+
+| Nom    | Valeur       |
+|:--------|:------------|
+| Étendue   |Edge|
+|Version|4,5|
+|Type|Runtime
+
+#### <a name="affected-apis"></a>API affectées
+
+-<xref:System.Xml.Linq.LoadOptions.SetLineInfo?displayProperty=nameWithType></li></ul>|

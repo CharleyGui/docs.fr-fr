@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: ded9d2be72e8ec476d5ace752e44d92eb0ee1028
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 68a3e848b3d80806e875dfb2fb7e2cbf223f8ad5
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324924"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619492"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur Debian
 
@@ -127,7 +127,26 @@ sudo apt-get update; \
 
 ## <a name="dependencies"></a>Les dépendances
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET Core ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
+
+- libc6
+- libgcc1
+- libgssapi-krb5-2
+- libicu52 (pour 8. x)
+- libicu57 (9. x)
+- libicu63 (pour 10. x)
+- libicu67 (pour 11. x)
+- libssl 1.0.0 (8. x)
+- libssl 1.1 (pour 9. x-11. x)
+- libstdc + + 6
+- zlib1g
+
+Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Common* , vous avez également besoin de la dépendance suivante :
+
+- libgdiplus (version 6.0.1 ou ultérieure)
+
+  > [!WARNING]
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 

@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 3a2ff1ca1519428f42c88048dde22aa11baaaa01
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 24f0a5b5278d038c2f941b0984efcacd91dcbe31
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324757"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619466"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-opensuse"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur openSUSE
 
@@ -69,7 +69,22 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 ## <a name="dependencies"></a>Les dépendances
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET Core ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
+
+- krb5
+- libicu
+- libopenssl1_0_0
+
+Si la version OpenSSL de l’environnement d’exécution cible est 1,1 ou une version plus récente, vous devez installer **compat-openssl10**.
+
+Pour plus d’informations sur les dépendances, consultez [applications Linux autonomes](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md).
+
+Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Common* , vous avez également besoin de la dépendance suivante :
+
+- [libgdiplus (version 6.0.1 ou ultérieure)](https://www.mono-project.com/docs/gui/libgdiplus/)
+
+  > [!WARNING]
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 

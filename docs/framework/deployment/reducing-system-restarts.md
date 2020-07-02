@@ -1,17 +1,18 @@
 ---
 title: Réduction des redémarrages système lors des installations de .NET Framework 4.5
+description: Découvrez comment réduire les redémarrages système lors des installations de .NET 4,5. Un redémarrage peut être nécessaire si une application .NET 4 est en cours d’utilisation pendant l’installation de .NET 4,5.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, reducing system restarts
 - installing .NET Framework
 - installation [.NET Framework]
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
-ms.openlocfilehash: 6261a883e7b99b7fd38da2a17ab4820c81552506
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bfde0c2f7297c048ba70062918e2281afbccf391
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716427"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618205"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Réduction des redémarrages système lors des installations de .NET Framework 4.5
 Le programme d’installation de .NET Framework 4.5 utilise le [Gestionnaire de redémarrage](/windows/win32/rstmgr/about-restart-manager) pour empêcher le redémarrage du système autant que possible pendant l’installation. Si votre programme d’installation de l’application installe .NET Framework, il peut interagir avec le Gestionnaire de redémarrage pour tirer parti de cette fonctionnalité. Pour plus d’informations, consultez [Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md).  
@@ -19,7 +20,7 @@ Le programme d’installation de .NET Framework 4.5 utilise le [Gestionnaire de 
 ## <a name="reasons-for-a-restart"></a>Raisons pour un redémarrage  
  Lors de l’installation de .NET Framework 4.5, vous devez redémarrer le système si une application .NET Framework 4 est en cours d’utilisation. En effet, .NET Framework 4.5 remplace les fichiers .NET Framework 4 et nécessite que ces fichiers soient disponibles pendant l’installation. Dans de nombreux cas, le redémarrage peut être évité par la détection préemptive et la fermeture des applications .NET Framework 4 en cours d'utilisation. Toutefois, certaines applications de système ne doivent pas être fermées. Dans ces cas là, un redémarrage ne peut pas être évité.  
   
-## <a name="end-user-experience"></a>Expérience de l'utilisateur final  
+## <a name="end-user-experience"></a>Expérience de l’utilisateur final  
  Un utilisateur final qui effectue une installation complète de .NET Framework 4.5 a la possibilité d’éviter un redémarrage du système si le programme d’installation détecte des applications .NET Framework 4 en cours d’utilisation. Un message répertorie toutes les applications utilisant .NET Framework 4 et fournit la possibilité de fermer les applications avant l'installation. Si l'utilisateur confirme, ces applications sont fermées par le programme d'installation, et un redémarrage du système est évité. Si l'utilisateur ne répond pas au message après un certain temps, l'installation reprend sans fermer aucune application.  
   
  Si le Gestionnaire de redémarrage détecte une situation qui requiert un redémarrage du système même si les applications sont fermées, le message n'est pas affiché.  

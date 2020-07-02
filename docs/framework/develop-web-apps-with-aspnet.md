@@ -1,17 +1,18 @@
 ---
 title: Développement d'applications Web avec ASP.NET
+description: Développez des applications Web avec ASP.NET Core, qui est une nouvelle conception de ASP.NET 4. x qui est multiplateforme, plus épurée, plus modulaire et unifiée pour créer une interface utilisateur Web et des API Web.
 ms.date: 09/25/2018
 helpviewer_keywords:
 - ASP.NET
 - .NET Framework, ASP.NET
 - dynamic Web applications [ASP.NET]
 ms.assetid: b7861df0-690a-4a58-bd12-f9d0123e40df
-ms.openlocfilehash: 60d7cf67a21216a8deada2baf0d6a30183c3ee44
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 82f6b9421abbfd9f547cac1c7e08c63de2b2cf48
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607943"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619375"
 ---
 # <a name="developing-web-apps-with-aspnet"></a>Développement d’applications web avec ASP.NET
 
@@ -20,7 +21,7 @@ ASP.NET est une technologie .NET Framework permettant de créer des applications
 - [Documentation d’ASP.NET](/aspnet/overview)
 - [ASP.NET MVC](https://dotnet.microsoft.com/apps/aspnet/mvc)
 - [Pages web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/web-apps)
-- [API Web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/apis)  
+- [API web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/apis)  
 - [Créer une application web ASP.NET Framework dans Azure](/azure/app-service/app-service-web-get-started-dotnet-framework)
 
 ## <a name="developing-web-apps-with-aspnet-core"></a>Développement d’applications web avec ASP.NET Core

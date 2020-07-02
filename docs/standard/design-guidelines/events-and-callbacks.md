@@ -8,12 +8,12 @@ helpviewer_keywords:
 - callback methods
 - callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
-ms.openlocfilehash: ad7774fd197db80ce84b3b8a5baa4e9ee06b6cef
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4000944c3b913f71bc18462cea9062e9237ae53f
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289796"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619531"
 ---
 # <a name="events-and-callbacks"></a>Événements et rappels
 Les rappels sont des points d’extensibilité qui permettent à un Framework d’effectuer un rappel dans le code utilisateur via un délégué. Ces délégués sont généralement passés à l’infrastructure par le biais d’un paramètre d’une méthode.
@@ -30,7 +30,7 @@ Les rappels sont des points d’extensibilité qui permettent à un Framework d�
 
  ✔️ Utilisez les nouveaux `Func<...>` types, `Action<...>` ou `Expression<...>` à la place des délégués personnalisés, lors de la définition d’API avec des rappels.
 
- `Func<...>`et `Action<...>` représentent des délégués génériques. `Expression<...>`représente les définitions de fonction qui peuvent être compilées et appelées par la suite au moment de l’exécution, mais qui peuvent également être sérialisées et passées aux processus distants.
+ `Func<...>`et `Action<...>` représentent des délégués génériques. `Expression<...>`représente les définitions de fonction qui peuvent être compilées et appelées par la suite au moment de l’exécution, mais peuvent également être sérialisées et passées aux processus distants.
 
  ✔️ Mesurez et comprenez les implications en matière de performances de l’utilisation de `Expression<...>` , au lieu d’utiliser des `Func<...>` `Action<...>` délégués et.
 
@@ -38,7 +38,7 @@ Les rappels sont des points d’extensibilité qui permettent à un Framework d�
 
  ✔️ comprenez qu’en appelant un délégué, vous exécutez du code arbitraire et cela peut avoir des répercussions en matière de sécurité, d’exactitude et de compatibilité.
 
- *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
+ *Parties &copy; 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
  *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*
 

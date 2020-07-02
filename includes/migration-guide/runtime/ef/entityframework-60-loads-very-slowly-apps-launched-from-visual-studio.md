@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: f9fbda5cc4517db40c4b5b543eb7e8c6c71292d7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ee12ccdfb95cc576cd35815b895c6041c08a0353
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379566"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620022"
 ---
 ### <a name="entityframework-60-loads-very-slowly-in-apps-launched-from-visual-studio"></a>Le chargement d’Entity Framework 6.0 est très lent dans les applications lancées à partir de Visual Studio
 
-|   |   |
-|---|---|
-|Détails|Dans Visual Studio 2013, le lancement d’une application qui utilise Entity Framework 6.0 peut être très long.|
-|Suggestion|Ce problème a été résolu dans EntityFramework 6.0.2. Mettez à jour Entity Framework pour éviter des problèmes de performances.|
-|Portée|Microsoft Edge|
-|Version|4.5|
+#### <a name="details"></a>Détails
+
+Dans Visual Studio 2013, le lancement d’une application qui utilise Entity Framework 6.0 peut être très long.
+
+#### <a name="suggestion"></a>Suggestion
+
+Ce problème a été résolu dans EntityFramework 6.0.2. Mettez à jour Entity Framework pour éviter des problèmes de performances.
+
+| Nom    | Valeur       |
+|:--------|:------------|
+| Étendue   |Edge|
+|Version|4,5|
 |Type|Runtime|

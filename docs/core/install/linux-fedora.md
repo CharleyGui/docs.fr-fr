@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c9774ff347382a6fe0be1ac1dcb78a74242ec999
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: c90c08eefa074fa139642a268f879af79d7280da
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324796"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619479"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-fedora"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur Fedora
 
@@ -31,7 +31,7 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [32](linux-fedora.md#fedora-32-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [31](linux-fedora.md#fedora-31-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌[30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
+| ❌ [30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
 | ❌[29](linux-fedora.md#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
 | ❌[28](linux-fedora.md#fedora-28-) | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 | ❌[27](linux-fedora.md#fedora-27-) | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
@@ -129,7 +129,7 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 ## <a name="dependencies"></a>Les dépendances
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+[!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 
 ## <a name="scripted-install"></a>Installation par script
 

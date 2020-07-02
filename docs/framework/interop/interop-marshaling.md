@@ -1,17 +1,18 @@
 ---
 title: Marshaling d’interopérabilité
+description: Prise en main du marshaling d’interopérabilité, qui régit la façon dont les données sont transmises dans les arguments de méthode et les valeurs de retour entre la mémoire managée et non managée lors des appels.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - marshaling, COM interop
 - interop marshaling
 - interop marshaling, about interop marshaling
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
-ms.openlocfilehash: 70514811a9d236dc485f64fc34297cdb057a1512
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ca733d59abc4ca3d9d470b054ee9e34b5084ae38
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124273"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618972"
 ---
 # <a name="interop-marshaling"></a>Marshaling d’interopérabilité
 
@@ -121,11 +122,11 @@ Certains appels non managés peuvent être transmis par le biais de SOAP, tels q
 |-----------|-----------------|
 |[comportement de marshaling par défaut](default-marshaling-behavior.md)|Décrit les règles utilisées par le service de marshaling d’interopérabilité pour marshaler des données.|
 |[Marshaling de données à l’aide de l’appel de code managé](marshaling-data-with-platform-invoke.md)|Décrit comment déclarer des paramètres de méthode et passer des arguments à des fonctions exportées par des bibliothèques non managées.|
-|[Marshaling de données avec COM Interop](marshaling-data-with-com-interop.md)|Décrit comment personnaliser des wrappers COM pour modifier le comportement de marshaling.|
-|[Comment : migrer DCOM de code managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Décrit comment effectuer une migration de DCOM à WCF.|
-|[Guide pratique pour mapper des HRESULT et des exceptions](how-to-map-hresults-and-exceptions.md)|Décrit comment mapper des exceptions personnalisées aux HRESULT et fournit le mappage complet de chaque HRESULT à sa classe d'exception comparable dans .NET Framework.|
+|[marshaler des données avec COM Interop](marshaling-data-with-com-interop.md)|Décrit comment personnaliser des wrappers COM pour modifier le comportement de marshaling.|
+|[Procédure : Migrer du code DCOM managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Décrit comment effectuer une migration de DCOM à WCF.|
+|[Procédure : mapper des HRESULT et des exceptions](how-to-map-hresults-and-exceptions.md)|Décrit comment mapper des exceptions personnalisées aux HRESULT et fournit le mappage complet de chaque HRESULT à sa classe d'exception comparable dans .NET Framework.|
 |[Interopérabilité à l’aide de types génériques](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))|Décrit les actions prises en charge lors de l'utilisation de types génériques pour l'interopérabilité COM.|
-|[Interopérabilité avec du code non managé](index.md)|Décrit les services d'interopérabilité fournis par le common language runtime.|
+|[Interopération avec du code non managé](index.md)|Décrit les services d'interopérabilité fournis par le common language runtime.|
 |[Interopérabilité COM avancée](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Fournit des liens vers des informations sur l'incorporation de composants COM dans une application .NET Framework.|
 |[Considérations relatives à la conception de l’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|Fournit des conseils pour l'écriture de composants COM intégrés.|
 

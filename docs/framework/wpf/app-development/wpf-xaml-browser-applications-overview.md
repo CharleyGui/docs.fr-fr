@@ -1,5 +1,6 @@
 ---
 title: Vue d’ensemble des applications du navigateur XAML
+description: Découvrez comment les applications de navigateur XAML combinent les fonctionnalités des applications Web et des applications clientes riches dans le Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: 825b689dea145d18035344cd902ea1b8a50e82c3
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 3395445dd5639e25f62aeef09d070e326704ed40
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124206"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617910"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Vue d'ensemble des applications de navigateur XAML
 <a name="introduction"></a>Les applications de navigateur XAML (XBAP) associent les fonctionnalités des applications Web et des applications clientes riches. À l’instar des applications Web, les applications XBAP peuvent être déployées sur un serveur web et démarrées à partir d’Internet Explorer ou de Firefox. Comme les applications clientes riches, les XBAP peuvent tirer parti des fonctionnalités de WPF. Le développement d’applications XBAP est également semblable au développement d’applications clientes complètes. Cette rubrique fournit une présentation simple et détaillée du développement XBAP et décrit les différences de développement entre les applications XBAP et les applications clientes complètes standard.
@@ -91,19 +92,19 @@ ms.locfileid: "77124206"
 
 <a name="communicating_with_the_host_web_page"></a>
 ## <a name="communicating-with-the-host-web-page"></a>Communication avec la page web hôte
- Lorsque l’application est hébergée dans un cadre HTML, vous pouvez communiquer avec la page web qui contient l’application XBAP. Pour ce faire, récupérez la propriété <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> de <xref:System.Windows.Interop.BrowserInteropHelper>. Cette propriété renvoie un objet de script qui représente la fenêtre HTML. Vous pouvez consulter les propriétés, méthodes et événements sur [l’objet de fenêtre](https://developer.mozilla.org/en-US/docs/Web/API/Window) en utilisant la syntaxe de point normale. Vous pouvez également accéder aux méthodes de script et aux variables globales. L’exemple suivant montre comment récupérer l’objet de script et fermer le navigateur.
+ Lorsque l’application est hébergée dans un cadre HTML, vous pouvez communiquer avec la page web qui contient l’application XBAP. Pour ce faire, récupérez la <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> propriété de <xref:System.Windows.Interop.BrowserInteropHelper> . Cette propriété renvoie un objet de script qui représente la fenêtre HTML. Vous pouvez consulter les propriétés, méthodes et événements sur [l’objet de fenêtre](https://developer.mozilla.org/en-US/docs/Web/API/Window) en utilisant la syntaxe de point normale. Vous pouvez également accéder aux méthodes de script et aux variables globales. L’exemple suivant montre comment récupérer l’objet de script et fermer le navigateur.
 
  [!code-csharp[XbapBrowserInterop#10](~/samples/snippets/csharp/VS_Snippets_Wpf/xbapbrowserinterop/cs/page1.xaml.cs#10)]
  [!code-vb[XbapBrowserInterop#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/xbapbrowserinterop/vb/page1.xaml.vb#10)]
 
 ### <a name="debugging-xbaps-that-use-hostscript"></a>Débogage des applications XBAP qui utilisent HostScript
- Si votre application XBAP utilise l’objet <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> pour communiquer avec la fenêtre HTML, vous devez spécifier deux paramètres pour exécuter et déboguer l’application dans Visual Studio. L’application doit avoir accès à son site d’origine et vous devez démarrer l’application avec la page HTML qui contient l’application XBAP. Les étapes suivantes décrivent comment vérifier ces deux paramètres :
+ Si votre application XBAP utilise l' <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> objet pour communiquer avec la fenêtre HTML, vous devez spécifier deux paramètres pour exécuter et déboguer l’application dans Visual Studio. L’application doit avoir accès à son site d’origine et vous devez démarrer l’application avec la page HTML qui contient l’application XBAP. Les étapes suivantes décrivent comment vérifier ces deux paramètres :
 
 1. Dans Visual Studio, ouvrez les propriétés du projet.
 
-2. Dans l’onglet **Sécurité**, cliquez sur **Avancé**.
+2. Sous l’onglet **Sécurité**, cliquez sur **Avancé**.
 
-     La boîte de dialogue Paramètres de sécurité avancés apparaît.
+     La boîte de dialogue Paramètres de sécurité avancés s'affiche.
 
 3. Assurez-vous que la case **Autoriser l’application à accéder à son site d’origine** est cochée, puis cliquez sur **OK**.
 
@@ -113,7 +114,7 @@ ms.locfileid: "77124206"
 
      La boîte de dialogue Options Internet apparaît.
 
-6. Cliquez sur l’onglet **Avancé**.
+6. Cliquez sur l'onglet **Avancé**.
 
 7. Dans la liste des **paramètres** sous **Sécurité**, cochez la case **Autoriser l’exécution du contenu actif dans les fichiers de mon ordinateur**.
 
@@ -128,19 +129,19 @@ ms.locfileid: "77124206"
 ## <a name="xbap-security-considerations"></a>Considérations relatives à la sécurité des applications XBAP
  Les applications XBAP s’exécutent généralement dans un sandbox de sécurité de confiance partielle qui est limité au jeu d’autorisations de la zone Internet. Par conséquent, votre implémentation doit prendre en charge le sous-ensemble d’éléments WPF pris en charge dans la zone Internet ou vous devez élever les autorisations de votre application. Pour plus d’informations, consultez [Sécurité](../security-wpf.md).
 
- Quand vous utilisez un contrôle de <xref:System.Windows.Controls.WebBrowser> dans votre application, WPF instancie en interne le contrôle ActiveX WebBrowser natif. Lorsque votre application est exécutée en tant qu’application XBAP de confiance partielle dans Internet Explorer, le contrôle ActiveX s’exécute dans un thread dédié du processus Internet Explorer. Cela signifie que les limitations suivantes s’appliquent :
+ Quand vous utilisez un <xref:System.Windows.Controls.WebBrowser> contrôle dans votre application, WPF instancie en interne le contrôle ActiveX WebBrowser natif. Lorsque votre application est exécutée en tant qu’application XBAP de confiance partielle dans Internet Explorer, le contrôle ActiveX s’exécute dans un thread dédié du processus Internet Explorer. Cela signifie que les limitations suivantes s’appliquent :
 
-- Le contrôle <xref:System.Windows.Controls.WebBrowser> doit fournir un comportement similaire à celui du navigateur hôte, y compris des restrictions de sécurité. Certaines de ces restrictions de sécurité peuvent être gérées via les paramètres de sécurité d’Internet Explorer. Pour plus d’informations, consultez [Sécurité](../security-wpf.md).
+- Le <xref:System.Windows.Controls.WebBrowser> contrôle doit fournir un comportement similaire au navigateur hôte, y compris des restrictions de sécurité. Certaines de ces restrictions de sécurité peuvent être gérées via les paramètres de sécurité d’Internet Explorer. Pour plus d’informations, consultez [Sécurité](../security-wpf.md).
 
 - Une exception est générée lorsqu’une application XBAP est chargée sur plusieurs domaines dans une page HTML.
 
-- L’entrée se trouve sur un thread distinct de l' <xref:System.Windows.Controls.WebBrowser>WPF, de sorte que l’entrée au clavier ne peut pas être interceptée et que l’état de l’IME n’est pas partagé.
+- L’entrée se trouve sur un thread distinct du WPF <xref:System.Windows.Controls.WebBrowser> , de sorte que l’entrée au clavier ne peut pas être interceptée et que l’état de l’IME n’est pas partagé.
 
 - Comme le contrôle ActiveX est en cours d’exécution sur un autre thread, le temps ou l’ordre de navigation peut différer. Par exemple, la navigation vers une page n’est pas toujours annulée lors du démarrage d’une autre requête de navigation.
 
 - La communication avec un contrôle ActiveX personnalisé peut être difficile puisque l’application WPF s’exécute dans un thread distinct.
 
-- <xref:System.Windows.Interop.HwndHost.MessageHook> n’est pas déclenché, car <xref:System.Windows.Interop.HwndHost> ne peut pas sous-traiter une fenêtre qui s’exécute dans un autre thread ou processus.
+- <xref:System.Windows.Interop.HwndHost.MessageHook>n’est pas déclenché, car <xref:System.Windows.Interop.HwndHost> ne peut pas sous-traiter une fenêtre qui s’exécute dans un autre thread ou processus.
 
 ### <a name="creating-a-full-trust-xbap"></a>Création d’une application XBAP de confiance totale
  Si votre application XBAP requiert une confiance totale, vous pouvez modifier votre projet pour activer cette autorisation. Les étapes suivantes décrivent comment activer la confiance totale :
@@ -153,7 +154,7 @@ ms.locfileid: "77124206"
 
 - Dans le fichier projet, la valeur de l’élément `<TargetZone>` devient `Custom`.
 
-- Dans le manifeste de l’application (App. manifest), un attribut `Unrestricted="true"` est ajouté à l’élément'<xref:System.Security.PermissionSet>.
+- Dans le manifeste de l’application (App. manifest), un `Unrestricted="true"` attribut est ajouté à l' <xref:System.Security.PermissionSet> élément.
 
     ```xml
     <PermissionSet class="System.Security.PermissionSet"
@@ -187,5 +188,5 @@ ms.locfileid: "77124206"
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configurer Visual Studio pour déboguer une application de navigateur XAML et appeler un service Web](configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)
+- [Configurer Visual Studio pour déboguer une application de navigateur XAML et appeler un service web](configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)
 - [Déploiement d’une application WPF](deploying-a-wpf-application-wpf.md)

@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 6cc1c65a95238e758f99090794f5e50b830d9667
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: beaac7b14535335a665add4fa056a60793879753
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379653"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620075"
 ---
 ### <a name="systemactivities-is-now-aptca"></a>System.Activities est maintenant APTCA
 
-|   |   |
-|---|---|
-|Détails|L'assembly est marqué avec l'attribut <xref:System.Security.AllowPartiallyTrustedCallersAttribute?displayProperty=name>.|
-|Suggestion|Les classes dérivées ne peuvent pas être marquées avec l'objet <xref:System.Security.SecurityCriticalAttribute?displayProperty=name>. Auparavant, les types dérivés devaient être marqués avec l'objet <xref:System.Security.SecurityCriticalAttribute?displayProperty=name>. Toutefois, cette modification ne doit pas avoir d'impact réel.|
-|Portée|Microsoft Edge|
-|Version|4.5|
+#### <a name="details"></a>Détails
+
+L'assembly est marqué avec l'attribut <xref:System.Security.AllowPartiallyTrustedCallersAttribute?displayProperty=fullName>.
+
+#### <a name="suggestion"></a>Suggestion
+
+Les classes dérivées ne peuvent pas être marquées avec l'objet <xref:System.Security.SecurityCriticalAttribute?displayProperty=fullName>. Auparavant, les types dérivés devaient être marqués avec l'objet <xref:System.Security.SecurityCriticalAttribute?displayProperty=fullName>. Toutefois, cette modification ne doit pas avoir d'impact réel.
+
+| Nom    | Valeur       |
+|:--------|:------------|
+| Étendue   |Edge|
+|Version|4,5|
 |Type|Runtime|

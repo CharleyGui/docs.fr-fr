@@ -1,5 +1,6 @@
 ---
-title: "Comment : générer des assemblys d'interopérabilité à partir de bibliothèques de types"
+title: 'Procédure : générer des assemblys d’interopérabilité à partir de bibliothèques de types'
+description: Générer des assemblys d’interopérabilité à partir de bibliothèques de types. Utilisez l’importateur de bibliothèques de types (Tlbimp.exe) pour convertir les coclasses et les interfaces d’une bibliothèque de types COM en métadonnées.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - importing type library
@@ -8,21 +9,21 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: 4afd40c3-68f2-41c5-8ec1-4951bc148b9c
-ms.openlocfilehash: f4f099dfaf5ff02edd3958d7eab9354ce727a239
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6f54875d6aadb1da18cf25a1bec0a0e451f4a24c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281804"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619557"
 ---
-# <a name="how-to-generate-interop-assemblies-from-type-libraries"></a>Comment : générer des assemblys d'interopérabilité à partir de bibliothèques de types
+# <a name="how-to-generate-interop-assemblies-from-type-libraries"></a>Procédure : générer des assemblys d’interopérabilité à partir de bibliothèques de types
 L’outil en ligne de commande [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md) permet de convertir les coclasses et les interfaces figurant dans une bibliothèque de types COM en métadonnées. Cet outil crée automatiquement un assembly d’interopérabilité et un espace de noms pour les informations sur les types. Une fois les métadonnées d’une classe disponibles, les clients managés peuvent créer des instances du type COM et appeler ses méthodes, comme s’il s’agissait d’une instance .NET. Tlbimp.exe convertit en une seule opération l’intégralité d’une bibliothèque de types en métadonnées et ne peut pas générer d’informations sur les types pour un sous-ensemble de types définis dans une bibliothèque de types.  
   
 ### <a name="to-generate-an-interop-assembly-from-a-type-library"></a>Pour générer un assembly d’interopérabilité à partir d’une bibliothèque de types  
   
 1. Utilisez la commande suivante :  
   
-     **tlbimp** \<*fichier-bibliothèque-types*>  
+     **Tlbimp**\<*type-library-file*>  
   
      L’ajout du commutateur **/out:** produit un assembly d’interopérabilité avec un nom modifié (LOANLib.dll, par exemple). La modification du nom de l’assembly d’interopérabilité peut aider à le distinguer de la DLL COM d’origine et évite les problèmes qui peuvent survenir quand des noms sont dupliqués.  
   
@@ -42,4 +43,4 @@ tlbimp LoanLib.tlb /out: LOANLib.dll
 ## <a name="see-also"></a>Voir aussi
 
 - [Importation d'une bibliothèque de types sous la forme d'un assembly](importing-a-type-library-as-an-assembly.md)
-- [Exposition de composants COM au .NET Framework](exposing-com-components.md)
+- [Exposition de composants COM au .NET Framework](exposing-com-components.md)

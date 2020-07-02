@@ -1,5 +1,6 @@
 ---
 title: copie et épinglage
+description: Examinez comment le marshaleur d’interopérabilité peut copier ou épingler des données qui sont marshalées. La copie de données place une copie des données d’un emplacement de mémoire à un autre emplacement.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - pinning, interop marshaling
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-ms.openlocfilehash: f6db7d37293015911c1285d39e19bf7542a7ac59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b7931813cd5254375eda81515f388c85c78fa284
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123638"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618777"
 ---
 # <a name="copying-and-pinning"></a>copie et épinglage
 

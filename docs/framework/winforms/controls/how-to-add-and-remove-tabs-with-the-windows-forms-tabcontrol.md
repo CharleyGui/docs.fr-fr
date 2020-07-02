@@ -1,5 +1,6 @@
 ---
 title: Ajouter et supprimer des onglets avec TabControl
+description: Découvrez comment ajouter et supprimer des onglets avec le contrôle Windows Forms TabControl, qui contient deux contrôles TabPage. Accédez à ces onglets via la propriété TabPages.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,19 +13,19 @@ helpviewer_keywords:
 - tabs [Windows Forms], adding to pages
 - tab pages
 ms.assetid: 66d4dfca-41e8-44e3-9c80-fb7ac4cb1619
-ms.openlocfilehash: 8292d8441f9b47334b98736cf3282c846673dbb4
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 7e67d0bbc13bd7d9c8835dc6fb9b9c5c9333b8bf
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76732717"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618075"
 ---
 # <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol"></a>Comment : ajouter et supprimer des onglets avec le contrôle TabControl Windows Forms
-Par défaut, un contrôle <xref:System.Windows.Forms.TabControl> contient deux contrôles <xref:System.Windows.Forms.TabPage>. Vous pouvez accéder à ces onglets via la propriété <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
+Par défaut, un <xref:System.Windows.Forms.TabControl> contrôle contient deux <xref:System.Windows.Forms.TabPage> contrôles. Vous pouvez accéder à ces onglets via la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.  
   
 ### <a name="to-add-a-tab-programmatically"></a>Pour ajouter un onglet par programmation  
   
-- Utilisez la méthode <xref:System.Windows.Forms.TabControl.TabPageCollection.Add%2A> de la propriété <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
+- Utilisez la <xref:System.Windows.Forms.TabControl.TabPageCollection.Add%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.  
   
     ```vb  
     Dim myTabPage As New TabPage()  
@@ -47,11 +48,11 @@ Par défaut, un contrôle <xref:System.Windows.Forms.TabControl> contient deux c
   
 ### <a name="to-remove-a-tab-programmatically"></a>Pour supprimer un onglet par programmation  
   
-- Pour supprimer les onglets sélectionnés, utilisez la méthode <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> de la propriété <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
+- Pour supprimer les onglets sélectionnés, utilisez la <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.  
   
      -ou-  
   
-- Pour supprimer tous les onglets, utilisez la méthode <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> de la propriété <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
+- Pour supprimer tous les onglets, utilisez la <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.  
   
     ```vb  
     ' Removes the selected tab:  
@@ -76,7 +77,7 @@ Par défaut, un contrôle <xref:System.Windows.Forms.TabControl> contient deux c
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble du contrôle TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Guide pratique pour ajouter un contrôle à une page d'onglet](how-to-add-a-control-to-a-tab-page.md)
-- [Guide pratique pour désactiver les pages d'onglets](how-to-disable-tab-pages.md)
-- [Guide pratique pour modifier l'apparence du contrôle TabControl Windows Forms](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
+- [Vue d'ensemble du contrôle TabControl](tabcontrol-control-overview-windows-forms.md)
+- [Comment : ajouter un contrôle à une page d'onglet](how-to-add-a-control-to-a-tab-page.md)
+- [Comment : désactiver les pages d'onglets](how-to-disable-tab-pages.md)
+- [Comment : modifier l'apparence du contrôle TabControl Windows Forms](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)

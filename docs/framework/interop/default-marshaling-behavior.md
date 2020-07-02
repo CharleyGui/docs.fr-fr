@@ -1,5 +1,6 @@
 ---
 title: comportement de marshaling par défaut
+description: Découvrez le comportement de marshaling par défaut dans .NET. Passez en revue la gestion de la mémoire avec le marshaling d’interopérabilité et consultez marshaling par défaut pour les classes, les délégués et les types valeur.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-ms.openlocfilehash: f7df323dacfbee3361fe75d831f1e87df328b194
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 0469874d016725eb6423bb8453e9657b2be923d4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989218"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618569"
 ---
 # <a name="default-marshaling-behavior"></a>comportement de marshaling par défaut
 Le marshaling d'interopérabilité agit sur les règles qui définissent le comportement des données associées aux paramètres de méthode quand elles sont passées de la mémoire managée à la mémoire non managée. Ces règles intégrées contrôlent les activités de marshaling telles que les transformations de types de données, le fait qu’un appelant puisse modifier les données transmises et renvoyer ces modifications à l’appelant, ainsi que les circonstances dans lesquelles le marshaleur fournit des optimisations de performances.  
@@ -439,7 +440,7 @@ interface IValueTypes : IDispatch {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types blittable et non blittable](blittable-and-non-blittable-types.md)
+- [types blittable et non blittable](blittable-and-non-blittable-types.md)
 - [copie et épinglage](copying-and-pinning.md)
 - [Marshaling par défaut pour les tableaux](default-marshaling-for-arrays.md)
 - [Marshaling par défaut pour les objets](default-marshaling-for-objects.md)

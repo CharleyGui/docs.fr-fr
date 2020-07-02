@@ -1,5 +1,6 @@
 ---
 title: Vue d’ensemble du .NET Framework
+description: Lisez une vue d’ensemble de .NET, qui est une technologie qui prend en charge la création et l’exécution d’applications et de services Web Windows.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application development [.NET Framework]
@@ -7,18 +8,18 @@ helpviewer_keywords:
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: ace42738118cde4bcda4b78607d7bdb045d3501e
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 6beedb8e3fd03049cd58ce1d2dac78d1adb820ef
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80248919"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618751"
 ---
-# <a name="overview-of-net-framework"></a>Aperçu du cadre .NET
+# <a name="overview-of-net-framework"></a>Vue d’ensemble de .NET Framework
 
-.NET Framework est une technologie qui prend en charge la création et l’exécution d’applications Windows et de services Web. .NET Framework est conçu pour atteindre les objectifs suivants :
+.NET Framework est une technologie qui prend en charge la création et l’exécution d’applications et de services Web Windows. .NET Framework est conçu pour respecter les objectifs suivants :
 
-- Fournir un environnement de programmation cohérent axé sur les objets, que le code d’objet soit stocké et exécuté localement, exécuté localement mais distribué sur le Web ou exécuté à distance.
+- Fournir un environnement de programmation orienté objet cohérent, que le code objet soit stocké et exécuté localement, exécuté localement mais distribué sur le Web ou exécuté à distance.
 
 - Fournir un environnement d'exécution de code qui minimise le déploiement de logiciel et de conflits de versions.
 
@@ -28,16 +29,16 @@ ms.locfileid: "80248919"
 
 - Fournir au développeur un environnement cohérent entre une grande variété de types d’applications comme les applications Windows et les applications web.
 
-- Construire toutes les communications sur les normes de l’industrie pour s’assurer que le code basé sur .NET Framework s’intègre à tout autre code.
+- Pour générer toutes les communications sur les normes du secteur afin de garantir que le code basé sur .NET Framework s’intègre à tout autre code.
 
 > [!NOTE]
-> Pour une introduction générale à .NET Framework pour les utilisateurs et les développeurs, voir [Get started](index.md).
+> Pour une présentation générale des .NET Framework pour les utilisateurs et les développeurs, consultez [prise en main](index.md).
 
-.NET Framework se compose de l’heure courante (CLR) et de la bibliothèque de classe cadre .NET. Le runtime linguistique commun est à la base de .NET Framework. Le runtime est un agent qui manage le code au moment de l’exécution, fournit des services essentiels comme la gestion de la mémoire, la gestion des threads et la communication à distance. Il applique également une cohérence stricte des types et d’autres formes de précision qui favorisent un code sécurisé et robuste. En fait, le concept de gestion de code est un principe fondamental du runtime. Pour le code qui cible le runtime, on parle de code managé, tandis que pour le code qui ne cible pas le runtime, on parle de code non managé. La bibliothèque de classe est une collection complète et orientée objet de types réutilisables que vous utilisez pour développer des applications allant des applications traditionnelles de ligne de commande ou d’interface utilisateur graphique (GUI) aux applications basées sur les dernières innovations fournies par ASP.NET, telles que web Formulaires et services Web XML.
+.NET Framework se compose des common language runtime (CLR) et de la bibliothèque de classes .NET Framework. Le common language runtime est la base de .NET Framework. Le runtime est un agent qui manage le code au moment de l’exécution, fournit des services essentiels comme la gestion de la mémoire, la gestion des threads et la communication à distance. Il applique également une cohérence stricte des types et d’autres formes de précision qui favorisent un code sécurisé et robuste. En fait, le concept de gestion de code est un principe fondamental du runtime. Pour le code qui cible le runtime, on parle de code managé, tandis que pour le code qui ne cible pas le runtime, on parle de code non managé. La bibliothèque de classes est une collection complète orientée objet de types réutilisables que vous utilisez pour développer des applications allant des applications de ligne de commande traditionnelles ou d’interface utilisateur graphique (GUI) aux applications basées sur les dernières innovations fournies par ASP.NET, telles que les Web Forms et les services Web XML.
 
-.NET Framework peut être hébergé par des composants non gérés qui chargent le temps d’exécution de la langue commune dans leurs processus et initient l’exécution du code géré, créant ainsi un environnement logiciel qui exploite à la fois les fonctionnalités gérées et non gérées. .NET Framework fournit non seulement plusieurs hôtes de runtime, mais soutient également le développement d’hôtes de course tiers.
+.NET Framework peut être hébergé par des composants non managés qui chargent les common language runtime dans leurs processus et initient l’exécution du code managé, créant ainsi un environnement logiciel qui exploite les fonctionnalités gérées et non managées. .NET Framework fournit non seulement plusieurs hôtes de Runtime, mais prend également en charge le développement d’hôtes de Runtime tiers.
 
-Par exemple, ASP.NET héberge le runtime pour fournir un environnement côté serveur, évolutif pour le code managé. ASP.NET fonctionne directement avec le temps d’exécution pour activer ASP.NET applications et les services Web XML, qui sont tous deux discutés plus tard dans cet article.
+Par exemple, ASP.NET héberge le runtime pour fournir un environnement côté serveur, évolutif pour le code managé. ASP.NET fonctionne directement avec le runtime pour activer les applications ASP.NET et les services Web XML, qui sont tous deux décrits plus loin dans cet article.
 
 Internet Explorer est un exemple d’application non managée qui héberge le runtime (sous la forme d’une extension de type MIME). L'utilisation d'Internet Explorer pour héberger le runtime vous permet d'incorporer des composants managés ou des contrôles Windows Forms dans des documents HTML. Ainsi hébergé, le runtime rend possible le code mobile managé, avec toutefois des améliorations significatives que seul le code managé permet, telles que l’exécution d’un niveau de confiance partielle et le stockage de fichiers isolés.
 
@@ -45,7 +46,7 @@ L’illustration suivante montre les relations du Common Language Runtime et de 
 
 ![Capture d’écran montrant comment le code managé opère au sein d’une architecture plus grande.](./media/overview/language-runtime-class-library-relationship.gif)
 
-Les sections suivantes décrivent plus en détail les principales caractéristiques du cadre .NET.
+Les sections suivantes décrivent les principales fonctionnalités de .NET Framework plus en détail.
 
 ## <a name="features-of-the-common-language-runtime"></a>Fonctionnalités du Common Language Runtime
 
@@ -71,7 +72,7 @@ La bibliothèque de classes .NET Framework est une collection de types réutilis
 
 Par exemple, les classes de collection du .NET Framework implémentent un jeu d’interfaces pour développer vos propres classes de collection. Vos classes de collection s’intègrent parfaitement aux classes du .NET Framework.
 
-Comme vous vous y attendez d’une bibliothèque de classe orientée objet, les types .NET Framework vous permettent d’accomplir une gamme de tâches de programmation courantes, y compris la gestion des chaînes, la collecte de données, la connectivité de base de données et l’accès aux fichiers. En plus de ces tâches courantes, la bibliothèque de classes comprend des types qui prennent en charge une variété de scénarios de développement spécialisé. Vous pouvez utiliser .NET Framework pour développer les types d’applications et de services suivants :
+Comme vous le feriez pour une bibliothèque de classes orientée objet, les types de .NET Framework vous permettent d’accomplir un éventail de tâches de programmation courantes, notamment la gestion des chaînes, la collecte de données, la connectivité de base de données et l’accès aux fichiers. En plus de ces tâches courantes, la bibliothèque de classes comprend des types qui prennent en charge une variété de scénarios de développement spécialisé. Vous pouvez utiliser .NET Framework pour développer les types d’applications et de services suivants :
 
 - Applications de console. Consultez [Génération d'applications console](../../standard/building-console-apps.md).
 
@@ -91,9 +92,9 @@ Les classes Windows Forms sont un ensemble complet de types réutilisables qui s
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Exigences du système](system-requirements.md)
-- [Guide d’installation](../install/index.md)
+- [Configuration système requise](system-requirements.md)
+- [Guide d'installation](../install/index.md)
 - [Guide de développement](../development-guide.md)
-- [Outils](../tools/index.md)
+- [outils](../tools/index.md)
 - [Exemples et tutoriels .NET](../../samples-and-tutorials/index.md)
 - [Navigateur d’API .NET](../../../api/index.md)

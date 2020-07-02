@@ -1,5 +1,6 @@
 ---
 title: Marshaling par défaut pour les objets
+description: Comprendre le marshaling par défaut pour les objets. Passez en revue les options de marshaling. Marshaler des objets vers des interfaces ou des variantes, des variantes vers des objets et des variantes ByRef.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - objects, interop marshaling
 - interop marshaling, objects
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
-ms.openlocfilehash: e0de715a3ed33eedf212fc3e0e9930c9cbaa0a38
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7b8f94f4dfd8e8b9e8e04df8de5f8266a8581a92
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123587"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618450"
 ---
 # <a name="default-marshaling-for-objects"></a>Marshaling par défaut pour les objets
 
@@ -116,7 +117,7 @@ struct ObjectHolder {
 
 ## <a name="marshaling-object-to-interface"></a>Marshaling d’un objet vers une interface
 
-Quand un objet est exposé à COM en tant qu’interface, cette interface est l’interface de classe pour le type managé <xref:System.Object> (l’interface **_Object**). Cette interface est typée en **IDispatch** tant que<xref:System.Runtime.InteropServices.UnmanagedType>IDispatch () ou **IUnknown** (**UnmanagedType. IUnknown**) dans la bibliothèque de types résultante. Les clients COM peuvent appeler dynamiquement les membres de la classe managée ou tout membre implémenté par ses classes dérivées via l’interface **_Object**. Le client peut également appeler **QueryInterface** pour obtenir toute autre interface explicitement implémentée par le type managé.
+Quand un objet est exposé à COM en tant qu’interface, cette interface est l’interface de classe pour le type managé <xref:System.Object> (l’interface **_Object**). Cette interface est typée en tant que **IDispatch** ( <xref:System.Runtime.InteropServices.UnmanagedType> ) ou **IUnknown** (**UnmanagedType. IUnknown**) dans la bibliothèque de types résultante. Les clients COM peuvent appeler dynamiquement les membres de la classe managée ou tout membre implémenté par ses classes dérivées via l’interface **_Object**. Le client peut également appeler **QueryInterface** pour obtenir toute autre interface explicitement implémentée par le type managé.
 
 ## <a name="marshaling-object-to-variant"></a>Marshaling d’un objet vers un variant
 
@@ -314,14 +315,14 @@ Le tableau suivant résume les règles de propagation pour les variants et les o
 |----------|--------|-----------------------------|
 |**Variant**  *v*|**Object**  *o*|Jamais|
 |**Object**  *o*|**Variant**  *v*|Jamais|
-|**Variante**   ***\****  *PV*|**Ref Object**  *o*|Toujours|
-|**Objet Ref**  *o*|**Variante**   ***\****  *PV*|Toujours|
-|**Variante**  *v* **(VT_BYREF** *&#124;* **VT_\*)**|**Object**  *o*|Jamais|
+|**Variante** ***\**** *PV*     |**Ref Object**  *o*|Toujours|
+|**Objet Ref**  *o*|**Variante** ***\**** *PV*     |Toujours|
+|**Variante**  *v* **(VT_BYREF** *&#124;* **VT_ \* )**|**Object**  *o*|Jamais|
 |**Variant**  *v* **(VT_BYREF** *&#124;* **VT_)**|**Ref Object**  *o*|Uniquement si le type n’a pas changé.|
 
 ## <a name="see-also"></a>Voir aussi
 
 - [comportement de marshaling par défaut](default-marshaling-behavior.md)
-- [Types blittable et non blittable](blittable-and-non-blittable-types.md)
+- [types blittable et non blittable](blittable-and-non-blittable-types.md)
 - [Attributs directionnels](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [copie et épinglage](copying-and-pinning.md)
