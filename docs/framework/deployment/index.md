@@ -1,5 +1,6 @@
 ---
 title: Déploiement d'applications et du .NET Framework
+description: Commencez à déployer .NET avec votre application. .NET fournit des applications sans impact, des composants privés par défaut, le partage de code contrôlé, et bien plus encore.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - deploying applications [.NET Framework], packaging
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework, deploying
 - .NET Framework application deployment
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
-ms.openlocfilehash: b1ba9810b4b0d5a1688318db1093a9ce9bdf8fda
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cce888c962c9ab83c13cce4040eb9ba50270972d
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716464"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803499"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Déploiement d'applications et du .NET Framework
 
@@ -32,15 +33,15 @@ Utilisez les liens suivants vers d'autres articles MSDN pour obtenir des informa
 
     - [Programme d’installation web](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
 
-    - [programme d’installation hors connexion](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
+    - [Programme d’installation hors connexion](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
 
   - Modes d'installation :
 
-    - [Installation silencieuse](deployment-guide-for-developers.md#chaining_custom)
+    - [Installation sans assistance](deployment-guide-for-developers.md#chaining_custom)
 
     - [Affichage d’une interface utilisateur](deployment-guide-for-developers.md#chaining_default)
 
-  - [Le système de réduction redémarre lors des installations .NET Framework 4.5](reducing-system-restarts.md)
+  - [Réduction des redémarrages du système lors des installations .NET Framework 4,5](reducing-system-restarts.md)
 
   - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)
 
@@ -64,7 +65,7 @@ Utilisez les liens suivants vers d'autres articles MSDN pour obtenir des informa
 
 **Maintenance**
 
-- Pour plus d’informations générales, voir le [blog .NET Framework](https://devblogs.microsoft.com/dotnet/).
+- Pour obtenir des informations générales, consultez le [blog .NET Framework](https://devblogs.microsoft.com/dotnet/).
 
 - [Détection des versions](../migration-guide/how-to-determine-which-versions-are-installed.md)
 
@@ -163,7 +164,7 @@ Prenez également en compte les considérations de sécurité dans votre choix d
 |[Méthode de localisation des assemblys par le runtime](how-the-runtime-locates-assemblies.md)|Décrit comment le common language runtime détermine quel assembly utiliser pour répondre à une demande de liaison.|
 |[Bonnes pratiques pour le chargement d'assemblys](best-practices-for-assembly-loading.md)|Explique les moyens d'éviter les problèmes d'identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d'autres erreurs.|
 |[Réduction des redémarrages système lors des installations du .NET Framework 4.5](reducing-system-restarts.md)|Décrit le Gestionnaire de redémarrage qui empêche les redémarrages si possible, et explique les avantages de son utilisation pour les applications qui installent le .NET Framework.|
-|[Guide de déploiement pour les administrateurs](guide-for-administrators.md)|Explique comment un administrateur système peut déployer le cadre .NET et ses dépendances système à travers un réseau en utilisant Microsoft Endpoint Configuration Manager.|
+|[Guide de déploiement pour les administrateurs](guide-for-administrators.md)|Explique comment un administrateur système peut déployer le .NET Framework et ses dépendances système sur un réseau à l’aide de points de terminaison Microsoft Configuration Manager.|
 |[Guide de déploiement pour les développeurs](deployment-guide-for-developers.md)|Explique comment les développeurs peuvent installer le .NET Framework sur les ordinateurs des utilisateurs avec leurs applications.|
 |[Déploiement d’applications, de services et de composants](/visualstudio/deployment/deploying-applications-services-and-components)|Présente les différentes options de déploiement dans Visual Studio, y compris les instructions de publication d'une application à l'aide des fonctionnalités ClickOnce et Windows Installer.|
 |[Publication d’applications ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Décrit comment empaqueter une application Windows Forms pour la déployer ensuite avec ClickOnce sur des ordinateurs clients d’un réseau.|

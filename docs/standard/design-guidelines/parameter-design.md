@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-ms.openlocfilehash: 46c1b8f03d054a63ea837a73fd30eeed163ab0a4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e0bc52f5679a7771d5690be9f903e677ce611605
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290095"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621585"
 ---
 # <a name="parameter-design"></a>Conception de paramètres
 
@@ -40,7 +40,7 @@ Cette section fournit des instructions générales sur la conception des paramè
 
  Cela communique mieux la relation entre les méthodes.
 
-### <a name="choose-between-enum-and-boolean-parameters"></a>Choisir entre les paramètres enum et Boolean
+### <a name="choosing-between-enum-and-boolean-parameters"></a>Choix entre les paramètres enum et Boolean  
  ✔️ Utilisez des enums si un membre a sinon deux paramètres booléens ou plus.
 
  ❌N’utilisez pas de valeurs booléennes sauf si vous êtes absolument sûr qu’il n’y aura jamais besoin de plus de deux valeurs.
@@ -49,7 +49,7 @@ Cette section fournit des instructions générales sur la conception des paramè
 
  ✔️ envisagez d’utiliser des valeurs booléennes pour les paramètres de constructeur qui sont véritablement des valeurs à deux États et qui sont simplement utilisées pour initialiser des propriétés booléennes.
 
-### <a name="validate-arguments"></a>Valider les arguments
+### <a name="validating-arguments"></a>Validation des arguments
  ✔️ validez les arguments passés aux membres publics, protégés ou implémentés explicitement. Throw <xref:System.ArgumentException?displayProperty=nameWithType> , ou l’une de ses sous-classes, si la validation échoue.
 
  Notez que la validation réelle ne doit pas nécessairement se produire dans le membre public ou protégé lui-même. Cela peut se produire à un niveau inférieur dans une routine privée ou interne. Le point principal est que la surface d’exposition entière exposée aux utilisateurs finaux vérifie les arguments.
@@ -66,10 +66,10 @@ Cette section fournit des instructions générales sur la conception des paramè
 
  Si le membre est sensible à la sécurité, il est recommandé d’effectuer une copie, puis de valider et de traiter l’argument.
 
-### <a name="pass-parameters"></a>Transmettre des paramètres
+### <a name="parameter-passing"></a>Passage de paramètres
  Du point de vue d’un concepteur d’infrastructure, il existe trois groupes principaux de paramètres : les paramètres par valeur, `ref` les paramètres et les `out` paramètres.
 
- Quand un argument est passé via un paramètre par valeur, le membre reçoit une copie de l’argument réel passé. Si l’argument est un type valeur, une copie de l’argument est placée sur la pile. Si l’argument est un type référence, une copie de la référence est placée sur la pile. La plupart des langages CLR populaires, tels que C#, Visual Basic et C++, transmettent par défaut des paramètres par valeur.
+ Quand un argument est passé via un paramètre par valeur, le membre reçoit une copie de l’argument réel passé. Si l’argument est un type valeur, une copie de l’argument est placée sur la pile. Si l’argument est un type référence, une copie de la référence est placée sur la pile. La plupart des langages CLR populaires, tels que C#, VB.NET et C++, passent par défaut les paramètres par valeur.
 
  Quand un argument est passé via un `ref` paramètre, le membre reçoit une référence à l’argument réel passé. Si l’argument est un type valeur, une référence à l’argument est placée sur la pile. Si l’argument est un type référence, une référence à la référence est placée sur la pile. `Ref`les paramètres peuvent être utilisés pour permettre au membre de modifier les arguments passés par l’appelant.
 
@@ -151,7 +151,7 @@ public class String {
 
  Par exemple, il n’est pas nécessaire de passer l’index de début, car une opération arithmétique de pointeur simple peut être utilisée pour obtenir le même résultat.
 
- *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
+ *Parties &copy; 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
  *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*
 

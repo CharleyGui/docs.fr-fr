@@ -1,16 +1,17 @@
 ---
 title: Indications pour la création de composants pour l'exécution côte à côte
+description: Passez en revue les instructions relatives à la création de composants pour l’exécution côte à côte. Par exemple, liez l’identité de type à une certaine version de fichier ou utilisez un stockage prenant en compte la version.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution, multiple application versions
 - side-by-side execution, multiple component versions
 ms.assetid: 5c540161-6e40-42e9-be92-6175aee2c46a
-ms.openlocfilehash: 42d0e2d85517d4a8fb443db9b63e6b893267caca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f0d25984f2444d29d9fc0edb3add23b6adc04c62
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73121588"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622638"
 ---
 # <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>Indications pour la création de composants pour l'exécution côte à côte
 Suivez ces recommandations générales pour créer des applications managées ou des composants conçus pour l'exécution côte à côte :  
@@ -63,4 +64,4 @@ Suivez ces recommandations générales pour créer des applications managées ou
 ## <a name="see-also"></a>Voir aussi
 
 - [Exécution côte à côte](side-by-side-execution.md)
-- [Comment : activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
+- [Procédure : Activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

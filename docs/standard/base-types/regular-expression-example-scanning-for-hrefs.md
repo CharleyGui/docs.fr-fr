@@ -1,7 +1,7 @@
 ---
 title: "Exemple d'expression régulière : recherche de valeurs HREF"
 description: Consultez un exemple d’expressions régulières dans .NET. L’exemple recherche une chaîne d’entrée et affiche toutes les valeurs d’attribut href et leurs emplacements.
-ms.date: 03/30/2017
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -14,17 +14,19 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
-ms.openlocfilehash: 36273901ac9afb762ac70ee5d6dcd80ff0ede11d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7bcc2a4242bfaed3e3340347a30e97e7e4060794
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84583490"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85802848"
 ---
 # <a name="regular-expression-example-scanning-for-hrefs"></a>Exemple d'expression régulière : recherche de valeurs HREF
 L’exemple suivant recherche une chaîne d’entrée et affiche toutes les valeurs href="…" et leurs emplacements dans la chaîne.  
-  
-## <a name="the-regex-object"></a>Objet Regex  
+
+[!INCLUDE [regex](../../../includes/regex.md)]
+
+## <a name="the-regex-object"></a>Objet Regex
  Étant donné que la méthode `DumpHRefs` peut être appelée plusieurs fois à partir du code utilisateur, la méthode <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>`static`(`Shared` dans Visual Basic) est utilisée. Ainsi, le moteur d’expression régulière peut mettre en cache l’expression régulière et éviter le traitement de l’instanciation d’un nouvel objet <xref:System.Text.RegularExpressions.Regex> chaque fois que la méthode est appelée. Un objet <xref:System.Text.RegularExpressions.Match> est alors utilisé pour effectuer une itération dans toutes les correspondances dans la chaîne.  
   
  [!code-csharp[RegularExpressions.Examples.HREF#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.HREF/cs/example.cs#1)]

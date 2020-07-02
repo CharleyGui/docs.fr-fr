@@ -4,12 +4,12 @@ titleSuffix: ''
 description: En savoir plus sur les kits de développement logiciel (SDK) de projet .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 67dede3caabd2967adca22e7563376c761829655
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 9db62ab7774e3dd71412fa346d78ae0c62a2f81f
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144237"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803039"
 ---
 # <a name="net-core-project-sdks"></a>Kits de développement logiciel (SDK) de projet .NET Core
 
@@ -19,7 +19,7 @@ Les projets .NET Core sont associés à un kit de développement logiciel (SDK).
 
 Les kits de développement logiciel (SDK) suivants sont disponibles pour .NET Core :
 
-| id | Description | Référentiel|
+| id | Description | Dépôt|
 | - | - | - |
 | `Microsoft.NET.Sdk` | Kit SDK .NET Core | <https://github.com/dotnet/sdk> |
 | `Microsoft.NET.Sdk.Web` | Le kit de [développement logiciel (SDK) Web](/aspnet/core/razor-pages/web-sdk) .net Core | <https://github.com/aspnet/websdk> |
@@ -41,7 +41,7 @@ Les projets .NET Core sont basés sur le format [MSBuild](/visualstudio/msbuild/
 </Project>
 ```
 
-Pour spécifier un kit de développement logiciel (SDK) qui provient de NuGet, incluez la version à la fin du nom, ou spécifiez le nom et la version dans le fichier *global. JSON* .
+Pour spécifier un kit de développement logiciel (SDK) qui provient de NuGet, incluez la version à la fin du nom, ou spécifiez le nom et la version dans le fichier *global.js* .
 
 ```xml
 <Project Sdk="MSBuild.Sdk.Extras/2.0.54">
@@ -89,8 +89,8 @@ Le tableau suivant indique les éléments et les [modèles glob](https://en.wiki
 
 | Élément           | Inclure Glob                              | Exclure Glob                                                  | Supprimer Glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
-| Compiler           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | NON APPLICABLE                      |
-| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | NON APPLICABLE                      |
+| Compiler           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                      |
+| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                      |
 | None              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx |
 
 > [!NOTE]
@@ -176,6 +176,6 @@ Vous pouvez configurer l’utilisation de la cible personnalisée. Étant donné
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Installez .NET Core](../install/index.md)
+- [Installez .NET Core](../install/index.yml)
 - [Comment utiliser les kits de développement logiciel (SDK) de projet MSBuild](/visualstudio/msbuild/how-to-use-project-sdk)
 - [Packages et cibles MSBuild personnalisés avec NuGet](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package)

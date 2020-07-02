@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 0fb21b09fbf97f9c9ac2bf2982c391b87e2debc1
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 7a4ffd5b1b58e6ea7fd46c676e139b77a126aa2b
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614355"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803025"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Déployer des applications .NET Core avec Visual Studio
 
@@ -32,7 +32,7 @@ Le déploiement d’un déploiement dépendant du framework sans dépendances ti
 
 1. Créez le projet.
 
-   Sélectionnez **fichier**  >  **nouveau**  >  **projet**. Dans la boîte de dialogue **Nouveau projet**, développez les catégories de projet de votre langage (C# ou Visual Basic) au sein du volet des types de projet **Installé**, choisissez **.NET Core**, puis sélectionnez le modèle **Application console (.NET Core)** dans le volet central. Entrez un nom de projet, tel que « FDD », dans la zone de texte **Nom**. Sélectionnez le bouton **OK** .
+   Sélectionnez **Fichier** > **Nouveau** > **Projet**. Dans la boîte de dialogue **Nouveau projet**, développez les catégories de projet de votre langage (C# ou Visual Basic) au sein du volet des types de projet **Installé**, choisissez **.NET Core**, puis sélectionnez le modèle **Application console (.NET Core)** dans le volet central. Entrez un nom de projet, tel que « FDD », dans la zone de texte **Nom**. Sélectionnez le bouton **OK** .
 
 1. Ajoutez le code source de l’application.
 
@@ -43,7 +43,7 @@ Le déploiement d’un déploiement dépendant du framework sans dépendances ti
 
 1. Créez une build Debug de votre application.
 
-   Sélectionnez **générer**générer la  >  **solution**. Vous pouvez également compiler et exécuter la version Debug de votre application en sélectionnant **Déboguer**  >  **Démarrer le débogage**.
+   Sélectionnez **Générer** > **Générer la solution**. Vous pouvez également compiler et exécuter la version Debug de votre application en sélectionnant **Déboguer**  >  **Démarrer le débogage**.
 
 1. Déployez votre application.
 
@@ -83,7 +83,7 @@ L’exécution d’un déploiement autonome sans aucune dépendance tierce impli
 
 1. Créez le projet.
 
-   Sélectionnez **fichier**  >  **nouveau**  >  **projet**. Dans la boîte de dialogue **Nouveau projet**, développez les catégories de projet de votre langage (C# ou Visual Basic) au sein du volet des types de projet **Installé**, choisissez **.NET Core**, puis sélectionnez le modèle **Application console (.NET Core)** dans le volet central. Entrez un nom de projet, tel que « SCD », dans la zone de texte **Nom**, puis sélectionnez le bouton **OK**.
+   Sélectionnez **Fichier** > **Nouveau** > **Projet**. Dans la boîte de dialogue **Nouveau projet**, développez les catégories de projet de votre langage (C# ou Visual Basic) au sein du volet des types de projet **Installé**, choisissez **.NET Core**, puis sélectionnez le modèle **Application console (.NET Core)** dans le volet central. Entrez un nom de projet, tel que « SCD », dans la zone de texte **Nom**, puis sélectionnez le bouton **OK**.
 
 1. Ajoutez le code source de l’application.
 
@@ -98,11 +98,11 @@ L’exécution d’un déploiement autonome sans aucune dépendance tierce impli
 
    Pour activer le mode invariant, cliquez avec le bouton droit sur le projet (pas la solution) dans l’**Explorateur de solutions**, puis sélectionnez **Modifier SCD.csproj** ou **Modifier SCD.vbproj**. Ajoutez ensuite les lignes en surbrillance suivantes au fichier :
 
-   [!code-xml[globalization-invariant-mode](./snippets/deploy-with-vs/xml/invariant.csproj?highlight=6-8)]
+   [!code-xml[globalization-invariant-mode](./snippets/deploy-with-vs/xml/invariant.csproj?highlight=7-9)]
 
 1. Créez une build Debug de votre application.
 
-   Sélectionnez **générer**générer la  >  **solution**. Vous pouvez également compiler et exécuter la version Debug de votre application en sélectionnant **Déboguer**  >  **Démarrer le débogage**. Cette étape de débogage vous permet d’identifier les problèmes de votre application quand elle s’exécute sur la plateforme hôte. Vous devez tout de même la tester sur chacune des plateformes cibles.
+   Sélectionnez **Générer** > **Générer la solution**. Vous pouvez également compiler et exécuter la version Debug de votre application en sélectionnant **Déboguer**  >  **Démarrer le débogage**. Cette étape de débogage vous permet d’identifier les problèmes de votre application quand elle s’exécute sur la plateforme hôte. Vous devez tout de même la tester sur chacune des plateformes cibles.
 
    Si vous avez activé le mode invariant de globalisation, vérifiez si l’absence de données relatives à la culture convient à votre application.
 
@@ -192,9 +192,9 @@ Pour chaque plateforme ciblée par votre application, effectuez ce qui suit :
 
 1. Sélectionnez l’emplacement où Visual Studio publie votre application.
 
-   Si vous publiez uniquement sur une seule plateforme, vous pouvez accepter la valeur par défaut dans la zone de texte **choisir un dossier** . Cela permet de publier le déploiement dépendant du Framework de votre application dans le répertoire de * \< projet> répertoire \bin\release\netcoreapp2.1\publish* .
+   Si vous publiez uniquement sur une seule plateforme, vous pouvez accepter la valeur par défaut dans la zone de texte **choisir un dossier** . Cela permet de publier le déploiement dépendant du Framework de votre application dans le répertoire * \<project-directory> \bin\Release\netcoreapp2.1\publish* .
 
-   Si vous publiez sur plusieurs plateformes, ajoutez une chaîne identifiant la plateforme cible. Par exemple, si vous ajoutez la chaîne « Linux » au chemin d’accès du fichier, Visual Studio publie le déploiement dépendant du Framework de votre application dans le répertoire de * \< projet> répertoire \bin\release\netcoreapp2.1\publish\linux* .
+   Si vous publiez sur plusieurs plateformes, ajoutez une chaîne identifiant la plateforme cible. Par exemple, si vous ajoutez la chaîne « Linux » au chemin d’accès du fichier, Visual Studio publie le déploiement dépendant du Framework de votre application dans le répertoire * \<project-directory> \bin\Release\netcoreapp2.1\publish\linux* .
 
 1. Pour créer le profil, sélectionnez l’icône de liste déroulante en regard du bouton **Publier**, puis sélectionnez **Créer un profil**. Sélectionnez ensuite le bouton **Créer un profil** pour créer le profil.
 

@@ -3,34 +3,33 @@ title: Méthodes d’extension
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 5de945cb-88f4-49d7-b0e6-f098300cf357
-ms.openlocfilehash: 77c012d7838ae2fa1f62163bc58520db67c64ce5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 55e6a816bbec401fdb061a3394635378b2f37424
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289757"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621598"
 ---
 # <a name="extension-methods"></a>Méthodes d’extension
-
 Les méthodes d’extension sont une fonctionnalité de langage qui permet d’appeler des méthodes statiques à l’aide de la syntaxe d’appel de méthode d’instance. Ces méthodes doivent accepter au moins un paramètre, qui représente l’instance sur laquelle la méthode doit fonctionner.
 
- La classe qui définit une méthode d’extension est appelée classe « sponsor » et doit être déclarée comme `static` . Pour utiliser des méthodes d’extension, vous devez importer l’espace de noms qui définit la classe sponsor.
+ La classe qui définit ces méthodes d’extension est appelée classe « sponsor » et doit être déclarée comme static. Pour utiliser des méthodes d’extension, vous devez importer l’espace de noms définissant la classe sponsor.
 
- ❌Évitez l’utilisation excessive des méthodes d’extension, en particulier sur les types dont vous n’êtes pas propriétaire.
+ ❌Évitez les frivolously définissant les méthodes d’extension, en particulier sur les types dont vous n’êtes pas propriétaire.
 
- Si vous disposez d’un code source de type, envisagez plutôt d’utiliser des méthodes d’instance normales. Si vous ne possédez pas le code source et que vous souhaitez ajouter une méthode, soyez très vigilant. La libéralisation de l’utilisation des méthodes d’extension risque d’encombrer les API de types qui n’ont pas été conçues pour avoir ces méthodes.
+ Si vous disposez d’un code source de type, envisagez plutôt d’utiliser des méthodes d’instance normales. Si vous ne possédez pas et que vous souhaitez ajouter une méthode, soyez très vigilant. La libéralisation de l’utilisation des méthodes d’extension risque d’encombrer les API de types qui n’ont pas été conçues pour avoir ces méthodes.
 
  ✔️ envisagez d’utiliser des méthodes d’extension dans l’un des scénarios suivants :
 
-- Pour fournir des fonctionnalités d’assistance relatives à chaque implémentation d’une interface, si cette fonctionnalité peut être écrite en termes d’interface principale. Cela est dû au fait que les implémentations concrètes ne peuvent pas être assignées à des interfaces. Par exemple, les opérateurs LINQ to Objects sont implémentés en tant que méthodes d’extension pour tous les <xref:System.Collections.Generic.IEnumerable%601> types. Ainsi, toutes les `IEnumerable<>` implémentations sont automatiquement compatibles LINQ.
+- Pour fournir des fonctionnalités d’assistance relatives à chaque implémentation d’une interface, si cette fonctionnalité peut être écrite en termes d’interface principale. Cela est dû au fait que les implémentations concrètes ne peuvent pas être assignées à des interfaces. Par exemple, les `LINQ to Objects` opérateurs sont implémentés en tant que méthodes d’extension pour tous les <xref:System.Collections.Generic.IEnumerable%601> types. Ainsi, toutes les `IEnumerable<>` implémentations sont automatiquement compatibles LINQ.
 
 - Quand une méthode d’instance introduit une dépendance sur un certain type, mais une telle dépendance rompt les règles de gestion des dépendances. Par exemple, une dépendance de <xref:System.String> à <xref:System.Uri?displayProperty=nameWithType> n’est probablement pas souhaitable. par conséquent, `String.ToUri()` la méthode d’instance qui retourne `System.Uri` serait la mauvaise conception du point de vue de la gestion des dépendances. Le retour d’une méthode d’extension statique `Uri.ToUri(this string str)` `System.Uri` est une bien meilleure conception.
 
  ❌Évitez de définir des méthodes d’extension sur <xref:System.Object?displayProperty=nameWithType> .
 
- Visual Basic les utilisateurs ne seront pas en mesure d’appeler ces méthodes sur des références d’objet à l’aide de la syntaxe de méthode d’extension. Dans Visual Basic, la déclaration d’une référence comme `Object` force la liaison tardive de tous les appels de méthode sur celui-ci (ce qui signifie que le membre réel appelé est déterminé au moment de l’exécution). Les liaisons aux méthodes d’extension sont déterminées au moment de la compilation (liaison anticipée).
+ Les utilisateurs VB ne peuvent pas appeler ces méthodes sur des références d’objet à l’aide de la syntaxe de méthode d’extension. VB ne prend pas en charge l’appel de telles méthodes, car, en VB, la déclaration d’une référence en tant qu’objet force la liaison tardive de tous les appels de méthode sur celui-ci (le membre réel appelé est déterminé au moment de l’exécution), tandis que les liaisons aux méthodes d’extension sont déterminées au moment de la compilation (liaison anticipée).
 
- Cette règle s’applique aux autres langages où le même comportement de liaison est présent ou où les méthodes d’extension ne sont pas prises en charge.
+ Notez que l’instruction s’applique à d’autres langages où le même comportement de liaison est présent, ou où les méthodes d’extension ne sont pas prises en charge.
 
  ❌NE placez pas les méthodes d’extension dans le même espace de noms que le type étendu, sauf s’il s’agit d’ajouter des méthodes aux interfaces ou pour la gestion des dépendances.
 

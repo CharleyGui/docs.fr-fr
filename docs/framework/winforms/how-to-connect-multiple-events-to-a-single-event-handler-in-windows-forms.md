@@ -1,5 +1,6 @@
 ---
 title: 'Comment : connecter plusieurs événements à un même gestionnaire d’événements'
+description: Découvrez comment connecter plusieurs événements à un même gestionnaire d’événements dans Windows Forms à l’aide de la vue événements du Fenêtre Propriétés en C#.
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -10,15 +11,15 @@ helpviewer_keywords:
 - Windows Forms controls, events
 - menu items [Windows Forms], multicasting event-handling methods
 ms.assetid: 5a20749a-41b5-4acc-8eb1-9e5040b0a2c4
-ms.openlocfilehash: 0591291522ab1da04fef90bf1c0a73cf33ba0518
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: cca85c223b46d9a82dbc3e34e3377fb83c075959
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739609"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621884"
 ---
-# <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Comment : connecter plusieurs événements à un même gestionnaire d'événements dans les Windows Forms
-Dans la conception de votre application, il peut s’avérer nécessaire d’utiliser un seul gestionnaire d’événements pour plusieurs événements ou de faire en sorte que plusieurs événements effectuent la même procédure. Par exemple, il est souvent plus efficace de faire en sorte qu’une commande de menu génère le même événement qu’un bouton de votre formulaire si elle expose la même fonctionnalité. Pour ce faire, vous pouvez utiliser la vue événements de la Fenêtre Propriétés C# dans ou à l’aide du mot clé `Handles` et des zones de liste déroulante nom de la **classe** et nom de la **méthode** dans l’éditeur de code Visual Basic.  
+# <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Procédure : connecter plusieurs événements à un seul gestionnaire d’événements dans Windows Forms
+Dans la conception de votre application, il peut s’avérer nécessaire d’utiliser un seul gestionnaire d’événements pour plusieurs événements ou de faire en sorte que plusieurs événements effectuent la même procédure. Par exemple, il est souvent plus efficace de faire en sorte qu’une commande de menu génère le même événement qu’un bouton de votre formulaire si elle expose la même fonctionnalité. Pour ce faire, vous pouvez utiliser la vue événements de l’Fenêtre Propriétés en C# ou le `Handles` mot clé et les zones de liste déroulante nom de la **classe** et nom de la **méthode** dans l’éditeur de code Visual Basic.  
   
 ### <a name="to-connect-multiple-events-to-a-single-event-handler-in-visual-basic"></a>Pour connecter plusieurs événements à un même gestionnaire d’événements dans Visual Basic  
   
@@ -28,7 +29,7 @@ Dans la conception de votre application, il peut s’avérer nécessaire d’uti
   
 3. Dans la zone de liste déroulante nom de la **méthode** , sélectionnez l’un des événements que vous souhaitez que le gestionnaire d’événements gère.  
   
-4. L’éditeur de code insère le gestionnaire d’événements approprié et positionne le point d’insertion dans la méthode. Dans l’exemple ci-dessous, il s’agit de l’événement <xref:System.Windows.Forms.Control.Click> pour le contrôle <xref:System.Windows.Forms.Button>.  
+4. L’éditeur de code insère le gestionnaire d’événements approprié et positionne le point d’insertion dans la méthode. Dans l’exemple ci-dessous, il s’agit <xref:System.Windows.Forms.Control.Click> de l’événement pour le <xref:System.Windows.Forms.Button> contrôle.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -36,7 +37,7 @@ Dans la conception de votre application, il peut s’avérer nécessaire d’uti
     End Sub  
     ```  
   
-5. Ajoutez les autres événements que vous souhaitez gérer à la clause `Handles`.  
+5. Ajoutez les autres événements que vous souhaitez gérer à la `Handles` clause.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click, Button2.Click  
@@ -62,5 +63,5 @@ Dans la conception de votre application, il peut s’avérer nécessaire d’uti
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md)
-- [Vue d'ensemble des gestionnaires d'événements](event-handlers-overview-windows-forms.md)
+- [Création de gestionnaires d'événements dans les Windows Forms](creating-event-handlers-in-windows-forms.md)
+- [Vue d’ensemble des gestionnaires d’événements](event-handlers-overview-windows-forms.md)

@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé reportAvOnComRelease
+description: Passez en revue l’Assistant Débogage managé (MDA) reportAvOnComRelease, qui peut être activé en raison de violations d’accès et d’une altération de la mémoire dans .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), reference counting errors
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - report access violation on Com release
 - reference counting errors
 ms.assetid: a2b86b63-08b2-4943-b344-3c2cf46ccd31
-ms.openlocfilehash: fca6b209e6432678a264f10762adb3871e3596ce
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: f9ba343060cb4d16de5909a5b619353546aca8ca
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217220"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803608"
 ---
 # <a name="reportavoncomrelease-mda"></a>Assistant Débogage managé reportAvOnComRelease
 L'Assistant Débogage managé `reportAvOnComRelease` est activé quand des exceptions sont levées en raison d'erreurs de comptage de références utilisateur pendant une opération COM Interop et l'utilisation de la méthode <xref:System.Runtime.InteropServices.Marshal.Release%2A> ou <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> combinée avec des appels COM bruts.  
@@ -24,7 +25,7 @@ L'Assistant Débogage managé `reportAvOnComRelease` est activé quand des excep
 ## <a name="symptoms"></a>Symptômes  
  Violations d'accès et endommagement de la mémoire.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Parfois, une exception est levée en raison d'erreurs de comptage de références utilisateur pendant une opération COM Interop et l'utilisation de la méthode <xref:System.Runtime.InteropServices.Marshal.Release%2A> ou <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> combinée avec des appels COM bruts. Normalement, cette exception est ignorée, car elle entraînerait une violation d'accès dans le CLR et l'arrêt de ce dernier. Quand cet Assistant est activé, les exceptions de ce type peuvent être détectées et signalées au lieu d'être simplement ignorées.  
   
 ## <a name="resolution"></a>Résolution  
@@ -50,4 +51,4 @@ L'Assistant Débogage managé `reportAvOnComRelease` est activé quand des excep
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

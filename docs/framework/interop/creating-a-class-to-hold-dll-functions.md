@@ -1,5 +1,6 @@
 ---
 title: Création d'une classe pour contenir des fonctions DLL
+description: Créez un wrapper de classe managé dans .NET pour contenir des fonctions DLL, ce qui permet d’encapsuler les fonctionnalités de la plateforme.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM interop, DLL functions
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - platform invoke, creating class for functions
 - DLL functions
 ms.assetid: e08e4c34-0223-45f7-aa55-a3d8dd979b0f
-ms.openlocfilehash: 765d4344553a6e65b930a7bf586a41144d220fc6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b8aa0361ee5213cb947a102f903d1a7a35331f17
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123623"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622170"
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a>Création d'une classe pour contenir des fonctions DLL
 L’enveloppement d’une fonction DLL fréquemment utilisée dans une classe managée est une stratégie efficace d’encapsulation des fonctionnalités de la plateforme. Bien que cette opération ne soit pas obligatoire dans tous les cas, un wrapper de classe s’avère pratique, car la définition de fonctions DLL peut être fastidieuse et sujette à erreurs. En cas de programmation en Visual Basic ou C#, vous devez déclarer les fonctions DLL dans une classe ou un module Visual Basic.  
@@ -24,7 +25,7 @@ L’enveloppement d’une fonction DLL fréquemment utilisée dans une classe ma
   
  Une fois les méthodes incluses dans un wrapper, vous pouvez les appeler sur la classe de la même manière que vous appelez des méthodes statiques sur toute autre classe. L’appel de code non managé gère automatiquement la fonction exportée sous-jacente.  
   
- Lors de la conception d’une classe managée pour l’appel de code non managé, tenez compte des relations entre les classes et les fonctions DLL. Vous pouvez par exemple :  
+ Lors de la conception d’une classe managée pour l’appel de code non managé, tenez compte des relations entre les classes et les fonctions DLL. Par exemple, vous pouvez :  
   
 - déclarer des fonctions DLL dans une classe existante ;  
   

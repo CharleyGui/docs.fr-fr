@@ -1,5 +1,6 @@
 ---
 title: Identification des fonctions des DLL
+description: Identifiez les fonctions dans les DLL. L’identité d’une fonction DLL se compose d’un nom de fonction ou d’un ordinal, et du nom de fichier DLL dans lequel l’implémentation peut être trouvée.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - platform invoke, identifying functions
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - identifying DLL functions
 - DLL functions
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
-ms.openlocfilehash: 1a94bb2020b07ba8405d901f46ec4a0687e79700
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 054d1351a9ee6adab17117c9f423aa26d0d9ed59
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121977"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622729"
 ---
 # <a name="identifying-functions-in-dlls"></a>Identification des fonctions des DLL
 L’identité d’une fonction DLL est composée des éléments suivants :  
@@ -46,7 +47,7 @@ L’identité d’une fonction DLL est composée des éléments suivants :
 ## <a name="see-also"></a>Voir aussi
 
 - [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md)
-- [Spécification d’un point d’entrée](specifying-an-entry-point.md)
-- [Création d’une classe pour contenir des fonctions DLL](creating-a-class-to-hold-dll-functions.md)
+- [Spécification d'un point d'entrée](specifying-an-entry-point.md)
+- [Création d'une classe pour contenir des fonctions DLL](creating-a-class-to-hold-dll-functions.md)
 - [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
 - [Appel à une fonction DLL](calling-a-dll-function.md)

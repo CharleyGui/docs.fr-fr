@@ -1,5 +1,6 @@
 ---
 title: Méthode de localisation des assemblys par le runtime
+description: Découvrez comment le common language runtime (CLR) localise et lie les assemblys qui composent votre application dans .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - app.config files, assembly locations
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
-ms.openlocfilehash: 13e2661b67ba3b717b8917e80118175acb09e756
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4cf1e5787fe2e430d20208d8e79b610e9126c67c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181679"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622625"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
 
@@ -33,7 +34,7 @@ La meilleure façon de référencer un assembly est d'utiliser une référence c
 
 Vous pouvez aussi créer une référence dynamique à un assembly en fournissant à la méthode d'appel seulement une partie des informations relatives à l'assembly, par exemple en spécifiant le nom de l'assembly uniquement. Dans ce cas, l'assembly n'est recherché que dans le répertoire de l'application et aucune autre vérification n'est effectuée. Il est possible de créer une référence partielle à l’aide d’une des méthodes de chargement des assemblys, telle que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>.
 
-Enfin, vous pouvez faire une référence <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> dynamique à l’aide d’une méthode telle que fournir des informations partielles; vous qualifiez ensuite la référence à l’aide de [ \<l’élément qualifieAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) dans le fichier de configuration d’application. Cet élément vous permet de fournir les informations de la référence complète (nom, version, culture et, le cas échéant, jeton de clé publique) dans le fichier de configuration de votre application plutôt que dans votre code. Utilisez cette technique si vous souhaitez créer une référence complète à un assembly en dehors du répertoire de l'application, ou si vous souhaitez référencer un assembly dans le Global Assembly Cache en gardant la possibilité de spécifier la référence complète dans le fichier de configuration plutôt que dans votre code.
+Enfin, vous pouvez créer une référence dynamique à l’aide d’une méthode telle que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> et fournir uniquement des informations partielles. vous qualifiez ensuite la référence à l’aide [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) de l’élément dans le fichier de configuration de l’application. Cet élément vous permet de fournir les informations de la référence complète (nom, version, culture et, le cas échéant, jeton de clé publique) dans le fichier de configuration de votre application plutôt que dans votre code. Utilisez cette technique si vous souhaitez créer une référence complète à un assembly en dehors du répertoire de l'application, ou si vous souhaitez référencer un assembly dans le Global Assembly Cache en gardant la possibilité de spécifier la référence complète dans le fichier de configuration plutôt que dans votre code.
 
 > [!NOTE]
 > Ce type de référence partielle ne doit pas être utilisé avec des assemblys partagés par plusieurs applications. Les paramètres de configuration sont appliqués au niveau de l'application, et non de chaque assembly. Par conséquent, un assembly partagé utilisant ce type de référence partielle nécessite que chaque application liée à l'assembly partagé possède les informations de qualification dans son fichier de configuration.
@@ -72,7 +73,7 @@ Le comportement de la liaison d'assembly peut être configuré à différents ni
 
 - le fichier de configuration de l'ordinateur.
 
-Ces fichiers utilisent la même syntaxe. Ils fournissent plusieurs informations, notamment les redirections de liaisons, l'emplacement du code et les modes de liaison pour des assemblys particuliers. Chaque fichier de [ \<](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) configuration peut contenir un élément de> de montage qui redirige le processus de liaison. Les éléments enfant de [ \<l’assemblageBinding> élément](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) comprennent [ \<l’élément> de l’assemblée dépendante](../configure-apps/file-schema/runtime/dependentassembly-element.md). Les enfants de [ \<dependentAssembly> élément](../configure-apps/file-schema/runtime/dependentassembly-element.md) comprennent [ \<l’assemblageIdentity> élément](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment), [ \<l’élément contraignantRedirect>](../configure-apps/file-schema/runtime/bindingredirect-element.md), et le [ \<codeBase> élément](../configure-apps/file-schema/runtime/codebase-element.md).
+Ces fichiers utilisent la même syntaxe. Ils fournissent plusieurs informations, notamment les redirections de liaisons, l'emplacement du code et les modes de liaison pour des assemblys particuliers. Chaque fichier de configuration peut contenir un [ \<assemblyBinding> élément](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) qui redirige le processus de liaison. Les éléments enfants de l' [ \<assemblyBinding> élément](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) incluent l' [ \<dependentAssembly> élément](../configure-apps/file-schema/runtime/dependentassembly-element.md). Les enfants de l' [ \<dependentAssembly> élément](../configure-apps/file-schema/runtime/dependentassembly-element.md) incluent l' [ \<assemblyIdentity> élément](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment), l' [ \<bindingRedirect> élément](../configure-apps/file-schema/runtime/bindingredirect-element.md)et l' [ \<codeBase> élément](../configure-apps/file-schema/runtime/codebase-element.md).
 
 > [!NOTE]
 > Les trois fichiers de configuration peuvent contenir des informations de configuration, mais ils n'acceptent pas forcément tous les éléments. Par exemple, les informations sur le mode de liaison et le chemin d'accès privé peuvent seulement se trouver dans le fichier de configuration de l'application. Pour obtenir la liste complète des informations contenues dans chaque fichier, consultez [Configuration des applications à l'aide de fichiers de configuration](../configure-apps/index.md).
@@ -81,7 +82,7 @@ Ces fichiers utilisent la même syntaxe. Ils fournissent plusieurs informations,
 
 Le common language runtime vérifie tout d'abord le fichier de configuration de l'application à la recherche d'informations qui substituent les informations de version stockées dans le manifeste de l'assembly appelant. Le fichier de configuration de l'application peut être déployé avec une application, mais il n'est pas nécessaire à l'exécution de celle-ci. En règle générale, la récupération de ce fichier est quasi instantanée mais, si la base de l'application se trouve sur un ordinateur distant (dans le cas d'une application web basée sur Internet Explorer, par exemple), le fichier de configuration doit être téléchargé.
 
-Pour les fichiers exécutables client, le fichier de configuration de l'application réside dans le même répertoire que le fichier exécutable de l'application et possède le même nom que le fichier exécutable avec une extension .config. Par exemple, le fichier de configuration pour les fichiers C: 'Program Files’Myapp’Myapp.exe est C: 'Program Files’Myapp’Myapp.exe.config. Dans un scénario basé sur le navigateur, le fichier HTML doit utiliser le ** \<lien>** élément pour pointer explicitement vers le fichier de configuration.
+Pour les fichiers exécutables client, le fichier de configuration de l'application réside dans le même répertoire que le fichier exécutable de l'application et possède le même nom que le fichier exécutable avec une extension .config. Par exemple, le fichier de configuration de C:\Program Files\Myapp\Myapp.exe est C:\Program Files\Myapp\Myapp.exe.config. Dans un scénario basé sur un navigateur, le fichier HTML doit utiliser l' **\<link>** élément pour pointer explicitement vers le fichier de configuration.
 
 Le code suivant fournit un exemple simple de fichier de configuration de l'application. Cet exemple ajoute un élément <xref:System.Diagnostics.TextWriterTraceListener> à la collection <xref:System.Diagnostics.Debug.Listeners%2A> pour activer l'enregistrement des informations de débogage dans un fichier.
 
@@ -134,9 +135,9 @@ Le fichier de configuration de la stratégie d'éditeur substitue les informatio
 Un fichier de stratégie d'éditeur est utilisé quand un composant partagé est mis à jour et que la nouvelle version de ce composant doit être utilisée par toutes les applications partageant le composant. Les paramètres définis dans le fichier de stratégie d'éditeur substituent ceux du fichier de configuration de l'application, sauf si ce dernier applique le mode sans échec.
 
 #### <a name="safe-mode"></a>Mode sans échec
-Les fichiers de stratégie d'éditeur sont généralement installés explicitement avec un Service Pack ou une mise à jour de programme. En cas de problème avec le composant partagé mis à jour, vous pouvez ignorer les substitutions spécifiées dans le fichier de stratégie d'éditeur en utilisant le mode sans échec. Le mode de sécurité est déterminé par ** \<l’éditeurPolicy appliquer "oui**&#124;**non"/>** élément, situé uniquement dans le fichier de configuration d’application. Il spécifie si les informations de configuration du fichier de stratégie d'éditeur doivent être supprimées du processus de liaison.
+Les fichiers de stratégie d'éditeur sont généralement installés explicitement avec un Service Pack ou une mise à jour de programme. En cas de problème avec le composant partagé mis à jour, vous pouvez ignorer les substitutions spécifiées dans le fichier de stratégie d'éditeur en utilisant le mode sans échec. Le mode sans échec est déterminé par l' **\<publisherPolicy apply="yes**&#124;**no"/>** élément, situé uniquement dans le fichier de configuration de l’application. Il spécifie si les informations de configuration du fichier de stratégie d'éditeur doivent être supprimées du processus de liaison.
 
-Le mode sans échec peut être défini pour toute l'application ou pour des assemblys spécifiques. Autrement dit, vous pouvez désactiver la stratégie pour tous les assemblys qui composent votre application ou l'activer pour certains assemblys seulement. Pour appliquer sélectivement la politique de l’éditeur aux assemblages qui composent une application, définir \< ** \<l’éditeurPolicy appliquer\=non/>** et spécifier les assemblages que vous souhaitez être affectés à l’aide de **l’élément**> dépendant. Pour appliquer la politique de l’éditeur à toutes les assemblées qui composent l’application, ** \<l’éditeur de définirPolicy applique\=non/>** sans éléments d’assemblage dépendants. Pour plus d'informations sur la configuration, consultez [Configuration des applications à l'aide de fichiers de configuration](../configure-apps/index.md).
+Le mode sans échec peut être défini pour toute l'application ou pour des assemblys spécifiques. Autrement dit, vous pouvez désactiver la stratégie pour tous les assemblys qui composent votre application ou l'activer pour certains assemblys seulement. Pour appliquer de manière sélective une stratégie d’éditeur aux assemblys qui composent une application, définissez **\<publisherPolicy apply\=no/>** et spécifiez les assemblys que vous souhaitez affecter à l’aide de l' \<**dependentAssembly**> élément. Pour appliquer la stratégie d’éditeur à tous les assemblys qui composent l’application, définissez sans **\<publisherPolicy apply\=no/>** éléments d’assembly dépendants. Pour plus d'informations sur la configuration, consultez [Configuration des applications à l'aide de fichiers de configuration](../configure-apps/index.md).
 
 ### <a name="machine-configuration-file"></a>Fichier de configuration de l'ordinateur
 Finalement, le runtime examine le fichier de configuration de l'ordinateur. Ce fichier, intitulé Machine.config, réside sur l'ordinateur local dans le sous-répertoire Config du répertoire racine où le runtime est installé. Il peut être utilisé par les administrateurs pour spécifier des restrictions de liaison d'assemblys qui sont propres à cet ordinateur. Les paramètres définis dans le fichier de configuration de l'ordinateur sont prioritaires par rapport aux autres paramètres de configuration. Cependant, cela ne signifie pas que tous les paramètres de configuration doivent être placés dans ce fichier. La version déterminée par le fichier de stratégie d'administrateur est finale et ne peut pas être substituée. Les substitutions spécifiées dans le fichier Machine.config s'appliquent à toutes les applications. Pour plus d'informations sur les fichiers de configuration, consultez [Configuration des applications à l'aide de fichiers de configuration](../configure-apps/index.md).
@@ -150,7 +151,7 @@ Si l'assembly demandé a aussi été demandé lors d'appels précédents, le com
 Si une précédente demande de chargement de l'assembly avait échoué, toute nouvelle demande échoue immédiatement sans qu'aucune tentative de chargement de l'assembly ne soit effectuée. Depuis la version 2.0 du .NET Framework, les échecs de liaison d'assemblys sont mis en cache et les informations mises en cache sont utilisées pour déterminer s'il faut essayer de charger l'assembly.
 
 > [!NOTE]
-> Pour revenir au comportement des versions .NET Framework 1.0 et 1.1, qui n’ont pas caché les défaillances contraignantes, inclure les [ \<désactiverCachingBindingFailures> Element](../configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md) dans votre fichier de configuration.
+> Pour rétablir le comportement des versions 1,0 et 1,1 du .NET Framework, qui n’ont pas mis en cache les échecs de liaison, incluez l' [ \<disableCachingBindingFailures> élément](../configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md) dans votre fichier de configuration.
 
 <a name="step3"></a>
 
@@ -164,25 +165,25 @@ Pour les assemblys avec un nom fort, le processus de liaison examine ensuite le 
 
 Une fois que la version correcte de l'assembly a été déterminée d'après les informations contenues dans la référence de l'assembly appelant et dans les fichiers de configuration, et après la vérification du Global Assembly Cache (uniquement pour les assemblys avec un nom fort), le common language runtime tente de trouver l'assembly. Le processus de localisation d'un assembly implique les étapes suivantes :
 
-1. Si un [ \<élément de codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) se trouve dans le fichier de configuration d’application, le temps d’exécution vérifie l’emplacement spécifié. Si une correspondance est trouvée, cet assembly est utilisé et aucune détection n'est effectuée. Si l'assembly ne se trouve pas dans cet emplacement, la demande de liaison échoue.
+1. Si un [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément est trouvé dans le fichier de configuration de l’application, le runtime vérifie l’emplacement spécifié. Si une correspondance est trouvée, cet assembly est utilisé et aucune détection n'est effectuée. Si l'assembly ne se trouve pas dans cet emplacement, la demande de liaison échoue.
 
 2. Le runtime tente ensuite de détecter l'assembly référencé en utilisant les règles spécifiées plus loin dans cette section.
 
 > [!NOTE]
-> Si vous avez plusieurs versions d’une assemblée dans un répertoire et que vous souhaitez faire référence à une `privatePath` version particulière de cet assemblage, vous devez utiliser le [ \<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément au lieu de l’attribut de [ \<l’élément de sondage>.](../configure-apps/file-schema/runtime/probing-element.md) Si vous utilisez [ \<l’élément de sondage>,](../configure-apps/file-schema/runtime/probing-element.md) le temps d’exécution cesse de sonder la première fois qu’il trouve un assemblage qui correspond au nom d’assemblage simple référencé, qu’il s’agisse d’un match correct ou non. Si la correspondance est correcte, cet assembly est utilisé. Si elle ne l'est pas, la détection s'interrompt et la liaison échoue.
+> Si vous disposez de plusieurs versions d’un assembly dans un répertoire et que vous souhaitez référencer une version particulière de cet assembly, vous devez utiliser l' [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément au lieu de l' `privatePath` attribut de l' [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) élément. Si vous utilisez l' [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) élément, le runtime arrête la détection la première fois qu’il trouve un assembly qui correspond au nom d’assembly simple référencé, qu’il s’agisse d’une correspondance correcte ou non. Si la correspondance est correcte, cet assembly est utilisé. Si elle ne l'est pas, la détection s'interrompt et la liaison échoue.
 
 ### <a name="locating-the-assembly-through-codebases"></a>Localisation de l'assembly par bases de code
 
-Les informations de base de code peuvent être fournies à l’aide d’un [ \<élément de codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) dans un fichier de configuration. Cette base de code est toujours vérifiée avant que le runtime ne tente de détecter l'assembly référencé. Si un fichier de stratégie d’éditeur contenant la redirection finale [ \<](../configure-apps/file-schema/runtime/codebase-element.md) de version contient également un [ \<élément de codeBase>,](../configure-apps/file-schema/runtime/codebase-element.md) cet élément de codeBase>est celui qui est utilisé. Par exemple, si votre fichier de [ \<](../configure-apps/file-schema/runtime/codebase-element.md) configuration d’application spécifie un élément de codeBase>, et qu’un fichier de stratégie de l’éditeur qui dépasse les informations d’application spécifie également un [ \<élément de codeBase>,](../configure-apps/file-schema/runtime/codebase-element.md) [ \<l’élément de codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) dans le fichier de politique de l’éditeur est utilisé.
+Les informations de code base peuvent être fournies à l’aide d’un [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément dans un fichier de configuration. Cette base de code est toujours vérifiée avant que le runtime ne tente de détecter l'assembly référencé. Si un fichier de stratégie d’éditeur contenant la redirection de version finale contient également un [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément, cet [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément est celui qui est utilisé. Par exemple, si votre fichier de configuration de l’application spécifie un [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément et qu’un fichier de stratégie d’éditeur qui substitue les informations de l’application spécifie également un [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément, l' [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément dans le fichier de stratégie d’éditeur est utilisé.
 
-Si aucune correspondance n’est trouvée à l’emplacement spécifié par [ \<l’élément codeBase>,](../configure-apps/file-schema/runtime/codebase-element.md) la demande de liaison échoue et aucune autre mesure n’est prise. Si le runtime détermine qu'un assembly correspond au critère de l'assembly appelant, il utilise cet assembly. Lorsque le fichier spécifié par le [ \<code donnéBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément est chargé, le temps d’exécution vérifie pour s’assurer que le nom, la version, la culture et la clé publique correspondent à la référence de l’assemblée d’appel.
+Si aucune correspondance n’est trouvée à l’emplacement spécifié par l' [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément, la demande de liaison échoue et aucune autre étape n’est prise. Si le runtime détermine qu'un assembly correspond au critère de l'assembly appelant, il utilise cet assembly. Lorsque le fichier spécifié par l' [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément donné est chargé, le runtime vérifie que le nom, la version, la culture et la clé publique correspondent bien à la référence de l’assembly appelant.
 
 > [!NOTE]
-> Les assemblages référencés en dehors de l’annuaire racine de l’application doivent avoir des noms forts et doivent être installés dans le cache d’assemblage global ou spécifiés à l’aide de [ \<l’élément>de base](../configure-apps/file-schema/runtime/codebase-element.md) de code.
+> Les assemblys référencés en dehors du répertoire racine de l’application doivent avoir un nom fort et doivent être installés dans le Global Assembly Cache ou spécifiés à l’aide de l' [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément.
 
 ### <a name="locating-the-assembly-through-probing"></a>Localisation de l'assembly par détection
 
-S’il n’y a pas [ \<de codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) élément dans le fichier de configuration d’application, les sondes de temps d’exécution pour l’assemblage en utilisant quatre critères :
+S’il n’y a pas [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) d’élément dans le fichier de configuration de l’application, le runtime détecte l’assembly à l’aide de quatre critères :
 
 - La base de l'application, qui est l'emplacement racine où l'application s'exécute.
 
@@ -190,7 +191,7 @@ S’il n’y a pas [ \<de codeBase>](../configure-apps/file-schema/runtime/codeb
 
 - Le nom, qui est le nom de l'assembly référencé.
 
-- L’attribut `privatePath` de [ \<l’élément de sondage>,](../configure-apps/file-schema/runtime/probing-element.md) qui est la liste définie par l’utilisateur des sous-directeurs sous l’emplacement de la racine. Cet emplacement peut être spécifié dans le fichier de configuration de l'application et dans le code managé en utilisant la propriété <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> pour un domaine d'application. Quand il est spécifié dans le code managé, l'attribut `privatePath` du code managé est détecté en premier, suivi du chemin d'accès spécifié dans le fichier de configuration de l'application.
+- L' `privatePath` attribut de l' [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) élément, qui est la liste définie par l’utilisateur des sous-répertoires sous l’emplacement racine. Cet emplacement peut être spécifié dans le fichier de configuration de l'application et dans le code managé en utilisant la propriété <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> pour un domaine d'application. Quand il est spécifié dans le code managé, l'attribut `privatePath` du code managé est détecté en premier, suivi du chemin d'accès spécifié dans le fichier de configuration de l'application.
 
 #### <a name="probing-the-application-base-and-culture-directories"></a>Détection de la base de l'application et des répertoires de culture
 
@@ -208,7 +209,7 @@ Si les informations de culture sont spécifiées pour l'assembly référencé, s
 
 #### <a name="probing-with-the-privatepath-attribute"></a>Détection avec l'attribut privatePath
 
-En plus des sous-directions de la culture et des sous-directeurs nommés pour l’assemblage référencé, le temps d’exécution sonde également les répertoires spécifiés à l’aide de l’attribut `privatePath` de [ \<l’élément de sondage>.](../configure-apps/file-schema/runtime/probing-element.md) Les répertoires spécifiés avec l'attribut `privatePath` doivent être des sous-répertoires du répertoire racine de l'application. Les répertoires détectés varient en fonction de la présence d'informations de culture dans la demande de l'assembly référencé.
+En plus des sous-répertoires de culture et des sous-répertoires nommés pour l’assembly référencé, le runtime sonde également les répertoires spécifiés à l’aide `privatePath` de l’attribut de l' [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) élément. Les répertoires spécifiés avec l'attribut `privatePath` doivent être des sous-répertoires du répertoire racine de l'application. Les répertoires détectés varient en fonction de la présence d'informations de culture dans la demande de l'assembly référencé.
 
 Le runtime interrompt la détection dès qu'il trouve le premier assembly correspondant au nom simple d'assembly référencé, que cette correspondance soit correcte ou non. Si la correspondance est correcte, cet assembly est utilisé. Si elle ne l'est pas, la détection s'interrompt et la liaison échoue.
 
@@ -232,7 +233,7 @@ Les exemples donnés sont basés sur les informations suivantes :
 
 - Répertoire racine de l’application : `http://www.code.microsoft.com`
 
-- sonder>élément dans le fichier de configuration spécifie: bin [ \<](../configure-apps/file-schema/runtime/probing-element.md)
+- [\<probing>](../configure-apps/file-schema/runtime/probing-element.md)l’élément dans le fichier de configuration spécifie : bin
 
 - Culture : de
 

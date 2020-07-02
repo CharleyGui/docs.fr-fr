@@ -1,5 +1,6 @@
 ---
-title: "Comment : configurer les composants COM .NET Framework pour l'activation sans inscription"
+title: 'Procédure : configurer les composants COM .NET Framework pour l’activation sans inscription'
+description: Configurer. Composants COM basés sur .net pour l’activation sans inscription. Le programme d’installation requiert un manifeste d’application de style Win32 et un manifeste de composant .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - components [.NET Framework], manifest
@@ -8,14 +9,14 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-ms.openlocfilehash: 9e273bd3e4bf2bb6945fe48c850783a54fa9a869
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 5263e042bafdb886b313f05751c29de0f5715211
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291753"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622196"
 ---
-# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Comment : configurer les composants COM .NET Framework pour l'activation sans inscription
+# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Procédure : configurer les composants COM .NET Framework pour l’activation sans inscription
 L’activation sans inscription des composants .NET Framework n’est que légèrement plus compliquée que pour les composants COM. L’installation requiert deux manifestes :  
   
 - Les applications COM doivent avoir un manifeste d’application de style Win32 pour identifier le composant managé.  
@@ -170,7 +171,7 @@ Vous pouvez installer un manifeste d’application dans le même répertoire que
   
     `/win32res:myresource.res`  
   
-     Là encore `myresource.res` , est le nom du fichier de ressources contenant des ressources incorporées.  
+     Là encore, `myresource.res` est le nom du fichier de ressources contenant des ressources incorporées.  
   
 ## <a name="see-also"></a>Voir aussi
 

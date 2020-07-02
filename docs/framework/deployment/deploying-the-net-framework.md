@@ -1,16 +1,17 @@
 ---
 title: Déployer le .NET Framework
+description: Apprenez à déployer .NET pour les développeurs qui souhaitent installer .NET avec leurs applications et pour les administrateurs qui souhaitent déployer .NET sur un réseau.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, deploying
 - deployment [.NET Framework]
 ms.assetid: 19df26c5-4008-461d-a7d7-18f4506312d2
-ms.openlocfilehash: cc4f9c38138a37b6068d33ffa4229a955db08c07
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e9fef2af56ca278b0e326c15546ca9f849a3253
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716549"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622768"
 ---
 # <a name="deploying-the-net-framework"></a>Déployer le .NET Framework
 Cette section de la documentation du .NET Framework fournit des informations pour les développeurs qui souhaitent installer le .NET Framework avec leurs applications, et pour les administrateurs qui souhaitent déployer le .NET Framework sur un réseau. Elle traite également des problèmes d’activation et de redémarrage associés au déploiement, et décrit comment surveiller la progression de l’installation du .NET Framework.  
@@ -20,7 +21,7 @@ Cette section de la documentation du .NET Framework fournit des informations pou
  Explique comment les développeurs peuvent installer le .NET Framework sur les ordinateurs des utilisateurs avec leurs applications.  
   
  [Guide de déploiement pour les administrateurs](guide-for-administrators.md)  
- Explique comment un administrateur système peut déployer le cadre .NET et ses dépendances système à travers un réseau en utilisant Microsoft Endpoint Configuration Manager.  
+ Explique comment un administrateur système peut déployer le .NET Framework et ses dépendances système sur un réseau à l’aide de points de terminaison Microsoft Configuration Manager.  
   
  [Réduction des redémarrages système lors des installations du .NET Framework 4.5](reducing-system-restarts.md)  
  Décrit le Gestionnaire de redémarrage qui empêche les redémarrages si possible, et explique les avantages de son utilisation pour les applications qui installent le .NET Framework.  

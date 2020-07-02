@@ -1,5 +1,6 @@
 ---
 title: Importation d'une bibliothèque de types sous la forme d'un assembly
+description: Importez une bibliothèque de types, qui contient des définitions de types COM, sous la forme d’un assembly. Apprenez comment créer des métadonnées à partir d’une bibliothèque de types, ce qui se traduit par un assembly d’interopérabilité.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - importing type library
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-ms.openlocfilehash: e1a21175bcabc72b86a328d4f73ecec37140c304
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e5187e3c2ce533f25a38e93bc3715dd3e2e47c11
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107598"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622716"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Importation d'une bibliothèque de types sous la forme d'un assembly
 
@@ -73,12 +74,12 @@ Une fois que vous avez trouvé la bibliothèque de types qui contient l’implé
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
-- [Exposition de composants COM au .NET Framework](exposing-com-components.md)
+- [Exposition de composants COM au .NET Framework](exposing-com-components.md)
 - [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
-- [Tlbimp. exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md)
+- [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md)
 - [Personnaliser des wrappers standard](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
 - [Utiliser des types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Compilation d'un projet d'interopérabilité](compiling-an-interop-project.md)
 - [Déploiement d'une application d'interopérabilité](deploying-an-interop-application.md)
-- [Comment : ajouter des références aux bibliothèques de types](how-to-add-references-to-type-libraries.md)
-- [Comment : générer des assemblys d'interopérabilité à partir de bibliothèques de types](how-to-generate-interop-assemblies-from-type-libraries.md)
+- [Procédure : ajouter des références aux bibliothèques de types](how-to-add-references-to-type-libraries.md)
+- [Procédure : générer des assemblys d’interopérabilité à partir de bibliothèques de types](how-to-generate-interop-assemblies-from-type-libraries.md)

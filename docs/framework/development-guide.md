@@ -1,17 +1,18 @@
 ---
 title: Guide de développement .NET Framework
+description: Explorez le Guide de développement .NET, qui explique comment créer, configurer, déboguer, sécuriser et déployer vos applications .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-ms.openlocfilehash: 665c7843fc4a46348619bde46a8d527dfed321e4
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 6e0051e3181e03070436b8d53d30326e8d71d096
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645996"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622573"
 ---
-# <a name="net-framework-development-guide"></a>.NET Guide de développement du Cadre
+# <a name="net-framework-development-guide"></a>Guide de développement .NET Framework
 
 Cette section explique comment créer, configurer, déboguer, sécuriser et déployer des applications .NET Framework. La section fournit également des informations sur les aspects technologiques, tels que la programmation dynamique, l'interopérabilité, l'extensibilité, la gestion de la mémoire et les threads.  
   
@@ -20,18 +21,18 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Données et modélisation](./data/index.md)  
  Fournit des informations sur la façon d'accéder aux données à l'aide d'ADO.NET, de LINQ (Language-Integrated Query), des services de données WCF et de XML.  
   
- [Applications clients](develop-client-apps.md)  
+ [Applications clientes](develop-client-apps.md)  
  Explique comment créer des applications Windows à l'aide de WPF (Windows Presentation Foundation) ou de Windows Forms.  
   
  [Applications web avec ASP.NET](develop-web-apps-with-aspnet.md)  
  Fournit des liens vers les informations relatives à l'utilisation d'ASP.NET afin de générer des applications Web d'entreprise avec un minimum de codage.  
   
- [Applications orientées vers le service avec WCF](./wcf/index.md)  
+ [Applications orientées service avec WCF](./wcf/index.md)  
  Décrit comment utiliser WCF (Windows Communication Foundation) pour générer des applications orientées service, sécurisées et fiables.  
   
- [Construire des flux de travail avec Windows Workflow Foundation](windows-workflow-foundation/index.md) Fournit des informations sur le modèle de programmation, des échantillons et des outils pour l’utilisation de windows Workflow Foundation (WF).  
+ [Génération de flux de travail avec Windows Workflow Foundation](windows-workflow-foundation/index.md) Fournit des informations sur le modèle de programmation, les exemples et les outils nécessaires à l’utilisation de Windows Workflow Foundation (WF).  
 
- [Windows Service Applications](./windows-services/index.md)  
+ [Applications de service Windows](./windows-services/index.md)  
  Explique comment utiliser Visual Studio et le .NET Framework pour créer une application installée comme un service, la démarrer, l'arrêter et contrôler son comportement.  
   
  [Traitement parallèle, accès concurrentiel et programmation asynchrone dans .NET](../standard/parallel-processing-and-concurrency.md)  
@@ -40,9 +41,9 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Programmation réseau dans .NET Framework](./network-programming/index.md)  
  Décrit l'implémentation en couche, extensible et managée des services Internet que vous pouvez intégrer rapidement et facilement à vos applications.  
   
- [Configurer .NET Framework Apps](configure-apps/index.md) Explique comment vous pouvez utiliser des fichiers de configuration pour modifier les paramètres sans avoir à recomposer vos applications .NET Framework.  
+ [Configuration des applications .NET Framework](configure-apps/index.md) Explique comment vous pouvez utiliser des fichiers de configuration pour modifier des paramètres sans avoir à recompiler vos applications .NET Framework.  
   
- [Compilation d’applications avec .NET Native](./net-native/index.md)  
+ [Compilation d'applications avec .NET Native](./net-native/index.md)  
  Explique comment utiliser la technologie de précompilation .NET Native pour générer et déployer des applications de Windows Store. .NET Native compile des applications qui sont écrites en code managé (C#) et qui ciblent .NET Framework sur le code natif.  
   
  [Sécurité](../standard/security/index.md)  

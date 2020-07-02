@@ -1,5 +1,6 @@
 ---
 title: "Comment : trier et grouper des données à l'aide d'une vue en XAML"
+description: Découvrez comment créer une vue d’une collection de données pour le regroupement, le tri et le filtrage dans le Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data binding [WPF], grouping data in views in XAML
@@ -11,18 +12,18 @@ helpviewer_keywords:
 - views [WPF], sorting data
 - views [WPF], grouping data
 ms.assetid: 145c8c3f-dbdd-4d0d-816f-90b35eba7eda
-ms.openlocfilehash: 9e42dd330535f71438ab7af3dca9d078e9dfd8d3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a4f8e2de9345dba8e4ea0d3a16a32d57a9adb55c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460128"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621676"
 ---
 # <a name="how-to-sort-and-group-data-using-a-view-in-xaml"></a>Comment : trier et grouper des données à l'aide d'une vue en XAML
-Cet exemple montre comment créer une vue d’une collection de données dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Les vues permettent les fonctionnalités de regroupement, de tri, de filtrage et la notion d’un élément actuel.  
+Cet exemple montre comment créer une vue d’une collection de données dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] . Les vues permettent les fonctionnalités de regroupement, de tri, de filtrage et la notion d’un élément actuel.  
   
 ## <a name="example"></a>Exemple  
- Dans l’exemple suivant, la ressource statique nommée *places* est définie comme une collection d’objets *place* , dans laquelle chaque objet *place* est constitué d’un nom de ville et de l’État. Le préfixe *src* est mappé à l’espace de noms dans lequel *la source de* données est définie. Le préfixe *SCM* est mappé à `"clr-namespace:System.ComponentModel;assembly=WindowsBase"` et les *fichiers DAT* sont mappés à `"clr-namespace:System.Windows.Data;assembly=PresentationFramework"`.  
+ Dans l’exemple suivant, la ressource statique nommée *places* est définie comme une collection d’objets *place* , dans laquelle chaque objet *place* est constitué d’un nom de ville et de l’État. Le préfixe *src* est mappé à l’espace de noms dans lequel *la source de* données est définie. Le préfixe *SCM* est mappé à `"clr-namespace:System.ComponentModel;assembly=WindowsBase"` et les *fichiers DAT* sont mappés à `"clr-namespace:System.Windows.Data;assembly=PresentationFramework"` .  
   
  L’exemple suivant crée une vue de la collection de données qui est triée par nom de ville et regroupée par État.  
   
@@ -32,7 +33,7 @@ Cet exemple montre comment créer une vue d’une collection de données dans [!
   
  [!code-xaml[CollectionViewSource#2](~/samples/snippets/csharp/VS_Snippets_Wpf/CollectionViewSource/CS/window1.xaml#2)]  
   
- Pour les liaisons aux données XML définies dans une ressource <xref:System.Windows.Data.XmlDataProvider>, faites précéder le nom XML d’un symbole @.  
+ Pour les liaisons aux données XML définies dans une <xref:System.Windows.Data.XmlDataProvider> ressource, faites précéder le nom XML d’un symbole @.  
   
  [!code-xaml[CollectionViewSource#XDPChunk](~/samples/snippets/csharp/VS_Snippets_Wpf/CollectionViewSource/CS/window1.xaml#xdpchunk)]  
   
@@ -41,6 +42,6 @@ Cet exemple montre comment créer une vue d’une collection de données dans [!
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Data.CollectionViewSource>
-- [Obtenir la vue par défaut d'une collection de données](how-to-get-the-default-view-of-a-data-collection.md)
+- [Obtenir la vue par défaut d’une collection de données](how-to-get-the-default-view-of-a-data-collection.md)
 - [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
-- [Rubriques de guide pratique](data-binding-how-to-topics.md)
+- [Rubriques de procédures](data-binding-how-to-topics.md)

@@ -1,15 +1,16 @@
 ---
 title: Guide pratique pour déboguer les problèmes d’activation du CLR
+description: Consultez Comment déboguer des problèmes d’activation d’common language runtime (CLR) dans .NET. Afficher et déboguer les journaux d’activation du CLR, ce qui peut être utile pour déterminer les causes racines.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR activation, debugging issues
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
-ms.openlocfilehash: 602ee3c88237a902d48339836fbe25f636ae9705
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5215e82aebf93fa8d6d1937563ab348126a01d97
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716509"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622612"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>Guide pratique pour déboguer les problèmes d’activation du CLR
 
@@ -49,7 +50,7 @@ La journalisation de l’activation reste active jusqu’à ce que vous supprimi
     set COMPLUS_CLRLoadLogDir=c:\clrloadlogs
     ```
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Les journaux d’activation du CLR fournissent une grande quantité de données sur l’activation du CLR et l’utilisation des API d’hébergement du CLR. La plupart de ces données sont utilisées en interne par Microsoft, mais certaines peuvent également être utiles aux développeurs, comme décrit dans cet article.
 
@@ -119,4 +120,4 @@ Dans l’exemple de journal d’activation suivant, les informations les plus ut
 ## <a name="see-also"></a>Voir aussi
 
 - [Déploiement](index.md)
-- [Comment configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

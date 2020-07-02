@@ -4,12 +4,12 @@ description: Découvrez comment .NET Core recherche et choisit automatiquement l
 author: adegeo
 ms.author: adegeo
 ms.date: 03/24/2020
-ms.openlocfilehash: 5e855adc72f0e75e6f31643f8a8618e6d91be06e
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: faaa638905bb3c8e9cd4c09af83979d90698df3d
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324355"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803116"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Sélectionner la version .NET Core à utiliser
 
@@ -80,13 +80,13 @@ Les versions cibles de .Net Framework Standard sont également plafonnées à la
 
 Quand vous exécutez une application à partir de [`dotnet run`](../tools/dotnet-run.md) la source avec, à partir d’un [**déploiement dépendant du Framework**](../deploying/index.md#publish-runtime-dependent) avec [`dotnet myapp.dll`](../tools/dotnet.md#description) , ou à partir d’un [**exécutable dépendant du Framework**](../deploying/index.md#publish-runtime-dependent) avec `myapp.exe` , l' `dotnet` exécutable est l' **hôte** de l’application.
 
-L’hôte choisit la dernière version de correctif installée sur la machine. Par exemple, si vous avez spécifié `netcoreapp3.0` dans votre fichier projet et que `3.0.4` est le dernier runtime .NET installé, le runtime `3.0.4` est utilisé.
+L’hôte choisit la dernière version de correctif installée sur la machine. Par exemple, si vous avez spécifié `netcoreapp3.0` dans votre fichier projet et que `3.0.2` est le dernier runtime .NET installé, le runtime `3.0.2` est utilisé.
 
 Si aucune version acceptable de `3.0.*` n’est trouvée, une nouvelle version `3.*` est utilisée. Par exemple, si vous avez spécifié `netcoreapp3.0` et que seule la version `3.1.0` est installée, l’application s’exécute en utilisant le runtime `3.1.0`. Ce comportement est appelé « restauration par progression d’une version mineure ». Les versions antérieures ne sont pas non plus prises en considération. Quand aucun runtime acceptable n’est installé, l’application ne s’exécute pas.
 
 Quelques exemples d’utilisation illustrent le comportement, si vous ciblez 3,0 :
 
-- ✔️ 3,0 est spécifié. 3.0.5 est la version de correctif la plus élevée installée. 3.0.5 est utilisé.
+- ✔️ 3,0 est spécifié. 3.0.3 est la version de correctif la plus élevée installée. 3.0.3 est utilisé.
 - ❌3,0 est spécifié. Aucune version 3,0. * n’est installée. 2.1.1 est le runtime le plus élevé installé. Un message d’erreur s’affiche.
 - ✔️ 3,0 est spécifié. Aucune version 3,0. * n’est installée. 3.1.0 est la version de Runtime la plus élevée installée. 3.1.0 est utilisé.
 - ❌2,0 est spécifié. Aucune version 2.x n’est installée. 3.0.0 est le runtime le plus élevé installé. Un message d’erreur s’affiche.
@@ -95,27 +95,27 @@ La restauration par progression de la version mineure présente un effet seconda
 
 1. L’application spécifie que 3,0 est requis.
 2. Lors de l’exécution, la version 3,0. * n’est pas installée, mais la version 3.1.0 est. La version 3.1.0 sera utilisée.
-3. Plus tard, l’utilisateur installe 3.0.5 et exécute à nouveau l’application, 3.0.5 est désormais utilisé.
+3. Plus tard, l’utilisateur installe 3.0.3 et exécute à nouveau l’application, 3.0.3 est désormais utilisé.
 
-Il est possible que 3.0.5 et 3.1.0 se comportent différemment, en particulier pour des scénarios tels que la sérialisation de données binaires.
+Il est possible que 3.0.3 et 3.1.0 se comportent différemment, en particulier pour des scénarios tels que la sérialisation de données binaires.
 
 ## <a name="self-contained-deployments-include-the-selected-runtime"></a>Les déploiements autonomes incluent le runtime sélectionné
 
 Vous pouvez publier une application en tant que [**distribution autonome**](../deploying/index.md#publish-self-contained). Cette approche regroupe le runtime et les bibliothèques .NET Core avec votre application. Les déploiements autonomes ne dépendent pas des environnements d’exécution. La sélection de la version du runtime se produit au moment de la publication, et non au moment de l’exécution.
 
-Le processus de publication sélectionne la dernière version de correctif de la famille de runtime donnée. Par exemple, `dotnet publish` sélectionnera .net Core 3.0.4 s’il s’agit de la dernière version du correctif dans la famille de Runtime .net core 3,0. La version cible de .Net Framework (y compris les derniers correctifs de sécurité installés) est empaquetée avec l’application.
+Le processus de publication sélectionne la dernière version de correctif de la famille de runtime donnée. Par exemple, `dotnet publish` sélectionnera .net Core 3.0.3 s’il s’agit de la dernière version du correctif dans la famille de Runtime .net core 3,0. La version cible de .Net Framework (y compris les derniers correctifs de sécurité installés) est empaquetée avec l’application.
 
 Si la version minimale spécifiée pour une application n’est pas satisfaire, il s’agit d’une erreur. `dotnet publish` se lie à la dernière version de correctif de runtime (au sein d’une famille de version principale.secondaire donnée). `dotnet publish` ne prend pas en charge la sémantique de restauration par progression de `dotnet run`. Pour plus d’informations sur les correctifs et les déploiements autonomes, consultez l’article relatif à la [sélection de correctif de runtime](../deploying/runtime-patch-selection.md) dans le déploiement d’applications .NET Core.
 
 Les déploiements autonomes peuvent nécessiter une version de correctif spécifique. Vous pouvez remplacer la version de correctif de runtime minimale (par une version supérieure ou inférieure) dans le fichier projet, comme indiqué dans l’exemple suivant :
 
 ``` xml
-<RuntimeFrameworkVersion>3.0.4</RuntimeFrameworkVersion>
+<RuntimeFrameworkVersion>3.0.3</RuntimeFrameworkVersion>
 ```
 
 L’élément `RuntimeFrameworkVersion` remplace la stratégie de version par défaut. Pour les déploiements autonomes, `RuntimeFrameworkVersion` spécifie la version *exacte* du framework du runtime. Pour les applications dépendantes du framework, `RuntimeFrameworkVersion` spécifie la version *minimale* requise pour le framework du runtime.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Téléchargez et installez .net Core](../install/index.md).
+- [Téléchargez et installez .net Core](../install/index.yml).
 - [Comment supprimer le Runtime .net Core et le kit de développement logiciel (SDK)](../install/remove-runtime-sdk-versions.md).

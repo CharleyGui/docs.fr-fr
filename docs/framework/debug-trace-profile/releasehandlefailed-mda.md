@@ -1,5 +1,6 @@
 ---
 title: releaseHandleFailed (MDA)
+description: Passez en revue l’Assistant Débogage managé (MDA) releaseHandleFailed, qui peut être activé en raison de fuites de ressources ou de mémoire dans .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - managed debugging assistants (MDAs), handles
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - SafeHandle class, run-time errors
 - MDAs (managed debugging assistants), handles
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
-ms.openlocfilehash: 268acb01a6777315829378e6fd8c06c46d3136d2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 167a304b4571aa35f758a2054caf6ae1c60a3c60
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181748"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803636"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed (MDA)
 L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avertir les développeurs que la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> d'une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle> retourne la valeur `false`.  
@@ -23,7 +24,7 @@ L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avert
 ## <a name="symptoms"></a>Symptômes  
  Fuites de ressources ou de mémoire.  Si la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> de la classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle> échoue, il est possible que la ressource encapsulée par la classe n'ait pas pu être libérée ou nettoyée.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Les utilisateurs doivent fournir l'implémentation de la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> s'ils créent des classes qui dérivent de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle>. Les circonstances sont donc spécifiques à chaque ressource. Toutefois, il existe certaines exigences :  
   
 - Les types <xref:System.Runtime.InteropServices.SafeHandle> et <xref:System.Runtime.InteropServices.CriticalHandle> représentent des wrappers autour de ressources de processus essentielles. Une fuite de mémoire finirait par rendre le processus inutilisable.  
@@ -71,7 +72,7 @@ and closing it directly or building another SafeHandle around it."
 </mdaConfig>  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple de code suivant peut activer l'Assistant Débogage managé `releaseHandleFailed`.  
   
 ```csharp

@@ -1,5 +1,6 @@
 ---
 title: Création de prototypes dans du code managé
+description: Créez des prototypes dans du code managé .NET, afin de pouvoir accéder aux fonctions non managées et utiliser des champs d’attribut qui annotent la définition de méthode dans du code managé.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-ms.openlocfilehash: 712040c3482b51c4dafe0ee87fdda8cd848fb7fc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 76b1a87c4513fdee21c5c3d5eba533b11e022e3a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123619"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622157"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Création de prototypes dans du code managé
 Cette rubrique décrit comment accéder aux fonctions non managées et présente plusieurs champs d’attribut qui permettent d’annoter les définitions de méthode dans du code managé. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](marshaling-data-with-platform-invoke.md).  
@@ -232,10 +233,10 @@ interface IDemandStubsItf
 ## <a name="see-also"></a>Voir aussi
 
 - [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md)
-- [Spécification d’un point d’entrée](specifying-an-entry-point.md)
-- [Spécification d’un jeu de caractères](specifying-a-character-set.md)
-- [Exemples d’appel de code non managé](platform-invoke-examples.md)
+- [Spécification d'un point d'entrée](specifying-an-entry-point.md)
+- [Spécification d'un jeu de caractères](specifying-a-character-set.md)
+- [Exemples d'appel de code non managé](platform-invoke-examples.md)
 - [Considérations relatives à la sécurité des appels de code non managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
 - [Identification des fonctions des DLL](identifying-functions-in-dlls.md)
-- [Création d’une classe pour contenir des fonctions DLL](creating-a-class-to-hold-dll-functions.md)
+- [Création d'une classe pour contenir des fonctions DLL](creating-a-class-to-hold-dll-functions.md)
 - [Appel à une fonction DLL](calling-a-dll-function.md)

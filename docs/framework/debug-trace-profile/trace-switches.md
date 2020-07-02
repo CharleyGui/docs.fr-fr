@@ -1,5 +1,6 @@
 ---
 title: Commutateurs de traçage
+description: Explorez les commutateurs de trace, qui vous permettent d’activer, de désactiver et de filtrer la sortie de traçage. .NET fournit les classes BooleanSwitch, TraceSwitch et SourceSwitch.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - trace switches
 - trace switches, creating custom
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
-ms.openlocfilehash: a8ce4ee5de4d330b88e98e85cce4b6547e969613
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29de46afa2a96dd7011cec40f4f76e7bfb8ee454
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181729"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803534"
 ---
 # <a name="trace-switches"></a>Commutateurs de traçage
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer. Ces commutateurs sont des objets présents dans votre code, mais ils peuvent être configurés en dehors du code via le fichier .config. Trois types de commutateurs de trace sont disponibles dans .NET Framework : la classe <xref:System.Diagnostics.BooleanSwitch> , la classe <xref:System.Diagnostics.TraceSwitch> et la classe <xref:System.Diagnostics.SourceSwitch> . La classe <xref:System.Diagnostics.BooleanSwitch> agit comme un bouton bascule qui active ou désactive diverses instructions de trace. Les classes <xref:System.Diagnostics.TraceSwitch> et <xref:System.Diagnostics.SourceSwitch> vous permettent d'activer un commutateur de trace pour un niveau de traçage spécifique. Les messages <xref:System.Diagnostics.Trace> ou <xref:System.Diagnostics.TraceSource> spécifiés pour ce niveau et tous les niveaux inférieurs seront alors affichés. Si vous désactivez le commutateur, les messages de trace ne seront pas affichés. Toutes ces classes dérivent de la classe abstraite (**MustInherit**) **Switch**, comme tous les commutateurs créés par l'utilisateur.  
@@ -47,7 +48,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
   
 |Valeur énumérée|Valeur entière|Type de message affiché (ou écrit vers une cible de sortie spécifiée)|  
 |----------------------|-------------------|---------------------------------------------------------------------------|  
-|Off|0|None|  
+|Désactivé|0|None|  
 |Error|1|Uniquement les messages d'erreur|  
 |Avertissement|2|Messages d'avertissement et messages d'erreur|  
 |Info|3|Messages d'information, messages d'avertissement et messages d'erreur|  

@@ -1,5 +1,6 @@
 ---
 title: Meilleures pratiques pour le chargement d'assembly
+description: Explorez les meilleures pratiques pour le chargement d’assembly dans .NET. Évitez les problèmes d’identité de type qui peuvent entraîner des casts non valides, des méthodes manquantes et d’autres exceptions.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies,binding
@@ -12,23 +13,23 @@ helpviewer_keywords:
 - LoadWithPartialName method
 - load-from context
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
-ms.openlocfilehash: 7575c40edf47e977335bcc34fcd9e49debab0980
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ee5243258ea1b853b4690b79ec032c46d1b3777
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181704"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803495"
 ---
 # <a name="best-practices-for-assembly-loading"></a>Meilleures pratiques pour le chargement d'assembly
 Cet article explique les moyens d’éviter les problèmes d’identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d’autres erreurs. L’article aborde les recommandations suivantes :  
   
-- [Comprendre les avantages et les inconvénients des contextes de charge](#load_contexts)  
+- [Comprendre les avantages et les inconvénients des contextes de chargement](#load_contexts)  
   
-- [Évitez de lier les noms d’assemblage partiel](#avoid_partial_names)  
+- [Éviter la liaison sur les noms d’assemblys partiels](#avoid_partial_names)  
   
 - [Éviter de charger un assembly dans plusieurs contextes](#avoid_loading_into_multiple_contexts)  
   
-- [Éviter de charger plusieurs versions d’un assemblage dans le même contexte](#avoid_loading_multiple_versions)  
+- [Éviter de charger plusieurs versions d’un assembly dans le même contexte](#avoid_loading_multiple_versions)  
   
 - [Envisager de basculer vers le contexte de chargement par défaut](#switch_to_default)  
   

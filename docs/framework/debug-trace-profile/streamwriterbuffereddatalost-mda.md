@@ -1,5 +1,6 @@
 ---
 title: streamWriterBufferedDataLost (MDA)
+description: Passez en revue l’Assistant Débogage managé (MDA) streamWriterBufferedDataLost, qui peut s’activer si un StreamWriter n’écrit pas les 1 à 4 dernières Ko de données dans un fichier.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - StreamWriter class, data buffering problems
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - data buffering problems
 - streamWriterBufferedDataLost MDA
 ms.assetid: 6e5c07be-bc5b-437a-8398-8779e23126ab
-ms.openlocfilehash: 18b2a5a95756ed125d26b2846c0b1ddc320463ea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0c10ea6bb9dc0aaafa2ac1798696579af7592895
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181738"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803480"
 ---
 # <a name="streamwriterbuffereddatalost-mda"></a>streamWriterBufferedDataLost (MDA)
 L’Assistant Débogage managé `streamWriterBufferedDataLost` est activé lors d’une écriture dans <xref:System.IO.StreamWriter>, mais la méthode <xref:System.IO.StreamWriter.Flush%2A> ou <xref:System.IO.StreamWriter.Close%2A> n’est pas appelée par la suite avant la destruction de l’instance du <xref:System.IO.StreamWriter>. Quand cet Assistant Débogage managé est activé, le runtime détermine s’il existe encore des données mises en mémoire tampon dans <xref:System.IO.StreamWriter>. Si c’est le cas, l’Assistant Débogage managé est activé. L’appel aux méthodes <xref:System.GC.Collect%2A> et <xref:System.GC.WaitForPendingFinalizers%2A> peut forcer des finaliseurs à s’exécuter. Sinon, les finaliseurs s’exécuteront à des moments apparemment arbitraires, voire pas du tout lors de la sortie du processus. L’exécution explicite des finaliseurs avec cet Assistant Débogage managé activé aide à reproduire ce type de problème de façon plus fiable.  
@@ -23,7 +24,7 @@ L’Assistant Débogage managé `streamWriterBufferedDataLost` est activé lors 
 ## <a name="symptoms"></a>Symptômes  
  Un <xref:System.IO.StreamWriter> n’écrit pas les 1 à 4 derniers kilo-octets de données dans un fichier.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Le <xref:System.IO.StreamWriter> met les données en mémoire tampon en interne, ce qui exige un appel à la méthode <xref:System.IO.StreamWriter.Close%2A> ou <xref:System.IO.StreamWriter.Flush%2A> pour écrire les données mises en mémoire tampon dans le magasin de données sous-jacent. Si <xref:System.IO.StreamWriter.Close%2A> ou <xref:System.IO.StreamWriter.Flush%2A> n’est pas appelée au moment opportun, les données mises en mémoire tampon dans l’instance de <xref:System.IO.StreamWriter> peuvent ne pas être écrites comme prévu.  
   
  L’exemple suivant illustre un code mal écrit que cet Assistant Débogage managé doit intercepter.  

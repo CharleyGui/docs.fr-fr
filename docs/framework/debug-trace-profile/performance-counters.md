@@ -1,21 +1,22 @@
 ---
 title: Compteurs de performance dans le .NET Framework
+description: En savoir plus sur les compteurs de performance dans .NET. Il existe des compteurs de performances pour les exceptions, l’interopérabilité, les compilateurs JIT, le chargement, la mémoire, la mise en réseau, la sécurité et bien plus encore.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - performance, .NET Framework applications
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: 44a5d1cb70d294d720290a4754bb5f5cb47f79a4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3702e9d2e0a369f5391c16088202caf5d7ced7ea
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400021"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803701"
 ---
-# <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le cadre .NET
+# <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
 
-Ce sujet fournit une liste de compteurs de performances que vous pouvez trouver dans le [Moniteur de Performance Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
+Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans l' [Analyseur de performances Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
 
 ## <a name="exception-performance-counters"></a>Compteurs de performance des exceptions  
  La catégorie Exceptions CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les exceptions levées par une application. Le tableau suivant décrit ces compteurs de performance.  
@@ -23,7 +24,7 @@ Ce sujet fournit une liste de compteurs de performances que vous pouvez trouver 
 |Compteur de performances|Description|  
 |-------------------------|-----------------|  
 |**Nombre d’exceptions levées**|Affiche le nombre total d'exceptions qui ont été levées depuis le démarrage de l'application. Ce nombre comprend à la fois les exceptions .NET et les exceptions non managées qui sont converties en exceptions .NET. Par exemple, un HRESULT retourné par du code non managé est converti pour donner une exception en code managé.<br /><br /> Ce compteur inclut les exceptions gérées et non gérées. Il comptabilise les exceptions levées plusieurs fois.|  
-|**Nombre d’exceptions levées/s**|Affiche le nombre d'exceptions levées par seconde. Ce nombre comprend à la fois les exceptions .NET et les exceptions non managées qui sont converties en exceptions .NET. Par exemple, un HRESULT retourné par du code non managé est converti pour donner une exception en code managé.<br /><br /> Ce compteur inclut les exceptions gérées et non gérées. Il ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon. Ce compteur est un indicateur des problèmes de performance potentiels si un grand nombre d’exceptions (>100) est jeté.|  
+|**Nombre d’exceptions levées/s**|Affiche le nombre d'exceptions levées par seconde. Ce nombre comprend à la fois les exceptions .NET et les exceptions non managées qui sont converties en exceptions .NET. Par exemple, un HRESULT retourné par du code non managé est converti pour donner une exception en code managé.<br /><br /> Ce compteur inclut les exceptions gérées et non gérées. Il ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon. Ce compteur est un indicateur de problèmes de performances potentiels si un nombre élevé d’exceptions (>100s) est levé.|  
 |**Nombre de filtres/s**|Affiche le nombre de filtres d'exception .NET exécutés par seconde. Un filtre d'exception évalue si une exception doit être gérée ou non.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Nombre de Finally/s**|Affiche le nombre de blocs finally exécutés par seconde. Un bloc finally est toujours exécuté, quelle que soit la méthode de sortie du bloc try.  Seuls les blocs finally exécutés pour une exception sont comptabilisés ; ceux situés dans les chemins de code standard sont ignorés par ce compteur.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Profondeur Throw à Catch/s**|Affiche le nombre de frames de pile traversés, par seconde, entre le frame qui a levé l'exception et celui qui l'a gérée. Ce compteur est remis à zéro quand un gestionnaire d'exceptions est entré. Les exceptions imbriquées indiquent donc la profondeur de la pile entre les gestionnaires.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
@@ -112,7 +113,7 @@ Ce sujet fournit une liste de compteurs de performances que vous pouvez trouver 
 |**Taille du tas de la génération 1**|Affiche le nombre d'octets actuellement alloués à la génération 1. Ce compteur n'affiche pas la taille maximale de la génération 1. Les objets ne sont pas alloués directement à cette génération : ils sont promus à partir des précédents garbage collection de la génération 0. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
 |**Octets promus de la génération 1/s**|Affiche le nombre d'octets par seconde promus de la génération 1 à la génération 2. Les objets promus uniquement parce qu'ils attendent d'être finalisés sont ignorés par ce compteur.<br /><br /> La mémoire est promue quand elle survit à un garbage collection. La génération 2 étant la plus ancienne, les promotions depuis celle-ci ne sont pas possibles. Ce compteur est un indicateur du nombre d'objets à durée de vie très longue qui sont créés par seconde.<br /><br /> Ce compteur affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Taille du tas de la génération 2**|Affiche le nombre d'octets actuellement alloués à la génération 2. Les objets ne sont pas alloués directement à cette génération : ils sont promus à partir de la génération 1 durant les précédents garbage collection de la génération 1. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
-|**Taille du tas d’objets volumineux**|Affiche la taille actuelle, dans les octets, du grand tas d’objets. Les objets de plus de 85 000 octets sont traités comme de gros objets par le collecteur d’ordures et sont directement répartis dans un tas spécial. Ils ne sont pas promus à travers les générations. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
+|**Taille du tas d’objets volumineux**|Affiche la taille actuelle, en octets, du tas d’objets volumineux. Les objets qui sont supérieurs à environ 85 000 octets sont traités comme des objets volumineux par le garbage collector et sont directement alloués dans un tas spécial. Ils ne sont pas promus via les générations. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
 |**ID du processus**|Affiche l'ID de processus de l'instance de CLR qui est surveillée.|  
 |**Finalisation-mémoire promues de la génération 0**|Affiche le nombre d'octets de mémoire qui sont promus de la génération 0 à la génération 1 uniquement parce qu'ils sont en attente de finalisation. Ce compteur n’est pas cumulatif : il affiche la valeur observée à la fin du dernier garbage collection uniquement.|  
 |**Mémoire promue de la génération 0**|Affiche le nombre d'octets de mémoire qui survivent au garbage collection et sont promus de la génération 0 à la génération 1. Les objets promus uniquement parce qu'ils attendent d'être finalisés sont ignorés par ce compteur. Ce compteur n’est pas cumulatif : il affiche la valeur observée à la fin du dernier garbage collection uniquement.|  
@@ -194,7 +195,7 @@ Les compteurs de performance réseau pour les événements sont les suivants :
   
  Les compteurs de performance réseau sont accessibles et gérables à l'aide de la classe <xref:System.Diagnostics.PerformanceCounter> et des classes connexes dans l'espace de noms <xref:System.Diagnostics>. Les compteurs de performance réseau peuvent également être affichés dans la console Analyseur de performances Windows.  
   
- Les compteurs de performance réseau doivent être activés dans le fichier de configuration pour pouvoir être utilisés. L'ensemble des compteurs de performance réseau sont activés ou désactivés avec un paramètre unique dans le fichier de configuration. Il n'est pas possible d'activer ou de désactiver ces compteurs de manière individuelle. Pour plus d’informations, voir [ \<performanceComper> Element (Paramètres réseau)](../configure-apps/file-schema/network/performancecounter-element-network-settings.md).  
+ Les compteurs de performance réseau doivent être activés dans le fichier de configuration pour pouvoir être utilisés. L'ensemble des compteurs de performance réseau sont activés ou désactivés avec un paramètre unique dans le fichier de configuration. Il n'est pas possible d'activer ou de désactiver ces compteurs de manière individuelle. Pour plus d’informations, consultez [ \<performanceCounter> élément (paramètres réseau)](../configure-apps/file-schema/network/performancecounter-element-network-settings.md).  
   
  Si les compteurs de performance réseau sont activés, il est possible de créer et d'actualiser des compteurs de performance par AppDomain et globaux. S'ils sont désactivés, l'application ne fournit pas de données de compteur de performance réseau.  
   
@@ -230,4 +231,4 @@ for (int i = 0; i < Array.Length; i++)
 ## <a name="see-also"></a>Voir aussi
 
 - [Compteurs de performance](performance-counters.md)
-- [Profilage de temps d’exécution](runtime-profiling.md)
+- [Profilage d’exécution](runtime-profiling.md)

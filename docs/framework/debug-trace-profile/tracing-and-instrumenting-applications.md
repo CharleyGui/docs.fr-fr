@@ -1,5 +1,6 @@
 ---
 title: Traçage et instrumentation d'applications
+description: Trace et instrumentation d’applications dans .NET. Le suivi vous permet de surveiller l’exécution de l’application pendant son exécution. L’instrumentation vous permet de mesurer le niveau de performance.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - performance monitoring, tracing code
 - Trace class, instrumentation for .NET applications
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
-ms.openlocfilehash: 2dcdbaf50ed053d43fc2df2c80fe7688e7b3e51f
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: d5484129ac17ee20aafe305bea5599f85903dfa2
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77542609"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803545"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Traçage et instrumentation d'applications
 Le suivi est un moyen de surveiller l’exécution de votre application pendant son exécution . Vous pouvez ajouter l'instrumentation de traçage et de débogage à votre application .NET Framework au moment du développement, et utiliser cette instrumentation pendant le développement de l'application et après son déploiement. Utilisez les classes <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType> et <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> pour enregistrer les informations relatives aux erreurs et à l'exécution de l'application dans des journaux, des fichiers texte ou d'autres appareils en vue d'une analyse ultérieure.  
@@ -97,7 +98,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 7. Si un problème survient au moment de l'exécution, activez le commutateur de trace approprié. Pour plus d’informations, consultez [Configuration des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md).  
   
-     Le code de trace écrit les messages de traçage vers la cible spécifiée (par exemple, un écran, un fichier texte ou un journal des événements). Le type d’écouteur que vous avez inclus dans la collection <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> détermine la cible.  
+     Le code de trace écrit les messages de traçage vers la cible spécifiée (par exemple, un écran, un fichier texte ou un journal des événements). Le type d’écouteur que vous avez inclus dans la <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> collection détermine la cible.  
   
 8. Analysez les messages de traçage pour identifier et comprendre les problèmes potentiels dans l'application.  
   
@@ -109,7 +110,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
  Grâce aux instructions de trace, vous ne perdez pas de temps à analyser, modifier et recompiler le code source d’origine, ni à essayer de reproduire l’erreur d’exécution dans l’environnement de débogage. Rappelez-vous que l'instrumentation d'une application est utile pour afficher les erreurs, mais aussi pour surveiller les performances.  
   
 ## <a name="strategic-placement-of-trace-statements"></a>Placement stratégique des instructions de trace  
- Vous devez apporter un soin particulier lors du placement de vos instructions de suivi à utiliser au moment de l'exécution. Vous devez réfléchir aux informations de suivi susceptibles d'être nécessaires dans une application déployée, de sorte que tous les scénarios de suivi probables soient convenablement traités. Toutefois, étant donné que les applications qui utilisent le suivi varient considérablement, il n'existe aucune recommandation générale concernant le positionnement stratégique du suivi. Pour plus d’informations sur la façon de placer des instructions de suivi, consultez [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md).  
+ Choisissez avec soin les endroits où vous allez placer les instructions de trace qui seront utilisées au moment de l'exécution. Vous devez déterminer quelles informations de traçage seront les plus utiles dans une application déployée afin que tous les scénarios de traçage probables soient traités de manière adéquate. Les applications utilisant la fonctionnalité de traçage étant très diverses, il n'existe pas d'instructions générales pour placer stratégiquement des instructions de trace. Pour plus d’informations sur la façon de placer des instructions de suivi, consultez [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md).  
   
 ## <a name="output-from-tracing"></a>Sortie de trace  
  La sortie de suivi est collectée par des objets appelés *écouteurs*. Un écouteur est un objet qui reçoit la sortie de trace et qui l'écrit dans une cible de sortie (généralement une fenêtre, un journal ou un fichier texte). Quand un écouteur de la trace est créé, il est en principe ajouté à la collection <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>, ce qui permet à l’écouteur de recevoir toutes les données de sortie de trace.  
@@ -120,18 +121,18 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 |Méthode|Output|  
 |------------|------------|  
-|`Assert`|Le texte spécifié ou, si aucun texte n'est spécifié, la pile des appels. La sortie est écrite uniquement si la condition spécifiée en tant qu’argument dans l’instruction `Assert` est **false**.|  
+|`Assert`|Le texte spécifié ou, si aucun texte n'est spécifié, la pile des appels. La sortie est écrite uniquement si la condition spécifiée en tant qu’argument dans l' `Assert` instruction a la **valeur false**.|  
 |`Fail`|Le texte spécifié ou, si aucun texte n'est spécifié, la pile des appels.|  
 |`Write`|Le texte spécifié.|  
-|`WriteIf`|Texte spécifié, si la condition spécifiée en tant qu’argument dans l’instruction `WriteIf` est satisfaite.|  
+|`WriteIf`|Texte spécifié, si la condition spécifiée en tant qu’argument dans l' `WriteIf` instruction est satisfaite.|  
 |`WriteLine`|Le texte spécifié et un retour chariot.|  
-|`WriteLineIf`|Le texte spécifié et un retour chariot, si la condition spécifiée en tant qu’argument dans l’instruction `WriteLineIf` est satisfaite.|  
+|`WriteLineIf`|Le texte spécifié et un retour chariot, si la condition spécifiée en tant qu’argument dans l' `WriteLineIf` instruction est satisfaite.|  
   
- Tous les écouteurs dans la collection <xref:System.Diagnostics.Trace.Listeners%2A> reçoivent les messages décrits dans le tableau ci-dessus, mais les actions prises dépendent du type d'écouteur qui reçoit le message. Par exemple, le <xref:System.Diagnostics.DefaultTraceListener> affiche une boîte de dialogue d’assertion lorsqu’il reçoit une notification de `Fail` ou d’échec `Assert`, mais qu’un <xref:System.Diagnostics.TextWriterTraceListener> écrit simplement la sortie dans son flux.  
+ Tous les écouteurs dans la collection <xref:System.Diagnostics.Trace.Listeners%2A> reçoivent les messages décrits dans le tableau ci-dessus, mais les actions prises dépendent du type d'écouteur qui reçoit le message. Par exemple, le <xref:System.Diagnostics.DefaultTraceListener> affiche une boîte de dialogue d’assertion lorsqu’il reçoit une notification ou en cas d' `Fail` échec `Assert` , mais il <xref:System.Diagnostics.TextWriterTraceListener> écrit simplement la sortie dans son flux.  
   
  Vous pouvez générer des résultats personnalisés en implémentant votre propre écouteur. Par exemple, créez un écouteur de la trace personnalisé qui affiche les messages dans une boîte de message ou qui se connecte à une base de données pour ajouter les messages à une table. Tous les écouteurs personnalisés doivent prendre en charge les six méthodes mentionnées ci-dessus. Pour plus d'informations sur la création d'écouteurs définis par le développeur, voir <xref:System.Diagnostics.TraceListener> dans la documentation .NET Framework.  
   
- Les méthodes `Write` et `WriteLine` écrivent toujours le texte que vous spécifiez. `Assert`, `WriteIf`et `WriteLineIf` requièrent un argument booléen qui contrôle si elles écrivent ou non le texte spécifié ; elles écrivent le texte spécifié uniquement si l’expression a la **valeur true** (pour `WriteIf` et `WriteLineIf`) ou **false** (pour `Assert`). La méthode `Fail` écrit toujours le texte spécifié. Pour plus d’informations, consultez [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md) et la référence .NET Framework.  
+ Les `Write` `WriteLine` méthodes et écrivent toujours le texte que vous spécifiez. `Assert`, `WriteIf` et `WriteLineIf` requièrent un argument booléen qui contrôle si elles écrivent le texte spécifié. elles écrivent le texte spécifié uniquement si l’expression a la **valeur true** (pour `WriteIf` et `WriteLineIf` ) ou **false** (pour `Assert` ). La `Fail` méthode écrit toujours le texte spécifié. Pour plus d’informations, consultez [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md) et la référence .NET Framework.  
   
 ## <a name="security-concerns"></a>Problèmes de sécurité  
  Si vous ne désactivez pas le traçage et le débogage avant de déployer votre application ASP.NET, celle-ci peut dévoiler des informations exploitables par un programme malveillant. Pour plus d’informations, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md), [Compilation et génération](/visualstudio/ide/compiling-and-building-in-visual-studio) et [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md). Vous pouvez également configurer le débogage via IIS (Internet Information Services).  
@@ -141,11 +142,11 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.TraceSource>
 - [Contrats de code](code-contracts.md)
-- [Types de projets C#, F# et Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)
-- [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
-- [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md)
-- [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md)
-- [Guide pratique pour créer et initialiser des sources de suivi](how-to-create-and-initialize-trace-sources.md)
-- [Guide pratique pour utiliser un TraceSource et des filtres avec des écouteurs de suivi](how-to-use-tracesource-and-filters-with-trace-listeners.md)
+- [Types de projets C#, F# et Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)
+- [Comment : ajouter des instructions de traçage dans le code d'une application](how-to-add-trace-statements-to-application-code.md)
+- [Comment : effectuer une compilation conditionnelle avec Trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md)
+- [Comment : créer, initialiser et configurer les commutateurs de traçage](how-to-create-initialize-and-configure-trace-switches.md)
+- [Comment : créer et initialiser les sources de trace](how-to-create-and-initialize-trace-sources.md)
+- [Comment : utiliser des TraceSource et des filtres avec des écouteurs de la trace](how-to-use-tracesource-and-filters-with-trace-listeners.md)
 - [Écouteurs de suivi](trace-listeners.md)
-- [Commutateurs de suivi](trace-switches.md)
+- [Commutateurs de traçage](trace-switches.md)

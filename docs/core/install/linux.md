@@ -4,14 +4,20 @@ description: En savoir plus sur les distributions Linux qui prennent en charge l
 author: adegeo
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: 22c07c5a8263dd6059f415cb4d9e2915811351b0
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 06a90d7fecfe9f25d26caccb2fe3aedec0176f64
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324632"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803090"
 ---
 # <a name="install-net-core-on-linux"></a>Installer .NET Core sur Linux
+
+> [!div class="op_single_selector"]
+>
+> - [Installer sur Windows](windows.md)
+> - [Installer sur macOS](macos.md)
+> - [Installer sur Linux](linux.md)
 
 .NET Core est disponible sur différentes distributions Linux. La plupart des plates-formes et distributions Linux ont une version majeure chaque année, et la plupart fournissent un gestionnaire de package qui est utilisé pour installer .NET Core. Cet article décrit ce qui est actuellement pris en charge et le gestionnaire de package utilisé.
 
@@ -94,7 +100,7 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [32](linux-fedora.md#fedora-32-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [31](linux-fedora.md#fedora-31-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌[30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
+| ❌ [30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
 | ❌[29](linux-fedora.md#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
 | ❌[28](linux-fedora.md#fedora-28-) | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 | ❌[27](linux-fedora.md#fedora-27-) | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
@@ -174,3 +180,9 @@ Le tableau suivant représente l’état de prise en charge d’Ubuntu et de .NE
 | ✔️ [16,04 (LTS)](linux-ubuntu.md#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 
 Pour plus d’informations, consultez [installer .net Core sur Ubuntu](linux-ubuntu.md).
+
+## <a name="next-steps"></a>Étapes suivantes
+
+- [Comment vérifier si .net Core est déjà installé](how-to-detect-installed-versions.md?pivots=os-linux).
+- [Didacticiel : créer une application avec Visual Studio code](../tutorials/with-visual-studio-code.md).
+- [Didacticiel : conteneur d’une application .net Core](../docker/build-container.md).

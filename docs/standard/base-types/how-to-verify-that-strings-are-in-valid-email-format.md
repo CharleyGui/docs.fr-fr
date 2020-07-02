@@ -1,7 +1,7 @@
 ---
 title: Guide pratique pour vérifier que des chaînes sont dans un format d’adresse e-mail valide
 description: Lire un exemple de la façon dont une expression régulière vérifie que les chaînes sont dans un format d’adresse de messagerie valide dans .NET.
-ms.date: 12/10/2018
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -19,16 +19,18 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-ms.openlocfilehash: 47ef4dedd20a2b885abaabf72c26de5f3312c66f
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: d303c13dead6b4ba29cb7476c2a9b382a9395aff
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768961"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803194"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Guide pratique pour vérifier que des chaînes sont dans un format d’adresse e-mail valide
 
 L'exemple suivant utilise une expression régulière pour vérifier qu'une chaîne est dans un format d'adresse e-mail valide.
+
+[!INCLUDE [regex](../../../includes/regex.md)]
 
 ## <a name="example"></a>Exemple
 
