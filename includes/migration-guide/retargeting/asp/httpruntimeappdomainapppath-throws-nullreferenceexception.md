@@ -1,18 +1,30 @@
 ---
-ms.openlocfilehash: e7154919d6a09a04e650d5546feb2ae6c6cc912f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 986b647047aaa4a185c1403e96e499ae587bea98
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859159"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617529"
 ---
-### <a name="httpruntimeappdomainapppath-throws-a-nullreferenceexception"></a><span data-ttu-id="13e25-101">HttpRuntime.AppDomainAppPath lève une exception NullReferenceException</span><span class="sxs-lookup"><span data-stu-id="13e25-101">HttpRuntime.AppDomainAppPath Throws a NullReferenceException</span></span>
+### <a name="httpruntimeappdomainapppath-throws-a-nullreferenceexception"></a><span data-ttu-id="acab2-101">HttpRuntime.AppDomainAppPath lève une exception NullReferenceException</span><span class="sxs-lookup"><span data-stu-id="acab2-101">HttpRuntime.AppDomainAppPath Throws a NullReferenceException</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="13e25-102">Détails</span><span class="sxs-lookup"><span data-stu-id="13e25-102">Details</span></span>|<span data-ttu-id="13e25-103">Dans .NET Framework 4.6.2, le runtime lève un <code>T:System.NullReferenceException</code> quand vous récupérez une valeur <code>P:System.Web.HttpRuntime.AppDomainAppPath</code> qui inclut des caractères null. Dans .NET Framework 4.6.1 et les versions antérieures, le runtime lève un <code>T:System.ArgumentNullException</code>.</span><span class="sxs-lookup"><span data-stu-id="13e25-103">In the .NET Framework 4.6.2, the runtime throws a <code>T:System.NullReferenceException</code> when retrieving a <code>P:System.Web.HttpRuntime.AppDomainAppPath</code> value that includes null characters.In the .NET Framework 4.6.1 and earlier versions, the runtime throws an <code>T:System.ArgumentNullException</code>.</span></span>|
-|<span data-ttu-id="13e25-104">Suggestion</span><span class="sxs-lookup"><span data-stu-id="13e25-104">Suggestion</span></span>|<span data-ttu-id="13e25-105">Vous pouvez effectuer l’une ou l’autre des opérations suivantes pour répondre à ce changement :</span><span class="sxs-lookup"><span data-stu-id="13e25-105">You can do either of the follow to respond to this change:</span></span><ul><li><span data-ttu-id="13e25-106">Gérer <code>T:System.NullReferenceException</code> si votre application s’exécute sur .NET Framework 4.6.2.</span><span class="sxs-lookup"><span data-stu-id="13e25-106">Handle the <code>T:System.NullReferenceException</code> if you application is running on the .NET Framework 4.6.2.</span></span></li><li><span data-ttu-id="13e25-107">Effectuer une mise à niveau vers .NET Framework 4.7, qui restaure le comportement précédent et lève un <code>T:System.ArgumentNullException</code>.</span><span class="sxs-lookup"><span data-stu-id="13e25-107">Upgrade to the .NET Framework 4.7, which restores the previous behavior and throws an <code>T:System.ArgumentNullException</code>.</span></span></li></ul>|
-|<span data-ttu-id="13e25-108">Étendue</span><span class="sxs-lookup"><span data-stu-id="13e25-108">Scope</span></span>|<span data-ttu-id="13e25-109">Edge</span><span class="sxs-lookup"><span data-stu-id="13e25-109">Edge</span></span>|
-|<span data-ttu-id="13e25-110">Version</span><span class="sxs-lookup"><span data-stu-id="13e25-110">Version</span></span>|<span data-ttu-id="13e25-111">4.6.2</span><span class="sxs-lookup"><span data-stu-id="13e25-111">4.6.2</span></span>|
-|<span data-ttu-id="13e25-112">Type</span><span class="sxs-lookup"><span data-stu-id="13e25-112">Type</span></span>|<span data-ttu-id="13e25-113">Reciblage</span><span class="sxs-lookup"><span data-stu-id="13e25-113">Retargeting</span></span>|
-|<span data-ttu-id="13e25-114">API affectées</span><span class="sxs-lookup"><span data-stu-id="13e25-114">Affected APIs</span></span>|<ul><li><xref:System.Web.HttpRuntime.AppDomainAppPath?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="acab2-102">Détails</span><span class="sxs-lookup"><span data-stu-id="acab2-102">Details</span></span>
+
+<span data-ttu-id="acab2-103">Dans .NET Framework 4.6.2, le runtime lève un `T:System.NullReferenceException` quand vous récupérez une valeur `P:System.Web.HttpRuntime.AppDomainAppPath` qui inclut des caractères null. Dans .NET Framework 4.6.1 et les versions antérieures, le runtime lève un `T:System.ArgumentNullException`.</span><span class="sxs-lookup"><span data-stu-id="acab2-103">In the .NET Framework 4.6.2, the runtime throws a `T:System.NullReferenceException` when retrieving a `P:System.Web.HttpRuntime.AppDomainAppPath` value that includes null characters.In the .NET Framework 4.6.1 and earlier versions, the runtime throws an `T:System.ArgumentNullException`.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="acab2-104">Suggestion</span><span class="sxs-lookup"><span data-stu-id="acab2-104">Suggestion</span></span>
+
+<span data-ttu-id="acab2-105">Vous pouvez effectuer l’une ou l’autre des opérations suivantes pour répondre à ce changement :</span><span class="sxs-lookup"><span data-stu-id="acab2-105">You can do either of the follow to respond to this change:</span></span>
+
+- <span data-ttu-id="acab2-106">Gérer `T:System.NullReferenceException` si votre application s’exécute sur .NET Framework 4.6.2.</span><span class="sxs-lookup"><span data-stu-id="acab2-106">Handle the `T:System.NullReferenceException` if you application is running on the .NET Framework 4.6.2.</span></span>
+- <span data-ttu-id="acab2-107">Effectuer une mise à niveau vers .NET Framework 4.7, qui restaure le comportement précédent et lève un `T:System.ArgumentNullException`.</span><span class="sxs-lookup"><span data-stu-id="acab2-107">Upgrade to the .NET Framework 4.7, which restores the previous behavior and throws an `T:System.ArgumentNullException`.</span></span>
+
+| <span data-ttu-id="acab2-108">Nom</span><span class="sxs-lookup"><span data-stu-id="acab2-108">Name</span></span>    | <span data-ttu-id="acab2-109">Valeur</span><span class="sxs-lookup"><span data-stu-id="acab2-109">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="acab2-110">Étendue</span><span class="sxs-lookup"><span data-stu-id="acab2-110">Scope</span></span>   | <span data-ttu-id="acab2-111">Edge</span><span class="sxs-lookup"><span data-stu-id="acab2-111">Edge</span></span>        |
+| <span data-ttu-id="acab2-112">Version</span><span class="sxs-lookup"><span data-stu-id="acab2-112">Version</span></span> | <span data-ttu-id="acab2-113">4.6.2</span><span class="sxs-lookup"><span data-stu-id="acab2-113">4.6.2</span></span>       |
+| <span data-ttu-id="acab2-114">Type</span><span class="sxs-lookup"><span data-stu-id="acab2-114">Type</span></span>    | <span data-ttu-id="acab2-115">Reciblage</span><span class="sxs-lookup"><span data-stu-id="acab2-115">Retargeting</span></span> |
+
+#### <a name="affected-apis"></a><span data-ttu-id="acab2-116">API affectées</span><span class="sxs-lookup"><span data-stu-id="acab2-116">Affected APIs</span></span>
+
+- <xref:System.Web.HttpRuntime.AppDomainAppPath?displayProperty=nameWithType>
