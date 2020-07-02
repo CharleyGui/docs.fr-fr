@@ -1,7 +1,7 @@
 ---
 title: 'Procédure : supprimer des caractères non valides d’une chaîne'
 description: Lisez un exemple qui montre comment supprimer des caractères potentiellement dangereux d’une chaîne à l’aide de la méthode Regex. Replace statique.
-ms.date: 03/30/2017
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -17,16 +17,18 @@ helpviewer_keywords:
 - Replace method
 - validating user input
 ms.assetid: b4319c8a-9032-4129-a9d5-6f6fc28e7f32
-ms.openlocfilehash: f9d671587d174a1eb2bb6a5dac24bdd0220be3dd
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5e0cd423df7fce03cdefb3da7bc192f3045e8f9c
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600826"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803987"
 ---
 # <a name="how-to-strip-invalid-characters-from-a-string"></a>Procédure : supprimer des caractères non valides d’une chaîne
 L’exemple suivant utilise la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> statique pour supprimer des caractères non valides d’une chaîne.  
-  
+
+[!INCLUDE [regex](../../../includes/regex.md)]
+
 ## <a name="example"></a>Exemple  
  Vous pouvez utiliser la méthode `CleanInput` définie dans cet exemple pour supprimer des caractères potentiellement nuisibles entrés dans un champ de texte qui accepte une entrée d’utilisateur. Dans ce cas, `CleanInput` supprime tous les caractères non alphanumériques à l’exception des points (.), des arrobases (@) et des traits d’union (-), puis retourne la chaîne restante. Toutefois, vous pouvez modifier le modèle d’expression régulière afin qu’il supprime tous les caractères qui ne doivent pas être inclus dans une chaîne d’entrée.  
   

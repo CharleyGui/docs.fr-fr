@@ -3,15 +3,15 @@ title: 'Didacticiel : inspection visuelle automatisée à l’aide de l’appre
 description: Ce didacticiel explique comment utiliser l’apprentissage de transfert pour former un modèle d’apprentissage profond TensorFlow dans ML.NET à l’aide de l’API de détection d’images pour classer les images de surfaces concrètes comme fissurées ou non fissurées.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 12/12/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 2915259d7c7031b9e699c7fd0cf65cf723c41680
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 17fbb8c6714f3af47c0b554aec2c53c8046021bb
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144420"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803740"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Didacticiel : inspection visuelle automatisée à l’aide de l’apprentissage de transfert avec l’API de classification d’image ML.NET
 
@@ -81,7 +81,10 @@ Le modèle préformé utilisé dans ce didacticiel est la variante de couche 101
 Maintenant que vous avez une compréhension générale de la formation de transfert et de l’API de classification d’image, il est temps de générer l’application.
 
 1. Créez une **application console C# .net Core** appelée « DeepLearning_ImageClassification_Binary ».
-1. Installez le package NuGet **1.4.0** version **Microsoft.ml** :
+1. Installez le package NuGet **Microsoft.ml** :
+
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
     1. Dans Explorateur de solutions, cliquez avec le bouton droit sur votre projet et sélectionnez **gérer les packages NuGet**.
     1. Choisissez « nuget.org » comme source du package.
     1. Sélectionnez l’onglet **Parcourir**.
@@ -89,7 +92,7 @@ Maintenant que vous avez une compréhension générale de la formation de transf
     1. Recherchez **Microsoft.ml**.
     1. Sélectionnez le bouton **Installer**.
     1. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
-    1. Répétez ces étapes pour les packages NuGet **Microsoft. ml. vision** version **1.4.0**, **SciSharp. TensorFlow. Redist** version **1.15.0**et **Microsoft. ml. ImageAnalytics** version **1.4.0** .
+    1. Répétez ces étapes pour les packages NuGet **Microsoft. ml. vision**, **SciSharp. TensorFlow. Redist**et **Microsoft. ml. ImageAnalytics** .
 
 ### <a name="prepare-and-understand-the-data"></a>Préparer et comprendre les données
 
@@ -343,7 +346,7 @@ Sous la `Main` méthode, créez une nouvelle méthode utilitaire appelée `Outpu
 
     [!code-csharp [ClassifyImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L66)]
 
-## <a name="run-the-application"></a>Exécuter l’application
+## <a name="run-the-application"></a>Exécution de l'application
 
 Exécutez votre application console. La sortie doit ressembler à ce qui suit. Des messages d’avertissement ou de traitement peuvent s’afficher, mais nous les avons supprimés dans les résultats suivants pour plus de clarté. Par souci de concision, la sortie a été condensée.
 
@@ -378,7 +381,7 @@ Image: 7001-163.jpg | Actual Value: UD | Predicted Value: UD
 Image: 7001-210.jpg | Actual Value: UD | Predicted Value: UD
 ```
 
-Lors de l’inspection de l’image *7001 -220. jpg* , vous pouvez constater qu’elle n’est pas piratée.
+Lors de l’inspection de l’image *7001-220.jpg* , vous pouvez constater qu’elle n’est pas piratée.
 
 ![Image du jeu de données SDNET2018 utilisée pour la prédiction](./media/image-classification-api-transfer-learning/predictedimage.jpg)
 

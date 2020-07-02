@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé overlappedFreeError
+description: Passez en revue l’Assistant Débogage managé (MDA) overlappedFreeError dans .NET, qui peut activer les violations d’accès ou la corruption du tas récupéré par le garbage collector.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - OverlappedFreeError MDA
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), overlapped structures
 - freeing overlapped structures
 ms.assetid: b6ab2d48-6eee-4bab-97a3-046b3b0a5470
-ms.openlocfilehash: 8a0c72cf26ef8434719ff6661ef15a44f51c8740
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 9be33c59723ecb2743f2bc610d7fb69d24ff388c
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217260"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803911"
 ---
 # <a name="overlappedfreeerror-mda"></a>Assistant Débogage managé overlappedFreeError
 L’Assistant Débogage managé `overlappedFreeError` est activé quand la méthode <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29?displayProperty=nameWithType> est appelée avant la fin de l’opération avec chevauchement.  
@@ -22,7 +23,7 @@ L’Assistant Débogage managé `overlappedFreeError` est activé quand la méth
 ## <a name="symptoms"></a>Symptômes  
  Violations d’accès ou altération du tas de la garbage collection.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Une structure avec chevauchement a été libérée avant la fin de l’opération. La fonction qui utilise le pointeur avec chevauchement peut écrire dans la structure ultérieurement, une fois qu’elle a été libérée. Ceci peut entraîner une altération du tas, car un autre objet devrait maintenant occuper cette région.  
   
  Cet Assistant Débogage managé peut ne pas représenter une erreur si l’opération avec chevauchement n’a pas démarré correctement.  
@@ -52,4 +53,4 @@ L’Assistant Débogage managé `overlappedFreeError` est activé quand la méth
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

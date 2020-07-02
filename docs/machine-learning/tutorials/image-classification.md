@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : modèle de classification d’image ML.NET à partir de TensorFlow'
 description: Découvrez comment transférer les connaissances d’un modèle TensorFlow existant dans un nouveau modèle de classification d’image ML.NET. Le modèle TensorFlow a été formé pour classifier les images en milliers de catégories. Le modèle ML.NET utilise l’apprentissage de transfert pour classer les images en moins de catégories plus larges.
-ms.date: 01/30/2020
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: ae6094d5acd4d26482f3690e174d82bbf1807266
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 38fa349e743da54a21aeb65b76a0273a17c3fae7
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144433"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85804000"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Didacticiel : générer un modèle de classification d’images ML.NET à partir d’un modèle TensorFlow pré-formé
 
@@ -114,7 +114,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 > <https://commons.wikimedia.org/wiki/Toaster>
 > <https://commons.wikimedia.org/wiki/Teddy_bear>
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 ### <a name="create-a-project"></a>Création d’un projet
 
@@ -122,12 +122,14 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Installez le **package NuGet Microsoft.ML** :
 
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
     * Dans Explorateur de solutions, cliquez avec le bouton droit sur votre projet et sélectionnez **gérer les packages NuGet**.
     * Choisissez « nuget.org » comme source du package, sélectionnez l’onglet Parcourir et recherchez **Microsoft.ML**.
-    * Cliquez sur la liste déroulante **version** , sélectionnez le package **1.4.0** dans la liste, puis cliquez sur le bouton **installer** .
+    * Sélectionnez le bouton **Installer**.
     * Sélectionnez le bouton **OK** dans la boîte de dialogue **aperçu des modifications** .
     * Sélectionnez le bouton **J’accepte** dans la boîte de dialogue acceptation de la **licence** si vous acceptez les termes du contrat de licence pour les packages listés.
-    * Répétez ces étapes pour **Microsoft. ml. ImageAnalytics v 1.4.0**, **SciSharp. TensorFlow. Redist v 1.15.0** et **Microsoft. ml. TensorFlow v 1.4.0**.
+    * Répétez ces étapes pour **Microsoft. ml. ImageAnalytics**, **SciSharp. TensorFlow. Redist** et **Microsoft. ml. TensorFlow**.
 
 ### <a name="download-assets"></a>Télécharger les éléments multimédias
 
