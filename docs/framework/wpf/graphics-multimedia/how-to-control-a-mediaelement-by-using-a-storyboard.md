@@ -1,5 +1,6 @@
 ---
-title: 'Procédure : Contrôler un MediaElement à l’aide d’une table de montage séquentiel'
+title: "Comment : contrôler un MediaElement à l'aide d'un storyboard"
+description: Contrôler la lecture de médias à l’aide d’un Storyboard dans Windows Presentation Foundation (WPF). Prenons l’exemple suivant pour créer un lecteur multimédia simple.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,22 +12,22 @@ helpviewer_keywords:
 - media [WPF], controlling playback with Storyboards
 - playback of media [WPF], controlling with Storyboards
 ms.assetid: 6128ca77-b826-4e36-b968-6f237157c543
-ms.openlocfilehash: ae785e11b1da0f2c408b24021ad46ab071419378
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a5e41b9a28211495fd3374c1a51a655dd867bca
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032227"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853738"
 ---
-# <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>Procédure : Contrôler un MediaElement à l’aide d’une table de montage séquentiel
-Cet exemple montre comment contrôler un <xref:System.Windows.Controls.MediaElement> en utilisant un <xref:System.Windows.Media.MediaTimeline> dans un <xref:System.Windows.Media.Animation.Storyboard>.  
+# <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>Comment : contrôler un MediaElement à l'aide d'un storyboard
+Cet exemple montre comment contrôler un <xref:System.Windows.Controls.MediaElement> en utilisant un <xref:System.Windows.Media.MediaTimeline> dans un <xref:System.Windows.Media.Animation.Storyboard> .  
   
 ## <a name="example"></a>Exemple  
- Lorsque vous utilisez un <xref:System.Windows.Media.MediaTimeline> dans un <xref:System.Windows.Media.Animation.Storyboard> pour contrôler le minutage d’une <xref:System.Windows.Controls.MediaElement>, les fonctionnalités sont identiques à celles des autres <xref:System.Windows.Media.Animation.Timeline> objets, tels que les animations. Par exemple, un <xref:System.Windows.Media.MediaTimeline> utilise <xref:System.Windows.Media.Animation.Timeline> propriétés telles que la <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> propriété pour indiquer quand commencer un <xref:System.Windows.Controls.MediaElement> (Démarrer la lecture du média). Il utilise également le <xref:System.Windows.Media.Animation.Timeline.Duration%2A> propriété pour spécifier la durée pendant laquelle le <xref:System.Windows.Controls.MediaElement> est actif (durée de lecture du média). Pour plus d’informations sur l’utilisation de <xref:System.Windows.Media.Animation.Timeline> objets avec un <xref:System.Windows.Media.Animation.Storyboard>, consultez [vue d’ensemble des Storyboards](storyboards-overview.md).  
+ Quand vous utilisez un <xref:System.Windows.Media.MediaTimeline> dans un <xref:System.Windows.Media.Animation.Storyboard> pour contrôler le minutage d’un <xref:System.Windows.Controls.MediaElement> , les fonctionnalités sont identiques à celles d’autres <xref:System.Windows.Media.Animation.Timeline> objets, tels que les animations. Par exemple, un <xref:System.Windows.Media.MediaTimeline> utilise des <xref:System.Windows.Media.Animation.Timeline> propriétés telles que la <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> propriété pour spécifier le moment où démarrer un <xref:System.Windows.Controls.MediaElement> (démarrer la lecture du média). Elle utilise également la <xref:System.Windows.Media.Animation.Timeline.Duration%2A> propriété pour spécifier la durée pendant laquelle le <xref:System.Windows.Controls.MediaElement> est actif (durée de la lecture du média). Pour plus d’informations sur l’utilisation d' <xref:System.Windows.Media.Animation.Timeline> objets avec un <xref:System.Windows.Media.Animation.Storyboard> , consultez [vue d’ensemble des storyboards](storyboards-overview.md).  
   
- Cet exemple montre comment créer un lecteur multimédia simple qui utilise un <xref:System.Windows.Media.MediaTimeline> pour contrôler la lecture. Le lecteur multimédia comprend play, suspendre, reprendre et arrêter des boutons. Le joueur a également un <xref:System.Windows.Controls.Slider> contrôle qui agit comme une barre de progression.  
+ Cet exemple montre comment créer un lecteur multimédia simple qui utilise un <xref:System.Windows.Media.MediaTimeline> pour contrôler la lecture. Le lecteur multimédia comprend des boutons lire, suspendre, reprendre et arrêter. Le lecteur possède également un <xref:System.Windows.Controls.Slider> contrôle qui agit comme une barre de progression.  
   
- L’exemple suivant crée le [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] du lecteur multimédia.  
+ L’exemple suivant crée le [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] pour le lecteur multimédia.  
   
  [!code-xaml[MediaGallery_snip#MediaTimelineExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml#mediatimelineexamplewholepage)]  
   
@@ -41,8 +42,8 @@ Cet exemple montre comment contrôler un <xref:System.Windows.Controls.MediaElem
 - <xref:System.Windows.Media.MediaTimeline>
 - <xref:System.Windows.Media.Animation.Storyboard>
 - [Contrôler un MediaElement (lecture, pause, arrêt, volume et vitesse)](how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)
-- [Vue d'ensemble des plans conceptuels](storyboards-overview.md)
+- [Vue d'ensemble des storyboards](storyboards-overview.md)
 - [Vue d'ensemble des animations d'image clé](key-frame-animations-overview.md)
-- [Vue d’ensemble de l’animation](animation-overview.md)
-- [Rubriques de guide pratique](audio-and-video-how-to-topics.md)
+- [Vue d'ensemble de l'animation](animation-overview.md)
+- [Rubriques de procédures](audio-and-video-how-to-topics.md)
 - [Graphiques et multimédia](index.md)
