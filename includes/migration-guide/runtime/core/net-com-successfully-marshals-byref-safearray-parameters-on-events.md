@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 6ff23bbe8c48235770d39cb7d35a1df7de6c5201
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 77e9d28d79a92cf1523e4ef5779d78394b00ae80
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "68440263"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621986"
 ---
-### <a name="net-com-successfully-marshals-byref-safearray-parameters-on-events"></a><span data-ttu-id="72e9c-101">.NET COM marshale avec succès les paramètres ByRef SafeArray sur les événements</span><span class="sxs-lookup"><span data-stu-id="72e9c-101">.NET COM successfully marshals ByRef SafeArray parameters on events</span></span>
+### <a name="net-com-successfully-marshals-byref-safearray-parameters-on-events"></a><span data-ttu-id="a6aff-101">.NET COM marshale avec succès les paramètres ByRef SafeArray sur les événements</span><span class="sxs-lookup"><span data-stu-id="a6aff-101">.NET COM successfully marshals ByRef SafeArray parameters on events</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="72e9c-102">Détails</span><span class="sxs-lookup"><span data-stu-id="72e9c-102">Details</span></span>|<span data-ttu-id="72e9c-103">Dans .NET Framework 4.7.2 et versions antérieures, le marshaling en code natif d’un paramètre ByRef [SafeArray](https://docs.microsoft.com/windows/desktop/api/oaidl/ns-oaidl-safearray) sur un événement COM était voué à l’échec.</span><span class="sxs-lookup"><span data-stu-id="72e9c-103">In the .NET Framework 4.7.2 and earlier versions, a ByRef [SafeArray](https://docs.microsoft.com/windows/desktop/api/oaidl/ns-oaidl-safearray) parameter on a COM event would fail to marshal back to native code.</span></span>  <span data-ttu-id="72e9c-104">Avec cette modification, le [SafeArray](https://docs.microsoft.com/windows/desktop/api/oaidl/ns-oaidl-safearray) est maintenant correctement marshalé.</span><span class="sxs-lookup"><span data-stu-id="72e9c-104">With this change the [SafeArray](https://docs.microsoft.com/windows/desktop/api/oaidl/ns-oaidl-safearray) is now marshalled successfully.</span></span><ul><li><span data-ttu-id="72e9c-105">[ x ] Quirked</span><span class="sxs-lookup"><span data-stu-id="72e9c-105">[ x ] Quirked</span></span></li></ul>|
-|<span data-ttu-id="72e9c-106">Suggestion</span><span class="sxs-lookup"><span data-stu-id="72e9c-106">Suggestion</span></span>|<span data-ttu-id="72e9c-107">Si les paramètres ByRef SafeArray correctement marshalés sur des événements COM interromptent l’exécution, vous pouvez désactiver ce code en ajoutant le commutateur de configuration suivant à la configuration de votre application :</span><span class="sxs-lookup"><span data-stu-id="72e9c-107">If properly marshalling ByRef SafeArray parameters on COM Events breaks execution, you can disable this code by adding the following configuration switch to your application config:</span></span><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;Switch.System.Runtime.InteropServices.DoNotMarshalOutByrefSafeArrayOnInvoke&quot; value=&quot;true&quot; /&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>|
-|<span data-ttu-id="72e9c-108">Étendue</span><span class="sxs-lookup"><span data-stu-id="72e9c-108">Scope</span></span>|<span data-ttu-id="72e9c-109">Secondaire</span><span class="sxs-lookup"><span data-stu-id="72e9c-109">Minor</span></span>|
-|<span data-ttu-id="72e9c-110">Version</span><span class="sxs-lookup"><span data-stu-id="72e9c-110">Version</span></span>|<span data-ttu-id="72e9c-111">4.8</span><span class="sxs-lookup"><span data-stu-id="72e9c-111">4.8</span></span>|
-|<span data-ttu-id="72e9c-112">Type</span><span class="sxs-lookup"><span data-stu-id="72e9c-112">Type</span></span>|<span data-ttu-id="72e9c-113">Runtime</span><span class="sxs-lookup"><span data-stu-id="72e9c-113">Runtime</span></span>|
+#### <a name="details"></a><span data-ttu-id="a6aff-102">Détails</span><span class="sxs-lookup"><span data-stu-id="a6aff-102">Details</span></span>
+
+<span data-ttu-id="a6aff-103">Dans .NET Framework 4.7.2 et versions antérieures, le marshaling en code natif d’un paramètre ByRef [SafeArray](https://docs.microsoft.com/windows/desktop/api/oaidl/ns-oaidl-safearray) sur un événement COM était voué à l’échec.</span><span class="sxs-lookup"><span data-stu-id="a6aff-103">In the .NET Framework 4.7.2 and earlier versions, a ByRef [SafeArray](https://docs.microsoft.com/windows/desktop/api/oaidl/ns-oaidl-safearray) parameter on a COM event would fail to marshal back to native code.</span></span>  <span data-ttu-id="a6aff-104">Avec cette modification, le [SafeArray](https://docs.microsoft.com/windows/desktop/api/oaidl/ns-oaidl-safearray) est maintenant correctement marshalé.</span><span class="sxs-lookup"><span data-stu-id="a6aff-104">With this change the [SafeArray](https://docs.microsoft.com/windows/desktop/api/oaidl/ns-oaidl-safearray) is now marshalled successfully.</span></span><ul><li><span data-ttu-id="a6aff-105">[ x ] Quirked</span><span class="sxs-lookup"><span data-stu-id="a6aff-105">[ x ] Quirked</span></span></li></ul>
+
+#### <a name="suggestion"></a><span data-ttu-id="a6aff-106">Suggestion</span><span class="sxs-lookup"><span data-stu-id="a6aff-106">Suggestion</span></span>
+
+<span data-ttu-id="a6aff-107">Si les paramètres ByRef SafeArray correctement marshalés sur des événements COM interromptent l’exécution, vous pouvez désactiver ce code en ajoutant le commutateur de configuration suivant à la configuration de votre application :</span><span class="sxs-lookup"><span data-stu-id="a6aff-107">If properly marshalling ByRef SafeArray parameters on COM Events breaks execution, you can disable this code by adding the following configuration switch to your application config:</span></span><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;Switch.System.Runtime.InteropServices.DoNotMarshalOutByrefSafeArrayOnInvoke&quot; value=&quot;true&quot; /&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>
+
+| <span data-ttu-id="a6aff-108">Nom</span><span class="sxs-lookup"><span data-stu-id="a6aff-108">Name</span></span>    | <span data-ttu-id="a6aff-109">Valeur</span><span class="sxs-lookup"><span data-stu-id="a6aff-109">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="a6aff-110">Étendue</span><span class="sxs-lookup"><span data-stu-id="a6aff-110">Scope</span></span>   |<span data-ttu-id="a6aff-111">Secondaire</span><span class="sxs-lookup"><span data-stu-id="a6aff-111">Minor</span></span>|
+|<span data-ttu-id="a6aff-112">Version</span><span class="sxs-lookup"><span data-stu-id="a6aff-112">Version</span></span>|<span data-ttu-id="a6aff-113">4.8</span><span class="sxs-lookup"><span data-stu-id="a6aff-113">4.8</span></span>|
+|<span data-ttu-id="a6aff-114">Type</span><span class="sxs-lookup"><span data-stu-id="a6aff-114">Type</span></span>|<span data-ttu-id="a6aff-115">Runtime</span><span class="sxs-lookup"><span data-stu-id="a6aff-115">Runtime</span></span>|
