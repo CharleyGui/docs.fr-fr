@@ -1,6 +1,6 @@
 ---
 title: 'Procédure : extraire un protocole et un numéro de port d’une URL'
-ms.date: 03/30/2017
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -13,40 +13,42 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: ab7f62b3-6d2c-4efb-8ac6-28600df5fd5c
-ms.openlocfilehash: 48f2bf5c0d9af0a3fc286561ba978f86d1f11ac8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c1d45dbcb2916af86d645d7813594f2b278bb7c2
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290485"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803870"
 ---
-# <a name="how-to-extract-a-protocol-and-port-number-from-a-url"></a><span data-ttu-id="036dd-102">Procédure : extraire un protocole et un numéro de port d’une URL</span><span class="sxs-lookup"><span data-stu-id="036dd-102">How to: Extract a Protocol and Port Number from a URL</span></span>
-<span data-ttu-id="036dd-103">L’exemple suivant montre comment extraire un protocole et un numéro de port d’une URL.</span><span class="sxs-lookup"><span data-stu-id="036dd-103">The following example extracts a protocol and port number from a URL.</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="036dd-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="036dd-104">Example</span></span>  
- <span data-ttu-id="036dd-105">L’exemple utilise la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> pour retourner le protocole, suivi d’un signe deux-points, lui-même suivi du numéro de port.</span><span class="sxs-lookup"><span data-stu-id="036dd-105">The example uses the <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method to return the protocol followed by a colon followed by the port number.</span></span>  
+# <a name="how-to-extract-a-protocol-and-port-number-from-a-url"></a><span data-ttu-id="2d406-102">Procédure : extraire un protocole et un numéro de port d’une URL</span><span class="sxs-lookup"><span data-stu-id="2d406-102">How to: Extract a Protocol and Port Number from a URL</span></span>
+<span data-ttu-id="2d406-103">L’exemple suivant montre comment extraire un protocole et un numéro de port d’une URL.</span><span class="sxs-lookup"><span data-stu-id="2d406-103">The following example extracts a protocol and port number from a URL.</span></span>  
+
+[!INCLUDE [regex](../../../includes/regex.md)]
+
+## <a name="example"></a><span data-ttu-id="2d406-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="2d406-104">Example</span></span>  
+ <span data-ttu-id="2d406-105">L’exemple utilise la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> pour retourner le protocole, suivi d’un signe deux-points, lui-même suivi du numéro de port.</span><span class="sxs-lookup"><span data-stu-id="2d406-105">The example uses the <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method to return the protocol followed by a colon followed by the port number.</span></span>  
   
  [!code-csharp[RegularExpressions.Examples.Protocol#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/cs/Example.cs#1)]
  [!code-vb[RegularExpressions.Examples.Protocol#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/vb/Example.vb#1)]  
   
- <span data-ttu-id="036dd-106">Le modèle d’expression régulière `^(?<proto>\w+)://[^/]+?(?<port>:\d+)?/` peut être interprété comme indiqué dans le tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="036dd-106">The regular expression pattern `^(?<proto>\w+)://[^/]+?(?<port>:\d+)?/` can be interpreted as shown in the following table.</span></span>  
+ <span data-ttu-id="2d406-106">Le modèle d’expression régulière `^(?<proto>\w+)://[^/]+?(?<port>:\d+)?/` peut être interprété comme indiqué dans le tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="2d406-106">The regular expression pattern `^(?<proto>\w+)://[^/]+?(?<port>:\d+)?/` can be interpreted as shown in the following table.</span></span>  
   
-|<span data-ttu-id="036dd-107">Modèle</span><span class="sxs-lookup"><span data-stu-id="036dd-107">Pattern</span></span>|<span data-ttu-id="036dd-108">Description</span><span class="sxs-lookup"><span data-stu-id="036dd-108">Description</span></span>|  
+|<span data-ttu-id="2d406-107">Modèle</span><span class="sxs-lookup"><span data-stu-id="2d406-107">Pattern</span></span>|<span data-ttu-id="2d406-108">Description</span><span class="sxs-lookup"><span data-stu-id="2d406-108">Description</span></span>|  
 |-------------|-----------------|  
-|`^`|<span data-ttu-id="036dd-109">Commence la recherche de correspondance au début de la chaîne.</span><span class="sxs-lookup"><span data-stu-id="036dd-109">Begin the match at the start of the string.</span></span>|  
-|`(?<proto>\w+)`|<span data-ttu-id="036dd-110">Mettre en correspondance un ou plusieurs caractères alphabétiques.</span><span class="sxs-lookup"><span data-stu-id="036dd-110">Match one or more word characters.</span></span> <span data-ttu-id="036dd-111">Nommer ce groupe `proto`.</span><span class="sxs-lookup"><span data-stu-id="036dd-111">Name this group `proto`.</span></span>|  
-|`://`|<span data-ttu-id="036dd-112">Mettre en correspondance un signe deux-points suivi de deux barres obliques.</span><span class="sxs-lookup"><span data-stu-id="036dd-112">Match a colon followed by two slash marks.</span></span>|  
-|`[^/]+?`|<span data-ttu-id="036dd-113">Mettre en correspondance une ou plusieurs occurrences (mais le moins possible) de tout caractère autre qu’une barre oblique.</span><span class="sxs-lookup"><span data-stu-id="036dd-113">Match one or more occurrences (but as few as possible) of any character other than a slash mark.</span></span>|  
-|`(?<port>:\d+)?`|<span data-ttu-id="036dd-114">Mettre en correspondance zéro ou une occurrence d’un signe deux-points suivi d’un ou de plusieurs caractères de chiffre.</span><span class="sxs-lookup"><span data-stu-id="036dd-114">Match zero or one occurrence of a colon followed by one or more digit characters.</span></span> <span data-ttu-id="036dd-115">Nommer ce groupe `port`.</span><span class="sxs-lookup"><span data-stu-id="036dd-115">Name this group `port`.</span></span>|  
-|`/`|<span data-ttu-id="036dd-116">Mettre en correspondance une barre oblique.</span><span class="sxs-lookup"><span data-stu-id="036dd-116">Match a slash mark.</span></span>|  
+|`^`|<span data-ttu-id="2d406-109">Commence la recherche de correspondance au début de la chaîne.</span><span class="sxs-lookup"><span data-stu-id="2d406-109">Begin the match at the start of the string.</span></span>|  
+|`(?<proto>\w+)`|<span data-ttu-id="2d406-110">Mettre en correspondance un ou plusieurs caractères alphabétiques.</span><span class="sxs-lookup"><span data-stu-id="2d406-110">Match one or more word characters.</span></span> <span data-ttu-id="2d406-111">Nommer ce groupe `proto`.</span><span class="sxs-lookup"><span data-stu-id="2d406-111">Name this group `proto`.</span></span>|  
+|`://`|<span data-ttu-id="2d406-112">Mettre en correspondance un signe deux-points suivi de deux barres obliques.</span><span class="sxs-lookup"><span data-stu-id="2d406-112">Match a colon followed by two slash marks.</span></span>|  
+|`[^/]+?`|<span data-ttu-id="2d406-113">Mettre en correspondance une ou plusieurs occurrences (mais le moins possible) de tout caractère autre qu’une barre oblique.</span><span class="sxs-lookup"><span data-stu-id="2d406-113">Match one or more occurrences (but as few as possible) of any character other than a slash mark.</span></span>|  
+|`(?<port>:\d+)?`|<span data-ttu-id="2d406-114">Mettre en correspondance zéro ou une occurrence d’un signe deux-points suivi d’un ou de plusieurs caractères de chiffre.</span><span class="sxs-lookup"><span data-stu-id="2d406-114">Match zero or one occurrence of a colon followed by one or more digit characters.</span></span> <span data-ttu-id="2d406-115">Nommer ce groupe `port`.</span><span class="sxs-lookup"><span data-stu-id="2d406-115">Name this group `port`.</span></span>|  
+|`/`|<span data-ttu-id="2d406-116">Mettre en correspondance une barre oblique.</span><span class="sxs-lookup"><span data-stu-id="2d406-116">Match a slash mark.</span></span>|  
   
- <span data-ttu-id="036dd-117">La méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> étend la séquence de remplacement `${proto}${port}`, qui concatène la valeur des deux groupes nommés capturés dans le modèle d’expression régulière.</span><span class="sxs-lookup"><span data-stu-id="036dd-117">The <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method expands the `${proto}${port}` replacement sequence, which concatenates the value of the two named groups captured in the regular expression pattern.</span></span> <span data-ttu-id="036dd-118">Elle est plus pratique que la concaténation explicite des chaînes récupérées de l’objet de collection retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="036dd-118">It is a convenient alternative to explicitly concatenating the strings retrieved from the collection object returned by the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property.</span></span>  
+ <span data-ttu-id="2d406-117">La méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> étend la séquence de remplacement `${proto}${port}`, qui concatène la valeur des deux groupes nommés capturés dans le modèle d’expression régulière.</span><span class="sxs-lookup"><span data-stu-id="2d406-117">The <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method expands the `${proto}${port}` replacement sequence, which concatenates the value of the two named groups captured in the regular expression pattern.</span></span> <span data-ttu-id="2d406-118">Elle est plus pratique que la concaténation explicite des chaînes récupérées de l’objet de collection retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="2d406-118">It is a convenient alternative to explicitly concatenating the strings retrieved from the collection object returned by the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property.</span></span>  
   
- <span data-ttu-id="036dd-119">L’exemple utilise la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> avec deux substitutions, `${proto}` et `${port}`, pour inclure les groupes capturés dans la chaîne de sortie.</span><span class="sxs-lookup"><span data-stu-id="036dd-119">The example uses the <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method with two substitutions, `${proto}` and `${port}`, to include the captured groups in the output string.</span></span> <span data-ttu-id="036dd-120">Vous pouvez à la place récupérer les groupes capturés de l’objet <xref:System.Text.RegularExpressions.GroupCollection> de la mise en correspondance, comme le montre le code suivant.</span><span class="sxs-lookup"><span data-stu-id="036dd-120">You can retrieve the captured groups from the match's <xref:System.Text.RegularExpressions.GroupCollection> object instead, as the following code shows.</span></span>  
+ <span data-ttu-id="2d406-119">L’exemple utilise la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> avec deux substitutions, `${proto}` et `${port}`, pour inclure les groupes capturés dans la chaîne de sortie.</span><span class="sxs-lookup"><span data-stu-id="2d406-119">The example uses the <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method with two substitutions, `${proto}` and `${port}`, to include the captured groups in the output string.</span></span> <span data-ttu-id="2d406-120">Vous pouvez à la place récupérer les groupes capturés de l’objet <xref:System.Text.RegularExpressions.GroupCollection> de la mise en correspondance, comme le montre le code suivant.</span><span class="sxs-lookup"><span data-stu-id="2d406-120">You can retrieve the captured groups from the match's <xref:System.Text.RegularExpressions.GroupCollection> object instead, as the following code shows.</span></span>  
   
  [!code-csharp[RegularExpressions.Examples.Protocol#2](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/cs/example2.cs#2)]
  [!code-vb[RegularExpressions.Examples.Protocol#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/vb/example2.vb#2)]  
   
-## <a name="see-also"></a><span data-ttu-id="036dd-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="036dd-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2d406-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2d406-121">See also</span></span>
 
-- [<span data-ttu-id="036dd-122">Expressions régulières .NET</span><span class="sxs-lookup"><span data-stu-id="036dd-122">.NET Regular Expressions</span></span>](regular-expressions.md)
+- [<span data-ttu-id="2d406-122">Expressions régulières .NET</span><span class="sxs-lookup"><span data-stu-id="2d406-122">.NET Regular Expressions</span></span>](regular-expressions.md)
