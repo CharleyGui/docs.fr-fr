@@ -1,17 +1,84 @@
 ---
-ms.openlocfilehash: ad29d522451649aae09786a90088f0a5d33c3ad8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: cc3c2c2be179842f87be8892d057a6c4138086cb
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59233956"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614566"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls-for-net-472"></a>Améliorations apportées aux fonctionnalités d’accessibilité dans les contrôles Windows Forms pour .NET 4.7.2
 
-|   |   |
-|---|---|
-|Détails|Windows Forms Framework améliore la façon dont il utilise les technologies d’accessibilité pour mieux répondre aux besoins de ses clients. Citons notamment les changements suivants :<ul><li>Changements visant à améliorer l’affichage en mode Contraste élevé.</li><li>Changements visant à améliorer la navigation au clavier dans les contrôles DataGridView et MenuStrip.</li><li>Changements apportés à l’interaction avec le Narrateur.</li></ul> | 
-| Suggestion | <strong>Comment accepter ou refuser ces changements</strong>L’application doit s’exécuter sur .NET Framework 4.7.2 ou ultérieur pour tirer parti de ces changements. Pour que l’application bénéficie de ces changements, procédez de l’une des manières suivantes :<ul><li>Recompilez-la pour qu’elle cible .NET Framework 4.7.2. Ces changements d’accessibilité sont activés par défaut sur les applications Windows Forms qui ciblent .NET Framework 4.7.2 ou ultérieur.</li><li>Faites-lui cibler .NET Framework version 4.7.1 ou antérieure et refusez les comportements d’accessibilité hérités, en ajoutant le [commutateur AppContext](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant à la section <code>&lt;runtime&gt;</code> du fichier de configuration de l’application et en lui affectant la valeur <code>false</code>, comme dans l’exemple suivant.</li></ul><pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;startup&gt;&#13;&#10;&lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.7&quot;/&gt;&#13;&#10;&lt;/startup&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;!-- AppContextSwitchOverrides value attribute is in the form of &#39;key1=true/false;key2=true/false  --&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>Notez que pour accepter les fonctionnalités d’accessibilité ajoutées à .NET Framework 4.7.2, vous devez également accepter les fonctionnalités d’accessibilité de .NET Framework 4.7.1. Si votre application cible .NET Framework 4.7.2 ou une version ultérieure et que vous souhaitez conserver le comportement d’accessibilité hérité, choisissez d’utiliser les fonctionnalités d’accessibilité héritées en affectant explicitement à ce commutateur AppContext la valeur <code>true</code>.<strong>Utilisation des couleurs définies par le système d’exploitation dans les thèmes à contraste élevé</strong><ul><li>La flèche déroulante de <xref:System.Windows.Forms.ToolStripDropDownButton> utilise désormais les couleurs définies par le système d’exploitation dans le thème à contraste élevé.</li><li>Les contrôles <xref:System.Windows.Forms.Button>, <xref:System.Windows.Forms.RadioButton> et <xref:System.Windows.Forms.CheckBox> dont le <xref:System.Windows.Forms.ButtonBase.FlatStyle> est défini avec la valeur <xref:System.Windows.Forms.FlatStyle.Flat?displayProperty=nameWithType> ou <xref:System.Windows.Forms.FlatStyle.Popup?displayProperty=nameWithType> utilisent désormais les couleurs définies par le système d’exploitation dans le thème à contraste élevé quand celui-ci est sélectionné. Avant, les couleurs du texte et de l’arrière-plan n’étaient pas contrastées et étaient difficiles à lire.</li><li>Les contrôles à l’intérieur d’un <xref:System.Windows.Forms.GroupBox> dont la propriété <xref:System.Windows.Forms.Control.Enabled> a pour valeur <code>false</code> utilisent désormais les couleurs définies par le système d’exploitation dans le thème à contraste élevé.</li><li>Les contrôles <xref:System.Windows.Forms.ToolStripButton>, <xref:System.Windows.Forms.ToolStripComboBox> et <xref:System.Windows.Forms.ToolStripDropDownButton> ont un ratio contraste/luminosité accru dans le mode à contraste élevé.</li><li><xref:System.Windows.Forms.DataGridViewLinkCell> utilise par défaut les couleurs définies par le système d’exploitation en mode de contraste élevé pour la propriété <xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor?displayProperty=nameWithType>.</li></ul>REMARQUE : les valeurs de certaines couleurs système à contraste élevé ont changé dans Windows 10. Windows Forms Framework est basé sur le framework Win32. Pour une expérience optimale, procédez à une exécution sur la dernière version de Windows et choisissez les derniers changements du système d’exploitation en ajoutant un fichier app.manifest dans une application de test et en décommentant le code suivant :<pre><code>&lt;!-- Windows 10 --&gt;&#13;&#10;&lt;supportedOS Id=&quot;{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}&quot; /&gt;&#13;&#10;</code></pre><strong>Prise en charge améliorée du Narrateur</strong><ul><li>Le Narrateur annonce désormais la valeur de la propriété <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys?displayProperty=nameWithType> quand il annonce le texte d’un <xref:System.Windows.Forms.ToolStripMenuItem>.</li><li>Le Narrateur indique désormais quand un <xref:System.Windows.Forms.ToolStripMenuItem> a sa propriété <xref:System.Windows.Forms.Control.Enabled> définie sur <code>false</code>.</li><li>Le Narrateur fournit désormais des commentaires sur l’état d’une case à cocher quand la propriété <xref:System.Windows.Forms.ListView.CheckBoxes?displayProperty=nameWithType> est définie sur <code>true</code>.</li><li>L’ordre de focus du mode balayage du narrateur est maintenant cohérent avec l’ordre visuel des contrôles dans la fenêtre de dialogue de téléchargement ClickOnce.</li></ul><strong>Prise en charge améliorée de l’accessibilité dans un DataGridView</strong><ul><li>Les lignes dans un <xref:System.Windows.Forms.DataGridView> peuvent désormais être triées à l’aide du clavier. Un utilisateur peut utiliser la touche F3 pour trier la colonne actuelle.</li><li>Quand le <xref:System.Windows.Forms.DataGridView.SelectionMode?displayProperty=nameWithType> est défini sur <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect?displayProperty=nameWithType>, l’en-tête de colonne change de couleur pour indiquer la colonne actuelle quand l’utilisateur passe d’une cellule à l’autre de la ligne actuelle à l’aide de la touche Tab.</li><li>La propriété <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Parent?displayProperty=nameWithType> retourne désormais le contrôle parent approprié.</li></ul><strong>Amélioration des indices visuels</strong><ul><li>Les contrôles <xref:System.Windows.Forms.RadioButton> et <xref:System.Windows.Forms.CheckBox> avec une propriété <xref:System.Windows.Forms.ButtonBase.Text> vide affichent désormais un indicateur de focus quand ils reçoivent le focus.</li></ul><strong>Prise en charge améliorée de la grille des propriétés</strong><ul><li>Les éléments enfants du contrôle <xref:System.Windows.Forms.PropertyGrid> retournent désormais un <code>true</code> pour la propriété <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> uniquement quand un élément PropertyGrid est activé.</li><li>Les éléments enfants du contrôle <xref:System.Windows.Forms.PropertyGrid> retournent désormais un <code>false</code> pour la propriété <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> uniquement quand un élément PropertyGrid peut être changé par l’utilisateur.</li></ul>Pour une vue d’ensemble d’UI Automation, consultez la [Vue d’ensemble d’UI Automation](~/docs/framework/ui-automation/ui-automation-overview.md).<strong>Amélioration de la navigation au clavier</strong><ul><li><xref:System.Windows.Forms.ToolStripButton> accepte désormais le focus quand il est contenu dans un <xref:System.Windows.Forms.ToolStripPanel> dont la propriété <xref:System.Windows.Forms.ToolStripPanel.TabStop> a la valeur <code>true</code>.</li></ul>|
-|Portée|Majeur|
-|Version|4.7.2|
-|Type|Reciblage|
+#### <a name="details"></a>Détails
+
+Windows Forms Framework améliore la façon dont il utilise les technologies d’accessibilité pour mieux répondre aux besoins de ses clients. Citons notamment les changements suivants :
+
+- Changements visant à améliorer l’affichage en mode Contraste élevé.
+- Changements visant à améliorer la navigation au clavier dans les contrôles DataGridView et MenuStrip.
+- Changements apportés à l’interaction avec le Narrateur.
+
+#### <a name="suggestion"></a>Suggestion
+
+**Comment accepter ou refuser ces modifications** Pour que l’application tire parti de ces modifications, elle doit s’exécuter sur le .NET Framework 4.7.2 ou version ultérieure. Pour que l’application bénéficie de ces changements, procédez de l’une des manières suivantes :
+
+- Recompilez-la pour qu’elle cible .NET Framework 4.7.2. Ces changements d’accessibilité sont activés par défaut sur les applications Windows Forms qui ciblent .NET Framework 4.7.2 ou ultérieur.
+- Faites-lui cibler .NET Framework version 4.7.1 ou antérieure et refusez les comportements d’accessibilité hérités, en ajoutant le [commutateur AppContext](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) suivant à la section `<runtime>` du fichier de configuration de l’application et en lui affectant la valeur `false`, comme dans l’exemple suivant.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7"/>
+  </startup>
+  <runtime>
+    <!-- AppContextSwitchOverrides value attribute is in the form of 'key1=true/false;key2=true/false  -->
+    <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false" />
+  </runtime>
+</configuration>
+```
+
+Notez que pour accepter les fonctionnalités d’accessibilité ajoutées à .NET Framework 4.7.2, vous devez également accepter les fonctionnalités d’accessibilité de .NET Framework 4.7.1. Les applications qui ciblent le .NET Framework 4.7.2 ou version ultérieure et qui souhaitent conserver le comportement d’accessibilité hérité peuvent s’abonner à l’utilisation des fonctionnalités d’accessibilité héritées en affectant explicitement à ce commutateur AppContext la valeur `true` .
+
+**Utilisation des couleurs définies par le système d’exploitation dans les thèmes à contraste élevé**
+
+- La flèche déroulante de <xref:System.Windows.Forms.ToolStripDropDownButton> utilise désormais les couleurs définies par le système d’exploitation dans le thème à contraste élevé.
+- Les contrôles <xref:System.Windows.Forms.Button>, <xref:System.Windows.Forms.RadioButton> et <xref:System.Windows.Forms.CheckBox> dont le <xref:System.Windows.Forms.ButtonBase.FlatStyle> est défini avec la valeur <xref:System.Windows.Forms.FlatStyle.Flat?displayProperty=nameWithType> ou <xref:System.Windows.Forms.FlatStyle.Popup?displayProperty=nameWithType> utilisent désormais les couleurs définies par le système d’exploitation dans le thème à contraste élevé quand celui-ci est sélectionné. Avant, les couleurs du texte et de l’arrière-plan n’étaient pas contrastées et étaient difficiles à lire.
+- Les contrôles à l’intérieur d’un <xref:System.Windows.Forms.GroupBox> dont la propriété <xref:System.Windows.Forms.Control.Enabled> a pour valeur `false` utilisent désormais les couleurs définies par le système d’exploitation dans le thème à contraste élevé.
+- Les contrôles <xref:System.Windows.Forms.ToolStripButton>, <xref:System.Windows.Forms.ToolStripComboBox> et <xref:System.Windows.Forms.ToolStripDropDownButton> ont un ratio contraste/luminosité accru dans le mode à contraste élevé.
+- <xref:System.Windows.Forms.DataGridViewLinkCell> utilise par défaut les couleurs définies par le système d’exploitation en mode de contraste élevé pour la propriété <xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor?displayProperty=nameWithType>.
+REMARQUE : Les valeurs de certaines couleurs système à contraste élevé ont changé dans Windows 10. Windows Forms Framework est basé sur le framework Win32. Pour une expérience optimale, exécutez sur la dernière version de Windows et inscrivez-vous aux modifications les plus récentes du système d’exploitation en ajoutant un fichier app. manifest dans une application de test et en annulant le commentaire du code suivant :
+
+```xml
+<!-- Windows 10 -->
+<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+```
+
+**Amélioration de la prise en charge du Narrateur**
+
+- Le Narrateur annonce désormais la valeur de la propriété <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys?displayProperty=nameWithType> quand il annonce le texte d’un <xref:System.Windows.Forms.ToolStripMenuItem>.
+- Le Narrateur indique désormais quand un <xref:System.Windows.Forms.ToolStripMenuItem> a sa propriété <xref:System.Windows.Forms.Control.Enabled> définie sur `false`.
+- Le Narrateur fournit désormais des commentaires sur l’état d’une case à cocher quand la propriété <xref:System.Windows.Forms.ListView.CheckBoxes?displayProperty=nameWithType> est définie sur `true`.
+- L’ordre de focus du mode balayage du narrateur est maintenant cohérent avec l’ordre visuel des contrôles dans la fenêtre de dialogue de téléchargement ClickOnce.
+
+**Amélioration de la prise en charge de l’accessibilité DataGridView**
+
+- Les lignes dans un <xref:System.Windows.Forms.DataGridView> peuvent désormais être triées à l’aide du clavier. Un utilisateur peut utiliser la touche F3 pour trier la colonne actuelle.
+- Quand le <xref:System.Windows.Forms.DataGridView.SelectionMode?displayProperty=nameWithType> est défini sur <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect?displayProperty=nameWithType>, l’en-tête de colonne change de couleur pour indiquer la colonne actuelle quand l’utilisateur passe d’une cellule à l’autre de la ligne actuelle à l’aide de la touche Tab.
+- La propriété <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Parent?displayProperty=nameWithType> retourne désormais le contrôle parent approprié.
+
+**Amélioration des signaux visuels**
+
+- Les contrôles <xref:System.Windows.Forms.RadioButton> et <xref:System.Windows.Forms.CheckBox> avec une propriété <xref:System.Windows.Forms.ButtonBase.Text> vide affichent désormais un indicateur de focus quand ils reçoivent le focus.
+
+**Amélioration de la prise en charge de la grille de propriétés**
+
+- Les éléments enfants du contrôle <xref:System.Windows.Forms.PropertyGrid> retournent désormais un `true` pour la propriété <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> uniquement quand un élément PropertyGrid est activé.
+- Les éléments enfants du contrôle <xref:System.Windows.Forms.PropertyGrid> retournent désormais un `false` pour la propriété <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> uniquement quand un élément PropertyGrid peut être changé par l’utilisateur.
+Pour une vue d’ensemble d’UI Automation, consultez la [Vue d’ensemble d’UI Automation](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-overview).</p>**Navigation au clavier améliorée**
+
+- <xref:System.Windows.Forms.ToolStripButton>autorise désormais le focus quand il est contenu dans un <xref:System.Windows.Forms.ToolStripPanel> dont la propriété a la <xref:System.Windows.Forms.ToolStripPanel.TabStop> valeur `true` .
+
+| Nom    | Valeur       |
+|:--------|:------------|
+| Étendue   | Majeure       |
+| Version | 4.7.2       |
+| Type    | Reciblage |

@@ -6,20 +6,19 @@ helpviewer_keywords:
 - attributes [.NET Framework], about
 - class library design guidelines [.NET Framework], attributes
 ms.assetid: ee0038ef-b247-4747-a650-3c5c5cd58d8b
-ms.openlocfilehash: 12a67d75a5f9642408cca69b2e3764a67f101549
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3c0e1b8c20042c085d4ace996a084cbd464d3b21
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280580"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617559"
 ---
 # <a name="attributes"></a>Attributs
-
 <xref:System.Attribute?displayProperty=nameWithType>est une classe de base utilisée pour définir des attributs personnalisés.
 
- Les attributs sont des annotations qui peuvent être ajoutées aux éléments de programmation tels que les assemblys, les types, les membres et les paramètres. Elles sont stockées dans les métadonnées de l’assembly et sont accessibles au moment de l’exécution à l’aide des API de réflexion. Par exemple, .NET définit l' <xref:System.ObsoleteAttribute> attribut, qui peut être appliqué à un type ou un membre pour indiquer que le type ou le membre a été déconseillé.
+ Les attributs sont des annotations qui peuvent être ajoutées aux éléments de programmation tels que les assemblys, les types, les membres et les paramètres. Elles sont stockées dans les métadonnées de l’assembly et sont accessibles au moment de l’exécution à l’aide des API de réflexion. Par exemple, le Framework définit <xref:System.ObsoleteAttribute> , qui peut être appliqué à un type ou à un membre pour indiquer que le type ou le membre a été déconseillé.
 
- Les attributs peuvent avoir une ou plusieurs propriétés qui contiennent des données supplémentaires relatives à l’attribut. Par exemple, `ObsoleteAttribute` peut contenir des informations supplémentaires sur la version dans laquelle un type ou un membre a été déconseillé et une description de la nouvelle API qui remplace l’API obsolète.
+ Les attributs peuvent avoir une ou plusieurs propriétés qui contiennent des données supplémentaires relatives à l’attribut. Par exemple, `ObsoleteAttribute` peut contenir des informations supplémentaires sur la version dans laquelle un type ou un membre a été déconseillé et la description des nouvelles API qui remplacent l’API obsolète.
 
  Certaines propriétés d’un attribut doivent être spécifiées quand l’attribut est appliqué. Ils sont appelés propriétés requises ou arguments requis, car ils sont représentés en tant que paramètres de constructeur positionnel. Par exemple, la <xref:System.Diagnostics.ConditionalAttribute.ConditionString%2A> propriété de <xref:System.Diagnostics.ConditionalAttribute> est une propriété obligatoire.
 

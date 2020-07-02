@@ -1,5 +1,6 @@
 ---
 title: Déploiement d'une application d'interopérabilité
+description: Déployez une application d’interopérabilité, qui a généralement un assembly client .NET, des assemblys d’interopérabilité de bibliothèques de types COM distinctes et des composants COM inscrits.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - deploying applications [.NET Framework], interop
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - signed assemblies
 - COM interop, exposing COM components
 ms.assetid: ea8a403e-ae03-4faa-9d9b-02179ec72992
-ms.openlocfilehash: 04f8e53220b2e0fa09735400ae84dcb8b1c3478a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 744307d4175d151d07acbedd5815e538307c8973
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123562"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617481"
 ---
 # <a name="deploying-an-interop-application"></a>Déploiement d'une application d'interopérabilité
 Une application d’interopérabilité comporte généralement un assembly client .NET, un ou plusieurs assemblys d’interopérabilité représentant des bibliothèques de types COM distinctes, et un ou plusieurs composants COM inscrits. Visual Studio et le SDK Windows fournissent des outils pour importer et convertir une bibliothèque de types vers un assembly d’interopérabilité, comme décrit dans [Importation d’une bibliothèque de types sous la forme d’un assembly](importing-a-type-library-as-an-assembly.md). Il existe deux façons de déployer une application d’interopérabilité :  
@@ -45,7 +46,7 @@ Une application d’interopérabilité comporte généralement un assembly clien
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exposition de composants COM au .NET Framework](exposing-com-components.md)
+- [Exposition de composants COM au .NET Framework](exposing-com-components.md)
 - [Importation d'une bibliothèque de types sous la forme d'un assembly](importing-a-type-library-as-an-assembly.md)
 - [Utiliser des types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Compilation d'un projet d'interopérabilité](compiling-an-interop-project.md)

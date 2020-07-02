@@ -1,17 +1,18 @@
 ---
 title: Exposition de composants .NET à COM
+description: Exposer des composants .NET à COM. Qualifier les types .NET pour l’interopérabilité. Appliquez des attributs d’interopérabilité. Empaqueter un assembly pour COM. Utilise un type managé à partir de COM.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - exposing .NET Framework components to COM
 - interoperation with unmanaged code, exposing .NET Framework components
 - COM interop, exposing COM components
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
-ms.openlocfilehash: 09045fb455a2163641d6f4af0ba07520ead59f1e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 918c90f6741047f7d3cdf89a9b182700ecb2ed93
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123488"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617455"
 ---
 # <a name="exposing-net-components-to-com"></a>Exposition de composants .NET à COM
 
@@ -51,5 +52,5 @@ L’écriture d’un type .NET et l’utilisation de ce type à partir de code n
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interopérabilité avec du code non managé](index.md)
-- [COM Interop, exemple : client COM et serveur .NET](com-interop-sample-com-client-and-net-server.md)
+- [Interopération avec du code non managé](index.md)
+- [COM Interop, exemple : client COM et serveur .NET](com-interop-sample-com-client-and-net-server.md)

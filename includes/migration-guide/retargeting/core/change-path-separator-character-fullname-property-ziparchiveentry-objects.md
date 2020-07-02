@@ -1,18 +1,43 @@
 ---
-ms.openlocfilehash: e4860113f45d3b3466e01e5db61d355a8ea745df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 148312743dd274728b178951548889dc3a680528
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "68235500"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614467"
 ---
 ### <a name="change-in-path-separator-character-in-fullname-property-of-ziparchiveentry-objects"></a>Changement du caractère séparateur de chemin dans la propriété FullName des objets ZipArchiveEntry
 
-|   |   |
-|---|---|
-|Détails|Pour les applications qui ciblent .NET Framework 4.6.1 et les versions ultérieures, le caractère séparateur de chemin a changé. Il ne s’agit plus d’une barre oblique inverse (&quot;\&quot;), mais d’une barre oblique (&quot;/&quot;) dans la propriété <xref:System.IO.Compression.ZipArchiveEntry.FullName> des objets <xref:System.IO.Compression.ZipArchiveEntry> créés par les surcharges de la méthode <xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A>. L’implémentation .NET est ainsi conforme à la section 4.4.17.1 des [Spécifications relatives au format des fichiers ZIP](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) et permet aux archives ZIP d’être décompressées sur des systèmes non Windows.<br />La décompression d’un fichier zip créé par une application qui cible une version antérieure du .NET Framework sur les systèmes d’exploitation non-Windows, tels que les ordinateurs Macintosh, ne permet pas de conserver la structure de répertoire. Par exemple, pour les ordinateurs Macintosh, cela crée un ensemble de fichiers dont le nom concatène le chemin, ainsi que toute barre oblique inverse (&quot;&quot;), et le nom de fichier. Par conséquent, la structure de répertoires des fichiers décompressés n’est pas conservée.|
-|Suggestion|L’impact de ce changement sur les fichiers .ZIP qui sont décompressés sur le système d’exploitation Windows par les API dans l’espace de noms <xref:System.IO?displayProperty=nameWithType> du .NET Framework doit être minimal, étant donné que ces API peuvent gérer sans problème aussi bien une barre oblique (&quot;/&quot;) qu’une barre oblique inverse (&quot;\&quot;) comme séparateur de chemin.<br />Si cette modification n’est pas souhaitable, vous pouvez vous en [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) retirer en ajoutant un paramètre de configuration à la section de votre fichier de configuration d’application. L’exemple suivant montre la section <code>&lt;runtime&gt;</code> et l’option d’annulation <code>Switch.System.IO.Compression.ZipFile.UseBackslash</code> :<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.Compression.ZipFile.UseBackslash=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>En outre, les applications qui ciblent les versions précédentes du cadre .NET mais sont en cours d’exécution sur le cadre [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) .NET 4.6.1 et les versions ultérieures peuvent opter pour ce comportement en ajoutant un paramètre de configuration à la section du fichier de configuration d’application. L’exemple suivant montre la section <code>&lt;runtime&gt;</code> et l’option d’activation <code>Switch.System.IO.Compression.ZipFile.UseBackslash</code>.<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.Compression.ZipFile.UseBackslash=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Étendue|Edge|
-|Version|4.6.1|
-|Type|Reciblage|
-|API affectées|<ul><li><xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String)?displayProperty=nameWithType></li><li><xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean)?displayProperty=nameWithType></li><li><xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean,System.Text.Encoding)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Détails
+
+Pour les applications qui ciblent le .NET Framework 4.6.1 et les versions ultérieures, le caractère de séparation du chemin d’accès est passé d’une barre oblique inverse (" \" ) à une barre oblique ("/") dans la <xref:System.IO.Compression.ZipArchiveEntry.FullName> propriété des <xref:System.IO.Compression.ZipArchiveEntry> objets créés par les surcharges de la <xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A> méthode. L’implémentation .NET est ainsi conforme à la section 4.4.17.1 des [Spécifications relatives au format des fichiers ZIP](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) et permet aux archives ZIP d’être décompressées sur des systèmes non Windows.<br />La décompression d’un fichier zip créé par une application qui cible une version antérieure du .NET Framework sur les systèmes d’exploitation non-Windows, tels que les ordinateurs Macintosh, ne permet pas de conserver la structure de répertoire. Par exemple, pour les ordinateurs Macintosh, cela crée un ensemble de fichiers dont le nom concatène le chemin d’accès, ainsi que toute barre oblique inverse («  ») et le nom de fichier. Par conséquent, la structure de répertoires des fichiers décompressés n’est pas conservée.
+
+#### <a name="suggestion"></a>Suggestion
+
+Impact de cette modification sur. Les fichiers ZIP décompressés sur le système d’exploitation Windows par les API dans l' <xref:System.IO?displayProperty=nameWithType> espace de noms .NET Framework doivent être minimaux, puisque ces API peuvent gérer en toute transparence une barre oblique (« / ») ou une barre oblique inverse («» \" ) comme séparateur de chemin.<br />Si cette modification n’est pas souhaitable, vous pouvez choisir de l’annuler en ajoutant un paramètre de configuration à la [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section de votre fichier de configuration de l’application. L’exemple suivant montre la section `<runtime>` et l’option d’annulation `Switch.System.IO.Compression.ZipFile.UseBackslash` :
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.IO.Compression.ZipFile.UseBackslash=true" />
+</runtime>
+```
+
+En outre, les applications qui ciblent des versions antérieures du .NET Framework mais s’exécutent sur le .NET Framework 4.6.1 et les versions ultérieures peuvent accepter ce comportement en ajoutant un paramètre de configuration à la [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section du fichier de configuration de l’application. L’exemple suivant montre la section `<runtime>` et l’option d’activation `Switch.System.IO.Compression.ZipFile.UseBackslash`.
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.IO.Compression.ZipFile.UseBackslash=false" />
+</runtime>
+```
+
+| Nom    | Valeur       |
+|:--------|:------------|
+| Étendue   | Edge        |
+| Version | 4.6.1       |
+| Type    | Reciblage |
+
+#### <a name="affected-apis"></a>API affectées
+
+- <xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String)?displayProperty=nameWithType>
+- <xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean)?displayProperty=nameWithType>
+- <xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean,System.Text.Encoding)?displayProperty=nameWithType>

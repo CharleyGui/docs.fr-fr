@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 8a1e2ca0790cb62e3c2c879f2ba0bb169ef07d77
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9b184f54650d2efb31ec66f443198b19ceaeb5f3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67804345"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614475"
 ---
 ### <a name="applicationfiltermessage-no-longer-throws-for-re-entrant-implementations-of-imessagefilterprefiltermessage"></a>Application.FilterMessage ne lève plus d’exception pour les implémentations réentrantes d’IMessageFilter.PreFilterMessage
 
-|   |   |
-|---|---|
-|Détails|Avant .NET Framework 4.6.1, le fait d’appeler <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> avec un <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> qui appelait <xref:System.Windows.Forms.Application.AddMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=name> ou <xref:System.Windows.Forms.Application.RemoveMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=name> (tout en appelant également <xref:System.Windows.Forms.Application.DoEvents>) levait une exception <xref:System.IndexOutOfRangeException?displayProperty=name>.<p/>Dans les applications qui ciblent le .NET Framework 4.6.1, cette exception n’est plus levée, et des filtres réentrants comme ceux décrits plus haut peuvent être utilisés.|
-|Suggestion|Sachez que <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> ne lève plus d’exception pour le comportement <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> réentrant décrit ci-dessus. Ce changement affecte uniquement les applications qui ciblent le .NET Framework 4.6.1. Ces applications peuvent refuser ce changement (tandis que celles qui ciblent des versions antérieures du .NET Framework peuvent l’accepter) à l’aide du commutateur de compatibilité [DontSupportReentrantFilterMessage](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md#mitigation).|
-|Étendue|Edge|
-|Version|4.6.1|
-|Type|Reciblage|
-|API affectées|<ul><li><xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Détails
+
+Avant .NET Framework 4.6.1, le fait d’appeler <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> avec un <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> qui appelait <xref:System.Windows.Forms.Application.AddMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=fullName> ou <xref:System.Windows.Forms.Application.RemoveMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=fullName> (tout en appelant également <xref:System.Windows.Forms.Application.DoEvents>) levait une exception <xref:System.IndexOutOfRangeException?displayProperty=fullName>.<p/>Dans les applications qui ciblent le .NET Framework 4.6.1, cette exception n’est plus levée, et des filtres réentrants comme ceux décrits plus haut peuvent être utilisés.
+
+#### <a name="suggestion"></a>Suggestion
+
+Sachez que <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> ne lève plus d’exception pour le comportement <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> réentrant décrit ci-dessus. Ce changement affecte uniquement les applications qui ciblent le .NET Framework 4.6.1. Ces applications peuvent refuser ce changement (tandis que celles qui ciblent des versions antérieures du .NET Framework peuvent l’accepter) à l’aide du commutateur de compatibilité [DontSupportReentrantFilterMessage](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md#mitigation).
+
+| Nom          | Valeur       |
+|:--------------|:------------|
+| Étendue         | Edge        |
+| Version       | 4.6.1       |
+| Type          | Reciblage |
+
+#### <a name="affected-apis"></a>API affectées
+
+- <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)?displayProperty=nameWithType>

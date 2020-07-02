@@ -1,5 +1,6 @@
 ---
-title: 'Comment : ajouter des références aux bibliothèques de types'
+title: 'Procédure : ajouter des références aux bibliothèques de types'
+description: Découvrez comment ajouter des références aux bibliothèques de types dans Visual Studio ou pour la compilation à partir de la ligne de commande.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - importing type library
@@ -7,14 +8,14 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
-ms.openlocfilehash: 1e82a499b77cc6d1d49eaf13e243201bbdc4c5fe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3c24385c9cc7debe95aa10369b050897415bc46
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181441"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617429"
 ---
-# <a name="how-to-add-references-to-type-libraries"></a>Comment : ajouter des références aux bibliothèques de types
+# <a name="how-to-add-references-to-type-libraries"></a>Procédure : ajouter des références aux bibliothèques de types
 Quand vous ajoutez une référence à une bibliothèque de types, Visual Studio génère un assembly d'interopérabilité contenant des métadonnées. Si un assembly PIA (Primary Interop Assembly) est disponible, Visual Studio utilise l'assembly existant avant de générer un nouvel assembly d'interopérabilité.  
   
 ### <a name="to-add-a-reference-to-a-type-library-in-visual-studio"></a>Pour ajouter une référence dans une bibliothèque de types Visual Studio  
@@ -45,7 +46,7 @@ Quand vous ajoutez une référence à une bibliothèque de types, Visual Studio 
 ## <a name="see-also"></a>Voir aussi
 
 - [Importation d'une bibliothèque de types sous la forme d'un assembly](importing-a-type-library-as-an-assembly.md)
-- [Exposition de composants COM au .NET Framework](exposing-com-components.md)
+- [Exposition de composants COM au .NET Framework](exposing-com-components.md)
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio](../../standard/assembly/embed-types-visual-studio.md)
 - [-link (Options du compilateur C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md)
 - [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)

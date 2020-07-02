@@ -1,19 +1,21 @@
 ---
 title: Déployer .NET pour les fichiers binaires de fonctions définies par l’utilisateur et de Apache Spark Worker
 description: Découvrez comment déployer .NET pour les fichiers binaires de fonctions de Apache Spark Worker et de fonctions définies par l’utilisateur.
-ms.date: 01/21/2019
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 042f336431a1c8cad7d94cf10cbe64b72ddfce5b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 672a32c430bd702167a294d2b895ac1ac90bf67e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596459"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617715"
 ---
 # <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>Déployer .NET pour les fichiers binaires de fonctions définies par l’utilisateur et de Apache Spark Worker
 
 Cette procédure fournit des instructions générales sur le déploiement de .NET pour les fichiers binaires de fonction Apache Spark Worker et de fonction définie par l’utilisateur. Vous découvrez les variables d’environnement à configurer, ainsi que certains paramètres couramment utilisés pour lancer des applications avec `spark-submit` .
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="configurations"></a>Configurations
 Les configurations affichent les paramètres variables et paramètres généraux de l’environnement afin de déployer .NET pour les fichiers binaires de fonction Apache Spark Worker et définie par l’utilisateur.
@@ -44,14 +46,14 @@ Une fois l’application Spark [regroupée](https://spark.apache.org/docs/latest
 > [!NOTE]
 > Spécifiez tous les `--options` avant le `application-jar` lancement d’applications avec `spark-submit` , sinon elles seront ignorées. Pour plus d’informations, consultez [ `spark-submit` options](https://spark.apache.org/docs/latest/submitting-applications.html) et [exécution de Spark sur les détails du fil](https://spark.apache.org/docs/latest/running-on-yarn.html).
 
-## <a name="frequently-asked-questions"></a>Forum Aux Questions
+## <a name="frequently-asked-questions"></a>Forum aux questions
 ### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Lorsque j’exécute une application Spark avec des fonctions définies par l’utilisateur, j’obtiens une erreur « FileNotFoundException ». Que dois-je faire ?
-> **Erreur :** [erreur] [TaskRunner] [0] ProcessStream () a échoué avec l’exception : System. IO. FileNotFoundException : assembly’MySparkApp, version = 1.0.0.0, culture = neutral, PublicKeyToken = null’fichier introuvable : 'mySparkApp. dll'
+> **Erreur :** [erreur] [TaskRunner] [0] ProcessStream () a échoué avec l’exception : System. IO. FileNotFoundException : assembly’MySparkApp, version = 1.0.0.0, culture = neutral, PublicKeyToken = null’fichier introuvable : ' mySparkApp.dll '
 
 **Réponse :** Vérifiez que la `DOTNET_ASSEMBLY_SEARCH_PATHS` variable d’environnement est correctement définie. Il doit s’agir du chemin d’accès qui contient votre `mySparkApp.dll` .
 
 ### <a name="after-i-upgraded-my-net-for-apache-spark-version-and-reset-the-dotnet_worker_dir-environment-variable-why-do-i-still-get-the-following-ioexception-error"></a>Après la mise à niveau de mon .NET pour Apache Spark version et de la réinitialisation de la `DOTNET_WORKER_DIR` variable d’environnement, pourquoi est-ce que je reçois toujours l' `IOException` erreur suivante ?
-> **Erreur :** Perte de la tâche 0,0 à l’étape 11,0 (TID 24, localhost, pilote Executor) : Java. IO. IOException : impossible d’exécuter le programme « Microsoft. Spark. Worker. exe » : CreateProcess Error = 2, le système ne trouve pas le fichier spécifié.
+> **Erreur :** Perte de la tâche 0,0 à l’étape 11,0 (TID 24, localhost, pilote d’exécuteur) : Java. IO. IOException : impossible d’exécuter le programme "Microsoft.Spark.Worker.exe" : CreateProcess Error = 2, le système ne peut pas trouver le fichier spécifié.
 
 **Réponse :** Essayez de redémarrer votre fenêtre PowerShell (ou d’autres fenêtres de commande) pour qu’elle puisse prendre les dernières valeurs de variable d’environnement. Ensuite, démarrez votre programme.
 
