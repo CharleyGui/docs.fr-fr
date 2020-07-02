@@ -1,17 +1,17 @@
 ### YamlMime:Landing
 title: Documentation .NET Core
-summary: En savoir plus sur .NET Core, un cadre de développement open-source et polyvalent pour la construction d’applications multiplateformes.
+summary: Découvrez .NET Core, une infrastructure de développement Open source à usage général permettant de créer des applications multiplateformes.
 metadata:
   title: Documentation .NET Core
-  description: .NET Core est une plate-forme de développement open-source à usage général pour la construction d’applications multiplateformes.
+  description: .NET Core est une plateforme de développement à usage général Open source permettant de créer des applications multiplateformes.
   ms.topic: landing-page
   ms.date: 03/25/2020
-  ms.openlocfilehash: b11a41587e2b9eba2df744da3d8c19baa0936fb2
-  ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+  ms.openlocfilehash: 0d8e8515512068ba391a906182142eb5ee2f38c4
+  ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/27/2020
-  ms.locfileid: "80351707"
+  ms.lasthandoff: 07/01/2020
+  ms.locfileid: "85620753"
 landingContent:
 - title: Découvrir plus en détail .NET Core
   linkLists:
@@ -27,9 +27,11 @@ landingContent:
     links:
     - text: Bien démarrer avec .NET Core
       url: get-started.md
+    - text: Bien démarrer avec ASP.NET Core
+      url: /aspnet/core/
   - linkListType: concept
     links:
-    - text: .NET Politique de soutien de base
+    - text: Stratégie de support .NET Core
       url: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
   - linkListType: whats-new
     links:
@@ -45,33 +47,33 @@ landingContent:
       url: versions/selection.md
   - linkListType: download
     links:
-    - text: téléchargements .NET Core
+    - text: Téléchargements .NET Core
       url: https://dotnet.microsoft.com/download/dotnet-core
   - linkListType: how-to-guide
     links:
-    - text: Installer .NET Core SDK
+    - text: Installer kit SDK .NET Core
       url: install/sdk.md
-    - text: Installer .NET Core runtime
+    - text: Installer le Runtime .NET Core
       url: install/runtime.md
-    - text: Utilisez un gestionnaire de paquets Linux pour installer
+    - text: Utiliser un gestionnaire de package Linux pour installer
       url: install/linux-package-manager-ubuntu-1904.md
     - text: Vérifier les versions installées
       url: install/how-to-detect-installed-versions.md
   - linkListType: reference
     links:
-    - text: .NET Core SDK et dépendances de temps d’exécution
+    - text: Dépendances de kit SDK .NET Core et d’exécution
       url: install/dependencies.md
 - title: Bien démarrer avec .NET Core
   linkLists:
   - linkListType: video
     links:
-    - text: 'Tutorial: Bonjour monde en 10 minutes'
+    - text: 'Didacticiel : Hello World en 10 minutes'
       url: https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro
   - linkListType: tutorial
     links:
-    - text: Créez une application Hello World dans Visual Studio Code
+    - text: Créer une application Hello World dans Visual Studio Code
       url: tutorials/with-visual-studio-code.md
-    - text: Créez une application Hello World dans Visual Studio
+    - text: Créer une application Hello World dans Visual Studio
       url: tutorials/with-visual-studio.md
     - text: Conteneuriser une application .NET Core
       url: docker/build-container.md
@@ -93,7 +95,7 @@ landingContent:
       url: tools/index.md
   - linkListType: tutorial
     links:
-    - text: Commencer à utiliser l’IRTC
+    - text: Prise en main de l’interface CLI
       url: tutorials/cli-create-console-app.md
   - linkListType: deploy
     links:
@@ -113,7 +115,7 @@ landingContent:
       url: testing/index.md
   - linkListType: tutorial
     links:
-    - text: Test de code CMD à l’aide du test dotnet et de xUnit
+    - text: Test de code C# à l’aide de dotnet test et xUnit
       url: testing/unit-testing-with-dotnet-test.md
     - text: Test unitaire avec NUnit
       url: testing/unit-testing-with-nunit.md

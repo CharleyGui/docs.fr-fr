@@ -639,6 +639,8 @@
       items:
         - name: Choisir entre une classe et un struct
           href: design-guidelines/choosing-between-class-and-struct.md
+        - name: Choisir entre des types de tuples et anonymes
+          href: design-guidelines/choosing-between-anonymous-and-tuple.md
         - name: Conception de classes abstraites
           href: design-guidelines/abstract-class.md
         - name: Conception de classes statiques
