@@ -1,5 +1,6 @@
 ---
 title: Graphiques et multimédia
+description: Découvrez les fonctionnalités multimédias de Windows Presentation Foundation (WPF). Ajoutez des graphiques, des effets de transition, du son et des vidéos à vos applications.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: ecc54ad9453343f6306b0133fa180abd0db46f82
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ba52e78564484f7714ab0035a5e1861766b72bbf
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596421"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853677"
 ---
 # <a name="graphics-and-multimedia"></a>Graphiques et multimédia
 
@@ -137,7 +138,7 @@ Pour plus d’informations, consultez [vue d’ensemble](animation-overview.md)d
 
 <a name="media"></a>
 
-## <a name="media"></a>Médias
+## <a name="media"></a>Média
 
 Les images, la vidéo et l’audio constituent des méthodes multimédia riches de transférer des informations et des expériences utilisateur.
 

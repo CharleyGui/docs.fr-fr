@@ -1,17 +1,18 @@
 ---
-title: Mise en route
+title: Prise en main
+description: Créer des applications clientes de bureau avec l’infrastructure d’interface utilisateur de Windows Presentation Foundation (WPF), un sous-ensemble des .NET Framework.
 ms.date: 01/26/2018
 helpviewer_keywords:
 - getting started [WPF]
 - introduction [WPF]
 - WPF [WPF], getting started
 ms.assetid: 04f91da8-708c-46c7-8172-f1695ec847cd
-ms.openlocfilehash: 68e0be41acd1206ccad34dcbb478c6e628ad9f04
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 2977831bf17ac11a67f71037d26e4f4665131721
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646405"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853851"
 ---
 # <a name="get-started-wpf"></a>Bien démarrer (WPF)
 
@@ -23,12 +24,12 @@ Windows Presentation Foundation (WPF) est une infrastructure d’interface utili
 |-|-|  
 |Je veux rentrer dans le vif du sujet...|[Procédure pas à pas : ma première application de bureau WPF](walkthrough-my-first-wpf-desktop-application.md)|  
 |Comment concevoir l’interface utilisateur de l’application ?|[Conception XAML dans Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)|  
-|Vous débutez avec .NET ?|[Aperçu du cadre .NET](../../get-started/overview.md)<br /><br /> [Mises en route de Visual Basic et Visual C#](/visualstudio/ide/quickstart-visual-basic-console)|  
-|En savoir plus sur WPF...|[Présentation de WPF dans Visual Studio 2015](introduction-to-wpf-in-vs.md)<br /><br /> [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)<br /><br /> [Contrôles](../controls/index.md)<br /><br /> [Aperçu de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)|  
+|Vous débutez avec .NET ?|[Vue d’ensemble de l' .NET Framework](../../get-started/overview.md)<br /><br /> [Mises en route de Visual Basic et Visual C#](/visualstudio/ide/quickstart-visual-basic-console)|  
+|En savoir plus sur WPF...|[Présentation de WPF dans Visual Studio 2015](introduction-to-wpf-in-vs.md)<br /><br /> [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)<br /><br /> [Contrôles](../controls/index.md)<br /><br /> [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)|  
 |Vous êtes développeur Windows Forms ?|[Contrôles Windows Forms et contrôles WPF équivalents](../advanced/windows-forms-controls-and-equivalent-wpf-controls.md)<br /><br /> [Interopérabilité WPF et Windows Forms](../advanced/wpf-and-windows-forms-interoperation.md)|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bibliothèque de classe](../class-library-wpf.md)
-- [Développement de l’application](../app-development/index.md)
+- [Bibliothèque de classes](../class-library-wpf.md)
+- [Développement d’applications](../app-development/index.md)
 - [Centre de développement .NET Framework](https://dotnet.microsoft.com)

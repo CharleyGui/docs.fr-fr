@@ -1,6 +1,7 @@
 ---
 title: Présentation de WPF dans Visual Studio 2015
 titleSuffix: ''
+description: Créez des applications de bureau métier avec le modèle de programmation unifié fourni dans Windows Presentation Foundation (WPF).
 ms.date: 01/26/2018
 helpviewer_keywords:
 - typography [WPF]
@@ -16,17 +17,17 @@ helpviewer_keywords:
 - WPF [WPF], about Windows Presentation Foundation
 - 3D rendering [WPF]
 ms.assetid: 582a314e-e23d-4144-b45b-acbbd5579252
-ms.openlocfilehash: fc911d5d33820ba382446d15f8c7fac8f2cebf06
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 21c5311382b509fc3004f2609b2acc54e919eb56
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80112334"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853828"
 ---
 # <a name="introduction-to-wpf-in-visual-studio"></a>Présentation de WPF dans Visual Studio 2015
-Windows Presentation Foundation (WPF) de Visual Studio fournit aux développeurs un modèle de programmation unifié pour la construction d’applications de bureau de ligne d’entreprise sur Windows.  
+Windows Presentation Foundation (WPF) dans Visual Studio fournit aux développeurs un modèle de programmation unifié pour créer des applications de bureau métier sur Windows.  
   
- [Créez des applications de bureau avec Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
+ [Créer des applications de bureau avec Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
 
  [Conception XAML dans Visual Studio et Blend pour Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)  
   

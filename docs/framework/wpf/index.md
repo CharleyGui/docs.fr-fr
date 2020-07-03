@@ -1,5 +1,6 @@
 ---
 title: Windows Presentation Foundation
+description: En savoir plus sur le modèle de programmation unifié dans Windows Presentation Foundation (WPF) pour la création d’applications de bureau métier dans Windows.
 ms.date: 01/25/2018
 applies_to:
 - Windows 10
@@ -14,24 +15,24 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-ms.openlocfilehash: 69cdae86a295793c8da6b7f663b22846ae2c32b2
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 078e747ab9237324aba8168b543b2347e845de81
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919369"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853412"
 ---
 # <a name="windows-presentation-foundation"></a>Windows Presentation Foundation
 
 Windows Presentation Foundation (WPF) fournit aux développeurs un modèle de programmation unifié pour créer des applications de bureau sur Windows.
 
 - [Présentation de WPF](introduction-to-wpf.md)
-- [Bien démarrer](getting-started/index.md)
-- [Développement de l’application](app-development/index.md)
+- [Prise en main](getting-started/index.md)
+- [Développement d’applications](app-development/index.md)
 - [Avancé](advanced/index.md)
 - [Contrôles](controls/index.md)
-- [Data](data/index.md)
+- [Données](data/index.md)
 - [Graphiques et multimédia](graphics-multimedia/index.md)
-- [Security](security-wpf.md)
+- [Sécurité](security-wpf.md)
 - [Exemples WPF](wpf-samples.md)
 - [Bibliothèque de classes](class-library-wpf.md)
