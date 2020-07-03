@@ -46,6 +46,8 @@
           href: base-types/type-conversion.md
         - name: Tables de conversion de types
           href: base-types/conversion-tables.md
+        - name: Choisir entre des types de tuples et anonymes
+          href: base-types/choosing-between-anonymous-and-tuple.md
         - name: 'Mettre en forme les nombres, les dates et autres types'
           items:
             - name: Vue d'ensemble
@@ -639,8 +641,6 @@
       items:
         - name: Choisir entre une classe et un struct
           href: design-guidelines/choosing-between-class-and-struct.md
-        - name: Choisir entre des types de tuples et anonymes
-          href: design-guidelines/choosing-between-anonymous-and-tuple.md
         - name: Conception de classes abstraites
           href: design-guidelines/abstract-class.md
         - name: Conception de classes statiques
