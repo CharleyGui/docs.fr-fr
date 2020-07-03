@@ -10,22 +10,25 @@
       items:
         - name: Objets Principal et Identity
           href: principal-and-identity-objects.md
-        - name: "Comment\_: créer un objet WindowsPrincipal"
+        - name: "Procédure\_: créer un objet WindowsPrincipal"
           href: how-to-create-a-windowsprincipal-object.md
-        - name: "Comment\_: créer des objets GenericPrincipal et GenericIdentity"
+        - name: "Procédure\_: créer des objets GenericPrincipal et GenericIdentity"
           href: how-to-create-genericprincipal-and-genericidentity-objects.md
         - name: Remplacement d'un objet Principal
           href: replacing-a-principal-object.md
         - name: Emprunt et restauration d'identité
           href: impersonating-and-reverting.md
     - name: Modèle de chiffrement
-      href: cryptography-model.md
       items:
+        - name: Vue d'ensemble
+          href: cryptography-model.md
+        - name: Chiffrement multiplateforme
+          href: cross-platform-cryptography.md
         - name: services de chiffrement
           href: cryptographic-services.md
         - name: Génération de clés pour le chiffrement et le déchiffrement
           href: generating-keys-for-encryption-and-decryption.md
-        - name: "Comment\_: stocker des clés asymétriques dans un conteneur de clé"
+        - name: "Procédure\_: stocker des clés asymétriques dans un conteneur de clé"
           href: how-to-store-asymmetric-keys-in-a-key-container.md
         - name: Chiffrement de données
           href: encrypting-data.md
@@ -37,27 +40,27 @@
           href: ensuring-data-integrity-with-hash-codes.md
         - name: Création d'un modèle de chiffrement
           href: creating-a-cryptographic-scheme.md
-        - name: "Comment\_: chiffrer des éléments XML avec des clés symétriques"
+        - name: "Procédure\_: chiffrer des éléments XML avec des clés symétriques"
           href: how-to-encrypt-xml-elements-with-symmetric-keys.md
-        - name: "Comment\_: déchiffrer des éléments XML avec des clés symétriques"
+        - name: "Procédure\_: déchiffrer des éléments XML avec des clés symétriques"
           href: how-to-decrypt-xml-elements-with-symmetric-keys.md
-        - name: "Comment\_: chiffrer des éléments XML avec des clés asymétriques"
+        - name: "Procédure\_: chiffrer des éléments XML avec des clés asymétriques"
           href: how-to-encrypt-xml-elements-with-asymmetric-keys.md
-        - name: "Comment\_: déchiffrer des éléments XML avec des clés asymétriques"
+        - name: "Procédure\_: déchiffrer des éléments XML avec des clés asymétriques"
           href: how-to-decrypt-xml-elements-with-asymmetric-keys.md
-        - name: "Comment\_: chiffrer des éléments XML avec les certificats X.509"
+        - name: "Procédure\_: chiffrer des éléments XML avec des certificats X.509"
           href: how-to-encrypt-xml-elements-with-x-509-certificates.md
-        - name: "Comment\_: déchiffrer des éléments XML avec les certificats X.509"
+        - name: "Procédure\_: déchiffrer des éléments XML avec des certificats X.509"
           href: how-to-decrypt-xml-elements-with-x-509-certificates.md
-        - name: "Comment\_: signer des documents XML avec des signatures numériques"
+        - name: "Procédure\_: signer des documents XML avec des signatures numériques"
           href: how-to-sign-xml-documents-with-digital-signatures.md
-        - name: "Comment\_: vérifier les signatures numériques de documents XML"
+        - name: "Procédure\_: vérifier les signatures numériques de documents XML"
           href: how-to-verify-the-digital-signatures-of-xml-documents.md
-        - name: "Comment\_: utiliser la protection des données"
+        - name: "Procédure\_: utiliser la protection des données"
           href: how-to-use-data-protection.md
-        - name: "Comment\_: accéder aux périphériques de chiffrement du matériel"
+        - name: "Procédure\_: accéder aux appareils de chiffrement matériel"
           href: how-to-access-hardware-encryption-devices.md
-        - name: "Procédure pas à pas\_: création d'une application de chiffrement"
+        - name: "Procédure pas à pas\_: création d’une application de chiffrement"
           href: walkthrough-creating-a-cryptographic-application.md
     - name: Instructions de codage sécurisé
       href: secure-coding-guidelines.md
