@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Branches et boucles en C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: ac4f7318dc25fef9f612649f2c3f57a5142f3ead
-  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+  ms.openlocfilehash: 87ffc9668191a52774f21470dbc415bba3579a49
+  ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "82860941"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85853913"
 items:
 - durationInMinutes: 1
   content: >
@@ -182,7 +182,7 @@ items:
   content: >
     Ce dernier exemple a montré que la division d’entiers tronque le résultat.
 
-    Vous pouvez récupérer le **reste** à l’aide **remainder** de l’opérateur de `%` reste, le caractère :
+    Vous pouvez récupérer le **reste** à l’aide de l’opérateur de **reste** , le `%` caractère :
 
 
     ```csharp
@@ -240,11 +240,11 @@ items:
     Il existe d’autres types numériques avec une précision et des limites différentes que vous pouvez utiliser quand le type `int` ne répond pas à vos besoins. Nous allons ensuite explorer ces types de nombres.
 - title: Utiliser le type double
   durationInMinutes: 5
-  content: "Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre à **virgule flottante** est utile pour représenter des nombres non intégraux qui peuvent être très grands ou très petits en amplitude. La **double précision** est un terme relatif qui décrit le nombre de chiffres binaires utilisés pour stocker la valeur. Le nombre à **double précision** a deux fois le nombre de chiffres binaires comme **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision. Les nombres à **précision unique** sont déclarés à l’aide du `float` mot clé.\nExplorons ce type double. Exécutez le code suivant dans la fenêtre interactive et observez le résultat :\n\n```csharp\ndouble a = 5;\ndouble b = 4;\ndouble c = 2;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nNotez que la réponse inclut la partie décimale du quotient. Essayez avec une expression légèrement plus complexe utilisant des doubles :\n\n```csharp\ndouble a = 19;\ndouble b = 23;\ndouble c = 8;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nLa plage d’une valeur double est nettement supérieure à celle de valeurs entières. Exécutez le code suivant dans la fenêtre interactive :\n\n```csharp\ndouble max = double.MaxValue;\ndouble min = double.MinValue;\nConsole.WriteLine($\"The range of double is {min} to {max}\");\n```\n\nCes valeurs s’affichent sous forme de notation scientifique. Le nombre à gauche du `E` est le nombre significatif. Le nombre à droite est l’exposant, en puissance de 10.\n\nTout comme les nombres décimaux en mathématiques, les doubles en C# peuvent présenter des erreurs d’arrondi. Exécutez le code suivant :\n\n```csharp\ndouble third = 1.0 / 3.0;\nConsole.WriteLine(third);\n```\n\nVous savez que `0.3` est `3/10` et pas exactement le même que `1/3`. De même, `0.33` est `33/100`. Cela est plus proche `1/3`de, mais toujours pas exact. \n\n***Test***\n\nEssayez d’autres calculs avec de grands nombres, des petits nombres, des multiplications `double` et des divisions à l’aide du type.  Effectuez des calculs plus complexes.\n"
+  content: "Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre à **virgule flottante** est utile pour représenter des nombres non intégraux qui peuvent être très grands ou très petits en amplitude. La **double précision** est un terme relatif qui décrit le nombre de chiffres binaires utilisés pour stocker la valeur. Le nombre à **double précision** a deux fois le nombre de chiffres binaires comme **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision. Les nombres à **précision unique** sont déclarés à l’aide du `float` mot clé.\nExplorons ce type double. Exécutez le code suivant dans la fenêtre interactive et observez le résultat :\n\n```csharp\ndouble a = 5;\ndouble b = 4;\ndouble c = 2;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nNotez que la réponse inclut la partie décimale du quotient. Essayez avec une expression légèrement plus complexe utilisant des doubles :\n\n```csharp\ndouble a = 19;\ndouble b = 23;\ndouble c = 8;\ndouble d = (a + b) / c;\nConsole.WriteLine(d);\n```\n\nLa plage d’une valeur double est nettement supérieure à celle de valeurs entières. Exécutez le code suivant dans la fenêtre interactive :\n\n```csharp\ndouble max = double.MaxValue;\ndouble min = double.MinValue;\nConsole.WriteLine($\"The range of double is {min} to {max}\");\n```\n\nCes valeurs s’affichent sous forme de notation scientifique. Le nombre à gauche du `E` est le nombre significatif. Le nombre à droite est l’exposant, en puissance de 10.\n\nTout comme les nombres décimaux en mathématiques, les doubles en C# peuvent présenter des erreurs d’arrondi. Exécutez le code suivant :\n\n```csharp\ndouble third = 1.0 / 3.0;\nConsole.WriteLine(third);\n```\n\nVous savez que `0.3` est `3/10` et pas exactement le même que `1/3` . De même, `0.33` est `33/100` . Cela est plus proche de `1/3` , mais toujours pas exact. \n\n***Test***\n\nEssayez d’autres calculs avec de grands nombres, des petits nombres, des multiplications et des divisions à l’aide du `double` type.  Effectuez des calculs plus complexes.\n"
 - title: Utiliser des types décimaux
   durationInMinutes: 8
   content: >
-    Vous avez vu les types numériques de base en C#, à savoir les entiers et les doubles.  Il y a un autre type à apprendre : `decimal` le type. Le type `decimal` a une plage plus petite, mais une précision supérieure à celle du type `double`. Étudions cela d’un peu plus près :
+    Vous avez vu les types numériques de base en C#, à savoir les entiers et les doubles.  Il y a un autre type à apprendre : le `decimal` type. Le type `decimal` a une plage plus petite, mais une précision supérieure à celle du type `double`. Étudions cela d’un peu plus près :
 
 
     ```csharp
@@ -290,16 +290,13 @@ items:
 
     > [!NOTE]
 
-    > La lettre `M` a été choisie comme lettre la plus distincte entre les `double` Mots clés `decimal` et.
-
-
-    Notez que le calcul utilisant le type décimal a plus de chiffres à droite de la virgule décimale.
+    > La lettre `M` a été choisie comme lettre la plus distincte entre les `double` `decimal` Mots clés et.
 
 
     ***Test***
 
 
-    Maintenant que vous avez vu les différents types numériques, écrivez du code qui calcule la surface d’un cercle avec un rayon de 2,5 centimètres. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Conseil : .NET contient une constante pour PI, à savoir <xref:System.Math.PI?displayProperty=nameWithType>, que vous pouvez utiliser pour cette valeur. <xref:System.Math.PI?displayProperty=nameWithType>, comme toutes les constantes déclarées `System.Math` dans l’espace de `double` noms, est une valeur. Pour cette raison, vous devez utiliser `double` au lieu `decimal` de valeurs pour ce défi.
+    Maintenant que vous avez vu les différents types numériques, écrivez du code qui calcule la surface d’un cercle avec un rayon de 2,5 centimètres. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Conseil : .NET contient une constante pour PI, à savoir <xref:System.Math.PI?displayProperty=nameWithType>, que vous pouvez utiliser pour cette valeur. <xref:System.Math.PI?displayProperty=nameWithType>, comme toutes les constantes déclarées dans l' `System.Math` espace de noms, est une `double` valeur. Pour cette raison, vous devez utiliser `double` au lieu de `decimal` valeurs pour ce défi.
 
 
     Vous devriez obtenir une réponse comprise entre 19 et 20.
