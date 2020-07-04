@@ -3,12 +3,12 @@ title: Informations de référence sur les commandes CLI ML.NET
 description: Vue d’ensemble, exemples et informations de référence sur la commande auto-train dans l’outil CLI ML.NET.
 ms.date: 06/03/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 397f6fda8554024624b3ef630856dc8eca9696b2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4c6cb1346c16f6162077d3414140d693de9e0d8c
+ms.sourcegitcommit: 182c7b6c079ebcc0e1898dfd9e921b9ef472ea2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594541"
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "85946939"
 ---
 # <a name="the-mlnet-cli-command-reference"></a>Informations de référence sur la commande CLI ML.NET
 
@@ -17,9 +17,9 @@ Les `classification` `regression` commandes, et `recommendation` sont les princi
 > [!NOTE]
 > Cette rubrique fait référence à l’interface CLI ML.NET et au moteur AutoML ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être changées.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
-Exemple d'utilisation :
+Exemple d’utilisation :
 
 ```console
 mlnet regression --dataset "cars.csv" --label-col price
@@ -255,7 +255,7 @@ Avec cet argument, vous pouvez ignorer des colonnes existantes dans le fichier d
 
 Spécifiez les noms des colonnes que vous souhaitez ignorer. Utilisez « ,  » (virgule avec espace) ou «   » (espace) pour séparer plusieurs noms de colonne. Vous pouvez utiliser des guillemets pour les noms de colonnes contenant des espaces (par exemple, "utilisateur connecté").
 
-Exemple :
+Exemple :
 
 `--ignore-columns email, address, id, logged_in`
 
@@ -281,7 +281,7 @@ Cet argument définit la durée maximale (en secondes) dont dispose le processus
 
 La durée nécessaire pour les itérations peut varier selon la taille du jeu de données.
 
-## <a name="cache"></a>Cache
+## <a name="cache"></a>d'instance/de clé
 
 `--cache` (chaîne)
 
@@ -309,7 +309,7 @@ Le fichier de modèle ML.NET (fichier .ZIP) reçoit également le même nom.
 
 ## <a name="output-path"></a>Chemin de sortie
 
-`--output-path | -o` (chaîne)
+`--output | -o` (chaîne)
 
 Emplacement/dossier racine où placer la sortie générée. L'emplacement par défaut est le répertoire actif.
 
