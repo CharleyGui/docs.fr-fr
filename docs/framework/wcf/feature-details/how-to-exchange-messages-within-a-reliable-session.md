@@ -2,12 +2,11 @@
 title: "Comment : échanger des messages au sein d'une session fiable"
 ms.date: 03/30/2017
 ms.assetid: 87cd0e75-dd2c-44c1-8da0-7b494bbdeaea
-ms.openlocfilehash: 5b01ddfd95db2f7e88f9481265c348f4f16fbbee
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
-ms.translationtype: MT
+ms.openlocfilehash: 39dd6636f80b107ced1caac29869c6c66e67e21e
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579474"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052037"
 ---
 # <a name="how-to-exchange-messages-within-a-reliable-session"></a>Comment : échanger des messages au sein d'une session fiable
 
@@ -27,13 +26,13 @@ Pour obtenir la copie source de cet exemple, consultez [WS Reliable session](../
 
    [!code-csharp[c_HowTo_UseReliableSession#1122](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_usereliablesession/cs/service.cs#1122)]
 
-1. Créez un fichier *Web. config* pour configurer un point de terminaison pour le `CalculatorService` qui utilise <xref:System.ServiceModel.WSHttpBinding> avec la session fiable activée et la remise chronologique des messages requise.
+1. Créez un fichier de *Web.config* pour configurer un point de terminaison pour le `CalculatorService` qui utilise <xref:System.ServiceModel.WSHttpBinding> avec la session fiable activée et la livraison chronologique des messages requise.
 
    [!code-xml[c_HowTo_UseReliableSession#2111](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_usereliablesession/common/web.config#2111)]
 
 1. Créez un fichier *service. svc* qui contient la ligne :
 
-   ```
+   ```aspx-csharp
    <%@ServiceHost language=c# Service="CalculatorService" %>
    ```
 
@@ -41,7 +40,7 @@ Pour obtenir la copie source de cet exemple, consultez [WS Reliable session](../
 
 ### <a name="configure-the-client-with-a-wshttpbinding-to-use-a-reliable-session"></a>Configurer le client avec une liaison WSHttpBinding pour utiliser une session fiable
 
-1. Utilisez l' [outil ServiceModel Metadata Utility Tool (*Svcutil. exe*)](../servicemodel-metadata-utility-tool-svcutil-exe.md) à partir de la ligne de commande pour générer le code à partir des métadonnées de service :
+1. Utilisez l' [outil ServiceModel Metadata Utility Tool (*Svcutil.exe*)](../servicemodel-metadata-utility-tool-svcutil-exe.md) à partir de la ligne de commande pour générer le code à partir des métadonnées de service :
 
    ```console
    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -55,7 +54,7 @@ Pour obtenir la copie source de cet exemple, consultez [WS Reliable session](../
 
    [!code-csharp[C_HowTo_UseReliableSession#1222](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_usereliablesession/cs/client.cs#1222)]
 
-1. *Svcutil. exe* génère également la configuration pour le client qui utilise la <xref:System.ServiceModel.WSHttpBinding> classe. Nommez le fichier de configuration *app. config* lors de l’utilisation de Visual Studio.
+1. *Svcutil.exe* génère également la configuration du client qui utilise la <xref:System.ServiceModel.WSHttpBinding> classe. Nommez le fichier de configuration *App.config* lors de l’utilisation de Visual Studio.
 
    [!code-xml[C_HowTo_UseReliableSession#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_usereliablesession/common/app.config#2211)]
 

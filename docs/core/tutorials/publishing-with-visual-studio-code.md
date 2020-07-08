@@ -1,13 +1,12 @@
 ---
 title: Publier une application console .NET Core à l’aide de Visual Studio Code
 description: La publication crée l’ensemble des fichiers nécessaires à l’exécution d’une application .NET Core.
-ms.date: 06/08/2020
-ms.openlocfilehash: 442d08c9b016407327ba30db0aae78b5cf6b6fe3
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
-ms.translationtype: MT
+ms.date: 07/04/2020
+ms.openlocfilehash: 8fd9975e8a88704b9dea45b40127c8dc03f7d09f
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701448"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051881"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : publier une application console .NET Core à l’aide de Visual Studio Code
 
@@ -112,4 +111,4 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 Dans ce didacticiel, vous avez publié une application console. Dans le didacticiel suivant, vous allez créer une bibliothèque de classes.
 
 > [!div class="nextstepaction"]
-> [Créer une bibliothèque de .NET Standard dans Visual Studio pour Mac](library-with-visual-studio-mac.md)
+> [Créer une bibliothèque de .NET Standard dans Visual Studio Code](library-with-visual-studio-code.md)
