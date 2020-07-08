@@ -3,12 +3,11 @@ title: Architecture des applications .NET natives Cloud pour Azure
 description: Guide pour la création d’applications Cloud natives tirant parti de conteneurs, de microservices et de fonctionnalités sans serveur d’Azure.
 author: ardalis
 ms.date: 05/13/2020
-ms.openlocfilehash: b315f097b1584bd93f694c10f36ee7524d7e020a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
-ms.translationtype: MT
+ms.openlocfilehash: 172097b4915deb2d6f0b06441d7c4ca389bbca25
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144381"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051504"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Architecture des applications .NET natives Cloud pour Azure
 
@@ -84,7 +83,7 @@ Ce guide commence par définir le Cloud native et introduit une application de r
 - Identité et sécurité
 - DevOps
 
-Ce guide est disponible au format PDF et en ligne. N’hésitez pas à transmettre ce document ou des liens vers sa version en ligne à votre équipe afin de garantir une compréhension commune de ces sujets. La plupart de ces rubriques tirent parti d’une compréhension cohérente des principes et des modèles sous-jacents, ainsi que des compromis impliqués dans les décisions relatives à ces sujets. L’objectif de ce document est de fournir aux équipes et à leurs dirigeants les informations dont elles ont besoin pour prendre des décisions bien informées sur l’architecture, le développement et l’hébergement de leurs applications.
+Ce guide est disponible au format [PDF](https://dotnet.microsoft.com/download/e-book/cloud-native-azure/pdf) et en ligne. N’hésitez pas à transmettre ce document ou des liens vers sa version en ligne à votre équipe afin de garantir une compréhension commune de ces sujets. La plupart de ces rubriques tirent parti d’une compréhension cohérente des principes et des modèles sous-jacents, ainsi que des compromis impliqués dans les décisions relatives à ces sujets. L’objectif de ce document est de fournir aux équipes et à leurs dirigeants les informations dont elles ont besoin pour prendre des décisions bien informées sur l’architecture, le développement et l’hébergement de leurs applications.
 
 ## <a name="send-your-feedback"></a>Envoyez votre feedback
 

@@ -5,18 +5,17 @@ ms.technology: dotnet-networking
 topic_type:
 - apiref
 api_name:
-- System.Net.QuotedPairReader
-- System.Net.QuotedPairReader.CountQuotedChars
+- System.Net.Mail.QuotedPairReader
+- System.Net.Mail.QuotedPairReader.CountQuotedChars
 api_location:
 - System.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 9b0bf835a34eecc651894f4336648b73a81b665c
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
-ms.translationtype: MT
+ms.openlocfilehash: 898c6e9d2d5dd02f3d5f9c096ad470b5dd445d1d
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990374"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051309"
 ---
 # <a name="quotedpairreader-class"></a>QuotedPairReader, classe
 
@@ -53,7 +52,7 @@ internal static int CountQuotedChars(string data, int index, bool permitUnicodeE
 
   `true`pour autoriser les caractères Unicode à être placés dans une séquence d’échappement ; Sinon, `false` .
 
-### <a name="return-value"></a>Valeur retournée
+### <a name="return-value"></a>Valeur renvoyée
 
 <xref:System.Int32?displayProperty=nameWithType>
 

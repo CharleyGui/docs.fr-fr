@@ -4,12 +4,11 @@ description: Découvrez comment créer des composants d’interface utilisateur 
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: 1a5f6b63143c4fd7a276219b9c4877e9e355c996
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
-ms.translationtype: MT
+ms.openlocfilehash: f6528b1e68b49b6ee3949baca166f4806448718b
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378319"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051450"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>Créer des composants d’interface utilisateur réutilisables avec éblouissant
 
@@ -79,16 +78,16 @@ Le tableau suivant récapitule les différentes directives Razor utilisées dans
 
 |Directive    |Description|Exemple|Équivalent Web Forms|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|Aucune|
+|`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|None|
 |`@code`      |Ajoute des membres de classe au composant|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|Implémente l’interface spécifiée|`@implements IDisposable`|Utiliser code-behind|
 |`@inherits`  |Hérite de la classe de base spécifiée|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|Aucune|
+|`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|None|
 |`@layout`    |Spécifie un composant de disposition pour le composant|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|Aucune|
+|`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|None|
 |`@page`      |Spécifie l’itinéraire pour le composant|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |Spécifie un paramètre de type générique pour le composant|`@typeparam TItem`|Utiliser code-behind|
-|`@using`     |Spécifie un espace de noms à placer dans la portée|`@using MyComponentNamespace`|Ajouter un espace de noms dans *Web. config*|
+|`@using`     |Spécifie un espace de noms à placer dans la portée|`@using MyComponentNamespace`|Ajouter un espace de noms dans *web.config*|
 
 Les composants Razor utilisent également de manière intensive les *attributs de directive* sur les éléments pour contrôler différents aspects de la compilation des composants (gestion des événements, liaison de données, composants & références d’éléments, etc.). Les attributs de directive suivent une syntaxe générique commune dans laquelle les valeurs entre parenthèses sont facultatives :
 
@@ -110,7 +109,7 @@ Les différents attributs de directive utilisés par éblouissant ( `@onclick` ,
 
 La plupart des syntaxes utilisées dans les fichiers *. aspx* et *. ascx* ont des syntaxes parallèles dans Razor. Vous trouverez ci-dessous une comparaison simple des syntaxes pour ASP.NET Web Forms et Razor.
 
-|Fonctionnalité                      |Web Forms           |Syntaxe               |Razor         |Syntaxe |
+|Composant                      |Web Forms           |Syntax               |Razor         |Syntax |
 |-----------------------------|--------------------|---------------------|--------------|-------|
 |Directives                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |Blocs de code                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
@@ -146,7 +145,7 @@ Hormis le code HTML normal, les composants peuvent également utiliser d’autre
 Contrairement à ASP.NET Web Forms, les composants de éblouissant :
 
 - N’utilisez pas de préfixe d’élément (par exemple, `asp:` ).
-- Ne nécessite pas d’inscription sur la page ou dans le *fichier Web. config*.
+- Ne nécessite pas d’inscription sur la page ou dans la *web.config*.
 
 Considérez les composants Razor comme des types .NET, car c’est exactement ce qu’ils sont. Si l’assembly contenant le composant est référencé, le composant peut être utilisé. Pour placer l’espace de noms du composant dans la portée, appliquez la `@using` directive :
 
@@ -379,7 +378,7 @@ Pour établir une liaison avec un paramètre de composant, utilisez un `@bind-{P
 }
 ```
 
-## <a name="state-changes"></a>Changements d'état
+## <a name="state-changes"></a>Modifications d'état
 
 Si l’état du composant a été modifié en dehors d’un événement d’interface utilisateur normal ou d’un rappel d’événement, le composant doit indiquer manuellement qu’il doit être de nouveau restitué. Pour signaler que l’état d’un composant a changé, appelez la `StateHasChanged` méthode sur le composant.
 
@@ -602,8 +601,8 @@ La sortie de ce composant ressemble à ceci :
 ```html
 <h1>My list</h1>
 <ul>
-    <li>The message is: message1</li>
-    <li>The message is: message2</li>
+    <li><p>The message is: message1</p></li>
+    <li><p>The message is: message2</p></li>
 <ul>
 ```
 

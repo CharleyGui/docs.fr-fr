@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé illegalPrepareConstrainedRegion
+description: Passez en revue l’Assistant Débogage managé illegalPrepareConstrainedRegion, appelé si un appel PrepareConstrainedRegions n’est pas suivi d’une instruction try.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - PrepareConstrainedRegions method
@@ -8,12 +9,11 @@ helpviewer_keywords:
 - IllegalPrepareConstrainedRegions MDA
 - MDAs (managed debugging assistants), illegal PrepareConstrainedRegions
 ms.assetid: 2f9b5031-f910-4e01-a196-f89eab313eaf
-ms.openlocfilehash: b80d6160876834b22e8d9d1eb7112b8b67c15fcc
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: d6a0d1d95840ebd735806c5547730ae9e0b2aace
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216462"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051283"
 ---
 # <a name="illegalprepareconstrainedregion-mda"></a>Assistant Débogage managé illegalPrepareConstrainedRegion
 L’Assistant Débogage managé `illegalPrepareConstrainedRegion` est activé quand un appel de méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> ne précède pas immédiatement l’instruction `try` du gestionnaire d’exceptions. Cette restriction étant au niveau MSIL, il est permis d’avoir une source générant du non-code entre l’appel et `try`, telle que les commentaires.  
@@ -21,8 +21,8 @@ L’Assistant Débogage managé `illegalPrepareConstrainedRegion` est activé qu
 ## <a name="symptoms"></a>Symptômes  
  Une région d’exécution limitée n’est jamais traitée comme telle, mais comme un bloc de gestion des exceptions simple (`finally` ou `catch`). Par conséquent, la région ne s’exécute pas en cas de mémoire insuffisante ou d’interruption de thread.  
   
-## <a name="cause"></a>Cause :  
- Le modèle de préparation pour une région d’exécution limitée n’est pas suivi correctement.  Il s’agit d’un événement d’erreur. L’appel de méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> utilisé pour marquer des gestionnaires d’exceptions comme introduisant une CER dans leurs `catch`/`finally`/`fault`/`filter` `try` doit être utilisé immédiatement avant l’instruction.  
+## <a name="cause"></a>Cause  
+ Le modèle de préparation pour une région d’exécution limitée n’est pas suivi correctement.  Il s’agit d’un événement d’erreur. L' <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> appel de méthode utilisé pour marquer des gestionnaires d’exceptions comme introduisant une CER dans leurs `catch` / `finally` / `fault` / `filter` blocs doit être utilisé immédiatement avant l' `try` instruction.  
   
 ## <a name="resolution"></a>Résolution  
  Vérifiez que l’appel à <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> se produit immédiatement avant l’instruction `try`.  
@@ -30,7 +30,7 @@ L’Assistant Débogage managé `illegalPrepareConstrainedRegion` est activé qu
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
-## <a name="output"></a>Output  
+## <a name="output"></a>Sortie  
  L’Assistant Débogage managé affiche le nom de la méthode qui appelle la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>, l’offset MSIL et un message indiquant que l’appel ne précède pas immédiatement le début du bloc try.  
   
 ## <a name="configuration"></a>Configuration  
@@ -67,4 +67,4 @@ void MethodWithInvalidPCR()
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

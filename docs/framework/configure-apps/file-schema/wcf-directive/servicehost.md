@@ -2,20 +2,19 @@
 title: '@ServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 96ba6967-00f2-422f-9aa7-15de4d33ebf3
-ms.openlocfilehash: fdd6d83836c4ef31a4d7c8e68cb0cc050ac6bea4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
-ms.translationtype: MT
+ms.openlocfilehash: cb425d9f4dadd97e93946a2b4cd9d059ea8504ce
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "76787798"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051361"
 ---
 # <a name="servicehost"></a>\@ServiceHost
 
 Associe la fabrique utilisée pour générer l'hôte de service au service à héberger ainsi qu'à d'autres aspects de programmation requis pour compiler le code d'hébergement fourni dans le fichier .svc ou pour y accéder.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
-```xml
+```aspx-csharp
 <% @ServiceHost
 Service = "Service, ServiceNamespace"
 Factory = "Factory, FactoryNamespace"
@@ -63,7 +62,7 @@ Surchargez les implémentations de fabrique le moins possible. Si vous disposez 
 
 Par exemple, pour activer un point de terminaison compatible AJAX pour `MyService` , spécifiez <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> pour la valeur de l' `Factory` attribut, au lieu de la valeur par défaut <xref:System.ServiceModel.Activation.ServiceHostFactory> , dans la `@ServiceHost` directive, comme indiqué dans l’exemple suivant :
 
-```xml
+```aspx-csharp
 <% @ServiceHost
 Service="MyService"
 Language="C#"

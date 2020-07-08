@@ -1,5 +1,6 @@
 ---
 title: 'Comment : créer et initialiser les écouteurs de la trace'
+description: Découvrez comment créer et initialiser des écouteurs de suivi à l’aide de classes telles que System. Diagnostics. DefaultTraceListener dans .NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +12,11 @@ helpviewer_keywords:
 - tracing [.NET Framework], trace listeners
 - logs, trace listeners
 ms.assetid: 21726de1-61ee-4fdc-9dd0-3be49324d066
-ms.openlocfilehash: ce0df0af32d6798c89c8db6761d18febc1c398bb
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 752306124e41a7fb7458daccc8c2891631eb9616
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217441"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051205"
 ---
 # <a name="how-to-create-and-initialize-trace-listeners"></a>Comment : créer et initialiser les écouteurs de la trace
 
@@ -96,6 +96,6 @@ Vous pouvez créer des écouteurs de suivi dans un [fichier de configuration d�
 ## <a name="see-also"></a>Voir aussi
 
 - [Écouteurs de suivi](trace-listeners.md)
-- [Commutateurs de suivi](trace-switches.md)
-- [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
-- [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)
+- [Commutateurs de traçage](trace-switches.md)
+- [Comment : ajouter des instructions de traçage dans le code d'une application](how-to-add-trace-statements-to-application-code.md)
+- [Traçage et instrumentation d'applications](tracing-and-instrumenting-applications.md)

@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé loaderLock
+description: Passez en revue l’Assistant Débogage managé (MDA) loaderLock dans .NET, qui détecte les tentatives d’exécution du code managé sur un thread détenant le verrou du chargeur du système d’exploitation Windows.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - deadlocks [.NET Framework]
@@ -10,12 +11,11 @@ helpviewer_keywords:
 - loader locks
 - locks, threads
 ms.assetid: 8c10fa02-1b9c-4be5-ab03-451d943ac1ee
-ms.openlocfilehash: cd77640a6566f3fd94631dac184ae5bc3ffab5d1
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 055b07a805c5f0b613519d6019950a9b249a4b38
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217352"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051620"
 ---
 # <a name="loaderlock-mda"></a>Assistant Débogage managé loaderLock
 L’Assistant Débogage managé `loaderLock` détecte les tentatives d’exécution de code managé sur un thread qui détient le verrou du chargeur du système d’exploitation Microsoft Windows.  Toute exécution de ce type est interdite, car elle peut entraîner des interblocages et l’utilisation de DLL avant leur initialisation par le chargeur du système d’exploitation.  
@@ -27,7 +27,7 @@ L’Assistant Débogage managé `loaderLock` détecte les tentatives d’exécut
   
  Enfin, il existe des cas où les appels dans des DLL peuvent se produire avant que ces DLL aient été correctement initialisées par le chargeur du système d’exploitation.  Contrairement aux échecs d’interblocage, qui peuvent être diagnostiqués en examinant les piles de tous les threads impliqués dans l’interblocage, il est très difficile de diagnostiquer l’utilisation de DLL non initialisées sans utiliser cet Assistant Débogage managé.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Les assemblys C++ mixtes managés/non managés conçus pour le .NET Framework 1.0 ou 1.1 tentent généralement d’exécuter le code au sein du verrou du chargeur, sauf s’ils ont fait l’objet d’une attention particulière, par exemple dans le cas où les liaisons ont été effectuées avec **/NOENTRY**.
   
  Les assemblys C++ mixtes managés/non managés conçus pour le .NET Framework version 2.0 sont moins sujets à ces problèmes, car ils ont le même niveau de risque limité que les applications utilisant des DLL non managées qui ne respectent pas les règles du système d’exploitation.  Par exemple, si un point d’entrée `DllMain` d’une DLL non managée appelle `CoCreateInstance` pour obtenir un objet managé qui a été exposé à COM, le résultat est une tentative d’exécution de code managé au sein du verrou du chargeur. Pour plus d’informations sur les problèmes de verrou du chargeur dans le .NET Framework 2.0 et ultérieur, consultez [Initialisation des assemblys mixtes](/cpp/dotnet/initialization-of-mixed-assemblies).  
@@ -40,7 +40,7 @@ L’Assistant Débogage managé `loaderLock` détecte les tentatives d’exécut
   
  Dans certains cas inhabituels, il est également possible que des violations d’accès ou des problèmes similaires soient déclenchés dans les DLL qui sont appelées avant d’avoir été initialisées.  
   
-## <a name="output"></a>Output  
+## <a name="output"></a>Sortie  
  Cet Assistant Débogage managé signale qu’une exécution managée interdite est tentée.  Vous devez examiner la pile du thread pour déterminer la raison pour laquelle le verrouillage du chargeur se produit et comment résoudre le problème.  
   
 ## <a name="configuration"></a>Configuration  

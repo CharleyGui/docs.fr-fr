@@ -1,5 +1,6 @@
 ---
 title: Assistant Débogage managé invalidOverlappedToPinvoke
+description: Passez en revue l’Assistant Débogage managé (MDA) invalidOverlappedToPinvoke dans .NET, qui peut être activé pendant un incident ou une altération inexpliquée du tas.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - overlapped pointers
@@ -9,12 +10,11 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), overlapped pointers
 - pointers, overlapped
 ms.assetid: 28876047-58bd-4fed-9452-c7da346d67c0
-ms.openlocfilehash: 1f557cc370d5c6121b0ad9a4528bd75dcb70a93c
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 162efd55bf636cf2e8698706bd011379f2f6f11f
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216290"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051699"
 ---
 # <a name="invalidoverlappedtopinvoke-mda"></a>Assistant Débogage managé invalidOverlappedToPinvoke
 L’Assistant Débogage managé `invalidOverlappedToPinvoke` est activé quand un pointeur superposé qui n’a pas été créé sur le tas du garbage collection est passé à des fonctions Win32 spécifiques.  
@@ -25,7 +25,7 @@ L’Assistant Débogage managé `invalidOverlappedToPinvoke` est activé quand u
 ## <a name="symptoms"></a>Symptômes  
  Incidents ou altérations de tas inexplicables.  
   
-## <a name="cause"></a>Cause :  
+## <a name="cause"></a>Cause  
  Un pointeur superposé qui n’a pas été créé sur le tas du garbage collection est passé à des fonctions spécifiques du système d’exploitation.  
   
  Le tableau suivant répertorie les fonctions dont cet Assistant Débogage managé assure le suivi.  
@@ -55,7 +55,7 @@ L’Assistant Débogage managé `invalidOverlappedToPinvoke` est activé quand u
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Cet Assistant Débogage managé n’a aucun effet sur le CLR.  
   
-## <a name="output"></a>Output  
+## <a name="output"></a>Sortie  
  L’exemple suivant illustre une sortie de cet Assistant Débogage managé.  
   
  `An overlapped pointer (0x00ea3430) that was not allocated on the GC heap was passed via Pinvoke to the Win32 function 'WriteFile' in module 'KERNEL32.DLL'. If the AppDomain is shut down, this can cause heap corruption when the async I/O completes. The best solution is to pass a NativeOverlapped structure retrieved from a call to System.Threading.Overlapped.Pack(). If the AppDomain exits, the CLR will keep this structure alive and pinned until the I/O completes.`  
@@ -74,4 +74,4 @@ L’Assistant Débogage managé `invalidOverlappedToPinvoke` est activé quand u
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

@@ -2,18 +2,17 @@
 title: Attribution d'un nouveau nom à un service WCF
 ms.date: 03/30/2017
 ms.assetid: 14235a65-b1c5-409d-b6cc-a979acd54bbd
-ms.openlocfilehash: 8cb86621972423f55bfa18c60c1d4eb60cacb205
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 1179e7b235130e1967c79843b7a11f55622a01fb
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651044"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052050"
 ---
 # <a name="renaming-a-wcf-service"></a>Attribution d'un nouveau nom à un service WCF
 Cette rubrique décrit comment vous pouvez renommer un service Windows Communication Foundation (WCF).  
   
 ## <a name="renaming-a-wcf-service"></a>Attribution d'un nouveau nom à un service WCF  
- Procédez comme suit pour renommer un service dans un modèle de Windows Communication Foundation (WCF)  
+ Pour renommer un service dans un modèle Windows Communication Foundation (WCF), procédez comme suit :  
   
 - Modifiez le nom de la classe qui implémente le service.  
   
@@ -28,9 +27,9 @@ Cette rubrique décrit comment vous pouvez renommer un service Windows Communica
 </system.servicemodel>  
 ```  
   
-- Si votre service est hébergé sur le Web, il utilise un fichier *.svc. Ouvrez le fichier svc et modifiez le nom de votre service comme indiqué dans l'exemple suivant. Cette étape n'est pas nécessaire pour les applications auto-hébergées, puisqu'il n'y a pas de fichier svc.  
+- Si votre service est hébergé sur un serveur, il utilise un fichier * \* . svc* . Ouvrez le fichier svc et modifiez le nom de votre service comme indiqué dans l'exemple suivant. Cette étape n'est pas nécessaire pour les applications auto-hébergées, puisqu'il n'y a pas de fichier svc.  
   
-```  
+```aspx-csharp
 <%@ ServiceHost Service="WcfService.NewName">  
 ```  
   

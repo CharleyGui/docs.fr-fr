@@ -6,24 +6,23 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 3cc8644a-34f3-4082-9ddc-77623e4df2d8
-ms.openlocfilehash: b3113d9f3146e1590363dc9db6f751a429dda74b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: MT
+ms.openlocfilehash: c0c62f1999feaf591c512314515f01e83fa12591
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76747012"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052089"
 ---
 # <a name="hosting-win32-content-in-wpf"></a>Hébergement de contenu Win32 dans WPF
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Prérequis
 
 Consultez [interopérabilité WPF et Win32](wpf-and-win32-interoperation.md).
 
 ## <a name="a-walkthrough-of-win32-inside-windows-presentation-framework-hwndhost"></a>Procédure pas à pas de Win32 dans Windows Presentation Framework (HwndHost)
 
-Pour réutiliser du contenu Win32 à l’intérieur d' [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications, utilisez <xref:System.Windows.Interop.HwndHost>, qui est un contrôle qui donne à HWND un aspect [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu. Comme <xref:System.Windows.Interop.HwndSource>, <xref:System.Windows.Interop.HwndHost> est simple d’utilisation : dérivez de <xref:System.Windows.Interop.HwndHost> et implémentez les méthodes `BuildWindowCore` et `DestroyWindowCore`, puis instanciez votre classe dérivée <xref:System.Windows.Interop.HwndHost> et placez-la dans votre application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+Pour réutiliser du contenu Win32 dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] des applications, utilisez <xref:System.Windows.Interop.HwndHost> , qui est un contrôle qui donne à HWND un aspect similaire au [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu. Comme <xref:System.Windows.Interop.HwndSource> , <xref:System.Windows.Interop.HwndHost> est simple à utiliser : dérivez de <xref:System.Windows.Interop.HwndHost> et implémentez les `BuildWindowCore` `DestroyWindowCore` méthodes et, puis instanciez votre <xref:System.Windows.Interop.HwndHost> classe dérivée et placez-la dans votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.
 
-Si votre logique Win32 est déjà empaquetée en tant que contrôle, votre implémentation de `BuildWindowCore` n’est guère plus qu’un appel à `CreateWindow`. Par exemple, pour créer un contrôle LISTBOX Win32 dans C++:
+Si votre logique Win32 est déjà empaquetée en tant que contrôle, votre `BuildWindowCore` implémentation est légèrement plus simple qu’un appel à `CreateWindow` . Par exemple, pour créer un contrôle LISTBOX Win32 en C++ :
 
 ```cpp
 virtual HandleRef BuildWindowCore(HandleRef hwndParent) override {
@@ -46,25 +45,25 @@ virtual void DestroyWindowCore(HandleRef hwnd) override {
 }
 ```
 
-Mais supposons que le code Win32 n’est pas tout à fait autonome ? Dans ce cas, vous pouvez créer une boîte de dialogue Win32 et incorporer son contenu dans une plus grande [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application. L’exemple illustre cela dans Visual Studio et C++, bien qu’il soit également possible de le faire dans un autre langage ou sur la ligne de commande.
+Mais supposons que le code Win32 n’est pas tout à fait autonome ? Dans ce cas, vous pouvez créer une boîte de dialogue Win32 et incorporer son contenu dans une application plus volumineuse [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] . L’exemple illustre cela dans Visual Studio et C++, bien qu’il soit également possible de le faire dans un autre langage ou sur la ligne de commande.
 
-Démarrez avec une boîte de dialogue simple, qui est compilée dans un C++ projet dll.
+Démarrez avec une boîte de dialogue simple, qui est compilée dans un projet DLL C++.
 
-Ensuite, introduisez la boîte de dialogue dans le plus grand [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application :
+Ensuite, introduisez la boîte de dialogue dans l’application la plus volumineuse [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] :
 
-- Compiler la DLL comme gérée (`/clr`)
+- Compilez la DLL comme géré ( `/clr` )
 
 - Transformez la boîte de dialogue en contrôle
 
-- Définir la classe dérivée de <xref:System.Windows.Interop.HwndHost> avec des méthodes `BuildWindowCore` et `DestroyWindowCore`
+- Définir la classe dérivée de <xref:System.Windows.Interop.HwndHost> avec les `BuildWindowCore` `DestroyWindowCore` méthodes et
 
-- Substituer la méthode `TranslateAccelerator` pour gérer les touches de boîte de dialogue
+- Méthode override `TranslateAccelerator` pour gérer les touches de boîte de dialogue
 
-- Substituer la méthode `TabInto` pour prendre en charge la tabulation
+- Méthode override `TabInto` pour prendre en charge la tabulation
 
-- Substituer la méthode `OnMnemonic` pour prendre en charge les mnémoniques
+- Substituer la `OnMnemonic` méthode pour prendre en charge les mnémoniques
 
-- Instancie la sous-classe <xref:System.Windows.Interop.HwndHost> et la place sous l’élément [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de droite
+- Instancier la <xref:System.Windows.Interop.HwndHost> sous-classe et la placer sous l' [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] élément de droite
 
 ### <a name="turn-the-dialog-into-a-control"></a>Transformez la boîte de dialogue en contrôle
 
@@ -98,7 +97,7 @@ namespace ManagedCpp
     using namespace System::Runtime::InteropServices;
 ```
 
-Créez ensuite une classe dérivée de <xref:System.Windows.Interop.HwndHost> et substituez les méthodes `BuildWindowCore` et `DestroyWindowCore` :
+Créez ensuite une classe dérivée de <xref:System.Windows.Interop.HwndHost> et substituez `BuildWindowCore` les `DestroyWindowCore` méthodes et :
 
 ```cpp
 public ref class MyHwndHost : public HwndHost, IKeyboardInputSink {
@@ -120,7 +119,7 @@ public ref class MyHwndHost : public HwndHost, IKeyboardInputSink {
         }
 ```
 
-Ici, vous utilisez la `CreateDialog` pour créer la boîte de dialogue qui est vraiment un contrôle. Étant donné qu’il s’agit de l’une des premières méthodes appelées dans la DLL, vous devez également effectuer une initialisation Win32 standard en appelant une fonction que vous allez définir ultérieurement, appelée `InitializeGlobals()`:
+Ici, vous utilisez le `CreateDialog` pour créer la boîte de dialogue qui est vraiment un contrôle. Étant donné qu’il s’agit de l’une des premières méthodes appelées dans la DLL, vous devez également effectuer une initialisation Win32 standard en appelant une fonction que vous allez définir ultérieurement, appelée `InitializeGlobals()` :
 
 ```cpp
 bool initialized = false;
@@ -140,7 +139,7 @@ bool initialized = false;
 
 ### <a name="override-translateaccelerator-method-to-handle-dialog-keys"></a>Substituez la méthode TranslateAccelerator pour gérer les touches de boîte de dialogue
 
-Si vous avez exécuté cet exemple maintenant, vous obtiendriez un contrôle de boîte de dialogue qui s’affiche, mais il ignore tout le traitement du clavier qui fait apparaître une boîte de dialogue dans une boîte de dialogue fonctionnelle. Vous devez maintenant substituer l’implémentation de `TranslateAccelerator` (qui provient d' `IKeyboardInputSink`, une interface qui <xref:System.Windows.Interop.HwndHost> implémente). Cette méthode est appelée lorsque l’application reçoit WM_KEYDOWN et WM_SYSKEYDOWN.
+Si vous avez exécuté cet exemple maintenant, vous obtiendriez un contrôle de boîte de dialogue qui s’affiche, mais il ignore tout le traitement du clavier qui fait apparaître une boîte de dialogue dans une boîte de dialogue fonctionnelle. Vous devez maintenant remplacer l' `TranslateAccelerator` implémentation (qui provient de `IKeyboardInputSink` , une interface qui <xref:System.Windows.Interop.HwndHost> implémente). Cette méthode est appelée lorsque l’application reçoit WM_KEYDOWN et WM_SYSKEYDOWN.
 
 ```cpp
 #undef TranslateAccelerator
@@ -193,15 +192,15 @@ Si vous avez exécuté cet exemple maintenant, vous obtiendriez un contrôle de 
         }
 ```
 
-Il s’agit d’une grande quantité de code en une seule partie, afin de pouvoir utiliser des explications plus détaillées. Tout d’abord, le C++ code C++ utilisant les macros et. vous devez savoir qu’il existe déjà une macro nommée `TranslateAccelerator`, qui est définie dans winuser. h :
+Il s’agit d’une grande quantité de code en une seule partie, afin de pouvoir utiliser des explications plus détaillées. Tout d’abord, le code utilisant les macros C++ et C++; vous devez savoir qu’il existe déjà une macro nommée `TranslateAccelerator` , qui est définie dans winuser. h :
 
 ```cpp
 #define TranslateAccelerator  TranslateAcceleratorW
 ```
 
-Veillez donc à définir une méthode `TranslateAccelerator` et non une méthode `TranslateAcceleratorW`.
+Veillez donc à définir une `TranslateAccelerator` méthode et non une `TranslateAcceleratorW` méthode.
 
-De même, il existe à la fois le message winuser. h non managé et le struct `Microsoft::Win32::MSG` managé. Vous pouvez lever l’ambiguïté entre les deux à l' C++ aide de l’opérateur `::`.
+De même, il existe à la fois le message winuser. h et le struct managé non managés `Microsoft::Win32::MSG` . Vous pouvez lever l’ambiguïté entre les deux à l’aide de l' `::` opérateur C++.
 
 ```cpp
 virtual bool TranslateAccelerator(System::Windows::Interop::MSG% msg,
@@ -209,8 +208,9 @@ virtual bool TranslateAccelerator(System::Windows::Interop::MSG% msg,
 {
     ::MSG m = ConvertMessage(msg);
 }
+```
 
-Both MSGs have the same data, but sometimes it is easier to work with the unmanaged definition, so in this sample you can define the obvious conversion routine:
+Les deux messages ont les mêmes données, mais il est parfois plus facile de travailler avec la définition non gérée. par conséquent, dans cet exemple, vous pouvez définir la routine de conversion évidente :
 
 ```cpp
 ::MSG ConvertMessage(System::Windows::Interop::MSG% msg) {
@@ -231,7 +231,7 @@ Both MSGs have the same data, but sometimes it is easier to work with the unmana
 }
 ```
 
-Retour à `TranslateAccelerator`. Le principe de base consiste à appeler la fonction Win32 `IsDialogMessage` pour effectuer autant de travail que possible, mais `IsDialogMessage` n’a accès à rien en dehors de la boîte de dialogue. En tant qu’onglet utilisateur dans la boîte de dialogue, lorsque la tabulation s’exécute après le dernier contrôle dans notre boîte de dialogue, vous devez définir le focus sur la partie [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] en appelant `IKeyboardInputSite::OnNoMoreStops`.
+Retour à `TranslateAccelerator` . Le principe de base consiste à appeler la fonction Win32 `IsDialogMessage` pour faire autant de travail que possible, mais `IsDialogMessage` n’a accès à rien en dehors de la boîte de dialogue. En tant qu’onglet utilisateur dans la boîte de dialogue, lorsque la tabulation s’exécute au-delà du dernier contrôle dans notre boîte de dialogue, vous devez définir le focus sur la [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] partie en appelant `IKeyboardInputSite::OnNoMoreStops` .
 
 ```cpp
 // Win32's IsDialogMessage() will handle most of the tabbing, but doesn't know
@@ -253,7 +253,7 @@ if (m.message == WM_KEYDOWN && m.wParam == VK_TAB) {
 }
 ```
 
-Pour finir, appelez `IsDialogMessage`. Toutefois, l’une des responsabilités d’une méthode `TranslateAccelerator` est d’indiquer [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] si vous avez géré ou non la séquence de touches. Si vous ne l’avez pas gérée, l’événement d’entrée peut effectuer un tunneling et se propager dans le reste de l’application. Ici, vous allez exposer une particularité du traitement du messange du clavier et la nature de l’architecture d’entrée dans Win32. Malheureusement, `IsDialogMessage` ne retourne pas de la même façon qu’il gère une séquence de touches particulière. Pire encore, il appellera `DispatchMessage()` sur les séquences de touches qu’il ne devrait pas gérer !  Vous devez donc effectuer une ingénierie à rebours `IsDialogMessage`et l’appeler uniquement pour les clés que vous savez qu’il gérera :
+Pour finir, appelez `IsDialogMessage`. Toutefois, l’une des responsabilités d’une `TranslateAccelerator` méthode est d’indiquer [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] si vous avez géré ou non la séquence de touches. Si vous ne l’avez pas gérée, l’événement d’entrée peut effectuer un tunneling et se propager dans le reste de l’application. Ici, vous allez exposer une particularité du traitement du messange du clavier et la nature de l’architecture d’entrée dans Win32. Malheureusement, `IsDialogMessage` ne retourne pas de la même façon qu’il gère une séquence de touches particulière. Pire encore, il appellera `DispatchMessage()` sur les séquences de touches qu’il ne doit pas gérer.  Vous devez donc effectuer une ingénierie à rebours `IsDialogMessage` et l’appeler uniquement pour les clés que vous savez qu’il gérera :
 
 ```cpp
 // Only call IsDialogMessage for keys it will do something with.
@@ -278,7 +278,7 @@ if (msg.message == WM_SYSKEYDOWN || msg.message == WM_KEYDOWN) {
 
 ### <a name="override-tabinto-method-to-support-tabbing"></a>Remplacer la méthode TabInto pour prendre en charge la tabulation
 
-Maintenant que vous avez implémenté `TranslateAccelerator`, un utilisateur peut utiliser la touche TAB dans la boîte de dialogue et l’onglet dans l’application plus [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Toutefois, un utilisateur ne peut pas revenir à la boîte de dialogue. Pour résoudre ce qui se passe, vous devez remplacer `TabInto`:
+Maintenant que vous avez implémenté `TranslateAccelerator` , un utilisateur peut faire un pas à pas détaillé dans la boîte de dialogue et l’onglet dans l' [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application supérieure. Toutefois, un utilisateur ne peut pas revenir à la boîte de dialogue. Pour résoudre ce qui se passe, vous devez remplacer `TabInto` :
 
 ```cpp
 public:
@@ -295,11 +295,11 @@ public:
     }
 ```
 
-Le paramètre `TraversalRequest` vous indique si l’action de tabulation est un onglet de tabulation ou de décalage.
+Le `TraversalRequest` paramètre indique si l’action de tabulation est un onglet de tabulation ou de décalage.
 
 ### <a name="override-onmnemonic-method-to-support-mnemonics"></a>Remplacer la méthode OnMnemonic pour prendre en charge les mnémoniques
 
-La gestion du clavier est presque terminée, mais il manque une chose : les mnémoniques ne fonctionnent pas. Si un utilisateur appuie sur ALT-F, le focus Doe n’accède pas à la zone d’édition « prénom : ». Par conséquent, vous remplacez la méthode `OnMnemonic` :
+La gestion du clavier est presque terminée, mais il manque une chose : les mnémoniques ne fonctionnent pas. Si un utilisateur appuie sur ALT-F, le focus Doe n’accède pas à la zone d’édition « prénom : ». Par conséquent, vous devez substituer la `OnMnemonic` méthode :
 
 ```cpp
 virtual bool OnMnemonic(System::Windows::Interop::MSG% msg, ModifierKeys modifiers) override {
@@ -329,11 +329,11 @@ virtual bool OnMnemonic(System::Windows::Interop::MSG% msg, ModifierKeys modifie
 };
 ```
 
-Pourquoi ne pas appeler `IsDialogMessage` ici ?  Vous avez le même problème qu’auparavant : vous devez être en mesure d’informer [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] code si votre code a géré la séquence d’actions, et `IsDialogMessage` ne pouvez pas le faire. Il y a également un deuxième problème, car `IsDialogMessage` refuse de traiter le mnémonique si le HWND ayant le focus n’est pas à l’intérieur de la boîte de dialogue.
+Pourquoi ne pas appeler `IsDialogMessage` ici ?  Vous avez le même problème que précédemment : vous devez être en mesure d’indiquer au [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] code si votre code gérait ou non la séquence de touches, et `IsDialogMessage` ne peut pas le faire. Il y a également un deuxième problème, car `IsDialogMessage` refuse de traiter le mnémonique si le HWND ayant le focus n’est pas à l’intérieur de la boîte de dialogue.
 
 ### <a name="instantiate-the-hwndhost-derived-class"></a>Instancier la classe dérivée HwndHost
 
-Enfin, maintenant que toutes les prises en charge des touches et des onglets sont en place, vous pouvez placer vos <xref:System.Windows.Interop.HwndHost> dans l’application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] plus volumineuse. Si l’application principale est écrite en [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], le moyen le plus simple de la placer au bon endroit consiste à conserver un élément <xref:System.Windows.Controls.Border> vide dans lequel vous souhaitez placer le <xref:System.Windows.Interop.HwndHost>. Ici, vous créez un <xref:System.Windows.Controls.Border> nommé `insertHwndHostHere`:
+Enfin, maintenant que toutes les prises en charge des touches et des onglets sont en place, vous pouvez placer votre <xref:System.Windows.Interop.HwndHost> dans l’application plus grande [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] . Si l’application principale est écrite [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , le moyen le plus simple de la placer dans le bon endroit est de conserver un <xref:System.Windows.Controls.Border> élément vide à l’endroit où vous souhaitez placer le <xref:System.Windows.Interop.HwndHost> . Ici, vous créez un <xref:System.Windows.Controls.Border> nommé `insertHwndHostHere` :
 
 ```xaml
 <Window x:Class="WPFApplication1.Window1"
@@ -350,7 +350,7 @@ Enfin, maintenant que toutes les prises en charge des touches et des onglets son
 </Window>
 ```
 
-Tout cela reste à trouver un bon emplacement dans la séquence de code pour instancier le <xref:System.Windows.Interop.HwndHost> et le connecter au <xref:System.Windows.Controls.Border>. Dans cet exemple, vous allez le placer à l’intérieur du constructeur pour la classe dérivée <xref:System.Windows.Window> :
+Tout cela reste à trouver un bon emplacement dans la séquence de code pour instancier <xref:System.Windows.Interop.HwndHost> et le connecter à <xref:System.Windows.Controls.Border> . Dans cet exemple, vous allez le placer à l’intérieur du constructeur pour la <xref:System.Windows.Window> classe dérivée :
 
 ```csharp
 public partial class Window1 : Window {

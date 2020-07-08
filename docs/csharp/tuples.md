@@ -4,12 +4,11 @@ description: En savoir plus sur les types tuple nommés et sans nom en C#
 ms.date: 05/15/2018
 ms.technology: csharp-fundamentals
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 497f95811677c300e1fadad65eb495dced7f2da3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
-ms.translationtype: MT
+ms.openlocfilehash: 0fb6f043857a9932b7a86f773cce812e0fd49dcb
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84374614"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051855"
 ---
 # <a name="c-tuple-types"></a>Types tuple C#
 
@@ -46,7 +45,7 @@ Ces noms sont les seuls noms que vous pouvez utiliser pour les *tuples sans nom*
 Le tuple de l’exemple précédent a été initialisé à l’aide de constantes littérales et n’a pas de noms d’éléments créés à l’aide de *projections de nom de champ de tuple* en C# 7,1.
 
 Toutefois, quand vous initialisez un tuple, vous pouvez utiliser les nouvelles fonctionnalités de langage qui donnent de meilleurs noms aux différents champs. Cette opération crée un *tuple nommé*.
-Les tuples nommés ont toujours des éléments appelés `Item1`, `Item2`, `Item3`, etc.
+Les tuples nommés ont toujours des éléments nommés `Item1` , `Item2` , `Item3` , et ainsi de suite.
 Cependant, ils ont également des synonymes pour tous les éléments que vous avez nommés.
 Vous créez un tuple nommé en spécifiant le nom de chaque élément. Une méthode consiste à spécifier les noms dans le cadre de l’initialisation du tuple :
 
@@ -54,7 +53,7 @@ Vous créez un tuple nommé en spécifiant le nom de chaque élément. Une méth
 
 Ces synonymes sont gérés par le compilateur et le langage pour vous permettre d’utiliser efficacement les tuples nommés. Les IDE et les éditeurs peuvent lire ces noms sémantiques à l’aide des API Roslyn. Vous pouvez référencer les éléments d’un tuple nommé par ces noms sémantiques n’importe où dans le même assembly. Le compilateur remplace les noms que vous avez définis par les équivalents `Item*` lors de la génération de la sortie compilée. Le langage MSIL (Microsoft Intermediate Language) compilé n’inclut pas les noms que vous avez donnés à ces éléments.
 
-À partir de C# 7.1, les noms de champ d’un tuple peuvent être fournis à partir de variables utilisées pour initialiser le tuple. Ils sont appelés **[initialiseurs de projection de tuple](#tuple-projection-initializers)**. Le code suivant crée un tuple nommé `accumulation` avec les éléments `count` (un entier) et `sum` (un double).
+À partir de C# 7.1, les noms de champ d’un tuple peuvent être fournis à partir de variables utilisées pour initialiser le tuple. Le fait de fournir des noms de champs aux tuples est appelé **[initialiseurs de projection de tuple](#tuple-projection-initializers)**. Le code suivant crée un tuple nommé `accumulation` avec les éléments `count` (un entier) et `sum` (un double).
 
 [!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/program.cs#ProjectedTupleNames "Named tuple")]
 
@@ -110,11 +109,11 @@ Enfin, les tuples peuvent contenir des tuples imbriqués. L’égalité de tuple
 
 [!code-csharp-interactive[NestedTuples](../../samples/snippets/csharp/tuples/program.cs#SnippetNestedTuples "Tuples may contain nested tuples that participate in tuple equality.")]
 
-Comparer deux tuples pour vérifier leur égalité (ou leur inégalité) lorsqu’ils ont des formes différentes est une erreur de compilation. Le compilateur ne tentera pas de déconstruire des tuples imbriqués afin de les comparer.
+Il s’agit d’une erreur au moment de la compilation pour comparer deux tuples en cas d’égalité (ou d’inégalité) lorsqu’ils ont des formes différentes. Le compilateur ne tentera pas de déconstruire des tuples imbriqués afin de les comparer.
 
 ## <a name="assignment-and-tuples"></a>Affectation et tuples
 
-Le langage prend en charge l’affectation entre les types de tuples ayant le même nombre d’éléments, où chaque élément de la partie droite peut être converti implicitement en son élément correspondant de la partie gauche. D’autres conversions ne sont pas prises en compte pour les affectations. Affecter un tuple à un autre lorsqu’ils ont des formes différentes est une erreur de compilation. Le compilateur ne tentera pas de déconstruire des tuples imbriqués afin de les affecter.
+Le langage prend en charge l’affectation entre les types de tuples ayant le même nombre d’éléments, où chaque élément de la partie droite peut être converti implicitement en son élément correspondant de la partie gauche. D’autres conversions ne sont pas prises en compte pour les affectations. Il s’agit d’une erreur au moment de la compilation pour assigner un tuple à un autre lorsqu’ils ont des formes différentes. Le compilateur ne tentera pas de déconstruire des tuples imbriqués afin de les affecter.
 Examinons les types d’affectation qui sont autorisés entre les types tuple.
 
 Prenez en compte les variables utilisées dans les exemples suivants :
@@ -147,12 +146,12 @@ L’une des utilisations les plus courantes des tuples est en tant que valeur de
 
 > [!NOTE]
 > Ces exemples calculent l’écart-type empirique non corrigé.
-> La formule de l’écart-type empirique corrigé diviserait la somme des écarts au carré par rapport à la moyenne par (N-1) au lieu de N, comme avec la méthode d’extension `Average`. Pour plus d’informations sur les différences entre ces formules de calcul d’écart-type, consultez un texte de statistiques.
+> La formule de l’écart-type empirique corrigé diviserait la somme des écarts au carré par rapport à la moyenne par (N-1) au lieu de N, comme avec la méthode d’extension `Average`.
 
 Le code précédent utilise la formule classique de calcul de l’écart-type. Elle génère la réponse correcte, mais constitue une implémentation peu efficace. Cette méthode énumère deux fois la suite : une fois pour générer la moyenne et une fois pour générer la moyenne quadratique des écarts par rapport à la moyenne.
 (Souvenez-vous que les requêtes LINQ sont évaluées de manière différée, de sorte que le calcul des écarts par rapport à la moyenne et de la moyenne de ces écarts effectue une seule énumération.)
 
-Il existe une formule alternative qui calcule l’écart-type à l’aide d’une seule énumération de la suite.  Ce calcul génère deux valeurs en énumérant la suite : la somme de tous les éléments de la suite et la somme de chaque valeur au carré :
+Il existe une formule alternative qui calcule l’écart-type à l’aide d’une seule énumération de la suite.  Ce calcul produit deux valeurs lors de l’énumération de la séquence : la somme de tous les éléments de la séquence et la somme de chaque valeur au carré :
 
 [!code-csharp[SumOfSquaresFormula](../../samples/snippets/csharp/tuples/statistics.cs#06_SumOfSquaresFormula "Compute Standard Deviation using the sum of squares")]
 
