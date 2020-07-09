@@ -2,12 +2,12 @@
 title: Conception de validations dans la couche de modèle de domaine
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés des validations de modèle de domaine.
 ms.date: 10/08/2018
-ms.openlocfilehash: d2efc5f3b3267c4573409952791c6e883a01aae2
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 94df2d6441581fbbae479da2524d6ffce2037d68
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988503"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100910"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Concevoir des validations dans la couche du modèle de domaine
 
@@ -49,21 +49,21 @@ public void SetAddress(string line1, string line2,
 
 Si la valeur de l’état n’est pas valide, la première ligne d’adresse et la ville ont déjà été modifiées. Cela peut rendre l’adresse non valide.
 
-Une approche similaire peut être utilisée dans le constructeur de l’entité, ce qui soulève une exception pour s’assurer que l’entité est valide une fois qu’elle est créée.
+Une approche similaire peut être utilisée dans le constructeur de l’entité, en déclenchant une exception pour s’assurer que l’entité est valide une fois qu’elle a été créée.
 
 ### <a name="use-validation-attributes-in-the-model-based-on-data-annotations"></a>Utiliser des attributs de validation dans le modèle basé sur des annotations de données
 
-Les annotations de données, comme les attributs Required ou MaxLength, peuvent être utilisées pour configurer des propriétés de champ de base de données EF Core, comme expliqué en détail dans la section [Mappage de table](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping), mais [elles ne fonctionnent plus pour la validation des entités dans EF Core](https://github.com/dotnet/efcore/issues/3680) (tout comme la méthode <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType>), comme c’était le cas depuis EF 4.x dans .NET Framework.
+Les annotations de données, comme les attributs Required ou MaxLength, peuvent être utilisées pour configurer des propriétés de champ de base de données EF Core, comme expliqué en détail dans la section [Mappage de table](infrastructure-persistence-layer-implementation-entity-framework-core.md#table-mapping), mais [elles ne fonctionnent plus pour la validation des entités dans EF Core](https://github.com/dotnet/efcore/issues/3680) (tout comme la méthode <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType>), comme c’était le cas depuis EF 4.x dans .NET Framework.
 
-Les annotations <xref:System.ComponentModel.DataAnnotations.IValidatableObject> de données et l’interface peuvent toujours être utilisées pour la validation du modèle pendant la liaison du modèle, avant l’invocation des actions du contrôleur comme d’habitude, mais ce modèle est censé être un ViewModel ou DTO et c’est une préoccupation MVC ou API pas une préoccupation de modèle de domaine.
+Les annotations de données et l' <xref:System.ComponentModel.DataAnnotations.IValidatableObject> interface peuvent toujours être utilisées pour la validation du modèle lors de la liaison de modèle, avant l’invocation des actions du contrôleur, comme d’habitude, mais ce modèle est destiné à être un ViewModel ou un DTO, et il s’agit d’un problème de modèle de domaine ou d’API.
 
-La différence conceptuelle étant claire, vous pouvez toujours utiliser des annotations de données et `IValidatableObject` dans la classe d’entité pour la validation si vos actions reçoivent un paramètre d’objet de classe d’entité, ce qui n’est pas recommandé. Dans ce cas, la validation se fera sur la liaison du modèle, juste avant d’invoquer l’action et vous pouvez vérifier la propriété ModelState.IsValid du contrôleur pour vérifier le résultat, mais là encore, il se produit dans le contrôleur, pas avant de persister l’objet de l’entité dans le DbContext, comme il l’avait fait depuis EF 4.x.
+La différence conceptuelle étant claire, vous pouvez toujours utiliser des annotations de données et `IValidatableObject` dans la classe d’entité pour la validation si vos actions reçoivent un paramètre d’objet de classe d’entité, ce qui n’est pas recommandé. Dans ce cas, la validation se produit lors de la liaison de modèle, juste avant l’appel de l’action, et vous pouvez vérifier la propriété ModelState. IsValid du contrôleur pour vérifier le résultat, mais là encore, il se produit dans le contrôleur, et non pas avant de rendre persistant l’objet d’entité dans le DbContext, comme c’était le cas depuis EF 4. x.
 
-Vous pouvez toujours implémenter la validation personnalisée dans `IValidatableObject.Validate` la classe d’entités à l’aide d’annotations de données et de la méthode, en dépassant la méthode SaveChanges de DbContext.
+Vous pouvez toujours implémenter une validation personnalisée dans la classe d’entité à l’aide d’annotations de données et de la `IValidatableObject.Validate` méthode, en substituant la méthode SaveChanges de DbContext.
 
-Vous pouvez voir un exemple d’implémentation pour la validation d’entités `IValidatableObject` dans [ce commentaire sur GitHub](https://github.com/dotnet/efcore/issues/3680#issuecomment-155502539). Cet échantillon ne fait pas de validations basées sur des attributs, mais ils devraient être faciles à implémenter à l’aide de la réflexion dans la même dérogation.
+Vous pouvez voir un exemple d’implémentation pour la validation d’entités `IValidatableObject` dans [ce commentaire sur GitHub](https://github.com/dotnet/efcore/issues/3680#issuecomment-155502539). Cet exemple n’effectue pas de validations basées sur les attributs, mais il doit être facile à implémenter à l’aide de la réflexion dans le même remplacement.
 
-Cependant, du point de vue du DDD, le modèle de domaine est mieux gardé maigre avec l’utilisation d’exceptions dans les méthodes de comportement de votre entité, ou en mettant en œuvre les modèles de spécification et de notification pour faire respecter les règles de validation.
+Toutefois, du point de vue DDD, le modèle de domaine est mieux conservé avec l’utilisation d’exceptions dans les méthodes de comportement de votre entité, ou en implémentant les modèles de spécification et de notification pour appliquer des règles de validation.
 
 Il peut être judicieux d’utiliser des annotations de données au niveau de la couche Application dans les classes ViewModel (plutôt que des entités de domaine) qui accepteront des entrées, pour permettre la validation de modèle dans la couche d’interface utilisateur. Toutefois, cela ne doit pas être effectué à l’exclusion de la validation dans le modèle de domaine.
 
@@ -85,27 +85,27 @@ En utilisant la validation de champ avec des annotations de données, par exempl
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Rachel Appel. Introduction à la validation du modèle dans ASP.NET Core MVC** \
+- **Rachel appel. Présentation de la validation de modèle dans ASP.NET Core MVC** \
   <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
 
-- **Rick Anderson. Ajout de validation** \
+- **Rick Anderson. Ajout de la validation** \
   <https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation>
 
-- **Martin Fowler. Remplacement des exceptions de lancement par notification dans les validations** \
+- **Martin Fowler. Remplacement des exceptions levées par notification dans les validations** \
   <https://martinfowler.com/articles/replaceThrowWithNotification.html>
 
-- **Modèles de spécifications et de notification** \
+- **Modèles de spécification et de notification** \
   <https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns>
 
-- **Lev Gorodinski. Validation dans le design piloté par domaine (DDD)** \
+- **Lev Gorodinski. Validation dans la conception pilotée par domaine (DDD)** \
   <http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/>
 
-- **Colin Jack. Validation du modèle de domaine** \
+- **Le Jack Colin. Validation du modèle de domaine** \
   <https://colinjack.blogspot.com/2008/03/domain-model-validation.html>
 
-- **Jimmy Bogard. Validation dans un monde DDD** \
+- **Jimmy bogard. Validation dans un monde DDD** \
   <https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/>
 
 > [!div class="step-by-step"]
-> [Suivant précédent](enumeration-classes-over-enum-types.md)
-> [Next](client-side-validation.md)
+> [Précédent](enumeration-classes-over-enum-types.md) 
+>  [Suivant](client-side-validation.md)

@@ -1,13 +1,16 @@
 ---
 title: Choix entre les types de tuples et anonymes
 description: Découvrez quand il est approprié de choisir entre les types anonymes et le type de Tuple.
+author: IEvangelist
+ms.author: dapine
 ms.date: 07/01/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 2f927b59d7206dd0f405c11529f93b56a1c778a0
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 9140250ad1f48501bf1d2e53a1c179e6823f19cd
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86052076"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100962"
 ---
 # <a name="choosing-between-anonymous-and-tuple-types"></a>Choix entre les types de tuples et anonymes
 
@@ -102,7 +105,7 @@ Vous souhaiterez peut-être toujours utiliser <xref:System.ValueTuple> <xref:Sys
 
 ### <a name="key-differences"></a>Différences clés
 
-| Name                     | Modificateur d’accès  | Type     | Nom du membre personnalisé | Prise en charge de la déconstruction | Prise en charge de l’arborescence d’expressions |
+| Nom                     | Modificateur d’accès  | Type     | Nom du membre personnalisé | Prise en charge de la déconstruction | Prise en charge de l’arborescence d’expressions |
 |--------------------------|-----------------|----------|----------------------|------------------------|-------------------------|
 | Types anonymes          | `internal`      | `class`  | ✔️                   | ❌                     | ✔️                     |
 | <xref:System.Tuple>      | `public`        | `class`  | ❌                   | ❌                     | ✔️                     |

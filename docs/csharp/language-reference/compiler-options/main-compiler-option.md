@@ -10,6 +10,7 @@ helpviewer_keywords:
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
 ms.openlocfilehash: 1de3d51953b632e3881db76202b63d3f287b39fe
 ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 07/07/2020
 ms.locfileid: "86051868"
@@ -29,7 +30,7 @@ Cette option spécifie la classe qui contient le point d’entrée du programme 
  Type contenant la méthode **Main**.  
  Le nom de classe fourni doit être complet, c’est-à-dire qu’il doit inclure l’espace de noms complet contenant la classe, suivi du nom de classe. Par exemple, si la méthode `Main` se trouve dans la classe `Program` dans l’espace de noms `MyApplication.Core`, l’option du compilateur doit être `-main:MyApplication.Core.Program`.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Si votre compilation comprend plusieurs types avec une méthode [Main](../../programming-guide/main-and-command-args/index.md), vous pouvez spécifier le type qui contient la méthode **Main** à utiliser comme point d’entrée dans le programme.
 

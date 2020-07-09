@@ -3,12 +3,12 @@ title: Sécurisation des microservices .NET et des applications web
 description: 'Sécurité dans les microservices .NET et les applications web : Découvrez les options d’authentification dans les applications web ASP.NET Core.'
 author: mjrousos
 ms.date: 01/30/2020
-ms.openlocfilehash: 56ebd95c8a24c7c8d30d3c6acef6650cb63383c6
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 2b503b326d1869ae095f9b177c04389bda9fe46c
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988113"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100780"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Sécuriser les microservices .NET et les applications web
 
@@ -16,17 +16,17 @@ La sécurité dans les microservices et les applications web est un sujet tellem
 
 ## <a name="implement-authentication-in-net-microservices-and-web-applications"></a>Implémenter l’authentification dans les microservices .NET et les applications web
 
-Il est souvent nécessaire de limiter l’accès aux ressources et aux API publiées par un service à certains utilisateurs ou clients approuvés. La première étape d’une telle décision d’approbation au niveau des API passe par l’authentification. L’authentification est le processus de vérification fiable de l’identité d’un utilisateur.
+Il est souvent nécessaire de limiter l’accès aux ressources et aux API publiées par un service à certains utilisateurs ou clients approuvés. La première étape d’une telle décision d’approbation au niveau des API passe par l’authentification. L’authentification est le processus qui consiste à vérifier de manière fiable l’identité d’un utilisateur.
 
 Dans les scénarios de microservices, l’authentification est généralement gérée de manière centralisée. Si vous utilisez une passerelle d’API, celle-ci est parfaitement indiquée pour l’authentification, comme l’illustre la figure 9-1. Si vous utilisez cette approche, vérifiez que les différents microservices ne sont pas directement accessibles (sans la passerelle d’API), à moins qu’un dispositif de sécurité supplémentaire ait été mis en place pour authentifier les messages en provenance ou non de la passerelle.
 
-![Diagramme montrant comment l’application mobile client interagit avec le backend.](./media/index/api-gateway-centralized-authentication.png)
+![Diagramme montrant comment l’application mobile cliente interagit avec le serveur principal.](./media/index/api-gateway-centralized-authentication.png)
 
 **Figure 9-1**. authentification centralisée avec une passerelle d’API
 
-Lorsque la passerelle d’API centralise l’authentification, elle ajoute des informations utilisateur quand les demandes sont transférées aux microservices. Si les services sont accessibles directement, un service d’authentification, comme Azure Active Directory ou un microservice d’authentification dédié faisant office de service d’émission de jeton de sécurité (STS), peut être utilisé pour authentifier les utilisateurs. Les décisions d’approbation sont partagées entre les services à l’aide de jetons de sécurité ou de cookies. (Ces jetons peuvent être partagés entre ASP.NET applications Core, si nécessaire, en implémentant le partage de [cookies](/aspnet/core/security/cookie-sharing).) Ce modèle est illustré dans la figure 9-2.
+Lorsque la passerelle d’API centralise l’authentification, elle ajoute des informations utilisateur quand les demandes sont transférées aux microservices. Si les services sont accessibles directement, un service d’authentification, comme Azure Active Directory ou un microservice d’authentification dédié faisant office de service d’émission de jeton de sécurité (STS), peut être utilisé pour authentifier les utilisateurs. Les décisions d’approbation sont partagées entre les services à l’aide de jetons de sécurité ou de cookies. (Ces jetons peuvent être partagés entre ASP.NET Core applications, si nécessaire, en implémentant le [partage de cookies](/aspnet/core/security/cookie-sharing).) Ce modèle est illustré dans la figure 9-2.
 
-![Diagramme montrant l’authentification par les microservices de backend.](./media/index/identity-microservice-authentication.png)
+![Diagramme montrant l’authentification via les microservices backend.](./media/index/identity-microservice-authentication.png)
 
 **Figure 9-2**. authentification par un microservice d’identité ; l’approbation est partagée à l’aide d’un jeton d’autorisation
 
@@ -34,12 +34,12 @@ Quand les microservices sont accessibles directement, l’approbation, qui compr
 
 ### <a name="authenticate-with-aspnet-core-identity"></a>S’authentifier avec ASP.NET Core Identity
 
-Le principal mécanisme de ASP.NET Core pour identifier les utilisateurs d’une application est le [système d’adhésion ASP.NET Core Identity.](/aspnet/core/security/authentication/identity) ASP.NET Core Identity stocke les informations utilisateur (notamment les revendications, les rôles et les informations de connexion) dans un magasin de données configuré par le développeur. En règle générale, le magasin de données d’ASP.NET Core Identity est un magasin Entity Framework fourni dans le package `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. Cependant, il est possible d’utiliser des magasins personnalisés ou d’autres packages tiers pour stocker les informations d’identité dans Stockage Table Azure, CosmosDB ou à d’autres emplacements.
+Le mécanisme principal de ASP.NET Core pour identifier les utilisateurs d’une application est l’ASP.NET Core système d’appartenance aux [identités](/aspnet/core/security/authentication/identity) . ASP.NET Core Identity stocke les informations utilisateur (notamment les revendications, les rôles et les informations de connexion) dans un magasin de données configuré par le développeur. En règle générale, le magasin de données d’ASP.NET Core Identity est un magasin Entity Framework fourni dans le package `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. Cependant, il est possible d’utiliser des magasins personnalisés ou d’autres packages tiers pour stocker les informations d’identité dans Stockage Table Azure, CosmosDB ou à d’autres emplacements.
 
 > [!TIP]
-> ASP.NET Core 2.1 et fournit plus tard [ASP.NET Core Identity](/aspnet/core/security/authentication/identity) en tant que razor Class [Library](/aspnet/core/razor-pages/ui-class), de sorte que vous ne verrez pas beaucoup de code nécessaire dans votre projet, comme ce fut le cas pour les versions précédentes. Pour plus de détails sur la façon de personnaliser le code d’identité en fonction de vos besoins, voir [Scaffold Identity dans ASP.NET projets Core](/aspnet/core/security/authentication/scaffold-identity).
+> ASP.NET Core 2,1 et versions ultérieures fournissent [ASP.net Core identité](/aspnet/core/security/authentication/identity) comme [bibliothèque de classes Razor](/aspnet/core/razor-pages/ui-class). vous ne verrez donc pas la majeure partie du code nécessaire dans votre projet, comme c’était le cas pour les versions précédentes. Pour plus d’informations sur la personnalisation du code d’identité en fonction de vos besoins, consultez l’article [identification de l’échafaudage dans des projets ASP.net Core](/aspnet/core/security/authentication/scaffold-identity).
 
-Le code suivant est tiré du modèle de projet ASP.NET Core Web Application MVC 3.1 avec l’authentification individuelle du compte utilisateur sélectionnée. Il montre comment configurer ASP.NET’identité de base `Startup.ConfigureServices` en utilisant Le noyau cadre d’entité dans la méthode.
+Le code suivant est extrait du modèle de projet ASP.NET Core application Web MVC 3,1 avec l’authentification de compte d’utilisateur individuelle sélectionnée. Il montre comment configurer ASP.NET Core identité à l’aide de Entity Framework Core dans la `Startup.ConfigureServices` méthode.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -57,7 +57,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Une fois que ASP.NET’identité de base est configurée, vous l’activez en ajoutant le `app.UseAuthentication()` code suivant dans `endpoints.MapRazorPages()` la méthode du `Startup.Configure` service :
+Une fois ASP.NET Core identité configurée, vous pouvez l’activer en ajoutant le `app.UseAuthentication()` et `endpoints.MapRazorPages()` comme indiqué dans le code suivant dans la `Startup.Configure` méthode du service :
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -77,15 +77,15 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 ```
 
 > [!IMPORTANT]
-> Les lignes du code de précédage **DOIVENT être DANS l’ORDRE SHOWN** pour que l’identité fonctionne correctement.
+> Les lignes du code précédent **doivent être dans l’ordre indiqué** pour que l’identité fonctionne correctement.
 
 L’utilisation d’ASP.NET Core Identity autorise plusieurs scénarios :
 
 - Création d’informations utilisateur à l’aide du type UserManager (userManager.CreateAsync).
 
-- Authentification des utilisateurs à l’aide du type SignInManager. Vous pouvez `signInManager.SignInAsync` utiliser pour vous `signInManager.PasswordSignInAsync` connecter directement, ou pour confirmer que le mot de passe de l’utilisateur est correct, puis les connecter.
+- Authentification des utilisateurs à l’aide du type SignInManager. Vous pouvez utiliser `signInManager.SignInAsync` pour vous connecter directement, ou `signInManager.PasswordSignInAsync` pour confirmer que le mot de passe de l’utilisateur est correct, puis les signer.
 
-- Identifiez un utilisateur en fonction des informations stockées dans un cookie (qui est lu par ASP.NET Core Identity middleware) afin que les demandes ultérieures d’un navigateur incluront l’identité et les revendications d’un utilisateur connecté.
+- Identifiez un utilisateur en fonction des informations stockées dans un cookie (qui est lu par ASP.NET Core middleware d’identité) afin que les demandes suivantes d’un navigateur incluent l’identité et les revendications d’un utilisateur connecté.
 
 Par ailleurs, ASP.NET Core Identity prend en charge l’[authentification à deux facteurs](/aspnet/core/security/authentication/2fa).
 
@@ -95,7 +95,7 @@ Pour les scénarios d’authentification qui utilisent un magasin de données ut
 
 ASP.NET Core prend aussi en charge l’utilisation de [fournisseurs d’authentification externes](/aspnet/core/security/authentication/social/) pour permettre aux utilisateurs de se connecter via des flux [OAuth 2.0](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2). Cela signifie que les utilisateurs peuvent se connecter en utilisant les processus d’authentification existants de certains fournisseurs, tels que Microsoft, Google, Facebook ou Twitter, et associer ces identités à une identité ASP.NET Core dans votre application.
 
-Pour utiliser l’authentification externe, en plus d’inclure l’authentification middleware comme mentionné précédemment, en utilisant la `app.UseAuthentication()` méthode, vous devez également enregistrer le fournisseur externe comme `Startup` indiqué dans l’exemple suivant:
+Pour utiliser l’authentification externe, en plus de l’intégration de l’intergiciel (middleware) d’authentification comme mentionné précédemment, à l’aide de la `app.UseAuthentication()` méthode, vous devez également inscrire le fournisseur externe dans `Startup` comme indiqué dans l’exemple suivant :
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -126,23 +126,23 @@ Les fournisseurs d’authentification externes courants et les packages NuGet qu
 | **Facebook**  | **Microsoft.AspNetCore.Authentication.Facebook**         |
 | **Twitter**   | **Microsoft.AspNetCore.Authentication.Twitter**          |
 
-Dans tous les cas, vous devez effectuer une procédure d’enregistrement des demandes qui dépend du fournisseur et qui implique habituellement :
+Dans tous les cas, vous devez effectuer une procédure d’inscription d’application qui dépend du fournisseur et qui implique généralement :
 
-1. Obtenir une pièce d’identité d’application client.
-2. Obtenir un secret d’application client.
-3. Configurer une URL de redirection, qui est gérée par le middleware d’autorisation et le fournisseur enregistré
-4. Optionnellement, configurer une URL de signature pour gérer correctement le signe dans un seul signe sur (SSO) scénario.
+1. Obtention d’un ID d’application cliente.
+2. Obtention d’un secret d’application cliente.
+3. Configuration d’une URL de redirection, gérée par l’intergiciel (middleware) d’autorisation et le fournisseur inscrit
+4. Si vous le souhaitez, vous pouvez configurer une URL de déconnexion pour gérer correctement la déconnexion dans un scénario d’authentification unique (SSO).
 
-Pour plus de détails sur la configuration de votre application pour un fournisseur externe, consultez [l’authentification du fournisseur externe dans la documentation ASP.NET Core](/aspnet/core/security/authentication/social/)).
+Pour plus d’informations sur la configuration de votre application pour un fournisseur externe, voir [authentification du fournisseur externe dans la documentation ASP.net Core](/aspnet/core/security/authentication/social/)).
 
 >[!TIP]
->Tous les détails sont gérés par l’autorisation middleware et les services mentionnés précédemment. Ainsi, vous n’avez qu’à choisir **l’option** d’authentification de compte utilisateur individuel lorsque vous créez le projet d’application Web ASP.NET Code dans Visual Studio, comme le montre la figure 9-3, en plus d’enregistrer les fournisseurs d’authentification mentionnés précédemment.
+>Tous les détails sont traités par l’intergiciel et les services d’autorisation mentionnés précédemment. Par conséquent, il vous suffit de choisir l’option d’authentification du **compte d’utilisateur individuel** lorsque vous créez le projet d’application Web de code ASP.net dans Visual Studio, comme le montre la figure 9-3, en plus de l’inscription des fournisseurs d’authentification mentionnés précédemment.
 
-![Capture d’écran du dialogue New ASP.NET Core Web Application.](./media/index/select-individual-user-account-authentication-option.png)
+![Capture d’écran de la boîte de dialogue Nouvelle ASP.NET Core application Web.](./media/index/select-individual-user-account-authentication-option.png)
 
-**Figure 9-3**. Sélection de l’option Comptes utilisateur individuels, pour l’utilisation de l’authentification externe, lors de la création d’un projet d’application web dans Visual Studio 2019.
+**Figure 9-3**. Sélection de l’option comptes d’utilisateur individuels, pour l’utilisation de l’authentification externe, lors de la création d’un projet d’application Web dans Visual Studio 2019.
 
-Outre les fournisseurs d’authentification externe mentionnés ci-dessus, il existe des packages tiers qui proposent un intergiciel permettant l’utilisation d’un nombre bien plus important de fournisseurs d’authentification externe. Pour une liste, voir le référentiel [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src) sur GitHub.
+Outre les fournisseurs d’authentification externe mentionnés ci-dessus, il existe des packages tiers qui proposent un intergiciel permettant l’utilisation d’un nombre bien plus important de fournisseurs d’authentification externe. Pour obtenir une liste, consultez le référentiel [Aspnet. Security. OAuth. Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src) sur GitHub.
 
 Vous pouvez également créer votre propre middleware d’authentification externe pour répondre à des besoins particuliers.
 
@@ -215,7 +215,7 @@ Si vous préférez émettre des jetons de sécurité pour les utilisateurs locau
 
 [IdentityServer4](https://github.com/IdentityServer/IdentityServer4) et [OpenIddict](https://github.com/openiddict/openiddict-core) sont des fournisseurs OpenID Connect qui s’intègrent facilement à ASP.NET Core Identity pour vous permettre d’émettre des jetons de sécurité à partir d’un service ASP.NET Core. La [documentation IdentityServer4](https://identityserver4.readthedocs.io/en/latest/) explique en détail comment utiliser la bibliothèque. Ceci étant, voici sommairement comment émettre des jetons à l’aide d’IdentityServer4 :
 
-1. Vous appelez l’application. UtilisezIdentityServer dans la méthode Startup.Configure pour ajouter IdentityServer4 au pipeline de traitement des demandes HTTP de l’application. Cela permet à la bibliothèque de remettre les requêtes aux points de terminaison OpenID Connect et OAuth2 comme connect/token.
+1. Vous appelez l’application. UseIdentityServer dans la méthode urer Startup.Configpour ajouter IdentityServer4 au pipeline de traitement de requête HTTP de l’application. Cela permet à la bibliothèque de remettre les requêtes aux points de terminaison OpenID Connect et OAuth2 comme connect/token.
 
 2. Configurez IdentityServer4 dans Startup.ConfigureServices en effectuant un appel à services.AddIdentityServer.
 
@@ -305,19 +305,19 @@ L’intergiciel d’authentification du porteur JWT peut aussi prendre en charge
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Partager des cookies entre les applications** \
+- **Partage des cookies entre applications** \
   [https://docs.microsoft.com/aspnet/core/security/cookie-sharing](/aspnet/core/security/cookie-sharing)
 
-- **Introduction à l’identité** \
+- **Présentation de l’identité** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/identity](/aspnet/core/security/authentication/identity)
 
 - **Rick Anderson. Authentification à deux facteurs avec SMS** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/2fa](/aspnet/core/security/authentication/2fa)
 
-- **Permettre l’authentification à l’aide de Facebook, Google et d’autres fournisseurs externes** \
+- **Activation de l’authentification à l’aide de Facebook, Google et d’autres fournisseurs externes** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/social/](/aspnet/core/security/authentication/social/)
 
-- **Michell Anicas. Une introduction à OAuth 2** \
+- **Michell Anicas. Présentation d’OAuth 2** \
   <https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2>
 
 - **AspNet.Security.OAuth.Providers** (référentiel GitHub pour fournisseurs d’autorisation OAuth ASP.NET) \
@@ -327,5 +327,5 @@ L’intergiciel d’authentification du porteur JWT peut aussi prendre en charge
   <https://identityserver4.readthedocs.io/en/latest/>
 
 >[!div class="step-by-step"]
->[Suivant précédent](../implement-resilient-applications/monitor-app-health.md)
->[Next](authorization-net-microservices-web-applications.md)
+>[Précédent](../implement-resilient-applications/monitor-app-health.md) 
+> [Suivant](authorization-net-microservices-web-applications.md)

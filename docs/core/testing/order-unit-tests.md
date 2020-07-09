@@ -2,14 +2,15 @@
 title: Trier les tests unitaires
 description: Découvrez comment commander des tests unitaires avec .NET Core.
 author: IEvangelist
+ms.author: dapine
 ms.date: 05/18/2020
 zone_pivot_groups: unit-testing-framework-set-one
-ms.openlocfilehash: 3400ae440a828054624d67c14807ee72783e466a
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: eb426b790e0623b0cf233a763e93d2bd501b8034
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84989262"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100819"
 ---
 # <a name="order-unit-tests"></a>Trier les tests unitaires
 

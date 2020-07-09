@@ -1,6 +1,8 @@
 ---
 title: Implémenter une méthode DisposeAsync
 description: ''
+author: IEvangelist
+ms.author: dapine
 ms.date: 06/02/2020
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +10,12 @@ dev_langs:
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: c4f541d5a4f5b5fd31b344a299789d86cd78424c
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 31c4cc9136862551e02fae030e38ebd6c2916a38
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84311013"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100923"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implémenter une méthode DisposeAsync
 
@@ -62,7 +64,7 @@ Toutes les classes non-sealed doivent être considérées comme une classe de ba
 
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/disposeasync.cs":::
 
-L’exemple précédent utilisait <xref:System.Text.Json.Utf8JsonWriter> , pour plus d’informations sur `System.Text.Json` , consultez [migrer de Newtonsoft. JSON vers System. Text. JSON](../serialization/system-text-json-migrate-from-newtonsoft-how-to.md).
+L’exemple précédent utilisait le <xref:System.Text.Json.Utf8JsonWriter> , pour plus d’informations sur `System.Text.Json` , consultez [migrer à partir de Newtonsoft.Jssur System.Text.Jssur](../serialization/system-text-json-migrate-from-newtonsoft-how-to.md).
 
 ## <a name="using-async-disposable"></a>Utilisation de Async jetable
 

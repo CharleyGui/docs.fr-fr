@@ -2,14 +2,17 @@
 title: Vue d’ensemble de .NET Core
 description: Découvrez les caractéristiques et la composition de .NET Core et comparez-les à d’autres implémentations de .NET.
 ms.date: 03/26/2020
-ms.openlocfilehash: e57451968ed8c4d5457acea084d3c6c9f998b8da
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: d5ef79fe5a8fbb56beae77edd01830fe6561fa51
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144524"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100728"
 ---
 # <a name="net-core-overview"></a>Vue d’ensemble de .NET Core
+
+> [!div class="button"]
+> [Télécharger .NET Core](https://dotnet.microsoft.com/download)
 
 .NET Core a les caractéristiques suivantes :
 
@@ -21,7 +24,7 @@ ms.locfileid: "84144524"
 - **Outils en ligne de commande :**  Comprend des outils en ligne de commande faciles à utiliser qui peuvent être utilisés pour le développement local et pour une intégration continue.
 - **Déploiement flexible :** Vous pouvez inclure .NET Core dans votre application ou l’installer côte à côte (installations à l’utilisateur ou à l’ensemble du système). Peut être utilisé avec des [conteneurs Docker](docker/introduction.md).
 
-## <a name="languages"></a>Languages
+## <a name="languages"></a>Langages
 
 Les langages [C#](../csharp/index.yml), [Visual Basic](../visual-basic/index.yml)et [F #](../fsharp/index.yml) peuvent être utilisés pour écrire des applications et des bibliothèques pour .net core. Ces langues peuvent être utilisées dans votre éditeur de texte ou votre environnement de développement intégré (IDE), notamment :
 

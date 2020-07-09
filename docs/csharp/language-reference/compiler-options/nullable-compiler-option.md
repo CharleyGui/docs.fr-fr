@@ -1,5 +1,7 @@
 ---
 title: -Nullable (options du compilateur C#)
+author: IEvangelist
+ms.author: dapine
 ms.date: 06/04/2020
 f1_keywords:
 - /nullable
@@ -7,12 +9,12 @@ helpviewer_keywords:
 - nullable compiler option [C#]
 - /nullable compiler option [C#]
 - -nullable compiler option [C#]
-ms.openlocfilehash: 7454bb316507c3aaea208094127552712421dff6
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: f1aba7e08f472411640d42f51d78ca6f7e5cc900
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990133"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100884"
 ---
 # <a name="-nullable-c-compiler-options"></a>-Nullable (options du compilateur C#)
 
@@ -33,7 +35,7 @@ Si `+` vous spécifiez, ou uniquement **null**,, le compilateur active le contex
 `enable`&#124; `disable` &#124; `warnings` &#124;`annotations`  
 Spécifie l’option de contexte Nullable. Semblable à `+` ou `-` , pour activer et désactiver, mais permet une plus grande granularité de la spécificité du contexte Nullable. L' `enable` argument, qui est en effet le même que si vous spécifiez **-Nullable**, active le contexte Nullable. La spécification de `disable` désactive le contexte Nullable. Lorsque vous fournissez l' `warnings` argument, **-Nullable : Warnings**, le contexte d’avertissement Nullable est activé. Lors de la spécification de l' `annotations` argument, **-Nullable : annotations**, le contexte d’annotation Nullable est activé.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 L’analyse de Flow permet de déduire la possibilité de valeur null des variables au sein du code exécutable. La possibilité de valeur null déduite d’une variable est indépendante de la possibilité de valeur null déclarée de la variable. Les appels de méthode sont analysés même s’ils sont omis conditionnellement. Par exemple, <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> en mode release.
 

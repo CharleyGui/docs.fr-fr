@@ -14,6 +14,7 @@ helpviewer_keywords:
 ms.assetid: 99ae44f1-783e-49a9-9009-24f54bbd0f09
 ms.openlocfilehash: a17427d117c62ba782af3c9549c84623a3013b06
 ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 07/07/2020
 ms.locfileid: "86051738"
@@ -33,7 +34,7 @@ L'Assistant Débogage managé `invalidFunctionPointerInDelegate` est activé qua
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
  Pointeur de fonction non valide.  
   
 ## <a name="configuration"></a>Configuration  
