@@ -1,5 +1,6 @@
 ---
 title: Types de bitmaps
+description: En savoir plus sur les types de bitmaps et les formats de fichiers graphiques GDI+ pris en charge, notamment BMP, JPG, GIF, PNG et TIFF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - jpeg files
@@ -20,12 +21,12 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], file format
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
-ms.openlocfilehash: 2243c9ce2d8ba741143d301c38e8b88d7b196c98
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 09b74ef476467b0bba5aac1f58db278b3898ef17
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914822"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174677"
 ---
 # <a name="types-of-bitmaps"></a>Types de bitmaps
 Une image bitmap est un tableau de bits qui spécifient la couleur de chaque pixel dans un tableau rectangulaire de pixels. Le nombre de bits consacrés à un pixel individuel détermine le nombre de couleurs qui peuvent être affectées à ce pixel. Par exemple, si chaque pixel est représenté par 4 bits, un pixel donné peut se voir assigner l’une des 16 couleurs différentes (2 ^ 4 = 16). Le tableau suivant présente quelques exemples du nombre de couleurs qui peuvent être assignées à un pixel représenté par un nombre donné de bits.  
@@ -39,9 +40,9 @@ Une image bitmap est un tableau de bits qui spécifient la couleur de chaque pix
 |16|2^16 = 65,536|  
 |24|2^24 = 16,777,216|  
   
- Les fichiers de disque qui stockent des bitmaps contiennent généralement un ou plusieurs blocs d’informations qui stockent des informations telles que le nombre de bits par pixel, le nombre de pixels dans chaque ligne et le nombre de lignes dans le tableau. Un tel fichier peut également contenir une table des couleurs (parfois appelée palette de couleurs). Une table des couleurs associe les nombres de la bitmap à des couleurs spécifiques. L’illustration suivante montre une image agrandie ainsi que ses tables bitmap et couleur. Chaque pixel étant représenté par un nombre de 4 bits, il y a 2 ^ 4 = 16 couleurs dans la table des couleurs. Chaque couleur de la table est représentée par un nombre 24 bits: 8 bits pour le rouge, 8 bits pour le vert et 8 bits pour le bleu. Les nombres sont affichés au format hexadécimal (base 16): A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.  
+ Les fichiers de disque qui stockent des bitmaps contiennent généralement un ou plusieurs blocs d’informations qui stockent des informations telles que le nombre de bits par pixel, le nombre de pixels dans chaque ligne et le nombre de lignes dans le tableau. Un tel fichier peut également contenir une table des couleurs (parfois appelée palette de couleurs). Une table des couleurs associe les nombres de la bitmap à des couleurs spécifiques. L’illustration suivante montre une image agrandie ainsi que ses tables bitmap et couleur. Chaque pixel étant représenté par un nombre de 4 bits, il y a 2 ^ 4 = 16 couleurs dans la table des couleurs. Chaque couleur de la table est représentée par un nombre de 24 bits : 8 bits pour le rouge, 8 bits pour le vert et 8 bits pour le bleu. Les nombres sont affichés au format hexadécimal (base 16) : A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.  
   
- ![Exemple bitmap](./media/aboutgdip03-art01.gif "AboutGdip03_Art01")  
+ ![Exemple de bitmap](./media/aboutgdip03-art01.gif "AboutGdip03_Art01")  
   
  Examinez le pixel de la ligne 3, colonne 5 de l’image. Le nombre correspondant dans la bitmap est 1. La table des couleurs nous dit que 1 représente la couleur rouge pour que le pixel soit rouge. Toutes les entrées dans la ligne supérieure de la bitmap sont 3. La table des couleurs nous dit que 3 représente le bleu, donc tous les pixels de la ligne supérieure de l’image sont bleus.  
   
@@ -50,7 +51,7 @@ Une image bitmap est un tableau de bits qui spécifient la couleur de chaque pix
   
  Une bitmap qui stocke des index dans une table de couleurs est appelée bitmap indexée par palette. Certaines images bitmap n’ont pas besoin d’une table des couleurs. Par exemple, si une bitmap utilise 24 bits par pixel, cette bitmap peut stocker les couleurs elles-mêmes plutôt que des index dans une table de couleurs. L’illustration suivante montre une image bitmap qui stocke les couleurs directement (24 bits par pixel) au lieu d’utiliser une table des couleurs. L’illustration montre également une vue agrandie de l’image correspondante. Dans la bitmap, FFFFFF représente White, FF0000 représente Red, 00FF00 représente Green et 0000FF représente Blue.  
   
- ![Exemple bitmap](./media/aboutgdip03-art02.gif "AboutGdip03_Art02")  
+ ![Exemple de bitmap](./media/aboutgdip03-art02.gif "AboutGdip03_Art02")  
   
 ## <a name="graphics-file-formats"></a>Formats de fichiers graphiques  
  Il existe de nombreux formats standard pour enregistrer des bitmaps dans des fichiers de disque. GDI+ prend en charge les formats de fichiers graphiques décrits dans les paragraphes suivants.  
@@ -61,16 +62,16 @@ Une image bitmap est un tableau de bits qui spécifient la couleur de chaque pix
 ### <a name="graphics-interchange-format-gif"></a>GIF (Graphics Interchange Format)  
  GIF est un format courant pour les images qui apparaissent sur des pages Web. Les images gif fonctionnent bien pour les dessins en courbes, les images avec des blocs de couleur unie et les images avec des limites nettes entre les couleurs. Les images gif sont compressées, mais aucune information n’est perdue dans le processus de compression. une image décompressée est exactement la même que l’image d’origine. Une couleur dans un fichier GIF peut être désignée comme transparente, afin que l’image ait la couleur d’arrière-plan d’une page Web qui l’affiche. Une séquence d’images GIF peut être stockée dans un fichier unique pour former une image GIF animée. Les images gif sont stockées au maximum 8 bits par pixel. elles sont donc limitées à 256 couleurs.  
   
-### <a name="joint-photographic-experts-group-jpeg"></a>JPEG (Joint Photographic Experts Group)  
+### <a name="joint-photographic-experts-group-jpeg"></a>Joint Photographic Experts Group (JPEG)  
  JPEG est un schéma de compression qui fonctionne bien pour les scènes naturelles telles que les photographies numérisées. Certaines informations sont perdues dans le processus de compression, mais la perte est souvent imperceptible à l’oeil humain. Les fichiers JPEG stockent 24 bits par pixel, de sorte qu’ils peuvent afficher plus de 16 millions couleurs. Les fichiers JPEG ne prennent pas en charge la transparence ou l’animation.  
   
  Le niveau de compression des images JPEG est configurable, mais les niveaux de compression plus élevés (fichiers plus petits) entraînent une perte de données. Un taux de compression de 20:1 produit souvent une image que l’oeil humain trouve difficile à distinguer de l’original. L’illustration suivante montre une image BMP et deux images JPEG qui ont été compressées à partir de cette image BMP. Le premier JPEG a un taux de compression de 4:1 et le second JPEG a un ratio de compression d’environ 8:1.  
   
- ![Exemples de filetype](./media/aboutgdip03-art03.gif "AboutGdip03_Art03")  
+ ![Exemples de types de fichiers](./media/aboutgdip03-art03.gif "AboutGdip03_Art03")  
   
  La compression JPEG ne fonctionne pas correctement pour les dessins en ligne, les blocs de couleur unie et les limites nettes. L’illustration suivante montre un fichier BMP avec deux images JPEG et une image GIF. Les fichiers JPEG et GIF ont été compressés à partir du BMP. Le taux de compression est 4:1 pour le GIF, 4:1 pour le JPEG plus petit et 8:3 pour le JPEG plus grand. Notez que l’image GIF maintient les limites nettes le long des lignes, mais les JPEG ont tendance à brouiller les limites.  
   
- ![Filetypes](./media/aboutgdip03-art03a.gif "AboutGdip03_Art03A")  
+ ![Types de fichiers](./media/aboutgdip03-art03a.gif "AboutGdip03_Art03A")  
   
  JPEG est un schéma de compression, pas un format de fichier. Le format d’échange de fichiers JPEG (JFIF) est un format de fichier couramment utilisé pour le stockage et le transfert d’images qui ont été compressées conformément au schéma JPEG. Les fichiers JFIF affichés par les navigateurs Web utilisent l’extension. jpg.  
   

@@ -1,5 +1,6 @@
 ---
 title: définir l’arrière-plan d’un panneau
+description: Découvrez comment définir la couleur d’arrière-plan et l’image d’arrière-plan d’un panneau Windows Forms à l’aide du concepteur.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,19 +12,19 @@ helpviewer_keywords:
 - Panel control [Windows Forms], background
 - colors [Windows Forms], Windows Forms Panel controls
 ms.assetid: 096cbd8d-45cc-47b8-b1ef-a27f60ea8be0
-ms.openlocfilehash: 36e552475334c25b9d5a6fafb82155c6ebcba266
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 109ff6184de9c79d1576207bbeb29ad939670b6f
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182108"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173378"
 ---
 # <a name="how-to-set-the-background-of-a-windows-forms-panel"></a>Comment : définir l'arrière-plan d'un panneau Windows Forms
-Un contrôle <xref:System.Windows.Forms.Panel> windows Forms peut afficher à la fois une couleur de fond et une image de fond. La <xref:System.Windows.Forms.Control.BackColor%2A> propriété définit la couleur de fond pour les commandes contenues, telles que les étiquettes et les boutons radio. Si <xref:System.Windows.Forms.Control.BackgroundImage%2A> la propriété n’est pas définie, la <xref:System.Windows.Forms.Control.BackColor%2A> sélection remplira l’ensemble du panneau. Si <xref:System.Windows.Forms.Control.BackgroundImage%2A> la propriété est définie, l’image s’affiche derrière les commandes contenues.  
+Un <xref:System.Windows.Forms.Panel> contrôle Windows Forms peut afficher une couleur d’arrière-plan et une image d’arrière-plan. La <xref:System.Windows.Forms.Control.BackColor%2A> propriété définit la couleur d’arrière-plan des contrôles contenus, tels que les étiquettes et les cases d’option. Si la <xref:System.Windows.Forms.Control.BackgroundImage%2A> propriété n’est pas définie, la <xref:System.Windows.Forms.Control.BackColor%2A> sélection remplit tout le panneau. Si la <xref:System.Windows.Forms.Control.BackgroundImage%2A> propriété est définie, l’image est affichée derrière les contrôles contenus.  
   
-### <a name="to-set-the-background-programmatically"></a>Définir l’arrière-plan de façon programmatique  
+### <a name="to-set-the-background-programmatically"></a>Pour définir l’arrière-plan par programmation  
   
-1. Définissez la <xref:System.Windows.Forms.Control.BackColor%2A> propriété du panneau <xref:System.Drawing.Color?displayProperty=nameWithType>à une valeur de type .  
+1. Affectez à la <xref:System.Windows.Forms.Control.BackColor%2A> propriété du panneau une valeur de type <xref:System.Drawing.Color?displayProperty=nameWithType> .  
   
     ```vb  
     Panel1.BackColor = Color.AliceBlue  
@@ -37,7 +38,7 @@ Un contrôle <xref:System.Windows.Forms.Panel> windows Forms peut afficher à la
     panel1->BackColor = Color::AliceBlue;  
     ```  
   
-2. Définissez la <xref:System.Windows.Forms.Control.BackgroundImage%2A> propriété du <xref:System.Drawing.Image.FromFile%2A> panneau <xref:System.Drawing.Image?displayProperty=nameWithType> en utilisant la méthode de la classe.  
+2. Définissez la propriété du panneau <xref:System.Windows.Forms.Control.BackgroundImage%2A> à l’aide <xref:System.Drawing.Image.FromFile%2A> de la méthode de la <xref:System.Drawing.Image?displayProperty=nameWithType> classe.  
   
     ```vb  
     ' You should replace the bolded image

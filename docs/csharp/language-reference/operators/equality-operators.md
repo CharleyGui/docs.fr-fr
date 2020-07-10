@@ -15,16 +15,16 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 7dd3e544dc03fb94577892b42aecd1a15a6621ac
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 011ef8b570a0bbbc38ec71df4286c3b08c3109da
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110917"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174781"
 ---
 # <a name="equality-operators-c-reference"></a>Opérateurs d’égalité (référence C#)
 
-Les [ `==` opérateurs (d’égalité)](#equality-operator-) et [ `!=` (d’inégalité)](#inequality-operator-) vérifient si leurs opérands sont égaux ou non.
+Les opérateurs [ `==` (égalité)](#equality-operator-) et [ `!=` (inégalité)](#inequality-operator-) vérifient si leurs opérandes sont égaux ou non.
 
 ## <a name="equality-operator-"></a>Opérateur d’égalité ==
 
@@ -37,13 +37,13 @@ Les opérandes des [types valeur intégrés](../builtin-types/value-types.md#bui
 [!code-csharp-interactive[value types equality](snippets/EqualityOperators.cs#ValueTypesEquality)]
 
 > [!NOTE]
-> Pour `==`le , [ `<`, , `>`, `<=`et `>=` ](comparison-operators.md) les opérateurs, si l’un des opérands n’est pas un nombre (<xref:System.Double.NaN?displayProperty=nameWithType> ou <xref:System.Single.NaN?displayProperty=nameWithType>), le résultat de l’opération est `false`. Cela signifie que la valeur `NaN` n’est ni supérieure à, ni inférieure à, ni égale à n’importe quelle autre valeur `double` (ou `float`), y compris `NaN`. Pour plus d’informations et des exemples, consultez l’article de référence <xref:System.Double.NaN?displayProperty=nameWithType> ou <xref:System.Single.NaN?displayProperty=nameWithType>.
+> Pour les `==` opérateurs, [ `<` , `>` , `<=` et `>=` ](comparison-operators.md) , si l’un des opérandes n’est pas un nombre ( <xref:System.Double.NaN?displayProperty=nameWithType> ou <xref:System.Single.NaN?displayProperty=nameWithType> ), le résultat de l’opération est `false` . Cela signifie que la valeur `NaN` n’est ni supérieure à, ni inférieure à, ni égale à n’importe quelle autre valeur `double` (ou `float`), y compris `NaN`. Pour plus d’informations et des exemples, consultez l’article de référence <xref:System.Double.NaN?displayProperty=nameWithType> ou <xref:System.Single.NaN?displayProperty=nameWithType>.
 
 Deux opérandes du même type [enum](../builtin-types/enum.md) sont égaux si les valeurs correspondantes du type intégral sous-jacent sont égales.
 
 Par défaut, les types [struct](../builtin-types/struct.md) définis par l’utilisateur ne prennent pas en charge l’opérateur `==`. Pour prendre en charge l’opérateur `==`, un struct défini par l’utilisateur doit le [surcharger](operator-overloading.md).
 
-À compter de C# 7.3, les opérateurs `==` et `!=` sont pris en charge par les [tuples](../../tuples.md) C#. Pour plus d’informations, consultez la section [Égalité et tuples](../../tuples.md#equality-and-tuples) de l’article [Types de tuple C#](../../tuples.md).
+À compter de C# 7.3, les opérateurs `==` et `!=` sont pris en charge par les [tuples](../builtin-types/value-tuples.md) C#. Pour plus d’informations, consultez la section [égalité des tuples](../builtin-types/value-tuples.md#tuple-equality) de l’article [types de tuple](../builtin-types/value-tuples.md) .
 
 ### <a name="reference-types-equality"></a>Égalité de types référence
 
@@ -59,7 +59,7 @@ Deux opérandes [string](../builtin-types/reference-types.md#the-string-type) so
 
 [!code-csharp-interactive[string equality](snippets/EqualityOperators.cs#StringEquality)]
 
-Il s’agit d’une comparaison ordinaire sensible aux cas. Pour plus d’informations sur la comparaison de chaînes, consultez [Comment comparer des chaînes en C#](../../how-to/compare-strings.md).
+Il s’agit d’une comparaison ordinale respectant la casse. Pour plus d’informations sur la comparaison de chaînes, consultez [Comment comparer des chaînes en C#](../../how-to/compare-strings.md).
 
 ### <a name="delegate-equality"></a>Égalité de délégué
 
@@ -91,8 +91,8 @@ Pour plus d’informations, consultez la section [Opérateurs relationnels et de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs C#](index.md)
 - <xref:System.IEquatable%601?displayProperty=nameWithType>
 - <xref:System.Object.Equals%2A?displayProperty=nameWithType>
 - <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType>

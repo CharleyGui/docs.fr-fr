@@ -1,46 +1,48 @@
 ---
 title: la configuration d’une application ;
-description: Découvrez comment configurer les applications Blazor sans utiliser ConfigurationManager.
+description: Découvrez comment configurer des Blazor applications sans utiliser ConfigurationManager.
 author: csharpfritz
 ms.author: jefritz
+no-loc:
+- Blazor
 ms.date: 04/01/2020
-ms.openlocfilehash: c780a395f72e2520af86c20c7f6618953a528ff7
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: a13f663c2c6908ba906e42cb939c3b8707b8cccd
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588244"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173313"
 ---
 # <a name="app-configuration"></a>la configuration d’une application ;
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-La principale façon de charger la configuration de l’application&mdash;dans les formulaires Web est avec les entrées dans le fichier *web.config* soit sur le serveur ou un fichier de configuration connexe référencé par *web.config*. Vous pouvez utiliser `ConfigurationManager` l’objet statique pour interagir avec les paramètres de l’application, les chaînes de connexion de référentiel de données et d’autres fournisseurs de configuration étendu qui sont ajoutés dans l’application. Il est typique de voir les interactions avec la configuration de l’application comme on le voit dans le code suivant :
+Le principal moyen de charger la configuration de l’application dans Web Forms consiste à utiliser des entrées dans le fichier *web.config* &mdash; , soit sur le serveur, soit sur un fichier de configuration associé référencé par *web.config*. Vous pouvez utiliser l' `ConfigurationManager` objet statique pour interagir avec les paramètres d’application, les chaînes de connexion du référentiel de données et d’autres fournisseurs de configuration étendus ajoutés à l’application. Il est courant de voir les interactions avec la configuration d’application comme indiqué dans le code suivant :
 
 ```csharp
 var configurationValue = ConfigurationManager.AppSettings["ConfigurationSettingName"];
 var connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnectionName"].ConnectionString;
 ```
 
-Avec ASP.NET Core et le serveur Blazor, le fichier *web.config* peut être présent si votre application est hébergée sur un serveur Windows IIS. Cependant, il n’y a pas `ConfigurationManager` d’interaction avec cette configuration, et vous pouvez recevoir une configuration d’application plus structurée à partir d’autres sources. Jetons un coup d’oeil à la façon dont la configuration est recueillie et comment vous pouvez toujours accéder aux informations de configuration à partir d’un fichier *web.config.*
+Avec ASP.NET Core et côté serveur Blazor , le fichier *web.config* peut être présent si votre application est hébergée sur un serveur IIS Windows. Toutefois, il n’y a aucune `ConfigurationManager` interaction avec cette configuration, et vous pouvez recevoir une configuration d’application plus structurée à partir d’autres sources. Voyons comment la configuration est collectée et comment vous pouvez toujours accéder aux informations de configuration à partir d’un fichier de *web.config* .
 
 ## <a name="configuration-sources"></a>Sources de configuration
 
-ASP.NET Core reconnaît qu’il existe de nombreuses sources de configuration que vous voudrez peut-être utiliser pour votre application. Le cadre tente de vous offrir le meilleur de ces fonctionnalités par défaut. La configuration est lue et agrégée à partir de ces différentes sources par ASP.NET Core. Des valeurs chargées ultérieures pour la même clé de configuration ont préséance sur les valeurs antérieures.
+ASP.NET Core reconnaît qu’il existe de nombreuses sources de configuration que vous pouvez utiliser pour votre application. Le Framework tente de vous offrir le meilleur de ces fonctionnalités par défaut. La configuration est lue et agrégée à partir de ces diverses sources par ASP.NET Core. Les valeurs chargées ultérieurement pour la même clé de configuration sont prioritaires par rapport aux valeurs antérieures.
 
-ASP.NET Core a été conçu pour être conscient du cloud et faciliter la configuration des applications pour les opérateurs et les développeurs. ASP.NET Core est soucieux de l’environnement et sait `Production` s’il fonctionne dans votre environnement ou dans `Development` votre environnement. L’indicateur de l’environnement est défini dans la variable de l’environnement du `ASPNETCORE_ENVIRONMENT` système. Si aucune valeur n’est configurée, `Production` l’application est par défaut pour s’exécuter dans l’environnement.
+ASP.NET Core a été conçu pour être compatible avec le Cloud et pour faciliter la configuration des applications pour les opérateurs et les développeurs. ASP.NET Core prend en charge l’environnement et sait s’il s’exécute dans `Production` votre `Development` environnement ou. L’indicateur d’environnement est défini dans la `ASPNETCORE_ENVIRONMENT` variable d’environnement système. Si aucune valeur n’est configurée, l’application est exécutée par défaut dans l' `Production` environnement.
 
-Votre application peut déclencher et ajouter la configuration à partir de plusieurs sources basées sur le nom de l’environnement. Par défaut, la configuration est chargée à partir des ressources suivantes dans l’ordre énuméré :
+Votre application peut déclencher et ajouter une configuration à partir de plusieurs sources en fonction du nom de l’environnement. Par défaut, la configuration est chargée à partir des ressources suivantes dans l’ordre indiqué :
 
-1. *fichier appsettings.json,* s’il est présent
-1. *applications. Fichier ENVIRONMENT_NAME.json, s’il* est présent
-1. Fichier de secrets d’utilisateur sur disque, si présent
+1. *appsettings.js* fichier, s’il est présent
+1. *appSettings. Fichier {ENVIRONMENT_NAME}. JSON* , s’il est présent
+1. Fichier de secrets de l’utilisateur sur le disque, le cas échéant
 1. Variables d'environnement
 1. Arguments de ligne de commande
 
-## <a name="appsettingsjson-format-and-access"></a>format et accès appsettings.json
+## <a name="appsettingsjson-format-and-access"></a>appsettings.jsau format et à l’accès
 
-Le fichier *appsettings.json* peut être hiérarchique avec des valeurs structurées comme le JSON suivant :
+La *appsettings.jssur* le fichier peut être hiérarchique avec des valeurs structurées comme le JSON suivant :
 
 ```json
 {
@@ -55,40 +57,40 @@ Le fichier *appsettings.json* peut être hiérarchique avec des valeurs structur
 }
 ```
 
-Lorsqu’il est présenté avec le précédent JSON, le système de configuration aplatit les valeurs des enfants et fait référence à leurs chemins hiérarchiques entièrement qualifiés. Un personnage`:`de colon () sépare chaque propriété de la hiérarchie. Par exemple, la `section1:key0` clé `section1` de configuration accède à la valeur littérale de `key0` l’objet.
+Lorsqu’il est présenté avec le code JSON précédent, le système de configuration aplatit les valeurs enfants et référence leurs chemins d’accès hiérarchiques complets. Un caractère deux-points ( `:` ) sépare chaque propriété de la hiérarchie. Par exemple, la clé de configuration `section1:key0` accède à la `section1` valeur du littéral d’objet `key0` .
 
-## <a name="user-secrets"></a>Secrets d’utilisateur
+## <a name="user-secrets"></a>Secrets de l’utilisateur
 
-Les secrets des utilisateurs sont les :
+Secrets de l’utilisateur :
 
-* Valeurs de configuration stockées dans un fichier JSON sur le poste de travail du développeur, en dehors du dossier de développement de l’application.
-* Seulement chargé lors `Development` de la course dans l’environnement.
+* Valeurs de configuration qui sont stockées dans un fichier JSON sur la station de travail du développeur, en dehors du dossier de développement de l’application.
+* Chargé uniquement lors de l’exécution dans l' `Development` environnement.
 * Associé à une application spécifique.
-* Géré avec la `user-secrets` commande de cLI de base .NET.
+* Géré avec la commande de l’CLI .NET Core `user-secrets` .
 
-Configurez votre application pour le `user-secrets` stockage des secrets en exécutant la commande :
+Configurez votre application pour le stockage des secrets en exécutant la `user-secrets` commande suivante :
 
 ```dotnetcli
 dotnet user-secrets init
 ```
 
-La commande précédente `UserSecretsId` ajoute un élément au dossier du projet. L’élément contient un GUID, qui est utilisé pour associer des secrets à l’application. Vous pouvez alors définir `set` un secret avec la commande. Par exemple :
+La commande précédente ajoute un `UserSecretsId` élément au fichier projet. L’élément contient un GUID, qui est utilisé pour associer des secrets à l’application. Vous pouvez ensuite définir une clé secrète à l’aide de la `set` commande. Par exemple :
 
 ```dotnetcli
 dotnet user-secrets set "Parent:ApiKey" "12345"
 ```
 
-La commande précédente `Parent:ApiKey` rend la clé de configuration disponible `12345`sur le poste de travail d’un développeur avec la valeur .
+La commande précédente rend la `Parent:ApiKey` clé de configuration disponible sur la station de travail d’un développeur avec la valeur `12345` .
 
-Pour plus d’informations sur la création, le stockage et la gestion des secrets d’utilisateur, consultez le [stockage sécurisé des secrets d’applications en développement dans ASP.NET](/aspnet/core/security/app-secrets) document Core.
+Pour plus d’informations sur la création, le stockage et la gestion des secrets d’utilisateur, consultez la page [stockage sécurisé des secrets d’application en développement dans ASP.net Core](/aspnet/core/security/app-secrets) document.
 
 ## <a name="environment-variables"></a>Variables d'environnement
 
-Le prochain ensemble de valeurs chargées dans la configuration de votre application est les variables de l’environnement du système. Tous les paramètres variables de l’environnement de votre système vous sont désormais accessibles grâce à l’API de configuration. Les valeurs hiérarchiques sont aplaties et séparées par des personnages du côlon lorsqu’elles sont lues à l’intérieur de votre application. Cependant, certains systèmes d’exploitation ne permettent pas les noms variables de l’environnement de caractère de colon. ASP.NET Core s’attaque à cette limitation en convertissant`__`des valeurs qui ont des double-underscores ( ) en un côlon quand ils sont consultés. La `Parent:ApiKey` valeur de la section des secrets d’utilisateur `Parent__ApiKey`ci-dessus peut être annulée avec la variable de l’environnement .
+L’ensemble suivant de valeurs chargées dans la configuration de votre application est les variables d’environnement du système. Tous les paramètres de la variable d’environnement de votre système sont désormais accessibles via l’API de configuration. Les valeurs hiérarchiques sont aplaties et séparées par deux-points quand elles sont lues à l’intérieur de votre application. Toutefois, certains systèmes d’exploitation n’autorisent pas les noms de variables d’environnement de deux-points. ASP.NET Core résout cette limitation en convertissant les valeurs qui comportent des traits de soulignement doubles ( `__` ) en deux-points lorsque vous y accédez. La `Parent:ApiKey` valeur de la section secrets de l’utilisateur ci-dessus peut être remplacée par la variable d’environnement `Parent__ApiKey` .
 
 ## <a name="command-line-arguments"></a>Arguments de ligne de commande
 
-La configuration peut également être fournie comme arguments de ligne de commande lorsque votre application est lancée. Utilisez la notation`--`double-dash (`/`) ou à l’avant pour indiquer le nom de la valeur de configuration à définir et la valeur à configurer. La syntaxe ressemble aux commandes suivantes :
+La configuration peut également être fournie en tant qu’arguments de ligne de commande au démarrage de votre application. Utilisez la notation double tiret ( `--` ) ou la barre oblique ( `/` ) pour indiquer le nom de la valeur de configuration à définir et la valeur à configurer. La syntaxe ressemble aux commandes suivantes :
 
 ```dotnetcli
 dotnet run CommandLineKey1=value1 --CommandLineKey2=value2 /CommandLineKey3=value3
@@ -96,9 +98,9 @@ dotnet run --CommandLineKey1 value1 /CommandLineKey2 value2
 dotnet run Parent:ApiKey=67890
 ```
 
-## <a name="the-return-of-webconfig"></a>Le retour de web.config
+## <a name="the-return-of-webconfig"></a>Retour de web.config
 
-Si vous avez déployé votre application sur Windows sur IIS, le fichier *web.config* configure toujours IIS pour gérer votre application. Par défaut, IIS ajoute une référence au module de base ASP.NET (ANCM). ANCM est un module IIS natif qui héberge votre application à la place du serveur Web Kestrel. Cette section *web.config* ressemble à la balisage XML suivante:
+Si vous avez déployé votre application sur Windows sur IIS, le fichier *web.config* configure toujours IIS pour gérer votre application. Par défaut, IIS ajoute une référence au module ASP.NET Core (ANCM). ANCM est un module IIS natif qui héberge votre application à la place du serveur Web Kestrel. Cette *web.config* section ressemble au balisage XML suivant :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -117,7 +119,7 @@ Si vous avez déployé votre application sur Windows sur IIS, le fichier *web.co
 </configuration>
 ```
 
-La configuration spécifique à l’application `environmentVariables` peut `aspNetCore` être définie en niant un élément de l’élément. Les valeurs définies dans cette section sont présentées à l’application ASP.NET Core comme variables de l’environnement. Les variables de l’environnement se chargent de manière appropriée au cours de ce segment de démarrage d’applications.
+La configuration spécifique à l’application peut être définie en imbriquant un `environmentVariables` élément dans l' `aspNetCore` élément. Les valeurs définies dans cette section sont présentées à l’application ASP.NET Core en tant que variables d’environnement. Les variables d’environnement sont chargées correctement au cours de ce segment de démarrage de l’application.
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -134,32 +136,32 @@ La configuration spécifique à l’application `environmentVariables` peut `asp
 
 ## <a name="read-configuration-in-the-app"></a>Lire la configuration dans l’application
 
-ASP.NET Core fournit la configuration <xref:Microsoft.Extensions.Configuration.IConfiguration> de l’application à travers l’interface. Cette interface de configuration doit être demandée par vos composants Blazor, pages Blazor et toute autre classe ASP.NET gérée par Core qui a besoin d’accéder à la configuration. Le cadre ASP.NET Core remplira automatiquement cette interface avec la configuration résolue configurée plus tôt. Sur une page Blazor ou la balisage Razor `IConfiguration` d’un composant, vous pouvez injecter l’objet avec une `@inject` directive en haut du fichier *.razor* comme ceci:
+ASP.NET Core fournit la configuration de l’application par le biais de l' <xref:Microsoft.Extensions.Configuration.IConfiguration> interface. Cette interface de configuration doit être demandée par vos Blazor composants, Blazor pages et toute autre classe gérée par ASP.net core qui a besoin d’accéder à la configuration. Le ASP.NET Core Framework remplira automatiquement cette interface avec la configuration résolue configurée précédemment. Sur une Blazor page ou un balisage Razor d’un composant, vous pouvez injecter l' `IConfiguration` objet avec une `@inject` directive en haut du fichier *. Razor* , comme suit :
 
 ```razor
 @inject IConfiguration Configuration
 ```
 
-Cette déclaration précédente `IConfiguration` rend l’objet disponible comme variable `Configuration` tout au long du reste du modèle Razor.
+Cette instruction précédente rend l' `IConfiguration` objet disponible en tant que `Configuration` variable dans le reste du modèle Razor.
 
-Les paramètres de configuration individuels peuvent être lus en spécifiant la hiérarchie de réglage de configuration recherchée comme paramètre d’indexeur :
+Les paramètres de configuration individuels peuvent être lus en spécifiant la hiérarchie des paramètres de configuration recherchée comme paramètre d’indexeur :
 
 ```csharp
 var mySetting = Configuration["section1:key0"];
 ```
 
-Vous pouvez aller chercher des <xref:Microsoft.Extensions.Configuration.IConfiguration.GetSection%2A> sections de configuration entières en utilisant la méthode `GetSection("section1")` pour récupérer une collection de clés à un endroit spécifique avec une syntaxe similaire à récupérer la configuration pour la section1 de l’exemple précédent.
+Vous pouvez extraire des sections de configuration entières à l’aide de la <xref:Microsoft.Extensions.Configuration.IConfiguration.GetSection%2A> méthode pour récupérer une collection de clés à un emplacement spécifique à l’aide d’une syntaxe similaire à pour `GetSection("section1")` récupérer la configuration de Section1 dans l’exemple précédent.
 
-## <a name="strongly-typed-configuration"></a>Configuration fortement tapée
+## <a name="strongly-typed-configuration"></a>Configuration fortement typée
 
-Avec Web Forms, il a été possible de créer <xref:System.Configuration.ConfigurationSection> un type de configuration fortement tapé qui a hérité du type et des types associés. A `ConfigurationSection` vous a permis de configurer certaines règles d’entreprise et le traitement de ces valeurs de configuration.
+Avec Web Forms, il était possible de créer un type de configuration fortement typé hérité du <xref:System.Configuration.ConfigurationSection> type et des types associés. `ConfigurationSection`Vous permettait de configurer certaines règles d’entreprise et le traitement de ces valeurs de configuration.
 
-Dans ASP.NET Core, vous pouvez spécifier une hiérarchie de classe qui recevra les valeurs de configuration. Ces classes:
+Dans ASP.NET Core, vous pouvez spécifier une hiérarchie de classes qui recevra les valeurs de configuration. Ces classes :
 
-* Vous n’avez pas besoin d’hériter d’une classe de parents.
-* Devrait `public` inclure les propriétés qui correspondent aux propriétés et les références de type pour la structure de configuration que vous souhaitez capturer.
+* Il n’est pas nécessaire d’hériter d’une classe parente.
+* Doit inclure `public` des propriétés qui correspondent aux propriétés et aux références de type pour la structure de configuration que vous souhaitez capturer.
 
-Pour l’échantillon *appsettings.json* antérieur, vous pouvez définir les classes suivantes pour capturer les valeurs :
+Pour le *appsettings.jsprécédent sur* l’exemple, vous pouvez définir les classes suivantes pour capturer les valeurs :
 
 ```csharp
 public class MyConfig
@@ -177,13 +179,13 @@ public class MyConfigSection
 }
 ```
 
-Cette hiérarchie de classe peut être peuplée `Startup.ConfigureServices` en ajoutant la ligne suivante à la méthode :
+Cette hiérarchie de classes peut être remplie en ajoutant la ligne suivante à la `Startup.ConfigureServices` méthode :
 
 ```csharp
 services.Configure<MyConfig>(Configuration);
 ```
 
-Dans le reste de l’application, vous pouvez `@inject` ajouter un paramètre `IOptions<MyConfig>` d’entrée aux classes ou une directive dans les modèles de type Razor pour recevoir les paramètres de configuration fortement tapés. La `IOptions<MyConfig>.Value` propriété produira `MyConfig` la valeur peuplée des paramètres de configuration.
+Dans le reste de l’application, vous pouvez ajouter un paramètre d’entrée aux classes ou à une `@inject` directive dans les modèles Razor de type `IOptions<MyConfig>` pour recevoir les paramètres de configuration fortement typés. La `IOptions<MyConfig>.Value` propriété produira la `MyConfig` valeur remplie à partir des paramètres de configuration.
 
 ```razor
 @inject IOptions<MyConfig> options
@@ -193,8 +195,8 @@ Dans le reste de l’application, vous pouvez `@inject` ajouter un paramètre `I
 }
 ```
 
-Vous trouverez plus d’informations sur la fonction Options dans le modèle Options dans ASP.NET document [de base.](/aspnet/core/fundamentals/configuration/options#options-interfaces)
+Vous trouverez plus d’informations sur la fonctionnalité options dans le [modèle options de ASP.net Core](/aspnet/core/fundamentals/configuration/options#options-interfaces) document.
 
 >[!div class="step-by-step"]
->[Suivant précédent](middleware.md)
->[Next](security-authentication-authorization.md)
+>[Précédent](middleware.md) 
+> [Suivant](security-authentication-authorization.md)

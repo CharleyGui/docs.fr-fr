@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 4ea002b690de877fd6f955c05eb8235f46e0a870
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: d93bdee8d5a057be0f405fe4334d7edbdc0649ec
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803212"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174404"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Didacticiel : prévoir la demande du service de location de vélos avec l’analyse de série chronologique et ML.NET
 
@@ -33,7 +33,7 @@ Dans ce tutoriel, vous allez apprendre à :
 
 ## <a name="time-series-forecasting-sample-overview"></a>Vue d’ensemble de l’exemple de prévision de séries chronologiques
 
-Cet exemple est une **application console C# .net Core** qui prévoit la demande de loyers de bicyclettes à l’aide d’un algorithme d’analyse de série chronologique Student appelé analyse de gamme unique. Le code de cet exemple se trouve dans le référentiel [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) sur GitHub.
+Cet exemple est une **application console C# .net Core** qui prévoit la demande de loyers de bicyclettes à l’aide d’un algorithme d’analyse de série chronologique Student appelé analyse du spectre singulier. Le code de cet exemple se trouve dans le référentiel [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) sur GitHub.
 
 ## <a name="understand-the-problem"></a>Comprendre le problème
 
@@ -41,7 +41,7 @@ Pour exécuter une opération efficace, la gestion des stocks joue un rôle clé
 
 La technique d’analyse des données utilisée dans ce didacticiel est l’analyse de la série chronologique Student. Les analyses de série chronologique Student examinent une seule observation numérique sur une période à des intervalles spécifiques tels que les ventes mensuelles.
 
-L’algorithme utilisé dans ce didacticiel est l' [analyse à un seul spectre (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). La SSA fonctionne en décomposant une série chronologique en un ensemble de composants principaux. Ces composants peuvent être interprétés comme les parties d’un signal qui correspondent aux tendances, au bruit, au caractère saisonnier et à de nombreux autres facteurs. Ensuite, ces composants sont reconstruits et utilisés pour prévoir des valeurs à un moment donné dans le futur.
+L’algorithme utilisé dans ce didacticiel est l' [analyse du spectre singulier (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). La SSA fonctionne en décomposant une série chronologique en un ensemble de composants principaux. Ces composants peuvent être interprétés comme les parties d’un signal qui correspondent aux tendances, au bruit, au caractère saisonnier et à de nombreux autres facteurs. Ensuite, ces composants sont reconstruits et utilisés pour prévoir des valeurs à un moment donné dans le futur.
 
 ## <a name="create-console-application"></a>Création d’une application de console
 
@@ -83,7 +83,7 @@ CREATE TABLE [Rentals] (
 
 Voici un exemple de données :
 
-| RentalDate | Year | TotalRentals |
+| RentalDate | Year (Année) | TotalRentals |
 | --- | --- | --- |
 |1/1/2011|0|985|
 |1/2/2011|0|801|
@@ -248,13 +248,13 @@ Si vous êtes satisfait de votre modèle, enregistrez-le pour une utilisation ul
 
     [!code-csharp [DisplayForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L111-L116)]
 
-## <a name="run-the-application"></a>Exécution de l'application
+## <a name="run-the-application"></a>Exécuter l’application
 
 1. À l’intérieur de la `Main` méthode, appelez la `Forecast` méthode.
 
     [!code-csharp [BuildForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L54)]
 
-1. Exécutez l'application. Une sortie semblable à celle ci-dessous doit apparaître sur la console. Par souci de concision, la sortie a été condensée.
+1. Exécutez l’application. Une sortie semblable à celle ci-dessous doit apparaître sur la console. Par souci de concision, la sortie a été condensée.
 
     ```text
     Evaluation Metrics
@@ -283,7 +283,7 @@ L’inspection des valeurs réelles et prévues montre les relations suivantes 
 
 Bien que les valeurs prévues ne prédisent pas le nombre exact de loyers, elles fournissent une plage de valeurs plus étroite qui permet à une opération d’optimiser son utilisation des ressources.
 
-Félicitations ! Vous avez maintenant créé avec succès une série chronologique Machine Learning modèle pour prévoir la demande de location de bicyclette.
+Félicitations ! Vous avez maintenant créé avec succès une série chronologique Machine Learning modèle pour prévoir la demande de location de bicyclette.
 
 Vous pouvez trouver le code source de ce didacticiel dans le référentiel [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) .
 

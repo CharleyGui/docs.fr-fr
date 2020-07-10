@@ -1,5 +1,6 @@
 ---
-title: 'Procédure : imprimer un formulaire Windows'
+title: 'Comment : imprimer un Windows Form'
+description: Découvrez comment imprimer par programmation une copie du Windows Form actuel à l’aide de la méthode CopyFromScreen.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,15 +11,15 @@ helpviewer_keywords:
 - printing a form
 - printing [Windows Forms], printing a form
 ms.assetid: c8dff5f8-f56a-4c07-ae31-64643b31f8fc
-ms.openlocfilehash: cd10e0a43ff37b921dc8e024d7a6a51fafbb0400
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: b59ea4b5347903b36a166c4f8ac0d8d7db18635e
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591854"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174690"
 ---
-# <a name="how-to-print-a-windows-form"></a>Procédure : imprimer un formulaire Windows
-Dans le cadre du processus de développement, vous généralement intérêt à imprimer une copie de votre formulaire Windows. L’exemple de code suivant montre comment imprimer une copie de l’écran actuel à l’aide de la <xref:System.Drawing.Graphics.CopyFromScreen%2A> (méthode).  
+# <a name="how-to-print-a-windows-form"></a>Comment : imprimer un Windows Form
+Dans le cadre du processus de développement, vous voudrez généralement imprimer une copie de votre Windows Form. L’exemple de code suivant montre comment imprimer une copie du formulaire actuel à l’aide de la <xref:System.Drawing.Graphics.CopyFromScreen%2A> méthode.  
   
 ## <a name="example"></a>Exemple  
  [!code-csharp[System.Drawing.Graphics.CopyFromScreen#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Graphics.CopyFromScreen/CS/Form1.cs#1)]
@@ -31,11 +32,11 @@ Dans le cadre du processus de développement, vous généralement intérêt à i
   
 - Aucune imprimante n’est installée.  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Pour exécuter cet exemple de code, vous devez être autorisé à accéder à l’imprimante que vous utilisez avec votre ordinateur.  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+ Pour exécuter cet exemple de code, vous devez avoir l’autorisation d’accéder à l’imprimante que vous utilisez avec votre ordinateur.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Drawing.Printing.PrintDocument>
-- [Guide pratique pour Rendre des Images avec GDI +](how-to-render-images-with-gdi.md)
-- [Guide pratique pour Imprimer des graphiques dans les Windows Forms](how-to-print-graphics-in-windows-forms.md)
+- [Guide pratique pour rendre des images avec GDI+](how-to-render-images-with-gdi.md)
+- [Comment : imprimer des graphiques dans Windows Forms](how-to-print-graphics-in-windows-forms.md)

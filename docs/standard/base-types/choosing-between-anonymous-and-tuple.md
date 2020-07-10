@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 07/01/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 9140250ad1f48501bf1d2e53a1c179e6823f19cd
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: 9c186133a639faf187c89d872856d860a20f5a2d
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100962"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174216"
 ---
 # <a name="choosing-between-anonymous-and-tuple-types"></a>Choix entre les types de tuples et anonymes
 
@@ -90,12 +90,7 @@ foreach (var (formatted, ticks) in
 }
 ```
 
-C# fournit la prise en charge linguistique des tuples avec le <xref:System.ValueTuple> type, et la sémantique pour :
-
-- [Assignation de Tuple](../../csharp/tuples.md#assignment-and-tuples)
-- [Déconstruction de tuple](../../csharp/deconstruct.md) (non limité aux tuples)
-- [Vérifications de l’égalité des tuples](../../csharp/tuples.md#equality-and-tuples)
-- [Initialiseurs de projection de tuple](../../csharp/tuples.md#tuple-projection-initializers)
+Pour plus d’informations sur les tuples, consultez [types de tuples (référence C#)](../../csharp/language-reference/builtin-types/value-tuples.md) ou [tuples (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/tuples.md).
 
 Les exemples précédents sont tous des équivalents fonctionnels, toutefois, leur utilisation et leurs implémentations sous-jacentes présentent de légères différences.
 
@@ -127,5 +122,6 @@ En tant que développeur qui choisit entre les tuples et les types anonymes, plu
 
 - [Types anonymes](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
 - [Arborescences de l’expression](../../csharp/expression-trees.md)
-- [Types de tuples](../../csharp/tuples.md)
+- [Types de tuples (référence C#)](../../csharp/language-reference/builtin-types/value-tuples.md)
+- [Tuples (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/tuples.md)
 - [Instructions de conception de types](../design-guidelines/type.md)

@@ -1,5 +1,6 @@
 ---
 title: mettre en couche des objets
+description: Découvrez comment superposer des objets sur des contrôles de Windows Forms et des formulaires enfants pour créer des interfaces utilisateur plus complexes.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,12 +16,12 @@ ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 1615b9c4df222edd95cda9bceae622ba6f1d8d78
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 6269b09c56963fefd500b9e1e6c9d7f51f9619cf
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76736337"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174508"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>Comment : superposer des objets sur Windows Forms
 
@@ -34,9 +35,9 @@ Lorsque vous créez une interface utilisateur complexe ou que vous utilisez un f
 
 ## <a name="to-layer-controls-programmatically"></a>Pour superposer des contrôles par programmation
 
-Utilisez les méthodes <xref:System.Windows.Forms.Control.BringToFront%2A> et <xref:System.Windows.Forms.Control.SendToBack%2A> pour manipuler l’ordre de plan des contrôles.
+Utilisez les <xref:System.Windows.Forms.Control.BringToFront%2A> <xref:System.Windows.Forms.Control.SendToBack%2A> méthodes et pour manipuler l’ordre de plan des contrôles.
 
-Par exemple, si un contrôle <xref:System.Windows.Forms.TextBox>, `txtFirstName`se trouve sous un autre contrôle et que vous souhaitez l’utiliser en premier, utilisez le code suivant :
+Par exemple, si un <xref:System.Windows.Forms.TextBox> contrôle, `txtFirstName` , se trouve sous un autre contrôle et que vous souhaitez l’utiliser en premier, utilisez le code suivant :
 
 ```vb
 txtFirstName.BringToFront()
@@ -51,11 +52,11 @@ txtFirstName->BringToFront();
 ```
 
 > [!NOTE]
-> Windows Forms prend en charge la *relation contenant-contenu des contrôles*. La relation contenant-contenu de contrôle implique de placer un certain nombre de contrôles dans un contrôle conteneur, par exemple un certain nombre de contrôles <xref:System.Windows.Forms.RadioButton> dans un contrôle <xref:System.Windows.Forms.GroupBox>. Vous pouvez ensuite superposer les contrôles dans le contrôle conteneur. Le déplacement de la zone de groupe déplace également les contrôles, car ils sont contenus à l’intérieur de celui-ci.
+> Windows Forms prend en charge la *relation contenant-contenu des contrôles*. La relation contenant-contenu de contrôle implique de placer un certain nombre de contrôles dans un contrôle conteneur, tel qu’un certain nombre de <xref:System.Windows.Forms.RadioButton> contrôles dans un <xref:System.Windows.Forms.GroupBox> contrôle. Vous pouvez ensuite superposer les contrôles dans le contrôle conteneur. Le déplacement de la zone de groupe déplace également les contrôles, car ils sont contenus à l’intérieur de celui-ci.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrôles Windows Forms](index.md)
+- [Contrôles Windows Forms](index.md)
 - [Création d'étiquettes et de raccourcis pour les contrôles Windows Forms](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
-- [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)
+- [Contrôles à utiliser sur Windows Forms](controls-to-use-on-windows-forms.md)
 - [Classement par fonction des contrôles Windows Forms](windows-forms-controls-by-function.md)

@@ -1,15 +1,17 @@
 ---
 title: Gestion et accès aux données
-description: Découvrez comment accéder aux données et les gérer dans ASP.NET Web Forms et éblouissant.
+description: Découvrez comment accéder aux données et les gérer dans ASP.NET Web Forms et Blazor .
 author: csharpfritz
 ms.author: jefritz
+no-loc:
+- Blazor
 ms.date: 04/26/2020
-ms.openlocfilehash: b9805da60722de1b5d4f91107e856f647f7564a7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4bf9bee21ce1db828dbe0aeb156d5e15cae4f703
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446472"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173302"
 ---
 # <a name="work-with-data"></a>Utilisation des données
 
@@ -17,13 +19,13 @@ ms.locfileid: "84446472"
 
 L’accès aux données est le segment principal d’une application Web Forms ASP.NET. Si vous créez des formulaires pour le Web, que se passe-t-il pour ces données ? Avec Web Forms, plusieurs techniques d’accès aux données peuvent être utilisées pour interagir avec une base de données :
 
-- Sources de données
+- Data Sources
 - ADO.NET
 - Entity Framework
 
 Les sources de données étaient des contrôles que vous pouviez placer sur une page de Web Forms et configurer comme d’autres contrôles. Visual Studio a fourni un ensemble convivial de boîtes de dialogue pour configurer et lier les contrôles à vos pages de Web Forms. Les développeurs qui bénéficient d’une approche « code faible » ou « sans code » favorisent cette technique lors de la première publication de Web Forms.
 
-![Sources de données](media/data/datasources.png)
+![Data Sources](media/data/datasources.png)
 
 ADO.NET est l’approche de bas niveau pour interagir avec une base de données. Vos applications peuvent créer une connexion à la base de données avec des commandes, des jeux d’enregistrements et des jeux de données pour interagir. Les résultats peuvent ensuite être liés à des champs sur l’écran sans trop de code. L’inconvénient de cette approche était que chaque ensemble d’objets ADO.NET ( `Connection` , `Command` et `Recordset` ) était lié aux bibliothèques fournies par un fournisseur de base de données. L’utilisation de ces composants rend le code rigide et difficile à migrer vers une autre base de données.
 
@@ -75,7 +77,7 @@ services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer("MY DATABASE CONNECTION STRING"));
 ```
 
-Le code précédent se connecte à une base de données SQL Server avec la chaîne de connexion spécifiée. Vous pouvez placer la chaîne de connexion dans votre fichier *appSettings. JSON* , les variables d’environnement ou d’autres emplacements de stockage de configuration, et remplacer cette chaîne incorporée de manière appropriée.
+Le code précédent se connecte à une base de données SQL Server avec la chaîne de connexion spécifiée. Vous pouvez placer la chaîne de connexion dans votre *appsettings.jssur* un fichier, des variables d’environnement ou d’autres emplacements de stockage de configuration, et remplacer cette chaîne incorporée de manière appropriée.
 
 Vous pouvez ensuite générer la table de base de données appropriée pour cette classe à l’aide des commandes suivantes :
 
@@ -102,7 +104,7 @@ Vous trouverez plus d’informations sur [EF Core](/ef/core/) sur le site Micros
 
 ## <a name="interact-with-web-services"></a>Interagir avec les services Web
 
-Lorsque ASP.NET a été publié pour la première fois, les services SOAP étaient le meilleur moyen pour les serveurs Web et les clients d’échanger des données. De nombreuses modifications ont été apportées depuis ce moment, et les interactions préférées avec les services ont été déplacées vers les interactions directes du client HTTP. Avec ASP.NET Core et éblouissant, vous pouvez enregistrer la configuration de votre `HttpClient` dans la méthode de la `Startup` classe `ConfigureServices` . Utilisez cette configuration lorsque vous devez interagir avec le point de terminaison HTTP. Considérez le code de configuration suivant :
+Lorsque ASP.NET a été publié pour la première fois, les services SOAP étaient le meilleur moyen pour les serveurs Web et les clients d’échanger des données. De nombreuses modifications ont été apportées depuis ce moment, et les interactions préférées avec les services ont été déplacées vers les interactions directes du client HTTP. Avec ASP.NET Core et Blazor , vous pouvez inscrire la configuration de votre `HttpClient` dans la `Startup` méthode de la classe `ConfigureServices` . Utilisez cette configuration lorsque vous devez interagir avec le point de terminaison HTTP. Considérez le code de configuration suivant :
 
 ```csharp
 services.AddHttpClient("github", client =>
@@ -115,7 +117,7 @@ services.AddHttpClient("github", client =>
 });
 ```
 
-Chaque fois que vous devez accéder aux données à partir de GitHub, créez un client avec le nom `github` . Le client est configuré avec l’adresse de base et les en-têtes de demande sont correctement définis. Injectez `IHttpClientFactory` dans vos composants éblouissant avec la `@inject` directive ou un `[Inject]` attribut sur une propriété. Créez votre client nommé et interagissez avec les services à l’aide de la syntaxe suivante :
+Chaque fois que vous devez accéder aux données à partir de GitHub, créez un client avec le nom `github` . Le client est configuré avec l’adresse de base et les en-têtes de demande sont correctement définis. Injectez `IHttpClientFactory` dans vos Blazor composants avec la `@inject` directive ou un `[Inject]` attribut sur une propriété. Créez votre client nommé et interagissez avec les services à l’aide de la syntaxe suivante :
 
 ```razor
 @inject IHttpClientFactory factory

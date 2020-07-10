@@ -1,17 +1,20 @@
 ---
-title: Introduction à éblouissant pour les développeurs ASP.NET Web Forms
-description: Introduction à éblouissant et écriture d’applications Web à pile complète avec .NET
+title: Présentation de Blazor pour les développeurs ASP.NET Web Forms
+description: Présentation Blazor et écriture d’applications Web à pile complète avec .net
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 6c045cd9c4378bd19f97dd722db054c969491d0b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8ef2c7d66d50abb34e536b6333e3aa68ee2bb07d
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087925"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173131"
 ---
-# <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>Introduction à éblouissant pour les développeurs ASP.NET Web Forms
+# <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>Présentation de Blazor pour les développeurs ASP.NET Web Forms
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -34,7 +37,7 @@ La plupart des infrastructures Web modernes sont désormais également open-sour
 
 La communauté .NET a adopté la prise en charge multiplateforme et open source. .NET Core est une implémentation Open source et multiplateforme de .NET qui s’exécute sur une multitude de plateformes, notamment Windows, macOS et diverses distributions Linux. Xamarin fournit mono, une version open source de .NET. Mono s’exécute sur Android, iOS et divers autres facteurs de forme, notamment les montres et les téléviseurs intelligents. Microsoft a annoncé que [.net 5](https://devblogs.microsoft.com/dotnet/introducing-net-5/) réconciliera .net Core et mono en « un seul Runtime et Framework .net qui peut être utilisé partout et avec des comportements d’exécution et des expériences de développement uniformes ».
 
-ASP.NET Web Forms tirer parti du passage à la prise en charge des plateformes Open source et multiplateforme ? La réponse, malheureusement, est non, ou au moins la même étendue que le reste de la plateforme. L’équipe .NET a [récemment rendu clair](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/) que ASP.NET Web Forms ne sera pas porté sur .net Core ou .net 5. Pourquoi?
+ASP.NET Web Forms tirer parti du passage à la prise en charge des plateformes Open source et multiplateforme ? La réponse, malheureusement, est non, ou au moins la même étendue que le reste de la plateforme. L’équipe .NET a [récemment rendu clair](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/) que ASP.NET Web Forms ne sera pas porté sur .net Core ou .net 5. Pourquoi ?
 
 Il y a eu des efforts au cours des premiers jours de .NET Core vers le port ASP.NET Web Forms. Le nombre de modifications importantes nécessaires est trop important. Il y a également une admission ici, même pour Microsoft, il existe une limite au nombre d’infrastructures Web qu’il peut prendre en charge simultanément. Une personne de la communauté aura peut-être la cause de la création d’une version open source et multiplateforme de ASP.NET Web Forms. Le [code source de ASP.NET Web Forms](https://github.com/microsoft/referencesource) a été rendu accessible publiquement sous forme de référence. Mais pour le moment, il semble ASP.NET Web Forms restera Windows uniquement et sans modèle de contribution Open source. Si la prise en charge multiplateforme ou open source devient important pour vos scénarios, vous devez rechercher d’autres éléments.
 
@@ -50,38 +53,38 @@ Toutefois, les navigateurs sont devenus des plateformes polyvalentes. Ils implé
 
 Mais le pontage de deux plateformes et écosystèmes différents (.NET et JavaScript) est un coût. L’expertise est requise dans deux mondes parallèles avec différents langages, infrastructures et outils. Le code et la logique ne peuvent pas être facilement partagés entre le client et le serveur, ce qui entraîne des surcharges de duplication et d’ingénierie. Il peut également être difficile de suivre l’écosystème JavaScript, qui a un historique de évolution à la vitesse très. Les préférences du Framework frontal et de l’outil de build changent rapidement. Le secteur a observé la progression de Grunt à Gulp vers WebPack, et ainsi de suite. La même évolution de Restless s’est produite avec des infrastructures frontales telles que jQuery, Knockout, angulaire, REACT et vue. Mais étant donné le monopole du navigateur JavaScript, il n’y avait que peu de choix. C’est le cas, jusqu’à ce que la communauté Web s’est réunie et a provoqué un *miracle* !
 
-## <a name="webassembly-fulfills-a-need"></a>Webassembly a besoin
+## <a name="webassembly-fulfills-a-need"></a>WebAssemblya besoin
 
-Dans 2015, les principaux fournisseurs de navigateurs rejoignent Forced dans un groupe de la communauté W3C à créer une nouvelle norme Web ouverte appelée webassembly. Webassembly est un code d’octet pour le Web. Si vous pouvez compiler votre code sur webassembly, il peut s’exécuter sur n’importe quel navigateur sur n’importe quelle plateforme à une vitesse proche de la vitesse native. Premiers efforts sur C/C++. Le résultat était une démonstration spectaculaire de l’exécution de moteurs graphiques 3D natifs directement dans le navigateur sans plug-ins. Webassembly a depuis été standardisé et implémenté par tous les principaux navigateurs.
+Dans 2015, les principaux fournisseurs de navigateurs rejoignent des forces dans un groupe de la communauté W3C pour créer une nouvelle norme Web ouverte appelée WebAssembly . WebAssemblyest un code d’octet pour le Web. Si vous pouvez compiler votre code dans WebAssembly , il peut s’exécuter sur n’importe quel navigateur sur n’importe quelle plateforme à une vitesse proche de la vitesse native. Premiers efforts sur C/C++. Le résultat était une démonstration spectaculaire de l’exécution de moteurs graphiques 3D natifs directement dans le navigateur sans plug-ins. WebAssemblya depuis été standardisé et implémenté par tous les principaux navigateurs.
 
-L’exécution de .NET sur webassembly a été annoncée au plus tard le 2017 et devrait être livrée dans 2020, y compris la prise en charge de .NET 5. La possibilité d’exécuter du code .NET directement dans le navigateur permet le développement Web à pile complète avec .NET.
+Les travaux d’exécution de .NET sur WebAssembly ont été annoncés au plus tard le 2017 et sont censés être livrés dans 2020, y compris la prise en charge de .net 5. La possibilité d’exécuter du code .NET directement dans le navigateur permet le développement Web à pile complète avec .NET.
 
-## <a name="blazor-full-stack-web-development-with-net"></a>Éblouissant : développement Web à pile complète avec .NET
+## <a name="blazor-full-stack-web-development-with-net"></a>Blazor: développement Web à pile complète avec .NET
 
-En soi, la possibilité d’exécuter du code .NET dans un navigateur ne fournit pas d’expérience de bout en bout pour la création d’applications Web côté client. C’est là qu’intervient l’éblouissant. Éblouissant est une infrastructure d’interface utilisateur Web côté client basée sur C# au lieu de JavaScript. Éblouissant peut s’exécuter directement dans le navigateur via webassembly. Aucun plug-in de navigateur n’est requis. Les applications éblouissantes peuvent également exécuter côté serveur sur .NET Core et gérer toutes les interactions utilisateur sur une connexion en temps réel avec le navigateur.
+En soi, la possibilité d’exécuter du code .NET dans un navigateur ne fournit pas d’expérience de bout en bout pour la création d’applications Web côté client. C’est là qu' Blazor intervient. Blazorest une infrastructure d’interface utilisateur Web côté client basée sur C# au lieu de JavaScript. Blazorpeut s’exécuter directement dans le navigateur via WebAssembly . Aucun plug-in de navigateur n’est requis. BlazorLes applications peuvent également exécuter côté serveur sur .net Core et gérer toutes les interactions utilisateur sur une connexion en temps réel avec le navigateur.
 
-Éblouissant offre une excellente prise en charge des outils dans Visual Studio et Visual Studio Code. Le Framework inclut également un modèle de composant d’interface utilisateur complet et des fonctionnalités intégrées pour :
+Blazoroffre une excellente prise en charge des outils dans Visual Studio et Visual Studio Code. Le Framework inclut également un modèle de composant d’interface utilisateur complet et des fonctionnalités intégrées pour :
 
 - Formulaires et validation
 - Injection de dépendances
 - Routage côté client
 - Dispositions
 - Débogage dans le navigateur
-- Interopérabilité de JavaScript
+- Interopérabilité JavaScript
 
-Avec ASP.NET Web Forms, éblouissant est beaucoup plus courant. Les deux infrastructures offrent des modèles de programmation d’interface utilisateur basés sur des composants et pilotés par les événements. La principale différence architecturale est que ASP.NET Web Forms s’exécute uniquement sur le serveur. Éblouissant peut s’exécuter sur le client dans le navigateur. Mais si vous êtes à la base d’un ASP.NET Web Forms, il y a beaucoup de choses à paraître familières. Éblouissant est une solution naturelle pour ASP.NET Web Forms les développeurs qui cherchent un moyen de tirer parti du développement côté client et du futur .NET interplateforme Open source.
+Blazora beaucoup de choses en commun avec ASP.NET Web Forms. Les deux infrastructures offrent des modèles de programmation d’interface utilisateur basés sur des composants et pilotés par les événements. La principale différence architecturale est que ASP.NET Web Forms s’exécute uniquement sur le serveur. Blazorpeut s’exécuter sur le client dans le navigateur. Mais si vous êtes à la base d’un ASP.NET Web Forms, il y a beaucoup de choses Blazor qui vous sembleront familières. Blazorest une solution naturelle pour ASP.NET Web Forms les développeurs qui cherchent un moyen de tirer parti du développement côté client et du futur .NET interplateforme Open source.
 
-Ce livre fournit une introduction à éblouissant qui est réservée aux développeurs ASP.NET Web Forms. Chaque concept éblouissant est présenté dans le contexte de ASP.NET et de pratiques Web Forms analogues. À la fin de ce livre, vous aurez compris les éléments suivants :
+Ce livre fournit une introduction à Blazor qui est fournie spécifiquement à ASP.NET Web Forms les développeurs. Chaque Blazor concept est présenté dans le contexte de ASP.net et de pratiques Web Forms analogues. À la fin de ce livre, vous aurez compris les éléments suivants :
 
-- Comment générer des applications éblouissantes.
-- Fonctionnement de l’éblouissant.
-- Comment éblouissant est associé à .NET Core.
-- Stratégies raisonnables pour la migration de ASP.NET Web Forms applications existantes vers éblouissant, le cas échéant.
+- Comment créer des Blazor applications.
+- Comment Blazor fonctionne.
+- BlazorRelation avec .net core.
+- Stratégies raisonnables pour la migration des applications Web Forms ASP.NET existantes vers Blazor , le cas échéant.
 
-## <a name="get-started-with-blazor"></a>Prise en main de éblouissant
+## <a name="get-started-with-blazor"></a>Prise en main des Blazor
 
-La prise en main de éblouissant est simple. Accédez à <https://blazor.net> et suivez les liens pour installer les modèles de projet kit SDK .NET Core et éblouissant appropriés. Vous trouverez également des instructions sur la configuration des outils éblouissants dans Visual Studio ou Visual Studio Code.
+La prise en main de Blazor est simple. Accédez à <https://blazor.net> et suivez les liens pour installer les kit SDK .net Core et les Blazor modèles de projet appropriés. Vous trouverez également des instructions sur la configuration des Blazor outils dans Visual Studio ou Visual Studio code.
 
 >[!div class="step-by-step"]
->[Précédent](index.md)
->[Suivant](architecture-comparison.md)
+>[Précédent](index.md) 
+> [Suivant](architecture-comparison.md)

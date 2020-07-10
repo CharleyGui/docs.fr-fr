@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.3
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.3
 ms.date: 05/16/2018
-ms.openlocfilehash: ba4cea302d91b395e88940d087fcaed306920840
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd8f554516fb5078d9d2ed1eec787f36e8f4c7a7
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74204560"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174755"
 ---
 # <a name="whats-new-in-c-73"></a>Nouveautés de C# 7.3
 
@@ -87,7 +87,7 @@ class C
 }
 ```
 
-Pour plus d’informations, [ `fixed` ](../language-reference/keywords/fixed-statement.md)voir l’article sur la déclaration .
+Pour plus d’informations, consultez l’article sur l' [ `fixed` instruction](../language-reference/keywords/fixed-statement.md).
 
 ### <a name="ref-local-variables-may-be-reassigned"></a>Les variables locales `ref` peuvent être réaffectées
 
@@ -98,7 +98,7 @@ ref VeryLargeStruct refLocal = ref veryLargeStruct; // initialization
 refLocal = ref anotherVeryLargeStruct; // reassigned, refLocal refers to different storage.
 ```
 
-Pour plus d’informations, voir l’article sur [`foreach`](../language-reference/keywords/foreach-in.md) [ `ref` les retours et `ref` les habitants](../programming-guide/classes-and-structs/ref-returns.md), et l’article sur .
+Pour plus d’informations, consultez l’article sur les [ `ref` retours et les `ref` variables locales](../programming-guide/classes-and-structs/ref-returns.md), ainsi que l’article sur [`foreach`](../language-reference/keywords/foreach-in.md) .
 
 ### <a name="stackalloc-arrays-support-initializers"></a>Les tableaux `stackalloc` prennent en charge les initialiseurs
 
@@ -117,21 +117,21 @@ int* pArr2 = stackalloc int[] {1, 2, 3};
 Span<int> arr = stackalloc [] {1, 2, 3};
 ```
 
-Pour plus d’informations, voir l’article de [ `stackalloc` l’opérateur.](../language-reference/operators/stackalloc.md)
+Pour plus d’informations, consultez l’article relatif à l' [ `stackalloc` opérateur](../language-reference/operators/stackalloc.md) .
 
 ### <a name="more-types-support-the-fixed-statement"></a>D’autres types prennent en charge l’instruction `fixed`
 
 L’instruction `fixed` prenait en charge un ensemble limité de types. À partir de C# 7.3, tout type contenant une méthode `GetPinnableReference()` qui retourne `ref T` ou `ref readonly T` peut être `fixed`. L’ajout de cette fonctionnalité signifie que `fixed` peut être utilisé avec <xref:System.Span%601?displayProperty=nameWithType> et des types connexes.
 
-Pour plus d’informations, voir l’article [ `fixed` de déclaration](../language-reference/keywords/fixed-statement.md) dans la référence linguistique.
+Pour plus d’informations, consultez l’article sur les [ `fixed` instructions](../language-reference/keywords/fixed-statement.md) dans la référence du langage.
 
 ### <a name="enhanced-generic-constraints"></a>Contraintes génériques améliorées
 
 Vous pouvez maintenant spécifier le type <xref:System.Enum?displayProperty=nameWithType> ou <xref:System.Delegate?displayProperty=nameWithType> en tant que contraintes de classe de base pour un paramètre de type.
 
-Vous pouvez également `unmanaged` utiliser la nouvelle contrainte, pour spécifier qu’un paramètre de type doit être un type non-nullable [non gestion .](../language-reference/builtin-types/unmanaged-types.md)
+Vous pouvez également utiliser la nouvelle `unmanaged` contrainte pour spécifier qu’un paramètre de type doit être un [type non managé](../language-reference/builtin-types/unmanaged-types.md)qui n’accepte pas les valeurs NULL.
 
-Pour plus d’informations, [ `where` ](../language-reference/keywords/where-generic-type-constraint.md) voir les articles sur les contraintes [génériques](../programming-guide/generics/constraints-on-type-parameters.md)et les contraintes sur les paramètres de type .
+Pour plus d’informations, consultez les articles sur les contraintes et contraintes [ `where` génériques](../language-reference/keywords/where-generic-type-constraint.md) [sur les paramètres de type](../programming-guide/generics/constraints-on-type-parameters.md).
 
 L’ajout de ces contraintes aux types existants est une [modification incompatible](version-update-considerations.md#incompatible-changes). Les types génériques fermés peuvent ne plus respecter ces nouvelles contraintes.
 
@@ -141,7 +141,7 @@ Le second thème fournit des améliorations apportées aux fonctionnalités du l
 
 ### <a name="tuples-support--and-"></a>Les tuples prennent en charge `==` et `!=`
 
-Les types tuple C# prennent désormais en charge `==` et `!=`. Pour plus d’informations, consultez la section consacrée à [l’égalité](../tuples.md#equality-and-tuples) dans l’article sur les [tuples](../tuples.md).
+Les types tuple C# prennent désormais en charge `==` et `!=`. Pour plus d’informations, consultez la section [égalité des tuples](../language-reference/builtin-types/value-tuples.md#tuple-equality) de l’article [types de tuple](../language-reference/builtin-types/value-tuples.md) .
 
 ### <a name="attach-attributes-to-the-backing-fields-for-auto-implemented-properties"></a>Joindre des attributs à des champs de stockage pour les propriétés implémentées automatiquement
 
@@ -168,7 +168,7 @@ static void M(in S arg);
 > [!NOTE]
 > Cette opération a été implémentée en tant que correctif de bogue. Il n’y a donc plus d’ambiguïté, même si la version du langage est définie sur « 7.2 ».
 
-Pour plus d’informations, voir l’article sur le [ `in` modificateur de paramètres](../language-reference/keywords/in-parameter-modifier.md).
+Pour plus d’informations, consultez l’article sur le [ `in` modificateur de paramètre](../language-reference/keywords/in-parameter-modifier.md).
 
 ### <a name="extend-expression-variables-in-initializers"></a>Étendre des variables d’expression dans les initialiseurs
 

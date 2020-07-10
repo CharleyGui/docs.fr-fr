@@ -4,12 +4,12 @@ description: Découvrez le chemin de migration Azure adapté à votre applicatio
 author: CESARDELATORRE
 ms.author: cesardl
 ms.date: 03/01/2020
-ms.openlocfilehash: a8ad946b03f97272cb8685620858af6b21a372dc
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 162dc8eb87dfd78d050b93b1c24ac573d7092126
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "82072108"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174294"
 ---
 # <a name="choose-the-right-azure-hosting-option"></a>Choisir l’option d’hébergement Azure appropriée
 
@@ -46,7 +46,7 @@ Lorsque vous migrez des bases de données relationnelles vers Azure, plusieurs c
 
 ## <a name="networking-and-security-considerations"></a>Considérations relatives au réseau et à la sécurité
 
-Lors du déploiement d’applications dans un cloud public comme Microsoft Azure, vous souhaiterez peut-être isoler et sécuriser certains réseaux en [créant des DMZ de réseau](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/), comme un [DMZ entre Azure et l’environnement local](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) ou un [DMZ entre Azure et Internet](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-dmz). Les DMZ peuvent être implémentés avec un [réseau virtuel Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
+Lors du déploiement d’applications dans un cloud public comme Microsoft Azure, vous souhaiterez peut-être isoler et sécuriser certains réseaux en [créant des DMZ de réseau](/azure/architecture/reference-architectures/dmz/), comme un [DMZ entre Azure et l’environnement local](/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) ou un [DMZ entre Azure et Internet](/azure/architecture/reference-architectures/dmz/secure-vnet-dmz). Les DMZ peuvent être implémentés avec un [réseau virtuel Azure](/azure/virtual-network/virtual-networks-overview).
 
 Grâce aux réseaux virtuels Azure vous pouvez :
 
@@ -57,15 +57,15 @@ Grâce aux réseaux virtuels Azure vous pouvez :
 - Créer des topologies réseau sophistiquées avec les appliances virtuelles
 - Procurez-vous un environnement isolé et hautement sécurisé pour vos applications
 
-Pour commencer à créer votre propre réseau virtuel, consultez la [documentation relative au réseau virtuel Azure](https://docs.microsoft.com/azure/virtual-network/).
+Pour commencer à créer votre propre réseau virtuel, consultez la [documentation relative au réseau virtuel Azure](/azure/virtual-network/).
 
 ## <a name="authentication-and-authorization-considerations-when-migrating-to-azure"></a>Considérations relatives à l’authentification et à l’autorisation lors de migration vers Azure
 
 La sécurité est la priorité de toute organisation migrant vers le cloud. La plupart des entreprises ont investi beaucoup de temps, d’argent et d’ingénierie dans la conception et le développement d’un modèle de sécurité, et il est important qu’ils puissent tirer parti des investissements existants, tels que les stockages d’identités et les solutions d’authentification unique.
 
-Nombreuses sont les applications B2E .NET d’entreprise existantes s’exécutant sur site à utiliser Active Directory pour l’authentification et la gestion des identités. Azure AD Connect permet d’intégrer vos répertoires locaux à Azure Active Directory. Pour commencer, consultez [Intégrer vos répertoires locaux à Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect).
+Nombreuses sont les applications B2E .NET d’entreprise existantes s’exécutant sur site à utiliser Active Directory pour l’authentification et la gestion des identités. Azure AD Connect permet d’intégrer vos répertoires locaux à Azure Active Directory. Pour commencer, consultez [Intégrer vos répertoires locaux à Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
 
-Consultez [Identity requirements for your hybrid identity solution](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-business-needs) (Exigences relatives à l’identité pour votre solution d’identité hybride) pour améliorer la planification relative à Azure Active Directory.
+Consultez [Identity requirements for your hybrid identity solution](/azure/active-directory/active-directory-hybrid-identity-design-considerations-business-needs) (Exigences relatives à l’identité pour votre solution d’identité hybride) pour améliorer la planification relative à Azure Active Directory.
 
 Les autres choix de protocole d’authentification sont [OAuth](https://en.wikipedia.org/wiki/OAuth) et [OpenID](https://en.wikipedia.org/wiki/OpenID), qui sont courants dans les applications destinées aux consommateurs. Lorsque vous utilisez des bases de données d’identité autonomes, par exemple une base de données ASP.NET Identity SQL encapsulée par IdentityServer4 utilisant OAuth, aucune connectivité aux bases de données ou répertoires locaux n’est généralement requise.
 

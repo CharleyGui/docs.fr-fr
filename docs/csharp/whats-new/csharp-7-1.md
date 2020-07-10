@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.1
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.1.
 ms.date: 04/09/2019
-ms.openlocfilehash: 5d2d6f51b6422f5b4db5c6bd275b5ffce1f695f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fe6e49eb01e24a27bc7970900c05150378ab194a
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399706"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174768"
 ---
 # <a name="whats-new-in-c-71"></a>Nouveautés de C# 7.1
 
@@ -17,7 +17,7 @@ C# 7.1 ajoute l’élément de configuration de [sélection de la version du lan
 
 Les nouvelles fonctionnalités de langage de cette version sont :
 
-- [`async``Main` méthode](#async-main)
+- [`async``Main`méthode](#async-main)
   - Le point d’entrée pour une application peut avoir le modificateur `async`.
 - [`default`expressions littérales](#default-literal-expressions)
   - Vous pouvez utiliser des expressions littérales default dans les expressions de valeur par défaut quand le type cible peut être inféré.
@@ -106,7 +106,7 @@ string label = "Colors used in the map";
 var pair = (count, label); // element names are "count" and "label"
 ```
 
-Pour plus d’informations sur cette fonctionnalité, voir l’article [Tuples](../tuples.md).
+Pour plus d’informations sur cette fonctionnalité, consultez l’article [types de tuples](../language-reference/builtin-types/value-tuples.md) .
 
 ## <a name="pattern-matching-on-generic-type-parameters"></a>Critères spéciaux sur les paramètres de type générique
 
@@ -114,5 +114,5 @@ Pour plus d’informations sur cette fonctionnalité, voir l’article [Tuples](
 
 ## <a name="reference-assembly-generation"></a>Génération d’assemblys de références
 
-Il existe deux nouvelles options de compilateur qui génèrent *des assemblages de référence seulement*: [-refout](../language-reference/compiler-options/refout-compiler-option.md) et [-refonly](../language-reference/compiler-options/refonly-compiler-option.md).
+Il existe deux nouvelles options de compilateur qui génèrent des *assemblys de référence uniquement*: [-REFOUT](../language-reference/compiler-options/refout-compiler-option.md) et [-refonly](../language-reference/compiler-options/refonly-compiler-option.md).
 Les articles en lien décrivent plus en détail ces options et les assemblys de références.

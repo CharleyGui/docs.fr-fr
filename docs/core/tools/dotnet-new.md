@@ -1,13 +1,16 @@
 ---
 title: Commande dotnet new
 description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 04/10/2020
-ms.openlocfilehash: 39301ad95761848b60b45cb5c18ede937f70c32c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec41b3b79ed5eded7c9124d3e4d95c658ee39580
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283973"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173118"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -55,7 +58,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
   Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-| Modèles                                    | Nom court                      | Language     | Balises                                  | Présent |
+| Modèles                                    | Nom court                      | Langage     | Balises                                  | Présent |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
@@ -74,8 +77,8 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 | Page Razor                                   | [pagination](#page)                   | [C#]         | Web/ASP.NET                           | 2.0        |
 | ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
 | ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
-| Application de serveur éblouissante                            | [blazorserver](#blazorserver)   | [C#]         | Web/éblouissant                            | 3.0        |
-| Application de webassembly éblouissante                       | `blazorwasm`                    | [C#]         | Web/éblouissant/webassembly                            | 3.1.300    |
+| BlazorApplication serveur                            | [blazorserver](#blazorserver)   | [C#]         | InternetBlazor                            | 3.0        |
+| BlazorWebAssemblyApplication                       | `blazorwasm`                    | [C#]         | InternetBlazor/WebAssembly                            | 3.1.300    |
 | ASP.NET Core vide                           | [Internet](#web)                     | [C#], F#     | Web/vides                             | 1.0        |
 | Application web ASP.NET Core (Model-View-Controller) | [MVC](#web-options)             | [C#], F#     | Web/MVC                               | 1.0        |
 | Application web ASP.NET Core                         | [webapp, Razor](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
@@ -105,7 +108,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 - **`-h|--help`**
 
-  Affiche l’aide pour la commande. Elle peut être appelée pour la `dotnet new` commande elle-même ou pour n’importe quel modèle. Par exemple : `dotnet new mvc --help`.
+  Affiche l’aide pour la commande. Elle peut être appelée pour la `dotnet new` commande elle-même ou pour n’importe quel modèle. Par exemple, `dotnet new mvc --help`.
 
 - **`-i|--install <PATH|NUGET_ID>`**
 
@@ -124,7 +127,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
   Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
 
   > [!NOTE]
-  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple : `dotnet new console -lang "F#"`.
+  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple, `dotnet new console -lang "F#"`.
 
 - **`-n|--name <OUTPUT_NAME>`**
 
@@ -247,7 +250,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré.
+  Exclut *launchSettings.js* du modèle généré.
 
 - **`--no-restore`**
 
@@ -378,7 +381,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré.
+  Exclut *launchSettings.js* du modèle généré.
 
 - **`--no-https`**
 
@@ -398,7 +401,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré.
+  Exclut *launchSettings.js* du modèle généré.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -477,7 +480,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré.
+  Exclut *launchSettings.js* du modèle généré.
 
 - **`--no-https`**
 
@@ -525,7 +528,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré.
+  Exclut *launchSettings.js* du modèle généré.
 
 - **`--no-restore`**
 
@@ -557,7 +560,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré.
+  Exclut *launchSettings.js* du modèle généré.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -634,7 +637,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré.
+  Exclut *launchSettings.js* du modèle généré.
 
 - **`--no-https`**
 
@@ -666,7 +669,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--sdk-version <VERSION_NUMBER>`**
 
-  Spécifie la version de la kit SDK .NET Core à utiliser dans le fichier *global. JSON* .
+  Spécifie la version de la kit SDK .NET Core à utiliser dans le fichier *global.js* .
 
 ***
 
@@ -732,7 +735,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
   dotnet new -u
   ```
 
-- Créez un *global. JSON* dans le répertoire actif en définissant la version du kit de développement logiciel (SDK) sur 3.1.101 :
+- Créez un *global.js* dans le répertoire actif en définissant la version du kit de développement logiciel (SDK) sur 3.1.101 :
 
   ```dotnetcli
   dotnet new globaljson --sdk-version 3.1.101

@@ -4,16 +4,16 @@ ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: 57308992268e1285cfeb82b28e2abf213e7a831b
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 30946c85d2b64ead3f42e03da61108fa5b367779
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805858"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174807"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out, modificateur de paramètre (référence C#)
 
-Le mot clé `out` entraîne le passage des arguments par référence. Il fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Il est similaire au mot clé [ref](ref.md), à la différence que `ref` nécessite que la variable soit initialisée avant d’être passée. Il est également similaire au mot clé [in](in-parameter-modifier.md), à la différence que `in` n’autorise pas la méthode appelée à modifier la valeur d’argument. Pour utiliser un paramètre `out`, la définition de la méthode et la méthode d'appel doivent utiliser explicitement le mot clé `out`. Par exemple :  
+Le mot clé `out` entraîne le passage des arguments par référence. Il fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Il est similaire au mot clé [ref](ref.md), à la différence que `ref` nécessite que la variable soit initialisée avant d’être passée. Il est également similaire au mot clé [in](in-parameter-modifier.md), à la différence que `in` n’autorise pas la méthode appelée à modifier la valeur d’argument. Pour utiliser un paramètre `out`, la définition de la méthode et la méthode d'appel doivent utiliser explicitement le mot clé `out`. Par exemple :  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#1)]  
 
@@ -48,15 +48,15 @@ Vous ne pouvez pas utiliser les mots clés `in`, `ref` ou `out` pour les types d
   
 - Les méthodes Iterator, qui incluent une instruction [yield return](./yield.md) ou `yield break`.  
 
-En outre, les [méthodes d’extension](../../programming-guide/classes-and-structs/extension-methods.md) ont les restrictions suivantes :
+En outre, les [méthodes d’extension](../../programming-guide/classes-and-structs/extension-methods.md) présentent les restrictions suivantes :
 
 - Le `out` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension.
-- Le `ref` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension lorsque l’argument n’est pas une struction, ou un type générique non contraint d’être une struction.
-- Le `in` mot clé ne peut pas être utilisé à moins que le premier argument soit une struction. Le `in` mot clé ne peut pas être utilisé sur n’importe quel type générique, même lorsqu’il est contraint d’être une struction.
+- Le `ref` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension lorsque l’argument n’est pas un struct, ou un type générique qui n’est pas imposé comme struct.
+- Le `in` mot clé ne peut pas être utilisé, sauf si le premier argument est un struct. Le `in` mot clé ne peut pas être utilisé sur un type générique, même lorsqu’il est imposé comme struct.
 
 ## <a name="declaring-out-parameters"></a>Déclarer des paramètres `out`
 
-Il arrive souvent que l’on déclare une méthode avec des arguments `out` pour qu’elle retourne plusieurs valeurs. À compter de C# 7.0, vous pouvez recourir aux [tuples](../../tuples.md) dans ce type de scénario. L'exemple suivant utilise `out` pour retourner trois variables avec un seul appel de méthode. Le troisième argument est attribué à null. Cela permet aux méthodes de retourner des valeurs le cas échéant.  
+Il arrive souvent que l’on déclare une méthode avec des arguments `out` pour qu’elle retourne plusieurs valeurs. À compter de C# 7,0, considérez les [tuples de valeur](../builtin-types/value-tuples.md) pour les scénarios similaires. L'exemple suivant utilise `out` pour retourner trois variables avec un seul appel de méthode. Le troisième argument est assigné à la valeur null. Cela permet aux méthodes de retourner des valeurs le cas échéant.  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#3)]  
 
@@ -79,7 +79,7 @@ Dans l’exemple précédent, la variable `number` est fortement typée en `int`
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation CMD](../../programming-guide/index.md)
-- [Mots-clés C](./index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](./index.md)
 - [Paramètres de méthodes](./method-parameters.md)

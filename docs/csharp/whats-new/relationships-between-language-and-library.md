@@ -2,12 +2,12 @@
 title: Relations entre les fonctionnalités de langage et les types de bibliothèque | Microsoft Docs
 description: Les fonctionnalités de langage se basent souvent sur les types de bibliothèque pour l’implémentation. Vous devez donc bien comprendre ces relations.
 ms.date: 07/20/2017
-ms.openlocfilehash: dfae7972af0a251a92700d7d33bd6f971eb1870e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: abf15385da3756c35db2df822cc2e11e9edf5758
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "61706024"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174099"
 ---
 # <a name="relationships-between-language-features-and-library-types"></a>Relations entre les fonctionnalités de langage et les types de bibliothèque
 
@@ -21,7 +21,7 @@ Cette dépendance sur les fonctionnalités de la bibliothèque standard fait par
 
 Cette première version était simple : le compilateur et la bibliothèque standard étaient fournis ensemble, et il n’y avait qu’une seule version de chacun.
 
-Dans les versions ultérieures de C#, de nouveaux types ou membres ont parfois été ajoutés aux dépendances. Par exemple, <xref:System.Runtime.CompilerServices.INotifyCompletion>, <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> et <xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>. C# 7.0 poursuit dans ce sens en ajoutant une dépendance sur <xref:System.ValueTuple> pour implémenter la fonctionnalité de langage [tuples](../tuples.md).
+Dans les versions ultérieures de C#, de nouveaux types ou membres ont parfois été ajoutés aux dépendances. Par exemple, <xref:System.Runtime.CompilerServices.INotifyCompletion>, <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> et <xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>. C# 7.0 poursuit dans ce sens en ajoutant une dépendance sur <xref:System.ValueTuple> pour implémenter la fonctionnalité de langage [tuples](../language-reference/builtin-types/value-tuples.md).
 
 L’équipe de conception du langage s’efforce de réduire la surface d’exposition des types et des membres requis dans une bibliothèque standard conforme. Cet objectif s’ajoute à la nécessité de conserver une conception épurée à mesure que de nouvelles fonctionnalités de bibliothèque sont incorporées au langage. De nouvelles fonctionnalités seront ajoutées dans les futures versions du langage C# qui nécessiteront de nouveaux types et membres dans une bibliothèque standard. Il est donc important de bien comprendre comment gérer ces dépendances dans votre travail.
 

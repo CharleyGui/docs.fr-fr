@@ -4,12 +4,12 @@ description: Découvrez les types de base (numérique, chaîne et objet) disponi
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 468482bd1b4f1a5835df9d66ee483edc33c28f61
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 93a0023969bb8bb089922a9e30fbf599eddc7203
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202206"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174177"
 ---
 # <a name="types-variables-and-values"></a>Types, variables et valeurs
 
@@ -74,7 +74,7 @@ Comme indiqué précédemment, vous pouvez attribuer implicitement un type à un
   
 Dans certains cas, il est difficile de créer un type nommé pour des ensembles simples de valeurs associées que vous ne souhaitez pas stocker ou transférer en dehors des limites de la méthode. Vous pouvez alors créer des *types anonymes*. Pour plus d’informations, consultez [types anonymes](programming-guide/classes-and-structs/anonymous-types.md).
 
-Il est courant de vouloir retourner plusieurs valeurs d’une méthode. Vous pouvez créer des *types tuple* qui retournent plusieurs valeurs dans un seul appel de méthode. Pour plus d’informations, consultez [tuples](tuples.md).
+Il est courant de vouloir retourner plusieurs valeurs d’une méthode. Vous pouvez créer des *types tuple* qui retournent plusieurs valeurs dans un seul appel de méthode. Pour plus d’informations, consultez [types de tuples](language-reference/builtin-types/value-tuples.md).
 
 ## <a name="the-common-type-system"></a>Système de type commun (CTS)
 

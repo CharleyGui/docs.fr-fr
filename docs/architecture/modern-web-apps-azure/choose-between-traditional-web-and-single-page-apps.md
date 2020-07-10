@@ -3,13 +3,16 @@ title: Choisir entre des applications web traditionnelles et des applications mo
 description: Apprenez à choisir entre des applications web traditionnelles et des applications monopages (SPA) quand il s’agit de créer des applications web.
 author: ardalis
 ms.author: wiwagn
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 12/04/2019
-ms.openlocfilehash: 0aef42b78114a11c70456cb3122d3dcb5143f983
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 4fe889fe86d96a5b2ffa5bd879d2ec1801a3cf20
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662704"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174365"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Choisir entre des applications web traditionnelles et des applications monopages
 
@@ -38,21 +41,21 @@ De plus, les frameworks SPA demandent de plus grandes connaissances en architect
 
 Les améliorations de l’expérience utilisateur rendues possibles par l’approche SPA doivent être comparées à ces considérations.
 
-## <a name="blazor"></a>Blazor
+## Blazor
 
-ASP.NET Core 3.0 introduit un nouveau modèle permettant de créer une interface utilisateur riche, interactive et composable, appelée Blazor. Le côté serveur de éblouissant permet aux développeurs de créer une interface utilisateur avec C# et Razor sur le serveur et pour que l’interface utilisateur soit connectée de manière interactive au navigateur en temps réel à l’aide d’une connexion Signalr persistante.
+ASP.NET Core 3,0 introduit un nouveau modèle pour la création d’une interface utilisateur riche, interactive et composable appelée Blazor . Blazorcôté serveur, les développeurs peuvent créer une interface utilisateur avec C# et Razor sur le serveur et pour que l’interface utilisateur soit connectée de manière interactive au navigateur en temps réel à l’aide d’une connexion Signalr persistante.
 
-Le webassembly éblouissant introduit une autre option pour les applications éblouissantes, ce qui leur permet de s’exécuter dans le navigateur à l’aide de webassembly. Étant donné qu’il s’agit de .NET en cours d’exécution sur webassembly, vous pouvez réutiliser le code et les bibliothèques à partir de parties côté serveur de votre application.
+BlazorWebAssemblyintroduit une autre option pour les Blazor applications, ce qui leur permet de s’exécuter dans le navigateur à l’aide de WebAssembly . Étant donné qu’il s’agit de .NET en cours d’exécution sur WebAssembly , vous pouvez réutiliser le code et les bibliothèques à partir de parties côté serveur de votre application.
 
-Éblouissant offre une nouvelle option, à prendre en compte lors de l’évaluation de la création d’une application Web ou d’un SPA à affichage serveur. Vous pouvez créer des comportements côté client riches en mode SPA à l’aide de éblouissant, sans avoir besoin d’un développement JavaScript significatif. Les applications éblouissantes peuvent appeler des API pour demander des données ou effectuer des opérations côté serveur.
+Blazorfournit une nouvelle option, troisième option, à prendre en compte lors de l’évaluation de la nécessité de créer une application Web entièrement rendue serveur ou un SPA. Vous pouvez créer des comportements côté client riches en mode SPA à l’aide de Blazor , sans avoir besoin d’un développement JavaScript significatif. Blazorles applications peuvent appeler des API pour demander des données ou effectuer des opérations côté serveur.
 
-Envisagez de créer votre application Web avec éblouissant dans les cas suivants :
+Envisagez de créer votre application Web avec Blazor lorsque :
 
 - Votre application doit exposer une interface utilisateur riche
 
 - Votre équipe est plus à l’aise avec le développement .NET que le développement JavaScript ou de machine à écrire
 
-Pour plus d’informations sur Blazor, consultez [Bien démarrer avec Blazor](https://blazor.net/docs/get-started.html).
+Pour plus d’informations sur Blazor , consultez la page [prise en main Blazor de ](https://blazor.net/docs/get-started.html).
 
 ## <a name="when-to-choose-traditional-web-apps"></a>Quand choisir les applications web traditionnelles
 
@@ -97,23 +100,23 @@ L’écriture d’applications SPA nécessite une bonne connaissance des bibliot
 
 Si vous prenez déjà en charge une API web pour une utilisation par d’autres clients, il peut être plus facile de créer une implémentation de SPA qui tire parti de ces API, plutôt que de reproduire la logique côté serveur. Les applications SPA utilisent beaucoup les API web pour interroger et mettre à jour des données quand les utilisateurs interagissent avec l’application.
 
-## <a name="when-to-choose-blazor"></a>Quand choisir le éblouissant
+## <a name="when-to-choose-blazor"></a>Quand choisirBlazor
 
-Vous trouverez ci-dessous une explication plus détaillée de la sélection de l’éblouissante pour votre application Web.
+Voici une explication plus détaillée du moment où choisir Blazor pour votre application Web.
 
 **Votre application doit exposer une interface utilisateur riche**
 
-À l’instar de la fonction de type de demande, les applications éblouissantes peuvent prendre en charge le comportement de client riche sans rechargements de pages. Ces applications sont plus réactives aux utilisateurs et récupèrent uniquement les données (ou HTML) requises pour répondre à une interaction utilisateur donnée. Conçues correctement, les applications éblouissantes côté serveur peuvent être configurées pour s’exécuter en tant qu’applications éblouissantes côté client avec des modifications minimes une fois cette fonctionnalité prise en charge.
+Comme pour les applications basées sur JavaScript, les Blazor applications peuvent prendre en charge le comportement de client riche sans rechargements de pages. Ces applications sont plus réactives aux utilisateurs et récupèrent uniquement les données (ou HTML) requises pour répondre à une interaction utilisateur donnée. Conçu correctement, les applications côté serveur Blazor peuvent être configurées pour s’exécuter en tant qu’applications côté client Blazor avec des modifications minimes une fois cette fonctionnalité prise en charge.
 
 **Votre équipe est plus à l’aise avec le développement .NET que le développement JavaScript ou de machine à écrire**
 
-De nombreux développeurs sont plus productifs avec .NET et Razor qu’avec les langages côté client tels que JavaScript ou la machine à écrire. Étant donné que le côté serveur de l’application est déjà en cours de développement avec .NET, l’utilisation de éblouissants garantit que chaque développeur .NET de l’équipe peut comprendre et créer potentiellement le comportement de la partie frontale de l’application.
+De nombreux développeurs sont plus productifs avec .NET et Razor qu’avec les langages côté client tels que JavaScript ou la machine à écrire. Étant donné que le côté serveur de l’application est déjà en cours de développement avec .NET, l’utilisation de Blazor garantit que chaque développeur .net de l’équipe puisse comprendre et générer potentiellement le comportement de la partie frontale de l’application.
 
 ## <a name="decision-table"></a>Table de décision
 
-Le tableau de décision suivant résume certains des facteurs de base à prendre en compte lors du choix entre une application Web traditionnelle, un SPA ou une application éblouissante.
+Le tableau de décision suivant résume certains des facteurs de base à prendre en compte lors du choix entre une application Web traditionnelle, un SPA ou une Blazor application.
 
-| **Factor**                                           | **Application web traditionnelle** | **Applications monopage** | **Application éblouissante**  |
+| **Facteur**                                           | **Application web traditionnelle** | **Application à une seule page** | **BlazorLancement**  |
 | ---------------------------------------------------- | ----------------------- | --------------------------- | --------------- |
 | Connaissances de l’équipe de JavaScript/TypeScript | **Minimal**             | **Obligatoire**                | **Minimal**     |
 | Prise en charge des navigateurs sans script                   | **Pris en charge**           | **Non pris en charge**           | **Pris en charge**   |

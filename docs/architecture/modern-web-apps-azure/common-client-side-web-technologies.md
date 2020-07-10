@@ -1,27 +1,29 @@
 ---
-title: Technologies Web communes côté client
-description: Architect Modern Web Applications avec ASP.NET Core et Azure (fr) Technologies Web communes côté client
+title: Technologies web courantes côté client
+description: Architecturez des applications Web modernes avec ASP.NET Core et Azure | Technologies Web courantes côté client
 author: ardalis
 ms.author: wiwagn
+no-loc:
+- Blazor
 ms.date: 12/04/2019
-ms.openlocfilehash: 2809c8539b42e8e2250039dceed1389b3cbdcd8a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e8ea035c491fad39d2932572255a19c7c1493418
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449372"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174352"
 ---
-# <a name="common-client-side-web-technologies"></a>Technologies Web communes côté client
+# <a name="common-client-side-web-technologies"></a>Technologies web courantes côté client
 
 > « Un site web doit faire bonne impression aussi bien à l’intérieur qu’à l’extérieur ».  
 > _- Paul Cookson_
 
 Les applications ASP.NET Core sont des applications web qui reposent généralement sur des technologies web côté client de type HTML, CSS et JavaScript. En séparant le contenu de la page (le code HTML) de la mise en page et du style (le code CSS) et du comportement (via JavaScript), les applications web complexes peuvent tirer parti du principe de la séparation des rôles. Quand les rôles ne sont pas interconnectés, toute modification ultérieure de la structure, de la conception ou du comportement de l’application peut être effectuée plus facilement.
 
-Les codes HTML et CSS sont relativement stables, mais JavaScript, en raison des frameworks d’application et des utilitaires que les développeurs utilisent pour créer des applications web, évolue très rapidement. Ce chapitre examine quelques façons dont JavaScript est utilisé par les développeurs Web et fournit un aperçu de haut niveau des bibliothèques angulaires et réagir côté client.
+Les codes HTML et CSS sont relativement stables, mais JavaScript, en raison des frameworks d’application et des utilitaires que les développeurs utilisent pour créer des applications web, évolue très rapidement. Ce chapitre présente les différentes façons dont JavaScript est utilisé par les développeurs Web et fournit une vue d’ensemble de haut niveau des bibliothèques côté client angulaires et de réaction.
 
 > [!NOTE]
-> Blazor offre une alternative aux cadres JavaScript pour la construction d’interfaces utilisateur client interactives riches. Le soutien de Blazor côté client est toujours en avant-première, donc pour l’instant il est hors de portée pour ce chapitre.
+> Blazorfournit une alternative aux infrastructures JavaScript pour créer des interfaces utilisateur clientes riches et interactives. BlazorLa prise en charge côté client est toujours en version préliminaire. c’est pourquoi, pour l’instant, elle est hors de portée pour ce chapitre.
 
 ## <a name="html"></a>HTML
 
@@ -29,9 +31,9 @@ HTML est le langage de balisage standard utilisé pour créer des pages Web et d
 
 ## <a name="css"></a>CSS
 
-Le code CSS (feuilles de style en cascade) est utilisé pour contrôler l’apparence et la disposition des éléments HTML. Les styles CSS peuvent être appliqués directement à un élément HTML, définis séparément dans la même page ou définis dans un fichier distinct référencé par la page. Les styles sont organisés en cascade selon la manière dont ils sont utilisés pour sélectionner un élément HTML donné. Par exemple, un style qui s’applique à l’ensemble d’un document est remplacé par un style appliqué à un élément particulier. De même, un style spécifique à un élément serait remplacé par un style qui s’appliquait à une classe CSS qui s’appliquait à l’élément, qui à son tour serait remplacé par un style ciblant un exemple spécifique de cet élément (via son ID). Figure 6-1
+Le code CSS (feuilles de style en cascade) est utilisé pour contrôler l’apparence et la disposition des éléments HTML. Les styles CSS peuvent être appliqués directement à un élément HTML, définis séparément dans la même page ou définis dans un fichier distinct référencé par la page. Les styles sont organisés en cascade selon la manière dont ils sont utilisés pour sélectionner un élément HTML donné. Par exemple, un style qui s’applique à l’ensemble d’un document est remplacé par un style appliqué à un élément particulier. De même, un style spécifique à un élément est remplacé par un style qui s’applique à une classe CSS appliquée à l’élément, qui, à son tour, est remplacé par un style ciblant une instance spécifique de cet élément (via son ID). Figure 6-1
 
-![Règles de spécificité du CSS](./media/image6-1.png)
+![Règles de spécificité CSS](./media/image6-1.png)
 
 **Figure 6-1.** Règles de spécificité CSS, dans l’ordre.
 
@@ -39,13 +41,13 @@ Il est préférable de conserver les styles dans leurs propres fichiers de feuil
 
 ### <a name="css-preprocessors"></a>Préprocesseurs CSS
 
-Les feuilles de style CSS ne prennent pas en charge la logique conditionnelle, les variables et d’autres fonctionnalités de langage de programmation. Ainsi, les grandes feuilles de style incluent souvent un peu de répétition, car la même couleur, police, ou autre réglage est appliqué à beaucoup de différentes variations d’éléments HTML et de classes CSS. Les préprocesseurs CSS peuvent permettre à vos feuilles de style de suivre le [principe DRY](https://deviq.com/don-t-repeat-yourself/) en ajoutant la prise en charge des variables et de la logique.
+Les feuilles de style CSS ne prennent pas en charge la logique conditionnelle, les variables et d’autres fonctionnalités de langage de programmation. Ainsi, les feuilles de style volumineuses incluent souvent un certain nombre de répétitions, car la même couleur, la même police ou un autre paramètre est appliqué à de nombreuses variantes des éléments HTML et des classes CSS. Les préprocesseurs CSS peuvent permettre à vos feuilles de style de suivre le [principe DRY](https://deviq.com/don-t-repeat-yourself/) en ajoutant la prise en charge des variables et de la logique.
 
-Les préprocesseurs CSS les plus connus sont Sass et LESS. Tous deux étendent le code CSS, pour lequel ils offrent une compatibilité descendante, ce qui signifie qu’un fichier CSS simple est un fichier Sass ou LESS valide. Sass est basé sur Ruby et LESS sur JavaScript. Ils s’exécutent généralement dans le cadre de votre processus de développement local. Tous deux disposent d’outils de ligne de commande, ainsi que d’un support intégré dans Visual Studio pour les exécuter à l’aide de tâches Gulp ou Grunt.
+Les préprocesseurs CSS les plus connus sont Sass et LESS. Tous deux étendent le code CSS, pour lequel ils offrent une compatibilité descendante, ce qui signifie qu’un fichier CSS simple est un fichier Sass ou LESS valide. Sass est basé sur Ruby et LESS sur JavaScript. Ils s’exécutent généralement dans le cadre de votre processus de développement local. Les deux outils de ligne de commande sont disponibles, ainsi que la prise en charge intégrée dans Visual Studio pour les exécuter à l’aide de tâches Gulp ou grunt.
 
 ## <a name="javascript"></a>JavaScript
 
-JavaScript est un langage de programmation dynamique interprété qui a été normalisé dans la spécification du langage ECMAScript. Il s’agit du langage de programmation du web. Tout comme CSS, JavaScript peut être défini sous forme d’attributs dans les éléments HTML, de blocs de script dans une page ou dans des fichiers distincts. Tout comme CSS, il est recommandé d’organiser JavaScript en fichiers séparés, le gardant séparé autant que possible du HTML trouvé sur les pages Web individuelles ou les vues d’application.
+JavaScript est un langage de programmation dynamique interprété qui a été normalisé dans la spécification du langage ECMAScript. Il s’agit du langage de programmation du web. Tout comme CSS, JavaScript peut être défini sous forme d’attributs dans les éléments HTML, de blocs de script dans une page ou dans des fichiers distincts. Tout comme CSS, il est recommandé d’organiser JavaScript en fichiers séparés, ce qui le rend le plus séparé possible du code HTML dans des pages Web individuelles ou des vues d’application.
 
 Quand vous utilisez JavaScript dans votre application web, vous devez généralement effectuez certaines tâches :
 
@@ -61,13 +63,13 @@ Vous pouvez effectuer toutes ces tâches avec JavaScript seulement, mais de nomb
 
 ### <a name="legacy-web-apps-with-jquery"></a>Applications web héritées avec jQuery
 
-Bien qu’ancienne par les normes de cadre JavaScript, jQuery continue d’être une bibliothèque couramment utilisée pour travailler avec HTML /CSS et les applications de construction qui font des appels AJAX aux API Web. Toutefois, jQuery fonctionne au niveau DOM (Document Object Model) du navigateur et offre par défaut uniquement un modèle impératif et non déclaratif.
+Bien que les normes de framework JavaScript, jQuery continuent à être une bibliothèque couramment utilisée pour travailler avec HTML/CSS et à créer des applications qui effectuent des appels AJAX à des API Web. Toutefois, jQuery fonctionne au niveau DOM (Document Object Model) du navigateur et offre par défaut uniquement un modèle impératif et non déclaratif.
 
-Par exemple, supposons qu’un élément de la page doit être visible si la valeur d’une zone de texte dépasse 10. Dans jQuery, vous implémentez cette fonction en écrivant un gestionnaire d’événements avec du code pour inspecter la valeur de la zone de texte et définir la visibilité de l’élément cible en fonction de cette valeur. Il s’agit d’une approche impérative, basée sur le code. En revanche, un autre framework peut à la place utiliser la liaison de données pour lier la visibilité de l’élément à la valeur de la zone de texte de manière déclarative. Pour cela vous n’avez pas besoin d’écrire de code, mais vous devez décorer les éléments concernés avec des attributs de liaison de données. À mesure que les comportements côté client deviennent plus complexes, les approches de liaison des données se traduisent souvent par des solutions plus simples avec moins de code et de complexité conditionnelle.
+Par exemple, supposons qu’un élément de la page doit être visible si la valeur d’une zone de texte dépasse 10. Dans jQuery, vous implémentez cette fonction en écrivant un gestionnaire d’événements avec du code pour inspecter la valeur de la zone de texte et définir la visibilité de l’élément cible en fonction de cette valeur. Il s’agit d’une approche impérative, basée sur le code. En revanche, un autre framework peut à la place utiliser la liaison de données pour lier la visibilité de l’élément à la valeur de la zone de texte de manière déclarative. Pour cela vous n’avez pas besoin d’écrire de code, mais vous devez décorer les éléments concernés avec des attributs de liaison de données. Comme les comportements côté client sont plus complexes, les approches de liaison de données se traduisent souvent par des solutions plus simples, avec moins de code et une complexité conditionnelle.
 
 ### <a name="jquery-vs-a-spa-framework"></a>Comparaison entre jQuery et un framework SPA
 
-| **Factor** | **Jquery** | **Angular**|
+| **Facteur** | **jQuery** | **Angular**|
 |--------------------------|------------|-------------|
 | Fait abstraction du DOM | **Oui** | **Oui** |
 | Prise en charge d’Ajax | **Oui** | **Oui** |
@@ -76,13 +78,13 @@ Par exemple, supposons qu’un élément de la page doit être visible si la val
 | Création de modèles | **Non** | **Oui** |
 | Routage de lien ciblé | **Non** | **Oui** |
 
-La plupart des fonctionnalités absentes dans jQuery peuvent être ajoutées par le biais d’autres bibliothèques. Toutefois, un framework SPA comme Angular fournit ces fonctionnalités de façon plus intégrée, puisqu’elles sont prises en compte dès sa conception. En outre, jQuery est une bibliothèque impérative, ce qui signifie que vous devez appeler jQuery fonctions afin de faire n’importe quoi avec jQuery. La plupart des tâches et des fonctionnalités que fournissent les frameworks SPA peuvent être effectuées de façon déclarative, sans avoir réellement à écrire du code.
+La plupart des fonctionnalités absentes dans jQuery peuvent être ajoutées par le biais d’autres bibliothèques. Toutefois, un framework SPA comme Angular fournit ces fonctionnalités de façon plus intégrée, puisqu’elles sont prises en compte dès sa conception. De plus, jQuery est une bibliothèque impérative, ce qui signifie que vous devez appeler des fonctions jQuery pour faire quoi que ce soit avec jQuery. La plupart des tâches et des fonctionnalités que fournissent les frameworks SPA peuvent être effectuées de façon déclarative, sans avoir réellement à écrire du code.
 
-La liaison de données en est un bon exemple. Dans jQuery, il suffit généralement d’une seule ligne de code pour obtenir la valeur d’un élément DOM ou pour définir la valeur d’un élément. Cependant, vous devez écrire ce code chaque fois que vous avez besoin de changer la valeur de l’élément, et parfois cela se produira dans plusieurs fonctions sur une page. Un autre exemple courant est la visibilité de l’élément. Dans jQuery, il pourrait y avoir beaucoup d’endroits différents où vous écriviez du code pour contrôler si certains éléments étaient visibles. Dans chacun de ces cas, si vous utilisez la liaison de données, vous n’avez plus besoin d’écrire du code. Vous lieriez simplement la valeur ou la visibilité des éléments en question à un *modèle de vue* sur la page, et les modifications apportées à ce modèle de vue seraient automatiquement reflétées dans les éléments liés.
+La liaison de données en est un bon exemple. Dans jQuery, il suffit généralement d’une seule ligne de code pour obtenir la valeur d’un élément DOM ou définir la valeur d’un élément. Toutefois, vous devez écrire ce code chaque fois que vous devez modifier la valeur de l’élément, ce qui se produit parfois dans plusieurs fonctions sur une page. Un autre exemple courant est la visibilité de l’élément. Dans jQuery, il peut y avoir de nombreux emplacements différents où vous écrirez du code pour contrôler si certains éléments étaient visibles. Dans chacun de ces cas, si vous utilisez la liaison de données, vous n’avez plus besoin d’écrire du code. Vous devez simplement lier la valeur ou la visibilité des éléments en question à un *ViewModel* sur la page, et les modifications apportées à ce ViewModel seront automatiquement reflétées dans les éléments liés.
 
 ### <a name="angular-spas"></a>SPA Angular
 
-Angular reste l’un des cadres JavaScript les plus populaires au monde. Depuis Angular 2, l’équipe a reconstruit le cadre à partir de zéro (en utilisant [TypeScript](https://www.typescriptlang.org/)) et rebaptisé du nom original AngularJS à tout simplement Angular. Aujourd’hui âgé de plusieurs années, l’angulaire redessinée continue d’être un cadre solide pour la construction d’applications à une page unique.
+Angulaire reste l’un des frameworks JavaScript les plus populaires au monde. Étant donné que l’angulaire 2, l’équipe a reconstruit le Framework de bout en bout (à l’aide de la [machine à écrire](https://www.typescriptlang.org/)) et rebaptisé le nom de AngularJS d’origine en un simple angle. Désormais, il y a plusieurs années, l’angle repensé repensée continue d’être une infrastructure robuste pour la création d’applications à page unique.
 
 Les applications Angular sont créées à partir de composants. Les composants combinent des modèles HTML et des objets spéciaux, et contrôlent une partie de la page. Un composant simple provenant de la documentation d’Angular est présenté ici :
 
@@ -97,21 +99,21 @@ import { Component } from '@angular/core';
 export class AppComponent { name = 'Angular'; }
 ```
 
-Les composants sont définis à l’aide de la fonction d’élément décoratif @Component qui récupère les métadonnées du composant. La propriété du sélecteur identifie l’ID de l’élément sur la page où ce composant sera affiché. La propriété de modèle est un modèle HTML simple qui inclut un espace réservé correspondant à la propriété de nom du composant, défini sur la dernière ligne.
+Les composants sont définis à l’aide de la fonction d’élément décoratif @Component qui récupère les métadonnées du composant. La propriété Selector identifie l’ID de l’élément sur la page où ce composant sera affiché. La propriété de modèle est un modèle HTML simple qui inclut un espace réservé correspondant à la propriété de nom du composant, défini sur la dernière ligne.
 
 Parce qu’elles utilisent des composants et des modèles, au lieu d’éléments DOM, les applications Angular peuvent fonctionner à un niveau d’abstraction supérieur et avec moins de code global que les applications écrites seulement à l’aide de JavaScript (également appelées « Vanilla JS ») ou avec jQuery. Angular impose également un certain ordre pour l’organisation de vos fichiers de script côté client. Par convention, les applications Angular utilisent une structure de dossiers commune, avec des fichiers de script de module et de composant situés dans un dossier d’application. Les scripts Angular qui permettent de créer, déployer et tester l’application sont généralement placés dans un dossier de niveau supérieur.
 
-Vous pouvez développer des applications angulaires à l’aide d’un CLI. Pour commencer à développer localement des applications avec Angular (ce qui suppose que vous avez déjà installé git et npm), vous devez simplement cloner un dépôt à partir de GitHub, puis exécuter `npm install` et `npm start`. Au-delà de cela, Angular expédie son propre CLI, qui peut créer des projets, ajouter des fichiers et aider à tester, grouper et déployer des tâches. Cette convivialité CLI rend Angulaire particulièrement compatible avec ASP.NET Core, qui dispose également d’un grand support CLI.
+Vous pouvez développer des applications angulaires à l’aide d’une interface CLI. Pour commencer à développer localement des applications avec Angular (ce qui suppose que vous avez déjà installé git et npm), vous devez simplement cloner un dépôt à partir de GitHub, puis exécuter `npm install` et `npm start`. En outre, angulaire fournit sa propre interface CLI, qui peut créer des projets, ajouter des fichiers et assister aux tâches de test, de regroupement et de déploiement. Cette convivialité de l’interface CLI rend l’angle particulièrement compatible avec ASP.NET Core, qui offre également une excellente prise en charge de l’interface de commande.
 
 Microsoft a développé une application de référence, [eShopOnContainers](https://aka.ms/MicroservicesArchitecture), qui inclut une implémentation d’application SPA Angular. Cette application intègre des modules Angular pour gérer le panier d’achat de la boutique en ligne, charger et afficher des éléments du catalogue et gérer la création de commandes. Vous pouvez afficher et télécharger l’exemple d’application à partir de [GitHub](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebSPA).
 
 ### <a name="react"></a>React
 
-Contrairement à Angular, qui offre une implémentation complète du modèle MVC (Model-View-Controller), React concerne uniquement les affichages. Comme ce n’est pas un framework, mais une simple bibliothèque, vous devez utiliser des bibliothèques supplémentaires pour créer une application SPA. Il existe un certain nombre de bibliothèques qui sont conçues pour être utilisées avec React pour produire des applications riches d’une seule page.
+Contrairement à Angular, qui offre une implémentation complète du modèle MVC (Model-View-Controller), React concerne uniquement les affichages. Comme ce n’est pas un framework, mais une simple bibliothèque, vous devez utiliser des bibliothèques supplémentaires pour créer une application SPA. Il existe plusieurs bibliothèques conçues pour être utilisées avec REACT pour produire des applications de page unique riches.
 
 Une des fonctionnalités les plus importantes de React est qu’il utilise un modèle DOM virtuel. Le modèle DOM virtuel offre à React plusieurs avantages, notamment au niveau des performances (le modèle DOM virtuel peut optimiser les parties du modèle DOM réel qui doivent être mises à jour) et de la testabilité (pas besoin d’utiliser un navigateur pour tester React et ses interactions avec son modèle DOM virtuel).
 
-React est également inédit dans la façon dont il utilise le code HTML. Au lieu d’avoir une séparation stricte entre le code et le balisage (avec des références à JavaScript apparaissant dans des attributs HTML, par exemple), React ajoute du code HTML directement dans le code JavaScript sous la forme JSX. JSX est une syntaxe de type HTML qui peut compiler du code en JavaScript pur. Par exemple :
+React est également inédit dans la façon dont il utilise le code HTML. Au lieu d’avoir une séparation stricte entre le code et le balisage (avec des références à JavaScript apparaissant dans des attributs HTML, par exemple), React ajoute du code HTML directement dans le code JavaScript sous la forme JSX. JSX est une syntaxe de type HTML qui peut compiler du code en JavaScript pur. Par exemple :
 
 ```js
 <ul>
@@ -127,16 +129,16 @@ Comme React n’est pas un framework complet, vous avez généralement besoin d�
 
 ### <a name="vue"></a>Vue
 
-Dès son guide de départ, "Vue est un cadre progressif pour la construction d’interfaces utilisateur. Contrairement à d’autres cadres monolithiques, Vue est conçu à partir de zéro pour être progressivement adoptable. La bibliothèque centrale est axée uniquement sur la couche de vue et est facile à ramasser et à intégrer avec d’autres bibliothèques ou projets existants. D’autre part, Vue est parfaitement capable d’alimenter des applications sophistiquées à une page unique lorsqu’elle est utilisée en combinaison avec l’outillage moderne et les bibliothèques de soutien.
+Dans son guide de prise en main, «vue est une infrastructure progressive pour la création d’interfaces utilisateur. Contrairement à d’autres infrastructures monolithiques, la vue de vue est conçue de manière à pouvoir être remplacée de manière incrémentielle. La bibliothèque principale est axée sur la couche de vue uniquement et est facile à récupérer et à intégrer avec d’autres bibliothèques ou des projets existants. En revanche, la vue vue est parfaitement compatible avec la mise en place d’applications de page unique sophistiquées lorsqu’elle est utilisée avec les outils modernes et les bibliothèques de prise en charge.»
 
-Démarrer avec Vue nécessite simplement d’inclure son script dans un fichier HTML :
+La prise en main de la vue nécessite simplement l’inclusion de son script dans un fichier HTML :
 
 ```html
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 ```
 
-Avec le cadre ajouté, vous êtes alors en mesure de rendre les données déclarativement au DOM en utilisant la syntaxe de templating simple de Vue :
+Une fois l’infrastructure ajoutée, vous pouvez ensuite restituer les données dans le DOM à l’aide de la syntaxe de création de modèles simple de la vue de données :
 
 ```html
 <div id="app">
@@ -144,7 +146,7 @@ Avec le cadre ajouté, vous êtes alors en mesure de rendre les données déclar
 </div>
 ```
 
-puis en ajoutant le script suivant:
+puis en ajoutant le script suivant :
 
 ```js
 var app = new Vue({
@@ -155,9 +157,9 @@ var app = new Vue({
 })
 ```
 
-C’est suffisant pour rendre "Bonjour Vue!" sur la page. Notez, cependant, que Vue ne se contente pas de rendre le message à la div une fois. Il prend en charge la databinding `message` et les mises `<div>` à jour dynamiques de sorte que si la valeur des changements, la valeur dans le est immédiatement mis à jour pour le refléter.
+Cela suffit pour afficher « Hello vue ! » sur la page. Notez, cependant, que la vue vue n’est pas simplement le simple rendu du message à la balise div. Il prend en charge la liaison de type de liaison et les mises à jour dynamiques, de sorte que si la valeur de `message` change, la valeur dans le `<div>` est immédiatement mise à jour pour refléter ce dernier.
 
-Bien sûr, cela ne fait qu’effleurer la surface de ce dont Vue est capable. Il a gagné beaucoup de popularité au cours des dernières années et a une grande communauté. Il ya une [liste énorme et croissante de composants de soutien et les bibliothèques](https://github.com/vuejs/awesome-vue#redux) qui travaillent avec Vue pour l’étendre ainsi. Si vous cherchez à ajouter un comportement côté client à votre application web ou envisagez de construire une SPA complète, Vue vaut la peine d’enquêter.
+Bien entendu, cela ne fait que gratter la surface de la vue. Il s’agit d’une grande popularité au cours des dernières années et a une vaste communauté. La [liste des composants et des bibliothèques de prise en charge](https://github.com/vuejs/awesome-vue#redux) qui fonctionnent avec la vue pour l’étendre également est une énorme et en pleine expansion. Si vous envisagez d’ajouter un comportement côté client à votre application Web ou si vous envisagez de créer un SPA complet, vous devez examiner la vue.
 
 ### <a name="choosing-a-spa-framework"></a>Choix d’un framework SPA
 
@@ -169,9 +171,9 @@ Quand vous devez choisir le framework JavaScript qui convient le mieux pour pren
 
 - Toutes les fonctionnalités nécessaires pour votre application sont-elles incluses dans le framework ou dans une bibliothèque complémentaire ?
 
-- Est-il bien documenté?
+- Est-il bien documenté ?
 
-- Sa communauté est-elle active ? De nouveaux projets sont-ils en cours de construction?
+- Sa communauté est-elle active ? Les nouveaux projets sont-ils générés ?
 
 - Son équipe principale est-elle active ? Les problèmes sont-ils résolus et de nouvelles versions sont-elles publiées régulièrement ?
 
@@ -181,13 +183,13 @@ Les frameworks JavaScript évoluent très rapidement. Utilisez les considératio
 >
 > - **HTML et CSS**  
 > <https://www.w3.org/standards/webdesign/htmlcss>
-> - **Sass vs LESS**  
+> - **Sass et LESS**  
 > <https://www.keycdn.com/blog/sass-vs-less/>
 > - **Application de styles aux applications ASP.NET Core avec LESS, Sass et Font Awesome**  
 > <https://docs.microsoft.com/aspnet/core/client-side/less-sass-fa>
-> - **Développement du côté client dans ASP.NET Core**  
+> - **Développement côté client dans ASP.NET Core**  
 > <https://docs.microsoft.com/aspnet/core/client-side/>
-> - **Jquery**  
+> - **jQuery**  
 > <https://jquery.com/>
 > - **jQuery vs AngularJS**  
 > <https://www.airpair.com/angularjs/posts/jquery-angularjs-comparison-migration-walkthrough>
@@ -197,11 +199,11 @@ Les frameworks JavaScript évoluent très rapidement. Utilisez les considératio
 > <https://reactjs.org/>
 > - **Vue**  
 > <https://vuejs.org/>
-> - **Angular vs React vs Vue: Quel cadre choisir en 2020**
+> - **Angulaire vs REACT vs vue : Framework à choisir dans 2020**
 > <https://www.codeinwp.com/blog/angular-vs-vue-vs-react/>
-> - **Les cadres JavaScript haut pour le développement frontale en 2020**  
+> - **Les principales infrastructures JavaScript pour le développement frontal dans 2020**  
 > <https://www.freecodecamp.org/news/complete-guide-for-front-end-developers-javascript-frameworks-2019/>
 
 >[!div class="step-by-step"]
->[Suivant précédent](common-web-application-architectures.md)
->[Next](develop-asp-net-core-mvc-apps.md)
+>[Précédent](common-web-application-architectures.md) 
+> [Suivant](develop-asp-net-core-mvc-apps.md)

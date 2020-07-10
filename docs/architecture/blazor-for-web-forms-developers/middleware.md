@@ -3,21 +3,23 @@ title: Modules, gestionnaires et intergiciel (middleware)
 description: En savoir plus sur la gestion des requêtes HTTP avec les modules, les gestionnaires et l’intergiciel (middleware).
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
 ms.date: 10/11/2019
-ms.openlocfilehash: 3ecc109c54f88b5b06a1474f7c6e262d426a78a9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ff2b3fd41316a1c8c20a0eed9a585e5fd2733af3
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337476"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173183"
 ---
 # <a name="modules-handlers-and-middleware"></a>Modules, gestionnaires et intergiciel (middleware)
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Une application ASP.NET Core est basée sur une série d' *intergiciels (middleware*). L’intergiciel est un gestionnaire qui est organisé dans un pipeline pour gérer les demandes et les réponses. Dans une application Web Forms, les modules et les gestionnaires HTTP résolvent des problèmes similaires. Dans ASP.NET Core, les modules, les gestionnaires, *global.asax.cs*et le cycle de vie de l’application sont remplacés par un intergiciel (middleware). Dans ce chapitre, vous allez découvrir l’intergiciel (middleware) dans le contexte d’une application éblouissante.
+Une application ASP.NET Core est basée sur une série d' *intergiciels (middleware*). L’intergiciel est un gestionnaire qui est organisé dans un pipeline pour gérer les demandes et les réponses. Dans une application Web Forms, les modules et les gestionnaires HTTP résolvent des problèmes similaires. Dans ASP.NET Core, les modules, les gestionnaires, *global.asax.cs*et le cycle de vie de l’application sont remplacés par un intergiciel (middleware). Dans ce chapitre, vous allez découvrir l’intergiciel (middleware) dans le contexte d’une Blazor application.
 
-## <a name="overview"></a>Vue d'ensemble de
+## <a name="overview"></a>Vue d’ensemble
 
 Le pipeline de requête ASP.NET Core est composé d’une séquence de délégués de requête, appelés l’un après l’autre. Le diagramme suivant illustre le concept. Le thread d’exécution suit les flèches noires.
 
@@ -35,22 +37,22 @@ ASP.NET 4. x comprend de nombreux modules. De la même façon, ASP.NET Core poss
 
 Le tableau suivant répertorie les intergiciels et composants de remplacement dans ASP.NET Core.
 
-|Module, mot clé                 |Module ASP.NET 4. x           |Option ASP.NET Core|
+|Module                 |Module ASP.NET 4. x           |Option ASP.NET Core|
 |-----------------------|-----------------------------|-------------------|
 |Erreurs HTTP            |`CustomErrorModule`          |[Middleware (intergiciel) de pages de codes d’état](/aspnet/core/fundamentals/error-handling#usestatuscodepages)|
 |Document par défaut       |`DefaultDocumentModule`      |[Middleware de fichiers par défaut](/aspnet/core/fundamentals/static-files#serve-a-default-document)|
 |Exploration de répertoires     |`DirectoryListingModule`     |[Middleware d’exploration des répertoires](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
-|Compression dynamique    |`DynamicCompressionModule`   |[Intergiciel (middleware) de compression des réponses](/aspnet/core/performance/response-compression)|
+|Compression dynamique    |`DynamicCompressionModule`   |[Middleware de compression des réponses](/aspnet/core/performance/response-compression)|
 |Suivi des demandes ayant échoué|`FailedRequestsTracingModule`|[Journalisation ASP.NET Core](/aspnet/core/fundamentals/logging/index#tracesource-provider)|
 |Mise en cache de fichiers           |`FileCacheModule`            |[Intergiciel (middleware) de mise en cache des réponses](/aspnet/core/performance/caching/middleware)|
 |Mise en cache HTTP           |`HttpCacheModule`            |[Intergiciel (middleware) de mise en cache des réponses](/aspnet/core/performance/caching/middleware)|
 |Journalisation HTTP           |`HttpLoggingModule`          |[Journalisation ASP.NET Core](/aspnet/core/fundamentals/logging/index)|
 |Redirection HTTP       |`HttpRedirectionModule`      |[Intergiciel (middleware) de réécriture d’URL](/aspnet/core/fundamentals/url-rewriting)|
-|ISAPI, filtres          |`IsapiFilterModule`          |[Intergiciel (middleware)](/aspnet/core/fundamentals/middleware/index)|
-|ISAPI                  |`IsapiModule`                |[Intergiciel (middleware)](/aspnet/core/fundamentals/middleware/index)|
+|Filtres ISAPI          |`IsapiFilterModule`          |[Middleware](/aspnet/core/fundamentals/middleware/index)|
+|ISAPI                  |`IsapiModule`                |[Middleware](/aspnet/core/fundamentals/middleware/index)|
 |Filtrage des demandes      |`RequestFilteringModule`     |[Intergiciel (middleware) de réécriture d’URL IRule](/aspnet/core/fundamentals/url-rewriting#irule-based-rule)|
-|Réécriture d’URL&#8224;   |`RewriteModule`              |[Intergiciel (middleware) de réécriture d’URL](/aspnet/core/fundamentals/url-rewriting)|
-|Compression statique     |`StaticCompressionModule`    |[Intergiciel (middleware) de compression des réponses](/aspnet/core/performance/response-compression)|
+|&#8224; de réécriture d’URL   |`RewriteModule`              |[Intergiciel (middleware) de réécriture d’URL](/aspnet/core/fundamentals/url-rewriting)|
+|Compression statique     |`StaticCompressionModule`    |[Middleware de compression des réponses](/aspnet/core/performance/response-compression)|
 |Contenu statique         |`StaticFileModule`           |[Middleware de fichiers statiques](/aspnet/core/fundamentals/static-files)|
 |Autorisation d’URL      |`UrlAuthorizationModule`     |[Identité ASP.NET Core](/aspnet/core/security/authentication/identity)|
 
@@ -88,8 +90,8 @@ public class Startup
 }
 ```
 
-L’intergiciel peut également être défini en tant que classe, soit en implémentant l’interface `IMiddleware`, soit en suivant la Convention de l’intergiciel (middleware). Pour plus d’informations, consultez [Write custom ASP.net Core middleware](/aspnet/core/fundamentals/middleware/write).
+L’intergiciel peut également être défini en tant que classe, soit en implémentant l’interface, soit `IMiddleware` en suivant la Convention d’intergiciel (middleware). Pour plus d’informations, consultez [Write custom ASP.net Core middleware](/aspnet/core/fundamentals/middleware/write).
 
 >[!div class="step-by-step"]
->[Précédent](data.md)
->[Suivant](config.md)
+>[Précédent](data.md) 
+> [Suivant](config.md)

@@ -2,17 +2,17 @@
 title: Migrer votre application ou service web .NET vers Azure App Service
 description: En savoir plus sur la migration d’une application ou d’un service Web .NET d’un site local vers un Azure App Service.
 ms.topic: conceptual
-ms.date: 08/11/2018
-ms.openlocfilehash: 8761642469b6f3d3c93d2e2e0fa7e02dbf3de6d7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.date: 07/08/2020
+ms.openlocfilehash: d208865942b49ae2d5437b8f2fcff294933af21b
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447002"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174307"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>Migrer votre application ou service web .NET vers Azure App Service
 
-[App service](https://docs.microsoft.com/azure/app-service/overview) est un service de plateforme de calcul entièrement géré qui est optimisé pour héberger des sites Web évolutifs et des applications Web. Cet article fournit des informations sur la façon de lever-déplacer une application existante vers Azure App Service, les modifications à prendre en compte et des ressources supplémentaires pour [migrer vers le Cloud](https://azure.microsoft.com/migration/web-applications/). La plupart des sites web ASP.NET (WebForms, MVC) et des services (API Web, WCF) peuvent passer directement à Azure App Service, sans aucune modification. Certains peuvent nécessiter des modifications mineures tandis que d’autres peuvent nécessiter une refactorisation.
+[App service](/azure/app-service/overview) est un service de plateforme de calcul entièrement géré qui est optimisé pour héberger des sites Web évolutifs et des applications Web. Cet article fournit des informations sur la façon de lever-déplacer une application existante vers Azure App Service, les modifications à prendre en compte et des ressources supplémentaires pour [migrer vers le Cloud](https://azure.microsoft.com/migration/web-applications/). La plupart des sites web ASP.NET (WebForms, MVC) et des services (API Web, WCF) peuvent passer directement à Azure App Service, sans aucune modification. Certains peuvent nécessiter des modifications mineures tandis que d’autres peuvent nécessiter une refactorisation.
 
 Vous êtes prêt à commencer ? [Publiez une application ASP.NET + SQL sur Azure App Service](https://tutorials.visualstudio.com/azure-webapp-migrate/intro).
 
@@ -22,10 +22,10 @@ Vous êtes prêt à commencer ? [Publiez une application ASP.NET + SQL sur Azur
 
 Vérifiez l’accès aux ressources locales, car elles peuvent nécessiter une migration ou des modifications. Les options suivantes permettent de limiter l’accès aux ressources locales :
 
-* Créez un VPN connectant App Service aux ressources locales à l’aide des [Réseaux virtuels Azure](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet).
-* Exposez les services locaux au cloud de manière sécurisée sans modification du pare-feu à l’aide de [Azure Relay](https://docs.microsoft.com/azure/service-bus-relay/relay-what-is-it).
+* Créez un VPN connectant App Service aux ressources locales à l’aide des [Réseaux virtuels Azure](/azure/app-service/web-sites-integrate-with-vnet).
+* Exposez les services locaux au cloud de manière sécurisée sans modification du pare-feu à l’aide de [Azure Relay](/azure/service-bus-relay/relay-what-is-it).
 * Migrez des dépendances comme une [base de données SQL](https://go.microsoft.com/fwlink/?linkid=863217) vers Azure.
-* Utilisez des offres de plateforme en tant que service dans le Cloud pour réduire les dépendances. Par exemple, plutôt que de vous connecter à un serveur de messagerie sur site, envisagez d’utiliser [SendGrid](https://docs.microsoft.com/azure/sendgrid-dotnet-how-to-send-email).
+* Utilisez des offres de plateforme en tant que service dans le Cloud pour réduire les dépendances. Par exemple, plutôt que de vous connecter à un serveur de messagerie sur site, envisagez d’utiliser [SendGrid](/azure/sendgrid-dotnet-how-to-send-email).
 
 ### <a name="port-bindings"></a>Liaisons de port
 
@@ -33,20 +33,20 @@ Azure App Service prend en charge le port 80 pour le trafic HTTP et le port 443 
 
 Les liaisons suivantes sont prises en charge pour WCF :
 
-Liaison | Notes
---------|--------
-BasicHttp |
-WSHttp |
-WSDualHttpBinding | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée.
-NetHttpBinding | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex.
-NetHttpsBinding | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex.
-BasicHttpContextBinding |
-WebHttpBinding |
-WSHttpContextBinding |
+| Liaison | Remarques |
+|--|--|
+| `BasicHttp` |  |
+| `WSHttp` |  |
+| `WSDualHttpBinding` | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée. |
+| `NetHttpBinding` | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. |
+| `NetHttpsBinding` | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. |
+| `BasicHttpContextBinding` |  |
+| `WebHttpBinding` |  |
+| `WSHttpContextBinding` |  |
 
 ### <a name="authentication"></a>Authentification
 
-Azure App Service prend en charge l’authentification anonyme par défaut et l’authentification par formulaire lorsque cela est nécessaire. L’authentification Windows peut être utilisée uniquement en cas d’intégration à Azure Active Directory et ADFS. [Découvrez comment intégrer vos répertoires locaux à Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect).
+Azure App Service prend en charge l’authentification anonyme par défaut et l’authentification par formulaire lorsque cela est nécessaire. L’authentification Windows peut être utilisée uniquement en cas d’intégration à Azure Active Directory et ADFS. [Découvrez comment intégrer vos répertoires locaux à Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
 
 ### <a name="assemblies-in-the-gac-global-assembly-cache"></a>Assemblys dans le GAC (Global Assembly Cache)
 
@@ -54,11 +54,11 @@ Ceci n’est pas pris en charge. Envisagez de copier les assemblys requis dans l
 
 ### <a name="iis-settings"></a>Paramètres IIS
 
-Tout ce qui est habituellement configuré via applicationHost.config dans votre application peut maintenant être configuré via le portail Azure. Cela s’applique au nombre de bits AppPool, à l’activation/désactivation de WebSockets, à la version de pipeline gérée, à la version .NET Framework (2.0/4.0), etc. Pour modifier vos [paramètres d’application](https://docs.microsoft.com/azure/app-service/web-sites-configure), accédez au [portail Azure](https://portal.azure.com), ouvrez le panneau de votre application web, puis sélectionnez l’onglet **Paramètres de l’application**.
+Tout ce qui est habituellement configuré via applicationHost.config dans votre application peut maintenant être configuré via le portail Azure. Cela s’applique au nombre de bits AppPool, à l’activation/désactivation de WebSockets, à la version de pipeline gérée, à la version .NET Framework (2.0/4.0), etc. Pour modifier vos [paramètres d’application](/azure/app-service/web-sites-configure), accédez au [portail Azure](https://portal.azure.com), ouvrez le panneau de votre application web, puis sélectionnez l’onglet **Paramètres de l’application**.
 
 #### <a name="iis5-compatibility-mode"></a>Mode de compatibilité IIS5
 
-Le mode de compatibilité IIS5 n’est pas pris en charge. Dans Azure App Service, chaque application Web et toutes les applications qu’elle contient s’exécutent dans le même processus de travail avec un ensemble spécifique de [pools d’applications](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc735247(v=ws.10)).
+Le mode de compatibilité IIS5 n’est pas pris en charge. Dans Azure App Service, chaque application Web et toutes les applications qu’elle contient s’exécutent dans le même processus de travail avec un ensemble spécifique de [pools d’applications](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc735247(v=ws.10)).
 
 #### <a name="iis7-schema-compliance"></a>Conformité de schéma IIS7+
 
@@ -74,7 +74,7 @@ Azure App Service n’autorise pas l’inscription de composants COM sur la plat
 
 ### <a name="physical-directories"></a>Répertoires physiques
 
-Azure App Service n’autorise pas l’accès au lecteur physique. Vous devrez peut-être utiliser [Azure Files](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) pour accéder aux fichiers via SMB. Le [Stockage Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) peut stocker des fichiers pour l’accès via HTTPS.
+Azure App Service n’autorise pas l’accès au lecteur physique. Vous devrez peut-être utiliser [Azure Files](/azure/storage/files/storage-files-introduction) pour accéder aux fichiers via SMB. Le [Stockage Blob Azure](/azure/storage/blobs/storage-blobs-introduction) peut stocker des fichiers pour l’accès via HTTPS.
 
 ### <a name="isapi-filters"></a>Filtres ISAPI
 
@@ -82,7 +82,7 @@ Azure App Service peut prendre en charge l’utilisation de filtres ISAPI, toute
 
 ### <a name="https-bindings-and-ssl"></a>Liaisons HTTPS et SSL
 
-Les liaisons HTTPs ne sont pas migrées, ni les certificats SSL associés à vos sites Web. [Les certificats SSL peuvent être téléchargés manuellement](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl) après que la migration du site soit terminée.
+Les liaisons HTTPs ne sont pas migrées, ni les certificats SSL associés à vos sites Web. [Les certificats SSL peuvent être téléchargés manuellement](/azure/app-service/app-service-web-tutorial-custom-ssl) après que la migration du site soit terminée.
 
 ### <a name="sharepoint-and-frontpage"></a>SharePoint et FrontPage
 
@@ -102,15 +102,15 @@ AAD ne fonctionne pas avec les applications gratuites. Pour utiliser l’authent
 
 ### <a name="monitoring-and-diagnostics"></a>Surveillance et diagnostics
 
-Il est peu probable que vos solutions locales actuelles d’analyse et de diagnostics fonctionnent dans le cloud. Toutefois, Azure fournit des outils pour la journalisation, l’analyse et les diagnostics afin que vous puissiez identifier et résoudre les problèmes liés aux applications web. Vous pouvez facilement activer les diagnostics pour votre application web dans sa configuration, et afficher les journaux d’activité enregistrés dans Azure Application Insights. [En savoir plus sur l’activation de la journalisation des diagnostics pour les applications web](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log).
+Il est peu probable que vos solutions locales actuelles d’analyse et de diagnostics fonctionnent dans le cloud. Toutefois, Azure fournit des outils pour la journalisation, l’analyse et les diagnostics afin que vous puissiez identifier et résoudre les problèmes liés aux applications web. Vous pouvez facilement activer les diagnostics pour votre application web dans sa configuration, et afficher les journaux d’activité enregistrés dans Azure Application Insights. [En savoir plus sur l’activation de la journalisation des diagnostics pour les applications web](/azure/app-service/web-sites-enable-diagnostic-log).
 
 ### <a name="connection-strings-and-application-settings"></a>Chaînes de connexion et paramètres d’application
 
-Envisagez d’utiliser [Azure KeyVault](https://docs.microsoft.com/azure/key-vault/), un service qui stocke en toute sécurité les informations sensibles utilisées dans votre application. Vous pouvez également stocker ces données sous forme de paramètre App Service.
+Envisagez d’utiliser [Azure KeyVault](/azure/key-vault/), un service qui stocke en toute sécurité les informations sensibles utilisées dans votre application. Vous pouvez également stocker ces données sous forme de paramètre App Service.
 
 ### <a name="dns"></a>DNS
 
-Vous devrez peut-être mettre à jour les configurations DNS selon les besoins de votre application. Ces paramètres DNS peuvent être configurés dans les [paramètres de domaine personnalisés](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain) d’App Service.
+Vous devrez peut-être mettre à jour les configurations DNS selon les besoins de votre application. Ces paramètres DNS peuvent être configurés dans les [paramètres de domaine personnalisés](/azure/app-service/app-service-web-tutorial-custom-domain) d’App Service.
 
 ## <a name="azure-app-service-with-windows-containers"></a>Azure App Service avec des conteneurs Windows
 
