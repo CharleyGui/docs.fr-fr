@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 7736a2a26b37d8fbfac98328f94ce3c9a25be181
-  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+  ms.openlocfilehash: a82fe645524e526d0373a4e4733c2fef9ca7c14f
+  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "82860997"
+  ms.lasthandoff: 07/09/2020
+  ms.locfileid: "86174112"
 items:
 - durationInMinutes: 2
   content: >
@@ -22,7 +22,7 @@ items:
 - title: Créer une chaîne interpolée
   durationInMinutes: 2
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive ( `<name>` remplacez par votre nom) et sélectionnez **exécuter**:
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive (remplacez `<name>` par votre nom) et sélectionnez **exécuter**:
 
 
     ```csharp
@@ -53,7 +53,7 @@ items:
     À l’étape précédente, vous avez utilisé l’interpolation de chaîne pour insérer une chaîne à l’intérieur d’une autre. Chaque expression d’interpolation qui fait partie d’une expression de chaîne interpolée peut être cependant de n’importe quel type de données. Nous allons insérer des valeurs de différentes expressions de types de données dans une chaîne interpolée.
 
 
-    Dans l’exemple suivant, nous commençons par [tuple](../../tuples.md) définir un Tuple `Name`qui `Price`a des `perPackage` membres, et. Exécutez le code suivant dans la fenêtre interactive :
+    Dans l’exemple suivant, nous commençons par définir un [Tuple](../../language-reference/builtin-types/value-tuples.md) qui a des `Name` `Price` membres, et `perPackage` . Exécutez le code suivant dans la fenêtre interactive :
 
 
     ```csharp
