@@ -1,43 +1,43 @@
 ---
-title: .NET Core intro et aperçu
-description: .NET Core est une implémentation modulaire et haute performance de .NET pour créer des applications Windows, Linux et macOS. Découvrez .NET Core pour démarrer.
+title: Présentation et présentation de .NET Core
+description: .NET Core est une implémentation modulaire et hautement performante de .NET pour la création d’applications Windows, Linux et macOS. Découvrez .NET Core pour démarrer.
 author: richlander
 ms.date: 03/26/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: f99b446bbd38b2b814c13afa13ab34cd5c9aa086
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: b28ad965e54680e2e1134c389266741ade28084f
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645524"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226580"
 ---
 # <a name="introduction-to-net-core"></a>Introduction à .NET Core
 
-[.NET Core](about.md) est une plate-forme de développement [open-source,](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)polyvalente. Vous pouvez créer des applications .NET Core pour Windows, macOS et Linux pour les processeurs x64, x86, ARM32 et ARM64 à l’aide de plusieurs langages de programmation. Cadres et API sont fournis pour [le cloud](/aspnet/core/), [IoT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [l’interface utilisateur client](../desktop-wpf/overview/index.md), et [l’apprentissage automatique](/dotnet/machine-learning/).
+[.Net Core](about.md) est une plateforme de développement [Open source à](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)usage général. Vous pouvez créer des applications .NET Core pour Windows, macOS et Linux pour les processeurs x64, x86, ARM32 et ARM64 à l’aide de plusieurs langages de programmation. Les frameworks et les API sont fournis pour le [Cloud](/aspnet/core/), l' [IOT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [l’interface utilisateur du client](../desktop-wpf/overview/index.md)et les [machine learning](/dotnet/machine-learning/).
 
-[Téléchargez le .NET Core SDK](https://dotnet.microsoft.com/download) pour essayer .NET Core sur votre machine. La dernière version est [.NET Core 3.1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/).
+[Téléchargez le kit SDK .net Core](https://dotnet.microsoft.com/download) pour essayer .net Core sur votre ordinateur. La dernière version est [.net Core 3,1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/).
 
 ## <a name="download-net-core"></a>Télécharger .NET Core
 
-Vous pouvez obtenir .NET Core de la manière suivante:
+Vous pouvez vous procurer .NET Core des manières suivantes :
 
-* [Installateurs pour Windows et macOS](https://dotnet.microsoft.com/download)
+* [Programmes d’installation pour Windows et macOS](https://dotnet.microsoft.com/download)
 * [Packages Linux](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
 * [Conteneurs Docker](https://hub.docker.com/_/microsoft-dotnet-core/)
-* [Zips et boules de goudron](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-* [Installer des scripts](https://dotnet.microsoft.com/download/dotnet-core/scripts)
+* [Compresse et tarballs](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+* [Installer les scripts](https://dotnet.microsoft.com/download/dotnet-core/scripts)
 * [Notes de publication](https://github.com/dotnet/core/tree/master/release-notes)
 
 ## <a name="create-your-first-application"></a>Créer votre première application
 
-Après avoir installé le SDK .NET Core, ouvrez une invite de commandes. Utilisez les commandes suivantes pour créer et exécuter une application :
+Après avoir installé le SDK .NET Core, ouvrez une invite de commandes. Utilisez les commandes suivantes pour créer et exécuter une application :
 
 ```dotnetcli
 dotnet new console
 dotnet run
 ```
 
-Vous devez normalement voir la sortie suivante.
+Vous devez normalement voir la sortie suivante :
 
 ```output
 Hello World!
@@ -45,19 +45,19 @@ Hello World!
 
 ## <a name="contribute"></a>Collaboration
 
-.NET Core est une plate-forme ouverte. Tout le monde est le bienvenu pour participer.
+.NET Core est une plateforme ouverte. Tout le monde est invité à participer.
 
-* Déposer des questions et des questions sur les produits à [Developer Community](https://developercommunity.visualstudio.com/spaces/61/index.html).
-* Les contributions de produits doivent être effectuées sur l’un des dépôts de projet, tels que [dotnet/runtime](https://github.com/dotnet/runtime), [dotnet/sdk](https://github.com/dotnet/sdk), [dotnet/rosyln](https://github.com/dotnet/roslyn), ou [aspnetcore](https://github.com/dotnet/aspnetcore). Pour plus d’informations, voir [.NET Core repos](https://github.com/dotnet/core/blob/master/Documentation/core-repos.md).
+* Problèmes liés aux produits de fichiers et questions de la [communauté des développeurs](https://developercommunity.visualstudio.com/spaces/61/index.html).
+* Les contributions de produits doivent être effectuées sur l’un des référentiels de projet, tels que [dotnet/Runtime](https://github.com/dotnet/runtime), [dotnet/SDK](https://github.com/dotnet/sdk), [dotnet/Rosyln](https://github.com/dotnet/roslyn)ou [aspnetcore](https://github.com/dotnet/aspnetcore). Pour plus d’informations, consultez les dépôts [.net Core](https://github.com/dotnet/core/blob/master/Documentation/core-repos.md).
 
 ## <a name="support"></a>Support
 
-.NET Core est pris en charge par Microsoft sur Windows, macOS, et Linux et par Red Hat sur Red Hat Enterprise Linux.
+.NET Core est pris en charge par Microsoft sur Windows, macOS et Linux et Red Hat sur Red Hat Enterprise Linux.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 > [!div class="nextstepaction"]
-> [tutoriels .NET Core](tutorials/index.md)
+> [Didacticiels .NET Core](tutorials/index.md)
 
 > [!div class="nextstepaction"]
 > [Essayez .NET Core dans votre navigateur](../csharp/tutorials/intro-to-csharp/numbers-in-csharp.yml)
