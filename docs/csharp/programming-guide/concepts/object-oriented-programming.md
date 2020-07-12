@@ -2,17 +2,18 @@
 title: Programmation orientée objet (C#)
 ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 98dd5147ab54375ec851ccd9b981a68098a53270
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 83140a9dbd16f60f04f50ba18c71099cdd862f15
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241888"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226632"
 ---
 # <a name="object-oriented-programming-c"></a>Programmation orientée objet (C#)
 
-C# offre une prise en charge complète de la programmation orientée objet, y compris l’encapsulation, l’héritage et le polymorphisme.
+C# fournit une prise en charge complète de la programmation orientée objet, notamment l’abstraction, l’encapsulation, l’héritage et le polymorphisme.
 
+- L' *abstraction* signifie masquer les détails inutiles des consommateurs de type.
 - L’*encapsulation* signifie qu’un groupe de propriétés, méthodes et autres membres corrélés est traité comme une unité ou un objet unique.
 - L’*héritage* décrit la possibilité de créer des classes à partir d’une classe existante.
 - Le *polymorphisme* signifie que plusieurs classes peuvent être utilisées de manière interchangeable, même si chacune des classes implémente les mêmes propriétés ou méthodes de manière différente.
@@ -29,7 +30,7 @@ class SampleClass
 }
 ```
 
-C# fournit également des types appelés *structures* qui sont utiles lorsque vous n’avez pas besoin de prise en charge de l’héritage ou du polymorphisme.
+C# fournit également des types appelés *structures* qui sont utiles lorsque vous n’avez pas besoin de prise en charge de l’héritage ou du polymorphisme. Pour plus d’informations, consultez [Choosing Between Class and struct](../../../standard/design-guidelines/choosing-between-class-and-struct.md).
 
 Pour définir une structure :
 
@@ -187,9 +188,9 @@ Les modificateurs d’accès suivants sont disponibles :
 | Modificateur C# | Définition |
 |--|--|
 | [public](../../language-reference/keywords/public.md) | Tout autre code du même assembly ou d'un autre assembly qui y fait référence peut accéder au type ou au membre. |
-| [private](../../language-reference/keywords/private.md) | Seul le code de la même classe peut accéder au type ou au membre. |
+| [priv](../../language-reference/keywords/private.md) | Seul le code de la même classe peut accéder au type ou au membre. |
 | [protected](../../language-reference/keywords/protected.md) | Seul le code de la même classe ou d'une classe dérivée peut accéder au type ou au membre. |
-| [internal](../../language-reference/keywords/internal.md) | Tout code du même assembly, mais pas d'un autre assembly, peut accéder au type ou au membre. |
+| [intérieurs](../../language-reference/keywords/internal.md) | Tout code du même assembly, mais pas d'un autre assembly, peut accéder au type ou au membre. |
 | [protected internal](../../language-reference/keywords/protected-internal.md) | Tout code du même assembly ou toute classe dérivée dans un autre assembly peut accéder au type ou au membre. |
 | [protégé privé](../../language-reference/keywords/private-protected.md) | Le code de la même classe ou d'une classe dérivée peut accéder au type ou au membre dans l’assembly de la classe de base. |
 
@@ -308,7 +309,7 @@ Les modificateurs suivants sont utilisés pour contrôler la façon dont les pro
 
 | Modificateur C# | Définition |
 |--|--|
-| [virtual](../../language-reference/keywords/virtual.md) | Autorise la substitution d'un membre de classe dans une classe dérivée. |
+| [virtuels](../../language-reference/keywords/virtual.md) | Autorise la substitution d'un membre de classe dans une classe dérivée. |
 | [remplacer](../../language-reference/keywords/override.md) | Substitue un membre virtuel (substituable) défini dans la classe de base. |
 | [abstraction](../../language-reference/keywords/abstract.md) | Requiert qu'un membre de classe soit substitué dans la classe dérivée. |
 | [Modificateur new](../../language-reference/keywords/new-modifier.md) | Masque un membre hérité d'une classe de base. |
