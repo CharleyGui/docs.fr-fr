@@ -37,7 +37,7 @@ dotnet new console
 dotnet run
 ```
 
-Vous devez normalement voir la sortie suivante :
+Vous devez normalement voir la sortie suivante.
 
 ```output
 Hello World!

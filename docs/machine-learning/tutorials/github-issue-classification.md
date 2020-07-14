@@ -4,12 +4,12 @@ description: Découvrez comment utiliser ML.NET dans un scénario de classificat
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: d4ab7f0fcc6b582e74f54d3f0e60032696277249
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 48f5f213802b09168cbc21da1b22e84ec53756fe
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051543"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282071"
 ---
 # <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-mlnet"></a>Didacticiel : classer les problèmes de prise en charge à l’aide de la classification multiclasse avec ML.NET
 
@@ -63,7 +63,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 Ajoutez les instructions `using` supplémentaires suivantes en haut du fichier *Program.cs* : 
 
-[!code-csharp[AddUsings](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#AddUsings)]
+[!code-csharp[AddUsings](./snippets/github-issue-classification/csharp/Program.cs#AddUsings)]
 
 Créez trois champs globaux pour accueillir les chemins des fichiers récemment téléchargés, puis des variables globales pour `MLContext`, `DataView` et `PredictionEngine` :
 
@@ -76,7 +76,7 @@ Créez trois champs globaux pour accueillir les chemins des fichiers récemment 
 
 Ajoutez le code suivant à la ligne juste au-dessus de la `Main` méthode pour spécifier ces chemins d’accès et les autres variables :
 
-[!code-csharp[DeclareGlobalVariables](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#DeclareGlobalVariables)]
+[!code-csharp[DeclareGlobalVariables](./snippets/github-issue-classification/csharp/Program.cs#DeclareGlobalVariables)]
 
 Créez des classes pour vos données d’entrée et vos prévisions. Ajoutez une nouvelle classe à votre projet :
 
@@ -86,11 +86,11 @@ Créez des classes pour vos données d’entrée et vos prévisions. Ajoutez une
 
     Le fichier *GitHubIssueData.cs* s’ouvre dans l’éditeur de code. Ajoutez l’instruction `using` suivante en haut de *GitHubIssueData.cs* :
 
-[!code-csharp[AddUsings](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/GitHubIssueData.cs#AddUsings)]
+[!code-csharp[AddUsings](./snippets/github-issue-classification/csharp/GitHubIssueData.cs#AddUsings)]
 
 Supprimez la définition de classe existante et ajoutez le code suivant, lequel contient deux classes (`GitHubIssue` et `IssuePrediction`), au fichier *GitHubIssueData.cs* :
 
-[!code-csharp[DeclareGlobalVariables](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/GitHubIssueData.cs#DeclareTypes)]
+[!code-csharp[DeclareGlobalVariables](./snippets/github-issue-classification/csharp/GitHubIssueData.cs#DeclareTypes)]
 
 `label` est la colonne à prédire. Les valeurs `Features` identifiées sont les entrées que vous fournissez au modèle pour prédire l’étiquette.
 
@@ -111,7 +111,7 @@ Toutes les opérations ML.NET démarrent dans la classe [MLContext](xref:Microso
 
 Initialisez la variable globale `_mlContext` à l’aide d’une nouvelle instance de `MLContext` avec une valeur de départ aléatoire (`seed: 0`) pour obtenir des résultats reproductibles/déterministes dans différents entraînements.  Remplacez la ligne `Console.WriteLine("Hello World!")` par le code suivant dans la méthode `Main` :
 
-[!code-csharp[CreateMLContext](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#CreateMLContext)]
+[!code-csharp[CreateMLContext](./snippets/github-issue-classification/csharp/Program.cs#CreateMLContext)]
 
 ## <a name="load-the-data"></a>Chargement des données
 
@@ -119,13 +119,13 @@ ML.NET utilise la [classe IDataView](xref:Microsoft.ML.IDataView) comme un moyen
 
 Pour initialiser et charger la variable globale `_trainingDataView` afin de l’utiliser pour le pipeline, ajoutez le code suivant après l’initialisation de `mlContext` :
 
-[!code-csharp[LoadTrainData](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#LoadTrainData)]
+[!code-csharp[LoadTrainData](./snippets/github-issue-classification/csharp/Program.cs#LoadTrainData)]
 
 [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) définit le schéma de données et lit le fichier. Elle prend les variables de chemin de données et retourne un `IDataView`.
 
 Ajoutez le code suivant comme prochaine ligne dans la méthode `Main` :
 
-[!code-csharp[CallProcessData](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#CallProcessData)]
+[!code-csharp[CallProcessData](./snippets/github-issue-classification/csharp/Program.cs#CallProcessData)]
 
 La méthode `ProcessData` exécute les tâches suivantes :
 
@@ -145,26 +145,26 @@ public static IEstimator<ITransformer> ProcessData()
 
 Pour prédire l’étiquette Area GitHub pour un `GitHubIssue`, utilisez la méthode [MapValueToKey()](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) afin de transformer la colonne `Area` en une colonne `Label` de type clé numérique (un format accepté par les algorithmes de classification) et ajoutez-la comme nouvelle colonne au jeu de données :
 
-[!code-csharp[MapValueToKey](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#MapValueToKey)]
+[!code-csharp[MapValueToKey](./snippets/github-issue-classification/csharp/Program.cs#MapValueToKey)]
 
 Appelez ensuite `mlContext.Transforms.Text.FeaturizeText` , qui transforme les colonnes text ( `Title` et `Description` ) en un vecteur numérique pour chaque appelé `TitleFeaturized` et `DescriptionFeaturized` . Utilisez le code suivant pour ajouter la caractérisation des deux colonnes au pipeline :
 
-[!code-csharp[FeaturizeText](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#FeaturizeText)]
+[!code-csharp[FeaturizeText](./snippets/github-issue-classification/csharp/Program.cs#FeaturizeText)]
 
 La dernière étape de préparation des données consiste à combiner toutes les colonnes de caractéristiques dans la colonne **Features** à l’aide de la méthode [Concatenate()](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate%2A). Par défaut, un algorithme d’apprentissage traite uniquement les caractéristiques issues de la colonne **Features**. Utilisez le code suivant pour ajouter cette transformation au pipeline :
 
-[!code-csharp[Concatenate](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#Concatenate)]
+[!code-csharp[Concatenate](./snippets/github-issue-classification/csharp/Program.cs#Concatenate)]
 
  Ajoutez ensuite un <xref:Microsoft.ML.Data.EstimatorChain%601.AppendCacheCheckpoint%2A> pour mettre en cache le DataView. Ainsi, quand vous itérerez plusieurs fois sur les données, l’utilisation du cache vous fera peut-être gagner en performances, à l’instar du code suivant :
 
-[!code-csharp[AppendCache](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#AppendCache)]
+[!code-csharp[AppendCache](./snippets/github-issue-classification/csharp/Program.cs#AppendCache)]
 
 > [!WARNING]
 > Utilisez AppendCacheCheckpoint pour les jeux de données petits/moyens afin de réduire le temps d’apprentissage. Ne l’utilisez PAS (supprimez .AppendCacheCheckpoint()) lors du traitement de jeux de données très volumineux.
 
 Retournez le pipeline à la fin de la méthode `ProcessData`.
 
-[!code-csharp[ReturnPipeline](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#ReturnPipeline)]
+[!code-csharp[ReturnPipeline](./snippets/github-issue-classification/csharp/Program.cs#ReturnPipeline)]
 
 Cette étape gère le prétraitement/la caractérisation. L’utilisation des composants supplémentaires disponibles dans ML.NET peut améliorer les résultats de votre modèle.
 
@@ -172,7 +172,7 @@ Cette étape gère le prétraitement/la caractérisation. L’utilisation des co
 
 Ajoutez l’appel suivant à la méthode `BuildAndTrainModel` comme prochaine ligne de code dans la méthode `Main` :
 
-[!code-csharp[CallBuildAndTrainModel](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#CallBuildAndTrainModel)]
+[!code-csharp[CallBuildAndTrainModel](./snippets/github-issue-classification/csharp/Program.cs#CallBuildAndTrainModel)]
 
 La méthode `BuildAndTrainModel` exécute les tâches suivantes :
 
@@ -201,7 +201,7 @@ Pour ce type de problème, utilisez un algorithme de machine learning de classif
 
 Ajoutez l’algorithme de machine learning aux définitions de transformation de données en ajoutant la première ligne de code suivante dans `BuildAndTrainModel()` :
 
-[!code-csharp[AddTrainer](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#AddTrainer)]
+[!code-csharp[AddTrainer](./snippets/github-issue-classification/csharp/Program.cs#AddTrainer)]
 
 [SdcaMaximumEntropy](xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer) est l’algorithme de machine learning de classification multiclasse. Il est ajouté à `pipeline` et accepte les caractéristiques `Title` et `Description` (`Features`) ainsi que les paramètres d’entrée `Label` pour apprendre à partir des données d’historique.
 
@@ -209,35 +209,35 @@ Ajoutez l’algorithme de machine learning aux définitions de transformation de
 
 Ajustez le modèle aux données `splitTrainSet` et retournez le modèle entraîné en ajoutant la ligne de code suivante dans la méthode `BuildAndTrainModel()` :
 
-[!code-csharp[TrainModel](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#TrainModel)]
+[!code-csharp[TrainModel](./snippets/github-issue-classification/csharp/Program.cs#TrainModel)]
 
 La méthode `Fit()` entraîne votre modèle en transformant le jeu de données et en appliquant l’entraînement.
 
 [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API utile qui vous permet de passer et d’exécuter une prédiction sur une seule instance de données. Ajoutez ce contenu à la ligne suivante dans la méthode `BuildAndTrainModel()` :
 
-[!code-csharp[CreatePredictionEngine1](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#CreatePredictionEngine1)]
+[!code-csharp[CreatePredictionEngine1](./snippets/github-issue-classification/csharp/Program.cs#CreatePredictionEngine1)]
 
 ### <a name="predict-with-the-trained-model"></a>Prédire avec le modèle entraîné
 
 Ajoutez un problème GitHub pour tester la prédiction du modèle entraîné dans la méthode `Predict` en créant une instance de `GitHubIssue` :
 
-[!code-csharp[CreateTestIssue1](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#CreateTestIssue1)]
+[!code-csharp[CreateTestIssue1](./snippets/github-issue-classification/csharp/Program.cs#CreateTestIssue1)]
 
 Utilisez la fonction [Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) pour effectuer une prédiction sur une seule ligne de données :
 
-[!code-csharp[Predict](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#Predict)]
+[!code-csharp[Predict](./snippets/github-issue-classification/csharp/Program.cs#Predict)]
 
 ### <a name="using-the-model-prediction-results"></a>Utilisation des résultats du modèle : prédiction
 
 Affichez `GitHubIssue` et la prédiction d’étiquette `Area` correspondante pour partager les résultats et prendre les mesures nécessaires.  Créez une vue des résultats à l’aide du code <xref:System.Console.WriteLine?displayProperty=nameWithType> suivant :
 
-[!code-csharp[OutputPrediction](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#OutputPrediction)]
+[!code-csharp[OutputPrediction](./snippets/github-issue-classification/csharp/Program.cs#OutputPrediction)]
 
 ### <a name="return-the-model-trained-to-use-for-evaluation"></a>Retourner le modèle entraîné à utiliser pour l’évaluation
 
 Retournez le modèle à la fin de la méthode `BuildAndTrainModel`.
 
-[!code-csharp[ReturnModel](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#ReturnModel)]
+[!code-csharp[ReturnModel](./snippets/github-issue-classification/csharp/Program.cs#ReturnModel)]
 
 ## <a name="evaluate-the-model"></a>Évaluer le modèle
 
@@ -259,17 +259,17 @@ La méthode `Evaluate` exécute les tâches suivantes :
 
 Ajoutez un appel à la nouvelle méthode à partir de la méthode `Main`, juste sous l’appel à la méthode `BuildAndTrainModel`, en utilisant le code suivant :
 
-[!code-csharp[CallEvaluate](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#CallEvaluate)]
+[!code-csharp[CallEvaluate](./snippets/github-issue-classification/csharp/Program.cs#CallEvaluate)]
 
 Comme vous l’avez fait précédemment avec le jeu de données d’entraînement, chargez le jeu de données de test en ajoutant le code suivant à la méthode `Evaluate` :
 
-[!code-csharp[LoadTestDataset](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#LoadTestDataset)]
+[!code-csharp[LoadTestDataset](./snippets/github-issue-classification/csharp/Program.cs#LoadTestDataset)]
 
 La méthode [Evaluate()](xref:Microsoft.ML.MulticlassClassificationCatalog.Evaluate%2A) calcule les métriques de qualité pour le modèle à l’aide du jeu de données spécifié. Elle retourne un objet <xref:Microsoft.ML.Data.MulticlassClassificationMetrics> contenant les métriques globales calculées par les évaluateurs de classification multiclasse.
 Pour afficher les métriques permettant de déterminer la qualité du modèle, vous devez d’abord les obtenir.
 Notez l’utilisation de la méthode [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) de la variable globale de machine learning `_trainedModel` (un [ITransformer](xref:Microsoft.ML.ITransformer)) pour entrer les caractéristiques et retourner les prédictions. Ajoutez comme nouvelle ligne le code suivant à la méthode `Evaluate` :
 
-[!code-csharp[Evaluate](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#Evaluate)]
+[!code-csharp[Evaluate](./snippets/github-issue-classification/csharp/Program.cs#Evaluate)]
 
 Les métriques suivantes sont évaluées pour la classification multiclasse :
 
@@ -285,13 +285,13 @@ Les métriques suivantes sont évaluées pour la classification multiclasse :
 
 Utilisez le code suivant pour afficher les métriques, partager les résultats et agir dessus :
 
-[!code-csharp[DisplayMetrics](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#DisplayMetrics)]
+[!code-csharp[DisplayMetrics](./snippets/github-issue-classification/csharp/Program.cs#DisplayMetrics)]
 
 ### <a name="save-the-model-to-a-file"></a>Enregistrer le modèle dans un fichier
 
 Une fois que vous êtes satisfait de votre modèle, enregistrez-le dans un fichier pour faire des prédictions ultérieurement ou dans une autre application. Ajoutez le code suivant à la méthode `Evaluate` .
 
-[!code-csharp[SnippetCallSaveModel](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#SnippetCallSaveModel)]
+[!code-csharp[SnippetCallSaveModel](./snippets/github-issue-classification/csharp/Program.cs#SnippetCallSaveModel)]
 
 Créez la méthode `SaveModelAsFile` sous votre méthode `Evaluate`.
 
@@ -304,13 +304,13 @@ private static void SaveModelAsFile(MLContext mlContext,DataViewSchema trainingD
 
 Ajoutez le code suivant à votre méthode `SaveModelAsFile`. Ce code utilise la [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) méthode pour sérialiser et stocker le modèle formé en tant que fichier zip.
 
-[!code-csharp[SnippetSaveModel](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#SnippetSaveModel)]
+[!code-csharp[SnippetSaveModel](./snippets/github-issue-classification/csharp/Program.cs#SnippetSaveModel)]
 
 ## <a name="deploy-and-predict-with-a-model"></a>Déployer et prédire avec un modèle
 
 Ajoutez un appel à la nouvelle méthode à partir de la méthode `Main`, juste sous l’appel à la méthode `Evaluate`, en utilisant le code suivant :
 
-[!code-csharp[CallPredictIssue](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#CallPredictIssue)]
+[!code-csharp[CallPredictIssue](./snippets/github-issue-classification/csharp/Program.cs#CallPredictIssue)]
 
 Créez la méthode `PredictIssue`, juste après la méthode `Evaluate` (et juste avant la méthode `SaveModelAsFile`), en utilisant le code suivant :
 
@@ -331,15 +331,15 @@ La méthode `PredictIssue` exécute les tâches suivantes :
 
 Chargez le modèle enregistré dans votre application en ajoutant le code suivant à la méthode `PredictIssue` :
 
-[!code-csharp[SnippetLoadModel](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#SnippetLoadModel)]
+[!code-csharp[SnippetLoadModel](./snippets/github-issue-classification/csharp/Program.cs#SnippetLoadModel)]
 
 Ajoutez un problème GitHub pour tester la prédiction du modèle entraîné dans la méthode `Predict` en créant une instance de `GitHubIssue` :
 
-[!code-csharp[AddTestIssue](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#AddTestIssue)]
+[!code-csharp[AddTestIssue](./snippets/github-issue-classification/csharp/Program.cs#AddTestIssue)]
 
 Comme vous l’avez fait précédemment, créez une instance `PredictionEngine` avec le code suivant :
 
-[!code-csharp[CreatePredictionEngine](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#CreatePredictionEngine)]
+[!code-csharp[CreatePredictionEngine](./snippets/github-issue-classification/csharp/Program.cs#CreatePredictionEngine)]
 
 Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)n’est pas thread-safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le `PredictionEnginePool` service, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d' [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) objets à utiliser dans votre application. Pour plus d’informations sur l' [utilisation `PredictionEnginePool` de dans une API Web ASP.net Core](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application), consultez ce guide.
 
@@ -348,13 +348,13 @@ Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratiq
 
 Utilisez `PredictionEngine` pour prédire l’étiquette Area GitHub en ajoutant le code suivant à la méthode `PredictIssue` servant à la prédiction :
 
-[!code-csharp[PredictIssue](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#PredictIssue)]
+[!code-csharp[PredictIssue](./snippets/github-issue-classification/csharp/Program.cs#PredictIssue)]
 
 ### <a name="using-the-loaded-model-for-prediction"></a>Utilisation du modèle chargé pour la prédiction
 
 Affichez `Area` pour catégoriser le problème et agir en conséquence. Créez une vue des résultats à l’aide du code <xref:System.Console.WriteLine?displayProperty=nameWithType> suivant :
 
-[!code-csharp[DisplayResults](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#DisplayResults)]
+[!code-csharp[DisplayResults](./snippets/github-issue-classification/csharp/Program.cs#DisplayResults)]
 
 ## <a name="results"></a>Résultats
 

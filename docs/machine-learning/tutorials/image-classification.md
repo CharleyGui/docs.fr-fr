@@ -4,12 +4,12 @@ description: Découvrez comment transférer les connaissances d’un modèle Ten
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 38fa349e743da54a21aeb65b76a0273a17c3fae7
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: a4c671816dce1fe2abdf77f81da0f27236136536
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85804000"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282110"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Didacticiel : générer un modèle de classification d’images ML.NET à partir d’un modèle TensorFlow pré-formé
 
@@ -29,7 +29,7 @@ Dans ce tutoriel, vous allez apprendre à :
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TransferLearningTF). Notez que, par défaut, la configuration de projet .NET pour ce tutoriel cible .NET Core 2.2.
 
-## <a name="what-is-transfer-learning"></a>Qu’est-ce que l’apprentissage par transfert ?
+## <a name="what-is-transfer-learning"></a>Qu’est-ce que l’apprentissage de transfert ?
 
 Le transfert d’apprentissage est le processus qui consiste à utiliser les connaissances acquises tout en résolvant un problème et en l’appliquant à un problème différent mais lié.
 
@@ -149,15 +149,15 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Ajoutez les instructions `using` supplémentaires suivantes en haut du fichier *Program.cs* : 
 
-    [!code-csharp[AddUsings](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#AddUsings)]
+    [!code-csharp[AddUsings](./snippets/image-classification/csharp/Program.cs#AddUsings)]
 
 1. Ajoutez le code suivant à la ligne située juste au-dessus de la `Main` méthode pour spécifier les chemins d’accès aux éléments multimédias :
 
-    [!code-csharp[DeclareGlobalVariables](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareGlobalVariables)]
+    [!code-csharp[DeclareGlobalVariables](./snippets/image-classification/csharp/Program.cs#DeclareGlobalVariables)]
 
 1. Créez des classes pour vos données d’entrée et prédictions.
 
-    [!code-csharp[DeclareImageData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareImageData)]
+    [!code-csharp[DeclareImageData](./snippets/image-classification/csharp/Program.cs#DeclareImageData)]
 
     `ImageData` est la classe de données d’images d’entrée, qui comprend les champs <xref:System.String> suivants :
 
@@ -166,7 +166,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Ajoutez une nouvelle classe à votre projet pour `ImagePrediction` :
 
-    [!code-csharp[DeclareImagePrediction](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareImagePrediction)]
+    [!code-csharp[DeclareImagePrediction](./snippets/image-classification/csharp/Program.cs#DeclareImagePrediction)]
 
     `ImagePrediction` est la classe de prédiction des images, qui comprend les champs suivants :
 
@@ -179,7 +179,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Initialiser la variable `mlContext` avec une nouvelle instance de `MLContext`.  Remplacez la ligne `Console.WriteLine("Hello World!")` par le code suivant dans la méthode `Main` :
 
-    [!code-csharp[CreateMLContext](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CreateMLContext)]
+    [!code-csharp[CreateMLContext](./snippets/image-classification/csharp/Program.cs#CreateMLContext)]
 
     La [classe MLContext](xref:Microsoft.ML.MLContext) est un point de départ pour toutes les opérations ML.NET, et l’initialisation de `mlContext` crée un environnement ML.NET qui peut être partagé par les objets de flux de travail de création de modèle. Sur le plan conceptuel, elle est similaire à `DBContext` dans Entity Framework.
 
@@ -187,7 +187,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Le modèle d’Inception a plusieurs paramètres que vous devez passer. Créez un struct pour mapper les valeurs de paramètre à des noms conviviaux avec le code suivant, juste après la `Main()` méthode :
 
-    [!code-csharp[InceptionSettings](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#InceptionSettings)]
+    [!code-csharp[InceptionSettings](./snippets/image-classification/csharp/Program.cs#InceptionSettings)]
 
 ### <a name="create-a-display-utility-method"></a>Créer une méthode d’utilitaire d’affichage
 
@@ -204,7 +204,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Renseignez le corps de la `DisplayResults` méthode :
 
-    [!code-csharp[DisplayPredictions](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayPredictions)]
+    [!code-csharp[DisplayPredictions](./snippets/image-classification/csharp/Program.cs#DisplayPredictions)]
 
 ### <a name="create-a-tsv-file-utility-method"></a>Créez une méthode d’utilitaire de fichier .tsv
 
@@ -219,7 +219,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Renseignez le corps de la `ReadFromTsv` méthode :
 
-    [!code-csharp[ReadFromTsv](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ReadFromTsv)]
+    [!code-csharp[ReadFromTsv](./snippets/image-classification/csharp/Program.cs#ReadFromTsv)]
 
     Le code analyse le `tags.tsv` fichier pour ajouter le chemin d’accès au fichier image pour la `ImagePath` propriété et le charger et `Label` dans un `ImageData` objet.
 
@@ -236,11 +236,11 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Créez un `ImageData` objet qui contient le chemin d’accès qualifié complet et le nom du fichier image pour le seul `ImagePath` . Ajoutez le code suivant à la fin de la méthode `ClassifySingleImage()` :
 
-    [!code-csharp[LoadImageData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadImageData)]
+    [!code-csharp[LoadImageData](./snippets/image-classification/csharp/Program.cs#LoadImageData)]
 
 1. Effectuez une seule prédiction en ajoutant le code suivant comme ligne suivante dans la `ClassifySingleImage` méthode :
 
-    [!code-csharp[PredictSingle](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#PredictSingle)]
+    [!code-csharp[PredictSingle](./snippets/image-classification/csharp/Program.cs#PredictSingle)]
 
     Pour récupérer la prédiction, utilisez la méthode [Predict ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) . Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)n’est pas thread-safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le `PredictionEnginePool` service, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d' [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) objets à utiliser dans votre application. Pour plus d’informations sur l' [utilisation `PredictionEnginePool` de dans une API Web ASP.net Core](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application), consultez ce guide.
 
@@ -249,7 +249,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Affichez le résultat de la prédiction à la fin de la méthode `ClassifySingleImage()` :
 
-   [!code-csharp[DisplayPrediction](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayPrediction)]
+   [!code-csharp[DisplayPrediction](./snippets/image-classification/csharp/Program.cs#DisplayPrediction)]
 
 ## <a name="construct-the-mlnet-model-pipeline"></a>Construire le pipeline de modèle ML.NET
 
@@ -270,13 +270,13 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
 1. Ajoutez les estimateurs pour charger, redimensionner et extraire les pixels à partir des données de l’image :
 
-    [!code-csharp[ImageTransforms](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ImageTransforms)]
+    [!code-csharp[ImageTransforms](./snippets/image-classification/csharp/Program.cs#ImageTransforms)]
 
     Les données de l’image doivent être traitées dans le format attendu par le modèle TensorFlow. Dans ce cas, les images sont chargées en mémoire, redimensionnées à une taille cohérente et les pixels sont extraits dans un vecteur numérique.
 
 1. Ajoutez l’estimateur pour charger le modèle TensorFlow et le noter :
 
-    [!code-csharp[ScoreTensorFlowModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ScoreTensorFlowModel)]
+    [!code-csharp[ScoreTensorFlowModel](./snippets/image-classification/csharp/Program.cs#ScoreTensorFlowModel)]
 
     Cette étape du pipeline charge le modèle TensorFlow en mémoire, puis traite le vecteur de valeurs de pixel via le réseau de modèles TensorFlow. L’application d’entrées à un modèle d’apprentissage profond et la génération d’une sortie à l’aide du modèle sont appelées **notation**. Lorsque vous utilisez le modèle dans son intégralité, la notation effectue une inférence ou une prédiction.
 
@@ -286,29 +286,29 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
 1. Ajoutez l’estimateur pour mapper les étiquettes de chaîne dans les données d’apprentissage aux valeurs de clés entières :
 
-    [!code-csharp[MapValueToKey](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#MapValueToKey)]
+    [!code-csharp[MapValueToKey](./snippets/image-classification/csharp/Program.cs#MapValueToKey)]
 
     Le formateur ML.NET qui est ajouté ensuite requiert que ses étiquettes soient au `key` format au lieu de chaînes arbitraires. Une clé est un nombre qui a un mappage un-à-un à une valeur de chaîne.
 
 1. Ajoutez l’algorithme d’apprentissage ML.NET :
 
-    [!code-csharp[AddTrainer](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#AddTrainer)]
+    [!code-csharp[AddTrainer](./snippets/image-classification/csharp/Program.cs#AddTrainer)]
 
 1. Ajoutez l’estimateur pour mapper la valeur de clé prédite dans une chaîne :
 
-    [!code-csharp[MapKeyToValue](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#MapKeyToValue)]
+    [!code-csharp[MapKeyToValue](./snippets/image-classification/csharp/Program.cs#MapKeyToValue)]
 
 ## <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
 
 1. Charger les données d’apprentissage à l’aide du wrapper [LoadFromTextFile](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile(Microsoft.ML.DataOperationsCatalog,System.String,Microsoft.ML.Data.TextLoader.Options)) . Ajoutez le code suivant comme première ligne de la méthode `GenerateModel()` :
 
-    [!code-csharp[LoadData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadData "Load the data")]
+    [!code-csharp[LoadData](./snippets/image-classification/csharp/Program.cs#LoadData "Load the data")]
 
     Les données dans ML.NET sont représentées en tant que [classe IDataView](xref:Microsoft.ML.IDataView). `IDataView` est un moyen flexible et efficace de décrire des données tabulaires (numériques et texte). Les données peuvent être chargées à partir d’un fichier texte ou en temps réel (par exemple, fichiers journaux ou de base de données SQL) dans un objet `IDataView`.
 
 1. Effectuer l’apprentissage du modèle avec les données chargées ci-dessus :
 
-    [!code-csharp[TrainModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#TrainModel)]
+    [!code-csharp[TrainModel](./snippets/image-classification/csharp/Program.cs#TrainModel)]
 
     La `Fit()` méthode forme votre modèle en appliquant le jeu de données d’apprentissage au pipeline.
 
@@ -316,13 +316,13 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
 1. Chargez et transformez les données de test en ajoutant le code suivant à la ligne suivante de la `GenerateModel` méthode :
 
-    [!code-csharp[LoadAndTransformTestData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadAndTransformTestData "Load and transform test data")]
+    [!code-csharp[LoadAndTransformTestData](./snippets/image-classification/csharp/Program.cs#LoadAndTransformTestData "Load and transform test data")]
 
     Voici quelques exemples d’images que vous pouvez utiliser pour évaluer le modèle. Comme les données d’apprentissage, celles-ci doivent être chargées dans un `IDataView` , afin qu’elles puissent être transformées par le modèle.
 
 1. Ajoutez le code suivant à la `GenerateModel()` méthode pour évaluer le modèle :
 
-    [!code-csharp[Evaluate](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#Evaluate)]
+    [!code-csharp[Evaluate](./snippets/image-classification/csharp/Program.cs#Evaluate)]
 
     Une fois la prédiction définie, la méthode [Evaluate()](xref:Microsoft.ML.RecommendationCatalog.Evaluate%2A) :
 
@@ -333,7 +333,7 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
     Utilisez le code suivant pour afficher les métriques, partager les résultats et agir dessus :
 
-    [!code-csharp[DisplayMetrics](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayMetrics)]
+    [!code-csharp[DisplayMetrics](./snippets/image-classification/csharp/Program.cs#DisplayMetrics)]
 
     Les indicateurs suivants sont évalués pour la classification d’images :
 
@@ -342,17 +342,17 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
 1. Ajoutez le code suivant pour retourner le modèle entraîné à la ligne suivante :
 
-    [!code-csharp[SaveModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ReturnModel)]
+    [!code-csharp[SaveModel](./snippets/image-classification/csharp/Program.cs#ReturnModel)]
 
 ## <a name="run-the-application"></a>Exécutez l’application !
 
 1. Ajoutez l’appel à `GenerateModel` dans la `Main` méthode après la création de la classe MLContext :
 
-    [!code-csharp[CallGenerateModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CallGenerateModel)]
+    [!code-csharp[CallGenerateModel](./snippets/image-classification/csharp/Program.cs#CallGenerateModel)]
 
 1. Ajoutez l’appel à la `ClassifySingleImage()` méthode comme ligne de code suivante dans la `Main` méthode :
 
-    [!code-csharp[CallClassifySingleImage](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CallClassifySingleImage)]
+    [!code-csharp[CallClassifySingleImage](./snippets/image-classification/csharp/Program.cs#CallClassifySingleImage)]
 
 1. Exécutez votre application console (Ctrl + F5). Vous devriez obtenir les résultats suivants.  Des messages d’avertissement ou de traitement peuvent s’afficher, mais nous les avons supprimés dans les résultats suivants pour plus de clarté.
 

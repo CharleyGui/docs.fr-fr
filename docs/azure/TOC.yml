@@ -1,16 +1,57 @@
 - name: Azure pour les développeurs .NET
   href: index.yml
+- name: Bien démarrer sur Azure avec .NET
+  expanded: true
   items:
     - name: Présentation d’Azure et de .NET
       href: intro.md
-    - name: Migrer vers Azure
-      expanded: true
+    - name: Outils de développeur
+      href: tools.md
+    - name: Authentification
+      href: authentication.md
+    - name: Journalisation
+      href: logging.md
+    - name: Exemple de SDK
+      href: /samples/dotnet/samples/azure-identity-resource-management-storage/
+- name: Migrer vers Azure
+  items:
+    - name: Choisir l’option d’hébergement Azure appropriée
+      href: ./migration/choose.md
+    - name: Migrer une application ou service web .NET vers Azure App Service
+      href: ./migration/app-service.md
+    - name: Migrer une application ASP.NET vers une machine virtuelle Azure
+      href: ./migration/vm.md
+    - name: Déployer une base de données SQL Server vers Azure
+      href: ./migration/sql.md
+- name: Exemple de code
+  items:
+    - name: Applications web et serverless
+      href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps
+    - name: Bases de données
+      href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-cosmos-db%2Cazure-sql-database
+    - name: Stockage
       items:
-        - name: Choisir une option d’hébergement Azure
-          href: ./migration/choose.md
-        - name: Migrer une application ou service web .NET vers Azure App Service
-          href: ./migration/app-service.md
-        - name: Migrer une application ASP.NET vers une machine virtuelle Azure
-          href: ./migration/vm.md
-        - name: Déployer une base de données SQL Server vers Azure
-          href: ./migration/sql.md
+        - name: Azure Storage
+          href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-storage
+        - name: Cache Redis
+          href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-redis-cache
+    - name: Identité et sécurité
+      href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-active-directory%2Cazure-key-vault
+    - name: IoT
+      href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-iot-hub%2Cazure-iot-edge%2Cazure-iot-central
+    - name: Science des données
+      items:
+        - name: Machine Learning Service
+          href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-machine-learning-service
+        - name: Databricks
+          href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-databricks
+        - name: HDInsight
+          href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-hdinsight
+    - name: IA avec Cognitive Services
+      href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-cognitive-services
+    - name: Rechercher
+      href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb&products=azure-search
+    - name: Tous les exemples
+      href: /samples/browse/?languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb
+- name: Informations de référence sur les API
+  href: /dotnet/api/overview/azure/?view=azure-dotnet

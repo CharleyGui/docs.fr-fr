@@ -1,17 +1,18 @@
 ---
 title: Spécification d'un point d'entrée
+description: Apprenez à spécifier un point d’entrée, qui identifie l’emplacement d’une fonction dans une DLL. Vous pouvez renommer la fonction en mappant le point d’entrée à un autre nom.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - EntryPoint field
 - platform invoke, attribute fields
 - attribute fields in platform invoke, EntryPoint
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
-ms.openlocfilehash: c5f8f735dd3e8c359f88044a532c29303237acc8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5628c54103410d127c2f9c4f56e1c6f897ada754
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181311"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282019"
 ---
 # <a name="specifying-an-entry-point"></a>Spécification d'un point d'entrée
 
@@ -94,5 +95,5 @@ extern "C" int MsgBox(
 
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
 - [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
-- [Exemples d’appel de code non managé](platform-invoke-examples.md)
+- [Exemples d'appel de code non managé](platform-invoke-examples.md)
 - [Marshaling de données à l’aide de l’appel de code managé](marshaling-data-with-platform-invoke.md)

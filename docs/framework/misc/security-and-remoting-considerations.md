@@ -1,5 +1,6 @@
 ---
 title: Considérations sur la sécurité et la communication à distance
+description: En savoir plus sur les considérations de sécurité en ce qui concerne la communication à distance, qui vous permet de configurer un appel transparent entre des domaines d’application, des processus ou des ordinateurs.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - code security, remoting
@@ -7,19 +8,19 @@ helpviewer_keywords:
 - security [.NET Framework], remoting
 - secure coding, remoting
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
-ms.openlocfilehash: 7a56c9894da88382f40dcd475e89776a83a59322
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 029f9863ebed94805675b629be7eb10963a7b689
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215780"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281392"
 ---
 # <a name="security-and-remoting-considerations"></a>Considérations sur la sécurité et la communication à distance
 La communication à distance vous permet de définir des appels transparents entre des domaines d'application, des processus ou des ordinateurs. Cependant, le parcours de pile de la sécurité d'accès du code ne peut pas traverser des processus ou des limites de machine (il s'applique pourtant entre les domaines d'application du même processus).  
   
  Toute classe accessible à distance (dérivée d'une classe <xref:System.MarshalByRefObject>) doit être responsable de la sécurité. Soit le code ne doit être utilisé que dans des environnements fermés où le code appelant peut faire l'objet d'une confiance implicite, soit des appels de communication à distance doivent être conçus de façon à ne pas soumettre de code protégé à une entrée externe qui pourrait être utilisée à des fins malveillantes.  
   
- En général, vous ne devez jamais exposer de méthodes, de propriétés ou d’événements protégés par [LinkDemand](link-demands.md) déclaratif et les vérifications de sécurité <xref:System.Security.Permissions.SecurityAction.InheritanceDemand>. Avec la communication à distance, ces contrôles ne sont pas appliqués. D’autres vérifications de sécurité, telles que <xref:System.Security.Permissions.SecurityAction.Demand>, [Assert](using-the-assert-method.md), etc., fonctionnent entre les domaines d’application au sein d’un processus, mais ne fonctionnent pas dans les scénarios inter-processus ou inter-ordinateurs.  
+ En règle générale, vous ne devez jamais exposer de méthodes, de propriétés ou d’événements protégés par un [LinkDemand](link-demands.md) déclaratif et des <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> vérifications de sécurité. Avec la communication à distance, ces contrôles ne sont pas appliqués. D’autres vérifications de sécurité, telles que <xref:System.Security.Permissions.SecurityAction.Demand> , [Assert](using-the-assert-method.md), etc., fonctionnent entre les domaines d’application au sein d’un processus, mais ne fonctionnent pas dans les scénarios inter-processus ou inter-ordinateurs.  
   
 ## <a name="protected-objects"></a>Objets protégés  
  Certains objets comportent un état de sécurité. Ces objets ne doivent pas être passés à du code non fiable, qui obtiendrait alors des autorisations de sécurité n'entrant pas dans le champ de ses propres autorisations.  

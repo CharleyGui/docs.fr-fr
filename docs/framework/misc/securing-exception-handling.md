@@ -1,5 +1,6 @@
 ---
 title: Sécurisation de la gestion des exceptions
+description: Découvrez comment sécuriser la gestion des exceptions dans le code .NET. Examinez l’ordre dans lequel le code s’exécute s’il existe des instructions Try, except, catch et finally.
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - secure coding, exception handling
 - exception handling, security
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
-ms.openlocfilehash: ad27e62197f6fdaa6b5e706f4ae02c03fecae9f1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 009e587c0458488db6c2aa92e13311ddc08a64b1
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181135"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281993"
 ---
 # <a name="securing-exception-handling"></a>Sécurisation de la gestion des exceptions
-Dans Visual CMD et Visual Basic, une expression de filtre plus haut dans la pile s’exécute avant toute déclaration **finale.** Le bloc **de capture** associé à ce filtre s’exécute après la déclaration **finale.** Pour plus d’informations, voir [à l’aide d’exceptions filtrées par l’utilisateur](../../standard/exceptions/using-user-filtered-exception-handlers.md). Cette section examine les implications en matière de sécurité de cet ordre. Considérez l’exemple pseudocode suivant qui illustre l’ordre dans lequel filtrent les déclarations et **enfin** les déclarations s’exécutent.  
+Dans Visual C++ et Visual Basic, une expression de filtre plus haut dans la pile s’exécute avant toute instruction **finally** . Le bloc **catch** associé à ce filtre s’exécute après l’instruction **finally** . Pour plus d’informations, consultez [utilisation d’exceptions filtrées par l’utilisateur](../../standard/exceptions/using-user-filtered-exception-handlers.md). Cette section examine les implications en matière de sécurité de cet ordre. Prenons l’exemple de pseudocode suivant qui illustre l’ordre dans lequel les instructions de filtre et les instructions **finally** s’exécutent.  
   
 ```cpp  
 void Main()
@@ -58,7 +59,7 @@ Finally
 Catch  
 ```  
   
- Le filtre s’exécute avant la déclaration **finale,** de sorte que les questions de sécurité peuvent être introduites par tout ce qui rend un changement d’état où l’exécution d’un autre code pourrait en profiter. Par exemple :  
+ Le filtre s’exécute avant l’instruction **finally** , de sorte que les problèmes de sécurité peuvent être introduits par tout ce qui modifie l’État à l’endroit où l’exécution d’un autre code peut en tirer parti. Par exemple :  
   
 ```cpp  
 try
@@ -77,7 +78,7 @@ finally
 }  
 ```  
   
- Ce pseudocode permet à un filtre plus haut dans la pile d’exécuter le code arbitraire. D’autres exemples d’opérations qui auraient un effet similaire sont l’usurpation d’identité temporaire, la mise en place d’un drapeau interne qui contourne une certaine vérification de sécurité, ou de changer la culture associée au fil. La solution recommandée est d’introduire un gestionnaire d’exception pour isoler les modifications du code à l’état de thread des blocs de filtre des appelants. Cependant, il est important que le gestionnaire d’exception soit correctement introduit ou que ce problème ne soit pas résolu. L’exemple suivant change la culture de l’interface utilisateur, mais tout type de changement d’état de thread pourrait être exposé de la même façon.  
+ Ce pseudocode permet à un filtre situé plus haut dans la pile d’exécuter du code arbitraire. D’autres exemples d’opérations qui auraient un effet similaire sont l’emprunt d’identité temporaire d’une autre identité, la définition d’un indicateur interne qui ignore certaines vérifications de sécurité ou la modification de la culture associée au thread. La solution recommandée consiste à introduire un gestionnaire d’exceptions pour isoler les modifications du code à l’état du thread des blocs de filtre des appelants. Toutefois, il est important que le gestionnaire d’exceptions soit correctement introduit ou que ce problème ne soit pas résolu. L’exemple suivant change la culture de l’interface utilisateur, mais tout type de modification de l’état du thread peut être exposé de façon similaire.  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -114,7 +115,7 @@ Thread.CurrentThread.CurrentUICulture)
 End Class  
 ```  
   
- Le correctif correct dans ce cas est d’envelopper l’essai **try**/existant**finalement** bloquer dans un bloc de capture **d’essai.**/**catch** Le simple fait d’introduire une clause **de lancement de capture** dans l’essai existant **finalement**/**bloquer** ne résout pas le problème, comme le montre l’exemple suivant.  
+ Dans ce cas, le correctif approprié consiste à encapsuler le bloc **try** / **finally** existant dans un bloc **try** / **catch** . Le simple fait d’introduire une clause **Catch-Throw** dans le bloc **try** / **finally** existant ne résout pas le problème, comme illustré dans l’exemple suivant.  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -134,9 +135,9 @@ YourObject.YourMethod()
 }  
 ```  
   
- Cela ne résout **finally** pas le problème parce `FilterFunc` que la déclaration finale n’a pas couru avant que le contrôle obtient.  
+ Cela ne résout pas le problème, car l’instruction **finally** n’a pas été exécutée avant le `FilterFunc` contrôle obtient.  
   
- L’exemple suivant résout le problème en veillant à ce que la clause **finale** ait été exécutée avant d’offrir une exception sur les blocs de filtre d’exception des appelants.  
+ L’exemple suivant résout le problème en s’assurant que la clause **finally** a été exécutée avant d’offrir une exception aux blocs de filtres d’exception des appelants.  
   
 ```cpp  
 YourObject.YourMethod()  

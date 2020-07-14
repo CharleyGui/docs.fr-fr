@@ -3,12 +3,12 @@ title: Télémétrie du kit SDK .NET Core
 description: Découvrez les fonctionnalités de télémétrie du kit SDK .NET Core, qui collecte des informations d’utilisation à des fins d’analyse, les types de données collectées et comment désactiver la télémétrie.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: a79b791abc99331ff39f5e281ee0fdc62b258989
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 0917dae23588ccd1809252aaf484c397e84561c7
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507280"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226567"
 ---
 # <a name="net-core-sdk-telemetry"></a>Télémétrie du kit SDK .NET Core
 
@@ -46,13 +46,13 @@ The .NET Core tools collect usage data in order to help us improve your experien
 Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
 ```
 
-Pour désactiver ce message et le message de `DOTNET_NOLOGO` bienvenue `true`.NET Core, définissez la variable de l’environnement à . Notez que cette variable n’a aucun effet sur la télémétrie opt out.
+Pour désactiver ce message et le message d’accueil de .NET Core, affectez la valeur `DOTNET_NOLOGO` à la variable d’environnement `true` . Notez que cette variable n’a aucun effet sur la désactivation de la télémétrie.
 
 ## <a name="data-points"></a>Points de données
 
 La fonctionnalité de télémétrie ne collecte pas de données personnelles, comme les noms d’utilisateurs et les adresses e-mail. Elle n’analyse pas votre code et n’extrait pas de données au niveau du projet, comme le nom, le référentiel ou l’auteur. Les données sont envoyées de manière sécurisée à des serveurs Microsoft à l’aide de la technologie [Azure Monitor](https://azure.microsoft.com/services/monitor/), stockées à un emplacement dont l’accès est strictement limité et publiées conformément à des contrôles de sécurité stricts à partir de systèmes [Stockage Azure](https://azure.microsoft.com/services/storage/) sécurisés.
 
-Nous prenons la protection de vos données au sérieux. Si vous pensez que la fonctionnalité de télémétrie collecte des données sensibles ou que les données sont gérées de manière non sécurisée ou incorrecte, signalez un problème dans le dépôt [dotnet/cli](https://github.com/dotnet/cli/issues) ou envoyez un e-mail à [dotnet@microsoft.com](mailto:dotnet@microsoft.com) afin que nous étudions le problème.
+Nous prenons la protection de vos données au sérieux. Si vous pensez que la télémétrie collecte des données sensibles ou que les données sont gérées de manière inappropriée ou non, envoyez un problème dans le référentiel [dotnet/SDK](https://github.com/dotnet/sdk/issues) ou envoyez un e-mail à [dotnet@microsoft.com](mailto:dotnet@microsoft.com) pour investigation.
 
 La fonctionnalité de télémétrie collecte les données suivantes :
 
@@ -130,7 +130,7 @@ at Microsoft.DotNet.Cli.Program.ProcessArgs(String[] args, ITelemetry telemetryC
 at Microsoft.DotNet.Cli.Program.Main(String[] args)
 ```
 
-### <a name="avoid-inadvertent-disclosure-of-information"></a>Éviter la divulgation involontaire d’informations
+### <a name="avoid-inadvertent-disclosure-of-information"></a>Éviter la divulgation involontaire des informations
 
 Les contributeurs .NET Core et les autres personnes exécutant une version du kit SDK .NET Core qu’ils ont eux-mêmes créée doivent prendre en considération le chemin du code source de leur kit SDK. Si un plantage se produit pendant l’utilisation d’un kit SDK .NET Core qui correspond à une build de débogage personnalisée ou qui est configurée avec des fichiers de symboles de build personnalisés, le chemin des fichiers sources du SDK de la machine de build est collecté dans le rapport des appels de procédure et n’est pas haché.
 
@@ -139,4 +139,4 @@ Pour cette raison, les builds personnalisées du kit SDK .NET Core ne doivent pa
 ## <a name="see-also"></a>Voir aussi
 
 - [.NET Core CLI Telemetry - 2019 Q2 Data](https://dotnet.microsoft.com/platform/telemetry/dotnet-core-cli-2019q2)
-- [Source d’informations de référence sur la télémétrie (dépôt dotnet/cli)](https://github.com/dotnet/cli/tree/master/src/dotnet/Telemetry)
+- [Source de référence de télémétrie (référentiel dotnet/SDK)](https://github.com/dotnet/sdk/tree/master/src/Cli/dotnet/Telemetry)

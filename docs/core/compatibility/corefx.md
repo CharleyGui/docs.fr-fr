@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 09/20/2019
-ms.openlocfilehash: 1c56358e69d0dd6e8572a41229c1b9edbcdad795
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: 64510809a1cf69ea0e4c4816eb2df54233e8eceb
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365612"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281298"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -17,6 +17,8 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [Le ActivityIdFormat par défaut est W3C](#default-activityidformat-is-w3c) | 5.0 |
+| [Changement de comportement pour Vector2. Lerp et Vector4. Lerp](#behavior-change-for-vector2lerp-and-vector4lerp) | 5.0 |
 | [Les méthodes SSE et SSE2 CompareGreaterThan gèrent correctement les entrées NaN](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5.0 |
 | [CounterSet. CreateCounterSetInstance lève désormais une exception InvalidOperationException si l’instance existe déjà](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5.0 |
 | [Package Microsoft. DotNet. PlatformAbstractions supprimé](#microsoftdotnetplatformabstractions-package-removed) | 5.0 |
@@ -43,6 +45,14 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Process. StartInfo lève une exception InvalidOperationException pour les processus que vous n’avez pas démarrés](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [default-activityidformat-changed](../../../includes/core-changes/corefx/5.0/default-activityidformat-changed.md)]
+
+***
+
+[!INCLUDE [vector-lerp-behavior-change](../../../includes/core-changes/corefx/5.0/vector-lerp-behavior-change.md)]
+
+***
 
 [!INCLUDE [sse-comparegreaterthan-intrinsics](../../../includes/core-changes/corefx/5.0/sse-comparegreaterthan-intrinsics.md)]
 

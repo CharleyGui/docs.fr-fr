@@ -1,5 +1,6 @@
 ---
 title: Sécurité d'accès du code
+description: En savoir plus sur le mécanisme de sécurité d’accès du code dans .NET, qui permet de protéger les systèmes informatiques contre le code mobile malveillant.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - named permission sets, code access security
@@ -15,26 +16,26 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-ms.openlocfilehash: a7dce1efedfb652096e6b583eca08e5b80d282a5
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 6fa7983d0355a9e11728f8dbd0f4e06bbb0f8e5b
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645779"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281639"
 ---
 # <a name="code-access-security"></a>Sécurité d'accès du code
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- De nos jours, du fait d'une interconnexion extrême, les systèmes informatiques sont fréquemment exposés à du code provenant de diverses sources parfois inconnues. Le code peut être joint à l’e-mail, contenu dans des documents ou téléchargé sur Internet. Malheureusement, de nombreux utilisateurs d’ordinateurs ont personnellement fait l’expérience de code mobile malveillant, y compris de virus et de vers, qui peuvent endommager ou détruire des données et coûter du temps et de l’argent.  
+ De nos jours, du fait d'une interconnexion extrême, les systèmes informatiques sont fréquemment exposés à du code provenant de diverses sources parfois inconnues. Le code peut être joint à un courrier électronique, contenu dans des documents ou téléchargé via Internet. Malheureusement, de nombreux utilisateurs d’ordinateurs ont personnellement fait l’expérience de code mobile malveillant, y compris de virus et de vers, qui peuvent endommager ou détruire des données et coûter du temps et de l’argent.  
   
  La plupart des mécanismes de sécurité courants accordent des droits aux utilisateurs en fonction de leurs informations d'identification de connexion (généralement un mot de passe) et limitent les ressources (souvent des répertoires et fichiers) auxquelles ils peuvent accéder. Cependant, cette approche ne parvient pas à répondre à plusieurs situations : les utilisateurs peuvent obtenir du code provenant de nombreuses sources dont certaines peuvent ne pas être fiables, le code peut contenir des bogues ou des vulnérabilités qui permettent à du code nuisible de l'exploiter et le code fait parfois des choses dont l'utilisateur n'a pas conscience. Les systèmes informatiques peuvent donc être endommagés et des données confidentielles peuvent être divulguées si des utilisateurs prudents et dignes de confiance exécutent un logiciel malveillant ou rempli d'erreurs. La plupart des mécanismes de sécurité des systèmes d’exploitation nécessitent que chaque partie du code ait un niveau de confiance suffisant afin de s’exécuter, sauf peut-être pour les scripts d’une page web. Un mécanisme de sécurité largement applicable qui permette à du code provenant d'un système informatique de s'exécuter en toute sécurité sur un autre système est donc nécessaire, même s'il n'existe pas de relations de confiance entre les systèmes.  
   
  Le .NET Framework fournit un mécanisme de sécurité appelé sécurité d'accès du code, qui aide à protéger les systèmes informatiques contre du code mobile malveillant, pour permettre à du code d'origine inconnue de s'exécuter en toute sécurité et pour éviter que du code de confiance ne compromette la sécurité de manière intentionnelle ou accidentelle. La sécurité d'accès du code permet au code d'avoir un niveau de confiance à différents degrés, en fonction de son origine et d'autres aspects de son identité. La sécurité d'accès du code applique aussi différents niveaux de confiance au code, ce qui réduit la quantité de code dont le niveau de confiance doit être suffisant pour s'exécuter. L'utilisation de la sécurité d'accès du code peut diminuer la probabilité que votre code soit utilisé de manière abusive par du code malveillant ou rempli d'erreurs. Elle peut réduire votre responsabilité, car vous pouvez spécifier l'ensemble des opérations que votre code est autorisé à exécuter. La sécurité d'accès du code peut aussi aider à réduire les dommages qui peuvent résulter de la mise en danger de la sécurité dans votre code.  
   
 > [!NOTE]
-> D’importantes modifications ont été apportées à la sécurité d’accès au code dans le cadre .NET 4. Le changement le plus notable a été [la transparence de la sécurité,](security-transparent-code.md)mais il ya aussi d’autres changements importants qui affectent la sécurité d’accès au code. Pour plus d’informations sur ces changements, voir [changements de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
+> Des modifications majeures ont été apportées à la sécurité d’accès du code dans le .NET Framework 4. La modification la plus notable a été la transparence de la [sécurité](security-transparent-code.md), mais il existe également d’autres modifications significatives qui affectent la sécurité d’accès du code. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
   
- La sécurité d'accès du code affecte principalement le code de bibliothèque et les applications partiellement fiables. Les développeurs de bibliothèques doivent protéger leur code contre l'accès non autorisé d'applications partiellement fiables, qui sont des applications chargées à partir de sources externes telles qu'Internet. Les applications installées sur votre poste de travail ou sur l'intranet local sont exécutées avec une confiance totale. Les applications en pleine confiance ne sont pas affectées par la sécurité d’accès au code à moins qu’elles ne soient marquées comme transparentes pour [la sécurité,](security-transparent-code.md)parce qu’elles sont entièrement fiables. Leur seule limitation est que les applications marquées avec l'attribut <xref:System.Security.SecurityTransparentAttribute> ne peuvent pas appeler du code marqué avec l'attribut <xref:System.Security.SecurityCriticalAttribute>. Les applications partiellement fiables doivent être exécutées dans un bac à sable (sandbox) (par exemple, dans Internet Explorer) pour que la sécurité d'accès du code puisse être appliquée. Si vous téléchargez une application à partir d'Internet et essayez de l'exécuter sur votre poste de travail, vous obtiendrez une <xref:System.NotSupportedException> avec le message suivant : «Tentative de chargement d'un assembly à partir d'un emplacement réseau qui aurait entraîné l'utilisation de l'assembly en mode Bac à sable (sandbox) dans les versions antérieures du .NET Framework. Cette version du .NET Framework n'activant pas la stratégie CAS par défaut, ce chargement peut être dangereux. » Si vous êtes sûr que l’application peut être fiable, vous pouvez lui permettre d’être exécutée en pleine confiance en utilisant la [ \<chargeDeRemoteSources> élément](../configure-apps/file-schema/runtime/loadfromremotesources-element.md). Pour plus d’informations sur l’exécution d’une application dans un bac à sable, voir [Comment : Exécuter le code partiellement fiable dans un bac à sable.](how-to-run-partially-trusted-code-in-a-sandbox.md)  
+ La sécurité d'accès du code affecte principalement le code de bibliothèque et les applications partiellement fiables. Les développeurs de bibliothèques doivent protéger leur code contre l'accès non autorisé d'applications partiellement fiables, qui sont des applications chargées à partir de sources externes telles qu'Internet. Les applications installées sur votre poste de travail ou sur l'intranet local sont exécutées avec une confiance totale. Les applications de confiance totale ne sont pas affectées par la sécurité d’accès du code, sauf si elles sont marquées comme étant [transparentes de sécurité](security-transparent-code.md), car elles sont entièrement fiables. Leur seule limitation est que les applications marquées avec l'attribut <xref:System.Security.SecurityTransparentAttribute> ne peuvent pas appeler du code marqué avec l'attribut <xref:System.Security.SecurityCriticalAttribute>. Les applications partiellement fiables doivent être exécutées dans un bac à sable (sandbox) (par exemple, dans Internet Explorer) pour que la sécurité d'accès du code puisse être appliquée. Si vous téléchargez une application à partir d'Internet et essayez de l'exécuter sur votre poste de travail, vous obtiendrez une <xref:System.NotSupportedException> avec le message suivant : «Tentative de chargement d'un assembly à partir d'un emplacement réseau qui aurait entraîné l'utilisation de l'assembly en mode Bac à sable (sandbox) dans les versions antérieures du .NET Framework. Cette version du .NET Framework n'activant pas la stratégie CAS par défaut, ce chargement peut être dangereux. » Si vous êtes sûr que l’application peut être approuvée, vous pouvez l’activer pour qu’elle soit exécutée avec un niveau de confiance totale à l’aide de l' [ \<loadFromRemoteSources> élément](../configure-apps/file-schema/runtime/loadfromremotesources-element.md). Pour plus d’informations sur l’exécution d’une application dans un bac à sable (sandbox), consultez [Comment : exécuter du code partiellement fiable dans un bac à sable (sandbox)](how-to-run-partially-trusted-code-in-a-sandbox.md).  
   
  Tout le code managé qui cible le Common Language Runtime bénéficie de la sécurité d'accès du code, même si ce code ne fait aucun appel de sécurité d'accès du code. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](code-access-security-basics.md).  
   
@@ -56,7 +57,7 @@ ms.locfileid: "81645779"
   
  L'illustration suivante présente le parcours de la pile obtenu quand une méthode dans l'assembly A4 réclame que ses appelants bénéficient de l'autorisation P.  
   
- ![Sécurité d’accès au code](media/slide-10a.gif "slide_10a")  
+ ![Sécurité d’accès du code](media/slide-10a.gif "slide_10a")  
 Parcours de pile de sécurité  
   
 <a name="related_topics"></a>
@@ -65,8 +66,8 @@ Parcours de pile de sécurité
 |Intitulé|Description|  
 |-----------|-----------------|  
 |[Notions fondamentales de la sécurité d’accès du code](code-access-security-basics.md)|Décrit la sécurité d'accès du code et ses principales utilisations.|  
-|[Code transparent de sécurité, niveau 2](security-transparent-code-level-2.md)|Décrit le modèle de transparence de sécurité dans le cadre .NET 4.|  
+|[Code transparent de sécurité, niveau 2](security-transparent-code-level-2.md)|Décrit le modèle de transparence de la sécurité dans le .NET Framework 4.|  
 |[Utilisation de bibliothèques à partir de code d’un niveau de confiance partiel](using-libraries-from-partially-trusted-code.md)|Décrit comment activer des bibliothèques en vue d'une utilisation avec du code non managé et comment utiliser des bibliothèques à partir d'un code non managé.|  
 |[Concepts fondamentaux sur la sécurité](../../standard/security/key-security-concepts.md)|Offre une vue d'ensemble de nombreux termes et concepts clés utilisés dans le système de sécurité .NET Framework.|  
 |[Sécurité basée sur les rôles](../../standard/security/role-based-security.md)|Décrit comment incorporer la sécurité basée sur les rôles.|  
-|[Cryptographic Services](../../standard/security/cryptographic-services.md)|Décrit comment incorporer le chiffrement dans vos applications.|
+|[services de chiffrement](../../standard/security/cryptographic-services.md)|Décrit comment incorporer le chiffrement dans vos applications.|

@@ -1,5 +1,6 @@
 ---
 title: "Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)"
+description: Découvrez comment exécuter du code partiellement fiable dans un bac à sable (sandbox) dans .NET. La classe AppDomain est un moyen efficace de Sandboxer les applications managées.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - partially trusted code
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - restricted security environment
 - code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-ms.openlocfilehash: b2f5a72e747f6c71743a7b22fe9f1962ac2f6b53
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f186f1d901b51dd4c61ba6b22197465a41f2c44
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181183"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282032"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -88,7 +89,7 @@ AppDomain.CreateDomain( string friendlyName,
         params StrongName[] fullTrustAssemblies)  
     ```  
   
-     Informations supplémentaires :  
+     Informations complémentaires :  
   
     - Il s'agit de la seule surcharge de la méthode <xref:System.AppDomain.CreateDomain%2A> prenant un <xref:System.Security.PermissionSet> comme paramètre, et donc la seule surcharge qui vous permet de charger une application dans un paramètre de confiance partielle.  
   
@@ -114,7 +115,7 @@ AppDomain.CreateDomain( string friendlyName,
   
     - Vous pouvez utiliser une base de code qui pointe vers un emplacement qui ne contient pas votre assembly.  
   
-    - Vous pouvez effectuer la création sous un <xref:System.Security.CodeAccessPermission.Assert%2A> pour la confiance totale (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), ce qui vous permet de créer une instance d'une classe critique. (Cela se produit chaque fois que votre assemblage n’a pas de marques de transparence et est chargé comme entièrement fiable.) Par conséquent, vous devez faire attention à créer uniquement du code en qui vous avez confiance dans cette fonction, et nous vous recommandons de créer uniquement des instances de classes entièrement fiables dans le nouveau domaine d’application.  
+    - Vous pouvez effectuer la création sous un <xref:System.Security.CodeAccessPermission.Assert%2A> pour la confiance totale (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), ce qui vous permet de créer une instance d'une classe critique. (Cela se produit chaque fois que votre assembly n’a pas de marquages de transparence et qu’il est chargé avec un niveau de confiance totale.) Par conséquent, vous devez veiller à créer uniquement le code que vous approuvez avec cette fonction, et nous vous recommandons de créer uniquement des instances de classes de confiance totale dans le nouveau domaine d’application.  
   
     ```csharp
     ObjectHandle handle = Activator.CreateInstanceFrom(  
@@ -175,7 +176,7 @@ AppDomain.CreateDomain( string friendlyName,
   
      L'assertion de confiance totale permet d'obtenir les informations détaillées de <xref:System.Security.SecurityException>. Sans <xref:System.Security.PermissionSet.Assert%2A>, la méthode <xref:System.Security.SecurityException.ToString%2A> de <xref:System.Security.SecurityException> détecte que du code de niveau de confiance partielle se trouve sur la pile et restreint les informations retournées. Cela peut provoquer des problèmes de sécurité si le code de confiance partielle peut lire ces informations. Cependant, le risque est atténué par le fait de ne pas accorder <xref:System.Security.Permissions.UIPermission>. L'assertion de confiance totale doit être utilisée avec modération et uniquement quand vous êtes sûr de ne pas autoriser du code à passer du niveau de confiance partielle au niveau de confiance totale. En règle générale, n'appelez pas de code non fiable dans la même fonction et après avoir appelé une assertion de confiance totale. Nous vous conseillons de toujours rétablir l'assertion quand vous avez terminé de l'utiliser.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant implémente la procédure de la section précédente. Dans l'exemple, un projet nommé `Sandboxer` dans une solution Visual Studio contient également un projet nommé `UntrustedCode`, qui implémente la classe `UntrustedClass`. Ce scénario suppose que vous avez téléchargé un assembly de bibliothèque qui contient une méthode censée retourner la valeur `true` ou `false` pour indiquer si le nombre que vous avez fourni est un nombre de Fibonacci. À la place, la méthode essaie de lire un fichier de votre ordinateur. L'exemple suivant illustre le code non fiable.  
   
 ```csharp

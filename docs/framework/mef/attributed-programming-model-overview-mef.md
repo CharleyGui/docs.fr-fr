@@ -1,5 +1,6 @@
 ---
 title: Vue d'ensemble du modèle de programmation par attributs (MEF)
+description: Prise en main du modèle de programmation par attributs, qui est le modèle de programmation par défaut pour le Managed Extensibility Framework (MEF) dans .NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - MEF, attributed programming model
 - attributed programming model [MEF]
 ms.assetid: 49b787ff-2741-4836-ad51-c3017dc592d4
-ms.openlocfilehash: c6b1093d2e821a55cc5513b077a270748a780b71
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: aea3a19ffe6f177901e5c0839b618bb36f573beb
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347630"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281366"
 ---
 # <a name="attributed-programming-model-overview-mef"></a>Vue d'ensemble du modèle de programmation par attributs (MEF)
 
@@ -341,7 +342,7 @@ Quand une valeur importée est requise par le constructeur d'un composant, cet o
 
 L'attribut `Import` spécifie une exigence pour que le composant fonctionne. Si une importation ne peut pas être satisfaite, la composition de ce composant échouera et le composant ne sera pas disponible.
 
-Vous pouvez définir une importation comme *facultative* en utilisant la propriété `AllowDefault` . Dans ce cas, la composition fonctionnera même si l’importation ne correspond à aucune exportation disponible, et la propriété d’importation sera définie sur la valeur par défaut pour son type`null` de propriété (pour `false` les propriétés d’objet, pour les valeurs booléennes ou zéro pour les propriétés numériques.) La classe suivante utilise une importation facultative.
+Vous pouvez définir une importation comme *facultative* en utilisant la propriété `AllowDefault` . Dans ce cas, la composition fonctionnera même si l’importation ne correspond à aucune exportation disponible, et la propriété d’importation sera définie sur la valeur par défaut pour son type de propriété ( `null` pour les propriétés d’objet, `false` pour les valeurs booléennes ou zéro pour les propriétés numériques.) La classe suivante utilise une importation facultative.
 
 ```vb
 Public Class MyClass1

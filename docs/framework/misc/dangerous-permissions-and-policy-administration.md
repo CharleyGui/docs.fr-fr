@@ -1,5 +1,6 @@
 ---
 title: Autorisations dangereuses et administration de stratégie
+description: Consultez des liens vers les différentes autorisations dangereuses dans .NET. Ces autorisations doivent être accordées uniquement au code fiable et uniquement lorsque cela est nécessaire.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - permissions [.NET Framework], policy administration
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - secure coding, dangerous permissions
 - permissions [.NET Framework], dangerous
 ms.assetid: 1929e854-23a0-4bb1-94be-e8aa3b609e32
-ms.openlocfilehash: 15d28ff7d11b5d15ce44d9ab1f56548256850ff8
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: ba3d47dc445e4b368f57d59d735fc331f5d6de81
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645758"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281613"
 ---
 # <a name="dangerous-permissions-and-policy-administration"></a>Autorisations dangereuses et administration de stratégie
 Plusieurs des opérations protégées pour lesquelles le .NET Framework fournit des autorisations risquent de permettre le contournement du système de sécurité. Ces autorisations dangereuses doivent être accordées uniquement à du code fiable, et seulement en cas de nécessité. Il n’existe généralement aucune défense contre du code malveillant, si ces autorisations sont accordées.  
   
 > [!NOTE]
-> Dans le cadre .NET 4, il y a eu d’importants changements au modèle et à la terminologie de la sécurité du cadre .NET. Pour plus d’informations sur ces changements, voir [changements de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
+> Dans le .NET Framework 4, des modifications importantes ont été apportées à la terminologie et au modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
   
  Les autorisations dangereuses sont expliquées dans le tableau suivant.  
   

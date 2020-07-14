@@ -66,7 +66,7 @@ Tool 'dotnetsay' (version '2.1.4') was successfully installed.
 
 L’emplacement par défaut des binaires d’un outil dépend du système d’exploitation :
 
-| Système d’exploitation          | Chemin d’accès                          |
+| Système d’exploitation          | Path                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |

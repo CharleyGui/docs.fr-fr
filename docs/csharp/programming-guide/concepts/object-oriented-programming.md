@@ -188,9 +188,9 @@ Les modificateurs d’accès suivants sont disponibles :
 | Modificateur C# | Définition |
 |--|--|
 | [public](../../language-reference/keywords/public.md) | Tout autre code du même assembly ou d'un autre assembly qui y fait référence peut accéder au type ou au membre. |
-| [priv](../../language-reference/keywords/private.md) | Seul le code de la même classe peut accéder au type ou au membre. |
+| [private](../../language-reference/keywords/private.md) | Seul le code de la même classe peut accéder au type ou au membre. |
 | [protected](../../language-reference/keywords/protected.md) | Seul le code de la même classe ou d'une classe dérivée peut accéder au type ou au membre. |
-| [intérieurs](../../language-reference/keywords/internal.md) | Tout code du même assembly, mais pas d'un autre assembly, peut accéder au type ou au membre. |
+| [internal](../../language-reference/keywords/internal.md) | Tout code du même assembly, mais pas d'un autre assembly, peut accéder au type ou au membre. |
 | [protected internal](../../language-reference/keywords/protected-internal.md) | Tout code du même assembly ou toute classe dérivée dans un autre assembly peut accéder au type ou au membre. |
 | [protégé privé](../../language-reference/keywords/private-protected.md) | Le code de la même classe ou d'une classe dérivée peut accéder au type ou au membre dans l’assembly de la classe de base. |
 
@@ -299,7 +299,7 @@ public abstract class B { }
 Pour plus d'informations, consultez les pages suivantes :
 
 - [sealed](../../language-reference/keywords/sealed.md)
-- [abstraction](../../language-reference/keywords/abstract.md)
+- [abstract](../../language-reference/keywords/abstract.md)
 
 ### <a name="overriding-members"></a>Remplacement de membres
 
@@ -309,9 +309,9 @@ Les modificateurs suivants sont utilisés pour contrôler la façon dont les pro
 
 | Modificateur C# | Définition |
 |--|--|
-| [virtuels](../../language-reference/keywords/virtual.md) | Autorise la substitution d'un membre de classe dans une classe dérivée. |
-| [remplacer](../../language-reference/keywords/override.md) | Substitue un membre virtuel (substituable) défini dans la classe de base. |
-| [abstraction](../../language-reference/keywords/abstract.md) | Requiert qu'un membre de classe soit substitué dans la classe dérivée. |
+| [virtual](../../language-reference/keywords/virtual.md) | Autorise la substitution d'un membre de classe dans une classe dérivée. |
+| [override](../../language-reference/keywords/override.md) | Substitue un membre virtuel (substituable) défini dans la classe de base. |
+| [abstract](../../language-reference/keywords/abstract.md) | Requiert qu'un membre de classe soit substitué dans la classe dérivée. |
 | [Modificateur new](../../language-reference/keywords/new-modifier.md) | Masque un membre hérité d'une classe de base. |
 
 ## <a name="interfaces"></a>Interfaces

@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 7caeaaa834dc827998d7d1bc3a25ba4e194996f4
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 9f553e9af16be0891f208832c5daa444a1b736e2
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324409"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281509"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -391,7 +391,7 @@ Des [images Docker pour .NET Core sur ARM64](https://hub.docker.com/r/microsoft/
 
 L’exemple C# 8.0 suivant montre comment .NET Core 3.0 sur Ubuntu 18.10 se connecte à <https://www.cloudflare.com> :
 
-[!code-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
+[!code-csharp[TLSExample](./snippets/dotnet-core-3-0/csharp/TLS.cs#TLS)]
 
 ### <a name="cryptography-ciphers"></a>Chiffrements
 
@@ -399,7 +399,7 @@ L’exemple C# 8.0 suivant montre comment .NET Core 3.0 sur Ubuntu 18.10 se c
 
 Le code suivant montre l’utilisation du chiffrement `AesGcm` pour chiffrer et déchiffrer des données aléatoires.
 
-[!code-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
+[!code-csharp[AesGcm](./snippets/dotnet-core-3-0/csharp/Cipher.cs#AesGcm)]
 
 ### <a name="cryptographic-key-importexport"></a>Importation/exportation d’une clé de chiffrement
 
@@ -424,7 +424,7 @@ Les clés RSA prennent également en charge :
 
 Les méthodes d’exportation produisent des données binaires encodées au format DER, tout comme les méthodes d’importation. Si une clé est stockée au format PEM compatible avec le texte, l’appelant devra décoder le contenu au format base64 avant d’appeler une méthode d’importation.
 
-[!code-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
+[!code-csharp[RSA](./snippets/dotnet-core-3-0/csharp/RSA.cs#Rsa)]
 
 Les fichiers **PKCS#8** peuvent être inspectés avec <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType>, tandis que les fichiers **PFX/PKCS#12** peuvent être inspectés avec <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>. Les fichiers **PFX/PKCS#12** peuvent être manipulés avec <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.
 
@@ -512,7 +512,7 @@ Pour plus d’informations, consultez [intrinsèques dépendants de la plateform
 
 ### <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 
-À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Par exemple :
+À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Par exemple :
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");
@@ -553,15 +553,15 @@ Le type <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> prend en 
 
 Le protocole par défaut reste HTTP/1.1, mais HTTP/2 peut être activé de deux manières différentes. Tout d’abord, vous pouvez définir le message de requête HTTP de sorte à utiliser HTTP/2 :
 
-[!code-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
+[!code-csharp[Http2Request](./snippets/dotnet-core-3-0/csharp/http.cs#Request)]
 
 Ensuite, vous pouvez modifier <xref:System.Net.Http.HttpClient> pour utiliser HTTP/2 par défaut :
 
-[!code-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
+[!code-csharp[Http2Client](./snippets/dotnet-core-3-0/csharp/http.cs#Client)]
 
 Souvent, lorsque vous développez une application, vous souhaiterez utiliser une connexion non chiffrée. Si vous savez que le point de terminaison cible utilisera HTTP/2, vous pouvez activer les connexions non chiffrées pour HTTP/2. Vous pouvez activer cela en définissant la variable d’environnement `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` sur `1` ou en l’activant dans le contexte de l’application :
 
-[!code-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
+[!code-csharp[Http2Context](./snippets/dotnet-core-3-0/csharp/http.cs#AppContext)]
 
 ## <a name="next-steps"></a>Étapes suivantes
 
