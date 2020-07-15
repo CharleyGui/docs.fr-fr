@@ -11,14 +11,15 @@ helpviewer_keywords:
 - attribute fields in platform invoke, CharSet
 - CharSet field
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
-ms.openlocfilehash: a4f18431d89343a77ccf2b920edac485e7dcfca3
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 789753742d8714e481f038e323407cbab0499f6c
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86282123"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309792"
 ---
-# <a name="specifying-a-character-set"></a>Spécification d'un jeu de caractères
+# <a name="specify-a-character-set"></a>Spécifier un jeu de caractères
+
 Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> contrôle le marshaling des chaînes et détermine de quelle façon l’appel de code non managé recherche des noms de fonction dans une DLL. Cette rubrique décrit ces deux comportements.  
   
  Certaines API exportent deux versions de fonctions qui acceptent des arguments de chaîne : caractères étroits (ANSI) et caractères larges (Unicode). L’API Windows, par exemple, comporte les noms de points d’entrée suivants pour la fonction **MessageBox** :  
@@ -62,11 +63,12 @@ Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?display
   
 - L’appel de code non managé choisit le format Unicode ou le format ANSI au moment de l’exécution, en fonction de la plateforme cible.  
   
-## <a name="specifying-a-character-set-in-visual-basic"></a>Spécification d’un jeu de caractères dans Visual Basic  
- L’exemple suivant déclare la fonction **MessageBox** trois fois, chaque fois avec un comportement de jeu de caractères différent. Vous pouvez spécifier le comportement de jeu de caractères dans Visual Basic en ajoutant le mot clé **Ansi**, **Unicode** ou **Auto** à l’instruction de déclaration.  
-  
- Si vous omettez le mot clé de jeu de caractères, comme c’est le cas dans la première instruction de déclaration, le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> est par défaut défini sur le jeu de caractères ANSI. Dans l’exemple, la deuxième et la troisième instructions spécifient explicitement un jeu de caractères à l’aide d’un mot clé.  
-  
+## <a name="specify-a-character-set-in-visual-basic"></a>Spécifier un jeu de caractères dans Visual Basic
+
+Vous pouvez spécifier le comportement de jeu de caractères dans Visual Basic en ajoutant le `Ansi` `Unicode` `Auto` mot clé, ou à l’instruction de déclaration. Si vous omettez le mot clé de jeu de caractères, le <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> champ est défini par défaut sur le jeu de caractères ANSI.
+
+L’exemple suivant déclare la fonction **MessageBox** trois fois, chaque fois avec un comportement de jeu de caractères différent. La première instruction omet le mot clé de jeu de caractères. par conséquent, le jeu de caractères est défini par défaut sur ANSI. Les deuxième et troisième instructions spécifient explicitement un jeu de caractères avec un mot clé.
+
 ```vb
 Friend Class NativeMethods
     Friend Declare Function MessageBoxA Lib "user32.dll" (
@@ -89,8 +91,9 @@ Friend Class NativeMethods
 End Class
 ```
   
-## <a name="specifying-a-character-set-in-c-and-c"></a>Spécification d’un jeu de caractères dans C# et C++  
- Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> identifie le jeu de caractères sous-jacent au format ANSI ou Unicode. Le jeu de caractères contrôle de quelle manière les arguments de chaîne d’une méthode doivent être marshalés. Spécifiez le jeu de caractères de l’une des manières suivantes :  
+## <a name="specify-a-character-set-in-c-and-c"></a>Spécifier un jeu de caractères en C# et C++
+
+Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> identifie le jeu de caractères sous-jacent au format ANSI ou Unicode. Le jeu de caractères contrôle de quelle manière les arguments de chaîne d’une méthode doivent être marshalés. Spécifiez le jeu de caractères de l’une des manières suivantes :  
   
 ```csharp
 [DllImport("DllName", CharSet = CharSet.Ansi)]

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - secure coding, wrapper code
 - code security, wrapper code
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
-ms.openlocfilehash: 64c5b2455882ca121a6eeb0c0bbcbc4d04ed88cd
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 4338b3d0ab306501ea252407f386bdf89d191d6d
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281444"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309376"
 ---
 # <a name="securing-wrapper-code"></a>Sécurisation du code wrapper
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -51,7 +51,7 @@ ms.locfileid: "86281444"
  Pour éviter de tels trous de sécurité, le common language runtime étend la vérification dans une demande de parcours de pile complète sur tout appel indirect à une méthode, un constructeur, une propriété ou un événement protégé par un **LinkDemand**. Cette protection entraîne des coûts de performance et change la sémantique de la vérification de sécurité ; la demande de parcours de pile complet risque d'échouer là où la vérification de niveau unique plus rapide aurait réussi.  
   
 ## <a name="assembly-loading-wrappers"></a>Wrappers chargeant des assemblys  
- Plusieurs méthodes utilisées pour charger du code managé, y compris <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>, chargent des assemblys avec la preuve de l'appelant. Si vous encapsulez une de ces méthodes, le système de sécurité peut utiliser l'octroi d'autorisation de votre code à la place des autorisations de l'appelant à votre wrapper afin de charger les assemblys. Vous ne devez pas permettre au code d'un niveau de confiance moindre de charger du code dont les autorisations accordées sont supérieures à celles de l'appelant à votre wrapper.  
+ Plusieurs méthodes utilisées pour charger du code managé, y compris <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>, chargent des assemblys avec la preuve de l'appelant. Si vous encapsulez une de ces méthodes, le système de sécurité peut utiliser l'octroi d'autorisation de votre code à la place des autorisations de l'appelant à votre wrapper afin de charger les assemblys. N’autorisez pas le code d’un niveau de confiance moindre à charger du code disposant d’autorisations plus élevées que celles de l’appelant vers votre wrapper.  
   
  Tout code de confiance totale ou dont le niveau de confiance est nettement supérieur à un appelant potentiel (y compris un appelant avec des autorisations au niveau d'Internet) risque d'affaiblir la sécurité dans ce contexte. Si votre code a une méthode publique qui prend un tableau d’octets et le transmet à **assembly. Load**, créant ainsi un assembly au nom de l’appelant, il risque de perturber la sécurité.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "86281444"
 - <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
   
 ## <a name="demand-vs-linkdemand"></a>Demand et LinkDemand  
- La sécurité déclarative propose deux types de vérification de sécurité similaires, mais qui effectuent des vérifications très différentes. Vous devez connaître les deux formes, car un mauvais choix pourrait nuire aux performances et à la sécurité.  
+ La sécurité déclarative offre deux types de vérifications de sécurité similaires, mais qui effectuent des vérifications différentes. Il est judicieux de comprendre les deux formes, car le mauvais choix peut entraîner une faible perte de sécurité ou de performances.  
   
  La sécurité déclarative propose les vérifications de sécurité suivantes :  
   

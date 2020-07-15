@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 06/22/2020
-ms.openlocfilehash: e26494de7e9246b241cb965d8d735a781aab5478
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 97f67d00b3eb4dafc55256aea51f4295bb0ef06a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85804494"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308947"
 ---
 # <a name="install-net-core-on-windows"></a>Installer .NET Core sur Windows
 
@@ -23,7 +23,8 @@ Dans cet article, vous allez apprendre à installer .NET Core sur Windows. .NET 
 
 La dernière version de .NET Core est 3,1.
 
-[Téléchargez .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Télécharger .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="supported-releases"></a>Versions prises en charge
 
@@ -35,7 +36,7 @@ Les dates de fin de service des versions de Windows 10 sont segmentées par édi
 - Une ❌ indique que la version de Windows ou de .net Core n’est pas prise en charge sur cette version de Windows.
 - Quand une version de Windows et une version de .NET Core ont ✔️, cette combinaison de système d’exploitation et .NET sont prises en charge.
 
-| Système d'exploitation                      | .NET Core 2.1 | .NET Core 3.1 | Version préliminaire de .NET 5 |
+| Système d’exploitation                      | .NET Core 2.1 | .NET Core 3.1 | Version préliminaire de .NET 5 |
 |-----------------------------|---------------|---------------|----------------|
 | ✔️ Windows 10, version 2004 | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ Windows 10, version 1909 | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
@@ -71,13 +72,15 @@ Exécute les applications de bureau .NET Core WPF et .NET Core Windows Forms pou
 *Runtime .NET Core*\
 Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il est fortement recommandé d’installer à la fois *ASP.net Core Runtime* et *Desktop Runtime* pour une meilleure compatibilité avec les applications .net core.
 
-[Téléchargez le Runtime .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Télécharger le Runtime .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="sdk-information"></a>Informations sur le SDK
 
 Le kit de développement logiciel (SDK) est utilisé pour créer et publier des applications et des bibliothèques .NET Core. L’installation du kit de développement logiciel (SDK) comprend les trois [runtimes](#runtime-information): ASP.net Core, Desktop et .net core.
 
-[Téléchargez kit SDK .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Télécharger le kit de développement logiciel (SDK) .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="dependencies"></a>Les dépendances
 
@@ -218,7 +221,8 @@ Si vous avez déjà installé Visual Studio, vous pouvez vérifier votre version
 
 Visual Studio peut installer les kit SDK .NET Core et Runtime les plus récents.
 
-- [Téléchargez Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019).
+> [!div class="button"]
+> [Téléchargez Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019).
 
 ### <a name="select-a-workload"></a>Sélectionner une charge de travail
 

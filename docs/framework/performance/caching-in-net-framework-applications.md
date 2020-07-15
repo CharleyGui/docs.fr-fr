@@ -1,17 +1,18 @@
 ---
 title: Mise en cache dans les applications .NET Framework
+description: Utilisez la mise en cache dans les applications .NET. En savoir plus sur la mise en cache des données, la mise en cache dans les applications ASP.NET ou les services WCF REST et l’extension de Caching dans .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ASP.NET caching
 - caching [.NET Framework]
 - caching [ASP.NET]
 ms.assetid: c4b47ee0-4b82-4124-9bce-818088385e34
-ms.openlocfilehash: 8fe2a386da8cdb4bb075b67a5e52c840a7b66c77
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 9b08a07e9b446c2998150a327dccdc8d0481722a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75935286"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309766"
 ---
 # <a name="caching-in-net-framework-applications"></a>Mise en cache dans les applications .NET Framework
 La mise en cache vous permet de stocker des données en mémoire pour y accéder rapidement. Quand vous accédez à nouveau aux données, les applications peuvent obtenir les données à partir du cache au lieu de devoir les récupérer à partir de la source d’origine. Cela peut améliorer les performances et la scalabilité. La mise en cache rend également les données disponibles quand la source de données est temporairement indisponible.  
@@ -19,7 +20,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
  Le .NET Framework fournit des fonctionnalités de mise en cache que vous pouvez utiliser pour améliorer les performances et la scalabilité des applications clientes et de serveur Windows, notamment ASP.NET.  
   
 > [!NOTE]
-> Dans les versions .NET Framework 3,5 et antérieures, ASP.NET a fourni une implémentation de cache en mémoire dans l’espace de noms <xref:System.Web.Caching>. Dans les versions précédentes de la .NET Framework, la mise en cache était uniquement disponible dans l’espace de noms <xref:System.Web> et nécessitait donc une dépendance sur les classes ASP.NET. Dans le .NET Framework 4, l’espace de noms <xref:System.Runtime.Caching> contient des API conçues pour les applications web et non-web.  
+> Dans les versions .NET Framework 3,5 et antérieures, ASP.NET a fourni une implémentation de cache en mémoire dans l' <xref:System.Web.Caching> espace de noms. Dans les versions précédentes de la .NET Framework, la mise en cache était uniquement disponible dans l' <xref:System.Web> espace de noms et nécessitait donc une dépendance sur les classes ASP.net. Dans le .NET Framework 4, l’espace de noms <xref:System.Runtime.Caching> contient des API conçues pour les applications web et non-web.  
   
 ## <a name="caching-data"></a>Mise en cache des données  
  Vous pouvez mettre en cache des informations à l’aide des classes de l’espace de noms <xref:System.Runtime.Caching>. Les classes de mise en cache dans cet espace de noms fournissent les fonctionnalités suivantes :  
@@ -47,7 +48,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
  Les classes de mise en cache dans l’espace de noms <xref:System.Runtime.Caching> fournissent la fonctionnalité de mise en cache des données dans ASP.NET.  
   
 > [!NOTE]
-> Si votre application cible le .NET Framework 3,5 ou une version antérieure, vous devez utiliser les classes de mise en cache définies dans l’espace de noms <xref:System.Web.Caching>. Pour plus d’informations, consultez [Vue d’ensemble de la mise en cache ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms178597(v=vs.100)).  
+> Si votre application cible le .NET Framework 3,5 ou version antérieure, vous devez utiliser les classes de mise en cache qui sont définies dans l' <xref:System.Web.Caching> espace de noms. Pour plus d’informations, consultez [Vue d’ensemble de la mise en cache ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms178597(v=vs.100)).  
   
 > [!NOTE]
 > Quand vous développez de nouvelles applications, nous vous recommandons d’utiliser la classe <xref:System.Runtime.Caching.MemoryCache>. L’API fournie dans l’espace de noms <xref:System.Runtime.Caching> est semblable à celle fournie dans l’espace de noms <xref:System.Web.Caching.Cache>. Ainsi, elle vous sera familière si vous utilisiez la mise en cache dans les versions antérieures d’ASP.NET. Pour obtenir un exemple qui illustre comment utiliser la mise en cache dans les application ASP.NET, consultez [Procédure pas à pas : mise en cache de données d’application dans ASP.NET](https://docs.microsoft.com/previous-versions/ff477235(v=vs.100)).  
@@ -79,5 +80,5 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 
 - <xref:System.Runtime.Caching.ObjectCache>
 - <xref:System.Runtime.Caching.MemoryCache>
-- [Procédure pas à pas : mise en cache de données d’application dans une application WPF](../wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Procédure pas à pas : mise en cache des données d’application dans une application WPF](../wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
 - [Procédure pas à pas : mise en cache de données d’application dans ASP.NET](https://docs.microsoft.com/previous-versions/ff477235(v=vs.100))

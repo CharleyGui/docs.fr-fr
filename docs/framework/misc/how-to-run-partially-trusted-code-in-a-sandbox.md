@@ -9,12 +9,12 @@ helpviewer_keywords:
 - restricted security environment
 - code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-ms.openlocfilehash: 4f186f1d901b51dd4c61ba6b22197465a41f2c44
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: e02b5d679fb1f5947373399ac1226732623ef96d
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86282032"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309233"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -123,7 +123,7 @@ AppDomain.CreateDomain( string friendlyName,
            typeof(Sandboxer).FullName );  
     ```  
   
-     Notez que pour créer une instance d'une classe dans un nouveau domaine, cette classe doit étendre la classe <xref:System.MarshalByRefObject>.  
+     Pour créer une instance d’une classe dans un nouveau domaine, la classe doit étendre la <xref:System.MarshalByRefObject> classe.
   
     ```csharp
     class Sandboxer:MarshalByRefObject  

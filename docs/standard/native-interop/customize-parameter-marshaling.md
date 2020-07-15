@@ -2,12 +2,12 @@
 title: Personnalisation du marshaling de paramètres - .NET
 description: Découvrez comment personnaliser la façon dont .NET marshale vos paramètres en une représentation native.
 ms.date: 01/18/2019
-ms.openlocfilehash: ff646ad942cf051ce90cd75b24c8562e536182d9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1999cad057875f15b283421f87f485c2e5ca2306
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400364"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374310"
 ---
 # <a name="customizing-parameter-marshaling"></a>Personnalisation du marshaling de paramètres
 
@@ -40,7 +40,7 @@ Si vous communiquez avec des API WinRT, vous pouvez utiliser le format <xref:Sys
 
 .NET propose également plusieurs moyens de marshaler des paramètres de tableau. Si vous appelez une API qui accepte un tableau de style C, utilisez le type non managé <xref:System.Runtime.InteropServices.UnmanagedType.LPArray?displayProperty=nameWithType>. Si les valeurs du tableau exigent un marshaling personnalisé, vous pouvez pour cela utiliser le champ <xref:System.Runtime.InteropServices.MarshalAsAttribute.ArraySubType> sur l’attribut `[MarshalAs]`.
 
-Si vous utilisez les API COM, vous devrez probablement marshaler vos paramètres de tableau comme `SAFEARRAY*`. Pour cela, vous pouvez utiliser le type non managé <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>. Le type par défaut des éléments de `SAFEARRAY` est présenté dans la table [Personnaliser des champs `object`](./customize-struct-marshaling.md#marshaling-systemobjects). Vous pouvez utiliser les champs <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> et <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> pour personnaliser précisément le type d’élément de `SAFEARRAY`.
+Si vous utilisez les API COM, vous devrez probablement marshaler vos paramètres de tableau comme `SAFEARRAY*`. Pour cela, vous pouvez utiliser le type non managé <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>. Le type par défaut des éléments de `SAFEARRAY` est présenté dans la table [Personnaliser des champs `object`](./customize-struct-marshaling.md#marshal-systemobject). Vous pouvez utiliser les champs <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> et <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> pour personnaliser précisément le type d’élément de `SAFEARRAY`.
 
 ## <a name="customizing-boolean-or-decimal-parameters"></a>Personnaliser des paramètres booléens ou décimaux
 
@@ -62,7 +62,7 @@ De plus, si votre type est marqué `[ComVisible(true)]` ou que vous marshalez le
 
 ### <a name="marshaling-to-a-variant"></a>Marshaling vers un `VARIANT`
 
-Si votre API native accepte une `VARIANT` Win32, vous pouvez utiliser le format <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> sur votre `object` paramètre pour marshaler vos objets comme `VARIANT`. Pour connaître les correspondances entre les types .NET et les types `VARIANT`, voir la documentation [Personnaliser les champs `object`](customize-struct-marshaling.md#marshaling-systemobjects).
+Si votre API native accepte une `VARIANT` Win32, vous pouvez utiliser le format <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> sur votre `object` paramètre pour marshaler vos objets comme `VARIANT`. Pour connaître les correspondances entre les types .NET et les types `VARIANT`, voir la documentation [Personnaliser les champs `object`](customize-struct-marshaling.md#marshal-systemobject).
 
 ### <a name="custom-marshalers"></a>Marshaleurs personnalisés
 

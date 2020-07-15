@@ -2,12 +2,12 @@
 title: Commande dotnet tool update
 description: La commande de mise à jour de l’outil dotnet met à jour l’outil .NET Core spécifié sur votre ordinateur.
 ms.date: 07/08/2020
-ms.openlocfilehash: 7c4bde44ac9964828074baeb1a697ba64ed17887
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: a212fbb40af68019c1bc9a63963d960292be6b08
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226619"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308869"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
@@ -21,20 +21,20 @@ ms.locfileid: "86226619"
 
 ```dotnetcli
 dotnet tool update <PACKAGE_ID> -g|--global
-    [--configfile <FILE>] [--framework <FRAMEWORK>]
-    [--add-source <SOURCE>] [--disable-parallel]
+    [--add-source <SOURCE>] [--configfile <FILE>]
+    [--disable-parallel] [--framework <FRAMEWORK>]
     [--ignore-failed-sources] [--interactive] [--no-cache]
     [-v|--verbosity <LEVEL>] [--version <VERSION>]
 
 dotnet tool update <PACKAGE_ID> --tool-path <PATH>
-    [--configfile <FILE>] [--framework <FRAMEWORK>]
-    [--add-source <SOURCE>] [--disable-parallel]
+    [--add-source <SOURCE>] [--configfile <FILE>]
+    [--disable-parallel] [--framework <FRAMEWORK>]
     [--ignore-failed-sources] [--interactive] [--no-cache]
     [-v|--verbosity <LEVEL>] [--version <VERSION>]
 
 dotnet tool update <PACKAGE_ID> --local
-    [--configfile <FILE>] [--framework <FRAMEWORK>]
-    [--add-source <SOURCE>] [--disable-parallel]
+    [--add-source <SOURCE>] [--configfile <FILE>]
+    [--disable-parallel] [--framework <FRAMEWORK>]
     [--ignore-failed-sources] [--interactive] [--no-cache]
     [--tool-manifest <PATH>]
     [-v|--verbosity <LEVEL>] [--version <VERSION>]
@@ -86,7 +86,7 @@ La `dotnet tool update` commande vous permet de mettre à jour les outils .net C
 
 - **`--local`**
 
-  Mettez à jour l’outil et le manifeste de l’outil local. Non combinable avec l’option `--global`.
+  Mettez à jour l’outil et le manifeste de l’outil local. Ne peut pas être combiné avec l' `--global` option ou l' `--tool-path` option.
 
 - **`--no-cache`**
 

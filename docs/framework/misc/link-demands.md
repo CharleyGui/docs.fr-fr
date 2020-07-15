@@ -15,19 +15,19 @@ helpviewer_keywords:
 - caller security checks
 - link demands
 ms.assetid: a33fd5f9-2de9-4653-a4f0-d9df25082c4d
-ms.openlocfilehash: cd89c4ef27abb92fba567a1f3b490cb9d78fdddd
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: eaf9ee1bb5cd10c724240bacac014503685a0c8c
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86282055"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309103"
 ---
 # <a name="link-demands"></a>Demandes de liaison
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Une demande de liaison entraîne une vérification de sécurité pendant la compilation juste-à-temps. Seul l'assembly appelant immédiat de votre code est vérifié. La liaison est établie quand le code est lié à une référence de type, y compris les références de pointeur fonction et les appels de méthode. Si l'assembly appelant ne dispose pas des autorisations suffisantes pour établir une liaison avec votre code, la liaison n'est pas autorisée et une exception d'exécution est levée quand le code est chargé et exécuté. Les demandes de liaison peuvent être substituées dans les classes qui héritent de votre code.  
   
- Notez qu'un parcours de pile complet n'est pas exécuté avec ce type de demande et que votre code est toujours susceptible de subir des attaques malveillantes. Par exemple, si une méthode de l’assembly A est protégée par une demande de liaison, un appelant direct de l’assembly B est évalué en fonction des autorisations de l’assembly B.  Toutefois, la demande de liaison n’évaluera pas une méthode dans l’assembly C si elle appelle indirectement la méthode dans l’assembly A à l’aide de la méthode de l’assembly B. La demande de liaison spécifie uniquement les autorisations que les appelants directs dans l’assembly appelant immédiat doivent avoir pour créer un lien vers votre code. Elle ne spécifie pas les autorisations que tous les appelants doivent avoir pour exécuter votre code.  
+ Un parcours de pile complet n’est pas effectué avec ce type de demande et que votre code est toujours vulnérable aux attaques par leurre. Par exemple, si une méthode de l’assembly A est protégée par une demande de liaison, un appelant direct de l’assembly B est évalué en fonction des autorisations de l’assembly B.  Toutefois, la demande de liaison n’évaluera pas une méthode dans l’assembly C si elle appelle indirectement la méthode dans l’assembly A à l’aide de la méthode de l’assembly B. La demande de liaison spécifie uniquement les autorisations que les appelants directs dans l’assembly appelant immédiat doivent avoir pour créer un lien vers votre code. Elle ne spécifie pas les autorisations que tous les appelants doivent avoir pour exécuter votre code.  
   
  Les modificateurs de parcours de pile <xref:System.Security.CodeAccessPermission.Assert%2A>, <xref:System.Security.CodeAccessPermission.Deny%2A> et <xref:System.Security.CodeAccessPermission.PermitOnly%2A> n'affectent pas l'évaluation des demandes de liaison.  Étant donné que les demandes de liaison n'effectuent pas de parcours de pile, les modificateurs de parcours de pile n'ont aucun effet sur les demandes de liaison.  
   

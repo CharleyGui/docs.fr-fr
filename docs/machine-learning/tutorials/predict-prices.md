@@ -4,12 +4,12 @@ description: Ce tutoriel montre comment générer un modèle de régression avec
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 27054e28f9a4fa628f0d7348d45528b690d7da83
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: beb48c9252b83cd693c351d39882b7ac9d08d882
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281769"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309714"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-mlnet"></a>Didacticiel : prédire les prix à l’aide de la régression avec ML.NET
 
@@ -35,7 +35,7 @@ Dans ce tutoriel, vous allez apprendre à :
 
 1. Créez un répertoire nommé *Data* (Données) dans votre projet pour y stocker les fichiers du jeu de données et du modèle.
 
-1. Installez le package NuGet **Microsoft.ml** :
+1. Installez le package NuGet **Microsoft.ml** et **Microsoft. ml. FastTree** :
 
     [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
 
@@ -268,7 +268,7 @@ Pour afficher le prix prédit de la course spécifiée, ajoutez le code suivant 
 
 Exécutez le programme afin d’afficher le prix prédit de la course pour votre cas de test.
 
-Félicitations ! Vous avez créé un modèle Machine Learning pour prédire le prix des courses de taxi, avez évalué sa précision et l’avez utilisé pour faire des prédictions. Vous trouverez le code source de ce tutoriel dans le dépôt GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TaxiFarePrediction).
+Félicitations ! Vous avez créé un modèle Machine Learning pour prédire le prix des courses de taxi, avez évalué sa précision et l’avez utilisé pour faire des prédictions. Vous trouverez le code source de ce tutoriel dans le dépôt GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TaxiFarePrediction).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

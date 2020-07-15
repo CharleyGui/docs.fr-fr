@@ -2,12 +2,12 @@
 title: Superviser des services d’application conteneurisée
 description: Découvrir certains aspects essentiels de la supervision des architectures de conteneur
 ms.date: 02/15/2019
-ms.openlocfilehash: e14553d510751d8a75020a1b6beb9fd7bc29596e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e41df53ad94784436442c3cf7defed3fab510455
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68673456"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374440"
 ---
 # <a name="monitor-containerized-application-services"></a>Superviser des services d’application conteneurisée
 
@@ -19,16 +19,16 @@ Il est essentiel pour les applications divisées en plusieurs conteneurs et micr
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Vue d’ensemble du moniteur Azure** \
+- **Vue d’ensemble de Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/overview>
 
-- **Qu’est-ce que Les aperçus d’applications?** \
+- **Qu’est-ce qu’Application Insights ?** \
   <https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview>
 
 - **Que sont les métriques Azure Monitor ?** \
   <https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics>
 
-- **Solution de surveillance des conteneurs dans Azure Monitor** \
+- **Solution de surveillance de conteneurs dans Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/insights/containers>
 
 ## <a name="security-and-backup-services"></a>Services de sécurité et de sauvegarde
@@ -47,8 +47,8 @@ Azure propose les outils nécessaires pour gérer et fournir une vue unifiée de
   - Garder vos données de sauvegarde chiffrées pendant le transit et au repos.
   - Garantir l’accès en fonction de l’authentification multifacteur pour empêcher toute utilisation non autorisée.
 
-- **Ressources sur place**. Avec [un cloud hybride véritablement cohérent](https://azure.microsoft.com/resources/truly-consistent-hybrid-cloud-with-microsoft-azure/).
+- **Ressources locales**. Avec les [solutions Cloud hybrides](https://azure.microsoft.com/solutions/hybrid-cloud-app/).
 
 >[!div class="step-by-step"]
->[Suivant précédent](manage-production-docker-environments.md)
->[Next](../key-takeaways/index.md)
+>[Précédent](manage-production-docker-environments.md) 
+> [Suivant](../key-takeaways/index.md)

@@ -3,17 +3,18 @@ title: DataSets, DataTables et DataViews
 description: Découvrez plusieurs façons d’utiliser un jeu de données ADO.NET, une représentation résidente en mémoire de données qui fournit un modèle de programmation relationnel cohérent.
 ms.date: 03/30/2017
 ms.assetid: 6d4c4b69-8919-4224-8a65-6cca1c61b48f
-ms.openlocfilehash: f6562452261cbc1f7ee36fb264b858646a42e4f5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 53e12f701b9be1938d62f46bbeb6e63d95c03386
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286894"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374505"
 ---
 # <a name="datasets-datatables-and-dataviews"></a>DataSets, DataTables et DataViews
+
 L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données résidente en mémoire qui propose un modèle de programmation relationnel cohérent, quelle que soit la source des données qu'il contient. Un objet <xref:System.Data.DataSet> représente un jeu de données complet, y compris les tables qui contiennent et organisent les données et y appliquent des contraintes, ainsi que les relations entre les tables.  
   
- L'utilisation d'un objet <xref:System.Data.DataSet> peut se faire via différentes méthodes qui peuvent être appliquées indépendamment les unes des autres ou combinées. Vous pouvez :  
+L'utilisation d'un objet <xref:System.Data.DataSet> peut se faire via différentes méthodes qui peuvent être appliquées indépendamment les unes des autres ou combinées. Vous pouvez :  
   
 - Créer par programmation un objet <xref:System.Data.DataTable>, <xref:System.Data.DataRelation> et <xref:System.Data.Constraint> dans un objet <xref:System.Data.DataSet>, puis remplir les tables de données.  
   
@@ -21,9 +22,13 @@ L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données r
   
 - Charger et rendre persistent le contenu de l'objet <xref:System.Data.DataSet> à l'aide de XML. Pour plus d’informations, consultez [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md).  
   
- Un objet <xref:System.Data.DataSet> fortement typé peut aussi être transporté au moyen d’un service web XML. Le design de l’objet <xref:System.Data.DataSet> le rend idéal pour le transport de données à l’aide des services web XML. Pour une vue d’ensemble des services web XML, consultez [Vue d’ensemble des services web XML](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w9fdtx28(v=vs.100)). Pour obtenir un exemple d’utilisation d’un <xref:System.Data.DataSet> à partir d’un service web XML, consultez [Consommation d’un DataSet à partir d’un service web XML](consuming-a-dataset-from-an-xml-web-service.md).  
+Un objet <xref:System.Data.DataSet> fortement typé peut aussi être transporté au moyen d’un service web XML. Le design de l’objet <xref:System.Data.DataSet> le rend idéal pour le transport de données à l’aide des services web XML. Pour une vue d’ensemble des services web XML, consultez [Vue d’ensemble des services web XML](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w9fdtx28(v=vs.100)). Pour obtenir un exemple d’utilisation d’un <xref:System.Data.DataSet> à partir d’un service web XML, consultez [Consommation d’un DataSet à partir d’un service web XML](consuming-a-dataset-from-an-xml-web-service.md).  
   
-## <a name="in-this-section"></a>Dans cette section  
+## <a name="in-this-section"></a>Contenu de cette section
+
+ [Conseils de sécurité](security-guidance.md)  
+ Fournit des conseils de sécurité pour <xref:System.Data.DataSet> et <xref:System.Data.DataTable> .
+
  [Création d’un DataSet](creating-a-dataset.md)  
  Décrit la syntaxe permettant de créer une instance d'un objet <xref:System.Data.DataSet>.  
   
@@ -63,7 +68,8 @@ L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données r
  [Consommation d’un DataSet à partir d’un service web XML](consuming-a-dataset-from-an-xml-web-service.md)  
  Explique comment créer un service web XML qui utilise un <xref:System.Data.DataSet> pour le transport des données.  
   
-## <a name="related-sections"></a>Sections connexes  
+## <a name="related-sections"></a>Sections connexes
+
  [Nouveautés dans ADO.NET](../whats-new.md)  
  Introduit des fonctionnalités nouvelles dans ADO.NET.  
   

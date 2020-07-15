@@ -1,19 +1,20 @@
 ---
 title: Événements ETW dans la bibliothèque parallèle de tâches et PLINQ
+description: En savoir plus sur les événements ETW dans la bibliothèque parallèle de tâches et PLINQ. Utilisez ces événements pour profiler et dépanner des applications.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - tasks, ETW events
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
-ms.openlocfilehash: 61429babf7378b9d271ffd60a6228ae4bfe7a5e5
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: a1a068b7ba94d5e5be4fd90d6adb48b0d25a8b9e
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644245"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309636"
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Événements ETW dans la bibliothèque parallèle de tâches et PLINQ
 
-La bibliothèque parallèle de tâches et PLINQ génèrent les événements de suivi d’événements pour Windows (ETW) que vous pouvez utiliser pour profiler et dépanner des applications à l’aide d’outils tels que Windows Performance Analyzer. Cependant, dans la plupart des scénarios, la meilleure façon de profiler le code d’application parallèle est d’utiliser le [Visualizer Concurrency](/visualstudio/profiling/concurrency-visualizer) dans Visual Studio.
+La bibliothèque parallèle de tâches et PLINQ génèrent les événements de suivi d’événements pour Windows (ETW) que vous pouvez utiliser pour profiler et dépanner des applications à l’aide d’outils tels que Windows Performance Analyzer. Toutefois, dans la plupart des scénarios, la meilleure façon de profiler du code d’application parallèle consiste à utiliser le [visualiseur concurrentiel](/visualstudio/profiling/concurrency-visualizer) dans Visual Studio.
 
 ## <a name="task-parallel-library-etw-events"></a>Événements ETW de la bibliothèque parallèle de tâches
 

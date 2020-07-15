@@ -1,5 +1,6 @@
 ---
 title: Niveaux et mots clés ETW du CLR
+description: Passez en revue les mots clés et niveaux du suivi d’événements common language runtime (CLR) pour Windows (ETW). Les mots clés ETW du CLR d’événement permettent de filtrer les événements par catégorie.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR ETW keywords
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - ETW, CLR keywords
 - ETW, CLR levels
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
-ms.openlocfilehash: 2106ed0d85cd116be4d7c46396ad6e1597c4341d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dfbe047640a3a640cf37adeea6fa3656cfd9ec6d
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400063"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309675"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Niveaux et mots clés ETW du CLR
 Les événements de suivi d'événements pour Windows (ETW) peuvent être filtrés par catégorie et par niveau. Les [Mots clés ETW du CLR](#clr-etw-keywords) d’événement permettent de filtrer les événements par catégorie. Ils sont utilisés sous forme de combinaisons pour les fournisseurs d’arrêt et de runtime. Les [niveaux d'événement](#etw-event-levels) sont identifiés par des indicateurs.  
@@ -22,11 +23,11 @@ Les événements de suivi d'événements pour Windows (ETW) peuvent être filtr�
   
  Les mots clés sont décrits dans les tableaux suivants :  
   
-- [Mots-clés CLR ETW runtime](#runtime)  
+- [Mots clés du runtime ETW du CLR](#runtime)  
   
-- [Mots-clés CLR ETW rundown](#rundown)  
+- [Mots clés d’arrêt ETW du CLR](#rundown)  
   
-- [Combinaisons de mots clés pour la résolution de symbole pour le fournisseur de runtime](#runtime_combo)  
+- [Combinaisons de mots clés pour la résolution des symboles pour le fournisseur de Runtime](#runtime_combo)  
   
 - [Combinaisons de mots clés pour la résolution des symboles pour le fournisseur d’arrêt](#rundown_combo)  
   
@@ -49,7 +50,7 @@ Les événements de suivi d'événements pour Windows (ETW) peuvent être filtr�
 |`ContentionKeyword`|0x00004000|Active la collecte d’ [événements de conflit](contention-etw-events.md).|  
 |`ExceptionKeyword`|0x00008000|Active la collecte d’ [événements d’exception](exception-thrown-v1-etw-event.md).|  
 |`ThreadingKeyword`|0x00010000|Active la collecte d’ [événements de pool de threads](thread-pool-etw-events.md).|  
-|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(Disponible dans le cadre .NET 4.5 et plus tard.) Supprime le mot `NGenKeyword` clé haut et aérien et empêche la génération d’événements pour les méthodes qui se trouvent à l’intérieur des modules NGen. En commençant par le cadre .NET 4.5, les outils de profilage devraient être utilisés `OverrideAndSuppressNGenEventsKeyword` et `NGenKeyword` ensemble pour supprimer la génération d’événements pour les méthodes dans les modules NGen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsKeyword` et traitera `NGenKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
+|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(Disponible dans la .NET Framework 4,5 et versions ultérieures.) Supprime le mot clé de surcharge élevée `NGenKeyword` et empêche la génération d’événements pour les méthodes qui se trouvent dans les modules Ngen. À partir de la .NET Framework 4,5, les outils de profilage doivent utiliser `OverrideAndSuppressNGenEventsKeyword` et `NGenKeyword` ensemble pour supprimer la génération d’événements pour les méthodes dans les modules Ngen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsKeyword` et traitera `NGenKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Active la collecte des événements `ModuleLoad` et `ModuleRange` .|  
 |`StackKeyword`|0x40000000|Active la collecte des [événements de trace de la pile](stack-etw-event.md).|  
   
@@ -66,7 +67,7 @@ Les événements de suivi d'événements pour Windows (ETW) peuvent être filtr�
 |`EndRundownKeyword`|0x00000100|Active l'énumération de l'état du système pendant un arrêt de fin.|  
 |`AppDomainResourceManagementRundownKeyword`|0x00000800|Active la collecte d'événements d'analyse de ressource à un niveau <xref:System.AppDomain> lorsqu'il est utilisé avec `StartRundownKeyword` ou `EndRundownKeyword`.|  
 |`ThreadingKeyword`|0x00010000|Active la collecte d’événements de pool de threads.|  
-|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(Disponible dans le cadre .NET 4.5 et plus tard.) Supprime le mot `NGenRundownKeyword` clé haut et aérien et empêche la génération d’événements pour les méthodes qui se trouvent à l’intérieur des modules NGen. En commençant par le cadre .NET 4.5, les outils de profilage devraient être utilisés `OverrideAndSuppressNGenEventsRundownKeyword` et `NGenRundownKeyword` ensemble pour supprimer la génération d’événements pour les méthodes dans les modules NGen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsRundownKeyword` et traitera `NGenRundownKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
+|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(Disponible dans la .NET Framework 4,5 et versions ultérieures.) Supprime le mot clé de surcharge élevée `NGenRundownKeyword` et empêche la génération d’événements pour les méthodes qui se trouvent dans les modules Ngen. À partir de la .NET Framework 4,5, les outils de profilage doivent utiliser `OverrideAndSuppressNGenEventsRundownKeyword` et `NGenRundownKeyword` ensemble pour supprimer la génération d’événements pour les méthodes dans les modules Ngen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsRundownKeyword` et traitera `NGenRundownKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Active la collecte des événements `ModuleDCStart`, `ModuleDCEnd`, `ModuleRangeDCStart`et `ModuleRangeDCEnd` .|
   
 <a name="runtime_combo"></a>

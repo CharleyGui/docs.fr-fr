@@ -1,16 +1,17 @@
 ---
 title: Code transparent de sécurité (security-transparent)
+description: Comprendre l’objectif du modèle de code transparent, comment spécifier le niveau de transparence et l’application de la transparence dans la sécurité.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - transparent code
 - security-transparent code
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
-ms.openlocfilehash: ca251ec3084d40269b107e7bd8bef708e8d49622
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: a167efe12b88f796fba4abc6d60ebffe4693709a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215837"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309844"
 ---
 # <a name="security-transparent-code"></a>Code transparent de sécurité (security-transparent)
 
@@ -41,7 +42,7 @@ L'attribut <xref:System.Security.SecurityRulesAttribute> au niveau niveau de l'a
 
 Voici les différents niveaux :
 
-- Niveau 2 (<xref:System.Security.SecurityRuleSet.Level2>) : règles de transparence .NET Framework 4.
+- Niveau 2 ( <xref:System.Security.SecurityRuleSet.Level2> ) : règles de transparence du .NET Framework 4.
 
 - niveau 1 (<xref:System.Security.SecurityRuleSet.Level1>) : règles de transparence du .NET Framework 2.0.
 
@@ -97,4 +98,4 @@ Les règles de transparence ne sont pas appliquées tant que la transparence n'e
 ## <a name="see-also"></a>Voir aussi
 
 - [Code transparent de sécurité, niveau 1](security-transparent-code-level-1.md)
-- [Code transparent de sécurité, niveau 2](security-transparent-code-level-2.md)
+- [Code transparent de sécurité, niveau 2](security-transparent-code-level-2.md)

@@ -1,18 +1,18 @@
 ---
 title: Opérateur await – Informations de référence sur C#
-ms.date: 11/08/2019
+ms.date: 07/13/2020
 f1_keywords:
 - await_CSharpKeyword
 helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 83ee51fcbcc5911c688e30542cefb1c56578a578
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 76c6b24c1cd061585c7a6964d30bc81cc5fc5975
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141024"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308843"
 ---
 # <a name="await-operator-c-reference"></a>Opérateur await (informations de référence sur C#)
 
@@ -22,24 +22,30 @@ Dans l’exemple suivant, la méthode <xref:System.Net.Http.HttpClient.GetByteAr
 
 [!code-csharp[await example](snippets/AwaitOperator.cs)]
 
-L’exemple précédent utilise la [méthode `Main` Async](../../programming-guide/main-and-command-args/index.md), qui est possible à partir de C# 7,1. Pour plus d’informations, consultez la section [Opérateur await dans la méthode Main](#await-operator-in-the-main-method).
+L’exemple précédent utilise la [ `Main` méthode Async](../../programming-guide/main-and-command-args/index.md), qui est possible à partir de C# 7,1. Pour plus d’informations, consultez la section [Opérateur await dans la méthode Main](#await-operator-in-the-main-method).
 
 > [!NOTE]
 > Pour obtenir une introduction à la programmation asynchrone, consultez [Programmation asynchrone avec async et await](../../programming-guide/concepts/async/index.md). La programmation asynchrone avec `async` et `await` suit le [modèle asynchrone basé sur les tâches](../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).
 
-Vous pouvez utiliser l’opérateur `await` uniquement dans une méthode, une [expression lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) ou une [méthode anonyme](delegate-operator.md) modifiée par le mot clé [async](../keywords/async.md). Dans une méthode Async, vous ne pouvez pas `await` utiliser l’opérateur dans le corps d’une fonction synchrone, à l’intérieur du bloc d’une [instruction lock](../keywords/lock-statement.md)et dans un contexte [unsafe](../keywords/unsafe.md) .
+Vous pouvez utiliser l’opérateur `await` uniquement dans une méthode, une [expression lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) ou une [méthode anonyme](delegate-operator.md) modifiée par le mot clé [async](../keywords/async.md). Dans une méthode Async, vous ne pouvez pas utiliser l' `await` opérateur dans le corps d’une fonction synchrone, à l’intérieur du bloc d’une [instruction lock](../keywords/lock-statement.md)et dans un contexte [unsafe](../keywords/unsafe.md) .
 
 L’opérande de l’opérateur `await` est généralement un des types .NET suivants : <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.ValueTask> ou <xref:System.Threading.Tasks.ValueTask%601>. Cependant, n’importe quelle expression awaitable peut être l’opérande de l’opérateur `await`. Pour plus d’informations, consultez la section [Expressions awaitable](~/_csharplang/spec/expressions.md#awaitable-expressions) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
-À compter de C# 8,0, vous pouvez utiliser `await foreach` l’instruction pour consommer un flux de données asynchrone. Pour plus d’informations, consultez [ `foreach` ](../keywords/foreach-in.md) l’article sur les instructions et la section relative aux [flux asynchrones](../../whats-new/csharp-8.md#asynchronous-streams) de l’article [Nouveautés de C# 8,0](../../whats-new/csharp-8.md) .
-
 Le type d’expression `await t` est `TResult` si le type d’expression `t` est <xref:System.Threading.Tasks.Task%601> ou <xref:System.Threading.Tasks.ValueTask%601>. Si le type de `t` est <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.ValueTask>, le type de `await t` est `void`. Dans les deux cas, si `t` lève une exception, `await t` lève à nouveau l’exception. Pour plus d’informations sur le gestion des exceptions, consultez la section [Exceptions dans les méthodes async](../keywords/try-catch.md#exceptions-in-async-methods) de l’article [Instruction try-catch](../keywords/try-catch.md).
 
-Les `async` mots `await` clés et sont disponibles dans C# 5 et versions ultérieures.
+Les `async` `await` Mots clés et sont disponibles dans C# 5 et versions ultérieures.
+
+## <a name="asynchronous-streams-and-disposables"></a>Flux asynchrones et supprimables
+
+À compter de C# 8,0, vous pouvez utiliser des flux asynchrones et des sources jetables.
+
+Vous utilisez l' `await foreach` instruction pour consommer un flux de données asynchrone. Pour plus d’informations, consultez l’article sur les [ `foreach` instructions](../keywords/foreach-in.md) et la section relative aux [flux asynchrones](../../whats-new/csharp-8.md#asynchronous-streams) de l’article [Nouveautés de C# 8,0](../../whats-new/csharp-8.md) .
+
+Vous utilisez l' `await using` instruction pour travailler avec un objet pouvant être supprimé de manière asynchrone, autrement dit, un objet d’un type qui implémente une <xref:System.IAsyncDisposable> interface. Pour plus d’informations, consultez la section [utilisation de Async jetable](../../../standard/garbage-collection/implementing-disposeasync.md#using-async-disposable) de l’article [implémentation d’une méthode DisposeAsync](../../../standard/garbage-collection/implementing-disposeasync.md) .
 
 ## <a name="await-operator-in-the-main-method"></a>Opérateur await dans la méthode Main
 
-À compter de C# 7,1, [ `Main` la méthode](../../programming-guide/main-and-command-args/index.md), qui est le point d’entrée de l’application `Task<int>`, peut retourner `await` `Task` ou, ce qui lui permet d’être asynchrone afin que vous puissiez utiliser l’opérateur dans son corps. Dans les versions antérieures de C#, pour être certain que la méthode `Main` attend la fin d’une opération asynchrone, vous pouvez récupérer la valeur de la propriété <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> de l’instance <xref:System.Threading.Tasks.Task%601> retournée par la méthode asyn correspondante. Pour les opérations asynchrones qui ne produisent pas de valeur, vous pouvez appeler la méthode <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>. Pour plus d’informations sur la façon de sélectionner la version linguistique, consultez contrôle de [version du langage C#](../configure-language-version.md).
+À compter de C# 7,1, la [ `Main` méthode](../../programming-guide/main-and-command-args/index.md), qui est le point d’entrée de l’application, peut retourner `Task` ou, ce qui lui permet `Task<int>` d’être asynchrone afin que vous puissiez utiliser l' `await` opérateur dans son corps. Dans les versions antérieures de C#, pour être certain que la méthode `Main` attend la fin d’une opération asynchrone, vous pouvez récupérer la valeur de la propriété <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> de l’instance <xref:System.Threading.Tasks.Task%601> retournée par la méthode asyn correspondante. Pour les opérations asynchrones qui ne produisent pas de valeur, vous pouvez appeler la méthode <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>. Pour plus d’informations sur la façon de sélectionner la version linguistique, consultez contrôle de [version du langage C#](../configure-language-version.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -47,7 +53,7 @@ Pour plus d’informations, consultez la section [Expressions await](~/_csharpla
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Suppr](../keywords/async.md)
 - [Modèle de programmation asynchrone des tâches](../../programming-guide/concepts/async/task-asynchronous-programming-model.md)

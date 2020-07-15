@@ -1,16 +1,17 @@
 ---
 title: Événements ETW d'analyse de ressource de domaine d'application
+description: En savoir plus sur les événements ETW ARM (application domain Resource Monitoring) dans .NET, tels que ThreadCreated, AppDomainMemAllocated, AppDomainMemSurvived, etc.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ETW, application domain monitoring events
 - application domain monitoring events [.NET Framework]
 ms.assetid: d38ff268-a2ee-434e-b504-d570880e0289
-ms.openlocfilehash: 0e453b2bafffd9e07a1bdddd97282c5b97f5483d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d118b3196b019a804df5399464cb86f7492c61b0
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716216"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309779"
 ---
 # <a name="application-domain-resource-monitoring-arm-etw-events"></a>Événements ETW d'analyse de ressource de domaine d'application
 
@@ -22,20 +23,20 @@ Cet événement est également déclenché sous le fournisseur d'arrêt en tant 
 
 Le tableau suivant montre les mots clés et les niveaux. Pour plus d’informations, consultez [niveaux et Mots clés ETW du CLR](clr-etw-keywords-and-levels.md).
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|Informatif(4)|
 |`ThreadingKeyword` (0x10000)|Informatif(4)|
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Moment du déclenchement|
+|Événement|ID de l’événement|Moment du déclenchement|
 |-----------|--------------|-----------------|
-|`ThreadCreated`|85|Un thread a été créé pour le domaine d'application.|
+|`ThreadCreated`|85 %|Un thread a été créé pour le domaine d'application.|
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |ThreadID|win:UInt64|ID du thread qui a été créé.|
 |AppDomainID|win:UInt64|Identificateur du domaine d'application pour lequel l'activité du thread est signalée.|
@@ -48,19 +49,19 @@ Le tableau ci-dessous montre les données d’événements.
 
 Le tableau suivant montre les mots clés et les niveaux.
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|Informatif(4)|
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Moment du déclenchement|
+|Événement|ID de l’événement|Moment du déclenchement|
 |-----------|--------------|-----------------|
 |`AppDomainMemAllocated`|83|Chaque bloc de 4 Mo de mémoire (environ) est alloué dans le domaine d'application.|
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |AppDomainID|win:UInt64|Identificateur du domaine d'application pour lequel l'utilisation des ressources est signalée.|
 |Allocated|win:UInt64|Nombre total d'octets alloués dans ce domaine d'application depuis sa création (la quantité de mémoire libérée n'est pas soustraite).|
@@ -70,19 +71,19 @@ Le tableau ci-dessous montre les données d’événements.
 
 Le tableau suivant montre les mots clés et les niveaux.
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|Informatif(4)|
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Moment du déclenchement|
+|Événement|ID de l’événement|Moment du déclenchement|
 |-----------|--------------|-----------------|
 |`AppDomainMemSurvived`|84|Chaque garbage collection est terminé.|
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |AppDomainID|win:UInt64|Identificateur du domaine pour lequel l’utilisation des ressources est signalée.|
 |Survived|win:UInt64|Nombre d'octets ayant survécu après la dernière collection et qui sont conservés par ce domaine d'application. Ce nombre est exact et complet après une collection complète, mais peut être incomplet après une collection éphémère.|
@@ -93,20 +94,20 @@ Le tableau ci-dessous montre les données d’événements.
 
 Le tableau suivant montre les mots clés et les niveaux.
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|Informatif(4)|
 |`ThreadingKeyword` (0x10000)|Informatif(4)|
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Moment du déclenchement|
+|Événement|ID de l’événement|Moment du déclenchement|
 |-----------|--------------|-----------------|
 |`ThreadAppDomainEnter`|87|Un thread entre dans un domaine d'application.|
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |ThreadID|win:UInt64|Identificateur du thread.|
 |AppDomainID|win:UInt64|Identificateur du domaine d'application.|
@@ -116,20 +117,20 @@ Le tableau ci-dessous montre les données d’événements.
 
 Le tableau suivant montre les mots clés et les niveaux.
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|Informatif(4)|
 |`ThreadingKeyword` (0x10000)|Informatif(4)|
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Moment du déclenchement|
+|Événement|ID de l’événement|Moment du déclenchement|
 |-----------|--------------|-----------------|
 |`ThreadTerminated`|86|Un thread se termine.|
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |ThreadID|win:UInt64|Identificateur du thread.|
 |AppDomainID|win:UInt64|Identificateur du domaine d'application.|

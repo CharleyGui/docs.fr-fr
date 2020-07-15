@@ -2,12 +2,12 @@
 title: Sécurité Azure pour les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Sécurité Azure pour les applications Cloud natives
 ms.date: 05/13/2020
-ms.openlocfilehash: a39b64477eb9e896c6603e5609ede653bfee1e07
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 223d9e77aca611697958981bf2ee3a630fb9fffb
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614251"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374492"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Sécurité Azure pour les applications Cloud natives
 
@@ -42,7 +42,7 @@ Dans un système informatique, un exemple fantastique est le droit d’un utilis
 
 Presque toutes les parties de la création d’une application Cloud Native peuvent être utiles pour mémoriser le principe des privilèges minimum. Vous pouvez le trouver lors de la configuration des pare-feu, des groupes de sécurité réseau, des rôles et des étendues dans le contrôle d’accès en fonction du rôle (RBAC).
 
-## <a name="penetration-testing"></a>test de pénétration ;
+## <a name="penetration-testing"></a>Test d’intrusion
 
 À mesure que les applications deviennent plus complexes, le nombre de vecteurs d’attaque augmente à un taux d’alarme. La modélisation des menaces est en défaut, car elle a tendance à être exécutée par les mêmes personnes qui créent le système. De la même façon que de nombreux développeurs ont des difficultés à mettre en œuvre les interactions de l’utilisateur, puis à créer des interfaces utilisateur inutilisables, la plupart des développeurs éprouvent des difficultés à voir chaque vecteur d’attaque. Il est également possible que les développeurs qui créent le système ne soient pas bien connus dans les méthodologies d’attaque et manquent de choses cruciales.
 
@@ -50,7 +50,7 @@ Les tests de pénétration ou le « test de PEN » impliquent que les acteurs 
 
 Azure lui-même subit constamment des attaques d’une [équipe de pirates au sein de Microsoft](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/). Au fil des années, elles ont été les premières à trouver des dizaines de vecteurs d’attaque potentiellement catastrophiques, à les fermer avant qu’elles puissent être exploitées en externe. Plus une cible est séduisante, plus il est probable que les acteurs externes essaient de l’exploiter et il y a quelques cibles dans le monde plus tentant que Azure.
 
-## <a name="monitoring"></a>Surveillance
+## <a name="monitoring"></a>Supervision
 
 Si une personne malveillante tente de pénétrer dans une application, il doit y avoir un avertissement. Souvent, les attaques peuvent être repérées en examinant les journaux des services. Les attaques laissent des signes de signalisation qui peuvent être repérés avant qu’ils ne s’exécutent correctement. Par exemple, une personne malveillante tentant de deviner un mot de passe effectue de nombreuses demandes vers un système de connexion. La surveillance autour du système de connexion peut détecter les modèles bizarres qui sont hors ligne avec le modèle d’accès standard. Cette analyse peut être convertie en alerte qui peut, à son tour, alerter une personne chargée de l’activation d’une contre-mesure. Un système de surveillance très mature peut même prendre des mesures en fonction de ces écarts, en ajoutant de manière proactive des règles pour bloquer les demandes ou limiter les réponses.
 
@@ -66,7 +66,7 @@ Il s’agit d’un parfait exemple d’une cible de valeur apparemment faible qu
 
 .NET Framework est déjà un Framework très sécurisé. Il évite certains des pièges du code non managé, tels que le parcours des extrémités des tableaux. Le travail est effectué activement pour résoudre les failles de sécurité à mesure qu’elles sont découvertes. Il existe même un programme de primes de [bogues](https://www.microsoft.com/msrc/bounty) qui payent des chercheurs pour trouver des problèmes dans l’infrastructure et les signaler au lieu de les exploiter.
 
-Il existe de nombreuses façons d’améliorer la sécurité du code .NET. Les instructions suivantes, telles que les [instructions de codage sécurisé pour .net](https://docs.microsoft.com/dotnet/standard/security/secure-coding-guidelines) , sont une étape raisonnable à prendre pour garantir la sécurité du code. Le [OWASP Top 10](https://owasp.org/www-project-top-ten/) est un autre guide précieux pour créer du code sécurisé.
+Il existe de nombreuses façons d’améliorer la sécurité du code .NET. Les instructions suivantes, telles que les [instructions de codage sécurisé pour .net](../../standard/security/secure-coding-guidelines.md) , sont une étape raisonnable à prendre pour garantir la sécurité du code. Le [OWASP Top 10](https://owasp.org/www-project-top-ten/) est un autre guide précieux pour créer du code sécurisé.
 
 Le processus de génération est un bon endroit pour mettre en place des outils d’analyse pour détecter les problèmes dans le code source avant de le rendre en production. La plupart des projets ont des dépendances sur d’autres packages. Un outil qui peut rechercher les packages obsolètes détecte les problèmes dans une build nocturne. Même lors de la création d’images d’ancrage, il est utile de vérifier et de s’assurer que l’image de base n’a pas de vulnérabilités connues. Une autre chose à vérifier est que personne n’a archivé accidentellement des informations d’identification.
 

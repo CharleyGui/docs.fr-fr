@@ -1,14 +1,14 @@
 ---
 title: Concepts et modèle objet du SDK .NET Compiler Platform
 description: Cette présentation fournit les informations dont vous avez besoin pour utiliser efficacement le SDK .NET Compiler Platform. Vous allez découvrir les différentes couches d’API, les principaux types utilisés et le modèle objet global.
-ms.date: 10/10/2017
+ms.date: 07/13/2020
 ms.custom: mvc
-ms.openlocfilehash: 529ce6fbdef22964251c8b22abbd5d8aadab633d
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: a65d282dd3c58279bbfd635c0386d50ce3f30055
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975938"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374466"
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>Comprendre le modèle du SDK .NET Compiler Platform
 
@@ -24,27 +24,25 @@ Chaque phase de ce pipeline correspond à un composant distinct. Tout d’abord,
 
 ![L’API du pipeline du compilateur fournit l’accès à chaque étape du pipeline du compilateur](media/compiler-api-model/compiler-pipeline-api.png)
 
-Pour chacune de ces phases, le SDK .NET Compiler Platform expose un modèle objet qui permet d’accéder aux informations disponibles à la phase en question. La phase d’analyse expose une arborescence de syntaxe, la phase de déclaration expose une table de symboles hiérarchique, la phase de liaison expose le résultat de l’analyse sémantique du compilateur et la phase d’émission est une API qui produit des codes d’octets IL.
+Pour chacune de ces phases, le SDK .NET Compiler Platform expose un modèle objet qui permet d’accéder aux informations disponibles à la phase en question. La phase d’analyse expose une arborescence de syntaxe, la phase de déclaration expose une table de symboles hiérarchique, la phase de liaison expose le résultat de l’analyse sémantique du compilateur, et la phase d’émission est une API qui produit des codes d’octet de langage intermédiaire.
 
 ![services de langage disponibles à partir de l’API du compilateur à chaque phase du pipeline du compilateur](media/compiler-api-model/compiler-pipeline-lang-svc.png)
 
 Chaque compilateur combine ces composants en une solution de bout en bout unique.
 
-Ces API sont les mêmes que celles utilisées par Visual Studio. Par exemple, les fonctionnalités de mise en forme et en plan du code utilisent les arborescences de syntaxe, les fonctionnalités de l’Explorateur d’objets et de navigation utilisent la table de symboles, les fonctionnalités de refactorisation et Atteindre la définition utilisent le modèle sémantique, et la fonctionnalité Modifier et Continuer utilise tous ces éléments, y compris l’API d’émission.
+Ces API sont les mêmes que celles utilisées par Visual Studio. Par exemple, les fonctionnalités de mise en forme et de mise en forme du code utilisent les arborescences de syntaxe, l' **Explorateur d’objets**et les fonctionnalités de navigation utilisent la table de symboles, les refactorisations et **atteindre la définition** utilisent le modèle sémantique, et **Modifier & Continuer** utilise tous ces éléments, y compris l’API d’émission.
 
 ## <a name="api-layers"></a>Couches d’API
 
-Le SDK .NET Compiler comporte deux couches principales d’API : les API du compilateur et les API des espaces de travail.
-
-![couches d’API représentées par les API du pipeline du compilateur](media/compiler-api-model/api-layers.png)
+Le SDK du compilateur .NET est constitué de plusieurs couches d’API : les API du compilateur, les API de diagnostic, les API de script et les API d’espaces de travail.
 
 ### <a name="compiler-apis"></a>API du compilateur
 
-La couche du compilateur contient les modèles objet qui correspondent aux informations syntaxiques et sémantiques exposées à chaque phase du pipeline du compilateur. La couche du compilateur contient également un instantané immuable d’un appel unique d’un compilateur, notamment les références d’assembly, les options du compilateur et les fichiers de code source. Le langage C# et le langage Visual Basic sont représentés par deux API distinctes. Ces deux API sont similaires dans la forme, mais elles sont adaptées à chaque langage pour garantir une haute fidélité. Cette couche n’a pas de dépendances sur les composants Visual Studio.
+La couche du compilateur contient les modèles objet qui correspondent aux informations syntaxiques et sémantiques exposées à chaque phase du pipeline du compilateur. La couche du compilateur contient également un instantané immuable d’un appel unique d’un compilateur, notamment les références d’assembly, les options du compilateur et les fichiers de code source. Le langage C# et le langage Visual Basic sont représentés par deux API distinctes. Les deux API sont similaires, mais elles sont adaptées à une haute fidélité pour chaque langue. Cette couche n’a pas de dépendances sur les composants Visual Studio.
 
 ### <a name="diagnostic-apis"></a>API de diagnostic
 
-Dans le cadre de son analyse, le compilateur peut produire un ensemble de diagnostics complets, qui couvrent les erreurs de syntaxe, de sémantique et d’assignation définie, ainsi que divers avertissements et informations. La couche API du compilateur expose les diagnostics par le biais d’une API extensible qui permet d’intégrer des analyseurs définis par l’utilisateur au processus de compilation. Des diagnostics définis par l’utilisateur, tels que ceux générés par des outils comme StyleCop ou FxCop, peuvent ainsi être produits en même temps que les diagnostics définis par le compilateur. Les diagnostics générés de cette manière offrent l’avantage de s’intégrer naturellement à des outils comme MSBuild et Visual Studio qui se basent sur les diagnostics pour effectuer certaines actions (par exemple, arrêter une build basée sur une stratégie, afficher en temps réel des lignes ondulées dans l’éditeur et suggérer des corrections du code).
+Dans le cadre de son analyse, le compilateur peut produire un ensemble de diagnostics complets, qui couvrent les erreurs de syntaxe, de sémantique et d’assignation définie, ainsi que divers avertissements et informations. La couche API du compilateur expose les diagnostics par le biais d’une API extensible qui permet d’intégrer des analyseurs définis par l’utilisateur au processus de compilation. Des diagnostics définis par l’utilisateur, tels que ceux générés par des outils comme StyleCop ou FxCop, peuvent ainsi être produits en même temps que les diagnostics définis par le compilateur. La production de diagnostics de cette façon présente l’avantage d’intégrer naturellement des outils tels que MSBuild et Visual Studio, qui dépendent des diagnostics pour des expériences telles que l’arrêt d’une build basée sur la stratégie et l’affichage des tildes dynamiques dans l’éditeur et la suggestion de correction de code.
 
 ### <a name="scripting-apis"></a>API de script
 

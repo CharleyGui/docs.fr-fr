@@ -2,12 +2,12 @@
 title: Migration de votre application du Windows Store vers .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-ms.openlocfilehash: 987669fc51eeaf7e3bdef3e91a2f1ce23164a055
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5e5c655d0e8d6f1730f27d35525692e110b3c80c
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81389700"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309194"
 ---
 # <a name="migrate-your-windows-store-app-to-net-native"></a>Migrer votre application du Windows Store vers .NET Native
 
@@ -58,7 +58,7 @@ Le compilateur .NET Native peut également gérer les types génériques couramm
 > [!NOTE]
 > Vous devez tester minutieusement tous les chemins de code dynamiques quand vous portez votre application sur .NET Native.
 
-La configuration par défaut de .NET Native est suffisante pour la plupart des développeurs, mais certains développeurs peuvent souhaiter ajuster leurs configurations à l’aide d’un fichier de directives Runtime (. rd. Xml). En outre, dans certains cas, le compilateur .NET Native n’est pas en mesure de déterminer les métadonnées qui doivent être disponibles pour la réflexion et s’appuie sur les indicateurs, notamment dans les cas suivants :
+La configuration par défaut de .NET Native est suffisante pour la plupart des développeurs, mais certains développeurs peuvent souhaiter ajuster leurs configurations à l’aide d’un fichier de directives Runtime (.rd.xml). En outre, dans certains cas, le compilateur .NET Native n’est pas en mesure de déterminer les métadonnées qui doivent être disponibles pour la réflexion et s’appuie sur les indicateurs, notamment dans les cas suivants :
 
 - Certaines constructions telles que <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> et <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> ne peuvent pas être déterminées de manière statique.
 
@@ -79,7 +79,7 @@ Dans .NET Native :
 
 - La réflexion privée de types et de membres de la bibliothèque de classes .NET Framework n'est pas prise en charge. Vous pouvez, toutefois, réfléchir vos propres types et membres privés, ainsi que les types et les membres dans des bibliothèques tierces.
 
-- La propriété <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> retourne correctement `false` pour un objet <xref:System.Reflection.ParameterInfo> qui représente une valeur de retour. Dans .NET pour les applications du Windows Store, elle retourne `true`. Le langage intermédiaire ne prend pas cela en charge directement et l'interprétation est laissée au langage.
+- La propriété <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> retourne correctement `false` pour un objet <xref:System.Reflection.ParameterInfo> qui représente une valeur de retour. Dans .NET pour les applications du Windows Store, elle retourne `true`. Le langage intermédiaire (IL) ne prend pas cela en charge directement et l’interprétation est laissée au langage.
 
 - Les membres publics sur les structures <xref:System.RuntimeFieldHandle> et <xref:System.RuntimeMethodHandle> ne sont pas pris en charge. Ces types sont pris en charge uniquement pour LINQ, les arborescences d'expression et l'initialisation de tableau statique.
 
@@ -278,7 +278,7 @@ Les autres fonctionnalités d’interopérabilité non prises en charge sont les
 
 - Délégués
 
-- Chaînes (Unicode, Ansi et HSTRING)
+- Chaînes (Unicode, ANSI et HSTRING)
 
 - Structures (`byref` et `byval`)
 
