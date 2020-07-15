@@ -435,11 +435,11 @@
             - name: Liaison de données
               tocHref: /dotnet/desktop-wpf/data
               topicHref: /dotnet/desktop-wpf/data/index
-        - name: 'Guide C#'
+        - name: Guide C#
           tocHref: /dotnet/csharp/
           topicHref: /dotnet/csharp/index
           items:
-            - name: 'Présentation de C#'
+            - name: Présentation de C#
               tocHref: /dotnet/csharp/tutorials/intro-to-csharp/
               topicHref: /dotnet/csharp/tutorials/intro-to-csharp/index
             - name: Prise en main
@@ -565,22 +565,22 @@
                 - name: "Projet de spécification C#\_6.0"
                   tocHref: /dotnet/csharp/language-reference/language-specification/
                   topicHref: /dotnet/csharp/language-reference/language-specification/index
-                - name: 'Propositions de langage C# 7.0'
+                - name: Propositions de langage C# 7.0
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-7.0/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-7.0/index
-                - name: 'Propositions de langage C# 7.1'
+                - name: Propositions de langage C# 7.1
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-7.1/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-7.1/index
-                - name: 'Propositions de langage C# 7.2'
+                - name: Propositions de langage C# 7.2
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-7.2/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-7.2/index
-                - name: 'Propositions de langage C# 7.3'
+                - name: Propositions de langage C# 7.3
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-7.3/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-7.3/index
-                - name: 'Propositions de langage C# 8.0'
+                - name: Propositions de langage C# 8.0
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-8.0/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-8.0/index
-        - name: 'Guide F#'
+        - name: Guide F#
           tocHref: /dotnet/fsharp/
           topicHref: /dotnet/fsharp/index
         - name: Guide Visual Basic
@@ -699,6 +699,6 @@
           tocHref: /dotnet/azure/
           topicHref: /dotnet/azure/index
           items:
-            - name: Kit SDK Azure pour .NET
-              tocHref: /dotnet/azure/sdk/
-              topicHref: /dotnet/azure/sdk/index
+            - name: Azure pour les développeurs .NET
+              tocHref: /dotnet/azure/
+              topicHref: /dotnet/azure/index

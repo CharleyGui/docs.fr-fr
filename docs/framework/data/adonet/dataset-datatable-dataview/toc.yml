@@ -1,6 +1,8 @@
 - name: 'DataSets, DataTables et DataViews'
   href: index.md
   items:
+    - name: Conseils de sécurité
+      href: security-guidance.md
     - name: Création d'un DataSet
       href: creating-a-dataset.md
     - name: Ajout d'un nouveau DataTable à un DataSet
