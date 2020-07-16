@@ -2,15 +2,15 @@
 title: Modifications avec rupture ASP.NET Core
 titleSuffix: ''
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 07/13/2020
+ms.date: 07/14/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 75f33e7d6d76206ebe46b1a229ccb152d79ddc61
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: b73492e0c2f60c2b214984d3987de1e9e6530847
+ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309558"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86402002"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -71,6 +71,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 - [MVC : types modifiés en interne](#mvc-pubternal-types-changed-to-internal)
 - [MVC : Shim de compatibilité de l’API Web supprimé](#mvc-web-api-compatibility-shim-removed)
 - [Razor : la compilation du runtime a été déplacée vers un package](#razor-runtime-compilation-moved-to-a-package)
+- [Sécurité : encodage du nom du cookie supprimé](#security-cookie-name-encoding-removed)
 - [Sécurité : les versions du package NuGet IdentityModel ont été mises à jour](#security-identitymodel-nuget-package-versions-updated)
 - [État de session : API obsolètes supprimées](#session-state-obsolete-apis-removed)
 - [Framework partagé : suppression d’assembly de Microsoft. AspNetCore. app](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp)
@@ -138,6 +139,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 ***
 
 [!INCLUDE[Localization: ResourceManagerWithCultureStringLocalizer class and WithCulture interface member removed](~/includes/core-changes/aspnetcore/5.0/localization-members-removed.md)]
+
+***
+
+[!INCLUDE[Security: Cookie name encoding removed](~/includes/core-changes/aspnetcore/5.0/security-cookie-name-encoding-removed.md)]
 
 ***
 

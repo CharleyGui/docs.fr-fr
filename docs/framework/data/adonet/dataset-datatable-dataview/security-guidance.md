@@ -3,12 +3,12 @@ title: Aide sur la sécurité des jeux de données et des DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: c6b32afeadccc3fd22d6611d282840233280440f
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: f78b52ede4ec76599d761e5188f39c3e9dae2a4f
+ms.sourcegitcommit: 98548968e89739a37625e72ddbd535fe1e11121e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86382457"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405290"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Aide sur la sécurité des jeux de données et des DataTable
 
@@ -195,7 +195,8 @@ Une fois le mode d’audit activé, vous pouvez utiliser _App.config_ pour conne
 
 Pour plus d’informations sur `TraceSource` et `TraceListener` , consultez le document [Comment : utiliser des TraceSource et des filtres avec des écouteurs de suivi](/dotnet/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners).
 
-**Remarque**: l’exécution d’une application en mode audit n’est pas disponible dans .net Core ni dans .net 5,0 et versions ultérieures.
+> [!NOTE]
+> L’exécution d’une application en mode audit n’est pas disponible dans .NET Core ni dans .NET 5,0 et versions ultérieures.
 
 <a name="ratr"></a>
 
@@ -207,7 +208,7 @@ Si une application doit supprimer toutes les restrictions de limitation de type 
 * Les options disponibles dépendent du Framework ciblé par l’application.
 
 > [!WARNING]
-> La suppression de toutes les restrictions de type peut introduire une faille de sécurité à l’intérieur de l’application. Lors de l’utilisation de ce mécanisme, assurez-vous que l’application n’utilise **pas** `DataSet` ou `DataTable` pour lire les entrées non fiables. Pour plus d’informations, consultez [CVE-2020-1147](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2020-1147) et la section suivante intitulée [sécurité en ce qui concerne les entrées non approuvées](#swr).
+> La suppression de toutes les restrictions de type peut introduire une faille de sécurité à l’intérieur de l’application. Lors de l’utilisation de ce mécanisme, assurez-vous que l’application n’utilise **pas** `DataSet` ou `DataTable` pour lire les entrées non fiables. Pour plus d’informations, consultez [CVE-2020-1147](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2020-1147) et la section suivante intitulée [sécurité en ce qui concerne les entrées non approuvées](#swr).
 
 #### <a name="through-appcontext-configuration-net-framework-46---48-net-core-21-and-later-net-50-and-later"></a>Via la configuration de AppContext (.NET Framework 4,6-4,8, .NET Core 2,1 et versions ultérieures, .NET 5,0 et versions ultérieures)
 
@@ -463,7 +464,8 @@ public class MyClass
 
 La désérialisation d' `DataSet` un `DataTable` objet ou de cette façon à partir d’un objet BLOB JSON non approuvé n’est pas sécurisée. Ce modèle est vulnérable à une attaque par déni de service. Une telle attaque peut entraîner le blocage de l’application ou l’affichage d’une absence de réponse.
 
-**Remarque**: Microsoft ne garantit pas ou ne prend pas en charge l’implémentation de bibliothèques tierces comme _Newtonsoft.Jssur_. Ces informations sont fournies à des fins d’exhaustivité et sont précises au moment de la rédaction de cet article.
+> [!NOTE]
+> Microsoft ne garantit pas ou ne prend pas en charge l’implémentation de bibliothèques tierces comme _Newtonsoft.Jssur_. Ces informations sont fournies à des fins d’exhaustivité et sont précises au moment de la rédaction de cet article.
 
 ## <a name="deserialize-a-dataset-or-datatable-via-binaryformatter"></a>Désérialiser un DataSet ou un DataTable via BinaryFormatter
 

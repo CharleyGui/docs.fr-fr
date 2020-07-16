@@ -1,5 +1,5 @@
 ---
-title: Utilisation de protocoles d’application
+title: Utilisation des protocoles d’application
 description: Découvrez les protocoles d’application Internet couramment utilisés que le .NET Framework prend en charge, tels que HTTP, TCP et UDP, et l’implémentation de protocoles personnalisés.
 ms.date: 03/30/2017
 helpviewer_keywords:
@@ -14,16 +14,17 @@ helpviewer_keywords:
 - receiving data, application protocols
 - requesting data from Internet, application protocols
 ms.assetid: 3aab4bcc-8397-4e1a-a1b6-bbd837a21430
-ms.openlocfilehash: 07c4a813d4e2c838fb236d2a7798f54a9ead3a6d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: cd702085beff4ed6710eca83ac748a5915478387
+ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502013"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86401963"
 ---
-# <a name="using-application-protocols"></a>Utilisation de protocoles d’application
-.NET Framework prend en charge les protocoles d’application Internet couramment utilisés. Cette section contient des informations sur l’utilisation des protocoles [HTTP](http.md), TCP et UDP, ainsi que sur l’utilisation de l’interface [Windows Sockets](sockets.md) pour implémenter des protocoles personnalisés.  
-  
+# <a name="using-application-protocols"></a>Utilisation des protocoles d’application
+
+.NET Framework prend en charge les protocoles d’application Internet couramment utilisés. Cette section contient des informations sur l’utilisation des protocoles [http](http.md), [TCP](using-tcp-services.md)et [UDP](using-udp-services.md) , ainsi que des informations sur l’utilisation de l’interface [Windows Sockets](sockets.md) pour implémenter des protocoles personnalisés.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation réseau dans .NET Framework](index.md)
