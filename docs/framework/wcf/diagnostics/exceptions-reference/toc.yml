@@ -5,23 +5,23 @@
       href: com-integration.md
     - name: Configuration
       href: configuration.md
-    - name: "Communications principales\_: infrastructure de canal"
+    - name: "Communications principales\_: Framework de canal"
       href: core-communications-channel-framework.md
-    - name: "Communications principales\_: infrastructure de connexion"
+    - name: "Communications principales\_: Framework de connexion"
       href: core-communications-connection-framework.md
-    - name: "Communications principales\_: canaux de transport HTTP/HTTPS"
+    - name: "Communications principales\_: Canaux de transport HTTP/HTTPS"
       href: core-communications-http-https-transport-channels.md
-    - name: "Communications principales\_: canaux de transport duplex internes"
+    - name: "Communications principales\_: Canaux de transport duplex internes"
       href: core-communications-internal-duplex-transport-channels.md
-    - name: "Communications principales\_: canaux de transport du canal nommé"
+    - name: "Communications principales\_: Canaux de transport de canal nommé"
       href: core-communications-named-pipe-transport-channels.md
-    - name: "Communications principales\_: canaux de transport TCP"
+    - name: "Communications principales\_: Canaux de transport TCP"
       href: core-communications-tcp-transport-channels.md
-    - name: "Communications principales\_: infrastructure de transport"
+    - name: "Communications principales\_: Framework de transport"
       href: core-communications-transport-framework.md
-    - name: "Communications principales\_: utilitaires"
+    - name: "Communications principales\_: Utilitaires"
       href: core-communications-utilities.md
-    - name: "Communications principales\_: prise en charge Webhost"
+    - name: "Communications principales\_: Prise en charge de Webhost"
       href: core-communications-webhost-support.md
     - name: Hébergement
       href: hosting-exceptions.md

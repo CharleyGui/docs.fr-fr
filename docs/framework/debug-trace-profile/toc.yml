@@ -12,19 +12,19 @@
           href: code-contracts.md
         - name: Commutateurs de traçage
           href: trace-switches.md
-        - name: "Comment\_: créer, initialiser et configurer les commutateurs de traçage"
+        - name: "Procédure\_: Créer, initialiser et configurer les commutateurs de trace"
           href: how-to-create-initialize-and-configure-trace-switches.md
         - name: Écouteurs de la trace
           href: trace-listeners.md
-        - name: "Comment\_: utiliser des TraceSource et des filtres avec des écouteurs de la trace"
+        - name: "Procédure\_: Utiliser des TraceSource et des filtres avec des écouteurs de trace"
           href: how-to-use-tracesource-and-filters-with-trace-listeners.md
-        - name: "Comment\_: créer et initialiser les écouteurs de la trace"
+        - name: "Procédure\_: Créer et initialiser les écouteurs de trace"
           href: how-to-create-and-initialize-trace-listeners.md
-        - name: 'Comment : créer et initialiser les sources de trace'
+        - name: "Procédure\_: Créer et initialiser des sources de trace"
           href: how-to-create-and-initialize-trace-sources.md
-        - name: "Comment\_: ajouter des instructions de traçage dans le code d'une application"
+        - name: "Procédure\_: Ajouter des instructions de trace dans le code d’une application"
           href: how-to-add-trace-statements-to-application-code.md
-        - name: "Comment\_: effectuer une compilation conditionnelle avec Trace et Debug"
+        - name: "Procédure\_: Effectuer une compilation conditionnelle avec Trace et Debug"
           href: how-to-compile-conditionally-with-trace-and-debug.md
     - name: Diagnostic d'erreurs avec les Assistants de débogage managés
       href: diagnosing-errors-with-managed-debugging-assistants.md
@@ -103,7 +103,7 @@
           href: pinvokestackimbalance-mda.md
         - name: raceOnRCWCleanup
           href: raceonrcwcleanup-mda.md
-        - name: réentrance
+        - name: reentrancy
           href: reentrancy-mda.md
         - name: releaseHandleFailed
           href: releasehandlefailed-mda.md

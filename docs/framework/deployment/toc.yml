@@ -1,7 +1,7 @@
 - name: Déploiement
   href: index.md
   items:
-    - name: "Déploiement du .NET\_Framework"
+    - name: Déployer le .NET Framework
       href: deploying-the-net-framework.md
       items:
         - name: Guide de déploiement pour les développeurs
@@ -10,11 +10,11 @@
           href: guide-for-administrators.md
         - name: "Réduction des redémarrages système lors des installations de .NET Framework\_4.5"
           href: reducing-system-restarts.md
-        - name: "Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework\_4.5"
+        - name: "Procédure\_: suivre la progression du programme d’installation de .NET Framework\_4.5"
           href: how-to-get-progress-from-the-dotnet-installer.md
-        - name: "Erreurs d'initialisation du .NET\_Framework\_: gestion de l’expérience utilisateur"
+        - name: "Erreurs d’initialisation du .NET Framework\_: gestion de l’expérience utilisateur"
           href: initialization-errors-managing-the-user-experience.md
-        - name: Guide pratique pour déboguer les problèmes d’activation du CLR
+        - name: "Procédure\_: Déboguer les problèmes d’activation du CLR"
           href: how-to-debug-clr-activation-issues.md
     - name: "Déploiement d'applications .NET\_Framework"
       href: net-framework-applications.md

@@ -58,7 +58,7 @@
               href: how-to-stop-a-page-from-loading.md
             - name: Revenir en arrière dans l’historique de navigation
               href: how-to-navigate-back-through-navigation-history.md
-            - name: Retourner un résultat à partir d'une fonction de page
+            - name: Revenir en arrière à partir d’une fonction de page
               href: how-to-return-from-a-page-function.md
             - name: Obtenir la valeur de retour d’une fonction de page
               href: how-to-get-the-return-value-of-a-page-function.md
@@ -121,7 +121,7 @@
       items:
         - name: Génération d'une application WPF
           href: building-a-wpf-application-wpf.md
-        - name: Déploiement d'une application WPF
+        - name: Déploiement d’une application WPF
           href: deploying-a-wpf-application-wpf.md
         - name: Rubriques Comment
           href: build-and-deploy-how-to-topics.md

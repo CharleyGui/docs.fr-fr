@@ -1,4 +1,4 @@
-- name: Magasin de symboles de diagnostics
+- name: Magasin de symboles des diagnostics
   href: index.md
   items:
     - name: Interfaces du magasin de symboles de diagnostics

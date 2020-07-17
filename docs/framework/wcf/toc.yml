@@ -50,7 +50,7 @@
                     - name: Définition et spécification des erreurs
                       href: defining-and-specifying-faults.md
                       items:
-                        - name: "Comment\_: déclarer des erreurs dans des contrats de service"
+                        - name: "Procédure\_: Déclarer des erreurs dans les contrats de service"
                           href: how-to-declare-faults-in-service-contracts.md
                     - name: Envoi et réception des erreurs
                       href: sending-and-receiving-faults.md
@@ -59,7 +59,7 @@
                 - name: Opérations synchrones et asynchrones
                   href: synchronous-and-asynchronous-operations.md
                   items:
-                    - name: "Comment\_: implémenter une opération de service asynchrone"
+                    - name: "Procédure\_: implémenter une opération de service asynchrone"
                       href: how-to-implement-an-asynchronous-service-operation.md
                 - name: Services fiables
                   href: reliable-services.md
@@ -82,24 +82,24 @@
             - name: Liaisons
               href: bindings.md
               items:
-                - name: Vue d'ensemble des liaisons WCF
+                - name: Vue d’ensemble des liaisons WCF
                   href: bindings-overview.md
                 - name: Liaisons fournies par le système
                   href: system-provided-bindings.md
                 - name: Utilisation de liaisons pour configurer des services et des clients
                   href: using-bindings-to-configure-services-and-clients.md
                   items:
-                    - name: "Comment\_: spécifier une liaison client dans le code"
+                    - name: "Procédure\_: spécifier une liaison de client dans le code"
                       href: how-to-specify-a-client-binding-in-code.md
-                    - name: "Comment\_: spécifier une liaison de client dans la configuration"
+                    - name: "Procédure\_: spécifier une liaison de client dans la configuration"
                       href: how-to-specify-a-client-binding-in-configuration.md
-                    - name: "Comment\_: spécifier une liaison de service dans le code"
+                    - name: "Procédure\_: spécifier une liaison de service dans le code"
                       href: how-to-specify-a-service-binding-in-code.md
-                    - name: "Comment\_: spécifier une liaison de service dans la configuration"
+                    - name: "Procédure\_: spécifier une liaison de service dans la configuration"
                       href: how-to-specify-a-service-binding-in-configuration.md
                 - name: Configuration de liaisons pour les services
                   href: configuring-bindings-for-wcf-services.md
-            - name: points de terminaison
+            - name: Points de terminaison
               href: endpoints.md
               items:
                 - name: Vue d'ensemble de la création de points de terminaison
@@ -111,30 +111,30 @@
             - name: Sécurisation de services
               href: securing-services.md
               items:
-                - name: "Comment\_: sécuriser un service à l'aide d'informations d'identification Windows"
+                - name: "Procédure\_: sécuriser un service avec des informations d’identification Windows"
                   href: how-to-secure-a-service-with-windows-credentials.md
-                - name: "Comment\_: définir le mode de sécurité"
+                - name: "Procédure\_: définir le mode de sécurité"
                   href: how-to-set-the-security-mode.md
-                - name: "Comment\_: spécifier le type d'informations d'identification du client"
+                - name: "Procédure\_: spécifier le type d’informations d’identification de client"
                   href: how-to-specify-the-client-credential-type.md
-                - name: "Comment\_: restreindre l'accès à l'aide de la classe PrincipalPermissionAttribute"
+                - name: "Procédure\_: restreindre l’accès à la classe PrincipalPermissionAttribute"
                   href: how-to-restrict-access-with-the-principalpermissionattribute-class.md
-                - name: 'Comment : emprunter l''identité d''un client sur un service'
+                - name: "Procédure\_: emprunter l’identité d’un client sur un service"
                   href: how-to-impersonate-a-client-on-a-service.md
-                - name: "Comment\_: examiner le contexte de sécurité"
+                - name: "Procédure\_: examiner le contexte de sécurité"
                   href: how-to-examine-the-security-context.md
                 - name: Fonctionnement des niveaux de protection
                   href: understanding-protection-level.md
-                - name: "Comment\_: définir la propriété ProtectionLevel"
+                - name: "Procédure\_: définir la propriété ProtectionLevel"
                   href: how-to-set-the-protectionlevel-property.md
             - name: Création de services pouvant interagir avec le profil Basic Profile 1.1 de WS-I
               href: creating-ws-i-basic-profile-1-1-interoperable-services.md
         - name: Hébergement de services
           href: hosting-services.md
           items:
-            - name: "Comment\_: héberger un service WCF dans une application managée"
+            - name: "Procédure\_: héberger un service WCF dans une application managée"
               href: how-to-host-a-wcf-service-in-a-managed-application.md
-            - name: "Procédure\_: héberger un service WCF écrit avec le .NET Framework\_3.5\_dans IIS s'exécutant sous le .NET Framework\_4"
+            - name: "Procédure\_: héberger un service WCF écrit avec .NET Framework\_3.5 dans IIS exécuté sous .NET Framework\_4"
               href: host-a-wcf-service-net-framework-3-5-iis--net-framework-4.md
         - name: Génération de clients
           href: building-clients.md
@@ -153,7 +153,7 @@
             - name: Sécurisation des clients
               href: securing-clients.md
               items:
-                - name: "Comment\_: spécifier des valeurs d'informations d'identification du client"
+                - name: "Procédure\_: spécifier des informations d’identification de client"
                   href: how-to-specify-client-credential-values.md
         - name: Introduction à l'extensibilité
           href: introduction-to-extensibility.md
@@ -170,9 +170,9 @@
     - name: Indications et meilleures pratiques
       href: guidelines-and-best-practices.md
       items:
-        - name: "Meilleures pratiques\_: contrôle de version des contrats de données"
+        - name: "Bonnes pratiques\_: Contrôle de version des contrats de données"
           href: best-practices-data-contract-versioning.md
-        - name: "Meilleures pratiques\_: Intermédiaires"
+        - name: "Bonnes pratiques\_: Intermédiaires"
           href: best-practices-intermediaries.md
         - name: Contrôle des versions du service
           href: service-versioning.md
