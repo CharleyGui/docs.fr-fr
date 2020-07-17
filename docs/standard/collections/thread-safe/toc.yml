@@ -5,15 +5,15 @@
       href: blockingcollection-overview.md
     - name: Quand utiliser une collection thread-safe
       href: when-to-use-a-thread-safe-collection.md
-    - name: "Guide pratique\_: ajouter et prendre des éléments individuellement dans un BlockingCollection"
+    - name: "Procédure\_: ajouter et prendre des éléments individuellement dans un BlockingCollection"
       href: how-to-add-and-take-items.md
-    - name: "Guide pratique\_: utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection"
+    - name: "Procédure\_: utiliser la boucle ForEach pour supprimer les éléments d’un BlockingCollection"
       href: how-to-use-foreach-to-remove.md
-    - name: 'Comment : ajouter et supprimer des éléments d''un ConcurrentDictionary'
+    - name: "Procédure\_: ajouter et supprimer des éléments d’un ConcurrentDictionary"
       href: how-to-add-and-remove-items.md
-    - name: "Guide pratique\_: ajouter des fonctionnalités de délimitation et de blocage à une collection"
+    - name: "Procédure\_: ajouter des fonctionnalités de délimitation et de blocage à une collection"
       href: how-to-add-bounding-and-blocking.md
-    - name: "Guide pratique\_: utiliser des tableaux de collections de blocage dans un pipeline"
+    - name: "Procédure\_: utiliser des tableaux de collections de blocage dans un pipeline"
       href: how-to-use-arrays-of-blockingcollections.md
-    - name: 'Comment : créer un pool d''objets à l''aide d''un ConcurrentBag'
+    - name: "Procédure\_: créer un pool d’objets à l’aide d’un ConcurrentBag"
       href: how-to-create-an-object-pool.md

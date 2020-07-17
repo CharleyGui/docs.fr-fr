@@ -3,7 +3,7 @@
   items:
     - name: Vue d'ensemble
       href: wcf-data-services-overview.md
-    - name: Commencer
+    - name: Prise en main
       href: getting-started-with-wcf-data-services.md
       items:
         - name: Exposition de vos données comme service
@@ -31,11 +31,11 @@
         - name: Configuration du service de données
           href: configuring-the-data-service-wcf-data-services.md
           items:
-            - name: "Procédure\_: développer un WCF Data Service qui fonctionne sur IIS"
+            - name: "Procédure\_: Développer un WCF Data Service qui fonctionne sur IIS"
               href: how-to-develop-a-wcf-data-service-running-on-iis.md
-            - name: "Procédure\_: activer l'accès au service de données"
+            - name: "Procédure\_: Activer l’accès au service de données"
               href: how-to-enable-access-to-the-data-service-wcf-data-services.md
-            - name: 'Comment : activer la pagination des résultats de services de données'
+            - name: "Procédure\_: Activer la pagination des résultats de services de données"
               href: how-to-enable-paging-of-data-service-results-wcf-data-services.md
         - name: Fournisseurs de services de données
           href: data-services-providers-wcf-data-services.md
@@ -43,14 +43,14 @@
             - name: Fournisseur Entity Framework
               href: entity-framework-provider-wcf-data-services.md
               items:
-                - name: "Comment\_: créer un service de données à l’aide d’une source de données Entity Framework ADO.NET"
+                - name: "Procédure\_: Créer un service de données à l’aide d’une source de données Entity Framework ADO.NET"
                   href: create-a-data-service-using-an-adonet-ef-data-wcf.md
             - name: Fournisseur de réflexion
               href: reflection-provider-wcf-data-services.md
               items:
-                - name: "Comment\_: créer un service de données à l'aide du fournisseur de réflexion"
+                - name: "Procédure\_: Créer un service de données à l’aide du fournisseur de réflexion"
                   href: create-a-data-service-using-rp-wcf-data-services.md
-                - name: "Comment\_: créer un service de données à l'aide d'un LINQ vers la source de données SQL"
+                - name: "Procédure\_: Créer un service de données à l’aide d’une source de données LINQ to SQL"
                   href: create-a-data-service-using-linq-to-sql-wcf.md
             - name: Fournisseurs de services de données personnalisés
               href: custom-data-service-providers-wcf-data-services.md
@@ -59,19 +59,19 @@
         - name: Opérations de service
           href: service-operations-wcf-data-services.md
           items:
-            - name: "Comment\_: définir une opération de service"
+            - name: "Procédure\_: Définir une opération de service"
               href: how-to-define-a-service-operation-wcf-data-services.md
         - name: Personnalisation des flux
           href: feed-customization-wcf-data-services.md
           items:
-            - name: "Comment\_: personnaliser les flux avec le fournisseur Entity Framework"
+            - name: "Procédure\_: Personnaliser les flux avec le fournisseur Entity Framework"
               href: how-to-customize-feeds-with-ef-provider-wcf-data-services.md
-            - name: "Comment\_: personnaliser les flux avec le fournisseur de réflexion"
+            - name: "Procédure\_: Personnaliser les flux avec le fournisseur de réflexion"
               href: how-to-customize-feeds-with-the-reflection-provider-wcf-data-services.md
         - name: Intercepteurs
           href: interceptors-wcf-data-services.md
           items:
-            - name: "Comment\_: intercepter les messages des services de données"
+            - name: "Procédure\_: Intercepter les messages des services de données"
               href: how-to-intercept-data-service-messages-wcf-data-services.md
         - name: Développer et déployer WCF Data Services
           href: developing-and-deploying-wcf-data-services.md
@@ -79,7 +79,7 @@
           href: securing-wcf-data-services.md
         - name: Hébergement du service de données
           href: hosting-the-data-service-wcf-data-services.md
-        - name: Contrôle de version d'un service de données
+        - name: Gestion des versions d’un service de données
           href: data-service-versioning-wcf-data-services.md
         - name: Détails relatifs à l'implémentation du protocole WCF Data Services
           href: wcf-data-services-protocol-implementation-details.md
@@ -93,9 +93,9 @@
           items:
             - name: Utilitaire client des services de données WCF (DataSvcUtil.exe)
               href: wcf-data-service-client-utility-datasvcutil-exe.md
-            - name: "Comment\_: ajouter une référence de services de données"
+            - name: "Procédure\_: Ajouter une référence de service de données"
               href: how-to-add-a-data-service-reference-wcf-data-services.md
-            - name: "Comment\_: générer manuellement les classes de services de données client"
+            - name: "Procédure\_: Générer manuellement les classes du service de données client"
               href: how-to-manually-generate-client-data-service-classes-wcf-data-services.md
         - name: Interrogation du service de données
           href: querying-the-data-service-wcf-data-services.md
@@ -103,58 +103,58 @@
             - name: Projections de requêtes
               href: query-projections-wcf-data-services.md
               items:
-                - name: "Comment\_: résultats de requête par projet"
+                - name: "Procédure\_: Projeter des résultats de requête"
                   href: how-to-project-query-results-wcf-data-services.md
             - name: Considérations sur LINQ
               href: linq-considerations-wcf-data-services.md
             - name: Matérialisation d'objet
               href: object-materialization-wcf-data-services.md
-            - name: "Comment\_: exécuter les requêtes de services de données"
+            - name: "Procédure\_: Exécuter les requêtes de services de données"
               href: how-to-execute-data-service-queries-wcf-data-services.md
-            - name: 'Comment : ajouter des options de requête à une requête de service de données'
+            - name: "Procédure\_: Ajouter des options de requête à une requête de service de données"
               href: how-to-add-query-options-to-a-data-service-query-wcf-data-services.md
-            - name: "Comment\_: déterminer le nombre d'entités retournées par la requête"
+            - name: "Procédure\_: Déterminer le nombre d’entités retournées par une requête"
               href: number-of-entities-returned-by-a-query-wcf.md
-            - name: "Procédure\_: spécifier les informations d'identification du client pour une requête de service de données"
+            - name: "Procédure\_: Spécifier les informations d’identification du client pour une requête de service de données"
               href: specify-client-creds-for-a-data-service-request-wcf.md
-            - name: "Procédure\_: définir des en-têtes dans la demande cliente"
+            - name: "Procédure\_: Définir des en-têtes dans la requête cliente"
               href: how-to-set-headers-in-the-client-request-wcf-data-services.md
         - name: Chargement de contenu différé
           href: loading-deferred-content-wcf-data-services.md
           items:
-            - name: 'Comment : charger les entités connexes'
+            - name: "Procédure\_: Charger des entités associées"
               href: how-to-load-related-entities-wcf-data-services.md
-            - name: "Comment\_: charger les résultats paginés"
+            - name: "Procédure\_: Charger des résultats paginés"
               href: how-to-load-paged-results-wcf-data-services.md
         - name: Mise à jour du service de données
           href: updating-the-data-service-wcf-data-services.md
           items:
-            - name: "Comment\_: ajouter, modifier et supprimer des entités"
+            - name: "Procédure\_: Ajouter, modifier et supprimer des entités"
               href: how-to-add-modify-and-delete-entities-wcf-data-services.md
-            - name: "Comment\_: définir les relations d'entité"
+            - name: "Procédure\_: Définir des relations d’entité"
               href: how-to-define-entity-relationships-wcf-data-services.md
-            - name: 'Comment : attacher une entité existante au DataServiceContext'
+            - name: "Procédure\_: Attacher une entité existante au DataServiceContext"
               href: attach-an-existing-entity-to-dc-wcf-data.md
         - name: Opérations asynchrones
           href: asynchronous-operations-wcf-data-services.md
           items:
-            - name: "Comment\_: exécuter les requêtes de services de données asynchrones"
+            - name: "Procédure\_: Exécuter des requêtes de service de données asynchrones"
               href: how-to-execute-asynchronous-data-service-queries-wcf-data-services.md
-            - name: "Comment\_: créer une application Framework de présentation Windows asynchrone"
+            - name: "Procédure\_: Créer une application Windows Presentation Framework asynchrone"
               href: create-an-asynchronous-wpf-application-wcf-data-services.md
         - name: Opérations de traitement par lots
           href: batching-operations-wcf-data-services.md
           items:
-            - name: "Comment\_: exécuter les requêtes dans un lot"
+            - name: "Procédure\_: Exécuter des requêtes dans un lot"
               href: how-to-execute-queries-in-a-batch-wcf-data-services.md
         - name: Liaison de données à des contrôles
           href: binding-data-to-controls-wcf-data-services.md
           items:
-            - name: "Comment\_: lier les données aux éléments Windows Presentation Foundation"
+            - name: "Procédure\_: Lier des données aux éléments Windows Presentation Foundation"
               href: bind-data-to-wpf-elements-wcf-data-services.md
-            - name: "Procédure\_: lier des données à l'aide d'une source de données projet"
+            - name: "Procédure\_: Lier des données à l’aide d’une source de données projet"
               href: how-to-bind-data-using-a-project-data-source-wcf-data-services.md
-            - name: "Comment\_: personnaliser les comportements de liaison de données"
+            - name: "Procédure\_: Personnaliser les comportements de liaison de données"
               href: how-to-customize-data-binding-behaviors-wcf-data-services.md
         - name: Appel des opérations de service
           href: calling-service-operations-wcf-data-services.md

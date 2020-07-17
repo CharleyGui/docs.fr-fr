@@ -168,16 +168,16 @@
     - name: LINQ to DataSet
       href: linq-to-dataset.md
       items:
-        - name: Commencer
+        - name: Prise en main
           href: getting-started-linq-to-dataset.md
           items:
             - name: Vue d'ensemble de LINQ to DataSet
               href: linq-to-dataset-overview.md
             - name: Chargement de données dans un DataSet
               href: loading-data-into-a-dataset.md
-            - name: Téléchargement d'exemples de base de données
+            - name: Téléchargement d’exemples de base de données
               href: downloading-sample-databases-linq-to-dataset.md
-            - name: "Comment\_: créer un projet LINQ to DataSet dans Visual Studio"
+            - name: "Procédure\_: Créer un projet LINQ to DataSet dans Visual Studio"
               href: how-to-create-a-linq-to-dataset-project-in-vs.md
         - name: Guide de programmation
           href: programming-guide-linq-to-dataset.md
@@ -187,9 +187,9 @@
             - name: Interrogation de DataSets
               href: querying-datasets-linq-to-dataset.md
               items:
-                - name: Requêtes d'analyse unique
+                - name: Requêtes de table unique
                   href: single-table-queries-linq-to-dataset.md
-                - name: Requêtes d'analyse croisée
+                - name: Requêtes de table croisée
                   href: cross-table-queries-linq-to-dataset.md
                 - name: Interrogation de DataSets typés
                   href: querying-typed-datasets.md
@@ -197,14 +197,14 @@
               href: comparing-datarows-linq-to-dataset.md
             - name: Création d’un DataTable à partir d’une requête
               href: creating-a-datatable-from-a-query-linq-to-dataset.md
-            - name: "Comment\_: implémenter CopyToDataTable<T> où le type générique n'est pas un DataRow"
+            - name: "Procédure\_: Implémenter CopyToDataTable<T> quand le type générique\_T n’est pas un DataRow"
               href: implement-copytodatatable-where-type-not-a-datarow.md
             - name: Méthodes génériques Field et SetField
               href: generic-field-and-setfield-methods-linq-to-dataset.md
             - name: Liaison de données et LINQ to DataSet
               href: data-binding-and-linq-to-dataset.md
               items:
-                - name: Création d'un objet DataView
+                - name: Création d’un objet DataView
                   href: creating-a-dataview-object-linq-to-dataset.md
                 - name: Filtrage avec DataView
                   href: filtering-with-dataview-linq-to-dataset.md
@@ -214,7 +214,7 @@
                   href: querying-the-datarowview-collection-in-a-dataview.md
                 - name: Performances des DataViews
                   href: dataview-performance.md
-                - name: "Comment\_: lier un objet DataView à un contrôle DataGridView Windows Forms"
+                - name: "Procédure\_: Lier un objet DataView à un contrôle DataGridView Windows Forms"
                   href: how-to-bind-a-dataview-object-to-a-winforms-datagridview-control.md
             - name: Débogage des requêtes LINQ to DataSet
               href: debugging-linq-to-dataset-queries.md
@@ -223,7 +223,7 @@
             - name: Exemples de LINQ to DataSet
               href: linq-to-dataset-examples.md
               items:
-                - name: Exemples d'expression de requête
+                - name: Exemples d’expressions de requête
                   href: query-expression-examples-linq-to-dataset.md
                   items:
                     - name: Projection
@@ -266,11 +266,11 @@
   items:
     - name: Concepts clés d'Entity Data Model
       href: entity-data-model-key-concepts.md
-    - name: "Entity Data Model\_: espaces de noms"
+    - name: "Entity Data Model\_: Espaces de noms"
       href: entity-data-model-namespaces.md
     - name: "Entity Data Model\_: types de données primitifs"
       href: entity-data-model-primitive-data-types.md
-    - name: "Entity Data Model\_: héritage"
+    - name: "Entity Data Model\_: Héritage"
       href: entity-data-model-inheritance.md
     - name: terminaison d'association
       href: association-end.md
@@ -302,7 +302,7 @@
       href: model-defined-function.md
     - name: propriété de navigation
       href: navigation-property.md
-    - name: Propriété
+    - name: propriété
       href: property.md
     - name: contrainte d'intégrité référentielle
       href: referential-integrity-constraint.md

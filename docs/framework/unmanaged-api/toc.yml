@@ -1,7 +1,7 @@
 - name: Informations de référence sur les API non managées
   href: index.md
   items:
-    - name: Types de données courants
+    - name: Types de données communs
       href: common-data-types-unmanaged-api-reference.md
     - name: API ALink
       href: alink/
@@ -25,7 +25,7 @@
       href: strong-naming/
     - name: WMI et compteurs de performance
       href: wmi/
-    - name: Fonctions d’assistance Tlbexp
+    - name: Fonctions d'assistance Tlbexp
       href: tlbexp/
     - name: 'GUID_ManagedName, attribut'
       href: guid-managedname-attribute.md

@@ -20,13 +20,13 @@
       href: ../../../../_csharplang/spec/namespaces.md
     - name: Classes
       href: ../../../../_csharplang/spec/classes.md
-    - name: Structures
+    - name: Structs
       href: ../../../../_csharplang/spec/structs.md
     - name: Tableaux
       href: ../../../../_csharplang/spec/arrays.md
     - name: Interfaces
       href: ../../../../_csharplang/spec/interfaces.md
-    - name: Énumérations
+    - name: Enums
       href: ../../../../_csharplang/spec/enums.md
     - name: Délégués
       href: ../../../../_csharplang/spec/delegates.md

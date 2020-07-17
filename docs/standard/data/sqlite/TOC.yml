@@ -1,4 +1,4 @@
-- name: Vue d'ensemble
+- name: Vue d’ensemble
   href: index.md
 - name: Chaînes de connexion
   href: connection-strings.md
@@ -54,6 +54,6 @@
     - name: Xamarin
       href: xamarin.md
 - name: "Informations de référence de l’API\_>>"
-  href: /dotnet/api/?view=msdata-sqlite-3.0
+  href: /dotnet/api/?view=msdata-sqlite-3.1.0
 - name: "Syntaxe SQL\_>>"
   href: 'https://www.sqlite.org/lang.html'
