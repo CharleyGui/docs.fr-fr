@@ -3,12 +3,12 @@ title: Aide sur la sécurité des jeux de données et des DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: f78b52ede4ec76599d761e5188f39c3e9dae2a4f
-ms.sourcegitcommit: 98548968e89739a37625e72ddbd535fe1e11121e
+ms.openlocfilehash: 2fbac625ae0049fc4c363977dc1d3fbcfb376025
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405290"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416198"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Aide sur la sécurité des jeux de données et des DataTable
 
@@ -193,7 +193,7 @@ Une fois le mode d’audit activé, vous pouvez utiliser _App.config_ pour conne
 </configuration>
 ```
 
-Pour plus d’informations sur `TraceSource` et `TraceListener` , consultez le document [Comment : utiliser des TraceSource et des filtres avec des écouteurs de suivi](/dotnet/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners).
+Pour plus d’informations sur `TraceSource` et `TraceListener` , consultez le document [Comment : utiliser des TraceSource et des filtres avec des écouteurs de suivi](../../../debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md).
 
 > [!NOTE]
 > L’exécution d’une application en mode audit n’est pas disponible dans .NET Core ni dans .NET 5,0 et versions ultérieures.
@@ -236,7 +236,7 @@ Dans ASP.NET, l' `<AppContextSwitchOverrides>` élément n’est pas disponible.
 </configuration>
 ```
 
-Pour plus d’informations, consultez l' [\<AppContextSwitchOverrides>](/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) élément.
+Pour plus d’informations, consultez l' [\<AppContextSwitchOverrides>](../../../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément.
 
 Dans .NET Core, .NET 5 et ASP.NET Core, ce paramètre est contrôlé par _runtimeconfig.js_, comme illustré dans le code JSON suivant :
 
@@ -308,7 +308,7 @@ DataSet customers = new DataSet();
 adapter.Fill(customers, "Customers");
 ```
 
-(L’exemple de code ci-dessus fait partie d’un exemple plus large trouvé dans [remplissage d’un DataSet à partir d’un DataAdapter](/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter).)
+(L’exemple de code ci-dessus fait partie d’un exemple plus large trouvé dans [remplissage d’un DataSet à partir d’un DataAdapter](../populating-a-dataset-from-a-dataadapter.md).)
 
 > La plupart des applications peuvent simplifier et supposer que leur couche de base de données est approuvée. Toutefois, si vous êtes en l’habitude de la [modélisation des menaces](https://www.microsoft.com/securityengineering/sdl/threatmodeling) de vos applications, votre modèle de menace peut considérer qu’il y a une limite d’approbation entre l’application (client) et la couche de base de données (serveur). L’utilisation de l' [authentification mutuelle](/sql/relational-databases/native-client/features/service-principal-name-spn-support-in-client-connections) ou de [l’authentification AAD](/azure/azure-sql/database/authentication-aad-overview) entre le client et le serveur est un moyen d’aider à résoudre les risques associés à ce. Le reste de cette section décrit le résultat possible d’un client qui se connecte à un serveur non fiable.
 
@@ -487,4 +487,4 @@ Envisagez de remplacer le modèle objet pour utiliser [Entity Framework](/ef). E
 * Apporte [un vaste écosystème](/ef/core/providers/) de fournisseurs de bases de données pour faciliter le projet de requêtes de base de données via vos modèles objet Entity Framework.
 * Offre des protections intégrées lors de la désérialisation de données provenant de sources non approuvées.
 
-Pour les applications qui utilisent des `.aspx` points de terminaison SOAP, pensez à modifier ces points de terminaison pour utiliser [WCF](/dotnet/framework/wcf/). WCF est un substitut plus complet pour les `.asmx` services Web. Les points de terminaison WCF [peuvent être exposés via SOAP](/dotnet/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients) à des fins de compatibilité avec les appelants existants.
+Pour les applications qui utilisent des `.aspx` points de terminaison SOAP, pensez à modifier ces points de terminaison pour utiliser [WCF](/dotnet/framework/wcf/). WCF est un substitut plus complet pour les `.asmx` services Web. Les points de terminaison WCF [peuvent être exposés via SOAP](../../../wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) à des fins de compatibilité avec les appelants existants.

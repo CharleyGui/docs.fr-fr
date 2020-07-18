@@ -5,12 +5,12 @@ author: adegeo
 ms.author: adegeo
 ms.date: 12/03/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: 5cfd9925f4ee93ef4ebe15ebf16febdfb98aaa9a
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: ddbee0764897b511cac0c4142354ba995d94a2b6
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325017"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416060"
 ---
 # <a name="get-started-with-net-core"></a>Bien démarrer avec .NET Core
 
@@ -29,15 +29,15 @@ dotnet new console --output sample1
 dotnet run --project sample1
 ```
 
-Vous devez normalement voir la sortie suivante.
+Vous devez normalement voir la sortie suivante :
 
 ```console
 Hello World!
 ```
 
-Félicitations ! Vous avez créé une application .NET Core simple. Vous pouvez aussi utiliser [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (Windows uniquement) ou [Visual Studio pour Mac](./tutorials/using-on-mac-vs.md) (macOS uniquement) pour créer une application .NET Core.
+Félicitations ! Vous avez créé une application .NET Core simple. Vous pouvez aussi utiliser [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (Windows uniquement) ou [Visual Studio pour Mac](./tutorials/using-on-mac-vs.md) (macOS uniquement) pour créer une application .NET Core.
 
-## <a name="tutorials"></a>Tutoriels
+## <a name="tutorials"></a>Didacticiels
 
 Commencez à développer des applications .NET Core en suivant ces didacticiels pas à pas :
 
@@ -75,7 +75,7 @@ Commencez à développer des applications .NET Core en suivant ces didacticiels 
 - [Bien démarrer avec .NET Core sur macOS en utilisant Visual Studio Code](./tutorials/using-on-macos.md)
 - [Prise en main de .NET Core à l’aide de la ligne de commande](./tutorials/cli-create-console-app.md)
 - [Bien démarrer avec .NET Core sur macOS à l’aide de Visual Studio pour Mac](./tutorials/using-on-mac-vs.md)
-- [Créez une solution .NET Core complète sur macOS à l’aide de Visual Studio pour Mac](./tutorials/using-on-mac-vs-full-solution.md)
+- [Créer une bibliothèque de .NET Standard sur macOS à l’aide de Visual Studio pour Mac](tutorials/library-with-visual-studio-mac.md)
 
 |   |   |
 |---|---|

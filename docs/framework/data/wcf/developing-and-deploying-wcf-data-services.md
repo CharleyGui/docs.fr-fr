@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: 1dc9f3d261738a6dff0339c094c7aba5e32680ee
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 7519dce8ed17bc623173f30222296ffaa42b4341
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200052"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416070"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Développez et déployez des WCF Data Services
 
@@ -63,14 +63,14 @@ Lorsque vous développez un service de données WCF comme une application ASP.NE
 
     - Ce serveur ne peut pas gérer les flux HTTP en bloc, qui sont envoyés par défaut par le client WCF Data Services lors de l’accès à des données binaires volumineuses à partir du service de données. Pour plus d’informations, consultez la page [fournisseur de streaming](streaming-provider-wcf-data-services.md).
 
-    - Ce serveur a des problèmes de traitement du caractère`.`point () dans une URL, même si ce caractère est pris en charge par WCF Data Services dans les valeurs de clés.
+    - Ce serveur a des problèmes de traitement du caractère point ( `.` ) dans une URL, même si ce caractère est pris en charge par WCF Data Services dans les valeurs de clés.
 
     > [!TIP]
     > Même si vous pouvez utiliser la Serveur Visual Studio Development pour tester vos services de données pendant le développement, vous devez les tester à nouveau après le déploiement sur un serveur Web qui exécute IIS.
 
 3. **Environnement de développement Azure**
 
-     Azure Tools pour Visual Studio comprend un ensemble intégré d’outils pour le développement de services Azure dans Visual Studio. Grâce à ces outils, vous pouvez développer un service de données qui peut être déployé sur Azure, et vous pouvez tester le service de données sur l’ordinateur local avant le déploiement. Utilisez ces outils lorsque vous utilisez Visual Studio pour développer un service de données qui s’exécute sur la plateforme Azure. Pour plus d’informations sur l’installation des outils, consultez [Azure Tools pour Visual Studio 2015](../../../azure/sdk/vs2015-install.md). Pour plus d’informations sur le développement d’un service de données qui s’exécute sur Azure, consultez la publication [déploiement d’un service OData dans Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
+     Azure Tools pour Visual Studio comprend un ensemble intégré d’outils pour le développement de services Azure dans Visual Studio. Grâce à ces outils, vous pouvez développer un service de données qui peut être déployé sur Azure, et vous pouvez tester le service de données sur l’ordinateur local avant le déploiement. Utilisez ces outils lorsque vous utilisez Visual Studio pour développer un service de données qui s’exécute sur la plateforme Azure. Pour plus d’informations sur l’installation des outils, consultez [Azure Tools pour Visual Studio 2015](../../../azure/vs2015-install.md). Pour plus d’informations sur le développement d’un service de données qui s’exécute sur Azure, consultez la publication [déploiement d’un service OData dans Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
 
 ### <a name="development-tips"></a>Conseils de développement
 
@@ -113,9 +113,9 @@ WCF Data Service permet de choisir le processus qui héberge le service de donn�
     > [!TIP]
     > Avant de tenter de déployer le service de données sur IIS, testez le déploiement sur un serveur Web qui exécute IIS. Pour plus d'informations, consultez [How to: Develop a WCF Data Service Running on IIS](how-to-develop-a-wcf-data-service-running-on-iis.md).
 
-- **Azure**
+- **Microsoft Azure**
 
-     Vous pouvez déployer un service de données sur Azure à l’aide d' [Azure Tools pour Visual Studio](../../../azure/sdk/vs2015-install.md). Pour plus d’informations sur le déploiement d’un service de données sur Azure, consultez [déploiement d’un service OData dans Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
+     Vous pouvez déployer un service de données sur Azure à l’aide d' [Azure Tools pour Visual Studio](../../../azure/vs2015-install.md). Pour plus d’informations sur le déploiement d’un service de données sur Azure, consultez [déploiement d’un service OData dans Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
 
 ### <a name="deployment-considerations"></a>Points à prendre en considération pour le déploiement
 
@@ -128,5 +128,5 @@ Tenez compte des éléments suivants lors du déploiement d’un service de donn
 ## <a name="see-also"></a>Voir aussi
 
 - [Hébergement du service de données](hosting-the-data-service-wcf-data-services.md)
-- [Securing WCF Data Services](securing-wcf-data-services.md)
+- [Sécurisation de WCF Data Services](securing-wcf-data-services.md)
 - [Définition des services de données WCF](defining-wcf-data-services.md)

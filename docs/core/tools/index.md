@@ -1,22 +1,22 @@
 ---
 title: CLI .NET Core
 titleSuffix: ''
-description: Un aperçu de l’ERC de base de .NET et de ses caractéristiques.
+description: Vue d’ensemble de la CLI .NET Core et de ses fonctionnalités.
 ms.date: 02/13/2020
-ms.openlocfilehash: ac5988bacbef41326f2501a2cff6c3f5aa0be798
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: f92151c85b4816fef1859e84ad94945445db1854
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110839"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415968"
 ---
 # <a name="net-core-cli-overview"></a>Vue d’ensemble de CLI .NET Core
 
-**Cet article s’applique à:** ✔️ .NET Core 2.1 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-L’interface de ligne de commande .NET Core (CLI) est un toolchain multiplateforme pour développer, construire, exécuter et publier des applications .NET Core.
+L’interface de ligne de commande (CLI) .NET Core est un chaîne d’outils multiplateforme pour le développement, la génération, l’exécution et la publication d’applications .NET Core.
 
-Le CLI de base .NET est inclus avec le [.NET Core SDK](../sdk.md). Pour apprendre à installer le .NET Core SDK, voir [Installer le .NET Core SDK](../install/sdk.md).
+Le CLI .NET Core est inclus dans le [Kit SDK .net Core](../sdk.md). Pour savoir comment installer le kit SDK .NET Core, consultez [installer .net Core](../install/windows.md).
 
 ## <a name="cli-commands"></a>Commandes CLI
 
@@ -54,16 +54,16 @@ Les commandes suivantes sont installées par défaut :
 - [`msbuild`](dotnet-msbuild.md)
 - [`dotnet install script`](dotnet-install-script.md)
 
-### <a name="tool-management-commands"></a>Commandes de gestion d’outils
+### <a name="tool-management-commands"></a>Commandes de gestion des outils
 
 - [`tool install`](dotnet-tool-install.md)
 - [`tool list`](dotnet-tool-list.md)
 - [`tool update`](dotnet-tool-update.md)
-- [`tool restore`](global-tools.md#install-a-local-tool)Disponible depuis .NET Core SDK 3.0.
-- [`tool run`](global-tools.md#invoke-a-local-tool)Disponible depuis .NET Core SDK 3.0.
+- [`tool restore`](global-tools.md#install-a-local-tool)Disponible depuis kit SDK .NET Core 3,0.
+- [`tool run`](global-tools.md#invoke-a-local-tool)Disponible depuis kit SDK .NET Core 3,0.
 - [`tool uninstall`](dotnet-tool-uninstall.md)
 
-Les outils sont des applications de console qui sont installées à partir de paquets NuGet et sont invoquées à partir de l’invite de commande. Vous pouvez écrire des outils vous-même ou installer des outils écrits par des tiers. Les outils sont également connus sous le nom d’outils globaux, d’outils de chemin à outils et d’outils locaux. Pour plus d’informations, voir [.NET Core outils aperçu](global-tools.md).
+Les outils sont des applications console qui sont installées à partir de packages NuGet et sont appelées à partir de l’invite de commandes. Vous pouvez écrire vous-même des outils ou installer des outils écrits par des tiers. Les outils sont également appelés outils globaux, outils de chemin d’accès d’outil et outils locaux. Pour plus d’informations, consultez [vue d’ensemble des outils .net Core](global-tools.md).
 
 ## <a name="command-structure"></a>Structure de commande
 
@@ -87,7 +87,7 @@ Lorsque vous fournissez une commande au pilote, `dotnet.exe` démarre le process
 dotnet build
 ```
 
-D’abord, le pilote détermine la version du kit SDK à utiliser. S’il n’y a pas de fichier [global.json,](global-json.md) la dernière version du SDK disponible est utilisée. Il s’agit peut-être d’une préversion ou d’une version stable, selon la plus récente qui se trouve sur l’ordinateur.  Une fois que la version du SDK est déterminée, elle exécute la commande.
+D’abord, le pilote détermine la version du kit SDK à utiliser. Si aucunglobal.jsn’est présent [dans](global-json.md) le fichier, la version la plus récente du kit de développement logiciel (SDK) disponible est utilisée. Il s’agit peut-être d’une préversion ou d’une version stable, selon la plus récente qui se trouve sur l’ordinateur.  Une fois que la version du SDK est déterminée, elle exécute la commande.
 
 ### <a name="command"></a>Commande
 
@@ -95,13 +95,13 @@ La commande exécute une action. Par exemple, `dotnet build` génère le code. `
 
 ### <a name="arguments"></a>Arguments
 
-Les arguments que vous passez sur la ligne de commande sont les arguments de la commande appelée. Par exemple, lorsque `dotnet publish my_app.csproj`vous `my_app.csproj` exécutez, l’argument indique `publish` le projet à publier et est transmis à la commande.
+Les arguments que vous passez sur la ligne de commande sont les arguments de la commande appelée. Par exemple, lorsque vous exécutez `dotnet publish my_app.csproj` , l' `my_app.csproj` argument indique le projet à publier et est passé à la `publish` commande.
 
 ### <a name="options"></a>Options
 
-Les options que vous passez sur la ligne de commande sont les options de la commande appelée. Par exemple, lorsque `dotnet publish --output /build_output`vous `--output` exécutez, l’option `publish` et sa valeur sont transmises à la commande.
+Les options que vous passez sur la ligne de commande sont les options de la commande appelée. Par exemple, lorsque vous exécutez `dotnet publish --output /build_output` , l' `--output` option et sa valeur sont passées à la `publish` commande.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [dotnet/sdk GitHub référentiel](https://github.com/dotnet/sdk/)
-- [Guide d’installation de .NET Core](../install/sdk.md)
+- [référentiel GitHub dotnet/SDK](https://github.com/dotnet/sdk/)
+- [Guide d’installation de .NET Core](../install/windows.md)

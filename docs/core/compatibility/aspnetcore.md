@@ -2,15 +2,15 @@
 title: Modifications avec rupture ASP.NET Core
 titleSuffix: ''
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 07/14/2020
+ms.date: 07/15/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: b73492e0c2f60c2b214984d3987de1e9e6530847
-ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
+ms.openlocfilehash: cea6771afdc05edc525e7d35f530f42e7b3bc1fa
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86402002"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441945"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -26,8 +26,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 - [Autorisation : surcharge AddAuthorization déplacée vers un assembly différent](#authorization-addauthorization-overload-moved-to-different-assembly)
 - [Autorisation : IAllowAnonymous supprimé de AuthorizationFilterContext. filters](#authorization-iallowanonymous-removed-from-authorizationfiltercontextfilters)
 - [Autorisation : les implémentations de IAuthorizationPolicyProvider nécessitent une nouvelle méthode](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
+- [Autorisation : la ressource dans le routage du point de terminaison est HttpContext](#authorization-resource-in-endpoint-routing-is-httpcontext)
 - [Azure : packages d’intégration Azure préfixés par Microsoft supprimés](#azure-microsoft-prefixed-azure-integration-packages-removed)
 - [Éblouissante : espace blanc non significatif tronqué des composants au moment de la compilation](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
+- [Éblouissante : version cible du .NET Framework des packages NuGet modifiée](#blazor-target-framework-of-nuget-packages-changed)
 - [Caching : propriété CompactOnMemoryPressure supprimée](#caching-compactonmemorypressure-property-removed)
 - [Mise en cache : Microsoft. extensions. Caching. SqlServer utilise le nouveau package SqlClient](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
 - [Mise en cache : les types « pubternal » ResponseCaching sont devenus internes](#caching-responsecaching-pubternal-types-changed-to-internal)
@@ -91,11 +93,19 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 ## <a name="aspnet-core-50"></a>ASP.NET Core 5,0
 
+[!INCLUDE[Authorization: Resource in endpoint routing is HttpContext](~/includes/core-changes/aspnetcore/5.0/authorization-resource-in-endpoint-routing.md)]
+
+***
+
 [!INCLUDE[Azure: Microsoft-prefixed Azure integration packages removed](~/includes/core-changes/aspnetcore/5.0/azure-integration-packages-removed.md)]
 
 ***
 
 [!INCLUDE[Blazor: Insignificant whitespace trimmed from components at compile time](~/includes/core-changes/aspnetcore/5.0/blazor-components-trim-insignificant-whitespace.md)]
+
+***
+
+[!INCLUDE[Blazor: Target framework of NuGet packages changed](~/includes/core-changes/aspnetcore/5.0/blazor-packages-target-framework-changed.md)]
 
 ***
 

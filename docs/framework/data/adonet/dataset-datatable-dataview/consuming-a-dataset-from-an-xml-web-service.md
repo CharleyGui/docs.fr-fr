@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: 2c8924ee3374489dded7e819ecde8e4d9da750bb
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: e6dc32274cc3b0d7ec9d66a837a422c87fb2468b
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374384"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416212"
 ---
 # <a name="consume-a-dataset-from-an-xml-web-service"></a>Consommer un DataSet à partir d’un service Web XML
 
@@ -19,7 +19,7 @@ L'objet <xref:System.Data.DataSet> a été conçu avec une architecture déconne
  L’exemple suivant montre comment créer un service Web XML et un client qui utilisent le **DataSet** pour transporter des données relationnelles (y compris des données modifiées) et réactiver les mises à jour dans la source de données d’origine.  
   
 > [!NOTE]
-> La transmission `DataSet` ou `DataTable` les instances dans le cadre des appels de service Web XML ne sont pas sécurisées si l’entrée n’est pas approuvée. Pour plus d’informations, consultez [Guide de sécurité des jeux de données et des DataTable](/dotnet/framework/data/adonet/dataset-datatable-dataview/security-guidance).
+> La transmission `DataSet` ou `DataTable` les instances dans le cadre des appels de service Web XML ne sont pas sécurisées si l’entrée n’est pas approuvée. Pour plus d’informations, consultez [Guide de sécurité des jeux de données et des DataTable](security-guidance.md).
 > Nous vous recommandons également de toujours prendre en compte les implications en matière de sécurité lors de la création d’un service Web XML. Pour plus d’informations sur la sécurisation d’un service Web XML, consultez [sécurisation des services Web XML créés à l’aide de ASP.net](/previous-versions/dotnet/netframework-4.0/w67h0dw7(v=vs.100)).  
   
 ## <a name="create-an-xml-web-service"></a>Créer un service Web XML
@@ -268,7 +268,7 @@ L'objet <xref:System.Data.DataSet> a été conçu avec une architecture déconne
 - [ADO.NET](../index.md)
 - [DataSets, DataTables et DataViews](index.md)
 - [DataTables](datatables.md)
-- [Remplissage d’un DataSet à partir d’un DataAdapter](../populating-a-dataset-from-a-dataadapter.md)
+- [Remplissage d'un DataSet à partir d'un DataAdapter](../populating-a-dataset-from-a-dataadapter.md)
 - [Mise à jour des sources de données avec les DataAdapter](../updating-data-sources-with-dataadapters.md)
 - [Paramètres DataAdapter](../dataadapter-parameters.md)
 - [Outil Web Services Description Language Tool (Wsdl.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7h3ystb6(v=vs.100))

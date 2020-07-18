@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-ms.openlocfilehash: 55116f1fe6fdffffea8f26d8a4de783c7305ada3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1e4bb7a7cfb0b140ca6d13c162708c3c30bd496d
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155347"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441685"
 ---
 # <a name="configsections-element-for-configuration"></a>\<configSections>, élément de \<configuration>
 
@@ -22,7 +22,7 @@ Contient la section de configuration et les déclarations d’espace de noms.
 
 ## <a name="attributes"></a>Attributs
 
-Aucune
+Aucun
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -36,8 +36,6 @@ Aucune
 | --- | ----------- |
 | [**\<section>**](section-element.md) | Contient une déclaration de section de configuration. |
 | [**\<sectionGroup>**](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
-| [**\<remove>**](remove-element-for-configsections.md) | Supprime un groupe de sections ou de sections prédéfini. |
-| [**\<clear>**](clear-element-for-configsections.md) | Efface toutes les sections et tous les groupes de sections précédemment définis. |
 
 ## <a name="remarks"></a>Remarques
 
@@ -61,7 +59,7 @@ L’exemple suivant montre comment définir une section de configuration et déf
 
 ## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
+Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*Machine.config*) et les fichiers *Web.config* qui ne se trouvent pas au niveau du répertoire de l’application.
 
 ## <a name="see-also"></a>Voir aussi
 

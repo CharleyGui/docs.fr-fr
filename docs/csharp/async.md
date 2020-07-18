@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 05/20/2020
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: b5643dd7eddefebc9cbf922ff5cce75d72dee4dd
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: bcea584ded6985a0ef166ab8e24672a19e27b0a3
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100897"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415984"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 
@@ -207,7 +207,7 @@ public static async Task<User[]> GetUsersAsync(IEnumerable<int> userIds)
 }
 ```
 
-Si vous choisissez de combiner LINQ avec du code asynchrone, pour réduire la quantité de code, faites-le avec précaution. Du fait que LINQ utilise l’exécution différée, les appels asynchrones ne sont pas effectués immédiatement comme c’est le cas dans une boucle `foreach`, sauf si vous forcez l’itération de la séquence générée avec un appel à `.ToList()` ou `.ToArray()`.
+Bien qu’il s’agisse d’un code moins important, soyez prudent lors de la combinaison de LINQ et du code asynchrone. Du fait que LINQ utilise l’exécution différée, les appels asynchrones ne sont pas effectués immédiatement comme c’est le cas dans une boucle `foreach`, sauf si vous forcez l’itération de la séquence générée avec un appel à `.ToList()` ou `.ToArray()`.
 
 ## <a name="important-info-and-advice"></a>Informations et conseils importants
 

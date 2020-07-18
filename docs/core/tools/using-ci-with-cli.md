@@ -1,13 +1,13 @@
 ---
-title: Intégration continue (CI) avec .NET Core SDK et outils
-description: Découvrez comment utiliser le .NET Core SDK et ses outils sur le serveur de construction avec une intégration continue.
+title: Intégration continue (CI) avec des kit SDK .NET Core et des outils
+description: Découvrez comment utiliser la kit SDK .NET Core et ses outils sur le serveur de builds avec intégration continue.
 ms.date: 05/18/2017
-ms.openlocfilehash: 6e23a21dd36422a095e56519c9aa28ce2549f7b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ddccb477bc112157a155e2217e04c329e7ab51c5
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77451036"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415988"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Utilisation du SDK et des outils .NET Core avec l’intégration continue
 
@@ -32,7 +32,7 @@ Le script d’installation est automatisé pour s’exécuter au début de la g�
 > [!NOTE]
 > **Azure DevOps Services**
 >
-> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. Pour plus d’informations, voir [.NET Core dépendances et exigences](../install/dependencies.md).
+> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. Pour plus d’informations, consultez [.net Core Dependencies and Requirements](../install/windows.md#dependencies).
 
 ## <a name="ci-setup-examples"></a>Exemples de configuration de l’intégration continue
 
@@ -155,7 +155,7 @@ Pour utiliser un script de configuration manuelle dans Azure DevOps Services, cr
 
    ![Sélection d’une définition de build vide](./media/using-ci-with-cli/select-empty-build-definition.png)
 
-1. Après avoir configuré le référentiel à générer, vous êtes dirigé vers les définitions de la build. Sélectionnez **Ajouter l’étape de build**:
+1. Après avoir configuré le référentiel à générer, vous êtes dirigé vers les définitions de la build. Sélectionnez **Ajouter une étape de génération**:
 
    ![Ajout d’une étape de build](./media/using-ci-with-cli/add-build-step.png)
 

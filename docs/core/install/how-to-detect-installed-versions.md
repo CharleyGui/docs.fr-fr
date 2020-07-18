@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 96db0d707cefed791d9c2c01a6615e9af5168cc5
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: b8825dee595c601e8adef0a52e651ac4a4f04831
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85802986"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416042"
 ---
 # <a name="how-to-check-that-net-core-is-already-installed"></a>Comment vérifier que .NET Core est déjà installé
 
@@ -211,11 +211,10 @@ _/usr/local/share/dotnet/shared/{runtime-type}/{version}/_
 
 ::: zone-end
 
-## <a name="more-information"></a>Plus d’informations
+## <a name="more-information"></a>Informations complémentaires
 
 Vous pouvez voir les versions du kit de développement logiciel (SDK) et les versions du runtime à l’aide de la commande `dotnet --info` . Vous obtiendrez également d’autres informations relatives à l’environnement, telles que la version du système d’exploitation et l’identificateur de Runtime (RID).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- [Installez le Runtime .net Core](runtime.md).
-- [Installez le kit SDK .net Core](sdk.md).
+- [Installez le runtime et le kit de développement logiciel (SDK) .net Core](windows.md).

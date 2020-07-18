@@ -1,15 +1,15 @@
 ---
-title: Installer les distributions .NET Core et Linux
+title: Installer .NET Core sur des distributions Linux
 description: En savoir plus sur les distributions Linux qui prennent en charge l’installation de .NET Core sur Linux.
 author: adegeo
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: 06a90d7fecfe9f25d26caccb2fe3aedec0176f64
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: c827dfbb05a7d49ee18209ef2c8b5613f45a4578
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803090"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441404"
 ---
 # <a name="install-net-core-on-linux"></a>Installer .NET Core sur Linux
 
@@ -51,7 +51,7 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 | ✔️ [3,11](linux-alpine.md)  | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [3,10](linux-alpine.md)  | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [3,9](linux-alpine.md)   | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌[3,8](linux-alpine.md)   | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌ [3.8](linux-alpine.md)   | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 
 Pour plus d’informations, consultez [installer .net Core sur Alpine](linux-alpine.md).
 
@@ -100,7 +100,7 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [32](linux-fedora.md#fedora-32-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [31](linux-fedora.md#fedora-31-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌ [30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
+| ❌[30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
 | ❌[29](linux-fedora.md#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
 | ❌[28](linux-fedora.md#fedora-28-) | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 | ❌[27](linux-fedora.md#fedora-27-) | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
@@ -171,10 +171,10 @@ Le tableau suivant représente l’état de prise en charge d’Ubuntu et de .NE
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [20,04 (LTS)](linux-ubuntu.md#2004-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [19,10](linux-ubuntu.md#1910-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌[19,04](linux-ubuntu.md#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
-| ❌[18,10](linux-ubuntu.md#1810-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌ [19.04](linux-ubuntu.md#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
+| ❌ [18.10](linux-ubuntu.md#1810-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 | ✔️ [18,04 (LTS)](linux-ubuntu.md#1804-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌ [17.10](linux-ubuntu.md#1710-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌[17,10](linux-ubuntu.md#1710-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 | ❌ [17.04](linux-ubuntu.md#1704-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 | ❌[16,10](linux-ubuntu.md#1610-)       | ❌2,1        | ❌3,1        | ❌version préliminaire 5,0 |
 | ✔️ [16,04 (LTS)](linux-ubuntu.md#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |

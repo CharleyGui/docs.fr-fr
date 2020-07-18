@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9af0bed8a779e1173f552e095f99ad7bf5123f14
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7ccd309c14b73af16487850d1785ecf9b0bb2d97
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "65639126"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86459368"
 ---
 > [!WARNING]
-> La sérialisation binaire peut être dangereuse. Ne désérialisez jamais des données d’une source non fiable et n’effectuez jamais un aller-retour des données sérialisées sur des systèmes qui ne sont pas sous votre contrôle.
+> La sérialisation binaire peut être dangereuse. Pour plus d’informations, consultez le Guide de la [sécurité BinaryFormatter](../docs/standard/serialization/binaryformatter-security-guide.md).

@@ -2,16 +2,16 @@
 title: Scripts dotnet-install
 description: En savoir plus sur les scripts dotnet-install pour installer les kit SDK .NET Core et le runtime partagé.
 ms.date: 04/30/2020
-ms.openlocfilehash: d03877d76212f7b22de0a1075cf50fc75bd104b6
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: cecfbb86c4a2863161d3df7c78201fa8057abfe5
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324431"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415924"
 ---
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet-install.ps1` | `dotnet-install.sh`-Script utilisé pour installer le kit SDK .NET Core et le runtime partagé.
 
@@ -82,7 +82,7 @@ Par défaut, les scripts d’installation téléchargent et installent le Kit de
 
 Par défaut, le script ajoute l’emplacement d’installation $PATH pour la session active. Remplacez ce comportement par défaut en spécifiant l’argument `-NoPath|--no-path`. Le script ne définit pas la `DOTNET_ROOT` variable d’environnement.
 
-Avant d’exécuter le script, installez les [dépendances](../install/dependencies.md) nécessaires.
+Avant d’exécuter le script, installez les [dépendances](../install/windows.md#dependencies) nécessaires.
 
 Vous pouvez installer une version spécifique à l’aide de l’argument `-Version|--version`. La version doit être spécifiée sous la forme d’un numéro de version en trois parties, tel que `2.1.0` . Si la version n’est pas spécifiée, le script installe la `latest` version.
 

@@ -4,12 +4,12 @@ description: Informations sur les exemples et les didacticiels pour .NET Core, A
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 44ce0d740502686db1801db428a2f79c2250f8c0
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 367b2cbea24ac0da634051bf815c319f3679f79b
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507427"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86417331"
 ---
 # <a name="net-samples-and-tutorials"></a>Exemples et tutoriels .NET
 
@@ -23,7 +23,7 @@ La documentation .NET contient un ensemble d’exemples et de didacticiels qui v
 
 Ce guide montre comment créer une application web ASP.NET Core et les tests unitaires associés. Il commence par créer une application de service web simple, puis il ajoute des tests. Ensuite, il crée d’autres tests pour guider l’implémentation de nouvelles fonctionnalités. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test) est disponible dans le référentiel dotnet/samples sur GitHub.
 
-### <a name="tutorials"></a>Tutoriels
+### <a name="tutorials"></a>Didacticiels
 
 **[Écriture d’applications console .NET Core à l’aide de l’CLI .NET Core : Guide pas à pas](../core/tutorials/cli-create-console-app.md)**
 
@@ -53,7 +53,7 @@ Cet exemple illustre la syntaxe et les fonctionnalités liées aux indexeurs C#.
 
 Cet exemple illustre la syntaxe et les fonctionnalités liées aux délégués et événements C#. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/csharp/delegates-and-events) est disponible dans le référentiel dotnet/samples sur GitHub. Un [deuxième exemple](https://github.com/dotnet/samples/tree/master/csharp/events), axé sur les événements, est également disponible dans le même dépôt.
 
-**[Arborescences de l’expression](../csharp/expression-trees.md)**
+**[Arborescences d’expressions](../csharp/expression-trees.md)**
 
 Cet exemple illustre de nombreux problèmes pouvant être résolus à l’aide des arborescences d’expression. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) est disponible dans le référentiel dotnet/samples sur GitHub.
 
@@ -69,7 +69,7 @@ L’exemple de [serveur COM](https://github.com/dotnet/samples/tree/master/core/
 
 L’exemple [ExcelDemo](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo) illustre la consommation d’[assemblys PIA Microsoft Office](/visualstudio/vsto/office-primary-interop-assemblies) dans .NET Core.
 
-### <a name="tutorials"></a>Tutoriels
+### <a name="tutorials"></a>Didacticiels
 
 **[Application console](../csharp/tutorials/console-teleprompter.md)**
 
@@ -87,9 +87,9 @@ Ce didacticiel illustre plusieurs fonctionnalités de LINQ et les éléments de 
 
 Ce didacticiel explique comment créer une application console .NET Core simple avec Visual Studio pour Mac.
 
-**[Création d’une solution .NET Core complète sur macOS à l’aide de Visual Studio pour Mac](../core/tutorials/using-on-mac-vs-full-solution.md)**
+**[Créer une bibliothèque de .NET Standard sur macOS à l’aide de Visual Studio pour Mac](../core/tutorials/library-with-visual-studio-mac.md)**
 
-Ce didacticiel vous montre comment créer une solution complète .NET Core qui inclut une bibliothèque réutilisable et un test unitaire.
+Ce didacticiel vous montre comment créer une bibliothèque de .NET Standard à l’aide de Visual Studio pour Mac.
 
 **[Création d’une application .NET Core prenant en charge les plug-ins](../core/tutorials/creating-app-with-plugin-support.md)**
 

@@ -19,38 +19,19 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: b9915faff2593cc51868c20e1a83a05ffca9f548
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 0de0c7e9843ca8a97392733a68367b1dae8de232
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325940"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416380"
 ---
 # <a name="isolated-storage"></a>Stockage isolé
-<a name="top"></a> Pour les applications de bureau, le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. La standardisation offre également d'autres avantages. Les administrateurs peuvent utiliser des outils conçus pour manipuler un stockage isolé afin de configurer l'espace de stockage du fichier, de définir des stratégies de sécurité et de supprimer des données inutilisées. Grâce au stockage isolé, votre code ne nécessite plus de chemins d'accès uniques pour spécifier des emplacements sécurisés dans le système de fichiers. En outre, les données sont protégées des autres applications qui possèdent uniquement un accès au stockage isolé. Les informations codées en dur concernant l'emplacement de la zone de stockage d'une application ne sont pas nécessaires.
+
+ Pour les applications de bureau, le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. La standardisation offre également d'autres avantages. Les administrateurs peuvent utiliser des outils conçus pour manipuler un stockage isolé afin de configurer l'espace de stockage du fichier, de définir des stratégies de sécurité et de supprimer des données inutilisées. Grâce au stockage isolé, votre code ne nécessite plus de chemins d'accès uniques pour spécifier des emplacements sécurisés dans le système de fichiers. En outre, les données sont protégées des autres applications qui possèdent uniquement un accès au stockage isolé. Les informations codées en dur concernant l'emplacement de la zone de stockage d'une application ne sont pas nécessaires.
 
 > [!IMPORTANT]
 > Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.
-
-Cette rubrique contient les sections suivantes :
-
-- [Magasins et compartiments de données](#data_compartments_and_stores)
-
-- [Quotas pour le stockage isolé](#quotas)
-
-- [Accès sécurisé](#secure_access)
-
-- [Utilisation autorisée et risques pour la sécurité](#allowed_usage)
-
-- [Emplacements de stockage isolé](#isolated_storage_locations)
-
-- [Création, énumération et suppression du stockage isolé](#isolated_storage_tasks)
-
-- [Scénarios de stockage isolé](#scenarios_for_isolated_storage)
-
-- [Rubriques connexes](#related_topics)
-
-- [Référence](#reference)
 
 <a name="data_compartments_and_stores"></a>
 
@@ -114,11 +95,11 @@ __Cette section s’applique aux frameworks suivants :__
 - .NET Core 2.1 +
 - .NET 5.0 +
 
-Le .NET Framework et .NET Core offrent un [stockage isolé](/dotnet/standard/io/isolated-storage) comme un mécanisme permettant de conserver les données d’un utilisateur, d’une application ou d’un composant. Il s’agit d’un composant hérité principalement conçu pour les scénarios de sécurité d’accès du code dépréciés.
+.NET Framework et .NET Core offrent un stockage isolé comme un mécanisme permettant de conserver les données d’un utilisateur, d’une application ou d’un composant. Il s’agit d’un composant hérité principalement conçu pour les scénarios de sécurité d’accès du code dépréciés.
 
 Diverses API et outils de stockage isolé peuvent être utilisés pour lire les données au-delà des limites d’approbation. Par exemple, la lecture de données à partir d’une étendue à l’échelle de l’ordinateur peut agréger des données à partir d’autres comptes d’utilisateurs, éventuellement moins fiables, sur l’ordinateur. Les composants ou les applications qui lisent à partir des étendues de stockage isolé à l’échelle de l’ordinateur doivent être conscients des conséquences de la lecture de ces données.
 
-### <a name="security-sensitive-apis-which-can-read-from-the-machine-wide-scope"></a>API sensibles à la sécurité qui peuvent lire à partir de l’étendue à l’échelle de l’ordinateur
+### <a name="security-sensitive-apis-that-can-read-from-the-machine-wide-scope"></a>API sensibles à la sécurité qui peuvent lire à partir de l’étendue à l’échelle de l’ordinateur
 
 Les composants ou les applications qui appellent les API suivantes lisent à partir de l’étendue à l’échelle de l’ordinateur :
 
@@ -129,7 +110,7 @@ Les composants ou les applications qui appellent les API suivantes lisent à par
 * [IsolatedStorageFile. GetStore](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getstore), passant une portée qui comprend l’indicateur IsolatedStorageScope. machine
 * [IsolatedStorageFile. Remove](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.remove), passage d’une étendue incluant l' `IsolatedStorageScope.Machine` indicateur
 
-L' [outil de stockage isolé](/dotnet/framework/tools/storeadm-exe-isolated-storage-tool) `storeadm.exe` est affecté s’il est appelé avec le `/machine` commutateur, comme illustré dans le code suivant :
+L' [outil de stockage isolé](../../framework/tools/storeadm-exe-isolated-storage-tool.md) `storeadm.exe` est affecté s’il est appelé avec le `/machine` commutateur, comme illustré dans le code suivant :
 
 ```txt
 storeadm.exe /machine [any-other-switches]
@@ -252,9 +233,9 @@ De nombreuses applications utilisent une base de données pour stocker et isoler
 
 <a name="related_topics"></a>
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-articles"></a>Articles connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
 |[Types d'isolation](types-of-isolation.md)|Décrit les divers types d'isolation.|
 |[Procédure : obtenir des magasins pour le stockage isolé](how-to-obtain-stores-for-isolated-storage.md)|Donne un exemple d'utilisation de la classe <xref:System.IO.IsolatedStorage.IsolatedStorageFile> pour obtenir un magasin isolé par utilisateur et par assembly.|
@@ -269,7 +250,7 @@ De nombreuses applications utilisent une base de données pour stocker et isoler
 
 <a name="reference"></a>
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType>
 

@@ -5,12 +5,12 @@ ms.date: 03/20/2020
 ms.custom: azure-sdk-dotnet
 ms.author: casoper
 author: camsoper
-ms.openlocfilehash: 5a1fb35aeca034a7cdd1caa813a3839919a5f926
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 0b255713bc9c13e0cbdaeb25a3d0fe46e91e815d
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174937"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416036"
 ---
 # <a name="logging-with-the-azure-sdk-for-net"></a>Journalisation avec le kit de développement logiciel (SDK) Azure pour .NET
 
@@ -38,7 +38,7 @@ Entrée du journal de réponse HTTP :
 
 - Durée de l’opération d’e/s (temps écoulé)
 - ID de la demande
-- Code d’état HTTP
+- Code d'état HTTP
 - Phrase de raison HTTP
 - En-têtes de réponse
 - Informations sur l’erreur, le cas échéant
@@ -70,7 +70,7 @@ using AzureEventSourceListener listener = AzureEventSourceListener.CreateConsole
 
 ### <a name="log-to-diagnostic-traces"></a>Consigner dans les suivis de diagnostic
 
-Si vous implémentez des écouteurs de suivi, vous pouvez utiliser la `CreateTraceLogger` méthode pour vous connecter au mécanisme de suivi d’événements .NET standard ( [`System.Diagnostics.Tracing`](/dotnet/api/system.diagnostics.tracing) ). Pour plus d’informations sur le suivi d’événements dans .NET, consultez [écouteurs de suivi](/dotnet/framework/debug-trace-profile/trace-listeners). Cet exemple spécifie un niveau de journal détaillé :
+Si vous implémentez des écouteurs de suivi, vous pouvez utiliser la `CreateTraceLogger` méthode pour vous connecter au mécanisme de suivi d’événements .NET standard ( [`System.Diagnostics.Tracing`](/dotnet/api/system.diagnostics.tracing) ). Pour plus d’informations sur le suivi d’événements dans .NET, consultez [écouteurs de suivi](../framework/debug-trace-profile/trace-listeners.md). Cet exemple spécifie un niveau de journal détaillé :
 
 ```csharp
 using AzureEventSourceListener listener = AzureEventSourceListener.CreateTraceLogger(EventLevel.Verbose);
@@ -99,4 +99,4 @@ using AzureEventSourceListener listener = new AzureEventSourceListener((e, messa
 - [Activer la journalisation des diagnostics pour les applications dans Azure App Service](/azure/app-service/troubleshoot-diagnostic-logs)
 - Passer en revue [les options d’audit et de journalisation de sécurité Azure](/azure/security/fundamentals/log-audit)
 - Découvrez comment utiliser les journaux de la [plateforme Azure](/azure/azure-monitor/platform/platform-logs-overview)
-- En savoir plus sur la [journalisation et le suivi de .net Core](/dotnet/core/diagnostics/logging-tracing)
+- En savoir plus sur la [journalisation et le suivi de .net Core](../core/diagnostics/logging-tracing.md)

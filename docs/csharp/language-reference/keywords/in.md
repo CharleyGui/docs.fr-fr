@@ -6,16 +6,16 @@ f1_keywords:
 - in_CSharpKeyword
 helpviewer_keywords:
 - in keyword [C#]
-ms.openlocfilehash: 251a330ec327366ce458dd8066061365ab0e1dad
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9edbd76e7b7a249743a201adccb5659bee6e5980
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713459"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441347"
 ---
 # <a name="in-c-reference"></a>in (Référence C#)
 
-Le mot clé `in` est utilisé dans quatre contextes :  
+Le `in` mot clé est utilisé dans les contextes suivants :  
   
 - [paramètre de type générique](in-generic-modifier.md) dans les interfaces et les délégués génériques.
 - Comme [modificateur de paramètre](in-parameter-modifier.md), qui vous permet de passer un argument à une méthode par référence plutôt que par valeur.
@@ -26,4 +26,4 @@ Le mot clé `in` est utilisé dans quatre contextes :
 ## <a name="see-also"></a>Voir aussi
 
 - [Mots clés C#](index.md)
-- [Référence C](../index.md)
+- [Référence C#](../index.md)

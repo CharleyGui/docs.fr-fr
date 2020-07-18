@@ -1,14 +1,14 @@
 ---
 title: Paramètres de configuration du garbage collector
 description: En savoir plus sur les paramètres d’exécution pour la configuration de la façon dont le garbage collector gère la mémoire pour les applications .NET Core.
-ms.date: 01/09/2020
+ms.date: 07/10/2020
 ms.topic: reference
-ms.openlocfilehash: 0ce2f70204463c1525ef7d29de21ddf5384d0238
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 6ae5b7447fb0df4978ea9dcaa5e76fcc7a6cc4ca
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202097"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441403"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Options de configuration au moment de l’exécution pour garbage collection
 
@@ -20,7 +20,7 @@ Les paramètres sont organisés en groupes dans cette page. Les paramètres de c
 >
 > - Ces paramètres peuvent également être modifiés dynamiquement par l’application en cours d’exécution, de sorte que tous les paramètres d’exécution que vous définissez peuvent être remplacés.
 > - Certains paramètres, tels que le [niveau de latence](../../standard/garbage-collection/latency.md), sont généralement définis uniquement par le biais de l’API au moment de la conception. Ces paramètres sont omis dans cette page.
-> - Pour les valeurs numériques, utilisez la notation décimale pour les paramètres dans le fichier *runtimeconfig. JSON* et la notation hexadécimale pour les paramètres de variable d’environnement. Pour les valeurs hexadécimales, vous pouvez les spécifier avec ou sans le préfixe « 0x ».
+> - Pour les valeurs numériques, utilisez la notation décimale pour les paramètres de la *runtimeconfig.jssur* fichier et notation hexadécimale pour les paramètres de variable d’environnement. Pour les valeurs hexadécimales, vous pouvez les spécifier avec ou sans le préfixe « 0x ».
 
 ## <a name="flavors-of-garbage-collection"></a>Versions de garbage collection
 
@@ -37,14 +37,14 @@ Utilisez les paramètres suivants pour sélectionner les versions de garbage col
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.Server` | `false`-station de travail<br/>`true`-serveur | .NET Core 1.0 |
+| **runtimeconfig.js** | `System.GC.Server` | `false`-station de travail<br/>`true`-serveur | .NET Core 1.0 |
 | **MSBuild, propriété** | `ServerGarbageCollection` | `false`-station de travail<br/>`true`-serveur | .NET Core 1.0 |
 | **Variable d’environnement** | `COMPlus_gcServer` | `0`-station de travail<br/>`1`-serveur | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false`-station de travail<br/>`true`-serveur |  |
+| **app.config pour .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false`-station de travail<br/>`true`-serveur |  |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*runtimeconfig.jssur le* fichier :
 
 ```json
 {
@@ -76,14 +76,14 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.Concurrent` | `true`-arrière-plan GC<br/>`false`-GC non simultané | .NET Core 1.0 |
+| **runtimeconfig.js** | `System.GC.Concurrent` | `true`-arrière-plan GC<br/>`false`-GC non simultané | .NET Core 1.0 |
 | **MSBuild, propriété** | `ConcurrentGarbageCollection` | `true`-arrière-plan GC<br/>`false`-GC non simultané | .NET Core 1.0 |
 | **Variable d’environnement** | `COMPlus_gcConcurrent` | `1`-arrière-plan GC<br/>`0`-GC non simultané | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true`-arrière-plan GC<br/>`false`-GC non simultané |  |
+| **app.config pour .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true`-arrière-plan GC<br/>`false`-GC non simultané |  |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*runtimeconfig.jssur le* fichier :
 
 ```json
 {
@@ -123,9 +123,9 @@ Pour plus d’informations sur certains de ces paramètres, consultez l’entré
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapCount` | *valeur décimale* | .NET Core 3.0 |
+| **runtimeconfig.js** | `System.GC.HeapCount` | *valeur décimale* | .NET Core 3.0 |
 | **Variable d’environnement** | `COMPlus_GCHeapCount` | *valeur hexadécimale* | .NET Core 3.0 |
-| **App. config pour .NET Framework** | [GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md) | *valeur décimale* | .NET Framework 4.6.2 |
+| **app.config pour .NET Framework** | [GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md) | *valeur décimale* | .NET Framework 4.6.2 |
 
 Exemple :
 
@@ -140,7 +140,7 @@ Exemple :
 ```
 
 > [!TIP]
-> Si vous définissez l’option dans *runtimeconfig. JSON*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour limiter le nombre de segments à 16, les valeurs sont 16 pour le fichier JSON et 0x10 ou 10 pour la variable d’environnement.
+> Si vous définissez l’option dans *runtimeconfig.js*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour limiter le nombre de segments à 16, les valeurs sont 16 pour le fichier JSON et 0x10 ou 10 pour la variable d’environnement.
 
 ### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System. GC. HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
 
@@ -151,9 +151,9 @@ Exemple :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapAffinitizeMask` | *valeur décimale* | .NET Core 3.0 |
+| **runtimeconfig.js** | `System.GC.HeapAffinitizeMask` | *valeur décimale* | .NET Core 3.0 |
 | **Variable d’environnement** | `COMPlus_GCHeapAffinitizeMask` | *valeur hexadécimale* | .NET Core 3.0 |
-| **App. config pour .NET Framework** | [GCHeapAffinitizeMask](../../framework/configure-apps/file-schema/runtime/gcheapaffinitizemask-element.md) | *valeur décimale* | .NET Framework 4.6.2 |
+| **app.config pour .NET Framework** | [GCHeapAffinitizeMask](../../framework/configure-apps/file-schema/runtime/gcheapaffinitizemask-element.md) | *valeur décimale* | .NET Framework 4.6.2 |
 
 Exemple :
 
@@ -178,7 +178,7 @@ Exemple :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.GCHeapAffinitizeRanges` | Liste séparée par des virgules des numéros de processeur ou des plages de numéros de processeur.<br/>Exemple UNIX : "1-10, 12, 50-52, 70"<br/>Exemple Windows : « 0:1-10, 0:12, 1:50-52, 1:70 » | .NET Core 3.0 |
+| **runtimeconfig.js** | `System.GC.GCHeapAffinitizeRanges` | Liste séparée par des virgules des numéros de processeur ou des plages de numéros de processeur.<br/>Exemple UNIX : "1-10, 12, 50-52, 70"<br/>Exemple Windows : « 0:1-10, 0:12, 1:50-52, 1:70 » | .NET Core 3.0 |
 | **Variable d’environnement** | `COMPlus_GCHeapAffinitizeRanges` | Liste séparée par des virgules des numéros de processeur ou des plages de numéros de processeur.<br/>Exemple UNIX : "1-10, 12, 50-52, 70"<br/>Exemple Windows : « 0:1-10, 0:12, 1:50-52, 1:70 » | .NET Core 3.0 |
 
 Exemple :
@@ -205,9 +205,9 @@ Exemple :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | N/A | N/A | N/A |
+| **runtimeconfig.js** | N/A | N/A | N/A |
 | **Variable d’environnement** | `COMPlus_GCCpuGroup` | `0`-désactivé<br/>`1`-activé | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false`-désactivé<br/>`true`-activé |  |
+| **app.config pour .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false`-désactivé<br/>`true`-activé |  |
 
 > [!NOTE]
 > Pour configurer le common language runtime (CLR) pour distribuer également des threads à partir du pool de threads sur tous les groupes de PROCESSEURs, activez l’option d' [élément Thread_UseAllCpuGroups](../../framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) . Pour les applications .NET Core, vous pouvez activer cette option en affectant à la `COMPlus_Thread_UseAllCpuGroups` variable d’environnement la valeur `1` .
@@ -220,9 +220,9 @@ Exemple :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.NoAffinitize` | `false`-affinité<br/>`true`-ne affinité | .NET Core 3.0 |
+| **runtimeconfig.js** | `System.GC.NoAffinitize` | `false`-affinité<br/>`true`-ne affinité | .NET Core 3.0 |
 | **Variable d’environnement** | `COMPlus_GCNoAffinitize` | `0`-affinité<br/>`1`-ne affinité | .NET Core 3.0 |
-| **App. config pour .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false`-affinité<br/>`true`-ne affinité | .NET Framework 4.6.2 |
+| **app.config pour .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false`-affinité<br/>`true`-ne affinité | .NET Framework 4.6.2 |
 
 Exemple :
 
@@ -240,6 +240,7 @@ Exemple :
 
 - Spécifie la taille maximale de validation, en octets, pour le tas GC et la comptabilité du catalogue global.
 - Ce paramètre s’applique uniquement aux ordinateurs 64 bits.
+- Ce paramètre est ignoré si les [limites par objet/tas](#per-object-heap-limits) sont configurées.
 - La valeur par défaut, qui s’applique uniquement dans certains cas, est la plus grande de 20 Mo ou 75% de la limite de mémoire sur le conteneur. La valeur par défaut s’applique dans les cas suivants :
 
   - Le processus s’exécute dans un conteneur qui a une limite de mémoire spécifiée.
@@ -247,7 +248,7 @@ Exemple :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapHardLimit` | *valeur décimale* | .NET Core 3.0 |
+| **runtimeconfig.js** | `System.GC.HeapHardLimit` | *valeur décimale* | .NET Core 3.0 |
 | **Variable d’environnement** | `COMPlus_GCHeapHardLimit` | *valeur hexadécimale* | .NET Core 3.0 |
 
 Exemple :
@@ -263,7 +264,7 @@ Exemple :
 ```
 
 > [!TIP]
-> Si vous définissez l’option dans *runtimeconfig. JSON*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour spécifier une limite inconditionnelle de segment de mémoire de 200 mebibytes (MiB), les valeurs sont 209715200 pour le fichier JSON et 0xC800000 ou C800000 pour la variable d’environnement.
+> Si vous définissez l’option dans *runtimeconfig.js*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour spécifier une limite inconditionnelle de segment de mémoire de 200 mebibytes (MiB), les valeurs sont 209715200 pour le fichier JSON et 0xC800000 ou C800000 pour la variable d’environnement.
 
 ### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System. GC. HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
 
@@ -271,6 +272,7 @@ Exemple :
 - Si [System. gc. HeapHardLimit](#systemgcheaphardlimitcomplus_gcheaphardlimit) est également défini, ce paramètre est ignoré.
 - Ce paramètre s’applique uniquement aux ordinateurs 64 bits.
 - Si le processus s’exécute dans un conteneur qui a une limite de mémoire spécifiée, le pourcentage est calculé sous la forme d’un pourcentage de cette limite de mémoire.
+- Ce paramètre est ignoré si les [limites par objet/tas](#per-object-heap-limits) sont configurées.
 - La valeur par défaut, qui s’applique uniquement dans certains cas, est la plus petite de 20 Mo ou 75% de la limite de mémoire sur le conteneur. La valeur par défaut s’applique dans les cas suivants :
 
   - Le processus s’exécute dans un conteneur qui a une limite de mémoire spécifiée.
@@ -278,7 +280,7 @@ Exemple :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapHardLimitPercent` | *valeur décimale* | .NET Core 3.0 |
+| **runtimeconfig.js** | `System.GC.HeapHardLimitPercent` | *valeur décimale* | .NET Core 3.0 |
 | **Variable d’environnement** | `COMPlus_GCHeapHardLimitPercent` | *valeur hexadécimale* | .NET Core 3.0 |
 
 Exemple :
@@ -294,7 +296,41 @@ Exemple :
 ```
 
 > [!TIP]
-> Si vous définissez l’option dans *runtimeconfig. JSON*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour limiter l’utilisation du tas à 30%, les valeurs sont 30 pour le fichier JSON et 0x1E ou 1E pour la variable d’environnement.
+> Si vous définissez l’option dans *runtimeconfig.js*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour limiter l’utilisation du tas à 30%, les valeurs sont 30 pour le fichier JSON et 0x1E ou 1E pour la variable d’environnement.
+
+### <a name="per-object-heap-limits"></a>Limites par objet-tas
+
+Vous pouvez spécifier l’utilisation autorisée du tas du GC pour chaque segment de mémoire. Les différents tas sont le tas d’objets volumineux (LOH), le tas de petits objets (SOH) et le tas d’objets épinglés (POH).
+
+#### <a name="complus_gcheaphardlimitsoh-complus_gcheaphardlimitloh-complus_gcheaphardlimitpoh"></a>COMPLUS_GCHeapHardLimitSOH, COMPLUS_GCHeapHardLimitLOH COMPLUS_GCHeapHardLimitPOH
+
+- Si vous spécifiez une valeur pour l’un `COMPLUS_GCHeapHardLimitSOH` des `COMPLUS_GCHeapHardLimitLOH` paramètres, ou `COMPLUS_GCHeapHardLimitPOH` , vous devez également spécifier une valeur pour `COMPLUS_GCHeapHardLimitSOH` et `COMPLUS_GCHeapHardLimitLOH` . Si ce n’est pas le cas, l’initialisation du runtime échoue.
+- La valeur par défaut pour `COMPLUS_GCHeapHardLimitPOH` est 0. `COMPLUS_GCHeapHardLimitSOH`et `COMPLUS_GCHeapHardLimitLOH` n’ont pas de valeurs par défaut.
+
+| | Nom du paramètre | Valeurs | Version introduite |
+| - | - | - | - |
+| **Variable d’environnement** | `COMPLUS_GCHeapHardLimitSOH` | *valeur hexadécimale* | .NET 5,0 |
+| **Variable d’environnement** | `COMPLUS_GCHeapHardLimitLOH` | *valeur hexadécimale* | .NET 5,0 |
+| **Variable d’environnement** | `COMPLUS_GCHeapHardLimitPOH` | *valeur hexadécimale* | .NET 5,0 |
+
+> [!TIP]
+> Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour spécifier une limite inconditionnelle de segment de mémoire de 200 mebibytes (MiB), la valeur est 0xC800000 ou C800000.
+
+#### <a name="complus_gcheaphardlimitsohpercent-complus_gcheaphardlimitlohpercent-complus_gcheaphardlimitpohpercent"></a>COMPLUS_GCHeapHardLimitSOHPercent, COMPLUS_GCHeapHardLimitLOHPercent COMPLUS_GCHeapHardLimitPOHPercent
+
+- Si vous spécifiez une valeur pour l’un `COMPLUS_GCHeapHardLimitSOHPercent` des `COMPLUS_GCHeapHardLimitLOHPercent` paramètres, ou `COMPLUS_GCHeapHardLimitPOHPercent` , vous devez également spécifier une valeur pour `COMPLUS_GCHeapHardLimitSOHPercent` et `COMPLUS_GCHeapHardLimitLOHPercent` . Si ce n’est pas le cas, l’initialisation du runtime échoue.
+- Ces paramètres sont ignorés si `COMPLUS_GCHeapHardLimitSOH` , `COMPLUS_GCHeapHardLimitLOH` et `COMPLUS_GCHeapHardLimitPOH` sont spécifiés.
+- La valeur 1 signifie que GC utilise 1% de la mémoire physique totale pour ce tas d’objets.
+- Chaque valeur doit être supérieure à zéro et inférieure à 100. En outre, la somme des trois valeurs de pourcentage doit être inférieure à 100. Dans le cas contraire, le runtime ne pourra pas s’initialiser.
+
+| | Nom du paramètre | Valeurs | Version introduite |
+| - | - | - | - |
+| **Variable d’environnement** | `COMPLUS_GCHeapHardLimitSOHPercent` | *valeur hexadécimale* | .NET 5,0 |
+| **Variable d’environnement** | `COMPLUS_GCHeapHardLimitLOHPercent` | *valeur hexadécimale* | .NET 5,0 |
+| **Variable d’environnement** | `COMPLUS_GCHeapHardLimitPOHPercent` | *valeur hexadécimale* | .NET 5,0 |
+
+> [!TIP]
+> Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour limiter l’utilisation du tas à 30%, la valeur est 0x1E ou 1E.
 
 ### <a name="systemgcretainvmcomplus_gcretainvm"></a>System. GC. RetainVM/COMPlus_GCRetainVM
 
@@ -303,13 +339,13 @@ Exemple :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.RetainVM` | `false`-version finale du système d’exploitation<br/>`true`-mise en veille | .NET Core 1.0 |
+| **runtimeconfig.js** | `System.GC.RetainVM` | `false`-version finale du système d’exploitation<br/>`true`-mise en veille | .NET Core 1.0 |
 | **MSBuild, propriété** | `RetainVMGarbageCollection` | `false`-version finale du système d’exploitation<br/>`true`-mise en veille | .NET Core 1.0 |
 | **Variable d’environnement** | `COMPlus_GCRetainVM` | `0`-version finale du système d’exploitation<br/>`1`-mise en veille | .NET Core 1.0 |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*runtimeconfig.jssur le* fichier :
 
 ```json
 {
@@ -343,7 +379,7 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | N/A | N/A | N/A |
+| **runtimeconfig.js** | N/A | N/A | N/A |
 | **Variable d’environnement** | `COMPlus_GCLargePages` | `0`-désactivé<br/>`1`-activé | .NET Core 3.0 |
 
 ## <a name="large-objects"></a>Objets volumineux
@@ -356,9 +392,9 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | N/A | N/A | N/A |
+| **runtimeconfig.js** | N/A | N/A | N/A |
 | **Variable d’environnement** | `COMPlus_gcAllowVeryLargeObjects` | `1`-activé<br/> `0`-désactivé | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1`-activé<br/> `0`-désactivé | .NET Framework 4.5 |
+| **app.config pour .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1`-activé<br/> `0`-désactivé | .NET Framework 4.5 |
 
 ## <a name="large-object-heap-threshold"></a>Seuil du tas des objets volumineux
 
@@ -370,9 +406,9 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.LOHThreshold` | *valeur décimale* | .NET Core 1.0 |
+| **runtimeconfig.js** | `System.GC.LOHThreshold` | *valeur décimale* | .NET Core 1.0 |
 | **Variable d’environnement** | `COMPlus_GCLOHThreshold` | *valeur hexadécimale* | .NET Core 1.0 |
-| **App. config pour .NET Framework** | [GCLOHThreshold](../../framework/configure-apps/file-schema/runtime/gclohthreshold-element.md) | *valeur décimale* | .NET Framework 4.8 |
+| **app.config pour .NET Framework** | [GCLOHThreshold](../../framework/configure-apps/file-schema/runtime/gclohthreshold-element.md) | *valeur décimale* | .NET Framework 4.8 |
 
 Exemple :
 
@@ -387,7 +423,7 @@ Exemple :
 ```
 
 > [!TIP]
-> Si vous définissez l’option dans *runtimeconfig. JSON*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour définir une taille de seuil de 120 000 octets, les valeurs sont 120000 pour le fichier JSON et 0x1D4C0 ou 1D4C0 pour la variable d’environnement.
+> Si vous définissez l’option dans *runtimeconfig.js*, spécifiez une valeur décimale. Si vous définissez l’option en tant que variable d’environnement, spécifiez une valeur hexadécimale. Par exemple, pour définir une taille de seuil de 120 000 octets, les valeurs sont 120000 pour le fichier JSON et 0x1D4C0 ou 1D4C0 pour la variable d’environnement.
 
 ## <a name="standalone-gc"></a>GC autonome
 
@@ -398,5 +434,5 @@ Exemple :
 
 | | Nom du paramètre | Valeurs | Version introduite |
 | - | - | - | - |
-| **runtimeconfig. JSON** | N/A | N/A | N/A |
+| **runtimeconfig.js** | N/A | N/A | N/A |
 | **Variable d’environnement** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |

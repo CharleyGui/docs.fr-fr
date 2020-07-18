@@ -2,16 +2,16 @@
 title: Créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio pour Mac
 description: Découvrez comment créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio pour Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 3a107fff2fd6aef5e06d9af3eac334fbf5688fa5
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 8e1e4ca3bc1b12d889b847d80318f3d6cd1bbe46
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713741"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416004"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-for-mac"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio pour Mac
 
-Dans ce didacticiel, vous allez créer une bibliothèque de classes simple qui contient une méthode de gestion de chaîne unique. Vous l’implémentez en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) pour pouvoir l’appeler comme s’il s’agissait d’un membre de la <xref:System.String> classe.
+Dans ce didacticiel, vous allez créer une bibliothèque de classes qui contient une méthode de gestion de chaîne unique. Vous l’implémentez en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) pour pouvoir l’appeler comme s’il s’agissait d’un membre de la <xref:System.String> classe.
 
 Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Une bibliothèque de classes qui cible .NET Standard 2,1 peut être utilisée par une application qui cible toute implémentation .NET qui prend en charge la version 2,1 de .NET Standard. Lorsque vous avez terminé votre bibliothèque de classes, vous pouvez la distribuer en tant que composant tiers ou en tant que composant groupé avec une ou plusieurs applications.
 

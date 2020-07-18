@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: d8506893f5b3eefa6f46dc9f773e43b125ee5210
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 19ccdb634d4e53ea66c032502f2adb70423ab121
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291641"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416268"
 ---
 ### <a name="azure-microsoft-prefixed-azure-integration-packages-removed"></a>Azure : packages d’intégration Azure préfixés par Microsoft supprimés
 
 Les `Microsoft.*` packages suivants qui assurent l’intégration entre les ASP.net Core et les kits de développement logiciel (SDK) Azure ne sont pas inclus dans ASP.NET Core 5,0 :
 
-* [Microsoft. extensions. Configuration. AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/), qui intègre [Azure Key Vault](/azure/key-vault/) dans le [système de configuration](/aspnet/core/fundamentals/configuration/).
+* [Microsoft.Extensions.Configfiguration. AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/), qui intègre [Azure Key Vault](/azure/key-vault/) dans le [système de configuration](/aspnet/core/fundamentals/configuration/).
 * [Microsoft. AspNetCore. dataprotection. AzureKeyVault](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureKeyVault/), qui intègre Azure Key Vault dans le [système de Protection des données ASP.net Core](/aspnet/core/security/data-protection/introduction).
 * [Microsoft. AspNetCore. dataprotection. AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/), qui intègre le [stockage d’objets BLOB Azure](/azure/storage/blobs/) dans le système de protection des données ASP.net core.
 
@@ -41,9 +41,9 @@ Dans ASP.NET Core projets 2,1 ou versions ultérieures, remplacez l’ancien `Mi
 
 | Ancien | Nouveau |
 |--|--|
-| `Microsoft.AspNetCore.DataProtection.AzureKeyVault` | [Azure. AspNetCore. DataProtection. Keys](https://www.nuget.org/packages/Azure.AspNetCore.DataProtection.Keys) |
-| `Microsoft.AspNetCore.DataProtection.AzureStorage` | [Azure. AspNetCore. DataProtection. blob](https://www.nuget.org/packages/Azure.AspNetCore.DataProtection.Blobs) |
-| `Microsoft.Extensions.Configuration.AzureKeyVault` | [Azure. extensions. Configuration. secrets](https://www.nuget.org/packages/Azure.Extensions.Configuration.Secrets) |
+| `Microsoft.AspNetCore.DataProtection.AzureKeyVault` | [Azure. extensions. AspNetCore. DataProtection. Keys](https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Keys) |
+| `Microsoft.AspNetCore.DataProtection.AzureStorage` | [Azure. extensions. AspNetCore. DataProtection. blob](https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs) |
+| `Microsoft.Extensions.Configuration.AzureKeyVault` | [Azure.Extensions.AspNetCore.Configfiguration. Secrète](https://www.nuget.org/packages/Azure.Extensions.AspNetCore.Configuration.Secrets) |
 
 Les nouveaux packages utilisent une nouvelle version du kit de développement logiciel (SDK) Azure qui comprend des modifications avec rupture. Les modèles d’utilisation générale sont inchangés. Certaines surcharges et options peuvent varier pour s’adapter aux modifications apportées aux API du kit de développement logiciel (SDK) Azure sous-jacentes.
 
