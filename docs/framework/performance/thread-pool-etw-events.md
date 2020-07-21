@@ -1,16 +1,17 @@
 ---
 title: Événements ETW de pool de threads
+description: Passez en revue les événements ETW de pool de threads, qui collectent des informations sur les threads dans .NET. Les événements de pool de threads sont les événements de pool de threads de travail ou d’e/s.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - thread pool events [.NET Framework]
 - ETW, thread pool events (CLR)
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
-ms.openlocfilehash: 249d0607ddd280bcb4e9cf3ef34b28ff8ada3b04
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: d3059cec5007c24d41a4a779939d4990f19305ca
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240491"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475201"
 ---
 # <a name="thread-pool-etw-events"></a>Événements ETW de pool de threads
 Ces événements collectent des informations sur les threads de travail et d'E/S.  
@@ -42,7 +43,7 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ActiveWorkerThreadCount|win:UInt32|Nombre de threads de travail disponibles pour traiter le travail, y compris ceux qui sont déjà en cours d’utilisation.|  
 |RetiredWorkerThreadCount|win:UInt32|Nombre de threads de travail qui ne sont pas disponibles pour traiter le travail, mais qui sont gardés en réserve au cas où des threads supplémentaires seraient requis ultérieurement.|  
@@ -66,7 +67,7 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |Débit|win:Double|Nombre d'achèvements par unité de temps|  
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
@@ -86,7 +87,7 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |AverageThroughput|win:Double|Débit moyen d'un échantillon de mesures|  
 |NewWorkerThreadCount|win:UInt32|Nouveau nombre de threads de travail actifs|  
@@ -108,16 +109,16 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
-|Durée|win:Double|Durée, en secondes, pendant laquelle ces statistiques ont été collectées.|  
+|Duration|win:Double|Durée, en secondes, pendant laquelle ces statistiques ont été collectées.|  
 |Débit|win:Double|Nombre moyen d'achèvements par seconde au cours de cet intervalle.|  
 |ThreadWave|win:Double|Réservé à un usage interne.|  
 |ThroughputWave|win:Double|Réservé à un usage interne.|  
 |ThroughputErrorEstimate|win:Double|Réservé à un usage interne.|  
 |AverageThroughputErrorEstimate|win:Double|Réservé à un usage interne.|  
 |ThroughputRatio|win:Double|Amélioration relative du débit provoquée par les variations du nombre de threads de travail actifs au cours de cet intervalle.|  
-|Confidence|win:Double|Mesure de la validité du champ ThroughputRatio.|  
+|Confiance|win:Double|Mesure de la validité du champ ThroughputRatio.|  
 |NewcontrolSetting|win:Double|Nombre de threads de travail actifs qui servira de référence pour les futures variations du nombre de threads actifs.|  
 |NewThreadWaveMagnitude|Win:UInt16|Importance des futures variations du nombre de threads actifs.|  
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
@@ -140,9 +141,9 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
-|Nombre|win:UInt64|Nombre de threads d'E/S, y compris le nouveau thread.|  
+|Count|win:UInt64|Nombre de threads d'E/S, y compris le nouveau thread.|  
 |NumRetired|win:UInt64|Nombre de threads de travail retirés|  
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
@@ -161,9 +162,9 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
-|Nombre|win:UInt64|Nombre de threads d'E/S restant dans le pool de threads|  
+|Count|win:UInt64|Nombre de threads d'E/S restant dans le pool de threads|  
 |NumRetired|win:UInt64|Nombre de threads d'E/S retirés|  
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
@@ -182,9 +183,9 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
-|Nombre|win:UInt64|Nombre de threads d'E/S dans le pool de threads, y compris celui-ci|  
+|Count|win:UInt64|Nombre de threads d'E/S dans le pool de threads, y compris celui-ci|  
 |NumRetired|win:UInt64|Nombre de threads d'E/S retirés|  
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
@@ -203,9 +204,9 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
-|Nombre|win:UInt64|Nombre de threads d'E/S restant dans le pool de threads|  
+|Count|win:UInt64|Nombre de threads d'E/S restant dans le pool de threads|  
 |NumRetired|win:UInt64|Nombre de threads d'E/S retirés|  
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   

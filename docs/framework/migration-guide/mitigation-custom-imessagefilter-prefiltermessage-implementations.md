@@ -1,13 +1,14 @@
 ---
 title: 'Atténuation : implémentations IMessageFilter.PreFilterMessage personnalisées'
+description: En savoir plus sur le implémentation personnalisé IMessageFilter. PreFilterMessage personnalisées inclus dans les applications Windows Forms qui ciblent .NET Framework 4.6.1 et versions ultérieures.
 ms.date: 03/30/2017
 ms.assetid: 9cf47c5b-0bb2-45df-9437-61cd7e7c2f4d
-ms.openlocfilehash: 7757e8d1fd0258ab2d972b7321082e4afa37f710
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5fe7500d3ed6ff293514495df150a747e7946dda
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400119"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475253"
 ---
 # <a name="mitigation-custom-imessagefilterprefiltermessage-implementations"></a>Atténuation : implémentations IMessageFilter.PreFilterMessage personnalisées
 
@@ -29,7 +30,7 @@ Pour les applications Windows Forms qui ciblent des versions antérieures du .NE
 
 ## <a name="mitigation"></a>Limitation des risques
 
-Si cette modification n’est pas souhaitable, les applications qui ciblent le cadre .NET 4.6.1 ou [ \<](../configure-apps/file-schema/runtime/runtime-element.md) une version ultérieure peuvent s’en retirer en ajoutant le paramètre de configuration suivant à la section>de configuration de l’application :
+Si cette modification n’est pas souhaitable, les applications qui ciblent le .NET Framework 4.6.1 ou une version ultérieure peuvent la refuser en ajoutant le paramètre de configuration suivant à la [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) section du fichier de configuration de l’application :
 
 ```xml
 <runtime>
@@ -37,7 +38,7 @@ Si cette modification n’est pas souhaitable, les applications qui ciblent le c
 </runtime>
 ```
 
-En outre, les applications qui ciblent les versions précédentes du cadre .NET mais sont en cours d’exécution sous le cadre .NET 4.6.1 ou une version ultérieure peuvent opter pour ce comportement en ajoutant le paramètre de configuration suivant à [ \<l’heure d’exécution>](../configure-apps/file-schema/runtime/runtime-element.md) section du fichier de configuration de l’application:
+En outre, les applications qui ciblent des versions antérieures du .NET Framework, mais qui s’exécutent sous le .NET Framework 4.6.1 ou une version ultérieure, peuvent accepter ce comportement en ajoutant le paramètre de configuration suivant à la [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) section du fichier de configuration de l’application :
 
 ```xml
 <runtime>

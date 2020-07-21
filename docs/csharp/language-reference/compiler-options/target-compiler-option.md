@@ -9,18 +9,18 @@ helpviewer_keywords:
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-ms.openlocfilehash: ea5481810e629d911c4d5aba62e60c98d0783f34
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 80cec001b27000e71b74f380a0f33e30602c01af
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644357"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473907"
 ---
 # <a name="-target-c-compiler-options"></a>-target (Options du compilateur C#)
-**L’option compilateur cible** peut être spécifiée dans l’une des quatre formes :  
+L’option du compilateur **-target** peut être spécifiée dans l’une des formes suivantes :  
   
  [-target:appcontainerexe](./target-appcontainerexe-compiler-option.md)  
- Pour créer un fichier .exe pour windows 8.x Store applications.  
+ Pour créer un fichier. exe pour les applications du Windows 8. x Store.  
   
  [-target:exe](./target-exe-compiler-option.md)  
  Pour créer un fichier .exe.  
@@ -37,7 +37,7 @@ ms.locfileid: "81644357"
  [-target:winmdobj](./target-winmdobj-compiler-option.md)  
  Pour créer un fichier .winmdobj intermédiaire.  
   
- Sauf si vous spécifiez **-cible:module**, **-cible** provoque un manifeste d’assemblage cadre .NET à placer dans un fichier de sortie. Pour plus d’informations, voir [Assemblées en .NET](../../../standard/assembly/index.md) et [Attributs communs](../attributes/global.md).  
+ À moins que vous ne spécifiiez **-target : module**, **-target** entraîne le placement d’un manifeste d’assembly .NET Framework dans un fichier de sortie. Pour plus d’informations, consultez [assemblys dans .net](../../../standard/assembly/index.md) et [attributs communs](../attributes/global.md).  
   
  Le manifeste de l’assembly est placé dans le premier fichier de sortie .exe dans la compilation ou dans le premier fichier DLL, en l’absence de fichier de sortie .exe. Par exemple, dans la ligne de commande suivante, le manifeste est placé dans `1.exe` :  
   
@@ -45,7 +45,7 @@ ms.locfileid: "81644357"
 csc -out:1.exe t1.cs -out:2.netmodule t2.cs  
 ```  
   
- Le compilateur crée un seul manifeste d’assembly par compilation. Les informations sur tous les fichiers d’une compilation sont placées dans le manifeste de l’assembly. Tous les fichiers de sortie, sauf ceux créés avec **-cible:module** peut contenir un manifeste d’assemblage. Lorsque vous générez plusieurs fichiers de sortie sur la ligne de commande, un seul manifeste d’assembly peut être créé et il doit aller dans le premier fichier de sortie spécifié sur la ligne de commande. Quel que soit le premier fichier de sortie (**-target:exe**, **-target:winexe**, **-target:library** ou **-target:module**), tous les autres fichiers de sortie générés dans la même compilation doivent être des modules (**-target:module**).  
+ Le compilateur crée un seul manifeste d’assembly par compilation. Les informations sur tous les fichiers d’une compilation sont placées dans le manifeste de l’assembly. Tous les fichiers de sortie sauf ceux créés avec **-target : module** peuvent contenir un manifeste d’assembly. Lorsque vous générez plusieurs fichiers de sortie sur la ligne de commande, un seul manifeste d’assembly peut être créé et il doit aller dans le premier fichier de sortie spécifié sur la ligne de commande. Quel que soit le premier fichier de sortie (**-target:exe**, **-target:winexe**, **-target:library** ou **-target:module**), tous les autres fichiers de sortie générés dans la même compilation doivent être des modules (**-target:module**).  
   
  Si vous créez un assembly, vous pouvez indiquer que tout ou partie de votre code est conforme CLS avec l’attribut <xref:System.CLSCompliantAttribute>.  
   
@@ -64,6 +64,6 @@ public class TestClass
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
 - [-subsystemversion (Options du compilateur C#)](./subsystemversion-compiler-option.md)

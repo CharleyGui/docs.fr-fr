@@ -1,5 +1,6 @@
 ---
 title: Chargement et utilisation dynamiques des types
+description: Chargez et utilisez dynamiquement les types dans .NET. Utilisez la réflexion, qui fournit l’infrastructure utilisée par les compilateurs de langage pour implémenter la liaison tardive implicite.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - implicit late binding
 - reflection, dynamically using types
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
-ms.openlocfilehash: 940f334ec6a42c4d8da461d634051ff979b8f98d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 39a4a9a2ff77cb900db7f39a55dc17a5b8c62cf3
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130265"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475084"
 ---
 # <a name="dynamically-loading-and-using-types"></a>Chargement et utilisation dynamiques des types
 La réflexion fournit l’infrastructure utilisée par les compilateurs de langages pour implémenter la liaison tardive implicite. La liaison est le processus de localisation de la déclaration (en d’autres termes, l’implémentation) qui correspond à un type spécifié unique. Quand ce processus se produit au moment de l’exécution plutôt qu’au moment de la compilation, il est appelé liaison tardive. Visual Basic permet d’utiliser la liaison tardive implicite dans le code ; le compilateur Visual Basic appelle une méthode d’assistance qui utilise la réflexion pour récupérer le type d’objet. Les arguments passés à la méthode d’assistance entraînent l’appel de la méthode appropriée au moment de l’exécution. Ces arguments sont l’instance (un objet) sur laquelle appeler la méthode, le nom de la méthode appelée (une chaîne) et les arguments passés à la méthode appelée (un tableau d’objets).  
@@ -92,7 +93,7 @@ End Module
 |UInt64|Single, Double|  
 |Int64|Single, Double|  
 |Unique|Double|  
-|Type non référence|Type référence|  
+|Type non référence|Type de référence|  
   
  La classe <xref:System.Type> a des méthodes **Get** qui utilisent des paramètres de type **Binder** pour résoudre les références à un membre particulier. <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>, <xref:System.Type.GetMethod%2A?displayProperty=nameWithType> et <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> recherchent un membre particulier du type actuel en fournissant les informations de signature pour ce membre. <xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType> et <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> sont rappelés pour sélectionner les informations de signature données des méthodes appropriées.  
   

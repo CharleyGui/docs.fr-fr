@@ -1,15 +1,16 @@
 ---
 title: Passage de tableaux en tant qu’arguments - Guide de programmation C#
+description: Les tableaux en C# peuvent être passés en tant qu’arguments aux paramètres de méthode. Comme les tableaux sont des types référence, la méthode peut modifier la valeur des éléments.
 ms.date: 07/05/2018
 helpviewer_keywords:
 - arrays [C#], passing as arguments
 ms.assetid: f3a0971e-c87c-4a1f-8262-bc0a3b712772
-ms.openlocfilehash: 2e53008910a9062ada25680eb4b8e54a225fd226
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 68f174421e56e2cf082fe670f93c4f6627d7c17b
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705689"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474629"
 ---
 # <a name="passing-arrays-as-arguments-c-programming-guide"></a>Passage de tableaux en tant qu’arguments (Guide de programmation C#)
 
@@ -29,7 +30,7 @@ Vous pouvez initialiser et passer un nouveau tableau en une seule étape, comme 
 
 [!code-csharp[CsProgGuideArrays#35](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#35)]
 
-### <a name="example"></a> Exemple
+### <a name="example"></a>Exemple
 
 Dans l’exemple suivant, un tableau de chaînes est initialisé et passé en tant qu’argument à une méthode `DisplayArray` pour des chaînes. La méthode affiche les éléments du tableau. Ensuite, la méthode `ChangeArray` inverse les éléments du tableau, puis la méthode `ChangeArrayElements` modifie les trois premiers éléments du tableau. Une fois que chaque méthode est retournée, la méthode `DisplayArray` montre que le passage d’un tableau par valeur n’empêche pas les modifications des éléments du tableau.
 
@@ -49,7 +50,7 @@ Vous pouvez initialiser et passer un nouveau tableau en une seule étape, comme 
 
 [!code-csharp[csProgGuideArrays#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#32)]
 
-### <a name="example"></a> Exemple
+### <a name="example"></a>Exemple
 
 Dans l’exemple suivant, un tableau à deux dimensions d’entiers est initialisé et passé à la méthode `Print2DArray`. La méthode affiche les éléments du tableau.
 
@@ -57,8 +58,8 @@ Dans l’exemple suivant, un tableau à deux dimensions d’entiers est initiali
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Tableaux](index.md)
 - [Tableaux unidimensionnels](single-dimensional-arrays.md)
 - [Tableaux multidimensionnels](multidimensional-arrays.md)
-- [Arrays déchiquetés](jagged-arrays.md)
+- [Tableaux en escalier](jagged-arrays.md)

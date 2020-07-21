@@ -1,13 +1,14 @@
 ---
 title: 'Atténuation : Période de blocage du pool'
+description: Découvrez comment atténuer les problèmes provoqués par la suppression de la période de blocage du pool de connexions pour les connexions aux bases de données SQL Azure.
 ms.date: 03/30/2017
 ms.assetid: 92d2de20-79be-4df1-b182-144143a8866a
-ms.openlocfilehash: 98396d4254975d1806a8477cbcd2380cb52ceaf3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: be60fe87952697d964571176743a4e6f839c4894
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73457848"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475409"
 ---
 # <a name="mitigation-pool-blocking-period"></a>Atténuation : Période de blocage du pool
 La période de blocage du pool de connexions a été supprimée pour les connexions aux bases de données SQL Azure.  

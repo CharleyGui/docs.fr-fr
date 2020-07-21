@@ -1,13 +1,14 @@
 ---
 title: 'Atténuation : disposition WPF'
+description: Découvrez comment atténuer les problèmes qui résultent d’une modification de la disposition des contrôles WPF, comme le positionnement d’un objet se déplaçant d’un pixel.
 ms.date: 03/30/2017
 ms.assetid: 805ffd7f-8d1e-427e-a648-601ca8ec37a5
-ms.openlocfilehash: 7a074698fd203d0c5f9b799bfee8a6a9cb40800e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e4e4612f7b39eefbf0e76ac86c8eb644c257ba75
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73457781"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475344"
 ---
 # <a name="mitigation-wpf-layout"></a>Atténuation : disposition WPF
 La disposition des contrôles WPF peut varier légèrement.  

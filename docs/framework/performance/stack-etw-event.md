@@ -1,41 +1,42 @@
 ---
 title: Événement ETW de pile
+description: En savoir plus sur l’événement ETW de pile, qui doit être utilisé conjointement avec d’autres événements pour générer des traces de pile après le déclenchement d’un événement.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - stack event [.NET Framework]
 - ETW, stack event (CLR)
 ms.assetid: f612fa5b-4b62-4593-a19e-85c9b1018dce
-ms.openlocfilehash: f3014a04ba7cacbe37b6706e2919ffd7de19aa65
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cab496615c4ef17831895b72c8987917e3c06e77
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715908"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474135"
 ---
 # <a name="stack-etw-event"></a>Événement ETW de pile
 L’événement de pile doit être utilisé conjointement avec d’autres événements pour générer des arborescences d’appels de procédure après le déclenchement d’un événement. Il est enregistré quand le fournisseur du runtime est activé. Il s’agit d’un événement très fréquent, car il est déclenché à chaque déclenchement d’un autre événement runtime. Pour cette raison, nous vous recommandons d’utiliser cet événement avec précaution.  
   
  Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`StackKeyword` (0x40000000)|LogAlways(0)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Moment du déclenchement|  
+|Événement|ID de l’événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`CLRStackWalk`|82|Conjointement avec d’autres événements pour générer les arborescences des appels de procédure après un événement.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|win:Uint16|Identificateur de runtime unique.|  
 |Reserved1|win:UInt8|Réservé.|  
 |Reserved2|win:UInt8|Réservé.|  
 |FrameCount|win:UInt32|Nombre de frames dans l’arborescence des appels de procédure.|  
-|Stack|win:Pointer|Colonnes de pointeurs d’instruction.|  
+|Pile|win:Pointer|Colonnes de pointeurs d’instruction.|  
   
 ## <a name="see-also"></a>Voir aussi
 

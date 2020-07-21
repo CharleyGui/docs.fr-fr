@@ -1,26 +1,27 @@
 ---
 title: Migration à partir du .NET Framework 1.1
+description: En savoir plus sur les étapes nécessaires à l’exécution d’une application compilée à l’aide de .NET Framework 1,1 sur Windows 7 ou version ultérieure.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-ms.openlocfilehash: 11fe9ba36d32a4c9fe363b48f76a8bb2b24f073b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f2b0e21ff5dbeab3395335f52799629859fb2d90
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73974967"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475266"
 ---
-# <a name="migrate-from-the-net-framework-11"></a>Migrer du cadre .NET 1.1
+# <a name="migrate-from-the-net-framework-11"></a>Migrer à partir de la .NET Framework 1,1
 
-Windows 7 et les versions ultérieures du système d’exploitation Windows ne prennent pas en charge le cadre .NET 1.1. Par conséquent, les applications qui ciblent le cadre .NET 1.1 ne s’exécuteront pas sans modification sur Windows 7 ou les versions ultérieures du système d’exploitation. Ce sujet traite des étapes requises pour exécuter une application qui cible le cadre .NET 1.1 sous Windows 7 et les versions ultérieures du système d’exploitation Windows. Pour plus d’informations sur le .NET Framework 1.1 et Windows 8, voir [Run .NET Framework 1.1 Apps sur Windows 8 et les versions ultérieures](../install/run-net-framework-1-1-apps.md).
+Windows 7 et les versions ultérieures du système d’exploitation Windows ne prennent pas en charge la .NET Framework 1,1. Par conséquent, les applications qui ciblent le .NET Framework 1,1 ne s’exécuteront pas sans modification sur les versions de système d’exploitation Windows 7 ou version ultérieure. Cette rubrique décrit les étapes nécessaires à l’exécution d’une application qui cible le .NET Framework 1,1 sous Windows 7 et les versions ultérieures du système d’exploitation Windows. Pour plus d’informations sur les .NET Framework 1,1 et Windows 8, consultez [exécuter des applications .NET Framework 1,1 sur Windows 8 et versions ultérieures](../install/run-net-framework-1-1-apps.md).
 
-## <a name="retarget-or-recompile"></a>Retarget ou recompte
+## <a name="retarget-or-recompile"></a>Reciblez ou recompilez
 
-Il existe deux façons d’obtenir une application qui a été compilée à l’aide du cadre .NET 1.1 pour fonctionner sur Windows 7 ou un système d’exploitation Windows ultérieur:
+Il existe deux façons d’obtenir une application qui a été compilée à l’aide de l' .NET Framework 1,1 pour s’exécuter sur Windows 7 ou sur un système d’exploitation Windows ultérieur :
 
-- Retarget l’application pour exécuter sous .NET Framework 4 et versions ultérieures. Le retargeting exige [ \<](../configure-apps/file-schema/startup/supportedruntime-element.md) que vous ajoutiez un élément de>supportRuntime au fichier de configuration de l’application qui lui permet de fonctionner sous .NET Framework 4 et des versions ultérieures. Un tel fichier de configuration prend la forme suivante :
+- Reciblez l’application pour qu’elle s’exécute sous .NET Framework 4 et versions ultérieures. Le reciblage nécessite que vous ajoutiez un [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) élément au fichier de configuration de l’application qui lui permet de s’exécuter sous .NET Framework 4 et versions ultérieures. Un tel fichier de configuration prend la forme suivante :
 
     ```xml
     <configuration>
@@ -30,7 +31,7 @@ Il existe deux façons d’obtenir une application qui a été compilée à l’
     </configuration>
     ```
 
-- Recompliquez l’application avec un compilateur qui cible le cadre .NET 4 ou une version ultérieure. Si vous avez utilisé initialement Visual Studio 2003 pour développer et compiler votre solution, vous pouvez ouvrir cette dernière dans Visual Studio 2010 (et probablement les versions ultérieures également) et utiliser la boîte de dialogue de **compatibilité des projets** pour convertir les fichiers solution et projet des formats utilisés par Visual Studio 2003 au format Microsoft Build Engine (MSBuild).
+- Recompilez l’application avec un compilateur qui cible le .NET Framework 4 ou une version ultérieure. Si vous avez utilisé initialement Visual Studio 2003 pour développer et compiler votre solution, vous pouvez ouvrir cette dernière dans Visual Studio 2010 (et probablement les versions ultérieures également) et utiliser la boîte de dialogue de **compatibilité des projets** pour convertir les fichiers solution et projet des formats utilisés par Visual Studio 2003 au format Microsoft Build Engine (MSBuild).
 
 Que vous préfériez recompiler ou recibler votre application, vous devez déterminer si elle est affectée par les modifications introduites dans les versions ultérieures du .NET Framework. Ces modifications sont de deux types :
 
@@ -42,7 +43,7 @@ Si vous reciblez ou recompilez votre application, vous devez examiner à la fois
 
 ## <a name="breaking-changes"></a>Changements cassants
 
-Lorsqu'une modification avec rupture se produit, selon la modification spécifique, une solution de contournement peut être disponible pour les applications reciblées et recompilées. Dans certains cas, vous pouvez ajouter un élément enfant au [ \<temps d’exécution>](../configure-apps/file-schema/startup/supportedruntime-element.md) élément du fichier de configuration de votre application pour restaurer le comportement précédent. Par exemple, le fichier de configuration suivant restaure le tri des chaînes et le comportement de comparaison utilisé dans .NET Framework 1.1 et peut être utilisé avec une application reciblée ou recompilée.
+Lorsqu'une modification avec rupture se produit, selon la modification spécifique, une solution de contournement peut être disponible pour les applications reciblées et recompilées. Dans certains cas, vous pouvez ajouter un élément enfant à l' [\<runtime>](../configure-apps/file-schema/startup/supportedruntime-element.md) élément du fichier de configuration de votre application pour restaurer le comportement précédent. Par exemple, le fichier de configuration suivant restaure le tri des chaînes et le comportement de comparaison utilisé dans .NET Framework 1.1 et peut être utilisé avec une application reciblée ou recompilée.
 
 ```xml
 <configuration>

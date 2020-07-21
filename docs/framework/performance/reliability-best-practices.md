@@ -1,5 +1,6 @@
 ---
 title: Meilleures pratiques pour la fiabilité
+description: Pour plus d’SQL Server, consultez meilleures pratiques en matière de fiabilité dans les applications serveur basées sur un hôte .NET. Empêchez les fuites de ressources ou les mises en route.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - marking locks
@@ -38,12 +39,12 @@ helpviewer_keywords:
 - STA-dependent features
 - fibers
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-ms.openlocfilehash: bd51ea1b79ac1dbd89a862f3961cc8508a87f301
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 134b71153f95dffd4525f307d291ce4389e0ce60
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715982"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474239"
 ---
 # <a name="reliability-best-practices"></a>Meilleures pratiques pour la fiabilité
 
@@ -275,7 +276,7 @@ Envisagez de changer tous les emplacements qui interceptent toutes les exception
 
 #### <a name="code-analysis-rule"></a>Règle d’analyse du code
 
-Examinez tous les blocs catch dans le code managé qui interceptent tous les objets ou toutes les exceptions.  Dans C#, cela implique le marquage des `catch` {} et `catch(Exception)` {}.  Envisagez de définir un type d’exception très spécifique ou effectuez une revue du code pour garantir qu’il ne se comporte pas de façon incorrecte s’il intercepte un type d’exception inattendu.
+Examinez tous les blocs catch dans le code managé qui interceptent tous les objets ou toutes les exceptions.  En C#, cela signifie marquer à la fois `catch` {} et `catch(Exception)` {} .  Envisagez de définir un type d’exception très spécifique ou effectuez une revue du code pour garantir qu’il ne se comporte pas de façon incorrecte s’il intercepte un type d’exception inattendu.
 
 ### <a name="do-not-assume-a-managed-thread-is-a-win32-thread--it-is-a-fiber"></a>Ne partez pas du principe qu’un thread managé est un thread Win32, car il s’agit d’une fibre
 
@@ -314,4 +315,4 @@ Cette action indique au compilateur juste-à-temps de préparer tout le code dan
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.ConstrainedExecution>
-- [Attributs de programmation et de protection des hôtes SQL Server](sql-server-programming-and-host-protection-attributes.md)
+- [Attributs de programmation et de protection des hôtes SQL Server](sql-server-programming-and-host-protection-attributes.md)

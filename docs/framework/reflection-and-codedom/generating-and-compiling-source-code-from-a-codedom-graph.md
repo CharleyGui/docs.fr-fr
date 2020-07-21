@@ -1,5 +1,6 @@
 ---
 title: Génération et compilation du code source à partir d’un graphique CodeDOM
+description: Générez et compilez le code source à partir d’un graphique CodeDOM dans .NET. Utilisez un fournisseur de code CodeDOM pour générer le code source et compiler les assemblys.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -26,12 +27,12 @@ helpviewer_keywords:
 - compiling source code, multiple languages
 - CodeDOM, graphs
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
-ms.openlocfilehash: a8d3bf7363cb887834a1c251aead05c75e2e3fe8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 85654fe961f01ad7b8fb886d59a3de9ab0efe7aa
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130221"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474044"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Génération et compilation du code source à partir d’un graphique CodeDOM
 L’espace de noms <xref:System.CodeDom.Compiler> fournit des interfaces pour la génération de code source à partir de graphiques d’objets CodeDOM et pour la gestion de la compilation avec les compilateurs pris en charge. Un fournisseur de code peut produire du code source dans un langage de programmation particulier en fonction d’un graphique CodeDOM. Une classe qui dérive de <xref:System.CodeDom.Compiler.CodeDomProvider> peut fournir en général des méthodes pour générer et compiler le code pour le langage pris en charge par le fournisseur.  

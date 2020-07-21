@@ -1,22 +1,23 @@
 ---
 title: Finaliseurs - Guide de programmation C#
+description: Les finaliseurs en C#, qui sont également appelés destructeurs, exécutent tout nettoyage final nécessaire lorsqu’une instance de classe est collectée par le garbage collector.
 ms.date: 10/08/2018
 helpviewer_keywords:
 - ~ [C#], in finalizers
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 62fc531a8064a8a5cb144a89aa9975b3199db976
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 392b69633e596f0682fdfb4a5875f46755203ff7
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990114"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474889"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
 Les finaliseurs (également appelés **destructeurs**) servent à effectuer les derniers nettoyages nécessaires lorsqu’une instance de classe est collectée par le récupérateur de mémoire.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 - Les finaliseurs ne peuvent pas être définis dans des structs. Ils sont utilisés uniquement avec les classes.  
   

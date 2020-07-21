@@ -1,16 +1,17 @@
 ---
 title: Tableaux multidimensionnels - Guide de programmation C#
+description: Les tableaux en C# peuvent avoir plusieurs dimensions. Cet exemple de déclaration crée un tableau à deux dimensions de quatre lignes et deux colonnes.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-ms.openlocfilehash: ee5fae36ff844fadad7e1b6a766020319b67a83c
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: a2f204c0866672b317569fbc620aa8af60829ffd
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021759"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475006"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>Tableaux multidimensionnels (Guide de programmation C#)
 
@@ -50,7 +51,7 @@ Les tableaux peuvent avoir plusieurs dimensions. Par exemple, la déclaration su
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Tableaux](./index.md)
 - [Tableaux unidimensionnels](./single-dimensional-arrays.md)
 - [Tableaux en escalier](./jagged-arrays.md)

@@ -1,5 +1,6 @@
 ---
 title: Classes abstract et sealed et membres de classe - Guide de programmation C#
+description: Le mot clé abstract en C# crée des classes et des membres de classe incomplets. Le mot clé sealed empêche l’héritage des classes ou membres de classe virtuels précédemment.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - abstract classes [C#]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - C# language, abstract classes
 - C# language, sealed
 ms.assetid: 99aa52f7-b435-43f9-936e-2470af734c4e
-ms.openlocfilehash: 07738031f1dec05424f7c3756f49a8f1f9a2c44b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 391a8ccbb1fbe6626d1cd5a4b6fcfd9ace3506e6
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715007"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474486"
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>Classes abstract et sealed et membres de classe (Guide de programmation C#)
 Le mot clé [abstract](../../language-reference/keywords/abstract.md) vous permet de créer des classes et des membres de [class](../../language-reference/keywords/class.md) qui sont incomplets et doivent être implémentés dans une classe dérivée.  
@@ -49,9 +50,9 @@ Le mot clé [abstract](../../language-reference/keywords/abstract.md) vous perm
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](./index.md)
 - [Héritage](./inheritance.md)
 - [Méthodes](./methods.md)
-- [Champs](./fields.md)
-- [Comment définir les propriétés abstraites](./how-to-define-abstract-properties.md)
+- [Fields](./fields.md)
+- [Comment : définir des propriétés abstraites](./how-to-define-abstract-properties.md)

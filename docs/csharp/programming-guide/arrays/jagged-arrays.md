@@ -1,16 +1,17 @@
 ---
 title: Tableaux en escalier - Guide de programmation C#
+description: Un tableau en escalier en C# est un tableau dont les éléments sont des tableaux de dimensions et de tailles différentes. Découvrez comment déclarer, initialiser et accéder à des tableaux en escalier.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - jagged arrays [C#]
 - arrays [C#], jagged
 ms.assetid: 537c65a6-0e0a-4a00-a2b8-086f38519c70
-ms.openlocfilehash: 56013f0143d5efcb31a476909cb6e92504ff0dbc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 40da9fbda34aef4e69ebf2ae20485e883b79f871
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705702"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474681"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>Tableaux en escalier (Guide de programmation C#)
 
@@ -58,7 +59,7 @@ Un tableau en escalier est un tableau dont les éléments sont des tableaux. Les
   
  retourne la valeur 3.  
   
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
  Cet exemple génère un tableau dont les éléments sont eux-mêmes des tableaux. Chacun des éléments de tableau ont une taille différente.  
   
@@ -67,7 +68,7 @@ Un tableau en escalier est un tableau dont les éléments sont des tableaux. Les
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Array>
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Tableaux](./index.md)
 - [Tableaux unidimensionnels](./single-dimensional-arrays.md)
 - [Tableaux multidimensionnels](./multidimensional-arrays.md)

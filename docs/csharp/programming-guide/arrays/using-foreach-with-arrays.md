@@ -1,16 +1,17 @@
 ---
 title: Utiliser foreach avec des tableaux - Guide de programmation C#
+description: L’instruction foreach en C# itère au sein des éléments d’un tableau. Pour les tableaux unidimensionnels, foreach traite les éléments dans l’ordre d’index de plus en plus important.
 ms.date: 05/23/2018
 helpviewer_keywords:
 - arrays [C#], foreach
 - foreach statement [C#], using with arrays
 ms.assetid: 5f2da2a9-1f56-4de5-94cc-e07f4f7a0244
-ms.openlocfilehash: bb121b0f5d990ef6e596b34a45606e2abde6811a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d924a3ef3351cbb30b809a1542f35314ee721852
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705676"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474538"
 ---
 # <a name="using-foreach-with-arrays-c-programming-guide"></a>Utiliser foreach avec des tableaux (Guide de programmation C#)
 
@@ -29,8 +30,8 @@ Cependant, dans le cas de tableaux multidimensionnels, l’utilisation d’une b
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Array>
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Tableaux](index.md)
 - [Tableaux unidimensionnels](single-dimensional-arrays.md)
 - [Tableaux multidimensionnels](multidimensional-arrays.md)
-- [Arrays déchiquetés](jagged-arrays.md)
+- [Tableaux en escalier](jagged-arrays.md)

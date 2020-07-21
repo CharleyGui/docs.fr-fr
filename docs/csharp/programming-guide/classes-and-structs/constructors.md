@@ -1,17 +1,18 @@
 ---
 title: Constructeurs - Guide de programmation C#
+description: Un constructeur en C# est appelé lors de la création d’une classe ou d’un struct. Utilisez les constructeurs pour définir les valeurs par défaut, l’instanciation de limite et écrire du code flexible et facile à lire.
 ms.date: 05/05/2017
 helpviewer_keywords:
 - constructors [C#]
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: 8eedfaed111f01cc2ec55a2f42df66d4588bd42f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4a731e648143f5e0ecf8860625962d8baa29fe26
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399790"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474902"
 ---
 # <a name="constructors-c-programming-guide"></a>Constructeurs (guide de programmation C#)
 
@@ -19,7 +20,7 @@ Chaque fois qu’une [classe](../../language-reference/keywords/class.md) ou un 
 
 ## <a name="parameterless-constructors"></a>Constructeurs sans paramètre
   
-Si vous ne fournissez pas de constructeur pour votre classe, Cmd en crée un par défaut qui instantanément l’objet et définit les variables des membres aux valeurs par défaut énumérées dans les [valeurs par défaut de l’article de type C.](../../language-reference/builtin-types/default-values.md) Si vous ne fournissez pas de constructeur pour votre struct, C s’appuie sur un *constructeur implicite sans paramètres* pour initialiser automatiquement chaque champ à sa valeur par défaut. Pour plus d’informations et d’exemples, voir [Les constructeurs d’instance](instance-constructors.md).  
+Si vous ne fournissez pas de constructeur pour votre classe, C# en crée un par défaut qui instancie l’objet et définit des variables membres avec les valeurs par défaut, comme indiqué dans l’article [valeurs par défaut des types C#](../../language-reference/builtin-types/default-values.md) . Si vous ne fournissez pas de constructeur pour votre struct, C# s’appuie sur un *constructeur sans paramètre implicite* pour initialiser automatiquement chaque champ à sa valeur par défaut. Pour plus d’informations et d’exemples, consultez [constructeurs d’instances](instance-constructors.md).  
 
 ## <a name="constructor-syntax"></a>Syntaxe du constructeur
 
@@ -33,7 +34,7 @@ Si un constructeur peut être implémenté comme une seule instruction, vous pou
 
 ## <a name="static-constructors"></a>Constructeurs statiques
 
-Les exemples précédents ont tous montré des constructeurs d’instances qui permettent de créer un objet. Une classe ou un struct peut également avoir un constructeur statique qui initialise les membres statiques du type.  Les constructeurs statiques sont sans paramètre. Si vous ne fournissez pas de constructeur statique pour initialiser les champs statiques, le compilateur Cmd initialise les champs statiques à leur valeur par défaut, telles qu’indiquées dans les [valeurs par défaut de l’article de type C.](../../language-reference/builtin-types/default-values.md)
+Les exemples précédents ont tous montré des constructeurs d’instances qui permettent de créer un objet. Une classe ou un struct peut également avoir un constructeur statique qui initialise les membres statiques du type.  Les constructeurs statiques sont sans paramètre. Si vous ne fournissez pas de constructeur statique pour initialiser les champs statiques, le compilateur C# initialise les champs statiques à leur valeur par défaut, comme indiqué dans l’article [valeurs par défaut des types C#](../../language-reference/builtin-types/default-values.md) .
 
 L’exemple suivant utilise un constructeur statique pour initialiser un champ statique.
 
@@ -48,18 +49,18 @@ Pour obtenir plus d’informations et d’exemples, consultez [Constructeurs sta
 ## <a name="in-this-section"></a>Dans cette section  
  [Utilisation de constructeurs](./using-constructors.md)  
   
- [Constructeurs d'instances](./instance-constructors.md)  
+ [Constructeurs d’instances](./instance-constructors.md)  
   
  [Constructeurs privés](./private-constructors.md)  
   
  [Constructeurs statiques](./static-constructors.md)  
   
- [Comment écrire un constructeur de copie](./how-to-write-a-copy-constructor.md)  
+ [Comment : écrire un constructeur de copie](./how-to-write-a-copy-constructor.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](./index.md)
 - [Finaliseurs](./destructors.md)
-- [Statique](../../language-reference/keywords/static.md)
-- [Pourquoi les initialisateurs fonctionnent-ils dans l’ordre opposé en tant que constructeurs? Première partie](https://docs.microsoft.com/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)
+- [static](../../language-reference/keywords/static.md)
+- [Pourquoi les initialiseurs s’exécutent-ils dans l’ordre inverse en tant que constructeurs ? Première partie](https://docs.microsoft.com/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)

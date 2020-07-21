@@ -1,20 +1,21 @@
 ---
 title: 'Atténuation : Nouveau compilateur JIT 64 bits'
+description: Découvrez le nouveau compilateur JIT 64 bits inclus dans .NET Framework 4,6 et un comportement inattendu ou des exceptions qui peuvent se produire pendant la compilation.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT compiler, 64-bit
 - JIT compilation, 64-bit
 - RyuJIT compiler
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
-ms.openlocfilehash: 883aaf032bde632b08f965d3450cfbea4feb8e65
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f059cbdd3b2a66ac8a668b7b8a80d9ad1551fa64
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181254"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475227"
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>Atténuation : Nouveau compilateur JIT 64 bits
-À compter du .NET Framework 4.6, le runtime comprend un nouveau compilateur JIT 64 bits pour la compilation juste-à-temps. Ce changement n’affecte pas la compilation avec le compilateur JIT 32 bits.  
+À compter de .NET Framework 4,6, le runtime comprend un nouveau compilateur JIT 64 bits pour la compilation juste-à-temps. Cette modification n’affecte pas la compilation avec le compilateur JIT 32 bits.  
   
 ## <a name="unexpected-behavior-or-exceptions"></a>Comportement inattendu ou exceptions  
  Dans certains cas, la compilation avec le nouveau compilateur JIT 64 bits entraîne une exception de runtime ou le non-respect du comportement lors de l’exécution de code compilé par l’ancien compilateur JIT 64 bits. Voici quelques-unes des différences connues :  
@@ -50,7 +51,7 @@ ms.locfileid: "79181254"
 ## <a name="mitigation-of-other-issues"></a>Atténuation des autres problèmes  
  Si vous rencontrez une autre différence de comportement entre le code compilé avec l’ancien compilateur JIT 64 bits et celui compilé avec le nouveau compilateur, ou entre les versions Debug et Release de votre application lorsque les deux sont compilées avec le nouveau compilateur JIT 64 bits, vous pouvez procéder comme suit pour compiler votre application avec l’ancien compilateur JIT 64 bits :  
   
-- Sur une base par application, vous pouvez ajouter [ \<l’utilisationLegacyJit>](../configure-apps/file-schema/runtime/uselegacyjit-element.md) élément au fichier de configuration de votre application. Ce qui suit désactive la compilation avec le nouveau compilateur JIT 64 bits et utilise l’ancien compilateur à la place.  
+- Pour chaque application, vous pouvez ajouter l' [\<useLegacyJit>](../configure-apps/file-schema/runtime/uselegacyjit-element.md) élément au fichier de configuration de votre application. Ce qui suit désactive la compilation avec le nouveau compilateur JIT 64 bits et utilise l’ancien compilateur à la place.  
   
     ```xml  
     <?xml version ="1.0"?>  
@@ -70,4 +71,4 @@ ms.locfileid: "79181254"
 ## <a name="see-also"></a>Voir aussi
 
 - [Compatibilité des applications](application-compatibility.md)
-- [\<utiliserLegacyJit> Element](../configure-apps/file-schema/runtime/uselegacyjit-element.md)
+- [\<useLegacyJit>Appartient](../configure-apps/file-schema/runtime/uselegacyjit-element.md)

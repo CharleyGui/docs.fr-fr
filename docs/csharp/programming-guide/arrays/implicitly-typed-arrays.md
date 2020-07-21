@@ -1,17 +1,18 @@
 ---
 title: Tableaux implicitement typés - Guide de programmation C#
+description: Le type d’un tableau implicitement typé en C# est déduit à partir des éléments dans l’initialiseur de tableau. Utilisez des tableaux implicitement typés dans les expressions de requête.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], implicitly-typed
 - implicitly-typed arrays [C#]
 - C# language, implicitly typed arrays
 ms.assetid: e05be95c-6732-403d-ae42-b35f057cbbea
-ms.openlocfilehash: 943760af30422cd333fdff65cdf678108c9d9564
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1f14f68207dfb79c92eaa01ac2a8ffaa08facc03
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705715"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474707"
 ---
 # <a name="implicitly-typed-arrays-c-programming-guide"></a>Tableaux implicitement typés (Guide de programmation C#)
 
@@ -33,10 +34,10 @@ Quand vous créez un type anonyme qui contient un tableau, le tableau doit être
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
-- [Variables locales implicitement dactylographiques](../classes-and-structs/implicitly-typed-local-variables.md)
+- [Guide de programmation C#](../index.md)
+- [Variables locales implicitement typées](../classes-and-structs/implicitly-typed-local-variables.md)
 - [Tableaux](./index.md)
 - [Types anonymes](../classes-and-structs/anonymous-types.md)
 - [Initialiseurs d’objets et de collections](../classes-and-structs/object-and-collection-initializers.md)
-- [Var](../../language-reference/keywords/var.md)
+- [var](../../language-reference/keywords/var.md)
 - [LINQ en C#](../../linq/index.md)

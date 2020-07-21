@@ -1,5 +1,6 @@
 ---
 title: Vue d’ensemble du Dynamic Language Runtime | Microsoft Docs
+description: Lisez une vue d’ensemble du Dynamic Language Runtime (DLR) dans .NET. Le DLR est un environnement d’exécution qui ajoute un ensemble de services pour les langages dynamiques au CLR.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dynamic language runtime
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - DLR
 - IronRuby
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
-ms.openlocfilehash: a38ed15769d1186ef78733d68d9d8b51b3eb262d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2272bc60af35e3cdec3e1a71bbc6516565b4ec6e
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446899"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475149"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Vue d'ensemble du Dynamic Language Runtime
 

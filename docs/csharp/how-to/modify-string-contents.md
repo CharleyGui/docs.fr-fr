@@ -1,14 +1,15 @@
 ---
 title: Comment modifier le contenu d’une chaîne-Guide C#
+description: Passez en revue des exemples de différentes techniques pour modifier le contenu des chaînes existantes en C#, qui retournent un nouvel objet String.
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: e607a8a2e96a73f64463d75a75a2bfe3f518d118
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: ecce8857befc66353deea341d81f8c6e4313b951
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324163"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473966"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Comment modifier le contenu d’une chaîne en C\#
 

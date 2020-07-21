@@ -1,16 +1,17 @@
 ---
 title: Événements ETW de méthode
+description: Consultez événements ETW qui collectent des informations spécifiques aux méthodes, telles que les événements de méthode CLR, le marqueur de méthode CLR ou les événements détaillés de méthode CLR et MethodJittingStarted.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ETW, method events (CLR)
 - method events [.NET Framework]
 ms.assetid: 167a4459-bb6e-476c-9046-7920880f2bb5
-ms.openlocfilehash: 4937afe8bb23be58b72d082cd5ba200b4948ab4d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f48867a0aef417ad0b19a15d78e0c0f01a7c30a1
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715993"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474317"
 ---
 # <a name="method-etw-events"></a>Événements ETW de méthode
 
@@ -24,7 +25,7 @@ Tous les événements de méthode sont déclenchés par le mot clé `JITKeyword`
 
 Le tableau suivant montre les mots clés et les niveaux. Pour plus d’informations, consultez [niveaux et Mots clés ETW du CLR](clr-etw-keywords-and-levels.md).
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`JITKeyword` (0x10)|Informatif (4)|
 |`NGenKeyword` (0x20)|Informatif (4)|
@@ -33,7 +34,7 @@ Le tableau suivant montre les mots clés et les niveaux. Pour plus d’informati
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Description|
+|Événement|ID de l’événement|Description|
 |-----------|--------------|-----------------|
 |`MethodLoad_V1`|136|Déclenché quand une méthode est chargée juste-à-temps (JIT) ou quand une image NGEN est chargée. Les méthodes dynamiques et génériques n'utilisent pas cette version pour les chargements de méthodes. Les programmes d'assistance JIT n'utilisent jamais cette version.|
 |`MethodUnLoad_V1`|137|Déclenché quand un module est déchargé ou quand un domaine d'application est détruit. Les méthodes dynamiques n'utilisent jamais cette version pour les déchargements de méthodes.|
@@ -42,7 +43,7 @@ Le tableau ci-dessous montre les informations liées aux événements.
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |MethodID|win:UInt64|Identificateur unique d’une méthode. Pour les méthodes d'assistance JIT, sa valeur correspond à l'adresse de début de la méthode.|
 |ModuleID|win:UInt64|Identificateur du module auquel cette méthode appartient (0 pour les programmes d'assistance JIT).|
@@ -58,7 +59,7 @@ Ces événements sont déclenchés uniquement sous le fournisseur d'arrêt. Ils 
 
 Le tableau suivant montre les mots clés et les niveaux.
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementRundownKeyword` (0x800)|Informatif (4)|
 |`JitRundownKeyword` (0x10)|Informatif (4)|
@@ -66,7 +67,7 @@ Le tableau suivant montre les mots clés et les niveaux.
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Description|
+|Événement|ID de l’événement|Description|
 |-----------|--------------|----------------|
 |`DCStartInit_V1`|147|Envoyé avant le démarrage de l'énumération pendant un arrêt de début.|
 |`DCStartComplete_V1`|145|Envoyé à la fin de l'énumération pendant un arrêt de début.|
@@ -75,7 +76,7 @@ Le tableau ci-dessous montre les informations liées aux événements.
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
@@ -83,7 +84,7 @@ Le tableau ci-dessous montre les données d’événements.
 
 Le tableau suivant montre les mots clés et les niveaux.
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`JITKeyword` (0x10)|Détaillé (5)|
 |`NGenKeyword` (0x20)|Détaillé (5)|
@@ -92,7 +93,7 @@ Le tableau suivant montre les mots clés et les niveaux.
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Description|
+|Événement|ID de l’événement|Description|
 |-----------|--------------|-----------------|
 |`MethodLoadVerbose_V1`|143|Déclenché quand une méthode est chargée juste-à-temps (JIT) ou quand une image NGEN est chargée. Les méthodes dynamiques et génériques utilisent toujours cette version pour les chargements de méthodes. Les programmes d'assistance JIT utilisent toujours cette version.|
 |`MethodUnLoadVerbose_V1`|144|Déclenché quand une méthode dynamique est détruite, quand un module est déchargé ou quand un domaine d'application est détruit. Les méthodes dynamiques utilisent toujours cette version pour les déchargements de méthodes.|
@@ -101,7 +102,7 @@ Le tableau ci-dessous montre les informations liées aux événements.
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |MethodID|win:UInt64|Identificateur unique de la méthode. Pour les méthodes d'assistance JIT, sa valeur correspond à l'adresse de début de la méthode.|
 |ModuleID|win:UInt64|Identificateur du module auquel cette méthode appartient (0 pour les programmes d'assistance JIT).|
@@ -118,7 +119,7 @@ Le tableau ci-dessous montre les données d’événements.
 
 Le tableau suivant montre les mots clés et les niveaux.
 
-|Mot clé pour déclencher l'événement|Niveau|
+|Mot clé pour déclencher l'événement|Level|
 |-----------------------------------|-----------|
 |`JITKeyword` (0x10)|Détaillé (5)|
 |`NGenKeyword` (0x20)|Détaillé (5)|
@@ -127,13 +128,13 @@ Le tableau suivant montre les mots clés et les niveaux.
 
 Le tableau ci-dessous montre les informations liées aux événements.
 
-|Event|ID de l'événement|Description|
+|Événement|ID de l’événement|Description|
 |-----------|--------------|-----------------|
 |`MethodJittingStarted`|145|Déclenché quand une méthode est compilée juste-à-temps (JIT).|
 
 Le tableau ci-dessous montre les données d’événements.
 
-|Nom de champ|Type de données|Description|
+|Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |MethodID|win:UInt64|Identificateur unique de la méthode.|
 |ModuleID|win:UInt64|Identificateur du module auquel cette méthode appartient.|

@@ -1,16 +1,17 @@
 ---
 title: Événements ETW de chargeur
+description: Passez en revue les événements ETW du chargeur, y compris les événements de domaine d’application, les événements d’assembly de chargeur CLR, les événements de module, les événements de module de domaine CLR et les événements de plage de module.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-ms.openlocfilehash: 0f8f96cf73882ef6556e5b9e64cf9adf389a2318
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8220e8e773409be76bc7522d57551f1bddb90e5d
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180562"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474356"
 ---
 # <a name="loader-etw-events"></a>Événements ETW de chargeur
 Ces événements collectent des informations relatives au chargement et déchargement des domaines d'application, des assemblys et des modules.  
@@ -111,7 +112,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 |NativePdbAge|win:UInt32|Nombre relatif à l’âge écrit dans le fichier PDB NGen qui correspond à ce module, le cas échéant. (Consultez la section Notes.)|  
 |NativePdbBuildPath|win:UnicodeString|Chemin d'accès à l'emplacement où le fichier PDB NGen qui correspond à ce module a été créé, le cas échéant. Dans certains cas, cela peut simplement être un nom de fichier. (Consultez la section Notes.)|  
   
-### <a name="remarks"></a>Notes   
+### <a name="remarks"></a>Notes  
   
 - Les champs dont le nom contient « Pdb » peuvent être utilisés par les outils de profilage pour localiser les fichiers PDB qui correspondent aux modules qui ont été chargés au cours de la session de profilage. Les valeurs de ces champs correspondent aux données écrites dans les sections IMAGE_DIRECTORY_ENTRY_DEBUG du module normalement utilisé par les débogueurs pour favoriser la localisation des fichiers PDB qui correspondent aux modules chargés.  
   
@@ -178,7 +179,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 |RangeSize1|win:UInt32|0 indique des données incorrectes.|  
 |RangeBegin2|win:UnicodeString||  
   
-### <a name="remarks"></a>Notes   
+### <a name="remarks"></a>Notes  
  Si une image NGen chargée dans un processus du .NET Framework a été optimisée à l’aide d’IBC, l’événement `ModuleRange` qui contient les plages à chaud dans l'image NGen est consigné avec ses `moduleID` et `ClrInstanceID`.  Si l'image NGen n'est pas optimisée à l’aide d’IBC, cet événement n'est pas consigné. Pour déterminer le nom du module, cet événement doit être assemblé avec les événements ETW de chargement de module.  
   
  La taille de charge utile pour cet événement est variable. Le champ `Count` indique le nombre de décalages de plages contenus dans cet événement.  Cet événement doit être assemblé avec l’événement `IStart` de Windows afin de déterminer les plages réelles. L'événement de chargement d'image Windows est consigné chaque fois qu'une image est chargée, et il contient l'adresse virtuelle de l'image chargée.  

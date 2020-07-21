@@ -1,17 +1,17 @@
 ---
 title: Assemblys pouvant être collectés pour la génération de type dynamique
-description: ''
+description: Prise en main des assemblys pouvant être collectés pour la génération de type dynamique dans .NET. En savoir plus sur les durées de vie et restrictions des assemblys pouvant être collectées.
 ms.date: 08/29/2017
 helpviewer_keywords:
 - reflection, dynamic assembly
 - assemblies, collectible
 - collectible assemblies, retrieving
-ms.openlocfilehash: 02c7048e0321282463aa3558287d1d13c5e4f8d2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4981b93dbd49a6da96740bebed0f2ed7b89036c8
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180544"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475123"
 ---
 # <a name="collectible-assemblies-for-dynamic-type-generation"></a>Assemblys pouvant être collectés pour la génération de type dynamique
 
@@ -61,7 +61,7 @@ Les restrictions suivantes s’appliquent aux assemblys pouvant être collectés
 
 - **COM Interop** Aucune interface COM ne peut être définie dans un assembly pouvant être collecté, et aucune instance de type dans un assembly pouvant être collecté ne peut être convertie en objets COM. Un type dans un assembly pouvant être collecté ne peut pas servir de wrapper CCW (COM Callable Wrapper) ni de wrapper RCW (Runtime Callable Wrapper). Toutefois, les types dans les assemblys pouvant être collectés peuvent utiliser des objets qui implémentent les interfaces COM.
 
-- **Appel** de code non managé Les méthodes qui ont <xref:System.Runtime.InteropServices.DllImportAttribute> l’attribut ne sont pas compilées quand elles sont déclarées dans un assembly pouvant être collecté. L’instruction <xref:System.Reflection.Emit.OpCodes.Calli?displayProperty=nameWithType> ne peut pas être utilisée dans l’implémentation d’un type dans un assembly pouvant être collecté, et ces types ne peuvent pas être marshalés en code non managé. Toutefois, vous pouvez effectuer un appel en code natif à l’aide d’un point d’entrée qui est déclaré dans un assembly ne pouvant pas être collecté.
+- **Appel** de code non managé Les méthodes qui ont l' <xref:System.Runtime.InteropServices.DllImportAttribute> attribut ne sont pas compilées quand elles sont déclarées dans un assembly pouvant être collecté. L’instruction <xref:System.Reflection.Emit.OpCodes.Calli?displayProperty=nameWithType> ne peut pas être utilisée dans l’implémentation d’un type dans un assembly pouvant être collecté, et ces types ne peuvent pas être marshalés en code non managé. Toutefois, vous pouvez effectuer un appel en code natif à l’aide d’un point d’entrée qui est déclaré dans un assembly ne pouvant pas être collecté.
 
 - **Marshaling** Les objets (en particulier, les délégués) définis dans les assemblys pouvant être collectés ne peuvent pas être marshalés. Il s’agit d’une restriction sur tous les types émis transitoires.
 

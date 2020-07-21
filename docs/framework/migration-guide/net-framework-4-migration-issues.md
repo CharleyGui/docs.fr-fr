@@ -1,16 +1,17 @@
 ---
 title: Problèmes de migration du .NET Framework 4
+description: Découvrez les problèmes de migration entre .NET Framework 3,5 Service Pack 1 et .NET Framework 4, y compris les correctifs et les modifications pour la sécurité et la conformité aux normes.
 ms.date: 05/02/2017
 helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
-ms.openlocfilehash: 8e83859733f021afbe074a7b4818b155d74efdff
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: bbb9a3803986c922fd1ef04a87cd1e230fc3d623
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420459"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475279"
 ---
 # <a name="net-framework-4-migration-issues"></a>Problèmes de migration du .NET Framework 4
 
@@ -24,19 +25,19 @@ Pour plus d’informations sur les nouvelles fonctionnalités, consultez [Nouvea
 
 Espaces de noms : <xref:System.Web> , <xref:System.Web.Mobile> , <xref:System.Web.Security> ,<xref:System.Web.UI.WebControls>
 
-Assembly : System. Web (dans System. Web. dll)
+Assembly : System. Web (en System.Web.dll)
 
 | Fonctionnalité  | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | -------- | ------------------------ | ------------------- |
 | **Fichiers de définition de navigateur** | Les fichiers de définition de navigateur ont été mis à jour pour inclure des informations sur les navigateurs et les appareils récemment sortis et mis à jour. Des navigateurs et appareils anciens (comme Netscape Navigator) ont été supprimés tandis que de nouveaux navigateurs et appareils (comme Google Chrome et Apple iPhone) ont été ajoutés.<br><br>Si votre application contient des définitions de navigateur personnalisées qui héritent de l’une des définitions de navigateur supprimées, une erreur s’affiche.<br><br>L’objet <xref:System.Web.HttpBrowserCapabilities> (qui est exposé par la propriété `Request.Browse` de la page) est régi par les fichiers de définition de navigateur. Les informations retournées durant l’accès à une propriété de cet objet dans ASP.NET 4 peuvent donc être différentes de celles retournées dans une version antérieure d’ASP.NET. | Si votre application repose sur les anciens fichiers de définitions de navigateur, vous pouvez les copier à partir du dossier suivant :<br><br>*\\ \\ Navigateurs de configuration Windows Microsoft.NET Framework \\ v 2.0.50727 \\ \\*<br><br>Copiez les fichiers dans le dossier des * \\ \\ navigateurs de configuration* correspondant pour ASP.net 4. Après avoir copié les fichiers, exécutez l’outil en ligne de commande [Aspnet_regbrowsers.exe](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms229858(v=vs.90)). Pour plus d’informations, consultez le [https://www.asp.net/mobile](/aspnet/mobile/overview) site Web. |
 | **Applications enfants qui s’exécutent sous des versions mixtes d’ASP.NET** | Les applications ASP.NET 4 configurées comme enfants d’applications qui exécutent des versions antérieures d’ASP.NET risquent de ne pas démarrer en raison d’erreurs de configuration ou de compilation. L’erreur spécifique qui se produit varie selon que l’application s’exécute sous IIS 6.0, IIS 7 ou IIS 7.5. | Vous pouvez apporter des changements aux fichiers de configuration des applications affectées pour que le système de configuration reconnaisse l’application ASP.NET 4 correctement. Pour plus d’informations sur les changements que vous devez effectuer, consultez la section « Échec du démarrage des applications enfants ASP.NET 4 sous des applications ASP.NET 2.0 ou ASP.NET 3.5 » dans le document [Changements avec rupture dans ASP.NET 4](/aspnet/whitepapers/aspnet4/breaking-changes) sur le site web ASP.NET. |
-| **Changements de ClientID** | Le nouveau paramètre `clientIDMode` dans ASP.NET 4 vous permet de spécifier la façon dont ASP.NET génère l’attribut `id` pour les éléments HTML. Dans les versions antérieures d’ASP.NET, le comportement par défaut était équivalent au paramètre `AutoID` de `clientIDMode`. Le paramètre par défaut est désormais `Predictable`. Pour plus d’informations, consultez [Identification du contrôle serveur web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/1d04y8ss%28v=vs.100%29). | Si vous utilisez Visual Studio pour mettre à niveau votre application à partir de ASP.NET 2,0 ou ASP.NET 3,5, l’outil ajoute automatiquement un paramètre au fichier Web. config qui conserve le comportement des versions antérieures de .NET Framework. Toutefois, si vous mettez à niveau une application en changeant le pool d’applications dans IIS pour cibler .NET Framework 4, ASP.NET utilise le nouveau mode par défaut. Pour désactiver le nouveau mode ID client, ajoutez le paramètre suivant au fichier Web.config :<br><br>`<pages clientIDMode="AutoID" />` |
+| **Changements de ClientID** | Le nouveau paramètre `clientIDMode` dans ASP.NET 4 vous permet de spécifier la façon dont ASP.NET génère l’attribut `id` pour les éléments HTML. Dans les versions antérieures d’ASP.NET, le comportement par défaut était équivalent au paramètre `AutoID` de `clientIDMode`. Le paramètre par défaut est désormais `Predictable`. Pour plus d’informations, consultez [Identification du contrôle serveur web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/1d04y8ss%28v=vs.100%29). | Si vous utilisez Visual Studio pour mettre à niveau votre application à partir de ASP.NET 2,0 ou ASP.NET 3,5, l’outil ajoute automatiquement un paramètre au fichier Web.config qui conserve le comportement des versions antérieures de .NET Framework. Toutefois, si vous mettez à niveau une application en changeant le pool d’applications dans IIS pour cibler .NET Framework 4, ASP.NET utilise le nouveau mode par défaut. Pour désactiver le nouveau mode ID client, ajoutez le paramètre suivant au fichier Web.config :<br><br>`<pages clientIDMode="AutoID" />` |
 | **Sécurité d’accès du code (CAS)** | Les fonctionnalités ASP.NET 2.0 ajoutées dans ASP.NET 3.5 utilisent le modèle de sécurité d’accès du code (CAS) du .NET Framework 1.1 et du .NET Framework 2.0. Toutefois, l’implémentation de CAS dans ASP.NET 4 a été considérablement revue. Ainsi, les applications ASP.NET de confiance partielle qui s’appuient sur du code de confiance exécuté dans le Global Assembly Cache peuvent échouer avec différentes exceptions de sécurité. Les applications de confiance partielle qui s’appuient sur d’importantes modifications apportées à la stratégie CAS de l’ordinateur peuvent également échouer et lever des exceptions de sécurité. | Vous pouvez rétablir le comportement ASP.NET 1.1 et 2.0 pour des applications ASP.NET 4 de confiance partielle en utilisant le nouvel attribut `legacyCasModel` dans l’élément de configuration `trust`, comme indiqué dans l’exemple suivant :<br><br>`<trust level= "Medium" legacyCasModel="true" />`<br><br>Important : Le rétablissement du modèle CAS antérieur peut entraîner des problèmes de sécurité.<br><br>Pour plus d’informations sur le nouveau modèle ASP.NET 4 de sécurité d’accès du code, consultez [Sécurité d’accès du code dans les applications ASP.NET 4](https://docs.microsoft.com/previous-versions/dd984947(v=vs.100)). |
-| **Fichiers de configuration** | Les fichiers de configuration racine (le fichier machine. config et le fichier Web. config racine) pour .NET Framework et ASP.NET 4 ont été mis à jour pour inclure la plupart des informations de configuration de réutilisabilité qui ont été trouvées dans les fichiers Web. config de l’application dans ASP.NET 3,5. En raison de la complexité des systèmes de configuration IIS 7 et IIS 7.5 managés, l’exécution d’applications ASP.NET 3.5 sous ASP.NET 4 et sous IIS 7 et IIS 7.5 peut provoquer des erreurs ASP.NET ou des erreurs IIS. | Mettez à niveau vos applications ASP.NET 3.5 vers ASP.NET 4 à l’aide des outils de mise à niveau de projet dans Visual Studio. Visual Studio 2010 modifie automatiquement le fichier Web.config des applications ASP.NET 3.5 pour qu’il contienne les paramètres appropriés pour ASP.NET 4.<br><br>Toutefois, vous pouvez exécuter des applications ASP.NET 3,5 à l’aide de .NET Framework 4 sans recompilation. Dans ce cas, vous devrez peut-être modifier manuellement le fichier Web. config de l’application avant d’exécuter l’application sous .NET Framework 4 et sous IIS 7 ou IIS 7,5. Le changement spécifique à effectuer dépend de la combinaison de logiciels que vous utilisez, notamment les mises en production des Service Pack (SP). Pour plus d’informations sur les éventuelles combinaisons de logiciels affectées par ce changement et sur la résolution de problèmes à l’aide de combinaisons spécifiques, consultez la section « Erreurs de configuration liées à la nouvelle configuration racine d’ASP.NET 4 » dans le document [Changements avec rupture dans ASP.NET 4](/aspnet/whitepapers/aspnet4/breaking-changes) sur le site web ASP.NET. |
+| **Fichiers de configuration** | Les fichiers de configuration racine (le fichier machine.config et le fichier Web.config racine) pour .NET Framework et ASP.NET 4 ont été mis à jour pour inclure la plupart des informations de configuration réutilisables qui ont été trouvées dans les fichiers de Web.config d’application de ASP.NET 3,5. En raison de la complexité des systèmes de configuration IIS 7 et IIS 7.5 managés, l’exécution d’applications ASP.NET 3.5 sous ASP.NET 4 et sous IIS 7 et IIS 7.5 peut provoquer des erreurs ASP.NET ou des erreurs IIS. | Mettez à niveau vos applications ASP.NET 3.5 vers ASP.NET 4 à l’aide des outils de mise à niveau de projet dans Visual Studio. Visual Studio 2010 modifie automatiquement le fichier Web.config des applications ASP.NET 3.5 pour qu’il contienne les paramètres appropriés pour ASP.NET 4.<br><br>Toutefois, vous pouvez exécuter des applications ASP.NET 3,5 à l’aide de .NET Framework 4 sans recompilation. Dans ce cas, vous devrez peut-être modifier manuellement le fichier Web.config de l’application avant d’exécuter l’application sous .NET Framework 4 et sous IIS 7 ou IIS 7,5. Le changement spécifique à effectuer dépend de la combinaison de logiciels que vous utilisez, notamment les mises en production des Service Pack (SP). Pour plus d’informations sur les éventuelles combinaisons de logiciels affectées par ce changement et sur la résolution de problèmes à l’aide de combinaisons spécifiques, consultez la section « Erreurs de configuration liées à la nouvelle configuration racine d’ASP.NET 4 » dans le document [Changements avec rupture dans ASP.NET 4](/aspnet/whitepapers/aspnet4/breaking-changes) sur le site web ASP.NET. |
 | **Rendu des contrôles** | Dans les versions antérieures d’ASP.NET, certains contrôles émettaient un balisage que vous ne pouviez pas désactiver. Par défaut, ce type de balisage n’est plus généré dans ASP.NET 4. Les changements de rendu affectent les contrôles suivants :<br><br>\*Les `Image` `ImageButton` contrôles et n’affichent plus d' `border="0"` attribut.<br>\*La `BaseValidator` classe et les contrôles de validation qui dérivent de ce dernier n’affichent plus de texte rouge par défaut.<br>\*Le `HtmlForm` contrôle n’effectue pas le rendu d’un `name` attribut.<br>\*Le `Table` contrôle n’affiche plus d' `border="0"` attribut.<br><br>Les contrôles qui ne sont pas conçus pour l’entrée d’utilisateur (par exemple, le contrôle `Label`) n’affichent plus d’attribut `disabled="disabled"` si leur propriété `Enabled` a la valeur `false` (ou s’ils héritent de ce paramètre d’un contrôle conteneur). | Si vous utilisez Visual Studio pour mettre à niveau votre application à partir d’ASP.NET 2.0 ou d’ASP.NET 3.5, l’outil ajoute automatiquement un paramètre au fichier Web.config pour conserver le rendu hérité. Toutefois, si vous mettez à niveau une application en changeant le pool d’applications dans IIS pour cibler .NET Framework 4, ASP.NET utilise le nouveau mode de rendu par défaut. Pour désactiver le nouveau mode de rendu, ajoutez le paramètre suivant au fichier Web.config :<br><br>`<pages controlRenderingCompatibilityVersion="3.5" />` |
 | **Gestionnaires d’événements dans les documents par défaut** | ASP.NET 4 affiche la valeur d’attribut `action` de l’élément HTML `form` sous la forme d’une chaîne vide quand une demande est effectuée à une URL sans extension à laquelle est mappé un document par défaut. Dans les premières mises en production d’ASP.NET, une demande à `http://contoso.com` entraînait une demande à Default.aspx. Dans ce document, la balise `form` ouvrante était affichée comme dans l’exemple suivant :<br><br>`<form action="Default.aspx" />`<br><br>Dans ASP.NET 4, une demande à `http://contoso.com` entraîne également une demande à Default.aspx, mais ASP.NET affiche maintenant la balise HTML `form` ouvrante comme dans l’exemple suivant :<br><br>`<form action="" />`<br><br>Quand l’attribut `action` est une chaîne vide, l’objet IIS `DefaultDocumentModule` crée une demande enfant à Default.aspx. Dans la plupart des conditions, cette demande enfant est transparente pour le code d’application, et la page Default.aspx s’exécute normalement. Toutefois, en raison d’une interaction potentielle entre le code managé et le mode intégré IIS 7 ou IIS 7.5, les pages .aspx managées peuvent cesser de fonctionner correctement pendant la demande enfant. Si les conditions suivantes se produisent, la demande enfant à un document .aspx par défaut provoque une erreur ou un comportement inattendu :<br><br>\*Une page. aspx est envoyée au navigateur avec l' `form` attribut de l’élément `action` défini sur «».<br>\*Le formulaire est publié dans ASP.NET.<br>\*Un module HTTP managé lit une partie du corps de l’entité, telle que `Request.Form` ou `Request.Params` . Le corps d’entité de la demande POST est ainsi lu dans la mémoire managée. Le corps d’entité n’est donc plus disponible pour les modules de code natif qui s’exécutent en mode intégré IIS 7 ou IIS 7.5.<br>\*L' `DefaultDocumentModule` objet IIS finit par s’exécuter et crée une demande enfant dans le document default. aspx. Toutefois, étant donné que le corps d’entité a déjà été lu par une partie du code managé, aucun corps d’entité n’est disponible pour un envoi à la demande enfant.<br>\*Lorsque le pipeline HTTP s’exécute pour la demande enfant, le gestionnaire des fichiers. aspx s’exécute pendant la phase d’exécution du gestionnaire.<br><br>Étant donné qu’il n’y a pas de corps d’entité, il n’existe aucune variable de formulaire et aucun état d’affichage. Le gestionnaire de page .aspx ne dispose donc d’aucune information pour déterminer l’événement à déclencher (le cas échéant). Par conséquent, aucun des gestionnaires d’événements de publication pour la page .aspx concernée ne s’exécute. | Pour plus d’informations sur les façons de contourner les problèmes liés à ce changement, consultez la section « Les gestionnaires d’événements peuvent ne pas être déclenchés dans un document par défaut en mode intégré IIS 7 ou IIS 7.5 » dans le document [Changements avec rupture dans ASP.NET 4](/aspnet/whitepapers/aspnet4/breaking-changes) sur le site web ASP.NET. |
 | **Algorithme de hachage** | ASP.NET utilise des algorithmes de chiffrement et de hachage pour sécuriser des données telles que les cookies d’authentification par formulaire et l’état d’affichage. Par défaut, ASP.NET 4 utilise l’algorithme <xref:System.Security.Cryptography.HMACSHA256> pour les opérations de hachage sur les cookies et l’état d’affichage. Les versions antérieures d’ASP.NET utilisaient l’ancien algorithme <xref:System.Security.Cryptography.HMACSHA1>. | Si vous exécutez des applications qui combinent ASP.NET 2.0 et ASP.NET 4 (dans lesquelles des données telles que les cookies d’authentification par formulaire doivent fonctionner sous différentes versions du .NET Framework), configurez une application web ASP.NET 4 pour qu’elle utilise l’ancien algorithme <xref:System.Security.Cryptography.HMACSHA1> en ajoutant le paramètre suivant dans le fichier Web.config :<br><br>`<machineKey validation="SHA1" />` |
-| **Hébergement de contrôles dans Internet Explorer** | Vous ne pouvez plus héberger de contrôles Windows Forms dans Internet Explorer, car il existe de meilleures solutions pour l’hébergement de contrôles sur le web. Par conséquent, les assemblys IEHost. dll et IEExec. exe ont été supprimés de .NET Framework. | Vous pouvez utiliser les technologies suivantes pour le développement de contrôles personnalisés dans les applications web :<br><br>\*Vous pouvez créer une application Silverlight et la configurer pour qu’elle s’exécute en dehors du navigateur. Pour plus d’informations, consultez [Prise en charge hors navigateur](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/dd550721%28v=vs.95%29).<br>\*Vous pouvez générer une application de navigateur XAML (XBAP) pour tirer parti des fonctionnalités WPF (nécessite .NET Framework sur les ordinateurs clients). Pour plus d’informations, consultez [Vue d’ensemble des applications de navigateur XAML](../wpf/app-development/wpf-xaml-browser-applications-overview.md). |
+| **Hébergement de contrôles dans Internet Explorer** | Vous ne pouvez plus héberger de contrôles Windows Forms dans Internet Explorer, car il existe de meilleures solutions pour l’hébergement de contrôles sur le web. Par conséquent, les assemblys IEHost.dll et IEExec.exe ont été supprimés de .NET Framework. | Vous pouvez utiliser les technologies suivantes pour le développement de contrôles personnalisés dans les applications web :<br><br>\*Vous pouvez créer une application Silverlight et la configurer pour qu’elle s’exécute en dehors du navigateur. Pour plus d’informations, consultez [Prise en charge hors navigateur](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/dd550721%28v=vs.95%29).<br>\*Vous pouvez générer une application de navigateur XAML (XBAP) pour tirer parti des fonctionnalités WPF (nécessite .NET Framework sur les ordinateurs clients). Pour plus d’informations, consultez [Vue d’ensemble des applications de navigateur XAML](../wpf/app-development/wpf-xaml-browser-applications-overview.md). |
 | **Méthodes HtmlEncode et UrlEncode** | Les méthodes `HtmlEncode` et `UrlEncode` des classes <xref:System.Web.HttpUtility> et <xref:System.Web.HttpServerUtility> ont été mises à jour pour encoder le guillemet simple (') comme suit :<br><br>\*La `HtmlEncode` méthode encode les instances du guillemet simple sous la forme`&#39;`<br>\*La `UrlEncode` méthode encode les instances du guillemet simple sous la forme`%27` | Dans votre code, recherchez les emplacements où vous utilisez les méthodes `HtmlEncode` et `UrlEncode`, et vérifiez que le changement d’encodage ne provoque pas un changement susceptible d’affecter le comportement de votre application. |
 | **Erreurs HttpException dans les applications ASP.NET 2.0** | Une fois ASP.NET 4 activé sur IIS 6, les applications ASP.NET 2.0 qui s’exécutent sur IIS 6 (dans Windows Server 2003 ou Windows Server 2003 R2) peuvent générer des erreurs, comme celle-ci : `System.Web.HttpException: Path '/[yourApplicationRoot]/eurl.axd/[Value]' was not found.` | * Si ASP.NET 4 n’est pas obligatoire pour exécuter le site web, remappez-le pour utiliser ASP.NET 2.0 à la place.<br><br>-ou-<br><br>\*Si ASP.NET 4 est requis pour exécuter le site Web, déplacez les répertoires virtuels ASP.NET 2,0 enfants vers un autre site Web mappé à ASP.NET 2,0.<br><br>-ou-<br><br>\*Désactivez les URL sans extension. Pour plus d’informations, consultez « Les applications ASP.NET 2.0 peuvent générer des erreurs HttpException qui référencent eurl.axd » dans le document [Changements avec rupture dans ASP.NET 4](/aspnet/whitepapers/aspnet4/breaking-changes) sur le site web ASP.NET. |
 | **Types d’appartenance** | Certains types (par exemple, <xref:System.Web.Security.MembershipProvider>) utilisés dans l’appartenance ASP.NET ont été déplacés de System.Web.dll vers l’assembly System.Web.ApplicationServices.dll. Les types ont été déplacés pour résoudre des dépendances de couches architecturales entre des types dans le client et dans des références SKU .NET Framework étendues. | Les bibliothèques de classes mises à niveau à partir de versions antérieures d’ASP.NET et qui utilisent des types d’appartenance déplacés risquent de ne pas être compilées correctement quand elles sont utilisées dans un projet ASP.NET 4. Si c’est le cas, ajoutez une référence dans le projet de bibliothèque de classes à System.Web.ApplicationServices.dll. |
@@ -58,8 +59,8 @@ Assembly : System. Web (dans System. Web. dll)
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
 | **CardSpace** | Windows CardSpace n’est plus inclus dans .NET Framework ; Il est fourni séparément. | Téléchargez Windows CardSpace à partir du [Centre de téléchargement Microsoft](https://go.microsoft.com/fwlink/?LinkId=199868). |
-| **Fichiers de configuration** | Des corrections ont été apportées à la façon dont .NET Framework accède aux fichiers de configuration de l’application. | Si votre fichier de configuration d’application est nommé *application-name. config*, renommez-le *application-name. exe. config*. Par exemple, renommez *MyApp. config* en *MyApp. exe. config*. |
-| **Compilateur de code C#** | Les `Compiler` `CompilerError` classes, et `ErrorLevel` qui se trouvaient dans l' <xref:Microsoft.CSharp> espace de noms ne sont plus disponibles, et leur assembly (cscompmgd. dll) n’est plus inclus dans .NET Framework. | Utilisez la classe <xref:System.CodeDom.Compiler.CodeDomProvider> et d’autres classes dans l’espace de noms <xref:System.CodeDom.Compiler>. Pour plus d’informations, consultez [Utilisation du CodeDOM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y2k85ax6%28v=vs.100%29). |
+| **Fichiers de configuration** | Des corrections ont été apportées à la façon dont .NET Framework accède aux fichiers de configuration de l’application. | Si votre fichier de configuration de l’application est nommé *application-name.config*, renommez-le *application-name.exe.config*. Par exemple, renommez *MyApp.config* en *MyApp.exe.config*. |
+| **Compilateur de code C#** | Les `Compiler` `CompilerError` classes, et `ErrorLevel` qui se trouvaient dans l' <xref:Microsoft.CSharp> espace de noms ne sont plus disponibles, et leur assembly (cscompmgd.dll) n’est plus inclus dans .NET Framework. | Utilisez la classe <xref:System.CodeDom.Compiler.CodeDomProvider> et d’autres classes dans l’espace de noms <xref:System.CodeDom.Compiler>. Pour plus d’informations, consultez [Utilisation du CodeDOM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y2k85ax6%28v=vs.100%29). |
 | **Hébergement** (API non managée) | Pour améliorer les fonctions d’hébergement, certaines API d’activation d’hébergement ont été dépréciées. Les fonctionnalités d’exécution côte à côte in-process permettent à une application de charger et de démarrer plusieurs versions de .NET Framework dans le même processus. Par exemple, vous pouvez exécuter des applications qui chargent des compléments (ou composants) basés sur .NET Framework 2,0 SP1 et des compléments basés sur .NET Framework 4 dans le même processus. Les composants plus anciens continuent à utiliser la version du .NET Framework plus ancienne, et les nouveaux composants utilisent la nouvelle version de celui-ci. | Utilisez les configurations décrites dans [Exécution côte à côte in-process](../deployment/in-process-side-by-side-execution.md). |
 | **Nouveau modèle de sécurité** | La stratégie de sécurité d’accès du code (CAS) a été désactivée et remplacée par un modèle simplifié, comme décrit dans [Security changes in .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd233103%28v=vs.100%29). | Des modifications peuvent être nécessaires si vos applications dépendent de la sécurité d’accès du code. Pour plus d’informations, consultez [Compatibilité de la stratégie de sécurité d’accès du code et migration](../misc/code-access-security-policy-compatibility-and-migration.md). |
 
@@ -67,7 +68,7 @@ Assembly : System. Web (dans System. Web. dll)
 
 Joint<xref:System>
 
-Assembly : mscorlib (dans mscorlib. dll)
+Assembly : mscorlib (en mscorlib.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -80,7 +81,7 @@ Pour une liste des nouvelles cultures neutres et spécifiques, consultez [Nouvea
 
 Joint<xref:System.Globalization>
 
-Assembly : mscorlib (dans mscorlib. dll)
+Assembly : mscorlib (en mscorlib.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -94,7 +95,7 @@ Assembly : mscorlib (dans mscorlib. dll)
 
 Espaces de noms : <xref:System> ,<xref:System.Runtime.ExceptionServices>
 
-Assembly : mscorlib (dans mscorlib. dll)
+Assembly : mscorlib (en mscorlib.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -105,7 +106,7 @@ Assembly : mscorlib (dans mscorlib. dll)
 
 Joint<xref:System.Reflection>
 
-Assembly : mscorlib (dans mscorlib. dll)
+Assembly : mscorlib (en mscorlib.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -120,13 +121,13 @@ Assembly : mscorlib (dans mscorlib. dll)
 
 Joint<xref:System.Runtime.InteropServices>
 
-Assembly : mscorlib (dans mscorlib. dll)
+Assembly : mscorlib (en mscorlib.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
 | **Longueur du tampon** (API non managée) | Pour économiser de la mémoire, la fonctionnalité pour le paramètre `pBufferLengthOffset` de la méthode [ICorProfilerInfo2::GetStringLayout](../unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) a été changée pour correspondre au paramètre `pStringLengthOffset`. Les deux paramètres pointent désormais vers l’emplacement de décalage de la longueur de la chaîne. La longueur du tampon a été supprimée de la représentation de la classe de chaîne. | Supprimez toute dépendance sur la longueur du tampon. |
 | **Débogage juste-à-temps** | Pour simplifier l’inscription pour le débogage juste-à-temps (JIT), le débogueur .NET Framework utilise désormais uniquement la clé de Registre AeDebug, qui contrôle le comportement du débogage JIT pour le code natif. Ce changement a les conséquences suivantes :<br><br>\*Vous ne pouvez plus inscrire deux débogueurs différents pour le code managé et le code natif.<br>\*Vous ne pouvez plus démarrer automatiquement le débogueur pour un processus non interactif, mais vous pouvez demander à l’utilisateur un processus interactif.<br>\*Vous n’êtes plus averti lorsque le débogueur ne parvient pas à démarrer ou lorsqu’il n’existe aucun débogueur inscrit qui doit être démarré.<br>\*Les stratégies de lancement automatique qui dépendent de l’interactivité de l’application ne sont plus prises en charge. | Ajustez les opérations de débogage selon les besoins. |
-| **Appel de code non managé** | Pour améliorer les performances dans l’interopérabilité avec du code non managé, les conventions d’appel incorrectes dans un appel de code non managé provoquent désormais l’échec de l’application. Dans les versions antérieures, la couche de marshaling résolvait ces erreurs en haut de la pile. | Le débogage de vos applications dans Microsoft Visual Studio vous signale ces erreurs pour que vous puissiez les corriger.<br><br>Si vous avez des binaires qui ne peuvent pas être mis à jour, vous pouvez inclure l’élément [ \< NetFx40_PInvokeStackResilience>](../configure-apps/file-schema/runtime/netfx40-pinvokestackresilience-element.md) dans le fichier de configuration de votre application pour permettre aux erreurs d’appel d’être résolues en haut de la pile, comme dans les versions antérieures. Toutefois, cette opération peut affecter les performances de votre application. |
+| **Appel de code non managé** | Pour améliorer les performances dans l’interopérabilité avec du code non managé, les conventions d’appel incorrectes dans un appel de code non managé provoquent désormais l’échec de l’application. Dans les versions antérieures, la couche de marshaling résolvait ces erreurs en haut de la pile. | Le débogage de vos applications dans Microsoft Visual Studio vous signale ces erreurs pour que vous puissiez les corriger.<br><br>Si vous avez des fichiers binaires qui ne peuvent pas être mis à jour, vous pouvez inclure l' [\<NetFx40_PInvokeStackResilience>](../configure-apps/file-schema/runtime/netfx40-pinvokestackresilience-element.md) élément dans le fichier de configuration de votre application pour permettre aux erreurs d’appel d’être résolues en haut de la pile, comme dans les versions antérieures. Toutefois, cette opération peut affecter les performances de votre application. |
 | **Interfaces supprimées** (API non managée) | Pour simplifier la tâche des développeurs, les interfaces suivantes ont été supprimées, car elles ne fournissaient aucun scénario d’exécution utile et le CLR ne fournissait ou n’acceptait aucune implémentation :<br><br>\* **INativeImageINativeImageDependency**<br>\* **INativeImageInstallInfo**<br>\* **INativeImageEvaluate**<br>\* **INativeImageConverter**<br>\* **ICorModule**<br>\* **IMetaDataConverter** | Aucun. |
 
 ## <a name="data"></a>Données
@@ -139,7 +140,7 @@ Le tableau suivant décrit les améliorations apportées aux fonctionnalités qu
 
 Espaces de noms : <xref:System.Data> , <xref:System.Data.Objects.DataClasses> ,<xref:System.Data.SqlClient>
 
-Assemblys : System. Data (dans System. Data. dll), System. Data. Entity (dans System. Data. Entity. dll)
+Assemblys : System. Data (dans System.Data.dll), System. Data. Entity (dans System.Data.Entity.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 |
 | ------- | ------------------------ |
@@ -156,7 +157,7 @@ Le tableau suivant décrit les améliorations apportées aux fonctionnalités qu
 
 Espaces de noms : <xref:System.Data> , <xref:System.Data.Objects> ,<xref:System.Data.Objects.DataClasses>
 
-Assemblys : System. Data. Entity (dans System. Data. Entity. dll)
+Assemblys : System. Data. Entity (en System.Data.Entity.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 |
 | ------- | ------------------------ |
@@ -171,7 +172,7 @@ Le tableau suivant décrit les améliorations apportées aux fonctionnalités qu
 
 Joint<xref:System.Data.Linq>
 
-Assembly : System. Data. Linq (dans System. Data. Linq. dll)
+Assembly : System. Data. Linq (en System.Data.Linq.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 |
 | ------- | ------------------------ |
@@ -184,7 +185,7 @@ Le tableau suivant décrit les améliorations apportées aux fonctionnalités qu
 
 Espaces de noms : <xref:System.Data.Services> , <xref:System.Data.Services.Client> , <xref:System.Data.Services.Common> ,<xref:System.Data.Services.Providers>
 
-Assemblys : System. Data. services (dans System. Data. services. dll), System. Data. services. client (dans System. Data. services. client. dll)
+Assemblys : System. Data. services (dans System.Data.Services.dll), System. Data. services. client (dans System.Data.Services.Client.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 |
 | ------- | ------------------------ |
@@ -213,7 +214,7 @@ Le tableau suivant décrit les améliorations apportées aux fonctionnalités qu
 
 Espaces de noms : <xref:System.Windows> ,<xref:System.Windows.Controls>
 
-Assemblys : PresentationFramework (dans PresentationFramework. dll)
+Assemblys : PresentationFramework (en PresentationFramework.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -229,7 +230,7 @@ Assemblys : PresentationFramework (dans PresentationFramework. dll)
 
 Espaces de noms : <xref:System.Windows> , <xref:System.Windows.Controls> , <xref:System.Windows.Data> ,<xref:System.Windows.Input>
 
-Assemblys : PresentationFramework (dans PresentationFramework. dll), PresentationCore (dans PresentationCore. dll), WindowsBase (dans WindowsBase. dll)
+Assemblys : PresentationFramework (en PresentationFramework.dll), PresentationCore (en PresentationCore.dll), WindowsBase (dans WindowsBase.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -247,7 +248,7 @@ Assemblys : PresentationFramework (dans PresentationFramework. dll), Presentati
 
 Espaces de noms : <xref:System.Windows> , <xref:System.Windows.Controls> ,, <xref:System.Windows.Data> <xref:System.Windows.Input> ,<xref:System.Windows.Media.Effects>
 
-Assemblys : PresentationFramework (dans PresentationFramework. dll), PresentationCore (dans PresentationCore. dll), WindowsBase (dans WindowsBase. dll)
+Assemblys : PresentationFramework (en PresentationFramework.dll), PresentationCore (en PresentationCore.dll), WindowsBase (dans WindowsBase.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -259,7 +260,7 @@ Assemblys : PresentationFramework (dans PresentationFramework. dll), Presentati
 
 Espaces de noms : <xref:System.Windows> , <xref:System.Windows.Controls> , <xref:System.Windows.Data> ,<xref:System.Windows.Input>
 
-Assemblys : PresentationFramework (dans PresentationFramework. dll), PresentationCore (dans PresentationCore. dll), WindowsBase (dans WindowsBase. dll)
+Assemblys : PresentationFramework (en PresentationFramework.dll), PresentationCore (en PresentationCore.dll), WindowsBase (dans WindowsBase.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -268,11 +269,11 @@ Assemblys : PresentationFramework (dans PresentationFramework. dll), Presentati
 | **Combinaisons de touches mortes** | WPF obscurcit les touches mortes, qui ne produisent aucun caractère visible mais indiquent à la place que la touche sera combinée avec la touche suivante pour produire un caractère. Les événements de saisie, tels que <xref:System.Windows.Input.Keyboard.KeyDownEvent>, indiquent à quel moment une touche est une touche morte en affectant à la propriété <xref:System.Windows.Input.KeyEventArgs.Key> la valeur <xref:System.Windows.Input.Key>. Ce comportement est connu car les applications ne projettent généralement pas de répondre à l’entrée au clavier qui crée un caractère combiné. | Les applications qui s’attendent à lire des touches faisant partie des caractères combinés peuvent obtenir la touche maintenant obscurcie à l’aide de la propriété <xref:System.Windows.Input.KeyEventArgs.DeadCharProcessedKey>. |
 | **Gestionnaire du focus** | Quand la méthode <xref:System.Windows.Input.FocusManager.GetFocusedElement(System.Windows.DependencyObject)?displayProperty=nameWithType> est passée à un élément dont la propriété jointe [IsFocusScope](xref:System.Windows.Input.FocusManager.IsFocusScope%2A) a la valeur `true`, la méthode retourne un élément qui constitue le dernier élément qui a le focus du clavier au sein de cette portée de focus, si et seulement si l’élément retourné appartient au même objet <xref:System.Windows.PresentationSource> que l’élément qui est passé à la méthode. | Aucun. |
 
-### <a name="ui-automation"></a>Automation de l'interface utilisateur
+### <a name="ui-automation"></a>Automatisation de l’interface utilisateur
 
 Espace de noms : <xref:System.Windows> ,,,, <xref:System.Windows.Automation.Peers> <xref:System.Windows.Automation.Provider> <xref:System.Windows.Controls> <xref:System.Windows.Data> ,<xref:System.Windows.Input>
 
-Assemblys : PresentationFramework (dans PresentationFramework. dll), PresentationCore (dans PresentationCore. dll), UIAutomationProvider (dans UIAutomationProvider. dll), WindowsBase (dans WindowsBase. dll)
+Assemblys : PresentationFramework (en PresentationFramework.dll), PresentationCore (en PresentationCore.dll), UIAutomationProvider (en UIAutomationProvider.dll), WindowsBase (en WindowsBase.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -287,7 +288,7 @@ Assemblys : PresentationFramework (dans PresentationFramework. dll), Presentati
 
 Espaces de noms : <xref:System.Windows> , <xref:System.Windows.Controls> ,, <xref:System.Windows.Data> <xref:System.Windows.Input> ,<xref:System.Windows.Markup>
 
-Assemblys : PresentationFramework (dans PresentationFramework. dll), PresentationCore (dans PresentationCore. dll), WindowsBase (dans WindowsBase. dll)
+Assemblys : PresentationFramework (en PresentationFramework.dll), PresentationCore (en PresentationCore.dll), WindowsBase (dans WindowsBase.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 | Changements recommandés |
 | ------- | ------------------------ | ------------------- |
@@ -302,7 +303,7 @@ Les lignes de cette table décrivent les améliorations apportées aux fonctionn
 
 Espaces de noms : <xref:System.Xml.Linq> ; <xref:System.Xml.Schema> ,<xref:System.Xml.XPath>
 
-Assemblys : System. XML (dans System. Xml. dll), System. Xml. Linq (dans System. Xml. Linq. dll)
+Assemblys : System.Xml (dans System.Xml.dll), System.Xml. LINQ (en System.Xml.Linq.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 |
 | ------- | ------------------------ |
@@ -318,7 +319,7 @@ Assemblys : System. XML (dans System. Xml. dll), System. Xml. Linq (dans System
 
 Espaces de noms : <xref:System.Xml.Linq> ; <xref:System.Xml.Schema> ,<xref:System.Xml.XPath>
 
-Assemblys : System. XML (dans System. Xml. dll), System. Xml. Linq (dans System. Xml. Linq. dll)
+Assemblys : System.Xml (dans System.Xml.dll), System.Xml. LINQ (en System.Xml.Linq.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 |
 | ------- | ------------------------ |
@@ -329,7 +330,7 @@ Assemblys : System. XML (dans System. Xml. dll), System. Xml. Linq (dans System
 
 Espaces de noms : <xref:System.Xml.Linq> ; <xref:System.Xml.Schema> ,<xref:System.Xml.XPath>
 
-Assemblys : System. XML (dans System. Xml. dll), System. Xml. Linq (dans System. Xml. Linq. dll)
+Assemblys : System.Xml (dans System.Xml.dll), System.Xml. LINQ (en System.Xml.Linq.dll)
 
 | Fonctionnalité | Différences par rapport à la version 3.5 SP1 |
 | ------- | ------------------------ |

@@ -1,30 +1,31 @@
 ---
 title: Événements ETW d'information du runtime
+description: Consultez événements ETW relatifs aux informations d’exécution, qui enregistrent la référence (SKU), le numéro de version, la façon dont le runtime a été activé (y compris les paramètres de ligne de commande), le GUID et bien plus encore.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - runtime information events [.NET Framework]
 - ETW, runtime information events
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
-ms.openlocfilehash: 2927ed088ba6c9e46b9676d55d0046575e23cfb1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 385519229bdb76841cdf592d95e96d2288ec5e1a
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715952"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474226"
 ---
 # <a name="runtime-information-etw-events"></a>Événements ETW d'information du runtime
 Ces événements ETW journalise des informations sur l’exécution, notamment la référence SKU, le numéro de version, le mode d’activation du runtime, les paramètres de ligne de commande avec lesquels il a été démarré, le GUID (le cas échéant) et d’autres informations pertinentes. Si plusieurs runtimes sont exécutés dans un processus, les informations fournies par ces événements (le ClrInstanceID) permettent de lever l’ambiguïté sur les runtimes.  
   
  Le tableau ci-dessous montre les deux événements d’informations liés au runtime. Les événements peuvent être déclenchés sous n’importe quel mot clé ou masque. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
-|Event|ID de l'événement|Fournisseur|Description|  
+|Événement|ID de l’événement|Fournisseur|Description|  
 |-----------|--------------|--------------|-----------------|  
 |`RuntimeInformationEvent`|187|CLRRuntime|Déclenché lorsqu’un runtime est chargé.|  
 |`RuntimeInformationDCStart`|187|CLRRundown|Énumère les runtimes chargés.|  
   
  Le tableau suivant affiche des données liées aux événements.  
   
-|Nom de champ|Type de données|Description|  
+|Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
 |Sku|win:UInt16|1 – Desktop CLR.<br /><br /> 2 – CoreCLR.|  

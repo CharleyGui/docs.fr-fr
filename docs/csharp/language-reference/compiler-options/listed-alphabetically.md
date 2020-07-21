@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 9765d13191f862a2e92bb00aa66a92c3a64ac303
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: eb3a591ba7b58e187eb03e65a3da6dfb47c9475c
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446937"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473979"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Options du compilateur C# par ordre alphabétique
 
@@ -30,11 +30,11 @@ Les options du compilateur suivantes sont triées par ordre alphabétique. Pour 
 |[-bugreport](bugreport-compiler-option.md)|Crée un fichier de rapport de bogue. Ce fichier est envoyé avec les informations d’incident s’il est utilisé avec -errorprompt:prompt ou -errorreport:send.|
 |[-activé](checked-compiler-option.md)|Indique au compilateur de générer des contrôles de dépassement de capacité.|
 |-checksumalgorithm:\<alg>|Spécifie l'algorithme de calcul de la somme de contrôle du fichier source stockée dans le fichier PDB.  Les valeurs prises en charge sont : SHA256 (valeur par défaut) ou SHA1.<br>En raison de problèmes de collision avec SHA-1, Microsoft recommande SHA-256. |
-|[-codepage](codepage-compiler-option.md)|Spécifie la page de codes à utiliser à l'ouverture des fichiers sources.|
+|[-CodePage](codepage-compiler-option.md)|Spécifie la page de codes à utiliser à l'ouverture des fichiers sources.|
 |[-débogage](debug-compiler-option.md)|Émet des informations de débogage.|
 |[-define](define-compiler-option.md)|Définit des symboles de compilation conditionnelle.|
 |[-delaysign](delaysign-compiler-option.md)|Diffère la signature de l'assembly en utilisant uniquement la partie publique de la clé de nom fort.|
-|[-deterministic](deterministic-compiler-option.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
+|[-déterministe](deterministic-compiler-option.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
 |[-doc](doc-compiler-option.md)|Spécifie un fichier de documentation XML à générer.|
 |-embed|Incorporer tous les fichiers sources du PDB.|
 |Corporation\<file list>|Incorporer des fichiers spécifiques dans le PDB.|
@@ -65,7 +65,7 @@ Les options du compilateur suivantes sont triées par ordre alphabétique. Pour 
 |[-out](out-compiler-option.md)|Spécifie le nom de fichier de sortie (par défaut : nom de base du fichier avec classe principale ou premier fichier).|
 |-parallel[+&#124;-]|Indique s'il faut utiliser la build simultanée (+).|
 |[-pathmap](pathmap-compiler-option.md)|Spécifie un mappage pour la sortie de noms de chemin d’accès source par le compilateur.|
-|[-pdb](pdb-compiler-option.md)|Spécifie le nom et l'emplacement du fichier .pdb.|
+|[-PDB](pdb-compiler-option.md)|Spécifie le nom et l'emplacement du fichier .pdb.|
 |[-plateforme](platform-compiler-option.md)|Limite les plateformes sur lesquelles ce code peut s'exécuter : x86, Itanium, x64, anycpu ou anycpu32bitpreferred. La valeur par défaut est anycpu.|
 |[-preferreduilang](preferreduilang-compiler-option.md)|Spécifie la langue à utiliser pour la sortie du compilateur.|
 |[-publicsign](publicsign-compiler-option.md)|Applique une clé publique sans signature de l’assembly, mais définit le bit dans l’assembly pour indiquer que l’assembly est signé.|
@@ -77,7 +77,7 @@ Les options du compilateur suivantes sont triées par ordre alphabétique. Pour 
 |[-ressource](resource-compiler-option.md)|Incorpore la ressource spécifiée.|
 |RuleSet\<file>|Spécifiez un fichier ruleset qui désactive des diagnostics spécifiques.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Spécifie la version minimale du sous-système utilisable par le fichier exécutable.|
-|[-cible](target-compiler-option.md)|Spécifie le format du fichier de sortie à l’aide de l’une des quatre options suivantes : [-target : appcontainerexe](target-appcontainerexe-compiler-option.md), [-target : exe](target-exe-compiler-option.md), [-target : Library](target-library-compiler-option.md), [-target : module](target-module-compiler-option.md), [-cible : winexe](target-winexe-compiler-option.md), [-target : winmdobj](target-winmdobj-compiler-option.md).|
+|[-cible](target-compiler-option.md)|Spécifie le format du fichier de sortie à l’aide de l’une des options suivantes : [-target : appcontainerexe](target-appcontainerexe-compiler-option.md), [-target : exe](target-exe-compiler-option.md), [-target : Library](target-library-compiler-option.md), [-target : module](target-module-compiler-option.md), [-target : winexe](target-winexe-compiler-option.md), [-target : winmdobj](target-winmdobj-compiler-option.md).|
 |[-unsafe](unsafe-compiler-option.md)|Autorise le code [unsafe](../keywords/unsafe.md).|
 |[-utf8output](utf8output-compiler-option.md)|Génère des messages du compilateur encodés en UTF-8.|
 |-version|Afficher le numéro de version du compilateur et quitter.|

@@ -1,17 +1,18 @@
 ---
 title: Méthodes d’extension - Guide de programmation C#
+description: Les méthodes d’extension en C# vous permettent d’ajouter des méthodes à des types existants sans créer de nouveau type dérivé, en recompilant ou en modifiant le type d’origine.
 ms.date: 03/19/2020
 helpviewer_keywords:
 - methods [C#], adding to existing types
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 0f9c0f053e531a44640084a35dc5d8e844ee0b46
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: e57447c89749451862bbb80047ed74135a0eb752
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803186"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474811"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Méthodes d’extension (Guide de programmation C#)
 

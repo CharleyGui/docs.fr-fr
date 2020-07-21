@@ -2,15 +2,15 @@
 title: Modifications avec rupture ASP.NET Core
 titleSuffix: ''
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 07/15/2020
+ms.date: 07/17/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: cea6771afdc05edc525e7d35f530f42e7b3bc1fa
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 7a07df5194d5dc220b61d55a4457d90881ac9ddf
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86441945"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474824"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -60,6 +60,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 - [Kestrel : les versions de protocole TLS prises en charge par défaut ont été modifiées](#kestrel-default-supported-tls-protocol-versions-changed)
 - [Kestrel : un assembly HTTPs vide a été supprimé](#kestrel-empty-https-assembly-removed)
 - [Kestrel : HTTP/2 désactivé sur TLS sur des versions de Windows incompatibles](#kestrel-http2-disabled-over-tls-on-incompatible-windows-versions)
+- [Kestrel : transport Libuv marqué comme obsolète](#kestrel-libuv-transport-marked-as-obsolete)
 - [Kestrel : les en-têtes de demande de code de fin sont déplacés vers la nouvelle collection](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel : modifications apportées à la couche d’abstraction de transport](#kestrel-transport-abstractions-removed-and-made-public)
 - [Localisation : API marquées comme obsolètes](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
@@ -137,6 +138,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 ***
 
 [!INCLUDE[Kestrel: HTTP/2 disabled over TLS on incompatible Windows versions](~/includes/core-changes/aspnetcore/5.0/kestrel-disables-http2-over-tls.md)]
+
+***
+
+[!INCLUDE[Kestrel: Libuv transport marked as obsolete](~/includes/core-changes/aspnetcore/5.0/kestrel-libuv-transport-obsolete.md)]
 
 ***
 

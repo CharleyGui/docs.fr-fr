@@ -1,19 +1,20 @@
 ---
 title: Constantes - Guide de programmation C#
+description: Les constantes en C# sont des valeurs littérales de compilation qui ne changent pas une fois que le programme est compilé. Seuls les types intégrés C# peuvent être des constantes.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: 85f6684617b893bdd85eb5b530aa2481941fbc5d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dd42dcd62bb46898c20f14cdc893b8f5801894f2
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093550"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474980"
 ---
 # <a name="constants-c-programming-guide"></a>Constantes (Guide de programmation C#)
-Les constantes sont des valeurs immuables qui sont connues au moment de la compilation et qui ne changent pas pendant la durée de vie du programme. Les constantes sont déclarées avec le modificateur [const](../../language-reference/keywords/const.md). Seuls les [types intégrés](../../language-reference/builtin-types/built-in-types.md) CMD (à <xref:System.Object?displayProperty=nameWithType> `const`l’exclusion) peuvent être déclarés comme . Les types définis par l’utilisateur, notamment les classes, les structs et les tableaux, ne peuvent pas être `const`. Utilisez le modificateur [readonly](../../language-reference/keywords/readonly.md) pour créer une classe, un struct ou un tableau initialisé une fois au moment de l’exécution (par exemple, dans un constructeur) et qui ne peut pas être modifié ultérieurement.  
+Les constantes sont des valeurs immuables qui sont connues au moment de la compilation et qui ne changent pas pendant la durée de vie du programme. Les constantes sont déclarées avec le modificateur [const](../../language-reference/keywords/const.md). Seuls les [types intégrés](../../language-reference/builtin-types/built-in-types.md) C# (à l’exception de <xref:System.Object?displayProperty=nameWithType> ) peuvent être déclarés comme `const` . Les types définis par l’utilisateur, notamment les classes, les structs et les tableaux, ne peuvent pas être `const`. Utilisez le modificateur [readonly](../../language-reference/keywords/readonly.md) pour créer une classe, un struct ou un tableau initialisé une fois au moment de l’exécution (par exemple, dans un constructeur) et qui ne peut pas être modifié ultérieurement.  
   
  C# ne prend pas en charge les propriétés, les événements ou les méthodes `const`.  
   
@@ -47,9 +48,9 @@ Les constantes sont des valeurs immuables qui sont connues au moment de la compi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](./index.md)
 - [Propriétés](./properties.md)
 - [Types](../types/index.md)
-- [Readonly](../../language-reference/keywords/readonly.md)
+- [readonly](../../language-reference/keywords/readonly.md)
 - [Immutability in C# Part One: Kinds of Immutability](https://docs.microsoft.com/archive/blogs/ericlippert/immutability-in-c-part-one-kinds-of-immutability)
