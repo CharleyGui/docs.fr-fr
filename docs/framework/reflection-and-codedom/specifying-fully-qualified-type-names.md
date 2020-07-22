@@ -1,5 +1,6 @@
 ---
 title: Spécification des noms de types qualifiés complets
+description: Pour une entrée valide pour les opérations de réflexion, utilisez des noms de types qualifiés complets, qui ont des spécifications de nom d’assembly, des spécifications d’espace de noms et des noms de types.
 ms.date: 02/21/2019
 helpviewer_keywords:
 - names [.NET Framework], fully qualified type names
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - special characters
 - IDENTIFIER
 ms.assetid: d90b1e39-9115-4f2a-81c0-05e7e74e5580
-ms.openlocfilehash: 707c71482196d789ed9a88db34af048ec57734fb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ff33b6abd31a82c6b80aa794564c5c48648cde63
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130031"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865227"
 ---
 # <a name="specifying-fully-qualified-type-names"></a>Spécification des noms de types complets
 
@@ -187,7 +188,7 @@ com.microsoft.crypto, Culture=en, PublicKeyToken=a5d015c7d5a0b012,
 
 ## <a name="specifying-generic-types"></a>Spécification de types génériques
 
-SimpleTypeSpec\`NUMBER représente un type générique ouvert avec entre 1 et *n* paramètres de type générique. Par exemple, pour obtenir la référence au type générique ouvert Liste\<T> ou au type générique fermé Liste\<Chaîne>, utilisez ``Type.GetType("System.Collections.Generic.List`1")`` Pour obtenir une référence au type générique Dictionnaire\<TKey, TValue>, utilisez ``Type.GetType("System.Collections.Generic.Dictionary`2")``.
+SimpleTypeSpec\`NUMBER représente un type générique ouvert avec entre 1 et *n* paramètres de type générique. Par exemple, pour obtenir une référence à la liste de types génériques ouverte \<T> ou à la liste de types génériques fermée \<String> , utilisez ``Type.GetType("System.Collections.Generic.List`1")`` pour obtenir une référence au dictionnaire de types génériques \<TKey,TValue> , utilisez ``Type.GetType("System.Collections.Generic.Dictionary`2")`` .
 
 ## <a name="specifying-pointers"></a>Spécification des pointeurs
 

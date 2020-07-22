@@ -1,5 +1,6 @@
 ---
 title: Guide pratique pour créer un fichier de documentation XML à l’aide de CodeDOM
+description: Dans cet exemple détaillé, consultez Comment générer du code qui crée un fichier de documentation XML à l’aide de l’Code Document Object Model (CodeDOM).
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - XML documentation, creating using CodeDOM
 - Code Document Object Model, generating XML documentation
 ms.assetid: e3b80484-36b9-41dd-9d21-a2f9a36381dc
-ms.openlocfilehash: b9e11a51048733dbfc42ff9f575e18effc80db07
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f905b996910c6cfbc62378cc4cd6bb8c0e0e6fd4
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596244"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865149"
 ---
 # <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>Comment : créer un fichier de documentation XML à l’aide de CodeDOM
 
@@ -50,7 +51,7 @@ L’exemple de code suivant crée un graphique CodeDOM avec des commentaires de 
  [!code-csharp[CodeDomHelloWorldSample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#1)]
  [!code-vb[CodeDomHelloWorldSample#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#1)]  
   
- L’exemple de code crée la documentation XML suivante dans le fichier *HelloWorldDoc. xml* .  
+ L’exemple de code crée la documentation XML suivante dans le fichier *HelloWorldDoc.xml* .  
   
 ```xml  
 <?xml version="1.0" ?>

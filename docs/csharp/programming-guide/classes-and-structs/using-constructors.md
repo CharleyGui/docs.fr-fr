@@ -1,15 +1,16 @@
 ---
 title: Utilisation de constructeurs - Guide de programmation C#
+description: Cet exemple montre comment une classe est instanciée à l’aide de l’opérateur New en C#. Le constructeur simple est appelé après que la mémoire a été allouée pour le nouvel objet.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-ms.openlocfilehash: 7c227b61c6d5b4ead00fced0dba046b90683fde1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6b441b04bd6bfcb5564f40a90718e822f56ac21e
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77626410"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86863953"
 ---
 # <a name="using-constructors-c-programming-guide"></a>Utilisation de constructeurs (Guide de programmation C#)
 
@@ -29,7 +30,7 @@ Quand une [classe](../../language-reference/keywords/class.md) ou un [struct](..
   
  Pour plus d’informations, consultez [Constructeurs privés](./private-constructors.md).  
   
- Les constructeurs des types [struct](../../language-reference/builtin-types/struct.md) ressemblent aux constructeurs de classe, mais les `structs` ne peuvent pas contenir de constructeur explicite sans paramètre, car le compilateur en fournit automatiquement un. Ce constructeur initialise chaque champ `struct` dans la [valeur par défaut](../../language-reference/builtin-types/default-values.md). Toutefois, ce constructeur sans paramètre est appelé uniquement si le `struct` est instancié avec `new`. Par exemple, ce code utilise le constructeur sans paramètre pour <xref:System.Int32>. Vous avez ainsi la garantie que l’entier est initialisé :  
+ Les constructeurs des types [struct](../../language-reference/builtin-types/struct.md) ressemblent aux constructeurs de classe, mais les `structs` ne peuvent pas contenir de constructeur explicite sans paramètre, car le compilateur en fournit automatiquement un. Ce constructeur initialise chaque champ du `struct` à la [valeur par défaut](../../language-reference/builtin-types/default-values.md). Toutefois, ce constructeur sans paramètre est appelé uniquement si le `struct` est instancié avec `new`. Par exemple, ce code utilise le constructeur sans paramètre pour <xref:System.Int32>. Vous avez ainsi la garantie que l’entier est initialisé :  
   
 ```csharp  
 int i = new int();  
@@ -94,7 +95,7 @@ Pour plus d’informations, consultez [Constructeurs d’instances](~/_csharplan
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](./index.md)
 - [Constructeurs](./constructors.md)
 - [Finaliseurs](./destructors.md)

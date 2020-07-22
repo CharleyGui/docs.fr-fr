@@ -1,5 +1,6 @@
 ---
 title: Restriction d’accessibilité de l’accesseur - Guide de programmation C#
+description: Les accesseurs d’extraction et de définition d’une propriété en C# ont le même niveau de visibilité ou d’accès par défaut que la propriété à laquelle ils appartiennent. Vous pouvez restreindre l’accès.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - read-only properties [C#]
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - asymmetric accessor accessibility [C#]
 - indexers [C#], read-only
 ms.assetid: 6e655798-e112-4301-a680-6310a6e012e1
-ms.openlocfilehash: a332fef814f0c81914eb7b8c308de68f719fbaac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 18fd1d58dc6125b5180118b2e0d3edc885a4b971
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714690"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86863966"
 ---
 # <a name="restricting-accessor-accessibility-c-programming-guide"></a>Restriction d’accessibilité de l’accesseur (Guide de programmation C#)
 Les parties [get](../../language-reference/keywords/get.md) et [set](../../language-reference/keywords/set.md) d’une propriété ou d’un indexeur sont appelées *accesseurs*. Par défaut, ces accesseurs ont la visibilité ou le niveau d’accès de la propriété ou de l’indexeur auquel ils appartiennent. Pour plus d’informations, consultez [Niveaux d’accessibilité](../../language-reference/keywords/accessibility-levels.md). Toutefois, il peut parfois s’avérer utile de restreindre l’accès à l’un de ces accesseurs. En général, cela implique de restreindre l’accessibilité de l’accesseur `set`, tout en gardant l’accesseur `get` publiquement accessible. Par exemple :  
@@ -49,7 +50,7 @@ Les parties [get](../../language-reference/keywords/get.md) et [set](../../langu
   
  Si vous n’avez pas utilisé un modificateur d’accès sur l’accesseur, le domaine d’accessibilité de l’accesseur est déterminé par le niveau d’accessibilité de la propriété ou de l’indexeur.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant contient trois classes, `BaseClass`, `DerivedClass` et `MainClass`. Il y a deux propriétés sur `BaseClass`, `Name` et `Id` sur les deux classes. L’exemple montre comment la propriété `Id` sur `DerivedClass` peut être masquée par la propriété `Id` sur `BaseClass` quand vous utilisez un modificateur d’accès restrictif tel que [protected](../../language-reference/keywords/protected.md) ou [private](../../language-reference/keywords/private.md). Par conséquent, quand vous affectez des valeurs à cette propriété, la propriété sur la classe `BaseClass` est appelée à la place. Le remplacement du modificateur d’accès par [public](../../language-reference/keywords/public.md) rend la propriété accessible.  
   
  L’exemple montre également qu’un modificateur d’accès restrictif, tel que `private` ou `protected`, sur l’accesseur `set` de la propriété `Name` dans `DerivedClass` empêche l’accès à l’accesseur et génère une erreur quand vous lui affectez une valeur.  
@@ -65,7 +66,7 @@ Les parties [get](../../language-reference/keywords/get.md) et [set](../../langu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Propriétés](./properties.md)
 - [Indexeurs](../indexers/index.md)
 - [Modificateurs d’accès](./access-modifiers.md)

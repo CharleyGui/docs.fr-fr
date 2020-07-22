@@ -1,5 +1,6 @@
 ---
 title: Ressources dans les applications .NET
+description: Comprendre les ressources dans les applications .NET. Une ressource est une donnée non exécutable qui est déployée logiquement avec une application.
 ms.date: 07/25/2018
 helpviewer_keywords:
 - deploying applications [.NET Framework], resources
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-ms.openlocfilehash: 0620cb16c3233f8ba2a665c9c4cb5f44bc5d5e84
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 105325170389917bfb2022314791aa1ed5923db3
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645678"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865162"
 ---
 # <a name="resources-in-net-apps"></a>Ressources dans les applications .NET
 
@@ -48,7 +49,7 @@ Au moment de l'exécution, une application charge les ressources localisées app
 
 - Si une culture n'est pas explicitement assignée, en extrayant la culture d'interface utilisateur par défaut du thread de la propriété <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType>.
 
-- Si une culture d’interface utilisateur par défaut du thread n’est pas explicitement assignée, en extrayant la culture de l’utilisateur actuel sur l’ordinateur local. Les implémentations .NET exécutées sur Windows font cela en appelant [`GetUserDefaultUILanguage`](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) la fonction Windows.
+- Si une culture d’interface utilisateur par défaut du thread n’est pas explicitement assignée, en extrayant la culture de l’utilisateur actuel sur l’ordinateur local. Les implémentations .NET exécutées sur Windows font cela en appelant la [`GetUserDefaultUILanguage`](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) fonction Windows.
 
 Pour plus d'informations sur la façon dont la culture d'interface utilisateur actuelle est définie, consultez les pages de référence <xref:System.Globalization.CultureInfo> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>.
 

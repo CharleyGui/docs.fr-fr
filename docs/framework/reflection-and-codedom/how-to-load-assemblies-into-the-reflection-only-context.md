@@ -1,5 +1,6 @@
 ---
-title: Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement
+title: 'Procédure : charger des assemblys dans le contexte de réflexion uniquement'
+description: Consultez un exemple de chargement d’assemblys dans le contexte de réflexion uniquement dans .NET. Examinez les assemblys compilés pour d’autres plateformes ou versions .NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - assemblies [.NET Framework], reflection-only loader context
 - reflection-only loader context
 ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
-ms.openlocfilehash: cac6b3b3adf070ad6070e5c5941653f20dedd907
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 92f847f6c61ba39bf8621af6080baccfdabe514a
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130105"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865071"
 ---
-# <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement
+# <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Procédure : charger des assemblys dans le contexte de réflexion uniquement
 
 Le contexte de chargement de réflexion uniquement permet d’examiner des assemblys compilés pour d’autres plateformes ou d’autres versions du .NET Framework. Le code chargé dans ce contexte peut uniquement être examiné. Il ne peut pas être exécuté. Cela signifie que les objets ne peuvent pas être créés, car les constructeurs ne peut pas être exécutés. Le code ne pouvant pas être exécuté, les dépendances ne sont pas chargées automatiquement. Si vous devez les examiner, vous devez les charger vous-même.
 

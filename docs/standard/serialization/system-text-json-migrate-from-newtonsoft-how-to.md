@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fe370b34d311816a815f3b2d419751ac7871f013
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 78a47b01cc8fba4cb45a686adad901784552c1c1
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "83703583"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865331"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Comment migrer de Newtonsoft.Json versSystem.Text.Json
 
@@ -318,11 +318,27 @@ Pour faire échouer la désérialisation si aucune `Date` propriété n’est da
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastRequiredPropertyConverter.cs)]
 
-Inscrivez ce convertisseur personnalisé à l' [aide d’un attribut sur la classe POCO](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) ou en [ajoutant le convertisseur](system-text-json-converters-how-to.md#registration-sample---converters-collection) à la <xref:System.Text.Json.JsonSerializerOptions.Converters> collection.
+Inscrivez ce convertisseur personnalisé en [ajoutant le convertisseur](system-text-json-converters-how-to.md#registration-sample---converters-collection) à la <xref:System.Text.Json.JsonSerializerOptions.Converters?displayProperty=nameWithType> collection.
 
-Si vous suivez ce modèle, ne transmettez pas l’objet d’options lors de l’appel récursif <xref:System.Text.Json.JsonSerializer.Serialize%2A> ou <xref:System.Text.Json.JsonSerializer.Deserialize%2A> . L’objet d’options contient la <xref:System.Text.Json.JsonSerializerOptions.Converters%2A> collection. Si vous le transmettez à `Serialize` ou `Deserialize` , le convertisseur personnalisé s’appelle lui-même, en effectuant une boucle infinie qui provoque une exception de dépassement de capacité de la pile. Si les options par défaut ne sont pas réalisables, créez une nouvelle instance des options avec les paramètres dont vous avez besoin. Cette approche est lente puisque chaque nouvelle instance est mise en cache de façon indépendante.
+Ce modèle d’appel récursif du convertisseur requiert que vous inscriviez le convertisseur à l’aide de <xref:System.Text.Json.JsonSerializerOptions> , et non à l’aide d’un attribut. Si vous inscrivez le convertisseur à l’aide d’un attribut, le convertisseur personnalisé s’appelle de manière récursive dans lui-même. Le résultat est une boucle infinie qui se termine dans une exception de dépassement de capacité de la pile.
 
-Le code de convertisseur précédent est un exemple simplifié. Une logique supplémentaire est nécessaire si vous avez besoin de gérer des attributs (tels que [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) ou des options différentes (telles que des encodeurs personnalisés). En outre, l’exemple de code ne gère pas les propriétés pour lesquelles une valeur par défaut est définie dans le constructeur. Cette approche ne fait pas la différence entre les scénarios suivants :
+Quand vous inscrivez le convertisseur à l’aide de l’objet d’options, évitez une boucle infinie en ne passant pas l’objet d’options lors de l’appel de <xref:System.Text.Json.JsonSerializer.Serialize%2A> ou de <xref:System.Text.Json.JsonSerializer.Deserialize%2A> . L’objet d’options contient la <xref:System.Text.Json.JsonSerializerOptions.Converters%2A> collection. Si vous le transmettez à `Serialize` ou `Deserialize` , le convertisseur personnalisé s’appelle lui-même, en effectuant une boucle infinie qui provoque une exception de dépassement de capacité de la pile. Si les options par défaut ne sont pas réalisables, créez une nouvelle instance des options avec les paramètres dont vous avez besoin. Cette approche est lente puisque chaque nouvelle instance est mise en cache de façon indépendante.
+
+Il existe un autre modèle qui peut utiliser `JsonConverterAttribute` l’inscription sur la classe à convertir. Dans cette approche, le code de convertisseur appelle `Serialize` ou `Deserialize` sur une classe qui dérive de la classe à convertir. Aucun n’est appliqué à la classe dérivée `JsonConverterAttribute` . Dans l’exemple suivant de cette alternative :
+
+* `WeatherForecastWithRequiredPropertyConverterAttribute`est la classe à désérialiser et auquel est `JsonConverterAttribute` appliqué.
+* `WeatherForecastWithoutRequiredPropertyConverterAttribute`est la classe dérivée qui n’a pas l’attribut de convertisseur.
+* Le code dans le convertisseur appelle `Serialize` et `Deserialize` on `WeatherForecastWithoutRequiredPropertyConverterAttribute` pour éviter une boucle infinie. Cette approche présente une incidence sur les performances de la sérialisation en raison d’une instanciation d’objet supplémentaire et de la copie des valeurs de propriété.
+
+Voici les `WeatherForecast*` types :
+
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithReqPptyConverterAttr)]
+
+Et voici le convertisseur :
+
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastRequiredPropertyConverterForAttributeRegistration.cs)]
+
+Le convertisseur de propriétés requis nécessiterait une logique supplémentaire si vous devez gérer des attributs tels que [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) ou des options différentes, telles que des encodeurs personnalisés. En outre, l’exemple de code ne gère pas les propriétés pour lesquelles une valeur par défaut est définie dans le constructeur. Cette approche ne fait pas la différence entre les scénarios suivants :
 
 * Une propriété est absente du JSON.
 * Une propriété pour un type non Nullable est présente dans le JSON, mais la valeur est la valeur par défaut pour le type, par exemple zéro pour un `int` .
@@ -391,7 +407,7 @@ Inscrivez ce convertisseur personnalisé à l' [aide d’un attribut sur la clas
 Si vous utilisez un convertisseur personnalisé qui suit l’exemple précédent :
 
 * Le `OnDeserializing` code n’a pas accès à la nouvelle instance poco. Pour manipuler la nouvelle instance POCO au début de la désérialisation, placez ce code dans le constructeur POCO.
-* Ne transmettez pas l’objet d’options lors d’un appel récursif `Serialize` ou `Deserialize` . L’objet d’options contient la `Converters` collection. Si vous le transmettez à `Serialize` ou `Deserialize` , le convertisseur sera utilisé, en effectuant une boucle infinie qui entraîne une exception de dépassement de capacité de la pile.
+* Évitez une boucle infinie en inscrivant le convertisseur dans l’objet d’options et en ne passant pas l’objet d’options lors de l’appel de `Serialize` ou de `Deserialize` . Pour plus d’informations, consultez la section [propriétés requises](#required-properties) , plus haut dans cet article.
 
 ### <a name="public-and-non-public-fields"></a>Champs publics et non publics
 

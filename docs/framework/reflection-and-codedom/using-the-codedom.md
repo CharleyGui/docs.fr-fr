@@ -1,5 +1,6 @@
 ---
 title: Utilisation du CodeDOM
+description: Utilisez le Code Document Object Model (CodeDOM), qui fournit des types représentant de nombreux types courants d’éléments de code source, pour assembler un graphique d’objet.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -20,12 +21,12 @@ helpviewer_keywords:
 - code generators
 - CodeDOM, graphs
 ms.assetid: 0444ddf3-c3f6-44ed-a999-f710d9c3e0cf
-ms.openlocfilehash: c4cab79976acae236de5a8eaad5a42cdba7d04f9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 476d8c18f386f889855c664147b1ee20995dc6f9
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130011"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865214"
 ---
 # <a name="using-the-codedom"></a>Utilisation du CodeDOM
 CodeDOM fournit des types qui représentent de nombreux types courants d’éléments du code source. Vous pouvez concevoir un programme qui génère un modèle de code source à l’aide d’éléments CodeDOM pour assembler un graphique d’objet. Ce graphique d’objet peut être rendu sous forme de code source à l’aide d’un générateur de code CodeDOM pour un langage de programmation pris en charge. CodeDOM permet également de compiler du code source dans un assembly binaire.  

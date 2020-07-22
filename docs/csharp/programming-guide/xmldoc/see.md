@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cross-references [C#]
 - see C# XML tag
 ms.assetid: 0200de01-7e2f-45c4-9094-829d61236383
-ms.openlocfilehash: 0f10feb0931c6d38c817fdecb925f68d439abb59
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 731e42a6d4d354b043a56dbe150bb03a693a9454
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287244"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86863784"
 ---
 # <a name="see-c-programming-guide"></a>\<see>(Guide de programmation C#)
 
@@ -33,7 +33,7 @@ ms.locfileid: "84287244"
 
 ## <a name="remarks"></a>Notes
 
-La `<see>` balise vous permet de spécifier un lien à partir de texte. Utilisez [\<seealso>](./seealso.md) pour indiquer que le texte doit être placé dans une section Voir aussi. Utilisez l’[attribut cref](./cref-attribute.md) pour créer des liens hypertexte internes aux pages de documentation pour les éléments de code.
+La `<see>` balise vous permet de spécifier un lien à partir de texte. Utilisez [\<seealso>](./seealso.md) pour indiquer que le texte doit être placé dans une section Voir aussi. Utilisez l’[attribut cref](./cref-attribute.md) pour créer des liens hypertexte internes aux pages de documentation pour les éléments de code. En outre, ``href`` est un attribut valide qui fonctionnera comme un lien hypertexte.
 
 Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.
 

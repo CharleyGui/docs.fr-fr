@@ -1,14 +1,15 @@
 ---
 title: Fonctions locales - Guide de programmation C#
+description: Les fonctions locales en C# sont des méthodes privées qui sont imbriquées dans un autre membre et peuvent être appelées à partir de leur membre conteneur.
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 200fbd097b7c71a1cd392d62622955528a80fd66
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 9987d6d5ad57c1dceb3a4bffbae22a81c240c794
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102942"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864525"
 ---
 # <a name="local-functions-c-programming-guide"></a>Fonctions locales (Guide de programmation C#)
 
@@ -26,9 +27,9 @@ ms.locfileid: "82102942"
 En revanche, les fonctions locales ne peuvent pas être déclarées à l’intérieur d’un membre expression-bodied.
 
 > [!NOTE]
-> Dans certains cas, vous pouvez utiliser une expression lambda pour implémenter la fonctionnalité également prise en charge par une fonction locale. Pour une comparaison, voir [fonctions locales vs expressions lambda](#local-functions-vs-lambda-expressions).
+> Dans certains cas, vous pouvez utiliser une expression lambda pour implémenter la fonctionnalité également prise en charge par une fonction locale. Pour une comparaison, consultez [fonctions locales et expressions lambda](#local-functions-vs-lambda-expressions).
 
-Les fonctions locales permettent de clarifier l’objectif de votre code. Toute personne lisant votre code peut voir que la méthode n’est pas callable, sauf par la méthode contenant. Pour les projets d’équipe, elles empêchent aussi à un autre développeur d’appeler par inadvertance la méthode directement à partir d’un autre emplacement dans la classe ou le struct.
+Les fonctions locales permettent de clarifier l’objectif de votre code. Toute personne lisant votre code peut voir que la méthode ne peut pas être appelée, sauf par la méthode conteneur. Pour les projets d’équipe, elles empêchent aussi à un autre développeur d’appeler par inadvertance la méthode directement à partir d’un autre emplacement dans la classe ou le struct.
 
 ## <a name="local-function-syntax"></a>Syntaxe des fonctions locales
 
@@ -42,10 +43,10 @@ Les fonctions locales peuvent utiliser les modificateurs [async](../../language-
 
 Notez que toutes les variables locales définies dans le membre conteneur, y compris ses paramètres de méthode, sont accessibles dans la fonction locale.
 
-Contrairement à une définition de méthode, une définition de fonction locale ne peut pas inclure le modificateur d’accès du membre. Comme toutes les fonctions locales sont privées, l’inclusion d’un modificateur d’accès, tel que le mot clé `private`, génère l’erreur de compilateur CS0106 : « Le modificateur « private » n’est pas valide pour cet élément ».
+Contrairement à une définition de méthode, une définition de fonction locale ne peut pas inclure le modificateur d’accès au membre. Comme toutes les fonctions locales sont privées, l’inclusion d’un modificateur d’accès, tel que le mot clé `private`, génère l’erreur de compilateur CS0106 : « Le modificateur « private » n’est pas valide pour cet élément ».
 
 > [!NOTE]
-> Avant le C 8.0, les fonctions locales ne peuvent pas inclure le `static` modificateur. L’inclusion du mot clé `static` génère l’erreur de compilateur CS0106 : « Le modificateur « static » n’est pas valide pour cet élément ».
+> Avant C# 8,0, les fonctions locales ne peuvent pas inclure le `static` modificateur. L’inclusion du mot clé `static` génère l’erreur de compilateur CS0106 : « Le modificateur « static » n’est pas valide pour cet élément ».
 
 Par ailleurs, les attributs ne peuvent pas être appliqués à la fonction locale ou à ses paramètres et paramètres de type.
 
@@ -89,7 +90,7 @@ Comparez cette implémentation avec une version qui utilise des expressions lamb
 
 Les fonctions locales ont des noms. Les expressions lambda sont des méthodes anonymes qui sont affectées aux variables de type `Func` ou `Action`. Lorsque vous déclarez une fonction locale, les types d’arguments et le type de retour font partie de la déclaration de fonction. Au lieu de faire partie du corps de l’expression lambda, les types d’arguments et le type de retour font partie de la déclaration de type de variable de l’expression lambda. Ces deux différences peuvent rendre le code plus clair.
 
-Les fonctions locales ont des règles différentes pour l’affectation définie par rapport aux expressions lambda. Une déclaration de fonction locale peut être référencée à partir de n’importe quel emplacement de code où elle est dans la portée. Une expression lambda doit être attribuée à une variable de délégué avant qu’elle puisse être consultée (ou appelée par le délégué faisant référence à l’expression lambda). Notez que la version utilisant l’expression lambda `nthFactorial` doit déclarer et initialiser l’expression lambda avant de la définir. Si ce n’est pas le cas, cela entraîne une erreur de compilation due au fait que vous référencez `nthFactorial` avant de lui affecter une valeur. Ces différences font que les algorithmes récursifs sont plus faciles à créer en utilisant des fonctions locales. Vous pouvez déclarer et définir une fonction locale qui s’appelle elle-même. Les expressions lambda doivent être déclarées et une valeur par défaut doit leur être affectée avant qu’elles puissent être réaffectées à un corps référençant la même expression lambda.
+Les fonctions locales ont des règles différentes pour l’affectation définie par rapport aux expressions lambda. Une déclaration de fonction locale peut être référencée à partir de n’importe quel emplacement de code où elle est dans la portée. Une expression lambda doit être assignée à une variable déléguée avant d’être accessible (ou appelée via le délégué référençant l’expression lambda). Notez que la version qui utilise l’expression lambda doit déclarer et initialiser l’expression lambda avant de la `nthFactorial` définir. Si ce n’est pas le cas, cela entraîne une erreur de compilation due au fait que vous référencez `nthFactorial` avant de lui affecter une valeur. Ces différences font que les algorithmes récursifs sont plus faciles à créer en utilisant des fonctions locales. Vous pouvez déclarer et définir une fonction locale qui s’appelle elle-même. Les expressions lambda doivent être déclarées et une valeur par défaut doit leur être affectée avant qu’elles puissent être réaffectées à un corps référençant la même expression lambda.
 
 Les règles d’affectation définies s’appliquent également à toutes les variables qui sont capturées par la fonction locale ou l’expression lambda. Les règles des fonctions locales comme celles des expression lambda exigent que toutes les variables capturées soient définitivement affectées au point marquant le moment où la fonction locale ou l’expression lambda est convertie en délégué. La différence est que les expressions lambda sont converties en délégués au moment où elles sont déclarées. Les fonctions locales sont converties en délégués uniquement lorsqu’elles sont utilisées en tant que délégué. Si vous déclarez une fonction locale et la référencez uniquement en l’appelant comme une méthode, elle ne sera pas convertie en délégué. Cette règle vous permet de déclarer une fonction locale à n’importe quel emplacement qui vous convient dans sa portée englobante. Il est courant de déclarer des fonctions locales à la fin de la méthode parente, après des instructions return.
 

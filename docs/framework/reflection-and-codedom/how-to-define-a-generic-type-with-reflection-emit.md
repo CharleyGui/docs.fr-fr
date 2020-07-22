@@ -1,5 +1,6 @@
 ---
-title: Guide pratique pour définir un type générique avec l'émission de réflexion
+title: 'Procédure : définir un type générique avec l’émission de réflexion'
+description: Consultez Comment définir un type générique avec l’émission de réflexion. Créez un type générique avec deux paramètres de type, appliquez des contraintes de classe, des contraintes d’interface, et bien plus encore.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +11,14 @@ helpviewer_keywords:
 - generics [.NET Framework], dynamic types
 - reflection emit, generic types
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
-ms.openlocfilehash: b553fd2235c73cf879474dc4f44f958dddcb649c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fe8fb731fd160ab87e5c65debf367a96bc0dea2a
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130153"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865123"
 ---
-# <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Guide pratique pour définir un type générique avec l'émission de réflexion
+# <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Procédure : définir un type générique avec l’émission de réflexion
 Cette rubrique montre comment créer un type générique simple avec deux paramètres de type, comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type, et comment créer des membres qui utilisent les paramètres de type de la classe comme types de paramètres et types de retour.  
   
 > [!IMPORTANT]
@@ -69,7 +70,7 @@ Cette rubrique montre comment créer un type générique simple avec deux param�
      [!code-csharp[EmitGenericType#21](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#21)]
      [!code-vb[EmitGenericType#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#21)]  
   
-8. Définissez une méthode qui utilise les paramètres de type du type générique. Notez que ces méthodes ne sont génériques que si elles ont leurs propres listes de paramètres de type. Le code suivant définit une méthode `static` (`Shared` en Visual Basic) qui prend un tableau de `TFirst` et retourne un `List<TFirst>` (`List(Of TFirst)` en Visual Basic) contenant tous les éléments du tableau. Pour définir cette méthode, vous devez créer le type `List<TFirst>` en appelant <xref:System.Type.MakeGenericType%2A> sur la définition de type générique, `List<T>`. ( `T` Est omis lorsque vous utilisez l' `typeof` opérateur (`GetType` dans Visual Basic) pour récupérer la définition de type générique.) Le type de paramètre est créé à l' <xref:System.Type.MakeArrayType%2A> aide de la méthode.  
+8. Définissez une méthode qui utilise les paramètres de type du type générique. Notez que ces méthodes ne sont génériques que si elles ont leurs propres listes de paramètres de type. Le code suivant définit une méthode `static` (`Shared` en Visual Basic) qui prend un tableau de `TFirst` et retourne un `List<TFirst>` (`List(Of TFirst)` en Visual Basic) contenant tous les éléments du tableau. Pour définir cette méthode, vous devez créer le type `List<TFirst>` en appelant <xref:System.Type.MakeGenericType%2A> sur la définition de type générique, `List<T>`. ( `T` Est omis lorsque vous utilisez l' `typeof` opérateur ( `GetType` dans Visual Basic) pour récupérer la définition de type générique.) Le type de paramètre est créé à l’aide de la <xref:System.Type.MakeArrayType%2A> méthode.  
   
      [!code-cpp[EmitGenericType#22](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#22)]
      [!code-csharp[EmitGenericType#22](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#22)]
@@ -79,7 +80,7 @@ Cette rubrique montre comment créer un type générique simple avec deux param�
   
      La méthode <xref:System.Type.GetConstructor%2A> n’étant pas prise en charge sur un <xref:System.Reflection.Emit.GenericTypeParameterBuilder>, vous ne pouvez pas obtenir directement le constructeur de `List<TFirst>`. Vous devez d’abord obtenir le constructeur de la définition de type générique `List<T>`, puis appeler une méthode qui le convertit en constructeur de `List<TFirst>` correspondant.  
   
-     Le constructeur utilisé pour cet exemple de code prend un `IEnumerable<T>`. Notez cependant qu’il ne s’agit pas de la définition de type générique de l’interface générique <xref:System.Collections.Generic.IEnumerable%601>. Au lieu de cela, le paramètre de type `T` de `List<T>` doit remplacer le paramètre de type `T` de `IEnumerable<T>`. (Cela peut paraître déroutant uniquement car les deux types ont des paramètres de type nommés `T`. C’est pourquoi cet exemple de code utilise les `TFirst` noms `TSecond`et.) Pour récupérer le type de l’argument de constructeur, commencez par la définition `IEnumerable<T>` de type générique <xref:System.Type.MakeGenericType%2A> et appelez avec le premier paramètre de `List<T>`type générique de. La liste d’arguments de constructeur doit être passée en tant que tableau, avec un seul argument dans ce cas.  
+     Le constructeur utilisé pour cet exemple de code prend un `IEnumerable<T>`. Notez cependant qu’il ne s’agit pas de la définition de type générique de l’interface générique <xref:System.Collections.Generic.IEnumerable%601>. Au lieu de cela, le paramètre de type `T` de `List<T>` doit remplacer le paramètre de type `T` de `IEnumerable<T>`. (Cela peut paraître déroutant uniquement car les deux types ont des paramètres de type nommés `T`. C’est pourquoi cet exemple de code utilise les noms `TFirst` et `TSecond` .) Pour récupérer le type de l’argument de constructeur, commencez par la définition de type générique `IEnumerable<T>` et appelez <xref:System.Type.MakeGenericType%2A> avec le premier paramètre de type générique de `List<T>` . La liste d’arguments de constructeur doit être passée en tant que tableau, avec un seul argument dans ce cas.  
   
     > [!NOTE]
     > La définition de type générique est exprimée en tant que `IEnumerable<>` quand vous utilisez l’opérateur `typeof` en C#, ou `IEnumerable(Of )` quand vous utilisez l’opérateur `GetType` en Visual Basic.  

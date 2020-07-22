@@ -1,16 +1,17 @@
 ---
 title: Constructeurs d'instances - Guide de programmation C#
+description: Les constructeurs d’instance en C# créent et initialisent toutes les variables de membre d’instance lorsque vous utilisez la nouvelle expression pour créer un objet d’une classe.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: 621b8ca7510b0b9916c9c46f201ff77402c3c655
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d70e786446fb198afb4e0311757cacb65b706f47
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75964733"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864200"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Constructeurs d'instances (Guide de programmation C#)
 
@@ -31,7 +32,7 @@ Les constructeurs d’instances sont utilisés pour créer et initialiser toutes
   
  [!code-csharp[csProgGuideObjects#77](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#77)]  
   
- Si une classe n’a pas de constructeur, un constructeur sans paramètre est généré automatiquement, et les valeurs par défaut sont utilisées pour initialiser les champs objet. Par exemple, [int](../../language-reference/builtin-types/integral-numeric-types.md) est initialisé à 0. Pour plus d’informations sur les valeurs par défaut de type, voir [les valeurs par défaut des types C.](../../language-reference/builtin-types/default-values.md) Par conséquent, comme le constructeur sans paramètre de la classe `Coords` initialise toutes les données membres à zéro, il peut être supprimé entièrement sans modification du fonctionnement de la classe. Un exemple complet d’utilisation de plusieurs constructeurs est fourni dans l’exemple 1, plus loin dans cette rubrique, et un exemple d’un constructeur généré automatiquement est fourni dans l’exemple 2.  
+ Si une classe n’a pas de constructeur, un constructeur sans paramètre est généré automatiquement, et les valeurs par défaut sont utilisées pour initialiser les champs objet. Par exemple, [int](../../language-reference/builtin-types/integral-numeric-types.md) est initialisé à 0. Pour plus d’informations sur les valeurs par défaut de type, consultez [valeurs par défaut des types C#](../../language-reference/builtin-types/default-values.md). Par conséquent, comme le constructeur sans paramètre de la classe `Coords` initialise toutes les données membres à zéro, il peut être supprimé entièrement sans modification du fonctionnement de la classe. Un exemple complet d’utilisation de plusieurs constructeurs est fourni dans l’exemple 1, plus loin dans cette rubrique, et un exemple d’un constructeur généré automatiquement est fourni dans l’exemple 2.  
   
  Les constructeurs d’instances peuvent également servir à appeler les constructeurs d’instances des classes de base. Le constructeur de classe peut appeler le constructeur de la classe de base via l’initialiseur, comme suit :  
   
@@ -60,8 +61,8 @@ Les constructeurs d’instances sont utilisés pour créer et initialiser toutes
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](./index.md)
 - [Constructeurs](./constructors.md)
 - [Finaliseurs](./destructors.md)
-- [Statique](../../language-reference/keywords/static.md)
+- [static](../../language-reference/keywords/static.md)

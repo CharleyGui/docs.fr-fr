@@ -1,5 +1,6 @@
 ---
 title: Classes statiques et membres de classe statique - Guide de programmation C#
+description: Les classes static ne peuvent pas être instanciées en C#. Vous accédez aux membres d’une classe statique en utilisant le nom de classe lui-même.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, static members
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 71cbf8278b3a8092e93a8ae3d8be291540f16cc3
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 4f187d772d2f2e4375fbe3cfdc8c48af691f1c7c
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990097"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86863875"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Classes statiques et membres de classe statique (Guide de programmation C#)
 
@@ -91,8 +92,8 @@ Pour plus d’informations, voir [Classes statiques](~/_csharplang/spec/classes.
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [statique](../../language-reference/keywords/static.md)
-- [Classes](./classes.md)
-- [type](../../language-reference/keywords/class.md)
+- [static](../../language-reference/keywords/static.md)
+- [Catégories](./classes.md)
+- [class](../../language-reference/keywords/class.md)
 - [Constructeurs statiques](./static-constructors.md)
 - [Constructeurs d’instances](./instance-constructors.md)

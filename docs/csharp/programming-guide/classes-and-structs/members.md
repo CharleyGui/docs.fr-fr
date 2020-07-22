@@ -1,16 +1,17 @@
 ---
 title: Membres - Guide de programmation C#
+description: Les classes et les structs en C# ont des membres qui représentent les données et le comportement, y compris les membres déclarés dans la classe et déclarés dans sa hiérarchie d’héritage.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-ms.openlocfilehash: 09802431d0a5954b67687e9878f572541eeaac79
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aa4981ea20d86994bfae92d5db8c9abfa7c8f906
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705507"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864590"
 ---
 # <a name="members-c-programming-guide"></a>Membres (Guide de programmation C#)
 
@@ -20,7 +21,7 @@ Les classes et les structs ont des membres qui représentent leurs données et l
   
 |Membre|Description|  
 |------------|-----------------|  
-|[Champs](./fields.md)|Les champs sont des variables déclarées au niveau de la classe. Un champ peut être un type numérique intégré ou une instance d’une autre classe. Par exemple, une classe de calendrier peut avoir un champ qui contient la date actuelle.|  
+|[Fields](./fields.md)|Les champs sont des variables déclarées au niveau de la classe. Un champ peut être un type numérique intégré ou une instance d’une autre classe. Par exemple, une classe de calendrier peut avoir un champ qui contient la date actuelle.|  
 |[Constantes](./constants.md)|Les constantes sont des champs dont la valeur est définie au moment de la compilation et ne peut pas être modifiée.|  
 |[Propriétés](./properties.md)|Les propriétés sont des méthodes sur une classe, accessibles comme si elles étaient des champs de cette classe. Une propriété peut fournir une protection pour un champ de classe afin d’éviter qu’il ne soit modifié sans que de l’objet en ait connaissance.|  
 |[Méthodes](./methods.md)|Les méthodes définissent les actions qu’une classe peut effectuer. Les méthodes peuvent accepter des paramètres qui fournissent des données d’entrée et peuvent retourner des données de sortie au moyen de paramètres. Les méthodes peuvent également retourner une valeur directement, sans utiliser de paramètre.|  
@@ -33,5 +34,5 @@ Les classes et les structs ont des membres qui représentent leurs données et l
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
-- [Classes](./classes.md)
+- [Guide de programmation C#](../index.md)
+- [Catégories](./classes.md)

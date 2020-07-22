@@ -9,65 +9,65 @@ helpviewer_keywords:
 - templates [WPF], ComboBox
 - parts [WPF], ComboBox
 ms.assetid: b0662fa1-16d7-4320-b26b-c1804e565a44
-ms.openlocfilehash: 887698bdaebf7bc5ddac8997167589d9fbd3dd4d
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: af7f8a544af5e9892a8f3f059048bbfd113d2491
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960377"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865357"
 ---
 # <a name="combobox-styles-and-templates"></a>Styles et modèles ComboBox
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ComboBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
+Cette rubrique décrit les styles et les modèles pour le <xref:System.Windows.Controls.ComboBox> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour que le contrôle donne une apparence unique. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="combobox-parts"></a>Composants ComboBox  
- Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.ComboBox>.  
+ Le tableau suivant répertorie les parties nommées du <xref:System.Windows.Controls.ComboBox> contrôle.  
   
-|Partie|Type|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
-|PART_EditableTextBox|<xref:System.Windows.Controls.TextBox>|Contient le texte de la <xref:System.Windows.Controls.ComboBox>.|  
+|PART_EditableTextBox|<xref:System.Windows.Controls.TextBox>|Contient le texte de <xref:System.Windows.Controls.ComboBox> .|  
 |PART_Popup|<xref:System.Windows.Controls.Primitives.Popup>|Liste déroulante qui contient les éléments de la zone de liste déroulante.|  
   
- Lorsque vous créez un <xref:System.Windows.Controls.ControlTemplate> pour un <xref:System.Windows.Controls.ComboBox>, votre modèle peut contenir un <xref:System.Windows.Controls.ItemsPresenter> dans un <xref:System.Windows.Controls.ScrollViewer>. (Le <xref:System.Windows.Controls.ItemsPresenter> affiche chaque élément du <xref:System.Windows.Controls.ComboBox>; le <xref:System.Windows.Controls.ScrollViewer> permet de faire défiler le contrôle).  Si le <xref:System.Windows.Controls.ItemsPresenter> n’est pas l’enfant direct du <xref:System.Windows.Controls.ScrollViewer>, vous devez attribuer au <xref:System.Windows.Controls.ItemsPresenter> le nom, `ItemsPresenter`.  
+ Lorsque vous créez un <xref:System.Windows.Controls.ControlTemplate> pour un <xref:System.Windows.Controls.ComboBox> , votre modèle peut contenir un <xref:System.Windows.Controls.ItemsPresenter> dans un <xref:System.Windows.Controls.ScrollViewer> . (Le <xref:System.Windows.Controls.ItemsPresenter> affiche chaque élément dans <xref:System.Windows.Controls.ComboBox> ; le <xref:System.Windows.Controls.ScrollViewer> permet de faire défiler le contrôle).  Si le <xref:System.Windows.Controls.ItemsPresenter> n’est pas l’enfant direct de <xref:System.Windows.Controls.ScrollViewer> , vous devez fournir le <xref:System.Windows.Controls.ItemsPresenter> nom, `ItemsPresenter` .  
   
 ## <a name="combobox-states"></a>États de ComboBox  
- Le tableau suivant répertorie les États du contrôle <xref:System.Windows.Controls.ComboBox>.  
+ Le tableau suivant répertorie les États du <xref:System.Windows.Controls.ComboBox> contrôle.  
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
-|MouseOver|CommonStates|Le pointeur de la souris se trouve sur le contrôle de <xref:System.Windows.Controls.ComboBox>.|  
+|Normal|CommonStates|État par défaut.|  
+|Désactivé|CommonStates|Le contrôle est désactivé.|  
+|MouseOver|CommonStates|Le pointeur de la souris se trouve sur le <xref:System.Windows.Controls.ComboBox> contrôle.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
-|FocusedDropDown|FocusStates|La liste déroulante du <xref:System.Windows.Controls.ComboBox> a le focus.|  
-|Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|  
-|Editable|EditStates|La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> a la valeur `true`.|  
+|FocusedDropDown|FocusStates|La liste déroulante de <xref:System.Windows.Controls.ComboBox> a le focus.|  
+|Valide|ValidationStates|Le contrôle utilise la <xref:System.Windows.Controls.Validation> classe et la <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false` .|  
+|InvalidFocused|ValidationStates|La <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` et le contrôle a le focus.|  
+|InvalidUnfocused|ValidationStates|La <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` et le contrôle n’a pas le focus.|  
+|Modifiable|EditStates|La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> a la valeur `true`.|  
 |Alors impossibles|EditStates|La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> a la valeur `false`.|  
   
 ## <a name="comboboxitem-parts"></a>Composants de ComboBoxItem  
- Le contrôle <xref:System.Windows.Controls.ComboBoxItem> n’a pas de parties nommées.  
+ Le <xref:System.Windows.Controls.ComboBoxItem> contrôle n’a pas de parties nommées.  
   
 ## <a name="comboboxitem-states"></a>États de ComboBoxItem  
- Le tableau suivant répertorie les États du contrôle <xref:System.Windows.Controls.ComboBoxItem>.  
+ Le tableau suivant répertorie les États du <xref:System.Windows.Controls.ComboBoxItem> contrôle.  
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
-|MouseOver|CommonStates|Le pointeur de la souris se trouve sur le contrôle de <xref:System.Windows.Controls.ComboBoxItem>.|  
+|Normal|CommonStates|État par défaut.|  
+|Désactivé|CommonStates|Le contrôle est désactivé.|  
+|MouseOver|CommonStates|Le pointeur de la souris se trouve sur le <xref:System.Windows.Controls.ComboBoxItem> contrôle.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
-|sélectionné|SelectionStates|L’élément est actuellement sélectionné.|  
+|Sélectionné|SelectionStates|L’élément est actuellement sélectionné.|  
 |Non sélectionné|SelectionStates|L’élément n’est pas sélectionné.|  
 |SelectedUnfocused|SelectionStates|L’élément est sélectionné mais n’a pas le focus.|  
-|Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|  
+|Valide|ValidationStates|Le contrôle utilise la <xref:System.Windows.Controls.Validation> classe et la <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false` .|  
+|InvalidFocused|ValidationStates|La <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` et le contrôle a le focus.|  
+|InvalidUnfocused|ValidationStates|La <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` et le contrôle n’a pas le focus.|  
   
 ## <a name="combobox-controltemplate-example"></a>Exemple de ControlTemplate ComboBox  
- L’exemple suivant montre comment définir une <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.ComboBox> et les types associés.  
+ L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour le <xref:System.Windows.Controls.ComboBox> contrôle et les types associés.  
   
  [!code-xaml[ControlTemplateExamples#ComboBox](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#combobox)]  
   
@@ -83,5 +83,5 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
-- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
+- [Application d'un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

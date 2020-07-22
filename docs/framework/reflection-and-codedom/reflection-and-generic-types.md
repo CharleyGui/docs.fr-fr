@@ -1,5 +1,6 @@
 ---
 title: Réflexion et types génériques
+description: Prise en main de la réflexion et des types génériques dans .NET. Contrairement à un type ordinaire, un type générique est associé à un ensemble de paramètres de type ou d’arguments de type.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - types, generic
 - type parameters
 ms.assetid: f7180fc5-dd41-42d4-8a8e-1b34288e06de
-ms.openlocfilehash: 4894b5cc64dca431c8d05b638847dd6cb7017bde
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dd0dda92dc4473e05c59072973076cbb06bcaa06
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180495"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865292"
 ---
 # <a name="reflection-and-generic-types"></a>Réflexion et types génériques
 Du point de vue de la réflexion, la différence entre un type générique et un type ordinaire est qu'un type générique est associé à un ensemble de paramètres de type (s'il s'agit d'une définition de type générique) ou d'arguments de type (s'il s'agit d'un type construit). Une méthode générique diffère d'une méthode ordinaire de la même façon.  
@@ -121,9 +122,9 @@ generic<typename V, typename W> ref class D : B<int, V> {};
 
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
-|[Guide pratique pour examiner et instancier des types génériques avec la réflexion](how-to-examine-and-instantiate-generic-types-with-reflection.md)|Montre comment utiliser les propriétés et méthodes de <xref:System.Type> et <xref:System.Reflection.MethodInfo> pour examiner des types génériques.|  
+|[Procédure : examiner et instancier des types génériques avec la réflexion](how-to-examine-and-instantiate-generic-types-with-reflection.md)|Montre comment utiliser les propriétés et méthodes de <xref:System.Type> et <xref:System.Reflection.MethodInfo> pour examiner des types génériques.|  
 |[Génériques](../../standard/generics/index.md)|Décrit la fonctionnalité des génériques et sa prise en charge dans le .NET Framework.|  
-|[Guide pratique pour définir un type générique avec l'émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)|Montre comment utiliser l'émission de réflexion pour générer des types génériques dans des assemblys dynamiques.|  
+|[Procédure : définir un type générique avec l’émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)|Montre comment utiliser l'émission de réflexion pour générer des types génériques dans des assemblys dynamiques.|  
 |[Affichage des informations de type](viewing-type-information.md)|Décrit la classe <xref:System.Type> et fournit des exemples de code qui montrent comment utiliser <xref:System.Type> avec diverses classes de réflexion pour obtenir des informations sur les constructeurs, les méthodes, les champs, les propriétés et les événements.|

@@ -1,27 +1,28 @@
 ---
 title: Méthodes - Guide de programmation C#
+description: Une méthode en C# est un bloc de code qui contient une série d’instructions. Un programme exécute les instructions en appelant la méthode et en spécifiant des arguments.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 114fa2973c50be9a4199db9729e3cd9ea6122866
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: db35b48d4d7e70a54b38342e79fa2881b3857bd7
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77626527"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864148"
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
 
-Une méthode est un bloc de code qui contient une série d'instructions. Un programme provoque l'exécution des instructions en appelant la méthode et en spécifiant les éventuels arguments de méthode requis. En C#, chaque instruction exécutée est effectuée dans le contexte d'une méthode. La `Main` méthode est le point d’entrée pour chaque application C et il est appelé par l’heure courante de course de langue (CLR) lorsque le programme est lancé.
+Une méthode est un bloc de code qui contient une série d'instructions. Un programme provoque l'exécution des instructions en appelant la méthode et en spécifiant les éventuels arguments de méthode requis. En C#, chaque instruction exécutée est effectuée dans le contexte d'une méthode. La `Main` méthode est le point d’entrée de chaque application C# et elle est appelée par le Common Language Runtime (CLR) au démarrage du programme.
 
 > [!NOTE]
-> Cet article traite des méthodes nommées. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](../statements-expressions-operators/anonymous-functions.md).
+> Cet article décrit les méthodes nommées. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](../statements-expressions-operators/anonymous-functions.md).
 
 ## <a name="method-signatures"></a>Signatures de méthode
 
-Les méthodes sont déclarées dans une [classe,](../../language-reference/keywords/class.md) [struct](../../language-reference/builtin-types/struct.md), `public` `private`ou [interface](../interfaces/index.md) en spécifiant le niveau d’accès tel que ou , modificateurs facultatifs tels que `abstract` ou `sealed`, la valeur de retour, le nom de la méthode, et tous les paramètres de méthode. Ces parties forment ensemble la signature de la méthode.
+Les méthodes sont déclarées dans une [classe](../../language-reference/keywords/class.md), un [struct](../../language-reference/builtin-types/struct.md)ou une [interface](../interfaces/index.md) en spécifiant le niveau d’accès comme `public` ou `private` , les modificateurs facultatifs tels que `abstract` ou `sealed` , la valeur de retour, le nom de la méthode et tous les paramètres de méthode. Ces parties forment ensemble la signature de la méthode.
 
 > [!NOTE]
 > Un type de retour d'une méthode ne fait pas partie de la signature de la méthode à des fins de surcharge de méthode. Toutefois, il fait partie de la signature de la méthode lors de la détermination de la compatibilité entre un délégué et la méthode vers laquelle il pointe.
@@ -30,29 +31,29 @@ Les paramètres de méthode sont placés entre parenthèses et séparés par des
 
 [!code-csharp[csProgGuideObjects#40](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#40)]
 
-## <a name="method-access"></a>Accès à la méthode
+## <a name="method-access"></a>Accès aux méthodes
 
 L'appel d'une méthode sur un objet revient à accéder à un champ. Après le nom de l'objet, ajoutez un point, le nom de la méthode et les parenthèses. Les arguments sont répertoriés entre les parenthèses et séparés par des virgules. Les méthodes de la classe `Motorcycle` peuvent donc être appelées comme dans l'exemple suivant :
 
 [!code-csharp[csProgGuideObjects#41](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#41)]
 
-## <a name="method-parameters-vs-arguments"></a>Paramètres de méthode par rapport aux arguments
+## <a name="method-parameters-vs-arguments"></a>Paramètres de méthode et arguments
 
-La définition de la méthode spécifie les noms et types des paramètres requis. Quand le code appelant appelle la méthode, il fournit des valeurs concrètes appelées arguments pour chaque paramètre. Les arguments doivent être compatibles avec le type de paramètre, mais le nom d’argument (le cas échéant) utilisé dans le code d’appel n’a pas à être le même que le paramètre nommé défini dans la méthode. Par exemple :
+La définition de la méthode spécifie les noms et types des paramètres requis. Quand le code appelant appelle la méthode, il fournit des valeurs concrètes appelées arguments pour chaque paramètre. Les arguments doivent être compatibles avec le type de paramètre, mais le nom d’argument (le cas échéant) utilisé dans le code appelant ne doit pas nécessairement être le même que le paramètre nommé défini dans la méthode. Par exemple :
 
 [!code-csharp[csProgGuideObjects#74](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#74)]
 
-## <a name="passing-by-reference-vs-passing-by-value"></a>Passer par référence par rapport au passage par valeur
+## <a name="passing-by-reference-vs-passing-by-value"></a>Passage par référence et passage par valeur
 
-Par défaut, lorsqu’une instance d’un type de [valeur](../../language-reference/builtin-types/value-types.md) est transmise à une méthode, sa copie est passée au lieu de l’instance elle-même. Par conséquent, les modifications apportées à l’argument n’ont aucun effet sur l’instance initiale de la méthode d’appel. Pour passer une instance de type valeur `ref` par référence, utilisez le mot clé. Pour plus d’informations, consultez [Passage de paramètres de type valeur ](./passing-value-type-parameters.md).
+Par défaut, lorsqu’une instance d’un [type valeur](../../language-reference/builtin-types/value-types.md) est passée à une méthode, sa copie est passée au lieu de l’instance elle-même. Par conséquent, les modifications apportées à l’argument n’ont aucun effet sur l’instance d’origine dans la méthode d’appel. Pour passer une instance de type valeur par référence, utilisez le `ref` mot clé. Pour plus d’informations, consultez [Passage de paramètres de type valeur ](./passing-value-type-parameters.md).
 
 Quand un objet d'un type référence est passé à une méthode, une référence à l'objet est passée. Autrement dit, la méthode ne reçoit pas l'objet lui-même mais un argument qui indique l'emplacement de l'objet. Si vous modifiez un membre de l'objet à l'aide de cette référence, la modification est répercutée dans l'argument de la méthode d'appel, même si vous passez l'objet par valeur.
 
-Vous créez un type `class` de référence en utilisant le mot clé, comme l’exemple suivant l’indique :
+Vous créez un type référence à l’aide du `class` mot clé, comme le montre l’exemple suivant :
 
 [!code-csharp[csProgGuideObjects#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#42)]
 
-Maintenant, si vous passez un objet basé sur ce type à une méthode, une référence à l'objet est passée. L’exemple suivant passe `SampleRefType` un `ModifyObject`objet de type à la méthode :
+Maintenant, si vous passez un objet basé sur ce type à une méthode, une référence à l'objet est passée. L’exemple suivant passe un objet de type `SampleRefType` à la méthode `ModifyObject` :
 
 [!code-csharp[csProgGuideObjects#75](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#75)]
 
@@ -91,7 +92,7 @@ Pour utiliser une valeur retournée par référence à partir d’une méthode, 
 ref int distance = plant
 ```
 
-Le retour d’un tableau multidimensionnel à partir d’une méthode, `M`, qui modifie le contenu du tableau n’est pas nécessaire si la fonction appelante a passé le tableau à `M`.  Vous pouvez retourner le tableau obtenu à partir de `M` pour bénéficier d’un style approprié ou d’un flux fonctionnel de valeurs, mais cela n’est pas nécessaire, car C# passe tous les types de référence par valeur, et la valeur d’une référence de tableau est le pointeur qui désigne le tableau. Dans la `M`méthode, toute modification du contenu du tableau est observable par tout code qui a une référence au tableau, comme le montre l’exemple suivant :
+Le retour d’un tableau multidimensionnel à partir d’une méthode, `M`, qui modifie le contenu du tableau n’est pas nécessaire si la fonction appelante a passé le tableau à `M`.  Vous pouvez retourner le tableau obtenu à partir de `M` pour bénéficier d’un style approprié ou d’un flux fonctionnel de valeurs, mais cela n’est pas nécessaire, car C# passe tous les types de référence par valeur, et la valeur d’une référence de tableau est le pointeur qui désigne le tableau. Dans la méthode `M` , toute modification apportée au contenu du tableau est observable par tout code qui possède une référence au tableau, comme indiqué dans l’exemple suivant :
 
 ```csharp
 static void Main(string[] args)
@@ -134,7 +135,7 @@ La méthode `startButton_Click` est un exemple de méthode async dont le type de
 
 Une méthode async ne peut pas déclarer de paramètres [ref](../../language-reference/keywords/ref.md) ou [out](../../language-reference/keywords/out-parameter-modifier.md) , mais elle peut appeler des méthodes qui comportent ces paramètres.
 
-Pour plus d’informations sur les méthodes async, voir [Programmation asynchrone avec async et attendre](../concepts/async/index.md), Control Flow dans les programmes [Async](../concepts/async/control-flow-in-async-programs.md), et [Async Return Types](../concepts/async/async-return-types.md).
+Pour plus d’informations sur les méthodes Async, consultez [programmation asynchrone avec Async et await](../concepts/async/index.md), [Workflow de contrôle dans les programmes Async](../concepts/async/control-flow-in-async-programs.md)et [types de retour Async](../concepts/async/async-return-types.md).
 
 ## <a name="expression-body-definitions"></a>Définitions de corps d’expression
 
@@ -159,7 +160,7 @@ Vous appelez un itérateur depuis le code client en utilisant une instruction [f
 
 Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.
 
-Pour plus d’informations, voir [Iterators](../concepts/iterators.md).
+Pour plus d’informations, consultez [itérateurs](../concepts/iterators.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -167,14 +168,14 @@ Pour plus d’informations, voir [Iterators](../concepts/iterators.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Classes statiques et membres de classe statique](static-classes-and-static-class-members.md)
 - [Héritage](inheritance.md)
 - [Classes abstract et sealed et membres de classe](abstract-and-sealed-classes-and-class-members.md)
-- [Params](../../language-reference/keywords/params.md)
-- [Retour](../../language-reference/keywords/return.md)
-- [out](../../language-reference/keywords/out.md)
+- [params](../../language-reference/keywords/params.md)
+- [renvoi](../../language-reference/keywords/return.md)
+- [à](../../language-reference/keywords/out.md)
 - [ref](../../language-reference/keywords/ref.md)
-- [Paramètres de passage](passing-parameters.md)
+- [Passer des paramètres](passing-parameters.md)

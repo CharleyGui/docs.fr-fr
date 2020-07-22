@@ -1,15 +1,16 @@
 ---
 title: Comment implémenter et appeler une méthode d’extension personnalisée (Guide de programmation C#)
+description: Découvrez comment implémenter des méthodes d’extension pour n’importe quel type .NET. Le code client peut utiliser vos méthodes en ajoutant une référence à une DLL et en ajoutant une directive using.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-ms.openlocfilehash: f9937c4b7c6e66af0ee3bc6f6d9ef3b3b1edd530
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 7856e78713648a42d1c961f50f7e83f2f7ef05b7
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241823"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865058"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Comment implémenter et appeler une méthode d’extension personnalisée (Guide de programmation C#)
 Cette rubrique montre comment implémenter vos propres méthodes d’extension pour n’importe quel type .NET. Le code client peut utiliser vos méthodes d’extension en ajoutant une référence à la DLL qui les contient, et en ajoutant une directive [using](../../language-reference/keywords/using-directive.md) qui spécifie l’espace de noms dans lequel les méthodes d’extension sont définies.  
@@ -45,7 +46,7 @@ Cette rubrique montre comment implémenter vos propres méthodes d’extension p
 - [LINQ (Language Integrated Query)](../../linq/linq-in-csharp.md)
 - [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md)
 - [protected](../../language-reference/keywords/protected.md)
-- [internal](../../language-reference/keywords/internal.md)
+- [intérieurs](../../language-reference/keywords/internal.md)
 - [public](../../language-reference/keywords/public.md)
-- [this](../../language-reference/keywords/this.md)
+- [Voici](../../language-reference/keywords/this.md)
 - [namespace](../../language-reference/keywords/namespace.md)

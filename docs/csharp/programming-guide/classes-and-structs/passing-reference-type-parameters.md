@@ -1,16 +1,17 @@
 ---
 title: Passage de paramètres de type référence - Guide de programmation C#
+description: Quand vous passez un paramètre de type référence par valeur en C#, les données de l’objet référencé peuvent changer, mais pas la valeur de la référence elle-même.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - method parameters [C#], reference types
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
-ms.openlocfilehash: 6fa0e60fafabaa9fb04cdc5d5bf3f9e29490e84f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64a4735eded7a468549862b3221b4fbd0966e64d
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714718"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864707"
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>Passage de paramètres de type référence (Guide de programmation C#)
 Une variable d’un [type référence](../../language-reference/keywords/reference-types.md) ne contient pas directement ses données ; il contient une référence à ses données. Quand vous passez un paramètre de type référence par valeur, il est possible de changer les données appartenant à l’objet référencé, comme la valeur d’un membre de classe. En revanche, vous ne pouvez pas changer la valeur de la référence elle-même ; par exemple, vous ne pouvez pas utiliser la même référence pour allouer de la mémoire à un nouvel objet et la faire persister en dehors de la méthode. Pour cela, passez le paramètre en utilisant le mot clé [ref](../../language-reference/keywords/ref.md) ou [out](../../language-reference/keywords/out-parameter-modifier.md). Pour des raisons de simplicité, les exemples suivants utilisent `ref`.  
@@ -40,9 +41,9 @@ Une variable d’un [type référence](../../language-reference/keywords/referen
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
-- [Paramètres de passage](./passing-parameters.md)
+- [Guide de programmation C#](../index.md)
+- [Passer des paramètres](./passing-parameters.md)
 - [ref](../../language-reference/keywords/ref.md)
-- [Dans](../../language-reference/keywords/in-parameter-modifier.md)
-- [out](../../language-reference/keywords/out.md)
-- [Types de référence](../../language-reference/keywords/reference-types.md)
+- [dans](../../language-reference/keywords/in-parameter-modifier.md)
+- [à](../../language-reference/keywords/out.md)
+- [Types référence](../../language-reference/keywords/reference-types.md)

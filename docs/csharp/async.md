@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 05/20/2020
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: bcea584ded6985a0ef166ab8e24672a19e27b0a3
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 35ba90f978b1993f80451a28a4cd08129afddd85
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415984"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864499"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 
@@ -221,7 +221,7 @@ Avec la programmation asynchrone, il existe des détails à garder à l’esprit
 
 Il s’agit de la Convention utilisée dans .NET pour différencier plus facilement les méthodes synchrones et asynchrones. Certaines méthodes qui ne sont pas explicitement appelées par votre code (telles que les gestionnaires d’événements ou les méthodes de contrôleur Web) ne s’appliquent pas nécessairement. Étant donné qu’elles ne sont pas explicitement appelées par votre code, il n’est pas aussi important d’être explicite quant à leur nom.
 
-* `async void`**doit uniquement être utilisé pour les gestionnaires d’événements.**
+* `async void` **ne doit être utilisé que pour les gestionnaires d’événements.**
 
 L’utilisation de `async void` est le seul moyen de permettre le fonctionnement des gestionnaires d’événements asynchrones, car les événements n’ont pas de types de retour (et ne peuvent donc pas utiliser les objets `Task` et `Task<T>`). Toute autre utilisation de la méthode `async void` ne suit pas le modèle TAP et peut être difficile à implémenter, comme expliqué ci-après :
 

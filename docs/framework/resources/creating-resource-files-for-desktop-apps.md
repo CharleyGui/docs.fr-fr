@@ -1,5 +1,6 @@
 ---
 title: Créer des fichiers de ressources pour les applications .NET
+description: Créer des fichiers de ressources pour les applications .NET. Créez des fichiers texte avec des ressources de type chaîne, des fichiers XML ou binaires par programme, ou des fichiers XML avec des données de type chaîne, image ou objet.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,18 +11,18 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-ms.openlocfilehash: b679539be1aeb593124eb35a235bcc578decb4c0
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 4730a14e499c75176d7ba7c8378626070d5211e9
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80111775"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865175"
 ---
 # <a name="create-resource-files-for-net-apps"></a>Créer des fichiers de ressources pour les applications .NET
 
 Vous pouvez inclure des ressources, telles que des chaînes, des images ou des données d’objet, dans les fichiers de ressources pour les rendre facilement accessibles à votre application. Le .NET Framework propose cinq façons de créer des fichiers de ressources :
 
-- Créez un fichier texte qui contient des ressources de type chaîne. Vous pouvez utiliser le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour convertir le fichier texte en un fichier de ressources binaire (.resources). Vous pouvez ensuite incorporer le fichier de ressources binaire dans un exécutable d’application ou une bibliothèque d’application à l’aide d’un compilateur de langage, ou l’incorporer dans un assembly satellite à l’aide de l’outil [Assembly Linker (al. exe)](../tools/al-exe-assembly-linker.md). Pour plus d’informations, consultez la section [Ressources dans les fichiers texte](creating-resource-files-for-desktop-apps.md#TextFiles).
+- Créez un fichier texte qui contient des ressources de type chaîne. Vous pouvez utiliser le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour convertir le fichier texte en un fichier de ressources binaire (.resources). Vous pouvez ensuite incorporer le fichier de ressources binaire dans un exécutable d’application ou une bibliothèque d’application à l’aide d’un compilateur de langage, ou l’incorporer dans un assembly satellite à l’aide d' [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md). Pour plus d’informations, consultez la section [Ressources dans les fichiers texte](creating-resource-files-for-desktop-apps.md#TextFiles).
 
 - Créez un fichier de ressources XML (.resx) qui contient des données de chaîne, d’image ou d’objet. Vous pouvez utiliser le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour convertir le fichier .resx en un fichier de ressources binaire (.resources). Vous pouvez ensuite incorporer le fichier de ressources binaire dans un exécutable d’application ou une bibliothèque d’applications en utilisant un compilateur de langage, ou l’incorporer dans un assembly satellite avec [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md). Pour plus d’informations, consultez la section [Ressources dans les fichiers .resx](creating-resource-files-for-desktop-apps.md#ResxFiles).
 
@@ -76,7 +77,7 @@ HelpMenuName=Help
 EmptyString=
 ```
 
- À compter de .NET Framework 4,5 et dans toutes les versions de .net Core, les fichiers texte prennent en `#ifdef`charge la compilation conditionnelle avec le *symbole*... `#endif` et `#if !` *symbole*... `#endif` construit. Vous pouvez ensuite utiliser le commutateur `/define` avec le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour définir les symboles. Chaque ressource requiert son propre `#ifdef` *symbole*... `#endif` ou `#if !` *symbole*... `#endif` construction. Si vous utilisez une instruction `#ifdef` et que *symbole* est défini, la ressource associée est incluse dans le fichier .resources ; sinon, elle n’est pas incluse. Si vous utilisez une instruction `#if !` et que *symbole* n’est pas défini, la ressource associée est incluse dans le fichier .resources ; sinon, elle n’est pas incluse.
+ À compter de .NET Framework 4,5 et dans toutes les versions de .NET Core, les fichiers texte prennent en charge la compilation conditionnelle avec les `#ifdef` constructions *symbol*... `#endif` et `#if !` *symbol*... `#endif` . Vous pouvez ensuite utiliser le commutateur `/define` avec le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour définir les symboles. Chaque ressource requiert sa propre `#ifdef` *construction Symbol*... `#endif` ou `#if !` *symbol*... `#endif` . Si vous utilisez une instruction `#ifdef` et que *symbole* est défini, la ressource associée est incluse dans le fichier .resources ; sinon, elle n’est pas incluse. Si vous utilisez une instruction `#if !` et que *symbole* n’est pas défini, la ressource associée est incluse dans le fichier .resources ; sinon, elle n’est pas incluse.
 
  Les commentaires sont facultatifs dans les fichiers texte et sont précédés d’un point-virgule (;) ou d’un signe dièse (#) au début d’une ligne. Les lignes qui contiennent des commentaires peuvent être placées n’importe où dans le fichier. Les commentaires ne sont pas inclus dans un fichier .resources compilé créé avec le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md).
 
@@ -92,13 +93,13 @@ CancelButton=Cancel
 
  Si le fichier texte contient des occurrences en double de *nom*, le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) affiche un avertissement et ignore le deuxième nom.
 
- la *valeur* ne peut pas contenir de caractères de nouvelle ligne, mais vous pouvez utiliser des caractères d' `\n` échappement de style langage C tels `\t` que pour représenter une nouvelle ligne et représenter une tabulation. Vous pouvez également inclure une barre oblique inverse si elle est placée dans une séquence d’échappement\\\\(par exemple, «»). En outre, une chaîne vide est autorisée.
+ la *valeur* ne peut pas contenir de caractères de nouvelle ligne, mais vous pouvez utiliser des caractères d’échappement de style langage C tels que `\n` pour représenter une nouvelle ligne et `\t` représenter une tabulation. Vous pouvez également inclure une barre oblique inverse si elle est placée dans une séquence d’échappement (par exemple, « \\ \\ »). En outre, une chaîne vide est autorisée.
 
  Enregistrez les ressources au format de fichier texte en utilisant l’encodage UTF-8 ou l’encodage UTF-16 dans l’ordre de primauté des octets de poids faible ou de poids fort (Big-endian). Toutefois, le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md), qui convertit un fichier .txt en fichier .resources, traite les fichiers au format UTF-8 par défaut. Si vous souhaitez que Resgen.exe reconnaisse un fichier encodé à l’aide d’UTF-16, vous devez inclure une marque d’ordre d’octet Unicode (U+FEFF) au début du fichier.
 
  Pour incorporer un fichier de ressources au format de fichier texte dans un assembly .NET, vous devez convertir le fichier en un fichier de ressources binaire (.resources) à l’aide du [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md). Vous pouvez ensuite incorporer le fichier .resources dans un assembly .NET en utilisant un compilateur de langage, ou l’incorporer dans un assembly satellite avec [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md).
 
- L’exemple suivant utilise un fichier de ressources au format texte nommé GreetingResources.txt pour une application console « Hello World » simple. Le fichier texte définit deux chaînes, `prompt` et `greeting`, qui invitent l’utilisateur à entrer son nom et à afficher un message d’accueil.
+ L’exemple suivant utilise un fichier de ressources au format texte nommé GreetingResources.txt pour une application console « Hello World » simple. Le fichier texte définit deux chaînes, `prompt` et `greeting` , qui invitent l’utilisateur à entrer son nom et à afficher un message d’accueil.
 
 ```text
 # GreetingResources.txt

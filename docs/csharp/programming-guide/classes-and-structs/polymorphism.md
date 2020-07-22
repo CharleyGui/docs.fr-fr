@@ -1,16 +1,17 @@
 ---
 title: Polymorphisme - Guide de programmation C#
+description: En savoir plus sur le polymorphisme, un concept clé dans des langages de programmation orientés objet tels que C#, qui décrit la relation entre les classes de base et les classes dérivées.
 ms.date: 02/08/2020
 helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 65f5c882ec4d7f8cbcc7ec7bf535091febfba64d
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 2a1ca4c498c5885c7d34475405ac83c4cccecd6f
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662652"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864122"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorphisme (Guide de programmation C#)
 
@@ -106,7 +107,7 @@ Pour plus d’informations, consultez [base](../../language-reference/keywords/b
 > [!NOTE]
 > Il est recommandé que les membres virtuels utilisent `base` pour appeler l'implémentation de classe de base de ce membre dans leur propre implémentation. L'exécution du comportement de classe de base permet à la classe dérivée de se concentrer sur l'implémentation du comportement spécifique à la classe dérivée. Si l'implémentation de classe de base n'est pas appelée, la classe dérivée doit rendre son comportement compatible avec le comportement de la classe de base.
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 - [Versioning avec les mots clés override et new](./versioning-with-the-override-and-new-keywords.md)
 - [Savoir quand utiliser les mots clés override et new](./knowing-when-to-use-override-and-new-keywords.md)

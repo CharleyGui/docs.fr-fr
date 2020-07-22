@@ -1,19 +1,20 @@
 ---
-title: Comment utiliser les arguments nommés et facultatifs dans la programmation du Bureau - Guide de programmation C
+title: Guide pratique pour utiliser des arguments nommés et facultatifs dans la programmation Office-Guide de programmation C#
+description: Découvrez comment utiliser des arguments nommés et des arguments facultatifs pour faciliter l’accès aux interfaces COM, telles que les API Microsoft Office Automation.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - named and optional arguments [C#], Office programming
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: 36b5c8b49404606c8240d24953c3677d5612d30e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7e24331d37e8fdbe2bc66a2d9f73a5f6a7242af9
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714877"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864343"
 ---
-# <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Comment utiliser les arguments nommés et facultatifs dans la programmation du Bureau (Guide de programmation CMD)
+# <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Comment utiliser des arguments nommés et facultatifs dans la programmation Office (Guide de programmation C#)
 
 Les arguments nommés et les arguments facultatifs, qui ont été introduits avec C#4, rendent la programmation en C# plus pratique, plus souple et plus lisible. De plus, ces fonctionnalités facilitent considérablement l’accès aux interfaces COM, telles que les API Microsoft Office Automation.
 
@@ -53,27 +54,27 @@ Pour que vous puissiez effectuer ces procédures, Microsoft Office Word doit êt
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier *Program.cs*, puis cliquez sur **Afficher le code**.
 
-2. Ajoutez les `using` directives suivantes au haut du fichier de code :
+2. Ajoutez les `using` directives suivantes en haut du fichier de code :
 
      [!code-csharp[csProgGuideNamedAndOptional#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#4)]
 
 ## <a name="to-display-text-in-a-word-document"></a>Pour afficher du texte dans un document Word
 
-1. Dans `Program` la classe en *Program.cs*, ajouter la méthode suivante pour créer une application Word et un document Word. La méthode [Add](<xref:Microsoft.Office.Interop.Word.Documents.Add%2A>) comprend quatre paramètres facultatifs. Cet exemple utilise leurs valeurs par défaut. Par conséquent, aucun argument n’est nécessaire dans l’instruction appelante.
+1. Dans la `Program` classe de *Program.cs*, ajoutez la méthode suivante pour créer une application Word et un document Word. La méthode [Add](<xref:Microsoft.Office.Interop.Word.Documents.Add%2A>) comprend quatre paramètres facultatifs. Cet exemple utilise leurs valeurs par défaut. Par conséquent, aucun argument n’est nécessaire dans l’instruction appelante.
 
      [!code-csharp[csProgGuideNamedAndOptional#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#6)]
 
-2. Ajoutez le code suivant à la fin de la méthode pour définir où afficher le texte dans le document, et quel texte afficher :
+2. Ajoutez le code suivant à la fin de la méthode pour définir l’emplacement d’affichage du texte dans le document et le texte à afficher :
 
      [!code-csharp[csProgGuideNamedAndOptional#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#7)]
 
 ## <a name="to-run-the-application"></a>Pour exécuter l’application
 
-1. Ajouter la déclaration suivante à Main :
+1. Ajoutez l’instruction suivante à main :
 
      [!code-csharp[csProgGuideNamedAndOptional#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#8)]
 
-2. Appuyez sur <kbd>CTRL</kbd>+<kbd>F5</kbd> pour mener à bien le projet. Un document Word contenant le texte spécifié s’affiche.
+2. Appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour exécuter le projet. Un document Word contenant le texte spécifié s’affiche.
 
 ## <a name="to-change-the-text-to-a-table"></a>Pour convertir le texte en tableau
   
@@ -85,25 +86,25 @@ Pour que vous puissiez effectuer ces procédures, Microsoft Office Word doit êt
 
      [!code-csharp[csProgGuideNamedAndOptional#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#9)]
 
-     Dans les versions antérieures de `ConvertToTable` C, l’appel à l’appel nécessite un argument de référence pour chaque paramètre, comme indiqué dans le code suivant :
+     Dans les versions antérieures de C#, l’appel à `ConvertToTable` requiert un argument de référence pour chaque paramètre, comme indiqué dans le code suivant :
   
      [!code-csharp[csProgGuideNamedAndOptional#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#14)]
 
-2. Appuyez sur <kbd>CTRL</kbd>+<kbd>F5</kbd> pour mener à bien le projet.
+2. Appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour exécuter le projet.
 
 ## <a name="to-experiment-with-other-parameters"></a>Pour tester d’autres paramètres
 
-1. Pour changer la table de sorte qu’il a une `DisplayInWord` colonne et trois lignes, remplacer la dernière ligne avec la déclaration suivante, puis le type <kbd>CTRL</kbd>+<kbd>F5</kbd>.  
+1. Pour modifier la table afin qu’elle ait une colonne et trois lignes, remplacez la dernière ligne de `DisplayInWord` par l’instruction suivante, puis tapez <kbd>CTRL</kbd> + <kbd>F5</kbd>.  
 
      [!code-csharp[csProgGuideNamedAndOptional#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#10)]
 
-2. Pour spécifier un format prédéfini pour `DisplayInWord` la table, remplacez la dernière ligne avec la déclaration suivante, puis tapez <kbd>CTRL</kbd>+<kbd>F5</kbd>. Le format peut être n’importe quelle constante [WdTableFormat](<xref:Microsoft.Office.Interop.Word.WdTableFormat>).
+2. Pour spécifier un format prédéfini pour la table, remplacez la dernière ligne de `DisplayInWord` par l’instruction suivante, puis tapez <kbd>CTRL</kbd> + <kbd>F5</kbd>. Le format peut être n’importe quelle constante [WdTableFormat](<xref:Microsoft.Office.Interop.Word.WdTableFormat>).
 
      [!code-csharp[csProgGuideNamedAndOptional#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#11)]
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-Le code suivant comprend l’exemple complet :
+Le code suivant contient l’exemple complet :
 
  [!code-csharp[csProgGuideNamedAndOptional#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#12)]
 

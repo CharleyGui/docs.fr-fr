@@ -1,5 +1,6 @@
 ---
 title: Considérations sur la sécurité de la réflexion
+description: En savoir plus sur les considérations de sécurité pour la réflexion dans .NET. L’obtention d’informations sur les types et les membres est autorisée, mais l’accès aux membres a des restrictions.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - permissions [.NET Framework], reflection
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - reflection,partial trust
 - link demands
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
-ms.openlocfilehash: 1bdaf3abd39797274236ace4cb2967d2e7d199b2
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 0465cbd5ceb7d4f44bb6d10865fcbd17b8ed7af6
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644183"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865253"
 ---
 # <a name="security-considerations-for-reflection"></a>Considérations sur la sécurité de la réflexion
 
@@ -69,7 +70,7 @@ Depuis .NET Framework 4, le common language runtime détermine le niveau de tra
 |--------------------|------------------------|----------------------------|---------------------------|
 |Critique|`true`|`false`|`false`|
 |Critique sécurisé|`true`|`true`|`false`|
-|Transparent|`false`|`false`|`true`|
+|Mode transparent|`false`|`false`|`true`|
 
 L'utilisation de ces propriétés est beaucoup plus simple que d'examiner les annotations de sécurité d'un assembly et ses types, de vérifier le niveau de confiance actuel et de tenter de dupliquer les règles du runtime. Par exemple, un même type peut être critique du point de vue de la sécurité quand il est exécuté à partir de la ligne de commande ou il peut être transparent de sécurité quand il est exécuté dans un domaine d'application sandbox.
 
@@ -117,7 +118,7 @@ Pour la sérialisation, l'autorisation <xref:System.Security.Permissions.Securit
 - <xref:System.Security.Permissions.SecurityPermission>
 - [Modifications de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)
 - [Sécurité d’accès du code](../misc/code-access-security.md)
-- [Problèmes de sécurité dans l’émission de réflexion](security-issues-in-reflection-emit.md)
+- [Problèmes de sécurité dans l'émission de réflexion](security-issues-in-reflection-emit.md)
 - [Affichage des informations de type](viewing-type-information.md)
 - [Application des attributs](../../standard/attributes/applying-attributes.md)
 - [Accès aux attributs personnalisés](accessing-custom-attributes.md)

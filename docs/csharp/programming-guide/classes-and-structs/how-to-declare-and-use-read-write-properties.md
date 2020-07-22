@@ -1,5 +1,6 @@
 ---
-title: Comment déclarer et utiliser lire les propriétés d’écriture - Guide de programmation C
+title: Comment déclarer et utiliser des propriétés en lecture/écriture-Guide de programmation C#
+description: Découvrez comment utiliser les propriétés en lecture/écriture en C#. Cet exemple inclut deux propriétés, chacune ayant des accesseurs obten et Set, de sorte que les propriétés sont en lecture/écriture.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - get accessor [C#], declaring properties
@@ -8,19 +9,19 @@ helpviewer_keywords:
 - read/write properties [C#]
 - accessors [C#], declaring properties with
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
-ms.openlocfilehash: 4b9db5f15746ab9a1f42239150c6783154723371
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 08bdaa9446491d473cfb16e3b82bac41d7af5b79
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170284"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864447"
 ---
-# <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Comment déclarer et utiliser lire les propriétés d’écriture (Guide de programmation C)
+# <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Comment déclarer et utiliser les propriétés en lecture/écriture (Guide de programmation C#)
 Les propriétés offrent la commodité des membres de données publics sans les risques liés à un accès non protégé, non contrôlé et non vérifié aux données d’un objet. Cela se fait au moyen d’*accesseurs*, lesquels sont des méthodes spéciales qui affectent et récupèrent des valeurs du membre de données sous-jacent. L’accesseur [set](../../language-reference/keywords/set.md) permet aux membres de données d’être affectés, et l’accesseur [get](../../language-reference/keywords/get.md) récupère des valeurs de membres de données.  
   
  L’exemple suivant montre une classe `Person` qui possède deux propriétés : `Name` (string) et `Age` (int). Étant donné que les deux propriétés fournissent des accesseurs `get` et `set`, elles sont considérées comme des propriétés en lecture/écriture.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  [!code-csharp[csProgGuideObjects#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#33)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
@@ -56,6 +57,6 @@ person.SetAge(person.GetAge() + 1);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Propriétés](./properties.md)
 - [Classes et structs](./index.md)

@@ -1,5 +1,6 @@
 ---
 title: Guide pratique pour créer une classe à l’aide de CodeDOM
+description: Consultez un exemple détaillé qui explique comment créer une classe à l’aide de l’Code Document Object Model (CodeDOM).
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - CodeDOM, creating classes
 - CodeDOM, graphs
 ms.assetid: 0ceb70fe-36e1-49bb-922b-e9f615c20a14
-ms.openlocfilehash: ff7c9d1593c8e75f9bcaeda6577c7cb941719749
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3d7151d384402dba6fbb5da8fe54621346251f7b
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130204"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865305"
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>Guide pratique pour créer une classe à l’aide de CodeDOM
 Les procédures suivantes expliquent comment créer et compiler un graphique CodeDOM qui génère une classe contenant deux champs, trois propriétés, une méthode, un constructeur et un point d’entrée.  

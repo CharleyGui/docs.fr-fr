@@ -1,5 +1,6 @@
 ---
-title: Guide pratique pour examiner et instancier des types génériques avec la réflexion
+title: 'Procédure : examiner et instancier des types génériques avec la réflexion'
+description: Consultez Comment examiner et instancier des types génériques avec la réflexion. Utilisez les propriétés IsGenericType, IsGenericParameter et GenericParameterPosition.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +10,14 @@ helpviewer_keywords:
 - reflection, generic types
 - generics [.NET Framework], reflection
 ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
-ms.openlocfilehash: 62e4e066740d0422f8f7045b043a5725278c209c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b57a0ed0c809da442dc9fcf202ad364060971f80
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130137"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865097"
 ---
-# <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Guide pratique pour examiner et instancier des types génériques avec la réflexion
+# <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Procédure : examiner et instancier des types génériques avec la réflexion
 Les informations sur les types génériques s’obtiennent de la même façon que les informations sur les autres types : en examinant un objet <xref:System.Type> qui représente le type générique. La principale différence est qu’un type générique a une liste d’objets <xref:System.Type> représentant ses paramètres de type générique. La première procédure de cette section examine les types génériques.  
   
  Vous pouvez créer un objet <xref:System.Type> qui représente un type construit en liant des arguments de type aux paramètres de type d’une définition de type générique. Ceci est illustrée par la deuxième procédure.  

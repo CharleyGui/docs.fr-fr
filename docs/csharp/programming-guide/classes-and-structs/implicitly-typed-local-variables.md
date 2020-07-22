@@ -1,16 +1,17 @@
 ---
 title: Variables locales implicitement typées - Guide de programmation C#
+description: Le mot clé var en C# indique au compilateur de déduire le type de la variable à partir de l’expression située à droite de l’instruction d’initialisation.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 842f73b7af9671157495df961f5db22702ae897e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 6badb8588dedda80227ab38bee027cf2890c8672
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240705"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864213"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Variables locales implicitement typées (Guide de programmation C#)
 
@@ -54,7 +55,7 @@ Du point de vue de votre code source, un type anonyme n’a pas de nom. Par cons
 
 [!code-csharp[csProgGuideLINQ#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#44)]
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Les restrictions suivantes s’appliquent aux déclarations de variables implicitement typées :
 
@@ -68,7 +69,7 @@ Les restrictions suivantes s’appliquent aux déclarations de variables implici
 
 - Si un type nommé `var` se trouve dans la portée, le mot clé `var` est résolu en ce nom de type et n’est pas considéré comme faisant partie d’une déclaration de variable locale implicitement typée.
 
-Le typage implicite avec le mot clé `var` ne peut être appliqué qu’aux variables comprises dans la portée de la méthode locale. Le typage implicite n’est pas disponible pour les champs de classe, car le compilateur C# rencontrerait un paradoxe logique pendant le traitement du code : le compilateur a besoin de connaître le type du champ, mais il ne peut pas déterminer le type tant que l’expression d’assignation n’est pas analysée, et l’expression ne peut pas être évaluée sans connaître le type. Examinons le code ci-dessous.
+Le typage implicite avec le mot clé `var` ne peut être appliqué qu’aux variables comprises dans la portée de la méthode locale. Le typage implicite n’est pas disponible pour les champs de classe, car le compilateur C# rencontrerait un paradoxe logique pendant le traitement du code : le compilateur a besoin de connaître le type du champ, mais il ne peut pas déterminer le type tant que l’expression d’assignation n’est pas analysée, et l’expression ne peut pas être évaluée sans connaître le type. Considérez le code suivant :
 
 ```csharp
 private var bookTitles;

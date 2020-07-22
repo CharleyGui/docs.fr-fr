@@ -1,5 +1,6 @@
 ---
 title: Affichage des informations de type
+description: Affichez les informations de type à l’aide de System. type, qui est essentiel à la réflexion dans .NET. Examinez ConstructorInfo, MemberInfo, MethodInfo, FieldInfo et PropertyInfo.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - viewing type information
 - reflection, viewing type information
 ms.assetid: 7e7303a9-4064-4738-b4e7-b75974ed70d2
-ms.openlocfilehash: bf119ff547df59cd369d688fd81ab058893614f2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cd74021e1f1a79626e171db13def98e546cd51df
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130014"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865201"
 ---
 # <a name="viewing-type-information"></a>Affichage des informations de type
 La classe <xref:System.Type?displayProperty=nameWithType> est un élément central de la réflexion. Le common language runtime crée l’objet **Type** pour un type chargé quand la réflexion le demande. Vous pouvez utiliser les méthodes, les champs, les propriétés et les classes imbriquées d’un objet **Type** pour connaître toutes les informations le concernant.  
@@ -66,7 +67,7 @@ La classe <xref:System.Type?displayProperty=nameWithType> est un élément centr
  [!code-csharp[Conceptual.Types.ViewInfo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source3.cs#3)]
  [!code-vb[Conceptual.Types.ViewInfo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source3.vb#3)]  
   
- L’exemple suivant utilise toutes les classes d' ** \*informations** de réflexion <xref:System.Reflection.BindingFlags> avec pour répertorier tous les membres (constructeurs, champs, propriétés, événements et méthodes) de la classe spécifiée, en divisant les membres en catégories statiques et d’instance.  
+ L’exemple suivant utilise toutes les classes d' ** \* informations** de réflexion avec <xref:System.Reflection.BindingFlags> pour répertorier tous les membres (constructeurs, champs, propriétés, événements et méthodes) de la classe spécifiée, en divisant les membres en catégories statiques et d’instance.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source4.cpp#4)]
  [!code-csharp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source4.cs#4)]

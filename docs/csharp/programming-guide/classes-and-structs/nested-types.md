@@ -1,23 +1,24 @@
 ---
 title: Types imbriqués - Guide de programmation C#
+description: Un type défini dans une classe, un struct ou une interface est appelé un type imbriqué en C#.
 ms.date: 02/08/2020
 helpviewer_keywords:
 - nested types [C#]
 ms.assetid: f2e1b315-e3d1-48ce-977f-7bae0960ba99
-ms.openlocfilehash: 12e44ccc1254424c152a238c8390f133550fa54c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e1c6c1e8b22b5447d43915ab02984aa13146301
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77626488"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864941"
 ---
 # <a name="nested-types-c-programming-guide"></a>Types imbriqués (guide de programmation C#)
 
-Un type défini au sein d’une [classe,](../../language-reference/keywords/class.md) [d’une struction ou d’une](../../language-reference/builtin-types/struct.md) [interface](../../language-reference/keywords/interface.md) s’appelle un type imbriqué. Par exemple
+Un type défini dans une [classe](../../language-reference/keywords/class.md), un [struct](../../language-reference/builtin-types/struct.md)ou une [interface](../../language-reference/keywords/interface.md) est appelé un type imbriqué. Par exemple
 
 [!code-csharp[DeclareNestedClass](~/samples/snippets/csharp/objectoriented/nestedtypes.cs#DeclareNestedClass)]
 
-Que le type externe soit une classe, une interface ou une struct, les types imbriqués sont par défaut à [privés;](../../language-reference/keywords/private.md) ils ne sont accessibles qu’à partir de leur type de contenant. Dans l’exemple précédent, la classe `Nested` est inaccessible aux types externes.
+Que le type externe soit une classe, une interface ou un struct, les types imbriqués sont [privés](../../language-reference/keywords/private.md)par défaut ; ils sont accessibles uniquement à partir de leur type conteneur. Dans l’exemple précédent, la classe `Nested` est inaccessible aux types externes.
 
 Vous pouvez aussi spécifier un [modificateur d’accès](../../language-reference/keywords/access-modifiers.md) pour définir l’accessibilité d’un type imbriqué, comme ceci :
 
@@ -43,7 +44,7 @@ Dans la déclaration précédente, le nom complet de classe `Nested` est `Contai
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](./index.md)
 - [Modificateurs d’accès](./access-modifiers.md)
 - [Constructeurs](./constructors.md)

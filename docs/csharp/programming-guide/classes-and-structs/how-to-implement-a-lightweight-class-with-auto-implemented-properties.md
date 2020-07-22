@@ -1,18 +1,19 @@
 ---
-title: Comment mettre en œuvre une classe légère avec des propriétés auto-mises en œuvre - Guide de programmation C
+title: Comment implémenter une classe Lightweight avec des propriétés implémentées automatiquement-Guide de programmation C#
+description: Découvrez comment créer une classe légère immuable en C# qui encapsule des propriétés implémentées automatiquement. Il existe deux approches d’implémentation.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: 6d121f6be768d41d22ea01d871662913b2daae2b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de9034772bad1f28e27abe01595309dd84ddc3e7
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170271"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864564"
 ---
-# <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Comment mettre en œuvre une classe légère avec des propriétés auto-mises en œuvre (Guide de programmation C)
+# <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Comment implémenter une classe Lightweight avec des propriétés implémentées automatiquement (Guide de programmation C#)
 
 Cet exemple montre comment créer une classe légère immuable qui sert uniquement à encapsuler un jeu de propriétés implémentées automatiquement. Utilisez ce type de construction à la place d'un struct quand vous devez utiliser une sémantique de type de référence.
 
@@ -21,9 +22,9 @@ Vous pouvez rendre une propriété immuable de deux manières :
 - Vous pouvez déclarer l’accesseur [set](../../language-reference/keywords/set.md) comme étant [private](../../language-reference/keywords/private.md).  La propriété peut uniquement être définie dans le type, mais elle est immuable pour les consommateurs.
 
   Quand vous déclarez un accesseur `set` privé, vous ne pouvez pas utiliser un initialiseur d'objet pour initialiser la propriété. Vous devez utiliser un constructeur ou une méthode de fabrique.
-- Vous pouvez déclarer seulement [l’accesseur d’obtenir,](../../language-reference/keywords/get.md) ce qui rend la propriété immuable partout sauf dans le constructeur du type.
+- Vous pouvez déclarer uniquement l’accesseur [Get](../../language-reference/keywords/get.md) , ce qui rend la propriété immuable partout sauf dans le constructeur du type.
 
-L’exemple suivant montre comment une propriété avec seulement obtenir accesseur diffère d’un avec obtenir et ensemble privé.
+L’exemple suivant montre comment une propriété avec uniquement l’accesseur Get diffère de celle avec Get et Private Set.
 
 ```csharp
 class Contact
@@ -46,7 +47,7 @@ class Contact
 }
 ```
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L'exemple suivant montre deux façons d'implémenter une classe immuable qui possède des propriétés implémentées automatiquement. Chaque façon déclare l'une des propriétés avec un `set` privé et l'autre avec un `get` uniquement.  La première classe utilise un constructeur uniquement pour initialiser les propriétés et la deuxième classe utilise une méthode de fabrique statique qui appelle un constructeur.
 
@@ -148,5 +149,5 @@ Le compilateur crée des champs de stockage pour chaque propriété implémenté
 ## <a name="see-also"></a>Voir aussi
 
 - [Propriétés](./properties.md)
-- [struct](../../language-reference/builtin-types/struct.md)
+- [modélis](../../language-reference/builtin-types/struct.md)
 - [Initialiseurs d’objets et de collections](./object-and-collection-initializers.md)

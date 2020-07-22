@@ -1,5 +1,6 @@
 ---
 title: Propriétés - Guide de programmation C#
+description: Une propriété en C# est un membre qui utilise des méthodes d’accesseur pour lire, écrire ou calculer la valeur d’un champ privé comme s’il s’agissait d’un membre de données public.
 ms.date: 03/10/2017
 f1_keywords:
 - cs.properties
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: ee530e981e0c85302b2b11cc739d6c51d6650ddd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 231e8e6a11f2655ccdea5489f054910a1ecf2586
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170102"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86863940"
 ---
 # <a name="properties-c-programming-guide"></a>Propriétés (Guide de programmation C#)
 
@@ -61,11 +62,11 @@ Si une propriété a les accesseurs `get` et `set`, tous deux doivent être impl
   
 - [Utilisation de propriétés](./using-properties.md)  
   
-- [Propriété d’une interface](./interface-properties.md)  
+- [Propriétés de l’interface](./interface-properties.md)  
   
 - [Comparaison entre propriétés et indexeurs](../indexers/comparison-between-properties-and-indexers.md)  
   
-- [Restriction d’accessibilité de l’accesseur](./restricting-accessor-accessibility.md)  
+- [Restriction d'accessibilité de l'accesseur](./restricting-accessor-accessibility.md)  
   
 - [Propriétés implémentées automatiquement](./auto-implemented-properties.md)  
   
@@ -75,7 +76,7 @@ Pour plus d’informations, consultez [Propriétés](~/_csharplang/spec/classes.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Utilisation de propriétés](./using-properties.md)
 - [Indexeurs](../indexers/index.md)
 - [get, mot clé](../../language-reference/keywords/get.md)

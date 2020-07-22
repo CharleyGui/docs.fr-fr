@@ -1,17 +1,18 @@
 ---
 title: Classes et méthodes partielles - Guide de programmation C#
+description: Les classes et les méthodes partielles en C# fractionnent la définition d’une classe, d’une structure, d’une interface ou d’une méthode sur deux ou plusieurs fichiers sources.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - partial methods [C#]
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 50b192d5a7416a982f41d0c3ac13e9c1bfe3397c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 792159786131654d6ee0363f7ab7b87ac50d32bb
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399818"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864746"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Classes et méthodes partielles (Guide de programmation C#)
 
@@ -52,7 +53,7 @@ Elles sont équivalentes aux déclarations suivantes :
 
 Les éléments suivants sont fusionnés à partir de toutes les définitions de type partiel :
 
-- commentaires XML
+- Commentaires XML
 
 - interfaces
 
@@ -92,13 +93,13 @@ Il y a plusieurs règles à respecter quand vous utilisez des définitions de cl
 
   - [public](../../language-reference/keywords/public.md)
 
-  - [Privé](../../language-reference/keywords/private.md)
+  - [priv](../../language-reference/keywords/private.md)
 
-  - [Protégé](../../language-reference/keywords/protected.md)
+  - [protected](../../language-reference/keywords/protected.md)
 
-  - [Interne](../../language-reference/keywords/internal.md)
+  - [intérieurs](../../language-reference/keywords/internal.md)
 
-  - [Abstrait](../../language-reference/keywords/abstract.md)
+  - [abstraction](../../language-reference/keywords/abstract.md)
 
   - [sealed](../../language-reference/keywords/sealed.md)
 
@@ -171,8 +172,8 @@ Pour plus d’informations, consultez [Types partiels](~/_csharplang/spec/classe
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
-- [Classes](./classes.md)
+- [Guide de programmation C#](../index.md)
+- [Catégories](./classes.md)
 - [Types de structure](../../language-reference/builtin-types/struct.md)
 - [Interfaces](../interfaces/index.md)
-- [partielle (Type)](../../language-reference/keywords/partial-type.md)
+- [partial, Type](../../language-reference/keywords/partial-type.md)

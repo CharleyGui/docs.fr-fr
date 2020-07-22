@@ -1,5 +1,6 @@
 ---
 title: 'Procédure pas à pas : émission de code dans des scénarios de confiance partielle'
+description: Consultez Comment émettre du code dans des scénarios de confiance partielle. L’émission de réflexion utilise les mêmes API, mais certaines fonctionnalités nécessitent des autorisations spéciales dans du code de confiance partielle.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
-ms.openlocfilehash: fd420c9754494b95c55df403edec87743572db03
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 70adb3ce67b45459b18741948092a912f6173731
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129991"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865188"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Procédure pas à pas : émission de code dans des scénarios de confiance partielle
 
@@ -208,7 +209,7 @@ L’exemple ajoute <xref:System.Security.Permissions.ReflectionPermission> avec 
 
 - La première surcharge de la méthode `AccessPrivateMethod` est exécutée et les contrôles de visibilité JIT sont ignorés. La méthode dynamique se compile et s’exécute correctement, car l’assembly qui émet le code est le même que l’assembly qui contient la méthode privée. Par conséquent, les niveaux de confiance sont égaux. Si l’application qui contient la classe `Worker` avait plusieurs assemblys, le même processus réussirait pour chacun de ces assemblys, car ils seraient tous au même niveau de confiance.
 
-- La seconde surcharge de la méthode `AccessPrivateMethod` est exécutée et les contrôles de visibilité JIT sont à nouveau ignorés. Cette fois, la méthode dynamique échoue lorsqu’elle est compilée, car elle tente d' `internal` `FirstChar` accéder à la <xref:System.String> propriété de la classe. L’assembly qui contient la classe <xref:System.String> est totalement fiable. Par conséquent, il est à un niveau de confiance plus élevé que l’assembly qui émet le code.
+- La seconde surcharge de la méthode `AccessPrivateMethod` est exécutée et les contrôles de visibilité JIT sont à nouveau ignorés. Cette fois, la méthode dynamique échoue lorsqu’elle est compilée, car elle tente d’accéder à la `internal` `FirstChar` propriété de la <xref:System.String> classe. L’assembly qui contient la classe <xref:System.String> est totalement fiable. Par conséquent, il est à un niveau de confiance plus élevé que l’assembly qui émet le code.
 
 Cette comparaison montre comment <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> permet à du code partiellement fiable d’ignorer les contrôles de visibilité pour un autre code partiellement fiable sans compromettre la sécurité du code de confiance.
 
@@ -223,5 +224,5 @@ Cette comparaison montre comment <xref:System.Security.Permissions.ReflectionPer
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Problèmes de sécurité dans l’émission de réflexion](security-issues-in-reflection-emit.md)
+- [Problèmes de sécurité dans l'émission de réflexion](security-issues-in-reflection-emit.md)
 - [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)

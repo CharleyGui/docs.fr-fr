@@ -1,5 +1,6 @@
 ---
-title: Guide pratique pour raccorder un délégué à l'aide de la réflexion
+title: 'Procédure : raccorder un délégué à l’aide de la réflexion'
+description: Consultez Guide pratique pour raccorder un délégué à l’aide de la réflexion dans .NET. Connectez une méthode existante à un événement en obtenant les types nécessaires via la réflexion.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +11,14 @@ helpviewer_keywords:
 - reflection, adding event-handler delegates
 - delegates [.NET Framework], adding event handlers with reflection
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
-ms.openlocfilehash: d748d9f8bdd0b4d831880548d4aceb1c77a0b0c4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b5d93efd278a53a4e6382f2321918e58ead55899
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180501"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865084"
 ---
-# <a name="how-to-hook-up-a-delegate-using-reflection"></a>Guide pratique pour raccorder un délégué à l'aide de la réflexion
+# <a name="how-to-hook-up-a-delegate-using-reflection"></a>Procédure : raccorder un délégué à l’aide de la réflexion
 Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous ne pouvez pas utiliser des fonctionnalités de langage telles que l’opérateur C#  ou l’instruction Visual BasicAddHandler pour raccorder des événements. Les procédures suivantes montrent comment raccorder une méthode existante à un événement en obtenant tous les types nécessaires par réflexion, et comment créer une méthode dynamique à l’aide de l’émission de réflexion et la raccorder à un événement.  
   
 > [!NOTE]
@@ -109,5 +110,5 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
 - <xref:System.Reflection.Emit.DynamicMethod>
 - <xref:System.Activator.CreateInstance%2A>
 - <xref:System.Delegate.CreateDelegate%2A>
-- [Guide pratique pour définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)
+- [Procédure : définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)
 - [Réflexion](reflection.md)
