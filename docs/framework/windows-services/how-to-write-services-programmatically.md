@@ -1,5 +1,6 @@
 ---
-title: 'Comment : écrire les services par programmation'
+title: 'Procédure : écrire les services par programmation'
+description: Pour savoir comment écrire des services par programme, vous pouvez configurer l’héritage et d’autres éléments d’infrastructure vous-même.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +10,14 @@ helpviewer_keywords:
 - Windows Service applications, creating
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
 author: ghogen
-ms.openlocfilehash: 5637d569ad5261bff6865af4ab2ed8b7631d2d38
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 9693e3d387f38319519ab04211d8219fe1e5dda1
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053557"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925707"
 ---
-# <a name="how-to-write-services-programmatically"></a>Comment : écrire les services par programmation
+# <a name="how-to-write-services-programmatically"></a>Procédure : écrire les services par programmation
 Si vous choisissez de ne pas utiliser le modèle de projet Service Windows, vous pouvez écrire vos propres services en configurant vous-même l’héritage et d’autres éléments d’infrastructure. Quand vous créez un service par programmation, vous devez effectuer plusieurs étapes qui sont normalement gérées pour vous par le modèle :  
   
 - Vous devez configurer votre classe de service pour qu’elle hérite de la classe <xref:System.ServiceProcess.ServiceBase>.  
@@ -72,8 +73,8 @@ Si vous choisissez de ne pas utiliser le modèle de projet Service Windows, vous
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
-- [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)
-- [Comment : ajouter des programmes d'installation à votre application de service](how-to-add-installers-to-your-service-application.md)
-- [Comment : enregistrer des informations relatives aux services](how-to-log-information-about-services.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Procédure : créer des services Windows](how-to-create-windows-services.md)
+- [Procédure : ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)
+- [Procédure : enregistrer des informations relatives aux services](how-to-log-information-about-services.md)
 - [Procédure pas à pas : création d’une application de service Windows dans le Concepteur de composants](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

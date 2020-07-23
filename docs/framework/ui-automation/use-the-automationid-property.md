@@ -1,5 +1,6 @@
 ---
 title: Utiliser la propriété AutomationID
+description: Passez en revue les scénarios et les exemples de code qui montrent comment et quand utiliser la propriété AutomationID pour rechercher un élément dans l’arborescence UI Automation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, AutomationId property
 - properties, AutomationId
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
-ms.openlocfilehash: a07a9c9bf6b0bf1e2f8ce56653a90a3aad3c4b2f
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 9e6dd3935a1b4d15690e1dfecd73e9b07330ec6c
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741377"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924524"
 ---
 # <a name="use-the-automationid-property"></a>Utiliser la propriété AutomationID
 > [!NOTE]
@@ -31,11 +32,11 @@ ms.locfileid: "75741377"
  Trois scénarios principaux d’application cliente UI Automation ont été identifiés et nécessitent l’utilisation de <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> pour obtenir des résultats exacts et cohérents lors de la recherche d’éléments.  
   
 > [!NOTE]
-> <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> est pris en charge par tous les éléments UI Automation dans l’affichage de contrôle, à l’exception des fenêtres d’application de niveau supérieur, des éléments UI Automation dérivés de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] contrôles qui n’ont pas d’ID ou de x :Uid, et des éléments UI Automation dérivés des contrôles Win32 qui n’ont pas d’ID de contrôle.  
+> <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>est pris en charge par tous les éléments UI Automation dans l’affichage de contrôle, à l’exception des fenêtres d’application de niveau supérieur, des éléments UI Automation dérivés des [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] contrôles qui n’ont pas d’ID ou de x :uid, et d’éléments UI Automation dérivés des contrôles Win32 qui n’ont pas d’ID de contrôle.  
   
 #### <a name="use-a-unique-and-discoverable-automationid-to-locate-a-specific-element-in-the-ui-automation-tree"></a>Utiliser un AutomationID unique et détectable pour localiser un élément spécifique dans l’arborescence UI Automation  
   
-- Utilisez un outil tel que UI Spy pour signaler la <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> d’un [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] élément d’intérêt. Cette valeur peut ensuite être copiée et collée dans une application cliente telle qu’un script de test en vue de tests automatisés. Cette approche réduit et simplifie le code nécessaire pour identifier et localiser un élément au moment de l’exécution.  
+- Utilisez un outil tel que UI Spy pour signaler le <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> d’un [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] élément d’intérêt. Cette valeur peut ensuite être copiée et collée dans une application cliente telle qu’un script de test en vue de tests automatisés. Cette approche réduit et simplifie le code nécessaire pour identifier et localiser un élément au moment de l’exécution.  
   
 > [!CAUTION]
 > En général, vous devez essayer d’obtenir uniquement les enfants directs de <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Une recherche des descendants peut itérer au sein de centaines ou de milliers d’éléments, ce qui peut provoquer un dépassement de capacité de la pile. Si vous tentez d’obtenir un élément spécifique de niveau inférieur, vous devez commencer votre recherche à partir de la fenêtre d’application ou d’un conteneur de niveau inférieur.  
@@ -59,5 +60,5 @@ ms.locfileid: "75741377"
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>
-- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Rechercher un élément UI Automation basé sur une condition de propriété](find-a-ui-automation-element-based-on-a-property-condition.md)

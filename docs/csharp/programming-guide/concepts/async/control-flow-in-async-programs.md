@@ -1,13 +1,14 @@
 ---
 title: Flux de contrôle dans les programmes Async (C#)
+description: En savoir plus sur le workflow de contrôle dans un simple programme C# Async pour comprendre comment écrire et gérer des programmes asynchrones à l’aide des mots clés Async et await.
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-ms.openlocfilehash: 99f80a86f14179c5f270064a9f96e35f8611ef13
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3946db958466a9f9914a5fa7b37c0db3a64d4b3d
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70204440"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925369"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Flux de contrôle dans les programmes asynchrones (C#)
 
@@ -101,7 +102,7 @@ Vous pouvez télécharger l’application utilisée dans cette rubrique à parti
 
 1. Décompressez le fichier téléchargé, puis démarrez Visual Studio.
 
-2. Sur la barre de menu, choisissez **File** > **Open** > **Project/Solution**.
+2. Dans la barre de menus, choisissez **fichier**  >  **ouvrir**un  >  **projet/une solution**.
 
 3. Accédez au dossier qui contient l’exemple de code décompressé, ouvrez le fichier solution (.sln), puis choisissez la touche **F5** pour générer et exécuter le projet.
 
@@ -113,11 +114,11 @@ Pour exécuter le projet, procédez comme suit :
 
 1. Démarrez Visual Studio.
 
-2. Sur la barre de menu, choisissez **File** > **New** > **Project**.
+2. Dans la barre de menus, choisissez **fichier**  >  **nouveau**  >  **projet**.
 
      La boîte de dialogue **Nouveau projet** s’affiche.
 
-3. Choisissez la catégorie**De bureau Windows** Visual**CMD** >  **installée,** > puis choisissez **l’application WPF** parmi la liste des modèles de projet.
+3. Choisissez la catégorie **installé**du  >  Bureau Windows**Visual C#**  >  **Windows Desktop** , puis choisissez **application WPF** dans la liste des modèles de projet.
 
 4. Entrez `AsyncTracer` comme nom du projet, puis choisissez le bouton **OK**.
 
@@ -238,7 +239,7 @@ Pour exécuter le projet, procédez comme suit :
 
 10. Appuyez sur la touche **F5** pour exécuter le programme, puis choisissez le bouton **Démarrer**.
 
-    Vous obtenez la sortie suivante :
+    Vous obtenez la sortie suivante :
 
     ```output
     ONE:   Entering startButton_Click.
@@ -306,7 +307,7 @@ string urlContents = await getStringTask;
 
  L’illustration suivante montre le flux de contrôle entre `client.GetStringAsync` et l’assignation à `getStringTask`, puis entre la création de `getStringTask` et l’application d’un opérateur await.
 
- ![Étape TROIS](./media/asynctrace-three.png "AsyncTrace-Trois")
+ ![Étape 3](./media/asynctrace-three.png "AsyncTrace-trois")
 
  L’expression await suspend `AccessTheWebAsync` jusqu’à ce que `client.GetStringAsync` retourne une sortie. Dans le même temps, le contrôle retourne à l’appelant de `AccessTheWebAsync`, `startButton_Click`.
 
@@ -341,7 +342,7 @@ int contentLength = await getLengthTask;
 
  Dans l’illustration suivante, les flèches indiquent le flux de contrôle entre l’expression await dans `AccessTheWebAsync` et l’assignation d’une valeur à `getLengthTask`, suivie du traitement normal dans `startButton_Click` jusqu’à ce que `getLengthTask` soit attendu.
 
- ![Étape QUATRE](./media/asynctrace-four.png "AsyncTrace-FOUR")
+ ![Étape 4](./media/asynctrace-four.png "AsyncTrace-quatre")
 
 ### <a name="step-five"></a>Étape FIVE
 
@@ -358,7 +359,7 @@ FIVE:  Back in AccessTheWebAsync.
 
  L’illustration suivante présente le transfert du contrôle après l’exécution de `client.GetStringAsync` (et de `getStringTask`).
 
- ![Étape FIVE](./media/asynctrace-five.png "AsyncTrace-CINQ")
+ ![Étape FIVE](./media/asynctrace-five.png "AsyncTrace-cinq")
 
  `AccessTheWebAsync` s’exécute jusqu’à la fin et le contrôle retourne à `startButton_Click`, qui attend que son exécution soit terminée.
 

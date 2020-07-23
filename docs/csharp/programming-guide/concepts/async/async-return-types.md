@@ -1,13 +1,14 @@
 ---
 title: Types de retour async (C#)
+description: Découvrez les types de retour que les méthodes Async peuvent avoir en C# avec des exemples de code pour chaque type et des ressources supplémentaires.
 ms.date: 04/14/2020
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: c2584f1e285a7ab76eb43f9a211a8d2a51c2c55e
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 954e449356819595a3a974a6dece5349e53ec88a
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761874"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925382"
 ---
 # <a name="async-return-types-c"></a>Types de retour async (C#)
 
@@ -21,7 +22,7 @@ Les méthodes async peuvent avoir les types de retour suivants :
 
 Pour plus d’informations sur les méthodes async, consultez [Programmation asynchrone avec async et await (C#)](./index.md).  
   
-## <a name="tasktresult-return-type"></a> Task\<TResult\>, type de retour  
+## <a name="tasktresult-return-type"></a>Type de retour de la tâche \<TResult\>  
 Le <xref:System.Threading.Tasks.Task%601> type de retour est utilisé pour une méthode Async qui contient une instruction [Return](../../../language-reference/keywords/return.md) (C#) dans laquelle l’opérande est `TResult` .  
   
 Dans l’exemple suivant, la méthode async `GetLeisureHours` contient une instruction `return` qui retourne un entier. La déclaration de méthode doit donc spécifier un type de retour `Task<int>`.  La méthode async <xref:System.Threading.Tasks.Task.FromResult%2A> est un espace réservé pour une opération qui retourne une chaîne.
@@ -74,7 +75,7 @@ Le .NET fournit la structure <xref:System.Threading.Tasks.ValueTask%601?display
   
 :::code language="csharp" source="./snippets/async-return-types/async-valuetask.cs":::
 
-## <a name="async-streams-with-iasyncenumerablet"></a>Flux asynchrones avec IAsyncEnumerable \< T\>
+## <a name="async-streams-with-iasyncenumerablet"></a>Flux asynchrones avec IAsyncEnumerable\<T\>
 
 À compter de C# 8,0, une méthode Async peut retourner un *flux asynchrone*, représenté par <xref:System.Collections.Generic.IAsyncEnumerable%601> . Un flux asynchrone fournit un moyen d’énumérer les éléments lus à partir d’un flux lorsque des éléments sont générés dans des segments avec des appels asynchrones répétés. L’exemple suivant montre une méthode Async qui génère un flux asynchrone :
 
@@ -87,5 +88,5 @@ L’exemple précédent lit les lignes d’une chaîne de façon asynchrone. Une
 - <xref:System.Threading.Tasks.Task.FromResult%2A>
 - [Procédure pas à pas : accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Workflow de contrôle dans les programmes Async (C#)](./control-flow-in-async-programs.md)
-- [async](../../../language-reference/keywords/async.md)
+- [Suppr](../../../language-reference/keywords/async.md)
 - [await](../../../language-reference/operators/await.md)

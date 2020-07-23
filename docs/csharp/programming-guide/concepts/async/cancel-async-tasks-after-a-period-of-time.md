@@ -1,13 +1,14 @@
 ---
 title: Annuler des tâches asynchrones après une période spécifique (C#)
+description: Utilisez la méthode CancellationTokenSource. CancelAfter en C# pour planifier l’annulation des tâches associées qui ne sont pas terminées au cours d’un certain laps de temps dans cet exemple.
 ms.date: 07/20/2015
 ms.assetid: 194282c2-399f-46da-a7a6-96674e00b0b3
-ms.openlocfilehash: 110c4700d0d2afc87f9144bf258cdd4991f107f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f32af1d893c60ac17648f60fa3aa90adaa0383e8
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70204337"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925290"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-c"></a>Annuler des tâches async après une période spécifique (C#)
 
@@ -24,13 +25,13 @@ Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) 
 
 1. Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.
 
-2. Sur la barre de menu, choisissez **File** > **Open** > **Project/Solution**.
+2. Dans la barre de menus, choisissez **fichier**  >  **ouvrir**un  >  **projet/une solution**.
 
 3. Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier solution (.sln) pour AsyncFineTuningCS.
 
 4. Dans l’**Explorateur de solutions**, ouvrez le menu contextuel du projet **CancelAfterTime**, puis choisissez **Définir comme projet de démarrage**.
 
-5. Appuyez sur la touche **F5** pour exécuter le projet. (Ou, appuyez sur **Ctrl**+**F5** pour exécuter le projet sans le déboguer).
+5. Appuyez sur la touche **F5** pour exécuter le projet. (Ou appuyez sur **CTRL** + **F5** pour exécuter le projet sans le déboguer).
 
 6. Exécutez le programme plusieurs fois pour vérifier qu’il peut afficher la sortie pour tous les sites web, aucun site web ou certains sites web.
 

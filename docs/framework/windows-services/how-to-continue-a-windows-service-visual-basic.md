@@ -1,5 +1,6 @@
 ---
-title: 'Comment : poursuivre un service Windows (Visual Basic)'
+title: 'Procédure : poursuivre un service Windows (Visual Basic)'
+description: Lisez comment utiliser le composant ServiceController pour continuer un service Windows (tel que le service d’administration IIS) sur un ordinateur local avec Visual Basic.
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -10,14 +11,14 @@ helpviewer_keywords:
 - pausing Windows Service applications
 ms.assetid: e5d13760-4c83-4b0d-abef-39852677cd7a
 author: ghogen
-ms.openlocfilehash: a10e05b0460608a9e67ee4527adf80be3d47438e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2a04e330ea7dc37552053b2a7915909c011727f8
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053636"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925785"
 ---
-# <a name="how-to-continue-a-windows-service-visual-basic"></a>Comment : poursuivre un service Windows (Visual Basic)
+# <a name="how-to-continue-a-windows-service-visual-basic"></a>Procédure : poursuivre un service Windows (Visual Basic)
 Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> pour continuer le service d’administration IIS sur l’ordinateur local.  
   
 ## <a name="example"></a>Exemple  
@@ -53,4 +54,4 @@ Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> 
 
 - <xref:System.ServiceProcess.ServiceController>
 - <xref:System.ServiceProcess.ServiceControllerStatus>
-- [Comment : interrompre un service Windows (Visual Basic)](how-to-pause-a-windows-service-visual-basic.md)
+- [Procédure : interrompre un service Windows (Visual Basic)](how-to-pause-a-windows-service-visual-basic.md)

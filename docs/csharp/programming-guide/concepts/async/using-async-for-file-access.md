@@ -1,13 +1,14 @@
 ---
 title: Utilisation d’async pour l’accès aux fichiers (C#)
+description: Découvrez comment utiliser la fonctionnalité Async pour accéder aux fichiers en C#. Vous pouvez appeler des méthodes asynchrones sans utiliser de rappels ni fractionner votre code entre les méthodes.
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
-ms.openlocfilehash: 8e0a62c2263ed3fd11eb4accb54978ef439ac010
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: eb67bd408fe37b99e6c5ffdc2550e8f95110d7eb
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396962"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925122"
 ---
 # <a name="using-async-for-file-access-c"></a>Utilisation d’async pour l’accès aux fichiers (C#)
 Vous pouvez utiliser la fonctionnalité Async pour accéder à des fichiers. La fonctionnalité async vous permet d’appeler des méthodes asynchrones sans utiliser de rappels ni fractionner votre code entre plusieurs méthodes ou expressions lambda. Pour rendre le code synchrone asynchrone, il vous suffit d’appeler une méthode asynchrone au lieu d’une méthode synchrone, puis d’ajouter quelques mots clés au code.  

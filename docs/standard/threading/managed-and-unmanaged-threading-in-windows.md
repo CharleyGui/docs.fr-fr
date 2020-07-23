@@ -9,12 +9,12 @@ helpviewer_keywords:
 - threads and fibers [.NET]
 - managed threading
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
-ms.openlocfilehash: 6ab0cc7c1ec2f7bbc633ac966dd18ab3ea7a395b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de823297540d5ce3740a26614dbb9a82881decf3
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127542"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924381"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Threading managé et non managé dans Windows
 
@@ -23,9 +23,6 @@ La gestion de tous les threads s'effectue par le biais de la classe <xref:System
  Quand un thread non managé entre dans le runtime via, par exemple, un wrapper CCW (COM Callable Wrapper), le système vérifie si le magasin de threads local de ce thread contient un objet <xref:System.Threading.Thread> managé interne. Si un objet de ce type est trouvé, le runtime connaît déjà ce thread. Sinon, le runtime crée quand même un objet <xref:System.Threading.Thread> et l’installe dans le magasin de threads local de ce thread.  
   
  Dans le modèle de thread managé, <xref:System.Threading.Thread.GetHashCode%2A?displayProperty=nameWithType> identifie les threads managés de manière stable. Durant toute la durée de vie de votre thread, cette identification n'entre en conflit avec la valeur d'aucun autre thread, quel que soit le domaine d'application à partir duquel vous obtenez cette valeur.  
-  
-> [!NOTE]
-> Un **ID de thread** de système d'exploitation n'est pas lié de manière fixe à un thread managé, car un hôte non managé peut contrôler la relation entre les threads managés et les threads non managés. En particulier, un hôte élaboré peut utiliser l'API Fiber pour planifier de nombreux threads managés par rapport au même thread de système d'exploitation, ou pour déplacer un thread managé parmi différents threads de système d'exploitation.  
   
 ## <a name="mapping-from-win32-threading-to-managed-threading"></a>Correspondance entre les éléments de thread Win32 et les éléments de thread managés
 
@@ -48,7 +45,7 @@ La gestion de tous les threads s'effectue par le biais de la classe <xref:System
   
 ## <a name="managed-threads-and-com-apartments"></a>Threads managés et cloisonnements COM
 
-Un thread managé peut être marqué pour indiquer qu’il hébergera un [thread unique cloisonné](/windows/desktop/com/single-threaded-apartments) ou un [multithread cloisonné](/windows/desktop/com/multithreaded-apartments). (Pour plus d’informations sur l’architecture de filetage COM, voir [Processus, Threads, et Appartements](/windows/desktop/com/processes--threads--and-apartments).) Le <xref:System.Threading.Thread.GetApartmentState%2A> <xref:System.Threading.Thread.SetApartmentState%2A>, <xref:System.Threading.Thread.TrySetApartmentState%2A> , et <xref:System.Threading.Thread> les méthodes de la classe de retour et d’attribuer l’état d’appartement d’un fil. Si l'état n’a pas été défini, <xref:System.Threading.Thread.GetApartmentState%2A> retourne <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType>.  
+Un thread managé peut être marqué pour indiquer qu’il hébergera un [thread unique cloisonné](/windows/desktop/com/single-threaded-apartments) ou un [multithread cloisonné](/windows/desktop/com/multithreaded-apartments). (Pour plus d’informations sur l’architecture de threads COM, consultez [processus, threads et Apartments](/windows/desktop/com/processes--threads--and-apartments).) Les <xref:System.Threading.Thread.GetApartmentState%2A> <xref:System.Threading.Thread.SetApartmentState%2A> méthodes, et <xref:System.Threading.Thread.TrySetApartmentState%2A> de la <xref:System.Threading.Thread> classe retournent et assignent l’état de cloisonnement d’un thread. Si l'état n’a pas été défini, <xref:System.Threading.Thread.GetApartmentState%2A> retourne <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType>.  
   
  La propriété ne peut être définie que quand le thread se trouve dans l’état <xref:System.Threading.ThreadState.Unstarted?displayProperty=nameWithType> et qu’une seule fois par thread.  
   

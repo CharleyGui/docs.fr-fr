@@ -1,5 +1,6 @@
 ---
 title: Membres obsolètes – .NET Framework
+description: Consultez la liste des membres de type obsolètes dans .NET 4,5 et versions ultérieures. Les membres de type sont regroupés par assembly. Les membres des types obsolètes sont exclus ici.
 ms.custom: updateeachrelease
 ms.date: 10/17/2017
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - members, obsolete in .NET Framework
 - obsolete members [.NET Framework]
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
-ms.openlocfilehash: 64bbcd099016dd3d11fea2eaba81ae4559ba6762
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: c0e320b8499fec0c56d2e3560bf6f64194f73dad
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243074"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925824"
 ---
 # <a name="obsolete-members-in-net-framework"></a>Membres obsolètes dans .NET Framework
 
@@ -314,11 +315,11 @@ Cet article ne liste pas les membres des types obsolètes. Pour obtenir la liste
 > |<xref:System.Data.Odbc.OdbcParameterCollection?displayProperty=nameWithType>|<xref:System.Data.Odbc.OdbcParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.Odbc.OdbcParameterCollection.Add%28System.String%2CSystem.Object%29> a été déprécié. Utilisez <xref:System.Data.Odbc.OdbcParameterCollection.AddWithValue%28System.String%2CSystem.Object%29?displayProperty=nameWithType>.|
 > |<xref:System.Data.Odbc.OdbcPermission?displayProperty=nameWithType>|<xref:System.Data.Odbc.OdbcPermission.%23ctor>|L'utilisation de ce membre génère une erreur du compilateur.<br /><br /> <xref:System.Data.Odbc.OdbcPermission.%23ctor> a été déprécié. Passez au constructeur <xref:System.Data.Odbc.OdbcPermission.%23ctor%28System.Security.Permissions.PermissionState%29> la valeur <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType>.|
 > |<xref:System.Data.Odbc.OdbcPermission?displayProperty=nameWithType>|<xref:System.Data.Odbc.OdbcPermission.%23ctor%28System.Security.Permissions.PermissionState%2CSystem.Boolean%29>|L'utilisation de ce membre génère une erreur du compilateur.<br /><br /> <xref:System.Data.Odbc.OdbcPermission.%23ctor%28System.Security.Permissions.PermissionState%2CSystem.Boolean%29> a été déprécié. Passez au constructeur <xref:System.Data.Odbc.OdbcPermission.%23ctor%28System.Security.Permissions.PermissionState%29> la valeur <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType>.|
-> |<xref:System.Data.OleDb.OleDbParameterCollection?displayProperty=nameWithType>|<xref:System.Data.OleDb.OleDbParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.OleDb.OleDbParameterCollection.Add%28System.String%2CSystem.Object%29> a été déprécié. Utilisez la méthode <xref:System.Data.OleDb.OleDbParameterCollection.AddWithValue%2A?displayProperty=nameWithType>.|
+> |<xref:System.Data.OleDb.OleDbParameterCollection?displayProperty=nameWithType>|<xref:System.Data.OleDb.OleDbParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.OleDb.OleDbParameterCollection.Add%28System.String%2CSystem.Object%29> a été déprécié. Utiliser la méthode <xref:System.Data.OleDb.OleDbParameterCollection.AddWithValue%2A?displayProperty=nameWithType>.|
 > |<xref:System.Data.OleDb.OleDbPermission?displayProperty=nameWithType>|<xref:System.Data.OleDb.OleDbPermission.%23ctor>|L'utilisation de ce membre génère une erreur du compilateur.<br /><br /> <xref:System.Data.OleDb.OleDbPermission.%23ctor> a été déprécié. Passez à <xref:System.Data.OleDb.OleDbPermission.%23ctor%28System.Security.Permissions.PermissionState%29> la valeur <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType>.|
 > |<xref:System.Data.OleDb.OleDbPermission?displayProperty=nameWithType>|<xref:System.Data.OleDb.OleDbPermission.%23ctor%28System.Security.Permissions.PermissionState%2CSystem.Boolean%29>|L'utilisation de ce membre génère une erreur du compilateur.<br /><br /> <xref:System.Data.OleDb.OleDbPermission.%23ctor%28System.Security.Permissions.PermissionState%2CSystem.Boolean%29> a été déprécié. Passez à <xref:System.Data.OleDb.OleDbPermission.%23ctor%28System.Security.Permissions.PermissionState%29> la valeur <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType>.|
-> |<xref:System.Data.OleDb.OleDbPermission?displayProperty=nameWithType>|<xref:System.Data.OleDb.OleDbPermission.Provider%2A>|La propriété <xref:System.Data.OleDb.OleDbPermission.Provider?displayProperty=nameWithType> est obsolète. Utilisez la méthode <xref:System.Data.Common.DBDataPermission.Add%28System.String%2CSystem.String%2CSystem.Data.KeyRestrictionBehavior%29?displayProperty=nameWithType>.|
-> |<xref:System.Data.OleDb.OleDbPermissionAttribute?displayProperty=nameWithType>|<xref:System.Data.OleDb.OleDbPermissionAttribute.Provider%2A>|La propriété <xref:System.Data.OleDb.OleDbPermissionAttribute.Provider?displayProperty=nameWithType> est obsolète. Utilisez la méthode <xref:System.Data.Common.DBDataPermission.Add%28System.String%2CSystem.String%2CSystem.Data.KeyRestrictionBehavior%29?displayProperty=nameWithType>.|
+> |<xref:System.Data.OleDb.OleDbPermission?displayProperty=nameWithType>|<xref:System.Data.OleDb.OleDbPermission.Provider%2A>|La propriété <xref:System.Data.OleDb.OleDbPermission.Provider?displayProperty=nameWithType> est obsolète. Utiliser la méthode <xref:System.Data.Common.DBDataPermission.Add%28System.String%2CSystem.String%2CSystem.Data.KeyRestrictionBehavior%29?displayProperty=nameWithType>.|
+> |<xref:System.Data.OleDb.OleDbPermissionAttribute?displayProperty=nameWithType>|<xref:System.Data.OleDb.OleDbPermissionAttribute.Provider%2A>|La propriété <xref:System.Data.OleDb.OleDbPermissionAttribute.Provider?displayProperty=nameWithType> est obsolète. Utiliser la méthode <xref:System.Data.Common.DBDataPermission.Add%28System.String%2CSystem.String%2CSystem.Data.KeyRestrictionBehavior%29?displayProperty=nameWithType>.|
 > |<xref:System.Data.SqlClient.SqlClientPermission?displayProperty=nameWithType>|<xref:System.Data.SqlClient.SqlClientPermission.%23ctor>|L'utilisation de ce constructeur génère une erreur du compilateur.<br /><br /> <xref:System.Data.SqlClient.SqlClientPermission.%23ctor> a été déprécié. Passez au constructeur <xref:System.Data.SqlClient.SqlClientPermission.%23ctor%28System.Security.Permissions.PermissionState%29> la valeur <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType>.|
 > |<xref:System.Data.SqlClient.SqlClientPermission?displayProperty=nameWithType>|<xref:System.Data.SqlClient.SqlClientPermission.%23ctor%28System.Security.Permissions.PermissionState%2CSystem.Boolean%29>|L'utilisation de ce constructeur génère une erreur du compilateur.<br /><br /> <xref:System.Data.SqlClient.SqlClientPermission.%23ctor%28System.Security.Permissions.PermissionState%2CSystem.Boolean%29> a été déprécié. Passez au constructeur <xref:System.Data.SqlClient.SqlClientPermission.%23ctor%28System.Security.Permissions.PermissionState%29> la valeur <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType>.|
 > |<xref:System.Data.SqlClient.SqlConnectionStringBuilder?displayProperty=nameWithType>|<xref:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectionReset%2A>|<xref:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectionReset%2A> a été déprécié. <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> ignore le mot clé « connection reset » et réinitialise toujours la connexion.|
@@ -664,7 +665,7 @@ Cet article ne liste pas les membres des types obsolètes. Pour obtenir la liste
 
 ## <a name="iehostdll-and-ieexecexe"></a>IEHost.dll et IEExec.exe
 
-Les assemblys IEHost. dll et IEExec. exe ont été supprimés de .NET Framework. Tous leurs types et leurs membres sont obsolètes et ne sont pas pris en charge dans .NET Framework 4,5 et versions ultérieures. Ces assemblys ont été utilisés pour héberger des contrôles Windows Forms et exécuter des exécutables dans Internet Explorer. Les alternatives à cette technologie incluent ClickOnce, des applications du navigateur XAML (XBAP) et Microsoft Silverlight.
+Les assemblys IEHost.dll et IEExec.exe ont été supprimés de .NET Framework. Tous leurs types et leurs membres sont obsolètes et ne sont pas pris en charge dans .NET Framework 4,5 et versions ultérieures. Ces assemblys ont été utilisés pour héberger des contrôles Windows Forms et exécuter des exécutables dans Internet Explorer. Les alternatives à cette technologie incluent ClickOnce, des applications du navigateur XAML (XBAP) et Microsoft Silverlight.
 
 ## <a name="isymwrapperdll"></a>ISymWrapper.dll
 

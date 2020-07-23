@@ -1,5 +1,6 @@
 ---
 title: Utiliser la mise en cache dans UI Automation
+description: Découvrez comment utiliser la mise en cache dans UI Automation. Passez en revue les étapes permettant d’activer une requête de cache, de mettre en cache des propriétés AutomationElement et d’obtenir des modèles mis en cache.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - caching, UI Automation
 - UI Automation, caching
 ms.assetid: ec722dff-6009-4279-b86a-e18d3fa94ebf
-ms.openlocfilehash: 679192b611a423e095ee9acc956d247364940edf
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 8dff9db77e39dc66a16b6a7b395c76a3c768d48e
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800798"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924485"
 ---
 # <a name="use-caching-in-ui-automation"></a>Utiliser la mise en cache dans UI Automation
 > [!NOTE]
@@ -33,9 +34,9 @@ ms.locfileid: "74800798"
   
 5. Affectez à la propriété <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> la valeur <xref:System.Windows.Automation.AutomationElementMode.None> si vous souhaitez augmenter l’efficacité en ne récupérant pas de référence complète aux objets. (Cela rend impossible la récupération des valeurs actuelles de ces objets.)  
   
-6. Activez la demande à l’aide de <xref:System.Windows.Automation.CacheRequest.Activate%2A> dans un `using` bloc (`Using` dans Microsoft Visual Basic .NET).  
+6. Activez la requête à l’aide <xref:System.Windows.Automation.CacheRequest.Activate%2A> d’un `using` bloc ( `Using` dans Microsoft Visual Basic .net).  
   
- Après avoir obtenu des objets <xref:System.Windows.Automation.AutomationElement> ou vous être inscrit à des événements, désactivez la requête en utilisant <xref:System.Windows.Automation.CacheRequest.Pop%2A> (si <xref:System.Windows.Automation.CacheRequest.Push%2A> a été utilisé) ou en supprimant l’objet créé par <xref:System.Windows.Automation.CacheRequest.Activate%2A>. (Utilisez <xref:System.Windows.Automation.CacheRequest.Activate%2A> dans un `using` bloc (`Using` dans Microsoft Visual Basic .NET).  
+ Après avoir obtenu des objets <xref:System.Windows.Automation.AutomationElement> ou vous être inscrit à des événements, désactivez la requête en utilisant <xref:System.Windows.Automation.CacheRequest.Pop%2A> (si <xref:System.Windows.Automation.CacheRequest.Push%2A> a été utilisé) ou en supprimant l’objet créé par <xref:System.Windows.Automation.CacheRequest.Activate%2A>. (Utilisez <xref:System.Windows.Automation.CacheRequest.Activate%2A> dans un `using` bloc ( `Using` dans Microsoft Visual Basic .net).  
   
 ### <a name="cache-automationelement-properties"></a>Mettre en cache des propriétés AutomationElement  
   

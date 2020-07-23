@@ -1,13 +1,14 @@
 ---
 title: Annuler une tâche asynchrone ou une liste de tâches (C#)
+description: Utilisez ces exemples pour ajouter un bouton qui annule une application asynchrone avant qu’elle ne se termine. Cette application C# télécharge le contenu d’un ou plusieurs sites Web.
 ms.date: 07/20/2015
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 93526f772f79e993767fd8f29087b6caf4e29468
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 21bdbc3bc7c3b752fab160429d71356fb87d9976
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69595723"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925344"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>Annuler une tâche async ou une liste de tâches (C#)
 
@@ -28,7 +29,7 @@ Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) 
 
 1. Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.
 
-2. Sur la barre de menu, choisissez **File** > **Open** > **Project/Solution**.
+2. Dans la barre de menus, choisissez **fichier**  >  **ouvrir**un  >  **projet/une solution**.
 
 3. Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier solution (.sln) pour AsyncFineTuningCS.
 
@@ -148,7 +149,7 @@ Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) 
 
 1. Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.
 
-2. Sur la barre de menu, choisissez **File** > **Open** > **Project/Solution**.
+2. Dans la barre de menus, choisissez **fichier**  >  **ouvrir**un  >  **projet/une solution**.
 
 3. Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier solution (.sln) pour AsyncFineTuningCS.
 
@@ -156,7 +157,7 @@ Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) 
 
 5. Appuyez sur la touche **F5** pour exécuter le projet.
 
-     Choisissez les clés **Ctrl**+**F5** pour exécuter le projet sans le déboguer.
+     Appuyez sur les touches **CTRL** + **F5** pour exécuter le projet sans le déboguer.
 
 Si vous ne souhaitez pas télécharger le projet, vous pouvez passer en revue les fichiers MainWindow.xaml.cs à la fin de cette rubrique.
 

@@ -1,16 +1,17 @@
 ---
 title: Problèmes liés aux threads UI Automation
+description: En savoir plus sur les problèmes liés au thread UI Automation. Par exemple, des conflits peuvent se produire si une application cliente tente d’interagir avec sa propre interface utilisateur sur le thread d’interface utilisateur.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, threading issues
 - threading issues with UI Automation
 ms.assetid: 0ab8d42c-5b8b-481b-b788-2caecc2f0191
-ms.openlocfilehash: 8dc21a680a19933e9db8d52a0e6b7e6ffdd333f8
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 290c26981d5eb993e2a9ab387f8d106aafa54efb
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800825"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924537"
 ---
 # <a name="ui-automation-threading-issues"></a>Problèmes liés aux threads UI Automation
 > [!NOTE]

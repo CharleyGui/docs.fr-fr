@@ -1,5 +1,6 @@
 ---
 title: 'Comment : installer et désinstaller des services Windows'
+description: Consultez Comment installer et désinstaller des services Windows. Si vous développez un service Windows avec .NET, vous pouvez utiliser InstallUtil.exe ou PowerShell.
 ms.date: 02/05/2019
 helpviewer_keywords:
 - Windows Service applications, deploying
@@ -12,16 +13,16 @@ helpviewer_keywords:
 - installutil.exe tool
 ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
 author: ghogen
-ms.openlocfilehash: 259b353edc269a77a51e790544018481a53af188
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5597043bb1c5af05f5f3633cba6ee6e6de1c52c1
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596356"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925603"
 ---
 # <a name="how-to-install-and-uninstall-windows-services"></a>Comment : installer et désinstaller des services Windows
 
-Si vous développez un service Windows avec l' .NET Framework, vous pouvez installer rapidement votre application de service à l’aide de l’utilitaire de ligne de commande [*installutil. exe*](../tools/installutil-exe-installer-tool.md) ou de [PowerShell](/powershell/scripting/overview). Les développeurs désireux de mettre à la disposition de certains utilisateurs un service Windows qu’ils peuvent installer et désinstaller doivent utiliser InstallShield. Pour plus d’informations, consultez [créer un package d’installation (Windows Desktop)](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
+Si vous développez un service Windows avec l' .NET Framework, vous pouvez installer rapidement votre application de service à l’aide de l’utilitaire de ligne de commande [*InstallUtil.exe*](../tools/installutil-exe-installer-tool.md) ou de [PowerShell](/powershell/scripting/overview). Les développeurs désireux de mettre à la disposition de certains utilisateurs un service Windows qu’ils peuvent installer et désinstaller doivent utiliser InstallShield. Pour plus d’informations, consultez [créer un package d’installation (Windows Desktop)](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
 
 > [!WARNING]
 > Si vous voulez désinstaller un service de votre ordinateur, ne suivez pas les étapes décrites dans cet article. Au lieu de cela, déterminez quel programme ou package logiciel a installé le service, puis choisissez **Applications** dans les paramètres pour désinstaller ce programme. Notez que de nombreux services font partie intégrante de Windows. Si vous les supprimez, vous pouvez rendre le système instable.
@@ -33,7 +34,7 @@ Vous ne pouvez pas exécuter les projets de service Windows directement à parti
 > [!TIP]
 > Vous pouvez utiliser l’**Explorateur de serveurs** pour vérifier que vous avez bien installé ou désinstallé le service. Pour plus d’informations, consultez [Guide pratique pour utiliser l’Explorateur de serveurs dans Visual Studio](https://support.microsoft.com/help/316649/how-to-use-the-server-explorer-in-visual-studio-net-and-visual-studio).
 
-### <a name="install-your-service-manually-using-installutilexe-utility"></a>Installer votre service manuellement à l’aide de l’utilitaire InstallUtil. exe
+### <a name="install-your-service-manually-using-installutilexe-utility"></a>Installer votre service manuellement à l’aide de l’utilitaire InstallUtil.exe
 
 1. Dans le menu **Démarrer** , sélectionnez le répertoire **Visual \<*version*> Studio** , puis sélectionnez **invite de commandes développeur pour vs \<*version*> **.
 
@@ -53,7 +54,7 @@ Vous ne pouvez pas exécuter les projets de service Windows directement à parti
      - Pour la version 32 bits de .NET Framework 4 ou 4.5 et ultérieur, si votre répertoire d’installation Windows est *C:\Windows*, le chemin par défaut est *C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.
      - Pour la version 64 bits de .NET Framework 4 ou 4.5 et ultérieur, le chemin par défaut est *C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
 
-### <a name="uninstall-your-service-manually-using-installutilexe-utility"></a>Désinstaller manuellement votre service à l’aide de l’utilitaire InstallUtil. exe
+### <a name="uninstall-your-service-manually-using-installutilexe-utility"></a>Désinstaller manuellement votre service à l’aide de l’utilitaire InstallUtil.exe
 
 1. Dans le menu **Démarrer** , sélectionnez le répertoire **Visual \<*version*> Studio** , puis sélectionnez **invite de commandes développeur pour vs \<*version*> **.
 

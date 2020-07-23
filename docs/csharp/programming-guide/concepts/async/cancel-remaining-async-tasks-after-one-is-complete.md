@@ -1,13 +1,14 @@
 ---
 title: Annuler les tâches asynchrones restantes quand l’une d’elles est terminée (C#)
+description: Utilisez la méthode Task. WhenAny avec un CancellationToken en C# pour annuler toutes les tâches restantes quand une tâche est terminée dans cet exemple.
 ms.date: 07/20/2015
 ms.assetid: d3cebc74-c392-497b-b1e6-62a262eabe05
-ms.openlocfilehash: e829254c1cd47da16b14aa9c2c90312a97b4b581
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6de60c8faa93752961e3703a042885a71972cc4a
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169972"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925278"
 ---
 # <a name="cancel-remaining-async-tasks-after-one-is-complete-c"></a>Annuler les tâches asynchrones restantes quand l’une d’elles est terminée (C#)
 Utilisez la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> avec un <xref:System.Threading.CancellationToken> pour annuler toutes les tâches restantes quand une tâche est terminée. La méthode `WhenAny` accepte un argument qui est une collection de tâches. La méthode démarre toutes les tâches et retourne une tâche unique. Cette dernière est terminée une fois que toutes les tâches de la collection sont terminées.  

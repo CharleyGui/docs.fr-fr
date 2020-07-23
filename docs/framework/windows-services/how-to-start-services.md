@@ -1,19 +1,20 @@
 ---
-title: 'Comment : démarrer des services'
+title: 'Procédure : démarrer des services'
+description: Découvrez plusieurs façons de démarrer des services. Une fois qu’un service est installé, il doit être démarré. Le démarrage appelle la méthode OnStart sur la classe de service.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, starting
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 75fd3aba88bdffbe536ad5dab14996913d0a9d22
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4a2f9b291e60b12b1465fbb6bbbd1604572359a7
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053568"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925720"
 ---
-# <a name="how-to-start-services"></a>Comment : démarrer des services
+# <a name="how-to-start-services"></a>Procédure : démarrer des services
 
 Une fois qu’un service est installé, il doit être démarré. Le démarrage appelle la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> sur la classe de service. En règle générale, la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> définit le travail utile effectué par le service. Une fois un service démarré, il reste actif jusqu’à ce qu’il soit suspendu ou arrêté.
 
@@ -80,6 +81,6 @@ Pour indiquer si un service doit être démarré manuellement ou automatiquement
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
-- [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)
-- [Comment : ajouter des programmes d'installation à votre application de service](how-to-add-installers-to-your-service-application.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Procédure : créer des services Windows](how-to-create-windows-services.md)
+- [Procédure : ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)

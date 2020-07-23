@@ -1,5 +1,6 @@
 ---
-title: 'Comment : enregistrer des informations relatives aux services'
+title: 'Procédure : enregistrer des informations relatives aux services'
+description: Savoir comment consigner des informations sur les services. Définissez la propriété AutoLog si vous souhaitez que votre projet de service Windows interagisse avec le journal des événements de l’application.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,14 +14,14 @@ helpviewer_keywords:
 - logs, service applications
 ms.assetid: c0d8140f-c055-4d8e-a2e0-37358a550116
 author: ghogen
-ms.openlocfilehash: 3c974d5a98f8056e45899b109878e5a28ab2938e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 6ebce5464dc25ba4101b3898ee791714f8efc5d6
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053607"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925746"
 ---
-# <a name="how-to-log-information-about-services"></a>Comment : enregistrer des informations relatives aux services
+# <a name="how-to-log-information-about-services"></a>Procédure : enregistrer des informations relatives aux services
 Par défaut, tous les projets de service Windows ont la possibilité d’interagir avec le journal d’événements des applications et d’y écrire des informations et des exceptions. Vous utilisez la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> pour indiquer si vous souhaitez cette fonctionnalité dans votre application. Par défaut, la journalisation est activée pour tout service que vous créez avec le modèle de projet de service Windows. Vous pouvez utiliser un formulaire statique de la classe <xref:System.Diagnostics.EventLog> pour écrire des informations de service dans un journal sans avoir à créer une instance d’un composant <xref:System.Diagnostics.EventLog> ou inscrire manuellement une source.  
   
  Le programme d’installation de votre service inscrit automatiquement chaque service de votre projet comme source valide d’événements dans le journal des applications sur l’ordinateur où le service est installé, quand la journalisation est activée. Le service enregistre des informations chaque fois que le service est démarré, arrêté, suspendu, repris, installé ou désinstallé. Il enregistre également tous les échecs qui se produisent. Vous n’avez pas besoin d’écrire du code pour écrire des entrées dans le journal quand vous utilisez le comportement par défaut. Le service le gère pour vous automatiquement.  
@@ -46,7 +47,7 @@ Par défaut, tous les projets de service Windows ont la possibilité d’interag
   
 ### <a name="to-set-up-logging-to-a-custom-log"></a>Pour configurer l’enregistrement dans un journal personnalisé  
   
-1. Attribuez à la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> la valeur `false`.  
+1. Affectez à la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> la valeur `false`.  
   
     > [!NOTE]
     > Vous devez définir <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> sur false pour utiliser un journal personnalisé.  
@@ -71,4 +72,4 @@ Par défaut, tous les projets de service Windows ont la possibilité d’interag
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 2a1ca4c498c5885c7d34475405ac83c4cccecd6f
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 59b5f5d2d5a8f274845607aeca370c316670bd68
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864122"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925447"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorphisme (Guide de programmation C#)
 
@@ -39,7 +39,7 @@ En C#, chaque type est polymorphique, car tous les types, y compris les types d�
 
 ### <a name="virtual-members"></a>Membres virtuels
 
-Lorsqu’une classe dérivée hérite d’une classe de base, elle obtient toutes les méthodes, les champs, les propriétés et les événements de la classe de base. Le concepteur de la classe dérivée peut choisir un comportement différent pour les méthodes virtuelles :
+Lorsqu’une classe dérivée hérite d’une classe de base, elle obtient toutes les méthodes, les champs, les propriétés et les événements de la classe de base. Le concepteur de la classe dérivée a des choix différents pour le comportement des méthodes virtuelles :
 
 - La classe dérivée peut substituer des membres virtuels dans la classe de base, définissant un nouveau comportement.
 - La classe dérivée hérite de la méthode de classe de base la plus proche sans la substituer, en préservant le comportement existant, mais en permettant à d’autres classes dérivées de substituer la méthode.

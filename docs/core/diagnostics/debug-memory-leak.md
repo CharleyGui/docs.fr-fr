@@ -1,54 +1,54 @@
 ---
-title: Debug un tutoriel fuite de mémoire
-description: Apprenez à déboiffer une fuite de mémoire dans .NET Core.
+title: Didacticiel de débogage d’une fuite de mémoire
+description: Découvrez comment déboguer une fuite de mémoire dans .NET Core.
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: d47992bab9dab64cf7f88ff679eef407dd891b5a
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: ff684f9b9402cb8b7b648e792a1d37ddcc96b399
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021362"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924888"
 ---
-# <a name="tutorial-debug-a-memory-leak-in-net-core"></a>Tutorial: Debug une fuite de mémoire dans .NET Core
+# <a name="debug-a-memory-leak-in-net-core"></a>Déboguer une fuite de mémoire dans .NET Core
 
-**Cet article s’applique à:** ✔️ .NET Core 3.0 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,1 et versions ultérieures
 
-Ce tutoriel démontre les outils pour analyser une fuite de mémoire .NET Core.
+Ce didacticiel présente les outils permettant d’analyser une fuite de mémoire .NET Core.
 
-Ce tutoriel utilise une application d’échantillon, qui est conçu pour fuir intentionnellement la mémoire. L’échantillon est fourni comme exercice. Vous pouvez analyser une application qui fuit involontairement la mémoire aussi.
+Ce didacticiel utilise un exemple d’application, conçu pour une fuite de mémoire intentionnelle. L’exemple est fourni en tant qu’exercice. Vous pouvez analyser une application qui présente involontairement une fuite de mémoire.
 
 Ce didacticiel présente les procédures suivantes :
 
 > [!div class="checklist"]
 >
-> - Examinez l’utilisation gérée de la mémoire avec [des compteurs pointnet.](dotnet-counters.md)
-> - Générer un fichier de décharge.
-> - Analyser l’utilisation de la mémoire à l’aide du fichier de décharge.
+> - Examinez l’utilisation de la mémoire managée avec [dotnet-Counters](dotnet-counters.md).
+> - Générez un fichier dump.
+> - Analyser l’utilisation de la mémoire à l’aide du fichier dump.
 
 ## <a name="prerequisites"></a>Prérequis
 
 Le didacticiel utilise :
 
-- [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) ou une version ultérieure.
-- [pointnet-trace](dotnet-trace.md) à la liste des processus.
-- [dotnet-compteurs](dotnet-counters.md) pour vérifier l’utilisation de la mémoire gérée.
-- [dotnet-dump](dotnet-dump.md) pour collecter et analyser un fichier de décharge.
-- Un [échantillon de débouger app cible](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) à diagnostiquer.
+- [Kit de développement logiciel (SDK) .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
+- [dotnet-trace](dotnet-trace.md) pour répertorier les processus.
+- [dotnet-compteurs](dotnet-counters.md) pour vérifier l’utilisation de la mémoire managée.
+- [dotnet-dump](dotnet-dump.md) pour collecter et analyser un fichier de vidage.
+- Exemple d’application [cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) à diagnostiquer.
 
-Le tutoriel suppose que l’échantillon et les outils sont installés et prêts à l’emploi.
+Ce didacticiel part du principe que l’exemple et les outils sont installés et prêts à l’emploi.
 
-## <a name="examine-managed-memory-usage"></a>Examiner l’utilisation gérée de la mémoire
+## <a name="examine-managed-memory-usage"></a>Examiner l’utilisation de la mémoire managée
 
-Avant de commencer à collecter des données de diagnostic pour nous aider à provoquer ce scénario, vous devez vous assurer que vous voyez réellement une fuite de mémoire (croissance de la mémoire). Vous pouvez utiliser l’outil [dotnet-counters](dotnet-counters.md) pour confirmer cela.
+Avant de commencer à collecter les données de diagnostics pour nous aider dans ce scénario, vous devez vous assurer que vous voyez une fuite de mémoire (croissance de la mémoire). Vous pouvez utiliser l’outil [dotnet-Counters pour le](dotnet-counters.md) confirmer.
 
-Ouvrez une fenêtre de console et naviguez vers l’annuaire où vous avez téléchargé et décompressé la [cible de débbug échantillon](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/). Exécutez la cible :
+Ouvrez une fenêtre de console et accédez au répertoire où vous avez téléchargé et décompressé l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/). Exécutez la cible :
 
 ```dotnetcli
 dotnet run
 ```
 
-À partir d’une console séparée, trouvez l’ID du processus à l’aide de l’outil [dotnet-trace](dotnet-trace.md) :
+À partir d’une console distincte, recherchez l’ID de processus à l’aide de l’outil [dotnet-trace](dotnet-trace.md) :
 
 ```console
 dotnet-trace ps
@@ -60,13 +60,13 @@ La sortie doit ressembler à ce qui suit :
 4807 DiagnosticScena /home/user/git/samples/core/diagnostics/DiagnosticScenarios/bin/Debug/netcoreapp3.0/DiagnosticScenarios
 ```
 
-Maintenant, vérifiez l’utilisation gérée de mémoire avec [l’outil dotnet-counters.](dotnet-counters.md) Le `--refresh-interval` spécifie le nombre de secondes entre les rafraîchissements:
+À présent, vérifiez l’utilisation de la mémoire managée avec l’outil [dotnet-Counters](dotnet-counters.md) . `--refresh-interval`Spécifie le nombre de secondes entre les actualisations :
 
 ```console
 dotnet-counters monitor --refresh-interval 1 -p 4807
 ```
 
-La production en direct devrait être similaire à :
+La sortie dynamique doit ressembler à ce qui suit :
 
 ```console
 Press p to pause, r to resume, q to quit.
@@ -94,61 +94,61 @@ Press p to pause, r to resume, q to quit.
     Working Set (MB)                                  83
 ```
 
-En se concentrant sur cette ligne:
+Se focaliser sur cette ligne :
 
 ```console
     GC Heap Size (MB)                                  4
 ```
 
-Vous pouvez voir que la mémoire de tas géré est de 4 Mo juste après le démarrage.
+Vous pouvez voir que la mémoire du tas managé est de 4 Mo juste après le démarrage.
 
-Maintenant, appuyez `http://localhost:5000/api/diagscenario/memleak/20000`sur l’URL .
+À présent, cliquez sur l’URL `https://localhost:5001/api/diagscenario/memleak/20000` .
 
-Observez que l’utilisation de la mémoire est passée à 30 Mo.
+Notez que l’utilisation de la mémoire a augmenté jusqu’à 30 Mo.
 
 ```console
     GC Heap Size (MB)                                 30
 ```
 
-En regardant l’utilisation de la mémoire, vous pouvez dire en toute sécurité que la mémoire est de plus en plus ou de fuite. L’étape suivante consiste à recueillir les bonnes données pour l’analyse de la mémoire.
+En observant l’utilisation de la mémoire, vous pouvez en toute sécurité indiquer que la mémoire augmente ou subit une fuite. L’étape suivante consiste à collecter les données appropriées pour l’analyse de la mémoire.
 
-### <a name="generate-memory-dump"></a>Générer un dépotoir de mémoire
+### <a name="generate-memory-dump"></a>Générer un vidage de la mémoire
 
-Lors de l’analyse des fuites de mémoire possibles, vous devez accéder au tas de mémoire de l’application. Ensuite, vous pouvez analyser le contenu de la mémoire. En regardant les relations entre les objets, vous créez des théories sur les raisons pour lesquelles la mémoire n’est pas libérée. Une source de données diagnostiques courante est un dépotoir de mémoire sur Windows ou le décharge de base équivalent sur Linux. Pour générer un dépotoir d’une application .NET Core, vous pouvez utiliser l’outil [dotnet-dump).](dotnet-dump.md)
+Lors de l’analyse de fuites de mémoire possibles, vous devez accéder au segment de mémoire de l’application. Vous pouvez ensuite analyser le contenu de la mémoire. En examinant les relations entre les objets, vous créez des théories sur la raison pour laquelle la mémoire n’est pas libérée. Une source de données de diagnostics courante est un vidage de la mémoire sur Windows ou le vidage de base équivalent sur Linux. Pour générer un dump d’une application .NET Core, vous pouvez utiliser l’outil [dotnet-dump)](dotnet-dump.md) .
 
-À l’aide de la [cible de débaillement de l’échantillon](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) précédemment commencée, exécutez la commande suivante pour générer un décharge de base Linux :
+À l’aide de l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) précédemment démarré, exécutez la commande suivante pour générer un vidage Linux Core :
 
 ```dotnetcli
 dotnet-dump collect -p 4807
 ```
 
-Le résultat est un décharge de base situé dans le même dossier.
+Le résultat est un vidage central situé dans le même dossier.
 
 ```console
 Writing minidump with heap to ./core_20190430_185145
 Complete
 ```
 
-### <a name="restart-the-failed-process"></a>Redémarrer le processus défaillant
+### <a name="restart-the-failed-process"></a>Redémarrer le processus en échec
 
-Une fois que le dépotoir est recueilli, vous devriez avoir suffisamment d’informations pour diagnostiquer le processus défectueus. Si le processus défaillant s’exécute sur un serveur de production, c’est maintenant le moment idéal pour l’assainissement à court terme en redémarrant le processus.
+Une fois le vidage collecté, vous devez disposer d’informations suffisantes pour diagnostiquer le processus en échec. Si le processus en échec est en cours d’exécution sur un serveur de production, il s’agit de l’heure idéale pour la correction à terme, en redémarrant le processus.
 
-Dans ce tutoriel, vous avez maintenant terminé avec la [cible de débogé d’échantillons](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) et vous pouvez le fermer. Naviguez vers le terminal qui `Control-C`a commencé le serveur et appuyez .
+Dans ce didacticiel, vous avez maintenant terminé l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) et vous pouvez le fermer. Accédez au terminal qui a démarré le serveur, puis appuyez sur <kbd>Ctrl + C</kbd>.
 
-### <a name="analyze-the-core-dump"></a>Analyser le dépotoir de base
+### <a name="analyze-the-core-dump"></a>Analyser le vidage principal
 
-Maintenant que vous avez un décharge de base généré, utilisez [l’outil de décharge de dotnet](dotnet-dump.md) pour analyser le dépotoir :
+Maintenant que vous avez généré un vidage de base, utilisez l’outil [dotnet-dump](dotnet-dump.md) pour analyser le vidage :
 
 ```dotnetcli
 dotnet-dump analyze core_20190430_185145
 ```
 
-Où `core_20190430_185145` est le nom de la décharge de base que vous voulez analyser.
+Où `core_20190430_185145` est le nom de l’image de base que vous souhaitez analyser.
 
 > [!NOTE]
-> Si vous voyez une erreur se plaindre que *libdl.so* ne peut pas être trouvé, vous devrez peut-être installer le paquet *libc6-dev.* Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Linux](../install/dependencies.md?pivots=os-linux).
+> Si vous voyez une erreur indiquant que *libdl.so* est introuvable, vous devrez peut-être installer le package *libc6-dev* . Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Linux](../install/dependencies.md?pivots=os-linux).
 
-Vous serez présenté avec une invite où vous pouvez entrer les commandes SOS. Généralement, la première chose que vous voulez regarder est l’état global du tas géré:
+Une invite s’affiche, dans laquelle vous pouvez entrer des commandes SOS. En règle générale, la première chose que vous souhaitez examiner est l’état global du tas géré :
 
 ```console
 > dumpheap -stat
@@ -168,9 +168,9 @@ Statistics:
 Total 428516 objects
 ```
 
-Ici, vous pouvez voir `String` que `Customer` la plupart des objets sont soit ou des objets.
+Ici, vous pouvez voir que la plupart des objets sont des `String` `Customer` objets ou.
 
-Vous pouvez `dumpheap` utiliser la commande à nouveau avec la table `String` de méthode (MT) pour obtenir une liste de tous les cas:
+Vous pouvez réutiliser la `dumpheap` commande à l’aide de la table de méthodes (MT) pour obtenir la liste de toutes les `String` instances :
 
 ```console
 > dumpheap -mt 00007faddaa50f90
@@ -191,7 +191,7 @@ Statistics:
 Total 206770 objects
 ```
 
-Vous pouvez maintenant `gcroot` utiliser `System.String` la commande sur une instance pour voir comment et pourquoi l’objet est enraciné. Soyez patient car cette commande prend plusieurs minutes avec un tas de 30 Mo :
+Vous pouvez maintenant utiliser la `gcroot` commande sur une `System.String` instance pour voir comment et pourquoi l’objet est associé à une racine. Soyez patient, car cette commande prend plusieurs minutes avec un segment de mémoire de 30 Mo :
 
 ```console
 > gcroot -all 00007f6ad09421f8
@@ -220,26 +220,26 @@ HandleTable:
 Found 2 roots.
 ```
 
-Vous pouvez voir `String` que le `Customer` est directement détenu par `CustomerCache` l’objet et indirectement détenu par un objet.
+Vous pouvez voir que `String` est directement détenu par l' `Customer` objet et détenu indirectement par un `CustomerCache` objet.
 
-Vous pouvez continuer à jeter `String` des objets pour voir que la plupart des objets suivent un modèle similaire. À ce stade, l’enquête a fourni suffisamment d’informations pour identifier la cause profonde de votre code.
+Vous pouvez continuer à vider les objets pour voir que la plupart des `String` objets suivent un modèle similaire. À ce stade, l’investigation a fourni suffisamment d’informations pour identifier la cause racine de votre code.
 
-Cette procédure générale vous permet d’identifier la source des principales fuites de mémoire.
+Cette procédure générale vous permet d’identifier la source de fuites de mémoire majeures.
 
 ## <a name="clean-up-resources"></a>Nettoyer les ressources
 
-Dans ce tutoriel, vous avez lancé un exemple de serveur web. Ce serveur aurait dû être arrêté comme expliqué dans le redémarrage de la section [processus a échoué.](#restart-the-failed-process)
+Dans ce didacticiel, vous avez démarré un exemple de serveur Web. Ce serveur doit avoir été arrêté, comme expliqué dans la section [redémarrage de l’échec du processus](#restart-the-failed-process) .
 
-Vous pouvez également supprimer le fichier de décharge qui a été créé.
+Vous pouvez également supprimer le fichier dump qui a été créé.
+
+## <a name="see-also"></a>Voir aussi
+
+- [dotnet-trace](dotnet-trace.md) pour répertorier les processus
+- [dotnet-compteurs](dotnet-counters.md) pour vérifier l’utilisation de la mémoire managée
+- [dotnet-dump](dotnet-dump.md) pour collecter et analyser un fichier de vidage
+- [dotnet/Diagnostics](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations pour avoir terminé ce tutoriel.
-
-Nous publions encore plus de tutoriels diagnostiques. Vous pouvez lire les versions provisoires sur le référentiel [dotnet/diagnostics.](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
-
-Ce tutoriel a couvert les bases des outils de diagnostic .NET clés. Pour une utilisation avancée, consultez la documentation de référence suivante :
-
-* [pointnet-trace](dotnet-trace.md) à la liste des processus.
-* [dotnet-compteurs](dotnet-counters.md) pour vérifier l’utilisation de la mémoire gérée.
-* [dotnet-dump](dotnet-dump.md) pour collecter et analyser un fichier de décharge.
+> [!div class="nextstepaction"]
+> [Déboguer le processeur élevé dans .NET Core](debug-highcpu.md)

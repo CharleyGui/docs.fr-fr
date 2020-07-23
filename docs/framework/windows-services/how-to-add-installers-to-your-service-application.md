@@ -1,5 +1,6 @@
 ---
-title: "Comment : ajouter des programmes d'installation à votre application de service"
+title: 'Procédure : ajouter des programmes d’installation à votre application de service'
+description: Consultez Comment ajouter des programmes d’installation à votre application de service. Visual Studio fournit des composants d’installation qui peuvent installer des ressources associées à vos applications de service.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, deploying
@@ -11,14 +12,14 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, adding installers to services
 ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
 author: ghogen
-ms.openlocfilehash: 99e2376c50f0b47cc21002b2926818707188805e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f82dd6635555ccb8fcbcdf63cba2495084194731
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053650"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925642"
 ---
-# <a name="how-to-add-installers-to-your-service-application"></a>Comment : ajouter des programmes d'installation à votre application de service
+# <a name="how-to-add-installers-to-your-service-application"></a>Procédure : ajouter des programmes d’installation à votre application de service
 Visual Studio est fourni avec des composants d’installation qui peuvent installer des ressources associées à vos applications de service. Les composants d’installation inscrivent un service auprès du système sur lequel il est installé et informent le Gestionnaire de contrôle des services de l’existence du service. Quand vous travaillez avec une application de service, vous pouvez sélectionner un lien dans la fenêtre Propriétés pour ajouter automatiquement les programmes d’installation appropriés à votre projet.  
   
 > [!NOTE]
@@ -62,7 +63,7 @@ Visual Studio est fourni avec des composants d’installation qui peuvent instal
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
-- [Guide pratique pour installer et désinstaller des services](how-to-install-and-uninstall-services.md)
-- [Guide pratique pour démarrer des services](how-to-start-services.md)
-- [Comment : spécifier le contexte de sécurité des services](how-to-specify-the-security-context-for-services.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Procédure : Installer et désinstaller des services](how-to-install-and-uninstall-services.md)
+- [Procédure : démarrer des services](how-to-start-services.md)
+- [Procédure : spécifier le contexte de sécurité des services](how-to-specify-the-security-context-for-services.md)

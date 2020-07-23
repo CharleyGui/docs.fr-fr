@@ -1,13 +1,14 @@
 ---
 title: Comment effectuer plusieurs requêtes Web en parallèle en utilisant Async et await (C#)
+description: Découvrez comment séparer la création d’une tâche à l’aide de l’opérateur await en C#, au lieu de l’appliquer lors de la création d’une tâche.
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-ms.openlocfilehash: 0cfc1d6d1d59dc74fcf5990abb0a9d980a83d7b0
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 899dfd9165d199a67a5178bb351081ee544b231f
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241797"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925161"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Comment effectuer plusieurs requêtes Web en parallèle en utilisant Async et await (C#)
 Dans une méthode Async, les tâches sont démarrées quand elles sont créées. L’opérateur [await](../../../language-reference/operators/await.md) est appliqué à la tâche au point de la méthode où le traitement ne peut pas se poursuivre tant que la tâche n’est pas terminée. Souvent, une tâche est attendue dès qu’elle est créée, comme le montre l’exemple suivant.  

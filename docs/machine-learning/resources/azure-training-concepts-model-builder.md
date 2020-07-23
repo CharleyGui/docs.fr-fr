@@ -5,12 +5,12 @@ ms.topic: reference
 ms.date: 06/01/2020
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: d9eb5560ef33f8f80dbe53e17087c606a8697378
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8622b580b7925adfd7895317815021f57960e9ee
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289471"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924576"
 ---
 # <a name="model-builder-azure-training-resources"></a>Ressources de formation Azure sur le générateur de modèles
 
@@ -54,9 +54,9 @@ Pour créer un espace de travail Azure Machine Learning, les conditions suivante
   - Priorité basse : adaptée aux tâches avec des durées d’exécution plus courtes. Peut être affecté par des interruptions et un manque de disponibilité. En règle générale, le coût est moins faible, car il tire parti de la capacité excédentaire dans Azure.
   - Dédié : adapté aux tâches de toutes les durées, en particulier les travaux de longue durée. Non affecté par des interruptions ou une absence de disponibilité. En règle générale, il est plus onéreux, car il réserve un ensemble dédié de ressources de calcul dans Azure pour vos tâches.
 
-## <a name="training"></a>Entrainement
+## <a name="training"></a>Formation
 
-La formation sur Azure est disponible uniquement pour le scénario de classification d’image du générateur de modèles. L’algorithme utilisé pour l’apprentissage de ces modèles est un réseau neuronal profond basé sur l’architecture ResNet50. Le processus d’apprentissage prend un certain temps et la durée peut varier en fonction de la taille du calcul sélectionné et de la quantité de données. La première fois qu’un modèle est formé, vous pouvez vous attendre à un temps de formation légèrement plus long, car les ressources doivent être approvisionnées. Vous pouvez suivre la progression de vos exécutions en sélectionnant le lien « analyser l’exécution actuelle en Portail Azure » dans Visual Studio.
+La formation sur Azure est disponible uniquement pour le scénario de classification d’image du générateur de modèles. L’algorithme utilisé pour l’apprentissage de ces modèles est un réseau neuronal profond basé sur l’architecture ResNet50. Le processus d’apprentissage prend un certain temps et la durée peut varier en fonction de la taille du calcul sélectionné et de la quantité de données. Vous pouvez suivre la progression de vos exécutions en sélectionnant le lien « analyser l’exécution actuelle en Portail Azure » dans Visual Studio.
 
 ## <a name="results"></a>Résultats
 
@@ -66,8 +66,8 @@ Une fois l’apprentissage terminé, deux projets sont ajoutés à votre solutio
 - *Modèle*: application C# .NET standard qui contient les modèles de données qui définissent le schéma des données de modèle d’entrée et de sortie, ainsi que les ressources suivantes :
 
   - bestModel. Onnx : version sérialisée du modèle au format ONNX (Open neuronal Network Exchange). ONNX est un format Open source pour les modèles AI qui prend en charge l’interopérabilité entre les infrastructures telles que ML.NET, PyTorch et TensorFlow.
-  - bestModelMap. JSON : liste des catégories utilisées lors de l’élaboration de prédictions pour mapper la sortie du modèle à une catégorie de texte.
-  - MLModel. zip : version sérialisée du pipeline de prédiction ML.NET qui utilise la version sérialisée du modèle *bestModel. Onnx* pour effectuer des prédictions et mapper des sorties à l’aide du `bestModelMap.json` fichier.
+  - bestModelMap.jsle : liste des catégories utilisées lors de l’élaboration de prédictions pour mapper la sortie du modèle à une catégorie de texte.
+  - MLModel.zip : une version sérialisée du pipeline de prédiction ML.NET qui utilise la version sérialisée du modèle *bestModel. Onnx* pour effectuer des prédictions et mapper des sorties à l’aide du `bestModelMap.json` fichier.
 
 ## <a name="use-the-machine-learning-model"></a>Utiliser le modèle de Machine Learning
 
@@ -83,7 +83,7 @@ Dans un scénario de classification d’images, le `ModelInput` contient deux co
 - `Prediction`: Catégorie prédite de l’image.
 - `Score`: Liste des probabilités pour toutes les catégories (la valeur la plus élevée appartient à `Prediction` ).
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 ### <a name="cannot-create-compute"></a>Impossible de créer le calcul
 

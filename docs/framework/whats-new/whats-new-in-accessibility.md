@@ -1,5 +1,6 @@
 ---
 title: Nouveautés du .NET Framework dans le domaine de l’accessibilité
+description: Découvrez les nouveautés de l’accessibilité .NET, à partir de .NET Framework 4.7.1. Les fonctionnalités d’accessibilité permettent à une application d’offrir la bonne expérience aux utilisateurs des technologies d’assistance.
 ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
@@ -7,12 +8,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: 8a85614e441ba6e5782cbbbf5fe12432c053a101
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 593591ca340cc130a3a6d1daa015a849b8eca0f8
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244151"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925837"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 
@@ -22,7 +23,7 @@ Le .NET Framework vise à rendre les applications plus accessibles pour vos util
 
 Si votre application cible .NET Framework 4.7 ou une version antérieure, mais est exécutée sur .NET Framework 4.7.1 ou une version ultérieure, vous pouvez la configurer pour qu’elle active les fonctionnalités d’accessibilité. Si elle cible .NET Framework 4.7.1 ou une version ultérieure, vous pouvez également la configurer afin qu’elle utilise les fonctionnalités héritées (et ainsi, qu’elle n’active pas les fonctionnalités d’accessibilité). Chaque version du .NET Framework qui inclut des fonctionnalités d’accessibilité a un commutateur d’accessibilité spécifique à la version, que vous ajoutez à l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément dans la [`<runtime>`](../configure-apps/file-schema/runtime/index.md) section du fichier de configuration de l’application. Les commutateurs pris en charge sont les suivants :
 
-|Version|Basculer|
+|Version|Commutateur|
 |---|---|
 |.NET Framework 4.7.1|"Switch.UseLegacyAccessibilityFeatures"|
 |.NET Framework 4.7.2|"Switch.UseLegacyAccessibilityFeatures.2"|

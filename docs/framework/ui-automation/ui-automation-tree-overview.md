@@ -1,16 +1,17 @@
 ---
 title: Vue d’ensemble de l’arborescence UI Automation
+description: Lisez une vue d’ensemble des arborescences UI Automation. Découvrez les différentes vues d’une arborescence UI Automation, telles que l’affichage brut, le mode contrôle et l’affichage du contenu.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - automation tree
 - UI Automation, tree
 ms.assetid: 03b98058-bdb3-47a0-8ff7-45e6cdf67166
-ms.openlocfilehash: a0b888e8ecc80e3739c583931a86da3cdb7242d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0ffe4b4e6157f5bff3284d6978e0ec28641cf72d
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179454"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924550"
 ---
 # <a name="ui-automation-tree-overview"></a>Vue d’ensemble de l’arborescence UI Automation
 > [!NOTE]
@@ -18,7 +19,7 @@ ms.locfileid: "79179454"
   
  Les produits de technologie d’assistance et les scripts de test parcourent l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour recueillir des informations sur l’[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] et ses éléments.  
   
- Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] l’arbre il ya<xref:System.Windows.Automation.AutomationElement.RootElement%2A>un élément racine ( ) qui représente le bureau actuel et dont les éléments de l’enfant représentent les fenêtres d’application. Chacun de ces éléments enfants peut contenir des éléments représentant des composants d’[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] tels que des menus, boutons, barres d’outils et zones de liste. Ces éléments peuvent à leur tour contenir des éléments tels que des éléments de liste.  
+ Dans l' [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] arborescence, il existe un élément racine ( <xref:System.Windows.Automation.AutomationElement.RootElement%2A> ) qui représente le Bureau actuel et dont les éléments enfants représentent des fenêtres d’application. Chacun de ces éléments enfants peut contenir des éléments représentant des composants d’[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] tels que des menus, boutons, barres d’outils et zones de liste. Ces éléments peuvent à leur tour contenir des éléments tels que des éléments de liste.  
   
  L’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] n’est pas une structure fixe et est rarement visible dans son intégralité, car elle peut contenir des milliers d’éléments. Certains de ses composants sont créés à mesure des besoins et elle peut subir des modifications à mesure que des éléments sont ajoutés, déplacés ou supprimés.  
   
@@ -36,7 +37,7 @@ ms.locfileid: "79179454"
   
 <a name="uiautomation_raw_view"></a>
 ### <a name="raw-view"></a>Affichage brut  
- L’affichage brut de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] est l’arborescence complète des objets <xref:System.Windows.Automation.AutomationElement> dont le bureau est la racine. L’affichage brut suit étroitement la structure de programmation native d’une application et est de ce fait l’affichage le plus détaillé. C’est aussi la base sur laquelle reposent les autres affichages de l’arborescence. Parce que cette vue [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] dépend du cadre [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] sous-jacent, la vue brute d’un bouton aura une vue brute différente d’un bouton Win32.  
+ L’affichage brut de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] est l’arborescence complète des objets <xref:System.Windows.Automation.AutomationElement> dont le bureau est la racine. L’affichage brut suit étroitement la structure de programmation native d’une application et est de ce fait l’affichage le plus détaillé. C’est aussi la base sur laquelle reposent les autres affichages de l’arborescence. Étant donné que cette vue dépend de l’infrastructure sous-jacente [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] , l’affichage brut d’un [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] bouton aura une vue brute différente de celle d’un bouton Win32.  
   
  L’affichage brut s’obtient en recherchant des éléments sans spécifier de propriétés ou en utilisant <xref:System.Windows.Automation.TreeWalker.RawViewWalker> pour parcourir l’arborescence.  
   

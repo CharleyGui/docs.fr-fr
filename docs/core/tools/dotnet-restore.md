@@ -2,12 +2,12 @@
 title: Commande dotnet restore
 description: Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: 276fad896a6a8a647ed05a9de8c582d463d9ab8f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 7b456e28505a07c03936c9006c8631848fd4672c
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005313"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925474"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -48,10 +48,10 @@ Parfois, il peut être gênant d’exécuter la restauration NuGet implicite ave
 
 Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation du kit SDK .NET Core. Pour spécifier des flux supplémentaires, effectuez l’une des opérations suivantes :
 
-- Créez votre propre fichier *NuGet. config* dans le répertoire du projet. Pour plus d’informations, consultez [configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior) et [différences de NuGet. config](#nugetconfig-differences) plus loin dans cet article.
+- Créez votre propre *nuget.config* fichier dans le répertoire du projet. Pour plus d’informations, consultez [configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior) et [nuget.config différences](#nugetconfig-differences) plus loin dans cet article.
 - Utilisez des `dotnet nuget` commandes telles que [`dotnet nuget add source`](dotnet-nuget-add-source.md) .
 
-Vous pouvez substituer les flux *NuGet. config* avec l' `-s` option.
+Vous pouvez substituer les flux de *nuget.config* avec l' `-s` option.
 
 Pour plus d’informations sur l’utilisation des flux authentifiés, consultez [utilisation de packages à partir de flux authentifiés](/nuget/consume-packages/consuming-packages-authenticated-feeds).
 
@@ -73,7 +73,7 @@ Trois paramètres spécifiques sont ignorés par `dotnet restore` :
 
   Les redirections de liaison ne fonctionnent pas avec les éléments `<PackageReference>` et .NET Core prend en charge seulement les éléments `<PackageReference>` pour les packages NuGet.
 
-- [elle](/nuget/schema/nuget-config-file#solution-section)
+- [Solution](/nuget/schema/nuget-config-file#solution-section)
 
   Ce paramètre est spécifique à Visual Studio et ne s’applique pas à .NET Core. .NET Core n’utilise pas de fichier `packages.config` et utilise à la place des éléments `<PackageReference>` pour les packages NuGet.
 
@@ -119,7 +119,7 @@ Trois paramètres spécifiques sont ignorés par `dotnet restore` :
 
 - **`--lock-file-path <LOCK_FILE_PATH>`**
 
-  Emplacement de sortie où le fichier de verrouillage de projet est écrit. Par défaut, il s’agit de *PROJECT_ROOT \Packages.Lock.JSON*.
+  Emplacement de sortie où le fichier de verrouillage de projet est écrit. Par défaut, il s’agit *dePROJECT_ROOT\packages.lock.js*.
 
 - **`--locked-mode`**
 
@@ -161,10 +161,10 @@ Trois paramètres spécifiques sont ignorés par `dotnet restore` :
   dotnet restore
   ```
 
-- Restaurez les dépendances et les outils pour le `app1` projet trouvé dans le chemin d’accès donné :
+- Restaurez des dépendances et des outils pour le projet `app1` se trouvant à l’emplacement donné :
 
   ```dotnetcli
-  dotnet restore ~/projects/app1/app1.csproj
+  dotnet restore ./projects/app1/app1.csproj
   ```
 
 - Restaurez les dépendances et les outils pour le projet dans le répertoire actif à l’aide du chemin d’accès de fichier fourni comme source :

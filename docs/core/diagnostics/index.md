@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
-ms.date: 12/17/2019
+ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: 0a78ec6c88f5323104277cddea4480a5e13b4e41
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc64c03ee9c8cee6a5b3c5cc089b4a1a2c27f84a
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399048"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924780"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -18,32 +18,40 @@ Cet article vous aide à trouver les différents outils dont vous avez besoin.
 
 ## <a name="managed-debuggers"></a>Débogueurs gérés
 
-[Les débbuggeurs gérés](managed-debuggers.md) vous permettent d’interagir avec votre programme. La pause, l'exécution incrémentale, l'examen et la reprise vous offrent un aperçu du comportement de votre code. Un débogueur est le premier choix pour diagnostiquer les problèmes fonctionnels qui peuvent être facilement reproduits.
+Les [débogueurs managés](managed-debuggers.md) vous permettent d’interagir avec votre programme. La pause, l'exécution incrémentale, l'examen et la reprise vous offrent un aperçu du comportement de votre code. Un débogueur est le premier choix pour diagnostiquer les problèmes fonctionnels qui peuvent être facilement reproduits.
 
 ## <a name="logging-and-tracing"></a>Journalisation et suivi
 
-[L’exploitation forestière et le traçage](logging-tracing.md) sont des techniques connexes. Elles se réfèrent au code d'instrumentation permettant de créer des fichiers journaux. Les fichiers consignent le détail des tâches exécutées par un programme. Ces informations peuvent être utilisées pour diagnostiquer les problèmes les plus complexes. Combinées à l'horodatage, ces techniques sont également très utiles dans les analyses de performances.
+La [journalisation et le suivi](logging-tracing.md) sont des techniques associées. Elles se réfèrent au code d'instrumentation permettant de créer des fichiers journaux. Les fichiers consignent le détail des tâches exécutées par un programme. Ces informations peuvent être utilisées pour diagnostiquer les problèmes les plus complexes. Combinées à l'horodatage, ces techniques sont également très utiles dans les analyses de performances.
 
 ## <a name="unit-testing"></a>Test des unités
 
-[Le test unitaire](../testing/index.md) est un élément clé de l’intégration continue et du déploiement de logiciels de haute qualité. Les tests unitaires sont conçus pour vous prévenir d’un problème survenu.
+Le [test unitaire](../testing/index.md) est un composant clé de l’intégration et du déploiement continus de logiciels de haute qualité. Les tests unitaires sont conçus pour vous prévenir d’un problème survenu.
 
-## <a name="net-core-dotnet-diagnostic-global-tools"></a>.NET Core dotnet diagnostic Global Tools
+## <a name="net-core-dotnet-diagnostic-global-tools"></a>Outils globaux .NET Core dotnet diagnostic
 
 ### <a name="dotnet-counters"></a>dotnet-counters
 
-[dotnet-counters](dotnet-counters.md) est un outil de surveillance des performances pour la surveillance de la santé de premier niveau et l’enquête sur le rendement. Il observe les valeurs de <xref:System.Diagnostics.Tracing.EventCounter> compteur de performance publiées via l’API. Par exemple, vous pouvez surveiller rapidement des choses comme l’utilisation du processeur ou le taux d’exceptions jetés dans votre application .NET Core.
+[dotnet-Counters](dotnet-counters.md) est un outil d’analyse des performances pour l’analyse de l’intégrité et des performances de premier niveau. Il observe les valeurs de compteur de performance publiées par le biais de l' <xref:System.Diagnostics.Tracing.EventCounter> API. Par exemple, vous pouvez rapidement surveiller des éléments tels que l’utilisation du processeur ou le taux d’exceptions levées dans votre application .NET Core.
 
 ### <a name="dotnet-dump"></a>dotnet-dump
 
-[L’outil dotnet-dump](dotnet-dump.md) est un moyen de collecter et d’analyser les décharges de base de Windows et Linux sans un débbugger indigène.
+L’outil [dotnet-dump](dotnet-dump.md) est un moyen de collecter et d’analyser les vidages noyau Windows et Linux sans débogueur natif.
 
 ### <a name="dotnet-trace"></a>dotnet-trace
 
-.NET Core comprend ce `EventPipe` qu’on appelle le moyen par lequel les données diagnostiques sont exposées. [L’outil dotnet-trace](dotnet-trace.md) vous permet de consommer des données de profilage intéressantes de votre application qui peuvent vous aider dans les scénarios où vous devez provoquer des applications qui fonctionnent lentement.
+.NET Core comprend ce qui est appelé `EventPipe` par le biais duquel les données de diagnostic sont exposées. L’outil [dotnet-trace](dotnet-trace.md) vous permet de consommer des données de profilage intéressantes à partir de votre application, ce qui peut aider dans les scénarios où vous devez provoquer une exécution lente des applications.
 
 ## <a name="net-core-diagnostics-tutorials"></a>Tutoriels de diagnostics .NET Core
 
 ### <a name="debug-a-memory-leak"></a>Déboguer une fuite de mémoire
 
-[Tutorial: Debug une fuite de mémoire](debug-memory-leak.md) marche à travers la recherche d’une fuite de mémoire. [L’outil dotnet-compteurs](dotnet-counters.md) est utilisé pour confirmer la fuite et [l’outil de décharge de dotnet](dotnet-dump.md) est utilisé pour diagnostiquer la fuite.
+[Didacticiel : déboguer une fuite de mémoire](debug-memory-leak.md) vous guide tout au long de la détection d’une fuite de mémoire. L’outil [dotnet-Counters](dotnet-counters.md) est utilisé pour confirmer la fuite et l’outil [dotnet-dump](dotnet-dump.md) est utilisé pour diagnostiquer la fuite.
+
+### <a name="debug-high-cpu-usage"></a>Déboguer l’utilisation élevée du processeur
+
+[Didacticiel : déboguer l’utilisation intensive du processeur](debug-highcpu.md) vous guide tout au long de l’examen de l’utilisation intensive du processeur. Elle utilise l’outil [dotnet-Counters](dotnet-counters.md) pour vérifier l’utilisation intensive du processeur. Il vous guide ensuite dans l’utilisation [de trace for Performance Analysis Utility ( `dotnet-trace` )](dotnet-trace.md) ou Linux `perf` pour collecter et afficher le profil d’utilisation de l’UC.
+
+### <a name="debug-deadlock"></a>Blocage du débogage
+
+[Didacticiel : déboguer le blocage](debug-deadlock.md) vous montre comment utiliser l’outil [dotnet-dump](dotnet-dump.md) pour examiner les threads et les verrous.

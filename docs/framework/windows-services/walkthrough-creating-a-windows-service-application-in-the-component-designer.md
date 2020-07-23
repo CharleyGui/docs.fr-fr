@@ -1,5 +1,6 @@
 ---
 title: 'Didacticiel : créer une application de service Windows'
+description: Dans ce didacticiel, créez une application de service Windows dans Visual Studio qui écrit des messages dans un journal des événements. Ajoutez des fonctionnalités, définissez l’État, ajoutez des programmes d’installation, et bien plus encore.
 ms.date: 03/27/2019
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: e5ff40d8413acf64e7a8a129a7b268f58780d591
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 487a974af2280a02b83fe685324c9464df705585
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053485"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925629"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Didacticiel : créer une application de service Windows
 
@@ -51,7 +52,7 @@ Renommez le service **Service1** en **MyNewService**.
 
 2. Dans la fenêtre contextuelle, sélectionnez **Oui**.
 
-    ![Invite de renommage](./media/windows-service-rename.png "Invite de renommage du service Windows")
+    ![Renommer l’invite](./media/windows-service-rename.png "Invite de changement de nom du service Windows")
 
 3. Sous l’onglet **Conception**, sélectionnez **Propriétés** dans le menu contextuel. Dans la fenêtre **Propriétés**, remplacez la valeur **ServiceName** par *MyNewService*.
 
@@ -350,7 +351,7 @@ Avant d’exécuter un service Windows, vous devez l’installer, ce qui ’insc
 
 8. Quand vous avez terminé, la fenêtre **Propriétés** doit ressembler à la figure suivante :
 
-     ![Propriétés du programme d’installation d’un service Windows](./media/windows-service-installer-properties.png "Propriétés du programme d’installation d’un service Windows")
+     ![Propriétés du programme d’installation pour un service Windows](./media/windows-service-installer-properties.png "Propriétés du programme d’installation du service Windows")
 
 9. En mode **Conception** pour **ProjectInstaller**, choisissez **serviceProcessInstaller1** pour un projet Visual C# ou **ServiceProcessInstaller1** pour un projet Visual Basic, puis choisissez **Propriétés** dans le menu contextuel. Affectez à la propriété <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> la valeur <xref:System.ServiceProcess.ServiceAccount.LocalSystem> à partir de la liste déroulante.
 
@@ -482,7 +483,7 @@ Maintenant que vous avez généré le service Windows, vous pouvez l'installer. 
 
     Si le service s’installe correctement, la commande signale une réussite.
 
-    Si le système ne trouve pas *installutil.exe*, vérifiez qu’il existe sur votre ordinateur. Cet outil est installé avec le .NET Framework dans le dossier *%windir%\Microsoft.NET\Framework [64]\\&lt;&gt;version du .NET Framework*. Par exemple, le chemin par défaut pour la version 64 bits est *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
+    Si le système ne trouve pas *installutil.exe*, vérifiez qu’il existe sur votre ordinateur. Cet outil est installé avec le .NET Framework dans le dossier *%windir%\Microsoft.NET\Framework [64] \\ &lt; &gt; version du .NET Framework*. Par exemple, le chemin par défaut pour la version 64 bits est *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
 
     Si le processus **installutil.exe** échoue, examinez le journal d’installation pour en connaître la raison. Par défaut, le journal se trouve dans le même dossier que l’exécutable du service. L’installation peut échouer si :
     - La classe <xref:System.ComponentModel.RunInstallerAttribute> n’est pas présente sur la classe `ProjectInstaller`.
@@ -493,7 +494,7 @@ Pour plus d’informations, consultez [procédure : installer et désinstaller 
 
 ## <a name="start-and-run-the-service"></a>Démarrer et exécuter le service
 
-1. Dans Windows, ouvrez l’application de bureau **Services**. Appuyez sur **Windows**+**R** pour ouvrir la zone **exécuter** , entrez *services. msc*, puis appuyez sur **entrée** ou sélectionnez **OK**.
+1. Dans Windows, ouvrez l’application de bureau **Services**. Appuyez sur **Windows** + **R** pour ouvrir la zone **exécuter** , entrez *services. msc*, puis appuyez sur **entrée** ou sélectionnez **OK**.
 
      Votre service doit être répertorié dans **Services**, affiché par ordre alphabétique du nom d’affichage que vous lui avez donné.
 
@@ -547,6 +548,6 @@ Maintenant que vous avez créé le service, vous pouvez :
 ## <a name="see-also"></a>Voir aussi
 
 - [Applications de service Windows](index.md)
-- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
-- [Guide pratique pour déboguer les applications de service Windows](how-to-debug-windows-service-applications.md)
+- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
+- [Comment : déboguer des applications de service Windows](how-to-debug-windows-service-applications.md)
 - [Services (Windows)](/windows/desktop/Services/services)

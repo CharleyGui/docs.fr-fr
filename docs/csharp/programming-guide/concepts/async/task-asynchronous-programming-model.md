@@ -1,13 +1,14 @@
 ---
 title: Modèle de programmation asynchrone des tâches avec async et await (C#)
+description: Découvrez quand et comment utiliser la programmation asynchrone basée sur des tâches, une approche simplifiée de la programmation asynchrone en C#.
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 90bee745a393ac35ac968e9f4f6b6c83ad8fbb46
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: ddda97e9c77473120ed32b0e224b07d7c4d71b1e
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990075"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925135"
 ---
 # <a name="task-asynchronous-programming-model"></a>Modèle de programmation asynchrone des tâches
 
@@ -156,7 +157,7 @@ Les mots clés `async` et `await` n’entraînent pas la création de threads su
 
 L’approche basée sur async en matière de programmation asynchrone est préférable aux approches existantes, dans presque tous les cas. En particulier, cette approche est préférable à la classe <xref:System.ComponentModel.BackgroundWorker> pour les opérations utilisant de nombreuses E/S, car le code est plus simple et il est inutile de vous protéger contre des conditions de concurrence. Combinée à la méthode <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType>, la programmation asynchrone est plus appropriée que <xref:System.ComponentModel.BackgroundWorker> pour les opérations utilisant le processeur de manière intensive, car la programmation asynchrone sépare les détails de coordination de l’exécution de votre code à partir du travail que `Task.Run` transfère au pool de threads.
 
-## <a name="async-and-await"></a><a name="BKMK_AsyncandAwait"></a> async and await
+## <a name="async-and-await"></a><a name="BKMK_AsyncandAwait"></a>Async et await
 
 Si vous spécifiez qu’une méthode est une méthode async en utilisant le modificateur [async](../../../language-reference/keywords/async.md), vous activez les deux fonctionnalités suivantes.
 

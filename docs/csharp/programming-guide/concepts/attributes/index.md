@@ -1,12 +1,13 @@
 ---
 title: Attributs (C#)
+description: Découvrez comment utiliser des attributs pour associer des métadonnées ou des informations déclaratives au code en C#. Un attribut peut être interrogé au moment de l’exécution à l’aide de la réflexion.
 ms.date: 04/26/2018
-ms.openlocfilehash: 358285a39f72ad3ddf1b265e20b443308375d074
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 5c57838b649531d8e8fe89919771adf8830e7f54
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241576"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924983"
 ---
 # <a name="attributes-c"></a>Attributs (C#)
 
@@ -75,7 +76,7 @@ La liste des valeurs `target` possibles est présentée dans le tableau suivant.
 |`event`|Événement|
 |`method`|Méthode ou accesseurs de propriété `get` et `set`|
 |`param`|Paramètres de méthode ou paramètres d’accesseur de propriété `set`|
-|`property`|Property|
+|`property`|Propriété|
 |`return`|Valeur de retour d’une méthode, indexeur de propriété ou accesseur de propriété `get`|
 |`type`|Struct, classe, interface, énumération ou délégué|
 
@@ -101,8 +102,8 @@ L’exemple suivant montre comment appliquer des attributs à des méthodes, des
 
 La liste suivante comprend certaines des utilisations courantes des attributs dans le code :
 
-- Marquer des méthodes avec l’attribut `WebMethod` dans les services web pour indiquer que la méthode doit pouvoir être appelée via le protocole SOAP. Pour plus d'informations, consultez <xref:System.Web.Services.WebMethodAttribute>.
-- Décrire comment marshaler les paramètres de méthode en cas d’interaction avec du code natif. Pour plus d'informations, consultez <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
+- Marquer des méthodes avec l’attribut `WebMethod` dans les services web pour indiquer que la méthode doit pouvoir être appelée via le protocole SOAP. Pour plus d’informations, consultez <xref:System.Web.Services.WebMethodAttribute>.
+- Décrire comment marshaler les paramètres de méthode en cas d’interaction avec du code natif. Pour plus d’informations, consultez <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
 - Décrire les propriétés COM des classes, méthodes et interfaces.
 - Appeler du code non managé à l’aide de la classe <xref:System.Runtime.InteropServices.DllImportAttribute>.
 - Décrire un assembly : titre, version, description ou marque.
@@ -115,7 +116,7 @@ La liste suivante comprend certaines des utilisations courantes des attributs da
 
 ## <a name="related-sections"></a>Sections connexes
 
-Pour plus d'informations, consultez les pages suivantes :
+Pour plus d'informations, voir :
 
 - [Création d’attributs personnalisés (C#)](creating-custom-attributes.md)  
 - [Accès à des attributs à l’aide de la réflexion (C#)](accessing-attributes-by-using-reflection.md)  

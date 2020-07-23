@@ -1,13 +1,14 @@
 ---
 title: Gestion de la réentrance dans Async Apps (C#)
+description: Apprenez à gérer la réentrance dans les applications C# Async, qui fait référence à la réentrée d’une opération asynchrone avant qu’elle se termine avec des résultats inattendus possibles.
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-ms.openlocfilehash: e03e0f6ecd8e74dd8518f84ec03c76c1ef5b9ee6
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: fdd440d167b95268a5ae6de0e57a32f0fad66b7c
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241810"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925239"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Gestion de la réentrance dans Async Apps (C#)
 

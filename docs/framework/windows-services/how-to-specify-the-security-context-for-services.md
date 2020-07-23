@@ -1,5 +1,6 @@
 ---
-title: 'Comment : spécifier le contexte de sécurité des services'
+title: 'Procédure : spécifier le contexte de sécurité des services'
+description: Spécifiez le contexte de sécurité pour les services. Les services exécutés dans le contexte du compte système par défaut ont d’autres droits d’accès aux ressources système que l’utilisateur connecté.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, security
@@ -11,14 +12,14 @@ helpviewer_keywords:
 - ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
 author: ghogen
-ms.openlocfilehash: dd2a9c4485e151d4cb1c9d5ae3a95a69fcc416d4
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4ed531cb520a781fd38f8bf5491da6948901a1d5
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053579"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925733"
 ---
-# <a name="how-to-specify-the-security-context-for-services"></a>Comment : spécifier le contexte de sécurité des services
+# <a name="how-to-specify-the-security-context-for-services"></a>Procédure : spécifier le contexte de sécurité des services
 Par défaut, les services s’exécutent dans un contexte de sécurité différent de celui de l’utilisateur connecté. Les services s’exécutent dans le contexte du compte système par défaut, appelé `LocalSystem`, ce qui leur confère des privilèges d’accès aux ressources système différents de ceux de l’utilisateur. Vous pouvez changer ce comportement si vous souhaitez que votre service s’exécute sous un autre compte d’utilisateur.  
   
  Pour définir le contexte de sécurité, manipulez la propriété <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> du processus dans lequel le service s’exécute. Cette propriété vous permet d’affecter au service l’un des quatre types de comptes suivants :  
@@ -46,6 +47,6 @@ Par défaut, les services s’exécutent dans un contexte de sécurité différe
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
-- [Comment : ajouter des programmes d'installation à votre application de service](how-to-add-installers-to-your-service-application.md)
-- [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Procédure : ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)
+- [Procédure : créer des services Windows](how-to-create-windows-services.md)

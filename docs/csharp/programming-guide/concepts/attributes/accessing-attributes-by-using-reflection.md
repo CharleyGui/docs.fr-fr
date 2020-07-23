@@ -1,13 +1,14 @@
 ---
 title: Accès à des attributs à l’aide de la réflexion (C#)
+description: Utilisez la réflexion pour récupérer des informations définies avec des attributs personnalisés en C# à l’aide de la méthode GetCustomAttributes.
 ms.date: 07/20/2015
 ms.assetid: dce3a696-4ceb-489a-b5e4-322a83052f18
-ms.openlocfilehash: 990b6487e50bfb2d123c3871e5f85da063711d9e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9425141d64fd061d0c1f628228693cce02f7bfa0
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69595496"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925096"
 ---
 # <a name="accessing-attributes-by-using-reflection-c"></a>Accès à des attributs à l’aide de la réflexion (C#)
 La définition d’attributs personnalisés et leur ajout à votre code source présentent peu d’intérêt si vous ne pouvez pas ensuite récupérer et manipuler ces informations. La réflexion vous permet de récupérer les informations qui ont été définies à l’aide d’attributs personnalisés. La méthode clé est `GetCustomAttributes`. Elle retourne un tableau d’objets qui sont les équivalents des attributs du code source au moment de l’exécution. Cette méthode a plusieurs versions surchargées. Pour plus d’informations, consultez <xref:System.Attribute>.  
@@ -28,7 +29,7 @@ anonymousAuthorObject.version = 1.1;
   
  Toutefois, le code n’est pas exécuté tant qu’une requête n’est pas effectuée sur `SampleClass` pour obtenir les attributs. L’appel de `GetCustomAttributes` sur `SampleClass` entraîne la construction et l’initialisation d’un objet `Author` comme illustré ci-dessus. Si la classe a d’autres attributs, les autres objets attribut sont construits de la même façon. `GetCustomAttributes` retourne ensuite l’objet `Author` et les autres objets attribut dans un tableau. Vous pouvez ensuite itérer sur ce tableau, déterminer quels attributs ont été appliqués en fonction du type de chaque élément du tableau et extraire des informations des objets attribut.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Voici un exemple complet. Un attribut personnalisé est défini, appliqué à plusieurs entités, puis récupéré par réflexion.  
   
 ```csharp  
@@ -117,7 +118,7 @@ class TestAuthorAttribute
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Guide de programmation C#](../../index.md)
+- [Guide de programmation C#](../../index.md)
 - [Récupération des informations stockées dans les attributs](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)
 - [Réflexion (C#)](../reflection.md)
 - [Attributs (C#)](./index.md)

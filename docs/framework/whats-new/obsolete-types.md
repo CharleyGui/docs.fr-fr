@@ -1,23 +1,24 @@
 ---
-title: Types obsolètes dans le .NET Framework
+title: Types obsolètes dans .NET Framework
+description: Consultez la liste des types obsolètes dans .NET Framework 4,5 et .NET 4,6, organisés par assembly. Les alternatives recommandées sont également répertoriées.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework 4.5, obsolete types
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-ms.openlocfilehash: b7932a553f39e1f1da2a3946878d6224099da8da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29df80fcefc2565850b026bebd30802dc77e1896
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74802685"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925811"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Types obsolètes dans le .NET Framework
 
 <a name="introduction"></a> Les tableaux de cet article listent les types obsolètes dans .NET Framework 4.5 et .NET Framework 4.6, organisés par assembly. Utilisez les liens suivants pour consulter la liste des types obsolètes et des alternatives recommandées dans chaque assembly. Ces types étant obsolètes, tous leurs membres le sont également. Pour obtenir la liste des membres obsolètes supplémentaires dans la bibliothèque de classes .NET Framework, consultez [Membres obsolètes](obsolete-members.md).
 
-- [Types obsolètes dans les assemblages de systèmes](#obsolete_types_in_system_assemblies)
+- [Types obsolètes dans les assemblys système](#obsolete_types_in_system_assemblies)
 
   - [mscorlib.dll](#mscorlib)
 
@@ -55,7 +56,7 @@ ms.locfileid: "74802685"
 
   - [WindowsBase.dll](#WindowsBase)
 
-- [Types obsolètes dans les assemblages Microsoft](#obsolete_types_in_microsoft_assemblies)
+- [Types obsolètes dans les assemblys Microsoft](#obsolete_types_in_microsoft_assemblies)
 
   - [IEHost.dll et IEExec.exe](#IEHost)
 
@@ -271,18 +272,18 @@ Les tableaux suivants répertorient les types qui ont été déclarés obsolète
 
 |Type|Message|
 |----------|-------------|
-|<xref:System.Web.Configuration.PassportAuthentication?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par [Microsoft Account](https://account.microsoft.com/account/Account?destrt=home-index)|
+|<xref:System.Web.Configuration.PassportAuthentication?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par un [compte Microsoft](https://account.microsoft.com/account/Account?destrt=home-index)|
 |<xref:System.Web.Mail.MailAttachment?displayProperty=nameWithType>|L'alternative recommandée est <xref:System.Net.Mail.Attachment?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.MailEncoding?displayProperty=nameWithType>|L'alternative recommandée est <xref:System.Net.Mime.TransferEncoding?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.MailFormat?displayProperty=nameWithType>|L'alternative recommandée est <xref:System.Net.Mail.MailMessage.IsBodyHtml%2A?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.MailMessage?displayProperty=nameWithType>|L'alternative recommandée est <xref:System.Net.Mail.MailMessage?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.MailPriority?displayProperty=nameWithType>|L'alternative recommandée est <xref:System.Net.Mail.MailPriority?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.SmtpMail?displayProperty=nameWithType>|L'alternative recommandée est <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>.|
-|<xref:System.Web.Security.PassportAuthenticationEventArgs?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par [Microsoft Account](https://account.microsoft.com/account/Account?destrt=home-index)|
-|<xref:System.Web.Security.PassportAuthenticationEventHandler?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par [Microsoft Account](https://account.microsoft.com/account/Account?destrt=home-index)|
-|<xref:System.Web.Security.PassportAuthenticationModule?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par [Microsoft Account](https://account.microsoft.com/account/Account?destrt=home-index)|
-|<xref:System.Web.Security.PassportIdentity?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par [Microsoft Account](https://account.microsoft.com/account/Account?destrt=home-index)|
-|<xref:System.Web.Security.PassportPrincipal?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par [Microsoft Account](https://account.microsoft.com/account/Account?destrt=home-index)|
+|<xref:System.Web.Security.PassportAuthenticationEventArgs?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par un [compte Microsoft](https://account.microsoft.com/account/Account?destrt=home-index)|
+|<xref:System.Web.Security.PassportAuthenticationEventHandler?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par un [compte Microsoft](https://account.microsoft.com/account/Account?destrt=home-index)|
+|<xref:System.Web.Security.PassportAuthenticationModule?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par un [compte Microsoft](https://account.microsoft.com/account/Account?destrt=home-index)|
+|<xref:System.Web.Security.PassportIdentity?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par un [compte Microsoft](https://account.microsoft.com/account/Account?destrt=home-index)|
+|<xref:System.Web.Security.PassportPrincipal?displayProperty=nameWithType>|Ce type est obsolète. Le produit d’authentification Passport n’est plus pris en charge et a été remplacé par un [compte Microsoft](https://account.microsoft.com/account/Account?destrt=home-index)|
 |<xref:System.Web.UI.ObjectConverter?displayProperty=nameWithType>|L'alternative recommandée consiste à utiliser <xref:System.Convert?displayProperty=nameWithType> et <xref:System.String.Format%2A?displayProperty=nameWithType>.|
 
 [Retour au début](#introduction)

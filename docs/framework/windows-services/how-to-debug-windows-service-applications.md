@@ -1,5 +1,6 @@
 ---
-title: 'Comment : déboguer les applications de service Windows'
+title: 'Procédure : déboguer les applications de service Windows'
+description: Découvrez comment déboguer des applications de service Windows, qui ne sont pas aussi simples à déboguer que les autres types d’applications Visual Studio.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - debugging Windows Service applications
@@ -9,14 +10,14 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 860f2ae22eb6510dc1f1a454ae3e51ccb366078b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: fb58f2ff4f480347f0f233ecd9a619cf287cfdfd
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053624"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925759"
 ---
-# <a name="how-to-debug-windows-service-applications"></a>Comment : déboguer les applications de service Windows
+# <a name="how-to-debug-windows-service-applications"></a>Procédure : déboguer les applications de service Windows
 Un service doit être exécuté à partir du Gestionnaire de contrôle des services plutôt qu'à partir de Visual Studio. C'est pourquoi le débogage d'un service n'est pas aussi simple que le débogage d'autres types d'applications Visual Studio. Pour déboguer un service, vous devez le démarrer et attacher un débogueur au processus dans lequel il s'exécute. Vous pouvez alors déboguer votre application à l'aide de toutes les fonctionnalités de débogage standard de Visual Studio.  
   
 > [!CAUTION]
@@ -115,7 +116,7 @@ Un service doit être exécuté à partir du Gestionnaire de contrôle des servi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des applications de service Windows](introduction-to-windows-service-applications.md)
-- [Guide pratique pour installer et désinstaller des services](how-to-install-and-uninstall-services.md)
-- [Guide pratique pour démarrer des services](how-to-start-services.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Procédure : Installer et désinstaller des services](how-to-install-and-uninstall-services.md)
+- [Procédure : démarrer des services](how-to-start-services.md)
 - [Déboguer un service](/windows/desktop/Services/debugging-a-service)

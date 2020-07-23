@@ -1,5 +1,6 @@
 ---
-title: Nouveautés du .NET Framework
+title: Nouveautés de .NET Framework
+description: Découvrez les nouveautés dans les différentes versions de .NET Framework. Lisez un résumé des nouvelles fonctionnalités et améliorations clés de chaque version.
 ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: ee67e6577c5ad2486a483e3593e4d0a8ecbb0407
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 42f872bba87a88fc92a37879e815ee7068407cf7
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244437"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925590"
 ---
 # <a name="whats-new-in-net-framework"></a>Nouveautés de .NET Framework
 
@@ -201,7 +202,7 @@ Le runtime de .NET Framework 4.8 comprend les nouvelles modifications et amélio
 
 - [Classes de base](#core-472)
 - [ASP.NET](#asp-net472)
-- [Mise en réseau](#net472)
+- [Réseau](#net472)
 - [SQL](#sql472)
 - [WPF](#wpf472)
 - [ClickOnce](#clickonce)
@@ -589,7 +590,7 @@ Pour une application Windows Forms, la solution de contournement précédente co
 
 - [Classes de base](#core471)
 - [CLR (Common Language Runtime)](#clr)
-- [Mise en réseau](#net471)
+- [Réseau](#net471)
 - [ASP.NET](#asp-net471)
 
 .NET Framework 4.7.1 met également l’accent sur l’amélioration de l’accessibilité pour qu’une application puisse fournir une expérience appropriée aux utilisateurs de technologies d’assistance. Pour plus d’informations sur les améliorations apportées à .NET Framework 4.7.1 dans le domaine de l’accessibilité, consultez [Nouveautés du .NET Framework dans le domaine de l’accessibilité](whats-new-in-accessibility.md).
@@ -671,7 +672,7 @@ Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux dévelo
 .NET Framework 4.7 apporte de nouvelles fonctionnalités dans les domaines suivants :
 
 - [Classes de base](#Core47)
-- [Mise en réseau](#net47)
+- [Réseau](#net47)
 - [ASP.NET](#ASP-NET47)
 - [Windows Communication Foundation (WCF)](#wcf47)
 - [Windows Forms](#wf47)
@@ -1308,7 +1309,7 @@ Désormais, SqlClient fournit automatiquement une connexion plus rapide à un gr
 
 Windows Presentation Foundation inclut un certain nombre d’améliorations et de modifications.
 
-**performances améliorées**
+**Amélioration des performances**
 
 Le retard de déclenchement d’événements tactiles a été résolu dans le .NET Framework 4.6.1. En outre, la saisie dans un contrôle <xref:System.Windows.Controls.RichTextBox> ne mobilise plus le thread de rendu pendant la saisie rapide.
 
@@ -1709,7 +1710,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   La valeur par défaut est `false`.
 
-- **Mise en réseau**
+- **Réseau**
 
   - **Réutilisation de socket**
 
@@ -1974,7 +1975,7 @@ ASP.NET 4.5 et 4.5.1 ajoutent la liaison de modèle pour Web Forms, la prise e
 
 - [ASP.NET 4.5 et Visual Studio 2012](https://docs.microsoft.com/previous-versions/aspnet/hh420390(v=vs.110))
 
-- [ASP.NET et Web Tools pour Visual Studio 2013 - Notes de publication](/aspnet/visual-studio/overview/2013/release-notes)
+- [ASP.NET et Web Tools pour Visual Studio 2013 - Notes de publication](/aspnet/visual-studio/overview/2013/release-notes)
 
 ### <a name="networking"></a>Réseaux <a name="networking"></a>
 

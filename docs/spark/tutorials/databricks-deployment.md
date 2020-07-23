@@ -4,12 +4,12 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 9e0b99b6706bf51adaa6e3795d1c81179e14cb7a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 66a5493f0084f5fa86c3eb928d2e4a4b4999e764
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618335"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924589"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Databricks
 
@@ -57,7 +57,7 @@ Dans cette section, vous créez un espace de travail Azure Databricks en utilisa
     |**Niveau tarifaire**     |  Choisissez **Standard**, **Premium** ou **Essai**. Pour plus d’informations sur ces niveaux, consultez la [page de tarification Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
     |**Réseau virtuel**     |   Non       |
 
-3. Sélectionnez **Create** (Créer). La création de l’espace de travail dure quelques minutes. Pendant la création de l'espace de travail, vous pouvez consulter l'état du déploiement dans **Notifications**.
+3. Sélectionnez **Créer**. La création de l’espace de travail dure quelques minutes. Pendant la création de l'espace de travail, vous pouvez consulter l'état du déploiement dans **Notifications**.
 
 ## <a name="install-azure-databricks-tools"></a>Installer Azure Databricks Tools
 
@@ -75,7 +75,7 @@ Vous pouvez utiliser l' **interface CLI Databricks** pour vous connecter à des 
    python3 --version
    ```
 
-2. Utilisez PIP pour installer l’interface de commande de Databricks. Python 3,4 et versions ultérieures incluent PIP par défaut. Utilisez PIP3 pour Python 3. Exécutez la commande suivante :
+2. Utilisez PIP pour installer l’interface de commande de Databricks. Python 3,4 et versions ultérieures incluent PIP par défaut. Utilisez PIP3 pour Python 3. Exécutez la commande suivante :
 
    ```bash
    pip3 install databricks-cli
@@ -154,7 +154,7 @@ Dans cette section, vous téléchargez plusieurs fichiers sur DBFS afin que votr
    ```console
    databricks fs cp db-init.sh dbfs:/spark-dotnet/db-init.sh
    databricks fs cp install-worker.sh dbfs:/spark-dotnet/install-worker.sh
-   databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/   Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
+   databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
    ```
 
 2. Exécutez les commandes suivantes pour télécharger les fichiers restants dont votre cluster a besoin pour exécuter votre application : le dossier de publication compressé, *input.txt*et *Microsoft-Spark-2.4. x-0.3.1. jar*.
@@ -164,7 +164,7 @@ Dans cette section, vous téléchargez plusieurs fichiers sur DBFS afin que votr
    databricks fs cp input.txt dbfs:/input.txt
 
    cd mySparkApp\bin\Release\netcoreapp3.1\ubuntu.16.04-x64 directory
-   databricks fs cp mySparkApp.zip dbfs:/spark-dotnet/publish.zip
+   databricks fs cp publish.zip dbfs:/spark-dotnet/publish.zip
    databricks fs cp microsoft-spark-2.4.x-0.6.0.jar dbfs:/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar
    ```
 
@@ -196,7 +196,7 @@ Votre application s’exécute sur Azure Databricks par le biais d’un travail 
 
 3. Sélectionnez **confirmer** pour confirmer vos paramètres de cluster.
 
-## <a name="run-your-app"></a>Exécutez l'application.
+## <a name="run-your-app"></a>Exécuter l’application
 
 1. Accédez à votre travail et sélectionnez **Exécuter maintenant** pour exécuter votre travail sur le cluster Spark que vous venez de configurer.
 

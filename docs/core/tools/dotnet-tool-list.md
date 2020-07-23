@@ -2,12 +2,12 @@
 title: Commande dotnet tool list
 description: La commande de liste d’outils dotnet répertorie les outils .NET Core qui sont installés sur votre ordinateur.
 ms.date: 02/14/2020
-ms.openlocfilehash: 7ca894ab0f5daf0118ff92fb39e0118b952b3d83
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 4035c5be233232e53c6d7150485f737108c1e18d
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768272"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925460"
 ---
 # <a name="dotnet-tool-list"></a>dotnet tool list
 
@@ -37,7 +37,7 @@ La `dotnet tool list` commande vous permet de répertorier tous les outils globa
 
 * Pour répertorier les outils globaux installés à l’emplacement par défaut, utilisez l' `--global` option
 * Pour répertorier les outils globaux installés dans un emplacement personnalisé, utilisez l' `--tool-path` option.
-* Pour répertorier les outils locaux, un outil local. Utilisez l' `--local` option ou omettez les `--global` `--tool-path` options, et `--local` .
+* Pour répertorier les outils locaux, utilisez l' `--local` option ou omettez les `--global` `--tool-path` options, et `--local` .
 
 **Les outils locaux sont disponibles à partir de kit SDK .NET Core 3,0.**
 
