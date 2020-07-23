@@ -7,7 +7,7 @@ items:
     href: about.md
   - name: Installez
     items:
-      - name: Vue d'ensemble
+      - name: Vue d’ensemble
         href: install/index.yml
       - name: Installer sur Windows
         href: install/windows.md
@@ -304,6 +304,10 @@ items:
         items:
           - name: Déboguer une fuite de mémoire
             href: diagnostics/debug-memory-leak.md
+          - name: Déboguer une utilisation élevée du processeur
+            href: diagnostics/debug-highcpu.md
+          - name: Déboguer un interblocage
+            href: diagnostics/debug-deadlock.md
   - name: Outils .NET Core supplémentaires
     items:
       - name: Vue d'ensemble
