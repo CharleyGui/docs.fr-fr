@@ -1,25 +1,26 @@
 ---
-title: Comment trouver des nœuds frères et sœurs (XPath-LINQ à XML) (C)
+title: Comment rechercher des nœuds frères (XPath-LINQ to XML) (C#)
+description: Cet exemple C# compare XPath à LINQ to XML pour savoir comment rechercher tous les frères d’un nœud qui ont un nom spécifique.
 ms.date: 07/20/2015
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: c201dcea5e6d148ae0998eb27d4e42df5b15309f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2936fc4ad088580a9644f79f1797e679fe877e00
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169205"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105217"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a><span data-ttu-id="7df87-102">Comment trouver des nœuds frères et sœurs (XPath-LINQ à XML) (C)</span><span class="sxs-lookup"><span data-stu-id="7df87-102">How to find sibling nodes (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="7df87-103">Vous souhaiterez peut-être rechercher tous les frères d'un nœud qui ont un nom spécifique.</span><span class="sxs-lookup"><span data-stu-id="7df87-103">You might want to find all siblings of a node that have a specific name.</span></span> <span data-ttu-id="7df87-104">La collection résultante peut inclure le nœud de contexte si celui-ci a également le nom spécifique.</span><span class="sxs-lookup"><span data-stu-id="7df87-104">The resulting collection might include the context node if the context node also has the specific name.</span></span>  
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a><span data-ttu-id="be6e3-103">Comment rechercher des nœuds frères (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="be6e3-103">How to find sibling nodes (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="be6e3-104">Vous souhaiterez peut-être rechercher tous les frères d'un nœud qui ont un nom spécifique.</span><span class="sxs-lookup"><span data-stu-id="be6e3-104">You might want to find all siblings of a node that have a specific name.</span></span> <span data-ttu-id="be6e3-105">La collection résultante peut inclure le nœud de contexte si celui-ci a également le nom spécifique.</span><span class="sxs-lookup"><span data-stu-id="be6e3-105">The resulting collection might include the context node if the context node also has the specific name.</span></span>  
   
- <span data-ttu-id="7df87-105">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="7df87-105">The XPath expression is:</span></span>  
+ <span data-ttu-id="be6e3-106">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="be6e3-106">The XPath expression is:</span></span>  
   
  `../Book`  
   
-## <a name="example"></a><span data-ttu-id="7df87-106"> Exemple</span><span class="sxs-lookup"><span data-stu-id="7df87-106">Example</span></span>  
- <span data-ttu-id="7df87-107">Cet exemple recherche d'abord un élément `Book`, puis tous les éléments frères nommés `Book`.</span><span class="sxs-lookup"><span data-stu-id="7df87-107">This example first finds a `Book` element, and then finds all sibling elements named `Book`.</span></span> <span data-ttu-id="7df87-108">La collection résultante inclut le nœud de contexte.</span><span class="sxs-lookup"><span data-stu-id="7df87-108">The resulting collection includes the context node.</span></span>  
+## <a name="example"></a><span data-ttu-id="be6e3-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="be6e3-107">Example</span></span>  
+ <span data-ttu-id="be6e3-108">Cet exemple recherche d'abord un élément `Book`, puis tous les éléments frères nommés `Book`.</span><span class="sxs-lookup"><span data-stu-id="be6e3-108">This example first finds a `Book` element, and then finds all sibling elements named `Book`.</span></span> <span data-ttu-id="be6e3-109">La collection résultante inclut le nœud de contexte.</span><span class="sxs-lookup"><span data-stu-id="be6e3-109">The resulting collection includes the context node.</span></span>  
   
- <span data-ttu-id="7df87-109">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="7df87-109">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="be6e3-110">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="be6e3-110">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -49,7 +50,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="7df87-110">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="7df87-110">This example produces the following output:</span></span>  
+ <span data-ttu-id="be6e3-111">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="be6e3-111">This example produces the following output:</span></span>  
   
 ```output  
 Results are identical  
