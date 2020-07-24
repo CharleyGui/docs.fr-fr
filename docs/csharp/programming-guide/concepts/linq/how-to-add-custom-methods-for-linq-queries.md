@@ -1,13 +1,14 @@
 ---
 title: Comment ajouter des méthodes personnalisées pour les requêtes LINQ (C#)
+description: Découvrez comment étendre l’ensemble de méthodes que vous pouvez utiliser pour les requêtes LINQ en ajoutant des méthodes d’extension à l' <T> interface IEnumerable en C#.
 ms.date: 07/20/2015
 ms.assetid: 1a500f60-2e10-49fb-8b2a-d8d08e4817cb
-ms.openlocfilehash: e3f8ba8810d06a2e79093e6022ad6e79f3599468
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fac0eb4e14eb3bb36313232a7d7fa3060c0ac171
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447028"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103608"
 ---
 # <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Comment ajouter des méthodes personnalisées pour les requêtes LINQ (C#)
 

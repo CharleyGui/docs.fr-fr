@@ -1,15 +1,16 @@
 ---
-title: Comment lire et écrire un document codé (C)
+title: Comment lire et écrire un document encodé (C#)
+description: Apprenez à créer un document XML encodé en C# en ajoutant un XDeclaration à l’arborescence XML et en définissant l’encodage sur le nom de la page de codes souhaitée.
 ms.date: 07/20/2015
 ms.assetid: 84f64e71-39a6-42c6-ad68-f052bb158a03
-ms.openlocfilehash: fa28c26845a0c6019943e0532ea0692a6dffd5a9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed02b7467f4de71455da516a6c894070337684e7
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347661"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104313"
 ---
-# <a name="how-to-read-and-write-an-encoded-document-c"></a>Comment lire et écrire un document codé (C)
+# <a name="how-to-read-and-write-an-encoded-document-c"></a>Comment lire et écrire un document encodé (C#)
 Pour créer un document XML encodé, vous devez ajouter un objet <xref:System.Xml.Linq.XDeclaration> à l'arborescence XML et définir l'encodage au nom de la page de codes souhaitée.  
   
  Toute valeur retournée par <xref:System.Text.Encoding.WebName%2A> est une valeur valide.  
@@ -18,7 +19,7 @@ Pour créer un document XML encodé, vous devez ajouter un objet <xref:System.Xm
   
  Si vous affectez un nom de page de codes valide à <xref:System.Xml.Linq.XDeclaration.Encoding%2A>, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sérialise avec l'encodage spécifié.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant crée deux documents, un avec l'encodage utf-8 et l'autre avec l'encodage utf-16. Il charge ensuite les documents et imprime l'encodage sur la console.  
   
 ```csharp  

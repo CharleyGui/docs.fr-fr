@@ -1,5 +1,6 @@
 ---
 title: Transformations de données avec LINQ (C#)
+description: Découvrez comment utiliser des requêtes LINQ en C# pour transformer des données. Vous pouvez modifier la séquence en triant et en regroupant et en créant de nouveaux types à l’aide de la clause SELECT.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], data transformations
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: d20f5d826620ad8654ddf1e9471ecc894b2c0391
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6844cf2aa589f7516a9e40bc604c5f907ec6d311
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408521"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104021"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformations de données avec LINQ (C#)
 LINQ (Language-Integrated Query) n’est pas seulement la récupération des données. C’est également un outil puissant pour la transformation de données. À l’aide d’une requête LINQ, vous pouvez utiliser une séquence source comme entrée et la modifier de nombreuses façons pour créer une séquence de sortie. Vous pouvez modifier la séquence elle-même sans modifier les éléments eux-mêmes en les triant et en les regroupant. Mais la fonctionnalité la plus puissante des requêtes LINQ est peut-être la possibilité de créer des types. Cette opération est effectuée dans la clause [select](../../../language-reference/keywords/select-clause.md). Par exemple, il est possible de réaliser les tâches suivantes :  

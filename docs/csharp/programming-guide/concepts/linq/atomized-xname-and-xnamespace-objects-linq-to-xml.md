@@ -1,13 +1,14 @@
 ---
 title: Objets XName et XNamespace atomisés (LINQ to XML) (C#)
+description: En savoir plus sur les objets XName et XNamespace atomisés et la façon dont ils offrent des avantages en matière de performances pour les requêtes.
 ms.date: 07/20/2015
 ms.assetid: a5b21433-b49d-415c-b00e-bcbfb0d267d7
-ms.openlocfilehash: bc5066440d87f5485ae9099d7a7f4f5e9e66b4ec
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 305a233adab5c860b5f9509ae25ccc5d633e7957
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70204277"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104281"
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-c"></a>Objets XName et XNamespace atomisés (LINQ to XML) (C#)
 Les objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> sont *atomisés* ; autrement dit, s’ils contiennent le même nom qualifié, ils font référence au même objet. Ceci permet d'améliorer les performances des requêtes : lorsque vous comparez deux noms atomisés pour en vérifier l'égalité, le langage intermédiaire sous-jacent doit seulement déterminer si les deux références pointent vers le même objet. Le code sous-jacent ne doit pas effectuer de comparaisons de chaînes, ce qui prendrait beaucoup de temps.  
@@ -19,7 +20,7 @@ Les objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> son
   
  <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> implémentent également les opérateurs d'égalité et d'inégalité pour déterminer si les deux objets comparés sont des références à la même instance.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Le code suivant crée certains objets <xref:System.Xml.Linq.XElement> et démontre que des noms identiques partagent la même instance.  
   
 ```csharp  

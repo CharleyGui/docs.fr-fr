@@ -1,18 +1,19 @@
 ---
 title: Recherche de texte dans des documents Word (C#)
+description: Découvrez comment traiter un document WordprocessingML avec LINQ en C#. Cet exemple recherche toutes les occurrences d’une chaîne dans le document.
 ms.date: 07/20/2015
 ms.assetid: 82f86677-560b-49dc-a089-610409939b2a
-ms.openlocfilehash: 173472b9dbd669476c3e5529655d111b88b0dba2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1efcbef6185b718287f1222ecc086f4c675f02ab
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70205396"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105393"
 ---
 # <a name="finding-text-in-word-documents-c"></a>Recherche de texte dans des documents Word (C#)
 Cette rubrique étend les requêtes précédentes afin d'effectuer une opération utile : rechercher toutes les occurrences d'une chaîne dans le document.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple traite un document WordprocessingML afin de rechercher toutes les occurrences d'un segment de texte spécifique dans le document. Pour cela, nous utilisons une requête qui recherche la chaîne « Hello ». Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, la nouvelle requête figure dans des commentaires.  
   
  Pour obtenir des instructions pour créer le document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).  

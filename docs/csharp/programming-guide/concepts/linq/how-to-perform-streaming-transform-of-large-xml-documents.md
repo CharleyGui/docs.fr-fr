@@ -1,25 +1,26 @@
 ---
-title: Comment effectuer la transformation en streaming de grands documents XML (C)
+title: Comment effectuer une transformation de diffusion en continu de documents XML volumineux (C#)
+description: Apprenez à effectuer une transformation de streaming de texte en XML en C# pour éviter une utilisation excessive de la mémoire pour certains fichiers.
 ms.date: 07/20/2015
 ms.assetid: 5f16d1f8-5370-4b55-b0c8-e497df163037
-ms.openlocfilehash: 9eb2e832f798e550ef3b534b0c9a0e3416378b43
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e1ab2866079b2244dc764271d7ba63173349e2f3
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169102"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104859"
 ---
-# <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>Comment effectuer la transformation en streaming de grands documents XML (C)
+# <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>Comment effectuer une transformation de diffusion en continu de documents XML volumineux (C#)
 Vous devez parfois transformer des fichiers XML volumineux et écrire votre application de sorte que son encombrement mémoire soit prévisible. Si vous tentez de remplir une arborescence XML avec un très grand fichier XML, l'utilisation de la mémoire sera proportionnelle à la taille du fichier (c'est-à-dire excessive). Par conséquent, vous devez utiliser une technique de diffusion en continu à la place.  
   
  Il est préférable d'appliquer des techniques de diffusion en continu dans les situations où vous devez traiter le document source une seule fois et où vous pouvez traiter les éléments dans l'ordre du document. Certains opérateurs de requête standard, tels que <xref:System.Linq.Enumerable.OrderBy%2A>, itèrent au sein de leur source, recueillent toutes les données, les trient, puis produisent le premier élément de la séquence. Notez que si vous utilisez un opérateur de requête qui matérialise sa source avant de produire le premier élément, vous ne conserverez pas un faible encombrement mémoire pour votre application.  
   
-Même si vous utilisez la technique décrite dans [Comment diffuser des fragments de XML avec accès à des informations d’en-tête (](./how-to-stream-xml-fragments-with-access-to-header-information.md)si vous essayez d’assembler un arbre XML qui contient le document transformé, l’utilisation de la mémoire sera trop grande.
+Même si vous utilisez la technique décrite dans Guide pratique [pour diffuser des fragments XML en continu avec accès aux informations d’en-tête (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md), si vous essayez d’assembler une arborescence XML qui contient le document transformé, l’utilisation de la mémoire est trop importante.
   
  Il existe deux approches principales. L'une d'elles consiste à utiliser les caractéristiques de traitement différé de <xref:System.Xml.Linq.XStreamingElement>. Une autre consiste à créer un objet <xref:System.Xml.XmlWriter> et à utiliser les fonctionnalités de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour écrire des éléments dans un objet <xref:System.Xml.XmlWriter>. Cette rubrique illustre les deux approches.  
   
-## <a name="example"></a> Exemple  
- L’exemple suivant s’appuie sur l’exemple dans [Comment diffuser des fragments de XML avec accès à des informations d’en-tête ( C.](./how-to-stream-xml-fragments-with-access-to-header-information.md)
+## <a name="example"></a>Exemple  
+ L’exemple suivant repose sur l’exemple de [diffusion en continu de fragments XML avec accès aux informations d’en-tête (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md).
   
  Il utilise les capacités d'exécution différée de <xref:System.Xml.Linq.XStreamingElement> pour diffuser la sortie en continu. Cet exemple peut transformer un document de grande taille tout en conservant un faible encombrement mémoire.  
   
@@ -188,8 +189,8 @@ static void Main(string[] args)
 </Root>  
 ```  
   
-## <a name="example"></a> Exemple  
-L’exemple suivant s’appuie également sur l’exemple dans [Comment diffuser des fragments de XML avec accès à des informations d’en-tête ( C.](./how-to-stream-xml-fragments-with-access-to-header-information.md)
+## <a name="example"></a>Exemple  
+L’exemple suivant s’appuie également sur l’exemple dans [Comment diffuser en continu des fragments XML avec accès aux informations d’en-tête (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md).
   
  Il utilise la fonctionnalité de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour écrire des éléments dans un <xref:System.Xml.XmlWriter>. Cet exemple peut transformer un document de grande taille tout en conservant un faible encombrement mémoire.  
   

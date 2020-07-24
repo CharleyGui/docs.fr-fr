@@ -1,18 +1,19 @@
 ---
-title: Comment interroger les phrases qui contiennent un ensemble de mots spécifiés (LINQ) (C)
+title: Comment interroger des phrases qui contiennent un ensemble de mots spécifié (LINQ) (C#)
+description: Découvrez comment utiliser LINQ en C# pour rechercher des phrases dans un fichier texte qui contiennent des correspondances pour chacun d’un ensemble de mots, qui peut être rempli au moment de l’exécution.
 ms.date: 07/20/2015
 ms.assetid: 0724b429-4b87-4d26-a7b1-409358f3fc20
-ms.openlocfilehash: df279f57d9965d796397cbcf7a0f3ba05bf9e5c1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c334c7948f19fb857709ff04a83e1dae56fc69da
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168854"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104528"
 ---
-# <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>Comment interroger les phrases qui contiennent un ensemble de mots spécifiés (LINQ) (C)
+# <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>Comment interroger des phrases qui contiennent un ensemble de mots spécifié (LINQ) (C#)
 Cet exemple montre comment rechercher dans un fichier texte les phrases qui contiennent des correspondances pour chaque ensemble de mots spécifié. Même si le tableau des termes de recherche est codé en dur dans cet exemple, il pourrait aussi être rempli dynamiquement lors de l’exécution. Dans cet exemple, la requête retourne les phrases qui contiennent les mots « Historically », « data » et « integrated ».  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 class FindSentences  

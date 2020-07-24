@@ -1,20 +1,21 @@
 ---
-title: Comment modifier un document Office Open XML (C)
+title: Comment modifier un document Office Open XML (C#)
+description: Découvrez comment ouvrir un document Office Open XML, le modifier et l’enregistrer. Cet exemple C# utilise des classes qui se trouvent dans l’assembly WindowsBase.
 ms.date: 07/20/2015
 ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
-ms.openlocfilehash: 620530b14513356dc9bb5d942e8db7691a03880d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1155851696a0a6ed651c5f84290a3879e73276db
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345845"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104831"
 ---
-# <a name="how-to-modify-an-office-open-xml-document-c"></a>Comment modifier un document Office Open XML (C)
+# <a name="how-to-modify-an-office-open-xml-document-c"></a>Comment modifier un document Office Open XML (C#)
 Cette rubrique présente un exemple qui ouvre un document Office Open XML, le modifie et l'enregistre.  
   
  Pour plus d’informations sur Office Open XML, consultez [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) et [www.ericwhite.com](http://ericwhite.com/).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple recherche le premier élément de paragraphe dans le document. Il récupère le texte du paragraphe, puis supprime toutes les exécutions de texte dans le paragraphe. Il crée une nouvelle exécution de texte composée du texte du premier paragraphe qui a été converti en majuscules. Il sérialise ensuite le code XML modifié dans le package Open XML et le ferme.  
   
  Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  

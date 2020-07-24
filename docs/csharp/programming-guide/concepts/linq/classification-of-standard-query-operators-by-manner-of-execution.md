@@ -1,13 +1,14 @@
 ---
 title: Classification des opérateurs de requête standard en fonction de leur mode d’exécution (C#)
+description: 'En savoir plus sur les modes d’exécution de l’opérateur de requête standard en C# pour LINQ to Objects : la diffusion en continu différée et immédiate, et la non-diffusion différée.'
 ms.date: 07/20/2015
 ms.assetid: b9435ce5-a7cf-4182-9f01-f3468a5533dc
-ms.openlocfilehash: ccf8fced5c92ceaaf84f9240e235da0e2b56ac1e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dd496e232de2c7ed10a8aaa7cec84f8136495cce
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69924291"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105498"
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-c"></a>Classification des opérateurs de requête standard en fonction de leur mode d’exécution (C#)
 Les implémentations LINQ to Objects des méthodes d’opérateur de requête standard s’exécutent de deux manières principales : immédiate ou différée. En outre, les opérateurs de requête qui utilisent l’exécution différée peuvent être divisés en deux catégories : ceux prenant en charge la diffusion en continu et ceux ne la prenant pas en charge. Le fait de connaître le mode d’exécution des différents opérateurs de requête peut vous aider à comprendre les résultats obtenus à partir d’une requête donnée. Ceci est particulièrement vrai si la source de données change ou si vous générez une requête sur une autre requête. Cette rubrique classe les opérateurs de requête standard selon leur mode d’exécution.  

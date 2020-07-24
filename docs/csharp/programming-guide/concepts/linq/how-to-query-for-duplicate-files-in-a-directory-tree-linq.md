@@ -1,18 +1,19 @@
 ---
-title: Comment interroger les fichiers en double dans un arbre d’annuaire (LINQ) (C)
+title: Comment interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (C#)
+description: Découvrez comment utiliser LINQ en C# pour rechercher des noms de fichiers en double dans des répertoires différents et comment interroger les fichiers dont la taille et les temps de dernière écriture correspondent également.
 ms.date: 07/20/2015
 ms.assetid: 1ff5562b-0d30-46d1-b426-a04e8f78c840
-ms.openlocfilehash: 0578d6c85c7d2e38c840c278c7ad2775467ac741
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 72acb0e0823138821d321ed3845ff7ac137aee0c
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168880"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104568"
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>Comment interroger les fichiers en double dans un arbre d’annuaire (LINQ) (C)
-Parfois, plusieurs dossiers peuvent contenir des fichiers ayant le même nom. Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm. Cet exemple montre comment rechercher ces noms de fichiers dupliqués sous un dossier racine spécifié. Le deuxième exemple montre comment interroger les fichiers dont la taille et les temps LastWrite correspondent également.  
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>Comment interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (C#)
+Parfois, plusieurs dossiers peuvent contenir des fichiers ayant le même nom. Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm. Cet exemple montre comment rechercher ces noms de fichiers dupliqués sous un dossier racine spécifié. Le deuxième exemple montre comment interroger les fichiers dont la taille et les durées de dernière écriture correspondent également.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 class QueryDuplicateFileNames  

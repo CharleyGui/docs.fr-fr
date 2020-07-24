@@ -1,18 +1,19 @@
 ---
-title: Comment interroger le nombre total d’octets dans un ensemble de dossiers (LINQ) (C)
+title: Comment interroger le nombre total d’octets dans un ensemble de dossiers (LINQ) (C#)
+description: Découvrez comment utiliser LINQ en C# pour rechercher le nombre total d’octets utilisés par tous les fichiers dans un dossier spécifié et ses sous-dossiers.
 ms.date: 07/20/2015
 ms.assetid: a01bd1d4-133c-4ca2-aa4e-e93e81d6076c
-ms.openlocfilehash: c6bfe6bb6d76e7ce8ea8887eef85cd64f2a025df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 964d92a55599d60388f7add937c7f7338f697817
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75344818"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104290"
 ---
-# <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-c"></a>Comment interroger le nombre total d’octets dans un ensemble de dossiers (LINQ) (C)
+# <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-c"></a>Comment interroger le nombre total d’octets dans un ensemble de dossiers (LINQ) (C#)
 Cet exemple montre comment récupérer le nombre total d’octets utilisés par tous les fichiers d’un dossier spécifié, ainsi que par tous ses sous-dossiers.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  La méthode <xref:System.Linq.Enumerable.Sum%2A> ajoute les valeurs de tous les éléments sélectionnés dans la clause `select`. Vous pouvez facilement modifier cette requête pour récupérer le fichier le plus grand ou le plus petit de l’arborescence du répertoire spécifié en appelant la méthode <xref:System.Linq.Enumerable.Min%2A> ou <xref:System.Linq.Enumerable.Max%2A> plutôt que <xref:System.Linq.Enumerable.Sum%2A>.  
   
 ```csharp  

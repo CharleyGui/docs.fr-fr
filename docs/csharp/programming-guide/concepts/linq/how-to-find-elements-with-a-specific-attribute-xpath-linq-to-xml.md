@@ -1,22 +1,23 @@
 ---
-title: Comment trouver des éléments avec un attribut spécifique (XPath-LINQ à XML) (C)
+title: Guide pratique pour rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)
+description: Cet exemple C# compare XPath à LINQ to XML pour savoir comment ils recherchent les éléments qui ont un attribut spécifique.
 ms.date: 07/20/2015
 ms.assetid: daed00dd-923a-43be-8a90-eee406f6f574
-ms.openlocfilehash: e79cad3ad6fb0bf88e388b552f8e39327acfb4ad
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eb0b5c27fb3993b487c5e8d70c6562c1d0562860
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141042"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105271"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Comment trouver des éléments avec un attribut spécifique (XPath-LINQ à XML) (C)
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)
 Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique. Vous ne vous souciez pas du contenu de l'attribut. Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.  
   
  L’expression XPath est la suivante :  
   
  `./*[@Select]`  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Le code suivant sélectionne simplement les éléments qui ont l'attribut `Select`.  
   
 ```csharp  

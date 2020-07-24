@@ -1,18 +1,19 @@
 ---
-title: Programmation fonctionnelle vs programmation impérative (C)
+title: Programmation fonctionnelle et programmation impérative (C#)
+description: Cet article compare la programmation fonctionnelle en C# et l’approche procédurale. La programmation fonctionnelle applique l’immuabilité par le biais de fonctions pures.
 ms.date: 07/20/2015
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
-ms.openlocfilehash: a163a62912ed2a44d6ea8cad5bc536f03343f15c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bc421d654e532293b522dab9d43920d0fffd7b92
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69594313"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103747"
 ---
-# <a name="functional-programming-vs-imperative-programming-c"></a>Programmation fonctionnelle vs programmation impérative (C)
+# <a name="functional-programming-vs-imperative-programming-c"></a>Programmation fonctionnelle et programmation impérative (C#)
 Cette rubrique compare et contraste la programmation fonctionnelle avec la programmation impérative (procédurale) plus traditionnelle.  
   
-## <a name="functional-programming-vs-imperative-programming"></a>Comparaison de la programmation fonctionnelle et de la programmation impérative  
+## <a name="functional-programming-vs-imperative-programming"></a>Comparaison de la programmation fonctionnelle et de la Programmation impérative  
  Le paradigme *programmation fonctionnelle* a été créé explicitement afin de prendre en charge une approche fonctionnelle pure de la résolution des problèmes. La programmation fonctionnelle est une forme de *programmation déclarative*. Par contraste, la plupart des langages courants, y compris des langages de programmation orientés objets tels que C#, Visual Basic, C++ et Java, ont été conçus principalement pour prendre en charge la programmation *impérative* (procédurale).  
   
  Avec une approche impérative, un développeur écrit du code qui décrit exactement et en détail les étapes que l'ordinateur doit effectuer pour atteindre l'objectif. On appelle parfois cela la programmation *algorithmique*. Par contraste, une approche fonctionnelle suppose la composition du problème sous la forme d'un ensemble de fonctions à exécuter. Vous définissez soigneusement l'entrée de chaque fonction et ce que chaque fonction retourne. Le tableau suivant décrit quelques-unes des différences générales entre ces deux approches.  
@@ -20,7 +21,7 @@ Cette rubrique compare et contraste la programmation fonctionnelle avec la progr
 |Caractéristique|Approche impérative|Approche fonctionnelle|  
 |--------------------|-------------------------|-------------------------|  
 |Focus du programmeur|Comment effectuer des tâches (algorithmes) et comment assurer le suivi des modifications d'état.|Les informations souhaitées et les transformations requises.|  
-|Changements d'état|Important.|Non-existantes.|  
+|Modifications d'état|Important.|Non-existantes.|  
 |Ordre d'exécution|Important.|Peu important.|  
 |Contrôle de flux principal|Boucles, conditions et appels de fonctions (méthodes).|Appels de fonctions, y compris la récursivité.|  
 |Unité de manipulation principale|Instances de structures ou classes.|Fonctions en tant que collectes de données et objets de première classe.|  

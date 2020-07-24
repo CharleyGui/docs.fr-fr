@@ -1,13 +1,14 @@
 ---
 title: Arborescences d’expressions (C#)
+description: En savoir plus sur les arborescences d’expressions. Découvrez comment compiler et exécuter du code représenté par ces structures de données, où chaque nœud est une expression.
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: c260e649e7bd285a6bd07b5a1cd7fc1a7f75b82a
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 2fa8577dd945650edebf84459de10c0c3bd04225
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241550"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105584"
 ---
 # <a name="expression-trees-c"></a>Arborescences d’expressions (C#)
 Les arborescences d'expressions représentent du code dans une structure de données arborescente, où chaque nœud est une expression, par exemple un appel de méthode ou une opération binaire comme `x < y`.  

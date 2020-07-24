@@ -1,13 +1,14 @@
 ---
 title: Variance dans les interfaces génériques (C#)
+description: Affichez les informations de prise en charge de la variance pour les interfaces génériques, y compris les informations mises à jour pour les interfaces existantes dans .NET Framework 4 et 4,5.
 ms.date: 06/06/2019
 ms.assetid: 4828a8f9-48c0-4128-9749-7fcd6bf19a06
-ms.openlocfilehash: ea5d3d35bc9ee438263707efd16829b6217a1968
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 91218742c01eeb6e65ea26d9dc41ed7c98827377
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241329"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105633"
 ---
 # <a name="variance-in-generic-interfaces-c"></a>Variance dans les interfaces génériques (C#)
 

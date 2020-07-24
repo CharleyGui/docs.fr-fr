@@ -1,18 +1,19 @@
 ---
-title: Comment interroger les fichiers avec un attribut ou un nom spécifié (C)
+title: Comment rechercher des fichiers avec un attribut ou un nom spécifié (C#)
+description: Découvrez comment utiliser LINQ en C# pour rechercher des fichiers qui ont une extension de nom de fichier spécifiée dans une arborescence de répertoires et comment retourner le fichier le plus récent ou le plus ancien.
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: fc6456f159887b7ad109e8ad48f0f79999d53e09
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9820b96e19d805b792e18ff242e64dfb6cf4a606
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168867"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104504"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Comment interroger les fichiers avec un attribut ou un nom spécifié (C)
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Comment rechercher des fichiers avec un attribut ou un nom spécifié (C#)
 Cet exemple montre comment rechercher tous les fichiers ayant une extension de nom de fichier spécifiée (par exemple « .txt ») dans une arborescence de répertoires spécifiée. Il montre également comment retourner le fichier le plus récent ou le plus ancien dans l’arborescence en fonction de l’heure de création.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 class FindFileByExtension  

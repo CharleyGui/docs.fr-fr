@@ -1,13 +1,14 @@
 ---
 title: Débogage d’arborescences d’expression dans Visual Studio (C#)
+description: En savoir plus sur la propriété DebugView dans Visual Studio. Découvrez comment utiliser cette propriété pour analyser la structure et le contenu des arborescences d’expressions.
 ms.date: 07/20/2015
 ms.assetid: 1369fa25-0fbd-4b92-98d0-8df79c49c27a
-ms.openlocfilehash: 4c522f2c24cff037ff33d400c8bdfa7500fd4c32
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 5d62a5e6fa5ce537a1ea8b316e7322eb976200c0
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614372"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105643"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-c"></a>Débogage d’arborescences d’expression dans Visual Studio (C#)
 Vous pouvez analyser la structure et le contenu d’arborescences d’expression quand vous déboguez vos applications. Pour obtenir un rapide aperçu de l’arborescence d’expression, vous pouvez utiliser la propriété `DebugView`, qui représente des arborescences d’expression [en utilisant une syntaxe spéciale](debugview-syntax.md). (Notez que `DebugView` est disponible uniquement en mode débogage.)  

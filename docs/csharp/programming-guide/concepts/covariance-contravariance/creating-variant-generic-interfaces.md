@@ -1,13 +1,14 @@
 ---
 title: Création d’interfaces génériques de type variant (C#)
+description: Découvrez comment créer des interfaces génériques de type Variant avec des paramètres de type générique covariant ou contravariant.
 ms.date: 07/20/2015
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
-ms.openlocfilehash: a8e3e010c0e5d5490aee35603cad4fd6c1dc29e0
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 38b32784b681e748cd508c3d431fd4b18ec2c81a
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990047"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105719"
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>Création d’interfaces génériques de type variant (C#)
 
@@ -146,7 +147,7 @@ interface ICovariant<out T> { }
 
 Quand vous implémentez des interfaces génériques de type variant, la variance peut parfois mener à une certaine ambiguïté. Cette ambiguïté doit être évitée.
 
-Par exemple, si vous implémentez explicitement la même interface générique de type variant avec des paramètres de type générique différents dans une classe, cela peut être source d’ambiguïté. Le compilateur ne génère pas d’erreur dans ce cas, mais il n’est pas spécifié, quelle que soit l’implémentation de l’interface, qui sera choisie au moment de l’exécution. Cette ambiguïté peut entraîner des bogues subtils dans votre code. Prenons l’exemple de code suivant.
+Par exemple, si vous implémentez explicitement la même interface générique de type variant avec des paramètres de type générique différents dans une classe, cela peut être source d’ambiguïté. Le compilateur ne génère pas d’erreur dans ce cas, mais il n’est pas spécifié, quelle que soit l’implémentation de l’interface, qui sera choisie au moment de l’exécution. Cette ambiguïté peut entraîner des bogues subtils dans votre code. Considérez l’exemple de code suivant.
 
 ```csharp
 // Simple class hierarchy.

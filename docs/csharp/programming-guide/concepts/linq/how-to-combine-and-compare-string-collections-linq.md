@@ -1,15 +1,16 @@
 ---
-title: Comment combiner et comparer les collections de cordes (LINQ) (C)
+title: Comment combiner et comparer des collections de chaînes (LINQ) (C#)
+description: Cet exemple fusionne les fichiers qui contiennent des lignes de texte. Découvrez comment effectuer une concaténation simple, une Union et une intersection sur les ensembles de lignes dans LINQ en C#.
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: f73a31e109933a4b6dd0078934d89d3bb770de5c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bfbdb9a0a3d531b56578b242c91596d9e41b6cd6
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169452"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105355"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Comment combiner et comparer les collections de cordes (LINQ) (C)
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Comment combiner et comparer des collections de chaînes (LINQ) (C#)
 Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de texte, puis comment trier les résultats. Il montre plus précisément comment effectuer une concaténation simple, une union et une intersection avec les deux ensembles de lignes de texte.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Pour configurer le projet et les fichiers texte  
@@ -44,7 +45,7 @@ Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de 
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 class MergeStrings  

@@ -1,13 +1,14 @@
 ---
 title: Opérations d’agrégation (C#)
+description: En savoir plus sur les méthodes d’exécution d’une opération d’agrégation. Une opération d’agrégation calcule une valeur unique à partir d’une collection de valeurs.
 ms.date: 07/20/2015
 ms.assetid: 6fc035e5-7639-48b8-bc7f-b093dd31b039
-ms.openlocfilehash: ea32becbb7ad0d3944eaea7b1b5448342ed438a5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3d5a52249520478571db2fcfd7aa5d10fb013565
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347548"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104300"
 ---
 # <a name="aggregation-operations-c"></a>Opérations d’agrégation (C#)
 Une opération d’agrégation calcule une valeur unique à partir d’une collection de valeurs. Par exemple, une opération d'agrégation peut être le calcul de la température quotidienne moyenne à partir des valeurs de température quotidiennes relevées sur un mois.  
@@ -34,6 +35,6 @@ Une opération d’agrégation calcule une valeur unique à partir d’une colle
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [Comment calculer les valeurs de colonne dans un fichier texte CSV (LINQ) (C)](./how-to-compute-column-values-in-a-csv-text-file-linq.md)
-- [Comment interroger le plus grand fichier ou fichiers dans un arbre d’annuaire (LINQ) (C)](./how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)
-- [Comment interroger le nombre total d’octets dans un ensemble de dossiers (LINQ) (C)](./how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)
+- [Comment calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (C#)](./how-to-compute-column-values-in-a-csv-text-file-linq.md)
+- [Comment interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)](./how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)
+- [Comment interroger le nombre total d’octets dans un ensemble de dossiers (LINQ) (C#)](./how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)

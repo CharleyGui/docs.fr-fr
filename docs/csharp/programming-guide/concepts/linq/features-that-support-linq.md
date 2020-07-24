@@ -1,15 +1,16 @@
 ---
 title: Fonctionnalités C# qui prennent en charge LINQ
+description: En savoir plus sur les fonctionnalités C# à utiliser avec les requêtes LINQ et dans d’autres contextes. Ces constructions de langage ont été introduites dans C# 3,0.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: 32ba8f5e60b3ed2efd813a8ae32e5f4009eb790d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: f72b82180d794086dcea9f11a7a057dc26ab0b26
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202408"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105418"
 ---
 # <a name="c-features-that-support-linq"></a>Fonctionnalités C# qui prennent en charge LINQ
 
@@ -66,7 +67,7 @@ La source de données peut avoir plus de propriétés sous-jacentes que la class
 var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y => new Customer { Name = y.Name, Phone = y.Phone });
 ```
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [Initialiseurs d’objets et de collections](../../classes-and-structs/object-and-collection-initializers.md)
 
@@ -92,7 +93,7 @@ Pour plus d’informations, consultez [Méthodes d’extension](../../classes-an
 
 Une expression lambda est une fonction inline qui utilise l’opérateur => pour séparer les paramètres d’entrée du corps de la fonction, et qui peut être convertie au moment de la compilation en un délégué ou une arborescence d’expressions. Dans la programmation LINQ, vous rencontrerez des expressions lambda lorsque vous effectuerez des appels de méthode directs aux opérateurs de requête standard.
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [Fonctions anonymes](../../statements-expressions-operators/anonymous-functions.md)
 

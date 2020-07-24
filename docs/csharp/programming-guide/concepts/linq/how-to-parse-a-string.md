@@ -1,21 +1,22 @@
 ---
-title: Comment analyser une chaîne (C)
+title: Comment analyser une chaîne (C#)
+description: Découvrez comment analyser une chaîne pour créer une arborescence XML en C#. Découvrez comment accéder à des données spécifiques dans votre code XML analysé.
 ms.date: 07/20/2015
 ms.assetid: 81e5686c-9658-42d8-a7e3-b11be0a2c98b
-ms.openlocfilehash: 79821eb9e5cd7187ac3c2a93f85eaae45c5c48ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a4664e090b6a44c52c519e61b66ccdc5d59a71f1
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345809"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104812"
 ---
-# <a name="how-to-parse-a-string-c"></a>Comment analyser une chaîne (C)
+# <a name="how-to-parse-a-string-c"></a>Comment analyser une chaîne (C#)
 
 Cette rubrique montre comment analyser une chaîne pour créer une arborescence XML en C#.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-Le code Cmd suivant montre comment analyser une chaîne XML :
+Le code C# suivant montre comment analyser une chaîne XML :
 
 ```csharp
 XElement contacts = XElement.Parse(
@@ -47,7 +48,7 @@ XElement contacts = XElement.Parse(
 Console.WriteLine(contacts);
 ```
 
-Le `Contacts` nœud `Contact` de racine a deux nœuds. Pour accéder à certaines données spécifiques dans votre XML analysé, utilisez la méthode [XElement.Elements()](xref:System.Xml.Linq.XContainer.Elements) qui, dans ce cas, renvoie les éléments de l’enfant du nœud de racine. `Contacts` L’exemple suivant imprime le premier `Contact` nœud à la console :
+Le `Contacts` nœud racine a deux `Contact` nœuds. Pour accéder à des données spécifiques dans votre code XML analysé, utilisez la méthode [XElement. Elements ()](xref:System.Xml.Linq.XContainer.Elements) , qui, dans ce cas, retourne les éléments enfants du `Contacts` nœud racine. L’exemple suivant imprime le premier `Contact` nœud sur la console :
 
 ```csharp
 List<XElement> contactNodes = contacts.Elements("Contact").ToList();
@@ -56,4 +57,4 @@ Console.WriteLine(contactNodes[0]);
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment trouver un élément avec un attribut spécifique (C)](how-to-find-an-element-with-a-specific-attribute.md)
+- [Comment rechercher un élément avec un attribut spécifique (C#)](how-to-find-an-element-with-a-specific-attribute.md)

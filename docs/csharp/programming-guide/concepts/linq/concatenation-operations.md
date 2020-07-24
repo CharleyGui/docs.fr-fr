@@ -1,13 +1,14 @@
 ---
 title: Opérations de concaténation (C#)
+description: En savoir plus sur la concaténation et les méthodes d’opérateur de requête standard qui effectuent la concaténation dans LINQ en C#.
 ms.date: 07/20/2015
 ms.assetid: 890ee104-c590-457e-8a7f-b2b5da0fb417
-ms.openlocfilehash: f02e323e673e46f4e7ba4a6005c86b7f9050f8ef
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aadfd2d9cf8b70130c0f67aa299e42982f144c38
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141526"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105514"
 ---
 # <a name="concatenation-operations-c"></a>Opérations de concaténation (C#)
 La concaténation fait référence à l’opération d’ajout d’une séquence à une autre.  
@@ -28,4 +29,4 @@ La concaténation fait référence à l’opération d’ajout d’une séquence
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [Comment combiner et comparer les collections de cordes (LINQ) (C)](./how-to-combine-and-compare-string-collections-linq.md)
+- [Comment combiner et comparer des collections de chaînes (LINQ) (C#)](./how-to-combine-and-compare-string-collections-linq.md)

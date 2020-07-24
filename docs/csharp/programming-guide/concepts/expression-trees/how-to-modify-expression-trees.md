@@ -1,20 +1,21 @@
 ---
-title: Comment modifier les arbres d’expression (C)
+title: Comment modifier les arborescences d’expressions (C#)
+description: Découvrez comment modifier une arborescence d’expressions en créant une copie d’une arborescence d’expressions existante et en effectuant les modifications requises.
 ms.date: 07/20/2015
 ms.assetid: 9b0cd8c2-457e-4833-9e36-31e79545f442
-ms.openlocfilehash: e921c594497d02f5eb16cc60294e947e83636d7a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 45aea18e253811d4e5c60f23f7f8496d4358f64c
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73969905"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105609"
 ---
-# <a name="how-to-modify-expression-trees-c"></a>Comment modifier les arbres d’expression (C)
+# <a name="how-to-modify-expression-trees-c"></a>Comment modifier les arborescences d’expressions (C#)
 Cette rubrique montre comment modifier une arborescence d’expressions. Les arborescences d’expressions sont immuables, ce qui signifie qu’elles ne peuvent pas être modifiées directement. Pour changer une arborescence d’expressions, vous devez créer une copie d’une arborescence d’expressions existante et, quand vous créez la copie, apporter les modifications nécessaires. Vous pouvez utiliser la classe <xref:System.Linq.Expressions.ExpressionVisitor> pour parcourir une arborescence d’expressions existante et copier chaque nœud visité.  
   
 ### <a name="to-modify-an-expression-tree"></a>Pour modifier une arborescence d’expressions  
   
-1. Créez un nouveau projet **d’application console.**  
+1. Créez un projet d' **application console** .  
   
 2. Ajoutez une directive `using` au fichier pour l’espace de noms `System.Linq.Expressions`.  
   
@@ -72,5 +73,5 @@ Cette rubrique montre comment modifier une arborescence d’expressions. Les arb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment exécuter les arbres d’expression (C)](./how-to-execute-expression-trees.md)
+- [Comment exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md)
 - [Arborescences d’expressions (C#)](./index.md)

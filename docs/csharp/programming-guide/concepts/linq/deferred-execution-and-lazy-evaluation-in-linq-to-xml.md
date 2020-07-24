@@ -1,13 +1,14 @@
 ---
 title: Exécution et évaluation différées dans LINQ to XML (C#)
+description: Les opérations de requête et d’axe peuvent utiliser l’exécution différée en C#. En savoir plus sur les exigences et les avantages liés à l’exécution différée et aux considérations d’implémentation.
 ms.date: 07/20/2015
 ms.assetid: 8683d1b4-b7ec-407b-be12-906ebe958a09
-ms.openlocfilehash: 9cf28afb5b7b8b3047c8b1b21915ffe7409eb25e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8559505572404f895d75e0d9895f9ae2c07b795e
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69594566"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105464"
 ---
 # <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-c"></a>Exécution et évaluation différées dans LINQ to XML (C#)
 Les opérations de requête et d'axe sont souvent implémentées pour utiliser l'exécution différée. Cette rubrique explique les conditions requises et les avantages de l'exécution différée et certaines considérations relatives à l'implémentation.  
@@ -38,4 +39,4 @@ Les opérations de requête et d'axe sont souvent implémentées pour utiliser l
 - [Didacticiel : chaînage de requêtes (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
 - [Concepts et terminologie (transformation fonctionnelle) (C#)](./concepts-and-terminology-functional-transformation.md)
 - [Opérations d’agrégation (C#)](./aggregation-operations.md)
-- [Rendement](../../../language-reference/keywords/yield.md)
+- [yield](../../../language-reference/keywords/yield.md)

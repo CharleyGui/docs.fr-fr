@@ -1,13 +1,14 @@
 ---
 title: Covariance et contravariance (C#)
+description: En savoir plus sur la covariance et la contravariance et sur la manière dont elles affectent la compatibilité des affectations. Consultez un exemple de code qui illustre les différences entre eux.
 ms.date: 07/20/2015
 ms.assetid: 066d9a3c-aab7-4ea6-826d-0b1a85399c74
-ms.openlocfilehash: 23633675059b9c295dda7ddf3d78754c0223f5f8
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 65c75029c27b6c9a5ddc96f01622b520e8698f55
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241368"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105695"
 ---
 # <a name="covariance-and-contravariance-c"></a>Covariance et contravariance (C#)
 En C#, la covariance et la contravariance permettent la conversion de références implicite pour les types tableau, les types délégués et les arguments de type générique. La covariance conserve la compatibilité d’assignation et la contravariance l’inverse.  
@@ -81,7 +82,7 @@ IEnumerable<Object> objects = strings;
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Variance dans les interfaces génériques (C#)](./variance-in-generic-interfaces.md)|Décrit la covariance et la contravariance dans les interfaces génériques et fournit la liste des interfaces génériques de type variant dans le .NET Framework.|  
 |[Création d’interfaces génériques de type variant (C#)](./creating-variant-generic-interfaces.md)|Montre comment créer des interfaces de type variant personnalisées.|  

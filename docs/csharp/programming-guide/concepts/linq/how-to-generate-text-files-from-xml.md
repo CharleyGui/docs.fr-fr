@@ -1,18 +1,19 @@
 ---
-title: Comment générer des fichiers texte à partir de XML (C)
+title: Comment générer des fichiers texte à partir de XML (C#)
+description: Découvrez comment générer un fichier. csv à partir d’un fichier XML en C#. Cet exemple utilise la syntaxe de méthode et l’opérateur d’agrégation.
 ms.date: 07/20/2015
 ms.assetid: 9ad283f7-7cac-42ff-bf32-92aa866e6883
-ms.openlocfilehash: 9ca76cf955e07bdcc8e095b30f6fadc74edba739
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a6e9ce803ddfac3f1609d60a4f51661232cbb2f4
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345930"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105062"
 ---
-# <a name="how-to-generate-text-files-from-xml-c"></a>Comment générer des fichiers texte à partir de XML (C)
+# <a name="how-to-generate-text-files-from-xml-c"></a>Comment générer des fichiers texte à partir de XML (C#)
 Cet exemple montre comment générer un fichier de valeurs séparées par des virgules (CSV) à partir d'un fichier XML.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  La version C# de cet exemple utilise la syntaxe de méthode et l'opérateur `Aggregate` pour générer un fichier CSV à partir d'un document XML dans une expression simple. Pour plus d’informations, consultez [Syntaxe de requête et syntaxe de méthode dans LINQ](./query-syntax-and-method-syntax-in-linq.md).  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  

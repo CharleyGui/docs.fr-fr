@@ -1,19 +1,20 @@
 ---
 title: LINQ (Language-Integrated Query) (C#)
+description: En savoir plus sur les requêtes LINQ (Language-Integrated Queries) et consulter un exemple de l’opération de requête complète.
 ms.date: 02/02/2017
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
-ms.openlocfilehash: a2e53d6c7f4d24fd57b1f91c1428b8341386b6f9
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 6c8844c387177ce858b63a52b1f5c7246b570beb
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463898"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103427"
 ---
 # <a name="language-integrated-query-linq"></a>LINQ (Language-Integrated Query)
 
 LINQ (Language-Integrated Query) est le nom d’un ensemble de technologies basé sur l’intégration de fonctions de requête directement dans le langage C#. En règle générale, les requêtes de données sont exprimées comme de simples chaînes, sans vérification de type au moment de l’exécution, ni prise en charge IntelliSense. En outre, vous devez apprendre un langage de requête différent pour chaque type de source de données : bases de données SQL, documents XML, services web, etc. Avec LINQ, une requête est une construction de langage de premier ordre, comme les classes, les méthodes et les événements. Vous pouvez écrire des requêtes pour des collections d’objets fortement typées à l’aide de mots clés de langage et d’opérateurs familiers. La famille de technologies LINQ fournit une expérience de requête cohérente pour les objets (LINQ to Objects), pour les bases de données relationnelles (LINQ to SQL) et pour le code XML (LINQ to XML).
 
-Pour un développeur qui écrit des requêtes, la partie « intégrée au langage » la plus visible de LINQ est l’expression de requête. Les expressions de requête sont écrites selon une *syntaxe de requête* déclarative. En utilisant la syntaxe de requête, vous pouvez effectuer des opérations de filtrage, de classement et de regroupement sur des sources de données avec un minimum de code. Vous utilisez les mêmes modèles d’expression de requête de base pour interroger et transformer les données dans les bases de données SQL, ADO.NET les jeux de données, les documents et flux XML, et les collections .NET.
+Pour un développeur qui écrit des requêtes, la partie « intégrée au langage » la plus visible de LINQ est l’expression de requête. Les expressions de requête sont écrites selon une *syntaxe de requête* déclarative. En utilisant la syntaxe de requête, vous pouvez effectuer des opérations de filtrage, de classement et de regroupement sur des sources de données avec un minimum de code. Vous utilisez les mêmes modèles d’expression de requête de base pour interroger et transformer des données dans des bases de données SQL, des jeux de données ADO.NET, des documents et des flux XML et des collections .NET.
 
 Vous pouvez écrire des requêtes LINQ en C# pour des bases de données SQL Server, des documents XML, des jeux de données ADO.NET et toute collection d’objets prenant en charge <xref:System.Collections.IEnumerable> ou l’interface générique <xref:System.Collections.Generic.IEnumerable%601>. La prise en charge LINQ est également fournie par des tierces parties pour de nombreux services web et autres implémentations de base de données.
 
@@ -33,7 +34,7 @@ L’illustration suivante de Visual Studio montre une requête LINQ partielleme
 - Une requête ne s’exécute pas tant que vous n’avez pas itéré la variable de requête, par exemple dans une instruction `foreach`. Pour plus d’informations, consultez [Introduction aux requêtes LINQ](introduction-to-linq-queries.md).
 - Lors de la compilation, les expressions de requête sont converties en appels de méthode d’opérateur de requête standard en fonction des règles définies dans la spécification du langage C#. Toute requête exprimable avec la syntaxe de requête peut également être exprimée avec la syntaxe de méthode. Toutefois, dans la plupart des cas, la syntaxe de requête est plus lisible et plus concise. Pour plus d’informations, consultez les pages [Spécification du langage C#](~/_csharplang/spec/expressions.md#query-expressions) et [Vue d’ensemble des opérateurs de requête standard](standard-query-operators-overview.md).
 - En règle générale, lorsque vous écrivez des requêtes LINQ, nous vous recommandons d’utiliser la syntaxe de requête dans la mesure du possible et la syntaxe de méthode si nécessaire. Il n’y a aucune différence de sémantique ou de performances entre les deux formats. Les expressions de requête sont souvent plus lisibles que les expressions équivalentes écrites avec la syntaxe de méthode.
-- Certaines opérations de requête, comme <xref:System.Linq.Enumerable.Count%2A> ou <xref:System.Linq.Enumerable.Max%2A>, n’ont pas d’expression de requête équivalente et doivent par conséquent être exprimées sous la forme d’un appel de méthode. La syntaxe de méthode peut être combinée avec la syntaxe de requête de différentes manières. Pour plus d’informations, voir [Syntaxe De requête et syntaxe méthode dans LINQ](query-syntax-and-method-syntax-in-linq.md).
+- Certaines opérations de requête, comme <xref:System.Linq.Enumerable.Count%2A> ou <xref:System.Linq.Enumerable.Max%2A>, n’ont pas d’expression de requête équivalente et doivent par conséquent être exprimées sous la forme d’un appel de méthode. La syntaxe de méthode peut être combinée avec la syntaxe de requête de différentes manières. Pour plus d’informations, consultez [syntaxe de requête et syntaxe de méthode dans LINQ](query-syntax-and-method-syntax-in-linq.md).
 - Les expressions de requête peuvent être compilées dans des arborescences d’expressions ou des délégués, selon le type auquel la requête est appliquée. Les requêtes <xref:System.Collections.Generic.IEnumerable%601> sont compilées en délégués. Les requêtes <xref:System.Linq.IQueryable> et <xref:System.Linq.IQueryable%601> sont compilées en arborescences d’expression. Pour plus d’informations, consultez la page [Arborescences d’expressions](../../../expression-trees.md).
 
 ## <a name="next-steps"></a>Étapes suivantes

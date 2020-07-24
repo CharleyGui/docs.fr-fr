@@ -1,20 +1,21 @@
 ---
-title: Comment changer l’espace de nom pour un arbre XML entier (C)
+title: Comment modifier l’espace de noms pour une arborescence XML entière (C#)
+description: Découvrez comment modifier par programmation l’espace de noms d’un élément ou d’un attribut dans LINQ to XML en C#.
 ms.date: 07/20/2015
 ms.assetid: 1584ff3b-c77d-4241-ab62-80adfb7bfc1b
-ms.openlocfilehash: 6462cbb5001682b6a464c1446f8ae6de3c5669d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0bf4c9d8f3cf569f14b654dfd0c4291a7eb647df
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141510"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105368"
 ---
-# <a name="how-to-change-the-namespace-for-an-entire-xml-tree-c"></a>Comment changer l’espace de nom pour un arbre XML entier (C)
+# <a name="how-to-change-the-namespace-for-an-entire-xml-tree-c"></a>Comment modifier l’espace de noms pour une arborescence XML entière (C#)
 Vous devez parfois modifier par programmation l’espace de noms pour un élément ou un attribut. LINQ to XML rend cette tâche très simple. La propriété <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> peut être définie. La propriété <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> ne peut pas être définie, mais vous pouvez facilement copier les attributs dans un objet <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, supprimer les attributs existants, puis ajouter de nouveaux attributs qui sont dans le nouvel espace de noms souhaité.  
   
  Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Le code suivant crée deux arborescences XML qui ne sont dans aucun espace de noms. Il modifie ensuite l'espace de noms des deux arborescences et les combine en une seule arborescence.  
   
 ```csharp  

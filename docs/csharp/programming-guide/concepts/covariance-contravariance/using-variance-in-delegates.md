@@ -1,13 +1,14 @@
 ---
 title: Utilisation de la variance dans les délégués (C#)
+description: Découvrez comment utiliser la variance dans les délégués à l’aide des exemples de code de covariance et de contravariance inclus.
 ms.date: 07/20/2015
 ms.assetid: 1638c95d-dc8b-40c1-972c-c2dcf84be55e
-ms.openlocfilehash: 83e86e760edb17f6d9ae61864c154062d41416e4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 62b0555ee29c5e7d2ba0954a8949d61596122cc7
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169764"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105681"
 ---
 # <a name="using-variance-in-delegates-c"></a>Utilisation de la variance dans les délégués (C#)
 Quand vous assignez une méthode à un délégué, la *covariance* et la *contravariance* offrent une grande flexibilité pour la mise en correspondance d’un type délégué avec une signature de méthode. La covariance permet à une méthode d’avoir un type de retour qui est plus dérivé que celui défini dans le délégué. La contravariance autorise une méthode qui a des types de paramètres moins dérivés que ceux du type délégué.  

@@ -1,19 +1,20 @@
 ---
-title: Comment générer XML à partir de fichiers CSV (C)
+title: Comment générer du code XML à partir de fichiers CSV (C#)
+description: Apprenez à utiliser LINQ et LINQ to XML en C# pour générer du code XML à partir d’un fichier. csv. La requête utilise une clause let pour fractionner des chaînes en tableaux de champs.
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
-ms.openlocfilehash: 643c05cb440165c4461c3e9c80e69701241ab8d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2fc9954a51fc1f2979c6cce13805ed15cdb88741
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635806"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105173"
 ---
-# <a name="how-to-generate-xml-from-csv-files-c"></a>Comment générer XML à partir de fichiers CSV (C)
-Cet exemple montre comment utiliser la requête intégrée [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] par la langue (LINQ) et générer un fichier XML à partir d’un fichier de valeur comma-séparé (CSV).  
+# <a name="how-to-generate-xml-from-csv-files-c"></a>Comment générer du code XML à partir de fichiers CSV (C#)
+Cet exemple montre comment utiliser LINQ (Language-Integrated Query) et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour générer un fichier XML à partir d’un fichier de valeurs séparées par des virgules (CSV).  
   
-## <a name="example"></a> Exemple  
- Le code suivant effectue une requête LINQ sur un tableau de cordes.  
+## <a name="example"></a>Exemple  
+ Le code suivant exécute une requête LINQ sur un tableau de chaînes.  
   
  La requête utilise la clause `let` pour fractionner chaque chaîne en un tableau de champs.  
   

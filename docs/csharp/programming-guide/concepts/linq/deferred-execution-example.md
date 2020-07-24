@@ -1,18 +1,19 @@
 ---
 title: Exemple d’exécution différée (C#)
+description: Découvrez comment l’exécution et l’évaluation différées affectent l’exécution de vos requêtes LINQ to XML en C#.
 ms.date: 07/20/2015
 ms.assetid: 50f4fbac-81fe-4f26-aedf-506e21419b19
-ms.openlocfilehash: 0816594ad016f19af4c97198160b4bafb9b4b8b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 65ba4cc150f2fc9d8f44aee352987ea0eeaab0a5
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70204133"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103950"
 ---
 # <a name="deferred-execution-example-c"></a>Exemple d’exécution différée (C#)
 Cette rubrique montre comment l'exécution et l'évaluation différées affectent l'exécution de vos requêtes LINQ to XML.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre l'ordre d'exécution lors de l'utilisation d'une méthode d'extension qui utilise l'exécution différée. L'exemple déclare un tableau de trois chaînes. Il itère ensuite au sein de la collection retournée par `ConvertCollectionToUpperCase`.  
   
 ```csharp  

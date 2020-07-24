@@ -1,15 +1,16 @@
 ---
-title: Comment joindre le contenu des fichiers différents (LINQ) (C)
+title: Comment joindre du contenu issu de fichiers différents (LINQ) (C#)
+description: Découvrez comment joindre des données de deux fichiers délimités par des virgules à l’aide de LINQ en C#. Les données partagent une valeur commune utilisée comme clé correspondante.
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: efe11c31873f21841c28bd393b295eea117d1e46
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 136d10ff5c0bf5f4f18998b50eb7bbee218b00a9
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169088"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104983"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Comment joindre le contenu des fichiers différents (LINQ) (C)
+# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Comment joindre du contenu issu de fichiers différents (LINQ) (C#)
 
 Cet exemple montre comment joindre des données de deux fichiers CSV qui partagent une valeur commune utilisée comme clé correspondante. Cette technique peut être utile si vous devez combiner les données de deux feuilles de calcul, ou d’une feuille de calcul et d’un fichier qui a un autre format, dans un nouveau fichier. Vous pouvez modifier l’exemple pour qu’il fonctionne avec tout type de texte structuré.  
   
@@ -49,7 +50,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
     Tucker,Michael,122  
     ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
 ```csharp
 using System;

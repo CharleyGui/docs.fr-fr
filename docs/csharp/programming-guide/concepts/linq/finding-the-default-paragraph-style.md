@@ -1,18 +1,19 @@
 ---
 title: Recherche du style de paragraphe par défaut (C#)
+description: Découvrez comment traiter un document WordprocessingML avec LINQ en C#. Cet exemple recherche le style par défaut des paragraphes dans le document.
 ms.date: 07/20/2015
 ms.assetid: be102177-8ab0-444a-b671-7023e555ffdb
-ms.openlocfilehash: 8cc1f1b9df208b0b180e5fe4a50922b5ee46b480
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e18bbbdbd5b2627c9ff4c3c3eedd84d7cb166a62
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169530"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103825"
 ---
 # <a name="finding-the-default-paragraph-style-c"></a>Recherche du style de paragraphe par défaut (C#)
 La première tâche du didacticiel Manipulation d’informations dans un document WordprocessingML consiste à rechercher le style par défaut des paragraphes dans le document.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
  L'exemple suivant ouvre un document WordprocessingML Office Open XML, recherche les parties document et style du package, puis exécute une requête qui recherche le nom du style par défaut. Pour plus d'informations sur les packages de documents Office Open XML et leurs parties constituantes, consultez [Détails des documents WordprocessingML Office Open XML (C#)](./wordprocessingml-document-with-styles.md).  

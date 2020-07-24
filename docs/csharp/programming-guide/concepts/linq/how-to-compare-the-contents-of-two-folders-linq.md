@@ -1,15 +1,16 @@
 ---
-title: Comment comparer le contenu de deux dossiers (LINQ) (C)
+title: Comment comparer le contenu de deux dossiers (LINQ) (C#)
+description: Cet exemple illustre trois façons de comparer des listes de fichiers à l’aide de requêtes LINQ en C#. Adaptez ces techniques pour comparer des séquences d’objets de n’importe quel type.
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: 44dc97d6d48bed5e8b4d0376838e4dada2e8300c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3cdac57d3d746aa2290c51d1263a7d42dc3463e0
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169400"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105335"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Comment comparer le contenu de deux dossiers (LINQ) (C)
+# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Comment comparer le contenu de deux dossiers (LINQ) (C#)
 Cet exemple montre trois façons de comparer deux listes de fichiers :  
   
 - En recherchant une valeur booléenne qui spécifie si les deux listes sont identiques  
@@ -23,7 +24,7 @@ Cet exemple montre trois façons de comparer deux listes de fichiers :
   
  La classe `FileComparer` présentée ici montre comment utiliser une classe de comparateur personnalisée avec les opérateurs de requête standard. La classe n’est pas destinée à être utilisée dans des scénarios réels. Elle utilise simplement le nom et la longueur en octets de chaque fichier pour déterminer si les dossiers ont un contenu identique. Dans un scénario réel, vous devriez modifier ce comparateur pour effectuer une vérification d’égalité plus rigoureuse.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 namespace QueryCompareTwoDirs  

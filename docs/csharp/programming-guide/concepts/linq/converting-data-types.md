@@ -1,13 +1,14 @@
 ---
 title: Conversion des types de données (C#)
+description: Les méthodes de conversion changent le type d’objets en entrée. Consultez opérations de conversion dans les requêtes LINQ en C#, telles que Enumerable. AsEnumerable et Enumerable. OfType.
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
-ms.openlocfilehash: 328c790a1a360907c91f69b3b6330b0b25eb414b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3291690f9aaee945ca7feb04ebbc676db2612894
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347201"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105491"
 ---
 # <a name="converting-data-types-c"></a>Conversion des types de données (C#)
 Les méthodes de conversion changent le type d’objets en entrée.
@@ -29,7 +30,7 @@ Les méthodes de conversion changent le type d’objets en entrée.
 |-----------------|-----------------|---------------------------------|----------------------|
 |AsEnumerable|Retourne l’entrée typée comme <xref:System.Collections.Generic.IEnumerable%601>.|Non applicable.|<xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType>|
 |AsQueryable|Convertit un <xref:System.Collections.IEnumerable> (générique) en <xref:System.Linq.IQueryable> (générique).|Non applicable.|<xref:System.Linq.Queryable.AsQueryable%2A?displayProperty=nameWithType>|
-|Cast|Effectue un cast des éléments d’une collection en un type spécifié.|Utilisez une variable de portée explicitement typée. Par exemple :<br /><br /> `from string str in words`|<xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Cast%2A?displayProperty=nameWithType>|
+|Caster|Effectue un cast des éléments d’une collection en un type spécifié.|Utilisez une variable de portée explicitement typée. Par exemple :<br /><br /> `from string str in words`|<xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Cast%2A?displayProperty=nameWithType>|
 |OfType|Filtre les valeurs en fonction de leur capacité à faire l’objet d’un cast en un type spécifié.|Non applicable.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|
 |ToArray|Convertit une collection en un tableau. Cette méthode force l’exécution de la requête.|Non applicable.|<xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>|
 |ToDictionary|Place des éléments dans un <xref:System.Collections.Generic.Dictionary%602> basé sur une fonction de sélecteur de clés. Cette méthode force l’exécution de la requête.|Non applicable.|<xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>|
@@ -38,7 +39,7 @@ Les méthodes de conversion changent le type d’objets en entrée.
 
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête
 
-L’exemple de code suivant utilise une variable de plage explicitement tapée pour jeter un type à un sous-type avant d’accéder à un membre qui n’est disponible que sur le sous-type.
+L’exemple de code suivant utilise une variable de portée explicitement typée pour effectuer un cast d’un type en un sous-type avant d’accéder à un membre qui est disponible uniquement sur le sous-type.
 
 ```csharp
 class Plant
@@ -79,6 +80,6 @@ static void Cast()
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [de la clause](../../../language-reference/keywords/from-clause.md)
+- [from, clause](../../../language-reference/keywords/from-clause.md)
 - [Expressions de requête LINQ](../../../linq/index.md)
-- [Comment interroger un ArrayList avec LINQ (C)](./how-to-query-an-arraylist-with-linq.md)
+- [Comment interroger un ArrayList avec LINQ (C#)](./how-to-query-an-arraylist-with-linq.md)

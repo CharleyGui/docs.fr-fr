@@ -1,15 +1,16 @@
 ---
-title: Comment remplir les collections d’objets à partir de sources multiples (LINQ) (C)
+title: Comment remplir des collections d’objets à partir de plusieurs sources (LINQ) (C#)
+description: Découvrez comment fusionner des données de différentes sources en une séquence de nouveaux types à l’aide de LINQ en C#. Ces exemples utilisent à la fois des types nommés et anonymes.
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-ms.openlocfilehash: 3d841e5ca25afde94674af0fedc9a824c382be5b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9dc9f98ae09e0fe3437b5d2ccab32b3dbcd93714
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345757"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104727"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Comment remplir les collections d’objets à partir de sources multiples (LINQ) (C)
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Comment remplir des collections d’objets à partir de plusieurs sources (LINQ) (C#)
 
 Cet exemple montre comment fusionner des données de différentes sources en une séquence de nouveaux types.
 
@@ -18,9 +19,9 @@ Cet exemple montre comment fusionner des données de différentes sources en une
 
 ## <a name="to-create-the-data-file"></a>Pour créer le fichier de données
 
-Copiez les fichiers names.csv et scores.csv dans votre dossier de projet, tel que décrit dans [Comment joindre le contenu à partir de fichiers différents (LINQ) (C)](./how-to-join-content-from-dissimilar-files-linq.md).
+Copiez les fichiers names.csv et scores.csv dans le dossier de votre projet, comme décrit dans Guide pratique [pour joindre du contenu provenant de fichiers différents (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre comment utiliser un type nommé `Student` pour stocker des données fusionnées de deux collections en mémoire de chaînes qui simulent des données de feuille de calcul au format .csv. La première collection de chaînes représente les noms et les ID des étudiants, et la deuxième collection représente l’ID d’étudiant (dans la première colonne) et quatre notes d’examen. L’ID est utilisé comme clé étrangère.
 

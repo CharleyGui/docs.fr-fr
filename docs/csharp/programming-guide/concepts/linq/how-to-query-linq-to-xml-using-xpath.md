@@ -1,20 +1,21 @@
 ---
-title: Comment interroger LINQ à XML à l’aide de XPath (C)
+title: Comment interroger des LINQ to XML à l’aide de XPath (C#)
+description: Vous pouvez utiliser des méthodes d’extension en C# pour interroger une arborescence XML à l’aide de XPath. En général, nous vous déconseillons d’utiliser XPath avec LINQ to XML.
 ms.date: 07/20/2015
 ms.assetid: ee5af263-4ab1-45e5-b792-33a3221b426d
-ms.openlocfilehash: 61878febd9b4880872b7bc58e4de04b37cff96f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fff45a93380b5af85aa640fc690783cc95e6298b
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75344809"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104343"
 ---
-# <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Comment interroger LINQ à XML à l’aide de XPath (C)
+# <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Comment interroger des LINQ to XML à l’aide de XPath (C#)
 Cette rubrique présente les méthodes d’extension qui vous permettent d’interroger une arborescence XML à l’aide de XPath. Pour plus d'informations sur l'utilisation de ces méthodes d'extension, consultez <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  
   
  À moins que vous n’ayez une raison spécifique pour interroger à l’aide de XPath, par exemple en cas d’utilisation intensive de code hérité, l’utilisation de XPath avec LINQ to XML n’est pas recommandée. Les requêtes XPath présentent des performances inférieures à celles des requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant crée une petite arborescence XML et utilise <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> pour sélectionner un ensemble d'éléments.  
   
 ```csharp  
