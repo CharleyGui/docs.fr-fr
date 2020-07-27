@@ -1,5 +1,6 @@
 ---
 title: Vue d'ensemble du glisser-déplacer
+description: En savoir plus sur la prise en charge du glisser-déplacer dans les applications Windows Presentation Foundation, qui permettent aux utilisateurs de faire glisser des objets vers une région de l’interface utilisateur.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-ms.openlocfilehash: dd42af77300a7a93bbcbfa4c8f1fc365fc3f5da1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 63384e79d8a198e4cc9507ca3266c484c0506e2c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185980"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168068"
 ---
 # <a name="drag-and-drop-overview"></a>Vue d'ensemble du glisser-déplacer
 Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplacer dans les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Le glisser-déplacer fait généralement référence à une méthode de transfert de données qui implique l'utilisation d'une souris (ou d'un autre dispositif de pointage) pour sélectionner un ou plusieurs objets, les faire glisser vers une cible de déplacement souhaitée dans l'[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] et les y déplacer.  
@@ -28,9 +29,9 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
   
  Le type et le nombre d'objets qui peuvent être manipulés par glisser-déplacer sont totalement aléatoires. Par exemple, les fichiers, dossiers et sélections de contenu font partie des objets les plus couramment manipulés par les opérations de glisser-déplacer.  
   
- Les actions particulières exécutées pendant une opération de glisser-déplacer varient en fonction de l'application et sont souvent déterminées par le contexte.  Par exemple, glisser une sélection de fichiers d’un dossier à un autre sur le même périphérique de stockage déplace les fichiers par défaut, tandis que le fait de glisser des fichiers d’une convention universelle de nommage (UNC) se partage vers un dossier local copie les fichiers par défaut.  
+ Les actions particulières exécutées pendant une opération de glisser-déplacer varient en fonction de l'application et sont souvent déterminées par le contexte.  Par exemple, le fait de faire glisser une sélection de fichiers d’un dossier vers un autre sur le même dispositif de stockage déplace les fichiers par défaut, alors que le fait de faire glisser des fichiers à partir d’un partage UNC (Universal Naming Convention) vers un dossier local copie les fichiers par défaut.  
   
- Les fonctionnalités de glisser-déplacer fournies par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ont été conçues pour être très souples et personnalisables et ainsi prendre en charge un large éventail de scénarios de glisser-déplacer.  Le glisser-déplacer prend en charge la manipulation d'objets au sein d'une même application ou entre différentes applications. Le fait de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] traîner entre les applications et les autres applications Windows est également entièrement pris en charge.  
+ Les fonctionnalités de glisser-déplacer fournies par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ont été conçues pour être très souples et personnalisables et ainsi prendre en charge un large éventail de scénarios de glisser-déplacer.  Le glisser-déplacer prend en charge la manipulation d'objets au sein d'une même application ou entre différentes applications. La fonction de glisser-déposer entre des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications et d’autres applications Windows est également entièrement prise en charge.  
   
  Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], tout <xref:System.Windows.UIElement> ou <xref:System.Windows.ContentElement> peut participer à l'opération de glisser-déplacer. Les événements et méthodes nécessaires aux opérations de glisser-déplacer sont définis dans la classe <xref:System.Windows.DragDrop>. Les classes <xref:System.Windows.UIElement> et <xref:System.Windows.ContentElement> contiennent des alias pour les événements attachés <xref:System.Windows.DragDrop>, si bien que les événements apparaissent dans la liste des membres de classe quand un <xref:System.Windows.UIElement> ou un <xref:System.Windows.ContentElement> est hérité en tant qu'élément de base. Les gestionnaires d'événements attachés à ces événements sont attachés à l'événement attaché <xref:System.Windows.DragDrop> sous-jacent et reçoivent la même instance de données d'événement. Pour plus d'informations, consultez l'événement <xref:System.Windows.UIElement.Drop?displayProperty=nameWithType>.  
   
@@ -218,6 +219,6 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Clipboard>
-- [Procédure pas à pas : activation de la fonction glisser-déplacer sur un contrôle utilisateur](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
-- [Sujets comment se passer](drag-and-drop-how-to-topics.md)
-- [Drag and Drop](drag-and-drop.md)
+- [Procédure pas à pas : activation de Glisser-déplacer sur un contrôle utilisateur](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
+- [Rubriques Comment](drag-and-drop-how-to-topics.md)
+- [Glisser-déposer](drag-and-drop.md)

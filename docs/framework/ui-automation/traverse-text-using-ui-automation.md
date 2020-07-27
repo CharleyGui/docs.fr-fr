@@ -1,5 +1,6 @@
 ---
 title: Accéder au texte à l'aide d'UI Automation
+description: Consultez un exemple illustrant comment parcourir le contenu textuel d’un document à l’aide de l’automatisation d’interface utilisateur de Microsoft, par incréments de TextUnit.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - text, traversing
 - traversing text
 ms.assetid: 3ddb3b7b-1d6b-4dba-8678-5a68e868aadb
-ms.openlocfilehash: 71df7c8f9dde388ffc4445389e105a4ad686539f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0b4269d043fd6cd0cc5da9825714aab4ead701f9
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441879"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168078"
 ---
 # <a name="traverse-text-using-ui-automation"></a>Accéder au texte à l'aide d'UI Automation
 > [!NOTE]
@@ -39,8 +40,8 @@ ms.locfileid: "74441879"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de TextPattern d’UI Automation](ui-automation-textpattern-overview.md)
-- [Ajouter du contenu à une zone de texte à l’aide d’UI Automation](add-content-to-a-text-box-using-ui-automation.md)
-- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](find-and-highlight-text-using-ui-automation.md)
-- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [Vue d'ensemble de TextPattern d'UI Automation](ui-automation-textpattern-overview.md)
+- [Ajouter du contenu à une zone de texte à l'aide d'UI Automation](add-content-to-a-text-box-using-ui-automation.md)
+- [Rechercher et mettre un texte en surbrillance à l'aide d'UI Automation](find-and-highlight-text-using-ui-automation.md)
+- [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)

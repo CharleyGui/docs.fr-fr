@@ -1,17 +1,18 @@
 ---
 title: Implémentation du modèle de contrôle Selection d’UI Automation
+description: Passez en revue les recommandations et les conventions pour implémenter le modèle de contrôle Selection dans UI Automation. Consultez les membres requis pour l’interface ISelectionProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Selection control pattern
 - UI Automation, Selection control pattern
 - control patterns, Selection
 ms.assetid: 449c3068-a5d6-4f66-84c6-1bcc7dd4d209
-ms.openlocfilehash: 083a4bb56fe76c1d65015ffabf741d7e1953d2ff
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d3854a401ae6179be4e4e75d86964108d83b0ccf
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180130"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163591"
 ---
 # <a name="implementing-the-ui-automation-selection-control-pattern"></a>Implémentation du modèle de contrôle Selection d’UI Automation
 > [!NOTE]
@@ -29,12 +30,12 @@ ms.locfileid: "79180130"
   
 - Les contrôles dotés d’une plage minimale, maximale et continue, tels que le contrôle de curseur **Volume** , doivent implémenter <xref:System.Windows.Automation.Provider.IRangeValueProvider> au lieu de <xref:System.Windows.Automation.Provider.ISelectionProvider>.  
   
-- Les contrôles de sélection unique <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>qui gèrent les contrôles pour enfants qui implémentent, tels que le curseur de <xref:System.Windows.Automation.Provider.ISelectionProvider>résolution **d’écran** dans la boîte de dialogue Display **Properties** ou le contrôle de sélection Color **Picker** de Microsoft Word (illustré ci-dessous), devraient être mis en œuvre ; leurs enfants devraient <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> <xref:System.Windows.Automation.Provider.ISelectionItemProvider>mettre en œuvre à la fois et .  
+- Les contrôles à sélection unique qui gèrent des contrôles enfants qui implémentent <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot> , tels que le curseur **résolution d’écran** dans la boîte de dialogue **propriétés d’affichage** ou le contrôle de sélection **Sélecteur de couleurs** de Microsoft Word (illustré ci-dessous), doivent implémenter <xref:System.Windows.Automation.Provider.ISelectionProvider> . leurs enfants doivent implémenter <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> et <xref:System.Windows.Automation.Provider.ISelectionItemProvider> .  
   
  ![Sélecteur de couleurs avec jaune en surbrillance.](./media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Exemple de mappage d’une chaîne d’échantillons de couleurs  
   
-- Les menus ne prennent pas en charge <xref:System.Windows.Automation.SelectionPattern>. Si vous travaillez avec des éléments de menu qui incluent des graphiques et du texte (tels que les <xref:System.Windows.Automation.Provider.IToggleProvider>éléments **Preview Pane** dans le menu **View** dans Microsoft Outlook) et que vous devez transmettre l’état, vous devez implémenter .  
+- Les menus ne prennent pas en charge <xref:System.Windows.Automation.SelectionPattern>. Si vous utilisez des éléments de menu qui incluent à la fois des graphiques et du texte (tels que les éléments du **volet de visualisation** dans le menu **affichage** de Microsoft Outlook) et que vous devez communiquer l’État, vous devez implémenter <xref:System.Windows.Automation.Provider.IToggleProvider> .  
   
 <a name="Required_Members_for_ISelectionProvider"></a>
 ## <a name="required-members-for-iselectionprovider"></a>Membres requis pour ISelectionProvider  
@@ -64,5 +65,5 @@ Exemple de mappage d’une chaîne d’échantillons de couleurs
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
 - [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
 - [Implémentation du modèle de contrôle SelectionItem d’UI Automation](implementing-the-ui-automation-selectionitem-control-pattern.md)
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

@@ -1,5 +1,6 @@
 ---
 title: Obtenir des modèles de contrôle UI Automation pris en charge
+description: Lisez un exemple qui montre comment récupérer des objets de modèle de contrôle pris en charge à partir d’éléments UI Automation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, getting control patterns
 - getting, control patterns
 ms.assetid: 006c54c9-50bf-48d9-a855-9d62eb95603a
-ms.openlocfilehash: b1da13cf5eb39a61f40848a5f199cfd39b16d7c7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f2905b81a1af2f86c78b082f0241e2181c384d25
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435642"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164163"
 ---
 # <a name="get-supported-ui-automation-control-patterns"></a>Obtenir des modèles de contrôle UI Automation pris en charge
 > [!NOTE]
@@ -45,4 +46,4 @@ ms.locfileid: "74435642"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)

@@ -1,17 +1,18 @@
 ---
 title: Implémentation du modèle de contrôle RangeValue d’UI Automation
+description: Passez en revue les recommandations et les conventions d’implémentation du modèle de contrôle RangeValue dans UI Automation. Consultez les membres requis pour l’interface IRangeValueProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, Range Value
 - Range Value control pattern
 - UI Automation, Range Value control pattern
 ms.assetid: 225feaa4-918e-418b-938e-7389338d0a69
-ms.openlocfilehash: 847a8aae3fd0c3d6965c910d19a4cec11cd2a3b7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccb6aeb5f8451975d7e2e9649bbb82c0c3ae23d5
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180182"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164075"
 ---
 # <a name="implementing-the-ui-automation-rangevalue-control-pattern"></a>Implémentation du modèle de contrôle RangeValue d’UI Automation
 > [!NOTE]
@@ -60,5 +61,5 @@ Exemple d’une barre de progression où la valeur est de type entier, et où le
 - [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
 - [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

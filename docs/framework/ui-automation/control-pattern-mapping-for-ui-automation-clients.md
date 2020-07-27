@@ -1,16 +1,17 @@
 ---
 title: Mappage de modèle de contrôle pour les clients UI Automation
+description: Affichez une table de mappage de modèle de contrôle pour les clients UI Automation. Les actions pour certains types de contrôle peuvent être prises en charge, prises en charge de manière conditionnelle ou non prises en charge.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, for UI Automation clients
 - UI Automation, clients, control patterns for
 ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
-ms.openlocfilehash: 689e649343c93d0670c6870098a09f61097f4fb4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7673ce4ac88cc36a7c35e2e946a31d23b2ce6eca
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180225"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164186"
 ---
 # <a name="control-pattern-mapping-for-ui-automation-clients"></a>Mappage de modèle de contrôle pour les clients UI Automation
 > [!NOTE]
@@ -32,11 +33,11 @@ ms.locfileid: "79180225"
 <a name="control_mapping_clients"></a>
 ## <a name="ui-automation-control-patterns-for-clients"></a>Modèles de contrôle UI Automation pour les clients  
   
-|Type de contrôle|Prise en charge|Prise en charge conditionnelle|Non pris en charge|  
+|Type de contrôle|Pris en charge|Prise en charge conditionnelle|Non pris en charge|  
 |------------------|---------------|-------------------------|-------------------|  
 |Bouton|None|Invoke, Toggle, Expand Collapse|None|  
 |Calendrier|Grid, Table|Selection, Scroll|Valeur|  
-|Case à cocher|Basculer|None|None|  
+|Case à cocher|Bascule|None|None|  
 |Combo Box|Développer/Réduire|Selection, Value|Scroll|  
 |Grille de données|Grille|Scroll, Selection, Table|None|  
 |DataItem|Selection Item|Expand Collapse, Grid Item, Scroll Item, Table, Toggle, Value|None|  
@@ -54,7 +55,7 @@ ms.locfileid: "79180225"
 |Élément de menu|None|Expand Collapse, Invoke, Selection Item, Toggle|None|  
 |Volet|None|Dock. Scroll, Transform|Fenêtre|  
 |ProgressBar|None|Range Value, Value|None|  
-|RadioButton|Selection Item|None|Basculer|  
+|RadioButton|Selection Item|None|Bascule|  
 |Scroll Bar|None|Range Value|Scroll|  
 |Séparateur|None|None|None|  
 |Curseur|None|Range Value, Selection, Value|None|  

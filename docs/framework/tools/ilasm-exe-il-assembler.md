@@ -1,5 +1,6 @@
 ---
 title: Ilasm.exe (Assembleur IL)
+description: Prise en main de Ilasm.exe, l’assembleur IL. Cet outil génère un fichier exécutable portable (PE) à partir du langage intermédiaire (IL).
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MSIL generators
@@ -11,16 +12,16 @@ helpviewer_keywords:
 - Ilasm.exe
 - verifying MSIL performance
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
-ms.openlocfilehash: cb995e78e534048043886070536ef0dd0a45c057
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1a85b3bf9509ffba6c2331d14196a6bef2bfa080
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73105091"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166980"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (Assembleur IL)
 
-L'Assembleur IL génère un fichier PE (Portable Executable) en langage IL (Intermediate Language). (Pour plus d’informations sur IL, voir [Processus d’exécution gérée](../../standard/managed-execution-process.md).) Vous pouvez exécuter l’exécution résultante, qui contient l’IL et les métadonnées requises, pour déterminer si l’IL fonctionne comme prévu.
+L'Assembleur IL génère un fichier PE (Portable Executable) en langage IL (Intermediate Language). (Pour plus d’informations sur IL, consultez [processus d’exécution managée](../../standard/managed-execution-process.md).) Vous pouvez exécuter le fichier exécutable obtenu, qui contient le langage IL et les métadonnées requises, pour déterminer si le langage IL fonctionne comme prévu.
 
 Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
@@ -36,71 +37,71 @@ ilasm [options] filename [[options]filename...]
 
 | Argument | Description |
 | -------- | ----------- |
-|`filename`|Nom du fichier source .il. Ce fichier est composé de directives de déclaration de métadonnées et d'instructions IL symboliques. Plusieurs arguments de fichiers sources peuvent être fournis pour produire un fichier PE unique avec *Ilasm.exe*. **Note:** Assurez-vous que la dernière ligne de code dans le fichier source .il a soit la fuite de l’espace blanc ou un caractère de fin de ligne.|
+|`filename`|Nom du fichier source .il. Ce fichier est composé de directives de déclaration de métadonnées et d'instructions IL symboliques. Plusieurs arguments de fichier source peuvent être fournis pour générer un seul fichier PE avec *Ilasm.exe*. **Remarque :** Vérifiez que la dernière ligne de code du fichier source. il contient un espace blanc de fin ou un caractère de fin de ligne.|
 
 | Option | Description |
 | ------ | ----------- |
 |**/32bitpreferred**|Crée une image 32 bits (PE32+).|
-|**/alignement:**`integer`|Assigne à FileAlignment la valeur spécifiée par `integer` dans l'en-tête Optional NT. Lorsque la directive IL .alignment est spécifiée dans le fichier, cette option se substitue à elle.|
-|**/appcontainer**|Produit un fichier *.dll* ou *.exe* qui s’exécute dans le conteneur de l’application Windows, comme sortie.|
-|**/bras**|Spécifie l'ordinateur (ARM) Advanced RISC comme processeur cible.<br /><br /> Si aucune largeur de bits d'image n'est spécifiée, la valeur par défaut est **/32bitpreferred**.|
-|**/base:**`integer`|Assigne à ImageBase la valeur spécifiée par `integer` dans l'en-tête Optional NT. Lorsque la directive IL .imagebase est spécifiée dans le fichier, cette option se substitue à elle.|
-|**/horloge**|Calcule et indique la durée des compilations suivantes, en millisecondes, pour le fichier source .il :<br /><br /> **Total Run**: Durée totale de l'exécution de toutes les opérations spécifiques qui suivent.<br /><br /> **Startup**: Chargement et ouverture du fichier.<br /><br /> **Emitting MD**: Émission de métadonnées.<br /><br /> **Ref to Def Resolution**: Résolution des références aux définitions dans le fichier.<br /><br /> **CEE File Generation**: Génération de l'image du fichier en mémoire.<br /><br /> **PE File Writing**: Écriture de l'image dans un fichier PE.|
+|**/alignment :**`integer`|Assigne à FileAlignment la valeur spécifiée par `integer` dans l'en-tête Optional NT. Lorsque la directive IL .alignment est spécifiée dans le fichier, cette option se substitue à elle.|
+|**/appcontainer**|Produit un fichier *. dll* ou *. exe* qui s’exécute dans le conteneur d’application Windows comme sortie.|
+|**/arm**|Spécifie l'ordinateur (ARM) Advanced RISC comme processeur cible.<br /><br /> Si aucune largeur de bits d'image n'est spécifiée, la valeur par défaut est **/32bitpreferred**.|
+|**/base :**`integer`|Assigne à ImageBase la valeur spécifiée par `integer` dans l'en-tête Optional NT. Lorsque la directive IL .imagebase est spécifiée dans le fichier, cette option se substitue à elle.|
+|**/clock**|Calcule et indique la durée des compilations suivantes, en millisecondes, pour le fichier source .il :<br /><br /> **Total Run**: Durée totale de l'exécution de toutes les opérations spécifiques qui suivent.<br /><br /> **Startup**: Chargement et ouverture du fichier.<br /><br /> **Emitting MD**: Émission de métadonnées.<br /><br /> **Ref to Def Resolution**: Résolution des références aux définitions dans le fichier.<br /><br /> **CEE File Generation**: Génération de l'image du fichier en mémoire.<br /><br /> **PE File Writing**: Écriture de l'image dans un fichier PE.|
 |**/debug**[:**IMPL**&#124;**OPT**]|Inclut des informations de débogage (noms des variables locales et des arguments et numéros de ligne). Crée un fichier PDB.<br /><br /> **/debug** sans valeur supplémentaire désactive l'optimisation JIT et utilise des points de séquence du fichier PDB.<br /><br /> **IMPL** désactive l'optimisation JIT et utilise des points de séquence implicites.<br /><br /> **OPT** active l'optimisation JIT et utilise des points de séquence implicites.|
-|**/dll**|Produit un fichier *.dll* comme sortie.|
-|**/enc:**`file`|Crée des deltas Modifier && Continuer à partir du fichier source spécifié.<br /><br /> Cet argument est utilisé uniquement à titre d'information et n'est pas pris en charge pour une utilisation commerciale.|
+|**/dll**|Produit un fichier *. dll* en tant que sortie.|
+|**/enc :**`file`|Crée des deltas Modifier && Continuer à partir du fichier source spécifié.<br /><br /> Cet argument est utilisé uniquement à titre d'information et n'est pas pris en charge pour une utilisation commerciale.|
 |**/exe**|Génère un fichier exécutable en tant que sortie. Il s’agit de la valeur par défaut.|
-|**/drapeaux:**`integer`|Assigne à ImageFlags la valeur spécifiée par `integer` dans l'en-tête du Common Language Runtime. Lorsque la directive IL .corflags est spécifiée dans le fichier, cette option se substitue à elle. Consultez CorHdr.h , COMIMAGE_FLAGS pour obtenir la liste des valeurs valides pour *integer*.|
-|**/pli**|Insère des corps de méthode identiques en un seul.|
+|**/Flags :**`integer`|Assigne à ImageFlags la valeur spécifiée par `integer` dans l'en-tête du Common Language Runtime. Lorsque la directive IL .corflags est spécifiée dans le fichier, cette option se substitue à elle. Consultez CorHdr.h , COMIMAGE_FLAGS pour obtenir la liste des valeurs valides pour *integer*.|
+|**/fold**|Insère des corps de méthode identiques en un seul.|
 |/**highentropyva**|Produit un fichier exécutable de sortie qui prend en charge l'Address Space Layout Randomization (ASLR) de forte entropie. (Par défaut pour **/appcontainer**)|
-|**/inclure:**`includePath`|Définit un chemin d'accès pour rechercher des fichiers fournis avec `#include`.|
+|**/include :**`includePath`|Définit un chemin d'accès pour rechercher des fichiers fournis avec `#include`.|
 |**/itanium**|Spécifie Intel Itanium comme processeur cible.<br /><br /> Si aucune largeur de bits d'image n'est spécifiée, la valeur par défaut est **/pe64**.|
-|**/clé:**`keyFile`|Compile `filename` avec une signature forte à l’aide de la clé privée figurant dans `keyFile`.|
-|**/clé:** @`keySource`|Compile `filename` avec une signature forte à l’aide de la clé privée produite dans `keySource`.|
-|**/liste**|Génère un fichier listing lors de la sortie standard. Si vous omettez cette option, aucun fichier listing n'est alors généré.<br /><br /> Ce paramètre n'est pas pris en charge dans les versions 2.0 et ultérieures du .NET Framework.|
-|**/mdv:**`versionString`|Définit la chaîne de version de métadonnées.|
-|**/msv:** `major`.`minor`|Définit la version de flux de métadonnées, dans laquelle `major` et `minor` sont des entiers.|
+|**/Key :**`keyFile`|Compile `filename` avec une signature forte à l’aide de la clé privée figurant dans `keyFile`.|
+|**/Key** @`keySource`|Compile `filename` avec une signature forte à l’aide de la clé privée produite dans `keySource`.|
+|**/Listing**|Génère un fichier listing lors de la sortie standard. Si vous omettez cette option, aucun fichier listing n'est alors généré.<br /><br /> Ce paramètre n'est pas pris en charge dans les versions 2.0 et ultérieures du .NET Framework.|
+|**/MDV :**`versionString`|Définit la chaîne de version de métadonnées.|
+|**/mSv :** `major` .`minor`|Définit la version de flux de métadonnées, dans laquelle `major` et `minor` sont des entiers.|
 |**/noautoinherit**|Désactive l'héritage par défaut de <xref:System.Object> lorsque aucune classe de base n'est spécifiée.|
 |**/nocorstub**|Supprime la génération du stub CORExeMain.|
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|
-|**/sortie:**`file.ext`|Spécifie le nom du fichier de sortie et son extension. Le nom du fichier de sortie est, par défaut, le même que le nom du premier fichier source. L’extension par défaut est *.exe*. Si vous spécifiez l’option **/dll,** l’extension par défaut est *.dll*. **Note:** Spécifiant **/sortie**:myfile.dll ne fixe pas l’option **/dll.** Si vous ne spécifiez pas **/dll**, le résultat sera un fichier exécutable nommé *myfile.dll*.|
-|**/optimiser**|Optimise les instructions allongées en instructions abrégées. Par exemple, `br` en `br.s`.|
+|**/Output :**`file.ext`|Spécifie le nom du fichier de sortie et son extension. Le nom du fichier de sortie est, par défaut, le même que le nom du premier fichier source. L’extension par défaut est *. exe*. Si vous spécifiez l’option **/dll** , l’extension par défaut est *. dll*. **Remarque :** La spécification de **/output**:myfile.dll ne définit pas l’option **/dll** . Si vous ne spécifiez pas **/dll**, le résultat sera un fichier exécutable nommé *myfile.dll*.|
+|**/Optimize**|Optimise les instructions allongées en instructions abrégées. Par exemple, `br` en `br.s`.|
 |**/pe64**|Crée une image 64 bits (PE32+).<br /><br /> Si aucun processeur cible n'est spécifié, la valeur par défaut est `/itanium`.|
-|**/pdb**|Crée un fichier PDB sans activer le suivi des informations de débogage.|
-|**/calme**|Spécifie le mode silencieux ; ne fait pas état de la progression de l'assembly.|
-|**/ressource:**`file.res`|Inclut le fichier \*de ressources spécifié en format .res dans le fichier *.exe* ou *.dll* résultant. Un seul fichier .res peut être spécifié avec l'option **/resource** .|
-|**/ssver:** `int`.`int`|Définit le numéro de version du sous-système dans l'en-tête Optional NT. Pour **/appcontainer** et **/arm** le numéro de version minimale est 6.02.|
-|**/pile:**`stackSize`|Affecte `stackSize`à la valeur SizeOfStackReserve dans l'en-tête Optional NT.|
+|**/PDB**|Crée un fichier PDB sans activer le suivi des informations de débogage.|
+|**/quiet**|Spécifie le mode silencieux ; ne fait pas état de la progression de l'assembly.|
+|**/Resource :**`file.res`|Contient le fichier de ressources spécifié au \* format. res dans le fichier *. exe* ou *. dll* qui en résulte. Un seul fichier .res peut être spécifié avec l'option **/resource** .|
+|**/ssver :** `int` .`int`|Définit le numéro de version du sous-système dans l'en-tête Optional NT. Pour **/appcontainer** et **/arm** le numéro de version minimale est 6.02.|
+|**/Stack :**`stackSize`|Affecte `stackSize`à la valeur SizeOfStackReserve dans l'en-tête Optional NT.|
 |**/stripreloc**|Spécifie qu'aucun réadressage de base n'est requis.|
-|**/sous-système:**`integer`|Assigne à subsystem la valeur spécifiée par `integer` dans l’en-tête Optional NT. Lorsque la directive IL .subsystem est spécifiée dans le fichier, cette option se substitue à elle. Consultez winnt.h, IMAGE_SUBSYSTEM pour obtenir la liste des valeurs valides pour `integer`.|
+|**/SUBSYSTEM :**`integer`|Assigne à subsystem la valeur spécifiée par `integer` dans l’en-tête Optional NT. Lorsque la directive IL .subsystem est spécifiée dans le fichier, cette option se substitue à elle. Consultez winnt.h, IMAGE_SUBSYSTEM pour obtenir la liste des valeurs valides pour `integer`.|
 |**/x64**|Spécifie un processeur AMD 64 bits comme processeur cible.<br /><br /> Si aucune largeur de bits d'image n'est spécifiée, la valeur par défaut est **/pe64**.|
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|
 
 > [!NOTE]
-> Toutes les options pour *Ilasm.exe* sont insensibles au cas et reconnues par les trois premières lettres. Par exemple, **/lis** est équivalent à **/liste** et **/res**:myresfile.res est équivalent à **/ressource**:myresfile.res. Les options qui spécifient les arguments acceptent soit un côlon (:) ou un signe égal (MD) comme séparateur entre l’option et l’argument. Par exemple, **/sortie**:*file.ext* est équivalente à **/output**=*file.ext*.
+> Toutes les options de *Ilasm.exe* ne respectent pas la casse et sont reconnues par les trois premières lettres. Par exemple, **/lis** est équivalent à **/Listing** et **/res**: myresfile. res équivaut à **/Resource**: myresfile. res. Les options qui spécifient des arguments acceptent un signe deux-points ( :) ou un signe égal (=) comme séparateur entre l’option et l’argument. Par exemple, **/Output**:*file. ext* équivaut à **/Output** = *file. ext*.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
-L'Assembleur IL permet aux fournisseurs d'outils de concevoir et d'implémenter des générateurs IL. À l’aide *d’Ilasm.exe*, les développeurs d’outils et de compilateur peuvent se concentrer sur la génération d’IL et de métadonnées sans se préoccuper d’émettre DE l’IL dans le format de fichier PE.
+L'Assembleur IL permet aux fournisseurs d'outils de concevoir et d'implémenter des générateurs IL. À l’aide de *Ilasm.exe*, les développeurs d’outils et de compilateurs peuvent se concentrer sur la génération de langage intermédiaire et de métadonnées sans se préoccuper de l’émission du langage intermédiaire dans le format de fichier PE.
 
-Semblable à d’autres compilateurs qui ciblent le temps d’exécution, tels que C et Visual Basic, *Ilasm.exe* ne produit pas de fichiers d’objets intermédiaires et ne nécessite pas d’étape de liaison pour former un fichier PE.
+Semblable à d’autres compilateurs ciblant le runtime, tels que C# et Visual Basic, *Ilasm.exe* ne génère pas de fichiers objets intermédiaires et ne requiert pas d’étape de liaison pour former un fichier PE.
 
-L'Assembleur IL peut exprimer toutes les fonctionnalités métadonnées et IL existantes des langages de programmation ayant pour cible le runtime. Cela permet de dresser un code géré écrit dans l’un de ces langages de programmation d’être correctement exprimé dans IL Assembler et compilé avec *Ilasm.exe*.
+L'Assembleur IL peut exprimer toutes les fonctionnalités métadonnées et IL existantes des langages de programmation ayant pour cible le runtime. Cela permet au code managé écrit dans l’un de ces langages de programmation d’être correctement exprimé dans l’assembleur IL et compilé avec *Ilasm.exe*.
 
 > [!NOTE]
 > La compilation peut échouer si la dernière ligne de code du fichier source .il ne comporte pas d'espace blanc de fin ou de caractère de fin de ligne.
 
-Vous pouvez utiliser *Ilasm.exe* en conjonction avec son outil compagnon, [*Ildasm.exe*](ildasm-exe-il-disassembler.md). *Ildasm.exe* prend un fichier PE qui contient du code IL et crée un fichier texte adapté comme entrée à *Ilasm.exe*. Cet outil s'avère, par exemple, utile lors de la compilation d'un code dans un langage de programmation ne prenant pas en charge tous les attributs de métadonnées du runtime. Après avoir compilé le code et l’exécution de la sortie par *Ildasm.exe*, le fichier texte IL résultant peut être modifié à la main pour ajouter les attributs manquants. Vous pouvez ensuite exécuter ce fichier texte à travers *l’Ilasm.exe* pour produire un fichier exécutable final.
+Vous pouvez utiliser *Ilasm.exe* conjointement avec son outil d’accompagnement, [*Ildasm.exe*](ildasm-exe-il-disassembler.md). *Ildasm.exe* prend un fichier PE qui contient le code il et crée un fichier texte pouvant servir d’entrée pour *Ilasm.exe*. Cet outil s'avère, par exemple, utile lors de la compilation d'un code dans un langage de programmation ne prenant pas en charge tous les attributs de métadonnées du runtime. Après la compilation du code et l’exécution de la sortie via *Ildasm.exe*, le fichier texte il obtenu peut être modifié manuellement pour ajouter les attributs manquants. Vous pouvez ensuite exécuter ce fichier texte via le *Ilasm.exe* pour générer un fichier exécutable final.
 
 Vous pouvez également utiliser cette technique pour générer un seul fichier exécutable portable à partir de plusieurs fichiers exécutables portables provenant de différents compilateurs.
 
 > [!NOTE]
 > Actuellement, vous ne pouvez pas utiliser cette technique avec des fichiers exécutables portables qui contiennent du code natif incorporé (par exemple, des fichiers exécutables portables générés par Visual C++).
 
-Pour rendre cette utilisation combinée *d’Ildasm.exe* et *Ilasm.exe* aussi précis que possible, par défaut l’assembleur ne remplace pas les codages courts pour les longs que vous pourriez avoir écrit dans vos sources IL (ou qui pourraient être émis par un autre compilateur). Utilisez l'option **/optimize** pour remplacer les encodages abrégés dans la mesure du possible.
+Pour que cette utilisation combinée de *Ildasm.exe* et *Ilasm.exe* aussi précis que possible, l’assembleur ne substitue pas par défaut les encodages courts à des encodages longs que vous avez pu écrire dans vos sources il (ou qui peuvent être émises par un autre compilateur). Utilisez l'option **/optimize** pour remplacer les encodages abrégés dans la mesure du possible.
 
 > [!NOTE]
-> *Ildasm.exe* ne fonctionne que sur des fichiers sur disque. Il ne fonctionne pas avec des fichiers installés dans le Global Assembly Cache.
+> *Ildasm.exe* ne s’applique qu’aux fichiers sur disque. Il ne fonctionne pas avec des fichiers installés dans le Global Assembly Cache.
 
 Pour plus d’informations sur la grammaire du langage IL, consultez le fichier asmparse.grammar dans le SDK Windows.
 
@@ -157,7 +158,7 @@ La commande suivante assemble le fichier IL *myTestFile.il* et génère le fichi
 ilasm myTestFile /dll /output:myNewTestFile.dll
 ```
 
-L’exemple de code suivant illustre une application extrêmement simple qui affiche « Hello World! » dans la console. Vous pouvez compiler ce code et ensuite utiliser [*l’outil Ildasm.exe*](ildasm-exe-il-disassembler.md) pour générer un fichier IL.
+L’exemple de code suivant illustre une application extrêmement simple qui affiche « Hello World! » dans la console. Vous pouvez compiler ce code, puis utiliser l’outil [*Ildasm.exe*](ildasm-exe-il-disassembler.md) pour générer un fichier il.
 
 ```csharp
 using System;
@@ -227,7 +228,7 @@ L'exemple de code IL suivant correspond à l'exemple de code C# précédent. Vou
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](index.md)
-- [*Ildasm.exe* (il Démonteur)](ildasm-exe-il-disassembler.md)
-- [Processus d'exécution managée](../../standard/managed-execution-process.md)
+- [outils](index.md)
+- [*Ildasm.exe* (Désassembleur il)](ildasm-exe-il-disassembler.md)
+- [Processus d’exécution managée](../../standard/managed-execution-process.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

@@ -1,13 +1,14 @@
 ---
 title: Vue d’ensemble des classes LINQ to XML (C#)
+description: Cet article résume les classes LINQ to XML en C# dans le System.Xml. Espace de noms LINQ, avec une brève description de chacun d’eux.
 ms.date: 07/20/2015
 ms.assetid: bf666100-5392-4968-97f4-f6b9d3287d7b
-ms.openlocfilehash: 55be666fc0db0becb12ec8b525e7fc443536e1df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 34508f86792cdc7589569b8f12584ffc4379a5fb
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591883"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165437"
 ---
 # <a name="linq-to-xml-classes-overview-c"></a>Vue d’ensemble des classes LINQ to XML (C#)
 Cette rubrique fournit une liste des classes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dans l'espace de noms <xref:System.Xml.Linq> et une brève description de chacune d'entre elles.  

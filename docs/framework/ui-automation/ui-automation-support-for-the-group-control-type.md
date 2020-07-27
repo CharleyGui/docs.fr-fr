@@ -1,17 +1,18 @@
 ---
 title: Prise en charge d'UI Automation pour le type de contrôle Group
+description: Obtenir des informations sur la prise en charge d’UI Automation pour le type de contrôle Group. Découvrez l’arborescence, les propriétés, les modèles de contrôle et les événements requis.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, Group control type
 - Group control type
 - control types, Group
 ms.assetid: 18e01bab-01f8-4567-b867-88dce9c4a435
-ms.openlocfilehash: 3044461d6d8cd157c06c48f236e1c13005774d00
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8d635e33cf192a388dea65cf614b250e93f6703f
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179744"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167914"
 ---
 # <a name="ui-automation-support-for-the-group-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle Group
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179744"
   
  Le contrôle de groupe représente un nœud dans une hiérarchie. Le contrôle de type Group crée une séparation dans l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Ainsi, les éléments qui sont regroupés ont une division logique dans l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .  
   
- Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle Group. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] exigences s’appliquent [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]à tous les contrôles de groupe, que ce soit, Win32, ou Windows Forms.  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle Group. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifications s’appliquent à tous les contrôles de groupe, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] , Win32 ou Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
@@ -29,15 +30,15 @@ ms.locfileid: "79179744"
   
 |Affichage de contrôle|Affichage de contenu|  
 |------------------|------------------|  
-|Groupe<br /><br /> - 0 ou plusieurs contrôles|Groupe<br /><br /> - 0 ou plusieurs contrôles|  
+|Groupe<br /><br /> -0 ou plusieurs contrôles|Groupe<br /><br /> -0 ou plusieurs contrôles|  
   
- Typiquement les contrôles de groupe auront le [support d’automatisation d’interface utilisateur pour le type de contrôle de ListItem,](ui-automation-support-for-the-listitem-control-type.md) [le support d’automatisation d’interface utilisateur pour le type de contrôle d’arbre,](ui-automation-support-for-the-treeitem-control-type.md)ou le support [d’automatisation d’interface utilisateur pour les types de contrôle de dataItem](ui-automation-support-for-the-dataitem-control-type.md) trouvés en dessous d’eux dans le sous-arbre. « Group » étant un conteneur générique, tous les types de contrôle peuvent se trouver sous le contrôle de groupe dans l’arborescence.  
+ En général, les contrôles de groupe disposent [de la prise en charge d’UI Automation pour le type de contrôle ListItem](ui-automation-support-for-the-listitem-control-type.md), la [prise en charge d’UI Automation pour le type de contrôle TreeItem](ui-automation-support-for-the-treeitem-control-type.md)ou la [prise en charge d’UI Automation pour les](ui-automation-support-for-the-dataitem-control-type.md) types de contrôle de type de contrôle DataItem trouvés sous-jacents dans la sous-arborescence. « Group » étant un conteneur générique, tous les types de contrôle peuvent se trouver sous le contrôle de groupe dans l’arborescence.  
   
 <a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>Propriétés UI Automation obligatoires  
  Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles de groupe. Pour plus d’informations sur les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
   
-|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
+|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Remarques|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Rectangle externe qui contient l’ensemble du contrôle.|  

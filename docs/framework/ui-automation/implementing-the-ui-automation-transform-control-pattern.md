@@ -1,17 +1,18 @@
 ---
 title: Implémentation du modèle de contrôle Transform d’UI Automation
+description: Passez en revue les recommandations et les conventions pour implémenter le modèle de contrôle Transform dans UI Automation. Connaître les membres requis pour l’interface ITransformProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, Transform
 - Transform control pattern
 - UI Automation, Transform control pattern
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
-ms.openlocfilehash: 5643bc85972ea33cc31b1a83ecf7615dbb275bc2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: da11ce4cf9da10c0ebb990f9439b0bbe3621c561
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180053"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168212"
 ---
 # <a name="implementing-the-ui-automation-transform-control-pattern"></a>Implémentation du modèle de contrôle Transform d’UI Automation
 > [!NOTE]
@@ -54,14 +55,14 @@ ms.locfileid: "79180053"
   
 |Type d’exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A><br /><br /> - Si <xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty> le est faux.|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A><br /><br /> - Si <xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty> le est faux.|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A><br /><br /> - Si <xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty> le est faux.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A><br /><br /> -Si <xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty> a la valeur false.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A><br /><br /> -Si <xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty> a la valeur false.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A><br /><br /> -Si <xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty> a la valeur false.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
 - [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

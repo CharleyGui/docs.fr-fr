@@ -1,16 +1,17 @@
 ---
 title: Déclencher des événements à partir d'un fournisseur UI Automation
+description: Consultez un exemple qui montre comment déclencher un événement à partir d’un fournisseur UI Automation. Il déclenche un événement UI Automation dans l’implémentation d’un contrôle bouton personnalisé.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, raising events
 - raising UI Automation events
 ms.assetid: 9fe2f01b-f7d8-49a8-a185-d4472b9976c0
-ms.openlocfilehash: 1a940cbb99ac068dad6c366520a544035270da3e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 75af4d05172e2417d44f76beab486de5eb3a4ba7
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446877"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168113"
 ---
 # <a name="raise-events-from-a-ui-automation-provider"></a>Déclencher des événements à partir d'un fournisseur UI Automation
 > [!NOTE]
@@ -27,4 +28,4 @@ ms.locfileid: "74446877"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
+- [Vue d'ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)

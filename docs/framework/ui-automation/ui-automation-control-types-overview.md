@@ -1,16 +1,17 @@
 ---
 title: Vue d'ensemble des types de contrôle UI Automation
+description: Lisez une vue d’ensemble des types de contrôle UI Automation, qui sont des identificateurs connus qui peuvent être utilisés pour indiquer le type de contrôle représenté par un élément.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, control types
 - control types, UI Automation
 ms.assetid: 75159ef8-bd43-4d13-acb7-1f1fe9253160
-ms.openlocfilehash: 643c89e8f6c5e34aa1fb3c5c7c6c750c72046277
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 204e950fca74c4f7bd2c13dc8a8891152954c071
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179936"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166137"
 ---
 # <a name="ui-automation-control-types-overview"></a>Vue d'ensemble des types de contrôle UI Automation
 > [!NOTE]

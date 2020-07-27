@@ -1,17 +1,18 @@
 ---
 title: Prise en charge d'UI Automation pour le type de contrôle StatusBar
+description: Obtenir des informations sur la prise en charge d’UI Automation pour le type de contrôle StatusBar. Découvrez l’arborescence, les propriétés, les modèles de contrôle et les événements requis.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - StatusBar control type
 - UI Automation, Status Bar control type
 - control types, Status Bar
 ms.assetid: 48dee94a-5119-4939-a4c7-ffeaf794c732
-ms.openlocfilehash: 0251eac3dff5f4b5a1ce0f7211c65fd0248b8891
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b199193ff4ee0fb9e22457cf19b15db189702e05
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179566"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163796"
 ---
 # <a name="ui-automation-support-for-the-statusbar-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle StatusBar
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179566"
   
  Un contrôle de barre d’état affiche des informations sur un objet affiché dans une fenêtre d’une application, le composant de l’objet ou des informations contextuelles relatives au fonctionnement de cet objet dans votre application.  
   
- Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle SatusBar. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] exigences s’appliquent à [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]tous les contrôles de barre d’état, que ce soit, Win32, ou Windows Forms.  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle SatusBar. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] exigences s’appliquent à tous les contrôles de barre d’État, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Win32 ou de Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
@@ -29,13 +30,13 @@ ms.locfileid: "79179566"
   
 |Affichage de contrôle|Affichage de contenu|  
 |------------------|------------------|  
-|StatusBar<br /><br /> - Modifier (0 ou plus)<br />- Barre de progrès (0 ou beaucoup)<br />- Image (0 ou plusieurs)<br />- Bouton (0 ou plusieurs)|StatusBar<br /><br /> - Modifier (0 ou plus)<br />- ProgressBar (0 ou plusieurs)<br />- Image (0 ou plusieurs)<br />- Bouton (0 ou plusieurs)|  
+|StatusBar<br /><br /> -Edit (0 ou plus)<br />-Barre de progression (0 ou plusieurs)<br />-Image (0 ou plusieurs)<br />-Button (0 ou plusieurs)|StatusBar<br /><br /> -Edit (0 ou plus)<br />-ProgressBar (0 ou plusieurs)<br />-Image (0 ou plusieurs)<br />-Button (0 ou plusieurs)|  
   
 <a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>Propriétés UI Automation obligatoires  
  Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement adaptée aux contrôles de barre de progression. Pour plus d’informations sur les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
   
-|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
+|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Remarques|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Le rectangle englobant d’une barre d’état doit englober tous les contrôles qu’il contient.|  

@@ -1,5 +1,6 @@
 ---
 title: Propriétés UI Automation pour les clients
+description: Lisez une vue d’ensemble des propriétés UI Automation telles qu’elles sont exposées aux applications clientes UI Automation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - properties, UI Automation clients
 - UI Automation, client properties
 ms.assetid: 255905af-0b17-485c-93d4-8a2db2a6524b
-ms.openlocfilehash: 3ef1e7c6e21f30c5bdea096003f192c38059ab2e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fe78d7da154d79a5f66ee6c190b199065675841f
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441363"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163129"
 ---
 # <a name="ui-automation-properties-for-clients"></a>Propriétés UI Automation pour les clients
 > [!NOTE]
@@ -30,12 +31,12 @@ ms.locfileid: "74441363"
  Pour améliorer les performances, vous pouvez mettre en cache les valeurs des propriétés des contrôles et des modèles de contrôle quand des objets <xref:System.Windows.Automation.AutomationElement> sont récupérés. Pour plus d’informations, consultez [mise en cache dans les clients UI Automation](caching-in-ui-automation-clients.md).  
   
 ## <a name="property-ids"></a>ID de propriété  
- Les identificateurs de propriété (ID) sont des valeurs constantes uniques qui sont encapsulées dans des objets <xref:System.Windows.Automation.AutomationProperty>. Les applications clientes UI Automation obtiennent ces ID à partir de la classe <xref:System.Windows.Automation.AutomationElement> ou de la classe de modèle de contrôle appropriée, comme <xref:System.Windows.Automation.ScrollPattern>. Les fournisseurs UI Automation les obtiennent à partir de <xref:System.Windows.Automation.AutomationElementIdentifiers> , ou de l’une des classes d’identificateurs de modèle de contrôle, par exemple <xref:System.Windows.Automation.ScrollPatternIdentifiers>.  
+ Les identificateurs de propriété (ID) sont des valeurs constantes uniques qui sont encapsulées dans des <xref:System.Windows.Automation.AutomationProperty> objets. Les applications clientes UI Automation obtiennent ces ID à partir de la <xref:System.Windows.Automation.AutomationElement> classe ou de la classe de modèle de contrôle appropriée, telle que <xref:System.Windows.Automation.ScrollPattern> . Les fournisseurs UI Automation les obtiennent à partir de <xref:System.Windows.Automation.AutomationElementIdentifiers> , ou de l’une des classes d’identificateurs de modèle de contrôle, par exemple <xref:System.Windows.Automation.ScrollPatternIdentifiers>.  
   
  Les fournisseurs utilisent l’ <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> numérique de <xref:System.Windows.Automation.AutomationProperty> pour identifier les propriétés interrogées dans la méthode <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A?displayProperty=nameWithType> . En général, les applications clientes n’ont pas besoin d’examiner l’ <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>. <xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A> n’est utilisé que pour le débogage et le diagnostic.  
   
 ## <a name="property-conditions"></a>Conditions de propriété  
- Les ID de propriété sont utilisés lors de la construction de <xref:System.Windows.Automation.PropertyCondition> objets utilisés pour rechercher des objets <xref:System.Windows.Automation.AutomationElement>. Par exemple, vous pouvez être amené à rechercher un <xref:System.Windows.Automation.AutomationElement> ayant un nom spécifique, ou tous les contrôles qui sont activés. Chaque <xref:System.Windows.Automation.PropertyCondition> spécifie un identificateur <xref:System.Windows.Automation.AutomationProperty> et la valeur à laquelle la propriété doit correspondre.  
+ Les ID de propriété sont utilisés dans la construction des <xref:System.Windows.Automation.PropertyCondition> objets utilisés pour rechercher des <xref:System.Windows.Automation.AutomationElement> objets. Par exemple, vous pouvez être amené à rechercher un <xref:System.Windows.Automation.AutomationElement> ayant un nom spécifique, ou tous les contrôles qui sont activés. Chaque <xref:System.Windows.Automation.PropertyCondition> spécifie un identificateur <xref:System.Windows.Automation.AutomationProperty> et la valeur à laquelle la propriété doit correspondre.  
   
  Pour plus d’informations, consultez les rubriques de référence suivantes :  
   
@@ -99,6 +100,6 @@ ms.locfileid: "74441363"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Caching in UI Automation Clients](caching-in-ui-automation-clients.md)
+- [Mise en cache dans les clients UI Automation](caching-in-ui-automation-clients.md)
 - [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)
-- [S’abonner à des événements UI Automation](subscribe-to-ui-automation-events.md)
+- [S'abonner à des événements UI Automation](subscribe-to-ui-automation-events.md)

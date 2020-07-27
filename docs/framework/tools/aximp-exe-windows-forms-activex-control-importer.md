@@ -1,5 +1,6 @@
 ---
 title: Aximp.exe (Windows Forms ActiveX Control Importer)
+description: Comprendre Aximp.exe, l’importateur de contrôles ActiveX Windows Forms. Cet outil convertit les définitions de type dans une bibliothèque de types COM pour ActiveX en Windows Forms.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ActiveX controls, hosting in Windows Forms
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - Aximp.exe
 - Windows Forms ActiveX Control Importer
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
-ms.openlocfilehash: 6d58d1df81780c3033eab7c1ac3e860adeb374b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d4fd6762195078963b43392178996a61f90feb94
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180428"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167347"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (Windows Forms ActiveX Control Importer)
 L'importateur de contrôles ActiveX convertit les définitions de types d'une bibliothèque de types COM associées à un contrôle ActiveX en un contrôle Windows Forms.  
@@ -32,22 +33,22 @@ L'importateur de contrôles ActiveX convertit les définitions de types d'une bi
 aximp [options]{file.dll | file.ocx}  
 ```  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
   
 |Argument|Description|  
 |--------------|-----------------|  
-|*Fichier*|Nom du fichier source contenant le contrôle ActiveX à convertir. La valeur de cet argument doit présenter l'extension .dll ou .ocx.|  
+|*file*|Nom du fichier source contenant le contrôle ActiveX à convertir. La valeur de cet argument doit présenter l'extension .dll ou .ocx.|  
   
 |Option|Description|  
 |------------|-----------------|  
 |`/delaysign`|Spécifie à Aximp.exe que le contrôle résultant doit être signé à l'aide du processus de signature différée. Vous devez spécifier cette option avec l’option `/keycontainer:`, `/keyfile:` ou `/publickey:`. Pour plus d’informations sur le processus de signature différée, consultez [Temporisation de signature d’un assembly](../../standard/assembly/delay-sign.md).|  
 |`/help`|Affiche la syntaxe et les options de commande de l'outil.|  
-|`/keycontainer:`*containerName*|Signe le contrôle obtenu avec un nom fort en utilisant la paire de clés publique/privée présente dans le conteneur de clé spécifié par *nom_conteneur*.|  
-|`/keyfile:`*nom de fichier*|Signe le contrôle résultant avec un nom fort en utilisant la paire de clés publique/privée officielle de l’éditeur présente dans *nom_fichier*.|  
+|`/keycontainer:` *containerName*|Signe le contrôle obtenu avec un nom fort en utilisant la paire de clés publique/privée présente dans le conteneur de clé spécifié par *nom_conteneur*.|  
+|`/keyfile:`*nom du fichier*|Signe le contrôle résultant avec un nom fort en utilisant la paire de clés publique/privée officielle de l’éditeur présente dans *nom_fichier*.|  
 |`/nologo`|Supprime l'affichage de la bannière de démarrage Microsoft.|  
-|`/out:`*nom de fichier*|Spécifie le nom de l'assembly à créer.|  
-|`/publickey:`*nom de fichier*|Signe le contrôle résultant avec un nom fort en utilisant la clé publique présente dans le fichier spécifié par *nom_fichier*.|  
-|`/rcw:`*nom de fichier*|Utilise le wrapper RCW spécifié plutôt que d'en générer un nouveau. Vous pouvez spécifier plusieurs instances. Le répertoire actif est utilisé pour les chemins d’accès relatifs. Pour plus d’informations, consultez [Wrapper pouvant être appelé par le runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
+|`/out:`*nom du fichier*|Spécifie le nom de l'assembly à créer.|  
+|`/publickey:`*nom du fichier*|Signe le contrôle résultant avec un nom fort en utilisant la clé publique présente dans le fichier spécifié par *nom_fichier*.|  
+|`/rcw:`*nom du fichier*|Utilise le wrapper RCW spécifié plutôt que d'en générer un nouveau. Vous pouvez spécifier plusieurs instances. Le répertoire actif est utilisé pour les chemins d’accès relatifs. Pour plus d’informations, consultez [Wrapper pouvant être appelé par le runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
 |`/silent`|Supprime l'affichage des messages indiquant la réussite des opérations.|  
 |`/source`|Génère le code source C# pour le wrapper Windows Forms.|  
 |`/verbose`|Spécifie le mode Commentaires ; affiche des informations supplémentaires sur la progression de l'opération.|  
@@ -70,7 +71,7 @@ aximp [options]{file.dll | file.ocx}
   
  L'utilisation d'Aximp.exe avec shdocvw.dll pour créer un assembly .NET en vue de son utilisation dans le développement d'une application peut également poser problème. Dans ce cas, votre application chargera la version système de shdocvw.dll ainsi que la version générée, et pourrait donner la priorité à la version système. Dans ce cas, lorsque vous essayez de charger une page web dans le contrôle webBrowser ActiveX, une boîte de dialogue Ouvrir/Enregistrer peut s’afficher. Si l’utilisateur clique sur **Ouvrir**, la page web s’ouvre dans Internet Explorer. Cela ne se produit que sur les ordinateurs exécutant Internet Explorer version 6 ou antérieure. Pour éviter ce problème, utilisez le contrôle <xref:System.Windows.Forms.WebBrowser> managé ou Visual Studio pour générer le fichier shdocvw.dll managé, comme décrit dans [Guide pratique pour ajouter des références aux bibliothèques de types](../interop/how-to-add-references-to-type-libraries.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  La commande suivante génère MediaPlayer.dll et AxMediaPlayer.dll pour le contrôle Media Player `msdxm.ocx`.  
   
 ```console
@@ -79,5 +80,5 @@ aximp c:\systemroot\system32\msdxm.ocx
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](index.md)
-- [Ildasm.exe (désassembleur IL)](ildasm-exe-il-disassembler.md)
+- [outils](index.md)
+- [Ildasm.exe (Désassembleur IL)](ildasm-exe-il-disassembler.md)

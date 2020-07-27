@@ -1,5 +1,6 @@
 ---
 title: Styles et modèles ComboBox
+description: En savoir plus sur les styles et les modèles pour le contrôle de zone de liste déroulante Windows Presentation Foundation. Modifiez le ControlTemplate pour attribuer une apparence unique au contrôle.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ComboBox [WPF], styles and templates
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - templates [WPF], ComboBox
 - parts [WPF], ComboBox
 ms.assetid: b0662fa1-16d7-4320-b26b-c1804e565a44
-ms.openlocfilehash: af7f8a544af5e9892a8f3f059048bbfd113d2491
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 5e929bafeaf849b4b5682a17ca51cb0aab963613
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865357"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165909"
 ---
 # <a name="combobox-styles-and-templates"></a>Styles et modèles ComboBox
 Cette rubrique décrit les styles et les modèles pour le <xref:System.Windows.Controls.ComboBox> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour que le contrôle donne une apparence unique. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
@@ -59,7 +60,7 @@ Cette rubrique décrit les styles et les modèles pour le <xref:System.Windows.C
 |MouseOver|CommonStates|Le pointeur de la souris se trouve sur le <xref:System.Windows.Controls.ComboBoxItem> contrôle.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
-|Sélectionné|SelectionStates|L’élément est actuellement sélectionné.|  
+|Volumes sélectionnés|SelectionStates|L’élément est actuellement sélectionné.|  
 |Non sélectionné|SelectionStates|L’élément n’est pas sélectionné.|  
 |SelectedUnfocused|SelectionStates|L’élément est sélectionné mais n’a pas le focus.|  
 |Valide|ValidationStates|Le contrôle utilise la <xref:System.Windows.Controls.Validation> classe et la <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false` .|  

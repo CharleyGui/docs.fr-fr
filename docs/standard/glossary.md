@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 11ab0de4757a23c940ae04418a5a82ea79f71761
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 529b1d9142ddf7982a6712c355c10666f0414d73
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287452"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163119"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -140,8 +140,6 @@ Les mots bibliothèque et [framework](#framework) sont souvent utilisés indiff�
 
 Package NuGet ne disposant pas de sa propre bibliothèque, mais qui est simplement une liste de dépendances. Les packages inclus peuvent éventuellement établir l’API pour un framework cible.
 
-Voir [packages, offres et infrastructures](../core/packages.md)
-
 ## <a name="mono"></a>Mono
 
 Mono est une implémentation de .NET open source [multiplateforme](#cross-platform) qui est principalement utilisée quand un runtime réduit est requis. C’est le runtime qui alimente les applications Xamarin sur Android, Mac, iOS, tvOS et Watchos, et se concentre principalement sur les applications qui requièrent un faible encombrement.
@@ -231,7 +229,7 @@ Environnement d’exécution d’un programme managé.
 
 Le système d’exploitation fait partie de l’environnement d’exécution, mais pas du runtime .NET. Voici quelques exemples de runtimes .NET :
 
-- CLR (Common Language Runtime)
+- Common Language Runtime (CLR)
 - Core Common Language Runtime (CoreCLR)
 - .NET Native (pour la plateforme Windows universelle)
 - Runtime Mono

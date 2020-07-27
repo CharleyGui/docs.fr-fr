@@ -1,5 +1,6 @@
 ---
 title: Packager et déployer des ressources dans des applications .NET
+description: Empaquetez et déployez des ressources dans des applications .NET à l’aide d’un assembly principal (hub) et d’assemblys satellites (spokes). Un spoke contient des ressources localisées, mais pas de code.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -26,12 +27,12 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-ms.openlocfilehash: d64e3b5201e34541fdafa5724b0c7e8c3f6c0c0d
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 7b06ca4444b75f0a7002323b32732dd4f855f692
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243048"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166180"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Packager et déployer des ressources dans des applications .NET
 
@@ -53,7 +54,7 @@ Ce modèle présente plusieurs avantages :
 Quand vous empaquetez les ressources de votre application, vous devez les nommer en utilisant les conventions d’affectation de noms pour les ressources que le Common Language Runtime attend. Le runtime identifie une ressource par son nom de culture. Chaque culture a un nom unique, qui est en général une combinaison d’un nom de culture à deux lettres en minuscules associé à une langue et, si nécessaire, un nom de sous-culture à deux lettres en majuscules associé à un pays ou une région. Le nom de la sous-culture suit le nom de la culture, séparés par un tiret (-). Les exemples incluent ja-JP pour le japonais tel qu’il est parlé au Japon, en-US pour l’anglais tel qu’il est parlé aux États-Unis, de-DE pour l’allemand tel qu’il est parlé en Allemagne ou de-AT pour l’allemand tel qu’il est parlé en Autriche. Consultez la colonne **Balise de langue** dans la [liste des noms de langue/région pris en charge par Windows](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Les noms de culture respectent la norme définie par [BCP 47](https://tools.ietf.org/html/bcp47).
 
 > [!NOTE]
-> Il existe des exceptions pour les noms de culture à deux lettres, par `zh-Hans` exemple pour le chinois (simplifié).
+> Il existe des exceptions pour les noms de culture à deux lettres, par exemple `zh-Hans` pour le chinois (simplifié).
 
 > [!NOTE]
 > Pour plus d’informations sur la création de fichiers de ressources, consultez [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md) et [Création d’assemblys satellites](creating-satellite-assemblies-for-desktop-apps.md).
@@ -71,7 +72,7 @@ Pour améliorer les performances de recherche, appliquez l’attribut <xref:Syst
 Le processus de secours pour les ressources .NET Framework comprend les étapes suivantes :
 
 > [!TIP]
-> Vous pourrez peut-être utiliser l' [ \<](../configure-apps/file-schema/runtime/relativebindforresources-element.md) élément de configuration relativeBindForResources>pour optimiser le processus de secours pour les ressources et le processus par lequel le runtime détecte les assemblys de ressource. Pour plus d’informations, consultez la section [Optimisation du processus de secours pour les ressources](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing).
+> Vous pourrez peut-être utiliser l' [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) élément de configuration pour optimiser le processus de secours pour les ressources et le processus par lequel le runtime détecte les assemblys de ressource. Pour plus d’informations, consultez la section [Optimisation du processus de secours pour les ressources](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing).
 
 1. Le runtime recherche d’abord dans le [Global Assembly Cache](../app-domains/gac.md) un assembly qui correspond à la culture demandée pour votre application.
 
@@ -116,7 +117,7 @@ Dans les conditions suivantes, vous pouvez optimiser le processus par lequel le 
 
 - Le code d’application ne gère pas l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>.
 
-Vous optimisez la sonde pour les assemblys satellites en incluant l' `enabled` `true` [ \<élément relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) et en affectant à son attribut la valeur dans le fichier de configuration de l’application, comme indiqué dans l’exemple suivant.
+Vous optimisez la sonde pour les assemblys satellites en incluant l' [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) élément et en affectant à son attribut la valeur `enabled` `true` dans le fichier de configuration de l’application, comme indiqué dans l’exemple suivant.
 
 ```xml
 <configuration>
@@ -126,7 +127,7 @@ Vous optimisez la sonde pour les assemblys satellites en incluant l' `enabled` `
 </configuration>
 ```
 
-La recherche optimisée des assemblys satellites est une fonctionnalité d’abonnement. Autrement dit, le runtime suit la procédure décrite dans [Processus de secours pour les ressources](packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1), sauf si l’élément [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) est présent dans le fichier de configuration de l’application et que son attribut `enabled` a la valeur `true`. Dans ce cas, le processus de recherche d’un assembly satellite est modifié comme suit :
+La recherche optimisée des assemblys satellites est une fonctionnalité d’abonnement. Autrement dit, le runtime suit les étapes documentées dans [le processus de secours](packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1) pour les ressources, sauf si l' [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) élément est présent dans le fichier de configuration de l’application et que son `enabled` attribut a la valeur `true` . Dans ce cas, le processus de recherche d’un assembly satellite est modifié comme suit :
 
 - Le runtime utilise l’emplacement de l’assembly de code parent pour rechercher l’assembly satellite. Si l’assembly parent est installé dans le Global Assembly Cache, le runtime effectue la recherche dans le cache, mais pas dans le répertoire de l’application. Si l’assembly parent est installé dans un répertoire de l’application, le runtime effectue la recherche dans le répertoire de l’application, mais pas dans le Global Assembly Cache.
 
@@ -232,6 +233,6 @@ Des contraintes de temps ou de budget peuvent vous empêcher de créer un ensemb
 ## <a name="see-also"></a>Voir aussi
 
 - [Ressources dans les applications de bureau](index.md)
-- [Global assembly cache](../app-domains/gac.md)
+- [Global Assembly Cache](../app-domains/gac.md)
 - [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md)
 - [Création d’assemblys satellites](creating-satellite-assemblies-for-desktop-apps.md)

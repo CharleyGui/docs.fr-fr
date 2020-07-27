@@ -2,12 +2,12 @@
 title: Conception de validations dans la couche de modèle de domaine
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés des validations de modèle de domaine.
 ms.date: 10/08/2018
-ms.openlocfilehash: 94df2d6441581fbbae479da2524d6ffce2037d68
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: f1e2d7430c642ad47f79cdd34d3a65e2cc70e239
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100910"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164274"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Concevoir des validations dans la couche du modèle de domaine
 
@@ -15,9 +15,9 @@ Dans la conception DDD, les règles de validation peuvent être considérées co
 
 Les entités de domaine doivent toujours être des entités valides. Pour un objet, il existe un certain nombre d’invariants qui doivent toujours avoir la valeur true. Par exemple, un objet d’élément de commande doit toujours avoir une quantité qui doit être un entier positif, ainsi qu’un nom d’article et un prix. Par conséquent, il incombe aux entités de domaine (en particulier celles de la racine d’agrégat) de mettre en application les invariants, et un objet d’entité ne doit pas pouvoir exister s’il n’est pas valide. Les règles invariantes sont simplement exprimées sous la forme de contrats. Quand elles sont enfreintes, des exceptions ou des notifications sont déclenchées.
 
-Le raisonnement derrière cette règle est que de nombreux bogues se produisent car les objets sont dans un état dans lequel ils n’auraient jamais dû se trouver. Ce qui suit en est une bonne explication de Greg Young dans une [discussion en ligne](https://jeffreypalermo.com/2009/05/the-fallacy-of-the-always-valid-entity/) :
+Le raisonnement derrière cette règle est que de nombreux bogues se produisent car les objets sont dans un état dans lequel ils n’auraient jamais dû se trouver. Cette [discussion en ligne](http://codebetter.com/gregyoung/2009/05/22/always-valid/) est une bonne explication de Greg Young.
 
-Supposons que nous disposons désormais d’un service SendUserCreationEmailService qui prend un UserProfile... Comment pouvons-nous justifier, dans ce service, que le nom ne soit pas null ? Le vérifions-nous à nouveau ? Ou plus probablement... vous ne vous souciez simplement pas de la vérification et « espérez que tout se passera au mieux » : vous espérez que quelqu’un a pris la peine de le valider avant de vous l’envoyer. Bien entendu, en utilisant TDD, l’un des premiers tests que nous devons écrire est que si j’envoie un client avec un nom null, une erreur doit être déclenchée. Mais une fois que nous commençons à écrire ce genre de tests encore et encore, nous réalisons ceci : « Si nous n’avions pas autorisé qu’un nom devienne null, nous n’aurions pas tous ces tests ».
+Supposons que nous disposons désormais d’un service SendUserCreationEmailService qui prend un UserProfile... Comment pouvons-nous justifier, dans ce service, que le nom ne soit pas null ? Le vérifions-nous à nouveau ? Ou plus probablement... vous ne vous souciez simplement pas de la vérification et « espérez que tout se passera au mieux » : vous espérez que quelqu’un a pris la peine de le valider avant de vous l’envoyer. Bien entendu, en utilisant TDD, l’un des premiers tests que nous devons écrire est que si j’envoie un client avec un nom null, une erreur doit être déclenchée. Mais une fois que nous commençons à écrire ces genres de tests, nous savons... « Patientez si nous n’avons jamais autorisé le nom à devenir null, nous n’aurions pas tous ces tests ».
 
 ## <a name="implement-validations-in-the-domain-model-layer"></a>Implémenter des validations dans la couche du modèle de domaine
 

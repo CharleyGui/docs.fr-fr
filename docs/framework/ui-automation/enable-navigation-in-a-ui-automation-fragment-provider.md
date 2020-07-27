@@ -1,5 +1,6 @@
 ---
 title: Activer la navigation dans un fournisseur de fragment UI Automation
+description: Lisez un exemple qui montre comment activer la navigation dans un fournisseur UI Automation pour un élément situé dans un fragment.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, enabling navigation in provider
 - navigation, enabling in UI Automation provider
 ms.assetid: 3cb6092a-58c9-4ca0-84a5-0e54d5d00a0d
-ms.openlocfilehash: 264a24646f7a3c3b5b20e94fa0ed98a1341f8273
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bf9e43e9d70b9191fba93e5efa4eae544196c735
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435762"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168487"
 ---
 # <a name="enable-navigation-in-a-ui-automation-fragment-provider"></a>Activer la navigation dans un fournisseur de fragment UI Automation
 > [!NOTE]
@@ -29,5 +30,5 @@ ms.locfileid: "74435762"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
+- [Vue d'ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
 - [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)

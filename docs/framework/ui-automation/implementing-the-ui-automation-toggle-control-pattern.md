@@ -1,17 +1,18 @@
 ---
 title: Implémentation du modèle de contrôle Toggle d’UI Automation
+description: Passez en revue les recommandations et les conventions pour implémenter le modèle de contrôle Toggle dans UI Automation. Connaître les membres requis pour l’interface IToggleProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Toggle control pattern
 - control patterns, Toggle
 - UI Automation, Toggle control pattern
 ms.assetid: 3cfe875f-b0c0-413d-9703-5f14e6a1a30e
-ms.openlocfilehash: 5f64842d31d46af3d648b9b570d1cfb210e2910a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f9ae850a560101582b5f1a461de19f260ef59798
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180064"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168026"
 ---
 # <a name="implementing-the-ui-automation-toggle-control-pattern"></a>Implémentation du modèle de contrôle Toggle d’UI Automation
 > [!NOTE]
@@ -54,5 +55,5 @@ ms.locfileid: "79180064"
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
 - [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
 - [Obtenir l'état bascule d'une case à cocher à l'aide d'UI Automation](get-the-toggle-state-of-a-check-box-using-ui-automation.md)
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

@@ -1,5 +1,6 @@
 ---
 title: Cert2spc.exe (outil de test de certificat d'éditeur de logiciels)
+description: Utilisez Cert2spc.exe, l’outil de test de certificat de l’éditeur de logiciels. Cet outil crée un certificat SPC (Software Publisher) à partir d’un ou de plusieurs certificats X. 509.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - SPC
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - Cert2spc.exe
 - certificates, Software Publisher's Certificate
 ms.assetid: be434d7d-9c0d-46e7-8392-58a9b542d11d
-ms.openlocfilehash: 809b7d0383f172a5fbcb2ac4ac3ffb96ff0b8e20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2eb6339aa6f5d23a5b87986410cbeaac2dac2bec
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73129888"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167312"
 ---
 # <a name="cert2spcexe-software-publisher-certificate-test-tool"></a>Cert2spc.exe (outil de test de certificat d'éditeur de logiciels)
 L'outil Software Publisher Certificate Test (Test de certificat d'édition de logiciel) crée un certificat d'édition de logiciel SPC (Software Publisher's Certificate) à partir d'un ou plusieurs certificats X.509. Cert2spc.exe doit être utilisé à des fins de test uniquement. Vous pouvez vous procurer un certificat SPC valide auprès d'une autorité de certification comme VeriSign ou Thawte. Pour plus d’informations sur la création de certificats X.509, consultez [Makecert.exe (outil de création de certificat)](/windows/desktop/SecCrypto/makecert).  
@@ -55,6 +56,6 @@ cert2spc oneCertificate.cer twoCertificate.cer mySPCFile.spc
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](index.md)
+- [outils](index.md)
 - [Makecert.exe (outil de la création du certificat)](/windows/desktop/SecCrypto/makecert)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

@@ -1,17 +1,18 @@
 ---
 title: Implémentation du modèle de contrôle Grid d’UI Automation
+description: Comprendre les recommandations et les conventions pour implémenter le modèle de contrôle Grid GridPattern dans UI Automation. Apprenez à implémenter l’interface IGridProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, grid
 - grid control pattern
 - UI Automation, grid control pattern
 ms.assetid: 234d11a0-7ce7-4309-8989-2f4720e02f78
-ms.openlocfilehash: 04f3ee1e01054df6a13ab2391e14a6a7f7274bb9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c7aae8e8070c989c4b36e0581aa5f48f51416f97
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180216"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165872"
 ---
 # <a name="implementing-the-ui-automation-grid-control-pattern"></a>Implémentation du modèle de contrôle Grid d’UI Automation
 > [!NOTE]
@@ -60,8 +61,8 @@ Exemple de contrôle Grid avec des coordonnées vides
   
 |Type d'exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> - Si la coordonnées de <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A> la ligne demandée est <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>plus grande que la coordonnées ou la colonne est plus grande que la .|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> - Si l’une ou l’autre des coordonnées de la ligne ou de la colonne demandée est inférieure à zéro.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -Si la coordonnée de la ligne demandée est supérieure à ou si la <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A> coordonnée de la colonne est supérieure à <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A> .|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -Si l’une des coordonnées de la ligne ou de la colonne demandée est inférieure à zéro.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -69,5 +70,5 @@ Exemple de contrôle Grid avec des coordonnées vides
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
 - [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
 - [Implémentation du modèle de contrôle GridItem d’UI Automation](implementing-the-ui-automation-griditem-control-pattern.md)
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

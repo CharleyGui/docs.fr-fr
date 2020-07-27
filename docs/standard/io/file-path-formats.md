@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 2d3ede97b372dd8922a10a377f69155a12f88bda
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5eb9d5127dffd2e80349352ad7a4b57f8848d56b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447132"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165797"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -124,7 +124,7 @@ Presque tous les chemins passés aux API Windows sont normalisés. Durant la nor
 
 Cette normalisation se produit implicitement, mais vous pouvez l’effectuer explicitement en appelant la méthode <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType>, qui inclut dans un wrapper un appel à la [fonction GetFullPathName()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). Vous pouvez également appeler directement la [fonction GetFullPathName()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) Windows à l’aide de P/Invoke.
 
-### <a name="identifying-the-path"></a>Identification du chemin
+### <a name="identify-the-path"></a>Identifier le chemin
 
 La première étape de normalisation d’un chemin consiste à identifier le type du chemin. Les chemins appartiennent à l’une des catégories suivantes :
 
@@ -138,13 +138,13 @@ La première étape de normalisation d’un chemin consiste à identifier le typ
 
 Le type du chemin détermine si un répertoire actif est appliqué ou non d’une certaine façon. Il détermine également la « racine » du chemin.
 
-### <a name="handling-legacy-devices"></a>Gestion des périphériques hérités
+### <a name="handle-legacy-devices"></a>Gérer les appareils hérités
 
 Si le chemin est un périphérique DOS hérité comme `CON`, `COM1` ou `LPT1`, il est converti en chemin de périphérique (préfixe `\\.\` ajouté) et retourné.
 
 Un chemin qui commence par un nom de périphérique hérité est toujours interprété comme périphérique hérité par la méthode <xref:System.IO.Path.GetFullPath(System.String)?displayProperty=nameWithType>. Par exemple, le chemin de périphérique DOS pour `CON.TXT` est `\\.\CON`, et celui pour `COM1.TXT\file1.txt` est `\\.\COM1`.
 
-### <a name="applying-the-current-directory"></a>Application du répertoire actif
+### <a name="apply-the-current-directory"></a>Appliquer le répertoire actif
 
 Si un chemin n’est pas complet, Windows applique à celui-ci le répertoire actif. Le répertoire actif n’est pas appliqué aux chemins UNC et de périphérique. Il n’est pas non plus appliqué à un lecteur complet avec le séparateur C:\\.
 
@@ -157,11 +157,11 @@ Si le chemin commence par un élément autre qu’un séparateur, le lecteur et 
 > [!IMPORTANT]
 > Les chemins relatifs sont dangereux dans les applications multithreads (c’est-à-dire dans la plupart des applications), car le répertoire actif est un paramètre par processus. N’importe quel thread peut changer le répertoire actif à tout moment. À compter de .NET Core 2.1, vous pouvez appeler la méthode <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> pour obtenir un chemin absolu à partir d’un chemin relatif et le chemin de base (répertoire actif) par rapport auquel vous souhaitez le résoudre.
 
-### <a name="canonicalizing-separators"></a>Mise en forme canonique des séparateurs
+### <a name="canonicalize-separators"></a>Canonicaliser les séparateurs
 
 Toute barre oblique (`/`) est convertie en séparateur Windows standard, à savoir la barre oblique inverse (`\`). Toute série de barres obliques après les deux premières barres obliques est réduite en barre oblique unique.
 
-### <a name="evaluating-relative-components"></a>Évaluation des composants relatifs
+### <a name="evaluate-relative-components"></a>Évaluer les composants relatifs
 
 À mesure que le chemin est traité, tout composant ou segment constitué d’un point unique ou double (`.` ou `..`) est évalué :
 
@@ -171,7 +171,7 @@ Toute barre oblique (`/`) est convertie en séparateur Windows standard, à savo
 
    Les répertoires parents sont uniquement supprimés s’ils ne sont pas situés au-delà de la racine du chemin. La racine du chemin varie selon le type de chemin. Il s’agit du lecteur (`C:\`) pour les chemins DOS, du serveur/partage pour les chemins UNC (`\\Server\Share`) et du préfixe du chemin de périphérique pour les chemins de périphérique (`\\?\` ou `\\.\`).
 
-### <a name="trimming-characters"></a>Suppression de caractères
+### <a name="trim-characters"></a>Supprimer les caractères
 
 Outre les séries de séparateurs et de segments relatifs supprimés précédemment, d’autres caractères sont supprimés durant la normalisation :
 
@@ -184,7 +184,7 @@ Outre les séries de séparateurs et de segments relatifs supprimés précédemm
    > [!IMPORTANT]
    > **Ne créez jamais** un répertoire ou un nom de fichier avec un espace de fin. Les espaces de fin peuvent rendre l’accès à un répertoire difficile voire impossible, et il arrive fréquemment que des applications échouent quand vous tentez de gérer des répertoires ou des fichiers dont les noms comprennent des espaces de fin.
 
-## <a name="skipping-normalization"></a>Ignorer la normalisation
+## <a name="skip-normalization"></a>Ignorer la normalisation
 
 En règle générale, tout chemin passé à une API Windows est (effectivement) passé à la [fonction GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) et normalisé. Il existe toutefois une exception importante : un chemin de périphérique qui commence par un point d’interrogation et non un point. À moins qu’il ne commence exactement par `\\?\` (notez l’utilisation de la barre oblique inverse canonique), le chemin est normalisé.
 
@@ -222,4 +222,4 @@ crée un répertoire nommé TeStDiReCtOrY. Si vous renommez un répertoire ou un
 [!code-csharp[case-and-renaming](~/samples/snippets/standard/io/file-names/cs/rename.cs)]
 [!code-vb[case-and-renaming](~/samples/snippets/standard/io/file-names/vb/rename.vb)]
 
-Toutefois, les comparaisons des noms de répertoire et de fichier ne respectent pas la casse. Si vous recherchez un fichier nommé « test.txt », les API du système de fichiers .NET ignorent la casse dans la comparaison. Test.txt, TEST.TXT, test.TXT et toute autre combinaison de lettres majuscules et minuscules équivalent à « test.txt ».
+Toutefois, les comparaisons des noms de répertoire et de fichier ne respectent pas la casse. Si vous recherchez un fichier nommé « test.txt », les API du système de fichiers .NET ignorent la casse dans la comparaison. « Test.txt », « TEST.TXT », « test.TXT » et toute autre combinaison de lettres majuscules et minuscules correspond à « test.txt ».

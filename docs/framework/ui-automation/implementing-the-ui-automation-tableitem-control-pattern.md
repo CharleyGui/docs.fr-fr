@@ -1,17 +1,18 @@
 ---
 title: Implémentation du modèle de contrôle TableItem d’UI Automation
+description: Passez en revue les recommandations et les conventions pour implémenter le modèle de contrôle TableItem dans UI Automation. Connaître les membres requis pour l’interface ITableItemProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, Table Item
 - UI Automation, Table Item control pattern
 - TableItem control pattern
 ms.assetid: ac178408-1485-436f-8d3e-eee3bf80cb24
-ms.openlocfilehash: f35b491c31e8725eac0025dfd6815079d0ea9b79
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3d6d31fe0e041fbba147df14d290a775188755f2
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180079"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163524"
 ---
 # <a name="implementing-the-ui-automation-tableitem-control-pattern"></a>Implémentation du modèle de contrôle TableItem d’UI Automation
 > [!NOTE]
@@ -24,7 +25,7 @@ ms.locfileid: "79180079"
 <a name="Implementation_Guidelines_and_Conventions"></a>
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
   
-- Pour la fonctionnalité d’élément de grille connexe, voir [La mise en œuvre du modèle de contrôle UI Automation GridItem](implementing-the-ui-automation-griditem-control-pattern.md).  
+- Pour obtenir des fonctionnalités d’élément de grille associées, consultez [implémentation du modèle de contrôle GridItem d’UI Automation](implementing-the-ui-automation-griditem-control-pattern.md).  
   
 <a name="Required_Members_for_ITableItemProvider"></a>
 ## <a name="required-members-for-itableitemprovider"></a>Membres obligatoires pour ITableItemProvider  
@@ -47,5 +48,5 @@ ms.locfileid: "79180079"
 - [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
 - [Implémentation du modèle de contrôle Table d’UI Automation](implementing-the-ui-automation-table-control-pattern.md)
 - [Implémentation du modèle de contrôle GridItem d’UI Automation](implementing-the-ui-automation-griditem-control-pattern.md)
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

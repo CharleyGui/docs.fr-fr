@@ -1,5 +1,6 @@
 ---
 title: Obtenir des attributs de texte à l'aide d'UI Automation
+description: Découvrez comment obtenir des attributs de texte à l’aide d’UI Automation. Consultez un exemple de code qui obtient des attributs de texte d’une plage de texte.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, getting text attributes
 - text attributes, getting
 ms.assetid: fdefc6c3-b836-4cfe-8dec-1484bfdc5551
-ms.openlocfilehash: c338f858f1715d23cad96919db4a21a6ba49710f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b48f773e27088ba4b33ad01b299d77a0992a9159
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446913"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168005"
 ---
 # <a name="obtain-text-attributes-using-ui-automation"></a>Obtenir des attributs de texte à l'aide d'UI Automation
 > [!NOTE]
@@ -36,9 +37,9 @@ ms.locfileid: "74446913"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de TextPattern d’UI Automation](ui-automation-textpattern-overview.md)
-- [Ajouter du contenu à une zone de texte à l’aide d’UI Automation](add-content-to-a-text-box-using-ui-automation.md)
-- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](find-and-highlight-text-using-ui-automation.md)
-- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
-- [Obtenir des détails d’attribut de texte mixte à l’aide d’UI Automation](obtain-mixed-text-attribute-details-using-ui-automation.md)
+- [Vue d'ensemble de TextPattern d'UI Automation](ui-automation-textpattern-overview.md)
+- [Ajouter du contenu à une zone de texte à l'aide d'UI Automation](add-content-to-a-text-box-using-ui-automation.md)
+- [Rechercher et mettre un texte en surbrillance à l'aide d'UI Automation](find-and-highlight-text-using-ui-automation.md)
+- [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [Obtenir des détails d'attribut de texte mixte à l'aide d'UI Automation](obtain-mixed-text-attribute-details-using-ui-automation.md)

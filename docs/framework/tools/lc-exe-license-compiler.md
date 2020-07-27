@@ -1,5 +1,6 @@
 ---
 title: Lc.exe (License Compiler)
+description: Utilisez Lc.exe, le compilateur de licences. Cet outil lit les fichiers texte qui contiennent des informations de licence et crée un fichier binaire à incorporer dans un exécutable CLR en tant que ressource.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Lc.exe
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: 464514a241cc35fc821049ba0c29bec108d88253
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 45a80ba7c3e24c0f419758315b2d2daafd3890f4
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180396"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164249"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (License Compiler)
 L'outil License Compiler lit les fichiers texte comportant des informations sur les licences et génère un fichier binaire pouvant être incorporé dans un exécutable du Common Language Runtime en tant que ressource.  
@@ -41,7 +42,7 @@ targetPE /complist:filename [-outdir:path]
 |Option|Description|  
 |------------|-----------------|  
 |**/complist:** *filename*|Spécifie le nom d'un fichier comportant la liste des composants sous licence à inclure dans le fichier .licenses. Chaque composant est référencé avec son nom complet (un seul composant par ligne).<br /><br /> Les utilisateurs de ligne de commande peuvent spécifier un fichier distinct pour chaque formulaire du projet. Lc.exe accepte plusieurs fichiers d'entrée et génère un seul fichier .licenses.|  
-|**/h**[**elp**]|Affiche la syntaxe et les options de commande de l'outil.|  
+|**/h**[**IDE**]|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/i:** *module*|Spécifie les modules contenant les composants répertoriés dans le fichier **/complist**. Pour spécifier plusieurs modules, utilisez plusieurs indicateurs **/i**.|  
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|  
 |**/outdir:** *path*|Spécifie le répertoire dans lequel placer le fichier .licenses de sortie.|  
@@ -50,7 +51,7 @@ targetPE /complist:filename [-outdir:path]
 |**@***fichier*|Spécifie le fichier de réponse (.rsp).|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 1. Si vous utilisez un contrôle sous licence `MyCompany.Samples.LicControl1` contenu dans `Samples.DLL`, dans une application appelée `HostApp.exe`*, *vous pouvez créer le fichier `HostAppLic.txt` contenant ce qui suit.  
   
@@ -94,6 +95,6 @@ lc @response.rsp
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](index.md)
+- [outils](index.md)
 - [Al.exe (Assembly Linker)](al-exe-assembly-linker.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

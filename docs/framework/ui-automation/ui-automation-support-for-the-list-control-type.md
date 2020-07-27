@@ -1,17 +1,18 @@
 ---
 title: Prise en charge d'UI Automation pour le type de contrôle List
+description: Obtenir des informations sur la prise en charge d’UI Automation pour le type de contrôle List. Découvrez l’arborescence, les propriétés, les modèles de contrôle et les événements requis.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control types, List
 - List control type
 - UI Automation, List control type
 ms.assetid: 0e959fcb-50f2-413b-948d-7167d279bc11
-ms.openlocfilehash: 2926e06cfbe065ad8a5bccdb7ebaf16596721def
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 01827250ac216dbcb57a8a139637e7c48d59566d
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179709"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166079"
 ---
 # <a name="ui-automation-support-for-the-list-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle List
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179709"
   
  Le type de contrôle List offre un moyen d’organiser un groupe plat ou des groupes d’éléments et permet à un utilisateur de sélectionner un ou plusieurs de ces éléments. Le type de contrôle List présente une petite restriction quant aux types d’éléments enfants qu’il peut contenir. Les fournisseurs UI Automation peuvent de ce fait prendre en charge un élément bien connu pour les conteneurs de sélection.  
   
- Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] exigences dans les sections suivantes s’appliquent à [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]tous les contrôles qui implémentent le type de contrôle de liste, que ce soit , Win32, ou Windows Forms. Les contrôles de conteneur List constituent un exemple de contrôles qui implémentent le type de contrôle List.  
+ Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifications dans les sections suivantes s’appliquent à tous les contrôles qui implémentent le type de contrôle List, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] , Win32 ou Windows Forms. Les contrôles de conteneur List constituent un exemple de contrôles qui implémentent le type de contrôle List.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
@@ -30,21 +31,21 @@ ms.locfileid: "79179709"
 |Affichage de contrôle|Affichage de contenu|  
 |------------------|------------------|  
 |Contient les éléments qui correspondent aux contrôles.|Supprime les informations redondantes de l’arborescence pour permettre aux technologies d’assistance d’utiliser le plus petit ensemble d’informations explicites pour l’utilisateur final.|  
-|List<br /><br /> - DataItem (0 ou plus)<br />- ListItem (0 ou plus)<br />- Groupe (0 ou plus)<br />- ScrollBar (0, 1 ou 2)|List<br /><br /> - DataItem (0 ou plus)<br />- ListItem (0 ou plus)<br />- Groupe (0 ou plus)|  
+|List<br /><br /> -DataItem (0 ou plus)<br />-ListItem (0 ou plus)<br />-Group (0 ou plus)<br />-ScrollBar (0, 1 ou 2)|List<br /><br /> -DataItem (0 ou plus)<br />-ListItem (0 ou plus)<br />-Group (0 ou plus)|  
   
  L’affichage de contrôle pour un contrôle qui implémente le type de contrôle List (par exemple, un contrôle list) se compose des éléments suivants :  
   
-- Zéro ou plus d’éléments dans le contrôle de liste (les éléments peuvent être basés sur les types de contrôle de l’élément de liste ou de l’élément de données).
+- Zéro, un ou plusieurs éléments dans le contrôle de liste (les éléments peuvent être basés sur les types de contrôle d’élément de liste ou d’élément de données).
   
-- Contrôles de groupe nuls ou plus dans un contrôle de liste.
+- Zéro ou plusieurs contrôles de groupe dans un contrôle de liste.
   
-- Zéro, un ou deux commandes de barre de défilement.
+- Zéro, un ou deux contrôles de barre de défilement.
   
 L’affichage de contenu pour un contrôle qui implémente le type de contrôle List (par exemple, un contrôle list) se compose des éléments suivants :  
   
-- Zéro ou plus d’éléments dans le contrôle de liste (les éléments peuvent être basés sur les types de contrôle de l’élément de liste ou de l’élément de données).
+- Zéro, un ou plusieurs éléments dans le contrôle de liste (les éléments peuvent être basés sur les types de contrôle d’élément de liste ou d’élément de données).
   
-- Zéro ou plus de groupes dans le contrôle de la liste.
+- Zéro ou plusieurs groupes dans le contrôle de liste.
 
 Un contrôle list ne doit pas contenir d’éléments ayant une relation hiérarchique autre que le fait d’être regroupés. Si les éléments ont des enfants dans l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , le conteneur list doit être basé sur le type de contrôle Tree.  
   
@@ -52,13 +53,13 @@ Un contrôle list ne doit pas contenir d’éléments ayant une relation hiérar
   
 <a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>Propriétés UI Automation obligatoires  
- Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles de liste. Pour plus [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] d’informations sur les propriétés, voir [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
+ Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles de liste. Pour plus d’informations sur les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Propriétés, consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).  
   
 |Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Rectangle externe qui contient l’ensemble du contrôle.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Consultez les remarques.|Si le contrôle list a un point interactif (point sur lequel l’utilisateur clique pour que la liste prenne le focus), ce point doit être exposé par le biais de cette propriété.<br /><br /> Si la valeur `IsOffScreen` de la propriété <xref:System.Windows.Automation.NoClickablePointException> est vraie, alors le sera soulevé.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Consultez les remarques.|Si le contrôle list a un point interactif (point sur lequel l’utilisateur clique pour que la liste prenne le focus), ce point doit être exposé par le biais de cette propriété.<br /><br /> Si la valeur de la `IsOffScreen` propriété est true, le <xref:System.Windows.Automation.NoClickablePointException> sera déclenché.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Consultez les remarques.|Si le contrôle peut recevoir le focus clavier, il doit prendre en charge cette propriété.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Consultez les remarques.|La valeur de la propriété Name du contrôle list doit communiquer la catégorie d’options dans laquelle l’utilisateur est invité à faire une sélection. Cette propriété tire généralement son nom d’une étiquette de texte statique. En l’absence d’étiquette de texte statique, un développeur d’applications doit exposer une valeur pour la propriété Name.<br /><br /> Le seul cas où cette propriété n’est pas obligatoire pour les contrôles list, c’est lorsque le contrôle est utilisé dans la sous-arborescence d’un autre contrôle.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Consultez les remarques.|S’il existe une étiquette de texte statique, cette propriété doit exposer une référence à ce contrôle.|  

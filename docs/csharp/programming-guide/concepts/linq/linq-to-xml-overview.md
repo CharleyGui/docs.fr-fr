@@ -1,13 +1,14 @@
 ---
 title: Vue d’ensemble de LINQ to XML (C#)
+description: LINQ to XML tire parti de l’infrastructure LINQ .NET pour fournir des fonctionnalités de modification de document en mémoire et des expressions de requête avec des fonctionnalités telles que XPath.
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: dd41d8607ef3f2e6e6be9a1f3964ef0ae937e2ac
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: d2e4cf4e63d1a6ed7c1f0c163c12bb422b55ba11
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241836"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165359"
 ---
 # <a name="linq-to-xml-overview-c"></a>Vue d’ensemble de LINQ to XML (C#)
 

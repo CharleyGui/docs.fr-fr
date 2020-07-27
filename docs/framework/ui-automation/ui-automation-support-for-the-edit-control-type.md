@@ -1,17 +1,18 @@
 ---
 title: Prise en charge d'UI Automation pour le type de contrôle Edit
+description: Obtenir des informations sur la prise en charge d’UI Automation pour le type de contrôle Edit. Découvrez l’arborescence, les propriétés, les modèles de contrôle et les événements requis.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control types, Edit
 - Edit control type
 - UI Automation, Edit control type
 ms.assetid: 6db9d231-c0a0-4e17-910e-ac80357f774f
-ms.openlocfilehash: cdbb400d438231689fe35c4bff2bd2946b6bed80
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 6c404786d58cfcb4cc7dabd982eea33694b7cd0b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789508"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167936"
 ---
 # <a name="ui-automation-support-for-the-edit-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle Edit
 
@@ -22,7 +23,7 @@ Cette rubrique fournit des informations sur la prise en charge d’ [!INCLUDE[TL
 
 Les contrôles Edit permettent à un utilisateur d’afficher et modifier une simple ligne de texte sans une prise en charge évoluée de la mise en forme.
 
-Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle Edit. Les exigences de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles d’édition, qu’il s’agisse [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou Windows Forms.
+Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle Edit. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifications s’appliquent à tous les contrôles d’édition, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] , Win32 ou Windows Forms.
 
 <a name="Required_UI_Automation_Tree_Structure"></a>
 
@@ -32,7 +33,7 @@ Le tableau suivant illustre la vue de contrôle et la vue de contenu de l’arbo
 
 |Affichage de contrôle|Affichage de contenu|
 |------------------|------------------|
-|Edit|Edit|
+|Modifier|Modifier|
 
 Les contrôles qui implémentent le type de contrôle Edit n’auront jamais de barre de défilement dans la vue de contrôle de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] car il s’agit d’un contrôle à ligne unique. Dans certains scénarios de disposition, la ligne de texte unique peut faire l’objet d’un retour automatique à la ligne. Le type de contrôle Edit est parfaitement adapté pour la maintenance de petites quantités de texte modifiable ou sélectionnable.
 
@@ -42,15 +43,15 @@ Les contrôles qui implémentent le type de contrôle Edit n’auront jamais de 
 
 Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles d’édition. Pour plus d’informations sur les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).
 
-|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Value|Remarques|
+|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Remarques|
 |------------------------------------------------------------------------------------|-----------|-----------|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique pour tous les contrôles d’une application.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Rectangle externe qui contient l’ensemble du contrôle.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Consultez les remarques.|Le contrôle d’édition doit avoir un point interactif qui donne le focus d’entrée à la partie d’édition du contrôle quand un utilisateur clique dessus avec la souris.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Consultez les remarques.|Si le contrôle peut recevoir le focus clavier, il doit prendre en charge cette propriété.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Consultez les remarques.|Le nom du contrôle d’édition est habituellement généré à partir d’une étiquette de texte statique. En l’absence d’une telle étiquette, le développeur de l’application doit assigner une valeur de propriété pour `Name` . La propriété `Name` ne doit jamais contenir le contenu textuel du contrôle d’édition.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Consultez les remarques.|Si une étiquette de texte statique est associée au contrôle, cette propriété doit exposer une référence à ce contrôle. Si le contrôle de texte est le sous-composant d’un autre contrôle, il n’a pas de propriété `LabeledBy` définie.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Edit|Cette valeur est la même pour toutes les infrastructures d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] .|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Modifier|Cette valeur est la même pour toutes les infrastructures d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] .|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|« édition »|Chaîne localisée correspondant au type de contrôle Edit.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Le contrôle d’édition est toujours inclus dans la vue de contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Le contrôle d’édition est toujours inclus dans la vue de contrôle de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .|
@@ -62,13 +63,13 @@ Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation]
 
 Le tableau suivant répertorie les modèles de contrôle qui doivent être pris en charge par tous les contrôles d’édition. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).
 
-|Modèle de contrôle / Propriété de modèle de contrôle|Prise en charge/valeur|Remarques|
+|Modèle de contrôle / Propriété de modèle de contrôle|Prise en charge/valeur|Notes|
 |-----------------------------------------------|--------------------|-----------|
-|<xref:System.Windows.Automation.Provider.ITextProvider>|Selon le cas|Les contrôles d’édition doivent prendre en charge le modèle de contrôle Text parce que les informations de texte détaillées doivent toujours être disponibles pour les clients.|
-|<xref:System.Windows.Automation.Provider.IValueProvider>|Selon le cas|Tous les contrôles d’édition qui utilisent une chaîne doivent exposer le modèle Value.|
+|<xref:System.Windows.Automation.Provider.ITextProvider>|Dépend|Les contrôles d’édition doivent prendre en charge le modèle de contrôle Text parce que les informations de texte détaillées doivent toujours être disponibles pour les clients.|
+|<xref:System.Windows.Automation.Provider.IValueProvider>|Dépend|Tous les contrôles d’édition qui utilisent une chaîne doivent exposer le modèle Value.|
 |<xref:System.Windows.Automation.Provider.IValueProvider.IsReadOnly%2A>|Consultez les remarques.|Cette propriété doit être définie pour indiquer si le contrôle peut avoir une valeur définie par programmation ou peut être modifiée par l’utilisateur.|
 |<xref:System.Windows.Automation.Provider.IValueProvider.Value%2A>|Consultez les remarques.|Cette propriété retourne le contenu textuel du contrôle d’édition. Si la propriété `IsPasswordProperty` a la valeur `true`, elle doit déclencher une exception `InvalidOperationException` quand elle est demandée.|
-|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|Selon le cas|Tous les contrôles d’édition qui utilisent une plage numérique doivent exposer le modèle de contrôle Range Value.|
+|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|Dépend|Tous les contrôles d’édition qui utilisent une plage numérique doivent exposer le modèle de contrôle Range Value.|
 |<xref:System.Windows.Automation.Provider.IRangeValueProvider.Minimum%2A>|Consultez les remarques.|Cette propriété doit représenter la plus petite valeur pouvant être affectée au contenu du contrôle d’édition.|
 |<xref:System.Windows.Automation.Provider.IRangeValueProvider.Maximum%2A>|Consultez les remarques.|Cette propriété doit représenter la plus grande valeur pouvant être affectée au contenu du contrôle d’édition.|
 |<xref:System.Windows.Automation.Provider.IRangeValueProvider.SmallChange%2A>|Consultez les remarques.|Cette propriété doit indiquer le nombre de décimales pouvant être défini pour la valeur. Si la modification accepte uniquement des entiers, `SmallChangeProperty` doit avoir la valeur 1. Si la modification accepte une plage entre 1.0 et 2.0, `SmallChangeProperty` doit avoir la valeur 0.1. Si le contrôle d’édition accepte une plage entre 1.00 et 2.00, `SmallChangeProperty` doit avoir la valeur 0.001.|
@@ -81,28 +82,28 @@ Le tableau suivant répertorie les modèles de contrôle qui doivent être pris 
 
 Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles d’édition. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](ui-automation-events-overview.md).
 
-|Événement[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Prise en charge de|Remarques|
+|Événement[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Support|Notes|
 |---------------------------------------------------------------------------------|-------------|-----------|
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Obligatoire|Aucun|
-|<xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent>|Obligatoire|Aucun|
-|<xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent>|Obligatoire|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Obligatoire|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Obligatoire|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>|Obligatoire|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Obligatoire|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty>|Selon le cas|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty>|Never|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty>|Never|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty>|Never|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty>|Never|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty>|Never|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty>|Never|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.RangeValuePatternIdentifiers.ValueProperty>|Selon le cas|Si le contrôle prend en charge le modèle de contrôle Range Value, il doit prendre en charge cet événement.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Obligatoire|Aucun|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Obligatoire|Aucun|
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Obligatoire|None|
+|<xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent>|Obligatoire|None|
+|<xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent>|Obligatoire|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Obligatoire|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Obligatoire|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>|Obligatoire|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Obligatoire|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty>|Dépend|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty>|Jamais|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty>|Jamais|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty>|Jamais|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty>|Jamais|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty>|Jamais|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty>|Jamais|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.RangeValuePatternIdentifiers.ValueProperty>|Dépend|Si le contrôle prend en charge le modèle de contrôle Range Value, il doit prendre en charge cet événement.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Obligatoire|None|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Obligatoire|None|
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Automation.ControlType.Edit>
-- [Vue d’ensemble des types de contrôle UI Automation](ui-automation-control-types-overview.md)
-- [Vue d’ensemble d’UI Automation](ui-automation-overview.md)
+- [Vue d'ensemble des types de contrôle UI Automation](ui-automation-control-types-overview.md)
+- [Vue d'ensemble d'UI Automation](ui-automation-overview.md)

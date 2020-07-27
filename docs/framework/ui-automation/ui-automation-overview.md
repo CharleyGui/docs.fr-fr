@@ -1,34 +1,35 @@
 ---
 title: Vue d'ensemble d'UI Automation
+description: Lisez une vue d’ensemble de Microsoft UI Automation, l’infrastructure d’accessibilité pour les systèmes d’exploitation Windows qui prennent en charge Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, overview
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: 6f938302967e1b519105769717d326e5042a7bce
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84b176e53f16ba0676e933efe9ed679bf425abc0
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179923"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163259"
 ---
 # <a name="ui-automation-overview"></a>Vue d'ensemble d'UI Automation
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]est le nouveau cadre d’accessibilité pour Microsoft [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Windows, disponible sur tous les systèmes d’exploitation qui prennent en charge .  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]est la nouvelle infrastructure d’accessibilité pour Microsoft Windows, disponible sur tous les systèmes d’exploitation qui prennent en charge [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] .  
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] fournit un accès par programmation à la plupart des éléments d’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] du bureau, permettant ainsi aux produits de technologie d’assistance tels que les lecteurs d’écran de fournir aux utilisateurs finaux des informations sur l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] et de manipuler l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] par d’autres moyens que l’entrée standard. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] permet également aux scripts de test automatisés d’interagir avec l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   
 > [!NOTE]
 > [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] n’active pas la communication entre les processus démarrés par différents utilisateurs via la commande **Exécuter en tant que** .  
   
- Les applications clientes UI Automation peuvent être écrites avec l’assurance qu’elles fonctionneront sur plusieurs infrastructures. Le noyau [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] masque toute les différences des infrastructures sous-jacentes à plusieurs parties de l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Par exemple, `Content` la [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] `Caption` propriété d’un bouton, la propriété `ALT` d’un bouton Win32, et la <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] d’une image HTML sont tous cartographiés sur une seule propriété, , dans la vue.  
+ Les applications clientes UI Automation peuvent être écrites avec l’assurance qu’elles fonctionneront sur plusieurs infrastructures. Le noyau [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] masque toute les différences des infrastructures sous-jacentes à plusieurs parties de l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Par exemple, la `Content` propriété d’un [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] bouton, la `Caption` propriété d’un bouton Win32 et la `ALT` propriété d’une image HTML sont toutes mappées à une seule propriété, <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A> , dans la [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vue.  
   
-UI Automation fournit des fonctionnalités complètes sur les systèmes d’exploitation Windows pris en charge exécutant le cadre .NET (voir [.NET Framework exigences du système](../get-started/system-requirements.md) ou des versions de .NET Core à partir de .NET Core 3.0.  
+UI Automation offre des fonctionnalités complètes sur les systèmes d’exploitation Windows pris en charge qui exécutent le .NET Framework (consultez [.NET Framework Configuration système requise](../get-started/system-requirements.md) ou versions de .net core à partir de .net Core 3,0.  
   
- Les fournisseurs d’automatisation d’interface utilisateur offrent une certaine prise en charge pour les applications client Microsoft Active Accessibility par le biais d’un service de transition intégré.  
+ Les fournisseurs UI Automation offrent une prise en charge pour les applications clientes Microsoft Active Accessibility via un service de pontage intégré.  
   
 <a name="Providers_and_Clients"></a>
 ## <a name="providers-and-clients"></a>Fournisseurs et clients  
@@ -36,21 +37,21 @@ UI Automation fournit des fonctionnalités complètes sur les systèmes d’expl
   
 |Composant|Description|  
 |---------------|-----------------|  
-|Fournisseur API (UIAutomationProvider.dll et UIAutomationTypes.dll)|Ensemble de définitions d’interface qui sont implémentées par des fournisseurs UI Automation, objets qui fournissent des informations sur les éléments d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] et qui répondent à l’entrée de programmation.|  
+|API du fournisseur (UIAutomationProvider.dll et UIAutomationTypes.dll)|Ensemble de définitions d’interface qui sont implémentées par des fournisseurs UI Automation, objets qui fournissent des informations sur les éléments d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] et qui répondent à l’entrée de programmation.|  
 |API client (UIAutomationClient.dll et UIAutomationTypes.dll)|Ensemble de types destinés au code managé qui permet aux applications clientes UI Automation d’obtenir des informations sur l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] et d’envoyer l’entrée aux contrôles.|  
 |UiAutomationCore.dll|Code sous-jacent (parfois appelé noyau [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ) qui gère la communication entre fournisseurs et clients.|  
-|UIAutomationClientsideProviders.dll|Ensemble de fournisseurs UI Automation pour les contrôles hérités standard. ([!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] les contrôles [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ont le soutien des autochtones pour .) Ce support est automatiquement disponible pour les applications client.|  
+|UIAutomationClientsideProviders.dll|Ensemble de fournisseurs UI Automation pour les contrôles hérités standard. ( [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] les contrôles disposent d’une prise en charge native pour [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .) Cette prise en charge est automatiquement disponible pour les applications clientes.|  
   
  Du point de vue des développeurs de logiciels, il existe deux façons d’utiliser [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]: pour créer une prise en charge pour les contrôles personnalisés (à l’aide de l’API fournisseur) et pour créer des applications qui utilisent le noyau [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour communiquer avec les éléments d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] (à l’aide de l’API client). Selon votre objectif, reportez-vous à différentes parties de cette documentation. Les sections suivantes vous permettront d’approfondir les concepts et d’obtenir des connaissances pratiques.  
   
 |Section|Sujet|Public visé|  
 |-------------|--------------------|--------------|  
-|[UI Automation Fundamentals](index.md) (cette section)|Présentation générale des concepts.|Toutes|  
+|[Notions de base d’UI Automation](index.md) (cette section)|Présentation générale des concepts.|Toutes|  
 |[Fournisseurs UI Automation pour le code managé](ui-automation-providers-for-managed-code.md)|Présentations et rubriques « Comment » destinées à vous aider à utiliser l’API du fournisseur.|Développeurs de contrôles.|  
 |[Clients UI Automation pour le code managé](ui-automation-clients-for-managed-code.md)|Présentations et rubriques « Comment » destinées à vous aider à utiliser l’API client.|Développeurs d’applications clientes|  
 |[Modèles de contrôle UI Automation](ui-automation-control-patterns.md)|Informations sur la façon dont les fournisseurs doivent implémenter les modèles de contrôle et sur les fonctionnalités disponibles aux clients.|Toutes|  
 |[Modèle de texte UI Automation](ui-automation-text-pattern.md)|Informations sur la façon dont les fournisseurs doivent implémenter le modèle de contrôle Text et sur les fonctionnalités disponibles aux clients.|Toutes|  
-|[UI Automation Control Types](ui-automation-control-types.md)|Informations sur les propriétés et les modèles de contrôle pris en charge par les différents types de contrôle.|Toutes|  
+|[Types de contrôle UI Automation](ui-automation-control-types.md)|Informations sur les propriétés et les modèles de contrôle pris en charge par les différents types de contrôle.|Toutes|  
   
  Le tableau suivant répertorie les espaces de noms [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , les DLL qui les contiennent et le public qui les utilise.  
   
@@ -76,7 +77,7 @@ UI Automation fournit des fonctionnalités complètes sur les systèmes d’expl
   
 ## <a name="see-also"></a>Voir aussi
 
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Vue d'ensemble des propriétés UI Automation](ui-automation-properties-overview.md)
 - [Vue d'ensemble des événements UI Automation](ui-automation-events-overview.md)

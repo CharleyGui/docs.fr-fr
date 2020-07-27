@@ -1,5 +1,6 @@
 ---
 title: Utilisation des fichiers .resx par programmation
+description: Créez ou récupérez des données à partir de fichiers de ressources XML (. resx) par programmation à l’aide de types et de membres dans l’espace de noms System. Resources de la bibliothèque de classes .NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - resource files, .resx files
 - .resx files
 ms.assetid: 168f941a-2b84-43f8-933f-cf4a8548d824
-ms.openlocfilehash: 3b84d77e4ac9b9889d1bc2f08e5ead6b81deecb0
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 519ca099b65710b6eb4251e1a9419e965ee69f93
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243035"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166164"
 ---
 # <a name="work-with-resx-files-programmatically"></a>Utiliser des fichiers .resx par programmation
 
-Étant donné que les fichiers de ressources XML (.resx) doivent être constitués de code XML bien défini, notamment un en-tête qui doit respecter un schéma spécifique, suivi de données dans des paires nom/valeur, la création manuelle de ces fichiers est sujette aux erreurs. Alternativement, vous pouvez créer des fichiers .resx par programmation à l’aide de types et de membres de la bibliothèque de classes .NET. Vous pouvez également utiliser la bibliothèque de classes .NET pour récupérer des ressources stockées dans les fichiers .resx. Cet article explique comment vous pouvez utiliser les types et les membres de <xref:System.Resources> l’espace de noms pour travailler avec des fichiers. resx.
+Étant donné que les fichiers de ressources XML (.resx) doivent être constitués de code XML bien défini, notamment un en-tête qui doit respecter un schéma spécifique, suivi de données dans des paires nom/valeur, la création manuelle de ces fichiers est sujette aux erreurs. Alternativement, vous pouvez créer des fichiers .resx par programmation à l’aide de types et de membres de la bibliothèque de classes .NET. Vous pouvez également utiliser la bibliothèque de classes .NET pour récupérer des ressources stockées dans les fichiers .resx. Cet article explique comment vous pouvez utiliser les types et les membres de l' <xref:System.Resources> espace de noms pour travailler avec des fichiers. resx.
 
-Cet article traite de l’utilisation de fichiers XML (. resx) contenant des ressources. Pour plus d’informations sur l’utilisation des fichiers de ressources binaires incorporés dans <xref:System.Resources.ResourceManager>des assemblys, consultez.
+Cet article traite de l’utilisation de fichiers XML (. resx) contenant des ressources. Pour plus d’informations sur l’utilisation des fichiers de ressources binaires incorporés dans des assemblys, consultez <xref:System.Resources.ResourceManager> .
 
 > [!WARNING]
 > Vous pouvez également utiliser les fichiers .resx autrement que par programmation. Quand vous ajoutez un fichier de ressources à un projet [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) , Visual Studio fournit une interface pour la création et la gestion d’un fichier. resx, et convertit automatiquement le fichier. resx en fichier. Resources au moment de la compilation. Vous pouvez également utiliser un éditeur de texte pour manipuler directement un fichier .resx. Toutefois, pour éviter d’endommager le fichier, veillez à ne pas modifier les informations binaires stockées dans le fichier.
@@ -87,5 +88,5 @@ Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Lan
 ## <a name="see-also"></a>Voir aussi
 
 - [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md)
-- [Resgen. exe (générateur de fichier de ressources)](../tools/resgen-exe-resource-file-generator.md)
-- [Al. exe (Assembly Linker)](../tools/al-exe-assembly-linker.md)
+- [Resgen.exe (générateur de fichiers de ressources)](../tools/resgen-exe-resource-file-generator.md)
+- [Al.exe (Assembly Linker)](../tools/al-exe-assembly-linker.md)

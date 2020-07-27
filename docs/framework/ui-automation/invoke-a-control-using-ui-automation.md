@@ -1,5 +1,6 @@
 ---
 title: Appeler un contrôle à l'aide d'UI Automation
+description: Utilisez UI Automation pour rechercher un contrôle correspondant à certaines conditions de propriété, créer un AutomationElement, obtenir un InvokePattern et utiliser Invoke sur le contrôle.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, invoking controls
 - controls, invoking
 ms.assetid: 5ee2de3f-256c-43ec-b64c-62ace91f9983
-ms.openlocfilehash: e1b489e8daaaf9f5b8c0cb46374fa54bf165d49c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2347a620aab848bf6bcc649a9780aa5a3a520822
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447002"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168170"
 ---
 # <a name="invoke-a-control-using-ui-automation"></a>Appeler un contrôle à l'aide d'UI Automation
 > [!NOTE]

@@ -1,5 +1,6 @@
 ---
 title: Vue d'ensemble des commandes
+description: En savoir plus sur les commandes, un mécanisme d’entrée dans Windows Presentation Foundation qui fournit la gestion des entrées à un niveau plus sémantique que l’entrée d’appareil.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - commanding [WPF]
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
-ms.openlocfilehash: 3477e6a9eda40edeadaab9cd6d3de2f016250fc8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f7d12fbf0de9b1546f15061ab7eb1318378bbbb
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186215"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168119"
 ---
 # <a name="commanding-overview"></a>Vue d'ensemble des commandes
 <a name="introduction"></a> L’exécution de commandes est un mécanisme d’entrée dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] qui fournit la gestion des entrées à un niveau plus sémantique que l’entrée de périphérique. Les opérations **Copier**, **Couper** et **Coller** sont des exemples de commandes figurant dans de nombreuses applications.  
@@ -173,9 +174,9 @@ ms.locfileid: "79186215"
 ## <a name="command-library"></a>Bibliothèque de commandes  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit un ensemble de commandes prédéfinies.  La bibliothèque de commandes comprend les classes suivantes : <xref:System.Windows.Input.ApplicationCommands>, <xref:System.Windows.Input.NavigationCommands>, <xref:System.Windows.Input.MediaCommands>, <xref:System.Windows.Documents.EditingCommands> et <xref:System.Windows.Input.ComponentCommands>.  Ces classes fournissent des commandes telles que <xref:System.Windows.Input.ApplicationCommands.Cut%2A>, <xref:System.Windows.Input.NavigationCommands.BrowseBack%2A> et <xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>, <xref:System.Windows.Input.MediaCommands.Play%2A>, <xref:System.Windows.Input.MediaCommands.Stop%2A> et <xref:System.Windows.Input.MediaCommands.Pause%2A>.  
   
- Bon nombre de ces commandes incluent un jeu de liaisons d’entrée par défaut.  Par exemple, si vous spécifiez que votre application gère la commande de copie, vous obtenez automatiquement la liaison clavier "CTRL-C" Vous obtenez également des liaisons pour d’autres périphériques d’entrée, tels que les gestes de stylo Tablet PC et les informations vocales.  
+ Bon nombre de ces commandes incluent un jeu de liaisons d’entrée par défaut.  Par exemple, si vous spécifiez que votre application gère la commande de copie, vous recevez automatiquement la liaison de clavier « CTRL + C ». vous pouvez également obtenir des liaisons pour d’autres périphériques d’entrée, tels que des mouvements de stylet de Tablet PC et des informations vocales.  
   
- Quand vous référencez des commandes dans les différentes bibliothèques de commandes à l’aide de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez généralement omettre le nom de la classe de bibliothèque qui expose la propriété de commande statique. En général, les noms des commandes ne sont pas plus ambigus que des chaînes, et les types propriétaires existent pour fournir un regroupement logique de commandes, mais ne sont pas nécessaires pour éviter les ambiguïtés. Par exemple, vous pouvez spécifier `Command="Cut"` plutôt que la version plus détaillée `Command="ApplicationCommands.Cut"`. Il s’agit d’un mécanisme [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de commodité qui est intégré au processeur pour <xref:System.Windows.Input.ICommand>les [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] commandes (plus précisément, il s’agit d’un comportement de convertisseur de type de , que le processeur référence au moment de la charge).  
+ Quand vous référencez des commandes dans les différentes bibliothèques de commandes à l’aide de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez généralement omettre le nom de la classe de bibliothèque qui expose la propriété de commande statique. En général, les noms des commandes ne sont pas plus ambigus que des chaînes, et les types propriétaires existent pour fournir un regroupement logique de commandes, mais ne sont pas nécessaires pour éviter les ambiguïtés. Par exemple, vous pouvez spécifier `Command="Cut"` plutôt que la version plus détaillée `Command="ApplicationCommands.Cut"`. Il s’agit d’un mécanisme pratique qui est intégré au [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processeur pour les commandes (plus précisément, il s’agit d’un comportement de convertisseur de type de <xref:System.Windows.Input.ICommand> , que le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processeur référence au moment du chargement).  
   
 <a name="creating_commands"></a>
 ## <a name="creating-custom-commands"></a>Création de commandes personnalisées  
@@ -189,7 +190,7 @@ ms.locfileid: "79186215"
 - <xref:System.Windows.Input.CommandBinding>
 - <xref:System.Windows.Input.InputBinding>
 - <xref:System.Windows.Input.CommandManager>
-- [Vue d’ensemble des entrées](input-overview.md)
+- [Vue d'ensemble des entrées](input-overview.md)
 - [Vue d'ensemble des événements routés](routed-events-overview.md)
 - [Implémenter ICommandSource](how-to-implement-icommandsource.md)
 - [Guide pratique pour ajouter une commande à un MenuItem](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))

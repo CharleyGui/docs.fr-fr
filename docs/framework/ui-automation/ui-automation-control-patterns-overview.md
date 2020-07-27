@@ -1,16 +1,17 @@
 ---
 title: Vue d'ensemble des modèles de contrôle UI Automation
+description: Consultez une vue d’ensemble des modèles de contrôle UI Automation. Les modèles de contrôle vous permettent de catégoriser et d’exposer les fonctionnalités d’un contrôle, indépendamment du type ou de l’apparence.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: f62631a15dd348b6f6ea27a82d7b45aab92ceed2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d0df24de4f8a877405dfecb6b0d245ff1caf0418
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179951"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163884"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Vue d'ensemble des modèles de contrôle UI Automation
 > [!NOTE]
@@ -33,7 +34,7 @@ ms.locfileid: "79179951"
   
 - Les propriétés et les événements fournissent des informations sur les fonctionnalités du modèle de contrôle, ainsi que des informations sur l’état du contrôle.  
   
- Les modèles [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] de contrôle se rapportent aux objets du modèle d’objet composant (COM). Dans COM, vous pouvez interroger un objet et lui demander quelles interfaces il prend en charge, puis vous servir de ces interfaces pour accéder aux fonctionnalités. Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les clients UI Automation peuvent demander à un contrôle les modèles de contrôle qu’il prend en charge, puis interagir avec le contrôle via les propriétés, les méthodes, les événements et les structures exposées par les modèles de contrôle pris en charge. Par exemple, pour une zone d’édition multiligne, les fournisseurs UI Automation implémentent <xref:System.Windows.Automation.Provider.IScrollProvider>. Lorsqu’un client sait qu’un <xref:System.Windows.Automation.AutomationElement> prend en charge le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> , il peut utiliser les propriétés, les méthodes et les événements exposés par ce modèle de contrôle pour manipuler le contrôle ou accéder aux informations concernant le contrôle.  
+ Les modèles de contrôle sont liés à [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] car les interfaces sont liées aux objets COM (Component Object Model). Dans COM, vous pouvez interroger un objet et lui demander quelles interfaces il prend en charge, puis vous servir de ces interfaces pour accéder aux fonctionnalités. Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les clients UI Automation peuvent demander à un contrôle les modèles de contrôle qu’il prend en charge, puis interagir avec le contrôle via les propriétés, les méthodes, les événements et les structures exposées par les modèles de contrôle pris en charge. Par exemple, pour une zone d’édition multiligne, les fournisseurs UI Automation implémentent <xref:System.Windows.Automation.Provider.IScrollProvider>. Lorsqu’un client sait qu’un <xref:System.Windows.Automation.AutomationElement> prend en charge le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> , il peut utiliser les propriétés, les méthodes et les événements exposés par ce modèle de contrôle pour manipuler le contrôle ou accéder aux informations concernant le contrôle.  
   
 <a name="uiautomation_control_pattern_client_provider"></a>
 ## <a name="ui-automation-providers-and-clients"></a>Fournisseurs et clients UI Automation  
@@ -41,7 +42,7 @@ ms.locfileid: "79179951"
   
  Les clients UI Automation accèdent aux méthodes et aux propriétés des classes de modèle de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] et les utilisent pour obtenir des informations sur l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]ou pour manipuler l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Ces classes de modèle de contrôle se trouvent dans l’espace de noms <xref:System.Windows.Automation> (par exemple, <xref:System.Windows.Automation.InvokePattern> et <xref:System.Windows.Automation.SelectionPattern>).  
   
- Les <xref:System.Windows.Automation.AutomationElement> clients utilisent <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> des <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType>méthodes (comme ou ) ou les accessoirors de l’heure courante de l’exécution de la langue (CLR) pour accéder aux [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] propriétés sur un modèle. Chaque classe de modèle de contrôle <xref:System.Windows.Automation.InvokePattern.Pattern?displayProperty=nameWithType> a <xref:System.Windows.Automation.SelectionPattern.Pattern?displayProperty=nameWithType>un membre de champ (par exemple, <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> ) qui identifie <xref:System.Windows.Automation.AutomationElement>ce modèle de contrôle et peut être passé comme un paramètre pour ou pour récupérer ce modèle pour un .  
+ Les clients utilisent des <xref:System.Windows.Automation.AutomationElement> méthodes (telles que <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> ) ou les accesseurs Common Language Runtime (CLR) pour accéder aux [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Propriétés sur un modèle. Chaque classe de modèle de contrôle a un membre de champ (par exemple, <xref:System.Windows.Automation.InvokePattern.Pattern?displayProperty=nameWithType> ou <xref:System.Windows.Automation.SelectionPattern.Pattern?displayProperty=nameWithType> ) qui identifie ce modèle de contrôle et peut être passé en tant que paramètre à <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> pour récupérer ce modèle pour un <xref:System.Windows.Automation.AutomationElement> .  
   
 <a name="uiautomation_control_patterns_dynamic"></a>
 ## <a name="dynamic-control-patterns"></a>Modèles de contrôle dynamique  
@@ -55,8 +56,8 @@ ms.locfileid: "79179951"
 |---------------------------|------------------------|-----------------|  
 |<xref:System.Windows.Automation.DockPattern>|<xref:System.Windows.Automation.Provider.IDockProvider>|Utilisées pour les contrôles qui peuvent être ancrés dans un conteneur d’ancrage. Par exemple, les barres d’outils ou les palettes d’outils.|  
 |<xref:System.Windows.Automation.ExpandCollapsePattern>|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Utilisées pour les contrôles qui peuvent être développés ou réduits. Par exemple, les éléments de menu dans une application, comme le menu **Fichier** .|  
-|<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.Provider.IGridProvider>|Utilisées pour les contrôles qui prennent en charge des fonctionnalités de grille telles que le dimensionnement et le déplacement vers une cellule spécifiée. Par exemple, la vue grande icône dans Windows Explorer ou des tables simples sans en-têtes dans Microsoft Word.|  
-|<xref:System.Windows.Automation.GridItemPattern>|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Utilisées pour les contrôles dont les grilles contiennent des cellules. Les cellules individuelles doivent prendre en charge le modèle GridItem. Par exemple, chaque cellule de Microsoft Windows Explorer vue détaillée.|  
+|<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.Provider.IGridProvider>|Utilisées pour les contrôles qui prennent en charge des fonctionnalités de grille telles que le dimensionnement et le déplacement vers une cellule spécifiée. Par exemple, la vue grande icône dans l’Explorateur Windows ou les tableaux simples sans en-têtes dans Microsoft Word.|  
+|<xref:System.Windows.Automation.GridItemPattern>|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Utilisées pour les contrôles dont les grilles contiennent des cellules. Les cellules individuelles doivent prendre en charge le modèle GridItem. Par exemple, chaque cellule dans l’affichage détaillé de l’Explorateur Microsoft Windows.|  
 |<xref:System.Windows.Automation.InvokePattern>|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Utilisées pour les contrôles qui peuvent être appelés, tel qu’un bouton.|  
 |<xref:System.Windows.Automation.MultipleViewPattern>|<xref:System.Windows.Automation.Provider.IMultipleViewProvider>|Utilisées pour les contrôles qui peuvent basculer entre plusieurs représentations du même ensemble d’informations, de données ou d’enfants. Par exemple, un contrôle list view où les données sont disponibles en affichage Miniatures, Mosaïques, Icônes, Liste ou Détails.|  
 |<xref:System.Windows.Automation.RangeValuePattern>|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|Utilisées pour les contrôles disposant d’une plage de valeurs qui peut s’appliquer au contrôle. Par exemple, un contrôle spinner contenant des années peut avoir une plage comprise entre 1900 et 2010, alors qu’un autre contrôle spinner représentant des mois aura une plage comprise entre 1 et 12.|  
@@ -64,13 +65,13 @@ ms.locfileid: "79179951"
 |<xref:System.Windows.Automation.ScrollItemPattern>|<xref:System.Windows.Automation.Provider.IScrollItemProvider>|Utilisées pour les contrôles qui disposent d’éléments individuels dans une liste déroulante. Par exemple, un contrôle de liste qui dispose d’éléments individuels dans la liste déroulante, comme un contrôle zone de liste déroulante.|  
 |<xref:System.Windows.Automation.SelectionPattern>|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Utilisées pour les contrôles conteneur de sélection. Par exemple, les zones de liste et zones de liste modifiable.|  
 |<xref:System.Windows.Automation.SelectionItemPattern>|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Utilisées pour les éléments individuels dans les contrôles conteneur de sélection, tels que les zones de liste et zones de liste modifiables.|  
-|<xref:System.Windows.Automation.TablePattern>|<xref:System.Windows.Automation.Provider.ITableProvider>|Utilisées pour les contrôles qui disposent d’une grille ainsi que d’informations d’en-tête. Par exemple, les feuilles de travail Microsoft Excel.|  
+|<xref:System.Windows.Automation.TablePattern>|<xref:System.Windows.Automation.Provider.ITableProvider>|Utilisées pour les contrôles qui disposent d’une grille ainsi que d’informations d’en-tête. Par exemple, les feuilles de calcul Microsoft Excel.|  
 |<xref:System.Windows.Automation.TableItemPattern>|<xref:System.Windows.Automation.Provider.ITableItemProvider>|Utilisées pour les éléments d’une table.|  
 |<xref:System.Windows.Automation.TextPattern>|<xref:System.Windows.Automation.Provider.ITextProvider>|Utilisées pour les contrôles d’édition et les documents qui exposent des informations textuelles.|  
 |<xref:System.Windows.Automation.TogglePattern>|<xref:System.Windows.Automation.Provider.IToggleProvider>|Utilisées pour les contrôles dont l’état peut être activé et désactivé. Par exemple, les cases à cocher et les éléments de menu pouvant être activés.|  
 |<xref:System.Windows.Automation.TransformPattern>|<xref:System.Windows.Automation.Provider.ITransformProvider>|Utilisées pour les contrôles qui peuvent être redimensionnés, déplacés et pivotés. Les utilisations courantes du modèle de contrôle Transform se font dans les concepteurs, les formulaires les éditeurs graphiques et les applications de dessin.|  
 |<xref:System.Windows.Automation.ValuePattern>|<xref:System.Windows.Automation.Provider.IValueProvider>|Permet aux clients d’obtenir ou de définir une valeur sur des contrôles qui ne prennent pas en charge une plage de valeurs. Par exemple, un sélecteur de date et heure.|  
-|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Expose des informations spécifiques aux fenêtres, concept fondamental du système d’exploitation Microsoft Windows. Des exemples de contrôles qui sont des fenêtres sont des fenêtres d’application de haut niveau (Microsoft Word, Microsoft Windows Explorer, etc.), des fenêtres pour enfants à interface multi-documents (MDI) et des dialogues.|  
+|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Expose des informations spécifiques aux fenêtres, concept fondamental du système d’exploitation Microsoft Windows. Les fenêtres d’application de niveau supérieur (Microsoft Word, Explorateur Microsoft Windows, etc.), les fenêtres enfants MDI et les boîtes de dialogue sont des exemples de contrôles qui sont des fenêtres.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -78,4 +79,4 @@ ms.locfileid: "79179951"
 - [Mappage de modèle de contrôle pour les clients UI Automation](control-pattern-mapping-for-ui-automation-clients.md)
 - [Vue d'ensemble d'UI Automation](ui-automation-overview.md)
 - [Propriétés UI Automation pour les clients](ui-automation-properties-for-clients.md)
-- [UI Automation Events for Clients](ui-automation-events-for-clients.md)
+- [Événements UI Automation pour les clients](ui-automation-events-for-clients.md)

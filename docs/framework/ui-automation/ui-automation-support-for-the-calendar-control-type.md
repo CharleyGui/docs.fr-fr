@@ -1,17 +1,18 @@
 ---
 title: Prise en charge d'UI Automation pour le type de contrôle Calendar
+description: Obtenir des informations sur la prise en charge d’UI Automation pour le type de contrôle Calendar. Découvrez l’arborescence, les propriétés, les modèles de contrôle et les événements requis.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, Calendar control type
 - Calendar control type
 - control types, Calendar
 ms.assetid: e91a7393-a7f9-4838-a1a6-857438b24bc9
-ms.openlocfilehash: b9b7e999c20c97acd1da4d6afedbac9177996ebe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b21ac23fd87516a815b4b4c75516499d60c7b46
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179828"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166111"
 ---
 # <a name="ui-automation-support-for-the-calendar-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle Calendar
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179828"
   
  Les contrôles Calendar permettent à un utilisateur de déterminer facilement la date et de sélectionner d’autres dates.  
   
- Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle Calendar. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] exigences s’appliquent [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]à tous les contrôles de calendrier, que ce soit, Win32, ou Windows Forms.  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle Calendar. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifications s’appliquent à tous les contrôles Calendar, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Win32 ou de Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
@@ -29,15 +30,15 @@ ms.locfileid: "79179828"
   
 |Affichage de contrôle|Affichage de contenu|  
 |------------------|------------------|  
-|Calendrier<br /><br /> <ul><li>DataGrid<br /><br /> <ul><li>Header (0 ou 1)</li><li>HeaderItem (0 ou 7 ; la quantité dépend du nombre de jours affichés dans les colonnes)</li><li>ListItem (la quantité dépend du nombre de jours affichés)</li><li>Button (0 ou 2 ; pour paginer l’affichage du calendrier)</li></ul></li></ul>|Calendrier<br /><br /> - ListItem (la quantité dépend du nombre de jours affichés)|  
+|Calendrier<br /><br /> <ul><li>DataGrid<br /><br /> <ul><li>Header (0 ou 1)</li><li>HeaderItem (0 ou 7 ; la quantité dépend du nombre de jours affichés dans les colonnes)</li><li>ListItem (la quantité dépend du nombre de jours affichés)</li><li>Button (0 ou 2 ; pour paginer l’affichage du calendrier)</li></ul></li></ul>|Calendrier<br /><br /> -ListItem (la quantité dépend du nombre de jours affichés)|  
   
  Les contrôles calendar peuvent être représentés sous différentes formes dans l’interface utilisateur. Les seuls contrôles qui sont sûrs d’être dans l’affichage de contrôle de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sont les contrôles datagrid, header, header item et list item.  
   
 <a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>Propriétés UI Automation obligatoires  
- Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement adaptée aux contrôles calendar. Pour plus [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] d’informations sur les propriétés, voir [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
+ Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement adaptée aux contrôles calendar. Pour plus d’informations sur les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Propriétés, consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).  
   
-|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
+|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Remarques|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Rectangle externe qui contient l’ensemble du contrôle.|  
@@ -60,7 +61,7 @@ ms.locfileid: "79179828"
 |<xref:System.Windows.Automation.Provider.IScrollProvider>|Dépend|La plupart des contrôles calendar prennent en charge le retournement de l’affichage par page. Le modèle Scroll est recommandé pour prendre en charge la navigation de pagination.|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider>|Dépend|La plupart des contrôles calendar conservent un jour, un mois ou une année spécifique en tant que sélection du sous-élément. Certains calendriers peuvent être sélectionnés plusieurs fois et d’autres ne peuvent être sélectionnés qu’une seule fois.|  
 |<xref:System.Windows.Automation.Provider.ITableProvider>|Oui|Le contrôle calendar dispose toujours d’un en-tête dans sa sous-arborescence pour les jours de la semaine ; le modèle Table doit donc être pris en charge.|  
-|<xref:System.Windows.Automation.Provider.IValueProvider>|Non |Le modèle de contrôle Value n’est pas nécessaire pour les contrôles calendar car vous ne pouvez pas définir directement la valeur sur le contrôle. Si une date spécifique est associée au contrôle, les informations doivent être fournies par le modèle de contrôle Selection.|  
+|<xref:System.Windows.Automation.Provider.IValueProvider>|Non|Le modèle de contrôle Value n’est pas nécessaire pour les contrôles calendar car vous ne pouvez pas définir directement la valeur sur le contrôle. Si une date spécifique est associée au contrôle, les informations doivent être fournies par le modèle de contrôle Selection.|  
   
 <a name="Required_UI_Automation_Events"></a>
 ## <a name="required-ui-automation-events"></a>Événements UI Automation obligatoires  

@@ -1,17 +1,18 @@
 ---
 title: Prise en charge d'UI Automation pour le type de contrôle MenuItem
+description: Obtenir des informations sur la prise en charge d’UI Automation pour le type de contrôle MenuItem. Découvrez l’arborescence, les propriétés, les modèles de contrôle et les événements requis.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control types, Menu Item
 - Menu Item control type
 - UI Automation, Menu Item control type
 ms.assetid: 54bce311-3d23-40b9-ba90-1bdbdaf8fbba
-ms.openlocfilehash: ab050b3d515be325694d6e92ef1891d44cb309c7
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 248fdacee42c3a67c6c3b2d5792b774dfdc8408f
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789437"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166012"
 ---
 # <a name="ui-automation-support-for-the-menuitem-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle MenuItem
 
@@ -22,7 +23,7 @@ Cette rubrique fournit des informations sur la prise en charge de [!INCLUDE[TLA#
 
 Un contrôle menu permet une organisation hiérarchique des éléments associés à des commandes et des gestionnaires d’événements. Dans une application Microsoft Windows classique, une barre de menus contient plusieurs éléments de menu (tels que **fichier**, **Edition**et **fenêtre**) et chaque élément de menu affiche un menu. Un menu contient un groupe d’éléments de menu (tels que **Nouveau**, **Ouvrir**et **Fermer**), qui peuvent être développés pour afficher des éléments de menu supplémentaires ou pour exécuter une action spécifique quand vous cliquez dessus. Un élément de menu peut être hébergé dans un menu, une barre de menus ou une barre d’outils.
 
-Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle MenuItem. Les exigences de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles de liste, qu’il s’agisse [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou Windows Forms.
+Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle MenuItem. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifications s’appliquent à tous les contrôles de liste, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] , Win32 ou Windows Forms.
 
 <a name="Required_UI_Automation_Tree_Structure"></a>
 
@@ -42,11 +43,11 @@ Pour la vue de contenu, Menu est absent de l’arborescence [!INCLUDE[TLA2#tla_u
 
 ## <a name="required-ui-automation-properties"></a>Propriétés UI Automation obligatoires
 
-Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles d’élément de menu. Pour plus d’informations sur les propriétés de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).
+Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles d’élément de menu. Pour plus d’informations sur les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Propriétés, consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).
 
-|Les|Value|Description|
+|Propriété|Valeur|Description|
 |--------------|-----------|-----------------|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique pour tous les contrôles d’une application.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Rectangle externe qui contient l’ensemble du contrôle.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Consultez les remarques.|Pris en charge s’il existe un rectangle englobant. Si les points du rectangle englobant ne sont pas tous interactifs et que vous effectuez un test de positionnement spécialisé, vous devez remplacer et fournir un point interactif.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Consultez les remarques.|Si le contrôle peut recevoir le focus clavier, il doit prendre en charge cette propriété.|
@@ -63,12 +64,12 @@ Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation]
 
 Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par les contrôles d’élément de menu. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).
 
-|Propriété du modèle de contrôle|Prise en charge de|Remarques|
+|Propriété du modèle de contrôle|Support|Notes|
 |------------------------------|-------------|-----------|
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Selon le cas|Si le contrôle peut être développé ou réduit, implémentez <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>.|
-|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Selon le cas|Si le contrôle exécute une seule action ou commande, implémentez <xref:System.Windows.Automation.Provider.IInvokeProvider>.|
-|<xref:System.Windows.Automation.Provider.IToggleProvider>|Selon le cas|Si le contrôle représente une option qui peut être activée ou désactivée, implémentez <xref:System.Windows.Automation.Provider.IToggleProvider>.|
-|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Selon le cas|Si le contrôle permet d’effectuer une sélection dans une liste d’options parmi des éléments de menu, implémentez <xref:System.Windows.Automation.Provider.ISelectionItemProvider>.|
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Dépend|Si le contrôle peut être développé ou réduit, implémentez <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>.|
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Dépend|Si le contrôle exécute une seule action ou commande, implémentez <xref:System.Windows.Automation.Provider.IInvokeProvider>.|
+|<xref:System.Windows.Automation.Provider.IToggleProvider>|Dépend|Si le contrôle représente une option qui peut être activée ou désactivée, implémentez <xref:System.Windows.Automation.Provider.IToggleProvider>.|
+|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Dépend|Si le contrôle permet d’effectuer une sélection dans une liste d’options parmi des éléments de menu, implémentez <xref:System.Windows.Automation.Provider.ISelectionItemProvider>.|
 
 <a name="UI_Automation_Events_for_Menu_Item"></a>
 
@@ -76,12 +77,12 @@ Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiau
 
 Le tableau suivant répertorie les événements [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] associés au contrôle d’élément de menu.
 
-|Event|Prise en charge de|Explication|
+|Événement|Support|Explication|
 |-----------|-------------|-----------------|
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Selon le cas|Doit être déclenché si le contrôle prend en charge le modèle de contrôle Invoke.|
-|Événement de modification de propriété<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty>|Selon le cas|Doit être déclenché si le contrôle prend en charge le modèle de contrôle Toggle.|
-|Événement de modification de propriété<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty>|Selon le cas|Doit être déclenché si le contrôle prend en charge le modèle de contrôle Expand Collapse.|
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Selon le cas|Aucun.|
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Dépend|Doit être déclenché si le contrôle prend en charge le modèle de contrôle Invoke.|
+|Événement de modification de propriété<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty>|Dépend|Doit être déclenché si le contrôle prend en charge le modèle de contrôle Toggle.|
+|Événement de modification de propriété<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty>|Dépend|Doit être déclenché si le contrôle prend en charge le modèle de contrôle Expand Collapse.|
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Dépend|Aucun.|
 
 <a name="Required_UI_Automation_Events"></a>
 
@@ -89,19 +90,19 @@ Le tableau suivant répertorie les événements [!INCLUDE[TLA#tla_uiautomation](
 
 Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles d’élément de menu. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](ui-automation-events-overview.md).
 
-|Événement[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Prise en charge/valeur|Remarques|
+|Événement[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Prise en charge/valeur|Notes|
 |---------------------------------------------------------------------------------|--------------------|-----------|
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Selon le cas|Aucun|
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|Selon le cas|Aucun|
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|Selon le cas|Aucun|
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Selon le cas|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Obligatoire|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Obligatoire|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>|Obligatoire|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty>|Selon le cas|Aucun|
-|Événement de modification de propriété<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty>|Selon le cas|Aucun|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Obligatoire|Aucun|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Obligatoire|Aucun|
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Dépend|None|
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|Dépend|None|
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|Dépend|None|
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Dépend|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Obligatoire|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Obligatoire|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>|Obligatoire|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty>|Dépend|None|
+|Événement de modification de propriété<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty>|Dépend|None|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Obligatoire|None|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Obligatoire|None|
 
 <a name="Legacy_Issues"></a>
 
@@ -112,6 +113,6 @@ Le modèle Toggle est pris en charge uniquement quand l’élément de menu Win3
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Automation.ControlType.MenuItem>
-- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
-- [Vue d’ensemble des types de contrôle UI Automation](ui-automation-control-types-overview.md)
-- [Vue d’ensemble d’UI Automation](ui-automation-overview.md)
+- [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Vue d'ensemble des types de contrôle UI Automation](ui-automation-control-types-overview.md)
+- [Vue d'ensemble d'UI Automation](ui-automation-overview.md)

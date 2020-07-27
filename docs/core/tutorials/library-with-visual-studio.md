@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: ef9c62b0378e1064d8cfd90a8c59aed74ea312b2
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 69259b1d47a8e30945c578db10c6d697c81fa261
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701563"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164400"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio
 
@@ -111,7 +111,7 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 
    ![Menu contextuel du projet Visual Studio pour définir le projet de démarrage](media/library-with-visual-studio/set-startup-project-context-menu.png)
 
-1. Appuyez sur <kbd>MAJ</kbd> + <kbd>F5</kbd> pour compiler et exécuter le programme sans débogage.
+1. Appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour compiler et exécuter le programme sans débogage.
 
    ![Barre d’outils de projet Visual Studio avec le bouton déboguer](media/library-with-visual-studio/visual-studio-project-toolbar.png)
 

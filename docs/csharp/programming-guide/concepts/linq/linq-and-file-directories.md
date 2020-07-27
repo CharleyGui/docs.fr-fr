@@ -1,41 +1,42 @@
 ---
-title: LINQ et répertoires de fichiers (C)
+title: LINQ et répertoires de fichiers (C#)
+description: Ces ressources LINQ C# pour les opérations de système de fichiers ne sont pas utilisées pour modifier le contenu des fichiers ou des dossiers.
 ms.date: 07/20/2015
 ms.assetid: b66c55e4-0f72-44e5-b086-519f9962335c
-ms.openlocfilehash: fe503584e7d14e8d1dd281eb644f0723782feb4a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac00e29f90ee1c04ab9978b6ada3ae5f28991a1c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714627"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165667"
 ---
-# <a name="linq-and-file-directories-c"></a>LINQ et répertoires de fichiers (C)
+# <a name="linq-and-file-directories-c"></a>LINQ et répertoires de fichiers (C#)
 
-De nombreuses opérations de système de fichiers sont essentiellement des requêtes et sont donc bien adaptées à l’approche LINQ.  
+De nombreuses opérations du système de fichiers sont essentiellement des requêtes et sont donc bien adaptées à l’approche LINQ.  
   
  Les requêtes de cette section ne sont pas destructrices. Elles ne sont pas utilisées pour modifier le contenu des fichiers ou des dossiers d’origine. La règle suivie est que les requêtes ne doivent pas provoquer des effets secondaires. En règle générale, tout code (y compris les requêtes qui utilisent des opérateurs de création / mise à jour / suppression) qui modifie les données sources doit rester distinct du code qui interroge simplement les données.  
   
  Cette section contient les rubriques suivantes :  
   
- [Comment interroger les fichiers avec un attribut ou un nom spécifié (C)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)\
+ [Comment rechercher des fichiers avec un attribut ou un nom spécifié (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)\
  Montre comment rechercher des fichiers en examinant une ou plusieurs propriétés de son objet <xref:System.IO.FileInfo>.  
   
- [Comment regrouper les fichiers par extension (LINQ) (C)](./how-to-group-files-by-extension-linq.md)\
+ [Guide pratique pour regrouper des fichiers par extension (LINQ) (C#)](./how-to-group-files-by-extension-linq.md)\
  Montre comment retourner des groupes d’objets <xref:System.IO.FileInfo> en fonction de leur extension de nom de fichier.  
   
- [Comment interroger le nombre total d’octets dans un ensemble de dossiers (LINQ) (C)](./how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)\
+ [Comment interroger le nombre total d’octets dans un ensemble de dossiers (LINQ) (C#)](./how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)\
  Montre comment retourner le nombre total d’octets dans tous les fichiers d’une arborescence de répertoires spécifiée.  
   
- [Comment comparer le contenu de deux dossiers (LINQ) (C)](./how-to-compare-the-contents-of-two-folders-linq.md)  
+ Guide pratique [pour comparer le contenu de deux dossiers (LINQ) (C#)](./how-to-compare-the-contents-of-two-folders-linq.md)  
  Montre comment retourner tous les fichiers qui sont présents dans deux dossiers spécifiés, ainsi que tous les fichiers qui sont présents dans un dossier mais pas dans l’autre.  
   
- [Comment interroger le plus grand fichier ou fichiers dans un arbre d’annuaire (LINQ) (C)](./how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)\
+ [Comment interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)](./how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)\
  Montre comment retourner le fichier le plus grand ou le plus petit, ou un nombre spécifié de fichiers, dans une arborescence de répertoires.  
   
- [Comment interroger les fichiers en double dans un arbre d’annuaire (LINQ) (C)](./how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)\
+ [Comment interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (C#)](./how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)\
  Montre comment regrouper tous les noms de fichier qui se trouvent dans plusieurs emplacements d’une arborescence de répertoires spécifiée. Montre aussi comment effectuer des comparaisons plus complexes avec un comparateur personnalisé.  
   
- [Comment interroger le contenu des fichiers dans un dossier (LINQ) (C)](./how-to-query-the-contents-of-files-in-a-folder-lin.md)\
+ [Comment interroger le contenu de fichiers dans un dossier (LINQ) (C#)](./how-to-query-the-contents-of-files-in-a-folder-lin.md)\
  Montre comment itérer au sein des dossiers d’une arborescence, ouvrir chaque fichier et interroger le contenu du fichier.  
   
 ## <a name="comments"></a>Commentaires  

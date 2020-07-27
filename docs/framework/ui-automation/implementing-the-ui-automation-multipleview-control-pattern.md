@@ -1,17 +1,18 @@
 ---
 title: Implémentation du modèle de contrôle MultipleView d’UI Automation
+description: Passez en revue les recommandations et les conventions pour implémenter le modèle de contrôle MultipleView dans UI Automation. Consultez les membres requis pour l’interface IMultipleViewProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, MultipleView control pattern
 - MultipleView control pattern
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
-ms.openlocfilehash: 9decb617e30a340d3e73e911f7848110de5599e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0d65d57637891fcb1307f5ee83a417941ff323fb
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180166"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168229"
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>Implémentation du modèle de contrôle MultipleView d’UI Automation
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79180166"
   
  Le modèle de contrôle <xref:System.Windows.Automation.MultipleViewPattern> permet de prendre en charge des contrôles qui fournissent plusieurs représentations du même ensemble d’informations ou de contrôles enfants, et permettent de basculer entre elles.  
   
- Parmi les exemples de contrôles pouvant présenter plusieurs vues, mentionnons la vue de liste (qui peut afficher son contenu sous forme de vignettes, tuiles, icônes ou détails), les graphiques Microsoft Excel (tarte, ligne, barre, valeur cellulaire avec une formule), les documents Microsoft Word (normal, mise en page Web, impression mise en page, mise en page de lecture, contour), Microsoft Outlook calendrier (année, mois, semaine, jour), et Microsoft Windows Media Player skins. Les vues prises en charge sont déterminées par le développeur de contrôle et sont spécifiques à chaque contrôle.  
+ Voici des exemples de contrôles qui peuvent présenter plusieurs vues, notamment le mode liste (qui peut afficher son contenu sous forme de miniatures, vignettes, icônes ou détails), graphiques Microsoft Excel (secteurs, courbes, barres, valeurs de cellule avec une formule), documents Microsoft Word (normal, page Web, mise en page, disposition de lecture, plan), calendrier Microsoft Outlook (année, mois, semaine, jour) et peaux du lecteur Microsoft Windows Media. Les vues prises en charge sont déterminées par le développeur de contrôle et sont spécifiques à chaque contrôle.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
@@ -61,5 +62,5 @@ ms.locfileid: "79180166"
 - [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
 - [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

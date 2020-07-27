@@ -1,13 +1,14 @@
 ---
-title: Annotations LINQ to XML3
+title: Annotations LINQ to XML
+description: Apprenez à utiliser des annotations dans LINQ to XML pour associer tout objet arbitraire de tout type arbitraire à n’importe quel composant XML dans une arborescence XML.
 ms.date: 07/20/2015
 ms.assetid: 54e7b9d0-07f5-488f-9065-b6e6b870f810
-ms.openlocfilehash: 5f1940be2fc126ff9e9c7a4cb37e5cc7fc95d3c3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e7da666139c10b26de37816693202d96498f52d8
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66689944"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165570"
 ---
 # <a name="linq-to-xml-annotations"></a>Annotations LINQ to XML
 

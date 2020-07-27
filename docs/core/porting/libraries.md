@@ -3,71 +3,68 @@ title: Porter des bibliothèques vers .NET Core
 description: Découvrez comment porter des projets de bibliothèque de .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: 68fe36e543d949dc76bdb0c19ef3482936ad9e79
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac9da2f850bf1e4e36367ad2154849a0c7efd535
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398908"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164285"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Porter des bibliothèques .NET Framework vers .NET Core
 
-Apprenez à porter le code de bibliothèque cadre .NET à .NET Core, où il exécute multi-plateforme et élargit la portée des applications qui l’utilisent.
+Découvrez comment porter .NET Framework code de bibliothèque vers .NET Core, où il s’exécute sur plusieurs plateformes et étend la portée des applications qui l’utilisent.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Cet article suppose que vous :
 
-- utilisez Visual Studio 2017 ou une version ultérieure (.NET Core n’est pas pris en charge sur les versions antérieures de Visual Studio.)
+- utilisez Visual Studio 2017 ou une version ultérieure (.NET Core n’est pas pris en charge dans les versions antérieures de Visual Studio.)
 - comprenez le [processus de portage recommandé](index.md) ;
 - avez résolu les problèmes des [dépendances tierces](third-party-deps.md).
 
-Vous devez également vous familiariser avec le contenu des articles suivants :
+Vous devez également vous familiariser avec le contenu des articles suivants :
 
-[.NORME NET](../../standard/net-standard.md)\
-Cet article décrit la spécification formelle des API .NET qui sont destinés à être disponibles sur toutes les implémentations .NET.
+[.NET Standard](../../standard/net-standard.md)\
+Cet article décrit la spécification formelle des API .NET qui sont destinées à être disponibles sur toutes les implémentations de .NET.
 
-[Forfaits, métapackages et cadres](../packages.md)\
-Cet article explique comment .NET Core définit et utilise les packages et comment ceux-ci prennent en charge le code qui s’exécute sur plusieurs implémentations .NET.
-
-[Développer des bibliothèques avec des outils de plate-forme croisée](../tutorials/libraries.md)\
-Cet article explique comment écrire des bibliothèques à l’aide de l’ICIC .NET Core.
+[Développement de bibliothèques avec des outils multiplateformes](../tutorials/libraries.md)\
+Cet article explique comment écrire des bibliothèques à l’aide de l’CLI .NET Core.
 
 [Ajouts au format* csproj* pour .NET Core](../tools/csproj.md)\
 Cet article décrit les modifications qui ont été apportées au fichier projet dans le cadre du passage à *csproj* et à MSBuild.
 
-[Porting to .NET Core - Analyse de vos dépendances de tiers](third-party-deps.md)\
-Cet article traite de la portabilité des dépendances de tiers et de ce qu’il faut faire lorsqu’une dépendance au paquet NuGet ne fonctionne pas sur .NET Core.
+[Portage vers .NET Core-analyse de vos dépendances tierces](third-party-deps.md)\
+Cet article traite de la portabilité des dépendances tierces et de ce qu’il faut faire quand une dépendance de package NuGet ne s’exécute pas sur .NET Core.
 
-## <a name="retarget-to-net-framework-472"></a>Retarget à .NET Framework 4.7.2
+## <a name="retarget-to-net-framework-472"></a>Recibler pour .NET Framework 4.7.2
 
 Si votre code ne cible pas .NET Framework 4.7.2, nous vous recommandons de le recibler vers .NET Framework 4.7.2. Cela permet de garantir la disponibilité des dernières API de remplacement pour les cas où .NET Standard ne prend pas en charge les API existantes.
 
-Pour chacun des projets que vous souhaitez portuairer, faites ce qui suit dans Visual Studio :
+Pour chacun des projets que vous souhaitez porter, procédez comme suit dans Visual Studio :
 
-1. Cliquez à droite sur le projet et sélectionnez **propriétés**.
+1. Cliquez avec le bouton droit sur le projet et sélectionnez **Propriétés**.
 1. Dans la liste déroulante **Version cible de .NET Framework**, sélectionnez **.NET Framework 4.7.2**.
 1. Recompilez le projet.
 
 Vos projets ciblent maintenant .NET Framework 4.7.2. Utilisez cette version de .NET Framework comme base pour le portage du code.
 
-## <a name="determine-portability"></a>Déterminer la portabilité
+## <a name="determine-portability"></a>Détermination de la portabilité
 
 L’étape suivante consiste à exécuter l’outil API Portability Analyzer (ApiPort) pour générer un rapport de portabilité à des fins d’analyse.
 
-Vérifiez que vous comprenez bien [l’outil API Portability Analyzer (ApiPort)](../../standard/analyzers/portability-analyzer.md) et que vous savez générer des rapports de portabilité pour cibler .NET Core. La façon de faire est susceptible de varier selon vos besoins et vos préférences personnelles. Les sections suivantes détaillent quelques approches différentes. Vous pourrez être amené à combiner les étapes de ces approches en fonction de la structuration de votre code.
+Vérifiez que vous comprenez bien [l’outil API Portability Analyzer (ApiPort)](../../standard/analyzers/portability-analyzer.md) et que vous savez générer des rapports de portabilité pour cibler .NET Core. La façon de faire est susceptible de varier selon vos besoins et vos préférences personnelles. Les sections suivantes décrivent quelques approches différentes. Vous pourrez être amené à combiner les étapes de ces approches en fonction de la structuration de votre code.
 
-### <a name="deal-primarily-with-the-compiler"></a>Traiter principalement avec le compilateur
+### <a name="deal-primarily-with-the-compiler"></a>Traitez principalement avec le compilateur
 
-Cette approche fonctionne bien pour les petits projets ou les projets qui n’utilisent pas beaucoup d’API cadre .NET. Elle est simple :
+Cette approche fonctionne bien pour les petits projets ou projets qui n’utilisent pas de nombreuses API .NET Framework. Elle est simple :
 
 1. Exécutez ApiPort sur votre projet (facultatif). Si vous exécutez ApiPort, prenez connaissance du rapport sur les problèmes que vous devrez résoudre.
 1. Recopiez tout votre code dans un nouveau projet .NET Core.
 1. Pendant que vous vous référez au rapport de portabilité (s’il a été généré), résolvez les erreurs du compilateur jusqu’à ce que le projet se compile intégralement.
 
-Bien qu’elle ne soit pas structurée, cette approche axée sur le code résout souvent rapidement les problèmes. Un projet contenant uniquement des modèles de données pourrait constituer un candidat idéal à cette approche.
+Bien qu’elle ne soit pas structurée, cette approche axée sur le code résout souvent les problèmes rapidement. Un projet contenant uniquement des modèles de données pourrait constituer un candidat idéal à cette approche.
 
-### <a name="stay-on-the-net-framework-until-portability-issues-are-resolved"></a>Restez sur le cadre .NET jusqu’à ce que les problèmes de portabilité soient résolus
+### <a name="stay-on-the-net-framework-until-portability-issues-are-resolved"></a>Restez sur le .NET Framework jusqu’à ce que les problèmes de portabilité soient résolus
 
 Cette approche est peut-être la meilleure si vous préférez avoir du code compilable pendant tout le processus. L’approche est la suivante :
 
@@ -78,9 +75,9 @@ Cette approche est peut-être la meilleure si vous préférez avoir du code comp
 1. Copiez le code dans un nouveau projet .NET Core.
 1. Résolvez tous les problèmes pour lesquels vous avez noté qu’il n’existe pas de solution de rechange directe.
 
-Cette approche prudente est plus structurée que celle qui consiste à résoudre simplement les erreurs de compilation, mais elle reste relativement centrée sur le code et présente l’avantage de toujours conserver du code compilable. Les moyens de résoudre les problèmes qui n’ont pas pu être traités en utilisant simplement une autre API peuvent varier considérablement. Vous constaterez peut-être que vous devez élaborer un plan plus complet pour certains projets, qui est couvert dans la prochaine approche.
+Cette approche prudente est plus structurée que celle qui consiste à résoudre simplement les erreurs de compilation, mais elle reste relativement centrée sur le code et présente l’avantage de toujours conserver du code compilable. Les moyens de résoudre les problèmes qui n’ont pas pu être traités en utilisant simplement une autre API peuvent varier considérablement. Vous constaterez peut-être que vous devez développer un plan plus complet pour certains projets, ce qui est abordé dans l’approche suivante.
 
-### <a name="develop-a-comprehensive-plan-of-attack"></a>Élaborer un plan d’attaque complet
+### <a name="develop-a-comprehensive-plan-of-attack"></a>Développer un plan d’attaque complet
 
 Cette approche est peut-être la meilleure pour les projets complexes et de grande envergure, dans lesquels il peut être nécessaire de restructurer le code ou de réécrire complètement certains passages pour prendre en charge .NET Core. L’approche est la suivante :
 
@@ -89,13 +86,13 @@ Cette approche est peut-être la meilleure pour les projets complexes et de gran
    - Déterminez la nature de ces types. Sont-ils peu nombreux mais fréquemment utilisés ? Sont-ils nombreux mais rarement utilisés ? Leur utilisation est-elle concentrée ou est-elle répartie à travers tout le code ?
    - Est-il facile d’isoler le code non portable, afin de le traiter plus facilement ?
    - Faut-il refactoriser le code ?
-   - Pour les types qui ne sont pas portables, y at-il d’autres API qui accomplissent la même tâche? Par exemple, si vous <xref:System.Net.WebClient> utilisez la classe, vous <xref:System.Net.Http.HttpClient> pourriez être en mesure d’utiliser la classe à la place.
-   - Existe-t-il d’autres API portables permettant d’accomplir une tâche, même s’il ne s’agit pas d’un remplacement immédiat ? Par exemple, si vous <xref:System.Xml.Schema.XmlSchema> utilisez pour analyser XML mais ne nécessitent pas de <xref:System.Xml.Linq> découverte de schémas XML, vous pouvez utiliser les API et implémenter vous analyser plutôt que de compter sur une API.
+   - Pour les types qui ne sont pas portables, existe-t-il des API alternatives qui accomplissent la même tâche ? Par exemple, si vous utilisez la <xref:System.Net.WebClient> classe, vous pourrez peut-être utiliser la classe à la <xref:System.Net.Http.HttpClient> place.
+   - Existe-t-il d’autres API portables permettant d’accomplir une tâche, même s’il ne s’agit pas d’un remplacement immédiat ? Par exemple, si vous utilisez <xref:System.Xml.Schema.XmlSchema> pour analyser du code XML, mais que vous n’avez pas besoin de la découverte du schéma XML, vous pouvez utiliser des <xref:System.Xml.Linq> API et implémenter vous-même l’analyse au lieu de vous appuyer sur une API.
 1. Si vous avez des assemblys difficiles à porter, est-il intéressant de les laisser sur le .NET Framework pour l’instant ? Voici quelques possibilités d’opérations à prendre en considération :
-   - Certaines des fonctionnalités de votre bibliothèque pourraient ne pas être compatibles avec .NET Core, car elles dépendent trop des fonctionnalités propres à .NET Framework ou à Windows. Vaut-il la peine de laisser cette fonctionnalité derrière pour l’instant et de libérer une version temporaire .NET Core de votre bibliothèque avec moins de fonctionnalités jusqu’à ce que les ressources sont disponibles pour le port des fonctionnalités?
+   - Certaines des fonctionnalités de votre bibliothèque pourraient ne pas être compatibles avec .NET Core, car elles dépendent trop des fonctionnalités propres à .NET Framework ou à Windows. Est-il intéressant de laisser cette fonctionnalité derrière pour l’instant et de publier une version .NET Core temporaire de votre bibliothèque avec moins de fonctionnalités tant que des ressources ne sont pas disponibles pour le portage des fonctionnalités ?
    - Une refactorisation serait-elle utile ?
 1. Est-il raisonnable d’écrire votre propre implémentation d’une API .NET Framework non disponible ?
-   Vous pourriez envisager de copier, modifier et utiliser le code à partir de la source de [référence .NET Framework](https://github.com/Microsoft/referencesource). Le code source de référence est sous [licence du MIT](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt), ce qui vous laisse la liberté d’utiliser la source comme base pour votre propre code. Veillez simplement à mentionner correctement ce qui est propriété de Microsoft dans votre code.
+   Vous pouvez envisager de copier, de modifier et d’utiliser du code à partir de la [source de référence .NET Framework](https://github.com/Microsoft/referencesource). Le code source de référence est sous [licence du MIT](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt), ce qui vous laisse la liberté d’utiliser la source comme base pour votre propre code. Veillez simplement à mentionner correctement ce qui est propriété de Microsoft dans votre code.
 1. Répétez ce processus si nécessaire pour les différents projets.
 
 La phase d’analyse peut prendre un certain temps, selon la taille de votre code base. Passer du temps sur cette phase pour déterminer précisément l’étendue des modifications nécessaires et pour développer un plan fait en général gagner du temps à long terme, en particulier en cas de code base complexe.
@@ -106,11 +103,11 @@ Votre plan peut impliquer des modifications importantes de votre code base tout 
 
 Il est probable que vous allez combiner les approches ci-dessus de façon différente selon les projets. Vous devez faire ce qui a le plus de sens pour vous et pour votre code base.
 
-## <a name="port-your-tests"></a>Portez vos tests
+## <a name="port-your-tests"></a>Portage de vos tests
 
 La meilleure façon de vérifier que tout fonctionne quand vous avez porté votre code est de tester votre code quand vous l’avez porté sur .NET Core. Pour cela, vous devez utiliser une infrastructure de test qui génère et exécute des tests pour .NET Core. Vous avez actuellement trois options :
 
-- [xUnit (en)](https://xunit.github.io/)
+- [xUnit](https://xunit.github.io/)
   - [Prise en main](https://xunit.github.io/docs/getting-started-dotnet-core.html)
   - [Outil pour convertir un projet MSTest en xUnit](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
 - [NUnit](https://nunit.org/)
@@ -120,7 +117,7 @@ La meilleure façon de vérifier que tout fonctionne quand vous avez porté votr
 
 ## <a name="recommended-approach"></a>Approche recommandée
 
-En définitive, le travail de portage dépend fortement de la structuration du code .NET Framework. Une bonne façon de porter votre code est de commencer par la *base* de votre bibliothèque, qui est les composants fondamentaux de votre code. Il peut s’agir de modèles de données ou d’autres classes et méthodes fondamentales utilisées directement ou indirectement par tout le reste.
+En définitive, le travail de portage dépend fortement de la structuration du code .NET Framework. Une bonne façon de porter votre code est de commencer par la *base* de votre bibliothèque, qui est l’un des composants fondamentaux de votre code. Il peut s’agir de modèles de données ou d’autres classes et méthodes fondamentales utilisées directement ou indirectement par tout le reste.
 
 1. Portez le projet de test qui teste la couche en cours de portage de votre bibliothèque.
 1. Copiez la base de votre bibliothèque dans un nouveau projet .NET Core et sélectionnez la version de .NET Standard que vous voulez prendre en charge.

@@ -1,17 +1,18 @@
 ---
 title: Prise en charge d'UI Automation pour le type de contrôle ScrollBar
+description: Obtenir des informations sur la prise en charge d’UI Automation pour le type de contrôle ScrollBar. Découvrez l’arborescence, les propriétés, les modèles de contrôle et les événements requis.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, Scroll Bar control type
 - control types, Scroll Bar
 - Scroll Bar control type
 ms.assetid: 329891d7-b609-49e6-920a-09ea8a627d07
-ms.openlocfilehash: 88a606369103e989b41ecf3569d54247cf3f83fa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 05a30468c9fb292ca0ffde15e2cd7fb523c7d712
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179614"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165979"
 ---
 # <a name="ui-automation-support-for-the-scrollbar-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle ScrollBar
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179614"
   
  Les contrôles de barre de défilement permettent à un utilisateur de faire défiler le contenu d’une fenêtre ou d’un conteneur d’élément. Le contrôle est constitué d’un ensemble de boutons et d’un contrôle curseur de position.  
   
- Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle ScrollBar. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] exigences s’appliquent [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]à tous les contrôles de liste, que ce soit, Win32, ou Windows Forms.  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle ScrollBar. Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifications s’appliquent à tous les contrôles de liste, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] , Win32 ou Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
@@ -29,7 +30,7 @@ ms.locfileid: "79179614"
   
 |Affichage de contrôle|Affichage de contenu|  
 |------------------|------------------|  
-|ScrollBar<br /><br /> - Bouton (2 ou 4)<br />- Pouce (0 ou 1)|Non applicable. Le contrôle de barre de défilement n’a pas de contenu.|  
+|ScrollBar<br /><br /> -Button (2 ou 4)<br />-Thumb (0 i :<0)|Non applicable. Le contrôle de barre de défilement n’a pas de contenu.|  
   
  Le contrôle de barre de défilement a toujours entre trois et cinq enfants. Dans la mesure où la sous-arborescence a plusieurs contrôles bouton, vous devez définir une valeur <xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty> spécifique pour chaque élément afin de les rendre détectables pour les outils d’automatisation des tests.  
   
@@ -39,7 +40,7 @@ ms.locfileid: "79179614"
   
  Pour plus d’informations sur les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
   
-|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
+|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Remarques|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Rectangle externe qui contient l’ensemble du contrôle.|  
