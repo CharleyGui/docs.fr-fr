@@ -1,5 +1,6 @@
 ---
 title: Déplacer un élément UI Automation
+description: Consultez l’exemple de code qui montre comment déplacer un élément UI Automation vers un emplacement d’écran spécifié. Elle utilise les modèles de contrôle WindowPattern et TransformPattern.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - elements, moving
 - UI Automation, moving elements
 ms.assetid: 4042cb44-e27e-4a03-ac36-9be1eed65b47
-ms.openlocfilehash: 72454e355fb9b673a4adafb39ad60c8414573d0e
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 4c8bec4e6d7a241588a3ab261cb80ce9ac242024
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741315"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166150"
 ---
 # <a name="move-a-ui-automation-element"></a>Déplacer un élément UI Automation
 > [!NOTE]
@@ -23,7 +24,7 @@ ms.locfileid: "75741315"
  Cet exemple montre comment déplacer un élément [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vers un emplacement spécifique à l’écran.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise les modèles de contrôle <xref:System.Windows.Automation.WindowPattern> et <xref:System.Windows.Automation.TransformPattern> pour déplacer par programmation une application cible Win32 vers des emplacements discrets à l’écran et effectuer le suivi de la <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> <xref:System.Windows.Automation.AutomationElement.AutomationPropertyChangedEvent>.  
+ L’exemple suivant utilise les <xref:System.Windows.Automation.WindowPattern> <xref:System.Windows.Automation.TransformPattern> modèles de contrôle et pour déplacer par programmation une application cible Win32 vers des emplacements discrets à l’écran et effectuer le suivi de <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> <xref:System.Windows.Automation.AutomationElement.AutomationPropertyChangedEvent> .  
   
  [!code-csharp[WindowMove#1301](../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowMove/CSharp/WindowMove.cs#1301)]
  [!code-vb[WindowMove#1301](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowMove/VisualBasic/windowmove.vb#1301)]  

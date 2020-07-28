@@ -1,5 +1,6 @@
 ---
 title: Obtenir l'état bascule d'une case à cocher à l'aide d'UI Automation
+description: Consultez un exemple de code qui montre comment obtenir l’État bascule d’un contrôle (par exemple, une case à cocher) à l’aide de Microsoft UI Automation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - check boxes, getting toggle states of
 - getting, toggle states of check boxes
 ms.assetid: 84fc31a3-175f-4e93-90a0-dd29d89b77ce
-ms.openlocfilehash: d4a3fa01dcfee2eafbb6dbd46cd67bed9e874a73
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 36ec205a572fd6c9e52eec9d2c3e0618ddb0a07b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435598"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164139"
 ---
 # <a name="get-the-toggle-state-of-a-check-box-using-ui-automation"></a>Obtenir l'état bascule d'une case à cocher à l'aide d'UI Automation
 > [!NOTE]
@@ -23,7 +24,7 @@ ms.locfileid: "74435598"
  Cette rubrique montre comment utiliser [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour obtenir l’État bascule d’un contrôle.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise la méthode <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> de la classe <xref:System.Windows.Automation.AutomationElement> pour obtenir un objet <xref:System.Windows.Automation.TogglePattern> à partir d’un contrôle et retourner sa propriété <xref:System.Windows.Automation.ToggleState>.  
+ Cet exemple utilise la <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> méthode de la <xref:System.Windows.Automation.AutomationElement> classe pour obtenir un <xref:System.Windows.Automation.TogglePattern> objet à partir d’un contrôle et retourner sa <xref:System.Windows.Automation.ToggleState> propriété.  
   
  [!code-csharp[NavigatingWithTreeWalker#1200](../../../samples/snippets/csharp/VS_Snippets_Wpf/NavigatingWithTreeWalker/CSharp/ClientClass.cs#1200)]
  [!code-vb[NavigatingWithTreeWalker#1200](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/NavigatingWithTreeWalker/visualbasic/clientclass.vb#1200)]
