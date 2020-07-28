@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 61cfcf06586f3ac66526de69a17b8aef3cf0c795
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: 59fdbfa875dad13963ae198acc6a31b537279dfe
+ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365581"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251177"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -54,8 +54,10 @@ La commande `dotnet publish` appelle MSBuild, qui appelle la cible de `Publish`.
 La `dotnet publish` commande accepte les options MSBuild, comme `-p` pour définir des propriétés et `-l` pour définir un enregistreur d’événements. Par exemple, vous pouvez définir une propriété MSBuild en utilisant le format : `-p:<NAME>=<VALUE>` . Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* , par exemple :
 
 ```dotnetcli
-dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
+dotnet publish -p:PublishProfile=FolderProfile
 ```
+
+L’exemple précédent utilise le fichier *FolderProfile. pubxml* qui se trouve dans le dossier * \<project_folder> /Properties/PublishProfiles* . Si vous spécifiez un chemin d’accès et une extension de fichier lors de la définition de la `PublishProfile` propriété, ils sont ignorés. MSBuild par défaut examine le dossier *Properties/PublishProfiles* et suppose l’extension de fichier *pubxml* . Pour spécifier le chemin d’accès et le nom de fichier, y compris l’extension, définissez la propriété à la `PublishProfileFullPath` place de la `PublishProfile` propriété.
 
 Pour plus d’informations, consultez les ressources suivantes :
 

@@ -3,12 +3,12 @@ title: Propriétés MSBuild pour Microsoft. NET. Sdk
 description: Référence pour les propriétés et les éléments MSBuild compris par l’kit SDK .NET Core.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: cda56b3e23592a341d9fe672fc1f1530adcdab49
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 115c4f32e856dee64abe0c607b8ee595a65692e6
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206110"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164375"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Référence MSBuild pour les projets kit SDK .NET Core
 
@@ -25,7 +25,7 @@ Cette page est une référence pour les propriétés et les éléments MSBuild q
 
 ### <a name="targetframework"></a>TargetFramework
 
-La `TargetFramework` propriété spécifie la version cible de .NET Framework pour l’application, qui référence implicitement un [repackage](../packages.md#metapackages). Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
+La `TargetFramework` propriété spécifie la version cible de .NET Framework pour l’application. Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
 
 ```xml
 <PropertyGroup>
@@ -55,7 +55,7 @@ Pour plus d’informations, consultez [frameworks cibles dans les projets de typ
 > [!NOTE]
 > Cette propriété s’applique uniquement aux projets qui utilisent `netstandard1.x` . Elle ne s’applique pas aux projets qui utilisent `netstandard2.x` .
 
-Utilisez la `NetStandardImplicitPackageVersion` propriété lorsque vous souhaitez spécifier une version de Framework inférieure à la version de l' [ensemble de packages](../packages.md#metapackages) . Le fichier projet dans l’exemple suivant cible, `netstandard1.3` mais utilise la version 1.6.0 de `NETStandard.Library` .
+Utilisez la `NetStandardImplicitPackageVersion` propriété lorsque vous souhaitez spécifier une version de Framework inférieure à la version de l’ensemble de packages. Le fichier projet dans l’exemple suivant cible, `netstandard1.3` mais utilise la version 1.6.0 de `NETStandard.Library` .
 
 ```xml
 <PropertyGroup>
@@ -292,7 +292,7 @@ Vous pouvez définir la `AssetTargetFallback` propriété sur une ou plusieurs [
 
 ### <a name="packagereference"></a>PackageReference
 
-L' `PackageReference` élément définit une référence à un package NuGet. Par exemple, vous souhaiterez peut-être référencer un package unique au lieu d’un sous- [package](../packages.md#metapackages).
+L' `PackageReference` élément définit une référence à un package NuGet.
 
 L’attribut `Include` spécifie l’ID du package. L' `Version` attribut spécifie la version ou la plage de versions. Pour plus d’informations sur la spécification d’une version minimale, d’une version maximale, d’une plage ou d’une correspondance exacte, consultez [plages de versions](/nuget/concepts/package-versioning#version-ranges). Vous pouvez également ajouter les métadonnées suivantes à une référence de projet : `IncludeAssets` , `ExcludeAssets` et `PrivateAssets` .
 
