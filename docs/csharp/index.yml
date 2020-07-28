@@ -47,7 +47,7 @@ landingContent:
       url: programming-guide/main-and-command-args/index.md
   - linkListType: concept
     links:
-    - text: Le système de type C# et net
+    - text: Le système de type C# et .NET
       url: programming-guide/types/index.md
     - text: LINQ (Language-Integrated Query)
       url: linq/index.md
