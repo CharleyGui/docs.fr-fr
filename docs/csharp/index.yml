@@ -2,7 +2,7 @@
 title: Documentation C#
 summary: Apprenez à écrire n’importe quelle application en utilisant le langage de programmation C sur la plate-forme .NET.
 metadata:
-  title: Docs C - démarrer, tutoriels, référence.
+  title: Docs C# - démarrer, tutoriels, référence.
   description: Apprenez la programmation de CMD - pour les développeurs débutants, les développeurs nouveaux à C ' et les développeurs expérimentés de C / .NET
   ms.topic: landing-page
   ms.date: 11/19/2019
@@ -13,13 +13,13 @@ metadata:
   ms.lasthandoff: 04/23/2020
   ms.locfileid: "82102721"
 landingContent:
-- title: 'Apprendre à programmer en C #'
+- title: 'Apprendre à programmer en C#'
   linkLists:
   - linkListType: get-started
     links:
     - text: En ligne, interactif Hello world
       url: tutorials/intro-to-csharp/hello-world.yml
-    - text: 'Mathématiques et chiffres en C #'
+    - text: 'Mathématiques et chiffres en C#'
       url: tutorials/intro-to-csharp/numbers-in-csharp.yml
     - text: Tutoriels d’introduction
       url: tutorials/intro-to-csharp/index.md
@@ -27,7 +27,7 @@ landingContent:
       url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-console
   - linkListType: video
     links:
-    - text: Qu’est-ce que C# ?
+    - text: Qu’est-ce que C#?
       url: https://channel9.msdn.com/Series/CSharp-101/What-is-C/player
     - text: Série vidéo C 101
       url: https://aka.ms/dotnet3-csharp
@@ -39,7 +39,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: 'Une visite de C #'
+    - text: 'Une visite de C#'
       url: tour-of-csharp/index.md
     - text: À l’intérieur d’un programme C#
       url: programming-guide/inside-a-program/index.md
@@ -47,7 +47,7 @@ landingContent:
       url: programming-guide/main-and-command-args/index.md
   - linkListType: concept
     links:
-    - text: Le système de type C et net
+    - text: Le système de type C# et net
       url: programming-guide/types/index.md
     - text: LINQ (Language-Integrated Query)
       url: linq/index.md
@@ -63,7 +63,7 @@ landingContent:
       url: tutorials/string-interpolation.md
     - text: Parcourir tous les tutoriels
       url: tutorials/index.md
-- title: Nouvelles fonctionnalités dans C 8.0
+- title: Nouvelles fonctionnalités dans C# 8.0
   linkLists:
   - linkListType: whats-new
     links:
@@ -97,7 +97,7 @@ landingContent:
       url: tutorials/ranges-indexes.md
   - linkListType: reference
     links:
-    - text: Changements de rupture dans le compilateur de C
+    - text: Changements de rupture dans le compilateur de C#
       url: whats-new/breaking-changes.md
 - title: Informations de référence sur le langage C#
   linkLists:
