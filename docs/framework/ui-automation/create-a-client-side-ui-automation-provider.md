@@ -1,5 +1,6 @@
 ---
 title: Créer un fournisseur UI Automation côté client
+description: Consultez un exemple de création d’un fournisseur UI Automation côté client. L’exemple implémente un fournisseur côté client simple pour une fenêtre de console.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, creating client-side provider
 - client-side UI Automation provider, creating
 ms.assetid: d91edaf2-be28-41ec-a508-af421cb43c3d
-ms.openlocfilehash: 79accd23392ff9e1e8157348f7a1042ee2b3cc47
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a25966d0f11e409bd4e53f944fc2528360327039
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433652"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168475"
 ---
 # <a name="create-a-client-side-ui-automation-provider"></a>Créer un fournisseur UI Automation côté client
 > [!NOTE]
@@ -29,5 +30,5 @@ ms.locfileid: "74433652"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
+- [Vue d'ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
 - [Inscrire un assembly de fournisseur côté client](register-a-client-side-provider-assembly.md)

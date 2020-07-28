@@ -1,17 +1,18 @@
 ---
 title: Implémentation du modèle de contrôle Table d’UI Automation
+description: Passez en revue les recommandations et les conventions pour implémenter le modèle de contrôle table dans UI Automation. Connaître les membres requis pour l’interface ITableProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, Table control pattern
 - control patterns, Table
 - TableControl pattern
 ms.assetid: 880cd85c-aa8c-4fb5-9369-45491d34bb78
-ms.openlocfilehash: 0b3d000112060550734890ad3c4063a26c320b04
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e88ddee04ba887daf1929d855526cd0d062f78d5
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180113"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168234"
 ---
 # <a name="implementing-the-ui-automation-table-control-pattern"></a>Implémentation du modèle de contrôle Table d’UI Automation
 > [!NOTE]
@@ -32,9 +33,9 @@ ms.locfileid: "79180113"
 - Les en-têtes de colonne et de ligne peuvent inclure un en-tête principal et des en-têtes de prise en charge quelconques.  
   
 > [!NOTE]
-> Ce concept devient évident dans une feuille de calcul Microsoft Excel où un utilisateur a défini une colonne " Prénom "Prénom". Cette colonne a désormais deux en-têtes : l’en-tête « Prénom » défini par l’utilisateur et la désignation alphanumérique de cette colonne affectée par l’application.  
+> Ce concept devient évident dans une feuille de calcul Microsoft Excel où un utilisateur a défini une colonne de « prénom ». Cette colonne a désormais deux en-têtes : l’en-tête « Prénom » défini par l’utilisateur et la désignation alphanumérique de cette colonne affectée par l’application.  
   
-- Voir [la mise en œuvre du modèle de contrôle de grille d’automatisation de l’interface utilisateur](implementing-the-ui-automation-grid-control-pattern.md) pour les fonctionnalités de grille connexes.  
+- Consultez [implémentation du modèle de contrôle Grid d’UI Automation](implementing-the-ui-automation-grid-control-pattern.md) pour les fonctionnalités de grille associées.  
   
  ![Table avec éléments d'en-tête complexes.](./media/uia-tablepattern-complex-column-headers.PNG "UIA_TablePattern_Complex_Column_Headers")  
 Exemple de table avec des en-têtes de colonne complexes  
@@ -65,5 +66,5 @@ Exemple de table avec une propriété RowOrColumnMajor ambiguë
 - [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
 - [Implémentation du modèle de contrôle TableItem d’UI Automation](implementing-the-ui-automation-tableitem-control-pattern.md)
 - [Implémentation du modèle de contrôle Grid d’UI Automation](implementing-the-ui-automation-grid-control-pattern.md)
-- [UI Automation Tree Overview](ui-automation-tree-overview.md)
+- [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

@@ -1,5 +1,6 @@
 ---
 title: 'Procédure pas à pas : afficher des données à partir d’une base de données SQL Server dans un contrôle DataGrid'
+description: Découvrez comment obtenir des données à partir d’une base de données SQL Server et les afficher dans un contrôle DataGrid Windows Presentation Foundation à l’aide de cette procédure pas à pas.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - DataGrid [WPF], displaying data from SQL Server
 - controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-ms.openlocfilehash: 1398d8408a0b85d6603d638312e92ba35c5e77d3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cc41979c869021c9c363f3f68ce590d4702e068c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591031"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167545"
 ---
 # <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>Procédure pas à pas : affichage de données d’une base de données SQL Server dans un contrôle DataGrid
 
@@ -47,7 +48,7 @@ Vous devez disposer des éléments suivants pour exécuter cette procédure pas 
 
 6. Dans l’écran choisir votre connexion de données, fournissez la connexion à votre base de données AdventureWorksLT2008. Pour plus d’informations, consultez [boîte de dialogue choisir votre connexion de données](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399244(v=vs.100)).
 
-    Assurez-vous que le nom est `AdventureWorksLT2008Entities` et que la case à cocher **enregistrer les paramètres de connexion de l’entité dans App. config en tant que** est activée, puis cliquez sur **suivant**.
+    Assurez-vous que le nom est `AdventureWorksLT2008Entities` et que la case à cocher **enregistrer les paramètres de connexion de l’entité dans App.Config en tant que** est activée, puis cliquez sur **suivant**.
 
 7. Dans l’écran choisir vos objets de base de données, développez le nœud tables, puis sélectionnez les tables **Product** et **ProductCategory** .
 
