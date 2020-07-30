@@ -1,5 +1,6 @@
 ---
 title: Vue d'ensemble de l'interopérabilité - Guide de programmation C#
+description: En savoir plus sur l’interopérabilité entre C# et le code non managé, y compris l’appel de code non managé, l’interopérabilité C++, l’exposition de composants COM à C# et l’exposition de C# à COM.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 6546a379d6d851aafbced0931221dc19ca022a72
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 6b1dec96dfb3fc354c614983ed1dafab66c5b007
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241732"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302956"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Vue d'ensemble de l'interopérabilité (Guide de programmation C#)
 Cette rubrique décrit les méthodes qui permettent une interopérabilité entre le code managé C# et le code non managé.  
@@ -36,7 +37,7 @@ Pour plus d’informations, consultez [consommation de fonctions DLL non managé
   
 2. Ajoutez au projet une référence au composant COM ou à la bibliothèque de types.  
   
-     Quand vous ajoutez la référence, Visual Studio utilise le fichier [Tlbimp. exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md), qui prend comme entrée une bibliothèque de types pour générer un assembly .NET Interop. L’assembly, également appelé wrapper RCW, contient des classes et des interfaces managées qui encapsulent les classes et les interfaces COM qui se trouvent dans la bibliothèque de types. Visual Studio ajoute au projet une référence à l’assembly généré.  
+     Quand vous ajoutez la référence, Visual Studio utilise le [Tlbimp.exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md), qui prend une bibliothèque de types comme entrée pour générer un assembly .NET Interop. L’assembly, également appelé wrapper RCW, contient des classes et des interfaces managées qui encapsulent les classes et les interfaces COM qui se trouvent dans la bibliothèque de types. Visual Studio ajoute au projet une référence à l’assembly généré.  
   
 3. Créez une instance d’une classe qui est définie dans le wrapper RCW. Une instance de l’objet COM est ainsi créée.  
   

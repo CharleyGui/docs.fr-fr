@@ -1,5 +1,6 @@
 ---
-title: Comment accéder aux objets interop Office - Guide de programmation C
+title: Comment accéder aux objets Office Interop-Guide de programmation C#
+description: Découvrez les fonctionnalités C# qui simplifient l’accès aux objets d’API Office. Utilisez les nouvelles fonctionnalités pour écrire du code qui crée et affiche une feuille de calcul Excel.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - optional parameters [C#], Office programming
@@ -9,16 +10,16 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: b5d2da011ec6318c8b07f1eb4d383a4d56488239
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bc4b5755bf56a013a0deb4efdb821df18db5a18e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75700833"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303021"
 ---
-# <a name="how-to-access-office-interop-objects-c-programming-guide"></a>Comment accéder aux objets interop Office (Guide de programmation C)
+# <a name="how-to-access-office-interop-objects-c-programming-guide"></a>Comment accéder aux objets Office Interop (Guide de programmation C#)
 
-Les fonctionnalités de CMD simplifient l’accès aux objets Office API. Les nouvelles fonctionnalités incluent les arguments nommés et les arguments facultatifs, un nouveau type appelé `dynamic` et la possibilité de passer des arguments aux paramètres de référence dans les méthodes COM comme s'il s'agissait de paramètres de valeur.
+C# possède des fonctionnalités qui simplifient l’accès aux objets d’API Office. Les nouvelles fonctionnalités incluent les arguments nommés et les arguments facultatifs, un nouveau type appelé `dynamic` et la possibilité de passer des arguments aux paramètres de référence dans les méthodes COM comme s'il s'agissait de paramètres de valeur.
 
 Dans cette rubrique, vous allez utiliser les nouvelles fonctionnalités pour écrire le code qui crée et affiche une feuille de calcul Microsoft Office Excel. Vous écrirez ensuite le code pour ajouter un document Office Word qui contient une icône liée à la feuille de calcul Excel.
 
@@ -30,7 +31,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
 1. Démarrez Visual Studio.
 
-2. Dans le menu **Fichier** , pointez sur **Nouveau**, puis cliquez sur **Projet**. La boîte de dialogue **Nouveau projet** s'affiche.
+2. Dans le menu **Fichier** , pointez sur **Nouveau**, puis cliquez sur **Projet**. La boîte de dialogue **Nouveau projet** apparaît.
 
 3. Dans le volet **Modèles installés**, développez **Visual C#**, puis cliquez sur **Windows**.
 
@@ -48,7 +49,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom de votre projet, puis cliquez sur **Ajouter une référence**. La boîte de dialogue **Ajouter une référence** s’affiche.
 
-2. Dans la page **Assemblys**, sélectionnez **Microsoft.Office.Interop.Word** dans la liste **Nom du composant**, puis maintenez la touche CTRL enfoncée et sélectionnez **Microsoft.Office.Interop.Excel**.  Si vous ne voyez pas les assemblages, vous devrez peut-être vous assurer qu’elles sont installées et affichées. Voir [comment: Installer office Primary Interop Assemblies](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies).
+2. Dans la page **Assemblys**, sélectionnez **Microsoft.Office.Interop.Word** dans la liste **Nom du composant**, puis maintenez la touche CTRL enfoncée et sélectionnez **Microsoft.Office.Interop.Excel**.  Si vous ne voyez pas les assemblys, vous devrez peut-être vous assurer qu’ils sont installés et affichés. Consultez [Comment : installer les assemblys PIA (Primary Interop Assembly) d’Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies).
 
 3. Cliquez sur **OK**.
 
@@ -56,7 +57,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier *Program.cs*, puis cliquez sur **Afficher le code**.
 
-2. Ajoutez les `using` directives suivantes au haut du fichier de code :
+2. Ajoutez les `using` directives suivantes en haut du fichier de code :
 
      [!code-csharp[csProgGuideOfficeHowTo#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#1)]
 
@@ -94,7 +95,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]
 
-     Les versions C 4, et plus `Object` `dynamic` tard, convertissent automatiquement les versions retournées si l’assemblage est référencé par l’option [compilateur -lien](../../language-reference/compiler-options/link-compiler-option.md) ou, de façon équivalente, si la propriété Excel **Embed Interop Types** est définie pour être vraie. La valeur par défaut de cette propriété est true.
+     C# 4 et versions ultérieures convertit automatiquement le retourné `Object` en `dynamic` si l’assembly est référencé par l’option du compilateur [-Link](../../language-reference/compiler-options/link-compiler-option.md) ou, de manière équivalente, si la propriété Excel **incorporer les types Interop** a la valeur true. La valeur par défaut de cette propriété est true.
 
 ## <a name="to-run-the-project"></a>Pour exécuter le projet
 
@@ -148,7 +149,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
 3. Si la fenêtre **Propriétés** n’apparaît pas, appuyez sur **F4**.
 
-4. Recherchez **Incorporer les types interop** dans la liste des propriétés et attribuez-lui la valeur **False**. De façon équivalente, vous pouvez compiler en utilisant l’option [compilateur de référence](../../language-reference/compiler-options/reference-compiler-option.md) au lieu de [-lien](../../language-reference/compiler-options/link-compiler-option.md) à une invite de commande.
+4. Recherchez **Incorporer les types interop** dans la liste des propriétés et attribuez-lui la valeur **False**. De manière équivalente, vous pouvez compiler à l’aide de l’option de compilateur [-Reference](../../language-reference/compiler-options/reference-compiler-option.md) à la place de [-Link](../../language-reference/compiler-options/link-compiler-option.md) à une invite de commandes.
 
 ## <a name="to-add-additional-formatting-to-the-table"></a>Pour ajouter une mise en forme supplémentaire au tableau
 
@@ -166,7 +167,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
      [!code-csharp[csProgGuideOfficeHowTo#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#17)]
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L'exemple de code suivant illustre l'exemple complet.
 
@@ -175,7 +176,7 @@ L'exemple de code suivant illustre l'exemple complet.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Type.Missing?displayProperty=nameWithType>
-- [Dynamique](../../language-reference/builtin-types/reference-types.md)
+- [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Utilisation du type dynamic](../types/using-type-dynamic.md)
 - [Arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md)
-- [Comment utiliser les arguments nommés et facultatifs dans la programmation du Bureau](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Comment : utiliser des arguments nommés et facultatifs dans la programmation Office](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)

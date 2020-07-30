@@ -1,18 +1,19 @@
 ---
-title: Comment sérialiser à l’aide de XmlSerializer (C)
+title: Comment sérialiser à l’aide de XmlSerializer (C#)
+description: Découvrez comment sérialiser des objets à l’aide de XmlSerializer. Consultez un exemple qui crée des objets, les sérialise dans un flux de mémoire, puis les désérialise.
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
-ms.openlocfilehash: 0ec19e964471382c6f10f07d6d4bb25f88fd532f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29c8c7170af8a24292892862dc89cfe101d24f15
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347394"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301513"
 ---
-# <a name="how-to-serialize-using-xmlserializer-c"></a>Comment sérialiser à l’aide de XmlSerializer (C)
+# <a name="how-to-serialize-using-xmlserializer-c"></a>Comment sérialiser à l’aide de XmlSerializer (C#)
 Cette rubrique présente un exemple qui sérialise et désérialise à l'aide de <xref:System.Xml.Serialization.XmlSerializer>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant crée plusieurs objets qui contiennent des objets <xref:System.Xml.Linq.XElement>. Il les sérialise ensuite dans un flux mémoire, puis les désérialise du flux mémoire.  
   
 ```csharp  

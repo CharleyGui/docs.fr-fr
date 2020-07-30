@@ -1,18 +1,19 @@
 ---
-title: LINQ à XML vs Autres technologies XML3
+title: LINQ to XML et autres Technologies3 XML
+description: Cet article compare LINQ to XML à plusieurs technologies XML, y compris XmlReader, XSLT, MSXML et XmlLite, pour vous aider à choisir la technologie à utiliser.
 ms.date: 07/20/2015
 ms.assetid: 01b8e746-12d3-471d-b811-7539e4547784
-ms.openlocfilehash: 4cade6ecbee95ee288db34246986858609697731
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0abe6021dae83df0db0d4116eb3c2919d024a62d
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635676"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165322"
 ---
-# <a name="linq-to-xml-vs-other-xml-technologies"></a>Comparaison de LINQ to XML et des autres technologies XML
+# <a name="linq-to-xml-vs-other-xml-technologies"></a>LINQ to XML, différences par rapport à d'autres technologies XML
 Cette rubrique compare [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] aux technologies XML suivantes : <xref:System.Xml.XmlReader>, XSLT, MSXML et XmlLite. Ces informations peuvent vous aider à décider de la technologie à utiliser.  
   
- Pour une [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] comparaison avec le modèle d’objet de document (DOM), voir [LINQ à XML vs DOM (C)](./linq-to-xml-vs-dom.md).  
+ Pour une comparaison entre [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] le document Object Model (DOM), consultez [LINQ to XML et DOM (C#)](./linq-to-xml-vs-dom.md).  
   
 ## <a name="linq-to-xml-vs-xmlreader"></a>Comparaison de LINQ to XML et de XmlReader  
  <xref:System.Xml.XmlReader> est un analyseur rapide, avant uniquement et sans mise en cache.  
@@ -50,8 +51,8 @@ Cette rubrique compare [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] aux
   
  Le principal avantage de XmlLite est sa légèreté et sa rapidité d'analyse XML. De plus, il est sécurisé dans la plupart des scénarios. Sa surface de menace est très faible. Si vous devez analyser des documents non approuvés et que vous souhaitez vous protéger contre les attaques de type déni de service ou exposition de données, XmlLite peut constituer un bon choix.  
   
- XmlLite n’est pas intégré à la requête intégrée aux langues (LINQ). Il ne donne pas aux programmeurs des améliorations de la productivité qui sont la force de motivation derrière LINQ.  
+ XmlLite n’est pas intégré à LINQ (Language-Integrated Query). Elle ne produit pas les améliorations de productivité des programmeurs qui sont la force de motivation derrière LINQ.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bien démarrer (LINQ to XML)](./linq-to-xml-overview.md)
+- [Mise en route (LINQ to XML)](./linq-to-xml-overview.md)

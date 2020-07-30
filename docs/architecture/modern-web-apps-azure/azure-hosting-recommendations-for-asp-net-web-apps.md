@@ -4,17 +4,17 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
-ms.openlocfilehash: 5587b8b20da8a6801d77b722e9c3326f6e695574
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 547654e77812481daffc9a03ccd28d3d2f6b5f09
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73416712"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164432"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Recommandations sur l’hébergement Azure pour les applications web ASP.NET Core
 
 > « Les leaders métier ne passent plus par les départements informatiques pour obtenir des applications du cloud (également appelées SaaS) et les paient comme ils paient un abonnement à un magazine. Quand ils n’ont plus besoin du service, ils peuvent annuler l’abonnement sans se retrouver avec du matériel inutilisé dans un coin. »  
-> _\-Daryl Plummer, analyste chez Gartner_
+> _\-Daryl Plummer, analyste Gartner_
 
 Quels que soient les besoins et l’architecture de votre application, Microsoft Azure peut la prendre en charge. Vos besoins d’hébergement peuvent être aussi simples que ceux d’un site web statique ou aussi complexes que ceux d’une application sophistiquée constituée de dizaines de services. Pour les applications ASP.NET Core monolithiques et les services qui les prennent en charge, il existe plusieurs configurations connues qui sont recommandées. Les suggestions présentées dans cet article sont regroupées en fonction du type de ressource à héberger, qu’il s’agisse d’applications complètes, de processus individuels ou de données.
 
@@ -116,21 +116,21 @@ Azure propose un large éventail d’options de stockage des données, afin que 
 
 Pour les données transactionnelles relationnelles, les bases de données Azure SQL Database sont la meilleure option. Pour de hautes performances avec les données qui sont principalement en lecture, un cache Redis s’appuyant sur une base de données Azure SQL Database est une bonne solution.
 
-Les données JSON non structurées peuvent être stockées de diverses façons, des colonnes sqL Database aux Blobs ou Tables in Azure Storage, en passant par Azure Cosmos DB. Parmi ceux-ci, Azure Cosmos DB offre la meilleure fonctionnalité de requête, et est l’option recommandée pour un grand nombre de documents basés sur JSON qui doivent prendre en charge les requêtes.
+Les données JSON non structurées peuvent être stockées de différentes façons, de SQL Database des colonnes aux objets BLOB ou aux tables dans le stockage Azure, pour Azure Cosmos DB. Azure Cosmos DB offre les meilleures fonctionnalités d’interrogation et est l’option recommandée pour un grand nombre de documents JSON qui doivent prendre en charge l’interrogation.
 
-Les données basées sur des commandes ou des événements transitoires pour orchestrer le comportement des applications peuvent utiliser Azure Service Bus ou Stockage File d’attente Azure. Azure Service Bus offre davantage de souplesse et est le service recommandé pour les échanges complexes de messages au sein des applications et entre elles.
+Les données basées sur des commandes ou des événements transitoires pour orchestrer le comportement des applications peuvent utiliser Azure Service Bus ou Stockage File d’attente Azure. Azure Service Bus offre plus de souplesse et est le service recommandé pour la messagerie non triviale au sein et entre les applications.
 
 ## <a name="architecture-recommendations"></a>Suggestions en matière d’architecture
 
 Les exigences de votre application doivent dicter son architecture. Il existe de nombreux services Azure différents. Aussi, il est important de choisir le bon. Microsoft propose une galerie d’architectures de référence pour aider à identifier des architectures classiques optimisées pour les scénarios courants. Vous pouvez adopter une architecture de référence qui correspond de près aux exigences de votre application ou qui constitue au moins un point de départ.
 
-La figure 11-1 montre un exemple d’architecture de référence. Ce diagramme décrit une approche recommandée pour l’architecture d’un site web de système de gestion de contenu Sitecore optimisé pour le marketing.
+La figure 11-1 illustre un exemple d’architecture de référence. Ce diagramme décrit une approche recommandée pour l’architecture d’un site web de système de gestion de contenu Sitecore optimisé pour le marketing.
 
 ![Figure 11-1](./media/image11-2.png)
 
 **Figure 11-1.** Architecture de référence d’un site web de marketing Sitecore.
 
-**Références - Recommandations d’hébergement Azure**
+**Références : recommandations relatives à l’hébergement Azure**
 
 - Architectures de solutions Azure\
   <https://azure.microsoft.com/solutions/architecture/>

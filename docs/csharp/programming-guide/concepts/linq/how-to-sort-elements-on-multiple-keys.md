@@ -1,19 +1,20 @@
 ---
-title: Comment trier les éléments sur plusieurs touches (C)
+title: Comment trier des éléments sur plusieurs clés (C#)
+description: Découvrez comment trier des éléments sur plusieurs clés. Consultez des exemples de tri des éléments qui utilisent des exemples de documents XML.
 ms.date: 07/20/2015
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
-ms.openlocfilehash: ddfeab4bf9b67231296ca90df1244a3b8a441440
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 486aac38a27cf064553894a548722a54c58c21b6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347380"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301500"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-c"></a>Comment trier les éléments sur plusieurs touches (C)
+# <a name="how-to-sort-elements-on-multiple-keys-c"></a>Comment trier des éléments sur plusieurs clés (C#)
 
 Cette rubrique montre comment effectuer un tri sur plusieurs clés.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Dans cet exemple, les résultats sont ordonnés d'abord en fonction du code postal d'expédition, puis en fonction de la date de commande.
 
@@ -63,7 +64,7 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 ```
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).
 

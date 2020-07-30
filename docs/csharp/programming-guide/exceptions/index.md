@@ -1,17 +1,18 @@
 ---
 title: Exceptions et gestion des exceptions - Guide de programmation C#
+description: En savoir plus sur les exceptions et la gestion des exceptions. Ces fonctionnalités C# aident à traiter les situations inattendues ou exceptionnelles qui se produisent lorsqu’un programme est en cours d’exécution.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#]
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 0ba123fa9f9aacd0876f07bdf3ae7bb9159a6834
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 4be327be4e183d60e440358254aeb9c68fcf25ca
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241706"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303385"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Exceptions et gestion des exceptions (Guide de programmation C#)
 
@@ -59,7 +60,7 @@ Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions
 - <xref:System.SystemException>
 - [Guide de programmation C#](../index.md)
 - [Mots clés C#](../../language-reference/keywords/index.md)
-- [throw](../../language-reference/keywords/throw.md)
+- [lever](../../language-reference/keywords/throw.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)
 - [try-finally](../../language-reference/keywords/try-finally.md)
 - [try-catch-finally](../../language-reference/keywords/try-catch-finally.md)

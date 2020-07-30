@@ -1,13 +1,14 @@
 ---
 title: Référence (LINQ to XML)
+description: Affichez des liens vers des rubriques de référence LINQ to XML. Ces liens incluent la documentation pour les classes de LINQ to XML et les méthodes d’extension.
 ms.date: 07/20/2015
 ms.assetid: 815b45e2-3527-4dee-9986-b1277a693cde
-ms.openlocfilehash: b33e1ddbecb6be46f2ee9b6ce043c12c345fcf21
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 654e691adc7e4c0005e3ad125cf3bdd33477397a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591276"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303138"
 ---
 # <a name="reference-linq-to-xml"></a>Référence (LINQ to XML)
 Cette rubrique contient des liens vers les rubriques de référence LINQ to XML.  

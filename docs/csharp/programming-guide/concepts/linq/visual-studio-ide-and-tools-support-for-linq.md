@@ -1,13 +1,14 @@
 ---
 title: Prise en charge de LINQ par les outils et l’IDE Visual Studio (C#)
+description: Découvrez les fonctionnalités de Visual Studio qui prennent en charge le développement LINQ, telles que Concepteur Objet Relationnel, l’outil SQLMetal, l’éditeur de code prenant en charge LINQ et le débogueur.
 ms.date: 07/20/2015
 ms.assetid: c1f6cfdf-c96f-417f-acc8-4a049772ead3
-ms.openlocfilehash: a42d6711e34564f03aaf07c295bc682965513619
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd0c936624b4d5329cb2eb0f1cdd5215bbc96f23
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69590909"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302241"
 ---
 # <a name="visual-studio-ide-and-tools-support-for-linq-c"></a>Prise en charge de LINQ par les outils et l’IDE Visual Studio (C#)
 L’environnement de développement intégré (IDE) Visual Studio fournit les fonctionnalités suivantes qui prennent en charge le développement d’applications LINQ :  
