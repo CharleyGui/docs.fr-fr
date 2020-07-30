@@ -1,18 +1,19 @@
 ---
 title: Partie de style d'un document WordprocessingML
+description: En savoir plus sur la partie style d’un document WordprocessingML Office Open XML. Utilisez l’identificateur de style par défaut pour identifier les paragraphes qui ont le style par défaut.
 ms.date: 07/20/2015
 ms.assetid: 5458bccf-3898-4661-904b-7d280c9239a9
-ms.openlocfilehash: 56726a7ea7594bfd1c68e5b1f8e45f585138eac6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b2b0b30643a1e8582bc5a7ea8d22c002b78689e6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68868624"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302293"
 ---
 # <a name="style-part-of-a-wordprocessingml-document"></a>Partie de style d'un document WordprocessingML
 Cette rubrique illustre un exemple de la partie de style du document Office Open XML WordprocessingML.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant est le code XML qui compose la partie de style d'un document Office Open XML WordprocessingML.  
   
  Le style de paragraphe par défaut présente un élément avec la balise d'ouverture suivante :  

@@ -1,5 +1,6 @@
 ---
-title: 'Procédure pas à pas : écriture de requêtes en C# (LINQ)'
+title: 'Procédure pas à pas : Écrire des requêtes en C# (LINQ)'
+description: Cette procédure pas à pas montre comment les fonctionnalités du langage C# sont utilisées dans les expressions de requête LINQ. Cet article utilise Visual Studio comme environnement de développement.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], walkthroughs
@@ -7,14 +8,14 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: f2135c6c3649ba2fc87e3b49770439688a58269b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d49cb725c9ce9a417f78f638795e98a75a086893
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73418052"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302215"
 ---
-# <a name="walkthrough-writing-queries-in-c-linq"></a>Procédure pas à pas : écriture de requêtes en C# (LINQ)
+# <a name="walkthrough-writing-queries-in-c-linq"></a>Procédure pas à pas : Écrire des requêtes en C# (LINQ)
 Cette procédure pas à pas présente les fonctionnalités du langage C# utilisées pour écrire des expressions de requête LINQ.  
   
 ## <a name="create-a-c-project"></a>Créer un projet C#  
@@ -63,7 +64,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
 #### <a name="to-create-a-simple-query"></a>Pour créer une requête simple  
   
-- Dans la méthode `Main` de l’application, créez une requête simple qui, quand elle est exécutée, produit une liste de tous les étudiants dont la note pour le premier test est supérieure à 90. Notez que, puisque l’objet `Student` entier est sélectionné, le type de la requête est `IEnumerable<Student>`. Bien que le code puisse également utiliser un type implicite à l’aide du mot clé [var](../../../language-reference/keywords/var.md), les types explicites sont utilisés pour illustrer clairement les résultats. (Pour plus `var`d’informations sur , voir [implicitement Typé variables locales](../../classes-and-structs/implicitly-typed-local-variables.md).)  
+- Dans la méthode `Main` de l’application, créez une requête simple qui, quand elle est exécutée, produit une liste de tous les étudiants dont la note pour le premier test est supérieure à 90. Notez que, puisque l’objet `Student` entier est sélectionné, le type de la requête est `IEnumerable<Student>`. Bien que le code puisse également utiliser un type implicite à l’aide du mot clé [var](../../../language-reference/keywords/var.md), les types explicites sont utilisés pour illustrer clairement les résultats. (Pour plus d’informations sur `var` , consultez [variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).)  
   
      Notez également que la variable de portée de la requête, `student`, sert de référence à chaque `Student` dans la source, en fournissant l’accès au membre pour chaque objet.  
   
@@ -115,7 +116,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
     Console.WriteLine("{0}, {1} {2}", student.Last, student.First, student.Scores[0]);  
     ```  
   
-     Pour plus d’informations, voir [clause d’ordre](../../../language-reference/keywords/orderby-clause.md).  
+     Pour plus d’informations, consultez [orderby, clause](../../../language-reference/keywords/orderby-clause.md).  
   
 #### <a name="to-group-the-results"></a>Pour regrouper les résultats  
   
@@ -129,7 +130,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
 3. Exécutez l’application et affichez les résultats dans la fenêtre de **console**.  
   
-     Pour plus d’informations, voir [clause de groupe](../../../language-reference/keywords/group-clause.md).  
+     Pour plus d’informations, consultez [Group, clause](../../../language-reference/keywords/group-clause.md).  
   
 #### <a name="to-make-the-variables-implicitly-typed"></a>Pour rendre les variables implicitement typées  
   

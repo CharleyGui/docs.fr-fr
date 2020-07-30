@@ -1,20 +1,21 @@
 ---
 title: Refactorisation à l’aide d’une méthode d’extension (C#)
+description: Découvrez comment refactoriser du code à l’aide d’une méthode d’extension. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 ms.assetid: c5fc123d-af10-4a2f-b8e4-db921efb2639
-ms.openlocfilehash: 8546c2cb834107cf2e099af40f9a7df4d5858b4b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e786f0e1514156535fd6a6033e37ed8879e99709
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253093"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381942"
 ---
 # <a name="refactoring-using-an-extension-method-c"></a>Refactorisation à l’aide d’une méthode d’extension (C#)
 Cet exemple se base sur l’exemple précédent, [Récupération du texte des paragraphes (C#)](./retrieving-the-text-of-the-paragraphs.md), en refactorisant la concaténation de chaînes à l’aide d’une fonction pure implémentée en tant que méthode d’extension.  
   
  L'exemple précédent utilisait l'opérateur de requête standard <xref:System.Linq.Enumerable.Aggregate%2A> pour concaténer plusieurs chaînes dans une chaîne. Toutefois, il est plus commode d'écrire une méthode d'extension pour cela, car la requête résultante est plus petite et plus simple.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple traite un document WordprocessingML, récupère les paragraphes, le style de chaque paragraphe et le texte de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel.  
   
  L'exemple contient plusieurs surcharges de la méthode `StringConcatenate`.  
@@ -62,7 +63,7 @@ public static class LocalExtensions
 }  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Il existe quatre surcharges de la méthode `StringConcatenate`. Une surcharge prend simplement une collection de chaînes et retourne une seule chaîne. Une autre surcharge prend une collection d'un type quelconque et un délégué qui projette depuis un singleton de la collection vers une chaîne. Il existe deux surcharges supplémentaires qui vous permettent de spécifier une chaîne de séparation.  
   
  Le code suivant utilise les quatre surcharges.  
@@ -87,7 +88,7 @@ one:two:three:
 1:2:3:  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  À présent, l’exemple peut être modifié pour tirer parti de la nouvelle méthode d’extension :  
   
 ```csharp  
@@ -244,7 +245,7 @@ StyleName:Code >Hello World<
 ## <a name="next-steps"></a>Étapes suivantes  
  L'exemple suivant montre comment refactoriser ce code d'une autre manière, à l'aide de fonctions pures :  
   
-- [Refactorisation à l’aide d’une fonction pure (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+- [Refactorisation à l’aide d’une fonction pure (C#)](./refactoring-using-a-pure-function.md)
   
 ## <a name="see-also"></a>Voir aussi
 

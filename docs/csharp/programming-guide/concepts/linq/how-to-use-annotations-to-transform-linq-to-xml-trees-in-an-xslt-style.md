@@ -1,15 +1,16 @@
 ---
-title: Comment utiliser des annotations pour transformer les arbres LINQ en arbres XML dans un style XSLT (C)
+title: Comment utiliser des annotations pour transformer des arborescences de LINQ to XML dans un style XSLT (C#)
+description: Découvrez comment utiliser des annotations pour transformer des arbres LINQ to XML dans un style XSLT. Consultez un exemple de transformation d’une arborescence à l’aide de la fonction XForm.
 ms.date: 07/20/2015
 ms.assetid: 12a95902-a6b7-4a1e-ad52-04a518db226f
-ms.openlocfilehash: 7d6d646bb9b7b344750c22cb24bc81999da5210d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 844ca08cb2c6b47f7803d388663daeacb65bdb68
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168555"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302878"
 ---
-# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-c"></a>Comment utiliser des annotations pour transformer les arbres LINQ en arbres XML dans un style XSLT (C)
+# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-c"></a>Comment utiliser des annotations pour transformer des arborescences de LINQ to XML dans un style XSLT (C#)
 Les annotations peuvent servir à faciliter les transformations d’une arborescence XML.  
   
  Certains documents XML sont « centrés sur les documents avec du contenu mixte ». Avec ces documents, vous ne connaissez pas nécessairement la forme des enfants nœuds d'un élément. Par exemple, un nœud qui contient du texte peut se présenter comme suit :  

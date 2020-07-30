@@ -1,24 +1,25 @@
 ---
-title: Comment diffuser des fragments de XML avec accès à des informations d’en-tête (C)
+title: Comment diffuser en continu des fragments XML avec accès aux informations d’en-tête (C#)
+description: Découvrez comment diffuser en continu des fragments XML avec accès aux informations d’en-tête. Les techniques de streaming permettent d’éviter une utilisation excessive de la mémoire.
 ms.date: 07/20/2015
 ms.assetid: 7f242770-b0c7-418d-894b-643215e1f8aa
-ms.openlocfilehash: 5bc10bcadae0e33ee63f953608ca841d44dd6527
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8bfded96ea1fa6b096d56ae0736002b9062d58b6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712388"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303216"
 ---
-# <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Comment diffuser des fragments de XML avec accès à des informations d’en-tête (C)
+# <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Comment diffuser en continu des fragments XML avec accès aux informations d’en-tête (C#)
 Vous devez parfois lire des fichiers XML arbitrairement volumineux et écrire votre application de sorte que son encombrement mémoire soit prévisible. Si vous tentez de remplir une arborescence XML avec un grand fichier XML, l'utilisation de la mémoire sera proportionnelle à la taille du fichier (c'est-à-dire excessive). Par conséquent, vous devez utiliser une technique de diffusion en continu à la place.  
   
-L'une des options consiste à écrire votre application à l'aide de <xref:System.Xml.XmlReader>. Cependant, vous voudrez peut-être utiliser LINQ pour interroger l’arbre XML. Si tel est le cas, vous pouvez écrire votre propre méthode d'axe personnalisée. Pour plus d’informations, voir [Comment écrire une méthode d’axe LINQ à XML .](./how-to-write-a-linq-to-xml-axis-method.md)
+L'une des options consiste à écrire votre application à l'aide de <xref:System.Xml.XmlReader>. Toutefois, vous souhaiterez peut-être utiliser LINQ pour interroger l’arborescence XML. Si tel est le cas, vous pouvez écrire votre propre méthode d'axe personnalisée. Pour plus d’informations, consultez [Comment écrire une méthode d’axe LINQ to XML (C#)](./how-to-write-a-linq-to-xml-axis-method.md).
   
  Pour écrire votre propre méthode d'axe personnalisée, vous écrivez une petite méthode qui utilise l'objet <xref:System.Xml.XmlReader> pour lire les nœuds jusqu'à atteindre l'un des nœuds qui vous intéressent. La méthode appelle ensuite <xref:System.Xml.Linq.XNode.ReadFrom%2A>, qui lit à partir de l'objet <xref:System.Xml.XmlReader> et instancie un fragment XML. Elle produit ensuite chaque fragment via `yield return` à la méthode qui énumère votre méthode d'axe personnalisée. Vous pouvez ensuite écrire des requêtes LINQ sur votre méthode d'axe personnalisée.  
   
- Il est préférable d'appliquer des techniques de diffusion en continu dans les situations où vous devez traiter le document source une seule fois et où vous pouvez traiter les éléments dans l'ordre du document. Certains opérateurs de requête standard, tels que <xref:System.Linq.Enumerable.OrderBy%2A>, itèrent au sein de leur source, recueillent toutes les données, les trient, puis produisent le premier élément de la séquence. Si vous utilisez un opérateur de requête qui matérialise sa source avant de produire le premier élément, vous ne conserverez pas une petite empreinte mémoire.  
+ Il est préférable d'appliquer des techniques de diffusion en continu dans les situations où vous devez traiter le document source une seule fois et où vous pouvez traiter les éléments dans l'ordre du document. Certains opérateurs de requête standard, tels que <xref:System.Linq.Enumerable.OrderBy%2A>, itèrent au sein de leur source, recueillent toutes les données, les trient, puis produisent le premier élément de la séquence. Si vous utilisez un opérateur de requête qui matérialise sa source avant de produire le premier élément, vous ne conserverez pas un faible encombrement mémoire.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
 Le problème peut parfois être un peu plus épineux. Dans le document XML suivant, le consommateur de votre méthode d'axe personnalisée doit également connaître le nom du client auquel appartient chaque élément.  
   
@@ -69,9 +70,9 @@ Le problème peut parfois être un peu plus épineux. Dans le document XML suiva
   
  L'approche utilisée dans cet exemple consiste à rechercher ces informations d'en-tête, à les enregistrer, puis à générer une petite arborescence XML qui contient à la fois les informations d'en-tête et le détail que vous énumérez. La méthode d'axe produit ensuite cette nouvelle petite arborescence XML. La requête a alors accès aux informations d'en-tête et aux informations de détail.  
   
- Cette approche présente un faible encombrement mémoire. À mesure que chaque fragment XML de détail est produit, aucune référence au fragment précédent n'est conservée et il est disponible pour le garbage collection. Cette technique crée de nombreux objets de courte durée sur le tas.  
+ Cette approche présente un faible encombrement mémoire. À mesure que chaque fragment XML de détail est produit, aucune référence au fragment précédent n'est conservée et il est disponible pour le garbage collection. Cette technique crée de nombreux objets éphémères sur le tas.  
   
- L'exemple suivant montre comment implémenter et utiliser une méthode d'axe personnalisée qui diffuse en continu des fragments XML à partir du fichier spécifié par l'URI. Cet axe personnalisé est écrit de telle `Customer` `Name`sorte `Item` qu’il s’attend à un document `Source.xml` qui a , , et les éléments, et que ces éléments seront disposés comme dans le document ci-dessus. Il s'agit d'une implémentation simpliste. Une implémentation plus robuste serait préparée à analyser un document non valide.  
+ L'exemple suivant montre comment implémenter et utiliser une méthode d'axe personnalisée qui diffuse en continu des fragments XML à partir du fichier spécifié par l'URI. Cet axe personnalisé est écrit de façon à ce qu’il attende un document contenant des `Customer` éléments, et `Name` `Item` , et que ces éléments soient disposés comme dans le document ci-dessus `Source.xml` . Il s'agit d'une implémentation simpliste. Une implémentation plus robuste serait préparée à analyser un document non valide.  
   
 ```csharp  
 static IEnumerable<XElement> StreamCustomerItem(string uri)  

@@ -1,5 +1,6 @@
 ---
 title: Boxing et unboxing - Guide de programmation C#
+description: En savoir plus sur la conversion boxing et unboxing en programmation C#. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 f1_keywords:
 - cs.boxing
@@ -9,16 +10,16 @@ helpviewer_keywords:
 - unboxing [C#]
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
-ms.openlocfilehash: 62df08bf4ae3580e9b8d5b3aab0697d396674ca1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5a5bfcc79de8ba3ff66ca8aab9d86d69d89f9221
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76745412"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380694"
 ---
 # <a name="boxing-and-unboxing-c-programming-guide"></a>Boxing et unboxing (Guide de programmation C#)
 
-Le boxing est la conversion d’un [type valeur](../../language-reference/builtin-types/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Lorsque l’heure courante (CLR) boîte un type de valeur, il enveloppe la valeur à l’intérieur d’une <xref:System.Object?displayProperty=nameWithType> instance et le stocke sur le tas géré. L'unboxing extrait le type valeur de l'objet. La conversion boxing est implicite ; la conversion unboxing est explicite. Le concept de boxing et de unboxing repose sur la vue unifiée par C# du système de type, dans lequel une valeur de n'importe quel type peut être traitée en tant qu'objet.
+Le boxing est la conversion d’un [type valeur](../../language-reference/builtin-types/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Lorsque le common language runtime (CLR) convertit un type valeur, il encapsule la valeur à l’intérieur d’une <xref:System.Object?displayProperty=nameWithType> instance et la stocke sur le tas managé. L'unboxing extrait le type valeur de l'objet. La conversion boxing est implicite ; la conversion unboxing est explicite. Le concept de boxing et de unboxing repose sur la vue unifiée par C# du système de type, dans lequel une valeur de n'importe quel type peut être traitée en tant qu'objet.
 
 Dans l’exemple suivant, la variable de type entier `i` est convertie (*boxed*) et assignée à l’objet `o`.
 
@@ -60,7 +61,7 @@ Il est également possible, mais jamais obligatoire, d'effectuer un boxing expli
 
 Cet exemple utilise le boxing pour convertir une variable `i` (entier) en un objet `o`. Ensuite, la valeur `i` stockée dans la variable `123` est remplacée par la valeur `456`. L'exemple montre que le type valeur d'origine et que l'objet boxed utilisent des emplacements de mémoire distincts et peuvent, par conséquent, stocker des valeurs différentes.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!code-csharp[csProgGuideTypes#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#16)]
 
@@ -82,7 +83,7 @@ L’illustration suivante montre le résultat de ces instructions :
 
 Pour que l'unboxing de types valeur réussisse au moment de l'exécution, l'élément qui est unboxed doit être une référence à un objet précédemment créé par boxing d'une instance de ce type valeur. La tentative d'extraction de `null` provoque un <xref:System.NullReferenceException>. La tentative d'extraction d'une référence vers un type de valeur incompatible provoque un <xref:System.InvalidCastException>.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L'exemple suivant montre un cas d'unboxing non valide et l'`InvalidCastException` qui en résulte. Avec `try` et `catch`, un message d'erreur est affiché lorsque l'erreur se produit.
 
@@ -114,6 +115,6 @@ la conversion sera réalisée, avec le résultat suivant :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation CMD](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Types référence](../../language-reference/keywords/reference-types.md)
 - [Types de valeur](../../language-reference/builtin-types/value-types.md)

@@ -1,16 +1,17 @@
 ---
 title: Indexeurs dans les interfaces - Guide de programmation C#
+description: Les indexeurs peuvent être déclarés sur une interface en C#. Découvrez comment les accesseurs d’indexeurs d’interface diffèrent des accesseurs d’indexeurs de classe.
 ms.date: 02/08/2020
 helpviewer_keywords:
 - indexers [C#], in interfaces
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
-ms.openlocfilehash: 9ce6e4f0e0533c2880c6241f44409435248a336a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec77843bdf3181a543bd6c02cfb034b21ded1ae7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287478"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303099"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>Indexeurs dans les interfaces (Guide de programmation C#)
 
@@ -35,7 +36,7 @@ L’exemple suivant montre comment implémenter des indexeurs d’interface.
 
 [!code-csharp[DefineInterface](~/samples/snippets/csharp/interfaces/indexers.cs#ExampleCode)]
 
-Dans l’exemple précédent, vous pouvez utiliser l’implémentation de membre d’interface explicite en utilisant le nom qualifié complet du membre d’interface. Par exemple :
+Dans l’exemple précédent, vous pouvez utiliser l’implémentation de membre d’interface explicite en utilisant le nom qualifié complet du membre d’interface. Par exemple
 
 ```csharp
 string IIndexInterface.this[int index]

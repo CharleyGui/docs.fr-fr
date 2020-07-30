@@ -1,13 +1,14 @@
 ---
 title: Programmation avec des nœuds (C#)
+description: En savoir plus sur la programmation avec les nœuds. Cela permet aux développeurs d’écrire des programmes qui fonctionnent à un niveau de détail plus élevé que les éléments et les attributs.
 ms.date: 07/20/2015
 ms.assetid: c38df0f2-c805-431a-93ff-9103a4284c2f
-ms.openlocfilehash: 05c2e95fe97effda7b537a7ac2d8f5780f4e212b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8a31d6459ab644a682d480239cabc3d88fd7dc14
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168312"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301682"
 ---
 # <a name="programming-with-nodes-c"></a>Programmation avec des nœuds (C#)
 Les développeurs [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] qui doivent écrire des programmes tels qu'un éditeur XML, un système de transformation ou un générateur de rapports doivent souvent écrire des programmes qui fonctionnent à un niveau de granularité plus élevé que les éléments et attributs. Ils doivent souvent travailler au niveau des nœuds, manipuler des nœuds de texte et traiter des instructions et des commentaires. Cette rubrique fournit quelques détails sur la programmation au niveau nœud.  

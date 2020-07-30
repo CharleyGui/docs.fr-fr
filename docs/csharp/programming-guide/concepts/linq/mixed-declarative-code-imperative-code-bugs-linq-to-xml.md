@@ -1,13 +1,14 @@
 ---
 title: Bogues liés à l’utilisation combinée de code déclaratif et de code impératif (LINQ to XML) (C#)
+description: Les méthodes de LINQ to XML peuvent modifier une arborescence XML directement. L’itération au sein de l’un des axes lors de la modification de l’arborescence XML peut entraîner des bogues impairs.
 ms.date: 07/20/2015
 ms.assetid: fada62d0-0680-4e73-945a-2b00d7a507af
-ms.openlocfilehash: 76a9bb5abf6ce2700a2a0698ebc109f65e2b7eb1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4eaed10f0a2e64abeb7725dcd70816d75d8a0423
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168347"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165291"
 ---
 # <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>Bogues mixtes code déclaratif/code impératif (LINQ to XML) (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] contient diverses méthodes qui vous permettent de modifier directement une arborescence XML. Vous pouvez ajouter des éléments, supprimer des éléments, modifier le contenu d'un élément, ajouter des attributs, et ainsi de suite. Cette interface de programmation est décrite dans [Modification d’arborescences XML (LINQ to XML) (C#)](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md). Si vous itérez au sein de l'un des axes, tels que <xref:System.Xml.Linq.XContainer.Elements%2A>, et que vous modifiez l'arborescence XML à mesure que vous parcourez l'axe, vous pouvez constater des bogues étranges.  
@@ -131,7 +132,7 @@ Console.WriteLine(root);
 ## <a name="why-cant-linq-automatically-handle-this"></a>Pourquoi LINQ ne peut-il gérer cela automatiquement ?  
  Une approche consisterait à toujours tout placer en mémoire au lieu d'effectuer une évaluation différée. Toutefois, cela serait très coûteux en termes de performances et d'utilisation de la mémoire. En fait, si LINQ (et LINQ to XML) devait suivre cette approche, cela échouerait dans les situations de monde réel.  
   
- Une autre approche possible consisterait à placer une certaine syntaxe de transaction dans LINQ et à faire en sorte que le compilateur tente d'analyser le code et de déterminer si une collection spécifique nécessite une matérialisation. Toutefois, tenter de déterminer tout le code qui a des effets secondaires est une tâche incroyablement complexe. Examinons le code ci-dessous.  
+ Une autre approche possible consisterait à placer une certaine syntaxe de transaction dans LINQ et à faire en sorte que le compilateur tente d'analyser le code et de déterminer si une collection spécifique nécessite une matérialisation. Toutefois, tenter de déterminer tout le code qui a des effets secondaires est une tâche incroyablement complexe. Considérez le code suivant :  
   
 ```csharp  
 var z =  

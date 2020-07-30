@@ -1,26 +1,26 @@
 ---
-title: dotnet outil restaurer la commande
-description: L’outil dotnet restaurer la commande installe sur votre machine les outils locaux .NET Core qui sont en portée pour l’annuaire actuel.
+title: commande de restauration de l’outil dotnet
+description: La commande de restauration de l’outil dotnet installe sur votre machine les outils locaux .NET Core qui sont dans l’étendue du répertoire actif.
 ms.date: 02/14/2020
-ms.openlocfilehash: a518c2d45bbe9522bddfed4bbef61b30f1ad634b
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: ceef3274ec9d337f8c51009d5a8c27e808b14035
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463342"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302670"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
-**Cet article s’applique à:** ✔️ .NET Core 3.0 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
 
 ## <a name="name"></a>Nom
 
-`dotnet tool restore`- Installe sur votre machine les outils locaux .NET Core qui sont en portée pour l’annuaire actuel.
+`dotnet tool restore`-Installe sur votre machine les outils locaux .NET Core qui sont dans l’étendue du répertoire actif.
 
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet tool restore <PACKAGE_NAME>
+dotnet tool restore
     [--configfile <FILE>] [--add-source <SOURCE>]
     [tool-manifest <PATH_TO_MANIFEST_FILE>] [--disable-parallel]
     [--ignore-failed-sources] [--no-cache] [--interactive]
@@ -31,13 +31,7 @@ dotnet tool restore -h|--help
 
 ## <a name="description"></a>Description
 
-La `dotnet tool restore` commande trouve le fichier manifeste de l’outil qui est en portée pour l’annuaire actuel et installe les outils qui y sont répertoriés. Pour plus d’informations sur les fichiers manifestes, voir [Installer un outil local](global-tools.md#install-a-local-tool) et [invoquer un outil local](global-tools.md#invoke-a-local-tool).
-
-## <a name="arguments"></a>Arguments
-
-- **`PACKAGE_NAME`**
-
-Nom/ID du paquet NuGet qui contient l’outil .NET Core à installer.
+La `dotnet tool restore` commande recherche le fichier de manifeste de l’outil qui est dans la portée du répertoire actif et installe les outils qui y sont répertoriés. Pour plus d’informations sur les fichiers manifestes, consultez [installer un outil local](global-tools.md#install-a-local-tool) et [appeler un outil local](global-tools.md#invoke-a-local-tool).
 
 ## <a name="options"></a>Options
 
@@ -51,19 +45,19 @@ Nom/ID du paquet NuGet qui contient l’outil .NET Core à installer.
 
 - **`--tool-manifest <PATH>`**
 
-  Chemin vers le fichier manifeste.
+  Chemin d’accès au fichier manifeste.
 
 - **`--disable-parallel`**
 
-  Empêcher la restauration de plusieurs projets en parallèle.
+  Empêcher la restauration en parallèle de plusieurs projets.
 
 - **`--ignore-failed-sources`**
 
-  Traiter les défaillances des sources de colis comme des avertissements.
+  Considérer les défaillances de la source du package comme des avertissements.
 
 - **`--no-cache`**
 
-  Ne cachez pas les paquets et les demandes http.
+  Ne pas mettre en cache les packages et les requêtes http.
 
 - **`--interactive`**
 
@@ -81,9 +75,9 @@ Nom/ID du paquet NuGet qui contient l’outil .NET Core à installer.
 
 - **`dotnet tool restore`**
 
-  Restaure les outils locaux pour l’annuaire actuel.
+  Restaure les outils locaux pour le répertoire actif.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [.NET Outils de base](global-tools.md)
-- [Tutorial: Installer et utiliser un outil local .NET Core en utilisant le CLI .NET Core](local-tools-how-to-use.md)
+- [Outils .NET Core](global-tools.md)
+- [Didacticiel : installer et utiliser un outil local .NET Core à l’aide de l’CLI .NET Core](local-tools-how-to-use.md)

@@ -1,5 +1,6 @@
 ---
 title: Types - Guide de programmation C#
+description: En savoir plus sur les types en programmation C#, tels que les types intégrés, les types personnalisés, les types valeur et les types référence.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - value types [C#]
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: fa0aa09b591f9b91a82113343a3655b2240ef490
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 5a9eb3747a6b4da316bca3f1d450c1ea0f774ada
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201210"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382046"
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
 
@@ -119,7 +120,7 @@ L’autre catégorie de types valeur est [enum](../../language-reference/builtin
 
 [!code-csharp[csProgGuideTypes#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#44)]
 
-La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d'informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.
+La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d’informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.
 
 Toutes les énumérations héritent de <xref:System.Enum?displayProperty=nameWithType>, qui hérite de <xref:System.ValueType?displayProperty=nameWithType>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [types énumération](../../language-reference/builtin-types/enum.md).
 
@@ -177,11 +178,11 @@ Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](../../language
 
 ## <a name="related-sections"></a>Sections connexes
 
-Pour plus d'informations, voir les rubriques suivantes :
+Pour plus d'informations, voir les rubriques suivantes :
 
 - [Cast et conversions de types](./casting-and-type-conversions.md)
 
-- [Conversion boxing et unboxing](./boxing-and-unboxing.md)
+- [Boxing et unboxing](./boxing-and-unboxing.md)
 
 - [Utilisation du type dynamic](./using-type-dynamic.md)
 

@@ -1,18 +1,19 @@
 ---
-title: Comment trouver un élément avec un élément enfant spécifique (C)
+title: Comment rechercher un élément avec un élément enfant spécifique (C#)
+description: Découvrez comment rechercher un élément qui a un élément enfant spécifique. Consultez des exemples de code et des ressources supplémentaires.
 ms.date: 07/20/2015
 ms.assetid: 00cf5555-374e-4369-bf93-7bd2e7f21db3
-ms.openlocfilehash: 0536b1b92d4d7fc18b5d406bbcd24aefc6a840c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1d02f3d3af0a3711a5361941727e2e0b6c8bbdc9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141149"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301708"
 ---
-# <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Comment trouver un élément avec un élément enfant spécifique (C)
+# <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Comment rechercher un élément avec un élément enfant spécifique (C#)
 Cette rubrique montre comment rechercher un élément particulier qui a un élément enfant avec une valeur spécifique.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple recherche l'élément `Test` qui a un élément enfant `CommandLine` avec la valeur « Examp2.EXE ».  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration test (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
@@ -34,7 +35,7 @@ foreach (XElement el in tests)
 0006  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration test dans un espace de noms](./sample-xml-file-test-configuration-in-a-namespace1.md).  

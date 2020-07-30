@@ -1,15 +1,16 @@
 ---
-title: 'Exemple de fichier XML : Configuration test (LINQ to XML)'
+title: 'Exemple de fichier XML : Configuration de test (LINQ to XML)'
+description: Ce fichier XML est utilisé dans différents exemples de la documentation de LINQ to XML. Le fichier est un fichier de configuration de test.
 ms.date: 07/20/2015
 ms.assetid: 45bfb509-c1d4-4b4f-9690-1cb0c9816516
-ms.openlocfilehash: 713e0b69ea896d9f4198ae68f1a3a258d74f24f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14402a4d7988e767464a53a159bcb25661dc82f8
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66487234"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302462"
 ---
-# <a name="sample-xml-file-test-configuration-linq-to-xml"></a>Exemple de fichier XML : Configuration test (LINQ to XML)
+# <a name="sample-xml-file-test-configuration-linq-to-xml"></a>Exemple de fichier XML : Configuration de test (LINQ to XML)
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Il s'agit d'un fichier de configuration test.  
   
 ## <a name="testconfigxml"></a>TestConfig.xml  

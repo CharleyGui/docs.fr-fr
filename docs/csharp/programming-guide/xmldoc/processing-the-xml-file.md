@@ -1,16 +1,17 @@
 ---
 title: Traitement du fichier XML-Guide de programmation C#
+description: En savoir plus sur le traitement du fichier XML en programmation C#. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: 1e3d96f9398f2c08ed715111f01987e2d1948439
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6f8a278ed842cd9c4176f3efff423ee048f7e9b9
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287257"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381539"
 ---
 # <a name="process-the-xml-file-c-programming-guide"></a>Traiter le fichier XML (Guide de programmation C#)
 
@@ -28,12 +29,12 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
 
     |Caractère|Type de membre|Notes|
     |---------------|-----------------|-|
-    |N|namespace|Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
+    |N|espace de noms|Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
     |T|type|Un type peut être une classe, une interface, un struct, une énumération ou un délégué.|
     |F|field|
     |P|propriété|Comprend des indexeurs ou d’autres propriétés indexées.|
     |M|method|Comprend des méthodes spéciales, telles que des constructeurs et des opérateurs.|
-    |E|event|
+    |E|événement|
     |!|chaîne d’erreur|Le reste de la chaîne fournit des informations sur l’erreur. Le compilateur C# génère des informations d’erreur pour les liens qui ne peuvent pas être résolus.|
 
 - La deuxième partie de la chaîne est le nom qualifié complet de l’élément, en commençant à la racine de l’espace de noms. Le nom de l’élément, ses types englobants et l’espace de noms sont séparés par des points. Si le nom de l’élément lui-même comporte des points, ceux-ci sont remplacés par un signe dièse (« # »). Il est supposé qu’aucun élément n’a de signature de hachage directement dans son nom. Par exemple, le nom qualifié complet du constructeur de chaîne est « System. String. #ctor ».

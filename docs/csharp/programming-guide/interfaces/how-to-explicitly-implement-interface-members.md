@@ -1,20 +1,21 @@
 ---
-title: Comment implémenter explicitement les membres de l’interface - Guide de programmation C
+title: Comment implémenter de manière explicite des membres d’interface-Guide de programmation C#
+description: Découvrez comment implémenter de manière explicite des membres d’interface dans cet exemple C#. Les membres sont accessibles par le biais de l’instance d’interface.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], explicitly implementing
 ms.assetid: 514cde76-f981-474e-8b40-9493619f899c
-ms.openlocfilehash: dff094aca237ed6146bd9b52813c40549bc99b9b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 35b512ff6cbee1dd942f5b3476db660481808297
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77627783"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303073"
 ---
-# <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Comment implémenter explicitement les membres de l’interface (Guide de programmation C)
-Cet exemple déclare [interface](../../language-reference/keywords/interface.md)une `IDimensions`interface , `Box`, et une classe, `GetLength` `GetWidth`, qui implémente explicitement les membres de l’interface et . Les membres sont accessibles via l’instance d’interface `dimensions`.  
+# <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Comment implémenter de manière explicite des membres d’interface (Guide de programmation C#)
+Cet exemple déclare une [interface](../../language-reference/keywords/interface.md), `IDimensions` , et une classe, `Box` , qui implémente explicitement les membres d’interface `GetLength` et `GetWidth` . Les membres sont accessibles via l’instance d’interface `dimensions`.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  [!code-csharp[csProgGuideInheritance#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#8)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
@@ -29,7 +30,7 @@ Cet exemple déclare [interface](../../language-reference/keywords/interface.md)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](../classes-and-structs/index.md)
 - [Interfaces](./index.md)
 - [Comment implémenter explicitement des membres de deux interfaces](./how-to-explicitly-implement-members-of-two-interfaces.md)

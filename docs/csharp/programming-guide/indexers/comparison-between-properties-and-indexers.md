@@ -1,16 +1,17 @@
 ---
 title: Comparaison entre propriétés et indexeurs - Guide de programmation C#
+description: Comparez la manière dont les indexeurs en C# sont similaires aux propriétés. À l’exception des différences, les règles définies pour les accesseurs de propriété s’appliquent aux accesseurs de l’indexeur.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], vs. indexers
 - indexers [C#], vs. properties
 ms.assetid: 3358a89f-44a0-4a4d-bf8c-07237a90af39
-ms.openlocfilehash: 330d222083ce599719698c023803196dfe88da84
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b83ce3db3d4b53fb7bcc5f3b3cd603a375d5d473
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712128"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299173"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a>Comparaison entre propriétés et indexeurs (Guide de programmation C#)
 Les indexeurs sont semblables aux propriétés. À l’exception des différences répertoriées dans le tableau suivant, toutes les règles définies pour les accesseurs des propriétés s’appliquent également aux accesseurs des indexeurs.  
@@ -26,6 +27,6 @@ Les indexeurs sont semblables aux propriétés. À l’exception des différence
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Indexeurs](./index.md)
 - [Propriétés](../classes-and-structs/properties.md)

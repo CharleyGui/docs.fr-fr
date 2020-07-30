@@ -1,5 +1,6 @@
 ---
 title: Comment lire un fichier texte-Guide de programmation C#
+description: Apprenez à lire à partir d’un fichier texte à l’aide de méthodes statiques de la classe file. Consultez un exemple de code et affichez des ressources supplémentaires disponibles.
 ms.date: 07/20/2015
 f1_keywords:
 - StreamReader.ReadToEnd
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - reading data, text files
 - text files, reading
 ms.assetid: 92246c5b-e819-4eea-9370-1a9460e12de3
-ms.openlocfilehash: 8f79d22a86390ca931b05262e50865d852c154c7
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 80ac6f8412f456b23d05ee87882dca8e16a132c3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241745"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301656"
 ---
 # <a name="how-to-read-from-a-text-file-c-programming-guide"></a>Comment lire un fichier texte (Guide de programmation C#)
 Cet exemple lit le contenu d’un fichier texte à l’aide des méthodes statiques <xref:System.IO.File.ReadAllText%2A> et <xref:System.IO.File.ReadAllLines%2A> de la classe <xref:System.IO.File?displayProperty=nameWithType>.  

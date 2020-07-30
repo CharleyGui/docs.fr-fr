@@ -1,16 +1,17 @@
 ---
 title: Utilisation du type dynamic - Guide de programmation C#
+description: Découvrez comment utiliser le type dynamique. Le type dynamique est un type statique, mais les objets dynamiques contournent la vérification de type statique.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 24d48605e560038d70f1818611f339a94ecc2bba
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 9904f0452feca388704067b1fd5432f74d0df86b
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241966"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381578"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Utilisation du type dynamic (Guide de programmation C#)
 
@@ -73,9 +74,9 @@ De nombreuses méthodes COM autorisent une variation des types d’arguments et 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
-|[dynamique](../../language-reference/builtin-types/reference-types.md)|Décrit l’utilisation du mot clé `dynamic`.|
+|[dynamic](../../language-reference/builtin-types/reference-types.md)|Décrit l’utilisation du mot clé `dynamic`.|
 |[Vue d’ensemble du Dynamic Language Runtime](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Fournit une vue d’ensemble du DLR, qui est un environnement d’exécution ajoutant au Common Language Runtime (CLR) un ensemble de services pour les langages dynamiques.|
 |[Procédure pas à pas : création et utilisation d’objets dynamiques](walkthrough-creating-and-using-dynamic-objects.md)|Fournit des instructions pas à pas pour la création d’un objet dynamique personnalisé et pour la création d’un projet qui accède à une bibliothèque `IronPython`.|
 |[Comment accéder aux objets Office Interop à l’aide des fonctionnalités C#](../interop/how-to-access-office-onterop-objects.md)|Montre comment créer un projet qui utilise les arguments nommés et facultatifs, le type `dynamic` et d’autres améliorations qui simplifient l’accès aux objets d’API Office.|

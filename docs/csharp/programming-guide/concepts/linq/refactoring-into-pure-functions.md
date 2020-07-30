@@ -1,13 +1,14 @@
 ---
 title: Refactorisation dans des fonctions pures (C#)
+description: Découvrez comment refactoriser du code à l’aide de fonctions pures. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
-ms.openlocfilehash: 4cf91ff078bd1c4582daa05475a91c4a4ecaba3e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cc5dd26923e2edaed34c8f1b742b3dfa1e935e68
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253113"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300226"
 ---
 # <a name="refactoring-into-pure-functions-c"></a>Refactorisation dans des fonctions pures (C#)
 
@@ -115,4 +116,4 @@ class Program
 ## <a name="see-also"></a>Voir aussi
 
 - [Introduction aux transformations fonctionnelles pures (C#)](./introduction-to-pure-functional-transformations.md)
-- [Programmation fonctionnelle vs programmation impérative (C)](./functional-programming-vs-imperative-programming.md)
+- [Programmation fonctionnelle et programmation impérative (C#)](./functional-programming-vs-imperative-programming.md)

@@ -1,5 +1,6 @@
 ---
 title: <include> -Guide de programmation C#
+description: En savoir plus sur le XML <include> balise. Cette balise vous permet de faire référence aux commentaires d’un autre fichier qui décrivent les types et les membres de votre code source.
 ms.date: 07/20/2015
 f1_keywords:
 - include
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: bf41019c775fed25afe4bdb9453a8e52f44856b5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 15a99444d464594cc91a7c8805c564c703c3b608
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287348"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381903"
 ---
 # <a name="include-c-programming-guide"></a>\<include>(Guide de programmation C#)
 
@@ -53,7 +54,7 @@ Cet exemple comprend plusieurs fichiers. Voici le premier fichier, qui utilise `
 
 [!code-csharp[csProgGuideDocComments#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#5)]
 
-Le deuxième fichier, *xml_include_tag. doc*, contient les commentaires de documentation suivants.
+Le deuxième fichier, *xml_include_tag.doc*, contient les commentaires de documentation suivants.
 
 ```xml
 <MyDocs>
@@ -75,7 +76,7 @@ The summary for this other type.
 
 ## <a name="program-output"></a>Sortie du programme
 
-La sortie suivante est générée quand vous compilez les classes Test et Test2 avec la ligne de commande suivante : `-doc:DocFileName.xml.` Dans Visual Studio, l’option de commentaires de document XML est spécifiée dans le volet de génération du Concepteur de projet. Lorsque le compilateur C# voit la `<include>` balise, il recherche des commentaires de documentation dans *xml_include_tag. doc* au lieu du fichier source actuel. Le compilateur génère ensuite *DocFileName. xml*, et il s’agit du fichier utilisé par les outils de documentation tels que [DocFX](https://dotnet.github.io/docfx/) et [Sandcastle](https://github.com/EWSoftware/SHFB) pour produire la documentation finale.  
+La sortie suivante est générée quand vous compilez les classes Test et Test2 avec la ligne de commande suivante : `-doc:DocFileName.xml.` Dans Visual Studio, l’option de commentaires de document XML est spécifiée dans le volet de génération du Concepteur de projet. Lorsque le compilateur C# voit la `<include>` balise, il recherche des commentaires de documentation dans *xml_include_tag.doc* au lieu du fichier source actuel. Le compilateur génère ensuite *DocFileName.xml*, et il s’agit du fichier utilisé par les outils de documentation tels que [Sandcastle](https://github.com/EWSoftware/SHFB) pour produire la documentation finale.  
   
 ```xml
 <?xml version="1.0"?>

@@ -1,16 +1,17 @@
 ---
 title: Délégués - Guide de programmation C#
+description: Un délégué en C# est un type qui fait référence aux méthodes avec une liste de paramètres et un type de retour. Les délégués sont utilisés pour passer des méthodes comme arguments à d'autres méthodes.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: c0f28716926d4c9d74cde58fd00e27d1fdfa7ce1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 94e7c130bd5d8e136d03ccdbaed643bc1a47d112
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75705364"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302163"
 ---
 # <a name="delegates-c-programming-guide"></a>Délégués (Guide de programmation C#)
 Un [délégué](../../language-reference/builtin-types/reference-types.md) est un type qui représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Lorsque vous instanciez un délégué, vous pouvez associer son instance à toute méthode ayant une signature et un type de retour compatibles. Vous pouvez appeler la méthode par le biais l'instance de délégué.  
@@ -43,15 +44,15 @@ Un [délégué](../../language-reference/builtin-types/reference-types.md) est u
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-- [Utilisation des délégués](./using-delegates.md)  
+- [Utilisation de délégués](./using-delegates.md)  
   
 - [Quand utiliser des délégués à la place d’interfaces (Guide de programmation C#)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
   
-- [Délégués avec méthodes nommées et méthodes anonymes](./delegates-with-named-vs-anonymous-methods.md)  
+- [Délégués avec méthodes nommées et Méthodes anonymes](./delegates-with-named-vs-anonymous-methods.md)  
   
 - [Utilisation de la variance dans les délégués](../concepts/covariance-contravariance/using-variance-in-delegates.md)  
   
-- [Comment combiner les délégués (délégués multicast)](./how-to-combine-delegates-multicast-delegates.md)  
+- [Comment combiner des délégués (délégués multicast)](./how-to-combine-delegates-multicast-delegates.md)  
   
 - [Comment déclarer, instancier et utiliser un délégué](./how-to-declare-instantiate-and-use-a-delegate.md)
 
@@ -67,5 +68,5 @@ Pour plus d’informations, consultez [Délégués](~/_csharplang/spec/delegates
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Delegate>
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Événements](../events/index.md)

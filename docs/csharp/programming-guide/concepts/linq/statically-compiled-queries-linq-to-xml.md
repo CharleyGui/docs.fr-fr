@@ -1,13 +1,14 @@
 ---
 title: Requêtes compilées statiquement (LINQ to XML) (C#)
+description: En savoir plus sur les requêtes compilées statiquement dans LINQ to XML en C# et sur leur différence par rapport aux requêtes XPath, qui doivent être interprétées lors de l’exécution.
 ms.date: 07/20/2015
 ms.assetid: 3bf558fe-0705-479d-86d4-00188f5fcf9c
-ms.openlocfilehash: 98725cece1006ba13afb64bb8ae17ae6e62c53cf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd2e6a6507311d5fc17215a22c70bd0449292b6f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253030"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302306"
 ---
 # <a name="statically-compiled-queries-linq-to-xml-c"></a>Requêtes compilées statiquement (LINQ to XML) (C#)
 L'un des principaux avantages de LINQ to XML en terme de performance, par rapport à <xref:System.Xml.XmlDocument>, est que les requêtes dans LINQ to XML sont compilées statiquement, tandis que les requêtes XPath doivent être interprétées lors de l'exécution. Cette fonctionnalité étant intégrée dans LINQ to XML, vous n'avez pas à effectuer d'étapes supplémentaires pour en bénéficier, mais il est utile de comprendre cette distinction pour pouvoir choisir entre ces deux technologies. Cette rubrique explique en quoi consiste la différence.  
@@ -15,7 +16,7 @@ L'un des principaux avantages de LINQ to XML en terme de performance, par rappor
 ## <a name="statically-compiled-queries-vs-xpath"></a>Requêtes compilées statiquement et Xpath  
  L'exemple suivant montre comment obtenir les éléments descendants avec un nom spécifié et avec un attribut avec une valeur spécifiée.  
   
- Ce qui suit est l’expression équivalente XPath:`//Address[@Type='Shipping']`
+ L’expression XPath équivalente est la suivante :`//Address[@Type='Shipping']`
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  

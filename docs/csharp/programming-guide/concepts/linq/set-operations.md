@@ -1,13 +1,14 @@
 ---
 title: Opérations ensemblistes (C#)
+description: En savoir plus sur les opérations de définition et les méthodes d’opérateur de requête standard qui effectuent des opérations de définition dans LINQ en C#.
 ms.date: 07/20/2015
 ms.assetid: 7c589367-ef8f-4161-9050-642c47e6bf63
-ms.openlocfilehash: 44a145a625b5e2e16d2469b20f8cfda1858560a2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ab2608b267113ad5d47a33e64cd9a5e21496f668
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167931"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302371"
 ---
 # <a name="set-operations-c"></a>Opérations ensemblistes (C#)
 Les opérations ensemblistes dans LINQ font référence à des opérations de requête qui génèrent un jeu de résultats basé sur la présence ou l’absence d’éléments équivalents dans la même collection (ou le même ensemble) ou dans une collection distincte (ou un ensemble distinct).  
@@ -26,28 +27,28 @@ Les opérations ensemblistes dans LINQ font référence à des opérations de re
 ## <a name="comparison-of-set-operations"></a>Comparaison d’opérations ensemblistes  
   
 ### <a name="distinct"></a>Distinct  
- L’exemple suivant illustre le <xref:System.Linq.Enumerable.Distinct%2A?displayProperty=nameWithType> comportement de la méthode sur une séquence de caractères. La séquence retournée contient les éléments uniques de la séquence d’entrée.  
+ L’exemple suivant illustre le comportement de la <xref:System.Linq.Enumerable.Distinct%2A?displayProperty=nameWithType> méthode sur une séquence de caractères. La séquence retournée contient les éléments uniques de la séquence d’entrée.  
   
  ![Graphique illustrant le comportement de Distinct&#40;&#41;.](./media/set-operations/distinct-method-behavior.png)  
 
  [!code-csharp-interactive[Distinct](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQSetOperation/CS/SetOperation.cs#1)]
   
 ### <a name="except"></a>Except  
- L’exemple suivant illustre <xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType>le comportement de . La séquence retournée contient uniquement les éléments de la première séquence d’entrée qui ne figurent pas dans la seconde séquence d’entrée.  
+ L’exemple suivant illustre le comportement de <xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType> . La séquence retournée contient uniquement les éléments de la première séquence d’entrée qui ne figurent pas dans la seconde séquence d’entrée.  
   
- ![Graphique montrant l’action de Except&#40;&#41;.](./media/set-operations/except-behavior-graphic.png "Montre le comportement de Except.")  
+ ![Graphique présentant l’action de, à l’exception de&#40;&#41;.](./media/set-operations/except-behavior-graphic.png "Montre le comportement de except.")  
   
 [!code-csharp-interactive[Except](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQSetOperation/CS/SetOperation.cs#2)]
 
 ### <a name="intersect"></a>Intersect  
- L’exemple suivant illustre <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType>le comportement de . La séquence retournée contient les éléments qui sont communs aux deux séquences d’entrée.  
+ L’exemple suivant illustre le comportement de <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType> . La séquence retournée contient les éléments qui sont communs aux deux séquences d’entrée.  
   
  ![Graphique illustrant l’intersection de deux séquences.](./media/set-operations/intersection-two-sequences.png)  
 
 [!code-csharp-interactive[Intersect](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQSetOperation/CS/SetOperation.cs#3)]
 
 ### <a name="union"></a>Union  
- L’exemple suivant montre une opération syndicale sur deux séquences de personnages. La séquence retournée contient les éléments uniques des deux séquences d’entrée.  
+ L’exemple suivant illustre une opération d’Union sur deux séquences de caractères. La séquence retournée contient les éléments uniques des deux séquences d’entrée.  
   
  ![Graphique illustrant l’union de deux séquences.](./media/set-operations/union-operation-two-sequences.png)  
 
@@ -57,5 +58,5 @@ Les opérations ensemblistes dans LINQ font référence à des opérations de re
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [Comment combiner et comparer les collections de cordes (LINQ) (C)](./how-to-combine-and-compare-string-collections-linq.md)
-- [Comment trouver la différence entre deux listes (LINQ) (C)](./how-to-find-the-set-difference-between-two-lists-linq.md)
+- [Comment combiner et comparer des collections de chaînes (LINQ) (C#)](./how-to-combine-and-compare-string-collections-linq.md)
+- [Guide pratique pour rechercher la différence définie entre deux listes (LINQ) (C#)](./how-to-find-the-set-difference-between-two-lists-linq.md)

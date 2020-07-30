@@ -1,5 +1,6 @@
 ---
 title: Création et levée d'exceptions - Guide de programmation C#
+description: En savoir plus sur la création et la levée d’exceptions. Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite lors de l’exécution d’un programme.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - catching exceptions [C#]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: f775a0917560a219f24329adcb1542f605d47dc2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ab10dbf686def8d169ef3239492e3b618e9d297
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712297"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302046"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Création et levée d'exceptions (Guide de programmation C#)
 Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pendant l’exécution du programme. Les objets d’exception qui décrivent une erreur sont créés, puis *levés* avec le mot clé [throw](../../language-reference/keywords/throw.md). Le runtime recherche ensuite le gestionnaire d’exceptions le plus compatible.  
@@ -67,7 +68,7 @@ Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Exceptions et gestion des exceptions](./index.md)
 - [Hiérarchie des exceptions](../../../standard/exceptions/index.md)
 - [Gestion des exceptions](./exception-handling.md)

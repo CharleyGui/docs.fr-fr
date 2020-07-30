@@ -1,5 +1,6 @@
 ---
-title: "Procédure pas à pas : création et utilisation d'objets dynamiques (C# et Visual Basic)"
+title: 'Procédure pas à pas : Création et utilisation d’objets dynamiques (C# et Visual Basic)'
+description: Découvrez comment créer et utiliser des objets dynamiques dans cette procédure pas à pas. Créez un objet dynamique personnalisé et un projet qui utilise une bibliothèque « IronPython ».
 ms.date: 07/20/2015
 dev_langs:
 - csharp
@@ -9,14 +10,14 @@ helpviewer_keywords:
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-ms.openlocfilehash: 3b5a92948a3e692a734f3ddee3c7238d5d27588f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 144651d3b14f6f6093ab07f1df7be10e6d05ae89
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79157050"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381253"
 ---
-# <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Procédure pas à pas : création et utilisation d'objets dynamiques (C# et Visual Basic)
+# <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Procédure pas à pas : Création et utilisation d’objets dynamiques (C# et Visual Basic)
 
 Les objets dynamiques exposent des membres tels que les propriétés et les méthodes au moment de l’exécution et non lors de la compilation. Cela vous permet de créer des objets utilisables avec des structures qui ne correspondent pas à un type ou un format statique. Par exemple, vous pouvez utiliser un objet dynamique pour référencer le modèle DOM (Document Object Model) HTML, qui peut contenir n’importe quelle combinaison d’attributs et d’éléments de balisage HTML valides. Étant donné que chaque document HTML est unique, les membres d’un document HTML particulier sont déterminés au moment de l’exécution. L’une des méthodes courantes pour référencer un attribut d’un élément HTML consiste à passer le nom de l’attribut à la méthode `GetProperty` de l’élément. Pour référencer l’attribut `id` de l’élément HTML `<div id="Div1">`, vous obtenez d’abord une référence à l’élément `<div>`, puis utilisez `divElement.GetProperty("id")`. Si vous utilisez un objet dynamique, vous pouvez référencer l’attribut `id` comme `divElement.id`.  
   
@@ -32,7 +33,7 @@ Les objets dynamiques exposent des membres tels que les propriétés et les mét
   
 - Créer un projet qui utilise une bibliothèque `IronPython`.  
   
-## <a name="prerequisites"></a>Conditions préalables requises  
+## <a name="prerequisites"></a>Prérequis  
 
 Pour effectuer cette procédure pas à pas, vous devez utiliser [IronPython](https://ironpython.net/) pour .NET. Accédez à la [page de téléchargement](https://ironpython.net/download/) pour obtenir la version la plus récente.
   
@@ -46,7 +47,7 @@ Le premier projet que vous créez dans cette procédure pas à pas définit un o
   
 1. Démarrez Visual Studio.  
   
-2. Sur le menu **du fichier,** pointez vers **New** puis cliquez sur **Le projet**.  
+2. Dans le menu **fichier** , pointez sur **nouveau** , puis cliquez sur **projet**.  
   
 3. Dans la boîte de dialogue **Nouveau projet**, dans le volet **Types de projets**, vérifiez que **Windows** est sélectionné. Sélectionnez **Application console** dans le volet **Modèles**. Dans la zone **Nom**, tapez `DynamicSample`, puis cliquez sur **OK**. Le nouveau projet est créé.  
   
@@ -131,11 +132,11 @@ Le projet suivant que vous créez dans cette procédure pas à pas permet d’ac
   
 ### <a name="to-create-a-custom-dynamic-class"></a>Pour créer une classe dynamique personnalisée
   
-1. Dans Visual Studio, sur le menu **Du fichier,** pointez vers **New** puis cliquez sur **Project**.  
+1. Dans Visual Studio, dans le menu **fichier** , pointez sur **nouveau** , puis cliquez sur **projet**.  
   
 2. Dans la boîte de dialogue **Nouveau projet**, dans le volet **Types de projets**, vérifiez que **Windows** est sélectionné. Sélectionnez **Application console** dans le volet **Modèles**. Dans la zone **Nom**, tapez `DynamicIronPythonSample`, puis cliquez sur **OK**. Le nouveau projet est créé.  
   
-3. Si vous utilisez Visual Basic, cliquez avec le bouton droit sur le projet DynamicIronPythonSample, puis cliquez sur **Propriétés**. Cliquez sur l’onglet **Références.** Cliquez sur le bouton **Ajouter.** Si vous utilisez Visual C#, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le dossier **Références**, puis cliquez sur **Ajouter une référence**.  
+3. Si vous utilisez Visual Basic, cliquez avec le bouton droit sur le projet DynamicIronPythonSample, puis cliquez sur **Propriétés**. Cliquez sur l’onglet **références** . cliquez sur le bouton **Ajouter** . Si vous utilisez Visual C#, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le dossier **Références**, puis cliquez sur **Ajouter une référence**.  
   
 4. Sous l’onglet **Parcourir**, naviguez jusqu’au dossier dans lequel sont installées les bibliothèques IronPython. Par exemple, C:\Program Files\IronPython 2.6 pour .NET 4.0. Sélectionnez les bibliothèques **IronPython.dll**, **IronPython.Modules.dll**, **Microsoft.Scripting.dll** et **Microsoft.Dynamic.dll**. Cliquez sur **OK**.  
   
@@ -163,6 +164,6 @@ Le projet suivant que vous créez dans cette procédure pas à pas permet d’ac
 - <xref:System.Dynamic?displayProperty=nameWithType>
 - <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>
 - [Utilisation du type dynamic](./using-type-dynamic.md)
-- [Liaison anticipée et liaison tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [Dynamique](../../language-reference/builtin-types/reference-types.md)
+- [Liaison précoce et tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+- [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Implémenter des interfaces dynamiques (PDF téléchargeable sur Microsoft TechNet)](https://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/implementing-dynamic-interfaces.pdf)

@@ -1,12 +1,13 @@
 ---
 title: Sérialisation (C#)
+description: La sérialisation convertit un objet en un flux d’octets pour stocker l’objet ou le transmettre à la mémoire, à une base de données ou à un fichier.
 ms.date: 01/02/2020
-ms.openlocfilehash: b2532ccf281fdfaa951d56675066f1e239f9f480
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: b2b3105887ad6f000fcba895452a483881ae5a09
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241979"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302774"
 ---
 # <a name="serialization-c"></a>Sérialisation (C#)
 
@@ -77,7 +78,7 @@ La sérialisation du concepteur est une forme particulière de sérialisation qu
 
 ## <a name="related-topics-and-examples"></a><a name="BKMK_RelatedTopics"></a> Rubriques connexes et exemples  
 
-[Vue d’ensemble de System. Text. JSON](../../../../standard/serialization/system-text-json-overview.md) Montre comment récupérer la `System.Text.Json` bibliothèque.
+[Présentation deSystem.Text.Js](../../../../standard/serialization/system-text-json-overview.md) Montre comment récupérer la `System.Text.Json` bibliothèque.
 
 [Comment sérialiser et désérialiser JSON dans .net](../../../../standard/serialization/system-text-json-how-to.md).
 Montre comment lire et écrire des données d’objet dans et à partir de JSON à l’aide de la <xref:System.Text.Json.JsonSerializer> classe.

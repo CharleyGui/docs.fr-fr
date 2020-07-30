@@ -1,23 +1,24 @@
 ---
-title: attribut de cref - Guide de programmation C
+title: CREF, attribut-Guide de programmation C#
+description: En savoir plus sur l’attribut cref. L’attribut cref signifie « référence du code » et spécifie que le texte interne de la balise est un élément de code.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - cref [C#]
 ms.assetid: 66a6b0e5-b961-4504-a461-3a4cf481fc8b
-ms.openlocfilehash: b06d0c9d447124dec7d8cf3c0cbbfd0daca78fe3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 31fa1a3f182d7b72a1dfbe1ce47386f87fbbff75
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79157011"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381994"
 ---
-# <a name="cref-attribute-c-programming-guide"></a>attribut de cref (guide de programmation de C)
+# <a name="cref-attribute-c-programming-guide"></a>CREF, attribut (Guide de programmation C#)
 
 L’attribut `cref` dans une balise de documentation XML signifie « référence de code ». Il indique que le texte interne de la balise est un élément de code tel qu’un type, une méthode ou une propriété. Les outils de documentation comme [DocFX](https://dotnet.github.io/docfx/) et [Sandcastle](https://github.com/EWSoftware/SHFB) utilisent les attributs `cref` pour générer automatiquement des liens hypertexte vers la page où le type ou le membre est documenté.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-L’exemple `cref` suivant montre les attributs utilisés dans [ \<voir>](./see.md) balises.
+L’exemple suivant montre les `cref` attributs utilisés dans les [\<see>](./see.md) balises.
 
 [!code-csharp[csProgGuideDocComments#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#3)]
 

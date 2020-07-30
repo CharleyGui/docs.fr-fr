@@ -1,13 +1,14 @@
 ---
 title: Sérialisation vers un XmlReader (appel de XSLT) (C#)
+description: Découvrez comment utiliser CreateReader pour créer un XmlReader en C#. Le module qui lit à partir de ce XmlReader lit les nœuds dans l’arborescence XML et les traite.
 ms.date: 07/20/2015
 ms.assetid: 4cc3ee03-ef4c-429b-a408-fedd10b728cd
-ms.openlocfilehash: b079fe05fa8c230f644e011dcb62ec54f55cae60
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aa5a232c74c5314cb7f1cf03c2a8875ca1cd04df
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66487178"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302410"
 ---
 # <a name="serializing-to-an-xmlreader-invoking-xslt-c"></a>Sérialisation vers un XmlReader (appel de XSLT) (C#)
 Quand vous exploitez les fonctionnalités d’interopérabilité <xref:System.Xml?displayProperty=nameWithType> de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous pouvez utiliser <xref:System.Xml.Linq.XNode.CreateReader%2A> pour créer un objet <xref:System.Xml.XmlReader>. Le module qui lit à partir de cet objet <xref:System.Xml.XmlReader> lit les nœuds à partir de l’arborescence XML et les traite en conséquence.  

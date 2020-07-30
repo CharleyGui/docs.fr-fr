@@ -1,13 +1,14 @@
 ---
 title: Préatomisation des objets XName (LINQ to XML) (C#)
+description: En savoir plus sur la préatomisation des objets XName. La pré-atomisation des objets améliore les performances lors de la création d’une grande arborescence XML dans laquelle des noms spécifiques sont répétés.
 ms.date: 07/20/2015
 ms.assetid: e84fbbe7-f072-4771-bfbb-059d18e1ad15
-ms.openlocfilehash: 2fd754a352bd2988e52ec9c67a9915a8e587b107
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4d217f6c78dc5d83ce424fb3ba95785f2dac0b73
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591498"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302826"
 ---
 # <a name="pre-atomization-of-xname-objects-linq-to-xml-c"></a>Préatomisation des objets XName (LINQ to XML) (C#)
 L'un des moyens d'améliorer les performances dans LINQ to XML est de préatomiser les objets <xref:System.Xml.Linq.XName>. La préatomisation signifie que vous attribuez une chaîne à un objet <xref:System.Xml.Linq.XName> avant de créer l'arborescence XML à l'aide des constructeurs des classes <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XAttribute>. Ensuite, au lieu de passer une chaîne au constructeur, ce qui utiliserait la conversion implicite de la chaîne en <xref:System.Xml.Linq.XName>, vous passez l'objet <xref:System.Xml.Linq.XName> initialisé.  
@@ -16,7 +17,7 @@ L'un des moyens d'améliorer les performances dans LINQ to XML est de préatomis
   
  Vous devez tester la préatomisation avec votre scénario pour décider si vous devez l'utiliser.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  l’exemple ci-dessous illustre ce cas de figure.  
   
 ```csharp  

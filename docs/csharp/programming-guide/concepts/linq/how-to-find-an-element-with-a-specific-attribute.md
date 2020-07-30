@@ -1,18 +1,19 @@
 ---
-title: Comment trouver un élément avec un attribut spécifique (C)
+title: Comment rechercher un élément avec un attribut spécifique (C#)
+description: Découvrez comment rechercher un élément qui possède un attribut avec une valeur spécifique. Consultez des exemples de code et des ressources supplémentaires.
 ms.date: 07/20/2015
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: 106885b8658c493caab3101e6b4ce921589076eb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44875ca2104e7a8f83e83da983af49ef85c89f0a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141161"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303281"
 ---
-# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>Comment trouver un élément avec un attribut spécifique (C)
+# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>Comment rechercher un élément avec un attribut spécifique (C#)
 Cette rubrique montre comment rechercher un élément qui possède un attribut qui a une valeur spécifique.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple montre comment rechercher l'élément `Address` qui possède un attribut `Type` avec la valeur « Billing ».  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
@@ -40,7 +41,7 @@ foreach (XElement el in address)
 </Address>  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique dans un espace de noms](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  

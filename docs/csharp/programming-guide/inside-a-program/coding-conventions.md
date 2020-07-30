@@ -1,17 +1,18 @@
 ---
 title: Conventions de codage C# - Guide de programmation C#
+description: En savoir plus sur les conventions de codage en C#. Les conventions de codage créent une apparence cohérente dans le code et facilitent la copie, la modification et la gestion du code.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - coding conventions, C#
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 77b173a420f26834855e0bdca3c8d04406ac65d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 772aebff0b8c7aebe7c7d5c7634cd2931f4570b1
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399734"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301851"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Conventions de codage C# (Guide de programmation C#)
 
@@ -25,9 +26,9 @@ Les conventions de codage répondent aux objectifs suivants :
   
 - Elles illustrent les bonnes pratiques en C#.  
 
-Les lignes directrices de cet article sont utilisées par Microsoft pour développer des échantillons et de la documentation.  
+Les instructions de cet article sont utilisées par Microsoft pour développer des exemples et de la documentation.  
   
-## <a name="naming-conventions"></a>Conventions de nommage  
+## <a name="naming-conventions"></a>Conventions d'affectation de noms  
   
 - Dans les exemples courts qui ne comprennent pas de [directives](../../language-reference/keywords/using-directive.md), utilisez les qualifications d’espace de noms. Si vous savez qu'un espace de noms est importé par défaut dans un projet, vous n'êtes pas obligé de qualifier entièrement les noms à partir de cet espace de noms. Les noms qualifiés peuvent être interrompus après un point (.) s'ils sont trop longs pour contenir sur une ligne unique, comme indiqué dans l'exemple suivant.  
   
@@ -97,20 +98,20 @@ Les sections suivantes décrivent les pratiques que l'équipe C# suit pour prép
   
 - Évitez d’utiliser `var` à la place de [dynamic](../../language-reference/builtin-types/reference-types.md).  
   
-- Utilisez la saisie implicite pour déterminer le type de variable de boucle [pour](../../language-reference/keywords/for.md) les boucles.  
+- Utilisez le typage implicite pour déterminer le type de la variable de boucle dans les boucles [for](../../language-reference/keywords/for.md) .  
   
      L'exemple suivant utilise un typage implicite dans une instruction `for`.  
   
      [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
 
-- N’utilisez pas de dactylographie implicite pour déterminer le type de variable de boucle dans les boucles [de avant-premier.](../../language-reference/keywords/foreach-in.md)
+- N’utilisez pas de typage implicite pour déterminer le type de la variable de boucle dans les boucles [foreach](../../language-reference/keywords/foreach-in.md) .
 
-     L’exemple suivant utilise la `foreach` saisie explicite dans une déclaration.
+     L’exemple suivant utilise un typage explicite dans une `foreach` instruction.
 
      [!code-csharp[csProgGuideCodingConventions#12](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#12)]
 
      > [!NOTE]
-     > Veillez à ne pas changer accidentellement un type d’élément de la collection itérable. Par exemple, il est <xref:System.Linq.IQueryable?displayProperty=nameWithType> facile <xref:System.Collections.IEnumerable?displayProperty=nameWithType> de `foreach` passer à dans une déclaration, ce qui modifie l’exécution d’une requête.
+     > Veillez à ne pas modifier accidentellement un type d’élément de la collection Iterable. Par exemple, il est facile de passer de <xref:System.Linq.IQueryable?displayProperty=nameWithType> à <xref:System.Collections.IEnumerable?displayProperty=nameWithType> dans une `foreach` instruction, ce qui modifie l’exécution d’une requête.
 
 ### <a name="unsigned-data-type"></a>Type de données non signé  
   
@@ -142,11 +143,11 @@ Utilisez la syntaxe concise pour créer des instances d'un type délégué.
   
 ### <a name="-and-124124-operators"></a>Opérateurs && et &#124;&#124;  
   
-Pour éviter les exceptions et augmenter les [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) performances [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) en sautant des comparaisons inutiles, utilisez au lieu et [&#124;&#124;](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) au lieu de [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) lorsque vous effectuez des comparaisons, comme le montre l’exemple suivant.  
+Pour éviter les exceptions et accroître les performances en ignorant les comparaisons inutiles, utilisez à [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) la place de [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) et de [&#124;&#124;](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) au lieu de [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) quand vous effectuez des comparaisons, comme illustré dans l’exemple suivant.  
   
 [!code-csharp[csProgGuideCodingConventions#18](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#18)]  
   
-### <a name="new-operator"></a>New Operator  
+### <a name="new-operator"></a>New, opérateur  
   
 - Utilisez la forme concise d'instanciation d'objets, avec un typage implicite, comme indiqué dans la déclaration suivante.  
   

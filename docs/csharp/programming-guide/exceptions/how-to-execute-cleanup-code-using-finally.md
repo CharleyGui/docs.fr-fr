@@ -1,24 +1,25 @@
 ---
-title: Comment exécuter le code de nettoyage en utilisant enfin - Guide de programmation C
+title: Guide pratique pour exécuter le code de nettoyage à l’aide de finally (Guide de programmation C#)
+description: Découvrez comment exécuter le code de nettoyage à l’aide d’une instruction’Finally'. Enfin, les instructions garantissent que tout nettoyage nécessaire d’objets se produit immédiatement.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - try/finally blocks [C#]
 - exceptions [C#], try/finally block
 - exception handling [C#], try/finally block
 ms.assetid: 1b1e5aef-3f32-4a88-9d39-b5fffb33bdaf
-ms.openlocfilehash: d1ba761e64053d656ad4cd004133fc455a57c6f6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 148c1f9fba67659a07c667bb15619d6f3f7c3b2f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705273"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302020"
 ---
-# <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>Comment exécuter le code de nettoyage en utilisant enfin (Guide de programmation C)
+# <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>Comment exécuter le code de nettoyage à l’aide de finally (Guide de programmation C#)
 L’objectif d’une instruction `finally` est de vérifier que le nettoyage nécessaire des objets, généralement ceux contenant des ressources externes, se produit immédiatement, même si une exception est levée. Un exemple de nettoyage de ce type est l’appel à <xref:System.IO.Stream.Close%2A> sur un <xref:System.IO.FileStream> immédiatement après son utilisation au lieu d’attendre que l’objet soit récupéré par garbage collection par le Common Language Runtime, comme suit :  
   
  [!code-csharp[csProgGuideExceptions#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#16)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Pour transformer le code précédent en instruction `try-catch-finally`, le code de nettoyage est séparé du code actif comme suit.  
   
  [!code-csharp[csProgGuideExceptions#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#17)]  
@@ -29,10 +30,10 @@ L’objectif d’une instruction `finally` est de vérifier que le nettoyage né
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Exceptions et gestion des exceptions](./index.md)
 - [Gestion des exceptions](./exception-handling.md)
-- [à l’aide de l’Énoncé](../../language-reference/keywords/using-statement.md)
+- [using, instruction](../../language-reference/keywords/using-statement.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)
 - [try-finally](../../language-reference/keywords/try-finally.md)
 - [try-catch-finally](../../language-reference/keywords/try-catch-finally.md)

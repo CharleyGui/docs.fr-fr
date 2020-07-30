@@ -1,16 +1,17 @@
 ---
-title: Délégués avec des méthodes nommées vs anonymes - Guide de programmation C
+title: Délégués avec méthodes nommées et méthodes anonymes-Guide de programmation C#
+description: En savoir plus sur les délégués avec les méthodes nommées et anonymes. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], with named vs. anonymous methods
 - methods [C#], in delegates
 ms.assetid: 98fa8c61-66b6-4146-986c-3236c4045733
-ms.openlocfilehash: 1ec366999ca6457471b705fa83f06fcde4293f4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 940363b87e17b34feeffaff38ed498d6fcf6850a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712375"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302748"
 ---
 # <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Délégués avec méthodes nommées et méthodes anonymes (Guide de programmation C#)
 Un [délégué](../../language-reference/builtin-types/reference-types.md) peut être associé à une méthode nommée. Quand vous instanciez un délégué à l’aide d’une méthode nommée, la méthode est passée en tant que paramètre, par exemple :  
@@ -19,7 +20,7 @@ Un [délégué](../../language-reference/builtin-types/reference-types.md) peut 
   
  C’est ce qui s’appelle utiliser une méthode nommée. Les délégués construits avec une méthode nommée peuvent encapsuler une méthode [static](../../language-reference/keywords/static.md) ou une méthode d’instance. Les méthodes nommées représentent la seule façon d’instancier un délégué dans les versions précédentes de C#. Toutefois, dans une situation où la création d’une méthode constitue une charge de travail non souhaitée, C# vous permet d’instancier un délégué et de spécifier immédiatement un bloc de code que le délégué traite quand il est appelé. Le bloc peut contenir une expression lambda ou une méthode anonyme. Pour plus d’informations, consultez [Fonctions anonymes](../statements-expressions-operators/anonymous-functions.md).  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
  La méthode que vous passez en tant que paramètre de délégué doit avoir la même signature que la déclaration du délégué.  
   
  Une instance de délégué encapsule soit une méthode statique soit une méthode d’instance.  
@@ -38,7 +39,7 @@ Un [délégué](../../language-reference/builtin-types/reference-types.md) peut 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Délégués](./index.md)
-- [Comment combiner les délégués (délégués multicast)](./how-to-combine-delegates-multicast-delegates.md)
+- [Comment combiner des délégués (délégués multicast)](./how-to-combine-delegates-multicast-delegates.md)
 - [Événements](../events/index.md)

@@ -3,12 +3,12 @@ title: Comparaison entre project.json et csproj
 description: Consultez le mappage entre éléments project.json et csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: a997b48f645ed58d15610a68aee7c67411f9763f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c8638bc30ba09d8e8d464159aded60dcde4b8dc0
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205832"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427019"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mappage entre propriétés project.json et csproj
 
@@ -475,7 +475,7 @@ Voir aussi [Fichiers](#files).
   <!-- summary is not migrated from project.json, but you can use the <Description> property for that if needed. -->
   <PackageTags>machine learning;framework</PackageTags>
   <PackageReleaseNotes>Version 0.9.12-beta</PackageReleaseNotes>
-  <PackageIconUrl>http://numl.net/images/ico.png</PackageIconUrl>
+  <PackageIcon>ico.png</PackageIcon>
   <PackageProjectUrl>http://numl.net</PackageProjectUrl>
   <PackageLicenseUrl>https://raw.githubusercontent.com/sethjuarez/numl/master/LICENSE.md</PackageLicenseUrl>
   <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -485,7 +485,7 @@ Voir aussi [Fichiers](#files).
 </PropertyGroup>
 ```
 
-Il n’existe aucun équivalent de l’élément `owners` dans MSBuild. Pour `summary` , vous pouvez utiliser la `<Description>` propriété MSBuild. La valeur de `summary` n’est pas migrée automatiquement vers cette propriété, car cette propriété est mappée à l' [`description`](#other-common-root-level-options) élément.
+Il n’existe aucun équivalent de l’élément `owners` dans MSBuild. Pour `summary` , vous pouvez utiliser la `<Description>` propriété MSBuild. La valeur de `summary` n’est pas migrée automatiquement vers cette propriété, car cette propriété est mappée à l' [`description`](#other-common-root-level-options) élément.  [PackageIconUrl est déconseillé](/nuget/reference/msbuild-targets#packageiconurl) en faveur de PackageIcon.
 
 ## <a name="scripts"></a>Scripts
 
@@ -527,7 +527,7 @@ Leurs équivalents dans MSBuild sont les [cibles](/visualstudio/msbuild/msbuild-
 }
 ```
 
-Tous les paramètres de ce groupe, à l’exception de la `System.GC.Server` propriété, sont placés dans un fichier appelé *runtimeconfig. template. JSON* dans le dossier du projet, avec les options levées dans l’objet racine pendant le processus de migration :
+Tous les paramètres de ce groupe, à l’exception de la `System.GC.Server` propriété, sont placés dans un fichier appelé *runtimeconfig.template.js* dans le dossier du projet, avec les options levées dans l’objet racine pendant le processus de migration :
 
 ```json
 {

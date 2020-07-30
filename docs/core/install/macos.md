@@ -4,12 +4,12 @@ description: En savoir plus sur les versions de macOS sur lesquelles vous pouvez
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: 2900d98dbd30c51f689cdce37ea273ccc4f598b5
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 951e9b6a64d55274729e233b4a2d7728c75d05d4
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308921"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302930"
 ---
 # <a name="install-net-core-on-macos"></a>Installer .NET Core sur macOS
 
@@ -200,7 +200,7 @@ Pour plus d’informations sur l’utilisation de .NET Core dans un conteneur d�
 
 - [Comment vérifier si .net Core est déjà installé](how-to-detect-installed-versions.md?pivots=os-macos).
 - [Utilisation de la notaire Catalina MacOS](macos-notarization-issues.md).
-- [Didacticiel : prise en main de MacOS](../tutorials/using-on-mac-vs.md).
+- [Didacticiel : prise en main de MacOS](../tutorials/with-visual-studio-mac.md).
 - [Didacticiel : créer une application avec Visual Studio code](../tutorials/with-visual-studio-code.md).
 - [Didacticiel : conteneur d’une application .net Core](../docker/build-container.md).
 

@@ -1,18 +1,19 @@
 ---
-title: Comment trouver des descendants avec un nom d’élément spécifique (C)
+title: Comment rechercher des descendants avec un nom d’élément spécifique (C#)
+description: Découvrez comment rechercher tous les descendants avec un nom particulier à l’aide de l’axe descendants. Consultez des exemples de code et des ressources supplémentaires.
 ms.date: 07/20/2015
 ms.assetid: f684da20-bee9-47f5-9607-7e3fd7e67470
-ms.openlocfilehash: b3200a2fdf75dbf52079a2b3d27aa1a88d313406
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 96ebf2d10a9ed5e07aab2870142f9869903ad442
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141082"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303242"
 ---
-# <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>Comment trouver des descendants avec un nom d’élément spécifique (C)
+# <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>Comment rechercher des descendants avec un nom d’élément spécifique (C#)
 Parfois, vous souhaitez rechercher tous les descendants avec un nom particulier. Vous pourriez écrire du code pour itérer au sein de tous les descendants, mais il est plus facile d'utiliser l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant montre comment rechercher des descendants en fonction du nom d'élément.  
   
 ```csharp  
@@ -51,7 +52,7 @@ Console.WriteLine(str);
 Some text that is broken up into multiple segments.  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
 ```csharp  

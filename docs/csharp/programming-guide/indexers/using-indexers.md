@@ -1,15 +1,16 @@
 ---
 title: Utiliser des indexeurs - Guide de programmation C#
+description: Découvrez comment déclarer et utiliser un indexeur pour une classe, un struct ou une interface en C#. Cet article comprend un exemple de code.
 ms.date: 07/15/2020
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-ms.openlocfilehash: e742e4dd5ea92ec3baf37c915e024e713022b7b6
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: a8a9e05c1d2e44841177a924c6ff51c6c9e6a05a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416237"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301864"
 ---
 # <a name="using-indexers-c-programming-guide"></a>Utiliser des indexeurs (Guide de programmation C#)
 
@@ -28,7 +29,7 @@ public int this[int index]
 > [!IMPORTANT]
 > La déclaration d’un indexeur génère automatiquement une propriété nommée `Item` sur l’objet. La `Item` propriété n’est pas directement accessible à partir de l' [expression d’accès au membre](../../language-reference/operators/member-access-operators.md#member-access-expression-)d’instance. En outre, si vous ajoutez votre propre `Item` propriété à un objet avec un indexeur, vous obtiendrez une [Erreur du compilateur CS0102](../../misc/cs0102.md). Pour éviter cette erreur, utilisez l' <xref:System.Runtime.CompilerServices.IndexerNameAttribute> indexeur renommez-le comme indiqué ci-dessous.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Le type d’un indexeur et le type de ses paramètres doivent être au moins aussi accessibles que l’indexeur lui-même. Pour plus d’informations sur les niveaux d’accessibilité, consultez [Modificateurs d’accès](../../language-reference/keywords/access-modifiers.md).
 

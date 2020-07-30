@@ -1,16 +1,17 @@
 ---
-title: Comment récupérer la valeur d’un attribut (LINQ à XML) (C)
+title: Comment récupérer la valeur d’un attribut (LINQ to XML) (C#)
+description: Découvrez comment obtenir la valeur d’un attribut. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 ms.assetid: 817bbe89-5979-4234-bf0c-46f63692ac8c
-ms.openlocfilehash: 212ad3bb3097e7e2c76da8f165011b181f329d4c
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 5ee6995a54829b6d992e2982e6a6effcabf76470
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249192"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301552"
 ---
-# <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-c"></a>Comment récupérer la valeur d’un attribut (LINQ à XML) (C)
-Cette rubrique montre comment obtenir la valeur d'attributs. Vous pouvez procéder de deux manières : tout d'abord, vous pouvez convertir un objet <xref:System.Xml.Linq.XAttribute> vers le type souhaité ; l'opérateur de conversion. explicite convertit alors le contenu de l'élément ou attribut vers le type spécifié. En guise d'alternative, vous pouvez utiliser la propriété <xref:System.Xml.Linq.XAttribute.Value%2A>. Toutefois, la conversion est généralement la meilleure approche. Si vous lancez l’attribut à un type de valeur nul, le code est plus simple à écrire lors de la récupération de la valeur d’un attribut qui pourrait exister ou ne pourrait pas exister. Pour des exemples de cette technique, voir [Comment récupérer la valeur d’un élément (LINQ à XML) (C)](./how-to-retrieve-the-value-of-an-element-linq-to-xml.md).  
+# <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-c"></a>Comment récupérer la valeur d’un attribut (LINQ to XML) (C#)
+Cette rubrique montre comment obtenir la valeur d'attributs. Vous pouvez procéder de deux manières : tout d'abord, vous pouvez convertir un objet <xref:System.Xml.Linq.XAttribute> vers le type souhaité ; l'opérateur de conversion. explicite convertit alors le contenu de l'élément ou attribut vers le type spécifié. En guise d'alternative, vous pouvez utiliser la propriété <xref:System.Xml.Linq.XAttribute.Value%2A>. Toutefois, la conversion est généralement la meilleure approche. Si vous effectuez un cast de l’attribut en un type valeur Nullable, le code est plus simple à écrire lors de la récupération de la valeur d’un attribut qui peut ou non exister. Pour obtenir des exemples de cette technique, consultez [Comment récupérer la valeur d’un élément (LINQ to XML) (C#)](./how-to-retrieve-the-value-of-an-element-linq-to-xml.md).  
   
 ## <a name="example"></a>Exemple  
  Pour récupérer la valeur d'un attribut, il vous suffit de convertir l'objet <xref:System.Xml.Linq.XAttribute> vers le type souhaité.  

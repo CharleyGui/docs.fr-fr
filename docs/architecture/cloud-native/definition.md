@@ -3,12 +3,12 @@ title: Définition du Cloud Native
 description: En savoir plus sur les piliers fondamentaux qui fournissent le socle pour les systèmes natifs du Cloud
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: e8b07fe7758d90f6ba97b81d0efa9d2fb5058d49
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f50c144d99fae0c4702965342fd76ec22e8bd8c8
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614168"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427032"
 ---
 # <a name="defining-cloud-native"></a>Définition du Cloud Native
 
@@ -34,7 +34,7 @@ Voici quelques sociétés qui ont implémenté ces techniques. Réfléchissez à
 | :-------- | :-------- |
 | [Netflix](https://www.infoq.com/news/2013/06/netflix/) | A plus de 600 services en production. Déploie cent fois par jour. |
 | [Uber](https://eng.uber.com/micro-deploy/) | A plus de 1 000 services en production. Déploie plusieurs milliers de fois par semaine. |
-| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Compte plus de 300 services en production. Déploie 1 000 fois par jour. |
+| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | A plus de 3 000 services en production. Déploie 1 000 fois par jour. |
 
 Comme vous pouvez le voir, Netflix, uber et WeChat exposent des systèmes qui se composent de centaines de microservices indépendants. Ce style architectural leur permet de répondre rapidement aux conditions du marché. Ils peuvent mettre à jour instantanément de petites zones d’une application en temps réel et complexes, et mettre à l’échelle individuellement ces zones en fonction des besoins.
 
@@ -74,10 +74,10 @@ Bien qu’applicables à n’importe quelle application basée sur le Web, de no
 
 Le tableau suivant met en évidence la méthodologie à douze facteurs :
 
-|    |  Factor | Explication  |
+|    |  Facteur | Explication  |
 | :-------- | :-------- | :-------- |
 | 1 | Base de code | Une seule base de code pour chaque microservice, stockée dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements (AQ, intermédiaire, production). |
-| 2 | Dépendances | Chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système. |
+| 2 | Les dépendances | Chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système. |
 | 3 | Configurations  | Les informations de configuration sont déplacées hors du microservice et sont externalisées à l’aide d’un outil de gestion de la configuration en dehors du code. Le même déploiement peut se propager dans les environnements avec la configuration correcte appliquée.  |
 | 4 | Services de stockage | Les ressources auxiliaires (magasins de données, caches, courtiers de messages) doivent être exposées via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.  |
 | 5 | Build, Release, exécuter | Chaque version doit appliquer une séparation stricte entre les étapes de génération, de mise en œuvre et d’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration. Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. |
@@ -93,7 +93,7 @@ Dans le livre, [au-delà de l’application à douze facteurs](https://content.
 
 |    |  Nouveau facteur | Explication  |
 | :-------- | :-------- | :-------- |
-| 13 | API en premier | Faites de tout un service. Supposons que votre code sera consommé par un client frontal, une passerelle ou un autre service. |
+| 13 | Priorité aux API | Faites de tout un service. Supposons que votre code sera consommé par un client frontal, une passerelle ou un autre service. |
 | 14 | Télémétrie | Sur une station de travail, vous bénéficiez d’une visibilité détaillée de votre application et de son comportement. Dans le Cloud, vous ne le pouvez pas. Assurez-vous que votre conception comprend la collecte des données de surveillance, spécifiques à un domaine et à l’intégrité/au système. |
 | 15 | Authentification/autorisation  | Implémentez l’identité à partir du début. Envisagez [les fonctionnalités RBAC (contrôle d’accès en fonction du rôle)](https://docs.microsoft.com/azure/role-based-access-control/overview) disponibles dans les clouds publics.  |
 
@@ -173,7 +173,7 @@ Les microservices peuvent être créés avec n’importe quelle plateforme de d�
 
 La plateforme Microsoft .NET Core est un excellent choix. Gratuit et open source, il dispose de nombreuses fonctionnalités intégrées pour simplifier le développement de microservices. .NET Core est multiplateforme. Les applications peuvent être générées et exécutées sur Windows, macOS et la plupart des versions de Linux.
 
-.NET Core est très performant et a bien été évalué par rapport à node. js et à d’autres plateformes concurrentes. Il est intéressant de faire en sorte que [TechEmpower](https://www.techempower.com/) ait mené un ensemble complet de [tests de performances](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) sur de nombreuses plateformes et infrastructures d’application Web. .NET Core est évalué dans le Top 10, bien au-dessus de node. js et d’autres plates-formes concurrentes.
+.NET Core est très performant et a bien été évalué par rapport à Node.js et à d’autres plateformes concurrentes. Il est intéressant de faire en sorte que [TechEmpower](https://www.techempower.com/) ait mené un ensemble complet de [tests de performances](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) sur de nombreuses plateformes et infrastructures d’application Web. .NET Core est évalué dans les 10 premiers Node.js et les autres plateformes concurrentes.
 
 .NET Core est géré par Microsoft et la communauté .NET sur GitHub.
 
@@ -209,7 +209,7 @@ Vous pouvez déployer ce même conteneur dans n’importe quel environnement aya
 
 En partageant le système d’exploitation sous-jacent et les ressources de l’hôte, les conteneurs ont un encombrement bien plus faible qu’une machine virtuelle complète. La taille plus petite augmente la *densité*, ou le nombre de microservices, qu’un hôte donné peut exécuter en même temps.
 
-### <a name="container-orchestration"></a>Orchestration de conteneurs
+### <a name="container-orchestration"></a>Orchestration des conteneurs
 
 Tandis que les outils tels que l’amarrage créent des images et exécutent des conteneurs, vous avez également besoin d’outils pour les gérer. La gestion des conteneurs s’effectue à l’aide d’un programme logiciel spécial appelé Orchestrator de conteneur. En cas de fonctionnement à l’échelle, l’orchestration de conteneur est essentielle.
 
@@ -331,7 +331,7 @@ Azure Pipelines est un service Cloud qui combine l’intégration continue (CI) 
 Vous définissez votre pipeline dans le code d’un fichier YAML avec le reste du code de votre application.
 
 - La version du pipeline est gérée avec votre code et suit la même structure de branchement.
-- Vous pouvez valider vos modifications à l’aide de révisions de code dans les requêtes de tirage et les stratégies de build de branche.
+- Vous obtenez la validation de vos modifications via des revues du code dans les demandes d’extraction et les stratégies de build de branche.
 - Chaque branche que vous utilisez peut personnaliser la stratégie de génération en modifiant le fichier Azure-pipelines. yml.
 - Le fichier de pipeline est archivé dans le contrôle de version et peut être examiné en cas de problème.
 

@@ -1,13 +1,14 @@
 ---
 title: Partitionnement des données (C#)
+description: Découvrez comment partitionner des données dans LINQ. Affichez une illustration montrant les résultats des opérations de partitionnement.
 ms.date: 07/20/2015
 ms.assetid: 2a5c507b-fe22-443c-a768-dec7f9ec568d
-ms.openlocfilehash: d9330e9973b2f25903e1f81a7296362e2a7c756b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3c85eaec2dc01b683234a27714750354982be440
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591592"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302605"
 ---
 # <a name="partitioning-data-c"></a>Partitionnement des données (C#)
 Le partitionnement dans LINQ désigne l’opération consistant à diviser une séquence d’entrée en deux sections, sans réorganiser les éléments, puis à retourner l’une des sections.  

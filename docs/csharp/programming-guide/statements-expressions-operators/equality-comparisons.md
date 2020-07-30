@@ -1,15 +1,16 @@
 ---
 title: Comparaisons d'égalité - Guide de programmation C#
+description: En savoir plus sur les comparaisons d’égalité. Consultez les descriptions de « égalité des valeurs » et « égalité des références », et affichez des ressources supplémentaires.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - object equality [C#]
 ms.assetid: 10b865ea-4e7b-4127-9242-c9b8f57d9f04
-ms.openlocfilehash: 46d6881955252b21de6a92e25d65d1f76c8ec06c
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: d10d1851978ef25b7b02503f196cd2a436aab608
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241914"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381682"
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>Comparaisons d’égalité (Guide de programmation C#)
 
@@ -50,7 +51,7 @@ Toutefois, il n’est pas obligatoire que l’équivalence soit basée sur tous 
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Comment tester l’égalité des références (identité)](./how-to-test-for-reference-equality-identity.md)|Décrit comment déterminer si deux variables présentent une égalité de référence.|  
 |[Comment définir une égalité de valeurs pour un type](./how-to-define-value-equality-for-a-type.md)|Décrit comment fournir une définition personnalisée de l’égalité de valeur pour un type.|  

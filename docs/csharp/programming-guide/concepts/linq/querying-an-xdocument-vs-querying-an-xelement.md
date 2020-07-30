@@ -1,15 +1,16 @@
 ---
-title: Requête d’un XDocument vs Requête d’un XElement (C)
+title: Interrogation d’un XDocument et interrogation d’un XElement (C#)
+description: En savoir plus sur les différences entre l’interrogation d’un XDocument et l’interrogation d’un XElement. Passez en revue les exemples de code qui illustrent ces différences.
 ms.date: 07/20/2015
 ms.assetid: 46221ff5-62ee-4de8-93ba-66465facb5c1
-ms.openlocfilehash: 475c77934ad535bad9ef79ff58bbddf991dc8f5c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0c81768f06148308a639f96f4041e464b24edd33
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253137"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300317"
 ---
-# <a name="querying-an-xdocument-vs-querying-an-xelement-c"></a>Requête d’un XDocument vs Requête d’un XElement (C)
+# <a name="querying-an-xdocument-vs-querying-an-xelement-c"></a>Interrogation d’un XDocument et interrogation d’un XElement (C#)
 Lorsque vous chargez un document par le biais de <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, vous remarquerez que vous devez écrire des requêtes de manière légèrement différente comparé au chargement par le biais de <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.  
   
 ## <a name="comparison-of-xdocumentload-and-xelementload"></a>Comparaison de XDocument.Load et XElement.Load  

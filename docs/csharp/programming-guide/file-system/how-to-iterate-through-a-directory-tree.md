@@ -1,16 +1,17 @@
 ---
 title: Comment itérer au sein d’une arborescence de répertoires-Guide de programmation C#
+description: Découvrez comment itérer au sein d’une arborescence de répertoires. Accédez à chaque fichier dans chaque sous-répertoire imbriqué sous un dossier racine spécifié.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 24a6225527becb0b896017616e2661ab8247c74c
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: c49a9d1eaea9d4d8967b105d753f2a611d80e795
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241602"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301981"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Comment itérer au sein d’une arborescence de répertoires (Guide de programmation C#)
 L’expression « itérer au sein d’une arborescence de répertoires » signifie accéder à chaque fichier dans chaque sous-répertoire imbriqué sous un dossier racine spécifié, à n’importe quelle profondeur. Vous ne devez pas nécessairement ouvrir chaque fichier. Vous pouvez simplement récupérer le nom du fichier ou du sous-répertoire sous forme de `string`, ou vous pouvez récupérer des informations supplémentaires sous la forme d’un objet <xref:System.IO.FileInfo?displayProperty=nameWithType> ou <xref:System.IO.DirectoryInfo?displayProperty=nameWithType>.  

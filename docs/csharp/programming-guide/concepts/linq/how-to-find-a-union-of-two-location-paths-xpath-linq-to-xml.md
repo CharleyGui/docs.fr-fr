@@ -1,15 +1,16 @@
 ---
-title: Comment trouver une union de deux chemins de localisation (XPath-LINQ à XML) (C)
+title: Guide pratique pour rechercher une Union de deux chemins d’accès d’emplacement (XPath-LINQ to XML) (C#)
+description: Découvrez comment rechercher une Union de deux chemins d’accès d’emplacement XPath à l’aide d’une expression XPath. Passez en revue un exemple de code qui utilise un exemple de fichier XML.
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: 17a3310f367cb68b3b80b1a3f30af40428f6d2c7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 65b20fe25a0990fd82ce3bd08c3433499e728512
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141213"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303320"
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Comment trouver une union de deux chemins de localisation (XPath-LINQ à XML) (C)
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher une Union de deux chemins d’accès d’emplacement (XPath-LINQ to XML) (C#)
 XPath vous permet de rechercher l’union des résultats de deux chemins d’emplacements XPath.  
   
  L’expression XPath est la suivante :  
@@ -18,7 +19,7 @@ XPath vous permet de rechercher l’union des résultats de deux chemins d’emp
   
  Vous pouvez obtenir les mêmes résultats à l'aide de l'opérateur de requête standard <xref:System.Linq.Enumerable.Concat%2A>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple recherche tous les éléments `Category` et tous les éléments `Price` et il les concatène en une collection unique. Notez que la requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] appelle <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> afin d'ordonner les résultats. Les résultats de l’évaluation d’expression XPath sont également dans l’ordre du document.  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  

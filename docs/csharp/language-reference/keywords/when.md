@@ -7,19 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - when keyword [C#]
 ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
-ms.openlocfilehash: 6a61c42ba2d01e84ffae376bf95c99877437be85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b041ca3a821f45dd63ce3f6bee7a920eb495651
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712830"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426993"
 ---
 # <a name="when-c-reference"></a>when (référence C#)
 
-Vous pouvez utiliser le mot clé contextuel `when` pour spécifier une condition de filtre dans deux contextes :
+Vous pouvez utiliser le `when` mot clé contextuel pour spécifier une condition de filtre dans les contextes suivants :
 
 - dans l’instruction `catch` d’un bloc [try/catch](try-catch.md) ou [try/catch/finally](try-catch-finally.md) ;
 - dans l’étiquette `case` d’une instruction [switch](switch.md).
+- Dans l' [ `switch` expression](../operators/switch-expression.md).
 
 ## <a name="when-in-a-catch-statement"></a>`when` dans une instruction `catch`
 
@@ -51,6 +52,6 @@ L’exemple suivant utilise le mot clé `when` pour tester les objets `Shape` ay
 
 ## <a name="see-also"></a>Voir aussi
 
-- [instruction switch](switch.md)
+- [Instruction switch](switch.md)
 - [try/catch, instruction](try-catch.md)
-- [essayer/attraper/enfin la déclaration](try-catch-finally.md)
+- [try/catch/finally, instruction](try-catch-finally.md)

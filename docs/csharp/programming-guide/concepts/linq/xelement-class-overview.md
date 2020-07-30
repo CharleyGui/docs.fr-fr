@@ -1,13 +1,14 @@
 ---
 title: Vue d’ensemble de la classe XElement (C#)
+description: La classe XElement représente un élément XML en C#. Il s’agit de l’une des classes fondamentales de LINQ to XML. En savoir plus sur les fonctionnalités fournies par XElement.
 ms.date: 07/20/2015
 ms.assetid: 2b9f0cd8-a1d1-4037-accf-0f38a410fa11
-ms.openlocfilehash: 6a93dd4bdaf16fddff800b08b0f3146ecb63f9b7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f76f51703de054443f47531294777b43a9c0b004
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167892"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302176"
 ---
 # <a name="xelement-class-overview-c"></a>Vue d’ensemble de la classe XElement (C#)
 La classe <xref:System.Xml.Linq.XElement> est l'une des classes fondamentales dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Elle représente un élément XML. Vous pouvez utiliser cette classe pour créer des éléments, modifier le contenu de l'élément, ajouter, modifier ou supprimer des éléments enfants, ajouter des attributs à un élément ou sérialiser le contenu d'un élément sous forme textuelle. Vous pouvez également interagir avec d'autres classes dans <xref:System.Xml?displayProperty=nameWithType>, telles que <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter> et <xref:System.Xml.Xsl.XslCompiledTransform>.  
@@ -43,7 +44,7 @@ XElement contacts =
     );  
 ```  
   
- Une autre technique très courante pour créer un arbre XML consiste à utiliser les résultats d’une requête LINQ pour peupler un arbre XML, comme le montre l’exemple suivant :  
+ Une autre technique très courante pour créer une arborescence XML consiste à utiliser les résultats d’une requête LINQ pour remplir une arborescence XML, comme illustré dans l’exemple suivant :  
   
 ```csharp  
 XElement srcTree = new XElement("Root",  
@@ -81,12 +82,12 @@ Console.WriteLine(xmlTree);
  Pour plus d’informations, consultez [Sérialisation d’arborescences XML (C#)](./preserving-white-space-while-serializing.md).  
   
 ## <a name="retrieving-xml-data-via-axis-methods"></a>Récupération de données XML par le biais de méthodes d'axe  
- Vous pouvez utiliser des méthodes d'axe pour récupérer des attributs, des éléments enfants, des éléments descendants et des éléments ancêtres. Les requêtes LINQ fonctionnent selon les méthodes de l’axe et offrent plusieurs façons flexibles et puissantes de naviguer à travers et de traiter un arbre XML.  
+ Vous pouvez utiliser des méthodes d'axe pour récupérer des attributs, des éléments enfants, des éléments descendants et des éléments ancêtres. Les requêtes LINQ opèrent sur les méthodes d’axe et offrent plusieurs moyens flexibles et puissants de parcourir et de traiter une arborescence XML.  
   
  Pour plus d’informations, consultez [Axes LINQ to XML (C#)](./linq-to-xml-axes-overview.md).  
   
 ## <a name="querying-xml-trees"></a>Interrogation d’arborescences XML  
- Vous pouvez écrire des requêtes LINQ qui extraient des données d’un arbre XML.  
+ Vous pouvez écrire des requêtes LINQ qui extraient des données d’une arborescence XML.  
   
  Pour plus d’informations, consultez [Interrogation d’arborescences XML (C#)](./how-to-find-an-element-with-a-specific-attribute.md).  
   

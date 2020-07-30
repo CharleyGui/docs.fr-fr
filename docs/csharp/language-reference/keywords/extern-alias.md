@@ -8,12 +8,12 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: 86202333484933d7449b0c4d8c5a3f1a63cd7775
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 891e56b064f8a327abe28293223a85b9d95e8fd3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713549"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301812"
 ---
 # <a name="extern-alias-c-reference"></a>extern alias (référence C#)
 Il se peut que vous deviez référencer deux versions d’assemblys qui ont le même nom de type qualifié complet. Par exemple, vous pourriez avoir à utiliser plusieurs versions d’un assembly dans la même application. En utilisant un alias d’assembly externe, vous pouvez encapsuler les espaces de noms de chaque assembly dans des espaces de noms racines nommés par l’alias, ce qui permet de les utiliser dans le même fichier.  
@@ -37,13 +37,35 @@ Il se peut que vous deviez référencer deux versions d’assemblys qui ont le m
   
  Dans l’exemple précédent, `GridV1::Grid` serait le contrôle de grille de `grid.dll`, et `GridV2::Grid` serait le contrôle de grille de `grid20.dll`.  
   
+## <a name="using-visual-studio"></a>Utilisation de Visual Studio
+
+Si vous utilisez Visual Studio, les alias peuvent être fournis de la même façon.
+
+Ajoutez une référence de *grid.dll* et *grid20.dll* à votre projet dans Visual Studio. Ouvrez un onglet de propriété et modifiez les alias de global en GridV1 et GridV2, respectivement.
+
+Utilisez ces alias de la même façon que ci-dessus
+
+```csharp
+ extern alias GridV1;  
+  
+ extern alias GridV2;  
+```
+
+Vous pouvez maintenant créer un alias pour un espace de noms ou un type à *l’aide de la directive d’alias*. Pour plus d’informations, consultez [using, directive](using-directive.md).
+
+```csharp
+using Class1V1 = GridV1::Namespace.Class1;
+
+using Class1V2 = GridV2::Namespace.Class1;
+```
+
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
-- [:: Opérateur](../operators/namespace-alias-qualifier.md)
-- [-référence (Options compilateur C)](../compiler-options/reference-compiler-option.md)
+- [::, Opérateur](../operators/namespace-alias-qualifier.md)
+- [-Reference (options du compilateur C#)](../compiler-options/reference-compiler-option.md)

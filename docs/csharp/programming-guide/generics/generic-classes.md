@@ -1,16 +1,17 @@
 ---
 title: Classes génériques - Guide de programmation C#
+description: Découvrez les classes génériques utilisées dans les collections telles que les listes liées, les tables de hachage, les piles, les files d’attente et les arborescences.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 1fdfaa833ad32428d341b6f3a61cc7f638036183
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 308f4328540e1001018942738d931be3d8be53ed
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937507"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301916"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Classes génériques (guide de programmation C#)
 Les classes génériques encapsulent des opérations qui ne sont pas spécifiques à un type de données particulier. Les classes génériques sont le plus souvent utilisées avec les collections telles que les listes liées, les tables de hachage, les piles, les files d’attente, les arborescences, etc. Les opérations telles que l’ajout et la suppression d’éléments dans la collection sont exécutées fondamentalement de la même manière quel que soit le type des données stockées.  
@@ -68,7 +69,7 @@ Les classes génériques encapsulent des opérations qui ne sont pas spécifique
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic>
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Génériques](./index.md)
 - [Enregistrement de l’état des énumérateurs](https://docs.microsoft.com/archive/blogs/wesdyer/saving-the-state-of-enumerators)
 - [An Inheritance Puzzle, Part One](https://docs.microsoft.com/archive/blogs/ericlippert/an-inheritance-puzzle-part-one)

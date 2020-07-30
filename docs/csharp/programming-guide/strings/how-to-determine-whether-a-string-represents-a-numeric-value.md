@@ -1,17 +1,18 @@
 ---
 title: Comment déterminer si une chaîne représente une valeur numérique-Guide de programmation C#
+description: Découvrez comment déterminer si une chaîne est une représentation valide d’un type numérique spécifié. Consultez des exemples de code et affichez des ressources supplémentaires.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - numeric strings [C#]
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: 37437460ea4c6ca216f2844d63af3688ccc984c6
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: c248c6c54de493ab06a833fc525252fa812d60da
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241719"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381747"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Comment déterminer si une chaîne représente une valeur numérique (Guide de programmation C#)
 Pour déterminer si une chaîne est une représentation valide d’un type numérique spécifié, utilisez la méthode statique `TryParse` implémentée par tous les types numériques primitifs et par les types tels que <xref:System.DateTime> et <xref:System.Net.IPAddress>. L’exemple suivant montre comment déterminer si « 108 » est une chaîne [int](../../language-reference/builtin-types/integral-numeric-types.md) valide.  

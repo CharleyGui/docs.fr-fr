@@ -1,16 +1,17 @@
 ---
 title: Génériques et réflexion - Guide de programmation C#
+description: En savoir plus sur l’utilisation de la réflexion pour obtenir des informations sur les types génériques. Affichez les listes des conditions générales pour la réflexion générique.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 672a0bebdc60eff00acf9b1bdbecc25052f7bc16
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 6e4387fe7e78cd0e970531ae42f323efa8f181db
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241680"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299303"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Génériques et réflexion (Guide de programmation C#)
 Étant donné que le common language runtime (CLR) a accès aux informations concernant les types génériques au moment de l’exécution, vous pouvez utiliser la réflexion pour obtenir des informations sur les types génériques de la même manière que pour les types non génériques. Pour plus d’informations, consultez [Génériques dans le runtime](./generics-in-the-run-time.md).  

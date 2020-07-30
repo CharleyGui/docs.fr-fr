@@ -1,16 +1,17 @@
 ---
 title: Interfaces - Guide de programmation C#
+description: Une interface en C# contient des définitions pour un groupe de fonctionnalités connexes qu’une classe non abstraite ou un struct doit implémenter.
 ms.date: 02/20/2020
 helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 50f2c5fc3570b6d66ed83206660caf4bd02f1f5b
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 4485a9f8e3581aa80ed65221258dc40310b3a695
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86441334"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303047"
 ---
 # <a name="interfaces-c-programming-guide"></a>Interfaces (Guide de programmation C#)
 

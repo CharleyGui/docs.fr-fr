@@ -1,13 +1,14 @@
 ---
 title: 'Exemple de fichier XML : Données numériques (LINQ to XML)'
+description: Ce fichier XML est utilisé dans différents exemples de la documentation de LINQ to XML. Le fichier contient des données numériques pour la somme, la moyenne et le regroupement.
 ms.date: 07/20/2015
 ms.assetid: 365cae86-a166-46df-b56a-0209d9771c27
-ms.openlocfilehash: 921d2a42d0d553b08ecd291b3480d040dd379a96
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c3cc2c47425d2eabba7a0967d7ecc25a79291eb6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168101"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302488"
 ---
 # <a name="sample-xml-file-numerical-data-linq-to-xml"></a>Exemple de fichier XML : Données numériques (LINQ to XML)
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Ce fichier contient des données numériques pour effectuer des additions, des moyennes et des regroupements.  

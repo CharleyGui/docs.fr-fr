@@ -1,15 +1,16 @@
 ---
 title: Conversions de pointeur - Guide de programmation C#
+description: En savoir plus sur les conversions de pointeur. Consultez les tableaux des conversions de pointeur implicites et explicites, des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - pointers [C#], conversions
 ms.assetid: f0e87502-477a-4ede-a31f-7a3e262e46fb
-ms.openlocfilehash: 517166331d2bcf73132269ce2adcf68d5f60b4fe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c39be5cb52964abbea5bc5636c6fa74d8411a331
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76745365"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382085"
 ---
 # <a name="pointer-conversions-c-programming-guide"></a>Conversions de pointeur (Guide de programmation C#)
 Le tableau suivant présente les conversions de pointeur implicites prédéfinies. Les conversions implicites peuvent se produire dans de nombreuses situations, comme les appels de méthode et les instructions d’assignation.  
@@ -31,7 +32,7 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
 |sbyte, byte, short, ushort, int, uint, long ou ulong|Tout type pointeur|  
 |Tout type pointeur|sbyte, byte, short, ushort, int, uint, long ou ulong|  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Dans l’exemple suivant, un pointeur vers `int` est converti en pointeur vers `byte`. Notez que le pointeur pointe vers l’octet traité le plus faible de la variable. Quand vous incrémentez successivement le résultat, jusqu’à la taille de `int` (4 octets), vous pouvez afficher les octets restants de la variable.  
   
  [!code-csharp[csProgGuidePointers#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers2.cs#3)]  
@@ -40,10 +41,10 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Types de pointeur](pointer-types.md)
 - [Types référence](../../language-reference/keywords/reference-types.md)
 - [Types de valeur](../../language-reference/builtin-types/value-types.md)
-- [Dangereux](../../language-reference/keywords/unsafe.md)
+- [unsafe](../../language-reference/keywords/unsafe.md)
 - [fixed, instruction](../../language-reference/keywords/fixed-statement.md)
 - [stackalloc](../../language-reference/operators/stackalloc.md)

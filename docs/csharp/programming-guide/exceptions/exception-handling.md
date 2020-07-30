@@ -1,16 +1,17 @@
 ---
 title: Gestion des exceptions - Guide de programmation C#
+description: En savoir plus sur la gestion des exceptions. Consultez des exemples d’instructions Try-Catch, try-finally et try-catch-finally.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: ee1e5bd15183dad9ffe97824f9b194668e9d3b17
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e55b44573c40f594e567fc5a4501689e66c7af4
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705299"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302033"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Gestion des exceptions (Guide de programmation C#)
 Un bloc [try](../../language-reference/keywords/try-catch.md) est utilisé par les programmeurs C# pour partitionner du code susceptible d’être affecté par une exception. Des blocs [catch](../../language-reference/keywords/try-catch.md) associés sont utilisés pour gérer les exceptions générées. Un bloc [finally](../../language-reference/keywords/try-finally.md) contient du code qui s’exécute dans tous les cas, qu’une exception soit levée ou non dans le bloc `try` (il peut s’agir par exemple de la libération des ressources allouées dans le bloc `try`). Un bloc `try` doit être associé à un ou plusieurs blocs `catch`, à un bloc `finally`, ou aux deux.  
@@ -57,10 +58,10 @@ Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../../language-reference/index.md)
-- [Guide de programmation C#](../index.md)
+- [Référence C#](../../language-reference/index.md)
+- [Guide de programmation C#](../index.md)
 - [Exceptions et gestion des exceptions](./index.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)
 - [try-finally](../../language-reference/keywords/try-finally.md)
 - [try-catch-finally](../../language-reference/keywords/try-catch-finally.md)
-- [à l’aide de l’Énoncé](../../language-reference/keywords/using-statement.md)
+- [using, instruction](../../language-reference/keywords/using-statement.md)

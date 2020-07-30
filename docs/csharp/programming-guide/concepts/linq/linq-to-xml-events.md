@@ -1,13 +1,14 @@
 ---
 title: Événements LINQ to XML (C#)
+description: Ajoutez LINQ to XML événements en C# à une instance de n’importe quel XObject. Le gestionnaire d’événements reçoit des événements lorsque l’arborescence XML pour ce XObject est modifiée.
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
-ms.openlocfilehash: 8e0cb4519dd0fc2bed443d9a62b9a2545d10e161
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 576b0a5d0472bddd66e01d3bef8f3affa1c9458b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253172"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165420"
 ---
 # <a name="linq-to-xml-events-c"></a>Événements LINQ to XML (C#)
 Les événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permettent d’être averti quand une arborescence XML est modifiée.  
@@ -31,7 +32,7 @@ Les événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous perm
 |<xref:System.Xml.Linq.XObject.Changing>|Se produit juste avant que cet objet <xref:System.Xml.Linq.XObject> ou l'un de ses descendants ne change.|  
 |<xref:System.Xml.Linq.XObject.Changed>|Se produit lorsqu'un objet <xref:System.Xml.Linq.XObject> ou l'un des ses descendants a changé.|  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
  Les événements sont utiles lorsque vous souhaitez conserver certaines informations d'agrégation dans une arborescence XML. Par exemple, vous pourriez souhaiter conserver le montant total d'une facture qui est la somme des éléments de la facture. Cet exemple utilise des événements pour conserver le total de tous les éléments enfants sous l'élément complexe `Items`.  

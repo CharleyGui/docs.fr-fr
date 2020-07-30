@@ -2,24 +2,24 @@
 title: Bibliothèques NuGet et .NET
 description: Meilleures pratiques recommandées pour l’empaquetage avec des bibliothèques NuGet pour .NET.
 ms.date: 01/15/2019
-ms.openlocfilehash: f1e8d39fe2988f11ce7fd351a4d6bee6d322f2b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d9f8d7cc4402a87e1429791b57a0306b318dfbe4
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400518"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382111"
 ---
 # <a name="nuget"></a>NuGet
 
 Gestionnaire de packages pour l’écosystème .NET, NuGet est le principal moyen permettant aux développeurs de découvrir et d’obtenir des bibliothèques .NET open source. [NuGet.org](https://www.nuget.org/), un service gratuit fourni par Microsoft pour l’hébergement de packages NuGet, est l’hôte principal pour les packages NuGet publiques, mais vous pouvez publier dans des services NuGet personnalisés tels que [MyGet](https://www.myget.org/) et [Azure Artifacts](https://azure.microsoft.com/services/devops/artifacts/).
 
-![NuGet NuGet](./media/nuget/nuget-logo.png "NuGet")
+![NuGet](./media/nuget/nuget-logo.png "NuGet")
 
 ## <a name="create-a-nuget-package"></a>Créer un package NuGet
 
 Un package NuGet (`*.nupkg`) est un fichier zip qui contient des assemblys .NET et les métadonnées associées.
 
-Il existe deux façons principales de créer un package NuGet. La plus récente et recommandée consiste à créer un package à partir d’un projet de style SDK (fichier projet dont le contenu commence par `<Project Sdk="Microsoft.NET.Sdk">`). Les assemblys et cibles sont automatiquement ajoutés au package et les métadonnées restantes sont ajoutées au fichier MSBuild, notamment le nom du package et le numéro de version. La compilation avec [`dotnet pack`](../../core/tools/dotnet-pack.md) les sorties `*.nupkg` de commande d’un fichier au lieu d’assemblages.
+Il existe deux façons principales de créer un package NuGet. La plus récente et recommandée consiste à créer un package à partir d’un projet de style SDK (fichier projet dont le contenu commence par `<Project Sdk="Microsoft.NET.Sdk">`). Les assemblys et cibles sont automatiquement ajoutés au package et les métadonnées restantes sont ajoutées au fichier MSBuild, notamment le nom du package et le numéro de version. La compilation avec la [`dotnet pack`](../../core/tools/dotnet-pack.md) commande génère un `*.nupkg` fichier au lieu d’assemblys.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -52,9 +52,9 @@ Un package NuGet prend en charge plusieurs [propriétés de métadonnées](/nuge
 | `Description`                      | `description`              | Longue description du package affiché dans l’interface utilisateur.             |
 | `Authors`                          | `authors`                  | Liste séparée par des virgules des auteurs de packages, qui correspondent aux noms de profil sur nuget.org.             |
 | `PackageTags`                      | `tags`                     | Liste délimitée par des espaces des balises et mots clés qui décrivent le package. Les balises sont utilisées lors de la recherche des packages.             |
-| `PackageIconUrl`                   | `iconUrl`                  | URL d’une image à utiliser comme icône pour le package. L’URL doit être de type HTTPS et l’image doit être au format 64 x 64, avec un arrière-plan transparent.             |
+| `PackageIcon`                   | `icon`                  | Chemin d’accès à une image dans le package à utiliser comme icône de package. En savoir plus sur les [ `icon` métadonnées](/nuget/reference/nuspec#icon). |
 | `PackageProjectUrl`                | `projectUrl`               | Une URL pour la page d'accueil du projet ou le référentiel source.             |
-| `PackageLicenseExpression`         | `license`                  | L’[identificateur SPDX](https://spdx.org/licenses/) de la licence du projet. Seules des licences OSI et FSF approuvées peuvent utiliser un identificateur. Les autres licences doivent utiliser `PackageLicenseFile`. En savoir plus sur [ `license` les métadonnées](/nuget/reference/nuspec#license). |
+| `PackageLicenseExpression`         | `license`                  | L’[identificateur SPDX](https://spdx.org/licenses/) de la licence du projet. Seules des licences OSI et FSF approuvées peuvent utiliser un identificateur. Les autres licences doivent utiliser `PackageLicenseFile`. En savoir plus sur les [ `license` métadonnées](/nuget/reference/nuspec#license). |
 
 > [!IMPORTANT]
 > Par défaut, un projet sans licence possède un [copyright exclusif](https://choosealicense.com/no-permission/), ce qui empêche légalement d’autres personnes de l’utiliser.
@@ -82,7 +82,7 @@ Les packages NuGet avec un suffixe de version sont considérés comme des [prév
 > [!NOTE]
 > Un package stable ne peut pas dépendre d’un package en préversion. Votre package doit être en préversion ou dépendre d’une version stable antérieure.
 
-![NuGet pré-libération de la dépendance paquet](./media/nuget/nuget-prerelease-package.png "NuGet pré-libération de la dépendance paquet")
+![Dépendance du package de préversion NuGet](./media/nuget/nuget-prerelease-package.png "Dépendance du package de préversion NuGet")
 
 ✔️ À FAIRE : Publier un package en préversion lors de tests, de la prévisualisation ou de l’expérimentation.
 
@@ -95,9 +95,9 @@ Les fichiers de symboles (`*.pdb`) sont produites par le compilateur .NET en mê
 NuGet.org héberge son propre [dépôt de serveur de symboles](/nuget/create-packages/symbol-packages-snupkg#nugetorg-symbol-server). Les développeurs peuvent utiliser les symboles publiés sur le serveur de symboles NuGet.org en ajoutant `https://symbols.nuget.org/download/symbols` à leurs [sources de symboles dans Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger).
 
 > [!IMPORTANT]
-> Le serveur de symbole NuGet.org ne prend en`*.pdb`charge que les nouveaux [fichiers symboles portables](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) () créés par des projets de style SDK.
+> Le serveur de symboles NuGet.org prend uniquement en charge les nouveaux [fichiers de symboles portables](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) ( `*.pdb` ) créés par des projets de type SDK.
 >
-> Pour utiliser le serveur NuGet.org symbole lors de la débogage d’une bibliothèque .NET, les développeurs doivent avoir Visual Studio 2017 version 15.9 ou plus tard.
+> Pour utiliser le serveur de symboles NuGet.org lors du débogage d’une bibliothèque .NET, les développeurs doivent disposer de Visual Studio 2017 version 15,9 ou ultérieure.
 
 Une alternative à la création d’un package de symboles est l’incorporation de fichiers de symboles dans le package NuGet principal. Le package NuGet principal sera plus important, mais les fichiers de symboles incorporés signifient que les développeurs n’ont pas besoin de configurer le serveur de symboles NuGet.org. Si vous générez votre package NuGet à l’aide d’un projet de style SDK, vous pouvez incorporer les fichiers de symboles en définissant la propriété `AllowedOutputExtensionsInPackageBuildOutputFolder` :
 
@@ -116,8 +116,8 @@ L’inconvénient des fichiers de symboles incorporés est qu’ils augmentent l
 
 > Les packages de symboles (`*.snupkg`) permettent aux développeurs d’effectuer un débogage à la demande sans gonfler inutilement la taille du package principal ni impacter les performances de restauration pour les utilisateurs qui ne comptent pas déboguer le package NuGet.
 >
-> La mise en garde est que les utilisateurs peuvent avoir besoin de trouver et de configurer le serveur symbole NuGet dans leur IDE (comme une configuration unique) pour obtenir des fichiers symboles. Visual Studio 2019 version 16.1 a ajouté le serveur symbole de NuGet.org à la liste des serveurs de symboles par défaut.
+> L’inconvénient est que les utilisateurs peuvent avoir besoin de rechercher et de configurer le serveur de symboles NuGet dans leur IDE (en tant que programme d’installation unique) pour obtenir des fichiers de symboles. Visual Studio 2019 version 16,1 a ajouté le serveur de symboles NuGet. org à la liste des serveurs de symboles par défaut.
 
 >[!div class="step-by-step"]
->[Suivant précédent](strong-naming.md)
->[Next](dependencies.md)
+>[Précédent](strong-naming.md) 
+> [Suivant](dependencies.md)

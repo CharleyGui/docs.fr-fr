@@ -1,5 +1,6 @@
 ---
 title: Indexeurs - Guide de programmation C#
+description: Les indexeurs en C# permettent aux instances de classe ou de struct d’être indexées comme des tableaux. Vous pouvez définir ou obtenir la valeur indexée sans spécifier un type ou un membre d’instance.
 ms.date: 03/10/2017
 f1_keywords:
 - cs.indexers
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 539b2861e975c0c758c43c8a5d4cca86e3d2bb2c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 07e0ae4294373817e10bb79920c73ec1e275d169
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79167537"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303112"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexeurs (Guide de programmation C#)
 
@@ -53,15 +54,15 @@ Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n�
   
 - Les indexeurs peuvent avoir plusieurs paramètres formels, par exemple, quand vous accédez à un tableau à deux dimensions.  
   
-## <a name="BKMK_RelatedSections"></a>Sections connexes  
+## <a name="related-sections"></a><a name="BKMK_RelatedSections"></a>Sections connexes  
   
-- [Utilisation des indexeurs](./using-indexers.md)  
+- [Utilisation d'indexeurs](./using-indexers.md)  
   
 - [Indexeurs dans les interfaces](./indexers-in-interfaces.md)  
   
 - [Comparaison entre propriétés et indexeurs](./comparison-between-properties-and-indexers.md)  
   
-- [Restriction d’accessibilité de l’accesseur](../classes-and-structs/restricting-accessor-accessibility.md)  
+- [Restriction d'accessibilité de l'accesseur](../classes-and-structs/restricting-accessor-accessibility.md)  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
@@ -69,5 +70,5 @@ Pour plus d’informations, consultez [Indexeurs](~/_csharplang/spec/classes.md#
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Propriétés](../classes-and-structs/properties.md)

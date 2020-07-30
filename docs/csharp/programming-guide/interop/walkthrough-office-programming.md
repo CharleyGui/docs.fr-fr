@@ -1,5 +1,6 @@
 ---
-title: 'Procédure pas à pas : programmation Office (C# et Visual Basic)'
+title: 'Procédure pas à pas : Programmation Office (C# et Visual Basic)'
+description: Découvrez les fonctionnalités offertes par Visual Studio en C# et Visual Basic qui améliorent la programmation Microsoft Office.
 ms.date: 07/20/2015
 dev_langs:
 - csharp
@@ -9,14 +10,14 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 6c27442cb5c0c4172f503c945849e47560c2b33d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf4725f3f636bb208450cb9b5c58766d84947f86
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635351"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302943"
 ---
-# <a name="walkthrough-office-programming-c-and-visual-basic"></a>Procédure pas à pas : programmation Office (C# et Visual Basic)
+# <a name="walkthrough-office-programming-c-and-visual-basic"></a>Procédure pas à pas : Programmation Office (C# et Visual Basic)
 
 Visual Studio offre des fonctionnalités dans C# et Visual Basic qui améliorent la programmation Microsoft Office. Les fonctionnalités utiles de C# incluent des arguments nommés et facultatifs ainsi que des valeurs de retour de type `dynamic`. Dans la programmation COM, vous pouvez omettre le mot clé `ref` et accéder aux propriétés indexées. Les fonctionnalités de Visual Basic incluent les propriétés implémentées automatiquement, les instructions dans les expressions lambda et les initialiseurs de collection.
 
@@ -24,7 +25,7 @@ Les deux langages autorisent l'incorporation d'informations de type, qui permet 
 
 Cette procédure pas à pas illustre ces fonctionnalités dans le contexte de la programmation Office, mais beaucoup d’entre elles sont aussi utiles en programmation générale. Dans la procédure pas à pas, vous allez utiliser une application de complément Excel pour créer un classeur Excel. Vous créerez ensuite un document Word contenant un lien vers le classeur. Enfin, vous apprendrez à activer et désactiver la dépendance d’assembly PIA.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft Office Word doivent être installés sur votre ordinateur.
 
@@ -38,7 +39,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
 3. Dans le volet **Modèles installés**, développez **Visual Basic** ou **Visual C#**, **Office**, puis cliquez sur l’année de version du produit Office.
 
-4. Dans le volet **Modèles**, cliquez sur **Complément Excel \<version>**.
+4. Dans le volet **modèles** , cliquez **sur \<version> complément Excel**.
 
 5. Regardez en haut du volet **Modèles** pour vérifier que **.NET Framework 4**, ou version ultérieure, apparaît dans la zone **Framework cible**.
 
@@ -76,7 +77,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
      [!code-vb[csOfficeWalkthrough#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/account.vb#2)]
 
-3. Pour créer `bankAccounts` une liste qui contient deux comptes, ajoutez le code suivant à la `ThisAddIn_Startup` méthode dans *ThisAddIn.vb* ou *ThisAddIn.cs*. Les déclarations de liste utilisent les *initialiseurs de collection*. Pour plus d’informations, consultez [Initialiseurs de collection](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md).
+3. Pour créer une `bankAccounts` liste qui contient deux comptes, ajoutez le code suivant à la `ThisAddIn_Startup` méthode dans *ThisAddIn. vb* ou *ThisAddIn.cs*. Les déclarations de liste utilisent les *initialiseurs de collection*. Pour plus d’informations, consultez [Initialiseurs de collection](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md).
 
      [!code-csharp[csOfficeWalkthrough#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#3)]
 
@@ -94,7 +95,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
     - La méthode [Add](<xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A>) possède un *paramètre facultatif* pour spécifier un modèle particulier. Les paramètres optionnels, introduits dans C# 4, vous permettent d'omettre l'argument du paramètre, si vous souhaitez utiliser la valeur par défaut de ce dernier. Dans la mesure où aucun argument n'est envoyé dans l'exemple précédent, `Add` utilise le modèle par défaut et crée un classeur. L'instruction équivalente dans les versions antérieures de C# nécessite un argument d'espace réservé : `excelApp.Workbooks.Add(Type.Missing)`.
 
-         Pour plus d’informations, voir [Arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md).
+         Pour plus d’informations, consultez [arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md).
 
     - Les propriétés `Range` et `Offset` de l’objet [Range](<xref:Microsoft.Office.Interop.Excel.Range>) utilisent la fonctionnalité des *propriétés indexées*. Cette fonctionnalité vous permet de consommer ces propriétés à partir des types COM à l’aide de la syntaxe C# standard suivante. Les propriétés indexées vous permettent également d'utiliser la propriété `Value` de l'objet `Range`, ce qui rend superflue l'utilisation de la propriété `Value2`. La propriété `Value` est indexée, mais l'index est optionnel. Les arguments facultatifs et les propriétés indexées fonctionnent ensemble dans l’exemple suivant.
 
@@ -106,7 +107,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
          Vous ne pouvez pas créer vos propres propriétés indexées. La fonctionnalité prend uniquement en charge la consommation de propriétés indexées existantes.
 
-         Pour plus d’informations, voir [Comment utiliser les propriétés indexées dans la programmation interop COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md).
+         Pour plus d’informations, consultez Guide pratique [pour utiliser des propriétés indexées dans la programmation de COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md).
 
 2. À la fin de `DisplayInExcel`, ajoutez le code suivant pour ajuster les largeurs de colonne au contenu.
 
@@ -114,7 +115,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
      [!code-vb[csOfficeWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#7)]
 
-     Ces ajouts illustrent une autre fonctionnalité de C# : le traitement des valeurs `Object` retournées par les hôtes COM tels qu’Office comme si leur type était [dynamic](../../language-reference/builtin-types/reference-types.md). Cela se produit automatiquement lorsque **Embed Interop** `True`Types est réglé à sa valeur par défaut, , ou, de façon équivalente, lorsque l’assemblage est référencé par l’option [compilateur lien.](../../language-reference/compiler-options/link-compiler-option.md) Le type `dynamic` permet la liaison tardive, déjà disponible dans Visual Basic et évite le cast explicite requis dans C# 3.0 et versions antérieures du langage.
+     Ces ajouts illustrent une autre fonctionnalité de C# : le traitement des valeurs `Object` retournées par les hôtes COM tels qu’Office comme si leur type était [dynamic](../../language-reference/builtin-types/reference-types.md). Cela se produit automatiquement lorsque l’option **incorporer les types d’interopérabilité** est définie sur sa valeur par défaut, `True` ou, de manière équivalente, lorsque l’assembly est référencé par l’option du compilateur [-Link](../../language-reference/compiler-options/link-compiler-option.md) . Le type `dynamic` permet la liaison tardive, déjà disponible dans Visual Basic et évite le cast explicite requis dans C# 3.0 et versions antérieures du langage.
 
      Par exemple, `excelApp.Columns[1]` retourne un `Object` et `AutoFit` est une méthode [Range](<xref:Microsoft.Office.Interop.Excel.Range>) Excel. Sans `dynamic`, vous devez effectuer un cast de l'objet retourné par `excelApp.Columns[1]` sous la forme d'une instance de `Range` avant d'appeler la méthode `AutoFit`.
 
@@ -124,7 +125,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
 ### <a name="to-invoke-displayinexcel"></a>Pour appeler DisplayInExcel
 
-1. Ajoutez le code suivant à la fin de la méthode `ThisAddIn_StartUp`. L'appel à `DisplayInExcel` contient deux arguments. Le premier argument est le nom de la liste des comptes à traiter. Le deuxième argument est une expression lambda multiligne qui définit comment les données doivent être traitées. Les valeurs `ID` et `balance` de chaque compte s'affichent dans des cellules adjacentes et la ligne s'affiche en rouge si le solde est inférieur à zéro. Pour plus d’informations, voir [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+1. Ajoutez le code suivant à la fin de la méthode `ThisAddIn_StartUp`. L'appel à `DisplayInExcel` contient deux arguments. Le premier argument est le nom de la liste des comptes à traiter. Le deuxième argument est une expression lambda multiligne qui définit comment les données doivent être traitées. Les valeurs `ID` et `balance` de chaque compte s'affichent dans des cellules adjacentes et la ligne s'affiche en rouge si le solde est inférieur à zéro. Pour plus d’informations, consultez [expressions lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
 
      [!code-csharp[csOfficeWalkthrough#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#9)]
 
@@ -140,7 +141,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
      [!code-vb[csOfficeWalkthrough#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#10)]
 
-     Ce code illustre plusieurs fonctionnalités nouvelles en C# : la possibilité d'omettre le mot clé `ref` dans la programmation COM, les arguments nommés et les arguments facultatifs. Ces fonctionnalités existent déjà en Visual Basic. La méthode [PasteSpecial](<xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>) comporte sept paramètres, qui sont tous définis comme des paramètres de référence facultatifs. Les arguments nommés et les arguments facultatifs vous permettent de désigner les paramètres auxquels vous souhaitez accéder par leur nom et d’envoyer des arguments à ces seuls paramètres. Dans cet exemple, les arguments sont envoyés pour indiquer qu’un lien vers le classeur dans le Presse-papiers doit être créé (paramètre `Link`) et que ce lien doit être affiché dans le document Word sous forme d’une icône (paramètre `DisplayAsIcon`). Visual C# vous permet également d’omettre le mot clé `ref` pour ces arguments.
+     Ce code illustre plusieurs fonctionnalités nouvelles en C# : la possibilité d'omettre le mot clé `ref` dans la programmation COM, les arguments nommés et les arguments facultatifs. Ces fonctionnalités existent déjà en Visual Basic. La méthode [PasteSpecial](<xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>) comporte sept paramètres, tous définis en tant que paramètres de référence facultatifs. Les arguments nommés et les arguments facultatifs vous permettent de désigner les paramètres auxquels vous souhaitez accéder par leur nom et d’envoyer des arguments à ces seuls paramètres. Dans cet exemple, les arguments sont envoyés pour indiquer qu’un lien vers le classeur dans le Presse-papiers doit être créé (paramètre `Link`) et que ce lien doit être affiché dans le document Word sous forme d’une icône (paramètre `DisplayAsIcon`). Visual C# vous permet également d’omettre le mot clé `ref` pour ces arguments.
 
 ### <a name="to-run-the-application"></a>Pour exécuter l’application
 
@@ -154,11 +155,11 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
 1. Exécutez de nouveau l’application, mais ne cliquez pas sur **Nettoyer la solution**.
 
-2. Sélectionnez le bouton **Démarrer**. Recherchez **Microsoft Visual Studio \<version>** et ouvrez une invite de commandes développeur.
+2. Sélectionnez le bouton **Démarrer**. Recherchez **Microsoft Visual Studio \<version> ** et ouvrez une invite de commandes développeur.
 
 3. Tapez `ildasm` dans la fenêtre Invite de commandes développeur pour Visual Studio, puis appuyez sur Entrée. La fenêtre IL DASM s'affiche.
 
-4. Dans le menu **Fichier** de la fenêtre IL DASM, sélectionnez **Fichier** > **Ouvrir**. Double-cliquez sur **Visual Studio \<version>**, puis sur **Projets**. Ouvrez le dossier de votre projet et, dans le dossier bin/Debug, recherchez *nom de votre projet*.dll. Double-cliquez sur *nom de votre projet*.dll. Une nouvelle fenêtre affiche les attributs de votre projet, en plus des références à d'autres modules et assemblys. Remarquez que les espaces de noms `Microsoft.Office.Interop.Excel` et `Microsoft.Office.Interop.Word` sont inclus dans l'assembly. Par défaut, dans Visual Studio, le compilateur importe les types dont vous avez besoin à partir d’un assembly PIA référencé dans votre assembly.
+4. Dans le menu **Fichier** de la fenêtre IL DASM, sélectionnez **Fichier** > **Ouvrir**. Double-cliquez sur **Visual \<version> Studio **, puis double-cliquez sur **projets**. Ouvrez le dossier de votre projet et, dans le dossier bin/Debug, recherchez *nom de votre projet*.dll. Double-cliquez sur *nom de votre projet*.dll. Une nouvelle fenêtre affiche les attributs de votre projet, en plus des références à d'autres modules et assemblys. Remarquez que les espaces de noms `Microsoft.Office.Interop.Excel` et `Microsoft.Office.Interop.Word` sont inclus dans l'assembly. Par défaut, dans Visual Studio, le compilateur importe les types dont vous avez besoin à partir d’un assembly PIA référencé dans votre assembly.
 
      Pour plus d’informations, consultez [Guide pratique pour afficher le contenu d’un assembly](../../../standard/assembly/view-contents.md).
 
@@ -193,13 +194,13 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
 - [Propriétés implémentées automatiquement (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)
 - [Propriétés implémentées automatiquement (C#)](../classes-and-structs/auto-implemented-properties.md)
-- [Initialisateurs de collection](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
+- [Initialiseurs de collection](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
 - [Initialiseurs d’objets et de collections](../classes-and-structs/object-and-collection-initializers.md)
 - [Paramètres facultatifs](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
 - [Passage des arguments par position et par nom](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)
 - [Arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md)
-- [Liaison anticipée et liaison tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [Dynamique](../../language-reference/builtin-types/reference-types.md)
+- [Liaison précoce et tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+- [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Utilisation du type dynamic](../types/using-type-dynamic.md)
 - [Expressions lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Expressions lambda (C#)](../statements-expressions-operators/lambda-expressions.md)

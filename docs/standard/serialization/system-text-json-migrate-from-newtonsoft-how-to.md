@@ -11,14 +11,14 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 78a47b01cc8fba4cb45a686adad901784552c1c1
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: fbd3c8062892f106ec17d0fef86d5ad7f1207d20
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865331"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303476"
 ---
-# <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Comment migrer de Newtonsoft.Json versSystem.Text.Json
+# <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Comment migrer de Newtonsoft.Json versSystem.Text.Json
 
 Cet article explique comment migrer de [Newtonsoft.Json](https://www.newtonsoft.com/json) vers <xref:System.Text.Json> .
 
@@ -34,7 +34,7 @@ L' `System.Text.Json` espace de noms fournit des fonctionnalités pour sérialis
 
 La majeure partie de cet article concerne l’utilisation de l' <xref:System.Text.Json.JsonSerializer> API, mais elle fournit également des conseils sur l’utilisation de <xref:System.Text.Json.JsonDocument> (qui représente les types Document Object Model ou DOM), <xref:System.Text.Json.Utf8JsonReader> et <xref:System.Text.Json.Utf8JsonWriter> .
 
-## <a name="table-of-differences-between-newtonsoftjson-and-systemtextjson"></a>Tableau des différences entre Newtonsoft.Json etSystem.Text.Json
+## <a name="table-of-differences-between-no-locnewtonsoftjson-and-no-locsystemtextjson"></a>Tableau des différences entre Newtonsoft.Json etSystem.Text.Json
 
 Le tableau suivant répertorie les `Newtonsoft.Json` fonctionnalités et les `System.Text.Json` équivalents. Les équivalents sont classés dans les catégories suivantes :
 
@@ -73,17 +73,17 @@ Le tableau suivant répertorie les `Newtonsoft.Json` fonctionnalités et les `Sy
 | Méthode `JsonConvert.PopulateObject`                   | ⚠️[Non pris en charge, solution de contournement](#populate-existing-objects) |
 | `ObjectCreationHandling`paramètre global               | ⚠️[Non pris en charge, solution de contournement](#reuse-rather-than-replace-properties) |
 | Ajouter aux collections sans Setters                    | ⚠️[Non pris en charge, solution de contournement](#add-to-collections-without-setters) |
-| `PreserveReferencesHandling`paramètre global           | ❌[Non pris en charge](#preserve-object-references-and-handle-loops) |
-| `ReferenceLoopHandling`paramètre global                | ❌[Non pris en charge](#preserve-object-references-and-handle-loops) |
-| Prise en charge des `System.Runtime.Serialization` attributs | ❌[Non pris en charge](#systemruntimeserialization-attributes) |
-| `MissingMemberHandling`paramètre global                | ❌[Non pris en charge](#missingmemberhandling) |
-| Autoriser les noms de propriété sans guillemets                   | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
-| Autoriser les guillemets simples autour des valeurs de chaîne              | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
-| Autoriser les valeurs non-chaîne JSON pour les propriétés de chaîne    | ❌[Non pris en charge](#non-string-values-for-string-properties) |
+| `PreserveReferencesHandling`paramètre global           | ❌ [Non pris en charge](#preserve-object-references-and-handle-loops) |
+| `ReferenceLoopHandling`paramètre global                | ❌ [Non pris en charge](#preserve-object-references-and-handle-loops) |
+| Prise en charge des `System.Runtime.Serialization` attributs | ❌ [Non pris en charge](#systemruntimeserialization-attributes) |
+| `MissingMemberHandling`paramètre global                | ❌ [Non pris en charge](#missingmemberhandling) |
+| Autoriser les noms de propriété sans guillemets                   | ❌ [Non pris en charge](#json-strings-property-names-and-string-values) |
+| Autoriser les guillemets simples autour des valeurs de chaîne              | ❌ [Non pris en charge](#json-strings-property-names-and-string-values) |
+| Autoriser les valeurs non-chaîne JSON pour les propriétés de chaîne    | ❌ [Non pris en charge](#non-string-values-for-string-properties) |
 
 Il ne s’agit pas d’une liste exhaustive des `Newtonsoft.Json` fonctionnalités. La liste comprend un grand nombre des scénarios qui ont été demandés dans les [problèmes GitHub](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) ou les publications [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) . Si vous implémentez une solution de contournement pour l’un des scénarios répertoriés ici qui n’a pas d’exemple de code, et si vous souhaitez partager votre solution, sélectionnez **cette page** dans la section **Commentaires** en bas de cette page. Cela crée un problème dans le référentiel GitHub de cette documentation et le répertorie également dans la section **Commentaires** sur cette page.
 
-## <a name="differences-in-default-jsonserializer-behavior-compared-to-newtonsoftjson"></a>Différences dans le comportement de JsonSerializer par défaut par rapport àNewtonsoft.Json
+## <a name="differences-in-default-jsonserializer-behavior-compared-to-no-locnewtonsoftjson"></a>Différences dans le comportement de JsonSerializer par défaut par rapport àNewtonsoft.Json
 
 <xref:System.Text.Json>est strict par défaut et évite toute estimation ou interprétation au nom de l’appelant, en mettant l’accent sur le comportement déterministe. La bibliothèque est intentionnellement conçue de cette façon pour les performances et la sécurité. `Newtonsoft.Json`est flexible par défaut. Cette différence fondamentale en matière de conception repose sur la plupart des différences spécifiques suivantes dans le comportement par défaut.
 
@@ -402,12 +402,14 @@ Dans <xref:System.Text.Json> , vous pouvez simuler des rappels en écrivant un c
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastCallbacksConverter.cs)]
 
-Inscrivez ce convertisseur personnalisé à l' [aide d’un attribut sur la classe](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) ou en [ajoutant le convertisseur](system-text-json-converters-how-to.md#registration-sample---converters-collection) à la <xref:System.Text.Json.JsonSerializerOptions.Converters> collection.
+Inscrivez ce convertisseur personnalisé en [ajoutant le convertisseur](system-text-json-converters-how-to.md#registration-sample---converters-collection) à la <xref:System.Text.Json.JsonSerializerOptions.Converters> collection.
 
 Si vous utilisez un convertisseur personnalisé qui suit l’exemple précédent :
 
 * Le `OnDeserializing` code n’a pas accès à la nouvelle instance poco. Pour manipuler la nouvelle instance POCO au début de la désérialisation, placez ce code dans le constructeur POCO.
-* Évitez une boucle infinie en inscrivant le convertisseur dans l’objet d’options et en ne passant pas l’objet d’options lors de l’appel de `Serialize` ou de `Deserialize` . Pour plus d’informations, consultez la section [propriétés requises](#required-properties) , plus haut dans cet article.
+* Évitez une boucle infinie en inscrivant le convertisseur dans l’objet d’options et en ne passant pas l’objet d’options lors de l’appel de `Serialize` ou de `Deserialize` .
+
+Pour plus d’informations sur les convertisseurs personnalisés qui appellent `Serialize` ou `Deserialize` , reportez-vous à la section [propriétés requises](#required-properties) , plus haut dans cet article.
 
 ### <a name="public-and-non-public-fields"></a>Champs publics et non publics
 

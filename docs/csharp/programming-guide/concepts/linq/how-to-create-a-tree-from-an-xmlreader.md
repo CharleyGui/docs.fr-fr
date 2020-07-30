@@ -1,18 +1,19 @@
 ---
-title: Comment créer un arbre à partir d’un XmlReader (C)
+title: Comment créer une arborescence à partir d’un XmlReader (C#)
+description: Découvrez comment créer une arborescence XML directement à partir d’un XmlReader. Consultez un exemple illustrant comment créer un objet T:System.Xml.XmlReader.
 ms.date: 07/20/2015
 ms.assetid: 60951c9c-7087-406c-b5bb-c60e58609b21
-ms.openlocfilehash: 9ead6352112d9e1b56bd70699c90133e432f96b3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3801177e664d142652d38748d44eaf3f274239dd
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169270"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302657"
 ---
-# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Comment créer un arbre à partir d’un XmlReader (C)
+# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Comment créer une arborescence à partir d’un XmlReader (C#)
 Cette rubrique montre comment créer une arborescence XML directement à partir d'un objet <xref:System.Xml.XmlReader>. Pour créer un objet <xref:System.Xml.Linq.XElement> à partir d'un objet <xref:System.Xml.XmlReader>, vous devez placer l'objet <xref:System.Xml.XmlReader> sur un nœud d'élément. L'objet <xref:System.Xml.XmlReader> ignorera les commentaires et les instructions de traitement, mais si l'objet <xref:System.Xml.XmlReader> est placé sur un nœud de texte, une erreur sera renvoyée. Pour éviter de telles erreurs, placez toujours l'objet <xref:System.Xml.XmlReader> sur un élément avant de créer une arborescence XML à partir de l'objet <xref:System.Xml.XmlReader>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
   
  Le code suivant crée un objet `T:System.Xml.XmlReader`, puis il lit les nœuds jusqu'à trouver le premier nœud d'élément. Il charge ensuite l'objet <xref:System.Xml.Linq.XElement>.  

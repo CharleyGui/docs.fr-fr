@@ -1,18 +1,19 @@
 ---
-title: Comment trouver tous les nœuds dans un espace nominant (C)
+title: Comment rechercher tous les nœuds dans un espace de noms (C#)
+description: Apprenez à filtrer sur l’espace de noms de chaque élément ou attribut afin de rechercher tous les nœuds de cet espace de noms.
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
-ms.openlocfilehash: 408f4207798720428d0dd3821d33fd3edf2f897e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf739480c6b4e2c53d5c430d47ff833e8995f6a4
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141182"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303307"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Comment trouver tous les nœuds dans un espace nominant (C)
+# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Comment rechercher tous les nœuds dans un espace de noms (C#)
 Vous pouvez filtrer sur l'espace de noms de chaque élément ou attribut afin de rechercher les nœuds dans cet espace de noms particulier.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant crée une arborescence XML avec deux espaces de noms. Il itère ensuite au sein de l'arborescence et imprime les noms de tous les éléments et attributs dans l'un de ces espaces de noms.  
   
 ```csharp  
@@ -43,7 +44,7 @@ Nodes in the http://www.adventure-works.com namespace
 {http://www.adventure-works.com}GrandChild2  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Le fichier XML auquel accède cette requête contient des commandes fournisseur dans deux espaces de noms différents. La requête crée une nouvelle arborescence avec uniquement les éléments de l’un des espaces de noms.  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichiers XML : Commandes fournisseur consolidées](./sample-xml-file-consolidated-purchase-orders.md).  

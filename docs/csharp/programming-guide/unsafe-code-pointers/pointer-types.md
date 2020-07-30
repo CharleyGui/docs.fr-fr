@@ -1,15 +1,16 @@
 ---
 title: Types pointeur - Guide de programmation C#
+description: En savoir plus sur les types pointeur. Consultez des exemples de différents pointeurs, des exemples de code et des ressources disponibles supplémentaires.
 ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 492b37460c05ffbc82e020facb354be22706f8d3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9c62a31f9a4a090fe56fb10ac45fe2f93f1b036e
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396257"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382033"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
 

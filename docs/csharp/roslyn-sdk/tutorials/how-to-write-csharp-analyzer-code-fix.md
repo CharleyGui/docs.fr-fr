@@ -3,12 +3,12 @@ title: 'Tutoriel : Écrire votre premier analyseur et correctif de code'
 description: Ce tutoriel fournit des instructions détaillées pour générer un analyseur et un correctif de code à l’aide du SDK .NET Compiler (API Roslyn).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: c70fcacc6cb30969e5c69ffd0954ac52e637a915
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: e79907f364939462b7d0d5814c4752be23bcfdf3
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100936"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381591"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Tutoriel : Écrire votre premier analyseur et correctif de code
 
@@ -504,7 +504,7 @@ else if (variableType.IsReferenceType && constantValue.Value != null)
 }
 ```
 
-Vous devez écrire un peu plus de code dans votre fournisseur de correctif de code pour remplacer le mot clé var' par le nom de type correct. Revenez dans **CodeFixProvider.cs**. Le code que vous ajouterez effectue les étapes suivantes :
+Vous devez écrire un peu plus de code dans votre fournisseur de correctifs de code pour remplacer le `var` mot clé par le nom de type correct. Revenez dans **CodeFixProvider.cs**. Le code que vous ajouterez effectue les étapes suivantes :
 
 - Vérifiez si la déclaration est une déclaration `var`, et dans ce cas :
 - Créez un nouveau type pour le type déduit.
@@ -522,12 +522,12 @@ Vous devez ajouter une `using` directive pour utiliser le <xref:Microsoft.CodeAn
 using Microsoft.CodeAnalysis.Simplification;
 ```
 
-Exécutez vos tests. Ils doivent tous réussir. Félicitez-vous en exécutant votre analyseur terminé. Appuyez sur <kbd>CTRL + F5</kbd> pour exécuter le projet de l’analyseur dans une seconde instance de Visual Studio avec l’extension de prévisualisation Roslyn chargée.
+Exécutez vos tests. Ils doivent tous réussir. Félicitez-vous en exécutant votre analyseur terminé. Appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour exécuter le projet de l’analyseur dans une seconde instance de Visual Studio avec l’extension de prévisualisation Roslyn chargée.
 
 - Dans la deuxième instance de Visual Studio, créez un projet Application console C# et ajoutez `int x = "abc";` à la méthode Main. Grâce à la correction du premier bogue, aucun avertissement ne doit être signalé pour cette déclaration de variable locale (même s’il existe une erreur du compilateur comme prévu).
 - Ensuite, ajoutez `object s = "abc";` à la méthode Main. En raison de la correction du deuxième bogue, aucun avertissement ne doit être signalé.
 - Enfin, ajoutez une autre variable locale qui utilise le mot clé `var`. Un avertissement est signalé et une suggestion apparaît en dessous à gauche.
-- Déplacez le signe insertion de l’éditeur sur le soulignement ondulé et appuyez sur <kbd>CTRL +</kbd>. pour afficher le correctif de code suggéré. Lors de la sélection de votre correctif de code, notez que le mot clé ' var' est désormais géré correctement.
+- Déplacez le signe insertion de l’éditeur sur le soulignement ondulé et appuyez sur <kbd>CTRL</kbd> + <kbd>.</kbd>. pour afficher le correctif de code suggéré. Après avoir sélectionné votre correctif de code, Notez que le `var` mot clé est désormais géré correctement.
 
 Enfin, ajoutez le code suivant :
 
@@ -539,7 +539,7 @@ int k = i + j;
 
 Après ces modifications, vous obtenez des traits de soulignement ondulés rouges uniquement sur les deux premières variables. Ajoutez `const` à `i` et à `j`, et vous obtenez un nouvel avertissement sur `k`, car cet élément peut désormais devenir `const`.
 
-Félicitations ! Vous avez créé votre première extension .NET Compiler Platform qui effectue une analyse de code à la volée pour détecter un problème et fournit une solution rapide pour résoudre ce problème. Tout au long du processus, vous avez découvert la plupart des API de code qui font partie du SDK .NET Compiler Platform (API Roslyn). Vous pouvez comparer votre travail avec [l’exemple terminé](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) dans notre référentiel GitHub d’exemples.
+Félicitations ! Vous avez créé votre première extension .NET Compiler Platform qui effectue une analyse de code à la volée pour détecter un problème et fournit une solution rapide pour résoudre ce problème. Tout au long du processus, vous avez découvert la plupart des API de code qui font partie du SDK .NET Compiler Platform (API Roslyn). Vous pouvez comparer votre travail avec [l’exemple terminé](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) dans notre référentiel GitHub d’exemples.
 
 ## <a name="other-resources"></a>Autres ressources
 

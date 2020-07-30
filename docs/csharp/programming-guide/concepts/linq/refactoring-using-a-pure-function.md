@@ -1,18 +1,19 @@
 ---
 title: Refactorisation à l’aide d’une fonction pure (C#)
+description: Découvrez comment refactoriser du code à l’aide d’une fonction pure. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
-ms.openlocfilehash: f264a0028ed265a5a4fbe1dc32f430c648724c20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3f0084d9de27f3f215cc3ba527ada93f7a3d61a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253077"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300109"
 ---
 # <a name="refactoring-using-a-pure-function-c"></a>Refactorisation à l’aide d’une fonction pure (C#)
-L’exemple suivant refactorise l’exemple précédent, [Refactorisation à l’aide d’une méthode d’extension (C#)](./refactoring-using-an-extension-method.md), de façon à utiliser une fonction pure. Dans cet exemple, le code utilisé pour rechercher le texte d’un paragraphe est déplacé vers la méthode statique pure `ParagraphText`.  
+L’exemple suivant refactorise l’exemple précédent, [refactorisation à l’aide d’une méthode d’extension (C#)](./refactoring-using-an-extension-method.md), pour utiliser une fonction pure. Dans cet exemple, le code permettant de rechercher le texte d’un paragraphe est déplacé vers la méthode statique pure `ParagraphText` .  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple traite un document WordprocessingML et récupère les nœuds de paragraphes à partir d'un document WordprocessingML. Il identifie également le style de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, le code refactorisé figure dans des commentaires.  
   
  Pour obtenir des instructions pour créer le document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).  

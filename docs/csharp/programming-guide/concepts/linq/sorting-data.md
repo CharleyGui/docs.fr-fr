@@ -1,13 +1,14 @@
 ---
 title: Tri des données (C#)
+description: En savoir plus sur les opérations de tri et les méthodes d’opérateur de requête standard qui effectuent des opérations de tri dans LINQ en C#.
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
-ms.openlocfilehash: 29a5e3e685bdc73536961b7783f4986796b46bdf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5feeb0e2229fc370fdcb9608817f41832bffd7cc
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167905"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302332"
 ---
 # <a name="sorting-data-c"></a>Tri des données (C#)
 Une opération de tri ordonne les éléments d’une séquence en fonction d’un ou de plusieurs attributs. Le premier critère de tri effectue un tri principal sur les éléments. En spécifiant un deuxième critère de tri, vous pouvez trier les éléments dans chaque groupe de tri principal.  
@@ -132,4 +133,4 @@ foreach (string str in query)
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [orderby, clause](../../../language-reference/keywords/orderby-clause.md)
 - [Classer les résultats d’une clause join](../../../linq/order-the-results-of-a-join-clause.md)
-- [Comment trier ou filtrer les données de texte par n’importe quel mot ou champ (LINQ) (C)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

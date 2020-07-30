@@ -1,20 +1,21 @@
 ---
 title: 'Exemple de fichier XML : Clients et commandes (LINQ to XML)'
+description: Ce fichier XML est utilisé dans différents exemples de la documentation de LINQ to XML. Le fichier contient des clients et des commandes.
 ms.date: 07/20/2015
 ms.assetid: d6d1c9ea-be74-4e6d-bfdd-d4bcc2d301cf
-ms.openlocfilehash: 01c1719bd67bbaf0d46dc6e3c23b5031afd271f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0143fa373ee1ad6acecfe99e1a786d5cc90c2eb2
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75346497"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302553"
 ---
 # <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a>Exemple de fichier XML : Clients et commandes (LINQ to XML)
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Ce fichier contient des clients et des commandes.  
   
  La rubrique [Exemple de fichier XSD : Clients et commandes](./sample-xsd-file-customers-and-orders1.md) contient un XSD qui peut servir à valider ce document. Il utilise les fonctionnalités `xs:key` et `xs:keyref` de XSD pour déterminer que l'attribut `CustomerID` de l'élément `Customer` est une clé et pour établir une relation entre l'élément `CustomerID` dans chaque élément `Order` et l'attribut `CustomerID` dans chaque élément `Customer`.  
   
- Par exemple, des requêtes de LINQ qui `Join` profitent de cette relation en utilisant la clause, voir [Comment joindre deux collections (LINQ à XML) (CMD)](./how-to-join-two-collections-linq-to-xml.md).  
+ Pour obtenir un exemple d’écriture de requêtes LINQ qui tirent parti de cette relation à l’aide de la `Join` clause, consultez Guide pratique [pour joindre deux collections (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).  
   
 ## <a name="customersordersxml"></a>CustomersOrders.xml  
   

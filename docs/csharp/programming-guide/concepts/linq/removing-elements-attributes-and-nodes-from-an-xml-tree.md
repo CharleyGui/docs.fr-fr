@@ -1,13 +1,14 @@
 ---
 title: Suppression d’éléments, d’attributs et de nœuds d’une arborescence XML (C#)
+description: Découvrez comment supprimer des éléments, des attributs et des nœuds d’une arborescence XML. Consultez la liste des méthodes de suppression et un exemple de code.
 ms.date: 07/20/2015
 ms.assetid: 07dd06d6-1117-4077-bf98-9120cf51176e
-ms.openlocfilehash: badaa6bab35367d62a73f56c5221cb7d6d4a45f7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4e753c3d96c4cbc050b08076ca8bff8c17b2e252
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591260"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300044"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>Suppression d’éléments, d’attributs et de nœuds d’une arborescence XML (C#)
 
@@ -30,7 +31,7 @@ Les méthodes suivantes suppriment des nœuds et des attributs d’une arboresce
 |<xref:System.Xml.Linq.XNode.Remove%2A?displayProperty=nameWithType>|Supprime un objet <xref:System.Xml.Linq.XNode> de son parent.|
 |<xref:System.Xml.Linq.Extensions.Remove%2A?displayProperty=nameWithType>|Supprime chaque attribut ou élément dans la collection source de son élément parent.|
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 ### <a name="description"></a>Description
 

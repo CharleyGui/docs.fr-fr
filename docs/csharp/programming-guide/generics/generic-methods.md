@@ -1,15 +1,16 @@
 ---
 title: Méthodes génériques - Guide de programmation C#
+description: En savoir plus sur les méthodes déclarées avec des paramètres de type, appelées méthodes génériques. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], methods
 ms.assetid: 673eeea2-4b48-4faa-9c4e-2e89449221b9
-ms.openlocfilehash: 5f066ca39c97b70554886e423c37c4ee47d49158
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 77b81de26961a8b59644643bf043ed723dbf374f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712193"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301877"
 ---
 # <a name="generic-methods-c-programming-guide"></a>Méthodes génériques (guide de programmation C#)
 Une méthode générique est une méthode qui est déclarée avec des paramètres de type, comme suit :  
@@ -48,6 +49,6 @@ Une méthode générique est une méthode qui est déclarée avec des paramètre
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic>
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Introduction aux génériques](./index.md)
 - [Méthodes](../classes-and-structs/methods.md)

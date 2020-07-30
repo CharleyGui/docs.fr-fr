@@ -1,13 +1,14 @@
 ---
 title: 'Exemple de fichier XML : Données numériques dans un espace de noms3'
+description: Ce fichier XML est utilisé dans différents exemples de la documentation de LINQ to XML. Il contient des données pour l’addition, la moyenne et le regroupement. Le code XML se trouve dans un espace de noms.
 ms.date: 07/20/2015
 ms.assetid: 51750cab-3c66-4511-90fb-b9d211308d31
-ms.openlocfilehash: 02788b73a7af9922b5a50237f2d2e401cba8abe2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fe467604840851c2af2533a620f9b7e32367fbb3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66483703"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302501"
 ---
 # <a name="sample-xml-file-numerical-data-in-a-namespace"></a>Exemple de fichier XML : Données numériques dans un espace de noms
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Ce fichier contient des données numériques pour effectuer des additions, des moyennes et des regroupements. Le code XML se trouve dans un espace de noms.  

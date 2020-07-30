@@ -1,16 +1,17 @@
 ---
 title: Génériques et attributs - Guide de programmation C#
+description: En savoir plus sur l’application d’attributs aux types génériques. Consultez des exemples de code et affichez des ressources disponibles supplémentaires.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], attributes
 - attributes [C#], with generics
 ms.assetid: da9fc326-4648-454a-8e13-3911a2edefd7
-ms.openlocfilehash: 47bf4e8f07a8b6778db8fa675d745d362dc10d7d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17556af2e1bc2963de953cea242d7000509acbcd
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75703024"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299875"
 ---
 # <a name="generics-and-attributes-c-programming-guide"></a>Génériques et attributs (Guide de programmation C#)
 Les attributs peuvent être appliqués aux types génériques de la même manière qu’aux types non génériques. Pour plus d’informations sur l’application des attributs, consultez [Attributs](../concepts/attributes/index.md).  
@@ -45,6 +46,6 @@ Les attributs peuvent être appliqués aux types génériques de la même maniè
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
 - [Génériques](./index.md)
 - [Attributs](../../../standard/attributes/index.md)

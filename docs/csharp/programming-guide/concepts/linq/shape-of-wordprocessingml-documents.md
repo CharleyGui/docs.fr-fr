@@ -1,13 +1,14 @@
 ---
 title: Forme des documents WordprocessingML (C#)
+description: En savoir plus sur le format d’un document WordprocessingML. Plusieurs exemples C# utilisent un document WordprocessingML.
 ms.date: 07/20/2015
 ms.assetid: 3791b5e0-c502-469b-bb75-a7bf6fdd0a94
-ms.openlocfilehash: 58c028fed465f45fdcf8f63f2119eb8e8b201e32
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4a7716d775a634c5ad3719714be68fce67d5cbfe
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76732673"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302345"
 ---
 # <a name="shape-of-wordprocessingml-documents-c"></a>Forme des documents WordprocessingML (C#)
 Cette rubrique présente la forme XML d'un document WordprocessingML.  

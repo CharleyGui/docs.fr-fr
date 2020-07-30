@@ -1,13 +1,15 @@
 ---
 title: private protected - Référence C#
 ms.date: 11/15/2017
+f1_keywords:
+- privateprotected_CSharpKeyword
 author: sputier
-ms.openlocfilehash: 03fa90582d096919f2e6546fae2fde28e486fe41
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 94ef55d7e13841f81b036f52659b215e22a3a0d7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463056"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301799"
 ---
 # <a name="private-protected-c-reference"></a>private protected (Référence C#)
 
@@ -61,7 +63,7 @@ Le premier fichier contient une classe de base publique, `BaseClass`, et un type
 
 Dans le deuxième fichier, une tentative d’accès à `myValue` en tant que membre hérité de `DerivedClass2` génère une erreur, car il est accessible seulement par des types dérivés dans Assembly1.
 
-Si `Assembly1.cs` contient <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> un `Assembly2`nom que `DerivedClass1` , la `private protected` classe `BaseClass`dérivée aura accès aux membres déclarés en . `InternalsVisibleTo`rend `private protected` les membres visibles aux classes dérivées dans d’autres assemblées.
+Si `Assembly1.cs` contient un <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> nom `Assembly2` , la classe dérivée aura `DerivedClass1` accès aux `private protected` membres déclarés dans `BaseClass` . `InternalsVisibleTo`rend `private protected` les membres visibles aux classes dérivées dans d’autres assemblys.
 
 Les membres de struct ne peuvent pas être `private protected`, car le struct ne peut pas être hérité.
 
@@ -71,13 +73,13 @@ Les membres de struct ne peuvent pas être `private protected`, car le struct ne
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation CMD](../../programming-guide/index.md)
-- [Mots-clés C](index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Niveaux d'accessibilité](accessibility-levels.md)
 - [Modificateurs](index.md)
 - [public](public.md)
-- [private](private.md)
-- [internal](internal.md)
+- [priv](private.md)
+- [intérieurs](internal.md)
 - [Problèmes de sécurité pour les mots clés virtuels internes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

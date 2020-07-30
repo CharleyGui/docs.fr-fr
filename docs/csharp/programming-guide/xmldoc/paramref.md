@@ -1,5 +1,6 @@
 ---
 title: <paramref>-Guide de programmation C#
+description: En savoir plus sur la <paramref> balise XML. Cette balise vous donne un moyen d’indiquer qu’un mot du code est un paramètre.
 ms.date: 07/20/2015
 f1_keywords:
 - paramref
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <paramref> C# XML tag
 - paramref C# XML tag
 ms.assetid: 756c24c1-f591-40e8-a838-559761539b0b
-ms.openlocfilehash: 4f3b521d24c8b4677a05b0b145cb36c31b2793f2
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 133f43abfaf349806404d6d37fb472e3145c51b7
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287309"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381838"
 ---
 # <a name="paramref-c-programming-guide"></a>\<paramref>(Guide de programmation C#)
 
