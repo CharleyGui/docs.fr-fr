@@ -1,18 +1,19 @@
 ---
 title: 'Exemple de fichiers XML : Commandes fournisseur consolidées2'
+description: Ce fichier XML est utilisé dans différents exemples de la documentation de LINQ to XML. Le fichier contient des commandes fournisseur avec différentes formes provenant de plusieurs sociétés.
 ms.date: 07/20/2015
 ms.assetid: 9d9698a5-95f2-4564-813b-ba536cdf3bfb
-ms.openlocfilehash: abd9a8f49cbd1308dfb1c043f310601decf64336
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 99cb9e09f9ea14420908aa7cd28f70ff6329baeb
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66483797"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302566"
 ---
-# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="8477b-102">Exemple de fichiers XML : Commandes fournisseur consolidées</span><span class="sxs-lookup"><span data-stu-id="8477b-102">Sample XML File: Consolidated Purchase Orders</span></span>
-<span data-ttu-id="8477b-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8477b-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="8477b-104">Ce fichier est un ensemble de commandes fournisseur avec différentes formes provenant de plusieurs sociétés.</span><span class="sxs-lookup"><span data-stu-id="8477b-104">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="8477b-105">Les commandes fournisseur de chaque société sont dans des espaces de noms distincts.</span><span class="sxs-lookup"><span data-stu-id="8477b-105">Purchase orders from each company are in separate namespaces.</span></span>  
+# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="9e33f-104">Exemple de fichier XML : Commandes fournisseur consolidées</span><span class="sxs-lookup"><span data-stu-id="9e33f-104">Sample XML File: Consolidated Purchase Orders</span></span>
+<span data-ttu-id="9e33f-105">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9e33f-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="9e33f-106">Ce fichier est un ensemble de commandes fournisseur avec différentes formes provenant de plusieurs sociétés.</span><span class="sxs-lookup"><span data-stu-id="9e33f-106">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="9e33f-107">Les commandes fournisseur de chaque société sont dans des espaces de noms distincts.</span><span class="sxs-lookup"><span data-stu-id="9e33f-107">Purchase orders from each company are in separate namespaces.</span></span>  
   
-## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="8477b-106">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="8477b-106">ConsolidatedPurchaseOrders.xml</span></span>  
+## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="9e33f-108">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="9e33f-108">ConsolidatedPurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  

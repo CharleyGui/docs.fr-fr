@@ -1,27 +1,28 @@
 ---
-title: Comment trouver des éléments pour enfants en fonction de la position (XPath-LINQ à XML) (C)
+title: Guide pratique pour rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML) (C#)
+description: Découvrez comment rechercher des éléments enfants en fonction de leur position à l’aide d’une expression XPath. Passez en revue un exemple de code qui utilise un exemple de fichier XML.
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
-ms.openlocfilehash: cc0ff5639345d36ebb0423a12b66de8f1a70ade1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2603d3ac94ace645bde1ce85a43a43af7321014e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141118"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301669"
 ---
-# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a><span data-ttu-id="e0fca-102">Comment trouver des éléments pour enfants en fonction de la position (XPath-LINQ à XML) (C)</span><span class="sxs-lookup"><span data-stu-id="e0fca-102">How to find child elements based on position (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="e0fca-103">Parfois, vous souhaitez rechercher des éléments en fonction de leur position.</span><span class="sxs-lookup"><span data-stu-id="e0fca-103">Sometimes you want to find elements based on their position.</span></span> <span data-ttu-id="e0fca-104">Vous pourriez souhaiter rechercher le deuxième élément, ou les troisième, quatrième et cinquième éléments.</span><span class="sxs-lookup"><span data-stu-id="e0fca-104">You might want to find the second element, or you might want to find the third through the fifth element.</span></span>  
+# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a><span data-ttu-id="22813-104">Guide pratique pour rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="22813-104">How to find child elements based on position (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="22813-105">Parfois, vous souhaitez rechercher des éléments en fonction de leur position.</span><span class="sxs-lookup"><span data-stu-id="22813-105">Sometimes you want to find elements based on their position.</span></span> <span data-ttu-id="22813-106">Vous pourriez souhaiter rechercher le deuxième élément, ou les troisième, quatrième et cinquième éléments.</span><span class="sxs-lookup"><span data-stu-id="22813-106">You might want to find the second element, or you might want to find the third through the fifth element.</span></span>  
   
- <span data-ttu-id="e0fca-105">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="e0fca-105">The XPath expression is:</span></span>  
+ <span data-ttu-id="22813-107">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="22813-107">The XPath expression is:</span></span>  
   
  `Test[position() >= 2 and position() <= 4]`  
   
- <span data-ttu-id="e0fca-106">Il existe deux approches pour l'écriture de cette requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] d'une manière différée.</span><span class="sxs-lookup"><span data-stu-id="e0fca-106">There are two approaches to writing this [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query in a lazy way.</span></span> <span data-ttu-id="e0fca-107">Vous pouvez utiliser les opérateurs <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A>, ou vous pouvez utiliser la surcharge <xref:System.Linq.Enumerable.Where%2A> qui prend un index.</span><span class="sxs-lookup"><span data-stu-id="e0fca-107">You can use the <xref:System.Linq.Enumerable.Skip%2A> and <xref:System.Linq.Enumerable.Take%2A> operators, or you can use the <xref:System.Linq.Enumerable.Where%2A> overload that takes an index.</span></span> <span data-ttu-id="e0fca-108">Lorsque vous utilisez la surcharge <xref:System.Linq.Enumerable.Where%2A>, vous utilisez une expression lambda qui prend deux arguments.</span><span class="sxs-lookup"><span data-stu-id="e0fca-108">When you use the <xref:System.Linq.Enumerable.Where%2A> overload, you use a lambda expression that takes two arguments.</span></span> <span data-ttu-id="e0fca-109">L'exemple suivant illustre les deux méthodes de sélection basée sur la position.</span><span class="sxs-lookup"><span data-stu-id="e0fca-109">The following example shows both methods of selecting based on position.</span></span>  
+ <span data-ttu-id="22813-108">Il existe deux approches pour l'écriture de cette requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] d'une manière différée.</span><span class="sxs-lookup"><span data-stu-id="22813-108">There are two approaches to writing this [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query in a lazy way.</span></span> <span data-ttu-id="22813-109">Vous pouvez utiliser les opérateurs <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A>, ou vous pouvez utiliser la surcharge <xref:System.Linq.Enumerable.Where%2A> qui prend un index.</span><span class="sxs-lookup"><span data-stu-id="22813-109">You can use the <xref:System.Linq.Enumerable.Skip%2A> and <xref:System.Linq.Enumerable.Take%2A> operators, or you can use the <xref:System.Linq.Enumerable.Where%2A> overload that takes an index.</span></span> <span data-ttu-id="22813-110">Lorsque vous utilisez la surcharge <xref:System.Linq.Enumerable.Where%2A>, vous utilisez une expression lambda qui prend deux arguments.</span><span class="sxs-lookup"><span data-stu-id="22813-110">When you use the <xref:System.Linq.Enumerable.Where%2A> overload, you use a lambda expression that takes two arguments.</span></span> <span data-ttu-id="22813-111">L'exemple suivant illustre les deux méthodes de sélection basée sur la position.</span><span class="sxs-lookup"><span data-stu-id="22813-111">The following example shows both methods of selecting based on position.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e0fca-110"> Exemple</span><span class="sxs-lookup"><span data-stu-id="e0fca-110">Example</span></span>  
- <span data-ttu-id="e0fca-111">Cet exemple recherche les deuxième, troisième et quatrième éléments `Test`.</span><span class="sxs-lookup"><span data-stu-id="e0fca-111">This example finds the second through the fourth `Test` element.</span></span> <span data-ttu-id="e0fca-112">Le résultat est une collection d’éléments.</span><span class="sxs-lookup"><span data-stu-id="e0fca-112">The result is a collection of elements.</span></span>  
+## <a name="example"></a><span data-ttu-id="22813-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="22813-112">Example</span></span>  
+ <span data-ttu-id="22813-113">Cet exemple recherche les deuxième, troisième et quatrième éléments `Test`.</span><span class="sxs-lookup"><span data-stu-id="22813-113">This example finds the second through the fourth `Test` element.</span></span> <span data-ttu-id="22813-114">Le résultat est une collection d’éléments.</span><span class="sxs-lookup"><span data-stu-id="22813-114">The result is a collection of elements.</span></span>  
   
- <span data-ttu-id="e0fca-113">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration test (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="e0fca-113">This example uses the following XML document: [Sample XML File: Test Configuration (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="22813-115">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration test (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="22813-115">This example uses the following XML document: [Sample XML File: Test Configuration (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement testCfg = XElement.Load("TestConfig.xml");  
@@ -54,7 +55,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="e0fca-114">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="e0fca-114">This example produces the following output:</span></span>  
+ <span data-ttu-id="22813-116">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="22813-116">This example produces the following output:</span></span>  
   
 ```output  
 Results are identical  

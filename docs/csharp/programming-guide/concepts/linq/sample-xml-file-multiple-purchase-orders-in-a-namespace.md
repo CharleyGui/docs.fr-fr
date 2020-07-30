@@ -1,18 +1,19 @@
 ---
 title: 'Exemple de fichier XML : Plusieurs commandes fournisseur dans un espace de noms2'
+description: Ce fichier XML est utilisé dans différents exemples de la documentation de LINQ to XML. Le fichier contient plusieurs commandes fournisseur. Le code XML se trouve dans un espace de noms.
 ms.date: 07/20/2015
 ms.assetid: 595024f2-374a-4615-acb5-64fa1600f377
-ms.openlocfilehash: f525f73854b52b8a4d70ff842c19d3bdda9c38d5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2dd16d2ebe7e8e05d52df79b7d725b5acf0e6c9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168185"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302527"
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a><span data-ttu-id="80e9a-102">Exemple de fichier XML : Plusieurs commandes fournisseur dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="80e9a-102">Sample XML File: Multiple Purchase Orders in a Namespace</span></span>
-<span data-ttu-id="80e9a-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="80e9a-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="80e9a-104">Ce fichier contient plusieurs commandes fournisseur.</span><span class="sxs-lookup"><span data-stu-id="80e9a-104">This file contains several purchase orders.</span></span> <span data-ttu-id="80e9a-105">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="80e9a-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a><span data-ttu-id="4195d-105">Exemple de fichier XML : Plusieurs commandes fournisseur dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="4195d-105">Sample XML File: Multiple Purchase Orders in a Namespace</span></span>
+<span data-ttu-id="4195d-106">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4195d-106">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="4195d-107">Ce fichier contient plusieurs commandes fournisseur.</span><span class="sxs-lookup"><span data-stu-id="4195d-107">This file contains several purchase orders.</span></span> <span data-ttu-id="4195d-108">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="4195d-108">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseordersinnamespacexml"></a><span data-ttu-id="80e9a-106">PurchaseOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="80e9a-106">PurchaseOrdersInNamespace.xml</span></span>  
+## <a name="purchaseordersinnamespacexml"></a><span data-ttu-id="4195d-109">PurchaseOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="4195d-109">PurchaseOrdersInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
