@@ -2,12 +2,12 @@
 title: Sérialisation (C#)
 description: La sérialisation convertit un objet en un flux d’octets pour stocker l’objet ou le transmettre à la mémoire, à une base de données ou à un fichier.
 ms.date: 01/02/2020
-ms.openlocfilehash: b2b3105887ad6f000fcba895452a483881ae5a09
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 29625648b19c97556c107997ef9ecd3f0f971cbf
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302774"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455748"
 ---
 # <a name="serialization-c"></a>Sérialisation (C#)
 
@@ -45,6 +45,8 @@ La sérialisation JSON sérialise les propriétés publiques d’un objet dans u
 L' <xref:System.Runtime.Serialization> espace de noms contient des classes pour la sérialisation et la désérialisation binaires et XML.
 
 La sérialisation binaire utilise l’encodage binaire pour produire une sérialisation compacte qui peut servir notamment aux flux réseau par socket ou stockage. Dans la sérialisation binaire, tous les membres, y compris en lecture seule, sont sérialisés et les performances sont améliorées.
+
+[!INCLUDE [binary-serialization-warning](~/includes/binary-serialization-warning.md)]
 
 La sérialisation XML sérialise les champs et les propriétés publics d’un objet ou les paramètres et valeurs renvoyés de méthodes, en un flux XML conforme à un document XSD (langage de définition de schéma XML) spécifique. La sérialisation XML permet d’obtenir des classes fortement typées avec des propriétés et des champs publics convertis au format XML. <xref:System.Xml.Serialization>contient des classes pour sérialiser et désérialiser du code XML. Vous pouvez appliquer des attributs à des classes et des membres de classes pour contrôler la manière dont <xref:System.Xml.Serialization.XmlSerializer> sérialise ou désérialise une instance de la classe.
 

@@ -2,13 +2,13 @@
 title: Utilisation de F# dans Azure
 description: 'Guide d’utilisation des services Azure avec F #'
 author: sylvanc
-ms.date: 09/22/2016
-ms.openlocfilehash: f074ac192f6dedbadf8132430cf27dc5865e6371
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.date: 07/29/2020
+ms.openlocfilehash: ebf94d724db2c503f27581bf1352bf4fa90f5e2a
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501818"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455710"
 ---
 # <a name="using-f-on-azure"></a>Utilisation de F# dans Azure
 
@@ -55,12 +55,14 @@ Vous pouvez aussi utiliser Stockage Azure conjointement avec Azure Functions en 
 * [Exemple d’API web Azure F#](https://github.com/fsprojects/azure-webapi-example)
 * [Hébergement de F# dans une application web sur Azure](https://github.com/isaacabraham/fsharp-demonstrator)
 
-## <a name="using-apache-spark-with-f-with-azure-hdinsight"></a>Utilisation d’Apache Spark avec F# avec Azure HDInsight
+## <a name="using-apache-spark-with-f-on-azure-hdinsight-or-azure-databricks"></a>Utilisation de Apache Spark avec F # sur Azure HDInsight ou Azure Databricks
 
-[Apache Spark pour Azure HDInsight](https://azure.microsoft.com/services/hdinsight/apache-spark/) est une infrastructure de traitement open source qui exécute des applications d’analytique des données à grande échelle. Azure vous permet de déployer Apache Spark de manière simple et rentable. Développez votre application Spark en F# à l’aide de [Mobius](https://github.com/Microsoft/Mobius), API .NET pour Spark.
+[Apache Spark pour Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) est une infrastructure de traitement open source qui exécute des applications d’analytique des données à grande échelle. [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) est une plateforme d’analytique basée sur Apache Spark et optimisée pour la plateforme de services cloud Microsoft Azure. Azure vous permet de déployer Apache Spark de manière simple et rentable. Développez votre application Spark en F # à l’aide [de .net pour Apache Spark](../../spark/what-is-apache-spark-dotnet.md), un ensemble de liaisons .net pour Apache Spark.
 
-* [Implémentation d’applications Spark en F# à l’aide de Mobius](https://github.com/Microsoft/Mobius/blob/master/notes/spark-fsharp-mobius.md)
-* [Exemples d’applications Spark F# à l’aide de Mobius](https://github.com/Microsoft/Mobius/tree/master/examples/fsharp)
+* [Exemples .NET pour Apache Spark F #](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.FSharp.Examples)
+* [Installer des blocs-notes Jupyter .NET interactive dans Azure HDInsight](../../spark/how-to-guides/hdinsight-notebook-installation.md)
+* [Envoyer des travaux de Apache Spark à Azure HDInsight](../../spark/how-to-guides/hdinsight-deploy-methods.md)
+* [Envoyer des travaux de Apache Spark à Azure Databricks](../../spark/how-to-guides/databricks-deploy-methods.md)
 
 ## <a name="using-azure-cosmos-db-with-f"></a>Utilisation de Azure Cosmos DB avec F\#
 

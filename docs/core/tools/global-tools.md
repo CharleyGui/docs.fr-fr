@@ -3,12 +3,12 @@ title: " Outils .NET Core"
 description: Comment installer, utiliser, mettre à jour et supprimer les outils .NET Core. Décrit les outils globaux, les outils de chemin d’accès d’outil et les outils locaux.
 author: KathleenDollard
 ms.date: 02/12/2020
-ms.openlocfilehash: 583dbb461543d1efb7328d55f6ecce4a99afcaca
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 75bdedcbc3ebe9c23477795415076d160ab9a642
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226606"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455727"
 ---
 # <a name="how-to-manage-net-core-tools"></a>Comment gérer les outils .NET Core
 
@@ -37,11 +37,11 @@ Un outil .NET Core est un package NuGet spécial qui contient une application co
 
 Actuellement, .NET Core ne dispose pas d’une fonctionnalité de recherche d’outils. Voici quelques méthodes pour trouver des outils :
 
+* Recherchez le site Web [NuGet](https://www.nuget.org) à l’aide du filtre de type de package « outil .net ». Pour plus d’informations, consultez [Recherche et sélection des packages](/nuget/consume-packages/finding-and-choosing-packages).
 * Consultez la liste des outils dans le référentiel GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
 * Utilisez [ToolGet](https://www.toolget.net/) pour rechercher des outils .net.
 * Consultez le code source des outils créés par l’équipe ASP.NET Core dans le [répertoire Tools du référentiel GitHub dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
 * Découvrez les outils de diagnostics dans les [outils de diagnostic dotnet .net Core](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
-* Recherchez le site Web [NuGet](https://www.nuget.org) . Toutefois, le site NuGet ne dispose pas encore d’une fonctionnalité qui vous permet de rechercher uniquement les packages d’outils.
 
 ## <a name="check-the-author-and-statistics"></a>Vérifier l’auteur et les statistiques
 
@@ -66,7 +66,7 @@ Tool 'dotnetsay' (version '2.1.4') was successfully installed.
 
 L’emplacement par défaut des binaires d’un outil dépend du système d’exploitation :
 
-| Système d’exploitation          | Path                          |
+| Système d''exploitation          | Chemin d’accès                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |

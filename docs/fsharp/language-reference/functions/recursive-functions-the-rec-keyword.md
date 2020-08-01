@@ -2,12 +2,12 @@
 title: 'Fonctions récursives : mot clé rec'
 description: "Découvrez comment le mot clé F # 'Rec’est utilisé avec le mot clé’Let’pour définir une fonction récursive."
 ms.date: 05/16/2016
-ms.openlocfilehash: c9a3b7dc27f4ed86948a08b7783d7e8e8b60e57f
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: c2374f90b4585327c6f5208a3d6bca75a23d0cbb
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426974"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455655"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Fonctions récursives : mot clé rec
 
@@ -43,7 +43,7 @@ Les méthodes sont implicitement récursives dans le type ; Il n’est pas néc
 
 ## <a name="tail-recursion"></a>Récurrence de la fin
 
-Pour certaines fonctions récursives, il est nécessaire de refactoriser une définition plus « pure » vers une définition qui est une [fin récursive](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion). Cela empêche les recalculs inutiles. Par exemple, le générateur de nombres Fibonacci précédent peut être réécrit comme suit :
+Pour certaines fonctions récursives, il est nécessaire de refactoriser une définition plus « pure » vers une définition qui est une [fin récursive](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion). Cela évite les recalculs inutiles. Par exemple, le générateur de nombres Fibonacci précédent peut être réécrit comme suit :
 
 ```fsharp
 let fib n =

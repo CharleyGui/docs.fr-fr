@@ -10,16 +10,16 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: c8b4b9a79577776bc049ef77e222d63374178708
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4f0cc9b88947d60638057ca83adb7f2e141c5d14
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447171"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455735"
 ---
 # <a name="implement-a-dispose-method"></a>Implémenter une méthode Dispose
 
-L’implémentation de la <xref:System.IDisposable.Dispose%2A> méthode est principalement destinée à libérer des ressources non managées utilisées par votre code. Lors de l’utilisation de membres d’instance qui sont des <xref:System.IDisposable> implémentations, il est courant d’appeler en cascade <xref:System.IDisposable.Dispose%2A> . Il existe des raisons supplémentaires pour l’implémentation de <xref:System.IDisposable.Dispose%2A> , telles que l’annulation d’une opération précédemment effectuée. Par exemple, la libération de la mémoire qui a été allouée, la suppression d’un élément d’une collection qui a été ajoutée, le signalement de la libération d’un verrou acquis, et ainsi de suite.
+L’implémentation de la <xref:System.IDisposable.Dispose%2A> méthode est principalement destinée à libérer des ressources non managées. Lors de l’utilisation de membres d’instance qui sont des <xref:System.IDisposable> implémentations, il est courant d’appeler en cascade <xref:System.IDisposable.Dispose%2A> . Il existe des raisons supplémentaires d’implémenter <xref:System.IDisposable.Dispose%2A> , par exemple, pour libérer de la mémoire qui a été allouée, supprimer un élément qui a été ajouté à une collection ou signaler la libération d’un verrou acquis.
 
 Le [garbage collector .net](index.md) n’alloue pas ou ne libère pas de mémoire non managée. Le modèle de suppression d’un objet, appelé modèle de suppression, impose un ordre sur la durée de vie d’un objet. Le modèle de suppression est utilisé pour les objets qui implémentent l' <xref:System.IDisposable> interface et est courant lors de l’interaction avec les handles de fichiers et de canaux, les handles de Registre, les handles d’attente ou les pointeurs vers des blocs de mémoire non managée. Cela est dû au fait que le garbage collector ne peut pas récupérer les objets non managés.
 
