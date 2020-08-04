@@ -1,5 +1,6 @@
 ---
 title: Mgmtclassgen.exe (Management Strongly Typed Class Generator)
+description: Comprendre Mgmtclassgen.exe, le générateur de classes fortement typées de gestion. Cet outil vous permet de générer rapidement une classe managée à liaison anticipée pour une classe WMI.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,17 +12,17 @@ helpviewer_keywords:
 - Mgmtclassgen.exe
 - early-bound managed classes
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
-ms.openlocfilehash: d6de28694a1fdcd22cc2baa8cff66387c601414c
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 89facd4369dad6168e46febd3e34d7f7c235faf0
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201860"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517293"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (Management Strongly Typed Class Generator)
 L'outil Management Strongly Typed Class Generator vous permet de générer rapidement une classe managée à liaison anticipée pour une classe WMI (Windows Management Instrumentation) spécifiée. La classe générée simplifie le code à écrire pour accéder à une instance de la classe WMI.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```console  
 mgmtclassgen
@@ -56,7 +57,7 @@ WMIClass [options]
 |CIM_UINT8|**Poids**|  
 |CIM_SINT16|**Int16**|  
 |CIM_UINT16|**UInt16**|  
-|CIM_SINT32|**Entier**|  
+|CIM_SINT32|**Int32**|  
 |SIM_UINT32|**UInt32**|  
 |CIM_SINT64|**Int64**|  
 |CIM_UINT64|**UInt64**|  
@@ -68,7 +69,7 @@ WMIClass [options]
 |CIM_REFERENCE|**ManagementPath**|  
 |CIM_CHAR16|**Char**|  
 |CIM_OBJECT|**ManagementBaseObject**|  
-|CIM_IUNKNOWN|**Objet**|  
+|CIM_IUNKNOWN|**Object**|  
 |CIM_ARRAY|Tableau des objets mentionnés ci-dessus|  
   
  Notez les comportements suivants lorsque vous générez une classe WMI :  

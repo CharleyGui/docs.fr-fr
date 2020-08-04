@@ -1,5 +1,6 @@
 ---
 title: Storeadm.exe (outil Isolated Storage)
+description: En savoir plus sur Storeadm.exe, l’outil de stockage isolé. Cet outil répertorie ou supprime tous les magasins existants pour l’utilisateur actuel.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Storeadm.exe
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - stores, current user
 - removing stores
 ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
-ms.openlocfilehash: 46e846eaf92835fb2a9130b85ed20749934ca5a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 153fc2b4b5a955fd5ed768d1492f053595363e6e
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75715713"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517007"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (outil Isolated Storage)
 L'outil Isolated Storage (Stockage isolé) répertorie ou supprime tous les magasins existants de l'utilisateur en cours.  
@@ -32,15 +33,15 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
   
 |Option|Description|  
 |------------|-----------------|  
-|**/h**[**elp**]|Affiche la syntaxe et les options de commande de l'outil.|  
-|**/liste**|Affiche tous les magasins existants de l'utilisateur en cours. Sont inclus les magasins de toutes les applications ou de tous les assemblys exécutés par cet utilisateur.|  
+|**/h**[**IDE**]|Affiche la syntaxe et les options de commande de l'outil.|  
+|**/List**|Affiche tous les magasins existants de l'utilisateur en cours. Sont inclus les magasins de toutes les applications ou de tous les assemblys exécutés par cet utilisateur.|  
 |**/machine**|Sélectionne le magasin de l'ordinateur. Utilisez cette option avec l’option **/list** ou **/remove** pour spécifier que l’action doit s’appliquer au magasin de l’ordinateur.<br /><br /> Nouveau dans le .NET Framework 2.0|  
-|**/calme**|Spécifie le mode silencieux ; supprime la sortie d'informations pour n'afficher que les messages d'erreur.|  
-|**/supprimer**|Supprime définitivement tous les magasins existants de l'utilisateur en cours.|  
+|**/quiet**|Spécifie le mode silencieux ; supprime la sortie d'informations pour n'afficher que les messages d'erreur.|  
+|**/Remove**|Supprime définitivement tous les magasins existants de l'utilisateur en cours.|  
 |**/roaming**|Sélectionne le magasin itinérant. Utilisez cette option avec l’option **/list** ou **/remove** pour spécifier que cette action doit s’appliquer au magasin itinérant.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Lorsque vous exécutez Storeadm.exe à partir de la ligne de commande sans spécifier d'options, la syntaxe et les options de l'outil s'affichent.  
   
  Les options **/list** et **/remove** sont généralement utilisées l’une après l’autre ; si deux options ou plus sont spécifiées, elles sont alors exécutées dans leur ordre d’apparition sur la ligne de commande.  
@@ -60,6 +61,6 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](index.md)
+- [outils](index.md)
 - [Stockage isolé](../../standard/io/isolated-storage.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

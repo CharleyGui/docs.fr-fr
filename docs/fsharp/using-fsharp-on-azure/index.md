@@ -3,12 +3,12 @@ title: Utilisation de F# dans Azure
 description: 'Guide d’utilisation des services Azure avec F #'
 author: sylvanc
 ms.date: 07/29/2020
-ms.openlocfilehash: ebf94d724db2c503f27581bf1352bf4fa90f5e2a
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 24ef3fd14a4d0173935fac3e67aadf86110fa6d8
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455710"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517371"
 ---
 # <a name="using-f-on-azure"></a>Utilisation de F# dans Azure
 
@@ -113,7 +113,7 @@ Vous pouvez implémenter des minuteries en F# et les héberger sur Azure par le
 
 Vous pouvez déployer et gérer des machines virtuelles Azure par programmation à partir de scripts F# à l’aide de packages et d’API Microsoft.Azure.Management. Par exemple, consultez [Bien démarrer avec les bibliothèques de gestion pour .NET](https://msdn.microsoft.com/library/dn722415.aspx) et [Utilisation d’Azure Resource Manager](/azure/azure-resource-manager/resource-manager-deployment-model).
 
-De même, vous pouvez déployer et gérer d’autres ressources Azure à partir de scripts F# à l’aide des mêmes composants. Par exemple, vous pouvez créer des comptes de stockage, déployer des services Cloud Azure, créer des instances de Azure Cosmos DB et gérer des hubs Azure notification par programmation à partir de scripts F #.
+De même, vous pouvez déployer et gérer d’autres ressources Azure à partir de scripts F# à l’aide des mêmes composants. Par exemple, vous pouvez créer des comptes de stockage, déployer des services Cloud Azure, créer des instances de Azure Cosmos DB et gérer des Notification Hubs Azure par programmation à partir de scripts F #.
 
 Il est généralement inutile d’utiliser des scripts F# pour déployer et gérer des ressources. Par exemple, les ressources Azure peuvent également être déployées directement à partir des descriptions de modèle JSON, qui peuvent être paramétrables. Consultez [Modèles Azure Resource Manager](/azure/azure-resource-manager/resource-manager-template-best-practices), en particulier les exemples fournis tels que les [modèles de démarrage rapide Azure](https://azure.microsoft.com/resources/templates/).
 

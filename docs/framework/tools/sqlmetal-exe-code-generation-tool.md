@@ -1,5 +1,6 @@
 ---
 title: SqlMetal.exe (outil de génération de code)
+description: Comprenez SqlMetal.exe, l’outil de génération de code. Utilisez l’outil pour générer le code et le mappage pour le composant LINQ to SQL de .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - SQLMetal [LINQ to SQL]
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: d5b4c2b59b585b3d3a3584ef9055e70c9d998e85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84cad85a7a9fc4b420b57543b7f258607be4ab52
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71044076"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517046"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (outil de génération de code)
 L’outil en ligne de commande SqlMetal génère le code et le mappage du composant [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] du .NET Framework. En appliquant les options qui apparaissent ultérieurement dans cette rubrique, vous pouvez ordonner à SqlMetal d'exécuter plusieurs actions différentes, dont les suivantes :  
@@ -32,7 +33,7 @@ L’outil en ligne de commande SqlMetal génère le code et le mappage du compos
   
  Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md). À l’invite de commandes, tapez ce qui suit :  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```console  
 sqlmetal [options] [<input file>]  
@@ -45,19 +46,19 @@ sqlmetal [options] [<input file>]
   
 |Option|Description|  
 |------------|-----------------|  
-|**/serveur:** * \<nom>*|Spécifie le nom du serveur de base de données.|  
-|**/base de données:** * \<nom>*|Spécifie le catalogue de base de données sur le serveur.|  
-|**/utilisateur:** * \<nom>*|Spécifie l’identifiant d’utilisateur logon. Valeur par défaut : Utilisez l’authentification de Windows.|  
-|**/mot de passe:** * \<mot de passe>*|Spécifie le mot de passe d'ouverture de session. Valeur par défaut : utilisez l'authentification Windows.|  
-|**/conn:** * \<chaîne de connexion>*|Spécifie la chaîne de connexion de base de données. Ne peut pas être utilisée avec les options **/server**, **/database**, **/user**ou **/password** .<br /><br /> N'inclut pas le nom de fichier dans la chaîne de connexion. Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée. Par exemple, la ligne suivante spécifie "c:\northwnd.mdf" comme fichier d’entrée : **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.|  
-|**/temps mort:** * \<secondes>*|Spécifie la valeur du délai d'attente lorsque SqlMetal accède à la base de données. Valeur par défaut : 0 (à savoir, aucune limite de temps).|  
+|**/Server :***\<name>*|Spécifie le nom du serveur de base de données.|  
+|**/Database :***\<name>*|Spécifie le catalogue de base de données sur le serveur.|  
+|**/User :***\<name>*|Spécifie l’ID d’utilisateur d’ouverture de session. Valeur par défaut : utilisez l’authentification Windows.|  
+|**/Password :***\<password>*|Spécifie le mot de passe d'ouverture de session. Valeur par défaut : utilisez l'authentification Windows.|  
+|**/conn :***\<connection string>*|Spécifie la chaîne de connexion de base de données. Ne peut pas être utilisée avec les options **/server**, **/database**, **/user**ou **/password** .<br /><br /> N'inclut pas le nom de fichier dans la chaîne de connexion. Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée. Par exemple, la ligne suivante spécifie "c:\northwnd.mdf" comme fichier d’entrée : **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.|  
+|**/timeout :***\<seconds>*|Spécifie la valeur du délai d'attente lorsque SqlMetal accède à la base de données. Valeur par défaut : 0 (à savoir, aucune limite de temps).|  
   
  **Options d’extraction**  
   
 |Option|Description|  
 |------------|-----------------|  
-|**/vues**|Extrait des vues de base de données.|  
-|**/fonctions**|Extrait des fonctions de base de données.|  
+|**/views**|Extrait des vues de base de données.|  
+|**/functions**|Extrait des fonctions de base de données.|  
 |**/sprocs**|Extrait des procédures stockées.|  
   
  **Options de sortie**  
@@ -72,20 +73,20 @@ sqlmetal [options] [<input file>]
   
 |Option|Description|  
 |------------|-----------------|  
-|**/langue:** * \<langue>*|Spécifie le langage du code source.<br /><br /> Langage * \< *valide>: vb, csharp.<br /><br /> Valeur par défaut : Dérivé de l’extension du nom du fichier de code.|  
-|**/namespace:** * \<nom>*|Spécifie l'espace de noms du code généré. Valeur par défaut : Aucun espace de noms.|  
-|**/contexte :** * \<type>*|Spécifie le nom de la classe du contexte de données. Valeur par défaut : Dérivé du nom de la base de données.|  
-|**/base d’entité :** * \<type>*|Spécifie la classe de base des classes d'entité du code généré. Valeur par défaut : Les entités n'ont pas de classe de base.|  
+|**/Language :***\<language>*|Spécifie le langage du code source.<br /><br /> Valide *\<language>* : VB, CSharp.<br /><br /> Valeur par défaut : Dérivé de l’extension du nom du fichier de code.|  
+|**/Namespace :***\<name>*|Spécifie l'espace de noms du code généré. Valeur par défaut : Aucun espace de noms.|  
+|**/Context :***\<type>*|Spécifie le nom de la classe du contexte de données. Valeur par défaut : Dérivé du nom de la base de données.|  
+|**/EntityBase :***\<type>*|Spécifie la classe de base des classes d'entité du code généré. Valeur par défaut : Les entités n'ont pas de classe de base.|  
 |**/pluralize**|Pluralise ou singularise automatiquement des noms de membre et de classe.<br /><br /> Cette option est disponible uniquement dans la version Anglais américain.|  
-|**/sérialisation:** * \<option>*|Génère des classes sérialisables.<br /><br /> Option * \< *valable>: Aucun, Unidirectionnel. Valeur par défaut : Aucun.<br /><br /> Pour plus d’informations, consultez [Sérialisation](../data/adonet/sql/linq/serialization.md).|  
+|**/Serialization :***\<option>*|Génère des classes sérialisables.<br /><br /> Valide *\<option>* : aucun, unidirectionnel. Valeur par défaut : Aucun.<br /><br /> Pour plus d’informations, consultez [Sérialisation](../data/adonet/sql/linq/serialization.md).|  
   
  **Fichier d’entrée**  
   
 |Option|Description|  
 |------------|-----------------|  
-|**\<>de fichiers d’entrée**|Spécifie un fichier SQL Server Express .mdf, un fichier SQL Server Compact 3.5 .sdf, ou un fichier intermédiaire .dbml.|  
+|**\<input file>**|Spécifie un fichier SQL Server Express .mdf, un fichier SQL Server Compact 3.5 .sdf, ou un fichier intermédiaire .dbml.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  La fonctionnalité SqlMetal implique en fait deux étapes :  
   
 - Extraction des métadonnées de la base de données dans un fichier .dbml.  
@@ -134,6 +135,6 @@ sqlmetal [options] [<input file>]
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour générer le modèle objet en Visual Basic ou C#](../data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+- [Procédure : Générer le modèle objet en Visual Basic ou en C#](../data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
 - [Génération de code dans LINQ to SQL](../data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
 - [Mappage externe](../data/adonet/sql/linq/external-mapping.md)

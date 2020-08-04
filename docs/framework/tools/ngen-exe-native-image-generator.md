@@ -1,5 +1,6 @@
 ---
 title: Ngen.exe (Native Image Generator)
+description: Passez en revue Ngen.exe, le générateur d’images natives. Améliorez les performances des applications managées en créant des images natives et en les installant dans le cache d’images natives local.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,12 +19,12 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-ms.openlocfilehash: 297bc3f9182e76523eda4d4be3112f4d1d7e3fee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ae86aed773a9a13f102b1ad111cac5a3ee563508
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75741795"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517267"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (Native Image Generator)
 
@@ -61,7 +62,7 @@ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’
 
 À l'invite de commandes, tapez :
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```console
 ngen action [options]
@@ -78,7 +79,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |Action|Description|
 |------------|-----------------|
 |`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]|Générer des images natives pour un assembly et ses dépendances et installer les images dans le cache des images natives.<br /><br /> Si `/queue` est spécifié, l'action est mise en file d'attente pour le service d'images natives. La priorité par défaut est 3. Consultez le tableau [Niveaux de priorité](#PriorityTable).|
-|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Supprimer les images natives d'un assembly et ses dépendances du cache des images natives.<br /><br /> Pour désinstaller une seule image et ses dépendances, utilisez les mêmes arguments de ligne de commande que ceux utilisés pour installer l’image. **Note:**  À partir du cadre .NET `uninstall` 4, l’action n’est plus prise en charge.|
+|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Supprimer les images natives d'un assembly et ses dépendances du cache des images natives.<br /><br /> Pour désinstaller une seule image et ses dépendances, utilisez les mêmes arguments de ligne de commande que ceux utilisés pour installer l’image. **Remarque :**  À partir du .NET Framework 4, l’action `uninstall` * n’est plus prise en charge.|
 |`update` [`/queue`]|Mettre à jour des images natives qui sont devenues non valides.<br /><br /> Si `/queue` est spécifié, les mises à jour sont mises en file d'attente pour le service d'images natives. Les mises à jour sont toujours planifiées à la priorité 3, de sorte qu'elles s'exécutent lorsque l'ordinateur est inactif.|
 |`display` [`assemblyName` &#124; `assemblyPath`]|Afficher l'état des images natives pour un assembly et ses dépendances.<br /><br /> Si aucun argument n’est fourni, tout dans le cache des images natives est affiché.|
 |`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> -ou-<br /><br /> `eqi` [1&#124;2&#124;3]|Exécuter les travaux de compilation en attente.<br /><br /> Si une priorité est spécifiée, les travaux de compilation présentant une priorité supérieure ou égale sont exécutés. Si aucune priorité n'est spécifiée, tous les travaux de compilation en attente sont exécutés.|
@@ -133,7 +134,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |`/verbose`|Afficher des informations détaillées sur le débogage. **Remarque :** En raison des limitations du système d'exploitation, cette option n'affiche pas autant d'informations supplémentaires sur Windows 98 et Windows Millennium.|
 |`/help`, `/?`|Afficher la syntaxe de commande et les options de la version actuelle.|
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 Pour exécuter Ngen.exe, vous devez disposer de privilèges d'administrateur.
 
@@ -170,7 +171,7 @@ Dans cette section Notes :
 
   - [Amélioration de l'utilisation de la mémoire](#Memory)
 
-  - [Démarrage d’applications plus rapide](#Startup)
+  - [Démarrage plus rapide de l’application](#Startup)
 
   - [Récapitulatif des considérations relatives à l'utilisation](#UsageSummary)
 
@@ -188,7 +189,7 @@ Dans cette section Notes :
 
   - [Images non valides](#InvalidImages)
 
-- [Résolution des problèmes](#Troubleshooting)
+- [Dépannage](#Troubleshooting)
 
   - [Visionneuse du journal de liaison d’assembly](#Fusion)
 
@@ -394,7 +395,7 @@ Ngen.exe enregistre ces informations lorsqu'il génère une image native. Lorsqu
 
 <a name="Troubleshooting"></a>
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Les rubriques de résolution de problèmes suivantes vous permettent d’identifier les images natives qui sont utilisées par votre application et celles qui ne le peuvent pas, de déterminer quand le compilateur JIT commence à compiler une méthode, et montrent comment désactiver la compilation d’images natives des méthodes spécifiées.
 
@@ -566,8 +567,8 @@ La tâche d’image native est enregistrée une seule fois pour chaque architect
 
 |Nom de la tâche|ordinateur 32 bits|Ordinateur 64 bits|
 |---------------|----------------------|----------------------|
-|.NET Framework NGEN v4.0.30319|Oui|Oui|
-|NET Framework NGEN v4.0.30319 64|Non |Oui|
+|.NET Framework NGEN v4.0.30319|Oui|Yes|
+|NET Framework NGEN v4.0.30319 64|Non|Oui|
 
 La tâche d’image native est disponible dans le .NET Framework 4.5 et versions ultérieures, dans le cadre d’une exécution sur Windows 8 ou version ultérieure. Dans les versions antérieures de Windows, le .NET Framework utilise le [Service d’images natives](#native-image-service).
 
@@ -637,7 +638,7 @@ Dans le .NET Framework version 2.0, la seule interaction avec le service d'imag
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](index.md)
-- [Processus d'exécution managée](../../standard/managed-execution-process.md)
+- [outils](index.md)
+- [Processus d’exécution managée](../../standard/managed-execution-process.md)
 - [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

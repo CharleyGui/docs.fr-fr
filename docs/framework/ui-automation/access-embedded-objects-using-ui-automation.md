@@ -1,5 +1,6 @@
 ---
 title: Accéder à des objets incorporés à l'aide d'UI Automation
+description: Découvrez comment accéder aux objets incorporés à l’aide d’UI Automation au sein du contenu de contrôle de texte. Les objets incorporés sont considérés comme des enfants du fournisseur de texte UI Automation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - accessing embedded objects
 - UI Automation, accessing embedded objects
 ms.assetid: a5b513ec-7fa6-4460-869f-c18ff04f7cf2
-ms.openlocfilehash: 75c63360eab2cde95698bdaded5c5249a3ca89fd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 031d9c90318eec59ad2b77d611e0ed0d5a3ae719
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447270"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87516968"
 ---
 # <a name="access-embedded-objects-using-ui-automation"></a>Accéder à des objets incorporés à l'aide d'UI Automation
 > [!NOTE]
@@ -27,7 +28,7 @@ ms.locfileid: "74447270"
   
  Les objets incorporés sont considérés comme des enfants du fournisseur de texte [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Cela leur permet d’être exposés par la même arborescence UI Automation que tous les autres éléments d’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] . La fonctionnalité, à son tour, est exposée par les modèles de contrôle généralement demandés par le type de contrôle des objets incorporés (par exemple, étant donné que les liens hypertexte sont textuels, ils prennent en charge <xref:System.Windows.Automation.TextPattern>).  
   
- ![Objets incorporés dans un conteneur de texte.](./media/uia-textpattern-embeddedobjects.PNG "UIA_TextPattern_EmbeddedObjects")  
+ ![Objets imbriqués dans un conteneur de texte.](./media/uia-textpattern-embeddedobjects.PNG "UIA_TextPattern_EmbeddedObjects")  
 Exemple de document avec du contenu textuel (« Saviez-vous ? » ...) et deux objets incorporés (une image de baleine et un lien hypertexte de texte), utilisés comme cible pour les exemples de code.  
   
 ## <a name="example"></a>Exemple  
@@ -54,8 +55,8 @@ Exemple de document avec du contenu textuel (« Saviez-vous ? » ...) et deux
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de TextPattern d’UI Automation](ui-automation-textpattern-overview.md)
-- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
-- [Ajouter du contenu à une zone de texte à l’aide d’UI Automation](add-content-to-a-text-box-using-ui-automation.md)
-- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](find-and-highlight-text-using-ui-automation.md)
+- [Vue d'ensemble de TextPattern d'UI Automation](ui-automation-textpattern-overview.md)
+- [Vue d'ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [Ajouter du contenu à une zone de texte à l'aide d'UI Automation](add-content-to-a-text-box-using-ui-automation.md)
+- [Rechercher et mettre un texte en surbrillance à l'aide d'UI Automation](find-and-highlight-text-using-ui-automation.md)
