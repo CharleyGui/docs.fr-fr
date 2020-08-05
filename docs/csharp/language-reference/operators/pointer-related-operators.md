@@ -20,35 +20,35 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 7eb6666d10c44c342f69c7cfc763feb1b7b98c9d
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 05bc6ce00adc8c874b88ccc8da5afbcfc702585b
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738600"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555288"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Opérateurs associés au pointeur (référence C#)
 
 Vous pouvez utiliser les opérateurs suivants avec les pointeurs :
 
-- Opérateur non intentionnel [ `&` (adresse)](#address-of-operator-) : obtenir l’adresse d’une variable
-- Opérateur unary [ `*` (indirection pointeur)](#pointer-indirection-operator-) : obtenir la variable pointue par un pointeur
-- Les [ `->` opérateurs (d’accès des membres)](#pointer-member-access-operator--) et [ `[]` (d’accès aux éléments)](#pointer-element-access-operator-)
-- Opérateurs arithmétiques [ `+`, `-` `++`, , et`--`](#pointer-arithmetic-operators)
-- Les [ `==`opérateurs `!=` `<`de `>` `<=`comparaison , , , , et`>=`](#pointer-comparison-operators)
+- Opérateur unaire [ `&` (adresse-of)](#address-of-operator-) : pour obtenir l’adresse d’une variable
+- Opérateur unaire [ `*` (pointeur d’indirection)](#pointer-indirection-operator-) : pour obtenir la variable pointée par un pointeur
+- Opérateurs [ `->` (accès aux membres)](#pointer-member-access-operator--) et [ `[]` (accès à l’élément)](#pointer-element-access-operator-)
+- Opérateurs arithmétiques [ `+` ,, `-` `++` et `--` ](#pointer-arithmetic-operators)
+- Opérateurs de comparaison [ `==` ,,,, `!=` `<` `>` `<=` et `>=` ](#pointer-comparison-operators)
 
 Pour plus d’informations sur les types de pointeurs, consultez [Types pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md).
 
 > [!NOTE]
-> Toutes les opérations impliquant des pointeurs nécessitent un contexte [unsafe](../keywords/unsafe.md). Le code qui contient des blocs [`-unsafe`](../compiler-options/unsafe-compiler-option.md) dangereux doit être compilé avec l’option compilateur.
+> Toutes les opérations impliquant des pointeurs nécessitent un contexte [unsafe](../keywords/unsafe.md). Le code qui contient des blocs unsafe doit être compilé avec l' [`-unsafe`](../compiler-options/unsafe-compiler-option.md) option de compilateur.
 
-## <a name="address-of-operator-amp"></a><a name="address-of-operator-"></a>Adresse de l’opérateur&amp;
+## <a name="address-of-operator-amp"></a><a name="address-of-operator-"></a>Opérateur d’adresse&amp;
 
 L’opérateur unaire `&` retourne l’adresse de son opérande :
 
 [!code-csharp[address of local](snippets/PointerOperators.cs#AddressOf)]
 
-L’opérande de l’opérateur `&` doit être une variable fixe. Les variables *fixes* se trouvent dans des emplacements de stockage qui ne sont pas affectés par le [récupérateur de mémoire](../../../standard/garbage-collection/index.md). Dans l’exemple précédent, la variable locale `number` est une variable fixe, car elle se trouve dans la pile. Les variables qui se trouvent dans des emplacements de stockage pouvant être affectés par le récupérateur de mémoire (par exemple, en étant déplacés) sont appelées variables *déplaçables*. Les champs d’objet et les éléments de tableau sont des exemples de variables déplaçables. Vous pouvez obtenir l’adresse d’une variable mobile si vous "fixez", ou "pin", il avec une [ `fixed` déclaration](../keywords/fixed-statement.md). L’adresse obtenue n’est valable `fixed` qu’à l’intérieur du bloc d’une déclaration. L’exemple suivant montre `fixed` comment utiliser `&` une déclaration et l’opérateur :
+L’opérande de l’opérateur `&` doit être une variable fixe. Les variables *fixes* se trouvent dans des emplacements de stockage qui ne sont pas affectés par le [récupérateur de mémoire](../../../standard/garbage-collection/index.md). Dans l’exemple précédent, la variable locale `number` est une variable fixe, car elle se trouve dans la pile. Les variables qui se trouvent dans des emplacements de stockage pouvant être affectés par le récupérateur de mémoire (par exemple, en étant déplacés) sont appelées variables *déplaçables*. Les champs d’objet et les éléments de tableau sont des exemples de variables déplaçables. Vous pouvez obtenir l’adresse d’une variable déplaçable si vous « corrigez », ou « épinglez », avec une [ `fixed` instruction](../keywords/fixed-statement.md). L’adresse obtenue est valide uniquement à l’intérieur du bloc d’une `fixed` instruction. L’exemple suivant montre comment utiliser une `fixed` instruction et l' `&` opérateur :
 
 [!code-csharp[address of fixed](snippets/PointerOperators.cs#AddressOfFixed)]
 
@@ -70,7 +70,7 @@ L’opérateur binaire `*` calcule le [produit](arithmetic-operators.md#multipli
 
 ## <a name="pointer-member-access-operator--"></a>Opérateur d’accès aux membres de pointeur ->
 
-L’opérateur `->` associe l’[indirection de pointeur](#pointer-indirection-operator-) à l’[accès aux membres](member-access-operators.md#member-access-expression-). Autrement dit, `x` si est `T*` un `y` pointeur de `T`type et est un membre accessible de type , une expression de la forme
+L’opérateur `->` associe l’[indirection de pointeur](#pointer-indirection-operator-) à l’[accès aux membres](member-access-operators.md#member-access-expression-). Autrement dit, si `x` est un pointeur de type `T*` et `y` est un membre accessible de type `T` , une expression de la forme
 
 ```csharp
 x->y
@@ -96,14 +96,14 @@ L’exemple suivant montre comment accéder à des éléments tableau avec un po
 
 [!code-csharp[pointer element access](snippets/PointerOperators.cs#ElementAccess)]
 
-Dans l’exemple [ `stackalloc` ](stackalloc.md) précédent, une expression alloue un bloc de mémoire sur la pile.
+Dans l’exemple précédent, une [ `stackalloc` expression](stackalloc.md) alloue un bloc de mémoire sur la pile.
 
 > [!NOTE]
 > L’opérateur d’accès aux éléments de pointeur ne recherche pas les erreurs de dépassement des limites.
 
 Vous ne pouvez pas utiliser `[]` pour l’accès aux éléments de pointeur avec une expression de type `void*`.
 
-Vous pouvez également `[]` utiliser l’opérateur pour l’accès [à l’élément de tableau ou à l’indexeur.](member-access-operators.md#indexer-operator-)
+Vous pouvez également utiliser l' `[]` opérateur pour l’accès à un [élément ou un indexeur de tableau](member-access-operators.md#indexer-operator-).
 
 ## <a name="pointer-arithmetic-operators"></a>Opérateurs arithmétiques de pointeur
 
@@ -124,7 +124,7 @@ Pour un pointeur `p` de type `T*` et une expression `n` d’un type implicitemen
 - Les expressions `p + n` et `n + p` produisent un pointeur de type `T*` qui est obtenu en ajoutant `n * sizeof(T)` à l’adresse fournie par `p`.
 - L’expression `p - n` produit un pointeur de type `T*` qui est obtenu en soustrayant `n * sizeof(T)` de l’adresse fournie par `p`.
 
-[ `sizeof` L’opérateur](sizeof.md) obtient la taille d’un type d’octets.
+L' [ `sizeof` opérateur](sizeof.md) obtient la taille d’un type en octets.
 
 L’exemple suivant illustre l’utilisation de l’opérateur `+` avec un pointeur :
 
@@ -166,7 +166,7 @@ La liste suivante présente les opérateurs relatifs aux pointeurs par ordre de 
 
 Utilisez des parenthèses (`()`) pour modifier l’ordre d’évaluation imposé par la précédence des opérateurs.
 
-Pour la liste complète des opérateurs C’commandés par niveau de préséance, voir la section [De préséance de l’opérateur](index.md#operator-precedence) de [l’article des opérateurs C.](index.md)
+Pour obtenir la liste complète des opérateurs C# classés par niveau de priorité, consultez la section [priorité d’opérateur](index.md#operator-precedence) de l’article [opérateurs c#](index.md) .
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
@@ -183,14 +183,14 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Accès aux éléments de pointeur](~/_csharplang/spec/unsafe-code.md#pointer-element-access)
 - [Arithmétique des pointeurs](~/_csharplang/spec/unsafe-code.md#pointer-arithmetic)
 - [Incrémentation et décrémentation des pointeurs](~/_csharplang/spec/unsafe-code.md#pointer-increment-and-decrement)
-- [Comparaison de pointeur](~/_csharplang/spec/unsafe-code.md#pointer-comparison)
+- [Comparaison de pointeurs](~/_csharplang/spec/unsafe-code.md#pointer-comparison)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [mot clé unsafe](../keywords/unsafe.md)
-- [mot-clé fixe](../keywords/fixed-statement.md)
+- [mot clé Fixed](../keywords/fixed-statement.md)
 - [stackalloc](stackalloc.md)
-- [Opérateur sizeof](sizeof.md)
+- [sizeof, opérateur](sizeof.md)

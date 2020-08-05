@@ -12,16 +12,16 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: 2017aade92e8d7ad2af7101a107122fa8d7b9e27
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0475e1be74af0b367785443224cd2e737d2f7301
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847649"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555591"
 ---
 # <a name="--and---operators-c-reference"></a>Opérateurs - et -=, opérateurs - (référence C#)
 
-Les `-` `-=` opérateurs et les opérateurs sont soutenus par les types [numériques intégrés](../builtin-types/integral-numeric-types.md) et [flottants](../builtin-types/floating-point-numeric-types.md) et les types [de délégués.](../builtin-types/reference-types.md#the-delegate-type)
+Les `-` `-=` opérateurs et sont pris en charge par les types numériques [intégraux](../builtin-types/integral-numeric-types.md) et à [virgule flottante](../builtin-types/floating-point-numeric-types.md) intégrés et les types [délégués](../builtin-types/reference-types.md#the-delegate-type) .
 
 Pour plus d’informations sur l’opérateur arithmétique `-`, consultez les sections [Opérateurs plus et moins unaires](arithmetic-operators.md#unary-plus-and-minus-operators) et [Opérateur de soustraction -](arithmetic-operators.md#subtraction-operator--) de l’article [Opérateurs arithmétiques](arithmetic-operators.md).
 
@@ -43,7 +43,7 @@ Pour les opérandes du même type [délégué](../builtin-types/reference-types.
 
   [!code-csharp-interactive[delegate removal and null](snippets/SubtractionOperator.cs#DelegateRemovalAndNull)]
 
-Pour combiner les délégués, utilisez [ `+` l’opérateur](addition-operator.md#delegate-combination).
+Pour combiner des délégués, utilisez l' [ `+` opérateur](addition-operator.md#delegate-combination).
 
 Pour plus d'informations sur les types de délégués, consultez [Délégués](../../programming-guide/delegates/index.md).
 
@@ -67,7 +67,7 @@ L’exemple suivant illustre l’utilisation de l’opérateur `-=` :
 
 [!code-csharp-interactive[-= examples](snippets/SubtractionOperator.cs#SubtractAndAssign)]
 
-Vous utilisez également l’opérateur `-=` pour spécifier une méthode de gestionnaire d’événements à supprimer quand vous vous désabonnez d’un [événement](../keywords/event.md). Pour plus d’informations, voir [Comment vous abonner et désabonner des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+Vous utilisez également l’opérateur `-=` pour spécifier une méthode de gestionnaire d’événements à supprimer quand vous vous désabonnez d’un [événement](../keywords/event.md). Pour plus d’informations, consultez [Comment s’abonner et annuler l’abonnement à des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
@@ -79,8 +79,8 @@ Pour plus d’informations, consultez les sections [Opérateur moins unaire](~/_
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
 - [Événements](../../programming-guide/events/index.md)
-- [Opérateurs d’arithmétique](arithmetic-operators.md)
-- [et les opérateurs](addition-operator.md)
+- [Opérateurs arithmétiques](arithmetic-operators.md)
+- [opérateurs + et + =](addition-operator.md)

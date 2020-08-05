@@ -1,6 +1,7 @@
 ---
-title: Opérateur C# - Référence C#
-ms.date: 04/28/2020
+title: Opérateurs et expressions c#-référence C#
+description: En savoir plus sur les opérateurs et les expressions C#, la priorité des opérateurs et l’associativité des opérateurs
+ms.date: 08/04/2020
 f1_keywords:
 - cs.operators
 helpviewer_keywords:
@@ -9,18 +10,52 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 96bb97690f8954cce2cc75cad921e21985972798
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 19b5683a7cd334e1203c57fa90d275b659eac873
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301773"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556551"
 ---
-# <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
+# <a name="c-operators-and-expressions-c-reference"></a>Opérateurs et expressions c# (référence C#)
 
-C# fournit plusieurs opérateurs pris en charge par les types intégrés. Par exemple, les [opérateurs arithmétiques](arithmetic-operators.md) effectuent des opérations arithmétiques avec des opérandes numériques et les [opérateurs logiques booléens](boolean-logical-operators.md) effectuent des opérations logiques avec les opérandes [bool](../builtin-types/bool.md). Certains opérateurs peuvent être [surchargés](operator-overloading.md). Avec la surcharge d’opérateur, vous pouvez spécifier le comportement de l’opérateur pour les opérandes d’un type défini par l’utilisateur.
+C# fournit un certain nombre d’opérateurs. Un grand nombre d’entre eux sont pris en charge par les [types intégrés](../builtin-types/built-in-types.md) et vous permettent d’effectuer des opérations de base avec des valeurs de ces types. Ces opérateurs incluent les groupes suivants :
 
-Dans une [expression](../../programming-guide/statements-expressions-operators/expressions.md), la priorité et l’associativité des opérateurs déterminent l’ordre dans lequel les opérations sont exécutées. Vous pouvez utiliser des parenthèses pour changer l’ordre d’évaluation imposé par la priorité et l’associativité de l’opérateur.
+- [Opérateurs arithmétiques](arithmetic-operators.md) qui effectuent des opérations arithmétiques avec des opérandes numériques
+- [Opérateurs de comparaison](comparison-operators.md) qui comparent des opérandes numériques
+- [Opérateurs logiques booléens](boolean-logical-operators.md) qui effectuent des opérations logiques avec des [`bool`](../builtin-types/bool.md) opérandes
+- [Opérateurs de bits et de décalage](bitwise-and-shift-operators.md) qui effectuent des opérations de bits ou de décalage avec les opérandes des types intégraux
+- [Opérateurs d’égalité](equality-operators.md) qui vérifient si leurs opérandes sont égaux ou non
+
+En général, vous pouvez [surcharger](operator-overloading.md) ces opérateurs, autrement dit, spécifier le comportement de l’opérateur pour les opérandes d’un type défini par l’utilisateur.
+
+Les expressions C# les plus simples sont des littéraux (par exemple, des nombres [entiers](../builtin-types/integral-numeric-types.md#integer-literals) et [réels](../builtin-types/floating-point-numeric-types.md#real-literals) ) et des noms de variables. Vous pouvez les combiner dans des expressions complexes à l’aide d’opérateurs. La [priorité](#operator-precedence) et l' [associativité](#operator-associativity) des opérateurs déterminent l’ordre dans lequel les opérations dans une expression sont exécutées. Vous pouvez utiliser des parenthèses pour changer l’ordre d’évaluation imposé par la priorité et l’associativité de l’opérateur.
+
+Dans le code suivant, des exemples d’expressions se trouvent dans la partie droite des affectations :
+
+[!code-csharp[expression examples](snippets/Overview.cs#Expressions)]
+
+En règle générale, une expression produit un résultat et peut être incluse dans une autre expression. Un [`void`](../builtin-types/void.md) appel de méthode est un exemple d’expression qui ne produit pas de résultat. Il ne peut être utilisé qu’en tant qu' [instruction](../../programming-guide/statements-expressions-operators/statements.md), comme le montre l’exemple suivant :
+
+```csharp
+Console.WriteLine("Hello, world!");
+```
+
+Voici d’autres genres d’expressions fournis par C# :
+
+- [Expressions de chaîne interpolées](../tokens/interpolated.md) qui fournissent une syntaxe pratique pour créer des chaînes mises en forme :
+
+  [!code-csharp-interactive[interpolated string](snippets/Overview.cs#InterpolatedString)]
+
+- [Expressions lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) qui vous permettent de créer des fonctions anonymes :
+
+  [!code-csharp-interactive[lambda expression](snippets/Overview.cs#Lambda)]
+
+- [Expressions de requête](../keywords/query-keywords.md) qui vous permettent d’utiliser directement des fonctionnalités de requête en C# :
+
+  [!code-csharp-interactive[query expression](snippets/Overview.cs#Query)]
+
+Vous pouvez utiliser une [définition de corps d’expression](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) pour fournir une définition concise d’une méthode, d’un constructeur, d’une propriété, d’un indexeur ou d’un finaliseur.
 
 ## <a name="operator-precedence"></a>Précédence des opérateurs
 
@@ -90,9 +125,13 @@ En règle générale, tous les opérandes d’opérateur sont évalués. Toutefo
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, consultez la section [Opérateurs](~/_csharplang/spec/expressions.md#operators) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
+Pour plus d’informations, consultez les sections suivantes de la [spécification du langage C#](~/_csharplang/spec/introduction.md) :
+
+- [Expressions](~/_csharplang/spec/expressions.md)
+- [Opérateurs](~/_csharplang/spec/expressions.md#operators)
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Expressions](../../programming-guide/statements-expressions-operators/expressions.md)
+- [Surcharge d’opérateur](operator-overloading.md)
+- [Arborescences de l’expression](../../programming-guide/concepts/expression-trees/index.md)

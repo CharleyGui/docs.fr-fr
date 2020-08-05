@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 1324a4a3610b96f7258a856609dc4090b9751e52
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 2a27dc887671edc3f3f465ca757e7bf83262e915
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301760"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555173"
 ---
 # <a name="operator-overloading-c-reference"></a>Surcharge d’opérateur (référence C#)
 
@@ -62,7 +62,7 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Opérateurs C#](index.md)
+- [Opérateurs et expressions C#](index.md)
 - [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md)
 - [Directives de conception-surcharges d’opérateur](../../../standard/design-guidelines/operator-overloads.md)
 - [Directives de conception-opérateurs d’égalité](../../../standard/design-guidelines/equality-operators.md)

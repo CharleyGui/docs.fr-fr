@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 00c32c10f77995284264e795d386f699082dcb84
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 54ef49755dc0b9d1b821ae7999ab218626d455e1
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721560"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556326"
 ---
 ### <a name="custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively"></a>Les instances EncoderFallbackBuffer personnalisées ne peuvent pas être rétablies de manière récursive
 
@@ -16,7 +16,7 @@ Pendant une opération de transcodage de caractère à octet, le runtime détect
 
 Le runtime tente ensuite de transcoder ces caractères de substitution dans l’encodage cible. Si cette opération a échoué, le runtime continue à effectuer le transcodage à partir de l’endroit où il s’est arrêté dans la chaîne d’entrée d’origine.
 
-Dans .NET Core Preview 7 et les versions antérieures, les implémentations personnalisées de <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> peuvent retourner des séquences de caractères qui ne sont pas convertibles en l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés en l’encodage cible, le runtime appelle de <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> nouveau la méthode avec les caractères de substitution, en attendant que la <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> méthode retourne une nouvelle séquence de substitution. Ce processus se poursuit jusqu’à ce que le Runtime découvre une substitution correctement formée et convertible, ou jusqu’à ce qu’un nombre maximal de récurrences soit atteint.
+Auparavant, les implémentations personnalisées de <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> peuvent retourner des séquences de caractères qui ne sont pas convertibles en l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés en l’encodage cible, le runtime appelle de <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> nouveau la méthode avec les caractères de substitution, en attendant que la <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> méthode retourne une nouvelle séquence de substitution. Ce processus se poursuit jusqu’à ce que le Runtime découvre une substitution correctement formée et convertible, ou jusqu’à ce qu’un nombre maximal de récurrences soit atteint.
 
 À compter de .NET Core 3,0, les implémentations personnalisées de <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> doivent retourner des séquences de caractères convertibles en l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés en l’encodage cible, une <xref:System.ArgumentException> exception est levée. Le runtime n’effectue plus d’appels récursifs dans l' <xref:System.Text.EncoderFallbackBuffer> instance.
 

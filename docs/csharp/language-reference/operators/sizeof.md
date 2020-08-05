@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: a9e80ecb3288479a2ca81b43c9d088809ed5f2f0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84dc67be95fa65f6c46dab02af2ee7bc08d2ec31
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847285"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555225"
 ---
 # <a name="sizeof-operator-c-reference"></a>sizeof, opérateur (référence C#)
 
@@ -50,9 +50,9 @@ Pour plus d’informations, consultez la section [Opérateur sizeof](~/_csharpla
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
 - [Opérateurs associés au pointeur](pointer-related-operators.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [Types liés à la mémoire et à la travée](../../../standard/memory-and-spans/index.md)
+- [Types liés à la mémoire et à l’étendue](../../../standard/memory-and-spans/index.md)
 - [Génériques en .NET](../../../standard/generics/index.md)

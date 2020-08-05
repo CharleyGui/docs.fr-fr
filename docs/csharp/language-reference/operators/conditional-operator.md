@@ -9,16 +9,16 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 1a17ba092d4228ba909c8774a2f7e15c2c50cfdc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e6753a08bbd96f980b3c5901e763f2dfad055c6
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399517"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555355"
 ---
 # <a name="-operator-c-reference"></a>Opérateur ?: (référence C#)
 
-L’opérateur `?:`conditionnel , également connu sous le nom d’opérateur conditionnel ternaire, évalue une expression Boolean et `true` renvoie le résultat de l’une des deux expressions, selon que l’expression Boolean évalue ou `false`.
+L’opérateur conditionnel `?:` , également appelé opérateur conditionnel ternaire, évalue une expression booléenne et retourne le résultat de l’une des deux expressions, selon que l’expression booléenne a pour valeur `true` ou `false` .
 
 Voici la syntaxe de l'opérateur conditionnel :
 
@@ -55,7 +55,7 @@ L’exemple suivant illustre l’utilisation de l’opérateur conditionnel :
 
 ## <a name="conditional-ref-expression"></a>Expression ref conditionnelle
 
-Commençant par C 7.2, une variable [locale ou réadsible d’arbitre](../keywords/ref.md#ref-locals) peut être assignée [conditionnellement](../keywords/ref.md#ref-readonly-locals) avec l’expression conditionnelle de l’arbitre. Vous pouvez également utiliser l’expression conditionnelle de ref comme valeur [de retour de référence](../keywords/ref.md#reference-return-values) ou comme argument [ `ref` de méthode.](../keywords/ref.md#passing-an-argument-by-reference)
+À compter de C# 7,2, une variable locale Ref [locale](../keywords/ref.md#ref-locals) ou [ref ReadOnly](../keywords/ref.md#ref-readonly-locals) peut être assignée de manière conditionnelle avec l’expression Ref conditionnelle. Vous pouvez également utiliser l’expression Ref conditionnelle comme [valeur de retour de référence](../keywords/ref.md#reference-return-values) ou comme [ `ref` argument de méthode](../keywords/ref.md#passing-an-argument-by-reference).
 
 Voici la syntaxe de l'expression ref conditionnelle :
 
@@ -73,7 +73,7 @@ L’exemple suivant illustre l’utilisation de l’expression ref conditionnell
 
 ## <a name="conditional-operator-and-an-ifelse-statement"></a>Opérateur conditionnel et instruction `if..else`
 
-L’utilisation de l’opérateur conditionnel au lieu d’une déclaration [if-else](../keywords/if-else.md) peut entraîner un code plus concis dans les cas où vous avez besoin conditionnellement pour calculer une valeur. L’exemple suivant montre deux façons de classer un entier comme négatif ou non :
+L’utilisation de l’opérateur conditionnel au lieu d’une instruction [if-else](../keywords/if-else.md) peut entraîner un code plus concis dans les cas où vous avez besoin de calculer une valeur de manière conditionnelle. L’exemple suivant montre deux façons de classer un entier comme négatif ou non :
 
 [!code-csharp[conditional and if-else](snippets/ConditionalOperator.cs#CompareWithIf)]
 
@@ -85,13 +85,13 @@ Un type défini par l’utilisateur ne peut pas surcharger l’opérateur condit
 
 Pour plus d’informations, voir la section [Opérateur conditionnel](~/_csharplang/spec/expressions.md#conditional-operator) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
-Pour plus d’informations sur l’expression de l’arbitre conditionnel, voir la [note de proposition de fonctionnalité](~/_csharplang/proposals/csharp-7.2/conditional-ref.md).
+Pour plus d’informations sur l’expression Ref conditionnelle, consultez la [Remarque relative](~/_csharplang/proposals/csharp-7.2/conditional-ref.md)à la proposition de fonctionnalité.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
 - [if-else, instruction](../keywords/if-else.md)
 - [Opérateurs ?. et ?[]](member-access-operators.md#null-conditional-operators--and-)
-- [?? Et?? - opérateurs](null-coalescing-operator.md)
+- [?? et ?? =, opérateurs](null-coalescing-operator.md)
 - [ref, mot clé](../keywords/ref.md)

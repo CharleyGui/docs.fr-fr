@@ -19,12 +19,12 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: eda039d950e4be13d9c041c8bb95b6ea773b83f6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: d57f96b9c80bdc5f40169180b40326ffed91cf10
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207227"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555367"
 ---
 # <a name="comparison-operators-c-reference"></a>Opérateurs de comparaison (référence C#)
 
@@ -76,6 +76,6 @@ Pour plus d’informations, consultez la section [Opérateurs relationnels et de
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Opérateurs C#](index.md)
+- [Opérateurs et expressions C#](index.md)
 - <xref:System.IComparable%601?displayProperty=nameWithType>
 - [Opérateurs d'égalité](equality-operators.md)

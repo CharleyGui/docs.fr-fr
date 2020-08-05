@@ -13,22 +13,22 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: 18364d80b8117fd4074c2c4231eac07c76829bb3
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: dac13e9e92a0fffa4aeba1053d07f832e245ca95
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135735"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555485"
 ---
 # <a name="-and--operators-c-reference"></a>+ et +=, opérateurs (référence C#)
 
-Les `+` opérateurs `+=` et sont pris en charge par les types numériques [intégraux](../builtin-types/integral-numeric-types.md) et à [virgule flottante](../builtin-types/floating-point-numeric-types.md) intégrés, le type de [chaîne](../builtin-types/reference-types.md#the-string-type) et les types [délégués](../builtin-types/reference-types.md#the-delegate-type) .
+Les `+` `+=` opérateurs et sont pris en charge par les types numériques [intégraux](../builtin-types/integral-numeric-types.md) et à [virgule flottante](../builtin-types/floating-point-numeric-types.md) intégrés, le type de [chaîne](../builtin-types/reference-types.md#the-string-type) et les types [délégués](../builtin-types/reference-types.md#the-delegate-type) .
 
 Pour plus d’informations sur l’opérateur arithmétique `+`, consultez les sections [Opérateurs plus et moins unaires](arithmetic-operators.md#unary-plus-and-minus-operators) et [Opérateur d’addition +](arithmetic-operators.md#addition-operator-) de l’article [Opérateurs arithmétiques](arithmetic-operators.md).
 
 ## <a name="string-concatenation"></a>Concaténation de chaînes
 
-Quand l’un des opérandes ou les deux [string](../builtin-types/reference-types.md#the-string-type)sont de type `+` chaîne, l’opérateur concatène les représentations sous forme de chaîne de ses opérandes `null` (la représentation sous forme de chaîne de est une chaîne vide) :
+Quand l’un des opérandes ou les deux sont de type [chaîne](../builtin-types/reference-types.md#the-string-type), l' `+` opérateur concatène les représentations sous forme de chaîne de ses opérandes (la représentation sous forme de chaîne de `null` est une chaîne vide) :
 
 [!code-csharp-interactive[string concatenation](snippets/AdditionOperator.cs#AddStrings)]
 
@@ -78,8 +78,8 @@ Pour plus d’informations, consultez les sections [Opérateur unaire plus](~/_c
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs C#](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
 - [Concaténation de plusieurs chaînes](../../how-to/concatenate-multiple-strings.md)
 - [Événements](../../programming-guide/events/index.md)
 - [Opérateurs arithmétiques](arithmetic-operators.md)

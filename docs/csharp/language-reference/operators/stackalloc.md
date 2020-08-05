@@ -1,24 +1,24 @@
 ---
-title: expression stackalloc - Référence C
+title: stackalloc expression-référence C#
 ms.date: 03/13/2020
 f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc expression [C#]
-ms.openlocfilehash: 2e99ce8b1e44dfa040c1acac799a3a55b375bd91
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: 32ac85f678912cb7e5f506244265b1bf57d0b4aa
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546599"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555604"
 ---
-# <a name="stackalloc-expression-c-reference"></a>expression stackalloc (référence C)
+# <a name="stackalloc-expression-c-reference"></a>stackalloc, expression (référence C#)
 
-Une `stackalloc` expression alloue un bloc de mémoire sur la pile. Un bloc de mémoire alloué dans la pile pendant l’exécution de la méthode est automatiquement supprimé lorsque cette méthode retourne un résultat. Vous ne pouvez pas libérer `stackalloc`explicitement la mémoire allouée avec . Un bloc de mémoire de pile attribué n’est pas sujet à [la collecte des ordures](../../../standard/garbage-collection/index.md) et n’a pas besoin d’être épinglé avec une [ `fixed` déclaration](../keywords/fixed-statement.md).
+Une `stackalloc` expression alloue un bloc de mémoire sur la pile. Un bloc de mémoire alloué dans la pile pendant l’exécution de la méthode est automatiquement supprimé lorsque cette méthode retourne un résultat. Vous ne pouvez pas libérer explicitement la mémoire allouée avec `stackalloc` . Un bloc de mémoire alloué à la pile n’est pas soumis à [garbage collection](../../../standard/garbage-collection/index.md) et ne doit pas être épinglé à une [ `fixed` instruction](../keywords/fixed-statement.md).
 
-Vous pouvez attribuer le `stackalloc` résultat d’une expression à une variable de l’un des types suivants :
+Vous pouvez assigner le résultat d’une `stackalloc` expression à une variable de l’un des types suivants :
 
-- Commençant par C 7.2, <xref:System.Span%601?displayProperty=nameWithType> ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, comme le montre l’exemple suivant :
+- À compter de C# 7,2, <xref:System.Span%601?displayProperty=nameWithType> ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , comme le montre l’exemple suivant :
 
   [!code-csharp[stackalloc span](snippets/StackallocOperator.cs#AssignToSpan)]
 
@@ -28,7 +28,7 @@ Vous pouvez attribuer le `stackalloc` résultat d’une expression à une variab
 
   [!code-csharp[stackalloc expression](snippets/StackallocOperator.cs#AsExpression)]
 
-  En commençant par le C 8.0, vous pouvez utiliser une `stackalloc` expression à l’intérieur d’autres expressions chaque fois qu’une ou <xref:System.Span%601> <xref:System.ReadOnlySpan%601> une variable est autorisée, comme le montre l’exemple suivant :
+  À compter de C# 8,0, vous pouvez utiliser une `stackalloc` expression dans d’autres expressions chaque fois qu’une <xref:System.Span%601> <xref:System.ReadOnlySpan%601> variable ou est autorisée, comme le montre l’exemple suivant :
 
   [!code-csharp[stackalloc in nested expressions](snippets/StackallocOperator.cs#Nested)]
 
@@ -41,25 +41,25 @@ Vous pouvez attribuer le `stackalloc` résultat d’une expression à une variab
 
   Comme le montre l’exemple précédent, vous devez utiliser un contexte `unsafe` lorsque vous travaillez avec des types pointeurs.
 
-  Dans le cas des types de `stackalloc` pointeurs, vous ne pouvez utiliser une expression que dans une déclaration variable locale pour initialiser la variable.
+  Dans le cas des types pointeur, vous pouvez utiliser une `stackalloc` expression uniquement dans une déclaration de variable locale pour initialiser la variable.
 
-La quantité de mémoire disponible sur la pile est limitée. Si vous allouez trop de <xref:System.StackOverflowException> mémoire sur la pile, un est jeté. Pour éviter cela, suivez les règles ci-dessous :
+La quantité de mémoire disponible sur la pile est limitée. Si vous allouez une trop grande quantité de mémoire sur la pile, une <xref:System.StackOverflowException> est levée. Pour éviter cela, suivez les règles ci-dessous :
 
-- Limitez la quantité de `stackalloc`mémoire que vous allouez avec :
+- Limitez la quantité de mémoire allouée à l’aide de `stackalloc` :
 
   [!code-csharp[limit stackalloc](snippets/StackallocOperator.cs#LimitStackalloc)]
 
-  Parce que la quantité de mémoire disponible sur la pile dépend de l’environnement dans lequel le code est exécuté, soyez prudent lorsque vous définissez la valeur limite réelle.
+  Étant donné que la quantité de mémoire disponible sur la pile dépend de l’environnement dans lequel le code est exécuté, soyez prudent lorsque vous définissez la valeur limite réelle.
 
-- Évitez `stackalloc` d’utiliser des boucles intérieures. Répartir le bloc de mémoire à l’extérieur d’une boucle et le réutiliser à l’intérieur de la boucle.
+- Évitez d’utiliser des `stackalloc` boucles internes. Allouez le bloc de mémoire en dehors d’une boucle et réutilisez-le à l’intérieur de la boucle.
 
-Le contenu de la mémoire nouvellement allouée n’est pas défini. Vous devez l’initialiser avant l’utilisation. Par exemple, vous <xref:System.Span%601.Clear%2A?displayProperty=nameWithType> pouvez utiliser la méthode qui définit `T`tous les éléments à la valeur par défaut du type .
+Le contenu de la mémoire nouvellement allouée n’est pas défini. Vous devez l’initialiser avant l’utilisation. Par exemple, vous pouvez utiliser la <xref:System.Span%601.Clear%2A?displayProperty=nameWithType> méthode qui affecte à tous les éléments la valeur par défaut de type `T` .
 
-En commençant par le C 7.3, vous pouvez utiliser la syntaxe initialise de tableau pour définir le contenu de la mémoire nouvellement allouée. L’exemple suivant illustre différentes manières de le faire :
+À compter de C# 7,3, vous pouvez utiliser la syntaxe de l’initialiseur de tableau pour définir le contenu de la mémoire nouvellement allouée. L’exemple suivant illustre différentes manières de le faire :
 
 [!code-csharp[stackalloc initialization](snippets/StackallocOperator.cs#StackallocInit)]
 
-En `stackalloc T[E]`expression, `T` doit être un type `E` non [gémani](../builtin-types/unmanaged-types.md) et doit évaluer à une valeur [int](../builtin-types/integral-numeric-types.md) non négative.
+Dans Expression `stackalloc T[E]` , `T` doit être un [type non managé](../builtin-types/unmanaged-types.md) et `E` doit correspondre à une valeur [int](../builtin-types/integral-numeric-types.md) non négative.
 
 ## <a name="security"></a>Sécurité
 
@@ -67,13 +67,13 @@ L’utilisation de `stackalloc` active automatiquement les fonctionnalités de d
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour de plus amples renseignements, consultez la section [d’attribution](~/_csharplang/spec/unsafe-code.md#stack-allocation) de la pile des [spécifications linguistiques Cmd](~/_csharplang/spec/introduction.md) et la note de proposition [du permis `stackalloc` dans les contextes imbriqués.](~/_csharplang/proposals/csharp-8.0/nested-stackalloc.md)
+Pour plus d’informations, consultez la section [allocation de pile](~/_csharplang/spec/unsafe-code.md#stack-allocation) de la [spécification du langage C#](~/_csharplang/spec/introduction.md) et la fonctionnalité [autoriser dans les `stackalloc` contextes imbriqués](~/_csharplang/proposals/csharp-8.0/nested-stackalloc.md) .
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
 - [Opérateurs associés au pointeur](pointer-related-operators.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Types liés à la mémoire et à l’étendue](../../../standard/memory-and-spans/index.md)
-- [Dos et Don’ts de stackalloc](https://vcsjones.dev/2020/02/24/stackalloc/)
+- [Dos et ne pas de stackalloc](https://vcsjones.dev/2020/02/24/stackalloc/)

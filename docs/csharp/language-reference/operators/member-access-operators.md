@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 59e01b17d78032714803629d503a92ba86a20fdc
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 242442e9b0ad41a4945c66421bb537cb6cb9b6c0
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394640"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556473"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Opérateurs et expressions d’accès aux membres (référence C#)
 
@@ -222,7 +222,7 @@ Pour plus d’informations sur les index et les plages, consultez la [Remarque r
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs C#](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
 - [?? (opérateur de fusion Null)](null-coalescing-operator.md)
 - [:: (opérateur)](namespace-alias-qualifier.md)

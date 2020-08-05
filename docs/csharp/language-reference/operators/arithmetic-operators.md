@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: d004ab466bc053ed286d85bcbee2766d8a087286
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 03bf7f246884fc8cd0095f0dd1375389a95e1ef0
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207238"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555472"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Opérateurs arithmétiques (référence C#)
 
@@ -254,7 +254,7 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Opérateurs suffixés d’incrémentation et de décrémentation](~/_csharplang/spec/expressions.md#postfix-increment-and-decrement-operators)
 - [Opérateurs préfixés d’incrémentation et de décrémentation](~/_csharplang/spec/expressions.md#prefix-increment-and-decrement-operators)
 - [Opérateur plus unaire](~/_csharplang/spec/expressions.md#unary-plus-operator)
-- [Opération moins unaire](~/_csharplang/spec/expressions.md#unary-minus-operator)
+- [Opérateur moins unaire](~/_csharplang/spec/expressions.md#unary-minus-operator)
 - [Opérateur de multiplication](~/_csharplang/spec/expressions.md#multiplication-operator)
 - [Opérateur de division](~/_csharplang/spec/expressions.md#division-operator)
 - [Remainder (opérateur)](~/_csharplang/spec/expressions.md#remainder-operator)
@@ -266,8 +266,8 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs C#](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
 - <xref:System.Math?displayProperty=nameWithType>
 - <xref:System.MathF?displayProperty=nameWithType>
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)

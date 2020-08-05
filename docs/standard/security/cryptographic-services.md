@@ -1,46 +1,44 @@
 ---
-title: Services de chiffrement
-description: Lisez une vue d’ensemble des méthodes et pratiques de chiffrement prises en charge par .NET, telles que les manifestes ClickOnce, Suite B, & la prise en charge de la génération CNG (Cryptography Next Generation).
-ms.date: 03/30/2017
+title: services de chiffrement
+description: Vue d’ensemble des méthodes et pratiques de chiffrement prises en charge par .NET.
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- cryptography [.NET Framework]
+- cryptography [.NET]
 - pattern of derived class inheritance
 - digital signatures
 - asymmetric cryptographic algorithms
 - digital signatures, public-key systems
 - public keys
-- decryption [.NET Framework]
+- decryption [.NET]
 - private keys
 - MAC algorithms
 - cryptographic algorithms
 - private keys, overview
-- encryption [.NET Framework]
-- security [.NET Framework], encryption
+- encryption [.NET]
+- security [.NET], encryption
 - cryptographic services
 - symmetric cryptographic algorithms
 - hash
 - message authentication codes
 - derived class inheritance
-- cryptography [.NET Framework], about
+- cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 701dce82669395743c884a613512bfadc06c91b3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4cd4e493e0e7d159b2749dac78b9a560e20fd75c
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596330"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557019"
 ---
-# <a name="cryptographic-services"></a>Services de chiffrement
+# <a name="cryptographic-services"></a>services de chiffrement
 
 Les réseaux publics, tels qu'Internet, n'offrent aucun moyen de sécuriser les communications entre les entités. Les communications qui transitent par ces réseaux sont susceptibles d'être lues voire modifiées par des tiers non autorisés. Le chiffrement permet de prévenir la consultation des données, offre des moyens de détecter si les données ont été modifiées et fournit un mode de communication sécurisé via des canaux qui autrement ne sont pas sécurisés. Par exemple, les données peuvent être chiffrées à l'aide d'un algorithme de chiffrement, transmises dans un état chiffré et par la suite déchiffrées par le destinataire prévu. Si un tiers intercepte les données chiffrées, il lui sera difficile de les déchiffrer.
 
-Dans le .NET Framework, les classes de l'espace de noms <xref:System.Security.Cryptography?displayProperty=nameWithType> gèrent automatiquement divers détails liés au chiffrement. Certaines d'entre elles sont des wrappers pour l'API de chiffrement Microsoft non managée (CryptoAPI), tandis que d'autres sont de pures implémentations managées. Vous n'avez pas besoin d'être un expert en chiffrement pour utiliser ces classes. Quand vous créez une instance de l'une des classes d'algorithme de chiffrement, les clés sont générées automatiquement pour une plus grande facilité d'utilisation, et les propriétés par défaut sont aussi sûres et sécurisées que possible.
+Dans .NET, les classes de l' <xref:System.Security.Cryptography> espace de noms gèrent de nombreux détails du chiffrement pour vous. Certains sont des wrappers pour les implémentations du système d’exploitation, tandis que d’autres sont des implémentations purement managées. Vous n'avez pas besoin d'être un expert en chiffrement pour utiliser ces classes. Quand vous créez une instance de l'une des classes d'algorithme de chiffrement, les clés sont générées automatiquement pour une plus grande facilité d'utilisation, et les propriétés par défaut sont aussi sûres et sécurisées que possible.
 
-Cette vue d’ensemble fournit un résumé des méthodes et pratiques de chiffrement prises en charge par le .NET Framework, notamment les manifestes ClickOnce, les Suite B et la prise en charge de CNG (Cryptography Next Generation) introduite dans le .NET Framework 3,5.
-
-Pour plus d'informations sur le chiffrement et les services, composants et outils Microsoft qui permettent d'ajouter à vos applications une sécurité par chiffrement, consultez la section relative au développement et à la sécurité Win32 et COM de cette documentation.
+Cette vue d’ensemble fournit une synthèse des méthodes et pratiques de chiffrement prises en charge par .NET, y compris les manifestes ClickOnce.
 
 ## <a name="cryptographic-primitives"></a>Primitives de chiffrement
 
@@ -58,7 +56,7 @@ Le chiffrement vise à atteindre les objectifs suivants :
 
 Pour atteindre ces objectifs, vous pouvez utiliser une combinaison d'algorithmes et de pratiques appelés primitives de chiffrement pour créer un modèle de chiffrement. Le tableau suivant répertorie les primitives de chiffrement et leurs fonctions.
 
-|Primitive de chiffrement|Utilisation|
+|Primitive de chiffrement|Utiliser|
 |-----------------------------|---------|
 |Chiffrement à clé secrète (chiffrement symétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une clé partagée, secrète et unique pour chiffrer et déchiffrer des données.|
 |Chiffrement à clé publique (chiffrement asymétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une paire de clés publique/privée pour chiffrer et déchiffrer les données.|
@@ -85,19 +83,11 @@ L'inconvénient du chiffrement à clé secrète est qu'il suppose que les deux p
 
 Si l'on considère qu'Alice et Jean sont deux parties qui désirent communiquer sur un canal non sécurisé, ils peuvent utiliser le chiffrement à clé secrète comme suit : Alice et Jean conviennent ensemble d'utiliser un certain algorithme (AES, par exemple) avec une clé et un vecteur d'initialisation déterminés. Alice compose un message et crée un flux réseau (peut-être un canal nommé ou une messagerie réseau) sur lequel le message doit être envoyé. Ensuite, elle chiffre le texte à l'aide de la clé et du vecteur d'initialisation, puis envoie le message chiffré et le vecteur d'initialisation à Jean via l'intranet. Jean reçoit le texte chiffré et le déchiffre à l'aide du vecteur d'initialisation et de la clé convenue précédemment. Si la transmission est interceptée, l’intercepteur ne peut pas récupérer le message d’origine, car il ne connaît pas la clé. Dans ce scénario, seule la clé doit rester secrète. Dans un scénario réel, Alice ou Jean génère une clé secrète et utilise un chiffrement (asymétrique) à clé publique pour transférer la clé (symétrique) secrète à l'autre partie. Pour plus d'informations sur le chiffrement à clé publique, consultez la section suivante.
 
-Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de chiffrement à clé secrète :
+.NET fournit les classes suivantes qui implémentent des algorithmes de chiffrement à clé secrète :
 
-- <xref:System.Security.Cryptography.AesManaged>(introduit dans le .NET Framework 3,5).
+- <xref:System.Security.Cryptography.Aes>
 
-- <xref:System.Security.Cryptography.DESCryptoServiceProvider>.
-
-- <xref:System.Security.Cryptography.HMACSHA1> (Techniquement, il s'agit d'un algorithme de clé secrète dans la mesure où il représente un code d'authentification de message calculé à l'aide d'une fonction de hachage de chiffrement combinée à une une clé secrète. Consultez la section [Valeurs de hachage](#hash-values), plus loin dans cette rubrique.)
-
-- <xref:System.Security.Cryptography.RC2CryptoServiceProvider>.
-
-- <xref:System.Security.Cryptography.RijndaelManaged>.
-
-- <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>.
+- <xref:System.Security.Cryptography.HMACSHA256>, <xref:System.Security.Cryptography.HMACSHA384> et <xref:System.Security.Cryptography.HMACSHA512>. (Il s’agit d’algorithmes de clé secrète techniquement, car ils représentent des codes d’authentification de message calculés à l’aide d’une fonction de hachage de chiffrement combinée à une clé secrète. Consultez [valeurs de hachage](#hash-values), plus loin dans cet article.)
 
 ## <a name="public-key-encryption"></a>Chiffrement à clé publique
 
@@ -123,25 +113,19 @@ La liste suivante propose une comparaison entre les algorithmes de chiffrement �
 
 - Les algorithmes à clé publique sont très plus lents par rapport aux algorithmes à clé secrète et ne sont pas conçus pour chiffrer de grandes quantités de données. Les algorithmes à clé publique ne sont utiles que pour le transfert de très petites quantités de données. En règle générale, le chiffrement à clé publique est utilisé pour chiffrer la clé et le vecteur d'initialisation destiné à être utilisé par un algorithme à clé secrète. Une fois la clé et le vecteur d'initialisation transférés, le chiffrement à clé secrète est utilisé pour le reste de la session.
 
-Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de chiffrement à clé publique :
+.NET fournit les classes suivantes qui implémentent des algorithmes à clé publique :
 
-- <xref:System.Security.Cryptography.DSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.RSA>
 
-- <xref:System.Security.Cryptography.RSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.ECDsa>
 
-- <xref:System.Security.Cryptography.ECDiffieHellman> (classe de base)
+- <xref:System.Security.Cryptography.ECDiffieHellman>
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanCng>
+- <xref:System.Security.Cryptography.DSA>
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey> (classe de base)
+RSA autorise à la fois le chiffrement et la signature, mais DSA ne peut être utilisé que pour la signature. DSA n’est pas aussi sécurisé que RSA et nous vous recommandons d’utiliser RSA. Diffie-Hellman peut être utilisé uniquement pour la génération de clés. En général, les algorithmes à clé publique sont plus limités dans leurs utilisations que les algorithmes à clé privée.
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction> (classe de base)
-
-- <xref:System.Security.Cryptography.ECDsaCng>
-
-Si RSA autorise à la fois le chiffrement et la signature, DSA ne peut être utilisé que pour la signature et Diffie-Hellman seulement pour la génération de clés. En général, les algorithmes à clé publique sont plus limités dans leurs utilisations que les algorithmes à clé privée.
-
-## <a name="digital-signatures"></a>signatures numériques
+## <a name="digital-signatures"></a>Signatures numériques
 
 Les algorithmes à clé publique peuvent aussi être utilisés pour créer des signatures numériques. Les signatures numériques permettent d'authentifier l'identité d'un expéditeur (si vous jugez que sa clé publique est fiable) et d'assurer l'intégrité des données. En utilisant la clé publique générée par Alice, le destinataire des données d'Alice peut vérifier que c'est bien elle qui les a envoyées en comparant la signature numérique aux données et à la clé publique d'Alice.
 
@@ -150,15 +134,13 @@ Pour utiliser le chiffrement à clé publique pour signer numériquement un mess
 > [!NOTE]
 > Une signature peut être vérifiée par n'importe qui, car la clé publique de l'expéditeur est connue de tous et est généralement incluse dans le format de signature numérique. Cette méthode ne préserve pas le caractère confidentiel du message ; pour être secret, le message doit aussi être chiffré.
 
-Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de signature numérique :
+.NET fournit les classes suivantes qui implémentent des algorithmes de signature numérique :
 
-- <xref:System.Security.Cryptography.DSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.RSA>
 
-- <xref:System.Security.Cryptography.RSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.ECDsa>
 
-- <xref:System.Security.Cryptography.ECDsa> (classe de base)
-
-- <xref:System.Security.Cryptography.ECDsaCng>
+- <xref:System.Security.Cryptography.DSA>
 
 ## <a name="hash-values"></a>Valeurs de hachage
 
@@ -184,38 +166,21 @@ Les deux parties que constituent Alice et Jean peuvent utiliser une fonction de 
 
 Aucune des méthodes précédentes n'empêchera quiconque de lire les messages d'Alice, car ils sont transmis sous forme de texte en clair. Pour bénéficier d'une sécurité complète, les signatures numériques (signature des messages) et le chiffrement s'avèrent nécessaires.
 
-Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de hachage :
+.NET fournit les classes suivantes qui implémentent des algorithmes de hachage :
 
-- <xref:System.Security.Cryptography.HMACSHA1>.
+- <xref:System.Security.Cryptography.SHA256>.
 
-- <xref:System.Security.Cryptography.MACTripleDES>.
+- <xref:System.Security.Cryptography.SHA384>.
 
-- <xref:System.Security.Cryptography.MD5CryptoServiceProvider>.
+- <xref:System.Security.Cryptography.SHA512>.
 
-- <xref:System.Security.Cryptography.RIPEMD160>.
-
-- <xref:System.Security.Cryptography.SHA1Managed>.
-
-- <xref:System.Security.Cryptography.SHA256Managed>.
-
-- <xref:System.Security.Cryptography.SHA384Managed>.
-
-- <xref:System.Security.Cryptography.SHA512Managed>.
-
-- Variantes HMAC de tous les algorithmes SHA (Secure Hash Algorithm), MD5 (Message Digest 5) et RIPEMD-160.
-
-- Implémentations CryptoServiceProvider (wrappers de code managé) de tous les algorithmes SHA.
-
-- Implémentations CNG (Cryptography Next Generation) de tous les algorithmes MD5 et SHA.
-
-> [!NOTE]
-> Suite à la découverte de défauts de conception de MD5 en 1996, il a été recommandé de le remplacer par SHA-1. En 2004, des défauts supplémentaires ont été découverts. Depuis, l'algorithme MD5 n'est plus considéré comme sécurisé. L'algorithme SHA-1 a aussi été pointé du doigt pour son manque de fiabilité et SHA-2 est désormais l'algorithme recommandé.
+.NET fournit également <xref:System.Security.Cryptography.MD5> et <xref:System.Security.Cryptography.SHA1> . Toutefois, les algorithmes MD5 et SHA-1 ont été détectés comme étant non sécurisés et SHA-2 est désormais recommandé. SHA-2 comprend SHA256, SHA384 et SHA512.
 
 ## <a name="random-number-generation"></a>génération de nombres aléatoires
 
 La génération de nombres aléatoires est un élément indispensable de nombreuses opérations de chiffrement. Par exemple, les clés de chiffrement doivent être aussi aléatoires que possible de sorte qu'il soit impossible de les reproduire. Les générateurs de nombres aléatoires de chiffrement doivent générer des sorties qu'il est impossible de prédire du point de vue informatique avec une probabilité de plus de 50 %. Par conséquent, toute méthode de prédiction du bit de sortie suivant ne doit pas pas se montrer plus performante que le hasard. Les classes du .NET Framework utilisent des générateurs de nombres aléatoires pour générer des clés de chiffrement.
 
-La classe <xref:System.Security.Cryptography.RNGCryptoServiceProvider> est une implémentation d'un algorithme de génération de nombres aléatoires.
+La classe <xref:System.Security.Cryptography.RandomNumberGenerator> est une implémentation d'un algorithme de génération de nombres aléatoires.
 
 ## <a name="clickonce-manifests"></a>Manifestes ClickOnce
 
@@ -237,25 +202,9 @@ Dans la .NET Framework 3,5, les classes de chiffrement suivantes vous permettent
 
 - <xref:System.Security.Cryptography.X509Certificates.TrustStatus> offre un moyen simple de vérifier si une signature Authenticode est fiable.
 
-## <a name="suite-b-support"></a>Prise en charge de Suite B
-
-Le .NET Framework 3,5 prend en charge l’ensemble Suite B d’algorithmes de chiffrement publiés par la NSA (National Security Agency). Pour plus d’informations sur Suite B, consultez le [descriptif de la NSA sur le chiffrement Suite B](https://www.nsa.gov/what-we-do/information-assurance/).
-
-Les algorithmes inclus sont les suivants :
-
-- Algorithme AES (Advanced Encryption Standard) avec des tailles de clé de 128, 192 et 256 bits pour le chiffrement.
-
-- Algorithmes de hachage sécurisé SHA-1, SHA-256, SHA-384 et SHA-512 pour le hachage. (Les trois derniers sont généralement regroupés et appelés SHA-2.)
-
-- Algorithme ECDSA (Elliptic Curve Digital Signature Algorithm), utilisant des courbes de moduli premiers de 256, 384 et 521 bits pour la signature. La documentation de la NSA définit précisément ces courbes et les appelle P-256, P-384 et P-521. Cet algorithme est fourni par la classe <xref:System.Security.Cryptography.ECDsaCng> . Il vous permet de signer à l'aide d'une clé privée et de vérifier la signature avec une clé publique.
-
-- Algorithme Diffie-Hellman à courbe elliptique (ECDH, Elliptic Curve Diffie-Hellman), utilisant des courbes de moduli premiers de 256, 384 et 521 bits pour l'échange de clés et l'accord secret. Cet algorithme est fourni par la classe <xref:System.Security.Cryptography.ECDiffieHellmanCng> .
-
-Des wrappers de code managé pour les implémentations certifiées FIPS (Federal Information Processing Standard) des implémentations AES, SHA-256, SHA-384 et SHA-512 sont disponibles dans les nouvelles classes <xref:System.Security.Cryptography.AesCryptoServiceProvider>, <xref:System.Security.Cryptography.SHA256CryptoServiceProvider>, <xref:System.Security.Cryptography.SHA384CryptoServiceProvider>et <xref:System.Security.Cryptography.SHA512CryptoServiceProvider> .
-
 ## <a name="cryptography-next-generation-cng-classes"></a>Classes CNG (Cryptography Next Generation)
 
-Les classes CNG fournissent un wrapper managé autour des fonctions CNG natives. (CNG est le remplacement de CryptoAPI.) Ces classes ont « CNG » dans leur nom. Au cœur des classes du wrapper CNG se trouve la classe de conteneur de clés <xref:System.Security.Cryptography.CngKey> , qui s'approprie le stockage et l'utilisation des clés CNG. Cette classe vous permet de stocker une paire de clés ou une clé publique en toute sécurité et d'y faire référence en utilisant un nom de chaîne simple. La classe de signature <xref:System.Security.Cryptography.ECDsaCng> à courbe elliptique et la classe de chiffrement <xref:System.Security.Cryptography.ECDiffieHellmanCng> peuvent utiliser des objets <xref:System.Security.Cryptography.CngKey> .
+Dans le .NET Framework 3,5 et versions ultérieures, les classes CNG (Cryptography Next Generation) fournissent un wrapper managé autour des fonctions CNG natives. (CNG est le remplacement de CryptoAPI.) Ces classes ont « CNG » dans leur nom. Au cœur des classes du wrapper CNG se trouve la classe de conteneur de clés <xref:System.Security.Cryptography.CngKey> , qui s'approprie le stockage et l'utilisation des clés CNG. Cette classe vous permet de stocker une paire de clés ou une clé publique en toute sécurité et d'y faire référence en utilisant un nom de chaîne simple. La classe de signature <xref:System.Security.Cryptography.ECDsaCng> à courbe elliptique et la classe de chiffrement <xref:System.Security.Cryptography.ECDiffieHellmanCng> peuvent utiliser des objets <xref:System.Security.Cryptography.CngKey> .
 
 La classe <xref:System.Security.Cryptography.CngKey> sert à diverses autres opérations, notamment à ouvrir, créer, supprimer et exporter des clés. Elle permet aussi d'accéder au handle de clé sous-jacent à utiliser quand il s'agit d'appeler des fonctions natives directement.
 
@@ -267,10 +216,9 @@ Le .NET Framework 3,5 comprend également diverses classes CNG de prise en charg
 
 - <xref:System.Security.Cryptography.CngProperty> dispose de propriétés de clé fréquemment utilisées.
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="see-also"></a>Voir aussi
 
-|Intitulé|Description|
-|-----------|-----------------|
-|[Modèle de chiffrement](cryptography-model.md)|Explique comment le chiffrement est implémenté dans la bibliothèque de classes de base.|
-|[Procédure pas à pas : création d'une application de chiffrement](walkthrough-creating-a-cryptographic-application.md)|Présente des tâches de chiffrement et de déchiffrement de base.|
-|[Configuration de classes de chiffrement](../../framework/configure-apps/configure-cryptography-classes.md)|Explique comment mapper des noms d'algorithmes à des classes de chiffrement et comment mapper des identificateurs d'objets à un algorithme de chiffrement.|
+- [Modèle de chiffrement](cryptography-model.md) -décrit comment le chiffrement est implémenté dans la bibliothèque de classes de base.
+- [Chiffrement multiplateforme](cross-platform-cryptography.md)
+- [Vulnérabilités de temporisation avec le déchiffrement symétrique en mode CBC à l’aide du remplissage](vulnerabilities-cbc-mode.md)
+- [Protection des données ASP.NET Core](/aspnet/core/security/data-protection/introduction)

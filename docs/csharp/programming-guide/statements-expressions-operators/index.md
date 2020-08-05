@@ -10,24 +10,24 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-ms.openlocfilehash: 08692cbe583feb534315b637492adedb1254bc38
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 5cbebe1c7f56604b1b058452bdf2126b87bd3f97
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381617"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556785"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Instructions, expressions et opérateurs (guide de programmation C#)
 
 Le code C# qui comprend une application se compose d’instructions à base de mots clés, d’expressions et d’opérateurs. Cette section contient des informations concernant ces éléments fondamentaux d’un programme C#.
 
- Pour plus d’informations, consultez :
+ Pour plus d'informations, consultez les pages suivantes :
 
 - [Instructions](statements.md)
 
-- [Expressions](expressions.md)
+- [Opérateurs et expressions](../../language-reference/operators/index.md)
 
-  - [Membres expression-bodied](expression-bodied-members.md)
+- [Membres expression-bodied](expression-bodied-members.md)
 
 - [Fonctions anonymes](anonymous-functions.md)
 

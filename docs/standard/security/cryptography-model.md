@@ -1,56 +1,60 @@
 ---
-title: Modèle de chiffrement de .NET Framework
+title: Modèle de chiffrement .NET
 description: Passez en revue les implémentations des algorithmes de chiffrement habituels dans .NET. Découvrez le modèle de chiffrement extensible de l’héritage d’objets, de la conception de flux & de la configuration.
-ms.date: 03/30/2017
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
-- cryptography [.NET Framework], model
-- encryption [.NET Framework], model
+- cryptography [.NET], model
+- encryption [.NET], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: 11af4c15c8b291df898a3c2416faa15875eab70b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0b3e07238bf0932572c222f7b947cfa7ae0221a9
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596317"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556993"
 ---
-# <a name="net-framework-cryptography-model"></a>Modèle de chiffrement de .NET Framework
+# <a name="net-cryptography-model"></a>Modèle de chiffrement .NET
 
-.NET Framework fournit des implémentations de nombreux algorithmes de chiffrement standard. Ces algorithmes sont faciles à utiliser et leurs propriétés par défaut sont les plus sûres possible. En outre, le modèle de chiffrement .NET Framework de l'héritage d'objets, de la conception orientée flux et de la configuration, est très extensible.
+.NET fournit des implémentations de nombreux algorithmes de chiffrement standard, et le modèle de chiffrement .NET est extensible.
 
 ## <a name="object-inheritance"></a>Héritage d'objet
 
-Le système de sécurité .NET Framework implémente un modèle extensible d’héritage de classes dérivées. Cette hiérarchie se présente comme suit :
+Le système de chiffrement .NET implémente un modèle extensible d’héritage de classes dérivées. Cette hiérarchie se présente comme suit :
 
-- Classe de type algorithme, telle que <xref:System.Security.Cryptography.SymmetricAlgorithm>, <xref:System.Security.Cryptography.AsymmetricAlgorithm> ou <xref:System.Security.Cryptography.HashAlgorithm>. Ce niveau est abstrait.
+- Classe de type algorithme, telle que <xref:System.Security.Cryptography.SymmetricAlgorithm> , <xref:System.Security.Cryptography.AsymmetricAlgorithm> ou <xref:System.Security.Cryptography.HashAlgorithm> . Ce niveau est abstrait.
 
-- Classe d'algorithme qui hérite d'une classe de type algorithme, par exemple, <xref:System.Security.Cryptography.Aes>, <xref:System.Security.Cryptography.RC2> ou <xref:System.Security.Cryptography.ECDiffieHellman>. Ce niveau est abstrait.
+- Classe d'algorithme qui hérite d'une classe de type algorithme, par exemple, <xref:System.Security.Cryptography.Aes>, <xref:System.Security.Cryptography.RSA> ou <xref:System.Security.Cryptography.ECDiffieHellman>. Ce niveau est abstrait.
 
 - Implémentation d'une classe d'algorithme qui hérite d'une classe d'algorithme, par exemple, <xref:System.Security.Cryptography.AesManaged>, <xref:System.Security.Cryptography.RC2CryptoServiceProvider> ou <xref:System.Security.Cryptography.ECDiffieHellmanCng>. Ce niveau est totalement implémenté.
 
-À l’aide de ce modèle de classes dérivées, il est facile d’ajouter un nouvel algorithme ou la nouvelle implémentation d’un algorithme existant. Par exemple, pour créer un algorithme de clé publique, vous devez hériter de la classe <xref:System.Security.Cryptography.AsymmetricAlgorithm>. Pour créer une nouvelle implémentation d'un algorithme spécifique, vous devez créer une classe non abstraite dérivée de cet algorithme.
+Ce modèle de classes dérivées vous permet d’ajouter un nouvel algorithme ou une nouvelle implémentation d’un algorithme existant. Par exemple, pour créer un algorithme de clé publique, vous devez hériter de la classe <xref:System.Security.Cryptography.AsymmetricAlgorithm>. Pour créer une nouvelle implémentation d'un algorithme spécifique, vous devez créer une classe non abstraite dérivée de cet algorithme.
 
-## <a name="how-algorithms-are-implemented-in-the-net-framework"></a>Comment les algorithmes sont implémentés dans .NET Framework
+## <a name="how-algorithms-are-implemented-in-net"></a>Comment les algorithmes sont implémentés dans .NET
 
-Prenez comme exemple d'implémentation les algorithmes symétriques. La base de tous les algorithmes symétriques est <xref:System.Security.Cryptography.SymmetricAlgorithm>, qui est hérité par les algorithmes suivants :
+Prenez comme exemple d'implémentation les algorithmes symétriques. La base de tous les algorithmes symétriques est <xref:System.Security.Cryptography.SymmetricAlgorithm> , qui est héritée par <xref:System.Security.Cryptography.Aes> , <xref:System.Security.Cryptography.TripleDES> et d’autres qui ne sont plus recommandées.
 
-* <xref:System.Security.Cryptography.Aes>
-* <xref:System.Security.Cryptography.DES>
-* <xref:System.Security.Cryptography.RC2>
-* <xref:System.Security.Cryptography.Rijndael>
-* <xref:System.Security.Cryptography.TripleDES>
+<xref:System.Security.Cryptography.Aes>est hérité par <xref:System.Security.Cryptography.AesCryptoServiceProvider> , <xref:System.Security.Cryptography.AesCng> et <xref:System.Security.Cryptography.AesManaged> .
 
-<xref:System.Security.Cryptography.Aes> est hérité par deux classes : <xref:System.Security.Cryptography.AesCryptoServiceProvider> et <xref:System.Security.Cryptography.AesManaged>. La classe <xref:System.Security.Cryptography.AesCryptoServiceProvider> est un wrapper pour l'implémentation de l'API de chiffrement Windows (CAPI) d'AES. La classe <xref:System.Security.Cryptography.AesManaged> est écrite entièrement en code managé. Il existe également l'implémentation Cryptography Next Generation (CNG), en plus des implémentations CAPI et managées. <xref:System.Security.Cryptography.ECDiffieHellmanCng> est un exemple d'algorithme CNG. Les algorithmes CNG sont disponibles sur Windows Vista et versions ultérieures.
+Dans .NET Framework sur Windows :
 
-Vous pouvez choisir l'implémentation qui vous convient le mieux. Les implémentations managées sont disponibles sur toutes les plateformes qui prennent en charge .NET Framework. Les implémentations CAPI sont disponibles sur les systèmes d’exploitation plus anciens et ne sont plus développées. CNG est l’implémentation la plus récente où un nouveau développement aura lieu. Toutefois, les implémentations managées ne sont pas certifiées par les normes FIPS et peuvent être plus lentes que les classes wrapper.
+* `*CryptoServiceProvider`les classes d’algorithme, telles que <xref:System.Security.Cryptography.AesCryptoServiceProvider> , sont des wrappers autour de l’implémentation de l’API de chiffrement Windows (CAPI) d’un algorithme.
+* `*Cng`les classes d’algorithme, par exemple, <xref:System.Security.Cryptography.ECDiffieHellmanCng> sont des wrappers autour de l’implémentation CNG (Windows Cryptography Next Generation).
+* `*Managed`les classes, telles que <xref:System.Security.Cryptography.AesManaged> , sont écrites entièrement dans du code managé. `*Managed`les implémentations ne sont pas certifiées par les normes FIPS (Federal Information Processing Standards) et peuvent être plus lentes que les `*CryptoServiceProvider` `*Cng` classes wrapper et.
 
-## <a name="stream-design"></a>Conception orientée flux
+Dans .NET Core et .NET 5 et versions ultérieures, toutes les classes d’implémentation ( `*CryptoServiceProvider` , `*Managed` et `*Cng` ) sont des wrappers pour les algorithmes du système d’exploitation. Si les algorithmes de système d’exploitation sont certifiés FIPS, .NET utilise des algorithmes certifiés FIPS. Pour plus d’informations, consultez la page [chiffrement multiplateforme](cross-platform-cryptography.md).
 
-Le Common Language Runtime utilise une conception orientée flux pour implémenter les algorithmes symétriques et les algorithmes de hachage. La base de cette conception est la classe <xref:System.Security.Cryptography.CryptoStream> qui dérive de la classe <xref:System.IO.Stream>. Les objets de chiffrement basés sur les flux prennent en charge une seule interface standard (`CryptoStream`) pour la gestion du transfert des données de l'objet. Comme tous les objets sont créés à l'aide d'une interface standard, vous pouvez chaîner plusieurs objets (par exemple, un objet de hachage suivi d'un objet de chiffrement), ainsi qu'effectuer plusieurs opérations sur les données sans avoir besoin de stockage intermédiaire. Le modèle basé sur les flux vous permet également de créer des objets à partir d'objets plus petits. Par exemple, un algorithme combinant hachage et chiffrement peut être affiché comme un objet de flux unique, même si cet objet a été créé à partir d'un ensemble d'objets de flux.
+Dans la plupart des cas, vous n’avez pas besoin de référencer directement une classe d’implémentation d’algorithme, telle que `AesCryptoServiceProvider` . Les méthodes et les propriétés dont vous avez généralement besoin sont sur la classe d’algorithme de base, par exemple `Aes` . Créez une instance d’une classe d’implémentation par défaut en utilisant une méthode de fabrique sur la classe d’algorithme de base et reportez-vous à la classe d’algorithme de base. Par exemple, consultez la ligne de code en surbrillance dans l’exemple suivant :
+
+:::code language="csharp" source="snippets/encrypting-data/csharp/aes-encrypt.cs" highlight="16":::
+:::code language="vb" source="snippets/encrypting-data/vb/aes-encrypt.vb" highlight="12":::
 
 ## <a name="cryptographic-configuration"></a>Configuration du chiffrement
 
-La configuration du chiffrement vous permet de résoudre une implémentation d'un algorithme en un nom d'algorithme. De cette façon, les classes de chiffrement .NET Framework peuvent être étendues. Vous pouvez ajouter votre propre implémentation logicielle ou matérielle d'un algorithme, puis la mapper vers le nom d'algorithme de votre choix. Si un algorithme n'est pas spécifié dans le fichier de configuration, les paramètres par défaut sont utilisés. Pour plus d’informations sur la configuration de chiffrement, consultez [Configuration des classes de chiffrement](../../framework/configure-apps/configure-cryptography-classes.md).
+La configuration du chiffrement vous permet de résoudre une implémentation spécifique d’un algorithme en un nom d’algorithme, ce qui permet l’extensibilité des classes de chiffrement .NET. Vous pouvez ajouter votre propre implémentation logicielle ou matérielle d'un algorithme, puis la mapper vers le nom d'algorithme de votre choix. Si un algorithme n'est pas spécifié dans le fichier de configuration, les paramètres par défaut sont utilisés.
 
 ## <a name="choosing-an-algorithm"></a>Choix d'un algorithme
 
@@ -70,11 +74,12 @@ Voici une liste des algorithmes recommandés pour chaque application :
   - <xref:System.Security.Cryptography.ECDiffieHellman>
   - <xref:System.Security.Cryptography.RSA>
 - Génération de nombres aléatoires :
-  - <xref:System.Security.Cryptography.RNGCryptoServiceProvider>
+  - <xref:System.Security.Cryptography.RandomNumberGenerator.Create%2A?displayProperty=nameWithType>
 - Génération d'une clé à partir d'un mot de passe :
   - <xref:System.Security.Cryptography.Rfc2898DeriveBytes>
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Services de chiffrement](cryptographic-services.md)
-- [Appliquer les protocoles de chiffrement, les algorithmes et le code source en C, par Bruce Schneier](https://www.schneier.com/books/applied_cryptography/)
+- [services de chiffrement](cryptographic-services.md)
+- [Chiffrement multiplateforme](cross-platform-cryptography.md)
+- [Protection des données ASP.NET Core](/aspnet/core/security/data-protection/introduction)

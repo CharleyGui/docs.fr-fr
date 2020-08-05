@@ -4,12 +4,12 @@ description: Ce tutoriel vous montre comment créer une application console .NET
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: de8ea511b3d421e391b182a6de079b854d3f2390
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: da972d793570a8dd6b906762640bd6bfe5531a5b
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281752"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557162"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Didacticiel : analyser le sentiment de commentaires de site Web avec classification binaire dans ML.NET
 
@@ -212,7 +212,7 @@ La méthode [Fit()](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28
 
 ## <a name="evaluate-the-model"></a>Évaluer le modèle
 
-Une fois que votre modèle est entraîné, vérifiez ses performances avec vos données de test.
+Une fois votre modèle formé, utilisez vos données de test pour valider les performances du modèle.
 
 1. Créez la méthode `Evaluate()` juste après `BuildAndTrainModel()`, en utilisant le code suivant :
 
@@ -376,7 +376,7 @@ Press any key to continue . . .
 
 ```
 
-Félicitations ! Vous venez de créer un modèle d’apprentissage automatique pour la classification et la prédiction des sentiments de messages.
+Félicitations ! Vous venez de créer un modèle d’apprentissage automatique pour la classification et la prédiction des sentiments de messages.
 
 La création de modèles efficaces est un processus itératif. Celui-ci présente une qualité initiale médiocre, car le tutoriel utilise de petits jeux de données pour permettre un apprentissage rapide du modèle. Si vous n’êtes pas satisfait de la qualité du modèle, vous pouvez essayer de l’améliorer en fournissant des jeux de données d’apprentissage plus importants ou en choisissant différents algorithmes d’apprentissage avec des [hyperparamètres](../resources/glossary.md#hyperparameter) différents pour chaque algorithme.
 

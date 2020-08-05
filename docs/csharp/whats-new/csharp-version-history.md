@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: ed9555bcef1c71964937c2bc18fedbc7da94f0db
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 96d6e07d5553d65e95144a0cede7cab86b4c5ef7
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738157"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556851"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -17,18 +17,18 @@ Cet article fournit un historique de chaque version majeure du langage C#. L’�
 > [!IMPORTANT]
 > Le langage C# s’appuie sur des types et des méthodes dans ce que la spécification C# définit comme une *bibliothèque standard* pour certaines fonctionnalités. La plateforme .NET fournit ces types et ces méthodes dans des packages. Par exemple, le traitement des exceptions. Chaque instruction ou expression`throw` est vérifiée pour s’assurer de l’objet levé est dérivé de <xref:System.Exception>. De même, chaque `catch` est vérifié pour assurer que le type intercepté est dérivé de <xref:System.Exception>. Chaque version peut ajouter de nouvelles spécifications. Pour utiliser les dernières fonctionnalités de langage dans les environnements plus anciens, vous devrez peut-être installer des bibliothèques spécifiques. Ces dépendances sont décrites dans la page pour chaque version spécifique. Pour en savoir plus, consultez les [relations entre le langage et la bibliothèque](relationships-between-language-and-library.md) pour l’arrière-plan sur cette dépendance.
 
-Les outils de build C# considèrent la dernière version majeure du langage comme la version du langage par défaut. Il peut exister des versions intermédiaires entre les versions majeures, détaillées dans d’autres articles de cette section. Pour utiliser les fonctionnalités les plus récentes dans une version mineure, vous devez [configurer la version du langage du compilateur](../language-reference/configure-language-version.md) et sélectionner la version. Il y a eu des sorties à trois points depuis C 7.0 :
+Les outils de build C# considèrent la dernière version majeure du langage comme la version du langage par défaut. Il peut exister des versions intermédiaires entre les versions majeures, détaillées dans d’autres articles de cette section. Pour utiliser les fonctionnalités les plus récentes dans une version mineure, vous devez [configurer la version du langage du compilateur](../language-reference/configure-language-version.md) et sélectionner la version. Il y a eu des mises en production à trois points depuis C# 7,0 :
 
-- [C 7.3](csharp-7-3.md):
+- [C# 7,3](csharp-7-3.md):
   - C# 7.3 est disponible à compter de [Visual Studio 2017 version 15.7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit SDK .NET Core 2.1](../../core/whats-new/dotnet-core-2-1.md).
-- [C 7.2](csharp-7-2.md):
-  - C 7.2 est disponible à partir de [Visual Studio 2017 version 15.5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et [.NET Core 2.0 SDK](../../core/whats-new/dotnet-core-2-0.md).
-- [C 7.1](csharp-7-1.md):
+- [C# 7,2](csharp-7-2.md):
+  - C# 7,2 est disponible à partir de [Visual Studio 2017 version 15,5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit de développement logiciel (SDK) .net Core 2,0](../../core/whats-new/dotnet-core-2-0.md).
+- [C# 7,1](csharp-7-1.md):
   - C# 7.1 est disponible à compter de [Visual Studio 2017 version 15.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit SDK .NET Core 2.0](../../core/whats-new/dotnet-core-2-0.md).
 
 ## <a name="c-version-10"></a>C# version 1.0
 
-Lorsque vous revenez en arrière et regardez, la version 1.0 de C, sortie avec Visual Studio .NET 2002, ressemblait beaucoup à Java. Dans ses [objectifs de conception énoncés pour ECMA](https://feeldotneteasy.blogspot.com/2011/01/c-design-goals.html), il cherchait à être un « langage orienté objet simple, moderne et généraliste ».  À l’époque, ressembler à Java signifiait qu’il avait atteint ces objectifs de conception.
+Lorsque vous vous retrouverez, la version 1,0 de C#, publiée avec Visual Studio .NET 2002, s’est recherchée comme Java. Dans ses [objectifs de conception énoncés pour ECMA](https://feeldotneteasy.blogspot.com/2011/01/c-design-goals.html), il cherchait à être un « langage orienté objet simple, moderne et généraliste ».  À l’époque, ressembler à Java signifiait qu’il avait atteint ces objectifs de conception.
 
 Mais si vous repensez à C# 1.0 maintenant, cela peut vous donner le vertige. Il lui manquait des fonctionnalités asynchrones intégrées et certaines des fonctionnalités liées aux génériques qui sont aujourd’hui pour vous une évidence. En fait, il ne proposait pas du tout de génériques.  Et [LINQ](../linq/index.md) ? Pas encore disponible. Il fallait attendre encore plusieurs années.
 
@@ -37,18 +37,18 @@ C# version 1.0 semblait dénué de fonctionnalités, par rapport à aujourd’h
 Les principales fonctionnalités du langage C# 1.0 étaient les suivantes :
 
 - [Classes](../programming-guide/classes-and-structs/classes.md)
-- [Structs](../language-reference/builtin-types/struct.md)
+- [Structures](../language-reference/builtin-types/struct.md)
 - [Interfaces](../programming-guide/interfaces/index.md)
 - [Événements](../events-overview.md)
 - [Propriétés](../properties.md)
 - [Délégués](../delegates-overview.md)
-- [Expressions](../programming-guide/statements-expressions-operators/expressions.md)
+- [Opérateurs et expressions](../language-reference/operators/index.md)
 - [Instructions](../programming-guide/statements-expressions-operators/statements.md)
 - [Attributs](../programming-guide/concepts/attributes/index.md)
 
 ## <a name="c-version-12"></a>C# version 1.2
 
-Version 1.2 de Cmd expédiée avec Visual Studio .NET 2003. Cette version contenait quelques améliorations mineures du langage. La principale est que, à compter de cette version, le code était généré dans une boucle `foreach` (appelée <xref:System.IDisposable.Dispose%2A>) sur un <xref:System.Collections.IEnumerator> quand ce <xref:System.Collections.IEnumerator> implémentait <xref:System.IDisposable>.
+La version C# 1,2 est fournie avec Visual Studio .NET 2003. Cette version contenait quelques améliorations mineures du langage. La principale est que, à compter de cette version, le code était généré dans une boucle `foreach` (appelée <xref:System.IDisposable.Dispose%2A>) sur un <xref:System.Collections.IEnumerator> quand ce <xref:System.Collections.IEnumerator> implémentait <xref:System.IDisposable>.
 
 ## <a name="c-version-20"></a>C# version 2.0
 
@@ -80,15 +80,15 @@ Pourtant, C# était toujours en train de courir derrière Java. Java avait déj�
 
 C# version 3.0 est apparu fin 2007, en même temps que Visual Studio 2008, même si l’éventail complet des fonctionnalités du langage n’a réellement voir le jour qu’avec le .NET Framework version 3.5. Cette version a insufflé un changement majeur dans l’évolution de C#. Elle a imposé C# en tant que langage de programmation vraiment formidable. Examinons certaines fonctionnalités importantes dans cette version :
 
-- [Propriétés mises en œuvre automatiques](../programming-guide/classes-and-structs/auto-implemented-properties.md)
+- [Propriétés implémentées automatiquement](../programming-guide/classes-and-structs/auto-implemented-properties.md)
 - [Types anonymes](../programming-guide/classes-and-structs/anonymous-types.md)
 - [Expressions de requête](../linq/query-expression-basics.md)
 - [Expressions lambda](../programming-guide/statements-expressions-operators/lambda-expressions.md)
 - [Arborescences de l’expression](../expression-trees.md)
 - [Méthodes d’extension](../programming-guide/classes-and-structs/extension-methods.md)
-- [Variables locales dactylographiques implicitement](../language-reference/keywords/var.md)
+- [Variables locales implicitement typées](../language-reference/keywords/var.md)
 - [Méthodes partielles](../language-reference/keywords/partial-method.md)
-- [Initialisateurs d’objets et de collecte](../programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Initialiseurs d’objets et de collections](../programming-guide/classes-and-structs/object-and-collection-initializers.md)
 
 Rétrospectivement, nombre de ces fonctionnalités semblent à la fois inéluctables et inséparables. Elles s’assemblent de façon stratégique. L’expression de requête, également appelée LINQ (Language-Integrated Query), était globalement considérée comme la fonctionnalité remarquable de cette version de C#.
 
@@ -100,7 +100,7 @@ Il a fallu du temps aux utilisateurs pour comprendre et intégrer ce concept, ma
 
 ## <a name="c-version-40"></a>C# version 4.0
 
-La version 4.0 de C, sortie avec Visual Studio 2010, aurait eu du mal à se tenir au statut révolutionnaire de la version 3.0. Avec la version 3.0, le langage C# est bel et bien sorti de l’ombre de Java pour être propulsé sur le devant de la scène. Il allait même rapidement devenir élégant.
+La version 4,0 de C#, publiée avec Visual Studio 2010, aurait eu un temps difficile à atteindre l’État révolutionnaire de la version 3,0. Avec la version 3.0, le langage C# est bel et bien sorti de l’ombre de Java pour être propulsé sur le devant de la scène. Il allait même rapidement devenir élégant.
 
 La version suivante introduisit de nouvelles fonctionnalités intéressantes :
 
@@ -117,7 +117,7 @@ La liaison dynamique offre la possibilité de commettre des erreurs, mais égale
 
 ## <a name="c-version-50"></a>C# version 5.0
 
-La version 5.0 de C, sortie avec Visual Studio 2012, était une version ciblée de la langue. Presque tous les efforts déployés pour cette version portaient sur un autre concept révolutionnaire du langage : le modèle `async` et `await` pour la programmation asynchrone.  Voici la liste des fonctionnalités principales :
+C# version 5,0, fourni avec Visual Studio 2012, était une version ciblée du langage. Presque tous les efforts déployés pour cette version portaient sur un autre concept révolutionnaire du langage : le modèle `async` et `await` pour la programmation asynchrone.  Voici la liste des fonctionnalités principales :
 
 - [Membres asynchrones](../async.md)
 - [Attributs d’informations de l’appelant](../language-reference/attributes/caller-information.md)
@@ -132,7 +132,7 @@ Mais `async` et `await` sont les véritables vedettes de cette version. Quand ce
 
 ## <a name="c-version-60"></a>C# version 6.0
 
-Avec les versions 3.0 et 5.0, C# avait ajouté d’importantes nouvelles fonctionnalités à un langage orienté objet. Avec la version 6.0, sortie avec Visual Studio 2015, elle s’éloignerait de faire une fonction de tueur dominante et au lieu de sortir de nombreuses fonctionnalités plus petites qui ont rendu la programmation C plus productive. En voici quelques-unes :
+Avec les versions 3.0 et 5.0, C# avait ajouté d’importantes nouvelles fonctionnalités à un langage orienté objet. Avec la version 6,0, publiée avec Visual Studio 2015, il ne s’agissait pas d’une fonctionnalité de déploiement dominant et de libérer à la place de nombreuses fonctionnalités plus petites qui rendaient la programmation C# plus productive. En voici quelques-unes :
 
 - [Importations statiques](./csharp-6.md#using-static)
 - [Filtres d’exceptions](./csharp-6.md#exception-filters)
@@ -154,11 +154,11 @@ Une autre nouveauté a été proposée avec cette version, même s’il ne s’a
 
 ## <a name="c-version-70"></a>C# version 7.0
 
-La version 7.0 de C a été publiée avec Visual Studio 2017. Cette version propose des évolutions intéressantes dans l’esprit de C# 6.0, mais sans le compilateur en tant que service. Voici quelques-unes des nouvelles fonctionnalités :
+C# version 7,0 a été publié avec Visual Studio 2017. Cette version propose des évolutions intéressantes dans l’esprit de C# 6.0, mais sans le compilateur en tant que service. Voici quelques-unes des nouvelles fonctionnalités :
 
 - [Variables out](./csharp-7.md#out-variables)
 - [Tuples et déconstruction](./csharp-7.md#tuples)
-- [Filtrage](./csharp-7.md#pattern-matching)
+- [Critères spéciaux](./csharp-7.md#pattern-matching)
 - [Fonctions locales](./csharp-7.md#local-functions)
 - [Membres expression-bodied étendus](./csharp-7.md#more-expression-bodied-members)
 - [Variables locales et retours ref](./csharp-7.md#ref-locals-and-returns)
@@ -173,13 +173,13 @@ Toutes ces fonctionnalités offrent de nouvelles capacités appréciables aux d�
 
 Par ailleurs, les utilisations de C# sont de plus en plus larges. .NET Core cible à présent n’importe quel système d’exploitation et garde les yeux rivés sur le cloud et la portabilité.  Ces nouvelles fonctions occupent sans aucun doute les pensées des concepteurs du langage, en plus des fonctionnalités à venir.
 
-## <a name="c-version-71"></a>Version 7.1
+## <a name="c-version-71"></a>Version C# 7,1
 
-C a commencé à libérer des *versions de points* avec C 7.1. Cette version a ajouté l’élément de [configuration de sélection de version linguistique,](../language-reference/configure-language-version.md) trois nouvelles fonctionnalités linguistiques et un nouveau comportement compilateur.
+C# a démarré la publication de *versions point* avec c# 7,1. Cette version a ajouté l’élément de configuration de la [sélection de version de langage](../language-reference/configure-language-version.md) , trois nouvelles fonctionnalités de langage et un nouveau comportement de compilateur.
 
 Les nouvelles fonctionnalités de langage de cette version sont :
 
-- [`async``Main` méthode](./csharp-7-1.md#async-main)
+- [`async``Main`méthode](./csharp-7-1.md#async-main)
   - Le point d’entrée pour une application peut avoir le modificateur `async`.
 - [`default`expressions littérales](./csharp-7-1.md#default-literal-expressions)
   - Vous pouvez utiliser des expressions littérales default dans les expressions de valeur par défaut quand le type cible peut être inféré.
@@ -190,9 +190,9 @@ Les nouvelles fonctionnalités de langage de cette version sont :
 
 Enfin, le compilateur a deux options, `-refout` et `-refonly`, qui contrôlent la [génération d’assemblys de références](./csharp-7-1.md#reference-assembly-generation).
 
-## <a name="c-version-72"></a>Version 7.2
+## <a name="c-version-72"></a>Version C# 7,2
 
-C 7.2 a ajouté plusieurs petites caractéristiques linguistiques :
+C# 7,2 a ajouté plusieurs fonctionnalités de langage de petite taille :
 
 - [Techniques d’écriture de code safe et efficace](./csharp-7-2.md#safe-efficient-code-enhancements)
   - Une combinaison des améliorations de la syntaxe qui permettent d’utiliser les types valeur avec la sémantique de référence.
@@ -200,58 +200,58 @@ C 7.2 a ajouté plusieurs petites caractéristiques linguistiques :
   - Les arguments nommés peuvent être suivis par des arguments de position.
 - [Traits de soulignement de début dans les littéraux numériques](./csharp-7-2.md#leading-underscores-in-numeric-literals)
   - Les littéraux numériques peuvent maintenant comporter des traits de soulignement de début avant tout chiffre affiché.
-- [`private protected`modifier d’accès](./csharp-7-2.md#private-protected-access-modifier)
+- [`private protected`modificateur d’accès](./csharp-7-2.md#private-protected-access-modifier)
   - Le modificateur d’accès `private protected` active l’accès pour les classes dérivées dans le même assembly.
-- [Expressions `ref` conditionnelles](./csharp-7-2.md#conditional-ref-expressions)
+- [Expressions conditionnelles `ref`](./csharp-7-2.md#conditional-ref-expressions)
   - Le résultat d’une expression conditionnelle (`?:`) peut maintenant être une référence.
 
-## <a name="c-version-73"></a>Version 7.3
+## <a name="c-version-73"></a>Version C# 7,3
 
 Il existe deux thèmes principaux pour la version C# 7.3. Un thème fournit des fonctionnalités permettant au code sécurisé d’être aussi performant que le code non sécurisé. Le second thème fournit des améliorations incrémentielles aux fonctionnalités existantes. En outre, de nouvelles options de compilateur ont été ajoutées à cette version.
 
 Les nouvelles fonctionnalités suivantes prennent en charge le thème de meilleures performances pour le code sécurisé :
 
 - [Vous pouvez accéder à des champs fixes sans épinglage.](csharp-7-3.md#indexing-fixed-fields-does-not-require-pinning)
-- [Vous pouvez réaffecter `ref` des variables locales.](csharp-7-3.md#ref-local-variables-may-be-reassigned)
-- [Vous pouvez utiliser des `stackalloc` initialisateurs sur les tableaux.](csharp-7-3.md#stackalloc-arrays-support-initializers)
-- [Vous pouvez `fixed` utiliser des instructions avec n’importe quel type qui prend en charge un modèle.](csharp-7-3.md#more-types-support-the-fixed-statement)
+- [Vous pouvez réassigner des `ref` variables locales.](csharp-7-3.md#ref-local-variables-may-be-reassigned)
+- [Vous pouvez utiliser des initialiseurs sur des `stackalloc` tableaux.](csharp-7-3.md#stackalloc-arrays-support-initializers)
+- [Vous pouvez utiliser des `fixed` instructions avec n’importe quel type prenant en charge un modèle.](csharp-7-3.md#more-types-support-the-fixed-statement)
 - [Vous pouvez utiliser des contraintes génériques supplémentaires.](csharp-7-3.md#enhanced-generic-constraints)
 
 Les améliorations suivantes ont été apportées aux fonctionnalités existantes :
 
-- [Vous pouvez `==` `!=` tester et avec des types de tuple.](csharp-7-3.md#tuples-support--and-)
+- [Vous pouvez tester `==` et `!=` avec des types de Tuple.](csharp-7-3.md#tuples-support--and-)
 - [Vous pouvez utiliser des variables d’expression dans d’autres emplacements.](csharp-7-3.md#extend-expression-variables-in-initializers)
 - [Vous pouvez joindre des attributs à un champ de stockage de propriétés implémentées automatiquement.](csharp-7-3.md#attach-attributes-to-the-backing-fields-for-auto-implemented-properties)
-- [La résolution de `in` la méthode lorsque les arguments diffèrent a été améliorée.](csharp-7-3.md#in-method-overload-resolution-tiebreaker)
+- [La résolution de méthode lorsque les arguments diffèrent par `in` a été améliorée.](csharp-7-3.md#in-method-overload-resolution-tiebreaker)
 - [La résolution de la surcharge comporte maintenant moins de cas ambigus.](csharp-7-3.md#improved-overload-candidates)
 
 Les nouvelles options du compilateur sont les suivantes :
 
-- [`-publicsign`pour permettre la signature d’assemblages Open Source Software (OSS).](csharp-7-3.md#public-or-open-source-signing)
-- [`-pathmap`pour fournir une cartographie pour les annuaires sources.](csharp-7-3.md#pathmap)
+- [`-publicsign`pour activer la signature du logiciel open source (OSS) des assemblys.](csharp-7-3.md#public-or-open-source-signing)
+- [`-pathmap`pour fournir un mappage pour les répertoires sources.](csharp-7-3.md#pathmap)
 
-## <a name="c-version-80"></a>Version 8.0 de C
+## <a name="c-version-80"></a>Version C# 8,0
 
-C 8.0 est la première version majeure de Cmd qui cible spécifiquement .NET Core. Certaines fonctionnalités s’appuient sur de nouvelles capacités CLR, d’autres sur les types de bibliothèque ajoutés uniquement dans .NET Core. C 8.0 ajoute les caractéristiques et les améliorations suivantes à la langue CMD :
+C# 8,0 est la première version majeure de C# qui cible spécifiquement .NET Core. Certaines fonctionnalités s’appuient sur les nouvelles fonctionnalités CLR, d’autres sur les types de bibliothèque ajoutés uniquement dans .NET Core. C# 8,0 ajoute les fonctionnalités et améliorations suivantes au langage C# :
 
 - [Membres ReadOnly](./csharp-8.md#readonly-members)
 - [Méthodes d’interface par défaut](./csharp-8.md#default-interface-methods)
 - [Amélioration des critères spéciaux](./csharp-8.md#more-patterns-in-more-places) :
-  - [Changer d’expression](./csharp-8.md#switch-expressions)
+  - [Expressions de commutateur](./csharp-8.md#switch-expressions)
   - [Modèles de propriétés](./csharp-8.md#property-patterns)
   - [Modèles de tuples](./csharp-8.md#tuple-patterns)
   - [Modèles positionnels](./csharp-8.md#positional-patterns)
-- [Utilisation de déclarations](./csharp-8.md#using-declarations)
+- [Utilisation des déclarations](./csharp-8.md#using-declarations)
 - [Fonctions locales statiques](./csharp-8.md#static-local-functions)
 - [Structs ref jetables](./csharp-8.md#disposable-ref-structs)
 - [Types références Nullables](../language-reference/builtin-types/nullable-reference-types.md)
 - [Flux asynchrones](./csharp-8.md#asynchronous-streams)
 - [Index et plages](./csharp-8.md#indices-and-ranges)
-- [Affectation de fusion nul](./csharp-8.md#null-coalescing-assignment)
-- [Types construits non mentés](./csharp-8.md#unmanaged-constructed-types)
+- [Assignation de fusion Null](./csharp-8.md#null-coalescing-assignment)
+- [Types construits non managés](./csharp-8.md#unmanaged-constructed-types)
 - [Stackalloc dans les expressions imbriquées](./csharp-8.md#stackalloc-in-nested-expressions)
 - [Amélioration des chaînes textuelles interpolées](./csharp-8.md#enhancement-of-interpolated-verbatim-strings)
 
-Les membres de l’interface par défaut nécessitent des améliorations dans le CLR. Ces caractéristiques ont été ajoutées dans le CLR pour .NET Core 3.0. Les gammes et les index, et les flux asynchrones nécessitent de nouveaux types dans les bibliothèques .NET Core 3.0. Les types de référence nuls, lorsqu’ils sont mis en œuvre dans le compilateur, sont beaucoup plus utiles lorsque les bibliothèques sont annotées pour fournir des renseignements sémantiques concernant l’état nul des arguments et des valeurs de rendement. Ces annotations sont ajoutées dans les bibliothèques .NET Core.
+Les membres d’interface par défaut nécessitent des améliorations dans le CLR. Ces fonctionnalités ont été ajoutées dans le CLR pour .NET Core 3,0. Les plages et les index, et les flux asynchrones requièrent de nouveaux types dans les bibliothèques .NET Core 3,0. Les types de référence Nullable, bien qu’implémentés dans le compilateur, sont bien plus utiles lorsque les bibliothèques sont annotées pour fournir des informations sémantiques sur l’État null des arguments et les valeurs de retour. Ces annotations sont ajoutées dans les bibliothèques .NET Core.
 
 _Article_ [_initialement publié sur le blog NDepend_](https://blog.ndepend.com/c-versions-look-language-history/)_, avec l’aimable autorisation d’Erik Dietrich et de Patrick Smacchia._

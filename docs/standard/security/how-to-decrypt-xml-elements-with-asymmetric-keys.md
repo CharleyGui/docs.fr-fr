@@ -1,32 +1,36 @@
 ---
-title: 'Comment : déchiffrer des éléments XML avec des clés asymétriques'
-ms.date: 03/30/2017
+title: 'Procédure : déchiffrer des éléments XML avec des clés asymétriques'
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- System.Security.Cryptography.RSACryptoServiceProvider class
+- System.Security.Cryptography.RSA class
 - asymmetric keys
 - System.Security.Cryptography.EncryptedXml class
 - XML encryption
 - decryption
 ms.assetid: dd5de491-dafe-4b94-966d-99714b2e754a
-ms.openlocfilehash: b3d5d91ff8cf268e4e7a1330ff596a97924dfe55
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4a06628ddde0920133bfd74568786fbca6d5cf09
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290848"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556772"
 ---
-# <a name="how-to-decrypt-xml-elements-with-asymmetric-keys"></a>Comment : déchiffrer des éléments XML avec des clés asymétriques
+# <a name="how-to-decrypt-xml-elements-with-asymmetric-keys"></a>Procédure : déchiffrer des éléments XML avec des clés asymétriques
+
 Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer et déchiffrer un élément d'un document XML.  Le chiffrement XML est une méthode normalisée qui permet d'échanger et de stocker des données XML chiffrées sans que celles-ci ne puissent être lues facilement.  Pour plus d’informations sur la norme de chiffrement XML, consultez la recommandation du W3C sur la [syntaxe et World Wide Web Consortium le traitement des signatures XML](https://www.w3.org/TR/xmldsig-core/).  
+
+> [!NOTE]
+> Le code de cet article s’applique à Windows.
+
+L’exemple de cette procédure déchiffre un élément XML qui a été chiffré à l’aide des méthodes décrites dans [Comment : chiffrer des éléments XML avec des clés asymétriques](how-to-encrypt-xml-elements-with-asymmetric-keys.md).  Il recherche une <`EncryptedData` élément>, déchiffre l’élément, puis remplace l’élément par l’élément XML en texte brut d’origine.  
   
- L’exemple de cette procédure déchiffre un élément XML qui a été chiffré à l’aide des méthodes décrites dans [Comment : chiffrer des éléments XML avec des clés asymétriques](how-to-encrypt-xml-elements-with-asymmetric-keys.md).  Il recherche une <`EncryptedData` élément>, déchiffre l’élément, puis remplace l’élément par l’élément XML en texte brut d’origine.  
+Cet exemple déchiffre un élément XML à l'aide de deux clés.  Il récupère une clé privée RSA générée précédemment à partir d’un conteneur de clé, puis utilise la clé RSA pour déchiffrer une clé de session stockée dans l' `EncryptedKey` élément <> de l' `EncryptedData` élément> <.  L'exemple utilise ensuite la clé de session pour déchiffrer l'élément XML.  
   
- Cet exemple déchiffre un élément XML à l'aide de deux clés.  Il récupère une clé privée RSA générée précédemment à partir d’un conteneur de clé, puis utilise la clé RSA pour déchiffrer une clé de session stockée dans l' `EncryptedKey` élément <> de l' `EncryptedData` élément> <.  L'exemple utilise ensuite la clé de session pour déchiffrer l'élément XML.  
-  
- Cet exemple convient quand plusieurs applications doivent partager des données chiffrées ou quand une application doit enregistrer des données chiffrées entre chaque exécution.  
+Cet exemple convient quand plusieurs applications doivent partager des données chiffrées ou quand une application doit enregistrer des données chiffrées entre chaque exécution.  
   
 ### <a name="to-decrypt-an-xml-element-with-an-asymmetric-key"></a>Pour déchiffrer un élément XML avec une clé asymétrique  
   
@@ -60,26 +64,34 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
      [!code-csharp[HowToDecryptXMLElementAsymmetric#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#8)]
      [!code-vb[HowToDecryptXMLElementAsymmetric#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#8)]  
   
-## <a name="example"></a>Exemple  
- Cet exemple suppose qu'un fichier nommé `test.xml` se trouve dans le même répertoire que le programme compilé.  Il suppose également que `test.xml` contient un élément XML qui a été chiffré à l’aide des techniques décrites dans [Comment : chiffrer des éléments XML avec des clés asymétriques](how-to-encrypt-xml-elements-with-asymmetric-keys.md).  
+## <a name="example"></a>Exemple
+
+Cet exemple suppose qu'un fichier nommé `test.xml` se trouve dans le même répertoire que le programme compilé.  Il suppose également que `test.xml` contient un élément XML qui a été chiffré à l’aide des techniques décrites dans [Comment : chiffrer des éléments XML avec des clés asymétriques](how-to-encrypt-xml-elements-with-asymmetric-keys.md).  
   
- [!code-csharp[HowToDecryptXMLElementAsymmetric#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#1)]
- [!code-vb[HowToDecryptXMLElementAsymmetric#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#1)]  
+[!code-csharp[HowToDecryptXMLElementAsymmetric#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#1)]
+[!code-vb[HowToDecryptXMLElementAsymmetric#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
   
-- Pour compiler cet exemple, vous devez inclure une référence à `System.Security.dll`.  
+- Dans un projet qui cible .NET Framework, incluez une référence à `System.Security.dll` .
+
+- Dans un projet qui cible .NET Core ou .NET 5, installez le package NuGet [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Incluez les espaces de noms suivants : <xref:System.Xml>, <xref:System.Security.Cryptography> et <xref:System.Security.Cryptography.Xml>.  
   
-## <a name="net-framework-security"></a>Sécurité du .NET Framework  
- Ne stockez jamais une clé de chiffrement symétrique en texte brut et ne transférez jamais une clé symétrique d'un ordinateur à l'autre en texte brut.  De plus, la clé privée d'une paire de clés asymétriques ne doit jamais être stockée ni transférée en texte brut.  Pour plus d’informations sur les clés de chiffrement symétriques et asymétriques, consultez [génération de clés pour le chiffrement et le déchiffrement](generating-keys-for-encryption-and-decryption.md).  
+## <a name="net-security"></a>Sécurité .NET  
+
+Ne stockez jamais une clé de chiffrement symétrique en texte brut et ne transférez jamais une clé symétrique d'un ordinateur à l'autre en texte brut.  De plus, la clé privée d'une paire de clés asymétriques ne doit jamais être stockée ni transférée en texte brut.  Pour plus d’informations sur les clés de chiffrement symétriques et asymétriques, consultez [génération de clés pour le chiffrement et le déchiffrement](generating-keys-for-encryption-and-decryption.md).  
   
- N'incorporez jamais une clé directement dans votre code source.  Les clés incorporées peuvent être facilement lues à partir d’un assembly en utilisant [Ildasm. exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) ou en ouvrant l’assembly dans un éditeur de texte tel que le bloc-notes.  
+ N'incorporez jamais une clé directement dans votre code source.  Les clés incorporées peuvent être facilement lues à partir d’un assembly à l’aide d' [Ildasm.exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) ou en ouvrant l’assembly dans un éditeur de texte tel que le bloc-notes.  
   
  Quand vous avez terminé d'utiliser une clé de chiffrement, effacez-la de la mémoire en affectant à chaque octet la valeur zéro ou en appelant la méthode <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> de la classe de chiffrement managée.  Les clés de chiffrement peuvent parfois être lues à partir de la mémoire par un débogueur ou à partir d'un disque dur si l'emplacement de mémoire est paginé sur le disque.  
   
 ## <a name="see-also"></a>Voir aussi
 
+- [Modèle de chiffrement](cryptography-model.md)
+- [services de chiffrement](cryptographic-services.md)
+- [Chiffrement multiplateforme](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
-- [Comment : chiffrer des éléments XML avec des clés asymétriques](how-to-encrypt-xml-elements-with-asymmetric-keys.md)
+- [Procédure : chiffrer des éléments XML avec des clés asymétriques](how-to-encrypt-xml-elements-with-asymmetric-keys.md)
+- [Protection des données ASP.NET Core](/aspnet/core/security/data-protection/introduction)

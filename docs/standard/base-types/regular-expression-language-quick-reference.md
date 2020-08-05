@@ -15,12 +15,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: a2fc2c56eeb29f5e89dc0b9f94636408ff10700f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4788c84be76a5cc9a9a6327fcd054e08db4d1872
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446364"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556798"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Langage des expressions régulières - Aide-mémoire
 
@@ -94,8 +94,8 @@ Les constructions de regroupement délimitent les sous-expressions d’une expre
 |Construction de regroupement|Description|Modèle|Correspond à|
 |------------------------|-----------------|-------------|-------------|
 |`(`sous- *expression*`)`|Capture la sous-expression mise en correspondance et lui assigne un nombre ordinal de base un.|`(\w)\1`|`"ee"` dans `"deep"`|
-|`(?<` *name* `>` *sous-expression* `)`|Capture la sous-expression mise en correspondance dans un groupe nommé.|`(?<double>\w)\k<double>`|`"ee"` dans `"deep"`|
-|`(?<` *nom1* `-` *nom2* `>` *sous-expression* `)`|Définit un équilibre de définition de groupe. Pour plus d’informations, consultez la section « Équilibre de définition de groupe » dans [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` dans `"3+2^((1-3)*(3-1))"`|
+|`(?<` *name* `>` *sous-expression* `)`<br /> ou <br />`(?'` *name* `'` *sous-expression* `)`|Capture la sous-expression mise en correspondance dans un groupe nommé.|`(?<double>\w)\k<double>`|`"ee"` dans `"deep"`|
+|`(?<` *nom1* `-` *nom2* `>` *sous-expression* `)` <br /> ou <br /> `(?'` *nom1* `-` *nom2* `'` *sous-expression* `)`|Définit un équilibre de définition de groupe. Pour plus d’informations, consultez la section « Équilibre de définition de groupe » dans [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` dans `"3+2^((1-3)*(3-1))"`|
 |`(?:`sous- *expression*`)`|Définit un groupe sans capture.|`Write(?:Line)?`|`"WriteLine"` dans `"Console.WriteLine()"`<br /><br /> `"Write"` dans `"Console.Write(value)"`|
 |`(?imnsx-imnsx:`sous- *expression*`)`|Active ou désactive les options spécifiées dans *sous-expression*. Pour plus d’informations, consultez [Options des expressions régulières](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` dans `"A12xl A12XL a12xl"`|
 |`(?=`sous- *expression*`)`|Assertion de préanalyse positive de largeur nulle.|`\w+(?=\.)`|`"is"`, `"ran"` et `"out"` dans `"He is. The dog ran. The sun is out."`|
@@ -129,7 +129,7 @@ Une backreference permet qu’une sous-expression précédemment mise en corresp
 
 |Construction de backreference|Description|Modèle|Correspond à|
 |-----------------------------|-----------------|-------------|-------------|
-|`\` *nombre*|Backreference. Correspond à la valeur d’une sous-expression numérotée.|`(\w)\1`|`"ee"` dans `"seek"`|
+|`\`*nombre*|Backreference. Correspond à la valeur d’une sous-expression numérotée.|`(\w)\1`|`"ee"` dans `"seek"`|
 |`\k<`*nom*`>`|Backreference nommée. Correspond à la valeur d’une expression nommée.|`(?<char>\w)\k<char>`|`"ee"` dans `"seek"`|
 
 ## <a name="alternation-constructs"></a>Constructions d’alternative
@@ -148,7 +148,7 @@ Les substitutions sont des éléments de langage d’expression régulière pris
 
 |Caractère|Description|Modèle|Modèle de remplacement|Chaîne d’entrée|Chaîne de résultat|
 |---------------|-----------------|-------------|-------------------------|------------------|-------------------|
-|`$` *nombre*|Remplace la sous-chaîne mise en correspondance par le groupe *nombre*.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
+|`$`*nombre*|Remplace la sous-chaîne mise en correspondance par le groupe *nombre*.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
 |`${`*nom*`}`|Remplace la sous-chaîne mise en correspondance par le groupe nommé *nom*.|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
 |`$$`|Remplace un "$" littéral.|`\b(\d+)\s?USD`|`$$$1`|`"103 USD"`|`"$103"`|
 |`$&`|Remplace une copie de la totalité de la correspondance.|`\$?\d*\.?\d+`|`**$&**`|`"$1.30"`|`"**$1.30**"`|

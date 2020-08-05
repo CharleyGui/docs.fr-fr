@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: c9720f51e40ada4cd2cf6997ba7006a232893553
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: d3bfeda8309af83d8e4199999ed91263a17caeea
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702463"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556172"
 ---
 ### <a name="removed-status-bar-controls"></a>Contrôles de barre d’État supprimés
 
-À compter de .NET 5,0 Preview 1, certains contrôles de Windows Forms ne sont plus disponibles.
+À compter de .NET 5,0, certains contrôles de Windows Forms ne sont plus disponibles.
 
 #### <a name="change-description"></a>Description de la modification
 
-À compter de .NET 5,0 Preview 1, certains des contrôles de Windows Forms liés à la barre d’État ne sont plus disponibles. Les contrôles de remplacement qui offrent une meilleure conception et une meilleure prise en charge ont été introduits dans .NET Framework 2,0. Les contrôles déconseillés ont été précédemment supprimés des boîtes à outils du concepteur, mais ils étaient toujours disponibles pour être utilisés. Ils ont été complètement supprimés.
+À compter de .NET 5,0, certains des contrôles Windows Forms liés à la barre d’État ne sont plus disponibles. Les contrôles de remplacement qui offrent une meilleure conception et une meilleure prise en charge ont été introduits dans .NET Framework 2,0. Les contrôles déconseillés ont été précédemment supprimés des boîtes à outils du concepteur, mais ils étaient toujours disponibles pour être utilisés. Ils ont été complètement supprimés.
 
 Les types suivants ne sont plus disponibles :
 

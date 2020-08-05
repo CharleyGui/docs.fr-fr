@@ -1,39 +1,39 @@
 ---
-title: 'Comment : chiffrer des éléments XML avec des clés asymétriques'
-ms.date: 03/30/2017
+title: 'Procédure : chiffrer des éléments XML avec des clés asymétriques'
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- cryptography [.NET Framework], asymmetric keys
+- cryptography [.NET], asymmetric keys
 - AES algorithm
-- System.Security.Cryptography.RSACryptoServiceProvider class
-- asymmetric keys [.NET Framework]
+- System.Security.Cryptography.RSA class
+- asymmetric keys [.NET]
 - System.Security.Cryptography.EncryptedXml class
 - XML encryption
 - key containers
 - Advanced Encryption Standard algorithm
-- Rijndael
-- encryption [.NET Framework], asymmetric keys
+- encryption [.NET], asymmetric keys
 ms.assetid: a164ba4f-e596-4bbe-a9ca-f214fe89ed48
-ms.openlocfilehash: 475446f6206676e93ea72d16e01bcf1067c24e86
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1c824b00a1df920108cfcd8c4590b680020cdf3e
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277373"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555785"
 ---
-# <a name="how-to-encrypt-xml-elements-with-asymmetric-keys"></a>Comment : chiffrer des éléments XML avec des clés asymétriques
+# <a name="how-to-encrypt-xml-elements-with-asymmetric-keys"></a>Procédure : chiffrer des éléments XML avec des clés asymétriques
+
 Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer un élément d'un document XML.  Le chiffrement XML est une méthode normalisée qui permet d'échanger et de stocker des données XML chiffrées sans que celles-ci ne puissent être lues facilement.  Pour plus d’informations sur la norme de chiffrement XML, consultez la spécification World Wide Web Consortium (W3C) pour le chiffrement XML situé dans <https://www.w3.org/TR/xmldsig-core/> .  
   
  Vous pouvez utiliser le chiffrement XML pour remplacer tout élément XML ou tout document comportant un élément <`EncryptedData`> qui contient des données XML chiffrées.  L' `EncryptedData` élément <> peut également contenir des sous-éléments qui incluent des informations sur les clés et les processus utilisés pendant le chiffrement.  Le chiffrement XML permet à un document de contenir plusieurs éléments chiffrés et permet à un élément d'être chiffré plusieurs fois.  L’exemple de code de cette procédure montre comment créer un `EncryptedData` élément <> avec plusieurs autres sous-éléments que vous pouvez utiliser ultérieurement pendant le déchiffrement.  
   
- Cet exemple chiffre un élément XML à l'aide de deux clés.  Il génère une paire de clés publique/privée RSA et l'enregistre dans un conteneur de clé sécurisé.  L'exemple crée ensuite une autre clé de session à l'aide de l'algorithme AES(Advanced Encryption Standard), également appelé algorithme Rijndael.  L'exemple utilise la clé de session AES pour chiffrer le document XML, puis utilise la clé publique RSA pour chiffrer la clé de session AES.  Enfin, l’exemple enregistre la clé de session AES chiffrée et les données XML chiffrées dans le document XML au sein d’un nouvel `EncryptedData` élément <>.  
+ Cet exemple chiffre un élément XML à l'aide de deux clés.  Il génère une paire de clés publique/privée RSA et l'enregistre dans un conteneur de clé sécurisé.  L’exemple crée ensuite une clé de session distincte à l’aide de l’algorithme Advanced Encryption Standard (AES).  L'exemple utilise la clé de session AES pour chiffrer le document XML, puis utilise la clé publique RSA pour chiffrer la clé de session AES.  Enfin, l’exemple enregistre la clé de session AES chiffrée et les données XML chiffrées dans le document XML au sein d’un nouvel `EncryptedData` élément <>.  
   
  Pour déchiffrer l'élément XML, vous devez récupérer la clé privée RSA du conteneur de clé, l'utiliser pour déchiffrer la clé de session et ensuite utiliser la clé de session pour déchiffrer le document.  Pour plus d’informations sur le déchiffrement d’un élément XML chiffré à l’aide de cette procédure, consultez [Comment : déchiffrer des éléments XML avec des clés asymétriques](how-to-decrypt-xml-elements-with-asymmetric-keys.md).  
   
- Cet exemple convient quand plusieurs applications doivent partager des données chiffrées ou quand une application doit enregistrer des données chiffrées entre chaque exécution.  
+ Cet exemple convient quand plusieurs applications doivent partager des données chiffrées ou quand une application doit enregistrer des données chiffrées entre chaque exécution.
   
 ### <a name="to-encrypt-an-xml-element-with-an-asymmetric-key"></a>Pour chiffrer un élément XML avec une clé asymétrique  
   
@@ -57,7 +57,7 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
      [!code-csharp[HowToEncryptXMLElementAsymmetric#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#5)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#5)]  
   
-5. Créez une clé de session en utilisant la classe <xref:System.Security.Cryptography.RijndaelManaged>.  Cette clé chiffrera l'élément XML, puis sera chiffrée et placée dans le document XML.  
+5. Créez une clé de session en utilisant la classe <xref:System.Security.Cryptography.Aes>.  Cette clé chiffrera l'élément XML, puis sera chiffrée et placée dans le document XML.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#6](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#6)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#6)]  
@@ -129,18 +129,24 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
   
 ## <a name="compiling-the-code"></a>Compilation du code  
   
-- Pour compiler cet exemple, vous devez inclure une référence à `System.Security.dll`.  
+- Dans un projet qui cible .NET Framework, incluez une référence à `System.Security.dll` .
+
+- Dans un projet qui cible .NET Core ou .NET 5, installez le package NuGet [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Incluez les espaces de noms suivants : <xref:System.Xml>, <xref:System.Security.Cryptography> et <xref:System.Security.Cryptography.Xml>.  
   
-## <a name="net-framework-security"></a>Sécurité du .NET Framework  
- Ne stockez jamais une clé de chiffrement symétrique en texte brut et ne transférez jamais une clé symétrique d'un ordinateur à l'autre en texte brut.  De plus, la clé privée d'une paire de clés asymétriques ne doit jamais être stockée ni transférée en texte brut.  Pour plus d’informations sur les clés de chiffrement symétriques et asymétriques, consultez [génération de clés pour le chiffrement et le déchiffrement](generating-keys-for-encryption-and-decryption.md).  
+## <a name="net-security"></a>Sécurité .NET
+
+Ne stockez jamais une clé de chiffrement symétrique en texte brut et ne transférez jamais une clé symétrique d'un ordinateur à l'autre en texte brut.  De plus, la clé privée d'une paire de clés asymétriques ne doit jamais être stockée ni transférée en texte brut.  Pour plus d’informations sur les clés de chiffrement symétriques et asymétriques, consultez [génération de clés pour le chiffrement et le déchiffrement](generating-keys-for-encryption-and-decryption.md).  
   
- N'incorporez jamais une clé directement dans votre code source.  Les clés incorporées peuvent être facilement lues à partir d’un assembly à l’aide d' [Ildasm. exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) ou en ouvrant l’assembly dans un éditeur de texte tel que le bloc-notes.  
+N'incorporez jamais une clé directement dans votre code source.  Les clés incorporées peuvent être facilement lues à partir d’un assembly à l’aide de l' [Ildasm.exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) ou en ouvrant l’assembly dans un éditeur de texte tel que le bloc-notes.  
   
- Quand vous avez terminé d'utiliser une clé de chiffrement, effacez-la de la mémoire en affectant à chaque octet la valeur zéro ou en appelant la méthode <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> de la classe de chiffrement managée.  Les clés de chiffrement peuvent parfois être lues à partir de la mémoire par un débogueur ou à partir d'un disque dur si l'emplacement de mémoire est paginé sur le disque.  
+Quand vous avez terminé d'utiliser une clé de chiffrement, effacez-la de la mémoire en affectant à chaque octet la valeur zéro ou en appelant la méthode <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> de la classe de chiffrement managée.  Les clés de chiffrement peuvent parfois être lues à partir de la mémoire par un débogueur ou à partir d'un disque dur si l'emplacement de mémoire est paginé sur le disque.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- <xref:System.Security.Cryptography.Xml>
-- [Comment : déchiffrer des éléments XML avec des clés asymétriques](how-to-decrypt-xml-elements-with-asymmetric-keys.md)
+- [Modèle de chiffrement](cryptography-model.md)
+- [services de chiffrement](cryptographic-services.md)
+- [Chiffrement multiplateforme](cross-platform-cryptography.md)- <xref:System.Security.Cryptography.Xml>
+- [Procédure : déchiffrer des éléments XML avec des clés asymétriques](how-to-decrypt-xml-elements-with-asymmetric-keys.md)
+- [Protection des données ASP.NET Core](/aspnet/core/security/data-protection/introduction)

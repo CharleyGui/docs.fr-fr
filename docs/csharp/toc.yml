@@ -2,7 +2,7 @@
   href: index.yml
 - name: Prise en main
   items:
-    - name: Vue d'ensemble
+    - name: Vue d’ensemble
       displayName: get started
       href: getting-started/index.md
     - name: Introduction au langage C# et au .NET Framework
@@ -876,8 +876,6 @@
           href: programming-guide/statements-expressions-operators/index.md
         - name: Instructions
           href: programming-guide/statements-expressions-operators/statements.md
-        - name: Expressions
-          href: programming-guide/statements-expressions-operators/expressions.md
         - name: Membres expression-bodied
           href: programming-guide/statements-expressions-operators/expression-bodied-members.md
         - name: Fonctions anonymes
@@ -1561,7 +1559,7 @@
       items:
         - name: Vue d'ensemble
           href: language-reference/operators/index.md
-          displayName: 'operator precedence, operator associativity'
+          displayName: 'operator precedence, operator associativity, expressions'
         - name: Opérateurs arithmétiques
           href: language-reference/operators/arithmetic-operators.md
           displayName: '++, --, +, -, *, /, %, +=, -=, *=, /=, %=, checked, unchecked'

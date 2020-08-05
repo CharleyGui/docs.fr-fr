@@ -1,6 +1,6 @@
 ---
-title: 'Comment : vérifier les signatures numériques de documents XML'
-ms.date: 03/30/2017
+title: 'Procédure : vérifier les signatures numériques de documents XML'
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -8,25 +8,29 @@ dev_langs:
 helpviewer_keywords:
 - System.Security.Cryptography.SignedXml class
 - signatures, cryptographic
-- System.Security.Cryptography.RSACryptoServiceProvider class
+- System.Security.Cryptography.RSA class
 - verifying signatures
 - checking signatures
 - XML digital signatures
 - digital signatures, verifying
 ms.assetid: a4d5ceb1-b9f5-47e8-9e4a-a2b39110002f
-ms.openlocfilehash: fa5e13e4a84a7d5d5c07c63df9079f4a07aebc62
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b9b2dc6a558d1fd6acd2922a7c8ad82ce8776c26
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277139"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557045"
 ---
-# <a name="how-to-verify-the-digital-signatures-of-xml-documents"></a>Comment : vérifier les signatures numériques de documents XML
+# <a name="how-to-verify-the-digital-signatures-of-xml-documents"></a>Procédure : vérifier les signatures numériques de documents XML
+
 Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour vérifier les données XML signées avec une signature numérique. Les signatures numériques XML (XMLDSIG) vous permettent de vérifier que les données n'ont pas été modifiées après leur signature. Pour plus d’informations sur la norme XMLDSIG, consultez la spécification World Wide Web Consortium (W3C) à l’adresse <https://www.w3.org/TR/xmldsig-core/> .
   
- L’exemple de code de cette procédure montre comment vérifier une signature numérique XML contenue dans un `Signature` élément <>.  L'exemple récupère une clé publique RSA d'un conteneur de clé, puis utilise cette clé pour vérifier la signature.  
+> [!NOTE]
+> Le code de cet article s’applique à Windows.
+
+L’exemple de code de cette procédure montre comment vérifier une signature numérique XML contenue dans un `Signature` élément <>.  L'exemple récupère une clé publique RSA d'un conteneur de clé, puis utilise cette clé pour vérifier la signature.  
   
- Pour plus d’informations sur la création d’une signature numérique qui peut être vérifiée à l’aide de cette technique, consultez [Comment : signer des documents XML avec des signatures numériques](how-to-sign-xml-documents-with-digital-signatures.md).  
+Pour plus d’informations sur la création d’une signature numérique qui peut être vérifiée à l’aide de cette technique, consultez [Comment : signer des documents XML avec des signatures numériques](how-to-sign-xml-documents-with-digital-signatures.md).  
   
 ### <a name="to-verify-the-digital-signature-of-an-xml-document"></a>Pour vérifier la signature numérique d'un document XML  
   
@@ -65,24 +69,32 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
      [!code-csharp[HowToVerifyXMLDocumentRSA#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToVerifyXMLDocumentRSA/cs/sample.cs#8)]
      [!code-vb[HowToVerifyXMLDocumentRSA#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToVerifyXMLDocumentRSA/vb/sample.vb#8)]  
   
-## <a name="example"></a>Exemple  
- Cet exemple suppose qu'un fichier nommé `"test.xml"` se trouve dans le même répertoire que le programme compilé.  Le `"test.xml"` fichier doit être signé à l’aide des techniques décrites dans Guide pratique [pour signer des documents XML avec des signatures numériques](how-to-sign-xml-documents-with-digital-signatures.md).  
+## <a name="example"></a>Exemple
+
+Cet exemple suppose qu'un fichier nommé `"test.xml"` se trouve dans le même répertoire que le programme compilé.  Le `"test.xml"` fichier doit être signé à l’aide des techniques décrites dans Guide pratique [pour signer des documents XML avec des signatures numériques](how-to-sign-xml-documents-with-digital-signatures.md).  
   
- [!code-csharp[HowToVerifyXMLDocumentRSA#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToVerifyXMLDocumentRSA/cs/sample.cs#1)]
- [!code-vb[HowToVerifyXMLDocumentRSA#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToVerifyXMLDocumentRSA/vb/sample.vb#1)]  
+[!code-csharp[HowToVerifyXMLDocumentRSA#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToVerifyXMLDocumentRSA/cs/sample.cs#1)]
+[!code-vb[HowToVerifyXMLDocumentRSA#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToVerifyXMLDocumentRSA/vb/sample.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
   
-- Pour compiler cet exemple, vous devez inclure une référence à `System.Security.dll`.  
+- Dans un projet qui cible .NET Framework, incluez une référence à `System.Security.dll` .
+
+- Dans un projet qui cible .NET Core ou .NET 5, installez le package NuGet [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Incluez les espaces de noms suivants : <xref:System.Xml>, <xref:System.Security.Cryptography> et <xref:System.Security.Cryptography.Xml>.  
   
-## <a name="net-framework-security"></a>Sécurité du .NET Framework  
- La clé privée d'une paire de clés asymétriques ne doit jamais être stockée ni transférée en texte brut.  Pour plus d’informations sur les clés de chiffrement symétriques et asymétriques, consultez [génération de clés pour le chiffrement et le déchiffrement](generating-keys-for-encryption-and-decryption.md).  
+## <a name="net-security"></a>Sécurité .NET
+
+La clé privée d'une paire de clés asymétriques ne doit jamais être stockée ni transférée en texte brut.  Pour plus d’informations sur les clés de chiffrement symétriques et asymétriques, consultez [génération de clés pour le chiffrement et le déchiffrement](generating-keys-for-encryption-and-decryption.md).  
   
- N'incorporez jamais une clé privée directement dans votre code source.  Les clés incorporées peuvent être facilement lues à partir d’un assembly à l’aide d' [Ildasm. exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) ou en ouvrant l’assembly dans un éditeur de texte tel que le bloc-notes.  
+N'incorporez jamais une clé privée directement dans votre code source.  Les clés incorporées peuvent être facilement lues à partir d’un assembly à l’aide de l' [Ildasm.exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) ou en ouvrant l’assembly dans un éditeur de texte tel que le bloc-notes.  
   
 ## <a name="see-also"></a>Voir aussi
 
+- [Modèle de chiffrement](cryptography-model.md)
+- [services de chiffrement](cryptographic-services.md)
+- [Chiffrement multiplateforme](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
-- [Comment : signer des documents XML avec des signatures numériques](how-to-sign-xml-documents-with-digital-signatures.md)
+- [Procédure : signer des documents XML avec des signatures numériques](how-to-sign-xml-documents-with-digital-signatures.md)
+- [Protection des données ASP.NET Core](/aspnet/core/security/data-protection/introduction)

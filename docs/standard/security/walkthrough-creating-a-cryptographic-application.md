@@ -1,34 +1,40 @@
 ---
-title: "Procédure pas à pas : création d'une application de chiffrement"
+title: 'Procédure pas à pas : création d’une application de chiffrement'
 description: Parcourez la création d’une application de chiffrement. Découvrez comment chiffrer et déchiffrer le contenu d’une application Windows Forms.
-ms.date: 03/30/2017
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- cryptography [NET Framework], example
-- cryptography [NET Framework], cryptographic application example
-- cryptography [NET Framework], application example
+- cryptography [NET], example
+- cryptography [NET], cryptographic application example
+- cryptography [NET], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-ms.openlocfilehash: 72116227fbec2435d428ad2bbdb4cc74e5c3663f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 16a887f23c584daa83106ae61c497bcae8dc4dd2
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602178"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557188"
 ---
-# <a name="walkthrough-creating-a-cryptographic-application"></a>Procédure pas à pas : création d'une application de chiffrement
+# <a name="walkthrough-creating-a-cryptographic-application"></a>Procédure pas à pas : création d’une application de chiffrement
+
+> [!NOTE]
+> Cet article s’applique à Windows.
+>
+> Pour plus d’informations sur la ASP.NET Core, consultez [protection des données ASP.net Core](/aspnet/core/security/data-protection/introduction).
+
 Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. Les exemples de code sont conçus pour une application Windows Forms. Cette application ne montre pas de scénarios du monde réel, tels que l'utilisation de cartes à puce. Elle montre les principes fondamentaux du chiffrement et du déchiffrement.  
   
- Cette procédure pas à pas utilise les indications suivantes pour le chiffrement :  
+Cette procédure pas à pas utilise les indications suivantes pour le chiffrement :  
   
-- Utilisez <xref:System.Security.Cryptography.RijndaelManaged> (algorithme symétrique) pour chiffrer et déchiffrer des données à l'aide des <xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A> et <xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A> générés automatiquement.  
+- Utilisez <xref:System.Security.Cryptography.Aes> (algorithme symétrique) pour chiffrer et déchiffrer des données à l'aide des <xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A> et <xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A> générés automatiquement.  
   
-- Utilisez <xref:System.Security.Cryptography.RSACryptoServiceProvider> (algorithme asymétrique) pour chiffrer et déchiffrer la clé des données chiffrées par <xref:System.Security.Cryptography.RijndaelManaged>. Il est préférable d'utiliser les algorithmes asymétriques pour les petites quantités de données, telles qu'une clé.  
+- Utilisez l' <xref:System.Security.Cryptography.RSA> algorithme asymétrique pour chiffrer et déchiffrer la clé aux données chiffrées par <xref:System.Security.Cryptography.Aes> . Il est préférable d'utiliser les algorithmes asymétriques pour les petites quantités de données, telles qu'une clé.  
   
     > [!NOTE]
-    > Si vous voulez protéger les données de votre ordinateur au lieu d'échanger du contenu chiffré avec d'autres personnes, envisagez d'utiliser les classes <xref:System.Security.Cryptography.ProtectedData> et <xref:System.Security.Cryptography.ProtectedMemory>.  
+    > Si vous souhaitez protéger les données sur votre ordinateur au lieu d’échanger du contenu chiffré avec d’autres personnes, envisagez d’utiliser la <xref:System.Security.Cryptography.ProtectedData> classe.  
   
  Le tableau suivant récapitule les tâches de chiffrement de cette rubrique.  
   
@@ -45,12 +51,14 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 |Test de l’application|Répertorie les procédures pour le test de cette application.|  
   
 ## <a name="prerequisites"></a>Prérequis  
- Vous devez disposer des éléments suivants pour exécuter cette procédure pas à pas :  
+
+Vous devez disposer des éléments suivants pour exécuter cette procédure pas à pas :  
   
 - Références aux espaces de noms <xref:System.IO> et <xref:System.Security.Cryptography>.  
   
 ## <a name="creating-a-windows-forms-application"></a>Création d’une application Windows Forms  
- La plupart des exemples de code de cette procédure pas à pas sont conçus pour être des gestionnaires d'événements pour des contrôles de bouton. Le tableau suivant répertorie les contrôles requis par l'exemple d'application, ainsi que leur nom pour correspondre aux exemples de code.  
+
+La plupart des exemples de code de cette procédure pas à pas sont conçus pour être des gestionnaires d'événements pour des contrôles de bouton. Le tableau suivant répertorie les contrôles requis par l'exemple d'application, ainsi que leur nom pour correspondre aux exemples de code.  
   
 |Control|Nom|Propriété Text (si nécessaire)|  
 |-------------|----------|---------------------------------|  
@@ -64,16 +72,18 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 |<xref:System.Windows.Forms.OpenFileDialog>|`openFileDialog1`||  
 |<xref:System.Windows.Forms.OpenFileDialog>|`openFileDialog2`||  
   
- Double-cliquez sur les boutons de Visual Studio Designer pour créer leurs gestionnaires d'événements.  
+ Double-cliquez sur les boutons dans le concepteur Visual Studio pour créer leurs gestionnaires d’événements.
   
 ## <a name="declaring-global-objects"></a>Déclaration d'objets globaux  
- Ajoutez le code suivant au constructeur du formulaire : Modifiez les variables de chaîne pour votre environnement et vos préférences.  
+
+Ajoutez le code suivant au constructeur du formulaire : Modifiez les variables de chaîne pour votre environnement et vos préférences.  
   
- [!code-csharp[CryptoWalkThru#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#1)]
- [!code-vb[CryptoWalkThru#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#1)]  
+[!code-csharp[CryptoWalkThru#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#1)]
+[!code-vb[CryptoWalkThru#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#1)]  
   
 ## <a name="creating-an-asymmetric-key"></a>Création d'une clé asymétrique  
- Cette tâche crée une clé asymétrique qui chiffre et déchiffre la clé <xref:System.Security.Cryptography.RijndaelManaged>. Cette clé a été utilisée pour chiffrer le contenu et elle affiche le nom du conteneur de clé sur le contrôle d'étiquette.  
+
+Cette tâche crée une clé asymétrique qui chiffre et déchiffre la clé <xref:System.Security.Cryptography.Aes>. Cette clé a été utilisée pour chiffrer le contenu et elle affiche le nom du conteneur de clé sur le contrôle d'étiquette.  
   
  Ajoutez le code suivant en tant que gestionnaire d'événements `Click` pour le bouton `Create Keys` (`buttonCreateAsmKeys_Click`).  
   
@@ -81,15 +91,16 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
  [!code-vb[CryptoWalkThru#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#2)]  
   
 ## <a name="encrypting-a-file"></a>Chiffrement d'un fichier  
- Cette tâche implique deux méthodes : la méthode de gestionnaire d’événements pour le `Encrypt File` bouton ( `buttonEncryptFile_Click` ) et la `EncryptFile` méthode. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le chiffrement.  
+
+Cette tâche implique deux méthodes : la méthode de gestionnaire d’événements pour le `Encrypt File` bouton ( `buttonEncryptFile_Click` ) et la `EncryptFile` méthode. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le chiffrement.  
   
- Le contenu chiffré, la clé et le vecteur d'initialisation sont enregistrés dans un <xref:System.IO.FileStream>, qui correspond au package de chiffrement.  
+Le contenu chiffré, la clé et le vecteur d'initialisation sont enregistrés dans un <xref:System.IO.FileStream>, qui correspond au package de chiffrement.  
   
- La méthode `EncryptFile` effectue les opérations suivantes :  
+La méthode `EncryptFile` effectue les opérations suivantes :  
   
-1. Elle crée un algorithme symétrique <xref:System.Security.Cryptography.RijndaelManaged> pour chiffrer le contenu.  
+1. Elle crée un algorithme symétrique <xref:System.Security.Cryptography.Aes> pour chiffrer le contenu.  
   
-2. Elle crée un objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> pour chiffrer la clé <xref:System.Security.Cryptography.RijndaelManaged>.  
+2. Elle crée un objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> pour chiffrer la clé <xref:System.Security.Cryptography.Aes>.  
   
 3. Elle utilise un objet <xref:System.Security.Cryptography.CryptoStream> pour lire et chiffrer le <xref:System.IO.FileStream> du fichier source (par blocs d'octets) dans un objet <xref:System.IO.FileStream> de destination pour le fichier chiffré.  
   
@@ -122,17 +133,18 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
  [!code-vb[CryptoWalkThru#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#5)]  
   
 ## <a name="decrypting-a-file"></a>Déchiffrement d'un fichier  
- Cette tâche inclut deux méthodes : la méthode de gestionnaire d’événements pour le bouton `Decrypt File` (`buttonDecryptFile_Click`) et la méthode `DecryptFile`. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le déchiffrement.  
+
+Cette tâche inclut deux méthodes : la méthode de gestionnaire d’événements pour le bouton `Decrypt File` (`buttonDecryptFile_Click`) et la méthode `DecryptFile`. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le déchiffrement.  
   
- La méthode `Decrypt` effectue les opérations suivantes :  
+La méthode `Decrypt` effectue les opérations suivantes :  
   
-1. Elle crée un algorithme symétrique <xref:System.Security.Cryptography.RijndaelManaged> pour déchiffrer le contenu.  
+1. Crée un <xref:System.Security.Cryptography.Aes> algorithme symétrique pour déchiffrer le contenu.  
   
 2. Elle lit les huit premiers octets du <xref:System.IO.FileStream> du package chiffré dans les tableaux d'octets pour obtenir la longueur de la clé et du vecteur d'initialisation.  
   
 3. Elle extrait la clé et le vecteur d'initialisation du package de chiffrement dans des tableaux d'octets.  
   
-4. Elle crée un objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> pour déchiffrer la clé <xref:System.Security.Cryptography.RijndaelManaged>.  
+4. Elle crée un objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> pour déchiffrer la clé <xref:System.Security.Cryptography.Aes>.  
   
 5. Elle utilise un objet <xref:System.Security.Cryptography.CryptoStream> pour lire et déchiffrer la section de texte chiffré du package de chiffrement <xref:System.IO.FileStream> (par blocs d'octets) dans l'objet <xref:System.IO.FileStream> pour le fichier déchiffré. Quand cette étape est terminée, le déchiffrement est terminé.  
   
@@ -146,38 +158,42 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
  [!code-csharp[CryptoWalkThru#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#6)]
  [!code-vb[CryptoWalkThru#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#6)]  
   
-## <a name="exporting-a-public-key"></a>Exportation d'une clé publique  
- Cette tâche enregistre la clé créée par le bouton `Create Keys` dans un fichier. Elle exporte uniquement les paramètres publics.  
+## <a name="exporting-a-public-key"></a>Exportation d'une clé publique
+
+Cette tâche enregistre la clé créée par le bouton `Create Keys` dans un fichier. Elle exporte uniquement les paramètres publics.  
   
- Cette tâche décrit le scénario dans lequel Alice confie à Bob sa clé publique pour qu’il puisse chiffrer des fichiers pour elle. Bob et les autres utilisateurs de cette clé publique ne pourront pas les déchiffrer, car ils ne disposent pas de la paire de clés complète avec les paramètres privés.  
+Cette tâche décrit le scénario dans lequel Alice confie à Bob sa clé publique pour qu’il puisse chiffrer des fichiers pour elle. Bob et les autres utilisateurs de cette clé publique ne pourront pas les déchiffrer, car ils ne disposent pas de la paire de clés complète avec les paramètres privés.  
   
- Ajoutez le code suivant en tant que gestionnaire d'événements `Click` pour le bouton `Export Public Key` (`buttonExportPublicKey_Click`).  
+Ajoutez le code suivant en tant que gestionnaire d'événements `Click` pour le bouton `Export Public Key` (`buttonExportPublicKey_Click`).  
   
- [!code-csharp[CryptoWalkThru#8](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#8)]
- [!code-vb[CryptoWalkThru#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#8)]  
+[!code-csharp[CryptoWalkThru#8](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#8)]
+[!code-vb[CryptoWalkThru#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#8)]  
   
-## <a name="importing-a-public-key"></a>Importation d'une clé publique  
- Cette tâche charge la clé avec les paramètres publics uniquement, tels que créés par le bouton `Export Public Key`, et la définit comme le nom du conteneur de clé.  
+## <a name="importing-a-public-key"></a>Importation d'une clé publique
+
+Cette tâche charge la clé avec les paramètres publics uniquement, tels que créés par le bouton `Export Public Key`, et la définit comme le nom du conteneur de clé.  
   
- Cette tâche simule le scénario dans lequel Bob charge la clé d’Alice avec les paramètres publics uniquement pour chiffrer ses fichiers.  
+Cette tâche simule le scénario dans lequel Bob charge la clé d’Alice avec les paramètres publics uniquement pour chiffrer ses fichiers.  
   
- Ajoutez le code suivant en tant que gestionnaire d'événements `Click` pour le bouton `Import Public Key` (`buttonImportPublicKey_Click`).  
+Ajoutez le code suivant en tant que gestionnaire d'événements `Click` pour le bouton `Import Public Key` (`buttonImportPublicKey_Click`).  
   
- [!code-csharp[CryptoWalkThru#9](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#9)]
- [!code-vb[CryptoWalkThru#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#9)]  
+[!code-csharp[CryptoWalkThru#9](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#9)]
+[!code-vb[CryptoWalkThru#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#9)]  
   
 ## <a name="getting-a-private-key"></a>Obtention d'une clé privée  
- Cette tâche définit le nom du conteneur de clé sur le nom de la clé créée à l'aide du bouton `Create Keys`. Le conteneur de clé contiendra la paire de clés complète avec les paramètres privés.  
+
+Cette tâche définit le nom du conteneur de clé sur le nom de la clé créée à l'aide du bouton `Create Keys`. Le conteneur de clé contiendra la paire de clés complète avec les paramètres privés.  
   
- Cette tâche simule le scénario dans lequel Alice utilise sa clé privée pour déchiffrer les fichiers chiffrés par Bob.  
+Cette tâche simule le scénario dans lequel Alice utilise sa clé privée pour déchiffrer les fichiers chiffrés par Bob.  
   
- Ajoutez le code suivant en tant que gestionnaire d'événements `Click` pour le bouton `Get Private Key` (`buttonGetPrivateKey_Click`).  
+Ajoutez le code suivant en tant que gestionnaire d'événements `Click` pour le bouton `Get Private Key` (`buttonGetPrivateKey_Click`).  
   
- [!code-csharp[CryptoWalkThru#7](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#7)]
- [!code-vb[CryptoWalkThru#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#7)]  
+[!code-csharp[CryptoWalkThru#7](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#7)]
+[!code-vb[CryptoWalkThru#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#7)]  
   
-## <a name="testing-the-application"></a>Test de l’application  
- Après avoir créé l'application, suivez les scénarios de test ci-dessous.  
+## <a name="testing-the-application"></a>Test de l’application
+
+Après avoir créé l'application, suivez les scénarios de test ci-dessous.  
   
 #### <a name="to-create-keys-encrypt-and-decrypt"></a>Pour créer, chiffrer et déchiffrer des clés  
   
@@ -211,4 +227,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Services de chiffrement](cryptographic-services.md)
+- [Modèle de chiffrement](cryptography-model.md) -décrit comment le chiffrement est implémenté dans la bibliothèque de classes de base.
+- [services de chiffrement](cryptographic-services.md)
+- [Chiffrement multiplateforme](cross-platform-cryptography.md)
+- [Protection des données ASP.NET Core](/aspnet/core/security/data-protection/introduction)

@@ -5,19 +5,19 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: 5ccd08a348478902bbbac36e99acf7ffc1fc814b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: efba2c1c921d867725db90a1879cc9dee1a22b4e
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846215"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555519"
 ---
 # <a name="true-and-false-operators-c-reference"></a>Opérateurs true et false (rférence C#)
 
-L’opérateur `true` retourne la `true` valeur [bool](../builtin-types/bool.md) pour indiquer que son opérand est certainement vrai. L’opérateur `false` `bool` retourne `true` la valeur pour indiquer que son opérande est définitivement faux. Les opérateurs `true` et `false` ne sont pas forcément complémentaires. Autrement dit, les opérateurs `true` et `false` peuvent retourner la valeur `bool``false` pour le même opérande. Si un type définit un des deux opérateurs, il doit aussi définir un autre opérateur.
+L' `true` opérateur retourne la [bool](../builtin-types/bool.md) valeur bool `true` pour indiquer que son opérande a la valeur true. L' `false` opérateur retourne la `bool` valeur `true` pour indiquer que son opérande est définitivement false. Les opérateurs `true` et `false` ne sont pas forcément complémentaires. Autrement dit, les opérateurs `true` et `false` peuvent retourner la valeur `bool``false` pour le même opérande. Si un type définit un des deux opérateurs, il doit aussi définir un autre opérateur.
 
 > [!TIP]
-> Utilisez `bool?` le type, si vous avez besoin de prendre en charge la logique à trois valeur (par exemple, lorsque vous travaillez avec des bases de données qui prennent en charge un type Boolean de trois valeur). C# fournit les opérateurs `&` et `|` qui prennent en charge la logique à trois valeurs avec les opérandes `bool?`. Pour plus d’informations, voir la section [Opérateurs logiques booléens Nullable](boolean-logical-operators.md#nullable-boolean-logical-operators) de l’article [Opérateurs logiques booléens](boolean-logical-operators.md).
+> Utilisez le `bool?` type, si vous avez besoin de prendre en charge la logique à trois valeurs (par exemple, lorsque vous utilisez des bases de données qui prennent en charge un type booléen à trois valeurs). C# fournit les opérateurs `&` et `|` qui prennent en charge la logique à trois valeurs avec les opérandes `bool?`. Pour plus d’informations, voir la section [Opérateurs logiques booléens Nullable](boolean-logical-operators.md#nullable-boolean-logical-operators) de l’article [Opérateurs logiques booléens](boolean-logical-operators.md).
 
 ## <a name="boolean-expressions"></a>Expressions booléennes
 
@@ -27,9 +27,9 @@ Un type avec l’opérateur `true` défini peut être le type de résultat d’u
 
 Si un type avec les opérateurs `true` et `false` définis [surcharge](operator-overloading.md)[l’opérateur OR logique](boolean-logical-operators.md#logical-or-operator-) `|` ou [l’opérateur AND logique](boolean-logical-operators.md#logical-and-operator-) `&` d’une façon, [l’opérateur OR logique conditionnel](boolean-logical-operators.md#conditional-logical-or-operator-) `||` ou [l’opérateur AND logique conditionnel](boolean-logical-operators.md#conditional-logical-and-operator-) `&&`, respectivement, peut être évalué pour les opérandes de ce type. Pour plus d’informations, consultez la section [Opérateurs logiques conditionnels définis par l’utilisateur](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-L’exemple suivant présente le type qui définit les opérateurs `true` et `false`. Le type surcharge également l’opérateur `&` logique ET `&&` de telle sorte que l’opérateur peut également être évalué pour les opérandes de ce type.
+L’exemple suivant présente le type qui définit les opérateurs `true` et `false`. Le type surcharge également l’opérateur logique AND `&` de telle sorte que l' `&&` opérateur puisse également être évalué pour les opérandes de ce type.
 
 [!code-csharp[true and false operators example](snippets/TrueFalseOperators.cs)]
 
@@ -42,5 +42,5 @@ Wait!
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Opérateurs CMD](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Opérateurs et expressions C#](index.md)
