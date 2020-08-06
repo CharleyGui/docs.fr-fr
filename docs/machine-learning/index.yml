@@ -1,23 +1,23 @@
 ### YamlMime:Landing
 title: Documentation de ML.NET
-summary: Apprenez à utiliser des ML.NET open-source pour créer des modèles d’apprentissage automatique personnalisés et les intégrer dans les applications. Tutoriels, exemples de code, et plus vous montrer comment.
+summary: Découvrez comment utiliser des ML.NET Open source pour créer des modèles de Machine Learning personnalisés et les intégrer dans des applications. Des didacticiels, des exemples de code et plus vous montrent comment.
 metadata:
   title: Documentation de ML.NET - Tutoriels, informations de référence sur les API
-  description: Apprenez à utiliser des ML.NET open-source pour créer des modèles d’apprentissage automatique personnalisés et les intégrer dans les applications. Tutoriels, exemples de code, et plus vous montrer comment.
+  description: Découvrez comment utiliser des ML.NET Open source pour créer des modèles de Machine Learning personnalisés et les intégrer dans des applications. Des didacticiels, des exemples de code et plus vous montrent comment.
   ms.prod: dotnet-ml
   ms.topic: landing-page
   ms.collection: collection
   author: natke
   ms.author: nakersha
   ms.date: 10/30/2019
-  ms.openlocfilehash: 05d357af2088321524841bfc05f94f816f1bc306
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: da93d48dc36123f8821be37c8c0546b84ab29712
+  ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/15/2020
-  ms.locfileid: "73423937"
+  ms.lasthandoff: 08/05/2020
+  ms.locfileid: "87795487"
 landingContent:
-- title: ML.NET bases
+- title: Notions de base de ML.NET
   linkLists:
   - linkListType: overview
     links:
@@ -29,53 +29,53 @@ landingContent:
       url: https://channel9.msdn.com/Series/MLNET/MLNET-Machine-Learning-Introduction-1-of-8
   - linkListType: concept
     links:
-    - text: Tâches d’apprentissage automatique & algorithmes
+    - text: '& les algorithmes des tâches d’apprentissage automatique'
       url: resources/tasks.md
-    - text: Comment choisir un algorithme
+    - text: Guide pratique pour choisir un algorithme
       url: how-to-choose-an-ml-net-algorithm.md
 - title: Bien démarrer en 10 minutes
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Configurez Model Builder dans Visual Studio
-      url: how-to-guides/install-model-builder.md
-    - text: Commencer avec l’API ML.NET
+    - text: Prise en main de l’API ML.NET (code First)
       url: https://dotnet.microsoft.com/learn/ml-dotnet/get-started-tutorial/intro
-    - text: Installez l’ICI sur Mac OS, Windows ou Linux
+    - text: Configurer le générateur de modèles dans Visual Studio (code bas)
+      url: how-to-guides/install-model-builder.md
+    - text: Installer l’interface CLI sur macOS, Windows ou Linux (code bas)
       url: how-to-guides/install-ml-net-cli.md
 - title: Tutoriels
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Analyser le sentiment de commentaire de site Web (Constructeur modèle)
+    - text: Analyser le sentiment des commentaires du site Web (générateur de modèles)
       url: tutorials/sentiment-analysis-model-builder.md
-    - text: Prédire les prix (Model Builder)
+    - text: Prédire les prix (générateur de modèles)
       url: tutorials/predict-prices-with-model-builder.md
-    - text: Catégoriser les violations de la santé (Model Builder & SQL Server)
+    - text: Classer les violations d’intégrité (générateur de modèles & SQL Server)
       url: tutorials/health-violation-classification-model-builder.md
-    - text: Catégoriser les questions de soutien (API)
+    - text: Classer les problèmes de prise en charge (API)
       url: tutorials/github-issue-classification.md
-    - text: Classer les images avec l’API de classification des images (API)
+    - text: Classer les images avec l’API de classification d’images
       url: tutorials/image-classification-api-transfer-learning.md
-    - text: Classer les images à l’aide de la composition du modèle (API)
+    - text: Classer les images à l’aide de la composition de modèle (API)
       url: tutorials/image-classification.md
-    - text: Détecter les objets en images (API)
+    - text: Détecter des objets dans des images (API)
       url: tutorials/object-detection-onnx.md
     - text: Détecter les anomalies dans les ventes de produits (API)
       url: tutorials/sales-anomaly-detection.md
     - text: Prévision de la demande de location de vélos (API & SQL Server)
       url: tutorials/time-series-demand-forecasting.md
-    - text: Construire un lecteur de film (API)
+    - text: Créer un conseiller de film (API)
       url: tutorials/movie-recommendation.md
 - title: Guides pratiques
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Données de chargement provenant de diverses sources
+    - text: Charger des données à partir de différentes sources
       url: how-to-guides/load-data-ml-net.md
     - text: Préparer des données pour la génération d’un modèle
       url: how-to-guides/prepare-data-ml-net.md
-    - text: Train & évaluer un modèle
+    - text: Former & évaluer un modèle
       url: how-to-guides/train-machine-learning-model-ml-net.md
     - text: Effectuer des prédictions avec un modèle entraîné
       url: how-to-guides/machine-learning-model-predictions-ml-net.md
@@ -83,11 +83,11 @@ landingContent:
       url: how-to-guides/save-load-machine-learning-models-ml-net.md
     - text: Réentraîner un modèle
       url: how-to-guides/retrain-model-ml-net.md
-- title: Informations de référence
+- title: Référence
   linkLists:
   - linkListType: reference
     links:
     - text: Informations de référence sur l’API ML.NET
       url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
-    - text: ML.NET échantillons
+    - text: Exemples ML.NET
       url: https://github.com/dotnet/machinelearning-samples

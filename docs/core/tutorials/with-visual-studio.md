@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 3c8fc7c4702b786c05e14397dc36d994c77e114d
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: fbe0b3491260e787c08b98b320b19408f2c897eb
+ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811654"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795383"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio
 
@@ -79,7 +79,7 @@ Si la langue que vous souhaitez utiliser n’est pas affichée, modifiez le sél
 
 ## <a name="run-the-app"></a>Exécuter l’application
 
-1. Appuyez sur <kbd>MAJ</kbd> + <kbd>F5</kbd> pour exécuter le programme sans débogage.
+1. Appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour exécuter le programme sans débogage.
 
    Une fenêtre de console s’ouvre avec le texte « Hello World ! » imprimé à l’écran et certaines informations de débogage de Visual Studio.
 
@@ -102,7 +102,7 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 
    Le signe dollar ( `$` ) devant une chaîne vous permet de placer des expressions telles que des noms de variable entre accolades dans la chaîne. La valeur de l’expression est insérée dans la chaîne à la place de l’expression. Cette syntaxe est appelée « [chaînes interpolées](../../csharp/language-reference/tokens/interpolated.md)».
 
-1. Appuyez sur <kbd>MAJ</kbd> + <kbd>F5</kbd> pour exécuter le programme sans débogage.
+1. Appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour exécuter le programme sans débogage.
 
 1. Répondez à l’invite en entrant un nom et en appuyant sur la touche <kbd>entrée</kbd> .
 
