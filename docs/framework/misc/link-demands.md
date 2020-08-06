@@ -15,14 +15,15 @@ helpviewer_keywords:
 - caller security checks
 - link demands
 ms.assetid: a33fd5f9-2de9-4653-a4f0-d9df25082c4d
-ms.openlocfilehash: eaf9ee1bb5cd10c724240bacac014503685a0c8c
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 7f5475d5bfff8cc3c500f95b05d54daacc9b253e
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309103"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855788"
 ---
 # <a name="link-demands"></a>Demandes de liaison
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Une demande de liaison entraîne une vérification de sécurité pendant la compilation juste-à-temps. Seul l'assembly appelant immédiat de votre code est vérifié. La liaison est établie quand le code est lié à une référence de type, y compris les références de pointeur fonction et les appels de méthode. Si l'assembly appelant ne dispose pas des autorisations suffisantes pour établir une liaison avec votre code, la liaison n'est pas autorisée et une exception d'exécution est levée quand le code est chargé et exécuté. Les demandes de liaison peuvent être substituées dans les classes qui héritent de votre code.  

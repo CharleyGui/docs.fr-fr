@@ -9,14 +9,15 @@ helpviewer_keywords:
 - restricted security environment
 - code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-ms.openlocfilehash: e02b5d679fb1f5947373399ac1226732623ef96d
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 415a42f7c4f4866bb72f19bdd6f02bfdb5158bf8
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309233"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855801"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  L'utilisation de bac à sable (sandbox) consiste à exécuter du code dans un environnement de sécurité restreint qui limite les autorisations d'accès accordées au code. Par exemple, si une bibliothèque managée provient d'une source qui n'est pas totalement fiable, vous ne devez pas l'exécuter comme ayant un niveau de confiance totale. Au lieu de cela, placez le code dans un bac à sable (sandbox) qui limite ses autorisations à ceux qui en ont besoin (par exemple, l'autorisation <xref:System.Security.Permissions.SecurityPermissionFlag.Execution>).  
@@ -89,7 +90,7 @@ AppDomain.CreateDomain( string friendlyName,
         params StrongName[] fullTrustAssemblies)  
     ```  
   
-     Informations complémentaires :  
+     Informations supplémentaires :  
   
     - Il s'agit de la seule surcharge de la méthode <xref:System.AppDomain.CreateDomain%2A> prenant un <xref:System.Security.PermissionSet> comme paramètre, et donc la seule surcharge qui vous permet de charger une application dans un paramètre de confiance partielle.  
   

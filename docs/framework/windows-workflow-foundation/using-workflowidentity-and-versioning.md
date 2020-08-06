@@ -2,12 +2,12 @@
 title: Utilisation de WorkflowIdentity et du versioning
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: 97224caa24b38a00a1cbb4fa76781eea3a10faaf
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 1d31739c135dbb518f05c40ba802c782b6817bff
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787917"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855632"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Utilisation de WorkflowIdentity et du versioning
 
@@ -17,13 +17,13 @@ ms.locfileid: "76787917"
 
 - [Utilisation de WorkflowIdentity](using-workflowidentity-and-versioning.md#UsingWorkflowIdentity)
 
-  - [Exécution côte à côte à l’aide de WorkflowIdentity](using-workflowidentity-and-versioning.md#SxS)
+  - [Exécution côte à côte à l'aide de WorkflowIdentity](using-workflowidentity-and-versioning.md#SxS)
 
 - [Mise à niveau des bases de données de persistance .NET Framework 4 pour prendre en charge le contrôle de version de workflow](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases)
 
   - [Pour mettre à niveau le schéma de base de données](using-workflowidentity-and-versioning.md#ToUpgrade)
 
-## <a name="UsingWorkflowIdentity"></a>Utilisation de WorkflowIdentity
+## <a name="using-workflowidentity"></a><a name="UsingWorkflowIdentity"></a>Utilisation de WorkflowIdentity
 
 Pour utiliser <xref:System.Activities.WorkflowIdentity>, créez une instance, configurez-la et associez-la à une instance <xref:System.Activities.WorkflowApplication>. Une instance <xref:System.Activities.WorkflowIdentity> contient trois informations d'identification. <xref:System.Activities.WorkflowIdentity.Name%2A> et <xref:System.Activities.WorkflowIdentity.Version%2A> contiennent un nom et un <xref:System.Version> et sont obligatoire, et <xref:System.Activities.WorkflowIdentity.Package%2A> est facultatif et peut être utilisé pour spécifier une chaîne supplémentaire contenant des informations telles que le nom de l'assembly ou d'autres informations souhaitées. <xref:System.Activities.WorkflowIdentity> est unique si l'une de ses trois propriétés est différente d'un autre <xref:System.Activities.WorkflowIdentity>.
 
@@ -82,7 +82,7 @@ Lorsque le code précédent est exécuté, l'exception <xref:System.Activities.V
 The WorkflowIdentity ('MortgageWorkflow v1; Version=1.0.0.0') of the loaded instance does not match the WorkflowIdentity ('MortgageWorkflow v2; Version=2.0.0.0') of the provided workflow definition. The instance can be loaded using a different definition, or updated using Dynamic Update.
 ```
 
-### <a name="SxS"></a>Exécution côte à côte à l’aide de WorkflowIdentity
+### <a name="side-by-side-execution-using-workflowidentity"></a><a name="SxS"></a>Exécution côte à côte à l’aide de WorkflowIdentity
 
 <xref:System.Activities.WorkflowIdentity> peut être utilisé pour faciliter l'exécution de plusieurs versions d'un workflow côte à côte. Un scénario courant modifie les besoins de l'entreprise sur un workflow de longue durée. De nombreuses instances d'un workflow peuvent s'exécuter lorsqu'une version mise à jour est déployée. L'application hôte peut être configurée pour utiliser la définition mise à jour de workflow lors du démarrage de nouvelles instances, et il est de la responsabilité de l'application hôte de fournir la définition correcte de workflow lors de la reprise des instances. <xref:System.Activities.WorkflowIdentity> peut être utilisé pour identifier et fournir la définition correspondante de workflow lors de la reprise des instances de workflow.
 
@@ -91,7 +91,7 @@ Pour récupérer le <xref:System.Activities.WorkflowIdentity> d'une instance per
 > [!NOTE]
 > Un <xref:System.Activities.WorkflowIdentity> null est valide, et peut être utilisé par l'hôte pour mapper les instances qui ont été rendues persistantes sans <xref:System.Activities.WorkflowIdentity> associé à la définition appropriée de workflow. Ce scénario peut se produire lorsqu’une application de workflow n’a pas été initialement écrite avec le contrôle de version de workflow, ou lorsqu’une application est mise à niveau à partir de .NET Framework 4. Pour plus d’informations, consultez [mise à niveau de bases de données de persistance .NET Framework 4 pour prendre en charge le contrôle de version de workflow](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).
 
-Dans l’exemple suivant, un `Dictionary<WorkflowIdentity, Activity>` est utilisé pour associer des instances de <xref:System.Activities.WorkflowIdentity> à leurs définitions de workflow correspondantes, et un flux de travail est démarré à l’aide de la définition de flux de travail `MortgageWorkflow`, qui est associée au <xref:System.Activities.WorkflowIdentity>de `identityV1`.
+Dans l’exemple suivant `Dictionary<WorkflowIdentity, Activity>` , un est utilisé pour associer <xref:System.Activities.WorkflowIdentity> des instances à leurs définitions de workflow correspondantes, et un flux de travail est démarré à l’aide de la `MortgageWorkflow` définition de workflow, qui est associée au `identityV1` <xref:System.Activities.WorkflowIdentity> .
 
 ```csharp
 WorkflowIdentity identityV1 = new WorkflowIdentity
@@ -144,21 +144,21 @@ wfApp.Load(instance);
 // Resume the workflow...
 ```
 
-## <a name="UpdatingWF4PersistenceDatabases"></a>Mise à niveau des bases de données de persistance .NET Framework 4 pour prendre en charge le contrôle de version de workflow
+## <a name="upgrading-net-framework-4-persistence-databases-to-support-workflow-versioning"></a><a name="UpdatingWF4PersistenceDatabases"></a>Mise à niveau des bases de données de persistance .NET Framework 4 pour prendre en charge le contrôle de version de workflow
 
 Un script de base de données SqlWorkflowInstanceStoreSchemaUpgrade. SQL est fourni pour mettre à niveau les bases de données de persistance créées à l’aide des scripts de base de données .NET Framework 4. Ce script met à jour les bases de données pour prendre en charge les nouvelles fonctionnalités de contrôle de version introduites dans .NET Framework 4,5. Des valeurs de versioning par défaut sont attribuées à toutes les instances persistantes de workflow dans les bases de données et ces instances peuvent ensuite participer côte à côte à l'exécution et à la mise à jour dynamique.
 
-Si une application de flux de travail .NET Framework 4,5 tente d’effectuer des opérations de persistance qui utilisent les nouvelles fonctionnalités de contrôle de version sur une base de données de persistance qui n’a pas été mise à niveau à l’aide du script fourni, une <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> est levée avec un message similaire au message suivant.
+Si une application de flux de travail .NET Framework 4,5 tente d’effectuer des opérations de persistance qui utilisent les nouvelles fonctionnalités de contrôle de version sur une base de données de persistance qui n’a pas été mise à niveau à l’aide du script fourni, une <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> exception est levée avec un message similaire au message suivant.
 
 ```output
 The SqlWorkflowInstanceStore has a database version of '4.0.0.0'. InstancePersistenceCommand 'System.Activities.DurableInstancing.CreateWorkflowOwnerWithIdentityCommand' cannot be run against this database version.  Please upgrade the database to '4.5.0.0'.
 ```
 
-### <a name="ToUpgrade"></a>Pour mettre à niveau le schéma de base de données
+### <a name="to-upgrade-the-database-schema"></a><a name="ToUpgrade"></a>Pour mettre à niveau le schéma de base de données
 
 1. Ouvrez SQL Server Management Studio et connectez-vous au serveur de base de données de persistance, par exemple **.\SQLEXPRESS**.
 
-2. Dans le menu **fichier** , choisissez **ouvrir**, **fichier** . Accédez au dossier suivant : `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`
+2. Dans le menu **fichier** , choisissez **ouvrir**, **fichier** . Accédez au dossier suivant : `C:\Windows\Microsoft.NET\Framework\v4.0.30319\sql\en`
 
 3. Sélectionnez **SqlWorkflowInstanceStoreSchemaUpgrade. SQL** , puis cliquez sur **ouvrir**.
 

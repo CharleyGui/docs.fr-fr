@@ -8,14 +8,17 @@ helpviewer_keywords:
 - security [.NET Framework], remoting
 - secure coding, remoting
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
-ms.openlocfilehash: 019773b19eaca2e4364fb79c40fdb923093d4e7e
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 3a272b2a8f164aad07413a069e68a2146d0df6a7
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309363"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855710"
 ---
 # <a name="security-and-remoting-considerations"></a>Considérations sur la sécurité et la communication à distance
+
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
+
 La communication à distance vous permet de définir des appels transparents entre des domaines d'application, des processus ou des ordinateurs. Cependant, le parcours de pile de la sécurité d'accès du code ne peut pas traverser des processus ou des limites de machine (il s'applique pourtant entre les domaines d'application du même processus).  
   
  Toute classe accessible à distance (dérivée d'une classe <xref:System.MarshalByRefObject>) doit être responsable de la sécurité. Soit le code ne doit être utilisé que dans des environnements fermés où le code appelant peut faire l'objet d'une confiance implicite, soit des appels de communication à distance doivent être conçus de façon à ne pas soumettre de code protégé à une entrée externe qui pourrait être utilisée à des fins malveillantes.  

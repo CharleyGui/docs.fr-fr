@@ -17,14 +17,15 @@ helpviewer_keywords:
 - permissions [.NET Framework], overriding security checks
 - permissions [.NET Framework], assertions
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
-ms.openlocfilehash: 096e0375a94c92a835cccb4d1b3297783b4120e9
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 573b84f991e795c2513f213ddb52999fef51c454
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309805"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855663"
 ---
 # <a name="using-the-assert-method"></a>Utilisation de la méthode Assert
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  <xref:System.Security.CodeAccessPermission.Assert%2A> est une méthode qui peut être appelée sur les classes d'autorisation d'accès au code et sur la classe <xref:System.Security.PermissionSet>. Vous pouvez utiliser **Assert** pour permettre à votre code (et aux appelants en aval) d’effectuer des actions que votre code est autorisé à effectuer, mais que ses appelants ne sont pas autorisés à effectuer cette opération. Une assertion de sécurité modifie le processus normal de vérification de sécurité effectué par le runtime. Lors de l'assertion d'une autorisation, le système de sécurité reçoit l'ordre de ne pas vérifier que les appelants de votre code disposent de l'autorisation ayant fait l'objet d'une assertion.  
