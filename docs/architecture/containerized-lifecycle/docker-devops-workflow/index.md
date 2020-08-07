@@ -1,13 +1,13 @@
 ---
 title: Workflow DevOps pour les applications Docker avec les outils Microsoft
 description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft (workflow DevOps avec les outils Microsoft)
-ms.date: 02/15/2019
-ms.openlocfilehash: 6b138301a7e6794ce0a7b15957684b3b73e9f89f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: 30c5066fa90d8792d8eef8f760dc63c00ce32130
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70295741"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915210"
 ---
 # <a name="docker-application-devops-workflow-with-microsoft-tools"></a>Workflow DevOps pour les applications Docker avec les outils Microsoft
 
@@ -23,7 +23,7 @@ La difficulté du développement d’applications en conteneur augmente de faço
 
 - Gestion du code source Azure DevOps Services/Team Foundation Server (basée sur Git ou Team Foundation Version Control), planification Agile (Agile, Scrum et CMMI sont pris en charge), intégration continue, gestion des versions et autres outils pour les équipes Agile.
 
-- Azure DevOps Services et Team Foundation Server incluent un écosystème puissant et en plein essor d’extensions propriétaires et tierces à l’aide desquelles vous pouvez facilement construire un pipeline (intégration continue, build, test, remise et gestion des versions) pour les microservices.
+- Azure DevOps Services et Team Foundation Server incluent un écosystème puissant et en constante évolution des premières et des extensions tierces avec lesquelles vous pouvez facilement construire un pipeline d’intégration continue, de build, de test, de remise et de gestion des versions pour les microservices.
 
 - Exécution de tests automatisés dans le cadre de votre pipeline de build dans Azure DevOps Services.
 
@@ -32,5 +32,5 @@ La difficulté du développement d’applications en conteneur augmente de faço
 - Les organisations peuvent facilement provisionner des conteneurs Docker à partir d’images privées stockées dans Azure Container Registry, ainsi que toute dépendance vis-à-vis de composants Azure (Data, PaaS, etc.) à l’aide de modèles Azure Resource Manager accessibles avec des outils familiers.
 
 >[!div class="step-by-step"]
->[Suivant précédent](../design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes.md)
->[Next](docker-application-outer-loop-devops-workflow.md)
+>[Précédent](../design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes.md) 
+> [Suivant](docker-application-outer-loop-devops-workflow.md)

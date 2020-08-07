@@ -5,12 +5,12 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: efba2c1c921d867725db90a1879cc9dee1a22b4e
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 15342c3d9cd66195639e38265875a7ed4008dd51
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555519"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916615"
 ---
 # <a name="true-and-false-operators-c-reference"></a>Opérateurs true et false (rférence C#)
 
@@ -31,7 +31,7 @@ Si un type avec les opérateurs `true` et `false` définis [surcharge](operator-
 
 L’exemple suivant présente le type qui définit les opérateurs `true` et `false`. Le type surcharge également l’opérateur logique AND `&` de telle sorte que l' `&&` opérateur puisse également être évalué pour les opérandes de ce type.
 
-[!code-csharp[true and false operators example](snippets/TrueFalseOperators.cs)]
+[!code-csharp[true and false operators example](snippets/shared/TrueFalseOperators.cs)]
 
 Remarquez le comportement de court-circuit de l’opérateur `&&`. Lorsque la méthode `GetFuelLaunchStatus` retourne `LaunchStatus.Red`, l’opérande de partie droite de l’opérateur `&&` n’est pas évalué. En effet, `LaunchStatus.Red` est false. Le résultat du AND logique ne dépend donc pas de la valeur de l’opérande de partie droite. Voici la sortie de l’exemple :
 

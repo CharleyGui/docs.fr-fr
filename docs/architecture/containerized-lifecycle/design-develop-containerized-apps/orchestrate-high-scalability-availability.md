@@ -1,13 +1,13 @@
 ---
 title: Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 description: Les véritables applications de production doivent être déployées et gérées avec des orchestrateurs qui gèrent l’intégrité, la charge de travail et les cycles de vie de tous les conteneurs.
-ms.date: 02/15/2019
-ms.openlocfilehash: 459a445258a8d66834814f7b084fd969d005ff45
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.date: 08/06/2020
+ms.openlocfilehash: 61c66e1f3835df543cbc9ba23d9c098ad52c90cd
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374479"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915473"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 
@@ -62,7 +62,7 @@ La figure 4-7 illustre la structure d’un cluster Kubernetes dans lequel un n�
 
 ## <a name="development-environment-for-kubernetes"></a>Environnement de développement pour Kubernetes
 
-Dans l’environnement de développement que [Docker a annoncé en juillet 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/), Kubernetes peut aussi s’exécuter sur une seule machine de développement (Windows 10 ou macOS) en installant simplement [Docker Desktop](https://www.docker.com/community-edition). Vous pouvez ensuite effectuer un déploiement sur le cloud (AKS) pour d’autres tests d’intégration, comme illustré dans la figure 4-8.
+Dans l’environnement de développement que [Docker a annoncé en juillet 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/), Kubernetes peut aussi s’exécuter sur une seule machine de développement (Windows 10 ou macOS) en installant simplement [Docker Desktop](https://www.docker.com/products/docker-desktop). Vous pouvez ensuite effectuer un déploiement sur le cloud (AKS) pour d’autres tests d’intégration, comme illustré dans la figure 4-8.
 
 ![Diagramme montrant Kubernetes sur un ordinateur de développement, puis déployé sur AKS.](./media/orchestrate-high-scalability-availability/kubernetes-development-environment.png)
 

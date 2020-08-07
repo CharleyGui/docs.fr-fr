@@ -1,13 +1,13 @@
 ---
 title: Applications monolithiques
 description: Comprenez les principes de base de la mise en conteneur des applications monolithiques.
-ms.date: 02/15/2019
-ms.openlocfilehash: 3c186f6a300588816916886927f93e0c06ebd6bc
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.date: 08/06/2020
+ms.openlocfilehash: f188a2ff576436d9378030e0a858ffb8110dad17
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988984"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915449"
 ---
 # <a name="monolithic-applications"></a>Applications monolithiques
 
@@ -17,7 +17,7 @@ Pour gérer ce modèle, vous déployez un seul conteneur pour représenter l’a
 
 En suivant le principe selon lequel un conteneur fait une seule chose à la fois et dans un processus unique, le modèle monolithique est en conflit. Vous pouvez inclure plusieurs composants/bibliothèques ou couches internes dans chaque conteneur, comme illustré dans la figure 4-1.
 
-![Diagramme montrant une application monolithique qui s’évolue en clonant l’application.](./media/monolithic-applications/monolithic-application-architecture-example.png)
+![Diagramme montrant une application monolithique qui se met à l’échelle en clonant l’application.](./media/monolithic-applications/monolithic-application-architecture-example.png)
 
 **Figure 4-1.** Exemple d’architecture d’application monolithique
 
@@ -31,7 +31,7 @@ L’approche monolithique est courante, et nombreuses sont les organisations qui
 
 Du point de vue de l’infrastructure, chaque serveur peut exécuter de nombreuses applications dans le même hôte et offrir un ratio d’efficacité acceptable dans l’utilisation des ressources, comme le montre la figure 4-2.
 
-![Un diagramme montrant un hôte avec plusieurs applications dans des conteneurs séparés.](./media/monolithic-applications/host-with-multiple-apps-containers.png)
+![Diagramme montrant un hôte avec plusieurs applications dans des conteneurs distincts.](./media/monolithic-applications/host-with-multiple-apps-containers.png)
 
 **Figure 4-2.** Hôte exécutant plusieurs applications/conteneurs
 
@@ -43,9 +43,9 @@ Vous pouvez aussi utiliser [Azure App Services](https://azure.microsoft.com/serv
 
 Vous pouvez déployer plusieurs machines virtuelles en tant qu’hôtes Docker et exécuter n’importe quel nombre de conteneurs par machine virtuelle. Ensuite, en utilisant Azure Load Balancer, comme illustré dans la Figure 4-3, vous pouvez gérer la mise à l’échelle.
 
-![Un diagramme montrant une application monolithique à l’échelle de différents hôtes.](./media/monolithic-applications/multiple-hosts-from-single-docker-container.png)
+![Diagramme montrant une application monolithique montée en charge sur différents hôtes.](./media/monolithic-applications/multiple-hosts-from-single-docker-container.png)
 
-**Figure 4-3**. Plusieurs hôtes à l’échelle d’une seule application Docker
+**Figure 4-3**. Plusieurs hôtes montée en charge d’une seule application d’ancrage
 
 Vous pouvez gérer le déploiement des hôtes proprement dits via des techniques de déploiement classiques.
 
@@ -61,7 +61,7 @@ Les conteneurs étant immuables par conception, vous n’avez jamais à vous sou
 
 Bien que les applications monolithiques puissent tirer parti de Docker, nous n’en évoquons que les avantages les plus évidents. Les principaux avantages de la gestion des conteneurs viennent de la possibilité de déployer avec des orchestrateurs de conteneurs qui gèrent les différentes instances et le cycle de vie de chaque instance de conteneur. La décomposition de l’application monolithique en sous-systèmes qui peuvent être mis à l’échelle, développés et déployés individuellement est votre point d’entrée dans le domaine des microservices.
 
-Pour en savoir plus sur la façon de "lift and shift" applications monolithiques avec des conteneurs et comment vous pouvez moderniser vos applications, vous pouvez lire ce guide Microsoft supplémentaire, [moderniser les applications .NET existantes avec le cloud Azure et Windows Containers](../../modernize-with-azure-containers/index.md), que vous pouvez également télécharger en PDF à partir de <https://aka.ms/LiftAndShiftWithContainersEbook>.
+Pour en savoir plus sur la façon de développer des applications monolithiques avec des conteneurs et sur la façon dont vous pouvez moderniser vos applications, vous pouvez lire ce guide Microsoft supplémentaire, [moderniser les applications .NET existantes avec des conteneurs Cloud et Windows Azure](../../modernize-with-azure-containers/index.md), que vous pouvez également télécharger au format PDF à partir de <https://aka.ms/LiftAndShiftWithContainersEbook> .
 
 ## <a name="publish-a-single-docker-container-app-to-azure-app-service"></a>Publier une application conteneur Docker unique sur Azure App Service
 
@@ -71,12 +71,12 @@ L’utilisation d’Azure App Service s’avère intuitive et vous permet d’ê
 
 Désormais, comme le montre la figure 4-4, quand vous utilisez Visual Studio 2017, la prise en charge des conteneurs dans Azure App Service vous offre la possibilité d’inclure tout ce que vous voulez dans l’environnement de votre application. Si vous avez ajouté une dépendance à votre application, parce que vous l’exécutez dans un conteneur, vous avez la possibilité d’inclure ces dépendances dans votre fichier Dockerfile ou image Docker.
 
-![Capture d’écran du dialogue Create App Service montrant un registre des conteneurs.](./media/monolithic-applications/publish-azure-app-service-container.png)
+![Capture d’écran de la boîte de dialogue créer un App Service montrant une Container Registry.](./media/monolithic-applications/publish-azure-app-service-container.png)
 
 **Figure 4-4**. Publication d’un conteneur dans Azure App Service à partir d’applications/conteneurs Visual Studio
 
 La figure 4-4 montre aussi que le flux de publication pousse (push) une image via un registre de conteneurs, qui peut être Azure Container Registry (registre proche de vos déploiements dans Azure et sécurisé par des comptes et des groupes Azure Active Directory) ou tout autre registre Docker, comme Docker Hub ou des registres locaux.
 
 >[!div class="step-by-step"]
->[Suivant précédent](common-container-design-principles.md)
->[Next](state-and-data-in-docker-applications.md)
+>[Précédent](common-container-design-principles.md) 
+> [Suivant](state-and-data-in-docker-applications.md)

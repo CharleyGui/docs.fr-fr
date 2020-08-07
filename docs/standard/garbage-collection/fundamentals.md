@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 438188b6d694bdeab772c43ef92e5621c68facff
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 322e079a1be556efb536b24e216e480c1950bd8c
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990218"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917027"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 
@@ -160,7 +160,7 @@ Les générations éphémères sont allouées dans le segment de mémoire appel�
 
 La taille du segment éphémère varie selon qu’il s’agit d’un système 32 bits ou 64 bits et du type de garbage collector en cours d’exécution (station de[travail ou GC de serveur](workstation-server-gc.md)). Le tableau suivant indique les tailles par défaut du segment éphémère.
 
-|GC station de travail/serveur|32 bits|64 bits|
+|GC station de travail/serveur|32 bits|64 bits|
 |-|-------------|-------------|
 |Garbage collector pour station de travail|16 Mo|256 octets|
 |Garbage collector pour serveur|64 Mo|4 Go|
@@ -186,7 +186,7 @@ Une opération garbage collection présente les phases suivantes :
   En règle générale, le tas d’objets volumineux (LOH) n’est pas compacté, car la copie d’objets volumineux impose une baisse des performances. Toutefois, dans .NET Core et dans .NET Framework 4.5.1 et versions ultérieures, vous pouvez utiliser la <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> propriété pour compacter le tas d’objets volumineux à la demande. En outre, le LOH est automatiquement compacté lorsqu’une limite inconditionnelle est définie en spécifiant l’un ou l’autre des éléments suivants :
 
   - Limite de mémoire sur un conteneur.
-  - Options de configuration [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitcomplus_gcheaphardlimit) ou [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) Runtime.
+  - Options de configuration [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#heap-limit) ou [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#heap-limit-percent) Runtime.
 
 Le garbage collector utilise les informations suivantes pour déterminer si les objets sont vivants :
 

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 8b15d8d3abdfc9318baaba60ee0d6d1bb18fcf27
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 4fde25cac21b2cb32efc9282578f32102a0f607f
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855073"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916727"
 ---
 # <a name="operator-overloading-c-reference"></a>Surcharge d’opérateur (référence C#)
 
@@ -26,7 +26,7 @@ Utilisez le mot clé `operator` pour déclarer un opérateur. Une déclaration d
 
 L’exemple suivant définit une structure simplifiée pour représenter un nombre rationnel. La structure surcharge certains des [opérateurs arithmétiques](arithmetic-operators.md) :
 
-[!code-csharp[fraction example](snippets/OperatorOverloading.cs)]
+[!code-csharp[fraction example](snippets/shared/OperatorOverloading.cs)]
 
 Vous pouvez étendre l’exemple précédent en [définissant une conversion implicite](user-defined-conversion-operators.md) de `int` en `Fraction` . Les opérateurs surchargés devraient alors prendre en charge les arguments de ces deux types. Autrement dit, il deviendrait possible d’ajouter un entier à une fraction et d’obtenir une fraction en conséquence.
 

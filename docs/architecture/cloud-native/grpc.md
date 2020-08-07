@@ -6,12 +6,12 @@ no-loc:
 - Blazor
 - Blazor WebAssembly
 ms.date: 05/13/2020
-ms.openlocfilehash: 6b41363008405032f4233448f134a8a602dbd26a
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 4a0c88472d2b19efb2ff0f58395003b1b6409131
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173157"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914889"
 ---
 # <a name="grpc"></a>gRPC
 
@@ -31,10 +31,11 @@ gRPC offre une prise en charge complète des piles de développement les plus po
 
 gRPC utilise HTTP/2 pour son protocole de transport. Bien qu’compatible avec HTTP 1,1, HTTP/2 offre de nombreuses fonctionnalités avancées :
 
-- Protocole binaire pour le transport de données, contrairement à HTTP 1,1, qui envoie des données en texte clair.
+- Protocole de tramage binaire pour le transport de données, contrairement à HTTP 1,1, qui est basé sur du texte.
 - Prise en charge du multiplexage pour l’envoi de plusieurs requêtes parallèles sur la même connexion-HTTP 1,1 limite le traitement à un message de demande/réponse à la fois.
 - Communication bidirectionnelle en duplex intégral pour l’envoi simultané des demandes du client et des réponses du serveur.
 - Streaming intégré permettant des demandes et des réponses pour diffuser de manière asynchrone des jeux de données volumineux.
+- Compression d’en-tête qui réduit l’utilisation du réseau.
 
 gRPC est léger et très performant. Elle peut être jusqu’à 8 fois plus rapide que la sérialisation JSON avec des messages de 60-80% de plus. Dans le jargon de Microsoft [Windows Communication Foundation (WCF)](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) , les performances de gRPC dépassent la vitesse et l’efficacité des [liaisons NetTcp](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8)hautement optimisées. Contrairement à NetTCP, qui privilégie la pile Microsoft, gRPC est multiplateforme.
 
@@ -84,7 +85,7 @@ Privilégiez gRPC pour les scénarios suivants :
 - Communication en temps réel point à point : gRPC peut envoyer des messages en temps réel sans interrogation et offre une excellente prise en charge de la diffusion bidirectionnelle.
 - Environnements réseau restreints : les messages gRPC binaires sont toujours plus petits qu’un message JSON équivalent basé sur le texte.
 
-Au moment de la rédaction de cet article, gRPC est principalement utilisé avec les services principaux. La plupart des navigateurs modernes ne peuvent pas fournir le niveau de contrôle HTTP/2 requis pour prendre en charge un client gRPC frontal. Cela dit, il existe une [initiative précoce](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/) qui permet la communication gRPC à partir d’applications basées sur le navigateur créées avec JavaScript ou des Blazor WebAssembly technologies. [GRPC-Web pour .net](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) permet à une application ASP.net Core gRPC de prendre en charge des fonctionnalités gRPC dans les applications de navigateur :
+Au moment de la rédaction de cet article, gRPC est principalement utilisé avec les services principaux. Les navigateurs modernes ne peuvent pas fournir le niveau de contrôle HTTP/2 requis pour prendre en charge un client gRPC frontal. Cela dit, il existe une prise en charge de [gRPC-Web avec .net](https://devblogs.microsoft.com/aspnet/grpc-web-for-net-now-available/) qui permet la communication gRPC à partir d’applications basées sur le navigateur créées avec JavaScript ou des Blazor WebAssembly technologies. [gRPC-Web](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) permet à une application ASP.net Core gRPC de prendre en charge les fonctionnalités gRPC dans les applications de navigateur :
 
 - Clients fortement typés et générés par le code
 - Compacter les messages Protobuf

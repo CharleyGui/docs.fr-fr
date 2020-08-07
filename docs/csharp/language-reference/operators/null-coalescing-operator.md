@@ -10,12 +10,12 @@ helpviewer_keywords:
 - null-coalescing assignment [C#]
 - ??= operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: d3d6a5032a5b4fb7059eb93b0024fd292b74fb70
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 58c60dad3badc62f850f737a3d210ec486809272
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555238"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916733"
 ---
 # <a name="-and--operators-c-reference"></a>?? et ?? =, opérateurs (référence C#)
 
@@ -23,13 +23,13 @@ L’opérateur de fusion null `??` retourne la valeur de l’opérande de gauche
 
 Disponible en C# 8,0 et versions ultérieures, l’opérateur d’assignation de fusion Null `??=` affecte la valeur de son opérande droit à son opérande de gauche uniquement si l’opérande de gauche est évalué à `null` . L’opérateur `??=` n’évalue pas son opérande droit si l’opérande gauche a la valeur non null.
 
-[!code-csharp[null-coalescing assignment](snippets/NullCoalescingOperator.cs#Assignment)]
+[!code-csharp[null-coalescing assignment](snippets/shared/NullCoalescingOperator.cs#Assignment)]
 
 L’opérande gauche de l' `??=` opérateur doit être une variable, une [propriété](../../programming-guide/classes-and-structs/properties.md)ou un élément d' [indexeur](../../programming-guide/indexers/index.md) .
 
 En C# 7,3 et versions antérieures, le type de l’opérande gauche de l' `??` opérateur doit être un type [référence](../keywords/reference-types.md) ou un [type valeur Nullable](../builtin-types/nullable-value-types.md). À compter de C# 8,0, cette spécification est remplacée par ce qui suit : le type de l’opérande gauche des `??` opérateurs et `??=` ne peut pas être un type valeur non Nullable. En particulier, à compter de C# 8,0, vous pouvez utiliser les opérateurs de fusion Null avec des paramètres de type sans contrainte :
 
-[!code-csharp[unconstrained type parameter](snippets/NullCoalescingOperator.cs#UnconstrainedType)]
+[!code-csharp[unconstrained type parameter](snippets/shared/NullCoalescingOperator.cs#UnconstrainedType)]
 
 Les opérateurs de fusion Null sont associatifs à droite. Autrement dit, les expressions de la forme
 
@@ -51,17 +51,17 @@ Les `??` `??=` opérateurs et peuvent être utiles dans les scénarios suivants�
 
 - Dans les expressions avec les [opérateurs conditionnels null ?. et ? []](member-access-operators.md#null-conditional-operators--and-), vous pouvez utiliser l' `??` opérateur pour fournir une autre expression à évaluer au cas où le résultat de l’expression avec des opérations conditionnelles null est `null` :
 
-  [!code-csharp-interactive[with null-conditional](snippets/NullCoalescingOperator.cs#WithNullConditional)]
+  [!code-csharp-interactive[with null-conditional](snippets/shared/NullCoalescingOperator.cs#WithNullConditional)]
 
 - Quand vous utilisez des [types valeur Nullable](../builtin-types/nullable-value-types.md) et que vous devez fournir une valeur d’un type valeur sous-jacent, utilisez l' `??` opérateur pour spécifier la valeur à fournir dans le cas où une valeur de type Nullable est `null` :
 
-  [!code-csharp-interactive[with nullable types](snippets/NullCoalescingOperator.cs#WithNullableTypes)]
+  [!code-csharp-interactive[with nullable types](snippets/shared/NullCoalescingOperator.cs#WithNullableTypes)]
 
   Utilisez la méthode <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> si la valeur à utiliser quand une valeur de type Nullable est `null` doit être la valeur par défaut du type valeur sous-jacent.
 
 - À compter de C# 7,0, vous pouvez utiliser une [ `throw` expression](../keywords/throw.md#the-throw-expression) comme opérande de droite de l' `??` opérateur pour rendre le code de vérification d’argument plus concis :
 
-  [!code-csharp[with throw expression](snippets/NullCoalescingOperator.cs#WithThrowExpression)]
+  [!code-csharp[with throw expression](snippets/shared/NullCoalescingOperator.cs#WithThrowExpression)]
 
   L’exemple précédent montre également comment utiliser des [membres expression-bodied](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) pour définir une propriété.
 

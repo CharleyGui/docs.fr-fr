@@ -1,13 +1,13 @@
 ---
 title: Conteneurs, images et registres Docker
 description: Découvrez le rôle clé que jouent globalement les registres dans la façon dont Docker déploie les applications.
-ms.date: 02/15/2019
-ms.openlocfilehash: bfef21cab7be89abaf33b89366d7cff2115a7cc6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: 2ff6cf76b35777546b6e653d477a029296f8e496
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72770929"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915247"
 ---
 # <a name="docker-containers-images-and-registries"></a>Conteneurs, images et registres Docker
 
@@ -15,11 +15,11 @@ Quand vous utilisez Docker, vous créez une application ou un service, que vous 
 
 Pour exécuter l’application ou le service, l’image de l’application est instanciée, créant ainsi un conteneur à exécuter sur l’hôte Docker. Les conteneurs sont initialement testés sur une machine ou un environnement de développement.
 
-Vous stockez des images dans un registre qui agit comme une bibliothèque d’images. Vous avez besoin d’un registre lors du déploiement sur des orchestrateurs de production. Docker gère un registre public via [Docker Hub](https://hub.docker.com/). D’autres fournisseurs proposent des registres pour différentes collections d’images, notamment [Azure Container Registry](https://azure.microsoft.com/services/container-registry/). Les entreprises peuvent également gérer un registre privé local pour stocker leurs propres images Docker.
+Vous stockez des images dans un registre qui agit en tant que bibliothèque d’images. Vous avez besoin d’un registre lors du déploiement sur des orchestrateurs de production. Docker gère un registre public via [Docker Hub](https://hub.docker.com/). D’autres fournisseurs proposent des registres pour différentes collections d’images, notamment [Azure Container Registry](https://azure.microsoft.com/services/container-registry/). Les entreprises peuvent également gérer un registre privé local pour stocker leurs propres images Docker.
 
 La figure 1-4 montre les liens entre les images et registres Docker et les autres composants. Elle montre également les divers registres des autres fournisseurs.
 
-![Un diagramme montrant la taxonomie de base dans Docker.](./media/docker-containers-images-and-registries/taxonomy-docker-terms-concepts.png)
+![Diagramme montrant la taxonomie de base dans l’ancrage.](./media/docker-containers-images-and-registries/taxonomy-docker-terms-concepts.png)
 
 **Figure 1-4**. Taxonomie des termes et concepts Docker
 
@@ -34,5 +34,5 @@ L’utilisation de registres d’images privés, hébergés localement ou dans l
 - Vous souhaitez limiter la latence du réseau entre vos images et l’environnement de déploiement choisi. Par exemple, si votre environnement de production est Azure, vous souhaiterez probablement stocker vos images dans [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) pour réduire au maximum la latence du réseau. De la même manière, si votre environnement de production est local, vous souhaiterez peut-être disposer d’un service Docker Trusted Registry local dans le même réseau local.
 
 >[!div class="step-by-step"]
->[Suivant précédent](docker-terminology.md)
->[Next](road-to-modern-applications-based-on-containers.md)
+>[Précédent](docker-terminology.md) 
+> [Suivant](road-to-modern-applications-based-on-containers.md)

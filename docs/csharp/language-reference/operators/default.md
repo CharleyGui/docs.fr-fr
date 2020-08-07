@@ -7,12 +7,12 @@ f1_keywords:
 - default
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: c07eb8e50dc2ec3413882fa841d2f896b28d2e8d
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: f03971efa87bf03967c79512e44d22134dd80c17
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556707"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916872"
 ---
 # <a name="default-value-expressions-c-reference"></a>expressions de valeur par défaut (référence C#)
 
@@ -24,7 +24,7 @@ Vous utilisez également le `default` mot clé comme étiquette de cas par défa
 
 L’argument de l’opérateur `default` doit avoir le nom d’un type ou d’un paramètre de type, comme le montre l’exemple suivant :
 
-[!code-csharp-interactive[default of T](snippets/DefaultOperator.cs#WithOperand)]
+[!code-csharp-interactive[default of T](snippets/shared/DefaultOperator.cs#WithOperand)]
 
 ## <a name="default-literal"></a>littéral par défaut
 
@@ -37,7 +37,7 @@ L’argument de l’opérateur `default` doit avoir le nom d’un type ou d’un
 
 L’exemple suivant illustre l’utilisation du littéral `default` :
 
-[!code-csharp-interactive[default literal](snippets/DefaultOperator.cs#DefaultLiteral)]
+[!code-csharp-interactive[default literal](snippets/shared/DefaultOperator.cs#DefaultLiteral)]
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

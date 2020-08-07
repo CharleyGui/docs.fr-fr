@@ -5,18 +5,18 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: 780503288d3474cd99a595bdbd52c3a5abba5308
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: bf88c14b2aeed94a548b6116749fa8669576afe1
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990234"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916999"
 ---
 # <a name="background-garbage-collection"></a>garbage collection d’arrière-plan
 
 En arrière-plan garbage collection (GC), les générations éphémères (0 et 1) sont collectées si nécessaire, tandis que la collection de génération 2 est en cours. L’garbage collection d’arrière-plan est exécuté sur un ou plusieurs threads dédiés, selon qu’il s’agit de l’arrière-plan ou du garbage collector du serveur, et s’applique uniquement aux collections de génération 2.
 
-L’garbage collection d’arrière-plan est activé par défaut. Il peut être activé ou désactivé à l’aide du paramètre de configuration [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) dans .NET Framework applications ou du paramètre [System. gc. concurrent](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) dans les applications .net core.
+L’garbage collection d’arrière-plan est activé par défaut. Il peut être activé ou désactivé à l’aide du paramètre de configuration [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) dans .NET Framework applications ou du paramètre [System. gc. concurrent](../../core/run-time-config/garbage-collector.md#background-gc) dans les applications .net Core et .net 5 et versions ultérieures.
 
 > [!NOTE]
 > L’garbage collection d’arrière-plan remplace la [garbage collection simultanée](#concurrent-garbage-collection) et est disponible dans .NET Framework 4 et versions ultérieures. Dans .NET Framework 4, il est pris en charge uniquement pour les garbage collection de *station de travail* . À compter de .NET Framework 4,5, le garbage collection d’arrière-plan est disponible pour les garbage collection de *station de travail* et de *serveur* .

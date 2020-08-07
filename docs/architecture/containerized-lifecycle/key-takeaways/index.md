@@ -1,13 +1,13 @@
 ---
 title: Points importants à retenir
 description: Passez en revue les points importants à retenir pour le guide.
-ms.date: 04/20/2020
-ms.openlocfilehash: 51662c52ce0917aa89b86151cf7cab5f13f846e6
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.date: 08/06/2020
+ms.openlocfilehash: 7f582e7cdc8cab2753189ed4cf4d88ce14d77da9
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502780"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914957"
 ---
 # <a name="key-takeaways"></a>Points importants à retenir
 

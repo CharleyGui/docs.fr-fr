@@ -7,12 +7,12 @@ helpviewer_keywords:
 - garbage collection, server
 - workstation garbage collection
 - server garbage collection
-ms.openlocfilehash: 5ff2b1fe2f997913e071f35ec5abb167ed757608
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 640b5f42c1f841c2537284e4721e827248e3d300
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306693"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917014"
 ---
 # <a name="workstation-and-server-garbage-collection"></a>Garbage collection de station de travail et de serveur
 
@@ -40,7 +40,7 @@ Voici les considérations liées aux threads et aux performances pour le garbage
 
 - La collecte se produit sur le thread utilisateur qui a déclenché le garbage collection et reste à la même priorité. Étant donné que les threads utilisateur sont généralement exécutés à la priorité normale, le garbage collector (qui s'exécute sur un thread de priorité normale) doit rivaliser avec d'autres threads pour le temps processeur. (Les threads qui exécutent du code natif ne sont pas suspendus sur le serveur ou la station de travail garbage collection.)
 
-- Le garbage collection de station de travail est toujours utilisé sur un ordinateur doté d’un seul processeur, quel que soit le [paramètre de configuration](../../core/run-time-config/garbage-collector.md#systemgcservercomplus_gcserver).
+- Le garbage collection de station de travail est toujours utilisé sur un ordinateur doté d’un seul processeur, quel que soit le [paramètre de configuration](../../core/run-time-config/garbage-collector.md#workstation-vs-server).
 
 ### <a name="server-gc"></a>Garbage collector pour serveur
 

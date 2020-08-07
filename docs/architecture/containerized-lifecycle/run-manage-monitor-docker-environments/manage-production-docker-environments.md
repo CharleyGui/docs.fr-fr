@@ -1,13 +1,13 @@
 ---
 title: Gérer des environnements de production Docker
 description: Découvrez les points clés de la gestion d’un environnement de production basé sur un conteneur.
-ms.date: 02/15/2019
-ms.openlocfilehash: 26e7a3319afe593d75e2384d023c901a389245dc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: 11880a523d6ff79c9646fd1e174f380779d00dcc
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "71834506"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914930"
 ---
 # <a name="manage-production-docker-environments"></a>Gérer des environnements de production Docker
 
@@ -26,7 +26,7 @@ Le tableau 6-1 indique les outils de gestion courants ainsi que les orchestrate
 | Outils d'administration | Description | Orchestrateurs correspondants |
 |------------------|-------------|-----------------------|
 | [Azure Monitor pour conteneurs](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview) | Outil de gestion Kubernetes dédié à Azure | Azure Kubernetes Services (AKS) |
-| [Kubernetes Web UI (tableau de bord)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) | Outil de gestion Kubernetes, qui peut superviser et gérer un cluster Kubernetes local | Azure Kubernetes Service (AKS)<br/>Kubernetes local |
+| [Interface utilisateur Web de Kubernetes (tableau de bord)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) | Outil de gestion Kubernetes, qui peut superviser et gérer un cluster Kubernetes local | Azure Kubernetes Service (AKS)<br/>Kubernetes local |
 | [Portail Azure pour Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal)<br/>[Azure Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) | Version en ligne et de poste de travail pour la gestion des clusters Service Fabric dans les clouds Azure, locaux, de développement local et autres | Azure Service Fabric |
 | [Supervision des conteneurs (Azure Monitor)](https://docs.microsoft.com/azure/azure-monitor/insights/containers) | Solution générale de gestion et de supervision de conteneurs. Peut gérer des clusters Kubernetes par le biais d’[Azure Monitor pour conteneurs](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview). | Azure Service Fabric<br/>Azure Kubernetes Service (AKS)<br/>Mesosphere DC/OS et autres. |
 
@@ -34,12 +34,12 @@ Le tableau 6-1 indique les outils de gestion courants ainsi que les orchestrate
 
 Une autre option pour la gestion et le déploiement de cluster est Azure Service Fabric. [Service Fabric](https://azure.microsoft.com/services/service-fabric/) est une plateforme de microservices Microsoft qui inclut l’orchestration des conteneurs ainsi que des modèles de programmation permettant aux développeurs de générer des applications de microservices hautement scalables. Service Fabric prend en charge Docker dans les conteneurs Linux et Windows et peut s’exécuter sur les serveurs Windows et Linux.
 
-Voici les outils de gestion de tissu de service :
+Service Fabric outils d’administration sont les suivants :
 
 - [Portail Azure pour Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal) : permet d’effectuer les opérations liées à un cluster (création/mise à jour/suppression) ou de configurer son infrastructure (machines virtuelles, équilibreur de charge, réseau, etc.)
 
 - [Azure Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) est un outil multiplateforme de poste de travail et d’interface utilisateur web spécialisé qui fournit des insights et certaines opérations sur le cluster Service Fabric, du point de vue des nœuds, des machines virtuelles, de l’application et des services.
 
 >[!div class="step-by-step"]
->[Suivant précédent](run-microservices-based-applications-in-production.md)
->[Next](monitor-containerized-application-services.md)
+>[Précédent](run-microservices-based-applications-in-production.md) 
+> [Suivant](monitor-containerized-application-services.md)

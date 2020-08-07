@@ -1,13 +1,13 @@
 ---
 title: Conteneurs comme fondement de la collaboration DevOps
 description: Découvrez le rôle clé des conteneurs pour rationaliser DevOps.
-ms.date: 04/16/2020
-ms.openlocfilehash: 83bebc92a242a5ac2906d9997b7b278f87f0db96
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.date: 08/06/2020
+ms.openlocfilehash: af28c1add8b2e6befbd2f3e6ae9fe707ccc5b106
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507340"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916021"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Conteneurs comme fondement de la collaboration DevOps
 
@@ -27,27 +27,27 @@ Dans la colonne de droite, les équipes d’exploitation gèrent en production l
 
 Les deux équipes collaborent par le biais d’une plateforme fondamentale (conteneurs Docker) qui fournit de manière contractuelle une séparation des responsabilités, tout en améliorant considérablement la collaboration des deux équipes dans le cycle de vie des applications. Les développeurs possèdent le contenu du conteneur, son environnement d’exploitation et ses interdépendances, tandis que les équipes d’exploitation prennent les images générées ainsi que le manifeste et les exécutent dans leur système d’orchestration.
 
-## <a name="challenges-in-application-life-cycle-when-using-docker"></a>Défis liés au cycle de vie des applications lors de l’utilisation de Docker
+## <a name="challenges-in-the-application-life-cycle-when-using-docker"></a>Défis dans le cycle de vie de l’application lors de l’utilisation de Dockr.
 
 Nombreuses sont les raisons pour lesquelles le nombre d’applications conteneurisées augmentera dans les années à venir, et l’une d’elles est la création d’applications basées sur des microservices.
 
-Au cours des 15 dernières années, l’utilisation de services web a été la base de milliers d’applications, et d’ici quelques années, nous ferons probablement le même constat avec les applications basées sur des microservices s’exécutant sur des conteneurs Docker.
+Au cours des 15 dernières années, l’utilisation de services Web a été la base de milliers d’applications et, au bout de quelques années, vous trouverez la même situation avec des applications basées sur des microservices qui s’exécutent sur des conteneurs d’ancrage.
 
 Il est également important de mentionner que vous pouvez aussi utiliser des conteneurs Docker pour les applications monolithiques, auquel cas vous profitez toujours de la plupart des avantages de Docker. Les conteneurs ne ciblent pas uniquement des microservices.
 
 L’utilisation de la conteneurisation de Docker et de microservices donne lieu à de nouveaux défis dans le processus de développement de vos organisations. Par conséquent, vous avez besoin d’une stratégie solide pour maintenir de nombreux conteneurs et microservices en cours d’exécution sur des systèmes de production. Finalement, les applications d’entreprise auront des centaines, voire des milliers de conteneurs/d’instances s’exécutant en production.
 
-Ces défis créent de nouvelles demandes lors de l’utilisation d’outils DevOps. Vous devez donc définir de nouveaux processus dans vos activités DevOps et trouver des réponses à ce type de questions :
+Ces défis créent de nouvelles demandes lors de l’utilisation des outils DevOps. vous devez donc définir de nouveaux processus dans vos activités DevOps et trouver des réponses pour les types de questions suivants :
 
-- Quels outils utiliser pour le développement, l’intégration continue/le déploiement continu (CI/CD), la gestion et les exploitations ?
+- Quels outils puis-je utiliser pour le développement, l’intégration continue/le déploiement, la gestion et les opérations ?
 
 - Comment mon entreprise peut gérer les erreurs dans des conteneurs lors de l’exécution en production ?
 
 - Comment changer des parties de nos logiciels en production avec un temps d’arrêt minimal ?
 
-- Comment effectuer une mise à l’échelle et comment superviser notre système de production ?
+- Comment puis-je mettre à l’échelle et surveiller notre système de production ?
 
-- Comment inclure le test et le déploiement de conteneurs dans notre pipeline de mise en production ?
+- Comment pouvez-vous inclure le test et le déploiement des conteneurs dans notre pipeline de mise en version ?
 
 - Comment utiliser des outils/plateformes open source pour les conteneurs dans Microsoft Azure ?
 
@@ -63,9 +63,9 @@ La figure 2-2 présente un workflow plus détaillé d’un cycle de vie d’app
 
 Tout commence par le développeur, qui démarre l’écriture de code dans le workflow de la boucle interne. L’étape de la boucle interne est celle où les développeurs définissent tout ce qui se produit avant de pousser (push) le code vers le dépôt de code (par exemple, un système de gestion du code source comme Git). Une fois la validation effectuée, le dépôt déclenche l’intégration continue (CI) et le reste du workflow.
 
-La boucle interne se compose essentiellement d’étapes classiques comme « code » (coder), « run » (exécuter), « test » (tester) et « debug » (déboguer), ainsi que des étapes supplémentaires nécessaires juste avant d’exécuter l’application localement. L’exécution et le test de l’application en tant que conteneur Docker font partie du processus du développeur. Le workflow de la boucle interne est expliqué dans les sections qui suivent.
+La boucle interne se compose d’étapes typiques telles que « code », « exécuter », « test » et « débogage », ainsi que les étapes supplémentaires nécessaires juste avant d’exécuter l’application localement. L’exécution et le test de l’application en tant que conteneur Docker font partie du processus du développeur. Le workflow de la boucle interne est expliqué dans les sections qui suivent.
 
-Si nous prenons un peu de recul pour examiner le workflow de bout en bout, le workflow DevOps est plus qu’une technologie ou qu’un jeu d’outils : il s’agit d’un état d’esprit qui nécessite une évolution culturelle. Il s’agit de personnes, de processus et des outils appropriés permettant rendre le cycle de vie de votre application plus rapide et plus prévisible. Les entreprises qui adoptent un workflow conteneurisé restructurent généralement leurs organisations pour représenter les personnes et les processus qui correspondent à des workflows conteneurisés.
+En reprenant un moment pour examiner le flux de travail de bout en bout, le flux de travail DevOps est plus qu’une technologie ou un ensemble d’outils, il s’agit d’une mentalité qui nécessite une évolution culturelle. Il s’agit de personnes, de processus et des outils appropriés permettant rendre le cycle de vie de votre application plus rapide et plus prévisible. Les entreprises qui adoptent un workflow conteneurisé restructurent généralement leurs organisations pour représenter les personnes et les processus qui correspondent à des workflows conteneurisés.
 
 L’utilisation de DevOps peut aider les équipes à répondre ensemble plus rapidement aux pressions concurrentielles en remplaçant les processus manuels sujets aux erreurs par une automatisation, ce qui se traduit par une meilleure traçabilité et des workflows reproductibles. Les organisations peuvent également gérer plus efficacement les environnements et réduire leurs coûts en combinant des ressources locales et cloud, ainsi que des outils solidement intégrés.
 
@@ -92,5 +92,5 @@ Voici quelques-uns des principaux avantages fournis par un workflow DevOps solid
 - Affecter une connexion de type « plug and play » correcte à un grand nombre de vos investissements DevOps existants, notamment les investissements en open source.
 
 >[!div class="step-by-step"]
->[Précédent](index.md)
->[suivant](../Microsoft-platform-tools-containerized-apps/index.md)
+>[Précédent](index.md) 
+> [Suivant](../Microsoft-platform-tools-containerized-apps/index.md)

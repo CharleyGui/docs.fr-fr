@@ -2,12 +2,12 @@
 title: expression Switch-référence C#
 description: Découvrez comment utiliser l’expression de commutateur C# pour les critères spéciaux et d’autres données d’inversion
 ms.date: 03/19/2020
-ms.openlocfilehash: e20257e32938b6b49fefd0a4167f6f1588e19b1c
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 2249afc1ff1cc81e9ad423d910ebb95df8c787d4
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555563"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916660"
 ---
 # <a name="switch-expression-c-reference"></a>expression Switch (référence C#)
 
@@ -17,7 +17,7 @@ Cet article couvre l' `switch` expression, introduite dans C# 8,0. Pour plus d�
 
 L' `switch` expression fournit des `switch` sémantiques de type like dans un contexte d’expression. Il fournit une syntaxe concise lorsque les bras de commutateur produisent une valeur. L’exemple suivant illustre la structure d’une expression de commutateur. Il convertit les valeurs d’un `enum` qui représente les directions visuelles d’une carte en ligne vers la direction Cardinal correspondante :
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetBasicStructure":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetBasicStructure":::
 
 L’exemple précédent montre les éléments de base d’une expression de commutateur :
 
@@ -30,21 +30,21 @@ Les *branches d’expression de commutateur* sont évaluées dans l’ordre de t
 
 ## <a name="patterns-and-case-guards"></a>Modèles et protecteurs de cas
 
-De nombreux modèles sont pris en charge dans les branches d’expression de commutateur. L’exemple précédent utilisait un *modèle de valeur*. Un *modèle de valeur* compare l’expression de plage à une valeur. Cette valeur doit être une constante au moment de la compilation. Le *modèle de type* compare l’expression de plage à un type connu. L’exemple suivant récupère le troisième élément d’une séquence. Elle utilise différentes méthodes basées sur le type de la séquence :
+De nombreux modèles sont pris en charge dans les branches d’expression de commutateur. L’exemple précédent utilise un *modèle de constante*. Un *modèle de constante* compare l’expression de plage à une valeur. Cette valeur doit être une constante au moment de la compilation. Le *modèle de type* compare l’expression de plage à un type connu. L’exemple suivant récupère le troisième élément d’une séquence. Elle utilise différentes méthodes basées sur le type de la séquence :
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetTypePattern":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetTypePattern":::
 
 Les modèles peuvent être récursifs, où un modèle teste un type et si ce type correspond, le modèle correspond à une ou plusieurs valeurs de propriété sur l’expression de plage. Vous pouvez utiliser des modèles récursifs pour étendre l’exemple précédent. Vous ajoutez des branches d’expression de commutateur pour les tableaux qui contiennent moins de 3 éléments. Les modèles récursifs sont illustrés dans l’exemple suivant :
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetRecursivePattern":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetRecursivePattern":::
 
 Les modèles récursifs peuvent examiner les propriétés de l’expression de plage, mais ne peuvent pas exécuter du code arbitraire. Vous pouvez utiliser une *protection de cas*, spécifiée dans une `when` clause, pour fournir des vérifications similaires pour d’autres types de séquences :
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetGuardCase":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetGuardCase":::
 
 Enfin, vous pouvez ajouter le `_` modèle et le `null` modèle pour intercepter les arguments qui ne sont pas traités par une autre branche d’expression de commutateur. Cela rend l’expression de commutateur *exhaustive*, ce qui signifie que toute valeur possible de l’expression de plage est gérée. L’exemple suivant ajoute ces bras d’expression :
 
-:::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetExhaustive":::
+:::code language="csharp" source="snippets/shared/SwitchExpressions.cs" id="SnippetExhaustive":::
 
 L’exemple précédent ajoute un `null` modèle et remplace le `IEnumerable<T>` modèle de type par un `_` modèle. Le `null` modèle fournit une vérification null en tant qu’expression de commutateur ARM. L’expression pour ce ARM lève une <xref:System.ArgumentNullException> . Le `_` modèle correspond à toutes les entrées qui n’ont pas été mises en correspondance avec des bras précédents. Elle doit être postérieure `null` à la vérification ou correspondre aux `null` entrées.
 
