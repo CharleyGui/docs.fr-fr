@@ -1,23 +1,23 @@
-- name: 'Documentation F#'
+- name: Documentation F#
   href: index.yml
 - name: "Qu’est-ce que F#\_?"
   href: what-is-fsharp.md
 - name: Prise en main
   href: get-started/index.md
   items:
-    - name: 'Installer F#'
+    - name: Installer F#
       href: get-started/install-fsharp.md
-    - name: 'F# dans Visual Studio'
+    - name: F# dans Visual Studio
       href: get-started/get-started-visual-studio.md
-    - name: 'F# dans Visual Studio Code'
+    - name: F# dans Visual Studio Code
       href: get-started/get-started-vscode.md
-    - name: 'F# avec l’interface CLI .NET Core'
+    - name: F# avec l’interface CLI .NET Core
       href: get-started/get-started-command-line.md
-    - name: 'F# dans Visual Studio pour Mac'
+    - name: F# dans Visual Studio pour Mac
       href: get-started/get-started-with-visual-studio-for-mac.md
-- name: 'Présentation de F#'
+- name: Présentation de F#
   href: tour.md
-- name: Didacticiels
+- name: Tutoriels
   items:
     - name: Introduction à la programmation fonctionnelle
       href: introduction-to-functional-programming/index.md
@@ -37,17 +37,17 @@
           href: tutorials/type-providers/type-provider-security.md
         - name: Résolution des problèmes liés aux fournisseurs de type
           href: tutorials/type-providers/troubleshooting-type-providers.md
-    - name: 'F# Interactive'
+    - name: F# Interactive
       href: tutorials/fsharp-interactive/index.md
-- name: 'Nouveautés de F#'
+- name: Nouveautés de F#
   items:
-    - name: 'F# 4.7'
+    - name: F# 4.7
       href: whats-new/fsharp-47.md
-    - name: 'F# 4.6'
+    - name: F# 4.6
       href: whats-new/fsharp-46.md
-    - name: 'F# 4.5'
+    - name: F# 4.5
       href: whats-new/fsharp-45.md
-- name: 'Informations de référence du langage F#'
+- name: Informations de référence du langage F#
   href: language-reference/index.md
   items:
     - name: Référence des mots clés
@@ -87,7 +87,7 @@
           href: language-reference/values/null-values.md
     - name: Littéraux
       href: language-reference/literals.md
-    - name: 'Types F#'
+    - name: Types F#
       href: language-reference/fsharp-types.md
     - name: Inférence de type
       href: language-reference/type-inference.md
@@ -111,7 +111,7 @@
       href: language-reference/slices.md
     - name: Options
       href: language-reference/options.md
-    - name: Options de valeurs
+    - name: Options de valeur
       href: language-reference/value-options.md
     - name: Résultats
       href: language-reference/results.md
@@ -144,7 +144,7 @@
       href: language-reference/inheritance.md
     - name: Interfaces
       href: language-reference/interfaces.md
-    - name: Classes abstraites
+    - name: classes abstraites
       href: language-reference/abstract-classes.md
     - name: Membres
       href: language-reference/members/index.md
@@ -161,7 +161,7 @@
           href: language-reference/members/methods.md
         - name: Constructeurs
           href: language-reference/members/constructors.md
-        - name: événements
+        - name: Événements
           href: language-reference/members/events.md
         - name: "Champs explicites\_: mot clé `val`"
           href: language-reference/members/explicit-fields-the-val-keyword.md
@@ -179,11 +179,11 @@
       href: language-reference/object-expressions.md
     - name: Cast et conversions
       href: language-reference/casting-and-conversions.md
-    - name: Contrôle d'accès
+    - name: Contrôle d’accès
       href: language-reference/access-control.md
     - name: "Expressions conditionnelles\_: if...then...else"
       href: language-reference/conditional-expressions-if-then-else.md
-    - name: Expressions match
+    - name: Expressions de correspondance
       href: language-reference/match-expressions.md
     - name: Critères spéciaux
       href: language-reference/pattern-matching.md
@@ -214,7 +214,7 @@
           href: language-reference/exception-handling/the-invalidArg-function.md
     - name: Attributs
       href: language-reference/attributes.md
-    - name: "Gestion des ressources\_: mot clé «\_use\_»"
+    - name: "Gestion des ressources\_: mot clé use"
       href: language-reference/resource-management-the-use-keyword.md
     - name: Espaces de noms
       href: language-reference/namespaces.md
@@ -226,6 +226,8 @@
       href: language-reference/signature-files.md
     - name: Unités de mesure
       href: language-reference/units-of-measure.md
+    - name: Mise en forme en texte brut
+      href: language-reference/plaintext-formatting.md
     - name: Documentation XML
       href: language-reference/xml-documentation.md
     - name: Expressions différées
@@ -258,16 +260,16 @@
       href: language-reference/verbose-syntax.md
     - name: Erreurs et avertissements du compilateur
       href: language-reference/compiler-messages/index.md
-- name: 'Guide de style F#'
+- name: Guide de style F#
   href: style-guide/index.md
   items:
-    - name: 'Indications de mise en forme du code F#'
+    - name: Indications de mise en forme du code F#
       href: style-guide/formatting.md
-    - name: 'Conventions de codage F#'
+    - name: Conventions de codage F#
       href: style-guide/conventions.md
-    - name: 'Indications de conception de composants F#'
+    - name: Indications de conception de composants F#
       href: style-guide/component-design-guidelines.md
-- name: 'Utiliser F# sur Azure'
+- name: Utiliser F# sur Azure
   href: using-fsharp-on-azure/index.md
   items:
     - name: "Bien démarrer avec le stockage Blob Azure en\_F#"
