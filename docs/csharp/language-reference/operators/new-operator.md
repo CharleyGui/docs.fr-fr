@@ -1,15 +1,17 @@
 ---
 title: new, opérateur - Référence C#
 ms.date: 06/25/2019
+f1_keywords:
+- new_CSharpKeyword
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 1e1abb95d8b0b956e391b05ddc5a0a8a20d01a63
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 7e2f1a52f1681e0cc454da8cba324dd1b5995f11
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555303"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855099"
 ---
 # <a name="new-operator-c-reference"></a>new, opérateur (Référence C#)
 

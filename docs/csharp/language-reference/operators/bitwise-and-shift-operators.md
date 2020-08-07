@@ -10,6 +10,8 @@ f1_keywords:
 - '&_CSharpKeyword'
 - ^_CSharpKeyword
 - '|_CSharpKeyword'
+- <<=_CSharpKeyword
+- '>>=_CSharpKeyword'
 helpviewer_keywords:
 - bitwise logical operators [C#]
 - shift operators [C#]
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 87cfbf6d74b61b5485599afa7e0aff9ecccad9d4
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 40cca0ed906765e3a55356f8de0f280cf03a9d14
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555420"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855190"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Opérateurs au niveau du bit et opérateurs de décalage (référence C#)
 
