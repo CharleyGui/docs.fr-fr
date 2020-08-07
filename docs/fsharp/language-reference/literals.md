@@ -1,28 +1,28 @@
 ---
 title: Littéraux
-description: En savoir plus sur les types de F# littéraux dans le langage de programmation.
+description: 'En savoir plus sur les types de littéraux dans le langage de programmation F #.'
 ms.date: 06/28/2019
-ms.openlocfilehash: 9792a24ac28eb402e35e78574cd6a2bf9526734d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 98d609a1cf0beb00c0dd4d45ea343aaa2280b62e
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73041034"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855021"
 ---
 # <a name="literals"></a>Littéraux
 
+Cet article fournit un tableau qui montre comment spécifier le type d’un littéral en F #.
+
 > [!NOTE]
-> Les liens de référence sur les API de cet article vous feront accéder à MSDN (pour l’instant).
+> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
-Cette rubrique fournit un tableau qui indique comment spécifier le type d’un littéral dans F#.
+## <a name="literal-types"></a>Types de littéral
 
-## <a name="literal-types"></a>Types de littéraux
+Le tableau suivant présente les types de littéraux en F #. Les caractères qui représentent des chiffres en notation hexadécimale ne respectent pas la casse ; les caractères qui identifient le type respectent la casse.
 
-Le tableau suivant présente les types de littéraux dans F#. Les caractères qui représentent des chiffres en notation hexadécimale ne respectent pas la casse ; les caractères qui identifient le type respectent la casse.
-
-|Tapez|Description|Suffixe ou préfixe|Exemples|
+|Type|Description|Suffixe ou préfixe|Exemples|
 |----|-----------|----------------|--------|
-|sbyte|entier 8 bits signé|o|`86y`<br /><br />`0b00000101y`|
+|sbyte|entier 8 bits signé|y|`86y`<br /><br />`0b00000101y`|
 |byte|nombre naturel 8 bits non signé|uy|`86uy`<br /><br />`0b00000101uy`|
 |int16|entier 16 bits signé|s|`86s`|
 |uint16|nombre naturel 16 bits non signé|us|`86us`|
@@ -34,15 +34,15 @@ Le tableau suivant présente les types de littéraux dans F#. Les caractères qu
 |uint64|nombre naturel non signé 64 bits|UL|`86UL`|
 |unique, float32|nombre à virgule flottante 32 bits|F ou f|`4.14F` ou `4.14f`|
 |||chariot|`0x00000000lf`|
-|dissocié Cliquer|nombre à virgule flottante 64 bits|none|`4.14` ou `2.3E+32` ou `2.3e+32`|
+|dissocié Cliquer|nombre à virgule flottante 64 bits|Aucun|`4.14` ou `2.3E+32` ou `2.3e+32`|
 |||CHARIOT|`0x0000000000000000LF`|
 |bigint|entier non limité à la représentation 64 bits|I|`9999999999999999999999999999I`|
-|decimal|nombre fractionnaire représenté sous la forme d’un nombre à virgule fixe ou rationnel|M ou m|`0.7833M` ou `0.7833m`|
-|Char|caractère Unicode|none|`'a'` ou `'\u0061'`|
-|Chaîne|chaîne Unicode|none|`"text\n"`<br /><br />or<br /><br />`@"c:\filename"`<br /><br />or<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />or<br /><br />`"string1" + "string2"`<br /><br />Voir aussi [chaînes](Strings.md).|
+|Décimal|nombre fractionnaire représenté sous la forme d’un nombre à virgule fixe ou rationnel|M ou m|`0.7833M` ou `0.7833m`|
+|Char|Caractère Unicode|Aucun|`'a'` ou `'\u0061'`|
+|String|chaîne Unicode|Aucun|`"text\n"`<br /><br />or<br /><br />`@"c:\filename"`<br /><br />or<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />or<br /><br />`"string1" + "string2"`<br /><br />Voir aussi [chaînes](Strings.md).|
 |byte|Caractère ASCII|B|`'a'B`|
 |byte[]|Chaîne ASCII|B|`"text"B`|
-|String ou Byte []|chaîne textuelle|@ préfixe|`@"\\server\share"` (Unicode)<br /><br />`@"\\server\share"B` (ASCII)|
+|String ou Byte []|chaîne textuelle|@ préfixe|`@"\\server\share"`Unicode<br /><br />`@"\\server\share"B`R|
 
 ## <a name="named-literals"></a>Littéraux nommés
 
@@ -69,13 +69,13 @@ let Literal3 = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
 
 ## <a name="remarks"></a>Notes
 
-Les chaînes Unicode peuvent contenir des encodages explicites que vous pouvez spécifier à l’aide de `\u` suivis d’un code hexadécimal 16 bits (0000-FFFF) ou d’encodages UTF-32 que vous pouvez spécifier à l’aide de `\U` suivi d’un code hexadécimal 32 bits qui représente tout Unicode. point de code (00000000-0010FFFF).
+Les chaînes Unicode peuvent contenir des encodages explicites que vous pouvez spécifier à l’aide de `\u` suivis d’un code hexadécimal 16 bits (0000-ffff) ou d’encodages UTF-32 que vous pouvez spécifier à l’aide de `\U` suivis d’un code hexadécimal 32 bits qui représente un point de code Unicode (00000000-0010FFFF).
 
 L’utilisation d’autres opérateurs de bits autres que `|||` n’est pas autorisée.
 
 ## <a name="integers-in-other-bases"></a>Entiers dans d’autres bases
 
-Les entiers 32 bits signés peuvent également être spécifiés en hexadécimal, octal ou binaire à l’aide d’un préfixe `0x`, `0o` ou `0b` respectivement.
+Les entiers 32 bits signés peuvent également être spécifiés en hexadécimal, octal ou binaire à l’aide d’un `0x` `0o` préfixe, ou, `0b` respectivement.
 
 ```fsharp
 let numbers = (0x9F, 0o77, 0b1010)
@@ -84,7 +84,7 @@ let numbers = (0x9F, 0o77, 0b1010)
 
 ## <a name="underscores-in-numeric-literals"></a>Traits de soulignement dans les littéraux numériques
 
-Vous pouvez séparer les chiffres par le caractère de soulignement (`_`).
+Vous pouvez séparer les chiffres par le caractère de soulignement ( `_` ).
 
 ```fsharp
 let value = 0xDEAD_BEEF

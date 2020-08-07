@@ -1,20 +1,20 @@
 ---
 title: Événements
-description: Découvrez comment F# les événements vous permettent d’associer des appels de fonction à des actions de l’utilisateur, qui sont importantes dans la programmation de l’interface graphique.
+description: 'Découvrez comment les événements F # vous permettent d’associer des appels de fonction à des actions de l’utilisateur, qui sont importantes dans la programmation de l’interface graphique.'
 ms.date: 05/16/2016
-ms.openlocfilehash: ad60aff318832ab3ba5e9f7c43928898e171cea8
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 682686ba58d0f7a56e7da2585e6507ccd0156a44
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543623"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854930"
 ---
 # <a name="events"></a>Événements
 
-> [!NOTE]
-> Les liens des informations de référence sur les API qui figurent dans cet article pointent vers MSDN.  Les informations de référence sur les API docs.microsoft.com ne sont pas terminées.
-
 Les événements vous permettent d'associer des appels de fonction à des actions utilisateur ; ils sont un élément important de la programmation d'interfaces GUI. Des événements peuvent également être déclenchés par vos applications ou par le système d'exploitation.
+
+> [!NOTE]
+> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="handling-events"></a>Gestion des événements
 
@@ -28,7 +28,7 @@ Le type de la méthode `Add` est `('a -> unit) -> unit`. Par conséquent, la mé
 
 ## <a name="creating-custom-events"></a>Création d'événements personnalisés
 
-F#les événements sont représentés par F# la classe d' [événements](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) , qui implémente l’interface [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) . `IEvent` est elle-même une interface qui combine les fonctionnalités de deux autres interfaces, `System.IObservable<'T>` et [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Par conséquent, les `Event`s ont les fonctionnalités équivalentes des délégués dans d'autres langues, plus les fonctionnalités supplémentaires d'`IObservable`, ce qui signifie que les événements F# prennent en charge le filtrage d'événements, ainsi que l'utilisation de fonctions de première classe F# et expressions lambda comme gestionnaires d'événements. Cette fonctionnalité est fournie dans le [module Event](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
+Les événements f # sont représentés par la classe d' [événements](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) f #, qui implémente l’interface [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) . `IEvent`est lui-même une interface qui combine les fonctionnalités de deux autres interfaces `System.IObservable<'T>` et [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Par conséquent, les `Event`s ont les fonctionnalités équivalentes des délégués dans d'autres langues, plus les fonctionnalités supplémentaires d'`IObservable`, ce qui signifie que les événements F# prennent en charge le filtrage d'événements, ainsi que l'utilisation de fonctions de première classe F# et expressions lambda comme gestionnaires d'événements. Cette fonctionnalité est fournie dans le [module Event](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
 
 Pour créer un événement sur une classe qui agit juste comme tout autre événement .NET Framework, ajoutez à la classe une liaison `let` qui définit un `Event` comme un champ dans une classe. Vous pouvez spécifier le type d'argument d'événement souhaité comme argument de type ou le laisser vide et indiquer au compilateur de déduire le type approprié. Vous devez également définir un membre d'événement qui expose l'événement comme un événement CLI. Ce membre doit avoir l’attribut [CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) . Elle est déclarée comme une propriété et son implémentation est simplement un appel à la propriété [Publish](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) de l’événement. Les utilisateurs de votre classe peuvent utiliser la méthode `Add` de l'événement publié pour ajouter un gestionnaire. L'argument de la méthode `Add` peut être une expression lambda. Vous pouvez utiliser la propriété `Trigger` de l’événement pour le déclencher, en passant les arguments à la fonction de gestionnaire. L'exemple de code suivant illustre ceci. Dans cet exemple, l'argument de type déduit pour l'événement est un tuple, qui représente les arguments de l'expression lambda.
 
@@ -53,7 +53,7 @@ Given a value: Event occurred.
 
 ## <a name="processing-event-streams"></a>Traitement de flux d'événements
 
-Au lieu d’ajouter simplement un gestionnaire d’événements pour un événement à l’aide de la fonction [Event. Add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) , vous pouvez utiliser les fonctions du module `Event` pour traiter des flux d’événements de manière très personnalisée. Pour cela, vous utilisez le canal (`|>`) avec l'événement comme première valeur dans une série d'appels de fonction, et les fonctions du module `Event` comme appels de fonction suivants.
+Au lieu d’ajouter simplement un gestionnaire d’événements pour un événement à l’aide de la fonction [Event. Add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) , vous pouvez utiliser les fonctions du `Event` module pour traiter des flux d’événements de manière hautement personnalisée. Pour cela, vous utilisez le canal (`|>`) avec l'événement comme première valeur dans une série d'appels de fonction, et les fonctions du module `Event` comme appels de fonction suivants.
 
 L'exemple de code suivant illustre comment configurer un événement pour lequel le gestionnaire est uniquement appelé sous certaines conditions.
 
@@ -176,9 +176,9 @@ Application.Run(appForm)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Members](index.md) (Membres)
+- [Membres](index.md)
 - [Gestion et déclenchement d’événements](../../../standard/events/index.md)
-- [Expressions lambda : mot clé `fun`](../functions/lambda-expressions-the-fun-keyword.md)
+- [Expressions lambda : `fun` mot clé](../functions/lambda-expressions-the-fun-keyword.md)
 - [Module Control. Event](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
-- [Control. Event&#60;'&#62; classe'](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
-- [Control. Event&#60;'Delegate, 'args&#62; , classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)
+- [Classe&#62;&#60; Control. Event](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
+- [Control. Event&#60; 'Delegate, 'args&#62; Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)

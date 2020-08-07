@@ -1,20 +1,17 @@
 ---
 title: "Déclarations d'importation : mot clé open"
-description: Renseignez-vous sur les déclarations d’importation de F et comment elles spécifient un module ou un espace de nom dont vous pouvez référencer les éléments sans utiliser un nom entièrement qualifié.
+description: 'En savoir plus sur les déclarations d’importation F # et la façon dont elles spécifient un module ou un espace de noms dont vous pouvez référencer des éléments sans utiliser un nom complet.'
 ms.date: 04/04/2019
-ms.openlocfilehash: 0baef27c7dc3181b9da0defb1c793fec04269c09
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 2b88427ca92212fb4a7598447dd1a5e12061093a
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021532"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855086"
 ---
-# <a name="import-declarations-the-open-keyword"></a>Déclarations d’importation : mot clé `open`
+# <a name="import-declarations-the-open-keyword"></a>Déclarations d’importation : `open` mot clé
 
-> [!NOTE]
-> Les liens des informations de référence sur les API qui figurent dans cet article pointent vers MSDN.  Les informations de référence sur les API docs.microsoft.com ne sont pas terminées.
-
-Une *déclaration d’importation* spécifie un module ou un espace de nom dont vous pouvez référencer les éléments sans utiliser un nom entièrement qualifié.
+Une *déclaration d’importation* spécifie un module ou un espace de noms dont vous pouvez référencer des éléments sans utiliser un nom qualifié complet.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,19 +21,22 @@ open module-or-namespace-name
 
 ## <a name="remarks"></a>Notes
 
-Le référencement du code en utilisant l’espace de nom ou le parcours du module entièrement qualifié à chaque fois peut créer du code qui est difficile à écrire, lire et maintenir. Au lieu de `open` cela, vous pouvez utiliser le mot clé pour les modules fréquemment utilisés et les espaces de noms de sorte que lorsque vous référencez un membre de ce module ou l’espace de nom, vous pouvez utiliser la forme courte du nom au lieu du nom entièrement qualifié. Ce mot clé `using` est similaire au `using namespace` mot clé dans `Imports` C, dans Visual CMD et dans Visual Basic.
+> [!NOTE]
+> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
-Le module ou l’espace de nom fourni doit être dans le même projet ou dans un projet ou un assemblage référencé. Si ce n’est pas le cas, vous `-reference` pouvez ajouter une référence au projet, `-r`ou utiliser l’option de ligne de commande (ou son abréviation, ). Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).
+Le référencement du code à l’aide de l’espace de noms complet ou du chemin du module à chaque fois peut créer du code difficile à écrire, lire et gérer. Au lieu de cela, vous pouvez utiliser le `open` mot clé pour les modules et les espaces de noms fréquemment utilisés. ainsi, lorsque vous référencez un membre de ce module ou de cet espace de noms, vous pouvez utiliser la forme abrégée du nom au lieu du nom complet. Ce mot clé est semblable au `using` mot clé en C#, `using namespace` dans Visual C++ et `Imports` dans Visual Basic.
 
-La déclaration d’importation met les noms disponibles dans le code qui suit la déclaration, jusqu’à la fin de l’espace de nom, du module ou du fichier.
+Le module ou l’espace de noms fourni doit se trouver dans le même projet ou dans un projet ou un assembly référencé. Si ce n’est pas le cas, vous pouvez ajouter une référence au projet ou utiliser l' `-reference` option de ligne de commande (ou son abréviation, `-r` ). Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).
+
+La déclaration d’importation rend les noms disponibles dans le code qui suit la déclaration, jusqu’à la fin de l’espace de noms, du module ou du fichier englobant.
 
 Lorsque vous utilisez plusieurs déclarations d’importation, elles doivent apparaître sur des lignes distinctes.
 
-Le code suivant affiche `open` l’utilisation du mot clé pour simplifier le code.
+Le code suivant illustre l’utilisation du `open` mot clé pour simplifier le code.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6801.fs)]
 
-Le compilateur F n’émet pas d’erreur ou d’avertissement lorsque des ambiguïtés se produisent lorsque le même nom se produit dans plus d’un module ou un espace nom ouvert. Lorsque des ambiguïtés se produisent, Fmd donne la préférence au module ou à l’espace de nom plus récemment ouvert. Par exemple, dans le `empty` `Seq.empty`code suivant, signifie, même si est `empty` situé à la fois dans les `List` deux et `Seq` les modules.
+Le compilateur F # n’émet pas d’erreur ni d’avertissement quand des ambiguïtés se produisent lorsque le même nom se trouve dans plusieurs modules ou espaces de noms ouverts. Quand des ambiguïtés se produisent, F # donne la préférence au module ou à l’espace de noms le plus récemment ouvert. Par exemple, dans le code suivant, `empty` signifie `Seq.empty` , même si `empty` se trouve à la fois dans les `List` `Seq` modules et.
 
 ```fsharp
 open List
@@ -44,30 +44,30 @@ open Seq
 printfn "%A" empty
 ```
 
-Par conséquent, soyez prudent lorsque vous ouvrez `List` `Seq` des modules ou des espaces de nom tels que ou qui contiennent des membres qui ont des noms identiques; au lieu de cela, envisager d’utiliser les noms qualifiés. Vous devez éviter toute situation dans laquelle le code dépend de l’ordre des déclarations d’importation.
+Par conséquent, soyez vigilant lorsque vous ouvrez des modules ou des espaces de noms tels que `List` ou `Seq` qui contiennent des membres qui ont des noms identiques ; à la place, envisagez d’utiliser les noms qualifiés. Vous devez éviter toute situation dans laquelle le code dépend de l’ordre des déclarations d’importation.
 
-## <a name="namespaces-that-are-open-by-default"></a>Espaces de noms qui sont ouverts par défaut
+## <a name="namespaces-that-are-open-by-default"></a>Espaces de noms ouverts par défaut
 
-Certains espaces nominatifs sont si fréquemment utilisés dans le code F qu’ils sont ouverts implicitement sans avoir besoin d’une déclaration d’importation explicite. Le tableau suivant affiche les espaces nominaux qui sont ouverts par défaut.
+Certains espaces de noms sont si souvent utilisés dans du code F # qu’ils sont ouverts implicitement sans avoir besoin d’une déclaration d’importation explicite. Le tableau suivant répertorie les espaces de noms qui sont ouverts par défaut.
 
 |Espace de noms|Description|
 |---------|-----------|
-|`Microsoft.FSharp.Core`|Contient des définitions de type FMD `int` de `float`base pour les types intégrés tels que et .|
-|`Microsoft.FSharp.Core.Operators`|Contient des opérations arithmétiques de base telles que `+` et `*`.|
-|`Microsoft.FSharp.Collections`|Contient des classes de `List` collecte `Array`immuables telles que et .|
-|`Microsoft.FSharp.Control`|Contient des types pour les constructions de contrôle telles que l’évaluation paresseuse et les flux de travail asynchrones.|
-|`Microsoft.FSharp.Text`|Contient des fonctions pour IO `printf` formaté, telles que la fonction.|
+|`Microsoft.FSharp.Core`|Contient des définitions de type F # de base pour les types intégrés tels que `int` et `float` .|
+|`Microsoft.FSharp.Core.Operators`|Contient des opérations arithmétiques de base telles que `+` et `*` .|
+|`Microsoft.FSharp.Collections`|Contient des classes de collection immuables telles que `List` et `Array` .|
+|`Microsoft.FSharp.Control`|Contient des types pour les constructions de contrôle telles que l’évaluation différée et les flux de travail asynchrones.|
+|`Microsoft.FSharp.Text`|Contient des fonctions pour les e/s mises en forme, telles que la `printf` fonction.|
 
-## <a name="autoopen-attribute"></a>Attribut AutoOpen
+## <a name="autoopen-attribute"></a>Attribut Open
 
-Vous pouvez `AutoOpen` appliquer l’attribut à un assemblage si vous souhaitez ouvrir automatiquement un espace de nom ou un module lorsque l’assemblage est référencé. Vous pouvez également `AutoOpen` appliquer l’attribut à un module pour ouvrir automatiquement ce module lorsque le module parent ou l’espace de nom est ouvert. Pour plus d’informations, voir [Core.AutoOpenAttribute Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.autoopenattribute-class-%5bfsharp%5d).
+Vous pouvez appliquer l' `AutoOpen` attribut à un assembly si vous souhaitez ouvrir automatiquement un espace de noms ou un module lorsque l’assembly est référencé. Vous pouvez également appliquer l' `AutoOpen` attribut à un module pour ouvrir automatiquement ce module lors de l’ouverture du module ou de l’espace de noms parent. Pour plus d’informations, consultez [Core. AutoOpenAttribute, classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.autoopenattribute-class-%5bfsharp%5d).
 
-## <a name="requirequalifiedaccess-attribute"></a>Exiger Un attribut d’access de qualification
+## <a name="requirequalifiedaccess-attribute"></a>Attribut RequireQualifiedAccess
 
-Certains modules, enregistrements ou types `RequireQualifiedAccess` de syndicats peuvent spécifier l’attribut. Lorsque vous faites référence à des éléments de ces modules, dossiers ou syndicats, vous devez utiliser un nom qualifié, que vous incluiez ou non une déclaration d’importation. Si vous utilisez cet attribut stratégiquement sur les types qui définissent les noms couramment utilisés, vous aidez à éviter les collisions de noms et ainsi rendre le code plus résistant aux changements dans les bibliothèques. Pour plus d’informations, voir [Core.RequireQualifiedAccessAttribute Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-%5Bfsharp%5D).
+Certains modules, enregistrements ou types d’Union peuvent spécifier l' `RequireQualifiedAccess` attribut. Lorsque vous référencez des éléments de ces modules, enregistrements ou unions, vous devez utiliser un nom qualifié, que vous incluiez ou non une déclaration d’importation. Si vous utilisez cet attribut de façon stratégique sur des types qui définissent des noms couramment utilisés, vous évitez les conflits de noms et rendez le code plus résilient aux modifications dans les bibliothèques. Pour plus d’informations, consultez [Core. RequireQualifiedAccessAttribute (, classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-%5Bfsharp%5D).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence linguistique F](index.md)
+- [Informations de référence sur le langage F #](index.md)
 - [Espaces de noms](namespaces.md)
 - [Modules](modules.md)

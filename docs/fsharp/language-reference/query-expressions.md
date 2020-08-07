@@ -2,19 +2,18 @@
 title: Expressions de requête
 description: 'En savoir plus sur la prise en charge des expressions de requête pour LINQ dans le langage de programmation F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: bbd15352aa89bd1891b409177921a675784a0227
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c6f33a58bc959745a5f83bdcfe378a4dbbe577c5
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419185"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855034"
 ---
 # <a name="query-expressions"></a>Expressions de requête
 
-> [!NOTE]
-> Les liens des informations de référence sur les API qui figurent dans cet article pointent vers MSDN.  Les informations de référence sur les API docs.microsoft.com ne sont pas terminées.
-
 Les expressions de requête vous permettent d’interroger une source de données et de placer les données sous la forme souhaitée. Les expressions de requête prennent en charge LINQ en F #.
+> [!NOTE]
+> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -705,7 +704,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td>
+</td></tr><tr><td>Voir 
 <code>LIKE</code> et <code>TOP</code>.<br/>
 
 <pre><code class="lang-sql">-- '_e%' matches strings where the second character is 'e'

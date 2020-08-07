@@ -1,13 +1,15 @@
 ---
 title: Directives de compilateur
-description: En savoir F# plus sur les directives de préprocesseur de langage, les directives de compilation conditionnelle, les directives de ligne et les directives de compilateur.
+description: 'En savoir plus sur les directives de préprocesseur de langage F #, les directives de compilation conditionnelle, les directives de ligne et les directives de compilateur.'
 ms.date: 12/10/2018
-ms.openlocfilehash: 16db2efb2fee2c2c5e94aa98eb0a13183a4e0e0b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+f1_keywords:
+- '#endif_FS'
+ms.openlocfilehash: aee307eb7bccc8d91b5162f3f43db3b806b761d0
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630405"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855372"
 ---
 # <a name="compiler-directives"></a>Directives de compilateur
 
@@ -21,11 +23,11 @@ Le tableau suivant répertorie les directives de préprocesseur disponibles en F
 
 |Directive|Description|
 |---------|-----------|
-|`#if` *symbol*|Prend en charge la compilation conditionnelle. Code dans la section après l' `#if` inclusion de si le *symbole* est défini. Le symbole peut également être inversé avec `!`.|
+|`#if`*symbole*|Prend en charge la compilation conditionnelle. Code dans la section après l' `#if` inclusion de si le *symbole* est défini. Le symbole peut également être inversé avec `!` .|
 |`#else`|Prend en charge la compilation conditionnelle. Marque une section de code à inclure si le symbole utilisé avec le `#if` précédent n'est pas défini.|
 |`#endif`|Prend en charge la compilation conditionnelle. Marque la fin d'une section conditionnelle de code.|
-|`#`spline *entier*,<br/>`#`spline *entier* *chaîne*,<br/>`#`spline *entier* *Verbatim-String*|Indique la ligne et le nom de fichier du code source d'origine, à des fins de débogage. Cette fonctionnalité est fournie pour les outils qui génèrent du code source F#.|
-|`#nowarn` *warningcode*|Désactive un ou plusieurs avertissements du compilateur. Pour désactiver un avertissement, trouvez son numéro dans la sortie du compilateur et incluez-le entre guillemets. Omettez le préfixe « FS ». Pour désactiver plusieurs numéros d'avertissement sur la même ligne, incluez chaque nombre entre guillemets, puis séparez chaque chaîne par un espace. Par exemple :
+|`#`spline *entier*,<br/>`#`spline *int* *chaîne*int,<br/>`#`spline *int* *Verbatim-String*|Indique la ligne et le nom de fichier du code source d'origine, à des fins de débogage. Cette fonctionnalité est fournie pour les outils qui génèrent du code source F#.|
+|`#nowarn`*WarningCode*|Désactive un ou plusieurs avertissements du compilateur. Pour désactiver un avertissement, trouvez son numéro dans la sortie du compilateur et incluez-le entre guillemets. Omettez le préfixe « FS ». Pour désactiver plusieurs numéros d'avertissement sur la même ligne, incluez chaque nombre entre guillemets, puis séparez chaque chaîne par un espace. Par exemple :
 
 `#nowarn "9" "40"`
 
@@ -38,7 +40,7 @@ Le code qui est désactivé par l’une de ces directives apparaît en grisé da
 > [!NOTE]
 > Le comportement des directives de compilation conditionnelle n'est pas le même que dans les autres langages. Par exemple, vous ne pouvez pas utiliser des expressions booléennes qui impliquent des symboles et `true` et `false` n'ont aucune signification spéciale. Les symboles que vous utilisez dans la directive `if` doivent être définis par la ligne de commande ou dans les paramètres du projet ; il n'existe aucune directive de préprocesseur `define`.
 
-Le code suivant illustre l'utilisation des directives `#if`, `#else` et `#endif`. Dans cet exemple, le code contient deux versions de la définition de `function1`. Lorsque `VERSION1` est défini à l’aide de l' [option de compilateur-define](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04), le `#if` code entre la `#else` directive et la directive est activé. Sinon, le code entre `#else` et `#endif` est activé.
+Le code suivant illustre l'utilisation des directives `#if`, `#else` et `#endif`. Dans cet exemple, le code contient deux versions de la définition de `function1`. Lorsque `VERSION1` est défini à l’aide de l' [option de compilateur-define](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04), le code entre la `#if` directive et la `#else` directive est activé. Sinon, le code entre `#else` et `#endif` est activé.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7301.fs)]
 
@@ -46,7 +48,7 @@ Il n'existe aucune directive de préprocesseur `#define` en F#. Vous devez utili
 
 Les directives de compilation conditionnelle peuvent être imbriquées. Le retrait n'est pas significatif pour les directives de préprocesseur.
 
-Vous pouvez également annuler la négation d’un `!`symbole avec. Dans cet exemple, la valeur d’une chaîne est un élément uniquement lorsqu’il ne s’agit _pas_ de débogage:
+Vous pouvez également annuler la négation d’un symbole avec `!` . Dans cet exemple, la valeur d’une chaîne est un élément uniquement lorsqu’il ne s’agit _pas_ de débogage :
 
 ```fsharp
 #if !DEBUG
@@ -74,11 +76,11 @@ Le tableau suivant répertorie la directive de compilateur disponible en F#.
 
 |Directive|Description|
 |---------|-----------|
-|`#light` ["on"&#124;"off"]|Active ou désactive la syntaxe simplifiée, à des fins de compatibilité avec d'autres versions de ML. Par défaut, la syntaxe simplifiée est activée. La syntaxe détaillée est toujours activée. Par conséquent, vous pouvez utiliser la syntaxe simplifiée et la syntaxe détaillée. La directive `#light` en elle-même équivaut à `#light "on"`. Si vous spécifiez `#light "off"`, vous devez utiliser la syntaxe détaillée pour toutes les constructions de langage. La syntaxe présentée dans la documentation de F# part du principe que vous utilisez la syntaxe simplifiée. Pour plus d’informations, consultez [syntaxe détaillée](verbose-syntax.md).|
+|`#light`["on" &#124; "OFF"]|Active ou désactive la syntaxe simplifiée, à des fins de compatibilité avec d'autres versions de ML. Par défaut, la syntaxe simplifiée est activée. La syntaxe détaillée est toujours activée. Par conséquent, vous pouvez utiliser la syntaxe simplifiée et la syntaxe détaillée. La directive `#light` en elle-même équivaut à `#light "on"`. Si vous spécifiez `#light "off"`, vous devez utiliser la syntaxe détaillée pour toutes les constructions de langage. La syntaxe présentée dans la documentation de F# part du principe que vous utilisez la syntaxe simplifiée. Pour plus d’informations, consultez [syntaxe détaillée](verbose-syntax.md).|
 
-Pour les directives de l’interpréteur (FSI. exe), consultez [programmation interactive avec F# ](../tutorials/fsharp-interactive/index.md).
+Pour connaître les directives de l’interpréteur (fsi.exe), consultez [programmation interactive avec F #](../tutorials/fsharp-interactive/index.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence du langage F#](index.md)
+- [Informations de référence sur le langage F #](index.md)
 - [Options du compilateur](compiler-options.md)

@@ -2,12 +2,12 @@
 title: Mise en forme de texte brut
 description: 'Découvrez comment utiliser printf et d’autres mises en forme de texte brut dans des scripts et des applications F #.'
 ms.date: 07/22/2020
-ms.openlocfilehash: a0f2c52431be894c4f74dd2940345a518f620589
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: 6b14633e074961757d0f0cd258d1b1667f5fd8ee
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795747"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854917"
 ---
 # <a name="plain-text-formatting"></a>Mise en forme de texte brut
 
@@ -81,15 +81,15 @@ Les spécifications de format pour les `printf` formats sont des chaînes avec d
 | `%f`               | type à virgule flottante de base | Mise en forme sous forme de valeur signée sous la forme `[-]dddd.dddd` , où `dddd` représente un ou plusieurs chiffres décimaux. Le nombre de chiffres avant la virgule décimale dépend de l'ampleur du nombre, et le nombre de chiffres après que la virgule décimale dépend de la précision demandée. |
 | `%g`, `%G` | type à virgule flottante de base |  Mise en forme à l’aide de comme valeur signée imprimée `%f` ou `%e` formatée, selon la valeur la plus petite pour la valeur et la précision données. |
 | `%M` | une `System.Decimal` valeur  |    Mis en forme à l’aide du `"G"` spécificateur de format pour`System.Decimal.ToString(format)` |
-| `%O` | toute valeur  |   Mise en forme par boxing de l’objet et valling de sa `System.Object.ToString()` méthode |
+| `%O` | toute valeur  |   Mis en forme en effectuant un boxing de l’objet et en appelant sa `System.Object.ToString()` méthode |
 | `%A` | toute valeur  |   Formaté à l’aide de la [mise en forme du texte brut structuré](plaintext-formatting.md) avec les paramètres de disposition par défaut |
 | `%a` | toute valeur  |   Nécessite deux arguments : une fonction de mise en forme qui accepte un paramètre de contexte et la valeur, ainsi que la valeur particulière à imprimer. |
-| `%t` | toute valeur  |   Nécessite un argument, une fonction de mise en forme qui accepte un paramètre de contexte qui génère ou retourne le texte approprié. |
+| `%t` | toute valeur  |   Nécessite un argument : une fonction de mise en forme qui accepte un paramètre de contexte qui génère ou retourne le texte approprié. |
 
 Les types entiers de base sont `byte` ( `System.Byte` ), `sbyte` ( `System.SByte` ), `int16` ( `System.Int16` ), `uint16` ( `System.UInt16` ), `int32` ( `System.Int32` ), `uint32` ( `System.UInt32` ), `int64` ( `System.Int64` ), `uint64` ( `System.UInt64` ), `nativeint` ( `System.IntPtr` ) et `unativeint` ( `System.UIntPtr` ).
 Les types à virgule flottante de base sont `float` ( `System.Double` ) et `float32` ( `System.Single` ).
 
-La largeur facultative est un entier indiquant la largeur minimale du résultat. Par exemple, `%6d` imprime un entier, en le préfixant avec des espaces pour remplir au moins 6 caractères. Si width est `*` , un argument entier supplémentaire est utilisé pour spécifier la largeur correspondante.
+La largeur facultative est un entier indiquant la largeur minimale du résultat. Par exemple, `%6d` imprime un entier, en le préfixant avec des espaces pour remplir au moins six caractères. Si width est `*` , un argument entier supplémentaire est utilisé pour spécifier la largeur correspondante.
 
 Les indicateurs valides sont les suivants :
 
@@ -161,7 +161,7 @@ Culture 2: 12/31/1999 12:00:00 AM
 
 ### <a name="structured-values"></a>Valeurs structurées
 
-Lors de la mise en forme de texte brut à l’aide du `%A` spécificateur, le retrait de bloc est utilisé pour les listes et les tuples F #. Le est illustré dans l’exemple précédent.
+Lors de la mise en forme de texte brut à l’aide du `%A` spécificateur, le retrait de bloc est utilisé pour les listes et les tuples F #. Cela est illustré dans l’exemple précédent.
 La structure des tableaux est également utilisée, y compris les tableaux multidimensionnels.  Les tableaux unidimensionnels sont affichés avec la `[| ... |]` syntaxe. Par exemple :
 
 ```fsharp
@@ -200,12 +200,12 @@ tiges
 [|(1, 1); (2, 4); (3, 9); (4, 16); (5, 25)|]
 ```
 
-Si vous spécifiez une largeur d’impression égale à 0, aucune largeur d’impression n’est utilisée. Une seule ligne de texte se produit, sauf lorsque les chaînes incorporées dans la sortie contiennent elles-mêmes sauts.  Par exemple
+Si vous spécifiez une largeur d’impression égale à 0, aucune largeur d’impression n’est utilisée. Une seule ligne de texte se produit, sauf lorsque les chaînes incorporées dans la sortie contiennent des sauts de ligne.  Par exemple
 
 ```fsharp
 printfn "%0A" [| for i in 1 .. 5 -> (i, i*i) |]
 
-printfn "%0A" [| for i in 1 .. 5 -> "abc\ndef |]
+printfn "%0A" [| for i in 1 .. 5 -> "abc\ndef" |]
 ```
 
 tiges
@@ -318,7 +318,7 @@ tiges
 
 Les valeurs tardives sont imprimées sous forme de `Value is not created` texte ou équivalent lorsque la valeur n’a pas encore été évaluée.
 
-Les valeurs NULL sont imprimées sous `null` la forme, sauf si le type statique de la valeur est déterminé comme étant un type d’Union où `null` est un représentation autorisé.
+Les valeurs NULL sont imprimées sous `null` la forme, sauf si le type statique de la valeur est déterminé comme étant un type d’Union où `null` est une représentation autorisée.
 
 Les valeurs de fonction F # sont imprimées comme nom de fermeture généré en interne, par exemple, `<fun:it@43-7>` .
 

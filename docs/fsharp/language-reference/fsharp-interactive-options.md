@@ -2,12 +2,12 @@
 title: Options interactives
 description: En savoir plus sur les options de ligne de commande prises en charge par F# Interactive, fsi.exe.
 ms.date: 07/22/2020
-ms.openlocfilehash: f9932cac24fad187c332306968fb13981912e80a
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: abddd1fd990be18ede139ab26ffe80513ba6e0dd
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795461"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855346"
 ---
 # <a name="f-interactive-options"></a>Options de F# Interactive
 
@@ -25,13 +25,13 @@ L’extension de fichier pour les fichiers de script F # est `.fsx` .
 
 ## <a name="table-of-f-interactive-options"></a>Tableau des options de F# Interactive
 
-Le tableau suivant récapitule les options prises en charge par F# Interactive. Vous pouvez définir ces options sur la ligne de commande ou via l’IDE de Visual Studio. Pour définir ces options dans l’IDE de Visual Studio, ouvrez le menu **Outils** , sélectionnez **options...**, puis développez le nœud **outils F #** et sélectionnez **F# Interactive**.
+Le tableau suivant récapitule les options prises en charge par F# Interactive. Vous pouvez définir ces options sur la ligne de commande ou à l’aide de l’IDE de Visual Studio. Pour définir ces options dans l’IDE de Visual Studio, ouvrez le menu **Outils** , sélectionnez **options**, développez le nœud **Outils F #** , puis sélectionnez **F# Interactive**.
 
 Quand des listes apparaissent dans F# Interactive arguments de l’option, les éléments de liste sont séparés par des points-virgules ( `;` ).
 
 |Option|Description|
 |------|-----------|
-|**--**|Utilisé pour indiquer à F# Interactive de traiter les arguments restants en tant qu’arguments de ligne de commande pour le programme ou le script F #, auquel vous pouvez accéder dans le code à l’aide de la liste **FSI. CommandLineArgs**.|
+|**--**|Permet d’indiquer à F# Interactive de traiter les arguments restants comme des arguments de ligne de commande pour le programme ou le script F #, auquel vous pouvez accéder dans le code à l’aide de la liste **FSI. CommandLineArgs**.|
 |**--activé**[ **+**&#124;**-** ]|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--CodePage : &lt; int&gt;**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--consolecolors**[ **+**&#124;**-** ]|Génère des messages d’avertissement et d’erreur en couleur.|
@@ -56,7 +56,7 @@ Quand des listes apparaissent dans F# Interactive arguments de l’option, les �
 |**--ReadLine**[ **+**&#124;**-** ]|Activez ou désactivez la saisie semi-automatique par tabulation en mode interactif.|
 |**--Référence : &lt; nom de fichier&gt;**<br /><br />**-r : &lt; nom_fichier&gt;**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--tailcalls**[ **+**&#124;**-** ]|Activez ou désactivez l’utilisation de l’instruction IL tail, qui entraîne la réutilisation du frame de pile pour les fonctions récursives tail. Cette option est activée par défaut.|
-|**--TargetProfile : &lt; chaîne&gt;**|Spécifie le profil du Framework cible de cet assembly. Les valeurs valides sont mscorlib, Netcore ou netstandard.  La valeur par défaut est mscorlib.|
+|**--TargetProfile : &lt; chaîne&gt;**|Spécifie le profil du Framework cible de cet assembly. Les valeurs valides sont `mscorlib`, `netcore` ou `netstandard`. Par défaut, il s’agit de `mscorlib`.|
 |**--Use : &lt; nom_fichier&gt;**|Indique à l’interpréteur d’utiliser le fichier donné au démarrage comme entrée initiale.|
 |**--utf8output**|Identique à l’option du compilateur fsc.exe. Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--Warn : &lt; Warning-niveau&gt;**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
@@ -163,6 +163,6 @@ val y : string = ["quack"; "quack"; "quack"]
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----|-----------|
 |[Options du compilateur](compiler-options.md)|Décrit les options de ligne de commande disponibles pour le compilateur F #, **fsc.exe**.|
