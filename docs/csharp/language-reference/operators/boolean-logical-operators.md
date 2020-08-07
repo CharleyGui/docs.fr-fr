@@ -10,6 +10,9 @@ f1_keywords:
 - '|_CSharpKeyword'
 - '&&_CSharpKeyword'
 - '||_CSharpKeyword'
+- '|=_CSharpKeyword'
+- ^=_CSharpKeyword
+- '&=_CSharpKeyword'
 helpviewer_keywords:
 - logical operators [C#]
 - short-circuiting operators [C#]
@@ -32,12 +35,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: cdabae0a4dbdcc3b1289bca7f1c42cb0a26b440f
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 2a67542e25ddb258602b4005a71b565cf6522917
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555407"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855138"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Opérateurs logiques booléens (référence C#)
 

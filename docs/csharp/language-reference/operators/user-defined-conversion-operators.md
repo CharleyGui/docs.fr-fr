@@ -5,17 +5,19 @@ ms.date: 07/09/2019
 f1_keywords:
 - explicit_CSharpKeyword
 - implicit_CSharpKeyword
+- explicit
+- implicit
 helpviewer_keywords:
 - explicit keyword [C#]
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: ab3598b8158d0a789e8583403389df657ae01aed
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 70f553b129d5ef8a0f9077c16656a17d8e88fed4
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556278"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855840"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>Opérateurs de conversion définie par l’utilisateur (Référence C#)
 

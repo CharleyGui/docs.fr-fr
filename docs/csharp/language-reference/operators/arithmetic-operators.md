@@ -11,6 +11,8 @@ f1_keywords:
 - '%_CSharpKeyword'
 - +_CSharpKeyword
 - -_CSharpKeyword
+- '%=_CSharpKeyword'
+- '*=_CSharpKeyword'
 helpviewer_keywords:
 - arithmetic operators [C#]
 - increment operator [C#]
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 03bf7f246884fc8cd0095f0dd1375389a95e1ef0
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 4ddd71e41ff70d4287f474cc91255a5aae51b132
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555472"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855242"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Opérateurs arithmétiques (référence C#)
 

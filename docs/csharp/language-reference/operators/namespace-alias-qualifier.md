@@ -4,18 +4,19 @@ ms.date: 08/09/2019
 f1_keywords:
 - ::_CSharpKeyword
 - global_CSharpKeyword
+- global
 helpviewer_keywords:
 - ':: operator [C#]'
 - namespace alias qualifier [C#]
 - namespace [C#]
 - global keyword [C#]
 ms.assetid: 698b5a73-85cf-4e0e-9e8e-6496887f8527
-ms.openlocfilehash: 305c05f3ea8e56a72ecdfa796f0c048ab5fbd132
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: f91287ed281a2c6b10bed93cff10b08972a8445e
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556356"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855125"
 ---
 # <a name="-operator-c-reference"></a>Opérateur :: (référence C#)
 
