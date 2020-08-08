@@ -1,13 +1,13 @@
 ---
 title: Test d’applications web et de services ASP.NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer une architecture pour le test d’applications web et de services ASP.NET Core dans des conteneurs.
-ms.date: 01/30/2020
-ms.openlocfilehash: f66d6184d913405c9372904f8072dda1dbfbe6ac
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.date: 08/07/2020
+ms.openlocfilehash: a27b3b8d392c5e1a7d1961307e6de95659cd823e
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988230"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024600"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Test d’applications web et de services ASP.NET Core
 
@@ -19,7 +19,7 @@ Vous devez tester le comportement du contrôleur avec les entrées valides et no
 
 - Tests d’intégration. Ces tests permettent de vérifier que les interactions entre composants fonctionnent comme prévu, en se basant sur des artefacts externes comme les bases de données. Les assertions peuvent tester l’API des composants, l’interface utilisateur ou les effets secondaires des actions telles que les E/S de base de données, la journalisation, etc.
 
-- Tests fonctionnels pour chaque microservice. Ceux-ci garantissent que l’application fonctionne comme prévu du point de vue de l’utilisateur.
+- Tests fonctionnels pour chaque microservice. Ils garantissent que l’application fonctionne comme prévu du point de vue de l’utilisateur.
 
 - Tests de service. Ces tests permettent de garantir que les cas d’usage de service de bout en bout (y compris l’exécution simultanée de plusieurs services) sont testés. Pour ce type de test, vous devez d’abord préparer l’environnement. Dans ce cas, cela signifie démarrer les services (à l’aide de docker-compose up, par exemple).
 
@@ -68,7 +68,7 @@ Contrairement aux tests unitaires, les tests d’intégration rencontrent souven
 
 Étant donné que les tests d’intégration utilisent de plus grands segments de code que les tests unitaires, et comme les tests d’intégration reposent sur des éléments d’infrastructure, ils ont tendance à être beaucoup plus lents que les tests unitaires. Par conséquent, il est conseillé de limiter le nombre de tests d’intégration que vous écrivez et exécutez.
 
-ASP.NET Core comprend un hébergeur de test intégré qui peut être utilisé pour traiter les demandes HTTP sans frais généraux réseau, ce qui signifie que vous pouvez exécuter ces tests plus rapidement que lors de l’utilisation d’un véritable hébergeur. L’hôte web de test (TestServer) est disponible dans un composant NuGet, sous le nom de Microsoft.AspNetCore.TestHost. Il peut être ajouté aux projets de test d’intégration et utilisé pour héberger les applications ASP.NET Core.
+ASP.NET Core comprend un hôte Web de test intégré qui peut être utilisé pour gérer les requêtes HTTP sans surcharge du réseau, ce qui signifie que vous pouvez exécuter ces tests plus rapidement que lors de l’utilisation d’un hôte Web réel. L’hôte web de test (TestServer) est disponible dans un composant NuGet, sous le nom de Microsoft.AspNetCore.TestHost. Il peut être ajouté aux projets de test d’intégration et utilisé pour héberger les applications ASP.NET Core.
 
 Comme vous pouvez le voir dans le code suivant, lorsque vous créez des tests d’intégration pour des contrôleurs ASP.NET Core, vous instanciez les contrôleurs via l’hôte de test. Ceci est comparable à une requête HTTP, avec toutefois, une exécution plus rapide.
 
@@ -99,27 +99,27 @@ public class PrimeWebDefaultRequestShould
 }
 ```
 
-#### <a name="additional-resources"></a>Ressources supplémentaires
+#### <a name="additional-resources"></a>Ressources complémentaires
 
-- **Steve Smith. Contrôleurs d’essai** (ASP.NET Core)
+- **Steve Smith. Contrôleurs de test** (ASP.net Core) \
     [https://docs.microsoft.com/aspnet/core/mvc/controllers/testing](/aspnet/core/mvc/controllers/testing)
 
-- **Steve Smith. Tests d’intégration** (ASP.NET Core)
+- **Steve Smith. Test d’intégration** (ASP.net Core) \
     [https://docs.microsoft.com/aspnet/core/test/integration-tests](/aspnet/core/test/integration-tests)
 
-- **Test unitaire dans .NET Core à l’aide du test dotnet** \
+- **Tests unitaires dans .NET Core à l’aide de dotnet test** \
     [https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test](../../../core/testing/unit-testing-with-dotnet-test.md)
 
 - **xUnit.net**. Site officiel. \
     <https://xunit.github.io/>
 
-- **Bases de test unitaire.** \
+- **Concepts de base des tests unitaires.** \
     [https://docs.microsoft.com/visualstudio/test/unit-test-basics](/visualstudio/test/unit-test-basics)
 
 - **Moq**. Dépôt GitHub. \
     <https://github.com/moq/moq>
 
-- **NUnit**. Site officiel. \
+- **Nunit**. Site officiel. \
     <https://www.nunit.org/>
 
 ### <a name="implementing-service-tests-on-a-multi-container-application"></a>Implémentation de tests de service dans une application à plusieurs conteneurs
@@ -138,11 +138,11 @@ Les tests de l’application de référence (eShopOnContainers) ont été récem
 
 2. **Tests fonctionnels/d’intégration de microservices** : avec les cas de test impliquant l’infrastructure de chaque microservice, mais pris isolément des autres et contenus dans les projets **{NomMicroservice}.FunctionalTests**.
 
-3. **Tests fonctionnels/d’intégration d’application,** qui mettent l’accent sur l’intégration des microservices, avec des cas de test qui exercent plusieurs microservices. Ces tests se trouvent dans le projet **Application.FunctionalTests**.
+3. Les **tests fonctionnels et d’intégration des applications**, qui se concentrent sur l’intégration des microservices, avec des cas de test qui exercent plusieurs microservices. Ces tests se trouvent dans le projet **Application.FunctionalTests**.
 
 Les tests unitaires et les tests d’intégration par microservice se trouvent dans le dossier de test de chaque microservice, et les tests d’application et de charge sont contenus sous le dossier de test du dossier de solution, comme l’illustre la figure 6-25.
 
-![Capture d’écran de VS soulignant certains des projets de test dans la solution.](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
+![Capture d’écran de VS désignant certains des projets de test dans la solution.](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
 
 **Figure 6-25.** Tester la structure des dossiers dans eShopOnContainers
 
@@ -196,14 +196,14 @@ docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 
 Comme on peut le constater, ces fichiers Docker Compose lancent seulement les microservices Redis, RabbitMQ, SQL Server et MongoDB.
 
-### <a name="additional-resources"></a>Ressources supplémentaires
+### <a name="additional-resources"></a>Ressources complémentaires
 
-- **Fichier Lisez-moi relatif aux tests** dans le dépôt eShopOnContainers sur GitHub \
-    <https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/test>
+- **Test d’intégration d’unité &** sur eShopOnContainers \
+    <https://github.com/dotnet-architecture/eShopOnContainers/wiki/Unit-and-integration-testing>
 
-- **Fichier Lisez-moi relatif aux tests de charge** dans le dépôt eShopOnContainers sur GitHub \
-    <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/test/ServicesTests/LoadTest/>
+- **Test de charge** sur eShopOnContainers \
+    <https://github.com/dotnet-architecture/eShopOnContainers/wiki/Load-testing>
 
 > [!div class="step-by-step"]
-> [Suivant précédent](subscribe-events.md)
-> [Next](background-tasks-with-ihostedservice.md)
+> [Précédent](subscribe-events.md) 
+>  [Suivant](background-tasks-with-ihostedservice.md)

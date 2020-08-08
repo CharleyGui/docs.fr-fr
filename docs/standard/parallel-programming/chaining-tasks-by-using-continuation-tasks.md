@@ -9,18 +9,18 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 53457f7f99d96c288b002f58c9db36f431ba863a
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 132518b9d8d22efecfcf3ed14e8b5969aa768cd4
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381305"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024587"
 ---
 # <a name="chaining-tasks-using-continuation-tasks"></a>Chaînage de tâches à l’aide de tâches de continuation
 
 En programmation asynchrone, il est courant pour une opération asynchrone, à l’achèvement, d’appeler une deuxième opération. Les continuations autorisent les opérations descendance à consommer les résultats de la première opération. Habituellement, les continuations se faisaient à l’aide de méthodes de rappel. Dans la bibliothèque parallèle de tâches, les mêmes fonctionnalités sont fournies par les _tâches de continuation_. Une tâche de continuation (également appelée continuation) est une tâche asynchrone appelée par une autre tâche, appelée _antécédent_, lorsque l’antécédent se termine.
 
-Les continuations sont relativement faciles à utiliser, tout en étant puissantes et flexibles. Par exemple, vous pouvez :
+Les continuations sont relativement faciles à utiliser, tout en étant puissantes et flexibles. Vous pouvez par exemple :
 
 - passer des données de l'antécédent à la continuation ;
 - spécifier les conditions précises sous lesquelles la continuation doit être ou non appelée ;
@@ -145,7 +145,7 @@ Parfois, vous devrez peut-être chaîner une continuation qui retourne un <xref:
 L’exemple suivant montre comment utiliser des continuations qui encapsulent des fonctions de retour de tâche supplémentaires. Chaque continuation peut être désencapsulée, exposant ainsi la tâche interne encapsulée.
 
 :::code language="csharp" source="snippets/cs/unwrap.cs":::
-:::code language="csharp" source="snippets/vb/unwrap.vb":::
+:::code language="vb" source="snippets/vb/unwrap.vb":::
 
 Pour plus d’informations sur l’utilisation de <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> , consultez [Comment : désencapsuler une tâche imbriquée](how-to-unwrap-a-nested-task.md).
 

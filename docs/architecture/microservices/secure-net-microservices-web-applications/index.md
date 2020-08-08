@@ -2,17 +2,17 @@
 title: Sécurisation des microservices .NET et des applications web
 description: 'Sécurité dans les microservices .NET et les applications web : Découvrez les options d’authentification dans les applications web ASP.NET Core.'
 author: mjrousos
-ms.date: 01/30/2020
-ms.openlocfilehash: 2b503b326d1869ae095f9b177c04389bda9fe46c
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.date: 08/07/2020
+ms.openlocfilehash: 9ce62039374f2256cd9adbddbb850aa4135af9f4
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100780"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024613"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Sécuriser les microservices .NET et les applications web
 
-La sécurité dans les microservices et les applications web est un sujet tellement vaste que la rubrique pourrait facilement remplir plusieurs manuels comme celui-ci. C’est pourquoi nous allons nous concentrer sur l’authentification, l’autorisation et les secrets d’application dans cette section.
+Il y a tant de nombreux aspects de la sécurité dans les microservices et les applications Web que le sujet pourrait facilement prendre plusieurs livres comme celui-ci. dans cette section, vous allez vous concentrer sur l’authentification, l’autorisation et les secrets d’application.
 
 ## <a name="implement-authentication-in-net-microservices-and-web-applications"></a>Implémenter l’authentification dans les microservices .NET et les applications web
 
@@ -174,7 +174,7 @@ public void ConfigureServices(IServiceCollection services)
 {
     var identityUrl = Configuration.GetValue<string>("IdentityUrl");
     var callBackUrl = Configuration.GetValue<string>("CallBackUrl");
-    var sessionCookieLifetime = configuration.GetValue("SessionCookieLifetimeMinutes", 60);
+    var sessionCookieLifetime = Configuration.GetValue("SessionCookieLifetimeMinutes", 60);
 
     // Add Authentication services
 
@@ -303,7 +303,7 @@ Quand cet intergiciel est en place, les jetons JWT sont automatiquement extraits
 
 L’intergiciel d’authentification du porteur JWT peut aussi prendre en charge des scénarios plus avancés, tels que l’utilisation d’un certificat local pour valider un jeton si l’autorité n’est pas disponible. Pour ce scénario, vous pouvez spécifier un objet `TokenValidationParameters` dans l’objet `JwtBearerOptions`.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 - **Partage des cookies entre applications** \
   [https://docs.microsoft.com/aspnet/core/security/cookie-sharing](/aspnet/core/security/cookie-sharing)

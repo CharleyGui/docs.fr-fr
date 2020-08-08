@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 07/27/2020
-ms.openlocfilehash: d474d5547245e57206d669531b74b5be31c98ca0
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 0667d975ce5bba5692fe5d179341235bd3c61790
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556325"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024696"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -17,6 +17,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [IntPtr et UIntPtr implémentent IFormattable](#intptr-and-uintptr-implement-iformattable) | 5.0 |
 | [PrincipalPermissionAttribute est obsolète en tant qu’erreur](#principalpermissionattribute-is-obsolete-as-error) | 5.0 |
 | [Les méthodes de sérialisation BinaryFormatter sont obsolètes et interdites dans les applications ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5.0 |
 | [Les chemins d’accès de code UTF-7 sont obsolètes](#utf-7-code-paths-are-obsolete) | 5.0 |
@@ -44,6 +45,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Process. StartInfo lève une exception InvalidOperationException pour les processus que vous n’avez pas démarrés](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [intptr-uintptr-implement-iformattable](../../../includes/core-changes/corefx/5.0/intptr-uintptr-implement-iformattable.md)]
+
+***
 
 [!INCLUDE [principalpermissionattribute-obsolete](../../../includes/core-changes/corefx/5.0/principalpermissionattribute-obsolete.md)]
 

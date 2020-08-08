@@ -2,12 +2,12 @@
 title: Scripts dotnet-install
 description: En savoir plus sur les scripts dotnet-install pour installer les kit SDK .NET Core et le runtime partagé.
 ms.date: 04/30/2020
-ms.openlocfilehash: cecfbb86c4a2863161d3df7c78201fa8057abfe5
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: c3aa6549a0b521db7fc19c6ff44665e3c4ba0c5f
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415924"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024652"
 ---
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
@@ -23,7 +23,7 @@ Windows :
 dotnet-install.ps1 [-Architecture <ARCHITECTURE>] [-AzureFeed]
     [-Channel <CHANNEL>] [-DryRun] [-FeedCredential]
     [-InstallDir <DIRECTORY>] [-JSonFile <JSONFILE>]
-    [-NoCdn] [-NoPath] [-ProxyAddress]
+    [-NoCdn] [-NoPath] [-ProxyAddress] [-ProxyBypassList <LIST_OF_URLS>]
     [-ProxyUseDefaultCredentials] [-Runtime <RUNTIME>]
     [-SkipNonVersionedFiles] [-UncachedFeed] [-Verbose]
     [-Version <VERSION>]
@@ -141,6 +141,10 @@ Les scripts d’installation ne mettent pas à jour le registre sur Windows. Ils
 
   Si cette option est définie, le programme d’installation utilise le proxy pendant la création de demandes web. (Valide uniquement pour Windows.)
 
+- **`-ProxyBypassList <LIST_OF_URLS>`**
+
+  S' `ProxyAddress` il est défini avec, fournit une liste d’URL séparées par des virgules qui contournent le proxy. (Valide uniquement pour Windows.)
+
 - **`ProxyUseDefaultCredentials`**
 
   Si cette option est définie, le programme d’installation utilise les informations d’identification de l’utilisateur actuel lors de l’utilisation de l’adresse proxy. (Valide uniquement pour Windows.)
@@ -182,7 +186,7 @@ Les scripts d’installation ne mettent pas à jour le registre sur Windows. Ils
 
   - `latest` : dernière version sur le canal (utilisée avec l’option `-Channel`).
   - `coherent` : dernière version cohérente sur le canal ; utilise la dernière combinaison de packages stable (utilisée avec les options `-Channel` de nom de branche).
-  - Version en trois parties au format X.Y.Z représentant une version spécifique ; remplace l’option `-Channel`. Par exemple : `2.0.0-preview2-006120`.
+  - Version en trois parties au format X.Y.Z représentant une version spécifique ; remplace l’option `-Channel`. Par exemple : `2.0.0-preview2-006120`.
 
   Si aucune valeur n’est spécifiée, `-Version` est définie par défaut sur `latest`.
 
