@@ -15,12 +15,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 2fc47a834f8f5b18021aa4f321345b8d7e4e8459
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 3ffdd481ac001b4e1bd229c6f5fa0bf285b508b2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662886"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063807"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>quantificateurs dans les expressions régulières
 Les quantificateurs spécifient le nombre d’instances d’un caractère, groupe ou classe de caractères devant être présentes dans l’entrée pour qu’une correspondance soit trouvée.  Le tableau suivant répertorie les quantificateurs pris en charge par .NET.  
@@ -48,7 +48,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
 ### <a name="match-zero-or-more-times-"></a>Mettre en correspondance zéro occurrence ou plus : *  
  Le quantificateur `*` correspond zéro fois, ou plus, à l’élément qui précède. Il équivaut au quantificateur `{0,}`. `*` est un quantificateur gourmand dont l’équivalent paresseux est `*?`.  
   
- L’exemple suivant illustre cette expression régulière. La chaîne d’entrée comporte neuf chiffres dont cinq correspondent au modèle et quatre (`95`, `929`, `9219` et `9919`) n’y correspondent pas.  
+ L’exemple suivant illustre cette expression régulière. Parmi les neuf groupes de chiffres de la chaîne d’entrée, cinq correspondent au modèle et quatre ( `95` , `929` , `9219` et `9919` ) ne le font pas.  
   
  [!code-csharp[RegularExpressions.Quantifiers#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#1)]
  [!code-vb[RegularExpressions.Quantifiers#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#1)]  

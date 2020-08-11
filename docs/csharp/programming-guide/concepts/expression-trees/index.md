@@ -3,12 +3,12 @@ title: Arborescences d’expressions (C#)
 description: En savoir plus sur les arborescences d’expressions. Découvrez comment compiler et exécuter du code représenté par ces structures de données, où chaque nœud est une expression.
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: 2fa8577dd945650edebf84459de10c0c3bd04225
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a5c84673f0b45b92be18b955a6d1e7268bb73c26
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105584"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063313"
 ---
 # <a name="expression-trees-c"></a>Arborescences d’expressions (C#)
 Les arborescences d'expressions représentent du code dans une structure de données arborescente, où chaque nœud est une expression, par exemple un appel de méthode ou une opération binaire comme `x < y`.  
@@ -22,7 +22,7 @@ Les arborescences d'expressions représentent du code dans une structure de donn
 ## <a name="creating-expression-trees-from-lambda-expressions"></a>Création d’arborescences d’expressions à partir d’expressions lambda  
  Quand une expression lambda est affectée à une variable de type <xref:System.Linq.Expressions.Expression%601>, le compilateur produit du code pour générer une arborescence d'expressions qui représente l'expression lambda.  
   
- Le compilateur C# peut générer des arborescences d’expressions seulement à partir d’expressions lambda (ou de lambdas sur une seule ligne). Ils ne peuvent pas analyser des lambdas d'instruction (ou lambdas multilignes). Pour plus d’informations sur les expressions lambda en C#, consultez [Expressions lambda](../../statements-expressions-operators/lambda-expressions.md).  
+ Le compilateur C# peut générer des arborescences d’expressions seulement à partir d’expressions lambda (ou de lambdas sur une seule ligne). Ils ne peuvent pas analyser des lambdas d'instruction (ou lambdas multilignes). Pour plus d’informations sur les expressions lambda en C#, consultez [Expressions lambda](../../../language-reference/operators/lambda-expressions.md).  
   
  Les exemples de code suivants montrent comment le compilateur C# crée une arborescence d’expressions qui représente l’expression lambda `num => num < 5`.  
   
@@ -153,6 +153,6 @@ Console.WriteLine(expr.Compile()(4));
 - <xref:System.Linq.Expressions>
 - [Comment exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md)
 - [Comment modifier les arborescences d’expressions (C#)](./how-to-modify-expression-trees.md)
-- [Expressions lambda](../../statements-expressions-operators/lambda-expressions.md)
+- [Expressions lambda](../../../language-reference/operators/lambda-expressions.md)
 - [Vue d’ensemble du Dynamic Language Runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
 - [Concepts de programmation (C#)](../index.md)

@@ -290,6 +290,8 @@ items:
         href: diagnostics/index.md
       - name: Débogueurs gérés
         href: diagnostics/managed-debuggers.md
+      - name: EventCounters
+        href: diagnostics/event-counters.md
       - name: Journalisation et suivi
         href: diagnostics/logging-tracing.md
       - name: Outils .NET Core généraux
@@ -302,6 +304,8 @@ items:
             href: diagnostics/dotnet-trace.md
       - name: Tutoriels de diagnostics .NET Core
         items:
+          - name: Obtenir des métriques de performance avec EventCounters
+            href: diagnostics/event-counter-perf.md
           - name: Déboguer une fuite de mémoire
             href: diagnostics/debug-memory-leak.md
           - name: Déboguer une utilisation élevée du processeur

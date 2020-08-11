@@ -3,12 +3,12 @@ title: Concepts et terminologie (transformation fonctionnelle) (C#)
 description: Les fonctionnalités de programmation fonctionnelle facilitent la transformation du code XML. En savoir plus sur les concepts et la terminologie des transformations fonctionnelles pures en C#.
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: ee972b376f0d0898b7681049b9641b43780ed353
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: ca05a914f6156730e773d1effebfc72626b16507
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103976"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063274"
 ---
 # <a name="concepts-and-terminology-functional-transformation-c"></a>Concepts et terminologie (transformation fonctionnelle) (C#)
 
@@ -55,7 +55,7 @@ Pour plus d’informations, consultez [Présentation des opérateurs de requête
 expression lambda \
 Pour l'essentiel, il s'agit d'une fonction anonyme inline qui peut être utilisée partout où un type délégué est attendu. Cette définition des expressions lambda est simplifiée, mais elle convient pour les besoins de ce didacticiel.
 
-Pour plus d’informations, consultez [Expressions lambda](../../statements-expressions-operators/lambda-expressions.md).
+Pour plus d’informations, consultez [Expressions lambda](../../../language-reference/operators/lambda-expressions.md).
 
 collection \
 Ensemble structuré de données, généralement d'un type uniforme. Pour être compatible avec LINQ, une collection doit implémenter l'interface <xref:System.Collections.IEnumerable> ou l'interface <xref:System.Linq.IQueryable> (ou l'un de leurs équivalents génériques, <xref:System.Collections.Generic.IEnumerator%601> ou <xref:System.Linq.IQueryable%601>).

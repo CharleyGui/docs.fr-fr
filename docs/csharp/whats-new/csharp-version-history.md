@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: 96d6e07d5553d65e95144a0cede7cab86b4c5ef7
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: b5c320e4c55803547fa44793a46e4a3da65bd0cb
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556851"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063469"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -83,7 +83,7 @@ C# version 3.0 est apparu fin 2007, en même temps que Visual Studio 2008, même
 - [Propriétés implémentées automatiquement](../programming-guide/classes-and-structs/auto-implemented-properties.md)
 - [Types anonymes](../programming-guide/classes-and-structs/anonymous-types.md)
 - [Expressions de requête](../linq/query-expression-basics.md)
-- [Expressions lambda](../programming-guide/statements-expressions-operators/lambda-expressions.md)
+- [Expressions lambda](../language-reference/operators/lambda-expressions.md)
 - [Arborescences de l’expression](../expression-trees.md)
 - [Méthodes d’extension](../programming-guide/classes-and-structs/extension-methods.md)
 - [Variables locales implicitement typées](../language-reference/keywords/var.md)

@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: 184c9f61fd8456b22e8ecb262c131793160b49b0
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 1307599a3832be5f48cd62a7b8c1be7f76a3d4a5
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244008"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063742"
 ---
 # <a name="delegates-and-lambdas"></a>Délégués et expressions lambda
 
@@ -159,4 +159,4 @@ Dans ce contexte, l’opérateur `+=` est utilisé pour s’abonner à un [évé
 
 * [Délégués](../csharp/programming-guide/delegates/index.md)
 * [Fonctions anonymes](../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
-* [Expressions lambda](../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+* [Expressions lambda](../csharp/language-reference/operators/lambda-expressions.md)

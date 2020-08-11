@@ -1,50 +1,51 @@
 ---
-title: 'Tutorial: Installer et utiliser .NET Core outils locaux'
-description: Apprenez à installer et à utiliser un outil .NET comme outil local.
+title: 'Didacticiel : installer et utiliser les outils locaux .NET Core'
+description: Découvrez comment installer et utiliser un outil .NET comme un outil local.
+ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: a4355886513040e2436bdbd87905e5baee2dd7a5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 555497a71d54713e62e54f8f293afdf74ead1743
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156697"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062673"
 ---
-# <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Tutorial: Installer et utiliser un outil local .NET Core en utilisant le CLI .NET Core
+# <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Didacticiel : installer et utiliser un outil local .NET Core à l’aide de l’CLI .NET Core
 
-**Cet article s’applique à:** ✔️ .NET Core 3.0 SDK et les versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
 
-Ce tutoriel vous apprend à installer et à utiliser un outil local. Vous utilisez un outil que vous créez dans le [premier tutoriel de cette série](global-tools-how-to-create.md).
+Ce didacticiel vous apprend à installer et à utiliser un outil local. Vous utilisez un outil que vous créez dans le [premier didacticiel de cette série](global-tools-how-to-create.md).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
-* Compléter le [premier tutoriel de cette série](global-tools-how-to-create.md).
-* Installez le temps d’exécution .NET Core 2.1.
+* Effectuez le [premier didacticiel de cette série](global-tools-how-to-create.md).
+* Installez le Runtime .NET Core 2,1.
 
-  Pour ce tutoriel, vous installez et utilisez un outil qui cible .NET Core 2.1, de sorte que vous devez avoir ce temps d’exécution installé sur votre machine. Pour installer l’heure d’exécution 2.1, rendez-vous sur la [page de téléchargement .NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1) et trouvez le lien d’installation runtime dans la colonne **Run apps - Runtime.**
+  Pour ce didacticiel, vous installez et utilisez un outil qui cible .NET Core 2,1. vous devez donc installer ce Runtime sur votre ordinateur. Pour installer le runtime 2,1, accédez à la [page de téléchargement de .net Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1) et recherchez le lien d’installation du runtime dans la colonne **exécuter des applications-Runtime** .
 
 ## <a name="create-a-manifest-file"></a>Créer un fichier manifeste
 
-Pour installer un outil d’accès local uniquement (pour l’annuaire actuel et les sous-directeurs), il doit être ajouté à un fichier manifeste.
+Pour installer un outil pour un accès local uniquement (pour le répertoire et les sous-répertoires actifs), il doit être ajouté à un fichier manifeste.
 
-Du dossier *microsoft.botsay,* naviguez jusqu’à un niveau au dossier *de dépôt* :
+Dans le dossier *Microsoft. botsay* , accédez à un niveau vers le dossier du *référentiel* :
 
 ```console
 cd ..
 ```
 
-Créez un fichier manifeste en exécutant la nouvelle commande [dotnet](dotnet-new.md) :
+Créez un fichier manifeste en exécutant la commande [dotnet New](dotnet-new.md) :
 
 ```dotnetcli
 dotnet new tool-manifest
 ```
 
-La sortie indique la création réussie du fichier.
+La sortie indique que la création du fichier a réussi.
 
 ```console
 The template "Dotnet local tool manifest file" was created successfully.
 ```
 
-Le fichier *.config/dotnet-tools.json* n’a pas encore d’outils :
+Le fichier *. config/dotnet-tools.jssur* le fichier n’a pas encore d’outils :
 
 ```json
 {
@@ -54,19 +55,19 @@ Le fichier *.config/dotnet-tools.json* n’a pas encore d’outils :
 }
 ```
 
-Les outils énumérés dans un fichier manifeste sont mis à la disposition de l’annuaire et des sous-directeurs actuels. L’annuaire actuel est celui qui contient le répertoire *.config* avec le fichier manifeste.
+Les outils répertoriés dans un fichier manifeste sont disponibles dans le répertoire et les sous-répertoires actifs. Le répertoire actif est celui qui contient le répertoire *. config* avec le fichier manifeste.
 
-Lorsque vous utilisez une commande CLI qui fait référence à un outil local, le SDK recherche un fichier manifeste dans l’annuaire actuel et les répertoires parent. S’il trouve un fichier manifeste, mais que le fichier n’inclut pas l’outil référencé, il poursuit la recherche à travers les répertoires parentaux. La recherche se termine lorsqu’elle trouve l’outil `isRoot` référencé ou qu’elle trouve un fichier manifeste avec l’ensemble `true`de .
+Lorsque vous utilisez une commande CLI qui fait référence à un outil local, le kit de développement logiciel (SDK) recherche un fichier manifeste dans le répertoire actif et les répertoires parents. S’il trouve un fichier manifeste, mais que le fichier n’inclut pas l’outil référencé, il continue la recherche dans les répertoires parents. La recherche se termine lorsqu’elle trouve l’outil référencé ou lorsqu’elle trouve un fichier manifeste ayant la `isRoot` valeur `true` .
 
-## <a name="install-botsay-as-a-local-tool"></a>Installer botsay comme un outil local
+## <a name="install-botsay-as-a-local-tool"></a>Installer botsay en tant qu’outil local
 
-Installez l’outil à partir du paquet que vous avez créé dans le premier tutoriel:
+Installez l’outil à partir du package que vous avez créé dans le premier didacticiel :
 
 ```dotnetcli
 dotnet tool install --add-source ./microsoft.botsay/nupkg microsoft.botsay
 ```
 
-Cette commande ajoute l’outil au fichier manifeste que vous avez créé dans l’étape précédente. La sortie de commande indique dans quel fichier manifeste l’outil nouvellement installé est :
+Cette commande ajoute l’outil au fichier manifeste que vous avez créé à l’étape précédente. La sortie de la commande indique le fichier manifeste dans lequel se trouve l’outil qui vient d’être installé :
 
  ```console
  You can invoke the tool from this directory using the following command:
@@ -75,7 +76,7 @@ Cette commande ajoute l’outil au fichier manifeste que vous avez créé dans l
  Entry is added to the manifest file /home/name/repository/.config/dotnet-tools.json
  ```
 
-Le fichier *.config/dotnet-tools.json* dispose désormais d’un outil :
+Le fichier *. config/dotnet-tools.js* est désormais doté d’un outil :
 
 ```json
 {
@@ -94,7 +95,7 @@ Le fichier *.config/dotnet-tools.json* dispose désormais d’un outil :
 
 ## <a name="use-the-tool"></a>Utiliser l’outil
 
-Invoquez l’outil en exécutant la `dotnet tool run` commande à partir du dossier de *dépôt* :
+Appelez l’outil en exécutant la `dotnet tool run` commande à partir du dossier du *référentiel* :
 
 ```dotnetcli
 dotnet tool run botsay hello from the bot
@@ -102,9 +103,9 @@ dotnet tool run botsay hello from the bot
 
 ## <a name="restore-a-local-tool-installed-by-others"></a>Restaurer un outil local installé par d’autres
 
-Vous installez généralement un outil local dans le répertoire racine du référentiel. Après avoir vérifié le fichier manifeste au référentiel, d’autres développeurs peuvent obtenir le dernier fichier manifeste. Pour installer tous les outils énumérés dans le `dotnet tool restore` fichier manifeste, ils peuvent exécuter une seule commande.
+En général, vous installez un outil local dans le répertoire racine du référentiel. Une fois que vous avez vérifié le fichier manifeste dans le référentiel, d’autres développeurs peuvent récupérer le dernier fichier manifeste. Pour installer tous les outils listés dans le fichier manifeste, ils peuvent exécuter une seule `dotnet tool restore` commande.
 
-1. Ouvrez le fichier *.config/dotnet-tools.json,* et remplacez le contenu par le JSON suivant :
+1. Ouvrez le fichier *. config/dotnet-tools.jssur* le fichier, puis remplacez le contenu par le code JSON suivant :
 
    ```json
    {
@@ -127,11 +128,11 @@ Vous installez généralement un outil local dans le répertoire racine du réf�
    }
    ```
 
-1. Remplacez-vous `<name>` par le nom que vous avez utilisé pour créer le projet.
+1. Remplacez `<name>` par le nom que vous avez utilisé pour créer le projet.
 
 1. Enregistrez vos modifications.
 
-   Faire ce changement est la même chose que d’obtenir la `dotnetsay` dernière version du référentiel après que quelqu’un d’autre a installé le paquet pour l’annuaire du projet.
+   Cette modification est identique à l’obtention de la version la plus récente à partir du référentiel après que quelqu’un d’autre a installé le package `dotnetsay` pour le répertoire du projet.
 
 1. Exécutez la commande `dotnet tool restore`.
 
@@ -139,7 +140,7 @@ Vous installez généralement un outil local dans le répertoire racine du réf�
    dotnet tool restore
    ```
 
-   La commande produit la sortie comme l’exemple suivant :
+   La commande produit une sortie similaire à l’exemple suivant :
 
    ```console
    Tool 'microsoft.botsay' (version '1.0.0') was restored. Available commands: botsay
@@ -147,13 +148,13 @@ Vous installez généralement un outil local dans le répertoire racine du réf�
    Restore was successful.
    ```
 
-1. Vérifiez que les outils sont disponibles :
+1. Vérifiez que les outils sont disponibles :
 
    ```dotnetcli
    dotnet tool list
    ```
 
-   La sortie est une liste de paquets et de commandes, similaire à l’exemple suivant :
+   La sortie est une liste de packages et de commandes, similaire à l’exemple suivant :
 
    ```console
    Package Id      Version      Commands       Manifest
@@ -162,7 +163,7 @@ Vous installez généralement un outil local dans le répertoire racine du réf�
    dotnetsay        2.1.3        dotnetsay      /home/name/repository/.config/dotnet-tools.json
    ```
 
-1. Testez les outils :
+1. Testez les outils :
 
    ```dotnetcli
    dotnet tool run dotnetsay hello from dotnetsay
@@ -171,24 +172,24 @@ Vous installez généralement un outil local dans le répertoire racine du réf�
 
 ## <a name="update-a-local-tool"></a>Mettre à jour un outil local
 
-La version installée `dotnetsay` de l’outil local est 2.1.3.  La dernière version est 2.1.4. Utilisez la commande [de mise à jour de l’outil dotnet](dotnet-tool-update.md) pour mettre à jour l’outil de la dernière version.
+La version installée de l’outil local `dotnetsay` est 2.1.3.  La version la plus récente est 2.1.4. Utilisez la commande de [mise à jour de l’outil dotnet](dotnet-tool-update.md) pour mettre à jour l’outil avec la dernière version.
 
 ```dotnetcli
 dotnet tool update dotnetsay
 ```
 
-La sortie indique le nouveau numéro de version :
+La sortie indique le nouveau numéro de version :
 
 ```console
 Tool 'dotnetsay' was successfully updated from version '2.1.3' to version '2.1.4'
 (manifest file /home/name/repository/.config/dotnet-tools.json).
 ```
 
-La commande de mise à jour trouve le premier fichier manifeste qui contient l’ID du paquet et le met à jour. S’il n’y a pas d’id de paquet dans un fichier manifeste qui est dans la portée de la recherche, le SDK ajoute une nouvelle entrée au fichier manifeste le plus proche. La portée de recherche est en place `isRoot = true` à travers les répertoires des parents jusqu’à ce qu’un fichier manifeste avec est trouvé.
+La commande Update recherche le premier fichier manifeste qui contient l’ID de package et le met à jour. S’il n’existe aucun ID de package de ce type dans un fichier manifeste qui se trouve dans l’étendue de la recherche, le kit de développement logiciel (SDK) ajoute une nouvelle entrée au fichier manifeste le plus proche. L’étendue de recherche se trouve dans les répertoires parents jusqu’à ce qu’un fichier manifeste avec `isRoot = true` soit trouvé.
 
 ## <a name="remove-local-tools"></a>Supprimer les outils locaux
 
-Retirez les outils installés en exécutant [l’outil dotnet désinstaller la](dotnet-tool-uninstall.md) commande :
+Supprimez les outils installés en exécutant la commande de [désinstallation de l’outil dotnet](dotnet-tool-uninstall.md) :
 
 ```dotnetcli
 dotnet tool uninstall microsoft.botsay
@@ -198,10 +199,10 @@ dotnet tool uninstall microsoft.botsay
 dotnet tool uninstall dotnetsay
 ```
 
-## <a name="troubleshoot"></a>Dépanner
+## <a name="troubleshoot"></a>Dépannage
 
-Si vous obtenez un message d’erreur tout en suivant le tutoriel, voir [Troubleshoot .NET Core problèmes d’utilisation de l’outil](troubleshoot-usage-issues.md).
+Si vous obtenez un message d’erreur lors de la suite du didacticiel, consultez [résoudre les problèmes d’utilisation de l’outil .net Core](troubleshoot-usage-issues.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-Pour plus d’informations, voir [outils .NET Core](global-tools.md)
+Pour plus d’informations, consultez [outils .net Core](global-tools.md)

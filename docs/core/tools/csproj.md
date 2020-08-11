@@ -1,13 +1,14 @@
 ---
 title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
+ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: a0cbead27e52af3114d9c44fd19c966e665a2850
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: 4f45362fbb3df053b95156b8e633903f011a85ad
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87427006"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062871"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -266,7 +267,7 @@ Spécifie la version du package obtenu. Accepte toutes les formes de la chaîne 
 
 Spécifie le nom du package obtenu. Si non spécifié, l’opération `pack` utilise par défaut le `AssemblyName` ou le nom du répertoire comme nom du package.
 
-### <a name="title"></a>Titre
+### <a name="title"></a>Intitulé
 
 Titre convivial du package, généralement utilisé dans les affichages de l’interface utilisateur comme sur nuget.org et dans le gestionnaire de package de Visual Studio. Si non spécifié, l’ID de package est utilisé à la place.
 
@@ -296,7 +297,7 @@ Valeur booléenne qui spécifie si le package est marqué en tant que dépendanc
 
 ### <a name="packagelicenseexpression"></a>PackageLicenseExpression
 
-[Identificateur de licence SPDX](https://spdx.org/licenses/) ou expression. Par exemple : `Apache-2.0`.
+[Identificateur de licence SPDX](https://spdx.org/licenses/) ou expression. Par exemple, `Apache-2.0`.
 
 Voici la liste complète des [identificateurs de licence SPDX](https://spdx.org/licenses/). NuGet.org n’accepte que les licences approuvées OSI et FSF avec une expression de type licence.
 

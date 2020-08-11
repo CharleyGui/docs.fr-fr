@@ -1,29 +1,29 @@
 ---
 title: Créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio
 description: Découvrez comment créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio.
-ms.date: 06/08/2020
+ms.date: 08/07/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 69259b1d47a8e30945c578db10c6d697c81fa261
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 07cc1bd7b9892f7cbee7a82998093718cd311b92
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164400"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062663"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio
 
-Dans ce didacticiel, vous allez créer une bibliothèque d’utilitaire simple qui contient une méthode de gestion de chaîne unique. Vous l’implémentez en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) pour pouvoir l’appeler comme s’il s’agissait d’un membre de la <xref:System.String> classe.
+Dans ce didacticiel, vous allez créer une bibliothèque de classes simple qui contient une méthode de gestion de chaîne unique.
 
-Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Une bibliothèque de classes qui cible .NET Standard 2,0 permet à votre bibliothèque d’être appelée par n’importe quelle implémentation .NET qui prend en charge cette version de .NET Standard. Lorsque vous avez terminé votre bibliothèque de classes, vous pouvez la distribuer en tant que composant tiers ou en tant que composant groupé avec une ou plusieurs applications.
+Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Une bibliothèque de classes qui cible .NET Standard 2,0 permet à votre bibliothèque d’être appelée par n’importe quelle implémentation .NET qui prend en charge cette version de .NET Standard.
+
+Lorsque vous avez terminé votre bibliothèque de classes, vous pouvez la distribuer en tant que package NuGet ou en tant que composant fourni avec l’application qui l’utilise.
 
 ## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2019 version 16,6 ou une version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement multiplateforme .net Core** installée. Le kit de développement logiciel (SDK) .NET Core 3,1 est automatiquement installé lorsque vous sélectionnez cette charge de travail.
-
-  Pour plus d’informations, consultez la section [install with Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio) de l’article [install the kit SDK .net Core](../install/sdk.md?pivots=os-windows) .
 
 ## <a name="create-a-solution"></a>Créer une solution
 
@@ -67,6 +67,8 @@ Pour créer la solution vide :
    :::code language="vb" source="./snippets/library-with-visual-studio/vb/StringLibrary/Class1.vb":::
 
    La bibliothèque de classes, `UtilityLibraries.StringLibrary` , contient une méthode nommée `StartsWithUpper` . Cette méthode retourne une <xref:System.Boolean> valeur qui indique si l’instance de chaîne en cours commence par un caractère majuscule. La norme Unicode distingue les caractères minuscules des caractères majuscules. La méthode <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> retourne `true` si un caractère est en majuscule.
+
+   `StartsWithUpper`est implémenté en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) afin que vous puissiez l’appeler comme s’il s’agissait d’un membre de la <xref:System.String> classe.
 
 1. Dans la barre de menus, sélectionnez **générer**  >  **générer la solution** pour vérifier que le projet se compile sans erreur.
 
@@ -126,7 +128,17 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez créé une solution, ajouté un projet de bibliothèque et ajouté un projet d’application console qui utilise la bibliothèque. Dans le didacticiel suivant, vous allez ajouter un projet de test unitaire à la solution.
+Dans ce didacticiel, vous avez créé une bibliothèque de classes. Dans le didacticiel suivant, vous allez apprendre à effectuer un test unitaire de la bibliothèque de classes.
 
 > [!div class="nextstepaction"]
-> [Tester une bibliothèque .NET Standard avec .NET Core à l’aide de Visual Studio](testing-library-with-visual-studio.md)
+> [Test unitaire d’une bibliothèque de .NET Standard à l’aide de Visual Studio](testing-library-with-visual-studio.md)
+
+Vous pouvez également ignorer les tests unitaires automatisés et apprendre à partager la bibliothèque en créant un package NuGet :
+
+> [!div class="nextstepaction"]
+> [Créer et publier un package avec Visual Studio](/nuget/quickstart/create-and-publish-a-package-using-visual-studio)
+
+Ou Découvrez comment publier une application console. Si vous publiez l’application console à partir de la solution que vous avez créée dans ce didacticiel, la bibliothèque de classes y est insérée comme un fichier *. dll* .
+
+> [!div class="nextstepaction"]
+> [Publier une application console .NET Core à l’aide de Visual Studio](publishing-with-visual-studio.md)

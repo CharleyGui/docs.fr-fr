@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: d3fe4cf92ca17457bd541f092f5d146ba6c1c095
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: ec1058d1590d64fa8d8786b3118ecf9733c55d6f
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794414"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063144"
 ---
 # <a name="yield-c-reference"></a>yield (Référence C#)
 
@@ -25,7 +25,7 @@ yield return <expression>;
 yield break;
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Utilisez une instruction `yield return` pour retourner chaque élément un par un.
 
@@ -47,7 +47,7 @@ Le type `yield` d'un itérateur qui retourne <xref:System.Collections.IEnumerabl
 
 Vous ne pouvez pas inclure une instruction `yield return` ou `yield break` dans :
 
-- [Expressions lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) et [méthodes anonymes](../operators/delegate-operator.md).
+- [Expressions lambda](../operators/lambda-expressions.md) et [méthodes anonymes](../operators/delegate-operator.md).
 
 - Méthodes qui contiennent des blocs unsafe. Pour plus d’informations, consultez [unsafe](unsafe.md).
 
@@ -100,4 +100,4 @@ L'exemple suivant illustre un accesseur `get` qui est un itérateur. Dans cet ex
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [foreach, in](foreach-in.md)
-- [Itérateurs](../../iterators.md)
+- [Iterators](../../iterators.md)

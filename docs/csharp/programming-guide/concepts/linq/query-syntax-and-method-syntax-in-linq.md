@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-ms.openlocfilehash: 1765a15347aeedb9cc5fa6784abdfad6fafe4016
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 46b0e44182d22158aa5fa54a0f44bae70aa8ddd9
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87300759"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063040"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>Syntaxe de requête et syntaxe de méthode dans LINQ (C#)
 La plupart des requêtes dans la documentation LINQ (Language Integrated Query) d’introduction sont écrites à l’aide de la syntaxe de requête déclarative LINQ. Toutefois, la syntaxe de requête doit être traduite en appels de méthode pour le Common Langage Runtime (CLR) .NET lorsque le code est compilé. Ces appels de méthode appellent les opérateurs de requête standard, qui ont des noms tels que `Where`, `Select`, `GroupBy`, `Join`, `Max` et `Average`. Vous pouvez les appeler directement en utilisant la syntaxe de méthode à la place de la syntaxe de requête.  
@@ -38,7 +38,7 @@ La plupart des requêtes dans la documentation LINQ (Language Integrated Query) 
 ## <a name="lambda-expressions"></a>Expressions lambda  
  Dans l’exemple précédent, notez que l’expression conditionnelle (`num % 2 == 0`) est passée comme argument de ligne à la méthode `Where` : `Where(num => num % 2 == 0).` Cette expression inline est appelée expression lambda. C’est un moyen pratique d’écrire du code qui devrait autrement être écrit sous une forme plus fastidieuse, comme une méthode anonyme, un délégué générique ou une arborescence d’expressions. En C#, `=>` est l’opérateur lambda, qui se lit « conduit à ». Le `num` situé à gauche de l’opérateur est la variable d’entrée qui correspond à `num` dans l’expression de requête. Le compilateur peut déduire le type de `num`, car il sait que `numbers` est un type <xref:System.Collections.Generic.IEnumerable%601> générique. Le corps de l’expression lambda est identique à l’expression dans la syntaxe de requête ou dans toute autre expression ou instruction C#. Il peut inclure des appels de méthode et une autre logique complexe. La « valeur de retour » est simplement le résultat de l’expression.  
   
- Pour commencer à utiliser LINQ, il n’est pas nécessaire d’utiliser des expressions lambda de manière intensive. Toutefois, certaines requêtes peuvent être exprimées uniquement dans la syntaxe de méthode. Parmi elles, certaines nécessitent des expressions lambda. Une fois que vous vous familiariserez avec les expressions lambda, vous constaterez qu’il s’agit d’un outil puissant et flexible dans votre boîte à outils LINQ. Pour plus d’informations, consultez [expressions lambda](../../statements-expressions-operators/lambda-expressions.md).  
+ Pour commencer à utiliser LINQ, il n’est pas nécessaire d’utiliser des expressions lambda de manière intensive. Toutefois, certaines requêtes peuvent être exprimées uniquement dans la syntaxe de méthode. Parmi elles, certaines nécessitent des expressions lambda. Une fois que vous vous familiariserez avec les expressions lambda, vous constaterez qu’il s’agit d’un outil puissant et flexible dans votre boîte à outils LINQ. Pour plus d’informations, consultez [expressions lambda](../../../language-reference/operators/lambda-expressions.md).  
   
 ## <a name="composability-of-queries"></a>Composabilité des requêtes  
  Dans l’exemple de code précédent, notez que la méthode `OrderBy` est appelée à l’aide de l’opérateur point sur l’appel à `Where`. `Where` produit une séquence filtrée, puis `Orderby` agit sur cette séquence en la triant. Étant donné que les requêtes retournent un `IEnumerable`, vous les composez dans la syntaxe de méthode en chaînant les appels de méthode ensemble. Le compilateur effectue cette opération en arrière-plan lorsque vous écrivez des requêtes à l’aide de la syntaxe de requête. De plus, étant donné qu’une variable de requête ne stocke pas les résultats de la requête, vous pouvez la modifier ou l’utiliser à tout moment comme base d’une nouvelle requête, même après son exécution.  

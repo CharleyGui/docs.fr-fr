@@ -7,18 +7,18 @@ helpviewer_keywords:
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: ae8bda3c68542637b1430587ca4a537980c028bc
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 1fde7d535054f09d55018a010468776622ebfba7
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381669"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063261"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>Fonctions anonymes (Guide de programmation C#)
 
 Une fonction anonyme est une instruction ou expression « inline » qui peut être utilisée partout où un type délégué est attendu. Vous pouvez l’utiliser pour initialiser un délégué nommé ou la passer à la place d’un type délégué nommé comme paramètre de méthode.
 
-Vous pouvez utiliser une [expression lambda](lambda-expressions.md) ou une [méthode anonyme](../../language-reference/operators/delegate-operator.md) pour créer une fonction anonyme. Nous vous recommandons d’utiliser des expressions lambda, car elles fournissent un moyen plus concis et plus expressif d’écrire du code en ligne. Contrairement aux méthodes anonymes, certains types d’expressions lambda peuvent être convertis en types d’arborescence d’expression.
+Vous pouvez utiliser une [expression lambda](../../language-reference/operators/lambda-expressions.md) ou une [méthode anonyme](../../language-reference/operators/delegate-operator.md) pour créer une fonction anonyme. Nous vous recommandons d’utiliser des expressions lambda, car elles fournissent un moyen plus concis et plus expressif d’écrire du code en ligne. Contrairement aux méthodes anonymes, certains types d’expressions lambda peuvent être convertis en types d’arborescence d’expression.
 
 ## <a name="the-evolution-of-delegates-in-c"></a>Évolution des délégués en C\#
 
@@ -35,6 +35,6 @@ Pour plus d’informations, consultez la section [Expressions de fonction anonym
 ## <a name="see-also"></a>Voir aussi
 
 - [Instructions, expressions et opérateurs](./index.md)
-- [Expressions lambda](./lambda-expressions.md)
+- [Expressions lambda](../../language-reference/operators/lambda-expressions.md)
 - [Délégués](../delegates/index.md)
 - [Arborescences d’expressions (C#)](../concepts/expression-trees/index.md)

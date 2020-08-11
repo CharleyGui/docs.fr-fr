@@ -1,23 +1,23 @@
 ---
 title: System.Delegate et le mot clé `delegate`
-description: Renseignez-vous sur les classes en .NET qui soutiennent les délégués et comment ces cartes au mot clé «délégué».
+description: Découvrez les classes dans .NET qui prennent en charge les délégués et comment ces derniers sont mappés au mot clé’Delegate'.
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 87fdf19c4ea810c5ac4409fe16c3cba9d5fc6574
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9df8ad68f6bfa62863ee047875b6419fc81ad779
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146279"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062461"
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate et le mot clé `delegate`
 
 [Précédent](delegates-overview.md)
 
-Cet article couvre les classes en .NET qui prennent `delegate` en charge les délégués, et comment ces cartes au mot clé.
+Cet article décrit les classes dans .NET qui prennent en charge les délégués et comment elles sont mappées au `delegate` mot clé.
 
-## <a name="define-delegate-types"></a>Définir les types de délégués
+## <a name="define-delegate-types"></a>Définir les types délégués
 
 Commençons par le mot clé 'delegate', car c’est l’élément principal que vous utilisez quand vous travaillez avec des délégués. Le code que le compilateur génère quand vous utilisez le mot clé `delegate` mappe aux appels de méthode qui appellent des membres des classes <xref:System.Delegate> et <xref:System.MulticastDelegate>.
 
@@ -41,7 +41,7 @@ Notez que la syntaxe peut sembler déclarer une variable, alors qu’elle décla
 
 Le compilateur génère également des gestionnaires d’ajout et de suppression pour ce nouveau type, afin que les clients de cette classe puissent ajouter et supprimer des méthodes dans la liste d’invocation d’une instance. Le compilateur exige que la signature de la méthode ajoutée ou supprimée corresponde à la signature utilisée lors de la déclaration de la méthode.
 
-## <a name="declare-instances-of-delegates"></a>Déclarer les cas des délégués
+## <a name="declare-instances-of-delegates"></a>Déclarer des instances de délégués
 
 Après avoir défini le délégué, vous pouvez créer une instance de ce type.
 Comme pour toutes les variables en C#, vous ne pouvez pas déclarer d’instances de délégué directement dans un espace de noms, ni dans l’espace de noms global.
@@ -57,7 +57,7 @@ Le type de la variable est le type délégué défini précédemment, `Compariso
 
  Cet extrait de code ci-dessus a déclaré une variable membre à l’intérieur d’une classe. Vous pouvez également déclarer des variables de délégués qui sont des variables locales, ou bien des arguments de méthodes.
 
-## <a name="invoke-delegates"></a>Invoquer les délégués
+## <a name="invoke-delegates"></a>Appeler des délégués
 
 Vous appelez les méthodes qui se trouvent dans la liste d’invocation d’un délégué en appelant ce dernier. À l’intérieur de la méthode `Sort()`, le code appelle la méthode de comparaison pour déterminer l’ordre dans lequel placer les objets :
 
@@ -70,7 +70,7 @@ Vous traitez la variable comme un nom de méthode et vous l’appelez à l’aid
 
 Cette ligne de code effectue une hypothèse hasardeuse : il n’existe aucune garantie qu’une cible a été ajoutée au délégué. Si aucune cible n’a été attachée, la ligne ci-dessus entraîne la levée de `NullReferenceException`. Les idiomes utilisés pour résoudre ce problème sont plus compliqués qu’un simple contrôle de valeur Null. Ils sont traités plus loin dans cette [série](delegates-patterns.md).
 
-## <a name="assign-add-and-remove-invocation-targets"></a>Attribuer, ajouter et supprimer les cibles d’invocation
+## <a name="assign-add-and-remove-invocation-targets"></a>Assigner, ajouter et supprimer des cibles d’appel
 
 Voyons comment un type délégué est défini et comment les instances de délégué sont déclarées et appelées.
 
@@ -100,14 +100,14 @@ Comparison<string> comparer = CompareLength;
 phrases.Sort(comparer);
 ```
 
-Quand la méthode utilisée comme cible du délégué est petite, il est courant d’utiliser la syntaxe des [expressions lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) pour effectuer l’assignation :
+Quand la méthode utilisée comme cible du délégué est petite, il est courant d’utiliser la syntaxe des [expressions lambda](language-reference/operators/lambda-expressions.md) pour effectuer l’assignation :
 
 ```csharp
 Comparison<string> comparer = (left, right) => left.Length.CompareTo(right.Length);
 phrases.Sort(comparer);
 ```
 
-L’utilisation d’expressions lambda pour les cibles de délégués est davantage couverte dans une [section ultérieure](delegates-patterns.md).
+L’utilisation d’expressions lambda pour les cibles de délégué est traitée plus loin dans une [section ultérieure](delegates-patterns.md).
 
 L’exemple Sort() attache généralement une méthode cible unique au délégué. Toutefois, les objets délégués prennent en charge les listes d’invocation comprenant plusieurs méthodes cibles attachées à un objet délégué.
 
@@ -115,7 +115,7 @@ L’exemple Sort() attache généralement une méthode cible unique au délégu�
 
 La prise en charge du langage décrite ci-dessus fournit les fonctionnalités et la prise en charge généralement nécessaires pour utiliser des délégués. Ces fonctionnalités sont basées sur deux classes du framework .NET Core : <xref:System.Delegate> et <xref:System.MulticastDelegate>.
 
-La `System.Delegate` classe et sa sous-classe directe unique, `System.MulticastDelegate`fournissent le soutien-cadre pour la création de délégués, l’enregistrement des méthodes en tant qu’objectifs de délégués, et invoquant toutes les méthodes qui sont enregistrées comme cible de délégué.
+La `System.Delegate` classe et sa sous-classe directe unique, `System.MulticastDelegate` fournissent la prise en charge de l’infrastructure pour la création de délégués, l’inscription de méthodes en tant que cibles de délégué et l’appel de toutes les méthodes inscrites en tant que cible de délégué.
 
 Il est intéressant de noter que les classes `System.Delegate` et `System.MulticastDelegate` ne sont pas elles-mêmes des types délégués. Elles servent de base à tous les types délégués spécifiques. Ce même processus de conception du langage a stipulé que vous ne pouvez pas déclarer une classe qui dérive de `Delegate` ou de `MulticastDelegate`. Les règles du langage C# l’interdisent.
 
@@ -131,6 +131,6 @@ Le premier et le plus important point à retenir est que chaque délégué avec 
 
 Les méthodes que vous utiliserez le plus avec les délégués sont `Invoke()` et `BeginInvoke()` / `EndInvoke()`. `Invoke()` appelle toutes les méthodes qui ont été attachées à une instance de délégué particulière. Comme vous l’avez vu ci-dessus, vous appelez généralement des délégués à l’aide de la syntaxe d’appel de méthode sur la variable de délégué. Comme vous le verrez [plus loin dans cette série](delegates-patterns.md), il existe des modèles qui fonctionnent directement avec ces méthodes.
 
-Maintenant que vous avez vu la syntaxe linguistique et les classes qui soutiennent les délégués, examinons à quel point les délégués sont fortement typés, créés et invoqués.
+Maintenant que vous avez vu la syntaxe du langage et les classes qui prennent en charge les délégués, examinons la façon dont les délégués fortement typés sont utilisés, créés et appelés.
 
-[Suivant](delegates-strongly-typed.md)
+[Next](delegates-strongly-typed.md)

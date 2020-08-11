@@ -4,12 +4,12 @@ description: Les fonctions locales en C# sont des méthodes privées qui sont im
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 9987d6d5ad57c1dceb3a4bffbae22a81c240c794
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 854ec7ab4a4cc637c0a5ad03e0344d2f1f7679d2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864525"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063300"
 ---
 # <a name="local-functions-c-programming-guide"></a>Fonctions locales (Guide de programmation C#)
 
@@ -78,7 +78,7 @@ Comme nous l’avons fait avec l’itérateur de méthode, nous pouvons refactor
 
 ## <a name="local-functions-vs-lambda-expressions"></a>Fonctions locales et expressions lambda
 
-À première vue, les fonctions locales et les [expressions lambda](../statements-expressions-operators/lambda-expressions.md) sont très similaires. Souvent, le choix d’utiliser des expressions lambda ou des fonctions locales est une question de style et de préférences personnelles. Toutefois, il existe de réelles différences qui vous feront utiliser les unes ou les autres et que vous devez connaître.
+À première vue, les fonctions locales et les [expressions lambda](../../language-reference/operators/lambda-expressions.md) sont très similaires. Souvent, le choix d’utiliser des expressions lambda ou des fonctions locales est une question de style et de préférences personnelles. Toutefois, il existe de réelles différences qui vous feront utiliser les unes ou les autres et que vous devez connaître.
 
 Examinons les différences entre l’implémentation de l’algorithme factoriel avec une fonction locale et une expression lambda. Voici tout d’abord la version utilisant une fonction locale :
 

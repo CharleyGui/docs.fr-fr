@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: e57447c89749451862bbb80047ed74135a0eb752
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 116087ac1aab57f2869b05f436801c7861c56eca
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474811"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063703"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Méthodes d’extension (Guide de programmation C#)
 
@@ -22,7 +22,7 @@ Les méthodes d’extension les plus courantes sont les opérateurs de requête 
 
 ### <a name="orderby-example"></a>Exemple OrderBy
 
-L'exemple suivant indique comment appeler la méthode `OrderBy` d'opérateur de requête standard sur un tableau d'entiers. L'expression entre parenthèses est une expression lambda. De nombreux opérateurs de requête standard prennent des expressions lambda comme paramètres, mais ce n’est pas une exigence pour les méthodes d’extension. Pour plus d’informations, consultez [expressions lambda](../statements-expressions-operators/lambda-expressions.md).
+L'exemple suivant indique comment appeler la méthode `OrderBy` d'opérateur de requête standard sur un tableau d'entiers. L'expression entre parenthèses est une expression lambda. De nombreux opérateurs de requête standard prennent des expressions lambda comme paramètres, mais ce n’est pas une exigence pour les méthodes d’extension. Pour plus d’informations, consultez [expressions lambda](../../language-reference/operators/lambda-expressions.md).
 
 [!code-csharp[csProgGuideExtensionMethods#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#3)]
 
@@ -121,7 +121,7 @@ Pour une bibliothèque de classes que vous avez implémentée, vous ne devez pas
 
 - [Guide de programmation C#](../index.md)
 - [Exemples de programmation parallèle (il s’agit de nombreux exemples de méthodes d’extension)](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)
-- [Expressions lambda](../statements-expressions-operators/lambda-expressions.md)
+- [Expressions lambda](../../language-reference/operators/lambda-expressions.md)
 - [Vue d'ensemble des opérateurs de requête standard](../concepts/linq/standard-query-operators-overview.md)
 - [Règles de conversion pour les paramètres Instance et leur impact](https://docs.microsoft.com/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)
 - [Interopérabilité des méthodes d’extension entre les langages](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)

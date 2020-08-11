@@ -1,23 +1,24 @@
 ---
-title: ''
-description: ''
+title: Gérer les dépendances dans .NET Core
+description: Explique comment gérer les dépendances de projet pour une application .NET Core.
 no-loc:
 - dotnet add package
 - dotnet remove package
 - dotnet list package
-ms.date: ''
-ms.openlocfilehash: 667b2d4d68edd82a4d18c370e45ea18f4d4b379a
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.topic: how-to
+ms.date: 02/25/2020
+ms.openlocfilehash: 2aeedb56f774b51076764c2772eb02b2fa095d92
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702839"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062858"
 ---
 # <a name="manage-dependencies-in-net-core-applications"></a>Gérer les dépendances dans les applications .NET Core
 
 Cet article explique comment ajouter et supprimer des dépendances en modifiant le fichier projet ou à l’aide de l’interface CLI.
 
-## <a name="the-packagereference-element"></a>\<Élément PackageReference>
+## <a name="the-packagereference-element"></a>Élément \<PackageReference>
 
 L' `<PackageReference>` élément du fichier projet a la structure suivante :
 

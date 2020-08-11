@@ -2,13 +2,14 @@
 title: " Outils .NET Core"
 description: Comment installer, utiliser, mettre à jour et supprimer les outils .NET Core. Décrit les outils globaux, les outils de chemin d’accès d’outil et les outils locaux.
 author: KathleenDollard
+ms.topic: how-to
 ms.date: 02/12/2020
-ms.openlocfilehash: 75bdedcbc3ebe9c23477795415076d160ab9a642
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 00c0317fcfc4da0e7205c23faa7b355c20882ec9
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455727"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062728"
 ---
 # <a name="how-to-manage-net-core-tools"></a>Comment gérer les outils .NET Core
 

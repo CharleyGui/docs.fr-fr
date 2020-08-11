@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: 829e7dce4801508a8311f7bcbfeccbc36184cffc
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: eee04959493914018904b61b0e5a289f172f2f18
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286635"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063716"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Requêtes dans LINQ to DataSet
 Une requête est une expression qui récupère des données d'une source de données. En général, les requêtes sont exprimées dans un langage de requête spécialisé, tel que SQL pour les bases de données relationnelles et Xquery pour XML. Par conséquent, les développeurs ont dû apprendre un nouveau langage de requête pour chaque type de source de données ou format de données qu'ils interrogent. LINQ (Language-Integrated Query) propose un modèle cohérent plus simple qui permet d'utiliser des données de types de sources et de formats divers. Dans une requête LINQ, vous travaillez toujours avec des objets de programmation.  
@@ -40,7 +40,7 @@ Une requête est une expression qui récupère des données d'une source de donn
  [!code-vb[DP LINQ to DataSet Examples#SelectSimple1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#selectsimple1)]  
   
 ### <a name="method-based-query-syntax"></a>Syntaxe de requête fondée sur une méthode  
- L’autre façon de formuler des requêtes de LINQ to DataSet consiste à utiliser des requêtes basées sur une méthode. La syntaxe de requête fondée sur une méthode est une séquence d'appels directs de méthodes d'opérateur LINQ passant des expressions lambda comme paramètres. Pour plus d’informations, consultez [expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+ L’autre façon de formuler des requêtes de LINQ to DataSet consiste à utiliser des requêtes basées sur une méthode. La syntaxe de requête fondée sur une méthode est une séquence d'appels directs de méthodes d'opérateur LINQ passant des expressions lambda comme paramètres. Pour plus d’informations, consultez [expressions lambda](../../../csharp/language-reference/operators/lambda-expressions.md).  
   
  Cet exemple utilise <xref:System.Linq.Enumerable.Select%2A> pour retourner toutes les lignes de `Product` et afficher les noms de produits.  
   

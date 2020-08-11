@@ -8,16 +8,16 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: 89133339a75c70e3ac86d627065e78d555bff71d
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 279ea2f9875681401c9c7acab922d9e4424e6827
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507202"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062533"
 ---
 # <a name="async-c-reference"></a>async (référence C#)
 
-Utilisez le modificateur `async` pour spécifier qu’une méthode, une [expression lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) ou une [méthode anonyme](../operators/delegate-operator.md) sont asynchrones. Si vous utilisez ce modificateur sur une méthode ou une expression, il s’agit d’une *méthode async*. L’exemple suivant définit une méthode async nommée `ExampleMethodAsync` :
+Utilisez le modificateur `async` pour spécifier qu’une méthode, une [expression lambda](../operators/lambda-expressions.md) ou une [méthode anonyme](../operators/delegate-operator.md) sont asynchrones. Si vous utilisez ce modificateur sur une méthode ou une expression, il s’agit d’une *méthode async*. L’exemple suivant définit une méthode async nommée `ExampleMethodAsync` :
   
 ```csharp  
 public async Task<int> ExampleMethodAsync()  
@@ -26,7 +26,7 @@ public async Task<int> ExampleMethodAsync()
 }  
 ```  
 
-Si vous êtes nouveau à la programmation asynchrone ou ne comprends pas comment une méthode async utilise [ `await` l’opérateur](../operators/await.md) pour faire un travail potentiellement de longue durée sans bloquer le fil de l’appelant, lire l’introduction dans [Asynchrone Programmation avec async et attendre](../../programming-guide/concepts/async/index.md). Le code suivant se trouve dans une méthode async et appelle la méthode <xref:System.Net.Http.HttpClient.GetStringAsync%2a?displayProperty=nameWithType> :
+Si vous débutez en programmation asynchrone ou que vous ne comprenez pas comment une méthode Async utilise l' [ `await` opérateur](../operators/await.md) pour effectuer un travail potentiellement long sans bloquer le thread de l’appelant, lisez l’introduction de la [programmation asynchrone avec Async et await](../../programming-guide/concepts/async/index.md). Le code suivant se trouve dans une méthode async et appelle la méthode <xref:System.Net.Http.HttpClient.GetStringAsync%2a?displayProperty=nameWithType> :
   
 ```csharp  
 string contents = await httpClient.GetStringAsync(requestUrl);  
@@ -71,7 +71,7 @@ Une méthode async peut avoir les types de retour suivants :
 
 - <xref:System.Threading.Tasks.Task>
 - <xref:System.Threading.Tasks.Task%601>
-- [vide](../builtin-types/void.md). Les méthodes `async void` sont généralement déconseillées pour le code autre que les gestionnaires d’événements parce que les appelants ne peuvent pas `await` ces méthodes et doivent implémenter un mécanisme différent pour signaler les conditions d’erreur ou les complétions réussies.
+- [void](../builtin-types/void.md). Les méthodes `async void` sont généralement déconseillées pour le code autre que les gestionnaires d’événements parce que les appelants ne peuvent pas `await` ces méthodes et doivent implémenter un mécanisme différent pour signaler les conditions d’erreur ou les complétions réussies.
 - À compter de C# 7.0, tout type ayant une méthode `GetAwaiter` accessible. Le type `System.Threading.Tasks.ValueTask<TResult>` est une implémentation de ce genre. Il est disponible en ajoutant le package NuGet `System.Threading.Tasks.Extensions`.
 
 La méthode async ne peut déclarer aucun paramètre [in](./in-parameter-modifier.md), [ref](./ref.md) ou [out](./out-parameter-modifier.md), ni avoir une [valeur de retour de référence](../../programming-guide/classes-and-structs/ref-returns.md), mais elle peut appeler des méthodes qui ont ces paramètres.  
@@ -87,6 +87,6 @@ Pour obtenir plus d’informations et des exemples, consultez [Types de retour A
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
-- [Attendent](../operators/await.md)
-- [Procédure pas à pas : accéder au Web en utilisant Async et attendre](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Programmation asynchrone avec Async et Await](../../programming-guide/concepts/async/index.md)
+- [await](../operators/await.md)
+- [Procédure pas à pas : accès au Web avec Async et await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Programmation asynchrone avec Async et await](../../programming-guide/concepts/async/index.md)

@@ -4,12 +4,12 @@ description: Apprenez à utiliser l’héritage dans les bibliothèques et appli
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 8e24ad3e93dcd11f39ae979a3acda4c4ada13dc5
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 70db8716bea84984ad56d79fa9e26aab3a8182fa
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007726"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063508"
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 
@@ -297,5 +297,4 @@ L'exemple suivant utilise les objets dérivés de `Shape`. Elle instancie un tab
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Classes et objets](../tour-of-csharp/classes-and-objects.md)
 - [Héritage (Guide de programmation C#)](../programming-guide/classes-and-structs/inheritance.md)

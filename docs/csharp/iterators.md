@@ -4,12 +4,12 @@ description: Apprenez à utiliser les itérateurs C# intégrés et à créer vos
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: efa755c2243c18fb51b653abccb2bfc702bbc055
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: c2a1dfe38b6a65e382e140541c71e94bb0fc76aa
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507375"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062481"
 ---
 # <a name="iterators"></a>Iterators
 
@@ -37,7 +37,7 @@ foreach (var item in collection)
 }
 ```
 
-C’est aussi simple que cela. Pour itérer au sein du contenu d’une collection, l’instruction `foreach` suffit. L’instruction `foreach` n’est cependant pas magique. Elle s’appuie sur deux interfaces génériques définies dans la bibliothèque .NET Core afin de générer le code nécessaire pour itérer au sein d’une collection : `IEnumerable<T>` et `IEnumerator<T>`. Ce mécanisme est expliqué plus en détail ci-dessous.
+C’est tout. Pour itérer au sein du contenu d’une collection, l’instruction `foreach` suffit. L’instruction `foreach` n’est cependant pas magique. Elle s’appuie sur deux interfaces génériques définies dans la bibliothèque .NET Core afin de générer le code nécessaire pour itérer au sein d’une collection : `IEnumerable<T>` et `IEnumerator<T>`. Ce mécanisme est expliqué plus en détail ci-dessous.
 
 Ces deux interfaces ont également des contreparties non génériques : `IEnumerable` et `IEnumerator`. Les versions [génériques](programming-guide/generics/index.md) conviennent mieux pour un code moderne.
 
@@ -195,7 +195,7 @@ while (enumerator.MoveNext())
 }
 ```
 
-Ceci a été changé, car le comportement antérieur pouvait entraîner des bogues subtils et difficiles à diagnostiquer impliquant des expressions lambda. Pour plus d’informations sur les expressions lambda, voir [Expressions lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md).
+Ceci a été changé, car le comportement antérieur pouvait entraîner des bogues subtils et difficiles à diagnostiquer impliquant des expressions lambda. Pour plus d’informations sur les expressions lambda, voir [Expressions lambda](language-reference/operators/lambda-expressions.md).
 
 Le code exact généré par le compilateur est un peu plus compliqué et gère les cas où l’objet retourné par `GetEnumerator()` implémente l’interface `IDisposable`. L’expansion complète génère un code qui ressemble davantage à celui-ci :
 

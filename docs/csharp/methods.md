@@ -4,12 +4,12 @@ description: Vue d’ensemble des méthodes, des paramètres de méthode et des 
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: f44c83408e884d76eef5e2b5abbca511fbae2a1f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 09a287b3d74e1b8dbdaf4a53cb207dfe1fad8a0c
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399447"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063352"
 ---
 # <a name="methods"></a>Méthodes
 
@@ -79,9 +79,9 @@ Vous pouvez remplacer des membres hérités par des types en utilisant le mot cl
 
 <a name="passing"></a>
 
-## <a name="passing-parameters"></a>Transmission des paramètres
+## <a name="passing-parameters"></a>Passage de paramètres
 
-Les types en C# sont des *types valeur* ou des *types référence*. Pour obtenir la liste des types valeur prédéfinis, consultez [Types et variables](./tour-of-csharp/types-and-variables.md). Par défaut, les types valeur et les types référence sont passés par valeur à une méthode.
+Les types en C# sont des *types valeur* ou des *types référence*. Pour obtenir la liste des types valeur intégrés, consultez [types](./tour-of-csharp/types.md). Par défaut, les types valeur et les types référence sont passés par valeur à une méthode.
 
 <a name="byval"></a>
 
@@ -103,7 +103,7 @@ L’exemple suivant définit une classe (qui est un type référence) nommée `S
 
 ### <a name="passing-parameters-by-reference"></a>Passage de paramètres par référence
 
-On passe un paramètre par référence quand on souhaite changer la valeur d’un argument dans une méthode et refléter cette modification lorsque le contrôle revient à la méthode appelante. Pour passer un paramètre par [`ref`](language-reference/keywords/ref.md) référence, vous utilisez le ou [`out`](language-reference/keywords/out-parameter-modifier.md) le mot clé. Vous pouvez également passer une valeur par référence pour éviter [`in`](language-reference/keywords/in-parameter-modifier.md) la copie, mais tout de même empêcher les modifications à l’aide du mot clé.
+On passe un paramètre par référence quand on souhaite changer la valeur d’un argument dans une méthode et refléter cette modification lorsque le contrôle revient à la méthode appelante. Pour passer un paramètre par référence, vous utilisez le [`ref`](language-reference/keywords/ref.md) [`out`](language-reference/keywords/out-parameter-modifier.md) mot clé ou. Vous pouvez également passer une valeur par référence pour éviter de copier tout en empêchant les modifications à l’aide du [`in`](language-reference/keywords/in-parameter-modifier.md) mot clé.
 
 L’exemple suivant est identique au précédent, sauf que la valeur est passée par référence à la méthode `ModifyValue`. Quand la valeur du paramètre est modifiée dans la méthode `ModifyValue`, le changement de la valeur est reflété quand le contrôle retourne à l’appelant.
 
@@ -280,7 +280,7 @@ Un itérateur exécute une itération personnalisée sur une collection, comme u
 
 Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.
 
-Pour plus d’informations, voir [Iterators](programming-guide/concepts/iterators.md).
+Pour plus d’informations, consultez [itérateurs](programming-guide/concepts/iterators.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -288,8 +288,8 @@ Pour plus d’informations, voir [Iterators](programming-guide/concepts/iterator
 - [Classes statiques et membres de classe statique](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
 - [Héritage](programming-guide/classes-and-structs/inheritance.md)
 - [Classes abstract et sealed et membres de classe](programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
-- [Params](language-reference/keywords/params.md)
-- [out](language-reference/keywords/out-parameter-modifier.md)
+- [params](language-reference/keywords/params.md)
+- [à](language-reference/keywords/out-parameter-modifier.md)
 - [ref](language-reference/keywords/ref.md)
-- [Dans](language-reference/keywords/in-parameter-modifier.md)
-- [Paramètres de passage](programming-guide/classes-and-structs/passing-parameters.md)
+- [dans](language-reference/keywords/in-parameter-modifier.md)
+- [Passer des paramètres](programming-guide/classes-and-structs/passing-parameters.md)

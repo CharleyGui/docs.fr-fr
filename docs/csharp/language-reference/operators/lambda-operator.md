@@ -7,12 +7,12 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: b72b058c1709e7a643a70233cc3289d5d9165ca4
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 30e1a3546f83a0a1ba5b1363238878868e94ab93
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916803"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063131"
 ---
 # <a name="-operator-c-reference"></a>Opérateur >= (référence C#)
 
@@ -20,7 +20,7 @@ Le `=>` jeton est pris en charge sous deux formes : comme [opérateur lambda](#
 
 ## <a name="lambda-operator"></a>Opérateur lamdba
 
-Dans les [expressions lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md), l’opérateur lambda `=>` sépare les paramètres d’entrée sur le côté gauche du corps lambda du côté droit.
+Dans les [expressions lambda](lambda-expressions.md), l’opérateur lambda `=>` sépare les paramètres d’entrée sur le côté gauche du corps lambda du côté droit.
 
 L’exemple suivant utilise la fonctionnalité [LINQ](../../programming-guide/concepts/linq/index.md) avec la syntaxe de méthode pour illustrer l’utilisation d’expressions lambda :
 
@@ -34,7 +34,7 @@ L’exemple suivant montre comment définir une expression lambda sans paramètr
 
 [!code-csharp-interactive[without input variables](snippets/shared/LambdaOperator.cs#WithoutInput)]
 
-Pour plus d’informations, consultez [Expressions lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).
+Pour plus d’informations, consultez [Expressions lambda](lambda-expressions.md).
 
 ## <a name="expression-body-definition"></a>Définition de corps d’expression
 

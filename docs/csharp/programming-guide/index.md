@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: e2127b91efb5a77497ce22e0f2934fab98f015af
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 6db16a86e949fb50254c301f5e5ac0904a6072a4
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473875"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063597"
 ---
 # <a name="c-programming-guide"></a>Guide de programmation C#
 
@@ -58,8 +58,6 @@ Cette section fournit des informations détaillées sur les fonctionnalités cl�
  [Iterators](./concepts/iterators.md)
   
  [Expressions de requête LINQ](../linq/index.md)  
-  
- [Expressions lambda](./statements-expressions-operators/lambda-expressions.md)  
   
  [Espaces de noms](./namespaces/index.md)  
   

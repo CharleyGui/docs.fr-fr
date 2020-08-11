@@ -3,12 +3,12 @@ title: Écrire des requêtes LINQ en C#
 description: Découvrez comment écrire des requêtes LINQ en C#.
 ms.date: 12/01/2016
 ms.assetid: 30703f79-cf3a-4d02-b892-c95d58a1d9ed
-ms.openlocfilehash: ed32543b0422e0664a8577f2c27f7c7c00a719a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bd7da81f2873c6a25570cab32fafecc66fd98be4
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "65632874"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063443"
 ---
 # <a name="write-linq-queries-in-c"></a>Écrire des requêtes LINQ en C\#
 
@@ -35,7 +35,7 @@ Notez que le type des requêtes est <xref:System.Collections.Generic.IEnumerable
 
 `var query = from num in numbers...`
 
-Dans chacun des exemples précédents, les requêtes ne s’exécutent pas réellement tant vous n’avez pas itéré la variable de requête dans une instruction `foreach` ou une autre instruction. Pour plus d’informations, voir [Introduction aux requêtes LINQ](../programming-guide/concepts/linq/introduction-to-linq-queries.md).
+Dans chacun des exemples précédents, les requêtes ne s’exécutent pas réellement tant vous n’avez pas itéré la variable de requête dans une instruction `foreach` ou une autre instruction. Pour plus d’informations, consultez [Introduction aux requêtes LINQ](../programming-guide/concepts/linq/introduction-to-linq-queries.md).
 
 ## <a name="example---method-syntax"></a>Exemple – Syntaxe de méthode
 
@@ -43,7 +43,7 @@ Certaines opérations de requête doivent être exprimées comme un appel de mé
 
 [!code-csharp[csProgGuideLINQ#6](~/samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_2.cs)]
 
-Si la méthode a des paramètres Action ou Func, ceux-ci sont fournis sous la forme d’une expression [lambda](../programming-guide/statements-expressions-operators/lambda-expressions.md), comme dans l’exemple suivant :
+Si la méthode a des paramètres Action ou Func, ceux-ci sont fournis sous la forme d’une expression [lambda](../language-reference/operators/lambda-expressions.md), comme dans l’exemple suivant :
 
 [!code-csharp[csProgGuideLINQ#7](~/samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_3.cs)]
 
@@ -82,5 +82,5 @@ int numCount = numbers.Where(n => n < 3 || n > 7).Count();
 ## <a name="see-also"></a>Voir aussi
 
 - [Procédure pas à pas : écriture de requêtes en C#](../programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)
-- [Requête intégrée linguistique (LINQ)](index.md)
-- [où la clause](../language-reference/keywords/where-clause.md)
+- [LINQ (Language-Integrated Query)](index.md)
+- [clause WHERE](../language-reference/keywords/where-clause.md)

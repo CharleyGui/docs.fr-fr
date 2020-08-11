@@ -1829,7 +1829,7 @@
       href: language-reference/compiler-messages/index.md
     - name: "Projet de spécification C#\_6.0"
       href: language-reference/specification/
-    - name: Propositions C# 7.0 - 8.0
+    - name: "Propositions C#\_7.0 - 9.0"
       href: language-reference/proposals/
 - name: "Procédures pas\_à\_pas"
   href: walkthroughs.md
