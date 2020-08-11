@@ -1,14 +1,17 @@
 - name: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
   href: index.md
   items:
-    - name: Présentation de Docker
-      href: what-is-docker.md
-    - name: Terminologie Docker
-      href: docker-terminology.md
-    - name: 'Conteneurs, images et registres Docker'
-      href: docker-containers-images-and-registries.md
-    - name: Route des applications modernes basées sur des conteneurs
-      href: road-to-modern-applications-based-on-containers.md
+    - name: Introduction aux conteneurs et à Docker
+      href: introduction-to-containers-and-docker.md
+      items:
+        - name: Présentation de Docker
+          href: what-is-docker.md
+        - name: Terminologie Docker
+          href: docker-terminology.md
+        - name: 'Conteneurs, images et registres Docker'
+          href: docker-containers-images-and-registries.md
+        - name: Route des applications modernes basées sur des conteneurs
+          href: road-to-modern-applications-based-on-containers.md
     - name: Présentation du cycle de vie des applications Docker
       href: Docker-application-lifecycle/index.md
       items:
@@ -41,14 +44,14 @@
           href: design-develop-containerized-apps/visual-studio-tools-for-docker.md
         - name: Utiliser des commandes Windows PowerShell dans un DockerFile pour configurer des conteneurs Windows (selon la norme Docker)
           href: design-develop-containerized-apps/set-up-windows-containers-with-powershell.md
-        - name: "Créer des applications ASP.NET Core\_2.0 déployées en tant que conteneurs Linux dans l’orchestrateur AKS/Kubernetes"
+        - name: Créer des applications ASP.NET Core déployées en tant que conteneurs Linux dans l’orchestrateur AKS/Kubernetes
           href: design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes.md
     - name: Workflow DevOps pour les applications Docker avec les outils Microsoft
       href: docker-devops-workflow/index.md
       items:
         - name: Étapes du workflow DevOps de la boucle externe pour une application Docker
           href: docker-devops-workflow/docker-application-outer-loop-devops-workflow.md
-        - name: Création de pipelines CI/CD dans Azure DevOps Services pour une application .NET Core 2.0 sur des conteneurs et déploiement sur un cluster Kubernetes
+        - name: Création de pipelines CI/CD dans Azure DevOps Services pour une application .NET Core sur des conteneurs et déploiement sur un cluster Kubernetes
           href: docker-devops-workflow/create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md
     - name: 'Exécuter, gérer et superviser des environnements de production Docker'
       href: run-manage-monitor-docker-environments/index.md

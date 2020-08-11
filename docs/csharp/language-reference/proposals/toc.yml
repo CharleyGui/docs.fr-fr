@@ -82,3 +82,35 @@
           href: ../../../../_csharplang/proposals/csharp-8.0/readonly-instance-members.md
         - name: Stackalloc imbriqué
           href: ../../../../_csharplang/proposals/csharp-8.0/nested-stackalloc.md
+    - name: "Proposition de spécification C#\_9.0"
+      items:
+        - name: Enregistrements
+          href: ../../../../_csharplang/proposals/csharp-9.0/records.md
+        - name: Instructions de niveau supérieur
+          href: ../../../../_csharplang/proposals/csharp-9.0/top-level-statements.md
+        - name: Améliorations des critères spéciaux
+          href: ../../../../_csharplang/proposals/csharp-9.0/patterns3.md
+        - name: Setter init uniquement
+          href: ../../../../_csharplang/proposals/csharp-9.0/init.md
+        - name: Nouvelles expressions typées cibles
+          href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-new.md
+        - name: Initialiseurs de module
+          href: ../../../../_csharplang/proposals/csharp-9.0/module-initializers.md
+        - name: Extension de méthodes partielles
+          href: ../../../../_csharplang/proposals/csharp-9.0/extending-partial-methods.md
+        - name: Fonctions anonymes statiques
+          href: ../../../../_csharplang/proposals/csharp-9.0/static-anonymous-functions.md
+        - name: Expression conditionnelle typée cible
+          href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-conditional-expression.md
+        - name: Types de retour covariant
+          href: ../../../../_csharplang/proposals/csharp-9.0/covariant-returns.md
+        - name: Paramètres d’abandon lambda
+          href: ../../../../_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md
+        - name: Attributs sur des fonctions locales
+          href: ../../../../_csharplang/proposals/csharp-9.0/local-function-attributes.md
+        - name: Entiers dimensionnés natifs
+          href: ../../../../_csharplang/proposals/csharp-9.0/native-integers.md
+        - name: Pointeurs fonction
+          href: ../../../../_csharplang/proposals/csharp-9.0/function-pointers.md
+        - name: Supprimer l’émission de l’indicateur localsinit
+          href: ../../../../_csharplang/proposals/csharp-9.0/skip-localsinit.md
