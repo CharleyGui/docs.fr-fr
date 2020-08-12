@@ -1,13 +1,13 @@
 ---
-title: Mise en forme de texte brut
+title: Mise en forme en texte brut
 description: 'Découvrez comment utiliser printf et d’autres mises en forme de texte brut dans des scripts et des applications F #.'
 ms.date: 07/22/2020
-ms.openlocfilehash: 6b14633e074961757d0f0cd258d1b1667f5fd8ee
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 90a861736dae69dfbc199a19e24f587c42404737
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854917"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063781"
 ---
 # <a name="plain-text-formatting"></a>Mise en forme de texte brut
 
@@ -85,6 +85,7 @@ Les spécifications de format pour les `printf` formats sont des chaînes avec d
 | `%A` | toute valeur  |   Formaté à l’aide de la [mise en forme du texte brut structuré](plaintext-formatting.md) avec les paramètres de disposition par défaut |
 | `%a` | toute valeur  |   Nécessite deux arguments : une fonction de mise en forme qui accepte un paramètre de contexte et la valeur, ainsi que la valeur particulière à imprimer. |
 | `%t` | toute valeur  |   Nécessite un argument : une fonction de mise en forme qui accepte un paramètre de contexte qui génère ou retourne le texte approprié. |
+| `%%` | (aucun)  |   Ne requiert aucun argument et imprime un signe de pourcentage simple :`%` |
 
 Les types entiers de base sont `byte` ( `System.Byte` ), `sbyte` ( `System.SByte` ), `int16` ( `System.Int16` ), `uint16` ( `System.UInt16` ), `int32` ( `System.Int32` ), `uint32` ( `System.UInt32` ), `int64` ( `System.Int64` ), `uint64` ( `System.UInt64` ), `nativeint` ( `System.IntPtr` ) et `unativeint` ( `System.UIntPtr` ).
 Les types à virgule flottante de base sont `float` ( `System.Double` ) et `float32` ( `System.Single` ).
@@ -93,7 +94,7 @@ La largeur facultative est un entier indiquant la largeur minimale du résultat.
 
 Les indicateurs valides sont les suivants :
 
-| Indicateur   | Résultat        | Notes                      |
+| Indicateur   | Effet        | Notes                      |
 |:-------------------|:---------------|:-----------------------------|
 | `0`  | Ajoutez des zéros à la place des espaces pour créer la largeur requise |    |
 | `-` |  Aligner à gauche le résultat dans la largeur spécifiée |   |
@@ -417,6 +418,6 @@ Ces attributs sont ignorés dans la mise en forme de texte brut F #, mais il peu
 ## <a name="see-also"></a>Voir aussi
 
 - [Chaînes](strings.md)
-- [Documents](records.md)
+- [Enregistrements](records.md)
 - [Unions discriminées](discriminated-unions.md)
 - [F# Interactive](fsharp-interactive-options.md)
