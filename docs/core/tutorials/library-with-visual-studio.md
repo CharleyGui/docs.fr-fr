@@ -5,13 +5,13 @@ ms.date: 08/07/2020
 dev_langs:
 - csharp
 - vb
-ms.custom: contperfq1
-ms.openlocfilehash: 5bd853c62a44d2160bd222d76adcd2dc34d42efc
-ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
+ms.custom: vs-dotnet,contperfq1
+ms.openlocfilehash: 595e93d8d8d22478c6770ddd4f70a0214653f5b9
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88075486"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187952"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio
 
@@ -21,7 +21,7 @@ Une *bibliothèque de classes* définit des types et des méthodes qui peuvent �
 
 Lorsque vous avez terminé votre bibliothèque de classes, vous pouvez la distribuer en tant que package NuGet ou en tant que composant fourni avec l’application qui l’utilise.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - [Visual Studio 2019 version 16,6 ou une version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement multiplateforme .net Core** installée. Le kit de développement logiciel (SDK) .NET Core 3,1 est automatiquement installé lorsque vous sélectionnez cette charge de travail.
 
@@ -61,14 +61,14 @@ Pour créer la solution vide :
 
    Pour chaque projet, Visual Basic crée automatiquement un espace de noms qui correspond au nom du projet. Dans ce didacticiel, vous définissez un espace de noms de niveau supérieur à l’aide du [`namespace`](../../visual-basic/language-reference/statements/namespace-statement.md) mot clé dans le fichier de code.
 
-1. Remplacez le code dans la fenêtre de code pour *Class1.cs* ou *Class1. vb* par le code suivant, puis enregistrez le fichier. Si la langue que vous souhaitez utiliser n’est pas affichée, modifiez le sélecteur de langue en haut de la page.
+1. Remplacez le code dans la fenêtre de code pour *Class1.cs*  ou *Class1. vb* par le code suivant, puis enregistrez le fichier. Si la langue que vous souhaitez utiliser n’est pas affichée, modifiez le sélecteur de langue en haut de la page.
 
    :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/StringLibrary/Class1.cs":::
    :::code language="vb" source="./snippets/library-with-visual-studio/vb/StringLibrary/Class1.vb":::
 
    La bibliothèque de classes, `UtilityLibraries.StringLibrary` , contient une méthode nommée `StartsWithUpper` . Cette méthode retourne une <xref:System.Boolean> valeur qui indique si l’instance de chaîne en cours commence par un caractère majuscule. La norme Unicode distingue les caractères minuscules des caractères majuscules. La méthode <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> retourne `true` si un caractère est en majuscule.
 
-   `StartsWithUpper`est implémenté en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) afin que vous puissiez l’appeler comme s’il s’agissait d’un membre de la <xref:System.String> classe.
+   `StartsWithUpper` est implémenté en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) afin que vous puissiez l’appeler comme s’il s’agissait d’un membre de la <xref:System.String> classe.
 
 1. Dans la barre de menus, sélectionnez **générer**  >  **générer la solution** pour vérifier que le projet se compile sans erreur.
 

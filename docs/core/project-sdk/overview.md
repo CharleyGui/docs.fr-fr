@@ -4,12 +4,12 @@ titleSuffix: ''
 description: En savoir plus sur les kits de développement logiciel (SDK) de projet .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9db62ab7774e3dd71412fa346d78ae0c62a2f81f
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 873c06007307c5892c4828f987486b4dd98dc9ae
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803039"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187922"
 ---
 # <a name="net-core-project-sdks"></a>Kits de développement logiciel (SDK) de projet .NET Core
 
@@ -22,7 +22,7 @@ Les kits de développement logiciel (SDK) suivants sont disponibles pour .NET Co
 | id | Description | Dépôt|
 | - | - | - |
 | `Microsoft.NET.Sdk` | Kit SDK .NET Core | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Web` | Le kit de [développement logiciel (SDK) Web](/aspnet/core/razor-pages/web-sdk) .net Core | <https://github.com/aspnet/websdk> |
+| `Microsoft.NET.Sdk.Web` | Le kit de [développement logiciel (SDK) Web](/aspnet/core/razor-pages/web-sdk) .net Core | <https://github.com/dotnet/sdk> |
 | `Microsoft.NET.Sdk.Razor` | Le kit de [développement logiciel (SDK)](/aspnet/core/razor-pages/sdk) .net Core Razor |
 | `Microsoft.NET.Sdk.Worker` | Kit de développement logiciel (SDK) .NET Core Worker service |
 | `Microsoft.NET.Sdk.WindowsDesktop` | Le kit de développement logiciel (SDK) .NET Core WinForms et WPF |
@@ -91,7 +91,7 @@ Le tableau suivant indique les éléments et les [modèles glob](https://en.wiki
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
 | Compiler           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                      |
 | EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                      |
-| None              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx |
+| Aucun              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx |
 
 > [!NOTE]
 > Les `./bin` `./obj` dossiers et, représentés par les `$(BaseOutputPath)` `$(BaseIntermediateOutputPath)` Propriétés et MSBuild, sont exclus par défaut de modèles glob. Les exclusions sont représentées par la propriété `$(DefaultItemExcludes)` .

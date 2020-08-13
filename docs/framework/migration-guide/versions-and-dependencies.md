@@ -6,12 +6,12 @@ ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: df44786dfd0a384ae2498a94d14b029612450fee
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: df7acc788943e9655dbbb03ffaaa88ff22b81ad2
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475474"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187898"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Versions et dépendances de .NET Framework
 
@@ -31,12 +31,13 @@ Le CLR est identifié par son propre numéro de version. Le numéro de version d
 
 Les tableaux qui suivent résument .NET Framework historique des versions et mettent en corrélation chaque version avec Visual Studio, Windows et Windows Server. Visual Studio prend en charge le multi-ciblage. vous n’êtes donc pas limité à la version de .NET Framework qui est indiquée.
 
-- L’icône de coche ✔️ indique les versions de système d’exploitation sur lesquelles .NET Framework est installé, mais qui doivent être activées [dans le panneau de configuration](../install/dotnet-35-windows-10.md) (pour Windows) ou via le gestionnaire de serveur (pour Windows Server).
+- L’icône de coche ✔️ indique les versions de système d’exploitation sur lesquelles .NET Framework est installé par défaut.
 - L’icône du signe plus ➕ indique les versions de système d’exploitation sur lesquelles .NET Framework n’est pas installé, mais qui peuvent être installées.
+- L’astérisque **\*** indique les versions de système d’exploitation sur lesquelles .NET Framework (qu’il est préinstallé ou non) doit être activé [dans le panneau de configuration](../install/dotnet-35-windows-10.md) ou, pour Windows Server, via le gestionnaire de serveur.
 
 | | |
 | - | - |
-| [.NET Framework 4,8](#net-framework-48) | [.NET Framework 4.7.2](#net-framework-472) | [.NET Framework 4.7.1](#net-framework-471) | [.NET Framework 4,7](#net-framework-47) |
+| [.NET Framework 4,8](#net-framework-48) | [.NET Framework 4.7.2](#net-framework-472) | [.NET Framework 4.7.1](#net-framework-471) | [.NET Framework 4.7](#net-framework-47) |
 | [.NET Framework 4.6.2](#net-framework-462) | [.NET Framework 4.6.1](#net-framework-461) | [.NET Framework 4.6](#net-framework-46) | [.NET Framework 4.5.2](#net-framework-452) |
 | [.NET Framework 4.5.1](#net-framework-451) | [.NET Framework 4.5](#net-framework-45) | [.NET Framework 4](#net-framework-4) | [.NET Framework 3.5](#net-framework-35) |
 | [.NET Framework 3.0](#net-framework-30) | [.NET Framework 2.0](#net-framework-20) | [.NET Framework 1.1](#net-framework-11) | [.NET Framework 1.0](#net-framework-10) |

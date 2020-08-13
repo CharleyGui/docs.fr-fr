@@ -1,5 +1,5 @@
 ---
-title: ControlBuilderInterceptor, classe
+title: Classe ControlBuilderInterceptor
 ms.date: 08/11/2020
 api_name:
 - System.Web.Compilation.ControlBuilderInterceptor
@@ -9,14 +9,14 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 312d977f832d262b1bebc6638280b67b133babdf
-ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
+ms.openlocfilehash: 0cd7409deb9cb84783cfa70600999fa4b2a2d2e2
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88084396"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187988"
 ---
-# <a name="controlbuilderinterceptor-class"></a>ControlBuilderInterceptor, classe
+# <a name="controlbuilderinterceptor-class"></a>Classe ControlBuilderInterceptor
 
 La `ControlBuilderInterceptor` classe permet de personnaliser ou de contrôler le processus de compilation.
 
@@ -57,8 +57,9 @@ Inscrivez le type d’intercepteur à l’aide `aspnet:20ControlBuilderIntercept
          value="Fabrikam.Interceptor, Fabrikam, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b3831f2f2b744f7" />
   </appSettings>
 </configuration>
+```
 
-To retrieve the assembly-qualified name of a type, use the <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType> property, as demonstrated in the following code.
+Pour récupérer le nom qualifié d’assembly d’un type, utilisez la <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType> propriété, comme illustré dans le code suivant.
 
 ```csharp
 string assemblyQualifiedName = typeof(Fabrikam.Interceptor).AssemblyQualifiedName;
@@ -66,7 +67,7 @@ string assemblyQualifiedName = typeof(Fabrikam.Interceptor).AssemblyQualifiedNam
 
 Lorsque la prise en charge de l’intercepteur est présente, le processus de compilation interagit avec le type répertorié de la manière décrite ci-dessus. Lorsque la prise en charge de l’intercepteur est absente, le paramètre d’application est ignoré et n’a aucun effet.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 **Espace de noms :** System. Web. Compilation
 

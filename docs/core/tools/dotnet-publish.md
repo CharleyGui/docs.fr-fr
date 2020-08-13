@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 59fdbfa875dad13963ae198acc6a31b537279dfe
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: 4ff49452e4d941b3e06ad511507b1dc429ab459f
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251177"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187976"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -15,7 +15,7 @@ ms.locfileid: "87251177"
 
 ## <a name="name"></a>Nom
 
-`dotnet publish`-Publie l’application et ses dépendances dans un dossier pour le déploiement sur un système d’hébergement.
+`dotnet publish` -Publie l’application et ses dépendances dans un dossier pour le déploiement sur un système d’hébergement.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -51,7 +51,9 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 La commande `dotnet publish` appelle MSBuild, qui appelle la cible de `Publish`. Les paramètres passés à `dotnet publish` sont passés à MSBuild. Les paramètres `-c` et `-o` correspondent aux propriétés `Configuration` et `PublishDir` de MSBuild, respectivement.
 
-La `dotnet publish` commande accepte les options MSBuild, comme `-p` pour définir des propriétés et `-l` pour définir un enregistreur d’événements. Par exemple, vous pouvez définir une propriété MSBuild en utilisant le format : `-p:<NAME>=<VALUE>` . Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* , par exemple :
+La `dotnet publish` commande accepte les options MSBuild, comme `-p` pour définir des propriétés et `-l` pour définir un enregistreur d’événements. Par exemple, vous pouvez définir une propriété MSBuild en utilisant le format : `-p:<NAME>=<VALUE>` .
+
+Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* (disponible depuis le kit de développement logiciel (SDK) .net Core 3,1). Par exemple :
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -71,9 +73,9 @@ Pour plus d’informations, consultez les ressources suivantes :
 
   Projet ou solution à publier.
   
-  * `PROJECT`est le chemin d’accès et le nom de fichier d’un fichier projet [c#](csproj.md), f # ou Visual Basic, ou le chemin d’accès à un répertoire qui contient un fichier projet C#, f # ou Visual Basic. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut.
+  * `PROJECT` est le chemin d’accès et le nom de fichier d’un fichier projet [c#](csproj.md), f # ou Visual Basic, ou le chemin d’accès à un répertoire qui contient un fichier projet C#, f # ou Visual Basic. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut.
 
-  * `SOLUTION`est le chemin d’accès et le nom de fichier d’un fichier solution (extension *. sln* ), ou le chemin d’accès à un répertoire qui contient un fichier solution. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut. Option disponible à partir du kit SDK .NET Core 3.0.
+  * `SOLUTION` est le chemin d’accès et le nom de fichier d’un fichier solution (extension *. sln* ), ou le chemin d’accès à un répertoire qui contient un fichier solution. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut. Option disponible à partir du kit SDK .NET Core 3.0.
 
 ## <a name="options"></a>Options
 
@@ -169,7 +171,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 - **`--no-self-contained`**
 
-  Équivaut à `--self-contained false`. Option disponible à partir du kit SDK .NET Core 3.0.
+  Équivalent à `--self-contained false`. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
