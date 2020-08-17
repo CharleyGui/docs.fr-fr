@@ -6,12 +6,12 @@ metadata:
   description: Découvrez les pratiques recommandées pour l’architecture, la création et la migration d’applications .NET.
   ms.topic: landing-page
   ms.date: 03/19/2020
-  ms.openlocfilehash: 664edba616c962a6599e6bf5395ece44b0e817db
-  ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+  ms.openlocfilehash: 0ea87b6e69df9a6edacd916d279a095d984af463
+  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "84662756"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88267917"
 landingContent:
 - title: Développer des applications ASP.NET Core
   linkLists:
@@ -19,7 +19,7 @@ landingContent:
     links:
     - text: Architecturez des applications Web modernes avec ASP.NET Core et Azure
       url: modern-web-apps-azure/index.md
-    - text: Éblouissant pour les développeurs ASP.NET Web Forms (version préliminaire)
+    - text: Blazor pour les développeurs ASP.NET Web Forms
       url: blazor-for-web-forms-developers/index.md
     - text: gRPC ASP.NET Core pour les développeurs WCF
       url: grpc-for-wcf-developers/index.md
@@ -37,7 +37,7 @@ landingContent:
     links:
     - text: Didacticiel sur les microservices Hello World
       url: https://dotnet.microsoft.com/learn/aspnet/microservice-tutorial/intro
-    - text: Créer et déployer un microservice ASP.NET Core Cloud natif
+    - text: Créer et déployer un microservice ASP.NET Core natif cloud
       url: https://docs.microsoft.com/learn/modules/microservices-aspnet-core
 - title: Migrer des applications .NET vers Azure
   linkLists:
