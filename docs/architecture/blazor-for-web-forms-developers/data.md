@@ -6,26 +6,24 @@ ms.author: jefritz
 no-loc:
 - Blazor
 ms.date: 04/26/2020
-ms.openlocfilehash: 4bf9bee21ce1db828dbe0aeb156d5e15cae4f703
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 8bd326e6952708b2099c3a575d6811990335df17
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173302"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267592"
 ---
 # <a name="work-with-data"></a>Utilisation des données
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
 L’accès aux données est le segment principal d’une application Web Forms ASP.NET. Si vous créez des formulaires pour le Web, que se passe-t-il pour ces données ? Avec Web Forms, plusieurs techniques d’accès aux données peuvent être utilisées pour interagir avec une base de données :
 
-- Data Sources
+- Sources de données
 - ADO.NET
 - Entity Framework
 
 Les sources de données étaient des contrôles que vous pouviez placer sur une page de Web Forms et configurer comme d’autres contrôles. Visual Studio a fourni un ensemble convivial de boîtes de dialogue pour configurer et lier les contrôles à vos pages de Web Forms. Les développeurs qui bénéficient d’une approche « code faible » ou « sans code » favorisent cette technique lors de la première publication de Web Forms.
 
-![Data Sources](media/data/datasources.png)
+![Sources de données](media/data/datasources.png)
 
 ADO.NET est l’approche de bas niveau pour interagir avec une base de données. Vos applications peuvent créer une connexion à la base de données avec des commandes, des jeux d’enregistrements et des jeux de données pour interagir. Les résultats peuvent ensuite être liés à des champs sur l’écran sans trop de code. L’inconvénient de cette approche était que chaque ensemble d’objets ADO.NET ( `Connection` , `Command` et `Recordset` ) était lié aux bibliothèques fournies par un fournisseur de base de données. L’utilisation de ces composants rend le code rigide et difficile à migrer vers une autre base de données.
 
@@ -57,8 +55,8 @@ public class Product
 Le produit a une clé primaire et trois champs supplémentaires qui seraient créés dans notre base de données :  
 
 - EF identifie la `Id` propriété en tant que clé primaire par Convention.
-- `Name`seront stockées dans une colonne configurée pour le stockage de texte. L' `[Required]` attribut qui décorer cette propriété ajoute une `not null` contrainte pour permettre l’application de ce comportement déclaré de la propriété.
-- `Description`sont stockées dans une colonne configurée pour le stockage de texte et ont une longueur maximale configurée de 4000 caractères, comme imposé par l' `[MaxLength]` attribut. Le schéma de base de données sera configuré avec une colonne nommée `MaxLength` à l’aide du type de données `varchar(4000)` .
+- `Name` seront stockées dans une colonne configurée pour le stockage de texte. L' `[Required]` attribut qui décorer cette propriété ajoute une `not null` contrainte pour permettre l’application de ce comportement déclaré de la propriété.
+- `Description` sont stockées dans une colonne configurée pour le stockage de texte et ont une longueur maximale configurée de 4000 caractères, comme imposé par l' `[MaxLength]` attribut. Le schéma de base de données sera configuré avec une colonne nommée `MaxLength` à l’aide du type de données `varchar(4000)` .
 - La `Price` propriété sera stockée en tant que devise. L' `[Range]` attribut génère des contraintes appropriées pour empêcher le stockage de données en dehors des valeurs minimales et maximales déclarées.
 
 Nous devons ajouter cette `Product` classe à une classe de contexte de base de données qui définit les opérations de connexion et de traduction avec notre base de données.

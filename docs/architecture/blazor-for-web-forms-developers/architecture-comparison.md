@@ -1,21 +1,19 @@
 ---
-title: Comparaison de l’architecture des Web Forms ASP.NET etBlazor
+title: Comparaison de l’architecture des Web Forms ASP.NET et Blazor
 description: Découvrez comment les architectures de ASP.NET Web Forms et Blazor comparer.
 author: danroth27
 ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/11/2019
-ms.openlocfilehash: 51b114c842e131ad9b9a589bf5137a522e135082
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 9a8e78338aff53002647a10ed9007296e4682b5a
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173430"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267709"
 ---
-# <a name="architecture-comparison-of-aspnet-web-forms-and-blazor"></a>Comparaison de l’architecture des Web Forms ASP.NET etBlazor
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="architecture-comparison-of-aspnet-web-forms-and-no-locblazor"></a>Comparaison de l’architecture des Web Forms ASP.NET et Blazor
 
 Bien que les ASP.NET Web Forms et Blazor présentent de nombreux concepts similaires, il existe des différences en matière de fonctionnement. Ce chapitre examine les travaux internes et les architectures de ASP.NET Web Forms et Blazor .
 
@@ -40,21 +38,21 @@ Les contrôles sur une page sont généralement renvoyés à la même page que c
 
 ## Blazor
 
-Blazorest une infrastructure d’interface utilisateur Web côté client similaire à celle des infrastructures frontales JavaScript comme l’angulaire ou la réaction. Blazorgère les interactions de l’utilisateur et restitue les mises à jour nécessaires de l’interface utilisateur. Blazor*n’est pas* basé sur un modèle de demande-réponse. Les interactions de l’utilisateur sont gérées en tant qu’événements qui ne sont pas dans le contexte d’une requête HTTP particulière.
+Blazor est une infrastructure d’interface utilisateur Web côté client similaire à celle des infrastructures frontales JavaScript comme l’angulaire ou la réaction. Blazor gère les interactions de l’utilisateur et restitue les mises à jour nécessaires de l’interface utilisateur. Blazor*n’est pas* basé sur un modèle de demande-réponse. Les interactions de l’utilisateur sont gérées en tant qu’événements qui ne sont pas dans le contexte d’une requête HTTP particulière.
 
-Blazorles applications se composent d’un ou plusieurs composants racine qui sont rendus sur une page HTML.
+Blazor les applications se composent d’un ou plusieurs composants racine qui sont rendus sur une page HTML.
 
-![Blazorcomposants en HTML](./media/architecture-comparison/blazor-components-in-html.png)
+![::: No-Loc (éblouissant) ::: Components en HTML](./media/architecture-comparison/blazor-components-in-html.png)
 
 Comment l’utilisateur spécifie l’emplacement où les composants doivent être rendus et comment les composants sont ensuite associés pour que les interactions de l’utilisateur [hébergent un modèle](hosting-models.md) spécifique.
 
 Blazorles [composants](components.md) sont des classes .net qui représentent un élément réutilisable de l’interface utilisateur. Chaque composant gère son propre État et spécifie sa propre logique de rendu, qui peut inclure le rendu d’autres composants. Les composants spécifient des gestionnaires d’événements pour les interactions utilisateur spécifiques afin de mettre à jour l’état du composant.
 
-Une fois qu’un composant a géré un événement, Blazor restitue le composant et effectue le suivi des modifications apportées à la sortie rendue. Les composants ne sont pas rendus directement dans le Document Object Model (DOM). Elles s’affichent à la place dans une représentation en mémoire du DOM appelée `RenderTree` pour que Blazor puisse effectuer le suivi des modifications. Blazorcompare la sortie nouvellement rendue avec la sortie précédente pour calculer une comparaison d’interface utilisateur qui s’applique ensuite efficacement au DOM.
+Une fois qu’un composant a géré un événement, Blazor restitue le composant et effectue le suivi des modifications apportées à la sortie rendue. Les composants ne sont pas rendus directement dans le Document Object Model (DOM). Elles s’affichent à la place dans une représentation en mémoire du DOM appelée `RenderTree` pour que Blazor puisse effectuer le suivi des modifications. Blazor compare la sortie nouvellement rendue avec la sortie précédente pour calculer une comparaison d’interface utilisateur qui s’applique ensuite efficacement au DOM.
 
-![BlazorInteraction DOM](./media/architecture-comparison/blazor-dom-interaction.png)
+![::: No-Loc (éblouissant) ::: DOM interaction](./media/architecture-comparison/blazor-dom-interaction.png)
 
-Les composants peuvent également indiquer manuellement qu’ils doivent être rendus si leur état change en dehors d’un événement d’interface utilisateur normal. Blazorutilise un `SynchronizationContext` pour appliquer un seul thread logique d’exécution. Les méthodes de cycle de vie d’un composant et les rappels d’événements déclenchés par Blazor sont exécutés sur ce `SynchronizationContext` .
+Les composants peuvent également indiquer manuellement qu’ils doivent être rendus si leur état change en dehors d’un événement d’interface utilisateur normal. Blazor utilise un `SynchronizationContext` pour appliquer un seul thread logique d’exécution. Les méthodes de cycle de vie d’un composant et les rappels d’événements déclenchés par Blazor sont exécutés sur ce `SynchronizationContext` .
 
 >[!div class="step-by-step"]
 >[Précédent](introduction.md) 

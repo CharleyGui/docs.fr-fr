@@ -4,16 +4,14 @@ description: Découvrez les différentes approches de la gestion de l’État da
 author: csharpfritz
 ms.author: jefritz
 ms.date: 05/15/2020
-ms.openlocfilehash: bac2f00330113725f09259ca31bdf857a8769f24
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 2ca811f886c6a245ac16c2bd66a68ff16e5bfc44
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062338"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267722"
 ---
 # <a name="state-management"></a>Gestion de l’état
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 La gestion d’État est un concept clé des applications Web Forms, facilitant l’état d’affichage, l’état de session, l’état de l’application et les fonctionnalités de publication (postback). Ces fonctionnalités avec état de l’infrastructure ont permis de masquer la gestion des États requise pour une application et permettent aux développeurs d’applications de se concentrer sur la prestation de leurs fonctionnalités. Avec ASP.NET Core et éblouissant, certaines de ces fonctionnalités ont été déplacées et d’autres ont été supprimées entièrement. Ce chapitre passe en revue la façon de maintenir l’État et de fournir les mêmes fonctionnalités avec les nouvelles fonctionnalités de éblouissant.
 
@@ -84,8 +82,8 @@ L' `MyApplicationState` objet n’est créé qu’une seule fois sur le serveur,
 
 Les données d’application peuvent également être stockées côté client sur l’appareil de l’utilisateur afin d’être disponibles ultérieurement. Il existe deux fonctionnalités de navigateur qui permettent la persistance des données dans différentes étendues du navigateur de l’utilisateur :
 
-- `localStorage`-étendue au navigateur entier de l’utilisateur. Si la page est rechargée, le navigateur est fermé, rouvert, ou un autre onglet est ouvert avec la même URL, alors le même `localStorage` est fourni par le navigateur.
-- `sessionStorage`-étendue à l’onglet de navigateur actuel de l’utilisateur. Si l’onglet est rechargé, l’état persiste. Toutefois, si l’utilisateur ouvre un autre onglet pour votre application ou ferme et ouvre à nouveau le navigateur, l’État est perdu.
+- `localStorage` -étendue au navigateur entier de l’utilisateur. Si la page est rechargée, le navigateur est fermé, rouvert, ou un autre onglet est ouvert avec la même URL, alors le même `localStorage` est fourni par le navigateur.
+- `sessionStorage` -étendue à l’onglet de navigateur actuel de l’utilisateur. Si l’onglet est rechargé, l’état persiste. Toutefois, si l’utilisateur ouvre un autre onglet pour votre application ou ferme et ouvre à nouveau le navigateur, l’État est perdu.
 
 Vous pouvez écrire du code JavaScript personnalisé pour interagir avec ces fonctionnalités, ou il existe un certain nombre de packages NuGet que vous pouvez utiliser pour fournir cette fonctionnalité. L’un de ces packages est [Microsoft. AspNetCore. ProtectedBrowserStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.ProtectedBrowserStorage).
 

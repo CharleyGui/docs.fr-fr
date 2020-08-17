@@ -6,16 +6,14 @@ ms.author: jefritz
 no-loc:
 - Blazor
 ms.date: 04/01/2020
-ms.openlocfilehash: a13f663c2c6908ba906e42cb939c3b8707b8cccd
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 6154b4f8c7a5bff42e603b12d5ef85468b80224e
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173313"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267501"
 ---
 # <a name="app-configuration"></a>la configuration d’une application ;
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Le principal moyen de charger la configuration de l’application dans Web Forms consiste à utiliser des entrées dans le fichier *web.config* &mdash; , soit sur le serveur, soit sur un fichier de configuration associé référencé par *web.config*. Vous pouvez utiliser l' `ConfigurationManager` objet statique pour interagir avec les paramètres d’application, les chaînes de connexion du référentiel de données et d’autres fournisseurs de configuration étendus ajoutés à l’application. Il est courant de voir les interactions avec la configuration d’application comme indiqué dans le code suivant :
 
@@ -74,7 +72,7 @@ Configurez votre application pour le stockage des secrets en exécutant la `user
 dotnet user-secrets init
 ```
 
-La commande précédente ajoute un `UserSecretsId` élément au fichier projet. L’élément contient un GUID, qui est utilisé pour associer des secrets à l’application. Vous pouvez ensuite définir une clé secrète à l’aide de la `set` commande. Par exemple :
+La commande précédente ajoute un `UserSecretsId` élément au fichier projet. L’élément contient un GUID, qui est utilisé pour associer des secrets à l’application. Vous pouvez ensuite définir une clé secrète à l’aide de la `set` commande. Par exemple :
 
 ```dotnetcli
 dotnet user-secrets set "Parent:ApiKey" "12345"

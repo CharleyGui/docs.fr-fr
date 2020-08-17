@@ -1,5 +1,5 @@
 ---
-title: Migrer de ASP.NET Web Forms versBlazor
+title: Migrer de ASP.NET Web Forms vers Blazor
 description: Découvrez comment aborder la migration d’une application Web Forms ASP.NET existante vers Blazor .
 author: twsouthwick
 ms.author: tasou
@@ -7,16 +7,14 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: 464d2f535acd3b9774fe240b4feeda1875f98022
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: ca3d8747b02602c89aec187ea0826e658fb0cbc4
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173144"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267800"
 ---
-# <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrer de ASP.NET Web Forms versBlazor
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="migrate-from-aspnet-web-forms-to-no-locblazor"></a>Migrer de ASP.NET Web Forms vers Blazor
 
 La migration d’une base de code à partir de ASP.NET Web Forms vers Blazor est une tâche longue qui nécessite une planification. Ce chapitre décrit le processus. Une opération qui peut faciliter la transition consiste à s’assurer que l’application adhère à une architecture *multiniveau* , dans laquelle le modèle d’application (dans ce cas, Web Forms) est séparé de la logique métier. Cette séparation logique des couches permet de clarifier ce qui doit être déplacé vers .NET Core et Blazor .
 
@@ -24,8 +22,8 @@ Pour cet exemple, l’application eShop disponible sur [GitHub](https://github.c
 
 Pourquoi une application de travail doit-elle être migrée vers Blazor ? Bien souvent, il n’y a aucun besoin. ASP.NET Web Forms sera toujours pris en charge depuis de nombreuses années. Toutefois, la plupart des fonctionnalités Blazor fournies par ne sont prises en charge que sur une application migrée. Ces fonctionnalités sont les suivantes :
 
-- Améliorations des performances dans l’infrastructure, telles que`Span<T>`
-- Possibilité de s’exécuter en tant queWebAssembly
+- Améliorations des performances dans l’infrastructure, telles que `Span<T>`
+- Possibilité de s’exécuter en tant que WebAssembly
 - Prise en charge multiplateforme pour Linux et macOS
 - Déploiement local de l’application ou déploiement d’infrastructure partagée sans impact sur les autres applications
 
@@ -525,7 +523,7 @@ En cas de conversion en Blazor , la page Web Forms se traduit par le code suivan
 
 Notez que le code et le balisage se trouvent dans le même fichier. Tous les services requis sont rendus accessibles avec l' `@inject` attribut. Pour la `@page` directive, cette page est accessible au niveau de l' `Catalog/Details/{id}` itinéraire. La valeur de l’espace réservé de l’itinéraire `{id}` a été restreinte à un entier. Comme décrit dans la section [routage](pages-routing-layouts.md) , contrairement à Web Forms, un composant Razor indique explicitement son itinéraire et tous les paramètres qui sont inclus. De nombreux contrôles de Web Forms peuvent ne pas avoir des équivalents exacts dans Blazor . Il existe souvent un extrait de code HTML équivalent qui servira le même objectif. Par exemple, le `<asp:Label />` contrôle peut être remplacé par un `<label>` élément HTML.
 
-### <a name="model-validation-in-blazor"></a>Validation de modèle dansBlazor
+### <a name="model-validation-in-no-locblazor"></a>Validation de modèle dans Blazor
 
 Si votre code Web Forms comprend une validation, vous pouvez transférer une grande partie de ce que vous avez avec des modifications minimes. L’un des avantages de l’exécution de dans Blazor est que la même logique de validation peut être exécutée sans avoir besoin de JavaScript personnalisé. Les annotations de données facilitent la validation du modèle.
 

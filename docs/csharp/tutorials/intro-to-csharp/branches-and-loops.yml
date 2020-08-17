@@ -7,16 +7,17 @@ metadata:
   level: Beginner
   ms.custom: mvc
   ms.date: 08/24/2018
+  ms.topic: interactive-tutorial
   displayType: two-column
   interactive: csharp
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: Collection de listes
-  ms.openlocfilehash: e7679c511cf67eed55687c5815bcf7faf4e1e624
-  ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+  ms.openlocfilehash: 596dfeca6e8910bd954b63364af958b7bef1580a
+  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 05/14/2020
-  ms.locfileid: "83396860"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88267540"
 items:
 - durationInMinutes: 1
   content: >
@@ -99,7 +100,7 @@ items:
     > Assurez-vous que la condition de boucle `while` ne devienne pas false quand vous exécutez le code. Dans le cas contraire, vous allez créer une **boucle infinie** dans laquelle votre programme ne se terminera jamais. Nous n’allons pas le démontrer ici, car le moteur qui exécute votre code expirerait et votre programme n’afficherait aucune sortie.
 
 
-    La boucle `while` teste la condition avant d’exécuter le code qui suit `while`. La boucle `do` ... `while` exécute d’abord le code, puis vérifie la condition. Voici à quoi cela ressemble :
+    La boucle `while` teste la condition avant d’exécuter le code qui suit `while`. La boucle `do` ... `while` exécute d’abord le code, puis vérifie la condition. Il se présente comme ceci :
 
 
     ```csharp

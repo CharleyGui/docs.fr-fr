@@ -6,17 +6,18 @@ metadata:
   audience: Developer
   level: Beginner
   ms.date: 08/24/2018
+  ms.topic: interactive-tutorial
   nextTutorialHref: numbers-in-csharp.yml
   nextTutorialTitle: Nombres en C#
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 025b3e0fcaf693be00f1ca396b92617d6faf31aa
-  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+  ms.openlocfilehash: 17d33b25867f75419a0e65ab0d75950bad13af57
+  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "82860969"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88267397"
 items:
 - durationInMinutes: 1
   content: >
@@ -51,7 +52,7 @@ items:
     > Cet exercice vous aidera à mieux comprendre la structure du code C#.
 
 
-    Votre premier programme est limité à l’affichage d’un seul message. Vous pouvez écrire d’autres programmes plus utiles à l’aide de **variables**. Une **variable** est un symbole que vous pouvez utiliser pour exécuter le même code avec des valeurs différentes. Pratiquons ensemble ! Remplacez le code que vous avez écrit dans la fenêtre interactive par le code suivant :
+    Votre premier programme est limité à l’affichage d’un seul message. Vous pouvez écrire d’autres programmes plus utiles à l’aide de **variables**. Une **variable** est un symbole que vous pouvez utiliser pour exécuter le même code avec des valeurs différentes. Essayons ! Remplacez le code que vous avez écrit dans la fenêtre interactive par le code suivant :
 
 
     ```csharp
@@ -94,7 +95,7 @@ items:
     Sélectionnez **exécuter** à nouveau pour afficher les résultats.
 
 
-    Vous avez utilisé `+` pour générer des chaînes à partir de chaînes **variables** et **constantes**. Il existe une meilleure façon de procéder.
+    Vous avez utilisé `+` pour générer des chaînes à partir de chaînes **variables** et **constantes**. Il existe une meilleure solution.
 
     Vous pouvez placer une variable entre les caractères `{` et `}` pour indiquer à C# de remplacer ce texte par la valeur de la variable.
 
@@ -152,7 +153,7 @@ items:
 - title: Autres méthodes de chaînes
   durationInMinutes: 5
   content: >
-    Vous avez utilisé une **méthode**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, pour imprimer des messages. Une **méthode** est un bloc de code qui implémente une action. Elle porte un nom pour vous permettre d’y accéder facilement.
+    Vous avez utilisé une **méthode**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> , pour imprimer des messages. Une **méthode** est un bloc de code qui implémente une action. Elle porte un nom pour vous permettre d’y accéder facilement.
 
 
     Supposons que vos chaînes ont des espaces au début ou à la fin que vous ne souhaitez pas afficher. Vous souhaitez **supprimer** les espaces dans les chaînes.
@@ -184,7 +185,7 @@ items:
     ```
 
 
-    Les crochets `[` et `]` aident à visualiser ce que font `Trim`les `TrimStart` méthodes `TrimEnd` et. Les crochets indiquent où les espaces blancs commencent et se terminent.
+    Les crochets `[` et `]` aident à visualiser ce que `Trim` font les `TrimStart` `TrimEnd` méthodes et. Les crochets indiquent où les espaces blancs commencent et se terminent.
 
 
     Cet exemple met en avant quelques concepts importants concernant l’utilisation de chaînes. Les méthodes utilisant des chaînes retournent des objets de chaîne au lieu d’apporter des modifications. Vous pouvez observer que chaque appel à une méthode `Trim` retourne une nouvelle chaîne, mais que le message d’origine n’est pas modifié.
@@ -233,10 +234,10 @@ items:
     ```
 
 
-    La méthode <xref:System.String.Contains%2A> retourne une valeur **booléenne** qui indique si la chaîne recherchée a été trouvée. Un **booléen** stocke une valeur `true` ou `false`. Lorsqu’elles sont affichées comme sortie de texte, elles sont `True` en `False`majuscules : et, respectivement. Vous en saurez plus sur les valeurs **booléennes** dans une leçon ultérieure.
+    La méthode <xref:System.String.Contains%2A> retourne une valeur **booléenne** qui indique si la chaîne recherchée a été trouvée. Un **booléen** stocke une valeur `true` ou `false`. Lorsqu’elles sont affichées comme sortie de texte, elles sont en majuscules : `True` et `False` , respectivement. Vous en saurez plus sur les valeurs **booléennes** dans une leçon ultérieure.
 
 
-    ***Test***
+    ***Problème***
 
 
     Il existe deux méthodes similaires, <xref:System.String.StartsWith%2A> et <xref:System.String.EndsWith%2A>, qui permettent également de rechercher des sous-chaînes dans une chaîne. Elles recherchent une sous-chaîne au début ou à la fin de la chaîne. Essayez de modifier l’exemple précédent pour utiliser <xref:System.String.StartsWith%2A> et <xref:System.String.EndsWith%2A> au lieu de <xref:System.String.Contains%2A>. Recherchez « You » ou « goodbye » au début d’une chaîne. Recherchez « hello » ou « goodbye » à la fin d’une chaîne.

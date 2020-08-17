@@ -2,12 +2,12 @@
 title: Les blocs de construction des programmes C#»
 description: En savoir plus sur les membres, les expressions et les instructions C#. Les types contiennent des membres que vous écrivez. Ces membres sont générés à partir d’instructions et d’expressions.
 ms.date: 08/06/2020
-ms.openlocfilehash: de9f634db129ea2ec6f692cabb657f9fe41b2f9c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 142fe7b5a3424a8925638bfb4e4437392347f4c6
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068554"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88268138"
 ---
 # <a name="program-building-blocks"></a>Blocs de construction de programme
 
@@ -209,7 +209,7 @@ Un *indexeur* est un membre qui permet l’indexation des objets de la même fa�
 
 La classe `MyList<T>` déclare un indexeur en lecture-écriture unique qui prend un paramètre `int`. L’indexeur rend possible l’indexation des instances `MyList<T>` avec des valeurs `int`. Par exemple :
 
-:::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListAddition":::
+:::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListAccess":::
 
 Les indexeurs peuvent être surchargés. Une classe peut déclarer plusieurs indexeurs tant que le nombre ou les types de leurs paramètres diffèrent.
 
@@ -284,21 +284,21 @@ La liste suivante répertorie les types d’instructions qui peuvent être utili
 * Déclaration de variable locale.
 * Déclaration de constante locale.
 * Instruction d’expression.
-* `if`gestion.
-* `switch`gestion.
-* `while`gestion.
-* `do`gestion.
-* `for`gestion.
-* `foreach`gestion.
-* `break`gestion.
-* `continue`gestion.
-* `goto`gestion.
-* `return`gestion.
-* `yield`gestion.
-* `throw`instructions et `try` instructions.
+* `if` gestion.
+* `switch` gestion.
+* `while` gestion.
+* `do` gestion.
+* `for` gestion.
+* `foreach` gestion.
+* `break` gestion.
+* `continue` gestion.
+* `goto` gestion.
+* `return` gestion.
+* `yield` gestion.
+* `throw` instructions et `try` instructions.
 * `checked``unchecked`instructions et.
-* `lock`gestion.
-* `using`gestion.
+* `lock` gestion.
+* `using` gestion.
 
 >[!div class="step-by-step"]
 >[Précédent](types.md) 

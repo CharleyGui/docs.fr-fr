@@ -7,16 +7,14 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 473b708a9b58fa88844bc6f79a898943d5a7db71
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 225ebbdd5e23516ae7d5465371e95c73c440c82b
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173040"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267774"
 ---
-# <a name="project-structure-for-blazor-apps"></a>Structure de projet pour les Blazor applications
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="project-structure-for-no-locblazor-apps"></a>Structure de projet pour les Blazor applications
 
 Malgré leurs différences de structure de projet, ASP.NET Web Forms et Blazor partagent un grand nombre de concepts similaires. Ici, nous allons examiner la structure d’un Blazor projet et le comparer à un projet de Web Forms ASP.net.
 
@@ -24,7 +22,7 @@ Pour créer votre première Blazor application, suivez les instructions fournies
 
 ## <a name="project-file"></a>Fichier projet
 
-BlazorLes applications serveur sont des projets .NET Core. Le fichier projet pour l' Blazor application serveur est à la fois aussi simple que possible :
+Blazor Les applications serveur sont des projets .NET Core. Le fichier projet pour l' Blazor application serveur est à la fois aussi simple que possible :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -95,7 +93,7 @@ public class Program
 
 Blazorles WebAssembly applications définissent également un point d’entrée dans *Program.cs*. Le code semble légèrement différent. Le code est similaire en ce qu’il configure l’hôte d’application pour fournir les mêmes services de niveau hôte à l’application. WebAssemblyToutefois, l’hôte d’application ne configure pas un serveur http, car il s’exécute directement dans le navigateur.
 
-Blazorles applications ont une `Startup` classe au lieu d’un fichier *global. asax* pour définir la logique de démarrage de l’application. La `Startup` classe est utilisée pour configurer l’application et tous les services spécifiques à l’application. Dans l' Blazor application serveur, la `Startup` classe est utilisée pour configurer le point de terminaison de la connexion en temps réel utilisée par Blazor entre les navigateurs clients et le serveur. Dans l' Blazor WebAssembly application, la `Startup` classe définit les composants racine pour l’application et l’emplacement où elles doivent être rendues. Nous examinerons plus en détail la `Startup` classe dans la section démarrage de l' [application](./app-startup.md) .
+Blazor les applications ont une `Startup` classe au lieu d’un fichier *global. asax* pour définir la logique de démarrage de l’application. La `Startup` classe est utilisée pour configurer l’application et tous les services spécifiques à l’application. Dans l' Blazor application serveur, la `Startup` classe est utilisée pour configurer le point de terminaison de la connexion en temps réel utilisée par Blazor entre les navigateurs clients et le serveur. Dans l' Blazor WebAssembly application, la `Startup` classe définit les composants racine pour l’application et l’emplacement où elles doivent être rendues. Nous examinerons plus en détail la `Startup` classe dans la section démarrage de l' [application](./app-startup.md) .
 
 ## <a name="static-files"></a>Fichiers statiques
 
@@ -103,7 +101,7 @@ Contrairement aux projets ASP.NET Web Forms, tous les fichiers d’un Blazor pro
 
 ## <a name="configuration"></a>Configuration
 
-La configuration dans ASP.NET Web Forms Apps est généralement gérée à l’aide d’un ou plusieurs fichiers *web.config* . Blazorles applications n’ont généralement pas de fichiers *web.config* . Dans ce cas, le fichier est utilisé uniquement pour configurer les paramètres spécifiques à IIS lorsqu’ils sont hébergés sur IIS. Au lieu de cela, Blazor les applications serveur utilisent le ASP.net Core abstractions de la configuration (les Blazor WebAssembly applications ne prennent pas en charge les mêmes abstractions de configuration, mais il peut s’agir d’une fonctionnalité ajoutée à l’avenir). Par exemple, l' Blazor application serveur par défaut stocke certains paramètres dans *appsettings.jssur*.
+La configuration dans ASP.NET Web Forms Apps est généralement gérée à l’aide d’un ou plusieurs fichiers *web.config* . Blazor les applications n’ont généralement pas de fichiers *web.config* . Dans ce cas, le fichier est utilisé uniquement pour configurer les paramètres spécifiques à IIS lorsqu’ils sont hébergés sur IIS. Au lieu de cela, Blazor les applications serveur utilisent le ASP.net Core abstractions de la configuration (les Blazor WebAssembly applications ne prennent pas en charge les mêmes abstractions de configuration, mais il peut s’agir d’une fonctionnalité ajoutée à l’avenir). Par exemple, l' Blazor application serveur par défaut stocke certains paramètres dans *appsettings.jssur*.
 
 ```json
 {
@@ -142,7 +140,7 @@ Les fichiers *_Imports. Razor* ne sont pas des fichiers de composants Razor. Au 
 
 ## <a name="pages"></a>Pages
 
-Où se trouvent les pages dans les Blazor applications ? Blazorne définit pas d’extension de fichier distincte pour les pages adressables, comme les fichiers *. aspx* dans ASP.NET Web Forms apps. Au lieu de cela, les pages sont définies en affectant des itinéraires aux composants. Un itinéraire est généralement affecté à l’aide de la `@page` directive Razor. Par exemple, le `Counter` composant créé dans le fichier *pages/Counter. Razor* définit l’itinéraire suivant :
+Où se trouvent les pages dans les Blazor applications ? Blazor ne définit pas d’extension de fichier distincte pour les pages adressables, comme les fichiers *. aspx* dans ASP.NET Web Forms apps. Au lieu de cela, les pages sont définies en affectant des itinéraires aux composants. Un itinéraire est généralement affecté à l’aide de la `@page` directive Razor. Par exemple, le `Counter` composant créé dans le fichier *pages/Counter. Razor* définit l’itinéraire suivant :
 
 ```razor
 @page "/counter"
@@ -158,7 +156,7 @@ Nous examinerons plus en détail le routage dans Blazor dans la section [pages, 
 
 Dans ASP.NET Web Forms Apps, la disposition de page courante est gérée à l’aide de pages maîtres (*site. Master*). Dans les Blazor applications, la mise en page est gérée à l’aide de composants de disposition (*Shared/MainLayout. Razor*). Les composants de disposition seront abordés plus en détail dans la section [page, routage et dispositions](./pages-routing-layouts.md) .
 
-## <a name="bootstrap-blazor"></a>DémarrageBlazor
+## <a name="bootstrap-no-locblazor"></a>Démarrage Blazor
 
 Pour Blazor le démarrage, l’application doit :
 
@@ -243,7 +241,7 @@ Lorsqu’un Blazor projet est généré, tous les fichiers de code et de composa
 
 ## <a name="run-the-app"></a>Exécuter l’application
 
-Pour exécuter l' Blazor application serveur, appuyez sur `F5` dans Visual Studio. Blazorles applications ne prennent pas en charge la compilation du Runtime. Pour afficher les résultats des modifications du balisage du code et des composants, régénérez et redémarrez l’application avec le débogueur attaché. Si vous exécutez sans le débogueur attaché ( `Ctrl+F5` ), Visual Studio surveille les modifications apportées aux fichiers et redémarre l’application à mesure que des modifications sont apportées. Vous actualisez manuellement le navigateur à mesure que des modifications sont apportées.
+Pour exécuter l' Blazor application serveur, appuyez sur `F5` dans Visual Studio. Blazor les applications ne prennent pas en charge la compilation du Runtime. Pour afficher les résultats des modifications du balisage du code et des composants, régénérez et redémarrez l’application avec le débogueur attaché. Si vous exécutez sans le débogueur attaché ( `Ctrl+F5` ), Visual Studio surveille les modifications apportées aux fichiers et redémarre l’application à mesure que des modifications sont apportées. Vous actualisez manuellement le navigateur à mesure que des modifications sont apportées.
 
 Pour exécuter l' Blazor WebAssembly application, choisissez l’une des approches suivantes :
 

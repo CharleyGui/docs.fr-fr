@@ -6,22 +6,20 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/19/2019
-ms.openlocfilehash: fc1f6f9420c7149b6e67123f2f68bef75667aa0c
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 714ba0be7c2014895a75250a47e6ce448863eb6c
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173105"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267787"
 ---
 # <a name="pages-routing-and-layouts"></a>Pages, routage et dispositions
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ASP.NET Web Forms applications sont composées de pages définies dans des fichiers *. aspx* . L’adresse de chaque page est basée sur son chemin d’accès physique au projet. Quand un navigateur envoie une requête à la page, le contenu de la page est rendu dynamiquement sur le serveur. Les comptes de rendu pour le balisage HTML de la page et ses contrôles serveur.
 
 Dans Blazor , chaque page de l’application est un composant, généralement défini dans un fichier *. Razor* , avec un ou plusieurs itinéraires spécifiés. Le routage s’effectue principalement côté client sans impliquer de demande de serveur spécifique. Le navigateur effectue d’abord une demande à l’adresse racine de l’application. Un `Router` composant racine de l' Blazor application gère alors l’interception des demandes de navigation et les requêtes de navigation vers le composant approprié.
 
-Blazorprend également en charge la *liaison profonde*. La liaison profonde se produit lorsque le navigateur envoie une requête à un itinéraire spécifique autre que la racine de l’application. Les demandes de liens ciblés envoyées au serveur sont routées vers l' Blazor application, qui achemine ensuite la demande côté client vers le composant approprié.
+Blazor prend également en charge la *liaison profonde*. La liaison profonde se produit lorsque le navigateur envoie une requête à un itinéraire spécifique autre que la racine de l’application. Les demandes de liens ciblés envoyées au serveur sont routées vers l' Blazor application, qui achemine ensuite la demande côté client vers le composant approprié.
 
 Une page simple dans ASP.NET Web Forms peut contenir le balisage suivant :
 
@@ -94,7 +92,7 @@ Pour créer une page dans Blazor , créez un composant et ajoutez la `@page` dir
 
 Le paramètre de modèle de routage est obligatoire. Contrairement à ASP.NET Web Forms, l’itinéraire vers un Blazor composant *n’est pas* déduit de son emplacement de fichier (bien que cela puisse être une fonctionnalité ajoutée à l’avenir).
 
-La syntaxe de modèle de routage est identique à la syntaxe de base utilisée pour le routage dans ASP.NET Web Forms. Les paramètres de routage sont spécifiés dans le modèle à l’aide d’accolades. Blazorlie les valeurs d’itinéraire aux paramètres de composant portant le même nom (non-respect de la casse).
+La syntaxe de modèle de routage est identique à la syntaxe de base utilisée pour le routage dans ASP.NET Web Forms. Les paramètres de routage sont spécifiés dans le modèle à l’aide d’accolades. Blazor lie les valeurs d’itinéraire aux paramètres de composant portant le même nom (non-respect de la casse).
 
 ```razor
 @page "/product/{id}"
@@ -147,7 +145,7 @@ Le `LayoutView` composant affiche son contenu enfant dans la disposition spécif
 
 ## <a name="navigation"></a>Navigation
 
-Dans ASP.NET Web Forms, vous déclenchez la navigation vers une page différente en renvoyant une réponse de redirection au navigateur. Par exemple :
+Dans ASP.NET Web Forms, vous déclenchez la navigation vers une page différente en renvoyant une réponse de redirection au navigateur. Par exemple :
 
 ```csharp
 protected void NavigateButton_Click(object sender, EventArgs e)
@@ -156,9 +154,9 @@ protected void NavigateButton_Click(object sender, EventArgs e)
 }
 ```
 
-Le retour d’une réponse de redirection n’est généralement pas possible dans Blazor . Blazorn’utilise pas de modèle de demande-réponse. Toutefois, vous pouvez déclencher des navigations de navigateur directement, comme vous pouvez le faire avec JavaScript.
+Le retour d’une réponse de redirection n’est généralement pas possible dans Blazor . Blazor n’utilise pas de modèle de demande-réponse. Toutefois, vous pouvez déclencher des navigations de navigateur directement, comme vous pouvez le faire avec JavaScript.
 
-Blazorfournit un `NavigationManager` service qui peut être utilisé pour :
+Blazor fournit un `NavigationManager` service qui peut être utilisé pour :
 
 - Récupérer l’adresse actuelle du navigateur
 - Obtient l’adresse de base
