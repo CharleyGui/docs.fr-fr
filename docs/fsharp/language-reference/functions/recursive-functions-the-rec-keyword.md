@@ -1,13 +1,13 @@
 ---
 title: 'Fonctions récursives : mot clé rec'
 description: "Découvrez comment le mot clé F # 'Rec’est utilisé avec le mot clé’Let’pour définir une fonction récursive."
-ms.date: 05/16/2016
-ms.openlocfilehash: c2374f90b4585327c6f5208a3d6bca75a23d0cbb
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.date: 08/12/2020
+ms.openlocfilehash: 389357bd13cef39b1d07972c1a3167320b61612b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455655"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558710"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Fonctions récursives : mot clé rec
 
@@ -18,28 +18,44 @@ Le `rec` mot clé est utilisé conjointement avec le `let` mot clé pour défini
 ```fsharp
 // Recursive function:
 let rec function-nameparameter-list =
-function-body
+    function-body
 
 // Mutually recursive functions:
 let rec function1-nameparameter-list =
-function1-body
+    function1-body
+
 and function2-nameparameter-list =
-function2-body
+    function2-body
 ...
 ```
 
 ## <a name="remarks"></a>Notes
 
-Les fonctions récursives, les fonctions qui s’appellent, sont identifiées explicitement dans le langage F #. Cela rend l’identificateur qui est défini comme étant disponible dans l’étendue de la fonction.
+Fonctions récursives : les fonctions qui s’appellent elles-mêmes sont identifiées explicitement dans le langage F # avec le `rec` mot clé. Le `rec` mot clé rend le nom de la `let` liaison disponible dans son corps.
 
-Le code suivant illustre une fonction récursive qui calcule le *n*<sup>ième</sup> nombre de Fibonacci à l’aide de la définition mathématique.
+L’exemple suivant montre une fonction récursive qui calcule le *n*<sup>ième</sup> nombre de Fibonacci à l’aide de la définition mathématique.
 
-[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
+```fsharp
+let fib n =
+    match n with
+    | 0 | 1 -> 1
+    | n -> fib (n-1) + fib (n-2)
+```
 
 > [!NOTE]
 > Dans la pratique, le code comme l’exemple précédent n’est pas idéal, car il unecessarily recalcule les valeurs qui ont déjà été calculées. Cela est dû au fait qu’elle n’est pas une fin récursive, ce qui est expliqué plus loin dans cet article.
 
-Les méthodes sont implicitement récursives dans le type ; Il n’est pas nécessaire d’ajouter le `rec` mot clé. Les liaisons Let dans les classes ne sont pas implicitement récursives.
+Les méthodes sont implicitement récursives dans le type dans lequel elles sont définies, ce qui signifie qu’il n’est pas nécessaire d’ajouter le `rec` mot clé. Par exemple :
+
+```fsharp
+type MyClass() =
+    member this.Fib(n) =
+        match n with
+        | 0 | 1 -> 1
+        | n -> this.Fib(n-1) + this.Fib(n-2)
+```
+
+Toutefois, les liaisons Let dans les classes ne sont pas implicitement récursives. Toutes les `let` fonctions liées nécessitent le `rec` mot clé.
 
 ## <a name="tail-recursion"></a>Récurrence de la fin
 
@@ -75,6 +91,14 @@ Parfois, les fonctions sont *mutuellement récursives*, ce qui signifie que les 
 L’exemple suivant montre deux fonctions mutuellement récursives.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
+
+## <a name="recursive-values"></a>Valeurs récursives
+
+Vous pouvez également définir une `let` valeur liée à une valeur récursive. Cela est parfois fait pour la journalisation. Avec F # 5 et la `nameof` fonction, vous pouvez effectuer cette opération :
+
+```fsharp
+let rec nameDoubles = nameof nameDoubles + nameof nameDoubles
+```
 
 ## <a name="see-also"></a>Voir aussi
 

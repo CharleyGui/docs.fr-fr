@@ -1,13 +1,13 @@
 ---
 title: Enregistrements
-description: Découvrez comment F# les enregistrements représentent des agrégats simples de valeurs nommées, éventuellement avec des membres.
-ms.date: 06/09/2019
-ms.openlocfilehash: 874c5fa30a36f2778f7a43266316deb8c59d1d72
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+description: 'Découvrez comment les enregistrements F # représentent des agrégats simples de valeurs nommées, éventuellement avec des membres.'
+ms.date: 08/15/2020
+ms.openlocfilehash: 182b2e83c3940c866197052af102787a96e49c54
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216784"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559048"
 ---
 # <a name="records"></a>Enregistrements
 
@@ -34,7 +34,7 @@ Voici quelques exemples.
 
 Lorsque chaque étiquette se trouve sur une ligne distincte, le point-virgule est facultatif.
 
-Vous pouvez définir des valeurs dans des expressions appelées *expressions d’enregistrement*. Le compilateur déduit le type à partir des étiquettes utilisées (si les étiquettes sont suffisamment distinctes de celles des autres types d’enregistrements). Les accolades ({}) encadrent l’expression d’enregistrement. Le code suivant montre une expression d’enregistrement qui initialise un enregistrement avec trois éléments flottants avec `x`des `y` étiquettes `z`, et.
+Vous pouvez définir des valeurs dans des expressions appelées *expressions d’enregistrement*. Le compilateur déduit le type à partir des étiquettes utilisées (si les étiquettes sont suffisamment distinctes de celles des autres types d’enregistrements). Les accolades ({}) encadrent l’expression d’enregistrement. Le code suivant montre une expression d’enregistrement qui initialise un enregistrement avec trois éléments flottants avec des étiquettes `x` , `y` et `z` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1907.fs)]
 
@@ -42,7 +42,7 @@ N’utilisez pas la forme abrégée s’il peut y avoir un autre type qui a éga
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1903.fs)]
 
-Les étiquettes du type déclaré le plus récemment sont prioritaires sur celles du type déclaré précédemment `mypoint3D` `Point3D`. par conséquent, dans l’exemple précédent, est déduit comme étant. Vous pouvez spécifier explicitement le type d’enregistrement, comme dans le code suivant.
+Les étiquettes du type déclaré le plus récemment sont prioritaires sur celles du type déclaré précédemment. par conséquent, dans l’exemple précédent, `mypoint3D` est déduit comme étant `Point3D` . Vous pouvez spécifier explicitement le type d’enregistrement, comme dans le code suivant.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1908.fs)]
 
@@ -94,9 +94,9 @@ let rr3 = { defaultRecord1 with Field2 = 42 }
 
 Pendant la création d’un enregistrement, vous souhaiterez peut-être qu’il dépende d’un autre type que vous aimeriez définir par la suite. Il s’agit d’une erreur de compilation, sauf si vous définissez les types d’enregistrements qui doivent être mutuellement récursifs.
 
-La définition des enregistrements mutuellement récursifs s’effectue `and` à l’aide du mot clé. Cela vous permet de lier simultanément 2 types d’enregistrements ou plus.
+La définition des enregistrements mutuellement récursifs s’effectue à l’aide du `and` mot clé. Cela vous permet de lier simultanément 2 types d’enregistrements ou plus.
 
-Par exemple, le code suivant définit un `Person` type `Address` et comme étant mutuellement récursif :
+Par exemple, le code suivant définit un `Person` `Address` type et comme étant mutuellement récursif :
 
 ```fsharp
 // Create a Person type and use the Address type that is not defined
@@ -128,6 +128,39 @@ Point is on the x-axis. Value is 100.000000.
 Point is at (10.000000, 0.000000, -1.000000).
 ```
 
+## <a name="records-and-members"></a>Enregistrements et membres
+
+Vous pouvez spécifier des membres sur des enregistrements de la même façon que vous pouvez utiliser des classes. Les champs ne sont pas pris en charge. Une approche courante consiste à définir un `Default` membre statique pour une création d’enregistrement facile :
+
+```fsharp
+type Person =
+  { Name: string
+    Age: int
+    Address: string }
+
+    static member Default =
+        { Name = "Phillip"
+          Age = 12
+          Address = "123 happy fun street" }
+
+let defaultPerson = Person.Default
+```
+
+Si vous utilisez un auto-identificateur, cet identificateur fait référence à l’instance de l’enregistrement dont le membre est appelé :
+
+```fsharp
+type Person =
+  { Name: string
+    Age: int
+    Address: string }
+
+    member this.WeirdToString() =
+        this.Name + this.Address + string this.Age
+
+let p = { Name = "a"; Age = 12; Address = "abc123 }
+let weirdString = p.WeirdToString()
+```
+
 ## <a name="differences-between-records-and-classes"></a>Différences entre les enregistrements et les classes
 
 Les champs d’enregistrement diffèrent des classes en ce qu’ils sont automatiquement exposés en tant que propriétés, et ils sont utilisés lors de la création et de la copie des enregistrements. La construction d’enregistrement diffère également de la construction de classe. Dans un type d’enregistrement, vous ne pouvez pas définir un constructeur. Au lieu de cela, la syntaxe de construction décrite dans cette rubrique s’applique. Les classes n’ont aucune relation directe entre les paramètres de constructeur, les champs et les propriétés.
@@ -142,14 +175,14 @@ Le résultat de ce code est le suivant :
 The records are equal.
 ```
 
-Si vous écrivez le même code avec des classes, les deux objets de classe seraient inégaux, car les deux valeurs représenteront deux objets sur le tas et seules les adresses seraient comparées (sauf si le type de `System.Object.Equals` classe substitue la méthode).
+Si vous écrivez le même code avec des classes, les deux objets de classe seraient inégaux, car les deux valeurs représenteront deux objets sur le tas et seules les adresses seraient comparées (sauf si le type de classe substitue la `System.Object.Equals` méthode).
 
-Si vous avez besoin d’une égalité de référence pour les `[<ReferenceEquality>]` enregistrements, ajoutez l’attribut au-dessus de l’enregistrement.
+Si vous avez besoin d’une égalité de référence pour les enregistrements, ajoutez l’attribut `[<ReferenceEquality>]` au-dessus de l’enregistrement.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Types F#](fsharp-types.md)
 - [Classes](classes.md)
-- [Informations de référence du langage F#](index.md)
+- [Informations de référence sur le langage F #](index.md)
 - [Référence-égalité](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
 - [Critères spéciaux](pattern-matching.md)

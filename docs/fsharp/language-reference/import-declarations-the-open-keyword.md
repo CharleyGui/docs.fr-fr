@@ -1,13 +1,13 @@
 ---
 title: "Déclarations d'importation : mot clé open"
 description: 'En savoir plus sur les déclarations d’importation F # et la façon dont elles spécifient un module ou un espace de noms dont vous pouvez référencer des éléments sans utiliser un nom complet.'
-ms.date: 04/04/2019
-ms.openlocfilehash: 2b88427ca92212fb4a7598447dd1a5e12061093a
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: 6420df071f86159c44606c2710331d5f587023cc
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855086"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557605"
 ---
 # <a name="import-declarations-the-open-keyword"></a>Déclarations d’importation : `open` mot clé
 
@@ -20,9 +20,6 @@ open module-or-namespace-name
 ```
 
 ## <a name="remarks"></a>Notes
-
-> [!NOTE]
-> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 Le référencement du code à l’aide de l’espace de noms complet ou du chemin du module à chaque fois peut créer du code difficile à écrire, lire et gérer. Au lieu de cela, vous pouvez utiliser le `open` mot clé pour les modules et les espaces de noms fréquemment utilisés. ainsi, lorsque vous référencez un membre de ce module ou de cet espace de noms, vous pouvez utiliser la forme abrégée du nom au lieu du nom complet. Ce mot clé est semblable au `using` mot clé en C#, `using namespace` dans Visual C++ et `Imports` dans Visual Basic.
 
@@ -52,19 +49,19 @@ Certains espaces de noms sont si souvent utilisés dans du code F # qu’ils son
 
 |Espace de noms|Description|
 |---------|-----------|
-|`Microsoft.FSharp.Core`|Contient des définitions de type F # de base pour les types intégrés tels que `int` et `float` .|
-|`Microsoft.FSharp.Core.Operators`|Contient des opérations arithmétiques de base telles que `+` et `*` .|
-|`Microsoft.FSharp.Collections`|Contient des classes de collection immuables telles que `List` et `Array` .|
-|`Microsoft.FSharp.Control`|Contient des types pour les constructions de contrôle telles que l’évaluation différée et les flux de travail asynchrones.|
-|`Microsoft.FSharp.Text`|Contient des fonctions pour les e/s mises en forme, telles que la `printf` fonction.|
+|`FSharp.Core`|Contient des définitions de type F # de base pour les types intégrés tels que `int` et `float` .|
+|`FSharp.Core.Operators`|Contient des opérations arithmétiques de base telles que `+` et `*` .|
+|`FSharp.Collections`|Contient des classes de collection immuables telles que `List` et `Array` .|
+|`FSharp.Control`|Contient des types pour les constructions de contrôle telles que l’évaluation différée et les flux de travail asynchrones.|
+|`FSharp.Text`|Contient des fonctions pour les e/s mises en forme, telles que la `printf` fonction.|
 
 ## <a name="autoopen-attribute"></a>Attribut Open
 
-Vous pouvez appliquer l' `AutoOpen` attribut à un assembly si vous souhaitez ouvrir automatiquement un espace de noms ou un module lorsque l’assembly est référencé. Vous pouvez également appliquer l' `AutoOpen` attribut à un module pour ouvrir automatiquement ce module lors de l’ouverture du module ou de l’espace de noms parent. Pour plus d’informations, consultez [Core. AutoOpenAttribute, classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.autoopenattribute-class-%5bfsharp%5d).
+Vous pouvez appliquer l' `AutoOpen` attribut à un assembly si vous souhaitez ouvrir automatiquement un espace de noms ou un module lorsque l’assembly est référencé. Vous pouvez également appliquer l' `AutoOpen` attribut à un module pour ouvrir automatiquement ce module lors de l’ouverture du module ou de l’espace de noms parent. Pour plus d’informations, consultez [AutoOpenAttribute](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-autoopenattribute.html).
 
 ## <a name="requirequalifiedaccess-attribute"></a>Attribut RequireQualifiedAccess
 
-Certains modules, enregistrements ou types d’Union peuvent spécifier l' `RequireQualifiedAccess` attribut. Lorsque vous référencez des éléments de ces modules, enregistrements ou unions, vous devez utiliser un nom qualifié, que vous incluiez ou non une déclaration d’importation. Si vous utilisez cet attribut de façon stratégique sur des types qui définissent des noms couramment utilisés, vous évitez les conflits de noms et rendez le code plus résilient aux modifications dans les bibliothèques. Pour plus d’informations, consultez [Core. RequireQualifiedAccessAttribute (, classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-%5Bfsharp%5D).
+Certains modules, enregistrements ou types d’Union peuvent spécifier l' `RequireQualifiedAccess` attribut. Lorsque vous référencez des éléments de ces modules, enregistrements ou unions, vous devez utiliser un nom qualifié, que vous incluiez ou non une déclaration d’importation. Si vous utilisez cet attribut de façon stratégique sur des types qui définissent des noms couramment utilisés, vous évitez les conflits de noms et rendez le code plus résilient aux modifications dans les bibliothèques. Pour plus d’informations, consultez [RequireQualifiedAccessAttribute (](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-requirequalifiedaccessattribute.html).
 
 ## <a name="see-also"></a>Voir aussi
 

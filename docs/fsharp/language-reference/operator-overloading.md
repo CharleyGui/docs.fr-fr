@@ -1,13 +1,13 @@
 ---
 title: Surcharge d'opérateur
-description: Découvrez comment surcharger les opérateurs arithmétiques dans une classe ou un type d’enregistrement et F#au niveau global dans.
-ms.date: 05/16/2016
-ms.openlocfilehash: d902a06193481ed87131b3336cd8a2ff54b811b4
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+description: 'Découvrez comment surcharger les opérateurs arithmétiques dans une classe ou un type d’enregistrement et au niveau global en F #.'
+ms.date: 08/15/2020
+ms.openlocfilehash: fb86ceb95101fcc1f157ec9ba17a9d8145b11a91
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216836"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557579"
 ---
 # <a name="operator-overloading"></a>Surcharge d'opérateur
 
@@ -25,9 +25,9 @@ let [inline] (operator-symbols) parameter-list = function-body
 
 ## <a name="remarks"></a>Notes
 
-Dans la syntaxe précédente, *Operator-Symbol* est l’un des `+`caractères `-` `=`, `*`, `/`,,, et ainsi de suite. La *liste de paramètres* spécifie les opérandes dans l’ordre dans lequel ils apparaissent dans la syntaxe habituelle pour cet opérateur. Le *corps de la méthode* construit la valeur résultante.
+Dans la syntaxe précédente, *Operator-Symbol* est l’un des caractères `+` ,,,, `-` `*` `/` `=` , et ainsi de suite. La *liste de paramètres* spécifie les opérandes dans l’ordre dans lequel ils apparaissent dans la syntaxe habituelle pour cet opérateur. Le *corps de la méthode* construit la valeur résultante.
 
-Les surcharges d’opérateur pour les opérateurs doivent être statiques. Les surcharges d’opérateur pour les opérateurs unaires `-`, tels que `+` et, doivent`~`utiliser un tilde () dans le *symbole d’opérateur* pour indiquer que l’opérateur est un opérateur unaire et non un opérateur binaire, comme indiqué dans l’exemple suivant : déclaré.
+Les surcharges d’opérateur pour les opérateurs doivent être statiques. Les surcharges d’opérateur pour les opérateurs unaires, tels que `+` et `-` , doivent utiliser un tilde ( `~` ) dans le *symbole d’opérateur* pour indiquer que l’opérateur est un opérateur unaire et non un opérateur binaire, comme indiqué dans la déclaration suivante.
 
 ```fsharp
 static member (~-) (v : Vector)
@@ -39,19 +39,19 @@ Le code suivant illustre une classe Vector qui n’a que deux opérateurs, l’u
 
 ## <a name="creating-new-operators"></a>Créer des opérateurs
 
-Vous pouvez surcharger tous les opérateurs standard, mais vous pouvez également créer des opérateurs à partir de séquences de certains caractères. Les caractères d’opérateur `!`autorisés `%`sont `&`, `*`, `+`, `-`,,, `.`, ,,`<`, ,`>` `/` `=` `?`,,, et`~`. `@` `^` `|` Le `~` caractère a la signification particulière de la création d’un opérateur unaire et ne fait pas partie de la séquence de caractères de l’opérateur. Tous les opérateurs ne peuvent pas être rendus unaires.
+Vous pouvez surcharger tous les opérateurs standard, mais vous pouvez également créer des opérateurs à partir de séquences de certains caractères. Les caractères d’opérateur autorisés sont `!` , `%` , `&` , `*` , `+` , `-` , `.` ,, `/` `<` , `=` , `>` , `?` , `@` ,, `^` `|` et `~` . Le `~` caractère a la signification particulière de la création d’un opérateur unaire et ne fait pas partie de la séquence de caractères de l’opérateur. Tous les opérateurs ne peuvent pas être rendus unaires.
 
 Selon la séquence de caractères exacte que vous utilisez, votre opérateur aura une certaine priorité et associativité. L’associativité peut être de gauche à droite ou de droite à gauche et est utilisée chaque fois que des opérateurs du même niveau de priorité apparaissent sans parenthèses dans l’ordre.
 
-Le caractère `.` d’opérateur n’affecte pas la précédence. ainsi, par exemple, si vous souhaitez définir votre propre version de la multiplication qui a la même priorité et associativité que la multiplication ordinaire, vous pouvez créer des opérateurs tels que `.*`.
+Le caractère `.` d’opérateur n’affecte pas la précédence. ainsi, par exemple, si vous souhaitez définir votre propre version de la multiplication qui a la même priorité et associativité que la multiplication ordinaire, vous pouvez créer des opérateurs tels que `.*` .
 
-Seuls les opérateurs `?` et `?<-` peuvent commencer par `?`.
+Seuls les opérateurs `?` et `?<-` peuvent commencer par `?` .
 
-Une table qui affiche la priorité de tous les opérateurs F# dans se trouve dans les informations de référence sur les [symboles et](./symbol-and-operator-reference/index.md)les opérateurs.
+Une table qui affiche la priorité de tous les opérateurs en F # est disponible dans [référence des symboles et des opérateurs](./symbol-and-operator-reference/index.md).
 
 ## <a name="overloaded-operator-names"></a>Noms des opérateurs surchargés
 
-Lorsque le F# compilateur compile une expression d’opérateur, il génère une méthode qui a un nom généré par le compilateur pour cet opérateur. Il s’agit du nom qui s’affiche dans le langage MSIL (Microsoft Intermediate Language) pour la méthode et également dans la réflexion et IntelliSense. Normalement, vous n’avez pas besoin d’utiliser ces F# noms dans le code.
+Quand le compilateur F # compile une expression d’opérateur, il génère une méthode qui a un nom généré par le compilateur pour cet opérateur. Il s’agit du nom qui s’affiche dans le langage MSIL (Microsoft Intermediate Language) pour la méthode et également dans la réflexion et IntelliSense. Normalement, vous n’avez pas besoin d’utiliser ces noms dans le code F #.
 
 Le tableau suivant présente les opérateurs standard et leurs noms générés correspondants.
 
@@ -95,9 +95,11 @@ Le tableau suivant présente les opérateurs standard et leurs noms générés c
 |`..`|`op_Range`|
 |`.. ..`|`op_RangeStep`|
 
-D’autres combinaisons de caractères d’opérateur qui ne sont pas répertoriées ici peuvent être utilisées en tant qu’opérateurs et ont des noms qui sont composés en concaténant des noms pour les caractères individuels du tableau suivant. Par exemple, + ! devient `op_PlusBang`.
+Notez que l' `not` opérateur en F # n’est pas émis `op_Inequality` , car il ne s’agit pas d’un opérateur symbolique. Il s’agit d’une fonction qui émet un langage intermédiaire qui nie une expression booléenne.
 
-|Caractère d’opérateur|Name|
+D’autres combinaisons de caractères d’opérateur qui ne sont pas répertoriées ici peuvent être utilisées en tant qu’opérateurs et ont des noms qui sont composés en concaténant des noms pour les caractères individuels du tableau suivant. Par exemple, + ! devient `op_PlusBang` .
+
+|Caractère d’opérateur|Nom|
 |------------------|----|
 |`>`|`Greater`|
 |`<`|`Less`|
@@ -125,7 +127,7 @@ D’autres combinaisons de caractères d’opérateur qui ne sont pas répertori
 
 Les opérateurs de *préfixe* sont censés être placés devant un opérande ou des opérandes, à l’instar d’une fonction. Les opérateurs *infixes* sont censés être placés entre les deux opérandes.
 
-Seuls certains opérateurs peuvent être utilisés comme opérateurs de préfixe. Certains opérateurs sont toujours des opérateurs de préfixe, d’autres peuvent être infixes ou préfixes, tandis que les autres sont toujours des opérateurs infixes. Les opérateurs qui commencent `!`par, `!=`except et l’opérateur `~`, ou les séquences répétées de, sont toujours des opérateurs de`~`préfixe. Les opérateurs `+` `-` ,,`%`, ,,`-.`, et peuventêtredesopérateursdepréfixeoudesopérateursinfixes.`%%` `&` `+.` `&&` Vous pouvez distinguer la version préfixée de ces opérateurs de la version infix `~` en ajoutant un au début d’un opérateur préfixé lorsqu’il est défini. Le `~` n’est pas utilisé lorsque vous utilisez l’opérateur, uniquement lorsqu’il est défini.
+Seuls certains opérateurs peuvent être utilisés comme opérateurs de préfixe. Certains opérateurs sont toujours des opérateurs de préfixe, d’autres peuvent être infixes ou préfixes, tandis que les autres sont toujours des opérateurs infixes. Les opérateurs qui commencent par `!` , except `!=` et l’opérateur `~` , ou les séquences répétées de `~` , sont toujours des opérateurs de préfixe. Les opérateurs,,,,,, `+` `-` `+.` et peuvent être des opérateurs de `-.` `&` `&&` `%` `%%` préfixe ou des opérateurs infixes. Vous pouvez distinguer la version préfixée de ces opérateurs de la version infix en ajoutant un `~` au début d’un opérateur préfixé lorsqu’il est défini. Le `~` n’est pas utilisé lorsque vous utilisez l’opérateur, uniquement lorsqu’il est défini.
 
 ## <a name="example"></a>Exemple
 
@@ -133,7 +135,7 @@ Le code suivant illustre l’utilisation de la surcharge d’opérateur pour imp
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4002.fs)]
 
-**Sortie :**
+**Output:**
 
 ```console
 3/4 + 1/2 = 5/4
@@ -145,16 +147,16 @@ Le code suivant illustre l’utilisation de la surcharge d’opérateur pour imp
 
 ## <a name="operators-at-the-global-level"></a>Opérateurs au niveau global
 
-Vous pouvez également définir des opérateurs au niveau global. Le code suivant définit un opérateur `+?`.
+Vous pouvez également définir des opérateurs au niveau global. Le code suivant définit un opérateur `+?` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4003.fs)]
 
-La sortie du code ci-dessus `12`est.
+La sortie du code ci-dessus est `12` .
 
-Vous pouvez redéfinir les opérateurs arithmétiques normaux de cette manière, car les F# règles de portée pour déterminent que les opérateurs nouvellement définis sont prioritaires sur les opérateurs intégrés.
+Vous pouvez redéfinir les opérateurs arithmétiques réguliers de cette manière, car les règles de portée pour F # dictent que les opérateurs nouvellement définis sont prioritaires sur les opérateurs intégrés.
 
-Le mot `inline` clé est souvent utilisé avec les opérateurs globaux, qui sont souvent des petites fonctions qui sont mieux intégrées dans le code appelant. La création d’une fonction d’opérateur Inline permet également de travailler avec des paramètres de type résolus statiquement pour produire du code générique résolu statiquement. Pour plus d’informations, consultez [fonctions inline](./functions/inline-functions.md) et [paramètres de type résolus statiquement](./generics/statically-resolved-type-parameters.md).
+Le mot clé `inline` est souvent utilisé avec les opérateurs globaux, qui sont souvent des petites fonctions qui sont mieux intégrées dans le code appelant. La création d’une fonction d’opérateur Inline permet également de travailler avec des paramètres de type résolus statiquement pour produire du code générique résolu statiquement. Pour plus d’informations, consultez [fonctions inline](./functions/inline-functions.md) et [paramètres de type résolus statiquement](./generics/statically-resolved-type-parameters.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Membres](./members/index.md)
+- [Members](./members/index.md) (Membres)

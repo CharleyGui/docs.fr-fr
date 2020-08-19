@@ -1,20 +1,17 @@
 ---
 title: Littéraux
 description: 'En savoir plus sur les types de littéraux dans le langage de programmation F #.'
-ms.date: 06/28/2019
-ms.openlocfilehash: 98d609a1cf0beb00c0dd4d45ea343aaa2280b62e
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: 15f73db3c36f7c60ab1eeba96c63a28ebc6d7f01
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855021"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559152"
 ---
 # <a name="literals"></a>Littéraux
 
 Cet article fournit un tableau qui montre comment spécifier le type d’un littéral en F #.
-
-> [!NOTE]
-> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="literal-types"></a>Types de littéral
 
@@ -34,19 +31,19 @@ Le tableau suivant présente les types de littéraux en F #. Les caractères qui
 |uint64|nombre naturel non signé 64 bits|UL|`86UL`|
 |unique, float32|nombre à virgule flottante 32 bits|F ou f|`4.14F` ou `4.14f`|
 |||chariot|`0x00000000lf`|
-|dissocié Cliquer|nombre à virgule flottante 64 bits|Aucun|`4.14` ou `2.3E+32` ou `2.3e+32`|
+|dissocié Cliquer|nombre à virgule flottante 64 bits|aucun|`4.14` ou `2.3E+32` ou `2.3e+32`|
 |||CHARIOT|`0x0000000000000000LF`|
 |bigint|entier non limité à la représentation 64 bits|I|`9999999999999999999999999999I`|
 |Décimal|nombre fractionnaire représenté sous la forme d’un nombre à virgule fixe ou rationnel|M ou m|`0.7833M` ou `0.7833m`|
-|Char|Caractère Unicode|Aucun|`'a'` ou `'\u0061'`|
-|String|chaîne Unicode|Aucun|`"text\n"`<br /><br />or<br /><br />`@"c:\filename"`<br /><br />or<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />or<br /><br />`"string1" + "string2"`<br /><br />Voir aussi [chaînes](Strings.md).|
+|Char|Caractère Unicode|aucun|`'a'` ou `'\u0061'`|
+|String|chaîne Unicode|aucun|`"text\n"`<br /><br />or<br /><br />`@"c:\filename"`<br /><br />or<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />or<br /><br />`"string1" + "string2"`<br /><br />Voir aussi [chaînes](Strings.md).|
 |byte|Caractère ASCII|B|`'a'B`|
 |byte[]|Chaîne ASCII|B|`"text"B`|
-|String ou Byte []|chaîne textuelle|@ préfixe|`@"\\server\share"`Unicode<br /><br />`@"\\server\share"B`R|
+|String ou Byte []|chaîne textuelle|@ préfixe|`@"\\server\share"` Unicode<br /><br />`@"\\server\share"B` R|
 
 ## <a name="named-literals"></a>Littéraux nommés
 
-Les valeurs qui sont destinées à être des constantes peuvent être marquées avec l’attribut [Literal](https://msdn.microsoft.com/library/465f36ce-d146-41c0-b425-679c509cd285) . Cet attribut a pour effet de provoquer la compilation d’une valeur en tant que constante.
+Les valeurs qui sont destinées à être des constantes peuvent être marquées avec l’attribut [Literal](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-literalattribute.html) . Cet attribut a pour effet de provoquer la compilation d’une valeur en tant que constante.
 
 Dans les expressions de critères spéciaux, les identificateurs qui commencent par des caractères minuscules sont toujours traités comme des variables à lier, plutôt que comme des littéraux. vous devez donc généralement utiliser des majuscules lorsque vous définissez des littéraux.
 
@@ -93,7 +90,3 @@ let valueAsBits = 0b1101_1110_1010_1101_1011_1110_1110_1111
 
 let exampleSSN = 123_456_7890
 ```
-
-## <a name="see-also"></a>Voir aussi
-
-- [Core. LiteralAttribute (, classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.literalattribute-class-%5bfsharp%5d)

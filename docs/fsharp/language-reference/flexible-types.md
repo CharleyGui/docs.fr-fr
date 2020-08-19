@@ -1,13 +1,13 @@
 ---
 title: Types flexibles
-description: Découvrez comment utiliser F# l’annotation de type flexible, qui indique qu’un paramètre, une variable ou une valeur a un type qui est compatible avec un type spécifié.
-ms.date: 05/16/2016
-ms.openlocfilehash: bf05f78f163d1f9c73c667df60925b66a5315627
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+description: 'Découvrez comment utiliser l’annotation de type flexible F #, qui indique qu’un paramètre, une variable ou une valeur a un type qui est compatible avec un type spécifié.'
+ms.date: 08/15/2020
+ms.openlocfilehash: 44241ad082cd7f3de9e0cc6a48b8a8946e7b33d3
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71083065"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557748"
 ---
 # <a name="flexible-types"></a>Types flexibles
 
@@ -31,13 +31,13 @@ Un type flexible est équivalent à un type générique qui a une contrainte qui
 'T when 'T :> SomeType
 ```
 
-Les types flexibles sont utiles dans plusieurs types de situations. Par exemple, lorsque vous avez une fonction d’ordre supérieur (une fonction qui prend une fonction comme argument), il est souvent utile que la fonction retourne un type flexible. Dans l’exemple suivant, l’utilisation d’un type flexible avec un argument de séquence `iterate2` dans permet à la fonction d’ordre supérieur d’utiliser des fonctions qui génèrent des séquences, des tableaux, des listes et tout autre type énumérable.
+Les types flexibles sont utiles dans plusieurs types de situations. Par exemple, lorsque vous avez une fonction d’ordre supérieur (une fonction qui prend une fonction comme argument), il est souvent utile que la fonction retourne un type flexible. Dans l’exemple suivant, l’utilisation d’un type flexible avec un argument de séquence dans `iterate2` permet à la fonction d’ordre supérieur d’utiliser des fonctions qui génèrent des séquences, des tableaux, des listes et tout autre type énumérable.
 
 Considérez les deux fonctions suivantes, dont l’une retourne une séquence, l’autre qui retourne un type flexible.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4101.fs)]
 
-En guise d’autre exemple, considérez la fonction de bibliothèque [Seq. Concat](https://msdn.microsoft.com/library/2eeb69a9-fc2f-4b7d-8dee-101fa2b00712) :
+En guise d’autre exemple, considérez la fonction de bibliothèque [Seq. Concat](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html#concat) :
 
 ```fsharp
 val concat: sequences:seq<#seq<'T>> -> seq<'T>
@@ -65,9 +65,9 @@ seq [1; 2; 3; 4; ...]
 seq [1; 2; 3; 4; ...]
 ```
 
-Dans F#, comme dans d’autres langages orientés objet, il existe des contextes dans lesquels les types dérivés ou les types qui implémentent les interfaces sont convertis automatiquement en type de base ou en type d’interface. Ces conversions automatiques se produisent dans les arguments directs, mais pas lorsque le type est en position subordonnée, dans le cadre d’un type plus complexe, tel qu’un type de retour d’un type de fonction, ou en tant qu’argument de type. Par conséquent, la notation de type flexible est surtout utile lorsque le type auquel vous l’appliquez fait partie d’un type plus complexe.
+En F #, comme dans d’autres langages orientés objet, il existe des contextes dans lesquels les types dérivés ou les types qui implémentent les interfaces sont convertis automatiquement en type de base ou en type d’interface. Ces conversions automatiques se produisent dans les arguments directs, mais pas lorsque le type est en position subordonnée, dans le cadre d’un type plus complexe, tel qu’un type de retour d’un type de fonction, ou en tant qu’argument de type. Par conséquent, la notation de type flexible est surtout utile lorsque le type auquel vous l’appliquez fait partie d’un type plus complexe.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence du langage F#](index.md)
+- [Informations de référence sur le langage F #](index.md)
 - [Génériques](./generics/index.md)

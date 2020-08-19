@@ -1,17 +1,17 @@
 ---
-title: Le mot clé fixed
-description: Découvrez comment vous pouvez « pin » une variable locale dans la pile pour éviter la collection avec le F# mot clé « fixed ».
-ms.date: 04/24/2017
-ms.openlocfilehash: 7fdf66560f3e2ab7584b00c7e4584d7f6c161858
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+title: Mot clé Fixed
+description: 'Découvrez comment vous pouvez « épingler » un local sur la pile pour empêcher la collecte avec le mot clé F # « Fixed ».'
+ms.date: 08/15/2020
+ms.openlocfilehash: 786ffd706c243fc83f8fb3afc2201d2a34536372
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772656"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559178"
 ---
-# <a name="the-fixed-keyword"></a>Le mot clé fixed
+# <a name="the-fixed-keyword"></a>Mot clé Fixed
 
-F#4.1 introduit le `fixed` mot clé, qui vous permet de « épingler » une variable locale dans la pile pour éviter d’être collectées ou déplacé pendant le garbage collection.  Il est utilisé pour les scénarios de programmation de bas niveau.
+Le `fixed` mot clé vous permet d’épingler une variable locale sur la pile pour l’empêcher d’être collectée ou déplacée pendant le garbage collection.  Il est utilisé pour les scénarios de programmation de bas niveau.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,13 +21,13 @@ use ptr = fixed expression
 
 ## <a name="remarks"></a>Notes
 
-Cela permet d’étendre la syntaxe des expressions pour permettre l’extraction d’un pointeur et le lier à un nom qui ne peut pas être collectées ou déplacé pendant le garbage collection.  
+Cela étend la syntaxe des expressions pour permettre l’extraction d’un pointeur et sa liaison à un nom qui ne peut pas être collecté ou déplacé pendant le garbage collection.  
 
-Correction d’un pointeur à partir d’une expression via la `fixed` mot clé est lié à un identificateur via le `use` mot clé.  La sémantique de cela est similaire à la gestion des ressources via les `use` mot clé.  Le pointeur est résolu pendant qu’il est dans la portée et une fois qu’il est hors de portée, il est fixe n’est plus.  `fixed` ne peut pas être utilisé en dehors du contexte d’un `use` liaison.  Vous devez lier le pointeur à un nom avec `use`.
+Un pointeur à partir d’une expression est fixe via le `fixed` mot clé est lié à un identificateur via le `use` mot clé.  La sémantique de cette valeur est similaire à la gestion des ressources via le `use` mot clé.  Le pointeur est fixe alors qu’il est dans la portée et, une fois qu’il est hors de portée, il n’est plus résolu.  `fixed` ne peut pas être utilisé en dehors du contexte d’une `use` liaison.  Vous devez lier le pointeur à un nom avec `use` .
 
-Utilisation de `fixed` doivent se produire dans une expression dans une fonction ou une méthode.  Il ne peut pas être utilisé dans une étendue au niveau du script ou au niveau du module.
+L’utilisation de `fixed` doit se produire dans une expression d’une fonction ou d’une méthode.  Elle ne peut pas être utilisée au niveau du script ou au niveau du module.
 
-Comme tout code de pointeur, cela est une fonctionnalité unsafe et émet un avertissement lorsqu’il est utilisé.
+Comme tout comme le code de pointeur, il s’agit d’une fonctionnalité non sécurisée qui émet un avertissement quand elle est utilisée.
 
 ## <a name="example"></a>Exemple
 
@@ -63,4 +63,4 @@ doPointerWork()
 
 ## <a name="see-also"></a>Voir aussi
 
-- [NativePtr (Module)](https://msdn.microsoft.com/visualfsharpdocs/conceptual/nativeinterop.nativeptr-module-%5Bfsharp%5D)
+- [Module NativePtr](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop-nativeptrmodule.html)

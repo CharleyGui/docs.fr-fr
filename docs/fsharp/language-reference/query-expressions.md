@@ -1,19 +1,17 @@
 ---
 title: Expressions de requête
 description: 'En savoir plus sur la prise en charge des expressions de requête pour LINQ dans le langage de programmation F #.'
-ms.date: 05/16/2016
-ms.openlocfilehash: c6f33a58bc959745a5f83bdcfe378a4dbbe577c5
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: afcc6e92818b1648a210ad9cfc3f1dcfa46037b5
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855034"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559061"
 ---
 # <a name="query-expressions"></a>Expressions de requête
 
 Les expressions de requête vous permettent d’interroger une source de données et de placer les données sous la forme souhaitée. Les expressions de requête prennent en charge LINQ en F #.
-> [!NOTE]
-> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,9 +43,9 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-Dans l’exemple de code précédent, l’expression de requête est entre accolades. La signification du code dans l’expression est, retourne chaque client de la table Customers dans la base de données dans les résultats de la requête. Les expressions de requête retournent un type qui implémente <xref:System.Linq.IQueryable%601> et <xref:System.Collections.Generic.IEnumerable%601> , et elles peuvent donc être itérées à l’aide du [module Seq](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) comme le montre l’exemple.
+Dans l’exemple de code précédent, l’expression de requête est entre accolades. La signification du code dans l’expression est, retourne chaque client de la table Customers dans la base de données dans les résultats de la requête. Les expressions de requête retournent un type qui implémente <xref:System.Linq.IQueryable%601> et <xref:System.Collections.Generic.IEnumerable%601> , et elles peuvent donc être itérées à l’aide du [module Seq](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html) comme le montre l’exemple.
 
-Chaque type d’expression de calcul est construit à partir d’une classe de générateur. La classe du générateur pour l’expression de calcul de la requête est `QueryBuilder` . Pour plus d’informations, consultez [expressions de calcul](computation-expressions.md) et [classe LINQ. querybuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
+Chaque type d’expression de calcul est construit à partir d’une classe de générateur. La classe du générateur pour l’expression de calcul de la requête est `QueryBuilder` . Pour plus d’informations, consultez [expressions de calcul](computation-expressions.md) et [classe querybuilder](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html).
 
 ## <a name="query-operators"></a>Opérateurs de requête
 
@@ -55,7 +53,7 @@ Les opérateurs de requête vous permettent de spécifier les détails de la req
 
 Seules les expressions qui peuvent être traduites en SQL sont autorisées dans les expressions de requête. Par exemple, aucun appel de fonction n’est autorisé dans les expressions lorsque vous utilisez l' `where` opérateur de requête.
 
-Le tableau 1 montre les opérateurs de requête disponibles. En outre, consultez table2, qui compare les requêtes SQL et les expressions de requête F # équivalentes, plus loin dans cette rubrique. Certains opérateurs de requête ne sont pas pris en charge par certains fournisseurs de type. En particulier, le fournisseur de type OData est limité dans les opérateurs de requête qu’il prend en charge en raison de limitations dans OData. Pour plus d’informations, consultez [fournisseur de type ODataService (F #)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
+Le tableau 1 montre les opérateurs de requête disponibles. En outre, consultez table2, qui compare les requêtes SQL et les expressions de requête F # équivalentes, plus loin dans cette rubrique. Certains opérateurs de requête ne sont pas pris en charge par certains fournisseurs de type. En particulier, le fournisseur de type OData est limité dans les opérateurs de requête qu’il prend en charge en raison de limitations dans OData.
 
 Ce tableau suppose qu’une base de données se présente sous la forme suivante :
 
@@ -682,7 +680,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>IN</code>ensemble de valeurs spécifiées<br/>
+<code>IN</code> ensemble de valeurs spécifiées<br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -723,7 +721,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>avec l’ensemble de correspondances de modèle.<br/>
+<code>LIKE</code> avec l’ensemble de correspondances de modèle.<br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -740,7 +738,7 @@ WHERE Student.Name LIKE '[abc]%'
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>avec le modèle d’exclusion défini.<br/>
+<code>LIKE</code> avec le modèle d’exclusion défini.<br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -759,7 +757,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>sur un champ, mais sélectionnez un autre champ.<br/>
+<code>LIKE</code> sur un champ, mais sélectionnez un autre champ.<br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -809,7 +807,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code>avec deux tables.<br/>
+</td></tr><tr><td><code>LEFT JOIN</code> avec deux tables.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -911,7 +909,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code>avec classement<br/>
+</td></tr><tr><td><code>OR</code> avec classement<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -951,7 +949,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code>de deux requêtes.<br/>
+</td></tr><tr><td><code>UNION</code> de deux requêtes.<br/>
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable no-space-in-emphasis -->
@@ -1006,7 +1004,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><code>CASE</code>Etat.<br/>
+</td></tr><tr><td><code>CASE</code> Etat.<br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -2439,5 +2437,5 @@ end
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur le langage F #](index.md)
-- [Classe LINQ. QueryBuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
+- [QueryBuilder, classe](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html)
 - [Expressions de calcul](Computation-Expressions.md)

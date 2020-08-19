@@ -1,13 +1,13 @@
 ---
 title: Extensions de type
-description: Découvrez comment F# les extensions de type vous permettent d’ajouter de nouveaux membres à un type d’objet précédemment défini.
+description: 'Découvrez comment les extensions de type F # vous permettent d’ajouter de nouveaux membres à un type d’objet précédemment défini.'
 ms.date: 02/05/2020
-ms.openlocfilehash: 9ab3a007783f67fd8d80cff840ac3085fdcd60f7
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 8fdb2d5e527643b23d24a6118e8cef6b11f1a546
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77092679"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559126"
 ---
 # <a name="type-extensions"></a>Extensions de type
 
@@ -67,11 +67,11 @@ type Variant with
 
 L’utilisation d’une extension de type vous permet de séparer chacun des éléments suivants :
 
-- Déclaration d’un type de `Variant`
-- Fonctionnalité pour imprimer la classe `Variant` en fonction de sa « forme »
-- Un moyen d’accéder à la fonctionnalité d’impression avec la notation `.`de style objet
+- Déclaration d’un `Variant` type
+- Fonctionnalité pour imprimer la `Variant` classe en fonction de sa « forme »
+- Un moyen d’accéder à la fonctionnalité d’impression avec la notation de style objet `.`
 
-Il s’agit d’une alternative à la définition de tout en tant que membre sur `Variant`. Bien qu’il ne s’agisse pas d’une approche fondamentalement meilleure, il peut s’agir d’une représentation plus claire des fonctionnalités dans certaines situations.
+Il s’agit d’une alternative à la définition de tout en tant que membre sur `Variant` . Bien qu’il ne s’agisse pas d’une approche fondamentalement meilleure, il peut s’agir d’une représentation plus claire des fonctionnalités dans certaines situations.
 
 Les extensions de type intrinsèque sont compilées en tant que membres du type qu’elles augmentent et apparaissent sur le type quand le type est examiné par réflexion.
 
@@ -93,13 +93,13 @@ type IEnumerable<'T> with
         }
 ```
 
-Vous pouvez maintenant accéder à `RepeatElements` comme s’il s’agissait d’un membre de <xref:System.Collections.Generic.IEnumerable%601> tant que le module `Extensions` est ouvert dans l’étendue dans laquelle vous travaillez.
+Vous pouvez maintenant accéder `RepeatElements` comme s’il s’agissait d’un membre de <xref:System.Collections.Generic.IEnumerable%601> tant que le `Extensions` module est ouvert dans l’étendue dans laquelle vous travaillez.
 
 Les extensions facultatives n’apparaissent pas sur le type étendu lorsqu’elles sont examinées par réflexion. Les extensions facultatives doivent se trouver dans des modules, et elles sont uniquement dans la portée lorsque le module qui contient l’extension est ouvert ou est dans la portée.
 
 Les membres d’extension facultatifs sont compilés en membres statiques pour lesquels l’instance de l’objet est passée implicitement en tant que premier paramètre. Toutefois, ils agissent comme s’il s’agissait de membres d’instance ou de membres statiques en fonction de la façon dont ils sont déclarés.
 
-Les membres d’extension facultatifs ne sont C# pas non plus visibles pour les consommateurs ou Visual Basic. Ils peuvent uniquement être consommés dans F# un autre code.
+Les membres d’extension facultatifs ne sont pas non plus visibles pour les consommateurs C# ou Visual Basic. Ils peuvent uniquement être consommés dans un autre code F #.
 
 ## <a name="generic-limitation-of-intrinsic-and-optional-type-extensions"></a>Limitation générique des extensions de type intrinsèques et facultatives
 
@@ -119,21 +119,22 @@ type IEnumerable<'T> with
 
 Il n’existe aucun moyen de faire en sorte que ce code fonctionne avec une extension de type facultative :
 
-- Comme c’est le cas, le membre `Sum` a une contrainte différente sur `'T` (`static member get_Zero` et `static member (+)`) que celle définie par l’extension de type.
-- La modification de l’extension de type pour avoir la même contrainte que `Sum` ne correspondra plus à la contrainte définie sur `IEnumerable<'T>`.
-- La modification de `member this.Sum` en `member inline this.Sum` génère une erreur indiquant que les contraintes de type ne correspondent pas.
+- Comme c’est le cas, le `Sum` membre a une contrainte différente sur `'T` ( `static member get_Zero` et `static member (+)` ) que celle définie par l’extension de type.
+- La modification de l’extension de type pour avoir la même contrainte que `Sum` ne correspondra plus à la contrainte définie sur `IEnumerable<'T>` .
+- La modification `member this.Sum` de en `member inline this.Sum` génère une erreur indiquant que les contraintes de type ne correspondent pas.
 
 Les méthodes statiques qui sont souhaitées sont des méthodes statiques qui « flottent dans l’espace » et peuvent être présentées comme si elles étendaient un type. C’est là que les méthodes d’extension deviennent nécessaires.
 
 ## <a name="extension-methods"></a>Méthodes d’extension
 
-Enfin, les méthodes d’extension (parfoisC# appelées « membres d’extension de style » F# ) peuvent être déclarées dans en tant que méthode de membre statique sur une classe.
+Enfin, les méthodes d’extension (parfois appelées « membres d’extension de style C# ») peuvent être déclarées en F # en tant que méthode de membre statique sur une classe.
 
 Les méthodes d’extension sont utiles lorsque vous souhaitez définir des extensions sur un type générique qui contraignent la variable de type. Par exemple :
 
 ```fsharp
 namespace Extensions
 
+open System.Collections.Generic
 open System.Runtime.CompilerServices
 
 [<Extension>]
@@ -142,9 +143,9 @@ type IEnumerableExtensions =
     static member inline Sum(xs: IEnumerable<'T>) = Seq.sum xs
 ```
 
-Lorsqu’il est utilisé, ce code apparaît comme si `Sum` est défini sur <xref:System.Collections.Generic.IEnumerable%601>, tant que `Extensions` a été ouvert ou est dans l’étendue.
+Lorsqu’il est utilisé, ce code s’affiche comme si `Sum` est défini sur <xref:System.Collections.Generic.IEnumerable%601> , tant que `Extensions` a été ouvert ou est dans l’étendue.
 
-Pour que l’extension soit disponible pour le code VB.NET, un `ExtensionAttribute` supplémentaire est requis au niveau de l’assembly :
+Pour que l’extension soit disponible pour le code VB.NET, une valeur supplémentaire `ExtensionAttribute` est requise au niveau de l’assembly :
 
 ```fsharp
 module AssemblyInfo
@@ -159,7 +160,7 @@ Les extensions de type ont également les attributs suivants :
 
 - Tout type accessible peut être étendu.
 - Les extensions de type intrinsèques et facultatives peuvent définir _n’importe quel type de_ membre, pas seulement des méthodes. Ainsi, les propriétés d’extension sont également possibles, par exemple.
-- Le jeton `self-identifier` dans la [syntaxe](type-extensions.md#syntax) représente l’instance du type appelé, tout comme les membres ordinaires.
+- Le `self-identifier` jeton dans la [syntaxe](type-extensions.md#syntax) représente l’instance du type appelé, tout comme les membres ordinaires.
 - Les membres étendus peuvent être des membres statiques ou d’instance.
 - Les variables de type sur une extension de type doivent correspondre aux contraintes du type déclaré.
 
@@ -172,11 +173,11 @@ Les limitations suivantes existent également pour les extensions de type :
 - Les extensions de type ne peuvent pas être définies sur les [abréviations de type](type-abbreviations.md).
 - Les extensions de type ne sont pas valides pour `byref<'T>` (bien qu’elles puissent être déclarées).
 - Les extensions de type ne sont pas valides pour les attributs (bien qu’elles puissent être déclarées).
-- Vous pouvez définir des extensions qui surchargent d’autres méthodes du même nom F# , mais le compilateur donne la préférence aux méthodes non d’extension en cas d’appel ambigu.
+- Vous pouvez définir des extensions qui surchargent d’autres méthodes du même nom, mais le compilateur F # donne la préférence aux méthodes qui ne sont pas des extensions si un appel est ambigu.
 
 Enfin, s’il existe plusieurs extensions de type intrinsèques pour un type, tous les membres doivent être uniques. Pour les extensions de type facultatives, les membres de différentes extensions de type du même type peuvent avoir le même nom. Les erreurs d’ambiguïté se produisent uniquement si le code client ouvre deux portées différentes qui définissent les mêmes noms de membres.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le langage F#](index.md)
+- [Informations de référence sur le langage F #](index.md)
 - [Members](./members/index.md) (Membres)

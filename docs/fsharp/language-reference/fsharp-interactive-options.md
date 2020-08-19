@@ -1,13 +1,13 @@
 ---
 title: Options interactives
 description: En savoir plus sur les options de ligne de commande prises en charge par F# Interactive, fsi.exe.
-ms.date: 07/22/2020
-ms.openlocfilehash: abddd1fd990be18ede139ab26ffe80513ba6e0dd
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: da2251c1d2e57090ed926e501cebf3c53ac58052
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855346"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558606"
 ---
 # <a name="f-interactive-options"></a>Options de F# Interactive
 
@@ -44,7 +44,7 @@ Quand des listes apparaissent dans F# Interactive arguments de l’option, les �
 |**--GUI**[ **+**&#124;**-** ]|Active ou désactive la boucle d’événements Windows Forms. Il est activé par défaut.|
 |**--aide**<br /><br />**-?**|Utilisé pour afficher la syntaxe de la ligne de commande et une brève description de chaque option.|
 |**--lib : &lt; Folder-List&gt;**<br /><br />**-I : &lt; dossier-liste&gt;**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
-|**--Load : &lt; nom de fichier&gt;**|Compile le code source donné au démarrage et charge les constructions F # compilées dans la session. Si la source cible contient des directives de script telles que **#use** ou **#load**, vous devez utiliser **--use** ou **#use** à la place de **--Load** ou **#load**.|
+|**--Load : &lt; nom de fichier&gt;**|Compile le code source donné au démarrage et charge les constructions F # compilées dans la session.|
 |**--mlcompatibility**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--noframework**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez [Options du compilateur](compiler-options.md)|
 |**--nologo**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
@@ -56,7 +56,7 @@ Quand des listes apparaissent dans F# Interactive arguments de l’option, les �
 |**--ReadLine**[ **+**&#124;**-** ]|Activez ou désactivez la saisie semi-automatique par tabulation en mode interactif.|
 |**--Référence : &lt; nom de fichier&gt;**<br /><br />**-r : &lt; nom_fichier&gt;**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--tailcalls**[ **+**&#124;**-** ]|Activez ou désactivez l’utilisation de l’instruction IL tail, qui entraîne la réutilisation du frame de pile pour les fonctions récursives tail. Cette option est activée par défaut.|
-|**--TargetProfile : &lt; chaîne&gt;**|Spécifie le profil du Framework cible de cet assembly. Les valeurs valides sont `mscorlib`, `netcore` ou `netstandard`. Par défaut, il s’agit de `mscorlib`.|
+|**--TargetProfile : &lt; chaîne&gt;**|Spécifie le profil du Framework cible de cet assembly. Les valeurs valides sont `mscorlib`, `netcore` ou `netstandard`. La valeur par défaut est `mscorlib`.|
 |**--Use : &lt; nom_fichier&gt;**|Indique à l’interpréteur d’utiliser le fichier donné au démarrage comme entrée initiale.|
 |**--utf8output**|Identique à l’option du compilateur fsc.exe. Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--Warn : &lt; Warning-niveau&gt;**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
@@ -97,7 +97,7 @@ fsi.ShowIEnumerable <- false // Control whether sequence values are expanded by 
 fsi.ShowDeclarationValues <- false // Control whether values are shown for declaration outputs
 ```
 
-### <a name="customize-with-addprinter-and-addprinttransformer"></a>Personnaliser avec `AddPrinter` et`AddPrintTransformer`
+### <a name="customize-with-addprinter-and-addprinttransformer"></a>Personnaliser avec `AddPrinter` et `AddPrintTransformer`
 
 L’impression dans F# Interactive sorties peut être personnalisée à l’aide `fsi.AddPrinter` de et de `fsi.AddPrintTransformer` .
 La première fonction donne du texte pour remplacer l’impression d’un objet. La deuxième fonction retourne un objet de substitution à afficher à la place. Par exemple, considérez le code F # suivant :
@@ -126,7 +126,7 @@ val newYearsDay1999 : DateAndLabel = { Date = 1999-01-01T00:00:00
                                        Label = "New Year" }
 ```
 
-`fsi.AddPrintTransformer`peut être utilisé pour fournir un objet de substitution pour l’impression :
+`fsi.AddPrintTransformer` peut être utilisé pour fournir un objet de substitution pour l’impression :
 
 ```fsharp
 type MyList(values: int list) =

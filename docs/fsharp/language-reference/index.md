@@ -1,17 +1,21 @@
 ---
 title: Référence du langage
 description: 'Recherchez des informations sur les fonctionnalités du langage F # à partir de cette référence vers les jetons de langage, les concepts, les types, les expressions et les rubriques de construction prises en charge par le compilateur.'
-ms.date: 05/16/2016
-ms.openlocfilehash: 43272c6684c8fc763e8f99611901f35695f48981
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/13/2020
+ms.openlocfilehash: 02711489c214c1fcdb2da80f30bff63d67769c17
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854956"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558151"
 ---
 # <a name="f-language-reference"></a>Informations de référence sur le langage F#
 
 Cette section est une référence pour le langage F #, un langage de programmation à plusieurs paradigmes ciblant .NET. Le langage F # prend en charge les modèles de programmation fonctionnel, orienté objet et impératif.
+
+## <a name="f-core-library-api-reference"></a>Référence des API de la bibliothèque principale F #
+
+La référence d’API de la [bibliothèque principale f # (FSharp. Core)](https://fsharp.github.io/fsharp-core-docs/) est la référence pour tous les espaces de noms, modules, types et fonctions de la bibliothèque principale f #.
 
 ## <a name="f-tokens"></a>Jetons F#
 
@@ -20,7 +24,7 @@ Le tableau suivant répertorie les Articles de référence qui fournissent des t
 |Intitulé|Description|
 |-----|-----------|
 |[Référence des mots clés](keyword-reference.md)|Contient des liens vers des informations sur tous les mots clés du langage F#.|
-|[Informations de référence des symboles et opérateurs](./symbol-and-operator-reference/index.md)|Contient un tableau des symboles et des opérateurs utilisés en langage F#.|
+|[Informations de référence sur les symboles et les opérateurs](./symbol-and-operator-reference/index.md)|Contient un tableau des symboles et des opérateurs utilisés en langage F#.|
 |[Littéraux](literals.md)|Décrit la syntaxe des valeurs littérales en F# et comment spécifier des informations de type pour les littéraux F#.|
 
 ## <a name="f-language-concepts"></a>Concepts du langage F#
@@ -34,7 +38,7 @@ Le tableau suivant liste les rubriques de référence disponibles qui décrivent
 |[Inférence de type](type-inference.md)|Décrit comment le compilateur F # déduit les types de valeurs, de variables, de paramètres et de valeurs de retour.|
 |[Généralisation automatique](./generics/automatic-generalization.md)|Décrit les constructions génériques en F#.|
 |[Héritage](inheritance.md)|Décrit l’héritage, qui est utilisé pour modéliser la relation « is-a » (est-un), ou sous-typage, dans la programmation orientée objet.|
-|[Membres](./members/index.md)|Décrit les membres de types d’objet F#.|
+|[Members](./members/index.md) (Membres)|Décrit les membres de types d’objet F#.|
 |[Paramètres et arguments](Parameters-and-Arguments.md)|Décrit la prise en charge du langage pour la définition de paramètres et le passage d’arguments à des fonctions, méthodes et propriétés. Elle comprend des informations sur le passage par référence.|
 |[Surcharge d’opérateur](operator-overloading.md)|Décrit comment surcharger des opérateurs arithmétiques dans un type classe ou d’enregistrement, et au niveau global.|
 |[Cast et conversions](casting-and-conversions.md)|Décrit la prise en charge pour les conversions de type en F#.|
@@ -51,7 +55,7 @@ Le tableau suivant liste les rubriques de référence disponibles qui décrivent
 |[Signatures](signature-files.md)|Décrit les signatures et les fichiers de signature. Un fichier de signature contient des informations sur les signatures publiques d’un jeu d’éléments de programme F#, tels que des types, des espaces de noms et des modules. Il peut être utilisé pour spécifier l’accessibilité de ces éléments de programme.|
 |[Documentation XML](xml-documentation.md)|Décrit la prise en charge de la génération de fichiers de documentation pour des commentaires de document XML, aussi appelés commentaires avec triple barre oblique. Vous pouvez produire une documentation à partir de commentaires de code en F #, comme dans d’autres langages .NET.|
 |[Syntaxe détaillée](verbose-syntax.md)|Décrit la syntaxe des constructions F# quand la syntaxe simplifiée n’est pas activée. La syntaxe détaillée est indiquée par la directive `#light "off"` en haut du fichier de code.|
-|[Mise en forme de texte brut](plaintext-formatting.md)|Découvrez comment utiliser sprintf et une autre mise en forme de texte brut dans des scripts et des applications F #.|
+|[Mise en forme en texte brut](plaintext-formatting.md)|Découvrez comment utiliser sprintf et une autre mise en forme de texte brut dans des scripts et des applications F #.|
 
 ## <a name="f-types"></a>Types F#
 
@@ -69,7 +73,7 @@ Le tableau suivant répertorie les rubriques de référence disponibles qui déc
 |[Options](options.md)|Décrit le type d’option. En F#, une option est utilisée quand une valeur peut ou non exister. Une option a un type sous-jacent et peut soit contenir une valeur de ce type, soit ne pas avoir de valeur.|
 |[Séquences](sequences.md)|Décrit les séquences. Une séquence est une série logique d’éléments d’un même type. Les éléments de séquence individuels sont calculés uniquement si nécessaire, si bien que la représentation peut être plus petite que le nombre d’éléments littéraux.|
 |[Tableaux](arrays.md)|Décrit les tableaux. Les tableaux sont des séquences de taille fixe, de base zéro et mutables d’éléments de données consécutifs, tous du même type.|
-|[Documents](records.md)|Décrit les enregistrements. Les enregistrements représentent des agrégats simples de valeurs nommées, éventuellement avec des membres.|
+|[Enregistrements](records.md)|Décrit les enregistrements. Les enregistrements représentent des agrégats simples de valeurs nommées, éventuellement avec des membres.|
 |[Unions discriminées](discriminated-unions.md)|Décrit les unions discriminées, qui assurent la prise en charge des valeurs pouvant être une variété de cas nommés, chacun avec des valeurs et des types éventuellement différents.|
 |[Énumérations](enumerations.md)|Explique que les énumérations sont des types qui ont un jeu défini de valeurs nommées. Vous pouvez les utiliser à la place de littéraux pour rendre le code plus lisible et plus facile à gérer.|
 |[Cellules de référence](reference-cells.md)|Décrit les cellules de référence, qui sont des emplacements de stockage vous permettant de créer des variables mutables avec la sémantique de référence.|
@@ -77,7 +81,7 @@ Le tableau suivant répertorie les rubriques de référence disponibles qui déc
 |[Classes](classes.md)|Décrit les classes, qui sont des types représentant des objets qui peuvent avoir des propriétés, des méthodes et des événements.|
 |[Structures](structures.md)|Décrit les structures, qui sont des types d’objet compacts pouvant se révéler plus efficaces qu’une classe pour les types ayant une petite quantité de données et un comportement simple.|
 |[Interfaces](interfaces.md)|Décrit les interfaces, qui spécifient les jeux de membres connexes implémentés par une autre classe.|
-|[Classes abstraites](abstract-classes.md)|Décrit les classes abstraites, qui sont des classes qui laissent une partie ou la totalité des membres non implémentés, de manière à ce que les implémentations puissent être fournies par des classes dérivées.|
+|[classes abstraites](abstract-classes.md)|Décrit les classes abstraites, qui sont des classes qui laissent une partie ou la totalité des membres non implémentés, de manière à ce que les implémentations puissent être fournies par des classes dérivées.|
 |[Extensions de type](type-extensions.md)|Décrit les extensions de type, qui vous permettent d’ajouter de nouveaux membres à un type d’objet précédemment défini.|
 |[Types flexibles](flexible-types.md)|Décrit les types flexibles. Une annotation de type flexible est une indication qu’un paramètre, une variable ou une valeur a un type qui est compatible avec le type spécifié, où la compatibilité est déterminée par la position dans une hiérarchie orientée objet de classes ou d’interfaces.|
 |[Délégués](delegates.md)|Décrit les délégués, qui représentent un appel de fonction comme objet.|
@@ -90,7 +94,7 @@ Le tableau suivant répertorie les rubriques qui décrivent les expressions F#.
 
 |Intitulé|Description|
 |-----|-----------|
-|[Expressions conditionnelles :`if...then...else`](conditional-expressions-if-then-else.md)|Décrit l’expression `if...then...else`, qui exécute différentes branches de code et qui prend une valeur différente selon l’expression booléenne donnée.|
+|[Expressions conditionnelles : `if...then...else`](conditional-expressions-if-then-else.md)|Décrit l’expression `if...then...else`, qui exécute différentes branches de code et qui prend une valeur différente selon l’expression booléenne donnée.|
 |[Expressions de correspondance](match-expressions.md)|Décrit l’expression `match`, qui fournit le contrôle de branchement basé sur la comparaison d’une expression à un jeu de modèles.|
 |[Boucles : expression `for...to`](loops-for-to-expression.md)|Décrit l’expression `for...to`, qui est utilisée pour itérer en boucle au sein d’une plage de valeurs d’une variable de boucle.|
 |[Boucles : expression `for...in`](loops-for-in-expression.md)|Décrit l’expression `for...in`, une construction en boucle utilisée pour itérer au sein des correspondances d’un modèle dans une collection énumérable telle qu’une expression de plage, une séquence, une liste, un tableau ou une autre construction qui prend en charge l’énumération.|
@@ -110,4 +114,4 @@ Le tableau suivant liste les rubriques qui décrivent des constructions spécial
 |-----|-----------|
 |[Options du compilateur](compiler-options.md)|Décrit les options de ligne de commande du compilateur F#.|
 |[Directives de compilateur](compiler-directives.md)|Décrit les directives de processeur et de compilateur.|
-|[Identificateurs de ligne, de fichier et de chemin source](source-line-file-path-identifiers.md)|Décrit les identificateurs `__LINE__` , `__SOURCE_DIRECTORY__` , et `__SOURCE_FILE__` , qui sont des valeurs intégrées qui vous permettent d’accéder au numéro de ligne source, au répertoire et au nom de fichier dans votre code.|
+|[Identificateurs de ligne, de fichier et de chemin d’accès source](source-line-file-path-identifiers.md)|Décrit les identificateurs `__LINE__` , `__SOURCE_DIRECTORY__` , et `__SOURCE_FILE__` , qui sont des valeurs intégrées qui vous permettent d’accéder au numéro de ligne source, au répertoire et au nom de fichier dans votre code.|
