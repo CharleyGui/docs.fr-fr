@@ -2,12 +2,12 @@
 title: Modifications avec rupture de chiffrement
 description: Répertorie les modifications avec rupture liées au chiffrement dans .NET Core.
 ms.date: 04/22/2020
-ms.openlocfilehash: 34098027c4cbe5e5fb31a22d981af706e07cb7da
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: f7d580938fb7620728b8ff7f67412c9f5bbbb6c3
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556022"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557999"
 ---
 # <a name="cryptography-breaking-changes"></a>Modifications avec rupture de chiffrement
 
@@ -15,11 +15,18 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [System. Security. Cryptography. OID est fonctionnellement init-only](#systemsecuritycryptographyoid-is-functionally-init-only) | 5.0 |
 | [La syntaxe de début de certificat approuvé n’est plus prise en charge sur Linux](#begin-trusted-certificate-syntax-no-longer-supported-for-root-certificates-on-linux) | 3.0 |
 | [La valeur par défaut de EnvelopedCms est le chiffrement AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
 | [La taille minimale de la génération de la clé de RSAOpenSsl a augmenté](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
 | [.NET Core 3,0 préfère OpenSSL 1.1. x à OpenSSL 1.0. x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
 | [Le paramètre booléen de SignedCms. ComputeSignature est respecté](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
+
+## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [cryptography-oid-init-only](../../../includes/core-changes/cryptography/5.0/cryptography-oid-init-only.md)]
+
+***
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 

@@ -1,17 +1,16 @@
 ---
 title: .NET Framework & versions du système d’exploitation Windows
 description: Découvrez les principales fonctionnalités de chaque version de .NET Framework, y compris les versions et versions du CLR sous-jacentes installées par le système d’exploitation Windows.
-ms.custom: updateeachrelease
 ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: df7acc788943e9655dbbb03ffaaa88ff22b81ad2
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: fe652e4cc3a996586d01cdfc4c5749decb51e9db
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187898"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557345"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Versions et dépendances de .NET Framework
 

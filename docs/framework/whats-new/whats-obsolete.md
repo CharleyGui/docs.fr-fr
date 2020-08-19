@@ -37,7 +37,7 @@ Quand vous mettez à niveau et recompilez du code existant, l'utilisation d'un t
 
 - Modifiez votre code en supprimant l'utilisation du type ou membre, si possible.
 
-     - ou -
+     -ou-
 
 - Examinez la documentation de ce domaine technologique pour savoir que faire face à des éléments obsolètes.
 

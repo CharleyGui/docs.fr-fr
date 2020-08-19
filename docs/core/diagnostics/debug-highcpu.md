@@ -26,7 +26,7 @@ Ce didacticiel présente les procédures suivantes :
 > - Performances des profils dans PerfView
 > - Diagnostiquer et résoudre l’utilisation excessive du processeur
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Le didacticiel utilise :
 

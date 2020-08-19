@@ -4,12 +4,12 @@ ms.date: 04/23/2017
 helpviewer_keywords:
 - tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
-ms.openlocfilehash: 378ee4e7d3a3b106b719e5da819b09f336ff218e
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: b169a1c13b3f20d7b5e2a1386cfb28a9cc093dcd
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226658"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559087"
 ---
 # <a name="tuples-visual-basic"></a>Tuples (Visual Basic)
 
@@ -84,14 +84,14 @@ Si les membres personnalisés, la validation de propriété et de champ ou l’i
 
 Un tuple Visual Basic hérite des membres de son type **ValueTuple** . En plus de ses champs, il s’agit des méthodes suivantes :
 
-| Membre | Description |
+| Méthode | Description |
 | ---|---|
 | CompareTo | Compare le tuple actuel à un autre Tuple avec le même nombre d’éléments. |
-| Est égal à | Détermine si le tuple actuel est égal à un autre tuple ou objet. |
+| Égal à | Détermine si le tuple actuel est égal à un autre tuple ou objet. |
 | GetHashCode | Calcule le code de hachage pour l’instance actuelle. |
 | ToString | Retourne la représentation sous forme de chaîne de ce tuple, qui prend la forme `(Item1, Item2...)` , où `Item1` et `Item2` représentent les valeurs des champs du tuple. |
 
-En outre, les types **ValueTuple** implémentent les <xref:System.Collections.IStructuralComparable> <xref:System.Collections.IStructuralEquatable> interfaces et, qui vous permettent de définir des comparateurs de clients.
+En outre, les types **ValueTuple** implémentent les <xref:System.Collections.IStructuralComparable> <xref:System.Collections.IStructuralEquatable> interfaces et, qui vous permettent de définir des comparateurs personnalisés.
 
 ## <a name="assignment-and-tuples"></a>Affectation et tuples
 
@@ -101,7 +101,7 @@ Visual Basic prend en charge l’assignation entre les types tuple qui ont le m�
 
 - Une conversion étendue (ou implicite) du type de source vers le type cible est définie.
 
-- `Option Strict`est `On` , et une conversion restrictive (ou explicite) du type source vers le type cible est définie. Cette conversion peut lever une exception si la valeur source est en dehors de la plage du type cible.
+- `Option Strict` est `On` , et une conversion restrictive (ou explicite) du type source vers le type cible est définie. Cette conversion peut lever une exception si la valeur source est en dehors de la plage du type cible.
 
 Les autres conversions ne sont pas prises en compte pour les affectations. Examinons les types d’affectation qui sont autorisés entre les types tuple.
 

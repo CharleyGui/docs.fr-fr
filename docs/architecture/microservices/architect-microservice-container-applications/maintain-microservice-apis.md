@@ -2,18 +2,18 @@
 title: Création, évolution et version des contrats et des API de microservices
 description: Créez des API et des contrats de microservices en tenant compte de l’évolution et de la gestion de versions, car les besoins changent.
 ms.date: 09/20/2018
-ms.openlocfilehash: 1972d02d8bf7935c71bfd383707ae19ea2baded9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9164bfd12df18a88ac187c8962f0afc80b702881
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68672896"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557670"
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Création, évolution et version des contrats et des API de microservices
 
 Une API de microservice est un contrat entre le service et ses clients. Vous ne pouvez pas faire évoluer indépendamment un microservice si son contrat d’API est rompu. C’est pourquoi le contrat est si important. Tout changement apporté au contrat impacte vos applications clientes ou votre passerelle API.
 
-La nature de la définition de l’API dépend du protocole que vous utilisez. Par exemple, si vous utilisez une messagerie telle qu’[AMQP](https://www.amqp.org/), l’API comprend les types de message. Si vous utilisez des services HTTP et RESTful, l’API comprend les URL et les formats JSON de requête et de réponse.
+La nature de la définition de l’API dépend du protocole que vous utilisez. Par exemple, si vous utilisez une messagerie telle qu’[AMQP](http://www.amqp.org/), l’API comprend les types de message. Si vous utilisez des services HTTP et RESTful, l’API comprend les URL et les formats JSON de requête et de réponse.
 
 Toutefois, même si votre contrat initial est l’aboutissement d’une réflexion, une API de service doit changer au fil du temps. Quand cela se produit, vous ne pouvez généralement pas forcer tous les clients à effectuer une mise à niveau vers votre nouveau contrat d’API, surtout s’il s’agit d’une API publique consommée par plusieurs applications clientes. Dans la plupart des cas, vous devez déployer par incrément les nouvelles versions d’un service en faisant en sorte que les anciennes et les nouvelles versions du contrat de service s’exécutent simultanément. Il est donc important de disposer d’une stratégie pour la gestion de versions de votre service.
 
@@ -25,15 +25,15 @@ Enfin, si vous utilisez une architecture REST, [Hypermedia](https://www.infoq.co
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Scott Hanselman. ASP.NET version WEB API RESTful de base facilitée** \
+- **Scott Hanselman. Le contrôle de version de l’API Web RESTful ASP.NET Core simplifié** \
   <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
-- **Version d’une API Web RESTful** \
+- **Contrôle de version d’une API Web RESTful** \
   <https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api>
 
-- **Roy Fielding. Version, Hypermedia, et REST** \
+- **Champ Roy. Contrôle de version, hypermédia et REST** \
   <https://www.infoq.com/articles/roy-fielding-on-versioning>
 
 >[!div class="step-by-step"]
->[Suivant précédent](asynchronous-message-based-communication.md)
->[Next](microservices-addressability-service-registry.md)
+>[Précédent](asynchronous-message-based-communication.md) 
+> [Suivant](microservices-addressability-service-registry.md)

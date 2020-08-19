@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: 9b1e190579902dda71547b01f31dd5adcc22fe9c
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: e5c0ec3423cf98895b49596633c81861bbcf4878
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251190"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557839"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -75,27 +75,27 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
   Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent le blocage de l’hôte de test. Lorsqu’un incident est détecté, il crée un fichier de séquence dans `TestResults/<Guid>/<Guid>_Sequence.xml` qui capture l’ordre des tests qui ont été exécutés avant l’incident.
 
-- **`--blame-crash`**(Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
+- **`--blame-crash`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
   Exécute les tests en mode de responsabilité et collecte un vidage sur incident lorsque l’hôte de test s’arrête de manière inattendue. Cette option est uniquement prise en charge sur Windows. Un répertoire qui contient *procdump.exe* et *procdump64.exe* doit se trouver dans la variable d’environnement PATH ou PROCDUMP_PATH. [Téléchargez les outils](https://docs.microsoft.com/sysinternals/downloads/procdump). Implique `--blame` .
 
-- **`--blame-crash-dump-type <DUMP_TYPE>`**(Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
+- **`--blame-crash-dump-type <DUMP_TYPE>`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
   Type de vidage sur incident à collecter. Implique `--blame-crash` .
 
-- **`--blame-crash-collect-always`**(Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
+- **`--blame-crash-collect-always`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
   Collecte un vidage sur incident sur la sortie attendue et sur l’hôte de test inattendu.
 
-- **`--blame-hang`**(Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
+- **`--blame-hang`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
   Exécuter les tests en mode de responsabilité et collecter un vidage sur le blocage quand un test dépasse le délai d’attente donné.
 
-- **`--blame-hang-dump-type <DUMP_TYPE>`**(Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
+- **`--blame-hang-dump-type <DUMP_TYPE>`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
   Type de vidage sur incident à collecter. Il doit s’agir `full` de, `mini` ou `none` . Lorsque `none` est spécifié, l’hôte de test se termine à l’expiration du délai d’attente, mais aucun vidage n’est collecté. Implique `--blame-hang` .
 
-- **`--blame-hang-timeout <TIMESPAN>`**(Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
+- **`--blame-hang-timeout <TIMESPAN>`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
   Délai d’attente par test, après lequel un vidage sur le blocage est déclenché et le processus hôte de test est terminé. La valeur du délai d’attente est spécifiée dans l’un des formats suivants :
   
@@ -156,7 +156,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Répertoire dans lequel rechercher les binaires à exécuter. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.  Pour les projets avec plusieurs frameworks cibles (via la `TargetFrameworks` propriété), vous devez également définir `--framework` lorsque vous spécifiez cette option. `dotnet test`exécute toujours les tests à partir du répertoire de sortie. Vous pouvez utiliser <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> pour consommer des ressources de test dans le répertoire de sortie.
+  Répertoire dans lequel rechercher les binaires à exécuter. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.  Pour les projets avec plusieurs frameworks cibles (via la `TargetFrameworks` propriété), vous devez également définir `--framework` lorsque vous spécifiez cette option. `dotnet test` exécute toujours les tests à partir du répertoire de sortie. Vous pouvez utiliser <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> pour consommer des ressources de test dans le répertoire de sortie.
 
 - **`-r|--results-directory <RESULTS_DIR>`**
 
@@ -179,7 +179,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `minimal`. Pour plus d’informations, consultez <xref:Microsoft.Build.Framework.LoggerVerbosity>.
+  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`. Pour plus d’informations, consultez <xref:Microsoft.Build.Framework.LoggerVerbosity>.
 
 - **`RunSettings`** arguments
 
@@ -243,9 +243,9 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 | Framework de test | Propriétés prises en charge                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>Nom</li><li>ClassName</li><li>Priorité</li><li>TestCategory</li></ul> |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Nom</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
-| NUnit          | <ul><li>FullyQualifiedName</li><li>Nom</li><li>TestCategory</li><li>Priorité</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Nom</li><li>TestCategory</li><li>Priority</li></ul>                                   |
 
 La section `<operator>` décrit la relation entre la propriété et la valeur :
 
@@ -264,7 +264,7 @@ Les expressions peuvent être associées à des opérateurs conditionnels :
 
 | Opérateur            | Fonction |
 | ------------------- | -------- |
-| <code>&#124;</code> | OU       |
+| <code>&#124;</code> | OR       |
 | `&`                 | AND      |
 
 Vous pouvez mettre des expressions entre parenthèses quand vous utilisez des opérateurs conditionnels (par exemple, `(Name~TestMethod1) | (Name~TestMethod2)`).
@@ -274,5 +274,5 @@ Pour plus d’informations et pour obtenir des exemples sur la façon d’utilis
 ## <a name="see-also"></a>Voir aussi
 
 - [Infrastructures et cibles](../../standard/frameworks.md)
-- [Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)
+- [Catalogue d’identificateurs de Runtime (RID) .NET Core](../rid-catalog.md)
 - [Passage d’arguments RunSettings via la ligne de commande](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md)

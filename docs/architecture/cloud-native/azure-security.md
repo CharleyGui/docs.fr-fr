@@ -2,12 +2,12 @@
 title: Sécurité Azure pour les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Sécurité Azure pour les applications Cloud natives
 ms.date: 05/13/2020
-ms.openlocfilehash: 223d9e77aca611697958981bf2ee3a630fb9fffb
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: 996c7075b252466a3b3374f1e75e64315fdd6fc7
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374492"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557644"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Sécurité Azure pour les applications Cloud natives
 
@@ -50,7 +50,7 @@ Les tests de pénétration ou le « test de PEN » impliquent que les acteurs 
 
 Azure lui-même subit constamment des attaques d’une [équipe de pirates au sein de Microsoft](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/). Au fil des années, elles ont été les premières à trouver des dizaines de vecteurs d’attaque potentiellement catastrophiques, à les fermer avant qu’elles puissent être exploitées en externe. Plus une cible est séduisante, plus il est probable que les acteurs externes essaient de l’exploiter et il y a quelques cibles dans le monde plus tentant que Azure.
 
-## <a name="monitoring"></a>Supervision
+## <a name="monitoring"></a>Surveillance
 
 Si une personne malveillante tente de pénétrer dans une application, il doit y avoir un avertissement. Souvent, les attaques peuvent être repérées en examinant les journaux des services. Les attaques laissent des signes de signalisation qui peuvent être repérés avant qu’ils ne s’exécutent correctement. Par exemple, une personne malveillante tentant de deviner un mot de passe effectue de nombreuses demandes vers un système de connexion. La surveillance autour du système de connexion peut détecter les modèles bizarres qui sont hors ligne avec le modèle d’accès standard. Cette analyse peut être convertie en alerte qui peut, à son tour, alerter une personne chargée de l’activation d’une contre-mesure. Un système de surveillance très mature peut même prendre des mesures en fonction de ces écarts, en ajoutant de manière proactive des règles pour bloquer les demandes ou limiter les réponses.
 
@@ -201,7 +201,7 @@ kubectl apply -f ./secret.yaml
 
 Ces secrets peuvent ensuite être montés dans des volumes ou exposés à des processus de conteneur via des variables d’environnement. L’approche à [12 facteurs](https://12factor.net/) pour créer des applications suggère d’utiliser le plus petit dénominateur commun pour transmettre les paramètres à une application. Les variables d’environnement sont le plus petit dénominateur commun, car ils sont pris en charge, quel que soit le système d’exploitation ou l’application.
 
-Une alternative à l’utilisation des secrets Kubernetes intégrés consiste à accéder aux secrets dans Azure Key Vault à partir de Kubernetes. La façon la plus simple de procéder consiste à affecter un rôle RBAC au conteneur qui cherche à charger les secrets. L’application peut ensuite utiliser les API Azure Key Vault pour accéder aux secrets. Toutefois, cette approche nécessite des modifications du code et ne suit pas le modèle d’utilisation des variables d’environnement. Au lieu de cela, il est possible d’injecter des valeurs dans un conteneur à l’aide de l' [injecteur Azure Key Vault](https://mrdevops.io/introducing-azure-key-vault-to-kubernetes-931f82364354). Cette approche est en fait plus sécurisée que l’utilisation directe des secrets Kubernetes, car ils sont accessibles aux utilisateurs sur le cluster.
+Une alternative à l’utilisation des secrets Kubernetes intégrés consiste à accéder aux secrets dans Azure Key Vault à partir de Kubernetes. La façon la plus simple de procéder consiste à affecter un rôle RBAC au conteneur qui cherche à charger les secrets. L’application peut ensuite utiliser les API Azure Key Vault pour accéder aux secrets. Toutefois, cette approche nécessite des modifications du code et ne suit pas le modèle d’utilisation des variables d’environnement. Au lieu de cela, il est possible d’injecter des valeurs dans un conteneur. Cette approche est en fait plus sécurisée que l’utilisation directe des secrets Kubernetes, car ils sont accessibles aux utilisateurs sur le cluster.
 
 ## <a name="encryption-in-transit-and-at-rest"></a>Chiffrement en transit et au repos
 

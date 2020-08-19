@@ -26,7 +26,7 @@ Ce didacticiel présente les procédures suivantes :
 > - Analyser les piles et les blocs de synchronisation
 > - Diagnostiquer et résoudre un blocage
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Le didacticiel utilise :
 

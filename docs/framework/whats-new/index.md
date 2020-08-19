@@ -1,7 +1,6 @@
 ---
 title: Nouveautés de .NET Framework
 description: Découvrez les nouveautés dans les différentes versions de .NET Framework. Lisez un résumé des nouvelles fonctionnalités et améliorations clés de chaque version.
-ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
 - csharp
@@ -9,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 42f872bba87a88fc92a37879e815ee7068407cf7
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 3eba676a4134415f0e2981d5094c0b0f6a1651be
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925590"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559022"
 ---
 # <a name="whats-new-in-net-framework"></a>Nouveautés de .NET Framework
 
@@ -23,7 +22,7 @@ Cet article résume les principales nouvelles fonctionnalités et améliorations
 - [.NET Framework 4,8](#v48)
 - [.NET Framework 4.7.2](#v472)
 - [.NET Framework 4.7.1](#v471)
-- [.NET Framework 4,7](#v47)
+- [.NET Framework 4.7](#v47)
 - [.NET Framework 4.6.2](#v462)
 - [.NET Framework 4.6.1](#v461)
 - [.NET 2015 et .NET Framework 4.6](#v46)
@@ -202,7 +201,7 @@ Le runtime de .NET Framework 4.8 comprend les nouvelles modifications et amélio
 
 - [Classes de base](#core-472)
 - [ASP.NET](#asp-net472)
-- [Réseau](#net472)
+- [Mise en réseau](#net472)
 - [SQL](#sql472)
 - [WPF](#wpf472)
 - [ClickOnce](#clickonce)
@@ -590,7 +589,7 @@ Pour une application Windows Forms, la solution de contournement précédente co
 
 - [Classes de base](#core471)
 - [CLR (Common Language Runtime)](#clr)
-- [Réseau](#net471)
+- [Mise en réseau](#net471)
 - [ASP.NET](#asp-net471)
 
 .NET Framework 4.7.1 met également l’accent sur l’amélioration de l’accessibilité pour qu’une application puisse fournir une expérience appropriée aux utilisateurs de technologies d’assistance. Pour plus d’informations sur les améliorations apportées à .NET Framework 4.7.1 dans le domaine de l’accessibilité, consultez [Nouveautés du .NET Framework dans le domaine de l’accessibilité](whats-new-in-accessibility.md).
@@ -672,7 +671,7 @@ Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux dévelo
 .NET Framework 4.7 apporte de nouvelles fonctionnalités dans les domaines suivants :
 
 - [Classes de base](#Core47)
-- [Réseau](#net47)
+- [Mise en réseau](#net47)
 - [ASP.NET](#ASP-NET47)
 - [Windows Communication Foundation (WCF)](#wcf47)
 - [Windows Forms](#wf47)
@@ -1011,7 +1010,7 @@ End Function
 
 Les constantes d’URI sont toutes exposées dans <xref:System.Security.Cryptography.Xml.SignedXml> :
 
-|Champ SignedXml|Constant|
+|Champ SignedXml|Constante|
 |---------------------|--------------|
 |<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA256Url>|"http://www.w3.org/2001/04/xmlenc#sha256"|
 |<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA256Url>|"http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"|
@@ -1038,7 +1037,7 @@ L’ajout du `PoolBlockingPeriod` mot clé New vous permet de sélectionner la p
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
-La période de blocage de pool de connexions d’une application qui se connecte à une base de données Azure SQL Database est désactivée, pendant que celle d’une application qui se connecte à une autre instance SQL Server est activée. Il s’agit de la valeur par défaut. Si le nom de point de terminaison d’un serveur se termine par l’un des éléments suivants, il est considéré comme une base de données Azure SQL Database :
+La période de blocage de pool de connexions d’une application qui se connecte à une base de données Azure SQL Database est désactivée, pendant que celle d’une application qui se connecte à une autre instance SQL Server est activée. Valeur par défaut. Si le nom de point de terminaison d’un serveur se termine par l’un des éléments suivants, il est considéré comme une base de données Azure SQL Database :
 
 - .database.windows.net
 
@@ -1199,7 +1198,7 @@ Dans le .NET Framework 4.6.2, Windows Workflow Foundation a été amélioré dan
 
 À compter de .NET Framework 4,5, WF prend en charge les expressions C# dans le concepteur Visual Studio et dans les flux de travail de code. Le Concepteur de flux de travail réhébergé est une fonctionnalité clé de WF qui permet aux Concepteur de flux de travail d’être dans une application en dehors de Visual Studio (par exemple, dans WPF).  Windows Workflow Foundation offre la possibilité de prendre en charge les expressions C# et IntelliSense dans le Concepteur de flux de travail réhébergé. Pour plus d’informations, consultez le [blog Windows Workflow Foundation](https://docs.microsoft.com/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
 
-`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio`Dans les versions du .NET Framework antérieures à la version 4.6.2, la fonctionnalité IntelliSense du concepteur WF est rompue quand un client reconstruit un projet de flux de travail à partir de Visual Studio. Quand la génération du projet aboutit, les types de flux de travail ne se trouvent pas dans le concepteur, et IntelliSense affiche des avertissements dans la fenêtre **Liste d’erreurs** par rapport aux types de flux de travail manquants. .NET Framework 4.6.2 résout ce problème et rend IntelliSense disponible.
+`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` Dans les versions du .NET Framework antérieures à la version 4.6.2, la fonctionnalité IntelliSense du concepteur WF est rompue quand un client reconstruit un projet de flux de travail à partir de Visual Studio. Quand la génération du projet aboutit, les types de flux de travail ne se trouvent pas dans le concepteur, et IntelliSense affiche des avertissements dans la fenêtre **Liste d’erreurs** par rapport aux types de flux de travail manquants. .NET Framework 4.6.2 résout ce problème et rend IntelliSense disponible.
 
 **Les applications Workflow V1 pour lesquelles le suivi de flux de travail est activé s’exécutent désormais en mode FIPS**
 
@@ -1710,7 +1709,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   La valeur par défaut est `false`.
 
-- **Réseau**
+- **Mise en réseau**
 
   - **Réutilisation de socket**
 
@@ -2130,6 +2129,6 @@ Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les vers
 - [Versions finales hors plage de .NET Framework](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Nouveautés du .NET Framework dans le domaine de l’accessibilité](whats-new-in-accessibility.md)
 - [Nouveautés de Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
-- [Nouveautés de Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
+- [Nouveautés de Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Nouveautés de C++ dans Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

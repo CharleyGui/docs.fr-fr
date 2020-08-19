@@ -260,7 +260,7 @@ Par exemple, pour détecter si le module linguistique japonais complet (LCID = 1
 
 | | |
 |-|-|
-| Clé : | HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
+| Clé | HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
 | Nom | Libérer |
 | Type | DWORD |
 

@@ -3,12 +3,12 @@ title: Mise en cache dans une application cloud native
 description: En savoir plus sur les stratégies de mise en cache dans une application Cloud native.
 author: robvet
 ms.date: 05/17/2020
-ms.openlocfilehash: a109db59d7b2005ea97922eef07ae4869e4894a7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a33f143499b5f9545493bc4bc757cc3d152f7aa9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614290"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557514"
 ---
 # <a name="caching-in-a-cloud-native-app"></a>Mise en cache dans une application Cloud Native
 
@@ -28,7 +28,7 @@ Si les microservices doivent être sans État, un cache distribué peut prendre 
 
 Envisagez également la mise en cache pour éviter les calculs répétitifs. Si une opération transforme des données ou effectue un calcul complexe, met en cache le résultat pour les demandes suivantes.
 
-## <a name="caching-architecture"></a>Architecture de mise en cache
+## <a name="caching-architecture"></a>Architecture de la mise en cache
 
 Les applications Cloud natives implémentent généralement une architecture de mise en cache distribuée. Le cache est hébergé en tant que service de [sauvegarde](./definition.md#backing-services)Cloud, distinct des microservices. La figure 5-15 illustre l’architecture.
 
@@ -57,7 +57,7 @@ Le cache Azure pour les insertions est plus qu’un simple serveur de cache. Il 
   
 Pour les scénarios avancés, une copie des données mises en cache peut être [conservée sur le disque](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-premium-persistence). Si un événement catastrophique désactive à la fois les caches principal et réplica, le cache est reconstruit à partir de l’instantané le plus récent.
 
-Le cache Redims Azure est disponible dans un certain nombre de configurations prédéfinies et de niveaux tarifaires.  Le [niveau Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-premium-tier-intro) offre de nombreuses fonctionnalités de niveau entreprise, telles que le clustering, la persistance des données, la géo-réplication et l’isolation du réseau virtuel.
+Le cache Redims Azure est disponible dans un certain nombre de configurations prédéfinies et de niveaux tarifaires. Le [niveau Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-overview#service-tiers) offre de nombreuses fonctionnalités de niveau entreprise, telles que le clustering, la persistance des données, la géo-réplication et l’isolation du réseau virtuel.
 
 >[!div class="step-by-step"]
 >[Précédent](relational-vs-nosql-data.md) 

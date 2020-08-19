@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 07/27/2020
-ms.openlocfilehash: c8eb5ec7d2bb1879a38a18337463230c7b731d29
-ms.sourcegitcommit: d3c09791297f0edc468a4849a5f11ef62e0e90fd
+ms.openlocfilehash: 9190fc2fc8dddc4fb4be8409915cf24c92a97daf
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88137495"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558174"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -17,6 +17,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [Environment. OSVersion retourne la version appropriée du système d’exploitation](#environmentosversion-returns-the-correct-operating-system-version) | 5.0 |
 | [Complexité de LINQ OrderBy. la première {OrDefault} a augmenté](#complexity-of-linq-orderbyfirstordefault-increased) | 5.0 |
 | [IntPtr et UIntPtr implémentent IFormattable](#intptr-and-uintptr-implement-iformattable) | 5.0 |
 | [PrincipalPermissionAttribute est obsolète en tant qu’erreur](#principalpermissionattribute-is-obsolete-as-error) | 5.0 |
@@ -46,6 +47,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Process. StartInfo lève une exception InvalidOperationException pour les processus que vous n’avez pas démarrés](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [environment-osversion-returns-correct-version](../../../includes/core-changes/corefx/5.0/environment-osversion-returns-correct-version.md)]
+
+***
 
 [!INCLUDE [orderby-firstordefault-complexity-increase](../../../includes/core-changes/corefx/5.0/orderby-firstordefault-complexity-increase.md)]
 
