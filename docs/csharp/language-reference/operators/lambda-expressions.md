@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: e2eae276d644413dcfff10c109ad10291fbb1386
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 3dd793ec000999935bff6b54b1b00e49211bd5ec
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068518"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558359"
 ---
 # <a name="lambda-expressions-c-reference"></a>Expressions lambda (référence C#)
 
@@ -234,4 +234,3 @@ Pour plus d’informations, consultez la section [Expressions de fonction anonym
 - [Arborescences d’expressions](../../programming-guide/concepts/expression-trees/index.md)
 - [Fonctions locales et expressions lambda](../../programming-guide/classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions)
 - [Exemples Visual Studio 2008 C# (voir les fichiers d’exemples de requêtes LINQ et le programme XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)
-- [Expressions lambda récursives](https://docs.microsoft.com/archive/blogs/madst/recursive-lambda-expressions)

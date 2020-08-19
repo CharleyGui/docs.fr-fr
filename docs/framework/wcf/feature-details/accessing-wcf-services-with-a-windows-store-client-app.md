@@ -2,14 +2,15 @@
 title: Accès aux services WCF avec une application cliente Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: ff6638936f476bd8fe75a065d3e61e96790cb7f4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ed13a88e3a534cd586d9386396802d7457de56e7
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597694"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558970"
 ---
-# <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Accès aux services WCF avec une application cliente Windows Store
+# <a name="access-wcf-services-with-a-windows-store-client-app"></a>Accéder aux services WCF avec une application cliente Windows Store
+
 Windows 8 introduit un nouveau type d'application appelé applications du Windows Store. Ces applications sont conçues autour d'une interface d'écran tactile. .NET Framework 4.5 permet aux applications du Windows Store d'appeler des services WCF.  
   
 ## <a name="wcf-support-in-windows-store-applications"></a>Prise en charge de WCF dans les applications du Windows Store  
@@ -19,7 +20,7 @@ Windows 8 introduit un nouveau type d'application appelé applications du Window
 > Utilisez les API de syndication WinRT au lieu de celles exposées par WCF. Pour plus d’informations, consultez [API de syndication WinRT](xref:Windows.Web.Syndication)  
   
 > [!WARNING]
-> L'utilisation de la fonctionnalité Ajouter une référence de service pour ajouter une référence de service Web à un composant d'exécution Windows n'est pas pris en charge.  
+> L’utilisation de Ajouter une référence de service pour ajouter une référence de service Web à un composant de Windows Runtime n’est pas prise en charge.  
   
 ### <a name="supported-bindings"></a>Liaisons prises en charge  
  Les liaisons WCF suivantes sont prises en charge dans les applications du Windows Store :  
@@ -139,7 +140,7 @@ Les types d’informations d’identification du client suivants sont pris en ch
  Pour que les applications du Windows Store accèdent aux informations d'identification Windows par défaut et les envoient, vous devez activer cette fonctionnalité dans le fichier Package.appmanifest. Ouvrez ce fichier et sélectionnez l’onglet capacités, puis sélectionnez « informations d’identification Windows par défaut ». Cela permet à l'application de se connecter aux ressources intranet qui nécessitent des informations d'identification de domaine.  
   
 > [!IMPORTANT]
-> Pour que les applications du Windows Store effectuent des appels inter-ordinateurs, vous devez activer une autre fonctionnalité appelée « mise en réseau pour le Bureau à distance ». Ce paramètre se trouve également dans le fichier Package. AppManifest sous l’onglet capacités. activez la case à cocher Bureau à distance/travail. Cela donne à votre application un accès entrant et sortant au réseau des lieux approuvés par l'utilisateur, tels que le domicile et le bureau. Les ports entrants critiques sont toujours bloqués. Pour accéder aux services sur Internet, vous devez également activer la fonction Internet (client).  
+> Pour que les applications du Windows Store effectuent des appels inter-ordinateurs, vous devez activer une autre fonctionnalité appelée « mise en réseau pour le Bureau à distance ». Ce paramètre se trouve également dans le fichier Package. AppManifest sous l’onglet capacités. activez la case à cocher Bureau à distance/travail. Cela donne à votre application un accès entrant et sortant aux réseaux des lieux de confiance de l’utilisateur, tels que les points de départ et de travail. Les ports entrants critiques sont toujours bloqués. Pour accéder aux services sur Internet, vous devez également activer la fonction Internet (client).  
   
 ### <a name="misc"></a>Divers  
  L'utilisation des classes suivantes est prise en charge pour les applications du Windows Store :  
@@ -176,9 +177,5 @@ void async SomeMethod()
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WCF dans les applications du Windows Store (blog)](https://docs.microsoft.com/archive/blogs/piyushjo/wcf-in-windows-8-metro-styled-apps-absolutely-supported)
-- [WCF, clients du Windows Store et sécurité](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-adding-security)
-- [Applications du Windows Store et appels entre ordinateurs](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario)
-- [Appel d’un service WCF déployé dans Azure à partir d’une application du Windows Store](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario)
 - [Programmation de la sécurité dans WCF](programming-wcf-security.md)
 - [Liaisons](../bindings.md)

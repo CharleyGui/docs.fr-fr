@@ -3,12 +3,12 @@ title: Utilisation élevée du processeur par le débogage-.NET Core
 description: Un didacticiel qui vous guide tout au long du débogage de l’utilisation élevée de l’UC dans .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: e69585d0eb6f04bf37d0c023a1956be62c2a1cf3
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 93076bbce3baf3a219b25c927d2aba3d2d57456f
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926402"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557800"
 ---
 # <a name="debug-high-cpu-usage-in-net-core"></a>Déboguer une utilisation élevée du processeur dans .NET Core
 
@@ -26,7 +26,7 @@ Ce didacticiel présente les procédures suivantes :
 > - Performances des profils dans PerfView
 > - Diagnostiquer et résoudre l’utilisation excessive du processeur
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Le didacticiel utilise :
 
@@ -85,7 +85,7 @@ Press p to pause, r to resume, q to quit.
 
 Avec l’application Web en cours d’exécution, immédiatement après le démarrage, l’UC n’est pas consommée et est signalée à `0%` . Accédez à l' `api/diagscenario/highcpu` itinéraire avec `60000` comme paramètre d’itinéraire :
 
-[https://localhost:5001/api/diagscenario/highcpu/60000](https://localhost:5001/api/diagscenario/highcpu/60000)
+`https://localhost:5001/api/diagscenario/highcpu/60000`
 
 À présent, réexécutez la commande [dotnet-Counters](dotnet-counters.md) . Pour surveiller uniquement le `cpu-usage` , spécifiez `System.Runtime[cpu-usage]` dans le cadre de la commande.
 
@@ -127,7 +127,7 @@ export COMPlus_PerfMapEnabled=1
 dotnet run
 ```
 
-Renouvelez le point de terminaison de l’API d’UC ( <https://localhost:5001/api/diagscenario/highcpu/60000> ). Pendant qu’elle s’exécute dans la requête de 1 minute, exécutez la `perf` commande avec votre ID de processus :
+Renouvelez le point de terminaison de l’API UC élevée ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). Pendant qu’elle s’exécute dans la requête de 1 minute, exécutez la `perf` commande avec votre ID de processus :
 
 ```bash
 sudo perf record -p 2266 -g
@@ -152,7 +152,7 @@ Cette commande génère un `flamegraph.svg` que vous pouvez afficher dans le nav
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-Sur Windows, vous pouvez utiliser l’outil [dotnet-trace](dotnet-trace.md) en tant que profileur. À l’aide de l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)précédent, <https://localhost:5001/api/diagscenario/highcpu/60000> renouvelez le point de terminaison de processeur (). Pendant qu’elle s’exécute dans la requête de 1 minute, utilisez la `collect` commande comme suit :
+Sur Windows, vous pouvez utiliser l’outil [dotnet-trace](dotnet-trace.md) en tant que profileur. À l’aide de l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)précédent, réexécutez le point de terminaison d’UC élevé ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). Pendant qu’elle s’exécute dans la requête de 1 minute, utilisez la `collect` commande comme suit :
 
 ```dotnetcli
 dotnet-trace collect -p 22884 --providers Microsoft-DotNETCore-SampleProfiler

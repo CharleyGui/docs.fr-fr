@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 7a4ffd5b1b58e6ea7fd46c676e139b77a126aa2b
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 23d67761838f17e833a4a478e2355e908a2e35ca
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803025"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557904"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Déployer des applications .NET Core avec Visual Studio
 
@@ -32,7 +32,7 @@ Le déploiement d’un déploiement dépendant du framework sans dépendances ti
 
 1. Créez le projet.
 
-   Sélectionnez **Fichier** > **Nouveau** > **Projet**. Dans la boîte de dialogue **Nouveau projet**, développez les catégories de projet de votre langage (C# ou Visual Basic) au sein du volet des types de projet **Installé**, choisissez **.NET Core**, puis sélectionnez le modèle **Application console (.NET Core)** dans le volet central. Entrez un nom de projet, tel que « FDD », dans la zone de texte **Nom**. Sélectionnez le bouton **OK** .
+   Sélectionnez **Fichier** > **Nouveau** > **Projet**. Dans la boîte de dialogue **Nouveau projet**, développez les catégories de projet de votre langage (C# ou Visual Basic) au sein du volet des types de projet **Installé**, choisissez **.NET Core**, puis sélectionnez le modèle **Application console (.NET Core)** dans le volet central. Entrez un nom de projet, tel que « FDD », dans la zone de texte **Nom**. Cliquez sur le bouton **OK**.
 
 1. Ajoutez le code source de l’application.
 
@@ -312,4 +312,4 @@ Vous pouvez uniquement déployer un déploiement autonome avec une bibliothèque
 ## <a name="see-also"></a>Voir aussi
 
 - [Déploiement d’applications .NET Core](index.md)
-- [Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)
+- [Catalogue d’identificateurs de Runtime (RID) .NET Core](../rid-catalog.md)

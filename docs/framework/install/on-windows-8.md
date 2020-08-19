@@ -1,14 +1,13 @@
 ---
 title: Installer le .NET Framework sur Windows 8
-ms.custom: updateeachrelease
 description: Découvrez comment installer le .NET Framework sur Windows 8
 ms.date: 04/18/2019
-ms.openlocfilehash: 1db8ac9837821eb7111b9d0015787509bc27b398
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cf95a670055008b61930657c066a5dd6650452ee
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76965995"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558580"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Installer le .NET Framework sur Windows 8 et Windows Server 2012
 
@@ -45,6 +44,6 @@ Vous pouvez [contacter Microsoft pour obtenir de l’aide](mailto:dotnet-install
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Télécharger le cadre .NET](https://dotnet.microsoft.com/download)
+- [Télécharger le .NET Framework](https://dotnet.microsoft.com/download)
 - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
 - [Installer le .NET Framework pour les développeurs](guide-for-developers.md)

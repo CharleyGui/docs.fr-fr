@@ -1,19 +1,18 @@
 ---
 title: Éléments obsolètes dans .NET Framework
 description: Découvrez comment la bibliothèque de classes .NET marque les membres comme obsolètes. Comprenez l’attribut ObsoleteAttribute, comment gérer les types et les membres obsolètes, et bien plus encore.
-ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
 - obsolete [.NET Framework]
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-ms.openlocfilehash: 2f39f5ec614b669f3a0f63677cb6f8a6f9ed11cf
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 188d9184476e58fb679421467cd68e2ea8a8a101
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925798"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558866"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Éléments obsolètes dans la bibliothèque de classes .NET Framework
 
@@ -38,7 +37,7 @@ Quand vous mettez à niveau et recompilez du code existant, l'utilisation d'un t
 
 - Modifiez votre code en supprimant l'utilisation du type ou membre, si possible.
 
-     -ou-
+     - ou -
 
 - Examinez la documentation de ce domaine technologique pour savoir que faire face à des éléments obsolètes.
 
@@ -84,4 +83,4 @@ Pour cibler une version spécifique de .NET Framework, assignez l’une des vale
 
 ## <a name="see-also"></a>Voir aussi
 
-- [\<supportedRuntime>Appartient](../configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<supportedRuntime> Appartient](../configure-apps/file-schema/startup/supportedruntime-element.md)

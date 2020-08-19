@@ -3,12 +3,12 @@ title: Blocage du débogage-.NET Core
 description: Un didacticiel qui vous guide tout au long du débogage d’un problème de verrouillage dans .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 247521176297254180d794d4d4fc850f30e343b0
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926405"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557878"
 ---
 # <a name="debug-a-deadlock-in-net-core"></a>Déboguer un interblocage dans .NET Core
 
@@ -26,7 +26,7 @@ Ce didacticiel présente les procédures suivantes :
 > - Analyser les piles et les blocs de synchronisation
 > - Diagnostiquer et résoudre un blocage
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Le didacticiel utilise :
 
@@ -51,7 +51,7 @@ dotnet-trace ps
 
 Prenez note de l’ID de processus à partir de la sortie de la commande. Notre ID de processus était `4807` , mais la vôtre sera différente. Accédez à l’URL suivante, qui est un point de terminaison d’API sur l’exemple de site :
 
-[https://localhost:5001/api/diagscenario/deadlock](https://localhost:5001/api/diagscenario/deadlock)
+`https://localhost:5001/api/diagscenario/deadlock`
 
 La demande d’API au site se bloquera et ne répondra pas. Laissez la demande s’exécuter pendant environ 10-15 secondes. Créez ensuite le vidage de base à l’aide de la commande suivante :
 

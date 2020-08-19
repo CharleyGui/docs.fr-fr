@@ -2,12 +2,12 @@
 title: 'Définir des types et leurs membres-visite guidée de C #'
 description: Les blocs de construction des programmes sont des types. Découvrez comment créer des classes, des structs, des interfaces, etc. en C#.
 ms.date: 08/06/2020
-ms.openlocfilehash: 69d6f0fe1e11f287fb5e385761fc210a61929d10
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: efd353fe8c1e6a57952bcb2586a05ad38ecd52b9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068526"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559113"
 ---
 # <a name="types-and-members"></a>Types et membres
 
@@ -97,7 +97,7 @@ L’exemple suivant montre des déclarations des deux énumérations précédent
 
 ## <a name="nullable-types"></a>Types Nullable
 
-Les variables de tout type peuvent être déclarées comme n' ***acceptant pas les valeurs NULL*** ou ***null***. Une variable Nullable peut contenir une `null` valeur supplémentaire, ce qui n’indique aucune valeur. Les types valeur Nullable (structs ou enums) sont représentés par <xref:System.Nullable%601?displayProperty=nameWithType> . Les types référence non Nullable et Nullable sont représentés par le type référence sous-jacent. La distinction est représentée par les métadonnées lues par le compilateur et certaines bibliothèques. Le compilateur fournit des avertissements quand des références Nullable sont déréférencées sans avoir d’abord vérifié leur valeur par rapport à `null` . Le compilateur fournit également des avertissements quand des références non Nullable sont assignées à une valeur qui peut être `null` . L’exemple suivant déclare un ***entier Nullable***, en l’initialisant à `null` . Ensuite, il définit la valeur sur `5` . Il illustre le même concept avec une ***chaîne Nullable***. Pour plus d’informations, consultez [types valeur Nullable](../language-reference/builtin-types/nullable-value-types.md) et [types référence Nullable](../nullable-references.md).
+Les variables de tout type peuvent être déclarées comme n' ***acceptant pas les valeurs NULL*** ou ***null***. Une variable Nullable peut contenir une `null` valeur supplémentaire, ce qui n’indique aucune valeur. Les types valeur Nullable (structs ou enums) sont représentés par <xref:System.Nullable%601?displayProperty=nameWithType> . Les types référence non Nullable et Nullable sont représentés par le type référence sous-jacent. La distinction est représentée par les métadonnées lues par le compilateur et certaines bibliothèques. Le compilateur fournit des avertissements quand des références Nullable sont déréférencées sans avoir d’abord vérifié leur valeur par rapport à `null` . Le compilateur fournit également des avertissements lorsque des références non Nullable se voient affecter une valeur qui peut être `null` . L’exemple suivant déclare un ***entier Nullable***, en l’initialisant à `null` . Ensuite, il définit la valeur sur `5` . Il illustre le même concept avec une ***chaîne Nullable***. Pour plus d’informations, consultez [types valeur Nullable](../language-reference/builtin-types/nullable-value-types.md) et [types référence Nullable](../nullable-references.md).
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DeclareNullable":::
 

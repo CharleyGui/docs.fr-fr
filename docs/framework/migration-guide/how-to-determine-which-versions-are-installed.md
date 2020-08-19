@@ -5,17 +5,16 @@ ms.date: 02/03/2020
 dev_langs:
 - csharp
 - vb
-ms.custom: updateeachrelease
 helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: 122441e9238fd91199aed255b0125f69081c0a8c
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 1591aacf5496852609ae571a52aaea2d5c09a15b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990142"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558554"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Guide pratique pour déterminer les versions du .NET Framework installées
 
@@ -132,13 +131,13 @@ Chaque version de .NET Framework de 1,1 à 4,0 est indiquée sous la forme d’u
 
 | Version du Framework  | Sous-clé de Registre | Valeur |
 | ------------------ | --------------- | ----- |
-| 1.0                | **HKLM \\ Software \\ Microsoft \\ . \\Stratégie NETFramework \\ v 1.0 \\ 3705**     | **Installer** REG_SZ est égal à`1` |
-| 1.1                | **HKLM \\ Software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Installer** REG_DWORD est égal à`1` |
-| 2.0                | **HKLM \\ Software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 2.0.50727**  | **Installer** REG_DWORD est égal à`1` |
-| 3.0                | **HKLM \\ Software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.0 \\ installation** | **InstallSuccess** REG_DWORD est égal à`1` |
-| 3,5                | **HKLM \\ Software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 3.5**        | **Installer** REG_DWORD est égal à`1` |
-| Profil client 4,0 | **HKLM \\ Software \\ Microsoft \\ .NET Framework installation de \\ NDP \\ v4 \\ client**  | **Installer** REG_DWORD est égal à`1` |
-| Profil complet 4,0   | **HKLM version du \\ \\ \\ programme d’installation de Microsoft NET Framework, \\ NDP \\ v4 \\ complet**    | **Installer** REG_DWORD est égal à`1` |
+| 1.0                | **HKLM \\ Software \\ Microsoft \\ . \\Stratégie NETFramework \\ v 1.0 \\ 3705**     | **Installer** REG_SZ est égal à `1` |
+| 1.1                | **HKLM \\ Software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Installer** REG_DWORD est égal à `1` |
+| 2.0                | **HKLM \\ Software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 2.0.50727**  | **Installer** REG_DWORD est égal à `1` |
+| 3.0                | **HKLM \\ Software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.0 \\ installation** | **InstallSuccess** REG_DWORD est égal à `1` |
+| 3,5                | **HKLM \\ Software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 3.5**        | **Installer** REG_DWORD est égal à `1` |
+| Profil client 4,0 | **HKLM \\ Software \\ Microsoft \\ .NET Framework installation de \\ NDP \\ v4 \\ client**  | **Installer** REG_DWORD est égal à `1` |
+| Profil complet 4,0   | **HKLM version du \\ \\ \\ programme d’installation de Microsoft NET Framework, \\ NDP \\ v4 \\ complet**    | **Installer** REG_DWORD est égal à `1` |
 
 > [!IMPORTANT]
 > Si l’application que vous exécutez est 32 bits et s’exécute sous Windows 64 bits, les chemins d’accès au Registre sont différents de ceux indiqués précédemment. Le registre 64 bits est disponible dans la sous-clé **HKEY_LOCAL_MACHINE \\ Software \\ Wow6432Node \\ ** . Par exemple, la sous-clé de Registre pour .NET Framework 3,5 est **HKEY_LOCAL_MACHINE \\ logiciel \\ Wow6432Node \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 3.5**.

@@ -4,12 +4,12 @@ description: Cet article décrit les risques de sécurité inhérents au type Bi
 ms.date: 07/11/2020
 ms.author: levib
 author: GrabYourPitchforks
-ms.openlocfilehash: f6a54b34bbf1e19212fe37aadb448a1722fe9ff0
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: ac01fe78c9577563641a8b06a232ed614ed8520a
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86444765"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558840"
 ---
 # <a name="binaryformatter-security-guide"></a>Guide de sécurité BinaryFormatter
 
@@ -22,7 +22,7 @@ Cet article s’applique aux implémentations .NET suivantes :
 ## <a name="background"></a>Arrière-plan
 
 > [!WARNING]
-> Le <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> type est dangereux et n’est ***pas*** recommandé pour le traitement des données. Les applications doivent cesser `BinaryFormatter` d’utiliser dès que possible, même si elles estiment que les données qu’elles traitent sont dignes de confiance. `BinaryFormatter`la sécurité n’est pas sécurisée.
+> Le <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> type est dangereux et n’est ***pas*** recommandé pour le traitement des données. Les applications doivent cesser `BinaryFormatter` d’utiliser dès que possible, même si elles estiment que les données qu’elles traitent sont dignes de confiance. `BinaryFormatter` la sécurité n’est pas sécurisée.
 
 Cet article s’applique également aux types suivants :
 
@@ -33,7 +33,7 @@ Cet article s’applique également aux types suivants :
 
 Les vulnérabilités de désérialisation sont une catégorie de menace dans laquelle les charges utiles de demande sont traitées de façon non sécurisée. Une personne malveillante qui parvient à exploiter ces vulnérabilités contre une application peut provoquer un déni de service (DoS), la divulgation d’informations ou l’exécution de code à distance dans l’application cible. Cette catégorie de risque rend constamment le [OWASP Top 10](https://owasp.org/www-project-top-ten/). Les cibles incluent des applications écrites dans [différents langages](https://owasp.org/www-community/vulnerabilities/Deserialization_of_untrusted_data), notamment C/C++, Java et C#.
 
-Dans .NET, la cible de risque la plus importante est celle des applications qui utilisent le <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> type pour désérialiser les données. `BinaryFormatter`est largement utilisé dans l’écosystème .NET en raison de sa puissance et de sa simplicité d’utilisation. Toutefois, cette même puissance donne aux attaquants la possibilité d’influencer le workflow de contrôle dans l’application cible. Les attaques réussies peuvent empêcher l’attaquant d’exécuter du code dans le contexte du processus cible.
+Dans .NET, la cible de risque la plus importante est celle des applications qui utilisent le <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> type pour désérialiser les données. `BinaryFormatter` est largement utilisé dans l’écosystème .NET en raison de sa puissance et de sa simplicité d’utilisation. Toutefois, cette même puissance donne aux attaquants la possibilité d’influencer le workflow de contrôle dans l’application cible. Les attaques réussies peuvent empêcher l’attaquant d’exécuter du code dans le contexte du processus cible.
 
 Comme une analogie plus simple, supposez que l’appel de `BinaryFormatter.Deserialize` sur une charge utile est l’équivalent de l’interprétation de cette charge utile comme un exécutable autonome et de son lancement.
 
@@ -42,9 +42,9 @@ Comme une analogie plus simple, supposez que l’appel de `BinaryFormatter.Deser
 > [!WARNING]
 > La `BinaryFormatter.Deserialize` méthode n’est __jamais__ sûre quand elle est utilisée avec une entrée non fiable. Nous recommandons vivement aux consommateurs d’utiliser l’une des solutions décrites plus loin dans cet article.
 
-`BinaryFormatter`a été implémenté avant que les vulnérabilités de désérialisation étaient une catégorie de menace bien comprise. Par conséquent, le code ne suit pas les meilleures pratiques modernes. La `Deserialize` méthode peut être utilisée comme un vecteur pour permettre aux attaquants d’effectuer des attaques dos contre les applications consommatrices. Ces attaques peuvent rendre l’application inactive ou entraîner un arrêt inattendu du processus. Cette catégorie d’attaque ne peut pas être atténuée avec un `SerializationBinder` ou tout autre `BinaryFormatter` commutateur de configuration. .NET considère ce comportement comme étant de la ***conception*** et n’émet pas de mise à jour de code pour modifier le comportement.
+`BinaryFormatter` a été implémenté avant que les vulnérabilités de désérialisation étaient une catégorie de menace bien comprise. Par conséquent, le code ne suit pas les meilleures pratiques modernes. La `Deserialize` méthode peut être utilisée comme un vecteur pour permettre aux attaquants d’effectuer des attaques dos contre les applications consommatrices. Ces attaques peuvent rendre l’application inactive ou entraîner un arrêt inattendu du processus. Cette catégorie d’attaque ne peut pas être atténuée avec un `SerializationBinder` ou tout autre `BinaryFormatter` commutateur de configuration. .NET considère ce comportement comme étant de la ***conception*** et n’émet pas de mise à jour de code pour modifier le comportement.
 
-`BinaryFormatter.Deserialize`peut être vulnérable à d’autres catégories d’attaques, telles que la divulgation d’informations ou l’exécution de code à distance. L’utilisation de fonctionnalités telles qu’un personnalisé <xref:System.Runtime.Serialization.SerializationBinder> est peut-être insuffisante pour atténuer correctement ces risques. Il est possible qu’une nouvelle vulnérabilité soit découverte pour laquelle .NET ne peut pratiquement pas publier une mise à jour de sécurité. Les consommateurs doivent évaluer leurs scénarios individuels et prendre en compte leur exposition potentielle à ces risques.
+`BinaryFormatter.Deserialize` peut être vulnérable à d’autres catégories d’attaques, telles que la divulgation d’informations ou l’exécution de code à distance. L’utilisation de fonctionnalités telles qu’un personnalisé <xref:System.Runtime.Serialization.SerializationBinder> est peut-être insuffisante pour atténuer correctement ces risques. Il est possible qu’une nouvelle vulnérabilité soit découverte pour laquelle .NET ne peut pratiquement pas publier une mise à jour de sécurité. Les consommateurs doivent évaluer leurs scénarios individuels et prendre en compte leur exposition potentielle à ces risques.
 
 Nous recommandons `BinaryFormatter` aux consommateurs d’effectuer des évaluations des risques individuels sur leurs applications. La seule responsabilité du consommateur est de déterminer s’il faut utiliser `BinaryFormatter` . Les consommateurs doivent évaluer les exigences de sécurité, techniques, de réputation, juridiques et réglementaires de l’utilisation de `BinaryFormatter` .
 
@@ -52,8 +52,8 @@ Nous recommandons `BinaryFormatter` aux consommateurs d’effectuer des évaluat
 
 .NET propose plusieurs sérialiseurs intégrés qui peuvent gérer en toute sécurité les données non approuvées :
 
-* <xref:System.Xml.Serialization.XmlSerializer>et <xref:System.Runtime.Serialization.DataContractSerializer> pour sérialiser des graphiques d’objets dans et à partir de XML. Ne confondez pas `DataContractSerializer` avec <xref:System.Runtime.Serialization.NetDataContractSerializer> .
-* <xref:System.IO.BinaryReader>et <xref:System.IO.BinaryWriter> for XML et JSON.
+* <xref:System.Xml.Serialization.XmlSerializer> et <xref:System.Runtime.Serialization.DataContractSerializer> pour sérialiser des graphiques d’objets dans et à partir de XML. Ne confondez pas `DataContractSerializer` avec  <xref:System.Runtime.Serialization.NetDataContractSerializer> .
+* <xref:System.IO.BinaryReader> et <xref:System.IO.BinaryWriter> for XML et JSON.
 * Les <xref:System.Text.Json> API pour sérialiser des graphiques d’objets dans JSON.
 
 ## <a name="dangerous-alternatives"></a>Alternatives dangereuses
@@ -87,7 +87,6 @@ __Prenons l’exemple d’une application qui passe d’un modèle d’installat
 ## <a name="further-resources"></a>Ressources supplémentaires
 
 * [YSoSerial.net](https://github.com/pwntester/ysoserial.net) pour la recherche de la manière dont les adversaires attaquent les applications qui utilisent `BinaryFormatter` .
-* [Modélisation des menaces](/securityengineering/sdl/threatmodeling) pour plus d’informations sur les applications et les services de modélisation des menaces.
 * Informations générales sur les vulnérabilités de désérialisation :
   * [OWASP Top 10-A8:2017-désérialisation non sécurisée](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A8-Insecure_Deserialization)
   * [CWE-502 : désérialisation des données non approuvées](https://cwe.mitre.org/data/definitions/502.html)

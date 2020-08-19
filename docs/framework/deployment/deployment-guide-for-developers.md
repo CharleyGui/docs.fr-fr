@@ -1,18 +1,17 @@
 ---
 title: Guide de déploiement du .NET Framework pour les développeurs
 description: Lisez le Guide de déploiement de .NET pour les développeurs. Utilisez ces informations si vous souhaitez installer n’importe quelle version de .NET de la version 4,5 à 4,8 avec vos applications.
-ms.custom: updateeachrelease
 ms.date: 01/17/2020
 helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 95c2cacc062bbe05ce0bc5c3e832bfe3006cf412
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 47946121334fe45132a7469894f30081045e3a68
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622664"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558827"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Guide de déploiement du .NET Framework pour les développeurs
 Cette rubrique fournit des informations destinées aux développeurs qui souhaitent installer une version du .NET Framework (du .NET Framework 4.5 au [!INCLUDE[net_current](../../../includes/net-current-version.md)]) avec leurs applications.
@@ -22,7 +21,7 @@ Vous pouvez télécharger les packages redistribuables et les modules linguistiq
 - [.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
 - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
-- [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
+- [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
 - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
 - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
 - [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
@@ -261,7 +260,7 @@ Par exemple, pour détecter si le module linguistique japonais complet (LCID = 1
 
 | | |
 |-|-|
-| Clé | HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
+| Clé : | HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
 | Nom | Libérer |
 | Type | DWORD |
 
@@ -276,7 +275,7 @@ Le .NET Framework fournit un ensemble de fichiers exécutables de modules lingui
 - [.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
 - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
-- [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
+- [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
 - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
 - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
 - [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
@@ -394,8 +393,8 @@ Le tableau suivant répertorie .NET Framework modules linguistiques disponibles 
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de déploiement pour les administrateurs](guide-for-administrators.md)
-- [Configuration système requise](../get-started/system-requirements.md)
+- [Configuration requise](../get-started/system-requirements.md)
 - [Installer le .NET Framework pour les développeurs](../install/guide-for-developers.md)
 - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)
-- [Réduction des redémarrages système lors des installations du .NET Framework 4.5](reducing-system-restarts.md)
-- [How to: Get Progress from the .NET Framework 4.5 Installer](how-to-get-progress-from-the-dotnet-installer.md)
+- [Réduction des redémarrages système lors des installations de .NET Framework 4.5](reducing-system-restarts.md)
+- [Procédure : suivre la progression du programme d’installation de .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)
