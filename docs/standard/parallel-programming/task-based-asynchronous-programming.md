@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: f7cb42c8982cb6a704b39730a4f7aa0ce781d506
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 57261602c456a6dcf90c03aa044e7d1c0c8c1c6a
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446377"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608028"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
@@ -159,7 +159,7 @@ Notez que la tâche parent n’attend pas que la tâche enfant détachée soit t
 
 ## <a name="creating-child-tasks"></a>Création de tâches enfants
 
-Lorsque le code utilisateur qui s’exécute dans une tâche crée une tâche avec l’option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>, la nouvelle tâche est une *tâche enfant attachée* de la tâche d’origine, appelée tâche parent. Vous pouvez utiliser l’option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> pour exprimer le parallélisme des tâches structuré, car la tâche parent attend implicitement que toutes les tâches enfants attachées soient terminées. L’exemple suivant affiche une tâche parent qui crée dix tâches enfants attachées. Notez que l'exemple appelle la méthode <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> pour attendre la fin de la tâche parente, il ne doit pas explicitement attendre la fin des tâches enfants attachées.
+Lorsque le code utilisateur qui s’exécute dans une tâche crée une tâche avec l' <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> option, la nouvelle tâche est appelée *tâche enfant attachée* de la tâche parente. Vous pouvez utiliser l’option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> pour exprimer le parallélisme des tâches structuré, car la tâche parent attend implicitement que toutes les tâches enfants attachées soient terminées. L’exemple suivant affiche une tâche parent qui crée dix tâches enfants attachées. Notez que l'exemple appelle la méthode <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> pour attendre la fin de la tâche parente, il ne doit pas explicitement attendre la fin des tâches enfants attachées.
 
 [!code-csharp[TPL_TaskIntro#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/child1.cs#8)]
 [!code-vb[TPL_TaskIntro#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/child1.vb#8)]

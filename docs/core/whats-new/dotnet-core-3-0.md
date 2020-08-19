@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 9f553e9af16be0891f208832c5daa444a1b736e2
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: bf712e88d96a5c2c80c3ff50283d44e9c7717abb
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281509"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608209"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -54,7 +54,7 @@ Si vous utilisez Visual Studio, vous avez besoin de [Visual Studio 2019](https:
 
 ### <a name="default-executables"></a>Exécutables par défaut
 
-.NET Core génère désormais des [exécutables dépendants du runtime](../deploying/index.md#publish-runtime-dependent) par défaut. Ce comportement est nouveau pour les applications qui utilisent une version .NET Core installée de façon globale. Auparavant, seuls les [déploiements autonomes](../deploying/index.md#publish-self-contained) produisaient un exécutable.
+.NET Core génère désormais des [exécutables dépendant du framework](../deploying/index.md#publish-framework-dependent) par défaut. Ce comportement est nouveau pour les applications qui utilisent une version .NET Core installée de façon globale. Auparavant, seuls les [déploiements autonomes](../deploying/index.md#publish-self-contained) produisaient un exécutable.
 
 Pendant `dotnet build` ou `dotnet publish` , un fichier exécutable (connu sous le nom de **apphost**) qui correspond à l’environnement et à la plateforme du kit de développement logiciel (SDK) que vous utilisez est créé. Vous pouvez obtenir le même résultat avec ces exécutables, comme vous le feriez avec d’autres exécutables natifs comme :
 
@@ -69,7 +69,7 @@ Pendant `dotnet build` ou `dotnet publish` , un fichier exécutable (connu sous 
 
 Lorsque le paramètre appHost est activé, .NET Core génère un exécutable Mach-O natif quand vous générez ou publiez. Votre application s’exécute dans le contexte de appHost lorsqu’elle est exécutée à partir du code source avec la `dotnet run` commande, ou en démarrant directement l’exécutable Mach-O.
 
-Sans appHost, la seule façon dont un utilisateur peut démarrer une application [dépendante du runtime](../deploying/index.md#publish-runtime-dependent) est d’utiliser la `dotnet <filename.dll>` commande. Un appHost est toujours créé lorsque vous publiez votre application [autonome](../deploying/index.md#publish-self-contained).
+Sans appHost, la seule façon dont un utilisateur peut démarrer une application [dépendante du Framework](../deploying/index.md#publish-framework-dependent) est avec la `dotnet <filename.dll>` commande. Un appHost est toujours créé lorsque vous publiez votre application [autonome](../deploying/index.md#publish-self-contained).
 
 Vous pouvez soit configurer appHost au niveau du projet, soit basculer la appHost d’une commande spécifique `dotnet` avec le `-p:UseAppHost` paramètre :
 
@@ -102,7 +102,7 @@ Pour publier un exécutable monofichier, définissez `PublishSingleFile` dans vo
 </PropertyGroup>
 ```
 
--ou-
+- ou -
 
 ```dotnetcli
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
@@ -213,7 +213,7 @@ Exceptions au ciblage croisé :
 .NET Core 3.0 introduit une fonctionnalité que vous pouvez choisir d’utiliser et qui permet de restaurer par progression votre application vers la dernière version majeure de .NET Core. En outre, un nouveau paramètre a été ajouté pour contrôler la façon dont la restauration par progression est appliquée à votre application. Ce paramètre peut être configuré des façons suivantes :
 
 - Propriété du fichier projet : `RollForward`
-- Propriété du fichier de configuration au moment de l’exécution :`rollForward`
+- Propriété du fichier de configuration au moment de l’exécution : `rollForward`
 - Variable d’environnement : `DOTNET_ROLL_FORWARD`
 - Argument de ligne de commande : `--roll-forward`
 
@@ -539,7 +539,7 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### <a name="fast-built-in-json-support"></a>Prise en charge JSON intégrée rapide
 
-Les utilisateurs .NET ont largement utilisé [Newtonsoft.Jssur](https://www.newtonsoft.com/json) et d’autres bibliothèques JSON populaires, qui continuent d’être de bons choix. `Newtonsoft.Json`utilise des chaînes .NET comme type de données de base, UTF-16 en coulisses.
+Les utilisateurs .NET ont largement utilisé [Newtonsoft.Jssur](https://www.newtonsoft.com/json) et d’autres bibliothèques JSON populaires, qui continuent d’être de bons choix. `Newtonsoft.Json` utilise des chaînes .NET comme type de données de base, UTF-16 en coulisses.
 
 La nouvelle prise en charge de JSON intégrée est la haute performance, une faible allocation et fonctionne avec du texte JSON encodé en UTF-8. Pour plus d’informations sur l' <xref:System.Text.Json> espace de noms et les types, consultez les articles suivants :
 

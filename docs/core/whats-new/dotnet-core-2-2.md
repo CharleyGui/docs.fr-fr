@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 12/04/2018
-ms.openlocfilehash: 64cb561acd72ff5d4a11fcae7ce59eaad750f74e
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 656ef9aa2745c935c37b69ae5a54b8d126700e55
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644372"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608303"
 ---
 # <a name="whats-new-in-net-core-22"></a>Nouveautés de .NET Core 2.2
 
@@ -18,7 +18,7 @@ ms.locfileid: "81644372"
 
 ## <a name="new-deployment-mode"></a>Nouveau mode de déploiement
 
-À partir de .NET Core 2.2, vous pouvez déployer des [exécutables dépendants du framework](../deploying/index.md#publish-runtime-dependent), qui sont des fichiers **.exe** au lieu de fichiers **.dll**. Comme les déploiements dépendants du framework, les exécutables dépendants du framework dépendent toujours de la présence d’une version de .NET Core partagée à l’échelle du système pour s’exécuter. Votre application ne comporte que votre code et les éventuelles dépendances tierces. Contrairement aux déploiements dépendants du framework, les exécutables dépendants du framework sont propres à la plateforme.
+À partir de .NET Core 2.2, vous pouvez déployer des [exécutables dépendants du framework](../deploying/index.md#publish-framework-dependent), qui sont des fichiers **.exe** au lieu de fichiers **.dll**. Comme les déploiements dépendants du framework, les exécutables dépendants du framework dépendent toujours de la présence d’une version de .NET Core partagée à l’échelle du système pour s’exécuter. Votre application ne comporte que votre code et les éventuelles dépendances tierces. Contrairement aux déploiements dépendants du framework, les exécutables dépendants du framework sont propres à la plateforme.
 
 Ce nouveau mode de déploiement présente le net avantage de créer un exécutable au lieu d’une bibliothèque, ce qui permet d’exécuter directement l’application, sans appeler `dotnet` au préalable.
 

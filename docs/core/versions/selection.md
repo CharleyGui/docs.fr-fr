@@ -4,12 +4,12 @@ description: Découvrez comment .NET Core recherche et choisit automatiquement l
 author: adegeo
 ms.author: adegeo
 ms.date: 03/24/2020
-ms.openlocfilehash: faaa638905bb3c8e9cd4c09af83979d90698df3d
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 82b5522601b0ed5d3f4faf6e6c6c970ba285b11f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803116"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608200"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Sélectionner la version .NET Core à utiliser
 
@@ -78,7 +78,7 @@ Les versions cibles de .Net Framework Standard sont également plafonnées à la
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Les applications dépendantes du framework font l’objet d’une restauration par progression
 
-Quand vous exécutez une application à partir de [`dotnet run`](../tools/dotnet-run.md) la source avec, à partir d’un [**déploiement dépendant du Framework**](../deploying/index.md#publish-runtime-dependent) avec [`dotnet myapp.dll`](../tools/dotnet.md#description) , ou à partir d’un [**exécutable dépendant du Framework**](../deploying/index.md#publish-runtime-dependent) avec `myapp.exe` , l' `dotnet` exécutable est l' **hôte** de l’application.
+Quand vous exécutez une application à partir de [`dotnet run`](../tools/dotnet-run.md) la source avec, à partir d’un [**déploiement dépendant du Framework**](../deploying/index.md#publish-framework-dependent) avec [`dotnet myapp.dll`](../tools/dotnet.md#description) , ou à partir d’un [**exécutable dépendant du Framework**](../deploying/index.md#publish-framework-dependent) avec `myapp.exe` , l' `dotnet` exécutable est l' **hôte** de l’application.
 
 L’hôte choisit la dernière version de correctif installée sur la machine. Par exemple, si vous avez spécifié `netcoreapp3.0` dans votre fichier projet et que `3.0.2` est le dernier runtime .NET installé, le runtime `3.0.2` est utilisé.
 
@@ -87,9 +87,9 @@ Si aucune version acceptable de `3.0.*` n’est trouvée, une nouvelle version `
 Quelques exemples d’utilisation illustrent le comportement, si vous ciblez 3,0 :
 
 - ✔️ 3,0 est spécifié. 3.0.3 est la version de correctif la plus élevée installée. 3.0.3 est utilisé.
-- ❌3,0 est spécifié. Aucune version 3,0. * n’est installée. 2.1.1 est le runtime le plus élevé installé. Un message d’erreur s’affiche.
+- ❌ 3,0 est spécifié. Aucune version 3,0. * n’est installée. 2.1.1 est le runtime le plus élevé installé. Un message d’erreur s’affiche.
 - ✔️ 3,0 est spécifié. Aucune version 3,0. * n’est installée. 3.1.0 est la version de Runtime la plus élevée installée. 3.1.0 est utilisé.
-- ❌2,0 est spécifié. Aucune version 2.x n’est installée. 3.0.0 est le runtime le plus élevé installé. Un message d’erreur s’affiche.
+- ❌ 2,0 est spécifié. Aucune version 2.x n’est installée. 3.0.0 est le runtime le plus élevé installé. Un message d’erreur s’affiche.
 
 La restauration par progression de la version mineure présente un effet secondaire qui peut toucher les utilisateurs finaux. Examinez le cas suivant :
 

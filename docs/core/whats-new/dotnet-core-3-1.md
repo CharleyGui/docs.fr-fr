@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 2373b21e92c6ca68aac33684a9bd0912a2e642b3
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 42d4f7e8800bf2d13d584084f8a41bad2ada534f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324273"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608122"
 ---
 # <a name="whats-new-in-net-core-31"></a>Nouveautés de .NET Core 3.1
 
@@ -29,7 +29,7 @@ Pour plus d’informations sur la version, consultez l' [annonce de .net Core 3,
 
 .NET Core 3,1 est une version LTS avec prise en charge de Microsoft au cours des trois prochaines années. Il est fortement recommandé de déplacer vos applications vers .NET Core 3,1. Le cycle de vie actuel des autres versions majeures est le suivant :
 
-| Libérer | Notes |
+| Libérer | Remarque |
 | ------- | ---- |
 | .NET Core 3.0 | Fin de vie le 3 mars 2020.     |
 | .NET Core 2.2 | Fin de vie le 23 décembre 2019. |
@@ -45,7 +45,7 @@ Pour plus d’informations, consultez la [stratégie de support .net Core](https
 
 Lorsque le paramètre appHost est activé, .NET Core génère un exécutable Mach-O natif quand vous générez ou publiez. Votre application s’exécute dans le contexte de appHost lorsqu’elle est exécutée à partir du code source avec la `dotnet run` commande, ou en démarrant directement l’exécutable Mach-O.
 
-Sans appHost, la seule façon dont un utilisateur peut démarrer une application [dépendante du runtime](../deploying/index.md#publish-runtime-dependent) est d’utiliser la `dotnet <filename.dll>` commande. Un appHost est toujours créé lorsque vous publiez votre application [autonome](../deploying/index.md#publish-self-contained).
+Sans appHost, la seule façon dont un utilisateur peut démarrer une application [dépendante du Framework](../deploying/index.md#publish-framework-dependent) est avec la `dotnet <filename.dll>` commande. Un appHost est toujours créé lorsque vous publiez votre application [autonome](../deploying/index.md#publish-self-contained).
 
 Vous pouvez soit configurer appHost au niveau du projet, soit basculer la appHost d’une commande spécifique `dotnet` avec le `-p:UseAppHost` paramètre :
 

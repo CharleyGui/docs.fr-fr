@@ -1,6 +1,6 @@
 ---
-title: Exposer les composants de base .NET à COM
-description: Ce tutoriel vous montre comment exposer une classe à COM de .NET Core. Vous générez un serveur COM et un manifeste de serveur côte à côte pour Le COM sans enregistrement.
+title: Exposition de composants .NET Core à COM
+description: Ce didacticiel vous montre comment exposer une classe à COM à partir de .NET Core. Vous générez un serveur COM et un manifeste de serveur côte à côte pour COM sans registre.
 ms.date: 07/12/2019
 helpviewer_keywords:
 - exposing .NET Core components to COM
@@ -9,14 +9,14 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 17d85b9e9734fae0bb69f94da8c08669216ab0ae
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 346776ebae3a6077fd39f26d5bd19d599d163db2
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242866"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608343"
 ---
-# <a name="exposing-net-core-components-to-com"></a>Exposer les composants de base .NET à COM
+# <a name="exposing-net-core-components-to-com"></a>Exposition de composants .NET Core à COM
 
 Dans .NET Core, le processus d’exposition de vos objets .NET à COM a été considérablement simplifié par rapport au .NET Framework. Le processus suivant vous guide tout au long de l’exposition d’une classe à COM. Ce didacticiel vous explique les procédures suivantes :
 
@@ -26,13 +26,13 @@ Dans .NET Core, le processus d’exposition de vos objets .NET à COM a été co
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Installez [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download) ou une version plus récente.
+- Installez le [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download) ou une version plus récente.
 
 ## <a name="create-the-library"></a>Créer la bibliothèque
 
 La première étape consiste à créer la bibliothèque.
 
-1. Créez un nouveau dossier et, dans ce dossier, exécutez la commande suivante :
+1. Créez un nouveau dossier et, dans ce dossier, exécutez la commande suivante :
 
     ```dotnetcli
     dotnet new classlib
@@ -91,8 +91,8 @@ Un [exemple de serveur COM](https://github.com/dotnet/samples/tree/master/core/e
 
 ## <a name="additional-notes"></a>Remarques supplémentaires
 
-Contrairement au .NET Framework, .NET Core ne prend pas en charge la génération d’une bibliothèque de types COM à partir d’un assembly .NET Core. L’orientation est soit d’écrire manuellement un fichier IDL ou un en-tête C /C pour les déclarations natives des interfaces COM.
+Contrairement au .NET Framework, .NET Core ne prend pas en charge la génération d’une bibliothèque de types COM à partir d’un assembly .NET Core. L’aide consiste à écrire manuellement un fichier IDL ou un en-tête C/C++ pour les déclarations natives des interfaces COM.
 
-[Les déploiements autonomes](../deploying/index.md#publish-self-contained) de composants COM ne sont pas pris en charge. Seuls les [déploiements dépendants](../deploying/index.md#publish-runtime-dependent) de l’exécution des composants COM sont pris en charge.
+Les [déploiements autonomes](../deploying/index.md#publish-self-contained) de composants COM ne sont pas pris en charge. Seuls les [déploiements dépendants du Framework](../deploying/index.md#publish-framework-dependent) des composants COM sont pris en charge.
 
-En outre, le chargement à la fois .NET Framework et .NET Core dans le même processus a des limitations diagnostiques. La principale limitation est le débogage des composants gérés car il n’est pas possible de déboguer à la fois .NET Framework et .NET Core en même temps. En outre, les deux instances de temps d’exécution ne partagent pas les assemblages gérés. Cela signifie qu’il n’est pas possible de partager les types .NET réels à travers les deux temps d’exécution et au lieu de cela toutes les interactions doivent être limitées aux contrats d’interface COM exposés.
+En outre, le chargement des .NET Framework et de .NET Core dans le même processus a des limitations de diagnostic. La principale limitation est le débogage des composants managés, car il n’est pas possible de déboguer à la fois .NET Framework et .NET Core. En outre, les deux instances de Runtime ne partagent pas d’assemblys managés. Cela signifie qu’il n’est pas possible de partager des types .NET réels entre les deux runtimes et que toutes les interactions doivent être limitées aux contrats d’interface COM exposés.

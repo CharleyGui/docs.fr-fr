@@ -4,12 +4,12 @@ description: Découvrez les problèmes courants liés à l’exécution des outi
 author: kdollard
 ms.topic: troubleshooting
 ms.date: 02/14/2020
-ms.openlocfilehash: b98b2735770c8259c2daf94575fc087b91bb61fd
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: db88958e1605fef589c5dbcb12065a6318183705
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062634"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608315"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Résoudre les problèmes d’utilisation de l’outil .NET Core
 
@@ -74,7 +74,7 @@ Le nom de l’exécutable détermine la façon dont vous appelez l’outil. Le t
 
 ### <a name="runtime-not-found"></a>Runtime introuvable
 
-Les outils .NET Core sont des [applications dépendantes du Framework](../deploying/index.md#publish-runtime-dependent), ce qui signifie qu’elles s’appuient sur un Runtime .net Core installé sur votre ordinateur. Si le runtime attendu est introuvable, ils suivent les règles de restauration par progression normales du Runtime .NET Core, telles que :
+Les outils .NET Core sont des [applications dépendantes du Framework](../deploying/index.md#publish-framework-dependent), ce qui signifie qu’elles s’appuient sur un Runtime .net Core installé sur votre ordinateur. Si le runtime attendu est introuvable, ils suivent les règles de restauration par progression normales du Runtime .NET Core, telles que :
 
 * Une application restaure par progression le correctif le plus élevé de la version principale et secondaire spécifiée.
 * S’il n’existe aucun Runtime correspondant avec un numéro de version principale et secondaire correspondant, la version mineure supérieure suivante est utilisée.

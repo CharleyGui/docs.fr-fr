@@ -1,13 +1,13 @@
 ---
 title: Publication d’applications
-description: En savoir plus sur les méthodes de publication d’une application .NET Core. .NET Core peut publier des applications spécifiques à une plateforme ou multiplateforme. Vous pouvez publier une application en tant qu’application autonome ou dépendante du Runtime. Chaque mode affecte la façon dont un utilisateur exécute votre application.
+description: En savoir plus sur les méthodes de publication d’une application .NET Core. .NET Core peut publier des applications spécifiques à une plateforme ou multiplateforme. Vous pouvez publier une application comme autonome ou dépendante du Framework. Chaque mode affecte la façon dont un utilisateur exécute votre application.
 ms.date: 04/01/2020
-ms.openlocfilehash: 201363ad314373ec3be44eb8496f92a8e0c8e418
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 57889271ce2f210c0838a54bb793aeb3be5c7272
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164943"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608406"
 ---
 # <a name="net-core-application-publishing-overview"></a>Vue d’ensemble de la publication d’applications .NET Core
 
@@ -15,55 +15,55 @@ Les applications que vous créez avec .NET Core peuvent être publiées dans deu
 
 La publication de votre application en tant que *contenu autonome* produit une application qui comprend le runtime et les bibliothèques .net Core, ainsi que votre application et ses dépendances. Les utilisateurs de l’application peuvent l’exécuter sur un ordinateur sur lequel le Runtime .NET Core n’est pas installé.
 
-La publication de votre application en tant que *dépendant du runtime* (anciennement *dépendante du Framework*) produit une application qui comprend uniquement votre application et ses dépendances. Les utilisateurs de l’application doivent installer séparément le Runtime .NET Core.
+La publication de votre application en tant que *dépendant du Framework* produit une application qui comprend uniquement votre application et ses dépendances. Les utilisateurs de l’application doivent installer séparément le Runtime .NET Core.
 
-Les deux modes de publication produisent un fichier exécutable propre à la plateforme par défaut. Les applications dépendantes du Runtime peuvent être créées sans exécutable, et ces applications sont multiplateformes.
+Les deux modes de publication produisent un fichier exécutable propre à la plateforme par défaut. Les applications dépendantes du Framework peuvent être créées sans exécutable, et ces applications sont multiplateformes.
 
 Quand un fichier exécutable est généré, vous pouvez spécifier la plateforme cible avec un identificateur de Runtime (RID). Pour plus d’informations sur les RID, consultez [catalogue RID .net Core](../rid-catalog.md).
 
-Le tableau suivant présente les commandes utilisées pour publier une application en tant qu’application dépendante du runtime ou autonome, par version du kit de développement logiciel (SDK) :
+Le tableau suivant présente les commandes utilisées pour publier une application comme étant dépendante de l’infrastructure ou autonome, par version du kit de développement logiciel (SDK) :
 
-| Type                                                                                 | SDK 2.1 | SDK 3. x | Commande |
-| -----------------------------------------------------------------------------------  | ------- | ------- | ------- |
-| [exécutable dépendant du runtime](#publish-runtime-dependent) pour la plateforme actuelle. |         | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
-| [exécutable dépendant du runtime](#publish-runtime-dependent) pour une plateforme spécifique.  |         | ✔️      | [`dotnet publish -r <RID> --self-contained false`](../tools/dotnet-publish.md) |
-| [binaire multiplateforme dépendant du runtime](#publish-runtime-dependent).               | ✔️      | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
-| [exécutable autonome](#publish-self-contained).                                | ✔️      | ✔️      | [`dotnet publish -r <RID>`](../tools/dotnet-publish.md) |
+| Type                                                                                     | SDK 2.1 | SDK 3. x | Commande |
+| ---------------------------------------------------------------------------------------  | ------- | ------- | ------- |
+| [exécutable dépendant du Framework](#publish-framework-dependent) pour la plateforme actuelle. |         | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
+| [exécutable dépendant du Framework](#publish-framework-dependent) pour une plateforme spécifique.  |         | ✔️      | [`dotnet publish -r <RID> --self-contained false`](../tools/dotnet-publish.md) |
+| [binaire multiplateforme dépendant du Framework](#publish-framework-dependent).               | ✔️      | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
+| [exécutable autonome](#publish-self-contained).                                    | ✔️      | ✔️      | [`dotnet publish -r <RID>`](../tools/dotnet-publish.md) |
 
 Pour plus d’informations, consultez [dotnet Publish commande .net Core](../tools/dotnet-publish.md).
 
 ## <a name="produce-an-executable"></a>Produire un exécutable
 
-Les exécutables ne sont pas multiplateformes. Elles sont spécifiques à un système d’exploitation et à une architecture de processeur. Lors de la publication de votre application et de la création d’un exécutable, vous pouvez publier l’application en tant qu’application [autonome](#publish-self-contained) ou [dépendante du runtime](#publish-runtime-dependent). La publication d’une application comme autonome comprend le Runtime .NET Core avec l’application, et les utilisateurs de l’application n’ont pas à se soucier de l’installation de .NET Core avant d’exécuter l’application. Les applications publiées comme dépendantes du runtime n’incluent pas le runtime et les bibliothèques .NET Core ; seule l’application et les dépendances tierces sont incluses.
+Les exécutables ne sont pas multiplateformes. Elles sont spécifiques à un système d’exploitation et à une architecture de processeur. Lors de la publication de votre application et de la création d’un exécutable, vous pouvez publier l’application comme étant [autonome](#publish-self-contained) ou [dépendante](#publish-framework-dependent)de l’infrastructure. La publication d’une application comme autonome comprend le Runtime .NET Core avec l’application, et les utilisateurs de l’application n’ont pas à se soucier de l’installation de .NET Core avant d’exécuter l’application. Les applications publiées comme dépendantes du Framework n’incluent pas le runtime et les bibliothèques .NET Core ; seule l’application et les dépendances tierces sont incluses.
 
 Les commandes suivantes produisent un exécutable :
 
-| Type                                                                                 | SDK 2.1 | SDK 3. x | Commande |
-| ------------------------------------------------------------------------------------ | ------- | ------- | ------- |
-| [exécutable dépendant du runtime](#publish-runtime-dependent) pour la plateforme actuelle. |         | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
-| [exécutable dépendant du runtime](#publish-runtime-dependent) pour une plateforme spécifique.  |         | ✔️      | [`dotnet publish -r <RID> --self-contained false`](../tools/dotnet-publish.md) |
-| [exécutable autonome](#publish-self-contained).                                | ✔️      | ✔️      | [`dotnet publish -r <RID>`](../tools/dotnet-publish.md) |
+| Type                                                                                     | SDK 2.1 | SDK 3. x | Commande |
+| ---------------------------------------------------------------------------------------- | ------- | ------- | ------- |
+| [exécutable dépendant du Framework](#publish-framework-dependent) pour la plateforme actuelle. |         | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
+| [exécutable dépendant du Framework](#publish-framework-dependent) pour une plateforme spécifique.  |         | ✔️      | [`dotnet publish -r <RID> --self-contained false`](../tools/dotnet-publish.md) |
+| [exécutable autonome](#publish-self-contained).                                    | ✔️      | ✔️      | [`dotnet publish -r <RID>`](../tools/dotnet-publish.md) |
 
 ## <a name="produce-a-cross-platform-binary"></a>Produire un binaire multiplateforme
 
-Des fichiers binaires multiplateforme sont créés lorsque vous publiez votre application comme étant [dépendante du runtime](#publish-runtime-dependent), sous la forme d’un fichier *dll* . Le fichier *dll* est nommé d’après votre projet. Par exemple, si vous avez une application nommée **word_reader**, un fichier nommé *word_reader.dll* est créé. Les applications publiées de cette manière sont exécutées avec la `dotnet <filename.dll>` commande et peuvent être exécutées sur n’importe quelle plateforme.
+Les binaires multiplateforme sont créés lorsque vous publiez votre application comme étant [dépendante du Framework](#publish-framework-dependent), sous la forme d’un fichier *dll* . Le fichier *dll* est nommé d’après votre projet. Par exemple, si vous avez une application nommée **word_reader**, un fichier nommé *word_reader.dll* est créé. Les applications publiées de cette manière sont exécutées avec la `dotnet <filename.dll>` commande et peuvent être exécutées sur n’importe quelle plateforme.
 
-Les binaires multiplateforme peuvent être exécutés sur n’importe quel système d’exploitation tant que le Runtime .NET Core ciblé est déjà installé. Si le Runtime .NET Core ciblé n’est pas installé, l’application peut s’exécuter à l’aide d’un Runtime plus récent si l’application est configurée pour effectuer une restauration par progression. Pour plus d’informations, consultez [restauration par progression des applications dépendantes](../versions/selection.md#framework-dependent-apps-roll-forward)de l’exécution.
+Les binaires multiplateforme peuvent être exécutés sur n’importe quel système d’exploitation tant que le Runtime .NET Core ciblé est déjà installé. Si le Runtime .NET Core ciblé n’est pas installé, l’application peut s’exécuter à l’aide d’un Runtime plus récent si l’application est configurée pour effectuer une restauration par progression. Pour plus d’informations, consultez [restauration par progression des applications dépendantes du Framework](../versions/selection.md#framework-dependent-apps-roll-forward).
 
 La commande suivante génère un binaire multiplateforme :
 
 | Type                                                                                 | SDK 2.1 | SDK 3. x | Commande |
 | -----------------------------------------------------------------------------------  | ------- | ------- | ------- |
-| [binaire multiplateforme dépendant du runtime](#publish-runtime-dependent).               | ✔️      | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
+| [binaire multiplateforme dépendant du Framework](#publish-framework-dependent).           | ✔️      | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
 
-## <a name="publish-runtime-dependent"></a>Publication dépendant du Runtime
+## <a name="publish-framework-dependent"></a>Publier le Framework dépendant du Framework
 
-Les applications publiées comme dépendantes du runtime sont interplateformes et n’incluent pas le Runtime .NET Core. L’utilisateur de votre application est tenu d’installer le Runtime .NET Core.
+Les applications publiées comme dépendantes du Framework sont inter-plateformes et n’incluent pas le Runtime .NET Core. L’utilisateur de votre application est tenu d’installer le Runtime .NET Core.
 
-La publication d’une application en tant que dépendant du runtime produit un fichier [binaire multiplateforme](#produce-a-cross-platform-binary) sous la forme d’un fichier *dll* et un [exécutable spécifique à la plateforme](#produce-an-executable) qui cible votre plateforme actuelle. La *dll* est multiplateforme, contrairement à l’exécutable. Par exemple, si vous publiez une application nommée **word_reader** et Windows cible, un exécutable *word_reader.exe* est créé avec *word_reader.dll*. Quand vous ciblez Linux ou macOS, un exécutable *word_reader* est créé avec *word_reader.dll*. Pour plus d’informations sur les RID, consultez [catalogue RID .net Core](../rid-catalog.md).
+La publication d’une application en tant que dépendant du Framework produit un fichier [binaire multiplateforme](#produce-a-cross-platform-binary) en tant que fichier *dll* et un [exécutable spécifique à la plateforme](#produce-an-executable) qui cible votre plateforme actuelle. La *dll* est multiplateforme, contrairement à l’exécutable. Par exemple, si vous publiez une application nommée **word_reader** et Windows cible, un exécutable *word_reader.exe* est créé avec *word_reader.dll*. Quand vous ciblez Linux ou macOS, un exécutable *word_reader* est créé avec *word_reader.dll*. Pour plus d’informations sur les RID, consultez [catalogue RID .net Core](../rid-catalog.md).
 
 > [!IMPORTANT]
-> Kit SDK .NET Core 2,1 ne génère pas d’exécutables spécifiques à la plateforme lorsque vous publiez une application dépendant du Runtime.
+> Kit SDK .NET Core 2,1 ne génère pas d’exécutables spécifiques à la plateforme lorsque vous publiez une application qui dépend de l’infrastructure.
 
 Le binaire multiplateforme de votre application peut être exécuté à l’aide de la `dotnet <filename.dll>` commande et peut être exécuté sur n’importe quelle plateforme. Si l’application utilise un package NuGet qui a des implémentations spécifiques à la plateforme, toutes les dépendances de plateformes sont copiées dans le dossier de publication avec l’application.
 
@@ -78,30 +78,30 @@ Seule votre application et ses dépendances sont distribuées. Le runtime et les
 Votre application et les autres. La bibliothèque basée sur le réseau s’exécute sur d’autres systèmes d’exploitation. Vous n’avez pas besoin de définir une plateforme cible pour votre application. Pour plus d’informations sur le format de fichier .NET, consultez [format de fichier d’assembly .net](../../standard/assembly/file-format.md).
 
 - **Utilise le dernier Runtime corrigé**\
-L’application utilise le runtime le plus récent (au sein de la famille principale de .NET Core ciblée) installé sur le système cible. Cela signifie que votre application utilise automatiquement la dernière version corrigée du Runtime .NET Core. Ce comportement par défaut peut être substitué. Pour plus d’informations, consultez [restauration par progression des applications dépendantes](../versions/selection.md#framework-dependent-apps-roll-forward)de l’exécution.
+L’application utilise le runtime le plus récent (au sein de la famille principale de .NET Core ciblée) installé sur le système cible. Cela signifie que votre application utilise automatiquement la dernière version corrigée du Runtime .NET Core. Ce comportement par défaut peut être substitué. Pour plus d’informations, consultez [restauration par progression des applications dépendantes du Framework](../versions/selection.md#framework-dependent-apps-roll-forward).
 
 ### <a name="disadvantages"></a>Inconvénients
 
 - **Nécessite la préinstallation du Runtime**\
-Votre application peut s’exécuter uniquement si la version de .NET Core ciblée par votre application est déjà installée sur le système hôte. Vous pouvez configurer le comportement de restauration par progression pour que l’application nécessite une version spécifique de .NET Core ou autorise une version plus récente de .NET Core. Pour plus d’informations, consultez [restauration par progression des applications dépendantes](../versions/selection.md#framework-dependent-apps-roll-forward)de l’exécution.
+Votre application peut s’exécuter uniquement si la version de .NET Core ciblée par votre application est déjà installée sur le système hôte. Vous pouvez configurer le comportement de restauration par progression pour que l’application nécessite une version spécifique de .NET Core ou autorise une version plus récente de .NET Core. Pour plus d’informations, consultez [restauration par progression des applications dépendantes du Framework](../versions/selection.md#framework-dependent-apps-roll-forward).
 
 - **.NET Core peut changer**\
-Il est possible que le runtime et les bibliothèques .NET Core soient mis à jour sur l’ordinateur sur lequel l’application est exécutée. Dans de rares cas, cela peut modifier le comportement de votre application si vous utilisez les bibliothèques .NET Core, lesquelles font la plupart des applications. Vous pouvez configurer la façon dont votre application utilise les versions plus récentes de .NET Core. Pour plus d’informations, consultez [restauration par progression des applications dépendantes](../versions/selection.md#framework-dependent-apps-roll-forward)de l’exécution.
+Il est possible que le runtime et les bibliothèques .NET Core soient mis à jour sur l’ordinateur sur lequel l’application est exécutée. Dans de rares cas, cela peut modifier le comportement de votre application si vous utilisez les bibliothèques .NET Core, lesquelles font la plupart des applications. Vous pouvez configurer la façon dont votre application utilise les versions plus récentes de .NET Core. Pour plus d’informations, consultez [restauration par progression des applications dépendantes du Framework](../versions/selection.md#framework-dependent-apps-roll-forward).
 
 L’inconvénient suivant s’applique uniquement au kit de développement logiciel (SDK) .NET Core 2,1.
 
 - **Utilisez la `dotnet` commande pour démarrer l’application**\
-Les utilisateurs doivent exécuter la `dotnet <filename.dll>` commande pour démarrer votre application. Le kit de développement logiciel (SDK) .NET Core 2,1 ne génère pas d’exécutables spécifiques à la plateforme pour les applications qui dépendent du Runtime.
+Les utilisateurs doivent exécuter la `dotnet <filename.dll>` commande pour démarrer votre application. Le kit de développement logiciel (SDK) .NET Core 2,1 ne génère pas d’exécutables spécifiques à la plateforme pour les applications qui dépendent de l’infrastructure.
 
 ### <a name="examples"></a>Exemples
 
-Publiez une application dépendant du runtime inter-plateforme. Un fichier exécutable qui cible votre plateforme actuelle est créé avec le fichier *dll* .
+Publiez une application qui dépend de l’infrastructure multiplateforme. Un fichier exécutable qui cible votre plateforme actuelle est créé avec le fichier *dll* .
 
 ```dotnet
 dotnet publish
 ```
 
-Publiez une application dépendant du runtime inter-plateforme. Un fichier exécutable Linux 64 bits est créé avec le fichier *dll* . Cette commande ne fonctionne pas avec kit SDK .NET Core 2,1.
+Publiez une application qui dépend de l’infrastructure multiplateforme. Un fichier exécutable Linux 64 bits est créé avec le fichier *dll* . Cette commande ne fonctionne pas avec kit SDK .NET Core 2,1.
 
 ```dotnet
 dotnet publish -r linux-x64 --self-contained false
@@ -126,7 +126,7 @@ Vous contrôlez la version de .NET Core qui est déployée avec votre applicatio
 ### <a name="disadvantages"></a>Inconvénients
 
 - **Déploiements plus importants**\
-Étant donné que votre application comprend le Runtime .NET Core et toutes les dépendances de votre application, la taille du téléchargement et l’espace disque requis sont supérieurs à ceux d’une version [dépendante du runtime](#publish-runtime-dependent) .
+Étant donné que votre application comprend le Runtime .NET Core et toutes les dépendances de votre application, la taille du téléchargement et l’espace disque requis sont supérieurs à ceux d’une version [dépendante du Framework](#publish-framework-dependent) .
 
   > [!TIP]
   > Vous pouvez réduire la taille de votre déploiement sur les systèmes Linux d’environ 28 Mo en utilisant le [*mode de globalisation de la globalisation*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).net core. Cela force votre application à traiter toutes les cultures comme la [culture dite indifférente](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).

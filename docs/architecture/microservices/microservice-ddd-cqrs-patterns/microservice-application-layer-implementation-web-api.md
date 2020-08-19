@@ -1,13 +1,13 @@
 ---
 title: Implémentation de la couche Application de microservices à l’aide de l’API web
 description: Comprendre l’injection de dépendances et les modèles de médiateur et leurs détails d’implémentation dans la couche d’application de l’API Web.
-ms.date: 01/30/2020
-ms.openlocfilehash: c6e82b610a528b688cb4334bdec01700abbd2a62
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.date: 08/17/2020
+ms.openlocfilehash: 72395acafb403a4e34858eb2b982ec83b9f3cee1
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306927"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608105"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
 
@@ -27,53 +27,59 @@ ASP.NET Core inclut un simple [conteneur IoC intégré](https://docs.microsoft.c
 
 En règle générale, vous injectez des dépendances qui implémentent des objets d’infrastructure. Une dépendance classique à injecter est un référentiel. Mais vous pouvez injecter toutes vos autres dépendances d’infrastructure. Pour simplifier les implémentations, vous pouvez injecter directement votre objet de modèle Unité de travail (objet DbContext EF), car DBContext est également l’implémentation de vos objets de persistance d’infrastructure.
 
-Dans l’exemple suivant, vous pouvez voir comment .NET Core injecte les objets de dépôt requis par le biais du constructeur. La classe est un gestionnaire de commandes, que nous allons expliquer dans la section suivante.
+Dans l’exemple suivant, vous pouvez voir comment .NET Core injecte les objets de dépôt requis par le biais du constructeur. La classe est un gestionnaire de commandes, qui sera traité dans la section suivante.
 
 ```csharp
 public class CreateOrderCommandHandler
-    : IAsyncRequestHandler<CreateOrderCommand, bool>
+        : IRequestHandler<CreateOrderCommand, bool>
 {
     private readonly IOrderRepository _orderRepository;
     private readonly IIdentityService _identityService;
     private readonly IMediator _mediator;
+    private readonly IOrderingIntegrationEventService _orderingIntegrationEventService;
+    private readonly ILogger<CreateOrderCommandHandler> _logger;
 
     // Using DI to inject infrastructure persistence Repositories
     public CreateOrderCommandHandler(IMediator mediator,
-                                     IOrderRepository orderRepository,
-                                     IIdentityService identityService)
+        IOrderingIntegrationEventService orderingIntegrationEventService,
+        IOrderRepository orderRepository,
+        IIdentityService identityService,
+        ILogger<CreateOrderCommandHandler> logger)
     {
-        _orderRepository = orderRepository ??
-                          throw new ArgumentNullException(nameof(orderRepository));
-        _identityService = identityService ??
-                          throw new ArgumentNullException(nameof(identityService));
-        _mediator = mediator ??
-                                 throw new ArgumentNullException(nameof(mediator));
+        _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        _orderingIntegrationEventService = orderingIntegrationEventService ?? throw new ArgumentNullException(nameof(orderingIntegrationEventService));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<bool> Handle(CreateOrderCommand message)
+    public async Task<bool> Handle(CreateOrderCommand message, CancellationToken cancellationToken)
     {
-        // Create the Order AggregateRoot
-        // Add child entities and value objects through the Order aggregate root
-        // methods and constructor so validations, invariants, and business logic
+        // Add Integration event to clean the basket
+        var orderStartedIntegrationEvent = new OrderStartedIntegrationEvent(message.UserId);
+        await _orderingIntegrationEventService.AddAndSaveEventAsync(orderStartedIntegrationEvent);
+
+        // Add/Update the Buyer AggregateRoot
+        // DDD patterns comment: Add child entities and value-objects through the Order Aggregate-Root
+        // methods and constructor so validations, invariants and business logic
         // make sure that consistency is preserved across the whole aggregate
-        var address = new Address(message.Street, message.City, message.State,
-                                  message.Country, message.ZipCode);
-        var order = new Order(message.UserId, address, message.CardTypeId,
-                              message.CardNumber, message.CardSecurityNumber,
-                              message.CardHolderName, message.CardExpiration);
+        var address = new Address(message.Street, message.City, message.State, message.Country, message.ZipCode);
+        var order = new Order(message.UserId, message.UserName, address, message.CardTypeId, message.CardNumber, message.CardSecurityNumber, message.CardHolderName, message.CardExpiration);
 
         foreach (var item in message.OrderItems)
         {
-            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
-                               item.Discount, item.PictureUrl, item.Units);
+            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice, item.Discount, item.PictureUrl, item.Units);
         }
+
+        _logger.LogInformation("----- Creating Order - Order: {@Order}", order);
 
         _orderRepository.Add(order);
 
         return await _orderRepository.UnitOfWork
-            .SaveEntitiesAsync();
+            .SaveEntitiesAsync(cancellationToken);
     }
 }
+
 ```
 
 Elle utilise les dépôts injectés pour exécuter la transaction et rendre persistantes les modifications d’état. Il importe peu que cette classe soit un gestionnaire de commandes, une méthode de contrôleur de l’API web ASP.NET Core ou un [service d’application DDD](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/). Il s’agit en fin de compte d’une classe simple qui utilise des dépôts, des entités de domaine et une autre coordination des applications d’une manière similaire à un gestionnaire de commandes. L’injection de dépendances fonctionne de la même manière pour toutes les classes mentionnées, comme dans l’exemple qui utilise l’injection de dépendances selon le constructeur.
@@ -179,9 +185,9 @@ Dans l’exemple d’injection de dépendances par le biais d’un constructeur 
 
 Le modèle Commande est intrinsèquement lié au modèle CQRS présenté précédemment dans le présent guide. Le modèle CQRS a deux côtés. Le premier côté concerne les requêtes, l’utilisation de requêtes simplifiées avec le micro ORM [Dapper](https://github.com/StackExchange/dapper-dot-net), précédemment décrit. Le second côté concerne les commandes, qui sont le point de départ des transactions et le canal d’entrée depuis l’extérieur du service.
 
-Comme le montre la figure 7-24, le modèle se base sur l’acceptation des commandes du côté client, leur traitement en fonction des règles du modèle de domaine et enfin, sur la persistance des états avec les transactions.
+Comme le montre la figure 7-24, le modèle est basé sur l’acceptation des commandes du côté client, leur traitement en fonction des règles du modèle de domaine et la persistance des États avec les transactions.
 
-![Diagramme montrant le workflow de haut niveau du client au niveau de la base de données.](./media/microservice-application-layer-implementation-web-api/high-level-writes-side.png)
+![Diagramme montrant le flot de données de haut niveau entre le client et la base de données.](./media/microservice-application-layer-implementation-web-api/high-level-writes-side.png)
 
 **Figure 7-24**. Affichage de haut niveau des commandes ou « côté transactionnel » dans un modèle CQRS
 
@@ -208,42 +214,58 @@ Une commande est implémentée avec une classe qui contient des champs ou collec
 L’exemple suivant illustre la classe simplifiée `CreateOrderCommand` . Il s’agit d’une commande immuable utilisée dans le microservice de passation de commandes dans eShopOnContainers.
 
 ```csharp
-// DDD and CQRS patterns comment
-// Note that we recommend that you implement immutable commands
-// In this case, immutability is achieved by having all the setters as private
-// plus being able to update the data just once, when creating the object
-// through the constructor.
-// References on immutable commands:
-// https://cqrs.nu/Faq
+// DDD and CQRS patterns comment: Note that it is recommended to implement immutable Commands
+// In this case, its immutability is achieved by having all the setters as private
+// plus only being able to update the data just once, when creating the object through its constructor.
+// References on Immutable Commands:
+// http://cqrs.nu/Faq
 // https://docs.spine3.org/motivation/immutability.html
 // http://blog.gauffin.org/2012/06/griffin-container-introducing-command-support/
 // https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties
+
 [DataContract]
 public class CreateOrderCommand
-    :IAsyncRequest<bool>
+    : IRequest<bool>
 {
     [DataMember]
     private readonly List<OrderItemDTO> _orderItems;
+
+    [DataMember]
+    public string UserId { get; private set; }
+
+    [DataMember]
+    public string UserName { get; private set; }
+
     [DataMember]
     public string City { get; private set; }
+
     [DataMember]
     public string Street { get; private set; }
+
     [DataMember]
     public string State { get; private set; }
+
     [DataMember]
     public string Country { get; private set; }
+
     [DataMember]
     public string ZipCode { get; private set; }
+
     [DataMember]
     public string CardNumber { get; private set; }
+
     [DataMember]
     public string CardHolderName { get; private set; }
+
     [DataMember]
     public DateTime CardExpiration { get; private set; }
+
     [DataMember]
     public string CardSecurityNumber { get; private set; }
+
     [DataMember]
     public int CardTypeId { get; private set; }
+
     [DataMember]
     public IEnumerable<OrderItemDTO> OrderItems => _orderItems;
 
@@ -252,13 +274,13 @@ public class CreateOrderCommand
         _orderItems = new List<OrderItemDTO>();
     }
 
-    public CreateOrderCommand(List<BasketItem> basketItems, string city,
-        string street,
-        string state, string country, string zipcode,
+    public CreateOrderCommand(List<BasketItem> basketItems, string userId, string userName, string city, string street, string state, string country, string zipcode,
         string cardNumber, string cardHolderName, DateTime cardExpiration,
         string cardSecurityNumber, int cardTypeId) : this()
     {
-        _orderItems = MapToOrderItems(basketItems);
+        _orderItems = basketItems.ToOrderItemsDTO().ToList();
+        UserId = userId;
+        UserName = userName;
         City = city;
         Street = street;
         State = state;
@@ -266,28 +288,35 @@ public class CreateOrderCommand
         ZipCode = zipcode;
         CardNumber = cardNumber;
         CardHolderName = cardHolderName;
+        CardExpiration = cardExpiration;
         CardSecurityNumber = cardSecurityNumber;
         CardTypeId = cardTypeId;
         CardExpiration = cardExpiration;
     }
 
+
     public class OrderItemDTO
     {
         public int ProductId { get; set; }
+
         public string ProductName { get; set; }
+
         public decimal UnitPrice { get; set; }
+
         public decimal Discount { get; set; }
+
         public int Units { get; set; }
+
         public string PictureUrl { get; set; }
     }
 }
 ```
 
-En gros, la classe de commande contient toutes les données dont vous avez besoin pour effectuer une transaction commerciale à l’aide des objets du modèle de domaine. Ainsi, les commandes sont simplement des structures de données qui contiennent des données en lecture seule, sans aucun comportement. Le nom de la commande indique son rôle. Dans de nombreux langages, comme C#, les commandes sont représentées sous forme de classes, mais il ne s’agit pas de vraies classes au sens orienté objet.
+En gros, la classe de commande contient toutes les données dont vous avez besoin pour effectuer une transaction commerciale à l’aide des objets du modèle de domaine. Ainsi, les commandes sont simplement des structures de données qui contiennent des données en lecture seule sans aucun comportement. Le nom de la commande indique son rôle. Dans de nombreux langages, comme C#, les commandes sont représentées sous forme de classes, mais il ne s’agit pas de vraies classes au sens orienté objet.
 
-Autre caractéristique des commandes : elles sont immuables, car l’usage veut qu’elles soient traitées directement par le modèle de domaine. Elles n’ont pas besoin de changer au cours de leur durée de vie prévue. Dans une classe C#, l’immuabilité implique d’éviter toute méthode setter ou autre méthode qui modifie l’état interne.
+Autre caractéristique des commandes : elles sont immuables, car l’usage veut qu’elles soient traitées directement par le modèle de domaine. Elles n’ont pas besoin de changer au cours de leur durée de vie prévue. Dans une classe C#, l’immuabilité peut être obtenue en n’ayant pas d’accesseurs set ou d’autres méthodes qui modifient l’état interne.
 
-N’oubliez pas que si vous envisagez ou pensez que les commandes passent par un processus de sérialisation/désérialisation, les propriétés doivent avoir un accesseur Set privé et l' `[DataMember]` attribut (ou `[JsonProperty]` ). Dans le cas contraire, le désérialiseur ne pourra pas reconstruire l’objet à la destination avec les valeurs requises. Vous pouvez également utiliser des propriétés réellement en lecture seule si la classe a un constructeur avec des paramètres pour toutes les propriétés, avec la Convention d’affectation de noms la casse mixte habituelle et annoter le constructeur comme `[JsonConstructor]` . Toutefois, cette option requiert davantage de code.
+N’oubliez pas que si vous envisagez ou pensez que les commandes passent par un processus de sérialisation/désérialisation, les propriétés doivent avoir un accesseur Set privé et l' `[DataMember]` attribut (ou `[JsonProperty]` ). Dans le cas contraire, le désérialiseur ne pourra pas reconstruire l’objet à l’emplacement de destination avec les valeurs requises. Vous pouvez également utiliser des propriétés réellement en lecture seule si la classe a un constructeur avec des paramètres pour toutes les propriétés, avec la Convention d’affectation de noms la casse mixte habituelle et annoter le constructeur comme `[JsonConstructor]` . Toutefois, cette option requiert davantage de code.
 
 Par exemple, la classe de commande pour la création d’une commande est probablement similaire en termes de données à la commande que vous souhaitez créer, mais vous n’avez probablement pas besoin des mêmes attributs. Par exemple, `CreateOrderCommand` n’a pas d’ID de commande, car la commande n’a pas encore été créée.
 
@@ -296,7 +325,7 @@ De nombreuses classes de commande peuvent être simples, car elles n’ont besoi
 ```csharp
 [DataContract]
 public class UpdateOrderStatusCommand
-    :IAsyncRequest<bool>
+    :IRequest<bool>
 {
     [DataMember]
     public string Status { get; private set; }
@@ -309,7 +338,7 @@ public class UpdateOrderStatusCommand
 }
 ```
 
-Certains développeurs séparent leurs objets de demande d’interface utilisateur de leurs objets de transfert de données, mais il ne s’agit que d’une question de préférence. Cette séparation est fastidieuse et n’ajoute pas de valeur. Les objets ont presque exactement la même forme. Par exemple, dans eShopOnContainers, certaines commandes viennent directement du côté client.
+Certains développeurs séparent leurs objets de demande d’interface utilisateur de leurs objets de transfert de données, mais il ne s’agit que d’une question de préférence. Il s’agit d’une séparation fastidieuse avec peu de valeur supplémentaire, et les objets sont presque exactement la même forme. Par exemple, dans eShopOnContainers, certaines commandes proviennent directement du côté client.
 
 ### <a name="the-command-handler-class"></a>La classe du gestionnaire de commandes
 
@@ -337,51 +366,56 @@ L’important ici est que, quand une commande est en cours de traitement, toute 
 
 Lorsque les gestionnaires de commandes deviennent complexes, avec trop de logique, un « code smell » peut se produire. Passez-les en revue et si vous trouvez la logique de domaine, refactorisez le code pour déplacer ce comportement de domaine vers les méthodes des objets de domaine (entité racine et enfant de l’agrégat).
 
-En guise d’exemple de classe de gestionnaire de commandes, le code suivant montre la même `CreateOrderCommandHandler` classe que celle que vous avez vue au début de ce chapitre. Nous voulons ici mettre en exergue la méthode Handle et les opérations effectuées avec les objets/agrégats du modèle de domaine.
+En guise d’exemple de classe de gestionnaire de commandes, le code suivant montre la même `CreateOrderCommandHandler` classe que celle que vous avez vue au début de ce chapitre. Dans ce cas, il met également en surbrillance la méthode de handle et les opérations avec les objets/agrégats du modèle de domaine.
 
 ```csharp
 public class CreateOrderCommandHandler
-    : IAsyncRequestHandler<CreateOrderCommand, bool>
+        : IRequestHandler<CreateOrderCommand, bool>
 {
     private readonly IOrderRepository _orderRepository;
     private readonly IIdentityService _identityService;
     private readonly IMediator _mediator;
+    private readonly IOrderingIntegrationEventService _orderingIntegrationEventService;
+    private readonly ILogger<CreateOrderCommandHandler> _logger;
 
     // Using DI to inject infrastructure persistence Repositories
     public CreateOrderCommandHandler(IMediator mediator,
-                                     IOrderRepository orderRepository,
-                                     IIdentityService identityService)
+        IOrderingIntegrationEventService orderingIntegrationEventService,
+        IOrderRepository orderRepository,
+        IIdentityService identityService,
+        ILogger<CreateOrderCommandHandler> logger)
     {
-        _orderRepository = orderRepository ??
-                          throw new ArgumentNullException(nameof(orderRepository));
-        _identityService = identityService ??
-                          throw new ArgumentNullException(nameof(identityService));
-        _mediator = mediator ??
-                                 throw new ArgumentNullException(nameof(mediator));
+        _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        _orderingIntegrationEventService = orderingIntegrationEventService ?? throw new ArgumentNullException(nameof(orderingIntegrationEventService));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<bool> Handle(CreateOrderCommand message)
+    public async Task<bool> Handle(CreateOrderCommand message, CancellationToken cancellationToken)
     {
-        // Create the Order AggregateRoot
-        // Add child entities and value objects through the Order aggregate root
-        // methods and constructor so validations, invariants, and business logic
+        // Add Integration event to clean the basket
+        var orderStartedIntegrationEvent = new OrderStartedIntegrationEvent(message.UserId);
+        await _orderingIntegrationEventService.AddAndSaveEventAsync(orderStartedIntegrationEvent);
+
+        // Add/Update the Buyer AggregateRoot
+        // DDD patterns comment: Add child entities and value-objects through the Order Aggregate-Root
+        // methods and constructor so validations, invariants and business logic
         // make sure that consistency is preserved across the whole aggregate
-        var address = new Address(message.Street, message.City, message.State,
-                                  message.Country, message.ZipCode);
-        var order = new Order(message.UserId, address, message.CardTypeId,
-                              message.CardNumber, message.CardSecurityNumber,
-                              message.CardHolderName, message.CardExpiration);
+        var address = new Address(message.Street, message.City, message.State, message.Country, message.ZipCode);
+        var order = new Order(message.UserId, message.UserName, address, message.CardTypeId, message.CardNumber, message.CardSecurityNumber, message.CardHolderName, message.CardExpiration);
 
         foreach (var item in message.OrderItems)
         {
-            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
-                               item.Discount, item.PictureUrl, item.Units);
+            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice, item.Discount, item.PictureUrl, item.Units);
         }
+
+        _logger.LogInformation("----- Creating Order - Order: {@Order}", order);
 
         _orderRepository.Add(order);
 
         return await _orderRepository.UnitOfWork
-            .SaveEntitiesAsync();
+            .SaveEntitiesAsync(cancellationToken);
     }
 }
 ```
@@ -437,7 +471,7 @@ Un médiateur est un objet qui encapsule la « procédure » de ce processus 
 
 Les éléments décoratifs et les comportements sont similaires à la [programmation orientée aspect](https://en.wikipedia.org/wiki/Aspect-oriented_programming), uniquement appliquée à un pipeline de processus spécifique géré par le composant médiateur. Les aspects en programmation orientée aspect qui implémentent des problèmes transversaux sont appliqués selon les *tisseurs d’aspect* injectés au moment de la compilation ou en fonction de l’interception des appels d’objet. Les deux approches usuelles de la programmation orientée aspect sont parfois considérées comme « magiques », car il n’est pas facile de voir comment leur travail est effectué. Lorsque qu’il s’agit de traiter des problèmes ou bogues graves, la programmation orientée aspect peut rendre le débogage difficile. En revanche, ces éléments décoratifs/comportements sont explicites et uniquement appliqués dans le contexte du médiateur, donc le débogage est beaucoup plus prévisible et facile.
 
-Par exemple, dans le microservice de passation de commandes eShopOnContainers, nous avons implémenté deux exemples de comportements, une classe [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) et une classe [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs). L’implémentation des comportements est expliquée dans la section suivante en illustrant la façon dont eShopOnContainers utilise les [comportements](https://github.com/jbogard/MediatR/wiki/Behaviors) [médiateurr 3](https://www.nuget.org/packages/MediatR/3.0.0) .
+Par exemple, dans le microservice de commande eShopOnContainers, a une implémentation de deux exemples de comportements, une classe [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) et une classe [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs) . L’implémentation des comportements est expliquée dans la section suivante en illustrant la façon dont eShopOnContainers utilise les [comportements](https://github.com/jbogard/MediatR/wiki/Behaviors)de [médiateur](https://www.nuget.org/packages/MediatR) .
 
 ### <a name="use-message-queues-out-of-proc-in-the-commands-pipeline"></a>Utiliser des files d’attente de messages (out-of-proc) dans le pipeline de la commande
 
@@ -445,7 +479,7 @@ Un autre choix consiste à utiliser des messages asynchrones basés sur des serv
 
 ![Diagramme montrant le flux de données à l’aide d’une file d’attente de messages haute disponibilité.](./media/microservice-application-layer-implementation-web-api/add-ha-message-queue.png)
 
-**Figure 7-26**. Utilisation de files d’attente de messages (communication hors processus et entre processus) avec des commandes CQRS
+**Figure 7-26**. Utilisation des files d’attente de messages (communication en cours et inter-processus) avec des commandes CQRS
 
 Le pipeline de commandes peut également être géré par une file d’attente à haute disponibilité pour délivrer les commandes au gestionnaire approprié. L’utilisation de files d’attente de messages pour accepter les commandes peut compliquer davantage le pipeline de votre commande, car vous devrez probablement fractionner le pipeline en deux processus connectés via la file d’attente de messages externe. Néanmoins, vous devez l’utiliser si vous avez besoin d’une meilleure scalabilité et de performances améliorées en fonction de la messagerie asynchrone. Considérez que, dans le cas de la figure 7-26, le contrôleur envoie simplement le message de commande dans la file d’attente, puis retourne. Ensuite, les gestionnaires de commandes traitent les messages à leur propre rythme. C’est l’énorme avantage des files d’attente : elles peuvent agir en tant que mémoire tampon quand le besoin de scalabilité est considérable, par exemple pour des stocks ou tout autre scénario impliquant un volume élevé de données d’entrée.
 
@@ -455,13 +489,13 @@ Par conséquent, la possibilité de répondre au client après la validation d�
 
 De plus, les commandes asynchrones sont des commandes unidirectionnelles, inutiles dans de nombreux cas, comme expliqué dans l’intéressant échange suivant entre Burtsev Alexey et Greg Young au cours d’une [conversation en ligne](https://groups.google.com/forum/#!msg/dddcqrs/xhJHVxDx2pM/WP9qP8ifYCwJ) :
 
-> \[Burtsev Alexey\] Je trouve beaucoup de code où les informaticiens utilisent une gestion de commandes asynchrone ou des messages de commande unidirectionnels sans aucune raison de le faire (ils n’effectuent pas une opération longue, ils n’exécutent pas du code asynchrone externe, ils ne franchissent même pas la limite de l’application pour utiliser un bus de messages). Pourquoi introduisent-ils cette complexité inutile ? En fait, je n’ai jamais vu un exemple de code CQRS avec des gestionnaires de commandes bloquants jusqu’à présent, même si cela fonctionnerait parfaitement dans la plupart des cas.
+> \[Burtsev Alexey \] je trouve un grand nombre de code dans lequel les gens utilisent la gestion de commande asynchrone ou la messagerie de commande unidirectionnelle sans aucune raison de le faire (ils n’effectuent pas de longue durée, ils n’exécutent pas de code asynchrone externe, ils n’ont même pas de limite inter-applications pour utiliser le bus de messages). Pourquoi introduisent-ils cette complexité inutile ? En fait, je n’ai jamais vu un exemple de code CQRS avec des gestionnaires de commandes bloquants jusqu’à présent, même si cela fonctionnerait parfaitement dans la plupart des cas.
 >
 > \[Greg Young \] \[ ... \] une commande asynchrone n’existe pas ; il s’agit en fait d’un autre événement. Si je dois accepter ce que vous m’envoyez et déclencher un événement si je ne suis pas d’accord, il n’est plus nécessaire d’effectuer une opération, il ne s’agit \[ pas d’une commande \] . Mais vous qui me dites que quelque chose a été fait. La différence peut sembler légère dans un premier temps, mais ses implications sont nombreuses.
 
 Les commandes asynchrones augmentent considérablement la complexité d’un système, car il n’existe aucun moyen simple d’indiquer des échecs. Ainsi, les commandes asynchrones ne sont pas recommandées si ce n’est quand il existe des besoins de mise à l’échelle ou dans des cas spéciaux de communication des microservices internes par le biais d’une messagerie. Le cas échéant, vous devez concevoir un système de création de rapports et de récupération distinct pour les échecs.
 
-Dans la version initiale d’eShopOnContainers, nous avons décidé d’utiliser un traitement des commandes synchrone, qui démarre à partir de requêtes HTTP et qui est piloté par le modèle Médiateur. Ce traitement vous permet de retourner facilement la réussite ou l’échec du processus, comme dans l’implémentation [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs).
+Dans la version initiale de eShopOnContainers, il a été décidé d’utiliser le traitement de commande synchrone, démarré à partir des requêtes HTTP et piloté par le modèle médiateur. Ce traitement vous permet de retourner facilement la réussite ou l’échec du processus, comme dans l’implémentation [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/netcore1.1/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs).
 
 Dans tous les cas, cette décision doit être basée sur les besoins métier de votre application ou de votre microservice.
 
@@ -550,26 +584,39 @@ Ensuite, le CommandHandler de l’IdentifiedCommand nommé [IdentifiedCommandHan
 
 ```csharp
 // IdentifiedCommandHandler.cs
-public class IdentifiedCommandHandler<T, R> :
-                                   IAsyncRequestHandler<IdentifiedCommand<T, R>, R>
-                                   where T : IRequest<R>
+public class IdentifiedCommandHandler<T, R> : IRequestHandler<IdentifiedCommand<T, R>, R>
+        where T : IRequest<R>
 {
     private readonly IMediator _mediator;
     private readonly IRequestManager _requestManager;
+    private readonly ILogger<IdentifiedCommandHandler<T, R>> _logger;
 
-    public IdentifiedCommandHandler(IMediator mediator,
-                                    IRequestManager requestManager)
+    public IdentifiedCommandHandler(
+        IMediator mediator,
+        IRequestManager requestManager,
+        ILogger<IdentifiedCommandHandler<T, R>> logger)
     {
         _mediator = mediator;
         _requestManager = requestManager;
+        _logger = logger ?? throw new System.ArgumentNullException(nameof(logger));
     }
 
+    /// <summary>
+    /// Creates the result value to return if a previous request was found
+    /// </summary>
+    /// <returns></returns>
     protected virtual R CreateResultForDuplicateRequest()
     {
         return default(R);
     }
 
-    public async Task<R> Handle(IdentifiedCommand<T, R> message)
+    /// <summary>
+    /// This method handles the command. It just ensures that no other request exists with the same ID, and if this is the case
+    /// just enqueues the original inner command.
+    /// </summary>
+    /// <param name="message">IdentifiedCommand which contains both original command & request ID</param>
+    /// <returns>Return value of inner command or default value if request same ID was found</returns>
+    public async Task<R> Handle(IdentifiedCommand<T, R> message, CancellationToken cancellationToken)
     {
         var alreadyExists = await _requestManager.ExistAsync(message.Id);
         if (alreadyExists)
@@ -579,12 +626,60 @@ public class IdentifiedCommandHandler<T, R> :
         else
         {
             await _requestManager.CreateRequestForCommandAsync<T>(message.Id);
+            try
+            {
+                var command = message.Command;
+                var commandName = command.GetGenericTypeName();
+                var idProperty = string.Empty;
+                var commandId = string.Empty;
 
-            // Send the embedded business command to mediator
-            // so it runs its related CommandHandler
-            var result = await _mediator.Send(message.Command);
+                switch (command)
+                {
+                    case CreateOrderCommand createOrderCommand:
+                        idProperty = nameof(createOrderCommand.UserId);
+                        commandId = createOrderCommand.UserId;
+                        break;
 
-            return result;
+                    case CancelOrderCommand cancelOrderCommand:
+                        idProperty = nameof(cancelOrderCommand.OrderNumber);
+                        commandId = $"{cancelOrderCommand.OrderNumber}";
+                        break;
+
+                    case ShipOrderCommand shipOrderCommand:
+                        idProperty = nameof(shipOrderCommand.OrderNumber);
+                        commandId = $"{shipOrderCommand.OrderNumber}";
+                        break;
+
+                    default:
+                        idProperty = "Id?";
+                        commandId = "n/a";
+                        break;
+                }
+
+                _logger.LogInformation(
+                    "----- Sending command: {CommandName} - {IdProperty}: {CommandId} ({@Command})",
+                    commandName,
+                    idProperty,
+                    commandId,
+                    command);
+
+                // Send the embeded business command to mediator so it runs its related CommandHandler
+                var result = await _mediator.Send(command, cancellationToken);
+
+                _logger.LogInformation(
+                    "----- Command result: {@Result} - {CommandName} - {IdProperty}: {CommandId} ({@Command})",
+                    result,
+                    commandName,
+                    idProperty,
+                    commandId,
+                    command);
+
+                return result;
+            }
+            catch
+            {
+                return default(R);
+            }
         }
     }
 }
@@ -597,44 +692,52 @@ Dans ce cas, le gestionnaire de commandes métier est lié et exécuté, dans ce
 ```csharp
 // CreateOrderCommandHandler.cs
 public class CreateOrderCommandHandler
-                                   : IAsyncRequestHandler<CreateOrderCommand, bool>
+        : IRequestHandler<CreateOrderCommand, bool>
 {
     private readonly IOrderRepository _orderRepository;
     private readonly IIdentityService _identityService;
     private readonly IMediator _mediator;
+    private readonly IOrderingIntegrationEventService _orderingIntegrationEventService;
+    private readonly ILogger<CreateOrderCommandHandler> _logger;
 
     // Using DI to inject infrastructure persistence Repositories
     public CreateOrderCommandHandler(IMediator mediator,
-                                     IOrderRepository orderRepository,
-                                     IIdentityService identityService)
+        IOrderingIntegrationEventService orderingIntegrationEventService,
+        IOrderRepository orderRepository,
+        IIdentityService identityService,
+        ILogger<CreateOrderCommandHandler> logger)
     {
-        _orderRepository = orderRepository ??
-                          throw new ArgumentNullException(nameof(orderRepository));
-        _identityService = identityService ??
-                          throw new ArgumentNullException(nameof(identityService));
-        _mediator = mediator ??
-                                 throw new ArgumentNullException(nameof(mediator));
+        _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        _orderingIntegrationEventService = orderingIntegrationEventService ?? throw new ArgumentNullException(nameof(orderingIntegrationEventService));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<bool> Handle(CreateOrderCommand message)
+    public async Task<bool> Handle(CreateOrderCommand message, CancellationToken cancellationToken)
     {
+        // Add Integration event to clean the basket
+        var orderStartedIntegrationEvent = new OrderStartedIntegrationEvent(message.UserId);
+        await _orderingIntegrationEventService.AddAndSaveEventAsync(orderStartedIntegrationEvent);
+
         // Add/Update the Buyer AggregateRoot
-        var address = new Address(message.Street, message.City, message.State,
-                                  message.Country, message.ZipCode);
-        var order = new Order(message.UserId, address, message.CardTypeId,
-                              message.CardNumber, message.CardSecurityNumber,
-                              message.CardHolderName, message.CardExpiration);
+        // DDD patterns comment: Add child entities and value-objects through the Order Aggregate-Root
+        // methods and constructor so validations, invariants and business logic
+        // make sure that consistency is preserved across the whole aggregate
+        var address = new Address(message.Street, message.City, message.State, message.Country, message.ZipCode);
+        var order = new Order(message.UserId, message.UserName, address, message.CardTypeId, message.CardNumber, message.CardSecurityNumber, message.CardHolderName, message.CardExpiration);
 
         foreach (var item in message.OrderItems)
         {
-            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
-                               item.Discount, item.PictureUrl, item.Units);
+            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice, item.Discount, item.PictureUrl, item.Units);
         }
+
+        _logger.LogInformation("----- Creating Order - Order: {@Order}", order);
 
         _orderRepository.Add(order);
 
         return await _orderRepository.UnitOfWork
-            .SaveEntitiesAsync();
+            .SaveEntitiesAsync(cancellationToken);
     }
 }
 ```
@@ -653,11 +756,10 @@ public class MediatorModule : Autofac.Module
         builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
             .AsImplementedInterfaces();
 
-        // Register all the Command classes (they implement IAsyncRequestHandler)
+        // Register all the Command classes (they implement IRequestHandler)
         // in assembly holding the Commands
-        builder.RegisterAssemblyTypes(
-                              typeof(CreateOrderCommand).GetTypeInfo().Assembly).
-                                   AsClosedTypesOf(typeof(IAsyncRequestHandler<,>));
+        builder.RegisterAssemblyTypes(typeof(CreateOrderCommand).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(IRequestHandler<,>));
         // Other types registration
         //...
     }
@@ -666,11 +768,11 @@ public class MediatorModule : Autofac.Module
 
 C’est là qu’intervient le « Magic » avec médiateur.
 
-Étant donné que chaque gestionnaire de commandes implémente l’interface `IAsyncRequestHandler<T>` générique, quand vous inscrivez les assemblys, le code inscrit auprès de `RegisteredAssemblyTypes` tous les types marqués comme `IAsyncRequestHandler` pendant l’association des `CommandHandlers` à leurs `Commands`, grâce à la relation indiquée au niveau de la classe `CommandHandler`, comme dans l’exemple suivant :
+Chaque gestionnaire de commandes implémentant l' `IRequestHandler<T>` interface générique, lorsque vous inscrivez les assemblys à l’aide de la `RegisteredAssemblyTypes` méthode, tous les types marqués comme sont `IRequestHandler` également inscrits auprès de leur `Commands` . Par exemple :
 
 ```csharp
 public class CreateOrderCommandHandler
-  : IAsyncRequestHandler<CreateOrderCommand, bool>
+  : IRequestHandler<CreateOrderCommand, bool>
 {
 ```
 
@@ -688,11 +790,11 @@ public class MediatorModule : Autofac.Module
         builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
             .AsImplementedInterfaces();
 
-        // Register all the Command classes (they implement IAsyncRequestHandler)
+        // Register all the Command classes (they implement IRequestHandler)
         // in assembly holding the Commands
         builder.RegisterAssemblyTypes(
                               typeof(CreateOrderCommand).GetTypeInfo().Assembly).
-                                   AsClosedTypesOf(typeof(IAsyncRequestHandler<,>));
+                                   AsClosedTypesOf(typeof(IRequestHandler<,>));
         // Other types registration
         //...
         builder.RegisterGeneric(typeof(LoggingBehavior<,>)).
@@ -758,9 +860,9 @@ public class ValidatorBehavior<TRequest, TResponse>
 }
 ```
 
-Le comportement ici lève une exception en cas d’échec de la validation, mais vous pouvez également retourner un objet de résultat, qui contient le résultat de la commande si celui-ci a réussi ou si les messages de validation le cas échéant. Ceci faciliterait probablement l’affichage des résultats de la validation à l’utilisateur.
+Ici, le comportement lève une exception en cas d’échec de la validation, mais vous pouvez également retourner un objet de résultat, qui contient le résultat de la commande si elle a réussi ou si les messages de validation le cas échéant. Ceci faciliterait probablement l’affichage des résultats de la validation à l’utilisateur.
 
-Ensuite, en fonction de la bibliothèque [FluentValidation](https://github.com/JeremySkinner/FluentValidation) , nous avons créé une validation pour les données passées avec CreateOrderCommand, comme dans le code suivant :
+Ensuite, en fonction de la bibliothèque [FluentValidation](https://github.com/JeremySkinner/FluentValidation) , vous créez une validation pour les données passées avec CreateOrderCommand, comme dans le code suivant :
 
 ```csharp
 public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>

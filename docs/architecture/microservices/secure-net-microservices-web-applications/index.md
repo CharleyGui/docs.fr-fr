@@ -3,16 +3,16 @@ title: Sécurisation des microservices .NET et des applications web
 description: 'Sécurité dans les microservices .NET et les applications web : Découvrez les options d’authentification dans les applications web ASP.NET Core.'
 author: mjrousos
 ms.date: 08/07/2020
-ms.openlocfilehash: 9ce62039374f2256cd9adbddbb850aa4135af9f4
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: 1dcdb5d2987360ac583fa700a387d977f498d1d9
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024613"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608090"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Sécuriser les microservices .NET et les applications web
 
-Il y a tant de nombreux aspects de la sécurité dans les microservices et les applications Web que le sujet pourrait facilement prendre plusieurs livres comme celui-ci. dans cette section, vous allez vous concentrer sur l’authentification, l’autorisation et les secrets d’application.
+De nombreux aspects de la sécurité dans les microservices et les applications Web peuvent faciliter la prise en compte de plusieurs livres comme celui-ci. Ainsi, dans cette section, nous allons nous concentrer sur l’authentification, l’autorisation et les secrets d’application.
 
 ## <a name="implement-authentication-in-net-microservices-and-web-applications"></a>Implémenter l’authentification dans les microservices .NET et les applications web
 
@@ -303,7 +303,7 @@ Quand cet intergiciel est en place, les jetons JWT sont automatiquement extraits
 
 L’intergiciel d’authentification du porteur JWT peut aussi prendre en charge des scénarios plus avancés, tels que l’utilisation d’un certificat local pour valider un jeton si l’autorité n’est pas disponible. Pour ce scénario, vous pouvez spécifier un objet `TokenValidationParameters` dans l’objet `JwtBearerOptions`.
 
-## <a name="additional-resources"></a>Ressources complémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Partage des cookies entre applications** \
   [https://docs.microsoft.com/aspnet/core/security/cookie-sharing](/aspnet/core/security/cookie-sharing)

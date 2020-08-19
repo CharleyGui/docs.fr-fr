@@ -3,12 +3,12 @@ title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: 4f45362fbb3df053b95156b8e633903f011a85ad
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 82174b2976abda2337a4a9b5a5a5e1f60a1094fb
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062871"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608323"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -56,7 +56,7 @@ Lorsque vous référencez les packages `Microsoft.AspNetCore.App` ou `Microsoft.
 
 > Problème connu : le Kit SDK .NET Core 2.1 prend uniquement en charge cette syntaxe si le projet utilise également Microsoft.NET.Sdk.Web. Ce problème est résolu dans le SDK .NET Core 2.2.
 
-Ces références aux métapackages ASP.NET Core ont un comportement légèrement différent de celui de la plupart des packages NuGet normaux. Les [déploiements dépendant du framework](../deploying/index.md#publish-runtime-dependent) d’applications qui utilisent ces métapackages tirent automatiquement parti du framework partagé ASP.NET Core. Quand vous utilisez les métapackages **aucune** des ressources des packages NuGet ASP.NET Core référencés n’est déployée avec l’application — le framework partagé ASP.NET Core contient ces ressources. Les ressources présentes dans le framework partagé sont optimisées pour la plateforme cible afin d’améliorer la vitesse de démarrage des applications. Pour plus d’informations sur le framework partagé, consultez [Empaquetage de la distribution de .NET Core](../distribution-packaging.md).
+Ces références aux métapackages ASP.NET Core ont un comportement légèrement différent de celui de la plupart des packages NuGet normaux. Les [déploiements dépendant du framework](../deploying/index.md#publish-framework-dependent) d’applications qui utilisent ces métapackages tirent automatiquement parti du framework partagé ASP.NET Core. Quand vous utilisez les métapackages **aucune** des ressources des packages NuGet ASP.NET Core référencés n’est déployée avec l’application — le framework partagé ASP.NET Core contient ces ressources. Les ressources présentes dans le framework partagé sont optimisées pour la plateforme cible afin d’améliorer la vitesse de démarrage des applications. Pour plus d’informations sur le framework partagé, consultez [Empaquetage de la distribution de .NET Core](../distribution-packaging.md).
 
 Si une version *est* spécifiée, elle est traitée comme la version *minimale* du framework partagé ASP.NET Core pour les déploiements dépendant du framework, et comme une version *exacte* pour les déploiements autonomes. Cela peut avoir les conséquences suivantes :
 
@@ -161,11 +161,11 @@ L’attribut `PrivateAssets` spécifie quelles ressources appartenant au package
 
 Ces attributs peuvent contenir un ou plusieurs éléments de la liste suivante, séparés par le caractère point-virgule `;` le cas échéant :
 
-- `Compile`: le contenu du dossier *lib* est disponible pour la compilation.
-- `Runtime`: le contenu du dossier *Runtime* est distribué.
+- `Compile` : le contenu du dossier *lib* est disponible pour la compilation.
+- `Runtime` : le contenu du dossier *Runtime* est distribué.
 - `ContentFiles` : Le contenu du dossier *contentfiles* est utilisé.
-- `Build`: les propriétés/cibles du dossier de *génération* sont utilisées.
-- `Native`: le contenu des ressources natives est copié dans le dossier de *sortie* pour l’exécution.
+- `Build` : les propriétés/cibles du dossier de *génération* sont utilisées.
+- `Native` : le contenu des ressources natives est copié dans le dossier de *sortie* pour l’exécution.
 - `Analyzers` : Les analyseurs sont utilisés.
 
 Sinon, l’attribut peut contenir :
@@ -297,7 +297,7 @@ Valeur booléenne qui spécifie si le package est marqué en tant que dépendanc
 
 ### <a name="packagelicenseexpression"></a>PackageLicenseExpression
 
-[Identificateur de licence SPDX](https://spdx.org/licenses/) ou expression. Par exemple, `Apache-2.0`.
+[Identificateur de licence SPDX](https://spdx.org/licenses/) ou expression. Par exemple : `Apache-2.0`.
 
 Voici la liste complète des [identificateurs de licence SPDX](https://spdx.org/licenses/). NuGet.org n’accepte que les licences approuvées OSI et FSF avec une expression de type licence.
 
@@ -385,7 +385,7 @@ Spécifie le type de dépôt. La valeur par défaut est « git ».
 Spécifie le nom de la branche source dans le référentiel. Lorsque le projet est empaqueté dans un package NuGet, il est ajouté aux métadonnées du package.
 
 ### <a name="repositorycommit"></a>RepositoryCommit
-Validation ou ensemble de modifications de référentiel facultatif pour indiquer la source à partir de laquelle le package a été généré. `RepositoryUrl`doit également être spécifié pour que cette propriété soit incluse. Lorsque le projet est empaqueté dans un package NuGet, cette validation ou cet ensemble de modifications est ajouté aux métadonnées du package.
+Validation ou ensemble de modifications de référentiel facultatif pour indiquer la source à partir de laquelle le package a été généré. `RepositoryUrl` doit également être spécifié pour que cette propriété soit incluse. Lorsque le projet est empaqueté dans un package NuGet, cette validation ou cet ensemble de modifications est ajouté aux métadonnées du package.
 
 ### <a name="nopackageanalysis"></a>NoPackageAnalysis
 

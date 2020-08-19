@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 4ff49452e4d941b3e06ad511507b1dc429ab459f
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 64a68c97e01bbf962616b31210889eb23d3734f1
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187976"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608282"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -123,7 +123,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
   Spécifie le chemin d’accès du répertoire de sortie.
   
-  S’il n’est pas spécifié, la valeur par défaut est *[project_file_folder]./bin/[Configuration]/[Framework]/Publish/* pour un exécutable dépendant du runtime et des binaires multiplateforme. La valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/[Runtime]/Publish/* pour un exécutable autonome.
+  S’il n’est pas spécifié, la valeur par défaut est *[project_file_folder]./bin/[Configuration]/[Framework]/Publish/* pour un exécutable dépendant du Framework et des binaires multiplateforme. La valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/[Runtime]/Publish/* pour un exécutable autonome.
 
   Dans un projet Web, si le dossier de sortie se trouve dans le dossier du projet, les commandes successives `dotnet publish` génèrent des dossiers de sortie imbriqués. Par exemple, si le dossier du projet est *MyProject*et que le dossier de sortie de publication est *MyProject/Publish*, et que vous exécutez `dotnet publish` deux fois, la deuxième exécution place les fichiers de contenu, tels que les fichiers *. config* et *. JSON* dans *MyProject/Publish/Publish*. Pour éviter d’imbriquer des dossiers de publication, spécifiez un dossier de publication qui ne se trouve pas **directement** sous le dossier du projet, ou excluez le dossier de publication du projet. Pour exclure un dossier de publication nommé *publishoutput*, ajoutez l’élément suivant à un `PropertyGroup` élément dans le fichier *. csproj* :
 
@@ -187,13 +187,13 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 ## <a name="examples"></a>Exemples
 
-- Créez un [binaire multiplateforme dépendant du runtime](../deploying/index.md#produce-a-cross-platform-binary) pour le projet dans le répertoire actif :
+- Créez un [binaire multiplateforme dépendant du Framework](../deploying/index.md#produce-a-cross-platform-binary) pour le projet dans le répertoire actif :
 
   ```dotnetcli
   dotnet publish
   ```
 
-  À compter du kit de développement logiciel (SDK) .NET Core 3,0, cet exemple crée également un [exécutable dépendant du runtime](../deploying/index.md#publish-runtime-dependent) pour la plateforme actuelle.
+  À compter du kit de développement logiciel (SDK) .NET Core 3,0, cet exemple crée également un [exécutable dépendant du Framework](../deploying/index.md#publish-framework-dependent) pour la plateforme actuelle.
 
 - Créer un [exécutable autonome](../deploying/index.md#publish-self-contained) pour le projet dans le répertoire actif, pour un Runtime spécifique :
 
@@ -203,7 +203,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
   Le RID doit se trouver dans le fichier projet.
 
-- Créez un [exécutable dépendant du runtime](../deploying/index.md#publish-runtime-dependent) pour le projet dans le répertoire actif, pour une plateforme spécifique :
+- Créez un [exécutable dépendant du Framework](../deploying/index.md#publish-framework-dependent) pour le projet dans le répertoire actif, pour une plateforme spécifique :
 
   ```dotnetcli
   dotnet publish --runtime osx.10.11-x64 --self-contained false
