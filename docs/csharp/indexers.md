@@ -4,12 +4,12 @@ description: Découvrez les indexeurs C# et la façon d’implémenter des propr
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: e9b1cb18157982f068f1c1e4546e637f2bd707cb
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 1369740404c500d8b44b4706959bf4640c26aa2d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394697"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656109"
 ---
 # <a name="indexers"></a>Indexeurs
 
@@ -46,7 +46,7 @@ C’est la présence d’arguments référençant un élément dans un ensemble 
 Vous définissez des *indexeurs* dans votre type quand son API modélise une collection dans laquelle vous définissez des arguments. Vos indexeurs peuvent ou non être mappés directement aux types de collection qui font partie du framework .NET Core. Votre type peut avoir d’autres responsabilités en plus de la modélisation d’une collection.
 Les indexeurs vous permettent de fournir l’API qui correspond à l’abstraction de votre type sans exposer les détails internes concernant le stockage ou le calcul des valeurs de cette abstraction.
 
-Examinons quelques-uns des scénarios courants d’utilisation des *indexeurs*. Vous pouvez accéder au [dossier d’exemples d’indexeurs](https://github.com/dotnet/samples/tree/master/csharp/indexers). Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Examinons quelques-uns des scénarios courants d’utilisation des *indexeurs*. Vous pouvez accéder au [dossier d’exemples d’indexeurs](https://github.com/dotnet/samples/tree/master/csharp/indexers). Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../samples-and-tutorials/index.md#view-and-download-samples).
 
 ### <a name="arrays-and-vectors"></a>Tableaux et vecteurs
 

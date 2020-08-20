@@ -4,12 +4,12 @@ description: En savoir plus sur les techniques de génération d’arborescences
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.openlocfilehash: c93eb16ebf2ff66dc0162afb6841f2cadfce174e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c153ca2c75738571c81057364390f489d2decb05
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146045"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656148"
 ---
 # <a name="building-expression-trees"></a>Génération d’arborescences d’expressions
 
@@ -164,7 +164,7 @@ BlockExpression body = Expression.Block(
 
 Le code de génération de l’arborescence d’expressions pour la fonction factorielle est un peu plus long, plus compliqué et truffé d’étiquettes, d’instructions break et d’autres éléments que nous souhaitons éviter lors de nos tâches quotidiennes de codage.
 
-Dans cette section, j’ai également mis à jour le code de visiteur pour visiter tous les nœuds de cette arborescence d’expressions et écrire des informations sur les nœuds créés dans cet exemple. Vous pouvez [afficher ou télécharger l’exemple de code](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) à partir du dépôt GitHub dotnet/docs. Essayez par vous-même en créant et en exécutant les exemples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Dans cette section, j’ai également mis à jour le code de visiteur pour visiter tous les nœuds de cette arborescence d’expressions et écrire des informations sur les nœuds créés dans cet exemple. Vous pouvez [afficher ou télécharger l’exemple de code](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) à partir du dépôt GitHub dotnet/docs. Essayez par vous-même en créant et en exécutant les exemples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../samples-and-tutorials/index.md#view-and-download-samples).
 
 ## <a name="examining-the-apis"></a>Examen des API
 

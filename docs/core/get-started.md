@@ -5,39 +5,39 @@ author: adegeo
 ms.author: adegeo
 ms.date: 12/03/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: ddbee0764897b511cac0c4142354ba995d94a2b6
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 56eebc0fc5bad6f57d93358cbbef389d6355d66b
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416060"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656688"
 ---
 # <a name="get-started-with-net-core"></a>Bien démarrer avec .NET Core
 
 Cet article fournit des informations pour bien démarrer avec .NET Core. .NET Core peut être installé sur Windows, Linux et macOS. Vous pouvez coder dans l’éditeur de texte de votre choix et produire des bibliothèques et des applications multiplateformes.
 
-Si vous ne savez pas réellement à quoi sert .NET Core ou comment ce produit s’articule avec les autres technologies .NET, commencez par consulter l’article de présentation [Qu’est-ce que .NET ?](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet). Pour schématiser, .NET Core est une implémentation open source multiplateforme de .NET.
+Si vous n’êtes pas certain du .NET Core ou de son lien avec d’autres technologies .NET, commencez par la vue d’ensemble de [.net](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet) . Pour schématiser, .NET Core est une implémentation open source multiplateforme de .NET.
 
 ## <a name="create-an-application"></a>Créer une application
 
 Tout d’abord, téléchargez et installez le [kit SDK .NET Core](https://dotnet.microsoft.com/download) sur votre ordinateur.
 
-Ensuite, ouvrez un terminal tel que **PowerShell**, une **invite de commandes** ou **Bash**. Tapez les `dotnet` commandes suivantes pour créer et exécuter une application C# :
+Ensuite, ouvrez un terminal tel que **PowerShell**, une **invite de commandes** ou **Bash**. Entrez les `dotnet` commandes suivantes pour créer et exécuter une application C# :
 
 ```dotnetcli
 dotnet new console --output sample1
 dotnet run --project sample1
 ```
 
-Vous devez normalement voir la sortie suivante :
+La sortie suivante s’affiche :
 
 ```console
 Hello World!
 ```
 
-Félicitations ! Vous avez créé une application .NET Core simple. Vous pouvez aussi utiliser [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (Windows uniquement) ou [Visual Studio pour Mac](./tutorials/using-on-mac-vs.md) (macOS uniquement) pour créer une application .NET Core.
+Félicitations ! Vous avez créé une application .NET Core simple. Vous pouvez aussi utiliser [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (Windows uniquement) ou [Visual Studio pour Mac](tutorials/with-visual-studio-mac.md) (macOS uniquement) pour créer une application .NET Core.
 
-## <a name="tutorials"></a>Didacticiels
+## <a name="tutorials"></a>Tutoriels
 
 Commencez à développer des applications .NET Core en suivant ces didacticiels pas à pas :
 
@@ -47,7 +47,7 @@ Commencez à développer des applications .NET Core en suivant ces didacticiels 
 
 - [Créer votre première application de console .NET Core dans Visual Studio 2019](./tutorials/with-visual-studio.md)
 - [Créer une bibliothèque de classes avec .NET Standard dans Visual Studio](./tutorials/library-with-visual-studio.md)
-- [Prise en main de .NET Core à l’aide de l’CLI .NET Core](./tutorials/cli-create-console-app.md)
+- [Didacticiel : créer une application console .NET Core à l’aide de Visual Studio Code](tutorials/with-visual-studio-code.md)
 
 |   |   |
 |---|---|
@@ -60,7 +60,7 @@ Pour obtenir la liste des versions de Windows prises en charge, consultez l’ar
 
 Commencez à développer des applications .NET Core en suivant ces didacticiels pas à pas :
 
-- [Prise en main de .NET Core à l’aide de la ligne de commande](./tutorials/cli-create-console-app.md)
+- [Didacticiel : créer une application console .NET Core à l’aide de Visual Studio Code](tutorials/with-visual-studio-code.md)
 
 |   |   |
 |---|---|
@@ -72,9 +72,8 @@ Pour obtenir la liste des versions et distributions Linux prises en charge, cons
 
 Commencez à développer des applications .NET Core en suivant ces didacticiels pas à pas :
 
-- [Bien démarrer avec .NET Core sur macOS en utilisant Visual Studio Code](./tutorials/using-on-macos.md)
-- [Prise en main de .NET Core à l’aide de la ligne de commande](./tutorials/cli-create-console-app.md)
-- [Bien démarrer avec .NET Core sur macOS à l’aide de Visual Studio pour Mac](./tutorials/using-on-mac-vs.md)
+- [Didacticiel : créer une application console .NET Core à l’aide de Visual Studio Code](tutorials/with-visual-studio-code.md)
+- [Didacticiel : créer une application console .NET Core à l’aide de Visual Studio pour Mac](tutorials/with-visual-studio-mac.md)
 - [Créer une bibliothèque de .NET Standard sur macOS à l’aide de Visual Studio pour Mac](tutorials/library-with-visual-studio-mac.md)
 
 |   |   |

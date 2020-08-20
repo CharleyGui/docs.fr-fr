@@ -2,12 +2,12 @@
 title: Publication d’applications
 description: En savoir plus sur les méthodes de publication d’une application .NET Core. .NET Core peut publier des applications spécifiques à une plateforme ou multiplateforme. Vous pouvez publier une application comme autonome ou dépendante du Framework. Chaque mode affecte la façon dont un utilisateur exécute votre application.
 ms.date: 04/01/2020
-ms.openlocfilehash: 57889271ce2f210c0838a54bb793aeb3be5c7272
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: f343e184a7ccca66aaf94533b2d0262478f873f4
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608406"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656584"
 ---
 # <a name="net-core-application-publishing-overview"></a>Vue d’ensemble de la publication d’applications .NET Core
 
@@ -131,8 +131,11 @@ Vous contrôlez la version de .NET Core qui est déployée avec votre applicatio
   > [!TIP]
   > Vous pouvez réduire la taille de votre déploiement sur les systèmes Linux d’environ 28 Mo en utilisant le [*mode de globalisation de la globalisation*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).net core. Cela force votre application à traiter toutes les cultures comme la [culture dite indifférente](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
+  > [!TIP]
+  > Il existe une [fonctionnalité de découpage](trim-self-contained.md) de la version préliminaire qui peut réduire encore davantage la taille de votre déploiement.
+
 - **Plus difficile à mettre à jour la version .NET Core**\
-Le Runtime .NET Core (distribué avec votre application) peut uniquement être mis à niveau en publiant une nouvelle version de votre application. Vous êtes responsable de la fourniture d’une version mise à jour de votre application pour les correctifs de sécurité pour le Runtime .NET Core.
+Le Runtime .NET Core (distribué avec votre application) peut uniquement être mis à niveau en publiant une nouvelle version de votre application. Toutefois, .NET Core met à jour les correctifs de sécurité critiques en fonction des besoins de la bibliothèque d’infrastructure sur l’ordinateur sur lequel votre application s’exécute. Vous êtes responsable de la validation de bout en bout pour ce scénario de correctif de sécurité.
 
 ### <a name="examples"></a>Exemples
 

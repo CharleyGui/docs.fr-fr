@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: e5c0ec3423cf98895b49596633c81861bbcf4878
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d67521084330b206afca89baf59228b99ca799a1
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557839"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656753"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -104,7 +104,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
   - 5400
   - 5400000ms
 
-  Quand aucune unité n’est utilisée (par exemple, 5,4 millions), la valeur est supposée être en millisecondes. Lorsqu’il est utilisé avec les tests pilotés par les données, le comportement du délai d’attente dépend de l’adaptateur de test utilisé. Pour xUnit et NUnit, le délai d’attente est renouvelé après chaque cas de test. Pour MSTest, le délai d’attente est utilisé pour tous les cas. Cette option est prise en charge sur Windows avec netcoreapp 2.1 et versions ultérieures, et sur Linux avec netcoreapp 3.1 et versions ultérieures. macOS n’est pas pris en charge.
+  Quand aucune unité n’est utilisée (par exemple, 5,4 millions), la valeur est supposée être en millisecondes. Lorsqu’il est utilisé avec les tests pilotés par les données, le comportement du délai d’attente dépend de l’adaptateur de test utilisé. Pour xUnit et NUnit, le délai d’attente est renouvelé après chaque cas de test. Pour MSTest, le délai d’attente est utilisé pour tous les cas de test. Cette option est prise en charge sur Windows avec netcoreapp 2.1 et versions ultérieures, et sur Linux avec netcoreapp 3.1 et versions ultérieures. macOS n’est pas pris en charge.
 
 - **`-c|--configuration <CONFIGURATION>`**
 
@@ -179,13 +179,13 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`. Pour plus d’informations, consultez <xref:Microsoft.Build.Framework.LoggerVerbosity>.
+  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`. Pour plus d'informations, consultez <xref:Microsoft.Build.Framework.LoggerVerbosity>.
 
 - **`RunSettings`** arguments
 
  Inline `RunSettings` sont passés comme derniers arguments sur la ligne de commande après « -- » (Notez l’espace après--). Inline `RunSettings` sont spécifiés en tant que `[name]=[value]` paires. Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
 
-  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
+  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
   Pour plus d’informations, consultez [transmission d’arguments RunSettings via la ligne de commande](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 

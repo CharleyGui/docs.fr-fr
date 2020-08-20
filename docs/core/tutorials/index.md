@@ -4,12 +4,12 @@ description: Suivez les didacticiels pour apprendre .NET Core et générer des a
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: c26d3e2e55723fed98f2013fe7131d2b06f910d2
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 4bba8d48b3da7acb643ffa6a08468f40f1b1b415
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415942"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656727"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Découvrez .NET Core et les outils de kit SDK .NET Core en explorant ces didacticiels
 
@@ -41,7 +41,7 @@ Choisissez ces didacticiels si vous souhaitez utiliser Visual Studio Code ou un 
 
 ## <a name="use-visual-studio-for-mac"></a>Utiliser Visual Studio pour Mac
 
-- [Créer une application console](using-on-mac-vs.md)
+- [Créer une application console](with-visual-studio-mac.md)
 - [Créer une bibliothèque et effectuer un test unitaire dessus](library-with-visual-studio-mac.md)
 - [Installer et utiliser un package](/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
 

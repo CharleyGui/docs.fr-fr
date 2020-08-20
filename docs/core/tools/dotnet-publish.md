@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 64a68c97e01bbf962616b31210889eb23d3734f1
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 45bf8504fd882286041794d27ecb56464fc8d13d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608282"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656663"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -159,7 +159,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 - **`-p:PublishTrimmed=true`**
 
-  Supprime les bibliothèques inutilisées pour réduire la taille du déploiement d’une application lors de la publication d’un fichier exécutable autonome. Pour plus d’informations, consultez [Trim self-contained Deployments and executed](../deploying/trim-self-contained.md). Option disponible à partir du kit SDK .NET Core 3.0.
+  Supprime les bibliothèques inutilisées pour réduire la taille du déploiement d’une application lors de la publication d’un fichier exécutable autonome. Pour plus d’informations, consultez [Trim self-contained Deployments and executed](../deploying/trim-self-contained.md). Disponible depuis la version préliminaire du kit de développement logiciel (SDK) .NET Core 3,0.
 
   Nous vous recommandons de spécifier cette option dans un profil de publication plutôt que sur la ligne de commande. Pour plus d’informations, consultez [MSBuild](#msbuild).
 
@@ -234,7 +234,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 - [Vue d’ensemble de la publication d’applications .NET Core](../deploying/index.md)
 - [Publier des applications .NET Core avec le CLI .NET Core](../deploying/deploy-with-cli.md)
 - [Frameworks cibles](../../standard/frameworks.md)
-- [Catalogue des identificateurs de Runtime (RID)](../rid-catalog.md)
+- [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
 - [Utilisation de la notaire Catalina macOS](../install/macos-notarization-issues.md)
 - [Structure de répertoires d’une application publiée](/aspnet/core/hosting/directory-structure)
 - [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)

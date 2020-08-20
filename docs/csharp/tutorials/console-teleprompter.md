@@ -4,12 +4,12 @@ description: Ce didacticiel vous présente un certain nombre de fonctionnalités
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 06affa01b67edeea09088834cf131adb55650bbb
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: dbe64fe0a01ddab9e7a3ad0a9118b3fe59fba8aa
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794661"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656981"
 ---
 # <a name="console-app"></a>Application console
 
@@ -25,7 +25,7 @@ Vous allez générer une application qui lit un fichier texte et renvoie le cont
 
 Il existe un grand nombre de fonctionnalités dans ce didacticiel. Créons-les un par un.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - Configurez votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Linux, macOS ou dans un conteneur d’ancrage.
 
@@ -55,7 +55,7 @@ namespace TeleprompterConsole
 
 ## <a name="reading-and-echoing-the-file"></a>Lecture et affichage du fichier
 
-La première fonctionnalité à ajouter est la capacité à lire un fichier texte et à afficher tout le texte dans la console. Tout d’abord, nous allons ajouter un fichier texte. Copiez le fichier [sampleQuotes.txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) à partir du dépôt GitHub pour cet [exemple](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) dans votre répertoire de projet. Il servira de script pour votre application. Si vous voulez des informations sur la façon de télécharger l’exemple d’application de cette rubrique, consultez les instructions de la rubrique [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+La première fonctionnalité à ajouter est la capacité à lire un fichier texte et à afficher tout le texte dans la console. Tout d’abord, nous allons ajouter un fichier texte. Copiez le fichier [sampleQuotes.txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) à partir du dépôt GitHub pour cet [exemple](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) dans votre répertoire de projet. Il servira de script pour votre application. Si vous voulez des informations sur la façon de télécharger l’exemple d’application de cette rubrique, consultez les instructions de la rubrique [Exemples et didacticiels](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 Ensuite, ajoutez la méthode suivante dans votre classe `Program` (juste en dessous de la méthode `Main`) :
 
@@ -86,7 +86,7 @@ Cette méthode est un type spécial de méthode C# appelé *méthode d’itérat
 
 Il existe deux autres éléments de syntaxe de C# qui peuvent être nouveaux pour vous. L' [`using`](../language-reference/keywords/using-statement.md) instruction dans cette méthode gère le nettoyage des ressources. La variable initialisée dans l’instruction `using` (`reader`, dans cet exemple) doit implémenter l’interface <xref:System.IDisposable>. Cette interface définit une méthode unique, `Dispose`, qui doit être appelée lorsque les ressources doivent être libérées. Le compilateur génère l’appel lorsque l’exécution atteint l’accolade fermante de l’instruction `using`. Le code généré par le compilateur garantit que la ressource est libérée même si une exception est levée à partir du code dans le bloc défini par l’instruction using.
 
-La variable `reader` est définie à l’aide du mot-clé `var`. [`var`](../language-reference/keywords/var.md)définit une *variable locale implicitement typée*. Cela signifie que le type de la variable est déterminé par le type au moment de la compilation de l’objet assigné à la variable. Ici, c’est la valeur retournée par la méthode <xref:System.IO.File.OpenText(System.String)>, qui est un objet <xref:System.IO.StreamReader>.
+La variable `reader` est définie à l’aide du mot-clé `var`. [`var`](../language-reference/keywords/var.md) définit une *variable locale implicitement typée*. Cela signifie que le type de la variable est déterminé par le type au moment de la compilation de l’objet assigné à la variable. Ici, c’est la valeur retournée par la méthode <xref:System.IO.File.OpenText(System.String)>, qui est un objet <xref:System.IO.StreamReader>.
 
 À présent, nous allons renseigner le code pour lire le fichier dans la `Main` méthode :
 

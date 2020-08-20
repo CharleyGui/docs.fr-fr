@@ -2,12 +2,12 @@
 title: Exemple de migration vers .NET Core 3.1
 description: Illustrant comment migrer un exemple d’application ciblant .NET Framework vers .NET Core 3,1.
 ms.date: 05/12/2020
-ms.openlocfilehash: 5e8b1219cf4bd89ada5b71a60ef27eaabb94997c
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6a0311e9aaeb25ac39f3394d3a62e17046fe03d8
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144269"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656765"
 ---
 # <a name="example-of-migrating-to-net-core-31"></a>Exemple de migration vers .NET Core 3.1
 
@@ -31,11 +31,11 @@ Le processus de migration se compose de quatre étapes séquentielles :
 
 ### <a name="preparation"></a>Préparation
 
-#### <a name="migrate-packagesconfig-file"></a>Migrer le fichier Packages. config
+#### <a name="migrate-packagesconfig-file"></a>Migrer le fichier packages.config
 
-Dans une application .NET Framework, toutes les références aux packages externes sont déclarées dans le fichier *packages. config* . Dans .NET Core, il n’est plus nécessaire d’utiliser le fichier *packages. config* . Utilisez plutôt la propriété [PackageReference](../../core/project-sdk/msbuild-props.md#packagereference) dans le fichier projet pour spécifier les packages NuGet pour votre application.
+Dans une application .NET Framework, toutes les références aux packages externes sont déclarées dans le fichier *packages.config* . Dans .NET Core, il n’est plus nécessaire d’utiliser le fichier *packages.config* . Utilisez plutôt la propriété [PackageReference](../../core/project-sdk/msbuild-props.md#packagereference) dans le fichier projet pour spécifier les packages NuGet pour votre application.
 
-Par conséquent, vous devez passer d’un format à un autre. Vous pouvez effectuer la mise à jour manuellement, en utilisant les dépendances contenues dans le fichier *packages. config* et en les migrant vers le fichier projet au `PackageReference` format. Vous pouvez également laisser Visual Studio faire le travail pour vous : cliquez avec le bouton droit sur le fichier *packages. config* et sélectionnez l’option **migrer les packages. config vers PackageReference** .
+Par conséquent, vous devez passer d’un format à un autre. Vous pouvez effectuer la mise à jour manuellement, en utilisant les dépendances contenues dans le fichier *packages.config* et en les migrant vers le fichier projet au `PackageReference` format. Vous pouvez également laisser Visual Studio faire le travail pour vous : cliquez avec le bouton droit sur le fichier *packages.config* et sélectionnez l’option **migrer packages.config vers PackageReference** .
 
 #### <a name="verify-every-dependency-compatibility-in-net-core"></a>Vérifier chaque compatibilité de dépendance dans .NET Core
 
@@ -85,7 +85,7 @@ Les ressources incorporées sont automatiquement incluses, mais les ressources n
 
 #### <a name="package-references"></a>Références de package
 
-Avec l’option **migrer les packages. config vers PackageReference** , vous pouvez facilement déplacer vos références de package externes vers le nouveau format mentionné précédemment.
+Avec l’option **migrer packages.config vers PackageReference** , vous pouvez facilement déplacer vos références de package externes vers le nouveau format mentionné précédemment.
 
 #### <a name="update-package-references"></a>Mettre à jour les références de package
 
@@ -129,7 +129,7 @@ Une fois que votre application est en cours d’élaboration sans erreur, vous p
 
 Dans cette étape finale, vous trouverez plusieurs problèmes différents selon la complexité de votre application et les dépendances et les API que vous utilisez.
 
-Par exemple, si vous utilisez des fichiers de configuration (*app. config*), vous risquez de rencontrer des erreurs au moment de l’exécution, comme des sections de configuration absentes. L’utilisation du `Microsoft.Extensions.Configuration` package NuGet doit corriger cette erreur.
+Par exemple, si vous utilisez des fichiers de configuration (*app.config*), vous risquez de rencontrer des erreurs au moment de l’exécution, comme des sections de configuration absentes. L’utilisation du `Microsoft.Extensions.Configuration` package NuGet doit corriger cette erreur.
 
 Une autre raison pour les erreurs est l’utilisation `BeginInvoke` des `EndInvoke` méthodes et, car elles ne sont pas prises en charge sur .net core. Ils ne sont pas pris en charge sur .NET Core, car ils ont une dépendance vis-à-vis de la communication à distance, qui n’existe pas sur .NET Core. Pour résoudre ce problème, essayez d’utiliser le `await` mot clé (si disponible) ou la <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> méthode.
 
@@ -195,7 +195,7 @@ Sélectionnez le bouton **Terminer** . Après un certain temps, vous verrez le c
 Vous devez voir trois fichiers générés automatiquement :
 
 1. *Prise en main*: lien vers GitHub pour fournir des informations sur WCF.
-2. *ConnectedService. JSON*: paramètres de configuration pour la connexion au service.
+2. *ConnectedService.jssur*: paramètres de configuration pour la connexion au service.
 3. *Reference.cs*: code du client WCF réel.
 
 ![Capture d’écran de la fenêtre de Explorateur de solutions avec les trois fichiers générés automatiquement](./media/example-migration-core/autogenerated-files.png)
@@ -208,7 +208,7 @@ Si vous compilez à nouveau le projet et que vous l’exécutez, vous ne verrez 
 string image_name = Environment.CurrentDirectory + "\\..\\..\\Assets\\Images\\Catalog\\" + catalogItems.Picturefilename;
 ```
 
-to
+par
 
 ```csharp
 string image_name = Environment.CurrentDirectory + "\\..\\..\\..\\Assets\\Images\\Catalog\\" + catalogItems.Picturefilename;
@@ -233,7 +233,7 @@ Dans ce cas, supprimez tout le contenu du fichier *. csproj* et remplacez-le par
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <UseWPF>true</UseWPF>
+        <UseWpf>true</UseWpf>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
 </Project>

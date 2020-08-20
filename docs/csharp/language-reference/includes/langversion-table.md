@@ -1,12 +1,13 @@
 ---
-ms.openlocfilehash: 9e78914d8afe5bb55b8a535f3f93ab1cae353a94
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.custom: updateeachrelease
+ms.openlocfilehash: d30d6ee2dae332895697b2fd1b931b7ec47d14bc
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802942"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656204"
 ---
-| Valeur                     | Signification                                                                                                 |
+| Value                     | Signification                                                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------------------|
 | `preview`                 | Le compilateur accepte toute la syntaxe de langage valide de la dernière préversion.                         |
 | `latest`                  | Le compilateur accepte la syntaxe de la dernière version publiée du compilateur (versions mineures incluses). |
