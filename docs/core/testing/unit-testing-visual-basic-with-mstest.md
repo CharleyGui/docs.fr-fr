@@ -4,23 +4,23 @@ description: Apprenez les concepts des tests unitaires dans .NET Core de manièr
 author: billwagner
 ms.author: wiwagn
 ms.date: 09/01/2017
-ms.openlocfilehash: df167e0559c841510df17ba39801e43315036241
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9654d05754b83033bcaef6d8b8f24e3ba1d8bb2f
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240933"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656447"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-mstest"></a>Effectuer des tests unitaires pour des bibliothèques .NET Core Visual Basic à l’aide de dotnet test et de MSTest
 
-Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-mstest/) avant de commencer. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-mstest/) avant de commencer. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
 ## <a name="creating-the-source-project"></a>Création du projet source
 
 Ouvrez une fenêtre d’interpréteur de commandes. Créez un répertoire appelé *unit-testing-vb-mstest* qui contiendra la solution.
-A l’intérieur de [`dotnet new sln`](../tools/dotnet-new.md) ce nouvel annuaire, courez pour créer une nouvelle solution. Cette méthode permet de simplifier la gestion de la bibliothèque de classes et du projet de test unitaire.
+Dans ce nouveau répertoire, exécutez [`dotnet new sln`](../tools/dotnet-new.md) pour créer une nouvelle solution. Cette méthode permet de simplifier la gestion de la bibliothèque de classes et du projet de test unitaire.
 Dans le répertoire de la solution, créez un répertoire *PrimeService*. Vous disposez de la structure du répertoire et des fichiers suivante :
 
 ```console
@@ -29,7 +29,7 @@ Dans le répertoire de la solution, créez un répertoire *PrimeService*. Vous d
     /PrimeService
 ```
 
-Faites *de PrimeService* l’annuaire actuel et exécutez-vous [`dotnet new classlib -lang VB`](../tools/dotnet-new.md) pour créer le projet source. Renommez *Class1.VB* en *PrimeService.VB*. Créez une implémentation défaillante de la classe `PrimeService` :
+Faites de *PrimeService* le répertoire actif et exécutez [`dotnet new classlib -lang VB`](../tools/dotnet-new.md) pour créer le projet source. Renommez *Class1.VB* en *PrimeService.VB*. Créez une implémentation défaillante de la classe `PrimeService` :
 
 ```vb
 Namespace Prime.Services
@@ -41,7 +41,7 @@ Namespace Prime.Services
 End Namespace
 ```
 
-Remplacez de nouveau le répertoire par le répertoire *unit-testing-vb-using-mstest*. Exécuter [`dotnet sln add .\PrimeService\PrimeService.vbproj`](../tools/dotnet-sln.md) pour ajouter le projet de bibliothèque de classe à la solution.
+Remplacez de nouveau le répertoire par le répertoire *unit-testing-vb-using-mstest*. Exécutez [`dotnet sln add .\PrimeService\PrimeService.vbproj`](../tools/dotnet-sln.md) pour ajouter le projet de bibliothèque de classes à la solution.
 
 ## <a name="creating-the-test-project"></a>Création du projet de test
 
@@ -56,7 +56,7 @@ Ensuite, créez le répertoire *PrimeService.Tests*. La structure du répertoire
     /PrimeService.Tests
 ```
 
-Faites de l’annuaire *PrimeService.Tests* l’annuaire actuel [`dotnet new mstest -lang VB`](../tools/dotnet-new.md)et créez un nouveau projet à l’aide de . Cette commande crée un projet de test qui utilise MSTest comme bibliothèque de test. Le modèle généré configure le Test Runner dans *PrimeServiceTests.vbproj* :
+Faites du répertoire *PrimeService. tests* le répertoire actif et créez un nouveau projet à l’aide de [`dotnet new mstest -lang VB`](../tools/dotnet-new.md) . Cette commande crée un projet de test qui utilise MSTest comme bibliothèque de test. Le modèle généré configure le Test Runner dans *PrimeServiceTests.vbproj* :
 
 ```xml
 <ItemGroup>
@@ -66,7 +66,7 @@ Faites de l’annuaire *PrimeService.Tests* l’annuaire actuel [`dotnet new mst
 </ItemGroup>
 ```
 
-Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` a ajouté MSTest et le Runner MSTest à l’étape précédente. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez [`dotnet add reference`](../tools/dotnet-add-reference.md) la commande :
+Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` a ajouté MSTest et le Runner MSTest à l’étape précédente. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez la [`dotnet add reference`](../tools/dotnet-add-reference.md) commande :
 
 ```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.vbproj
@@ -87,7 +87,7 @@ La solution finale se présente comme suit :
         PrimeServiceTests.vbproj
 ```
 
-Exécutez-le [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md) dans le répertoire de *l’unité-test-vb-mstest.*
+Exécutez [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md) dans le répertoire *Unit-testing-VB-MSTest* .
 
 ## <a name="creating-the-first-test"></a>Création du premier test
 

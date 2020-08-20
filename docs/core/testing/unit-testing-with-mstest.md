@@ -4,22 +4,22 @@ description: Apprenez les concepts des tests unitaires dans C# et .NET Core de m
 author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
-ms.openlocfilehash: bd7891243d84277a7578089f8b4629ff5bada577
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 765b57dce323c10dc5fcbf395cb7d52be76046c2
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240907"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656356"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>Effectuer des tests unitaires de C# avec MSTest et .NET Core
 
-Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/) avant de commencer. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/) avant de commencer. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
 ## <a name="create-the-source-project"></a>Créer le projet source
 
-Ouvrez une fenêtre d’interpréteur de commandes. Créez un répertoire appelé *unit-testing-using-nunit* pour contenir la solution. À l’intérieur de [`dotnet new sln`](../tools/dotnet-new.md) ce nouvel annuaire, exécutez pour créer un nouveau fichier de solution pour la bibliothèque de classe et le projet de test. Ensuite, créez un répertoire *PrimeService*. Vous disposez de la structure de répertoire et de fichiers suivante :
+Ouvrez une fenêtre d’interpréteur de commandes. Créez un répertoire appelé *unit-testing-using-nunit* pour contenir la solution. Dans ce nouveau répertoire, exécutez [`dotnet new sln`](../tools/dotnet-new.md) pour créer un nouveau fichier solution pour la bibliothèque de classes et le projet de test. Ensuite, créez un répertoire *PrimeService*. Vous disposez de la structure de répertoire et de fichiers suivante :
 
 ```console
 /unit-testing-using-mstest
@@ -27,7 +27,7 @@ Ouvrez une fenêtre d’interpréteur de commandes. Créez un répertoire appel�
     /PrimeService
 ```
 
-Faites *de PrimeService* l’annuaire actuel et exécutez-vous [`dotnet new classlib`](../tools/dotnet-new.md) pour créer le projet source. Renommez *Class1.cs* en *PrimeService.cs*. Créez une implémentation défaillante de la classe `PrimeService` :
+Faites de *PrimeService* le répertoire actif et exécutez [`dotnet new classlib`](../tools/dotnet-new.md) pour créer le projet source. Renommez *Class1.cs* en *PrimeService.cs*. Créez une implémentation défaillante de la classe `PrimeService` :
 
 ```csharp
 using System;
@@ -44,7 +44,7 @@ namespace Prime.Services
 }
 ```
 
-Accédez de nouveau au répertoire *unit-testing-using-mstest*. Exécuter [`dotnet sln add PrimeService/PrimeService.csproj`](../tools/dotnet-sln.md) pour ajouter le projet de bibliothèque de classe à la solution.
+Accédez de nouveau au répertoire *unit-testing-using-mstest*. Exécutez [`dotnet sln add PrimeService/PrimeService.csproj`](../tools/dotnet-sln.md) pour ajouter le projet de bibliothèque de classes à la solution.
 
 ## <a name="create-the-test-project"></a>Créer le projet de test
 
@@ -59,7 +59,7 @@ Ensuite, créez le répertoire *PrimeService.Tests*. La structure du répertoire
     /PrimeService.Tests
 ```
 
-Faites de l’annuaire *PrimeService.Tests* l’annuaire actuel [`dotnet new mstest`](../tools/dotnet-new.md)et créez un nouveau projet à l’aide de . La commande dotnet new crée un projet de test qui utilise MSTest comme bibliothèque de test. Le modèle généré configure le coureur de test dans le fichier *PrimeServiceTests.csproj* :
+Faites du répertoire *PrimeService. tests* le répertoire actif et créez un nouveau projet à l’aide de [`dotnet new mstest`](../tools/dotnet-new.md) . La commande dotnet new crée un projet de test qui utilise MSTest comme bibliothèque de test. Le modèle généré configure le test Runner dans le fichier *PrimeServiceTests. csproj* :
 
 ```xml
 <ItemGroup>
@@ -69,7 +69,7 @@ Faites de l’annuaire *PrimeService.Tests* l’annuaire actuel [`dotnet new mst
 </ItemGroup>
 ```
 
-Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. À l’étape précédente, `dotnet new` a ajouté le SDK MSTest, le framework de test MSTest et le Test Runner MSTest. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez [`dotnet add reference`](../tools/dotnet-add-reference.md) la commande :
+Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. À l’étape précédente, `dotnet new` a ajouté le SDK MSTest, le framework de test MSTest et le Test Runner MSTest. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez la [`dotnet add reference`](../tools/dotnet-add-reference.md) commande :
 
 ```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.csproj
@@ -90,11 +90,11 @@ La solution finale se présente comme suit :
         PrimeServiceTests.csproj
 ```
 
-Exécutez-le [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj`](../tools/dotnet-sln.md) dans l’annuaire de *l’unité-test-utilisation-mstest.*
+Exécutez [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj`](../tools/dotnet-sln.md) dans le répertoire *Unit-testing-using-MSTest* .
 
 ## <a name="create-the-first-test"></a>Créer le premier test
 
-Vous allez écrire un test défaillant, le corriger pour qu’il réussisse, puis répéter le processus. Supprimer *UnitTest1.cs* de l’annuaire *PrimeService.Tests* et créer un nouveau fichier C nommé *PrimeService_IsPrimeShould.cs* avec le contenu suivant :
+Vous allez écrire un test défaillant, le corriger pour qu’il réussisse, puis répéter le processus. Supprimez *UnitTest1.cs* du répertoire *PrimeService. tests* et créez un nouveau fichier C# nommé *PrimeService_IsPrimeShould. cs* avec le contenu suivant :
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -125,7 +125,7 @@ namespace Prime.UnitTests.Services
 
 L’[attribut TestClass](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute) désigne une classe qui contient des tests unitaires. L’[attribut TestMethod](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute) indique une méthode qui est une méthode de test.
 
-Enregistrer ce fichier [`dotnet test`](../tools/dotnet-test.md) et exécuter pour construire les tests et la bibliothèque de classe, puis exécuter les tests. Le Test Runner MSTest contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
+Enregistrez ce fichier et exécutez [`dotnet test`](../tools/dotnet-test.md) pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner MSTest contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
 
 Votre test échoue. Vous n’avez pas encore créé l’implémentation. Pour que ce test réussisse, écrivez le code le plus simple dans la classe `PrimeService` qui fonctionne :
 

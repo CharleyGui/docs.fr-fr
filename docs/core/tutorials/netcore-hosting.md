@@ -4,12 +4,12 @@ description: Découvrez comment héberger le runtime .NET Core à partir du code
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 2324b61bcffb686a455fcfd154284a2b78aa746b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3b24ade694e25040d77e411bead3f454e9d5cdef
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283492"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656174"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Écrire un hôte .NET Core personnalisé pour contrôler le runtime .NET à partir de votre code natif
 
@@ -34,7 +34,7 @@ Vous pouvez utiliser trois API différentes pour héberger .NET Core. Cet articl
 
 ## <a name="sample-hosts"></a>Exemples d’hôtes
 
-Des [exemples d’hôtes](https://github.com/dotnet/samples/tree/master/core/hosting) illustrant les étapes décrites dans les tutoriels ci-dessous sont disponibles dans le dépôt GitHub dotnet/samples. Les commentaires dans les exemples associent clairement les étapes numérotées de ces tutoriels à l’endroit où elles sont exécutées dans l’exemple. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Des [exemples d’hôtes](https://github.com/dotnet/samples/tree/master/core/hosting) illustrant les étapes décrites dans les tutoriels ci-dessous sont disponibles dans le dépôt GitHub dotnet/samples. Les commentaires dans les exemples associent clairement les étapes numérotées de ces tutoriels à l’endroit où elles sont exécutées dans l’exemple. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 N’oubliez pas que les exemples d’hôtes sont destinés à être utilisés dans un contexte d’apprentissage. Ils ne s’attardent donc pas sur la vérification des erreurs et privilégient la lisibilité par rapport à l’efficacité.
 
@@ -118,7 +118,7 @@ Parmi les propriétés communes, citons les suivantes :
 * `APP_PATHS` Il s’agit d’une liste de chemins où rechercher un assembly s’il est introuvable dans la liste TPA (liste d’assemblys de plateforme sécurisée). Étant donné que l’hôte a davantage de contrôle sur les assemblys chargés à l’aide de la liste TPA, il est recommandé aux hôtes de déterminer les assemblys qu’ils comptent charger et de les lister explicitement. Toutefois, si la détection au moment de l’exécution est nécessaire, cette propriété peut activer ce scénario.
 * `APP_NI_PATHS` Cette liste est similaire à APP_PATHS, sauf qu’il s’agit de chemins où sonder des images natives.
 * `NATIVE_DLL_SEARCH_DIRECTORIES` Cette propriété est une liste de chemins où le chargeur doit sonder les bibliothèques natives appelées avec p/invoke.
-* `PLATFORM_RESOURCE_ROOTS`Cette liste comprend les chemins d’accès pour détecter les assemblys satellites de ressources (dans les sous-répertoires spécifiques à la culture).
+* `PLATFORM_RESOURCE_ROOTS` Cette liste comprend les chemins d’accès pour détecter les assemblys satellites de ressources (dans les sous-répertoires spécifiques à la culture).
 
 Dans cet exemple d’hôte, la liste TPA est construite en listant simplement toutes les bibliothèques du répertoire actif :
 
@@ -212,11 +212,11 @@ Une fois que vous avez choisi les indicateurs AppDomain à utiliser, vous devez 
 
 Propriétés AppDomain courantes :
 
-* `TRUSTED_PLATFORM_ASSEMBLIES`Il s’agit d’une liste de chemins d’assembly (délimités par `;` sur Windows et `:` sur Linux/MacOS), que l’AppDomain doit hiérarchiser le chargement et accorder une confiance totale (même dans les domaines partiellement approuvés). Cette liste doit contenir des assemblys « Framework » et d’autres modules approuvés, similaires au Global Assembly Cache dans les scénarios .NET Framework. Certains hôtes placent toutes les bibliothèques à côté de *coreclr.dll* dans cette liste, d’autres ont des manifestes codés en dur qui répertorient les assemblys de confiance qui les concernent.
+* `TRUSTED_PLATFORM_ASSEMBLIES` Il s’agit d’une liste de chemins d’assembly (délimités par `;` sur Windows et `:` sur Linux/MacOS), que l’AppDomain doit hiérarchiser le chargement et accorder une confiance totale (même dans les domaines partiellement approuvés). Cette liste doit contenir des assemblys « Framework » et d’autres modules approuvés, similaires au Global Assembly Cache dans les scénarios .NET Framework. Certains hôtes placent toutes les bibliothèques à côté de *coreclr.dll* dans cette liste, d’autres ont des manifestes codés en dur qui répertorient les assemblys de confiance qui les concernent.
 * `APP_PATHS` Il s’agit d’une liste de chemins où rechercher un assembly s’il est introuvable dans la liste TPA (liste d’assemblys de plateforme sécurisée). Étant donné que l’hôte a davantage de contrôle sur les assemblys chargés à l’aide de la liste TPA, il est recommandé aux hôtes de déterminer les assemblys qu’ils comptent charger et de les lister explicitement. Toutefois, si la détection au moment de l’exécution est nécessaire, cette propriété peut activer ce scénario.
 * `APP_NI_PATHS` Cette liste est très similaire à APP_PATHS, sauf qu’il s’agit de chemins où rechercher des images natives.
 * `NATIVE_DLL_SEARCH_DIRECTORIES` Cette propriété est une liste de chemins où le chargeur doit rechercher les DLL natives appelées via p/invoke.
-* `PLATFORM_RESOURCE_ROOTS`Cette liste comprend les chemins d’accès pour détecter les assemblys satellites de ressources (dans les sous-répertoires spécifiques à la culture).
+* `PLATFORM_RESOURCE_ROOTS` Cette liste comprend les chemins d’accès pour détecter les assemblys satellites de ressources (dans les sous-répertoires spécifiques à la culture).
 
 Dans notre [exemple d’hôte simple](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithMscoree), ces propriétés sont configurées de la façon suivante :
 
@@ -256,6 +256,6 @@ CoreCLR ne prend pas en charge le déchargement. Ne déchargez pas la bibliothè
 ## <a name="conclusion"></a>Conclusion
 Une fois que votre hôte est créé, il peut être testé en l’exécutant à partir de la ligne de commande et en passant n’importe quel argument que l’hôte attend (comme l’application managée à exécuter pour l’exemple d’hôte mscoree). Quand vous spécifiez l’application .NET Core que l’hôte doit exécuter, utilisez le fichier .dll généré par `dotnet build`. Les exécutables (fichiers .exe) générés par `dotnet publish` pour les applications autonomes sont l’hôte .NET Core par défaut (pour que l’application puisse être lancée directement à partir de la ligne de commande dans les scénarios principaux) ; le code utilisateur est compilé dans une dll du même nom.
 
-Si ce n’est pas le cas, double-Vérifiez que *CoreCLR. dll* est disponible à l’emplacement attendu par l’hôte, que toutes les bibliothèques d’infrastructure nécessaires se trouvent dans la liste TPA et que le nombre de bits de coreclr (32 bits ou 64 bits) correspond à la façon dont l’hôte a été généré.
+Si ce n’est pas le cas, double-Vérifiez que *coreclr.dll* est disponible à l’emplacement attendu par l’hôte, que toutes les bibliothèques d’infrastructure nécessaires se trouvent dans la liste TPA et que le nombre de bits de CoreCLR (32 bits ou 64 bits) correspond à la façon dont l’hôte a été créé.
 
 L’hébergement du runtime .NET Core est un scénario avancé sans utilité pour un grand nombre de développeurs, mais qui peut être très utile pour ceux qui doivent lancer du code managé à partir d’un processus natif ou qui ont besoin de davantage de contrôle sur le comportement du runtime .NET Core.

@@ -3,17 +3,17 @@ title: Exemples et tutoriels .NET
 description: Informations sur les exemples et les didacticiels pour .NET Core, ASP.NET Core et le langage C# permettant d’en savoir plus sur .NET.
 author: BillWagner
 ms.author: wiwagn
-ms.date: 04/11/2017
-ms.openlocfilehash: 367b2cbea24ac0da634051bf815c319f3679f79b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.date: 08/19/2020
+ms.openlocfilehash: 587365aae1c2069c3e94ad0452da9c31dc6e89f0
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86417331"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656955"
 ---
 # <a name="net-samples-and-tutorials"></a>Exemples et tutoriels .NET
 
-La documentation .NET contient un ensemble d’exemples et de didacticiels qui vous renseignent sur .NET. Cette rubrique explique comment rechercher, afficher et télécharger des didacticiels et des exemples .NET Core, ASP.NET Core et C#. Vous trouverez des ressources utiles pour apprendre le langage de programmation F# sur le [site de F# Foundation](https://fsharp.org/learn.html). Si vous souhaitez explorer C# à l’aide d’un éditeur de code en ligne, commencez par [ce tutoriel interactif](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), puis suivez le [tutoriel interactif de C#](../csharp/tutorials/intro-to-csharp/index.md). Vous trouverez des instructions pour afficher et télécharger des exemples de code dans la section [Afficher et télécharger des exemples](#viewing-and-downloading-samples).
+La documentation .NET contient un ensemble d’exemples et de didacticiels qui vous renseignent sur .NET. Cet article explique comment rechercher, afficher et télécharger des exemples et des didacticiels .NET Core, ASP.NET Core et C#. Vous trouverez des ressources utiles pour apprendre le langage de programmation F# sur le [site de F# Foundation](https://fsharp.org/learn/). Si vous souhaitez explorer C# à l’aide d’un éditeur de code en ligne, commencez par [ce tutoriel interactif](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), puis suivez le [tutoriel interactif de C#](../csharp/tutorials/intro-to-csharp/index.md). Vous trouverez des instructions pour afficher et télécharger des exemples de code dans la section [Afficher et télécharger des exemples](#view-and-download-samples).
 
 ## <a name="net-core"></a>.NET Core
 
@@ -23,11 +23,11 @@ La documentation .NET contient un ensemble d’exemples et de didacticiels qui v
 
 Ce guide montre comment créer une application web ASP.NET Core et les tests unitaires associés. Il commence par créer une application de service web simple, puis il ajoute des tests. Ensuite, il crée d’autres tests pour guider l’implémentation de nouvelles fonctionnalités. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test) est disponible dans le référentiel dotnet/samples sur GitHub.
 
-### <a name="tutorials"></a>Didacticiels
+### <a name="tutorials"></a>Tutoriels
 
-**[Écriture d’applications console .NET Core à l’aide de l’CLI .NET Core : Guide pas à pas](../core/tutorials/cli-create-console-app.md)**
+**[Didacticiel : créer une application console .NET Core à l’aide de Visual Studio Code](../core/tutorials/with-visual-studio-code.md)**
 
-Ce guide indique comment utiliser les outils d’interface de ligne de commande (CLI) .NET Core pour créer des applications console multiplateformes. Il commence avec une application console simple qui s’étend finalement sur plusieurs projets, tests compris. Vous ajoutez des fonctionnalités pas à pas, en renforçant vos connaissances au fur à mesure. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/core/console-apps) est disponible dans le référentiel dotnet/samples sur GitHub.
+Ce didacticiel montre comment créer et exécuter une application console .NET Core à l’aide de Visual Studio Code et du CLI .NET Core. Les tâches de projet, telles que la création, la compilation et l’exécution d’un projet, sont effectuées à l’aide de l’CLI .NET Core.
 
 **[Écriture de bibliothèques avec des outils multiplateformes](../core/tutorials/libraries.md)**
 
@@ -69,7 +69,7 @@ L’exemple de [serveur COM](https://github.com/dotnet/samples/tree/master/core/
 
 L’exemple [ExcelDemo](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo) illustre la consommation d’[assemblys PIA Microsoft Office](/visualstudio/vsto/office-primary-interop-assemblies) dans .NET Core.
 
-### <a name="tutorials"></a>Didacticiels
+### <a name="tutorials"></a>Tutoriels
 
 **[Application console](../csharp/tutorials/console-teleprompter.md)**
 
@@ -83,7 +83,7 @@ Ce didacticiel présente les communications web, la sérialisation JSON et les f
 
 Ce didacticiel illustre plusieurs fonctionnalités de LINQ et les éléments de langage qui le prennent en charge. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-linq) est disponible dans le référentiel dotnet/samples sur GitHub.
 
-**[Bien démarrer avec .NET Core sur macOS à l’aide de Visual Studio pour Mac](../core/tutorials/using-on-mac-vs.md)**
+**[Didacticiel : créer une application console .NET Core à l’aide de Visual Studio pour Mac](../core/tutorials/with-visual-studio-mac.md)**
 
 Ce didacticiel explique comment créer une application console .NET Core simple avec Visual Studio pour Mac.
 
@@ -101,13 +101,13 @@ Ce tutoriel vous montre comment créer une application .NET Core simple qui pren
 
 Ce didacticiel montre comment déployer une application MVC ASP.NET dans un conteneur Docker Windows. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator) est disponible dans le référentiel dotnet/samples sur GitHub.
 
-## <a name="viewing-and-downloading-samples"></a>Afficher et télécharger les exemples
+## <a name="view-and-download-samples"></a>Afficher et télécharger des exemples
 
 De nombreuses rubriques montrent le code source et les exemples qu’il est possible d’afficher ou de télécharger sur GitHub. Pour consulter un exemple, suivez son lien. Pour télécharger le code, suivez ces instructions :
 
 1. Téléchargez le référentiel contenant l’exemple de code en suivant l’une des procédures suivantes :
    * Téléchargez un fichier ZIP du référentiel sur votre système local. Décompressez l’archive compressée.
-   * [Répliquez](https://help.github.com/articles/fork-a-repo/) le référentiel et [clonez](https://help.github.com/articles/cloning-a-repository/) le fork sur votre système local. La réplication et le clonage permettent d’apporter des contributions à la documentation en validant les modifications apportées au fork, puis en créant une requête d’extraction pour le référentiel de documents officiel. Pour plus d’informations, consultez le Guide de contribution à la [documentation .net](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute) et le [Guide de contribution aux documents ASP.net Core](https://github.com/aspnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
+   * [Répliquez](https://help.github.com/articles/fork-a-repo/) le référentiel et [clonez](https://help.github.com/articles/cloning-a-repository/) le fork sur votre système local. La réplication et le clonage permettent d’apporter des contributions à la documentation en validant les modifications apportées au fork, puis en créant une requête d’extraction pour le référentiel de documents officiel. Pour plus d’informations, consultez le Guide de contribution à la [documentation .net](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute) et le [Guide de contribution aux documents ASP.net Core](https://github.com/dotnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
    * Clonez le référentiel localement. Si vous clonez un référentiel de documents directement sur votre système local, vous ne pourrez pas effectuer de validations directement sur le référentiel officiel ; par conséquent, vous ne pourrez pas apporter de contributions à la documentation par la suite. Utilisez la procédure de réplication et de clonage décrite précédemment si vous souhaitez conserver la possibilité de contribuer ultérieurement à la documentation.
 1. Naviguez dans les dossiers du référentiel jusqu’à l’emplacement de l’exemple. Le chemin d’accès relatif de l’emplacement de l’exemple s’affiche dans la barre d’adresse de votre navigateur lorsque vous suivez le lien de l’exemple.
 1. Pour exécuter un exemple, vous avez plusieurs possibilités :

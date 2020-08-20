@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 530bb54936f97f1d7460d63cfa316c760cbd449d
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 8b54aea1409f2b4c0a3d39d215922ba62c2a3563
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86441815"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656968"
 ---
 # <a name="security-considerations-for-data"></a>Considérations sur la sécurité des données
 
@@ -90,7 +90,7 @@ L'encodeur de message MTOM possède également un paramètre `MaxBufferSize` . L
 
 ## <a name="xml-based-streaming-attacks"></a>Attaques de diffusion en continu basées sur XML
 
-`MaxBufferSize`seul n’est pas suffisant pour s’assurer que WCF ne peut pas être forcé dans la mise en mémoire tampon lorsque la diffusion en continu est attendue. Par exemple, les lecteurs XML WCF met toujours en mémoire tampon l’intégralité de la balise de début de l’élément XML lors du démarrage de la lecture d’un nouvel élément. Cette mise en mémoire tampon permet de traiter correctement les espaces de noms et les attributs. Si le paramètre `MaxReceivedMessageSize` est configuré afin d'être élevé (par exemple, pour permettre un scénario de diffusion en continu d'un fichier volumineux directement sur le disque), un message malveillant peut être construit dans lequel le corps du message entier est une balise de début d'élément XML volumineuse. Une tentative de le lire provoque une <xref:System.OutOfMemoryException>. Il s’agit de l’une des nombreuses attaques par déni de service XML possibles qui peuvent toutes être atténuées à l’aide de quotas de lecteur XML, abordés dans la section « utilisation du XML en toute sécurité » plus loin dans cette rubrique. Dans le cadre de la diffusion en continu, il s'avère particulièrement important de définir tous ces quotas.
+`MaxBufferSize` seul n’est pas suffisant pour s’assurer que WCF ne peut pas être forcé dans la mise en mémoire tampon lorsque la diffusion en continu est attendue. Par exemple, les lecteurs XML WCF met toujours en mémoire tampon l’intégralité de la balise de début de l’élément XML lors du démarrage de la lecture d’un nouvel élément. Cette mise en mémoire tampon permet de traiter correctement les espaces de noms et les attributs. Si le paramètre `MaxReceivedMessageSize` est configuré afin d'être élevé (par exemple, pour permettre un scénario de diffusion en continu d'un fichier volumineux directement sur le disque), un message malveillant peut être construit dans lequel le corps du message entier est une balise de début d'élément XML volumineuse. Une tentative de le lire provoque une <xref:System.OutOfMemoryException>. Il s’agit de l’une des nombreuses attaques par déni de service XML possibles qui peuvent toutes être atténuées à l’aide de quotas de lecteur XML, abordés dans la section « utilisation du XML en toute sécurité » plus loin dans cette rubrique. Dans le cadre de la diffusion en continu, il s'avère particulièrement important de définir tous ces quotas.
 
 ### <a name="mixing-streaming-and-buffering-programming-models"></a>Combinaison des modèles de programmation de diffusion en continu et de mise en mémoire tampon
 
@@ -284,7 +284,7 @@ Cette situation peut être évitée en prenant conscience des points suivants :
 
 <xref:System.Runtime.Serialization.NetDataContractSerializer> est un moteur de sérialisation qui utilise le couplage étroit des types. Ce moteur est similaire à <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> et à <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. Autrement dit, il détermine le type à instancier en lisant l’assembly de .NET Framework et le nom de type à partir des données entrantes. Bien qu’il fasse partie de WCF, il n’existe aucun moyen de brancher ce moteur de sérialisation. le code personnalisé doit être écrit. `NetDataContractSerializer`Est fourni principalement pour faciliter la migration de .NET Framework communication à distance vers WCF. Pour plus d’informations, consultez la section relative à la [sérialisation et à la désérialisation](serialization-and-deserialization.md).
 
-Parce que le message lui-même peut indiquer la possibilité de charger tout type, le mécanisme <xref:System.Runtime.Serialization.NetDataContractSerializer> est par sa nature incertain et doit être utilisé uniquement avec des données approuvées. Pour plus d’informations, consultez le [Guide de sécurité BinaryFormatter](/dotnet/standard/serialization/binaryformatter-security-guide).
+Parce que le message lui-même peut indiquer la possibilité de charger tout type, le mécanisme <xref:System.Runtime.Serialization.NetDataContractSerializer> est par sa nature incertain et doit être utilisé uniquement avec des données approuvées. Pour plus d’informations, consultez le [Guide de sécurité BinaryFormatter](../../../standard/serialization/binaryformatter-security-guide.md).
 
 Même en cas d'utilisation avec des données approuvées, les données entrantes peuvent spécifier insuffisamment le type à charger, surtout si la propriété <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> a la valeur <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple>. Toute personne ayant accès au répertoire de l'application ou au Global Assembly Cache peut remplacer par un type malveillant celui qui est supposé se charger. Vérifiez toujours la sécurité du répertoire de votre application et du Global Assembly Cache en définissant correctement les autorisations.
 

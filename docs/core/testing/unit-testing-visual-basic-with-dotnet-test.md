@@ -4,16 +4,16 @@ description: Apprenez les concepts des tests unitaires dans .NET Core de manièr
 author: billwagner
 ms.author: wiwagn
 ms.date: 05/18/2020
-ms.openlocfilehash: d87550d692e0b7f3bfee1633bd00cbf501cc2e67
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d384bf08f0b6031a519a8430c876eafc05d03a2e
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502754"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656421"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>Effectuer des tests unitaires sur les bibliothèques .NET Core Visual Basic à l’aide de dotnet test et de xUnit
 
-Ce didacticiel montre comment générer une solution contenant un projet de test unitaire et un projet de bibliothèque. Pour suivre le didacticiel à l’aide d’une solution prédéfinie, [Affichez ou téléchargez l’exemple de code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/). Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Ce didacticiel montre comment générer une solution contenant un projet de test unitaire et un projet de bibliothèque. Pour suivre le didacticiel à l’aide d’une solution prédéfinie, [Affichez ou téléchargez l’exemple de code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/). Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 ## <a name="create-the-solution"></a>Créez la solution
 
@@ -63,7 +63,7 @@ Les instructions suivantes fournissent les étapes permettant de créer la solut
   End Namespace
   ```
 
-* Le code précédent :
+* Le code précédent :
   * Lève une exception <xref:System.NotImplementedException> avec un message indiquant qu’elle n’est pas implémentée.
   * Est mis à jour ultérieurement dans le didacticiel.
 
@@ -128,7 +128,7 @@ Une approche courante du développement piloté par les tests (TDD) consiste à 
 Mettez à jour le projet *PrimeService. tests* :
 
 * Supprimez *PrimeService. tests/UnitTest1. vb*.
-* Créez un fichier *PrimeService. tests/PrimeService_IsPrimeShould. vb* .
+* Créez un fichier *PrimeService. tests/PrimeService_IsPrimeShould. vb*  .
 * Remplacez le code dans *PrimeService_IsPrimeShould. vb* par le code suivant :
 
 ```vb
@@ -154,7 +154,7 @@ Namespace PrimeService.Tests
 End Namespace
 ```
 
-L' `[Fact]` attribut déclare une méthode de test qui est exécutée par Test Runner. À partir du dossier *PrimeService. tests* , exécutez `dotnet test` . La commande [dotnet test](../tools/dotnet-test.md) génère les deux projets et exécute les tests. Le test Runner xUnit contient le point d’entrée de programme pour exécuter les tests. `dotnet test`démarre le testeur de test à l’aide du projet de test unitaire.
+L' `[Fact]` attribut déclare une méthode de test qui est exécutée par Test Runner. À partir du dossier *PrimeService. tests* , exécutez `dotnet test` . La commande [dotnet test](../tools/dotnet-test.md) génère les deux projets et exécute les tests. Le test Runner xUnit contient le point d’entrée de programme pour exécuter les tests. `dotnet test` démarre le testeur de test à l’aide du projet de test unitaire.
 
 Le test échoue car `IsPrime` n’a pas été implémenté. À l’aide de l’approche TDD, écrivez uniquement le code suffisant pour que ce test soit réussi. Mettez à jour `IsPrime` avec le code suivant :
 
