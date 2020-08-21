@@ -4,12 +4,12 @@ description: Découvrez comment supprimer les applications autonomes pour rédui
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 2bb0f03994468bbad3096ebf0b141bc1f47b867e
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 0fde409e9e5911213855ab206368d302b73eebb3
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656714"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720122"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Supprimer les exécutables et les déploiements autonomes
 
@@ -51,7 +51,7 @@ L’exemple suivant publie une application pour Windows comme autonome et décou
 </ItemGroup>
 ```
 
-L’exemple suivant publie une application en mode de découpage agressif où le code non utilisé avec des assemblys est tronqué et les avertissements de découpage sont activés.
+L’exemple suivant publie une application en mode de découpage agressif où le code inutilisé dans les assemblys est tronqué et les avertissements de découpage sont activés.
 
 ```xml
 <ItemGroup>

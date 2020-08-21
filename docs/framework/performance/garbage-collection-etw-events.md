@@ -7,12 +7,12 @@ helpviewer_keywords:
 - garbage collection events [.NET Framework]
 - ETW, garbage collection events (CLR)
 ms.assetid: f14b6fd7-0966-4d87-bc89-54ef3a44a94a
-ms.openlocfilehash: 58ad874ef6a12c18c404640aa66577c391573534
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 2e1e0fda5c1a80627c8dde7f49954a867b9a2b66
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309740"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720135"
 ---
 # <a name="garbage-collection-etw-events"></a>Événements ETW de garbage collection
 
@@ -23,6 +23,7 @@ Cette catégorie comprend les événements suivants :
 - [Événement GCStart_V1](#gcstart_v1-event)
 - [Événement GCEnd_V1](#gcend_v1-event)
 - [Événement GCHeapStats_V1](#gcheapstats_v1-event)
+- [Événement GCHeapStats_V2](#gcheapstats_v2-event)
 - [Événement GCCreateSegment_V1](#gccreatesegment_v1-event)
 - [Événement GCFreeSegment_V1](#gcfreesegment_v1-event)
 - [Événement GCRestartEEBegin_V1](#gcrestarteebegin_v1-event)
@@ -30,6 +31,7 @@ Cette catégorie comprend les événements suivants :
 - [Événement GCSuspendEE_V1](#gcsuspendee_v1-event)
 - [Événement GCSuspendEEEnd_V1](#gcsuspendeeend_v1-event)
 - [Événement GCAllocationTick_V2](#gcallocationtick_v2-event)
+- [Événement GCAllocationTick_V3](#gcallocationtick_v3-event)
 - [Événement GCFinalizersBegin_V1](#gcfinalizersbegin_v1-event)
 - [Événement GCFinalizersEnd_V1](#gcfinalizersend_v1-event)
 - [Événement GCCreateConcurrentThread_V1](#gccreateconcurrentthread_v1-event)
@@ -113,6 +115,41 @@ Le tableau ci-dessous montre les données d’événements.
 |SinkBlockCount|win:UInt32|Nombre de blocs de synchronisation en cours d'utilisation.|
 |GCHandleCount|win:UInt32|Nombre de handles de garbage collection en cours d'utilisation.|
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
+  
+## <a name="gcheapstats_v2-event"></a>Événement GCHeapStats_V2
+
+Le tableau suivant montre les mots clés et les niveaux.
+
+|Mot clé pour déclencher l'événement|Level|
+|-----------------------------------|-----------|
+|`GCKeyword` (0x1)|Informatif (4)|
+
+Le tableau ci-dessous montre les informations liées aux événements.
+
+|Événement|ID de l’événement|Description|
+|-----------|--------------|-----------------|
+|`GCHeapStats_V2`|4|Affiche les statistiques relatives aux tas à la fin de chaque garbage collection.|
+
+Le tableau ci-dessous montre les données d’événements.
+
+|Nom du champ|Type de données|Description|
+|----------------|---------------|-----------------|
+|GenerationSize0|win:UInt64|Taille, en octets, de la mémoire de génération 0.|
+|TotalPromotedSize0|win:UInt64|Nombre d'octets promus de la génération 0 à la génération 1.|
+|GenerationSize1|win:UInt64|Taille, en octets, de la mémoire de génération 1.|
+|TotalPromotedSize1|win:UInt64|Nombre d'octets promus de la génération 1 à la génération 2.|
+|GenerationSize2|win:UInt64|Taille, en octets, de la mémoire de génération 2.|
+|TotalPromotedSize2|win:UInt64|Nombre d'octets ayant survécu dans la génération 2 après la dernière collection.|
+|GenerationSize3|win:UInt64|Taille, en octets, du tas des objets volumineux.|
+|TotalPromotedSize3|win:UInt64|Nombre d'octets ayant survécu dans le tas d'objets volumineux après la dernière collection.|
+|FinalizationPromotedSize|win:UInt64|Taille totale, en octets, des objets qui sont prêts pour la finalisation.|
+|FinalizationPromotedSize|win:UInt64|Nombre d'objets qui sont prêts pour la finalisation.|
+|PinnedObjectCount|win:UInt32|Nombre d'objets (non déplaçables) épinglés.|
+|SinkBlockCount|win:UInt32|Nombre de blocs de synchronisation en cours d'utilisation.|
+|GCHandleCount|win:UInt32|Nombre de handles de garbage collection en cours d'utilisation.|
+|ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
+|GenerationSize4|win:UInt64|Taille, en octets, du tas d’objets épinglés.|
+|TotalPromotedSize4|win:UInt64|Nombre d’octets qui ont survécu dans le tas d’objets épinglés après la dernière collection.|
   
 ## <a name="gccreatesegment_v1-event"></a>Événement GCCreateSegment_V1
 
@@ -255,6 +292,33 @@ Le tableau ci-dessous montre les données d’événements.
 |TypeId|win:Pointer|Adresse de MethodTable. Quand plusieurs types d'objets ont été alloués au cours de cet événement, il s'agit de l'adresse de MethodTable qui correspond au dernier objet alloué (l'objet qui a provoqué le dépassement du seuil de 100 Ko).|
 |TypeName|win:UnicodeString|Nom du type ayant été alloué. Quand plusieurs types d'objets ont été alloués au cours de cet événement, il s'agit du type du dernier objet alloué (l'objet qui a provoqué le dépassement du seuil de 100 Ko).|
 |HeapIndex|win:UInt32|Segment de mémoire où l'objet a été alloué. Cette valeur est de 0 (zéro) lors d'une exécution avec le garbage collection pour station de travail.|
+
+## <a name="gcallocationtick_v3-event"></a>Événement GCAllocationTick_V3
+
+Le tableau suivant montre les mots clés et les niveaux.
+
+|Mot clé pour déclencher l'événement|Level|
+|-----------------------------------|-----------|
+|`GCKeyword` (0x1)|Informatif (4)|
+
+Le tableau ci-dessous montre les informations liées aux événements.
+
+|Événement|ID de l’événement|Moment du déclenchement|
+|-----------|--------------|-----------------|
+|`GCAllocationTick_V3`|10|Chaque fois qu'environ 100 Ko sont alloués.|
+
+Le tableau ci-dessous montre les données d’événements.
+
+|Nom du champ|Type de données|Description|
+|----------------|---------------|-----------------|
+|AllocationAmount|win:UInt32|Taille de l'allocation, en octets. Cette valeur est correcte pour les allocations inférieures à la longueur d'un ULONG (4 294 967 295 octets). Si l'allocation est supérieure, ce champ contient une valeur tronquée. Utilisez `AllocationAmount64` pour les allocations très volumineuses.|
+|AllocationKind|win:UInt32|0x0 – Allocation de petits objets (l'allocation se fait dans le tas de petits objets).<br /><br /> 0x1 – Allocation d'objets volumineux (l'allocation se fait dans le tas des objets volumineux).|
+|ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
+|AllocationAmount64|win:UInt64|Taille de l'allocation, en octets. Cette valeur est correcte pour les allocations très volumineuses.|
+|TypeId|win:Pointer|Adresse de MethodTable. Quand plusieurs types d'objets ont été alloués au cours de cet événement, il s'agit de l'adresse de MethodTable qui correspond au dernier objet alloué (l'objet qui a provoqué le dépassement du seuil de 100 Ko).|
+|TypeName|win:UnicodeString|Nom du type ayant été alloué. Quand plusieurs types d'objets ont été alloués au cours de cet événement, il s'agit du type du dernier objet alloué (l'objet qui a provoqué le dépassement du seuil de 100 Ko).|
+|HeapIndex|win:UInt32|Segment de mémoire où l'objet a été alloué. Cette valeur est de 0 (zéro) lors d'une exécution avec le garbage collection pour station de travail.|
+|Adresse|win:Pointer|Adresse du dernier objet alloué.|
 
 ## <a name="gcfinalizersbegin_v1-event"></a>Événement GCFinalizersBegin_V1
 

@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 57261602c456a6dcf90c03aa044e7d1c0c8c1c6a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 968da880fc7e0e811f5e8712ccb43726426a019e
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608028"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720161"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
@@ -255,11 +255,11 @@ La classe <xref:System.Threading.Tasks.TaskFactory> fournit des méthodes statiq
 
 ## <a name="tasks-without-delegates"></a>Tâches sans délégués
 
-Dans certains cas, vous pouvez utiliser un <xref:System.Threading.Tasks.Task> pour encapsuler une opération asynchrone exécutée par un composant externe au lieu de votre propre délégué utilisateur. Si l’opération est basée sur le modèle de programmation asynchrone Begin/End, vous pouvez utiliser les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Si ce n’est pas le cas, vous pouvez utiliser l’objet <xref:System.Threading.Tasks.TaskCompletionSource%601> pour encapsuler l’opération dans une tâche et, de cette façon, bénéficier de certains des avantages de programmabilité <xref:System.Threading.Tasks.Task>, comme par exemple, la prise en charge de la propagation et des continuations d’exceptions. Pour plus d’informations, consultez <xref:System.Threading.Tasks.TaskCompletionSource%601>.
+Dans certains cas, vous pouvez utiliser un <xref:System.Threading.Tasks.Task> pour encapsuler une opération asynchrone exécutée par un composant externe au lieu de votre propre délégué utilisateur. Si l’opération est basée sur le modèle de programmation asynchrone Begin/End, vous pouvez utiliser les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Si ce n’est pas le cas, vous pouvez utiliser l’objet <xref:System.Threading.Tasks.TaskCompletionSource%601> pour encapsuler l’opération dans une tâche et, de cette façon, bénéficier de certains des avantages de programmabilité <xref:System.Threading.Tasks.Task>, comme par exemple, la prise en charge de la propagation et des continuations d’exceptions. Pour plus d'informations, consultez <xref:System.Threading.Tasks.TaskCompletionSource%601>.
 
 ## <a name="custom-schedulers"></a>Planificateurs personnalisés
 
-La plupart des développeurs d'applications ou de bibliothèques ne se soucient pas du processeur sur lequel s'exécute la tâche, ni de la manière dont il synchronise son travail avec d'autres tâches ou de la façon dont il est planifié sur le <xref:System.Threading.ThreadPool?displayProperty=nameWithType>. Ils demandent simplement à ce qu'il s'exécute aussi efficacement que possible sur l'ordinateur hôte. Si vous avez besoin d’un contrôle plus affiné sur les détails de la planification, la bibliothèque parallèle de tâches vous permet de configurer des paramètres dans le planificateur de tâches par défaut et vous permet même de fournir un planificateur personnalisé. Pour plus d’informations, consultez <xref:System.Threading.Tasks.TaskScheduler>.
+La plupart des développeurs d'applications ou de bibliothèques ne se soucient pas du processeur sur lequel s'exécute la tâche, ni de la manière dont il synchronise son travail avec d'autres tâches ou de la façon dont il est planifié sur le <xref:System.Threading.ThreadPool?displayProperty=nameWithType>. Ils demandent simplement à ce qu'il s'exécute aussi efficacement que possible sur l'ordinateur hôte. Si vous avez besoin d’un contrôle plus affiné sur les détails de la planification, la bibliothèque parallèle de tâches vous permet de configurer des paramètres dans le planificateur de tâches par défaut et vous permet même de fournir un planificateur personnalisé. Pour plus d'informations, consultez <xref:System.Threading.Tasks.TaskScheduler>.
 
 ## <a name="related-data-structures"></a>Structures de données associées
 
