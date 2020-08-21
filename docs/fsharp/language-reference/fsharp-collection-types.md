@@ -2,12 +2,12 @@
 title: Types de collection
 description: 'En savoir plus sur les types de collections F # et leurs différences par rapport aux types de collections .NET.'
 ms.date: 08/14/2020
-ms.openlocfilehash: 197ba754d632051b5a0bf9c8364d45a1fb932f48
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 394f6bbaf58e7e8607abc3a0c20bbc2b1c9c3c8d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267280"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656903"
 ---
 # <a name="f-collection-types"></a>Types de collection F#
 
@@ -21,11 +21,11 @@ Le tableau suivant répertorie les types de collections F #.
 
 |Type|Description|Liens associés|
 |----|-----------|-------------|
-|[Liste](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Série immuable et ordonnée d’éléments du même type. Implémenté en tant que liste liée.|[Listes](lists.md)<br /><br />[Module List](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
-|[Tableau](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Collection mutable de taille fixe, de base zéro d’éléments de données consécutifs qui sont tous du même type.|[Tableaux](arrays.md)<br /><br />[Module Array](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Module Array2D](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Module Array3D](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
-|[séquentiel](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Série logique d’éléments qui sont tous d’un type. Les séquences sont particulièrement utiles lorsque vous disposez d’une collection de données volumineuse et ordonnée, mais que vous n’envisagez pas nécessairement d’utiliser tous les éléments. Les éléments de séquence individuels sont calculés uniquement en fonction des besoins, de sorte qu’une séquence peut être plus performante qu’une liste si tous les éléments ne sont pas utilisés. Les séquences sont représentées par le `seq<'T>` type, qui est un alias pour `IEnumerable<T>` . Par conséquent, tout type de .NET Framework qui implémente `System.Collections.Generic.IEnumerable<'T>` peut être utilisé comme une séquence.|[Séquences](sequences.md)<br /><br />[Module Seq](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
-|[Map](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Dictionnaire immuable d’éléments. Les éléments sont accessibles par clé.|[Module de mappage](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
-|[Définir](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Ensemble immuable basé sur des arborescences binaires, où la comparaison est la fonction de comparaison structurelle F #, qui utilise potentiellement des implémentations de l' `System.IComparable` interface sur des valeurs de clés.|[Définir le module](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
+|[Liste](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharplist-1.html)|Série immuable et ordonnée d’éléments du même type. Implémenté en tant que liste liée.|[Listes](lists.md)<br /><br />[Module List](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html)|
+|[Matrice](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html)|Collection mutable de taille fixe, de base zéro d’éléments de données consécutifs qui sont tous du même type.|[Tableaux](arrays.md)<br /><br />[Module Array](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html)<br /><br />[Module Array2D](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html)<br /><br />[Module Array3D](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array3dmodule.html)|
+|[séquentiel](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html)|Série logique d’éléments qui sont tous d’un type. Les séquences sont particulièrement utiles lorsque vous disposez d’une collection de données volumineuse et ordonnée, mais que vous n’envisagez pas nécessairement d’utiliser tous les éléments. Les éléments de séquence individuels sont calculés uniquement en fonction des besoins, de sorte qu’une séquence peut être plus performante qu’une liste si tous les éléments ne sont pas utilisés. Les séquences sont représentées par le `seq<'T>` type, qui est un alias pour `IEnumerable<T>` . Par conséquent, tout type de .NET Framework qui implémente `System.Collections.Generic.IEnumerable<'T>` peut être utilisé comme une séquence.|[Séquences](sequences.md)<br /><br />[Module Seq](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html)|
+|[Map](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html)|Dictionnaire immuable d’éléments. Les éléments sont accessibles par clé.|[Module de mappage](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-mapmodule.html)|
+|[Définir](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html)|Ensemble immuable basé sur des arborescences binaires, où la comparaison est la fonction de comparaison structurelle F #, qui utilise potentiellement des implémentations de l' `System.IComparable` interface sur des valeurs de clés.|[Définir le module](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-setmodule.html)|
 
 ### <a name="table-of-functions"></a>Table des fonctions
 
@@ -44,7 +44,7 @@ Cette section compare les fonctions qui sont disponibles sur les types de collec
 |collect|O (N)|O (N)|O (N)|-|-|Applique la fonction donnée à chaque élément de la collection, concatène tous les résultats et retourne la liste combinée.|
 |compareWith (|-|-|O (N)|-|-|Compare deux séquences à l’aide de la fonction de comparaison donnée, élément par élément.|
 |concat|O (N)|O (N)|O (N)|-|-|Combine l’énumération d’énumérations donnée comme une énumération concaténée unique.|
-|contains|-|-|-|-|O (log (N))|Retourne la valeur true si l’ensemble contient l’élément spécifié.|
+|contient|-|-|-|-|O (log (N))|Retourne la valeur true si l’ensemble contient l’élément spécifié.|
 |containsKey|-|-|-|O (log (N))|-|Teste si un élément est dans le domaine d’une classe Map.|
 |count|-|-|-|-|O (N)|Retourne le nombre d'éléments figurant dans le jeu.|
 |countBy (|-|-|O (N)|-|-|Applique une fonction génératrice de clé à chaque élément d’une séquence et retourne une séquence qui produit des clés uniques et leur nombre d’occurrences dans la séquence d’origine.|

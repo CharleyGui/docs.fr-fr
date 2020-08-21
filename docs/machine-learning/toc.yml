@@ -75,6 +75,8 @@
           href: how-to-guides/load-data-model-builder.md
         - name: Installer le Générateur de modèles
           href: how-to-guides/install-model-builder.md
+        - name: Installer GPU dans le Générateur de modèles
+          href: how-to-guides/install-gpu-model-builder.md
         - name: Installer CLI
           href: how-to-guides/install-ml-net-cli.md
         - name: Utiliser l’API ML automatisée

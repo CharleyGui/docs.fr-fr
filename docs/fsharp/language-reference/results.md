@@ -1,17 +1,17 @@
 ---
 title: Résultats
-description: Découvrez comment utiliser le type F# « résultat » pour vous aider à écrire du code tolérant aux erreurs.
-ms.date: 04/24/2017
-ms.openlocfilehash: 187aa26ccbaac7e0ec998756377bb7b0489eb1ab
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+description: 'Découvrez comment utiliser le type de résultat F # pour vous aider à écrire du code tolérant aux erreurs.'
+ms.date: 08/13/2020
+ms.openlocfilehash: d69e6ddc37bcf5cb5fc28644d59a11a822b83faa
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424854"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656916"
 ---
 # <a name="results"></a>Résultats
 
-À F# partir de 4,1, il existe un type de `Result<'T,'TFailure>` que vous pouvez utiliser pour écrire du code tolérant aux erreurs qui peut être composé.
+Le `Result<'T,'TFailure>` type vous permet d’écrire du code tolérant aux erreurs qui peut être composé.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,9 +27,11 @@ type Result<'T,'TError> =
 
 ## <a name="remarks"></a>Notes
 
-Notez que le type de résultat est une [union discriminée struct](discriminated-unions.md#struct-discriminated-unions), qui est une autre fonctionnalité F# introduite dans 4,1.  La sémantique d’égalité structurelle s’applique ici.
+Consultez le [`Result`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-resultmodule.html) module des combinateurs intégrés pour le `Result` . entrer.
 
-Le type de `Result` est généralement utilisé dans la gestion des erreurs monadic, qui est souvent appelée [programmation orientée ferroviaire](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) au sein F# de la communauté.  L’exemple trivial suivant illustre cette approche.
+Notez que le type de résultat est une [union discriminée struct](discriminated-unions.md#struct-discriminated-unions). La sémantique d’égalité structurelle s’applique ici.
+
+Le `Result` type est généralement utilisé dans la gestion des erreurs monadic, qui est souvent appelée [programmation orientée ferroviaire](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) au sein de la communauté F #.  L’exemple trivial suivant illustre cette approche.
 
 ```fsharp
 // Define a simple type which has fields that can be validated
@@ -80,7 +82,7 @@ let test() =
 test()
 ```
 
-Comme vous pouvez le voir, il est assez facile de chaîner plusieurs fonctions de validation si vous les forcez à retourner une `Result`.  Cela vous permet de décomposer des fonctionnalités comme celles-ci en petites parties, comme vous le souhaitez.  Cela a également la valeur ajoutée de l' *application* de l’utilisation des [critères spéciaux](pattern-matching.md) à la fin d’un cycle de validation, qui, à son tour, applique un degré plus élevé de corrections du programme.
+Comme vous pouvez le voir, il est assez facile de chaîner plusieurs fonctions de validation si vous les forcez à retourner un `Result` .  Cela vous permet de décomposer des fonctionnalités comme celles-ci en petites parties, comme vous le souhaitez.  Cela a également la valeur ajoutée de l' *application* de l’utilisation des [critères spéciaux](pattern-matching.md) à la fin d’un cycle de validation, qui, à son tour, applique un degré plus élevé de corrections du programme.
 
 ## <a name="see-also"></a>Voir aussi
 
