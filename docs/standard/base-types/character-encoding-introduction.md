@@ -124,7 +124,7 @@ Au sein de la plage complète de points de code, il existe deux sous-plages :
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code supplémentaires.
 
-:::image type="content" source="media/No-Loc (Char) acter-Encoding-Introduction/BMP-and-Supplementary. svg "alt-text =" BMP et les points de code supplémentaires " :::
+:::image type="content" source="media/No-Loc (Char) acter-Encoding-Introduction/BMP-and-Supplementary.svg" alt-text ="BMP et les points de code supplémentaires" :::
 
 ## <a name="utf-16-code-units"></a>Unités de code UTF-16
 
