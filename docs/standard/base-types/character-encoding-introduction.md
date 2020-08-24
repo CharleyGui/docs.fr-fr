@@ -138,7 +138,7 @@ La conversion de valeurs 2 16 bits en valeur 21 bits unique est facilitée par u
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code de substitution.
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Surrogate. svg "alt-text =" BMP et les points de code de substitution " :::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Surrogate. svg" alt-text =" BMP et les points de code de substitution":::
 
 Quand un point de code de *substitution étendu* ( `U+D800..U+DBFF` ) est immédiatement suivi d’un point de code de *substitution faible* ( `U+DC00..U+DFFF` ), la paire est interprétée comme un point de code supplémentaire à l’aide de la formule suivante :
 
