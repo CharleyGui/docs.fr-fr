@@ -184,7 +184,7 @@ Le terme [valeur scalaire Unicode](https://www.unicode.org/glossary/#unicode_sca
 
 Le diagramme suivant illustre les points de code de la valeur scalaire.
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/Scalar-values. svg "alt-text =" valeurs scalaires " :::
+:::image type="content" source="media/:::No-Loc (Char):::acter-Encoding-Introduction/Scalar-values.svg "alt-text ="valeurs scalaires":::
 
 ### <a name="the-no-locrune-type-as-a-scalar-value"></a>RuneType en tant que valeur scalaire
 
