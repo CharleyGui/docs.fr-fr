@@ -124,7 +124,7 @@ s[1] = '�' ('\udc02')
 
 <span data-ttu-id="96b7b-160">Le diagramme suivant illustre la relation entre le BMP et les points de code supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="96b7b-160">The following diagram illustrates the relationship between the BMP and the supplementary code points.</span></span>
 
-:::image type="content" source="media/No-Loc (Char) acter-Encoding-Introduction/BMP-and-Supplementary. svg "alt-text =" BMP et les points de code supplémentaires " :::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Supplementary.svg" alt-text ="BMP et les points de code supplémentaires":::
 
 ## <a name="utf-16-code-units"></a><span data-ttu-id="96b7b-162">Unités de code UTF-16</span><span class="sxs-lookup"><span data-stu-id="96b7b-162">UTF-16 code units</span></span>
 
