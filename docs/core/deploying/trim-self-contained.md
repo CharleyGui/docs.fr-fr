@@ -4,12 +4,12 @@ description: Découvrez comment supprimer les applications autonomes pour rédui
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 0fde409e9e5911213855ab206368d302b73eebb3
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: e3eb161b14f206723ad034af0a4a6ba8cd575578
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720122"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810610"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Supprimer les exécutables et les déploiements autonomes
 
@@ -36,28 +36,29 @@ Lorsque le code référence indirectement un assembly par le biais de la réflex
 
 ## <a name="trim-your-app---cli"></a>Découper votre application-CLI
 
-Découpez votre application à l’aide de la commande [dotnet Publish](../tools/dotnet-publish.md) . Lorsque vous publiez votre application, définissez les trois paramètres suivants :
+Découpez votre application à l’aide de la commande [dotnet Publish](../tools/dotnet-publish.md) . Lorsque vous publiez votre application, définissez les propriétés suivantes :
 
-- Publier comme autonome : `--self-contained true`
-- Activer le découpage : `p:PublishTrimmed=true`
+- Publier en tant qu’application autonome pour un Runtime spécifique : `-r win-x64`
+- Activer le découpage : `/p:PublishTrimmed=true`
 
 L’exemple suivant publie une application pour Windows comme autonome et découpe la sortie.
 
 ```xml
-<ItemGroup>
+<PropertyGroup>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <SelfContained>true</SelfContained>
     <PublishTrimmed>true</PublishTrimmed>
-</ItemGroup>
+</PropertyGroup>
 ```
 
 L’exemple suivant publie une application en mode de découpage agressif où le code inutilisé dans les assemblys est tronqué et les avertissements de découpage sont activés.
 
 ```xml
-<ItemGroup>
+<PropertyGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>link</TrimMode>
     <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
-</ItemGroup>
+</PropertyGroup>
 ```
 
 Pour plus d’informations, consultez [publier des applications .net core avec CLI .net Core](deploy-with-cli.md).

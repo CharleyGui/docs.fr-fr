@@ -2,12 +2,12 @@
 title: Publier une application console .NET Core à l’aide de Visual Studio Code
 description: La publication crée l’ensemble des fichiers nécessaires à l’exécution d’une application .NET Core.
 ms.date: 07/04/2020
-ms.openlocfilehash: 8fd9975e8a88704b9dea45b40127c8dc03f7d09f
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 04dfbae85f196ca4c8f8eb593637a801aa9773f2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051881"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811390"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : publier une application console .NET Core à l’aide de Visual Studio Code
 
@@ -21,7 +21,7 @@ Le CLI .NET Core est utilisé pour publier l’application. vous pouvez donc sui
 
 ## <a name="publish-the-app"></a>Publier l’application
 
-1. Démarrez Visual Studio Code.
+1. Démarrer Visual Studio Code
 
 1. Ouvrez le dossier du projet *HelloWorld* que vous avez créé dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
 
@@ -29,7 +29,7 @@ Le CLI .NET Core est utilisé pour publier l’application. vous pouvez donc sui
 
    Le terminal s’ouvre dans le dossier *HelloWorld* .
 
-1. Exécutez la commande suivante :
+1. Exécutez la commande suivante :
 
    ```dotnetcli
    dotnet publish --configuration Release
@@ -39,7 +39,7 @@ Le CLI .NET Core est utilisé pour publier l’application. vous pouvez donc sui
 
    La sortie de commande ressemble à l’exemple suivant :
 
-   ```
+   ```output
    Microsoft (R) Build Engine version 16.6.0+5ff7b0c9e for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -97,7 +97,7 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
    1. Entrez un nom en réponse à l’invite, puis appuyez sur n’importe quelle touche pour quitter.
 
-1. Sur n’importe quelle plateforme, exécutez l’application à l’aide de la [`dotnet`](../tools/dotnet.md) commande :
+1. Sur n’importe quelle plateforme, exécutez l’application à l’aide de la  [`dotnet`](../tools/dotnet.md) commande :
 
    1. Entrez `dotnet HelloWorld.dll`, puis appuyez sur <kbd>Entrée</kbd>.
 

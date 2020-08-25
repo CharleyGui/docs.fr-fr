@@ -3,12 +3,12 @@ title: Gestion des versions du langage C# - Guide C#
 description: Découvrez comment la version du langage C# est déterminée en fonction de votre projet et des raisons qui sous-tendent ce choix. Découvrez comment remplacer manuellement la valeur par défaut.
 ms.custom: updateeachrelease
 ms.date: 05/20/2020
-ms.openlocfilehash: a27f3210f399f1bed190c18d778cf3824772d576
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 24797c564890b034683d2989010bc694aabc423c
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656849"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811949"
 ---
 # <a name="c-language-versioning"></a>Gestion des versions du langage C#
 
@@ -34,9 +34,12 @@ Le compilateur détermine une valeur par défaut en fonction de ces règles :
 | .NET Standard    | 2.1     | C# 8.0                      |
 | .NET Standard    | 2.0     | C# 7.3                      |
 | .NET Standard    | 1.x     | C# 7.3                      |
-| .NET Framework   | all     | C# 7.3                      |
+| .NET Framework   | all     | C# 7.3                      |
 
 Lorsqu’il s’agit d’une préversion cible pour laquelle il existe une préversion du langage correspondante, c’est cette dernière qui est utilisée. Vous utilisez les fonctionnalités les plus récentes avec cette préversion dans n’importe quel environnement, sans affecter les projets qui ciblent une version .NET Core publiée.
+
+> [!TIP]
+> Pour connaître la version linguistique que vous utilisez actuellement, mettez- `#error version` la (respecte la casse) dans votre code. Ainsi, le compilateur produit un diagnostic, CS8304, avec un message contenant la version du compilateur utilisée et la version de langage actuellement sélectionnée.
 
 ## <a name="override-a-default"></a>Remplacer les valeurs par défaut
 

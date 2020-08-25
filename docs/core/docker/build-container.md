@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez apprendre à créer un conteneur po
 ms.date: 04/27/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c5e6648539af45f3ce615bfc183e6f95a62b085a
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 99bbc67096d98622ca5c0dc83d8b1be44a9995e5
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200026"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810545"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Didacticiel : conteneur d’une application .NET Core
 
@@ -35,7 +35,7 @@ Installez les éléments requis suivants :
 
 - [SDK .NET Core 3,1](https://dotnet.microsoft.com/download)\
 Si .NET Core est installé, utilisez la commande `dotnet --info` pour identifier le Kit SDK que vous utilisez.
-- [Docker Community Edition](https://www.docker.com/products/docker-desktop)
+- [Dockr Community Edition](https://www.docker.com/products/docker-desktop)
 - Un dossier de travail temporaire pour le *Dockerfile* et un exemple d’application .NET Core. Dans ce didacticiel, le nom *docker-Worker* est utilisé comme dossier de travail.
 
 ## <a name="create-net-core-app"></a>Créer une application .NET Core
@@ -73,7 +73,7 @@ Le modèle par défaut crée une application qui s’imprime sur le terminal, pu
 > [!TIP]
 > Si vous utilisez Visual Studio Code, à partir de la session Terminal précédente, tapez la commande suivante :
 >
-> ```
+> ```console
 > code .
 > ```
 >
@@ -148,7 +148,7 @@ Cette commande compile votre application dans le dossier *publish*. Le chemin du
 
 #### <a name="windows"></a>[Windows](#tab/windows)
 
-Dans le dossier de l' *application* , accédez à la liste des répertoires du dossier de publication pour vérifier que le fichier *Netcore. dockr. dll* a été créé.
+Dans le dossier de l' *application* , accédez à la liste des répertoires du dossier de publication pour vérifier que le fichier de *NetCore.Docker.dll* a été créé.
 
 ```powershell
 dir .\bin\Release\netcoreapp3.1\publish\
@@ -166,7 +166,7 @@ Mode                LastWriteTime         Length Name
 
 #### <a name="linux"></a>[Linux](#tab/linux)
 
-Utilisez la `ls` commande pour obtenir une liste de répertoires et vérifier que le fichier *Netcore. docker. dll* a été créé.
+Utilisez la `ls` commande pour obtenir une liste de répertoires et vérifier que le fichier *NetCore.Docker.dll* a été créé.
 
 ```bash
 me@DESKTOP:/docker-working/app$ ls bin/Release/netcoreapp3.1/publish
@@ -186,9 +186,9 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 ```
 
 > [!NOTE]
-> L’image ASP.NET Core Runtime est utilisée intentionnellement ici, bien que `mcr.microsoft.com/dotnet/core/runtime:3.1` l’image puisse avoir été utilisée.
+> L’image ASP.NET Core Runtime est utilisée intentionnellement ici, bien que l' `mcr.microsoft.com/dotnet/core/runtime:3.1` image puisse avoir été utilisée.
 
-Le `FROM` mot clé requiert un nom d’image de conteneur d’ancrage complet. Le Container Registry Microsoft (mcr.microsoft.com) est un syndicat de l’arrimeur d’ancrage, qui héberge des conteneurs accessibles publiquement. Le `dotnet/core` segment est le référentiel de conteneurs, où le `aspnet` segment est le nom de l’image de conteneur. L’image est marquée avec `3.1`, qui est utilisé pour le contrôle de version. Par conséquent `mcr.microsoft.com/dotnet/core/aspnet:3.1` , est le Runtime .net Core 3,1. Veillez à extraire la version du runtime qui correspond au runtime ciblé par votre kit de développement logiciel (SDK). Par exemple, l’application créée dans la section précédente utilisait le kit de développement logiciel (SDK) .NET Core 3,1 et l’image de base référencée dans le *fichier dockerfile* est marquée avec **3,1**.
+Le `FROM` mot clé requiert un nom d’image de conteneur d’ancrage complet. Le Container Registry Microsoft (mcr.microsoft.com) est un syndicat de l’arrimeur d’ancrage, qui héberge des conteneurs accessibles publiquement. Le `dotnet/core` segment est le référentiel de conteneurs, où le `aspnet` segment est le nom de l’image de conteneur. L’image est marquée avec `3.1` , qui est utilisé pour le contrôle de version. Par conséquent, `mcr.microsoft.com/dotnet/core/aspnet:3.1` est le Runtime .net Core 3,1. Veillez à extraire la version du runtime qui correspond au runtime ciblé par votre kit de développement logiciel (SDK). Par exemple, l’application créée dans la section précédente utilisait le kit de développement logiciel (SDK) .NET Core 3,1 et l’image de base référencée dans le *fichier dockerfile* est marquée avec **3,1**.
 
 Enregistrez le fichier *Dockerfile*. La structure de répertoires du dossier de travail doit ressembler à ce qui suit. Certains fichiers et dossiers de niveau supérieur ont été omis pour économiser de l’espace dans l’article :
 
@@ -287,7 +287,7 @@ CONTAINER ID    IMAGE            COMMAND                   CREATED           STA
 
 ### <a name="manage-the-container"></a>Gérer le conteneur
 
-Le conteneur a été créé avec un nom `core-counter`spécifique, ce nom est utilisé pour gérer le conteneur. L’exemple suivant utilise la commande `docker start` pour démarrer le conteneur, puis la commande `docker ps` pour afficher uniquement les conteneurs en cours d’exécution :
+Le conteneur a été créé avec un nom spécifique `core-counter` , ce nom est utilisé pour gérer le conteneur. L’exemple suivant utilise la commande `docker start` pour démarrer le conteneur, puis la commande `docker ps` pour afficher uniquement les conteneurs en cours d’exécution :
 
 ```Docker
 docker start core-counter
@@ -376,7 +376,7 @@ Counter: 2
 Counter: 3
 ```
 
-Avec `docker run -it`, la commande <kbd>Ctrl + C</kbd> arrête le processus en cours d’exécution dans le conteneur qui, à son tour, arrête le conteneur. Comme le paramètre `--rm` a été fourni, le conteneur est automatiquement supprimé lorsque le processus est arrêté. Vérifiez qu’il n’existe pas :
+Avec `docker run -it` , la commande <kbd>Ctrl + C</kbd> arrête le processus en cours d’exécution dans le conteneur qui, à son tour, arrête le conteneur. Comme le paramètre `--rm` a été fourni, le conteneur est automatiquement supprimé lorsque le processus est arrêté. Vérifiez qu’il n’existe pas :
 
 ```Docker
 docker ps -a

@@ -2,12 +2,12 @@
 title: Créer une application console .NET Core à l’aide de Visual Studio pour Mac
 description: Découvrez comment créer une application console .NET Core à l’aide de Visual Studio pour Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: 9cab838eaab2c59d8a0270267514f57acb7c60fb
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: e0b18837bf8bef5be5f20b84341bde8526b9f7a2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811668"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811871"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio pour Mac
 
@@ -86,7 +86,7 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
-   Ce code affiche « What is your name? ». dans la fenêtre de console et attend que l’utilisateur entre une chaîne suivie de la touche <kbd>entrée</kbd> . Elle stocke cette chaîne dans une variable nommée `name` . Elle récupère également la valeur de la propriété <xref:System.DateTime.Now?displayProperty=nameWithType>, qui contient l’heure locale actuelle et l’assigne à une variable nommée `date`. Enfin, il affiche ces valeurs dans la fenêtre de console.
+   Ce code affiche une invite dans la fenêtre de console et attend que l’utilisateur entre une chaîne suivie de la touche <kbd>entrée</kbd> . Elle stocke cette chaîne dans une variable nommée `name` . Elle récupère également la valeur de la propriété <xref:System.DateTime.Now?displayProperty=nameWithType>, qui contient l’heure locale actuelle et l’assigne à une variable nommée `date`. Et affiche ces valeurs dans la fenêtre de console. Enfin, il affiche une invite dans la fenêtre de console et appelle la <xref:System.Console.ReadKey(System.Boolean)?displayProperty=nameWithType> méthode pour attendre l’entrée utilisateur.
 
    `\n`Représente un caractère de saut de ligne.
 

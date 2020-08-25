@@ -3,12 +3,12 @@ title: Aide sur la sécurité des jeux de données et des DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: f0fa43c467cc7866e69115acb5f807e6487fda7a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 24c8a830f8638bc2d9dd20c2384c8230a682d817
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608526"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812235"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Aide sur la sécurité des jeux de données et des DataTable
 
@@ -34,7 +34,14 @@ Sur toutes les versions prises en charge de .NET Framework, .NET Core et .NET, `
 
 Si les données XML entrantes contiennent un objet dont le type n’est pas dans cette liste :
 
-* Une exception est levée.
+* Une exception est levée avec le message et la trace de la pile suivants.  
+Message d’erreur :  
+System. InvalidOperationException : type' \<Type Name\> , version = \<n.n.n.n\> , culture = \<culture\> , PublicKeyToken = \<token value\> 'n’est pas autorisé ici. [https://go.microsoft.com/fwlink/?linkid=2132227](https://go.microsoft.com/fwlink/?linkid=2132227)Pour plus d’informations, consultez.  
+Trace de la pile :  
+dans System. Data. TypeLimiter. EnsureTypeIsAllowed (type type, TypeLimiter capturedLimiter)  
+à System. Data. DataColumn. UpdateColumnType (type type, StorageType typeCode)  
+à System. Data. DataColumn. set_DataType (valeur de type)  
+
 * L’opération de désérialisation échoue.
 
 Lors du chargement de données XML dans une `DataSet` instance ou existante `DataTable` , les définitions de colonne existantes sont également prises en compte. Si la table contient déjà une définition de colonne d’un type personnalisé, ce type est ajouté temporairement à la liste verte pour la durée de l’opération de désérialisation XML.

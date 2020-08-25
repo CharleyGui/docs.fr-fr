@@ -2,12 +2,12 @@
 title: Changements cassants
 description: En savoir plus sur les modifications avec rupture dans chaque version de .NET Core.
 ms.date: 11/27/2019
-ms.openlocfilehash: 550553ef14cd0635fbe4a5346c457a41264a4b82
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 73c1576aa92f0e236ead0ca1a12ac26efcbf3cbe
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916265"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810896"
 ---
 # <a name="breaking-change-selectors"></a>Sélecteurs de modification avec rupture
 
@@ -33,6 +33,7 @@ Sélectionnez le domaine de la technologie .NET Core qui vous intéresse. Les mo
 > [!div class="op_single_selector"]
 >
 > - [ASP.NET Core](aspnetcore.md)
+> - [Analyse du code](code-analysis.md)
 > - [Bibliothèques .NET Core](corefx.md)
 > - [Cryptographie](cryptography.md)
 > - [EF Core](/ef/core/what-is-new/ef-core-3.0/breaking-changes)

@@ -4,12 +4,12 @@ description: Découvrez comment créer votre application .NET pour Apache Spark 
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 078d080f4ce293875d8fea8c3e804736b28a2eaf
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: b5e06619611ac06c453df0314bcecb30e1b673a2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620935"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812196"
 ---
 # <a name="learn-how-to-build-your-net-for-apache-spark-application-on-ubuntu"></a>Découvrez comment créer votre application .NET pour Apache Spark sur Ubuntu
 
@@ -49,7 +49,7 @@ Si vous disposez déjà de toutes les conditions préalables suivantes, passez a
 
 3. Installez **[Apache Maven 3.6.0 +](https://maven.apache.org/download.cgi)**.
 
-   * Exécutez la commande suivante :
+   * Exécutez la commande suivante :
 
       ```bash
       mkdir -p ~/bin/maven
@@ -68,7 +68,7 @@ Si vous disposez déjà de toutes les conditions préalables suivantes, passez a
 
        Exemple de sortie MVN-version :
 
-       ```
+       ```output
        Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-24T18:41:47Z)
        Maven home: ~/bin/apache-maven-3.6.0
        Java version: 1.8.0_191, vendor: Oracle Corporation, runtime: /usr/lib/jvm/java-8-openjdk-amd64/jre

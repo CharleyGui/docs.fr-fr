@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strong-named assemblies
 - strong naming [.NET Framework], enhanced
 ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
-ms.openlocfilehash: 720eda86ef0555127da422b2f44a414e8bbfb1b7
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: f0160f033760582c914a0d64c21415e5e921d907
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378956"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811078"
 ---
 # <a name="enhanced-strong-naming"></a>Amélioration de l’utilisation de noms forts
 Une signature de nom fort est un mécanisme d’identité dans le .NET Framework permettant d’identifier des assemblys. Il s’agit d’une signature numérique de clé publique qui sert généralement à vérifier l’intégrité des données transmises d’un expéditeur (signataire) vers un destinataire (vérificateur). Cette signature est utilisée comme identité unique pour un assembly, et garantit que les références à l’assembly ne sont pas ambiguës. L’assembly est signé dans le cadre du processus de génération, puis vérifié quand il est chargé.  
@@ -113,7 +113,7 @@ Une signature de nom fort est un mécanisme d’identité dans le .NET Framework
 
     Cette sortie peut ensuite être transformée en AssemblySignatureKeyAttribute.
 
-    ```
+    ```csharp
     [assembly:System.Reflection.AssemblySignatureKeyAttribute(
     "002400000c80000094000000060200000024000052534131000400000100010005a3a81ac0a519d96244a9c589fc147c7d403e40ccf184fc290bdd06c7339389a76b738e255a2bce1d56c3e7e936e4fc87d45adc82ca94c716b50a65d39d373eea033919a613e4341c66863cb2dc622bcb541762b43893434d219d1c43f07e9c83fada2aed400b9f6e44ff05e3ecde6c2827830b8f43f7ac8e3270a34d153cdd",
     "e3cf7c211678c4d1a7b8fb20276c894ab74c29f0b5a34de4d61e63d4a997222f78cdcbfe4c91ebe1ddf9f3505a32edcb2a76f34df0450c4f61e376b70fa3cdeb7374b1b8e2078b121e2ee6e8c6a8ed661cc35621b4af53ac29c9e41738f199a81240e8fd478c887d1a30729d34e954a97cddce66e3ae5fec2c682e57b7442738"

@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 44d33fb28e66e590e4604c6dd2c73616e4c5e943
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 47f42305f4106f5e05e555a859f13c41bb950519
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728305"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811262"
 ---
 ### <a name="http-httpclient-instances-created-by-ihttpclientfactory-log-integer-status-codes"></a>HTTP : instances HttpClient créées par IHttpClientFactory enregistrer les codes d’état des entiers
 
-<xref:System.Net.Http.HttpClient>instances créées par <xref:System.Net.Http.IHttpClientFactory> les codes d’État http du journal sous forme d’entiers au lieu de noms de code d’État.
+<xref:System.Net.Http.HttpClient> instances créées par <xref:System.Net.Http.IHttpClientFactory> les codes d’État http du journal sous forme d’entiers au lieu de noms de code d’État.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -18,7 +18,7 @@ ms.locfileid: "82728305"
 
 La journalisation utilise les descriptions textuelles des codes d’état HTTP. Prenez en compte les messages de journal suivants :
 
-```
+```output
 Received HTTP response after 56.0044ms - OK
 End processing HTTP request after 70.0862ms - OK
 ```
@@ -27,7 +27,7 @@ End processing HTTP request after 70.0862ms - OK
 
 La journalisation utilise les valeurs entières des codes d’état HTTP. Prenez en compte les messages de journal suivants :
 
-```
+```output
 Received HTTP response after 56.0044ms - 200
 End processing HTTP request after 70.0862ms - 200
 ```

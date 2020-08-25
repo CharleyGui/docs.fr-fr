@@ -2,12 +2,12 @@
 title: Test d’une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio Code
 description: Créez un projet de test unitaire pour une bibliothèque de classes .NET Core. Vérifiez que la bibliothèque de classes .NET Core fonctionne correctement avec les tests unitaires.
 ms.date: 06/08/2020
-ms.openlocfilehash: a61fd952eea2dec0d5a9f351d3f3d01c738e8fad
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: b5f394b5dea2bf0b4af6e8b119df3fa0ec113dd3
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701031"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811715"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>Didacticiel : tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio Code
 
@@ -21,7 +21,7 @@ Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un pro
 
 Les tests unitaires effectuent des tests logiciels automatisés pendant le développement et la publication. L’infrastructure de test que vous utilisez dans ce didacticiel est MSTest. [MSTest](https://github.com/Microsoft/testfx-docs) est l’un des trois frameworks de test que vous pouvez choisir. Les autres sont [xUnit](https://xunit.net/) et [nunit](https://nunit.org/).
 
-1. Démarrez Visual Studio Code.
+1. Démarrer Visual Studio Code
 
 1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard dans Visual Studio](library-with-visual-studio.md).
 
@@ -67,7 +67,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 Pour que le projet de test fonctionne avec la `StringLibrary` classe, ajoutez une référence au projet dans le `StringLibraryTest` projet `StringLibrary` .
 
-1. Exécutez la commande suivante :
+1. Exécutez la commande suivante :
 
    ```dotnetcli
    dotnet add StringLibraryTest/StringLibraryTest.csproj reference StringLibrary/StringLibrary.csproj
@@ -75,7 +75,7 @@ Pour que le projet de test fonctionne avec la `StringLibrary` classe, ajoutez un
 
 ## <a name="add-and-run-unit-test-methods"></a>Ajouter et exécuter des méthodes de test unitaire
 
-Lorsque Visual Studio exécute un test unitaire, il exécute chaque méthode marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> attribut dans une classe marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> attribut. Une méthode de test se termine lorsque le premier échec est trouvé ou lorsque tous les tests contenus dans la méthode ont réussi.
+Lorsque Visual Studio exécute un test unitaire, il exécute chaque méthode marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> attribut dans une classe marquée avec l'  <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> attribut. Une méthode de test se termine lorsque le premier échec est trouvé ou lorsque tous les tests contenus dans la méthode ont réussi.
 
 Les tests les plus courants appellent des membres de la classe <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert>. De nombreuses méthodes d’assertion incluent au moins deux paramètres, à savoir le résultat attendu pour le test et résultat réel du test. Certaines des `Assert` méthodes les plus fréquemment appelées à la classe sont indiquées dans le tableau suivant :
 
@@ -112,7 +112,7 @@ Pour créer les méthodes de test:
 
    La sortie du terminal indique que tous les tests ont réussi.
 
-   ```
+   ```output
    Starting test execution, please wait...
 
    A total of 1 test files matched the specified pattern.
@@ -142,7 +142,7 @@ Si vous effectuez un développement piloté par les tests (TDD), vous écrivez d
 
    La sortie du terminal indique qu’un test échoue et génère un message d’erreur pour le test qui a échoué : «Assert. IsFalse a échoué. « Erreur » : false ; réel : True » était attendu ». En raison de l’échec, aucune chaîne du tableau après « erreur » n’a été testée.
 
-   ```
+   ```output
    Starting test execution, please wait...
 
    A total of 1 test files matched the specified pattern.

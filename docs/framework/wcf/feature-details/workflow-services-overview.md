@@ -2,12 +2,12 @@
 title: Présentation des services de workflow
 ms.date: 03/30/2017
 ms.assetid: e536dda3-e286-441e-99a7-49ddc004b646
-ms.openlocfilehash: f752eca621f9d30f38d85d7e71228fdfe1343c32
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7055ea6e6b6d6a5d7bef8d5ff465d2eb0c838bf6
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594866"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812183"
 ---
 # <a name="workflow-services-overview"></a>Présentation des services de workflow
 
@@ -60,7 +60,7 @@ Les services de flux de travail hébergés dans une application .NET Frameworke 
 
 Pour héberger un service de workflow dans les services IIS ou WAS, placez dans un répertoire virtuel le fichier .xamlx qui contient la définition du service de workflow. Un point de terminaison par défaut (à l’aide <xref:System.ServiceModel.BasicHttpBinding> de) est créé automatiquement pour plus d’informations, consultez [configuration simplifiée](../simplified-configuration.md). Vous pouvez également placer un fichier Web.config dans le répertoire virtuel pour spécifier vos propres points de terminaison. Si votre définition de workflow se trouve dans un assembly, vous pouvez placer un fichier .svc dans le répertoire virtuel et l'assembly de workflow dans le répertoire App_Code. Le fichier .svc doit spécifier la fabrique hôte de service et la classe qui implémente le service de workflow. L'exemple suivant montre comment spécifier la fabrique hôte de service et la classe qui implémente le service de workflow.
 
-```
-<%@ServiceHost Factory=" System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory
+```aspx-csharp
+<%@ServiceHost Factory="System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory"
 Service="EchoService"%>
 ```

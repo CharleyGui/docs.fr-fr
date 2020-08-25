@@ -2,12 +2,12 @@
 title: Créer une application console .NET Core à l’aide de Visual Studio Code
 description: Découvrez comment créer une application console .NET Core à l’aide de Visual Studio Code et du CLI .NET Core.
 ms.date: 05/22/2020
-ms.openlocfilehash: 466a1353b574711a73570428569b58eab7ad8135
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: e936c23d8525e42a9d2781cc680067c9da2ce42f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811696"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811924"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio Code
 
@@ -22,7 +22,7 @@ Ce didacticiel montre comment créer et exécuter une application console .NET C
 
 Créez un projet d’application console .NET Core nommé « HelloWorld ».
 
-1. Démarrez Visual Studio Code.
+1. Démarrer Visual Studio Code
 
 1. **File**  >  Dans le menu principal, sélectionnez fichier**ouvrir le dossier** (**fichier**  >  **Ouvrir..** . sur MacOS).
 
@@ -40,7 +40,7 @@ Créez un projet d’application console .NET Core nommé « HelloWorld ».
    dotnet new console
    ```
 
-Le modèle crée une application « Hello World » simple. Elle appelle la <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> méthode pour afficher « Hello World ! » dans la fenêtre de console.
+Le modèle crée une application « Hello World » simple. Elle appelle la <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> méthode pour afficher « :::no-loc text="Hello World!"::: » dans la fenêtre de console.
 
 Le code du modèle définit une classe, `Program` , avec une méthode unique, `Main` , qui prend un <xref:System.String> tableau en tant qu’argument :
 
@@ -91,7 +91,7 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
-   Ce code affiche « What is your name? ». dans la fenêtre de console et attend que l’utilisateur entre une chaîne suivie de la touche <kbd>entrée</kbd> . Elle stocke cette chaîne dans une variable nommée `name` . Elle récupère également la valeur de la propriété <xref:System.DateTime.Now?displayProperty=nameWithType>, qui contient l’heure locale actuelle et l’assigne à une variable nommée `date`. Enfin, il affiche ces valeurs dans la fenêtre de console.
+   Ce code affiche une invite dans la fenêtre de console et attend que l’utilisateur entre une chaîne suivie de la touche <kbd>entrée</kbd> . Elle stocke cette chaîne dans une variable nommée `name` . Elle récupère également la valeur de la propriété <xref:System.DateTime.Now?displayProperty=nameWithType>, qui contient l’heure locale actuelle et l’assigne à une variable nommée `date`. Et affiche ces valeurs dans la fenêtre de console. Enfin, il affiche une invite dans la fenêtre de console et appelle la <xref:System.Console.ReadKey(System.Boolean)?displayProperty=nameWithType> méthode pour attendre l’entrée utilisateur.
 
    `\n`Représente un caractère de saut de ligne.
 

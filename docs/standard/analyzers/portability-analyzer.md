@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’outil Analyseur de portabilité .NE
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: d2a9551565e9ef0a2ed76960c869829fc2e86a1f
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: d8b5fcf8b6c3230e41585261de747edb9105aa31
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903608"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811806"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
@@ -39,7 +39,7 @@ Une étape utile pour analyser une solution avec de nombreux projets consiste à
 
 Pour récupérer ce code, vous pouvez exécuter la commande suivante :
 
-```
+```console
 ApiPort.exe analyze -r DGML -f [directory or file]
 ```
 

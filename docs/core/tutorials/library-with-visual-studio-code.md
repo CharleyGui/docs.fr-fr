@@ -2,12 +2,12 @@
 title: Créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio Code
 description: Découvrez comment créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio Code.
 ms.date: 06/08/2020
-ms.openlocfilehash: 714b5cf2125f1d296adc4a4dc7d1b6c9420417ed
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 146dfd49e448494cce0c844282bc0394a8739ac9
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308882"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810857"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio Code
 
@@ -24,7 +24,7 @@ Une *bibliothèque de classes* définit des types et des méthodes qui peuvent �
 
 Commencez par créer une solution vide dans laquelle placer le projet de bibliothèque de classes. Une solution sert de conteneur pour un ou plusieurs projets. Vous ajouterez des projets connexes supplémentaires à la même solution.
 
-1. Démarrez Visual Studio Code.
+1. Démarrer Visual Studio Code
 
 1. **File**  >  Dans le menu principal, sélectionnez fichier**ouvrir le dossier** (**Ouvrir...** sur MacOS).
 
@@ -42,7 +42,7 @@ Commencez par créer une solution vide dans laquelle placer le projet de bibliot
 
    La sortie du terminal ressemble à l’exemple suivant :
 
-   ```
+   ```output
    The template "Solution File" was created successfully.
    ```
 
@@ -58,7 +58,7 @@ Ajoutez un nouveau projet de bibliothèque de classes .NET Standard nommé « S
 
    La sortie du terminal ressemble à l’exemple suivant :
 
-   ```
+   ```output
    The template "Class library" was created successfully.
    Processing post-creation actions...
    Running 'dotnet restore' on StringLibrary\StringLibrary.csproj...
@@ -75,7 +75,7 @@ Ajoutez un nouveau projet de bibliothèque de classes .NET Standard nommé « S
 
    La sortie du terminal ressemble à l’exemple suivant :
 
-   ```
+   ```output
    Project `StringLibrary\StringLibrary.csproj` added to the solution.
    ```
 
@@ -109,7 +109,7 @@ Ajoutez un nouveau projet de bibliothèque de classes .NET Standard nommé « S
 
    La sortie du terminal ressemble à l’exemple suivant :
 
-   ```
+   ```output
    Microsoft (R) Build Engine version 16.6.0 for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
      Determining projects to restore...
@@ -134,7 +134,7 @@ Ajoutez une application console qui utilise la bibliothèque de classes. L’app
 
    La sortie du terminal ressemble à l’exemple suivant :
 
-   ```
+   ```output
    The template "Console Application" was created successfully.
    Processing post-creation actions...
    Running 'dotnet restore' on ShowCase\ShowCase.csproj...  
@@ -151,7 +151,7 @@ Ajoutez une application console qui utilise la bibliothèque de classes. L’app
 
    La sortie du terminal ressemble à l’exemple suivant :
 
-   ```
+   ```output
    Project `ShowCase\ShowCase.csproj` added to the solution.
    ```
 
@@ -169,7 +169,7 @@ Ajoutez une application console qui utilise la bibliothèque de classes. L’app
 
 Initialement, le nouveau projet d’application console n’a pas accès à la bibliothèque de classes. Pour lui permettre d’appeler des méthodes dans la bibliothèque de classes, créez une référence de projet au projet de bibliothèque de classes.
 
-1. Exécutez la commande suivante :
+1. Exécutez la commande suivante :
 
    ```dotnetcli
    dotnet add ShowCase/ShowCase.csproj reference StringLibrary/StringLibrary.csproj
@@ -177,7 +177,7 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 
    La sortie du terminal ressemble à l’exemple suivant :
 
-   ```
+   ```output
    Reference `..\StringLibrary\StringLibrary.csproj` added to the project.
    ```
 
@@ -193,7 +193,7 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 
    La sortie du terminal ressemble à l’exemple suivant :
 
-   ```
+   ```output
    Press <Enter> only to exit; otherwise, enter a string and press <Enter>:
 
    A string that starts with an uppercase letter

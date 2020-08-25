@@ -2,12 +2,12 @@
 title: Déboguer une application console .NET Core à l’aide de Visual Studio Code
 description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 40e9b114df1bd12fb05bfb773781d6009d087a06
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 84c7b64ad7708cf2def084593cd7f96eb0ad82e5
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702125"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810662"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio Code
 
@@ -25,7 +25,7 @@ Dans la configuration Debug, un programme est compilé avec des informations de 
 
 Par défaut, Visual Studio Code paramètres de lancement utilisent la configuration de build Debug. vous n’avez donc pas besoin de le modifier avant de procéder au débogage.
 
-1. Démarrez Visual Studio Code.
+1. Démarrer Visual Studio Code
 
 1. Ouvrez le dossier du projet que vous avez créé dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
 
@@ -51,13 +51,13 @@ Le point d’arrêt se trouve après un `Console.ReadLine` appel de méthode. Le
 
    De :
 
-   ```
+   ```json
    "console": "internalConsole",
    ```
 
    Par :
 
-   ```
+   ```json
    "console": "integratedTerminal",
    ```
 

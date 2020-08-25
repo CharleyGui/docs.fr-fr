@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: db35b48d4d7e70a54b38342e79fa2881b3857bd7
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7b411283822360f3057b0d4f4e60ebade4fe45bc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864148"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810935"
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
 
@@ -24,7 +24,7 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 
 Les méthodes sont déclarées dans une [classe](../../language-reference/keywords/class.md), un [struct](../../language-reference/builtin-types/struct.md)ou une [interface](../interfaces/index.md) en spécifiant le niveau d’accès comme `public` ou `private` , les modificateurs facultatifs tels que `abstract` ou `sealed` , la valeur de retour, le nom de la méthode et tous les paramètres de méthode. Ces parties forment ensemble la signature de la méthode.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Un type de retour d'une méthode ne fait pas partie de la signature de la méthode à des fins de surcharge de méthode. Toutefois, il fait partie de la signature de la méthode lors de la détermination de la compatibilité entre un délégué et la méthode vers laquelle il pointe.
 
 Les paramètres de méthode sont placés entre parenthèses et séparés par des virgules. Des parenthèses vides indiquent que la méthode ne requiert aucun paramètre. Cette classe contient quatre méthodes :
@@ -123,19 +123,19 @@ La fonctionnalité async vous permet d'appeler des méthodes asynchrones sans ut
 Si vous marquez une méthode avec le modificateur [async](../../language-reference/keywords/async.md), vous pouvez utiliser l’opérateur [await](../../language-reference/operators/await.md) dans la méthode. Quand le contrôle atteint une expression await dans la méthode async, il retourne à l'appelant, et la progression dans la méthode est interrompue jusqu'à ce que la tâche attendue se termine. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.
 
 > [!NOTE]
-> Une méthode async retourne à l'appelant quand elle rencontre le premier objet await qui n'est pas encore terminé ou quand elle atteint la fin de la méthode async, selon la première éventualité.
+> Une méthode Async retourne à l’appelant lorsqu’elle rencontre le premier objet attendu qui n’est pas encore terminé ou qu’elle atteint la fin de la méthode Async, selon ce qui se produit en premier.
 
 Une méthode async peut avoir un type de retour <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>ou void. Le type de retour void est principalement utilisé pour définir les gestionnaires d'événements, où un type de retour void est requis. Une méthode async qui retourne void ne peut pas être attendue, et l'appelant d'une méthode retournant void ne peut intercepter aucune exception levée par la méthode.
 
 Dans l'exemple suivant, `DelayAsync` est une méthode async dont le type de retour est <xref:System.Threading.Tasks.Task%601>. `DelayAsync` a une instruction `return` qui retourne un entier. Ainsi, la déclaration de méthode de `DelayAsync` doit avoir un type de retour de `Task<int>`. Étant donné que le type de retour est `Task<int>`, l'évaluation de l'expression `await` dans `DoSomethingAsync` produit un entier, comme le montre l'instruction suivante : `int result = await delayTask`.
 
-La méthode `startButton_Click` est un exemple de méthode async dont le type de retour est void. Étant donné que `DoSomethingAsync` est une méthode async, la tâche pour l'appel à `DoSomethingAsync` doit être attendue, comme le montre l'instruction suivante : `await DoSomethingAsync();`. La méthode `startButton_Click` doit être définie avec le modificateur `async` car la méthode a une expression `await` .
+La `Main` méthode est un exemple de méthode Async dont le type de retour est <xref:System.Threading.Tasks.Task> . Elle accède à la `DoSomethingAsync` méthode et, comme elle est exprimée par une seule ligne, elle peut omettre les `async` `await` Mots clés et. Étant donné que `DoSomethingAsync` est une méthode async, la tâche pour l'appel à `DoSomethingAsync` doit être attendue, comme le montre l'instruction suivante : `await DoSomethingAsync();`.
 
-[!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]
+:::code language="csharp" source="snippets/classes-and-structs/methods/Program.cs":::
 
 Une méthode async ne peut pas déclarer de paramètres [ref](../../language-reference/keywords/ref.md) ou [out](../../language-reference/keywords/out-parameter-modifier.md) , mais elle peut appeler des méthodes qui comportent ces paramètres.
 
-Pour plus d’informations sur les méthodes Async, consultez [programmation asynchrone avec Async et await](../concepts/async/index.md), [Workflow de contrôle dans les programmes Async](../concepts/async/control-flow-in-async-programs.md)et [types de retour Async](../concepts/async/async-return-types.md).
+Pour plus d’informations sur les méthodes Async, consultez [programmation asynchrone avec Async et await](../concepts/async/index.md) et [Async (types de retour](../concepts/async/async-return-types.md)).
 
 ## <a name="expression-body-definitions"></a>Définitions de corps d’expression
 

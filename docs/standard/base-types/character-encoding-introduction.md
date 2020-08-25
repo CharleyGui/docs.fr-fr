@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 helpviewer_keywords:
 - encoding, understanding
-ms.openlocfilehash: a5d838176bf4437a295ebe6c2cea8b1fe0eeeb61
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: d1f9878c7e7c07944a943c0b05e557ceaa5d1b2f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656291"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812118"
 ---
 # <a name="character-encoding-in-net"></a>Encodage de caractères dans .NET
 
@@ -89,7 +89,7 @@ Dans l’exemple précédent, chaque char acter, à l’exception de l’espace,
 
 Un seul Emoji Unicode est également représenté par deux `char` , comme illustré dans l’exemple suivant, qui montre un Emoji Ox :
 
-```
+```output
 "🐂".Length = 2
 s[0] = '�' ('\ud83d')
 s[1] = '�' ('\udc02')
@@ -107,7 +107,7 @@ La norme Unicode définit plus de 1,1 million [points de code](https://www.unico
 
 Voici quelques exemples d’attributions de point de code, avec des liens vers Unicode char TS dans lequel ils apparaissent :
 
-|Décimal|Hex       |Exemple|Description|
+|Decimal|Hex       |Exemple|Description|
 |------:|----------|-------|-----------|
 |10     | `U+000A` |N/A| [SAUT DE LIGNE](https://www.unicode.org/charts/PDF/U0000.pdf) |
 |65     | `U+0061` | a | [LETTRE MINUSCULE LATINE A](https://www.unicode.org/charts/PDF/U0000.pdf) |
@@ -124,7 +124,7 @@ Au sein de la plage complète de points de code, il existe deux sous-plages :
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code supplémentaires.
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Supplementary.svg" alt-text ="BMP et les points de code supplémentaires":::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Supplementary. svg "alt-text =" BMP et les points de code supplémentaires " :::
 
 ## <a name="utf-16-code-units"></a>Unités de code UTF-16
 
@@ -138,7 +138,7 @@ La conversion de valeurs 2 16 bits en valeur 21 bits unique est facilitée par u
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code de substitution.
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Surrogate. svg" alt-text =" BMP et les points de code de substitution":::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Surrogate. svg "alt-text =" BMP et les points de code de substitution " :::
 
 Quand un point de code de *substitution étendu* ( `U+D800..U+DBFF` ) est immédiatement suivi d’un point de code de *substitution faible* ( `U+DC00..U+DFFF` ), la paire est interprétée comme un point de code supplémentaire à l’aide de la formule suivante :
 
@@ -184,7 +184,7 @@ Le terme [valeur scalaire Unicode](https://www.unicode.org/glossary/#unicode_sca
 
 Le diagramme suivant illustre les points de code de la valeur scalaire.
 
-:::image type="content" source="media/:::No-Loc (Char):::acter-Encoding-Introduction/Scalar-values.svg "alt-text ="valeurs scalaires":::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/Scalar-values. svg "alt-text =" valeurs scalaires " :::
 
 ### <a name="the-no-locrune-type-as-a-scalar-value"></a>RuneType en tant que valeur scalaire
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: abda23ea538c2c0da6ada4f359ce745602dca45d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e0b769d7bb6b336d226cd48de1932524c4d7e74d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84279761"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811065"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON (marshaling) dans .NET
 
@@ -93,7 +93,7 @@ Le `Enum` type est similaire à un type générique ouvert : un convertisseur p
 
 Si vous devez lever une exception dans le code de gestion des erreurs, envisagez de lever un <xref:System.Text.Json.JsonException> sans message. Ce type d’exception crée automatiquement un message qui comprend le chemin d’accès à la partie du JSON qui a provoqué l’erreur. Par exemple, l’instruction `throw new JsonException();` génère un message d’erreur comme dans l’exemple suivant :
 
-```
+```output
 Unhandled exception. System.Text.Json.JsonException:
 The JSON value could not be converted to System.Object.
 Path: $.Date | LineNumber: 1 | BytePositionInLine: 37.
@@ -165,9 +165,9 @@ L' `[JsonConvert]` attribut sur le struct inscrit le convertisseur personnalisé
 
 Lors de la sérialisation ou de la désérialisation, un convertisseur est choisi pour chaque élément JSON dans l’ordre suivant, de la priorité la plus élevée à la plus faible :
 
-* `[JsonConverter]`appliqué à une propriété.
+* `[JsonConverter]` appliqué à une propriété.
 * Convertisseur ajouté à la `Converters` collection.
-* `[JsonConverter]`appliqué à un type valeur personnalisé ou POCO.
+* `[JsonConverter]` appliqué à un type valeur personnalisé ou POCO.
 
 Si plusieurs convertisseurs personnalisés pour un type sont inscrits dans la `Converters` collection, le premier convertisseur qui retourne la valeur true pour `CanConvert` est utilisé.
 
@@ -190,12 +190,12 @@ L’inférence de type peut être inexacte. Si le désérialiseur analyse un nom
 
 Pour les scénarios qui requièrent l’inférence de type, le code suivant montre un convertisseur personnalisé pour les `object` Propriétés. Le code convertit :
 
-* `true`et `false` pour`Boolean`
-* Nombres sans décimal pour`long`
-* Nombres avec un nombre décimal à`double`
-* Dates jusqu’à`DateTime`
-* Chaînes à`string`
-* Tout le reste vers`JsonElement`
+* `true` et `false` pour `Boolean`
+* Nombres sans décimal pour `long`
+* Nombres avec un nombre décimal à `double`
+* Dates jusqu’à `DateTime`
+* Chaînes à `string`
+* Tout le reste vers `JsonElement`
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/ObjectToInferredTypesConverter.cs)]
 
@@ -325,10 +325,10 @@ Si vous devez créer un convertisseur qui modifie le comportement d’un convert
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Code source pour les convertisseurs intégrés](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters)
-* [Prise en charge des valeurs DateTime et DateTimeOffset dansSystem.Text.Json](../datetime/system-text-json-support.md)
-* [System.Text.Jsonvue](system-text-json-overview.md)
-* [Procédure d’utilisationSystem.Text.Json](system-text-json-how-to.md)
-* [Migration à partir deNewtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
-* [System.Text.JsonRéférence d’API](xref:System.Text.Json)
+* [Prise en charge des valeurs DateTime et DateTimeOffset dans System.Text.Json](../datetime/system-text-json-support.md)
+* [System.Text.Json vue](system-text-json-overview.md)
+* [Procédure d’utilisation System.Text.Json](system-text-json-how-to.md)
+* [Migration à partir de Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [System.Text.Json Référence d’API](xref:System.Text.Json)
 * [System.Text.Json. Référence de l’API de sérialisation](xref:System.Text.Json.Serialization)
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

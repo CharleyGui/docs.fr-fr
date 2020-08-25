@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '@ keyword'
 ms.custom: updateeachrelease
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 51e3802ba7b78dab4c3f96365c51af83098c05c7
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 3392b92cbd77e5b3f895af99a71f33d2ab43fa15
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656122"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812313"
 ---
 # <a name="c-keywords"></a>Mots clés C#
 
@@ -55,14 +55,14 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 |[add](add.md)|[alias](extern-alias.md)|[ascending](ascending.md)|
 |[async](async.md)|[await](../operators/await.md)|[par](by.md)|
 |[descending](descending.md)|[dynamic](../builtin-types/reference-types.md)|[equals](equals.md)|
-|[from](from-clause.md)|[get](get.md)|[globale](../operators/namespace-alias-qualifier.md)|
+|[from](from-clause.md)|[get](get.md)|[Généralités](../operators/namespace-alias-qualifier.md)|
 |[groupe](group-clause.md)|[into](into.md)|[join](join-clause.md)|
-|[Explor](let-clause.md)|[nameof](../operators/nameof.md)|[actif](on.md)|
-|[TriPar](orderby-clause.md)|[Partial (type)](partial-type.md)|[Partial (méthode)](partial-method.md)|
-|[remove](remove.md)|[select](select-clause.md)|[set](set.md)|
-|[non managé (contrainte de type générique)](where-generic-type-constraint.md)|[value](value.md)|[var](var.md)|
-|[when (condition de filtre)](when.md)|[where (contrainte de type générique)](where-generic-type-constraint.md)|[where (clause de requête)](where-clause.md)|
-|[yield](yield.md)| | |
+|[Explor](let-clause.md)|[nameof](../operators/nameof.md)|[NOTNULL](../../programming-guide/generics/constraints-on-type-parameters.md#notnull-constraint)|
+|[actif](on.md)|[TriPar](orderby-clause.md)|[Partial (type)](partial-type.md)|
+|[Partial (méthode)](partial-method.md)|[remove](remove.md)|[select](select-clause.md)|
+|[set](set.md)|[non managé (contrainte de type générique)](where-generic-type-constraint.md)|[value](value.md)|
+|[var](var.md)|[when (condition de filtre)](when.md)|[where (contrainte de type générique)](where-generic-type-constraint.md)|
+|[where (clause de requête)](where-clause.md)|[yield](yield.md)| |
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 4715a27a94ac86c5e4955c0e8be95c6ee4a28507
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bb81ddbe631fedfcfe247c6e62580de679ad972f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619700"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812300"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (référence C#)
 
@@ -131,9 +131,9 @@ Pour plus d’informations sur l’interception, consultez [try-catch-finally](t
 
 Une méthode async est marquée par un modificateur [async](async.md) et contient généralement une ou plusieurs expressions ou instructions await. Une expression await applique l’opérateur [await](../operators/await.md) à un <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>.
 
-Quand le contrôle atteint un `await` dans la méthode async, la progression de la méthode est interrompue jusqu'à ce que la tâche attendue se termine. Quand la tâche est terminée, l’exécution peut reprendre dans la méthode. Pour plus d’informations, consultez [Programmation asynchrone avec Async et Await](../../programming-guide/concepts/async/index.md) et [Flux de contrôle dans les programmes Async](../../programming-guide/concepts/async/control-flow-in-async-programs.md).
+Quand le contrôle atteint un `await` dans la méthode async, la progression de la méthode est interrompue jusqu'à ce que la tâche attendue se termine. Quand la tâche est terminée, l’exécution peut reprendre dans la méthode. Pour plus d’informations, consultez l’article [Programmation asynchrone avec async et await](../../programming-guide/concepts/async/index.md).
 
-La tâche terminée à laquelle `await` est appliqué peut être dans un état d'erreur en raison d'une exception non gérée dans la méthode qui retourne la tâche. L'attente de la tâche lève une exception. Une tâche peut également se terminer dans un état annulé si le processus asynchrone qui la retourne est annulé. L'attente d'une tâche annulée lève une `OperationCanceledException`. Pour plus d’informations sur la façon d’annuler un processus asynchrone, consultez [Réglage de votre application Async](../../programming-guide/concepts/async/fine-tuning-your-async-application.md).
+La tâche terminée à laquelle `await` est appliqué peut être dans un état d'erreur en raison d'une exception non gérée dans la méthode qui retourne la tâche. L'attente de la tâche lève une exception. Une tâche peut également se terminer dans un état annulé si le processus asynchrone qui la retourne est annulé. L’attente d’une tâche annulée lève une exception `OperationCanceledException` .
 
 Pour intercepter l'exception, attendez la tâche dans un bloc `try`, puis interceptez l'exception dans le bloc `catch` associé. Pour obtenir un exemple, consultez la section [Exemple de la méthode async](#async-method-example).
 

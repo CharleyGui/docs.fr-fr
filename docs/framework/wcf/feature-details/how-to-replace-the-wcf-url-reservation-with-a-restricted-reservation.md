@@ -1,15 +1,15 @@
 ---
-title: "Procédure : remplacer la réservation d'URL WCF par une réservation restreinte"
+title: 'Procédure : remplacer la réservation d’URL WCF par une réservation restreinte'
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: 780a2c7fe240ed624ff106e8157661f8b76b32bd
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: a7025636bb1ca2ef250d7d25634bda961f2db09d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202372"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811611"
 ---
-# <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Procédure : remplacer la réservation d'URL WCF par une réservation restreinte
+# <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Procédure : remplacer la réservation d’URL WCF par une réservation restreinte
 
 Une réservation d'URL vous permet de limiter les personnes qui reçoivent les messages d'une URL ou d'un jeu d'URL. Une réservation se compose d'un modèle d'URL, d'une liste de contrôle d'accès (ACL) et d'un jeu d'indicateurs. Le modèle d'URL définit les URL affectées par la réservation. Pour plus d’informations sur le traitement des modèles d’URL, consultez [routage des demandes entrantes](/windows/win32/http/routing-incoming-requests). L'ACL contrôle quel utilisateur ou groupe d'utilisateurs est autorisé à recevoir des messages en provenance des URL spécifiées. Les indicateurs spécifient si la réservation consiste à donner directement à un utilisateur ou à un groupe l'autorisation d'écouter l'URL ou à déléguer l'autorisation d'écouter à d'autres processus.  
   
@@ -17,7 +17,7 @@ Une réservation d'URL vous permet de limiter les personnes qui reçoivent les m
   
 Sur Windows Vista ou Windows Server 2008, vous pouvez afficher toutes les réservations d’URL HTTP à partir d’une invite de commandes avec élévation de privilèges en entrant `netsh http show urlacl` . L’exemple suivant montre à quoi doit ressembler une réservation d’URL WCF :
 
-```
+```output
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  
         User: \Everyone  
             Listen: Yes  

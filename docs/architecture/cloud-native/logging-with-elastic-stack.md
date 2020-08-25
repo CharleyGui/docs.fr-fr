@@ -2,12 +2,12 @@
 title: Journalisation avec Elastic Stack
 description: Journalisation à l’aide de la pile élastique, Logstash et Kibana
 ms.date: 05/13/2020
-ms.openlocfilehash: e886141fa691b75b882b5d67eae4ceb242e8089f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 32d9d0dae175d8d45d48b56d17f133b4cc432363
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613848"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811169"
 ---
 # <a name="logging-with-elastic-stack"></a>Journalisation avec Elastic Stack
 
@@ -81,7 +81,7 @@ Les messages de journal qui ont été conçus pour contenir des paramètres ou d
 
 Une requête qui recherche les 10 premières pages visitées par `jill@example.com` , apparaît dans la Figure 7-9.
 
-```
+```json
 "query": {
     "match": {
       "user": "jill@example.com"
@@ -111,7 +111,7 @@ Une option avec moins de surcharge consiste à utiliser l’un des nombreux cont
 
 Une autre option est une [offre de kit en tant que service récemment annoncée](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/).
 
-## <a name="references"></a>References
+## <a name="references"></a>Références
 
 - [Installer la pile élastique sur Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 

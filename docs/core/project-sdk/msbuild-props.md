@@ -3,12 +3,13 @@ title: Propriétés MSBuild pour Microsoft. NET. Sdk
 description: Référence pour les propriétés et les éléments MSBuild compris par l’kit SDK .NET Core.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 7980369b87d606d3876fe043e929a65da1d0d92b
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.custom: updateeachrelease
+ms.openlocfilehash: 39cbd18121d2b8659b2f5270f39624798f4ebbdc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916246"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810520"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Référence MSBuild pour les projets kit SDK .NET Core
 
@@ -97,10 +98,10 @@ La `RuntimeIdentifier` propriété vous permet de spécifier un [identificateur 
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 
-La `RuntimeIdentifiers` propriété vous permet de spécifier une liste délimitée par des points-virgules des [identificateurs de Runtime (RID)](../rid-catalog.md) pour le projet. Utilisez cette propriété si vous devez publier pour plusieurs runtimes. `RuntimeIdentifiers`est utilisé au moment de la restauration pour s’assurer que les ressources appropriées sont dans le graphique.
+La `RuntimeIdentifiers` propriété vous permet de spécifier une liste délimitée par des points-virgules des [identificateurs de Runtime (RID)](../rid-catalog.md) pour le projet. Utilisez cette propriété si vous devez publier pour plusieurs runtimes. `RuntimeIdentifiers` est utilisé au moment de la restauration pour s’assurer que les ressources appropriées sont dans le graphique.
 
 > [!TIP]
-> `RuntimeIdentifier`(singulier) peut fournir des builds plus rapides quand un seul Runtime est requis.
+> `RuntimeIdentifier` (singulier) peut fournir des builds plus rapides quand un seul Runtime est requis.
 
 ```xml
 <PropertyGroup>
@@ -165,6 +166,50 @@ La `LangVersion` propriété vous permet de spécifier une version du langage de
 ```
 
 Pour plus d’informations, consultez contrôle de [version du langage C#](../../csharp/language-reference/configure-language-version.md#override-a-default).
+
+## <a name="code-analysis-properties"></a>Propriétés de l’analyse du code
+
+### <a name="analysislevel"></a>AnalysisLevel
+
+La `AnalysisLevel` propriété vous permet de spécifier un niveau d’analyse du code. Par exemple, si vous souhaitez accéder à l’aperçu des analyseurs de code, affectez à la valeur `AnalysisLevel` `preview` . La valeur par défaut est `latest`.
+
+```xml
+<PropertyGroup>
+  <AnalysisLevel>preview</AnalysisLevel>
+</PropertyGroup>
+```
+
+Le tableau suivant présente les options disponibles.
+
+| Valeur | Signification |
+|-|-|
+| `latest` | Les derniers analyseurs de code qui ont été publiés sont utilisés. Il s'agit de la valeur par défaut. |
+| `preview` | Les derniers analyseurs de code sont utilisés, même s’ils sont en version préliminaire. |
+| `5.0` | L’ensemble de règles activé pour la version .NET 5,0 est utilisé, même si des règles plus récentes sont disponibles. |
+| `5` | L’ensemble de règles activé pour la version .NET 5,0 est utilisé, même si des règles plus récentes sont disponibles. |
+
+### <a name="codeanalysistreatwarningsaserrors"></a>CodeAnalysisTreatWarningsAsErrors
+
+La `CodeAnalysisTreatWarningsAsErrors` propriété vous permet de configurer si les avertissements de l’analyse du code doivent être traités comme des avertissements et rompre la génération. Si vous utilisez l' `-warnaserror` indicateur lorsque vous générez vos projets, les avertissements de l' [analyse du code .net](../../fundamentals/productivity/code-analysis.md) sont également traités comme des erreurs. Si vous souhaitez que les avertissements du compilateur soient traités comme des erreurs, vous pouvez définir la `CodeAnalysisTreatWarningsAsErrors` propriété MSBuild sur `false` dans votre fichier projet.
+
+```xml
+<PropertyGroup>
+  <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+</PropertyGroup>
+```
+
+### <a name="enablenetanalyzers"></a>EnableNETAnalyzers
+
+L' [analyse du code .net](../../fundamentals/productivity/code-analysis.md) est activée, par défaut, pour les projets qui ciblent .net 5,0 ou une version ultérieure. Vous pouvez activer l’analyse du code .NET pour les projets qui ciblent des versions antérieures de .NET en affectant `EnableNETAnalyzers` à la propriété la valeur true. Pour désactiver l’analyse du code dans un projet, affectez la valeur à cette propriété `false` .
+
+```xml
+<PropertyGroup>
+  <EnableNETAnalyzers>true</EnableNETAnalyzers>
+</PropertyGroup>
+```
+
+> [!TIP]
+> Une autre façon d’activer l’analyse du code .NET sur les projets qui ciblent les versions .NET antérieures à .NET 5,0 consiste à définir la propriété [AnalysisLevel](#analysislevel) sur `latest` .
 
 ## <a name="run-time-configuration-properties"></a>Propriétés de configuration au moment de l’exécution
 
@@ -320,7 +365,7 @@ L’extrait de code du fichier projet dans l’exemple suivant fait référence 
 </ItemGroup>
 ```
 
-### <a name="reference"></a>Informations de référence
+### <a name="reference"></a>Référence
 
 L' `Reference` élément définit une référence à un fichier d’assembly.
 

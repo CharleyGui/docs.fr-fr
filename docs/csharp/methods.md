@@ -4,14 +4,14 @@ description: Vue d’ensemble des méthodes, des paramètres de méthode et des 
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 09a287b3d74e1b8dbdaf4a53cb207dfe1fad8a0c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 8c33bcb9dd4052589222c2cb1b375d94d6792ba2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063352"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810571"
 ---
-# <a name="methods"></a>Méthodes
+# <a name="methods-in-c"></a>Méthodes dans (C#)
 
 Une méthode est un bloc de code qui contient une série d'instructions. Un programme provoque l'exécution des instructions en appelant la méthode et en spécifiant les éventuels arguments de méthode requis. En C#, chaque instruction exécutée est effectuée dans le contexte d'une méthode. La méthode `Main` est le point d’entrée de chaque application C# et elle est appelée par le Common Language Runtime (CLR) au démarrage du programme.
 
@@ -24,7 +24,7 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 
 Les méthodes sont déclarées dans une `class` ou une `struct` en spécifiant :
 
-- Un niveau d’accès facultatif, comme `public` ou `private`. Par défaut, il s’agit de `private`.
+- Un niveau d’accès facultatif, comme `public` ou `private`. La valeur par défaut est `private`.
 - Des modificateurs facultatifs, comme `abstract` ou `sealed`.
 - La valeur de retour, ou `void` si la méthode n’en a pas.
 - Le nom de la méthode.
@@ -32,7 +32,7 @@ Les méthodes sont déclarées dans une `class` ou une `struct` en spécifiant 
 
 Ces parties forment ensemble la signature de la méthode.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Un type de retour d'une méthode ne fait pas partie de la signature de la méthode à des fins de surcharge de méthode. Toutefois, il fait partie de la signature de la méthode lors de la détermination de la compatibilité entre un délégué et la méthode vers laquelle il pointe.
 
 L’exemple suivant définit une classe nommée `Motorcycle` qui contient cinq méthodes :
@@ -243,17 +243,17 @@ La fonctionnalité async vous permet d'appeler des méthodes asynchrones sans ut
 Si vous marquez une méthode avec le modificateur [async](language-reference/keywords/async.md), vous pouvez utiliser l’opérateur [await](language-reference/operators/await.md) dans la méthode. Quand le contrôle atteint une expression `await` dans la méthode async, il retourne à l’appelant si la tâche attendue n’est pas terminée, et la progression dans la méthode avec le mot clé `await` est interrompue jusqu’à ce que la tâche attendue se termine. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.
 
 > [!NOTE]
-> Une méthode async retourne à l'appelant quand elle rencontre le premier objet await qui n'est pas encore terminé ou quand elle atteint la fin de la méthode async, selon la première éventualité.
+> Une méthode Async retourne à l’appelant lorsqu’elle rencontre le premier objet attendu qui n’est pas encore terminé ou qu’elle atteint la fin de la méthode Async, selon ce qui se produit en premier.
 
 Une méthode async peut avoir un type de retour <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task> ou `void`. Le type de retour `void` est essentiellement utilisé pour définir les gestionnaires d’événements, où un type de retour `void` est obligatoire. Une méthode async qui retourne `void` ne peut pas être attendue, et l’appelant d’une méthode retournant void ne peut intercepter aucune exception levée par la méthode. À compter de C# 7.0, une méthode asynchrone peut avoir [n’importe quel type de retour de type tâche](./whats-new/csharp-7.md#generalized-async-return-types).
 
 Dans l’exemple suivant, `DelayAsync` est une méthode async contenant une instruction return qui retourne un entier. Comme il s’agit d’une méthode async, la déclaration de sa méthode doit avoir un type de retour `Task<int>`. Comme le type de retour est `Task<int>`, l’évaluation de l’expression `await` dans `DoSomethingAsync` produit un entier, comme l’instruction `int result = await delayTask` suivante le montre.
 
-[!code-csharp[csSnippets.Methods#102](../../samples/snippets/csharp/concepts/methods/async1.cs#102)]
+:::code language="csharp" source="programming-guide/classes-and-structs/snippets/classes-and-structs/methods/Program.cs":::
 
 Une méthode async ne peut pas déclarer de paramètres [in](language-reference/keywords/in-parameter-modifier.md), [ref](language-reference/keywords/ref.md) ou [out](language-reference/keywords/out-parameter-modifier.md), mais elle peut appeler des méthodes qui ont ces paramètres.
 
- Pour plus d’informations sur les méthodes async, consultez [Programmation asynchrone avec Async et Await](async.md), [Flux de contrôle dans les programmes Async](programming-guide/concepts/async/control-flow-in-async-programs.md) et [Types de retour Async](programming-guide/concepts/async/async-return-types.md).
+ Pour plus d’informations sur les méthodes Async, consultez [programmation asynchrone avec Async et await](async.md) et [Async (types de retour](programming-guide/concepts/async/async-return-types.md)).
 
 <a name="expr"></a>
 
@@ -291,5 +291,5 @@ Pour plus d’informations, consultez [itérateurs](programming-guide/concepts/i
 - [params](language-reference/keywords/params.md)
 - [à](language-reference/keywords/out-parameter-modifier.md)
 - [ref](language-reference/keywords/ref.md)
-- [dans](language-reference/keywords/in-parameter-modifier.md)
+- [in](language-reference/keywords/in-parameter-modifier.md)
 - [Passer des paramètres](programming-guide/classes-and-structs/passing-parameters.md)

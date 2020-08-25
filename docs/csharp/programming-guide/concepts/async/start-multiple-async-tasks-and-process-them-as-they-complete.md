@@ -1,234 +1,176 @@
 ---
 title: Traiter les tâches asynchrones terminées
 description: Cet exemple montre comment utiliser Task. WhenAny en C# pour démarrer plusieurs tâches et traiter leurs résultats à mesure qu’ils se terminent, au lieu de les traiter dans l’ordre de début.
-ms.date: 09/12/2018
+ms.date: 08/19/2020
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: a7cfa0bdf783fe9bb735241ca398fde7895f1493
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: c2fe66e865a2c88f4cae50b816f9326614fcbb89
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925148"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812027"
 ---
-# <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Démarrer plusieurs tâches Async et les traiter une fois terminées (C#)
+# <a name="process-asynchronous-tasks-as-they-complete-c"></a>Traiter les tâches asynchrones à mesure qu’elles se terminent (C#)
 
-En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, vous pouvez démarrer plusieurs tâches en même temps et les traiter une par une, une fois qu’elles sont terminées, au lieu de les traiter dans l’ordre dans lequel elles ont démarré.
+À l’aide de <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> , vous pouvez démarrer plusieurs tâches en même temps et les traiter une par une lorsqu’elles sont terminées, au lieu de les traiter dans l’ordre dans lequel elles sont démarrées.
 
-L’exemple suivant utilise une requête pour créer une collection de tâches. Chaque tâche télécharge le contenu d’un site web spécifié. À chaque itération d’une boucle while, un appel attendu à `WhenAny` retourne la tâche de la collection de tâches dont le téléchargement se termine en premier. Cette tâche est supprimée de la collection et traitée. La boucle se répète jusqu’à ce que la collection ne contienne plus aucune tâche.
+L’exemple suivant utilise une requête pour créer une collection de tâches. Chaque tâche télécharge le contenu d’un site web spécifié. À chaque itération d’une boucle while, un appel attendu à <xref:System.Threading.Tasks.Task.WhenAny%2A> retourne la tâche de la collection de tâches dont le téléchargement se termine en premier. Cette tâche est supprimée de la collection et traitée. La boucle se répète jusqu’à ce que la collection ne contienne plus aucune tâche.
 
-> [!NOTE]
-> Pour exécuter les exemples, Visual Studio 2012 ou version ultérieure et .NET Framework 4.5 ou version ultérieure doivent être installés sur votre ordinateur.
+## <a name="create-example-application"></a>Créer un exemple d’application
 
-## <a name="download-an-example-solution"></a>Télécharger un exemple de solution
+Créez une application de console .NET Core. Vous pouvez en créer un à l’aide de la commande [dotnet New console](../../../../core/tools/dotnet-new.md#console) ou de [Visual Studio](/visualstudio/install/install-visual-studio). Ouvrez le fichier *Program.cs* dans votre éditeur de code favori.
 
-Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea), puis procédez comme suit.
+### <a name="replace-using-statements"></a>Remplacer les instructions using
 
-> [!TIP]
-> Si vous ne souhaitez pas télécharger le projet, vous pouvez consulter le fichier *MainWindow.Xaml.cs* à la fin de cette rubrique.
-
-1. Extrayez les fichiers que vous avez téléchargés à partir du fichier *. zip* , puis démarrez Visual Studio.
-
-2. Dans la barre de menus, choisissez **fichier**  >  **ouvrir**un  >  **projet/une solution**.
-
-3. Dans la boîte de dialogue **ouvrir un projet** , ouvrez le dossier qui contient l’exemple de code que vous avez téléchargé, puis ouvrez le fichier solution (*. sln*) pour *AsyncFineTuningCS* / *AsyncFineTuningVB*.
-
-4. Dans l’**Explorateur de solutions**, ouvrez le menu contextuel pour le projet **ProcessTasksAsTheyFinish**, puis choisissez **Définir comme projet de démarrage**.
-
-5. Appuyez sur la touche <kbd>F5</kbd> pour exécuter le programme avec débogage ou appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour exécuter le programme sans le déboguer.
-
-6. Exécutez le projet plusieurs fois pour vérifier que les longueurs téléchargées n’apparaissent pas toujours dans le même ordre.
-
-## <a name="create-the-program-yourself"></a>Créer le programme vous-même
-
-Cet exemple ajoute le code développé dans [Annuler les tâches Async restantes lorsque l’une d’elles est terminée (C#)](cancel-remaining-async-tasks-after-one-is-complete.md) et utilise la même interface utilisateur.
-
-Pour générer l’exemple vous-même, pas à pas, suivez les instructions de la section [Téléchargement de l’exemple](cancel-remaining-async-tasks-after-one-is-complete.md#downloading-the-example), mais choisissez **CancelAfterOneTask** comme projet de démarrage. Ajoutez les modifications de cette rubrique à la méthode `AccessTheWebAsync` dans ce projet. Les modifications sont marquées par des astérisques.
-
-Le projet **CancelAfterOneTask** inclut déjà une requête qui, lorsqu’elle est exécutée, crée une collection de tâches. Chaque appel à `ProcessURLAsync` dans le code suivant retourne un <xref:System.Threading.Tasks.Task%601>, où `TResult` est un entier :
-
-```csharp
-IEnumerable<Task<int>> downloadTasksQuery = from url in urlList select ProcessURL(url, client, ct);
-```
-
-Dans le fichier *MainWindow.Xaml.cs* du projet, apportez les modifications suivantes à la `AccessTheWebAsync` méthode :
-
-- Exécutez la requête en appliquant <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> au lieu de <xref:System.Linq.Enumerable.ToArray%2A>.
-
-    ```csharp
-    List<Task<int>> downloadTasks = downloadTasksQuery.ToList();
-    ```
-
-- Ajoutez une boucle `while` qui effectue les étapes suivantes pour chaque tâche dans la collection :
-
-    1. Elle attend un appel à `WhenAny` pour identifier la première tâche dans la collection afin de terminer son téléchargement.
-
-        ```csharp
-        Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);
-        ```
-
-    2. Elle supprime cette tâche de la collection.
-
-        ```csharp
-        downloadTasks.Remove(firstFinishedTask);
-        ```
-
-    3. Elle attend `firstFinishedTask`, qui est retourné par un appel à `ProcessURLAsync`. La variable `firstFinishedTask` est un <xref:System.Threading.Tasks.Task%601> où `TReturn` est un entier. La tâche est déjà terminée, mais vous l’attendez pour récupérer la longueur du site web téléchargé, comme le montre l’exemple suivant. Si la tâche est défaillante, `await` lèvera la première exception enfant stockée dans le `AggregateException` , contrairement à la lecture de la `Result` propriété qui lèverait la `AggregateException` .
-
-        ```csharp
-        int length = await firstFinishedTask;
-        resultsTextBox.Text += $"\r\nLength of the download:  {length}";
-        ```
-
-Exécutez le programme plusieurs fois pour vérifier que les longueurs téléchargées n’apparaissent pas toujours dans le même ordre.
-
-> [!CAUTION]
-> Vous pouvez utiliser `WhenAny` dans une boucle, comme décrit dans l’exemple, pour résoudre les problèmes qui impliquent un petit nombre de tâches. Cependant, d’autres approches sont plus efficaces si vous avez un grand nombre de tâches à traiter. Pour plus d’informations et d’exemples, consultez [traitement des tâches lorsqu’elles sont terminées](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/).
-
-## <a name="complete-example"></a>Exemple complet
-
-Le code suivant est le texte complet du fichier *MainWindow.Xaml.cs* pour l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple. Notez aussi que vous devez ajouter une référence pour <xref:System.Net.Http>.
-
-Vous pouvez télécharger le projet à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
+Remplacez les instructions using existantes par les déclarations suivantes :
 
 ```csharp
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-// Add a using directive and a reference for System.Net.Http.
 using System.Net.Http;
-
-// Add the following using directive.
-using System.Threading;
-
-namespace ProcessTasksAsTheyFinish
-{
-    public partial class MainWindow : Window
-    {
-        // Declare a System.Threading.CancellationTokenSource.
-        CancellationTokenSource cts;
-
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
-        private async void startButton_Click(object sender, RoutedEventArgs e)
-        {
-            resultsTextBox.Clear();
-
-            // Instantiate the CancellationTokenSource.
-            cts = new CancellationTokenSource();
-
-            try
-            {
-                await AccessTheWebAsync(cts.Token);
-                resultsTextBox.Text += "\r\nDownloads complete.";
-            }
-            catch (OperationCanceledException)
-            {
-                resultsTextBox.Text += "\r\nDownloads canceled.\r\n";
-            }
-            catch (Exception)
-            {
-                resultsTextBox.Text += "\r\nDownloads failed.\r\n";
-            }
-
-            cts = null;
-        }
-
-        private void cancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (cts != null)
-            {
-                cts.Cancel();
-            }
-        }
-
-        async Task AccessTheWebAsync(CancellationToken ct)
-        {
-            HttpClient client = new HttpClient();
-
-            // Make a list of web addresses.
-            List<string> urlList = SetUpURLList();
-
-            // ***Create a query that, when executed, returns a collection of tasks.
-            IEnumerable<Task<int>> downloadTasksQuery =
-                from url in urlList select ProcessURL(url, client, ct);
-
-            // ***Use ToList to execute the query and start the tasks.
-            List<Task<int>> downloadTasks = downloadTasksQuery.ToList();
-
-            // ***Add a loop to process the tasks one at a time until none remain.
-            while (downloadTasks.Count > 0)
-            {
-                    // Identify the first task that completes.
-                    Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);
-
-                    // ***Remove the selected task from the list so that you don't
-                    // process it more than once.
-                    downloadTasks.Remove(firstFinishedTask);
-
-                    // Await the completed task.
-                    int length = await firstFinishedTask;
-                    resultsTextBox.Text += $"\r\nLength of the download:  {length}";
-            }
-        }
-
-        private List<string> SetUpURLList()
-        {
-            List<string> urls = new List<string>
-            {
-                "https://msdn.microsoft.com",
-                "https://msdn.microsoft.com/library/windows/apps/br211380.aspx",
-                "https://msdn.microsoft.com/library/hh290136.aspx",
-                "https://msdn.microsoft.com/library/dd470362.aspx",
-                "https://msdn.microsoft.com/library/aa578028.aspx",
-                "https://msdn.microsoft.com/library/ms404677.aspx",
-                "https://msdn.microsoft.com/library/ff730837.aspx"
-            };
-            return urls;
-        }
-
-        async Task<int> ProcessURL(string url, HttpClient client, CancellationToken ct)
-        {
-            // GetAsync returns a Task<HttpResponseMessage>.
-            HttpResponseMessage response = await client.GetAsync(url, ct);
-
-            // Retrieve the website contents from the HttpResponseMessage.
-            byte[] urlContents = await response.Content.ReadAsByteArrayAsync();
-
-            return urlContents.Length;
-        }
-    }
-}
-
-// Sample Output:
-
-// Length of the download:  226093
-// Length of the download:  412588
-// Length of the download:  175490
-// Length of the download:  204890
-// Length of the download:  158855
-// Length of the download:  145790
-// Length of the download:  44908
-// Downloads complete.
+using System.Threading.Tasks;
 ```
+
+## <a name="add-fields"></a>Ajouter des champs
+
+Dans la `Program` définition de classe, ajoutez les deux champs suivants :
+
+```csharp
+static readonly HttpClient s_client = new HttpClient
+{
+    MaxResponseContentBufferSize = 1_000_000
+};
+
+static readonly IEnumerable<string> s_urlList = new string[]
+{
+    "https://docs.microsoft.com",
+    "https://docs.microsoft.com/aspnet/core",
+    "https://docs.microsoft.com/azure",
+    "https://docs.microsoft.com/azure/devops",
+    "https://docs.microsoft.com/dotnet",
+    "https://docs.microsoft.com/dynamics365",
+    "https://docs.microsoft.com/education",
+    "https://docs.microsoft.com/enterprise-mobility-security",
+    "https://docs.microsoft.com/gaming",
+    "https://docs.microsoft.com/graph",
+    "https://docs.microsoft.com/microsoft-365",
+    "https://docs.microsoft.com/office",
+    "https://docs.microsoft.com/powershell",
+    "https://docs.microsoft.com/sql",
+    "https://docs.microsoft.com/surface",
+    "https://docs.microsoft.com/system-center",
+    "https://docs.microsoft.com/visualstudio",
+    "https://docs.microsoft.com/windows",
+    "https://docs.microsoft.com/xamarin"
+};
+```
+
+Le `HttpClient` expose la possibilité d’envoyer des requêtes http et de recevoir des réponses http. Le `s_urlList` contient toutes les URL que l’application envisage de traiter.
+
+## <a name="update-application-entry-point"></a>Mettre à jour le point d’entrée de l’application
+
+Le point d’entrée principal dans l’application console est la `Main` méthode. Remplacez la méthode existante par le code suivant :
+
+```csharp
+static Task Main() => SumPageSizesAsync();
+```
+
+La méthode mise à jour `Main` est maintenant considérée comme une [main asynchrone](../../../whats-new/csharp-7-1.md#async-main), ce qui permet d’obtenir un point d’entrée asynchrone dans l’exécutable. Il s’agit d’un appel à `SumPageSizesAsync` .
+
+## <a name="create-the-asynchronous-sum-page-sizes-method"></a>Créer la méthode de taille de page Sum asynchrone
+
+Sous la `Main` méthode, ajoutez la `SumPageSizesAsync` méthode :
+
+```csharp
+static async Task SumPageSizesAsync()
+{
+    var stopwatch = Stopwatch.StartNew();
+
+    IEnumerable<Task<int>> downloadTasksQuery =
+        from url in s_urlList
+        select ProcessUrlAsync(url, s_client);
+
+    List<Task<int>> downloadTasks = downloadTasksQuery.ToList();
+
+    int total = 0;
+    while (downloadTasks.Any())
+    {
+        Task<int> finishedTask = await Task.WhenAny(downloadTasks);
+        downloadTasks.Remove(finishedTask);
+        total += await finishedTask;
+    }
+
+    stopwatch.Stop();
+
+    Console.WriteLine($"\nTotal bytes returned:  {total:#,#}");
+    Console.WriteLine($"Elapsed time:          {stopwatch.Elapsed}\n");
+}
+```
+
+La méthode commence par instancier et démarrer un <xref:System.Diagnostics.Stopwatch> . Il comprend ensuite une requête qui, lorsqu’elle est exécutée, crée une collection de tâches. Chaque appel à `ProcessUrlAsync` dans le code suivant retourne un <xref:System.Threading.Tasks.Task%601>, où `TResult` est un entier :
+
+```csharp
+IEnumerable<Task<int>> downloadTasksQuery =
+    from url in s_urlList
+    select ProcessUrlAsync(url, s_client);
+```
+
+En raison d’une [exécution différée](../linq/deferred-execution-example.md) avec LINQ, vous appelez <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> pour démarrer chaque tâche.
+
+```csharp
+List<Task<int>> downloadTasks = downloadTasksQuery.ToList();
+```
+
+La `while` boucle effectue les étapes suivantes pour chaque tâche de la collection :
+
+1. Attend un appel à `WhenAny` pour identifier la première tâche de la collection dont le téléchargement est terminé.
+
+    ```csharp
+    Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);
+    ```
+
+1. Elle supprime cette tâche de la collection.
+
+    ```csharp
+    downloadTasks.Remove(firstFinishedTask);
+    ```
+
+1. Elle attend `finishedTask`, qui est retourné par un appel à `ProcessUrlAsync`. La variable `finishedTask` est un <xref:System.Threading.Tasks.Task%601> où `TResult` est un entier. La tâche est déjà terminée, mais vous l’attendez pour récupérer la longueur du site web téléchargé, comme le montre l’exemple suivant. Si la tâche est défaillante, `await` lèvera la première exception enfant stockée dans le `AggregateException` , contrairement à la lecture de la <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> propriété, qui lèverait `AggregateException` .
+
+    ```csharp
+    total += await finishedTask;
+    ```
+
+## <a name="add-process-method"></a>Ajouter une méthode de traitement
+
+Ajoutez la méthode suivante en `ProcessUrlAsync` dessous de la `SumPageSizesAsync` méthode :
+
+```csharp
+static async Task<int> ProcessUrlAsync(string url, HttpClient client)
+{
+    byte[] content = await client.GetByteArrayAsync(url);
+    Console.WriteLine($"{url,-60} {content.Length,10:#,#}");
+
+    return content.Length;
+}
+```
+
+Pour une URL donnée, la méthode utilise l' `client` instance fournie pour obtenir la réponse en tant que `byte[]` . La longueur est retournée une fois que l’URL et la longueur sont écrites dans la console.
+
+Exécutez le programme plusieurs fois pour vérifier que les longueurs téléchargées n’apparaissent pas toujours dans le même ordre.
+
+> [!CAUTION]
+> Vous pouvez utiliser `WhenAny` dans une boucle, comme décrit dans l’exemple, pour résoudre les problèmes qui impliquent un petit nombre de tâches. Cependant, d’autres approches sont plus efficaces si vous avez un grand nombre de tâches à traiter. Pour plus d’informations et d’exemples, consultez [traitement des tâches lorsqu’elles sont terminées](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete).
+
+## <a name="complete-example"></a>Exemple complet
+
+Le code suivant est le texte complet du fichier *Program.cs* pour l’exemple.
+
+:::code language="csharp" source="snippets/multiple-tasks/Program.cs":::
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
-- [Réglage de votre application asynchrone (C#)](fine-tuning-your-async-application.md)
-- [Programmation asynchrone avec Async et Await (C#)](index.md)
-- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Programmation asynchrone avec Async et await (C#)](index.md)
