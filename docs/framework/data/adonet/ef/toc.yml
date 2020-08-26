@@ -77,38 +77,17 @@
               href: sqlclient-for-ef-types.md
             - name: Problèmes connus dans SqlClient pour l'Entity Framework
               href: known-issues-in-sqlclient-for-entity-framework.md
-    - name: Écriture d'un fournisseur de données Entity Framework
-      href: writing-an-ef-data-provider.md
+    - name: Points à prendre en considération pour le développement et le déploiement
+      href: development-and-deployment-considerations.md
       items:
-        - name: Génération SQL
-          href: sql-generation.md
-          items:
-            - name: Forme des arborescences de commandes
-              href: the-shape-of-the-command-trees.md
-            - name: Génération SQL à partir d'arborescences de commandes - meilleures pratiques
-              href: generating-sql-from-command-trees-best-practices.md
-            - name: Génération SQL dans le Fournisseur d'exemples
-              href: sql-generation-in-the-sample-provider.md
-              items:
-                - name: Architecture et conception
-                  href: architecture-and-design.md
-                - name: "Procédure pas à pas\_: Génération SQL"
-                  href: walkthrough-sql-generation.md
-        - name: Génération SQL de modification
-          href: modification-sql-generation.md
-        - name: Spécification de manifeste du fournisseur
-          href: provider-manifest-specification.md
-- name: Points à prendre en considération pour le développement et le déploiement
-  href: development-and-deployment-considerations.md
-  items:
-    - name: Considérations relatives à la sécurité
-      href: security-considerations.md
-    - name: Considérations sur les performances
-      href: performance-considerations.md
-    - name: Considérations relatives à la migration
-      href: migration-considerations.md
-    - name: Points à prendre en considération pour le déploiement
-      href: deployment-considerations.md
+        - name: Considérations relatives à la sécurité
+          href: security-considerations.md
+        - name: Considérations sur les performances
+          href: performance-considerations.md
+        - name: Considérations relatives à la migration
+          href: migration-considerations.md
+        - name: Points à prendre en considération pour le déploiement
+          href: deployment-considerations.md
 - name: Ressources Entity Framework
   href: resources.md
 - name: Terminologie Entity Framework
