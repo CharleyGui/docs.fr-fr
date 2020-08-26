@@ -1,20 +1,17 @@
 ---
 title: Chaînes
 description: "Découvrez comment le type F # 'String’représente du texte immuable comme une séquence de caractères Unicode."
-ms.date: 07/05/2019
-ms.openlocfilehash: 67a6506b4b8c479da1022c069a7f53402f904b4d
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: f6ec36feeb197bf785c702e7b626cf5cf80696ab
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855411"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812209"
 ---
 # <a name="strings"></a>Chaînes
 
 Le `string` type représente du texte immuable sous la forme d’une séquence de caractères Unicode. `string` est un alias de `System.String` dans .NET.
-
-> [!NOTE]
-> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="remarks"></a>Notes
 
@@ -32,10 +29,10 @@ Les littéraux de chaîne sont délimités par le caractère guillemet ("). La b
 |Barre oblique inverse|`\\`|
 |Guillemets|`\"`|
 |Apostrophe|`\'`|
-|Caractère Unicode|`\DDD`(où `D` indique un chiffre décimal ; la plage de 000-255 ; par exemple, `\231` = « ç »)|
-|Caractère Unicode|`\xHH`(où `H` indique un chiffre hexadécimal ; la plage de 00 à FF ; par exemple `\xE7` , = "ç")|
-|Caractère Unicode|`\uHHHH`(UTF-16) (où `H` indique un chiffre hexadécimal ; plage de 0000-FFFF ;  par exemple, `\u00E7` = "ç")|
-|Caractère Unicode|`\U00HHHHHH`(UTF-32) (où `H` indique un chiffre hexadécimal ; plage de 000000-10FFFF ;  par exemple, `\U0001F47D` = " 👽 ")|
+|Caractère Unicode|`\DDD` (où `D` indique un chiffre décimal ; la plage de 000-255 ; par exemple, `\231` = « ç »)|
+|Caractère Unicode|`\xHH` (où `H` indique un chiffre hexadécimal ; la plage de 00 à FF ; par exemple `\xE7` , = "ç")|
+|Caractère Unicode|`\uHHHH` (UTF-16) (où `H` indique un chiffre hexadécimal ; plage de 0000-FFFF ;  par exemple, `\u00E7` = "ç")|
+|Caractère Unicode|`\U00HHHHHH` (UTF-32) (où `H` indique un chiffre hexadécimal ; plage de 000000-10FFFF ;  par exemple, `\U0001F47D` = " 👽 ")|
 
 > [!IMPORTANT]
 > La `\DDD` séquence d’échappement est une notation décimale, et non une notation octale comme dans la plupart des autres langages. Par conséquent, les chiffres `8` et `9` sont valides, et une séquence de `\032` représente un espace (U + 0020), alors que ce même point de code en notation octale serait `\040` .
@@ -69,7 +66,7 @@ Vous pouvez accéder à des caractères individuels dans une chaîne à l’aide
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1002.fs)]
 
-Le résultat est `b`.
+La sortie est `b`.
 
 Vous pouvez aussi extraire des sous-chaînes à l’aide de la syntaxe de découpage de tableau, comme indiqué dans le code suivant.
 
@@ -102,7 +99,7 @@ L' `+` opérateur peut être utilisé pour concaténer des chaînes, en conserva
 
 ## <a name="string-module"></a>Module de chaîne
 
-Des fonctionnalités supplémentaires pour la gestion des chaînes sont incluses dans le `String` module de l' `FSharp.Core` espace de noms. Pour plus d’informations, consultez [module Core. String](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d).
+Des fonctionnalités supplémentaires pour la gestion des chaînes sont incluses dans le `String` module de l' `FSharp.Core` espace de noms. Pour plus d’informations, consultez [module de chaîne](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-stringmodule.html).
 
 ## <a name="see-also"></a>Voir aussi
 

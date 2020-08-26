@@ -1,23 +1,23 @@
 ---
 title: Critères spéciaux
-description: Découvrez comment les modèles sont utilisés F# dans pour comparer des données avec des structures logiques, décomposer des données en parties constituantes ou extraire des informations à partir de données.
-ms.date: 10/27/2019
-ms.openlocfilehash: 1acb795cbe5581898ae5e1439098f906a8a16b93
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+description: 'Découvrez comment les modèles sont utilisés en F # pour comparer des données avec des structures logiques, décomposer des données en parties constituantes ou extraire des informations à partir de données.'
+ms.date: 08/15/2020
+ms.openlocfilehash: 6d284b941824bc15a8e872a4e28e22c0e159191d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73041011"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811507"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
-Les modèles sont des règles de transformation des données d’entrée. Elles sont utilisées dans le F# langage pour comparer des données avec une structure logique ou des structures, décomposer des données en parties constitutives ou extraire des informations de données de différentes façons.
+Les modèles sont des règles de transformation des données d’entrée. Ils sont utilisés dans le langage F # pour comparer des données avec une structure logique ou des structures, décomposer des données en parties constitutives ou extraire des informations de données de différentes façons.
 
 ## <a name="remarks"></a>Notes
 
-Les modèles sont utilisés dans de nombreuses constructions de langage, telles que l’expression `match`. Elles sont utilisées lorsque vous traitez des arguments pour les fonctions dans les liaisons `let`, les expressions lambda et dans les gestionnaires d’exceptions associés à l’expression `try...with`. Pour plus d’informations, [consultez expressions de correspondance](match-expressions.md), [liaisons Let](./functions/let-bindings.md), [expressions Lambda : le mot clé `fun`](./functions/lambda-expressions-the-fun-keyword.md)et [exceptions : l’expression de `try...with`](./exception-handling/the-try-with-expression.md).
+Les modèles sont utilisés dans de nombreuses constructions de langage, telles que l' `match` expression. Elles sont utilisées lorsque vous traitez des arguments pour les fonctions dans `let` les liaisons, les expressions lambda et dans les gestionnaires d’exceptions associés à l' `try...with` expression. Pour plus d’informations, [consultez expressions de correspondance](match-expressions.md), [liaisons Let](./functions/let-bindings.md), [expressions lambda : le `fun` mot clé](./functions/lambda-expressions-the-fun-keyword.md)et [exceptions : l' `try...with` expression](./exception-handling/the-try-with-expression.md).
 
-Par exemple, dans l’expression `match`, le *modèle* correspond à ce qui suit le symbole de barre verticale.
+Par exemple, dans l' `match` expression, le *modèle* correspond à ce qui suit le symbole de barre verticale.
 
 ```fsharp
 match expression with
@@ -25,16 +25,16 @@ match expression with
 ...
 ```
 
-Chaque modèle agit comme une règle de transformation d’entrée d’une certaine façon. Dans l’expression `match`, chaque modèle est examiné à son tour pour déterminer si les données d’entrée sont compatibles avec le modèle. Si une correspondance est trouvée, l’expression de résultat est exécutée. Si aucune correspondance n’est trouvée, la règle de modèle suivante est testée. Le composant facultatif when *condition* est expliqué dans [expressions de correspondance](match-expressions.md).
+Chaque modèle agit comme une règle de transformation d’entrée d’une certaine façon. Dans l' `match` expression, chaque modèle est examiné à son tour pour déterminer si les données d’entrée sont compatibles avec le modèle. Si une correspondance est trouvée, l’expression de résultat est exécutée. Si aucune correspondance n’est trouvée, la règle de modèle suivante est testée. Le composant facultatif when *condition* est expliqué dans [expressions de correspondance](match-expressions.md).
 
 Les modèles pris en charge sont présentés dans le tableau suivant. Au moment de l’exécution, l’entrée est testée par rapport à chacun des modèles suivants dans l’ordre indiqué dans le tableau, et les modèles sont appliqués de manière récursive, de la première à la dernière telle qu’ils apparaissent dans votre code, et de gauche à droite pour les modèles sur chaque ligne.
 
-|Name|Description|Exemple|
+|Nom|Description|Exemple|
 |----|-----------|-------|
 |Modèle de constante|Tout littéral numérique, de caractère ou de chaîne, une constante d’énumération ou un identificateur littéral défini|`1.0`, `"test"`, `30`, `Color.Red`|
 |Modèle d’identificateur|Une valeur case d’une union discriminée, une étiquette d’exception ou un cas de modèle actif|`Some(x)`<br /><br />`Failure(msg)`|
-|Modèle de variable|*identifier*|`a`|
-|modèle de `as`|*modèle* en tant qu' *identificateur*|`(a, b) as tuple1`|
+|Modèle de variable|*identificateur*|`a`|
+|`as` répétition|*modèle* en tant qu' *identificateur*|`(a, b) as tuple1`|
 |OU modèle|*pattern1* &#124; *pattern2*|<code>([h] &#124; [h; _])</code>|
 |ET modèle|*pattern1* &amp; *pattern2*|`(a, b) & (_, "test")`|
 |Modèle cons|*identificateur* :: *List-identifier*|`h :: t`|
@@ -42,7 +42,7 @@ Les modèles pris en charge sont présentés dans le tableau suivant. Au moment 
 |Modèle de tableau|[&#124; *pattern_1*;..; *pattern_n* &#124;]|<code>[&#124; a; b; c &#124;]</code>|
 |Modèle entre parenthèses|( *modèle* )|`( a )`|
 |Modèle de Tuple|( *pattern_1*,..., *pattern_n* )|`( a, b )`|
-|Modèle d’enregistrement|{ *identificateur1* = *pattern_1*;...; *identifier_n* = *pattern_n* }|`{ Name = name; }`|
+|Modèle d’enregistrement|{ *identificateur1*  =  *pattern_1*; ... ; *identifier_n*  =  *pattern_n* }|`{ Name = name; }`|
 |Modèle de caractère générique|_|`_`|
 |Modèle avec annotation de type|*modèle* : *type*|`a : int`|
 |Modèle de test de type|:? *type* [ *identificateur* ]|`:? System.DateTime as dt`|
@@ -50,7 +50,7 @@ Les modèles pris en charge sont présentés dans le tableau suivant. Au moment 
 
 ## <a name="constant-patterns"></a>Modèles de constante
 
-Les modèles de constantes sont des littéraux numériques, de caractère et de chaîne, des constantes d’énumération (avec le nom du type d’énumération inclus). Une expression `match` qui n’a que des modèles de constantes peut être comparée à une instruction case dans d’autres langages. L’entrée est comparée à la valeur littérale et le modèle correspond si les valeurs sont égales. Le type du littéral doit être compatible avec le type de l’entrée.
+Les modèles de constantes sont des littéraux numériques, de caractère et de chaîne, des constantes d’énumération (avec le nom du type d’énumération inclus). Une `match` expression qui possède uniquement des modèles de constantes peut être comparée à une instruction case dans d’autres langages. L’entrée est comparée à la valeur littérale et le modèle correspond si les valeurs sont égales. Le type du littéral doit être compatible avec le type de l’entrée.
 
 L’exemple suivant illustre l’utilisation de modèles littéraux et utilise également un modèle de variable et un modèle ou.
 
@@ -66,11 +66,11 @@ Si le modèle est une chaîne de caractères qui forme un identificateur valide,
 
 Les modèles d’union discriminée peuvent être des cas nommés simples ou ils peuvent avoir une valeur, ou un tuple contenant plusieurs valeurs. S’il y a une valeur, vous devez spécifier un identificateur pour la valeur. Dans le cas d’un tuple, vous devez fournir un modèle de tuple avec un identificateur pour chaque élément du tuple ou un identificateur avec un nom de champ pour un ou plusieurs champs d’Union nommés. Consultez les exemples de code de cette section pour obtenir des exemples.
 
-Le type de `option` est une union discriminée qui a deux cas, `Some` et `None`. Un cas (`Some`) a une valeur, mais l’autre (`None`) est simplement un cas nommé. Par conséquent, `Some` doit avoir une variable pour la valeur associée au cas `Some`, mais `None` doit apparaître de lui-même. Dans le code suivant, la variable `var1` reçoit la valeur obtenue en faisant correspondre le cas `Some`.
+Le `option` type est une union discriminée qui a deux cas, `Some` et `None` . Un cas ( `Some` ) a une valeur, mais l’autre ( `None` ) est simplement un cas nommé. Par conséquent, `Some` doit avoir une variable pour la valeur associée à la `Some` casse, mais `None` doit s’afficher par lui-même. Dans le code suivant, la variable `var1` reçoit la valeur obtenue en faisant correspondre le `Some` cas.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4803.fs)]
 
-Dans l’exemple suivant, l’union discriminée `PersonName` contient un mélange de chaînes et de caractères qui représentent des formes possibles de noms. Les cas de l’union discriminée sont `FirstOnly`, `LastOnly`et `FirstLast`.
+Dans l’exemple suivant, l' `PersonName` union discriminée contient un mélange de chaînes et de caractères qui représentent les formes possibles des noms. Les cas de l’union discriminée sont `FirstOnly` , `LastOnly` et `FirstLast` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4804.fs)]
 
@@ -91,7 +91,7 @@ let matchShape shape =
     | Circle(r) -> printfn "Circle with radius %f" r
 ```
 
-L’utilisation du champ nommé est facultative. par conséquent, dans l’exemple précédent, les `Circle(r)` et `Circle(radius = r)` ont le même effet.
+L’utilisation du champ nommé est facultative. par conséquent, dans l’exemple précédent, les deux `Circle(r)` et `Circle(radius = r)` ont le même effet.
 
 Lorsque vous spécifiez plusieurs champs, utilisez le point-virgule (;) comme séparateur.
 
@@ -103,11 +103,11 @@ match shape with
 
 Les modèles actifs vous permettent de définir des critères spéciaux personnalisés plus complexes. Pour plus d’informations sur les modèles actifs, consultez [modèles actifs](active-patterns.md).
 
-Le cas dans lequel l’identificateur est une exception est utilisé dans les critères spéciaux dans le contexte des gestionnaires d’exceptions. Pour plus d’informations sur les critères spéciaux dans la gestion des exceptions, consultez [exceptions : l’Expression `try...with`](./exception-handling/the-try-with-expression.md).
+Le cas dans lequel l’identificateur est une exception est utilisé dans les critères spéciaux dans le contexte des gestionnaires d’exceptions. Pour plus d’informations sur les critères spéciaux dans la gestion des exceptions, consultez [exceptions : l' `try...with` expression](./exception-handling/the-try-with-expression.md).
 
 ## <a name="variable-patterns"></a>Modèles de variables
 
-Le modèle de variable affecte la valeur mise en correspondance à un nom de variable, qui peut ensuite être utilisée dans l’expression d’exécution à droite du symbole de `->`. Un modèle de variable ne correspond à aucune entrée, mais les modèles de variable apparaissent souvent dans d’autres modèles, ce qui permet de décomposer les structures plus complexes, telles que les tuples et les tableaux, en variables.
+Le modèle de variable affecte la valeur mise en correspondance à un nom de variable, qui peut ensuite être utilisée dans l’expression d’exécution à droite du `->` symbole. Un modèle de variable ne correspond à aucune entrée, mais les modèles de variable apparaissent souvent dans d’autres modèles, ce qui permet de décomposer les structures plus complexes, telles que les tuples et les tableaux, en variables.
 
 L’exemple suivant illustre un modèle de variable dans un modèle de Tuple.
 
@@ -115,9 +115,9 @@ L’exemple suivant illustre un modèle de variable dans un modèle de Tuple.
 
 ## <a name="as-pattern"></a>Modèle As
 
-Le modèle de `as` est un modèle auquel une clause `as` est ajoutée. La clause `as` lie la valeur correspondante à un nom qui peut être utilisé dans l’expression d’exécution d’une expression `match` ou, dans le cas où ce modèle est utilisé dans une liaison de `let`, le nom est ajouté en tant que liaison à la portée locale.
+Le `as` modèle est un modèle auquel une `as` clause est ajoutée. La `as` clause lie la valeur correspondante à un nom qui peut être utilisé dans l’expression d’exécution d’une `match` expression, ou, dans le cas où ce modèle est utilisé dans une `let` liaison, le nom est ajouté en tant que liaison à la portée locale.
 
-L’exemple suivant utilise un modèle de `as`.
+L’exemple suivant utilise un `as` modèle.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4806.fs)]
 
@@ -133,7 +133,7 @@ L’exemple suivant illustre le modèle ou.
 
 Le modèle et requiert que l’entrée corresponde à deux modèles. Les types des deux côtés du modèle et doivent être compatibles.
 
-L’exemple suivant est similaire `detectZeroTuple` illustré dans la section [modèle de tuple](https://msdn.microsoft.com/library/#tuple) plus loin dans cette rubrique, mais ici `var1` et `var2` sont obtenus comme valeurs à l’aide du modèle et.
+L’exemple suivant est similaire `detectZeroTuple` à celui présenté dans la section modèle de tuple plus loin dans cette rubrique, mais ici `var1` et `var2` sont obtenus comme valeurs à l’aide du modèle et.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4808.fs)]
 
@@ -177,7 +177,7 @@ Le modèle d’enregistrement est utilisé pour décomposer les enregistrements 
 
 ## <a name="wildcard-pattern"></a>Modèle de caractère générique
 
-Le modèle de caractère générique est représenté par le caractère de soulignement (`_`) et correspond à toute entrée, comme le modèle de variable, sauf que l’entrée est ignorée au lieu d’être affectée à une variable. Le modèle de caractère générique est souvent utilisé dans d’autres modèles comme un espace réservé pour les valeurs qui ne sont pas nécessaires dans l’expression à droite du symbole de `->`. Le modèle de caractère générique est également fréquemment utilisé à la fin d’une liste de modèles pour faire correspondre n’importe quelle entrée sans correspondance. Le modèle de caractère générique est illustré dans de nombreux exemples de code de cette rubrique. Pour obtenir un exemple, consultez le code précédent.
+Le modèle de caractère générique est représenté par le caractère de soulignement ( `_` ) et correspond à toute entrée, comme le modèle de variable, sauf que l’entrée est ignorée au lieu d’être affectée à une variable. Le modèle de caractère générique est souvent utilisé dans d’autres modèles comme un espace réservé pour les valeurs qui ne sont pas nécessaires dans l’expression à droite du `->` symbole. Le modèle de caractère générique est également fréquemment utilisé à la fin d’une liste de modèles pour faire correspondre n’importe quelle entrée sans correspondance. Le modèle de caractère générique est illustré dans de nombreux exemples de code de cette rubrique. Pour obtenir un exemple, consultez le code précédent.
 
 ## <a name="patterns-that-have-type-annotations"></a>Modèles avec des annotations de type
 
@@ -193,7 +193,7 @@ L’exemple suivant illustre le modèle de test de type.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4816.fs)]
 
-Si vous vérifiez uniquement si un identificateur est d’un type dérivé particulier, vous n’avez pas besoin de la `as identifier` partie du modèle, comme illustré dans l’exemple suivant :
+Si vous vérifiez uniquement si un identificateur est d’un type dérivé particulier, vous n’avez pas besoin `as identifier` de la partie du modèle, comme illustré dans l’exemple suivant :
 
 ```fsharp
 type A() = class end
@@ -209,7 +209,7 @@ let m (a: A) =
 
 ## <a name="null-pattern"></a>Modèle null
 
-Le modèle null correspond à la valeur null qui peut s’afficher lorsque vous utilisez des types qui autorisent une valeur null. Les modèles NULL sont fréquemment utilisés lors de l’interopérabilité avec .NET Framework code. Par exemple, la valeur de retour d’une API .NET peut être l’entrée d’une expression `match`. Vous pouvez contrôler le déroulement du programme selon que la valeur de retour est null et également d’autres caractéristiques de la valeur retournée. Vous pouvez utiliser le modèle null pour empêcher la propagation de valeurs Null vers le reste de votre programme.
+Le modèle null correspond à la valeur null qui peut s’afficher lorsque vous utilisez des types qui autorisent une valeur null. Les modèles NULL sont fréquemment utilisés lors de l’interopérabilité avec .NET Framework code. Par exemple, la valeur de retour d’une API .NET peut être l’entrée d’une `match` expression. Vous pouvez contrôler le déroulement du programme selon que la valeur de retour est null et également d’autres caractéristiques de la valeur retournée. Vous pouvez utiliser le modèle null pour empêcher la propagation de valeurs Null vers le reste de votre programme.
 
 L’exemple suivant utilise le modèle null et le modèle de variable.
 
@@ -217,6 +217,6 @@ L’exemple suivant utilise le modèle null et le modèle de variable.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions match](match-expressions.md)
+- [Expressions de correspondance](match-expressions.md)
 - [Modèles actifs](active-patterns.md)
-- [Informations de référence sur le langage F#](index.md)
+- [Informations de référence sur le langage F #](index.md)

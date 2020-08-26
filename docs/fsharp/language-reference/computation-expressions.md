@@ -1,15 +1,15 @@
 ---
 title: Expressions de calcul
 description: 'Découvrez comment créer une syntaxe pratique pour écrire des calculs en F # qui peut être séquencé et combiné à l’aide de constructions et de liaisons de workflow de contrôle.'
-ms.date: 11/04/2019
+ms.date: 08/15/2020
 f1_keywords:
 - let!_FS
-ms.openlocfilehash: 32638e9493fb2c6b7aae30d044a0cda2a97f2178
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 1649d8c57ea9e025d40ef6d39d92b96795964150
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855359"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812157"
 ---
 # <a name="computation-expressions"></a>Expressions de calcul
 
@@ -81,7 +81,7 @@ let doThingsAsync url =
 
 Si vous liez l’appel à une expression de calcul avec `let` , vous n’obtiendrez pas le résultat de l’expression de calcul. Au lieu de cela, vous aurez lié la valeur de l’appel non *réalisé* à cette expression de calcul. Utilisez `let!` pour établir une liaison avec le résultat.
 
-`let!`est défini par le `Bind(x, f)` membre sur le type de générateur.
+`let!` est défini par le `Bind(x, f)` membre sur le type de générateur.
 
 ### `do!`
 
@@ -97,7 +97,7 @@ let doThingsAsync data url =
 
 Pour le [flux de travail asynchrone](asynchronous-workflows.md), ce type est `Async<unit>` . Pour les autres expressions de calcul, le type est susceptible d’être `CExpType<unit>` .
 
-`do!`est défini par le `Bind(x, f)` membre sur le type de générateur, où `f` produit un `unit` .
+`do!` est défini par le `Bind(x, f)` membre sur le type de générateur, où `f` produit un `unit` .
 
 ### `yield`
 
@@ -144,7 +144,7 @@ let weekdays includeWeekend =
 
 Comme avec le [mot clé yield en C#](../../csharp/language-reference/keywords/yield.md), chaque élément de l’expression de calcul est renvoyé à mesure qu’il est itéré.
 
-`yield`est défini par le `Yield(x)` membre sur le type de générateur, où `x` est l’élément à retourner.
+`yield` est défini par le `Yield(x)` membre sur le type de générateur, où `x` est l’élément à retourner.
 
 ### `yield!`
 
@@ -172,7 +172,7 @@ printfn "%A" squaresAndCubes // Prints - 1; 4; 9; 1; 8; 27
 
 En cas d’évaluation, l’expression de calcul appelée par `yield!` aura ses éléments retournés un par un, ce qui a pour effet d’aplatir le résultat.
 
-`yield!`est défini par le `YieldFrom(x)` membre sur le type de générateur, où `x` est une collection de valeurs.
+`yield!` est défini par le `YieldFrom(x)` membre sur le type de générateur, où `x` est une collection de valeurs.
 
 Contrairement `yield` `yield!` à, doit être spécifié explicitement. Son comportement n’est pas implicite dans les expressions de calcul.
 
@@ -191,7 +191,7 @@ let req = // 'req' is of type is 'Async<data>'
 let result = Async.RunSynchronously req
 ```
 
-`return`est défini par le `Return(x)` membre sur le type de générateur, où `x` est l’élément à inclure dans un wrapper.
+`return` est défini par le `Return(x)` membre sur le type de générateur, où `x` est l’élément à inclure dans un wrapper.
 
 ### `return!`
 
@@ -207,7 +207,7 @@ let req = // 'req' is of type is 'Async<data>'
 let result = Async.RunSynchronously req
 ```
 
-`return!`est défini par le `ReturnFrom(x)` membre sur le type de générateur, où `x` est une autre expression de calcul.
+`return!` est défini par le `ReturnFrom(x)` membre sur le type de générateur, où `x` est une autre expression de calcul.
 
 ### `match!`
 
@@ -410,20 +410,20 @@ comp |> step |> step
 comp |> step |> step |> step |> step
 ```
 
-Une expression de calcul a un type sous-jacent, que l’expression retourne. Le type sous-jacent peut représenter un résultat calculé ou un calcul retardé qui peut être effectué, ou il peut fournir un moyen d’itérer au sein d’un type de collection. Dans l’exemple précédent, le type sous-jacent était **finalement**. Pour une expression de séquence, le type sous-jacent est <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Pour une expression de requête, le type sous-jacent est <xref:System.Linq.IQueryable?displayProperty=nameWithType> . Pour un flux de travail asynchrone, le type sous-jacent est [`Async`](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7) . L' `Async` objet représente le travail à effectuer pour calculer le résultat. Par exemple, vous appelez [`Async.RunSynchronously`](https://msdn.microsoft.com/library/0a6663a9-50f2-4d38-8bf3-cefd1a51fd6b) pour exécuter un calcul et retourner le résultat.
+Une expression de calcul a un type sous-jacent, que l’expression retourne. Le type sous-jacent peut représenter un résultat calculé ou un calcul retardé qui peut être effectué, ou il peut fournir un moyen d’itérer au sein d’un type de collection. Dans l’exemple précédent, le type sous-jacent était **finalement**. Pour une expression de séquence, le type sous-jacent est <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Pour une expression de requête, le type sous-jacent est <xref:System.Linq.IQueryable?displayProperty=nameWithType> . Pour un flux de travail asynchrone, le type sous-jacent est [`Async`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html) . L' `Async` objet représente le travail à effectuer pour calculer le résultat. Par exemple, vous appelez [`Async.RunSynchronously`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html#RunSynchronously) pour exécuter un calcul et retourner le résultat.
 
 ## <a name="custom-operations"></a>Opérations personnalisées
 
-Vous pouvez définir une opération personnalisée sur une expression de calcul et utiliser une opération personnalisée comme opérateur dans une expression de calcul. Par exemple, vous pouvez inclure un opérateur de requête dans une expression de requête. Lorsque vous définissez une opération personnalisée, vous devez définir les méthodes yield et for dans l’expression de calcul. Pour définir une opération personnalisée, placez-la dans une classe de générateur pour l’expression de calcul, puis appliquez [`CustomOperationAttribute`](https://msdn.microsoft.com/library/199f3927-79df-484b-ba66-85f58cc49b19) . Cet attribut prend une chaîne en tant qu’argument, qui est le nom à utiliser dans une opération personnalisée. Ce nom est placé dans la portée au début de l’accolade ouvrante de l’expression de calcul. Par conséquent, vous ne devez pas utiliser d’identificateurs portant le même nom qu’une opération personnalisée dans ce bloc. Par exemple, évitez d’utiliser des identificateurs tels que `all` ou `last` dans les expressions de requête.
+Vous pouvez définir une opération personnalisée sur une expression de calcul et utiliser une opération personnalisée comme opérateur dans une expression de calcul. Par exemple, vous pouvez inclure un opérateur de requête dans une expression de requête. Lorsque vous définissez une opération personnalisée, vous devez définir les méthodes yield et for dans l’expression de calcul. Pour définir une opération personnalisée, placez-la dans une classe de générateur pour l’expression de calcul, puis appliquez [`CustomOperationAttribute`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-customoperationattribute.html) . Cet attribut prend une chaîne en tant qu’argument, qui est le nom à utiliser dans une opération personnalisée. Ce nom est placé dans la portée au début de l’accolade ouvrante de l’expression de calcul. Par conséquent, vous ne devez pas utiliser d’identificateurs portant le même nom qu’une opération personnalisée dans ce bloc. Par exemple, évitez d’utiliser des identificateurs tels que `all` ou `last` dans les expressions de requête.
 
 ### <a name="extending-existing-builders-with-new-custom-operations"></a>Extension des générateurs existants à l’aide de nouvelles opérations personnalisées
 
 Si vous disposez déjà d’une classe de générateur, ses opérations personnalisées peuvent être étendues à partir de l’extérieur de cette classe de générateur. Les extensions doivent être déclarées dans des modules. Les espaces de noms ne peuvent pas contenir de membres d’extension, sauf dans le même fichier et dans le même groupe de déclaration d’espace de noms où le type est défini.
 
-L’exemple suivant montre l’extension de la `Microsoft.FSharp.Linq.QueryBuilder` classe existante.
+L’exemple suivant montre l’extension de la `FSharp.Linq.QueryBuilder` classe existante.
 
 ```fsharp
-type Microsoft.FSharp.Linq.QueryBuilder with
+type FSharp.Linq.QueryBuilder with
 
     [<CustomOperation("existsNot")>]
     member _.ExistsNot (source: QuerySource<'T, 'Q>, predicate) =
@@ -434,5 +434,5 @@ type Microsoft.FSharp.Linq.QueryBuilder with
 
 - [Informations de référence sur le langage F #](index.md)
 - [Workflows asynchrones](asynchronous-workflows.md)
-- [Séquences](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db)
+- [Séquences](sequences.md)
 - [Expressions de requête](query-expressions.md)

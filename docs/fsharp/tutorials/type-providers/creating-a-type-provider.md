@@ -2,12 +2,12 @@
 title: 'Didacticiel : créer un fournisseur de type'
 description: 'Découvrez comment créer vos propres fournisseurs de type F # dans F # 3,0 en examinant plusieurs fournisseurs de types simples pour illustrer les concepts de base.'
 ms.date: 11/04/2019
-ms.openlocfilehash: 67ebd91007ff814370573ebc1a65b2c7a8399f7d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 71225614ed983a76d35c214faa87bbad0fbb7d24
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202130"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810870"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Didacticiel : créer un fournisseur de type
 
@@ -175,9 +175,9 @@ Cette section vous guide à travers les principales sections de l’implémentat
 type SampleTypeProvider(config: TypeProviderConfig) as this =
 ```
 
-Ce type doit être public, et vous devez le marquer avec l’attribut [TypeProvider](https://msdn.microsoft.com/library/bdf7b036-7490-4ace-b79f-c5f1b1b37947) afin que le compilateur reconnaisse le fournisseur de type lorsqu’un projet F # distinct référence l’assembly qui contient le type. Le paramètre de *configuration* est facultatif et, le cas échéant, contient des informations de configuration contextuelle pour l’instance de fournisseur de type créée par le compilateur F #.
+Ce type doit être public, et vous devez le marquer avec l’attribut [TypeProvider](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderattribute.html) afin que le compilateur reconnaisse le fournisseur de type lorsqu’un projet F # distinct référence l’assembly qui contient le type. Le paramètre de *configuration* est facultatif et, le cas échéant, contient des informations de configuration contextuelle pour l’instance de fournisseur de type créée par le compilateur F #.
 
-Ensuite, implémentez l’interface [ITypeProvider](https://msdn.microsoft.com/library/2c2b0571-843d-4a7d-95d4-0a7510ed5e2f) . Dans ce cas, vous utilisez le `TypeProviderForNamespaces` type de l' `ProvidedTypes` API comme type de base. Ce type d’assistance peut fournir une collection finie d’espaces de noms fournis de façon dynamique, chacun d’entre eux contenant directement un nombre fini de types fixes et fournis de façon dynamique. Dans ce contexte, le fournisseur génère des types de manière *dynamique* , même s’ils ne sont pas nécessaires ou utilisés.
+Ensuite, implémentez l’interface [ITypeProvider](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-itypeprovider.html) . Dans ce cas, vous utilisez le `TypeProviderForNamespaces` type de l' `ProvidedTypes` API comme type de base. Ce type d’assistance peut fournir une collection finie d’espaces de noms fournis de façon dynamique, chacun d’entre eux contenant directement un nombre fini de types fixes et fournis de façon dynamique. Dans ce contexte, le fournisseur génère des types de manière *dynamique* , même s’ils ne sont pas nécessaires ou utilisés.
 
 ```fsharp
 inherit TypeProviderForNamespaces(config)
@@ -236,7 +236,7 @@ let t = ProvidedTypeDefinition(thisAssembly, namespaceName,
 
 Notez les points suivants :
 
-- Ce type fourni est effacé.  Étant donné que vous indiquez que le type `obj` de base est, les instances s’affichent en tant que valeurs de type [obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7) dans le code compilé.
+- Ce type fourni est effacé.  Étant donné que vous indiquez que le type `obj` de base est, les instances s’affichent en tant que valeurs de type [obj](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html) dans le code compilé.
 
 - Lorsque vous spécifiez un type non imbriqué, vous devez spécifier l’assembly et l’espace de noms. Pour les types effacés, l’assembly doit être l’assembly du fournisseur de type lui-même.
 
@@ -255,7 +255,7 @@ let staticProp = ProvidedProperty(propertyName = "StaticProperty",
                                   getterCode = (fun args -> <@@ "Hello!" @@>))
 ```
 
-L’obtention de cette propriété correspond toujours à la chaîne « Hello ! ». Le `GetterCode` de la propriété utilise un quotation F #, qui représente le code généré par le compilateur hôte pour obtenir la propriété. Pour plus d’informations sur les guillemets, consultez [Quotations de code (F #)](https://msdn.microsoft.com/library/6f055397-a1f0-4f9a-927c-f0d7c6951155).
+L’obtention de cette propriété correspond toujours à la chaîne « Hello ! ». Le `GetterCode` de la propriété utilise un quotation F #, qui représente le code généré par le compilateur hôte pour obtenir la propriété. Pour plus d’informations sur les guillemets, consultez [Quotations de code (F #)](../../language-reference/code-quotations.md).
 
 Ajoutez la documentation XML à la propriété.
 
@@ -282,7 +282,7 @@ let ctor = ProvidedConstructor(parameters = [ ],
 new Type10()
 ```
 
-Une instance du type fourni sera créée avec les données sous-jacentes « données de l’objet ». Le code entre guillemets comprend une conversion en [obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7) , car ce type est l’effacement de ce type fourni (comme vous l’avez spécifié quand vous avez déclaré le type fourni).
+Une instance du type fourni sera créée avec les données sous-jacentes « données de l’objet ». Le code entre guillemets comprend une conversion en [obj](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html) , car ce type est l’effacement de ce type fourni (comme vous l’avez spécifié quand vous avez déclaré le type fourni).
 
 Ajoutez la documentation XML au constructeur et ajoutez le constructeur fourni au type fourni :
 
@@ -742,7 +742,7 @@ En guise d’exemple simple, imaginez un fournisseur de type pour l’accès aux
 
 |Distance (compteur)|Heure (seconde)|
 |----------------|-------------|
-|50.0|3.7|
+|50,0|3.7|
 |100.0|5.2|
 |150.0|6.4|
 
@@ -750,7 +750,7 @@ Cette section montre comment fournir un type que vous pouvez utiliser pour obten
 
 - Les noms d’en-tête sont inférieurs à l’unité ou se présentent sous la forme « nom (unité) » et ne contiennent pas de virgules.
 
-- Les unités sont toutes des unités système internationales (SI), car le module [Microsoft. FSharp. Data. UnitSystems. si. UnitNames module (F #)](https://msdn.microsoft.com/library/3cb43485-11f5-4aa7-a779-558f19d4013b) définit.
+- Les unités sont toutes des unités système (SI), car le module [FSharp. Data. UnitSystems. si. UnitNames module (F #)](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-data-unitsystems-si-unitnames.html) définit.
 
 - Les unités sont toutes simples (par exemple, les compteurs) au lieu de composent (par exemple, compteur/seconde).
 
@@ -877,7 +877,7 @@ Notez les points suivants à propos de l’implémentation :
 
 - Les constructeurs surchargés autorisent le fichier d’origine ou celui qui a un schéma identique à lire. Ce modèle est courant lorsque vous écrivez un fournisseur de type pour des sources de données locales ou distantes, et ce modèle permet d’utiliser un fichier local comme modèle pour les données distantes.
 
-- Vous pouvez utiliser la valeur [TypeProviderConfig](https://msdn.microsoft.com/library/1cda7b9a-3d07-475d-9315-d65e1c97eb44) qui est passée au constructeur du fournisseur de type pour résoudre les noms de fichiers relatifs.
+- Vous pouvez utiliser la valeur [TypeProviderConfig](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderconfig.html) qui est passée au constructeur du fournisseur de type pour résoudre les noms de fichiers relatifs.
 
 - Vous pouvez utiliser la `AddDefinitionLocation` méthode pour définir l’emplacement des propriétés fournies. Par conséquent, si vous utilisez `Go To Definition` sur une propriété fournie, le fichier CSV s’ouvre dans Visual Studio.
 
@@ -901,7 +901,7 @@ let function1 () =
     obj1.InstanceProperty
 ```
 
-Voici une image du code obtenu décompilé à l’aide d’Ildasm. exe :
+Voici une image du code obtenu décompilé à l’aide de ildasm.exe :
 
 ```il
 .class public abstract auto ansi sealed Module1
@@ -976,7 +976,7 @@ Les sections suivantes décrivent les modèles de conception que vous pouvez uti
 
 #### <a name="the-getconnection-design-pattern"></a>Modèle de conception GetConnection
 
-La plupart des fournisseurs de type doivent être écrits pour utiliser le `GetConnection` modèle utilisé par les fournisseurs de type dans FSharp. Data. TypeProviders. dll, comme le montre l’exemple suivant :
+La plupart des fournisseurs de type doivent être écrits pour utiliser le `GetConnection` modèle utilisé par les fournisseurs de type dans FSharp.Data.TypeProviders.dll, comme le montre l’exemple suivant :
 
 ```fsharp
 #r "Fabrikam.Data.WebDataStore.dll"
@@ -1054,7 +1054,7 @@ Chaque instance d’un fournisseur de type peut recevoir une `TypeProviderConfig
 
 ### <a name="invalidation"></a>Invalidation
 
-Les fournisseurs peuvent déclencher des signaux d’invalidation pour notifier le service de langage F # que les hypothèses de schéma peuvent avoir changé. Lorsque l’invalidation se produit, un typecheck est restauré si le fournisseur est hébergé dans Visual Studio. Ce signal sera ignoré lorsque le fournisseur est hébergé dans F# Interactive ou par le compilateur F # (FSC. exe).
+Les fournisseurs peuvent déclencher des signaux d’invalidation pour notifier le service de langage F # que les hypothèses de schéma peuvent avoir changé. Lorsque l’invalidation se produit, un typecheck est restauré si le fournisseur est hébergé dans Visual Studio. Ce signal sera ignoré lorsque le fournisseur est hébergé dans F# Interactive ou par le compilateur F # (fsc.exe).
 
 ### <a name="caching-schema-information"></a>Mise en cache des informations de schéma
 
@@ -1118,17 +1118,17 @@ Les conseils suivants peuvent être utiles pendant le processus de développemen
 
 Vous pouvez développer le fournisseur de type dans une instance et tester le fournisseur dans l’autre, car l’IDE de test prend un verrou sur le fichier. dll qui empêche le fournisseur de type d’être régénéré. Par conséquent, vous devez fermer la deuxième instance de Visual Studio pendant que le fournisseur est créé dans la première instance, puis vous devez rouvrir la deuxième instance après la génération du fournisseur.
 
-### <a name="debug-type-providers-by-using-invocations-of-fscexe"></a>Déboguer les fournisseurs de type à l’aide des appels de FSC. exe
+### <a name="debug-type-providers-by-using-invocations-of-fscexe"></a>Déboguer des fournisseurs de type à l’aide d’appels de fsc.exe
 
 Vous pouvez appeler des fournisseurs de type à l’aide des outils suivants :
 
-- FSC. exe (compilateur de ligne de commande F #)
+- fsc.exe (compilateur de ligne de commande F #)
 
-- FSI. exe (compilateur F# Interactive)
+- fsi.exe (compilateur F# Interactive)
 
-- devenv. exe (Visual Studio)
+- devenv.exe (Visual Studio)
 
-Vous pouvez souvent déboguer les fournisseurs de type le plus facilement à l’aide de FSC. exe sur un fichier de script de test (par exemple, script. FSX). Vous pouvez lancer un débogueur à partir d’une invite de commandes.
+Il est souvent plus facile de déboguer les fournisseurs de type à l’aide de fsc.exe sur un fichier de script de test (par exemple, script. FSX). Vous pouvez lancer un débogueur à partir d’une invite de commandes.
 
 ```console
 devenv /debugexe fsc.exe script.fsx

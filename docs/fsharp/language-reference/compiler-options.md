@@ -2,12 +2,12 @@
 title: Options du compilateur
 description: 'Utilisez les options de ligne de commande du compilateur F # pour contrôler la compilation de vos applications et bibliothèques F #.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 7f7b7dac2060213cd7d783669cb4de2b96a88968
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: c10808e97d31bd3bdb469fc2a8e57a4650170dec
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557358"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812144"
 ---
 # <a name="compiler-options"></a>Options du compilateur
 
@@ -52,7 +52,7 @@ Le tableau suivant présente les options du compilateur classées par ordre alph
 |`--pdb:pdb-filename`|Nomme le fichier PDB de débogage de sortie (base de données du programme). Cette option s’applique uniquement lorsque `--debug` est également activé.<br /><br />Cette option de compilateur est équivalente à l’option de compilateur C# du même nom. Pour plus d’informations, consultez [&#47;pdb &#40;C&#35; options du compilateur&#41;](../../csharp/language-reference/compiler-options/pdb-compiler-option.md).|
 |`--platform:platform-name`|Spécifie que le code généré s’exécutera uniquement sur la plateforme spécifiée ( `x86` , `Itanium` ou `x64` ), ou si le nom de plateforme `anycpu` est choisi, spécifie que le code généré peut s’exécuter sur n’importe quelle plateforme.<br /><br />Cette option de compilateur est équivalente à l’option de compilateur C# du même nom. Pour plus d’informations, consultez [&#47;platform &#40;C&#35; options du compilateur&#41;](../../csharp/language-reference/compiler-options/platform-compiler-option.md).|
 |`--preferreduilang:lang`| Spécifie le nom de culture de la langue de sortie par défaut (par exemple,  `es-ES` , `ja-JP` ). |
-|`--quotations-debug`|Spécifie que des informations de débogage supplémentaires doivent être émises pour les expressions dérivées des littéraux de quotation F # et des définitions réfléchies. Les informations de débogage sont ajoutées aux attributs personnalisés d’un nœud d’arborescence d’expression F #. Consultez [Quotations de code](code-quotations.md) et [expr. CustomAttributes](https://msdn.microsoft.com/visualfsharpdocs/conceptual/expr.customattributes-property-%5bfsharp%5d).|
+|`--quotations-debug`|Spécifie que des informations de débogage supplémentaires doivent être émises pour les expressions dérivées des littéraux de quotation F # et des définitions réfléchies. Les informations de débogage sont ajoutées aux attributs personnalisés d’un nœud d’arborescence d’expression F #. Consultez [Quotations de code](code-quotations.md) et [expr. CustomAttributes](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html#CustomAttributes).|
 |`--reference:assembly-filename`<br /><br />`-r:assembly-filename`|Rend le code à partir d’un assembly F # ou .NET Framework disponible pour le code en cours de compilation.<br /><br />Cette option de compilateur est équivalente à l’option de compilateur C# du même nom. Pour plus d’informations, consultez [&#47;de référence &#40;&#35; options du compilateur C&#41;](../../csharp/language-reference/compiler-options/reference-compiler-option.md).|
 |`--resource:resource-filename`|Incorpore un fichier de ressources managé dans l’assembly généré.<br /><br />Cette option de compilateur est équivalente à l’option de compilateur C# du même nom. Pour plus d’informations, consultez [&#47;&#40;&#35; options du compilateur C&#41;](../../csharp/language-reference/compiler-options/resource-compiler-option.md).|
 |`--sig:signature-filename`|Génère un fichier de signature basé sur l’assembly généré. Pour plus d’informations sur les fichiers de signature, consultez [signatures](signature-files.md).|
@@ -72,7 +72,7 @@ Le tableau suivant présente les options du compilateur classées par ordre alph
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----|-----------|
 |[Options F# Interactive](fsharp-interactive-options.md)|Décrit les options de ligne de commande prises en charge par l’interpréteur F #, fsi.exe.|
 |[Informations de référence sur les propriétés de projet](/visualstudio/ide/reference/project-properties-reference)|Décrit l’interface utilisateur pour les projets, y compris les pages de propriétés de projet qui fournissent des options de génération.|

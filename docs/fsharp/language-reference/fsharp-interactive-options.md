@@ -2,12 +2,12 @@
 title: Options interactives
 description: En savoir plus sur les options de ligne de commande prises en charge par F# Interactive, fsi.exe.
 ms.date: 08/15/2020
-ms.openlocfilehash: da2251c1d2e57090ed926e501cebf3c53ac58052
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: adc8dc86f14366720e1acbf35115d4e318a76aef
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558606"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810531"
 ---
 # <a name="f-interactive-options"></a>Options de F# Interactive
 
@@ -52,7 +52,7 @@ Quand des listes apparaissent dans F# Interactive arguments de l’option, les �
 |**--optimize**[ **+**&#124;**-** ]|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--preferreduilang : &lt; lang&gt;**| Spécifie le nom de culture de la langue de sortie par défaut (par exemple, es-ES, ja-JP). |
 |**--quiet**|Supprime la sortie de F# Interactive dans le flux **stdout** .|
-|**--Quotations-débogage**|Spécifie que des informations de débogage supplémentaires doivent être émises pour les expressions dérivées des littéraux de quotation F # et des définitions réfléchies. Les informations de débogage sont ajoutées aux attributs personnalisés d’un nœud d’arborescence d’expression F #. Consultez [Quotations de code](code-quotations.md) et [expr. CustomAttributes](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
+|**--Quotations-débogage**|Spécifie que des informations de débogage supplémentaires doivent être émises pour les expressions dérivées des littéraux de quotation F # et des définitions réfléchies. Les informations de débogage sont ajoutées aux attributs personnalisés d’un nœud d’arborescence d’expression F #. Consultez [Quotations de code](code-quotations.md) et [expr. CustomAttributes](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html#CustomAttributes).|
 |**--ReadLine**[ **+**&#124;**-** ]|Activez ou désactivez la saisie semi-automatique par tabulation en mode interactif.|
 |**--Référence : &lt; nom de fichier&gt;**<br /><br />**-r : &lt; nom_fichier&gt;**|Identique à l’option du compilateur **fsc.exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--tailcalls**[ **+**&#124;**-** ]|Activez ou désactivez l’utilisation de l’instruction IL tail, qui entraîne la réutilisation du frame de pile pour les fonctions récursives tail. Cette option est activée par défaut.|
@@ -163,6 +163,6 @@ val y : string = ["quack"; "quack"; "quack"]
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----|-----------|
 |[Options du compilateur](compiler-options.md)|Décrit les options de ligne de commande disponibles pour le compilateur F #, **fsc.exe**.|
