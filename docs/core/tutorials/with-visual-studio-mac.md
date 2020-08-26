@@ -2,12 +2,12 @@
 title: Créer une application console .NET Core à l’aide de Visual Studio pour Mac
 description: Découvrez comment créer une application console .NET Core à l’aide de Visual Studio pour Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: e0b18837bf8bef5be5f20b84341bde8526b9f7a2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 8ffcb05ad85f53180ca1aaefbd2dfc7496946142
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811871"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867657"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio pour Mac
 
@@ -105,4 +105,4 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 Dans ce didacticiel, vous avez créé une application console .NET Core. Dans le didacticiel suivant, vous allez déboguer l’application.
 
 > [!div class="nextstepaction"]
-> [Déboguer une application console .NET Core dans Visual Studio](debugging-with-visual-studio-mac.md)
+> [Déboguer une application console .NET Core à l’aide de Visual Studio pour Mac](debugging-with-visual-studio-mac.md)

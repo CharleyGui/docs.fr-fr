@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 743603cb037406948190c7090ca3527bfc40db18
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 0555c6b4185da088333503c1e744da2dd7b4f2e4
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702065"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867592"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio
 
@@ -19,7 +19,7 @@ Ce didacticiel présente les outils de débogage disponibles dans Visual Studio.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core dans Visual Studio 2019](with-visual-studio.md).
+- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core à l’aide de Visual Studio](with-visual-studio.md).
 
 ## <a name="use-debug-build-configuration"></a>Utiliser la configuration de build Debug
 
@@ -31,7 +31,7 @@ Dans la configuration Debug, un programme est compilé avec des informations de 
 
 1. Démarrez Visual Studio.
 
-1. Ouvrez le projet que vous avez créé dans [créer une application console .net core dans Visual Studio 2019](with-visual-studio.md).
+1. Ouvrez le projet que vous avez créé dans [créer une application console .net core à l’aide de Visual Studio](with-visual-studio.md).
 
    La configuration de build actuelle s’affiche sur la barre d’outils. L’image de barre d’outils suivante montre que Visual Studio est configuré pour compiler la version de débogage de l’application :
 
@@ -188,4 +188,4 @@ Quand vous appuyez sur <kbd>F5</kbd> ou que vous choisissez **générer la solut
 Dans ce didacticiel, vous avez utilisé les outils de débogage de Visual Studio. Dans le didacticiel suivant, vous allez publier une version déployable de l’application.
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core avec Visual Studio](publishing-with-visual-studio.md)
+> [Publier une application console .NET Core à l’aide de Visual Studio](publishing-with-visual-studio.md)

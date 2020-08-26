@@ -2,12 +2,12 @@
 title: Déboguer une application console .NET Core à l’aide de Visual Studio pour Mac
 description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 7e2a25266fab40b5ef1d0a38b8bbf06a6843746b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 79936fb99d0bc37c1234eb8f227eb5415ae48b93
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416013"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867566"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio pour Mac
 
@@ -15,7 +15,7 @@ Ce didacticiel présente les outils de débogage disponibles dans Visual Studio 
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core dans Visual Studio pour Mac](with-visual-studio-mac.md).
+- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core à l’aide de Visual Studio pour Mac](with-visual-studio-mac.md).
 
 ## <a name="use-debug-build-configuration"></a>Utiliser la configuration de build Debug
 
@@ -27,7 +27,7 @@ Par défaut, Visual Studio utilise la configuration de build Debug. vous n’ave
 
 1. Démarrez Visual Studio pour Mac.
 
-1. Ouvrez le projet que vous avez créé dans [créer une application console .net core dans Visual Studio pour Mac](with-visual-studio-mac.md).
+1. Ouvrez le projet que vous avez créé dans [créer une application console .net core à l’aide de Visual Studio pour Mac](with-visual-studio-mac.md).
 
    La configuration de build actuelle s’affiche sur la barre d’outils. L’image de barre d’outils suivante montre que Visual Studio est configuré pour compiler la version de débogage de l’application :
 
@@ -178,4 +178,4 @@ Pour générer et tester la version Release de l’application console, procéde
 Dans ce didacticiel, vous avez utilisé les outils de débogage de Visual Studio. Dans le didacticiel suivant, vous allez publier une version déployable de l’application.
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core avec Visual Studio pour Mac](publishing-with-visual-studio-mac.md)
+> [Publier une application console .NET Core à l’aide de Visual Studio pour Mac](publishing-with-visual-studio-mac.md)

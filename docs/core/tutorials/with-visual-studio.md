@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: c732728a98eb993762e4fbb9e4b0f5229fdde181
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4cd18aca4396f902268d59867760424d65ddcf6d
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811842"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867631"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio
 
@@ -115,4 +115,4 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 Dans ce didacticiel, vous avez créé une application console .NET Core. Dans le didacticiel suivant, vous allez déboguer l’application.
 
 > [!div class="nextstepaction"]
-> [Déboguer une application console .NET Core dans Visual Studio](debugging-with-visual-studio.md)
+> [Déboguer une application console .NET Core à l’aide de Visual Studio](debugging-with-visual-studio.md)

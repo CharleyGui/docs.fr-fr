@@ -2,12 +2,12 @@
 title: Déboguer une application console .NET Core à l’aide de Visual Studio Code
 description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 84c7b64ad7708cf2def084593cd7f96eb0ad82e5
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: e2be9324a77d0360247a225bbd93224d379bda0d
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810662"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867579"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio Code
 
@@ -15,7 +15,7 @@ Ce didacticiel présente les outils de débogage disponibles dans Visual Studio 
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
+- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core à l’aide de Visual Studio code](with-visual-studio-code.md).
 
 ## <a name="use-debug-build-configuration"></a>Utiliser la configuration de build Debug
 
@@ -27,7 +27,7 @@ Par défaut, Visual Studio Code paramètres de lancement utilisent la configurat
 
 1. Démarrer Visual Studio Code
 
-1. Ouvrez le dossier du projet que vous avez créé dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
+1. Ouvrez le dossier du projet que vous avez créé dans [créer une application console .net core à l’aide de Visual Studio code](with-visual-studio-code.md).
 
 ## <a name="set-a-breakpoint"></a>Définir un point d'arrêt
 
@@ -173,7 +173,7 @@ Visual Studio Code vous permet également d’effectuer un pas à pas détaillé
 
 1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
-   Visual Studio Code exécute le `Console.WriteLine` pour l’invite de nom et met en surbrillance la ligne suivante d’exécution. La ligne suivante est le `Console.ReadLine` pour le `name` . La fenêtre **variables** est inchangée et l’onglet **Terminal** affiche « quel est votre nom ? ». prompt.
+   Visual Studio Code exécute le `Console.WriteLine` pour l’invite de nom et met en surbrillance la ligne suivante d’exécution. La ligne suivante est le `Console.ReadLine` pour le `name` . La fenêtre **variables** est inchangée et l’onglet **Terminal** affiche « quel est votre nom ? ». .
 
 1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
@@ -215,7 +215,7 @@ Pour générer et tester la version Release de votre application console, ouvrez
 dotnet run --configuration Release
 ```
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 * [Débogage dans Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
 
@@ -224,4 +224,4 @@ dotnet run --configuration Release
 Dans ce didacticiel, vous avez utilisé Visual Studio Code outils de débogage. Dans le didacticiel suivant, vous allez publier une version déployable de l’application.
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core avec Visual Studio Code](publishing-with-visual-studio-code.md)
+> [Publier une application console .NET Core à l’aide de Visual Studio Code](publishing-with-visual-studio-code.md)

@@ -5,18 +5,24 @@ description: Répertorie les dernières modifications apportées à ASP.NET Core
 ms.date: 08/20/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 4f37bf73c13379bce006c9a3b51302c09562cc44
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 8b37ae5c5eea9e192a269092fccf435ab4877e61
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811260"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867670"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
 ASP.NET Core fournit les fonctionnalités de développement d’applications Web utilisées par .NET Core.
 
-Les modifications avec rupture suivantes sont documentées sur cette page :
+Sélectionnez l’un des liens suivants pour les modifications avec rupture dans une version spécifique :
+
+* [ASP.NET Core 5,0](#aspnet-core-50)
+* [ASP.NET Core 3,1](#aspnet-core-31)
+* [ASP.NET Core 3,0](#aspnet-core-30)
+
+Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont documentées sur cette page :
 
 - [Anti-contrefaçon, CORS, diagnostics, MVC et API de routage obsolètes supprimés](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
 - [Authentification : Google + Deprecated](#authentication-google-deprecated-and-replaced)

@@ -2,12 +2,12 @@
 title: Publier une application console .NET Core à l’aide de Visual Studio Code
 description: La publication crée l’ensemble des fichiers nécessaires à l’exécution d’une application .NET Core.
 ms.date: 07/04/2020
-ms.openlocfilehash: 04dfbae85f196ca4c8f8eb593637a801aa9773f2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: a84e66126806e2ab45c14527df1b931fa9980468
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811390"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867644"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : publier une application console .NET Core à l’aide de Visual Studio Code
 
@@ -17,19 +17,19 @@ Le CLI .NET Core est utilisé pour publier l’application. vous pouvez donc sui
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
+- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core à l’aide de Visual Studio code](with-visual-studio-code.md).
 
 ## <a name="publish-the-app"></a>Publier l’application
 
 1. Démarrer Visual Studio Code
 
-1. Ouvrez le dossier du projet *HelloWorld* que vous avez créé dans [créer une application console .net core dans Visual Studio code](with-visual-studio-code.md).
+1. Ouvrez le dossier du projet *HelloWorld* que vous avez créé dans [créer une application console .net core à l’aide de Visual Studio code](with-visual-studio-code.md).
 
 1. Choisissez **Afficher**  >  **Terminal** dans le menu principal.
 
    Le terminal s’ouvre dans le dossier *HelloWorld* .
 
-1. Exécutez la commande suivante :
+1. Exécutez la commande suivante :
 
    ```dotnetcli
    dotnet publish --configuration Release
@@ -103,7 +103,7 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
    1. Entrez un nom en réponse à l’invite, puis appuyez sur n’importe quelle touche pour quitter.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 - [Déploiement d’applications .NET Core](../deploying/index.md)
 
@@ -112,4 +112,4 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 Dans ce didacticiel, vous avez publié une application console. Dans le didacticiel suivant, vous allez créer une bibliothèque de classes.
 
 > [!div class="nextstepaction"]
-> [Créer une bibliothèque de .NET Standard dans Visual Studio Code](library-with-visual-studio-code.md)
+> [Créer une bibliothèque de .NET Standard à l’aide de Visual Studio Code](library-with-visual-studio-code.md)

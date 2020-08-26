@@ -2,12 +2,12 @@
 title: Publier une application console .NET Core à l’aide de Visual Studio pour Mac
 description: La publication crée l’ensemble des fichiers nécessaires à l’exécution d’une application .NET Core.
 ms.date: 06/08/2020
-ms.openlocfilehash: 38b656ac919dfb8b710a97c5d7fc63479e3fa367
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: ec6b867f145ffdea491187de3745149f2cebd8dd
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811403"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867540"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : publier une application console .NET Core à l’aide de Visual Studio pour Mac
 
@@ -15,13 +15,13 @@ Ce didacticiel montre comment publier une application console afin que d’autre
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core dans Visual Studio pour Mac](with-visual-studio-mac.md).
+- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core à l’aide de Visual Studio pour Mac](with-visual-studio-mac.md).
 
 ## <a name="publish-the-app"></a>Publier l’application
 
 1. Démarrez Visual Studio pour Mac.
 
-1. Ouvrez le projet HelloWorld que vous avez créé dans [créer une application console .net core dans Visual Studio pour Mac](with-visual-studio-mac.md).
+1. Ouvrez le projet HelloWorld que vous avez créé dans [créer une application console .net core à l’aide de Visual Studio pour Mac](with-visual-studio-mac.md).
 
 1. Vérifiez que Visual Studio génère la version release de votre application. Si nécessaire, modifiez le paramètre de configuration de la génération dans la barre d’outils de **Debug** en **Release**.
 
@@ -79,7 +79,7 @@ Comme l’indique l’image précédente, la sortie publiée comprend les fichie
 
    1. Entrez un nom en réponse à l’invite, puis appuyez sur n’importe quelle touche pour quitter.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 - [Déploiement d’applications .NET Core](../deploying/index.md)
 
@@ -88,4 +88,4 @@ Comme l’indique l’image précédente, la sortie publiée comprend les fichie
 Dans ce didacticiel, vous avez publié une application console. Dans le didacticiel suivant, vous allez créer une bibliothèque de classes.
 
 > [!div class="nextstepaction"]
-> [Créer une bibliothèque de .NET Standard dans Visual Studio pour Mac](library-with-visual-studio-mac.md)
+> [Créer une bibliothèque de .NET Standard à l’aide de Visual Studio pour Mac](library-with-visual-studio-mac.md)

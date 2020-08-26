@@ -1,17 +1,17 @@
 ---
-title: Champs répétés pour les listes et les tableaux - gRPC pour les développeurs WCF
-description: Comprendre comment Protobuf gère les collections et comment elles se rapportent aux collections .NET.
+title: Champs répétés pour les listes et les tableaux-gRPC pour les développeurs WCF
+description: Découvrez comment Protobuf gère les collections et comment elles sont liées aux collections .NET.
 ms.date: 09/09/2019
-ms.openlocfilehash: 63d99532d14deea7800673dd5a6350dd9362ad54
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7320c76ddc58bcf5cd81150923e8cb635e510047
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79147969"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867501"
 ---
 # <a name="repeated-fields-for-lists-and-arrays"></a>Champs répétés pour les listes et les tableaux
 
-Vous spécifiez des listes dans `repeated` Protocol Buffer (Protobuf) en utilisant le mot clé préfixe. L’exemple suivant montre comment créer une liste :
+Vous spécifiez des listes dans la mémoire tampon de protocole (Protobuf) à l’aide du `repeated` mot clé prefix. L’exemple suivant montre comment créer une liste :
 
 ```protobuf
 message Person {
@@ -20,10 +20,12 @@ message Person {
 }
 ```
 
-Dans le code `repeated` généré, les `Google.Protobuf.Collections.RepeatedField<T>` champs sont représentés par le type générique plutôt que par l’un des types de collecte .NET intégrés.
+Dans le code généré, les `repeated` champs sont représentés par les propriétés en lecture seule du [`Google.Protobuf.Collections.RepeatedField<T>`][repeated-field] type au lieu de l’un des types de collections .net intégrés. Ce type implémente toutes les interfaces de collection .NET standard, telles que <xref:System.Collections.Generic.IList%601> et <xref:System.Collections.Generic.IEnumerable%601> . Vous pouvez utiliser des requêtes LINQ ou la convertir facilement en tableau ou une liste.
 
-Le `RepeatedField<T>` type comprend le code nécessaire pour sérialiser et déséialiser la liste au format de fil binaire. Il implémente toutes les interfaces <xref:System.Collections.Generic.IList%601> de <xref:System.Collections.Generic.IEnumerable%601>collecte .NET standard, telles que et . Ainsi, vous pouvez utiliser des requêtes LINQ ou la convertir en un tableau ou une liste facilement.
+Le `RepeatedField<T>` type comprend le code requis pour sérialiser et désérialiser la liste au format de câble binaire.
+
+[repeated-field]: https://developers.google.cn/protocol-buffers/docs/reference/csharp/class/google/protobuf/collections/repeated-field-t-
 
 >[!div class="step-by-step"]
->[Suivant précédent](protobuf-nested-types.md)
->[Next](protobuf-reserved.md)
+>[Précédent](protobuf-nested-types.md) 
+> [Suivant](protobuf-reserved.md)
