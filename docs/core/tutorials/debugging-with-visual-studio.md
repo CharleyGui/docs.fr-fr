@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 0555c6b4185da088333503c1e744da2dd7b4f2e4
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 4e408d5bd0976d88f368615860ac373142d0fe1e
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867592"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957223"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio
 
@@ -27,7 +27,7 @@ Ce didacticiel présente les outils de débogage disponibles dans Visual Studio.
 
 Dans la configuration Debug, un programme est compilé avec des informations de débogage symboliques complètes et aucune optimisation. L'optimisation complique le débogage, étant donné que la relation entre le code source et les instructions générées est plus complexe. La configuration Release d’un programme n’a pas d’informations de débogage symboliques et est entièrement optimisée.
 
- Par défaut, Visual Studio Code utilise la configuration de build Debug. vous n’avez donc pas besoin de le modifier avant le débogage.
+ Par défaut, Visual Studio utilise la configuration de build Debug. vous n’avez donc pas besoin de le modifier avant le débogage.
 
 1. Démarrez Visual Studio.
 
@@ -41,7 +41,7 @@ Dans la configuration Debug, un programme est compilé avec des informations de 
 
 Un *point d’arrêt* interrompt temporairement l’exécution de l’application avant l’exécution de la ligne avec le point d’arrêt.
 
-1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code sur cette ligne. La marge de gauche se trouve à gauche des numéros de ligne.  Une autre façon de définir un point d’arrêt consiste à placer le curseur dans la ligne de code, puis **à choisir**  >  **basculer le point d’arrêt** dans la barre de menus.
+1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code sur cette ligne. La marge de gauche se trouve à gauche des numéros de ligne.  D’autres façons de définir un point d’arrêt consiste à placer le curseur dans la ligne de code, puis à appuyer sur <kbd>F9</kbd> ou à choisir **Déboguer**le  >  **point d’arrêt** dans la barre de menus.
 
    Comme le montre l’illustration suivante, Visual Studio indique la ligne sur laquelle le point d’arrêt est défini en le mettant en surbrillance et en affichant un point rouge dans la marge de gauche.
 
@@ -127,7 +127,7 @@ Le programme affiche la chaîne que l’utilisateur entre. Que se passe-t-il si 
 
 1. Appuyez sur n’importe quelle touche pour fermer la fenêtre de console et arrêter le débogage.
 
-1. Effacez le point d’arrêt en cliquant sur le point dans la marge de gauche de la fenêtre de code. Une autre façon de supprimer un point d’arrêt consiste à choisir **Déboguer > basculer le point d’arrêt** pendant que la ligne de code est sélectionnée.
+1. Effacez le point d’arrêt en cliquant sur le point dans la marge de gauche de la fenêtre de code. Pour supprimer un point d’arrêt, vous pouvez notamment appuyer sur <kbd>F9</kbd> ou choisir **déboguer > basculer le point d’arrêt** pendant que la ligne de code est sélectionnée.
 
 ## <a name="step-through-a-program"></a>Parcourir un programme
 

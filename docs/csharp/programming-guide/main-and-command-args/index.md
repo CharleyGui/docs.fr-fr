@@ -3,7 +3,6 @@ title: Main() et arguments de ligne de commande - Guide de programmation C#
 description: En savoir plus sur les arguments main () et de ligne de commande. La méthode main est le point d’entrée d’un programme exécutable.
 ms.date: 08/02/2017
 f1_keywords:
-- CS5001
 - main_CSharpKeyword
 - Main
 helpviewer_keywords:
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: 95ec9d3dfebe4721d4b1822939f925aa37b9e9c4
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 611b0c8818f8f800cf1cf5c0f6b2789882939b7b
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382072"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957536"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() et arguments de ligne de commande (Guide de programmation C#)
 
@@ -28,7 +27,7 @@ Il ne peut y avoir qu’un seul point d’entrée dans un programme C#. Si vous 
 
 [!code-csharp[csProgGuideMain#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#17)]
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 - La méthode `Main` est le point d’entrée d’un programme exécutable ; c’est l’endroit où le contrôle du programme commence et se termine.
 - `Main` est déclaré à l’intérieur d’une classe ou d’un struct. `Main` doit être [statique](../../language-reference/keywords/static.md) et ne doit pas être [public](../../language-reference/keywords/public.md). (Dans l’exemple précédent, il reçoit l’accès par défaut de [Private](../../language-reference/keywords/private.md).) La classe ou le struct englobant ne doit pas obligatoirement être statique.

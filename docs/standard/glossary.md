@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: c984a29208d8680de3c04f6b4d16c6f41afedc71
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 59e338de99510759e3e7acfd782915ed6dc5d988
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812339"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957571"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -48,13 +48,13 @@ Bibliothèque de classes de base. Également appelées *bibliothèques d’infra
 
 Ensemble de bibliothèques qui composent le système. \* (et, dans une certaine mesure, Microsoft. \* ) espaces. La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core.
 
-Le code source de la bibliothèque de classes de base pour [.net 5 et versions ultérieures (y compris .net Core 2.1-3.1)](#net-5-and-later-versions) est contenu dans le [référentiel du Runtime .net](https://github.com/dotnet/runtime). La majorité des API BCL pour cette implémentation plus récente de .NET sont également disponibles dans .NET Framework, ce qui vous permet de considérer ce code source comme une fourche du code source BCL .NET Framework.
+Le code source de la bibliothèque de classes de [base pour .net 5 (et .net Core) et les versions ultérieures](#net-5-and-later-versions) est contenu dans le [référentiel du Runtime .net](https://github.com/dotnet/runtime). La majorité des API BCL pour cette implémentation plus récente de .NET sont également disponibles dans .NET Framework, ce qui vous permet de considérer ce code source comme une fourche du code source BCL .NET Framework.
 
 ## <a name="clr"></a>CLR
 
 Common Language Runtime.
 
-La signification exacte dépend du contexte. Le Common Language Runtime fait généralement référence au runtime de [.NET Framework](#net-framework) ou au runtime de [.net 5 et versions ultérieures (y compris .net Core 2.1-3.1)](#net-5-and-later-versions).
+La signification exacte dépend du contexte. Le Common Language Runtime fait généralement référence au runtime de [.NET Framework](#net-framework) ou au runtime de [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions).
 
 Un CLR gère l’allocation et la gestion de la mémoire. Un CLR est également un ordinateur virtuel qui exécute non seulement des applications, mais génère et compile du code à la volée à l’aide d’un compilateur [JIT](#jit) .
 
@@ -66,7 +66,7 @@ Voir aussi [Runtime](#runtime).
 
 ## <a name="core-clr"></a>CLR principal
 
-Le Common Language Runtime pour [.net 5 et versions ultérieures (y compris .net Core 2.1-3.1)](#net-5-and-later-versions).
+Le Common Language Runtime pour [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions).
 
 Voir [CLR](#clr)
 
@@ -126,7 +126,7 @@ Semblable au compilateur [AOT](#aot), ce compilateur convertit le langage [IL](#
 Une implémentation de .NET comprend les éléments suivants :
 
 - Un ou plusieurs runtimes. Exemples : [CLR](#clr), [CoreRT](#corert).
-- Une bibliothèque de classes qui implémente une version de .NET Standard et qui peut inclure des API supplémentaires. Exemples : [BCL](#bcl) pour [.NET Framework](#net-framework) et [.net 5 et versions ultérieures (y compris .net Core 2.1-3.1)](#net-5-and-later-versions).
+- Une bibliothèque de classes qui implémente une version de .NET Standard et qui peut inclure des API supplémentaires. Exemples : [BCL](#bcl) pour [.NET Framework](#net-framework) et [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions).
 - Le cas échéant, un ou plusieurs frameworks d’application. Exemples : [ASP.net](#aspnet), Windows Forms et WPF sont inclus dans les .NET Framework et .net 5.
 - Le cas échéant, des outils de développement. Certains outils de développement sont partagés entre plusieurs implémentations.
 
@@ -173,7 +173,7 @@ Consultez [.net](../core/index.yml).
 
 ## <a name="net-cli"></a>CLI .NET
 
-Chaîne d’outils multiplateforme pour le développement d’applications et de bibliothèques pour [.net 5 et versions ultérieures (y compris .net Core 2.1-3.1)](#net-5-and-later-versions). Également connu sous le nom de CLI .NET Core.
+Chaîne d’outils multiplateforme pour le développement d’applications et de bibliothèques pour [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions). Également connu sous le nom de CLI .NET Core.
 
 Consultez la section [CLI .net](../core/tools/index.md).
 
@@ -181,7 +181,7 @@ Consultez la section [CLI .net](../core/tools/index.md).
 
 Consultez [.net 5 et versions ultérieures](#net-5-and-later-versions).
 
-## <a name="net-framework"></a>.NET Framework
+## <a name="net-framework"></a>.NET Framework
 
 Implémentation de .NET qui s’exécute uniquement sur Windows. Comprend le[CLR](#clr)(Common Language Runtime), la bibliothèque de classes de base ([BCL](#bcl)) et les bibliothèques de l’infrastructure d’application, telles que [ASP.net](#aspnet), Windows Forms et WPF.
 
@@ -199,7 +199,7 @@ Consultez [Présentation de .NET Native et CoreRT](https://github.com/dotnet/cor
 
 ## <a name="net-sdk"></a>Kit de développement logiciel (SDK) .NET
 
-Ensemble de bibliothèques et d’outils qui permettent aux développeurs de créer des applications et des bibliothèques .NET pour [.net 5 et versions ultérieures (y compris .net Core 2.1-3.1)](#net-5-and-later-versions). Également connu sous le nom de kit SDK .NET Core.
+Ensemble de bibliothèques et d’outils qui permettent aux développeurs de créer des applications et des bibliothèques .NET pour [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions). Également connu sous le nom de kit SDK .NET Core.
 
 Comprend l' [interface CLI .net](#net-cli) pour la génération d’applications, les bibliothèques .net et le runtime pour la génération et l’exécution d’applications, ainsi que l’exécutable dotnet (*dotnet.exe*) qui exécute des commandes CLI et exécute des applications.
 
@@ -252,7 +252,7 @@ Le mot « Runtime » a une signification différente dans les contextes suivan
 
   « Runtime » est ici le [CLR](#clr) avec le [BCL](#bcl) (bibliothèques d’infrastructure) que vous pouvez télécharger et installer sur un ordinateur afin de pouvoir exécuter des applications [dépendantes](../core/deploying/index.md#publish-framework-dependent) de l’infrastructure sur l’ordinateur.
 
-* [Identificateur de Runtime (RID)](../core/rid-catalog.md) pour [.net 5 et versions ultérieures (y compris .net Core 2.1-3.1)](#net-5-and-later-versions).
+* [Identificateur de Runtime (RID)](../core/rid-catalog.md) pour [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions).
 
   « Runtime » correspond à la plateforme du système d’exploitation et à l’architecture du processeur sur laquelle s’exécute une application .NET, par exemple : `linux-x64` .
 
@@ -290,7 +290,7 @@ Consultez [Versions cibles de .NET Framework](frameworks.md).
 
 Plateforme Windows universelle.
 
-Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Il est conçu pour unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites en C++, C#, Visual Basic et JavaScript. Lorsque vous utilisez C# et Visual Basic, les API .NET sont fournies par .NET 5 et les versions ultérieures (y compris .NET Core 2.1-3.1).
+Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Il est conçu pour unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites en C++, C#, Visual Basic et JavaScript. Lorsque vous utilisez C# et Visual Basic, les API .NET sont fournies par .NET 5 (et .NET Core) et les versions ultérieures.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,15 +2,15 @@
 title: Modifications avec rupture ASP.NET Core
 titleSuffix: ''
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 08/20/2020
+ms.date: 08/25/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 8b37ae5c5eea9e192a269092fccf435ab4877e61
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 443494291f4ec58aecd7c8d8ed42cb4086e64095
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867670"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957728"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -81,6 +81,7 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 - [MVC : outil de précompilation déconseillé](#mvc-precompilation-tool-deprecated)
 - [MVC : types modifiés en interne](#mvc-pubternal-types-changed-to-internal)
 - [MVC : Shim de compatibilité de l’API Web supprimé](#mvc-web-api-compatibility-shim-removed)
+- [Razor : l’API RazorTemplateEngine a été supprimée](#razor-razortemplateengine-api-removed)
 - [Razor : la compilation du runtime a été déplacée vers un package](#razor-runtime-compilation-moved-to-a-package)
 - [Sécurité : encodage du nom du cookie supprimé](#security-cookie-name-encoding-removed)
 - [Sécurité : les versions du package NuGet IdentityModel ont été mises à jour](#security-identitymodel-nuget-package-versions-updated)
@@ -354,6 +355,10 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 ***
 
 [!INCLUDE[MVC: Web API compatibility shim removed](~/includes/core-changes/aspnetcore/3.0/mvc-webapi-compat-shim-removed.md)]
+
+***
+
+[!INCLUDE[Razor: RazorTemplatEengine API removed](~/includes/core-changes/aspnetcore/3.0/razor-razortemplateengine-api-removed.md)]
 
 ***
 

@@ -4,20 +4,24 @@ description: Découvrez comment supprimer les applications autonomes pour rédui
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: e3eb161b14f206723ad034af0a4a6ba8cd575578
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 47bccf25b6f6a1b65742bb5e3f5f299932659c3c
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810610"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957551"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Supprimer les exécutables et les déploiements autonomes
 
 Le [modèle de déploiement dépendant du Framework](index.md#publish-framework-dependent) est le modèle de déploiement le plus performant depuis la création de .net. Dans ce scénario, le développeur d’applications ne regroupe que l’application et les assemblys tiers dans l’attente que le Runtime .NET et les bibliothèques d’infrastructure soient disponibles sur l’ordinateur client. Ce modèle de déploiement est toujours le plus dominant dans .NET Core, mais dans certains scénarios, le modèle dépendant du Framework n’est pas optimal. L’alternative consiste à publier une [application autonome](index.md#publish-self-contained), où le Runtime .net Core et l’infrastructure sont regroupés avec l’application et les assemblys tiers.
 
-Le modèle Trim-self-contained Deployment est une version spécialisée du modèle de déploiement autonome qui est optimisé pour réduire la taille du déploiement. La réduction de la taille du déploiement est une condition essentielle pour certains scénarios côté client comme les applications éblouissantes. En fonction de la complexité de l’application, seul un sous-ensemble des assemblys de l’infrastructure est requis pour exécuter l’application. Ces parties inutilisées de la bibliothèque ne sont pas nécessaires et peuvent être supprimées de l’application empaquetée. Toutefois, il existe un risque que l’analyse du temps de génération de l’application puisse provoquer des échecs lors de l’exécution, en raison de l’impossibilité d’analyser de manière fiable divers modèles de code problématiques (principalement centrés sur l’utilisation de la réflexion). Étant donné que la fiabilité ne peut pas être garantie, ce modèle de déploiement est proposé sous la forme d’une fonctionnalité en version préliminaire. Le moteur d’analyse du temps de génération fournit des avertissements au développeur de modèles de code problématiques, dans l’attente que ces modèles de code soient corrigés. Dans la mesure du possible, nous vous recommandons de déplacer toutes les dépendances de réflexion du runtime dans votre application pour créer du temps à l’aide d’un code qui répond aux mêmes exigences.
+Le modèle Trim-self-contained Deployment est une version spécialisée du modèle de déploiement autonome qui est optimisé pour réduire la taille du déploiement. La réduction de la taille du déploiement est une condition essentielle pour certains scénarios côté client comme les applications éblouissantes. En fonction de la complexité de l’application, seul un sous-ensemble des assemblys de l’infrastructure est référencé et un sous-ensemble du code dans chaque assembly est requis pour exécuter l’application. Les parties inutilisées des bibliothèques ne sont pas nécessaires et peuvent être supprimées de l’application empaquetée.
 
-Le mode de découpage des applications peut être configuré via TrimMode et par défaut ( `copyused` ) pour regrouper les assemblys utilisés dans l’application. Les applications webassembly éblouissantes utilisent un mode plus agressif ( `link` ) qui découpera le code inutilisé dans les assemblys. Les avertissements d’analyse de suppression fournissent des informations sur les modèles de code où une analyse de dépendance complète n’était pas possible. Ces avertissements sont supprimés par défaut et peuvent être activés en affectant à l’indicateur, la `SuppressTrimAnalysisWarnings` valeur false. Vous trouverez plus d’informations sur les options de suppression disponibles sur la [page ILLinker](https://github.com/mono/linker/blob/master/docs/illink-options.md).
+Toutefois, il existe un risque que l’analyse du temps de génération de l’application puisse provoquer des échecs lors de l’exécution, en raison de l’impossibilité d’analyser de manière fiable divers modèles de code problématiques (principalement centrés sur l’utilisation de la réflexion). Étant donné que la fiabilité ne peut pas être garantie, ce modèle de déploiement est proposé sous la forme d’une fonctionnalité en version préliminaire.
+
+Le moteur d’analyse de la durée de génération fournit des avertissements au développeur de modèles de code problemmatic pour détecter les autres codes requis. Le code peut être annoté avec des attributs pour indiquer au massicot les autres éléments à inclure. De nombreux modèles de réflexion peuvent être remplacés par la génération de code au moment de la génération à l’aide de [générateurs de source](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md).
+
+Le mode de découpage des applications est configuré avec le `TrimMode` paramètre. La valeur par défaut est `copyused` et regroupe les assemblys référencés avec l’application. La `link` valeur est utilisée avec les applications de Webassembly éblouissantes et supprime le code inutilisé dans les assemblys. Les avertissements d’analyse de suppression fournissent des informations sur les modèles de code où une analyse de dépendance complète n’était pas possible. Ces avertissements sont supprimés par défaut et peuvent être activés en affectant à l’indicateur la valeur `SuppressTrimAnalysisWarnings` `false` . Pour plus d’informations sur les options de suppression disponibles, consultez la [page ILLinker](https://github.com/mono/linker/blob/master/docs/illink-options.md).
 
 > [!NOTE]
 > Le découpage est une fonctionnalité expérimentale de .NET Core 3,1, 5,0, qui est _uniquement_ disponible pour les applications qui sont publiées de façon autonome.

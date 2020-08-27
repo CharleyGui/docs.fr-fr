@@ -2,12 +2,12 @@
 title: Déboguer une application console .NET Core à l’aide de Visual Studio pour Mac
 description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 79936fb99d0bc37c1234eb8f227eb5415ae48b93
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 011647a6e3e676909880befa3b770205eb9616d6
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867566"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957523"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio pour Mac
 
@@ -23,7 +23,7 @@ Ce didacticiel présente les outils de débogage disponibles dans Visual Studio 
 
 Dans la configuration Debug, un programme est compilé avec des informations de débogage symboliques complètes et aucune optimisation. L'optimisation complique le débogage, étant donné que la relation entre le code source et les instructions générées est plus complexe. La configuration Release d’un programme n’a pas d’informations de débogage symboliques et est entièrement optimisée.
 
-Par défaut, Visual Studio utilise la configuration de build Debug. vous n’avez donc pas besoin de le modifier avant le débogage.
+Par défaut, Visual Studio pour Mac utilise la configuration de build Debug. vous n’avez donc pas besoin de le modifier avant le débogage.
 
 1. Démarrez Visual Studio pour Mac.
 

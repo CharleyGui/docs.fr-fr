@@ -11,12 +11,12 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-ms.openlocfilehash: 4730a14e499c75176d7ba7c8378626070d5211e9
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 2e71dc177a0358370c7eecde03d9388cced60b75
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865175"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957435"
 ---
 # <a name="create-resource-files-for-net-apps"></a>Créer des fichiers de ressources pour les applications .NET
 
@@ -206,5 +206,5 @@ Au moment de la compilation, Visual Studio convertit en premier les fichiers .re
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Resources>
-- [Ressources dans les applications de bureau](index.md)
+- [Ressources dans les applications .NET](index.md)
 - [Packaging and Deploying Resources](packaging-and-deploying-resources-in-desktop-apps.md)
