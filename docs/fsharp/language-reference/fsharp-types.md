@@ -38,13 +38,13 @@ Le tableau suivant indique les aspects de la syntaxe de type pour les types F #.
 |type primitif|*nom du type*|`int`<br /><br />`float`<br /><br />`string`|
 |type d’agrégat (Class, structure, Union, record, enum, etc.)|*nom du type*|`System.DateTime`<br /><br />`Color`|
 |abréviation de type|*type-abréviation-Name*|`bigint`|
-|type qualifié complet|*Namespaces. type-name*<br /><br />ou<br /><br />*modules. type-nom*<br /><br />ou<br /><br />*Namespaces. modules. type-name*|`System.IO.StreamWriter`|
+|type qualifié complet|*Namespaces. type-name*<br /><br />or<br /><br />*modules. type-nom*<br /><br />or<br /><br />*Namespaces. modules. type-name*|`System.IO.StreamWriter`|
 |tableau|*nom-type*[] ou<br /><br />tableau *de noms de types*|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
 |tableau à deux dimensions|*nom-type*[,]|`int[,]`<br /><br />`float[,]`|
 |tableau à trois dimensions|*nom-type*[,,]|`float[,,]`|
 |tuple|*tapez-nom1* &#42; *type-name2* ...|Par exemple, `(1,'b',3)` a le type `int * char * int`|
-|type générique|*type-* *type-generic-type-name*<br /><br />ou<br /><br />*generic-type-name* &lt; *type-parameter-list*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
-|type construit (type générique qui a un argument de type spécifique fourni)|*type-argument* *générique-type-nom*<br /><br />ou<br /><br />*generic-type-name* &lt; *type-argument-List*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
+|type générique|*type-* *type-generic-type-name*<br /><br />or<br /><br />*generic-type-name* &lt; *type-parameter-list*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
+|type construit (type générique qui a un argument de type spécifique fourni)|*type-argument* *générique-type-nom*<br /><br />or<br /><br />*generic-type-name* &lt; *type-argument-List*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
 |type de fonction qui a un seul paramètre|*paramètre-type1*  - &gt; *type de retour*|Une fonction qui prend un `int` et retourne un `string` type a `int -> string`|
 |type de fonction qui a plusieurs paramètres|*paramètre-type1*  - &gt; *paramètre-type2*  - &gt; ...- &gt; *Return-type*|Une fonction qui accepte un `int` et un `float` et retourne un `string` type. `int -> float -> string`|
 |fonction d’ordre supérieur en tant que paramètre|(*fonction-type*)|`List.map` a le type `('a -> 'b) -> 'a list -> 'b list`|
