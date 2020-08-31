@@ -1,15 +1,16 @@
 ---
+description: in, modificateur de paramètre - Référence C#
 title: in, modificateur de paramètre - Référence C#
 ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: 20956f9e25b6830a8876824a4c9dad1dbc4c4f3e
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 613be9248e6ce9b974bcab1b59abd30469e9e180
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249368"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118402"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>in, modificateur de paramètre (référence C#)
 
@@ -116,16 +117,16 @@ Vous ne pouvez pas utiliser les mots clés `in`, `ref` ou `out` pour les types d
   
 - Méthodes async, que vous définissez à l’aide du modificateur [async](async.md).  
 - Les méthodes Iterator, qui incluent une instruction [yield return](yield.md) ou `yield break`.
-- Le premier argument d’une `in` méthode d’extension ne peut pas avoir le modificateur à moins que cet argument ne soit une struction.
-- Le premier argument d’une méthode d’extension où cet argument est un type générique (même lorsque ce type est contraint d’être une struct.)
+- Le premier argument d’une méthode d’extension ne peut pas avoir le `in` modificateur, sauf si cet argument est un struct.
+- Le premier argument d’une méthode d’extension où cet argument est un type générique (même si ce type est imposé comme struct).
 
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Paramètres de méthodes](method-parameters.md)
-- [Écrire du code sécurisé et efficace](../../write-safe-efficient-code.md)
+- [Écrire du code efficace sécurisé](../../write-safe-efficient-code.md)

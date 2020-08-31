@@ -1,15 +1,16 @@
 ---
+description: private protected - Référence C#
 title: private protected - Référence C#
 ms.date: 11/15/2017
 f1_keywords:
 - privateprotected_CSharpKeyword
 author: sputier
-ms.openlocfilehash: 94ef55d7e13841f81b036f52659b215e22a3a0d7
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: d83fd2a570b735a029bd2a79ad24e30d235dc5fb
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301799"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89117959"
 ---
 # <a name="private-protected-c-reference"></a>private protected (Référence C#)
 
@@ -63,7 +64,7 @@ Le premier fichier contient une classe de base publique, `BaseClass`, et un type
 
 Dans le deuxième fichier, une tentative d’accès à `myValue` en tant que membre hérité de `DerivedClass2` génère une erreur, car il est accessible seulement par des types dérivés dans Assembly1.
 
-Si `Assembly1.cs` contient un <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> nom `Assembly2` , la classe dérivée aura `DerivedClass1` accès aux `private protected` membres déclarés dans `BaseClass` . `InternalsVisibleTo`rend `private protected` les membres visibles aux classes dérivées dans d’autres assemblys.
+Si `Assembly1.cs` contient un <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> nom `Assembly2` , la classe dérivée aura `DerivedClass1` accès aux `private protected` membres déclarés dans `BaseClass` . `InternalsVisibleTo` rend `private protected` les membres visibles aux classes dérivées dans d’autres assemblys.
 
 Les membres de struct ne peuvent pas être `private protected`, car le struct ne peut pas être hérité.
 

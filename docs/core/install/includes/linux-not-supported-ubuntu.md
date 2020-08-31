@@ -7,4 +7,4 @@ ms.lasthandoff: 06/09/2020
 ms.locfileid: "84602935"
 ---
 
-❌Notez que cette version d’Ubuntu n’est plus prise en charge.
+❌ Notez que cette version d’Ubuntu n’est plus prise en charge.

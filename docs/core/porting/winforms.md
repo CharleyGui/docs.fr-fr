@@ -4,12 +4,12 @@ description: Explique comment porter un .NET Framework Windows Forms application
 author: Thraka
 ms.author: adegeo
 ms.date: 01/24/2020
-ms.openlocfilehash: efa73428c816eddc00c62c2275d3457c92284388
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 71bd5740e1ea380fdde86328a5aed71fded64765
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206132"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118544"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Comment porter une application de bureau Windows Forms sur .NET Core
 
@@ -26,7 +26,7 @@ Dans cet article, différents noms sont utilisés pour identifier les types de f
 
 ## <a name="prerequisites"></a>Prérequis
 
-- [Visual Studio 2019 16,5 Preview 1](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&ch=pre&rel=16) ou version ultérieure pour tout travail du concepteur que vous souhaitez effectuer. Nous vous recommandons de mettre à jour vers la dernière [version d’évaluation de Visual Studio](https://visualstudio.microsoft.com/vs/preview/).
+- [Visual Studio 2019 version 16,5 ou ultérieure](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&rel=16) pour tout travail du concepteur que vous souhaitez effectuer. Nous vous recommandons d’effectuer la mise à jour vers la [dernière version de Visual Studio](https://visualstudio.microsoft.com/vs/).
 
   Installez les charges de travail Visual Studio suivantes :
   
@@ -37,7 +37,7 @@ Dans cet article, différents noms sont utilisés pour identifier les types de f
 - Projet codé en C#.
 
 > [!NOTE]
-> Les projets .NET Core 3,0 sont uniquement pris en charge dans **Visual Studio 2019** ou version ultérieure. À compter de **Visual Studio 2019 version 16,5 Preview 1**, .net Core Windows Forms Designer est également pris en charge.
+> Les projets de Windows Forms .NET Core sont pris en charge dans Visual Studio 2019 et versions ultérieures. Le concepteur de Windows Forms .NET Core est pris en charge à partir de Visual Studio 2019 version 16,5.
 >
 > Pour activer le concepteur, accédez à **Outils**  >  **options**  >  **environnement**  >  **Aperçu fonctionnalités** , puis sélectionnez l’option **utiliser l’aperçu Windows Forms Designer pour les applications .net Core** .
 
@@ -158,7 +158,7 @@ Ajoutez le nœud `<ItemGroup>` suivant à votre projet. Chaque instruction inclu
 
 Vous pouvez également créer une entrée `<Compile>` ou `<EmbeddedResource>` pour chaque fichier de votre projet .NET Framework.
 
-## <a name="add-nuget-packages"></a>Ajout de packages NuGet
+## <a name="add-nuget-packages"></a>Ajouter des packages NuGet
 
 Ajoutez au projet .NET Core chacun des packages NuGet auxquels le projet .NET Framework fait référence.
 

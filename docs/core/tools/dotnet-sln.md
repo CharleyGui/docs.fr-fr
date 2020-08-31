@@ -2,20 +2,20 @@
 title: Commande dotnet sln
 description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et lister des projets dans un fichier solution.
 ms.date: 02/14/2020
-ms.openlocfilehash: 231287477d986f9ec4a5404cc5278e76c297faa4
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: efe52f64a29c8825070bae9ee96b430b32176ffa
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463400"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053029"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
-**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
 ## <a name="name"></a>Nom
 
-`dotnet sln`- Listes ou modifications des projets dans un fichier de solution .NET Core.
+`dotnet sln` -Répertorie ou modifie les projets dans un fichier solution .NET Core.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -27,9 +27,9 @@ dotnet sln [command] -h|--help
 
 ## <a name="description"></a>Description
 
-La `dotnet sln` commande fournit un moyen pratique d’énumérer et de modifier des projets dans un fichier de solution.
+La `dotnet sln` commande offre un moyen pratique de répertorier et de modifier des projets dans un fichier solution.
 
-Pour que la commande `dotnet sln` puisse être utilisée, le fichier solution doit déjà exister. Si vous avez besoin d’en créer un, utilisez la nouvelle commande [dotnet,](dotnet-new.md) comme dans l’exemple suivant :
+Pour que la commande `dotnet sln` puisse être utilisée, le fichier solution doit déjà exister. Si vous devez en créer un, utilisez la commande [dotnet New](dotnet-new.md) , comme dans l’exemple suivant :
 
 ```dotnetcli
 dotnet new sln
@@ -39,13 +39,13 @@ dotnet new sln
 
 - **`SOLUTION_FILE`**
 
-  Le fichier de solution à utiliser. Si cet argument est omis, la commande recherche l’annuaire actuel pour un. S’il ne trouve aucun fichier de solution ou plusieurs fichiers de solution, la commande échoue.
+  Fichier solution à utiliser. Si cet argument est omis, la commande recherche un dans le répertoire actif. S’il ne trouve aucun fichier solution ou plusieurs fichiers solution, la commande échoue.
 
 ## <a name="options"></a>Options
 
 - **`-h|--help`**
 
-  Imprime une description de la façon d’utiliser la commande.
+  Imprime une description de l’utilisation de la commande.
 
 ## <a name="commands"></a>Commandes
 
@@ -63,17 +63,17 @@ dotnet sln list [-h|--help]
 
 - **`SOLUTION_FILE`**
 
-  Le fichier de solution à utiliser. Si cet argument est omis, la commande recherche l’annuaire actuel pour un. S’il ne trouve aucun fichier de solution ou plusieurs fichiers de solution, la commande échoue.
+  Fichier solution à utiliser. Si cet argument est omis, la commande recherche un dans le répertoire actif. S’il ne trouve aucun fichier solution ou plusieurs fichiers solution, la commande échoue.
 
 #### <a name="options"></a>Options
 
 - **`-h|--help`**
 
-  Imprime une description de la façon d’utiliser la commande.
+  Imprime une description de l’utilisation de la commande.
   
 ### `add`
 
-Ajoute un ou plusieurs projets au fichier de solution.
+Ajoute un ou plusieurs projets au fichier solution.
 
 #### <a name="synopsis"></a>Synopsis
 
@@ -86,17 +86,17 @@ dotnet sln add [-h|--help]
 
 - **`SOLUTION_FILE`**
 
-  Le fichier de solution à utiliser. S’il n’est pas précisé, la commande recherche l’annuaire actuel pour un et échoue s’il ya plusieurs fichiers de solution.
+  Fichier solution à utiliser. Si elle n’est pas spécifiée, la commande recherche un répertoire actif et échoue s’il existe plusieurs fichiers solution.
 
 - **`PROJECT_PATH`**
 
-  Le chemin vers le projet ou les projets à ajouter à la solution. Les extensions [de motifs de globbing](https://en.wikipedia.org/wiki/Glob_(programming)) `dotnet sln` de coquilles Unix/Linux sont traitées correctement par la commande.
+  Chemin d’accès au projet ou aux projets à ajouter à la solution. Les extensions de [modèle de globbing](https://en.wikipedia.org/wiki/Glob_(programming)) de shell UNIX/Linux sont traitées correctement par la `dotnet sln` commande.
 
 #### <a name="options"></a>Options
 
 - **`-h|--help`**
 
-  Imprime une description de la façon d’utiliser la commande.
+  Imprime une description de l’utilisation de la commande.
 
 - **`--in-root`**
 
@@ -104,7 +104,7 @@ dotnet sln add [-h|--help]
 
 - **`-s|--solution-folder <PATH>`**
 
-  Le chemin de dossier de solution de destination pour ajouter les projets à. Option disponible à partir du kit SDK .NET Core 3.0.
+  Chemin d’accès du dossier de solution de destination auquel ajouter les projets. Option disponible à partir du kit SDK .NET Core 3.0.
 
 ### `remove`
 
@@ -121,21 +121,21 @@ dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
 
 - **`SOLUTION_FILE`**
 
-  Le fichier de solution à utiliser. Si elle n’est pas précisée, la commande recherche l’annuaire actuel pour un et échoue s’il existe plusieurs fichiers de solutions.
+  Fichier solution à utiliser. Si n’est pas spécifié, la commande recherche un répertoire actif et échoue s’il existe plusieurs fichiers solution.
 
 - **`PROJECT_PATH`**
 
-  Le chemin vers le projet ou les projets à ajouter à la solution. Les extensions [de motifs de globbing](https://en.wikipedia.org/wiki/Glob_(programming)) `dotnet sln` de coquilles Unix/Linux sont traitées correctement par la commande.
+  Chemin d’accès au projet ou aux projets à ajouter à la solution. Les extensions de [modèle de globbing](https://en.wikipedia.org/wiki/Glob_(programming)) de shell UNIX/Linux sont traitées correctement par la `dotnet sln` commande.
 
 #### <a name="options"></a>Options
 
 - **`-h|--help`**
 
-  Imprime une description de la façon d’utiliser la commande.
+  Imprime une description de l’utilisation de la commande.
 
 ## <a name="examples"></a>Exemples
 
-- Énumérez les projets dans une solution :
+- Répertorier les projets dans une solution :
 
   ```dotnetcli
   dotnet sln todo.sln list
@@ -153,7 +153,7 @@ dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
   dotnet sln remove todo-app/todo-app.csproj
   ```
 
-- Ajoutez plusieurs projets C à la racine d’une solution :
+- Ajoutez plusieurs projets C# à la racine d’une solution :
 
   ```dotnetcli
   dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj --in-root
@@ -171,26 +171,26 @@ dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
   dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
   ```
 
-- Ajoutez plusieurs projets C à une solution à l’aide d’un modèle de glisse (Unix/Linux uniquement) :
+- Ajouter plusieurs projets C# à une solution à l’aide d’un modèle globbing (UNIX/Linux uniquement) :
 
   ```dotnetcli
   dotnet sln todo.sln add **/*.csproj
   ```
 
-- Ajoutez plusieurs projets C à une solution à l’aide d’un modèle de glisse (Windows PowerShell uniquement) :
+- Ajouter plusieurs projets C# à une solution à l’aide d’un modèle globbing (Windows PowerShell uniquement) :
 
   ```dotnetcli
-  dotnet sln todo.sln add (ls **/*.csproj)
+  dotnet sln todo.sln add (ls -r **/*.csproj)
   ```
 
-- Supprimer plusieurs projets C d’une solution à l’aide d’un modèle de globbing (Unix/Linux uniquement) :
+- Supprimer plusieurs projets C# d’une solution à l’aide d’un modèle globbing (UNIX/Linux uniquement) :
 
   ```dotnetcli
   dotnet sln todo.sln remove **/*.csproj
   ```
 
-- Supprimer plusieurs projets C d’une solution à l’aide d’un modèle de globbing (Windows PowerShell seulement):
+- Supprimer plusieurs projets C# d’une solution à l’aide d’un modèle globbing (Windows PowerShell uniquement) :
 
   ```dotnetcli
-  dotnet sln todo.sln remove (ls **/*.csproj)
+  dotnet sln todo.sln remove (ls -r **/*.csproj)
   ```

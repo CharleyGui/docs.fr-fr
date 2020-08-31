@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet,contperfq1
-ms.openlocfilehash: 595e93d8d8d22478c6770ddd4f70a0214653f5b9
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 45a44dcd73e1abcc8dfd75cd54da5a2310f027c4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187952"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118258"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio
 
@@ -21,7 +21,7 @@ Une *bibliothèque de classes* définit des types et des méthodes qui peuvent �
 
 Lorsque vous avez terminé votre bibliothèque de classes, vous pouvez la distribuer en tant que package NuGet ou en tant que composant fourni avec l’application qui l’utilise.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2019 version 16,6 ou une version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement multiplateforme .net Core** installée. Le kit de développement logiciel (SDK) .NET Core 3,1 est automatiquement installé lorsque vous sélectionnez cette charge de travail.
 
@@ -70,7 +70,7 @@ Pour créer la solution vide :
 
    `StartsWithUpper` est implémenté en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) afin que vous puissiez l’appeler comme s’il s’agissait d’un membre de la <xref:System.String> classe.
 
-1. Dans la barre de menus, sélectionnez **générer**  >  **générer la solution** pour vérifier que le projet se compile sans erreur.
+1. Dans la barre de menus, sélectionnez **générer**  >  **générer la solution** ou appuyez sur <kbd>CTRL</kbd> + <kbd>MAJ</kbd> + <kbd>B</kbd> pour vérifier que le projet se compile sans erreur.
 
 ## <a name="add-a-console-app-to-the-solution"></a>Ajouter une application console à la solution
 

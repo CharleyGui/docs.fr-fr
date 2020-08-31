@@ -32,9 +32,9 @@ Version du kit de développement logiciel (SDK) ou du runtime à installer. Cet 
 
 ### <a name="examples"></a>Exemples
 
-- Installez le ASP.NET Core 3,1 Runtime :`aspnetcore-runtime-3.1`
-- Installez le Runtime .NET Core 2,1 :`dotnet-runtime-2.1`
-- Installez le kit de développement logiciel (SDK) .NET Core 3,1 :`dotnet-sdk-3.1`
+- Installez le ASP.NET Core 3,1 Runtime : `aspnetcore-runtime-3.1`
+- Installez le Runtime .NET Core 2,1 : `dotnet-runtime-2.1`
+- Installez le kit de développement logiciel (SDK) .NET Core 3,1 : `dotnet-sdk-3.1`
 
 ### <a name="package-missing"></a>Package manquant
 

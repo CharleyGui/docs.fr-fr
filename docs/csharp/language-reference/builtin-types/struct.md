@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 515b8d9adc1359581625f0d822e254d2c1df3b58
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 8f99af5accdecf1892a67a88c221e866bfddcbb2
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062494"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053042"
 ---
 # <a name="structure-types-c-reference"></a>Types de structures (référence C#)
 
@@ -27,7 +27,7 @@ En général, vous utilisez des types de structure pour concevoir de petits type
 
 Étant donné que les types de structure ont une sémantique de valeur, nous vous recommandons de définir des types de structures *immuables* .
 
-## <a name="readonly-struct"></a>`readonly`modélis
+## <a name="readonly-struct"></a>`readonly` modélis
 
 À compter de C# 7,2, vous utilisez le `readonly` modificateur pour déclarer qu’un type structure est immuable :
 
@@ -38,14 +38,14 @@ Tous les membres de données d’un `readonly` struct doivent être en lecture s
 - Toute déclaration de champ doit avoir le [ `readonly` modificateur](../keywords/readonly.md)
 - Toute propriété, y compris celles implémentées automatiquement, doit être en lecture seule
 
-Cela garantit qu’aucun membre d’un `readonly` struct ne modifie l’état de la structure.
+Cela garantit qu’aucun membre d’un `readonly` struct ne modifie l’état de la structure. En C# 8,0 et versions ultérieures, cela signifie que d’autres membres d’instance, à l’exception des constructeurs, sont implicitement [`readonly`](#readonly-instance-members) .
 
 > [!NOTE]
 > Dans un `readonly` struct, un membre de données d’un type référence mutable peut toujours muter son propre État. Par exemple, vous ne pouvez pas remplacer une <xref:System.Collections.Generic.List%601> instance, mais vous pouvez lui ajouter de nouveaux éléments.
 
-## <a name="readonly-instance-members"></a>`readonly`membres d’instance
+## <a name="readonly-instance-members"></a>`readonly` membres d’instance
 
-À compter de C# 8,0, vous pouvez également utiliser le `readonly` modificateur pour déclarer qu’un membre d’instance ne modifie pas l’état d’un struct. Si vous ne pouvez pas déclarer le type de structure entier comme `readonly` , utilisez le `readonly` modificateur pour marquer les membres d’instance qui ne modifient pas l’état de la structure. Dans une `readonly` structure, chaque membre d’instance est implicitement `readonly` .
+À compter de C# 8,0, vous pouvez également utiliser le `readonly` modificateur pour déclarer qu’un membre d’instance ne modifie pas l’état d’un struct. Si vous ne pouvez pas déclarer le type de structure entier comme `readonly` , utilisez le `readonly` modificateur pour marquer les membres d’instance qui ne modifient pas l’état de la structure.
 
 Dans un `readonly` membre d’instance, vous ne pouvez pas assigner aux champs d’instance de la structure. Toutefois, un `readonly` membre peut appeler un non- `readonly` membre. Dans ce cas, le compilateur crée une copie de l’instance de structure et appelle le non `readonly` membre sur cette copie. Par conséquent, l’instance de la structure d’origine n’est pas modifiée.
 
@@ -102,7 +102,7 @@ Dans le cas des [types valeur intégrés](value-types.md#built-in-value-types), 
 
 Lorsque vous transmettez une variable de type structure à une méthode en tant qu’argument ou que vous retournez une valeur structure-type à partir d’une méthode, l’ensemble de l’instance d’un type structure est copié. Cela peut affecter les performances de votre code dans les scénarios de haute performance qui impliquent des types de structure volumineux. Vous pouvez éviter la copie de valeurs en passant une variable de type structure par référence. Utilisez les [`ref`](../keywords/ref.md#passing-an-argument-by-reference) [`out`](../keywords/out-parameter-modifier.md) [`in`](../keywords/in-parameter-modifier.md) modificateurs de paramètre de méthode, ou pour indiquer qu’un argument doit être passé par référence. Utilisez les [retours Ref](../../programming-guide/classes-and-structs/ref-returns.md) pour retourner un résultat de méthode par référence. Pour plus d’informations, consultez [écrire du code C# sécurisé et efficace](../../write-safe-efficient-code.md).
 
-## <a name="ref-struct"></a>`ref`modélis
+## <a name="ref-struct"></a>`ref` modélis
 
 À compter de C# 7,2, vous pouvez utiliser le `ref` modificateur dans la déclaration d’un type structure. Les instances d’un `ref` type struct sont allouées sur la pile et ne peuvent pas échapper au tas managé. Pour garantir que, le compilateur limite l’utilisation des `ref` types struct comme suit :
 

@@ -2,12 +2,12 @@
 title: Déboguer une application console .NET Core à l’aide de Visual Studio Code
 description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: e2be9324a77d0360247a225bbd93224d379bda0d
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 8e84747256551b633a5bf74b72723ba8d2840d52
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867579"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118297"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio Code
 
@@ -35,7 +35,7 @@ Un *point d’arrêt* interrompt temporairement l’exécution de l’applicatio
 
 1. Ouvrez le fichier *Program.cs* .
 
-1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code. La marge de gauche se trouve à gauche des numéros de ligne. Les autres méthodes de définition d’un point d’arrêt sont les suivantes : Appuyez sur <kbd>F9</kbd> ou sélectionnez **exécuter**  >  **basculer le point d’arrêt** dans le menu pendant que la ligne de code est sélectionnée.
+1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code. La marge de gauche se trouve à gauche des numéros de ligne. Les autres méthodes de définition d’un point d’arrêt sont les suivantes : Appuyez sur <kbd>F9</kbd> ou choisissez **exécuter**  >  **basculer le point d’arrêt** dans le menu pendant que la ligne de code est sélectionnée.
 
    Visual Studio Code indique la ligne sur laquelle le point d’arrêt est défini en affichant un point rouge dans la marge de gauche.
 
@@ -69,7 +69,7 @@ Le point d’arrêt se trouve après un `Console.ReadLine` appel de méthode. Le
 
    :::image type="content" source="media/debugging-with-visual-studio-code/select-debug-pane.png" alt-text="Ouvrir l’onglet Débogage dans Visual Studio Code":::
 
-1. Sélectionnez la flèche verte en haut du volet, en regard de **lancement de .net Core (console)**. Une autre façon de démarrer le programme en mode débogage consiste à choisir **exécuter**  >  **Démarrer le débogage** dans le menu.
+1. Sélectionnez la flèche verte en haut du volet, en regard de **lancement de .net Core (console)**. D’autres façons de démarrer le programme en mode débogage sont en appuyant sur <kbd>F5</kbd> ou en choisissant **exécuter**  >  **Démarrer le débogage** dans le menu.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/start-debugging.png" alt-text="Démarrer le débogage":::
 
@@ -133,7 +133,7 @@ Le programme affiche la chaîne que l’utilisateur entre. Que se passe-t-il si 
 
 1. Dans l’onglet **Terminal** , appuyez sur la touche <kbd>entrée</kbd> lorsque vous êtes invité à entrer votre nom.
 
-   Étant donné que la condition que vous avez spécifiée ( `name` est `null` ou <xref:System.String.Empty?displayProperty=nameWithType> ) a été satisfaite, l’exécution du programme s’arrête lorsqu’il atteint le point d’arrêt et avant que la `Console.WriteLine` méthode s’exécute.
+   Étant donné que la condition que vous avez spécifiée ( `name` a la valeur `null` ou <xref:System.String.Empty?displayProperty=nameWithType> ) a été satisfaite, l’exécution du programme s’arrête lorsqu’il atteint le point d’arrêt et avant que la `Console.WriteLine` méthode s’exécute.
 
    La fenêtre **variables** indique que la valeur de la `name` variable est `""` , ou <xref:System.String.Empty?displayProperty=nameWithType> .
 
@@ -215,7 +215,7 @@ Pour générer et tester la version Release de votre application console, ouvrez
 dotnet run --configuration Release
 ```
 
-## <a name="additional-resources"></a>Ressources complémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Débogage dans Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
 

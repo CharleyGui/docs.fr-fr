@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 68a3e848b3d80806e875dfb2fb7e2cbf223f8ad5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a9ccc461362b1be3e5bc2ee7d13d5d7d383192e4
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619492"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053155"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur Debian
 
@@ -31,13 +31,13 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [10](#debian-10-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [9](#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌ [8](#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌ [8](#debian-8-)       | ✔️ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
 
 Les versions suivantes de .NET Core ne sont plus prises en charge. Les téléchargements sont toujours publiés :
 
 - 3.0
-- 2.2
-- 2.0
+- 2,2
+- 2,0
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -49,7 +49,7 @@ Les versions suivantes de .NET Core ne sont plus prises en charge. Les télécha
 
 ```bash
 wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-dpkg -i packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
 ```
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
@@ -69,7 +69,7 @@ sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="debian-8-"></a>Debian 8❌
+## <a name="debian-8-"></a>Debian 8 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-debian.md)]
 
@@ -125,7 +125,7 @@ sudo apt-get update; \
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
 Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET Core ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
 
@@ -146,7 +146,7 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 - libgdiplus (version 6.0.1 ou ultérieure)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 

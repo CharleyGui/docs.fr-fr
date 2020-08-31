@@ -6,12 +6,12 @@ metadata:
   description: Découvrez .NET, une plateforme de développement Open source pour la création de nombreux types d’applications différents.
   ms.topic: landing-page
   ms.date: 04/22/2020
-  ms.openlocfilehash: 67fa6bb8c14ef3fad05b4874553a9ce75f811833
-  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+  ms.openlocfilehash: 37908d252d6dfcef92ce642f6f7c6f7e12f551f1
+  ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "82135813"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "89053210"
 landingContent:
 - title: En savoir plus sur .NET
   linkLists:
@@ -33,7 +33,7 @@ landingContent:
       url: ../core/about.md
     - text: Versions cibles de .NET Framework
       url: frameworks.md
-    - text: Common Language Runtime (CLR)
+    - text: CLR (Common Language Runtime)
       url: clr.md
     - text: Choisir entre .NET Core et .NET Framework pour les applications serveur
       url: choosing-core-framework-server.md
@@ -53,7 +53,7 @@ landingContent:
     links:
     - text: 'Sérialiser et désérialiser JSON à l’aide de C #'
       url: serialization/system-text-json-how-to.md
-    - text: Migrer de Newtonsoft. JSON vers System. Text. JSON
+    - text: Migrer de Newtonsoft.Jsvers System.Text.Jssur
       url: serialization/system-text-json-migrate-from-newtonsoft-how-to.md
     - text: Écrire des convertisseurs personnalisés pour la sérialisation JSON
       url: serialization/system-text-json-converters-how-to.md
@@ -93,11 +93,11 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Recommandations en matière de conception
+    - text: Instructions de conception
       url: design-guidelines/index.md
   - linkListType: concept
     links:
-    - text: Conventions d’affectation de noms
+    - text: Conventions d'attribution d'un nom
       url: design-guidelines/general-naming-conventions.md
     - text: Conventions de mise en majuscules
       url: design-guidelines/capitalization-conventions.md
@@ -127,7 +127,7 @@ landingContent:
     links:
     - text: Écrire du texte dans un fichier
       url: io/how-to-write-text-to-a-file.md
-    - text: Lire le texte d’un fichier
+    - text: Lire du texte dans un fichier
       url: io/how-to-read-text-from-a-file.md
     - text: compresser et extraire des fichiers
       url: io/how-to-compress-and-extract-files.md
@@ -141,6 +141,8 @@ landingContent:
       url: garbage-collection/fundamentals.md
     - text: Implémenter une méthode Dispose
       url: garbage-collection/implementing-dispose.md
+    - text: Implémenter une méthode DisposeAsync
+      url: garbage-collection/implementing-disposeasync.md
 - title: En savoir plus sur la programmation parallèle
   linkLists:
   - linkListType: overview

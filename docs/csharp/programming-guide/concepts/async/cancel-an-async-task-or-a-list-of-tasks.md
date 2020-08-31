@@ -4,12 +4,12 @@ description: Découvrez comment utiliser des jetons d’annulation pour signaler
 ms.date: 08/19/2020
 ms.topic: tutorial
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 000b6a89a9240344508a5ae6b248572c8a2177dc
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 30bef5d1a5082fbd3757377dbedb8f9b9d17e218
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811481"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053091"
 ---
 # <a name="cancel-a-list-of-tasks-c"></a>Annuler une liste de tâches (C#)
 
@@ -33,7 +33,7 @@ Ce didacticiel requiert les éléments suivants :
 
 ### <a name="create-example-application"></a>Créer un exemple d’application
 
-Créez une application de console .NET Core. Vous pouvez en créer un à l’aide de la commande [dotnet New console](../../../../core/tools/dotnet-new.md#console) ou de [Visual Studio](/visualstudio/install/install-visual-studio). Ouvrez le fichier *Program.cs* dans votre éditeur de code favori.
+Créez une application de console .NET Core. Vous pouvez en créer un à l’aide de la [`dotnet new console`](../../../../core/tools/dotnet-new.md#console) commande ou de [Visual Studio](/visualstudio/install/install-visual-studio). Ouvrez le fichier *Program.cs* dans votre éditeur de code favori.
 
 ### <a name="replace-using-statements"></a>Remplacer les instructions using
 

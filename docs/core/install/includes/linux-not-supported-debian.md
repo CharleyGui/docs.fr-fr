@@ -7,4 +7,4 @@ ms.lasthandoff: 06/09/2020
 ms.locfileid: "84603082"
 ---
 
-❌Notez que cette version de Debian n’est plus prise en charge.
+❌ Notez que cette version de Debian n’est plus prise en charge.

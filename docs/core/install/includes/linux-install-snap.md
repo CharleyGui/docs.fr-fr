@@ -45,7 +45,7 @@ Les packages Snap pour le Runtime .NET Core sont publiés sous leur propre ident
 |-------------------|---------------------|
 | 3,1 (LTS)         | `dotnet-runtime-31` |
 | 3.0               | `dotnet-runtime-30` |
-| 2.2               | `dotnet-runtime-22` |
+| 2,2               | `dotnet-runtime-22` |
 | 2,1 (LTS)         | `dotnet-runtime-21` |
 
 Utilisez la `snap install` commande pour installer un package de composant logiciel enfichable du Runtime .net core. Dans cet exemple, .NET Core 3,1 est installé :
@@ -84,6 +84,6 @@ export SSL_CERT_DIR=/dev/null
 
 L’emplacement du certificat varie selon le distribution. Voici les emplacements du distributions où nous avons rencontré le problème.
 
-* Fedora`/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem`
-* OpenSUSE`/etc/ssl/ca-bundle.pem`
-* Solus -`/etc/ssl/certs/ca-certificates.crt`
+* Fedora `/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem`
+* OpenSUSE `/etc/ssl/ca-bundle.pem`
+* Solus - `/etc/ssl/certs/ca-certificates.crt`

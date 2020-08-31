@@ -2,12 +2,12 @@
 title: Conventions de codage F#
 description: 'Découvrez des instructions générales et des idiomes lors de l’écriture de code F #.'
 ms.date: 01/15/2020
-ms.openlocfilehash: 47e9183ce22689a050878cf10d7a9bcf3b929ec6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 748a9c26794f46dcc67fdcfcf21f41847a462a19
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143527"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053009"
 ---
 # <a name="f-coding-conventions"></a>Conventions de codage F#
 
@@ -46,7 +46,7 @@ type MyClass() =
     ...
 ```
 
-### <a name="carefully-apply-autoopen"></a>Appliquer avec prudence`[<AutoOpen>]`
+### <a name="carefully-apply-autoopen"></a>Appliquer avec prudence `[<AutoOpen>]`
 
 La `[<AutoOpen>]` construction peut polluer l’étendue de ce qui est disponible pour les appelants, et la réponse à l’origine d’un élément provient de « Magic ». Ce n’est pas une bonne chose. La bibliothèque principale F # est une exception à cette règle (bien que ce fait soit également un peu controversé).
 
@@ -108,34 +108,19 @@ open System.IO
 open System.Reflection
 open System.Text
 
-open Microsoft.FSharp.Compiler
-open Microsoft.FSharp.Compiler.AbstractIL
-open Microsoft.FSharp.Compiler.AbstractIL.Diagnostics
-open Microsoft.FSharp.Compiler.AbstractIL.IL
-open Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader
-open Microsoft.FSharp.Compiler.AbstractIL.Internal
-open Microsoft.FSharp.Compiler.AbstractIL.Internal.Library
+open FSharp.Compiler
+open FSharp.Compiler.AbstractIL
+open FSharp.Compiler.AbstractIL.Diagnostics
+open FSharp.Compiler.AbstractIL.IL
+open FSharp.Compiler.AbstractIL.ILBinaryReader
+open FSharp.Compiler.AbstractIL.Internal
+open FSharp.Compiler.AbstractIL.Internal.Library
 
-open Microsoft.FSharp.Compiler.AccessibilityLogic
-open Microsoft.FSharp.Compiler.Ast
-open Microsoft.FSharp.Compiler.CompileOps
-open Microsoft.FSharp.Compiler.CompileOptions
-open Microsoft.FSharp.Compiler.Driver
-open Microsoft.FSharp.Compiler.ErrorLogger
-open Microsoft.FSharp.Compiler.Infos
-open Microsoft.FSharp.Compiler.InfoReader
-open Microsoft.FSharp.Compiler.Lexhelp
-open Microsoft.FSharp.Compiler.Layout
-open Microsoft.FSharp.Compiler.Lib
-open Microsoft.FSharp.Compiler.NameResolution
-open Microsoft.FSharp.Compiler.PrettyNaming
-open Microsoft.FSharp.Compiler.Parser
-open Microsoft.FSharp.Compiler.Range
-open Microsoft.FSharp.Compiler.Tast
-open Microsoft.FSharp.Compiler.Tastops
-open Microsoft.FSharp.Compiler.TcGlobals
-open Microsoft.FSharp.Compiler.TypeChecker
-open Microsoft.FSharp.Compiler.SourceCodeServices.SymbolHelpers
+open FSharp.Compiler.AccessibilityLogic
+open FSharp.Compiler.Ast
+open FSharp.Compiler.CompileOps
+open FSharp.Compiler.CompileOptions
+open FSharp.Compiler.Driver
 
 open Internal.Utilities
 open Internal.Utilities.Collections
@@ -237,7 +222,7 @@ Utilisez `nullArg` , `invalidArg` et `invalidOp` comme mécanisme de levée `Arg
 
 Les `failwith` `failwithf` fonctions et doivent généralement être évitées, car elles lèvent le type de base `Exception` , et non une exception spécifique. Conformément aux [règles de conception d’exception](../../standard/design-guidelines/exceptions.md), vous souhaitez déclencher des exceptions plus spécifiques lorsque vous le pouvez.
 
-### <a name="using-exception-handling-syntax"></a>Utilisation de la syntaxe de gestion des exceptions
+### <a name="use-exception-handling-syntax"></a>Utiliser la syntaxe de gestion des exceptions
 
 F # prend en charge les modèles d’exception via la `try...with` syntaxe suivante :
 
@@ -365,7 +350,7 @@ MySolution.sln
 |_/API.fsproj
 ```
 
-`ImplementationLogic.fsproj`peut exposer du code tel que :
+`ImplementationLogic.fsproj` peut exposer du code tel que :
 
 ```fsharp
 module Transactions =
@@ -443,18 +428,18 @@ Enfin, la généralisation automatique n’est pas toujours une aubaine pour les
 
 ## <a name="performance"></a>Performances
 
-### <a name="prefer-structs-for-small-data-types"></a>Préférer des structs pour les petits types de données
+### <a name="consider-structs-for-small-types-with-high-allocation-rates"></a>Envisagez les structs pour les petits types avec des taux d’allocation élevés
 
 L’utilisation de structs (également appelés types valeur) peut souvent aboutir à des performances supérieures pour du code, car il évite généralement d’allouer des objets. Toutefois, les structs ne sont pas toujours un bouton « Go plus rapide » : si la taille des données d’un struct dépasse 16 octets, la copie des données peut souvent entraîner une réduction du temps processeur par rapport à l’utilisation d’un type référence.
 
 Pour déterminer si vous devez utiliser un struct, tenez compte des conditions suivantes :
 
 - Si la taille de vos données est inférieure ou égal à 16 octets.
-- Si vous avez probablement un grand nombre de ces types de données résidant en mémoire dans un programme en cours d’exécution.
+- Si de nombreuses instances de ces types sont susceptibles de résider en mémoire dans un programme en cours d’exécution.
 
 Si la première condition s’applique, vous devez généralement utiliser un struct. Si les deux s’appliquent, vous devez presque toujours utiliser un struct. Il peut y avoir des cas où les conditions précédentes s’appliquent, mais l’utilisation d’un struct n’est pas mieux ou pire que l’utilisation d’un type référence, mais elles sont susceptibles d’être rares. Toutefois, il est important de toujours mesurer le moment où les modifications sont apportées, et non pas en fonction de l’hypothèse ou de l’intuition.
 
-#### <a name="prefer-struct-tuples-when-grouping-small-value-types"></a>Préférer les tuples de struct lors du regroupement de petits types de valeur
+#### <a name="consider-struct-tuples-when-grouping-small-value-types-with-high-allocation-rates"></a>Envisagez les tuples de struct lors du regroupement de petits types de valeur avec des taux d’allocation élevés
 
 Considérez les deux fonctions suivantes :
 
@@ -486,7 +471,7 @@ Lorsque vous testez ces fonctions avec un outil d’évaluation statistique comm
 
 Toutefois, ces résultats ne seront pas toujours le cas dans votre propre code. Si vous marquez une fonction en tant que `inline` , le code qui utilise des tuples de référence peut obtenir des optimisations supplémentaires, ou le code qui allouerait peut simplement être optimisé. Vous devez toujours mesurer les résultats chaque fois que les performances le concernent et ne jamais travailler en fonction de l’hypothèse ou de l’intuition.
 
-#### <a name="prefer-struct-records-when-the-data-type-is-small"></a>Préférer les enregistrements de struct lorsque le type de données est petit
+#### <a name="consider-struct-records-when-the-type-is-small-and-has-high-allocation-rates"></a>Envisagez les enregistrements de struct lorsque le type est petit et a des taux d’allocation élevés
 
 La règle de curseur de défilement décrite précédemment contient également des [types d’enregistrement F #](../language-reference/records.md). Tenez compte des types de données et des fonctions suivants qui les traitent :
 
@@ -521,9 +506,9 @@ Cela est similaire au code de tuple précédent, mais cette fois-ci, l’exemple
 
 Lorsque vous testez ces fonctions avec un outil d’évaluation statistique comme [BenchmarkDotNet](https://benchmarkdotnet.org/), vous constaterez que `processStructPoint` s’exécute presque 60% plus rapidement et n’alloue rien sur le tas managé.
 
-#### <a name="prefer-struct-discriminated-unions-when-the-data-type-is-small"></a>Préférer les unions discriminées struct lorsque le type de données est petit
+#### <a name="consider-struct-discriminated-unions-when-the-data-type-is-small-with-high-allocation-rates"></a>Envisagez les unions discriminées struct lorsque le type de données est petit avec des taux d’allocation élevés
 
-Les observations précédentes sur les performances avec les tuples de struct et les enregistrements contiennent également des [unions discriminées F #](../language-reference/discriminated-unions.md). Examinons le code ci-dessous.
+Les observations précédentes sur les performances avec les tuples de struct et les enregistrements contiennent également des [unions discriminées F #](../language-reference/discriminated-unions.md). Considérez le code suivant :
 
 ```fsharp
     type Name = Name of string
@@ -616,7 +601,7 @@ type Closure1Table() =
         | (false, _) -> false
 ```
 
-`Closure1Table`encapsule la structure de données basée sur la mutation sous-jacente, ce qui ne force pas les appelants à gérer la structure de données sous-jacente. Les classes sont un moyen puissant d’encapsuler des données et des routines basées sur une mutation sans exposer les détails aux appelants.
+`Closure1Table` encapsule la structure de données basée sur la mutation sous-jacente, ce qui ne force pas les appelants à gérer la structure de données sous-jacente. Les classes sont un moyen puissant d’encapsuler des données et des routines basées sur une mutation sans exposer les détails aux appelants.
 
 #### <a name="prefer-let-mutable-to-reference-cells"></a>Préférer les `let mutable` cellules de référence
 
@@ -670,7 +655,7 @@ F # offre une prise en charge complète des objets et des concepts orientés obj
 * Données mutables encapsulées
 * Opérateurs sur les types
 * Propriétés automatiques
-* Implémentation `IDisposable` et`IEnumerable`
+* Implémentation `IDisposable` et `IEnumerable`
 * Extensions de type
 * Événements
 * Structures
@@ -680,7 +665,7 @@ F # offre une prise en charge complète des objets et des concepts orientés obj
 **Évitez généralement ces fonctionnalités, sauf si vous devez les utiliser :**
 
 * Hiérarchies de types basées sur l’héritage et héritage d’implémentation
-* Valeurs NULL et`Unchecked.defaultof<_>`
+* Valeurs NULL et `Unchecked.defaultof<_>`
 
 ### <a name="prefer-composition-over-inheritance"></a>Préférer la composition à l’héritage
 
@@ -740,7 +725,7 @@ type BufferSize = int
 
 Cela peut prêter à confusion de plusieurs façons :
 
-* `BufferSize`n’est pas une abstraction ; Il s’agit simplement d’un autre nom pour un entier.
+* `BufferSize` n’est pas une abstraction ; Il s’agit simplement d’un autre nom pour un entier.
 * Si `BufferSize` est exposé dans une API publique, il peut facilement être interprété de manière erronée pour signifier plus que simplement `int` . En règle générale, les types de domaine ont plusieurs attributs et ne sont pas des types primitifs comme `int` . Cette abréviation ne respecte pas cette hypothèse.
 * La casse de `BufferSize` (casse Pascal) implique que ce type contient plus de données.
 * Cet alias n’offre pas de clarté accrue par rapport à la fourniture d’un argument nommé à une fonction.

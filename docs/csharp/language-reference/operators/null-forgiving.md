@@ -1,4 +1,5 @@
 ---
+description: '! opérateur (null-indulgent avec)-référence C#'
 title: '! opérateur (null-indulgent avec)-référence C#'
 ms.date: 10/11/2019
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: 5d8dcba5eb794d4d64f58e23a3ad952ef8055aeb
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 7ae35f4741e1ef377b73a15066dddd243c94d8fe
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916746"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118219"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null-indulgent avec), opérateur (référence C#)
 

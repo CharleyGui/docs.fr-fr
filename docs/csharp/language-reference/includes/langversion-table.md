@@ -7,7 +7,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 08/20/2020
 ms.locfileid: "88656204"
 ---
-| Value                     | Signification                                                                                                 |
+| Valeur                     | Signification                                                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------------------|
 | `preview`                 | Le compilateur accepte toute la syntaxe de langage valide de la dernière préversion.                         |
 | `latest`                  | Le compilateur accepte la syntaxe de la dernière version publiée du compilateur (versions mineures incluses). |

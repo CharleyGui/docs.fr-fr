@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: 15a99444d464594cc91a7c8805c564c703c3b608
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: d2de8fea17850685668766bc4ec6e64b1be77cce
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381903"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053189"
 ---
-# <a name="include-c-programming-guide"></a>\<include>(Guide de programmation C#)
+# <a name="include-c-programming-guide"></a>\<include> (Guide de programmation C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,9 +40,9 @@ ms.locfileid: "87381903"
 
 - `id`
 
-ID de la balise qui précède les commentaires. Mettez l’ID entre guillemets doubles (" ").
+  ID de la balise qui précède les commentaires. Mettez l’ID entre guillemets doubles (" ").
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 La `<include>` balise vous permet de faire référence aux commentaires d’un autre fichier qui décrivent les types et les membres de votre code source. Il s’agit d’une solution alternative au placement direct des commentaires de la documentation dans votre fichier de code source. En plaçant la documentation dans un fichier distinct, vous pouvez appliquer un contrôle de code source à la documentation indépendamment du code source. Ainsi, une personne peut extraire le fichier de code source et une autre personne peut extraire le fichier de documentation.
 

@@ -1,4 +1,5 @@
 ---
+description: if-else - Référence C#
 title: if-else - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,16 +11,16 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-ms.openlocfilehash: 61b60674d3b5de4649a52d2a165265ae0a27e0be
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: e2de84807a049bd47ea277db9fb010d0c2e4857d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738850"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118505"
 ---
 # <a name="if-else-c-reference"></a>if-else (référence C#)
 
-Une instruction `if` identifie l’instruction à exécuter en fonction de la valeur d’une expression booléenne. Dans l’exemple suivant, la variable `bool``condition` est définie sur `true` puis archivé dans l’instruction `if` . Le résultat est `The variable is set to true.`.
+Une instruction `if` identifie l’instruction à exécuter en fonction de la valeur d’une expression booléenne. Dans l’exemple suivant, la variable `bool``condition` est définie sur `true` puis archivé dans l’instruction `if` . La sortie est `The variable is set to true.`.
 
 [!code-csharp[csrefKeywordsSelection#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#1)]
 
@@ -71,7 +72,7 @@ Dans l’exemple suivant, vous entrez un caractère au clavier et le programme u
 
 ## <a name="example"></a>Exemple
 
-Vous pouvez également `if` nicher une déclaration à l’intérieur d’un autre bloc, comme le montre le code partiel suivant. L’exemple imbrique des instructions `if` à l’intérieur de deux blocs « else » et d’un bloc « then ». Les commentaires précisent les conditions qui sont vraies (true) et celles qui sont fausses (false) dans chaque bloc.
+Vous pouvez également imbriquer une `if` instruction à l’intérieur d’un bloc Else, comme le montre le code partiel suivant. L’exemple imbrique des instructions `if` à l’intérieur de deux blocs « else » et d’un bloc « then ». Les commentaires précisent les conditions qui sont vraies (true) et celles qui sont fausses (false) dans chaque bloc.
 
 [!code-csharp[csrefKeywordsSelection#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#5)]
 
@@ -81,7 +82,7 @@ L’exemple suivant détermine si un caractère d’entrée est une lettre minus
 
 [!code-csharp[csrefKeywordsSelection#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#6)]
 
-De la même manière que le bloc « else » ou le bloc « then » peuvent contenir n’importe quelle instruction valide, vous pouvez utiliser n’importe quelle expression booléenne valide pour la condition. Vous pouvez utiliser des `!` `&&`opérateurs `||` `&` [logiques](../operators/boolean-logical-operators.md) `^` tels que , , , , `|`et de faire des conditions composées. Le code suivant présente des exemples.
+De la même manière que le bloc « else » ou le bloc « then » peuvent contenir n’importe quelle instruction valide, vous pouvez utiliser n’importe quelle expression booléenne valide pour la condition. Vous pouvez utiliser des [opérateurs logiques](../operators/boolean-logical-operators.md) tels que `!` ,,,, `&&` `||` `&` `|` et `^` pour créer des conditions composées. Le code suivant présente des exemples.
 
 ```csharp
 // NOT
@@ -136,9 +137,9 @@ if (!(m >= n || m >= p))
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation CMD](../../programming-guide/index.md)
-- [Mots-clés C](index.md)
-- [?: Opérateur](../operators/conditional-operator.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](index.md)
+- [?:, Opérateur](../operators/conditional-operator.md)
 - [if-else, instruction (C++)](/cpp/cpp/if-else-statement-cpp)
 - [switch](switch.md)

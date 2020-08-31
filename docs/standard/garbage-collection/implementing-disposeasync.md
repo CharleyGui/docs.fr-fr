@@ -1,27 +1,27 @@
 ---
 title: Implémenter une méthode DisposeAsync
-description: ''
+description: Découvrez comment implémenter des méthodes DisposeAsync et DisposeAsyncCore pour effectuer un nettoyage asynchrone des ressources.
 author: IEvangelist
 ms.author: dapine
-ms.date: 06/02/2020
+ms.date: 08/25/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 0f6370d37703509681dd9fb818af8e7e2f3a1085
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 268cea7584040ad92e2da75e5e03112480cda93c
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608080"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053176"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implémenter une méthode DisposeAsync
 
 L' <xref:System.IAsyncDisposable?displayProperty=nameWithType> interface a été introduite dans le cadre de C# 8,0. Vous implémentez la <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> méthode lorsque vous devez effectuer un nettoyage des ressources, comme vous le feriez lors de l' [implémentation d’une méthode dispose](implementing-dispose.md). Toutefois, l’une des principales différences est que cette implémentation autorise les opérations de nettoyage asynchrones. <xref:System.IAsyncDisposable.DisposeAsync>Retourne un <xref:System.Threading.Tasks.ValueTask> qui représente l’opération de suppression asynchrone.
 
-Lors de l’implémentation de l' <xref:System.IAsyncDisposable> interface, les classes implémentent également l' <xref:System.IDisposable> interface. Un modèle d’implémentation correct de l' <xref:System.IAsyncDisposable> interface doit être préparé pour une suppression synchrone ou asynchrone. Toutes les instructions pour l’implémentation du modèle de suppression s’appliquent à l’implémentation asynchrone. Cet article suppose que vous êtes déjà familiarisé avec l’implémentation d' [une méthode dispose](implementing-dispose.md).
+C’est généralement le cas lors de l’implémentation de l' <xref:System.IAsyncDisposable> interface que les classes implémentent également l' <xref:System.IDisposable> interface. Un modèle d’implémentation correct de l' <xref:System.IAsyncDisposable> interface doit être préparé pour une suppression synchrone ou asynchrone. Toutes les instructions pour l’implémentation du modèle de suppression s’appliquent également à l’implémentation asynchrone. Cet article suppose que vous êtes déjà familiarisé avec l’implémentation d' [une méthode dispose](implementing-dispose.md).
 
 ## <a name="disposeasync-and-disposeasynccore"></a>DisposeAsync () et DisposeAsyncCore ()
 
@@ -30,17 +30,15 @@ L' <xref:System.IAsyncDisposable> interface déclare une méthode sans paramètr
 - `public` <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> Implémentation qui n’a aucun paramètre.
 - Une `protected virtual ValueTask DisposeAsyncCore()` méthode dont la signature est :
 
-```csharp
-protected virtual ValueTask DisposeAsyncCore()
-{
-}
-```
-
-La `DisposeAsyncCore()` méthode `virtual` permet aux classes dérivées de définir un nettoyage supplémentaire dans leurs substitutions.
+  ```csharp
+  protected virtual ValueTask DisposeAsyncCore()
+  {
+  }
+  ```
 
 ### <a name="the-disposeasync-method"></a>Méthode DisposeAsync ()
 
-La `public` méthode sans paramètre `DisposeAsync()` est appelée implicitement dans une `await using` instruction, et son objectif est de libérer des ressources non managées, d’effectuer un nettoyage général et d’indiquer que le finaliseur, le cas échéant, doit être exécuté. La libération de la mémoire associée à un objet géré est toujours le domaine du [garbage collector](index.md). De ce fait, son implémentation standard est la suivante :
+La `public` méthode sans paramètre `DisposeAsync()` est appelée implicitement dans une `await using` instruction, et son objectif est de libérer des ressources non managées, d’effectuer un nettoyage général et d’indiquer que le finaliseur, s’il en existe un, ne doit pas être exécuté. La libération de la mémoire associée à un objet géré est toujours le domaine du [garbage collector](index.md). De ce fait, son implémentation standard est la suivante :
 
 ```csharp
 public async ValueTask DisposeAsync()
@@ -57,6 +55,13 @@ public async ValueTask DisposeAsync()
 
 > [!NOTE]
 > L’une des principales différences dans le modèle de suppression asynchrone par rapport au modèle de suppression est que l’appel de <xref:System.IAsyncDisposable.DisposeAsync> à la `Dispose(bool)` méthode de surcharge est donné `false` comme argument. Toutefois, lors de l’implémentation de la <xref:System.IDisposable.Dispose?displayProperty=nameWithType> méthode, `true` est passé. Cela permet de garantir l’équivalence fonctionnelle avec le modèle de suppression synchrone et de s’assurer que les chemins de code du finaliseur sont toujours appelés. En d’autres termes, la `DisposeAsyncCore()` méthode supprime les ressources managées de manière asynchrone, donc vous ne voulez pas les supprimer de manière synchrone. Par conséquent, appelez `Dispose(false)` au lieu de `Dispose(true)` .
+
+### <a name="the-disposeasynccore-method"></a>Méthode DisposeAsyncCore ()
+
+La `DisposeAsyncCore()` méthode est conçue pour effectuer le nettoyage asynchrone des ressources managées ou pour les appels en cascade à `DisposeAsync()` . Il encapsule les opérations de nettoyage asynchrone courantes lorsqu’une sous-classe hérite d’une classe de base qui est une implémentation de <xref:System.IAsyncDisposable> . La `DisposeAsyncCore()` méthode `virtual` permet aux classes dérivées de définir un nettoyage supplémentaire dans leurs substitutions.
+
+> [!TIP]
+> Si une implémentation de <xref:System.IAsyncDisposable> est `sealed` , la `DisposeAsyncCore()` méthode n’est pas nécessaire et le nettoyage asynchrone peut être effectué directement dans la <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> méthode.
 
 ## <a name="implement-the-async-dispose-pattern"></a>Implémenter le modèle de suppression asynchrone
 
