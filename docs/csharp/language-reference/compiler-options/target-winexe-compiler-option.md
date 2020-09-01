@@ -1,4 +1,5 @@
 ---
+description: -target:winexe (Options du compilateur C#)
 title: -target:winexe (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - -target compiler options [C#], /target:winexe
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
-ms.openlocfilehash: 981f1b0b6ca9f708bb022a3662ab181a4f472040
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8a1be07455b54b375106fef1fb480d7abd2f1ca4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606381"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89124719"
 ---
 # <a name="-targetwinexe-c-compiler-options"></a>-target:winexe (Options du compilateur C#)
-**L’option -target:winexe** provoque le compilateur de créer un programme ExÉ exécutable (EXE), Windows.  
+L’option **-target : winexe** force le compilateur à créer un programme Windows exécutable (exe).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,7 +25,7 @@ ms.locfileid: "69606381"
 -target:winexe  
 ```  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
  Le fichier exécutable est créé avec l’extension .exe. Un programme Windows est un programme qui fournit une interface utilisateur à partir de la bibliothèque .NET Framework ou avec les API Windows.  
   
  Utilisez [-target:exe](./target-exe-compiler-option.md) pour créer une application console.  
@@ -45,7 +46,7 @@ ms.locfileid: "69606381"
   
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compilez `in.cs` en un programme Windows :  
   
 ```console  
@@ -54,5 +55,5 @@ csc -target:winexe in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [-cible (Options compilateur C)](./target-compiler-option.md)
-- [Options de compilateur C](./index.md)
+- [-Target (options du compilateur C#)](./target-compiler-option.md)
+- [Options du compilateur C#](./index.md)

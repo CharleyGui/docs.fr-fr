@@ -1,4 +1,5 @@
 ---
+description: -nowarn (options du compilateur C#)
 title: -nowarn (options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - /nowarn compiler option [C#]
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
-ms.openlocfilehash: fa3079bf1431ba1a16b5a2eef0dd5500fe95909c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ab906912bc4bfab40e459c92a823b915240b8d55
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606616"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125083"
 ---
 # <a name="-nowarn-c-compiler-options"></a>-nowarn (options du compilateur C#)
 L’option **-nowarn** vous permet de désactiver l’affichage d’un ou plusieurs avertissements par le compilateur. Séparez les numéros des avertissements par une virgule.  
@@ -28,7 +29,7 @@ L’option **-nowarn** vous permet de désactiver l’affichage d’un ou plusie
  `number1`, `number2`  
  Numéro de chaque avertissement que le compilateur ne doit pas afficher.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Vous devez spécifier uniquement la partie numérique de l’identificateur d’avertissement. Par exemple, si vous souhaitez supprimer l’avertissement CS0028, spécifiez `-nowarn:28`.  
   
  Le compilateur ignore automatiquement les numéros des avertissements passés à `-nowarn` qui étaient valides dans les versions précédentes, mais qui ont été supprimés dans le compilateur. Par exemple, l’avertissement CS0679 était valide dans le compilateur dans Visual Studio .NET 2002, mais il a été supprimé depuis cette version.  
@@ -53,6 +54,6 @@ L’option **-nowarn** vous permet de désactiver l’affichage d’un ou plusie
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
 - [Erreurs du compilateur C#](../compiler-messages/index.md)

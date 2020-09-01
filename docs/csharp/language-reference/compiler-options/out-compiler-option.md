@@ -1,4 +1,5 @@
 ---
+description: -out (Options du compilateur C#)
 title: -out (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 6c8408c0c613e361dae0c1db19f854e9421ca467
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d1b79879639e1cbdc3dc040977d9fcd0c3a73602
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70970379"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125018"
 ---
 # <a name="-out-c-compiler-options"></a>-out (Options du compilateur C#)
 L’option **-out** spécifie le nom du fichier de sortie.  
@@ -28,7 +29,7 @@ L’option **-out** spécifie le nom du fichier de sortie.
  `filename`  
  Nom du fichier de sortie créé par le compilateur.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Sur la ligne de commande, il est possible de spécifier plusieurs fichiers de sortie pour une même compilation. Le compilateur s’attend à trouver un ou plusieurs fichiers de code source à la suite de l’option **-out**. Ensuite, tous les fichiers de code source sont compilés dans le fichier de sortie spécifié par cette option **-out**.  
   
  Spécifiez le nom complet et l’extension du fichier que vous voulez créer.  
@@ -57,7 +58,7 @@ L’option **-out** spécifie le nom du fichier de sortie.
   
      Pour définir cette option de compilateur par programmation : <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> est une propriété en lecture seule, qui est déterminée par une combinaison du type de projet (exe, bibliothèque, etc.) et le nom de l’assembly. Il est nécessaire de modifier l’une de ces propriétés (ou les deux) pour définir le nom du fichier de sortie.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compilez `t.cs` et créez le fichier de sortie `t.exe`, puis générez `t2.cs` et créez le fichier de sortie de module `mymodule.netmodule` :  
   
 ```console  
@@ -66,6 +67,6 @@ csc t.cs -out:mymodule.netmodule -target:module t2.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
-- [Assemblées d’amis](../../../standard/assembly/friend.md)
+- [Options du compilateur C#](./index.md)
+- [Assemblys friend](../../../standard/assembly/friend.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

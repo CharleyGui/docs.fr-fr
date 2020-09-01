@@ -1,4 +1,5 @@
 ---
+description: -refonly (Options du compilateur C#)
 title: -refonly (Options du compilateur C#)
 ms.date: 07/08/2017
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - /refonly compiler option [C#]
 - -refonly compiler option [C#]
 - refonly compiler option [C#]
-ms.openlocfilehash: 856b65d3b2217dbe5d53ecda00723b47247d80a4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f9a92462203bedff93a4a711ca8742465b7a561c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72773852"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89124745"
 ---
 # <a name="-refonly-c-compiler-options"></a>-refonly (Options du compilateur C#)
 
@@ -24,13 +25,13 @@ L’option **-refonly** indique qu’un assembly de référence doit être gén�
 -refonly
 ```
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
-Les assemblages de référence sont un type spécial d’assemblage qui ne contient que la quantité minimale de métadonnées requises pour représenter la surface publique de l’API de la bibliothèque. Elles comprennent des déclarations pour tous les membres qui sont importantes lorsqu’ils font référence à une assemblée dans des outils de construction, mais excluent toutes les mises en œuvre et déclarations des membres du groupe privé qui n’ont aucune incidence observable sur leur contrat d’API. Pour plus d’informations, voir [les assemblages de référence](../../../standard/assembly/reference-assemblies.md) dans .NET Guide.
+Les assemblys de référence sont un type spécial d’assembly qui ne contient que la quantité minimale de métadonnées requises pour représenter la surface de l’API publique de la bibliothèque. Elles incluent des déclarations pour tous les membres qui sont significatifs lors du référencement d’un assembly dans les outils de génération, mais excluent toutes les implémentations de membres et les déclarations de membres privés qui n’ont aucun impact observable sur leur contrat d’API. Pour plus d’informations, consultez [références des assemblys](../../../standard/assembly/reference-assemblies.md) dans le guide .net.
 
-Les `-refonly` [`-refout`](refout-compiler-option.md) options et les options s’excluent mutuellement.
+Les `-refonly` options et s’excluent [`-refout`](refout-compiler-option.md) mutuellement.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

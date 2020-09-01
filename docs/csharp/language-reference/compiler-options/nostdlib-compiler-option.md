@@ -1,4 +1,5 @@
 ---
+description: -nostdlib (Options du compilateur C#)
 title: -nostdlib (Options du compilateur C#)
 ms.date: 12/20/2019
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - -nostdlib compiler option [C#]
 - /nostdlib compiler option [C#]
 ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
-ms.openlocfilehash: ad8a2b5fc87dd7beee86d96331cf3961315be533
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 214918b32f1f1276eb936e66daba3d372a1e9228
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345077"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125096"
 ---
 # <a name="-nostdlib-c-compiler-options"></a>-nostdlib (Options du compilateur C#)
 
@@ -25,7 +26,7 @@ ms.locfileid: "75345077"
 -nostdlib[+ | -]
 ```
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
 Utilisez cette option si vous souhaitez définir ou créer vos propres objets et espace de noms System.
 
@@ -34,13 +35,13 @@ Si vous ne spécifiez pas **-nostdlib**, mscorlib.dll est importé dans votre pr
 ### <a name="to-set-this-compiler-option-in-visual-studio"></a>Pour définir cette option de compilateur dans Visual Studio
 
 > [!NOTE]
-> Les instructions suivantes s’appliquent uniquement à Visual Studio 2015 (et versions antérieures). Le **Ne pas référence mscorlib.dll** construire la propriété n’existe pas dans les versions plus nouvelles de Visual Studio.
+> Les instructions suivantes s’appliquent uniquement à Visual Studio 2015 (et versions antérieures). La propriété **ne pas référencer mscorlib.dll** Build n’existe pas dans les versions plus récentes de Visual Studio.
 
 1. Ouvrez la page **Propriétés** du projet.
 
 2. Cliquez sur la page de propriétés **Générer** .
 
-3. Cliquez sur le bouton **Avancé**.
+3. Cliquez sur le bouton **Avancé** .
 
 4. Modifiez la propriété **Ne pas référencer mscorlib.dll** .
 
@@ -50,4 +51,4 @@ Pour plus d’informations sur la façon de définir cette option du compilateur
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
