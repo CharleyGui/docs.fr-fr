@@ -1,4 +1,5 @@
 ---
+description: -target:module (Options du compilateur C#)
 title: -target:module (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-ms.openlocfilehash: 25421df2e9306071ce3506aaf7affd1b259d1c32
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2c592d2fe001bb0908a06a6eb3287a39040b8715
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69602442"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128450"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target:module (Options du compilateur C#)
 Cette option empêche le compilateur de générer un manifeste d’assembly.  
@@ -24,7 +25,7 @@ Cette option empêche le compilateur de générer un manifeste d’assembly.
 -target:module  
 ```  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
  Par défaut, le fichier de sortie créé en effectuant une compilation avec cette option porte l’extension .netmodule.  
   
  Un fichier ne disposant pas d’un manifeste d’assembly ne peut pas être chargé par le Common Language Runtime (CLR) .NET Framework. Cependant, un tel fichier peut être incorporé dans le manifeste d’un assembly au moyen de [-addmodule](./addmodule-compiler-option.md).  
@@ -35,7 +36,7 @@ Cette option empêche le compilateur de générer un manifeste d’assembly.
   
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compilez `in.cs`, en créant `in.netmodule` :  
   
 ```console  
@@ -44,5 +45,5 @@ csc -target:module in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [-cible (Options compilateur C)](./target-compiler-option.md)
-- [Options de compilateur C](./index.md)
+- [-Target (options du compilateur C#)](./target-compiler-option.md)
+- [Options du compilateur C#](./index.md)

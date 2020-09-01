@@ -1,4 +1,5 @@
 ---
+description: -target:library (Options du compilateur C#)
 title: -target:library (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - target compiler options [C#], /target:library
 - /target compiler options [C#], /target:library
 ms.assetid: c5670e88-2126-47c1-8d1c-217923837d17
-ms.openlocfilehash: c947b2015c19d0809cab4535e989ee83ebf17fd9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 953249c4d0168ed3d279d03a0b2fb63d8ff6d5f5
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606392"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128476"
 ---
 # <a name="-targetlibrary-c-compiler-options"></a>-target:library (Options du compilateur C#)
 L’option **-target:library** indique au compilateur de créer une bibliothèque de liens dynamiques (DLL) à la place d’un fichier exécutable (EXE).  
@@ -24,7 +25,7 @@ L’option **-target:library** indique au compilateur de créer une bibliothèqu
 -target:library  
 ```  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
  La DLL est créée avec l’extension .dll.  
   
  Sauf spécification contraire avec l’option [-out](./out-compiler-option.md), le fichier de sortie prend le nom du premier fichier d’entrée.  
@@ -43,7 +44,7 @@ L’option **-target:library** indique au compilateur de créer une bibliothèqu
   
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compilez `in.cs`, en créant `in.dll` :  
   
 ```console  
@@ -52,5 +53,5 @@ csc -target:library in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [-cible (Options compilateur C)](./target-compiler-option.md)
-- [Options de compilateur C](./index.md)
+- [-Target (options du compilateur C#)](./target-compiler-option.md)
+- [Options du compilateur C#](./index.md)

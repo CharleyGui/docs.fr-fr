@@ -1,13 +1,14 @@
 ---
+description: -subsystemversion (Options du compilateur C#)
 title: -subsystemversion (Options du compilateur C#)
 ms.date: 07/20/2015
 ms.assetid: a99fce81-9d92-4813-9874-bee777041445
-ms.openlocfilehash: d76c9424340b4b6f3c211c849b466be55eb79d1e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e8001d8db214123e75fec4e1d1117ef90a9df606
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74802032"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128593"
 ---
 # <a name="-subsystemversion-c-compiler-options"></a>-subsystemversion (Options du compilateur C#)
 
@@ -30,14 +31,14 @@ Version minimale requise du sous-système, telle qu’elle est exprimée dans un
 
 Les zéros à gauche du numéro de version `minor` ne modifient pas la version, contrairement aux zéros de droite. Par exemple, 6.1 et 6.01 font référence à la même version, mais 6.10 fait référence à une version différente. Nous vous recommandons d’exprimer la version mineure avec deux chiffres pour éviter toute confusion.
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 Le tableau suivant répertorie les versions courantes de sous-système de Windows.
 
 |Version de Windows|Version de sous-système|
 |---------------------|-----------------------|
-|Windows 2000|5.00|
-|Windows XP|5,01|
+|Windows 2000|5,00|
+|Windows XP|5,01|
 |Windows Server 2003|5.02|
 |Windows Vista|6,00|
 |Windows 7|6.01|
@@ -50,9 +51,9 @@ La valeur par défaut de l’option du compilateur **-subsystemversion** dépend
 
 - La valeur par défaut est 6.02 si l’une quelconque des options du compilateur de la liste suivante est définie :
 
-  - [-cible:appcontainerexe](./target-appcontainerexe-compiler-option.md)
+  - [-target:appcontainerexe](./target-appcontainerexe-compiler-option.md)
 
-  - [/target:winmdobj](./target-winmdobj-compiler-option.md)
+  - [-target:winmdobj](./target-winmdobj-compiler-option.md)
 
   - [-platform:arm](./platform-compiler-option.md)
 
@@ -66,4 +67,4 @@ Pour définir l’option du compilateur **-subsystemversion** dans Visual Studio
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)

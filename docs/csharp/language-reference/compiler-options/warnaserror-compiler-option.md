@@ -1,4 +1,5 @@
 ---
+description: -warnaserror (Options du compilateur C#)
 title: -warnaserror (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - -warnaserror compiler option [C#]
 - warnaserror compiler option [C#]
 ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
-ms.openlocfilehash: 7d43941629e933ac5a9e9c9d6a1388b6194f8d99
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3ccd4546402dbc8e5d9245af6411ba2d831d4959
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503473"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89127241"
 ---
 # <a name="-warnaserror-c-compiler-options"></a>-warnaserror (Options du compilateur C#)
 L’option **-warnaserror+** considère tous les avertissements comme des erreurs.  
@@ -24,12 +25,12 @@ L’option **-warnaserror+** considère tous les avertissements comme des erreur
 -warnaserror[+ | -][:warning-list]  
 ```  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
  Les messages qui d’ordinaire auraient été signalés comme des avertissements s’affichent en tant qu’erreurs, et le processus de génération est arrêté (aucun fichier de sortie n’est généré).  
   
  Comme **-warnaserror** est activé par défaut, les avertissements n’empêchent pas la génération d’un fichier de sortie. Du fait de **-warnaserror**, qui est identique à **-warnaserror+**, les avertissements sont considérés comme des erreurs.  
   
- Le cas échéant, si vous voulez que seuls certains avertissements spécifiques soient considérés comme des erreurs, vous pouvez spécifier une liste séparée par des virgules qui liste les numéros d’avertissement à considérer comme des erreurs. L’ensemble de tous les avertissements d’annulation peut être spécifié avec le raccourci **annulé.**
+ Le cas échéant, si vous voulez que seuls certains avertissements spécifiques soient considérés comme des erreurs, vous pouvez spécifier une liste séparée par des virgules qui liste les numéros d’avertissement à considérer comme des erreurs. Le jeu de tous les avertissements de possibilité de valeur NULL peut être spécifié avec le raccourci **Nullable** .
   
  Utilisez [-warn](./warn-compiler-option.md) pour spécifier le niveau des avertissements que le compilateur doit afficher. Utilisez [-nowarn](./nowarn-compiler-option.md) pour désactiver certains avertissements.  
   
@@ -43,7 +44,7 @@ L’option **-warnaserror+** considère tous les avertissements comme des erreur
   
  Pour définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compilez `in.cs` et faites en sorte que le compilateur n’affiche aucun avertissement :  
   
 ```console  
@@ -53,5 +54,5 @@ csc -warnaserror:642,649,652,nullable in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
