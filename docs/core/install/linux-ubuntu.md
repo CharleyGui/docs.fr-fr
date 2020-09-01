@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c590bd89b718a5cd31dae9f83049eac910cb4049
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 9694dac719024264edee849044f048970b63b7b7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863889"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132939"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-ubuntu"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur Ubuntu
 
@@ -31,19 +31,19 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [20,04 (LTS)](#2004-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ❌[19,10](#1910-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌ [19.04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
-| ❌ [18.10](#1810-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌ [19.04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ version préliminaire 5,0 |
+| ❌ [18.10](#1810-)       | ✔️ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
 | ✔️ [18,04 (LTS)](#1804-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌[17,10](#1710-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
-| ❌ [17.04](#1704-)       | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
-| ❌[16,10](#1610-)       | ❌2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌[17,10](#1710-)       | ✔️ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
+| ❌ [17.04](#1704-)       | ✔️ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
+| ❌ [16,10](#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
 | ✔️ [16,04 (LTS)](#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 
 Les versions suivantes de .NET Core ne sont plus prises en charge. Les téléchargements sont toujours publiés :
 
 - 3.0
-- 2.2
-- 2.0
+- 2,2
+- 2,0
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -60,7 +60,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1910-"></a>19,10❌
+## <a name="1910-"></a>19,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -73,7 +73,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1904-"></a>19,04❌
+## <a name="1904-"></a>19,04 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -86,7 +86,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1810-"></a>18,10❌
+## <a name="1810-"></a>18,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -110,7 +110,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1710-"></a>17,10❌
+## <a name="1710-"></a>17,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -123,7 +123,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-21](includes/linux-install-21-apt.md)]
 
-## <a name="1704-"></a>17,04❌
+## <a name="1704-"></a>17,04 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -136,7 +136,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-21](includes/linux-install-21-apt.md)]
 
-## <a name="1610-"></a>16,10❌
+## <a name="1610-"></a>16,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -173,7 +173,7 @@ sudo apt-get upgrade
 
 Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation de la fonction APT pour installer .NET Core.
 
-### <a name="unable-to-locate"></a>Impossible de localiser
+### <a name="unable-to-locate--some-packages-could-not-be-installed"></a>Impossible d' \\ installer certains packages
 
 [!INCLUDE [package-manager-failed-to-find-deb](includes/package-manager-failed-to-find-deb.md)]
 
@@ -199,7 +199,7 @@ sudo apt-get update; \
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
 Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET Core ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
 
@@ -220,7 +220,7 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 - libgdiplus (version 6.0.1 ou ultérieure)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 

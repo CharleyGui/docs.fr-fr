@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: 7d398df060c031ae891218b82a2712d74f4c33b7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9d4c031eda291b0a8832c824789efdffe4084926
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602984"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132940"
 ---
 
-Si vous recevez un message d’erreur semblable à **incapable de localiser le package {Netcore-package}**, exécutez les commandes suivantes.
+Si vous recevez un message d’erreur semblable à **incapable de localiser le package {Netcore-package}** ou que **certains packages n’ont pas pu être installés**, exécutez les commandes suivantes.
 
 L’ensemble de commandes suivant contient deux espaces réservés.
 
@@ -17,12 +17,11 @@ Cela représente le package .NET Core que vous installez, par exemple `aspnetcor
 - `{os-version}`\
 Cela représente la version Linux sur laquelle vous vous trouvez. Cela est utilisé dans la `wget` commande ci-dessous.
 
-Essayez de purger la liste des packages :
+Tout d’abord, essayez de purger la liste des packages :
 
 ```bash
 sudo dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
-sudo apt-get install {dotnet-package}
 ```
 
-Si cela ne fonctionne pas, vous pouvez exécuter une installation manuelle avec les commandes suivantes :
+Essayez ensuite d’installer à nouveau .NET Core. Si cela ne fonctionne pas, vous pouvez exécuter une installation manuelle avec les commandes suivantes :
