@@ -1,4 +1,5 @@
 ---
+description: group, clause - Référence C#
 title: group, clause - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: 75a366ec24e4e48af7e87d3372950aad8d76435b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e642492b4b36bb0464baf16baa80c58c19ba9f1
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713471"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138226"
 ---
 # <a name="group-clause-c-reference"></a>group, clause (Référence C#)
 
@@ -53,7 +54,7 @@ L’exemple suivant illustre l’utilisation d’une valeur booléenne pour une 
 
 ### <a name="grouping-by-numeric-range"></a>Regroupement par plage numérique
 
-L’exemple suivant utilise une expression pour créer des clés de groupes numériques qui représentent une plage de centiles. Notez l’utilisation de [let](let-clause.md) comme emplacement pratique pour stocker un résultat d’appel de méthode, qui vous évite d’avoir à appeler deux fois la méthode dans la clause `group`. Pour plus d’informations sur la façon d’utiliser en toute sécurité les méthodes dans les expressions de requête, voir [les exceptions De poignée dans les expressions de requête](../../linq/handle-exceptions-in-query-expressions.md).
+L’exemple suivant utilise une expression pour créer des clés de groupes numériques qui représentent une plage de centiles. Notez l’utilisation de [let](let-clause.md) comme emplacement pratique pour stocker un résultat d’appel de méthode, qui vous évite d’avoir à appeler deux fois la méthode dans la clause `group`. Pour plus d’informations sur la façon d’utiliser des méthodes en toute sécurité dans les expressions de requête, consultez [gérer les exceptions dans les expressions de requête](../../linq/handle-exceptions-in-query-expressions.md).
 
 [!code-csharp[cscsrefQueryKeywords#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#15)]
 
@@ -65,9 +66,9 @@ Utilisez une clé composite quand vous souhaitez regrouper des éléments en fon
 group person by new {name = person.surname, city = person.city};
 ```
 
-Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode. Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>. Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes. Pour plus d’informations voir [Comment mettre en œuvre une classe légère avec des propriétés auto-mises en œuvre](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) et [Comment interroger les fichiers en double dans un arbre d’annuaire](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Ce dernier article contient un exemple de code qui montre comment utiliser une clé composite avec un type nommé.
+Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode. Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>. Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes. Pour plus d’informations, consultez [comment implémenter une classe Lightweight avec des propriétés implémentées automatiquement](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) et [Comment interroger des fichiers dupliqués dans une arborescence de répertoires](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Ce dernier article contient un exemple de code qui montre comment utiliser une clé composite avec un type nommé.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre le modèle standard pour organiser des données sources en groupes quand aucune logique de requête supplémentaire n’est appliquée aux groupes. Il s’agit alors d’un regroupement sans continuation. Les éléments du tableau de chaînes sont regroupés en fonction de leur première lettre. Le résultat de la requête est un type <xref:System.Linq.IGrouping%602> contenant une propriété `Key` publique de type `char` et une collection <xref:System.Collections.Generic.IEnumerable%601> qui contient chaque élément du regroupement.
 
@@ -75,13 +76,13 @@ Le résultat d’une clause `group` est une séquence de séquences. Ainsi, pour
 
 [!code-csharp[cscsrefQueryKeywords#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#16)]
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Cet exemple montre comment exécuter une logique supplémentaire sur les groupes après les avoir créés, à l’aide une *continuation* avec `into`. Pour plus d’informations, consultez [into](into.md). L’exemple suivant interroge chaque groupe pour sélectionner uniquement ceux dont la valeur de clé est une voyelle.
 
 [!code-csharp[cscsrefQueryKeywords#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#17)]
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 Lors de la compilation, les clauses `group` sont traduites en appels à la méthode <xref:System.Linq.Enumerable.GroupBy%2A>.
 
@@ -92,7 +93,7 @@ Lors de la compilation, les clauses `group` sont traduites en appels à la méth
 - <xref:System.Linq.Enumerable.ThenBy%2A>
 - <xref:System.Linq.Enumerable.ThenByDescending%2A>
 - [Mots clés de requête](query-keywords.md)
-- [Requête intégrée linguistique (LINQ)](../../linq/index.md)
+- [LINQ (Language-Integrated Query)](../../linq/index.md)
 - [Créer un groupe imbriqué](../../linq/create-a-nested-group.md)
 - [Regrouper les résultats d’une requête](../../linq/group-query-results.md)
 - [Effectuer une sous-requête sur une opération de regroupement](../../linq/perform-a-subquery-on-a-grouping-operation.md)

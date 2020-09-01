@@ -1,4 +1,5 @@
 ---
+description: -win32icon (Options du compilateur C#)
 title: -win32icon (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - /win32icon compiler option [C#]
 - -win32icon compiler option [C#]
 ms.assetid: 756d9b6d-ab07-41b7-ba58-5bd88f711138
-ms.openlocfilehash: f3df92d8d0b0135eac1a055afafffa0015fecc2b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 76a54f9011371492bdc15f15c3e40d51082deed3
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606279"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138408"
 ---
 # <a name="-win32icon-c-compiler-options"></a>-win32icon (Options du compilateur C#)
 L’option **-win32icon** insère un fichier .ico dans le fichier de sortie, ce qui lui donne l’apparence souhaitée dans l’Explorateur de fichiers.  
@@ -28,7 +29,7 @@ L’option **-win32icon** insère un fichier .ico dans le fichier de sortie, ce 
  `filename`  
  Fichier .ico que vous voulez ajouter à votre fichier de sortie.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Un fichier .ico peut être créé avec le [compilateur de ressources](/windows/desktop/menurc/resource-compiler). Le compilateur de ressources est appelé quand vous compilez un programme Visual C++ ; un fichier .ico est alors créé à partir du fichier .rc.  
   
  Consultez [-linkresource](./linkresource-compiler-option.md) pour référencer ou [-resource](./resource-compiler-option.md) pour attacher un fichier de ressources .NET Framework. Consultez [-win32res](./win32res-compiler-option.md) pour importer un fichier .res.  
@@ -43,7 +44,7 @@ L’option **-win32icon** insère un fichier .ico dans le fichier de sortie, ce 
   
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.ApplicationIcon%2A>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compilez `in.cs` et attachez un fichier .ico `rf.ico` afin de générer le fichier `in.exe` :  
   
 ```console  
@@ -52,5 +53,5 @@ csc -win32icon:rf.ico in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,4 +1,5 @@
 ---
+description: checked, mot clé - Référence C#
 title: checked, mot clé - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - checked keyword [C#]
 ms.assetid: 718a1194-988d-48a3-b089-d6ee8bd1608d
-ms.openlocfilehash: 5963bb85ef4b61c1dc478667fb0e2e5438f3e4ad
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4dd8bc02d3af89d6bab3aef55a88cb8b40704da6
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713704"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138278"
 ---
 # <a name="checked-c-reference"></a>checked (référence C#)
 
@@ -30,7 +31,7 @@ Le contrôle de dépassement de capacité peut être activé par les options du 
 
 Vous pouvez utiliser le mot clé [unchecked](./unchecked.md) pour empêcher la vérification du dépassement de capacité.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Cet exemple montre comment utiliser `checked` pour activer la vérification du dépassement de capacité au moment de l’exécution.
 
@@ -42,8 +43,8 @@ Cet exemple montre comment utiliser `checked` pour activer la vérification du d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
-- [Vérifié et non contrôlé](./checked-and-unchecked.md)
-- [non cochée](./unchecked.md)
+- [Checked et unchecked](./checked-and-unchecked.md)
+- [unchecked](./unchecked.md)

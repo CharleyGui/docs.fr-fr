@@ -3,12 +3,12 @@ title: Aide sur la sécurité des jeux de données et des DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: 24c8a830f8638bc2d9dd20c2384c8230a682d817
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4fe8a062c762cc70d33243e3443aa9bf55635f98
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812235"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137615"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Aide sur la sécurité des jeux de données et des DataTable
 
@@ -45,6 +45,9 @@ dans System. Data. TypeLimiter. EnsureTypeIsAllowed (type type, TypeLimiter capt
 * L’opération de désérialisation échoue.
 
 Lors du chargement de données XML dans une `DataSet` instance ou existante `DataTable` , les définitions de colonne existantes sont également prises en compte. Si la table contient déjà une définition de colonne d’un type personnalisé, ce type est ajouté temporairement à la liste verte pour la durée de l’opération de désérialisation XML.
+
+> [!NOTE]
+> Une fois que vous avez ajouté des colonnes à un `DataTable` , `ReadXml` ne lit pas le schéma à partir du XML, et si le schéma ne correspond pas, il ne lit pas non plus les enregistrements. vous devrez donc ajouter toutes les colonnes vous-même pour utiliser cette méthode.
 
 ```cs
 XmlReader xmlReader = GetXmlReader();
