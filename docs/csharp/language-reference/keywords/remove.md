@@ -1,4 +1,5 @@
 ---
+description: remove, mot clé contextuel - Référence C#
 title: remove, mot clé contextuel - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -6,20 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - remove event accessor [C#]
 ms.assetid: c8223426-c17b-4fe2-8406-01564cf1dd2b
-ms.openlocfilehash: 8ea3ea1910e28c03b2a894c64415cb2ccff942d0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5514e72a04daa1232dbdf9a37813f09de791590
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713142"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136952"
 ---
 # <a name="remove-c-reference"></a>remove (Référence C#)
 
 Le mot clé contextuel `remove` est utilisé pour définir un accesseur d’événement personnalisé qui est appelé quand le code client annule son abonnement à votre événement ([event](event.md)). Si vous fournissez un accesseur `remove` personnalisé, vous devez également fournir un accesseur [add](add.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-L’exemple suivant illustre un événement qui a des accesseurs [add](add.md) et `remove` personnalisés. Pour l’exemple complet, voir [Comment implémenter des événements d’interface](../../programming-guide/events/how-to-implement-interface-events.md).
+L’exemple suivant illustre un événement qui a des accesseurs [add](add.md) et `remove` personnalisés. Pour obtenir un exemple complet, consultez [comment implémenter des événements d’interface](../../programming-guide/events/how-to-implement-interface-events.md).
 
  [!code-csharp[csrefKeywordsContextual#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#15)]
 

@@ -1,4 +1,5 @@
 ---
+description: modificateur sealed - Référence C#
 title: modificateur sealed - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - sealed keyword [C#]
 ms.assetid: 8e4ed5d3-10be-47db-9488-0da2008e6f3f
-ms.openlocfilehash: 686afd5d9d0394bb1a802551b65083732599f384
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5b945503c6f6546f571a2422ae77760da0363b08
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713103"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136965"
 ---
 # <a name="sealed-c-reference"></a>sealed (référence C#)
 
@@ -25,7 +26,7 @@ sealed class B : A {}
 
 Vous pouvez également utiliser le modificateur `sealed` sur une méthode ou une propriété qui substitue une méthode ou une propriété virtuelle dans une classe de base. Ainsi, vous pouvez autoriser les classes à dériver de votre classe et les empêcher de substituer des méthodes ou des propriétés virtuelles spécifiques.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Dans l’exemple suivant, `Z` hérite de `Y` mais `Z` ne peut pas substituer la fonction virtuelle `F` qui est déclarée dans `X` et scellée (sealed) dans `Y`.
 
@@ -43,7 +44,7 @@ Pour plus d’informations, consultez [Héritage](../../programming-guide/classe
 
 Pour plus d’exemples, consultez [Classes abstract et sealed et membres de classe](../../programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!code-csharp[csrefKeywordsModifiers#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#17)]
 
@@ -55,7 +56,7 @@ Le résultat est un message d’erreur :
 
 `'MyDerivedC': cannot derive from sealed type 'SealedClass'`
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 Pour déterminer s’il faut sceller une classe, une méthode ou une propriété, vous devez généralement prendre en compte les deux points suivants :
 
@@ -69,12 +70,12 @@ Pour déterminer s’il faut sceller une classe, une méthode ou une propriété
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Classes statiques et membres de classe statique](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
 - [Classes abstract et sealed et membres de classe](../../programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
 - [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [Modificateurs](index.md)
-- [Substituer](override.md)
-- [Virtuel](virtual.md)
+- [remplacer](override.md)
+- [virtual](virtual.md)

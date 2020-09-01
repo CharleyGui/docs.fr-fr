@@ -1,4 +1,5 @@
 ---
+description: ref, mot clé - Référence C#
 title: ref, mot clé - Référence C#
 ms.date: 04/21/2020
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 07e1b49605c83908f7b9af25e0cb2599a97257c5
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 58a4ce30e11ca023b50e5e53b1f1554a30d44390
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102071"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137082"
 ---
 # <a name="ref-c-reference"></a>ref (référence C#)
 
@@ -21,11 +22,11 @@ Le mot clé `ref` indique une valeur qui est passée par référence. Il est ut
 - Dans une signature de méthode et dans un appel de méthode, pour passer un argument à une méthode par référence. Pour plus d’informations, consultez [Passage d’un argument par référence](#passing-an-argument-by-reference).
 - Dans une signature de méthode, pour retourner une valeur à l’appelant par référence. Pour plus d’informations, consultez [Valeurs de retour de référence](#reference-return-values).
 - Dans le corps d’un membre, pour indiquer qu’une valeur de retour de référence est stockée localement sous la forme d’une référence que l’appelant a l’intention de modifier, ou une variable locale accède généralement à une valeur par référence. Pour plus d’informations, consultez [Variables locales ref](#ref-locals).
-- Dans une déclaration de `struct` pour déclarer un `ref struct` ou un `readonly ref struct`. Pour plus d’informations, consultez la [ `ref` ](../builtin-types/struct.md#ref-struct) section struct de l’article des types [structure.](../builtin-types/struct.md)
+- Dans une déclaration de `struct` pour déclarer un `ref struct` ou un `readonly ref struct`. Pour plus d’informations, consultez la section [ `ref` struct](../builtin-types/struct.md#ref-struct) de l’article [types de structures](../builtin-types/struct.md) .
 
 ## <a name="passing-an-argument-by-reference"></a>Passage d’un argument par référence
 
-Quand il est utilisé dans la liste de paramètres d’une méthode, le mot clé `ref` indique qu’un argument est passé par référence, et non par valeur. Le mot clé `ref` fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Par exemple, si l’appelant passe une expression variable locale ou une expression d’accès à l’élément de tableau, et que la méthode appelée remplace l’objet auquel le paramètre de réf se réfère, alors la variable locale de l’appelant ou l’élément de tableau se réfère maintenant au nouvel objet lorsque la méthode revient.
+Quand il est utilisé dans la liste de paramètres d’une méthode, le mot clé `ref` indique qu’un argument est passé par référence, et non par valeur. Le mot clé `ref` fait du paramètre formel un alias de l’argument, qui doit être une variable. En d’autres termes, toute opération portant sur le paramètre est effectuée sur l’argument. Par exemple, si l’appelant passe une expression de variable locale ou une expression d’accès à un élément de tableau, et que la méthode appelée remplace l’objet auquel fait référence le paramètre ref, la variable locale de l’appelant ou l’élément de tableau fait désormais référence au nouvel objet lorsque la méthode est retournée.
 
 > [!NOTE]
 > Ne confondez pas le concept de passage par référence avec celui de types de référence. Les deux concepts ne sont pas identiques. Un paramètre de méthode peut être modifié par `ref`, qu'il s'agisse d'un type valeur ou d'un type référence. Il n'y a aucun boxing d'un type valeur lorsqu'il est passé par référence.  
@@ -61,11 +62,11 @@ Toutefois, les méthodes peuvent être surchargées quand une méthode a un para
 - Méthodes async, que vous définissez à l’aide du modificateur [async](async.md).  
 - Les méthodes Iterator, qui incluent une instruction [yield return](yield.md) ou `yield break`.
 
-En outre, les [méthodes d’extension](../../programming-guide/classes-and-structs/extension-methods.md) ont les restrictions suivantes :
+En outre, les [méthodes d’extension](../../programming-guide/classes-and-structs/extension-methods.md) présentent les restrictions suivantes :
 
 - Le `out` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension.
-- Le `ref` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension lorsque l’argument n’est pas une struction, ou un type générique non contraint d’être une struction.
-- Le `in` mot clé ne peut pas être utilisé à moins que le premier argument soit une struction. Le `in` mot clé ne peut pas être utilisé sur n’importe quel type générique, même lorsqu’il est contraint d’être une struction.
+- Le `ref` mot clé ne peut pas être utilisé sur le premier argument d’une méthode d’extension lorsque l’argument n’est pas un struct, ou un type générique qui n’est pas imposé comme struct.
+- Le `in` mot clé ne peut pas être utilisé, sauf si le premier argument est un struct. Le `in` mot clé ne peut pas être utilisé sur un type générique, même lorsqu’il est imposé comme struct.
 
 ## <a name="passing-an-argument-by-reference-an-example"></a>Passage d’un argument par référence : exemple
 
@@ -77,7 +78,7 @@ Pour plus d’informations sur la manière de passer des types référence par v
   
 ## <a name="reference-return-values"></a>Valeurs de retour de référence
 
-Les valeurs de retour de référence (ou retours ref) sont des valeurs qu’une méthode retourne par référence à l’appelant. Autrement dit, l’appelant peut modifier la valeur retournée par une méthode, et que le changement se reflète dans l’état de l’objet dans la méthode d’appel.
+Les valeurs de retour de référence (ou retours ref) sont des valeurs qu’une méthode retourne par référence à l’appelant. Autrement dit, l’appelant peut modifier la valeur retournée par une méthode, et cette modification est reflétée dans l’état de l’objet dans la méthode d’appel.
 
 Une valeur de retour de référence est définie à l’aide du mot clé `ref` :
 
@@ -95,17 +96,17 @@ return ref DecimalArray[0];
 
 Pour que l’appelant puisse modifier l’état de l’objet, la valeur de retour de référence doit être stockée dans une variable qui est explicitement définie comme [variable locale ref](#ref-locals).
 
-Voici un exemple de retour ref plus complet, montrant à la fois la signature de la méthode et le corps de la méthode.
+Voici un exemple plus complet de retour de référence, qui illustre la signature de la méthode et le corps de la méthode.
 
 [!code-csharp[FindReturningRef](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#FindReturningRef "Find returning by reference")]
 
 La méthode appelée peut également déclarer la valeur renvoyée en tant que `ref readonly` pour renvoyer la valeur par référence et faire en sorte que le code d'appel ne puisse pas modifier la valeur renvoyée. La méthode d’appel peut éviter de copier la valeur renvoyée en stockant la valeur dans une variable [ref readonly](#ref-readonly-locals) locale.
 
-Par exemple, voir [A ref returns and ref locals example](#a-ref-returns-and-ref-locals-example).
+Pour obtenir un exemple, consultez [un exemple de retours REF et de variables locales Ref](#a-ref-returns-and-ref-locals-example).
 
 ## <a name="ref-locals"></a>Variables locales ref
 
-Une variable locale ref est utilisée pour faire référence aux valeurs retournées à l’aide de `return ref`. Vous ne pouvez pas initialiser une variable locale ref en valeur de retour non ref. En d’autres termes, le côté droit de l’initialisation doit être une référence. Toute modification apportée à la valeur de la variable locale ref est reflétée dans l’état de l’objet dont la méthode a retourné la valeur par référence.
+Une variable locale ref est utilisée pour faire référence aux valeurs retournées à l’aide de `return ref`. Vous ne pouvez pas initialiser une variable locale ref en valeur de retour non ref. En d’autres termes, la partie droite de l’initialisation doit être une référence. Toute modification apportée à la valeur de la variable locale ref est reflétée dans l’état de l’objet dont la méthode a retourné la valeur par référence.
 
 Vous définissez une variable locale ref à l’aide du mot clé `ref` avant la déclaration de la variable, ainsi qu’immédiatement avant l’appel à la méthode qui retourne la valeur par référence.
 
@@ -121,11 +122,11 @@ Vous pouvez accéder à une valeur par référence de la même façon. Dans cert
 ref VeryLargeStruct reflocal = ref veryLargeStruct;
 ```
 
-Dans les `ref` deux exemples, le mot clé doit être utilisé dans les deux endroits, ou le compilateur génère l’erreur CS8172, "Ne peut pas initialiser une variable de référence avec une valeur."
+Dans les deux exemples `ref` , le mot clé doit être utilisé aux deux emplacements, ou le compilateur génère l’erreur CS8172, « impossible d’initialiser une variable par référence avec une valeur ».
 
 À partir de C# 7.3, la variable d’itération de l’instruction `foreach` peut être une variable locale ref ou une variable locale ref readonly. Pour plus d’informations, voir l’article [Instruction foreach](foreach-in.md).
 
-En commençant également par C 7.3, vous pouvez réaffecter une variable locale ou réactive avec [l’opérateur d’affectation d’arbitres.](../operators/assignment-operator.md#ref-assignment-operator)
+À compter de C# 7,3, vous pouvez également réassigner une variable locale Ref locale ou ref ReadOnly avec l' [opérateur d’assignation de référence](../operators/assignment-operator.md#ref-assignment-operator).
 
 ## <a name="ref-readonly-locals"></a>Variable locale ref readonly
 
@@ -147,11 +148,11 @@ Quand l’appelant stocke la valeur retournée par la méthode `GetBookByTitle` 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Rédiger un code efficace en toute sécurité](../../write-safe-efficient-code.md)
+- [Écrire du code efficace sécurisé](../../write-safe-efficient-code.md)
 - [Retours ref et variables locales ref](../../programming-guide/classes-and-structs/ref-returns.md)
 - [Expression ref conditionnelle](../operators/conditional-operator.md#conditional-ref-expression)
-- [Paramètres de passage](../../programming-guide/classes-and-structs/passing-parameters.md)
+- [Passage de paramètres](../../programming-guide/classes-and-structs/passing-parameters.md)
 - [Paramètres de méthodes](method-parameters.md)
-- [Référence C](../index.md)
-- [Guide de programmation CMD](../../programming-guide/index.md)
-- [Mots-clés C](index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](index.md)

@@ -1,4 +1,5 @@
 ---
+description: return, instruction - Référence C#
 title: return, instruction - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - return statement [C#]
 - return keyword [C#]
 ms.assetid: 6da6e152-5b58-4448-8f3f-470dd0617ecd
-ms.openlocfilehash: 116bad7a1f9f61311d287c575b52547d63c9e1c0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 486db846304c0972942ff58f3d5b276083681abe
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713129"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136996"
 ---
 # <a name="return-c-reference"></a>return (référence C#)
 
@@ -21,7 +22,7 @@ L’instruction `return` met un terme à l’exécution de la méthode dans laqu
 
  Si l’instruction return est à l’intérieur d’un bloc `try`, le bloc `finally`, le cas échéant, est exécuté avant que le contrôle retourne à la méthode d’appel.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
  Dans l’exemple suivant, la méthode `CalculateArea()` retourne la variable locale `area` en tant que valeur `double`.
 
@@ -33,7 +34,7 @@ L’instruction `return` met un terme à l’exécution de la méthode dans laqu
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Déclaration de retour](/cpp/cpp/return-statement-cpp)
+- [Instruction return](/cpp/cpp/return-statement-cpp)

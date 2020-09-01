@@ -1,15 +1,16 @@
 ---
+description: Limitations sur l’utilisation des niveaux d’accessibilité - Référence C#
 title: Limitations sur l’utilisation des niveaux d’accessibilité - Référence C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: 8082dbd7398b6634b68f1dd2887cd55d6798a5d9
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 542e463e41c70f2e8aed5c20dc1294e296a88518
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795155"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136994"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Limitations sur l’utilisation des niveaux d’accessibilité (informations de référence sur C#)
 
@@ -22,7 +23,7 @@ public class MyClass: BaseClass {...} // Error
 
 Le tableau suivant résume les limitations sur les niveaux d’accessibilité déclarés.
 
-|Contexte|Notes |
+|Context|Remarques|
 |-------------|-------------|
 |[Classes](../../programming-guide/classes-and-structs/classes.md)|La classe de base directe d’un type de classe doit être au moins aussi accessible que le type de classe lui-même.|
 |[Interfaces](../../programming-guide/interfaces/index.md)|Les interfaces de base explicites d’un type d’interface doivent être au moins aussi accessibles que le type d’interface lui-même.|
@@ -36,7 +37,7 @@ Le tableau suivant résume les limitations sur les niveaux d’accessibilité d�
 |[Opérateurs](../operators/index.md)|Le type de retour et les types de paramètres d’un opérateur doivent être au moins aussi accessibles que l’opérateur lui-même.|
 |[Constructeurs](../../programming-guide/classes-and-structs/constructors.md)|Les types de paramètres d’un constructeur doivent être au moins aussi accessibles que le constructeur lui-même.|
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant contient des déclarations erronées de différents types. Le commentaire qui suit chaque déclaration indique l’erreur du compilateur à attendre.
 
@@ -116,7 +117,7 @@ public class A
 - [Domaine d’accessibilité](accessibility-domain.md)
 - [Niveaux d'accessibilité](accessibility-levels.md)
 - [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
-- [publique](public.md)
+- [public](public.md)
 - [priv](private.md)
 - [protected](protected.md)
 - [intérieurs](internal.md)

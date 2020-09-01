@@ -1,4 +1,5 @@
 ---
+description: readonly, mot clé - Référence C#
 title: readonly, mot clé - Référence C#
 ms.date: 04/14/2020
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 66a096e8831f72a2216e8ba5dd9866046504624f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b1bab5af18216fcef2162179493dbbb59e3470cf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84368619"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137173"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
@@ -32,7 +33,7 @@ Le `readonly` mot clé est un modificateur qui peut être utilisé dans quatre c
 - Dans une déclaration de membre d’instance au sein d’un type structure, `readonly` indique qu’un membre d’instance ne modifie pas l’état de la structure. Pour plus d’informations, consultez la section [ `readonly` membres d’instance](../builtin-types/struct.md#readonly-instance-members) de l’article [types de structures](../builtin-types/struct.md) .
 - Dans une [ `ref readonly` méthode retournée](#ref-readonly-return-example), le `readonly` modificateur indique que la méthode retourne une référence et que les écritures ne sont pas autorisées à cette référence.
 
-Les `readonly struct` `ref readonly` contextes et ont été ajoutés en C# 7,2. `readonly`des membres de struct ont été ajoutés en C# 8,0
+Les `readonly struct` `ref readonly` contextes et ont été ajoutés en C# 7,2. `readonly` des membres de struct ont été ajoutés en C# 8,0
 
 ## <a name="readonly-field-example"></a>Exemple de champ en lecture seule
 
