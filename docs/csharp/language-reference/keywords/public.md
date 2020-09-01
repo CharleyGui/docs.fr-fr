@@ -1,4 +1,5 @@
 ---
+description: public, mot clé - Référence C#
 title: public, mot clé - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-ms.openlocfilehash: 19906d7fd0f7d41ef9e4cdaf951c77825e0bbead
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 26edaf7538d11d082a4b8863228213c3ebc46937
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713168"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89122340"
 ---
 # <a name="public-c-reference"></a>public (référence C#)
 
@@ -27,7 +28,7 @@ class SampleClass
 
 Pour plus d’informations, consultez [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md) et [Niveaux d’accessibilité](accessibility-levels.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Dans l’exemple suivant, deux classes sont déclarées, `PointTest` et `MainClass`. L’accès aux membres publics `x` et `y` de `PointTest` s’effectue directement à partir de `MainClass`.
 
@@ -43,13 +44,13 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
-- [Niveaux d’accessibilité](accessibility-levels.md)
+- [Niveaux d'accessibilité](accessibility-levels.md)
 - [Modificateurs](index.md)
-- [Privé](private.md)
-- [Protégé](protected.md)
-- [Interne](internal.md)
+- [priv](private.md)
+- [protected](protected.md)
+- [intérieurs](internal.md)
