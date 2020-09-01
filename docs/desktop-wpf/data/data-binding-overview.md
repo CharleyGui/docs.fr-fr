@@ -7,12 +7,12 @@ ms.author: adegeo
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 829c93e97990b87e6e568614236de9708ef080d9
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 3c9615d7d79b5da1c180bb505f5f37b99aeae775
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325757"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271995"
 ---
 # <a name="data-binding-overview-in-wpf"></a>Vue d’ensemble de la liaison de données dans WPF
 
@@ -91,11 +91,11 @@ Cette figure illustre les différents types de workflows de données :
 
 ![Flux de données de la liaison de données](./media/data-binding-overview/databinding-dataflow.png "DataBinding_DataFlow")
 
-- <xref:System.Windows.Data.BindingMode.OneWay>la liaison entraîne la mise à jour automatique de la propriété cible par les modifications apportées à la propriété source, mais les modifications apportées à la propriété cible ne sont pas propagées vers la propriété source. Ce type de liaison est approprié si le contrôle lié est implicitement en lecture seule. Par exemple, vous pouvez créer une liaison à une source telle qu’un ticker de stock ou peut-être que votre propriété cible n’a pas d’interface de contrôle fournie pour apporter des modifications, comme une couleur d’arrière-plan liée aux données d’une table. S’il n’est pas nécessaire de surveiller les modifications de la propriété cible, l’utilisation du mode de liaison <xref:System.Windows.Data.BindingMode.OneWay> permet d’éviter la surcharge du mode de liaison <xref:System.Windows.Data.BindingMode.TwoWay>.
+- <xref:System.Windows.Data.BindingMode.OneWay> la liaison entraîne la mise à jour automatique de la propriété cible par les modifications apportées à la propriété source, mais les modifications apportées à la propriété cible ne sont pas propagées vers la propriété source. Ce type de liaison est approprié si le contrôle lié est implicitement en lecture seule. Par exemple, vous pouvez créer une liaison à une source telle qu’un ticker de stock ou peut-être que votre propriété cible n’a pas d’interface de contrôle fournie pour apporter des modifications, comme une couleur d’arrière-plan liée aux données d’une table. S’il n’est pas nécessaire de surveiller les modifications de la propriété cible, l’utilisation du mode de liaison <xref:System.Windows.Data.BindingMode.OneWay> permet d’éviter la surcharge du mode de liaison <xref:System.Windows.Data.BindingMode.TwoWay>.
 
-- <xref:System.Windows.Data.BindingMode.TwoWay>la liaison entraîne la mise à jour automatique de l’autre des modifications apportées à la propriété source ou à la propriété cible. Ce type de liaison convient aux formulaires modifiables ou à d’autres scénarios d’interface utilisateur entièrement interactifs. La plupart des propriétés ont par défaut la <xref:System.Windows.Data.BindingMode.OneWay> liaison, mais certaines propriétés de dépendance (en général, les propriétés des contrôles modifiables par l’utilisateur, tels que <xref:System.Windows.Controls.TextBox.Text?displayProperty=nameWithType> et [CheckBox. IsChecked](xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked) ont par défaut la valeur <xref:System.Windows.Data.BindingMode.TwoWay> Binding. Un moyen de déterminer par programmation si une propriété de dépendance établit par défaut une liaison unidirectionnelle ou bidirectionnelle consiste à obtenir les métadonnées de propriété avec <xref:System.Windows.DependencyProperty.GetMetadata%2A?displayProperty=nameWithType> , puis à vérifier la valeur booléenne de la <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A?displayProperty=nameWithType> propriété.
+- <xref:System.Windows.Data.BindingMode.TwoWay> la liaison entraîne la mise à jour automatique de l’autre des modifications apportées à la propriété source ou à la propriété cible. Ce type de liaison convient aux formulaires modifiables ou à d’autres scénarios d’interface utilisateur entièrement interactifs. La plupart des propriétés ont par défaut la <xref:System.Windows.Data.BindingMode.OneWay> liaison, mais certaines propriétés de dépendance (en général, les propriétés des contrôles modifiables par l’utilisateur, tels que <xref:System.Windows.Controls.TextBox.Text?displayProperty=nameWithType> et  [CheckBox. IsChecked](xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked) ont par défaut la valeur <xref:System.Windows.Data.BindingMode.TwoWay> Binding. Un moyen de déterminer par programmation si une propriété de dépendance établit par défaut une liaison unidirectionnelle ou bidirectionnelle consiste à obtenir les métadonnées de propriété avec <xref:System.Windows.DependencyProperty.GetMetadata%2A?displayProperty=nameWithType> , puis à vérifier la valeur booléenne de la <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A?displayProperty=nameWithType> propriété.
 
-- <xref:System.Windows.Data.BindingMode.OneWayToSource>est l’inverse de la <xref:System.Windows.Data.BindingMode.OneWay> liaison ; il met à jour la propriété source lorsque la propriété cible change. Voici un exemple de scénario : Si vous devez uniquement réévaluer la valeur source à partir de l’interface utilisateur.
+- <xref:System.Windows.Data.BindingMode.OneWayToSource> est l’inverse de la <xref:System.Windows.Data.BindingMode.OneWay> liaison ; il met à jour la propriété source lorsque la propriété cible change. Voici un exemple de scénario : Si vous devez uniquement réévaluer la valeur source à partir de l’interface utilisateur.
 
 - La liaison n’est pas illustrée dans la figure <xref:System.Windows.Data.BindingMode.OneTime> , ce qui amène la propriété source à initialiser la propriété cible, mais ne propage pas les modifications ultérieures. Si le contexte de données change ou si l’objet dans le contexte de données change, la modification n’est *pas* reflétée dans la propriété cible. Ce type de liaison est approprié si un instantané de l’état actuel est approprié ou si les données sont véritablement statiques. Ce type de liaison est également utile si vous souhaitez initialiser votre propriété cible avec une valeur d’une propriété source et que le contexte de données n’est pas connu à l’avance. Ce mode est essentiellement une forme de liaison plus simple <xref:System.Windows.Data.BindingMode.OneWay> qui offre de meilleures performances dans les cas où la valeur source ne change pas.
 
@@ -113,7 +113,7 @@ Toutefois, votre valeur source est-elle mise à jour lorsque vous modifiez le te
 
 Si la `UpdateSourceTrigger` valeur est <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged?displayProperty=nameWithType> , la valeur vers laquelle pointe la flèche droite de <xref:System.Windows.Data.BindingMode.TwoWay> ou les <xref:System.Windows.Data.BindingMode.OneWayToSource> liaisons est mise à jour dès que la propriété cible change. Toutefois, si la `UpdateSourceTrigger` valeur est <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> , cette valeur est mise à jour uniquement avec la nouvelle valeur lorsque la propriété cible perd le focus.
 
-Comme pour la <xref:System.Windows.Data.Binding.Mode%2A> propriété, différentes propriétés de dépendance ont des valeurs par défaut différentes <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> . La valeur par défaut de la plupart des propriétés de dépendance est <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, tandis que celle de la propriété `TextBox.Text` a comme valeur par défaut <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>. `PropertyChanged`signifie que les mises à jour de la source se produisent généralement chaque fois que la propriété cible change. Les modifications instantanées conviennent parfaitement aux cases à cocher et autres contrôles simples. Toutefois, pour les champs de texte, la mise à jour après chaque séquence de touches peut réduire les performances et la possibilité pour l’utilisateur d’effectuer un retour arrière et de corriger les erreurs de frappe avant de valider la nouvelle valeur.
+Comme pour la <xref:System.Windows.Data.Binding.Mode%2A> propriété, différentes propriétés de dépendance ont des valeurs par défaut différentes <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> . La valeur par défaut de la plupart des propriétés de dépendance est <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, tandis que celle de la propriété `TextBox.Text` a comme valeur par défaut <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>. `PropertyChanged` signifie que les mises à jour de la source se produisent généralement chaque fois que la propriété cible change. Les modifications instantanées conviennent parfaitement aux cases à cocher et autres contrôles simples. Toutefois, pour les champs de texte, la mise à jour après chaque séquence de touches peut réduire les performances et la possibilité pour l’utilisateur d’effectuer un retour arrière et de corriger les erreurs de frappe avant de valider la nouvelle valeur.
 
 <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>Pour plus d’informations sur la recherche de la valeur par défaut d’une propriété de dépendance, consultez la page de propriétés.
 
@@ -121,7 +121,7 @@ Le tableau suivant fournit un exemple de scénario pour chaque <xref:System.Wind
 
 | Valeur UpdateSourceTrigger | Quand la valeur source est mise à jour | Exemple de scénario pour TextBox |
 | ------------------------- | ---------------------------------- | ---------------------------- |
-| `LostFocus`(valeur par défaut pour <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> ) | Lorsque le contrôle TextBox perd le focus. | Zone de texte associée à la logique de validation (voir [validation des données](#data-validation) ci-dessous). |
+| `LostFocus` (valeur par défaut pour <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> ) | Lorsque le contrôle TextBox perd le focus. | Zone de texte associée à la logique de validation (voir [validation des données](#data-validation) ci-dessous). |
 | `PropertyChanged` | À mesure que vous tapez dans le <xref:System.Windows.Controls.TextBox> . | Contrôles TextBox dans une fenêtre de la salle de conversation. |
 | `Explicit` | Lorsque l’application appelle <xref:System.Windows.Data.BindingExpression.UpdateSource%2A> . | Contrôles TextBox dans un formulaire modifiable (met à jour les valeurs sources uniquement lorsque l’utilisateur clique sur le bouton Envoyer). |
 
@@ -173,12 +173,12 @@ Vous devrez peut-être appliquer une logique personnalisée afin que les donnée
 
 Avant d’entrer dans d’autres fonctions et utilisations de la liaison de données, il est utile d’introduire la <xref:System.Windows.Data.BindingExpression> classe. Comme vous l’avez vu dans les sections précédentes, la <xref:System.Windows.Data.Binding> classe est la classe de haut niveau pour la déclaration d’une liaison ; elle fournit de nombreuses propriétés qui vous permettent de spécifier les caractéristiques d’une liaison. Une classe connexe, <xref:System.Windows.Data.BindingExpression> , est l’objet sous-jacent qui gère la connexion entre la source et la cible. Une liaison contient toutes les informations qui peuvent être partagées entre plusieurs expressions de liaison. Un <xref:System.Windows.Data.BindingExpression> est une expression d’instance qui ne peut pas être partagée et qui contient toutes les informations d’instance de <xref:System.Windows.Data.Binding> .
 
-Prenons l’exemple suivant, où `myDataObject` est une instance de la `MyData` classe, `myBinding` est l' <xref:System.Windows.Data.Binding> objet source et `MyData` est une classe définie qui contient une propriété de type chaîne nommée `MyDataProperty` . Cet exemple lie le contenu de texte d' `myText` une instance de <xref:System.Windows.Controls.TextBlock> à `MyDataProperty` .
+Prenons l’exemple suivant, où `myDataObject` est une instance de la `MyData` classe, `myBinding` est l' <xref:System.Windows.Data.Binding> objet source et `MyData` est une classe définie qui contient une propriété de type chaîne nommée `ColorName` . Cet exemple lie le contenu de texte d' `myText` une instance de <xref:System.Windows.Controls.TextBlock> à `ColorName` .
 
 [!code-csharp[CodeOnlyBinding](~/samples/snippets/desktop-guide/wpf/data-binding-overview/csharp/ManualBinding.cs#CodeOnlyBinding)]
 [!code-vb[CodeOnlyBinding](~/samples/snippets/desktop-guide/wpf/data-binding-overview/vb/ManualBinding.vb#CodeOnlyBinding)]
 
-Vous pouvez utiliser le même objet *myBinding* pour créer d’autres liaisons. Par exemple, vous pouvez utiliser l’objet *myBinding* pour lier le contenu textuel d’une case à cocher à *MyDataProperty*. Dans ce scénario, il y aura deux instances de <xref:System.Windows.Data.BindingExpression> partage de l’objet *myBinding* .
+Vous pouvez utiliser le même objet *myBinding* pour créer d’autres liaisons. Par exemple, vous pouvez utiliser l’objet *myBinding* pour lier le contenu textuel d’une case à cocher à *colorname*. Dans ce scénario, il y aura deux instances de <xref:System.Windows.Data.BindingExpression> partage de l’objet *myBinding* .
 
 Un <xref:System.Windows.Data.BindingExpression> objet est retourné en appelant <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A> sur un objet lié aux données. Les articles suivants illustrent certaines utilisations de la <xref:System.Windows.Data.BindingExpression> classe :
 
@@ -235,7 +235,7 @@ WPF fournit la <xref:System.Collections.ObjectModel.ObservableCollection%601> cl
 
 Avant d’implémenter votre propre collection, envisagez <xref:System.Collections.ObjectModel.ObservableCollection%601> d’utiliser ou une des classes de collection existantes, telles que <xref:System.Collections.Generic.List%601> , <xref:System.Collections.ObjectModel.Collection%601> et <xref:System.ComponentModel.BindingList%601> , parmi de nombreuses autres. Si vous avez un scénario avancé et que vous souhaitez implémenter votre propre collection, envisagez d’utiliser <xref:System.Collections.IList> , qui fournit une collection non générique d’objets accessibles individuellement par l’index, et fournit ainsi les meilleures performances.
 
-### <a name="collection-views"></a>Vues de collection
+### <a name="collection-views"></a>Affichages de collection
 
 Une fois que votre <xref:System.Windows.Controls.ItemsControl> est lié à une collection de données, vous souhaiterez peut-être Trier, filtrer ou regrouper les données. Pour ce faire, vous utilisez des vues de collection, qui sont des classes qui implémentent l' <xref:System.ComponentModel.ICollectionView> interface.
 
@@ -261,7 +261,7 @@ Le tableau suivant répertorie les types de données d’affichage qui sont cré
 
 | Type de collection source                    | Type de vue de collection | Notes |
 | ----------------------------------------- | -------------------- | ----- |
-| <xref:System.Collections.IEnumerable>     | Type interne basé sur<xref:System.Windows.Data.CollectionView> | Impossible de grouper les éléments. |
+| <xref:System.Collections.IEnumerable>     | Type interne basé sur <xref:System.Windows.Data.CollectionView> | Impossible de grouper les éléments. |
 | <xref:System.Collections.IList>           | <xref:System.Windows.Data.ListCollectionView> | Le plus rapide. |
 | <xref:System.ComponentModel.IBindingList> | <xref:System.Windows.Data.BindingListCollectionView> | |
 
@@ -444,7 +444,7 @@ Vous pouvez définir la propriété jointe <xref:System.Diagnostics.Presentation
 - [Lier aux résultats d’une requête LINQ](../../framework/wpf/data/how-to-bind-to-the-results-of-a-linq-query.md)
 - [Liaison de données](../../framework/wpf/advanced/optimizing-performance-data-binding.md)
 - [Démonstration de la liaison de données][data-binding-demo]
-- [Articles de savoir-faire](../../framework/wpf/data/data-binding-how-to-topics.md)
+- [Articles sur les procédures](../../framework/wpf/data/data-binding-how-to-topics.md)
 - [Établir une liaison à une source de données ADO.NET](../../framework/wpf/data/how-to-bind-to-an-ado-net-data-source.md)
 
 [data-binding-demo]: https://github.com/microsoft/WPF-Samples/tree/master/Sample%20Applications/DataBindingDemo "application de démonstration de liaison de données"

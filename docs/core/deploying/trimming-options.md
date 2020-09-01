@@ -4,12 +4,12 @@ description: Découvrez comment contrôler le découpage des applications autono
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: 5597d4cdb9e8e96dcec6545e039d43295ca991bd
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d6081a24cc18e424b55d40e152f519c680f11aa0
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142256"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271878"
 ---
 # <a name="trimming-options"></a>Options de suppression
 
@@ -25,7 +25,7 @@ Lors de l’utilisation de `Microsoft.NET.Sdk` , cette opération effectue une s
 
 ## <a name="trimming-granularity"></a>Granularité de suppression
 
-Les paramètres de granularité suivants contrôlent la façon dont le langage intermédiaire inutilisé de manière agressive est ignoré. Cela peut être défini en tant que propriété ou en tant que métadonnées sur un [assembly individuel](#Trimmed-assemblies).
+Les paramètres de granularité suivants contrôlent la façon dont le langage intermédiaire inutilisé de manière agressive est ignoré. Cela peut être défini en tant que propriété ou en tant que métadonnées sur un [assembly individuel](#trimmed-assemblies).
 
 - `<TrimMode>copyused</TrimMode>`
 
@@ -60,7 +60,7 @@ N’ajoutez pas ou ne supprimez pas d’éléments dans `ManagedAssemblyToLink` 
 
 - `<TrimMode>copyused</TrimMode>` ou `<TrimMode>link</TrimMode>`
 
-  Contrôler la [granularité](#Trimming-granularity) de la suppression de cet assembly. Cela est prioritaire par rapport au global `TrimMode` . La définition `TrimMode` d’un assembly implique `<IsTrimmable>true</IsTrimmable>` .
+  Contrôler la [granularité](#trimming-granularity) de la suppression de cet assembly. Cela est prioritaire par rapport au global `TrimMode` . La définition `TrimMode` d’un assembly implique `<IsTrimmable>true</IsTrimmable>` .
 
 ## <a name="root-assemblies"></a>Assemblys racines
 
@@ -106,7 +106,7 @@ Cela inclut les avertissements relatifs à l’application entière, y compris v
 
 ## <a name="warning-versions"></a>Versions d’avertissement
 
-L’analyse de découpage respecte la [`AnalysisLevel`](../project-sdk/msbuild-props.md#AnalysisLevel) propriété qui contrôle la version des avertissements d’analyse dans le kit de développement logiciel (SDK). Il existe une autre propriété qui contrôle la version des avertissements d’analyse de suppression indépendamment (comme `WarningLevel` pour le compilateur) :
+L’analyse de découpage respecte la [`AnalysisLevel`](../project-sdk/msbuild-props.md#analysislevel) propriété qui contrôle la version des avertissements d’analyse dans le kit de développement logiciel (SDK). Il existe une autre propriété qui contrôle la version des avertissements d’analyse de suppression indépendamment (comme `WarningLevel` pour le compilateur) :
 
 - `<ILLinkWarningLevel>5</ILLinkWarningLevel>`
 

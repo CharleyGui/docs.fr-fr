@@ -1,35 +1,35 @@
 ---
-title: 'Comment : appliquer un style à une ligne dans un ListView implémentant un GridView'
+title: 'Comment : styliser une ligne dans un ListView qui utilise un GridView'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - GridView controls [WPF], styling rows
 - styling rows in ListViews implementing GridViews [WPF]
 - ListView controls [WPF], styling rows with GridViews
 ms.assetid: 2e406ba2-70a0-4e62-841f-0934859de76e
-ms.openlocfilehash: ce79899d5c8e825ecb39e14ae8af4e0c33f13db3
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 4b8b8e2f1b2d7207a37205d981bf2dab3f65122e
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733541"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271943"
 ---
 # <a name="how-to-style-a-row-in-a-listview-that-implements-a-gridview"></a>Comment : appliquer un style à une ligne dans un ListView implémentant un GridView
-Cet exemple montre comment appliquer un style à une ligne dans un contrôle de <xref:System.Windows.Controls.ListView> qui implémente un mode de <xref:System.Windows.Controls.ListView.View%2A> <xref:System.Windows.Controls.GridView>.  
+Cet exemple montre comment définir le style d’une ligne dans un <xref:System.Windows.Controls.ListView> contrôle qui utilise un <xref:System.Windows.Controls.GridView> <xref:System.Windows.Controls.ListView.View%2A> mode.  
   
 ## <a name="example"></a>Exemple  
- Vous pouvez affecter un style à une ligne dans un contrôle <xref:System.Windows.Controls.ListView> en définissant une <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> sur le contrôle <xref:System.Windows.Controls.ListView>. Définissez le style de ses éléments représentés en tant qu’objets <xref:System.Windows.Controls.ListViewItem>. Le <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> référence les objets <xref:System.Windows.Controls.ControlTemplate> utilisés pour afficher le contenu de la ligne.  
+ Vous pouvez affecter un style à une ligne dans un <xref:System.Windows.Controls.ListView> contrôle en définissant un <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> sur le <xref:System.Windows.Controls.ListView> contrôle. Définissez le style de ses éléments représentés en tant qu' <xref:System.Windows.Controls.ListViewItem> objets. Le <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> référence les <xref:System.Windows.Controls.ControlTemplate> objets utilisés pour afficher le contenu de la ligne.  
   
  L’exemple complet, qui extrait les exemples suivants, affiche une collection d’informations de chanson stockées dans une base de données XML. Chaque chanson de la base de données est associée à un champ d’évaluation. La valeur de ce champ spécifie comment afficher une ligne d’informations sur la chanson.  
   
- L’exemple suivant montre comment définir <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> pour les objets <xref:System.Windows.Controls.ListViewItem> qui représentent les chansons de la collection de chansons. Le <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> référence <xref:System.Windows.Controls.ControlTemplate> objets qui spécifient comment afficher une ligne d’informations de chanson.  
+ L’exemple suivant montre comment définir <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> pour les <xref:System.Windows.Controls.ListViewItem> objets qui représentent les chansons de la collection de chansons. Les <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> <xref:System.Windows.Controls.ControlTemplate> objets de référence qui spécifient comment afficher une ligne d’informations de chanson.  
   
  [!code-xaml[ListViewItemStyleSnippet#ItemContainerStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#itemcontainerstyle)]  
   
- L’exemple suivant montre une <xref:System.Windows.Controls.ControlTemplate> qui ajoute la chaîne de texte `"Strongly Recommended"` à la ligne. Ce modèle est référencé dans le <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> et s’affiche lorsque l’évaluation de la chanson a une valeur de 5 (cinq). Le <xref:System.Windows.Controls.ControlTemplate> comprend un objet <xref:System.Windows.Controls.GridViewRowPresenter> qui présente le contenu de la ligne dans les colonnes, comme défini par le mode d’affichage <xref:System.Windows.Controls.GridView>.  
+ L’exemple suivant montre un <xref:System.Windows.Controls.ControlTemplate> qui ajoute la chaîne `"Strongly Recommended"` de texte à la ligne. Ce modèle est référencé dans <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> et s’affiche lorsque l’évaluation de la chanson a une valeur de 5 (cinq). Le <xref:System.Windows.Controls.ControlTemplate> comprend un <xref:System.Windows.Controls.GridViewRowPresenter> objet qui dispose le contenu de la ligne dans les colonnes, comme défini par le <xref:System.Windows.Controls.GridView> mode d’affichage.  
   
  [!code-xaml[ListViewItemStyleSnippet#ControlTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#controltemplate)]  
   
- L’exemple suivant définit <xref:System.Windows.Controls.GridView>.  
+ L’exemple suivant définit <xref:System.Windows.Controls.GridView> .  
   
  [!code-xaml[ListViewItemStyleSnippet#GridView](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#gridview)]  
   
@@ -37,6 +37,6 @@ Cet exemple montre comment appliquer un style à une ligne dans un contrôle de 
 
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.GridView>
-- [Rubriques de guide pratique](listview-how-to-topics.md)
-- [Vue d’ensemble de ListView](listview-overview.md)
-- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
+- [Rubriques de procédures](listview-how-to-topics.md)
+- [Vue d'ensemble de ListView](listview-overview.md)
+- [Application d'un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

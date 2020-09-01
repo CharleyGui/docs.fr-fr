@@ -1,4 +1,4 @@
-- name: 'Erreurs du compilateur C#'
+- name: Messages du compilateur C#
   href: index.md
   items:
     - name: Erreur du compilateur CS0001
@@ -273,3 +273,5 @@
       href: cs1591.md
     - name: "Avertissement du compilateur (niveau\_4) CS1610"
       href: cs1610.md
+    - name: Avertissement du compilateur (niveau 5) CS8892
+      href: cs8892.md

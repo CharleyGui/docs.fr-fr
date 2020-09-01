@@ -3,12 +3,12 @@ title: Elasticsearch dans les applications Cloud natives
 description: En savoir plus sur l’ajout de fonctionnalités de recherche élastique aux applications Cloud natives.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: e956f28877d88ce5279944964a877efc324918b6
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 70d1925d6b8c7bbe515ee4f178513dc61212ebce
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614082"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271800"
 ---
 # <a name="elasticsearch-in-a-cloud-native-app"></a>Elasticsearch dans une application Cloud Native
 
@@ -32,15 +32,15 @@ Pour les applications Cloud plus volumineuses avec des exigences de recherche co
 
 Du Place de marché Microsoft Azure, les développeurs peuvent utiliser des modèles préconfigurés pour déployer rapidement un cluster Elasticsearch sur Azure. À l’aide de l’offre gérée par Azure, vous pouvez déployer jusqu’à 50 nœuds de données, 20 nœuds de coordination et trois nœuds principaux dédiés.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce chapitre a présenté une vue détaillée des données dans les systèmes Cloud natifs. Nous avons commencé par comparer le stockage des données dans les applications monolithiques avec les modèles de stockage des données dans les systèmes natifs du Cloud. Nous avons examiné les modèles de données implémentés dans les systèmes Cloud natifs, notamment les requêtes entre services, les transactions distribuées et les modèles pour gérer les systèmes à volume élevé. Nous avons comparé SQL avec les données NoSQL. Nous avons examiné les options de stockage de données disponibles dans Azure qui incluent des options orientées Microsoft et open source. Enfin, nous avons abordé Caching et Elasticsearch dans une application Cloud native.
 
-### <a name="references"></a>References
+### <a name="references"></a>Références
 
-- [Modèle de séparation des responsabilités en matière de commande et de requête (CQRS)](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
+- [Modèle séparation des responsabilités en matière de commande et de requête (CQRS)](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
 
-- [Modèle d'approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
+- [Modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
 
 - [Pourquoi la partition de SGBDR n’est-elle pas tolérante dans le CAP CAP et pourquoi est-elle disponible ?](https://stackoverflow.com/questions/36404765/why-isnt-rdbms-partition-tolerant-in-cap-theorem-and-why-is-it-available)
 
@@ -74,7 +74,7 @@ Ce chapitre a présenté une vue détaillée des données dans les systèmes Clo
 
 - [Vitess](https://vitess.io/)
 
-- [Elasticsearch: The Definitive Guide (Elasticsearch : le guide de référence)](http://shop.oreilly.com/product/0636920028505.do)
+- [Elasticsearch: The Definitive Guide (Elasticsearch : le guide de référence)](https://shop.oreilly.com/product/0636920028505.do)
   
 - [Présentation d’Apache Lucene](https://www.baeldung.com/lucene)
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 5eb9d5127dffd2e80349352ad7a4b57f8848d56b
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 8cbb687b0c7cfb69d3f3807c083f1c25e9d39594
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165797"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271787"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -33,19 +33,19 @@ Si les trois composants sont présents, le chemin est absolu. Si aucune lettre d
 
 |Path  |Description  |
 | -- | -- |
-| `C:\Documents\Newsletters\Summer2018.pdf` | Chemin de fichier absolu à partir de la racine du lecteur C:. |
+| `C:\Documents\Newsletters\Summer2018.pdf` | Chemin de fichier absolu à partir de la racine du lecteur `C:` . |
 | `\Program Files\Custom Utilities\StringFinder.exe` | Chemin absolu à partir de la racine du lecteur actif. |
 | `2018\January.xlsx` | Chemin relatif à un fichier dans un sous-répertoire du répertoire actif. |
 | `..\Publications\TravelBrochure.pdf` | Chemin relatif à un fichier dans répertoire qui est un pair du répertoire actif. |
-| `C:\Projects\apilibrary\apilibrary.sln` | Chemin absolu à un fichier à partir de la racine du lecteur C:. |
-| `C:Projects\apilibrary\apilibrary.sln` | Chemin relatif à partir du répertoire actif du lecteur C:. |
+| `C:\Projects\apilibrary\apilibrary.sln` | Chemin d’accès absolu à un fichier à partir de la racine du lecteur `C:` . |
+| `C:Projects\apilibrary\apilibrary.sln` | Chemin d’accès relatif à partir du répertoire actif du `C:` lecteur. |
 
 > [!IMPORTANT]
-> Notez la différence entre les deux derniers chemins. Les deux chemins spécifient le spécificateur de volume facultatif (C: dans les deux cas), mais le premier commence par la racine du volume spécifié, contrairement au second. Le premier chemin est donc un chemin absolu à partir du répertoire racine du lecteur C:, tandis que le second est un chemin relatif à partir du répertoire actif du lecteur C:. L’utilisation involontaire de la deuxième forme à la place de la première est une source courante de bogues impliquant des chemins de fichier Windows.
+> Notez la différence entre les deux derniers chemins. Les deux spécifient le spécificateur de volume facultatif ( `C:` dans les deux cas), mais le premier commence par la racine du volume spécifié, tandis que le second ne le fait pas. Par conséquent, le premier est un chemin d’accès absolu à partir du répertoire racine du lecteur `C:` , tandis que le second est un chemin d’accès relatif à partir du répertoire actif du lecteur `C:` . L’utilisation involontaire de la deuxième forme à la place de la première est une source courante de bogues impliquant des chemins de fichier Windows.
 
 Pour déterminer si un chemin de fichier est complet (autrement dit, si le chemin est indépendant du répertoire actif et qu’il reste inchangé quand le répertoire actif change), appelez la méthode <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType>. Notez qu’un tel chemin peut inclure des segments de répertoire relatifs (`.` et `..`) et toujours être complet si le chemin résolu pointe toujours vers le même emplacement.
 
-L’exemple suivant illustre la différence entre les chemins absolus et relatifs. Il part du principe que le répertoire D:\FY2018\ existe et que vous n’avez défini aucun répertoire actif pour D:\ à partir de l’invite de commandes avant d’exécuter l’exemple.
+L’exemple suivant illustre la différence entre les chemins absolus et relatifs. Il part du principe que le répertoire `D:\FY2018\` existe et que vous n’avez pas défini de répertoire actif pour `D:\` à partir de l’invite de commandes avant d’exécuter l’exemple.
 
 [!code-csharp[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/cs/paths.cs)]
 [!code-vb[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/vb/paths.vb)]
@@ -56,8 +56,8 @@ L’exemple suivant illustre la différence entre les chemins absolus et relatif
 
 Les chemins respectant la convention d’affectation de noms (UNC), qui sont utilisés pour accéder aux ressources réseau, ont le format suivant :
 
-- Un nom de serveur ou d’hôte, précédé de \\\\. Le nom du serveur peut être un nom d’ordinateur NetBIOS ou une adresse IP/FQDN (IPv4 et IPv6 sont pris en charge).
-- Un nom de partage, séparé du nom d’hôte par \\. Ensemble, le serveur et le partage forment le volume.
+- Un nom de serveur ou d’hôte, précédé de `\\`. Le nom du serveur peut être un nom d’ordinateur NetBIOS ou une adresse IP/FQDN (IPv4 et IPv6 sont pris en charge).
+- Un nom de partage, séparé du nom d’hôte par `\`. Ensemble, le serveur et le partage forment le volume.
 - Un nom de répertoire. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare les sous-répertoires au sein de la hiérarchie de répertoires imbriqués.
 - Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin et le nom de fichier.
 
@@ -65,8 +65,8 @@ Voici quelques exemples de chemins UNC :
 
 |Path  |Description  |
 | -- | -- |
-| `\\system07\C$\` | Répertoire racine du lecteur C: sur `system07`. |
-| `\\Server2\Share\Test\Foo.txt` | Fichier Foo.txt dans le répertoire Test du volume \\\\Server2\\Share.|
+| `\\system07\C$\` | Répertoire racine du `C:` lecteur sur `system07` . |
+| `\\Server2\Share\Test\Foo.txt` | `Foo.txt`Fichier dans le répertoire de test du `\\Server2\Share` volume.|
 
 Les chemins UNC doivent toujours être complets. Ils peuvent inclure des segments de répertoire relatifs (`.` et `..`), mais il doivent faire partie d’un chemin complet. Pour utiliser des chemins relatifs, vous devez impérativement mapper un chemin UNC à une lettre de lecteur.
 
@@ -101,7 +101,7 @@ Le chemin de périphérique DOS comprend les composants suivants :
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
 
-    Pour les chemins UNC de périphérique, la partie serveur/partage forme le volume. Par exemple, dans `\\?\server1\e:\utilities\\filecomparer\`, la partie serveur/partage est server1\utilities. Ceci est important quand vous appelez une méthode comme <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> avec des segments de répertoire relatifs ; il est impossible de naviguer au-delà du volume.
+    Pour les chemins UNC de périphérique, la partie serveur/partage forme le volume. Par exemple, dans `\\?\server1\e:\utilities\\filecomparer\` , la partie serveur/partage est `server1\utilities` . Ceci est important quand vous appelez une méthode comme <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> avec des segments de répertoire relatifs ; il est impossible de naviguer au-delà du volume.
 
 Par définition, les chemins de périphérique DOS sont complets. Les segments de répertoire relatifs (`.` et `..`) ne sont pas autorisés. Les répertoires actifs ne font jamais partie de ce type de chemin.
 
@@ -146,7 +146,7 @@ Un chemin qui commence par un nom de périphérique hérité est toujours interp
 
 ### <a name="apply-the-current-directory"></a>Appliquer le répertoire actif
 
-Si un chemin n’est pas complet, Windows applique à celui-ci le répertoire actif. Le répertoire actif n’est pas appliqué aux chemins UNC et de périphérique. Il n’est pas non plus appliqué à un lecteur complet avec le séparateur C:\\.
+Si un chemin n’est pas complet, Windows applique à celui-ci le répertoire actif. Le répertoire actif n’est pas appliqué aux chemins UNC et de périphérique. Ni un lecteur complet avec séparateur `C:\` .
 
 Si le chemin commence par un séparateur de composant unique, le lecteur du répertoire actif est appliqué. Par exemple, si le chemin de fichier est `\utilities` et le répertoire actif `C:\temp\`, la normalisation produit `C:\utilities`.
 
