@@ -1,4 +1,5 @@
 ---
+description: internal - Référence C#
 title: internal - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,17 +8,17 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: e5a5ca18828b689241abbb6d80c5adc51efb073c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14722d66a65eb5f96118acf017dc877e657b2dd9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173599"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134573"
 ---
 # <a name="internal-c-reference"></a>internal (référence C#)
 Le mot clé `internal` est un [modificateur d’accès](./access-modifiers.md) pour les types et les membres de type.
   
- > Cette page traite de l’accès `internal`. Le `internal` mot clé fait [`protected internal`](./protected-internal.md) également partie du modificateur d’accès.
+ > Cette page traite de l’accès `internal`. Le `internal` mot clé fait également partie du [`protected internal`](./protected-internal.md) modificateur d’accès.
   
 Les types et les membres internes (internal) sont accessibles uniquement dans les fichiers d’un même assembly, comme dans l’exemple suivant :  
   
@@ -37,7 +38,7 @@ public class BaseClass
   
  Le fait de référencer un type ou un membre avec accès interne en dehors de l’assembly dans lequel il a été défini constitue une erreur.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple contient deux fichiers : `Assembly1.cs` et `Assembly1_a.cs`. Le premier fichier contient la classe de base interne `BaseClass`. Dans le deuxième fichier, une tentative d’instanciation de `BaseClass` génère une erreur.  
   
 ```csharp  
@@ -61,7 +62,7 @@ class TestAccess
 }  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Dans cet exemple, utilisez les mêmes fichiers que vous avez utilisés dans l’exemple 1, et remplacez le niveau d’accessibilité `BaseClass` par `public`. Remplacez également le niveau d’accessibilité du membre `intM` par `internal`. Dans ce cas, vous pouvez instancier la classe, mais vous ne pouvez pas accéder au membre interne.  
   
 ```csharp  
@@ -92,12 +93,12 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [Modificateurs d’accès](./access-modifiers.md)
-- [Niveaux d’accessibilité](./accessibility-levels.md)
+- [Niveaux d'accessibilité](./accessibility-levels.md)
 - [Modificateurs](index.md)
 - [public](./public.md)
-- [Privé](./private.md)
-- [Protégé](./protected.md)
+- [priv](./private.md)
+- [protected](./protected.md)

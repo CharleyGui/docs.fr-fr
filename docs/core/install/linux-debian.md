@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: a9ccc461362b1be3e5bc2ee7d13d5d7d383192e4
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: d4a54a8a5354a1430141d2c06d4aa90dbafc3edf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053155"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134937"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur Debian
 
@@ -99,7 +99,7 @@ sudo apt-get upgrade
 
 Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation de la fonction APT pour installer .NET Core.
 
-### <a name="unable-to-locate"></a>Impossible de localiser
+### <a name="unable-to-locate--some-packages-could-not-be-installed"></a>Impossible d' \\ installer certains packages
 
 [!INCLUDE [package-manager-failed-to-find-deb](includes/package-manager-failed-to-find-deb.md)]
 

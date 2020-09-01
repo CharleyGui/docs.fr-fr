@@ -1,4 +1,5 @@
 ---
+description: ':::no-loc text=interface::: (Référence C#)'
 title: interface - Référence C#
 ms.date: 01/17/2020
 f1_keywords:
@@ -6,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: 869f1398ae0af3c7379655aa018a9f4aacb934d7
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 24f95e828522f467c519c0c8a7ba9410aa97af4e
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243969"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134586"
 ---
-# <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface":::(Référence C#)
+# <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface"::: (Référence C#)
 
 Une interface définit un contrat. Tout [`class`](class.md) ou [`struct`](../builtin-types/struct.md) qui implémente ce contrat doit fournir une implémentation des membres définis dans l’interface. À compter de C# 8,0, une interface peut définir une implémentation par défaut pour les membres. Il peut également définir des membres afin de [`static`](static.md) fournir une implémentation unique pour les fonctionnalités communes.
 

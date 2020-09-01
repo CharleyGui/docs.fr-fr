@@ -1,4 +1,5 @@
 ---
+description: 'En savoir plus sur les types valeur, ses genres et les types intégrés en C #'
 title: Types valeur-référence C#
 ms.date: 01/22/2020
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 0a05b2b0f3f2a8377fdba6144b8aeb12bdee1086
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 7826e71fee235d32655ccfbc9060c3bbb48d76c5
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86172949"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134768"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -62,7 +63,7 @@ Tous les types simples sont des types structure et diffèrent des autres types d
 
 Pour plus d’informations, consultez les sections suivantes de la [spécification du langage C#](~/_csharplang/spec/introduction.md) :
 
-- [Types valeur](~/_csharplang/spec/types.md#value-types)
+- [Types de valeur](~/_csharplang/spec/types.md#value-types)
 - [Types simples](~/_csharplang/spec/types.md#simple-types)
 - [Variables](~/_csharplang/spec/variables.md)
 

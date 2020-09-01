@@ -1,5 +1,6 @@
 ---
-title: mot-clé params pour les tableaux de paramètres - référence C
+description: mot clé params pour les tableaux de paramètres-référence C#
+title: mot clé params pour les tableaux de paramètres-référence C#
 ms.date: 07/20/2015
 f1_keywords:
 - params_CSharpKeyword
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - params keyword [C#]
 - parameter array
 ms.assetid: 1690815e-b52b-4967-8380-5780aff08012
-ms.openlocfilehash: 77d7fd19ff57f80f401191027e2fae95026e1966
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: a2726c725508cd297001aaabddeff414704d1115
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738841"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134469"
 ---
 # <a name="params-c-reference"></a>params (référence C#)
 
@@ -22,12 +23,12 @@ Avec le mot clé `params`, vous pouvez spécifier un [paramètre de méthode](me
 
 Dans une déclaration de méthode, vous ne pouvez pas spécifier de paramètre supplémentaire après le mot clé `params` et vous pouvez utiliser un seul mot clé `params`.
 
-Si le type `params` déclaré du paramètre n’est pas un tableau unidimensionnel, l’erreur de compilateur [CS0225](../../misc/cs0225.md) se produit.
+Si le type déclaré du `params` paramètre n’est pas un tableau unidimensionnel, l’erreur de compilateur [CS0225](../../misc/cs0225.md) se produit.
 
-Lorsque vous appelez une `params` méthode avec un paramètre, vous pouvez passer dans:
+Lorsque vous appelez une méthode avec un `params` paramètre, vous pouvez passer :
 
-- Une liste d’arguments séparés par virgule du type d’éléments de tableau.
-- Un éventail d’arguments du type spécifié.
+- Liste séparée par des virgules des arguments du type des éléments du tableau.
+- Tableau d’arguments du type spécifié.
 - Aucun argument. Si vous n’envoyez aucun argument, la longueur de la liste `params` est égale à zéro.
 
 ## <a name="example"></a>Exemple
@@ -42,7 +43,7 @@ L’exemple suivant montre différentes façons d’envoyer des arguments à un 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation CMD](../../programming-guide/index.md)
-- [Mots-clés C](index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](index.md)
 - [Paramètres de méthodes](method-parameters.md)

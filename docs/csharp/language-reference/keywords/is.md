@@ -1,4 +1,5 @@
 ---
+description: is - Référence C#
 title: is - Référence C#
 ms.date: 06/21/2019
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: e64b690482419963a92764b2c97a42dbb231fbfc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3508f08857f88fd34478f968a71bae0121d54d1c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399636"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134508"
 ---
 # <a name="is-c-reference"></a>is (référence C#)
 
@@ -36,7 +37,7 @@ Lorsque vous utilisez le modèle de type pour rechercher des critères spéciaux
    expr is type varname
 ```
 
-Lorsque *l’expr* est une expression qui évalue à un exemple d’un certain type, le *type* est le nom du type auquel le résultat de *l’expr* doit être converti, et *varname* est l’objet auquel le résultat de l’expr est converti si le *expr* `is` test est `true`.
+Où *expr* est une expression qui prend la valeur d’une instance d’un certain type, *type* est le nom du type dans lequel le résultat de *expr* doit être converti, et *varname* est l’objet vers lequel le résultat de *expr* est converti si le `is` test a la valeur `true` .
 
 L’expression `is` est `true` si *expr* n’est pas `null` et que l’une des conditions suivantes est remplie :
 
@@ -106,17 +107,17 @@ L’exemple suivant illustre une comparaison des vérifications de `null` :
 
 ### <a name="var-pattern"></a>Modèle de variable
 
-Un modèle correspondant `var` au modèle réussit toujours. Sa syntaxe est la suivante :
+Une correspondance de modèle avec le `var` modèle est toujours réussie. Sa syntaxe est la suivante :
 
 ```csharp
    expr is var varname
 ```
 
-Lorsque la valeur de *l’expr* est toujours attribuée à une variable locale nommée *varname*. *varname* est une variable du même type que le type de compilation-temps *d’expr*.
+Où la valeur de *expr* est toujours assignée à une variable locale nommée *varname*. *varname* est une variable du même type que le type au moment de la compilation de *expr*.
 
-Si *expr* évalue `null`à `is` , `true` l’expression produit et attribue `null` à *varname*. Le modèle var est l’une `true` des `null` rares utilisations de `is` celui produit pour une valeur.
+Si *expr* prend la valeur `null` , l' `is` expression produit `true` et assigne `null` à *varname*. Le modèle var est l’une des rares utilisations de `is` qui produit `true` une `null` valeur.
 
-Vous pouvez `var` utiliser le modèle pour créer une variable temporaire dans une expression Boolean, comme le montre l’exemple suivant :
+Vous pouvez utiliser le `var` modèle pour créer une variable temporaire dans une expression booléenne, comme le montre l’exemple suivant :
 
 [!code-csharp[is#8](../../../../samples/snippets/csharp/language-reference/keywords/is/is-var-pattern8.cs#8)]
 
@@ -131,6 +132,6 @@ Pour plus d’informations, consultez la section [L’opérateur is](~/_csharpla
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Mots-clés CMD](index.md)
+- [Informations de référence sur C#](../index.md)
+- [Mots clés C#](index.md)
 - [Opérateurs de conversion et de test de type](../operators/type-testing-and-cast.md)

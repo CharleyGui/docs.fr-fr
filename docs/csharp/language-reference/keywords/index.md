@@ -1,4 +1,5 @@
 ---
+description: Mots clés C#
 title: Mots clés C#
 ms.date: 03/07/2017
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - '@ keyword'
 ms.custom: updateeachrelease
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 3392b92cbd77e5b3f895af99a71f33d2ab43fa15
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: a6658fe7bb97309d35ca2a9177a90a2443f1a3ca
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812313"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134612"
 ---
 # <a name="c-keywords"></a>Mots clés C#
 
@@ -33,14 +34,14 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 |[event](event.md)|[explicitement](../operators/user-defined-conversion-operators.md)|[extern](extern.md)|[false](../builtin-types/bool.md)|  
 |[suivie](try-finally.md)|[des](fixed-statement.md)|[float](../builtin-types/floating-point-numeric-types.md)|[for](for.md)|  
 |[foreach](foreach-in.md)|[goto](goto.md)|[if](if-else.md)|[Implicit](../operators/user-defined-conversion-operators.md)|  
-|[in](in.md)|[int](../builtin-types/integral-numeric-types.md)|[interface](interface.md)|[internal](internal.md)|
+|[in](in.md)|[int](../builtin-types/integral-numeric-types.md)|[interface](interface.md)|[intérieurs](internal.md)|
 |[is](is.md)|[Lock](lock-statement.md)|[long](../builtin-types/integral-numeric-types.md)|[namespace](namespace.md)|
 |[nouveau](../operators/new-operator.md)|[null](null.md)|[object](../builtin-types/reference-types.md)|[operator](../operators/operator-overloading.md)|
-|[à](out.md)|[override](override.md)|[params](params.md)|[priv](private.md)|
+|[à](out.md)|[remplacer](override.md)|[params](params.md)|[priv](private.md)|
 |[protected](protected.md)|[public](public.md)|[seulement](readonly.md)|[ref](ref.md)|
-|[renvoi](return.md)|[sbyte](../builtin-types/integral-numeric-types.md)|[sealed](sealed.md)|[short](../builtin-types/integral-numeric-types.md)||
+|[return](return.md)|[sbyte](../builtin-types/integral-numeric-types.md)|[sealed](sealed.md)|[short](../builtin-types/integral-numeric-types.md)||
 [sizeof](../operators/sizeof.md)|[stackalloc](../operators/stackalloc.md)|[static](static.md)|[string](../builtin-types/reference-types.md)|
-|[modélis](../builtin-types/struct.md)|[switch](switch.md)|[this](this.md)|[lever](throw.md)|
+|[modélis](../builtin-types/struct.md)|[switch](switch.md)|[this](this.md)|[throw](throw.md)|
 |[true](../builtin-types/bool.md)|[Essayez](try-catch.md)|[typeof](../operators/type-testing-and-cast.md#typeof-operator)|[uint](../builtin-types/integral-numeric-types.md)|
 |[ulong](../builtin-types/integral-numeric-types.md)|[unchecked](unchecked.md)|[unsafe](unsafe.md)|[ushort](../builtin-types/integral-numeric-types.md)|
 |[à](using.md)|[virtual](virtual.md)|[void](../builtin-types/void.md)|[volatile](volatile.md)|
@@ -53,7 +54,7 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 ||||  
 |---|---|---|  
 |[add](add.md)|[alias](extern-alias.md)|[ascending](ascending.md)|
-|[async](async.md)|[await](../operators/await.md)|[par](by.md)|
+|[async](async.md)|[await](../operators/await.md)|[by](by.md)|
 |[descending](descending.md)|[dynamic](../builtin-types/reference-types.md)|[equals](equals.md)|
 |[from](from-clause.md)|[get](get.md)|[Généralités](../operators/namespace-alias-qualifier.md)|
 |[groupe](group-clause.md)|[into](into.md)|[join](join-clause.md)|

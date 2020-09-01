@@ -1,4 +1,5 @@
 ---
+description: Opérateur await – Informations de référence sur C#
 title: Opérateur await – Informations de référence sur C#
 ms.date: 07/13/2020
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 1941174d7e8d1676d11a13fa3ee6c7b84fe3952c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 6531e696a6193bf1b1909c9f1be3f5beb4d7dd69
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063235"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134365"
 ---
 # <a name="await-operator-c-reference"></a>Opérateur await (informations de référence sur C#)
 
@@ -55,7 +56,7 @@ Pour plus d’informations, consultez la section [Expressions await](~/_csharpla
 
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs et expressions C#](index.md)
-- [Suppr](../keywords/async.md)
+- [async](../keywords/async.md)
 - [Modèle de programmation asynchrone des tâches](../../programming-guide/concepts/async/task-asynchronous-programming-model.md)
 - [Programmation asynchrone](../../async.md)
 - [Async en détail](../../../standard/async-in-depth.md)
