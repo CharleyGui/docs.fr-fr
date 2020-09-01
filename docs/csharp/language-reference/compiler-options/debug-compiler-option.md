@@ -1,4 +1,5 @@
 ---
+description: -debug (Options du compilateur C#)
 title: -debug (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - -debug compiler option [C#]
 - /debug compiler option [C#]
 ms.assetid: e2b48c07-01bc-45cc-a52c-92e9085eb969
-ms.openlocfilehash: 8bb2b411dc867b6a43e52058dccf2ac980cf0b1e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 164530a5ec99e7d5b9f34dbcdfb18d80f3102308
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69922509"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125915"
 ---
 # <a name="-debug-c-compiler-options"></a>-debug (Options du compilateur C#)
 L’option **-debug** fait en sorte que le compilateur génère des informations de débogage et les place dans les fichiers de sortie.  
@@ -32,7 +33,7 @@ L’option **-debug** fait en sorte que le compilateur génère des informations
  `full` &#124; `pdbonly`  
  Indique le type d'informations de débogage générées par le compilateur. L’argument complet, qui est en vigueur si vous ne spécifiez pas **-debug:pdbonly**, permet d’attacher un débogueur au programme en cours d’exécution. Le fait de spécifier pdbonly active le débogage du code source quand le programme est démarré dans le débogueur, mais affiche uniquement un assembleur quand le programme en cours d’exécution est attaché au débogueur.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Utilisez cette option pour créer des versions Debug. Si **-debug**, **-debug+** ou **-debug:full** n’est pas spécifié, vous ne pourrez pas déboguer le fichier de sortie de votre programme.  
   
  Si vous utilisez **-debug:full**, sachez qu’il y a un impact sur la vitesse et la taille du code optimisé JIT, ainsi qu’un faible impact sur la qualité du code avec **-debug:full**. Nous vous recommandons d’utiliser **-debug:pdbonly** ou aucun PDB pour la génération du code de version finale.  
@@ -50,13 +51,13 @@ L’option **-debug** fait en sorte que le compilateur génère des informations
   
 2. Cliquez sur la page de propriétés **Générer**.  
   
-3. Cliquez sur le bouton **Avancé**.  
+3. Cliquez sur le bouton **Avancé** .  
   
 4. Modifiez la propriété **Infos de débogage**.  
   
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DebugSymbols%2A>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Placez les informations de débogage dans le fichier de sortie `app.pdb` :  
   
 ```console  
@@ -65,5 +66,5 @@ csc -debug -pdb:app.pdb test.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

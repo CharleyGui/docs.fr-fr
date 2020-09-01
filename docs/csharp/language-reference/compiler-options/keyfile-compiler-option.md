@@ -1,4 +1,5 @@
 ---
+description: -keyfile (Options du compilateur C#)
 title: -keyfile (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: bf271cc6b6887e930911071d4603b51daed55e61
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a97fc00201be1cf8043fc353b20ef447468a06bf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70970261"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125486"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (Options du compilateur C#)
 Spécifie le nom du fichier contenant la clé de chiffrement.  
@@ -30,7 +31,7 @@ Spécifie le nom du fichier contenant la clé de chiffrement.
 |----------|----------------|  
 |`file`|Nom du fichier contenant la clé de nom fort.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Quand cette option est utilisée, le compilateur insère la clé publique du fichier spécifié dans le manifeste d'assembly, puis signe l'assembly final avec la clé privée. Pour générer un fichier de clé, tapez sn -k `file` sur la ligne de commande.  
   
  Si vous compilez avec **-target:module**, le nom du fichier de clé est conservé dans le module et incorporé dans l’assembly créé quand vous compilez un assembly avec [-addmodule](./addmodule-compiler-option.md).  
@@ -55,5 +56,5 @@ Spécifie le nom du fichier contenant la clé de chiffrement.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

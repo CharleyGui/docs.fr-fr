@@ -1,4 +1,5 @@
 ---
+description: Options du compilateur C# par catégorie
 title: Options du compilateur C# par catégorie
 ms.date: 06/04/2020
 helpviewer_keywords:
@@ -6,12 +7,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: f216534140b6e207ac110bb54b3e4f93a8ac6b70
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 27445b6685f48f7acf646c16de3201e68767da69
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474018"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125291"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Options du compilateur C# par catégorie
 
@@ -28,11 +29,11 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 
 |Option|Objectif|
 |------------|-------------|
-|[-déterministe](deterministic-compiler-option.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
+|[-deterministic](deterministic-compiler-option.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
 |[-doc](doc-compiler-option.md)|Spécifie un fichier XML dans lequel les commentaires de documentation traités doivent être écrits.|
 |[-out](out-compiler-option.md)|Spécifie le fichier de sortie.|
 |[-pathmap](pathmap-compiler-option.md)|Spécifie un mappage pour la sortie de noms de chemin d’accès source par le compilateur.|
-|[-PDB](pdb-compiler-option.md)|Spécifie le nom et l'emplacement du fichier .pdb.|
+|[-pdb](pdb-compiler-option.md)|Spécifie le nom et l'emplacement du fichier .pdb.|
 |[-plateforme](platform-compiler-option.md)|Spécifie la plateforme de sortie.|
 |[-preferreduilang](preferreduilang-compiler-option.md)|Spécifie un langage pour les résultats de la compilation.|
 |[-refout](refout-compiler-option.md)|Génère un assembly de référence en plus de l’assembly principal.|
@@ -67,7 +68,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |[-errorreport](errorreport-compiler-option.md)|Définit le comportement de signalement d'erreurs.|
 |[-fullpaths](fullpaths-compiler-option.md)|Spécifie le chemin d'accès absolu au fichier de sortie du compilateur.|
 |[-nowarn](nowarn-compiler-option.md)|Supprime la génération par le compilateur des avertissements spécifiés.|
-|[-Nullable](nullable-compiler-option.md)|Spécifie l’option de contexte Nullable.|
+|[-nullable](nullable-compiler-option.md)|Spécifie l’option de contexte Nullable.|
 |[-warn](warn-compiler-option.md)|Définit le niveau d'avertissement.|
 |[-warnaserror](warnaserror-compiler-option.md)|Transforme les avertissements en erreurs.|
 |RuleSet\<file>|Spécifiez un fichier ruleset qui désactive des diagnostics spécifiques.|
@@ -95,7 +96,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |[@](response-file-compiler-option.md)|Spécifie un fichier réponse.|
 |[-?](help-compiler-option.md)|Répertorie les options du compilateur dans stdout.|
 |[-baseaddress](baseaddress-compiler-option.md)|Spécifie l'adresse de base préférée à laquelle charger une DLL.|
-|[-CodePage](codepage-compiler-option.md)|Spécifie la page de codes à utiliser pour tous les fichiers de code source inclus dans la compilation.|
+|[-codepage](codepage-compiler-option.md)|Spécifie la page de codes à utiliser pour tous les fichiers de code source inclus dans la compilation.|
 |[-aide](help-compiler-option.md)|Répertorie les options du compilateur dans stdout.|
 |[-highentropyva](highentropyva-compiler-option.md)|Spécifie que le fichier exécutable prend en charge la randomisation du format d'espace d'adresse (ASLR).|
 |[-langversion](langversion-compiler-option.md)|Spécifie la version de langage : Default, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 ou Latest |

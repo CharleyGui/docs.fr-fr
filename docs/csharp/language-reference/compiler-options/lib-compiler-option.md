@@ -1,4 +1,5 @@
 ---
+description: -lib (Options du compilateur C#)
 title: -lib (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - -lib compiler option [C#]
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
-ms.openlocfilehash: 0c230147be055170ca015f27bd42bb096399405d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e53c54dc446d9fea87a9b7a336a38ffaa31704e9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606820"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125447"
 ---
 # <a name="-lib-c-compiler-options"></a>-lib (Options du compilateur C#)
-**L’option -lib** spécifie l’emplacement des assemblages référencés au moyen de [l’option de référence (Options compilateurs C).](./reference-compiler-option.md)  
+L’option **-lib** spécifie l’emplacement des assemblys référencés au moyen de l’option [-Reference (options du compilateur C#)](./reference-compiler-option.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,7 +32,7 @@ ms.locfileid: "69606820"
  `dir2`  
  Un ou plusieurs répertoires supplémentaires où rechercher des références d’assembly. Séparez les noms des répertoires supplémentaires par une virgule, sans espace.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Le compilateur recherche les références d’assembly qui ne sont pas complètes dans l’ordre suivant :  
   
 1. Répertoire de travail actuel. Il s’agit du répertoire à partir duquel le compilateur est appelé.  
@@ -60,7 +61,7 @@ ms.locfileid: "69606820"
   
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compilez t2.cs pour créer un fichier .exe. Le compilateur recherche les références d’assembly dans le répertoire de travail et dans le répertoire racine du lecteur C.  
   
 ```console  
@@ -69,5 +70,5 @@ csc -lib:c:\ -reference:t2.dll t2.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

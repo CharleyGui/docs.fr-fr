@@ -1,4 +1,5 @@
 ---
+description: -langversion (Options du compilateur C#)
 title: -langversion (Options du compilateur C#)
 ms.date: 05/20/2020
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - langversion compiler option [C#]
 ms.custom: updateeachrelease
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: fd05802008a20267fea54f14bae4c8deb0e21c65
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: b0e966bcc87303c0a7c2199fbfac743b22481424
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656205"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125473"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (Options du compilateur C#)
 
@@ -36,7 +37,7 @@ Les valeurs suivantes sont valides :
 
 La version du langage par défaut dépend du framework cible de votre application et de la version installée du kit SDK ou de Visual Studio. Ces règles sont définies dans l’article [configuration de la version linguistique](../configure-language-version.md#defaults) .
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Les métadonnées référencées par votre application C# ne sont pas visées par l’option de compilateur **-langversion**.
 

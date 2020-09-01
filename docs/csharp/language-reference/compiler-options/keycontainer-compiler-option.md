@@ -1,4 +1,5 @@
 ---
+description: -keycontainer (Options du compilateur C#)
 title: -keycontainer (Options du compilateur C#)
 ms.date: 05/16/2018
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - keycontainer compiler option [C#]
 - -keycontainer compiler option [C#]
 ms.assetid: b3982b6d-2382-4f7e-bebd-ce98eaa30763
-ms.openlocfilehash: fead2d4296cfa6fb0195cb4b43f6448c0fc7e6a9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b11380683159b7792149558a5dd432707ba3818
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70970148"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125499"
 ---
 # <a name="-keycontainer-c-compiler-options"></a>-keycontainer (Options du compilateur C#)
 Spécifie le nom du conteneur de la clé de chiffrement.  
@@ -28,7 +29,7 @@ Spécifie le nom du conteneur de la clé de chiffrement.
  `string`  
  Nom du conteneur de clé de nom fort.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Quand l’option **-keycontainer** est utilisée, le compilateur crée un composant pouvant être partagé. Le compilateur insère une clé publique à partir du conteneur spécifié dans le manifeste d’assembly et signe l’assembly final avec la clé privée. Pour générer un fichier de clé, tapez `sn -k file` à la ligne de commande. `sn -i` installe la paire de clés dans un conteneur. Cette option n’est pas prise en charge quand le compilateur s’exécute sur CoreCLR. Pour signer un assembly en cas de génération sur CoreCLR, utilisez l’option [-keyfile](keyfile-compiler-option.md).
   
  Si vous compilez avec [-target:module](./target-module-compiler-option.md), le nom du fichier de clé est conservé dans le module et incorporé dans l’assembly quand vous compilez ce module dans un assembly avec [-addmodule](./addmodule-compiler-option.md).  
@@ -48,5 +49,5 @@ Spécifie le nom du conteneur de la clé de chiffrement.
 ## <a name="see-also"></a>Voir aussi
 
 - [Option -keyfile du compilateur C#](keyfile-compiler-option.md)
-- [Options de compilateur C](index.md)
+- [Options du compilateur C#](index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

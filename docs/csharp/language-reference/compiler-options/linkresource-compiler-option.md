@@ -1,4 +1,5 @@
 ---
+description: -linkresource (Options du compilateur C#)
 title: -linkresource (Options du compilateur C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-ms.openlocfilehash: 41af8e0ba8ffebd07d3cb1d2bc5fbc04b8cd595d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 162baad57397b6d992dcf8f03f0b3661e0105cb8
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173729"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125343"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource (Options du compilateur C#)
 Crée un lien vers une ressource .NET Framework dans le fichier de sortie. Le fichier de ressources n’est pas ajouté au fichier de sortie. Cette option diffère de l’option [-resource](./resource-compiler-option.md) qui incorpore un fichier de ressources dans le fichier de sortie.  
@@ -37,12 +38,12 @@ Crée un lien vers une ressource .NET Framework dans le fichier de sortie. Le fi
  `accessibility-modifier` (facultatif)  
  Accessibilité de la ressource : publique ou privée. La valeur par défaut est public.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
  Par défaut, les ressources liées sont publiques dans l’assembly quand elles sont créées avec le compilateur C#. Pour rendre les ressources privées, spécifiez le modificateur d’accessibilité `private`. Aucun autre modificateur que `public` ou `private` n’est autorisé.  
   
  **-linkresource** nécessite une option [-target](./target-compiler-option.md) autre que **-target:module**.  
   
- Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l'environnement de développement, il est accessible à l'aide des membres de l'espace de noms <xref:System.Resources>. Pour plus d’informations, consultez <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Pour toutes les autres ressources, utilisez les méthodes `GetManifestResource` dans la classe <xref:System.Reflection.Assembly> pour accéder à la ressource au moment de l’exécution.  
+ Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l'environnement de développement, il est accessible à l'aide des membres de l'espace de noms <xref:System.Resources>. Pour plus d'informations, consultez <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Pour toutes les autres ressources, utilisez les méthodes `GetManifestResource` dans la classe <xref:System.Reflection.Assembly> pour accéder à la ressource au moment de l’exécution.  
   
  Le fichier spécifié dans `filename` peut avoir n’importe quel format. C’est le cas, par exemple, si vous voulez qu’une DLL native fasse partie de l'assembly pour qu’elle puisse être installée dans le Global Assembly Cache et accessible à partir du code managé dans l'assembly. Le deuxième des exemples suivants montre comment effectuer cette opération. Vous pouvez effectuer la même opération dans Assembly Linker. Le troisième des exemples suivants montre comment effectuer cette opération. Pour plus d’informations, consultez [Al.exe (Assembly Linker)](../../../framework/tools/al-exe-assembly-linker.md) et [Utilisation d’assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md).  
   
@@ -50,14 +51,14 @@ Crée un lien vers une ressource .NET Framework dans le fichier de sortie. Le fi
   
  Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compiler `in.cs` et créer un lien vers le fichier de ressources `rf.resource` :  
   
 ```console  
 csc -linkresource:rf.resource in.cs  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Compiler `A.cs` dans une DLL, créer un lien vers une DLL native N.dll et placer la sortie dans le Global Assembly Cache (GAC). Dans cet exemple, A.dll et N.dll résident dans le GAC.  
   
 ```console  
@@ -65,7 +66,7 @@ csc -linkresource:N.dll -t:library A.cs
 gacutil -i A.dll  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple obtient le même résultat, mais en utilisant des options Assembly Linker.  
   
 ```console  
@@ -76,7 +77,7 @@ gacutil -i A.dll
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Al.exe (Assembly Linker)](../../../framework/tools/al-exe-assembly-linker.md)
-- [Utilisation d’assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)
+- [Utilisation d'assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

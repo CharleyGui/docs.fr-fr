@@ -1,4 +1,5 @@
 ---
+description: -link (Options du compilateur C#)
 title: -link (Options du compilateur C#)
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-ms.openlocfilehash: d5684298bbd736cae2d9c13381431036806aab17
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0f6927fd240f3f8535478d163be615fc74dad8d2
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144459"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125395"
 ---
 # <a name="-link-c-compiler-options"></a>-link (Options du compilateur C#)
 Fait que le compilateur rend disponible pour le projet en cours de compilation les informations de type COM des assemblys spécifiés.

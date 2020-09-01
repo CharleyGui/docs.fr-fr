@@ -1,4 +1,5 @@
 ---
+description: -deterministic (Options du compilateur C#)
 title: -deterministic (Options du compilateur C#)
 ms.date: 04/12/2018
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - -deterministic compiler option [C#]
 - deterministic compiler option [C#]
 - /deterministic compiler option [C#]
-ms.openlocfilehash: ed5d1db4618649391f88affad67e62dd9fc95925
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9d0bcc2957e5a666c21cdc2ce61e74fc90fe3530
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73455186"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125824"
 ---
 # <a name="-deterministic"></a>-deterministic
 
@@ -24,7 +25,7 @@ Indique au compilateur de générer un assembly dont la sortie octet-pour-octet 
 -deterministic
 ```
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
 Par défaut, le résultat de la compilation d’un ensemble défini d’entrées est unique, étant donné que le compilateur ajoute un horodatage et un GUID qui est généré à partir de nombres aléatoires. Utilisez l’option `-deterministic` pour générer un *assembly déterministe*, dont le contenu binaire sera identique dans les compilations tant que l’entrée restera la même.
 
@@ -54,5 +55,5 @@ Quand les sources sont accessibles à tous, la compilation déterministe peut se
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options de compilateur C](./index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
