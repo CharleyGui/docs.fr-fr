@@ -1,4 +1,5 @@
 ---
+description: from, clause - Référence C#
 title: from, clause - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - from clause [C#]
 - from keyword [C#]
 ms.assetid: 1aefd18c-1314-47f8-99ec-9bcefb09e699
-ms.openlocfilehash: 388b9c0245b112d619fc173f6019b3f7dbf59940
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 474b22f5a9d8f12c8a4365159817f878761b563c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715294"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89140787"
 ---
 # <a name="from-clause-c-reference"></a>from, clause (Référence C#)
 
@@ -31,9 +32,9 @@ Dans l’exemple suivant, `numbers` est la source de données tandis que `num` e
 
 ## <a name="the-range-variable"></a>Variable de portée
 
-Le compilateur déduit le type de la variable de portée quand la source de données implémente <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, si la source a un type `IEnumerable<Customer>`, la variable de portée est déduite comme étant `Customer`. Vous devez spécifier le type de façon explicite uniquement quand la source est un type `IEnumerable` non générique comme <xref:System.Collections.ArrayList>. Pour plus d’informations, voir [Comment interroger un TableauList avec LINQ](../../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).
+Le compilateur déduit le type de la variable de portée quand la source de données implémente <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, si la source a un type `IEnumerable<Customer>`, la variable de portée est déduite comme étant `Customer`. Vous devez spécifier le type de façon explicite uniquement quand la source est un type `IEnumerable` non générique comme <xref:System.Collections.ArrayList>. Pour plus d’informations, consultez [Comment interroger une ArrayList avec LINQ](../../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).
 
-Dans l’exemple précédent, `num` est déduit comme étant de type `int`. Comme la variable de portée est fortement typée, vous pouvez appeler des méthodes sur celle-ci ou l’utiliser dans d’autres opérations. Par exemple, au lieu d’écrire `select num`, vous pouvez écrire `select num.ToString()` pour que l’expression de requête retourne une séquence de chaînes à la place d’entiers. Vous pouvez également écrire `select num + 10` pour que l’expression retourne la séquence 14, 11, 13, 12, 10. Pour plus d’informations, voir [la clause de sélection](select-clause.md).
+Dans l’exemple précédent, `num` est déduit comme étant de type `int`. Comme la variable de portée est fortement typée, vous pouvez appeler des méthodes sur celle-ci ou l’utiliser dans d’autres opérations. Par exemple, au lieu d’écrire `select num`, vous pouvez écrire `select num.ToString()` pour que l’expression de requête retourne une séquence de chaînes à la place d’entiers. Vous pouvez également écrire `select num + 10` pour que l’expression retourne la séquence 14, 11, 13, 12, 10. Pour plus d’informations, consultez [Select, clause](select-clause.md).
 
 La variable de portée est semblable à une variable d’itération dans une instruction [foreach](foreach-in.md) à une différence près, très importante : une variable de portée ne stocke jamais réellement de données de la source. Il s’agit juste d’une syntaxe pratique qui permet à la requête de décrire ce qui se produira lors de son exécution. Pour plus d’informations, consultez [Introduction aux requêtes LINQ (C#)](../../programming-guide/concepts/linq/introduction-to-linq-queries.md).
 
@@ -55,5 +56,5 @@ Pour plus d’informations sur les opérations de jointure qui utilisent plusieu
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Mots-clés de requête (LINQ)](query-keywords.md)
-- [Requête intégrée linguistique (LINQ)](../../linq/index.md)
+- [Mots clés de requête (LINQ)](query-keywords.md)
+- [LINQ (Language-Integrated Query)](../../linq/index.md)

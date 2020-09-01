@@ -1,4 +1,5 @@
 ---
+description: let, clause - Référence C#
 title: let, clause - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - let keyword [C#]
 - let clause [C#]
 ms.assetid: 13c9c1a4-ce57-48ef-8e1b-4c2a59b99fb4
-ms.openlocfilehash: a6eee9a23fa28b78343e6479106eaa24ecf4caa6
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 3767b9745cccd9802374a8100de19f286c9b55ea
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795363"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139591"
 ---
 # <a name="let-clause-c-reference"></a>let, clause (Référence C#)
 

@@ -1,4 +1,5 @@
 ---
+description: private, mot clé - Référence C#
 title: private, mot clé - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - private keyword [C#]
 ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
-ms.openlocfilehash: a13e9ef18b0f6452c3ff1497dc97110bc21c433d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e6f40712fd2cca6d7b1f64760f1c6c5dd5c71370
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715196"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139396"
 ---
 # <a name="private-c-reference"></a>private (référence C#)
 
 Le mot clé `private` est un modificateur d’accès de membre.
 
-> Cette page traite de l’accès `private`. Le `private` mot clé fait [`private protected`](./private-protected.md) également partie du modificateur d’accès.
+> Cette page traite de l’accès `private`. Le `private` mot clé fait également partie du [`private protected`](./private-protected.md) modificateur d’accès.
 
 L’accès privé est le niveau d’accès le moins permissif. Les membres privés sont accessibles uniquement dans le corps de la classe ou le struct dans lequel ils sont déclarés, comme dans cet exemple :
 
@@ -36,7 +37,7 @@ Référencer un membre privé en dehors d'une classe ou d'un struct où il est d
 
 Pour obtenir une comparaison de `private` et des autres modificateurs d’accès, consultez [Niveaux d’accessibilité](accessibility-levels.md) et [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Dans cet exemple, la classe `Employee` contient deux membres de données privés, `name` et `salary`. S’agissant de membres privés, ils sont accessibles uniquement par les méthodes membres. Les méthodes publiques `GetName` et `Salary` sont ajoutées pour permettre un accès contrôlé aux membres privés. Le membre `name` est accessible via une méthode publique et le membre `salary` est accessible via une propriété publique en lecture seule. (Pour plus d’informations, consultez [Propriétés](../../programming-guide/classes-and-structs/properties.md).)
 
@@ -48,12 +49,12 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
-- [Niveaux d’accessibilité](accessibility-levels.md)
+- [Niveaux d'accessibilité](accessibility-levels.md)
 - [Modificateurs](index.md)
 - [public](public.md)
-- [Protégé](protected.md)
-- [Interne](internal.md)
+- [protected](protected.md)
+- [intérieurs](internal.md)

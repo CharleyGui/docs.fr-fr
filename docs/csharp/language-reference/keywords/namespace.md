@@ -1,4 +1,5 @@
 ---
+description: namespace, mot clé - Référence C#
 title: namespace, mot clé - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: b35f0a2a5cc0b2895b491d4ee24f89955f4b8fed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a6cfd1c3d37cbdef1f0dd72ddca85ce91f2e183b
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77625798"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139578"
 ---
 # <a name="namespace-c-reference"></a>namespace (référence C#)
 
@@ -21,21 +22,21 @@ Le mot clé `namespace` est utilisé pour déclarer une portée qui contient un 
 
 [!code-csharp[csrefKeywordsNamespace#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#1)]
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 Dans un espace de noms, vous pouvez déclarer zéro ou plusieurs des types suivants :
 
 - autre espace de noms
 
-- [Classe](class.md)
+- [class](class.md)
 
-- [Interface](interface.md)
+- [interface](interface.md)
 
-- [struct](../builtin-types/struct.md)
+- [modélis](../builtin-types/struct.md)
 
-- [Enum](../builtin-types/enum.md)
+- [variables](../builtin-types/enum.md)
 
-- [Délégué](../builtin-types/reference-types.md#the-delegate-type)
+- [delegate](../builtin-types/reference-types.md#the-delegate-type)
 
 Le compilateur ajoute un espace de noms par défaut, que vous déclariez ou non explicitement un espace de noms dans un fichier source C#. Cet espace de noms sans nom, parfois appelé espace de noms global, est présent dans chaque fichier. Tout identificateur dans l’espace de noms global peut être utilisé dans un espace de noms nommé.
 
@@ -45,7 +46,7 @@ Il est possible de définir un espace de noms dans deux déclarations ou plus. P
 
 [!code-csharp[csrefKeywordsNamespace#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#2)]
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre comment appeler une méthode statique dans un espace de noms imbriqué.
 
@@ -57,9 +58,9 @@ Pour plus d’informations, voir la section [Espace de noms](~/_csharplang/spec/
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Mots-clés CMD](index.md)
-- [Utilisant](using-directive.md)
+- [Informations de référence sur C#](../index.md)
+- [Mots clés C#](index.md)
+- [à](using-directive.md)
 - [using static](using-static.md)
 - [Qualificateur d’alias d’espace de noms`::`](../operators/namespace-alias-qualifier.md)
 - [Espaces de noms](../../programming-guide/namespaces/index.md)

@@ -1,15 +1,16 @@
 ---
+description: new, contrainte - Référence C#
 title: new, contrainte - Référence C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - new constraint keyword [C#]
 ms.assetid: 58850b64-cb97-4136-be50-1f3bc7fc1da9
-ms.openlocfilehash: 6f6d1b663d03dc9b3adf0e7055dcffacc79d83dc
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: f7b097729fe973aba7b85c48e1b1033aade83080
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795337"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139448"
 ---
 # <a name="new-constraint-c-reference"></a>new, contrainte (référence C#)
 
