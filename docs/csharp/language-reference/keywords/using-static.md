@@ -1,15 +1,16 @@
 ---
+description: using static, directive - Référence C#
 title: using static, directive - Référence C#
 ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
-ms.openlocfilehash: bffbc026e8f7937db91d42b7a06a5b7bba3bc2f8
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: a10c315a05c28bce9b5ddb65af67dde6446d031d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396151"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141918"
 ---
 # <a name="using-static-directive-c-reference"></a>using static, directive (référence C#)
 
@@ -25,7 +26,7 @@ La directive `using static` s’applique à tout type ayant des membres statique
 
 La directive `using static` a été introduite avec C# 6.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 En général, quand vous appelez un membre statique, vous indiquez le nom du type, ainsi que le nom du membre. Entrer plusieurs fois le même nom de type pour appeler des membres du type peut produire du code détaillé et peu clair. Par exemple, la définition suivante d’une classe `Circle` référence un certain nombre de membres de la classe <xref:System.Math>.
 

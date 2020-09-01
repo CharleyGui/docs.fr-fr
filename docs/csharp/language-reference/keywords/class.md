@@ -1,4 +1,5 @@
 ---
+description: class, mot clé - Référence C#
 title: class, mot clé - Référence C#
 ms.date: 07/18/2017
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 500160d3bc9280b866e5f5ba24c5edc623e752c1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67c9c4be55cce25edf9ecb84b257a8523f193bec
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77673093"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142113"
 ---
 # <a name="class-c-reference"></a>class (référence C#)
 
@@ -26,13 +27,13 @@ class TestClass
 }
 ```
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 Le langage C# ne permet qu'un seul héritage. Cela signifie qu’une classe peut uniquement hériter de l’implémentation d’une seule classe de base. Toutefois, une classe peut implémenter plusieurs interfaces. Le tableau suivant répertorie des exemples d’héritage de classe et d’implémentation d’interface :
 
-|Héritage| Exemple|
+|Héritage|Exemple|
 |-----------------|-------------|
-|None|`class ClassA { }`|
+|Aucune|`class ClassA { }`|
 |Unique|`class DerivedClass : BaseClass { }`|
 |Aucun, implémente deux interfaces|`class ImplClass : IFace1, IFace2 { }`|
 |Unique, implémente une seule interface|`class ImplDerivedClass : BaseClass, IFace1 { }`|
@@ -51,7 +52,7 @@ Une classe peut contenir les déclarations des membres suivants :
 
 - [Constantes](../../programming-guide/classes-and-structs/constants.md)
 
-- [Champs](../../programming-guide/classes-and-structs/fields.md)
+- [Fields](../../programming-guide/classes-and-structs/fields.md)
 
 - [Finaliseurs](../../programming-guide/classes-and-structs/destructors.md)
 
@@ -73,9 +74,9 @@ Une classe peut contenir les déclarations des membres suivants :
 
 - [Types de structure](../builtin-types/struct.md)
 
-- [Types d’énumération](../builtin-types/enum.md)
+- [Types d'énumération](../builtin-types/enum.md)
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant explique comment déclarer des champs, des constructeurs et des méthodes de classe. Il illustre également l’instanciation d’un objet et l’impression des données d’une instance. Dans cet exemple, deux classes sont déclarées. La première, `Child`, contient deux champs privés (`name` et `age`), deux constructeurs publics et une méthode publique. La deuxième, `StringTest`, contient `Main`.
 
@@ -101,7 +102,7 @@ Notez enfin que pour l’objet créé à l’aide du constructeur sans paramètr
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
-- [Types de référence](./reference-types.md)
+- [Types référence](./reference-types.md)

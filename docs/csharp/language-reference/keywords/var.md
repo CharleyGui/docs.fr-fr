@@ -1,4 +1,5 @@
 ---
+description: var - Référence C#
 title: var - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - var keyword [C#]
 ms.assetid: 0777850a-2691-4e3e-927f-0c850f5efe15
-ms.openlocfilehash: d944cde932b5c1f5ef1439ee46a1447e107e6ac9
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 303a880a54a79e50515060e0ea28e8d021fa1b76
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053073"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141710"
 ---
 # <a name="var-c-reference"></a>var (référence C#)
 

@@ -1,4 +1,5 @@
 ---
+description: try-catch - Référence C#
 title: try-catch - Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: bb81ddbe631fedfcfe247c6e62580de679ad972f
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: e3154da2103029f704abd6873d16d372f1ae19ac
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812300"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141996"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (référence C#)
 
@@ -183,6 +184,6 @@ Pour plus d’informations, consultez la section [Instruction try](~/_csharplang
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Instructions try, throw et catch (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
-- [lever](throw.md)
+- [throw](throw.md)
 - [try-finally](try-finally.md)
 - [Comment : lever explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

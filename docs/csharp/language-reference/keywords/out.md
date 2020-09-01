@@ -1,4 +1,5 @@
 ---
+description: out, mot clé - Référence C#
 title: out, mot clé - Référence C#
 ms.date: 03/01/2017
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - out [C#]
 - out keyword [C#]
 ms.assetid: 7e911a0c-3f98-4536-87be-d539b7536ca8
-ms.openlocfilehash: 75b556535c5c0c0b55bf029cc400eb61b1002cb2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 68f132ab40ce07746ce60f664d2f05409d4b7a51
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713259"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142321"
 ---
 # <a name="out-c-reference"></a>out (référence C#)
 
@@ -25,4 +26,4 @@ Vous pouvez utiliser le mot clé `out` dans deux contextes :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
+- [Référence C#](../index.md)

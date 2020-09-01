@@ -1,4 +1,5 @@
 ---
+description: + et +=, opérateurs - Référence C#
 title: + et +=, opérateurs - Référence C#
 ms.date: 04/23/2020
 f1_keywords:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: f1db0054ad2411bfe23f10b64bc2727a71ad7463
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 00ba020939694d901afdbf5f5f93b584363d2cc7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916954"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141853"
 ---
 # <a name="-and--operators-c-reference"></a>+ et +=, opérateurs (référence C#)
 

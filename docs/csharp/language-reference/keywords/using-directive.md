@@ -1,15 +1,16 @@
 ---
+description: using, directive - Référence C#
 title: using, directive - Référence C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-ms.openlocfilehash: 4f7ddad8c3dc12391ef6bf345a73ebb384400b38
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f22a67348b19b8c97513ca685b2b10b34b1fd6fd
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093147"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141944"
 ---
 # <a name="using-directive-c-reference"></a>using, directive (référence C#)
 
@@ -53,7 +54,7 @@ class Program
 }
 ```
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 La portée d'une directive `using` se limite au fichier dans lequel elle apparaît.
 
@@ -75,7 +76,7 @@ Créez une directive `using` pour utiliser les types dans un espace de noms sans
 
 Les espaces de noms sont organisés en deux catégories : définis par l'utilisateur et définis par le système. Les espaces de noms définis par l'utilisateur sont des espaces de noms définis dans votre code. Pour obtenir la liste des espaces de noms définis par le système, consultez [Navigateur d’API .NET](../../../../api/index.md).
 
-## <a name="example-1"></a>Exemple 1
+## <a name="example-1"></a>Exemple 1
 
 L'exemple suivant montre comment définir et utiliser un alias `using` pour un espace de noms :
 
@@ -95,9 +96,9 @@ Pour plus d’informations, consultez [Directives using](~/_csharplang/spec/name
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
-- [Utilisation de Namespaces](../../programming-guide/namespaces/using-namespaces.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Utilisation d’espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
 - [Mots clés C#](index.md)
 - [Espaces de noms](../../programming-guide/namespaces/index.md)
-- [à l’aide de l’Énoncé](using-statement.md)
+- [using, instruction](using-statement.md)

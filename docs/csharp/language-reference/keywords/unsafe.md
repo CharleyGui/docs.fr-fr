@@ -1,4 +1,5 @@
 ---
+description: unsafe, mot clé -Référence C#
 title: unsafe, mot clé -Référence C#
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - unsafe keyword [C#]
 ms.assetid: 7e818009-1c6e-4b9e-b769-3728a01586a0
-ms.openlocfilehash: ef98809eae0329c028dfb318c4a437aae4736db1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2e047a4cff77877862c5cbbb5e49eb1a75b42499
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712986"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141957"
 ---
 # <a name="unsafe-c-reference"></a>unsafe (référence C#)
 
@@ -42,9 +43,9 @@ unsafe
 }
 ```
 
-Pour compiler le code dangereux, vous devez spécifier l’option [`-unsafe`](../compiler-options/unsafe-compiler-option.md) compilateur. Le code unsafe n’est pas vérifiable par le service CLR (Common Language Runtime).
+Pour compiler du code unsafe, vous devez spécifier l' [`-unsafe`](../compiler-options/unsafe-compiler-option.md) option du compilateur. Le code unsafe n’est pas vérifiable par le service CLR (Common Language Runtime).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!code-csharp[csrefKeywordsModifiers#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#22)]
 
@@ -54,9 +55,9 @@ Pour plus d’informations, voir [Code unsafe](~/_csharplang/spec/unsafe-code.md
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [fixed, instruction](fixed-statement.md)
 - [Pointeurs et code unsafe](../../programming-guide/unsafe-code-pointers/index.md)
-- [Tampons de taille fixe](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
+- [Mémoires tampons de taille fixe](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)

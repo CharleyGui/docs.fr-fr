@@ -1,4 +1,5 @@
 ---
+description: volatile - Référence C#
 title: volatile - Référence C#
 ms.date: 10/24/2018
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - volatile keyword [C#]
 ms.assetid: 78089bc7-7b38-4cfd-9e49-87ac036af009
-ms.openlocfilehash: c7a6c442c33ac2b41f652805837f455a957819de
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb89e99e8e28ff1e263817f498619dbfae700a50
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712843"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141697"
 ---
 # <a name="volatile-c-reference"></a>volatile (référence C#)
 
@@ -25,13 +26,13 @@ Le mot clé `volatile` peut être appliqué aux champs des types suivants :
 - Types simples comme `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `char`, `float` et `bool`.
 - Type `enum` avec l’un des types de base suivants : `byte`, `sbyte`, `short`, `ushort`, `int` ou `uint`.
 - Paramètres de type générique connus comme des types référence.
-- <xref:System.IntPtr> et <xref:System.UIntPtr>.
+- Voir <xref:System.IntPtr> et <xref:System.UIntPtr>.
 
-Les autres types, notamment `double` et `long`, ne peuvent pas être marqués `volatile`, car il n’y a aucune garantie que les lectures et écritures sur des champs de ce type soient atomiques. Pour protéger l’accès à plusieurs threads <xref:System.Threading.Interlocked> à ces types de [`lock`](lock-statement.md) champs, utilisez les membres de la classe ou protégez l’accès à l’aide de l’instruction.
+Les autres types, notamment `double` et `long`, ne peuvent pas être marqués `volatile`, car il n’y a aucune garantie que les lectures et écritures sur des champs de ce type soient atomiques. Pour protéger l’accès multithread à ces types de champs, utilisez les membres de la <xref:System.Threading.Interlocked> classe ou Protégez l’accès à l’aide de l' [`lock`](lock-statement.md) instruction.
 
 Le mot clé `volatile` ne peut s’appliquer qu’aux champs d’une `class` ou d’un `struct`. Les variables locales ne peuvent pas être déclarées `volatile`.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple ci-dessous montre comment déclarer une variable de champ public comme `volatile`.
 
@@ -50,9 +51,9 @@ Si vous ajoutez le modificateur `volatile` à la déclaration de `_shouldStop` e
 ## <a name="see-also"></a>Voir aussi
 
 - [Spécification du langage C# : mot clé volatile](../../../../_csharplang/spec/classes.md#volatile-fields)
-- [Référence C](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)
-- [énoncé de verrouillage](lock-statement.md)
+- [Lock (instruction)](lock-statement.md)
 - <xref:System.Threading.Interlocked>

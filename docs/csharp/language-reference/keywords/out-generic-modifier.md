@@ -1,16 +1,17 @@
 ---
+description: out, mot clé (modificateur générique) - Référence C#
 title: out, mot clé (modificateur générique) - Référence C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - covariance, out keyword [C#]
 - out keyword [C#]
 ms.assetid: f8c20dec-a8bc-426a-9882-4076b1db1e00
-ms.openlocfilehash: 97ddae2efe55be89840f7a483c18d61259020283
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84f3647309c0772f6ae61d3614f8649fe277f153
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713284"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142334"
 ---
 # <a name="out-generic-modifier-c-reference"></a>out (modificateur générique) (référence C#)
 
@@ -54,5 +55,5 @@ Dans un délégué générique, un type peut être déclaré comme étant covari
 ## <a name="see-also"></a>Voir aussi
 
 - [Variance dans les interfaces génériques](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
-- [Dans](in-generic-modifier.md)
+- [in](in-generic-modifier.md)
 - [Modificateurs](index.md)

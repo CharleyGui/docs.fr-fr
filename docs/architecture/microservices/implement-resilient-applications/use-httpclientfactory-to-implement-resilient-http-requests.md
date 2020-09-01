@@ -1,48 +1,48 @@
 ---
 title: Utiliser IHttpClientFactory pour implémenter des requêtes HTTP résilientes
-description: Découvrez comment utiliser IHttpClientFactory, disponible depuis .NET Core 2,1, pour la création `HttpClient` d’instances, ce qui vous permet de l’utiliser facilement dans vos applications.
-ms.date: 03/03/2020
-ms.openlocfilehash: ade26208a931faa456c8e267def2caef7a3f32de
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+description: Découvrez comment utiliser IHttpClientFactory, disponible depuis .NET Core 2,1, pour la création d' `HttpClient` instances, ce qui vous permet de l’utiliser facilement dans vos applications.
+ms.date: 08/31/2020
+ms.openlocfilehash: 1df5432f215371b60722212cf706c28a4a5bb5f6
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507297"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271826"
 ---
 # <a name="use-ihttpclientfactory-to-implement-resilient-http-requests"></a>Utiliser IHttpClientFactory pour implémenter des requêtes HTTP résilientes
 
-<xref:System.Net.Http.IHttpClientFactory>est un contrat implémenté par `DefaultHttpClientFactory`, une fabrique consignes strictes, disponible depuis .net Core 2,1, pour la <xref:System.Net.Http.HttpClient> création d’instances à utiliser dans vos applications.
+<xref:System.Net.Http.IHttpClientFactory> est un contrat implémenté par `DefaultHttpClientFactory` , une fabrique consignes strictes, disponible depuis .net Core 2,1, pour la création d' <xref:System.Net.Http.HttpClient> instances à utiliser dans vos applications.
 
 ## <a name="issues-with-the-original-httpclient-class-available-in-net-core"></a>Problèmes liés à la classe HttpClient d’origine disponible dans .NET Core
 
 La classe d’origine et la <xref:System.Net.Http.HttpClient> classe connue peuvent être facilement utilisées, mais dans certains cas, elle n’est pas utilisée correctement par de nombreux développeurs.
 
-`IDisposable`Bien que cette classe implémente, la déclaration et l’instanciation `using` dans une instruction n’est pas recommandée `HttpClient` , car lorsque l’objet est supprimé, le Socket sous-jacent n’est pas libéré immédiatement, ce qui peut entraîner un problème d' _épuisement du socket_ . Pour plus d’informations sur ce problème, consultez le billet de blog [que vous utilisez httpclient incorrect et déstabiliser votre logiciel](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/).
+Bien que cette classe implémente `IDisposable` , la déclaration et l’instanciation dans une `using` instruction n’est pas recommandée, car lorsque l' `HttpClient` objet est supprimé, le Socket sous-jacent n’est pas libéré immédiatement, ce qui peut entraîner un problème d' _épuisement du socket_ . Pour plus d’informations sur ce problème, consultez le billet de blog [que vous utilisez httpclient incorrect et déstabiliser votre logiciel](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/).
 
-Par conséquent, `HttpClient` est destiné à être instancié une seule fois et réutilisé tout au long de la durée de vie d’une application. L’instanciation d’une classe `HttpClient` pour chaque demande épuise le nombre de sockets disponibles sous des charges élevées. Ce problème entraîne des erreurs `SocketException`. Les approches possibles pour résoudre ce problème sont basées sur la création de l’objet `HttpClient` singleton ou statique, comme expliqué dans cet [article Microsoft sur l’utilisation de HttpClient](../../../csharp/tutorials/console-webapiclient.md). Il peut s’agir d’une bonne solution pour les applications de console à courte durée de vie ou similaires qui sont exécutées plusieurs fois par jour.
+Par conséquent, `HttpClient` est destiné à être instancié une seule fois et réutilisé tout au long de la durée de vie d’une application. L’instanciation d’une classe `HttpClient` pour chaque demande épuise le nombre de sockets disponibles sous des charges élevées. Ce problème entraîne des erreurs `SocketException`. Les approches possibles pour résoudre ce problème sont basées sur la création de l’objet `HttpClient` singleton ou statique, comme expliqué dans cet [article Microsoft sur l’utilisation de HttpClient](../../../csharp/tutorials/console-webapiclient.md). Il peut s’agir d’une bonne solution pour les applications console à courte durée de vie ou similaire, qui s’exécutent plusieurs fois par jour.
 
-L’utilisation d’une instance partagée de dans des `HttpClient` processus de longue durée constitue un autre problème que les développeurs peuvent rencontrer. Dans le cas où le HttpClient est instancié comme un singleton ou un objet statique, il ne parvient pas à gérer les modifications DNS comme décrit dans ce [numéro](https://github.com/dotnet/runtime/issues/18348) du référentiel dotnet/Runtime github.
+L’utilisation d’une instance partagée de dans des processus de longue durée constitue un autre problème que les développeurs peuvent rencontrer `HttpClient` . Dans le cas où le HttpClient est instancié comme un singleton ou un objet statique, il ne parvient pas à gérer les modifications DNS comme décrit dans ce [numéro](https://github.com/dotnet/runtime/issues/18348) du référentiel dotnet/Runtime github.
 
-Toutefois, le problème n’est pas `HttpClient` vraiment avec par se, mais avec le [constructeur par défaut pour httpclient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=netcore-3.1#System_Net_Http_HttpClient__ctor), car il crée une nouvelle <xref:System.Net.Http.HttpMessageHandler>instance concrète de, qui est celle qui a des problèmes d' *épuisement des sockets* et des modifications DNS mentionnées ci-dessus.
+Toutefois, le problème n’est pas vraiment avec `HttpClient` par se, mais avec le [constructeur par défaut pour httpclient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=netcore-3.1#System_Net_Http_HttpClient__ctor), car il crée une nouvelle instance concrète de <xref:System.Net.Http.HttpMessageHandler> , qui est celle qui a des problèmes d' *épuisement des sockets* et des modifications DNS mentionnées ci-dessus.
 
-Pour résoudre les problèmes mentionnés ci-dessus et `HttpClient` rendre les instances gérables, .net Core 2,1 <xref:System.Net.Http.IHttpClientFactory> a introduit l’interface qui peut être utilisée pour `HttpClient` configurer et créer des instances dans une application via l’injection de dépendances (di). Il fournit également des extensions pour l’intergiciel (middleware) basé sur Polly afin de tirer parti des gestionnaires de délégation dans HttpClient.
+Pour résoudre les problèmes mentionnés ci-dessus et rendre les `HttpClient` instances gérables, .net Core 2,1 <xref:System.Net.Http.IHttpClientFactory> a introduit l’interface qui peut être utilisée pour configurer et créer des `HttpClient` instances dans une application via l’injection de dépendances (di). Il fournit également des extensions pour l’intergiciel (middleware) basé sur Polly afin de tirer parti des gestionnaires de délégation dans HttpClient.
 
 [Polly](http://www.thepollyproject.org/) est une bibliothèque de gestion des erreurs temporaires qui permet aux développeurs d’ajouter de la résilience à leurs applications à l’aide de stratégies prédéfinies de façon Fluent et thread-safe.
 
 ## <a name="benefits-of-using-ihttpclientfactory"></a>Avantages de l’utilisation de IHttpClientFactory
 
-L’implémentation actuelle de <xref:System.Net.Http.IHttpClientFactory>, qui implémente également <xref:System.Net.Http.IHttpMessageHandlerFactory>, offre les avantages suivants :
+L’implémentation actuelle de <xref:System.Net.Http.IHttpClientFactory> , qui implémente également <xref:System.Net.Http.IHttpMessageHandlerFactory> , offre les avantages suivants :
 
-- Fournit un emplacement central pour nommer et configurer des objets `HttpClient` logiques. Par exemple, vous pouvez configurer un client (Service Agent) qui est préconfiguré pour accéder à un microservice spécifique.
-- Codifier le concept d’intergiciel (middleware sortant) via la délégation de gestionnaires `HttpClient` dans et l’implémentation de l’intergiciel (middleware) basé sur Polly pour tirer parti des stratégies de Polly pour la résilience.
+- Fournit un emplacement central pour nommer et configurer des objets logiques `HttpClient` . Par exemple, vous pouvez configurer un client (Service Agent) qui est préconfiguré pour accéder à un microservice spécifique.
+- Codifier le concept d’intergiciel (middleware sortant) via la délégation de gestionnaires dans et l’implémentation de l' `HttpClient` intergiciel (middleware) basé sur Polly pour tirer parti des stratégies de Polly pour la résilience.
 - `HttpClient` intègre déjà le concept de délégation des gestionnaires qui pourraient être liés ensemble pour les requêtes HTTP sortantes. Vous pouvez inscrire des clients HTTP dans l’usine et utiliser un gestionnaire Polly pour utiliser des stratégies Polly pour les nouvelles tentatives, les CircuitBreakers, etc.
-- Gérez la durée de <xref:System.Net.Http.HttpMessageHandler> vie de pour éviter les problèmes/problèmes mentionnés qui peuvent se `HttpClient` produire lors de la gestion des durées de vie vous-même.
+- Gérez la durée de vie de <xref:System.Net.Http.HttpMessageHandler> pour éviter les problèmes/problèmes mentionnés qui peuvent se produire lors de la gestion des `HttpClient` durées de vie vous-même.
 
 > [!TIP]
-> Les `HttpClient` instances injectées par di, peuvent être supprimées de manière sécurisée, car le associé `HttpMessageHandler` est géré par la fabrique. En fait, les `HttpClient` instances injectées sont *étendues* d’une perspective di.
+> Les `HttpClient` instances injectées par di, peuvent être supprimées de manière sécurisée, car le associé `HttpMessageHandler` est géré par la fabrique. En fait, les instances injectées `HttpClient` sont *étendues* d’une perspective di.
 
 > [!NOTE]
-> L’implémentation de `IHttpClientFactory` (`DefaultHttpClientFactory`) est étroitement liée à l’implémentation de di dans le `Microsoft.Extensions.DependencyInjection` package NuGet. Pour plus d’informations sur l’utilisation d’autres conteneurs d’injection de données, consultez cette [discussion GitHub](https://github.com/dotnet/extensions/issues/1345).
+> L’implémentation de `IHttpClientFactory` ( `DefaultHttpClientFactory` ) est étroitement liée à l’implémentation de di dans le `Microsoft.Extensions.DependencyInjection` package NuGet. Pour plus d’informations sur l’utilisation d’autres conteneurs d’injection de données, consultez cette [discussion GitHub](https://github.com/dotnet/extensions/issues/1345).
 
 ## <a name="multiple-ways-to-use-ihttpclientfactory"></a>Plusieurs manières d’utiliser IHttpClientFactory
 
@@ -53,11 +53,11 @@ Il existe diverses façons d’utiliser `IHttpClientFactory` dans votre applicat
 - Utiliser des clients typés
 - Utiliser des clients générés
 
-Par souci de concision, ce guide présente la manière la plus structurée d' `IHttpClientFactory`utiliser, qui consiste à utiliser des clients typés (modèle de l’agent de service). Toutefois, toutes les options sont documentées et sont actuellement répertoriées dans cet [article pour couvrir l' `IHttpClientFactory` utilisation](/aspnet/core/fundamentals/http-requests#consumption-patterns).
+Par souci de concision, ce guide présente la manière la plus structurée d’utiliser `IHttpClientFactory` , qui consiste à utiliser des clients typés (modèle de l’agent de service). Toutefois, toutes les options sont documentées et sont actuellement répertoriées dans cet [article pour couvrir l' `IHttpClientFactory` utilisation](/aspnet/core/fundamentals/http-requests#consumption-patterns).
 
 ## <a name="how-to-use-typed-clients-with-ihttpclientfactory"></a>Utilisation de clients typés avec IHttpClientFactory
 
-Mais qu’est-ce donc qu’un « client typé » ? Il s’agit simplement `HttpClient` d’un qui est préconfiguré pour une utilisation spécifique. Cette configuration peut inclure des valeurs spécifiques telles que le serveur de base, des en-têtes HTTP ou des délais d’expiration.
+Mais qu’est-ce donc qu’un « client typé » ? Il s’agit simplement d’un `HttpClient` qui est préconfiguré pour une utilisation spécifique. Cette configuration peut inclure des valeurs spécifiques telles que le serveur de base, des en-têtes HTTP ou des délais d’expiration.
 
 Le diagramme suivant montre comment les clients typés sont utilisés avec `IHttpClientFactory` :
 
@@ -65,9 +65,9 @@ Le diagramme suivant montre comment les clients typés sont utilisés avec `IHtt
 
 **Figure 8-4**. Utilisation `IHttpClientFactory` de avec les classes clientes typées.
 
-Dans l’image ci-dessus `ClientService` , une (utilisée par un contrôleur ou un code client `HttpClient` ) utilise un créé `IHttpClientFactory`par l’inscrit. Cette fabrique assigne un `HttpMessageHandler` à partir d’un pool `HttpClient`à. Le `HttpClient` peut être configuré avec les stratégies de Polly lors de `IHttpClientFactory` l’inscription du dans le conteneur d’injection <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*>de règles avec la méthode d’extension.
+Dans l’image ci-dessus, une `ClientService` (utilisée par un contrôleur ou un code client) utilise un `HttpClient` créé par l’inscrit `IHttpClientFactory` . Cette fabrique assigne un `HttpMessageHandler` à partir d’un pool à `HttpClient` . Le `HttpClient` peut être configuré avec les stratégies de Polly lors de l’inscription du `IHttpClientFactory` dans le conteneur d’injection de règles avec la méthode d’extension <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*> .
 
-Pour configurer la structure ci-dessus <xref:System.Net.Http.IHttpClientFactory> , ajoutez-la dans votre `Microsoft.Extensions.Http` application en installant le <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*> package NuGet qui <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection>comprend la méthode d’extension pour. Cette méthode d’extension inscrit la classe `DefaultHttpClientFactory` interne à utiliser comme singleton pour l’interface `IHttpClientFactory`. Elle définit une configuration temporaire pour <xref:Microsoft.Extensions.Http.HttpMessageHandlerBuilder>. Ce gestionnaire de messages (objet <xref:System.Net.Http.HttpMessageHandler>), obtenu à partir d’un pool, est utilisé par le `HttpClient` retourné à partir de la fabrique.
+Pour configurer la structure ci-dessus, ajoutez-la <xref:System.Net.Http.IHttpClientFactory> dans votre application en installant le `Microsoft.Extensions.Http` package NuGet qui comprend la <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*> méthode d’extension pour <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection> . Cette méthode d’extension inscrit la `DefaultHttpClientFactory` classe interne à utiliser comme singleton pour l’interface `IHttpClientFactory` . Elle définit une configuration temporaire pour <xref:Microsoft.Extensions.Http.HttpMessageHandlerBuilder>. Ce gestionnaire de messages (objet <xref:System.Net.Http.HttpMessageHandler>), obtenu à partir d’un pool, est utilisé par le `HttpClient` retourné à partir de la fabrique.
 
 Dans le code suivant, vous pouvez voir comment utiliser `AddHttpClient()` pour enregistrer les clients typés (agents de service) qui ont besoin d’utiliser `HttpClient`.
 
@@ -124,7 +124,7 @@ Chaque client typé peut avoir sa propre valeur de durée de vie de gestionnaire
 
 ### <a name="implement-your-typed-client-classes-that-use-the-injected-and-configured-httpclient"></a>Implémenter les classes de client typé qui utilisent l’objet HttpClient injecté et configuré
 
-Au cours d’une étape précédente, vous devez définir vos classes clientes typées, telles que les classes dans l’exemple de code, telles que « BasketService », « CatalogService », « OrderingService », etc. : un client typé est une `HttpClient` classe qui accepte un objet (injecté par le biais de son constructeur) et l’utilise pour appeler un service http distant. Par exemple :
+Au cours d’une étape précédente, vous devez définir vos classes clientes typées, telles que les classes dans l’exemple de code, telles que « BasketService », « CatalogService », « OrderingService », etc. : un client typé est une classe qui accepte un `HttpClient` objet (injecté par le biais de son constructeur) et l’utilise pour appeler un service http distant. Par exemple :
 
 ```csharp
 public class CatalogService : ICatalogService
@@ -151,13 +151,13 @@ public class CatalogService : ICatalogService
 }
 ```
 
-Le client typé (`CatalogService` dans l’exemple) est activé par di (injection de dépendance), ce qui signifie qu’il peut accepter n’importe quel service inscrit dans son `HttpClient`constructeur, en plus de.
+Le client typé ( `CatalogService` dans l’exemple) est activé par di (injection de dépendances), ce qui signifie qu’il peut accepter n’importe quel service inscrit dans son constructeur, en plus de `HttpClient` .
 
-Un client typé est en effet un objet temporaire, ce qui signifie qu’une nouvelle instance est créée dès qu’elle est requise, et qu’il reçoit une nouvelle instance `HttpClient` chaque fois qu’il est construit. Toutefois, les `HttpMessageHandler` objets du pool sont les objets réutilisés par plusieurs `HttpClient` instances.
+Un client typé est effectivement un objet temporaire, ce qui signifie qu’une nouvelle instance est créée chaque fois qu’un est nécessaire. Elle reçoit une nouvelle `HttpClient` instance à chaque fois qu’elle est construite. Toutefois, les `HttpMessageHandler` objets du pool sont les objets réutilisés par plusieurs `HttpClient` instances.
 
 ### <a name="use-your-typed-client-classes"></a>Utiliser les classes de client typé
 
-Enfin, une fois que vos classes typées sont implémentées et que vous les `AddHttpClient()`avez enregistrées et configurées avec, vous pouvez les utiliser partout où vous pouvez avoir des services injectés par di. Par exemple, dans un code de page Razor ou un contrôleur d’une application Web MVC, comme dans le code suivant de eShopOnContainers :
+Enfin, une fois que vos classes typées sont implémentées, vous pouvez les enregistrer et les configurer avec `AddHttpClient()` . Après cela, vous pouvez les utiliser partout où des services sont injectés par DI. Par exemple, dans un code de page Razor ou un contrôleur d’une application Web MVC, comme dans le code suivant de eShopOnContainers :
 
 ```csharp
 namespace Microsoft.eShopOnContainers.WebMVC.Controllers
@@ -186,7 +186,7 @@ namespace Microsoft.eShopOnContainers.WebMVC.Controllers
 }
 ```
 
-Jusqu’à présent, le code présenté effectue simplement des requêtes HTTP standard, mais le « Magic » est fourni dans les sections suivantes, où simplement en ajoutant des stratégies et en déléguant des gestionnaires à vos clients typés inscrits, toutes les requêtes HTTP à effectuer `HttpClient` par se comporteront en tenant compte des stratégies résilientes, telles que les nouvelles tentatives avec interruption exponentielle, disjoncteurs ou tout autre gestionnaire de délégation personnalisée pour implémenter des fonctionnalités de sécurité supplémentaires, comme l’utilisation de jetons d’authentification ou d’autres fonctionnalités personnalisées.
+Jusqu’à présent, l’extrait de code ci-dessus ne montre que l’exemple d’exécution de requêtes HTTP normales. Mais le « Magic » se trouve dans les sections suivantes, où il montre comment toutes les requêtes HTTP effectuées par `HttpClient` , peuvent avoir des stratégies résilientes telles que les nouvelles tentatives avec interruption exponentielle, disjoncteurs, fonctionnalités de sécurité à l’aide de jetons d’authentification, voire d’autres fonctionnalités personnalisées. Toutes ces opérations peuvent être effectuées simplement en ajoutant des stratégies et en déléguant des gestionnaires à vos clients typés inscrits.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -203,5 +203,5 @@ Jusqu’à présent, le code présenté effectue simplement des requêtes HTTP s
   <https://github.com/dotnet/extensions/issues/1345>
 
 >[!div class="step-by-step"]
->[Précédent](implement-resilient-entity-framework-core-sql-connections.md)
->[suivant](implement-http-call-retries-exponential-backoff-polly.md)
+>[Précédent](implement-resilient-entity-framework-core-sql-connections.md) 
+> [Suivant](implement-http-call-retries-exponential-backoff-polly.md)

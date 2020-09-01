@@ -1,4 +1,5 @@
 ---
+description: switch (informations de référence sur C#)
 title: switch, instruction (C#)
 ms.date: 04/09/2019
 f1_keywords:
@@ -12,18 +13,18 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 9335399be2d4909a02fecbf2959c6f5608664732
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 20c1d9786eaa184088500cf1b37d33afc421b5e7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493667"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142022"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
 Cet article traite de l' `switch` instruction. Pour plus d’informations sur l' `switch` expression (introduite dans C# 8,0), consultez l’article sur les [ `switch` expressions](../operators/switch-expression.md) dans la section [expressions et opérateurs](../operators/index.md) .
 
-`switch` est une instruction de sélection qui choisit une *section de commutation* unique à exécuter à partir d’une liste de candidats en fonction d’une mise en correspondance de modèle avec l’*expression de correspondance*.
+`switch` est une instruction de sélection qui choisit une *section à commutateur* unique à exécuter à partir d’une liste de candidats en fonction d’une correspondance de modèle avec l' *expression de correspondance*.
 
 [!code-csharp[switch#1](~/samples/snippets/csharp/language-reference/keywords/switch/switch1.cs#1)]
 
@@ -55,7 +56,7 @@ Avec C# 6 (et les versions antérieures), l’expression de correspondance doit
 
 ## <a name="the-switch-section"></a>Section de commutation
 
-Une instruction `switch` inclut une ou plusieurs sections de commutation. Chaque section de commutation contient une ou plusieurs *étiquettes case* (une case ou une étiquette par défaut) suivies d’une ou de plusieurs instructions. L’instruction `switch` peut inclure au maximum une étiquette par défaut, placée dans n’importe quelle section de commutation. L’exemple suivant montre une instruction `switch` simple qui a trois sections de commutation, chacune contenant à son tour deux instructions. La deuxième section de commutation contient les étiquettes `case 2:` et `case 3:`.
+Une instruction `switch` inclut une ou plusieurs sections de commutation. Chaque section Switch contient un ou plusieurs *noms de cas* (un cas ou une étiquette par défaut) suivis d’une ou plusieurs instructions. L’instruction `switch` peut inclure au maximum une étiquette par défaut, placée dans n’importe quelle section de commutation. L’exemple suivant montre une instruction `switch` simple qui a trois sections de commutation, chacune contenant à son tour deux instructions. La deuxième section de commutation contient les étiquettes `case 2:` et `case 3:`.
 
 Une instruction `switch` peut inclure un nombre quelconque de sections de commutation, et chaque section peut contenir une ou plusieurs étiquettes case, comme dans l’exemple ci-dessous. Toutefois, deux étiquettes case ne doivent pas contenir la même expression.
 

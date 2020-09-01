@@ -1,31 +1,32 @@
 ---
+description: 'En savoir plus sur les types non managés dans C #'
 title: Types non managés - Référence C#
 ms.date: 09/06/2019
 helpviewer_keywords:
 - unmanaged type [C#]
-ms.openlocfilehash: 9dd2ab4e044b8a86bfe72a6fcf2481b8e1e80bf4
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: b5a689ca3ade36ef77da958549894f76e074986e
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507228"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89143530"
 ---
 # <a name="unmanaged-types-c-reference"></a>Types non managés (référence C#)
 
-Un type est un **type non menté** s’il s’agit de l’un des types suivants :
+Un type est un **type non managé** s’il s’agit de l’un des types suivants :
 
 - `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal` ou `bool`
 - Tout type [enum](enum.md)
-- Tout type [de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- Tout type [de struction](struct.md) défini par l’utilisateur qui ne contient que des champs de types non traités et, dans C 7.3 et plus tôt, n’est pas un type construit (un type qui comprend au moins un argument de type)
+- Tout type [pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
+- Tout type [struct](struct.md) défini par l’utilisateur qui contient des champs de types non managés uniquement et, en C# 7,3 et antérieur, n’est pas un type construit (un type qui inclut au moins un argument de type)
 
-En commençant par le C 7.3, vous pouvez utiliser la [ `unmanaged` contrainte](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) pour spécifier qu’un paramètre de type est un type non-pointeur et non-nullable non managérétique.
+À compter de C# 7,3, vous pouvez utiliser la [ `unmanaged` contrainte](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) pour spécifier qu’un paramètre de type est un type non managé qui n’est pas un pointeur, non Nullable.
 
-Commençant par le C 8.0, un type de struct *construit* qui contient des champs de types non managéraux seulement n’est également non managéré, comme le montre l’exemple suivant :
+À compter de C# 8,0, un type struct *construit* qui contient des champs de types non managés uniquement est également non managé, comme le montre l’exemple suivant :
 
 [!code-csharp[unmanaged constructed types](snippets/UnmanagedTypes.cs#ProgramExample)]
 
-Une struct générique peut être la source de types construits non mentés et non non mentés. L’exemple précédent définit une `Coords<T>` struction générique et présente les exemples de types construits non mentés. L’exemple de ne pas un `Coords<object>`type non-gestion est . Ce n’est pas unmanaged parce `object` qu’il a les champs du type, qui n’est pas non gestion. Si vous voulez que *tous les* types construits `unmanaged` soient des types non gémandés, utilisez la contrainte dans la définition d’une struct générique :
+Un struct générique peut être la source des types construits non managés et non managés. L’exemple précédent définit un struct générique `Coords<T>` et présente les exemples de types construits non managés. L’exemple de n’est pas un type non managé `Coords<object>` . Elle n’est pas non plus gérée, car elle contient les champs du `object` type, qui ne sont pas non managés. Si vous souhaitez que *tous les* types construits soient des types non managés, utilisez la `unmanaged` contrainte dans la définition d’un struct générique :
 
 [!code-csharp[unmanaged constraint in type definition](snippets/UnmanagedTypes.cs#AlwaysUnmanaged)]
 
@@ -35,8 +36,8 @@ Pour plus d’informations, consultez la section [Types de pointeur](~/_csharpla
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Types liés à la mémoire et à l’étendue](../../../standard/memory-and-spans/index.md)
-- [sizeof, opérateur](../operators/sizeof.md)
+- [Opérateur sizeof](../operators/sizeof.md)
 - [stackalloc](../operators/stackalloc.md)
