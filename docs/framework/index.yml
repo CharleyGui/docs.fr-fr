@@ -11,12 +11,12 @@ metadata:
   helpviewer_keywords:
   - .NET Framework guide
   ms.date: 04/22/2020
-  ms.openlocfilehash: 67e1549395ab5657a5d609b186fc1816211c5af3
-  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+  ms.openlocfilehash: 47781bbc5b1b1a2f4c0bc44929c5bb29fe3e7978
+  ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "82135904"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89379172"
 landingContent:
 - title: En savoir plus sur .NET Framework
   linkLists:
@@ -24,7 +24,7 @@ landingContent:
     links:
     - text: Présentation de .NET Framework
       url: get-started/overview.md
-    - text: Configuration requise
+    - text: Configuration système requise
       url: get-started/system-requirements.md
   - linkListType: concept
     links:
@@ -74,24 +74,16 @@ landingContent:
     links:
     - text: installer et désinstaller des services Windows
       url: windows-services/how-to-install-and-uninstall-services.md
-- title: Créer des applications Windows Forms
+- title: Créer des applications de bureau
   linkLists:
   - linkListType: overview
     links:
-    - text: Vue d’ensemble de Windows Forms
-      url: winforms/index.md
-  - linkListType: tutorial
-    links:
-    - text: Bien démarrer avec le Concepteur Windows Forms
-      url: /visualstudio/designers/walkthrough-windows-forms-designer
-    - text: Créer une application Windows Forms à partir de la ligne de commande
-      url: winforms/how-to-create-a-windows-forms-application-from-the-command-line.md
-  - linkListType: how-to-guide
-    links:
-    - text: Ajouter et supprimer des éléments dans des contrôles ComboBox, ListBox et CheckedListBox
-      url: winforms/controls/add-and-remove-items-from-a-wf-combobox.md
-    - text: Effectuer des appels thread-safe aux contrôles
-      url: winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls.md
+    - text: Présentation du Guide du Bureau
+      url: /dotnet/desktop/
+    - text: WPF .NET Framework
+      url: wpf/index.md
+    - text: .NET Framework Windows Forms
+      url: /dotnet/desktop/winforms/?view=netframework-4-8
 - title: Créer des applications WPF
   linkLists:
   - linkListType: overview
