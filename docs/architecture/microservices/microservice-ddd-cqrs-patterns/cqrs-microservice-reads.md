@@ -2,12 +2,12 @@
 title: Implémentation de lectures/requêtes dans un microservice CQRS
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre l’implémentation du côté requêtes de CQRS sur le microservice Ordering dans eShopOnContainers avec Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: 71db95e6fc17475693183be9c6854884cd331ce1
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 41932122326cf4c49b9c9e2c344d2ac17da7466b
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614407"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358893"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implémenter les lectures/requêtes dans un microservice CQRS
 
@@ -33,7 +33,7 @@ Dans la mesure où cette approche est simple, le code requis pour le côté des 
 
 Les données retournées (ViewModel) peuvent être le résultat de données de plusieurs entités ou tables jointes à la base de données, ou même de plusieurs agrégats définis dans le modèle de domaine de la zone transactionnelle. Dans ce cas, étant donné que vous créez des requêtes indépendantes du modèle de domaine, les limites et contraintes des agrégats sont ignorées et vous êtes libre d’interroger une table et une colonne dont vous pourriez avoir besoin. Cette approche offre une grande souplesse et une grande productivité pour les développeurs qui créent ou mettent à jour les requêtes.
 
-Les ViewModels peuvent être des types statiques définis dans des classes. Ils peuvent également être créés de manière dynamique en fonction des requêtes exécutées (tel qu’implémenté dans le microservice de commandes), ce qui représente une méthode très agile pour les développeurs.
+Les ViewModels peuvent être des types statiques définis dans des classes (tels qu’ils sont implémentés dans le microservice de commande). Ils peuvent être créés dynamiquement en fonction des requêtes effectuées, ce qui est très agile pour les développeurs.
 
 ## <a name="use-dapper-as-a-micro-orm-to-perform-queries"></a>Utiliser Dapper comme micro-ORM pour effectuer des requêtes
 
@@ -183,7 +183,7 @@ Dans l’image suivante, vous pouvez voir comment l’interface utilisateur de S
 
 L’image montre des exemples de valeurs en fonction des types ViewModel et des codes d’état HTTP possibles qui peuvent être retournés.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 - **Dapper**  
  <https://github.com/StackExchange/dapper-dot-net>

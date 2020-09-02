@@ -3,12 +3,12 @@ title: Propriétés
 description: En savoir plus sur les propriétés C#, notamment les fonctionnalités liées à la validation, les valeurs calculées, l’évaluation différée et les notifications de modification de propriété.
 ms.technology: csharp-fundamentals
 ms.date: 04/25/2018
-ms.openlocfilehash: bda8a4f58f71b57248296dd4ba9f9bf4cbed40d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28050a77e1f7b0ac148bba6112aa79ef4d46b710
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399412"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358906"
 ---
 # <a name="properties"></a>Propriétés
 
@@ -59,7 +59,7 @@ Vous pouvez écrire du code dans l’accesseur `set` pour garantir que les valeu
 
 [!code-csharp[Validating property setters](../../samples/snippets/csharp/properties/Person.cs#6)]
 
-L’exemple précédent peut être simplifié en utilisant une expression `throw` dans le cadre de la validation de la méthode setter de propriété :
+L’exemple précédent peut être simplifié à l’aide d’une `throw` expression dans le cadre de la validation de l’accesseur Set de la propriété :
 
 [!code-csharp[Validating property setters](../../samples/snippets/csharp/properties/Person.cs#7)]
 
@@ -141,7 +141,7 @@ Il existe un dernier scénario où vous devrez écrire du code dans un accesseur
 
 [!code-csharp[invalidating the cache correctly](../../samples/snippets/csharp/properties/Person.cs#15)]
 
-L’opérateur `?.` est appelé *opérateur conditionnel Null*. Il recherche une référence null avant d’évaluer le côté droit de l’opérateur. Au final, s’il n’y a pas d’abonné à l’événement `PropertyChanged`, le code devant déclencher l’événement n’est pas exécuté. Dans ce cas précis, il lèverait une exception `NullReferenceException` sans cette vérification. Pour plus d’informations, voir [`events`](events-overview.md). Cet exemple utilise également le nouvel opérateur `nameof` pour convertir le symbole de nom de propriété en sa représentation textuelle.
+L’opérateur `?.` est appelé *opérateur conditionnel Null*. Il recherche une référence null avant d’évaluer le côté droit de l’opérateur. Au final, s’il n’y a pas d’abonné à l’événement `PropertyChanged`, le code devant déclencher l’événement n’est pas exécuté. Dans ce cas précis, il lèverait une exception `NullReferenceException` sans cette vérification. Pour plus d’informations, consultez [`events`](events-overview.md). Cet exemple utilise également le nouvel opérateur `nameof` pour convertir le symbole de nom de propriété en sa représentation textuelle.
 L’utilisation de `nameof` peut vous éviter des erreurs dues à la saisie incorrecte du nom de propriété.
 
 L’implémentation de <xref:System.ComponentModel.INotifyPropertyChanged> est un autre exemple de cas où vous pouvez écrire du code dans vos accesseurs pour prendre en charge les scénarios souhaités.

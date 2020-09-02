@@ -1,36 +1,36 @@
 ---
-title: Créer des bibliothèques de clients gRPC - gRPC pour WCF Developers
-description: Discussion des bibliothèques/forfaits clients partagés pour les services gRPC.
+title: Créer des bibliothèques clientes gRPC-gRPC pour les développeurs WCF
+description: Discussion sur les bibliothèques/packages client partagés pour les services gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: bb58cb3cda4b0cbb3a5d34129961349bcb0093e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e47ccd958007f84d633bb9ad5808c5e97c231977
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401668"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358841"
 ---
-# <a name="create-grpc-client-libraries"></a>Créer des bibliothèques de clients gRPC
+# <a name="create-grpc-client-libraries"></a>Créer des bibliothèques clientes gRPC
 
-Il n’est pas nécessaire de distribuer des bibliothèques clients pour une application gRPC. Vous pouvez créer une `.proto` bibliothèque partagée de fichiers au sein de votre organisation, et d’autres équipes peuvent utiliser ces fichiers pour générer du code client dans leurs propres projets. Mais si vous avez un référentiel NuGet privé et que de nombreuses autres équipes utilisent .NET Core, vous pouvez créer et publier des forfaits NuGet clients dans le cadre de votre projet de service. Cela peut être un bon moyen de partager et de promouvoir votre service.
+Il n’est pas nécessaire de distribuer les bibliothèques clientes pour une application gRPC. Vous pouvez créer une bibliothèque partagée de `.proto` fichiers au sein de votre organisation, et d’autres équipes peuvent utiliser ces fichiers pour générer le code client dans leurs propres projets. Toutefois, si vous disposez d’un référentiel NuGet privé et que de nombreuses autres équipes utilisent .NET Core, vous pouvez créer et publier des packages NuGet clients dans le cadre de votre projet de service. Il peut s’agir d’un bon moyen de partager et de promouvoir votre service.
 
-Un avantage de la distribution d’une bibliothèque cliente est que vous pouvez améliorer les classes générées gRPC et Protobuf avec des méthodes et des propriétés utiles de « commodité ». Dans le code client, comme dans le serveur, toutes les classes sont déclarées comme `partial`, de sorte que vous pouvez les étendre sans modifier le code généré. Cela signifie qu’il est facile d’ajouter des constructeurs, des méthodes et des propriétés calculées aux types de base.
+L’un des avantages de la distribution d’une bibliothèque cliente est que vous pouvez améliorer les classes gRPC et Protobuf générées avec des méthodes et des propriétés pratiques. Dans le code client, comme dans le serveur, toutes les classes sont déclarées comme `partial` , vous pouvez donc les étendre sans modifier le code généré. Cela signifie qu’il est facile d’ajouter des constructeurs, des méthodes et des propriétés calculées aux types de base.
 
 > [!CAUTION]
-> Vous ne devriez pas utiliser le code personnalisé pour fournir des fonctionnalités essentielles. Vous ne voulez pas limiter cette fonctionnalité essentielle aux équipes .NET qui utilisent la bibliothèque partagée, et ne pas la fournir aux équipes qui utilisent d’autres langues ou plates-formes, telles que Python ou Java.
+> Vous ne devez pas utiliser de code personnalisé pour fournir des fonctionnalités essentielles. Vous ne souhaitez pas restreindre les fonctionnalités essentielles aux équipes .NET qui utilisent la bibliothèque partagée et ne pas les fournir aux équipes qui utilisent d’autres langages ou plateformes, tels que Python ou Java.
 
-Assurez-vous que le plus grand nombre possible d’équipes peuvent accéder à votre service gRPC. La meilleure façon de le `.proto` faire est de partager des fichiers afin que les développeurs puissent générer leurs propres clients. Cela est particulièrement vrai dans un environnement multiplateforme, où différentes équipes utilisent fréquemment différents langages et cadres de programmation, ou où votre API est accessible à l’extérieur.
+Assurez-vous que autant d’équipes que possible peuvent accéder à votre service gRPC. La meilleure façon de procéder consiste à partager `.proto` des fichiers pour que les développeurs puissent générer leurs propres clients. Cela est particulièrement vrai dans un environnement multiplateforme, où différentes équipes utilisent fréquemment différents langages de programmation et infrastructures, ou où votre API est accessible en externe.
 
 ## <a name="useful-extensions"></a>Extensions utiles
 
-Il existe deux interfaces couramment utilisées en .NET <xref:System.Collections.Generic.IEnumerable%601> pour <xref:System.IObservable%601>traiter les flux d’objets: et . En commençant par .NET Core 3.0 et C 8.0, il ya une <xref:System.Collections.Generic.IAsyncEnumerable%601> interface `await foreach` pour traiter les flux asynchrone, et une syntaxe pour l’utilisation de l’interface. Cette section présente un code réutilisable pour l’application de ces interfaces sur les flux gRPC.
+Il existe deux interfaces couramment utilisées dans .NET pour gérer les flux d’objets : <xref:System.Collections.Generic.IEnumerable%601> et <xref:System.IObservable%601> . À compter de .NET Core 3,0 et C# 8,0, il existe une <xref:System.Collections.Generic.IAsyncEnumerable%601> interface pour traiter les flux de façon asynchrone et une `await foreach` syntaxe pour l’utilisation de l’interface. Cette section présente le code réutilisable pour l’application de ces interfaces aux flux gRPC.
 
-Avec les bibliothèques de clients .NET Core `ReadAllAsync` gRPC, il existe une méthode d’extension pour `IAsyncStreamReader<T>` créer une `IAsyncEnumerable<T>` interface. Pour les développeurs utilisant une programmation réactive, `IObservable<T>` une méthode d’extension équivalente pour créer une interface peut ressembler à l’exemple dans la section suivante.
+Avec les bibliothèques clientes gRPC .NET Core, il existe une `ReadAllAsync` méthode d’extension pour `IAsyncStreamReader<T>` qui crée une `IAsyncEnumerable<T>` interface. Pour les développeurs qui utilisent la programmation réactive, une méthode d’extension équivalente pour créer une `IObservable<T>` interface peut ressembler à l’exemple de la section suivante.
 
-### <a name="iobservable"></a>Iobservable
+### <a name="iobservable"></a>IObservable
 
-L’interface `IObservable<T>` est l’inverse `IEnumerable<T>`"réactif" de . Plutôt que de retirer des éléments d’un flux, l’approche réactive permet au flux de pousser les éléments vers un abonné. Ceci est très similaire aux flux gRPC, et `IObservable<T>` il est `IAsyncStreamReader<T>` facile d’envelopper une interface autour d’une interface.
+L' `IObservable<T>` interface est l’inverse « REACTIF » de `IEnumerable<T>` . Plutôt que d’extraire des éléments d’un flux, l’approche réactive permet au flux de transmettre des éléments à un abonné. Cela est très similaire aux flux gRPC, et il est facile d’encapsuler une `IObservable<T>` interface autour d’une `IAsyncStreamReader<T>` interface.
 
-Ce code est `IAsyncEnumerable<T>` plus long que le code, car le C n’a pas de support intégré pour travailler avec des observables. Vous devez créer la classe d’implémentation manuellement. Il s’agit d’une classe générique, cependant, de sorte qu’une seule implémentation fonctionne à tous les types.
+Ce code est plus long que le `IAsyncEnumerable<T>` code, car C# ne prend pas en charge l’utilisation de observables. Vous devez créer la classe d’implémentation manuellement. Toutefois, il s’agit d’une classe générique, de sorte qu’une seule implémentation fonctionne sur tous les types.
 
 ```csharp
 using System;
@@ -46,7 +46,7 @@ namespace Grpc.Core
         private readonly CancellationToken _token;
         private int _used;
 
-        public Observable(IAsyncStreamReader<T> reader, CancellationToken token = default)
+        public GrpcStreamObservable(IAsyncStreamReader<T> reader, CancellationToken token = default)
         {
             _reader = reader;
             _token = token;
@@ -63,9 +63,9 @@ namespace Grpc.Core
 ```
 
 > [!IMPORTANT]
-> Cette implémentation `Subscribe` observable permet à la méthode d’être appelée qu’une seule fois, parce que le fait d’avoir plusieurs abonnés essayant de lire à partir du flux entraînerait le chaos. Il y a `Replay` des opérateurs, comme dans le [System.Reactive.Linq](https://www.nuget.org/packages/System.Reactive.Linq), qui permettent la mise en mémoire tampon et le partage répétable des observables, qui peuvent être utilisés avec cette implémentation.
+> Cette implémentation observable permet à la `Subscribe` méthode d’être appelée une seule fois, car le fait que plusieurs abonnés essaient de lire à partir du flux entraîne un chaos. Il existe des opérateurs, tels que `Replay` dans [System. Reactive. Linq](https://www.nuget.org/packages/System.Reactive.Linq), qui activent la mise en mémoire tampon et le partage reproductible de observables, qui peuvent être utilisés avec cette implémentation.
 
-La `GrpcStreamSubscription` classe gère l’énumération `IAsyncStreamReader`de la :
+La `GrpcStreamSubscription` classe gère l’énumération de `IAsyncStreamReader` :
 
 ```csharp
 public class GrpcStreamSubscription : IDisposable
@@ -74,7 +74,7 @@ public class GrpcStreamSubscription : IDisposable
     private readonly CancellationTokenSource _tokenSource;
     private bool _completed;
 
-    public Subscription(IAsyncStreamReader<T> reader, IObserver<T> observer, CancellationToken token)
+    public GrpcStreamSubscription(IAsyncStreamReader<T> reader, IObserver<T> observer, CancellationToken token)
     {
         Debug.Assert(reader != null);
         Debug.Assert(observer != null);
@@ -127,7 +127,7 @@ public class GrpcStreamSubscription : IDisposable
 }
 ```
 
-Tout ce qui est nécessaire maintenant est une méthode d’extension simple pour créer le observable à partir du lecteur de flux.
+Tout ce qui est nécessaire maintenant est une méthode d’extension simple pour créer l’observable à partir du lecteur de flux.
 
 ```csharp
 using System;
@@ -147,8 +147,8 @@ namespace Grpc.Core
 
 ## <a name="summary"></a>Résumé
 
-Les `IAsyncEnumerable` `IObservable` modèles et les modèles sont à la fois des moyens bien soutenus et bien documentés de traiter les flux asynchrones de données en .NET. GRPC diffuse bien la carte aux deux paradigmes, offrant une intégration étroite avec .NET Core, et des styles de programmation réactifs et asynchrones.
+Les `IAsyncEnumerable` `IObservable` modèles et sont des méthodes bien prises en charge et bien documentées pour gérer les flux de données asynchrones dans .net. les flux gRPC sont correctement mappés aux deux paradigmes, offrant une intégration étroite avec .NET Core et des styles de programmation réactifs et asynchrones.
 
 >[!div class="step-by-step"]
->[Suivant précédent](streaming-versus-repeated.md)
->[Next](security.md)
+>[Précédent](streaming-versus-repeated.md) 
+> [Suivant](security.md)
