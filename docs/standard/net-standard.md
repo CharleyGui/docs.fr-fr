@@ -5,12 +5,12 @@ ms.date: 02/13/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: b52d69756d85e3e422b798c3ac7d53de3b538b8d
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: e96a03ca55682d3e30bc13fb20a8e443105301fc
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167409"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359309"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -86,13 +86,13 @@ Les packages NuGet ciblent un ou plusieurs [frameworks](frameworks.md). Les pack
 
 Le sous- [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library/) package fait référence à l’ensemble complet des packages NuGet qui définissent .NET standard.  La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit et donne accès à la quarantaine de bibliothèques .NET et les API associées qui définissent .NET Standard. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
 
-### <a name="versioning"></a>Contrôle de version
+### <a name="versioning"></a>Gestion de version
 
 La spécification n’est pas singulière, mais représente un ensemble d’API dont la croissance est incrémentielle et les versions linéaires. La première version de la norme établit un ensemble d’API de référence. Les versions ultérieures ajoutent des API et héritent des API définies par les versions précédentes. Il n’existe aucune disposition établie pour supprimer des API de la norme.
 
 .NET Standard n’est spécifique à aucune implémentation de .NET et ne correspond pas au schéma de contrôle de version de ces runtimes.
 
-Les API ajoutées à une implémentation (par exemple, .NET Framework, .NET Core et Mono) peuvent être considérées comme des candidats à ajouter à la spécification, en particulier si elles sont jugées fondamentales. Des [versions de .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md) sont créées en fonction des versions Release des implémentations de .NET, ce qui vous permet de cibler les nouvelles API à partir d’une bibliothèque de classes portable .NET Standard. Les mécanismes du contrôle de version sont décrits plus en détail dans [Gestion de version .NET Core](../core/versions/index.md).
+Les API ajoutées à n’importe quelle implémentation .NET (par exemple, .NET Framework, .NET Core et mono) peuvent être considérées comme des candidats à ajouter à la spécification, en particulier si elles sont supposées être fondamentales. Les nouvelles [versions de .NET standard](https://github.com/dotnet/standard/blob/master/docs/versions.md) sont créées en fonction des versions de l’implémentation .net, ce qui vous permet de cibler de nouvelles API à partir d’une bibliothèque de classes portable .NET standard (PCL). Les mécanismes du contrôle de version sont décrits plus en détail dans [Gestion de version .NET Core](../core/versions/index.md).
 
 Le contrôle de version de .NET Standard est important pour son utilisation. Pour une version donnée de .NET Standard, vous pouvez utiliser des bibliothèques qui ciblent cette même version ou une version moins élevée. L’approche suivante décrit le flux de travail de l’utilisation des bibliothèques de classes portables .NET Standard, propre au ciblage de .NET Standard.
 
@@ -147,15 +147,15 @@ Vous pouvez voir l’ensemble des profils PCL qui sont compatibles avec .NET Sta
 
 | Profil de bibliothèque de classes portable | .NET Standard | Plateformes de bibliothèque de classes portable
 |:-----------:|:-------------:|------------------------------------------------------------------------------
-| Profile7    | 1.1           | .NET Framework 4.5, Windows 8
+| Profile7    | 1,1           | .NET Framework 4.5, Windows 8
 | Profile31   | 1.0           | Windows 8.1, Windows Phone Silverlight 8.1
-| Profile32   | 1.2           | Windows 8.1, Windows Phone 8.1
-| Profile44   | 1.2           | .NET Framework 4.5.1, Windows 8.1
+| Profile32   | 1,2           | Windows 8.1, Windows Phone 8.1
+| Profile44   | 1,2           | .NET Framework 4.5.1, Windows 8.1
 | Profile49   | 1.0           | .NET Framework 4.5, Windows Phone Silverlight 8
 | Profile78   | 1.0           | .NET Framework 4.5, Windows 8, Windows Phone Silverlight 8
 | Profile84   | 1.0           | Windows Phone 8.1, Windows Phone Silverlight 8.1
-| Profile111  | 1.1           | .NET Framework 4.5, Windows 8, Windows Phone 8.1
-| Profile151  | 1.2           | .NET Framework 4.5.1, Windows 8.1, Windows Phone 8.1
+| Profile111  | 1,1           | .NET Framework 4.5, Windows 8, Windows Phone 8.1
+| Profile151  | 1,2           | .NET Framework 4.5.1, Windows 8.1, Windows Phone 8.1
 | Profile157  | 1.0           | Windows 8.1, Windows Phone 8.1, Windows Phone Silverlight 8.1
 | Profile259  | 1.0           | .NET Framework 4.5, Windows 8, Windows Phone 8.1, Windows Phone Silverlight 8
 

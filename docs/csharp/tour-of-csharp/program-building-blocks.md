@@ -2,12 +2,12 @@
 title: Les blocs de construction des programmes C#»
 description: En savoir plus sur les membres, les expressions et les instructions C#. Les types contiennent des membres que vous écrivez. Ces membres sont générés à partir d’instructions et d’expressions.
 ms.date: 08/06/2020
-ms.openlocfilehash: 142fe7b5a3424a8925638bfb4e4437392347f4c6
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 3bdc6a4da6ae76148c7d1d5cb8ccb65d91fda61a
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268138"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358815"
 ---
 # <a name="program-building-blocks"></a>Blocs de construction de programme
 
@@ -137,7 +137,7 @@ Lorsqu’une déclaration de méthode d’instance inclut un modificateur `virtu
 
 Lorsqu’une méthode virtuelle est appelée, le *type au moment de l’exécution* de l’instance pour laquelle cet appel prend place détermine l’implémentation de méthode à appeler. Dans un appel de méthode non virtuelle, le *type lors de la compilation* de l’instance est le facteur déterminant.
 
-Une méthode virtuelle peut être *substituée* dans une classe dérivée. Lorsqu’une déclaration de méthode d’instance comprend un modificateur override, la méthode substitue une méthode virtuelle héritée ayant la même signature. La déclaration de méthode virtuelle AA introduit une nouvelle méthode. Une déclaration de méthode override spécialise une méthode virtuelle héritée existante en fournissant une nouvelle implémentation de cette méthode.
+Une méthode virtuelle peut être *substituée* dans une classe dérivée. Lorsqu’une déclaration de méthode d’instance comprend un modificateur override, la méthode substitue une méthode virtuelle héritée ayant la même signature. Une déclaration de méthode virtuelle introduit une nouvelle méthode. Une déclaration de méthode override spécialise une méthode virtuelle héritée existante en fournissant une nouvelle implémentation de cette méthode.
 
 Une *méthode abstraite* est une méthode virtuelle sans implémentation. Une méthode abstraite est déclarée avec le `abstract` modificateur et est autorisée uniquement dans une classe abstraite. Une méthode abstraite doit être remplacée dans chaque classe dérivée non abstraite.
 
@@ -192,8 +192,6 @@ Les *propriétés* sont une extension naturelle des champs. Les deux sont des me
 Une propriété est déclarée comme un champ, sauf que la déclaration se termine par un accesseur Get ou un accesseur Set écrit entre les délimiteurs `{` et `}` au lieu de se terminer par un point-virgule. Une propriété qui a un accesseur get et un accesseur set est une *propriété en lecture-écriture*, une propriété qui possède uniquement un accesseur get est une *propriété en lecture seule*, et une propriété qui possède uniquement un accesseur set est une *propriété en écriture seule*.
 
 Un accesseur get correspond à une méthode sans paramètre avec une valeur de retour du type de la propriété. Un accesseur set correspond à une méthode avec un paramètre unique nommé valeur et aucun type de retour. L’accesseur Get calcule la valeur de la propriété. L’accesseur Set fournit une nouvelle valeur pour la propriété. Lorsque la propriété est la cible d’une assignation, ou l’opérande de `++` ou `--` , l’accesseur Set est appelé. Dans les autres cas où la propriété est référencée, l’accesseur Get est appelé.
-
- Lorsqu’une propriété est référencée en tant que cible d’une assignation ou qu’opérande de ++ ou --, l’accesseur set est appelé avec un argument qui fournit la nouvelle valeur.
 
 La classe `MyList<T>` déclare deux propriétés, `Count` et `Capacity`, qui sont respectivement en lecture seule et en lecture-écriture. Le code suivant est un exemple d’utilisation de ces propriétés :
 

@@ -2,12 +2,12 @@
 title: Test d’une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio Code
 description: Créez un projet de test unitaire pour une bibliothèque de classes .NET Core. Vérifiez que la bibliothèque de classes .NET Core fonctionne correctement avec les tests unitaires.
 ms.date: 06/08/2020
-ms.openlocfilehash: b5f394b5dea2bf0b4af6e8b119df3fa0ec113dd3
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: f49974e1b918424ae5b5d7f3969f52c371e37154
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811715"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359166"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>Didacticiel : tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio Code
 
@@ -15,7 +15,7 @@ Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un pro
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard dans Visual Studio code](library-with-visual-studio-code.md).
+- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio code](library-with-visual-studio-code.md).
 
 ## <a name="create-a-unit-test-project"></a>Créer un projet de test unitaire
 
@@ -23,7 +23,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 1. Démarrer Visual Studio Code
 
-1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard dans Visual Studio](library-with-visual-studio.md).
+1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio code](library-with-visual-studio-code.md).
 
 1. Créez un projet de test unitaire nommé « StringLibraryTest ».
 
@@ -67,7 +67,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 Pour que le projet de test fonctionne avec la `StringLibrary` classe, ajoutez une référence au projet dans le `StringLibraryTest` projet `StringLibrary` .
 
-1. Exécutez la commande suivante :
+1. Exécutez la commande suivante :
 
    ```dotnetcli
    dotnet add StringLibraryTest/StringLibraryTest.csproj reference StringLibrary/StringLibrary.csproj
@@ -174,7 +174,7 @@ Maintenant que les tests ont tous réussi lors de l’exécution de la version D
 
    Les tests réussissent.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 * [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
 
@@ -193,4 +193,4 @@ Si vous publiez une bibliothèque en tant que package NuGet, d’autres peuvent 
 Une bibliothèque n’a pas besoin d’être distribuée en tant que package. Il peut être fourni avec une application console qui l’utilise. Pour savoir comment publier une application console, consultez le didacticiel précédent dans cette série :
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core avec Visual Studio Code](publishing-with-visual-studio-code.md)
+> [Publier une application console .NET Core à l’aide de Visual Studio Code](publishing-with-visual-studio-code.md)

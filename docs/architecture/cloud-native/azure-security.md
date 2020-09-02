@@ -2,12 +2,12 @@
 title: Sécurité Azure pour les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Sécurité Azure pour les applications Cloud natives
 ms.date: 05/13/2020
-ms.openlocfilehash: 996c7075b252466a3b3374f1e75e64315fdd6fc7
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 7780b005d84124f202049deeb5be876364e6c5fa
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557644"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358971"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Sécurité Azure pour les applications Cloud natives
 
@@ -147,7 +147,7 @@ Les règles de refus sont prioritaires sur les règles d’autorisation. Mainten
 
 ## <a name="checking-access"></a>Vérification de l’accès
 
-Comme vous pouvez l’imaginer, le fait de disposer d’un grand nombre de rôles et d’étendues peut compliquer la recherche de l’autorisation effective d’un principal de service. Empilez les règles de refus en plus de cela, sert uniquement à accroître la complexité. Heureusement, il existe une calculatrice des autorisations qui peut afficher les autorisations effectives pour n’importe quel principal du service. Il se trouve généralement sous l’onglet IAM dans le portail, comme illustré à la figure 10-3.
+Comme vous pouvez l’imaginer, le fait de disposer d’un grand nombre de rôles et d’étendues peut compliquer la recherche de l’autorisation effective d’un principal de service. Empilez les règles de refus en plus de cela, sert uniquement à accroître la complexité. Heureusement, il existe une [Calculatrice des autorisations](https://docs.microsoft.com/azure/role-based-access-control/check-access) qui peut afficher les autorisations effectives pour n’importe quel principal du service. Il se trouve généralement sous l’onglet IAM dans le portail, comme illustré à la figure 10-3.
 
 ![Figure 9-4 Calculatrice des autorisations pour un service d’application](./media/check-rbac.png)
 

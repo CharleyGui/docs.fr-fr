@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: f20b089fd22794d5aaeff34502e960fe41a565e1
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 049f0636b1c2c2df33461714aea5a11810ef00ad
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84700967"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359192"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Didacticiel : tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio
 
@@ -19,7 +19,7 @@ Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un pro
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard dans Visual Studio](library-with-visual-studio.md).
+- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio](library-with-visual-studio.md).
 
 ## <a name="create-a-unit-test-project"></a>Créer un projet de test unitaire
 
@@ -27,7 +27,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 1. Démarrez Visual Studio.
 
-1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard dans Visual Studio](library-with-visual-studio.md).
+1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio](library-with-visual-studio.md).
 
 1. Ajoutez un nouveau projet de test unitaire nommé « StringLibraryTest » à la solution.
 
@@ -91,7 +91,7 @@ Pour que le projet de test fonctionne avec la `StringLibrary` classe, ajoutez un
 
 ## <a name="add-and-run-unit-test-methods"></a>Ajouter et exécuter des méthodes de test unitaire
 
-Lorsque Visual Studio exécute un test unitaire, il exécute chaque méthode marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> attribut dans une classe marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> attribut. Une méthode de test se termine lorsque le premier échec est trouvé ou lorsque tous les tests contenus dans la méthode ont réussi.
+Lorsque Visual Studio exécute un test unitaire, il exécute chaque méthode marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> attribut dans une classe marquée avec l'  <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> attribut. Une méthode de test se termine lorsque le premier échec est trouvé ou lorsque tous les tests contenus dans la méthode ont réussi.
 
 Les tests les plus courants appellent des membres de la classe <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert>. De nombreuses méthodes d’assertion incluent au moins deux paramètres, à savoir le résultat attendu pour le test et résultat réel du test. Certaines des `Assert` méthodes les plus fréquemment appelées à la classe sont indiquées dans le tableau suivant :
 
@@ -187,7 +187,7 @@ Pour tester la version Release :
 
 1. Exécutez les tests unitaires en choisissant **test exécuter**  >  **tous les tests** dans la barre de menus. Les tests réussissent.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 * [Concepts de base des tests unitaires-Visual Studio](/visualstudio/test/unit-test-basics)
 * [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
@@ -207,4 +207,4 @@ Si vous publiez une bibliothèque en tant que package NuGet, d’autres peuvent 
 Une bibliothèque n’a pas besoin d’être distribuée en tant que package. Il peut être fourni avec une application console qui l’utilise. Pour savoir comment publier une application console, consultez le didacticiel précédent dans cette série :
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core avec Visual Studio](publishing-with-visual-studio.md)
+> [Publier une application console .NET Core à l’aide de Visual Studio](publishing-with-visual-studio.md)

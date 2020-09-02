@@ -10,12 +10,12 @@ helpviewer_keywords:
 - sockets, code examples
 - asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
-ms.openlocfilehash: 089de8ce9629e30cb6e4458c0f9a4613c9674a21
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e30b9694a07d1551163f5d80e7874fe5c7d29050
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502715"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359050"
 ---
 # <a name="asynchronous-server-socket-example"></a>Exemple de sockets serveur asynchrones
 L’exemple de programme suivant crée un serveur qui reçoit les demandes de connexion des clients. Le serveur est créé avec un socket asynchrone. L’exécution de l’application serveur n’est pas suspendue pendant l’attente d’une connexion à partir d’un client. L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client. La chaîne du client doit contenir la chaîne « \<EOF> » pour signaler la fin du message.  
@@ -150,25 +150,32 @@ using System.Text;
 using System.Threading;  
   
 // State object for reading client data asynchronously  
-public class StateObject {  
-    // Client  socket.  
-    public Socket workSocket = null;  
+public class StateObject
+{
     // Size of receive buffer.  
-    public const int BufferSize = 1024;  
+    public const int BufferSize = 1024;
+
     // Receive buffer.  
-    public byte[] buffer = new byte[BufferSize];  
-// Received data string.  
+    public byte[] buffer = new byte[BufferSize];
+
+    // Received data string.
     public StringBuilder sb = new StringBuilder();
+
+    // Client socket.
+    public Socket workSocket = null;
 }  
   
-public class AsynchronousSocketListener {  
+public class AsynchronousSocketListener
+{
     // Thread signal.  
-    public static ManualResetEvent allDone = new ManualResetEvent(false);  
-  
-    public AsynchronousSocketListener() {  
-    }  
-  
-    public static void StartListening() {  
+    public static ManualResetEvent allDone = new ManualResetEvent(false);
+
+    public AsynchronousSocketListener()
+    {
+    }
+
+    public static void StartListening()
+    {
         // Establish the local endpoint for the socket.  
         // The DNS name of the computer  
         // running the listener is "host.contoso.com".  
@@ -206,9 +213,10 @@ public class AsynchronousSocketListener {
         Console.WriteLine("\nPress ENTER to continue...");  
         Console.Read();  
   
-    }  
-  
-    public static void AcceptCallback(IAsyncResult ar) {  
+    }
+
+    public static void AcceptCallback(IAsyncResult ar)
+    {
         // Signal the main thread to continue.  
         allDone.Set();  
   
@@ -221,9 +229,10 @@ public class AsynchronousSocketListener {
         state.workSocket = handler;  
         handler.BeginReceive( state.buffer, 0, StateObject.BufferSize, 0,  
             new AsyncCallback(ReadCallback), state);  
-    }  
-  
-    public static void ReadCallback(IAsyncResult ar) {  
+    }
+
+    public static void ReadCallback(IAsyncResult ar)
+    {
         String content = String.Empty;  
   
         // Retrieve the state object and the handler socket  
@@ -255,19 +264,22 @@ public class AsynchronousSocketListener {
                 new AsyncCallback(ReadCallback), state);  
             }  
         }  
-    }  
-  
-    private static void Send(Socket handler, String data) {  
+    }
+
+    private static void Send(Socket handler, String data)
+    {
         // Convert the string data to byte data using ASCII encoding.  
         byte[] byteData = Encoding.ASCII.GetBytes(data);  
   
         // Begin sending the data to the remote device.  
         handler.BeginSend(byteData, 0, byteData.Length, 0,  
             new AsyncCallback(SendCallback), handler);  
-    }  
-  
-    private static void SendCallback(IAsyncResult ar) {  
-        try {  
+    }
+
+    private static void SendCallback(IAsyncResult ar)
+    {
+        try
+        {
             // Retrieve the socket from the state object.  
             Socket handler = (Socket) ar.AsyncState;  
   
@@ -278,16 +290,19 @@ public class AsynchronousSocketListener {
             handler.Shutdown(SocketShutdown.Both);  
             handler.Close();  
   
-        } catch (Exception e) {  
+        }
+        catch (Exception e)
+        {
             Console.WriteLine(e.ToString());  
         }  
-    }  
-  
-    public static int Main(String[] args) {  
+    }
+
+    public static int Main(String[] args)
+    {
         StartListening();  
         return 0;  
-    }  
-}  
+    }
+}
 ```  
   
 ## <a name="see-also"></a>Voir aussi

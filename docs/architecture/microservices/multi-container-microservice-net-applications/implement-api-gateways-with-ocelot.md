@@ -2,12 +2,12 @@
 title: Implémentation de passerelles d’API avec Ocelot
 description: Découvrez comment implémenter des passerelles d’API avec Ocelot et comment utiliser Ocelot dans un environnement basé sur un conteneur.
 ms.date: 03/02/2020
-ms.openlocfilehash: f103c1e394a3f829489b61fd17af749798b02f70
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 3611ffa7a163ff632ca854fafb910fcd3e228306
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864096"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358984"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implémenter des passerelles API avec Ocelot
 
@@ -15,6 +15,7 @@ ms.locfileid: "86864096"
 > L’application de microservice de référence [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) utilise actuellement les fonctionnalités fournies par [Envoy](https://www.envoyproxy.io/) pour implémenter la passerelle d’API au lieu des [Ocelot](https://github.com/ThreeMammals/Ocelot)référencés précédemment.
 > Nous avons fait ce choix de conception en raison de la prise en charge intégrée du protocole WebSocket par Envoy, requise par les nouvelles communications gRPC entre les services implémentées dans eShopOnContainers.
 > Toutefois, nous avons conservé cette section dans le guide pour vous permettre de considérer Ocelot comme une passerelle d’API simple, efficace et légère, adaptée aux scénarios de production.
+> En outre, la dernière version de Ocelot contient une modification avec rupture sur son schéma JSON. Envisagez d’utiliser Ocelot < v 16.0.0 ou les itinéraires clés au lieu de rediriger.
 
 ## <a name="architect-and-design-your-api-gateways"></a>Structurer et concevoir les passerelles d’API
 

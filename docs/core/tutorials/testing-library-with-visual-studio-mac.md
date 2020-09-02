@@ -2,12 +2,12 @@
 title: Test d’une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio pour Mac
 description: Créez un projet de test unitaire pour une bibliothèque de classes .NET Core. Vérifiez que la bibliothèque de classes .NET Core fonctionne correctement avec les tests unitaires.
 ms.date: 06/08/2020
-ms.openlocfilehash: a183049623df44cbb8c4abd47ce6e78d91adae12
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: d3c8a5e01d16047949e977f3af6a429970d996d0
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713608"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359218"
 ---
 # <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio
 
@@ -15,7 +15,7 @@ Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un pro
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard dans Visual Studio pour Mac](library-with-visual-studio-mac.md).
+- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio pour Mac](library-with-visual-studio-mac.md).
 
 ## <a name="create-a-unit-test-project"></a>Créer un projet de test unitaire
 
@@ -23,7 +23,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 1. Démarrez Visual Studio pour Mac.
 
-1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET Standard dans Visual Studio pour Mac](library-with-visual-studio-mac.md).
+1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio pour Mac](library-with-visual-studio-mac.md).
 
 1. Dans le panneau **solutions** , cliquez sur la solution en <kbd>appuyant sur la touche Ctrl</kbd> `ClassLibraryProjects` et sélectionnez **Ajouter**  >  **un nouveau projet**.
 
@@ -73,7 +73,7 @@ Pour que le projet de test fonctionne avec la `StringLibrary` classe, ajoutez un
 
 ## <a name="add-and-run-unit-test-methods"></a>Ajouter et exécuter des méthodes de test unitaire
 
-Lorsque Visual Studio exécute un test unitaire, il exécute chaque méthode marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> attribut dans une classe marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> attribut. Une méthode de test se termine lorsque le premier échec est trouvé ou lorsque tous les tests contenus dans la méthode ont réussi.
+Lorsque Visual Studio exécute un test unitaire, il exécute chaque méthode marquée avec l' <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> attribut dans une classe marquée avec l'  <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> attribut. Une méthode de test se termine lorsque le premier échec est trouvé ou lorsque tous les tests contenus dans la méthode ont réussi.
 
 Les tests les plus courants appellent des membres de la classe <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert>. De nombreuses méthodes d’assertion incluent au moins deux paramètres, à savoir le résultat attendu pour le test et résultat réel du test. Certaines des `Assert` méthodes les plus fréquemment appelées à la classe sont indiquées dans le tableau suivant :
 
@@ -167,7 +167,7 @@ Pour tester la version Release :
 
 Vous pouvez utiliser le même processus que celui présenté dans [Didacticiel : déboguer une application console .net core à l’aide de Visual Studio pour Mac](debugging-with-visual-studio-mac.md) pour déboguer le code à l’aide de votre projet de test unitaire. Au lieu de démarrer le projet d’application <kbd>Showcase, cliquez</kbd>sur le projet **StringLibraryTests** , puis sélectionnez **Démarrer le débogage du projet** dans le menu contextuel. Visual Studio démarre le projet de test avec le débogueur attaché. L’exécution s’arrêtera à un point d’arrêt que vous avez ajouté au projet de test ou au code de bibliothèque sous-jacent.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 * [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
 
@@ -186,4 +186,4 @@ Si vous publiez une bibliothèque en tant que package NuGet, d’autres peuvent 
 Une bibliothèque n’a pas besoin d’être distribuée en tant que package. Il peut être fourni avec une application console qui l’utilise. Pour savoir comment publier une application console, consultez le didacticiel précédent dans cette série :
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core avec Visual Studio pour Mac](publishing-with-visual-studio-mac.md)
+> [Publier une application console .NET Core à l’aide de Visual Studio pour Mac](publishing-with-visual-studio-mac.md)

@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 593897b31c86e79db2376dde94f3e5c87fdf8289
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: a2ebad329f583d35f110c5db053eebfa80ace6e2
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89052821"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359322"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Didacticiel : inspection visuelle automatisée à l’aide de l’apprentissage de transfert avec l’API de classification d’image ML.NET
 
@@ -32,7 +32,7 @@ Dans ce tutoriel, vous allez apprendre à :
 
 ## <a name="image-classification-transfer-learning-sample-overview"></a>Vue d’ensemble de l’exemple d’apprentissage de transfert de classification d’image
 
-Cet exemple est une application console C# .NET Core qui classe les images à l’aide d’un modèle TensorFlow d’apprentissage profond préformé. Vous trouverez le code de cet exemple dans le [dépôt dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary) sur GitHub.
+Cet exemple est une application console C# .NET Core qui classe les images à l’aide d’un modèle TensorFlow d’apprentissage profond préformé. Le code de cet exemple se trouve dans le [navigateur d’exemples](/samples/dotnet/machinelearning-samples/mlnet-image-classification-transfer-learning/).
 
 ## <a name="understand-the-problem"></a>Comprendre le problème
 
@@ -180,7 +180,7 @@ Lorsque les données d’apprentissage et de validation ne changent pas souvent,
 
     La classe [MLContext](xref:Microsoft.ML.MLContext) est un point de départ pour toutes les opérations ml.net, et l’initialisation de MLContext crée un nouvel environnement ml.net qui peut être partagé entre les objets de flux de travail de création de modèle. Sur le plan conceptuel, elle est similaire à `DbContext` dans Entity Framework.
 
-## <a name="load-the-data"></a>Charger les données
+## <a name="load-the-data"></a>Chargement des données
 
 ### <a name="create-data-loading-utility-method"></a>Créer une méthode utilitaire de chargement de données
 
