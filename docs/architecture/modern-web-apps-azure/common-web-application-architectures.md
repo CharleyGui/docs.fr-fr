@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: c9a8e9450d81ac2e63a8c8ea54592ed81e646e05
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: de90db9061d0b7bd15141b277ae4272b5208f76b
+ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988126"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89379159"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
@@ -38,9 +38,9 @@ La solution monolithique à projet unique est simple, mais elle présente certai
 
 Pour résoudre ces problèmes, les applications se transforment souvent en solutions à projets multiples, où chaque projet est censé résider dans une _couche_ spécifique de l’application.
 
-## <a name="what-are-layers"></a>Qu’est-ce qu’une architecture en couches ?
+## <a name="what-are-layers"></a>Présentation des couches
 
-Quand une application devient complexe, un moyen de gérer cette complexité est de scinder l’application selon ses responsabilités ou préoccupations. Cela fait suite à la séparation des préoccupations principe et peut aider à maintenir une base de code croissante organisée afin que les développeurs peuvent facilement trouver où certaines fonctionnalités sont mises en œuvre. L’architecture en couches offre d’autres avantages que la simple organisation du code.
+Quand une application devient complexe, un moyen de gérer cette complexité est de scinder l’application selon ses responsabilités ou préoccupations. Cela respecte le principe de séparation des préoccupations et peut aider à maintenir une structure de code en pleine croissance, afin que les développeurs puissent facilement trouver où certaines fonctionnalités sont implémentées. L’architecture en couches offre d’autres avantages que la simple organisation du code.
 
 En effet, l’organisation du code en couches permet également la réutilisation des fonctionnalités communes de bas niveau dans l’ensemble de l’application. Cette possibilité est intéressante, car elle réduit la quantité de code à écrire et permet la standardisation de l’application sur une implémentation unique, selon le principe [DRY (« Ne vous répétez pas »)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
@@ -59,7 +59,7 @@ La mise en couches logiques est une technique courante pour améliorer l’organ
 
 La figure 5-2 illustre l’organisation la plus courante d’une logique d’application en couches.
 
-![Couches d’application typiques](./media/image5-2.png)
+![Couches d’application standard](./media/image5-2.png)
 
 **Figure 5-2.** Couches d’application classiques.
 
@@ -69,7 +69,7 @@ Cette approche en couches classique a un inconvénient, à savoir que les dépen
 
 La figure 5-3 montre un exemple de solution qui scinde l’application en trois projets par responsabilité (ou couche).
 
-![Une simple application monolithique avec trois projets](./media/image5-3.png)
+![Application monolithique simple avec trois projets](./media/image5-3.png)
 
 **Figure 5-3.** Application monolithique simple constituée de trois projets.
 
@@ -91,7 +91,7 @@ Il est possible d’augmenter ou de diminuer la taille des instances de cette un
 
 L’approche la plus simple pour mettre à l’échelle une application web dans Azure est de configurer la mise à l’échelle manuellement dans le plan App Service de l’application. La figure 5-6 illustre le tableau de bord Azure qui permet de configurer le nombre d’instances au service d’une application.
 
-![App Service Plan mise à l’échelle à Azure](./media/image5-6.png)
+![Mise à l’échelle du plan App Service dans Azure](./media/image5-6.png)
 
 **Figure 5-6.** Mise à l’échelle du plan App Service dans Azure.
 
@@ -99,7 +99,7 @@ L’approche la plus simple pour mettre à l’échelle une application web dans
 
 Les applications conçues selon le principe d’inversion des dépendances et les principes DDD (conception pilotée par le domaine) présentent au final plus ou moins la même architecture. Les noms donnés à cette architecture ont beaucoup varié au fil des années. Au début, on l’a nommée architecture hexagonale, puis architecture ports-adaptateurs. Plus récemment, on l’a appelée [architecture en oignon](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) ou [architecture propre](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Cette dernière désignation, architecture propre, est celle utilisée pour qualifier l’architecture utilisée dans ce livre électronique.
 
-L’application de référence eShopOnWeb utilise l’approche Clean Architecture dans l’organisation de son code en projets. Vous pouvez trouver un modèle de solution que vous pouvez utiliser comme point de départ pour votre propre ASP.NET Core sur le référentiel [GitHub ardalis/cleanarchitecture.](https://github.com/ardalis/cleanarchitecture)
+L’application de référence eShopOnWeb utilise l’approche propre à l’architecture pour organiser son code en projets. Vous pouvez trouver un modèle de solution que vous pouvez utiliser comme point de départ pour votre propre ASP.NET Core sur le référentiel GitHub [/cleanarchitecture](https://github.com/ardalis/cleanarchitecture) .
 
 L’architecture propre met la logique métier et le modèle d’application au centre même de l’application. Au lieu que la logique métier dépende des préoccupations de l’accès aux données ou d’une autre infrastructure, cette dépendance est inversée : les détails de l’infrastructure et de l’implémentation dépendent du noyau de l’application. Cela s’obtient par la définition d’abstractions, ou interfaces, dans la couche Noyau de l’application, lesquels sont ensuite implémentés par les types définis dans la couche Infrastructure. Cette architecture est souvent représentée sous la forme d’une série de cercles concentriques, à l’image des couches d’un oignon. La figure 5-7 montre un exemple de ce style de représentation architecturale.
 
@@ -119,7 +119,7 @@ Notez que les flèches pleines représentent les dépendances à la compilation,
 
 La figure 5-9 est une représentation plus détaillée de l’architecture d’une application ASP.NET Core conçue selon ces recommandations.
 
-![ASP.NET diagramme d’architecture de base suivant l’architecture propre](./media/image5-9.png)
+![Diagramme d’architecture de ASP.NET Core suivant l’architecture propre](./media/image5-9.png)
 
 **Figure 5-9.** Diagramme d’une architecture ASP.NET Core propre.
 
@@ -145,30 +145,36 @@ Dans les applications monolithiques, les projets Noyau de l’application, Infra
 
 Dans une architecture propre, les responsabilités de chaque projet sont clairement établies. À cet effet, certains types sont communs à chaque projet et vous trouverez souvent plusieurs dossiers correspondant à ces types dans le projet en question.
 
-La couche Noyau de l’application contient le modèle métier, qui définit les entités, les services et les interfaces. Ces interfaces comprennent des abstractions pour les opérations qui seront effectuées à l’aide d’infrastructure, telles que l’accès aux données, l’accès au système de fichiers, les appels réseau, etc. Parfois, les services ou les interfaces définis à cette couche devront fonctionner avec des types non-entités qui n’ont aucune dépendance à l’assurance-chômage ou à l’infrastructure. Ils peuvent alors être définis comme objets de transfert de données (DTO).
+#### <a name="application-core"></a>Noyau d’application
 
-### <a name="application-core-types"></a>Types de la couche Noyau de l’application
+La couche Noyau de l’application contient le modèle métier, qui définit les entités, les services et les interfaces. Ces interfaces incluent des abstractions pour les opérations qui seront effectuées à l’aide de l’infrastructure, telles que l’accès aux données, l’accès au système de fichiers, les appels réseau, etc. Parfois, les services ou les interfaces définis au niveau de cette couche doivent fonctionner avec des types non-entité qui n’ont pas de dépendances sur l’interface utilisateur ou l’infrastructure. Ils peuvent alors être définis comme objets de transfert de données (DTO).
+
+##### <a name="application-core-types"></a>Types de la couche Noyau de l’application
 
 - Entités (classes persistantes du modèle métier)
 - Interfaces
 - Services
 - Objets DTO
 
+#### <a name="infrastructure"></a>Infrastructure
+
 Le projet Infrastructure inclut généralement des implémentations de l’accès aux données. Dans une application web ASP.NET Core conventionnelle, ces implémentations comprennent la classe DbContext d’Entity Framework (EF), les objets `Migration` EF Core qui ont été définis, ainsi que les classes d’implémentation de l’accès aux données. La méthode la plus courante pour abstraire le code d’implémentation de l’accès aux données est d’utiliser le [modèle de conception de référentiel](https://deviq.com/repository-pattern/).
 
 En plus des implémentations de l’accès aux données, le projet Infrastructure doit contenir les implémentations des services qui interagissent avec les préoccupations de l’infrastructure. Ces services doivent implémenter les interfaces définies dans la couche Noyau de l’application, et la couche Infrastructure doit donc référencer le projet Noyau de l’application.
 
-### <a name="infrastructure-types"></a>Types de la couche Infrastructure
+##### <a name="infrastructure-types"></a>Types de la couche Infrastructure
 
 - Types EF Core (`DbContext`, `Migration`)
 - Types d’implémentation de l’accès aux données (référentiels)
 - Services spécifiques de l’infrastructure (par exemple, `FileLogger` ou `SmtpNotifier`)
 
+#### <a name="ui-layer"></a>Couche d’interface utilisateur
+
 Dans une application ASP.NET Core MVC, la couche Interface utilisateur est le point d’entrée de l’application. Ce projet doit référencer le projet Noyau de l’application, et ses types doivent interagir avec l’infrastructure uniquement par le biais des interfaces définies dans la couche Noyau de l’application. Les instanciations directes des types de la couche Infrastructure (ou les appels statiques à ces types) ne doivent pas être autorisées dans la couche Interface utilisateur.
 
-### <a name="ui-layer-types"></a>Types de la couche Interface utilisateur
+##### <a name="ui-layer-types"></a>Types de couche d’interface utilisateur
 
-- Controllers
+- Contrôleurs
 - Filtres
 - Les vues
 - ViewModels
@@ -211,7 +217,7 @@ Le déploiement de mises à jour comme images Docker est beaucoup plus rapide et
 
 Comme les conteneurs sont immuables de par leur conception même, il n’y a pas de risques d’endommagement des machines virtuelles, au contraire des scripts de mise à jour qui peuvent oublier de prendre en compte une configuration ou un fichier spécifique sur le disque.
 
-Vous pouvez utiliser des conteneurs Docker pour effectuer un déploiement monolithique d’applications web simples. Cela a pour effet d’améliorer les pipelines d’intégration continue et de déploiement continu et cela contribuer à la réussite du déploiement en production. Pas plus "Il fonctionne sur ma machine, pourquoi ne fonctionne-t-il pas en production?"
+Vous pouvez utiliser des conteneurs Docker pour effectuer un déploiement monolithique d’applications web simples. Cela a pour effet d’améliorer les pipelines d’intégration continue et de déploiement continu et cela contribuer à la réussite du déploiement en production. Plus de « il fonctionne sur mon ordinateur, pourquoi ne fonctionne-t-il pas en production ? »
 
 Une architecture basée sur des microservices présente de nombreux avantages, mais ces avantages se payent par une complexité accrue. Dans certains cas, les coûts l’emportent sur les avantages, de sorte qu’il est préférable d’utiliser une application à déploiement monolithique s’exécutant dans un petit nombre de conteneurs, voire dans un seul conteneur.
 
@@ -219,7 +225,7 @@ Il n’est pas toujours évident de décomposer une application monolithique en 
 
 Une application n’est pas pour autant nécessairement amenée à mettre à l’échelle les fonctionnalités de façon indépendante. Bon nombre d’applications, quand elles ont besoin d’une mise à l’échelle qui va au-delà d’une instance unique, peuvent le faire par le biais du processus relativement simple de clonage intégral de cette instance. Le travail supplémentaire que demande la séparation de l’application en services discrets offre peu d’avantages, alors que la mise à l’échelle d’instances complètes de l’application est simple et économique.
 
-Au stade initial du développement d’une application, vous n’avez peut-être pas une idée précise de là où se trouvent les limites fonctionnelles naturelles. Même à un stade de développement où le produit est viable, il est possible que cette séparation naturelle ne se dégage toujours pas. Certaines de ces conditions peuvent être passagères. Vous pouvez commencer par créer une application monolithique et séparer par la suite certaines fonctionnalités en les développant et les déployant sous forme de microservices. D’autres conditions peuvent être essentielles à l’espace problématique de l’application, ce qui signifie que l’application pourrait ne jamais être divisée en microservices multiples.
+Au stade initial du développement d’une application, vous n’avez peut-être pas une idée précise de là où se trouvent les limites fonctionnelles naturelles. Même à un stade de développement où le produit est viable, il est possible que cette séparation naturelle ne se dégage toujours pas. Certaines de ces conditions peuvent être passagères. Vous pouvez commencer par créer une application monolithique et séparer par la suite certaines fonctionnalités en les développant et les déployant sous forme de microservices. D’autres conditions peuvent être essentielles à l’espace du problème de l’application, ce qui signifie que l’application peut ne jamais être divisée en plusieurs microservices.
 
 Séparer une application en divers processus distincts induit aussi des coûts. Il est plus complexe de séparer des fonctionnalités en différents processus. Les protocoles de communication deviennent plus complexes. Au lieu d’appeler des méthodes, vous devez utiliser des communications asynchrones entre les services. Quand il s’agit de déplacer une architecture de microservices, vous devez ajouter la plupart des blocs de construction implémentés dans la version de microservices de l’application eShopOnContainers : gestion du bus d’événements, résilience des messages et nouvelles tentatives, cohérence éventuelle, etc.
 
@@ -293,7 +299,7 @@ Si vous voulez ajouter la prise en charge de Docker à votre application à l’
   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
 - **The Onion Architecture**  
   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
-- **Le modèle de dépôt**  
+- **Le modèle de référentiel**  
   <https://deviq.com/repository-pattern/>
 - **Modèle de solution d’architecture propre**  
   <https://github.com/ardalis/cleanarchitecture>
@@ -303,5 +309,5 @@ Si vous voulez ajouter la prise en charge de Docker à votre application à l’
   <https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/>
 
 >[!div class="step-by-step"]
->[Suivant précédent](architectural-principles.md)
->[Next](common-client-side-web-technologies.md)
+>[Précédent](architectural-principles.md) 
+> [Suivant](common-client-side-web-technologies.md)

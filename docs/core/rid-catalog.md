@@ -2,12 +2,12 @@
 title: Catalogue d’identificateurs de Runtime (RID) .NET Core
 description: Découvrez plus en détails l’identificateur de runtime (RID) et la façon dont les identificateurs RID sont utilisés dans .NET Core.
 ms.date: 02/22/2019
-ms.openlocfilehash: 903dd9c619008c9e3c6149a471ba814bdc9c97cc
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: da8c73ef50a8933b93528e4424dff6e5ed95938d
+ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903283"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89379068"
 ---
 # <a name="net-core-rid-catalog"></a>Catalogue RID .NET Core
 
@@ -72,7 +72,7 @@ Tous les RID sont finalement remappés au RID `any` racine.
 
 Lorsque vous utilisez les RID, il existe quelques remarques que vous devez garder à l’esprit :
 
-- Les RID sont des **chaînes opaques** qui doivent être considérées comme des boîtes noires.
+- N’essayez pas d’analyser les RID pour récupérer des composants.
 - Ne générez pas les RID par programme.
 - Utilisez des RID déjà définis pour la plateforme.
 - Les RID se devant d’être spécifiques, ne déduisez rien de leur valeur réelle.
@@ -115,10 +115,10 @@ Pour plus d’informations, consultez [.net Core Dependencies and Requirements](
 Seules les valeurs courantes sont présentées. Pour obtenir la version la plus récente et la plus complète, consultez le fichier [runtime.js](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) sur le `dotnet/runtime` référentiel. Les appareils dont la distribution ne figure pas ci-dessous sont susceptibles de fonctionner avec l’un des RID portables. Par exemple, les appareils Raspberry Pi exécutant une distribution Linux non listée peuvent être ciblés avec `linux-arm`.
 
 - Portable (.NET Core 2.0 ou versions ultérieures)
-  - `linux-x64`(La plupart des distributions de bureau telles que CentOS, Debian, Fedora, Ubuntu et les dérivés)
+  - `linux-x64` (La plupart des distributions de bureau telles que CentOS, Debian, Fedora, Ubuntu et les dérivés)
   - `linux-musl-x64` (distributions légères utilisant [musl](https://wiki.musl-libc.org/projects-using-musl.html), comme Linux Alpine)
-  - `linux-arm`(Distributions Linux exécutées sur ARM comme Raspbian sur Raspberry pi Model 2 +)
-  - `linux-arm64`(Distributions Linux s’exécutant sur un ARM 64 bits comme Ubuntu Server 64-bit sur Raspberry pi Model 3 +)
+  - `linux-arm` (Distributions Linux exécutées sur ARM comme Raspbian sur Raspberry pi Model 2 +)
+  - `linux-arm64` (Distributions Linux s’exécutant sur un ARM 64 bits comme Ubuntu Server 64-bit sur Raspberry pi Model 3 +)
 - Red Hat Enterprise Linux
   - `rhel-x64` (remplacé par `linux-x64` pour RHEL après la version 6)
   - `rhel.6-x64` (.NET Core 2.0 ou versions ultérieures)
