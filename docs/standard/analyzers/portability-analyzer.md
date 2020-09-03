@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’outil Analyseur de portabilité .NE
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: d8b5fcf8b6c3230e41585261de747edb9105aa31
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: d61dd9ebe744686885dad41ef700caaea9853f85
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811806"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414797"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
@@ -19,7 +19,7 @@ Une fois que vous avez converti votre projet pour cibler la nouvelle plateforme,
 
 ## <a name="common-targets"></a>Cibles courantes
 
-- [.Net Core](../../core/index.yml): possède une conception modulaire, prend en charge l’installation côte à côte et cible des scénarios multiplateformes. L’installation côte à côte vous permet d’adopter de nouvelles versions de .NET Core sans interrompre les autres applications. Si votre objectif est de porter votre application sur .NET Core et de prendre en charge plusieurs plateformes, il s’agit de la cible recommandée.
+- [.Net Core](../../core/introduction.md): possède une conception modulaire, prend en charge l’installation côte à côte et cible des scénarios multiplateformes. L’installation côte à côte vous permet d’adopter de nouvelles versions de .NET Core sans interrompre les autres applications. Si votre objectif est de porter votre application sur .NET Core et de prendre en charge plusieurs plateformes, il s’agit de la cible recommandée.
 - . [NET standard](../net-standard.md): comprend les API .NET standard disponibles sur toutes les implémentations .net. Si votre objectif est de faire en sorte que votre bibliothèque s’exécute sur toutes les plates-formes prises en charge par .NET, il s’agit de la cible recommandée.
 - [ASP.net Core](/aspnet/core): une infrastructure Web moderne reposant sur .net core. Si votre objectif est de porter votre application web vers .NET Core pour prendre en charge plusieurs plateformes, c’est la cible recommandée.
 - .NET Core + [extensions de plateforme](../../core/porting/windows-compat-pack.md): inclut les API .net core en plus du Pack de compatibilité Windows, qui fournit un grand nombre des .NET Framework technologies disponibles. Il s’agit d’une cible recommandée pour le portage de votre application depuis le .NET Framework vers .NET Core sur Windows.

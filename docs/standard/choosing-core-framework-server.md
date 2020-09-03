@@ -3,12 +3,12 @@ title: Choisir entre .NET Core et .NET Framework pour les applications serveur
 description: Guide pour vous aider à choisir l’implémentation de .NET à utiliser lors de la création d’une application serveur.
 author: cartermp
 ms.date: 04/28/2020
-ms.openlocfilehash: 30157276bce53ed44dca5b660172e5556dab14f8
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: a3c15e8f2198b1bcc4e623a7dc7f5cddca9c83f6
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507440"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89415017"
 ---
 # <a name="net-core-vs-net-framework-for-server-apps"></a>.NET Core et .NET Framework pour les applications serveur
 
@@ -39,7 +39,7 @@ Si votre application (web/service) doit s’exécuter sur plusieurs plateformes 
 
 .NET Core prend en charge les systèmes d’exploitation précédemment mentionnés comme station de travail de développement. Visual Studio fournit un environnement de développement intégré (IDE) pour Windows et macOS. Vous pouvez également utiliser Visual Studio Code, qui s’exécute sur macOS, Linux et Windows. Visual Studio Code prend en charge .NET Core, notamment IntelliSense et le débogage. La plupart des éditeurs tiers, tels que Sublime, Emacs et VI, fonctionnent avec .NET Core. Ces éditeurs tiers obtiennent l’éditeur IntelliSense en utilisant [Omnisharp](https://www.omnisharp.net/). Vous pouvez également éviter tout éditeur de code et utiliser directement le [CLI .net Core](../core/tools/index.md), disponible pour toutes les plateformes prises en charge.
 
-### <a name="microservices-architecture"></a>Architecture en microservices
+### <a name="microservices-architecture"></a>Architecture de microservices
 
 Une architecture en microservices permet une combinaison de technologies au-delà des limites d’un service. Cette combinaison de technologies favorise l’adoption progressive de .NET Core pour les nouveaux microservices qui utilisent d’autres microservices ou services. Par exemple, vous pouvez combiner des microservices ou services développés avec .NET Framework, Java, Ruby ou d’autres technologies monolithiques.
 
@@ -110,8 +110,8 @@ Certaines plateformes Microsoft ou tierces ne prennent pas en charge .NET Core. 
 
 - [Choisir entre ASP.NET et ASP.NET Core](/aspnet/core/choose-aspnet-framework)
 - [ASP.NET Core ciblant .NET Framework](/aspnet/core/introduction-to-aspnet-core#aspnet-core-targeting-net-framework)
-- [Versions cibles de .NET Framework](frameworks.md)
-- [Guide .NET Core](../core/index.yml)
+- [Frameworks cibles](frameworks.md)
+- [Présentation de .NET Core](../core/introduction.md)
 - [Portage vers .NET Core à partir du .NET Framework](../core/porting/index.md)
 - [Introduction à .NET et à Docker](../core/docker/introduction.md)
 - [Vue d’ensemble des composants .NET](components.md)

@@ -3,12 +3,12 @@ title: Utilisation des collections - Présentation du tutoriel C#
 description: Découvrez C# en explorant la collection de listes de ce guide de démarrage rapide.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: c99f5582702120db238de1206de42d964837cdbd
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: e2282df21420630634911e07f4fb3b94f34a792b
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396894"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414681"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Apprenez à gérer les collections de données en utilisant le type de liste générique
 
@@ -218,7 +218,7 @@ Enregistrez le fichier et tapez `dotnet run` pour afficher les résultats.
 > [!TIP]
 > Pour vous concentrer uniquement sur cette section, vous pouvez commenter le code qui appelle `WorkingWithStrings();`. Insérez simplement deux caractères `/` devant l’appel comme suit :  `// WorkingWithStrings();`.
 
-## <a name="challenge"></a>Test
+## <a name="challenge"></a>Problème
 
 Vérifiez si vous pouvez mettre en pratique certains des concepts appris ici et dans d’autres leçons antérieures. Approfondissez à partir de ce que vous avez créé jusqu'à présent avec les nombres de Fibonacci. Essayez d’écrire le code pour générer les 20 premiers nombres de la séquence. (Astuce, le 20ème nombre Fibonacci est 6765.)
 
@@ -230,4 +230,4 @@ Vous pouvez voir un exemple de solution en [consultant l’exemple de code termi
 
 Félicitations, vous avez terminé ce didacticiel sur les listes. Vous pouvez passer au tutoriel [Introduction aux classes](introduction-to-classes.md) dans votre propre environnement de développement.
 
-Vous pouvez en savoir plus sur l’utilisation du `List` type dans l’article du [Guide .net](../../../standard/index.yml) sur les [Collections](../../../standard/collections/index.md). Vous allez également en découvrir plus sur de nombreux autres types de collection.
+Vous pouvez en savoir plus sur l’utilisation du `List` type dans l’article notions de base de .net sur les [Collections](../../../standard/collections/index.md). Vous allez également en découvrir plus sur de nombreux autres types de collection.

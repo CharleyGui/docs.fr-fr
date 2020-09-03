@@ -4,12 +4,12 @@ description: En savoir plus sur les expressions de critères spéciaux en langag
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: bb6baf3771024d02b2027f81fd35b8be4872cf6e
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 2dd1401e3ef22a02f327e44ff884182ee3e22278
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249231"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414992"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -47,7 +47,7 @@ Dans cette version mise à jour, l’expression `is` teste la variable et l’as
 
 Les règles de langage des expressions de critères spéciaux vous aident à éviter une utilisation incorrecte des résultats d’une expression de correspondance. Dans l’exemple ci-dessus, les variables `s`, `c` et `r` sont uniquement dans la portée et assignées de manière définitive quand les expressions de critères spéciaux respectives retournent le résultat `true`. Si vous essayez d’utiliser l’une de ces variables à un autre emplacement, votre code génère des erreurs de compilateur.
 
-Examinons ces deux règles en détail, en commençant par la portée. La variable `c` est dans la portée uniquement dans la branche `else` de la première instruction `if`. La variable `s` est dans la portée dans la méthode `ComputeAreaModernIs`. Cela est dû au fait que chaque branche d’une instruction `if` établit une portée distincte pour les variables, ce que ne fait pas l’instruction `if` proprement dite. Cela signifie que `if` les variables déclarées dans `if` l’énoncé sont dans la même portée que l’énoncé (la méthode en l’espèce).) Ce comportement n’est pas spécifique à l’appariement `if` des `else` modèles, mais est le comportement défini pour les portées et les déclarations variables.
+Examinons ces deux règles en détail, en commençant par la portée. La variable `c` est dans la portée uniquement dans la branche `else` de la première instruction `if`. La variable `s` est dans la portée dans la méthode `ComputeAreaModernIs`. Cela est dû au fait que chaque branche d’une instruction `if` établit une portée distincte pour les variables, ce que ne fait pas l’instruction `if` proprement dite. Cela signifie que les variables déclarées dans l' `if` instruction se trouvent dans la même portée que l' `if` instruction (dans ce cas, la méthode). Ce comportement n’est pas propre aux critères spéciaux. C’est le comportement défini pour les portées de variables et pour les instructions `if` et `else`.
 
 Les variables `c` et `s` sont assignées quand les instructions `if` respectives ont la valeur true, selon la règle d’assignation définitive quand le résultat est true.
 
@@ -106,7 +106,7 @@ Enfin, vous pouvez ajouter un cas `null` pour que l’argument ne soit pas `null
 
 [!code-csharp[NullCase](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Add null case")]
 
-Le comportement spécial `null` pour le modèle `null` est intéressant parce que la constante dans le modèle n’a pas un type, mais peut être convertie à n’importe quel type de référence ou de type de valeur nulle. Plutôt que de convertir une valeur `null` en un type quelconque, le langage définit qu’une valeur `null` ne correspond à aucun modèle de type, quel que soit le type de la variable au moment de la compilation. En raison de ce comportement, le nouveau modèle de type basé sur `switch` est cohérent par rapport à l’instruction `is` : les instructions `is` retournent toujours `false` quand la valeur vérifiée est `null`. Il est aussi plus simple : une fois le type vérifié, aucun autre contrôle de valeur Null n’est nécessaire. On constate en effet qu’aucune vérification de ce type ne figure dans les blocs de cas des exemples ci-dessus : ces contrôles ne sont pas requis dans la mesure où la correspondance avec le modèle de type garantit une valeur non Null.
+Le comportement spécial pour le `null` modèle est intéressant, car la constante du `null` modèle n’a pas de type mais peut être convertie en un type référence ou un type valeur Nullable. Plutôt que de convertir une valeur `null` en un type quelconque, le langage définit qu’une valeur `null` ne correspond à aucun modèle de type, quel que soit le type de la variable au moment de la compilation. En raison de ce comportement, le nouveau modèle de type basé sur `switch` est cohérent par rapport à l’instruction `is` : les instructions `is` retournent toujours `false` quand la valeur vérifiée est `null`. Il est aussi plus simple : une fois le type vérifié, aucun autre contrôle de valeur Null n’est nécessaire. On constate en effet qu’aucune vérification de ce type ne figure dans les blocs de cas des exemples ci-dessus : ces contrôles ne sont pas requis dans la mesure où la correspondance avec le modèle de type garantit une valeur non Null.
 
 ## <a name="var-declarations-in-case-expressions"></a>Déclarations `var` dans les expressions `case`
 
@@ -139,4 +139,4 @@ Comparez le code de cet exemple avec la conception qui résulterait de la créat
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutorial: Utilisation des fonctionnalités d’appariement des modèles pour étendre les types de données](tutorials/pattern-matching.md)
+- [Didacticiel : utilisation des fonctionnalités de critères spéciaux pour étendre des types de données](tutorials/pattern-matching.md)

@@ -2,12 +2,12 @@
 title: Programmation asynchrone en C#
 description: Vue d’ensemble de la prise en charge du langage C# pour la programmation asynchrone avec Async, Await, Task et Task<T>
 ms.date: 06/04/2020
-ms.openlocfilehash: 992ccd3a015653ea9ee13dfc309d47711ad0fca4
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 853019c39880b1f4ef6536aed5841ecab53d7304
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619713"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414979"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Programmation asynchrone avec Async et Await
 
@@ -45,7 +45,7 @@ Si vous souhaitez que l’ordinateur exécute les instructions ci-dessus de faç
 
 De nos jours, ces remarques sont très importantes pour l’écriture de programmes. Lorsque vous écrivez des programmes clients, l’interface utilisateur doit être réactive aux entrées utilisateur. Votre application ne doit pas donner l’impression que votre smartphone se bloque pour télécharger des données à partir du web. Lorsque vous écrivez des programmes de serveur, vous ne devez pas bloquer les threads. En effet, ces threads peuvent servir à d’autres requêtes. Lorsque d’autres alternatives sont possibles, il est dommage d’utiliser du code synchrone, car celui-ci ne vous permet pas de réduire les frais des scale-out. Les threads bloqués ont un prix.
 
-Une application moderne efficace a besoin de code asynchrone. Avant la prise en charge du langage, l’écriture de code asynchrone nécessitait des rappels, des événements de complétion ou d’autres méthodes qui masquaient l’objectif premier du code. L’avantage du code synchrone est qu’il est facile à comprendre. Les actions détaillées étape par étape facilitent son parcours et sa compréhension. Les modèles asynchrones traditionnels vous obligeaient à vous concentrer sur la nature asynchrone du code, et non sur ses actions fondamentales.
+Une application moderne efficace a besoin de code asynchrone. Avant la prise en charge du langage, l’écriture de code asynchrone nécessitait des rappels, des événements de complétion ou d’autres méthodes qui masquaient l’objectif premier du code. L’avantage du code synchrone est qu’il s’agit d’actions pas à pas qui facilitent l’analyse et la compréhension. Les modèles asynchrones traditionnels vous obligeaient à vous concentrer sur la nature asynchrone du code, et non sur ses actions fondamentales.
 
 ## <a name="dont-block-await-instead"></a>Éviter les blocages avec Await
 
@@ -181,7 +181,7 @@ while (breakfastTasks.Count > 0)
 }
 ```
 
-Après toutes ces modifications, la version finale du code ressemble à ceci :<a id="final-version"></a>
+Après toutes ces modifications, la version finale du code ressemble à ceci : <a id="final-version"></a>
 :::code language="csharp" source="snippets/index/AsyncBreakfast-final/Program.cs" highlight="9-40":::
 
 :::image type="content" source="media/whenany-async-breakfast.png" alt-text="quand tout petit déjeuner asynchrone":::

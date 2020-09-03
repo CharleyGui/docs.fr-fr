@@ -2,12 +2,12 @@
 title: Nouveautés de C# 8,0-Guide C#
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
 ms.date: 04/07/2020
-ms.openlocfilehash: 14df381e17fe89bd862f97522c7efd814857e71e
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: eee395c33585028cd81861045f05f7790d8db949
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309402"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414888"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
@@ -15,7 +15,7 @@ C# 8,0 ajoute les fonctionnalités et améliorations suivantes au langage C# :
 
 - [Membres ReadOnly](#readonly-members)
 - [Méthodes d’interface par défaut](#default-interface-methods)
-- [Amélioration des critères spéciaux](#more-patterns-in-more-places) :
+- [Améliorations des critères spéciaux](#more-patterns-in-more-places):
   - [Expressions de commutateur](#switch-expressions)
   - [Modèles de propriétés](#property-patterns)
   - [Modèles de tuples](#tuple-patterns)
@@ -311,8 +311,8 @@ static int WriteLinesToFile(IEnumerable<string> lines)
                 skippedLines++;
             }
         }
+        return skippedLines;
     } // file is disposed here
-    return skippedLines;
 }
 ```
 

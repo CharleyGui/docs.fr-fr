@@ -1,21 +1,21 @@
 ---
-title: Délégués vs événements
+title: Délégués et événements
 description: Découvrez la différence entre les délégués et les événements, et quand utiliser chacune de ces fonctionnalités de .NET Core.
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: 51d982c9b5b16a5fc28ede5f0318bc100bb33b68
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 193a9b0fe0e0c36deb6552449c92135057412225
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805771"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414667"
 ---
 # <a name="distinguishing-delegates-and-events"></a>Différenciation des délégués et des événements
 
 [Précédent](modern-events.md)
 
-Les développeurs qui découvrent la plateforme .NET Core éprouvent souvent des difficultés quand il faut choisir entre une conception basée sur les `delegates` et une conception basée sur les `events`. Le choix des délégués ou des événements est souvent difficile, car les deux caractéristiques linguistiques sont similaires. Les événements sont même générés à l’aide de la prise en charge linguistique des délégués.
+Les développeurs qui découvrent la plateforme .NET Core éprouvent souvent des difficultés quand il faut choisir entre une conception basée sur les `delegates` et une conception basée sur les `events`. Le choix des délégués ou des événements est souvent difficile, car les deux fonctionnalités de langage sont similaires. Les événements sont même générés à l’aide de la prise en charge linguistique des délégués.
 
 Elles offrent tous deux un scénario de liaison tardive : elles autorisent les scénarios où un composant communique en appelant une méthode qui est connue uniquement au moment de l’exécution. Toutes deux prennent en charge les méthodes à abonnés uniques et multiples. On utilise parfois le terme de prise en charge singlecast et multicast. Toutes deux prennent en charge une syntaxe similaire pour l’ajout et la suppression de gestionnaires. Pour finir, le déclenchement d’un événement et l’appel d’un délégué utilisent exactement la même syntaxe d’appel de méthode. Qui plus est, elles prennent toutes deux en charge la même syntaxe de méthode `Invoke()` pour une utilisation avec l’opérateur `?.`.
 
@@ -23,7 +23,7 @@ Avec tous ces similitudes, il est facile d’avoir des difficultés à détermin
 
 ## <a name="listening-to-events-is-optional"></a>La détection d’événements est facultative
 
-Pour déterminer laquelle de ces deux fonctionnalités utiliser, il convient avant tout de savoir s’il doit y avoir un abonné attaché ou non. Si votre code doit appeler le code fourni par l’abonné, vous devez utiliser un modèle basé sur les délégués. Si votre code peut effectuer tout son travail sans appeler les abonnés, vous devez utiliser un modèle basé sur les événements.
+Pour déterminer laquelle de ces deux fonctionnalités utiliser, il convient avant tout de savoir s’il doit y avoir un abonné attaché ou non. Si votre code doit appeler le code fourni par l’abonné, vous devez utiliser une conception basée sur des délégués lorsque vous devez implémenter le rappel. Si votre code peut effectuer tout son travail sans appeler les abonnés, vous devez utiliser un modèle basé sur les événements.
 
 Examinez les exemples fournis dans cette section. Le code que vous avez créé à l’aide de `List.Sort()` doit disposer d’une fonction de comparaison pour trier correctement les éléments. Des requêtes LINQ doivent être fournies avec les délégués pour identifier les éléments à retourner. Tous deux ont une conception basée sur des délégués.
 
@@ -38,14 +38,14 @@ Une autre considération à prendre en compte est le prototype de méthode souha
 
 Notez que ces heuristiques peuvent souvent être toutes deux présentes : si votre méthode déléguée retourne une valeur, elle aura probablement un impact sur l’algorithme.
 
-## <a name="events-have-private-invocation"></a>Les événements ont une invocation privée
+## <a name="events-have-private-invocation"></a>Les événements ont un appel privé
 
-Les classes autres que celle dans lesquelles un événement est contenu ne peuvent qu’ajouter et supprimer les auditeurs de l’événement; seule la classe contenant l’événement peut invoquer l’événement. Les événements sont généralement des membres de la classe publique.
-En comparaison, les délégués sont souvent adoptés comme paramètres et stockés en tant que membres de la classe privée, s’ils sont stockés du tout.
+Les classes autres que celle dans laquelle un événement est contenu peuvent uniquement ajouter et supprimer des écouteurs d’événements. seule la classe contenant l’événement peut appeler l’événement. Les événements sont généralement des membres de classe publics.
+Par comparaison, les délégués sont souvent passés comme paramètres et stockés comme membres de classe privée, s’ils sont stockés du tout.
 
 ## <a name="event-listeners-often-have-longer-lifetimes"></a>Les détecteurs d’événements ont souvent des durées de vie plus longues
 
-Que les auditeurs d’événements ont une durée de vie plus longue est une justification légèrement plus faible. Toutefois, vous constaterez peut-être que les conceptions basées sur les événements sont plus naturelles quand la source de l’événement déclenche des événements durant une période prolongée. Vous pouvez voir des exemples de conception basée sur des événements pour les contrôles UX sur de nombreux systèmes. Une fois que vous vous êtes abonné à un événement, la source de l’événement peut déclencher des événements pendant toute la durée de vie du programme.
+Ces écouteurs d’événements ont une durée de vie légèrement plus faible. Toutefois, vous constaterez peut-être que les conceptions basées sur les événements sont plus naturelles quand la source de l’événement déclenche des événements durant une période prolongée. Vous pouvez voir des exemples de conception basée sur les événements pour les contrôles d’expérience utilisateur sur de nombreux systèmes. Une fois que vous vous êtes abonné à un événement, la source de l’événement peut déclencher des événements pendant toute la durée de vie du programme.
 (Vous pouvez vous désabonner à des événements quand vous n’en avez plus besoin.)
 
 Comparez cela à de nombreuses conceptions basées sur les délégués, où un délégué est utilisé comme argument d’une méthode et le délégué n’est pas utilisé après le retour de cette méthode.

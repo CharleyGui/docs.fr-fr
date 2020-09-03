@@ -3,12 +3,12 @@ title: API non prises en charge sur .NET Core
 titleSuffix: ''
 description: Découvrez les API de la .NET Framework qui lèvent toujours une exception sur .NET Core.
 ms.date: 12/23/2019
-ms.openlocfilehash: 941e9149c7679afe4a888149108d0a9a28e5e7ab
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 94f334d7e4b7daf407f489ba274172ced9eefa81
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794596"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414433"
 ---
 # <a name="apis-that-always-throw-exceptions-on-net-core"></a>API qui lèvent toujours des exceptions sur .NET Core
 
@@ -56,38 +56,38 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 | Membre | Plateformes qui lèvent |
 | - | - |
-| <xref:System.Configuration.RsaProtectedConfigurationProvider?displayProperty=nameWithType>(tous les membres) | Tous |
+| <xref:System.Configuration.RsaProtectedConfigurationProvider?displayProperty=nameWithType> (tous les membres) | Tous |
 
 ## <a name="systemconsole"></a>System.Console
 
 | Membre | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Console.Beep?displayProperty=nameWithType> | Linux et macOS |
-| <xref:System.Console.BufferHeight?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
-| <xref:System.Console.BufferWidth?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
-| <xref:System.Console.CursorSize?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
-| <xref:System.Console.CursorVisible?displayProperty=nameWithType>(obtient uniquement) | Linux et macOS |
+| <xref:System.Console.BufferHeight?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Console.BufferWidth?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Console.CursorSize?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Console.CursorVisible?displayProperty=nameWithType> (obtient uniquement) | Linux et macOS |
 | <xref:System.Console.MoveBufferArea%2A?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Console.SetWindowPosition%2A?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Console.SetWindowSize%2A?displayProperty=nameWithType> | Linux et macOS |
-| <xref:System.Console.Title?displayProperty=nameWithType>(obtient uniquement) | Linux et macOS |
-| <xref:System.Console.WindowHeight?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
-| <xref:System.Console.WindowLeft?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
-| <xref:System.Console.WindowTop?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
-| <xref:System.Console.WindowWidth?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
+| <xref:System.Console.Title?displayProperty=nameWithType> (obtient uniquement) | Linux et macOS |
+| <xref:System.Console.WindowHeight?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Console.WindowLeft?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Console.WindowTop?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Console.WindowWidth?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
 
 ## <a name="systemdatacommon"></a>System.Data.Common
 
 | Membre | Plateformes qui lèvent |
 | - | - |
-| <xref:System.Data.Common.DbDataReader.GetSchemaTable%2A?displayProperty=nameWithType>(levée <xref:System.NotSupportedException>) | Tous |
+| <xref:System.Data.Common.DbDataReader.GetSchemaTable%2A?displayProperty=nameWithType> (levée <xref:System.NotSupportedException> ) | Tous |
 
 ## <a name="systemdiagnosticsprocess"></a>System.Diagnostics.Process
 
 | Membre | Plateformes qui lèvent |
 | - | - |
-| <xref:System.Diagnostics.Process.MaxWorkingSet?displayProperty=nameWithType>(définir uniquement) | Linux |
-| <xref:System.Diagnostics.Process.MinWorkingSet?displayProperty=nameWithType>(définir uniquement) | Linux |
+| <xref:System.Diagnostics.Process.MaxWorkingSet?displayProperty=nameWithType> (définir uniquement) | Linux |
+| <xref:System.Diagnostics.Process.MinWorkingSet?displayProperty=nameWithType> (définir uniquement) | Linux |
 | <xref:System.Diagnostics.Process.ProcessorAffinity?displayProperty=nameWithType> | macOS |
 | <xref:System.Diagnostics.Process.MainWindowHandle?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> | Linux et macOS |
@@ -95,9 +95,9 @@ Cet article organise les membres d’API affectés par espace de noms.
 | <xref:System.Diagnostics.ProcessStartInfo.PasswordInClearText?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Diagnostics.ProcessStartInfo.Domain?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Diagnostics.ProcessStartInfo.LoadUserProfile?displayProperty=nameWithType> | Linux et macOS |
-| <xref:System.Diagnostics.ProcessThread.BasePriority?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
-| <xref:System.Diagnostics.ProcessThread.BasePriority?displayProperty=nameWithType>(obtient uniquement) | macOS |
-| <xref:System.Diagnostics.ProcessThread.ProcessorAffinity?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
+| <xref:System.Diagnostics.ProcessThread.BasePriority?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
+| <xref:System.Diagnostics.ProcessThread.BasePriority?displayProperty=nameWithType> (obtient uniquement) | macOS |
+| <xref:System.Diagnostics.ProcessThread.ProcessorAffinity?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
 
 ## <a name="systemio"></a>System.IO
 
@@ -114,7 +114,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 | <xref:System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.IO.Pipes.PipeStream.InBufferSize?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.IO.Pipes.PipeStream.OutBufferSize?displayProperty=nameWithType> | Linux et macOS |
-| <xref:System.IO.Pipes.PipeStream.ReadMode?displayProperty=nameWithType>(définir uniquement) | Linux et macOS |
+| <xref:System.IO.Pipes.PipeStream.ReadMode?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
 | <xref:System.IO.Pipes.PipeStream.WaitForPipeDrain?displayProperty=nameWithType> | Linux et macOS |
 
 ## <a name="systemmedia"></a>System. Media
@@ -267,7 +267,6 @@ Cet article organise les membres d’API affectés par espace de noms.
 | Membre | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Security.Cryptography.Pkcs.CmsSigner.%23ctor(System.Security.Cryptography.CspParameters)> | Tous |
-| <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.Cryptography.Pkcs.SignerInfo.ComputeCounterSignature?displayProperty=nameWithType> | Tous |
 
 ## <a name="systemsecuritycryptographyx509certificates"></a>System.Security.Cryptography.X509Certificates
@@ -277,7 +276,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)> | Tous |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate.Import%2A?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)> | Tous |
-| <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey?displayProperty=nameWithType>(définir uniquement) | Tous |
+| <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey?displayProperty=nameWithType> (définir uniquement) | Tous |
 
 ## <a name="systemsecurityauthenticationextendedprotection"></a>System.Security.Authentication.ExtendedProtection
 

@@ -2,12 +2,12 @@
 title: Didacticiels C#
 description: Explorez ces didacticiels C# pour savoir comment générer des programmes C# et découvrez les fonctionnalités du langage C#.
 ms.date: 10/25/2018
-ms.openlocfilehash: 57d2471ef8ad06eb821a1d1d88210dfbb8dc732e
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 9542f4919c9b1f0363fb8bc27136eb9a7e074913
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345092"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414814"
 ---
 # <a name="c-tutorials"></a>Didacticiels C#
 
@@ -15,11 +15,11 @@ Bienvenue dans les tutoriels pour C#. Ceux-ci commencent par des leçons interac
 
 ## <a name="introduction-to-c-interactive-tutorials"></a>Tutoriels interactifs de présentation de C#
 
-Si vous souhaitez commencer votre exploration en format vidéo, la [série vidéo C 101](https://aka.ms/dotnet3-csharp) vous propose une introduction au C. Vous en apprendrez davantage sur les concepts que vous pouvez explorer dans ces tutoriels.
+Si vous souhaitez commencer votre exploration au format vidéo, la [série de vidéos c# 101](https://aka.ms/dotnet3-csharp) fournit une introduction à c#. Vous en apprendrez plus sur les concepts que vous pouvez explorer dans ces didacticiels.
 
 Les premières leçons expliquent les concepts de C# à l’aide de petits extraits de code. Vous apprendrez les bases de la syntaxe C# et comment utiliser des types de données tels que des chaînes, des nombres et des valeurs booléennes. Tout est interactif, vous allez écrire et exécuter du code en quelques minutes. Ces premières leçons prennent pour acquis que vous n’avez aucune connaissance préalable de la programmation ou du langage C#.
 
-## <a name="hello-world"></a>[Salut tout le monde](intro-to-csharp/hello-world.yml)
+## <a name="hello-world"></a>[Hello World](intro-to-csharp/hello-world.yml)
 
 Dans le tutoriel [Hello world](intro-to-csharp/hello-world.yml), vous allez créer le programme le plus basique en C#. Vous explorerez le type `string` et l’utilisation de texte.
 
@@ -47,16 +47,16 @@ Tous les tutoriels de présentation proposés après la leçon Hello World sont 
 
 ## <a name="explore-new-features-in-c"></a>Explorer les nouvelles fonctionnalités du langage C\#
 
-* [Essayez de nouvelles fonctionnalités dans C 6 de manière interactive](exploration/csharp-6.yml): Explorez les fonctionnalités ajoutées dans [C 6](../whats-new/csharp-6.md) de manière interactive dans votre navigateur.
+* [Essayez les nouvelles fonctionnalités de c# 6 de manière interactive](exploration/csharp-6.yml): Explorez les fonctionnalités ajoutées en [c# 6](../whats-new/csharp-6.md) de manière interactive dans votre navigateur.
 * [Interpolation de chaîne](string-interpolation.md): ce tutoriel décrit comment utiliser l’interpolation de chaîne pour créer des chaînes mises en forme en C#.
 * [Types de référence Nullable](nullable-reference-types.md) : montre comment utiliser des types de référence nullable pour exprimer votre intention en matière de références null.
 * [Mettre à jour un projet de façon à utiliser des types référence Nullables](upgrade-to-nullable-references.md) : illustre des techniques de mise à niveau d’un projet existant visant à utiliser des types référence Nullables.
 * [Étendre les fonctionnalités des données avec les critères spéciaux](pattern-matching.md) : montre comment utiliser les critères spéciaux pour étendre les types au-delà de leurs fonctionnalités principales.
-* [Travailler avec des séquences de données à l’aide d’index et de plages](ranges-indexes.md): démontre une nouvelle syntaxe pratique pour accéder à des éléments ou des gammes uniques d’un conteneur de données séquentiel.
+* [Utiliser des séquences de données à l’aide d’index et de plages](ranges-indexes.md): illustre une nouvelle syntaxe pratique pour accéder à des éléments uniques ou à des plages d’un conteneur de données séquentielles.
 
 ## <a name="general-tutorials"></a>Tutoriels généraux
 
-Les didacticiels suivants vous permettent de générer des programmes C# à l’aide de [.NET Core](../../core/index.yml) :
+Les didacticiels suivants vous permettent de générer des programmes C# à l’aide de [.NET Core](../../core/introduction.md) :
 
 * [Application console](console-teleprompter.md) : ce tutoriel présente les fonctionnalités d’E/S de la console, la structure d’une application console et les concepts de base du modèle de programmation asynchrone basé sur les tâches.
 * [Client REST](console-webapiclient.md) : ce tutoriel présente les communications web, la sérialisation JSON et les fonctionnalités orientées objet du langage C#.

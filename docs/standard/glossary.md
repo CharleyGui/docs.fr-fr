@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 59e338de99510759e3e7acfd782915ed6dc5d988
-ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
+ms.openlocfilehash: b79580baa12cc8081346678f06d49a9d0455375c
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88957571"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89415007"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -161,7 +161,7 @@ Terme générique désignant [.NET Standard](#net-standard), ainsi que toutes le
 
 Lorsque [.net 5](#net-5-and-later-versions) (actuellement en préversion) est publié, il s’agit de l’implémentation .NET recommandée pour tout nouveau développement .net, et donc, dans certains contextes, « .net » implique « .net 5 et versions ultérieures ».
 
-Consultez le [Guide .net](index.yml)
+Consultez [notions de base sur .net](../fundamentals/index.yml)
 
 ## <a name="net-5-and-later-versions"></a>.NET 5 et versions ultérieures
 
@@ -169,7 +169,7 @@ Une implémentation multiplateforme, hautes performances et open source de .NET.
 
 Les versions antérieures de cette implémentation .NET sont appelées .NET Core. .NET 5,0 est la prochaine version qui suit .NET Core 3,1. La version 4 a été ignorée pour éviter de confondre cette implémentation plus récente de .NET avec l’ancienne implémentation connue sous le nom de [.NET Framework](#net-framework). La version actuelle de .NET Framework est 4,8.
 
-Consultez [.net](../core/index.yml).
+Consultez [notions de base sur .net](../fundamentals/index.yml).
 
 ## <a name="net-cli"></a>CLI .NET
 
@@ -181,7 +181,7 @@ Consultez la section [CLI .net](../core/tools/index.md).
 
 Consultez [.net 5 et versions ultérieures](#net-5-and-later-versions).
 
-## <a name="net-framework"></a>.NET Framework
+## <a name="net-framework"></a>.NET Framework
 
 Implémentation de .NET qui s’exécute uniquement sur Windows. Comprend le[CLR](#clr)(Common Language Runtime), la bibliothèque de classes de base ([BCL](#bcl)) et les bibliothèques de l’infrastructure d’application, telles que [ASP.net](#aspnet), Windows Forms et WPF.
 
@@ -294,8 +294,7 @@ Implémentation de .NET qui sert à générer des logiciels et des applications 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide .NET](index.yml)
+- [Notions de base de .NET](../fundamentals/index.yml)
 - [Guide de .NET Framework](../framework/index.yml)
-- [.NET Core](../core/index.yml)
 - [Présentation de ASP.NET](/aspnet/index#pivot=aspnet)
 - [Présentation de ASP.NET Core](/aspnet/index#pivot=core)

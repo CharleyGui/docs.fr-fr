@@ -2,12 +2,12 @@
 title: Visite guidée de C#-zones de langage majeures
 description: Novice en matière de langage C# ? Découvrez les principes de base du langage.
 ms.date: 08/06/2020
-ms.openlocfilehash: f0e9bff144cc3c853a82f2ee6b400049df60683d
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: e1e533982757c10085f0444197ff97ee7487391f
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068519"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414901"
 ---
 # <a name="major-language-areas"></a>Principales zones de langue
 
@@ -60,7 +60,7 @@ L' [***interpolation de chaîne***](../language-reference/tokens/interpolated.md
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="StringInterpolation":::
 
-Une chaîne interpolée est déclarée à l’aide du `$` jeton. L’interpolation de chaîne évalue les expressions comprises entre `{` et `}` , puis convertit le résultat en `string` et remplace le texte entre crochets par le résultat de chaîne de l’expression. `:`Dans la première expression, `{weatherData.Data:MM-DD-YYYY}` spécifie la *chaîne de format*. Dans l’exemple précédent, il spécifie que la date doit être imprimée au format « MM-jj-aaaa ».
+Une chaîne interpolée est déclarée à l’aide du `$` jeton. L’interpolation de chaîne évalue les expressions comprises entre `{` et `}` , puis convertit le résultat en `string` et remplace le texte entre crochets par le résultat de chaîne de l’expression. `:`Dans la première expression, `{weatherData.Date:MM-DD-YYYY}` spécifie la *chaîne de format*. Dans l’exemple précédent, il spécifie que la date doit être imprimée au format « MM-jj-aaaa ».
 
 ## <a name="pattern-matching"></a>Critères spéciaux
 

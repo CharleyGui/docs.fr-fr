@@ -6,16 +6,16 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: 55b90d10a1d8ac8534ba98e1cc5af906d69822a6
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: fe504124a4274ccce332be255addd1f0b41e9026
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100832"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414719"
 ---
-# <a name="introduction-to-the-c-language-and-the-net-framework"></a>Présentation du langage C# et du .NET Framework
+# <a name="introduction-to-the-c-language-and-net-framework"></a>Présentation du langage C# et .NET Framework
 
-C# est un langage orienté objet élégant et de type sécurisé qui permet aux développeurs de créer une variété d’applications sécurisées et fiables qui s’exécutent dans l’écosystème .NET. L’écosystème .NET est constitué de toutes les implémentations de .NET, y compris mais non limitées à [.net Core](../../core/index.yml), et [.NET Framework](../../framework/index.yml). Cet article se concentre sur .NET Framework. Vous pouvez utiliser C# pour créer des applications clientes Windows, services Web XML, composants distribués, applications client-serveur, applications de base de données et bien plus encore.
+C# est un langage orienté objet élégant et de type sécurisé qui permet aux développeurs de créer une variété d’applications sécurisées et fiables qui s’exécutent dans l’écosystème .NET. L’écosystème .NET est constitué de toutes les implémentations de .NET, y compris mais non limitées à [.net Core](../../core/introduction.md), et [.NET Framework](../../framework/index.yml). Cet article se concentre sur .NET Framework. Vous pouvez utiliser C# pour créer des applications clientes Windows, services Web XML, composants distribués, applications client-serveur, applications de base de données et bien plus encore.
 
 > [!NOTE]
 > La documentation de Visual C# suppose que vous avez une compréhension des concepts de base de la programmation. Si vous êtes un débutant complet, vous souhaiterez peut-être consulter Visual C# Express, qui est disponible sur le web. Vous pouvez également tirer parti de la documentation et des ressources Web sur C# pour acquérir des compétences de programmation pratiques.
