@@ -1,13 +1,13 @@
 ---
 title: Indications de mise en forme du code F#
 description: 'Découvrez les instructions de mise en forme du code F #.'
-ms.date: 11/04/2019
-ms.openlocfilehash: dc871b0a8461ed93550ab02cc2c66b143285a3e3
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.date: 08/31/2020
+ms.openlocfilehash: 401c0688cd7d0a945dc469f1ab5841b21e1d4ab4
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720148"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359283"
 ---
 # <a name="f-code-formatting-guidelines"></a>Indications de mise en forme du code F#
 
@@ -201,7 +201,7 @@ Les commentaires insérés doivent mettre en majuscule la première lettre.
 let f x = x + 1 // Increment by one.
 ```
 
-## <a name="naming-conventions"></a>Conventions d'attribution d'un nom
+## <a name="naming-conventions"></a>Conventions d’affectation de noms
 
 ### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Utilisez la casse mixte pour les valeurs et les fonctions liées à la classe, à l’expression et liées aux modèles
 
@@ -897,6 +897,15 @@ module M =
 type MyRecord =
     { Label1: int
       Label2: string }
+```
+
+Ils doivent être placés après toute documentation XML :
+
+```fsharp
+/// Module with some things in it.
+[<RequireQualifiedAccess>]
+module M =
+    let f x = x
 ```
 
 ### <a name="formatting-attributes-on-parameters"></a>Mise en forme des attributs sur les paramètres

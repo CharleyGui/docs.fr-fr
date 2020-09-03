@@ -1,22 +1,19 @@
 ---
 title: Informations de référence sur les symboles et les opérateurs
 description: 'En savoir plus sur les symboles et les opérateurs utilisés dans le langage de programmation F #.'
-ms.date: 02/11/2019
+ms.date: 08/15/2020
 fl_keywords:
 - '|>_FS'
-ms.openlocfilehash: 4c3af80e8f5a686535b7c09579d29bb3da8591a3
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 5943352f0a1710ba7a666a79b7871b7269c75a6b
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855388"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359088"
 ---
 # <a name="symbol-and-operator-reference"></a>Informations de référence sur les symboles et les opérateurs
 
 Cet article comprend un tableau des symboles et des opérateurs utilisés dans le langage F #.
-
-> [!NOTE]
-> La référence de l’API docs.microsoft.com pour F # n’est pas terminée. Si vous rencontrez des liens rompus, consultez plutôt [la documentation de la bibliothèque principale F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="table-of-symbols-and-operators"></a>Tableau des symboles et des opérateurs
 
@@ -51,7 +48,7 @@ Le tableau suivant décrit les symboles utilisés dans le langage F # et fournit
 |`-`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Lorsqu'il est utilisé comme opérateur binaire, soustrait le côté droit du côté gauche.<br /></li><li>Lorsqu'il est utilisé comme opérateur unaire, effectue une opération de négation.<br /></li></ul>|
 |`-?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Soustrait le côté droit du côté gauche, lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`->`|[Fonctions](../functions/index.md)<br /><br />[Expressions de correspondance](../match-expressions.md)|<ul><li>Dans les types de fonction, délimite les arguments et les valeurs de retour.<br /></li><li>Génère une expression (dans les expressions de séquence) ; équivalent au mot clé `yield`.<br /></li><li>Utilisé dans les expressions de correspondance<br /></li></ul>|
-|`.`|[Membres](../members/index.md)<br /><br />[Types primitifs](../basic-types.md)|<ul><li>Accède à un membre et sépare les noms individuels dans un nom complet.<br /></li><li>Spécifie une virgule décimale dans les nombres à virgule flottante.<br /></li></ul>|
+|`.`|[Members](../members/index.md) (Membres)<br /><br />[Types primitifs](../basic-types.md)|<ul><li>Accède à un membre et sépare les noms individuels dans un nom complet.<br /></li><li>Spécifie une virgule décimale dans les nombres à virgule flottante.<br /></li></ul>|
 |`..`|[Boucles : expression `for...in`](../loops-for-in-expression.md)|<ul><li>Spécifie une plage.<br /></li></ul>|
 |`.. ..`|[Boucles : expression `for...in`](../loops-for-in-expression.md)|<ul><li>Spécifie une plage et un incrément.<br /></li></ul>|
 |`.[...]`|[Tableaux](../arrays.md)|<ul><li>Accède à un élément de tableau.<br /></li></ul>|
@@ -65,7 +62,7 @@ Le tableau suivant décrit les symboles utilisés dans le langage F # et fournit
 |`:>`|[Cast et conversions](../casting-and-conversions.md)|<ul><li>Convertit un type en un type placé plus haut dans la hiérarchie.<br /></li></ul>|
 |`:?`|[Expressions de correspondance](../match-expressions.md)|<ul><li>Retourne `true` si la valeur correspond au type spécifié (y compris s’il s’agit d’un sous-type); sinon, retourne `false` (opérateur de test de type).<br /></li></ul>|
 |`:?>`|[Cast et conversions](../casting-and-conversions.md)|<ul><li>Convertit un type en un type placé plus bas dans la hiérarchie.<br /></li></ul>|
-|`;`|[Syntaxe détaillée](../verbose-syntax.md)<br /><br />[Listes](../lists.md)<br /><br />[Documents](../records.md)|<ul><li>Sépare les expressions (utilisé principalement dans la syntaxe des commentaires).<br /></li><li>Sépare les éléments d'une liste.<br /></li><li>Sépare les champs d'un enregistrement.<br /></li></ul>|
+|`;`|[Syntaxe détaillée](../verbose-syntax.md)<br /><br />[Listes](../lists.md)<br /><br />[Enregistrements](../records.md)|<ul><li>Sépare les expressions (utilisé principalement dans la syntaxe des commentaires).<br /></li><li>Sépare les éléments d'une liste.<br /></li><li>Sépare les champs d'un enregistrement.<br /></li></ul>|
 |`<`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Calcule l'opération « inférieur à ».<br /></li></ul>|
 |`<?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|Calcule l'opération « inférieur à » lorsque la partie droite est un type Nullable.|
 |`<<`|[Fonctions](../functions/index.md)|<ul><li>Compose deux fonctions dans l'ordre inverse ; la deuxième est exécutée en premier (opérateur de composition arrière).<br /></li></ul>|
@@ -76,9 +73,12 @@ Le tableau suivant décrit les symboles utilisés dans le langage F # et fournit
 |`<>?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule l'opération « non égal à » lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`<=`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Retourne `true` si le côté gauche est inférieur ou égal au côté droit ; sinon, retourne `false`.<br /></li></ul>|
 |`<=?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule l'opération « inférieur ou égal à » lorsque la partie droite est un type Nullable.<br /></li></ul>|
+|<code>&#124;></code>|[Fonctions](../functions/index.md)|<ul><li>Passe le résultat du côté gauche de la fonction au côté droit (opérateur de canal avant).<br /></li></ul>|
+|<code>&#124;&#124;></code>|[&#40; &#124;&#124;&#62; &#41;&#60; 't 1, 't 2 ', 'U&#62; fonction](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#(%20%7C%7C%3E%20))|<ul><li>Transmet le tuple de deux arguments côté gauche à la fonction côté droit.<br /></li></ul>|
+|<code>&#124;&#124;&#124;></code>|[&#40; &#124;&#124;&#124;&#62; &#41;&#60; 't 1, 't 2, 't 3 ', 'U&#62; fonction](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#(%20%7C%7C%7C%3E%20))|<ul><li>Transmet le tuple de trois arguments côté gauche à la fonction côté droit.<br /></li></ul>|
 |<code>&lt;&#124;</code>|[Fonctions](../functions/index.md)|<ul><li>Passe le résultat de l'expression côté droit à la fonction côté gauche (opérateur de barre verticale inverse).<br /></li></ul>|
-|<code>&lt;&#124;&#124;</code>|[Operators.&#40; &#60;&#124;&#124; &#41;&#60;'T1,'T2,'U&#62; (fonction)](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-%5bhh-%5d%5b%27t1%2c%27t2%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Transmet le tuple de deux arguments côté droit à la fonction côté gauche.<br /></li></ul>|
-|<code>&lt;&#124;&#124;&#124;</code>|[Operators.&#40; &#60;&#124;&#124;&#124; &#41;&#60;'T1,'T2,'T3,'U&#62; (fonction)](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-%5bhhh-%5d%5b%27t1%2c%27t2%2c%27t3%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Transmet le tuple de trois arguments côté droit à la fonction côté gauche.<br /></li></ul>|
+|<code>&lt;&#124;&#124;</code>|[&#40; &#60;&#124;&#124; &#41;&#60; 't 1, 't 2 ', 'U&#62; fonction](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#(%20%3C%7C%7C%20))|<ul><li>Transmet le tuple de deux arguments côté droit à la fonction côté gauche.<br /></li></ul>|
+|<code>&lt;&#124;&#124;&#124;</code>|[&#40; &#60;&#124;&#124;&#124; &#41;&#60; 't 1, 't 2, 't 3 ', 'U&#62; fonction](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#(%20%3C%7C%7C%7C%20))|<ul><li>Transmet le tuple de trois arguments côté droit à la fonction côté gauche.<br /></li></ul>|
 |`<@...@>`|[Quotations de code](../code-quotations.md)|<ul><li>Délimite une quotation de code typé.<br /></li></ul>|
 |`<@@...@@>`|[Quotations de code](../code-quotations.md)|<ul><li>Délimite une quotation de code non typé.<br /></li></ul>|
 |`=`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Retourne `true` si le côté gauche est égal au côté droit ; sinon, retourne `false`.<br /></li></ul>|
@@ -104,13 +104,10 @@ Le tableau suivant décrit les symboles utilisés dans le langage F # et fournit
 |`^^^`|[Opérateurs au niveau du bit](bitwise-operators.md)|<ul><li>Calcule l'opération OR exclusif au niveau du bit.<br /></li></ul>|
 |`_`|[Expressions de correspondance](../match-expressions.md)<br /><br />[Génériques](../generics/index.md)|<ul><li>Indique un modèle de caractère générique.<br /></li><li>Spécifie un paramètre générique anonyme.<br /></li></ul>|
 |<code>&#96;</code>|[Généralisation automatique](../generics/automatic-generalization.md)|<ul><li>Utilisé en interne pour indiquer un paramètre de type générique.<br /></li></ul>|
-|`{...}`|[Séquences](../sequences.md)<br /><br />[Documents](../records.md)|<ul><li>Délimite les expressions de séquence et les expressions de calcul.<br /></li><li>Utilisé dans les définitions d'enregistrement.<br /></li></ul>|
+|`{...}`|[Séquences](../sequences.md)<br /><br />[Enregistrements](../records.md)|<ul><li>Délimite les expressions de séquence et les expressions de calcul.<br /></li><li>Utilisé dans les définitions d'enregistrement.<br /></li></ul>|
 |<code>&#124;</code>|[Expressions de correspondance](../match-expressions.md)|<ul><li>Délimite les cas de correspondance individuels, les cas d'union discriminés individuels et les valeurs d'énumération.<br /></li></ul>|
 |<code>&#124;&#124;</code>|[Opérateurs booléens](boolean-operators.md)|<ul><li>Calcule l'opération booléenne OR.<br /></li></ul>|
 |<code>&#124;&#124;&#124;</code>|[Opérateurs au niveau du bit](bitwise-operators.md)|<ul><li>Calcule l'opération OR au niveau du bit.<br /></li></ul>|
-|<code>&#124;></code>|[Fonctions](../functions/index.md)|<ul><li>Passe le résultat du côté gauche de la fonction au côté droit (opérateur de canal avant).<br /></li></ul>|
-|<code>&#124;&#124;></code>|[Operators.&#40; &#124;&#124;&#62; &#41;&#60;'T1,'T2,'U&#62; (fonction)](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-hh%5d-%5d%5b%27t1%2c%27t2%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Transmet le tuple de deux arguments côté gauche à la fonction côté droit.<br /></li></ul>|
-|<code>&#124;&#124;&#124;></code>|[Operators.&#40; &#124;&#124;&#124;&#62; &#41;&#60;'T1,'T2,'T3,'U&#62; (fonction)](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-hhh%5d-%5d%5b%27t1%2c%27t2%2c%27t3%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>Transmet le tuple de trois arguments côté gauche à la fonction côté droit.<br /></li></ul>|
 |`~~`|[Surcharge d’opérateur](../operator-overloading.md)|<ul><li>Permet de déclarer une surcharge pour l'opérateur de négation unaire.<br /></li></ul>|
 |`~~~`|[Opérateurs au niveau du bit](bitwise-operators.md)|<ul><li>Calcule l'opération NOT au niveau du bit.<br /></li></ul>|
 |`~-`|[Surcharge d’opérateur](../operator-overloading.md)|<ul><li>Permet de déclarer une surcharge pour l'opérateur moins unaire.<br /></li></ul>|
@@ -124,7 +121,7 @@ Le tableau suivant indique l'ordre de priorité des opérateurs et autres mots c
 |--------|-------------|
 |`as`|Right|
 |`when`|Right|
-|<code>&#124;</code>conduit|Gauche|
+|<code>&#124;</code> conduit|Gauche|
 |`;`|Right|
 |`let`|Non associatif|
 |`function`, `fun`, `match`, `try`|Non associatif|
