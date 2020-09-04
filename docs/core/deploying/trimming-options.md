@@ -4,12 +4,12 @@ description: Découvrez comment contrôler le découpage des applications autono
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: d6081a24cc18e424b55d40e152f519c680f11aa0
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: 42e98f9ede004f06221d2df5ecd076500061e37d
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271878"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465414"
 ---
 # <a name="trimming-options"></a>Options de suppression
 
@@ -29,7 +29,7 @@ Les paramètres de granularité suivants contrôlent la façon dont le langage i
 
 - `<TrimMode>copyused</TrimMode>`
 
-   Activez la suppression au niveau de l’assembly, qui conservera un assembly entier si une partie de celui-ci est utilisée (de façon interprétée de manière statique).
+   Activez la suppression au niveau de l’assembly, qui conservera un assembly entier si une partie de celui-ci est utilisée (de façon comprise de manière statique).
 
 - `<TrimMode>link</TrimMode>`
 
@@ -39,7 +39,7 @@ Les assemblys avec des `<IsTrimmable>true</IsTrimmable>` métadonnées, mais pas
 
 ## <a name="trimmed-assemblies"></a>Assemblys tronqués
 
-Lors de la publication d’une application tronquée, le kit de développement logiciel (SDK) calcule un `ItemGroup` appelé `ManagedAssemblyToLink` qui représente le jeu de fichiers à traiter pour la suppression. `ManagedAssemblyToLink` peut avoir des métadonnées qui contrôlent le comportement de suppression par assembly. Pour définir ces métadonnées, créez une cible qui s’exécute avant la `PrepareForILLink` cible intégrée. Cet exemple montre comment activer la suppression des `MyAssembly` éléments suivants :
+Lors de la publication d’une application tronquée, le kit de développement logiciel (SDK) calcule un `ItemGroup` appelé `ManagedAssemblyToLink` qui représente le jeu de fichiers à traiter pour la suppression. `ManagedAssemblyToLink` peut avoir des métadonnées qui contrôlent le comportement de suppression par assembly. Pour définir ces métadonnées, créez une cible qui s’exécute avant la `PrepareForILLink` cible intégrée. L’exemple suivant montre comment activer la suppression de `MyAssembly` .
 
 ```xml
 <Target Name="ConfigureTrimming"
@@ -64,7 +64,7 @@ N’ajoutez pas ou ne supprimez pas d’éléments dans `ManagedAssemblyToLink` 
 
 ## <a name="root-assemblies"></a>Assemblys racines
 
-Tous les assemblys qui n’ont pas de `<IsTrimmable>true</IsTrimmable>` données sont considérés comme des racines pour l’analyse, ce qui signifie qu’elles sont conservées et toutes leurs dépendances comprises statiquement. Les assemblys supplémentaires peuvent être « enracinés » par nom (sans l' `.dll` extension) :
+Tous les assemblys qui n’ont pas `<IsTrimmable>true</IsTrimmable>` sont considérés comme des racines pour l’analyse, ce qui signifie qu’elles sont conservées et toutes leurs dépendances comprises statiquement. Les assemblys supplémentaires peuvent être « enracinés » par nom (sans l' `.dll` extension) :
 
 ```xml
 <ItemGroup>

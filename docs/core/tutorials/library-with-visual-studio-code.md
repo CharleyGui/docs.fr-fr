@@ -2,12 +2,12 @@
 title: Créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio Code
 description: Découvrez comment créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio Code.
 ms.date: 06/08/2020
-ms.openlocfilehash: 146dfd49e448494cce0c844282bc0394a8739ac9
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: d37e3c663146c90f4ae4188b25ea7e501501c93b
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810857"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465284"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio Code
 
@@ -55,6 +55,8 @@ Ajoutez un nouveau projet de bibliothèque de classes .NET Standard nommé « S
    ```dotnetcli
    dotnet new classlib -o StringLibrary
    ```
+
+   La `-o` `--output` commande ou spécifie l’emplacement où la sortie générée doit être placée.
 
    La sortie du terminal ressemble à l’exemple suivant :
 
@@ -169,7 +171,7 @@ Ajoutez une application console qui utilise la bibliothèque de classes. L’app
 
 Initialement, le nouveau projet d’application console n’a pas accès à la bibliothèque de classes. Pour lui permettre d’appeler des méthodes dans la bibliothèque de classes, créez une référence de projet au projet de bibliothèque de classes.
 
-1. Exécutez la commande suivante :
+1. Exécutez la commande suivante :
 
    ```dotnetcli
    dotnet add ShowCase/ShowCase.csproj reference StringLibrary/StringLibrary.csproj
@@ -200,9 +202,9 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
    Input: A string that starts with an uppercase letter
    Begins with uppercase? : Yes
 
-   A string that starts with a lowercase letter
-   Input: A string that starts with a lowercase letter
-   Begins with uppercase? : Yes
+   a string that starts with a lowercase letter
+   Input: a string that starts with a lowercase letter
+   Begins with uppercase? : No
    ```
 
 ## <a name="additional-resources"></a>Ressources supplémentaires

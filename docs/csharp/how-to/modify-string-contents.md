@@ -4,12 +4,12 @@ description: Passez en revue des exemples de différentes techniques pour modifi
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: ecce8857befc66353deea341d81f8c6e4313b951
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: bae54757fdb6f02cdc0dc8fc15ad3f7583c230a7
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473966"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465050"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Comment modifier le contenu d’une chaîne en C\#
 
@@ -73,5 +73,5 @@ Vous pouvez modifier une chaîne dans un bloc fixed avec du code unsafe, mais il
 
 ## <a name="see-also"></a>Voir aussi
 
-- [.NET Framework des expressions régulières](../../standard/base-types/regular-expressions.md)
+- [Expressions régulières .NET](../../standard/base-types/regular-expressions.md)
 - [Langage des expressions régulières-aide-mémoire](../../standard/base-types/regular-expression-language-quick-reference.md)

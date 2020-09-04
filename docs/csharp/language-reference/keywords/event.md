@@ -10,12 +10,12 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: 5e75fec12390cb694126c5bec684c40caa378915
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: dff93496dfeceaf67777abe0b02ee2d620b3a5ca
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89139097"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466038"
 ---
 # <a name="event-c-reference"></a>Event (référence C#)
 
@@ -23,7 +23,7 @@ Le mot clé `event` sert à déclarer un événement dans une classe d’éditeu
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment déclarer et déclencher un événement qui utilise <xref:System.EventHandler> comme type délégué sous-jacent. Pour obtenir l’exemple de code complet qui montre également comment utiliser le <xref:System.EventHandler%601> type délégué générique et comment s’abonner à un événement et créer une méthode de gestionnaire d’événements, consultez [Comment publier des événements conformes aux instructions .NET Framework](../../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).
+L’exemple suivant montre comment déclarer et déclencher un événement qui utilise <xref:System.EventHandler> comme type délégué sous-jacent. Pour obtenir l’exemple de code complet qui montre également comment utiliser le <xref:System.EventHandler%601> type délégué générique et comment s’abonner à un événement et créer une méthode de gestionnaire d’événements, consultez [Comment publier des événements conformes aux instructions .net](../../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).
 
 [!code-csharp[csrefKeywordsModifiers#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#7)]
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 27445b6685f48f7acf646c16de3201e68767da69
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: a1b65db6efb60d27ab82ab47854c0399b9476729
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125291"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466077"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Options du compilateur C# par catégorie
 
@@ -41,7 +41,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |[-cible](target-compiler-option.md)|Spécifie le format du fichier de sortie à l’aide de l’une des options suivantes : [-target : appcontainerexe](target-appcontainerexe-compiler-option.md), [-target : exe](target-exe-compiler-option.md), [-target : Library](target-library-compiler-option.md), [-target : module](target-module-compiler-option.md), [-target : winexe](target-winexe-compiler-option.md)ou [-target : winmdobj](target-winmdobj-compiler-option.md).|
 |NomModule\<string>|Spécifiez le nom du module source.|
 
-## <a name="net-framework-assemblies"></a>Assemblys .NET Framework
+## <a name="net-assemblies"></a>Assemblys .NET
 
 |Option|Objectif|
 |------------|-------------|
@@ -77,7 +77,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 
 |Option|Objectif|
 |------------|-------------|
-|[-define](define-compiler-option.md)|Définit les symboles du préprocesseur.|
+|[-définir](define-compiler-option.md)|Définit les symboles du préprocesseur.|
 
 ## <a name="resources"></a>Ressources
 
@@ -85,7 +85,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |------------|-------------|
 |[-lien](link-compiler-option.md)|Rend les informations de type COM dans les assemblys spécifiés disponibles pour le projet.|
 |[-linkresource](linkresource-compiler-option.md)|Crée un lien à une ressource managée.|
-|[-ressource](resource-compiler-option.md)|Incorpore une ressource .NET Framework dans le fichier de sortie.|
+|[-ressource](resource-compiler-option.md)|Incorpore une ressource .NET dans le fichier de sortie.|
 |[-win32icon](win32icon-compiler-option.md)|Spécifie un fichier .ico à insérer dans le fichier de sortie.|
 |[-win32res](win32res-compiler-option.md)|Spécifie une ressource Win32 à insérer dans le fichier de sortie.|
 

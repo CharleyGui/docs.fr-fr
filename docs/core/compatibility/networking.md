@@ -2,12 +2,12 @@
 title: Modifications avec rupture réseau
 description: Répertorie les dernières modifications apportées à la mise en réseau dans .NET Core.
 ms.date: 05/05/2020
-ms.openlocfilehash: 568d26bde43ccd6e19fbe2d947f576ef5f99450a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: fa5807c882c3bc6f66e8a27361ccc14254e90b3e
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608480"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465510"
 ---
 # <a name="networking-breaking-changes"></a>Modifications avec rupture réseau
 
@@ -17,8 +17,9 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | - | - |
 | [WinHttpHandler supprimé du Runtime .NET](#winhttphandler-removed-from-net-runtime) | 5.0 |
 | [MulticastOption. Group n’accepte pas de valeur null](#multicastoptiongroup-doesnt-accept-a-null-value) | 5.0 |
+| [La gestion des chemins d’accès des cookies est maintenant conforme à la norme RFC 6265](#cookie-path-handling-now-conforms-to-rfc-6265) | 5.0 |
 | [La valeur par défaut de HttpRequestMessage. version est passée à 1,1](#default-value-of-httprequestmessageversion-changed-to-11) | 3.0 |
-| [WebClient. CancelAsync n’est pas toujours annulé immédiatement](#webclientcancelasync-doesnt-always-cancel-immediately) | 2.0 |
+| [WebClient. CancelAsync n’est pas toujours annulé immédiatement](#webclientcancelasync-doesnt-always-cancel-immediately) | 2,0 |
 
 ## <a name="net-50"></a>.NET 5,0
 
@@ -27,6 +28,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 ***
 
 [!INCLUDE [multicastoption-group-doesnt-accept-null](../../../includes/core-changes/networking/5.0/multicastoption-group-doesnt-accept-null.md)]
+
+***
+
+[!INCLUDE [cookie-path-conforms-to-rfc6265](../../../includes/core-changes/networking/5.0/cookie-path-conforms-to-rfc6265.md)]
 
 ***
 

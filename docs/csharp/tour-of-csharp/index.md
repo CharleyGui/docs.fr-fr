@@ -2,12 +2,12 @@
 title: Visite guidée du langage C# - Guide du langage C#
 description: Novice en matière de langage C# ? Découvrez les principes de base du langage.
 ms.date: 08/06/2020
-ms.openlocfilehash: 9fa292e8e85832d831f36cf0f21512aa0cf32580
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 84775a436deb0958d3c05ec7d0207e76be28f27c
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656226"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89464998"
 ---
 # <a name="a-tour-of-the-c-language"></a>Visite guidée du langage C#
 
@@ -37,7 +37,7 @@ Il existe deux genres de types en C# : les *types référence* et les *types 
 
 Un ***identificateur*** est un nom de variable. Un identificateur est une séquence de caractères Unicode sans espace blanc. Un identificateur peut être un mot réservé C#, s’il est préfixé par `@` . Cela peut être utile lors de l’interaction avec d’autres langages.
 
-Les types de valeur C# sont divisés en *types simples*, *types ENUM*, *types struct*et *types valeur Nullable*. Les types référence de C# sont encore divisés en *types classe*, *types interface*, *types tableau*et *types délégués*.
+Les types valeur de C# sont divisés en *types simples*, *types ENUM*, *types struct*, types *valeur Nullable* et *types valeur de tuple*. Les types référence de C# sont encore divisés en *types classe*, *types interface*, *types tableau*et *types délégués*.
 
 Le schéma suivant fournit une vue d’ensemble du système de type de C#.
 
@@ -65,11 +65,11 @@ Le schéma suivant fournit une vue d’ensemble du système de type de C#.
   - [Types d'interface](../language-reference/keywords/interface.md)
     - Types définis par l'utilisateur de la forme `interface I {...}`
   - [Types tableau](../programming-guide/arrays/index.md)
-    - Unidimensionnel et unidimensionnel et en escalier, par exemple,, `int[]` `int[,]` et `int[][]`
+    - Unidimensionnel, unidimensionnel et en escalier. Par exemple : `int[]` , `int[,]` et `int[][]`
   - [Types délégués](../language-reference/builtin-types/reference-types.md#the-delegate-type)
     - Types définis par l'utilisateur de la forme `delegate int D(...)`
 
-Les programmes C# utilisent les *déclarations de type* pour créer de nouveaux types. Une déclaration de type spécifie le nom et les membres du nouveau type. Cinq des catégories de types C# sont définissables par l’utilisateur : types classe, types struct, types interface, types ENUM et types délégués.
+Les programmes C# utilisent les *déclarations de type* pour créer de nouveaux types. Une déclaration de type spécifie le nom et les membres du nouveau type. Six des catégories de types C# sont définissables par l’utilisateur : types de classes, types struct, types interface, types ENUM, types délégués et types valeur de Tuple.
 
 - Un type `class` définit une structure de données qui contient des données membres (champs) et des fonctions membres (méthodes, propriétés, etc.). Les types de classes prennent en charge l’héritage unique et le polymorphisme, des mécanismes par lesquels les classes dérivées peuvent étendre et spécialiser les classes de base.
 - Un type `struct` est similaire à un type de classe dans la mesure où il représente une structure avec des membres de données et des membres de fonctions. Toutefois, contrairement aux classes, les structs sont des types valeur et ne nécessitent généralement pas d’allocation de tas. Les types struct ne prennent pas en charge l’héritage spécifié par l’utilisateur, et tous les types struct héritent implicitement du type `object` .
@@ -78,7 +78,7 @@ Les programmes C# utilisent les *déclarations de type* pour créer de nouveaux 
 
 Les `class` types,, `struct` `interface` et `delegate` prennent tous en charge les génériques, dans lesquels ils peuvent être paramétrés avec d’autres types.
 
-C# prend en charge les tableaux uni et multidimensionnels de tout type. Contrairement aux types indiqués ci-dessus, les types de tableau ne doivent pas nécessairement être déclarés avant de pouvoir être utilisés. Au lieu de cela, les types de tableaux sont construits en ajoutant des crochets à un nom de type. Par exemple, `int[]` est un tableau unidimensionnel de `int` , `int[,]` est un tableau à deux dimensions de `int` , et `int[][]` est un tableau unidimensionnel de tableau unidimensionnel ou un tableau en escalier de `int` .
+C# prend en charge les tableaux unidimensionnels et multidimensionnels de tout type. Contrairement aux types indiqués ci-dessus, les types de tableau ne doivent pas nécessairement être déclarés avant de pouvoir être utilisés. Au lieu de cela, les types de tableaux sont construits en ajoutant des crochets à un nom de type. Par exemple, `int[]` est un tableau unidimensionnel de `int` , `int[,]` est un tableau à deux dimensions de `int` , et `int[][]` est un tableau unidimensionnel de tableaux unidimensionnels, ou un tableau en escalier, de `int` .
 
 Les types Nullable ne nécessitent pas une définition distincte. Pour chaque type non Nullable `T` , il existe un type Nullable correspondant `T?` qui peut contenir une valeur supplémentaire, `null` . Par exemple, `int?` est un type qui peut contenir n’importe quel entier 32 bits ou la valeur `null` , et `string?` est un type qui peut contenir n’importe quelle `string` valeur ou `null` .
 

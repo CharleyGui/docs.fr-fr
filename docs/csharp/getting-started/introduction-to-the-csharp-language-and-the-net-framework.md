@@ -1,19 +1,19 @@
 ---
-title: Introduction au langage C# et au .NET Framework
+title: Présentation du langage C# et de .NET
 description: Apprenez les concepts de base de C# et .NET. Découvrez une vue d’ensemble du langage C# et de l’écosystème .NET.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: fe504124a4274ccce332be255addd1f0b41e9026
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 9e84726a8f6056c5beeedae9081a68980150efdd
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414719"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465167"
 ---
-# <a name="introduction-to-the-c-language-and-net-framework"></a>Présentation du langage C# et .NET Framework
+# <a name="introduction-to-the-c-language-and-net"></a>Présentation du langage C# et de .NET
 
 C# est un langage orienté objet élégant et de type sécurisé qui permet aux développeurs de créer une variété d’applications sécurisées et fiables qui s’exécutent dans l’écosystème .NET. L’écosystème .NET est constitué de toutes les implémentations de .NET, y compris mais non limitées à [.net Core](../../core/introduction.md), et [.NET Framework](../../framework/index.yml). Cet article se concentre sur .NET Framework. Vous pouvez utiliser C# pour créer des applications clientes Windows, services Web XML, composants distribués, applications client-serveur, applications de base de données et bien plus encore.
 
@@ -44,19 +44,19 @@ Voici des ressources C# supplémentaires :
 - Pour plus d’informations sur des aspects spécifiques du langage C#, consultez la [Référence de C#](../language-reference/index.md).
 - Pour plus d’informations sur LINQ, consultez [LINQ (Language-Integrated Query)](../programming-guide/concepts/linq/index.md).
 
-## <a name="net-framework-platform-architecture"></a>Architecture de la plateforme .NET Framework
+## <a name="net-platform-architecture"></a>Architecture de la plateforme .NET
 
-C# s’exécute sur le .NET Framework, un composant intégral de Windows qui inclut un système d’exécution virtuel appelé Common Language Runtime (CLR) et un ensemble unifié de bibliothèques de classes. CLR est l’implémentation commerciale par Microsoft de la Common Language Infrastructure (CLI), une norme internationale qui sert de base pour la création d’environnements de développement et d’exécution dans lesquels les langages et bibliothèques fonctionnent ensemble en toute transparence.
+Les programmes C# s’exécutent sur .NET, un composant intégral de Windows qui comprend un système d’exécution virtuel appelé le common language runtime (CLR) et un ensemble unifié de bibliothèques de classes. CLR est l’implémentation commerciale par Microsoft de la Common Language Infrastructure (CLI), une norme internationale qui sert de base pour la création d’environnements de développement et d’exécution dans lesquels les langages et bibliothèques fonctionnent ensemble en toute transparence.
 
 Le code source écrit en C# est compilé dans un [langage intermédiaire (il)](../../standard/managed-code.md) conforme à la spécification CLI. Le code de langage intermédiaire et les ressources, comme les bitmaps et les chaînes, sont stockés sur disque dans un fichier exécutable appelé assembly, généralement avec l’extension .exe ou .dll. Un assembly contient un manifeste qui fournit des informations sur les types de l’assembly, sa version, sa culture et ses conditions de sécurité.
 
-Lorsque le programme C# est exécuté, l’assembly est chargé dans CLR, qui peut prendre différentes mesures selon les informations contenues dans le manifeste. Ensuite, si les exigences de sécurité sont satisfaites, le CLR effectue une compilation juste-à-temps (JIT) pour convertir le code IL en instructions machine natives. CLR fournit également d’autres services connexes liés au nettoyage automatique de la mémoire (garbage collection), à la gestion des exceptions et à la gestion des ressources. Le code exécuté par le CLR est parfois appelé « code managé », contrairement à « code non managé », qui est compilé dans un langage machine natif ciblant un système spécifique. Le diagramme suivant illustre les relations de compilation et d’exécution des fichiers de code source de C#, les bibliothèques de classes .NET Framework, les assemblys et CLR.
+Lorsque le programme C# est exécuté, l’assembly est chargé dans CLR, qui peut prendre différentes mesures selon les informations contenues dans le manifeste. Ensuite, si les exigences de sécurité sont satisfaites, le CLR effectue une compilation juste-à-temps (JIT) pour convertir le code IL en instructions machine natives. CLR fournit également d’autres services connexes liés au nettoyage automatique de la mémoire (garbage collection), à la gestion des exceptions et à la gestion des ressources. Le code exécuté par le CLR est parfois appelé « code managé », contrairement à « code non managé », qui est compilé dans un langage machine natif ciblant un système spécifique. Le diagramme suivant illustre les relations au moment de la compilation et au moment de l’exécution des fichiers de code source C#, de la bibliothèque de classes .NET, des assemblys et du CLR.
 
 ![Du code source C# à l'exécution machine](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)
 
-L’interopérabilité des langages est une fonctionnalité essentielle du .NET Framework. Étant donné que le code de langage intermédiaire produit par le compilateur C# est conforme à la spécification de type commun (CTS), le code de langage intermédiaire généré à partir de C# peut interagir avec du code qui a été généré à partir des versions .NET de Visual Basic, Visual C++ ou un des plus de 20 autres langages compatibles CTS. Un seul assembly peut contenir plusieurs modules écrits dans différents langages .NET, et les types peuvent se référencer mutuellement comme s’ils avaient été écrits dans le même langage.
+L’interopérabilité des langages est une fonctionnalité clé de .NET. Étant donné que le code de langage intermédiaire produit par le compilateur C# est conforme à la spécification de type commun (CTS), le code de langage intermédiaire généré à partir de C# peut interagir avec du code qui a été généré à partir des versions .NET de Visual Basic, Visual C++ ou un des plus de 20 autres langages compatibles CTS. Un seul assembly peut contenir plusieurs modules écrits dans différents langages .NET, et les types peuvent se référencer mutuellement comme s’ils avaient été écrits dans le même langage.
 
-Outre les services de runtime, le .NET Framework inclut également une bibliothèque étendue de plus de 4 000 classes organisées en espaces de noms qui fournissent une grande variété de fonctionnalités utiles pour tous les éléments allant de l’entrée et la sortie de fichiers pour la manipulation de chaînes à l’analyse de XML, en passant par les contrôles Windows Forms. Une application C# standard utilise la bibliothèque de classes du .NET Framework de façon intensive pour gérer les tâches fastidieuses.
+En plus des services d’exécution, .NET inclut également une bibliothèque étendue de plus de 4000 classes organisées en espaces de noms qui fournissent un large éventail de fonctionnalités utiles pour tout, de l’entrée de fichier à la manipulation de chaînes à l’analyse XML, aux contrôles de Windows Forms. L’application C# classique utilise largement la bibliothèque de classes .NET pour gérer les tâches courantes de « plomberie ».
 
 Pour plus d’informations sur .NET Framework, consultez [Présentation de Microsoft .NET Framework](../../framework/get-started/overview.md).
 

@@ -3,12 +3,12 @@ title: Comment compter les occurrences d’un mot dans une chaîne (LINQ) (C#)
 description: Cet exemple utilise une requête LINQ en C# pour compter les occurrences d’un mot spécifié dans une chaîne. Elle utilise la méthode Split pour créer un tableau de mots.
 ms.date: 07/20/2015
 ms.assetid: f8e6f546-7c14-4aa1-8a75-e8d09f3b8ccd
-ms.openlocfilehash: 1621e776510e366aa779f1d45468be34b3dec373
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: e0ac7b338706c3f363fb21284e895bd1c7c48b6c
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103373"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466116"
 ---
 # <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>Comment compter les occurrences d’un mot dans une chaîne (LINQ) (C#)
 Cet exemple montre comment utiliser une requête LINQ pour compter les occurrences d’un mot spécifié dans une chaîne. Notez que, pour effectuer le décompte, la méthode <xref:System.String.Split%2A> est d’abord appelée pour créer un tableau de mots. La méthode <xref:System.String.Split%2A> a un coût en matière de performances. Si la seule opération sur la chaîne consiste à compter les mots, il est préférable d’utiliser les méthodes <xref:System.Text.RegularExpressions.Regex.Matches%2A> ou <xref:System.String.IndexOf%2A>. Toutefois, si les performances ne sont pas un facteur critique, ou si vous avez déjà fractionné la phrase pour effectuer d’autres types de requêtes sur elle, il est judicieux d’utiliser LINQ pour compter les mots ou les expressions.  
@@ -23,7 +23,7 @@ class CountWords
         string text = @"Historically, the world of data and the world of objects" +  
           @" have not been well integrated. Programmers work in C# or Visual Basic" +  
           @" and also in SQL or XQuery. On the one side are concepts such as classes," +  
-          @" objects, fields, inheritance, and .NET Framework APIs. On the other side" +  
+          @" objects, fields, inheritance, and .NET APIs. On the other side" +  
           @" are tables, columns, rows, nodes, and separate languages for dealing with" +  
           @" them. Data types often require translation between the two worlds; there are" +  
           @" different standard functions. Because the object world has no notion of query, a" +  

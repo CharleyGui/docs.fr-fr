@@ -4,19 +4,19 @@ description: La commande dotnet new crée des projets .NET Core basés sur le mo
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 04/10/2020
-ms.openlocfilehash: ec41b3b79ed5eded7c9124d3e4d95c658ee39580
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.date: 09/01/2020
+ms.openlocfilehash: 8e05f4dc7a03ae8ae68acc6a57f6fa0e1c6b2ce4
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173118"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465427"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet new` : crée un projet, un fichier de configuration ou une solution en fonction du modèle spécifié.
 
@@ -58,38 +58,38 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
   Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-| Modèles                                    | Nom court                      | Langage     | Balises                                  | Présent |
+| Modèles                                    | Nom court                      | Langage     | Étiquettes                                  | Présent |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
-| Application WPF                              | [WPF](#wpf)                     | [C#]         | Commun/WPF                            | 3.0        |
-| Bibliothèque de classes WPF                            | [wpflib](#wpf)                  | [C#]         | Commun/WPF                            | 3.0        |
-| Bibliothèque de contrôles personnalisés WPF                   | [wpfcustomcontrollib](#wpf)     | [C#]         | Commun/WPF                            | 3.0        |
-| Bibliothèque de contrôles utilisateur WPF                     | [wpfusercontrollib](#wpf)       | [C#]         | Commun/WPF                            | 3.0        |
-| Application Windows Forms (WinForms)         | [WinForms](#winforms)           | [C#]         | Common/WinForms                       | 3.0        |
-| Bibliothèque de classes Windows Forms (WinForms)       | [winformslib](#winforms)        | [C#]         | Common/WinForms                       | 3.0        |
+| Application WPF                              | [WPF](#wpf)                     | [C#], VB     | Commun/WPF                            | 3.0        |
+| Bibliothèque de classes WPF                            | [wpflib](#wpf)                  | [C#], VB     | Commun/WPF                            | 3.0        |
+| Bibliothèque de contrôles personnalisés WPF                   | [wpfcustomcontrollib](#wpf)     | [C#], VB     | Commun/WPF                            | 3.0        |
+| Bibliothèque de contrôles utilisateur WPF                     | [wpfusercontrollib](#wpf)       | [C#], VB     | Commun/WPF                            | 3.0        |
+| Application Windows Forms (WinForms)         | [WinForms](#winforms)           | [C#], VB     | Common/WinForms                       | 3.0        |
+| Bibliothèque de classes Windows Forms (WinForms)       | [winformslib](#winforms)        | [C#], VB     | Common/WinForms                       | 3.0        |
 | Service Worker                               | [collabor](#web-others)           | [C#]         | Commun/Worker/Web                     | 3.0        |
 | Projet de test unitaire                            | [MSTest](#test)                 | [C#], F#, VB | Test/MSTest                           | 1.0        |
-| Projet de test NUnit 3                         | [nunit](#nunit)                  | [C#], F#, VB | Test/NUnit                            | 2.1.400    |
+| Projet de test NUnit 3                         | [nunit](#nunit)                 | [C#], F#, VB | Test/NUnit                            | 2.1.400    |
 | Élément de test NUnit 3                            | `nunit-test`                    | [C#], F#, VB | Test/NUnit                            | 2.2        |
 | Projet de test xUnit                           | [xUnit](#test)                  | [C#], F#, VB | Test/xUnit                            | 1.0        |
 | Composant Razor                              | `razorcomponent`                | [C#]         | Web/ASP.NET                           | 3.0        |
-| Page Razor                                   | [pagination](#page)                   | [C#]         | Web/ASP.NET                           | 2.0        |
-| ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
-| ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
-| BlazorApplication serveur                            | [blazorserver](#blazorserver)   | [C#]         | InternetBlazor                            | 3.0        |
-| BlazorWebAssemblyApplication                       | `blazorwasm`                    | [C#]         | InternetBlazor/WebAssembly                            | 3.1.300    |
-| ASP.NET Core vide                           | [Internet](#web)                     | [C#], F#     | Web/vides                             | 1.0        |
+| Page Razor                                   | [page](#page)                   | [C#]         | Web/ASP.NET                           | 2,0        |
+| ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2,0        |
+| ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2,0        |
+| Blazor Application serveur                            | [blazorserver](#blazorserver)   | [C#]         | InternetBlazor                            | 3.0        |
+| BlazorWebAssemblyApplication                       | `blazorwasm`                    | [C#]         | InternetBlazor/WebAssembly                | 3.1.300    |
+| ASP.NET Core vide                           | [web](#web)                     | [C#], F#     | Web/vides                             | 1.0        |
 | Application web ASP.NET Core (Model-View-Controller) | [MVC](#web-options)             | [C#], F#     | Web/MVC                               | 1.0        |
 | Application web ASP.NET Core                         | [webapp, Razor](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
-| ASP.NET Core avec Angular                    | [oblique](#spa)                 | [C#]         | Web/MVC/SPA                           | 2.0        |
-| ASP.NET Core avec React.js                   | [réagir](#spa)                   | [C#]         | Web/MVC/SPA                           | 2.0        |
-| ASP.NET Core avec React.js et Redux         | [reactredux](#reactredux)       | [C#]         | Web/MVC/SPA                           | 2.0        |
+| ASP.NET Core avec Angular                    | [oblique](#spa)                 | [C#]         | Web/MVC/SPA                           | 2,0        |
+| ASP.NET Core avec React.js                   | [réagir](#spa)                   | [C#]         | Web/MVC/SPA                           | 2,0        |
+| ASP.NET Core avec React.js et Redux         | [reactredux](#reactredux)       | [C#]         | Web/MVC/SPA                           | 2,0        |
 | Bibliothèque de classes Razor                          | [razorclasslib](#razorclasslib) | [C#]         | Web/Razor/Library/Bibliothèque de classes Razor | 2.1        |
 | API web ASP.NET Core                         | [WebAPI](#webapi)               | [C#], F#     | Web/WebAPI                            | 1.0        |
 | ASP.NET Core Service gRPC                    | [GRPC](#web-others)             | [C#]         | Web/gRPC                              | 3.0        |
 | fichier gitignore dotnet                        | `gitignore`                     |              | Config                                | 3.0        |
-| fichier global.json                             | [globaljson](#globaljson)       |              | Config                                | 2.0        |
+| fichier global.json                             | [globaljson](#globaljson)       |              | Config                                | 2,0        |
 | Configuration NuGet                                 | `nugetconfig`                   |              | Config                                | 1.0        |
 | Fichier manifeste de l’outil local dotnet              | `tool-manifest`                 |              | Config                                | 3.0        |
 | Configuration Web                                   | `webconfig`                     |              | Config                                | 1.0        |
@@ -108,7 +108,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 - **`-h|--help`**
 
-  Affiche l’aide pour la commande. Elle peut être appelée pour la `dotnet new` commande elle-même ou pour n’importe quel modèle. Par exemple, `dotnet new mvc --help`.
+  Affiche l’aide pour la commande. Elle peut être appelée pour la `dotnet new` commande elle-même ou pour n’importe quel modèle. Par exemple : `dotnet new mvc --help`.
 
 - **`-i|--install <PATH|NUGET_ID>`**
 
@@ -127,7 +127,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
   Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
 
   > [!NOTE]
-  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple, `dotnet new console -lang "F#"`.
+  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple : `dotnet new console -lang "F#"`.
 
 - **`-n|--name <OUTPUT_NAME>`**
 
@@ -210,7 +210,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a>WPF, wpflib, wpfcustomcontrollib, wpfusercontrollib
+### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a> WPF, wpflib, wpfcustomcontrollib, wpfusercontrollib
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -228,7 +228,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="winforms-winformslib"></a><a name="winforms"></a>WinForms, winformslib
+### <a name="winforms-winformslib"></a><a name="winforms"></a> WinForms, winformslib
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -242,7 +242,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="worker-grpc"></a><a name="web-others"></a>Worker, GRPC
+### <a name="worker-grpc"></a><a name="web-others"></a> Worker, GRPC
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -258,7 +258,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="mstest-xunit"></a><a name="test"></a>MSTest, xUnit
+### <a name="mstest-xunit"></a><a name="test"></a> MSTest, xUnit
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -318,7 +318,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="viewimports-proto"></a><a name="namespace"></a>viewimports, proto
+### <a name="viewimports-proto"></a><a name="namespace"></a> viewimports, proto
 
 - **`-na|--namespace <NAMESPACE_NAME>`**
 
@@ -425,7 +425,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="mvc-webapp"></a><a name="web-options"></a>MVC, WebApp
+### <a name="mvc-webapp"></a><a name="web-options"></a> MVC, WebApp
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 
@@ -515,7 +515,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="angular-react"></a><a name="spa"></a>angulaire, réaction
+### <a name="angular-react"></a><a name="spa"></a> angulaire, réaction
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 

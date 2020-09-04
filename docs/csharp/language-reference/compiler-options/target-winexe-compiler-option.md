@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -target compiler options [C#], /target:winexe
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
-ms.openlocfilehash: 8a1be07455b54b375106fef1fb480d7abd2f1ca4
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5f8717115464ec3d9798228d7d50a8f08b2db300
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124719"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466090"
 ---
 # <a name="-targetwinexe-c-compiler-options"></a>-target:winexe (Options du compilateur C#)
 L’option **-target : winexe** force le compilateur à créer un programme Windows exécutable (exe).  
@@ -26,7 +26,7 @@ L’option **-target : winexe** force le compilateur à créer un programme Win
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le fichier exécutable est créé avec l’extension .exe. Un programme Windows est un programme qui fournit une interface utilisateur à partir de la bibliothèque .NET Framework ou avec les API Windows.  
+ Le fichier exécutable est créé avec l’extension .exe. Un programme Windows est un programme qui fournit une interface utilisateur à partir de la bibliothèque .NET ou avec les API Windows.  
   
  Utilisez [-target:exe](./target-exe-compiler-option.md) pour créer une application console.  
   

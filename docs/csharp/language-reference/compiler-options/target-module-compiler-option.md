@@ -9,12 +9,12 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-ms.openlocfilehash: 2c592d2fe001bb0908a06a6eb3287a39040b8715
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 2074e170ab177c39fdf3954fa93ae4b666bf853d
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128450"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466051"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target:module (Options du compilateur C#)
 Cette option empêche le compilateur de générer un manifeste d’assembly.  
@@ -28,7 +28,7 @@ Cette option empêche le compilateur de générer un manifeste d’assembly.
 ## <a name="remarks"></a>Notes  
  Par défaut, le fichier de sortie créé en effectuant une compilation avec cette option porte l’extension .netmodule.  
   
- Un fichier ne disposant pas d’un manifeste d’assembly ne peut pas être chargé par le Common Language Runtime (CLR) .NET Framework. Cependant, un tel fichier peut être incorporé dans le manifeste d’un assembly au moyen de [-addmodule](./addmodule-compiler-option.md).  
+ Un fichier qui n’a pas de manifeste d’assembly ne peut pas être chargé par le Runtime .NET. Cependant, un tel fichier peut être incorporé dans le manifeste d’un assembly au moyen de [-addmodule](./addmodule-compiler-option.md).  
   
  Si plusieurs modules sont créés dans une seule compilation, les types [internal](../keywords/internal.md) d’un module sont accessibles à d’autres modules dans la compilation. Quand le code d’un module référence des types `internal` dans un autre module, les deux modules doivent être incorporés dans un manifeste d’assembly au moyen de **-addmodule**.  
   

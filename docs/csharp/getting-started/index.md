@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual C#, getting started
 - getting started, Visual C#
 ms.date: 04/05/2019
-ms.openlocfilehash: baa21908b85130f8a0dd992b10cdc95c6e42912e
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 769098134799800d45a31c22f4390734545ff6ff
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415908"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465245"
 ---
 # <a name="get-started-with-c"></a>Bien démarrer avec C\#
 
@@ -18,7 +18,7 @@ Cette section fournit des didacticiels courts et simples qui permettent de crée
 
 Les rubriques suivantes sont disponibles :
 
-- [Présentation du langage C# et du .NET Framework](introduction-to-the-csharp-language-and-the-net-framework.md)
+- [Présentation du langage C# et de .NET](introduction-to-the-csharp-language-and-the-net-framework.md)
 
      Fournit une vue d’ensemble du langage C# et de .NET.
 

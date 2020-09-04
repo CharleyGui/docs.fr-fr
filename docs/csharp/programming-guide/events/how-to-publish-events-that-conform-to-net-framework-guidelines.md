@@ -1,20 +1,20 @@
 ---
 title: Publier des événements conformes aux instructions .NET-Guide de programmation C#
-description: Découvrez comment publier des événements conformes aux instructions .NET. Tous les événements de la bibliothèque de classes .NET Framework sont basés sur le délégué EventHandler.
+description: Découvrez comment publier des événements conformes aux instructions .NET. Tous les événements de la bibliothèque de classes .NET sont basés sur le délégué EventHandler.
 ms.date: 05/26/2020
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-ms.openlocfilehash: 1b802e236026911b55bafcb3f48d487c43bba174
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 8cc8b0a9fdaeeb6ab6290630c5d78044c2696b9a
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302111"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466168"
 ---
 # <a name="how-to-publish-events-that-conform-to-net-guidelines-c-programming-guide"></a>Comment publier des événements conformes aux instructions .NET (Guide de programmation C#)
 
-La procédure suivante montre comment ajouter des événements qui suivent le modèle .NET standard à vos classes et structures. Tous les événements de la bibliothèque de classes .NET Framework sont basés sur le délégué <xref:System.EventHandler>, qui est défini comme suit :
+La procédure suivante montre comment ajouter des événements qui suivent le modèle .NET standard à vos classes et structures. Tous les événements de la bibliothèque de classes .NET sont basés sur le <xref:System.EventHandler> délégué, qui est défini comme suit :
 
 ```csharp
 public delegate void EventHandler(object sender, EventArgs e);

@@ -2,12 +2,12 @@
 title: Articles de guide pratique (Guide C#)
 description: Série de petits conseils et d’exemples de code spécifiques courts
 ms.date: 12/20/2017
-ms.openlocfilehash: 81ef8106add757cf3c83aa7dc130f5474b936461
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 9dd069ff767d65002b78c18b398b700a1f26ebfa
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794700"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465154"
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
@@ -43,7 +43,7 @@ Ces articles vous permettent d’utiliser des collections de données.
 
 - [Initialiser un dictionnaire avec un initialiseur de collection](../programming-guide/classes-and-structs/how-to-initialize-a-dictionary-with-a-collection-initializer.md).
 
-## <a name="working-with-strings"></a>Utilisation de chaînes
+## <a name="working-with-strings"></a>Utilisation des chaînes
 
 Les chaînes constituent le type de données fondamental utilisé pour afficher ou manipuler du texte. Ces articles présentent les pratiques courantes avec des chaînes.
 
@@ -94,7 +94,7 @@ Les événements offrent un mécanisme permettant de publier des notifications o
 
 - [S’abonner à des événements et s’en désabonner](../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 - [Implémenter des événements déclarés dans des interfaces](../programming-guide/events/how-to-implement-interface-events.md).
-- [Se conformer aux instructions du .NET Framework quand votre code publie des événements](../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).
+- [Se conformer aux instructions .net lorsque votre code publie des événements](../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).
 - [Déclencher des événements définis dans les classes de base de classes dérivées](../programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md).
 - [Implémenter des accesseurs d’événement personnalisés](../programming-guide/events/how-to-implement-custom-event-accessors.md).
 

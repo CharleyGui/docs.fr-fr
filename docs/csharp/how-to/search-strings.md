@@ -7,12 +7,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 17bf6e080542242d30791b70ffbf00b05f03a7b0
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: b6a2ab25efa64b2bbf33ea234dba07cdf9582e66
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473992"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465128"
 ---
 # <a name="how-to-search-strings"></a>Comment rechercher des chaînes
 
@@ -40,7 +40,7 @@ Les méthodes <xref:System.String.IndexOf%2A> et <xref:System.String.LastIndexOf
 
 La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> permet d’effectuer des recherches de chaînes. Ces recherches peuvent varier en complexité et aller de modèles simples à des modèles plus compliqués.
 
-L’exemple de code suivant recherche le mot « the » ou « their » dans une phrase, indépendamment de la casse. La méthode statique <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> effectue la recherche. Vous lui passez la chaîne à rechercher et un modèle de recherche. Dans ce cas, un troisième argument spécifie que la recherche est insensible à la casse. Pour plus d’informations, consultez <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
+L’exemple de code suivant recherche le mot « the » ou « their » dans une phrase, indépendamment de la casse. La méthode statique <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> effectue la recherche. Vous lui passez la chaîne à rechercher et un modèle de recherche. Dans ce cas, un troisième argument spécifie que la recherche est insensible à la casse. Pour plus d'informations, consultez <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
 
 Le modèle de recherche décrit le texte que vous recherchez. Le tableau suivant décrit chaque élément du modèle de recherche. (Le tableau ci-dessous utilise le seul `\` qui doit être placé `\\` dans une séquence d’échappement comme dans une chaîne C#).
 
@@ -79,6 +79,6 @@ Ce seul modèle de recherche correspond à de nombreuses chaînes valides. Les e
 - [Chaînes](../programming-guide/strings/index.md)
 - [LINQ et chaînes](../programming-guide/concepts/linq/linq-and-strings.md)
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
-- [.NET Framework des expressions régulières](../../standard/base-types/regular-expressions.md)
+- [Expressions régulières .NET](../../standard/base-types/regular-expressions.md)
 - [Langage des expressions régulières-aide-mémoire](../../standard/base-types/regular-expression-language-quick-reference.md)
 - [Bonnes pratiques pour l’utilisation de chaînes dans .NET](../../standard/base-types/best-practices-strings.md)

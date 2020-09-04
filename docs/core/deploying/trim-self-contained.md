@@ -4,12 +4,12 @@ description: Découvrez comment supprimer les applications autonomes pour rédui
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 7a4731e2cbaa3835e6aa6ba558dfa8cd03828e01
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 9c2994c98a2ebe6f45b056256c2bda28db017fbf
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053105"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465479"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Supprimer les exécutables et les déploiements autonomes
 
@@ -19,7 +19,7 @@ Le modèle Trim-self-contained Deployment est une version spécialisée du modè
 
 Toutefois, il existe un risque que l’analyse du temps de génération de l’application puisse provoquer des échecs lors de l’exécution, en raison de l’impossibilité d’analyser de manière fiable divers modèles de code problématiques (principalement centrés sur l’utilisation de la réflexion). Étant donné que la fiabilité ne peut pas être garantie, ce modèle de déploiement est proposé sous la forme d’une fonctionnalité en version préliminaire.
 
-Le moteur d’analyse de la durée de génération fournit des avertissements au développeur de modèles de code problemmatic pour détecter les autres codes requis. Le code peut être annoté avec des attributs pour indiquer au massicot les autres éléments à inclure. De nombreux modèles de réflexion peuvent être remplacés par la génération de code au moment de la génération à l’aide de [générateurs de source](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md).
+Le moteur d’analyse de la durée de génération fournit des avertissements au développeur de modèles de code qui sont problématiques pour détecter l’autre code requis. Le code peut être annoté avec des attributs pour indiquer au massicot les autres éléments à inclure. De nombreux modèles de réflexion peuvent être remplacés par la génération de code au moment de la génération à l’aide de [générateurs de source](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md).
 
 Le mode de découpage des applications est configuré avec le `TrimMode` paramètre. La valeur par défaut est `copyused` et regroupe les assemblys référencés avec l’application. La `link` valeur est utilisée avec les applications de Webassembly éblouissantes et supprime le code inutilisé dans les assemblys. Les avertissements d’analyse de suppression fournissent des informations sur les modèles de code où une analyse de dépendance complète n’était pas possible. Ces avertissements sont supprimés par défaut et peuvent être activés en affectant à l’indicateur la valeur `SuppressTrimAnalysisWarnings` `false` . Pour plus d’informations sur les options de suppression disponibles, consultez [options de suppression](trimming-options.md).
 
