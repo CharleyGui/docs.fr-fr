@@ -124,7 +124,7 @@ Au sein de la plage complète de points de code, il existe deux sous-plages :
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code supplémentaires.
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Supplementary. svg "alt-text =" BMP et les points de code supplémentaires " :::
+:::image type="content" source="media/character-encoding-introduction/bmp-and-supplementary.svg" alt-text="BMP et les points de code supplémentaires":::
 
 ## <a name="utf-16-code-units"></a>Unités de code UTF-16
 
@@ -138,7 +138,7 @@ La conversion de valeurs 2 16 bits en valeur 21 bits unique est facilitée par u
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code de substitution.
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Surrogate. svg "alt-text =" BMP et les points de code de substitution " :::
+:::image type="content" source="media/character-encoding-introduction/bmp-and-surrogate.svg" alt-text="BMP et les points de code de substitution":::
 
 Quand un point de code de *substitution étendu* ( `U+D800..U+DBFF` ) est immédiatement suivi d’un point de code de *substitution faible* ( `U+DC00..U+DFFF` ), la paire est interprétée comme un point de code supplémentaire à l’aide de la formule suivante :
 
@@ -184,7 +184,7 @@ Le terme [valeur scalaire Unicode](https://www.unicode.org/glossary/#unicode_sca
 
 Le diagramme suivant illustre les points de code de la valeur scalaire.
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/Scalar-values. svg "alt-text =" valeurs scalaires " :::
+:::image type="content" source="media/character-encoding-introduction/scalar-values.svg" alt-text="valeurs scalaires":::
 
 ### <a name="the-no-locrune-type-as-a-scalar-value"></a>RuneType en tant que valeur scalaire
 
