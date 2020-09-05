@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 02a15f6b9c02002b60c568b9e1d871af49744092
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 004e2d1883b631e88ab5e164b1120c3b081b7041
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622051"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497565"
 ---
 ### <a name="concurrentqueuelttgttrypeek-can-return-an-erroneous-null-via-its-out-parameter"></a>ConcurrentQueue&lt;T&gt;.TryPeek peut retourner une valeur Null erronée via son paramètre de sortie
 
@@ -16,12 +16,20 @@ Dans certains scénarios multithreads, <xref:System.Collections.Concurrent.Concu
 
 Ce problème a été résolu dans le .NET Framework 4.5.1. Pour résoudre votre problème, effectuez une mise niveau vers le .NET Framework 4.5.1.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Majeure|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Collections.Concurrent.ConcurrentQueue%601.TryPeek(%600@)?displayProperty=nameWithType></li></ul>|
+- <xref:System.Collections.Concurrent.ConcurrentQueue%601.TryPeek(%600@)?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- ``M:System.Collections.Concurrent.ConcurrentQueue`1.TryPeek(`0@)``
+
+-->

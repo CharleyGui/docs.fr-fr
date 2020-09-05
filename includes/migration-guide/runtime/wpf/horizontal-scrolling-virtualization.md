@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 14585b6de3ce02884f8be789930fc8610f73ba7d
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 2ae17e0823ec2fa064c948d9ea7bd19cbd34cb6a
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621264"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496344"
 ---
 ### <a name="horizontal-scrolling-and-virtualization"></a>Défilement horizontal et virtualisation
 
@@ -16,12 +16,20 @@ Cette modification s’applique à un <xref:System.Windows.Controls.ItemsControl
 
 Une application qui utilise une valeur prédite pour <xref:System.Windows.Controls.Primitives.IScrollInfo.HorizontalOffset?displayProperty=fullName> doit être changée afin de récupérer la valeur réelle (et la valeur de <xref:System.Windows.Controls.Primitives.IScrollInfo.ExtentWidth?displayProperty=fullName>) après un défilement horizontal susceptible de modifier <xref:System.Windows.Controls.Primitives.IScrollInfo.ExtentWidth?displayProperty=fullName> en raison de la dévirtualisation.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4.6.2|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Windows.Controls.Primitives.IScrollInfo?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.Primitives.IScrollInfo?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Windows.Controls.Primitives.IScrollInfo`
+
+-->

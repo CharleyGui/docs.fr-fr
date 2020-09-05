@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5e2e8d1ec5d698d1c1649c2a0a1b4b77dbdf4022
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e42bce91afab68e509cb35a8992fa3ca2f096872
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621276"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496154"
 ---
 ### <a name="wpf-printing-stack-update"></a>Mise à jour de la pile d’impression WPF
 
@@ -16,8 +16,20 @@ Les API d’impression de WPF utilisant <xref:System.Printing.PrintQueue?display
 
 Pour utiliser l’ancienne pile dans Windows 10 Creators Update, définissez la valeur REG_DWORD <code>UseXpsOMPrinting</code> de la clé de Registre <code>HKEY_CURRENT_USER\Software\Microsoft\.NETFramework\Windows Presentation Foundation\Printing</code> sur <code>1</code>.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,7|
 |Type|Runtime|
+
+#### <a name="affected-apis"></a>API affectées
+
+Non détectable via l’analyse des API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

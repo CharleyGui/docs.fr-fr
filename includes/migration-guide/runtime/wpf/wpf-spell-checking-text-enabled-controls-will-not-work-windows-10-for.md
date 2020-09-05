@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1d2e4a058008676c6ea85becebd4bb9220569ef3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 6d7f998cda6326e1f584713576a0aa27b3a68655
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621360"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497485"
 ---
 ### <a name="wpf-spell-checking-in-text-enabled-controls-will-not-work-in-windows-10-for-languages-not-in-the-oss-input-language-list"></a>La correction orthographique WPF dans les contrôles acceptant du texte ne fonctionne pas dans Windows 10 pour les langues qui ne figurent pas dans la liste des langues d’entrée du système d’exploitation
 
@@ -16,8 +16,20 @@ Lors de l’exécution sur Windows 10, le vérificateur orthographique peut ne p
 
 Pour que cela fonctionne dans Windows 10, n’oubliez pas que la langue ou le texte à vérifier doit être ajouté comme langue d’entrée pour la vérification orthographique.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
-|Version|4.6|
+|Version|4,6|
 |Type|Runtime|
+
+#### <a name="affected-apis"></a>API affectées
+
+Non détectable via l’analyse des API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

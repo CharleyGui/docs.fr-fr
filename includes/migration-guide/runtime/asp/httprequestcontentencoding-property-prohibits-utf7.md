@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7d3568fef933758c40e47cefa86c24d31d4119fc
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: cf34c5df1badcfd86d8a07bafdf1b759234712e0
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619919"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497845"
 ---
 ### <a name="httprequestcontentencoding-property-prohibits-utf7"></a>La propriété HttpRequest.ContentEncoding interdit UTF7
 
@@ -16,12 +16,20 @@ ms.locfileid: "85619919"
 
 Dans l’idéal, les applications doivent être mises à jour pour ne pas utiliser l’encodage UTF-7 dans les <xref:System.Web.HttpRequest?displayProperty=fullName>. Vous pouvez aussi restaurer le comportement hérité à l’aide de l’attribut <code>aspnet:AllowUtf7RequestContentEncoding</code> de l’élément [appSettings](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md).
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Web.HttpRequest.ContentEncoding?displayProperty=nameWithType></li></ul>|
+- <xref:System.Web.HttpRequest.ContentEncoding?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `P:System.Web.HttpRequest.ContentEncoding`
+
+-->

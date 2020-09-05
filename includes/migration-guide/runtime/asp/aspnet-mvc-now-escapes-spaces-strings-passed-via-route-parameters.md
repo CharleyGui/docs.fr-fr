@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c53fe57f3278741a927a2f00b11af6e26dafce66
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: afbf34710c75d0f0586ddfdb2e7937d8d76d5399
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619926"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497572"
 ---
 ### <a name="aspnet-mvc-now-escapes-spaces-in-strings-passed-in-via-route-parameters"></a>ASP.NET MVC place désormais dans une séquence d’échappement les espaces dans les chaînes passées via des paramètres d’itinéraire
 
@@ -16,12 +16,20 @@ Pour des raisons de conformité à la norme RFC 2396, les espaces situés dans
 
 Le code doit être mis à jour pour ne plus échapper les paramètres de chaîne à partir d’un itinéraire. Si l’URI d’origine est nécessaire, vous pouvez y accéder avec l’API <xref:System.Net.HttpWebRequest.RequestUri>.OriginalString.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4.5.2|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Web.Mvc.RouteAttribute.%23ctor(System.String)></li></ul>|
+- <xref:System.Web.Mvc.RouteAttribute.%23ctor(System.String)>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Web.Mvc.RouteAttribute.#ctor(System.String)`
+
+-->

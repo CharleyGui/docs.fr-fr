@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 29c66edfeb1690199aac39b9c3076d161b2075d4
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 17fde81f9734966692c9f41d2213f8682dedea46
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621347"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496902"
 ---
 ### <a name="contractinvariant-or-contractrequirestexception-do-not-consider-stringisnullorempty-to-be-pure"></a>Contract.Invariant ou Contract.Requires\<TException> ne considèrent pas String.IsNullOrEmpty comme pure
 
@@ -16,12 +16,22 @@ Pour les applications qui ciblent le .NET Framework 4.6.1, si le contrat d’inv
 
 Ce comportement est abordé dans le [problème 339](https://github.com/Microsoft/CodeContracts/issues/339), sur le site GitHub. Pour éviter cet avertissement, vous pouvez télécharger et compiler une version mise à jour du code source pour l’outil Contrats de code sur le site [GitHub](https://github.com/Microsoft/CodeContracts/blob/master/README.md). Des informations sur le téléchargement se trouvent au bas de la page.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4.6.1|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Diagnostics.Contracts.Contract.Invariant(System.Boolean)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Contracts.Contract.Requires(System.Boolean)?displayProperty=nameWithType></li></ul>|
+- <xref:System.Diagnostics.Contracts.Contract.Invariant(System.Boolean)?displayProperty=nameWithType>
+- <xref:System.Diagnostics.Contracts.Contract.Requires(System.Boolean)?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Diagnostics.Contracts.Contract.Invariant(System.Boolean)`
+- `M:System.Diagnostics.Contracts.Contract.Requires(System.Boolean)`
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a5c6dda0c1d68468cd95f67716709dd059948c80
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 6a79f04af44f78313c4d5bb5c37dfad252d3024b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621336"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497030"
 ---
 ### <a name="product-versioning-changes-in-the-net-framework-46-and-later-versions"></a>Modifications de la gestion de versions de produit dans .NET Framework 4.6 et versions ultérieures
 
@@ -16,8 +16,20 @@ La gestion des versions de produit a changé depuis les mises en production pré
 
 En général, les applications doivent s'appuyer sur les techniques recommandées pour la détection d'éléments tels que la version de runtime du .NET Framework et le répertoire d'installation :<ul><li>Pour détecter la version de runtime du .NET Framework, consultez [Guide pratique pour déterminer les versions .NET Framework installées](~/docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md).</li><li>Pour déterminer le chemin d'installation du .NET Framework, utilisez la valeur de l'entrée <code>InstallPath</code> dans la clé <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full</code>.</li></ul> <blockquote> [!IMPORTANT] Le nom de la sous-clé est <code>NET Framework Setup</code>, et non <code>.NET Framework Setup</code>.</blockquote> <ul><li>Pour déterminer le chemin d'accès du répertoire du Common Language Runtime du .NET Framework, appelez la méthode <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory?displayProperty=nameWithType>.</li><li>Pour obtenir la version du CLR, appelez la méthode <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion?displayProperty=nameWithType>. Pour .NET Framework 4 et ses versions intermédiaires (.NET Framework 4.5, 4.5.1, 4.5.2 ainsi que .NET Framework 4.6, 4.6.1, 4.6.2, 4.7 et 4.7.1), elle retourne la chaîne v4.0.30319.</li></ul>
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
-|Version|4.6|
+|Version|4,6|
 |Type|Runtime|
+
+#### <a name="affected-apis"></a>API affectées
+
+Non détectable via l’analyse des API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 13d3799aeede86b01aa81ce1cd69b3c4c22311ca
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 9d960774161fc44810f90ca30f56eb98f98de3ff
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620479"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497595"
 ---
 ### <a name="wpf-textbox-defaults-to-undo-limit-of-100"></a>Le nombre maximal d’annulations d’opérations pour une zone de texte WPF est de 100 par défaut
 
@@ -16,12 +16,20 @@ Dans .NET Framework 4.5, le nombre maximal d’annulations d’opérations pour
 
 Si ce nombre n’est pas suffisant, vous pouvez définir explicitement cette valeur avec <xref:System.Windows.Controls.Primitives.TextBoxBase.UndoLimit>
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Windows.Controls.TextBox`
+
+-->

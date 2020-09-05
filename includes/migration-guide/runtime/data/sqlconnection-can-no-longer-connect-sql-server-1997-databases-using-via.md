@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 241184d61d718fedfea396260e739d2dbc05c305
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8dc947f584d3433f0638a72f4db86ac2680c8dbf
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620003"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497417"
 ---
 ### <a name="sqlconnection-can-no-longer-connect-to-sql-server-1997-or-databases-using-the-via-adapter"></a>SqlConnection ne peut plus se connecter à SQL Server 1997 ou des bases de données à l’aide de l’adaptateur VIA
 
@@ -16,12 +16,22 @@ Les connexions aux bases de données SQL Server à l’aide du [protocole via (V
 
 Comme le protocole VIA est déprécié, un autre protocole doit être utilisé pour se connecter aux bases de données SQL. Le protocole utilisé le plus courant est TCP/IP. Pour plus d’informations sur la connexion TCP/IP, voir [Activer le protocole TCP/IP pour une instance de base de données](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb909712(v=vs.90)). Si la base de données est accessible uniquement à partir d’un intranet, le protocole des canaux nommés peut offrir de meilleures performances en cas de réseau lent.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Data.SqlClient.SqlConnection.%23ctor(System.String)></li><li><xref:System.Data.SqlClient.SqlConnection.%23ctor(System.String,System.Data.SqlClient.SqlCredential)></li></ul>|
+- <xref:System.Data.SqlClient.SqlConnection.%23ctor(System.String)>
+- <xref:System.Data.SqlClient.SqlConnection.%23ctor(System.String,System.Data.SqlClient.SqlCredential)>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Data.SqlClient.SqlConnection.#ctor(System.String)`
+- `M:System.Data.SqlClient.SqlConnection.#ctor(System.String,System.Data.SqlClient.SqlCredential)`
+
+-->

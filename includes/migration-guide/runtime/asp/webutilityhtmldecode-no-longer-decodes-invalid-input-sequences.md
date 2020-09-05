@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0b7d6d9543035ab0a8fdda675ae71572ace12a1f
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: ef3114a4eb9f62030c3ec36d3b463d07ccd59f6d
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619932"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496964"
 ---
 ### <a name="webutilityhtmldecode-no-longer-decodes-invalid-input-sequences"></a>WebUtility.HtmlDecode ne décode plus les séquences d’entrée non valides
 
@@ -16,7 +16,7 @@ Par défaut, les méthodes de décodage ne décodent plus une séquence d'entré
 
 Le changement lié à la sortie du décodeur doit importer uniquement si vous stockez des données binaires à la place de données UTF-16 dans les chaînes. Pour contrôler explicitement ce comportement, affectez à l’attribut <code>aspnet:AllowRelaxedUnicodeDecoding</code> de l’élément [appSettings](~/docs/framework/configure-apps/file-schema/appsettings/index.md) la valeur <code>true</code> pour activer le comportement hérité ou la valeur <code>false</code> pour activer le comportement actuel.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4,5|
@@ -24,4 +24,16 @@ Le changement lié à la sortie du décodeur doit importer uniquement si vous st
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Net.WebUtility.HtmlDecode(System.String)?displayProperty=nameWithType></li><li><xref:System.Net.WebUtility.HtmlDecode(System.String,System.IO.TextWriter)?displayProperty=nameWithType></li><li><xref:System.Net.WebUtility.UrlDecode(System.String)?displayProperty=nameWithType></li></ul>|
+- <xref:System.Net.WebUtility.HtmlDecode(System.String)?displayProperty=nameWithType>
+- <xref:System.Net.WebUtility.HtmlDecode(System.String,System.IO.TextWriter)?displayProperty=nameWithType>
+- <xref:System.Net.WebUtility.UrlDecode(System.String)?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Net.WebUtility.HtmlDecode(System.String)`
+- `M:System.Net.WebUtility.HtmlDecode(System.String,System.IO.TextWriter)`
+- `M:System.Net.WebUtility.UrlDecode(System.String)`
+
+-->

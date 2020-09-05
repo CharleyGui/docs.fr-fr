@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0470cefc05fb5da6a6195ee0a96f04feef01fd10
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a61005e317020c47a283dae292236624ec6057ce
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620431"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497781"
 ---
 ### <a name="flowdocument-may-show-an-extra-line-of-text"></a>FlowDocument peut afficher une ligne de texte supplémentaire
 
@@ -16,12 +16,28 @@ Dans certains cas, un élément <xref:System.Windows.Documents.FlowDocument> aff
 
 Dans certains cas, la diminution d’une unité de la valeur de la propriété PageHeight pour l’élément d’un affichage peut rétablir le nombre précédent de lignes affichées.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Windows.Documents.FlowDocument.%23ctor></li><li><xref:System.Windows.Documents.FlowDocument.%23ctor(System.Windows.Documents.Block)></li><li><xref:System.Windows.Controls.FlowDocumentReader.%23ctor></li><li><xref:System.Windows.Controls.FlowDocumentPageViewer.%23ctor></li><li><xref:System.Windows.Controls.Primitives.DocumentPageView.%23ctor></li></ul>|
+- <xref:System.Windows.Documents.FlowDocument.%23ctor>
+- <xref:System.Windows.Documents.FlowDocument.%23ctor(System.Windows.Documents.Block)>
+- <xref:System.Windows.Controls.FlowDocumentReader.%23ctor>
+- <xref:System.Windows.Controls.FlowDocumentPageViewer.%23ctor>
+- <xref:System.Windows.Controls.Primitives.DocumentPageView.%23ctor>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Windows.Documents.FlowDocument.#ctor`
+- `M:System.Windows.Documents.FlowDocument.#ctor(System.Windows.Documents.Block)`
+- `M:System.Windows.Controls.FlowDocumentReader.#ctor`
+- `M:System.Windows.Controls.FlowDocumentPageViewer.#ctor`
+- `M:System.Windows.Controls.Primitives.DocumentPageView.#ctor`
+
+-->

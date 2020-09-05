@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 39d609c955596354d1af28b4ed19d367dab0462b
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a84d72813a46d6bb39f4710b35d2c9dc859e30ef
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619931"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497874"
 ---
 ### <a name="pageloadcomplete-event-no-longer-causes-systemwebuiwebcontrolsentitydatasource-control-to-invoke-data-binding"></a>L’événement Page.LoadComplete n’entraîne plus l’appel d’une liaison de données par le contrôle System.Web.UI.WebControls.EntityDataSource
 
@@ -16,8 +16,20 @@ L'événement <xref:System.Web.UI.Page.LoadComplete> ne force plus le contrôle 
 
 Si une liaison de données est nécessaire, appelez manuellement la méthode databind dans un événement situé plus haut dans la publication (postback).
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,5|
 |Type|Runtime|
+
+#### <a name="affected-apis"></a>API affectées
+
+Non détectable via l’analyse des API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

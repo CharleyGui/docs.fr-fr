@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a007022bf32ffe76861f6f9016a7edace17b0f61
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 19be8a7755d9b238ab6507eaa73319bddf39faa3
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620045"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497347"
 ---
 ### <a name="data-written-to-printsystemjobinfojobstream-must-be-in-xps-format"></a>Les données écrites dans PrintSystemJobInfo.JobStream doivent être au format XPS
 
@@ -16,12 +16,20 @@ La propriété <xref:System.Printing.PrintSystemJobInfo.JobStream> expose le flu
 
 Pour sortir le contenu d’impression, vous pouvez procéder de l’une des manières suivantes :<ul><li>Utilisez la classe <xref:System.Windows.Xps.XpsDocumentWriter> pour sortir le contenu d’impression. Il s’agit de l’alternative recommandée.</li><li>Vérifiez que les données envoyées au flux retourné par la propriété <xref:System.Printing.PrintSystemJobInfo.JobStream> sont au format XPS en tant que flux de package.</li></ul>
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Printing.PrintSystemJobInfo.JobStream?displayProperty=nameWithType></li></ul>|
+- <xref:System.Printing.PrintSystemJobInfo.JobStream?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `P:System.Printing.PrintSystemJobInfo.JobStream`
+
+-->

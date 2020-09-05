@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3aafb14b65f7c0f9e5d77927809547f9d4b96e1c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 26facb645de175d7ef0432394fc2b84f59e8437d
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620052"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496515"
 ---
 ### <a name="error-codes-for-maxrequestlength-or-maxreceivedmessagesize-are-different"></a>Les codes d’erreur pour maxRequestLength ou maxReceivedMessageSize sont différents
 
@@ -16,8 +16,20 @@ Les messages dans les services web WCF hébergés dans les services IIS (Interne
 
 Cette modification facilite le débogage dans les cas où la longueur du message dépasse les limites autorisées par ASP.NET ou WCF. Vous devez modifier tout code qui effectue un traitement en fonction d’un code d’état HTTP 400.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,5|
 |Type|Runtime|
+
+#### <a name="affected-apis"></a>API affectées
+
+Non détectable via l’analyse des API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

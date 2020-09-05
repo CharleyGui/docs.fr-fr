@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c103dff320ae30d02c12ea5c585a47b589da8237
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: eb5c032a020799fa19cc0a8cfaabb56e01417ff4
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621311"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496706"
 ---
 ### <a name="contentdisposition-datetimes-returns-slightly-different-string"></a>Les DateTime ContentDisposition retournent une chaîne légèrement différente
 
@@ -16,12 +16,22 @@ ms.locfileid: "85621311"
 
 Ne vous attendez pas à ce que les représentations sous forme de chaîne des ContentDisposition issues de différentes versions du .NET Framework puissent être comparées correctement. Reconvertissez les chaînes en ContentDisposition, si possible, avant d’effectuer une comparaison.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
-|Version|4.6|
-|Type|Runtime
+|Version|4,6|
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Net.Mime.ContentDisposition.ToString?displayProperty=nameWithType></li><li><xref:System.Net.Mime.ContentDisposition.GetHashCode?displayProperty=nameWithType></li></ul>|
+- <xref:System.Net.Mime.ContentDisposition.ToString?displayProperty=nameWithType>
+- <xref:System.Net.Mime.ContentDisposition.GetHashCode?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Net.Mime.ContentDisposition.ToString`
+- `M:System.Net.Mime.ContentDisposition.GetHashCode`
+
+-->

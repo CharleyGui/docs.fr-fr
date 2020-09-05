@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a3ba42868577ac20ea2e082f90fc4973a1bfe108
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: d6405573e476ce18513938b500041adefbeeef1b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622350"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497881"
 ---
 ### <a name="ribbongroup-background-is-set-to-transparent-in-localized-builds"></a>L’arrière-plan de RibbonGroup est défini sur Transparent dans les versions localisées
 
@@ -16,8 +16,20 @@ L’arrière-plan de <xref:System.Windows.Controls.Ribbon.RibbonGroup?displayPro
 
 Mettre à niveau vers .NET Framework 4.7
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4.6.2|
 |Type|Runtime|
+
+#### <a name="affected-apis"></a>API affectées
+
+Non détectable via l’analyse des API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

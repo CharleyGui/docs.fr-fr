@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fbf3c0c8f1d11f9f5997a4d1027242c4710c7107
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: d23d7821e19b9d7f2db13a6bfdf868a8414cf721
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621790"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497434"
 ---
 ### <a name="item-scrolling-a-flat-list-with-items-of-different-pixel-height"></a>Défilement des éléments d’une liste plate avec des éléments de différentes hauteurs en pixels
 
@@ -16,12 +16,20 @@ Quand un <xref:System.Windows.Controls.ItemsControl?displayProperty=fullName> af
 
 Si l’itération se produit dans .NET Framework 4.6.1 mais pas dans les versions antérieures, c’est-à-dire si <xref:System.Windows.Controls.ItemsControl?displayProperty=fullName> effectue le défilement d’éléments d’une liste plate comportant des éléments avec des hauteurs en pixels différentes, vous avez deux solutions :<ol><li>Installer .NET Framework 4.6.2</li><li>Installer le correctif HR 1605 pour .NET Framework 4.6.1</li></ol>
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4.6.1|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Windows.Controls.VirtualizingStackPanel?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.VirtualizingStackPanel?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Windows.Controls.VirtualizingStackPanel`
+
+-->

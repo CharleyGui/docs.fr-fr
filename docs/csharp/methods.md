@@ -4,12 +4,12 @@ description: Vue d’ensemble des méthodes, des paramètres de méthode et des 
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 8c33bcb9dd4052589222c2cb1b375d94d6792ba2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 879c553f8df560a3e2f3dccdbbf0d7e8a05c50cd
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810571"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495536"
 ---
 # <a name="methods-in-c"></a>Méthodes dans (C#)
 
@@ -24,10 +24,10 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 
 Les méthodes sont déclarées dans une `class` ou une `struct` en spécifiant :
 
-- Un niveau d’accès facultatif, comme `public` ou `private`. La valeur par défaut est `private`.
+- Un niveau d’accès facultatif, comme `public` ou `private`. Par défaut, il s’agit de `private`.
 - Des modificateurs facultatifs, comme `abstract` ou `sealed`.
 - La valeur de retour, ou `void` si la méthode n’en a pas.
-- Le nom de la méthode.
+- Nom de la méthode.
 - Des paramètres de méthodes. Les paramètres de méthode sont placés entre parenthèses et séparés par des virgules. Des parenthèses vides indiquent que la méthode ne requiert aucun paramètre.
 
 Ces parties forment ensemble la signature de la méthode.
@@ -61,7 +61,7 @@ Vous pouvez également utiliser des *arguments nommés* au lieu d’arguments po
 
 [!code-csharp[csSnippets.Methods#45](../../samples/snippets/csharp/concepts/methods/named1.cs#45)]
 
-Vous pouvez appeler une méthode en utilisant à la fois des arguments positionnels et des arguments nommés. Cependant, un argument positionnel ne peut pas suivre un argument nommé. L’exemple suivant appelle la méthode `TestMotorcycle.Drive` de l’exemple précédent en utilisant un argument positionnel et un argument nommé.
+Vous pouvez appeler une méthode en utilisant à la fois des arguments positionnels et des arguments nommés. Toutefois, les arguments positionnels peuvent uniquement suivre des arguments nommés lorsque les arguments nommés sont dans les positions appropriées. L’exemple suivant appelle la méthode `TestMotorcycle.Drive` de l’exemple précédent en utilisant un argument positionnel et un argument nommé.
 
 [!code-csharp[csSnippets.Methods#46](../../samples/snippets/csharp/concepts/methods/named2.cs#46)]
 
@@ -292,4 +292,4 @@ Pour plus d’informations, consultez [itérateurs](programming-guide/concepts/i
 - [à](language-reference/keywords/out-parameter-modifier.md)
 - [ref](language-reference/keywords/ref.md)
 - [in](language-reference/keywords/in-parameter-modifier.md)
-- [Passer des paramètres](programming-guide/classes-and-structs/passing-parameters.md)
+- [Passage de paramètres](programming-guide/classes-and-structs/passing-parameters.md)

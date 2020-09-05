@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ad953a1562db407c04d7860c60eb5964fe6fe2ca
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 2c44c2e1658f8de556d3f7222de3fa6d4594163a
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620039"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497147"
 ---
 ### <a name="deserialization-of-mailmessage-objects-serialized-under-the-net-framework-45-may-fail"></a>La désérialisation des objets MailMessage sérialisés sous .NET Framework 4.5 peut échouer
 
@@ -16,12 +16,20 @@ ms.locfileid: "85620039"
 
 Vérifiez que votre code assure la gestion des exceptions lors de la désérialisation d’un objet <xref:System.Web.Mail.MailMessage>.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Web.Mail.MailMessage?displayProperty=nameWithType></li></ul>|
+- <xref:System.Web.Mail.MailMessage?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Web.Mail.MailMessage`
+
+-->

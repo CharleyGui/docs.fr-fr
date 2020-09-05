@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: af8cb9435be078351e3430dc8ded3f7cac377948
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e9f769af6d85403c2a6f085cbc3462cf549adae9
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620500"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497707"
 ---
 ### <a name="wpf-treeviewitem-must-be-used-within-a-treeview"></a>Les éléments TreeViewItem WPF doivent être utilisés dans un contrôle TreeView
 
@@ -16,8 +16,20 @@ Une modification a été introduite dans 4.5, qui limite l’utilisation des él
 
 Un correctif sera mis à disposition pour résoudre ce problème.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4,5|
 |Type|Runtime|
+
+#### <a name="affected-apis"></a>API affectées
+
+Non détectable via l’analyse des API.
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: dd7d3e445772e4b5ec148576ccd1374d56e251bd
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: f61cf21f9f30662cc8e383bb3aeb5c642f1665b8
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614526"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497072"
 ---
 ### <a name="deadlock-may-result-when-using-reentrant-services"></a>Un blocage peut se produire lors de l’utilisation de services réentrants
 
@@ -20,7 +20,7 @@ Un blocage peut survenir dans un service réentrant, ce qui limite les instances
 
 Pour résoudre ce problème, vous pouvez effectuer l’opération suivante :
 
-- Définissez le mode d’accès concurrentiel du service sur <xref:System.ServiceModel.ConcurrencyMode.Single?displayProperty=nameWithType> ou sur &lt;System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType&gt;. Par exemple :
+- Définissez le mode d’accès concurrentiel du service sur <xref:System.ServiceModel.ConcurrencyMode.Single?displayProperty=nameWithType> ou <xref:System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType> . Par exemple :
 
 ```csharp
 [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
@@ -36,7 +36,7 @@ Pour résoudre ce problème, vous pouvez effectuer l’opération suivante :
 
 La valeur de `Switch.System.ServiceModel.DisableOperationContextAsyncFlow` ne doit jamais être définie sur `false` pour les services réentrants.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   | Secondaire       |
 | Version | 4.6.2       |

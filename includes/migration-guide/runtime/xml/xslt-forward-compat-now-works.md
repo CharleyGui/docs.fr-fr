@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e3b9711ac66901d69838de4c9f309d086b06fd4d
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8c8477ae3719cfcc2060459ba85bcc9e76f11c41
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620515"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497769"
 ---
 ### <a name="xslt-forward-compat-now-works"></a>La compatibilité ascendante de XSLT fonctionne désormais
 
@@ -16,12 +16,20 @@ Dans .NET Framework 4, la compatibilité ascendante de XSLT 1.0 avait les probl�
 
 La plupart des applications ne devraient pas être affectées, mais les données sont triées différemment dans certains cas maintenant que xsl:sort est respecté. Si <code>xsl:sort</code> est utilisé dans des feuilles de style 1.1, vérifiez que les applications ne dépendaient pas de l’ordre non trié des données. Si des applications s’appuient sur le comportement de tri de la version 4.0, supprimez <code>xsl:sort</code> de la feuille de style.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=nameWithType></li></ul>|
+- <xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Xml.Xsl.XslCompiledTransform`
+
+-->

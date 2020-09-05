@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3e8601ba76dfb05e3d70b3af7440bd7e228768d0
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1047f4028697a73741470d1aac8b3aeed37be217
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621063"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496833"
 ---
 ### <a name="allow-unicode-in-uris-that-resemble-unc-shares"></a>Autoriser les caractères Unicode dans les URI qui ressemblent à des partages UNC
 
@@ -16,12 +16,20 @@ Dans <xref:System.Uri?displayProperty=fullName>, la construction d’un URI de f
 
 Les applications qui utilisent des URI contenant systématiquement des caractères Unicode sont susceptibles de suivre ce comportement pour interdire les références à des partages UNC. Ces applications doivent utiliser <xref:System.Uri.IsUnc> à la place.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4.7.2|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Uri?displayProperty=nameWithType></li></ul>|
+- <xref:System.Uri?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Uri`
+
+-->

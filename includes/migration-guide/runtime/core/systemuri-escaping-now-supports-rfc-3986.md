@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1d7dc808d5b514acc582675d6ccdbd5778314624
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e7001fcfdf88fd9e710fbb702f2ed39d63b1e080
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619991"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497703"
 ---
 ### <a name="systemuri-escaping-now-supports-rfc-3986"></a>L’échappement de System.Uri prend maintenant en charge la norme RFC 3986
 
@@ -16,12 +16,24 @@ L’échappement d’URI a été modifié dans NET Framework 4.5 de manière à 
 
 <ul><li>Mettez à jour les applications pour qu’elles ne comptent pas sur <xref:System.Uri.UnescapeDataString(System.String)?displayProperty=fullName> pour lever une exception en cas de séquence d’échappement non valide. Ces séquences sont à présent directement détectées.</li><li>Il est également possible que les URI avec et sans séquence d’échappement, ainsi que les chaînes de données, varient entre les versions 4.0 et 4.5 du .NET Framework. De plus, ils ne doivent pas être comparés directement entre différentes versions de .NET. Ils doivent être analysés et normalisés dans une seule version du .NET avant de faire l’objet d’une comparaison.</li></ul>
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Uri.EscapeDataString(System.String)?displayProperty=nameWithType></li><li><xref:System.Uri.EscapeUriString(System.String)?displayProperty=nameWithType></li><li><xref:System.Uri.UnescapeDataString(System.String)?displayProperty=nameWithType></li></ul>|
+- <xref:System.Uri.EscapeDataString(System.String)?displayProperty=nameWithType>
+- <xref:System.Uri.EscapeUriString(System.String)?displayProperty=nameWithType>
+- <xref:System.Uri.UnescapeDataString(System.String)?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Uri.EscapeDataString(System.String)`
+- `M:System.Uri.EscapeUriString(System.String)`
+- `M:System.Uri.UnescapeDataString(System.String)`
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b2fcacdb02c411c4dcb12051bf0c6759faccdea2
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: fccf349517133245ec85ae3c25cedbfb27a7dd8b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620064"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496448"
 ---
 ### <a name="the-replace-method-in-odata-urls-is-disabled-by-default"></a>La méthode Replace est désactivée par défaut dans les URL OData
 
@@ -16,12 +16,20 @@ ms.locfileid: "85620064"
 
 Si la méthode Replace est nécessaire (ce qui est rare), elle peut être réactivée via les paramètres de configuration (<xref:System.Data.Services.Configuration.DataServicesFeaturesSection.ReplaceFunction?displayProperty=fullName>). Toutefois, l’activation d’une méthode Replace peut créer des failles de sécurité et ne doit donc être utilisée qu’après un examen minutieux.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
 |Version|4,5|
-|Type|Runtime
+|Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées
 
--<xref:System.Data.Services.DataService%601?displayProperty=nameWithType></li></ul>|
+- <xref:System.Data.Services.DataService%601?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- ``T:System.Data.Services.DataService`1``
+
+-->

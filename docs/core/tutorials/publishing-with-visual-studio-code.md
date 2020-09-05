@@ -2,12 +2,12 @@
 title: Publier une application console .NET Core à l’aide de Visual Studio Code
 description: La publication crée l’ensemble des fichiers nécessaires à l’exécution d’une application .NET Core.
 ms.date: 07/04/2020
-ms.openlocfilehash: a84e66126806e2ab45c14527df1b931fa9980468
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 79c69546b79de3d702fb4bb6550e615d8d59fa74
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867644"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495523"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : publier une application console .NET Core à l’aide de Visual Studio Code
 
@@ -40,13 +40,12 @@ Le CLI .NET Core est utilisé pour publier l’application. vous pouvez donc sui
    La sortie de commande ressemble à l’exemple suivant :
 
    ```output
-   Microsoft (R) Build Engine version 16.6.0+5ff7b0c9e for .NET Core
+   Microsoft (R) Build Engine version 16.7.0+b89cb5fde for .NET
    Copyright (C) Microsoft Corporation. All rights reserved.
-
-   Determining projects to restore...
-   All projects are up-to-date for restore.
-   HelloWorld -> C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\HelloWorld.dll
-   HelloWorld -> C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\publish\
+     Determining projects to restore...
+     All projects are up-to-date for restore.
+     HelloWorld -> C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\HelloWorld.dll
+     HelloWorld -> C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\publish\
    ```
 
 ## <a name="inspect-the-files"></a>Inspecter les fichiers
@@ -103,7 +102,7 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
    1. Entrez un nom en réponse à l’invite, puis appuyez sur n’importe quelle touche pour quitter.
 
-## <a name="additional-resources"></a>Ressources complémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Déploiement d’applications .NET Core](../deploying/index.md)
 

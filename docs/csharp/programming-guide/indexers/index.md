@@ -8,12 +8,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 07e0ae4294373817e10bb79920c73ec1e275d169
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: ea95eef7bb9ba232e4d59e3f833b82e98398fc33
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87303112"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495302"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexeurs (Guide de programmation C#)
 
@@ -34,7 +34,7 @@ Il est courant pour l’accesseur get ou set d’un indexeur d’être constitu�
 
 Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n’est pas utilisé.
 
-À partir de C# 7.0, l’accesseur get et l’accesseur set peuvent être implémentés en tant que membres expression-bodied. Dans ce cas, les deux mots clés `get` et `set` doivent être utilisés. Par exemple :
+À partir de C# 7.0, l’accesseur get et l’accesseur set peuvent être implémentés en tant que membres expression-bodied. Dans ce cas, les deux mots clés `get` et `set` doivent être utilisés. Par exemple :
 
 [!code-csharp[indexers#3](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-3.cs)]  
   
@@ -46,7 +46,7 @@ Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n�
   
 - Le mot clé [this](../../language-reference/keywords/this.md) est utilisé pour définir l’indexeur.  
   
-- Le mot clé [value](../../language-reference/keywords/value.md) est utilisé pour définir la valeur affectée par l’indexeur `set`.  
+- Le mot clé [value](../../language-reference/keywords/value.md) est utilisé pour définir la valeur assignée par l’accesseur `set`.  
   
 - Les indexeurs n'ont pas besoin d'être indexés par une valeur entière. Il vous appartient de choisir comment définir le mécanisme de recherche spécifique.  
   
@@ -54,7 +54,7 @@ Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n�
   
 - Les indexeurs peuvent avoir plusieurs paramètres formels, par exemple, quand vous accédez à un tableau à deux dimensions.  
   
-## <a name="related-sections"></a><a name="BKMK_RelatedSections"></a>Sections connexes  
+## <a name="related-sections"></a><a name="BKMK_RelatedSections"></a> Sections connexes  
   
 - [Utilisation d'indexeurs](./using-indexers.md)  
   
