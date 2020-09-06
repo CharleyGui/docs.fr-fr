@@ -2,18 +2,18 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 45bf8504fd882286041794d27ecb56464fc8d13d
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: f171baaa0dbc070b6389ec0fa9895b2c5dcfafff
+ms.sourcegitcommit: f279a4488c48236793c04bf825ae6f9128790849
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656663"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89501907"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet publish` -Publie l’application et ses dépendances dans un dossier pour le déploiement sur un système d’hébergement.
 
@@ -53,7 +53,7 @@ La commande `dotnet publish` appelle MSBuild, qui appelle la cible de `Publish`.
 
 La `dotnet publish` commande accepte les options MSBuild, comme `-p` pour définir des propriétés et `-l` pour définir un enregistreur d’événements. Par exemple, vous pouvez définir une propriété MSBuild en utilisant le format : `-p:<NAME>=<VALUE>` .
 
-Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* (disponible depuis le kit de développement logiciel (SDK) .net Core 3,1). Par exemple :
+Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* (disponible depuis le kit de développement logiciel (SDK) .net Core 3,1). Par exemple :
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -123,7 +123,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
   Spécifie le chemin d’accès du répertoire de sortie.
   
-  S’il n’est pas spécifié, la valeur par défaut est *[project_file_folder]./bin/[Configuration]/[Framework]/Publish/* pour un exécutable dépendant du Framework et des binaires multiplateforme. La valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/[Runtime]/Publish/* pour un exécutable autonome.
+  S’il n’est pas spécifié, la valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/Publish/* pour un exécutable dépendant du Framework et des binaires multiplateforme. La valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/[Runtime]/Publish/* pour un exécutable autonome.
 
   Dans un projet Web, si le dossier de sortie se trouve dans le dossier du projet, les commandes successives `dotnet publish` génèrent des dossiers de sortie imbriqués. Par exemple, si le dossier du projet est *MyProject*et que le dossier de sortie de publication est *MyProject/Publish*, et que vous exécutez `dotnet publish` deux fois, la deuxième exécution place les fichiers de contenu, tels que les fichiers *. config* et *. JSON* dans *MyProject/Publish/Publish*. Pour éviter d’imbriquer des dossiers de publication, spécifiez un dossier de publication qui ne se trouve pas **directement** sous le dossier du projet, ou excluez le dossier de publication du projet. Pour exclure un dossier de publication nommé *publishoutput*, ajoutez l’élément suivant à un `PropertyGroup` élément dans le fichier *. csproj* :
 
