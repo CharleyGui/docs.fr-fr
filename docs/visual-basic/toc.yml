@@ -1,7 +1,9 @@
 - name: Guide Visual Basic
   href: index.yml
 - name: Nouveautés dans Visual Basic
-  href: getting-started/whats-new.md
+  href: whats-new/index.md
+- name: Changements importants dans le compilateur
+  href: whats-new/breaking-changes.md
 - name: Bien démarrer
   href: getting-started/index.md
   items:
