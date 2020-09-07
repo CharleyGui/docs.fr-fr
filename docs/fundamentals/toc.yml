@@ -136,6 +136,8 @@ items:
             href: ../core/tutorials/index.md
   - name: Nouveautés
     items:
+      - name: "Évolution de .NET Core vers .NET\_5"
+        href: ../core/dotnet-five.md
       - name: "Nouveautés de .NET Core\_3.1"
         href: ../core/whats-new/dotnet-core-3-1.md
       - name: "Nouveautés de .NET Core\_3.0"
@@ -407,6 +409,8 @@ items:
             href: ../core/deploying/creating-nuget-packages.md
           - name: Restauration par progression du runtime de déploiement autonome
             href: ../core/deploying/runtime-patch-selection.md
+          - name: Déploiement et exécutable d’un seul fichier
+            href: ../core/deploying/single-file.md
           - name: Supprimer les exécutables et les déploiements autonomes
             href: ../core/deploying/trim-self-contained.md
           - name: Magasin de packages de runtime
