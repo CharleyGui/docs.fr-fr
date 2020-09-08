@@ -31,12 +31,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 99181855fdf8e937676e44e8b347510f9405aa3d
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 061abc8bc37d166a3683be1d2ad920a083a8ea3b
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916913"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515941"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Opérateurs au niveau du bit et opérateurs de décalage (référence C#)
 
@@ -94,9 +94,9 @@ Les positions de bits vides d’ordre supérieur sont définies en fonction du t
 
 Pour plus d’informations sur la façon dont l’opérande de partie droite de l’opérateur `>>` définit la valeur de décalage, consultez la section [Valeur de décalage des opérateurs de décalage](#shift-count-of-the-shift-operators).
 
-## <a name="logical-and-operator-amp"></a><a name="logical-and-operator-"></a>Opérateur AND logique&amp;
+## <a name="logical-and-operator-amp"></a><a name="logical-and-operator-"></a> Opérateur AND logique &amp;
 
-L’opérateur `&` calcule le AND logique au niveau du bit de ses opérandes :
+L' `&` opérateur calcule le and logique au niveau du bit de ses opérandes intégraux :
 
 [!code-csharp-interactive[bitwise AND](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseAnd)]
 
@@ -104,7 +104,7 @@ Pour les `bool` opérandes, l' `&` opérateur calcule le [and logique](boolean-l
 
 ## <a name="logical-exclusive-or-operator-"></a>L’opérateur OR exclusif logique ^
 
-L’opérateur `^` calcule le OR exclusif logique au niveau du bit (également appelé XOR logique au niveau du bit) de ses opérandes.
+L' `^` opérateur calcule l’or exclusif logique au niveau du bit, également appelé XOR logique au niveau du bit, de ses opérandes intégraux :
 
 [!code-csharp-interactive[bitwise XOR](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseXor)]
 
@@ -112,7 +112,7 @@ Pour les `bool` opérandes, l' `^` opérateur calcule l' [or exclusif logique](b
 
 ## <a name="logical-or-operator-"></a>L’opérateur OU logique |
 
-L’opérateur `|` calcule le OR logique au niveau du bit de ses opérandes :
+L' `|` opérateur calcule le or logique au niveau du bit de ses opérandes intégraux :
 
 [!code-csharp-interactive[bitwise OR](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseOr)]
 

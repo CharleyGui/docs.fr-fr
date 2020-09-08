@@ -4,16 +4,16 @@ description: Découvrez comment contrôler le découpage des applications autono
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: 42e98f9ede004f06221d2df5ecd076500061e37d
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 89bd195a97c2f1bbbba9199fea51c917c4e4836b
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465414"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515830"
 ---
 # <a name="trimming-options"></a>Options de suppression
 
-Les propriétés et les éléments MSBuild suivants influencent le comportement des [déploiements autonomes tronqués](trim-self-contained.md). Certaines des options mentionnent `ILLink` , qui est le nom de l’outil sous-jacent qui implémente la suppression. Pour plus d’informations sur l' `ILLink` outil en ligne de commande, consultez [options de illink](https://github.com/mono/linker/blob/master/docs/illink-options.md).
+Les propriétés et les éléments MSBuild suivants influencent le comportement des [déploiements autonomes tronqués](trim-self-contained.md). Certaines des options mentionnent `ILLink` , qui est le nom de l’outil sous-jacent qui implémente la suppression. Vous trouverez plus d’informations sur l’outil sous-jacent dans la documentation de l' [éditeur de liens](https://github.com/mono/linker/tree/master/docs).
 
 ## <a name="enable-trimming"></a>Activer la suppression
 
@@ -129,3 +129,37 @@ Les symboles sont normalement tronqués pour correspondre aux assemblys tronqué
     Supprimer les symboles de l’application rognée, y compris les fichiers PDB incorporés et les fichiers PDB séparés. Cela s’applique à la fois au code d’application et à toutes les dépendances qui accompagnent les symboles.
 
 Le kit de développement logiciel (SDK) permet également de désactiver la prise en charge du débogueur à l’aide de la propriété `DebuggerSupport` . Lorsque la prise en charge du débogueur est désactivée, la suppression supprime automatiquement les symboles (la `TrimmerRemoveSymbols` valeur par défaut est true).
+
+## <a name="trimming-framework-library-features"></a>Suppression des fonctionnalités de la bibliothèque d’infrastructure
+
+Plusieurs zones de fonctionnalités des bibliothèques d’infrastructure sont fournies avec les directives de l’éditeur de liens qui permettent de supprimer le code pour les fonctionnalités désactivées.
+
+- `<DebuggerSupport>false</DebuggerSupport>`
+
+    Supprimez le code qui permet de meilleures expériences de débogage. Cela [supprimera](#removing-symbols)également les symboles.
+
+- `<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>`
+
+    Supprime la prise en charge de la sérialisation BinaryFormatter. Pour plus d’informations, consultez [méthodes de sérialisation BinaryFormatter obsolètes](../compatibility/corefx.md#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps).
+
+- `<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>`
+
+    Supprimez le code d’encodage UTF-7 non sécurisé. Pour plus d’informations, consultez les [chemins de code UTF-7 sont obsolètes](../compatibility/corefx.md#utf-7-code-paths-are-obsolete).
+
+- `<EventSourceSupport>false</EventSourceSupport>`
+
+    Supprimez la logique ou le code lié à EventSource.
+
+- `<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>`
+
+    Supprimez le code relatif à la prise en charge des diagnostics pour System .net. http.
+
+- `<InvariantGlobalization>true</InvariantGlobalization>`
+
+    Supprimer le code et les données spécifiques à la globalisation. Pour plus d’informations, consultez [mode indifférent](../run-time-config/globalization.md#invariant-mode).
+
+- `<UseSystemResourceKeys>true</UseSystemResourceKeys>`
+
+    Supprimer les messages d’exception pour les `System.*` assemblys. Quand une exception est levée à partir d’un `System.*` assembly, le message est un ID de ressource simplifié au lieu du message complet.
+
+ Ces propriétés entraînent la troncation du code associé et désactivent également les fonctionnalités via le fichier [runtimeconfig](../run-time-config/index.md) . Pour plus d’informations sur ces propriétés, y compris les options runtimeconfig correspondantes, consultez [commutateurs de fonctionnalités](https://github.com/dotnet/runtime/blob/master/docs/workflow/trimming/feature-switches.md). Certains kits de développement logiciel (SDK) peuvent avoir des valeurs par défaut pour ces propriétés.

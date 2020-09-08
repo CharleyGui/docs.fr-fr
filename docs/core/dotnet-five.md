@@ -5,16 +5,16 @@ ms.date: 09/02/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: c9ac93c152d39bd06875f82ee5f34c1540236038
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 5e8ed371173ff8b81909ceb071ed93c6b0e1eea5
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495229"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515842"
 ---
 # <a name="the-evolution-of-net-core-to-net-5"></a>Évolution de .NET Core vers .NET 5
 
-Cet article détaille ce qui est inclus dans .NET 5, qui est la prochaine version de .NET Core suivant 3,1. Le numéro de version est 5,0 pour éviter toute confusion avec .NET Framework 4. x. « Core » est supprimé du nom, car il s’agit de l’implémentation principale de .NET à l’avenir. .NET 5 prend en charge davantage de types d’applications et de plateformes que .NET Core ou .NET Framework.
+Cet article détaille ce qui est inclus dans .NET 5, qui est la prochaine version de .NET Core suivant 3,1. Le numéro de version est 5,0 pour éviter toute confusion avec .NET Framework 4. x. « Core » est supprimé du nom, car il s’agit de l’implémentation principale de .NET à l’avenir. ASP.NET Core conserve le nom « Core » pour éviter qu’il ne soit confus avec ASP.NET MVC 5. En outre, Entity Framework Core conserve le nom « Core » pour éviter qu’il ne soit confus avec Entity Framework 5 et 6. .NET 5 prend en charge davantage de types d’applications et de plateformes que .NET Core ou .NET Framework.
 
 L’avènement de .NET Core a évolué l’écosystème .NET de manière attrayante. Il a évolué en tant que projet open source sur GitHub, célébrant les contributions de la communauté et remarquer amélioré au fil du temps.
 
@@ -78,7 +78,7 @@ Les développeurs qui écrivent des applications .NET 5 auront accès à la vers
 
 - Pointeurs fonction : constructions de langage qui exposent les OpCodes de langage intermédiaire (IL) suivants : `ldftn` et `calli` .
 
-<!-- For more information on the available C# 9 features, see [What's new in C# 9](csharp/whats-new/csharp-9.md). -->
+Pour plus d’informations sur les fonctionnalités C# 9 disponibles, consultez [Nouveautés de c# 9](../csharp/whats-new/csharp-9.md).
 
 #### <a name="source-generators"></a>Générateurs de sources
 

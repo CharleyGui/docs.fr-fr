@@ -6,18 +6,18 @@ ms.author: wiwagn
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 12/04/2019
-ms.openlocfilehash: 4fe889fe86d96a5b2ffa5bd879d2ec1801a3cf20
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.date: 07/27/2020
+ms.openlocfilehash: f04de5c350dfead4dad8c37eece7f16c9a9e00bc
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174365"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515817"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Choisir entre des applications web traditionnelles et des applications monopages
 
 > « Loi d’Atwood : Toute application pouvant être écrite en JavaScript sera au bout du compte écrite en JavaScript. »  
-> _\-Jeff Atwood_
+> _\- Jeff Atwood_
 
 Aujourd’hui, vous avez le choix entre deux approches pour créer des applications web : les applications web traditionnelles qui effectuent la plupart de la logique d’application sur le serveur, et les applications monopages qui effectuent la plupart de la logique d’interface utilisateur dans un navigateur web en communiquant avec le serveur web principalement à l’aide d’API web. Une approche hybride est également possible, la plus simple hébergeant une ou plusieurs sous-applications de type SPA riches au sein d’une plus grande application Web traditionnelle.
 
@@ -33,7 +33,7 @@ Utilisez un SPA dans les cas suivants :
 
 - Votre application doit exposer une interface utilisateur élaborée offrant de nombreuses fonctionnalités.
 
-- Votre équipe connaît bien les techniques de développement JavaScript et/ou TypeScript.
+- Votre équipe connaît bien JavaScript, la machine à écrire ou le Blazor WebAssembly développement.
 
 - Votre application doit déjà exposer une API pour d’autres clients (internes ou publics).
 
@@ -43,17 +43,17 @@ Les améliorations de l’expérience utilisateur rendues possibles par l’appr
 
 ## Blazor
 
-ASP.NET Core 3,0 introduit un nouveau modèle pour la création d’une interface utilisateur riche, interactive et composable appelée Blazor . Blazorcôté serveur, les développeurs peuvent créer une interface utilisateur avec C# et Razor sur le serveur et pour que l’interface utilisateur soit connectée de manière interactive au navigateur en temps réel à l’aide d’une connexion Signalr persistante.
+ASP.NET Core comprend un modèle pour créer des interfaces utilisateur riches, interactives et composables appelées Blazor . Blazor côté serveur, les développeurs peuvent créer une interface utilisateur avec C# et Razor sur le serveur et pour que l’interface utilisateur soit connectée de manière interactive au navigateur en temps réel à l’aide d’une connexion Signalr persistante. BlazorWebAssemblyintroduit une autre option pour les Blazor applications, ce qui leur permet de s’exécuter dans le navigateur à l’aide de WebAssembly . Étant donné qu’il s’agit de .NET en cours d’exécution sur WebAssembly , vous pouvez réutiliser le code et les bibliothèques à partir de parties côté serveur de votre application.
 
-BlazorWebAssemblyintroduit une autre option pour les Blazor applications, ce qui leur permet de s’exécuter dans le navigateur à l’aide de WebAssembly . Étant donné qu’il s’agit de .NET en cours d’exécution sur WebAssembly , vous pouvez réutiliser le code et les bibliothèques à partir de parties côté serveur de votre application.
-
-Blazorfournit une nouvelle option, troisième option, à prendre en compte lors de l’évaluation de la nécessité de créer une application Web entièrement rendue serveur ou un SPA. Vous pouvez créer des comportements côté client riches en mode SPA à l’aide de Blazor , sans avoir besoin d’un développement JavaScript significatif. Blazorles applications peuvent appeler des API pour demander des données ou effectuer des opérations côté serveur.
+Blazor fournit une nouvelle option, troisième option, à prendre en compte lors de l’évaluation de la nécessité de créer une application Web entièrement rendue serveur ou un SPA. Vous pouvez créer des comportements côté client riches en mode SPA à l’aide de Blazor , sans avoir besoin d’un développement JavaScript significatif. Blazor les applications peuvent appeler des API pour demander des données ou effectuer des opérations côté serveur. Ils peuvent interagir avec JavaScript quand cela est nécessaire pour tirer parti des bibliothèques et des infrastructures JavaScript.
 
 Envisagez de créer votre application Web avec Blazor lorsque :
 
 - Votre application doit exposer une interface utilisateur riche
 
 - Votre équipe est plus à l’aise avec le développement .NET que le développement JavaScript ou de machine à écrire
+
+Si vous avez une application Web Forms existante que vous envisagez de migrer vers .NET Core, vous souhaiterez peut-être consulter le livre électronique gratuit, [ Blazor pour Web Forms aux développeurs](../blazor-for-web-forms-developers/index.md) de voir s’il est judicieux de la migrer vers Blazor .
 
 Pour plus d’informations sur Blazor , consultez la page [prise en main Blazor de ](https://blazor.net/docs/get-started.html).
 
@@ -100,7 +100,7 @@ L’écriture d’applications SPA nécessite une bonne connaissance des bibliot
 
 Si vous prenez déjà en charge une API web pour une utilisation par d’autres clients, il peut être plus facile de créer une implémentation de SPA qui tire parti de ces API, plutôt que de reproduire la logique côté serveur. Les applications SPA utilisent beaucoup les API web pour interroger et mettre à jour des données quand les utilisateurs interagissent avec l’application.
 
-## <a name="when-to-choose-blazor"></a>Quand choisirBlazor
+## <a name="when-to-choose-no-locblazor"></a>Quand choisir Blazor
 
 Voici une explication plus détaillée du moment où choisir Blazor pour votre application Web.
 
@@ -116,7 +116,7 @@ De nombreux développeurs sont plus productifs avec .NET et Razor qu’avec les 
 
 Le tableau de décision suivant résume certains des facteurs de base à prendre en compte lors du choix entre une application Web traditionnelle, un SPA ou une Blazor application.
 
-| **Facteur**                                           | **Application web traditionnelle** | **Application à une seule page** | **BlazorLancement**  |
+| **Facteur**                                           | **Application web traditionnelle** | **Application à une seule page** | **Blazor Lancement**  |
 | ---------------------------------------------------- | ----------------------- | --------------------------- | --------------- |
 | Connaissances de l’équipe de JavaScript/TypeScript | **Minimal**             | **Obligatoire**                | **Minimal**     |
 | Prise en charge des navigateurs sans script                   | **Pris en charge**           | **Non pris en charge**           | **Pris en charge**   |
