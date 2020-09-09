@@ -4,12 +4,12 @@ description: Découvrez comment l’analyseur d’API .NET peut aider à détect
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: e214c91f2beebc7f3b3324f4879deba9a5623f86
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8da4b2add206daa431124a7d24efc2676cbcaa69
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156132"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598091"
 ---
 # <a name="net-api-analyzer"></a>Analyseur d’API .NET
 
@@ -20,11 +20,11 @@ L’analyseur d’API est fourni sous la forme d’un package NuGet [Microsoft.D
 > [!NOTE]
 > L’analyseur d’API .NET est toujours en préversion.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - Visual Studio 2017 et versions ultérieures, ou Visual Studio pour Mac (toutes les versions).
 
-## <a name="discover-deprecated-apis"></a>Découvrez les API dépréciées
+## <a name="discover-deprecated-apis"></a>Détecter les API déconseillées
 
 ### <a name="what-are-deprecated-apis"></a>Que sont les API déconseillées ?
 
@@ -36,54 +36,54 @@ La famille .NET est un ensemble de grands produits, qui sont constamment mis à 
 
 L’analyseur d’API utilise des codes d’erreur propres aux API, qui commencent par DE (de l’anglais « Deprecation Error »), ce qui permet de contrôler l’affichage des différents avertissements. Les API déconseillées identifiées par l’analyseur sont définies dans le référentiel [dotnet/plateforme-compat](https://github.com/dotnet/platform-compat).
 
-### <a name="add-the-api-analyzer-to-your-project"></a>Ajouter l’analyseur API à votre projet
+### <a name="add-the-api-analyzer-to-your-project"></a>Ajouter l’analyseur d’API à votre projet
 
 1. Ouvrez Visual Studio.
-2. Ouvrez le projet sur qui vous souhaitez exécuter l’analyseur.
-3. Dans **Solution Explorer**, cliquez à droite sur votre projet et choisissez Manage **NuGet Packages**. (Cette option est également disponible dans le menu **Projet**.)
-4. Sur l’onglet NuGet Package Manager :
-   1. Sélectionnez «nuget.org» comme source de paquet.
-   2. Allez à l’onglet **Parcourir.**
+2. Ouvrez le projet sur lequel vous souhaitez exécuter l’analyseur.
+3. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur votre projet et choisissez **gérer les packages NuGet**. (Cette option est également disponible dans le menu **Projet**.)
+4. Sous l’onglet Gestionnaire de package NuGet :
+   1. Sélectionnez « nuget.org » comme source du package.
+   2. Accédez à l’onglet **Parcourir** .
    3. Sélectionnez **Inclure la préversion**.
-   4. Recherchez **Microsoft.DotNet.Analyzers.Compatibility**.
-   5. Sélectionnez ce paquet dans la liste.
+   4. Recherchez **Microsoft. dotnet. Analyzers. Compatibility**.
+   5. Sélectionnez ce package dans la liste.
    6. Sélectionnez le bouton **Installer**.
    7. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
 
-### <a name="use-the-api-analyzer"></a>Utilisez l’analyseur de l’API
+### <a name="use-the-api-analyzer"></a>Utiliser l’analyseur d’API
 
 Lorsqu’une API déconseillée, par exemple, <xref:System.Net.WebClient>, est utilisée dans un code, l’analyseur d’API la souligne d’un trait vert ondulé. Lorsque vous placez le curseur sur l’appel d’API, une ampoule donne des informations sur les API déconseillées, comme dans l’exemple suivant :
 
-![« Capture d’écran de l’API WebClient avec une ligne verte ondulée et une ampoule à gauche »](media/api-analyzer/green-squiggle.jpg)
+![Capture d’écran de l’API WebClient avec une ligne ondulée verte et une ampoule sur la gauche.](media/api-analyzer/green-squiggle.jpg)
 
 La fenêtre **Liste d’erreurs** contient des avertissements avec un ID unique par API déconseillée, comme dans l’exemple suivant (`DE004`) :
 
-![« Capture d’écran de la fenêtre Liste d’erreurs affichant l’ID et la description de l’avertissement »](media/api-analyzer/warnings-id-and-descriptions.jpg "Fenêtre de liste d’erreurs qui comprend des avertissements.")
+![Capture d’écran de la fenêtre de Liste d’erreurs montrant l’ID et la description de l’avertissement.](media/api-analyzer/warnings-id-and-descriptions.jpg "Liste d’erreurs fenêtre qui contient des avertissements.")
 
 En cliquant sur l’ID, vous accédez à une page web présentant des informations détaillées sur la raison pour laquelle l’API a été déconseillée, ainsi que des suggestions d’autres API utilisables.
 
-Pour supprimer des avertissements, cliquez sur le membre en surbrillance et sélectionnez **Supprimer \<ID de diagnostic >**. Il existe deux moyens de supprimer les avertissements :
+Vous pouvez supprimer les avertissements en cliquant avec le bouton droit sur le membre en surbrillance et en sélectionnant **supprimer \<diagnostic ID> **. Il existe deux moyens de supprimer les avertissements :
 
 - [localement (dans la source)](#suppress-warnings-locally) ;
 - [globalement (dans un fichier de suppression)](#suppress-warnings-globally) – recommandé.
 
 ### <a name="suppress-warnings-locally"></a>Supprimer les avertissements localement
 
-Pour supprimer les avertissements localement, cliquez à droite sur le membre que vous souhaitez supprimer les avertissements pour puis sélectionner **des actions rapides et des refactorings** > Supprimer diagnostic** *ID*\<ID ID>**  > dans **Source**. La directive du préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans l’étendue définie : ![« Capture d’écran du code encadré par #pragma warning disable »](media/api-analyzer/suppress-in-source.jpg)
+Pour supprimer les avertissements localement, cliquez avec le bouton droit sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **actions rapides et refactorisations**  >  **Supprimer l' *ID* \<diagnostic ID> **  >  **de diagnostic dans la source**. La directive de préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans la portée définie : ![ capture d’écran du code encadré avec #pragma AVERTISSEMENT désactiver.](media/api-analyzer/suppress-in-source.jpg)
 
-### <a name="suppress-warnings-globally"></a>Supprimer les avertissements à l’échelle mondiale
+### <a name="suppress-warnings-globally"></a>Supprimer les avertissements globalement
 
-Pour supprimer les avertissements à l’échelle mondiale, cliquez à droite sur le membre que vous souhaitez supprimer les avertissements pour puis sélectionner **des actions rapides et des refactorings** > Supprimer diagnostic** *ID*\<diagnostic ID>**  > dans le fichier de **suppression**.
+Pour supprimer les avertissements globalement, cliquez avec le bouton droit sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **actions rapides et refactorisations**  >  **Supprimer l' *ID* \<diagnostic ID> **  >  **de diagnostic dans le fichier de suppression**.
 
-![« Capture d’écran de l’API WebClient avec une ligne verte ondulée et une ampoule à gauche »](media/api-analyzer/suppress-in-sup-file.jpg)
+![Capture d’écran du menu contextuel montrant les options permettant de supprimer un avertissement dans Visual Studio.](media/api-analyzer/suppress-in-sup-file.jpg)
 
 Un fichier *GlobalSuppressions.cs* est ajouté à votre projet après la première suppression. Les nouvelles suppressions globales seront ajoutées à ce fichier.
 
-![« Capture d’écran de l’API WebClient avec une ligne verte ondulée et une ampoule à gauche »](media/api-analyzer/suppression-file.jpg)
+![Capture d’écran du fichier GlobalSuppressions.cs dans Explorateur de solutions.](media/api-analyzer/suppression-file.jpg)
 
 La suppression globale est la méthode recommandée pour garantir une utilisation cohérente de l’API d’un projet à l’autre.
 
-## <a name="discover-cross-platform-issues"></a>Découvrez les enjeux interplateformes
+## <a name="discover-cross-platform-issues"></a>Détection des problèmes inter-plateformes
 
 Tout comme les API déconseillées, l’analyseur identifie toutes les API non multiplateformes. Par exemple, <xref:System.Console.WindowWidth?displayProperty=nameWithType> fonctionne sous Windows, mais pas sous Linux ou macOS. L’ID de diagnostic apparaît dans la fenêtre **Liste d’erreurs**. Vous pouvez supprimer cet avertissement en cliquant avec le bouton droit et en sélectionnant **Actions rapides et refactorisations**. Contrairement au cas des API déconseillées, dans lequel deux options sont proposées (continuer d’utiliser le membre déconseillé et supprimer les avertissements, ou ne pas l’utiliser du tout), ici, si vous développez votre code pour certaines plateformes seulement, vous pouvez supprimer les avertissements de toutes les autres plateformes sur lesquelles vous n’envisagez pas d’exécuter votre code. Il vous suffit pour cela de modifier votre fichier projet et d’ajouter la propriété `PlatformCompatIgnore`, qui liste toutes les plateformes à ignorer. Les valeurs acceptées sont les suivantes : `Linux`, `macOS` et `Windows`.
 
@@ -103,7 +103,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 }
 ```
 
-Vous pouvez également effectuer une compilation conditionnelle par système d’exploitation/version cible de .NET Framework ; il s’agit pour le moment d’une opération [manuelle](../frameworks.md#how-to-specify-target-frameworks).
+Vous pouvez également effectuer une compilation conditionnelle par système d’exploitation/version cible de .NET Framework ; il s’agit pour le moment d’une opération [manuelle](../frameworks.md#how-to-specify-a-target-framework).
 
 ## <a name="supported-diagnostics"></a>Diagnostics pris en charge
 
@@ -111,7 +111,7 @@ Actuellement, l’analyseur gère les cas suivants :
 
 - utilisation d’une API .NET Standard qui lève <xref:System.PlatformNotSupportedException> (PC001) ;
 - utilisation d’une API .NET Standard non disponible sur .NET Framework 4.6.1 (PC002) ;
-- utilisation d’une API native qui n’existe pas dans UWP (PC003) ;
+- Utilisation d’une API native qui n’existe pas dans UWP (PC003).
 - Utilisation des API Delegate.BeginInvoke et EndInvoke (PC004).
 - utilisation d’une API marquée comme déconseillée (DEXXXX).
 
@@ -121,9 +121,9 @@ Tous ces diagnostics sont disponibles non seulement dans l’IDE, mais égalemen
 
 ## <a name="configuration"></a>Configuration
 
-L’utilisateur choisit le mode de traitement des diagnostics : en tant qu’avertissements, en tant qu’erreurs, en tant que suggestions ou désactivés. Par exemple, l’architecte peut décider que les problèmes de compatibilité doivent être traités comme des erreurs, que les appels à certaines API déconseillées génèrent des avertissements, tandis que les autres ne produiront que des suggestions. Vous pouvez configurer cela séparément, ID de diagnostic par ID de diagnostic et projet par projet. Pour cela, accédez au nœud **Dépendances** sous votre projet dans **l’Explorateur de solutions**. Élargir les **nœuds dépendances** > **Analyseurs** > **Microsoft.DotNet.Analyzers.Compatibility**. Cliquez avec le bouton droit sur l’ID de diagnostic, sélectionnez **Définir la gravité de l’ensemble de règles** et choisissez l’option souhaitée.
+L’utilisateur choisit le mode de traitement des diagnostics : en tant qu’avertissements, en tant qu’erreurs, en tant que suggestions ou désactivés. Par exemple, l’architecte peut décider que les problèmes de compatibilité doivent être traités comme des erreurs, que les appels à certaines API déconseillées génèrent des avertissements, tandis que les autres ne produiront que des suggestions. Vous pouvez configurer cela séparément, ID de diagnostic par ID de diagnostic et projet par projet. Pour cela, accédez au nœud **Dépendances** sous votre projet dans **l’Explorateur de solutions**. Développez les nœuds **dépendances**  >  **analyseurs**  >  **Microsoft. dotnet. Analyzers. Compatibility**. Cliquez avec le bouton droit sur l’ID de diagnostic, sélectionnez **Définir la gravité de l’ensemble de règles** et choisissez l’option souhaitée.
 
-![« Capture d’écran de l’Explorateur de solutions affichant les diagnostics et la boîte de dialogue contextuelle avec la gravité de l’ensemble de règles »](media/api-analyzer/disable-notifications.jpg)
+![Capture d’écran de Explorateur de solutions montrant les diagnostics et les boîtes de dialogue contextuelles avec la gravité de l’ensemble de règles.](media/api-analyzer/disable-notifications.jpg)
 
 ## <a name="see-also"></a>Voir aussi
 

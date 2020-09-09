@@ -5,12 +5,12 @@ ms.date: 09/02/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 5e8ed371173ff8b81909ceb071ed93c6b0e1eea5
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 9318b1afbe22c97f056bd38732306c6a6b60ad00
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89515842"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598118"
 ---
 # <a name="the-evolution-of-net-core-to-net-5"></a>Évolution de .NET Core vers .NET 5
 
@@ -58,7 +58,7 @@ L’avènement de .NET Core a évolué l’écosystème .NET de manière attraya
 
 Le développement d’une nouvelle application peut spécifier le `net5.0` moniker du Framework cible (TFM) pour tous les types de projets, y compris les bibliothèques de classes. Le partage de code entre les charges de travail .NET 5 est simplifié en ce que vous avez tout ce dont vous avez besoin `net5.0` TFM.
 
-Le `net5.0` TFM combine et remplace `netcoreapp` les `netstandard` noms. Ce TFM inclut généralement des technologies qui fonctionnent sur plusieurs plateformes, comme c’est le cas avec .NET Standard. Toutefois, si vous envisagez de partager du code entre des charges de travail de .NET Framework, .NET Core et .NET 5, vous pouvez le faire en spécifiant `netstandard2.0` comme TFM. Pour plus d’informations, consultez [comment spécifier des frameworks cibles](../standard/frameworks.md#how-to-specify-target-frameworks).
+`net5.0`TFM combine et remplace les `netcoreapp` noms et `netstandard` . Ce TFM inclut généralement des technologies qui fonctionnent sur plusieurs plateformes, comme c’est le cas avec .NET Standard. Toutefois, si vous envisagez de partager du code entre des charges de travail .NET Framework, .NET Core et .NET 5, vous pouvez le faire en spécifiant `netstandard2.0` comme TFM. Pour plus d’informations, consultez [comment spécifier des frameworks cibles](../standard/frameworks.md#how-to-specify-a-target-framework).
 
 ## <a name="language-updates"></a>Mises à jour du langage
 
@@ -66,7 +66,7 @@ Avec .NET 5, les langages de programmation .NET continuent à s’améliorer.
 
 ### <a name="c-updates"></a>Mises à jour C#
 
-Les développeurs qui écrivent des applications .NET 5 auront accès à la version et aux fonctionnalités C# les plus récentes. .NET 5 est associé à C# 9. C# 9 apporte de nombreuses nouvelles fonctionnalités au langage. Voici quelques points importants :
+Les développeurs qui écrivent des applications .NET 5 auront accès à la version et aux fonctionnalités C# les plus récentes. .NET 5 est associé à C# 9, qui offre de nombreuses nouvelles fonctionnalités au langage. Voici quelques points importants :
 
 - Enregistrements : types référence immuables qui se comportent comme des types valeur et introduisent le nouveau `with` mot clé dans le langage.
 - Critères spéciaux relationnels : étend les fonctionnalités de critères spéciaux aux opérateurs relationnels pour les évaluations comparatives et les expressions, y compris les modèles logiques, les nouveaux mots clés `and` , `or` et `not` .
@@ -92,7 +92,7 @@ F # est le langage de programmation fonctionnel .NET et, avec .NET 5, les dével
 
 #### <a name="interpolated-strings"></a>Chaînes interpolées
 
-Semblable à la chaîne interpolée en C#, et même JavaScript-F # prend en charge l’interpolation de chaîne de base.
+À l’instar de la chaîne interpolée en C#, et même de JavaScript, F # prend en charge l’interpolation de chaîne de base.
 
 ```fsharp
 let name = "David"

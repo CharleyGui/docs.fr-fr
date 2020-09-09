@@ -3,12 +3,12 @@ title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: ae3b9a1961f331c9cdea786bd5fe06b7bfa10927
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 568f237e131cde18dad7c87ddff2fdd3d4bc5b8b
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558112"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89597984"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -24,11 +24,15 @@ Les [débogueurs managés](managed-debuggers.md) vous permettent d’interagir a
 
 La [journalisation et le suivi](logging-tracing.md) sont des techniques associées. Elles se réfèrent au code d'instrumentation permettant de créer des fichiers journaux. Les fichiers consignent le détail des tâches exécutées par un programme. Ces informations peuvent être utilisées pour diagnostiquer les problèmes les plus complexes. Combinées à l'horodatage, ces techniques sont également très utiles dans les analyses de performances.
 
-## <a name="unit-testing"></a>Test des unités
+## <a name="unit-testing"></a>Test unitaire
 
 Le [test unitaire](../testing/index.md) est un composant clé de l’intégration et du déploiement continus de logiciels de haute qualité. Les tests unitaires sont conçus pour vous prévenir d’un problème survenu.
 
-## <a name="net-core-dotnet-diagnostic-global-tools"></a>Outils globaux .NET Core dotnet diagnostic
+## <a name="debug-linux-dumps"></a>Déboguer des vidages Linux
+
+[Déboguer les vidages Linux](debug-linux-dumps.md) explique comment collecter et analyser les vidages sur Linux.
+
+## <a name="net-core-diagnostic-global-tools"></a>Outils globaux de diagnostic .NET Core
 
 ### <a name="dotnet-counters"></a>dotnet-counters
 
@@ -45,6 +49,14 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 ### <a name="dotnet-trace"></a>dotnet-trace
 
 .NET Core comprend ce qui est appelé `EventPipe` par le biais duquel les données de diagnostic sont exposées. L’outil [dotnet-trace](dotnet-trace.md) vous permet de consommer des données de profilage intéressantes à partir de votre application, ce qui peut aider dans les scénarios où vous devez provoquer une exécution lente des applications.
+
+### <a name="dotnet-symbol"></a>dotnet-Symbol
+
+[dotnet-Symbol télécharge des](dotnet-symbol.md) fichiers (symboles, DAC/DBI, fichiers hôtes, etc.) nécessaires à l’ouverture d’un vidage principal ou d’un minidump. Utilisez cet outil si vous avez besoin de symboles et de modules pour déboguer un fichier de vidage capturé sur un autre ordinateur.
+
+### <a name="dotnet-sos"></a>dotnet-SOS
+
+[dotnet-SOS](dotnet-sos.md) est utilisé pour installer l' [extension de débogage SOS](https://docs.microsoft.com/dotnet/framework/tools/sos-dll-sos-debugging-extension) sur Linux ou MacOS (ou sur Windows si vous utilisez des outils de débogage plus anciens).
 
 ## <a name="net-core-diagnostics-tutorials"></a>Tutoriels de diagnostics .NET Core
 

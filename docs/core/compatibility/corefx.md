@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 07/27/2020
-ms.openlocfilehash: d8d886785ff71f22a3b2da65e973d899cf0371f6
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: c73909514bc738387a21f5ea68defe49c6a2c839
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465883"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598164"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -17,6 +17,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [Thread. Abort est obsolète](#threadabort-is-obsolete) | 5.0 |
 | [Propriétés obsolètes sur ConsoleLoggerOptions](#obsolete-properties-on-consoleloggeroptions) | 5.0 |
 | [Les contrôles de IsSupported intrinsèques matériels peuvent être différents pour les types imbriqués](#hardware-intrinsic-issupported-checks-may-differ-for-nested-types) | 5.0 |
 | [Noms de paramètres modifiés dans les assemblys de référence](#parameter-names-changed-in-reference-assemblies) | 5.0 |
@@ -52,6 +53,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Process. StartInfo lève une exception InvalidOperationException pour les processus que vous n’avez pas démarrés](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [thread-abort-obsolete](../../../includes/core-changes/corefx/5.0/thread-abort-obsolete.md)]
+
+***
 
 [!INCLUDE [obsolete-consoleloggeroptions-properties](../../../includes/core-changes/corefx/5.0/obsolete-consoleloggeroptions-properties.md)]
 

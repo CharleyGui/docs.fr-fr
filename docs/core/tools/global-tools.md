@@ -4,12 +4,12 @@ description: Comment installer, utiliser, mettre à jour et supprimer les outils
 author: KathleenDollard
 ms.topic: how-to
 ms.date: 02/12/2020
-ms.openlocfilehash: 00c0317fcfc4da0e7205c23faa7b355c20882ec9
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 08277ed791036201d1dfa30c21799db1c21a924e
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062728"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598123"
 ---
 # <a name="how-to-manage-net-core-tools"></a>Comment gérer les outils .NET Core
 
@@ -42,7 +42,7 @@ Actuellement, .NET Core ne dispose pas d’une fonctionnalité de recherche d’
 * Consultez la liste des outils dans le référentiel GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
 * Utilisez [ToolGet](https://www.toolget.net/) pour rechercher des outils .net.
 * Consultez le code source des outils créés par l’équipe ASP.NET Core dans le [répertoire Tools du référentiel GitHub dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
-* Découvrez les outils de diagnostics dans les [outils de diagnostic dotnet .net Core](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
+* Découvrez les outils de diagnostics dans les [outils de diagnostic dotnet .net Core](../diagnostics/index.md#net-core-diagnostic-global-tools).
 
 ## <a name="check-the-author-and-statistics"></a>Vérifier l’auteur et les statistiques
 

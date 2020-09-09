@@ -1,63 +1,82 @@
 ---
 title: Frameworks cibles dans des projets de type SDK-.NET
-description: Découvrez les frameworks cibles pour les applications et bibliothèques .NET Core.
-ms.date: 12/03/2019
+description: En savoir plus sur les frameworks cibles pour les applications et les bibliothèques .NET.
+ms.date: 09/08/2020
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: c1fd3a6fe07526d9f6828851c591ed0155c79a19
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 9c5d3605f893072b2a5e84751e3657152ac0213e
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164301"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598157"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Frameworks cibles dans les projets de style SDK
 
-Quand vous ciblez un framework dans une application ou une bibliothèque, vous spécifiez l’ensemble d’API que vous souhaitez rendre accessibles à l’application ou à la bibliothèque. Vous spécifiez le framework cible dans votre fichier projet à l’aide des monikers du framework cible (TFM).
+Quand vous ciblez un framework dans une application ou une bibliothèque, vous spécifiez l’ensemble d’API que vous souhaitez rendre accessibles à l’application ou à la bibliothèque. Vous spécifiez la version cible de .NET Framework dans votre fichier projet à l’aide des monikers du Framework cible (TFM).
 
 Une application ou une bibliothèque peut cibler une version de [.NET Standard](net-standard.md). Les versions .NET Standard représentent des ensembles d’API standard sur toutes les implémentations de .NET. Par exemple, une bibliothèque peut cibler .NET Standard 1.6 et accéder aux API qui fonctionnent sur .NET Core et .NET Framework en utilisant la même base de code.
 
-Une application ou une bibliothèque peut également cibler une implémentation spécifique de .NET pour accéder aux API spécifiques à l’implémentation. Ainsi, une application qui cible Xamarin.iOS (par exemple, `Xamarin.iOS10`) accède à des wrappers d’API iOS fournis par Xamarin pour iOS 10, ou une application qui cible la plateforme Windows universelle (UWP, `uap10.0`) a accès aux API de compilation pour les appareils qui exécutent Windows 10.
+Une application ou une bibliothèque peut également cibler une implémentation spécifique de .NET pour accéder aux API spécifiques à l’implémentation. Par exemple, une application qui cible Xamarin. iOS (par exemple, `Xamarin.iOS10` ) a accès aux wrappers d’API iOS fournis par Xamarin pour iOS 10, ou une application qui cible plateforme Windows universelle (UWP `uap10.0` ) a accès aux API qui se compilent pour les appareils qui exécutent Windows 10.
 
-Pour certains frameworks cibles (par exemple, .NET Framework), les API sont définies par les assemblys que le framework installe sur un système et peuvent inclure des API de framework d’application (par exemple, ASP.NET).
+Pour certains frameworks cibles (par exemple, .NET Framework), les API sont définies par les assemblys que le Framework installe sur un système et peuvent inclure des API de Framework d’application (par exemple, ASP.NET).
 
 Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et .NET Core), les API sont définies par les packages inclus dans l’application ou la bibliothèque. Un *métapackage* est un package NuGet qui n’a aucun contenu propre, mais qui est une liste de dépendances (autres packages). Un framework cible basé sur un package NuGet spécifie implicitement un métapackage qui référence tous les packages constituant le framework.
 
-## <a name="latest-target-framework-versions"></a>Versions les plus récentes des frameworks cibles
+## <a name="latest-versions"></a>Dernières versions
 
-Le tableau ci-dessous définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET Standard](net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker du framework cible est un format de jeton standardisé pour la spécification du framework cible d’une bibliothèque ou d’une application .NET.
+Le tableau ci-dessous définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET Standard](net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker de Framework cible (TFM) est un format de jeton standardisé pour la spécification de la version cible de .NET Framework d’une application ou d’une bibliothèque .NET.
 
-| Framework cible      | Latest <br/> Version stable | Moniker du Framework cible | Implémenté <br/> Version .NET Standard |
-| :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
+| Version cible de .NET Framework      | Dernière <br/> version stable | Moniker du Framework cible (TFM) | Implémenté <br/> Version de .NET Standard |
+| :-: | :-: | :-: | :-: |
 | .NET Standard         | 2.1                         | netstandard 2.1                 | N/A                                     |
 | .NET Core             | 3.1                         | netcoreapp 3.1                  | 2.1                                     |
-| .NET Framework        | 4.8                         | net48                          | 2.0                                     |
+| .NET Framework        | 4.8                         | net48                          | 2,0                                     |
 
-## <a name="supported-target-framework-versions"></a>Versions de framework cible prises en charge
+## <a name="supported-target-frameworks"></a>Frameworks cibles pris en charge
 
-Un framework cible est généralement référencé par un TFM. Le tableau suivant présente les frameworks cibles pris en charge par le SDK .NET Core et le client NuGet. Les équivalents sont indiqués entre crochets. Par exemple, `win81` est un TFM équivalent de `netcore451`.
+Un framework cible est généralement référencé par un TFM. Le tableau suivant présente les frameworks cibles pris en charge par le kit de développement logiciel (SDK) .NET et le client NuGet. Les équivalents sont indiqués entre crochets. Par exemple, `win81` est un TFM équivalent de `netcore451`.
 
 | Framework cible           | TFM |
 | -------------------------- | --- |
+| .NET 5 (et .NET Core)     | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0<br>netcoreapp2.1<br>netcoreapp2.2<br>netcoreapp 3.0<br>netcoreapp 3.1<br>.net 5.0 * |
 | .NET Standard              | netstandard1.0<br>netstandard1.1<br>netstandard1.2<br>netstandard1.3<br>netstandard1.4<br>netstandard1.5<br>netstandard1.6<br>netstandard2.0<br>netstandard 2.1 |
-| .NET Core                  | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0<br>netcoreapp2.1<br>netcoreapp2.2<br>netcoreapp 3.0<br>netcoreapp 3.1 |
-| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471<br>net472<br>net48 |
+| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471<br>net472<br>net48 |
 | Windows Store              | netcore [netcore45]<br>netcore45 [win] [win8]<br>netcore451 [win81] |
 | .NET Micro Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
 | Windows Phone              | wp [wp7]<br>wp7<br>wp75<br>wp8<br>wp81<br>wpa81 |
 | Plateforme Windows universelle | uap [uap10.0]<br>uap10.0 [win10] [netcore50] |
 
-## <a name="how-to-specify-target-frameworks"></a>Comment spécifier des frameworks cibles
+\* .NET 5,0 et versions ultérieures TFM incluent des variantes spécifiques au système d’exploitation. Pour plus d’informations, consultez la section suivante, [TFM propre au système d’exploitation .net 5](#net-5-os-specific-tfms).
 
-Les frameworks cibles sont spécifiés dans votre fichier projet. Quand vous spécifiez un framework cible unique, utilisez l’élément **TargetFramework**. Le fichier de projet d’application console suivant montre comment cibler .NET Core 3,0 :
+### <a name="net-5-os-specific-tfms"></a>TFM spécifique à .NET 5
+
+Pour chaque TFM .NET 5,0 et versions ultérieures, par exemple, `net5.0` il existe des variantes TFM qui incluent des liaisons spécifiques au système d’exploitation. Ces variations sont indiquées dans le tableau suivant.
+
+| Format propre au système d’exploitation | Exemple        |
+|--------------------|----------------|
+| \<base-tfm>-Android | .net 5.0-Android |
+| \<base-tfm>-iOS     | net 5.0-iOS     |
+| \<base-tfm>-MacOS   | .net 5.0-MacOS   |
+| \<base-tfm>-TVos    | .net 5.0-TVos    |
+| \<base-tfm>-Watchos | net 5.0-Watchos |
+| \<base-tfm>7.5.0 | .net 5.0-Windows |
+
+Vous pouvez également spécifier une version de système d’exploitation facultative, par exemple `net5.0-ios12.0` .
+
+Pour plus d’informations sur les TFM de .NET 5, consultez [Target Framework Names in .net 5](https://github.com/dotnet/designs/blob/master/accepted/2020/net5/net5.md).
+
+## <a name="how-to-specify-a-target-framework"></a>Comment spécifier une version cible de .NET Framework
+
+Les frameworks cibles sont spécifiés dans un fichier projet. Quand vous spécifiez un framework cible unique, utilisez l’élément **TargetFramework**. Le fichier de projet d’application console suivant montre comment cibler .NET 5,0 :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
 </Project>
@@ -65,7 +84,7 @@ Les frameworks cibles sont spécifiés dans votre fichier projet. Quand vous sp�
 
 Quand vous spécifiez plusieurs frameworks cibles, vous pouvez référencer conditionnellement des assemblys pour chaque framework cible. Dans votre code, vous pouvez effectuer une compilation conditionnelle par rapport à ces assemblys en utilisant des symboles de préprocesseur avec la structure logique *if-then-else*.
 
-Le fichier projet de bibliothèque suivant cible des API de .NET Standard (`netstandard1.4`) et des API de .NET Framework (`net40` et `net45`). Utilisez l’élément pluriel **TargetFrameworks** avec plusieurs frameworks cibles. Notez la façon dont les attributs `Condition` incluent les packages spécifiques à l’implémentation quand la bibliothèque est compilée pour les deux TFM .NET Framework :
+Le projet de bibliothèque suivant cible les API de .NET Standard ( `netstandard1.4` ) et .NET Framework ( `net40` et `net45` ). Utilisez l’élément pluriel **TargetFrameworks** avec plusieurs frameworks cibles. Les `Condition` attributs incluent des packages spécifiques à l’implémentation lorsque la bibliothèque est compilée pour les deux .NET Framework TFM :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -88,7 +107,7 @@ Le fichier projet de bibliothèque suivant cible des API de .NET Standard (`nets
 </Project>
 ```
 
-Au sein de votre application ou bibliothèque, vous écrivez du code conditionnel à compiler pour chaque framework cible :
+Dans votre bibliothèque ou votre application, vous écrivez du code conditionnel à l’aide de [directives de préprocesseur](../csharp/language-reference/preprocessor-directives/preprocessor-if.md) à compiler pour chaque Framework cible :
 
 ```csharp
 public class MyClass
@@ -106,7 +125,7 @@ public class MyClass
 }
 ```
 
-Le système de génération tient compte des symboles de préprocesseur représentant les frameworks cibles affichés dans le tableau [versions de Framework cible prises en charge](#supported-target-framework-versions) lorsque vous utilisez des projets de type SDK. Quand vous utilisez un symbole représentant un TFM .NET Standard ou .NET Core, remplacez le point par un trait de soulignement et remplacez les lettres minuscules par des lettres majuscules (par exemple, le symbole pour `netstandard1.4` est `NETSTANDARD1_4`).
+Le système de génération tient compte des symboles de préprocesseur représentant les frameworks cibles affichés dans le tableau [versions de Framework cible prises en charge](#supported-target-frameworks) lorsque vous utilisez des projets de type SDK. Quand vous utilisez un symbole représentant un TFM .NET Standard ou .NET Core, remplacez le point par un trait de soulignement et remplacez les lettres minuscules par des lettres majuscules (par exemple, le symbole pour `netstandard1.4` est `NETSTANDARD1_4`).
 
 La liste complète des symboles de préprocesseur pour les frameworks cibles de .NET Core est la suivante :
 
@@ -114,7 +133,7 @@ La liste complète des symboles de préprocesseur pour les frameworks cibles de 
 
 ## <a name="deprecated-target-frameworks"></a>Frameworks cibles dépréciés
 
-Les frameworks cibles suivants sont dépréciés. Les packages ciblant ces frameworks cibles doivent migrer vers les versions de remplacement indiquées.
+Les frameworks cibles suivants sont dépréciés. Les packages qui ciblent ces frameworks cibles doivent migrer vers les remplacements indiqués.
 
 | TFM déprécié                                                                             | Remplacement |
 | ------------------------------------------------------------------------------------------ | ----------- |

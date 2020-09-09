@@ -2,14 +2,14 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: a863e544c0fcc8682994f49a464acccafc5ce92f
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: ddffe4aaaed6c9079999b2ab29ca61ab5753f15a
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495825"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598142"
 ---
-# <a name="whats-new-in-c-90"></a>Nouveautés de C# 9,0
+# <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
 C# 9,0 ajoute les fonctionnalités et améliorations suivantes au langage C# :
 
@@ -24,6 +24,7 @@ C# 9,0 ajoute les fonctionnalités et améliorations suivantes au langage C# :
 - fonctions anonymes statiques
 - Expressions conditionnelles typées cible
 - Types de retour covariant
+- `GetEnumerator`Prise en charge des extensions pour les `foreach` boucles
 - Paramètres d’abandon lambda
 - Attributs sur des fonctions locales
 - Initialiseurs de module
@@ -217,7 +218,7 @@ Vous pouvez l’appeler comme suit :
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="TargetTypeNewArgument":::
 
-Une autre utilisation intéressante de cette fonctionnalité est de l’associer aux propriétés init only pour initialiser un nouvel objet. Les parenthèses sur `new` sont facultatives :
+Une autre utilisation intéressante de cette fonctionnalité est de l’associer aux propriétés init only pour initialiser un nouvel objet :
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="InitWeatherStation":::
 
@@ -228,6 +229,8 @@ Une fonctionnalité similaire améliore la résolution de type cible des express
 À compter de C# 9,0, vous pouvez ajouter le `static` modificateur aux expressions lambda ou aux méthodes anonymes. Les expressions lambda statiques sont analogues aux `static` fonctions locales : une fonction lambda statique ou une fonction anonyme ne peut pas capturer les variables locales ou l’état de l’instance. Le `static` modificateur empêche la capture accidentelle d’autres variables.
 
 Les types de retour covariants fournissent la flexibilité pour les types de retour des fonctions substituées. Une fonction virtuelle substituée peut retourner un type dérivé du type de retour déclaré dans la méthode de la classe de base. Cela peut être utile pour les enregistrements et pour d’autres types qui prennent en charge les méthodes de fabrique ou de clonage virtuel.
+
+En outre, la `foreach` boucle reconnaît et utilise une méthode d’extension `GetEnumerator` qui, autrement, satisfait le `foreach` modèle. Ce changement signifie `foreach` qu’il est cohérent avec d’autres constructions basées sur des modèles, telles que le modèle asynchrone et la déconstruction basée sur des modèles. Dans la pratique, cette modification signifie que vous pouvez ajouter la `foreach` prise en charge à n’importe quel type. Vous devez limiter son utilisation à lorsque l’énumération d’un objet est logique dans votre conception.
 
 Ensuite, vous pouvez utiliser des éléments ignorés comme paramètres pour les expressions lambda. Cela vous permet d’éviter de nommer l’argument et le compilateur peut ne pas l’utiliser. Vous utilisez `_` pour n’importe quel argument.
 

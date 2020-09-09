@@ -4,12 +4,12 @@ description: Référence pour les propriétés et les éléments MSBuild compris
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: 39cbd18121d2b8659b2f5270f39624798f4ebbdc
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 866253a0526741f5554971a5202c179106503951
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810520"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598014"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Référence MSBuild pour les projets kit SDK .NET Core
 
@@ -26,7 +26,7 @@ Cette page est une référence pour les propriétés et les éléments MSBuild q
 
 ### <a name="targetframework"></a>TargetFramework
 
-La `TargetFramework` propriété spécifie la version cible de .NET Framework pour l’application. Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
+La `TargetFramework` propriété spécifie la version cible de .NET Framework pour l’application. Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-frameworks).
 
 ```xml
 <PropertyGroup>
@@ -38,7 +38,7 @@ Pour plus d’informations, consultez [frameworks cibles dans les projets de typ
 
 ### <a name="targetframeworks"></a>TargetFrameworks
 
-Utilisez la `TargetFrameworks` propriété lorsque vous souhaitez que votre application cible plusieurs plateformes. Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-framework-versions).
+Utilisez la `TargetFrameworks` propriété lorsque vous souhaitez que votre application cible plusieurs plateformes. Pour obtenir la liste des monikers du Framework cible valides, consultez [frameworks cibles dans les projets de type SDK](../../standard/frameworks.md#supported-target-frameworks).
 
 > [!NOTE]
 > Cette propriété est ignorée si `TargetFramework` (singulier) est spécifié.
@@ -327,7 +327,7 @@ La `TieredCompilationQuickJitForLoops` propriété configure si le compilateur J
 
 La `AssetTargetFallback` propriété vous permet de spécifier des versions de Framework compatibles supplémentaires pour les références de projet et les packages NuGet. Par exemple, si vous spécifiez une dépendance de package à l’aide de `PackageReference` mais que ce package ne contient pas de ressources compatibles avec les projets `TargetFramework` , la `AssetTargetFallback` propriété entre en lecture. La compatibilité du package référencé est revérifiée à l’aide de chaque version cible de .NET Framework spécifiée dans `AssetTargetFallback` .
 
-Vous pouvez définir la `AssetTargetFallback` propriété sur une ou plusieurs [versions du Framework cible](../../standard/frameworks.md#supported-target-framework-versions).
+Vous pouvez définir la `AssetTargetFallback` propriété sur une ou plusieurs [versions du Framework cible](../../standard/frameworks.md#supported-target-frameworks).
 
 ```xml
 <PropertyGroup>
@@ -365,7 +365,7 @@ L’extrait de code du fichier projet dans l’exemple suivant fait référence 
 </ItemGroup>
 ```
 
-### <a name="reference"></a>Référence
+### <a name="reference"></a>Informations de référence
 
 L' `Reference` élément définit une référence à un fichier d’assembly.
 

@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 87f9cc03f334233ef286abd11e6f5ff82d7988c2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4e937f56f6315ce2abf76dd56989f4d2c4059f22
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811343"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598068"
 ---
-### <a name="ca1831-use-asspan-or-asmemory-instead-of-range-based-indexer"></a>CA1831 utiliser AsSpan ou AsMemory à la place de l’indexeur basé sur une plage
+### <a name="ca1831-use-asspan-instead-of-range-based-indexers-for-string"></a>CA1831 : utiliser AsSpan à la place d’indexeurs basés sur une plage pour la chaîne
 
 La règle de l’analyseur de code .NET [CA1831](/visualstudio/code-quality/ca1831) est activée, par défaut, à partir de .net 5,0. Il génère un avertissement de génération pour tout code où un <xref:System.Range> indexeur de based est utilisé sur une chaîne, mais aucune copie n’était prévue.
 
