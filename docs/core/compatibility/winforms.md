@@ -1,22 +1,24 @@
 ---
 title: Modifications avec rupture Windows Forms
-description: Répertorie les dernières modifications apportées à Windows Forms pour .NET Core.
-ms.date: 01/08/2020
-ms.openlocfilehash: beb9a42e4b5007f03480cd74f57bbfbbfc3f48b1
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+description: Répertorie les dernières modifications apportées à Windows Forms pour .NET Core et .NET 5.
+ms.date: 09/08/2020
+ms.openlocfilehash: c3d2d23601d6a2d9d44761c4371fe34d3d5ed1f3
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556171"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656333"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Modifications avec rupture dans Windows Forms
 
-La prise en charge de Windows Forms a été ajoutée à .NET Core dans la version 3,0. Cet article répertorie les modifications avec rupture pour Windows Forms par la version de .NET Core dans laquelle elles ont été introduites. Si vous effectuez la mise à niveau d’une application Windows Forms à partir d' .NET Framework ou d’une version antérieure de .NET Core (3,0 ou version ultérieure), cet article s’applique à vous.
+La prise en charge de Windows Forms a été ajoutée à .NET Core dans la version 3,0. Cet article répertorie les dernières modifications apportées à Windows Forms par la version .NET dans laquelle elles ont été introduites. Si vous effectuez la mise à niveau d’une application Windows Forms à partir d' .NET Framework ou d’une version antérieure de .NET Core (3,0 ou version ultérieure), cet article s’applique à vous.
 
 Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [Les API liées à DataGridView lèvent désormais InvalidOperationException](#datagridview-related-apis-now-throw-invalidoperationexception) | 5.0 |
+| [WinForms et les applications WPF utilisent Microsoft. NET. Sdk](#winforms-and-wpf-apps-use-microsoftnetsdk) | 5.0 |
 | [Contrôles de barre d’État supprimés](#removed-status-bar-controls) | 5.0 |
 | [Les méthodes WinForms lèvent désormais ArgumentException](#winforms-methods-now-throw-argumentexception) | 5.0 |
 | [Les méthodes WinForms lèvent désormais ArgumentNullException](#winforms-methods-now-throw-argumentnullexception) | 5.0 |
@@ -36,6 +38,14 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Commutateur de compatibilité UseLegacyImages non pris en charge](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [null-owner-causes-invalidoperationexception](../../../includes/core-changes/windowsforms/5.0/null-owner-causes-invalidoperationexception.md)]
+
+***
+
+[!INCLUDE [sdk-and-target-framework-change](../../../includes/core-changes/windowsforms/5.0/sdk-and-target-framework-change.md)]
+
+***
 
 [!INCLUDE [winforms-deprecated-controls](../../../includes/core-changes/windowsforms/5.0/winforms-deprecated-controls.md)]
 

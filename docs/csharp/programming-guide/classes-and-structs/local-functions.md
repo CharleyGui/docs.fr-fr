@@ -4,12 +4,12 @@ description: Les fonctions locales en C# sont des méthodes privées qui sont im
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 854ec7ab4a4cc637c0a5ad03e0344d2f1f7679d2
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: c1c6c6becb3894b05cb9ed89f7f33dcf249b20eb
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063300"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656183"
 ---
 # <a name="local-functions-c-programming-guide"></a>Fonctions locales (Guide de programmation C#)
 
@@ -46,7 +46,7 @@ Notez que toutes les variables locales définies dans le membre conteneur, y com
 Contrairement à une définition de méthode, une définition de fonction locale ne peut pas inclure le modificateur d’accès au membre. Comme toutes les fonctions locales sont privées, l’inclusion d’un modificateur d’accès, tel que le mot clé `private`, génère l’erreur de compilateur CS0106 : « Le modificateur « private » n’est pas valide pour cet élément ».
 
 > [!NOTE]
-> Avant C# 8,0, les fonctions locales ne peuvent pas inclure le `static` modificateur. L’inclusion du mot clé `static` génère l’erreur de compilateur CS0106 : « Le modificateur « static » n’est pas valide pour cet élément ».
+> Avant C# 8,0, les fonctions locales ne peuvent pas inclure le `static` modificateur. L’inclusion du `static` mot clé génère l’erreur du compilateur CS0106, « le modificateur’static’n’est pas valide pour cet élément. » ou une erreur du compilateur qui indique que vous devez utiliser C# 8,0 ou une version ultérieure.
 
 Par ailleurs, les attributs ne peuvent pas être appliqués à la fonction locale ou à ses paramètres et paramètres de type.
 
@@ -94,7 +94,7 @@ Les fonctions locales ont des règles différentes pour l’affectation définie
 
 Les règles d’affectation définies s’appliquent également à toutes les variables qui sont capturées par la fonction locale ou l’expression lambda. Les règles des fonctions locales comme celles des expression lambda exigent que toutes les variables capturées soient définitivement affectées au point marquant le moment où la fonction locale ou l’expression lambda est convertie en délégué. La différence est que les expressions lambda sont converties en délégués au moment où elles sont déclarées. Les fonctions locales sont converties en délégués uniquement lorsqu’elles sont utilisées en tant que délégué. Si vous déclarez une fonction locale et la référencez uniquement en l’appelant comme une méthode, elle ne sera pas convertie en délégué. Cette règle vous permet de déclarer une fonction locale à n’importe quel emplacement qui vous convient dans sa portée englobante. Il est courant de déclarer des fonctions locales à la fin de la méthode parente, après des instructions return.
 
-Troisième différence, le compilateur peut effectuer une analyse statique qui active des fonctions locales de manière à affecter définitivement les variables capturées dans la portée englobante. Examinez cet exemple :
+Troisième différence, le compilateur peut effectuer une analyse statique qui active des fonctions locales de manière à affecter définitivement les variables capturées dans la portée englobante. Prenons l’exemple suivant :
 
 ```csharp
 int M()

@@ -1,18 +1,18 @@
 ---
 title: Dernières modifications-.NET Framework à .NET Core
 titleSuffix: ''
-description: Répertorie les modifications avec rupture d' .NET Framework à .NET Core.
+description: Répertorie les modifications avec rupture de .NET Framework à .NET Core 1,0-3,1.
 ms.date: 05/05/2020
-ms.openlocfilehash: e9fa37dba89bbd6c4829614c27cb66206069fa9b
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 5904a359813b6d07bd2a27d882ade4395efe3256
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414451"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656364"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Dernières modifications pour la migration de .NET Framework vers .NET Core
 
-Si vous migrez une application à partir de .NET Framework vers .NET Core, les modifications avec rupture mentionnées dans cet article peuvent vous affecter. Les modifications avec rupture sont regroupées par catégorie et au sein de ces catégories, par la version de .NET Core dans laquelle elles ont été introduites.
+Si vous migrez une application à partir de .NET Framework vers les versions .NET Core 1,0 à 3,1, les dernières modifications mentionnées dans cet article peuvent vous affecter. Les modifications avec rupture sont regroupées par catégorie et au sein de ces catégories, par la version de .NET Core dans laquelle elles ont été introduites.
 
 > [!NOTE]
 > Cet article n’est pas une liste complète des modifications avec rupture entre .NET Framework et .NET Core. Les modifications critiques les plus importantes sont ajoutées ici, car nous en avons conscience.
@@ -72,17 +72,10 @@ Si vous migrez une application à partir de .NET Framework vers .NET Core, les m
 ## <a name="networking"></a>Mise en réseau
 
 - [WebClient. CancelAsync n’est pas toujours annulé immédiatement](#webclientcancelasync-doesnt-always-cancel-immediately)
-- [La gestion des chemins d’accès des cookies est maintenant conforme à la norme RFC 6265](#cookie-path-handling-now-conforms-to-rfc-6265)
 
 ### <a name="net-core-20"></a>.NET Core 2.0
 
 [!INCLUDE [behavior-change-webclient-cancelasync](../../../includes/core-changes/networking/2.0/behavior-change-webclient-cancelasync.md)]
-
-***
-
-### <a name="net-50"></a>.NET 5,0
-
-[!INCLUDE [cookie-path-conforms-to-rfc6265](../../../includes/core-changes/networking/5.0/cookie-path-conforms-to-rfc6265.md)]
 
 ***
 

@@ -1,0 +1,350 @@
+- name: LINQ
+  items:
+    - name: Vue d’ensemble de LINQ
+      href: index.md
+    - name: LINQ to XML
+      items:
+        - name: Bien démarrer
+          items:
+            - name: Vue d’ensemble de LINQ to XML
+              href: linq-xml-overview.md
+            - name: 'LINQ to XML, différences par rapport à DOM'
+              href: linq-xml-vs-dom.md
+            - name: Comparaison de LINQ to XML et des autres technologies XML
+              href: linq-xml-vs-xml-technologies.md
+        - name: Guide de programmation
+          items:
+            - name: Vue d’ensemble de la programmation LINQ to XML
+              items:
+                - name: Comparaison de la programmation fonctionnelle et de la programmation procédurale
+                  href: functional-vs-procedural-programming.md
+                - name: Vue d’ensemble des classes LINQ to XML
+                  href: linq-xml-classes-overview.md
+                - name: Vue d’ensemble de la classe XElement
+                  href: xelement-class-overview.md
+                - name: Vue d’ensemble de la classe XAttribute
+                  href: xattribute-class-overview.md
+                - name: Vue d’ensemble de la classe XDocument
+                  href: xdocument-class-overview.md
+                - name: Guide pratique pour générer des exemples LINQ to XML
+                  href: build-linq-xml-examples.md
+            - name: Arborescences XML
+              items:
+                - name: Construction fonctionnelle
+                  href: functional-construction.md
+                - name: Créer des arborescences XML en C#
+                  href: create-xml-trees.md
+                - name: Littéraux XML en Visual Basic
+                  href: xml-literals.md
+                - name: XML Parse
+                  items:
+                    - name: Comment analyser une chaîne
+                      href: parse-string.md
+                    - name: Comment charger du code XML à partir d’un fichier
+                      href: load-xml-file.md
+                    - name: Conserver des espaces blancs lors du chargement ou de l’analyse de code XML
+                      href: preserve-white-space-loading-parsing-xml.md
+                    - name: Guide pratique pour intercepter des erreurs d’analyse
+                      href: catch-parsing-errors.md
+                    - name: Guide pratique pour créer une arborescence à partir d’un XmlReader
+                      href: create-tree-xmlreader.md
+                    - name: Comment diffuser des fragments XML en continu à partir d’un XmlReader
+                      href: stream-xml-fragments-xmlreader.md
+                - name: Comment remplir une arborescence XML avec un XmlWriter
+                  href: populate-xml-tree-xmlwriter.md
+                - name: Comment valider à l’aide de XSD
+                  href: validate-xsd.md
+                - name: Contenu valide des objets XElement et XDocument
+                  href: valid-content-xelement-xdocument-objects.md
+            - name: Utiliser les espaces de noms XML
+              items:
+                - name: Vue d’ensemble des espaces de noms
+                  href: namespaces-overview.md
+                - name: Comment créer un document avec des espaces de noms en C#
+                  href: create-document-namespaces-csharp.md
+                - name: Comment créer un document avec des espaces de noms en Visual Basic
+                  href: create-document-namespaces-visual-basic.md
+                - name: Comment contrôler les préfixes d’espaces de noms
+                  href: control-namespace-prefixes.md
+                - name: Étendue des espaces de noms par défaut
+                  href: scope-default-namespaces.md
+                - name: Utiliser les espaces de noms globaux en Visual Basic
+                  href: work-global-namespaces.md
+                - name: Comment écrire des requêtes sur du code XML dans des espaces de noms
+                  href: write-queries-xml-namespaces.md
+            - name: Sérialiser les arborescences XML
+              items:
+                - name: Conserver les espaces blancs lors de la sérialisation
+                  href: preserve-white-space-serializing.md
+                - name: Sérialiser à l’aide d’une déclaration XML
+                  href: serialize-xml-declaration.md
+                - name: 'Sérialiser vers des fichiers, des TextWriters et des XmlWriters'
+                  href: serialize-files-textwriters-xmlwriters.md
+                - name: Sérialiser vers un XmlReader (appeler XSLT)
+                  href: serialize-xmlreader-invoke-xslt.md
+            - name: Axes LINQ to XML
+              items:
+                - name: Vue d’ensemble des axes LINQ to XML
+                  href: linq-xml-axes-overview.md
+                - name: Comment récupérer une collection d’éléments
+                  href: retrieve-collection-elements.md
+                - name: Comment récupérer la valeur d’un élément
+                  href: retrieve-value-element.md
+                - name: Comment filtrer sur des noms d’éléments
+                  href: filter-element-names.md
+                - name: Comment chaîner des appels à des méthodes d’axe
+                  href: chain-axis-method-calls.md
+                - name: Comment récupérer un seul élément enfant
+                  href: retrieve-single-child-element.md
+                - name: Comment récupérer une collection d’attributs
+                  href: retrieve-collection-attributes.md
+                - name: Comment récupérer un seul attribut
+                  href: retrieve-single-attribute.md
+                - name: Comment récupérer la valeur d’un attribut
+                  href: retrieve-value-attribute.md
+                - name: Comment récupérer la valeur superficielle d’un élément
+                  href: retrieve-shallow-value-element.md
+                - name: Axes intégrés au langage en Visual Basic
+                  href: language-integrated-axes.md
+            - name: Interroger des arborescences XML
+              items:
+                - name: Vue d’ensemble de l’interrogation des arborescences XML
+                  href: query-xml-trees-overview.md
+                - name: Requêtes de base
+                  items:
+                    - name: Guide pratique pour rechercher un élément avec un attribut spécifique
+                      href: find-element-specific-attribute.md
+                    - name: Guide pratique pour rechercher un élément avec un élément enfant spécifique
+                      href: find-element-specific-child-element.md
+                    - name: Comparaison entre l’interrogation d’un XDocument et l’interrogation d’un XElement
+                      href: query-xdocument-vs-query-xelement.md
+                    - name: Comment rechercher les descendants avec un nom d’élément spécifique
+                      href: find-descendants-specific-element-name.md
+                    - name: Comment rechercher un seul descendant avec la méthode Descendants
+                      href: find-single-descendant-descendants-method.md
+                    - name: Comment écrire des requêtes avec un filtrage complexe
+                      href: write-queries-complex-filtering.md
+                    - name: Guide pratique pour filtrer sur un élément facultatif
+                      href: filter-optional-element.md
+                    - name: Guide pratique pour rechercher tous les nœuds dans un espace de noms
+                      href: find-all-nodes-namespace.md
+                    - name: Comment trier des éléments
+                      href: sort-elements.md
+                    - name: Comment trier des éléments sur plusieurs clés
+                      href: sort-elements-multiple-keys.md
+                    - name: Guide pratique pour calculer des valeurs intermédiaires
+                      href: calculate-intermediate-values.md
+                    - name: Comment écrire une requête qui recherche des éléments en fonction du contexte
+                      href: write-query-finds-elements-based-context.md
+                    - name: Guide pratique pour déboguer des ensembles de résultats de requête vides
+                      href: debug-empty-query-results-sets.md
+                - name: Projections et transformations
+                  items:
+                    - name: Comment utiliser des dictionnaires à l’aide de LINQ to XML
+                      href: work-dictionaries-linq-xml.md
+                    - name: Comment transformer la forme d’une arborescence XML
+                      href: transform-shape-xml-tree.md
+                    - name: Guide pratique pour contrôler le type d’une projection
+                      href: control-type-projection.md
+                    - name: Comment projeter un nouveau type
+                      href: project-new-type.md
+                    - name: Comment projeter un graphe d’objet
+                      href: project-object-graph.md
+                    - name: Comment projeter un type anonyme
+                      href: project-anonymous-type.md
+                    - name: Comment générer des fichiers texte à partir de code XML
+                      href: generate-text-files-xml.md
+                    - name: Comment générer du code XML à partir de fichiers CSV
+                      href: generate-xml-csv-files.md
+                - name: Techniques de requêtes avancées
+                  items:
+                    - name: Comment joindre deux collections
+                      href: join-two-collections.md
+                    - name: Guide pratique pour créer une hiérarchie en utilisant le regroupement
+                      href: create-hierarchy-grouping.md
+                    - name: Comment interroger LINQ to XML à l’aide de XPath
+                      href: query-linq-xml-xpath.md
+                    - name: Comment écrire une méthode d’axe LINQ to XML
+                      href: write-linq-xml-axis-method.md
+                    - name: "Comment effectuer des transformations de streaming du format texte au format\_XML en C#"
+                      href: perform-streaming-transformations-text-xml.md
+                    - name: Comment lister tous les nœuds d’une arborescence
+                      href: list-all-nodes-tree.md
+                    - name: Comment récupérer les paragraphes d’un document Office Open XML
+                      href: retrieve-paragraphs-office-open-xml-document.md
+                    - name: Comment modifier un document Office Open XML
+                      href: modify-office-open-xml-document.md
+                    - name: Comment remplir une arborescence XML à partir du système de fichiers
+                      href: populate-xml-tree-file-system.md
+                - name: LINQ to XML pour les utilisateurs XPath
+                  items:
+                    - name: Comparaison de XPath et LINQ to XML
+                      href: comparison-xpath-linq-xml.md
+                    - name: Comment rechercher un élément enfant
+                      href: find-child-element.md
+                    - name: Comment rechercher une liste d’éléments enfants
+                      href: find-list-child-elements.md
+                    - name: Comment rechercher l’élément racine
+                      href: find-root-element.md
+                    - name: Comment rechercher des éléments descendants
+                      href: find-descendant-elements.md
+                    - name: Comment filtrer sur un attribut
+                      href: filter-attribute.md
+                    - name: Comment rechercher des éléments connexes
+                      href: find-related-elements.md
+                    - name: Comment rechercher des éléments dans un espace de noms
+                      href: find-elements-namespace.md
+                    - name: Comment rechercher les frères précédents
+                      href: find-preceding-siblings.md
+                    - name: Comment rechercher les descendants d’un élément enfant
+                      href: find-descendants-child-element.md
+                    - name: Comment rechercher une union de deux chemins d’emplacement
+                      href: find-union-two-location-paths.md
+                    - name: Comment rechercher des nœuds frères
+                      href: find-sibling-nodes.md
+                    - name: Comment rechercher un attribut du parent
+                      href: find-attribute-parent.md
+                    - name: Comment rechercher des attributs de frères avec un nom spécifique
+                      href: find-attributes-siblings-specific-name.md
+                    - name: Comment rechercher des éléments avec un attribut spécifique
+                      href: find-elements-specific-attribute.md
+                    - name: Comment rechercher des éléments enfants en fonction de leur position
+                      href: find-child-elements-based-position.md
+                    - name: Comment rechercher le frère précédent
+                      href: find-immediate-preceding-sibling.md
+                - name: Transformations fonctionnelles pures de données XML
+                  items:
+                    - name: Introduction aux transformations fonctionnelles pures
+                      href: introduction-pure-functional-transformations.md
+                    - name: Concepts et terminologie (transformation fonctionnelle)
+                      href: concepts-terminology-functional-transformation.md
+                    - name: Comparaison de la programmation fonctionnelle et de la programmation impérative
+                      href: functional-vs-imperative-programming.md
+                    - name: Refactoriser dans des fonctions pures
+                      href: refactor-pure-functions.md
+                    - name: Applicabilité des transformations fonctionnelles
+                      href: applicability-functional-transformation.md
+                    - name: Transformation fonctionnelle de données XML
+                      href: functional-transformation-xml.md
+                    - name: Exécution différée et évaluation différée
+                      href: deferred-execution-lazy-evaluation.md
+                    - name: Exemple d’exécution différée
+                      href: deferred-execution-example.md
+                    - name: "Tutoriel\_: Chaîner des requêtes (C#)"
+                      items:
+                        - name: Exemple de chaînage de requêtes (C#)
+                          href: chain-queries-example.md
+                        - name: Matérialisation intermédiaire (C#)
+                          href: intermediate-materialization.md
+                        - name: Chaîner des opérateurs de requête standard (C#)
+                          href: chain-standard-query-operators-together.md
+                    - name: "Tutoriel\_: Manipuler du contenu dans un document WordprocessingML"
+                      items:
+                        - name: Forme XML des documents WordprocessingML
+                          href: xml-shape-wordprocessingml-documents.md
+                        - name: Créer le document Office Open XML source
+                          href: create-source-office-open-xml-document.md
+                        - name: Rechercher le style de paragraphe par défaut
+                          href: find-default-paragraph-style.md
+                        - name: Récupérer les paragraphes et leurs styles
+                          href: retrieve-paragraphs-styles.md
+                        - name: Récupérer le texte des paragraphes
+                          href: retrieve-text-paragraphs.md
+                        - name: Refactoriser à l’aide d’une méthode d’extension
+                          href: refactor-extension-method.md
+                        - name: Refactoriser à l’aide d’une fonction pure
+                          href: refactor-pure-function.md
+                        - name: Projeter du code XML en une autre forme
+                          href: project-xml-different-shape.md
+                        - name: Rechercher du texte dans des documents Word
+                          href: find-text-word-documents.md
+                        - name: Détails relatifs aux documents WordprocessingML Office Open XML
+                          items:
+                            - name: Document WordprocessingML avec des styles
+                              href: wordprocessingml-document-styles.md
+                            - name: Partie de style d’un document WordprocessingML
+                              href: style-part-wordprocessingml-document.md
+                            - name: Exemple qui imprime des parties de document Office Open XML
+                              href: example-outputs-office-open-xml-document-parts.md
+            - name: Modifier des arborescences XML
+              items:
+                - name: Comparaison de la modification d’arborescence XML en mémoire et de la construction fonctionnelle
+                  href: in-memory-xml-tree-modification-vs-functional-construction.md
+                - name: 'Ajouter des éléments, des attributs et des nœuds à une arborescence XML'
+                  href: add-elements-attributes-nodes-xml-tree.md
+                - name: 'Modifier des éléments, des attributs et des nœuds dans une arborescence XML'
+                  href: modify-elements-attributes-nodes-xml-tree.md
+                - name: 'Supprimer des éléments, des attributs et des nœuds d’une arborescence XML'
+                  href: remove-elements-attributes-nodes-xml-tree.md
+                - name: Conserver des paires nom-valeur
+                  href: maintain-name-value-pairs.md
+                - name: Guide pratique pour changer l’espace de noms d’une arborescence XML entière
+                  href: change-namespace-entire-xml-tree.md
+            - name: Performances
+              items:
+                - name: Performance des requêtes chaînées
+                  href: performance-chained-queries.md
+                - name: Objets XName et XNamespace atomisés
+                  href: atomized-xname-xnamespace-objects.md
+                - name: Préatomisation des objets XName
+                  href: pre-atomization-xname-objects.md
+                - name: Requêtes compilées statiquement
+                  href: statically-compiled-queries.md
+            - name: Programmation LINQ to XML avancée
+              items:
+                - name: Annotations LINQ to XML
+                  href: linq-xml-annotations.md
+                - name: Événements LINQ to XML
+                  href: linq-xml-events.md
+                - name: Programmer avec des nœuds
+                  href: program-nodes.md
+                - name: Bogues mixtes code déclaratif/code impératif
+                  href: mixed-declarative-imperative-code-bugs.md
+                - name: Comment diffuser des fragments XML en continu avec accès aux informations d’en-tête
+                  href: stream-xml-fragments-access-header-information.md
+                - name: Comment effectuer une transformation de streaming de gros documents XML
+                  href: perform-streaming-transform-large-xml-documents.md
+                - name: Comment lire et écrire un document encodé
+                  href: read-write-encoded-document.md
+                - name: Utiliser XSLT pour transformer une arborescence XML
+                  href: use-xslt-transform-xml-tree.md
+                - name: Comment utiliser des annotations pour transformer des arborescences LINQ to XML en style XSLT
+                  href: use-annotations-transform-linq-xml-trees-xslt-style.md
+                - name: Sérialiser des graphiques d’objets qui contiennent des objets XElement
+                  items:
+                    - name: Comment sérialiser à l’aide de XmlSerializer
+                      href: serialize-xmlserializer.md
+                    - name: Comment sérialiser à l’aide de DataContractSerializer
+                      href: serialize-datacontractserializer.md
+            - name: Sécurité LINQ to XML
+              href: linq-xml-security.md
+            - name: Exemples de documents XML
+              items:
+                - name: "Exemple de fichier XML\_: Commande fournisseur standard"
+                  href: sample-xml-file-typical-purchase-order.md
+                - name: "Exemple de fichier XML\_: Commande fournisseur standard dans un espace de noms"
+                  href: sample-xml-file-typical-purchase-order-namespace.md
+                - name: "Exemple de fichier XML\_: Plusieurs commandes fournisseur"
+                  href: sample-xml-file-multiple-purchase-orders.md
+                - name: "Exemple de fichier XML\_: Plusieurs commandes fournisseur dans un espace de noms"
+                  href: sample-xml-file-multiple-purchase-orders-namespace.md
+                - name: "Exemple de fichier XML\_: Configuration de test"
+                  href: sample-xml-file-test-configuration.md
+                - name: "Exemple de fichier XML\_: Configuration de test dans un espace de noms"
+                  href: sample-xml-file-test-configuration-namespace.md
+                - name: "Exemple de fichier XML\_: Clients et commandes"
+                  href: sample-xml-file-customers-orders.md
+                - name: "Exemple de fichier XSD\_: Clients et commandes"
+                  href: sample-xsd-file-customers-orders.md
+                - name: "Exemple de fichier XML\_: Clients et commandes dans un espace de noms"
+                  href: sample-xml-file-customers-orders-namespace.md
+                - name: "Exemple de fichier XML\_: Données numériques"
+                  href: sample-xml-file-numerical-data.md
+                - name: "Exemple de fichier XML\_: Données numériques dans un espace de noms"
+                  href: sample-xml-file-numerical-data-namespace.md
+                - name: "Exemple de fichier XML\_: Livres"
+                  href: sample-xml-file-books.md
+                - name: "Exemple de fichier XML\_: Commandes fournisseur consolidées"
+                  href: sample-xml-file-consolidated-purchase-orders.md
+        - name: Informations de référence
+          href: reference.md

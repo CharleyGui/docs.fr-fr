@@ -4,12 +4,12 @@ description: Référence pour les propriétés et les éléments MSBuild compris
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: 866253a0526741f5554971a5202c179106503951
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: c1093a0acd5b75ae6478767d690966a30fe84a31
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598014"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656260"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Référence MSBuild pour les projets kit SDK .NET Core
 
@@ -183,14 +183,32 @@ Le tableau suivant présente les options disponibles.
 
 | Valeur | Signification |
 |-|-|
-| `latest` | Les derniers analyseurs de code qui ont été publiés sont utilisés. Il s'agit de la valeur par défaut. |
+| `latest` | Les derniers analyseurs de code qui ont été publiés sont utilisés. Il s’agit de la valeur par défaut. |
 | `preview` | Les derniers analyseurs de code sont utilisés, même s’ils sont en version préliminaire. |
 | `5.0` | L’ensemble de règles activé pour la version .NET 5,0 est utilisé, même si des règles plus récentes sont disponibles. |
 | `5` | L’ensemble de règles activé pour la version .NET 5,0 est utilisé, même si des règles plus récentes sont disponibles. |
 
+### <a name="analysismode"></a>AnalysisMode
+
+À compter de .NET 5,0 RC2, le kit de développement logiciel (SDK) .NET est fourni avec toutes les [règles de qualité du code « ca »](/visualstudio/code-quality/code-analysis-for-managed-code-warnings). Par défaut, seules [certaines règles sont activées](../../fundamentals/productivity/code-analysis.md#enabled-rules) en tant qu’avertissements de génération. La `AnalysisMode` propriété vous permet de personnaliser l’ensemble des règles qui sont activées par défaut. Vous pouvez basculer vers un mode d’analyse plus agressif ou un mode d’analyse plus prudent (abonnement). Par exemple, si vous souhaitez activer toutes les règles par défaut en tant qu’avertissements de build, affectez la valeur à `AllEnabledByDefault` .
+
+```xml
+<PropertyGroup>
+  <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+</PropertyGroup>
+```
+
+Le tableau suivant présente les options disponibles.
+
+| Valeur | Signification |
+|-|-|
+| `Default` | Mode par défaut, où certaines règles sont activées en tant qu’avertissements de build, certaines règles sont activées en tant que suggestions de l’IDE Visual Studio, et le reste est désactivé. |
+| `AllEnabledByDefault` | Mode agressif ou opt-out, où toutes les règles sont activées par défaut en tant qu’avertissements de génération. Vous pouvez [choisir](../../fundamentals/productivity/configure-code-analysis-rules.md) de désactiver les règles individuelles de manière sélective pour les désactiver. |
+| `AllDisabledByDefault` | Mode conservateur ou opt-in, où toutes les règles sont désactivées par défaut. Vous pouvez [choisir](../../fundamentals/productivity/configure-code-analysis-rules.md) des règles individuelles pour les activer. |
+
 ### <a name="codeanalysistreatwarningsaserrors"></a>CodeAnalysisTreatWarningsAsErrors
 
-La `CodeAnalysisTreatWarningsAsErrors` propriété vous permet de configurer si les avertissements de l’analyse du code doivent être traités comme des avertissements et rompre la génération. Si vous utilisez l' `-warnaserror` indicateur lorsque vous générez vos projets, les avertissements de l' [analyse du code .net](../../fundamentals/productivity/code-analysis.md) sont également traités comme des erreurs. Si vous souhaitez que les avertissements du compilateur soient traités comme des erreurs, vous pouvez définir la `CodeAnalysisTreatWarningsAsErrors` propriété MSBuild sur `false` dans votre fichier projet.
+La `CodeAnalysisTreatWarningsAsErrors` propriété vous permet de configurer si les avertissements d’analyse de la qualité du code (CAXXXX) doivent être traités comme des avertissements et rompre la génération. Si vous utilisez l' `-warnaserror` indicateur lorsque vous générez vos projets, les avertissements de l’analyse de la [qualité du code .net](../../fundamentals/productivity/code-analysis.md#code-quality-analysis) sont également traités comme des erreurs. Si vous ne souhaitez pas que les avertissements d’analyse de la qualité du code soient traités comme des erreurs, vous pouvez définir la `CodeAnalysisTreatWarningsAsErrors` propriété MSBuild sur `false` dans votre fichier projet.
 
 ```xml
 <PropertyGroup>
@@ -200,7 +218,7 @@ La `CodeAnalysisTreatWarningsAsErrors` propriété vous permet de configurer si 
 
 ### <a name="enablenetanalyzers"></a>EnableNETAnalyzers
 
-L' [analyse du code .net](../../fundamentals/productivity/code-analysis.md) est activée, par défaut, pour les projets qui ciblent .net 5,0 ou une version ultérieure. Vous pouvez activer l’analyse du code .NET pour les projets qui ciblent des versions antérieures de .NET en affectant `EnableNETAnalyzers` à la propriété la valeur true. Pour désactiver l’analyse du code dans un projet, affectez la valeur à cette propriété `false` .
+L’analyse de la [qualité du code .net](../../fundamentals/productivity/code-analysis.md#code-quality-analysis) est activée, par défaut, pour les projets qui ciblent .net 5,0 ou une version ultérieure. Vous pouvez activer l’analyse du code .NET pour les projets qui ciblent des versions antérieures de .NET en affectant à la propriété la valeur `EnableNETAnalyzers` `true` . Pour désactiver l’analyse du code dans un projet, affectez la valeur à cette propriété `false` .
 
 ```xml
 <PropertyGroup>
@@ -210,6 +228,18 @@ L' [analyse du code .net](../../fundamentals/productivity/code-analysis.md) est 
 
 > [!TIP]
 > Une autre façon d’activer l’analyse du code .NET sur les projets qui ciblent les versions .NET antérieures à .NET 5,0 consiste à définir la propriété [AnalysisLevel](#analysislevel) sur `latest` .
+
+### <a name="enforcecodestyleinbuild"></a>EnforceCodeStyleInBuild
+
+L' [analyse du style de code .net](../../fundamentals/productivity/code-analysis.md#code-style-analysis) est désactivée, par défaut, à la génération pour tous les projets .net. Vous pouvez activer l’analyse de style de code pour les projets .NET en affectant à la propriété la valeur `EnforceCodeStyleInBuild` `true` .
+
+```xml
+<PropertyGroup>
+  <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+</PropertyGroup>
+```
+
+Toutes les règles de style de code qui sont [configurées](../../fundamentals/productivity/code-analysis.md#code-style-analysis) pour être des avertissements ou des erreurs sont exécutées lors des violations de la build et des rapports.
 
 ## <a name="run-time-configuration-properties"></a>Propriétés de configuration au moment de l’exécution
 
