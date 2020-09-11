@@ -3,19 +3,19 @@ title: Implémenter une méthode DisposeAsync
 description: Découvrez comment implémenter des méthodes DisposeAsync et DisposeAsyncCore pour effectuer un nettoyage asynchrone des ressources.
 author: IEvangelist
 ms.author: dapine
-ms.date: 08/25/2020
+ms.date: 09/10/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 268cea7584040ad92e2da75e5e03112480cda93c
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 88adf9e484baa0e65e2ff093b4649cf35b8c86dc
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053176"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022907"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implémenter une méthode DisposeAsync
 
@@ -70,6 +70,18 @@ Toutes les classes non-sealed doivent être considérées comme une classe de ba
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/disposeasync.cs":::
 
 L’exemple précédent utilise <xref:System.Text.Json.Utf8JsonWriter> . Pour plus d’informations sur `System.Text.Json` , voir [How to migrate from Newtonsoft.Json to System.Text.Json](../serialization/system-text-json-migrate-from-newtonsoft-how-to.md).
+
+## <a name="implement-both-dispose-and-async-dispose-patterns"></a>Implémenter à la fois les modèles dispose et Async
+
+Vous devrez peut-être implémenter à la fois les <xref:System.IDisposable> <xref:System.IAsyncDisposable> interfaces et, en particulier lorsque votre portée de classe contient des instances de ces implémentations. Cela vous permet de vous assurer que vous pouvez nettoyer correctement les appels en cascade. Voici un exemple de classe qui implémente les deux interfaces et montre les recommandations appropriées pour le nettoyage.
+
+:::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/dispose-and-disposeasync.cs":::
+
+Les <xref:System.IDisposable.Dispose?displayProperty=nameWithType> <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> implémentations et sont à la fois du code réutilisable simple. Les `Dispose(bool)` `DisposeAsyncCore()` méthodes et commencent par vérifier si `_disposed` est `true` et s’exécutent uniquement quand elle est `false` .
+
+Dans la `Dispose(bool)` méthode de surcharge, l' <xref:System.IDisposable> instance est supprimée de manière conditionnelle, si ce n’est pas le cas `null` . L' <xref:System.IAsyncDisposable> instance est castée en tant que <xref:System.IDisposable> , et si elle ne l’est pas non plus, elle est également `null` supprimée. Les deux instances sont ensuite affectées à `null` .
+
+Avec la `DisposeAsyncCore()` méthode, la même approche logique est suivie. Si l' <xref:System.IAsyncDisposable> instance n’est pas `null` , son appel à `DisposeAsync().ConfigureAwait(false)` est attendu. Si l' <xref:System.IDisposable> instance est également une implémentation de <xref:System.IAsyncDisposable> , elle est également supprimée de manière asynchrone. Les deux instances sont ensuite affectées à `null` .
 
 ## <a name="using-async-disposable"></a>Utilisation de Async jetable
 

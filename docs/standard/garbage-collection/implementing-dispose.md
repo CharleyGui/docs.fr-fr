@@ -1,7 +1,7 @@
 ---
 title: Implémenter une méthode Dispose
 description: Dans cet article, vous apprendrez à implémenter la méthode dispose, qui libère les ressources non managées utilisées par votre code dans .NET.
-ms.date: 05/27/2020
+ms.date: 09/08/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: 4f0cc9b88947d60638057ca83adb7f2e141c5d14
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 863f78daf13ae9d795c37c1c6f428d387b9a026b
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455735"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022920"
 ---
 # <a name="implement-a-dispose-method"></a>Implémenter une méthode Dispose
 
@@ -77,7 +77,7 @@ Le corps de la méthode se compose de deux blocs de code :
 
   - **Objets managés qui implémentent <xref:System.IDisposable>.** Le bloc conditionnel peut être utilisé pour appeler leur <xref:System.IDisposable.Dispose%2A> implémentation (dispose en cascade). Si vous avez utilisé une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> pour encapsuler votre ressource non managée, vous devez appeler l' <xref:System.Runtime.InteropServices.SafeHandle.Dispose?displayProperty=nameWithType> implémentation ici.
 
-  - **Objets managés qui consomment de grandes quantités de mémoire ou consomment des ressources rares.** Affectez des références d’objets managés volumineux à `null` pour les rendre plus susceptibles d’être inaccessibles. Cela les libère plus rapidement que s’ils étaient récupérés de façon non déterministe.
+  - **Objets managés qui consomment de grandes quantités de mémoire ou consomment des ressources rares.** Affectez des références d’objets managés volumineux à `null` pour les rendre plus susceptibles d’être inaccessibles. Cela les libère plus rapidement que s’ils étaient récupérés de façon non déterministe, ce qui est généralement effectué en dehors du bloc conditionnel.
 
 Si l’appel de méthode provient d’un finaliseur, seul le code qui libère les ressources non managées doit s’exécuter. L’implémenteur est chargé de s’assurer que le chemin d’accès faux n’interagit pas avec les objets managés qui ont pu être récupérés. Cela est important, car l’ordre dans lequel le garbage collector détruit les objets managés pendant la finalisation n’est pas déterministe.
 

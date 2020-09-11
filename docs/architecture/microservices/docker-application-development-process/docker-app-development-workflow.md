@@ -2,12 +2,12 @@
 title: Workflow de développement des applications Docker
 description: Découvrez les détails du workflow de développement des applications Docker. Commencez étape par étape et entrez dans les détails pour optimiser les fichiers Dockerfile, puis terminez par le workflow simplifié disponible avec Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: 421b1aaf3965bd3aa80c6e09da963404d2a46c09
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 98dc931e10d5e1a3265ebd6f4e1919a6416e9b27
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359073"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022933"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Workflow de développement des applications Docker
 
@@ -61,7 +61,7 @@ En outre, vous avez besoin de Visual Studio 2019 version 16,4 ou ultérieure, av
 
 Vous pouvez commencer le codage de votre application en .NET brut (généralement dans .NET Core si vous envisagez d’utiliser des conteneurs) même si vous n’avez pas encore activé Docker dans votre application, ni effectué de déploiement et de test dans Docker. Toutefois, nous vous recommandons de commencer à travailler dans Docker le plus tôt possible, car Docker sera le véritable environnement de développement, et vous pourrez détecter les problèmes éventuels dès le début. Nous le conseillons d’autant plus que Visual Studio rend l’utilisation de Docker extrêmement simple et intuitive. L’exemple le plus significatif est le débogage des applications multiconteneurs à partir de Visual Studio.
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Prise en main de Docker CE pour Windows** \
   <https://docs.docker.com/docker-for-windows/>
@@ -116,7 +116,7 @@ Dans ce cas, l’image est basée sur la version 3,1 de l’image officielle de 
 
 Vous pouvez spécifier des paramètres de configuration supplémentaires dans le fichier Dockerfile, en fonction du langage et du framework que vous utilisez. Par exemple, la ligne ENTRYPOINT avec `["dotnet", "MySingleContainerWebApp.dll"]` indique à Docker d’exécuter une application .NET Core. Si vous utilisez le SDK et l’interface CLI (dotnet) de .NET Core pour créer et exécuter l’application .NET, ce paramètre est différent. L’essentiel à retenir est que la ligne ENTRYPOINT et certains autres paramètres varient selon le langage et la plateforme choisis pour votre application.
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Création d’images d’ancrage pour les applications .NET Core** \
   [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
@@ -252,7 +252,7 @@ Elles sont alors identiques pour chaque service, la solution entière est copié
 
 1. Le processus de copie est seulement exécuté la première fois (et pendant la regénération si un fichier est changé) et utilise le cache pour tous les autres services, et
 
-2. Comme l’image plus grande est produite dans une étape intermédiaire, cela n’affecte pas la taille de l’image finale.
+2. Étant donné que l’image la plus grande se produit à une étape intermédiaire, elle n’affecte pas la taille finale de l’image.
 
 L’optimisation importante suivante implique la commande `restore` exécutée à la ligne 17, qui est également différente pour chaque service d’eShopOnContainers. Si vous remplacez cette ligne simplement par :
 
@@ -298,7 +298,7 @@ Le fichier résultant est alors :
 
 Vous pouvez créer votre propre image de base Docker à partir de zéro. Ce scénario n’est pas recommandé si vous n’êtes pas encore familiarisé avec Docker, mais si vous souhaitez définir les bits spécifiques de votre propre image de base, vous pouvez le faire.
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Images .net core à plusieurs arches**. \
   <https://github.com/dotnet/announcements/issues/14>
@@ -493,7 +493,7 @@ Le point important ici est que, comme illustré dans la figure 5-12, dans Visual
 
 **Figure 5-12**. Exécution d’applications à plusieurs conteneurs dans Visual Studio 2019
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Déployer un conteneur ASP.NET sur un hôte de l’arrimeur distant** \
   <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
@@ -530,7 +530,7 @@ Lors de l’exécution et du débogage des conteneurs avec Visual Studio 2019, v
 
 Si vous développez à l’aide de l’approche éditeur/CLI, le débogage des conteneurs est plus difficile et vous souhaiterez probablement déboguer en générant des traces.
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Débogage d’applications dans un conteneur d’ancrage local** \
   [https://docs.microsoft.com/visualstudio/containers/edit-and-refresh](/visualstudio/containers/edit-and-refresh)
@@ -550,7 +550,7 @@ Processus de développement pour les applications de l’arrimeur : 1-coder vot
 
 De plus, notez que vous devez effectuer l’étape 2 (ajout de la prise en charge de Docker à vos projets) une seule fois. Le workflow est donc similaire aux tâches de développement que vous avez l’habitude de faire dans le cadre d’un développement avec .NET. Vous devez comprendre ce qui se passe en arrière-plan (le processus de création d’image, les images de base utilisées, le déploiement des conteneurs, etc.) et parfois vous devez modifier le fichier Dockerfile ou docker-compose.yml pour personnaliser les comportements. Au final, Visual Studio simplifie considérablement la plupart des tâches et vous permet de développer beaucoup plus rapidement.
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Steve Lasker. Développement de l’amarrage .NET avec Visual Studio (2017)** \
   <https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111>
@@ -572,7 +572,7 @@ Dans ce cas, nous utilisons une image de base Windows Server Core (le paramètre
 RUN powershell add-windowsfeature web-asp-net45
 ```
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **aspnet-docker/Dockerfile.** Exemples de commandes PowerShell à exécuter à partir de fichiers Dockerfile pour ajouter des fonctionnalités Windows.\
   <https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile>
