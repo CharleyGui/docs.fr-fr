@@ -4,12 +4,12 @@ description: En savoir plus sur les frameworks cibles pour les applications et l
 ms.date: 09/08/2020
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 9c5d3605f893072b2a5e84751e3657152ac0213e
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 22689f6c1f161a67978dc0f41c6bc9a6b5acfad7
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598157"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065251"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Frameworks cibles dans les projets de style SDK
 
@@ -27,11 +27,11 @@ Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et 
 
 Le tableau ci-dessous définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET Standard](net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker de Framework cible (TFM) est un format de jeton standardisé pour la spécification de la version cible de .NET Framework d’une application ou d’une bibliothèque .NET.
 
-| Version cible de .NET Framework      | Dernière <br/> version stable | Moniker du Framework cible (TFM) | Implémenté <br/> Version de .NET Standard |
+| Version cible de .NET Framework      | Latest <br/> version stable | Moniker du Framework cible (TFM) | Implémenté <br/> Version de .NET Standard |
 | :-: | :-: | :-: | :-: |
 | .NET Standard         | 2.1                         | netstandard 2.1                 | N/A                                     |
 | .NET Core             | 3.1                         | netcoreapp 3.1                  | 2.1                                     |
-| .NET Framework        | 4.8                         | net48                          | 2,0                                     |
+| .NET Framework        | 4.8                         | net48                          | 2.0                                     |
 
 ## <a name="supported-target-frameworks"></a>Frameworks cibles pris en charge
 
@@ -54,7 +54,7 @@ Un framework cible est généralement référencé par un TFM. Le tableau suivan
 
 Pour chaque TFM .NET 5,0 et versions ultérieures, par exemple, `net5.0` il existe des variantes TFM qui incluent des liaisons spécifiques au système d’exploitation. Ces variations sont indiquées dans le tableau suivant.
 
-| Format propre au système d’exploitation | Exemple        |
+| Format propre au système d’exploitation |  Exemple        |
 |--------------------|----------------|
 | \<base-tfm>-Android | .net 5.0-Android |
 | \<base-tfm>-iOS     | net 5.0-iOS     |
@@ -125,9 +125,9 @@ public class MyClass
 }
 ```
 
-Le système de génération tient compte des symboles de préprocesseur représentant les frameworks cibles affichés dans le tableau [versions de Framework cible prises en charge](#supported-target-frameworks) lorsque vous utilisez des projets de type SDK. Quand vous utilisez un symbole représentant un TFM .NET Standard ou .NET Core, remplacez le point par un trait de soulignement et remplacez les lettres minuscules par des lettres majuscules (par exemple, le symbole pour `netstandard1.4` est `NETSTANDARD1_4`).
+Le système de génération tient compte des symboles de préprocesseur représentant les frameworks cibles affichés dans le tableau [versions de Framework cible prises en charge](#supported-target-frameworks) lorsque vous utilisez des projets de type SDK. Quand vous utilisez un symbole qui représente une .NET Standard, .NET Core ou .NET 5 TFM, remplacez les points et les traits d’Union par un trait de soulignement et remplacez les lettres minuscules par des majuscules (par exemple, le symbole de `netstandard1.4` est `NETSTANDARD1_4` ).
 
-La liste complète des symboles de préprocesseur pour les frameworks cibles de .NET Core est la suivante :
+La liste complète des symboles de préprocesseur pour les frameworks cibles .NET est la suivante :
 
 [!INCLUDE [Preprocessor symbols](../../includes/preprocessor-symbols.md)]
 

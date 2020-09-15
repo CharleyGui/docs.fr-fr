@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: ddffe4aaaed6c9079999b2ab29ca61ab5753f15a
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 80d636db04655650c7448590cd1042cdb1b17de1
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598142"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065030"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -108,7 +108,7 @@ La ligne ci-dessus crée un nouvel `Person` enregistrement où la `LastName` pro
 
 ## <a name="init-only-setters"></a>Setter init uniquement
 
-Les ***accesseurs set init only*** fournissent une syntaxe cohérente pour initialiser les membres d’un objet. Les initialiseurs de propriété permettent de clarifier la valeur qui définit la propriété. L’inconvénient est que ces propriétés doivent pouvoir être définies. À compter de C# 9,0, vous pouvez créer des `init` accesseurs au lieu d' `set` accesseurs pour les propriétés et les indexeurs. Les appelants peuvent utiliser la syntaxe de l’initialiseur de propriété pour définir ces valeurs dans les expressions de création, mais ces propriétés sont en lecture seule une fois que la construction est terminée. Les Setters init uniquement fournissent une fenêtre pour modifier l’État. Cette fenêtre se ferme à la fin de la phase de construction. La phase de construction se termine effectivement après toute initialisation, y compris les initialiseurs de propriété et les expressions with-.
+Les ***accesseurs set init only*** fournissent une syntaxe cohérente pour initialiser les membres d’un objet. Les initialiseurs de propriété permettent de savoir clairement quelle valeur définit la propriété. L’inconvénient est que ces propriétés doivent pouvoir être définies. À compter de C# 9,0, vous pouvez créer des `init` accesseurs au lieu d' `set` accesseurs pour les propriétés et les indexeurs. Les appelants peuvent utiliser la syntaxe de l’initialiseur de propriété pour définir ces valeurs dans les expressions de création, mais ces propriétés sont en lecture seule une fois que la construction est terminée. Les Setters init uniquement fournissent une fenêtre pour modifier l’État. Cette fenêtre se ferme à la fin de la phase de construction. La phase de construction se termine effectivement après toute initialisation, y compris les initialiseurs de propriété et les expressions with-.
 
 L’exemple précédent pour les enregistrements positionnels illustre l’utilisation d’un accesseur Set init-only pour définir une propriété à l’aide d’une expression with. Vous pouvez déclarer des accesseurs set init uniquement dans n’importe quel type que vous écrivez. Par exemple, le struct suivant définit une structure d’observation météorologique :
 
@@ -122,7 +122,7 @@ Toutefois, la modification d’une observation après l’initialisation est une
 
 ```csharp
 // Error! CS8852.
-now.TempetureInCelsius = 18;
+now.TemperatureInCelsius = 18;
 ```
 
 Les Setters init uniquement peuvent être utiles pour définir des propriétés de classe de base à partir de classes dérivées. Ils peuvent également définir des propriétés dérivées par le biais d’assistances dans une classe de base. Les enregistrements positionnels déclarent des propriétés à l’aide des accesseurs set init only. Ces accesseurs set sont utilisés dans les expressions with. Vous pouvez déclarer des Setters init uniquement pour n’importe quel `class` ou `struct` vous définissez.
