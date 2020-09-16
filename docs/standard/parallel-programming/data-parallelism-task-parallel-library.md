@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, data
 ms.assetid: 3f05f33f-f1da-4b16-81c2-9ceff1bef449
-ms.openlocfilehash: 513c5dde1526a8a21f68171f304b245d0a34f563
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 617757581f6d2491098e1172072bdf0387c6852b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594463"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558912"
 ---
 # <a name="data-parallelism-task-parallel-library"></a>Parallélisme de données (bibliothèque parallèle de tâches)
 Le *parallélisme des données* fait référence aux scénarios dans lesquels la même opération est exécutée de manière simultanée (autrement dit, en parallèle) sur les éléments d’un tableau ou d’une collection source. Dans les opérations en parallèle de données, la collection source est partitionnée afin que plusieurs threads puissent fonctionner simultanément sur des segments différents.  
@@ -40,11 +40,11 @@ Le *parallélisme des données* fait référence aux scénarios dans lesquels la
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Procédure : écrire une boucle Parallel.For simple](how-to-write-a-simple-parallel-for-loop.md)|Explique comment écrire une boucle <xref:System.Threading.Tasks.Parallel.For%2A> sur tout tableau ou collection source <xref:System.Collections.Generic.IEnumerable%601> indexable.|  
 |[Procédure : écrire une boucle Parallel.ForEach simple](how-to-write-a-simple-parallel-foreach-loop.md)|Explique comment écrire une boucle <xref:System.Threading.Tasks.Parallel.ForEach%2A> sur toute collection source <xref:System.Collections.Generic.IEnumerable%601>.|  
-|[Guide pratique : arrêt ou sortie d’une boucle Parallel.For](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd460721(v=vs.100))|Explique comment arrêter ou rompre une boucle parallèle afin que tous les threads soient informés de l'action.|  
+|[Guide pratique : arrêt ou sortie d’une boucle Parallel.For](/previous-versions/dotnet/netframework-4.0/dd460721(v=vs.100))|Explique comment arrêter ou rompre une boucle parallèle afin que tous les threads soient informés de l'action.|  
 |[Procédure : écrire une boucle Parallel.For avec des variables locales de thread](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)|Explique comment écrire une boucle <xref:System.Threading.Tasks.Parallel.For%2A> dans laquelle chaque thread maintient une variable privée qui n’est pas visible pour les autres threads et comment synchroniser les résultats de tous les threads quand la boucle se termine.|  
 |[Procédure : écrire une boucle Parallel.ForEach avec des variables locales de partition](how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)|Explique comment écrire une boucle <xref:System.Threading.Tasks.Parallel.ForEach%2A> dans laquelle chaque thread maintient une variable privée qui n’est pas visible pour les autres threads et comment synchroniser les résultats de tous les threads quand la boucle se termine.|  
 |[Procédure : annuler une boucle Parallel.For ou ForEach](how-to-cancel-a-parallel-for-or-foreach-loop.md)|Explique comment annuler une boucle parallèle à l'aide d'un <xref:System.Threading.CancellationToken?displayProperty=nameWithType>.|  

@@ -2,12 +2,12 @@
 title: Sélection d'un encodeur de message
 ms.date: 03/30/2017
 ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
-ms.openlocfilehash: dbc5981013fe5e023f1d6d9eaf64b2e1fa18e2df
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: fd5bc2270f2e4095ef6ad2b1d89af3560fb8d312
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587337"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559369"
 ---
 # <a name="choose-a-message-encoder"></a>Choisir un encodeur de message
 
@@ -33,14 +33,14 @@ Cet article décrit les critères permettant de choisir parmi les encodeurs de m
   
 |Factor|Description|Encodeurs qui prennent en charge ce facteur|  
 |------------|-----------------|---------------------------------------|  
-|Jeux de caractères pris en charge|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>et <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> prennent uniquement en charge les encodages Unicode UTF8 et UTF16 (*Big-endian* et *Little endian*). Si d'autres encodages sont requis, tels qu'UTF7 ou ASCII, un encodeur personnalisé doit être utilisé. Pour obtenir un exemple d’encodeur personnalisé, consultez [encodeur de message personnalisé](https://docs.microsoft.com/dotnet/framework/wcf/samples/custom-message-encoder-custom-text-encoder).|Text|  
-|Inspection|L'inspection désigne la capacité à examiner des messages pendant la transmission. Les encodages de texte, avec ou sans l'utilisation de SOAP, autorisent l'inspection et l'analyse des messages par de nombreuses applications sans l'utilisation d'outils spécialisés. L’utilisation de la sécurité de transfert, au niveau du message ou du transport, affecte votre capacité à inspecter les messages. La confidentialité et l'intégrité empêchent respectivement l'examen et la modification d'un message.|Text|  
+|Jeux de caractères pris en charge|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> et <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> prennent uniquement en charge les encodages Unicode UTF8 et UTF16 (*Big-endian* et *Little endian*). Si d'autres encodages sont requis, tels qu'UTF7 ou ASCII, un encodeur personnalisé doit être utilisé. Pour obtenir un exemple d’encodeur personnalisé, consultez [encodeur de message personnalisé](../samples/custom-message-encoder-custom-text-encoder.md).|Texte|  
+|Inspection|L'inspection désigne la capacité à examiner des messages pendant la transmission. Les encodages de texte, avec ou sans l'utilisation de SOAP, autorisent l'inspection et l'analyse des messages par de nombreuses applications sans l'utilisation d'outils spécialisés. L’utilisation de la sécurité de transfert, au niveau du message ou du transport, affecte votre capacité à inspecter les messages. La confidentialité et l'intégrité empêchent respectivement l'examen et la modification d'un message.|Texte|  
 |Fiabilité|La fiabilité désigne la résilience d'un encodeur aux erreurs de transmission. La fiabilité peut également être fournie au niveau du message, du transport ou de la couche d'application. Tous les encodeurs WCF standard partent du principe qu’une autre couche assure la fiabilité. L'encodeur a peu de possibilité de récupérer d'une erreur de transmission.|None|  
 |Simplicité|La simplicité représente la facilité avec laquelle vous pouvez créer des encodeurs et décodeurs pour une spécification d'encodage. Les encodages de texte sont particulièrement avantageux en termes de simplicité, et l'encodage de texte POX présente l'avantage supplémentaire de ne requérir aucune prise en charge pour le traitement SOAP.|Texte (POX)|  
 |Taille|L'encodage détermine la quantité de charge mémoire imposée sur le contenu. La taille des messages encodés est directement associée au débit maximal des opérations de service. Les encodages binaires sont en général plus compacts que les encodages de texte. Lorsque la taille de message est importante, compressez également le contenu du message lors de l'encodage. Cependant, la compression augmente les coûts de traitement à la fois de l'expéditeur et du récepteur du message.|Binary|  
 |Diffusion en continu|La diffusion en continu permet aux applications de commencer à traiter un message avant qu'il ne soit totalement arrivé. L'utilisation efficace de la diffusion en continu requiert que les données importantes d'un message soient disponibles au début de celui-ci afin que l'application de réception n'ait pas à attendre qu'elles arrivent. De plus, les applications qui utilisent le transfert en continu doivent organiser les données du message de façon incrémentielle afin que le contenu n'ait pas de dépendances ascendantes. Dans de nombreux cas, vous devez trouver un compromis entre diffuser du contenu en continu et avoir la taille de transfert la plus petite possible pour celui-ci.|None|  
 |Prise en charge des outils tiers|La prise en charge d'un encodage inclut le développement et le diagnostic. Des développeurs tiers ont fait un investissement substantiel dans les bibliothèques et trousses à outils permettant de gérer les messages encodés au format POX.|Texte (POX)|  
-|Interopérabilité|Ce facteur fait référence à la capacité d’un encodeur WCF à interagir avec les services non-WCF.|Text<br /><br /> MTOM (partiel)|  
+|Interopérabilité|Ce facteur fait référence à la capacité d’un encodeur WCF à interagir avec les services non-WCF.|Texte<br /><br /> MTOM (partiel)|  
   
 Remarque : lors de l'utilisation de l'encodeur binaire, l'utilisation du paramètre IgnoreWhitespace lors de la création d'un XMLReader n'a aucun effet.  Par exemple, si vous procédez comme suit dans une opération de service :  
 
