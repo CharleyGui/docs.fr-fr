@@ -6,22 +6,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4fa6182d-6196-4ed1-9c9e-82949ff89c71
-ms.openlocfilehash: 908cf230027b3092e6e7bbaffb1d7e6af8c061ec
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 34ddfd78489927a40128196a6fc80e822302428b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553856"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557127"
 ---
-# <a name="how-to-find-a-child-element-linq-to-xml"></a><span data-ttu-id="144d9-103">Comment rechercher un élément enfant (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="144d9-103">How to find a child element (LINQ to XML)</span></span>
+# <a name="how-to-find-a-child-element-linq-to-xml"></a><span data-ttu-id="72772-103">Comment rechercher un élément enfant (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="72772-103">How to find a child element (LINQ to XML)</span></span>
 
-<span data-ttu-id="144d9-104">Cet article compare l’axe des éléments enfants XPath à la <xref:System.Xml.Linq.XContainer.Element%2A> méthode LINQ to XML.</span><span class="sxs-lookup"><span data-stu-id="144d9-104">This article compares the XPath child element axis to the LINQ to XML <xref:System.Xml.Linq.XContainer.Element%2A> method.</span></span>
+<span data-ttu-id="72772-104">Cet article compare l’axe des éléments enfants XPath à la <xref:System.Xml.Linq.XContainer.Element%2A> méthode LINQ to XML.</span><span class="sxs-lookup"><span data-stu-id="72772-104">This article compares the XPath child element axis to the LINQ to XML <xref:System.Xml.Linq.XContainer.Element%2A> method.</span></span>
 
-## <a name="example-find-a-child-element-in-an-xml-document"></a><span data-ttu-id="144d9-105">Exemple : Rechercher un élément enfant dans un document XML</span><span class="sxs-lookup"><span data-stu-id="144d9-105">Example: Find a child element in an XML document</span></span>
+## <a name="example-find-a-child-element-in-an-xml-document"></a><span data-ttu-id="72772-105">Exemple : Rechercher un élément enfant dans un document XML</span><span class="sxs-lookup"><span data-stu-id="72772-105">Example: Find a child element in an XML document</span></span>
 
-<span data-ttu-id="144d9-106">Cet exemple recherche l’élément enfant `DeliveryNotes` dans le document XML [exemple de fichier XML : plusieurs commandes fournisseur](sample-xml-file-multiple-purchase-orders.md).</span><span class="sxs-lookup"><span data-stu-id="144d9-106">This example finds the child element `DeliveryNotes` in XML document [Sample XML file: Multiple purchase orders](sample-xml-file-multiple-purchase-orders.md).</span></span>
+<span data-ttu-id="72772-106">Cet exemple recherche l’élément enfant `DeliveryNotes` dans le document XML [exemple de fichier XML : plusieurs commandes fournisseur](sample-xml-file-multiple-purchase-orders.md).</span><span class="sxs-lookup"><span data-stu-id="72772-106">This example finds the child element `DeliveryNotes` in XML document [Sample XML file: Multiple purchase orders](sample-xml-file-multiple-purchase-orders.md).</span></span>
 
-<span data-ttu-id="144d9-107">L'expression XPath est `DeliveryNotes`.</span><span class="sxs-lookup"><span data-stu-id="144d9-107">The XPath expression is `DeliveryNotes`.</span></span>
+<span data-ttu-id="72772-107">L'expression XPath est `DeliveryNotes`.</span><span class="sxs-lookup"><span data-stu-id="72772-107">The XPath expression is `DeliveryNotes`.</span></span>
 
 ```csharp
 XDocument cpo = XDocument.Load("PurchaseOrders.xml");
@@ -62,13 +62,13 @@ End If
 Console.WriteLine(el1)
 ```
 
-<span data-ttu-id="144d9-108">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="144d9-108">This example produces the following output:</span></span>
+<span data-ttu-id="72772-108">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="72772-108">This example produces the following output:</span></span>
 
 ```output
 Results are identical
 <DeliveryNotes>Please leave packages in shed by driveway.</DeliveryNotes>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="144d9-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="144d9-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="72772-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="72772-109">See also</span></span>
 
-- [<span data-ttu-id="144d9-110">LINQ to XML pour les utilisateurs XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="144d9-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="72772-110">LINQ to XML pour les utilisateurs XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="72772-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](./comparison-xpath-linq-xml.md)

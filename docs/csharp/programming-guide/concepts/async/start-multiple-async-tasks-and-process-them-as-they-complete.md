@@ -3,26 +3,26 @@ title: Traiter les tâches asynchrones terminées
 description: Cet exemple montre comment utiliser Task. WhenAny en C# pour démarrer plusieurs tâches et traiter leurs résultats à mesure qu’ils se terminent, au lieu de les traiter dans l’ordre de début.
 ms.date: 08/19/2020
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: c2fe66e865a2c88f4cae50b816f9326614fcbb89
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 520953eaf851dc82440e39b348aa4b246255e126
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812027"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557305"
 ---
-# <a name="process-asynchronous-tasks-as-they-complete-c"></a><span data-ttu-id="fd706-103">Traiter les tâches asynchrones à mesure qu’elles se terminent (C#)</span><span class="sxs-lookup"><span data-stu-id="fd706-103">Process asynchronous tasks as they complete (C#)</span></span>
+# <a name="process-asynchronous-tasks-as-they-complete-c"></a><span data-ttu-id="47024-103">Traiter les tâches asynchrones à mesure qu’elles se terminent (C#)</span><span class="sxs-lookup"><span data-stu-id="47024-103">Process asynchronous tasks as they complete (C#)</span></span>
 
-<span data-ttu-id="fd706-104">À l’aide de <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> , vous pouvez démarrer plusieurs tâches en même temps et les traiter une par une lorsqu’elles sont terminées, au lieu de les traiter dans l’ordre dans lequel elles sont démarrées.</span><span class="sxs-lookup"><span data-stu-id="fd706-104">By using <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, you can start multiple tasks at the same time and process them one by one as they're completed rather than process them in the order in which they're started.</span></span>
+<span data-ttu-id="47024-104">À l’aide de <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> , vous pouvez démarrer plusieurs tâches en même temps et les traiter une par une lorsqu’elles sont terminées, au lieu de les traiter dans l’ordre dans lequel elles sont démarrées.</span><span class="sxs-lookup"><span data-stu-id="47024-104">By using <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, you can start multiple tasks at the same time and process them one by one as they're completed rather than process them in the order in which they're started.</span></span>
 
-<span data-ttu-id="fd706-105">L’exemple suivant utilise une requête pour créer une collection de tâches.</span><span class="sxs-lookup"><span data-stu-id="fd706-105">The following example uses a query to create a collection of tasks.</span></span> <span data-ttu-id="fd706-106">Chaque tâche télécharge le contenu d’un site web spécifié.</span><span class="sxs-lookup"><span data-stu-id="fd706-106">Each task downloads the contents of a specified website.</span></span> <span data-ttu-id="fd706-107">À chaque itération d’une boucle while, un appel attendu à <xref:System.Threading.Tasks.Task.WhenAny%2A> retourne la tâche de la collection de tâches dont le téléchargement se termine en premier.</span><span class="sxs-lookup"><span data-stu-id="fd706-107">In each iteration of a while loop, an awaited call to <xref:System.Threading.Tasks.Task.WhenAny%2A> returns the task in the collection of tasks that finishes its download first.</span></span> <span data-ttu-id="fd706-108">Cette tâche est supprimée de la collection et traitée.</span><span class="sxs-lookup"><span data-stu-id="fd706-108">That task is removed from the collection and processed.</span></span> <span data-ttu-id="fd706-109">La boucle se répète jusqu’à ce que la collection ne contienne plus aucune tâche.</span><span class="sxs-lookup"><span data-stu-id="fd706-109">The loop repeats until the collection contains no more tasks.</span></span>
+<span data-ttu-id="47024-105">L’exemple suivant utilise une requête pour créer une collection de tâches.</span><span class="sxs-lookup"><span data-stu-id="47024-105">The following example uses a query to create a collection of tasks.</span></span> <span data-ttu-id="47024-106">Chaque tâche télécharge le contenu d’un site web spécifié.</span><span class="sxs-lookup"><span data-stu-id="47024-106">Each task downloads the contents of a specified website.</span></span> <span data-ttu-id="47024-107">À chaque itération d’une boucle while, un appel attendu à <xref:System.Threading.Tasks.Task.WhenAny%2A> retourne la tâche de la collection de tâches dont le téléchargement se termine en premier.</span><span class="sxs-lookup"><span data-stu-id="47024-107">In each iteration of a while loop, an awaited call to <xref:System.Threading.Tasks.Task.WhenAny%2A> returns the task in the collection of tasks that finishes its download first.</span></span> <span data-ttu-id="47024-108">Cette tâche est supprimée de la collection et traitée.</span><span class="sxs-lookup"><span data-stu-id="47024-108">That task is removed from the collection and processed.</span></span> <span data-ttu-id="47024-109">La boucle se répète jusqu’à ce que la collection ne contienne plus aucune tâche.</span><span class="sxs-lookup"><span data-stu-id="47024-109">The loop repeats until the collection contains no more tasks.</span></span>
 
-## <a name="create-example-application"></a><span data-ttu-id="fd706-110">Créer un exemple d’application</span><span class="sxs-lookup"><span data-stu-id="fd706-110">Create example application</span></span>
+## <a name="create-example-application"></a><span data-ttu-id="47024-110">Créer un exemple d’application</span><span class="sxs-lookup"><span data-stu-id="47024-110">Create example application</span></span>
 
-<span data-ttu-id="fd706-111">Créez une application de console .NET Core.</span><span class="sxs-lookup"><span data-stu-id="fd706-111">Create a new .NET Core console application.</span></span> <span data-ttu-id="fd706-112">Vous pouvez en créer un à l’aide de la commande [dotnet New console](../../../../core/tools/dotnet-new.md#console) ou de [Visual Studio](/visualstudio/install/install-visual-studio).</span><span class="sxs-lookup"><span data-stu-id="fd706-112">You can create one by using the [dotnet new console](../../../../core/tools/dotnet-new.md#console) command or from [Visual Studio](/visualstudio/install/install-visual-studio).</span></span> <span data-ttu-id="fd706-113">Ouvrez le fichier *Program.cs* dans votre éditeur de code favori.</span><span class="sxs-lookup"><span data-stu-id="fd706-113">Open the *Program.cs* file in your favorite code editor.</span></span>
+<span data-ttu-id="47024-111">Créez une application de console .NET Core.</span><span class="sxs-lookup"><span data-stu-id="47024-111">Create a new .NET Core console application.</span></span> <span data-ttu-id="47024-112">Vous pouvez en créer un à l’aide de la commande [dotnet New console](../../../../core/tools/dotnet-new.md#console) ou de [Visual Studio](/visualstudio/install/install-visual-studio).</span><span class="sxs-lookup"><span data-stu-id="47024-112">You can create one by using the [dotnet new console](../../../../core/tools/dotnet-new.md#console) command or from [Visual Studio](/visualstudio/install/install-visual-studio).</span></span> <span data-ttu-id="47024-113">Ouvrez le fichier *Program.cs* dans votre éditeur de code favori.</span><span class="sxs-lookup"><span data-stu-id="47024-113">Open the *Program.cs* file in your favorite code editor.</span></span>
 
-### <a name="replace-using-statements"></a><span data-ttu-id="fd706-114">Remplacer les instructions using</span><span class="sxs-lookup"><span data-stu-id="fd706-114">Replace using statements</span></span>
+### <a name="replace-using-statements"></a><span data-ttu-id="47024-114">Remplacer les instructions using</span><span class="sxs-lookup"><span data-stu-id="47024-114">Replace using statements</span></span>
 
-<span data-ttu-id="fd706-115">Remplacez les instructions using existantes par les déclarations suivantes :</span><span class="sxs-lookup"><span data-stu-id="fd706-115">Replace the existing using statements with these declarations:</span></span>
+<span data-ttu-id="47024-115">Remplacez les instructions using existantes par les déclarations suivantes :</span><span class="sxs-lookup"><span data-stu-id="47024-115">Replace the existing using statements with these declarations:</span></span>
 
 ```csharp
 using System;
@@ -33,9 +33,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 ```
 
-## <a name="add-fields"></a><span data-ttu-id="fd706-116">Ajouter des champs</span><span class="sxs-lookup"><span data-stu-id="fd706-116">Add fields</span></span>
+## <a name="add-fields"></a><span data-ttu-id="47024-116">Ajouter des champs</span><span class="sxs-lookup"><span data-stu-id="47024-116">Add fields</span></span>
 
-<span data-ttu-id="fd706-117">Dans la `Program` définition de classe, ajoutez les deux champs suivants :</span><span class="sxs-lookup"><span data-stu-id="fd706-117">In the `Program` class definition, add the following two fields:</span></span>
+<span data-ttu-id="47024-117">Dans la `Program` définition de classe, ajoutez les deux champs suivants :</span><span class="sxs-lookup"><span data-stu-id="47024-117">In the `Program` class definition, add the following two fields:</span></span>
 
 ```csharp
 static readonly HttpClient s_client = new HttpClient
@@ -67,21 +67,21 @@ static readonly IEnumerable<string> s_urlList = new string[]
 };
 ```
 
-<span data-ttu-id="fd706-118">Le `HttpClient` expose la possibilité d’envoyer des requêtes http et de recevoir des réponses http.</span><span class="sxs-lookup"><span data-stu-id="fd706-118">The `HttpClient` exposes the ability to send HTTP requests and receive HTTP responses.</span></span> <span data-ttu-id="fd706-119">Le `s_urlList` contient toutes les URL que l’application envisage de traiter.</span><span class="sxs-lookup"><span data-stu-id="fd706-119">The `s_urlList` holds all of the URLs that the application plans to process.</span></span>
+<span data-ttu-id="47024-118">Le `HttpClient` expose la possibilité d’envoyer des requêtes http et de recevoir des réponses http.</span><span class="sxs-lookup"><span data-stu-id="47024-118">The `HttpClient` exposes the ability to send HTTP requests and receive HTTP responses.</span></span> <span data-ttu-id="47024-119">Le `s_urlList` contient toutes les URL que l’application envisage de traiter.</span><span class="sxs-lookup"><span data-stu-id="47024-119">The `s_urlList` holds all of the URLs that the application plans to process.</span></span>
 
-## <a name="update-application-entry-point"></a><span data-ttu-id="fd706-120">Mettre à jour le point d’entrée de l’application</span><span class="sxs-lookup"><span data-stu-id="fd706-120">Update application entry point</span></span>
+## <a name="update-application-entry-point"></a><span data-ttu-id="47024-120">Mettre à jour le point d’entrée de l’application</span><span class="sxs-lookup"><span data-stu-id="47024-120">Update application entry point</span></span>
 
-<span data-ttu-id="fd706-121">Le point d’entrée principal dans l’application console est la `Main` méthode.</span><span class="sxs-lookup"><span data-stu-id="fd706-121">The main entry point into the console application is the `Main` method.</span></span> <span data-ttu-id="fd706-122">Remplacez la méthode existante par le code suivant :</span><span class="sxs-lookup"><span data-stu-id="fd706-122">Replace the existing method with the following:</span></span>
+<span data-ttu-id="47024-121">Le point d’entrée principal dans l’application console est la `Main` méthode.</span><span class="sxs-lookup"><span data-stu-id="47024-121">The main entry point into the console application is the `Main` method.</span></span> <span data-ttu-id="47024-122">Remplacez la méthode existante par le code suivant :</span><span class="sxs-lookup"><span data-stu-id="47024-122">Replace the existing method with the following:</span></span>
 
 ```csharp
 static Task Main() => SumPageSizesAsync();
 ```
 
-<span data-ttu-id="fd706-123">La méthode mise à jour `Main` est maintenant considérée comme une [main asynchrone](../../../whats-new/csharp-7-1.md#async-main), ce qui permet d’obtenir un point d’entrée asynchrone dans l’exécutable.</span><span class="sxs-lookup"><span data-stu-id="fd706-123">The updated `Main` method is now considered an [Async main](../../../whats-new/csharp-7-1.md#async-main), which allows for an asynchronous entry point into the executable.</span></span> <span data-ttu-id="fd706-124">Il s’agit d’un appel à `SumPageSizesAsync` .</span><span class="sxs-lookup"><span data-stu-id="fd706-124">It is expressed a call to `SumPageSizesAsync`.</span></span>
+<span data-ttu-id="47024-123">La méthode mise à jour `Main` est maintenant considérée comme une [main asynchrone](../../../whats-new/csharp-7-1.md#async-main), ce qui permet d’obtenir un point d’entrée asynchrone dans l’exécutable.</span><span class="sxs-lookup"><span data-stu-id="47024-123">The updated `Main` method is now considered an [Async main](../../../whats-new/csharp-7-1.md#async-main), which allows for an asynchronous entry point into the executable.</span></span> <span data-ttu-id="47024-124">Il s’agit d’un appel à `SumPageSizesAsync` .</span><span class="sxs-lookup"><span data-stu-id="47024-124">It is expressed a call to `SumPageSizesAsync`.</span></span>
 
-## <a name="create-the-asynchronous-sum-page-sizes-method"></a><span data-ttu-id="fd706-125">Créer la méthode de taille de page Sum asynchrone</span><span class="sxs-lookup"><span data-stu-id="fd706-125">Create the asynchronous sum page sizes method</span></span>
+## <a name="create-the-asynchronous-sum-page-sizes-method"></a><span data-ttu-id="47024-125">Créer la méthode de taille de page Sum asynchrone</span><span class="sxs-lookup"><span data-stu-id="47024-125">Create the asynchronous sum page sizes method</span></span>
 
-<span data-ttu-id="fd706-126">Sous la `Main` méthode, ajoutez la `SumPageSizesAsync` méthode :</span><span class="sxs-lookup"><span data-stu-id="fd706-126">Below the `Main` method, add the `SumPageSizesAsync` method:</span></span>
+<span data-ttu-id="47024-126">Sous la `Main` méthode, ajoutez la `SumPageSizesAsync` méthode :</span><span class="sxs-lookup"><span data-stu-id="47024-126">Below the `Main` method, add the `SumPageSizesAsync` method:</span></span>
 
 ```csharp
 static async Task SumPageSizesAsync()
@@ -109,7 +109,7 @@ static async Task SumPageSizesAsync()
 }
 ```
 
-<span data-ttu-id="fd706-127">La méthode commence par instancier et démarrer un <xref:System.Diagnostics.Stopwatch> .</span><span class="sxs-lookup"><span data-stu-id="fd706-127">The method starts by instantiating and starting a <xref:System.Diagnostics.Stopwatch>.</span></span> <span data-ttu-id="fd706-128">Il comprend ensuite une requête qui, lorsqu’elle est exécutée, crée une collection de tâches.</span><span class="sxs-lookup"><span data-stu-id="fd706-128">It then includes a query that, when executed, creates a collection of tasks.</span></span> <span data-ttu-id="fd706-129">Chaque appel à `ProcessUrlAsync` dans le code suivant retourne un <xref:System.Threading.Tasks.Task%601>, où `TResult` est un entier :</span><span class="sxs-lookup"><span data-stu-id="fd706-129">Each call to `ProcessUrlAsync` in the following code returns a <xref:System.Threading.Tasks.Task%601>, where `TResult` is an integer:</span></span>
+<span data-ttu-id="47024-127">La méthode commence par instancier et démarrer un <xref:System.Diagnostics.Stopwatch> .</span><span class="sxs-lookup"><span data-stu-id="47024-127">The method starts by instantiating and starting a <xref:System.Diagnostics.Stopwatch>.</span></span> <span data-ttu-id="47024-128">Il comprend ensuite une requête qui, lorsqu’elle est exécutée, crée une collection de tâches.</span><span class="sxs-lookup"><span data-stu-id="47024-128">It then includes a query that, when executed, creates a collection of tasks.</span></span> <span data-ttu-id="47024-129">Chaque appel à `ProcessUrlAsync` dans le code suivant retourne un <xref:System.Threading.Tasks.Task%601>, où `TResult` est un entier :</span><span class="sxs-lookup"><span data-stu-id="47024-129">Each call to `ProcessUrlAsync` in the following code returns a <xref:System.Threading.Tasks.Task%601>, where `TResult` is an integer:</span></span>
 
 ```csharp
 IEnumerable<Task<int>> downloadTasksQuery =
@@ -117,35 +117,35 @@ IEnumerable<Task<int>> downloadTasksQuery =
     select ProcessUrlAsync(url, s_client);
 ```
 
-<span data-ttu-id="fd706-130">En raison d’une [exécution différée](../linq/deferred-execution-example.md) avec LINQ, vous appelez <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> pour démarrer chaque tâche.</span><span class="sxs-lookup"><span data-stu-id="fd706-130">Due to [deferred execution](../linq/deferred-execution-example.md) with the LINQ, you call <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> to start each task.</span></span>
+<span data-ttu-id="47024-130">En raison d’une [exécution différée](../../../../standard/linq/deferred-execution-example.md) avec LINQ, vous appelez <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> pour démarrer chaque tâche.</span><span class="sxs-lookup"><span data-stu-id="47024-130">Due to [deferred execution](../../../../standard/linq/deferred-execution-example.md) with the LINQ, you call <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> to start each task.</span></span>
 
 ```csharp
 List<Task<int>> downloadTasks = downloadTasksQuery.ToList();
 ```
 
-<span data-ttu-id="fd706-131">La `while` boucle effectue les étapes suivantes pour chaque tâche de la collection :</span><span class="sxs-lookup"><span data-stu-id="fd706-131">The `while` loop performs the following steps for each task in the collection:</span></span>
+<span data-ttu-id="47024-131">La `while` boucle effectue les étapes suivantes pour chaque tâche de la collection :</span><span class="sxs-lookup"><span data-stu-id="47024-131">The `while` loop performs the following steps for each task in the collection:</span></span>
 
-1. <span data-ttu-id="fd706-132">Attend un appel à `WhenAny` pour identifier la première tâche de la collection dont le téléchargement est terminé.</span><span class="sxs-lookup"><span data-stu-id="fd706-132">Awaits a call to `WhenAny` to identify the first task in the collection that has finished its download.</span></span>
+1. <span data-ttu-id="47024-132">Attend un appel à `WhenAny` pour identifier la première tâche de la collection dont le téléchargement est terminé.</span><span class="sxs-lookup"><span data-stu-id="47024-132">Awaits a call to `WhenAny` to identify the first task in the collection that has finished its download.</span></span>
 
     ```csharp
     Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);
     ```
 
-1. <span data-ttu-id="fd706-133">Elle supprime cette tâche de la collection.</span><span class="sxs-lookup"><span data-stu-id="fd706-133">Removes that task from the collection.</span></span>
+1. <span data-ttu-id="47024-133">Elle supprime cette tâche de la collection.</span><span class="sxs-lookup"><span data-stu-id="47024-133">Removes that task from the collection.</span></span>
 
     ```csharp
     downloadTasks.Remove(firstFinishedTask);
     ```
 
-1. <span data-ttu-id="fd706-134">Elle attend `finishedTask`, qui est retourné par un appel à `ProcessUrlAsync`.</span><span class="sxs-lookup"><span data-stu-id="fd706-134">Awaits `finishedTask`, which is returned by a call to `ProcessUrlAsync`.</span></span> <span data-ttu-id="fd706-135">La variable `finishedTask` est un <xref:System.Threading.Tasks.Task%601> où `TResult` est un entier.</span><span class="sxs-lookup"><span data-stu-id="fd706-135">The `finishedTask` variable is a <xref:System.Threading.Tasks.Task%601> where `TResult` is an integer.</span></span> <span data-ttu-id="fd706-136">La tâche est déjà terminée, mais vous l’attendez pour récupérer la longueur du site web téléchargé, comme le montre l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="fd706-136">The task is already complete, but you await it to retrieve the length of the downloaded website, as the following example shows.</span></span> <span data-ttu-id="fd706-137">Si la tâche est défaillante, `await` lèvera la première exception enfant stockée dans le `AggregateException` , contrairement à la lecture de la <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> propriété, qui lèverait `AggregateException` .</span><span class="sxs-lookup"><span data-stu-id="fd706-137">If the task is faulted, `await` will throw the first child exception stored in the `AggregateException`, unlike reading the <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> property, which would throw the `AggregateException`.</span></span>
+1. <span data-ttu-id="47024-134">Elle attend `finishedTask`, qui est retourné par un appel à `ProcessUrlAsync`.</span><span class="sxs-lookup"><span data-stu-id="47024-134">Awaits `finishedTask`, which is returned by a call to `ProcessUrlAsync`.</span></span> <span data-ttu-id="47024-135">La variable `finishedTask` est un <xref:System.Threading.Tasks.Task%601> où `TResult` est un entier.</span><span class="sxs-lookup"><span data-stu-id="47024-135">The `finishedTask` variable is a <xref:System.Threading.Tasks.Task%601> where `TResult` is an integer.</span></span> <span data-ttu-id="47024-136">La tâche est déjà terminée, mais vous l’attendez pour récupérer la longueur du site web téléchargé, comme le montre l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="47024-136">The task is already complete, but you await it to retrieve the length of the downloaded website, as the following example shows.</span></span> <span data-ttu-id="47024-137">Si la tâche est défaillante, `await` lèvera la première exception enfant stockée dans le `AggregateException` , contrairement à la lecture de la <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> propriété, qui lèverait `AggregateException` .</span><span class="sxs-lookup"><span data-stu-id="47024-137">If the task is faulted, `await` will throw the first child exception stored in the `AggregateException`, unlike reading the <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> property, which would throw the `AggregateException`.</span></span>
 
     ```csharp
     total += await finishedTask;
     ```
 
-## <a name="add-process-method"></a><span data-ttu-id="fd706-138">Ajouter une méthode de traitement</span><span class="sxs-lookup"><span data-stu-id="fd706-138">Add process method</span></span>
+## <a name="add-process-method"></a><span data-ttu-id="47024-138">Ajouter une méthode de traitement</span><span class="sxs-lookup"><span data-stu-id="47024-138">Add process method</span></span>
 
-<span data-ttu-id="fd706-139">Ajoutez la méthode suivante en `ProcessUrlAsync` dessous de la `SumPageSizesAsync` méthode :</span><span class="sxs-lookup"><span data-stu-id="fd706-139">Add the following `ProcessUrlAsync` method below the `SumPageSizesAsync` method:</span></span>
+<span data-ttu-id="47024-139">Ajoutez la méthode suivante en `ProcessUrlAsync` dessous de la `SumPageSizesAsync` méthode :</span><span class="sxs-lookup"><span data-stu-id="47024-139">Add the following `ProcessUrlAsync` method below the `SumPageSizesAsync` method:</span></span>
 
 ```csharp
 static async Task<int> ProcessUrlAsync(string url, HttpClient client)
@@ -157,20 +157,20 @@ static async Task<int> ProcessUrlAsync(string url, HttpClient client)
 }
 ```
 
-<span data-ttu-id="fd706-140">Pour une URL donnée, la méthode utilise l' `client` instance fournie pour obtenir la réponse en tant que `byte[]` .</span><span class="sxs-lookup"><span data-stu-id="fd706-140">For any given URL, the method will use the `client` instance provided to get the response as a `byte[]`.</span></span> <span data-ttu-id="fd706-141">La longueur est retournée une fois que l’URL et la longueur sont écrites dans la console.</span><span class="sxs-lookup"><span data-stu-id="fd706-141">The length is returned after the URL and length is written to the console.</span></span>
+<span data-ttu-id="47024-140">Pour une URL donnée, la méthode utilise l' `client` instance fournie pour obtenir la réponse en tant que `byte[]` .</span><span class="sxs-lookup"><span data-stu-id="47024-140">For any given URL, the method will use the `client` instance provided to get the response as a `byte[]`.</span></span> <span data-ttu-id="47024-141">La longueur est retournée une fois que l’URL et la longueur sont écrites dans la console.</span><span class="sxs-lookup"><span data-stu-id="47024-141">The length is returned after the URL and length is written to the console.</span></span>
 
-<span data-ttu-id="fd706-142">Exécutez le programme plusieurs fois pour vérifier que les longueurs téléchargées n’apparaissent pas toujours dans le même ordre.</span><span class="sxs-lookup"><span data-stu-id="fd706-142">Run the program several times to verify that the downloaded lengths don't always appear in the same order.</span></span>
+<span data-ttu-id="47024-142">Exécutez le programme plusieurs fois pour vérifier que les longueurs téléchargées n’apparaissent pas toujours dans le même ordre.</span><span class="sxs-lookup"><span data-stu-id="47024-142">Run the program several times to verify that the downloaded lengths don't always appear in the same order.</span></span>
 
 > [!CAUTION]
-> <span data-ttu-id="fd706-143">Vous pouvez utiliser `WhenAny` dans une boucle, comme décrit dans l’exemple, pour résoudre les problèmes qui impliquent un petit nombre de tâches.</span><span class="sxs-lookup"><span data-stu-id="fd706-143">You can use `WhenAny` in a loop, as described in the example, to solve problems that involve a small number of tasks.</span></span> <span data-ttu-id="fd706-144">Cependant, d’autres approches sont plus efficaces si vous avez un grand nombre de tâches à traiter.</span><span class="sxs-lookup"><span data-stu-id="fd706-144">However, other approaches are more efficient if you have a large number of tasks to process.</span></span> <span data-ttu-id="fd706-145">Pour plus d’informations et d’exemples, consultez [traitement des tâches lorsqu’elles sont terminées](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete).</span><span class="sxs-lookup"><span data-stu-id="fd706-145">For more information and examples, see [Processing tasks as they complete](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete).</span></span>
+> <span data-ttu-id="47024-143">Vous pouvez utiliser `WhenAny` dans une boucle, comme décrit dans l’exemple, pour résoudre les problèmes qui impliquent un petit nombre de tâches.</span><span class="sxs-lookup"><span data-stu-id="47024-143">You can use `WhenAny` in a loop, as described in the example, to solve problems that involve a small number of tasks.</span></span> <span data-ttu-id="47024-144">Cependant, d’autres approches sont plus efficaces si vous avez un grand nombre de tâches à traiter.</span><span class="sxs-lookup"><span data-stu-id="47024-144">However, other approaches are more efficient if you have a large number of tasks to process.</span></span> <span data-ttu-id="47024-145">Pour plus d’informations et d’exemples, consultez [traitement des tâches lorsqu’elles sont terminées](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete).</span><span class="sxs-lookup"><span data-stu-id="47024-145">For more information and examples, see [Processing tasks as they complete](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete).</span></span>
 
-## <a name="complete-example"></a><span data-ttu-id="fd706-146">Exemple complet</span><span class="sxs-lookup"><span data-stu-id="fd706-146">Complete example</span></span>
+## <a name="complete-example"></a><span data-ttu-id="47024-146">Exemple complet</span><span class="sxs-lookup"><span data-stu-id="47024-146">Complete example</span></span>
 
-<span data-ttu-id="fd706-147">Le code suivant est le texte complet du fichier *Program.cs* pour l’exemple.</span><span class="sxs-lookup"><span data-stu-id="fd706-147">The following code is the complete text of the *Program.cs* file for the example.</span></span>
+<span data-ttu-id="47024-147">Le code suivant est le texte complet du fichier *Program.cs* pour l’exemple.</span><span class="sxs-lookup"><span data-stu-id="47024-147">The following code is the complete text of the *Program.cs* file for the example.</span></span>
 
 :::code language="csharp" source="snippets/multiple-tasks/Program.cs":::
 
-## <a name="see-also"></a><span data-ttu-id="fd706-148">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fd706-148">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="47024-148">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="47024-148">See also</span></span>
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
-- [<span data-ttu-id="fd706-149">Programmation asynchrone avec Async et await (C#)</span><span class="sxs-lookup"><span data-stu-id="fd706-149">Asynchronous programming with async and await (C#)</span></span>](index.md)
+- [<span data-ttu-id="47024-149">Programmation asynchrone avec Async et await (C#)</span><span class="sxs-lookup"><span data-stu-id="47024-149">Asynchronous programming with async and await (C#)</span></span>](index.md)
