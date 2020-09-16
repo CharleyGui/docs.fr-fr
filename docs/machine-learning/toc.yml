@@ -1,6 +1,6 @@
 - name: ML.NET
   href: index.yml
-- name: Vue d'ensemble
+- name: Vue d’ensemble
   expanded: true
   items:
     - name: Générateur de modèles et CLI
@@ -13,7 +13,7 @@
       items:
         - name: API ML.NET
           href: how-does-mldotnet-work.md
-- name: Didacticiels
+- name: Tutoriels
   items:
     - name: Générateur de modèles et CLI
       items:
@@ -114,9 +114,9 @@
 - name: Référence
   items:
     - name: Informations de référence sur l’API ML.NET
-      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet'
+      href: ../../api/index.md?view=ml-dotnet
     - name: Informations de référence sur l’API en préversion API ML.NET
-      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview'
+      href: ../../api/index.md?view=ml-dotnet-preview
     - name: Informations de référence sur l’interface de ligne de commande
       href: reference/ml-net-cli-reference.md
 - name: Ressources
