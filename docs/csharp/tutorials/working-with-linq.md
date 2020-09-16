@@ -4,12 +4,12 @@ description: Ce didacticiel vous apprend à générer des séquences avec LINQ, 
 ms.date: 10/29/2018
 ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 9bc17700e22ea29b1861945a220e397a90b9a7c1
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 59e86d6412e16728fb03d05f7f4e221a26ec1bb1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656994"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536234"
 ---
 # <a name="work-with-language-integrated-query-linq"></a>Utiliser LINQ (Language-Integrated Query)
 
@@ -29,7 +29,7 @@ Dans notre cas, c’est une façon plaisante d’envisager la manipulation de s�
 
 Ce didacticiel comporte plusieurs étapes. Après chaque étape, vous pourrez exécuter l’application et voir la progression. Vous pouvez également voir l’[exemple terminé](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) dans le dépôt GitHub dotnet/samples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#view-and-download-samples).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation sur la page de [téléchargement de .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Ubuntu Linux ou OS X, ou dans un conteneur d’ancrage. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio code](https://code.visualstudio.com/) qui est un éditeur multiplateforme Open source. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 
@@ -259,7 +259,7 @@ shuffle = shuffle.Skip(26).InterleaveSequenceWith(shuffle.Take(26));
 
 Réexécutez le programme : vous verrez qu’il faut 52 itérations pour que le jeu se réorganise. Vous commencerez également à remarquer de sérieuses dégradations des performances lors de l’exécution du programme.
 
-Il y a plusieurs raisons à cela. L’une des causes principales de cette baisse de performances est une utilisation inefficace de [*l’évaluation paresseuse*](../programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Il y a plusieurs raisons à cela. L’une des causes principales de cette baisse de performances est une utilisation inefficace de [*l’évaluation paresseuse*](../../standard/linq/deferred-execution-lazy-evaluation.md).
 
 En bref, l’évaluation d’une instruction n’est effectuée que lorsque sa valeur devient nécessaire. Les requêtes LINQ sont évaluées de cette manière. Les séquences sont générées uniquement au moment où les éléments sont demandés. En règle générale, c’est un avantage majeur de LINQ. Toutefois, dans une utilisation du type de ce programme, cela entraîne une croissance exponentielle de la durée d’exécution.
 

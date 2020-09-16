@@ -15,15 +15,15 @@ topic_type:
 - apiref
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 8fc5f1a488826d8adc6aecb8ef122609bebbe813
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1b1d6ad5d465d746f4c1a9400c43613591373322
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177096"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546944"
 ---
 # <a name="cor_prf_rejit_flags-enumeration"></a>Énumération COR_PRF_REJIT_FLAGS
-Contient des valeurs qui indiquent comment [l’ICorProfilerInfo10::RequestReJITWithInliners](icorprofilerinfo10-requestrejitwithinliners-method.md) API devrait se comporter.  
+Contient des valeurs qui indiquent comment l’API [ICorProfilerInfo10 :: RequestReJITWithInliners](icorprofilerinfo10-requestrejitwithinliners-method.md) doit se comporter.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,17 +39,17 @@ typedef enum
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COR_PRF_REJIT_BLOCK_INLINING`| Les méthodes ReJITted seront empêchées d’être inlinées dans d’autres méthodes. |  
-|`COR_PRF_REJIT_INLINING_CALLBACKS`| Recevez `GetFunctionParameters` des rappels pour toutes les méthodes qui en ligne les méthodes demandées pour être ReJITted. |  
+|`COR_PRF_REJIT_BLOCK_INLINING`| Les méthodes ReJITted ne peuvent pas être inline dans d’autres méthodes. |  
+|`COR_PRF_REJIT_INLINING_CALLBACKS`| Reçoit `GetFunctionParameters` des rappels pour toutes les méthodes qui Inline sont demandées par ReJITted. |  
 
 ## <a name="requirements"></a>Spécifications  
- **Plates-formes:** Voir [.NET Core systèmes d’exploitation pris en charge](../../../core/install/dependencies.md?pivots=os-windows).  
+ **Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/windows.md?pivots=os-windows).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
   
 ## <a name="see-also"></a>Voir aussi
 

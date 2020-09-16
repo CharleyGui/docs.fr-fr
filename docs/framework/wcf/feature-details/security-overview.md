@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
-ms.openlocfilehash: 517d80395e09598fcbd067034223dc6ba58cbe2e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e7dd73b755c7aed91a1fd59baaf9d5e090a36768
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600436"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541459"
 ---
 # <a name="windows-communication-foundation-security-overview"></a>Vue d’ensemble de la sécurité Windows Communication Foundation
 Windows Communication Foundation (WCF) est une plateforme de programmation distribuée basée sur les messages SOAP, et la sécurisation des messages entre les clients et les services est essentielle pour la protection des données. WCF fournit une plateforme polyvalente et interopérable pour échanger des messages sécurisés en fonction de l’infrastructure de sécurité existante et des normes de sécurité reconnues pour les messages SOAP.  
@@ -103,7 +103,7 @@ Windows Communication Foundation (WCF) est une plateforme de programmation distr
 - [Sécurisation de services](../securing-services.md)
 - [Scénarios de sécurité courants](common-security-scenarios.md)
 - [Liaisons et sécurité](bindings-and-security.md)
-- [Securing Services and Clients](securing-services-and-clients.md)
+- [Sécurisation des services et des clients](securing-services-and-clients.md)
 - [Authentification](authentication-in-wcf.md)
 - [Autorisation](authorization-in-wcf.md)
 - [Fédération et jetons émis](federation-and-issued-tokens.md)
@@ -113,4 +113,4 @@ Windows Communication Foundation (WCF) est une plateforme de programmation distr
 - [Liaisons fournies par le système](../system-provided-bindings.md)
 - [Vue d'ensemble de la création de points de terminaison](../endpoint-creation-overview.md)
 - [Extension de la sécurité](../extending/extending-security.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

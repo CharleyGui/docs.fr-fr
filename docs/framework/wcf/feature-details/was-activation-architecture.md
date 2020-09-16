@@ -2,12 +2,12 @@
 title: Architecture d'activation WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-ms.openlocfilehash: cfbfd91f9e7bc2e1b4f8485d5ae22c1fb2b5228b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 77cebede5827016c5c9660663c0491614ba0ef19
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600670"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545980"
 ---
 # <a name="was-activation-architecture"></a>Architecture d'activation WAS
 Cette rubrique détaille et décrit les composants du service d'activation des processus de Windows (également appelé WAS).  
@@ -32,7 +32,7 @@ Cette rubrique détaille et décrit les composants du service d'activation des p
 ### <a name="listener-adapters"></a>Adaptateurs d'écouteur  
  Les adaptateurs d'écouteur sont des services Windows individuels qui implémentent la logique de la communication réseau utilisée pour recevoir les messages à l'aide du protocole réseau sur lequel ils écoutent. Le tableau suivant répertorie les adaptateurs d’écouteur pour les protocoles Windows Communication Foundation (WCF).  
   
-|Nom du service d'adaptateur de l'écouteur|Protocol|Remarques|  
+|Nom du service d'adaptateur de l'écouteur|Protocol|Notes|  
 |-----------------------------------|--------------|-----------|  
 |W3SVC|http|Composant commun qui fournit l’activation HTTP pour IIS 7,0 et WCF.|  
 |NetTcpActivator|net.tcp|Dépend du service NetTcpPortSharing.|  
@@ -88,4 +88,4 @@ Cette rubrique détaille et décrit les composants du service d'activation des p
 ## <a name="see-also"></a>Voir aussi
 
 - [Configuration du service WAS pour une utilisation avec WCF](configuring-the-wpa--service-for-use-with-wcf.md)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

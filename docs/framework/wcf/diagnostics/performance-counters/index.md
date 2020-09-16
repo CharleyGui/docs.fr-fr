@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-ms.openlocfilehash: 73bb02379308fbfe507137e61ac8d84e6b9760b4
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 7c8a134039526abf046136ac383fbaff3a5abbfe
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395897"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541211"
 ---
 # <a name="wcf-performance-counters"></a>Compteurs de performance WCF
 Windows Communication Foundation (WCF) comprend un grand nombre de compteurs de performances pour vous aider à évaluer les performances de votre application.  
   
 ## <a name="enabling-performance-counters"></a>Activation des compteurs de performance  
- Vous pouvez activer les compteurs de performance pour un service WCF par le biais du fichier de configuration App. config du service WCF, comme suit :  
+ Vous pouvez activer les compteurs de performance pour un service WCF par le biais du fichier de configuration app.config du service WCF, comme suit :  
   
 ```xml  
 <configuration>  
@@ -29,11 +29,11 @@ Windows Communication Foundation (WCF) comprend un grand nombre de compteurs de 
   
 - All : tous les compteurs de catégorie (ServiceModelService, ServiceModelEndpoint et ServiceModelOperation) sont activés.  
   
-- ServiceOnly : seuls les compteurs de catégorie ServiceModelService sont activés. Il s'agit de la valeur par défaut.  
+- ServiceOnly : seuls les compteurs de catégorie ServiceModelService sont activés. Il s’agit de la valeur par défaut.  
   
 - Off : les compteurs de performance ServiceModel* sont désactivés.  
   
- Si vous souhaitez activer les compteurs de performances pour toutes les applications WCF, vous pouvez placer les paramètres de configuration dans le fichier machine. config.  Pour plus d’informations sur la configuration de suffisamment de mémoire pour les compteurs de performances sur votre ordinateur, consultez la section **augmenter la taille de la mémoire pour les compteurs de performances** ci-dessous.  
+ Si vous souhaitez activer les compteurs de performances pour toutes les applications WCF, vous pouvez placer les paramètres de configuration dans le fichier Machine.config.  Pour plus d’informations sur la configuration de suffisamment de mémoire pour les compteurs de performances sur votre ordinateur, consultez la section **augmenter la taille de la mémoire pour les compteurs de performances** ci-dessous.  
   
  Si vous utilisez des points d’extensibilité WCF tels que des appelants d’opérations personnalisées, vous devez également émettre vos propres compteurs de performances. En effet, si vous implémentez un point d’extensibilité, WCF peut ne plus émettre les données de compteurs de performances standard dans le chemin d’accès par défaut. Si vous n'implémentez par la prise en charge manuelle des compteurs de performance, il est possible que vous ne voyiez pas les données de compteurs de performance attendues.  
   
@@ -50,8 +50,8 @@ sg.Diagnostic.PerformanceCounters = PerformanceCounterScope.All;
 config.Save();  
 ```  
   
-## <a name="viewing-performance-data"></a>Affichage des données de performance  
- Pour consulter des données capturées par les compteurs de performance, vous pouvez utiliser l'analyseur de performances (Perfmon.exe) fourni avec Windows. Pour lancer cet outil, accédez à **Démarrer**, puis cliquez sur **exécuter** et tapez `perfmon.exe` dans la boîte de dialogue.  
+## <a name="viewing-performance-data"></a>Affichage des données de performances  
+ Pour consulter des données capturées par les compteurs de performance, vous pouvez utiliser l'analyseur de performances (Perfmon.exe) fourni avec Windows. Vous pouvez lancer cet outil en accédant à **Démarrer**, puis en cliquant sur **exécuter** et tapez `perfmon.exe` dans la boîte de dialogue.  
   
 > [!NOTE]
 > Les instances de compteur de performance peuvent être diffusées avant le traitement des derniers messages par le répartiteur de point de terminaison. Il se peut alors que les données de performance de certains messages ne soient pas capturées.  
@@ -74,7 +74,7 @@ config.Save();
 ## <a name="types-of-performance-counters"></a>Types de compteurs de performance  
  Les compteurs de performance portent sur trois niveaux différents : service, point de terminaison et opération.  
   
- Vous pouvez utiliser WMI pour récupérer le nom d'une instance de compteur de performance. Par exemple :  
+ Vous pouvez utiliser WMI pour récupérer le nom d'une instance de compteur de performance. Par exemple,  
   
 - Le nom de l’instance du compteur de service peut être obtenu via la propriété « CounterInstanceName » de l’instance de [service](../wmi/service.md) WMI.  
   
@@ -127,7 +127,7 @@ Plusieurs fichiers sont installés dans le dossier d’installation du kit de d�
 - *\_SMSvcHostPerfCounters. VRG*
 - *\_TransactionBridgePerfCounters. VRG*
   
-Pour plus d’informations sur l’accès par programme aux compteurs, consultez Architecture de [programmation des compteurs de performances](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/5f9bkxzf(v=vs.90)).
+Pour plus d’informations sur l’accès par programme aux compteurs, consultez Architecture de [programmation des compteurs de performances](/previous-versions/visualstudio/visual-studio-2008/5f9bkxzf(v=vs.90)).
   
 ## <a name="see-also"></a>Voir aussi
 

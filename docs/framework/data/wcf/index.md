@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: ca6b196e8c910f97ead6d1df5b6c0dd6c49c68a4
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: c36967236c40efbf432d554c3f551aea22cfb148
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247751"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549677"
 ---
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 
@@ -37,9 +37,9 @@ Montrez-moi un peu de code...
 
 - [Démarrage rapide](quickstart-wcf-data-services.md)
 
-- [Comment : exécuter les requêtes de services de données](how-to-execute-data-service-queries-wcf-data-services.md)
+- [Procédure : Exécuter les requêtes de services de données](how-to-execute-data-service-queries-wcf-data-services.md)
 
-- [Comment : lier les données aux éléments Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
+- [Procédure : Lier des données aux éléments Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
 
 Je souhaite en savoir plus sur OData...
 
@@ -54,7 +54,7 @@ Je souhaite voir des exemples de bout en bout...
 
 Qu'en est-il de l'intégration avec Visual Studio ?
 
-- [Génération de la bibliothèque client service de données](generating-the-data-service-client-library-wcf-data-services.md)
+- [Génération de la bibliothèque cliente du service de données](generating-the-data-service-client-library-wcf-data-services.md)
 
 - [Création du service de données](creating-the-data-service.md)
 
@@ -62,7 +62,7 @@ Qu'en est-il de l'intégration avec Visual Studio ?
 
 À quoi sert PIM ?
 
-- [Vue d’ensemble](wcf-data-services-overview.md)
+- [Vue d'ensemble](wcf-data-services-overview.md)
 
 - [Scénarios d’application](application-scenarios-wcf-data-services.md)
 
@@ -72,21 +72,21 @@ Je souhaite utiliser LINQ...
 
 - [Considérations sur LINQ](linq-considerations-wcf-data-services.md)
 
-- [Comment : exécuter les requêtes de services de données](how-to-execute-data-service-queries-wcf-data-services.md)
+- [Procédure : Exécuter les requêtes de services de données](how-to-execute-data-service-queries-wcf-data-services.md)
 
 J’ai encore besoin d’informations supplémentaires...
 
-- [Blog de l’équipe WCF Data Services](https://docs.microsoft.com/archive/blogs/astoriateam/)
+- [Blog de l’équipe WCF Data Services](/archive/blogs/astoriateam/)
 
 - [Ressources](wcf-data-services-resources.md)
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[Vue d’ensemble](wcf-data-services-overview.md)
+[Vue d'ensemble](wcf-data-services-overview.md)
 
 Fournit une vue d’ensemble des fonctionnalités et fonctionnalités disponibles dans WCF Data Services.
 
-[Nouveautés de WCF Data Services 5,0](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
+[Nouveautés de WCF Data Services 5,0](/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
 
 Décrit les nouvelles fonctionnalités de WCF Data Services et la prise en charge des nouvelles fonctionnalités OData.
 

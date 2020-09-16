@@ -3,12 +3,12 @@ title: Chaînes de connexion dans le Entity Framework ADO.NET
 description: En savoir plus sur les chaînes de connexion dans le Entity Framework, qui contiennent des informations pour se connecter au fournisseur de données ADO.NET et à propos des fichiers de modèle et de mappage.
 ms.date: 10/15/2018
 ms.assetid: 78d516bc-c99f-4865-8ff1-d856bc1a01c0
-ms.openlocfilehash: 2ae25f5881c033a84d65f5b0b4ed14b4866dbcb3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 36b7724bc8dbb8f427f4bbf748b7b7801adea8db
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286868"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542755"
 ---
 # <a name="connection-strings-in-the-adonet-entity-framework"></a>Chaînes de connexion dans le Entity Framework ADO.NET
 
@@ -16,7 +16,7 @@ Une chaîne de connexion contient des informations d'initialisation qui sont pas
 
 La chaîne de connexion est utilisée par le fournisseur EntityClient lors de l'accès aux métadonnées de modèle et de mappage et de la connexion à la source de données. Il est possible d'accéder à cette chaîne ou de la définir via la propriété <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> de <xref:System.Data.EntityClient.EntityConnection>. La classe <xref:System.Data.EntityClient.EntityConnectionStringBuilder> peut être utilisée pour construire par programme des paramètres dans la chaîne de connexion ou y accéder par programme. Pour plus d’informations, consultez [Comment : générer une chaîne de connexion EntityConnection](how-to-build-an-entityconnection-connection-string.md).
 
-Les [outils de Entity Data Model](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100)) génèrent une chaîne de connexion stockée dans le fichier de configuration de l’application. <xref:System.Data.Objects.ObjectContext> récupère automatiquement ces informations de connexion lors de la création de requêtes d'objet. Il est possible d'accéder au <xref:System.Data.EntityClient.EntityConnection> utilisé par une instance de <xref:System.Data.Objects.ObjectContext> à partir de la propriété <xref:System.Data.Objects.ObjectContext.Connection%2A>. Pour plus d’informations, consultez [gestion des connexions et des transactions](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).
+Les [outils de Entity Data Model](/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100)) génèrent une chaîne de connexion stockée dans le fichier de configuration de l’application. <xref:System.Data.Objects.ObjectContext> récupère automatiquement ces informations de connexion lors de la création de requêtes d'objet. Il est possible d'accéder au <xref:System.Data.EntityClient.EntityConnection> utilisé par une instance de <xref:System.Data.Objects.ObjectContext> à partir de la propriété <xref:System.Data.Objects.ObjectContext.Connection%2A>. Pour plus d’informations, consultez [gestion des connexions et des transactions](/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).
 
 ## <a name="connection-string-syntax"></a>Syntaxe des chaînes de connexion
 
@@ -29,7 +29,7 @@ Le tableau suivant répertorie les noms valides pour les valeurs de mots clés 
 |Mot clé|Description|
 |-------------|-----------------|
 |`Provider`|Obligatoire si le mot clé `Name` n'est pas spécifié. Nom du fournisseur, utilisé pour récupérer l'objet <xref:System.Data.Common.DbProviderFactory> du fournisseur sous-jacent. Cette valeur est constante.<br /><br /> Lorsque le mot clé `Name` n'est pas inclus dans une chaîne de connexion de l'entité, une valeur non vide pour le mot clé `Provider` est requise. Ce mot clé et le mot clé `Name` s'excluent mutuellement.|
-|`Provider Connection String`|facultatif. Spécifie la chaîne de connexion spécifique au fournisseur passée à la source de données sous-jacente. Cette chaîne de connexion contient des paires mot clé/valeur valides pour le fournisseur de données. Un mot clé `Provider Connection String` non valide provoque une erreur d'exécution lors de son évaluation par la source de données.<br /><br /> Ce mot clé et le mot clé `Name` s'excluent mutuellement.<br /><br /> Veillez à placer la valeur dans une séquence d’échappement en fonction de la syntaxe générale des [chaînes de connexion ADO.net](../connection-strings.md). Prenons l’exemple de la chaîne de connexion suivante : `Server=serverName; User ID = userID` . Elle doit être placée dans une séquence d’échappement, car elle contient un point-virgule. Étant donné qu’il ne contient pas de guillemets doubles, ils peuvent être utilisés pour l’échappement :<br /><br /> `Provider Connection String ="Server=serverName; User ID = userID";`|
+|`Provider Connection String`|Optionnel. Spécifie la chaîne de connexion spécifique au fournisseur passée à la source de données sous-jacente. Cette chaîne de connexion contient des paires mot clé/valeur valides pour le fournisseur de données. Un mot clé `Provider Connection String` non valide provoque une erreur d'exécution lors de son évaluation par la source de données.<br /><br /> Ce mot clé et le mot clé `Name` s'excluent mutuellement.<br /><br /> Veillez à placer la valeur dans une séquence d’échappement en fonction de la syntaxe générale des [chaînes de connexion ADO.net](../connection-strings.md). Prenons l’exemple de la chaîne de connexion suivante : `Server=serverName; User ID = userID` . Elle doit être placée dans une séquence d’échappement, car elle contient un point-virgule. Étant donné qu’il ne contient pas de guillemets doubles, ils peuvent être utilisés pour l’échappement :<br /><br /> `Provider Connection String ="Server=serverName; User ID = userID";`|
 |`Metadata`|Obligatoire si le mot clé `Name` n'est pas spécifié. Liste de répertoires, de fichiers et d'emplacements de ressources délimités par des barres verticales (|) où rechercher les métadonnées et les informations de mappage. Par exemple :<br /><br /> `Metadata=`<br /><br /> `c:\model &#124; c:\model\sql\mapping.msl;`<br /><br /> Les espaces situés de part et d'autre de la barre verticale sont ignorés.<br /><br /> Ce mot clé et le mot clé `Name` s'excluent mutuellement.|
 |`Name`|L'application peut éventuellement spécifier le nom de la connexion dans un fichier de configuration d'application qui fournit les valeurs de chaîne de connexion mot clé/valeur requises. Dans ce cas, vous ne pouvez pas les fournir directement dans la chaîne de connexion. Le mot clé `Name` n'est pas autorisé dans un fichier de configuration.<br /><br /> Lorsque le mot clé `Name` n'est pas inclus dans la chaîne de connexion, des valeurs non vides pour le mot clé Provider sont requises.<br /><br /> Ce mot clé est incompatible avec tous les autres mots clés de chaîne de connexion, et inversement.|
 
@@ -93,7 +93,7 @@ Metadata=.\
 
 ## <a name="support-for-the-124datadirectory124-substitution-string-and-the-web-application-root-operator-"></a>Prise en charge de la chaîne de substitution &#124;DataDirectory&#124; et de l’opérateur racine de l’application Web (~)
 
-`DataDirectory`et l’opérateur ~ sont utilisés dans le cadre <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> des `Metadata` `Provider Connection String` Mots clés et. L'objet <xref:System.Data.EntityClient.EntityConnection> transfère le répertoire `DataDirectory` et l'opérateur ~ à l'objet <xref:System.Data.Metadata.Edm.MetadataWorkspace> et au fournisseur de magasins, respectivement.
+`DataDirectory` et l’opérateur ~ sont utilisés dans le cadre <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> des `Metadata` `Provider Connection String` Mots clés et. L'objet <xref:System.Data.EntityClient.EntityConnection> transfère le répertoire `DataDirectory` et l'opérateur ~ à l'objet <xref:System.Data.Metadata.Edm.MetadataWorkspace> et au fournisseur de magasins, respectivement.
 
 |Terme|Description|
 |----------|-----------------|
@@ -112,5 +112,5 @@ La résolution de la chaîne de substitution `DataDirectory` et de l’opérateu
 
 - [Utilisation des fournisseurs de données](working-with-data-providers.md)
 - [Considérations relatives au déploiement](deployment-considerations.md)
-- [Gestion des connexions et des transactions](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100))
+- [Gestion des connexions et des transactions](/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100))
 - [Chaînes de connexion](../connection-strings.md)

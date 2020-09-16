@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
-ms.openlocfilehash: 5e616b5bb513939cadd8fe5c72675ba0b6e070a3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 25de633faabb1424bcf5e618cc5ca129e61c5fca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621520"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547868"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Marshaling de classes, de structures, et d'unions
 
@@ -36,7 +36,7 @@ Le tableau suivant répertorie les options de marshaling pour les classes, les s
 |----------|-----------------|------------|
 |Classe par valeur.|Passe une classe avec des membres entiers en tant que paramètre In/Out, comme le cas managé.|[SysTime (exemple)](#systime-sample)|
 |Structure par valeur.|Passe des structures en tant que paramètres In.|[Exemple de structures](#structures-sample)|
-|Structure par référence.|Passe des structures en tant que paramètres In/Out.|[OSInfo (exemple)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
+|Structure par référence.|Passe des structures en tant que paramètres In/Out.|[OSInfo (exemple)](/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
 |Structure avec structures imbriquées (aplaties).|Passe une classe représentant une structure avec structures imbriquées dans la fonction non managée. La structure est aplatie sous la forme d'une même grande structure dans le prototype managé.|[FindFile (exemple)](#findfile-sample)|
 |Structure avec un pointeur vers une autre structure.|Passe une structure contenant un pointeur vers une autre structure en tant que membre.|[Exemple structures](#structures-sample)|
 |Tableau de structures avec des entiers par valeur.|Passe un tableau de structures contenant uniquement des entiers en tant que paramètre In/Out. Les membres du tableau peuvent être modifiés.|[Arrays, exemple](marshaling-different-types-of-arrays.md)|
@@ -44,7 +44,7 @@ Le tableau suivant répertorie les options de marshaling pour les classes, les s
 |Unions avec types valeur.|Passe des unions avec des types valeur (entier et double).|[Unions (exemple)](#unions-sample)|
 |Unions avec types mixtes.|Passe des unions avec des types mixtes (entier et chaîne).|[Unions (exemple)](#unions-sample)|
 |Structure avec une disposition spécifique à la plateforme.|Passe un type avec des définitions de compression natives.|[Exemple de plateforme](#platform-sample)|
-|Valeurs Null dans la structure.|Passe une référence null (**Nothing** en Visual Basic) au lieu d’une référence à un type valeur.|[HandleRef (exemple)](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
+|Valeurs Null dans la structure.|Passe une référence null (**Nothing** en Visual Basic) au lieu d’une référence à un type valeur.|[HandleRef (exemple)](/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
 
 ## <a name="structures-sample"></a>Exemple de structures
 
@@ -102,7 +102,7 @@ Les structures managées `MyPerson`,`MyPerson2`, `MyPerson3` et `MyArrayStruct` 
 
 - `MyPerson` contient uniquement des membres de type chaîne. Le champ [CharSet](specifying-a-character-set.md) affecte le format ANSI aux chaînes quand elles sont passées à la fonction non managée.
 
-- `MyPerson2`contient un **IntPtr** à la `MyPerson` structure. Le type **IntPtr** remplace le pointeur d’origine vers la structure non managée, car les applications .NET Framework n’utilisent pas de pointeurs, sauf si le code est marqué comme étant **unsafe**.
+- `MyPerson2` contient un **IntPtr** à la `MyPerson` structure. Le type **IntPtr** remplace le pointeur d’origine vers la structure non managée, car les applications .NET Framework n’utilisent pas de pointeurs, sauf si le code est marqué comme étant **unsafe**.
 
 - `MyPerson3` contient `MyPerson` comme structure incorporée. Une structure incorporée dans une autre structure peut être aplatie en plaçant les éléments de la structure incorporée directement dans la structure principale. Elle peut également être conservée comme une structure incorporée, comme dans cet exemple.
 
@@ -134,7 +134,7 @@ Les structures en tant qu’arguments de méthodes sont passées par valeur, sau
 
 ## <a name="findfile-sample"></a>FindFile (exemple)
 
-Cet exemple montre comment passer une structure qui contient une autre structure incorporée à une fonction non managée. Il montre également comment utiliser l'attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> pour déclarer un tableau de longueur fixe au sein de la structure. Dans cet exemple, les éléments de la structure incorporée sont ajoutés à la structure parent. Pour obtenir un exemple de structure incorporée non aplatie, consultez [Exemples de structures](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100)).
+Cet exemple montre comment passer une structure qui contient une autre structure incorporée à une fonction non managée. Il montre également comment utiliser l'attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> pour déclarer un tableau de longueur fixe au sein de la structure. Dans cet exemple, les éléments de la structure incorporée sont ajoutés à la structure parent. Pour obtenir un exemple de structure incorporée non aplatie, consultez [Exemples de structures](/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100)).
 
 L'exemple FindFile utilise la fonction non managée ci-dessous, accompagnée de sa déclaration de fonction d'origine :
 
@@ -291,7 +291,7 @@ Par défaut, les assemblys .NET peuvent s’exécuter à la fois dans une versio
 
 L’extrait de code suivant montre un exemple montrant comment choisir entre la définition 32 bits et 64 bits au moment de l’exécution.
 
-```CSharp
+```csharp
 if (IntPtr.Size == 8)
 {
     // Use the STRRET_64 definition
@@ -332,7 +332,7 @@ typedef struct _SYSTEMTIME {
 
 Dans cet exemple, la classe `SystemTime` contient les éléments de la structure d'origine représentés en tant que membres de classe. L'attribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> est défini pour s'assurer que les membres soient disposés en mémoire de manière séquentielle, dans l'ordre dans lequel ils apparaissent.
 
-La classe `NativeMethods` contient un prototype managé de la méthode `GetSystemTime`, qui passe la classe `SystemTime` en tant que paramètre In/Out par défaut. Le paramètre doit être déclaré avec les attributs <xref:System.Runtime.InteropServices.InAttribute> et <xref:System.Runtime.InteropServices.OutAttribute>, car les classes, qui sont des types référence, sont passées en tant que paramètres In par défaut. Pour que l’appelant reçoive les résultats, ces [attributs directionnels](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100)) doivent être appliqués de manière explicite. La classe `App` crée une nouvelle instance de la classe `SystemTime` et accède à ses champs de données.
+La classe `NativeMethods` contient un prototype managé de la méthode `GetSystemTime`, qui passe la classe `SystemTime` en tant que paramètre In/Out par défaut. Le paramètre doit être déclaré avec les attributs <xref:System.Runtime.InteropServices.InAttribute> et <xref:System.Runtime.InteropServices.OutAttribute>, car les classes, qui sont des types référence, sont passées en tant que paramètres In par défaut. Pour que l’appelant reçoive les résultats, ces [attributs directionnels](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100)) doivent être appliqués de manière explicite. La classe `App` crée une nouvelle instance de la classe `SystemTime` et accède à ses champs de données.
 
 ### <a name="code-samples"></a>Exemples de code
 

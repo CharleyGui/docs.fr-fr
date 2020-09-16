@@ -3,12 +3,12 @@ title: Concepts de la sérialisation
 description: La sérialisation peut être utilisée pour capturer l’état d’un objet afin qu’une copie puisse être créée ou pour envoyer un objet par valeur d’un domaine d’application à un autre.
 ms.date: 08/07/2017
 ms.assetid: e1ff4740-20a1-4c76-a8ad-d857db307054
-ms.openlocfilehash: 35addd2dd2bed8ce878f2f159f1caefe89922d88
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a185855f4b6913c8e1d57bf36fc5c37411123e68
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84291316"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541198"
 ---
 # <a name="serialization-concepts"></a>Concepts de la sérialisation
 Pourquoi utiliser la sérialisation ? L'une des deux raisons majeures est que vous pouvez, d'une part, rendre persistant l'état d'un objet sur un support de stockage afin qu'une copie exacte puisse être recréée ultérieurement. D'autre part, vous pouvez envoyer cet objet par valeur d'un domaine d'application à l'autre. Par exemple, la sérialisation est utilisée pour enregistrer l'état de session dans ASP.NET et copier des objets vers le Presse-papiers dans les Windows Forms. Elle est également utilisée par la communication à distance pour passer des objets par valeur d'un domaine d'application à un autre.
@@ -31,8 +31,8 @@ Quand un objet dérive de `MarshalByRefObject`, une référence de l’objet (et
  [Sérialisation binaire](binary-serialization.md)  
  Décrit le mécanisme de sérialisation binaire inclus avec le Common Language Runtime.  
   
- [.NET Remoting](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
+ [.NET Remoting](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
  Décrit les différentes méthodes de communication disponibles dans le .NET Framework pour les communications distantes.  
   
- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)  
+ [Sérialisation XML et SOAP](xml-and-soap-serialization.md)  
  Décrit le mécanisme de sérialisation XML et SOAP inclus avec le Common Language Runtime.

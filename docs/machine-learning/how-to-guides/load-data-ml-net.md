@@ -1,22 +1,22 @@
 ---
 title: Charger des données depuis des fichiers et d’autres sources
-description: Apprenez à charger des données pour le traitement et la formation en ML.NET à l’aide de l’API. Les données sont stockées dans des fichiers, des bases de données, des collections JSON, XML ou en mémoire.
+description: Découvrez comment charger des données pour le traitement et la formation dans ML.NET à l’aide de l’API. Les données sont stockées dans des fichiers, des bases de données, JSON, XML ou des collections en mémoire.
 ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 83aaae2d2e75b3076841750bf5d505390a538bc0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5097632ca777403e6073d28b707bdbe653cda8ac
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74344756"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545023"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Charger des données depuis des fichiers et d’autres sources
 
-Apprenez à charger des données pour le traitement et la formation en ML.NET à l’aide de l’API. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
+Découvrez comment charger des données pour le traitement et la formation dans ML.NET à l’aide de l’API. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
 
-Si vous utilisez Model Builder, voir [les données de formation de charge dans Model Builder](load-data-model-builder.md).
+Si vous utilisez le générateur de modèles, consultez [charger des données d’apprentissage dans le générateur de modèles](load-data-model-builder.md).
 
 ## <a name="create-the-data-model"></a>Créer le modèle de données
 
@@ -50,23 +50,23 @@ public class HousingData
 
 Les attributs donnent à ML.NET plus d’informations sur le modèle de données et la source de données.
 
-L’attribut [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) spécifie les indices de colonne de vos propriétés.
+L' [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) attribut spécifie les index de colonne de vos propriétés.
 
 > [!IMPORTANT]
-> [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute)n’est nécessaire que lors du chargement des données à partir d’un fichier.
+> [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) est requis uniquement lors du chargement de données à partir d’un fichier.
 
 Chargez les colonnes en tant que :
 
 - Colonnes individuelles comme `Size` et `CurrentPrices` dans la classe `HousingData`.
 - Plusieurs colonnes à la fois sous la forme d’un vecteur comme `HistoricalPrices` dans la classe `HousingData`.
 
-Si vous avez une propriété [`VectorType`](xref:Microsoft.ML.Data.VectorTypeAttribute) vectorielle, appliquez l’attribut à la propriété dans votre modèle de données. Il est important de noter que tous les éléments du vecteur doivent être du même type. Le fait de conserver les colonnes séparées permet de faciliter et d’assouplir l’ingénierie des caractéristiques mais, pour un très grand nombre de colonnes, le fonctionnement des colonnes individuelles a un impact sur la vitesse d’entraînement.
+Si vous avez une propriété Vector, appliquez l' [`VectorType`](xref:Microsoft.ML.Data.VectorTypeAttribute) attribut à la propriété dans votre modèle de données. Il est important de noter que tous les éléments du vecteur doivent être du même type. Le fait de conserver les colonnes séparées permet de faciliter et d’assouplir l’ingénierie des caractéristiques mais, pour un très grand nombre de colonnes, le fonctionnement des colonnes individuelles a un impact sur la vitesse d’entraînement.
 
-ML.NET fonctionne par le biais des noms de colonne. Si vous voulez changer le nom d’une colonne à [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) autre chose que le nom de propriété, utilisez l’attribut. Quand vous créez des objets en mémoire, vous le faites toujours en utilisant le nom de propriété. Toutefois, pour le traitement des données et la construction de modèles d’apprentissage automatique, ML.NET remplace et fait référence à la propriété avec la valeur fournie dans l’attribut. [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute)
+ML.NET fonctionne par le biais des noms de colonne. Si vous souhaitez remplacer le nom d’une colonne par un nom autre que le nom de la propriété, utilisez l' [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) attribut. Quand vous créez des objets en mémoire, vous le faites toujours en utilisant le nom de propriété. Toutefois, pour le traitement des données et la création de modèles Machine Learning, ML.NET Substitue et référence la propriété avec la valeur fournie dans l' [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) attribut.
 
 ## <a name="load-data-from-a-single-file"></a>Charger des données à partir d’un fichier spécifique
 
-Pour charger les données [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) d’un fichier, utilisez la méthode ainsi que le modèle de données pour que les données soient chargées. Le paramètre `separatorChar` étant par défaut défini sur le caractère de tabulation, changez-le pour votre fichier de données si cela est nécessaire. Si votre fichier a un en-tête, définissez le paramètre `hasHeader` sur `true` pour ignorer la première ligne du fichier et commencer à charger les données à partir de la deuxième ligne.
+Pour charger des données à partir d’un fichier, utilisez la [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) méthode avec le modèle de données pour les données à charger. Le paramètre `separatorChar` étant par défaut défini sur le caractère de tabulation, changez-le pour votre fichier de données si cela est nécessaire. Si votre fichier a un en-tête, définissez le paramètre `hasHeader` sur `true` pour ignorer la première ligne du fichier et commencer à charger les données à partir de la deuxième ligne.
 
 ```csharp
 //Create MLContext
@@ -82,7 +82,7 @@ Si vos données sont stockées dans plusieurs fichiers, tant que le schéma de d
 
 ### <a name="load-from-files-in-a-single-directory"></a>Effectuer le chargement à partir de fichiers situés dans le même répertoire
 
-Lorsque tous vos fichiers de données sont dans le même [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) répertoire, utilisez des wildcards dans la méthode.
+Lorsque tous vos fichiers de données se trouvent dans le même répertoire, utilisez des caractères génériques dans la [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) méthode.
 
 ```csharp
 //Create MLContext
@@ -94,7 +94,7 @@ IDataView data = mlContext.Data.LoadFromTextFile<HousingData>("Data/*", separato
 
 ### <a name="load-from-files-in-multiple-directories"></a>Effectuer le chargement à partir de fichiers situés dans plusieurs répertoires
 
-Pour charger les données de [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader*) plusieurs répertoires, utilisez la méthode pour créer un [`TextLoader`](xref:Microsoft.ML.Data.TextLoader). Ensuite, utilisez [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load*) la méthode et spécifier les trajectoires de fichiers individuels (wildcards ne peuvent pas être utilisés).
+Pour charger des données à partir de plusieurs répertoires, utilisez la [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader*) méthode pour créer un [`TextLoader`](xref:Microsoft.ML.Data.TextLoader) . Ensuite, utilisez la [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load*) méthode et spécifiez les chemins d’accès individuels des fichiers (les caractères génériques ne peuvent pas être utilisés).
 
 ```csharp
 //Create MLContext
@@ -107,16 +107,16 @@ TextLoader textLoader = mlContext.Data.CreateTextLoader<HousingData>(separatorCh
 IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubFolder2/1.txt");
 ```
 
-## <a name="load-data-from-a-relational-database"></a>Chargez les données d’une base de données relationnelle
+## <a name="load-data-from-a-relational-database"></a>Charger des données à partir d’une base de données relationnelle
 
-ML.NET prend en charge le chargement des données [`System.Data`](xref:System.Data) à partir d’une variété de bases de données relationnelles prises en charge par qui comprennent SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, Progress, IBM DB2, et bien d’autres.
+ML.NET prend en charge le chargement de données à partir de diverses bases de données relationnelles prises en charge par, [`System.Data`](xref:System.Data) notamment SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, Progress, IBM DB2 et bien plus encore.
 
 > [!NOTE]
-> Pour `DatabaseLoader`utiliser , référencez le paquet [System.Data.SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) NuGet.
+> Pour utiliser `DatabaseLoader` , référencez le package NuGet [System. Data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) .
 
-Compte tenu d’une `House` base de données avec un tableau nommé et le schéma suivant:
+À partir d’une base de données avec une table nommée `House` et le schéma suivant :
 
-```SQL
+```sql
 CREATE TABLE [House] (
     [HouseId] INT NOT NULL IDENTITY,
     [Size] INT NOT NULL,
@@ -139,7 +139,7 @@ public class HouseData
 }
 ```
 
-Puis, à l’intérieur `DatabaseLoader`de votre application, créez un .
+Ensuite, à l’intérieur de votre application, créez un `DatabaseLoader` .
 
 ```csharp
 MLContext mlContext = new MLContext();
@@ -147,7 +147,7 @@ MLContext mlContext = new MLContext();
 DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<HouseData>();
 ```
 
-Définissez votre chaîne de connexion ainsi que la commande SQL `DatabaseSource` à exécuter dans la base de données et créez une instance. Cet exemple utilise une base de données LocalDB SQL Server avec un chemin de fichier. Toutefois, DatabaseLoader prend en charge toute autre chaîne de connexion valide pour les bases de données sur site et dans le cloud.
+Définissez votre chaîne de connexion, ainsi que la commande SQL à exécuter sur la base de données et créez une `DatabaseSource` instance. Cet exemple utilise une base de données locale SQL Server avec un chemin d’accès de fichier. Toutefois, DatabaseLoader prend en charge toute autre chaîne de connexion valide pour les bases de données locales et dans le Cloud.
 
 ```csharp
 string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=<YOUR-DB-FILEPATH>;Database=<YOUR-DB-NAME>;Integrated Security=True;Connect Timeout=30";
@@ -157,9 +157,9 @@ string sqlCommand = "SELECT Size, CAST(NumBed as REAL) as NumBed, Price FROM Hou
 DatabaseSource dbSource = new DatabaseSource(SqlClientFactory.Instance, connectionString, sqlCommand);
 ```
 
-Les données numériques [`Real`](xref:System.Data.SqlDbType) qui ne sont [`Real`](xref:System.Data.SqlDbType)pas de type doivent être converties en . Le [`Real`](xref:System.Data.SqlDbType) type est représenté comme une valeur flottante à point unique ou, [`Single`](xref:System.Single)le type d’entrée attendu par ML.NET algorithmes. Dans cet échantillon, la `NumBed` colonne est un integer dans la base de données. En `CAST` utilisant la fonction intégrée, il [`Real`](xref:System.Data.SqlDbType)est converti en . Parce `Price` que la propriété [`Real`](xref:System.Data.SqlDbType) est déjà de type, il est chargé tel qu’il est.
+Les données numériques qui ne sont pas de type doivent [`Real`](xref:System.Data.SqlDbType) être converties en [`Real`](xref:System.Data.SqlDbType) . Le [`Real`](xref:System.Data.SqlDbType) type est représenté sous la forme d’une valeur à virgule flottante simple précision ou [`Single`](xref:System.Single) du type d’entrée attendu par les algorithmes ml.net. Dans cet exemple, la `NumBed` colonne est un entier dans la base de données. À l’aide de la `CAST` fonction intégrée, elle est convertie en [`Real`](xref:System.Data.SqlDbType) . Étant donné que la `Price` propriété est déjà de type, [`Real`](xref:System.Data.SqlDbType) elle est chargée telle quelle.
 
-Utilisez `Load` la méthode pour charger [`IDataView`](xref:Microsoft.ML.IDataView)les données dans un .
+Utilisez la `Load` méthode pour charger les données dans un [`IDataView`](xref:Microsoft.ML.IDataView) .
 
 ```csharp
 IDataView data = loader.Load(dbSource);
@@ -200,10 +200,10 @@ HousingData[] inMemoryCollection = new HousingData[]
 };
 ```
 
-Chargez la collection de [`IDataView`](xref:Microsoft.ML.IDataView) mémoire [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) dans un avec la méthode :
+Chargez la collection en mémoire dans un [`IDataView`](xref:Microsoft.ML.IDataView) avec la [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) méthode :
 
 > [!IMPORTANT]
-> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*)suppose que [`IEnumerable`](xref:System.Collections.IEnumerable) le qu’il charge à partir est thread-safe.
+> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) suppose que le [`IEnumerable`](xref:System.Collections.IEnumerable) chargement à partir de est thread-safe.
 
 ```csharp
 // Create MLContext
@@ -215,5 +215,5 @@ IDataView data = mlContext.Data.LoadFromEnumerable<HousingData>(inMemoryCollecti
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- Pour nettoyer ou traiter autrement les données, consultez [les données Préparer pour la construction d’un modèle](prepare-data-ml-net.md).
-- Lorsque vous êtes prêt à construire un modèle, voir [Train et évaluer un modèle](train-machine-learning-model-ml-net.md).
+- Pour nettoyer ou traiter des données, consultez [préparer des données pour la génération d’un modèle](prepare-data-ml-net.md).
+- Lorsque vous êtes prêt à créer un modèle, consultez [former et évaluer un modèle](train-machine-learning-model-ml-net.md).

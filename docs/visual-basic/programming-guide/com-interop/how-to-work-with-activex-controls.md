@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Toolbox, adding controls
 - ActiveX controls, adding to Toolbox
 ms.assetid: ec675027-866f-4c05-aaf2-92fca5200f9a
-ms.openlocfilehash: 9590088272a630b50d953d1832200bacf3fc13fb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 11b8eb446395b4d35b9b7b689e30549b2b00f94a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396815"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548037"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>Comment : utiliser les contrôles ActiveX (Visual Basic)
 Les contrôles ActiveX sont des composants COM ou des objets que vous pouvez insérer dans une page Web ou une autre application pour réutiliser les fonctionnalités empaquetées que quelqu’un d’autre a programmées. Vous pouvez utiliser des contrôles ActiveX développés pour Visual Basic 6,0 et des versions antérieures afin d’ajouter des fonctionnalités à la **boîte à outils** de Visual Studio.  
@@ -28,12 +28,12 @@ Les contrôles ActiveX sont des composants COM ou des objets que vous pouvez ins
      Le nouveau contrôle s’affiche avec les autres outils de la **boîte à outils**.  
   
     > [!NOTE]
-    > Vous pouvez utiliser l’utilitaire Aximp pour créer manuellement un assembly d’interopérabilité pour les contrôles ActiveX. Pour plus d’informations, consultez [Aximp. exe (Windows Forms ActiveX Control importateur)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md).  
+    > Vous pouvez utiliser l’utilitaire Aximp pour créer manuellement un assembly d’interopérabilité pour les contrôles ActiveX. Pour plus d’informations, consultez [Aximp.exe (Windows Forms ActiveX Control importateur)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [COM Interop](index.md)
-- [Comment : ajouter des contrôles ActiveX aux Windows Forms](../../../framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)
-- [Aximp. exe (Windows Forms l’importateur de contrôle ActiveX)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md)
-- [Considérations sur l'hébergement d'un contrôle ActiveX dans un Windows Form](../../../framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)
+- [Comment : ajouter des contrôles ActiveX aux Windows Forms](/dotnet/desktop/winforms/controls/how-to-add-activex-controls-to-windows-forms)
+- [Aximp.exe (importateur de contrôle ActiveX Windows Forms)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md)
+- [Considérations sur l'hébergement d'un contrôle ActiveX dans un Windows Form](/dotnet/desktop/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form)
 - [Dépannage de l’interopérabilité](troubleshooting-interoperability.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF security
 - access control [WCF]
 ms.assetid: 9d576122-3f55-4425-9acf-b23d0781e966
-ms.openlocfilehash: 27f2b7d3146199f1c3e9a228202618c992e2a1ea
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bd3156e0fa8ea976d2297ffc0767cd948c9c96b4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601359"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550480"
 ---
 # <a name="access-control-mechanisms"></a>Mécanismes de contrôle d'accès
 Vous pouvez contrôler l’accès de plusieurs façons avec Windows Communication Foundation (WCF). Cette rubrique présente brièvement les différents mécanismes et suggère quand utiliser chacun ; elle a pour objectif de vous aider à sélectionner le mécanisme approprié à utiliser. Les technologies d'accès sont répertoriées par ordre de complexité. La plus simple est le <xref:System.Security.Permissions.PrincipalPermissionAttribute> ; la plus complexe est le modèle d'identité.  
@@ -46,7 +46,7 @@ Vous pouvez contrôler l’accès de plusieurs façons avec Windows Communicatio
   
  Vous pouvez également utiliser AzMan et le fournisseur de rôle ASP.NET si vous avez déjà accès à une installation AzMan existante et que vous souhaitez autoriser les utilisateurs de votre service à utiliser les fonctionnalités de la combinaison AzMan/fournisseur de rôles.  
   
- Pour plus d’informations sur AzMan et le fournisseur de rôles ASP.NET, consultez [procédure : utiliser le gestionnaire d’autorisations (AzMan) avec ASP.NET 2,0](https://docs.microsoft.com/previous-versions/msp-n-p/ff649313(v=pandp.10)). Pour plus d’informations sur l’utilisation d’AzMan et du fournisseur de rôle pour les services WCF, consultez [Comment : utiliser le fournisseur de rôles du gestionnaire d’autorisations ASP.net avec un service](how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md).  
+ Pour plus d’informations sur AzMan et le fournisseur de rôles ASP.NET, consultez [procédure : utiliser le gestionnaire d’autorisations (AzMan) avec ASP.NET 2,0](/previous-versions/msp-n-p/ff649313(v=pandp.10)). Pour plus d’informations sur l’utilisation d’AzMan et du fournisseur de rôle pour les services WCF, consultez [Comment : utiliser le fournisseur de rôles du gestionnaire d’autorisations ASP.net avec un service](how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md).  
   
 ## <a name="identity-model"></a>Modèle d'identité  
  Le modèle d'identité est un ensemble d'API qui vous permettent de gérer des revendications et des stratégies pour autoriser des clients. Le modèle d'identité vous permet d'examiner chaque revendication incluse dans les informations d'identification que l'appelant a utilisée pour s'authentifier auprès du service, de comparer les revendications au jeu de stratégies pour le service et d'accorder ou de refuser l'accès en fonction de cette comparaison.  
@@ -60,8 +60,8 @@ Vous pouvez contrôler l’accès de plusieurs façons avec Windows Communicatio
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute>
-- [Guide pratique pour restreindre l’accès avec la classe PrincipalPermissionAttribute](../how-to-restrict-access-with-the-principalpermissionattribute-class.md)
-- [Comment : utiliser le fournisseur de rôle ASP.NET avec un service](how-to-use-the-aspnet-role-provider-with-a-service.md)
-- [Comment : utiliser le fournisseur de rôle du Gestionnaire d'autorisations ASP.NET avec un service](how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)
+- [Procédure : restreindre l’accès à la classe PrincipalPermissionAttribute](../how-to-restrict-access-with-the-principalpermissionattribute-class.md)
+- [Procédure : utiliser le fournisseur de rôle ASP.NET avec un service](how-to-use-the-aspnet-role-provider-with-a-service.md)
+- [Procédure : utiliser le fournisseur de rôle du Gestionnaire d’autorisations ASP.NET avec un service](how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)
 - [Gestion des revendications et autorisation avec le modèle d'identité](managing-claims-and-authorization-with-the-identity-model.md)
-- [Délégation et emprunt d'identité](delegation-and-impersonation-with-wcf.md)
+- [Délégation et emprunt d’identité](delegation-and-impersonation-with-wcf.md)

@@ -3,12 +3,12 @@ title: Effectuer des jointures groupées (LINQ en C#)
 description: Découvrez comment effectuer des jointures groupées à l’aide de LINQ en C#.
 ms.date: 04/22/2020
 ms.assetid: 9667daf9-a5fd-4b43-a5c4-a9c2b744000e
-ms.openlocfilehash: 740a861da7dfb9653a874d5baf67eeb2030555b4
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 6411479c5fe6cb0ee79a0cd3df6de2f4d42c26a2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135748"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542807"
 ---
 # <a name="perform-grouped-joins"></a>Effectuer des jointures groupées
 
@@ -20,7 +20,7 @@ Par exemple, une classe ou une table de base de données relationnelle nommée `
 > Chaque élément de la première collection apparaît dans le jeu de résultats d’une jointure groupée, même si des éléments corrélés sont trouvés dans la deuxième collection. Si aucun élément corrélé n’est trouvé, la séquence d’éléments corrélés pour cet élément est vide. Le sélecteur de résultats a donc accès à chaque élément de la première collection. Cela n’est pas le cas du sélecteur de résultats dans une jointure non groupée, qui ne peut pas accéder à des éléments de la première collection qui n’ont aucune correspondance dans la deuxième collection.
 
 > [!WARNING]
-> <xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=nameWithType>n’a aucun équivalent direct dans les termes de base de données relationnelle traditionnels. Toutefois, cette méthode implémente un sur-ensemble de jointures internes et de jointures externes gauches. Ces deux opérations peuvent être écrites en termes de jointure groupée. Pour plus d’informations, consultez [join, opérations](../programming-guide/concepts/linq/join-operations.md) et [Entity Framework Core, GroupJoin](https://docs.microsoft.com/ef/core/querying/complex-query-operators#groupjoin).
+> <xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=nameWithType> n’a aucun équivalent direct dans les termes de base de données relationnelle traditionnels. Toutefois, cette méthode implémente un sur-ensemble de jointures internes et de jointures externes gauches. Ces deux opérations peuvent être écrites en termes de jointure groupée. Pour plus d’informations, consultez [join, opérations](../programming-guide/concepts/linq/join-operations.md) et [Entity Framework Core, GroupJoin](/ef/core/querying/complex-query-operators#groupjoin).
 
 Le premier exemple de cet article montre comment effectuer une jointure groupée. Le deuxième exemple montre comment utiliser une jointure groupée pour créer des éléments XML.
 

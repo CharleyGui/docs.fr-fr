@@ -2,18 +2,18 @@
 title: Commande dotnet add package
 description: La commande « dotnet add package » est une option pratique pour ajouter une référence de package NuGet à un projet.
 ms.date: 02/14/2020
-ms.openlocfilehash: bc79fe8adf5f775ddce62f3877a8de945c6a18ab
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1bdda241c1301b926ba2fd322f969407038b7b62
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840895"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538066"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
 **Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet add package` : Ajoute une référence de package à un fichier projet.
 
@@ -87,7 +87,7 @@ Le fichier *ToDo.csproj* contient à présent un élément [`<PackageReference>`
 
 - **`--package-directory <PACKAGE_DIRECTORY>`**
 
-  Répertoire où restaurer les packages. L’emplacement de restauration de package par défaut est `%userprofile%\.nuget\packages` sur Windows, et `~/.nuget/packages` sur macOS et Linux. Pour plus d’informations, consultez [Gérer les dossiers de packages globaux, les dossiers de cache et les dossiers temporaires dans NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
+  Répertoire où restaurer les packages. L’emplacement de restauration de package par défaut est `%userprofile%\.nuget\packages` sur Windows, et `~/.nuget/packages` sur macOS et Linux. Pour plus d’informations, consultez [Gérer les dossiers de packages globaux, les dossiers de cache et les dossiers temporaires dans NuGet](/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
 
 - **`-s|--source <SOURCE>`**
 
@@ -95,7 +95,7 @@ Le fichier *ToDo.csproj* contient à présent un élément [`<PackageReference>`
 
 - **`-v|--version <VERSION>`**
 
-  Version du package. Consultez [Contrôle de version du package NuGet](https://docs.microsoft.com/nuget/reference/package-versioning).
+  Version du package. Consultez [Contrôle de version du package NuGet](/nuget/reference/package-versioning).
 
 ## <a name="examples"></a>Exemples
 
@@ -119,5 +119,5 @@ Le fichier *ToDo.csproj* contient à présent un élément [`<PackageReference>`
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Gestion des dossiers de packages globaux, des dossiers de cache et des dossiers temporaires dans NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
-- [Gestion des versions des packages NuGet](https://docs.microsoft.com/nuget/reference/package-versioning)
+- [Gestion des dossiers de packages globaux, des dossiers de cache et des dossiers temporaires dans NuGet](/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
+- [Gestion des versions des packages NuGet](/nuget/reference/package-versioning)

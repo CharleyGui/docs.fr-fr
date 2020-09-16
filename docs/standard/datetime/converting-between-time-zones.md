@@ -13,12 +13,12 @@ helpviewer_keywords:
 - converting times
 - local time conversions
 ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
-ms.openlocfilehash: 7d1984866c5eacdfe21834389b8f0be4caf78fb7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 156c3d8b360d62ba72f9a4447646fafe170ea658
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446839"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547328"
 ---
 # <a name="converting-times-between-time-zones"></a>Conversion d’heures entre fuseaux horaires
 
@@ -26,7 +26,7 @@ Il devient de plus en plus important pour une application qui fonctionne avec de
 
 ## <a name="converting-to-coordinated-universal-time"></a>Conversion en heure UTC
 
-Le temps universel coordonné (UTC) est une norme d’heure atomique de haute précision. Les fuseaux horaires du monde sont exprimés comme décalages positifs ou négatifs par rapport à l’heure UTC. Par conséquent, l’heure UTC fournit une sorte d’heure neutre du point de vue des fuseaux horaires. L’utilisation de l’heure UTC est recommandée lorsque la portabilité de la date et de l’heure entre les ordinateurs est importante. (Pour plus d’informations et pour connaître les meilleures pratiques utilisant des dates et des heures, consultez [codage des meilleures pratiques à l’aide de DateTime dans le .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973825(v=msdn.10)).) La conversion de fuseaux horaires individuels en heure UTC facilite les comparaisons temporelles.
+Le temps universel coordonné (UTC) est une norme d’heure atomique de haute précision. Les fuseaux horaires du monde sont exprimés comme décalages positifs ou négatifs par rapport à l’heure UTC. Par conséquent, l’heure UTC fournit une sorte d’heure neutre du point de vue des fuseaux horaires. L’utilisation de l’heure UTC est recommandée lorsque la portabilité de la date et de l’heure entre les ordinateurs est importante. (Pour plus d’informations et pour connaître les meilleures pratiques utilisant des dates et des heures, consultez [codage des meilleures pratiques à l’aide de DateTime dans le .NET Framework](/previous-versions/dotnet/articles/ms973825(v=msdn.10)).) La conversion de fuseaux horaires individuels en heure UTC facilite les comparaisons temporelles.
 
 > [!NOTE]
 > Vous pouvez également sérialiser une <xref:System.DateTimeOffset> structure pour représenter de façon non ambiguë un point unique dans le temps. Étant donné que les <xref:System.DateTimeOffset> objets stockent une valeur de date et d’heure avec son décalage par rapport à l’heure UTC, ils représentent toujours un point particulier dans le temps par rapport à l’heure UTC.

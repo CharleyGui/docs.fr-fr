@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4369533d-7834-4497-bc37-bfea0ad737b1
 topic_type:
 - apiref
-ms.openlocfilehash: 4b8018bb84dea08987d91f351b1ab0d9f3b48c56
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 420f22a242a20f8bdf5d5b84f47a297a2f503db0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503898"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546019"
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost, interface
 Fournit des méthodes qui permettent à l’hôte de démarrer et d’arrêter explicitement le common language runtime (CLR) pour créer et configurer des domaines d’application, pour accéder au domaine par défaut et pour énumérer tous les domaines qui s’exécutent dans le processus.  
@@ -33,7 +33,7 @@ Fournit des méthodes qui permettent à l’hôte de démarrer et d’arrêter e
 |[CloseEnum, méthode](icorruntimehost-closeenum-method.md)|Réinitialise un énumérateur de domaine au début de la liste de domaines.|  
 |[CreateDomain, méthode](icorruntimehost-createdomain-method.md)|Crée un domaine d’application. L’appelant reçoit un pointeur d’interface de type <xref:System._AppDomain> vers une instance de type <xref:System.AppDomain?displayProperty=nameWithType> .|  
 |[CreateDomainEx, méthode](icorruntimehost-createdomainex-method.md)|Crée un domaine d’application. Cette méthode permet à l’appelant de passer une instance IAppDomainSetup pour configurer des fonctionnalités supplémentaires de l’instance retournée <xref:System._AppDomain> .|  
-|[CreateDomainSetup, méthode](icorruntimehost-createdomainsetup-method.md)|Obtient un pointeur d’interface de type `IAppDomainSetup` vers une <xref:System.AppDomainSetup> instance. `IAppDomainSetup`fournit des méthodes pour configurer les aspects d’un domaine d’application avant qu’il ne soit créé.|  
+|[CreateDomainSetup, méthode](icorruntimehost-createdomainsetup-method.md)|Obtient un pointeur d’interface de type `IAppDomainSetup` vers une <xref:System.AppDomainSetup> instance. `IAppDomainSetup` fournit des méthodes pour configurer les aspects d’un domaine d’application avant qu’il ne soit créé.|  
 |[CreateEvidence, méthode](icorruntimehost-createevidence-method.md)|Obtient un pointeur d’interface de type <xref:System.Security.Principal.IIdentity> , qui permet à l’hôte de créer une preuve de sécurité à passer à [CreateDomain](icorruntimehost-createdomain-method.md) ou [CreateDomainEx](icorruntimehost-createdomainex-method.md).|  
 |[CreateLogicalThreadState, méthode](icorruntimehost-createlogicalthreadstate-method.md)|Ne pas utiliser.|  
 |[CurrentDomain, méthode](icorruntimehost-currentdomain-method.md)|Obtient un pointeur d’interface de type <xref:System._AppDomain> qui représente le domaine chargé sur le thread actuel.|  
@@ -45,17 +45,17 @@ Fournit des méthodes qui permettent à l’hôte de démarrer et d’arrêter e
 |[MapFile, méthode](icorruntimehost-mapfile-method.md)|Mappe le fichier spécifié en mémoire. Cette méthode est obsolète.|  
 |[NextDomain, méthode](icorruntimehost-nextdomain-method.md)|Obtient un pointeur d’interface vers le domaine suivant dans l’énumération.|  
 |[Start, méthode](icorruntimehost-start-method.md)|Démarre le CLR.|  
-|[Stop, méthode](icorruntimehost-stop-method.md)|Arrête l’exécution du code dans le runtime pour le processus en cours.|  
+|[Stop (méthode)](icorruntimehost-stop-method.md)|Arrête l’exécution du code dans le runtime pour le processus en cours.|  
 |[SwitchInLogicalThreadState, méthode](icorruntimehost-switchinlogicalthreadstate-method.md)|Ne pas utiliser.|  
 |[SwitchOutLogicalThreadState, méthode](icorruntimehost-switchoutlogicalthreadstate-method.md)|Ne pas utiliser.|  
 |[UnloadDomain, méthode](icorruntimehost-unloaddomain-method.md)|Décharge le domaine d’application spécifié du processus en cours.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :** 1,0, 1,1  
   
@@ -64,6 +64,6 @@ Fournit des méthodes qui permettent à l’hôte de démarrer et d’arrêter e
 - <xref:System.AppDomain>
 - [Hosting](index.md)
 - [ICLRRuntimeHost, interface](iclrruntimehost-interface.md)
-- [Hôtes du runtime](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
+- [Hôtes du runtime](/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
 - [Interfaces d'hébergement](hosting-interfaces.md)
 - [CorRuntimeHost, coclasse](corruntimehost-coclass.md)

@@ -5,12 +5,12 @@ ms.date: 11/15/2017
 f1_keywords:
 - privateprotected_CSharpKeyword
 author: sputier
-ms.openlocfilehash: d83fd2a570b735a029bd2a79ad24e30d235dc5fb
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: e7ef6d691b43abd3d07321adfc0c166629ce9098
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89117959"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537299"
 ---
 # <a name="private-protected-c-reference"></a>private protected (Référence C#)
 
@@ -19,7 +19,7 @@ La combinaison de mots clés `private protected` est un modificateur d’accès 
 > [!NOTE]
 > Le modificateur d’accès `private protected` est valide dans C# 7.2 et ultérieur.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Un membre protégé privé d’une classe de base est accessible à partir des types dérivés de son assembly conteneur seulement si le type statique de la variable est le type de la classe dérivée. Prenons l’exemple de l’extrait de code suivant :
 
@@ -81,6 +81,6 @@ Les membres de struct ne peuvent pas être `private protected`, car le struct ne
 - [Niveaux d'accessibilité](accessibility-levels.md)
 - [Modificateurs](index.md)
 - [public](public.md)
-- [priv](private.md)
+- [private](private.md)
 - [intérieurs](internal.md)
-- [Problèmes de sécurité pour les mots clés virtuels internes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Problèmes de sécurité pour les mots clés virtuels internes](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

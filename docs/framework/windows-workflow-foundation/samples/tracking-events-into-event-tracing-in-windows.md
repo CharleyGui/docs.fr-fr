@@ -2,12 +2,12 @@
 title: Événements de suivi dans Event Tracing for Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: fa5d86e327bc9c6eca85ed2908775de5f647f410
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 4350287aedae73a7ca9556de7ae3f597950e32ea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144888"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549612"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Événements de suivi dans Event Tracing for Windows
 
@@ -51,13 +51,13 @@ Le participant de suivi s'abonne à un sous-ensemble des enregistrements de suiv
 
 4. À l’aide de l’Explorateur de fichiers, ouvrez le client test WCF.
 
-    Le client test WCF (WcfTestClient. exe) se trouve dans le \<Visual Studio 2010 installation folder> dossier \Common7\IDE\
+    Le client test WCF (WcfTestClient.exe) se trouve dans le \<Visual Studio 2010 installation folder> dossier \Common7\IDE\
 
     Le dossier d’installation par défaut de Visual Studio 2010 est C:\Program Files\Microsoft Visual Studio 10,0.
 
 5. Dans le client test WCF, sélectionnez **Ajouter un service** dans le menu **fichier** .
 
-    Ajoutez l'adresse du point de terminaison dans la zone d'entrée. Par défaut, il s’agit de `http://localhost:53797/SampleWorkflowService.xamlx`.
+    Ajoutez l'adresse du point de terminaison dans la zone d'entrée. La valeur par défaut est `http://localhost:53797/SampleWorkflowService.xamlx`.
 
 6. Ouvrez l'application Observateur d'événements.
 
@@ -153,4 +153,4 @@ Le modèle de suivi de contrôle d'état émet des enregistrements d'instance de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples d'analyse AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Exemples d'analyse AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

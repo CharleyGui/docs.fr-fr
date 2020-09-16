@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: 92cfdc1a2a530f9790a693d0aa1ca5f65ff1af9f
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 824765e1f3ecfd1381f9c5f8b144b7b11aee8f0b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558762"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550382"
 ---
 # <a name="version-compatibility"></a>Compatibilité des versions
 
@@ -53,9 +53,9 @@ Si votre application ou composant ne fonctionne pas comme prévu sur .NET Framew
 
 - S’il s’agit d’une application .NET Framework 3.5, consultez également [Problèmes de migration de .NET Framework 4](net-framework-4-migration-issues.md).
 
-- S’il s’agit d’une application .NET Framework 2.0, consultez également [Modifications dans .NET Framework 3.5 SP1](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10)).
+- S’il s’agit d’une application .NET Framework 2.0, consultez également [Modifications dans .NET Framework 3.5 SP1](/previous-versions/dotnet/articles/dd310284(v=msdn.10)).
 
-- S’il s’agit d’une application .NET Framework 1.1, consultez également [Modifications dans .NET Framework 2.0](https://docs.microsoft.com/previous-versions/aa570326(v=msdn.10)).
+- S’il s’agit d’une application .NET Framework 1.1, consultez également [Modifications dans .NET Framework 2.0](/previous-versions/aa570326(v=msdn.10)).
 
 - Si vous recompilez le code source existant pour l’exécuter sur .NET Framework 4.5 ou ses versions intermédiaires, ou si vous développez une nouvelle version d’une application ou d’un composant qui cible .NET Framework 4.5 ou ses versions intermédiaires à partir d’une base de code source existante, consultez [Éléments obsolètes dans la bibliothèque de classes](../whats-new/whats-obsolete.md) pour connaître les types et les membres obsolètes, et appliquer la solution de contournement décrite. (Le code précédemment compilé continuera à s'exécuter sur des types et des membres marqués comme obsolètes.)
 

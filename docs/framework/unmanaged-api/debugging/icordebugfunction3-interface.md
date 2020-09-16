@@ -10,12 +10,12 @@ api_type:
 ms.assetid: b22717b9-ead5-4eea-887e-789b52d613dc
 topic_type:
 - apiref
-ms.openlocfilehash: 71aa482cc2268da17f1376d8c305dd6a818d92d0
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 8c9c507f00780d5ef5c5aeb28a1b10493351f37e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213164"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546970"
 ---
 # <a name="icordebugfunction3-interface"></a>ICorDebugFunction3, interface
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -43,4 +43,4 @@ ms.locfileid: "83213164"
 
 - [Interfaces de débogage](debugging-interfaces.md)
 - [Débogage](index.md)
-- [ReJIT : Guide pratique](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT : Guide pratique](/archive/blogs/davbr/rejit-a-how-to-guide)

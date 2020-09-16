@@ -2,12 +2,12 @@
 title: Scénarios de déploiement pris en charge
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: 5be9ab3d300da2095a45846d334512382b4067f6
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 299c8f2e29806a123e0a8b6e1e70d8cc13daa7bf
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743452"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546248"
 ---
 # <a name="supported-deployment-scenarios"></a>Scénarios de déploiement pris en charge
 
@@ -27,15 +27,15 @@ Pour plus d’informations sur les fonctionnalités prises en charge dans ces je
 
 ## <a name="partial-trust-on-the-server"></a>Confiance partielle sur le serveur
 
-De nombreux fournisseurs commerciaux de services d’hébergement d’applications Web ASP.NET obligent les applications qui s’exécutent sur leurs serveurs à s’exécuter dans le jeu d’autorisations ASP.NET 2,0 moyenne Trust. Les services WCF peuvent s’exécuter dans ces environnements, à condition qu’ils utilisent le <xref:System.ServiceModel.BasicHttpBinding>, le <xref:System.ServiceModel.WebHttpBinding>ou le <xref:System.ServiceModel.WSHttpBinding> avec la sécurité au niveau du transport.
+De nombreux fournisseurs commerciaux de services d’hébergement d’applications Web ASP.NET obligent les applications qui s’exécutent sur leurs serveurs à s’exécuter dans le jeu d’autorisations ASP.NET 2,0 moyenne Trust. Les services WCF peuvent s’exécuter dans ces environnements, à condition qu’ils utilisent <xref:System.ServiceModel.BasicHttpBinding> , <xref:System.ServiceModel.WebHttpBinding> ou <xref:System.ServiceModel.WSHttpBinding> avec la sécurité au niveau du transport.
 
 Les services WCF s’exécutant dans des environnements d’hébergement de confiance moyenne peuvent également servir de services de couche intermédiaire en envoyant des messages à d’autres serveurs en réponse aux demandes des clients. Les scénarios de couche intermédiaire sur le serveur sont pris en charge si l'environnement d'hébergement a accordé le <xref:System.Net.WebPermission> approprié à l'application pour effectuer des demandes sortantes vers le serveur souhaité.
 
-En plus de la messagerie SOAP utilisant l’une des liaisons SOAP prises en charge, WCF prend en charge les <xref:System.ServiceModel.WebHttpBinding> pour la création de services de style Web dans des applications de confiance partielle. Le [modèle de programmation http Web WCF](wcf-web-http-programming-model.md), la [syndication WCF](wcf-syndication.md)et l' [intégration Ajax et les fonctionnalités de prise en charge JSON](ajax-integration-and-json-support.md) de WCF sont toutes prises en charge en mode de confiance partielle.
+En plus de la messagerie SOAP utilisant l’une des liaisons SOAP prises en charge, WCF prend en charge <xref:System.ServiceModel.WebHttpBinding> pour la création de services de style Web dans des applications de confiance partielle. Le [modèle de programmation http Web WCF](wcf-web-http-programming-model.md), la [syndication WCF](wcf-syndication.md)et l' [intégration Ajax et les fonctionnalités de prise en charge JSON](ajax-integration-and-json-support.md) de WCF sont toutes prises en charge en mode de confiance partielle.
 
 Les services de workflow requièrent des autorisations de confiance totale et ne peuvent pas être utilisés dans les applications de confiance partielle.
 
-Pour plus d’informations, consultez [procédure : utiliser la confiance moyenne dans ASP.NET 2,0](https://docs.microsoft.com/previous-versions/msp-n-p/ff648344(v=pandp.10)).
+Pour plus d’informations, consultez [procédure : utiliser la confiance moyenne dans ASP.NET 2,0](/previous-versions/msp-n-p/ff648344(v=pandp.10)).
 
 ## <a name="partial-trust-on-the-client"></a>Confiance partielle sur le client
 
@@ -46,6 +46,6 @@ WCF peut être utilisé pour communiquer avec des serveurs distants à partir d�
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurité d’accès du code](../../misc/code-access-security.md)
-- [Vue d’ensemble des applications hébergées par un navigateur Windows Presentation Foundation](../../wpf/app-development/wpf-xaml-browser-applications-overview.md)
+- [Vue d’ensemble des applications Windows Presentation Foundation hébergées par un navigateur](/dotnet/desktop/wpf/app-development/wpf-xaml-browser-applications-overview)
 - [Confiance partielle](partial-trust.md)
-- [Niveaux de confiance ASP.NET et fichiers de stratégie](https://docs.microsoft.com/previous-versions/wyts434y(v=vs.140))
+- [Niveaux de confiance ASP.NET et fichiers de stratégie](/previous-versions/wyts434y(v=vs.140))

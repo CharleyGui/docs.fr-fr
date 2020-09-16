@@ -2,12 +2,12 @@
 title: Introduction à LINQ
 ms.date: 07/20/2015
 ms.assetid: c6339c12-9b2d-433e-961c-0d2b7f0091c2
-ms.openlocfilehash: b0fa27fd81b85eb89712f9e81f42e06505878f86
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 58613281d79769bfb5515f1291feb9b502a1e846
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397556"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549965"
 ---
 # <a name="introduction-to-linq-visual-basic"></a>Introduction à LINQ (Visual Basic)
 LINQ (Language-Integrated Query) est une nouveauté du .NET Framework 3.5 qui crée un pont entre le monde des objets et celui des données.  
@@ -27,7 +27,7 @@ LINQ (Language-Integrated Query) est une nouveauté du .NET Framework 3.5 qui c
   
 - Bases de données SQL Server : [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
   
-- Documents XML : [LINQ to XML (Visual Basic)](linq-to-xml.md)  
+- Documents XML : [LINQ to XML (Visual Basic)](../../../../standard/linq/linq-xml-overview.md)  
   
 - Datasets ADO.NET [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   

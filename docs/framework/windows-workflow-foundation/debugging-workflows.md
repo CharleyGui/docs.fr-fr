@@ -1,15 +1,15 @@
 ---
-title: Débogage de flux de travail
+title: Débogage de workflows
 ms.date: 03/30/2017
 ms.assetid: b23b4814-ebb1-4c51-b7a9-469f4da7a96d
-ms.openlocfilehash: 2bfc50215697636f1771d6bb35510fbf9e0b435d
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 31c688f5f45b41f337176108486ec2074e1915a7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802633"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543834"
 ---
-# <a name="debugging-workflows"></a>Débogage de flux de travail
+# <a name="debugging-workflows"></a>Débogage de workflows
 
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] offre plusieurs options permettant de déboguer des workflows en cours d'exécution à partir de l'environnement de développement. Les workflows peuvent être débogués dans le concepteur, dans XAML et dans le code.
 
@@ -31,7 +31,7 @@ Le débogage de workflow permet également d'utiliser l'infrastructure de Visual
 
 ## <a name="remote-debugging"></a>Remote Debugging
 
-Les fonctions de débogage à distance Windows Workflow Foundation (WF) sont identiques au débogage à distance pour d’autres composants de Visual Studio. Pour plus d’informations sur l’utilisation du débogage à distance, consultez [Comment : activer le débogage distant](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/febz73k0(v=vs.100)).
+Les fonctions de débogage à distance Windows Workflow Foundation (WF) sont identiques au débogage à distance pour d’autres composants de Visual Studio. Pour plus d’informations sur l’utilisation du débogage à distance, consultez [Comment : activer le débogage distant](/previous-versions/visualstudio/visual-studio-2010/febz73k0(v=vs.100)).
 
 > [!NOTE]
 > Si l’application de workflow cible l’architecture x86 et est hébergée sur un ordinateur exécutant un système d’exploitation 64 bits, le débogage à distance ne fonctionnera pas, sauf si Visual Studio est installé sur l’ordinateur distant ou si la cible de l’application de workflow est remplacée par **n’importe quel processeur**.

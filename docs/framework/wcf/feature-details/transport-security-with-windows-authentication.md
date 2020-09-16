@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-ms.openlocfilehash: b6134d4cbdff0c1adea704a7f3aaff7e40fd75ec
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 9b81f2f2fb6352af254146951ed35ad4fdca8caa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244762"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545205"
 ---
 # <a name="transport-security-with-windows-authentication"></a>Sécurité de transport avec l'authentification Windows
 Le scénario suivant montre un client et un service Windows Communication Foundation (WCF) sécurisés par la sécurité Windows. Pour plus d’informations sur la programmation, consultez [Comment : sécuriser un service avec des informations d’identification Windows](../how-to-secure-a-service-with-windows-credentials.md).  
@@ -25,8 +25,8 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 |Mode de sécurité|Transport|  
 |Interopérabilité|WCF uniquement|  
 |Authentification (serveur)<br /><br /> Authentification (client)|Oui (à l'aide de l'authentification intégrée Windows)<br /><br /> Oui (à l'aide de l'authentification intégrée Windows)|  
-|Intégrité|Yes|  
-|Confidentialité|Yes|  
+|Intégrité|Oui|  
+|Confidentialité|Oui|  
 |Transport|NET.TCP|  
 |Liaison|<xref:System.ServiceModel.NetTcpBinding>|  
   
@@ -79,7 +79,7 @@ Le scénario suivant montre un client et un service Windows Communication Founda
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :  
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -121,5 +121,5 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de la sécurité](security-overview.md)
-- [Guide pratique pour sécuriser un service avec les informations d’identification Windows](../how-to-secure-a-service-with-windows-credentials.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Procédure : sécuriser un service avec des informations d’identification Windows](../how-to-secure-a-service-with-windows-credentials.md)
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

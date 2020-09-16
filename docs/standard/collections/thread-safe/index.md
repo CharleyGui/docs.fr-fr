@@ -6,18 +6,18 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-ms.openlocfilehash: 3a252124ade4c43961c06697367bbc4ca5d0c9cb
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 27b0e887d7dcff6a6c792cf2dfab6a449f59646f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768584"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547686"
 ---
 # <a name="thread-safe-collections"></a>Collections thread-safe
 .NET Framework 4 introduit l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, qui contient plusieurs classes de collection qui sont à la fois thread-safe et scalables. Plusieurs threads peuvent, sans risque et de façon efficace, ajouter ou supprimer des éléments dans ces collections, sans nécessiter une synchronisation supplémentaire dans le code utilisateur. Quand vous écrivez du code, utilisez des classes de collections simultanées si plusieurs threads écrivent en même temps dans la collection. Si vous lisez seulement dans une collection partagée, vous pouvez utiliser les classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Nous vous recommandons de ne pas utiliser les classes de collections 1.0, à moins que vous ne deviez cibler le runtime .NET Framework 1.1 ou une version antérieure.  
   
 ## <a name="thread-synchronization-in-the-net-framework-10-and-20-collections"></a>Synchronisation de threads dans les collections .NET Framework 1.0 et 2.0  
- Les collections introduites dans le .NET Framework 1.0 se trouvent dans l’espace de noms <xref:System.Collections?displayProperty=nameWithType>. Ces collections, qui incluent les <xref:System.Collections.ArrayList> et <xref:System.Collections.Hashtable> fréquemment utilisés, garantissent une certaine cohérence des threads par le biais de la propriété `Synchronized`, qui retourne un wrapper thread-safe autour de la collection. Le wrapper fonctionne en verrouillant l’ensemble de la collection à chaque opération d’ajout ou de suppression. Par conséquent, chaque thread qui tente d’accéder à la collection doit attendre son tour pour prendre le verrou. Ce fonctionnement n’est pas évolutif et peut provoquer une importante dégradation des performances pour les grandes collections. De même, la conception n’est pas complètement protégée contre la concurrence critique. Pour plus d’informations, consultez [Synchronisation dans les collections génériques](https://docs.microsoft.com/archive/blogs/bclteam/synchronization-in-generic-collections-brian-grunkemeyer).  
+ Les collections introduites dans le .NET Framework 1.0 se trouvent dans l’espace de noms <xref:System.Collections?displayProperty=nameWithType>. Ces collections, qui incluent les <xref:System.Collections.ArrayList> et <xref:System.Collections.Hashtable> fréquemment utilisés, garantissent une certaine cohérence des threads par le biais de la propriété `Synchronized`, qui retourne un wrapper thread-safe autour de la collection. Le wrapper fonctionne en verrouillant l’ensemble de la collection à chaque opération d’ajout ou de suppression. Par conséquent, chaque thread qui tente d’accéder à la collection doit attendre son tour pour prendre le verrou. Ce fonctionnement n’est pas évolutif et peut provoquer une importante dégradation des performances pour les grandes collections. De même, la conception n’est pas complètement protégée contre la concurrence critique. Pour plus d’informations, consultez [Synchronisation dans les collections génériques](/archive/blogs/bclteam/synchronization-in-generic-collections-brian-grunkemeyer).  
   
  Les classes de collection introduites dans le .NET Framework 2.0 se trouvent dans l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Elles comprennent notamment <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>, etc. Ces classes garantissent une cohérence des types et des performances améliorées par rapport aux classes du .NET Framework 1.0. Toutefois, les classes de collections .NET Framework 2.0 ne fournissent pas de synchronisation des threads. Le code utilisateur doit fournir toute la synchronisation quand des éléments sont ajoutés ou supprimés simultanément sur plusieurs threads.  
   
@@ -44,15 +44,15 @@ ms.locfileid: "84768584"
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Vue d'ensemble de BlockingCollection](blockingcollection-overview.md)|Décrit la fonctionnalité fournie par le type <xref:System.Collections.Concurrent.BlockingCollection%601>.|  
-|[Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary](how-to-add-and-remove-items.md)|Décrit comment ajouter et supprimer des éléments dans un <xref:System.Collections.Concurrent.ConcurrentDictionary%602>.|  
-|[Guide pratique pour ajouter et prendre des éléments individuellement dans un BlockingCollection](how-to-add-and-take-items.md)|Décrit comment ajouter et récupérer des éléments dans une collection de blocage sans utiliser l’énumérateur en lecture seule.|  
-|[Comment : ajouter des fonctionnalités de liaison et de blocage à une collection](how-to-add-bounding-and-blocking.md)|Décrit comment utiliser une classe de collection comme mécanisme de stockage sous-jacent pour une collection <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>.|  
-|[Comment : utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection](how-to-use-foreach-to-remove.md)|Décrit comment utiliser `foreach`, (`For Each` dans Visual Basic) pour supprimer tous les éléments d’une collection de blocage.|  
-|[Comment : utiliser des tableaux de collections de blocage dans un pipeline](how-to-use-arrays-of-blockingcollections.md)|Décrit comment utiliser simultanément plusieurs collections de blocage pour implémenter un pipeline.|  
-|[Guide pratique pour créer un pool d'objets à l'aide d'un ConcurrentBag](how-to-create-an-object-pool.md)|Montre comment utiliser un conteneur simultané pour améliorer les performances dans les scénarios où vous pouvez réutiliser des objets au lieu d’en créer continuellement de nouveaux.|  
+|[Procédure : ajouter et supprimer des éléments d’un ConcurrentDictionary](how-to-add-and-remove-items.md)|Décrit comment ajouter et supprimer des éléments dans un <xref:System.Collections.Concurrent.ConcurrentDictionary%602>.|  
+|[Procédure : ajouter et prendre des éléments individuellement dans un BlockingCollection](how-to-add-and-take-items.md)|Décrit comment ajouter et récupérer des éléments dans une collection de blocage sans utiliser l’énumérateur en lecture seule.|  
+|[Procédure : ajouter des fonctionnalités de délimitation et de blocage à une collection](how-to-add-bounding-and-blocking.md)|Décrit comment utiliser une classe de collection comme mécanisme de stockage sous-jacent pour une collection <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>.|  
+|[Procédure : utiliser la boucle ForEach pour supprimer les éléments d’un BlockingCollection](how-to-use-foreach-to-remove.md)|Décrit comment utiliser `foreach`, (`For Each` dans Visual Basic) pour supprimer tous les éléments d’une collection de blocage.|  
+|[Procédure : utiliser des tableaux de collections de blocage dans un pipeline](how-to-use-arrays-of-blockingcollections.md)|Décrit comment utiliser simultanément plusieurs collections de blocage pour implémenter un pipeline.|  
+|[Procédure : créer un pool d’objets à l’aide d’un ConcurrentBag](how-to-create-an-object-pool.md)|Montre comment utiliser un conteneur simultané pour améliorer les performances dans les scénarios où vous pouvez réutiliser des objets au lieu d’en créer continuellement de nouveaux.|  
   
 ## <a name="reference"></a>Informations de référence  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>

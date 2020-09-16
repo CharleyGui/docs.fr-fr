@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 dev_langs:
 - csharp
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
-ms.openlocfilehash: 3da1202a5ad3b953470b50dd5924b2ab45f301eb
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 38f7d310be41455dd12460fdfa93d7e624d10c2a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244776"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545218"
 ---
 # <a name="transport-security-with-certificate-authentication"></a>Sécurité de transport avec l'authentification par certificat
 
@@ -27,8 +27,8 @@ Cet article décrit l’utilisation de certificats X. 509 pour l’authentificat
 |Mode de sécurité|Transport|  
 |Interopérabilité|Avec les clients de service Web et les services existants.|  
 |Authentification (serveur)<br /><br /> Authentification (client)|Oui (à l’aide d’un certificat SSL)<br /><br /> Oui (à l'aide d'un certificat X.509)|  
-|Intégrité des données|Yes|  
-|Confidentialité des données|Yes|  
+|Intégrité des données|Oui|  
+|Confidentialité des données|Oui|  
 |Transport|HTTPS|  
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|  
   
@@ -142,4 +142,4 @@ cc.Close();
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de la sécurité](security-overview.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

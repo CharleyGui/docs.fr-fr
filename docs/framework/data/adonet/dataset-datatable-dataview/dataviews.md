@@ -2,21 +2,21 @@
 title: DataViews
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
-ms.openlocfilehash: 1b202af052c05ed9dc671fa20c9c366f280ec5c7
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: fe6adac35c157b454f5e33d3526196d4f408fd89
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774161"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546866"
 ---
 # <a name="dataviews"></a>DataViews
 Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des données stockées dans un objet <xref:System.Data.DataTable>, possibilité qui est souvent utilisée dans les applications de liaison de données. À l’aide d’un **DataView**, vous pouvez exposer les données d’une table avec différents ordres de tri, et vous pouvez filtrer les données par État de ligne ou en fonction d’une expression de filtre.
 
- Un **DataView** fournit une vue dynamique des données dans le **DataTable**sous-jacent : le contenu, le classement et l’appartenance reflètent les modifications à mesure qu’elles se produisent. Ce comportement diffère de la méthode **Select** du **DataTable**, qui retourne un tableau <xref:System.Data.DataRow> à partir d’une table en fonction d’un filtre et/ou d’un ordre de tri particulier : ce contenu reflète les modifications apportées à la table sous-jacente, mais son appartenance et son classement restent statiques. Les fonctionnalités dynamiques du **DataView** la rendent idéale pour les applications de liaison de données.
+ Un **DataView** fournit une vue dynamique des données dans le **DataTable**sous-jacent : le contenu, le classement et l’appartenance reflètent les modifications à mesure qu’elles se produisent. Ce comportement diffère de la méthode **Select** du **DataTable**, qui retourne un <xref:System.Data.DataRow> tableau à partir d’une table en fonction d’un filtre et/ou d’un ordre de tri particulier : ce contenu reflète les modifications apportées à la table sous-jacente, mais son appartenance et son ordre restent statiques. Les fonctionnalités dynamiques du **DataView** la rendent idéale pour les applications de liaison de données.
 
  Un **DataView** vous offre une vue dynamique d’un seul jeu de données, comme une vue de base de données, à laquelle vous pouvez appliquer différents critères de tri et de filtrage. Toutefois, contrairement à une vue de base de données, un **DataView** ne peut pas être traité comme une table et ne peut pas fournir une vue des tables jointes. Vous ne pouvez pas non plus exclure des colonnes qui existent dans la table source ou des colonnes Append qui n’existent pas dans la table source, telles que les colonnes de calcul.
 
- Vous pouvez utiliser une <xref:System.Data.DataView.DataViewManager%2A> pour gérer les paramètres de vue pour toutes les tables d’un **jeu de données**. Le **DataViewManager** vous offre un moyen pratique de gérer les paramètres d’affichage par défaut pour chaque table. Lors de la liaison d’un contrôle à plusieurs tables d’un **DataSet**, la liaison à un **DataViewManager** est le choix idéal.
+ Vous pouvez utiliser un <xref:System.Data.DataView.DataViewManager%2A> pour gérer les paramètres de vue pour toutes les tables d’un **DataSet**. Le **DataViewManager** vous offre un moyen pratique de gérer les paramètres d’affichage par défaut pour chaque table. Lors de la liaison d’un contrôle à plusieurs tables d’un **DataSet**, la liaison à un **DataViewManager** est le choix idéal.
 
 ## <a name="in-this-section"></a>Dans cette section
  [Création d’un DataView](creating-a-dataview.md) Décrit comment créer un **DataView** pour un **DataTable**.
@@ -35,10 +35,10 @@ Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des
 
  [Gestion des DataView](managing-dataviews.md) Décrit comment utiliser un **DataViewManager** pour gérer les paramètres **DataView** pour chaque table d’un **DataSet**.
 
-## <a name="related-sections"></a>Rubriques connexes
- [Applications Web ASP.net](https://docs.microsoft.com/previous-versions/655cec97(v=vs.100)) Fournit des vues d’ensemble et des procédures pas à pas détaillées pour la création d’applications ASP.NET, de Web Forms et de services Web.
+## <a name="related-sections"></a>Sections connexes
+ [Applications Web ASP.net](/previous-versions/655cec97(v=vs.100)) Fournit des vues d’ensemble et des procédures pas à pas détaillées pour la création d’applications ASP.NET, de Web Forms et de services Web.
 
- [Applications Windows](https://docs.microsoft.com/previous-versions/ms184421(v=vs.100)) Fournit des informations détaillées sur l’utilisation des Windows Forms et des applications console.
+ [Applications Windows](/previous-versions/ms184421(v=vs.100)) Fournit des informations détaillées sur l’utilisation des Windows Forms et des applications console.
 
  [Jeux de données, DataTables et DataView](index.md) Décrit l’objet **DataSet** et comment vous pouvez l’utiliser pour gérer les données d’application.
 
@@ -48,4 +48,4 @@ Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - data types [Visual Basic], numeric
 - unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-ms.openlocfilehash: f30b78a2f0c38f233796e18006c889438dce4c58
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5b78c808de4a16060d37844ad0f17e89fa6f6d84
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396828"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548076"
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Comment : appeler une fonction Windows qui possède des types non signés (Visual Basic)
 
@@ -76,12 +76,12 @@ Si vous utilisez une classe, un module ou une structure qui a des membres de typ
     > Le fait d’appeler du code non managé, tel que l’interface de programmation d’applications (API) Windows, expose votre code à des risques de sécurité potentiels.
 
     > [!IMPORTANT]
-    > L’appel de l’API Windows requiert une autorisation de code non managé, qui peut affecter son exécution dans des situations de confiance partielle. Pour plus d’informations, consultez <xref:System.Security.Permissions.SecurityPermission> et [autorisations d’accès du code](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100)).
+    > L’appel de l’API Windows requiert une autorisation de code non managé, qui peut affecter son exécution dans des situations de confiance partielle. Pour plus d’informations, consultez <xref:System.Security.Permissions.SecurityPermission> et [autorisations d’accès du code](/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100)).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](../../language-reference/data-types/index.md)
-- [Entier (type de données)](../../language-reference/data-types/integer-data-type.md)
+- [Data types](../../language-reference/data-types/index.md)
+- [Integer (type de données)](../../language-reference/data-types/integer-data-type.md)
 - [UInteger (type de données)](../../language-reference/data-types/uinteger-data-type.md)
 - [Declare Statement](../../language-reference/statements/declare-statement.md)
 - [Procédure pas à pas : Appel des API Windows](walkthrough-calling-windows-apis.md)

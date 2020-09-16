@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
-ms.openlocfilehash: 4c18d1f2f45a0a154dccd42736a01874dd1af853
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: af0c7ab5ebb6980bb0381e46fd38e9470f3a2152
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89122379"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536754"
 ---
 # <a name="protected-c-reference"></a>protected (référence C#)
 
@@ -25,7 +25,7 @@ Un membre protégé est accessible dans sa classe et par les instances de la cla
 
 Pour obtenir une comparaison de `protected` et des autres modificateurs d’accès, consultez [Niveaux d’accessibilité](accessibility-levels.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Un membre protégé d’une classe de base est accessible dans une classe dérivée uniquement si l’accès s’effectue par le biais du type de la classe dérivée. Prenons l’exemple de l’extrait de code suivant :
 
@@ -35,7 +35,7 @@ L’instruction `a.x = 10` génère une erreur, car elle est appelée dans la m�
 
 Les membres de struct ne peuvent pas être protégés, car le struct ne peut pas être hérité.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans cet exemple, la classe `DerivedPoint` est dérivée de `Point`. Vous pouvez donc accéder aux membres protégés de la classe de base directement à partir de la classe dérivée.
 
@@ -60,6 +60,6 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
 - [Niveaux d'accessibilité](accessibility-levels.md)
 - [Modificateurs](index.md)
 - [public](public.md)
-- [priv](private.md)
+- [private](private.md)
 - [intérieurs](internal.md)
-- [Problèmes de sécurité pour les mots clés virtuels internes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Problèmes de sécurité pour les mots clés virtuels internes](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

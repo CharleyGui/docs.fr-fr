@@ -6,12 +6,12 @@ helpviewer_keywords:
 - best practices for accessibility
 - accessibility, best practices for
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
-ms.openlocfilehash: 2980881bbcd34ca82f6cca7723cf976e0890f463
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 1c01cfe8fdfb285ee5cbc586cc0c549365ef72ee
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557084"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543145"
 ---
 # <a name="accessibility-best-practices"></a>Meilleures pratiques d’accessibilité
 
@@ -135,5 +135,5 @@ ms.locfileid: "87557084"
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Automation.Peers>
-- [Contrôle personnalisé NumericUpDown avec thème et prise en charge d'UI Automation, exemple](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771573(v=vs.90))
-- [Recommandations en matière de conception d’interface utilisateur clavier](https://docs.microsoft.com/previous-versions/windows/desktop/dnacc/guidelines-for-keyboard-user-interface-design)
+- [Contrôle personnalisé NumericUpDown avec thème et prise en charge d'UI Automation, exemple](/previous-versions/dotnet/netframework-3.5/ms771573(v=vs.90))
+- [Recommandations en matière de conception d’interface utilisateur clavier](/previous-versions/windows/desktop/dnacc/guidelines-for-keyboard-user-interface-design)

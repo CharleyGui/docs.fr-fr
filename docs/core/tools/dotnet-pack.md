@@ -2,18 +2,18 @@
 title: Commande dotnet pack
 description: La commande dotnet pack crée des packages NuGet pour votre projet .NET Core.
 ms.date: 04/28/2020
-ms.openlocfilehash: 00cda2c52a12a7a3aef5f61291120f522536131d
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 409b946d93cf73fec38941740a446c3ee3402490
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442226"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537825"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
 **Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet pack` : Place le code dans un package NuGet.
 
@@ -36,8 +36,8 @@ La commande `dotnet pack` génère le projet et crée les packages NuGet. Le ré
 
 Si vous souhaitez générer un package qui contient les symboles de débogage, deux options sont disponibles :
 
-- `--include-symbols`-Il crée le package de symboles.
-- `--include-source`-Il crée le package de symboles avec un `src` dossier contenant les fichiers sources.
+- `--include-symbols` -Il crée le package de symboles.
+- `--include-source` -Il crée le package de symboles avec un `src` dossier contenant les fichiers sources.
 
 Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier  *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
@@ -186,6 +186,6 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
   Pour plus d’informations sur l’utilisation de `NuspecFile` , de `NuspecBasePath` et de `NuspecProperties` , consultez les ressources suivantes :
   
-  - [Compression à l’aide d’un fichier .nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec)
-  - [Points d’extension avancés pour créer un package personnalisé](https://docs.microsoft.com/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)
-  - [Propriétés globales](https://docs.microsoft.com/visualstudio/msbuild/msbuild-properties?view=vs-2019#global-properties)
+  - [Compression à l’aide d’un fichier .nuspec](/nuget/reference/msbuild-targets#packing-using-a-nuspec)
+  - [Points d’extension avancés pour créer un package personnalisé](/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)
+  - [Propriétés globales](/visualstudio/msbuild/msbuild-properties?view=vs-2019#global-properties)

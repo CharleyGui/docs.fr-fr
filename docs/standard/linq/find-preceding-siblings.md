@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b281ff99-d08a-43d0-bea1-eff831b2f8ae
-ms.openlocfilehash: 788101eee6cdbce89626d1b46a5011a897c64704
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 0cfd516f274eaf2940a7b944d34c6ea494e7eaa1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552564"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546188"
 ---
 # <a name="how-to-find-preceding-siblings-linq-to-xml"></a>Comment rechercher les frères précédents (LINQ to XML)
 
@@ -80,4 +80,4 @@ Results are identical
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](./comparison-xpath-linq-xml.md)

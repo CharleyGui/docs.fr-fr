@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 22fe5608b0a3f86baf80abb3810a512077954ac3
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 14391a0fe046b44aedca1da2bc42c7d962e1a5e7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449749"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541276"
 ---
 # <a name="icorprofilerinfo9getiltonativemapping3-method"></a>ICorProfilerInfo9 :: GetILToNativeMapping3, méthode
 
@@ -35,15 +35,15 @@ HRESULT GetILToNativeMapping3( [in]  UINT_PTR pNativeCodeStartAddress,
 
 - `pNativeCodeStartAddress`
 
-  \[dans] pointeur vers le début d’une fonction native.
+  \[in] pointeur vers le début d’une fonction native.
 
 - `cMap`
 
-  \[dans] taille maximale du tableau de `map`.
+  \[in] taille maximale du `map` tableau.
 
 - `pcMap`
 
-  \[out] nombre total de structures COR_DEBUG_IL_TO_NATIVE_MAP disponibles.
+  \[out] nombre total de structures de COR_DEBUG_IL_TO_NATIVE_MAP disponibles.
 
 - `map`
 
@@ -55,13 +55,13 @@ Lorsque la compilation à plusieurs niveaux est activée, une méthode peut avoi
 
 ## <a name="requirements"></a>Spécifications
 
-**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?pivots=os-windows).
+**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/windows.md?pivots=os-windows).
 
 **En-tête :** CorProf.idl, CorProf.h
 
 **Bibliothèque :** CorGuids.lib
 
-**Versions de .NET Framework :** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
+**Versions de .NET Framework :**[!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

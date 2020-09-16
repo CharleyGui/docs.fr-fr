@@ -2,17 +2,17 @@
 title: LINQ et chaînes
 ms.date: 07/20/2015
 ms.assetid: 75ddb201-d97a-4f98-8cdf-4ad51714529a
-ms.openlocfilehash: 73ce4bf5586f1f9ff4995ea6f425b90744b7e333
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ee2a44175e8546f879473a3af6bf1a2de92d2501
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353286"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549847"
 ---
-# <a name="linq-and-strings-visual-basic"></a>LINQ et Strings (Visual Basic)
+# <a name="linq-and-strings-visual-basic"></a>LINQ et chaînes (Visual Basic)
 LINQ peut être utilisé pour interroger et transformer des chaînes et des collections de chaînes. Il peut être particulièrement utile avec des données semi-structurées dans des fichiers texte. Les requêtes LINQ peuvent être combinées avec les fonctions de chaîne traditionnelles et les expressions régulières. Par exemple, vous pouvez utiliser la méthode <xref:System.String.Split%2A> ou <xref:System.Text.RegularExpressions.Regex.Split%2A> pour créer un tableau de chaînes que vous pouvez ensuite interroger ou modifier à l’aide de LINQ. Vous pouvez utiliser la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> dans la clause `where` d’une requête LINQ. Et vous pouvez utiliser LINQ pour interroger ou modifier les résultats <xref:System.Text.RegularExpressions.MatchCollection> retournés par une expression régulière.  
   
- Vous pouvez également utiliser les techniques décrites dans cette section pour transformer des données texte semi-structurées en XML. Pour plus d’informations, consultez [Comment : générer du code XML à partir de fichiers CSV](how-to-generate-xml-from-csv-files.md).  
+ Vous pouvez également utiliser les techniques décrites dans cette section pour transformer des données texte semi-structurées en XML. Pour plus d’informations, consultez [Comment : générer du code XML à partir de fichiers CSV](../../../../standard/linq/generate-xml-csv-files.md).  
   
  Les exemples de cette section se répartissent en deux catégories :  
   
@@ -22,7 +22,7 @@ LINQ peut être utilisé pour interroger et transformer des chaînes et des coll
  [Comment : compter les occurrences d’un mot dans une chaîne (LINQ) (Visual Basic)](how-to-count-occurrences-of-a-word-in-a-string-linq.md)  
  Montre comment utiliser LINQ pour des interrogations simples sur du texte.  
   
- [Comment : Rechercher des phrases qui contiennent un ensemble de mots spécifié (LINQ) (Visual Basic)](how-to-query-for-sentences-that-contain-a-specified-set-of-words.md)
+ [Comment : rechercher des phrases qui contiennent un groupe de mots spécifié (LINQ) (Visual Basic)](how-to-query-for-sentences-that-contain-a-specified-set-of-words.md)
 
  Montre comment fractionner des fichiers texte avec des limites arbitraires et comment exécuter des requêtes sur chaque partie.  
   
@@ -38,7 +38,7 @@ LINQ peut être utilisé pour interroger et transformer des chaînes et des coll
  [Comment : Rechercher la différence définie entre deux listes (LINQ) (Visual Basic)](how-to-find-the-set-difference-between-two-lists-linq.md)  
  Montre comment rechercher toutes les chaînes qui sont présentes dans une liste mais pas dans l’autre.  
   
- [Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)](how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)  
+ [Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)](how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)  
  Montre comment trier les lignes de texte en fonction de n’importe quel mot ou champ.  
   
  [Comment : réorganiser les champs d’un fichier délimité (LINQ) (Visual Basic)](how-to-reorder-the-fields-of-a-delimited-file.md)  
@@ -61,5 +61,5 @@ LINQ peut être utilisé pour interroger et transformer des chaînes et des coll
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Language-Integrated Query (LINQ) (Visual Basic)](index.md)
-- [Guide pratique : générer du code XML à partir de fichiers CSV](how-to-generate-xml-from-csv-files.md)
+- [LINQ (Language-Integrated Query) (Visual Basic)](index.md)
+- [Comment : générer du code XML à partir de fichiers CSV](../../../../standard/linq/generate-xml-csv-files.md)

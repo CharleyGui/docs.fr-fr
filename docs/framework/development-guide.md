@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-ms.openlocfilehash: 6e0051e3181e03070436b8d53d30326e8d71d096
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 73b930efa893fd2b481c4c130754154a0d10d5b4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622573"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547882"
 ---
 # <a name="net-framework-development-guide"></a>Guide de développement .NET Framework
 
@@ -38,12 +38,12 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Traitement parallèle, accès concurrentiel et programmation asynchrone dans .NET](../standard/parallel-processing-and-concurrency.md)  
  Fournit des informations sur les threads managés, la programmation parallèle, et les modèles de conception en matière de programmation asynchrone.  
   
- [Programmation réseau dans .NET Framework](./network-programming/index.md)  
+ [Programmation réseau dans le .NET Framework](./network-programming/index.md)  
  Décrit l'implémentation en couche, extensible et managée des services Internet que vous pouvez intégrer rapidement et facilement à vos applications.  
   
  [Configuration des applications .NET Framework](configure-apps/index.md) Explique comment vous pouvez utiliser des fichiers de configuration pour modifier des paramètres sans avoir à recompiler vos applications .NET Framework.  
   
- [Compilation d'applications avec .NET Native](./net-native/index.md)  
+ [Compilation d’applications avec .NET Native](./net-native/index.md)  
  Explique comment utiliser la technologie de précompilation .NET Native pour générer et déployer des applications de Windows Store. .NET Native compile des applications qui sont écrites en code managé (C#) et qui ciblent .NET Framework sur le code natif.  
   
  [Sécurité](../standard/security/index.md)  
@@ -62,7 +62,7 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  Fournit des informations sur la mise en cache, l'initialisation tardive, la fiabilité et les événements ETW (suivi d'événements Windows).  
 
 ## <a name="reference"></a>Informations de référence  
- [Bibliothèque de classes .NET Framework](/dotnet/api/?view=netframework-4.7)  
+ [Bibliothèque de classes .NET Framework](../../api/index.md?view=netframework-4.7)  
  Fournit la syntaxe, des exemples de code et les informations d’utilisation associées à chaque classe qui figure dans les espaces de noms .NET Framework.  
   
 ## <a name="related-sections"></a>Sections connexes  

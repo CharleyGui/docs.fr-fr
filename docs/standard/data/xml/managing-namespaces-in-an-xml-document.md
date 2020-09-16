@@ -4,12 +4,12 @@ description: Découvrez comment gérer les espaces de noms dans un document XML.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: 3a3abd2e932b1afecab85e285b0e2c42eb1eb20f
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 500c477eaa98b2858573e1012c62db4bc6c68137
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769260"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548089"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Gestion d'espaces de noms dans un document XML
 Les espaces de noms XML associent les noms d'éléments et d'attributs dans un document XML à des URI prédéfinis et personnalisés. Pour créer ces associations, définissez des préfixes pour des URI d'espace de noms et utilisez ces préfixes pour qualifier des noms d'élément et d'attribut dans des données XML. Les espaces de noms empêchent les conflits entre les noms d'élément et d'attribut et permettent aux éléments et attributs de même nom d'être gérés différemment et validés différemment.  
@@ -65,21 +65,21 @@ Les espaces de noms XML associent les noms d'éléments et d'attributs dans un d
  Le gestionnaire d'espaces de noms n'effectue aucune validation sur les espaces de noms, mais part du principe que les préfixes et les espaces de noms ont déjà été vérifiés et qu’ils sont conformes à la spécification du [W3C sur les espaces de noms](https://www.w3.org/TR/REC-xml-names/).  
   
 > [!NOTE]
-> LINQ to XML en [C#](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [Visual Basic](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) n’utilisent pas <xref:System.Xml.XmlNamespaceManager> pour gérer les espaces de noms. Pour des informations sur la gestion des espaces de noms en cas d’utilisation de LINQ to XML, consultez [Utilisation des espaces de noms XML (C#)](../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md) et [Utilisation des espaces de noms XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md) dans la documentation LINQ.  
+> LINQ to XML en [C#](../../linq/linq-xml-overview.md) et [Visual Basic](../../linq/linq-xml-overview.md) n’utilisent pas <xref:System.Xml.XmlNamespaceManager> pour gérer les espaces de noms. Pour des informations sur la gestion des espaces de noms en cas d’utilisation de LINQ to XML, consultez [Utilisation des espaces de noms XML (C#)](../../linq/namespaces-overview.md) et [Utilisation des espaces de noms XML (Visual Basic)](../../linq/namespaces-overview.md) dans la documentation LINQ.  
   
  Voici quelques tâches de recherche et de gestion que vous pouvez effectuer avec la classe <xref:System.Xml.XmlNamespaceManager>. Pour obtenir plus d'informations et des exemples, suivez les liens à la page de référence de chaque méthode ou propriété.  
   
-|À|Utilisation|  
+|À|Utiliser|  
 |--------|---------|  
 |Ajouter un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
 |Supprimer un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  
-|Rechercher l'URI de l'espace de noms par défaut|Propriété <xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A>|  
+|Rechercher l'URI de l'espace de noms par défaut|Propriété<xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A>|  
 |Rechercher l'URI du préfixe d'un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>|  
 |Rechercher le préfixe de l'URI d'un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>|  
 |Obtenir une liste des espaces de noms dans le nœud actuel|Méthode <xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A>|  
 |Définir la portée d'un espace de noms|Méthodes <xref:System.Xml.XmlNamespaceManager.PushScope%2A> et <xref:System.Xml.XmlNamespaceManager.PopScope%2A>|  
 |Vérifier si un préfixe est défini dans la portée actuelle|Méthode <xref:System.Xml.XmlNamespaceManager.HasNamespace%2A>|  
-|Obtenir la table de noms utilisée pour rechercher les préfixes et les URI|Propriété <xref:System.Xml.XmlNamespaceManager.NameTable%2A>|  
+|Obtenir la table de noms utilisée pour rechercher les préfixes et les URI|Propriété<xref:System.Xml.XmlNamespaceManager.NameTable%2A>|  
   
 ## <a name="see-also"></a>Voir aussi
 

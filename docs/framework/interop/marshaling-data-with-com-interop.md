@@ -5,12 +5,12 @@ ms.date: 09/07/2017
 helpviewer_keywords:
 - COM interop, data marshaling
 - marshaling data, COM interop
-ms.openlocfilehash: eedfb60a75e2fe5fafdaa786dbb54adddf28400e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 94149e0c444cad7e32f959eaedd55bf14acb1ecb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621507"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547842"
 ---
 # <a name="marshaling-data-with-com-interop"></a>marshaler des données avec COM Interop
 COM Interop prend en charge l'utilisation des objets COM à partir de code managé, ainsi que l'exposition des objets managés à COM. La prise en charge du marshaling des données vers et depuis COM est complète et fournit quasiment toujours le comportement de marshaling approprié.  
@@ -30,23 +30,23 @@ COM Interop prend en charge l'utilisation des objets COM à partir de code mana
  Décrit comment migrer du code DCOM managé vers WCF pour obtenir la solution la plus sécurisée.  
   
 ## <a name="related-sections"></a>Sections connexes  
- [Types de données COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))  
+ [Types de données COM](/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))  
  Fournit les types de données managés et non managés correspondants.  
   
- [Personnalisation des wrappers CCW (COM Callable Wrapper)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3bwc828w(v=vs.100))  
+ [Personnalisation des wrappers CCW (COM Callable Wrapper)](/previous-versions/dotnet/netframework-4.0/3bwc828w(v=vs.100))  
  Décrit comment marshaler explicitement des types de données à l’aide de l’attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> au moment du design.  
   
- [Personnaliser des wrappers RCW (Runtime Callable Wrapper)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))  
+ [Personnaliser des wrappers RCW (Runtime Callable Wrapper)](/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))  
  Décrit comment ajuster le comportement de marshaling des types dans un assembly d'interopérabilité et comment définir des types COM manuellement.  
   
- [Interopérabilité COM avancée](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))  
+ [Interopérabilité COM avancée](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))  
  Fournit des liens vers des informations sur l'incorporation de composants COM dans une application .NET Framework.  
   
- [Récapitulatif de la conversion d’un assembly en bibliothèque de types](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))  
+ [Récapitulatif de la conversion d’un assembly en bibliothèque de types](/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))  
  Décrit le processus d'exportation et de conversion d'un assembly en une bibliothèque de types.  
   
- [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))  
+ [Récapitulatif de la conversion d’une bibliothèque de types en assembly](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))  
  Décrit le processus d'importation et de conversion d'une bibliothèque de types en un assembly.  
   
- [Interopérabilité à l’aide de types génériques](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))  
+ [Interopérabilité à l’aide de types génériques](/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))  
  Décrit les actions prises en charge lors de l'utilisation de types génériques pour l'interopérabilité COM.

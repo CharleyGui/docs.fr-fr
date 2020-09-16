@@ -4,16 +4,16 @@ description: Découvrez les fonctionnalités de télémétrie de la CLI ML.NET, 
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 833ee2ae54cf3a52adaf070837a33e00267d25dc
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 753361abdac5a2e979873003f419232a069b2015
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599833"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546430"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Collecte des données de télémétrie par la CLI ML.NET
 
-La [CLI ML.NET](https://aka.ms/mlnet-cli) inclut une fonctionnalité de télémétrie qui collecte les données d’utilisation anonymes, qui sont agrégées en vue d’une utilisation par Microsoft.
+La [CLI ML.NET](../automate-training-with-cli.md) inclut une fonctionnalité de télémétrie qui collecte les données d’utilisation anonymes, qui sont agrégées en vue d’une utilisation par Microsoft.
 
 ## <a name="how-microsoft-uses-the-data"></a>Comment Microsoft utilise les données
 
@@ -25,7 +25,7 @@ Bien que l’équipe de produit apprécie cet insight, nous savons également qu
 
 La commande `mlnet` lance l’interface CLI ML.NET, mais ne collecte pas elle-même les données de télémétrie.
 
-La télémétrie *n’est pas activée* quand vous exécutez la commande `mlnet` sans aucune autre commande attachée. Par exemple :
+La télémétrie *n’est pas activée* quand vous exécutez la commande `mlnet` sans aucune autre commande attachée. Exemple :
 
 - `mlnet`
 - `mlnet --help`
@@ -51,7 +51,7 @@ La fonctionnalité recueille les données suivantes :
 - Nom de fichier de jeu de données haché
 - Compartiment de taille de fichier de jeu de données
 - Système d’exploitation et version
-- Valeur des commandes de tâche ML : valeurs catégoriques, telles que `regression` , `classification` et`recommendation`
+- Valeur des commandes de tâche ML : valeurs catégoriques, telles que `regression` , `classification` et `recommendation`
 - Version de ML.NET CLI (c’est-à-dire, 0.3.27703.4)
 
 Les données sont envoyées de manière sécurisée à des serveurs Microsoft à l’aide de la technologie [Azure Application Insights](https://azure.microsoft.com/services/application-insights/), stockées à un emplacement dont l’accès est strictement limité et utilisées conformément à des contrôles de sécurité stricts à partir de systèmes [Stockage Azure](https://azure.microsoft.com/services/storage/) sécurisés.

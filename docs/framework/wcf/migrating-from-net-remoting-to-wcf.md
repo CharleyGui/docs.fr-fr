@@ -3,12 +3,12 @@ title: Migration de .NET Remoting vers WCF
 description: Découvrez comment migrer une application qui utilise .NET Remoting pour utiliser WCF. Vous pouvez effectuer plusieurs scénarios de communication à distance courants dans WCF.
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: f6f526db09806008314980b71233b208d25359fc
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 73bdac5d8f4d39694f038bb600828c79e527efb0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246153"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542848"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migration de .NET Remoting vers WCF
 Cet article décrit comment migrer une application .NET Remoting vers Windows Communication Foundation (WCF). Il compare d'abord les concepts similaires entre ces deux produits, puis explique comment transposer plusieurs scénarios Remoting courants dans WCF.  
@@ -56,7 +56,7 @@ Console.WriteLine("RemotingServer is running.  Press ENTER to terminate...");
 Console.ReadLine();  
 ```  
   
- Vous pouvez mettre à disposition le type Remoting en tant que serveur de plusieurs façons, notamment à l'aide de fichiers de configuration. Il s'agit là d'un exemple parmi d'autres.  
+ Vous pouvez mettre à disposition le type Remoting en tant que serveur de plusieurs façons, notamment à l'aide de fichiers de configuration. Ce n’est qu’un exemple.  
   
 #### <a name="creating-a-server-in-wcf"></a>Création d'un serveur dans WCF  
  L'étape équivalente dans WCF implique la création de deux types : le « contrat de service » public et l'implémentation concrète. Le premier type est déclaré en tant qu'interface marquée avec [ServiceContract]. Les méthodes à disposition des clients sont marquées avec [OperationContract] :  
@@ -143,7 +143,7 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
   
  Cet exemple montre la programmation au niveau du canal, car elle présente plus de similitudes avec l'exemple Remoting. L’approche **Ajouter une référence de service** dans Visual Studio, qui génère du code pour simplifier la programmation du client, est également disponible. Pour plus d'informations, voir les rubriques suivantes :  
   
-- [Programmation du client au niveau du canal](./extending/client-channel-level-programming.md)  
+- [Programmation au niveau du canal client](./extending/client-channel-level-programming.md)  
   
 - [Comment : ajouter, mettre à jour ou supprimer une référence de service](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
   
@@ -285,7 +285,7 @@ catch (FaultException<CustomerServiceFault> fault)
   
 ### <a name="why-migrate-from-remoting-to-wcf"></a>Pourquoi effectuer la migration de Remoting vers WCF ?  
   
-- **.NET Remoting est un produit hérité.** Comme décrit dans [.NET Remoting](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29), il est considéré comme un produit hérité et n’est pas recommandé pour un nouveau développement. Il est recommandé d'utiliser WCF ou l'API Web ASP.NET pour les applications nouvelles et existantes.  
+- **.NET Remoting est un produit hérité.** Comme décrit dans [.NET Remoting](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)), il est considéré comme un produit hérité et n’est pas recommandé pour un nouveau développement. Il est recommandé d'utiliser WCF ou l'API Web ASP.NET pour les applications nouvelles et existantes.  
   
 - **WCF utilise des normes multiplateformes.** Conçu pour mettre en avant l'interopérabilité multiplateforme, WCF prend en charge de nombreuses normes (SOAP, WS-Security, WS-Trust, etc.). Un service WCF peut interagir avec des clients en cours d'exécution sur des systèmes d'exploitation autres que Windows. La communication à distance a été conçue principalement pour les environnements dans lesquels les applications serveur et clientes s’exécutent à l’aide de .NET Framework sur un système d’exploitation Windows.
   

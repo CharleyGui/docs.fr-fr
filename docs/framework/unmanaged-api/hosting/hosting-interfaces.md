@@ -6,12 +6,12 @@ helpviewer_keywords:
 - hosting interfaces [.NET Framework]
 - unmanaged interfaces [.NET Framework], hosting
 ms.assetid: cc64cb05-38da-418e-815a-daac8e8e26e5
-ms.openlocfilehash: d1668f52ff305ec36fb520c7828c822537da0d02
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b1459bf78276abe0daefd7a7ee814841f3c65dfb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616097"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550662"
 ---
 # <a name="hosting-interfaces"></a>Interfaces d'hébergement
 Cette section décrit les interfaces que les hôtes non managés peuvent utiliser pour intégrer le common language runtime (CLR) dans leurs applications.  
@@ -41,6 +41,6 @@ Cette section décrit les interfaces que les hôtes non managés peuvent utilise
   
  [Structures d'hébergement](hosting-structures.md)  
   
- [Hébergement](index.md)  
+ [Hosting](index.md)  
   
- [Hôtes du runtime](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
+ [Hôtes du runtime](/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))

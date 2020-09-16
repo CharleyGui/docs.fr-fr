@@ -1,19 +1,19 @@
 ---
-title: 'Comment : héberger un service WCF dans un service Windows managé'
+title: 'Procédure : héberger un service WCF dans un service Windows managé'
 description: Découvrez comment créer un service WCF hébergé par un service Windows. Cette option d'hébergement est disponible dans toutes les versions de Windows.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: 4e07aa7aac82fae5cfd1bfc759ef724cf87a873a
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 21d3dcb05e48154eb3f9f10d8308dc14bd046ae1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246934"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546339"
 ---
-# <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Comment : héberger un service WCF dans un service Windows managé
+# <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Procédure : héberger un service WCF dans un service Windows managé
 
 Cette rubrique décrit les étapes de base requises pour créer un service Windows Communication Foundation (WCF) qui est hébergé par un service Windows. Le scénario est activé par l’option d’hébergement du service Windows gérée qui est un service WCF de longue durée hébergé en dehors de Internet Information Services (IIS) dans un environnement sécurisé qui n’est pas activé pour les messages. La durée de vie du service est contrôlée par le système d'exploitation. Cette option d'hébergement est disponible dans toutes les versions de Windows.
 
@@ -125,7 +125,7 @@ Le code du service inclut l'implémentation du contrat de service, d'une classe 
 
 3. Si vous apportez des modifications au service, vous devez d'abord l'arrêter et le désinstaller. Pour arrêter le service, cliquez avec le bouton droit sur le service dans le SCM et sélectionnez « arrêter », ou **tapez net stop WCFWindowsServiceSample** à l’invite de commandes. Notez que si vous arrêtez le service Windows puis exécutez un client, une exception <xref:System.ServiceModel.EndpointNotFoundException> se produit lorsqu'un client tente d'accéder au service. Pour désinstaller le service Windows, tapez **installutil/u bin\service.exe** à l’invite de commandes.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Voici une liste complète du code utilisé dans cette rubrique :
 
@@ -139,4 +139,4 @@ Comme pour l'option d'auto-hébergement, l'environnement d'hébergement du servi
 - [Configuration simplifiée](../simplified-configuration.md)
 - [Hébergement dans une application managée](hosting-in-a-managed-application.md)
 - [Hébergement de services](../hosting-services.md)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

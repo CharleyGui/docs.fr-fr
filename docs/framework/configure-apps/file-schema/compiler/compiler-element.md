@@ -10,12 +10,12 @@ helpviewer_keywords:
 - compiler configuration attributes
 - compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
-ms.openlocfilehash: 46676f25597f85596598d6f67c98930971cb0447
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0abbe594754cbd70ec4732a1e7ef98e8e88bf167
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088059"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544750"
 ---
 # <a name="compiler-element"></a>Élément \<compiler>
 
@@ -56,17 +56,17 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<providerOption>Appartient](provideroption-element.md)|Spécifie les attributs de version du compilateur pour un fournisseur de langage.|
+|[\<providerOption> Appartient](provideroption-element.md)|Spécifie les attributs de version du compilateur pour un fournisseur de langage.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<configuration>Appartient](../configuration-element.md)|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
-|[\<system.codedom>Appartient](system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|
-|[\<compilers>Appartient](compilers-element.md)|Conteneur pour les éléments de configuration du compilateur ; contient zéro ou plusieurs `<compiler>` éléments.|
+|[\<configuration> Appartient](../configuration-element.md)|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
+|[\<system.codedom> Appartient](system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|
+|[\<compilers> Appartient](compilers-element.md)|Conteneur pour les éléments de configuration du compilateur ; contient zéro ou plusieurs `<compiler>` éléments.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Chaque `<compiler>` élément spécifie les attributs de configuration du compilateur pour un fournisseur de langages spécifique. Le fournisseur étend la <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> classe pour un langage spécifique ; l' `<compiler>` élément définit le compilateur et les paramètres du générateur de code pour le fournisseur de langage.
 
@@ -78,7 +78,7 @@ Les éléments du compilateur dans le fichier de configuration Web ou d’applic
 
 Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur et dans le fichier de configuration de l’application.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant illustre un élément de configuration de compilateur classique :
 
@@ -104,7 +104,7 @@ L’exemple suivant illustre un élément de configuration de compilateur classi
 
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
-- [Schéma des fichiers de configuration](../index.md)
-- [\<compilers>Appartient](compilers-element.md)
+- [Schéma du fichier de configuration](../index.md)
+- [\<compilers> Appartient](compilers-element.md)
 - [Spécification des noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md)
-- [compiler, élément de compilers pour compilation (Schéma des paramètres ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))
+- [compiler, élément de compilers pour compilation (Schéma des paramètres ASP.NET)](/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))

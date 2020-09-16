@@ -6,17 +6,17 @@ helpviewer_keywords:
 - security [WCF]
 - Windows Communication Foundation, security
 ms.assetid: 7ea87fcb-dcfb-4a4a-8b03-6b954575d45b
-ms.openlocfilehash: 327fb509a5186a0b3f428efc2ddd7f983bcfa978
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9498358dd480487afcd3b746d14266e486c62d71
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595140"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546313"
 ---
 # <a name="windows-communication-foundation-security"></a>Sécurité dans Windows Communication Foundation
 Les rubriques de cette section décrivent les fonctionnalités de sécurité de Windows Communication Foundation (WCF) et expliquent comment les utiliser pour aider à sécuriser les messages.  
   
- Pour plus d’informations sur Windows Server AppFabric et la sécurité, consultez [modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10)) .  
+ Pour plus d’informations sur Windows Server AppFabric et la sécurité, consultez [modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10)) .  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Présentation de la sécurité](security-overview.md)  
@@ -34,7 +34,7 @@ Les rubriques de cette section décrivent les fonctionnalités de sécurité de 
  [Liaisons et sécurité](bindings-and-security.md)  
  Une vue orientée sécurité des liaisons, y compris des rubriques qui montrent comment créer des liaisons de sécurité personnalisées.  
   
- [Securing Services and Clients](securing-services-and-clients.md)  
+ [Sécurisation des services et des clients](securing-services-and-clients.md)  
  Décrit comment sécuriser des messages à l’aide des fonctionnalités de sécurité WCF.  
   
  [Authentification](authentication-in-wcf.md)  

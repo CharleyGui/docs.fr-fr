@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 287b11e9-7c52-4a13-ba97-751203fa97f4
 topic_type:
 - apiref
-ms.openlocfilehash: b9a7142de01d818390b740a795f70a4606952780
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ff0ff35f42e20725cab49afd971523aabda866c3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497372"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547803"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot, méthode
 Parcourt les frames managés sur la pile pour le thread spécifié et envoie des informations au profileur par le biais d’un rappel.  
@@ -64,14 +64,14 @@ HRESULT DoStackSnapshot(
  `contextSize`  
  dans Taille de la `CONTEXT` structure, qui est référencée par le `context` paramètre.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le passage de la valeur null à `thread` génère un instantané du thread actuel. Les instantanés ne peuvent être utilisés par d’autres threads que si le thread cible est suspendu à ce moment-là.  
   
  Quand le profileur souhaite remonter la pile, il appelle `DoStackSnapshot` . Avant que le CLR ne retourne à partir de cet appel, il appelle `StackSnapshotCallback` plusieurs fois, une fois pour chaque frame managé (ou l’exécution de frames non managés) sur la pile. Lorsque des frames non managés sont détectés, vous devez les parcourir vous-même.  
   
  L’ordre dans lequel la pile est parcourue est l’inverse de la façon dont les frames ont fait l’objet d’un push sur la pile : Frame (dernier push) frame en premier, Frame principal (premier-push) en dernier.  
   
- Pour plus d’informations sur la façon de programmer le profileur pour parcourir les piles managées, consultez [parcours de la pile du profileur dans le .NET Framework 2,0 : notions de base et au-delà](https://docs.microsoft.com/previous-versions/dotnet/articles/bb264782(v=msdn.10)).  
+ Pour plus d’informations sur la façon de programmer le profileur pour parcourir les piles managées, consultez [parcours de la pile du profileur dans le .NET Framework 2,0 : notions de base et au-delà](/previous-versions/dotnet/articles/bb264782(v=msdn.10)).  
   
  Un parcours de pile peut être synchrone ou asynchrone, comme expliqué dans les sections suivantes.  
   
@@ -85,7 +85,7 @@ HRESULT DoStackSnapshot(
   
  Vous obtenez une valeur de départ en suspendant directement le thread cible et en parcourant sa pile vous-même, jusqu’à ce que vous trouviez le frame managé le plus haut. Une fois le thread cible suspendu, obtient le contexte de registre actuel du thread cible. Ensuite, déterminez si le contexte de registre pointe vers du code non managé en appelant [ICorProfilerInfo :: GetFunctionFromIP,](icorprofilerinfo-getfunctionfromip-method.md) : s’il retourne un `FunctionID` égal à zéro, le frame est du code non managé. À présent, parcourez la pile jusqu’à ce que vous atteigniez le premier frame géré, puis calculez le contexte de départ en fonction du contexte de registre de ce frame.  
   
- Appelez `DoStackSnapshot` avec votre contexte de valeur initiale pour commencer le parcours de la pile asynchrone. Si vous ne fournissez pas de valeur de départ, `DoStackSnapshot` peut ignorer des frames managés en haut de la pile et, par conséquent, vous donnera un parcours de pile incomplet. Si vous fournissez une valeur de départ, elle doit pointer vers du code généré juste-à-temps ou Native Image Generator (Ngen. exe); Sinon, `DoStackSnapshot` retourne le code d’échec, CORPROF_E_STACKSNAPSHOT_UNMANAGED_CTX.  
+ Appelez `DoStackSnapshot` avec votre contexte de valeur initiale pour commencer le parcours de la pile asynchrone. Si vous ne fournissez pas de valeur de départ, `DoStackSnapshot` peut ignorer des frames managés en haut de la pile et, par conséquent, vous donnera un parcours de pile incomplet. Si vous fournissez une valeur de départ, elle doit pointer vers du code généré juste-à-temps ou un générateur d’images natives (Ngen.exe). Sinon, `DoStackSnapshot` retourne le code d’échec, CORPROF_E_STACKSNAPSHOT_UNMANAGED_CTX.  
   
  Les parcours de pile asynchrones peuvent facilement provoquer des interblocages ou des violations d’accès, sauf si vous suivez ces instructions :  
   
@@ -97,7 +97,7 @@ HRESULT DoStackSnapshot(
   
  Il y a également un risque d’interblocage si vous appelez `DoStackSnapshot` à partir d’un thread que votre profileur a créé afin que vous puissiez parcourir la pile d’un thread cible séparé. La première fois que le thread que vous avez créé entre dans certaines `ICorProfilerInfo*` méthodes (y compris `DoStackSnapshot` ), le CLR effectuera une initialisation par thread et spécifique au CLR sur ce thread. Si votre profileur a suspendu le thread cible dont vous tentez de parcourir la pile, et si ce thread cible est devenu propriétaire d’un verrou nécessaire pour effectuer cette initialisation par thread, un interblocage se produit. Pour éviter ce blocage, effectuez un appel initial `DoStackSnapshot` de à partir de votre thread créé par le profileur pour parcourir un thread cible séparé, mais n’interrompez pas d’abord le thread cible. Cet appel initial garantit que l’initialisation par thread peut se terminer sans interblocage. Si `DoStackSnapshot` suit et signale au moins un frame, après ce point, il est possible pour ce thread créé par le profileur d’interrompre n’importe quel thread cible et `DoStackSnapshot` d’appeler pour parcourir la pile de ce thread cible.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: fa0af1461ba568583127316934b9d55577dd4c5a
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 8d5c37bf2ed80e9b6ea071fcd2080c43be8f6247
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662821"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546365"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
 Le multithreading nécessite une programmation attentive. Pour réduire la complexité de la plupart des tâches, il vous suffit de mettre en file d’attente les requêtes à exécuter par les threads d’un pool de threads. Cet article vous permet de remédier aux situations plus complexes, telles que la coordination du travail de plusieurs threads ou la gestion des threads bloqués.  
@@ -78,7 +78,7 @@ else {
 
 ## <a name="number-of-processors"></a>Nombre de processeurs
 
-Le fait que plusieurs processeurs ou un seul soient disponibles sur un système peut influencer l’architecture multithread. Pour plus d’informations, consultez [Nombre de processeurs](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/1c9txz50(v%3dvs.71)#number-of-processors).
+Le fait que plusieurs processeurs ou un seul soient disponibles sur un système peut influencer l’architecture multithread. Pour plus d’informations, consultez [Nombre de processeurs](/previous-versions/dotnet/netframework-1.1/1c9txz50(v=vs.71)#number-of-processors).
 
 Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> propriété pour déterminer le nombre de processeurs disponibles au moment de l’exécution.
   
@@ -175,5 +175,5 @@ Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Threads](index.md)
-- [Threads et threads](threads-and-threading.md)
+- [Thread](index.md)
+- [Threads et threading](threads-and-threading.md)

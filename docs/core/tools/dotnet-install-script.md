@@ -2,18 +2,18 @@
 title: Scripts dotnet-install
 description: En savoir plus sur les scripts dotnet-install pour installer les kit SDK .NET Core et le runtime partagé.
 ms.date: 04/30/2020
-ms.openlocfilehash: c3aa6549a0b521db7fc19c6ff44665e3c4ba0c5f
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: 8f27b8a7794e84e6e2b288d6cc2ec33ffcb7600f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024652"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538040"
 ---
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
 ## <a name="name"></a>Name
 
-`dotnet-install.ps1` | `dotnet-install.sh`-Script utilisé pour installer le kit SDK .NET Core et le runtime partagé.
+`dotnet-install.ps1` | `dotnet-install.sh` -Script utilisé pour installer le kit SDK .NET Core et le runtime partagé.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -71,8 +71,8 @@ Pour configurer un environnement de développement ou pour exécuter des applica
 
 Nous vous recommandons d’utiliser la version stable des scripts :
 
-- Bash (Linux/macOS) :<https://dot.net/v1/dotnet-install.sh>
-- PowerShell (Windows) :<https://dot.net/v1/dotnet-install.ps1>
+- Bash (Linux/macOS) : <https://dot.net/v1/dotnet-install.sh>
+- PowerShell (Windows) : <https://dot.net/v1/dotnet-install.ps1>
 
 ### <a name="script-behavior"></a>Comportement du script
 
@@ -131,7 +131,7 @@ Les scripts d’installation ne mettent pas à jour le registre sur Windows. Ils
 
 - **`-NoCdn|--no-cdn`**
 
-  Désactive le téléchargement à partir d’[Azure Content Delivery Network (CDN)](https://docs.microsoft.com/azure/cdn/cdn-overview) et utilise directement le flux non mis en cache.
+  Désactive le téléchargement à partir d’[Azure Content Delivery Network (CDN)](/azure/cdn/cdn-overview) et utilise directement le flux non mis en cache.
 
 - **`-NoPath|--no-path`**
 
@@ -186,7 +186,7 @@ Les scripts d’installation ne mettent pas à jour le registre sur Windows. Ils
 
   - `latest` : dernière version sur le canal (utilisée avec l’option `-Channel`).
   - `coherent` : dernière version cohérente sur le canal ; utilise la dernière combinaison de packages stable (utilisée avec les options `-Channel` de nom de branche).
-  - Version en trois parties au format X.Y.Z représentant une version spécifique ; remplace l’option `-Channel`. Par exemple : `2.0.0-preview2-006120`.
+  - Version en trois parties au format X.Y.Z représentant une version spécifique ; remplace l’option `-Channel`. Par exemple : `2.0.0-preview2-006120`.
 
   Si aucune valeur n’est spécifiée, `-Version` est définie par défaut sur `latest`.
 

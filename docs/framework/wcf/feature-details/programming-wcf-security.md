@@ -8,18 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
-ms.openlocfilehash: 8e77c667dd8904c10bbab88e1413690677cef53b
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: a473a2bb3582274baddf7595ac396a0f833f8daf
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244983"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535896"
 ---
 # <a name="programming-wcf-security"></a>Programmation de la sécurité dans WCF
 Cette rubrique décrit les tâches de programmation fondamentales utilisées pour créer une application de Windows Communication Foundation sécurisée (WCF). Cette rubrique traite uniquement de l’authentification, de la confidentialité et de l’intégrité, collectivement appelée *sécurité de transfert*. Cette rubrique ne couvre pas l’autorisation (le contrôle de l’accès aux ressources ou aux services); Pour plus d’informations sur l’autorisation, consultez [autorisation](authorization-in-wcf.md).  
   
 > [!NOTE]
-> Pour obtenir une introduction précieuse aux concepts de sécurité, en particulier en ce qui concerne WCF, consultez les didacticiels sur les modèles et pratiques sur MSDN sur les [scénarios, les modèles et les conseils d’implémentation pour les améliorations apportées aux services Web (WSE) 3,0](https://docs.microsoft.com/previous-versions/msp-n-p/ff648183(v=pandp.10)).  
+> Pour obtenir une introduction précieuse aux concepts de sécurité, en particulier en ce qui concerne WCF, consultez les didacticiels sur les modèles et pratiques sur MSDN sur les [scénarios, les modèles et les conseils d’implémentation pour les améliorations apportées aux services Web (WSE) 3,0](/previous-versions/msp-n-p/ff648183(v=pandp.10)).  
   
  La programmation de la sécurité WCF est basée sur trois étapes : le mode de sécurité, un type d’informations d’identification du client et les valeurs d’informations d’identification. Ces étapes peuvent être effectuées au choix dans le code ou la configuration.  
   

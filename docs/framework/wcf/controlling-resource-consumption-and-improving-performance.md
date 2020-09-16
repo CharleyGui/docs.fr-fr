@@ -2,12 +2,12 @@
 title: Contrôle de la consommation des ressources et amélioration des performances
 ms.date: 03/30/2017
 ms.assetid: 9a829669-5f76-4c88-80ec-92d0c62c0660
-ms.openlocfilehash: 16d6f29235455ff30e115b7aff3425412bc7ba6a
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 7210f71287a2ec763b67dfa033cd9f4dadf6bd34
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802258"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543067"
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>Contrôle de la consommation des ressources et amélioration des performances
 Cette rubrique décrit différentes propriétés dans différentes zones de l’architecture Windows Communication Foundation (WCF) qui fonctionnent pour contrôler la consommation des ressources et affectent les mesures de performance.
@@ -41,13 +41,13 @@ Cette rubrique décrit différentes propriétés dans différentes zones de l’
 > [!NOTE]
 > Le code de sérialisation prégénéré est réservé aux applications clientes, pas aux services.
 
- L' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) peut améliorer les performances de démarrage de ces applications en générant le code de sérialisation nécessaire à partir des assemblys compilés pour l’application. Pour plus d’informations, consultez [Comment : améliorer le temps de démarrage des applications clientes WCF à l’aide de XmlSerializer](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).
+ L' [outil ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) peut améliorer les performances de démarrage de ces applications en générant le code de sérialisation nécessaire à partir des assemblys compilés pour l’application. Pour plus d’informations, consultez [Comment : améliorer le temps de démarrage des applications clientes WCF à l’aide de XmlSerializer](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).
 
 ## <a name="performance-issues-when-hosting-wcf-services-under-aspnet"></a>Problèmes de performances lors de l'hébergement de services WCF sous ASP.NET
 
-Lorsqu'un service WCF est hébergé sous IIS et ASP.NET, les paramètres de configuration d'IIS et ASP.NET peuvent affecter le débit et l'encombrement mémoire du service WCF.  Pour plus d’informations sur les performances de ASP.NET, consultez [amélioration des performances de ASP.net](https://docs.microsoft.com/previous-versions/msp-n-p/ff647787(v=pandp.10)). Un paramètre qui peut avoir des conséquences inattendues est <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, qui est une propriété de <xref:System.Web.Configuration.ProcessModelSection>. Si votre application dispose d'un nombre fixe ou faible de clients, l'affectation de la valeur 2 à <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> peut fournir une relance de débit sur un ordinateur multiprocesseur dont l'utilisation de l'UC est proche de 100 %. Cette augmentation des performances a un coût : elle entraînera également une augmentation de l'utilisation de la mémoire, ce qui pourrait réduire l'évolutivité.
+Lorsqu'un service WCF est hébergé sous IIS et ASP.NET, les paramètres de configuration d'IIS et ASP.NET peuvent affecter le débit et l'encombrement mémoire du service WCF.  Pour plus d’informations sur les performances de ASP.NET, consultez [amélioration des performances de ASP.net](/previous-versions/msp-n-p/ff647787(v=pandp.10)). Un paramètre qui peut avoir des conséquences inattendues est <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, qui est une propriété de <xref:System.Web.Configuration.ProcessModelSection>. Si votre application dispose d'un nombre fixe ou faible de clients, l'affectation de la valeur 2 à <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> peut fournir une relance de débit sur un ordinateur multiprocesseur dont l'utilisation de l'UC est proche de 100 %. Cette augmentation des performances a un coût : elle entraînera également une augmentation de l'utilisation de la mémoire, ce qui pourrait réduire l'évolutivité.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Administration et diagnostics](./diagnostics/index.md)
-- [Données volumineuses et streaming](./feature-details/large-data-and-streaming.md)
+- [Données volumineuses et diffusion en continu](./feature-details/large-data-and-streaming.md)

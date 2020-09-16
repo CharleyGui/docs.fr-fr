@@ -5,12 +5,12 @@ ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 735782a4a0877a917b6e1885f009aa49d834170f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1c891ad1d5b4c1160ca41c43eff6eea444f7224f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73976963"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544997"
 ---
 # <a name="re-train-a-model"></a>Réentraîner un modèle
 
@@ -33,7 +33,7 @@ Les algorithmes suivants sont réentraînables dans ML.NET :
 
 ## <a name="load-pre-trained-model"></a>Charger un modèle préentraîné
 
-Tout d’abord, chargez le modèle préentraîné dans votre application. Pour en savoir plus sur le chargement des pipelines et des modèles de formation, consultez [Save et chargez un modèle formé.](save-load-machine-learning-models-ml-net.md)
+Tout d’abord, chargez le modèle préentraîné dans votre application. Pour en savoir plus sur le chargement des pipelines et des modèles d’apprentissage, consultez [enregistrer et charger un modèle formé](save-load-machine-learning-models-ml-net.md).
 
 ```csharp
 // Create MLContext
@@ -51,7 +51,7 @@ ITransformer trainedModel = mlContext.Model.Load("ogd_model.zip", out modelSchem
 
 ## <a name="extract-pre-trained-model-parameters"></a>Extraire les paramètres du modèle préentraîné
 
-Une fois le modèle chargé, extraire les [`Model`](xref:Microsoft.ML.Data.PredictionTransformerBase`1.Model*) paramètres du modèle appris en accédant à la propriété du modèle pré-formé. Le modèle pré-formé a été formé à [`OnlineGradientDescentTrainer`](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) l’aide du modèle de régression linéaire qui crée un[`RegressionPredictionTransformer`](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601) qui extradations [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters). Ces paramètres de modèle de régression linéaire contiennent le biais appris et les pondérations ou les coefficients du modèle. Ces valeurs sont utilisées comme point de départ pour le nouveau modèle réentraîné.
+Une fois le modèle chargé, extrayez les paramètres du modèle appris en accédant à la [`Model`](xref:Microsoft.ML.Data.PredictionTransformerBase`1.Model*) propriété du modèle pré-formé. Le modèle pré-formé a été formé à l’aide du modèle de régression linéaire [`OnlineGradientDescentTrainer`](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) qui crée une [`RegressionPredictionTransformer`](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601) sortie [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) . Ces paramètres de modèle de régression linéaire contiennent le biais appris et les pondérations ou les coefficients du modèle. Ces valeurs sont utilisées comme point de départ pour le nouveau modèle réentraîné.
 
 ```csharp
 // Extract trained model parameters
@@ -61,7 +61,7 @@ LinearRegressionModelParameters originalModelParameters =
 
 ## <a name="re-train-model"></a>Réentraîner le modèle
 
-Le processus de réentraînement d’un modèle ressemble beaucoup au processus d’entraînement d’un modèle. La seule différence [`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer`2.Fit*) est, la méthode en plus des données prend également comme entrée les paramètres originaux du modèle appris et les utilise comme point de départ dans le processus de ré-formation.
+Le processus de réentraînement d’un modèle ressemble beaucoup au processus d’entraînement d’un modèle. La seule différence est que la [`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer`2.Fit*) méthode en plus des données prend également comme entrée les paramètres du modèle appris d’origine et les utilise comme point de départ dans le processus de nouvelle formation.
 
 ```csharp
 // New Data

@@ -2,12 +2,12 @@
 title: LINQ (Language Integrated Query)
 ms.date: 07/20/2015
 ms.assetid: a99371f7-097c-49a0-b62b-0e31c34aad0e
-ms.openlocfilehash: 62b07043bd6148d8ec9aeaaf45ee1adb108d2c6c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 53c4033c4626fd34c3cd8752e74af3f8e9b481c3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397595"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549940"
 ---
 # <a name="language-integrated-query-linq-visual-basic"></a>LINQ (Language-Integrated Query) (Visual Basic)
 LINQ est un ensemble de fonctionnalités qui étend les puissantes fonctions de requête à la syntaxe du langage de Visual Basic. LINQ introduit des modèles standard et faciles à apprendre pour interroger et mettre à jour des données. Cette technologie peut être étendue pour prendre en charge virtuellement tout type de magasin de données.  Le .NET Framework inclut des assemblys du fournisseur LINQ qui permettent l’utilisation de LINQ avec les collections du .NET Framework, les bases de données SQL Server, les jeux de données ADO.NET et les documents XML.  
@@ -28,7 +28,7 @@ LINQ est un ensemble de fonctionnalités qui étend les puissantes fonctions de 
  [LINQ to Objects (Visual Basic)](linq-to-objects.md)  
  Inclut des liens vers des rubriques qui expliquent comment utiliser LINQ to Objects pour accéder à des structures de données en mémoire.  
   
- [LINQ to XML (Visual Basic)](linq-to-xml.md)  
+ [LINQ to XML (Visual Basic)](../../../../standard/linq/linq-xml-overview.md)  
  Inclut des liens vers des rubriques expliquant comment utiliser LINQ to XML, qui fournit les fonctionnalités de modification de document en mémoire du modèle DOM (Document Object Model) et prend en charge les expressions de requête LINQ.  
   
  [LINQ to ADO.NET (page de portail)](linq-to-adonet-portal-page.md)  

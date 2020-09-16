@@ -4,12 +4,12 @@ description: Découvrez comment utiliser les fonctionnalités de couverture du c
 author: IEvangelist
 ms.author: dapine
 ms.date: 07/01/2020
-ms.openlocfilehash: af64116e86c3f46f37c8d5d079b9c86084095485
-ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+ms.openlocfilehash: 4d2c8f3db26eaabcb973378a349ef57912e92bfa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853897"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538145"
 ---
 # <a name="use-code-coverage-for-unit-testing"></a>Utiliser la couverture du code pour les tests unitaires
 
@@ -19,7 +19,7 @@ Cet article traite de l’utilisation de la couverture du code pour les tests un
 
 En outre, cet article explique comment utiliser les informations de couverture du code collectées à partir d’une série de tests coverlet pour générer un rapport. La génération de rapports est possible à l’aide d’un autre [projet open source sur GitHub-ReportGenerator](https://github.com/danielpalme/ReportGenerator). ReportGenerator convertit les rapports de couverture générés par cobertura entre plusieurs autres, en rapports lisibles par les humains dans différents formats.
 
-Cet article est basé sur l' [exemple de projet de code source](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs), disponible sur le navigateur d’exemples.
+Cet article est basé sur l' [exemple de projet de code source](/samples/dotnet/samples/unit-testing-code-coverage-cs), disponible sur le navigateur d’exemples.
 
 ## <a name="system-under-test"></a>Système testé
 
@@ -161,7 +161,7 @@ Générez la solution à l’aide de la [`dotnet build`](../tools/dotnet-build.m
 dotnet build
 ```
 
-Si la génération réussit, vous avez créé les trois projets, des projets et des packages référencés de manière appropriée, et mis à jour le code source correctement. C’est terminé !
+Si la génération réussit, vous avez créé les trois projets, des projets et des packages référencés de manière appropriée, et mis à jour le code source correctement. Bravo !
 
 ## <a name="tooling"></a>Outillage
 
@@ -302,7 +302,7 @@ Après l’exécution de cette commande, un fichier HTML représente le rapport 
 - [Dépôt GitHub-ReportGenerator](https://github.com/danielpalme/ReportGenerator)
 - [Site du projet ReportGenerator](https://danielpalme.github.io/ReportGenerator)
 - [Commande de test CLI .NET Core](../tools/dotnet-test.md)
-- [Exemple de code source](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)
+- [Exemple de code source](/samples/dotnet/samples/unit-testing-code-coverage-cs)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

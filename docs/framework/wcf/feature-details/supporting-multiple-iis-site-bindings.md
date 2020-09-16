@@ -3,12 +3,12 @@ title: Prise en charge de plusieurs liaisons de site IIS
 description: Découvrez comment fournir plusieurs adresses de base qui utilisent le même protocole sur le même site lors de l’hébergement d’un service WCF dans IIS.
 ms.date: 03/30/2017
 ms.assetid: 40440495-254d-45c8-a8c6-b29f364892ba
-ms.openlocfilehash: 290dca03dbed7d0a7442a3903b735eb189929ed1
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 6af4d885c7fc3d4dcc12ffb4bf6670f1a9b3d78c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244866"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546196"
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>Prise en charge de plusieurs liaisons de site IIS
 Lorsque vous hébergez un service Windows Communication Foundation (WCF) sous Internet Information Services (IIS) 7,0, vous souhaiterez peut-être fournir plusieurs adresses de base qui utilisent le même protocole sur le même site. Cela permet au même service de répondre à plusieurs URI différents. Cela est utile lorsque vous souhaitez héberger un service qui écoute sur `http://www.contoso.com` et `http://contoso.com` . Il est également utile de créer un service qui a une adresse de base pour les utilisateurs internes et une autre adresse de base pour les utilisateurs externes. Par exemple : `http://internal.contoso.com` et `http://www.contoso.com`.  
@@ -23,7 +23,7 @@ Lorsque vous hébergez un service Windows Communication Foundation (WCF) sous In
 <serviceHostingEnvironment multipleSiteBindingsEnabled="true"/>  
 ```  
   
- Lors de l’hébergement d’un service WCF sous IIS, IIS crée une adresse de base pour vous en fonction de l’URI du répertoire virtuel qui contient l’application. Vous pouvez ajouter des adresses de base supplémentaires utilisant le même protocole, à l’aide du gestionnaire des services IIS pour ajouter une ou plusieurs liaisons à votre site web. Pour chaque liaison, spécifiez un protocole (HTTP ou HTTPS), une adresse IP, un port et un nom d’hôte. Pour plus d’informations sur l’utilisation de Internet Information Services Manager, voir [Gestionnaire des services Internet (IIS 7)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753842(v=ws.10)). Pour plus d’informations sur l’ajout de liaisons à un site, consultez [créer un site Web (IIS 7)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772350(v=ws.10)) .  
+ Lors de l’hébergement d’un service WCF sous IIS, IIS crée une adresse de base pour vous en fonction de l’URI du répertoire virtuel qui contient l’application. Vous pouvez ajouter des adresses de base supplémentaires utilisant le même protocole, à l’aide du gestionnaire des services IIS pour ajouter une ou plusieurs liaisons à votre site web. Pour chaque liaison, spécifiez un protocole (HTTP ou HTTPS), une adresse IP, un port et un nom d’hôte. Pour plus d’informations sur l’utilisation de Internet Information Services Manager, voir [Gestionnaire des services Internet (IIS 7)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753842(v=ws.10)). Pour plus d’informations sur l’ajout de liaisons à un site, consultez [créer un site Web (IIS 7)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772350(v=ws.10)) .  
   
  La spécification de plusieurs adresses de base pour le même site affecte le contenu de la page d’aide WCF, l’importation du schéma et les informations WSDL/MEX générées par le service. La page d’aide de WCF affiche la ligne de commande à utiliser pour générer un client WCF qui peut communiquer avec le service. Cette ligne de commande contient uniquement la première adresse spécifiée dans la liaison IIS pour le site web. De même, lors de l’importation du schéma, seule la première adresse de base spécifiée dans la liaison IIS est utilisée. Les données WSDL et MEX contiennent toutes les adresses de base spécifiées dans les liaisons IIS.  
   
