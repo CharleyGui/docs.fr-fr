@@ -2,12 +2,12 @@
 title: Authorization Policy
 ms.date: 03/30/2017
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-ms.openlocfilehash: 5b93f7e05261d9770650335160ddb56404aed94d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a789faae1f6224512f9a8a9ab084c8a82e4a2b87
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585504"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553660"
 ---
 # <a name="authorization-policy"></a>Authorization Policy
 
@@ -30,7 +30,7 @@ Cet exemple montre comment implémenter une stratégie d'autorisation de revendi
 
 - Implémenter une interface <xref:System.IdentityModel.Policy.IAuthorizationPolicy>.
 
-Le service expose deux points de terminaison pour communiquer avec le service, défini à l’aide du fichier de configuration App. config. Chaque point de terminaison se compose d’une adresse, d’une liaison et d’un contrat. Une liaison est configurée avec une liaison `wsHttpBinding` standard qui utilise WS-Security et l’authentification du nom d’utilisateur du client. L'autre liaison est configurée avec une liaison `wsHttpBinding` standard qui utilise WS-Security et l'authentification du certificat du client. [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)Spécifie que les informations d’identification de l’utilisateur doivent être utilisées pour l’authentification du service. Le certificat de serveur doit contenir la même valeur pour la `SubjectName` propriété que l' `findValue` attribut dans [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) .
+Le service expose deux points de terminaison pour communiquer avec le service, défini à l’aide du fichier de configuration App.config. Chaque point de terminaison se compose d’une adresse, d’une liaison et d’un contrat. Une liaison est configurée avec une liaison `wsHttpBinding` standard qui utilise WS-Security et l’authentification du nom d’utilisateur du client. L'autre liaison est configurée avec une liaison `wsHttpBinding` standard qui utilise WS-Security et l'authentification du certificat du client. [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)Spécifie que les informations d’identification de l’utilisateur doivent être utilisées pour l’authentification du service. Le certificat de serveur doit contenir la même valeur pour la `SubjectName` propriété que l' `findValue` attribut dans [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) .
 
 ```xml
 <system.serviceModel>
@@ -451,16 +451,16 @@ Les éléments suivants fournissent une brève vue d'ensemble des différentes s
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur
 
-1. Ouvrez Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez *Setup. bat* à partir du dossier d’installation de l’exemple. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.
+1. Ouvrez Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez *Setup.bat* à partir du dossier d’installation de l’exemple. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.
 
     > [!NOTE]
-    > Le fichier de commandes Setup. bat est conçu pour être exécuté à partir de Invite de commandes développeur pour Visual Studio. La variable d’environnement PATH définie dans Invite de commandes développeur pour Visual Studio pointe vers le répertoire qui contient les exécutables requis par le script *Setup. bat* .
+    > Le fichier de commandes Setup.bat est conçu pour être exécuté à partir de Invite de commandes développeur pour Visual Studio. La variable d’environnement PATH définie dans Invite de commandes développeur pour Visual Studio pointe vers le répertoire qui contient les exécutables requis par le script *Setup.bat* .
 
-1. Lancez service. exe à partir de *service\bin*.
+1. Lancez Service.exe à partir de *service\bin*.
 
-1. Lancez client. exe à partir de *\client\bin*. L'activité du client s'affiche sur son application de console.
+1. Lancez Client.exe à partir de *\client\bin*. L'activité du client s'affiche sur son application de console.
 
-Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
+Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
 
 ### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs
 
@@ -476,7 +476,7 @@ Si le client et le service ne sont pas en mesure de communiquer, consultez [cons
 
     `setup.bat`L’exécution avec l' `service` argument crée un certificat de service avec le nom de domaine complet de l’ordinateur, puis exporte le certificat de service dans un fichier nommé *service. cer*.
 
-6. Modifiez *service. exe. config* pour refléter le nouveau nom de certificat (dans l' `findValue` attribut de [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ) qui est le même que le nom de domaine complet de l’ordinateur. Modifiez également le nom d’hôte **dans l'** \<service> / \<baseAddresses> élément de localhost en lui attribuant le nom complet de votre ordinateur de service.
+6. Modifiez *Service.exe.config* pour refléter le nouveau nom de certificat (dans l' `findValue` attribut dans [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ) qui est le même que le nom de domaine complet de l’ordinateur. Modifiez également le nom d’hôte **dans l'** \<service> / \<baseAddresses> élément de localhost en lui attribuant le nom complet de votre ordinateur de service.
 
 7. Copiez le fichier *service. cer* du répertoire du service vers le répertoire du client sur l’ordinateur client.
 
@@ -484,15 +484,15 @@ Si le client et le service ne sont pas en mesure de communiquer, consultez [cons
 
     `setup.bat`L’exécution de avec l' `client` argument crée un certificat client nommé **Test1** et exporte le certificat client vers un fichier nommé *client. cer*.
 
-9. Dans le fichier *client. exe. config* sur l’ordinateur client, modifiez la valeur d’adresse du point de terminaison afin qu’elle corresponde à la nouvelle adresse de votre service. Pour ce faire, remplacez **localhost** par le nom de domaine complet du serveur.
+9. Dans le fichier *Client.exe.config* sur l’ordinateur client, modifiez la valeur adresse du point de terminaison afin qu’elle corresponde à la nouvelle adresse de votre service. Pour ce faire, remplacez **localhost** par le nom de domaine complet du serveur.
 
 10. Copiez le fichier Client.cer du répertoire client dans le répertoire de service sur le serveur.
 
-11. Sur le client, exécutez *ImportServiceCert. bat* dans invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur.
+11. Sur le client, exécutez *ImportServiceCert.bat* dans invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur.
 
     Cela importe le certificat de service à partir du fichier service. cer dans le magasin **CurrentUser-TrustedPeople** .
 
-12. Sur le serveur, exécutez *ImportClientCert. bat* dans invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur.
+12. Sur le serveur, exécutez *ImportClientCert.bat* dans invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur.
 
     Cela importe le certificat client du fichier client. cer dans le magasin **LocalMachine-TrustedPeople** .
 
@@ -500,11 +500,11 @@ Si le client et le service ne sont pas en mesure de communiquer, consultez [cons
 
 14. Sur l'ordinateur client, lancez Client.exe à partir d'une fenêtre d'invite de commandes.
 
-    Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
+    Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
 
 ### <a name="clean-up-after-the-sample"></a>Nettoyer après l’exemple
 
-Pour nettoyer après l’exemple, exécutez *Cleanup. bat* dans le dossier Samples lorsque vous avez terminé d’exécuter l’exemple. Cela supprime les certificats du serveur et du client du magasin de certificats.
+Pour nettoyer après l’exemple, exécutez *Cleanup.bat* dans le dossier Samples lorsque vous avez terminé d’exécuter l’exemple. Cela supprime les certificats du serveur et du client du magasin de certificats.
 
 > [!NOTE]
 > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples WCF qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.

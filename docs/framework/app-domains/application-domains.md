@@ -13,12 +13,12 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-ms.openlocfilehash: d6accd11e33c0556fdd7596b2790f4787dce7ae1
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 246566265d55a3289ef37a2987ed9c40f051e3c8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903478"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553367"
 ---
 # <a name="application-domains"></a>Domaines d'application
 
@@ -47,7 +47,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
     > [!NOTE]
     > Vous ne pouvez pas décharger des assemblys ou des types individuels. Seul un domaine complet peut être déchargé.  
   
-- Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type <xref:System.IO.FileNotFoundException>. Pour plus d'informations, consultez [Remote Objects](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d’informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
+- Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type <xref:System.IO.FileNotFoundException>. Pour plus d'informations, consultez [Remote Objects](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d'informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
   
 - La portée du comportement de code est définie par l'application dans laquelle il s'exécute. En d'autres termes, le domaine d'application fournit des paramètres de configuration tels que les stratégies de version d'application, l'emplacement des assemblys distants auxquels il accède et des informations sur l'emplacement où se trouvent les assemblys qui sont chargés dans le domaine.  
   

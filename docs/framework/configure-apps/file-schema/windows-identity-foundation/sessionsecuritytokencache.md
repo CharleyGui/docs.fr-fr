@@ -42,7 +42,7 @@ Inscrit un cache pour les jetons de session avec un service ou une collection de
 |type|Type qui dérive de la <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> classe.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

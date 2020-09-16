@@ -19,19 +19,19 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: 0de0c7e9843ca8a97392733a68367b1dae8de232
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 4ad7779b9810954d110af576dd834daf61888d59
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416380"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555918"
 ---
 # <a name="isolated-storage"></a>Stockage isolé
 
  Pour les applications de bureau, le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. La standardisation offre également d'autres avantages. Les administrateurs peuvent utiliser des outils conçus pour manipuler un stockage isolé afin de configurer l'espace de stockage du fichier, de définir des stratégies de sécurité et de supprimer des données inutilisées. Grâce au stockage isolé, votre code ne nécessite plus de chemins d'accès uniques pour spécifier des emplacements sécurisés dans le système de fichiers. En outre, les données sont protégées des autres applications qui possèdent uniquement un accès au stockage isolé. Les informations codées en dur concernant l'emplacement de la zone de stockage d'une application ne sont pas nécessaires.
 
 > [!IMPORTANT]
-> Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.
+> Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.
 
 <a name="data_compartments_and_stores"></a>
 
@@ -153,7 +153,7 @@ Une attaque par __élévation de privilèges__ se produit lorsque l’applicatio
 * Son application analyse et lance le script malveillant de Mallory _dans le contexte du profil utilisateur de Bob_.
 * Mallory accède au compte de Bob sur l’ordinateur local.
 
-#### <a name="denial-of-service"></a>Déni de service
+#### <a name="denial-of-service"></a>Denial of service (déni de service)
 
 Une attaque par __déni de service__ se produit lorsque l’application de Bob lit le fichier et les blocages de Mallory, ou s’arrête de fonctionner correctement. Reprenons l’application mentionnée précédemment, qui tente d’analyser un script de démarrage à partir du magasin de l’ordinateur. Si Mallory peut placer un fichier dont le contenu est incorrect dans le magasin de l’ordinateur, il peut :
 
@@ -250,7 +250,7 @@ De nombreuses applications utilisent une base de données pour stocker et isoler
 
 <a name="reference"></a>
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Informations de référence
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType>
 

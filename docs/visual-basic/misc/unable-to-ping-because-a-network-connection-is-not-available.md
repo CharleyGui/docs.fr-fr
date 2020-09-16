@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrNetwork_NetworkNotAvailable
 ms.assetid: 8d2bac12-bc6a-42ae-b28b-80b026dfabce
-ms.openlocfilehash: 4c5790349c9262481a96490a7880a22378169317
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 82a2acf8c496e93b99daa266794d55edff7d4fc2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913271"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553452"
 ---
 # <a name="unable-to-ping-because-a-network-connection-is-not-available"></a>Impossible d’exécuter la commande PING, car une connexion réseau n’est pas disponible.
 Impossible d’effectuer l’opération, car aucune connexion réseau n’est disponible.  
@@ -20,7 +20,7 @@ Impossible d’effectuer l’opération, car aucune connexion réseau n’est di
   
 ## <a name="see-also"></a>Voir aussi
 
-- [My.Computer.Network.Ping](xref:Microsoft.VisualBasic.Devices.Network.Ping%2A)
-- [My.Computer.Network.IsAvailable](xref:Microsoft.VisualBasic.Devices.Network.IsAvailable)
-- [Opérations réseau dans le .NET Framework avec Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms172756(v=vs.100))
-- [My.Computer.Network](xref:Microsoft.VisualBasic.Devices.Network)
+- [My. Computer. Network. Ping](xref:Microsoft.VisualBasic.Devices.Network.Ping%2A)
+- [My. Computer. Network. IsAvailable](xref:Microsoft.VisualBasic.Devices.Network.IsAvailable)
+- [Opérations réseau dans le .NET Framework avec Visual Basic](/previous-versions/visualstudio/visual-studio-2010/ms172756(v=vs.100))
+- [My. Computer. Network](xref:Microsoft.VisualBasic.Devices.Network)

@@ -2,12 +2,12 @@
 title: Suivi de variables et arguments
 ms.date: 03/30/2017
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-ms.openlocfilehash: c5d3fe6626c22184edd83de6aedad8589ab2ef35
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: af5c21b75f3238546acac0755ec4e6149ee50d95
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837543"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552490"
 ---
 # <a name="variable-and-argument-tracking"></a>Suivi de variables et arguments
 Lors du suivi de l'exécution d'un workflow, il est souvent utile d'extraire des données. Vous obtenez ainsi un contexte supplémentaire lors de l'accès à une post-exécution d'enregistrement de suivi. Dans [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], vous pouvez extraire toute variable ou argument visible dans l’étendue de toute activité d’un flux de travail utilisant le suivi. Les profils de suivi facilitent l'extraction de données.  
@@ -17,7 +17,7 @@ Lors du suivi de l'exécution d'un workflow, il est souvent utile d'extraire des
   
 - Si une variable est spécifiée par son nom, le suivi recherche la variable dans l'activité en cours de suivi et dans les activités parentes. Elle est recherchée dans l'étendue de l'activité en cours et dans l'étendue parente.  
   
-- Si les variables à extraire sont spécifiées à l’aide de Name = "\*", toutes les variables dans l’activité en cours de suivi sont extraites. Dans ce cas, les variables qui sont dans l'étendue, mais définies dans les activités parentes ne sont pas extraites.  
+- Si les variables à extraire sont spécifiées à l’aide de Name = " \* ", toutes les variables dans l’activité en cours de suivi sont extraites. Dans ce cas, les variables qui sont dans l'étendue, mais définies dans les activités parentes ne sont pas extraites.  
   
  Lors de l’extraction d’arguments, les arguments extraits dépendent de l’état de l’activité. Lorsque l'état d'une activité est Exécution, seuls les `InArguments` sont disponibles pour l'extraction. Pour tout autre état d’activité (Closed, Faulted, Canceled), tous les arguments, InArguments et OutArguments, sont disponibles pour l’extraction.  
   
@@ -48,5 +48,5 @@ Lors du suivi de l'exécution d'un workflow, il est souvent utile d'extraire des
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
-- [Surveillance des applications avec application Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))
+- [Analyse Windows Server App Fabric](/previous-versions/appfabric/ee677251(v=azure.10))
+- [Surveillance des applications avec application Fabric](/previous-versions/appfabric/ee677276(v=azure.10))

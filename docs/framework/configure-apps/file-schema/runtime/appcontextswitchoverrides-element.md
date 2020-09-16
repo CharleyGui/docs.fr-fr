@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 394523e81da96d596a00010a393b9a034c0d552f
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 0ead35559a17eb06304e6c251d2fe388ca178a30
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558749"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552282"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides>, élément
 
@@ -39,7 +39,7 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 
 ### <a name="value-attribute"></a>Attribut de valeur
 
-|Valeur|Description|
+|Value|Description|
 |-----------|-----------------|
 |« nom = valeur »|Nom de commutateur prédéfini avec sa valeur ( `true` ou `false` ). Plusieurs paires nom/valeur de commutateur sont séparées par des points-virgules (« ; »). Pour obtenir la liste des noms de commutateur prédéfinis pris en charge par le .NET Framework, consultez la section Notes.|
 
@@ -70,7 +70,7 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 |`Switch.System.Diagnostics.`<br/>`IgnorePortablePDBsInStackTraces`|Contrôle si les traces de pile sont obtenues lors de l’utilisation de fichiers PDB portables peuvent inclure les informations de ligne et de fichier source. `false` pour inclure les informations relatives au fichier source et à la ligne ; Sinon, `true` .|.NET Framework 4.7.2|
 |`Switch.System.Drawing.`<br/>`DontSupportPngFramesInIcons`|Contrôle si la <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> méthode lève une exception lorsqu’un <xref:System.Drawing.Icon> objet a des cadres png. Pour plus d’informations, consultez [Atténuation : cadres PNG dans les objets Icon](../../../migration-guide/mitigation-png-frames-in-icon-objects.md).|.NET Framework 4.6|
 |`Switch.System.Drawing.Text.`<br/>`DoNotRemoveGdiFontsResourcesFromFontCollection`|Détermine si <xref:System.Drawing.Text.PrivateFontCollection?displayProperty=nameWithType> les objets sont supprimés correctement lorsqu’ils sont ajoutés à la collection par la <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile(System.String)?displayProperty=nameWithType> méthode. `true` pour conserver le comportement hérité ; `false` pour supprimer tous les objets de police privée. |.NET Framework 4.7.2|
-|`Switch.System.Drawing.Printing.`<br>`OptimizePrintPreview`|Contrôle si les performances du <xref:System.Windows.Forms.PrintPreviewDialog> sont optimisées pour les imprimantes réseau. Pour plus d’informations, consultez [vue d’ensemble du contrôle PrintPreviewDialog](../../../winforms/controls/printpreviewdialog-control-overview-windows-forms.md).|.NET Framework 4.6|
+|`Switch.System.Drawing.Printing.`<br>`OptimizePrintPreview`|Contrôle si les performances du <xref:System.Windows.Forms.PrintPreviewDialog> sont optimisées pour les imprimantes réseau. Pour plus d’informations, consultez [vue d’ensemble du contrôle PrintPreviewDialog](/dotnet/desktop/winforms/controls/printpreviewdialog-control-overview-windows-forms).|.NET Framework 4.6|
 |`Switch.System.Globalization.EnforceJapaneseEraYearRanges`|Détermine si les contrôles de plage d’années pour les ères du calendrier japonais sont appliqués. `true` pour appliquer des vérifications de plage d’années et les `false` désactiver (comportement par défaut). Pour plus d’informations, consultez [utilisation des calendriers](../../../../standard/datetime/working-with-calendars.md).|.NET Framework 4.6|
 |`Switch.System.Globalization.EnforceLegacyJapaneseDateParsing`|Contrôle si seul « 1 » est reconnu comme première année d’une ère de calendrier japonais dans les opérations d’analyse. `true` pour reconnaître uniquement « 1 »; `false` pour reconnaître « 1 » ou gannen (comportement par défaut). Pour plus d’informations, consultez [utilisation des calendriers](../../../../standard/datetime/working-with-calendars.md).|.NET Framework 4.6|
 |`Switch.System.Globalization.FormatJapaneseFirstYearAsANumber`|Contrôle si la première année d’une ère du calendrier japonais est représentée sous la forme « 1 » ou gannen dans les opérations de mise en forme. `true` pour mettre en forme la première année de l’ère en tant que « 1 »; `false` pour le mettre en forme en tant que gannen (comportement par défaut). Pour plus d’informations, consultez [utilisation des calendriers](../../../../standard/datetime/working-with-calendars.md).|.NET Framework 4.6|
@@ -153,7 +153,7 @@ L’exemple suivant utilise l' `<add>` élément pour ajouter deux paramètres �
 </appSettings>
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
  L’exemple suivant utilise l' `AppContextSwitchOverrides` élément pour définir un commutateur de compatibilité d’application unique, `Switch.System.Globalization.NoAsyncCurrentCulture` , qui empêche la culture de circuler entre les threads dans les appels de méthode asynchrones.
 

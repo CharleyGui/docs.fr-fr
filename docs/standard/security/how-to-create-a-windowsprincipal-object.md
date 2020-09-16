@@ -11,12 +11,12 @@ helpviewer_keywords:
 - security [.NET], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-ms.openlocfilehash: d99d63dc766f37e7cc30888d2e77657595f909af
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 6cf7153250d2574783515ea53cf99709499d36f9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557032"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556204"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Procédure : créer un objet WindowsPrincipal
 
@@ -84,4 +84,4 @@ Si le code doit exécuter plusieurs validations basées sur les rôles, la premi
 ## <a name="see-also"></a>Voir aussi
 
 - [Objets Principal et Identity](principal-and-identity-objects.md)
-- [Sécurité ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/)
+- [Sécurité ASP.NET Core](/aspnet/core/security/)

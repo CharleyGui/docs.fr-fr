@@ -2,12 +2,12 @@
 title: Hosting2
 ms.date: 03/30/2017
 ms.assetid: 0820c7e5-0b50-4cde-80e7-74e346513002
-ms.openlocfilehash: 72190c23951fbade1a92be559a291190d080532e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0a502093ff40f1a702f5d4d9046d4627eae39e01
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597265"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555781"
 ---
 # <a name="hosting"></a>Hosting
 Les rubriques de cette section décrivent l'hébergement de service. Un service peut être hébergé par Internet Information Services (IIS), le service d’activation des processus Windows (WAS), Windows Server AppFabric, un service Windows ou par une application managée. cette option est souvent appelée *auto-hébergement*.  
@@ -16,7 +16,7 @@ Les rubriques de cette section décrivent l'hébergement de service. Un service 
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Hébergement dans les services IIS (Internet Information Services)](hosting-in-internet-information-services.md)  
- Décrit comment un service Windows Communication Foundation (WCF) est hébergé dans Internet Information Services ou [Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).  
+ Décrit comment un service Windows Communication Foundation (WCF) est hébergé dans Internet Information Services ou [Windows Server AppFabric](/previous-versions/appfabric/ff384253(v=azure.10)).  
   
  [Hébergement dans le service d'activation de processus de Windows (WAS, Windows Process Activation Service)](hosting-in-windows-process-activation-service.md)  
  Décrit comment un service WCF est hébergé par le service d’activation des processus Windows.  
@@ -36,4 +36,4 @@ Les rubriques de cette section décrivent l'hébergement de service. Un service 
 ## <a name="see-also"></a>Voir aussi
 
 - [Hébergement de services](../hosting-services.md)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

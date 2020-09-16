@@ -2,12 +2,12 @@
 title: Participants de suivi
 ms.date: 03/30/2017
 ms.assetid: f13e360c-eeb7-4a49-98a0-8f6a52d64f68
-ms.openlocfilehash: a033b65125a562307c6247eeda93dcacb31f5382
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 9455524da4451bf904d8449412e8f625542a1635
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837647"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551450"
 ---
 # <a name="tracking-participants"></a>Participants de suivi
 Les participants de traçage sont des points d'extensibilité qui permettent à un développeur de workflow d'accéder aux objets <xref:System.Activities.Tracking.InteropTrackingRecord.TrackingRecord%2A> et de les traiter. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] inclut un participant de trace standard qui écrit des enregistrements de suivi en tant qu'événements de suivi d'événements pour Windows (ETW). Si cela ne répond pas à vos besoins, vous pouvez également écrire un participant de suivi personnalisé.  
@@ -67,7 +67,7 @@ Les participants de traçage sont des points d'extensibilité qui permettent à 
   
  La taille d'un événement ETW est limitée par la taille de la mémoire tampon ETW, ou par la charge utile maximale pour un événement ETW, selon la valeur la plus petite. Si la taille de l'événement dépasse l'une ou l'autre de ces limites ETW, l'événement est tronqué et son contenu supprimé de façon arbitraire. Les variables, arguments, annotations et données personnalisées ne sont pas supprimés de manière sélective. Dans le cas de troncation, tous ces éléments sont tronqués indépendamment de la valeur à l'origine du dépassement de la limite ETW.  Les données supprimées sont remplacées par `<item>..<item>`.  
   
- Les types complexes dans les variables, les arguments et les éléments de données personnalisés sont sérialisés dans l’enregistrement d’événement ETW à l’aide de la classe <xref:System.Runtime.Serialization.NetDataContractSerializer>. Cette classe inclut les informations de type CLR dans le flux XML sérialisé.  
+ Les types complexes dans les variables, les arguments et les éléments de données personnalisés sont sérialisés dans l’enregistrement d’événement ETW à l’aide de la <xref:System.Runtime.Serialization.NetDataContractSerializer> classe. Cette classe inclut les informations de type CLR dans le flux XML sérialisé.  
   
  La troncation des données de charge utile en raison de limites ETW peut provoquer l'envoi d'enregistrements de suivi en double à une session ETW. Cela peut se produire si plusieurs sessions écoutent les événements et si ces sessions ont des limites de charge utile différentes pour les événements.  
   
@@ -142,5 +142,5 @@ instance.Extensions.Add(new ConsoleTrackingParticipant());
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
-- [Surveillance des applications avec application Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))
+- [Analyse Windows Server App Fabric](/previous-versions/appfabric/ee677251(v=azure.10))
+- [Surveillance des applications avec application Fabric](/previous-versions/appfabric/ee677276(v=azure.10))

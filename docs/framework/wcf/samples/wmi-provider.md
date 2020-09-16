@@ -1,15 +1,15 @@
 ---
-title: WMI Provider
+title: Fournisseur WMI
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: a01b4b70d4c497d1efb93bb53a7339f5f7f29ef9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3fc982bcec563d5e4b90ba3b25989859d7d86281
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591044"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552878"
 ---
-# <a name="wmi-provider"></a>WMI Provider
+# <a name="wmi-provider"></a>Fournisseur WMI
 Cet exemple montre comment collecter des données à partir de services Windows Communication Foundation (WCF) au moment de l’exécution à l’aide du fournisseur Windows Management Instrumentation (WMI) intégré à WCF. Cet exemple montre également comment ajouter un objet WMI défini par l'utilisateur à un service. L’exemple active le fournisseur WMI pour la [prise en main](getting-started-sample.md) et montre comment collecter des données à partir du `ICalculator` service au moment de l’exécution.  
   
  WMI est l'implémentation de Microsoft de la norme WBEM (Web-Based Enterprise Management). Pour plus d’informations sur le kit de développement logiciel (SDK) WMI, consultez [Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page). WBEM est une norme d'industrie qui détermine comment les applications exposent l'instrumentation de gestion aux outils de gestion externes.  
@@ -146,4 +146,4 @@ cscript EnumerateCustomObjects.js
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples d'analyse AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Exemples d'analyse AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

@@ -4,12 +4,12 @@ description: Découvrez comment installer .NET pour Apache Spark sur les blocs-n
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 14babf7a551192b286f309393e3bbff25d4745d5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8110b87991e2f0253257faf19f383dec6cbd3853
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617741"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557201"
 ---
 # <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a>Installer .NET pour Apache Spark sur des blocs-notes Jupyter sur des clusters Azure HDInsight Spark
 
@@ -17,7 +17,7 @@ Cet article explique comment installer .NET pour Apache Spark sur des blocs-note
 
 Les clusters Azure HDInsight sont déjà fournis avec des blocs-notes Jupyter. il vous suffit de configurer les Notebooks Jupyter pour exécuter .NET pour Apache Spark. Pour utiliser .NET pour Apache Spark dans vos blocs-notes Jupyter, une réplication C# est nécessaire pour exécuter votre code C# ligne par ligne et pour conserver l’état d’exécution si nécessaire. [Essayez .net](https://github.com/dotnet/try) a été intégré en tant que repl .net officielle.
 
-Pour activer .NET pour Apache Spark via l’expérience Notebook Jupyter, vous devez suivre quelques étapes manuelles via [ambari](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-manage-ambari) et envoyer des [actions de script](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux) sur le cluster HDInsight Spark.
+Pour activer .NET pour Apache Spark via l’expérience Notebook Jupyter, vous devez suivre quelques étapes manuelles via [ambari](/azure/hdinsight/hdinsight-hadoop-manage-ambari) et envoyer des [actions de script](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux) sur le cluster HDInsight Spark.
 
 > [!NOTE]
 > Cette fonctionnalité est *expérimentale* et n’est pas prise en charge par l’équipe HDInsight Spark.
@@ -26,7 +26,7 @@ Pour activer .NET pour Apache Spark via l’expérience Notebook Jupyter, vous d
 
 ## <a name="prerequisites"></a>Prérequis
 
-Si vous n’en avez pas déjà un, créez un cluster [Azure HDInsight Spark](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) .
+Si vous n’en avez pas déjà un, créez un cluster [Azure HDInsight Spark](/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) .
 
 1. Accédez au [portail Azure](https://portal.azure.com) et sélectionnez **+ créer une ressource**.
 
@@ -63,16 +63,16 @@ Dans le Portail Azure, sélectionnez le **cluster HDInsight Spark** que vous ave
 
    Créez un nouveau fichier nommé **install-interactive-Notebook.sh** sur votre ordinateur local et collez le contenu du [contenu de install-interactive-Notebook.sh](https://raw.githubusercontent.com/dotnet/spark/master/deployment/HDI-Spark/Notebooks/install-interactive-notebook.sh).
 
-   Téléchargez le script vers un [URI](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) accessible à partir du cluster HDInsight. Par exemple : `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`.
+   Téléchargez le script vers un [URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) accessible à partir du cluster HDInsight. Par exemple : `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`.
 
-2. Exécutez `install-interactive-notebook.sh` sur le cluster en utilisant des [actions de script HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
+2. Exécutez `install-interactive-notebook.sh` sur le cluster en utilisant des [actions de script HDInsight](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
 
    Revenez à votre cluster HDI dans le Portail Azure, puis sélectionnez **actions de script** dans les options de gauche. Vous envoyez une action de script pour déployer le .NET pour Apache Spark REPL sur votre cluster HDInsight Spark. Utilisez les paramètres suivants :
 
    |Propriété  |Description  |
    |---------|---------|
-   | Type de script | Personnalisé |
-   | Nom | *Installer .NET pour Apache Spark l’expérience du bloc-notes interactif* |
+   | Type de script | Custom |
+   | Name | *Installer .NET pour Apache Spark l’expérience du bloc-notes interactif* |
    | URI de script bash | URI vers lequel vous avez chargé `install-interactive-notebook.sh`. |
    | Type(s) de nœud| Tête et Worker |
    | Paramètres | .NET pour la version de Apache Spark. Vous pouvez vérifier [les versions de Apache Spark dans .net](https://github.com/dotnet/spark/releases). Par exemple, si vous souhaitez installer Sparkdotnet version 0.6.0, il s’agit de `0.6.0` .
@@ -158,4 +158,4 @@ Une fois les étapes précédentes terminées, vous pouvez désormais envoyer vo
 ## <a name="next-steps"></a>Étapes suivantes
 
 * [Déployer une application .NET pour Apache Spark sur Azure HDInsight](../tutorials/hdinsight-deployment.md)
-* [Documentation HDInsight](https://docs.microsoft.com/azure/hdinsight/)
+* [Documentation HDInsight](/azure/hdinsight/)

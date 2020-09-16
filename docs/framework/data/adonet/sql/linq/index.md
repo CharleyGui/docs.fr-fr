@@ -3,15 +3,15 @@ title: LINQ to SQL
 description: LINQ to SQL est un composant du .NET Framework qui fournit une infrastructure runtime pour gérer des données relationnelles en tant qu’objets.
 ms.date: 03/30/2017
 ms.assetid: 73d13345-eece-471a-af40-4cc7a2f11655
-ms.openlocfilehash: 13502bfee3ee24764d190dace1512bc958343973
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d6fadecf17cae21527cec2180b6d6c5b5e85d0cc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286312"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551312"
 ---
 # <a name="linq-to-sql"></a>LINQ to SQL
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]est un composant de .NET Framework version 3,5 qui fournit une infrastructure runtime pour la gestion des données relationnelles en tant qu’objets.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] est un composant de .NET Framework version 3,5 qui fournit une infrastructure runtime pour la gestion des données relationnelles en tant qu’objets.  
   
 > [!NOTE]
 > Les données relationnelles apparaissent comme une collection de tables à deux dimensions (*relations* ou *fichiers plats*) où des colonnes communes relient les tables entre elles. Pour utiliser efficacement [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vous devez posséder quelques connaissances des principes sous-jacents des bases de données relationnelles.  
@@ -20,7 +20,7 @@ ms.locfileid: "84286312"
   
  Les développeurs qui utilisent Visual Studio utilisent généralement le Concepteur Objet Relationnel, qui fournit une interface utilisateur pour l’implémentation de nombreuses fonctionnalités de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .  
   
- La documentation incluse avec cette mise en production de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] décrit les blocs de construction de base, les processus et les techniques dont vous avez besoin pour générer des applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Vous pouvez également rechercher des problèmes spécifiques dans Microsoft Docs, et vous pouvez participer au [Forum LINQ](https://social.msdn.microsoft.com/forums/home?forum=linqtosql), où vous pouvez aborder des sujets plus complexes avec des experts. Enfin, le livre blanc [LINQ to SQL : LINQ (Language-Integrated Query) .net pour les données relationnelles](https://docs.microsoft.com/previous-versions/dotnet/articles/bb425822(v=msdn.10)) décrit en détail la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, ainsi que des exemples de code Visual Basic et C#.  
+ La documentation incluse avec cette mise en production de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] décrit les blocs de construction de base, les processus et les techniques dont vous avez besoin pour générer des applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Vous pouvez également rechercher des problèmes spécifiques dans Microsoft Docs, et vous pouvez participer au [Forum LINQ](https://social.msdn.microsoft.com/forums/home?forum=linqtosql), où vous pouvez aborder des sujets plus complexes avec des experts. Enfin, le livre blanc [LINQ to SQL : LINQ (Language-Integrated Query) .net pour les données relationnelles](/previous-versions/dotnet/articles/bb425822(v=msdn.10)) décrit en détail la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, ainsi que des exemples de code Visual Basic et C#.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Prise en main](getting-started.md)  
@@ -48,11 +48,11 @@ ms.locfileid: "84286312"
  [LINQ et ADO.NET](../../linq-and-ado-net.md)  
  Liens vers le portail ADO.NET.  
   
- [Procédures pas à pas LINQ to SQL](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb386295(v=vs.90))  
+ [Procédures pas à pas LINQ to SQL](/previous-versions/visualstudio/visual-studio-2008/bb386295(v=vs.90))  
  Répertorie les procédures pas à pas disponibles pour [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  [Téléchargement d’exemples de base de données](downloading-sample-databases.md)  
  Explique comment télécharger les exemples de base de données utilisés dans la documentation.  
   
- [Vue d’ensemble du contrôle serveur Web LinqDataSource](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100))  
+ [Vue d’ensemble du contrôle serveur Web LinqDataSource](/previous-versions/aspnet/bb547113(v=vs.100))  
  Décrit comment le <xref:System.Web.UI.WebControls.LinqDataSource> contrôle expose LINQ (Language-Integrated Query) aux développeurs Web via l’architecture de contrôle de source de données ASP.net.

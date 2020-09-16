@@ -6,12 +6,12 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: a07d7c6da71f4195cb1641ae8ac7585b4158ed63
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8941350e46680c4ecaeb9b89fe9e6910c5830bcb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600969"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553289"
 ---
 # <a name="wcf-security-terminology"></a>Terminologie relative à la sécurité dans WCF
 La terminologie utilisée pour aborder la sécurité peut vous sembler peu familière. Cette rubrique explique rapidement certains des termes relatifs à la sécurité, mais ne fournit pas d'informations complètes pour chaque élément.  
@@ -62,7 +62,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  paire de clés d'échange  
  Paire de clés publique/privée utilisée pour chiffrer les clés de session de sorte qu'elles puissent être stockées et échangées sans risque avec d'autres utilisateurs.  
   
- hash  
+ Hachage  
  Valeur numérique de taille fixe obtenue en appliquant une fonction mathématique (voir algorithme de hachage) à une quantité arbitraire de données. Les données incluent généralement des données aléatoires, appelées *nonce*. Le service et le client échangent des valeurs à usage unique pour augmenter la complexité du résultat. Le résultat est également connu sous le nom de *message résumé*. L'envoi d'une valeur de hachage est plus sûr que l'envoi de données sensibles, telles qu'un mot de passe, même si le mot de passe est chiffré. L'expéditeur et le récepteur du hachage doivent se mettre d'accord sur l'algorithme de hachage et les valeurs à usage unique afin que, une fois reçu, le hachage puisse être vérifié.  
   
  algorithme de hachage  
@@ -183,6 +183,6 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de Windows Communication Foundation](../fundamental-concepts.md)
+- [Concepts fondamentaux concernant Windows Communication Foundation](../fundamental-concepts.md)
 - [Concepts de sécurité](security-concepts.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

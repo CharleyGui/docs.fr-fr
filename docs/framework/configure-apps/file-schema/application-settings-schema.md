@@ -7,18 +7,18 @@ helpviewer_keywords:
 - Windows Forms, application settings schema
 - configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
-ms.openlocfilehash: 90d471888950347c041b4824b659ce33fda512d7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fc9cd8ac3819c6a02019c871e7bd45ceb4c2cef7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81242827"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552308"
 ---
 # <a name="application-settings-schema"></a>Schéma des paramètres de l’application
 
 Les paramètres d’application permettent à une application de Windows Forms ou ASP.NET de stocker et d’extraire des paramètres de portée application et de portée utilisateur. Dans ce contexte, un *paramètre* est une information qui peut être spécifique à l’application ou spécifique à l’utilisateur actuel (tout ce qui provient d’une chaîne de connexion de base de données à la taille de fenêtre par défaut préférée de l’utilisateur).
 
-Par défaut, les paramètres d’application d’une application Windows Forms utilisent la <xref:System.Configuration.LocalFileSettingsProvider> classe, qui utilise le système de configuration .net pour stocker les paramètres dans un fichier de configuration XML. Pour plus d’informations sur les fichiers utilisés par les paramètres d’application, consultez [architecture des paramètres d’application](../../winforms/advanced/application-settings-architecture.md).
+Par défaut, les paramètres d’application d’une application Windows Forms utilisent la <xref:System.Configuration.LocalFileSettingsProvider> classe, qui utilise le système de configuration .net pour stocker les paramètres dans un fichier de configuration XML. Pour plus d’informations sur les fichiers utilisés par les paramètres d’application, consultez [architecture des paramètres d’application](/dotnet/desktop/winforms/advanced/application-settings-architecture).
 
 Les paramètres d’application définissent les éléments suivants dans le cadre des fichiers de configuration qu’il utilise.
 
@@ -50,7 +50,7 @@ Cet élément définit un paramètre. Il a les attributs suivants.
 
 Cet élément contient la valeur d’un paramètre.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre un fichier de paramètres d’application qui définit deux paramètres de portée application et deux paramètres de portée utilisateur :
 
@@ -90,5 +90,5 @@ L’exemple suivant montre un fichier de paramètres d’application qui défini
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des paramètres d’application](../../winforms/advanced/application-settings-overview.md)
-- [Application Settings Architecture](../../winforms/advanced/application-settings-architecture.md)
+- [Vue d'ensemble des paramètres d'application](/dotnet/desktop/winforms/advanced/application-settings-overview)
+- [Architecture des paramètres d'application](/dotnet/desktop/winforms/advanced/application-settings-architecture)

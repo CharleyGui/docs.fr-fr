@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-ms.openlocfilehash: f2b0e21ff5dbeab3395335f52799629859fb2d90
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 7312de7d812aa714447a60f5aa04cb48890e40e8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475266"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553725"
 ---
 # <a name="migrate-from-the-net-framework-11"></a>Migrer à partir de la .NET Framework 1,1
 
@@ -57,9 +57,9 @@ Toutefois, dans certains cas, vous devrez peut-être modifier votre code source 
 
 Pour évaluer l'impact de modifications avec rupture possibles sur votre application, vous devez passer en revue les listes suivantes de modifications :
 
-- L’article traitant des [changements cassants dans .NET Framework 2.0](https://docs.microsoft.com/previous-versions/aa570326(v=msdn.10)) décrit les changements dans .NET Framework 2.0 SP1 qui peuvent affecter une application ciblant .NET Framework 1.1.
+- L’article traitant des [changements cassants dans .NET Framework 2.0](/previous-versions/aa570326(v=msdn.10)) décrit les changements dans .NET Framework 2.0 SP1 qui peuvent affecter une application ciblant .NET Framework 1.1.
 
-- L’article traitant des [modifications apportées dans .NET Framework 3.5 SP1](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10)) décrit les modifications intervenues entre .NET Framework 3.5 et .NET Framework 3.5 SP1.
+- L’article traitant des [modifications apportées dans .NET Framework 3.5 SP1](/previous-versions/dotnet/articles/dd310284(v=msdn.10)) décrit les modifications intervenues entre .NET Framework 3.5 et .NET Framework 3.5 SP1.
 
 - [Problèmes de migration de .NET Framework 4](net-framework-4-migration-issues.md) décrit les changements intervenus entre .NET Framework 3.5 SP1 et .NET Framework 4.
 

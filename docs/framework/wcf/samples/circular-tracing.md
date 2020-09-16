@@ -2,12 +2,12 @@
 title: Circular Tracing
 ms.date: 03/30/2017
 ms.assetid: 5ff139f9-8806-47bc-8f33-47fe6c436b92
-ms.openlocfilehash: 1759db28cb024afc04d02c4b128f96d73aefdd87
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d9af1f18a507a79c9c287393652e65dcb3372444
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585439"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552516"
 ---
 # <a name="circular-tracing"></a>Circular Tracing
 
@@ -22,7 +22,7 @@ Cet exemple suppose que vous êtes familiarisé avec l’exemple de [suivi et de
 
 Le concept sous-jacent de l'implémentation de l'écouteur de suivis mis en mémoire tampon circulaire consiste à disposer de deux fichiers pouvant stocker chacun jusqu'à la moitié du nombre total de données du journal de suivi souhaitées. L'écouteur crée un fichier et écrit dans celui-ci jusqu'à ce qu'il atteigne la limite fixée à la moitié de la taille des données, stade à partir duquel il bascule sur un deuxième fichier. Lorsque l'écouteur atteint la limite pour deuxième fichier il écrase le premier fichier avec de nouveaux suivis.
 
-Cet écouteur est dérivé de `XmlWriteTraceListener` et permet l’affichage des journaux à l’aide de l' [outil Service Trace Viewer (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Si vous souhaitez consulter les journaux, vous pouvez recombiner les deux fichiers journaux facilement en les ouvrant en même temps dans l'outil Service Trace Viewer. Cet outil trie automatiquement les suivis afin qu'ils apparaissent dans l'ordre correct.
+Cet écouteur est dérivé de `XmlWriteTraceListener` et permet l’affichage des journaux à l’aide de l' [outil Service Trace Viewer (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Si vous souhaitez consulter les journaux, vous pouvez recombiner les deux fichiers journaux facilement en les ouvrant en même temps dans l'outil Service Trace Viewer. Cet outil trie automatiquement les suivis afin qu'ils apparaissent dans l'ordre correct.
 
 ## <a name="configuration"></a>Configuration
 
@@ -64,4 +64,4 @@ Un service peut être configuré pour utiliser l'écouteur de suivis mis en mém
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples d'analyse AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Exemples d'analyse AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

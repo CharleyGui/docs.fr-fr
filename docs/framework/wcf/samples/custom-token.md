@@ -2,12 +2,12 @@
 title: Custom Token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: b073375325d2989a23624303f2c40b8f61a29d02
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 1a8c312248b0c15bb2e366a3d9925014556b6dd8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928649"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553159"
 ---
 # <a name="custom-token"></a>Custom Token
 
@@ -592,7 +592,7 @@ string GetCallerCreditCardNumber()
     ```
 
 > [!NOTE]
-> Le fichier de commandes Setup. bat est conçu pour être exécuté à partir d’une invite de commandes de Visual Studio 2012. La variable d’environnement PATH définie dans l’invite de commandes de Visual Studio 2012 pointe vers le répertoire qui contient les exécutables requis par le script Setup. bat.
+> Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d’une invite de commandes de Visual Studio 2012. La variable d’environnement PATH définie dans l’invite de commandes de Visual Studio 2012 pointe vers le répertoire qui contient les exécutables requis par le script Setup.bat.
 
 #### <a name="to-set-up-and-build-the-sample"></a>Pour configurer et générer l'exemple
 
@@ -602,14 +602,14 @@ string GetCallerCreditCardNumber()
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur
 
-1. Ouvrez une fenêtre d’invite de commandes Visual Studio 2012 avec des privilèges d’administrateur et exécutez Setup. bat à partir du dossier d’installation de l’exemple. Tous les certificats requis pour l'exécution de l'exemple sont ainsi installés. Assurez-vous que le chemin d'accès inclut le dossier dans lequel Makecert.exe se trouve.
+1. Ouvrez une fenêtre d’invite de commandes Visual Studio 2012 avec des privilèges d’administrateur et exécutez Setup.bat à partir du dossier d’installation de l’exemple. Tous les certificats requis pour l'exécution de l'exemple sont ainsi installés. Assurez-vous que le chemin d'accès inclut le dossier dans lequel Makecert.exe se trouve.
 
 > [!NOTE]
 > Assurez-vous de supprimer les certificats en exécutant Cleanup.bat une fois l'exemple terminé. D'autres exemples de sécurité utilisent ces mêmes certificats.  
   
 1. Lancez Client.exe à partir du répertoire \client\bin. L'activité du client s'affiche sur son application de console.  
   
-2. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+2. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computer"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
@@ -617,7 +617,7 @@ string GetCallerCreditCardNumber()
   
 2. Copiez les fichiers programme du service dans le répertoire de service sur l'ordinateur de service. N'oubliez pas de copier le fichier CreditCardFile.txt, sinon l'authentificateur de carte de crédit ne pourra pas valider les informations de carte de crédit envoyées depuis le client. Copiez également les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.  
   
-3. Le nom de sujet de votre certificat de serveur doit contenir le nom de domaine complet de l'ordinateur. Pour en créer un à l'aide de Setup.bat, il vous suffit de remplacer la variable `%SERVER_NAME%` par le nom complet de l'ordinateur où le service est hébergé. Notez que le fichier Setup. bat doit être exécuté dans un Invite de commandes développeur pour que Visual Studio s’ouvre avec des privilèges d’administrateur.  
+3. Le nom de sujet de votre certificat de serveur doit contenir le nom de domaine complet de l'ordinateur. Pour en créer un à l'aide de Setup.bat, il vous suffit de remplacer la variable `%SERVER_NAME%` par le nom complet de l'ordinateur où le service est hébergé. Notez que le fichier Setup.bat doit être exécuté dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur.  
   
 4. Copiez le certificat du serveur dans le magasin CurrentUser-TrustedPeople du client. Cette tâche est requise uniquement si le certificat du serveur n'est pas publié par un émetteur approuvé.  
   
@@ -631,8 +631,8 @@ string GetCallerCreditCardNumber()
   
 9. Sur l'ordinateur client, lancez Client.exe à partir d'une fenêtre d'invite de commandes.  
   
-10. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   
-1. Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple.  
+1. Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple.

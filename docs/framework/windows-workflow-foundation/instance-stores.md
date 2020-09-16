@@ -2,15 +2,15 @@
 title: Magasins d'instances
 ms.date: 03/30/2017
 ms.assetid: f2629668-0923-4987-b943-67477131c1e0
-ms.openlocfilehash: 69b50942c36406bd29147d243e0501b8048d56dc
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 26e0c28fe3061306a00e75b0498ef0781b7013c6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802555"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555794"
 ---
 # <a name="instance-stores"></a>Magasins d'instances
-Un magasin d'instances est un conteneur logique d'instances. Il s'agit de l'endroit où les données et les métadonnées d'instance sont stockées. Un magasin d'instances n'implique pas de stockage physique dédié. Il peut contenir des informations durables dans une base de données SQL Server ou des informations d'état non durables dans une mémoire. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] est fourni avec le magasin d'instances de workflow SQL, lequel est une implémentation concrète d'un magasin d'instances qui permet aux workflows de rendre des données et des métadonnées d'instance persistantes dans une base de données SQL Server 2005 ou 2008. En outre, Windows Server AppFabric fournit également une implémentation concrète d'un magasin d'instances. Pour plus d’informations, consultez [magasin d’instances, requêtes et fournisseurs de contrôles Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10)).  
+Un magasin d'instances est un conteneur logique d'instances. Il s'agit de l'endroit où les données et les métadonnées d'instance sont stockées. Un magasin d'instances n'implique pas de stockage physique dédié. Il peut contenir des informations durables dans une base de données SQL Server ou des informations d'état non durables dans une mémoire. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] est fourni avec le magasin d'instances de workflow SQL, lequel est une implémentation concrète d'un magasin d'instances qui permet aux workflows de rendre des données et des métadonnées d'instance persistantes dans une base de données SQL Server 2005 ou 2008. En outre, Windows Server AppFabric fournit également une implémentation concrète d'un magasin d'instances. Pour plus d’informations, consultez [magasin d’instances, requêtes et fournisseurs de contrôles Windows Server App Fabric](/previous-versions/appfabric/ff383417(v=azure.10)).  
   
  L'API de persistance est l'interface entre un hôte et un magasin d'instances qui permet à l'hôte d'envoyer des demandes de commande (par exemple, <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> et <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>) au magasin d'instances. L'implémentation concrète de cette API est appelée fournisseur de persistance. Le fournisseur de persistance reçoit des demandes d'un hôte et modifie le magasin d'instances.  
   
@@ -24,8 +24,8 @@ Un magasin d'instances est un conteneur logique d'instances. Il s'agit de l'endr
   
 1. Obtenez un **InstanceStore** à partir d’un fournisseur de persistance.  
 
-2. Obtenez le handle d’une instance en appelant la méthode <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle%2A> sur le **InstanceStore**.  
+2. Obtenez le handle d’une instance en appelant la <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle%2A> méthode sur le **InstanceStore**.  
   
-3. Appelez des commandes sur le handle d’instance en appelant la méthode <xref:System.Runtime.DurableInstancing.InstanceStore.Execute%2A> sur le **InstanceStore**.  
+3. Appelez les commandes sur le handle d’instance en appelant la <xref:System.Runtime.DurableInstancing.InstanceStore.Execute%2A> méthode sur **InstanceStore**.  
   
-4. Examinez le <xref:System.Runtime.DurableInstancing.InstanceView> retourné par **InstanceStore. Execute** pour déterminer les résultats des commandes.
+4. Examinez la <xref:System.Runtime.DurableInstancing.InstanceView> valeur retournée par **InstanceStore.Exe** pour déterminer les résultats des commandes.

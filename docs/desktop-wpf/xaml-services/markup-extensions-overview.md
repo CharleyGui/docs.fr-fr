@@ -5,25 +5,25 @@ helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-ms.openlocfilehash: c0ca8e7d0d68d4730173385540cbcec66c7bf03a
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: efb41f31a3baa895b5739021af5fa36e32aefeea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "82071716"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556991"
 ---
-# <a name="overview-of-markup-extensions-for-xaml"></a>Aperçu des extensions de balisage pour XAML
+# <a name="overview-of-markup-extensions-for-xaml"></a>Vue d’ensemble des extensions de balisage pour XAML
 
-Les extensions de balisage sont une technique XAML pour obtenir une valeur qui n’est pas un type primitif ou spécifique XAML. Pour l'utilisation d'attributs, les extensions de balisage utilisent la séquence de caractères connue d'une accolade ouvrante `{` pour entrer la portée d'extension de balisage et d'une accolade fermante `}` pour quitter. Lorsque vous utilisez .NET XAML Services, vous pouvez utiliser certaines des extensions de balisage en langue XAML prédéfinie de l’assemblage System.Xaml. Vous pouvez également créer une sous-classe à partir de la classe <xref:System.Windows.Markup.MarkupExtension> , définie dans System.Xaml, et définir vos propres extensions de balisage. Ou vous pouvez utiliser des extensions de balisage définies par un cadre particulier si vous faites déjà référence à ce cadre.
+Les extensions de balisage sont une technique XAML permettant d’obtenir une valeur qui n’est ni une primitive ni un type XAML spécifique. Pour l'utilisation d'attributs, les extensions de balisage utilisent la séquence de caractères connue d'une accolade ouvrante `{` pour entrer la portée d'extension de balisage et d'une accolade fermante `}` pour quitter. Lorsque vous utilisez les services XAML .NET, vous pouvez utiliser certaines extensions de balisage de langage XAML prédéfinies à partir de l’assembly System. Xaml. Vous pouvez également créer une sous-classe à partir de la classe <xref:System.Windows.Markup.MarkupExtension> , définie dans System.Xaml, et définir vos propres extensions de balisage. Ou vous pouvez utiliser des extensions de balisage définies par une infrastructure particulière si vous référencez déjà cette infrastructure.
 
 Lorsqu'une utilisation d'extension de balisage fait l'objet d'un accès, le writer d'objet XAML peut fournir des services à une classe <xref:System.Windows.Markup.MarkupExtension> personnalisée via un point de connexion de service dans la substitution <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A?displayProperty=nameWithType> . Les services peuvent être utilisés pour obtenir le contexte concernant l'utilisation, les fonctions spécifiques du writer d'objet, le contexte de schéma XAML, etc.
 
-## <a name="xaml-defined-markup-extensions"></a>Extensions de balisage définies par XAML
+## <a name="xaml-defined-markup-extensions"></a>Extensions de balisage définies en XAML
 
-Plusieurs extensions de balisage sont mises en œuvre par .NET XAML Services pour le support linguistique XAML. Ces extensions de balisage font partie de la spécification de XAML en tant que langage. Elles sont généralement identifiables par le préfixe `x:` dans la syntaxe, comme observé dans l'utilisation courante. .NET XAML Services implémentations pour ces <xref:System.Windows.Markup.MarkupExtension> éléments linguistiques XAML proviennent tous de la classe de base.
+Plusieurs extensions de balisage sont implémentées par les services XAML .NET pour la prise en charge du langage XAML. Ces extensions de balisage font partie de la spécification de XAML en tant que langage. Elles sont généralement identifiables par le préfixe `x:` dans la syntaxe, comme observé dans l'utilisation courante. Les implémentations des services XAML .NET pour ces éléments de langage XAML dérivent toutes de la  <xref:System.Windows.Markup.MarkupExtension> classe de base.
 
 > [!NOTE]
-> Le préfixe `x:` est utilisé pour le mappage d'espace de noms XAML standard de l'espace de noms du langage XAML, dans l'élément racine d'une production XAML. Par exemple, le projet Visual Studio et les modèles de pages pour `x:` divers cadres spécifiques lancent un fichier XAML à l’aide de cette cartographie. Vous pouvez choisir un autre jeton de préfixe pour votre propre mappage d'espace de noms XAML. Toutefois, dans cette documentation, le mappage `x:` par défaut est considéré comme un moyen d'identification des entités qui représentent une partie définie de l'espace de noms XAML du langage XAML, par opposition à l'espace de noms XAML par défaut d'une infrastructure spécifique ou à d'autres espaces de noms CLR ou XML arbitraires.
+> Le préfixe `x:` est utilisé pour le mappage d'espace de noms XAML standard de l'espace de noms du langage XAML, dans l'élément racine d'une production XAML. Par exemple, les modèles de projet et de page Visual Studio pour différents frameworks spécifiques lancent un fichier XAML à l’aide de ce `x:` mappage. Vous pouvez choisir un autre jeton de préfixe pour votre propre mappage d'espace de noms XAML. Toutefois, dans cette documentation, le mappage `x:` par défaut est considéré comme un moyen d'identification des entités qui représentent une partie définie de l'espace de noms XAML du langage XAML, par opposition à l'espace de noms XAML par défaut d'une infrastructure spécifique ou à d'autres espaces de noms CLR ou XML arbitraires.
 
 ### <a name="xtype"></a>x:Type
 
@@ -53,13 +53,13 @@ Il existe d'autres constructions `x:` permettant de prendre en charge des foncti
 
 Pour définir une extension de balisage personnalisée qui peut interagir avec les implémentations par défaut de lecteurs XAML et de writers XAML dans System.Xaml, vous dérivez une classe de la classe <xref:System.Windows.Markup.MarkupExtension> abstraite. Cette classe dispose d'une méthode à substituer, qui est <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>. Vous devrez peut-être également définir des constructeurs supplémentaires pour prendre en charge des arguments pour l'utilisation d'une extension de balisage, ainsi que les propriétés définissables correspondantes.
 
-Grâce <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>à , une extension de balisage personnalisée a accès à un contexte de service qui rapporte l’environnement où l’extension de balisage est invoquée par un processeur XAML. Dans le chemin de charge, c’est généralement un <xref:System.Xaml.XamlObjectWriter>. Dans le chemin d'enregistrement, il s'agit généralement d'un <xref:System.Xaml.XamlXmlWriter>. Chaque élément signale le contexte de service comme une classe de contexte du fournisseur de services XAML interne qui implémente un modèle de fournisseur de services. Pour plus d’informations sur les services disponibles et sur les éléments qu’ils représentent, consultez [Type Converters and Markup Extensions for XAML](type-converters-and-markup-extensions.md).
+Via <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> , une extension de balisage personnalisée a accès à un contexte de service qui signale l’environnement dans lequel l’extension de balisage est appelée par un processeur XAML. Dans le chemin de chargement, il s’agit généralement d’un <xref:System.Xaml.XamlObjectWriter> . Dans le chemin d'enregistrement, il s'agit généralement d'un <xref:System.Xaml.XamlXmlWriter>. Chaque élément signale le contexte de service comme une classe de contexte du fournisseur de services XAML interne qui implémente un modèle de fournisseur de services. Pour plus d’informations sur les services disponibles et sur les éléments qu’ils représentent, consultez [Type Converters and Markup Extensions for XAML](type-converters-and-markup-extensions.md).
 
 Votre classe d'extension de balisage doit utiliser un niveau d'accès public ; les processeurs XAML doivent toujours être en mesure d'instancier la classe de prise en charge de l'extension de balisage pour utiliser ses services.
 
 ## <a name="defining-the-support-type-for-a-custom-markup-extension"></a>Définition du type de prise en charge pour une extension de balisage personnalisée
 
-Lorsque vous utilisez .NET XAML Services ou frameworks qui s’appuient sur .NET XAML Services, vous avez deux choix pour la façon de nommer le type de support d’extension de balisage. Le nom de type se rapporte à la façon dont les writers d'objet XAML tentent d'accéder à un type de prise en charge d'extension de balisage et de l'appeler lorsqu'ils rencontrent une utilisation d'extension de balisage en XAML. Utilisez l'une des stratégies d'affectation de noms suivantes :
+Lorsque vous utilisez des services XAML .NET ou des infrastructures qui s’appuient sur les services XAML .NET, vous avez deux possibilités pour nommer le type de prise en charge de l’extension de balisage. Le nom de type se rapporte à la façon dont les writers d'objet XAML tentent d'accéder à un type de prise en charge d'extension de balisage et de l'appeler lorsqu'ils rencontrent une utilisation d'extension de balisage en XAML. Utilisez l'une des stratégies d'affectation de noms suivantes :
 
 - Spécifiez le nom de type afin qu'il corresponde exactement au jeton d'utilisation du balisage XAML. Par exemple, pour prendre en charge l'utilisation d'une extension `{Collate ...}` , nommez le type de prise en charge `Collate`.
 - Spécifiez le nom du type de façon à ce qu'il corresponde au jeton de la chaîne d'utilisation, suivi du suffixe `Extension`. Par exemple, pour prendre en charge l'utilisation d'une extension `{Collate ...}` , nommez le type de prise en charge `CollateExtension`.
@@ -68,11 +68,11 @@ L'ordre de recherche consiste à rechercher d'abord le nom de classe avec le suf
 
 Du point de vue de l'utilisation du balisage, le suffixe `Extension` peut tout à fait être inclus dans le cadre de l'utilisation. Toutefois, le système de comporte comme si `Extension` faisait réellement partie du nom de la classe et les writers d'objet XAML ne parviennent pas à résoudre une classe de prise en charge d'extension de balisage pour cette utilisation si cette classe ne comporte pas le suffixe `Extension` .
 
-### <a name="the-parameterless-constructor"></a>Le constructeur sans paramètres
+### <a name="the-parameterless-constructor"></a>Le constructeur sans paramètre
 
-Pour tous les types de support d’extension de balisage, vous devez exposer un constructeur public sans paramètres. Un constructeur sans paramètres est nécessaire pour tout cas où un auteur d’objets XAML instantané l’extension de balisage à partir d’une utilisation d’élément objet. La prise en charge de l'utilisation d'éléments objet correspond à une attente légitime concernant une extension de balisage, en particulier pour la sérialisation. Toutefois, vous pouvez implémenter une extension de balisage sans constructeur public si vous souhaitez seulement prendre en charge des utilisations d'attributs de l'extension de balisage.
+Pour tous les types de prise en charge d’extension de balisage, vous devez exposer un constructeur sans paramètre public. Un constructeur sans paramètre est requis pour tous les cas où un writer d’objet XAML instancie l’extension de balisage à partir d’une utilisation d’élément objet. La prise en charge de l'utilisation d'éléments objet correspond à une attente légitime concernant une extension de balisage, en particulier pour la sérialisation. Toutefois, vous pouvez implémenter une extension de balisage sans constructeur public si vous souhaitez seulement prendre en charge des utilisations d'attributs de l'extension de balisage.
 
-Si votre utilisation de prolongation de balisage n’a pas d’arguments, le constructeur sans paramètres est nécessaire pour soutenir l’utilisation.
+Si votre utilisation d’extension de balisage n’a pas d’arguments, le constructeur sans paramètre est requis pour prendre en charge l’utilisation.
 
 ## <a name="constructor-patterns-and-positional-arguments-for-a-custom-markup-extension"></a>Modèles de constructeur et arguments de position pour une extension de balisage personnalisée
 
@@ -88,10 +88,10 @@ public Collate(CollationMode collationMode) {...}
 
 Le traitement fonctionne de manière conceptuelle comme si l'extension de balisage était un objet à créer, puis ses valeurs de membre sont définies. Chaque propriété spécifiée à définir est évaluée de la même manière qu'un membre spécifié peut être défini sur un objet créé lorsque le code XAML est analysé. Il existe deux différences majeures :
 
-- Comme indiqué précédemment, un type de support d’extension de balisage n’a pas besoin d’avoir un constructeur sans paramètres afin d’être instantané dans XAML. Sa construction d'objet est différée jusqu'à ce que ses éventuels arguments dans la syntaxe de texte soient mis sous forme de jeton et évalués comme arguments de position ou nommés ; le constructeur approprié est appelé à ce moment-là.
+- Comme indiqué précédemment, un type de prise en charge d’extension de balisage n’a pas besoin d’avoir un constructeur sans paramètre pour être instancié en XAML. Sa construction d'objet est différée jusqu'à ce que ses éventuels arguments dans la syntaxe de texte soient mis sous forme de jeton et évalués comme arguments de position ou nommés ; le constructeur approprié est appelé à ce moment-là.
 - Les utilisations d'extensions de balisage peuvent être imbriquées. L'extension de balisage la plus profonde est évaluée en premier. Vous pouvez donc supposer une utilisation de ce type et déclarer l'un des paramètres de construction comme étant un type qui exige un convertisseur de valeurs (tel qu'une extension de balisage) à générer.
 
-Un cas de dépendance d'un traitement de ce type se trouve dans l'exemple précédent. .NET XAML Services XAML object writer processes en énumération des noms constants en valeurs énumérées à un niveau natif.
+Un cas de dépendance d'un traitement de ce type se trouve dans l'exemple précédent. Le writer d’objet XAML des services XAML .NET traite les noms de constantes d’énumération en valeurs énumérées à un niveau natif.
 
 Le traitement d'une syntaxe de texte d'un paramètre de position d'extension de balisage peut également reposer sur un convertisseur de type associé au type dans l'argument de construction.
 
@@ -105,13 +105,13 @@ Un processeur XAML attend deux arguments de position pour cette extension de bal
 
 Dans les règles spécifiées XAML concernant la syntaxe et le traitement des extensions de balisage, la virgule est le délimiteur qui sépare différents arguments, que ces arguments soient des arguments de position ou des arguments nommés.
 
-### <a name="duplicate-arity-of-positional-arguments"></a>Double aité des arguments de position
+### <a name="duplicate-arity-of-positional-arguments"></a>Arité en double des arguments positionnels
 
 Si un writer d'objet XAML détecte l'utilisation d'une extension de balisage avec des arguments de position et que plusieurs arguments de constructeur acceptent ce nombre d'arguments (arité double), il ne s'agit pas nécessairement d'une erreur. Le comportement dépend d'un paramètre de contexte de schéma XAML personnalisable, <xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A>. Si <xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A> a la valeur `true`, un writer d'objet XAML ne doit pas lever d'exception uniquement pour des raisons d'arité double. Le comportement au-delà de ce point n'est pas strictement défini. L'hypothèse de conception de base part du principe que le contexte de schéma comporte des informations de type disponibles pour les paramètres spécifiques et peut tenter d'effectuer des casts explicites correspondant aux candidats dupliqués pour déterminer la signature qui peut offrir la meilleure correspondance. Une exception peut tout de même être levée si aucune des signatures ne réussit les tests imposés par ce contexte de schéma particulier s'exécutant sur un writer d'objet XAML.
 
-Par <xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A> défaut, `false` est dans le <xref:System.Xaml.XamlSchemaContext> CLR-basé pour .NET XAML Services. Par conséquent, le <xref:System.Xaml.XamlObjectWriter> par défaut lève des exceptions s'il détecte l'utilisation d'une extension de balisage pour laquelle il existe une arité double dans les constructeurs du type de stockage.
+Par défaut, <xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A> se trouve `false` dans le CLR <xref:System.Xaml.XamlSchemaContext> pour les services XAML .net. Par conséquent, le <xref:System.Xaml.XamlObjectWriter> par défaut lève des exceptions s'il détecte l'utilisation d'une extension de balisage pour laquelle il existe une arité double dans les constructeurs du type de stockage.
 
-## <a name="named-arguments-for-a-custom-markup-extension"></a>Arguments nommés pour une prolongation de balisage personnalisée
+## <a name="named-arguments-for-a-custom-markup-extension"></a>Arguments nommés pour une extension de balisage personnalisée
 
 Les extensions de balisage telles que spécifiées par XAML peuvent également utiliser une forme d'arguments nommés pour l'utilisation. Au premier niveau de la segmentation du texte en unités lexicales, la syntaxe de texte se divise en plusieurs arguments. La présence d'un signe égal (=) dans l'un des arguments identifie celui-ci comme étant un argument nommé. Un argument de ce type est également mis sous forme de jeton dans une paire nom/valeur. Dans ce cas, le nom nomme une propriété définissable publique du type de prise en charge de l'extension de balisage. Si vous avez l'intention de prendre en charge l'utilisation d'arguments nommés, vous devez fournir ces propriétés définissables publiques. Les propriétés peuvent être des propriétés héritées, à condition qu'elles restent publiques.
 
@@ -119,11 +119,11 @@ Les extensions de balisage telles que spécifiées par XAML peuvent également u
 
 Les services disponibles sont les mêmes pour tous les convertisseurs de valeurs. La seule différence réside dans le mode de réception du contexte de service par chaque convertisseur de valeurs. L’accès aux services et les services disponibles sont documentés dans la rubrique [Type Converters and Markup Extensions for XAML](type-converters-and-markup-extensions.md).
 
-## <a name="property-element-usage-of-a-markup-extension"></a>Utilisation de l’élément de propriété d’une extension de balisage
+## <a name="property-element-usage-of-a-markup-extension"></a>Utilisation des éléments de propriété d’une extension de balisage
 
 Les scénarios d'utilisation d'une extension de balisage consistent souvent à employer cette extension dans le cadre de l'utilisation d'attributs. Toutefois, il est également possible de définir la classe de stockage pour prend en charge l'utilisation des éléments de propriété.
 
-Pour soutenir l’utilisation de l’élément de propriété de votre extension de balisage, définissez un constructeur public sans paramètres. Il doit s'agir d'un constructeur d'instance, et non pas d'un constructeur statique. Cela est nécessaire parce qu’un processeur XAML doit généralement invoquer le constructeur sans paramètres sur tout élément d’objet qu’il traite à partir de la balisage, et cela inclut des classes d’extension de balisage comme éléments d’objet. Pour les scénarios avancés, vous pouvez définir des chemins de construction autres que ceux par défaut pour les classes. (Pour plus d’informations, voir [x:FactoryMethod Directive](xfactorymethod-directive.md).) Cependant, vous ne devriez pas utiliser ces modèles à des fins d’extension de balisage, car cela rend la découverte du modèle d’utilisation beaucoup plus difficile, à la fois pour les concepteurs et pour les utilisateurs de balisage brut.
+Pour prendre en charge l’utilisation des éléments de propriété de votre extension de balisage, définissez un constructeur sans paramètre public. Il doit s'agir d'un constructeur d'instance, et non pas d'un constructeur statique. Cela est nécessaire car un processeur XAML doit généralement appeler le constructeur sans paramètre sur tout élément objet qu’il traite à partir du balisage, et cela comprend les classes d’extension de balisage en tant qu’éléments objet. Pour les scénarios avancés, vous pouvez définir des chemins de construction autres que ceux par défaut pour les classes. (Pour plus d’informations, consultez [directive x :FactoryMethod](xfactorymethod-directive.md).) Toutefois, vous ne devez pas utiliser ces modèles à des fins d’extension de balisage, car cela rend la découverte du modèle d’utilisation bien plus difficile, à la fois pour les concepteurs et pour les utilisateurs de balisage brut.
 
 ## <a name="attributing-for-a-custom-markup-extension"></a>Attribution d’une extension de balisage personnalisée
 
@@ -134,11 +134,11 @@ Pour prendre en charge des environnements de conception et certains scénarios d
 - des concepteurs et IDE qui peuvent être en mesure de fournir une prise en charge tenant compte du type pour les utilisations d'extensions de balisage ;
 - des implémentations avancées de gestionnaires `SetMarkupExtension` sur les classes cibles, qui peuvent faire appel à la réflexion pour déterminer le type de retour d'une extension de balisage au lieu de se brancher sur des implémentations <xref:System.Windows.Markup.MarkupExtension> connues spécifiques via leur nom.
 
-## <a name="serialization-of-markup-extension-usages"></a>Sérialisation des utilisations de prolongation de balisage
+## <a name="serialization-of-markup-extension-usages"></a>Sérialisation des utilisations d’extensions de balisage
 
 Lorsqu'un writer d'objet XAML traite une utilisation d'extension de balisage et appelle <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>, son contexte, ayant déjà été une utilisation d'extension de balisage, persiste dans le flux de nœud XAML, et non dans le graphique d'objets. Dans le graphique d'objets, seule la valeur est conservée. Si vous disposez de scénarios de conception ou d'autres raisons de rendre persistante l'utilisation d'extension de balisage d'origine dans la sortie sérialisée, vous devez concevoir votre propre infrastructure permettant d'assurer le suivi des utilisations d'extensions de balisage à partir du flux de nœud XAML du chemin de chargement. Vous pouvez implémenter un comportement visant à recréer les éléments du flux de nœud à partir du chemin de chargement et à les lire sur des writers XAML pour la sérialisation dans le chemin d'enregistrement, substituant ainsi la valeur dans la position appropriée du flux de nœud.
 
-## <a name="markup-extensions-in-the-xaml-node-stream"></a>Extensions de majoration dans le flux de nœuds XAML
+## <a name="markup-extensions-in-the-xaml-node-stream"></a>Extensions de balisage dans le flux de nœud XAML
 
 Si vous travaillez avec un flux de nœud XAML dans le chemin de chargement, l'utilisation d'une extension de balisage est représentée dans le flux de nœud sous la forme d'un objet.
 
@@ -156,7 +156,7 @@ Si l'utilisation d'une extension de balisage fait appel à des arguments de posi
 
 L'utilisation d'une extension de balisage avec des arguments nommés est représentée sous la forme d'un objet dont les membres ont les noms appropriés, chacun étant défini avec des valeurs de chaîne de texte.
 
-L'appel réel de l'implémentation de `ProvideValue` d'une extension de balisage requiert le contexte de schéma XAML, car cette opération nécessite un mappage de type et la création d'une instance de type de prise en charge d'extension de balisage. C’est l’une des raisons pour lesquelles les utilisations d’extension de balisage sont préservées de cette façon dans le par défaut .NET XAML Services flux de nœuds - la partie lecteur d’un chemin de charge n’a souvent pas le contexte de schéma XAML nécessaire disponible.
+L'appel réel de l'implémentation de `ProvideValue` d'une extension de balisage requiert le contexte de schéma XAML, car cette opération nécessite un mappage de type et la création d'une instance de type de prise en charge d'extension de balisage. C’est l’une des raisons pour lesquelles les utilisations d’extensions de balisage sont conservées de cette façon dans les flux de nœud des services XAML .NET par défaut : la partie lecteur d’un chemin de chargement ne dispose souvent pas du contexte de schéma XAML nécessaire.
 
 Si vous travaillez avec un flux de nœud XAML dans le chemin d'enregistrement, la représentation du graphique d'objets ne contient généralement aucun élément pouvant vous indiquer que l'objet à sérialiser a été initialement fourni par une utilisation d'extension de balisage et un résultat `ProvideValue` . Les scénarios qui doivent rendre persistantes les utilisations des extensions de balisage pour les allers-retours tout en capturant d'autres modifications dans le graphique d'objets requièrent la conception de techniques spécifiques pour conserver les informations d'utilisation des extensions de balisage de l'entrée XAML d'origine. Par exemple, pour restaurer les utilisations d'extensions de balisage, vous devrez peut-être travailler avec le flux de nœud dans le chemin d'enregistrement ou effectuer un certain type de fusion entre le code XAML d'origine et le code XAML faisant l'objet d'allers-retours. Certaines infrastructures d'implémentation en XAML telles que WPF utilisent des types intermédiaires (expressions) pour faciliter la représentation des cas où les utilisations d'extensions de balisage ont fourni les valeurs.
 
@@ -164,4 +164,4 @@ Si vous travaillez avec un flux de nœud XAML dans le chemin d'enregistrement, l
 
 - <xref:System.Windows.Markup.MarkupExtension>
 - [Convertisseurs de types et extensions de balisage pour XAML](type-converters-and-markup-extensions.md)
-- [Extensions de balisage et XAML WPF](../../framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [Extensions de balisage et XAML WPF](/dotnet/desktop/wpf/advanced/markup-extensions-and-wpf-xaml)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing COM components
 - COM interop, exposing COM components
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
-ms.openlocfilehash: a8dfbeb88d0057eb3c9047b4435f021750ed86d2
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1cf5bdbedd53227e812b0d2ed97778ab34a81444
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620857"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557095"
 ---
 # <a name="compiling-an-interop-project"></a>Compilation d'un projet d'interopérabilité
 
@@ -27,7 +27,7 @@ Les projets de COM Interop qui référencent un ou plusieurs assemblys contenant
 
 - En déployant des assemblys d’interopérabilité : vous pouvez créer une référence standard à un assembly d’interopérabilité. Dans ce cas, l’assembly d’interopérabilité doit être déployé avec votre application.
 
- Les différences entre ces deux techniques sont abordées de manière plus détaillée dans [Utilisation de types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100)).
+ Les différences entre ces deux techniques sont abordées de manière plus détaillée dans [Utilisation de types COM dans du code managé](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100)).
 
  L’incorporation de types Interop à l’aide de Visual Studio est illustrée dans [procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio](../../standard/assembly/embed-types-visual-studio.md).
 
@@ -42,6 +42,6 @@ Les projets de COM Interop qui référencent un ou plusieurs assemblys contenant
 
 - [Exposition de composants COM au .NET Framework](exposing-com-components.md)
 - [Indépendance du langage et composants indépendants du langage](../../standard/language-independence-and-language-independent-components.md)
-- [Utiliser des types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [Utiliser des types COM dans du code managé](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio](../../standard/assembly/embed-types-visual-studio.md)
 - [Importation d'une bibliothèque de types sous la forme d'un assembly](importing-a-type-library-as-an-assembly.md)

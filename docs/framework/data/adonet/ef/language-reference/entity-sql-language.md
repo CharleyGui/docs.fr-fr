@@ -2,12 +2,12 @@
 title: Langage d'Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 9e7d8837-28c5-429d-a824-7bafb59724cf
-ms.openlocfilehash: a2e4b7245dbfccf7864481b52a0e868a85efbca6
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 2600b7626ebc5196c702f2d1e3159fd9549227f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251015"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553380"
 ---
 # <a name="entity-sql-language"></a>Langage d'Entity SQL
 Entity SQL est un langage de requête indépendant du stockage et semblable à SQL. Entity SQL vous permet d'interroger des données d'entité, en tant qu'objets ou sous une forme tabulaire. Vous devez envisager d'utiliser Entity SQL dans les cas suivants :  
@@ -16,7 +16,7 @@ Entity SQL est un langage de requête indépendant du stockage et semblable à S
   
 - Lorsque vous voulez définir une requête dans le cadre de la définition du modèle. Seul Entity SQL est pris en charge dans un modèle de données. Pour plus d’informations, consultez [QueryView, élément (MSL)](/ef/ef6/modeling/designer/advanced/edmx/msl-spec#queryview-element-msl) .  
   
-- Lorsque vous utilisez EntityClient pour retourner des données d'entité en lecture seule sous la forme d'ensembles de lignes à l'aide d'un <xref:System.Data.EntityClient.EntityDataReader>. Pour plus d’informations, consultez [fournisseur EntityClient pour le Entity Framework](../entityclient-provider-for-the-entity-framework.md).  
+- Lorsque vous utilisez EntityClient pour retourner des données d'entité en lecture seule sous la forme d'ensembles de lignes à l'aide d'un <xref:System.Data.EntityClient.EntityDataReader>. Pour plus d’informations, consultez la page [Fournisseur EntityClient pour Entity Framework](../entityclient-provider-for-the-entity-framework.md).  
   
 - Si vous êtes déjà un expert des langages de requête basés sur SQL, Entity SQL peut vous sembler le choix le plus naturel.  
   
@@ -25,57 +25,57 @@ Entity SQL est un langage de requête indépendant du stockage et semblable à S
   
  [Fournisseur EntityClient pour Entity Framework](../entityclient-provider-for-the-entity-framework.md)  
   
- [Guide pratique pour Créer une chaîne de connexion EntityConnection](../how-to-build-an-entityconnection-connection-string.md)  
+ [Procédure : Créer une chaîne de connexion EntityConnection](../how-to-build-an-entityconnection-connection-string.md)  
   
- [Guide pratique pour Exécuter une requête qui retourne les résultats PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md)  
+ [Procédure : Exécuter une requête qui retourne des résultats PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md)  
   
- [Guide pratique pour Exécuter une requête qui retourne les résultats StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md)  
+ [Procédure : Exécuter une requête qui retourne des résultats StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md)  
   
- [Guide pratique pour Exécuter une requête qui retourne les résultats RefType](../how-to-execute-a-query-that-returns-reftype-results.md)  
+ [Procédure : Exécuter une requête qui retourne des résultats RefType](../how-to-execute-a-query-that-returns-reftype-results.md)  
   
- [Guide pratique pour Exécuter une requête qui retourne des types complexes](../how-to-execute-a-query-that-returns-complex-types.md)  
+ [Procédure : Exécuter une requête qui retourne des types complexes](../how-to-execute-a-query-that-returns-complex-types.md)  
   
- [Guide pratique : Exécuter une requête qui retourne des collections imbriquées](../how-to-execute-a-query-that-returns-nested-collections.md)  
+ [Procédure : Exécuter une requête qui retourne des collections imbriquées](../how-to-execute-a-query-that-returns-nested-collections.md)  
   
- [Guide pratique : Exécuter une requête Entity SQL paramétrable à l’aide d’EntityCommand](../how-to-execute-a-parameterized-entity-sql-query-using-entitycommand.md)  
+ [Procédure : Exécuter une requête paramétrable Entity SQL avec EntityCommand](../how-to-execute-a-parameterized-entity-sql-query-using-entitycommand.md)  
   
- [Guide pratique pour Exécuter une procédure stockée paramétrable à l’aide d’EntityCommand](../how-to-execute-a-parameterized-stored-procedure-using-entitycommand.md)  
+ [Procédure : Exécuter une procédure stockée paramétrable avec EntityCommand](../how-to-execute-a-parameterized-stored-procedure-using-entitycommand.md)  
   
- [Guide pratique pour Exécuter une requête polymorphe](../how-to-execute-a-polymorphic-query.md)  
+ [Procédure : Exécuter une requête polymorphe](../how-to-execute-a-polymorphic-query.md)  
   
- [Guide pratique pour Parcourir les relations avec l’opérateur Navigate](../how-to-navigate-relationships-with-the-navigate-operator.md)  
+ [Procédure : Parcourir les relations avec l’opérateur Navigate](../how-to-navigate-relationships-with-the-navigate-operator.md)  
   
 ## <a name="using-entity-sql-with-object-queries"></a>Utilisation de Entity SQL avec des requêtes d'objet  
  Pour plus d'informations sur l'utilisation de Entity SQL avec des requêtes d'objet, consultez les rubriques suivantes :  
   
- [Guide pratique pour Exécuter une requête qui retourne des objets de type d’entité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738694(v=vs.100))  
+ [Comment : exécuter une requête qui retourne les objets de type entity](/previous-versions/dotnet/netframework-4.0/bb738694(v=vs.100))  
   
- [Guide pratique pour Exécuter une requête paramétrable](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738521(v=vs.100))  
+ [Comment : exécuter une requête paramétrée](/previous-versions/dotnet/netframework-4.0/bb738521(v=vs.100))  
   
- [Guide pratique : Parcourir les relations à l’aide des propriétés de navigation](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896321(v=vs.100))  
+ [Comment : parcourir les relations à l'aide des propriétés de navigation](/previous-versions/dotnet/netframework-4.0/bb896321(v=vs.100))  
   
- [Guide pratique pour Appeler une fonction définie par l’utilisateur](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100))  
+ [Comment : appeler une fonction définie par l'utilisateur](/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100))  
   
- [Guide pratique pour Filtrer les données](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716755(v=vs.100))  
+ [Comment : filtrer les données](/previous-versions/dotnet/netframework-4.0/cc716755(v=vs.100))  
   
- [Guide pratique pour Trier les données](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716784(v=vs.100))  
+ [Comment : trier les données](/previous-versions/dotnet/netframework-4.0/cc716784(v=vs.100))  
   
- [Guide pratique : Grouper les données](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896341(v=vs.100))  
+ [Comment : grouper les données](/previous-versions/dotnet/netframework-4.0/bb896341(v=vs.100))  
   
- [Guide pratique : Agréger des données](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716738(v=vs.100))  
+ [Comment : agréger des données](/previous-versions/dotnet/netframework-4.0/cc716738(v=vs.100))  
   
- [Guide pratique pour Exécuter une requête qui retourne des objets de type anonyme](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))  
+ [Comment : exécuter une requête qui retourne des objets de type anonyme](/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))  
   
- [Guide pratique : Exécuter une requête qui retourne une collection de types primitifs](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738451(v=vs.100))  
+ [Comment : exécuter une requête qui retourne une collection de types primitifs](/previous-versions/dotnet/netframework-4.0/bb738451(v=vs.100))  
   
- [Guide pratique : Interroger des objets liés dans un EntityCollection](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716708(v=vs.100))  
+ [Comment : interroger des objets liés dans une EntityCollection](/previous-versions/dotnet/netframework-4.0/cc716708(v=vs.100))  
   
- [Guide pratique pour Ordonner l’Union de deux requêtes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100))  
+ [Comment : ordonner l'union de deux requêtes](/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100))  
   
- [Guide pratique pour Page des résultats de la requête](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))  
+ [Procédure : pagination dans les résultats d’une requête](/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)  
+ [Vue d'ensemble d'Entity SQL](entity-sql-overview.md)  
   
  [Référence Entity SQL](entity-sql-reference.md)  
   

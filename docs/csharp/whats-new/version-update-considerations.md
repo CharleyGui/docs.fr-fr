@@ -3,12 +3,12 @@ title: Considérations relatives à la version et la mise à jour pour les déve
 description: L’introduction de nouvelles fonctionnalités de langage dans votre bibliothèque peut affecter le code qui l’utilise.
 ms.topic: reference
 ms.date: 09/19/2018
-ms.openlocfilehash: f7db7c79792d04bcf592bc1858e1f0f05cb34402
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 6de0e3ba33af34edba73819dcb9268f40f8a5ea4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268125"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552425"
 ---
 # <a name="version-and-update-considerations-for-c-developers"></a>Considérations relatives à la version et la mise à jour pour les développeurs C#
 
@@ -63,4 +63,4 @@ Nouveau code :
 public double CalculateSquare(in double value) => value * value;
 ```
 
-Les articles [Nouveautés](index.md) indiquent si l’introduction d’une fonctionnalité qui affecte les déclarations publiques est compatible avec la source ou compatible binaire.
+Les articles [Nouveautés](./csharp-9.md) indiquent si l’introduction d’une fonctionnalité qui affecte les déclarations publiques est compatible avec la source ou compatible binaire.

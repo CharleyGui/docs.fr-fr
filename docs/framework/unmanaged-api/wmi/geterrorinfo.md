@@ -1,5 +1,5 @@
 ---
-title: Fonction GetErrorInfo (référence API non gestion)
+title: Fonction GetErrorInfo (référence des API non managées)
 description: La fonction GetErrorInfo récupère les informations d’erreur de l’appel de fonction précédent.
 ms.date: 11/06/2017
 api_name:
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - GetErrorInfo function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 802ee66a5be213ac7a599b193ec6de589773ea17
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a80c0b5522113e704336cda29362a0406077931
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176810"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553673"
 ---
 # <a name="geterrorinfo-function"></a>GetErrorInfo, fonction
 Récupère les informations d’erreur à partir de l’appel de fonction précédent.  
@@ -32,20 +32,20 @@ Récupère les informations d’erreur à partir de l’appel de fonction préc�
 IErrorInfo* GetErrorInfo();
 ```  
 
-## <a name="return-value"></a>Valeur retournée
+## <a name="return-value"></a>Valeur renvoyée
 
-Un pointeur vers un objet [IErrorInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) si `null` l’appel de fonction réussit, ou s’il échoue.
+Pointeur vers un objet [IErrorInfo](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) si l’appel de fonction réussit, ou en `null` cas d’échec.
   
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Notes
 
-Cette fonction enveloppe un appel à la méthode [IComThreadingInfo::GetErrorInfo.](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype)
+Cette fonction encapsule un appel à la méthode [IComThreadingInfo :: GetErrorInfo](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
 
 ## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** WMINet_Utils.def  
+ **En-tête :** WMINet_Utils. def  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

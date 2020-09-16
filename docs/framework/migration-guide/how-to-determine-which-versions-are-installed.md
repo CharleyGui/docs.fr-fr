@@ -9,12 +9,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: 1591aacf5496852609ae571a52aaea2d5c09a15b
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: accc85f04514822233bc5df3a76eb99775fee529
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558554"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553738"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Guide pratique pour déterminer les versions du .NET Framework installées
 
@@ -99,7 +99,7 @@ Utilisez les commandes PowerShell pour vérifier la valeur de l’entrée de **p
 
 Les exemples suivants vérifient la valeur de l’entrée **Release** pour déterminer si .NET Framework 4.6.2 ou une version ultérieure sont installés. Ce code retourne `True` s’il est installé et `False` dans le cas contraire.
 
-```PowerShell
+```powershell
 (Get-ItemProperty "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full").Release -ge 394802
 ```
 
@@ -129,7 +129,7 @@ Chaque version de .NET Framework de 1,1 à 4,0 est indiquée sous la forme d’u
 > [!NOTE]
 > La sous-clé **d’installation** du .NET Framework dans le chemin d’accès du registre ne commence *pas* par un point.
 
-| Version du Framework  | Sous-clé de Registre | Valeur |
+| Version du Framework  | Sous-clé de Registre | Value |
 | ------------------ | --------------- | ----- |
 | 1.0                | **HKLM \\ Software \\ Microsoft \\ . \\Stratégie NETFramework \\ v 1.0 \\ 3705**     | **Installer** REG_SZ est égal à `1` |
 | 1.1                | **HKLM \\ Software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Installer** REG_DWORD est égal à `1` |
