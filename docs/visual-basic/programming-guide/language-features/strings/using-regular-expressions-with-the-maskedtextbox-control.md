@@ -5,12 +5,12 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: efda70be0ccdbc1f4b59d548e50f743f6c493b19
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1bb5ac5381dc85f598ef46638fbc8cd1a8643825
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363710"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555742"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Utilisation d'expressions régulières avec le contrôle MaskedTextBox en Visual Basic
 Cet exemple montre comment convertir des expressions régulières simples pour qu’elles fonctionnent avec le <xref:System.Windows.Forms.MaskedTextBox> contrôle.  
@@ -29,7 +29,7 @@ Cet exemple montre comment convertir des expressions régulières simples pour q
 |?|Lettre ASCII. Entrée facultative.|[a-zA-Z] ?|  
 |&|Caractère. Entrée obligatoire.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]|  
 |C|Caractère. Entrée facultative.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]?|  
-|Un|Comportant. Entrée facultative.|\W|  
+|A|Comportant. Entrée facultative.|\W|  
 |.|Espace réservé décimal approprié à la culture.|Non disponible.|  
 |,|Espace réservé des milliers approprié à la culture.|Non disponible.|  
 |:|Séparateur horaire approprié à la culture.|Non disponible.|  
@@ -48,7 +48,7 @@ Cet exemple montre comment convertir des expressions régulières simples pour q
   
  Le tableau suivant compare quatre expressions régulières et le masque équivalent pour chacune d’elles.  
   
-|Expression régulière|Mask|Remarques|  
+|Expression régulière|Mask|Notes|  
 |------------------------|----------|-----------|  
 |`\d{2}/\d{2}/\d{4}`|`00/00/0000`|Le `/` caractère dans le masque est un séparateur de date logique, et il apparaît à l’utilisateur comme séparateur de date approprié à la culture actuelle de l’application.|  
 |`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|Date (jour, abréviation du mois et année) au format États-Unis dans lequel l’abréviation du mois à trois lettres s’affiche avec une lettre majuscule initiale suivie de deux lettres minuscules.|  
@@ -60,4 +60,4 @@ Cet exemple montre comment convertir des expressions régulières simples pour q
 - <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>
 - <xref:System.Windows.Forms.MaskedTextBox>
 - [Validation de chaînes en Visual Basic](validating-strings.md)
-- [MaskedTextBox, contrôle](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+- [MaskedTextBox, contrôle](/dotnet/desktop/winforms/controls/maskedtextbox-control-windows-forms)

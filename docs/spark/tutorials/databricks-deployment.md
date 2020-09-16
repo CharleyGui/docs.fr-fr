@@ -4,12 +4,12 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 66a5493f0084f5fa86c3eb928d2e4a4b4999e764
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 904aeea4fa8b134c8c36ebb83779dc044154e6f3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924589"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552165"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Databricks
 
@@ -38,7 +38,7 @@ Avant de commencer, effectuez les tâches suivantes :
 
 > [!Note]
 > Ce didacticiel ne peut pas être suivi avec un **abonnement d’essai gratuit Azure**.
-> Si vous avez un compte gratuit, accédez à votre profil et modifiez votre abonnement sur **Paiement à l’utilisation**. Pour plus d’informations, consultez la page [Compte Azure gratuit](https://azure.microsoft.com/free/dotnet/). Ensuite, [supprimez la limite de dépense](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit), et [demandez une augmentation du quota](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) pour les processeurs virtuels dans votre région. Lorsque vous créez votre espace de travail Azure Databricks, vous pouvez sélectionner le tarif **Version d’évaluation (Premium - 14 jours de DBU offerts)** pour donner à l’accès de l’espace de travail un accès gratuit aux DBU d’Azure Databricks pendant 14 jours.
+> Si vous avez un compte gratuit, accédez à votre profil et modifiez votre abonnement sur **Paiement à l’utilisation**. Pour plus d’informations, consultez la page [Compte Azure gratuit](https://azure.microsoft.com/free/dotnet/). Ensuite, [supprimez la limite de dépense](/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit), et [demandez une augmentation du quota](/azure/azure-supportability/resource-manager-core-quotas-request) pour les processeurs virtuels dans votre région. Lorsque vous créez votre espace de travail Azure Databricks, vous pouvez sélectionner le tarif **Version d’évaluation (Premium - 14 jours de DBU offerts)** pour donner à l’accès de l’espace de travail un accès gratuit aux DBU d’Azure Databricks pendant 14 jours.
 
 Dans cette section, vous créez un espace de travail Azure Databricks en utilisant le portail Azure.
 
@@ -52,12 +52,12 @@ Dans cette section, vous créez un espace de travail Azure Databricks en utilisa
     |---------|---------|
     |**Nom de l’espace de travail**     | Fournissez un nom pour votre espace de travail Databricks.        |
     |**Abonnement**     | Sélectionnez votre abonnement Azure dans la liste déroulante.        |
-    |**Groupe de ressources**     | Indiquez si vous souhaitez créer un groupe de ressources Azure ou utiliser un groupe existant. Un groupe de ressources est un conteneur réunissant les ressources associées d’une solution Azure. Pour plus d’informations, consultez [Présentation des groupes de ressources Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
+    |**Groupe de ressources**     | Indiquez si vous souhaitez créer un groupe de ressources Azure ou utiliser un groupe existant. Un groupe de ressources est un conteneur réunissant les ressources associées d’une solution Azure. Pour plus d’informations, consultez [Présentation des groupes de ressources Azure](/azure/azure-resource-manager/resource-group-overview). |
     |**Lieu**     | Sélectionnez votre région préférée. Pour plus d’informations sur les régions disponibles, consultez [services Azure disponibles par région](https://azure.microsoft.com/regions/services/).        |
     |**Niveau tarifaire**     |  Choisissez **Standard**, **Premium** ou **Essai**. Pour plus d’informations sur ces niveaux, consultez la [page de tarification Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
     |**Réseau virtuel**     |   Non       |
 
-3. Sélectionnez **Créer**. La création de l’espace de travail dure quelques minutes. Pendant la création de l'espace de travail, vous pouvez consulter l'état du déploiement dans **Notifications**.
+3. Sélectionnez **Create** (Créer). La création de l’espace de travail dure quelques minutes. Pendant la création de l'espace de travail, vous pouvez consulter l'état du déploiement dans **Notifications**.
 
 ## <a name="install-azure-databricks-tools"></a>Installer Azure Databricks Tools
 
@@ -75,7 +75,7 @@ Vous pouvez utiliser l' **interface CLI Databricks** pour vous connecter à des 
    python3 --version
    ```
 
-2. Utilisez PIP pour installer l’interface de commande de Databricks. Python 3,4 et versions ultérieures incluent PIP par défaut. Utilisez PIP3 pour Python 3. Exécutez la commande suivante :
+2. Utilisez PIP pour installer l’interface de commande de Databricks. Python 3,4 et versions ultérieures incluent PIP par défaut. Utilisez PIP3 pour Python 3. Exécutez la commande suivante :
 
    ```bash
    pip3 install databricks-cli
@@ -219,4 +219,4 @@ Si vous n’avez plus besoin de l’espace de travail Databricks, vous pouvez su
 Dans ce tutoriel, vous avez déployé votre application .NET pour Apache Spark sur Databricks. Pour plus d’informations sur Databricks, consultez la documentation Azure Databricks.
 
 > [!div class="nextstepaction"]
-> [Documentation Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/)
+> [Documentation Azure Databricks](/azure/azure-databricks/)

@@ -1,15 +1,15 @@
 ---
-title: 'Comment : héberger un service WCF dans WAS'
+title: 'Procédure : héberger un service WCF dans WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: 40460baeb136345f2532ec6ad5035bd5d3a40254
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 8049b7961169c6ec7a8d80fb0e8747e99992247b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051985"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555970"
 ---
-# <a name="how-to-host-a-wcf-service-in-was"></a>Comment : héberger un service WCF dans WAS
+# <a name="how-to-host-a-wcf-service-in-was"></a>Procédure : héberger un service WCF dans WAS
 Cette rubrique décrit les étapes de base requises pour créer un service de Windows Communication Foundation hébergé (WCF) des services d’activation de processus Windows (également appelé WAS). WAS est le nouveau service d’activation de processus généralisant les fonctionnalités des services IIS (Internet Information Services) qui fonctionnent avec des protocoles de transport non-HTTP. WCF utilise l’interface d’adaptateur d’écouteur pour communiquer les demandes d’activation reçues sur les protocoles non-HTTP pris en charge par WCF, tels que TCP, les canaux nommés et les Message Queuing.  
   
  Cette option d'hébergement requiert que les composants d'activation WAS soient installés et configurés correctement, mais ne requiert pas l'écriture du code d'hébergement dans le cadre de l'application. Pour plus d’informations sur l’installation et la configuration de WAS, consultez [Comment : installer et configurer des composants d’activation WCF](how-to-install-and-configure-wcf-activation-components.md).  
@@ -101,4 +101,4 @@ Cette rubrique décrit les étapes de base requises pour créer un service de Wi
 ## <a name="see-also"></a>Voir aussi
 
 - [Activation de TCP](../samples/tcp-activation.md)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

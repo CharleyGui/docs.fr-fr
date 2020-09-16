@@ -1,17 +1,17 @@
 ---
-title: Compteurs de performance
+title: Compteurs de performances
 description: Utilisez les compteurs de performance ADO.NET pour surveiller l’état de votre application et ses ressources de connexion à l’aide de l’analyseur de performances Windows ou par programme.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: 9dde2d7305a1176dadba3802fc5335c0c95bfbbb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4c1da6041b2343565bdaeb53e586c893bd85c922
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286674"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557903"
 ---
 # <a name="performance-counters-in-adonet"></a>Compteurs de performance dans ADO.NET
 ADO.NET 2.0 a introduit une prise en charge développée des compteurs de performance qui prend en charge à la fois <xref:System.Data.SqlClient> et <xref:System.Data.OracleClient>. Les compteurs de performance <xref:System.Data.SqlClient> disponibles dans les versions antérieures d'ADO.NET sont déconseillés et remplacés par les nouveaux compteurs de performance évoqués dans cette rubrique.  Vous pouvez utiliser les compteurs de performance ADO.NET pour surveiller le statut de votre application et les ressources de connexion qu'elle utilise. Vous pouvez surveiller les compteurs de performance à l'aide de l'Analyseur de performances Windows ou accéder à ces derniers par programme à l'aide de la classe <xref:System.Diagnostics.PerformanceCounter> dans l'espace de noms <xref:System.Diagnostics>.  
@@ -398,8 +398,8 @@ class Program
 ## <a name="see-also"></a>Voir aussi
 
 - [Connexion à une source de données](connecting-to-a-data-source.md)
-- [Regroupement de connexions OLE DB, ODBC et Oracle](ole-db-odbc-and-oracle-connection-pooling.md)
-- [Compteurs de performances pour ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/fxk122b4(v=vs.100))
+- [Regroupement de connexions OLE DB, ODBC et Oracle Connection](ole-db-odbc-and-oracle-connection-pooling.md)
+- [Compteurs de performances pour ASP.NET](/previous-versions/aspnet/fxk122b4(v=vs.100))
 - [Profilage d’exécution](../../debug-trace-profile/runtime-profiling.md)
-- [Présentation de l’analyse des seuils de performance](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
+- [Présentation de l’analyse des seuils de performance](/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
 - [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

@@ -3,12 +3,12 @@ title: Concepts et terminologie (transformation fonctionnelle)-LINQ to XML
 description: Découvrez les concepts et la terminologie des transformations fonctionnelles pures.
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: a1c9c582235ac63fe50dd585ef5f046e9be8170e
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 0ecdbdf88ee9f868143f466222fa06f0ccf641d8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553540"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558110"
 ---
 # <a name="concepts-and-terminology-functional-transformation-linq-to-xml"></a>Concepts et terminologie (transformation fonctionnelle) (LINQ to XML)
 
@@ -54,7 +54,7 @@ Pour plus d’informations, consultez [vue d’ensemble des opérateurs de requ�
 expression lambda \
 Pour l'essentiel, il s'agit d'une fonction anonyme inline qui peut être utilisée partout où un type délégué est attendu. Il s’agit d’une définition simplifiée des expressions lambda, mais elle est adaptée aux objectifs de ce didacticiel.
 
-Pour plus d’informations, consultez [expressions lambda (Guide de programmation C#)](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) et [expressions lambda (Visual Basic))](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+Pour plus d’informations, consultez [expressions lambda (Guide de programmation C#)](../../csharp/language-reference/operators/lambda-expressions.md) et [expressions lambda (Visual Basic))](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
 
 collection \
 Ensemble structuré de données, généralement d'un type uniforme. Pour être compatible avec LINQ, une collection doit implémenter l'interface <xref:System.Collections.IEnumerable> ou l'interface <xref:System.Linq.IQueryable> (ou l'un de leurs équivalents génériques, <xref:System.Collections.Generic.IEnumerator%601> ou <xref:System.Linq.IQueryable%601>).
@@ -72,13 +72,13 @@ Pour plus d’informations, consultez [variables locales implicitement typées (
 exécution différée et évaluation différée \
 Action de retarder l'évaluation d'une expression jusqu'à ce que sa valeur résolue soit réellement nécessaire. L’exécution différée est prise en charge dans les collections.
 
-Pour plus d’informations sur C#, consultez [Introduction aux requêtes LINQ (c#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md) et [exécution différée et évaluation différée en LINQ to XML (c#)](../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Pour plus d’informations sur C#, consultez [Introduction aux requêtes LINQ (c#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md) et [exécution différée et évaluation différée en LINQ to XML (c#)](./deferred-execution-lazy-evaluation.md).
 
-Pour plus d’informations Visual Basic, consultez [opérations de requête de base (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md) et [exécution différée et évaluation différée dans LINQ to XML (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Pour plus d’informations Visual Basic, consultez [opérations de requête de base (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md) et [exécution différée et évaluation différée dans LINQ to XML (Visual Basic)](./deferred-execution-lazy-evaluation.md).
 
 Ces fonctionnalités de langage seront utilisées dans les exemples de code tout au long de cette section.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des transformations fonctionnelles pures](introduction-pure-functional-transformations.md)
-- [Programmation fonctionnelle et programmation impérative](functional-vs-imperative-programming.md)
+- [Introduction aux transformations fonctionnelles pures](introduction-pure-functional-transformations.md)
+- [Comparaison de la programmation fonctionnelle et de la programmation impérative](functional-vs-imperative-programming.md)

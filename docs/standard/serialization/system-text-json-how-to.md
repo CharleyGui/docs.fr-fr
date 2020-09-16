@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 7ad2721f12c5d14b61b35ecf7696ff0d6a6f27da
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 72ba79784d3eb1beb43eab8db0a448a7e3b18eb6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289510"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557838"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -118,14 +118,14 @@ La sérialisation en UTF-8 est environ 5-10% plus rapide que l’utilisation des
 * Par défaut, JSON est minimisés. Vous pouvez [très bien imprimer le JSON](#serialize-to-formatted-json).
 * Par défaut, la casse des noms JSON correspond aux noms .NET. Vous pouvez [personnaliser la casse du nom JSON](#customize-json-names-and-values).
 * Les références circulaires sont détectées et les exceptions levées.
-* Actuellement, les champs sont exclus.
+* Actuellement, les [champs](../../csharp/programming-guide/classes-and-structs/fields.md) sont exclus.
 
 Les types pris en charge sont les suivants :
 
 * Primitives .NET qui sont mappées à des primitives JavaScript, telles que des types numériques, des chaînes et des valeurs booléennes.
 * [Objets CLR Plain Old](https://stackoverflow.com/questions/250001/poco-definition)définis par l’utilisateur (POCO).
 * Tableaux unidimensionnels et en escalier ( `ArrayName[][]` ).
-* `Dictionary<string,TValue>`où `TValue` est `object` , `JsonElement` ou un poco.
+* `Dictionary<string,TValue>` où `TValue` est `object` , `JsonElement` ou un poco.
 * Collections des espaces de noms suivants.
   * <xref:System.Collections>
   * <xref:System.Collections.Generic>
@@ -383,7 +383,7 @@ Pour exclure toutes les propriétés de valeur null, affectez à la propriété 
 
 Voici un exemple d’objet pour sérialiser et la sortie JSON :
 
-|Propriété |Valeur  |
+|Propriété |Value  |
 |---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00|
 | TemperatureCelsius| 25 |
@@ -646,7 +646,7 @@ Lorsque vous désérialisez le JSON indiqué plus haut dans ce type d’exemple,
 | Résumé | À chaud ||
 | ExtensionData | temperatureCelsius : 25 |Étant donné que le cas ne correspondait pas, cette propriété JSON est un extra et devient une paire clé-valeur dans le dictionnaire.|
 || DatesAvailable:<br>  DE 8/1/2019 12:00:00 À 07:00<br>DE 8/2/2019 12:00:00 À 07:00 |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
-| |SummaryWords:<br>À froid<br>Venteux<br>Humide |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
+| |SummaryWords:<br>Froid<br>Venteux<br>Humide |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
 
 Lorsque l’objet cible est sérialisé, les paires de valeurs de clés de données d’extension deviennent des propriétés JSON comme elles étaient dans le JSON entrant :
 
@@ -700,11 +700,11 @@ Les valeurs NULL dans le JSON sont ignorées uniquement si elles sont valides. L
 
 ## <a name="utf8jsonreader-utf8jsonwriter-and-jsondocument"></a>Utf8JsonReader, Utf8JsonWriter et JsonDocument
 
-<xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName>est un lecteur haute performance, à faible allocation et en avant uniquement pour le texte JSON encodé en UTF-8, lu à partir d’un ou d’un `ReadOnlySpan<byte>` `ReadOnlySequence<byte>` . Le `Utf8JsonReader` est un type de bas niveau qui peut être utilisé pour créer des analyseurs et des désérialiseurs personnalisés. La <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> méthode utilise des `Utf8JsonReader` couvertures.
+<xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName> est un lecteur haute performance, à faible allocation et en avant uniquement pour le texte JSON encodé en UTF-8, lu à partir d’un ou d’un `ReadOnlySpan<byte>` `ReadOnlySequence<byte>` . Le `Utf8JsonReader` est un type de bas niveau qui peut être utilisé pour créer des analyseurs et des désérialiseurs personnalisés. La <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> méthode utilise des `Utf8JsonReader` couvertures.
 
-<xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName>est une méthode très performante pour écrire du texte JSON encodé en UTF-8 à partir de types .NET courants tels que `String` , `Int32` et `DateTime` . Le writer est un type de bas niveau qui peut être utilisé pour créer des sérialiseurs personnalisés. La <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> méthode utilise des `Utf8JsonWriter` couvertures.
+<xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName> est une méthode très performante pour écrire du texte JSON encodé en UTF-8 à partir de types .NET courants tels que `String` , `Int32` et `DateTime` . Le writer est un type de bas niveau qui peut être utilisé pour créer des sérialiseurs personnalisés. La <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> méthode utilise des `Utf8JsonWriter` couvertures.
 
-<xref:System.Text.Json.JsonDocument?displayProperty=fullName>offre la possibilité de générer un Document Object Model en lecture seule (DOM) à l’aide de `Utf8JsonReader` . Le DOM fournit un accès aléatoire aux données dans une charge utile JSON. Les éléments JSON qui composent la charge utile sont accessibles via le <xref:System.Text.Json.JsonElement> type. Le `JsonElement` type fournit des énumérateurs de tableau et d’objet, ainsi que des API pour convertir du texte JSON en types .net courants. `JsonDocument`expose une <xref:System.Text.Json.JsonDocument.RootElement> propriété.
+<xref:System.Text.Json.JsonDocument?displayProperty=fullName> offre la possibilité de générer un Document Object Model en lecture seule (DOM) à l’aide de `Utf8JsonReader` . Le DOM fournit un accès aléatoire aux données dans une charge utile JSON. Les éléments JSON qui composent la charge utile sont accessibles via le <xref:System.Text.Json.JsonElement> type. Le `JsonElement` type fournit des énumérateurs de tableau et d’objet, ainsi que des API pour convertir du texte JSON en types .net courants. `JsonDocument` expose une <xref:System.Text.Json.JsonDocument.RootElement> propriété.
 
 Les sections suivantes montrent comment utiliser ces outils pour lire et écrire du code JSON.
 
@@ -714,7 +714,7 @@ L’exemple suivant montre comment utiliser la <xref:System.Text.Json.JsonDocume
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades1)]
 
-Le code précédent :
+Le code précédent :
 
 * Suppose que le JSON à analyser se trouve dans une chaîne nommée `jsonString` .
 * Calcule une qualité moyenne pour les objets d’un `Students` tableau qui ont une `Grade` propriété.
@@ -733,7 +733,7 @@ L’exemple suivant montre comment écrire du code JSON à partir d’un <xref:S
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/JsonDocumentWriteJson.cs?name=SnippetSerialize)]
 
-Le code précédent :
+Le code précédent :
 
 * Lit un fichier JSON, charge les données dans un `JsonDocument` et écrit le format JSON (Pretty-imprimed) dans un fichier.
 * Utilise <xref:System.Text.Json.JsonDocumentOptions> pour spécifier que les commentaires dans le JSON d’entrée sont autorisés mais ignorés.
@@ -767,7 +767,7 @@ L’exemple suivant montre comment lire un fichier de façon synchrone et recher
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8ReaderFromFile.cs)]
 
-Le code précédent :
+Le code précédent :
 
 * Suppose que le JSON contient un tableau d’objets et que chaque objet peut contenir une propriété « Name » de type chaîne.
 * Compte les objets et les valeurs de propriété « nom » qui se terminent par « University ».
@@ -803,9 +803,9 @@ L’exemple précédent n’affecte aucune limite à la taille maximale de la m�
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [System.Text.Jsonvue](system-text-json-overview.md)
+* [System.Text.Json vue](system-text-json-overview.md)
 * [Guide pratique pour écrire des convertisseurs personnalisés](system-text-json-converters-how-to.md)
-* [Migration à partir deNewtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
-* [Prise en charge des valeurs DateTime et DateTimeOffset dansSystem.Text.Json](../datetime/system-text-json-support.md)
-* [System.Text.JsonRéférence d’API](xref:System.Text.Json)
+* [Migration à partir de Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Prise en charge des valeurs DateTime et DateTimeOffset dans System.Text.Json](../datetime/system-text-json-support.md)
+* [System.Text.Json Référence d’API](xref:System.Text.Json)
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

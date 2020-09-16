@@ -3,12 +3,12 @@ title: Vue d'ensemble de Windows Workflow
 description: Cet article décrit les flux de travail de Workflow Foundation, qui sont des modèles qui décrivent des processus réels.
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: ec1a00b37abe2cb842735fb98e1c113a97943758
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c54e405c5fff013f994f98cbf84fcce4d17d9d4e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421473"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558098"
 ---
 # <a name="windows-workflow-overview"></a>Vue d'ensemble de Windows Workflow
 Un flux de travail est un ensemble d’unités élémentaires nommées *activités* , stockées en tant que modèle, qui décrit un processus réel. Les workflows offrent un moyen de décrire l'ordre d'exécution et les relations de dépendance entre des éléments de travail de courte ou longue durée. Ce travail s'effectue à travers le modèle de démarrage à l'arrêt et les activités peuvent être exécutées par des utilisateurs ou par les fonctions système.  
@@ -44,4 +44,4 @@ Composants de workflow dans le processus hôte
   
 ## <a name="see-also"></a>Voir aussi
 
-- [BizTalk Server 2006 ou WF ? Choix de l’outil de workflow approprié pour votre projet](https://docs.microsoft.com/previous-versions/dotnet/articles/cc303238(v=msdn.10))
+- [BizTalk Server 2006 ou WF ? Choix de l’outil de workflow approprié pour votre projet](/previous-versions/dotnet/articles/cc303238(v=msdn.10))

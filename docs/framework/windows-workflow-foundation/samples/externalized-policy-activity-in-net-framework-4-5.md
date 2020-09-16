@@ -2,16 +2,16 @@
 title: Activité de stratégie externalisée dans .NET Framework 4.5
 ms.date: 03/30/2017
 ms.assetid: 92fd6f92-23a1-4adf-b96a-2754ea93ad3e
-ms.openlocfilehash: 8fd08c9c29f7a268170aaa101a9bdb85250157dc
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 00b671f169696728610e8ee32f874b44fbff9e33
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094629"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556913"
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>Activité de stratégie externalisée dans .NET Framework 4.5
 
-Cet exemple montre comment l’activité ExternalizedPolicy4 permet d’exécuter des objets <xref:System.Workflow.Activities.Rules.RuleSet> .NET Framework 3,5 Windows Workflow Foundation (WF 3,5) existants dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Windows Workflow Foundation (WF 4,5) directement à l’aide du moteur de règles fourni dans WF 3,5. À l'aide de cette activité, vous pouvez ouvrir et exécuter n'importe quel <xref:System.Workflow.Activities.Rules.RuleSet> WF 3.5 existant. Pour plus d’informations sur le moteur de règles WF 3,5 inclus dans le cadre de Windows Workflow Foundation, consultez [la présentation du moteur de règles Windows Workflow Foundation](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480193(v=msdn.10)). Pour plus d’informations sur la migration de règles vers [!INCLUDE[wf1](../../../../includes/wf1-md.md)] dans [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)], consultez les [conseils de migration](../migration-guidance.md).
+Cet exemple montre comment l’activité ExternalizedPolicy4 permet d’exécuter des objets .NET Framework 3,5 Windows Workflow Foundation (WF 3,5) existants <xref:System.Workflow.Activities.Rules.RuleSet> dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Windows Workflow Foundation (WF 4,5) directement à l’aide du moteur de règles fourni dans WF 3,5. À l'aide de cette activité, vous pouvez ouvrir et exécuter n'importe quel <xref:System.Workflow.Activities.Rules.RuleSet> WF 3.5 existant. Pour plus d’informations sur le moteur de règles WF 3,5 inclus dans le cadre de Windows Workflow Foundation, consultez [la présentation du moteur de règles Windows Workflow Foundation](/previous-versions/dotnet/articles/aa480193(v=msdn.10)). Pour plus d’informations sur la migration de règles vers [!INCLUDE[wf1](../../../../includes/wf1-md.md)] dans [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] , consultez les [conseils de migration](../migration-guidance.md).
 
 ## <a name="projects-in-this-sample"></a>Projets dans cet exemple
 
@@ -52,7 +52,7 @@ public class ExternalizedPolicy4Activity<TResult>: CodeActivity
 
 ## <a name="externalizedpolicy4-activity-designer"></a>Concepteur de l'activité ExternalizedPolicy4
 
-Le concepteur d'ExternalizedPolicy4 vous permet de configurer une activité pour utiliser un ensemble de règles (RuleSet) existant sans écrire de code. Définissez simplement le chemin d’accès de l’emplacement où se trouve le fichier .rules et spécifiez le nom du <xref:System.Workflow.Activities.Rules.RuleSet> que vous voulez utiliser. Il vous permet également de modifier <xref:System.Workflow.Activities.Rules.RuleSet>. Après avoir généré la solution, il se trouve dans la boîte à outils, dans la section Microsoft.Samples.Activities.Rules. Le concepteur vous permet de sélectionner un fichier .rules et un <xref:System.Workflow.Activities.Rules.RuleSet>. Quand l’utilisateur clique sur le bouton modifier l’ensemble de **règles** , le <xref:System.Workflow.Activities.Rules.Design.RuleSetDialog> WF 3,5 s’affiche. Cette boîte de dialogue, qui est l'éditeur de règles WF 3.5 réhébergé, est utilisée pour afficher et modifier les règles que l'activité ExternalizedPolicy4 exécute.
+Le concepteur d'ExternalizedPolicy4 vous permet de configurer une activité pour utiliser un ensemble de règles (RuleSet) existant sans écrire de code. Définissez simplement le chemin d’accès de l’emplacement où se trouve le fichier .rules et spécifiez le nom du <xref:System.Workflow.Activities.Rules.RuleSet> que vous voulez utiliser. Il vous permet également de modifier <xref:System.Workflow.Activities.Rules.RuleSet>. Après avoir généré la solution, il se trouve dans la boîte à outils, dans la section Microsoft.Samples.Activities.Rules. Le concepteur vous permet de sélectionner un fichier .rules et un <xref:System.Workflow.Activities.Rules.RuleSet>. Quand l’utilisateur clique sur le bouton modifier l’ensemble de **règles** , WF 3,5 <xref:System.Workflow.Activities.Rules.Design.RuleSetDialog> s’affiche. Cette boîte de dialogue, qui est l'éditeur de règles WF 3.5 réhébergé, est utilisée pour afficher et modifier les règles que l'activité ExternalizedPolicy4 exécute.
 
 ## <a name="policy4-and-externalpolicy4"></a>Policy4 et ExternalPolicy4
 
@@ -70,7 +70,7 @@ Cet exemple contient deux applications clientes : ImperativeCodeClientSample et
 
 2. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **ImperativeCodeClientSample** , puis sélectionnez **définir comme projet de démarrage**.
 
-3. Pour exécuter le projet, appuyez sur **Ctrl**+**F5**.
+3. Pour exécuter le projet, appuyez sur **CTRL** + **F5**.
 
 ### <a name="run-the-designerclientsample-application"></a>Exécuter l’application DesignerClientSample
 
@@ -78,16 +78,16 @@ Cet exemple contient deux applications clientes : ImperativeCodeClientSample et
 
 2. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **DesignerClientSample** , puis sélectionnez **définir comme projet de démarrage**.
 
-3. Appuyez sur **Ctrl**+**MAJ**+**B** pour compiler le projet.
+3. Appuyez sur **CTRL** + **MAJ** + **B** pour compiler le projet.
 
-4. Appuyez sur **Ctrl**+**F5** pour exécuter le projet.
+4. Appuyez sur **CTRL** + **F5** pour exécuter le projet.
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .
 >
 > Cet exemple se trouve dans le répertoire suivant :
 >

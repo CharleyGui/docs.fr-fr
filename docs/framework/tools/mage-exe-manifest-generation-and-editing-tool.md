@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: 864d3d7bd7cf32b5c2a5ce83819f4e78cd8ce043
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: bca26e359c25bf0dfae70f0ddfdc0c75b2081458
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164256"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556321"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (outil Manifest Generation and Editing)
 
@@ -62,14 +62,14 @@ Le tableau suivant affiche les options prises en charge par les commandes `-New`
 |**-mv, -MinVersion**  `[version]`|Version répertoriée dans le manifeste de déploiement ClickOnce telle que spécifiée par l’indicateur **-Version** .|Manifestes de déploiement.|Version minimale de cette application qu'un utilisateur peut exécuter. Cet indicateur rend obligatoire la mise à jour avec la version nommée de votre application. Si vous publiez une version de votre produit avec une mise à jour corrigeant une rupture ou une vulnérabilité de sécurité critique, vous pouvez utiliser cet indicateur pour spécifier que cette mise à jour doit être installée et que l’utilisateur ne peut pas continuer à exécuter des versions antérieures.<br /><br /> `version` a la même sémantique que l’argument pour l’indicateur **-Version** .|
 |**-n,-Name**`nameString`|Déployer|Tous les types de fichiers.|Nom utilisé pour identifier l'application. ClickOnce utilise ce nom pour identifier l'application dans le menu **Démarrer** (si l'application est configurée pour s'installer) et dans les boîtes de dialogue Permission Elevation. **Remarque :**  Si vous mettez à jour un manifeste existant et que vous ne spécifiez pas de nom d’éditeur avec cette option, *Mage.exe* met à jour le manifeste avec le nom de l’Organisation défini sur l’ordinateur. Pour utiliser un nom différent, veillez à utiliser cette option et spécifiez le nom voulu pour l'éditeur.|
 |**-pwd, -Password** `passwd`||Tous les types de fichiers.|Mot de passe utilisé pour signer un manifeste avec un certificat numérique. Cette option doit être utilisée conjointement avec l’option **-CertFile** .|
-|**-p, Processor** `processorValue`|Msil|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Architecture de microprocesseur sur laquelle cette distribution s'exécutera. Cette valeur est obligatoire si vous préparez une ou plusieurs installations dont les assemblys ont été précompilés pour un microprocesseur spécifique. Les valeurs valides sont `msil`, `x86`, `ia64`et `amd64`. `msil` est le langage intermédiaire Microsoft, ce qui signifie que tous vos assemblys sont indépendants des plateformes et que le Common Language Runtime (CLR) les compile juste-à-temps quand votre application est exécutée pour la première fois.|
+|**-p, Processor** `processorValue`|Msil|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Architecture de microprocesseur sur laquelle cette distribution s'exécutera. Cette valeur est obligatoire si vous préparez une ou plusieurs installations dont les assemblys ont été précompilés pour un microprocesseur spécifique. Les valeurs valides sont `msil`, `x86`, `ia64` et `amd64`. `msil` est le langage intermédiaire Microsoft, ce qui signifie que tous vos assemblys sont indépendants des plateformes et que le Common Language Runtime (CLR) les compile juste-à-temps quand votre application est exécutée pour la première fois.|
 |**-pu,** **-ProviderURL** `url`||Manifestes de déploiement.|Spécifie l'URL vérifiée par ClickOnce pour les mises à jour d'application.|
 |**-pub, -Publisher** `publisherName`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|Ajoute le nom de l'éditeur à l'élément de description du manifeste de déploiement ou d'application. Quand il est utilisé sur un manifeste d’application, **-UseManifestForTrust** doit également être spécifié avec la valeur « true » ou « t » ; sinon, ce paramètre génère une erreur.|
 |**-s, -SupportURL**  `url`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|Spécifie le lien dans lequel s'affiche Ajout/Suppression de programmes pour l'application ClickOnce.|
-|**-ti, -TimestampUri** `uri`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|L'URL d'un service d'horodatage numérique. Horodater les manifestes vous évite d'avoir à signer de nouveau les manifestes si votre certificat numérique expire avant le déploiement de la version suivante de votre application. Pour plus d’informations, consultez [Configurer des racines de confiance et des certificats non autorisés](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265983(v=ws.11)).|
+|**-ti, -TimestampUri** `uri`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|L'URL d'un service d'horodatage numérique. Horodater les manifestes vous évite d'avoir à signer de nouveau les manifestes si votre certificat numérique expire avant le déploiement de la version suivante de votre application. Pour plus d’informations, consultez [Configurer des racines de confiance et des certificats non autorisés](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265983(v=ws.11)).|
 |**-t, -ToFile** `filePath`|-   New :<br />-   Déploiement : deploy.application<br />-   Application : application.exe.manifest<br />-   Update :<br />-   Fichier d'entrée.|Tous les types de fichiers.|Spécifie le chemin de sortie du fichier créé ou modifié.<br /><br /> Si **-ToFile** n’est pas fourni quand vous utilisez **-New**, la sortie est écrite dans le répertoire de travail actuel. Si **-ToFile** n’est pas fourni quand vous utilisez **-Update**, *Mage.exe* réécrit le fichier dans le fichier d’entrée.|
 |**-tr, -TrustLevel** `level`|Selon la zone dans laquelle réside l'URL de l'application.|Manifestes d'application.|Niveau de confiance à accorder à l'application sur les ordinateurs clients. Les valeurs possibles sont "Internet", "Intranet" et "FullTrust".|
-|**-um, -UseManifestForTrust** `willUseForTrust`|False|Manifestes d'application.|Spécifie si la signature numérique du manifeste d'application sera utilisée pour prendre des décisions d'approbation lorsque l'application s'exécute sur le client. Spécifier "true" ou "t" indique que le manifeste d'application sera utilisé pour les décisions d'approbation. Spécifier "false" ou "f" indique que la signature du manifeste de déploiement sera utilisée.|
+|**-um, -UseManifestForTrust** `willUseForTrust`|Faux|Manifestes d'application.|Spécifie si la signature numérique du manifeste d'application sera utilisée pour prendre des décisions d'approbation lorsque l'application s'exécute sur le client. Spécifier "true" ou "t" indique que le manifeste d'application sera utilisé pour les décisions d'approbation. Spécifier "false" ou "f" indique que la signature du manifeste de déploiement sera utilisée.|
 |**-v,-version**`versionNumber`|1.0.0.0|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Version du déploiement. L’argument doit être une chaîne de version valide au format «*N.N.N.N*», où «*N*» est un entier 32 bits non signé.|
 |**-wpf, -WPFBrowserApp**  `isWPFApp`|false|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Utilisez cet indicateur uniquement si l'application est une application Windows Presentation Foundation (WPF) qui sera hébergée dans Internet Explorer et n'est pas un exécutable autonome. Les valeurs valides sont "true" ou "t", et "false" ou "f".<br /><br /> Pour les manifestes d'application, insère l'attribut `hostInBrowser` sous l'élément `entryPoint` du manifeste d'application.<br /><br /> Pour les manifestes de déploiement, affecte la valeur false à l'attribut `install` sur l'élément `deployment` et enregistre le manifeste de déploiement avec une extension .xbap. La spécification de cet argument avec l’argument **-Install** génère une erreur car une application hébergée par le navigateur ne peut pas être une application hors ligne installée.|
 
@@ -118,27 +118,27 @@ Les tableaux suivants contiennent ces fonctionnalités et restrictions :
 
 |Version du manifeste|Opération|Mage v2.0|Mage v4.0|
 |----------------------|---------------|---------------|---------------|
-|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Ouverte|OK|OK|
-||Fermer|OK|OK|
-||Enregistrer|OK|OK|
-||Nouvelle signature|OK|OK|
-||Nouveau|OK|Non prise en charge|
-||Mise à jour (voir ci-dessous)|OK|OK|
-|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Ouverte|OK|OK|
-||Fermer|OK|OK|
-||Enregistrer|OK|OK|
-||Nouvelle signature|OK|OK|
-||Nouveau|Non prise en charge|OK|
-||Mise à jour (voir ci-dessous)|Non prise en charge|OK|
+|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Ouvrir|Ok|Ok|
+||Fermer|Ok|Ok|
+||Enregistrer|Ok|Ok|
+||Nouvelle signature|Ok|Ok|
+||Nouveau|Ok|Non pris en charge|
+||Mise à jour (voir ci-dessous)|Ok|Ok|
+|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Ouvrir|Ok|Ok|
+||Fermer|Ok|Ok|
+||Enregistrer|Ok|Ok|
+||Nouvelle signature|Ok|Ok|
+||Nouveau|Non pris en charge|Ok|
+||Mise à jour (voir ci-dessous)|Non pris en charge|Ok|
 
 |Version du manifeste|Détails de l'opération de mise à jour|Mage v2.0|Mage v4.0|
 |----------------------|------------------------------|---------------|---------------|
-|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Modifier un assembly|OK|OK|
-||Ajouter un assembly|OK|OK|
-||Supprimer un assembly|OK|OK|
-|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Modifier un assembly|Non prise en charge|OK|
-||Ajouter un assembly|Non prise en charge|OK|
-||Supprimer un assembly|Non prise en charge|OK|
+|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Modifier un assembly|Ok|Ok|
+||Ajouter un assembly|Ok|Ok|
+||Supprimer un assembly|Ok|Ok|
+|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Modifier un assembly|Non pris en charge|Ok|
+||Ajouter un assembly|Non pris en charge|Ok|
+||Supprimer un assembly|Non pris en charge|Ok|
 
  Mage.exe crée de nouveaux manifestes qui ciblent le profil client .NET Framework 4. Les applications ClickOnce qui ciblent le profil client .NET Framework 4 peuvent s’exécuter à la fois sur le profil client .NET Framework 4 et sur la version complète du .NET Framework 4. Si votre application cible la version complète du .NET Framework 4 et ne peut pas s’exécuter sur le .NET Framework 4 Client Profile, supprimez l’élément client à `<framework>` l’aide d’un éditeur de texte et signez à nouveau le manifeste.
 

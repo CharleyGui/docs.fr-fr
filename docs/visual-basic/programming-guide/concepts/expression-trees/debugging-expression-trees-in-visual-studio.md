@@ -2,23 +2,23 @@
 title: Débogage d’arborescences d’expressions dans Visual Studio
 ms.date: 07/20/2015
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-ms.openlocfilehash: 3811958353d1d55ce74da41c6a45dbe730cc9790
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a256ef852a446a189451632c87598b04c374f884
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84375432"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551117"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Débogage d’arborescences d’expressions dans Visual Studio (Visual Basic)
 Vous pouvez analyser la structure et le contenu d’arborescences d’expression quand vous déboguez vos applications. Pour obtenir un rapide aperçu de l’arborescence d’expression, vous pouvez utiliser la propriété `DebugView`, qui représente des arborescences d’expression [en utilisant une syntaxe spéciale](debugview-syntax.md). (Notez que `DebugView` est disponible uniquement en mode débogage.)  
 
 ![Capture d’écran de l’DebugView de l’arborescence de l’expression.](media/debugging-expression-trees-in-visual-studio/debugview-visual-basic.png)
 
-Étant donné que `DebugView` est une chaîne, vous pouvez utiliser le [visualiseur de texte intégré](https://docs.microsoft.com/visualstudio/debugger/view-strings-visualizer#open-a-string-visualizer) pour l’afficher sur plusieurs lignes, en sélectionnant **Visualiseur de texte** à partir de l’icône de loupe située à côté de l’étiquette `DebugView`.
+Étant donné que `DebugView` est une chaîne, vous pouvez utiliser le [visualiseur de texte intégré](/visualstudio/debugger/view-strings-visualizer#open-a-string-visualizer) pour l’afficher sur plusieurs lignes, en sélectionnant **Visualiseur de texte** à partir de l’icône de loupe située à côté de l’étiquette `DebugView`.
 
  ![Capture d’écran du visualiseur de texte appliquée aux résultats de DebugView.](media/debugging-expression-trees-in-visual-studio/string-visualizer-vb.png)
 
-Vous pouvez également installer et utiliser [un visualiseur personnalisé](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data) pour les arborescences d’expression, notamment :
+Vous pouvez également installer et utiliser [un visualiseur personnalisé](/visualstudio/debugger/create-custom-visualizers-of-data) pour les arborescences d’expression, notamment :
 
 - Les [expressions lisibles](https://github.com/agileobjects/ReadableExpressions) ([licence MIT](https://github.com/agileobjects/ReadableExpressions/blob/master/LICENSE.md), disponible au [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vs-publisher-1232914.ReadableExpressionsVisualizers)), affichent l’arborescence de l’expression en tant que code C# thématique, avec diverses options de rendu :
 
@@ -43,4 +43,4 @@ Vous pouvez également installer et utiliser [un visualiseur personnalisé](http
 - [Arborescences d’expressions (Visual Basic)](index.md)
 - [Débogage dans Visual Studio](/visualstudio/debugger/debugger-feature-tour)
 - [Créer des visualiseurs personnalisés](/visualstudio/debugger/create-custom-visualizers-of-data)
-- [`DebugView`stockéesyntaxe](debugview-syntax.md)
+- [`DebugView` stockéesyntaxe](debugview-syntax.md)

@@ -2,12 +2,12 @@
 title: Prise en main de .NET Native
 ms.date: 03/30/2017
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
-ms.openlocfilehash: 1c0c25ddf379c31a9c7b4437d36e7e0cbf1bb2f3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b6cd4acaa377de7fc172fb12c9fb9ff1b832f88a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128408"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551208"
 ---
 # <a name="getting-started-with-net-native"></a>Prise en main de .NET Native
 
@@ -58,7 +58,7 @@ Il existe deux catégories de sérialiseurs, et les deux peuvent nécessiter des
 
 - Sérialiseurs non basés sur la réflexion. Les sérialiseurs qui se trouvent dans la bibliothèque de classes .NET Framework, tels que les classes <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>, and <xref:System.Xml.Serialization.XmlSerializer> , ne reposent pas sur la réflexion. Toutefois, ils nécessitent que du code soit généré en fonction de l'objet à sérialiser ou à désérialiser.  Pour plus d’informations, consultez la section « Sérialiseurs Microsoft » dans [Serialization and Metadata](serialization-and-metadata.md).
 
-- Sérialiseurs tiers. Les bibliothèques de sérialisation tierces, dont la plus courante est le sérialiseur JSON Newtonsoft, sont généralement basées sur la réflexion et nécessitent des entrées dans le \* fichier. rd. xml pour prendre en charge la sérialisation et la désérialisation d’objets. Pour plus d’informations, consultez la section « Sérialiseurs tiers » dans [Serialization and Metadata](serialization-and-metadata.md).
+- Sérialiseurs tiers. Les bibliothèques de sérialisation tierces, dont la plus courante est le sérialiseur JSON Newtonsoft, sont généralement basées sur la réflexion et nécessitent des entrées dans le \* fichier.rd.xml pour prendre en charge la sérialisation et la désérialisation d’objets. Pour plus d’informations, consultez la section « Sérialiseurs tiers » dans [Serialization and Metadata](serialization-and-metadata.md).
 
 **Méthodes basées sur la réflexion**
 
@@ -79,7 +79,7 @@ Pour plus d'informations, consultez [APIs That Rely on Reflection](apis-that-rel
 
 ## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a>Étape 3 : déployer et tester les versions de mise en production de votre application
 
-Une fois que vous avez mis à jour le fichier de directives runtime, vous pouvez régénérer et déployer les versions de mise en production de votre application. .NET Native fichiers binaires sont placés dans le sous-répertoire ILC. out du répertoire spécifié dans la zone de texte **chemin de sortie** de la génération de la boîte de dialogue **Propriétés** du projet, onglet **compiler** . les fichiers binaires qui ne figurent pas dans ce dossier n’ont pas été compilés avec .net native. Testez votre application minutieusement et testez tous les scénarios, y compris les scénarios d’erreur, sur chacune de ses plateformes cibles.
+Une fois que vous avez mis à jour le fichier de directives runtime, vous pouvez régénérer et déployer les versions de mise en production de votre application. .NET Native fichiers binaires sont placés dans le sous-répertoire ILC. out du répertoire spécifié dans la zone de texte **chemin de sortie** de la génération de la boîte de dialogue **Propriétés** du projet, onglet **compiler** . Les fichiers binaires qui ne figurent pas dans ce dossier n’ont pas été compilés avec .NET Native. Testez votre application minutieusement et testez tous les scénarios, y compris les scénarios d’erreur, sur chacune de ses plateformes cibles.
 
 Si votre application ne fonctionne pas correctement (en particulier dans les cas où elle lève une exception [MissingMetadataException](missingmetadataexception-class-net-native.md) ou [MissingInteropDataException](missinginteropdataexception-class-net-native.md) au moment de l’exécution), suivez les instructions de la section suivante, [Étape 4 : résoudre manuellement les métadonnées manquantes](#Step4). L'activation des exceptions de première chance peut vous aider à trouver ces bogues.
 
@@ -124,7 +124,7 @@ Pour obtenir des exemples spécifiques de gestion des exceptions et d'autres pro
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
-- [Installation et configuration de .NET Native](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
+- [Installation et configuration de .NET Native](/previous-versions/dn600164(v=vs.110))
 - [Compilation et .NET natif](net-native-and-compilation.md)
 - [Réflexion et .NET Native](reflection-and-net-native.md)
 - [API qui s'appuient sur la réflexion](apis-that-rely-on-reflection.md)

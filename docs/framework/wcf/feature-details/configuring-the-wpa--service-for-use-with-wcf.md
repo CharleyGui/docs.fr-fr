@@ -2,12 +2,12 @@
 title: Configuration du service d'activation de processus de Windows pour son utilisation dans Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-ms.openlocfilehash: 06d3a7bd798913b06d342ac09d12e736fc436b3c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7dccfea990afff1d2aacd5e9714472e733684c33
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597499"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556601"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Configuration du service d'activation de processus de Windows pour son utilisation dans Windows Communication Foundation
 Cette rubrique décrit les étapes requises pour configurer le service d’activation des processus Windows (également appelé WAS) dans Windows Vista pour héberger des services Windows Communication Foundation (WCF) qui ne communiquent pas sur des protocoles réseau HTTP. Les sections suivantes définissent les étapes pour cette configuration :  
@@ -23,7 +23,7 @@ Cette rubrique décrit les étapes requises pour configurer le service d’activ
 ## <a name="configuring-a-site-with-non-http-bindings"></a>Configuration d’un site avec des liaisons non HTTP  
  Pour utiliser une liaison non HTTP avec le service WAS, la liaison de site doit être ajoutée à la configuration WAS. Le magasin de configurations pour le service WAS est le fichier applicationHost.config situé dans le répertoire %windir%\system32\inetsrv\config. Ce magasin de configurations est partagé à la fois par le service WAS et le service IIS 7.0.  
   
- applicationHost.config est un fichier texte XML qui peut être ouvert avec un éditeur de texte standard (tel que le Bloc-notes). Toutefois, l’outil de configuration de ligne de commande IIS 7,0 (Appcmd. exe) est la meilleure façon d’ajouter des liaisons de site non-HTTP.  
+ applicationHost.config est un fichier texte XML qui peut être ouvert avec un éditeur de texte standard (tel que le Bloc-notes). Toutefois, l’outil de configuration de ligne de commande IIS 7,0 (appcmd.exe) est la méthode recommandée pour ajouter des liaisons de site non-HTTP.  
   
  La commande suivante ajoute une liaison de site net.tcp au site Web par défaut à l'aide de appcmd.exe (cette commande est entrée comme une ligne unique).  
   
@@ -52,7 +52,7 @@ appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInf
 appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp  
 ```  
   
- Vous pouvez également définir la liste des Protocoles activés dans l' \<applicationDefaults> élément de la configuration XML du site, stocké dans ApplicationHost. config.  
+ La liste des Protocoles activés peut également être définie dans l' \<applicationDefaults> élément de la configuration XML du site stocké dans ApplicationHost.config.  
   
  Le code XML suivant issu du fichier applicationHost.config illustre un site lié à la fois à des protocoles HTTP et non HTTP. La configuration supplémentaire requise pour la prise en charge de protocoles non HTTP est appelée avec des commentaires.  
   
@@ -99,4 +99,4 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
 ## <a name="see-also"></a>Voir aussi
 
 - [Hébergement dans le service d'activation de processus de Windows (WAS, Windows Process Activation Service)](hosting-in-windows-process-activation-service.md)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

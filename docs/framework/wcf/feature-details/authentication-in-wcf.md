@@ -6,21 +6,21 @@ helpviewer_keywords:
 - authentication [WCF]
 - security [WCF], authentication
 ms.assetid: 9254d873-843d-4c6e-bea4-8184ac3e44f4
-ms.openlocfilehash: 4c3348cfb84b8571dc1f24b774ffcd691aaa5001
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 414353b360992abea69d47de9efb22c3c77f4bf6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247518"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558275"
 ---
 # <a name="authentication-in-wcf"></a>Authentification dans WCF
 Les rubriques suivantes présentent un certain nombre de mécanismes différents dans Windows Communication Foundation (WCF) qui assurent l’authentification, par exemple l’authentification Windows, les certificats X. 509 et le nom d’utilisateur et les mots de passe.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Comment : utiliser le fournisseur d'appartenances ASP.NET](how-to-use-the-aspnet-membership-provider.md)  
+ [Procédure : utiliser le fournisseur d’appartenances ASP.NET](how-to-use-the-aspnet-membership-provider.md)  
  Les fonctionnalités ASP.NET incluent une appartenance et un fournisseur de rôles, une base de données pour stocker des paires nom d’utilisateur/mot de passe pour l’authentification et des rôles d’utilisateur pour l’autorisation. Cette rubrique explique comment les services WCF peuvent utiliser la même base de données pour authentifier et autoriser des utilisateurs.  
   
- [Comment : utiliser un validateur de nom d'utilisateur et de mot de passe personnalisé](how-to-use-a-custom-user-name-and-password-validator.md)  
+ [Procédure : utiliser un validateur de nom d’utilisateur et mot de passe personnalisé](how-to-use-a-custom-user-name-and-password-validator.md)  
  Montre comment intégrer un validateur personnalisé de nom d'utilisateur/mot de passe.  
   
  [Identité du service et authentification](service-identity-and-authentication.md)  
@@ -41,4 +41,4 @@ Les rubriques suivantes présentent un certain nombre de mécanismes différents
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de la sécurité](security-overview.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

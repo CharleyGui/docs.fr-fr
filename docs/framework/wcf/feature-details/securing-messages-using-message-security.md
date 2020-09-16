@@ -2,12 +2,12 @@
 title: Sécurisation des messages à l'aide de la sécurité de message
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: 70c645101033c31da01d79f624ab03ce328dd3a6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b5f7679d5e5ec82e63b588cebd90ce873c055088
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589979"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558301"
 ---
 # <a name="securing-messages-using-message-security"></a>Sécurisation des messages à l'aide de la sécurité de message
 Cette section traite de la sécurité des messages WCF lors de l’utilisation de <xref:System.ServiceModel.NetMsmqBinding> .  
@@ -41,7 +41,7 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
   
  Étant donné la nature déconnectée des files d'attente, le client et le service peuvent ne pas être en ligne au même moment. Par conséquent, le client et le service doivent échanger des certificats hors bande. En particulier, le client, du fait qu'il détient le certificat du service (lequel peut être chaîné à une autorité de certification) dans son magasin approuvé, doit croire qu'il communique avec le service correct. Pour authentifier le client, le service utilise le certificat X.509 joint au message pour le mettre en correspondance avec le certificat dans son magasin afin de vérifier l'authenticité du client. De nouveau, le certificat doit être chaîné à une autorité de certification.  
   
- Sur un ordinateur exécutant Windows, les certificats sont conservés dans plusieurs types de magasins. Pour plus d’informations sur les différents magasins, consultez [magasins de certificats](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
+ Sur un ordinateur exécutant Windows, les certificats sont conservés dans plusieurs types de magasins. Pour plus d’informations sur les différents magasins, consultez [magasins de certificats](/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
 ### <a name="windows"></a>Windows  
  Le type d'informations d'identification de message Windows utilise le protocole Kerberos.  
@@ -68,4 +68,4 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
 - [Sécurisation des messages à l'aide de la sécurité de transport](securing-messages-using-transport-security.md)
 - [Message Security over Message Queuing](../samples/message-security-over-message-queuing.md)
 - [Concepts de sécurité](security-concepts.md)
-- [Securing Services and Clients](securing-services-and-clients.md)
+- [Sécurisation des services et des clients](securing-services-and-clients.md)

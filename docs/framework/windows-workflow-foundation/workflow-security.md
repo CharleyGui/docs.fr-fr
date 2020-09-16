@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-ms.openlocfilehash: 2a9b26f8da7616480f69a6c4580b8d351833c9ee
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: d2d8556b1ed2ac0a2b030a88d6bfc0ad48ed6f5c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646314"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557513"
 ---
 # <a name="workflow-security"></a>Sécurité de workflow
 Windows Workflow Foundation (WF) est intégré à plusieurs technologies différentes, telles que Microsoft SQL Server et Windows Communication Foundation (WCF). L'interaction avec ces technologies peut poser des problèmes de sécurité dans votre workflow si elle est effectuée de façon incorrecte.
@@ -38,14 +38,14 @@ Windows Workflow Foundation (WF) est intégré à plusieurs technologies différ
 
 ## <a name="considerations-for-workflowservicehost"></a>Considérations sur WorkflowServiceHost
 
-- Les paramètres de la Windows Communication Foundation (WCF) utilisés dans les flux de travail doivent être sécurisés. Pour plus d’informations, voir [WCF Security Overview](../wcf/feature-details/security-overview.md).
+- Les points de terminaison Windows Communication Foundation (WCF) utilisés dans les workflows doivent être sécurisés. Pour plus d’informations, consultez [vue d’ensemble de la sécurité WCF](../wcf/feature-details/security-overview.md).
 
-- L'autorisation au niveau hôte peut être implémentée à l'aide de <xref:System.ServiceModel.ServiceAuthorizationManager>. Voir [comment : Créer un gestionnaire d’autorisation personnalisée pour un service](../wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md) pour plus de détails.
+- L'autorisation au niveau hôte peut être implémentée à l'aide de <xref:System.ServiceModel.ServiceAuthorizationManager>. Pour plus d’informations, consultez [Comment : créer un gestionnaire d’autorisations personnalisé pour un service](../wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md) .
 
 - Le ServiceSecurityContext pour le message entrant est également disponible dans le workflow en accédant à OperationContext.
 
 ## <a name="wf-security-pack-ctp"></a>WF Security Pack CTP
- Le Microsoft WF Security Pack aperçu de la technologie communautaire (CTP) 1 est un ensemble d’activités et leur mise en œuvre basée sur [Windows Workflow Foundation](index.md) dans [.NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) (WF 4) et [Windows Identity Foundation (WIF)](https://docs.microsoft.com/previous-versions/dotnet/framework/security/index). Microsoft WF Security Pack CTP 1 contient les deux activités et leurs concepteurs qui expliquent comment vérifier facilement plusieurs scénarios liés à la sécurité en utilisant un workflow, notamment :
+ Microsoft WF Security Pack Community Technology Preview (CTP) 1 est un ensemble d’activités et de leur implémentation basée sur [Windows Workflow Foundation](index.md) dans [.NET Framework 4](/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) (WF 4) et [Windows Identity Foundation (WIF)](/previous-versions/dotnet/framework/security/index). Microsoft WF Security Pack CTP 1 contient les deux activités et leurs concepteurs qui expliquent comment vérifier facilement plusieurs scénarios liés à la sécurité en utilisant un workflow, notamment :
 
 1. Emprunter l'identité d'un client dans le workflow
 
@@ -55,4 +55,4 @@ Windows Workflow Foundation (WF) est intégré à plusieurs technologies différ
 
 4. Transfert d'un jeton de sécurité client vers un service principal (délégation basée sur les revendications) à l'aide de WS-Trust ActAs
 
-Pour plus d’informations et pour télécharger le WF Security Pack CTP, voir: [WF Security Pack CTP](https://archive.codeplex.com/?p=wf)
+Pour plus d’informations et pour télécharger le Pack de sécurité WF CTP, consultez : [WF Security Pack CTP](https://archive.codeplex.com/?p=wf)

@@ -6,12 +6,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography, cross-platform
 - encryption, cross-platform
-ms.openlocfilehash: 61fd49e53761deac278b770003eb97241b6c2be9
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 7269b32e509039fdd767446bd6e10202b089c094
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557149"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550017"
 ---
 # <a name="cross-platform-cryptography-in-net-core-and-net-5"></a>Chiffrement multiplateforme dans .NET Core et .NET 5
 
@@ -109,7 +109,7 @@ Les bibliothèques du système d’exploitation sont utilisées pour le chiffrem
 | Signature PKCS1 (SHA-2)               | ✔️           | ✔️              | ✔️   | ⚠️\*           |
 | PSS                                   | ✔️           | ✔️              | ✔️   | ❌             |
 
-\*Windows CryptoAPI (CAPI) est en charge de la signature PKCS1 avec un algorithme SHA-2. Toutefois, l’objet RSA individuel peut être chargé dans un fournisseur de services de chiffrement (CSP) qui ne le prend pas en charge.
+\* Windows CryptoAPI (CAPI) est en charge de la signature PKCS1 avec un algorithme SHA-2. Toutefois, l’objet RSA individuel peut être chargé dans un fournisseur de services de chiffrement (CSP) qui ne le prend pas en charge.
 
 #### <a name="rsa-on-windows"></a>RSA sur Windows
 
@@ -151,7 +151,7 @@ Les courbes de clé ECDSA sont définies par les bibliothèques du système d’
 
 <sup>1</sup> les distributions Linux ne prennent pas toutes en charge les mêmes courbes nommées.
 
-<sup>2</sup> la prise en charge des courbes nommées a été ajoutée au CNG Windows dans Windows 10. Pour plus d’informations, consultez [CNG named](https://msdn.microsoft.com/library/windows/desktop/mt632245(v=vs.85).aspx)Curves. Les courbes nommées ne sont pas disponibles dans les versions antérieures de Windows, à l’exception de trois courbes dans Windows 7.
+<sup>2</sup> la prise en charge des courbes nommées a été ajoutée au CNG Windows dans Windows 10. Pour plus d’informations, consultez [CNG named](/windows/win32/seccng/cng-named-elliptic-curves)Curves. Les courbes nommées ne sont pas disponibles dans les versions antérieures de Windows, à l’exception de trois courbes dans Windows 7.
 
 <sup>3</sup> l’exportation avec des paramètres de courbe explicite requiert la prise en charge de la bibliothèque de système d’exploitation, qui n’est pas disponible sur MacOS ou les versions antérieures de Windows.
 
@@ -164,7 +164,7 @@ Les courbes de clé ECDSA sont définies par les bibliothèques du système d’
 | <xref:System.Security.Cryptography.ECDsaCng>     | ✔️     | ❌    | ❌    |
 | <xref:System.Security.Cryptography.ECDsaOpenSsl> | ❌     | ✔️    | ⚠️\*  |
 
-\*Sur macOS, <xref:System.Security.Cryptography.ECDsaOpenSsl> fonctionne si OpenSSL est installé dans le système et qu’un libénigmatiqueo dylib approprié peut être trouvé via le chargement de la bibliothèque dynamique. Si une bibliothèque appropriée est introuvable, les exceptions sont levées.
+\* Sur macOS, <xref:System.Security.Cryptography.ECDsaOpenSsl> fonctionne si OpenSSL est installé dans le système et qu’un libénigmatiqueo dylib approprié peut être trouvé via le chargement de la bibliothèque dynamique. Si une bibliothèque appropriée est introuvable, les exceptions sont levées.
 
 ### <a name="ecdh"></a>ECDH
 
@@ -194,7 +194,7 @@ Les courbes de clé ECDH sont définies par les bibliothèques du système d’e
 
 <sup>1</sup> les distributions Linux ne prennent pas toutes en charge les mêmes courbes nommées.
 
-<sup>2</sup> la prise en charge des courbes nommées a été ajoutée au CNG Windows dans Windows 10. Pour plus d’informations, consultez [CNG named](https://msdn.microsoft.com/library/windows/desktop/mt632245(v=vs.85).aspx)Curves. Les courbes nommées ne sont pas disponibles dans les versions antérieures de Windows, à l’exception de trois courbes dans Windows 7.
+<sup>2</sup> la prise en charge des courbes nommées a été ajoutée au CNG Windows dans Windows 10. Pour plus d’informations, consultez [CNG named](/windows/win32/seccng/cng-named-elliptic-curves)Curves. Les courbes nommées ne sont pas disponibles dans les versions antérieures de Windows, à l’exception de trois courbes dans Windows 7.
 
 <sup>3</sup> l’exportation avec des paramètres de courbe explicite requiert la prise en charge de la bibliothèque de système d’exploitation, qui n’est pas disponible sur MacOS ou les versions antérieures de Windows.
 
@@ -207,7 +207,7 @@ Les courbes de clé ECDH sont définies par les bibliothèques du système d’e
 | <xref:System.Security.Cryptography.ECDiffieHellmanCng>     | ✔️     | ❌    | ❌   |
 | <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> | ❌     | ✔️    | ⚠️\* |
 
-\*Sur macOS, <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> fonctionne si OpenSSL est installé et qu’une libénigmatiqueo dylib appropriée peut être trouvée via le chargement de la bibliothèque dynamique. Si une bibliothèque appropriée est introuvable, les exceptions sont levées.
+\* Sur macOS, <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> fonctionne si OpenSSL est installé et qu’une libénigmatiqueo dylib appropriée peut être trouvée via le chargement de la bibliothèque dynamique. Si une bibliothèque appropriée est introuvable, les exceptions sont levées.
 
 ### <a name="dsa"></a>DSA
 
@@ -222,7 +222,7 @@ La génération de clés DSA (Digital Signature Algorithm) est effectuée par le
 | FIPS 186-2                    | ✔️         | ✔️    | ✔️            | ✔️           |
 | FIPS 186-3 (signatures SHA-2) | ✔️         | ✔️    | ❌            | ❌            |
 
-\*macOS charge des clés DSA supérieures à 1024 bits, mais le comportement de ces clés n’est pas défini. Ils ne se comportent pas d’après la norme FIPS 186-3.
+\* macOS charge des clés DSA supérieures à 1024 bits, mais le comportement de ces clés n’est pas défini. Ils ne se comportent pas d’après la norme FIPS 186-3.
 
 #### <a name="dsa-on-windows"></a>DSA sur Windows
 
@@ -261,7 +261,7 @@ La majeure partie de la prise en charge des certificats X. 509 dans .NET provien
 | Plusieurs certificats, une clé privée       | ✔️     | ✔️    | ✔️   |
 | Plusieurs certificats, plusieurs clés privées | ✔️     | ⚠️\*  | ✔️   |
 
-\*Disponible dans les versions préliminaires de .NET 5.
+\* Disponible dans les versions préliminaires de .NET 5.
 
 ### <a name="write-a-pkcs12pfx"></a>Écrire un PKCS12/PFX
 
@@ -275,7 +275,7 @@ La majeure partie de la prise en charge des certificats X. 509 dans .NET provien
 | Plusieurs certificats, plusieurs clés privées | ✔️     | ⚠️\*  | ✔️   |
 | Chargement éphémère                            | ✔️     | ✔️    | ⚠️\* |
 
-\*Disponible dans les versions préliminaires de .NET 5.
+\* Disponible dans les versions préliminaires de .NET 5.
 
 macOS ne peut pas charger les clés privées de certificat sans objet de trousseau, qui requiert l’écriture sur le disque. Les trousseau sont créés automatiquement pour le chargement PFX et sont supprimés lorsqu’ils ne sont plus utilisés. Étant donné que l' <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> option signifie que la clé privée ne doit pas être écrite sur le disque, l’assertion de cet indicateur sur MacOS produit un <xref:System.PlatformNotSupportedException> .
 

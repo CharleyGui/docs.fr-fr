@@ -2,12 +2,12 @@
 title: Scénarios non pris en charge
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: b643e6df8a877860ce36fc6ee34c4e4ca08ec748
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: a3ee91e5232926b4ea7db80db35d9a309ca8105b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921159"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557812"
 ---
 # <a name="unsupported-scenarios"></a>Scénarios non pris en charge
 
@@ -20,26 +20,26 @@ Pour différentes raisons, Windows Communication Foundation (WCF) ne prend pas e
 
 ### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Windows XP et le cookie de jeton de contexte sécurisé activé
 
-WCF ne prend pas en charge l’emprunt d’identité et une <xref:System.InvalidOperationException> est levée lorsque les conditions suivantes sont réunies :
+WCF ne prend pas en charge l’emprunt d’identité et une <xref:System.InvalidOperationException> exception est levée lorsque les conditions suivantes sont réunies :
 
 - Le système d’exploitation est Windows XP.
 
 - Le mode d'authentification aboutit à un identité Windows.
 
-- La propriété <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> de l'objet <xref:System.ServiceModel.OperationBehaviorAttribute> a la valeur <xref:System.ServiceModel.ImpersonationOption.Required>.
+- La propriété <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> du <xref:System.ServiceModel.OperationBehaviorAttribute> a la valeur <xref:System.ServiceModel.ImpersonationOption.Required>.
 
 - Un jeton de contexte de sécurité basé sur l'état est créé (cette création est désactivée par défaut).
 
- Ce jeton peut uniquement être crée à l’aide d’une liaison personnalisée. Pour plus d’informations, consultez [Comment : créer un jeton de contexte de sécurité pour une session sécurisée](how-to-create-a-security-context-token-for-a-secure-session.md).) Dans le code, le jeton est activé en créant un élément de liaison de sécurité (<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> ou <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>) à l’aide de la <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> ou de la méthode <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> et en définissant le paramètre `requireCancellation` sur `false`. Ce paramètre concerne la mise en cache du jeton. L'affectation de la valeur `false` à ce paramètre permet d'activer la fonctionnalité de jeton basé sur l'état.
+ Ce jeton peut uniquement être crée à l’aide d’une liaison personnalisée. Pour plus d’informations, consultez [Comment : créer un jeton de contexte de sécurité pour une session sécurisée](how-to-create-a-security-context-token-for-a-secure-session.md).) Dans le code, le jeton est activé en créant un élément de liaison de sécurité ( <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> ou <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> ) à l’aide de la <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> méthode ou et en affectant au paramètre la valeur `requireCancellation` `false` . Ce paramètre concerne la mise en cache du jeton. L'affectation de la valeur `false` à ce paramètre permet d'activer la fonctionnalité de jeton basé sur l'état.
 
- Sinon, dans la configuration, le jeton est activé en créant un <`customBinding`>, puis en ajoutant un <`security`élément > et en affectant à l’attribut `authenticationMode` la valeur SecureConversation et à l’attribut `requireSecurityContextCancellation` la valeur `true`.
+ Sinon, dans la configuration, le jeton est activé en créant un <`customBinding`>, puis en ajoutant un `security` élément <> et en affectant à l’attribut la valeur `authenticationMode` SecureConversation et à l’attribut la valeur `requireSecurityContextCancellation` `true` .
 
 > [!NOTE]
-> Les spécifications précédentes sont spécifiques. Par exemple, l’élément <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> crée un élément de liaison qui aboutit à une identité Windows, mais cet élément ne définit pas de jeton de contexte de sécurité avec état. Par conséquent, vous pouvez l’utiliser avec l’option `Required` sur Windows XP.
+> Les spécifications précédentes sont spécifiques. Par exemple, l’élément <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> crée un élément de liaison qui aboutit à une identité Windows, mais cet élément ne définit pas de jeton de contexte de sécurité avec état. Par conséquent, vous pouvez l’utiliser avec l' `Required` option sur Windows XP.
 
 ### <a name="possible-aspnet-conflict"></a>Conflit ASP.NET possible
 
-WCF et ASP.NET peuvent activer ou désactiver l’emprunt d’identité. Quand ASP.NET héberge une application WCF, il peut y avoir un conflit entre les paramètres de configuration WCF et ASP.NET. En cas de conflit, le paramètre WCF est prioritaire, sauf si la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> est définie sur <xref:System.ServiceModel.ImpersonationOption.NotAllowed>, auquel cas le paramètre d’emprunt d’identité ASP.NET est prioritaire.
+WCF et ASP.NET peuvent activer ou désactiver l’emprunt d’identité. Quand ASP.NET héberge une application WCF, il peut y avoir un conflit entre les paramètres de configuration WCF et ASP.NET. En cas de conflit, le paramètre WCF est prioritaire, sauf si la <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> propriété a la valeur <xref:System.ServiceModel.ImpersonationOption.NotAllowed> , auquel cas le paramètre d’emprunt d’identité ASP.net est prioritaire.
 
 ### <a name="assembly-loads-may-fail-under-impersonation"></a>Les chargements d’assembly peuvent échouer en cas d’emprunt d’identité
 
@@ -80,15 +80,15 @@ Le chiffrement AES conforme aux normes FIPS ne fonctionne pas dans les rappels d
 
 - Exécutez `p/invoke` de `CertGetCertificateContextProperty` et inspectez `dwProvType` sur la `CertGetCertificateContextProperty` retournée.
 
-- Utilisez la commande `certutil` à partir de la ligne de commande pour interroger des certificats. Pour plus d’informations, consultez [tâches certutil pour le dépannage des certificats](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772619(v=ws.10)).
+- Utilisez la  `certutil` commande à partir de la ligne de commande pour interroger des certificats. Pour plus d’informations, consultez [tâches certutil pour le dépannage des certificats](/previous-versions/orphan-topics/ws.10/cc772619(v=ws.10)).
 
 ## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>La sécurité des messages échoue si l’emprunt d’identité ASP.NET et la compatibilité ASP.NET sont requis
 
 WCF ne prend pas en charge la combinaison de paramètres suivante car ils peuvent empêcher l’authentification du client :
 
-- L’emprunt d’identité ASP.NET est activé. Cette opération s’effectue dans le fichier Web. config en affectant à l’attribut `impersonate` de la <`identity`élément > la valeur `true`.
+- L’emprunt d’identité ASP.NET est activé. Pour ce faire, dans le fichier Web.config, affectez `impersonate` à l’attribut de l' `identity` élément> <`true` .
 
-- Le mode de compatibilité ASP.NET est activé en affectant à l’attribut `aspNetCompatibilityEnabled` de l' [\<serviceHostingEnvironment](../../configure-apps/file-schema/wcf/servicehostingenvironment.md) la valeur `true`.
+- Le mode de compatibilité ASP.NET est activé en affectant `aspNetCompatibilityEnabled` à l’attribut de la [\<serviceHostingEnvironment>](../../configure-apps/file-schema/wcf/servicehostingenvironment.md) valeur `true` .
 
 - Le mode de sécurité de niveau message est utilisé.
 
@@ -106,11 +106,11 @@ WCF requiert exactement un document WSDL pour chaque nœud de la chaîne d’app
 
  Un service comportant les trois adresses de point de terminaison suivantes est un exemple illustrant cette situation :
 
-- `http://localhost/CalculatorService/service` (service)
+- `http://localhost/CalculatorService/service` (le service)
 
 - `http://localhost/CalculatorService/issue_ticket` (STS)
 
-- `http://localhost/CalculatorService/mex` (point de terminaison des métadonnées)
+- `http://localhost/CalculatorService/mex` (le point de terminaison de métadonnées)
 
  Ce scénario lève une exception.
 
@@ -124,9 +124,9 @@ WCF perd la trace des attributs sur un élément `<wst:Claims>` dans un modèle 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Considérations relatives à la sécurité](security-considerations-in-wcf.md)
+- [Security Considerations](security-considerations-in-wcf.md)
 - [Divulgation d’informations](information-disclosure.md)
-- [Élévation de privilèges](elevation-of-privilege.md)
+- [Élévation de privilège](elevation-of-privilege.md)
 - [Déni de service](denial-of-service.md)
 - [Falsification](tampering.md)
 - [Attaques par relecture](replay-attacks.md)

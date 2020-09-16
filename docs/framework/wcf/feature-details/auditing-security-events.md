@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-ms.openlocfilehash: b130ed57ba086535122c8c8795c42863348870d0
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5ab10bcc58166d5a38768f988fb18f23088256cc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597655"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558288"
 ---
 # <a name="auditing-security-events"></a>Audit des événements de sécurité
 Les applications créées avec Windows Communication Foundation (WCF) peuvent consigner les événements de sécurité (réussite, échec, ou les deux) avec la fonctionnalité d’audit. Les événements sont écrits dans le journal des événements système Windows et peuvent être examinés à l'aide de l'Observateur d'événements.  
@@ -93,7 +93,7 @@ Les applications créées avec Windows Communication Foundation (WCF) peuvent co
 #### <a name="other-factors"></a>Autres facteurs  
  Outre le système d'exploitation, le tableau suivant décrit les autres paramètres qui contrôlent l'activation de l'enregistrement.  
   
-|Factor|Journal des application|Journal de sécurité|  
+|Facteur|Journal des application|Journal de sécurité|  
 |------------|---------------------|------------------|  
 |Gestion de la stratégie d'audit|Non applicable.|Outre la configuration, le journal Security est également contrôlé par la stratégie de l'autorité de sécurité locale (LSA). La catégorie "Audit object access" doit également être activée.|  
 |Expérience utilisateur par défaut|Tous les utilisateurs authentifiés pouvant écrire dans le journal Application, aucune étape d'autorisation supplémentaire n'est donc nécessaire pour les processus d'application.|Le processus d'application (contexte) doit avoir `SeAuditPrivilege`.|  
@@ -104,7 +104,7 @@ Les applications créées avec Windows Communication Foundation (WCF) peuvent co
 - <xref:System.ServiceModel.AuditLogLocation>
 - [Présentation de la sécurité](security-overview.md)
 - [Programmation WCF de base](../basic-wcf-programming.md)
-- [Comment : auditer des événements de sécurité](how-to-audit-wcf-security-events.md)
+- [Procédure : auditer des événements de sécurité](how-to-audit-wcf-security-events.md)
 - [\<serviceSecurityAudit>](../../configure-apps/file-schema/wcf/servicesecurityaudit.md)
 - [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

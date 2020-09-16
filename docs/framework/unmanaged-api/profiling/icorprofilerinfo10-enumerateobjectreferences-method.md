@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 9aadf9701444d215291b6fc19cc8cd61ca832837
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: a276ecfe65ed9752f39ed68a36e8e17a24255508
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452238"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558314"
 ---
 # <a name="icorprofilerinfo10enumerateobjectreferences-method"></a>ICorProfilerInfo10 :: EnumerateObjectReferences, méthode
 
@@ -38,25 +38,25 @@ HRESULT EnumerateObjectReferences( [in] ObjectID objectId,
 
 - `callback`
 
-  \[dans] la fonction qui sera appelée avec les références pour l’objet.
+  \[in] fonction qui sera appelée avec les références pour l’objet.
 
 - `clientData`
 
-  \[dans] données fournies par le profileur à passer à la fonction `callback`.
+  \[in] données fournies par le profileur à passer à la `callback` fonction.
 
 ## <a name="remarks"></a>Notes
 
-La méthode `EnumerateObjectReferences` est semblable à [ObjectReferences](icorprofilercallback-objectreferences-method.md), à ceci près qu’elle parcourt les références à la demande pour le profileur au lieu de préallouer un tableau pour stocker les références.
+La `EnumerateObjectReferences` méthode est similaire à [ObjectReferences](icorprofilercallback-objectreferences-method.md), à ceci près qu’elle parcourt les références à la demande pour le profileur au lieu de préallouer un tableau pour stocker les références.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?pivots=os-windows).
+**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/windows.md?pivots=os-windows).
 
 **En-tête :** CorProf.idl, CorProf.h
 
 **Bibliothèque :** CorGuids.lib
 
-**Versions de .net :** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
+**Versions de .net :**[!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

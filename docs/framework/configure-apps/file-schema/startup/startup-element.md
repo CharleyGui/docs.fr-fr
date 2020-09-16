@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <startup> element
 - startup element
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
-ms.openlocfilehash: e936c069275bfa9f7ac81ef1c6fc6228828182a8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cd91abb288c1cfb281f17f2fce95d4956908468f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153727"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550844"
 ---
 # <a name="startup-element"></a>\<startup>, élément
 
@@ -42,10 +42,10 @@ Spécifie common language runtime informations de démarrage.
 
 ## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>useLegacyV2RuntimeActivationPolicy (attribut)
 
-|Valeur|Description|
+|Value|Description|
 |-----------|-----------------|
 |`true`|Activez .NET Framework stratégie d’activation du runtime 2,0 pour le runtime choisi, qui consiste à lier les techniques héritées d’activation du Runtime (telles que la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md)) au runtime choisi à partir du fichier de configuration au lieu de les découper au niveau du CLR version 2,0. Par conséquent, si CLR version 4 ou ultérieure est choisi dans le fichier de configuration, les assemblys en mode mixte créés avec des versions antérieures du .NET Framework sont chargés avec la version CLR choisie. La définition de cette valeur empêche le chargement du CLR version 1,1 ou CLR version 2,0 dans le même processus, ce qui a pour effet de désactiver la fonctionnalité côte à côte in-process.|
-|`false`|Utilisez la stratégie d’activation par défaut pour le .NET Framework 4 et versions ultérieures, ce qui permet d’autoriser les techniques d’activation du runtime héritées à charger CLR version 1,1 ou 2,0 dans le processus. La définition de cette valeur empêche le chargement des assemblys en mode mixte dans le .NET Framework 4 ou ultérieur, sauf s’ils ont été générés avec le .NET Framework 4 ou version ultérieure. Cette valeur est la valeur par défaut.|
+|`false`|Utilisez la stratégie d’activation par défaut pour le .NET Framework 4 et versions ultérieures, ce qui permet d’autoriser les techniques d’activation du runtime héritées à charger CLR version 1,1 ou 2,0 dans le processus. La définition de cette valeur empêche le chargement des assemblys en mode mixte dans le .NET Framework 4 ou ultérieur, sauf s’ils ont été générés avec le .NET Framework 4 ou version ultérieure. Il s’agit de la valeur par défaut.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -60,7 +60,7 @@ Spécifie common language runtime informations de démarrage.
 |-------------|-----------------|
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
  L' **\<supportedRuntime>** élément doit être utilisé par toutes les applications générées à l’aide de la version 1,1 ou ultérieure du Runtime. Les applications générées pour prendre en charge uniquement la version 1,0 du Runtime doivent utiliser l' **\<requiredRuntime>** élément.
 
@@ -71,9 +71,9 @@ Spécifie common language runtime informations de démarrage.
  Cet attribut est utile si votre application utilise des chemins d’activation hérités, tels que la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), et si vous souhaitez que ces chemins activent la version 4 du CLR au lieu d’une version antérieure, ou si votre application est générée avec l' .NET Framework 4, mais qu’elle a une dépendance sur un assembly en mode mixte créé avec une version antérieure du .NET Framework. Dans ces scénarios, affectez à l’attribut la valeur `true` .
 
 > [!NOTE]
-> L’affectation de la valeur à l’attribut `true` empêche le chargement du CLR version 1,1 ou CLR version 2,0 dans le même processus, ce qui a pour effet de désactiver la fonctionnalité côte à côte in-process (voir [exécution côte à côte pour COM Interop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))).
+> L’affectation de la valeur à l’attribut `true` empêche le chargement du CLR version 1,1 ou CLR version 2,0 dans le même processus, ce qui a pour effet de désactiver la fonctionnalité côte à côte in-process (voir [exécution côte à côte pour COM Interop](/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
  L’exemple suivant montre comment spécifier la version du runtime dans un fichier de configuration.
 
@@ -96,7 +96,7 @@ Spécifie common language runtime informations de démarrage.
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des paramètres de démarrage](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
-- [Exécution côte à côte pour COM Interop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))
+- [Exécution côte à côte pour COM Interop](/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))
 - [Exécution côte à côte in-process](../../../deployment/in-process-side-by-side-execution.md)

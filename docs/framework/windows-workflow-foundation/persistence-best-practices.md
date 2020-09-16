@@ -2,12 +2,12 @@
 title: Meilleures pratiques de persistance
 ms.date: 03/30/2017
 ms.assetid: 6974c5a4-1af8-4732-ab53-7d694608a3a0
-ms.openlocfilehash: 8ffbb3ebfa8f85e2b0052a9df9ada30766accd8e
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: b0276bdfd6dcf2e12357224d9a92484a5da9eac3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802516"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558249"
 ---
 # <a name="persistence-best-practices"></a>Meilleures pratiques de persistance
 Ce document traite des meilleures pratiques de conception et configuration de workflow associées à la persistance de workflow.  
@@ -21,7 +21,7 @@ Ce document traite des meilleures pratiques de conception et configuration de wo
   
  Si le workflow est occupé pendant longtemps, il est recommandé de rendre persistante l'instance de workflow régulièrement pendant toute cette période. Pour ce faire, vous pouvez ajouter des activités <xref:System.Activities.Statements.Persist> dans l'ensemble de la séquence des activités qui maintiennent l'instance de workflow occupée. De cette façon, un recyclage de domaine d'application, un échec de l'hôte ou de l'ordinateur n'entraîne pas la restauration au début de la période d'occupation. Soyez conscient que l'ajout d'activités <xref:System.Activities.Statements.Persist> à votre workflow peut provoquer une diminution des performances.  
   
- Windows Server AppFabric simplifie grandement la configuration et l'utilisation de la persistance. Pour plus d’informations, consultez [persistance de l’infrastructure d’applications Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677272(v=azure.10))  
+ Windows Server AppFabric simplifie grandement la configuration et l'utilisation de la persistance. Pour plus d’informations, consultez [persistance de l’infrastructure d’applications Windows Server](/previous-versions/appfabric/ee677272(v=azure.10))  
   
 ## <a name="configuration-of-scalability-parameters"></a>Configuration des paramètres d'évolutivité  
  Les conditions requises en termes d'évolutivité et de performance déterminent la configuration des paramètres suivants :  

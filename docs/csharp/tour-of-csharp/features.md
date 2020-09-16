@@ -2,12 +2,12 @@
 title: Visite guidée de C#-zones de langage majeures
 description: Novice en matière de langage C# ? Découvrez les principes de base du langage.
 ms.date: 08/06/2020
-ms.openlocfilehash: e1e533982757c10085f0444197ff97ee7487391f
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 9069bb194169a7743f12d998b2842186ed0ef404
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414901"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558173"
 ---
 # <a name="major-language-areas"></a>Principales zones de langue
 
@@ -86,7 +86,7 @@ Un délégué ne connaît pas ou ne tient pas compte de la classe de la méthode
 
 ## <a name="async--await"></a>Async/await
 
-C# prend en charge les programmes asynchrones avec deux mots clés : `async` et `await` . Vous ajoutez le `async` modificateur à une déclaration de méthode pour déclarer que la méthode est asynchrone. L' `await` opérateur indique au compilateur d’attendre de façon asynchrone qu’un résultat se termine. Le contrôle est retourné à l’appelant, et la méthode retourne une structure qui gère l’état du travail asynchrone. La structure est généralement un <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , mais peut être n’importe quel type qui prend en charge le modèle d’attente. Ces fonctionnalités vous permettent d’écrire du code qui se lit comme son homologue synchrone, mais qui s’exécute de façon asynchrone. Par exemple, le code suivant télécharge la page d’origine de [Microsoft docs](https://docs.microsoft.com):
+C# prend en charge les programmes asynchrones avec deux mots clés : `async` et `await` . Vous ajoutez le `async` modificateur à une déclaration de méthode pour déclarer que la méthode est asynchrone. L' `await` opérateur indique au compilateur d’attendre de façon asynchrone qu’un résultat se termine. Le contrôle est retourné à l’appelant, et la méthode retourne une structure qui gère l’état du travail asynchrone. La structure est généralement un <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , mais peut être n’importe quel type qui prend en charge le modèle d’attente. Ces fonctionnalités vous permettent d’écrire du code qui se lit comme son homologue synchrone, mais qui s’exécute de façon asynchrone. Par exemple, le code suivant télécharge la page d’origine de [Microsoft docs](/):
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="AsyncExample":::
 

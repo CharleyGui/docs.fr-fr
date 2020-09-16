@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: 9345e995dcb1179e7d0a86f62737f9fda5889f42
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 43b3349b2a35385dcc49d0866e0695b08eac2d2e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286492"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551489"
 ---
 # <a name="date-and-time-data"></a>Données de date et d'heure
 SQL Server 2008 introduit de nouveaux types de données pour gérer les informations de date et d’heure. Les nouveaux types de données incluent des types distincts pour la date et l’heure, ainsi que des types de données étendus avec une plus grande plage, une meilleure précision et la prise en compte des fuseaux horaires. À partir du .NET Framework version 3.5 Service Pack (SP) 1, le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>) assure la prise en charge complète de l’ensemble des nouvelles fonctionnalités du moteur de base de données SQL Server 2008. Vous devez installer le .NET Framework 3.5 SP1 (ou version ultérieure) pour utiliser ces nouvelles fonctionnalités avec SqlClient.  
@@ -22,7 +22,7 @@ SQL Server 2008 introduit de nouveaux types de données pour gérer les informat
   
  **Documentation SQL Server**  
   
-1. [Utilisation des données de date et d’heure](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))  
+1. [Utilisation des données de date et d’heure](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))  
   
 ## <a name="datetime-data-types-introduced-in-sql-server-2008"></a>Types de données de date et d'heure introduits dans SQL Server 2008  
  Le tableau suivant décrit les nouveaux types de données de date et heure.  
@@ -47,7 +47,7 @@ SQL Server 2008 introduit de nouveaux types de données pour gérer les informat
 > [!NOTE]
 > Le format de date AJM n’est pas pris en charge lors de la conversion d’un format de chaîne en `date`, `time`, `datetime2` ou `datetimeoffset`.  
   
- Pour plus d’informations sur la façon dont SQL Server interprète les données de date et d’heure, consultez [utilisation des données de date et d’heure](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms180878(v=sql.100)).  
+ Pour plus d’informations sur la façon dont SQL Server interprète les données de date et d’heure, consultez [utilisation des données de date et d’heure](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100)).  
   
 ## <a name="datetime-data-types-and-parameters"></a>Types de données et paramètres de date/heure  
  Les énumérations suivantes ont été ajoutées à <xref:System.Data.SqlDbType> pour prendre en charge les nouveaux types de données de date et heure.  
@@ -77,7 +77,7 @@ Vous pouvez spécifier le type de données d’un objet <xref:System.Data.SqlCli
   
 |Type de données SQL Server|Type .NET Framework|System.Data.SqlDbType|System.Data.DbType|  
 |--------------------------|-------------------------|---------------------------|------------------------|  
-|Date|System.DateTime|Date|Date|  
+|date|System.DateTime|Date|Date|  
 |time|System.TimeSpan|Temps|Temps|  
 |datetime2|System.DateTime|DateTime2|DateTime2|  
 |datetimeoffset|System.DateTimeOffset|DateTimeOffset|DateTimeOffset|  
@@ -237,7 +237,7 @@ command.Parameters.AddWithValue( _
 |Rubrique|Description|  
 |-----------|-----------------|  
 |[Types de données et fonctions de date et d'heure (Transact-SQL)](/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql)|Fournit une vue d’ensemble de tous les types de données et fonctions de date et d’heure Transact-SQL.|  
-|[Utilisation des données de date et d’heure](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))|Fournit des informations sur les fonctions et types de données de date et d’heure, ainsi que des exemples d’utilisation.|  
+|[Utilisation des données de date et d’heure](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))|Fournit des informations sur les fonctions et types de données de date et d’heure, ainsi que des exemples d’utilisation.|  
 |[Types de données (Transact-SQL)](/sql/t-sql/data-types/data-types-transact-sql)|Décrit les types de données système dans SQL Server.|  
   
 ## <a name="see-also"></a>Voir aussi

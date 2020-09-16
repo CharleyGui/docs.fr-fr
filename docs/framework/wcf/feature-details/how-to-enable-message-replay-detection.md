@@ -1,5 +1,5 @@
 ---
-title: 'Comment : activer la détection de relecture des messages'
+title: 'Procédure : activer la détection de réexécution des messages'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,17 +10,17 @@ helpviewer_keywords:
 - WCF, custom bindings
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-ms.openlocfilehash: bf45b39f59e2fe38fec88d1fac23ab824c009546
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c99500a3d4dc0bd8abe7062f23e064d395cadf36
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597083"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557877"
 ---
-# <a name="how-to-enable-message-replay-detection"></a>Comment : activer la détection de relecture des messages
+# <a name="how-to-enable-message-replay-detection"></a>Procédure : activer la détection de réexécution des messages
 Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages entre deux correspondants et relit le flux à l'un ou plusieurs des correspondants. Sauf atténuation, les ordinateurs sujets à l'attaque traiteront le flux comme messages légitimes, ce qui a des conséquences néfastes telles que des ordres redondants d'un élément.  
   
- Pour plus d’informations sur la détection de relecture des messages, consultez [détection de relecture des messages](https://docs.microsoft.com/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
+ Pour plus d’informations sur la détection de relecture des messages, consultez [détection de relecture des messages](/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
   
  La procédure suivante montre différentes propriétés que vous pouvez utiliser pour contrôler la détection de relecture à l’aide de Windows Communication Foundation (WCF).  
   
@@ -30,7 +30,7 @@ Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages 
   
 2. Utilisez la propriété <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> pour retourner une référence à la classe <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> et définir les propriétés suivantes, selon le cas :  
   
-    1. `DetectReplay`. Valeur booléenne. Elle détermine si le client doit détecter les relectures à partir du serveur. Par défaut, il s’agit de `true`.  
+    1. `DetectReplay`. Valeur booléenne. Elle détermine si le client doit détecter les relectures à partir du serveur. La valeur par défaut est `true`.  
   
     2. `MaxClockSkew`. Valeur <xref:System.TimeSpan>. Détermine l'inclinaison d'horloge que peut tolérer le mécanisme de relecture entre le client et le serveur. Le mécanisme de sécurité examine l'horodatage envoyé et détermine s'il a été envoyé il y a trop longtemps. La valeur par défaut est 5 minutes.  
   
@@ -74,7 +74,7 @@ Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages 
     </customBinding>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant crée un <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> à l’aide de la méthode <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> et définit les propriétés de relecture de la liaison.  
   
  [!code-csharp[c_ReplayDetection#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_replaydetection/cs/source.cs#1)]
@@ -108,4 +108,4 @@ Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages 
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
 - [Conversations sécurisées et sessions sécurisées](secure-conversations-and-secure-sessions.md)
 - [\<localClientSettings>](../../configure-apps/file-schema/wcf/localclientsettings-element.md)
-- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

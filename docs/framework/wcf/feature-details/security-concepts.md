@@ -2,12 +2,12 @@
 title: Concepts relatifs à la sécurité
 ms.date: 03/30/2017
 ms.assetid: 944fa5ca-2c34-4268-8897-e005a61b470d
-ms.openlocfilehash: 3818a1a1449a4a8b6df548541c1aebce968a0b78
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b39db755ad33405e5dfcb22297f311bd3f6dbaae
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595165"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558262"
 ---
 # <a name="security-concepts"></a>Concepts relatifs à la sécurité
 Cette section explique brièvement les concepts associés à la sécurité Windows Communication Foundation (WCF).  
@@ -40,4 +40,4 @@ Cette section explique brièvement les concepts associés à la sécurité Windo
 
 - [Sécurité](security.md)
 - [Présentation de la sécurité](security-overview.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

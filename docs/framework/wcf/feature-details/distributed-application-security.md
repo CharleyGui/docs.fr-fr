@@ -5,12 +5,12 @@ helpviewer_keywords:
 - distributed application security [WCF]
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
-ms.openlocfilehash: 3cae20cfe8d52497646ca173740533a22326c8f8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 70718b5dfbd54693d2734a58c3da17806137ad2f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599143"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557539"
 ---
 # <a name="distributed-application-security"></a>Sécurité des applications distribuées
 La sécurité Windows Communication Foundation (WCF) est divisée en trois zones fonctionnelles principales : la sécurité de transfert, le contrôle d’accès et l’audit. La sécurité de transfert fournit l'intégrité, la confidentialité et l'authentification. La sécurité de transfert est fournie par l'un des éléments suivants : sécurité de transport, sécurité de message ou `TransportWithMessageCredential`.  
@@ -65,7 +65,7 @@ La sécurité Windows Communication Foundation (WCF) est divisée en trois zones
 |Paramètre|Description|  
 |-------------|-----------------|  
 |None|Spécifie que le client n'a pas besoin de présenter d'informations d'identification. Cela se traduit en un client anonyme.|  
-|De base|Spécifie l'authentification de base. Pour plus d’informations, consultez RFC2617, «[authentification http : authentification de base et Digest](http://schemas.xmlsoap.org/ws/2004/10/discovery/ws-discovery.pdf)».|  
+|Basic|Spécifie l'authentification de base. Pour plus d’informations, consultez RFC2617, «[authentification http : authentification de base et Digest](http://schemas.xmlsoap.org/ws/2004/10/discovery/ws-discovery.pdf)».|  
 |Digest|Spécifie l’authentification Digest. Pour plus d’informations, consultez RFC2617, «[authentification http : authentification de base et Digest](http://schemas.xmlsoap.org/ws/2004/10/discovery/ws-discovery.pdf)».|  
 |Ntlm|Spécifie l'authentification Windows à l'aide de la négociation SSPI sur un domaine Windows.<br /><br /> La négociation SSPI entraîne l'utilisation du protocole Kerberos ou NTLM (NT LanMan).|  
 |Windows|Spécifie l'authentification Windows à l'aide de SSPI sur un domaine Windows. SSPI sélectionne le protocole Kerberos ou NTLM comme service d'authentification.<br /><br /> SSPI tente d'abord d'utiliser le protocole Kerberos ; en cas d'échec, il utilise NTLM.|  
@@ -99,4 +99,4 @@ La sécurité Windows Communication Foundation (WCF) est divisée en trois zones
 - [Vue d'ensemble de la création de points de terminaison](../endpoint-creation-overview.md)
 - [Liaisons fournies par le système](../system-provided-bindings.md)
 - [Présentation de la sécurité](security-overview.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

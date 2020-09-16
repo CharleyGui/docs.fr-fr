@@ -3,12 +3,12 @@ title: Entity Data Model
 description: Le Entity Data Model décrit la structure des données, indépendamment de son formulaire stocké, qui résout les problèmes résultant du stockage de données dans de nombreuses formes.
 ms.date: 03/30/2017
 ms.assetid: 2dda3d5b-4582-4ba0-a91d-fcd7a1498137
-ms.openlocfilehash: c98b1f4559ef297f8b11051940fd91f5f6fa06fd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d32207e3a9dd35d2d8f8990bcbbd35e38d21d8bb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286738"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557617"
 ---
 # <a name="entity-data-model"></a>Entity Data Model
 Le modèle EDM (Entity Data Model) est un jeu de concepts qui décrivent la structure des données, indépendamment de la forme sous laquelle elles sont stockées. Inspiré du modèle entité-relation décrit par Peter Chen en 1976, le modèle EDM le complète et étend ses utilisations traditionnelles.  
@@ -20,37 +20,37 @@ Le modèle EDM (Entity Data Model) est un jeu de concepts qui décrivent la stru
 ## <a name="in-this-section"></a>Dans cette section  
  Les rubriques de cette section décrivent les concepts du modèle EDM. Tout langage DSL qui implémente le modèle EDM doit inclure les concepts décrits ici. Notez que le [Entity Framework ADO.net](./ef/index.md) utilise le langage CSDL pour définir des modèles conceptuels. Pour plus d'informations, consultez [CSDL Specification](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec).  
   
- [Concepts clés d’Entity Data Model](entity-data-model-key-concepts.md)  
+ [Concepts clés d'Entity Data Model](entity-data-model-key-concepts.md)  
   
- [Entity Data Model : espaces de noms](entity-data-model-namespaces.md)  
+ [Entity Data Model : Espaces de noms](entity-data-model-namespaces.md)  
   
  [Entity Data Model : types de données primitifs](entity-data-model-primitive-data-types.md)  
   
- [Entity Data Model : héritage](entity-data-model-inheritance.md)  
+ [Entity Data Model : Héritage](entity-data-model-inheritance.md)  
   
- [terminaison d’association](association-end.md)  
+ [terminaison d'association](association-end.md)  
   
- [multiplicité de terminaison d’association](association-end-multiplicity.md)  
+ [multiplicité de terminaison d'association](association-end-multiplicity.md)  
   
- [ensemble d’associations](association-set.md)  
+ [jeu d'associations](association-set.md)  
   
- [terminaison d’ensemble d’associations](association-set-end.md)  
+ [terminaison d'ensemble d'associations](association-set-end.md)  
   
  [type d'association](association-type.md)  
   
  [type complexe](complex-type.md)  
   
- [conteneur d’entités](entity-container.md)  
+ [conteneur d'entités](entity-container.md)  
   
- [clé d’entité](entity-key.md)  
+ [clé d'entité](entity-key.md)  
   
- [jeu d’entités](entity-set.md)  
+ [jeu d'entités](entity-set.md)  
   
  [type d’entité](entity-type.md)  
   
  [articulaire](facet.md)  
   
- [propriété de clé étrangère](foreign-key-property.md)  
+ [Propriété de clé étrangère](foreign-key-property.md)  
   
  [fonction déclarée par modèle](model-declared-function.md)  
   
@@ -60,10 +60,10 @@ Le modèle EDM (Entity Data Model) est un jeu de concepts qui décrivent la stru
   
  [property](property.md)  
   
- [contrainte d’intégrité référentielle](referential-integrity-constraint.md)  
+ [contrainte d'intégrité référentielle](referential-integrity-constraint.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils de Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
-- [Présentation d'un fichier .edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [Outils de Entity Data Model ADO.NET](/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Présentation d'un fichier .edmx](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
 - [Spécification CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)
