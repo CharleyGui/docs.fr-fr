@@ -2,18 +2,18 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: d67521084330b206afca89baf59228b99ca799a1
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 5ecfa24905537a663cd967142b765c258495fb22
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656753"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537733"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet test` - Pilote de test .NET utilisée pour exécuter des tests unitaires.
 
@@ -77,7 +77,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`--blame-crash`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
-  Exécute les tests en mode de responsabilité et collecte un vidage sur incident lorsque l’hôte de test s’arrête de manière inattendue. Cette option est uniquement prise en charge sur Windows. Un répertoire qui contient *procdump.exe* et *procdump64.exe* doit se trouver dans la variable d’environnement PATH ou PROCDUMP_PATH. [Téléchargez les outils](https://docs.microsoft.com/sysinternals/downloads/procdump). Implique `--blame` .
+  Exécute les tests en mode de responsabilité et collecte un vidage sur incident lorsque l’hôte de test s’arrête de manière inattendue. Cette option est uniquement prise en charge sur Windows. Un répertoire qui contient *procdump.exe* et *procdump64.exe* doit se trouver dans la variable d’environnement PATH ou PROCDUMP_PATH. [Téléchargez les outils](/sysinternals/downloads/procdump). Implique `--blame` .
 
 - **`--blame-crash-dump-type <DUMP_TYPE>`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
@@ -185,7 +185,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
  Inline `RunSettings` sont passés comme derniers arguments sur la ligne de commande après « -- » (Notez l’espace après--). Inline `RunSettings` sont spécifiés en tant que `[name]=[value]` paires. Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
 
-  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
+  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
   Pour plus d’informations, consultez [transmission d’arguments RunSettings via la ligne de commande](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
@@ -243,9 +243,9 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 | Framework de test | Propriétés prises en charge                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>Nom</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>ClassName</li><li>Priorité</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
-| NUnit          | <ul><li>FullyQualifiedName</li><li>Nom</li><li>TestCategory</li><li>Priority</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Name</li><li>TestCategory</li><li>Priorité</li></ul>                                   |
 
 La section `<operator>` décrit la relation entre la propriété et la valeur :
 

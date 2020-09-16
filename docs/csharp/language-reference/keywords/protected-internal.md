@@ -5,18 +5,18 @@ ms.date: 11/15/2017
 f1_keywords:
 - protectedinternal_CSharpKeyword
 author: sputier
-ms.openlocfilehash: a7537fba93c0d7145f04c6236d15c11b70f8bf98
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: f22de104154df74f02c048b1209eeac754a03e64
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89139435"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536798"
 ---
 # <a name="protected-internal-c-reference"></a>protected internal (Référence C#)
 
 La combinaison de mots clés `protected internal` est un modificateur d’accès de membre. Un membre interne protégé est accessible depuis l’assembly actif ou depuis des types dérivés de la classe conteneur. Pour obtenir une comparaison de `protected internal` et des autres modificateurs d’accès, consultez [Niveaux d’accessibilité](accessibility-levels.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Un membre interne protégé d’une classe de base est accessible depuis n’importe quel type au sein de son assembly conteneur. Il est également accessible dans une classe dérivée qui se trouve dans un autre assembly seulement si l’accès s’effectue via une variable du type de la classe dérivée. Prenons l’exemple de l’extrait de code suivant :
 
@@ -77,6 +77,6 @@ Les membres de struct ne peuvent pas être `protected internal`, car le struct n
 - [Niveaux d'accessibilité](accessibility-levels.md)
 - [Modificateurs](index.md)
 - [public](public.md)
-- [priv](private.md)
+- [private](private.md)
 - [intérieurs](internal.md)
-- [Problèmes de sécurité pour les mots clés virtuels internes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Problèmes de sécurité pour les mots clés virtuels internes](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

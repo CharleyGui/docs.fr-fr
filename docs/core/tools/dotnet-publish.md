@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: f171baaa0dbc070b6389ec0fa9895b2c5dcfafff
-ms.sourcegitcommit: f279a4488c48236793c04bf825ae6f9128790849
+ms.openlocfilehash: 53dc6010352d92489017c3aa776bcb6a3601ec2d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89501907"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537767"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -53,7 +53,7 @@ La commande `dotnet publish` appelle MSBuild, qui appelle la cible de `Publish`.
 
 La `dotnet publish` commande accepte les options MSBuild, comme `-p` pour définir des propriétés et `-l` pour définir un enregistreur d’événements. Par exemple, vous pouvez définir une propriété MSBuild en utilisant le format : `-p:<NAME>=<VALUE>` .
 
-Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* (disponible depuis le kit de développement logiciel (SDK) .net Core 3,1). Par exemple :
+Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* (disponible depuis le kit de développement logiciel (SDK) .net Core 3,1). Exemple :
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -240,4 +240,4 @@ Pour plus d’informations, consultez les ressources suivantes :
 - [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
 - [Profils de publication Visual Studio (. pubxml) pour le déploiement d’applications ASP.NET Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
 - [dotnet msbuild](dotnet-msbuild.md)
-- [ILLInk. Tasks](https://aka.ms/dotnet-illink)
+- [ILLInk. Tasks](../deploying/trim-self-contained.md)

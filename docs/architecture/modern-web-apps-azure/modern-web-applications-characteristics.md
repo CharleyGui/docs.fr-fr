@@ -7,17 +7,17 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 12/04/2019
-ms.openlocfilehash: fd6658a6143e132d488660d1aa4a35e427ba2d84
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: a4d7558039d64b21a2744f74d037369ea8c6c923
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174794"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539266"
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Caractéristiques des applications web modernes
 
 > "… avec une bonne conception, les fonctionnalités sont peu coûteuses. Cette approche est compliquée, mais continue à porter ses fruits. »  
-> _\-Ritchie Denis_
+> _\- Ritchie Denis_
 
 Les attentes et les exigences des utilisateurs vis-à-vis des applications web modernes n’ont jamais été aussi élevées. Les applications web d’aujourd’hui sont censées être disponibles 24 heures sur 24, sept jours sur sept, depuis n’importe où dans le monde, et être utilisables avec presque n’importe quel appareil ou taille d’écran. Elles doivent être sécurisées, flexibles et scalables afin de répondre aux pics de demande. De plus en plus, des scénarios complexes doivent être gérés par des expériences utilisateur complexes générées sur le client à l’aide de JavaScript et qui communiquent efficacement par le biais d’API web.
 
@@ -38,11 +38,11 @@ Ce guide comprend une application de référence, _eShopOnWeb_, qui illustre cer
 
 ## <a name="cloud-hosted-and-scalable"></a>Hébergées dans le cloud et scalables
 
-ASP.NET Core est optimisé pour le cloud (cloud public, cloud privé, n’importe quel cloud), car il consomme peu de mémoire et offre un débit élevé. Le faible encombrement des applications ASP.NET Core signifie que vous pouvez en héberger davantage sur le même matériel, tout en réduisant les coûts de ressources lors de l’utilisation de services d’hébergement cloud de type Paiement à l’utilisation. Le débit plus élevé signifie que vous pouvez servir davantage de clients à partir d’une application avec le même matériel, réduisant ainsi la nécessité d’investir dans des serveurs et une infrastructure d’hébergement.
+ASP.NET Core est optimisé pour le cloud (cloud public, cloud privé, n’importe quel cloud), car il consomme peu de mémoire et offre un débit élevé. Le plus petit encombrement des applications ASP.NET Core signifie que vous pouvez en héberger plus sur le même matériel et vous payez pour moins de ressources lors de l’utilisation de services d’hébergement cloud avec paiement à l’utilisation. Le débit plus élevé signifie que vous pouvez servir davantage de clients à partir d’une application avec le même matériel, réduisant ainsi la nécessité d’investir dans des serveurs et une infrastructure d’hébergement.
 
 ## <a name="cross-platform"></a>Multiplateforme
 
-ASP.NET Core est multiplateforme et peut s’exécuter sur Linux, macOS et Windows. Cela donne accès à de nombreuses nouvelles options pour le développement et le déploiement d’applications créées avec ASP.NET Core. Les conteneurs Docker, qu’ils exécutent Linux ou Windows, peuvent héberger des applications ASP.NET Core, ce qui leur permet de tirer parti des avantages offerts par les [conteneurs et microservices](../microservices/index.md).
+ASP.NET Core est multiplateforme et peut s’exécuter sur Linux, macOS et Windows. Cela ouvre de nombreuses nouvelles options pour le développement et le déploiement d’applications générées avec ASP.NET Core. Les conteneurs Docker, qu’ils exécutent Linux ou Windows, peuvent héberger des applications ASP.NET Core, ce qui leur permet de tirer parti des avantages offerts par les [conteneurs et microservices](../microservices/index.md).
 
 ## <a name="modular-and-loosely-coupled"></a>Faiblement couplées et modulaires
 
@@ -72,11 +72,11 @@ En plus d’ASP.NET Core, la plateforme ASP.NET 4.x traditionnelle reste robust
 
 ## Blazor
 
-Blazorest inclus avec ASP.NET Core 3,0 et versions ultérieures. Il fournit un nouveau mécanisme pour créer des applications clientes Web interactives riches à l’aide de Razor, C# et ASP.NET Core. Il offre une autre solution à prendre en compte lors du développement d’applications Web modernes. Il existe deux versions de Blazor à prendre en compte : côté serveur et côté client.
+Blazor est inclus avec ASP.NET Core 3,0 et versions ultérieures. Il fournit un nouveau mécanisme pour créer des applications clientes Web interactives riches à l’aide de Razor, C# et ASP.NET Core. Il offre une autre solution à prendre en compte lors du développement d’applications Web modernes. Il existe deux versions de Blazor à prendre en compte : côté serveur et côté client.
 
 Le côté serveur Blazor a été publié dans 2019 avec ASP.NET Core 3,0. Comme son nom l’indique, il s’exécute sur le serveur et restitue les modifications apportées au document client dans le navigateur via le réseau. Côté serveur Blazor fournit une expérience client riche sans nécessiter de code JavaScript côté client et sans nécessiter de chargement de page distinct pour chaque interaction de page client. Les modifications apportées à la page chargée sont demandées et traitées par le serveur, puis renvoyées au client à l’aide de Signalr.
 
-Le côté client Blazor sera publié dans 2020 et éliminera la nécessité d’effectuer le rendu des modifications sur le serveur. Au lieu de cela, il utilise WebAssembly pour exécuter du code .net au sein du client. Le client peut toujours effectuer des appels d’API au serveur si nécessaire pour demander des données, mais tous les comportements côté client s’exécutent sur le client via WebAssembly , qui est déjà pris en charge par tous les principaux navigateurs et n’est qu’une bibliothèque JavaScript.
+Le côté client Blazor libéré en mai 2020 élimine le besoin d’afficher les modifications sur le serveur. Au lieu de cela, il s’appuie WebAssembly sur pour exécuter du code .net au sein du client. Le client peut toujours effectuer des appels d’API au serveur si nécessaire pour demander des données, mais tous les comportements côté client s’exécutent sur le client via WebAssembly , qui est déjà pris en charge par tous les principaux navigateurs et n’est qu’une bibliothèque JavaScript.
 
 > ### <a name="references--modern-web-applications"></a>Informations de référence sur les applications web modernes
 >
@@ -84,7 +84,7 @@ Le côté client Blazor sera publié dans 2020 et éliminera la nécessité d’
 >   <https://docs.microsoft.com/aspnet/core/>
 > - **Test dans ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/testing/>
-> - **Blazor-Prise en main**  
+> - **Blazor -Prise en main**  
 >   <https://blazor.net/docs/get-started.html>
 
 >[!div class="step-by-step"]

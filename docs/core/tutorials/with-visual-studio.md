@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 4cd18aca4396f902268d59867760424d65ddcf6d
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: d543a05eb00a59c5c08ada28fc8392875385aa8a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867631"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537533"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio
 
@@ -21,7 +21,7 @@ Ce didacticiel montre comment créer et exécuter une application console .NET C
 
 - [Visual Studio 2019 version 16,6 ou une version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement multiplateforme .net Core** installée. Le kit de développement logiciel (SDK) .NET Core 3,1 est automatiquement installé lorsque vous sélectionnez cette charge de travail.
 
-  Pour plus d’informations, consultez [installer le kit SDK .net core avec Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio).
+  Pour plus d’informations, consultez [installer le kit SDK .net core avec Visual Studio](../install/windows.md#install-with-visual-studio).
 
 ## <a name="create-the-app"></a>Créer l’application
 
@@ -77,7 +77,7 @@ End Module
 
 Si la langue que vous souhaitez utiliser n’est pas affichée, modifiez le sélecteur de langue en haut de la page.
 
-## <a name="run-the-app"></a>Exécuter l’application
+## <a name="run-the-app"></a>Exécuter l'application
 
 1. Appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour exécuter le programme sans débogage.
 

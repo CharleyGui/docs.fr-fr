@@ -3,12 +3,12 @@ title: Mesurer les performances à l’aide de EventCounters dans .NET Core
 description: Dans ce didacticiel, vous allez apprendre à mesurer les performances à l’aide de EventCounters.
 ms.date: 08/07/2020
 ms.topic: tutorial
-ms.openlocfilehash: 7b4940e17d01e7ec5a50d11e3c818ecdec2d48cf
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: db9a0889d46cc4db02baac60cbed6f6e0ba6856b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88025008"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538564"
 ---
 # <a name="tutorial-measure-performance-using-eventcounters-in-net-core"></a>Didacticiel : mesurer les performances à l’aide de EventCounters dans .NET Core
 
@@ -29,11 +29,11 @@ Le didacticiel utilise :
 
 - [Kit de développement logiciel (SDK) .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
 - [dotnet-compteurs](dotnet-counters.md) pour surveiller les compteurs d’événements.
-- Exemple d’application [cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) à diagnostiquer.
+- Exemple d’application [cible de débogage](/samples/dotnet/samples/diagnostic-scenarios) à diagnostiquer.
 
 ## <a name="get-the-source"></a>Récupération de la source
 
-L’exemple d’application sera utilisé comme base pour l’analyse. L' [exemple de référentiel ASP.net Core](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) est disponible dans le navigateur d’exemples. Téléchargez le fichier zip, extrayez-le une fois téléchargé, puis ouvrez-le dans votre IDE favori. Générez et exécutez l’application pour vous assurer qu’elle fonctionne correctement, puis arrêtez l’application.
+L’exemple d’application sera utilisé comme base pour l’analyse. L' [exemple de référentiel ASP.net Core](/samples/dotnet/samples/diagnostic-scenarios) est disponible dans le navigateur d’exemples. Téléchargez le fichier zip, extrayez-le une fois téléchargé, puis ouvrez-le dans votre IDE favori. Générez et exécutez l’application pour vous assurer qu’elle fonctionne correctement, puis arrêtez l’application.
 
 ## <a name="implement-an-eventsource"></a>Implémenter une EventSource
 

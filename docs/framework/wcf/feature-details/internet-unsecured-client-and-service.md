@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: 0b02d1efc98f02390555861871d280f9800ced1e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 017744d692d6fd4183fde3c21e71fcee2f35844e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598877"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535356"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Service et client Internet non sécurisés
 L’illustration suivante montre un exemple de service et client public, non sécurisé Windows Communication Foundation (WCF) :  
@@ -21,14 +21,14 @@ L’illustration suivante montre un exemple de service et client public, non sé
 |--------------------|-----------------|  
 |Mode de sécurité|None|  
 |Transport|HTTP|  
-|Liaison|<xref:System.ServiceModel.BasicHttpBinding>dans le code ou [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) dans l’élément de la configuration.|  
+|Liaison|<xref:System.ServiceModel.BasicHttpBinding> dans le code ou [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) dans l’élément de la configuration.|  
 |Interopérabilité|Avec les clients de service Web et les services existants|  
 |Authentification|None|  
 |Intégrité|None|  
 |Confidentialité|None|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -68,11 +68,11 @@ L’illustration suivante montre un exemple de service et client public, non sé
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :  
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -113,4 +113,4 @@ L’illustration suivante montre un exemple de service et client public, non sé
 
 - [Scénarios de sécurité courants](common-security-scenarios.md)
 - [Présentation de la sécurité](security-overview.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

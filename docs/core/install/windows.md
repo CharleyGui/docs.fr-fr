@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 06/22/2020
-ms.openlocfilehash: 97f67d00b3eb4dafc55256aea51f4295bb0ef06a
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 12cffb78de803845a4b18adc70289993e67f64f1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308947"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538287"
 ---
 # <a name="install-net-core-on-windows"></a>Installer .NET Core sur Windows
 
@@ -42,12 +42,12 @@ Les dates de fin de service des versions de Windows 10 sont segmentées par édi
 | ✔️ Windows 10, version 1909 | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ Windows 10, version 1903 | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ Windows 10, version 1809 | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌Windows 10, version 1803 | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
-| ❌Windows 10, version 1709 | ❌2,1        | ❌3,1        | ❌version préliminaire 5,0 |
-| ❌Windows 10, version 1703 | ❌2,1        | ❌3,1        | ❌version préliminaire 5,0 |
-| ❌Windows 10, version 1607 | ❌2,1        | ❌3,1        | ❌version préliminaire 5,0 |
-| ❌Windows 10, version 1511 | ❌2,1        | ❌3,1        | ❌version préliminaire 5,0 |
-| ❌Windows 10, version 1507 | ❌2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌ Windows 10, version 1803 | ✔️ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
+| ❌ Windows 10, version 1709 | ❌ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
+| ❌ Windows 10, version 1703 | ❌ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
+| ❌ Windows 10, version 1607 | ❌ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
+| ❌ Windows 10, version 1511 | ❌ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
+| ❌ Windows 10, version 1507 | ❌ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
 
 ## <a name="unsupported-releases"></a>Mises en production non prises en charge
 
@@ -96,7 +96,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 3,1 :
 
 | Système d''exploitation                            | Version                        | Architectures   |
 | ----------------------------- | ------------------------------ | --------------- |
-| Client Windows                | 8.1                            | x64, x86        |
+| Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Client Windows 10             | Version 1609 +                  | x64, x86        |
 | Windows Server                | 2012 R2 +                       | x64, x86        |
 | Nano Server                   | Version 1803 +                  | x64, ARM32      |
@@ -159,12 +159,12 @@ Pour plus d’informations sur les systèmes d’exploitation, les distributions
 
 <!-- markdownlint-disable MD001 -->
 
-### <a name="windows-7--vista--81--server-2008-r2--server-2012-r2"></a><a name="additional-deps"></a>Windows 7/Vista/8,1/Server 2008 R2/Server 2012 R2
+### <a name="windows-7--vista--81--server-2008-r2--server-2012-r2"></a><a name="additional-deps"></a> Windows 7/Vista/8,1/Server 2008 R2/Server 2012 R2
 
 Des dépendances supplémentaires sont requises si vous installez le kit de développement logiciel (SDK) .NET ou le runtime sur les versions suivantes de Windows :
 
-- ❌Windows 7 SP1
-- ❌Windows Vista SP 2
+- ❌ Windows 7 SP1
+- ❌ Windows Vista SP 2
 - ✔️ Windows 8.1
 - ✔️ Windows Server 2008 R2
 - ✔️ Windows Server 2012 R2
@@ -190,7 +190,7 @@ La configuration requise ci-dessus est également requise si vous rencontrez l�
 
 Les [scripts dotnet-install](../tools/dotnet-install-script.md) sont utilisés pour l’automatisation d’intégration continue et les installations non administratives du Runtime. Vous pouvez télécharger le script à partir de la [page de référence du script dotnet-install](../tools/dotnet-install-script.md).
 
-Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 3,1. Vous pouvez choisir une version spécifique en spécifiant le `Channel` commutateur. Incluez le `Runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le [Kit de développement logiciel (SDK)](sdk.md).
+Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 3,1. Vous pouvez choisir une version spécifique en spécifiant le `Channel` commutateur. Incluez le `Runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le kit de développement logiciel (SDK).
 
 ```powershell
 dotnet-install.ps1 -Channel 3.1 -Runtime aspnetcore
@@ -206,7 +206,7 @@ dotnet-install.ps1 -Channel Current
 
 Si vous utilisez Visual Studio pour développer des applications .NET Core, le tableau suivant décrit la version minimale requise de Visual Studio en fonction de la version de kit SDK .NET Core cible.
 
-| Version de kit SDK .NET Core | Version de Visual Studio                      |
+| Version de kit SDK .NET Core | Version de Visual Studio                      |
 | --------------------- | ------------------------------------------ |
 | 3.1                   | Visual Studio 2019 version 16,4 ou ultérieure. |
 | 3.0                   | Visual Studio 2019 version 16,3 ou ultérieure. |

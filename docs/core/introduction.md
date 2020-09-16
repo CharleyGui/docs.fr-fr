@@ -4,16 +4,16 @@ description: .NET Core est une implémentation modulaire et hautement performant
 author: richlander
 ms.date: 03/26/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: b28ad965e54680e2e1134c389266741ade28084f
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 350fd50bee3403a05d1c19c9a692535613b17498
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226580"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538274"
 ---
 # <a name="introduction-to-net-core"></a>Introduction à .NET Core
 
-[.Net Core](about.md) est une plateforme de développement [Open source à](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)usage général. Vous pouvez créer des applications .NET Core pour Windows, macOS et Linux pour les processeurs x64, x86, ARM32 et ARM64 à l’aide de plusieurs langages de programmation. Les frameworks et les API sont fournis pour le [Cloud](/aspnet/core/), l' [IOT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [l’interface utilisateur du client](../desktop-wpf/overview/index.md)et les [machine learning](/dotnet/machine-learning/).
+[.Net Core](about.md) est une plateforme de développement [Open source à](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)usage général. Vous pouvez créer des applications .NET Core pour Windows, macOS et Linux pour les processeurs x64, x86, ARM32 et ARM64 à l’aide de plusieurs langages de programmation. Les frameworks et les API sont fournis pour le [Cloud](/aspnet/core/), l' [IOT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [l’interface utilisateur du client](../desktop-wpf/overview/index.md)et les [machine learning](../machine-learning/index.yml).
 
 [Téléchargez le kit SDK .net Core](https://dotnet.microsoft.com/download) pour essayer .net Core sur votre ordinateur. La dernière version est [.net Core 3,1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/).
 
@@ -22,7 +22,7 @@ ms.locfileid: "86226580"
 Vous pouvez vous procurer .NET Core des manières suivantes :
 
 * [Programmes d’installation pour Windows et macOS](https://dotnet.microsoft.com/download)
-* [Packages Linux](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
+* [Packages Linux](./install/linux.md)
 * [Conteneurs Docker](https://hub.docker.com/_/microsoft-dotnet-core/)
 * [Compresse et tarballs](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 * [Installer les scripts](https://dotnet.microsoft.com/download/dotnet-core/scripts)
@@ -37,7 +37,7 @@ dotnet new console
 dotnet run
 ```
 
-Vous devez normalement voir la sortie suivante.
+Vous devez normalement voir la sortie suivante :
 
 ```output
 Hello World!

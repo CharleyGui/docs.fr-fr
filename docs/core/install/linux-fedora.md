@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c90c08eefa074fa139642a268f879af79d7280da
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 89a55ad2e9fd66d277d0c3eb6a07bd402574bd0a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619479"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538512"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-fedora"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur Fedora
 
@@ -31,10 +31,10 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [32](linux-fedora.md#fedora-32-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
 | ✔️ [31](linux-fedora.md#fedora-31-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
-| ❌ [30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
-| ❌[29](linux-fedora.md#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌version préliminaire 5,0 |
-| ❌[28](linux-fedora.md#fedora-28-) | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
-| ❌[27](linux-fedora.md#fedora-27-) | ✔️ 2,1        | ❌3,1        | ❌version préliminaire 5,0 |
+| ❌[30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌ version préliminaire 5,0 |
+| ❌[29](linux-fedora.md#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌ version préliminaire 5,0 |
+| ❌[28](linux-fedora.md#fedora-28-) | ✔️ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
+| ❌[27](linux-fedora.md#fedora-27-) | ✔️ 2,1        | ❌ 3,1        | ❌ version préliminaire 5,0 |
 
 Les versions suivantes de .NET Core ne sont plus prises en charge. Les téléchargements sont toujours publiés :
 
@@ -63,7 +63,7 @@ sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com
 
 [!INCLUDE [linux-dnf-install-31](includes/linux-install-31-dnf.md)]
 
-## <a name="fedora-30-"></a>Fedora 30❌
+## <a name="fedora-30-"></a>Fedora 30 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-fedora.md)]
 
@@ -76,7 +76,7 @@ sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com
 
 [!INCLUDE [linux-dnf-install-31](includes/linux-install-31-dnf.md)]
 
-## <a name="fedora-29-"></a>Fedora 29❌
+## <a name="fedora-29-"></a>Fedora 29 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-fedora.md)]
 
@@ -89,7 +89,7 @@ sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com
 
 [!INCLUDE [linux-dnf-install-30](includes/linux-install-30-dnf.md)]
 
-## <a name="fedora-28-"></a>Fedora 28❌
+## <a name="fedora-28-"></a>Fedora 28 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-fedora.md)]
 
@@ -102,7 +102,7 @@ sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com
 
 [!INCLUDE [linux-dnf-install-20](includes/linux-install-20-dnf.md)]
 
-## <a name="fedora-27-"></a>Fedora 27❌
+## <a name="fedora-27-"></a>Fedora 27 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-fedora.md)]
 
@@ -118,6 +118,10 @@ sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com
 ## <a name="troubleshoot-the-package-manager"></a>Résoudre les problèmes liés au gestionnaire de package
 
 Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET Core.
+
+### <a name="unable-to-find-package"></a>Impossible de trouver le package
+
+[!INCLUDE [linux-install-package-manager-x64-vs-arm](includes/linux-install-package-manager-x64-vs-arm.md)]
 
 ### <a name="failed-to-fetch"></a>Échec de la récupération
 

@@ -5,12 +5,12 @@ author: adegeo
 ms.author: adegeo
 ms.date: 12/03/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: 56eebc0fc5bad6f57d93358cbbef389d6355d66b
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 6106f66dfbbe382ee9f61eb8b7bda70ab9b72d0b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656688"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538547"
 ---
 # <a name="get-started-with-net-core"></a>Bien démarrer avec .NET Core
 
@@ -29,13 +29,13 @@ dotnet new console --output sample1
 dotnet run --project sample1
 ```
 
-La sortie suivante s’affiche :
+Vous devez normalement voir la sortie suivante :
 
 ```console
 Hello World!
 ```
 
-Félicitations ! Vous avez créé une application .NET Core simple. Vous pouvez aussi utiliser [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (Windows uniquement) ou [Visual Studio pour Mac](tutorials/with-visual-studio-mac.md) (macOS uniquement) pour créer une application .NET Core.
+Félicitations ! Vous avez créé une application .NET Core simple. Vous pouvez aussi utiliser [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (Windows uniquement) ou [Visual Studio pour Mac](tutorials/with-visual-studio-mac.md) (macOS uniquement) pour créer une application .NET Core.
 
 ## <a name="tutorials"></a>Tutoriels
 
@@ -54,7 +54,7 @@ Commencez à développer des applications .NET Core en suivant ces didacticiels 
 | ![Icône représentant une caméra pour les vidéos](./media/video-icon.png "Regarder une vidéo") | Regardez la vidéo sur l' [installation et l’utilisation de Visual Studio code et](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core/) de la vidéo .net Core sur Channel 9. |
 | ![Icône représentant une caméra pour les vidéos](./media/video-icon.png "Regarder une vidéo") | Regardez les vidéos [.net Core 101](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWoazjhXQzBKMrFuArxpW80) sur YouTube. |
 
-Pour obtenir la liste des versions de Windows prises en charge, consultez l’article sur les [dépendances et les exigences de .net Core](install/dependencies.md?pivots=os-windows) .
+Pour obtenir la liste des versions de Windows prises en charge, consultez l’article sur les [dépendances et les exigences de .net Core](./install/windows.md) .
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
@@ -66,7 +66,7 @@ Commencez à développer des applications .NET Core en suivant ces didacticiels 
 |---|---|
 | ![Icône représentant une caméra pour les vidéos](./media/video-icon.png "Regarder une vidéo") | Visionnez une vidéo qui explique comment [bien démarrer avec Visual Studio Code en utilisant C# et .NET Core sur Ubuntu](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu). |
 
-Pour obtenir la liste des versions et distributions Linux prises en charge, consultez l’article [dépendances et exigences de .net Core](install/dependencies.md?pivots=os-linux) .
+Pour obtenir la liste des versions et distributions Linux prises en charge, consultez l’article [dépendances et exigences de .net Core](./install/linux.md) .
 
 # <a name="macos"></a>[macOS](#tab/macos)
 
@@ -80,6 +80,6 @@ Commencez à développer des applications .NET Core en suivant ces didacticiels 
 |---|---|
 | ![Icône représentant une caméra pour les vidéos](media/video-icon.png "Regarder une vidéo") | Regardez une vidéo sur la prise en main de [Visual Studio code à l’aide de C# et de .net Core sur MacOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac). |
 
-Pour obtenir la liste des versions OS X/macOS prises en charge, consultez l’article [dépendances et exigences .net Core](install/dependencies.md?pivots=os-macos) .
+Pour obtenir la liste des versions OS X/macOS prises en charge, consultez l’article [dépendances et exigences .net Core](./install/macos.md) .
 
 ---

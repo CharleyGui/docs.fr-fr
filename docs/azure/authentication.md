@@ -3,12 +3,12 @@ title: Fonctionnement de l’authentification dans les bibliothèques Azure pour
 description: Explique les différentes façons de s’authentifier avec le kit de développement logiciel (SDK) Azure pour .NET.
 ms.date: 06/19/2020
 ms.custom: azure-sdk-dotnet
-ms.openlocfilehash: bc2fce919d88a528f21df9f561cbe33e1119762a
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: dbae72eb9e80801d7338b210f9664f1c4e318ae0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811377"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539175"
 ---
 # <a name="authenticate-with-the-azure-sdk-for-net"></a>S’authentifier avec le kit de développement logiciel (SDK) Azure pour .NET
 
@@ -25,7 +25,7 @@ Pour vous authentifier avec les bibliothèques qui ne prennent pas en charge Azu
 
 ## <a name="access-azure-resources"></a>Accéder aux ressources Azure
 
-Pour interagir avec des ressources Azure, telles que la récupération d’un secret à partir d’Key Vault ou le stockage d’un objet BLOB dans le stockage, de nombreuses bibliothèques de service Azure nécessitent une chaîne de connexion ou des clés pour l’authentification. Par exemple, SQL Database utilise une [chaîne de connexion SQL standard](https://docs.microsoft.com/azure/azure-sql/database/connect-query-dotnet-core). Les chaînes de connexion de service sont utilisées dans d’autres services Azure tels que [CosmosDB](/azure/cosmos-db/), [Azure cache for redims](/azure/azure-cache-for-redis/cache-dotnet-how-to-use-azure-redis-cache)et [service bus](/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues). Vous pouvez récupérer ces chaînes à l’aide de l’Portail Azure, de l’interface CLI ou de PowerShell. Vous pouvez aussi utiliser les bibliothèques de gestion Azure pour .NET pour interroger des ressources et générer des chaînes de connexion dans votre code.
+Pour interagir avec des ressources Azure, telles que la récupération d’un secret à partir d’Key Vault ou le stockage d’un objet BLOB dans le stockage, de nombreuses bibliothèques de service Azure nécessitent une chaîne de connexion ou des clés pour l’authentification. Par exemple, SQL Database utilise une [chaîne de connexion SQL standard](/azure/azure-sql/database/connect-query-dotnet-core). Les chaînes de connexion de service sont utilisées dans d’autres services Azure tels que [CosmosDB](/azure/cosmos-db/), [Azure cache for redims](/azure/azure-cache-for-redis/cache-dotnet-how-to-use-azure-redis-cache)et [service bus](/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues). Vous pouvez récupérer ces chaînes à l’aide de l’Portail Azure, de l’interface CLI ou de PowerShell. Vous pouvez aussi utiliser les bibliothèques de gestion Azure pour .NET pour interroger des ressources et générer des chaînes de connexion dans votre code.
 
 Les méthodes d’utilisation d’une chaîne de connexion varient en fonction du produit. [Reportez-vous à la documentation de votre produit Azure](/azure/?product=featured).
 

@@ -3,18 +3,18 @@ title: Blocage du débogage-.NET Core
 description: Un didacticiel qui vous guide tout au long du débogage d’un problème de verrouillage dans .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d9a9328b376de5886d22ca7315f6d7d9d73fd2c2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557878"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538694"
 ---
 # <a name="debug-a-deadlock-in-net-core"></a>Déboguer un interblocage dans .NET Core
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,1 et versions ultérieures
 
-Dans ce didacticiel, vous allez apprendre à déboguer un scénario de blocage. À l’aide de l’exemple fourni ASP.NET Core référentiel de code source de l' [application Web](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) , vous pouvez provoquer un blocage intentionnellement. Le point de terminaison subira un blocage et l’accumulation des threads. Vous apprendrez comment vous pouvez utiliser différents outils pour analyser le problème, tels que les vidages de base, l’analyse de vidage noyau et le suivi de processus.
+Dans ce didacticiel, vous allez apprendre à déboguer un scénario de blocage. À l’aide de l’exemple fourni ASP.NET Core référentiel de code source de l' [application Web](/samples/dotnet/samples/diagnostic-scenarios) , vous pouvez provoquer un blocage intentionnellement. Le point de terminaison subira un blocage et l’accumulation des threads. Vous apprendrez comment vous pouvez utiliser différents outils pour analyser le problème, tels que les vidages de base, l’analyse de vidage noyau et le suivi de processus.
 
 Ce didacticiel présente les procédures suivantes :
 
@@ -31,13 +31,13 @@ Ce didacticiel présente les procédures suivantes :
 Le didacticiel utilise :
 
 - [.Net Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure
-- [Exemple de cible de débogage-application Web](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) pour déclencher le scénario
+- [Exemple de cible de débogage-application Web](/samples/dotnet/samples/diagnostic-scenarios) pour déclencher le scénario
 - [dotnet-trace](dotnet-trace.md) pour répertorier les processus
 - [dotnet-dump](dotnet-dump.md) pour collecter et analyser un fichier de vidage
 
 ## <a name="core-dump-generation"></a>Génération de l’image mémoire principale
 
-Pour examiner l’absence de réponse de l’application, un vidage de base ou une image mémoire vous permet d’inspecter l’état de ses threads et les éventuels verrous susceptibles de rencontrer des problèmes de contention. Exécutez l’exemple d’application de [débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) à l’aide de la commande suivante à partir du répertoire racine de l’exemple :
+Pour examiner l’absence de réponse de l’application, un vidage de base ou une image mémoire vous permet d’inspecter l’état de ses threads et les éventuels verrous susceptibles de rencontrer des problèmes de contention. Exécutez l’exemple d’application de [débogage](/samples/dotnet/samples/diagnostic-scenarios) à l’aide de la commande suivante à partir du répertoire racine de l’exemple :
 
 ```dotnetcli
 dotnet run

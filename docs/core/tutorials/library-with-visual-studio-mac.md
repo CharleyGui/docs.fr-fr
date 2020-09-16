@@ -2,12 +2,12 @@
 title: Créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio pour Mac
 description: Découvrez comment créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio pour Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 8e1e4ca3bc1b12d889b847d80318f3d6cd1bbe46
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 433f6e0e2d784878c9a1616139b39ec56d695bcf
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416004"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537637"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-for-mac"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio pour Mac
 
@@ -26,7 +26,7 @@ Une *bibliothèque de classes* définit des types et des méthodes qui peuvent �
 * [Installez Visual Studio pour Mac version 8,6 ou ultérieure](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Sélectionnez l’option d’installation de .NET Core. L’installation de Xamarin est facultative pour le développement .NET Core. Pour plus d’informations, consultez les ressources suivantes :
 
   * [Didacticiel : installer Visual Studio pour Mac](/visualstudio/mac/installation).
-  * [Versions MacOS prises en charge](../install/dependencies.md?pivots=os-macos).
+  * [Versions MacOS prises en charge](../install/macos.md).
   * [Versions de .net Core prises en charge par Visual Studio pour Mac](/visualstudio/mac/net-core-support).
 
 ## <a name="create-a-solution-with-a-class-library-project"></a>Créer une solution avec un projet de bibliothèque de classes
@@ -97,7 +97,7 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 
 1. Dans la boîte de dialogue **références** , sélectionnez **StringLibrary** , puis cliquez sur **OK**.
 
-## <a name="run-the-app"></a>Exécuter l’application
+## <a name="run-the-app"></a>Exécuter l'application
 
 1. <kbd>ctrl</kbd>cliquez sur le projet Showcase et sélectionnez Exécuter le **projet** dans le menu contextuel.
 

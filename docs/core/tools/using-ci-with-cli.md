@@ -2,12 +2,12 @@
 title: Intégration continue (CI) avec des kit SDK .NET Core et des outils
 description: Découvrez comment utiliser la kit SDK .NET Core et ses outils sur le serveur de builds avec intégration continue.
 ms.date: 05/18/2017
-ms.openlocfilehash: ddccb477bc112157a155e2217e04c329e7ab51c5
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 724cc639a2588b085b31ff4590acce34d2380655
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415988"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537715"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Utilisation du SDK et des outils .NET Core avec l’intégration continue
 
@@ -36,7 +36,7 @@ Le script d’installation est automatisé pour s’exécuter au début de la g�
 
 ## <a name="ci-setup-examples"></a>Exemples de configuration de l’intégration continue
 
-Cette section décrit une configuration manuelle à l’aide d’un script PowerShell ou bash, et contient la description de plusieurs solutions d’intégration continue SaaS (logiciel en tant que service). Les solutions d’intégration continue SaaS traitées sont [CI Travis](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/) et [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
+Cette section décrit une configuration manuelle à l’aide d’un script PowerShell ou bash, et contient la description de plusieurs solutions d’intégration continue SaaS (logiciel en tant que service). Les solutions d’intégration continue SaaS traitées sont [CI Travis](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/) et [Azure Pipelines](/azure/devops/pipelines/index).
 
 ### <a name="manual-setup"></a>Configuration manuelle
 
@@ -147,7 +147,7 @@ Configurez Azure DevOps Services pour générer des projets .NET Core à l’aid
 1. Exécutez le script à partir de [l’étape de configuration manuelle](#manual-setup) en utilisant vos commandes.
 1. Créez une build composée de plusieurs tâches de build intégrées Azure DevOps Services qui sont configurées pour utiliser les outils .NET Core.
 
-Les deux solutions sont valides. À l’aide d’un script de configuration manuelle, vous contrôlez la version des outils que vous recevez, car vous les téléchargez dans le cadre de la génération. La build est exécutée à partir d’un script que vous devez créer. Cet article couvre uniquement l’option manuelle. Pour plus d’informations sur la composition d’une build avec les tâches de génération Azure DevOps Services, consultez la documentation [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
+Les deux solutions sont valides. À l’aide d’un script de configuration manuelle, vous contrôlez la version des outils que vous recevez, car vous les téléchargez dans le cadre de la génération. La build est exécutée à partir d’un script que vous devez créer. Cet article couvre uniquement l’option manuelle. Pour plus d’informations sur la composition d’une build avec les tâches de génération Azure DevOps Services, consultez la documentation [Azure Pipelines](/azure/devops/pipelines/index).
 
 Pour utiliser un script de configuration manuelle dans Azure DevOps Services, créez une nouvelle définition de build et spécifiez le script à exécuter pour l’étape de génération. Cette opération est possible grâce à l’interface utilisateur Azure DevOps Services :
 
@@ -169,7 +169,7 @@ Pour utiliser un script de configuration manuelle dans Azure DevOps Services, cr
 
 ## <a name="orchestrating-the-build"></a>Orchestration de la build
 
-Ce document décrit principalement comment obtenir les outils .NET Core et configurer différents services d’intégration continue sans fournir d’informations sur la façon d’orchestrer ou de *réellement générer* votre code avec .NET Core. Les choix sur la façon de structurer le processus de génération dépendent de nombreux facteurs qui ne peuvent pas être traités ici d’une manière générale. Pour plus d’informations sur l’orchestration de vos builds avec chaque technologie, explorez les ressources et les exemples fournis dans la documentation de [CI Travis](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/) et [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
+Ce document décrit principalement comment obtenir les outils .NET Core et configurer différents services d’intégration continue sans fournir d’informations sur la façon d’orchestrer ou de *réellement générer* votre code avec .NET Core. Les choix sur la façon de structurer le processus de génération dépendent de nombreux facteurs qui ne peuvent pas être traités ici d’une manière générale. Pour plus d’informations sur l’orchestration de vos builds avec chaque technologie, explorez les ressources et les exemples fournis dans la documentation de [CI Travis](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/) et [Azure Pipelines](/azure/devops/pipelines/index).
 
 L’utilisation directe de MSBuild ou l’utilisation des commandes de ligne de commande .NET Core constituent les deux méthodes générales que vous utilisez afin de structurer le processus de génération pour le code .NET Core à l’aide des outils .NET Core. La méthode que vous choisissez dépend de votre niveau d’assurance et des compromis en matière de complexité. MSBuild vous permet d’exprimer votre processus de génération sous la forme de tâches et de cibles, mais vous devez vous familiariser avec la syntaxe de fichier projet MSBuild complexe. L’utilisation des outils de ligne de commande .NET Core est peut-être plus simple, mais vous devez écrire une logique d’orchestration dans un langage de script comme `bash` ou PowerShell.
 

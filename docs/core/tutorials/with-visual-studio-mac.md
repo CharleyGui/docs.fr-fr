@@ -2,12 +2,12 @@
 title: Créer une application console .NET Core à l’aide de Visual Studio pour Mac
 description: Découvrez comment créer une application console .NET Core à l’aide de Visual Studio pour Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: 8ffcb05ad85f53180ca1aaefbd2dfc7496946142
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: ca933bc9322109ba7d1f808fcc44696a9766a6d4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867657"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537598"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio pour Mac
 
@@ -24,7 +24,7 @@ Ce didacticiel montre comment créer et exécuter une application console .NET C
 * [Visual Studio pour Mac version 8,6 ou ultérieure](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Sélectionnez l’option d’installation de .NET Core. L’installation de Xamarin est facultative pour le développement .NET Core. Pour plus d’informations, consultez les ressources suivantes :
 
   * [Didacticiel : installer Visual Studio pour Mac](/visualstudio/mac/installation).
-  * [Versions MacOS prises en charge](../install/dependencies.md?pivots=os-macos).
+  * [Versions MacOS prises en charge](../install/windows.md).
   * [Versions de .net Core prises en charge par Visual Studio pour Mac](/visualstudio/mac/net-core-support).
 
 ## <a name="create-the-app"></a>Créer l’application
@@ -70,7 +70,7 @@ namespace HelloWorld
 
 `Main` est le point d’entrée de l’application. Cette méthode est appelée automatiquement par le runtime lors du lancement de l’application. Les arguments de ligne de commande fournis lorsque l’application est lancée sont disponibles dans le `args` tableau.
 
-## <a name="run-the-app"></a>Exécuter l’application
+## <a name="run-the-app"></a>Exécuter l'application
 
 1. Appuyez sur <kbd>⌥</kbd><kbd>⌘</kbd><kbd>↵</kbd> (<kbd>option</kbd> + <kbd>commande</kbd> + <kbd>entrée</kbd>) pour exécuter l’application sans débogage.
 

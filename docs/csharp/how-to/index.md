@@ -2,12 +2,12 @@
 title: Articles de guide pratique (Guide C#)
 description: Série de petits conseils et d’exemples de code spécifiques courts
 ms.date: 12/20/2017
-ms.openlocfilehash: 9dd069ff767d65002b78c18b398b700a1f26ebfa
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 26d3931ff3b4ecfcc052c3ace25a09801f84c505
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465154"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537403"
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
@@ -106,23 +106,23 @@ LINQ vous permet d’écrire du code pour interroger une source de données qui 
 - [Utiliser des expressions lambda dans une requête](../programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-in-a-query.md).
 - [Utiliser `var` dans des expressions de requête](../programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
 - [Retourner des sous-ensembles de propriétés d’éléments d’une requête](../programming-guide/classes-and-structs/how-to-return-subsets-of-element-properties-in-a-query.md).
-- [Écrire des requêtes avec un filtrage complexe](../programming-guide/concepts/linq/how-to-write-queries-with-complex-filtering.md).
-- [Trier les éléments d’une source de données](../programming-guide/concepts/linq/how-to-sort-elements.md).
-- [Trier les éléments sur plusieurs clés](../programming-guide/concepts/linq/how-to-sort-elements-on-multiple-keys.md).
-- [Contrôler le type d’une projection](../programming-guide/concepts/linq/how-to-control-the-type-of-a-projection.md).
+- [Écrire des requêtes avec un filtrage complexe](../../standard/linq/write-queries-complex-filtering.md).
+- [Trier les éléments d’une source de données](../../standard/linq/sort-elements.md).
+- [Trier les éléments sur plusieurs clés](../../standard/linq/sort-elements-multiple-keys.md).
+- [Contrôler le type d’une projection](../../standard/linq/control-type-projection.md).
 - [Compter les occurrences d’une valeur dans une séquence source](../programming-guide/concepts/linq/how-to-count-occurrences-of-a-word-in-a-string-linq.md).
-- [Calculer des valeurs intermédiaires](../programming-guide/concepts/linq/how-to-calculate-intermediate-values.md).
+- [Calculer des valeurs intermédiaires](../../standard/linq/calculate-intermediate-values.md).
 - [Fusionner des données de plusieurs sources](../programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md).
 - [Trouver la différence définie entre deux séquences](../programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md).
-- [Déboguer des résultats de requête vides](../programming-guide/concepts/linq/how-to-debug-empty-query-results-sets.md).
+- [Déboguer des résultats de requête vides](../../standard/linq/debug-empty-query-results-sets.md).
 - [Ajouter des méthodes personnalisées dans des requêtes LINQ](../programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md).
 
 ## <a name="multiple-threads-and-async-processing"></a>Traitement de plusieurs threads et traitement asynchrone
 
 Les programmes récents utilisent souvent des opérations asynchrones. Les articles suivants vous apprennent à utiliser ces techniques.
 
-- [Améliorer les performances asynchrones avec `System.Threading.Tasks.Task.WhenAll`](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
-- [Effectuer plusieurs requêtes web en parallèle en utilisant `async` et `await`](../programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md).
+- [Améliorer les performances asynchrones avec `System.Threading.Tasks.Task.WhenAll`](../programming-guide/concepts/async/index.md).
+- [Effectuer plusieurs requêtes web en parallèle en utilisant `async` et `await`](../programming-guide/concepts/async/index.md).
 - [Utiliser un pool de threads](../../standard/threading/the-managed-thread-pool.md#using-the-thread-pool).
 
 ## <a name="command-line-args-to-your-program"></a>Arguments de ligne de commande dans votre programme

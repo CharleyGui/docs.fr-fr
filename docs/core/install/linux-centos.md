@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 6b1bad3a6c967483bb683866de84c9e5077a336f
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 7937502067e1717fd7f5c973c64ad33ae2a443a0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619505"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538616"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-centos"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur CentOS
 
@@ -63,6 +63,10 @@ sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-
 ## <a name="troubleshoot-the-package-manager"></a>Résoudre les problèmes liés au gestionnaire de package
 
 Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET Core.
+
+### <a name="unable-to-find-package"></a>Impossible de trouver le package
+
+[!INCLUDE [linux-install-package-manager-x64-vs-arm](includes/linux-install-package-manager-x64-vs-arm.md)]
 
 ### <a name="failed-to-fetch"></a>Échec de la récupération
 

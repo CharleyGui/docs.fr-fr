@@ -4,14 +4,14 @@ description: Découvrez comment visiter chaque nœud dans une arborescence d’e
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.openlocfilehash: f60c447d5c89aa83f85073e642e621608131ed8d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cb64e79d915a5c5567d5a3d25f1d747df9687c87
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76115774"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537461"
 ---
-# <a name="translate-expression-trees"></a>Traduire les arbres d’expression
+# <a name="translate-expression-trees"></a>Traduire les arborescences d’expressions
 
 [Précédent -- Génération d’expressions](expression-trees-building.md)
 
@@ -91,7 +91,7 @@ Console.WriteLine(theSum);
 ```
 
 Il y a pas mal de code ici, mais les concepts sont très abordables.
-Ce code visite les enfants avec une recherche en profondeur. Quand il rencontre un nœud de constante, le visiteur retourne la valeur de la constante. Après que le visiteur a rendu visite aux deux enfants, ces enfants auront calculé la somme calculée pour ce sous-arbre. Le nœud d’addition peut maintenant calculer sa somme.
+Ce code visite les enfants avec une recherche en profondeur. Quand il rencontre un nœud de constante, le visiteur retourne la valeur de la constante. Une fois que le visiteur a visité les deux enfants, ces enfants auront calculé la somme calculée pour cette sous-arborescence. Le nœud d’addition peut maintenant calculer sa somme.
 Une fois que tous les nœuds dans l’arborescence d’expressions ont été visités, la somme a été calculée. Vous pouvez suivre l’exécution en exécutant l’exemple dans le débogueur.
 
 Nous allons simplifier le suivi de l’analyse des nœuds et du calcul de la somme en parcourant l’arborescence. Voici une version mise à jour de la méthode Aggregate qui comprend des informations de suivi :
@@ -192,7 +192,7 @@ Bien que la réponse finale soit la même, le parcours d’arborescence est comp
 
 ## <a name="learning-more"></a>En savoir plus
 
-Cet exemple montre un petit sous-ensemble du code que vous créeriez pour parcourir et interpréter les algorithmes représentés par une arborescence d’expressions. Pour obtenir une description complète de tout le travail nécessaire pour générer une bibliothèque à usage général qui traduit des arborescences d’expressions dans un autre langage, consultez [cette série](https://docs.microsoft.com/archive/blogs/mattwar/linq-building-an-iqueryable-provider-series) de Matt Warren. Elle décrit en détail comment traduire le code que vous pourriez rencontrer dans une arborescence d’expressions.
+Cet exemple montre un petit sous-ensemble du code que vous créeriez pour parcourir et interpréter les algorithmes représentés par une arborescence d’expressions. Pour obtenir une description complète de tout le travail nécessaire pour générer une bibliothèque à usage général qui traduit des arborescences d’expressions dans un autre langage, consultez [cette série](/archive/blogs/mattwar/linq-building-an-iqueryable-provider-series) de Matt Warren. Elle décrit en détail comment traduire le code que vous pourriez rencontrer dans une arborescence d’expressions.
 
 J’espère que cet article aura mis en évidence toute la puissance des arborescences d’expressions.
 Vous pouvez examiner un ensemble de code, y apporter les modifications souhaitées et exécuter la version modifiée. Les arborescences d’expressions étant immuables, vous pouvez créer des arborescences à l’aide de composants d’arborescences existantes. Cela réduit la quantité de mémoire nécessaire pour créer des arborescences d’expressions.

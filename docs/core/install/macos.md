@@ -4,12 +4,12 @@ description: En savoir plus sur les versions de macOS sur lesquelles vous pouvez
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: 19d5ca77b0308533c8f228be70c61daf1b7f82d9
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: f946759a57bf2eedd296ecbd55fd3a5a7560638d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89132753"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538364"
 ---
 # <a name="install-net-core-on-macos"></a>Installer .NET Core sur macOS
 
@@ -70,7 +70,7 @@ Le kit de développement logiciel (SDK) est utilisé pour créer et publier des 
 > [!div class="button"]
 > [Télécharger le kit de développement logiciel (SDK) .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 .NET Core est pris en charge sur les versions macOS suivantes :
 
@@ -81,7 +81,7 @@ Le kit de développement logiciel (SDK) est utilisé pour créer et publier des 
 | ----------------- | --------------------- | --------------| --- |
 | 3.1               | High Sierra (10.13 +)  | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) |
 | 3.0               | High Sierra (10.13 +)  | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) |
-| 2,2               | Sierra (10.12 +)       | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) |
+| 2.2               | Sierra (10.12 +)       | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) |
 | 2.1               | Sierra (10.12 +)       | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) |
 
 À partir de macOS Catalina (version 10,15), tous les logiciels générés après le 1er juin 2019, qui sont distribués avec l’ID de développeur, doivent être certifiés. Cette exigence s’applique au Runtime .NET Core, kit SDK .NET Core et aux logiciels créés avec .NET Core.
@@ -145,7 +145,7 @@ export PATH=$PATH:$HOME/dotnet
 > [!TIP]
 > Les `export` commandes précédentes rendent uniquement les commandes CLI .net Core disponibles pour la session Terminal dans laquelle elles ont été exécutées.
 >
-> Vous pouvez modifier votre profil de Shell pour ajouter définitivement les commandes. Un certain nombre de shells différents sont disponibles pour Linux et chacun d’eux a un profil différent. Par exemple :
+> Vous pouvez modifier votre profil de Shell pour ajouter définitivement les commandes. Un certain nombre de shells différents sont disponibles pour Linux et chacun d’eux a un profil différent. Exemple :
 >
 > - **Interpréteur**de commandes bash : *~/. bash_profile*, *~ fichier/.bashrc*
 > - **Shell Korn**: *~/.kshrc* ou *. Profile*
@@ -177,7 +177,7 @@ Même si Visual Studio Code n’est pas fourni avec un programme d’installatio
 
 Les [scripts dotnet-install](../tools/dotnet-install-script.md) sont utilisés pour l’automatisation et les installations non administratives du Runtime. Vous pouvez télécharger le script à partir de la [page de référence du script dotnet-install](../tools/dotnet-install-script.md).
 
-Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 3,1. Vous pouvez choisir une version spécifique en spécifiant le `current` commutateur. Incluez le `runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le [Kit de développement logiciel (SDK)](sdk.md).
+Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 3,1. Vous pouvez choisir une version spécifique en spécifiant le `current` commutateur. Incluez le `runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le [Kit de développement logiciel (SDK)](./windows.md).
 
 ```bash
 ./dotnet-install.sh --channel 3.1 --runtime aspnetcore

@@ -2,12 +2,12 @@
 title: Vue d’ensemble de .NET Core
 description: Découvrez les caractéristiques et la composition de .NET Core et comparez-les à d’autres implémentations de .NET.
 ms.date: 03/26/2020
-ms.openlocfilehash: d5ef79fe5a8fbb56beae77edd01830fe6561fa51
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: e99939cf85cc441fd473e4d033e22b1a5d053638
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100728"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539006"
 ---
 # <a name="net-core-overview"></a>Vue d’ensemble de .NET Core
 
@@ -28,7 +28,7 @@ ms.locfileid: "86100728"
 
 Les langages [C#](../csharp/index.yml), [Visual Basic](../visual-basic/index.yml)et [F #](../fsharp/index.yml) peuvent être utilisés pour écrire des applications et des bibliothèques pour .net core. Ces langues peuvent être utilisées dans votre éditeur de texte ou votre environnement de développement intégré (IDE), notamment :
 
-- [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
+- [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 
 L’intégration de l’éditeur est fournie, en partie, par les contributeurs des projets [OmniSharp](https://www.omnisharp.net/) et [Ionide](https://ionide.io) .
@@ -39,7 +39,7 @@ L’intégration de l’éditeur est fournie, en partie, par les contributeurs d
 
 * Applications Cloud avec [ASP.net Core](/aspnet/core/)
 * Applications mobiles avec [Xamarin](/xamarin)
-* Applications IoT avec [System. Device. GPIO](https://docs.microsoft.com/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0)
+* Applications IoT avec [System. Device. GPIO](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0)
 * Applications clientes Windows avec [WPF](../desktop-wpf/overview/index.md) et Windows Forms
 * Machine learning [ml.net](../machine-learning/index.yml)
 
@@ -64,7 +64,7 @@ De nombreuses API sont incluses qui répondent aux besoins courants :
 
 ### <a name="open-source"></a>Open source
 
-[.Net Core](about.md) est une plateforme de développement [Open source à](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)usage général. Vous pouvez créer des applications .NET Core pour Windows, macOS et Linux pour les processeurs x64, x86, ARM32 et ARM64. Les frameworks et les API sont fournis pour le [Cloud](/aspnet/core/), l' [IOT](https://docs.microsoft.com/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [l’interface utilisateur du client](../desktop-wpf/overview/index.md)et les [machine learning](../machine-learning/index.yml).
+[.Net Core](about.md) est une plateforme de développement [Open source à](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)usage général. Vous pouvez créer des applications .NET Core pour Windows, macOS et Linux pour les processeurs x64, x86, ARM32 et ARM64. Les frameworks et les API sont fournis pour le [Cloud](/aspnet/core/), l' [IOT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [l’interface utilisateur du client](../desktop-wpf/overview/index.md)et les [machine learning](../machine-learning/index.yml).
 
 ## <a name="support"></a>Support
 

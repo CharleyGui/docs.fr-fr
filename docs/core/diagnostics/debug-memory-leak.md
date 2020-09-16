@@ -3,12 +3,12 @@ title: Didacticiel de débogage d’une fuite de mémoire
 description: Découvrez comment déboguer une fuite de mémoire dans .NET Core.
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: ff684f9b9402cb8b7b648e792a1d37ddcc96b399
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 7fa87a411606e81ffe91348c3cbce5f258a6e4e2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924888"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538590"
 ---
 # <a name="debug-a-memory-leak-in-net-core"></a>Déboguer une fuite de mémoire dans .NET Core
 
@@ -34,7 +34,7 @@ Le didacticiel utilise :
 - [dotnet-trace](dotnet-trace.md) pour répertorier les processus.
 - [dotnet-compteurs](dotnet-counters.md) pour vérifier l’utilisation de la mémoire managée.
 - [dotnet-dump](dotnet-dump.md) pour collecter et analyser un fichier de vidage.
-- Exemple d’application [cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) à diagnostiquer.
+- Exemple d’application [cible de débogage](/samples/dotnet/samples/diagnostic-scenarios/) à diagnostiquer.
 
 Ce didacticiel part du principe que l’exemple et les outils sont installés et prêts à l’emploi.
 
@@ -42,7 +42,7 @@ Ce didacticiel part du principe que l’exemple et les outils sont installés et
 
 Avant de commencer à collecter les données de diagnostics pour nous aider dans ce scénario, vous devez vous assurer que vous voyez une fuite de mémoire (croissance de la mémoire). Vous pouvez utiliser l’outil [dotnet-Counters pour le](dotnet-counters.md) confirmer.
 
-Ouvrez une fenêtre de console et accédez au répertoire où vous avez téléchargé et décompressé l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/). Exécutez la cible :
+Ouvrez une fenêtre de console et accédez au répertoire où vous avez téléchargé et décompressé l' [exemple de cible de débogage](/samples/dotnet/samples/diagnostic-scenarios/). Exécutez la cible :
 
 ```dotnetcli
 dotnet run
@@ -116,7 +116,7 @@ En observant l’utilisation de la mémoire, vous pouvez en toute sécurité ind
 
 Lors de l’analyse de fuites de mémoire possibles, vous devez accéder au segment de mémoire de l’application. Vous pouvez ensuite analyser le contenu de la mémoire. En examinant les relations entre les objets, vous créez des théories sur la raison pour laquelle la mémoire n’est pas libérée. Une source de données de diagnostics courante est un vidage de la mémoire sur Windows ou le vidage de base équivalent sur Linux. Pour générer un dump d’une application .NET Core, vous pouvez utiliser l’outil [dotnet-dump)](dotnet-dump.md) .
 
-À l’aide de l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) précédemment démarré, exécutez la commande suivante pour générer un vidage Linux Core :
+À l’aide de l' [exemple de cible de débogage](/samples/dotnet/samples/diagnostic-scenarios/) précédemment démarré, exécutez la commande suivante pour générer un vidage Linux Core :
 
 ```dotnetcli
 dotnet-dump collect -p 4807
@@ -133,7 +133,7 @@ Complete
 
 Une fois le vidage collecté, vous devez disposer d’informations suffisantes pour diagnostiquer le processus en échec. Si le processus en échec est en cours d’exécution sur un serveur de production, il s’agit de l’heure idéale pour la correction à terme, en redémarrant le processus.
 
-Dans ce didacticiel, vous avez maintenant terminé l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) et vous pouvez le fermer. Accédez au terminal qui a démarré le serveur, puis appuyez sur <kbd>Ctrl + C</kbd>.
+Dans ce didacticiel, vous avez maintenant terminé l' [exemple de cible de débogage](/samples/dotnet/samples/diagnostic-scenarios/) et vous pouvez le fermer. Accédez au terminal qui a démarré le serveur, puis appuyez sur <kbd>Ctrl + C</kbd>.
 
 ### <a name="analyze-the-core-dump"></a>Analyser le vidage principal
 
@@ -146,7 +146,7 @@ dotnet-dump analyze core_20190430_185145
 Où `core_20190430_185145` est le nom de l’image de base que vous souhaitez analyser.
 
 > [!NOTE]
-> Si vous voyez une erreur indiquant que *libdl.so* est introuvable, vous devrez peut-être installer le package *libc6-dev* . Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Linux](../install/dependencies.md?pivots=os-linux).
+> Si vous voyez une erreur indiquant que *libdl.so* est introuvable, vous devrez peut-être installer le package *libc6-dev* . Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Linux](../install/linux.md).
 
 Une invite s’affiche, dans laquelle vous pouvez entrer des commandes SOS. En règle générale, la première chose que vous souhaitez examiner est l’état global du tas géré :
 

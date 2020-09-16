@@ -3,12 +3,12 @@ title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
 author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: cabe220917e7ff688a2c2d2df56d9bc7f8afdf56
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 1d2e5ffcb0b279f1686855834c2357827a4dc7d5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324506"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538093"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
@@ -66,7 +66,7 @@ Le fichier *template.json* est placé dans un dossier *.template.config* dans le
 
 Le schéma complet pour le fichier *template.json* se trouve dans le [magasin de schémas JSON](http://json.schemastore.org/template). Pour plus d’informations sur le fichier *template.json*, consultez le [Wiki de création de modèles dotnet](https://github.com/dotnet/templating/wiki).
 
-#### <a name="example"></a>Exemple
+#### <a name="example"></a> Exemple
 
 Par exemple, voici un dossier de modèle qui contient deux fichiers de contenu : *console.cs* et *readme.txt*. Notez que la présence du dossier requis nommé *.template.config*, qui contient le fichier *template.json*.
 
@@ -96,7 +96,7 @@ Le dossier *mytemplate* est un pack de modèle installable. Une fois le pack ins
 
 ## <a name="packing-a-template-into-a-nuget-package-nupkg-file"></a>Empaquetage d’un modèle dans un package NuGet (fichier nupkg)
 
-Un modèle personnalisé est empaqueté avec la commande [dotnet pack](dotnet-pack.md) et un fichier *.csproj*. Vous pouvez également utiliser [NuGet](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference) avec la commande [nuget pack](https://docs.microsoft.com/nuget/tools/cli-ref-pack) et un fichier *.nuspec*. Toutefois, NuGet requiert la .NET Framework sur Windows et [mono](https://www.mono-project.com/) sur Linux et MacOS.
+Un modèle personnalisé est empaqueté avec la commande [dotnet pack](dotnet-pack.md) et un fichier *.csproj*. Vous pouvez également utiliser [NuGet](/nuget/tools/nuget-exe-cli-reference) avec la commande [nuget pack](/nuget/tools/cli-ref-pack) et un fichier *.nuspec*. Toutefois, NuGet requiert la .NET Framework sur Windows et [mono](https://www.mono-project.com/) sur Linux et MacOS.
 
 Le fichier *.csproj* est légèrement différent d’un fichier de projet de code *.csproj* traditionnel. Notez les points suivants :
 

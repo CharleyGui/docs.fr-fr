@@ -3,18 +3,18 @@ title: Migrer votre application ou service web .NET vers Azure App Service
 description: En savoir plus sur la migration d’une application ou d’un service Web .NET d’un site local vers un Azure App Service.
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: d208865942b49ae2d5437b8f2fcff294933af21b
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: a5e193b2dbaedb86ff0e24bc8b70043896bbeea3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174307"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539084"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>Migrer votre application ou service web .NET vers Azure App Service
 
 [App service](/azure/app-service/overview) est un service de plateforme de calcul entièrement géré qui est optimisé pour héberger des sites Web évolutifs et des applications Web. Cet article fournit des informations sur la façon de lever-déplacer une application existante vers Azure App Service, les modifications à prendre en compte et des ressources supplémentaires pour [migrer vers le Cloud](https://azure.microsoft.com/migration/web-applications/). La plupart des sites web ASP.NET (WebForms, MVC) et des services (API Web, WCF) peuvent passer directement à Azure App Service, sans aucune modification. Certains peuvent nécessiter des modifications mineures tandis que d’autres peuvent nécessiter une refactorisation.
 
-Vous êtes prêt à commencer ? [Publiez une application ASP.NET + SQL sur Azure App Service](https://tutorials.visualstudio.com/azure-webapp-migrate/intro).
+Prêt à vous lancer ? [Publiez une application ASP.NET + SQL sur Azure App Service](https://tutorials.visualstudio.com/azure-webapp-migrate/intro).
 
 ## <a name="considerations"></a>Considérations
 
@@ -33,13 +33,13 @@ Azure App Service prend en charge le port 80 pour le trafic HTTP et le port 443 
 
 Les liaisons suivantes sont prises en charge pour WCF :
 
-| Liaison | Remarques |
+| Liaison | Notes |
 |--|--|
 | `BasicHttp` |  |
 | `WSHttp` |  |
-| `WSDualHttpBinding` | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée. |
-| `NetHttpBinding` | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. |
-| `NetHttpsBinding` | La [prise en charge de Websocket](https://docs.microsoft.com/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. |
+| `WSDualHttpBinding` | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée. |
+| `NetHttpBinding` | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. |
+| `NetHttpsBinding` | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. | La [prise en charge de Websocket](/azure/app-service/web-sites-configure) doit être activée pour les contrats duplex. |
 | `BasicHttpContextBinding` |  |
 | `WebHttpBinding` |  |
 | `WSHttpContextBinding` |  |
@@ -62,7 +62,7 @@ Le mode de compatibilité IIS5 n’est pas pris en charge. Dans Azure App Servic
 
 #### <a name="iis7-schema-compliance"></a>Conformité de schéma IIS7+
 
-Certains éléments et attributs ne sont pas définis dans le schéma IIS Azure App Service. Si vous rencontrez des problèmes, envisagez d’utiliser des [transformations XDT](https://azure.microsoft.com/documentation/articles/web-sites-transform-extend/).
+Certains éléments et attributs ne sont pas définis dans le schéma IIS Azure App Service. Si vous rencontrez des problèmes, envisagez d’utiliser des [transformations XDT](/azure/app-service/configure-common).
 
 #### <a name="single-application-pool-per-site"></a>Pool d’applications unique par site
 

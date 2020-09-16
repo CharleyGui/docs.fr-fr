@@ -2,12 +2,12 @@
 title: Regroupement de connexions OLE DB, ODBC et Oracle Connection
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: 58ea5aa54a0f6acbc8d2400dd04eeba9ff498055
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: c19f341d869ee983531fa5c90c0d7c94978dadb1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75545044"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535369"
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>Regroupement de connexions OLE DB, ODBC et Oracle
 
@@ -23,7 +23,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 
  Il est recommandé de toujours fermer ou supprimer une connexion lorsque vous avez fini de l'utiliser afin de retourner la connexion au pool. Les connexions qui ne sont pas explicitement fermées risquent de ne pas être retournées au pool. Par exemple, une connexion devenue hors de portée mais qui n'a pas été explicitement fermée sera retournée au pool de connexion seulement si la taille maximale de celui-ci a été atteinte et si la connexion est toujours valide.
 
- Pour plus d’informations sur la OLE DB la session ou le regroupement de ressources, ainsi que sur la façon de désactiver le regroupement en remplaçant OLE DB valeurs par défaut du service fournisseur, consultez le [Guide du programmeur OLE DB](https://docs.microsoft.com/previous-versions/windows/desktop/ms713643(v=vs.85)).
+ Pour plus d’informations sur la OLE DB la session ou le regroupement de ressources, ainsi que sur la façon de désactiver le regroupement en remplaçant OLE DB valeurs par défaut du service fournisseur, consultez le [Guide du programmeur OLE DB](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
 ## <a name="odbc"></a>ODBC
  Le regroupement de connexions du fournisseur de données .NET Framework pour ODBC est géré par le gestionnaire de pilotes ODBC utilisé pour la connexion et n'est pas affecté par le fournisseur de données .NET Framework pour ODBC.
@@ -62,7 +62,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 
  Le tableau suivant décrit les valeurs <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> que vous pouvez utiliser pour ajuster le comportement de regroupement des connexions.
 
-|Name|Valeur par défaut|Description|
+|Name|Default|Description|
 |----------|-------------|-----------------|
 |`Connection Lifetime`|0|Lorsqu’une connexion est retournée au pool, l’heure de sa création est comparée à l’heure actuelle et la connexion est détruite si cet intervalle de temps (en secondes) excède la valeur spécifiée par `Connection Lifetime`. Cela est utile dans les configurations en clusters pour forcer l'équilibrage de la charge entre un serveur en cours d'exécution et un serveur qui vient d'être mis en ligne.<br /><br /> La valeur zéro (0) aura pour conséquence un délai d'attente maximal pour les connexions regroupées.|
 |`Enlist`|'true'|Si la valeur est `true`, le dispositif de regroupement inscrit automatiquement la connexion dans le contexte de transaction en cours du thread de création si un contexte de transaction existe.|
@@ -73,5 +73,5 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 ## <a name="see-also"></a>Voir aussi
 
 - [Regroupement de connexions](connection-pooling.md)
-- [Performance Counters](performance-counters.md)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Compteurs de performance](performance-counters.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

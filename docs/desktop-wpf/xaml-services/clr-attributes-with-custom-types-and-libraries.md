@@ -4,293 +4,293 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR attributes for custom types [XAML Services]
 ms.assetid: 5dfb299a-b6e2-41b8-8694-e6ac987547f1
-ms.openlocfilehash: 5481d02e4d393312fa0f0dd13b45c54acc567e13
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: a4b8a58ea2c7d9de2b59ed78dc37e4ce1c434b79
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "82071765"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535395"
 ---
-# <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Attributs CLR liés à XAML pour les types et bibliothèques personnalisés
+# <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Attributs CLR liés à XAML pour les bibliothèques et les types personnalisés
 
-Ce sujet décrit les attributs courants de l’heure d’exécution de langue (CLR) qui sont définis par .NET XAML Services. Il décrit également d’autres attributs CLR qui sont définis en .NET qui ont un scénario XAML-connexe pour l’application aux assemblages ou aux types. Attribuer des assemblages, des types ou des membres avec ces attributs CLR fournit des informations système de type XAML liées à vos types. L’information est fournie à tout consommateur XAML qui utilise .NET XAML Services pour le traitement du flux de nœudS XAML directement ou par l’intermédiaire des lecteurs dédiés XAML et écrivains XAML.
+Cette rubrique décrit les attributs du common language runtime (CLR) définis par les services XAML .NET. Elle décrit également d’autres attributs CLR définis dans .NET qui ont un scénario XAML pour l’application vers des assemblys ou des types. L’attribution d’assemblys, de types ou de membres avec ces attributs CLR fournit des informations de système de type XAML relatives à vos types. Des informations sont fournies à tout consommateur XAML qui utilise les services XAML .NET pour traiter le flux de nœud XAML directement ou via les lecteurs et writers XAML dédiés.
 
 ## <a name="xaml-related-clr-attributes-for-custom-types-and-custom-members"></a>Attributs CLR liés à XAML pour les types personnalisés et les membres personnalisés
 
-L’utilisation d’attributs CLR implique que vous utilisez le CLR global pour définir vos types, sinon ces attributs ne sont pas disponibles. Si vous utilisez le CLR pour définir le support de type, alors le contexte de schéma XAML par défaut utilisé par les auteurs de .NET XAML Services XAML peuvent lire l’attribution CLR par la réflexion contre les assemblages de soutien.
+L’utilisation des attributs CLR implique que vous utilisez le CLR global pour définir vos types, sinon ces attributs ne sont pas disponibles. Si vous utilisez le CLR pour définir la sauvegarde de type, le contexte de schéma XAML par défaut utilisé par les writers XAML des services XAML .NET peut lire l’attribution CLR par le biais de la réflexion sur les assemblys de stockage.
 
-Les sections suivantes décrivent les attributs liés à XAML que vous pouvez appliquer aux types personnalisés ou aux membres personnalisés. Chaque attribut CLR communique des informations pertinentes à un système de type XAML. Dans le chemin de charge, les informations attribuées aident soit le lecteur XAML à former un flux de nœudS XAML valide, soit elle aide l’auteur de XAML à produire un graphique d’objet valide. Dans le chemin d’enregistrement, l’information attribuée aide soit le lecteur XAML à former un flux valide de nœuds XAML qui reconstitue des informations système de type XAML ; ou il déclare des conseils de sérialisation ou des exigences pour l’écrivain XAML ou d’autres consommateurs XAML.
+Les sections suivantes décrivent les attributs XAML que vous pouvez appliquer aux types personnalisés ou aux membres personnalisés. Chaque attribut CLR communique des informations qui sont pertinentes pour un système de type XAML. Dans le chemin de chargement, les informations attribuées aident le lecteur XAML à former un flux de nœud XAML valide, ou il aide le writer XAML à produire un graphique d’objets valide. Dans le chemin d’enregistrement, les informations attribuées aident le lecteur XAML à former un flux de nœud XAML valide qui reconstitue les informations de système de type XAML ; ou il déclare des indications de sérialisation ou des spécifications pour le writer XAML ou d’autres consommateurs XAML.
 
 ### <a name="ambientattribute"></a>AmbientAttribute
 
-**Documentation de référence:**<xref:System.Windows.Markup.AmbientAttribute>
+**Documentation de référence :**<xref:System.Windows.Markup.AmbientAttribute>
 
-**S’applique à :** Membres de classe, de propriété ou `get` d’accesseur qui prennent en charge les propriétés attachables.
+**S’applique à :** Membres de classe, de propriété ou d' `get` accesseur qui prennent en charge les propriétés pouvant être attachées.
 
-**Arguments:** Aucun
+**Arguments :** None
 
-<xref:System.Windows.Markup.AmbientAttribute>indique que la propriété, ou toutes les propriétés qui prennent le type attribué, doivent être interprétées en vertu du concept de propriété ambiante dans XAML. Le concept de caractère ambiant renvoie à la façon dont les processeurs XAML déterminent les propriétaires de types des membres. Une propriété ambiante est une propriété où la valeur est censée être disponible dans le contexte du parseur lors de la création d’un graphique d’objet, mais où le lookup type-membre typique est suspendu pour l’ensemble immédiat de nœuds XAML en cours de création.
+<xref:System.Windows.Markup.AmbientAttribute> indique que la propriété, ou toutes les propriétés qui prennent le type avec attributs, doivent être interprétées sous le concept de propriété ambiante en XAML. Le concept de caractère ambiant renvoie à la façon dont les processeurs XAML déterminent les propriétaires de types des membres. Une propriété ambiante est une propriété où la valeur est supposée être disponible dans le contexte de l’analyseur lors de la création d’un graphique d’objet, mais où la recherche de membres de type standard est suspendue pour le jeu de nœuds XAML immédiat en cours de création.
 
-Le concept ambiant peut être appliqué aux membres attachables, <xref:System.AttributeTargets>qui ne sont pas représentés comme propriétés en termes de définition de l’attribution CLR . L’utilisation de l’attribution `get` de la méthode ne doit être appliquée que pour un accesseur qui prend en charge l’utilisation attachable pour XAML.
+Le concept ambiant peut être appliqué aux membres pouvant être attachés, qui ne sont pas représentés en tant que propriétés en ce qui concerne la façon dont l’attribution CLR est définie <xref:System.AttributeTargets> . L’utilisation de l’attribution de méthode doit être appliquée uniquement pour un `get` accesseur qui prend en charge l’utilisation pouvant être attachée pour XAML.
 
 ### <a name="constructorargumentattribute"></a>ConstructorArgumentAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.ConstructorArgumentAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.ConstructorArgumentAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Une chaîne qui spécifie le nom de la propriété qui correspond à un seul argument constructeur.
+**Arguments :** Chaîne qui spécifie le nom de la propriété qui correspond à un argument de constructeur unique.
 
-<xref:System.Windows.Markup.ConstructorArgumentAttribute>précise qu’un objet peut être para initialisé à l’aide d’une syntaxe constructeur non sans paramètres, et qu’une propriété du nom spécifié fournit des informations de construction. Ces informations sont principalement destinées à la sérialisation XAML. Pour plus d’informations, consultez <xref:System.Windows.Markup.ConstructorArgumentAttribute>.
+<xref:System.Windows.Markup.ConstructorArgumentAttribute> Spécifie qu’un objet peut être initialisé à l’aide d’une syntaxe de constructeur sans paramètre et qu’une propriété du nom spécifié fournit les informations de construction. Ces informations sont principalement destinées à la sérialisation XAML. Pour plus d'informations, consultez <xref:System.Windows.Markup.ConstructorArgumentAttribute>.
 
 ### <a name="contentpropertyattribute"></a>ContentPropertyAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.ContentPropertyAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.ContentPropertyAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Une chaîne qui spécifie le nom d’un membre du type attribué.
+**Arguments :** Chaîne qui spécifie le nom d’un membre du type avec attributs.
 
-<xref:System.Windows.Markup.ContentPropertyAttribute>indique que la propriété telle que nommée par l’argument devrait servir de propriété de contenu XAML pour ce type. La définition de propriété de contenu XAML hérite de tous les types dérivés qui sont attribués au type définissant. Vous pouvez passer outre à la définition <xref:System.Windows.Markup.ContentPropertyAttribute> sur un type dérivé spécifique en appliquant sur le type dérivé spécifique.
+<xref:System.Windows.Markup.ContentPropertyAttribute> indique que la propriété telle que nommée par l’argument doit servir de propriété de contenu XAML pour ce type. La définition de propriété de contenu XAML hérite de tous les types dérivés qui peuvent être assignés au type de définition. Vous pouvez substituer la définition sur un type dérivé spécifique en appliquant <xref:System.Windows.Markup.ContentPropertyAttribute> sur le type dérivé spécifique.
 
-Pour la propriété qui sert de propriété de contenu XAML, le marquage d’élément de propriété pour la propriété peut être omis dans l’utilisation de XAML. En règle générale, vous désignez les propriétés de contenu XAML qui favorisent une balisage XAML simplifiée pour vos modèles de contenu et de confinement. Étant donné qu’un seul membre peut être désigné comme propriété de contenu XAML, vous avez parfois des choix de conception à faire concernant laquelle de plusieurs propriétés de conteneurs d’un type devrait être désignée comme la propriété de contenu XAML. Les autres propriétés de conteneur doivent être utilisées avec des éléments de propriété explicites.
+Pour la propriété qui sert de propriété de contenu XAML, l’étiquetage des éléments de propriété de la propriété peut être omis dans l’utilisation de XAML. En règle générale, vous désignez les propriétés de contenu XAML qui favorisent une balise XAML rationalisée pour votre contenu et vos modèles de relation contenant-contenu. Étant donné qu’un seul membre peut être désigné comme la propriété de contenu XAML, vous avez parfois des choix de conception à faire concernant les propriétés de conteneur d’un type qui doivent être désignées comme propriété de contenu XAML. Les autres propriétés de conteneur doivent être utilisées avec des éléments de propriété explicites.
 
-Dans le flux de nœuds XAML, les propriétés de contenu XAML produisent `StartMember` encore et `EndMember` les nœuds, en utilisant le nom de la propriété pour le <xref:System.Xaml.XamlMember>. Pour déterminer si un membre est la propriété <xref:System.Xaml.XamlType> de `StartObject` contenu XAML, <xref:System.Xaml.XamlType.ContentProperty%2A>examinez la valeur du poste et obtenez la valeur de .
+Dans le flux de nœud XAML, les propriétés de contenu XAML génèrent toujours des `StartMember` `EndMember` nœuds, en utilisant le nom de la propriété pour le <xref:System.Xaml.XamlMember> . Pour déterminer si un membre est la propriété de contenu XAML, examinez la <xref:System.Xaml.XamlType> valeur à partir de la `StartObject` position et obtenez la valeur de <xref:System.Xaml.XamlType.ContentProperty%2A> .
 
 ### <a name="contentwrapperattribute"></a>ContentWrapperAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.ContentWrapperAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.ContentWrapperAttribute>
 
-**S’applique à :** Classe, en particulier les types de collecte.
+**S’applique à :** Classe, en particulier les types de collections.
 
-**Arguments:** A <xref:System.Type> qui spécifie le type à utiliser comme type d’emballage de contenu pour le contenu étranger.
+**Arguments :** <xref:System.Type> Qui spécifie le type à utiliser comme type de wrapper de contenu pour le contenu étranger.
 
-<xref:System.Windows.Markup.ContentWrapperAttribute>spécifie un ou plusieurs types sur le type de collecte associé qui seront utilisés pour envelopper le contenu étranger. Le contenu étranger désigne les cas où les contraintes du système de type sur le type de propriété de contenu ne saisissent pas tous les cas de contenu possibles que l’utilisation de XAML pour le type de propriétaire serait prise en charge. Par exemple, le support XAML pour le contenu d’un <xref:System.Collections.ObjectModel.Collection%601>type particulier peut prendre en charge les chaînes dans un générique fortement tapé . Les emballages de contenu sont utiles pour migrer les conventions de balisage préexistantes dans la conception de XAML de valeurs assignables pour les collections, telles que la migration de modèles de contenu liés au texte.
+<xref:System.Windows.Markup.ContentWrapperAttribute> spécifie un ou plusieurs types sur le type de collection associé qui sera utilisé pour encapsuler le contenu étranger. Le contenu étranger fait référence aux cas où les contraintes de système de type sur le type de la propriété de contenu ne capturent pas tous les cas de contenu possibles que l’utilisation de XAML pour le type propriétaire prendrait en charge. Par exemple, la prise en charge XAML pour le contenu d’un type particulier peut prendre en charge les chaînes dans un générique fortement typé <xref:System.Collections.ObjectModel.Collection%601> . Les wrappers de contenu sont utiles pour la migration de conventions de balisage préexistantes en XAML pour la conception de valeurs assignables pour les collections, telles que la migration de modèles de contenu liés au texte.
 
-Pour spécifier plus d’un type d’emballage de contenu, appliquez l’attribut plusieurs fois.
+Pour spécifier plusieurs types de wrappers de contenu, appliquez l’attribut plusieurs fois.
 
-### <a name="dependsonattribute"></a>DependsOnAttribute (en)
+### <a name="dependsonattribute"></a>DependsOnAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.DependsOnAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.DependsOnAttribute>
 
-**S’applique à :** Propriété
+**S’applique à :** Propriété
 
-**Arguments:** Une chaîne qui spécifie le nom d’un autre membre du type attribué.
+**Arguments :** Chaîne qui spécifie le nom d’un autre membre du type avec attributs.
 
-<xref:System.Windows.Markup.DependsOnAttribute>indique que la propriété attribuée dépend de la valeur d’une autre propriété. L’application de cet attribut à une définition de propriété garantit que les propriétés dépendantes sont traitées en premier dans l’écriture d’objets XAML. Utilisations <xref:System.Windows.Markup.DependsOnAttribute> de spécifier les cas exceptionnels de propriétés sur les types où un ordre spécifique d’analyse doit être suivi pour la création d’objets valides.
+<xref:System.Windows.Markup.DependsOnAttribute> indique que la propriété avec attributs dépend de la valeur d’une autre propriété. L’application de cet attribut à une définition de propriété garantit que les propriétés dépendantes sont traitées en premier dans l’écriture d’objet XAML. Les utilisations de <xref:System.Windows.Markup.DependsOnAttribute> spécifient les cas exceptionnels des propriétés sur les types où un ordre spécifique d’analyse doit être suivi pour la création d’un objet valide.
 
-Vous pouvez <xref:System.Windows.Markup.DependsOnAttribute> appliquer plusieurs cas à une définition de propriété.
+Vous pouvez appliquer plusieurs <xref:System.Windows.Markup.DependsOnAttribute> cas à une définition de propriété.
 
 ### <a name="markupextensionreturntypeattribute"></a>MarkupExtensionReturnTypeAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>
 
-**S’applique à :** Classe, qui devrait être <xref:System.Windows.Markup.MarkupExtension> un type dérivé.
+**S’applique à :** Classe, qui est censée être un <xref:System.Windows.Markup.MarkupExtension> type dérivé.
 
-**Arguments:** A <xref:System.Type> qui spécifie le type `ProvideValue` le plus <xref:System.Windows.Markup.MarkupExtension>précis à attendre à la suite de l’attribué .
+**Arguments :** <xref:System.Type> Qui spécifie le type le plus précis attendu comme `ProvideValue` résultat de l’attribute <xref:System.Windows.Markup.MarkupExtension> .
 
-Pour plus d’informations, voir [Extensions Markup pour XAML Aperçu](markup-extensions-overview.md).
+Pour plus d’informations, consultez [vue d’ensemble des extensions de balisage pour XAML](markup-extensions-overview.md).
 
-### <a name="namescopepropertyattribute"></a>NomScopePropertyAttribute
+### <a name="namescopepropertyattribute"></a>NameScopePropertyAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.NameScopePropertyAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.NameScopePropertyAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Soutient deux formes d’attribution :
+**Arguments :** Prend en charge deux formes d’attribution :
 
-- Une chaîne qui spécifie le nom d’une propriété sur le type attribué.
+- Chaîne qui spécifie le nom d’une propriété sur le type avec attributs.
 
-- Une chaîne qui spécifie le <xref:System.Type> nom d’une propriété, et un pour le type qui définit la propriété nommée. Ce formulaire est destiné à spécifier un membre attachable comme propriété de namescope XAML.
+- Chaîne qui spécifie le nom d’une propriété, et <xref:System.Type> pour le type qui définit la propriété nommée. Ce formulaire est destiné à la spécification d’un membre pouvant être attaché en tant que propriété de portée de code XAML.
 
-<xref:System.Windows.Markup.NameScopePropertyAttribute>spécifie une propriété qui fournit la valeur XAML namescope pour la classe attribuée. La propriété XAML namescope devrait faire référence <xref:System.Windows.Markup.INameScope> à un objet qui implémente et détient le namescope XAML réel, son magasin, et son comportement.
+<xref:System.Windows.Markup.NameScopePropertyAttribute> spécifie une propriété qui fournit la valeur de la portée de code XAML pour la classe avec attributs. La propriété de portée de code XAML est supposée référencer un objet qui implémente <xref:System.Windows.Markup.INameScope> et contient la portée de code XAML réelle, son magasin et son comportement.
 
-### <a name="runtimenamepropertyattribute"></a>RuntimeNamePropertyAttribute RuntimeNamePropertyAttribute RuntimeNamePropertyAttribute Runtime
+### <a name="runtimenamepropertyattribute"></a>RuntimeNamePropertyAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Une chaîne qui spécifie le nom de la propriété de nom de l’heure d’exécution sur le type attribué.
+**Arguments :** Chaîne qui spécifie le nom de la propriété de nom au moment de l’exécution sur le type avec attributs.
 
-<xref:System.Windows.Markup.RuntimeNamePropertyAttribute>signale une propriété du type attribué qui cartographie la directive XAML [x:Name](xname-directive.md). La propriété doit <xref:System.String> être de type et doit être lue/écriture.
+<xref:System.Windows.Markup.RuntimeNamePropertyAttribute> signale une propriété du type avec attributs qui est mappée à la [directive X :Name](xname-directive.md)XAML. La propriété doit être de type <xref:System.String> et doit être en lecture/écriture.
 
-La définition hérite de tous les types dérivés qui sont assignables au type définissant. Vous pouvez passer outre à la définition <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> sur un type dérivé spécifique en appliquant sur le type dérivé spécifique.
+La définition hérite de tous les types dérivés qui peuvent être assignés au type de définition. Vous pouvez substituer la définition sur un type dérivé spécifique en appliquant <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> sur le type dérivé spécifique.
 
 ### <a name="trimsurroundingwhitespaceattribute"></a>TrimSurroundingWhitespaceAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>
 
-**S’applique à :** Types
+**S’applique à :** Modes
 
-**Arguments:** Aucun.
+**Arguments :** None.
 
-<xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>s’applique à des types spécifiques qui peuvent apparaître comme des éléments pour <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>enfants dans un contenu significatif dans l’espace blanc (contenu détenu par une collection qui a ). <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>est principalement pertinent pour le chemin d’enregistrement, mais est disponible dans <xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A?displayProperty=nameWithType>le système de type XAML dans la trajectoire de charge en examinant . Pour plus d’informations, voir [traitement de l’espace blanc dans XAML](white-space-processing.md).
+<xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> est appliqué à des types spécifiques qui peuvent apparaître en tant qu’éléments enfants dans un contenu significatif d’espaces blancs (contenu détenu par une collection qui possède <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> ). <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> concerne principalement le chemin d’enregistrement, mais est disponible dans le système de type XAML dans le chemin de chargement en examinant <xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A?displayProperty=nameWithType> . Pour plus d’informations, consultez traitement des espaces [blancs en XAML](white-space-processing.md).
 
 ### <a name="typeconverterattribute"></a>TypeConverterAttribute
 
-**Documentation de référence:**  <xref:System.ComponentModel.TypeConverterAttribute>
+**Documentation de référence :**  <xref:System.ComponentModel.TypeConverterAttribute>
 
-**S’applique à :** Catégorie, bien, méthode (le seul cas de `get` méthode valide XAML est un accesseur qui prend en charge un membre attachable).
+**S’applique à :** La classe, la propriété, la méthode (le seul cas de méthode XAML valide est un `get` accesseur qui prend en charge un membre pouvant être attaché).
 
-**Arguments:** Le <xref:System.Type> de <xref:System.ComponentModel.TypeConverter>la .
+**Arguments :** <xref:System.Type> Du <xref:System.ComponentModel.TypeConverter> .
 
-<xref:System.ComponentModel.TypeConverterAttribute>dans un contexte XAML <xref:System.ComponentModel.TypeConverter>fait référence à une coutume . Cela <xref:System.ComponentModel.TypeConverter> fournit un comportement de conversion de type pour les types personnalisés, ou les membres de ce type.
+<xref:System.ComponentModel.TypeConverterAttribute> dans un contexte XAML, fait référence à un personnalisé <xref:System.ComponentModel.TypeConverter> . Cela <xref:System.ComponentModel.TypeConverter> fournit le comportement de conversion de type pour les types personnalisés, ou les membres de ce type.
 
-Appliquez <xref:System.ComponentModel.TypeConverterAttribute> l’attribut à votre type, en référence à votre mise en œuvre de convertisseur de type. Vous pouvez définir des convertisseurs de type pour XAML sur les classes, les structures ou les interfaces. Vous n’avez pas besoin de fournir la conversion de type pour les énumérations, que la conversion est activée nativement.
+Appliquez l' <xref:System.ComponentModel.TypeConverterAttribute> attribut à votre type, en référençant votre implémentation de convertisseur de type. Vous pouvez définir des convertisseurs de type pour XAML sur des classes, des structures ou des interfaces. Vous n’avez pas besoin de fournir la conversion de type pour les énumérations, cette conversion est activée en mode natif.
 
-Votre convertisseur de type devrait être en mesure de convertir à partir d’une chaîne qui est utilisée pour les attributs ou le texte d’initialisation en balisage, dans votre type de destination prévu. Pour plus d’informations, voir [TypeConverters et XAML](../../framework/wpf/advanced/typeconverters-and-xaml.md).
+Votre convertisseur de type doit pouvoir effectuer une conversion à partir d’une chaîne utilisée pour les attributs ou le texte d’initialisation dans le balisage, dans le type de destination prévu. Pour plus d’informations, consultez [TypeConverters et XAML](/dotnet/desktop/wpf/advanced/typeconverters-and-xaml).
 
-Plutôt que de s’appliquer à toutes les valeurs d’un type, un comportement de convertisseur de type pour XAML peut également être établi sur une propriété spécifique. Dans ce cas, <xref:System.ComponentModel.TypeConverterAttribute> vous appliquez à la définition `get` de `set` propriété (la définition extérieure, et non les définitions et définitions).
+Plutôt que d’appliquer à toutes les valeurs d’un type, un comportement de convertisseur de type pour XAML peut également être établi sur une propriété spécifique. Dans ce cas, vous appliquez <xref:System.ComponentModel.TypeConverterAttribute> à la définition de propriété (la définition externe, pas les `get` définitions spécifiques et `set` ).
 
-Un comportement de convertisseur de type pour l’utilisation XAML d’un membre joignable personnalisé peut être attribué en appliquant <xref:System.ComponentModel.TypeConverterAttribute> à l’accesseur `get` de méthode qui prend en charge l’utilisation de XAML.
+Un comportement de convertisseur de type pour l’utilisation XAML d’un membre pouvant être attaché personnalisé peut être assigné en appliquant <xref:System.ComponentModel.TypeConverterAttribute> à l' `get` accesseur de méthode qui prend en charge l’utilisation de XAML.
 
-Semblable <xref:System.ComponentModel.TypeConverter>à <xref:System.ComponentModel.TypeConverterAttribute> , existait en .NET avant l’existence de XAML, et le modèle de convertisseur de type servi à d’autres fins. Afin de référencer <xref:System.ComponentModel.TypeConverterAttribute>et d’utiliser, vous `using` devez <xref:System.ComponentModel>le qualifier pleinement ou fournir une déclaration pour . Inclure également l’assemblage du système dans votre projet.
+Semblable à <xref:System.ComponentModel.TypeConverter> , <xref:System.ComponentModel.TypeConverterAttribute> existait dans .net avant l’existence de XAML, et le modèle de convertisseur de type a servi à d’autres fins. Pour faire référence à et utiliser <xref:System.ComponentModel.TypeConverterAttribute> , vous devez le qualifier entièrement ou fournir une `using` instruction pour <xref:System.ComponentModel> . Incluez également l’assembly système dans votre projet.
 
-### <a name="uidpropertyattribute"></a>UidPropertyAttribute UidPropertyAttribute
+### <a name="uidpropertyattribute"></a>UidPropertyAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.UidPropertyAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.UidPropertyAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Une chaîne qui fait référence à la propriété concernée par son nom.
+**Arguments :** Chaîne qui fait référence à la propriété appropriée par nom.
 
-Indique la propriété CLR d’une classe qui alias la [directive x:Uid](xuid-directive.md).
+Indique la propriété CLR d’une classe qui est l’alias de la [directive x :uid](xuid-directive.md).
 
-### <a name="usableduringinitializationattribute"></a>UsableDuringInitialisationAttribute
+### <a name="usableduringinitializationattribute"></a>UsableDuringInitializationAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.UsableDuringInitializationAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.UsableDuringInitializationAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Un Boolean. S’il est utilisé à l’objectif visé `true`par l’attribut, la valeur doit être définie à .
+**Arguments :** Valeur booléenne. S’il est utilisé pour le rôle prévu de l’attribut, la valeur doit être définie sur `true` .
 
-Indique si le type est construit de haut en bas pendant la création de graphique d’objet XAML. Il s’agit d’un concept avancé, qui est probablement étroitement lié à la définition de votre modèle de programmation. Pour plus d’informations, consultez <xref:System.Windows.Markup.UsableDuringInitializationAttribute>.
+Indique si le type est généré de haut en haut lors de la création d’un graphique d’objet XAML. Il s’agit d’un concept avancé, qui est probablement étroitement lié à la définition de votre modèle de programmation. Pour plus d'informations, consultez <xref:System.Windows.Markup.UsableDuringInitializationAttribute>.
 
 ### <a name="valueserializerattribute"></a>ValueSerializerAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.ValueSerializerAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.ValueSerializerAttribute>
 
-**S’applique à :** Catégorie, bien, méthode (le seul cas de `get` méthode valide XAML est un accesseur qui prend en charge un membre attachable).
+**S’applique à :** La classe, la propriété, la méthode (le seul cas de méthode XAML valide est un `get` accesseur qui prend en charge un membre pouvant être attaché).
 
-**Arguments:** A <xref:System.Type> qui spécifie la classe de support de sérialisation de valeur à utiliser lors de la sérialisation de toutes les propriétés du type attribué, ou de la propriété spécifique attribuée.
+**Arguments :** <xref:System.Type> Qui spécifie la classe de prise en charge du sérialiseur de valeurs à utiliser lors de la sérialisation de toutes les propriétés du type avec attributs, ou de la propriété avec attributs spécifique.
 
-<xref:System.Windows.Markup.ValueSerializer>spécifie une classe de sérialisation <xref:System.ComponentModel.TypeConverter> de valeur qui exige plus d’état et de contexte qu’un. <xref:System.Windows.Markup.ValueSerializer>peut être associé à un membre <xref:System.Windows.Markup.ValueSerializerAttribute> attachable `get` en appliquant l’attribut sur la méthode d’accesseur statique pour le membre attachable. La sérialisation des valeurs s’applique également aux énumérations, interfaces et structures, mais pas aux délégués.
+<xref:System.Windows.Markup.ValueSerializer> spécifie une classe de sérialisation de valeur qui requiert plus d’État et de contexte qu’un <xref:System.ComponentModel.TypeConverter> . <xref:System.Windows.Markup.ValueSerializer> peut être associé à un membre pouvant être attaché en appliquant l' <xref:System.Windows.Markup.ValueSerializerAttribute> attribut sur la `get` méthode d’accesseur statique pour le membre pouvant être attaché. La sérialisation de valeur est également applicable pour les énumérations, les interfaces et les structures, mais pas pour les délégués.
 
 ### <a name="whitespacesignificantcollectionattribute"></a>WhitespaceSignificantCollectionAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>
 
-**S’applique à :** Classe, en particulier les types de collecte qui sont censés héberger du contenu mixte, où l’espace blanc autour des éléments de l’objet pourrait être important pour la représentation de l’interface utilisateur.
+**S’applique à :** Classe, spécifiquement les types de collection supposés héberger du contenu mixte, où les espaces autour des éléments objets peuvent être significatifs pour la représentation de l’interface utilisateur.
 
-**Arguments:** Aucun.
+**Arguments :** None.
 
-<xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>indique qu’un type de collecte doit être traité comme espace blanc significatif par un processeur XAML, ce qui influence la construction des nœuds de valeur du flux de nœuds XAML au sein de la collection. Pour plus d’informations, voir [traitement de l’espace blanc dans XAML](white-space-processing.md).
+<xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> indique qu’un type de collection doit être traité comme un espace blanc significatif par un processeur XAML, ce qui a une incidence sur la construction des nœuds de valeur du flux de nœud XAML au sein de la collection. Pour plus d’informations, consultez traitement des espaces [blancs en XAML](white-space-processing.md).
 
 ### <a name="xamldeferloadattribute"></a>XamlDeferLoadAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.XamlDeferLoadAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.XamlDeferLoadAttribute>
 
-**S’applique à :** Classe, propri été.
+**S’applique à :** Classe, propriété.
 
-**Arguments:** Prend en charge deux types de <xref:System.Type>formulaires d’attribution comme des chaînes, ou des types comme . Consultez <xref:System.Windows.Markup.XamlDeferLoadAttribute>.
+**Arguments :** Prend en charge deux types de formulaires d’attribution sous forme de chaînes ou de types sous la forme <xref:System.Type> . Consultez <xref:System.Windows.Markup.XamlDeferLoadAttribute>.
 
 Indique qu'une classe ou une propriété utilise le chargement différé pour XAML (par exemple, dans un comportement de modèle), et signale la classe qui active le comportement de report et son type de destination/contenu.
 
 ### <a name="xamlsetmarkupextensionattribute"></a>XamlSetMarkupExtensionAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Nomme le rappel.
+**Arguments :** Nomme le rappel.
 
-Indique qu’une classe peut utiliser une extension de balisage pour fournir une valeur pour une ou plusieurs de ses propriétés, et fait référence à un gestionnaire qu’un auteur XAML devrait appeler avant d’effectuer une opération de prolongation de balisage sur n’importe quelle propriété de la classe.
+Indique qu’une classe peut utiliser une extension de balisage pour fournir une valeur à une ou plusieurs de ses propriétés, et référence un gestionnaire qu’un writer XAML doit appeler avant d’effectuer une opération de définition d’extension de balisage sur n’importe quelle propriété de la classe.
 
 ### <a name="xamlsettypeconverterattribute"></a>XamlSetTypeConverterAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.XamlSetTypeConverterAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.XamlSetTypeConverterAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Nomme le rappel.
+**Arguments :** Nomme le rappel.
 
-Indique qu’une classe peut utiliser un convertisseur de type pour fournir une valeur pour une ou plusieurs de ses propriétés, et fait référence à un gestionnaire qu’un auteur XAML devrait appeler avant d’effectuer une opération de convertisseur de type sur n’importe quelle propriété de la classe.
+Indique qu’une classe peut utiliser un convertisseur de type pour fournir une valeur pour une ou plusieurs de ses propriétés, et référence un gestionnaire qu’un writer XAML doit appeler avant d’effectuer une opération de définition de convertisseur de type sur n’importe quelle propriété de la classe.
 
-### <a name="xmllangpropertyattribute"></a>XmlLangPropertyAttribute XmlLangPropertyAttribute
+### <a name="xmllangpropertyattribute"></a>XmlLangPropertyAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.XmlLangPropertyAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.XmlLangPropertyAttribute>
 
-**S’applique à :** Classe
+**S’applique à :** Type
 
-**Arguments:** Une chaîne qui spécifie le `xml:lang` nom de la propriété à alias sur le type attribué.
+**Arguments :** Chaîne qui spécifie le nom de la propriété avec lequel effectuer un alias `xml:lang` sur le type avec attributs.
 
-<xref:System.Windows.Markup.XmlLangPropertyAttribute>signale une propriété du type attribué `lang` qui trace à la directive XML. La propriété n’est <xref:System.String> pas nécessairement de type, mais doit être assignable à partir d’une chaîne (l’affectation peut être accomplie en associant un convertisseur de type avec le type de propriété ou avec la propriété spécifique). La propriété doit être lue/écrite.
+<xref:System.Windows.Markup.XmlLangPropertyAttribute> signale une propriété du type avec attributs qui est mappée à la `lang` directive XML. La propriété n’est pas nécessairement de type <xref:System.String> , mais doit pouvoir être assignée à partir d’une chaîne (l’assignation peut être obtenue en associant un convertisseur de type au type de la propriété ou à la propriété spécifique). La propriété doit être en lecture/écriture.
 
-Le scénario `xml:lang` de cartographie est de sorte qu’un modèle d’objet de durée de course a accès à des informations linguistiques spécifiées par XML sans traitement spécifique avec un XMLDOM.
+Le scénario de mappage `xml:lang` permet à un modèle objet d’exécution d’accéder aux informations de langage spécifiées par XML sans traitement spécifique avec un XMLDOM.
 
-La définition hérite de tous les types dérivés qui sont assignables au type définissant. Vous pouvez passer outre à la définition <xref:System.Windows.Markup.XmlLangPropertyAttribute> sur un type dérivé spécifique en appliquant sur le type dérivé spécifique, bien qu’il s’agit d’un scénario rare.
+La définition hérite de tous les types dérivés qui peuvent être assignés au type de définition. Vous pouvez substituer la définition sur un type dérivé spécifique en appliquant <xref:System.Windows.Markup.XmlLangPropertyAttribute> sur le type dérivé spécifique, bien qu’il s’agisse d’un scénario rare.
 
-## <a name="xaml-related-clr-attributes-at-the-assembly-level"></a>Attributs CLR liés à XAML au niveau de l’Assemblée
+## <a name="xaml-related-clr-attributes-at-the-assembly-level"></a>Attributs CLR liés à XAML au niveau de l’assembly
 
-Les sections suivantes décrivent les attributs liés à la XAML qui ne sont pas appliqués aux types ou aux définitions des membres, mais qui sont plutôt appliqués aux assemblages. Ces attributs sont pertinents à l’objectif global de définir une bibliothèque qui contient des types personnalisés à utiliser dans XAML. Certains des attributs n’influencent pas nécessairement directement le flux de nœuds XAML, mais sont transmis dans le flux de nœuds pour d’autres consommateurs à utiliser. Les consommateurs pour l’information comprennent des environnements de conception ou des processus de sérialisation qui ont besoin d’informations XAML namespace et les informations préfixes associées. Un contexte de schéma XAML (y compris le défaut .NET XAML Services) utilise également ces informations.
+Les sections suivantes décrivent les attributs XAML qui ne sont pas appliqués aux types ou aux définitions de membres, mais qui sont plutôt appliqués aux assemblys. Ces attributs sont pertinents pour l’objectif global de la définition d’une bibliothèque qui contient des types personnalisés à utiliser en XAML. Certains des attributs n’influencent pas nécessairement le flux de nœud XAML directement, mais sont transmis dans le flux de nœud à utiliser par les autres consommateurs. Les consommateurs des informations incluent des environnements de conception ou des processus de sérialisation qui nécessitent des informations d’espace de noms XAML et des informations de préfixe associées. Un contexte de schéma XAML (y compris la valeur par défaut des services XAML .NET) utilise également ces informations.
 
 ### <a name="xmlnscompatiblewithattribute"></a>XmlnsCompatibleWithAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>
 
 **Arguments :**
 
-- Une chaîne qui spécifie l’identifiant de l’espace de nom XAML pour subsume.
+- Chaîne qui spécifie l’identificateur de l’espace de noms XAML à englober.
 
-- Une chaîne qui spécifie l’identifiant de l’espace de nom XAML qui peut subsumer l’espace de nom XAML de l’argument précédent.
+- Chaîne qui spécifie l’identificateur de l’espace de noms XAML qui peut englober l’espace de noms XAML à partir de l’argument précédent.
 
-  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>spécifie qu’un espace de nom XAML peut être subsumé par un autre espace de nom XAML. En règle générale, l’espace de noms XAML inclus est indiqué dans un <xref:System.Windows.Markup.XmlnsDefinitionAttribute> précédemment défini. Cette technique peut être utilisée pour la version d’un vocabulaire XAML dans une bibliothèque et pour la rendre compatible avec le balisage précédemment défini par rapport au vocabulaire version antérieure.
+  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute> Spécifie qu’un espace de noms XAML peut être inclus par un autre espace de noms XAML. En règle générale, l’espace de noms XAML inclus est indiqué dans un <xref:System.Windows.Markup.XmlnsDefinitionAttribute> précédemment défini. Cette technique peut être utilisée pour le contrôle de version d’un vocabulaire XAML dans une bibliothèque et pour le rendre compatible avec le balisage précédemment défini par rapport au vocabulaire avec version antérieure.
 
 ### <a name="xmlnsdefinitionattribute"></a>XmlnsDefinitionAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.XmlnsDefinitionAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.XmlnsDefinitionAttribute>
 
 **Arguments :**
 
-- Une chaîne qui spécifie l’identifiant de l’espace de nom XAML à définir.
+- Chaîne qui spécifie l’identificateur de l’espace de noms XAML à définir.
 
-- Une chaîne qui nomme un espace de nom CLR. L’espace de nom CLR devrait définir les types publics dans votre assemblage, et au moins un des types d’espace nom CLR devrait être destiné à l’utilisation de XAML.
+- Chaîne qui nomme un espace de noms CLR. L’espace de noms CLR doit définir des types publics dans votre assembly, et au moins l’un des types d’espaces de noms CLR doit être prévu pour l’utilisation de XAML.
 
-  <xref:System.Windows.Markup.XmlnsDefinitionAttribute>spécifie une cartographie par assemblage entre un espace de nom XAML et un espace de nom CLR, qui est ensuite utilisé pour la résolution de type par un auteur d’objets XAML ou le contexte du schéma XAML.
+  <xref:System.Windows.Markup.XmlnsDefinitionAttribute> spécifie un mappage par assembly entre un espace de noms XAML et un espace de noms CLR, qui est ensuite utilisé pour la résolution de type par un writer d’objet XAML ou un contexte de schéma XAML.
 
-  Plus d’un <xref:System.Windows.Markup.XmlnsDefinitionAttribute> peut être appliqué à une assemblée. Cela peut être fait pour n’importe quelle combinaison des raisons suivantes:
+  Plusieurs <xref:System.Windows.Markup.XmlnsDefinitionAttribute> peuvent être appliqués à un assembly. Cette opération peut être effectuée pour n’importe quelle combinaison des raisons suivantes :
 
-- La conception de la bibliothèque contient plusieurs espaces de noms CLR pour l’organisation logique de l’accès à l’API en temps d’exécution; cependant, vous voulez que tous les types dans ces espaces de nom soient XAML-utilisables en faisant référence au même espace de nom XAML. Dans ce cas, <xref:System.Windows.Markup.XmlnsDefinitionAttribute> vous appliquez <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> plusieurs attributs en utilisant la même valeur mais des valeurs différentes. <xref:System.Windows.Markup.XmlnsDefinitionAttribute.ClrNamespace%2A> Ceci est particulièrement utile si vous définissez des cartes pour l’espace de nom XAML que votre cadre ou application a l’intention d’être l’espace de nom XAML par défaut dans l’utilisation commune.
+- La conception de la bibliothèque contient plusieurs espaces de noms CLR pour l’organisation logique de l’accès à l’API Runtime. Toutefois, vous souhaitez que tous les types de ces espaces de noms soient utilisables en XAML en référençant le même espace de noms XAML. Dans ce cas, vous appliquez plusieurs <xref:System.Windows.Markup.XmlnsDefinitionAttribute> attributs à l’aide de la même <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> valeur, mais des <xref:System.Windows.Markup.XmlnsDefinitionAttribute.ClrNamespace%2A> valeurs différentes. Cela s’avère particulièrement utile si vous définissez des mappages pour l’espace de noms XAML que votre infrastructure ou application envisage d’être l’espace de noms XAML par défaut en utilisation courante.
 
-- La conception de la bibliothèque contient plusieurs espaces de noms CLR, et vous voulez une séparation délibérée XAML namespace entre les utilisations de types dans ces espaces de noms CLR.
+- La conception de la bibliothèque contient plusieurs espaces de noms CLR et vous souhaitez une séparation délibérée des espaces de noms XAML entre les utilisations des types dans ces espaces de noms CLR.
 
-- Vous définissez un espace de nom CLR dans l’assemblage, et vous voulez qu’il soit accessible à travers plus d’un espace de nom XAML. Ce scénario se produit lorsque vous soutenez plusieurs vocabulaires avec la même base de code.
+- Vous définissez un espace de noms CLR dans l’assembly et vous souhaitez qu’il soit accessible par le biais de plusieurs espaces de noms XAML. Ce scénario se produit lorsque vous prenez en charge plusieurs vocabulaires avec le même code base.
 
-- Vous définissez le support linguistique XAML dans un ou plusieurs espaces de noms CLR. Dans ce cas, <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> la `http://schemas.microsoft.com/winfx/2006/xaml`valeur devrait être .
+- Vous définissez la prise en charge du langage XAML dans un ou plusieurs espaces de noms CLR. Dans ce cas, la <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> valeur doit être `http://schemas.microsoft.com/winfx/2006/xaml` .
 
 ### <a name="xmlnsprefixattribute"></a>XmlnsPrefixAttribute
 
-**Documentation de référence:**  <xref:System.Windows.Markup.XmlnsPrefixAttribute>
+**Documentation de référence :**  <xref:System.Windows.Markup.XmlnsPrefixAttribute>
 
 **Arguments :**
 
-- Une chaîne qui spécifie l’identifiant d’un espace de nom XAML.
+- Chaîne qui spécifie l’identificateur d’un espace de noms XAML.
 
-- Une chaîne qui spécifie un préfixe recommandé.
+- Chaîne qui spécifie un préfixe recommandé.
 
-  <xref:System.Windows.Markup.XmlnsDefinitionAttribute>spécifie un préfixe recommandé à utiliser pour un espace de nom XAML. Le préfixe est utile lors de l’écriture d’éléments et d’attributs <xref:System.Xaml.XamlXmlWriter>dans un fichier XAML qui est sérialisé par .NET XAML Services , ou quand une bibliothèque XAML-mise en œuvre interagit avec un environnement de conception qui a XAML caractéristiques d’édition.
+  <xref:System.Windows.Markup.XmlnsDefinitionAttribute> spécifie un préfixe recommandé à utiliser pour un espace de noms XAML. Le préfixe est utile lors de l’écriture d’éléments et d’attributs dans un fichier XAML qui est sérialisé par les services XAML .NET <xref:System.Xaml.XamlXmlWriter> , ou lorsqu’une bibliothèque d’implémentation XAML interagit avec un environnement de conception qui a des fonctionnalités d’édition XAML.
 
-  Plus d’un <xref:System.Windows.Markup.XmlnsPrefixAttribute> peut être appliqué à une assemblée. Cela peut être fait pour n’importe quelle combinaison des raisons suivantes:
+  Plusieurs <xref:System.Windows.Markup.XmlnsPrefixAttribute> peuvent être appliqués à un assembly. Cette opération peut être effectuée pour n’importe quelle combinaison des raisons suivantes :
 
-- Votre assemblage définit les types pour plus d’un espace de nom XAML. Dans ce cas, définissez différentes valeurs de préfixe pour chaque espace de nom XAML.
+- Votre assembly définit des types pour plusieurs espaces de noms XAML. Dans ce cas, définissez des valeurs de préfixe différentes pour chaque espace de noms XAML.
 
-- Vous soutenez plusieurs vocabulaires, et vous utilisez différents préfixes pour chaque vocabulaire et l’espace de nom XAML.
+- Vous prenez en charge plusieurs vocabulaires, et vous utilisez différents préfixes pour chaque vocabulaire et espace de noms XAML.
 
-- Vous définissez le support linguistique XAML dans l’assemblage et avez un <xref:System.Windows.Markup.XmlnsDefinitionAttribute> pour `http://schemas.microsoft.com/winfx/2006/xaml`. Dans ce cas, vous devez `x`généralement promouvoir le préfixe .
+- Vous définissez la prise en charge du langage XAML dans l’assembly et avez un <xref:System.Windows.Markup.XmlnsDefinitionAttribute> pour `http://schemas.microsoft.com/winfx/2006/xaml` . Dans ce cas, vous devez généralement promouvoir le préfixe `x` .
 
 > [!NOTE]
-> .NET XAML Services définit également l’attribut <xref:System.Windows.Markup.RootNamespaceAttribute>XAML- connexe . Cet attribut est un attribut de niveau d’assemblage pour le support du système de projet, et il n’est pas pertinent pour les types personnalisés XAML.
+> Les services XAML .NET définissent également l’attribut XAML <xref:System.Windows.Markup.RootNamespaceAttribute> . Cet attribut est un attribut de niveau assembly pour la prise en charge du système de projet, et il ne s’applique pas aux types personnalisés XAML.
 
 ## <a name="see-also"></a>Voir aussi
 

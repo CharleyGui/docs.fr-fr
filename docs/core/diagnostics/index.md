@@ -3,12 +3,12 @@ title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: 568f237e131cde18dad7c87ddff2fdd3d4bc5b8b
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: e97acccbe3bdd577ee600cefb9f1f0528d3c1ac0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89597984"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538525"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -50,13 +50,13 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 
 .NET Core comprend ce qui est appelé `EventPipe` par le biais duquel les données de diagnostic sont exposées. L’outil [dotnet-trace](dotnet-trace.md) vous permet de consommer des données de profilage intéressantes à partir de votre application, ce qui peut aider dans les scénarios où vous devez provoquer une exécution lente des applications.
 
-### <a name="dotnet-symbol"></a>dotnet-Symbol
+### <a name="dotnet-symbol"></a>dotnet-symbol
 
 [dotnet-Symbol télécharge des](dotnet-symbol.md) fichiers (symboles, DAC/DBI, fichiers hôtes, etc.) nécessaires à l’ouverture d’un vidage principal ou d’un minidump. Utilisez cet outil si vous avez besoin de symboles et de modules pour déboguer un fichier de vidage capturé sur un autre ordinateur.
 
-### <a name="dotnet-sos"></a>dotnet-SOS
+### <a name="dotnet-sos"></a>dotnet-sos
 
-[dotnet-SOS](dotnet-sos.md) est utilisé pour installer l' [extension de débogage SOS](https://docs.microsoft.com/dotnet/framework/tools/sos-dll-sos-debugging-extension) sur Linux ou MacOS (ou sur Windows si vous utilisez des outils de débogage plus anciens).
+[dotnet-SOS](dotnet-sos.md) est utilisé pour installer l' [extension de débogage SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) sur Linux ou MacOS (ou sur Windows si vous utilisez des outils de débogage plus anciens).
 
 ## <a name="net-core-diagnostics-tutorials"></a>Tutoriels de diagnostics .NET Core
 

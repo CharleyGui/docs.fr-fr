@@ -5,12 +5,12 @@ author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: efa0925a96fcdd4356109632fa77199edde73c26
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8005a8a3e5202b0255ec482dfb7e3c284bc2e19b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284284"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538902"
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Utilisation de Microsoft XML Serializer Generator sur .NET Core
 
@@ -18,11 +18,11 @@ Ce didacticiel montre comment utiliser Microsoft XML Serializer Generator dans u
 
 > [!div class="checklist"]
 >
-> - Créer une application .NET Core
-> - Ajouter une référence au package Microsoft.XmlSerializer.Generator
-> - Modifier votre fichier MyApp.csproj pour ajouter des dépendances
-> - Ajouter une classe et un XmlSerializer
-> - Générer et exécuter l’application
+> - Guide pratique pour créer une application .NET Core
+> - Guide pratique pour ajouter une référence au package Microsoft.XmlSerializer.Generator
+> - Guide pratique pour modifier votre fichier MyApp.csproj afin d’ajouter des dépendances
+> - Guide pratique pour ajouter une classe et un XmlSerializer
+> - Guide pratique pour générer et exécuter l’application
 
 Comme l’outil [XML Serializer Generator (sgen.exe)](../../standard/serialization/xml-serializer-generator-tool-sgen-exe.md) pour le .NET Framework, le [package NuGet Microsoft.XmlSerializer.Generator](https://www.nuget.org/packages/Microsoft.XmlSerializer.Generator) est l’équivalent pour les projets .NET Core et .NET Standard. Il crée un assembly de sérialisation XML pour les types contenus dans un assembly afin d’améliorer les performances de démarrage de la sérialisation XML pendant la sérialisation ou la désérialisation des objets de ces types avec <xref:System.Xml.Serialization.XmlSerializer>.
 
@@ -112,7 +112,7 @@ dotnet run
 ```
 
 > [!NOTE]
-> [`dotnet run`](../tools/dotnet-run.md)appelle [`dotnet build`](../tools/dotnet-build.md) pour s’assurer que les cibles de génération ont été générées, puis appelle `dotnet <assembly.dll>` pour exécuter l’application cible.
+> [`dotnet run`](../tools/dotnet-run.md) appelle [`dotnet build`](../tools/dotnet-build.md) pour s’assurer que les cibles de génération ont été générées, puis appelle `dotnet <assembly.dll>` pour exécuter l’application cible.
 
 > [!IMPORTANT]
 > Les commandes et les étapes indiquées dans ce didacticiel pour exécuter votre application sont utilisées uniquement au moment du développement. Une fois que vous êtes prêt à déployer votre application, consultez les différentes [stratégies de déploiement](../deploying/index.md) pour les applications .NET Core et la commande [`dotnet publish`](../tools/dotnet-publish.md).
@@ -131,5 +131,5 @@ Félicitations ! Vous venez de :
 ## <a name="related-resources"></a>Ressources associées
 
 - [Introduction à la sérialisation XML](../../standard/serialization/introducing-xml-serialization.md)
-- [Comment sérialiser à l’aide de XmlSerializer (C#)](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
-- [Guide pratique pour sérialiser à l’aide de XmlSerializer (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
+- [Comment sérialiser à l’aide de XmlSerializer (C#)](../../standard/linq/serialize-xmlserializer.md)
+- [Guide pratique pour sérialiser à l’aide de XmlSerializer (Visual Basic)](../../standard/linq/serialize-xmlserializer.md)

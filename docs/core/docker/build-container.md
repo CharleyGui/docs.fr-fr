@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez apprendre à créer un conteneur po
 ms.date: 04/27/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 99bbc67096d98622ca5c0dc83d8b1be44a9995e5
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: b6775c760ef3f5bf1c9519430b038f149c9cf30f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810545"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538499"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Didacticiel : conteneur d’une application .NET Core
 
@@ -213,13 +213,13 @@ docker-working
 
 Dans votre terminal, exécutez la commande suivante :
 
-```Docker
+```console
 docker build -t counter-image -f Dockerfile .
 ```
 
 Docker traitera chaque ligne du *Dockerfile*. L’élément `.` de la commande `docker build` indique à Docker d’utiliser le dossier actif pour rechercher un *Dockerfile*. Cette commande génère l’image et crée un référentiel local nommé **Counter-image** qui pointe vers cette image. Une fois cette commande terminée, exécutez `docker images` pour afficher une liste des images installées :
 
-```Docker
+```console
 docker images
 REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
 counter-image                           latest              e6780479db63        4 days ago          190MB
@@ -242,7 +242,7 @@ La commande suivante, `ENTRYPOINT`, indique à Docker de configurer le conteneur
 
 Dans votre terminal, exécutez `docker build -t counter-image -f Dockerfile .` puis, une fois la commande terminée, exécutez `docker images`.
 
-```Docker
+```console
 docker build -t counter-image -f Dockerfile .
 Sending build context to Docker daemon  1.117MB
 Step 1/4 : FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
@@ -272,14 +272,14 @@ Chaque commande dans le *Dockerfile* a généré une couche et créé une valeur
 
 Maintenant que vous disposez d’une image qui contient votre application, vous pouvez créer un conteneur. Vous pouvez créer un conteneur de deux manières. Tout d’abord, créez un conteneur arrêté.
 
-```Docker
+```console
 docker create --name core-counter counter-image
 0f281cb3af994fba5d962cc7d482828484ea14ead6bfe386a35e5088c0058851
 ```
 
 La `docker create` commande ci-dessus crée un conteneur basé sur l’image **Counter-image** . Le résultat de cette commande affiche la valeur **CONTAINER ID** (la vôtre sera différente) du conteneur créé. Pour afficher une liste de *tous* les conteneurs, utilisez la commande `docker ps -a` :
 
-```Docker
+```console
 docker ps -a
 CONTAINER ID    IMAGE            COMMAND                   CREATED           STATUS     PORTS    NAMES
 0f281cb3af99    counter-image    "dotnet NetCore.Dock…"    40 seconds ago    Created             core-counter
@@ -289,7 +289,7 @@ CONTAINER ID    IMAGE            COMMAND                   CREATED           STA
 
 Le conteneur a été créé avec un nom spécifique `core-counter` , ce nom est utilisé pour gérer le conteneur. L’exemple suivant utilise la commande `docker start` pour démarrer le conteneur, puis la commande `docker ps` pour afficher uniquement les conteneurs en cours d’exécution :
 
-```Docker
+```console
 docker start core-counter
 core-counter
 
@@ -300,7 +300,7 @@ CONTAINER ID    IMAGE            COMMAND                   CREATED          STAT
 
 De même, la commande `docker stop` arrêtera le conteneur. L’exemple suivant utilise la `docker stop` commande pour arrêter le conteneur, puis utilise la `docker ps` commande pour indiquer qu’aucun conteneur n’est en cours d’exécution :
 
-```Docker
+```console
 docker stop core-counter
 core-counter
 
@@ -314,7 +314,7 @@ Lorsqu’un conteneur est en cours d’exécution, vous pouvez vous connecter à
 
 Après vous être déconnecté du conteneur, reconnectez-vous pour vérifier qu’il est toujours en cours d’exécution et de comptage.
 
-```Docker
+```console
 docker start core-counter
 core-counter
 
@@ -335,13 +335,13 @@ Counter: 19
 
 Dans le cadre de cet article, vous devez éviter de vous retrouver avec des conteneurs inactifs. Supprimez le conteneur que vous avez créé précédemment. Si le conteneur est en cours d’exécution, arrêtez-le.
 
-```Docker
+```console
 docker stop core-counter
 ```
 
 L’exemple suivant répertorie tous les conteneurs. Il utilise ensuite la commande `docker rm` pour supprimer le conteneur, puis recherche une deuxième fois si des conteneurs sont en cours d’exécution.
 
-```Docker
+```console
 docker ps -a
 CONTAINER ID    IMAGE            COMMAND                   CREATED          STATUS                        PORTS    NAMES
 2f6424a7ddce    counter-image    "dotnet NetCore.Dock…"    7 minutes ago    Exited (143) 20 seconds ago            core-counter
@@ -357,7 +357,7 @@ CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS    NAMES
 
 Docker fournit la commande `docker run` pour créer et exécuter le conteneur comme une commande unique. Cette commande vous évite de devoir exécuter `docker create` , puis `docker start`. Vous pouvez également définir cette commande pour supprimer automatiquement le conteneur lorsque le conteneur s’arrête. Par exemple, utilisez `docker run -it --rm` pour effectuer deux opérations : utiliser automatiquement le terminal actuel pour se connecter au conteneur, puis supprimer ce conteneur une fois qu’il est terminé :
 
-```Docker
+```console
 docker run -it --rm counter-image
 Counter: 1
 Counter: 2
@@ -369,7 +369,7 @@ Counter: 5
 
 Le conteneur transmet également des paramètres dans l’exécution de l’application .NET Core. Pour ordonner à l’application .NET Core de compter uniquement jusqu’à 3 passe 3.
 
-```Docker
+```console
 docker run -it --rm counter-image 3
 Counter: 1
 Counter: 2
@@ -378,7 +378,7 @@ Counter: 3
 
 Avec `docker run -it` , la commande <kbd>Ctrl + C</kbd> arrête le processus en cours d’exécution dans le conteneur qui, à son tour, arrête le conteneur. Comme le paramètre `--rm` a été fourni, le conteneur est automatiquement supprimé lorsque le processus est arrêté. Vérifiez qu’il n’existe pas :
 
-```Docker
+```console
 docker ps -a
 CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS    NAMES
 ```
@@ -391,7 +391,7 @@ La commande `docker run` vous permet également de modifier la commande `ENTRYPO
 
 Dans cet exemple, `ENTRYPOINT` est remplacé par `cmd.exe`. Appuyez sur <kbd>Ctrl + C</kbd> pour terminer le processus et arrêter le conteneur.
 
-```Docker
+```console
 docker run -it --rm --entrypoint "cmd.exe" counter-image
 
 Microsoft Windows [Version 10.0.17763.379]
@@ -450,25 +450,25 @@ Au cours de ce didacticiel, vous avez créé des conteneurs et des images. Si vo
 
 01. Lister tous les conteneurs
 
-    ```Docker
+    ```console
     docker ps -a
     ```
 
 02. Arrêtez les conteneurs qui s’exécutent par leur nom.
 
-    ```Docker
+    ```console
     docker stop counter-image
     ```
 
 03. Supprimer un conteneur
 
-    ```Docker
+    ```console
     docker rm counter-image
     ```
 
 Supprimez ensuite toutes les images que vous ne souhaitez plus conserver sur votre ordinateur. Supprimez l’image créée par votre *Dockerfile*, puis l’image .NET Core sur laquelle le *Dockerfile* était basé. Vous pouvez utiliser la valeur **IMAGE ID** ou la chaîne mise en forme **REPOSITORY:TAG**.
 
-```Docker
+```console
 docker rmi counter-image:latest
 docker rmi mcr.microsoft.com/dotnet/core/aspnet:3.1
 ```

@@ -1,21 +1,21 @@
 ---
-title: dotnet nuget liste source commande
-description: La commande source de la liste de négget dotnet répertorie toutes les sources existantes de vos fichiers de configuration NuGet.
+title: commande dotnet de la liste de listes NuGet NuGet
+description: La commande dotnet NuGet List source répertorie toutes les sources existantes de vos fichiers de configuration NuGet.
 ms.date: 03/20/2020
-ms.openlocfilehash: 8b14413949bd60ddeed977d19eec9bb99982da70
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 071061e32aa1bf888e197ec6bf97f4e4f6859f0b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463540"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537891"
 ---
 # <a name="dotnet-nuget-list-source"></a>dotnet nuget list source
 
-**Cet article s’applique à:** ✔️ .NET Core 3.1.200 SDK et les versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) 3.1.200 .net Core et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
-`dotnet nuget list source`- Répertorie toutes les sources NuGet configurées.
+`dotnet nuget list source` -Répertorie toutes les sources NuGet configurées.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -33,15 +33,15 @@ La `dotnet nuget list source` commande répertorie toutes les sources existantes
 
 - **`--configfile <FILE>`**
 
-  Le fichier de configuration NuGet. Si spécifié, seuls les paramètres de ce fichier seront utilisés. S’il n’est pas précisé, la hiérarchie des fichiers de configuration de l’annuaire actuel sera utilisée. Pour plus d’informations, voir [Configurations NuGet communes](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior).
+  Fichier de configuration NuGet. Si ce paramètre est spécifié, seuls les paramètres de ce fichier seront utilisés. S’il n’est pas spécifié, la hiérarchie des fichiers de configuration du répertoire actif sera utilisée. Pour plus d’informations, consultez [configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior).
 
 - **`--format [Detailed|Short]`**
 
-  Le format de la `Detailed` sortie de commande `Short`de liste : (la valeur par défaut) et .
+  Format de la sortie de la commande list : `Detailed` (valeur par défaut) et `Short` .
 
 ## <a name="examples"></a>Exemples
 
-- Liste des sources configurées de l’annuaire actuel :
+- Répertorier les sources configurées à partir du répertoire actif :
 
   ```dotnetcli
   dotnet nuget list source
@@ -49,6 +49,6 @@ La `dotnet nuget list source` commande répertorie toutes les sources existantes
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Sections source de paquet dans les fichiers NuGet.config](/nuget/reference/nuget-config-file#package-source-sections)
+- [Sections sources du package dans les fichiers NuGet.config](/nuget/reference/nuget-config-file#package-source-sections)
 
-- [commande de sources (nuget.exe)](/nuget/reference/cli-reference/cli-ref-sources)
+- [sources, commande (nuget.exe)](/nuget/reference/cli-reference/cli-ref-sources)

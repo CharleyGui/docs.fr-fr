@@ -7,12 +7,12 @@ ms.date: 09/09/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: faa54e0a3c827717114ca6ca4f033c1c4c3acfa8
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 61cddfeb0d881ad2f2006db50ebb33f6a0c870ba
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325774"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535434"
 ---
 # <a name="styles-and-templates-in-wpf"></a>Styles et modèles dans WPF
 
@@ -103,7 +103,7 @@ Pour obtenir un exemple, consultez [créer un modèle pour un contrôle](../them
 
 ### <a name="templatebinding"></a>TemplateBinding
 
-Vous avez peut-être remarqué que la ressource de modèle définie dans la section précédente utilise l' [extension de balisage TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md). Un `TemplateBinding` est une forme optimisée d’une liaison pour les scénarios de modèle, analogue à une liaison construite avec `{Binding RelativeSource={RelativeSource TemplatedParent}}` . `TemplateBinding`est utile pour lier des parties du modèle aux propriétés du contrôle. Par exemple, chaque contrôle possède une <xref:System.Windows.Controls.Control.BorderThickness> propriété. Utilisez un `TemplateBinding` pour gérer l’élément affecté par ce paramètre de contrôle à l’élément du modèle.
+Vous avez peut-être remarqué que la ressource de modèle définie dans la section précédente utilise l' [extension de balisage TemplateBinding](/dotnet/desktop/wpf/advanced/templatebinding-markup-extension). Un `TemplateBinding` est une forme optimisée d’une liaison pour les scénarios de modèle, analogue à une liaison construite avec `{Binding RelativeSource={RelativeSource TemplatedParent}}` . `TemplateBinding` est utile pour lier des parties du modèle aux propriétés du contrôle. Par exemple, chaque contrôle possède une <xref:System.Windows.Controls.Control.BorderThickness> propriété. Utilisez un `TemplateBinding` pour gérer l’élément affecté par ce paramètre de contrôle à l’élément du modèle.
 
 ### <a name="contentcontrol-and-itemscontrol"></a>ContentControl et ItemsControl
 
@@ -136,7 +136,7 @@ Fondamentalement, le <xref:System.Windows.DataTemplate> dans l’exemple ci-dess
 
 ![Image photo](./media/styles-and-templates-overview/stylingintro-photosasimages.png "StylingIntro_PhotosAsImages")
 
-Le modèle de création de modèles fournit d’autres fonctionnalités. Par exemple, si vous affichez des données de collection qui contiennent d’autres collections à l’aide d’un <xref:System.Windows.Controls.HeaderedItemsControl> type tel qu’un <xref:System.Windows.Controls.Menu> ou un <xref:System.Windows.Controls.TreeView> , il y a le <xref:System.Windows.HierarchicalDataTemplate> . Une autre fonctionnalité de création de modèles de données est <xref:System.Windows.Controls.DataTemplateSelector> , qui vous permet de choisir un <xref:System.Windows.DataTemplate> à utiliser en fonction de la logique personnalisée. Pour plus d’informations, consultez l’article [Vue d'ensemble des modèles de données](../../framework/wpf/data/data-templating-overview.md), qui fournit une discussion plus approfondie sur les différentes fonctionnalités de création de modèles de données.
+Le modèle de création de modèles fournit d’autres fonctionnalités. Par exemple, si vous affichez des données de collection qui contiennent d’autres collections à l’aide d’un <xref:System.Windows.Controls.HeaderedItemsControl> type tel qu’un <xref:System.Windows.Controls.Menu> ou un <xref:System.Windows.Controls.TreeView> , il y a le <xref:System.Windows.HierarchicalDataTemplate> . Une autre fonctionnalité de création de modèles de données est <xref:System.Windows.Controls.DataTemplateSelector> , qui vous permet de choisir un <xref:System.Windows.DataTemplate> à utiliser en fonction de la logique personnalisée. Pour plus d’informations, consultez l’article [Vue d'ensemble des modèles de données](/dotnet/desktop/wpf/data/data-templating-overview), qui fournit une discussion plus approfondie sur les différentes fonctionnalités de création de modèles de données.
 
 ## <a name="triggers"></a>Déclencheurs
 
@@ -162,7 +162,7 @@ Un autre type de déclencheur est <xref:System.Windows.EventTrigger> , qui déma
 
 [!code-xaml[StyleEventTriggers](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window6.xaml#SnippetStyleEventTriggers)]
 
-Pour plus d’informations, consultez [vue d’ensemble des storyboards](../../framework/wpf/graphics-multimedia/storyboards-overview.md).
+Pour plus d’informations, consultez [vue d’ensemble des storyboards](/dotnet/desktop/wpf/graphics-multimedia/storyboards-overview).
 
 Dans l’illustration suivante, la souris pointe sur le troisième élément.
 
@@ -170,7 +170,7 @@ Dans l’illustration suivante, la souris pointe sur le troisième élément.
 
 ### <a name="multitriggers-datatriggers-and-multidatatriggers"></a>MultiTriggers, DataTriggers et MultiDataTriggers
 
-Outre <xref:System.Windows.Trigger> et <xref:System.Windows.EventTrigger> , il existe d’autres types de déclencheurs. <xref:System.Windows.MultiTrigger>vous permet de définir des valeurs de propriété en fonction de plusieurs conditions. Vous utilisez <xref:System.Windows.DataTrigger> et <xref:System.Windows.MultiDataTrigger> lorsque la propriété de votre condition est liée aux données.
+Outre <xref:System.Windows.Trigger> et <xref:System.Windows.EventTrigger> , il existe d’autres types de déclencheurs. <xref:System.Windows.MultiTrigger> vous permet de définir des valeurs de propriété en fonction de plusieurs conditions. Vous utilisez <xref:System.Windows.DataTrigger> et <xref:System.Windows.MultiDataTrigger> lorsque la propriété de votre condition est liée aux données.
 
 ## <a name="visual-states"></a>États visuels
 
@@ -212,7 +212,7 @@ Par exemple, le code XAML suivant surveille l' `CommonStates.MouseOver` État po
         ...
 ```
 
-Pour plus d’informations sur les storyboards, consultez [vue d’ensemble des storyboards](../../framework/wpf/graphics-multimedia/storyboards-overview.md).
+Pour plus d’informations sur les storyboards, consultez [vue d’ensemble des storyboards](/dotnet/desktop/wpf/graphics-multimedia/storyboards-overview).
 
 ## <a name="shared-resources-and-themes"></a>Ressources partagées et thèmes
 
@@ -236,12 +236,12 @@ Pour partager un ensemble de ressources, notamment des styles et des modèles, e
 
 C’est le partage de `shared.xaml` , qui définit lui-même un <xref:System.Windows.ResourceDictionary> qui contient un ensemble de ressources de style et de pinceau, qui permet aux contrôles d’une application d’avoir une apparence cohérente.
 
-Pour plus d’informations, consultez [dictionnaires de ressources fusionnés](../../framework/wpf/advanced/merged-resource-dictionaries.md).
+Pour plus d’informations, consultez [dictionnaires de ressources fusionnés](/dotnet/desktop/wpf/advanced/merged-resource-dictionaries).
 
-Si vous créez un thème pour votre contrôle personnalisé, consultez la section **définition des ressources au niveau du thème** de la [vue d’ensemble](../../framework/wpf/controls/control-authoring-overview.md#defining-resources-at-the-theme-level)de la création de contrôles.
+Si vous créez un thème pour votre contrôle personnalisé, consultez la section **définition des ressources au niveau du thème** de la [vue d’ensemble](/dotnet/desktop/wpf/controls/control-authoring-overview#defining-resources-at-the-theme-level)de la création de contrôles.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [URI à en-tête pack dans WPF](../../framework/wpf/app-development/pack-uris-in-wpf.md)
-- [Procédure : rechercher des éléments générés par ControlTemplate](../../framework/wpf/controls/how-to-find-controltemplate-generated-elements.md)
-- [Rechercher des éléments générés par DataTemplate](../../framework/wpf/data/how-to-find-datatemplate-generated-elements.md)
+- [URI à en-tête pack dans WPF](/dotnet/desktop/wpf/app-development/pack-uris-in-wpf)
+- [Procédure : rechercher des éléments générés par ControlTemplate](/dotnet/desktop/wpf/controls/how-to-find-controltemplate-generated-elements)
+- [Rechercher des éléments générés par DataTemplate](/dotnet/desktop/wpf/data/how-to-find-datatemplate-generated-elements)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 73eee58a3d11f2f898a6d57cb282ccf4e802cdca
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 1c9aba10e27609bdf8e95d844ead60fd0ec0bd2c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656597"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538721"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Déployer des applications .NET Core avec Visual Studio
 
@@ -24,7 +24,7 @@ Les sections suivantes montrent comment utiliser Microsoft Visual Studio pour cr
 - Déploiement autonome
 - Déploiement autonome avec des dépendances tierces
 
-Pour plus d’informations sur l’utilisation de Visual Studio pour développer des applications .NET Core, consultez [dépendances et exigences de .net Core](../install/dependencies.md?pivots=os-windows).
+Pour plus d’informations sur l’utilisation de Visual Studio pour développer des applications .NET Core, consultez [dépendances et exigences de .net Core](../install/windows.md).
 
 ## <a name="framework-dependent-deployment"></a>Déploiement dépendant du framework
 

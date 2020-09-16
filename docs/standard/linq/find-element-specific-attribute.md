@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: 4c74de90a348d81ac87c98bf6ee27f3c78f34e83
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: a1569f8a91e980f12ecc1801e00d6414711833d0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552352"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535459"
 ---
 # <a name="how-to-find-an-element-with-a-specific-attribute-linq-to-xml"></a>Comment rechercher un élément avec un attribut spécifique (LINQ to XML)
 
@@ -108,6 +108,6 @@ Cet exemple produit la sortie suivante ::
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Opérations de projection (C#)](../../csharp/programming-guide/concepts/linq/projection-operations.md)
-- [Requêtes de base (LINQ to XML) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Requêtes de base (LINQ to XML) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Opérations de projection (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/projection-operations.md)

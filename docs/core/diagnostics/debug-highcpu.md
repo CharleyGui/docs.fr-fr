@@ -3,18 +3,18 @@ title: Utilisation élevée du processeur par le débogage-.NET Core
 description: Un didacticiel qui vous guide tout au long du débogage de l’utilisation élevée de l’UC dans .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 93076bbce3baf3a219b25c927d2aba3d2d57456f
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 71e0b98f7ad38836c6a20c3e0e75a878fb6525c7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557800"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538707"
 ---
 # <a name="debug-high-cpu-usage-in-net-core"></a>Déboguer une utilisation élevée du processeur dans .NET Core
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,1 et versions ultérieures
 
-Dans ce didacticiel, vous allez apprendre à déboguer un scénario d’utilisation excessive de l’UC. À l’aide de l’exemple fourni ASP.NET Core référentiel de code source de l' [application Web](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) , vous pouvez provoquer un blocage intentionnellement. Le point de terminaison subira un blocage et l’accumulation des threads. Vous allez apprendre à utiliser différents outils pour diagnostiquer ce scénario avec plusieurs éléments clés de données de diagnostic.
+Dans ce didacticiel, vous allez apprendre à déboguer un scénario d’utilisation excessive de l’UC. À l’aide de l’exemple fourni ASP.NET Core référentiel de code source de l' [application Web](/samples/dotnet/samples/diagnostic-scenarios) , vous pouvez provoquer un blocage intentionnellement. Le point de terminaison subira un blocage et l’accumulation des threads. Vous allez apprendre à utiliser différents outils pour diagnostiquer ce scénario avec plusieurs éléments clés de données de diagnostic.
 
 Ce didacticiel présente les procédures suivantes :
 
@@ -31,13 +31,13 @@ Ce didacticiel présente les procédures suivantes :
 Le didacticiel utilise :
 
 - [Kit de développement logiciel (SDK) .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
-- [Exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) pour déclencher le scénario.
+- [Exemple de cible de débogage](/samples/dotnet/samples/diagnostic-scenarios) pour déclencher le scénario.
 - [dotnet-trace](dotnet-trace.md) pour répertorier les processus et générer un profil.
 - [dotnet-compteurs](dotnet-counters.md) pour surveiller l’utilisation de l’UC.
 
 ## <a name="cpu-counters"></a>Compteurs UC
 
-Avant de tenter de collecter les données de diagnostic, vous devez observer une condition d’UC élevée. Exécutez l' [exemple d’application](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) à l’aide de la commande suivante à partir du répertoire racine du projet.
+Avant de tenter de collecter les données de diagnostic, vous devez observer une condition d’UC élevée. Exécutez l' [exemple d’application](/samples/dotnet/samples/diagnostic-scenarios) à l’aide de la commande suivante à partir du répertoire racine du projet.
 
 ```dotnetcli
 dotnet run
@@ -116,11 +116,11 @@ Lors de l’analyse d’une requête lente, vous avez besoin d’un outil de dia
 
 ### <a name="linux"></a>[Linux](#tab/linux)
 
-L' `perf` outil peut être utilisé pour générer des profils d’application .net core. Quittez l’instance précédente de l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios).
+L' `perf` outil peut être utilisé pour générer des profils d’application .net core. Quittez l’instance précédente de l' [exemple de cible de débogage](/samples/dotnet/samples/diagnostic-scenarios).
 
 Définissez la `COMPlus_PerfMapEnabled` variable d’environnement pour que l’application .net Core crée un `map` fichier dans le `/tmp` répertoire. Ce `map` fichier est utilisé par `perf` pour mapper l’adresse de l’UC aux fonctions générées juste-à-temps par nom. Pour plus d’informations, consultez [écrire une carte de performances](../run-time-config/debugging-profiling.md#write-perf-map).
 
-Exécutez l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) dans la même session de terminal.
+Exécutez l' [exemple de cible de débogage](/samples/dotnet/samples/diagnostic-scenarios) dans la même session de terminal.
 
 ```dotnetcli
 export COMPlus_PerfMapEnabled=1
@@ -152,7 +152,7 @@ Cette commande génère un `flamegraph.svg` que vous pouvez afficher dans le nav
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-Sur Windows, vous pouvez utiliser l’outil [dotnet-trace](dotnet-trace.md) en tant que profileur. À l’aide de l' [exemple de cible de débogage](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)précédent, réexécutez le point de terminaison d’UC élevé ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). Pendant qu’elle s’exécute dans la requête de 1 minute, utilisez la `collect` commande comme suit :
+Sur Windows, vous pouvez utiliser l’outil [dotnet-trace](dotnet-trace.md) en tant que profileur. À l’aide de l' [exemple de cible de débogage](/samples/dotnet/samples/diagnostic-scenarios)précédent, réexécutez le point de terminaison d’UC élevé ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). Pendant qu’elle s’exécute dans la requête de 1 minute, utilisez la `collect` commande comme suit :
 
 ```dotnetcli
 dotnet-trace collect -p 22884 --providers Microsoft-DotNETCore-SampleProfiler

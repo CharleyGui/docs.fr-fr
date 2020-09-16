@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer kit SDK .NET Core et 
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: d4a54a8a5354a1430141d2c06d4aa90dbafc3edf
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d0f7d4092ec420d031d0874a56b9e2148afdb865
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89134937"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538538"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur Debian
 
@@ -36,8 +36,8 @@ Le tableau suivant répertorie les versions de .NET Core actuellement prises en 
 Les versions suivantes de .NET Core ne sont plus prises en charge. Les téléchargements sont toujours publiés :
 
 - 3.0
-- 2,2
-- 2,0
+- 2.2
+- 2.0
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -99,6 +99,10 @@ sudo apt-get upgrade
 
 Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation de la fonction APT pour installer .NET Core.
 
+### <a name="unable-to-find-package"></a>Impossible de trouver le package
+
+[!INCLUDE [linux-install-package-manager-x64-vs-arm](includes/linux-install-package-manager-x64-vs-arm.md)]
+
 ### <a name="unable-to-locate--some-packages-could-not-be-installed"></a>Impossible d' \\ installer certains packages
 
 [!INCLUDE [package-manager-failed-to-find-deb](includes/package-manager-failed-to-find-deb.md)]
@@ -125,7 +129,7 @@ sudo apt-get update; \
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET Core ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
 

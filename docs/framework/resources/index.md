@@ -12,12 +12,12 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-ms.openlocfilehash: 105325170389917bfb2022314791aa1ed5923db3
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 3941c912348a652ddcbaea517cf7626c2a8f88e3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865162"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535568"
 ---
 # <a name="resources-in-net-apps"></a>Ressources dans les applications .NET
 
@@ -25,7 +25,7 @@ Presque toutes les applications d'une qualité de niveau "production" doivent ut
 
 Le .NET Framework et .NET Core fournissent une prise en charge complète de la création et de la localisation des ressources. De plus, .NET prend en charge un modèle simple pour la compression et le déploiement de ressources localisées.
 
-Pour plus d’informations sur les ressources dans ASP.NET, consultez [Vue d’ensemble des ressources des pages Web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).
+Pour plus d’informations sur les ressources dans ASP.NET, consultez [Vue d’ensemble des ressources des pages Web ASP.NET](/previous-versions/aspnet/ms227427(v=vs.100)).
 
 ## <a name="create-and-localize-resources"></a>Créer et localiser des ressources
 
@@ -53,7 +53,7 @@ Au moment de l'exécution, une application charge les ressources localisées app
 
 Pour plus d'informations sur la façon dont la culture d'interface utilisateur actuelle est définie, consultez les pages de référence <xref:System.Globalization.CultureInfo> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>.
 
-Vous pouvez ensuite extraire des ressources pour la culture de l'interface utilisateur actuelle ou pour une culture spécifique en utilisant la classe <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Bien que la classe <xref:System.Resources.ResourceManager> soit la plus fréquemment utilisée pour extraire des ressources, l’espace de noms <xref:System.Resources?displayProperty=nameWithType> contient des types supplémentaires que vous pouvez utiliser pour récupérer des ressources. notamment :
+Vous pouvez ensuite extraire des ressources pour la culture de l'interface utilisateur actuelle ou pour une culture spécifique en utilisant la classe <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Bien que la classe <xref:System.Resources.ResourceManager> soit la plus fréquemment utilisée pour extraire des ressources, l’espace de noms <xref:System.Resources?displayProperty=nameWithType> contient des types supplémentaires que vous pouvez utiliser pour récupérer des ressources. Elles incluent notamment :
 
 - La classe <xref:System.Resources.ResourceReader>, qui vous permet d'énumérer des ressources incorporées dans un assembly ou stockées dans un fichier .resources binaire. C'est utile lorsque vous ne connaissez pas les noms exacts des ressources disponibles au moment de l'exécution.
 

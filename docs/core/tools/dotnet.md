@@ -2,20 +2,20 @@
 title: Commande dotnet
 description: En savoir plus sur la commande dotnet (le pilote générique pour le CLI .NET Core) et son utilisation.
 ms.date: 02/13/2020
-ms.openlocfilehash: 88e92b3ff5e8f68b980015a817434dd2d67df93a
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 4476dcf36455e0dc1b89712409818cf7e0352f2c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378840"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537663"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
-`dotnet`-Pilote générique pour le CLI .NET Core.
+`dotnet` -Pilote générique pour le CLI .NET Core.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -46,7 +46,7 @@ dotnet exec [--additionalprobingpath] [--additional-deps <PATH>]
     <PATH_TO_APPLICATION> [arguments]
 ```
 
-`--roll-forward`est disponible depuis .NET Core 3. x. Utilisez `--roll-forward-on-no-candidate-fx` pour .net Core 2. x.
+`--roll-forward` est disponible depuis .NET Core 3. x. Utilisez `--roll-forward-on-no-candidate-fx` pour .net Core 2. x.
 
 ## <a name="description"></a>Description
 
@@ -66,7 +66,7 @@ Différentes options sont disponibles pour `dotnet` par elle-même, pour exécut
 
 ### <a name="options-for-dotnet-by-itself"></a>Options de dotnet par lui-même
 
-Les options suivantes sont destinées `dotnet` à elles-mêmes. Par exemple, `dotnet --info`. Ils affichent des informations sur l’environnement.
+Les options suivantes sont destinées `dotnet` à elles-mêmes. Par exemple : `dotnet --info`. Ils affichent des informations sur l’environnement.
 
 - **`--info`**
 
@@ -90,7 +90,7 @@ Les options suivantes sont destinées `dotnet` à elles-mêmes. Par exemple, `do
 
 ### <a name="sdk-options-for-running-a-command"></a>Options du kit de développement logiciel pour exécuter une commande
 
-Les options suivantes concernent `dotnet` avec une commande. Par exemple, `dotnet build --help`.
+Les options suivantes concernent `dotnet` avec une commande. Par exemple : `dotnet build --help`.
 
 - **`-d|--diagnostics`**
 
@@ -110,7 +110,7 @@ Les options suivantes concernent `dotnet` avec une commande. Par exemple, `dotne
 
 ### <a name="runtime-options"></a>Options d’exécution
 
-Les options suivantes sont disponibles lors de l' `dotnet` exécution d’une application. Par exemple, `dotnet myapp.dll --roll-forward Major`.
+Les options suivantes sont disponibles lors de l' `dotnet` exécution d’une application. Par exemple : `dotnet myapp.dll --roll-forward Major`.
 
 - **`--additionalprobingpath <PATH>`**
 
@@ -118,26 +118,26 @@ Les options suivantes sont disponibles lors de l' `dotnet` exécution d’une ap
 
 - **`--additional-deps <PATH>`**
 
-  Chemin d’un fichier *.deps.json* supplémentaire. Un fichier *DEPS. JSON* contient une liste de dépendances, de dépendances de compilation et d’informations de version utilisées pour traiter les conflits d’assembly. Pour plus d’informations, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
+  Chemin d’un fichier *.deps.json* supplémentaire. Un *deps.jssur* un fichier contient une liste de dépendances, de dépendances de compilation et d’informations de version utilisées pour traiter les conflits d’assembly. Pour plus d’informations, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
 
 - **`--depsfile <PATH_TO_DEPSFILE>`**
 
-  Chemin d’accès au fichier *DEPS. JSON* . Un fichier *DEPS. JSON* est un fichier de configuration qui contient des informations sur les dépendances nécessaires à l’exécution de l’application. Ce fichier est généré par le kit SDK .NET Core.
+  Chemin d’accès à la *deps.jssur* le fichier. Un *deps.jssur le* fichier est un fichier de configuration qui contient des informations sur les dépendances nécessaires à l’exécution de l’application. Ce fichier est généré par le kit SDK .NET Core.
 
 - **`--runtimeconfig`**
 
-  Chemin d’un fichier *runtimeconfig.json*. Un fichier *runtimeconfig. JSON* est un fichier de configuration qui contient des paramètres d’exécution. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
+  Chemin d’un fichier *runtimeconfig.json*. Un *runtimeconfig.jssur le* fichier est un fichier de configuration qui contient des paramètres d’exécution. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
 
 - **`--roll-forward <SETTING>`****Disponible à partir de kit SDK .NET Core 3,0.**
 
   Contrôle la façon dont la restauration par progression est appliquée à l’application. `SETTING`Peut prendre l’une des valeurs suivantes. S’il n’est pas spécifié, `Minor` est la valeur par défaut.
 
-  - `LatestPatch`-Restauration par progression vers la version de correctif la plus récente. Cette valeur désactive la restauration par progression d’une version mineure.
-  - `Minor`-Restaurer par progression jusqu’à la version mineure la plus basse, si la version mineure demandée est manquante. Si la version mineure demandée est présente, la stratégie LatestPatch est utilisée.
-  - `Major`-Restauration par progression vers la version principale la plus basse, et version mineure la plus faible, si la version principale demandée est manquante. Si la version majeure demandée est présente, la stratégie Minor est utilisée.
-  - `LatestMinor`-Restaurer par progression vers la version mineure la plus élevée, même si la version mineure demandée est présente. Conçu pour les scénarios d’hébergement de composant.
-  - `LatestMajor`-Restauration par progression vers la version mineure la plus élevée et la plus élevée, même si la version principale demandée est présente. Conçu pour les scénarios d’hébergement de composant.
-  - `Disable`-Ne pas restaurer par progression. Lier uniquement à la version spécifiée. Cette stratégie n’est pas recommandée pour une utilisation générale, car elle désactive la possibilité d’effectuer une restauration par progression vers les derniers correctifs. Cette valeur est recommandée uniquement à des fins de test.
+  - `LatestPatch` -Restauration par progression vers la version de correctif la plus récente. Cette valeur désactive la restauration par progression d’une version mineure.
+  - `Minor` -Restaurer par progression jusqu’à la version mineure la plus basse, si la version mineure demandée est manquante. Si la version mineure demandée est présente, la stratégie LatestPatch est utilisée.
+  - `Major` -Restauration par progression vers la version principale la plus basse, et version mineure la plus faible, si la version principale demandée est manquante. Si la version majeure demandée est présente, la stratégie Minor est utilisée.
+  - `LatestMinor` -Restaurer par progression vers la version mineure la plus élevée, même si la version mineure demandée est présente. Conçu pour les scénarios d’hébergement de composant.
+  - `LatestMajor` -Restauration par progression vers la version mineure la plus élevée et la plus élevée, même si la version principale demandée est présente. Conçu pour les scénarios d’hébergement de composant.
+  - `Disable` -Ne pas restaurer par progression. Lier uniquement à la version spécifiée. Cette stratégie n’est pas recommandée pour une utilisation générale, car elle désactive la possibilité d’effectuer une restauration par progression vers les derniers correctifs. Cette valeur est recommandée uniquement à des fins de test.
 
   À l’exception de `Disable` , tous les paramètres utilisent la version de correctif la plus élevée disponible.
 
@@ -256,11 +256,11 @@ Exécuter une application :
 dotnet myapp.dll
 ```
 
-## <a name="environment-variables"></a>Variables d’environnement
+## <a name="environment-variables"></a>Variables d'environnement
 
 - `DOTNET_ROOT`, `DOTNET_ROOT(x86)`
 
-  Spécifie l’emplacement des runtimes .NET Core, s’ils ne sont pas installés à l’emplacement par défaut. L’emplacement par défaut sur Windows est `C:\Program Files\dotnet` . L’emplacement par défaut sur Linux et macOS est `/usr/share/dotnet` . Cette variable d’environnement est utilisée uniquement lors de l’exécution d’applications via des exécutables générés (apphosts). `DOTNET_ROOT(x86)`est utilisé à la place lors de l’exécution d’un fichier exécutable 32 bits sur un système d’exploitation 64 bits.
+  Spécifie l’emplacement des runtimes .NET Core, s’ils ne sont pas installés à l’emplacement par défaut. L’emplacement par défaut sur Windows est `C:\Program Files\dotnet` . L’emplacement par défaut sur Linux et macOS est `/usr/share/dotnet` . Cette variable d’environnement est utilisée uniquement lors de l’exécution d’applications via des exécutables générés (apphosts). `DOTNET_ROOT(x86)` est utilisé à la place lors de l’exécution d’un fichier exécutable 32 bits sur un système d’exploitation 64 bits.
 
 - `DOTNET_PACKAGES`
 
@@ -300,7 +300,7 @@ dotnet myapp.dll
 
 - `DOTNET_CLI_UI_LANGUAGE`
 
-  Définit le langage de l’interface utilisateur CLI à l’aide d’une valeur de paramètres régionaux telle que `en-us` . Les valeurs prises en charge sont les mêmes que pour Visual Studio. Pour plus d’informations, consultez la section relative à la modification du langage d’installation dans la [documentation d’installation de Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019). Les règles .NET Resource Manager s’appliquent. vous n’avez donc pas à choisir une correspondance exacte &mdash; . vous pouvez également choisir des descendants dans l' `CultureInfo` arborescence. Par exemple, si vous affectez la valeur à `fr-CA` , l’interface CLI trouvera et utilisera les `fr` traductions. Si vous définissez une langue qui n’est pas prise en charge, l’interface CLI revient à l’anglais.
+  Définit le langage de l’interface utilisateur CLI à l’aide d’une valeur de paramètres régionaux telle que `en-us` . Les valeurs prises en charge sont les mêmes que pour Visual Studio. Pour plus d’informations, consultez la section relative à la modification du langage d’installation dans la [documentation d’installation de Visual Studio](/visualstudio/install/install-visual-studio?view=vs-2019). Les règles .NET Resource Manager s’appliquent. vous n’avez donc pas à choisir une correspondance exacte &mdash; . vous pouvez également choisir des descendants dans l' `CultureInfo` arborescence. Par exemple, si vous affectez la valeur à `fr-CA` , l’interface CLI trouvera et utilisera les `fr` traductions. Si vous définissez une langue qui n’est pas prise en charge, l’interface CLI revient à l’anglais.
 
 - `DOTNET_DISABLE_GUI_ERRORS`
 
@@ -332,13 +332,13 @@ dotnet myapp.dll
 
   Contrôle le suivi des diagnostics à partir des composants d’hébergement, tels que `dotnet.exe` , `hostfxr` et `hostpolicy` .
 
-  * `COREHOST_TRACE=[0/1]`-le suivi par défaut est `0` désactivé. Si la valeur `1` est, le suivi des diagnostics est activé.
-  * `COREHOST_TRACEFILE=<file path>`-n’a d’effet que si le suivi est activé via `COREHOST_TRACE=1` . Lorsque cette valeur est définie, les informations de traçage sont écrites dans le fichier spécifié, dans le cas contraire, les informations de traçage sont écrites dans `stderr` . **Disponible à partir de .NET Core 3. x.**
-  * `COREHOST_TRACE_VERBOSITY=[1/2/3/4]`-la valeur par défaut est `4` . Le paramètre est utilisé uniquement lorsque le suivi est activé via `COREHOST_TRACE=1` . **Disponible à partir de .NET Core 3. x.**
-    * `4`-toutes les informations de traçage sont écrites
-    * `3`-Seuls les messages d’information, d’avertissement et d’erreur sont écrits
-    * `2`-Seuls les messages d’avertissement et d’erreur sont écrits
-    * `1`-Seuls les messages d’erreur sont écrits
+  * `COREHOST_TRACE=[0/1]` -le suivi par défaut est `0` désactivé. Si la valeur `1` est, le suivi des diagnostics est activé.
+  * `COREHOST_TRACEFILE=<file path>` -n’a d’effet que si le suivi est activé via `COREHOST_TRACE=1` . Lorsque cette valeur est définie, les informations de traçage sont écrites dans le fichier spécifié, dans le cas contraire, les informations de traçage sont écrites dans `stderr` . **Disponible à partir de .NET Core 3. x.**
+  * `COREHOST_TRACE_VERBOSITY=[1/2/3/4]` -la valeur par défaut est `4` . Le paramètre est utilisé uniquement lorsque le suivi est activé via `COREHOST_TRACE=1` . **Disponible à partir de .NET Core 3. x.**
+    * `4` -toutes les informations de traçage sont écrites
+    * `3` -Seuls les messages d’information, d’avertissement et d’erreur sont écrits
+    * `2` -Seuls les messages d’avertissement et d’erreur sont écrits
+    * `1` -Seuls les messages d’erreur sont écrits
 
   La méthode habituelle pour obtenir des informations de suivi détaillées sur le démarrage de l’application consiste à définir, puis à `COREHOST_TRACE=1` `COREHOST_TRACEFILE=host_trace.txt` exécuter l’application. Un nouveau fichier `host_trace.txt` est créé dans le répertoire actif avec les informations détaillées.
 

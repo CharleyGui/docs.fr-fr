@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: bf712e88d96a5c2c80c3ff50283d44e9c7717abb
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: ac2b4193849c56002c5bba35932f2882b987a0d6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608209"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537494"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -136,7 +136,7 @@ Il est important de prendre en compte le fait que les applications ou infrastruc
 
 Avant toute chose, veillez à tester votre application après réduction.
 
-Pour plus d’informations sur l’outil d’éditeur de liens de langage intermédiaire, consultez la [documentation](https://aka.ms/dotnet-illink) ou visitez le référentiel [mono/linker]( https://github.com/mono/linker).
+Pour plus d’informations sur l’outil d’éditeur de liens de langage intermédiaire, consultez la [documentation](../deploying/trim-self-contained.md) ou visitez le référentiel [mono/linker]( https://github.com/mono/linker).
 
 ### <a name="tiered-compilation"></a>Compilation hiérarchisée
 
@@ -329,9 +329,9 @@ Windows offre une API native riche sous la forme d’API C plates, de COM et de 
 
 ### <a name="msix-deployment"></a>Déploiement de MSIX
 
-[MSIX](https://docs.microsoft.com/windows/msix/) est un nouveau format de package d’application Windows. Il peut être utilisé pour déployer des applications de poste de travail .NET Core 3.0 pour Windows 10.
+[MSIX](/windows/msix/) est un nouveau format de package d’application Windows. Il peut être utilisé pour déployer des applications de poste de travail .NET Core 3.0 pour Windows 10.
 
-Le [projet de package d’application Windows](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), disponible dans Visual Studio 2019, vous permet de créer des packages MSIX avec des applications .NET Core [autonomes](../deploying/index.md#publish-self-contained).
+Le [projet de package d’application Windows](/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), disponible dans Visual Studio 2019, vous permet de créer des packages MSIX avec des applications .NET Core [autonomes](../deploying/index.md#publish-self-contained).
 
 Le fichier projet .NET Core doit spécifier les runtimes pris en charge dans la propriété `<RuntimeIdentifiers>` :
 
@@ -512,7 +512,7 @@ Pour plus d’informations, consultez [intrinsèques dépendants de la plateform
 
 ### <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 
-À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Par exemple :
+À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Exemple :
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");

@@ -1,21 +1,21 @@
 ---
-title: dotnet nuget ajouter la commande source
-description: La commande source d’ajout de nuget dotnet ajoute une nouvelle source de paquet à vos fichiers de configuration NuGet.
+title: commande dotnet NuGet Add source
+description: La commande dotnet NuGet Add source ajoute une nouvelle source de package à vos fichiers de configuration NuGet.
 ms.date: 03/20/2020
-ms.openlocfilehash: 319501e026f1c3102006b0be5357f127b8e366a7
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: b847d987de2d88cb3452d32d1bc84232a1e20b6e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463603"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537971"
 ---
 # <a name="dotnet-nuget-add-source"></a>dotnet nuget add source
 
-**Cet article s’applique à:** ✔️ .NET Core 3.1.200 SDK et les versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) 3.1.200 .net Core et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
-`dotnet nuget add source`- Ajouter une source NuGet.
+`dotnet nuget add source` -Ajouter une source NuGet.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -29,19 +29,19 @@ dotnet nuget add source -h|--help
 
 ## <a name="description"></a>Description
 
-La `dotnet nuget add source` commande ajoute une nouvelle source de paquet à vos fichiers de configuration NuGet.
+La `dotnet nuget add source` commande ajoute une nouvelle source de package à vos fichiers de configuration NuGet.
 
 ## <a name="arguments"></a>Arguments
 
 - **`PACKAGE_SOURCE_PATH`**
 
-  Chemin vers la source du paquet.
+  Chemin d’accès à la source du package.
 
 ## <a name="options"></a>Options
 
 - **`--configfile <FILE>`**
 
-  Le fichier de configuration NuGet. Si spécifié, seuls les paramètres de ce fichier seront utilisés. S’il n’est pas précisé, la hiérarchie des fichiers de configuration de l’annuaire actuel sera utilisée. Pour plus d’informations, voir [Configurations NuGet communes](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior).
+  Fichier de configuration NuGet. Si ce paramètre est spécifié, seuls les paramètres de ce fichier seront utilisés. S’il n’est pas spécifié, la hiérarchie des fichiers de configuration du répertoire actif sera utilisée. Pour plus d’informations, consultez [configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior).
 
 - **`-n|--name <SOURCE_NAME>`**
 
@@ -53,7 +53,7 @@ La `dotnet nuget add source` commande ajoute une nouvelle source de paquet à vo
 
 - **`--store-password-in-clear-text`**
 
-  Permet de stocker des informations d’identification portables de source de paquets en désactivant le chiffrement de mot de passe.
+  Active le stockage des informations d’identification de la source du package portable en désactivant le chiffrement du mot de passe.
 
 - **`-u|--username <USER>`**
 
@@ -61,29 +61,29 @@ La `dotnet nuget add source` commande ajoute une nouvelle source de paquet à vo
 
 - **`--valid-authentication-types <TYPES>`**
 
-  Liste séparée par comma de types d’authentification valides pour cette source. Définissez `basic` ceci à si le serveur annonce NTLM ou Négocier et vos informations d’identification doivent être envoyées à l’aide du mécanisme de base, par exemple lors de l’utilisation d’un PAT avec sur place Azure DevOps Server. D’autres `negotiate`valeurs `kerberos` `ntlm`valides `digest`incluent, , , et , mais ces valeurs sont peu susceptibles d’être utiles.
+  Liste séparée par des virgules des types d’authentification valides pour cette source. Définissez cette valeur sur `basic` si le serveur publie NTLM ou Negotiate et que vos informations d’identification doivent être envoyées à l’aide du mécanisme de base, par exemple lors de l’utilisation d’un Pat avec un Azure DevOps Server local. Les autres valeurs valides incluent `negotiate` , `kerberos` , `ntlm` et `digest` , mais ces valeurs ne sont pas susceptibles d’être utiles.
 
 ## <a name="examples"></a>Exemples
 
-- Ajouter `nuget.org` comme source:
+- Ajouter `nuget.org` en tant que source :
 
   ```dotnetcli
   dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
   ```
 
-- Ajoutez `c:\packages` comme source locale :
+- Ajouter `c:\packages` en tant que source locale :
 
   ```dotnetcli
   dotnet nuget add source c:\packages
   ```
 
-- Ajoutez une source qui a besoin d’authentification :
+- Ajoutez une source qui requiert une authentification :
 
   ```dotnetcli
   dotnet nuget add source https://someServer/myTeam -n myTeam -u myUsername -p myPassword --store-password-in-clear-text
   ```
 
-- Ajouter une source qui a besoin d’authentification (puis allez installer le fournisseur d’informations d’identification):
+- Ajoutez une source qui nécessite une authentification (puis accédez à installer le fournisseur d’informations d’identification) :
 
   ```dotnetcli
   dotnet nuget add source https://azureartifacts.microsoft.com/myTeam -n myTeam
@@ -91,6 +91,6 @@ La `dotnet nuget add source` commande ajoute une nouvelle source de paquet à vo
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Sections source de paquet dans les fichiers NuGet.config](/nuget/reference/nuget-config-file#package-source-sections)
+- [Sections sources du package dans les fichiers NuGet.config](/nuget/reference/nuget-config-file#package-source-sections)
 
-- [commande de sources (nuget.exe)](/nuget/reference/cli-reference/cli-ref-sources)
+- [sources, commande (nuget.exe)](/nuget/reference/cli-reference/cli-ref-sources)

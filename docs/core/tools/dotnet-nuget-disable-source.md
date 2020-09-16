@@ -1,21 +1,21 @@
 ---
-title: dotnet nuget désactiver la commande source
-description: La commande source désactivable de dotnet désactive une source existante dans vos fichiers de configuration NuGet.
+title: commande dotnet NuGet Disable source
+description: La commande dotnet NuGet Disable source désactive une source existante dans vos fichiers de configuration NuGet.
 ms.date: 03/20/2020
-ms.openlocfilehash: 54acb40b1944eaff347107e8f3439578ec8e0f3c
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: af37a6589cebaf0501ee5647ebadb83125d0f56e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463568"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537949"
 ---
 # <a name="dotnet-nuget-disable-source"></a>dotnet nuget disable source
 
-**Cet article s’applique à:** ✔️ .NET Core 3.1.200 SDK et les versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) 3.1.200 .net Core et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
-`dotnet nuget disable source`- Désactiver une source NuGet.
+`dotnet nuget disable source` -Désactivez une source NuGet.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -39,11 +39,11 @@ La `dotnet nuget disable source` commande désactive une source existante dans v
 
 - **`--configfile <FILE>`**
 
-  Le fichier de configuration NuGet. Si spécifié, seuls les paramètres de ce fichier seront utilisés. S’il n’est pas précisé, la hiérarchie des fichiers de configuration de l’annuaire actuel sera utilisée. Pour plus d’informations, voir [Configurations NuGet communes](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior).
+  Fichier de configuration NuGet. Si ce paramètre est spécifié, seuls les paramètres de ce fichier seront utilisés. S’il n’est pas spécifié, la hiérarchie des fichiers de configuration du répertoire actif sera utilisée. Pour plus d’informations, consultez [configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior).
 
 ## <a name="examples"></a>Exemples
 
-- Désactiver une source avec `mySource`le nom de :
+- Désactivez une source portant le nom `mySource` :
 
   ```dotnetcli
   dotnet nuget disable source mySource
@@ -51,6 +51,6 @@ La `dotnet nuget disable source` commande désactive une source existante dans v
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Sections source de paquet dans les fichiers NuGet.config](/nuget/reference/nuget-config-file#package-source-sections)
+- [Sections sources du package dans les fichiers NuGet.config](/nuget/reference/nuget-config-file#package-source-sections)
 
-- [commande de sources (nuget.exe)](/nuget/reference/cli-reference/cli-ref-sources)
+- [sources, commande (nuget.exe)](/nuget/reference/cli-reference/cli-ref-sources)

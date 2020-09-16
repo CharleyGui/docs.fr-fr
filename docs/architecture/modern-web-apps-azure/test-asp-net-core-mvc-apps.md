@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 1883662f736361a947cbad440aeefda839265251
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 8497892b88c313cde0a604ad3967507300e5154a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465635"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539241"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Tester des applications ASP.NET Core MVC
 
@@ -257,7 +257,7 @@ namespace Microsoft.eShopWeb.FunctionalTests.Web
 
 Les tests peuvent exploiter cette classe WebApplicationFactory personnalisée pour créer un client et adresser des requêtes à l’application en utilisant cette instance de client. Les données sont alors amorcées par l’application et peuvent être utilisées dans les assertions du test. Le test suivant vérifie que la page d’accueil de l’application eShopOnWeb se charge correctement et qu’elle présente une liste de produits qui a été ajoutée à l’application avec les données initiales.
 
-```cs
+```csharp
 using Microsoft.eShopWeb.FunctionalTests.Web;
 using System.Net.Http;
 using System.Threading.Tasks;
