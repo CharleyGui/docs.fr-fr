@@ -6,12 +6,12 @@ metadata:
   description: Développeurs débutants, développeurs débutants en C# et développeurs C#/.NET expérimentés, découvrez la programmation C#.
   ms.topic: landing-page
   ms.date: 11/19/2019
-  ms.openlocfilehash: fd9a641d588ffd410ed2a6163505a81c69dae867
-  ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+  ms.openlocfilehash: 7a9818ea24af237242ddd55afb53d691400ce008
+  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/05/2020
-  ms.locfileid: "89495315"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90537377"
 landingContent:
 - title: Apprendre à programmer en C#
   linkLists:
@@ -24,7 +24,7 @@ landingContent:
     - text: Tutoriels d'introduction
       url: tutorials/intro-to-csharp/index.md
     - text: Créer des applications C# avec Visual Studio
-      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-console
+      url: /visualstudio/get-started/csharp/tutorial-console
   - linkListType: video
     links:
     - text: Qu’est-ce que C# ?
