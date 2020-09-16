@@ -6,20 +6,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
-ms.openlocfilehash: 51867cefcdfc42812d4003fb669c11751fb3ca34
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 7d90e047983db1f024884168490e202ed42a85c8
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552377"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679472"
 ---
-# <a name="how-to-filter-on-an-attribute-linq-to-xml"></a><span data-ttu-id="aeca4-103">Comment filtrer sur un attribut (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="aeca4-103">How to filter on an attribute (LINQ to XML)</span></span>
+# <a name="how-to-filter-on-an-attribute-linq-to-xml"></a><span data-ttu-id="aed64-103">Comment filtrer sur un attribut (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="aed64-103">How to filter on an attribute (LINQ to XML)</span></span>
 
-<span data-ttu-id="aeca4-104">Cet article montre comment utiliser LINQ to XML Query et XPath, en C# et Visual Basic, pour rechercher les éléments descendants qui ont un nom et une valeur d’attribut spécifiés.</span><span class="sxs-lookup"><span data-stu-id="aeca4-104">This article shows how to use LINQ to XML query and XPath, in C# and Visual Basic, to find descendant elements that have a specified name and attribute value.</span></span>
+<span data-ttu-id="aed64-104">Cet article montre comment utiliser LINQ to XML Query et XPath, en C# et Visual Basic, pour rechercher les éléments descendants qui ont un nom et une valeur d’attribut spécifiés.</span><span class="sxs-lookup"><span data-stu-id="aed64-104">This article shows how to use LINQ to XML query and XPath, in C# and Visual Basic, to find descendant elements that have a specified name and attribute value.</span></span>
 
-## <a name="example-find-all-descendant-elements-that-have-a-specified-name-and-attribute-value"></a><span data-ttu-id="aeca4-105">Exemple : Rechercher tous les éléments descendants qui ont un nom et une valeur d’attribut spécifiés</span><span class="sxs-lookup"><span data-stu-id="aeca4-105">Example: Find all descendant elements that have a specified name and attribute value</span></span>
+## <a name="example-find-all-descendant-elements-that-have-a-specified-name-and-attribute-value"></a><span data-ttu-id="aed64-105">Exemple : Rechercher tous les éléments descendants qui ont un nom et une valeur d’attribut spécifiés</span><span class="sxs-lookup"><span data-stu-id="aed64-105">Example: Find all descendant elements that have a specified name and attribute value</span></span>
 
-<span data-ttu-id="aeca4-106">Cet exemple utilise LINQ to XML requête et XPath pour rechercher, dans le document XML [exemple de fichier XML : plusieurs commandes fournisseur](sample-xml-file-multiple-purchase-orders.md), tous les éléments descendants qui ont le nom `Address` et un `Type` attribut dont la valeur est « Shipping ».</span><span class="sxs-lookup"><span data-stu-id="aeca4-106">This example uses LINQ to XML query and XPath to find, in XML document [Sample XML file: Multiple purchase orders](sample-xml-file-multiple-purchase-orders.md), all descendant elements that have the name `Address`, and a `Type` attribute whose value is "Shipping".</span></span> <span data-ttu-id="aeca4-107">L’expression XPath est `.//Address[@Type='Shipping']`</span><span class="sxs-lookup"><span data-stu-id="aeca4-107">The XPath expression is `.//Address[@Type='Shipping']`</span></span>
+<span data-ttu-id="aed64-106">Cet exemple utilise LINQ to XML requête et XPath pour rechercher, dans le document XML [exemple de fichier XML : plusieurs commandes fournisseur](sample-xml-file-multiple-purchase-orders.md), tous les éléments descendants qui ont le nom `Address` et un `Type` attribut dont la valeur est « Shipping ».</span><span class="sxs-lookup"><span data-stu-id="aed64-106">This example uses LINQ to XML query and XPath to find, in XML document [Sample XML file: Multiple purchase orders](sample-xml-file-multiple-purchase-orders.md), all descendant elements that have the name `Address`, and a `Type` attribute whose value is "Shipping".</span></span> <span data-ttu-id="aed64-107">L’expression XPath est `.//Address[@Type='Shipping']`</span><span class="sxs-lookup"><span data-stu-id="aed64-107">The XPath expression is `.//Address[@Type='Shipping']`</span></span>
 
 ```csharp
 XDocument po = XDocument.Load("PurchaseOrders.xml");
@@ -66,7 +66,7 @@ For Each el As XElement In list1
 Next
 ```
 
-<span data-ttu-id="aeca4-108">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="aeca4-108">This example produces the following output:</span></span>
+<span data-ttu-id="aed64-108">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="aed64-108">This example produces the following output:</span></span>
 
 ```output
 Results are identical
@@ -96,6 +96,6 @@ Results are identical
 </Address>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="aeca4-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="aeca4-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aed64-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="aed64-109">See also</span></span>
 
-- [<span data-ttu-id="aeca4-110">LINQ to XML pour les utilisateurs XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="aeca4-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](/../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="aed64-110">Comparaison de XPath et LINQ to XML</span><span class="sxs-lookup"><span data-stu-id="aed64-110">Comparison of XPath and LINQ to XML</span></span>](comparison-xpath-linq-xml.md)
