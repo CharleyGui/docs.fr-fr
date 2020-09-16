@@ -1,6 +1,6 @@
 - name: Guide .NET pour Apache Spark
   href: index.yml
-- name: Vue d'ensemble
+- name: Vue d’ensemble
   expanded: true
   items:
     - name: "Qu’est-ce qu’Apache Spark\_?"
@@ -21,7 +21,7 @@
       href: tutorials/batch-processing.md
     - name: Streaming structuré
       href: tutorials/streaming.md
-    - name: Analyse de sentiments
+    - name: analyse de sentiments
       href: tutorials/ml-sentiment-analysis.md
 - name: Guides pratiques
   items:
@@ -46,7 +46,7 @@
 - name: Référence
   items:
     - name: Informations de référence sur les API
-      href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'
+      href: ../../api/index.md?view=spark-dotnet
 - name: Ressources
   items:
     - name: Vue d’ensemble des ressources
