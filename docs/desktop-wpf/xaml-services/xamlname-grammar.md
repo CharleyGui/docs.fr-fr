@@ -8,22 +8,22 @@ helpviewer_keywords:
 - names in XAML [XAML Services]
 - XamlName grammar [XAML Services]
 ms.assetid: 11e4cada-41d2-494d-9531-0d3df4dfcbe3
-ms.openlocfilehash: 2fc74990b15caaa9b58e6eea5b0212ea22505674
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ceb027938b6d4313babbe02949e0b6dd5ee85589
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "82071828"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556692"
 ---
 # <a name="xamlname-grammar"></a>XamlName, grammaire
 
-XamlName Grammar est une grammaire spécifique qui est définie dans la spécification de la langue XAML [MS-XAML], qui est reproduit ici pour plus de commodité.
+La grammaire XamlName est une grammaire spécifique qui est définie dans la spécification du langage XAML [MS-XAML], qui est reproduite ici pour des raisons pratiques.
 
-## <a name="from-the-xaml-specification"></a>De la spécification XAML
+## <a name="from-the-xaml-specification"></a>À partir de la spécification XAML
 
-La spécification [MS-XAML] définit la grammaire XamlName pour identifier l’ensemble des identificateurs symboliques juridiques utilisés pour les types et les propriétés.
+La spécification [MS-XAML] définit la grammaire XamlName pour identifier le jeu d’identificateurs symboliques légaux utilisé pour les types et les propriétés.
 
-Les valeurs de chaîne de type XamlName doivent se conformer à la grammaire suivante :
+Les valeurs de chaîne qui sont de type XamlName doivent respecter la grammaire suivante :
 
 ```xaml
 XamlName ::= NameStartChar ( NameChar )*
@@ -34,7 +34,7 @@ DecimalDigit ::= UnicodeNd
 CombiningCharacter ::= UnicodeMn | UnicodeMc
 ```
 
-Ce qui suppose les valeurs de catégorie générale suivantes telles que définies dans la base de données sur les caractères Unicode
+Qui utilise les valeurs de catégorie générale suivantes, telles que définies dans la base de données de caractères Unicode
 
 | Catégorie Unicode   | Description                   |
 |--------------------|-------------------------------|
@@ -43,14 +43,14 @@ Ce qui suppose les valeurs de catégorie générale suivantes telles que défini
 | Lt                 | Letter, Titlecase             |
 | Lm                 | Letter, Modifier              |
 | Lo                 | Letter, Other                 |
-| Mn                 | Marque, Non-Spacing             |
+| Mn                 | Marquer, sans espace             |
 | Mc                 | Mark, Spacing Combining       |
-| Nd                 | Nombre, Décimale               |
+| Nd                 | Nombre, décimal               |
 | Nl                 | Number, Letter                |
 
-XAML définit une deuxième grammaire, DottedXamlName, qui est utilisée pour les références qualifiées de propriété et d’événement, et aussi pour les membres ci-joints. Pour plus d’informations, voir <xref:System.Windows.DependencyProperty> et [XAML Aperçu (WPF)](../fundamentals/xaml.md).
+XAML définit une deuxième grammaire, DottedXamlName, qui est utilisée pour les références qualifiées de propriété et d’événement, ainsi que pour les membres attachés. Pour plus d’informations, consultez <xref:System.Windows.DependencyProperty> et [vue d’ensemble du langage XAML (WPF)](../fundamentals/xaml.md).
 
-Les valeurs de chaîne qui sont de type DottedXamlName doivent se conformer à la grammaire suivante :
+Les valeurs de chaîne qui sont de type DottedXamlName doivent être conformes à la grammaire suivante :
 
 ```xaml
 DottedXamlName ::= XamlName '.' XamlName
@@ -58,4 +58,4 @@ DottedXamlName ::= XamlName '.' XamlName
 
 ## <a name="remarks"></a>Notes
 
-Pour les spécifications complètes, voir [ \[MS-XAML\]](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10)).
+Pour obtenir la spécification complète, consultez [ \[ MS- \] XAML](/previous-versions/msp-n-p/ff650760(v=pandp.10)).

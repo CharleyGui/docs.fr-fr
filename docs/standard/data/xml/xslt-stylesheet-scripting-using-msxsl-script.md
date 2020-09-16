@@ -6,14 +6,14 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: aef2471a375469f7cd4dff27084b305ef9394d5e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b2fd5ac6f03c0c66c05117a882d53af37e3f8665
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291966"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555931"
 ---
-# <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Écriture de scripts de feuille de style XSLT à l’aide de\<msxsl:script>
+# <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Écriture de scripts de feuille de style XSLT à l’aide de \<msxsl:script>
 La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`.  
   
 > [!NOTE]
@@ -43,13 +43,13 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
  Pour obtenir la preuve de votre assembly, utilisez `this.GetType().Assembly.Evidence`. Pour obtenir la preuve d'un URI (Uniform Resource Identifier), utilisez `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)`.  
   
- Si vous utilisez les méthodes <xref:System.Xml.Xsl.XslTransform.Load%2A> qui prennent un objet <xref:System.Xml.XmlResolver> mais aucun `Evidence`, la zone de sécurité pour l'assembly prend la valeur Confiance totale par défaut. Pour plus d'informations, consultez les pages <xref:System.Security.SecurityZone> et [Ensemble d'autorisations nommés](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).  
+ Si vous utilisez les méthodes <xref:System.Xml.Xsl.XslTransform.Load%2A> qui prennent un objet <xref:System.Xml.XmlResolver> mais aucun `Evidence`, la zone de sécurité pour l'assembly prend la valeur Confiance totale par défaut. Pour plus d'informations, consultez les pages <xref:System.Security.SecurityZone> et [Ensemble d'autorisations nommés](/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).  
   
  Les fonctions peuvent être déclarées dans l'élément `msxsl:script`. Le tableau suivant montre les espaces de noms qui sont pris en charge par défaut. Vous pouvez utiliser des classes en dehors des espaces de noms répertoriés. Toutefois, ces classes doivent être qualifiées complètes.  
   
 |Espaces de noms par défaut|Description|  
 |------------------------|-----------------|  
-|System|Classe système.|  
+|Système|Classe système.|  
 |System.Collection|Classes de collection.|  
 |System.Text|Classes de texte.|  
 |System.Text.RegularExpressions|Classes d'expressions régulières.|  
@@ -65,7 +65,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
 |Type|Classe .NET Framework équivalente (Type)|Type XPath ou type XSLT|  
 |----------|----------------------------------------------|-----------------------------|  
 |String|System.String|XPath|  
-|Boolean|System.Boolean|XPath|  
+|Booléen|System.Boolean|XPath|  
 |Number|System.Double|XPath|  
 |Fragment d’arborescence résultat|System.Xml.XPath.XPathNavigator|XSLT|  
 |Collection de nœuds|System.Xml.XPath.XPathNodeIterator|XPath|  
@@ -98,7 +98,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
  Cela lève une exception car les signes &amp; ne font pas l'objet d'un échappement. Le document est chargé en tant que XML et aucun traitement spécial n’est appliqué au texte qui se trouve entre les étiquettes d’élément `msxsl:script`.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.  
   
 ```vb  
@@ -214,7 +214,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-## <a name="output"></a>Output  
+## <a name="output"></a>Sortie  
   
 ```xml  
 <circles xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">  

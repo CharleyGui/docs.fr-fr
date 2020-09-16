@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f75a652f15be6b0d184db20dc5cd8aafd80539fe
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: c64431fd651fd7d53fb46231c6acc10c5cb43fff
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614582"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606810"
 ---
 ### <a name="winforms-domain-upbutton-and-downbutton-actions-are-in-sync-now"></a>Les actions upbutton et downbutton Domain de WinForm sont désormais synchronisées
 
@@ -17,11 +17,11 @@ Dans .NET Framework 4.7.1 et versions antérieures, l’action <xref:System.Wind
 Une application doit s’exécuter sur .NET Framework 4.7.2 ou ultérieur pour tirer parti de ces changements. Pour que l’application bénéficie de ces changements, procédez de l’une des manières suivantes :
 
 - Recompilez-la pour qu’elle cible .NET Framework 4.7.2. Ce changement est activé par défaut sur les applications Windows Forms qui ciblent .NET Framework 4.7.2 ou ultérieur.
-- Refusez le comportement de défilement hérité en ajoutant le [commutateur AppContext](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) suivant à la section `<runtime>` du fichier de configuration de l’application et en lui affectant la valeur `false`, comme dans l’exemple suivant.
+- Refusez le comportement de défilement hérité en ajoutant le [commutateur AppContext](../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant à la section `<runtime>` du fichier de configuration de l’application et en lui affectant la valeur `false`, comme dans l’exemple suivant.
 
 <pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Forms.DomainUpDown.UseLegacyScrolling=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   | Edge        |
 | Version | 4.7.2       |

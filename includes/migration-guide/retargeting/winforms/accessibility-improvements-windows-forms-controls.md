@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c8e1c91f4fee8aa896b6617c815fe2a4b6d22f2a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: fa24c664e9f7cf6da78d0703c7ebb52c8ebbec20
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614572"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606955"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls"></a>Améliorations apportées aux fonctionnalités d’accessibilité dans les contrôles Windows Forms
 
@@ -40,7 +40,7 @@ Windows Forms améliore la façon dont il utilise les technologies d’accessibi
 </configuration>
 ```
 
-Si votre application cible .NET Framework 4.7.1 ou une version ultérieure et que vous souhaitez conserver le comportement d’accessibilité hérité, choisissez d’utiliser les fonctionnalités d’accessibilité héritées en affectant explicitement à ce commutateur AppContext la valeur `true`.<p/>Pour une vue d’ensemble d’UI Automation, consultez la [Vue d’ensemble d’UI Automation](~/docs/framework/ui-automation/ui-automation-overview.md).<p/>**Ajout de la prise en charge des modèles et propriétés UI Automation**<br/>Les clients d’accessibilité peuvent tirer parti des nouvelles fonctionnalités d’accessibilité WinForms à l’aide de modèles d’appel courants décrits publiquement. Ces modèles ne sont pas spécifiques à WinForms. Par exemple, les clients d’accessibilité peuvent appeler la méthode QueryInterface sur l’interface IAccessible (MAAS) pour obtenir une interface IServiceProvider. Si cette interface est disponible, les clients peuvent utiliser sa méthode QueryService pour demander une interface IAccessibleEx. Pour plus d’informations, consultez [Utilisation d’IAccessibleEx à partir d’un client](https://docs.microsoft.com/windows/desktop/WinAuto/using-iaccessibleex-from-a-client). À compter de .NET Framework 4.7.1, IServiceProvider et [IAccessibleEx](https://docs.microsoft.com/windows/desktop/WinAuto/iaccessibleex) (le cas échéant) sont disponibles pour les objets d’accessibilité WinForms.<p/>.NET Framework 4.7.1 ajoute la prise en charge des modèles et des propriétés UI Automation suivants :
+Si votre application cible .NET Framework 4.7.1 ou une version ultérieure et que vous souhaitez conserver le comportement d’accessibilité hérité, choisissez d’utiliser les fonctionnalités d’accessibilité héritées en affectant explicitement à ce commutateur AppContext la valeur `true`.<p/>Pour une vue d’ensemble d’UI Automation, consultez la [Vue d’ensemble d’UI Automation](~/docs/framework/ui-automation/ui-automation-overview.md).<p/>**Ajout de la prise en charge des modèles et propriétés UI Automation**<br/>Les clients d’accessibilité peuvent tirer parti des nouvelles fonctionnalités d’accessibilité WinForms à l’aide de modèles d’appel courants décrits publiquement. Ces modèles ne sont pas spécifiques à WinForms. Par exemple, les clients d’accessibilité peuvent appeler la méthode QueryInterface sur l’interface IAccessible (MAAS) pour obtenir une interface IServiceProvider. Si cette interface est disponible, les clients peuvent utiliser sa méthode QueryService pour demander une interface IAccessibleEx. Pour plus d’informations, consultez [Utilisation d’IAccessibleEx à partir d’un client](/windows/desktop/WinAuto/using-iaccessibleex-from-a-client). À compter de .NET Framework 4.7.1, IServiceProvider et [IAccessibleEx](/windows/desktop/WinAuto/iaccessibleex) (le cas échéant) sont disponibles pour les objets d’accessibilité WinForms.<p/>.NET Framework 4.7.1 ajoute la prise en charge des modèles et des propriétés UI Automation suivants :
 
 - Les contrôles <xref:System.Windows.Forms.ToolStripSplitButton> et <xref:System.Windows.Forms.ComboBox> prennent en charge le [modèle Développer/Réduire](~/docs/framework/ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md).
 - Le contrôle <xref:System.Windows.Forms.ToolStripMenuItem> a une valeur de propriété [ControlType](~/docs/framework/ui-automation/ui-automation-support-for-the-menubar-control-type.md) égale à <xref:System.Windows.Automation.ControlType.MenuItem?displayProperty=nameWithType>.
@@ -92,7 +92,7 @@ REMARQUE : Les valeurs de certaines couleurs système à contraste élevé ont c
 - Le Narrateur peut désormais lire le menu système des fenêtres enfants dans les applications [Multiple-Document Interface]~/docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md).
 - Le Narrateur peut désormais lire les contrôles <xref:System.Windows.Forms.ToolStripMenuItem> dont la propriété <xref:System.Windows.Forms.ToolStripItem.Enabled?displayProperty=nameWithType> a la valeur **false**. Avant, le Narrateur ne pouvait pas lire le contenu des éléments de menu désactivés.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   | Majeure       |
 | Version | 4.8         |

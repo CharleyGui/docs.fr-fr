@@ -3,12 +3,12 @@ title: LINQ (Language-Integrated Query) (C#)
 description: En savoir plus sur les requêtes LINQ (Language-Integrated Queries) et consulter un exemple de l’opération de requête complète.
 ms.date: 02/02/2017
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
-ms.openlocfilehash: 6c8844c387177ce858b63a52b1f5c7246b570beb
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 967f69e94b0424e208fb675a312ab306d5e11842
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103427"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556731"
 ---
 # <a name="language-integrated-query-linq"></a>LINQ (Language-Integrated Query)
 
@@ -41,7 +41,7 @@ L’illustration suivante de Visual Studio montre une requête LINQ partielleme
 
 Pour approfondir votre connaissance de LINQ, commencez par vous familiariser avec certains concepts de base expliqués sur la page [Principes de base des expressions de requête](../../../linq/query-expression-basics.md), puis lisez la documentation relative à la technologie LINQ qui vous intéresse :
 
-- Documents XML : [LINQ to XML](linq-to-xml-overview.md)  
+- Documents XML : [LINQ to XML](../../../../standard/linq/linq-xml-overview.md)  
 - ADO.NET Entity Framework : [LINQ to Entities](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md)
 - Collections, fichiers, chaînes, etc. .NET : [LINQ to Objects](linq-to-objects.md)
 

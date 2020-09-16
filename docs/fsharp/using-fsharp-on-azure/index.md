@@ -3,12 +3,12 @@ title: Utilisation de F# dans Azure
 description: 'Guide d’utilisation des services Azure avec F #'
 author: sylvanc
 ms.date: 07/29/2020
-ms.openlocfilehash: 24ef3fd14a4d0173935fac3e67aadf86110fa6d8
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 0f516b8a3b4fd60eea8facad83a440e33ffd521c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517371"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548421"
 ---
 # <a name="using-f-on-azure"></a>Utilisation de F# dans Azure
 
@@ -57,7 +57,7 @@ Vous pouvez aussi utiliser Stockage Azure conjointement avec Azure Functions en 
 
 ## <a name="using-apache-spark-with-f-on-azure-hdinsight-or-azure-databricks"></a>Utilisation de Apache Spark avec F # sur Azure HDInsight ou Azure Databricks
 
-[Apache Spark pour Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) est une infrastructure de traitement open source qui exécute des applications d’analytique des données à grande échelle. [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) est une plateforme d’analytique basée sur Apache Spark et optimisée pour la plateforme de services cloud Microsoft Azure. Azure vous permet de déployer Apache Spark de manière simple et rentable. Développez votre application Spark en F # à l’aide [de .net pour Apache Spark](../../spark/what-is-apache-spark-dotnet.md), un ensemble de liaisons .net pour Apache Spark.
+[Apache Spark pour Azure HDInsight](/azure/hdinsight/spark/apache-spark-overview) est une infrastructure de traitement open source qui exécute des applications d’analytique des données à grande échelle. [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks) est une plateforme d’analytique basée sur Apache Spark et optimisée pour la plateforme de services cloud Microsoft Azure. Azure vous permet de déployer Apache Spark de manière simple et rentable. Développez votre application Spark en F # à l’aide [de .net pour Apache Spark](../../spark/what-is-apache-spark-dotnet.md), un ensemble de liaisons .net pour Apache Spark.
 
 * [Exemples .NET pour Apache Spark F #](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.FSharp.Examples)
 * [Installer des blocs-notes Jupyter .NET interactive dans Azure HDInsight](../../spark/how-to-guides/hdinsight-notebook-installation.md)
@@ -89,7 +89,7 @@ Vous pouvez utiliser Azure DocumentDB avec F# de deux manières :
 Vous pouvez utiliser Azure Notification Hubs avec F# de deux manières :
 
 1. Soit en créant des fonctions Azure Functions en F# qui envoient les résultats à un hub de notification. Consultez [Déclencheurs de sortie Azure Function pour Notification Hubs](/azure/azure-functions/functions-bindings-notification-hubs).
-2. Soit en utilisant le [SDK .NET pour Azure](https://docs.microsoft.com/archive/blogs/azuremobile/push-notifications-using-notification-hub-and-net-backend). Notez que ces exemples sont en C#.
+2. Soit en utilisant le [SDK .NET pour Azure](/archive/blogs/azuremobile/push-notifications-using-notification-hub-and-net-backend). Notez que ces exemples sont en C#.
 
 ## <a name="implementing-webhooks-on-azure-with-f"></a>Implémentation de WebHooks sur Azure avec F\#
 
@@ -111,7 +111,7 @@ Vous pouvez implémenter des minuteries en F# et les héberger sur Azure par le
 
 ## <a name="deploying-and-managing-azure-resources-with-f-scripts"></a>Déploiement et gestion des ressources Azure avec des scripts F#
 
-Vous pouvez déployer et gérer des machines virtuelles Azure par programmation à partir de scripts F# à l’aide de packages et d’API Microsoft.Azure.Management. Par exemple, consultez [Bien démarrer avec les bibliothèques de gestion pour .NET](https://msdn.microsoft.com/library/dn722415.aspx) et [Utilisation d’Azure Resource Manager](/azure/azure-resource-manager/resource-manager-deployment-model).
+Vous pouvez déployer et gérer des machines virtuelles Azure par programmation à partir de scripts F# à l’aide de packages et d’API Microsoft.Azure.Management. Par exemple, consultez [Bien démarrer avec les bibliothèques de gestion pour .NET](/previous-versions/azure/dn722415(v=azure.100)) et [Utilisation d’Azure Resource Manager](/azure/azure-resource-manager/resource-manager-deployment-model).
 
 De même, vous pouvez déployer et gérer d’autres ressources Azure à partir de scripts F# à l’aide des mêmes composants. Par exemple, vous pouvez créer des comptes de stockage, déployer des services Cloud Azure, créer des instances de Azure Cosmos DB et gérer des Notification Hubs Azure par programmation à partir de scripts F #.
 

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: 08cfb8c1a5581f17a251224430018764bed80b0f
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 5e8bcab4cdd8f27e9ea27e66fe4c848ccd35e99c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245009"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556809"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>Sécurité de transport avec un client anonyme
 
@@ -27,9 +27,9 @@ Pour plus d’informations sur l’utilisation d’un certificat avec un service
 |--------------------|-----------------|
 |Mode de sécurité|Transport|
 |Interopérabilité|Avec les services Web et les clients existants|
-|Authentification (serveur)<br /><br /> Authentification (client)|Yes<br /><br /> Niveau de l’application (aucune prise en charge WCF)|
-|Intégrité|Yes|
-|Confidentialité|Yes|
+|Authentification (serveur)<br /><br /> Authentification (client)|Oui<br /><br /> Niveau de l’application (aucune prise en charge WCF)|
+|Intégrité|Oui|
+|Confidentialité|Oui|
 |Transport|HTTPS|
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|
 
@@ -85,7 +85,7 @@ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendam
 
 - Créez un client autonome à l'aide du code (et du code client).
 
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :
 
      [!code-csharp[C_SecurityScenarios#0](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
@@ -127,4 +127,4 @@ La configuration suivante peut être utilisée à la place du code pour paramét
 - [Présentation de la sécurité](security-overview.md)
 - [WS Transport Security](../samples/ws-transport-security.md)
 - [Vue d'ensemble de la sécurité des transports](transport-security-overview.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

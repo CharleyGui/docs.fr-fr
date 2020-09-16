@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cc3c2c2be179842f87be8892d057a6c4138086cb
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a21824862d6cad046b5d6186f9d6db9c20438304
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614566"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606200"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls-for-net-472"></a>Améliorations apportées aux fonctionnalités d’accessibilité dans les contrôles Windows Forms pour .NET 4.7.2
 
@@ -21,7 +21,7 @@ Windows Forms Framework améliore la façon dont il utilise les technologies d�
 **Comment accepter ou refuser ces modifications** Pour que l’application tire parti de ces modifications, elle doit s’exécuter sur le .NET Framework 4.7.2 ou version ultérieure. Pour que l’application bénéficie de ces changements, procédez de l’une des manières suivantes :
 
 - Recompilez-la pour qu’elle cible .NET Framework 4.7.2. Ces changements d’accessibilité sont activés par défaut sur les applications Windows Forms qui ciblent .NET Framework 4.7.2 ou ultérieur.
-- Faites-lui cibler .NET Framework version 4.7.1 ou antérieure et refusez les comportements d’accessibilité hérités, en ajoutant le [commutateur AppContext](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) suivant à la section `<runtime>` du fichier de configuration de l’application et en lui affectant la valeur `false`, comme dans l’exemple suivant.
+- Faites-lui cibler .NET Framework version 4.7.1 ou antérieure et refusez les comportements d’accessibilité hérités, en ajoutant le [commutateur AppContext](../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant à la section `<runtime>` du fichier de configuration de l’application et en lui affectant la valeur `false`, comme dans l’exemple suivant.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -73,11 +73,11 @@ REMARQUE : Les valeurs de certaines couleurs système à contraste élevé ont c
 
 - Les éléments enfants du contrôle <xref:System.Windows.Forms.PropertyGrid> retournent désormais un `true` pour la propriété <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> uniquement quand un élément PropertyGrid est activé.
 - Les éléments enfants du contrôle <xref:System.Windows.Forms.PropertyGrid> retournent désormais un `false` pour la propriété <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> uniquement quand un élément PropertyGrid peut être changé par l’utilisateur.
-Pour une vue d’ensemble d’UI Automation, consultez la [Vue d’ensemble d’UI Automation](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-overview).</p>**Navigation au clavier améliorée**
+Pour une vue d’ensemble d’UI Automation, consultez la [Vue d’ensemble d’UI Automation](../../../../docs/framework/ui-automation/ui-automation-overview.md).</p>**Navigation au clavier améliorée**
 
-- <xref:System.Windows.Forms.ToolStripButton>autorise désormais le focus quand il est contenu dans un <xref:System.Windows.Forms.ToolStripPanel> dont la propriété a la <xref:System.Windows.Forms.ToolStripPanel.TabStop> valeur `true` .
+- <xref:System.Windows.Forms.ToolStripButton> autorise désormais le focus quand il est contenu dans un <xref:System.Windows.Forms.ToolStripPanel> dont la propriété a la <xref:System.Windows.Forms.ToolStripPanel.TabStop> valeur `true` .
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   | Majeure       |
 | Version | 4.7.2       |

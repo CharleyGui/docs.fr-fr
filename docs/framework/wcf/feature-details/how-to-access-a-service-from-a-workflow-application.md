@@ -1,15 +1,15 @@
 ---
-title: "Procédure : accéder à un service à partir d'une application de workflow"
+title: 'Procédure : accéder à un service à partir d’une application de workflow'
 ms.date: 03/30/2017
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-ms.openlocfilehash: 2ce79b726b623c2a25bf14065682e685455ca575
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7375dc4f9af2eb0209b83724cd2ac9b9619b56dd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597239"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556874"
 ---
-# <a name="how-to-access-a-service-from-a-workflow-application"></a>Procédure : accéder à un service à partir d'une application de workflow
+# <a name="how-to-access-a-service-from-a-workflow-application"></a>Procédure : accéder à un service à partir d’une application de workflow
 Cette rubrique décrit comment appeler un service de workflow à partir d'une application console de workflow. Cela dépend de l’achèvement de la rubrique [Comment : créer un service de flux de travail avec des activités de messagerie](how-to-create-a-workflow-service-with-messaging-activities.md) . Bien que cette rubrique explique comment appeler un service de workflow à partir d’une application de workflow, les mêmes méthodes peuvent être utilisées pour appeler n’importe quel service Windows Communication Foundation (WCF) à partir d’une application de Workflow.
 
 ### <a name="create-a-workflow-console-application-project"></a>Créer un projet d'application console de workflow.
@@ -65,5 +65,5 @@ Cette rubrique décrit comment appeler un service de workflow à partir d'une ap
 ## <a name="see-also"></a>Voir aussi
 
 - [Services de workflow](workflow-services.md)
-- [Procédure : créer un service de workflow avec les activités de messagerie](how-to-create-a-workflow-service-with-messaging-activities.md)
-- [Consommer un service WCF à partir d'un workflow dans un projet Web](https://docs.microsoft.com/archive/blogs/endpoint/how-to-consume-a-wcf-service-from-a-wf4-workflow)
+- [Procédure : créer un service de workflow avec des activités de messagerie](how-to-create-a-workflow-service-with-messaging-activities.md)
+- [Consommer un service WCF à partir d'un workflow dans un projet Web](/archive/blogs/endpoint/how-to-consume-a-wcf-service-from-a-wf4-workflow)

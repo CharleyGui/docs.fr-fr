@@ -8,12 +8,12 @@ helpviewer_keywords:
 - tools [.NET Framework]
 - running .NET Framework tools
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
-ms.openlocfilehash: 0a5cbcd4fa60b819d3ab07a4f221e77ca106c321
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 96df5a0c8487d3ba344b3aa13ca74b92e428d5aa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166848"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556679"
 ---
 # <a name="net-framework-tools"></a>Outils du .NET Framework
 
@@ -37,7 +37,7 @@ Génère un fichier qui possède un manifeste de l'assembly issu de modules ou d
 Convertit les définitions de types d'une bibliothèque de types COM d'un contrôle ActiveX en contrôle Windows Forms.
 
 - [Caspol.exe (outil stratégie de sécurité d’accès du code)](caspol-exe-code-access-security-policy-tool.md)  
-Permet d'afficher et de configurer la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise. Dans le .NET Framework 4 et versions ultérieures, cet outil n’affecte pas la stratégie de sécurité d’accès du code (CAS), à moins que l' [ \<legacyCasPolicy> élément](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) ne soit défini sur `true` . Pour plus d’informations, consultez [Changements en matière de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).
+Permet d'afficher et de configurer la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise. Dans le .NET Framework 4 et versions ultérieures, cet outil n’affecte pas la stratégie de sécurité d’accès du code (CAS), à moins que l' [ \<legacyCasPolicy> élément](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) ne soit défini sur `true` . Pour plus d’informations, consultez [Changements en matière de sécurité](/previous-versions/dotnet/framework/security/security-changes).
 
 - [Cert2spc.exe (outil de test de certificat d’éditeur de logiciels)](cert2spc-exe-software-publisher-certificate-test-tool.md)  
 Crée un certificat SPC (Software Publisher's Certificate) à partir d'un ou plusieurs certificats X.509. Cet outil ne doit être utilisé qu'à des fins de test.
@@ -134,7 +134,7 @@ Vous aide à localiser les ressources de l’interface utilisateur (fichiers *. 
 
 ## <a name="related-sections"></a>Sections connexes
 
-- [outils WPF](https://docs.microsoft.com/previous-versions/ms742404(v=vs.110))  
+- [outils WPF](/previous-versions/ms742404(v=vs.110))  
 Inclut des outils comme l’outil isXPS Conformance (isXPS.exe) et les outils de profilage des performances.
 
 - [Outils de Windows Communication Foundation](../wcf/tools.md)  

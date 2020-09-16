@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 572c5be1bd639e8d4b38935f5be49782f0b0316e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2148aa984f8289b82b8efcee2404f08cab25c797
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287036"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556549"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Chaînes de connexion et fichiers de configuration
 
@@ -66,13 +66,13 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
  Le .NET Framework 2.0 a introduit de nouvelles classes dans l'espace de noms <xref:System.Configuration> afin de simplifier l'extraction des chaînes de connexion à partir des fichiers de configuration au moment de l'exécution. Vous pouvez extraire par programme une chaîne de connexion en utilisant son nom ou le nom du fournisseur.  
   
 > [!NOTE]
-> Le fichier **machine.config** contient également une section **connectionStrings**, qui contient les chaînes de connexion utilisées par Visual Studio. Lorsque vous récupérez des chaînes de connexion par nom de fournisseur à partir du fichier **app. config** dans une application Windows, les chaînes de connexion dans le fichier **machine. config** sont chargées en premier, puis les entrées du fichier **app. config**. L’ajout de **Clear** juste après l’élément **connectionStrings** supprime toutes les références héritées de la structure de données en mémoire, afin que seules les chaînes de connexion définies dans le fichier **app. config** local soient prises en compte.  
+> Le fichier **machine.config** contient également une section **connectionStrings**, qui contient les chaînes de connexion utilisées par Visual Studio. Lorsque vous récupérez des chaînes de connexion par nom de fournisseur à partir du fichier **app.config** dans une application Windows, les chaînes de connexion dans **machine.config** être chargées en premier, puis les entrées de **app.config**. L’ajout de **Clear** juste après l’élément **connectionStrings** supprime toutes les références héritées de la structure de données en mémoire, afin que seules les chaînes de connexion définies dans le fichier **app.config** local soient prises en compte.  
   
 ### <a name="working-with-the-configuration-classes"></a>Utilisation des classes de configuration  
  À partir du .NET Framework 2.0, <xref:System.Configuration.ConfigurationManager>est utilisé lors de l'utilisation de fichiers de configuration sur l'ordinateur local, pour remplacer la <xref:System.Configuration.ConfigurationSettings> déconseillée. <xref:System.Web.Configuration.WebConfigurationManager> permet d'utiliser des fichiers de configuration ASP.NET. Il est conçu pour fonctionner avec les fichiers de configuration sur un serveur web et il permet un accès par programmation à des sections des fichiers de configuration telles que **system.web**.  
   
 > [!NOTE]
-> L'accès aux fichiers de configuration au moment de l'exécution exige d'accorder des autorisations à l'appelant ; les autorisations requises dépendent du type d'application, du fichier de configuration et de l'emplacement. Pour plus d’informations, consultez [Utilisation des classes de configuration](https://docs.microsoft.com/previous-versions/aspnet/ms228063(v=vs.100)) et <xref:System.Web.Configuration.WebConfigurationManager> pour les applications ASP.NET, et <xref:System.Configuration.ConfigurationManager> pour les applications Windows.  
+> L'accès aux fichiers de configuration au moment de l'exécution exige d'accorder des autorisations à l'appelant ; les autorisations requises dépendent du type d'application, du fichier de configuration et de l'emplacement. Pour plus d’informations, consultez [Utilisation des classes de configuration](/previous-versions/aspnet/ms228063(v=vs.100)) et <xref:System.Web.Configuration.WebConfigurationManager> pour les applications ASP.NET, et <xref:System.Configuration.ConfigurationManager> pour les applications Windows.  
   
  Vous pouvez utiliser <xref:System.Configuration.ConnectionStringSettingsCollection> pour extraire les chaînes de connexion à partir des fichiers de configuration de l'application. Il contient une collection d’objets <xref:System.Configuration.ConnectionStringSettings>, dont chacun représente une entrée unique dans la section **connectionStrings**. Ses propriétés correspondent aux attributs des chaînes de connexion, ce qui vous permet d'extraire une chaîne de connexion en spécifiant son nom ou le nom du fournisseur.  
   
@@ -80,7 +80,7 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
 |--------------|-----------------|  
 |<xref:System.Configuration.ConnectionStringSettings.Name%2A>|Nom de la chaîne de connexion. Correspond à l’attribut **name**.|  
 |<xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>|Nom complet du fournisseur. Correspond à l’attribut **providerName**.|  
-|<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A>|Chaîne de connexion. Correspond à l’attribut **connectionString**.|  
+|<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A>|Chaîne de connexion Correspond à l’attribut **connectionString**.|  
   
 ### <a name="example-listing-all-connection-strings"></a>Exemple : répertorier toutes les chaînes de connexion  
  Cet exemple itère au sein de <xref:System.Configuration.ConnectionStringSettingsCollection> et affiche les <xref:System.Configuration.ConnectionStringSettings.Name%2A?displayProperty=nameWithType> <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A?displayProperty=nameWithType> Propriétés, et <xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A?displayProperty=nameWithType> dans la fenêtre de console.  
@@ -104,7 +104,7 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/VB/source.vb#1)]  
   
 ## <a name="encrypting-configuration-file-sections-using-protected-configuration"></a>Chiffrement de sections de fichier de configuration à l'aide d'une configuration protégée  
- ASP.NET 2.0 a introduit une nouvelle fonctionnalité, appelée *configuration protégée*, qui vous permet de chiffrer les informations sensibles dans un fichier de configuration. Bien qu'elle ait été conçu à l'origine pour les applications ASP.NET, la configuration protégée peut également servir à chiffrer les sections des fichiers de configuration dans les applications Windows. Pour une description détaillée des fonctionnalités de configuration protégée, consultez [Chiffrement des informations de configuration à l’aide de la configuration protégée](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100)).  
+ ASP.NET 2.0 a introduit une nouvelle fonctionnalité, appelée *configuration protégée*, qui vous permet de chiffrer les informations sensibles dans un fichier de configuration. Bien qu'elle ait été conçu à l'origine pour les applications ASP.NET, la configuration protégée peut également servir à chiffrer les sections des fichiers de configuration dans les applications Windows. Pour une description détaillée des fonctionnalités de configuration protégée, consultez [Chiffrement des informations de configuration à l’aide de la configuration protégée](/previous-versions/aspnet/53tyfkaw(v=vs.100)).  
   
  Le fragment de fichier de configuration suivant illustre la section **connectionStrings** après le chiffrement. Le **configProtectionProvider** spécifie le fournisseur de configuration protégée pour chiffrer et déchiffrer les chaînes de connexion. La section **EncryptedData** contient le texte de chiffrement.  
   
@@ -138,16 +138,16 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
   
 |Fournisseur|Description|  
 |--------------|-----------------|  
-|<xref:System.Configuration.RsaProtectedConfigurationProvider>|Utilise l'algorithme de chiffrement RSA pour chiffrer et déchiffrer des données. L'algorithme RSA peut être utilisé pour le chiffrement de clé publique et les signatures numériques. Il est également appelé « clé publique » ou chiffrement asymétrique, car il utilise deux clés différentes. Vous pouvez utiliser l’[Outil d’inscription IIS ASP.NET (aspnet_regiis.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90)) pour chiffrer des sections dans un fichier Web.config et gérer les clés de chiffrement. ASP.NET déchiffre le fichier de configuration lorsqu'il traite le fichier. L'identité de l'application ASP.NET doit disposer d'un accès à la clé de chiffrement utilisée pour chiffrer et déchiffrer les sections chiffrées.|  
+|<xref:System.Configuration.RsaProtectedConfigurationProvider>|Utilise l'algorithme de chiffrement RSA pour chiffrer et déchiffrer des données. L'algorithme RSA peut être utilisé pour le chiffrement de clé publique et les signatures numériques. Il est également appelé « clé publique » ou chiffrement asymétrique, car il utilise deux clés différentes. Vous pouvez utiliser l’[Outil d’inscription IIS ASP.NET (aspnet_regiis.exe)](/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90)) pour chiffrer des sections dans un fichier Web.config et gérer les clés de chiffrement. ASP.NET déchiffre le fichier de configuration lorsqu'il traite le fichier. L'identité de l'application ASP.NET doit disposer d'un accès à la clé de chiffrement utilisée pour chiffrer et déchiffrer les sections chiffrées.|  
 |<xref:System.Configuration.DpapiProtectedConfigurationProvider>|Utilise l'API de protection de données (DPAPI) Windows pour chiffrer les sections de configuration. Il utilise les services de chiffrement intégrés de Windows et peut être configuré pour une protection spécifique à un ordinateur ou spécifique à un compte d'utilisateur. La protection spécifique à un ordinateur est utile pour plusieurs applications sur le même serveur qui doivent partager des informations. La protection spécifique à un compte d'utilisateur peut être utilisée avec des services qui s'exécutent avec une identité d'utilisateur spécifique, telle qu'un environnement d'hébergement partagé. Chaque application s'exécute sous une identité différente qui restreint l'accès aux ressources telles que les fichiers et les bases de données.|  
   
- Les deux fournisseurs offrent un chiffrement renforcé des données. Cependant, si vous prévoyez d'utiliser le même fichier de configuration chiffré sur plusieurs serveurs, comme une batterie de serveurs Web, seul <xref:System.Configuration.RsaProtectedConfigurationProvider> vous permet d'exporter les clefs de chiffrement utilisées pour chiffrer les données et les importer sur un autre serveur. Pour plus d’informations, consultez [Importation et exportation des conteneurs de clé RSA de la configuration protégée](https://docs.microsoft.com/previous-versions/aspnet/yxw286t2(v=vs.100)).  
+ Les deux fournisseurs offrent un chiffrement renforcé des données. Cependant, si vous prévoyez d'utiliser le même fichier de configuration chiffré sur plusieurs serveurs, comme une batterie de serveurs Web, seul <xref:System.Configuration.RsaProtectedConfigurationProvider> vous permet d'exporter les clefs de chiffrement utilisées pour chiffrer les données et les importer sur un autre serveur. Pour plus d’informations, consultez [Importation et exportation des conteneurs de clé RSA de la configuration protégée](/previous-versions/aspnet/yxw286t2(v=vs.100)).  
   
 ### <a name="using-the-configuration-classes"></a>Utilisation des classes de configuration  
  L'espace de noms <xref:System.Configuration> fournit des classes pour utiliser des paramètres de configuration par programme. La classe <xref:System.Configuration.ConfigurationManager> fournit un accès aux fichiers de configuration d'ordinateur, d'application et d'utilisateur. Si vous créez une application ASP.NET, vous pouvez utiliser la <xref:System.Web.Configuration.WebConfigurationManager> classe, qui offre les mêmes fonctionnalités tout en vous permettant également d’accéder à des paramètres qui sont propres aux applications ASP.net, tels que ceux qui se trouvent dans **\<system.web>** .  
   
 > [!NOTE]
-> L'espace de noms <xref:System.Security.Cryptography> contient des classes qui fournissent des options supplémentaires pour le chiffrement et déchiffrement de données. Utilisez ces classes si vous avez besoin de services de chiffrement qui ne sont pas disponibles via la configuration protégée. Certaines de ces classes sont des wrappers pour l'interface Microsoft CryptoAPI non managée, tandis que d'autres ne sont purement que des implémentations managées. Pour plus d’informations, consultez [Services de cryptographie](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/93bskf9z(v=vs.90)).  
+> L'espace de noms <xref:System.Security.Cryptography> contient des classes qui fournissent des options supplémentaires pour le chiffrement et déchiffrement de données. Utilisez ces classes si vous avez besoin de services de chiffrement qui ne sont pas disponibles via la configuration protégée. Certaines de ces classes sont des wrappers pour l'interface Microsoft CryptoAPI non managée, tandis que d'autres ne sont purement que des implémentations managées. Pour plus d’informations, consultez [Services de cryptographie](/previous-versions/visualstudio/visual-studio-2008/93bskf9z(v=vs.90)).  
   
 ### <a name="appconfig-example"></a>Exemple App.config  
  Cet exemple montre comment basculer le chiffrement de la section **connectionStrings** dans un fichier **app.config** pour une application Windows. Dans cet exemple, la procédure prend le nom de l'application en tant qu'argument, par exemple, « MyApplication.exe ». Le fichier **app.config** est ensuite chiffré et copié dans le dossier qui contient le fichier exécutable sous le nom « MyApplication.exe.config ».  
@@ -169,13 +169,13 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- Pour plus d’informations sur la sécurisation des applications ASP.NET, consultez [sécurisation des sites web ASP.net](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100)).  
+ Pour plus d’informations sur la sécurisation des applications ASP.NET, consultez [sécurisation des sites web ASP.net](/previous-versions/aspnet/91f66yxt(v=vs.100)).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Générateurs de chaînes de connexion](connection-string-builders.md)
+- [Builders de chaînes de connexion](connection-string-builders.md)
 - [Protection des informations de connexion](protecting-connection-information.md)
-- [Utilisation des classes de configuration](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
-- [Configuration d'applications](../../configure-apps/index.md)
-- [Administration de site web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/6hy1xzbw(v=vs.100))
+- [Utilisation des classes de configuration](/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
+- [Configuration d’applications](../../configure-apps/index.md)
+- [Administration de site web ASP.NET](/previous-versions/aspnet/6hy1xzbw(v=vs.100))
 - [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

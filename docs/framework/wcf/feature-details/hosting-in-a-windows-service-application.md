@@ -2,12 +2,12 @@
 title: Hébergement dans une application de service Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: ba49d123508ceb8da677d1e9c67721e4f86aa7c3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cb952cfcd670a790033fbec70de00a4db2541237
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597330"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555846"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hébergement dans une application de service Windows
 Les services Windows (autrefois connus comme services Windows NT) fournissent un modèle de processus particulièrement adapté aux applications qui doivent exister dans un exécutable à durée d’exécution longue et n’affichent aucune forme d’interface utilisateur. La durée de vie de processus d'une application de service Windows est gérée par le gestionnaire de contrôle des services (SCM) qui vous autorise à démarrer, arrêter et suspendre les applications de service Windows. Vous pouvez configurer un processus de service Windows pour qu’il démarre automatiquement lorsque l’ordinateur démarre, ce qui en fait un environnement d’hébergement approprié pour les applications « Always on ». Pour plus d’informations sur les applications de service Windows, consultez [applications de service Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -40,7 +40,7 @@ Les services Windows (autrefois connus comme services Windows NT) fournissent u
 
 - <xref:System.ServiceProcess>
 - [Procédure pas à pas : création d’une application de service Windows dans le Concepteur de composants](https://go.microsoft.com/fwlink/?LinkId=94875)
-- [Comment : héberger un service WCF dans un service Windows managé](how-to-host-a-wcf-service-in-a-managed-windows-service.md)
+- [Procédure : héberger un service WCF dans un service Windows managé](how-to-host-a-wcf-service-in-a-managed-windows-service.md)
 - [Windows Service Host](../samples/windows-service-host.md)
 - [Architecture de programmation d'une application de service](https://go.microsoft.com/fwlink/?LinkId=94876)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

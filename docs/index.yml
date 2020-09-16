@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 07/10/2020
-  ms.openlocfilehash: d324cfe43f5558f255746421ebd4d143e7343e81
-  ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+  ms.openlocfilehash: 98de6da2ffd990c5ec99f1a4043b089af712dd6b
+  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/05/2020
-  ms.locfileid: "89495549"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90556048"
 highlightedContent:
   items:
   - title: Télécharger .NET
@@ -168,11 +168,11 @@ additionalContent:
         text: 'Blazor : Interface utilisateur web interactive côté client à l’aide de .NET'
     - title: Cloud natif et microservices
       links:
-      - url: /dotnet/azure/
+      - url: ./azure/index.yml
         text: Documentation Azure pour .NET
       - url: /azure/storage
         text: Stockage
-      - url: /dotnet/fsharp/using-fsharp-on-azure/
+      - url: ./fsharp/using-fsharp-on-azure/index.md
         text: Utilisation de F# dans Azure
       - url: architecture/serverless/index.md
         text: 'Applications serverless : architecture, modèles et implémentation Azure'
@@ -224,7 +224,7 @@ additionalContent:
       links:
       - url: https://channel9.msdn.com/Shows/On-NET/IoT-support-for-NET-Core
         text: 'Sur .NET : Découvrir la prise en charge d’IoT dans .NET Core'
-      - url: https://docs.microsoft.com/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0
+      - url: /archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0
         text: Programmation IoT multiplateforme avec .NET Core 3.0
       - url: https://github.com/dotnet/iot
         text: Bibliothèques IoT .NET Core
@@ -235,19 +235,19 @@ additionalContent:
     items:
     - title: Informations de référence sur l’API .NET Core
       summary: Documentation de référence sur les API de .NET Core
-      url: https://docs.microsoft.com/dotnet/api/?view=netcore-3.1
+      url: ../api/index.md?view=netcore-3.1
     - title: Informations de référence sur l’API .NET Framework
       summary: Documentation de référence sur les API de .NET Framework
-      url: https://docs.microsoft.com/dotnet/api/?view=netframework-4.8
+      url: ../api/index.md?view=netframework-4.8
     - title: Informations de référence sur l’API ASP.NET Core
       summary: Documentation de référence sur les API de ASP.NET Core
-      url: https://docs.microsoft.com/dotnet/api/?view=aspnetcore-3.1
+      url: ../api/index.md?view=aspnetcore-3.1
     - title: Informations de référence sur l’API ML.NET
       summary: Documentation de référence sur les API de ML.NET
-      url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
+      url: ../api/index.md?view=ml-dotnet
     - title: Informations de référence sur l’API .NET pour Apache Spark
       summary: Documentation de référence sur les API de .NET pour Apache Spark
-      url: https://docs.microsoft.com/dotnet/api/?view=spark-dotnet
+      url: ../api/index.md?view=spark-dotnet
     - title: Informations de référence sur le langage C#
       summary: Informations de référence et spécification sur le langage C#
       url: csharp/language-reference/index.md
@@ -257,4 +257,4 @@ additionalContent:
     - title: Informations de référence sur le langage Visual Basic
       summary: Informations de référence et spécification sur le langage Visual Basic
       url: visual-basic/language-reference/index.md
-  footer: Contribuez à la documentation .NET. Lisez notre [guide du contributeur](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute).
+  footer: Contribuez à la documentation .NET. Lisez notre [guide du contributeur](/contribute/dotnet/dotnet-contribute).

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - security [.NET Framework], method access
 - method access security
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
-ms.openlocfilehash: 88868ab29fc37854959a044b9c0fed5bd8c82d77
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: f9b9bc00058aefc8f58facff43509e717967c2a7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855762"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555716"
 ---
 # <a name="securing-method-access"></a>Sécurisation de l'accès à la méthode
 
@@ -30,7 +30,7 @@ ms.locfileid: "87855762"
   
 - Limitez l'étendue de l'accessibilité à la classe, à l'assembly ou aux classes dérivées, s'ils sont de confiance. C'est la façon la plus simple de limiter l'accès à la méthode. En général, les classes dérivées peuvent être moins dignes de confiance que la classe à partir de laquelle elles dérivent, mais dans certains cas, elles partagent l’identité de la classe parente. En particulier, ne déduisez pas l’approbation à partir du mot clé `protected` , qui n’est pas nécessairement utilisé dans le contexte de sécurité.  
   
-- Limitez l’accès à la méthode aux appelants d’une identité spécifiée (essentiellement, toute [preuve](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29) particulière (nom fort, éditeur, zone, etc.) que vous choisissez.  
+- Limitez l’accès à la méthode aux appelants d’une identité spécifiée (essentiellement, toute [preuve](/previous-versions/dotnet/netframework-4.0/7y5x1hcd(v=vs.100)) particulière (nom fort, éditeur, zone, etc.) que vous choisissez.  
   
 - Limitez l'accès à la méthode aux appelants dont les autorisations correspondent à celles que vous choisissez.  
   

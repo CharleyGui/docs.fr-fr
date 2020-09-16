@@ -2,12 +2,12 @@
 title: Modèles de transaction
 ms.date: 03/30/2017
 ms.assetid: 48a8bc1b-128b-4cf1-a421-8cc73223c340
-ms.openlocfilehash: d6c78a5342bf19d19308352cddc241f436bfcb3a
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 2d3d0631c47506e7bd99d90ed49a1fdc76cc7a59
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76745324"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556822"
 ---
 # <a name="transaction-models"></a>Modèles de transaction
 Cette rubrique décrit la relation entre les modèles de programmation de transactions et les composants d'infrastructure que Microsoft fournit.  
@@ -31,6 +31,6 @@ Cette rubrique décrit la relation entre les modèles de programmation de transa
 ## <a name="msdtc-transactions"></a>Transactions MSDTC  
  MSDTC (Microsoft Distributed Transaction Coordinator) est un gestionnaire de transactions qui prend en charge les transactions distribuées.  
   
- Pour plus d’informations, consultez le [Guide de référence du programmeur DTC](https://docs.microsoft.com/previous-versions/windows/desktop/ms686108(v=vs.85)).  
+ Pour plus d’informations, consultez le [Guide de référence du programmeur DTC](/previous-versions/windows/desktop/ms686108(v=vs.85)).  
   
  Dans un service ou une application WCF, MSDTC fournit l’infrastructure pour la coordination des transactions créées au sein d’un client ou d’un service.

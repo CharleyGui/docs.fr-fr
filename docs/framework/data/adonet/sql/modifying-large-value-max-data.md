@@ -1,16 +1,16 @@
 ---
-title: Modification des données à grande valeur (max)
+title: Modification de données de valeur élevée (max)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: 00a4ae83270bb74e9703faebfc93e26b5c069478
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8a077c56f4de5a88e9c2a6f932c9a8b5ffc6b974
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174275"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556965"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Modification de données de valeurs élevées (max) dans ADO.NET
 Les types de données LOB (Large Object) sont ceux dont la taille maximale de ligne dépasse huit kilo-octets (Ko). SQL Server fournit un spécificateur `max` pour les types de données `varchar`, `nvarchar` et `varbinary` afin de permettre le stockage de valeurs pouvant atteindre 2^32 octets. Les colonnes de table et les variables Transact-SQL peuvent spécifier des types de données `varchar(max)`, `nvarchar(max)` ou `varbinary(max)`. Dans ADO.NET, les types de données `max` peuvent être extraits par un `DataReader` et spécifiés comme valeurs de paramètre d'entrée ou de sortie sans que cela nécessite une manipulation particulière. Pour les types de données `varchar` de valeur élevée, les données peuvent être récupérées et mises à jour de façon incrémentielle.  
@@ -21,7 +21,7 @@ Les types de données LOB (Large Object) sont ceux dont la taille maximale de li
   
  **Documentation SQL Server**  
   
-1. [Utilisation de types de données de valeur élevée](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms178158(v=sql.100))  
+1. [Utilisation de types de données de valeur élevée](/previous-versions/sql/sql-server-2008/ms178158(v=sql.100))  
   
 ## <a name="large-value-type-restrictions"></a>Restrictions relatives aux types de valeur élevée  
  Les restrictions suivantes s’appliquent aux types de données `max`, et n’existent pas pour les types de données plus petits :  
@@ -57,11 +57,11 @@ FROM OPENROWSET
   
  UPDATE  
   
- * \<l’objet>*  
+ { *\<object>* }  
   
  SET  
   
- column_name *column_name* . WRITE *(expression* @Offset @Length , , )  
+ { *column_name* = {. WRITE ( *expression* , @Offset , @Length )}  
   
  La méthode WRITE spécifie qu’une section de la valeur *column_name* sera modifiée. L’expression est la valeur qui sera copiée dans *column_name*, `@Offset` est le point à partir duquel l’expression sera écrite et l’argument `@Length` indique la longueur de la section dans la colonne.  
   
@@ -251,7 +251,7 @@ WHERE   DocumentID=@DocumentID
   
 ## <a name="see-also"></a>Voir aussi
 
-- [SqL Server Données binaires et à grande valeur](sql-server-binary-and-large-value-data.md)
+- [SQL Server des données binaires et de grande valeur](sql-server-binary-and-large-value-data.md)
 - [Mappages de types de données SQL Server](../sql-server-data-type-mappings.md)
-- [Opérations de données de serveur SQL en ADO.NET](sql-server-data-operations.md)
+- [SQL Server des opérations de données dans ADO.NET](sql-server-data-operations.md)
 - [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

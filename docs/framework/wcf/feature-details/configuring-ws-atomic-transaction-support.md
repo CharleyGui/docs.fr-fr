@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: d396ccdaca81eab74de5e20d7ba7a9a00acbf7a6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9c0e75d58fbcf61137ceae3fba9d8acfe3902171
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597473"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556588"
 ---
 # <a name="configure-ws-atomic-transaction-support"></a>Configurer la prise en charge des transactions WS-Atomic
 
@@ -23,7 +23,7 @@ Vous pouvez accéder aux fonctionnalités de cet outil à l'aide d'un composant 
 
 La fenêtre de ligne de commande est accessible à l'emplacement d'installation du Kit de développement logiciel (SDK) Windows « %WINDIR%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation ».
 
-Pour plus d’informations sur l’outil en ligne de commande, consultez [utilitaire de configuration WS-AtomicTransaction (WsatConfig. exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md).
+Pour plus d’informations sur l’outil en ligne de commande, consultez l' [utilitaire de configuration WS-AtomicTransaction (wsatConfig.exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md).
 
 Si vous exécutez Windows XP ou Windows Server 2003, vous pouvez accéder au composant logiciel enfichable MMC en accédant à **panneau de configuration/outils d’administration/Services de composants**, en cliquant avec le bouton droit sur **poste de travail**, puis en sélectionnant **Propriétés**. Il s'agit du même emplacement que celui où vous pouvez configurer Microsoft Distributed Transaction Coordinator (MSDTC). Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** . Si vous exécutez Windows Vista ou Windows Server 2008, le composant logiciel enfichable MMC est accessible en cliquant sur le bouton **Démarrer** et en entrant `dcomcnfg.exe` dans la zone de **recherche** . À l’ouverture de la console MMC, accédez au nœud **My Travail\distributed transaction COORDINATOR\LOCAL DTC** , cliquez avec le bouton droit et sélectionnez **Propriétés**. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .
 
@@ -59,7 +59,7 @@ L'exemple suivant illustre les étapes requises pour établir la confiance entre
 
 Cette procédure requiert le composant logiciel enfichable MMC Certificats. Ce composant logiciel enfichable est accessible en ouvrant le menu Démarrer/Exécuter, en tapant « mmc » dans la zone d'entrée et en appuyant sur OK. Ensuite, dans la fenêtre **Console1** , accédez au composant logiciel enfichable **fichier/ajouter-supprimer** , cliquez sur Ajouter, puis choisissez **certificats** dans la liste **composants logiciels enfichables autonome disponible** . Enfin, sélectionnez le **compte d’ordinateur** à gérer, puis cliquez sur **OK**. Le nœud **certificats** apparaît dans la console du composant logiciel enfichable.
 
-Vous devez déjà posséder les certificats requis pour établir la confiance. Pour savoir comment créer et installer de nouveaux certificats avant les étapes suivantes, consultez [procédure : créer et installer des certificats clients temporaires dans WCF pendant le développement](https://docs.microsoft.com/previous-versions/msp-n-p/ff650751(v=pandp.10)).
+Vous devez déjà posséder les certificats requis pour établir la confiance. Pour savoir comment créer et installer de nouveaux certificats avant les étapes suivantes, consultez [procédure : créer et installer des certificats clients temporaires dans WCF pendant le développement](/previous-versions/msp-n-p/ff650751(v=pandp.10)).
 
 1. Sur l'ordinateur A, à l'aide du composant logiciel enfichable MMC Certificats, importez le certificat existant (certA) dans les magasins LocalMachine\MY (Nœud personnel) et LocalMachine\ROOT (nœud de l'Autorité de certification racine de confiance). Pour importer un certificat vers un nœud spécifique, cliquez avec le bouton droit sur le nœud et choisissez **toutes les tâches/importer**.
 
@@ -102,7 +102,7 @@ Lors du déploiement de MSDTC, l'administrateur doit s'assurer que tout échange
 
 ## <a name="tracing"></a>Traçage
 
-Le service de protocole WS-AT prend en charge le suivi intégré, spécifique aux transactions, qui peut être activé et géré par le biais de l’outil de [composant logiciel enfichable MMC configuration de WS-AtomicTransaction](../ws-atomictransaction-configuration-mmc-snap-in.md) . Les suivis peuvent inclure des données qui indiquent l'heure d'une inscription pour une transaction spécifique, l'heure à laquelle une transaction atteint son état terminal, le résultat que chaque inscription de transaction a reçu. Toutes les traces peuvent être affichées à l’aide de l’outil [Service Trace Viewer Tool (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) .
+Le service de protocole WS-AT prend en charge le suivi intégré, spécifique aux transactions, qui peut être activé et géré par le biais de l’outil de [composant logiciel enfichable MMC configuration de WS-AtomicTransaction](../ws-atomictransaction-configuration-mmc-snap-in.md) . Les suivis peuvent inclure des données qui indiquent l'heure d'une inscription pour une transaction spécifique, l'heure à laquelle une transaction atteint son état terminal, le résultat que chaque inscription de transaction a reçu. Toutes les traces peuvent être affichées à l’aide de l’outil [Service Trace Viewer Tool (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) .
 
 Le service de protocole WS-AT prend en charge également le suivi ServiceModel intégré sur l'ensemble de la session de suivi ETW. Cela procure des suivis plus détaillés et spécifiques à la communication, en plus des suivis de transaction existants.  Pour activer ces suivis supplémentaires, procédez comme suit
 

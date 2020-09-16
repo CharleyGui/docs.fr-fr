@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b1fb9647091cecb80b9c2f04ec9b6bb156eb39ba
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 224cd3c7897c64ef05baba7d3d31dbe5ac0dd610
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84466853"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606456"
 ---
 ### <a name="pubternal-apis-removed"></a>API « Pubternal » supprimées
 
@@ -22,7 +22,7 @@ Les API affectées sont marquées avec le `public` modificateur d’accès et ex
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Les API affectées sont marquées avec le modificateur d’accès [interne](/dotnet/csharp/language-reference/keywords/internal) et ne peuvent plus être utilisées par du code en dehors de cet assembly.
+Les API affectées sont marquées avec le modificateur d’accès [interne](../../../../docs/csharp/language-reference/keywords/internal.md) et ne peuvent plus être utilisées par du code en dehors de cet assembly.
 
 #### <a name="reason-for-change"></a>Motif de modification
 
@@ -43,7 +43,7 @@ Par exemple, considérez le code de mise en mémoire tampon des requêtes HTTP s
 HttpContext.Request.EnableRewind();
 ```
 
-Dans un projet ASP.NET Core 3,0, remplacez l' `EnableRewind` appel par un appel à la `EnableBuffering` méthode d’extension. La fonctionnalité de mise en mémoire tampon des demandes fonctionne comme dans le passé. `EnableBuffering`appelle l' `internal` API Now.
+Dans un projet ASP.NET Core 3,0, remplacez l' `EnableRewind` appel par un appel à la `EnableBuffering` méthode d’extension. La fonctionnalité de mise en mémoire tampon des demandes fonctionne comme dans le passé. `EnableBuffering` appelle l' `internal` API Now.
 
 ```csharp
 HttpContext.Request.EnableBuffering();

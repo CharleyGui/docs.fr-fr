@@ -3,18 +3,18 @@ title: LINQ et chaînes (C#)
 description: LINQ peut interroger et transformer des chaînes et des collections de chaînes. Vous pouvez combiner des requêtes LINQ avec des fonctions de chaîne et des expressions régulières C#.
 ms.date: 07/20/2015
 ms.assetid: dbe2d657-b3f3-487e-b645-21fb2d71cd7b
-ms.openlocfilehash: c515a0c56ad6473f93c6339540e4ed0245bb5bd2
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 0500d821335659fa29dd4809513f38dac0a8b193
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165615"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556718"
 ---
 # <a name="linq-and-strings-c"></a>LINQ et chaînes (C#)
 
 LINQ peut être utilisé pour interroger et transformer des chaînes et des collections de chaînes. Il peut être particulièrement utile avec des données semi-structurées dans des fichiers texte. Les requêtes LINQ peuvent être combinées avec les fonctions de chaîne traditionnelles et les expressions régulières. Par exemple, vous pouvez utiliser la méthode <xref:System.String.Split%2A?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType> pour créer un tableau de chaînes que vous pouvez ensuite interroger ou modifier à l’aide de LINQ. Vous pouvez utiliser la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> dans la clause `where` d’une requête LINQ. Et vous pouvez utiliser LINQ pour interroger ou modifier les résultats <xref:System.Text.RegularExpressions.MatchCollection> retournés par une expression régulière.
 
-Vous pouvez également utiliser les techniques décrites dans cette section pour transformer des données texte semi-structurées en XML. Pour plus d’informations, consultez [Comment générer du code XML à partir de fichiers CSV](how-to-generate-xml-from-csv-files.md).
+Vous pouvez également utiliser les techniques décrites dans cette section pour transformer des données texte semi-structurées en XML. Pour plus d’informations, consultez [Comment générer du code XML à partir de fichiers CSV](../../../../standard/linq/generate-xml-csv-files.md).
 
 Les exemples de cette section se répartissent en deux catégories :
 
@@ -76,4 +76,4 @@ De nombreux types différents de fichiers texte sont constitués d’une série 
 ## <a name="see-also"></a>Voir aussi
 
 - [LINQ (Language-Integrated Query) (C#)](index.md)
-- [Comment générer du code XML à partir de fichiers CSV](how-to-generate-xml-from-csv-files.md)
+- [Comment générer du code XML à partir de fichiers CSV](../../../../standard/linq/generate-xml-csv-files.md)

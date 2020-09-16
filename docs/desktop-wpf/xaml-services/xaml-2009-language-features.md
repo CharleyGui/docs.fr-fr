@@ -5,21 +5,21 @@ helpviewer_keywords:
 - XAML 2009 [XAML Services]
 - XAML [XAML Services], XAML 2009
 ms.assetid: f6bb18d8-c86a-4549-8862-323e6b32a8dd
-ms.openlocfilehash: e58e6757b88958bf8a3547c8a272c2e6298dcecb
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: dfa2841d8bc1ed1429372908f0dda97d178c4ac3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "82071597"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556705"
 ---
 # <a name="xaml-2009-language-features"></a>Fonctionnalités de langage XAML 2009
-XAML 2009 est l'abréviation désignant les nouvelles fonctionnalités du langage XAML qui étendent la spécification du langage XAML existante. XAML 2009 introduit plusieurs nouvelles directives et constructions. Il s’agit notamment de la [directive x:Arguments](xarguments-directive.md); la [directive x:FactoryMethod](xfactorymethod-directive.md); le [x:Reference Markup Extension](xreference-markup-extension.md); la [directive x:TypeArguments](xtypearguments-directive.md); et les types intégrés pour les `x:Char`primitifs de langue commune (par exemple ).
+XAML 2009 est l'abréviation désignant les nouvelles fonctionnalités du langage XAML qui étendent la spécification du langage XAML existante. XAML 2009 introduit plusieurs nouvelles directives et constructions. Celles-ci incluent la [directive x :arguments](xarguments-directive.md); [directive x :FactoryMethod](xfactorymethod-directive.md); l' [extension de balisage de x :Reference](xreference-markup-extension.md); [directive x :TypeArguments](xtypearguments-directive.md); et les types intégrés pour les primitives de langage courantes (par exemple `x:Char` ).
 
 ## <a name="xaml-2009-support-in-wpf-and-visual-studio"></a>Prise en charge de XAML 2009 dans WPF et Visual Studio
 
 Dans WPF, vous pouvez utiliser les fonctionnalités XAML 2009, mais uniquement pour le code XAML qui n'est pas compilé par balisage WPF. Le code XAML compilé par balisage et la forme BAML du code XAML ne prennent actuellement pas en charge les mots clés de langage et fonctionnalités XAML 2009.
 
-Notez que les techniques existantes de chargement du code XAML libre dans WPF peuvent également avoir des restrictions de sécurité et d'accès aux types CLR et au système de type qui sont plus restrictives que pour le code XAML compilé par balisage. Pour plus d'informations, consultez [Sécurité (WPF)](../../framework/wpf/security-wpf.md) ou [Stratégie de sécurité de WPF - ingénierie de la plateforme](../../framework/wpf/wpf-security-strategy-platform-security.md).
+Notez que les techniques existantes de chargement du code XAML libre dans WPF peuvent également avoir des restrictions de sécurité et d'accès aux types CLR et au système de type qui sont plus restrictives que pour le code XAML compilé par balisage. Pour plus d'informations, consultez [Sécurité (WPF)](/dotnet/desktop/wpf/security-wpf) ou [Stratégie de sécurité de WPF - ingénierie de la plateforme](/dotnet/desktop/wpf/wpf-security-strategy-platform-security).
 
 XAML 2009 introduit également des fonctionnalités supplémentaires qui modifient les constructions XAML 2006 précédentes ou les formes de balisage de base.
 

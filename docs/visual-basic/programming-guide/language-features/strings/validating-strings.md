@@ -7,12 +7,12 @@ helpviewer_keywords:
 - strings [Visual Basic], validating
 - validation [Visual Basic], strings
 ms.assetid: 9a1acf9b-7e2c-40cb-bba4-656ee2bc2ed0
-ms.openlocfilehash: 58ca052f4a03d99ab62e651f5c15e45c94b8d483
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 585f7acc8ab46ad7f5711fca7805b63b316f1970
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363709"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555729"
 ---
 # <a name="validating-strings-in-visual-basic"></a>Validation de chaînes en Visual Basic
 Cette section explique comment valider des chaînes dans Visual Basic.  
@@ -33,4 +33,4 @@ Cette section explique comment valider des chaînes dans Visual Basic.
 ## <a name="see-also"></a>Voir aussi
 
 - [Chaînes](index.md)
-- [MaskedTextBox, contrôle](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+- [MaskedTextBox, contrôle](/dotnet/desktop/winforms/controls/maskedtextbox-control-windows-forms)

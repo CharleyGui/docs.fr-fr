@@ -2,12 +2,12 @@
 title: Sécurité de transport HTTP
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-ms.openlocfilehash: 28d0ac164022f585f25b44b16c68994b592ef041
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 046b57787357623a19ff6d012eb71c179fcffe51
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84592721"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556295"
 ---
 # <a name="http-transport-security"></a>Sécurité de transport HTTP
 Lors de l'utilisation du protocole HTTP comme transport, la sécurité est fournie par une implémentation SSL (Secure Sockets Layer). SSL est largement utilisé sur Internet pour authentifier un service auprès d'un client, puis pour fournir la confidentialité (chiffrement) au canal. Cette rubrique explique comment fonctionne le protocole SSL et comment il est implémenté dans Windows Communication Foundation (WCF).  
@@ -33,25 +33,25 @@ Lors de l'utilisation du protocole HTTP comme transport, la sécurité est fourn
   
 - Si vous utilisez Internet Information Services (IIS) comme hôte WCF, utilisez l’infrastructure IIS pour configurer un service SSL.  
   
-- Si vous créez une application WCF auto-hébergée, vous pouvez lier un certificat SSL à l’adresse à l’aide de l’outil HttpCfg. exe.  
+- Si vous créez une application WCF auto-hébergée, vous pouvez lier un certificat SSL à l’adresse à l’aide de l’outil HttpCfg.exe.  
   
 ### <a name="using-iis-for-transport-security"></a>Utilisation des services Internet (IIS) pour la sécurité de transport  
   
 #### <a name="iis-70"></a>IIS 7.0  
- Pour configurer IIS 7,0 en tant qu’hôte sécurisé (à l’aide de SSL), consultez [configuration de protocole SSL dans IIS 7,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771438(v=ws.10)).  
+ Pour configurer IIS 7,0 en tant qu’hôte sécurisé (à l’aide de SSL), consultez [configuration de protocole SSL dans IIS 7,0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771438(v=ws.10)).  
   
-Pour configurer des certificats à utiliser avec IIS 7,0, consultez [Configuration des certificats de serveur dans iis 7,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).  
+Pour configurer des certificats à utiliser avec IIS 7,0, consultez [Configuration des certificats de serveur dans iis 7,0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).  
   
 #### <a name="iis-60"></a>IIS 6.0  
- Pour configurer IIS 6,0 en tant qu’hôte sécurisé (à l’aide de SSL), consultez [configuration de protocole SSL](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736992(v=ws.10)).  
+ Pour configurer IIS 6,0 en tant qu’hôte sécurisé (à l’aide de SSL), consultez [configuration de protocole SSL](/previous-versions/windows/it-pro/windows-server-2003/cc736992(v=ws.10)).  
   
- Pour configurer des certificats à utiliser avec IIS 6,0, consultez [Certificates_IIS_SP1_Ops](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757474(v=ws.10)).  
+ Pour configurer des certificats à utiliser avec IIS 6,0, consultez [Certificates_IIS_SP1_Ops](/previous-versions/windows/it-pro/windows-server-2003/cc757474(v=ws.10)).  
   
 ### <a name="using-httpcfg-for-ssl"></a>Utilisation de HttpCfg pour SSL  
 
- Si vous créez une application WCF auto-hébergée, utilisez l’outil [Httpcfg. exe](/windows/win32/http/httpcfg-exe) .
+ Si vous créez une application WCF auto-hébergée, utilisez l’outil [HttpCfg.exe](/windows/win32/http/httpcfg-exe) .
   
- Pour plus d’informations sur l’utilisation de l’outil HttpCfg. exe pour configurer un port avec un certificat X. 509, consultez [procédure : configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md).  
+ Pour plus d’informations sur l’utilisation de l’outil HttpCfg.exe pour configurer un port avec un certificat X. 509, consultez [procédure : configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

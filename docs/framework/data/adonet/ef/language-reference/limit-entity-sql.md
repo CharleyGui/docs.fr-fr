@@ -2,12 +2,12 @@
 title: LIMIT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c22ffede-0a52-44d1-99b9-4a91e651e1b9
-ms.openlocfilehash: 275b22686c6c932b2a9e4b20973ac07e99d47e14
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 98e44110e604c6d893734869871d72f1d021775d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319625"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556282"
 ---
 # <a name="limit-entity-sql"></a>LIMIT (Entity SQL)
 Une pagination physique peut être effectuée par le biais de la sous-clause LIMIT de la clause ORDER BY. La sous-clause LIMIT ne peut pas être utilisée sans la clause ORDER BY.  
@@ -27,7 +27,7 @@ Une pagination physique peut être effectuée par le biais de la sous-clause LIM
 > [!NOTE]
 > Une requête Entity SQL est considérée comme non valide si le modificateur TOP et la sous-clause SKIP se trouvent dans une même expression de requête. La requête doit être réécrite en remplaçant l'expression TOP par l'expression LIMIT.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  La requête Entity SQL suivante utilise l'opérateur ORDER BY avec LIMIT pour spécifier l'ordre de classement employé sur les objets retournés dans une instruction SELECT. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
 1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
@@ -39,6 +39,6 @@ Une pagination physique peut être effectuée par le biais de la sous-clause LIM
 ## <a name="see-also"></a>Voir aussi
 
 - [ORDER BY](order-by-entity-sql.md)
-- [Comment : paginer les résultats d’une requête](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))
+- [Procédure : pagination dans les résultats d’une requête](/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))
 - [Pagination](paging-entity-sql.md)
 - [TOP](top-entity-sql.md)
