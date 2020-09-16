@@ -5,12 +5,12 @@ helpviewer_keywords:
 - events [Visual Basic], about events
 - events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
-ms.openlocfilehash: c61e960078557282de39bdc30f1d614ce8a77f29
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 264c639656b592c0cc660d3745528df7cc89c851
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405117"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559335"
 ---
 # <a name="events-visual-basic"></a>Événements (Visual Basic)
 Si vous pouvez visualiser un projet Visual Studio sous la forme d’une série de procédures qui s’exécutent dans une séquence, en réalité, la plupart des programmes sont pilotés par les événements, ce qui signifie que le déroulement de l’exécution est déterminé par des occurrences externes appelées *événements*.  
@@ -74,7 +74,7 @@ Si vous pouvez visualiser un projet Visual Studio sous la forme d’une série d
   
  [!code-vb[VbVbalrEvents#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#28)]  
   
- `RemoveHandler`, qui déconnecte un événement d’un gestionnaire d’événements, utilise la même syntaxe que `AddHandler`. Par exemple :  
+ `RemoveHandler`, qui déconnecte un événement d’un gestionnaire d’événements, utilise la même syntaxe que `AddHandler`. Exemple :  
   
  [!code-vb[VbVbalrEvents#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#29)]  
   
@@ -91,13 +91,13 @@ Si vous pouvez visualiser un projet Visual Studio sous la forme d’une série d
   
 ### <a name="to-handle-events-from-a-base-class"></a>Gérer des événements provenant d’une classe de base  
   
-- Déclarez un gestionnaire d’événements dans la classe dérivée en ajoutant une instruction `Handles MyBase.`*eventname* à la ligne de déclaration de votre procédure de gestionnaire d’événements, où *eventname* est le nom de l’événement dans la classe de base que vous gérez. Par exemple :  
+- Déclarez un gestionnaire d’événements dans la classe dérivée en ajoutant une instruction `Handles MyBase.`*eventname* à la ligne de déclaration de votre procédure de gestionnaire d’événements, où *eventname* est le nom de l’événement dans la classe de base que vous gérez. Exemple :  
   
      [!code-vb[VbVbalrEvents#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#12)]  
   
 ## <a name="related-sections"></a>Sections connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Procédure pas à pas : déclaration et déclenchement des événements](walkthrough-declaring-and-raising-events.md)|Fournit une description étape par étape de la déclaration et du déclenchement des événements pour une classe.|  
 |[Procédure pas à pas : gestion des événements](walkthrough-handling-events.md)|Montre comment écrire une procédure de gestionnaire d’événements.|  
@@ -105,5 +105,5 @@ Si vous pouvez visualiser un projet Visual Studio sous la forme d’une série d
 |[Comment : déclarer des événements personnalisés pour économiser la mémoire](how-to-declare-custom-events-to-conserve-memory.md)|Montre comment définir un événement personnalisé qui utilise la mémoire uniquement lorsque l’événement est géré.|  
 |[Dépannage des gestionnaires d'événements hérités dans Visual Basic](troubleshooting-inherited-event-handlers.md)|Répertorie les problèmes courants qui surviennent avec les gestionnaires d’événements dans les composants hérités.|  
 |[Événements](../../../../standard/events/index.md)|Fournit une vue d'ensemble du modèle d'événement le .NET Framework.|  
-|[Création de gestionnaires d'événements dans les Windows Forms](../../../../framework/winforms/creating-event-handlers-in-windows-forms.md)|Explique comment utiliser des événements associés à des objets Windows Forms.|  
+|[Création de gestionnaires d'événements dans les Windows Forms](/dotnet/desktop/winforms/creating-event-handlers-in-windows-forms)|Explique comment utiliser des événements associés à des objets Windows Forms.|  
 |[Délégués](../delegates/index.md)|Fournit une vue d’ensemble des délégués en Visual Basic.|

@@ -2,12 +2,12 @@
 title: Choix d'un filtre
 ms.date: 03/30/2017
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-ms.openlocfilehash: e951c472543239df0c01dcba3e46f120ced9e192
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2f96e7001a41682ef595d003e87daa06d0244f3b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587493"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559387"
 ---
 # <a name="choosing-a-filter"></a>Choix d'un filtre
 Lors de la configuration du service de routage, il est important de sélectionner des filtres de message corrects et de les configurer pour vous permettre d'établir des correspondances exactes avec les messages que vous recevez. Si les filtres que vous sélectionnez établissent des correspondances trop générales ou ne sont pas configurés correctement, les messages sont routés de manière incorrecte. Si les filtres sont trop restrictifs, vous risquez de ne pas disposer d'itinéraires valides disponibles pour certains de vos messages.
@@ -84,7 +84,7 @@ StrictAndMessageFilter and1=new StrictAndMessageFilter(address1, action1);
 
 Ce filtre doit être utilisé lorsque vous devez combiner la logique de plusieurs filtres pour déterminer quand une correspondance doit être établie. Par exemple, si vous avez plusieurs destinations qui doivent recevoir uniquement certaines combinaisons d'actions et de messages à des adresses particulières, vous pouvez utiliser un filtre AND pour combiner les filtres Action et Adresse nécessaires.
 
-### <a name="custom"></a>Personnalisé
+### <a name="custom"></a>Custom
 
 Lorsque vous sélectionnez le type de filtre personnalisé, vous devez fournir une valeur customType qui contient le type de l’assembly qui contient l’implémentation **MessageFilter** à utiliser pour ce filtre. En outre, le filterData doit contenir les valeurs requises par le filtre personnalisé pour son évaluation des messages. L'exemple suivant définit un `FilterElement` qui utilise l'implémentation de MessageFilter `CustomAssembly.MyCustomMsgFilter`.
 
@@ -142,7 +142,7 @@ Ce filtre est utile si vous savez que les messages que vous recevez contiennent 
 
 Étant donné que les requêtes XPath contiennent souvent des espaces de noms uniques, qui sont souvent des valeurs de chaîne longues ou complexes, le filtre XPath vous permet d’utiliser la table d’espace de noms pour définir des préfixes uniques pour vos espaces de noms. Pour plus d’informations sur la table d’espace de noms, consultez [filtres de messages](message-filters.md).
 
-Pour plus d’informations sur la conception de requêtes XPath, consultez [syntaxe XPath](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256471(v=vs.100)).
+Pour plus d’informations sur la conception de requêtes XPath, consultez [syntaxe XPath](/previous-versions/dotnet/netframework-4.0/ms256471(v=vs.100)).
 
 ## <a name="see-also"></a>Voir aussi
 

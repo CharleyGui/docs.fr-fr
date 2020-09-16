@@ -2,12 +2,12 @@
 title: <workflowRuntime>
 ms.date: 03/30/2017
 ms.assetid: 304c70fa-78d1-4d0f-b89f-0ca23d734c6f
-ms.openlocfilehash: d12656b77fa219080382603fd04a542d2fa9064a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 43cdec2403e8d80256279388a1adf7cf3cedbb73
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399085"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558782"
 ---
 # \<workflowRuntime>
 Spécifie les paramètres d’une instance de <xref:System.Workflow.Runtime.WorkflowRuntime> pour l’hébergement de services WCF (Windows Communication Foundation basés sur le flux de travail).  
@@ -61,8 +61,8 @@ Spécifie les paramètres d’une instance de <xref:System.Workflow.Runtime.Work
 |-------------|-----------------|  
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
   
-## <a name="remarks"></a>Remarques  
- Pour plus d’informations sur l’utilisation d’un fichier de configuration pour contrôler le comportement d’un <xref:System.Workflow.Runtime.WorkflowRuntime> objet d’une application hôte Windows Workflow Foundation, consultez [fichiers de configuration de flux de travail](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
+## <a name="remarks"></a>Notes  
+ Pour plus d’informations sur l’utilisation d’un fichier de configuration pour contrôler le comportement d’un <xref:System.Workflow.Runtime.WorkflowRuntime> objet d’une application hôte Windows Workflow Foundation, consultez [fichiers de configuration de flux de travail](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
   
 ## <a name="example"></a>Exemple  
   
@@ -89,4 +89,4 @@ Spécifie les paramètres d’une instance de <xref:System.Workflow.Runtime.Work
 - <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>
 - <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>
 - <xref:System.Workflow.Runtime.WorkflowRuntime>
-- [Fichiers de configuration du workflow](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
+- [Fichiers de configuration du workflow](/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))

@@ -3,12 +3,12 @@ title: Programmation asynchrone
 description: En savoir plus sur la programmation asynchrone dans le Fournisseur de données .NET Framework pour SQL Server, y compris les améliorations introduites dans .NET Framework 4,5.
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 2e5f48b0818ab9cfabc75ba47c95c8198e0fe7fa
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b8f718e0def2ab0b6953ed121eb916f282562d32
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287101"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558470"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 
@@ -39,9 +39,9 @@ Pour plus d’informations sur la fonctionnalité de programmation asynchrone qu
 
 - [Programmation asynchrone avec Async et Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)
 
-- [Utilisation des nouvelles méthodes Async de SqlDataReader dans .NET 4,5 (partie 1)](https://docs.microsoft.com/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5)
+- [Utilisation des nouvelles méthodes Async de SqlDataReader dans .NET 4,5 (partie 1)](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5)
 
-- [Utilisation des nouvelles méthodes Async de SqlDataReader dans .NET 4,5 (partie 2)](https://docs.microsoft.com/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples)
+- [Utilisation des nouvelles méthodes Async de SqlDataReader dans .NET 4,5 (partie 2)](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples)
 
 Lorsque votre interface utilisateur ne répond pas ou votre serveur ne monte pas en charge, il est probable que vous votre code doit être plus asynchrone. Écrire du code asynchrone implique en général l'installation d'un rappel (également appelé suite) pour exprimer la logique qui se produit après que l'opération asynchrone s'est terminée. Cela complique la structure du code asynchrone par rapport au code synchrone.
 
@@ -182,7 +182,7 @@ class A {
 
 Vous devrez peut-être créer un outil qui peut se connecter à différentes bases de données et exécuter des requêtes. Vous pouvez utiliser le modèle de fournisseur de base et la nouvelle fonctionnalité asynchrone.
 
-Microsoft Distributed Transaction Controller (MSDTC) doit être activé sur le serveur pour utiliser des transactions distribuées. Pour plus d’informations sur la façon d’activer MSDTC, consultez [Comment activer MSDTC sur un serveur Web](https://docs.microsoft.com/previous-versions/commerce-server/dd327979(v=cs.90)).
+Microsoft Distributed Transaction Controller (MSDTC) doit être activé sur le serveur pour utiliser des transactions distribuées. Pour plus d’informations sur la façon d’activer MSDTC, consultez [Comment activer MSDTC sur un serveur Web](/previous-versions/commerce-server/dd327979(v=cs.90)).
 
 ```csharp
 using System;

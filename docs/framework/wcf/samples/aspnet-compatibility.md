@@ -2,12 +2,12 @@
 title: ASP.NET Compatibility
 ms.date: 03/30/2017
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
-ms.openlocfilehash: 23930e0756d3fbefc28a8f650b5a056106145a50
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b1d1a72b9ac3041a1547ac42a33eb7d3e1f87a63
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594710"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553186"
 ---
 # <a name="aspnet-compatibility"></a>ASP.NET Compatibility
 
@@ -124,10 +124,10 @@ Press <ENTER> to terminate client.
 
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-3. Une fois la solution générée, exécutez Setup. bat pour configurer l’application ServiceModelSamples dans IIS 7,0. Le répertoire ServiceModelSamples doit maintenant apparaître en tant qu’application IIS 7,0.
+3. Une fois la solution générée, exécutez Setup.bat pour configurer l’application ServiceModelSamples dans IIS 7,0. Le répertoire ServiceModelSamples doit maintenant apparaître en tant qu’application IIS 7,0.
 
 4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Hébergement AppFabric et exemples de persistance](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [Hébergement AppFabric et exemples de persistance](/previous-versions/appfabric/ff383418(v=azure.10))

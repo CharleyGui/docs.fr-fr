@@ -2,12 +2,12 @@
 title: Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: 1c554c60bf2e50a8eb89764a21ad15b95343b182
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: b561e580f0d7f2d77847d91612e8b06bc57a2a45
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937728"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558431"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreuses nouvelles fonctionnalités, y compris plusieurs améliorations apportées à l’expérience du concepteur de flux de travail. Cette rubrique détaille lesquelles de ces fonctionnalités sont prises en charge dans le concepteur réhébergé, et celles qui ne sont pas actuellement prises en charge.
@@ -19,7 +19,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  La bibliothèque d'activités intégrée contient de nouvelles activités et de nouvelles fonctionnalités pour les activités existantes. Toutes ces nouvelles activités sont prises en charge dans le concepteur réhébergé. Pour plus d’informations sur ces nouvelles activités, consultez la section [activités](whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) des [Nouveautés de Windows Workflow Foundation dans .net 4,5](whats-new-in-wf-in-dotnet.md).
 
 ## <a name="c-expressions"></a>Expressions C#
- Avant .NET Framework 4,5, toutes les expressions dans les workflows pouvaient uniquement être écrites en Visual Basic. Dans .NET Framework 4,5, les expressions Visual Basic sont utilisées uniquement pour les projets créés à l’aide de Visual Basic. Les projets Visual C# utilisent C# pour les expressions. Lors de la création de flux de travail dans Visual Studio 2012, C# un éditeur d’expressions entièrement fonctionnel est fourni avec les fonctionnalités telles que la mise en surbrillance de la grammaire et IntelliSense. Les projets de workflow C# créés dans les versions antérieures qui utilisent des expressions Visual Basic continueront à fonctionner.
+ Avant .NET Framework 4,5, toutes les expressions dans les workflows pouvaient uniquement être écrites en Visual Basic. Dans .NET Framework 4,5, les expressions Visual Basic sont utilisées uniquement pour les projets créés à l’aide de Visual Basic. Les projets Visual C# utilisent C# pour les expressions. Lors de la création de flux de travail dans Visual Studio 2012, un éditeur d’expressions C# entièrement fonctionnel est fourni avec les fonctionnalités telles que la mise en surbrillance de la grammaire et IntelliSense. Les projets de workflow C# créés dans les versions antérieures qui utilisent des expressions Visual Basic continueront à fonctionner.
 
 > [!WARNING]
 > Les expressions C# ne sont pas prises en charge dans le concepteur réhébergé.
@@ -37,10 +37,10 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
 
  La capture d’écran suivante indique le menu contextuel du concepteur de variable et d’argument.
 
- ![Menu contextuel du concepteur de variable et d'argument](./media/wf-features-in-the-rehosted-workflow-designer/designer-context-menu.png)
+ ![Menu contextuel du concepteur de variable et d’argument](./media/wf-features-in-the-rehosted-workflow-designer/designer-context-menu.png)
 
 ### <a name="auto-surround-with-sequence"></a>Encadrement automatique avec séquence
- Étant donné qu'un workflow ou certaines activités de conteneur (telles que <xref:System.Activities.Statements.NoPersistScope>) peuvent uniquement contenir une seule activité de corps, l'ajout d'une deuxième activité exigeait que le développeur supprime la première activité, ajoute une activité <xref:System.Activities.Statements.Sequence>, puis ajoute les deux activités à l'activité de séquence. À compter de .NET Framework 4,5, lors de l’ajout d’une deuxième activité à l’aire du concepteur, une activité de `Sequence` est automatiquement créée pour encapsuler les deux activités. Cette fonctionnalité est prise en charge dans le concepteur réhébergé.
+ Étant donné qu'un workflow ou certaines activités de conteneur (telles que <xref:System.Activities.Statements.NoPersistScope>) peuvent uniquement contenir une seule activité de corps, l'ajout d'une deuxième activité exigeait que le développeur supprime la première activité, ajoute une activité <xref:System.Activities.Statements.Sequence>, puis ajoute les deux activités à l'activité de séquence. À compter de .NET Framework 4,5, lors de l’ajout d’une deuxième activité à l’aire du concepteur, une `Sequence` activité est automatiquement créée pour encapsuler les deux activités. Cette fonctionnalité est prise en charge dans le concepteur réhébergé.
 
  La capture d'écran suivante affiche une activité `WriteLine` avec le `Body` d'un `NoPersistScope`.
 
@@ -72,7 +72,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  ![Capture d’écran du mode plan avec un flux de travail séquentiel dans Visual Studio](./media/wf-features-in-the-rehosted-workflow-designer/outline-view-in-workflow-designer.jpg)
 
 ### <a name="more-control-of-visibility-of-shell-bar-and-header-items"></a>Meilleur contrôle de la visibilité des éléments d'en-tête et de la barre de shell
- Dans un concepteur réhébergé, certains des contrôles d'interface utilisateur standard peuvent ne pas avoir de signification pour un workflow donné, et peuvent être désactivés. Dans .NET Framework 4, cette personnalisation est prise en charge uniquement par la barre de Shell en bas du concepteur. Dans .NET Framework 4,5, la visibilité des éléments d’en-tête de Shell en haut du concepteur peut être ajustée en définissant <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> avec la valeur de <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> appropriée.
+ Dans un concepteur réhébergé, certains des contrôles d'interface utilisateur standard peuvent ne pas avoir de signification pour un workflow donné, et peuvent être désactivés. Dans .NET Framework 4, cette personnalisation est prise en charge uniquement par la barre de Shell en bas du concepteur. Dans .NET Framework 4,5, la visibilité des éléments d’en-tête de Shell en haut du concepteur peut être ajustée en définissant <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> avec la <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> valeur appropriée.
 
 ### <a name="auto-connect-and-auto-insert-in-flowchart-and-state-machine-workflows"></a>Connexion automatique et insertion automatique dans les workflows Organigramme et Machine à états
  Dans .NET Framework 4, les connexions entre les nœuds d’un flux de travail d’organigramme devaient être ajoutées manuellement. Dans .NET Framework 4,5, les nœuds organigramme et machine à États ont des points de connexion automatique qui deviennent visibles quand une activité est glissée de la boîte à outils vers l’aire du concepteur. Le dépôt d’une activité sur un de ces points ajoute automatiquement l’activité avec la connexion nécessaire.
@@ -83,7 +83,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
 
  Les activités peuvent également être déplacées sur les connexions entre des nœuds d'organigramme et des états de façon à insérer automatiquement le nœud entre deux autres nœuds. La capture d’écran suivante montre la ligne de connexion en surbrillance où les activités peuvent être glissées-déposées depuis la boîte à outils.
 
- ![Poignée d’insertion automatique pour déposer les activités](./media/wf-features-in-the-rehosted-workflow-designer/auto-insert-connecting-line.png)
+ ![Poignée d'insertion automatique pour déposer les activités](./media/wf-features-in-the-rehosted-workflow-designer/auto-insert-connecting-line.png)
 
  Connexion automatique et insertion automatique sont prises en charge dans le concepteur réhébergé.
 
@@ -95,7 +95,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  Les annotations du concepteur sont prises en charge dans le concepteur réhébergé.
 
 ### <a name="define-and-consume-activitydelegate-objects-in-the-designer"></a>Définir et consommer des objets ActivityDelegate dans le concepteur
- Les activités dans .NET Framework 4 utilisaient des objets <xref:System.Activities.ActivityDelegate> pour exposer des points d’exécution dans lesquels d’autres parties du flux de travail pouvaient interagir avec l’exécution d’un workflow, mais l’utilisation de ces points d’exécution nécessitait généralement une quantité de code équitable. Dans cette version finale, les développeurs peuvent définir et utiliser des délégués d'activité à l'aide du concepteur de workflow. Pour plus d’informations, consultez [Comment : définir et consommer des délégués d’activité dans le concepteur de flux de travail](/visualstudio/workflow-designer/how-to-define-and-consume-activity-delegates-in-the-workflow-designer).
+ Les activités dans .NET Framework 4 <xref:System.Activities.ActivityDelegate> ont utilisé des objets pour exposer des points d’exécution dans lesquels d’autres parties du flux de travail pouvaient interagir avec l’exécution d’un workflow, mais l’utilisation de ces points d’exécution nécessitait généralement une quantité de code équitable. Dans cette version finale, les développeurs peuvent définir et utiliser des délégués d'activité à l'aide du concepteur de workflow. Pour plus d’informations, consultez [Comment : définir et consommer des délégués d’activité dans le concepteur de flux de travail](/visualstudio/workflow-designer/how-to-define-and-consume-activity-delegates-in-the-workflow-designer).
 
  Les délégués d'activité sont pris en charge dans le concepteur réhébergé.
 
@@ -122,7 +122,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  Outre les modèles de développement d’organigramme et workflow séquentiel, cette mise en production inclut des workflows Machine à états, et les services de workflow Contrat en premier.  
   
 ### <a name="state-machine-workflows"></a>Workflows de machine à états  
- Les workflows de machine à États ont été introduits dans le cadre de la .NET Framework 4.0.1 dans la [mise à jour 1 de la plateforme Microsoft .NET Framework 4](https://docs.microsoft.com/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1). Cette mise à jour inclut plusieurs nouvelles classes et activités qui permettent aux développeurs de créer des workflow de machine à états. Ces classes et activités ont été mises à jour pour .NET Framework 4,5. Les mises à jour comprennent :  
+ Les workflows de machine à États ont été introduits dans le cadre de la .NET Framework 4.0.1 dans la [mise à jour 1 de la plateforme Microsoft .NET Framework 4](/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1). Cette mise à jour inclut plusieurs nouvelles classes et activités qui permettent aux développeurs de créer des workflow de machine à états. Ces classes et activités ont été mises à jour pour .NET Framework 4,5. Les mises à jour comprennent :  
   
 1. Possibilité de définir des points d'arrêt sur des états  
   

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
-ms.openlocfilehash: e4c5bc03038a3df9df2b7629da762caee175b6e8
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: c75e26ea083f8144bfaf2f67872004ef33365377
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202146"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558756"
 ---
 # <a name="wcf-data-services-overview"></a>Vue d'ensemble des services de données WCF
 WCF Data Services permet la création et la consommation de services de données pour le Web ou un intranet à l’aide de la Open Data Protocol (OData). OData vous permet d’exposer vos données sous forme de ressources adressables par des URI. Cela vous permet d'accéder et de modifier des données en utilisant la sémantique REST (Representational State Transfer), en particulier les verbes HTTP standard GET, PUT, POST et DELETE. Cette rubrique fournit une vue d’ensemble des modèles et des pratiques définis par OData, ainsi que des fonctionnalités fournies par WCF Data Services pour tirer parti d’OData dans les applications basées sur .NET Framework.  
@@ -60,6 +60,6 @@ OData définit un ensemble d’extensions pour le protocole de publication Atom 
 - [WCF Data Services 4.5](index.md)
 - [Prise en main](getting-started-with-wcf-data-services.md)
 - [Définition des services de données WCF](defining-wcf-data-services.md)
-- [Accès aux ressources d'un service de données (services de données WCF)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd728283(v=vs.100))
+- [Accès aux ressources d'un service de données (services de données WCF)](/previous-versions/dotnet/netframework-4.0/dd728283(v=vs.100))
 - [Bibliothèque client services de données WCF](wcf-data-services-client-library.md)
 - [Representational State Transfer (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)

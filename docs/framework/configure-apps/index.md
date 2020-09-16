@@ -25,12 +25,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 444d3700f36a2928b79f40dd5265d6166de762da
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: 92ecc4a430aa3c238a7cd8705dc0cec5a9d0cb11
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105359"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559289"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Configuration des applications à l'aide de fichiers de configuration
 Le .NET Framework, par le biais de fichiers de configuration, permet aux développeurs et administrateurs de contrôler la façon dont les applications s'exécutent avec la souplesse requise. Les fichiers de configuration sont des fichiers XML qui peuvent être modifiés selon les besoins. Un administrateur peut exercer un contrôle sur les ressources protégées auxquelles une application peut accéder, les versions d'assemblys utilisées par une application et l'endroit où sont situés les applications et objets distants. Les développeurs peuvent stocker des paramètres dans des fichiers de configuration, de façon à ce qu'il ne leur soit pas nécessaire de recompiler une application chaque fois qu'un paramètre change. Cette section décrit les éléments qui peuvent être configurés et explique en quoi la configuration d'une application peut se révéler utile.  
@@ -53,7 +53,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 ```  
   
 ## <a name="machine-configuration-files"></a>Fichiers de configuration machine  
- Le fichier de configuration machine, Machine.config, contient des paramètres qui s'appliquent à l'ordinateur tout entier. Ce fichier se trouve dans le répertoire %*chemin d'installation du runtime*%\Config. Machine.config contient les paramètres de configuration d’une liaison d’assembly à l’échelle de l’ordinateur, de [canaux de communication à distance ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100)) intégrés et d’ASP.NET.  
+ Le fichier de configuration machine, Machine.config, contient des paramètres qui s'appliquent à l'ordinateur tout entier. Ce fichier se trouve dans le répertoire %*chemin d'installation du runtime*%\Config. Machine.config contient les paramètres de configuration d’une liaison d’assembly à l’échelle de l’ordinateur, de [canaux de communication à distance ](/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100)) intégrés et d’ASP.NET.  
   
  Le système de configuration recherche d’abord dans le fichier de configuration de l’ordinateur l' [ **\<appSettings>** élément](./file-schema/appsettings/index.md) et les autres sections de configuration qu’un développeur peut définir. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
   
@@ -77,7 +77,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
   
 - Application hébergée par ASP.NET.  
   
-     Pour plus d’informations sur les fichiers de configuration ASP.NET, consultez [paramètres de configuration de ASP.net](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)).
+     Pour plus d’informations sur les fichiers de configuration ASP.NET, consultez [paramètres de configuration de ASP.net](/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)).
   
 - Application hébergée par Internet Explorer.  
   
@@ -117,15 +117,15 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
  [Procédure : Créer une stratégie d’éditeur](how-to-create-a-publisher-policy.md)  
  Explique quand et comment ajouter un fichier de stratégie de l'éditeur pour spécifier la redirection de l'assembly et les paramètres de base du code.  
   
- [Schéma des fichiers de configuration](./file-schema/index.md)  
+ [Schéma du fichier de configuration](./file-schema/index.md)  
  Décrit la hiérarchie du schéma pour les paramètres de démarrage, de runtime et de réseau, ainsi que pour d'autres types de paramètres de configuration.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des fichiers de configuration](./file-schema/index.md)
+- [Schéma du fichier de configuration](./file-schema/index.md)
 - [Spécification de l'emplacement d'un assembly](specify-assembly-location.md)
 - [Redirection des versions d'assemblys](redirect-assembly-versions.md)
-- [Administration de site web ASP.NET](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
-- [Gestion des stratégies de sécurité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
+- [Administration de site web ASP.NET](/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
+- [Gestion des stratégies de sécurité](/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
 - [Caspol.exe (outil stratégie de sécurité d’accès du code)](../tools/caspol-exe-code-access-security-policy-tool.md)
 - [Assemblys dans .NET](../../standard/assembly/index.md)

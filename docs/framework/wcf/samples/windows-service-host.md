@@ -5,12 +5,12 @@ helpviewer_keywords:
 - NT Service
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
-ms.openlocfilehash: 9c041f6e9505d2ec5865dd512359b497a411cb40
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d4e034e3e18433714fcbcc3f061cb05bd8f2f441
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602282"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552877"
 ---
 # <a name="windows-service-host"></a>Windows Service Host
 Cet exemple illustre un service Windows Communication Foundation (WCF) hébergé dans un service Windows managé. Les services Windows sont contrôlés à l’aide de l’applet services du **panneau** de configuration et peuvent être configurés pour démarrer automatiquement après un redémarrage du système. L'exemple se compose d'un programme client et d'un programme de service Windows. Le service est implémenté en tant que programme .exe et contient son propre code d'hébergement. Dans d'autres environnements d'hébergement, tels que WAS (Windows Process Activation Services) ou IIS (Internet Information Services), vous n'avez pas besoin d'écrire le code d'hébergement.
@@ -59,10 +59,10 @@ Cet exemple illustre un service Windows Communication Foundation (WCF) hébergé
   
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).  
   
-3. Une fois la solution générée, exécutez Setup. bat à partir d’une invite de commandes Visual Studio 2012 avec élévation de privilèges pour installer le service Windows à l’aide de l’outil installutil. exe. Le service doit apparaître dans Services.  
+3. Une fois la solution générée, exécutez Setup.bat à partir d’une invite de commandes Visual Studio 2012 avec élévation de privilèges pour installer le service Windows à l’aide de l’outil Installutil.exe. Le service doit apparaître dans Services.  
   
 4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Hébergement AppFabric et exemples de persistance](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [Hébergement AppFabric et exemples de persistance](/previous-versions/appfabric/ff383418(v=azure.10))

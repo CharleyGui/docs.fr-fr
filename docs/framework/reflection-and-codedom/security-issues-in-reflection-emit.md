@@ -12,12 +12,12 @@ helpviewer_keywords:
 - emitting dynamic assemblies,partial trust scenarios
 - dynamic assemblies, security
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
-ms.openlocfilehash: d0ca26a1d0964c935137b0a30a5d7c78f93c597b
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 62bce7435887855f799d320736e6bce8f39e5999
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865240"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558795"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problèmes de sécurité dans l'émission de réflexion
 Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Intermediate Language), chacune avec ses propres problèmes de sécurité :  
@@ -35,7 +35,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
   
 <a name="Dynamic_Assemblies"></a>
 ## <a name="dynamic-assemblies"></a>Assemblys dynamiques  
- Les assemblys dynamiques sont créés à l'aide de surcharges de la méthode <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>. La plupart des surcharges de cette méthode sont dépréciées dans .NET Framework 4, en raison de la suppression de la stratégie de sécurité à l’échelle de l’ordinateur. (Voir [modifications de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).) Les surcharges restantes peuvent être exécutées par n’importe quel code, quel que soit le niveau de confiance. Ces surcharges sont réparties en deux groupes : celles qui spécifient une liste d'attributs à appliquer à l'assembly dynamique lors de sa création, et celles qui ne les spécifient pas. Si vous ne spécifiez pas le modèle de transparence pour l’assembly, en appliquant l’attribut <xref:System.Security.SecurityRulesAttribute> au moment de sa création, le modèle de transparence est hérité de l’assembly émetteur.  
+ Les assemblys dynamiques sont créés à l'aide de surcharges de la méthode <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>. La plupart des surcharges de cette méthode sont dépréciées dans .NET Framework 4, en raison de la suppression de la stratégie de sécurité à l’échelle de l’ordinateur. (Voir [modifications de sécurité](/previous-versions/dotnet/framework/security/security-changes).) Les surcharges restantes peuvent être exécutées par n’importe quel code, quel que soit le niveau de confiance. Ces surcharges sont réparties en deux groupes : celles qui spécifient une liste d'attributs à appliquer à l'assembly dynamique lors de sa création, et celles qui ne les spécifient pas. Si vous ne spécifiez pas le modèle de transparence pour l’assembly, en appliquant l’attribut <xref:System.Security.SecurityRulesAttribute> au moment de sa création, le modèle de transparence est hérité de l’assembly émetteur.  
   
 > [!NOTE]
 > Les attributs que vous appliquez à l'assembly dynamique après sa création, en utilisant la méthode <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A>, ne prennent pas effet tant que l'assembly n'a pas été enregistré sur le disque et rechargé en mémoire.  
@@ -138,7 +138,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
   
 <a name="Version_Information"></a>
 ## <a name="version-information"></a>Informations sur la version  
- À compter de .NET Framework 4, la stratégie de sécurité à l’échelle de l’ordinateur est supprimée et la transparence de sécurité devient le mécanisme d’application par défaut. Consultez [Changements en matière de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
+ À compter de .NET Framework 4, la stratégie de sécurité à l’échelle de l’ordinateur est supprimée et la transparence de sécurité devient le mécanisme d’application par défaut. Consultez [Changements en matière de sécurité](/previous-versions/dotnet/framework/security/security-changes).  
   
  À compter de .NET Framework 2.0 Service Pack 1, <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> n’est plus nécessaire lors de l’émission d’assemblys et de méthodes dynamiques. Cet indicateur est nécessaire dans toutes les versions antérieures du .NET Framework.  
   

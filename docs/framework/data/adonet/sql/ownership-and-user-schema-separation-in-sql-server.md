@@ -3,12 +3,12 @@ title: Propriété et séparation des schémas utilisateur dans SQL Server
 description: Découvrez comment la séparation utilisateur-schéma permet de gérer SQL Server autorisations d’objet de base de données. Les schémas regroupent les objets dans des espaces de noms distincts.
 ms.date: 03/30/2017
 ms.assetid: 242830c1-31b5-4427-828c-cc22ff339f30
-ms.openlocfilehash: 97e742979785fedd922dc887295b63e2d93bd147
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 27c37816353ca47c3f96867adc6186b0162feb20
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286260"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558834"
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>Propriété et séparation des schémas utilisateur dans SQL Server
 Il existe un concept essentiel relative à la sécurité de SQL Server, selon lequel les propriétaires d'objets disposent d'autorisations irrévocables pour les administrer. Vous ne pouvez pas supprimer les privilèges d’un propriétaire d’objets et vous ne pouvez pas supprimer des utilisateurs d’une base de données dans laquelle se trouvent des objets qui leur appartiennent.  
@@ -56,7 +56,7 @@ Server.Database.DatabaseSchema.DatabaseObject
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Séparation du schéma et de l’utilisateur](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms190387(v=sql.105))|Décrit les modifications introduites par la séparation utilisateur-schéma. Inclut un nouveau comportement, son impact sur la propriété, des affichages catalogue et des autorisations.|  
+|[Séparation du schéma et de l’utilisateur](/previous-versions/sql/sql-server-2008-r2/ms190387(v=sql.105))|Décrit les modifications introduites par la séparation utilisateur-schéma. Inclut un nouveau comportement, son impact sur la propriété, des affichages catalogue et des autorisations.|  
   
 ## <a name="see-also"></a>Voir aussi
 

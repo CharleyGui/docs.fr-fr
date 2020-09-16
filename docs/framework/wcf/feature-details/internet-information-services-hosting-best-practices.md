@@ -2,12 +2,12 @@
 title: Meilleures pratiques pour l'hébergement dans Internet Information Services
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: e62fed4f6a711ecc317b8f758d4948a477d136e1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c875920ed70ea8bd35642d0b7725b2dfad08f2b1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595269"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558873"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Meilleures pratiques pour l'hébergement dans Internet Information Services
 Cette rubrique décrit quelques-unes des meilleures pratiques pour l’hébergement de services Windows Communication Foundation (WCF).  
@@ -30,7 +30,7 @@ Cette rubrique décrit quelques-unes des meilleures pratiques pour l’hébergem
 ## <a name="optimizing-performance-in-middle-tier-scenarios"></a>Optimisation des performances dans les scénarios de couche intermédiaire  
  Pour des performances optimales dans un *scénario de niveau intermédiaire*(un service qui appelle d’autres services en réponse aux messages entrants), instanciez le client de service WCF au service distant une seule fois et réutilisez-le sur plusieurs demandes entrantes. L’instanciation des clients de service WCF est une opération coûteuse par rapport à l’exécution d’un appel de service sur une instance cliente préexistante, et les scénarios de couche intermédiaire produisent des gains de performances distincts en mettant en cache les clients distants entre les requêtes. Les clients de service WCF étant thread-safe, il n’est pas nécessaire de synchroniser l’accès à un client sur plusieurs threads.  
   
- Les scénarios de couche intermédiaire produisent également des gains de performance en utilisant les API asynchrones générées par l'option `svcutil /a`. Avec l' `/a` option, l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) génère `BeginXXX/EndXXX` des méthodes pour chaque opération de service, ce qui permet d’effectuer des appels potentiellement longs à des services distants sur des threads d’arrière-plan.  
+ Les scénarios de couche intermédiaire produisent également des gains de performance en utilisant les API asynchrones générées par l'option `svcutil /a`. Avec l' `/a` option, l’outil de l' [utilitaire de métadonnées ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) génère `BeginXXX/EndXXX` des méthodes pour chaque opération de service, ce qui permet d’effectuer des appels potentiellement longs à des services distants sur des threads d’arrière-plan.  
   
 ## <a name="wcf-in-multi-homed-or-multi-named-scenarios"></a>WCF dans des scénarios multi-résidents ou multi-nommés  
  Vous pouvez déployer des services WCF dans une batterie de serveurs Web IIS, où un ensemble d’ordinateurs partagent un nom externe commun (tel que `http://www.contoso.com` ), mais qui sont adressés individuellement par différents noms d’hôte (par exemple, `http://www.contoso.com` peut diriger le trafic vers deux ordinateurs différents nommés `http://machine1.internal.contoso.com` et `http://machine2.internal.contoso.com` ). Ce scénario de déploiement est entièrement pris en charge par WCF, mais requiert une configuration spéciale du site Web IIS hébergeant les services WCF pour afficher le nom d’hôte correct (externe) dans les métadonnées du service (Web Services Description Language).  
@@ -42,7 +42,7 @@ Cette rubrique décrit quelques-unes des meilleures pratiques pour l’hébergem
 ## <a name="application-pools-running-in-different-user-contexts-overwrite-assemblies-from-other-accounts-in-the-temporary-folder"></a>Les pools d'applications qui s'exécutent dans des contextes d'utilisateur différents remplacent des assemblys d'autres comptes dans le dossier temporaire  
  Pour vous assurer que les pools d’applications qui s’exécutent dans des contextes d’utilisateur différents ne peuvent pas remplacer les assemblys d’autres comptes dans le dossier Temporary ASP.NET Files, utilisez des identités et des dossiers temporaires différents pour différentes applications. Par exemple, si vous avez deux applications virtuelles /Application1 et / Application2, vous pouvez créer deux pools d'applications, A et B, avec deux identités différentes. Le pool d'applications A peut s'exécuter sous une identité d'utilisateur (user1), et le pool d'applications B peut s'exécuter sous une autre identité d'utilisateur (user2), et configurer /Application1 pour utiliser A et /Application2 pour utiliser B.  
   
- Dans le fichier Web. config, vous pouvez configurer le dossier temporaire à l’aide de \<system.web/compilation/@tempFolder> . Pour/Application1, il peut s’agir de « c:\tempForUser1 » et pour application2 il peut être « c:\tempForUser2 ». Accordez l’autorisation en écriture correspondante à ces dossiers pour les deux identités.  
+ Dans Web.config, vous pouvez configurer le dossier temporaire à l’aide de \<system.web/compilation/@tempFolder> . Pour/Application1, il peut s’agir de « c:\tempForUser1 » et pour application2 il peut être « c:\tempForUser2 ». Accordez l’autorisation en écriture correspondante à ces dossiers pour les deux identités.  
   
  Dès lors, user2 ne peut pas modifier le dossier de génération du code pour /application2 (sous c:\tempForUser1).  
   
@@ -84,4 +84,4 @@ Cette rubrique décrit quelques-unes des meilleures pratiques pour l’hébergem
 ## <a name="see-also"></a>Voir aussi
 
 - [Exemples d’hébergement de service](../samples/hosting.md)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

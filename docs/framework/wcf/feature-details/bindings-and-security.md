@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: e012ec9ad340c74f5bc776cfc6d8b88326210fec
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 86b9a1d7b0c772a308b9f059bb31c1f489635300
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245330"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559400"
 ---
 # <a name="bindings-and-security"></a>Liaisons et sécurité
 
@@ -203,14 +203,14 @@ Le tableau suivant répertorie les liaisons qui prennent en charge les divers pa
 
 |Liaison|Prise en charge du mode Transport|Prise en charge du mode Message|Prise en charge de TransportWithMessageCredential|
 |-------------|----------------------------|--------------------------|--------------------------------------------|
-|`BasicHttpBinding`|Yes|Yes|Yes|
-|`WSHttpBinding`|Yes|Yes|Oui|
+|`BasicHttpBinding`|Oui|Oui|Oui|
+|`WSHttpBinding`|Oui|Oui|Oui|
 |`WSDualHttpBinding`|Non|Oui|Non|
-|`NetTcpBinding`|Oui|Yes|Yes|
+|`NetTcpBinding`|Oui|Oui|Oui|
 |`NetNamedPipeBinding`|Oui|Non|Non|
 |`NetMsmqBinding`|Oui|Oui|Non|
 |`MsmqIntegrationBinding`|Oui|Non|Non|
-|`wsFederationHttpBinding`|Non|Oui|Yes|
+|`wsFederationHttpBinding`|Non|Oui|Oui|
 
 ## <a name="transport-credentials-in-bindings"></a>Informations d'identification de transport dans les liaisons
 
@@ -219,7 +219,7 @@ Le tableau suivant répertorie les types d'informations d'identification du clie
 |Type|Description|
 |----------|-----------------|
 |None|Spécifie que le client n'a pas besoin de présenter d'informations d'identification. Cela se traduit en un client anonyme.|
-|De base|Authentification de base. Pour plus d’informations, consultez RFC 2617 – authentification HTTP : authentification de base et Digest, disponible à l’adresse <https://go.microsoft.com/fwlink/?LinkId=84023> .|
+|Basic|Authentification de base. Pour plus d’informations, consultez RFC 2617 – authentification HTTP : authentification de base et Digest, disponible à l’adresse <https://go.microsoft.com/fwlink/?LinkId=84023> .|
 |Digest|Authentification Digest. Pour plus d’informations, consultez RFC 2617 – authentification HTTP : authentification de base et Digest, disponible à l’adresse <https://go.microsoft.com/fwlink/?LinkId=84023> .|
 |NTLM|Authentification NTLM (NT LAN Manager).|
 |Windows|Authentification Windows.|
@@ -241,8 +241,8 @@ Le tableau suivant répertorie les types d'informations d'identification du clie
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de la sécurité](security-overview.md)
-- [Securing Services and Clients](securing-services-and-clients.md)
+- [Sécurisation des services et des clients](securing-services-and-clients.md)
 - [Sélection d'un type d'informations d'identification](selecting-a-credential-type.md)
 - [Fonctionnalités de sécurité avec des liaisons personnalisées](security-capabilities-with-custom-bindings.md)
 - [Comportements de sécurité](security-behaviors-in-wcf.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

@@ -2,12 +2,12 @@
 title: Persistance d’un objet dans Visual Studio
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: e4eaf87c99ea1577d7f3ca40e628c00cc2700511
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3febd3f74510d11a7103edbd52bcae8043a5edc0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413127"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558600"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Procédure pas à pas : persistance d’un objet dans Visual Studio (Visual Basic)
 Bien qu’il soit possible de définir des valeur par défaut pour les propriétés d’un objet au moment du design, les valeurs entrées lors de l’exécution sont perdues en cas de destruction de l’objet. Vous pouvez utiliser la sérialisation pour rendre les données d’un objet persistantes entre les instances, ce qui vous permet de stocker des valeurs et de les récupérer lors de la prochaine instanciation de l’objet.  
@@ -31,7 +31,7 @@ Bien qu’il soit possible de définir des valeur par défaut pour les propriét
   
 ### <a name="to-create-the-loan-class"></a>Pour créer la classe Loan  
   
-1. Créez un projet Bibliothèque de classes et nommez-le « LoanClass ». Pour plus d’informations, consultez [Création de solutions et de projets](https://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects).  
+1. Créez un projet Bibliothèque de classes et nommez-le « LoanClass ». Pour plus d’informations, consultez [Création de solutions et de projets](/visualstudio/ide/creating-solutions-and-projects).  
   
 2. Dans l’**Explorateur de solutions**, ouvrez le menu contextuel pour le fichier Class1, puis choisissez **Renommer**. Renommez le fichier `Loan` et appuyez sur Entrée. Quand vous renommez le fichier, la classe est également renommée `Loan`.  
   

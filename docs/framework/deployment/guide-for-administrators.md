@@ -6,12 +6,12 @@ helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-ms.openlocfilehash: d58eac4f21e4f1069ac392aacb4e9818831e914c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: b358f0909147e52293fd802bc98caa31b284d7b1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622651"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558717"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>Guide de déploiement du .NET Framework pour les administrateurs
 
@@ -29,7 +29,7 @@ Cette rubrique contient les sections suivantes :
 - [Création d'une collection](#creating_a_collection)
 - [Créer un package et un programme](#creating_a_package)
 - [Sélectionner un point de distribution](#select_dist_point)
-- [Déploiement du package](#deploying_package)
+- [Déployer le package](#deploying_package)
 - [Ressources](#resources)
 - [Dépannage](#troubleshooting)
 
@@ -39,16 +39,16 @@ Cette rubrique contient les sections suivantes :
 
 Lorsque l’infrastructure de prise en charge est en place, vous utilisez Configuration Manager pour déployer le .NET Framework package redistribuable sur les ordinateurs du réseau. Générer l’infrastructure implique la création et la définition de cinq éléments principaux : les regroupements, un package et un programme pour les logiciels, des points de distribution et des déploiements.
 
-- Les **regroupements** sont des ensembles de ressources de Configuration Manager, tels que des utilisateurs, des groupes d’utilisateurs ou des ordinateurs, sur lesquels le .Net Framework est déployé. Pour plus d’informations, consultez [Présentation des regroupements dans Configuration Manager](https://docs.microsoft.com/configmgr/core/clients/manage/collections/introduction-to-collections) dans la bibliothèque de documentation Configuration Manager.
+- Les **regroupements** sont des ensembles de ressources de Configuration Manager, tels que des utilisateurs, des groupes d’utilisateurs ou des ordinateurs, sur lesquels le .Net Framework est déployé. Pour plus d’informations, consultez [Présentation des regroupements dans Configuration Manager](/configmgr/core/clients/manage/collections/introduction-to-collections) dans la bibliothèque de documentation Configuration Manager.
 
-- Les **packages et programmes** sont généralement les applications logicielles à installer sur un ordinateur client, mais ils peuvent également contenir des fichiers individuels, des mises à jour, ou même des commandes individuelles. Pour plus d’informations, consultez [packages et programmes dans Configuration Manager](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs) dans la bibliothèque de documentation Configuration Manager.
+- Les **packages et programmes** sont généralement les applications logicielles à installer sur un ordinateur client, mais ils peuvent également contenir des fichiers individuels, des mises à jour, ou même des commandes individuelles. Pour plus d’informations, consultez [packages et programmes dans Configuration Manager](/configmgr/apps/deploy-use/packages-and-programs) dans la bibliothèque de documentation Configuration Manager.
 
-- Les **points de distribution** sont des rôles de système de site Configuration Manager qui stockent les fichiers requis pour l’exécution des logiciels sur les ordinateurs clients. Lorsque le client Configuration Manager reçoit et traite un déploiement de logiciel, il contacte un point de distribution pour télécharger le contenu associé au logiciel et démarrer le processus d'installation. Pour plus d’informations, consultez [Concepts fondamentaux de la gestion de contenu dans Configuration Manager](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/fundamental-concepts-for-content-management) dans la bibliothèque de la documentation Configuration Manager.
+- Les **points de distribution** sont des rôles de système de site Configuration Manager qui stockent les fichiers requis pour l’exécution des logiciels sur les ordinateurs clients. Lorsque le client Configuration Manager reçoit et traite un déploiement de logiciel, il contacte un point de distribution pour télécharger le contenu associé au logiciel et démarrer le processus d'installation. Pour plus d’informations, consultez [Concepts fondamentaux de la gestion de contenu dans Configuration Manager](/configmgr/core/plan-design/hierarchy/fundamental-concepts-for-content-management) dans la bibliothèque de la documentation Configuration Manager.
 
 - Les **déploiements** font en sorte que les membres applicables du regroupement cible spécifié installent le package logiciel.
 
 > [!IMPORTANT]
-> Les procédures de cette rubrique contiennent les paramètres classiques pour créer et déployer un package et un programme, et ne couvrent pas tous les paramètres possibles. Pour d’autres options de déploiement de Configuration Manager, consultez la [Bibliothèque de documentation Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682041%28v=technet.10%29).
+> Les procédures de cette rubrique contiennent les paramètres classiques pour créer et déployer un package et un programme, et ne couvrent pas tous les paramètres possibles. Pour d’autres options de déploiement de Configuration Manager, consultez la [Bibliothèque de documentation Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg682041(v=technet.10)).
 
 <a name="deploying_in_a_test_environment"></a>
 
@@ -68,9 +68,9 @@ Vous pouvez utiliser Configuration Manager pour déployer une installation sans 
 
 ### <a name="create-a-collection"></a>Création d'une collection
 
-Dans cette étape, sélectionnez les ordinateurs sur lesquels seront déployés le package et le programme, et regroupez-les dans un regroupement de périphériques. Pour créer un regroupement dans Configuration Manager, utilisez des règles d’adhésion directes (où les membres du regroupement sont spécifiés manuellement) ou des règles de requête (où Configuration Manager détermine les membres du regroupement selon des critères que vous avez spécifiés). Pour plus d’informations sur les règles d’adhésion, notamment les requêtes et les règles directes, consultez [Présentation des regroupements dans Configuration Manager](https://docs.microsoft.com/configmgr/core/clients/manage/collections/introduction-to-collections) dans la bibliothèque de documentation Configuration Manager.
+Dans cette étape, sélectionnez les ordinateurs sur lesquels seront déployés le package et le programme, et regroupez-les dans un regroupement de périphériques. Pour créer un regroupement dans Configuration Manager, utilisez des règles d’adhésion directes (où les membres du regroupement sont spécifiés manuellement) ou des règles de requête (où Configuration Manager détermine les membres du regroupement selon des critères que vous avez spécifiés). Pour plus d’informations sur les règles d’adhésion, notamment les requêtes et les règles directes, consultez [Présentation des regroupements dans Configuration Manager](/configmgr/core/clients/manage/collections/introduction-to-collections) dans la bibliothèque de documentation Configuration Manager.
 
-Pour créer un regroupement
+Pour créer une collection :
 
 1. Dans la console Configuration Manager, choisissez **Ressources et Conformité**.
 
@@ -136,7 +136,7 @@ Le tableau suivant décrit les options de ligne de commande spécifiées dans l'
 |**/norestart**|Empêche le programme d'installation de redémarrer automatiquement. Si vous utilisez cette option, Configuration Manager doit gérer le redémarrage de l'ordinateur.|
 |**/chainingpackage** *nom_package*|Spécifie le nom du package qui effectue le chaînage. Ces informations sont stockées avec d'autres informations de session d'installation pour les personnes inscrites au Programme d'amélioration du produit Microsoft (CEIP). Si le nom du package inclut des espaces, utilisez des guillemets doubles comme délimiteurs. Par exemple : **/chainingpackage "Chaining Product"**.|
 
-Les étapes suivantes créent un package nommé .Net Framework 4.5. Le programme déploie une installation sans assistance de .Net Framework 4.5. Dans une installation sans assistance, les utilisateurs n’interagissent pas avec le processus d’installation et l’application de chaînage doit capturer le code de retour et gérer le redémarrage. Pour plus d’informations, consultez [Getting Progress Information from an Installation Package](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100)).
+Les étapes suivantes créent un package nommé .Net Framework 4.5. Le programme déploie une installation sans assistance de .Net Framework 4.5. Dans une installation sans assistance, les utilisateurs n’interagissent pas avec le processus d’installation et l’application de chaînage doit capturer le code de retour et gérer le redémarrage. Pour plus d’informations, consultez [Getting Progress Information from an Installation Package](/previous-versions/cc825975(v=vs.100)).
 
 <a name="select_dist_point"></a>
 
@@ -162,7 +162,7 @@ Utilisez les étapes suivantes pour sélectionner un point de distribution pour 
 
 8. Effectuez toutes les étapes de l'Assistant.
 
-Le package contient désormais toutes les informations nécessaires au déploiement sans assistance de .Net Framework 4.5. Avant de déployer le package et le programme, vérifiez qu’il a été installé sur le point de distribution. consultez la section « surveillance de l’état du contenu » de la page [surveiller le contenu que vous distribuez avec Configuration Manager](https://docs.microsoft.com/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed) dans la bibliothèque de documentation Configuration Manager.
+Le package contient désormais toutes les informations nécessaires au déploiement sans assistance de .Net Framework 4.5. Avant de déployer le package et le programme, vérifiez qu’il a été installé sur le point de distribution. consultez la section « surveillance de l’état du contenu » de la page [surveiller le contenu que vous distribuez avec Configuration Manager](/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed) dans la bibliothèque de documentation Configuration Manager.
 
 <a name="deploying_package"></a>
 
@@ -189,7 +189,7 @@ Pour déployer le package et le programme .Net Framework 4.5 :
 9. Dans la page **Expérience utilisateur** de l’Assistant, utilisez les valeurs par défaut et choisissez **Suivant**.
 
     > [!WARNING]
-    > Il est possible que votre environnement de production ait des stratégies qui requièrent des sélections différentes pour la planification de déploiement. Pour plus d’informations sur ces options, consultez [Propriétés du nom de la publication : Onglet Calendrier](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb694016%28v=technet.10%29).
+    > Il est possible que votre environnement de production ait des stratégies qui requièrent des sélections différentes pour la planification de déploiement. Pour plus d’informations sur ces options, consultez [Propriétés du nom de la publication : Onglet Calendrier](/previous-versions/system-center/configuration-manager-2007/bb694016(v=technet.10)).
 
 10. Dans la page **Points de distribution** de l’Assistant, utilisez les valeurs par défaut et choisissez **Suivant**.
 
@@ -205,7 +205,7 @@ Pour plus d’informations sur l’infrastructure pour tester le déploiement du
 
 **Active Directory, DNS, DHCP :**
 
-- [Active Directory Domain Services](/windows/desktop/ad/active-directory-domain-services)
+- [Services de domaine Active Directory](/windows/desktop/ad/active-directory-domain-services)
 
 - [DNS (Domain Name System)](/windows-server/networking/dns/dns-top)
 
@@ -213,23 +213,23 @@ Pour plus d’informations sur l’infrastructure pour tester le déploiement du
 
 **SQL Server 2008 :**
 
-- [Installer SQL Server 2008 (vidéo SQL Server)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))
+- [Installer SQL Server 2008 (vidéo SQL Server)](/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))
 
 - [Vue d’ensemble de la sécurité SQL Server 2008 pour les administrateurs de base de données](https://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)
 
 **System Center 2012 Configuration Manager (point de gestion, point de distribution) :**
 
-- [Administration de site pour System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg681983%28v=technet.10%29)
+- [Administration de site pour System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg681983(v=technet.10))
 
-- [Planification et déploiement d’un site unique Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb680961%28v=technet.10%29)
+- [Planification et déploiement d’un site unique Configuration Manager](/previous-versions/system-center/configuration-manager-2007/bb680961(v=technet.10))
 
 **Client System Center 2012 Configuration Manager pour ordinateurs Windows :**
 
-- [Déployer des clients pour System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg699391%28v=technet.10%29)
+- [Déployer des clients pour System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg699391(v=technet.10))
 
 <a name="troubleshooting"></a>
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 ### <a name="log-file-locations"></a>Emplacements des fichiers journaux
 
@@ -267,7 +267,7 @@ Pour plus d’informations, consultez la section suivante : [Codes d’erreur d
 
 - [Codes d’erreur du service de transfert intelligent en arrière-plan (BITS)](/windows/desktop/Bits/bits-return-values)
 
-- [Codes d’erreur du moniker d’URL](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775145%28v=vs.85%29)
+- [Codes d’erreur du moniker d’URL](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775145(v=vs.85))
 
 - [Codes d’erreur WinHttp](/windows/desktop/WinHttp/error-messages)
 
@@ -275,7 +275,7 @@ Autres codes d'erreur :
 
 - [Codes d’erreur Windows Installer](/windows/desktop/msi/error-codes)
 
-- [Codes de résultat de l’agent de mise à jour automatique Windows Update](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720442(v=ws.10))
+- [Codes de résultat de l’agent de mise à jour automatique Windows Update](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720442(v=ws.10))
 
 ## <a name="see-also"></a>Voir aussi
 

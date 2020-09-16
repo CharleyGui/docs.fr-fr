@@ -1,13 +1,13 @@
 ---
-title: Vue d'ensemble
+title: Vue d’ensemble
 ms.date: 12/13/2019
 description: Vue d’ensemble de Microsoft. Data. sqlite
-ms.openlocfilehash: e84c68f0615f187e8dea7ab87ac917c0ad796a1c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7c952848f7e7ea04f11fe9340f77a1f376a1be07
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77543597"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552438"
 ---
 # <a name="microsoftdatasqlite-overview"></a>Vue d’ensemble de Microsoft. Data. sqlite
 
@@ -31,7 +31,7 @@ Install-Package Microsoft.Data.Sqlite
 
 ---
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>Utilisation
 
 Cette bibliothèque implémente les abstractions ADO.NET courantes pour les connexions, les commandes, les lecteurs de données, etc.
 
@@ -40,5 +40,5 @@ Cette bibliothèque implémente les abstractions ADO.NET courantes pour les conn
 ## <a name="see-also"></a>Voir aussi
 
 * [Chaînes de connexion](connection-strings.md)
-* [Référence des API](/dotnet/api/?view=msdata-sqlite-3.0)
+* [Référence sur l’API](../../../../api/index.md?view=msdata-sqlite-3.0)
 * [Syntaxe SQL](https://www.sqlite.org/lang.html)

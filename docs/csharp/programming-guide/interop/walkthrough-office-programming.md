@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 76f0e2eccb5d1a59d9aaa3eed11b25dd2dd9cac3
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: eff414411c47ec83177ae6a09de4a96f47af6313
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063001"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558587"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Procédure pas à pas : Programmation Office (C# et Visual Basic)
 
@@ -69,7 +69,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
 ### <a name="to-create-a-list-of-bank-accounts"></a>Pour créer une liste de comptes bancaires
 
-1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom de votre projet, cliquez sur **Ajouter**, puis sur **Classe**. Nommez la classe Account.vb si vous utilisez Visual Basic ou Account.cs si vous utilisez C#. Cliquez sur **Ajouter**.
+1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom de votre projet, cliquez sur **Ajouter**, puis sur **Classe**. Nommez la classe Account.vb si vous utilisez Visual Basic ou Account.cs si vous utilisez C#. Cliquez sur **Add**.
 
 2. Remplacez la définition de la classe `Account` par le code suivant : Les définitions de classe utilisent les *propriétés implémentées automatiquement*. Pour plus d’informations, consultez [Propriétés implémentées automatiquement](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).
 
@@ -205,8 +205,8 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 - [Expressions lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Expressions lambda (C#)](../../language-reference/operators/lambda-expressions.md)
 - [Comment utiliser des propriétés indexées dans la programmation COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
-- [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office dans Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
+- [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office dans Visual Studio](/previous-versions/visualstudio/visual-studio-2013/ee317478(v=vs.120))
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md)
-- [Procédure pas à pas : création de votre premier complément VSTO pour Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)
+- [Procédure pas à pas : création de votre premier complément VSTO pour Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)
 - [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)
 - [Interopérabilité](./index.md)

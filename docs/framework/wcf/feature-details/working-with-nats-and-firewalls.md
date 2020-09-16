@@ -5,12 +5,12 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: 28360b8b5b07c7c532dd2406ca98604870b8335f
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: bab29d738c7562753a826b47c03867eeebac4372
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921076"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558977"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Utilisation des NAT et des pare-feu
 Il arrive fréquemment que les client et serveur d'une connexion réseau ne disposent pas d'une voie de communication directe et ouverte. Les paquets sont filtrés, acheminés, analysés et transformés par les ordinateurs de point de terminaison ainsi que par les ordinateurs intermédiaires sur le réseau. Ces ordinateurs intermédiaires, qui participent à la communication, sont notamment les applications de traduction d'adresses réseau (Network address translation, NAT) et les pare-feu.  
@@ -33,7 +33,7 @@ Il arrive fréquemment que les client et serveur d'une connexion réseau ne disp
   
 ## <a name="using-teredo"></a>Utilisation de Teredo  
 
- Teredo est une technologie de transition IPv6 qui permet l'adressabilité directe des ordinateurs se trouvant derrière une application NAT. Cette technologie utilise un serveur pouvant être acheminé publiquement pour rendre publiques les éventuelles connexions afférentes. Le serveur Teredo sert de point de rencontre aux applications client et serveur et leur permet ainsi d'échanger leurs informations de connexion respectives. Les ordinateurs concernés demandent ensuite à obtenir une adresse Teredo temporaire et les paquets sont acheminés via le réseau existant. La prise en charge de Teredo dans WCF nécessite l’activation de la prise en charge D’ipv6 et de Teredo dans le système d’exploitation. Les systèmes d’exploitation Windows XP et versions ultérieures prennent en charge Teredo. Les systèmes d’exploitation Windows Vista et versions ultérieures prennent en charge IPv6 par défaut et demandent uniquement à l’utilisateur d’activer Teredo. Windows XP SP2 et Windows Server 2003 requièrent que l’utilisateur active à la fois IPv6 et Teredo. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-xp/bb457011(v%3dtechnet.10)).  
+ Teredo est une technologie de transition IPv6 qui permet l'adressabilité directe des ordinateurs se trouvant derrière une application NAT. Cette technologie utilise un serveur pouvant être acheminé publiquement pour rendre publiques les éventuelles connexions afférentes. Le serveur Teredo sert de point de rencontre aux applications client et serveur et leur permet ainsi d'échanger leurs informations de connexion respectives. Les ordinateurs concernés demandent ensuite à obtenir une adresse Teredo temporaire et les paquets sont acheminés via le réseau existant. La prise en charge de Teredo dans WCF nécessite l’activation de la prise en charge D’ipv6 et de Teredo dans le système d’exploitation. Les systèmes d’exploitation Windows XP et versions ultérieures prennent en charge Teredo. Les systèmes d’exploitation Windows Vista et versions ultérieures prennent en charge IPv6 par défaut et demandent uniquement à l’utilisateur d’activer Teredo. Windows XP SP2 et Windows Server 2003 requièrent que l’utilisateur active à la fois IPv6 et Teredo. Pour plus d’informations, voir [vue d’ensemble de Teredo](/previous-versions/windows/it-pro/windows-xp/bb457011(v=technet.10)).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Sélection d’un transport et d’un modèle d’échange de messages  
  La sélection d'un transport et d'un MEP s'effectue en trois étapes :  

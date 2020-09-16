@@ -2,12 +2,12 @@
 title: <resolver>
 ms.date: 03/30/2017
 ms.assetid: 0c00200c-f135-4e5c-a024-76b72bcbc021
-ms.openlocfilehash: 0dc667f392595d895bd4f2773ab69777d7369446
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c6f5db96ded422493b819d4d75dda6abc9a1676e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738741"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558860"
 ---
 # \<resolver>
 Spécifie un programme de résolution d'homologue utilisé pour résoudre un ID de maille d'homologues en un jeu d'adresses de nœuds d'homologues représentant plusieurs nœuds faisant partie de la maille.  
@@ -49,7 +49,7 @@ Spécifie un programme de résolution d'homologue utilisé pour résoudre un ID 
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|Définit toutes les fonctions de liaison de [\<netPeerTcpBinding>](netpeertcpbinding.md) .|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Un programme de résolution de nom d'homologue est un service de découverte utilisé par les canaux homologues afin de rechercher des nœuds d'homologues faisant partie d'une maille d'homologues. Il est également utilisé pour « inscrire » un nœud avec un maillage d'homologue, le mécanisme par lequel le nœud homologue est connu et disponible à partir du maillage d'homologue. Pour plus d’informations sur les programmes de résolution d’homologue, consultez programmes de [résolution d’homologue](../../../wcf/feature-details/peer-resolvers.md).  
   
 ## <a name="see-also"></a>Voir aussi
@@ -60,4 +60,4 @@ Spécifie un programme de résolution d'homologue utilisé pour résoudre un ID 
 - <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement.Resolver%2A>
 - <xref:System.ServiceModel.Configuration.PeerResolverElement>
 - [Programmes de résolution d'homologue](../../../wcf/feature-details/peer-resolvers.md)
-- [Ajout d'un programme de résolution personnalisé à une application PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))
+- [Ajout d'un programme de résolution personnalisé à une application PeerChannel](/previous-versions/ms730105(v=vs.90))

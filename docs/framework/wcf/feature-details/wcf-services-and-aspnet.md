@@ -3,12 +3,12 @@ title: Services WCF et ASP.NET
 description: Découvrez comment héberger des services WCF côte à côte avec ASP.NET et les héberger en mode de compatibilité ASP.NET.
 ms.date: 03/30/2017
 ms.assetid: b980496a-f0b0-4319-8e55-a0f0fa32da70
-ms.openlocfilehash: 1d7401f6a326bc50923123acf803e26ce8238415
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 765a509f94a0a934cdbbf0212cfc1d4053d29f9c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246413"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553315"
 ---
 # <a name="wcf-services-and-aspnet"></a>Services WCF et ASP.NET
 
@@ -30,7 +30,7 @@ Les résultats du modèle côte à côte est le suivant :
 
 - Dans un AppDomain, les fonctionnalités implémentées par le runtime HTTP s’appliquent au contenu ASP.NET, mais pas à WCF. De nombreuses fonctionnalités spécifiques à HTTP de la plate-forme d’application ASP.NET ne s’appliquent pas aux services WCF hébergés dans un AppDomain qui contient du contenu ASP.NET. Voici des exemples de ces fonctionnalités :
 
-  - HttpContext : <xref:System.Web.HttpContext.Current%2A> est toujours `null` lorsqu’il est accessible à partir d’un service WCF. Utilisez <xref:System.ServiceModel.Channels.RequestContext> à la place.
+  - HttpContext : <xref:System.Web.HttpContext.Current%2A> est toujours `null` lorsqu’il est accessible à partir d’un service WCF. Utilisez plutôt <xref:System.ServiceModel.Channels.RequestContext>.
 
   - Autorisation basée sur les fichiers : le modèle de sécurité WCF n’autorise pas la liste de contrôle d’accès (ACL) appliquée au fichier. svc du service lorsque vous décidez si une demande de service est autorisée.
 
@@ -66,7 +66,7 @@ Contrairement à la configuration côte à côte par défaut, où l’infrastruc
 
 - Autorisation configurable d’URL : ASP. Les règles d’autorisation d’URL du réseau sont appliquées pour les demandes WCF lorsque le service WCF s’exécute en mode de compatibilité ASP.NET.
 
-- <xref:System.Web.HttpModuleCollection>Extensibilité : étant donné que les services WCF qui s’exécutent en mode de compatibilité ASP.NET participent pleinement au cycle de vie des demandes HTTP ASP.NET, tout module HTTP configuré dans le pipeline HTTP peut fonctionner sur les demandes WCF avant et après l’appel du service.
+- <xref:System.Web.HttpModuleCollection> Extensibilité : étant donné que les services WCF qui s’exécutent en mode de compatibilité ASP.NET participent pleinement au cycle de vie des demandes HTTP ASP.NET, tout module HTTP configuré dans le pipeline HTTP peut fonctionner sur les demandes WCF avant et après l’appel du service.
 
 - Emprunt d’identité ASP.NET : les services WCF s’exécutent à l’aide de l’identité actuelle du thread ASP.NET représenté, qui peut être différent de l’identité du processus IIS si l’emprunt d’identité ASP.NET a été activé pour l’application. Si l’emprunt d’identité ASP.NET et l’emprunt d’identité WCF sont tous deux activés pour une opération de service particulière, l’implémentation de service s’exécute finalement à l’aide de l’identité obtenue à partir de WCF.
 
@@ -107,4 +107,4 @@ Pour plus d’informations sur l’activation du mode de compatibilité ASP.NET 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

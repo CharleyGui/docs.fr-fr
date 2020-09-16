@@ -2,12 +2,12 @@
 title: <udpBinding>
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
-ms.openlocfilehash: 7fa72d233d6489ab6a2c534f69c66a55a22d0f59
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b2ff39e1292cfaad1165e14e693acda2518477a6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74429835"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559042"
 ---
 # \<udpBinding>
 Élément de configuration utilisé pour configurer la liaison <xref:System.ServiceModel.UdpBinding>.  
@@ -70,7 +70,7 @@ ms.locfileid: "74429835"
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Définit les contraintes sur la complexité des messages SOAP pouvant être traités par les points de terminaison configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Définit les contraintes sur la complexité des messages SOAP pouvant être traités par les points de terminaison configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -78,10 +78,10 @@ ms.locfileid: "74429835"
 |-------------|-----------------|  
 |[\<bindings>](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  UdpBinding permet aux services WCF de communiquer sur le transport UDP. Cela permet l’échange de messages « incendie et oubli » où un client envoie un message à un service et n’attend aucune réponse.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant montre comment configurer à l' <xref:System.ServiceModel.UdpBinding> aide de l' `udpBinding` élément <>.  
   
 ```xml  

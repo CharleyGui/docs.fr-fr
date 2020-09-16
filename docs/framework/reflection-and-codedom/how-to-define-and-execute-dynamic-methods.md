@@ -10,15 +10,15 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
-ms.openlocfilehash: 7c68be91deb59ea9439e81561f50b7cc40766a45
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: d1ccf3d3ac966e35e1708f0639785a2760eb8287
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865110"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559185"
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>Procédure : définir et exécuter des méthodes dynamiques
-Les procédures suivantes montrent comment définir et exécuter une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe. Pour plus d’informations sur les méthodes dynamiques, consultez la classe <xref:System.Reflection.Emit.DynamicMethod> et [Scénarios de méthodes dynamiques avec Émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
+Les procédures suivantes montrent comment définir et exécuter une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe. Pour plus d’informations sur les méthodes dynamiques, consultez la classe <xref:System.Reflection.Emit.DynamicMethod> et [Scénarios de méthodes dynamiques avec Émission de réflexion](/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
   
 ### <a name="to-define-and-execute-a-dynamic-method"></a>Pour définir et exécuter une méthode dynamique  
   
@@ -34,7 +34,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
      [!code-csharp[DynamicMethodHowTo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#3)]
      [!code-vb[DynamicMethodHowTo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#3)]  
   
-3. Créer un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode se nomme `SquareIt`.  
+3. Créez un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode se nomme `SquareIt`.  
   
     > [!NOTE]
     > Il n’est pas nécessaire de nommer les méthodes dynamiques. Elles ne peuvent pas être appelées par nom. Plusieurs méthodes dynamiques peuvent avoir le même nom. Toutefois, le nom apparaît dans les piles des appels et peut être utile pour le débogage.  
@@ -73,7 +73,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
      [!code-csharp[DynamicMethodHowTo#13](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#13)]
      [!code-vb[DynamicMethodHowTo#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#13)]  
   
-3. Créer un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode n’a pas de nom. Le type de la valeur de retour est spécifié comme `int` (`Integer` en Visual Basic). La méthode a accès aux membres privés et protégés de la classe `Example`.  
+3. Créez un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode n’a pas de nom. Le type de la valeur de retour est spécifié comme `int` (`Integer` en Visual Basic). La méthode a accès aux membres privés et protégés de la classe `Example`.  
   
      [!code-cpp[DynamicMethodHowTo#14](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#14)]
      [!code-csharp[DynamicMethodHowTo#14](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#14)]
@@ -100,7 +100,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
      [!code-csharp[DynamicMethodHowTo#16](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#16)]
      [!code-vb[DynamicMethodHowTo#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#16)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple de code suivant montre une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe.  
   
  La méthode dynamique simple prend un argument, un entier 32 bits, et retourne le carré 64 bits de cet entier. Un délégué générique est utilisé pour appeler la méthode.  
@@ -116,5 +116,5 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Reflection.Emit.DynamicMethod>
-- [Utiliser l’émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
-- [Scénarios de méthodes dynamiques avec émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100))
+- [Utiliser l’émission de réflexion](/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
+- [Scénarios de méthodes dynamiques avec émission de réflexion](/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100))

@@ -1,17 +1,17 @@
 ---
-title: Processus<processname>' est introuvable
+title: Le processus '<processname>' est introuvable
 ms.date: 07/20/2015
 f1_keywords:
 - vbrProcessNotFound
 ms.assetid: d6095a7f-6168-4b00-8639-11fb64dd2ebe
-ms.openlocfilehash: cb5108ac738f350202828fd60e4bf5745c6270e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ddbe518393570a92fa73a3dd3a8f63198e45c305
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944727"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558366"
 ---
-# <a name="process-processname-was-not-found"></a>Processus\<nom_processus >' est introuvable
+# <a name="process-processname-was-not-found"></a>Le processus '\<processname>' est introuvable
 Le processus spécifié est introuvable.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
@@ -20,4 +20,4 @@ Le processus spécifié est introuvable.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [La gestion des processus](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/z63bbakd(v=vs.90))
+- [Gestion des processus](/previous-versions/visualstudio/visual-studio-2008/z63bbakd(v=vs.90))

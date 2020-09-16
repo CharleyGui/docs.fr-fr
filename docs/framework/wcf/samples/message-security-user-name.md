@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
-ms.openlocfilehash: 783969342f007895016ed4183257d6b24188d76c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c6b742cbb438b10b443aa8d1cfca21a80acd2afe
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584725"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558613"
 ---
 # <a name="message-security-user-name"></a>Message Security User Name
 Cet exemple montre comment implémenter une application qui utilise WS-Security et l'authentification de nom d'utilisateur pour le client et qui nécessite l'authentification du serveur à l'aide de son certificat X.509v3. Tous les messages d'application échangés entre le client et le serveur sont signés et chiffrés. Par défaut, le nom d'utilisateur et le mot de passe fournis par le client sont utilisés pour ouvrir une session à l'aide d'un compte Windows valable. Cet exemple est basé sur [WSHttpBinding](wshttpbinding.md). Cet exemple se compose d'un programme de console client (client.exe) et d'une bibliothèque de service hébergé par les services IIS (Internet Information Services). Le service implémente un contrat qui définit un modèle de communication demande-réponse.  
@@ -23,7 +23,7 @@ Cet exemple montre comment implémenter une application qui utilise WS-Security 
   
 - Comment accéder aux informations d'identité de l'appelant à partir du code du service.  
   
- Le service expose un point de terminaison unique pour communiquer avec le service, qui est défini à l’aide du fichier de configuration Web. config. Le point de terminaison se compose d’une adresse, d’une liaison et d’un contrat. La liaison est configurée avec un standard [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) , qui utilise par défaut la sécurité de message. Cet exemple définit la norme [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) pour utiliser l’authentification du nom d’utilisateur du client. Le comportement spécifie que les informations d'identification de l'utilisateur doivent être utilisées à des fins d'authentification du service. Le certificat de serveur doit contenir la même valeur pour le nom du sujet que l' `findValue` attribut dans [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) .  
+ Le service expose un point de terminaison unique pour communiquer avec le service, qui est défini à l’aide du fichier de configuration Web.config. Le point de terminaison se compose d’une adresse, d’une liaison et d’un contrat. La liaison est configurée avec un standard [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) , qui utilise par défaut la sécurité de message. Cet exemple définit la norme [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) pour utiliser l’authentification du nom d’utilisateur du client. Le comportement spécifie que les informations d'identification de l'utilisateur doivent être utilisées à des fins d'authentification du service. Le certificat de serveur doit contenir la même valeur pour le nom du sujet que l' `findValue` attribut dans [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) .  
   
 ```xml  
 <system.serviceModel>  
@@ -173,7 +173,7 @@ Press <ENTER> to terminate client.
   
 - Octroi d'autorisations sur la clé privée du certificat.  
   
-     Les lignes suivantes du fichier de commandes Setup. bat rendent le certificat de serveur stocké dans le magasin LocalMachine accessible au compte du processus de travail ASP.NET.  
+     Les lignes suivantes du fichier de commandes Setup.bat rendent le certificat de serveur stocké dans le magasin LocalMachine accessible au compte du processus de travail ASP.NET.  
   
     ```bat
     echo ************  
@@ -187,7 +187,7 @@ Press <ENTER> to terminate client.
     ```  
   
     > [!NOTE]
-    > Si vous utilisez une édition non américaine de Windows, vous devez modifier le fichier Setup. bat et remplacer le `NT AUTHORITY\NETWORK SERVICE` nom du compte par votre équivalent régional.  
+    > Si vous utilisez un non-U. S. Édition anglaise de Windows vous devez modifier le fichier Setup.bat et remplacer le `NT AUTHORITY\NETWORK SERVICE` nom du compte par votre équivalent régional.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
@@ -199,16 +199,16 @@ Press <ENTER> to terminate client.
   
 1. Assurez-vous que le chemin d’accès contient le dossier dans lequel Makecert.exe et FindPrivateKey.exe se trouvent.  
   
-2. Exécutez setup. bat à partir du dossier d’installation de l’exemple dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.  
+2. Exécutez Setup.bat à partir du dossier d’installation de l’exemple dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.  
   
     > [!NOTE]
-    > Le fichier de commandes Setup. bat est conçu pour être exécuté à partir d’un Invite de commandes développeur pour Visual Studio. La variable d'environnement PATH doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable d’environnement est définie automatiquement dans un Invite de commandes développeur pour Visual Studio.  
+    > Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d’un Invite de commandes développeur pour Visual Studio. La variable d'environnement PATH doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable d’environnement est définie automatiquement dans un Invite de commandes développeur pour Visual Studio.  
   
 3. Vérifiez l’accès au service à l’aide d’un navigateur en entrant l’adresse `http://localhost/servicemodelsamples/service.svc` .
   
 4. Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
-5. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+5. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
@@ -228,13 +228,13 @@ Press <ENTER> to terminate client.
   
 8. Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.  
   
-9. Sur le client, exécutez ImportServiceCert. bat dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
+9. Sur le client, exécutez ImportServiceCert.bat dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
   
-10. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   
 - Exécutez Cleanup.bat dans le dossier exemples une fois que vous avez terminé d'exécuter l'exemple.  
   
     > [!NOTE]
-    > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+    > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.

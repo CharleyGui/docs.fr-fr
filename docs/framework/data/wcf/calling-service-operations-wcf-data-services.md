@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-ms.openlocfilehash: f1ff707c90e884dc66ab10563dc41ea7789f5cda
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 63c6e903fa811d5c61550d086b4f1ce84973f2bc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201999"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553621"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Appel des opérations de service (WCF Data Services)
 Le Open Data Protocol (OData) définit des opérations de service pour un service de données. WCF Data Services vous permet de définir des opérations telles que des méthodes sur le service de données. Comme les autres ressources du service de données, ces opérations de service sont adressées via les URI. Une opération de service peut retourner des collections de types d’entité, des instances uniques de type d’entité et des types primitifs, comme des entiers et des chaînes. Une opération de service peut également retourner `null` (`Nothing` en Visual Basic). La bibliothèque cliente WCF Data Services peut être utilisée pour accéder aux opérations de service qui prennent en charge les requêtes HTTP. Ces types d'opérations de service sont définis en tant que méthodes ayant <xref:System.ServiceModel.Web.WebGetAttribute> appliqué. Pour plus d’informations, consultez [opérations de service](service-operations-wcf-data-services.md).  
   
- Les opérations de service sont exposées dans les métadonnées retournées par un service de données qui implémente le OData. Dans les métadonnées, les opérations de service sont représentées sous la forme d'éléments `FunctionImport`. Lors de la génération du fortement typé <xref:System.Data.Services.Client.DataServiceContext> , les outils ajouter une référence de service et outil DataSvcUtil. exe ignorent cet élément. De ce fait, vous ne trouverez pas de méthode dans le contexte pouvant être utilisée pour appeler une opération de service directement. Toutefois, vous pouvez toujours utiliser le client WCF Data Services pour appeler des opérations de service de l’une des deux manières suivantes :  
+ Les opérations de service sont exposées dans les métadonnées retournées par un service de données qui implémente le OData. Dans les métadonnées, les opérations de service sont représentées sous la forme d'éléments `FunctionImport`. Lors de la génération du fortement typé <xref:System.Data.Services.Client.DataServiceContext> , les outils ajouter une référence de service et DataSvcUtil.exe ignorent cet élément. De ce fait, vous ne trouverez pas de méthode dans le contexte pouvant être utilisée pour appeler une opération de service directement. Toutefois, vous pouvez toujours utiliser le client WCF Data Services pour appeler des opérations de service de l’une des deux manières suivantes :  
   
 - En appelant la méthode <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> sur <xref:System.Data.Services.Client.DataServiceContext> et en fournissant l'URI de l'opération de service, ainsi que tous paramètres. Cette méthode est utilisée pour appeler toute opération de service GET.  
   
@@ -32,7 +32,7 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
   
 - Vous ne pouvez pas utiliser <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> pour appeler une opération de service GET qui retourne un résultat unique, d'entité ou de type primitif, ou qui requiert plusieurs paramètres d'entrée. Vous devez à la place appeler la méthode <xref:System.Data.Services.Client.DataServiceContext.Execute%2A>.  
   
-- Envisagez de créer une méthode d’extension sur la classe partielle fortement typée <xref:System.Data.Services.Client.DataServiceContext> , générée par les outils, qui utilise la <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> méthode ou pour appeler une opération de service. Cela vous permet d'appeler les opérations de service directement à partir du contexte. Pour plus d’informations, consultez le billet de blog [opérations de service et le Client WCF Data Services](https://docs.microsoft.com/archive/blogs/astoriateam/service-operations-and-the-wcf-data-services-client).  
+- Envisagez de créer une méthode d’extension sur la classe partielle fortement typée <xref:System.Data.Services.Client.DataServiceContext> , générée par les outils, qui utilise la <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> méthode ou pour appeler une opération de service. Cela vous permet d'appeler les opérations de service directement à partir du contexte. Pour plus d’informations, consultez le billet de blog [opérations de service et le Client WCF Data Services](/archive/blogs/astoriateam/service-operations-and-the-wcf-data-services-client).  
   
 - Lorsque vous utilisez <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> pour appeler une opération de service, la bibliothèque cliente place automatiquement dans une séquence d’échappement les caractères fournis à la <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> en effectuant un encodage en pourcentage des caractères réservés, tels que l’esperluette (&) et l’échappement des guillemets simples dans les chaînes. Toutefois, lorsque vous appelez l’une des méthodes *Execute* pour appeler une opération de service, vous devez penser à effectuer cette séquence d’échappement de toutes les valeurs de chaîne fournies par l’utilisateur. Les guillemets simples des URI sont placés dans une séquence d'échappement comme guillemets doubles.  
   

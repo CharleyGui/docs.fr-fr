@@ -7,12 +7,12 @@ helpviewer_keywords:
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-ms.openlocfilehash: 188d9184476e58fb679421467cd68e2ea8a8a101
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 93c2015c873b9de7b6c1b94224fa4033863aecfd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558866"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558496"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Éléments obsolètes dans la bibliothèque de classes .NET Framework
 
@@ -37,7 +37,7 @@ Quand vous mettez à niveau et recompilez du code existant, l'utilisation d'un t
 
 - Modifiez votre code en supprimant l'utilisation du type ou membre, si possible.
 
-     -ou-
+     - ou -
 
 - Examinez la documentation de ce domaine technologique pour savoir que faire face à des éléments obsolètes.
 
@@ -76,10 +76,10 @@ Pour cibler une version spécifique de .NET Framework, assignez l’une des vale
 
 ## <a name="obsolete-apis-for-previous-versions"></a>API obsolètes pour les versions précédentes
 
-- [Types obsolètes dans .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee461503(v=vs.100))
-- [Membres obsolètes dans .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee471421(v=vs.100))
-- [Liste des éléments obsolètes pour le .NET Framework 3.5](https://docs.microsoft.com/previous-versions/cc835481(v=msdn.10))
-- [Liste des éléments obsolètes pour le .NET Framework 2.0](https://docs.microsoft.com/previous-versions/aa497286(v=msdn.10))
+- [Types obsolètes dans .NET Framework 4](/previous-versions/dotnet/netframework-4.0/ee461503(v=vs.100))
+- [Membres obsolètes dans .NET Framework 4](/previous-versions/dotnet/netframework-4.0/ee471421(v=vs.100))
+- [Liste des éléments obsolètes pour le .NET Framework 3.5](/previous-versions/cc835481(v=msdn.10))
+- [Liste des éléments obsolètes pour le .NET Framework 2.0](/previous-versions/aa497286(v=msdn.10))
 
 ## <a name="see-also"></a>Voir aussi
 

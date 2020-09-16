@@ -2,12 +2,12 @@
 title: Using Performance Counters
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: 0b63cdc145ff8806c26b255500bcb2a132e9ef9f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f2b0f39303d000e2e9aab8fc5280f75ab9309c4d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596498"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553042"
 ---
 # <a name="using-performance-counters"></a>Using Performance Counters
 Cet exemple montre comment accéder aux compteurs de performance Windows Communication Foundation (WCF) et comment créer des compteurs de performances définis par l’utilisateur. Cet exemple est basé sur le [prise en main](getting-started-sample.md).  
@@ -27,7 +27,7 @@ Cet exemple montre comment accéder aux compteurs de performance Windows Communi
 </configuration>  
 ```  
   
- Cette tâche peut également être effectuée à l’aide de l' [outil Éditeur de configuration (SvcConfigEditor. exe)](../configuration-editor-tool-svcconfigeditor-exe.md).  
+ Cette tâche peut également être effectuée à l’aide de l' [outil Éditeur de configuration (SvcConfigEditor.exe)](../configuration-editor-tool-svcconfigeditor-exe.md).  
   
  Lorsque les compteurs de performance sont activés, la suite entière des compteurs de performance WCF est activée pour le service. Le .NET Framework assure automatiquement la maintenance des données de performance à trois niveaux : `ServiceModelService`, `ServiceModelEndpoint` et `ServiceModelOperation`. Chacun de ces niveaux comporte des compteurs de performance tels que « Appels », « Appels par seconde », et « Appels de sécurité non autorisés ».  
   
@@ -78,4 +78,4 @@ Cet exemple montre comment accéder aux compteurs de performance Windows Communi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples d'analyse AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Exemples d'analyse AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

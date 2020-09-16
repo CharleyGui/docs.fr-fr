@@ -18,12 +18,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: e36ae21e1e03c8c5c688b7446f660ab1bb666a94
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 466a0dd8a827cd869894106a0901bdab89601e25
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904375"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559094"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implémentation du modèle asynchrone basé sur des événements
 
@@ -33,7 +33,7 @@ Le modèle asynchrone basé sur des événements fournit une méthode standardis
 
 Pour obtenir un exemple qui implémente le modèle asynchrone basé sur des événements, consultez [Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](component-that-supports-the-event-based-asynchronous-pattern.md).
 
-Le composant <xref:System.ComponentModel.BackgroundWorker> pourra être adapté à des opérations asynchrones simples. Pour plus d’informations sur <xref:System.ComponentModel.BackgroundWorker>, consultez la page [Guide pratique pour exécuter une opération en arrière-plan](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md).
+Le composant <xref:System.ComponentModel.BackgroundWorker> pourra être adapté à des opérations asynchrones simples. Pour plus d’informations sur <xref:System.ComponentModel.BackgroundWorker>, consultez la page [Guide pratique pour exécuter une opération en arrière-plan](/dotnet/desktop/winforms/controls/how-to-run-an-operation-in-the-background).
 
 La liste suivante décrit les fonctionnalités du modèle asynchrone basé sur des événements décrites dans cette rubrique.
 
@@ -217,9 +217,9 @@ Bien que l’utilisation de `out` et `ref` soit en règle générale déconseill
 
 Soit une méthode synchrone *MethodName* :
 
-- `out`les paramètres de *MethodName* ne doivent pas faire partie de _MethodName_**Async**. Au lieu de cela, ils doivent faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
+- `out` les paramètres de *MethodName* ne doivent pas faire partie de _MethodName_**Async**. Au lieu de cela, ils doivent faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
 
-- `ref`les paramètres de *MethodName* doivent apparaître dans le cadre de _MethodName_**Async**et dans le cadre de _MethodName_**CompletedEventArgs** portant le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
+- `ref` les paramètres de *MethodName* doivent apparaître dans le cadre de _MethodName_**Async**et dans le cadre de _MethodName_**CompletedEventArgs** portant le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
 
 Prenons l’exemple suivant :
 
@@ -262,9 +262,9 @@ public class MethodNameCompletedEventArgs : System.ComponentModel.AsyncCompleted
 
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
-- [Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](component-that-supports-the-event-based-asynchronous-pattern.md)
-- [Guide pratique pour exécuter une opération en arrière-plan](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [Comment : implémenter un formulaire qui utilise une opération d'arrière-plan](../../framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+- [Procédure : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](component-that-supports-the-event-based-asynchronous-pattern.md)
+- [Procédure : exécuter une opération en arrière-plan](/dotnet/desktop/winforms/controls/how-to-run-an-operation-in-the-background)
+- [Procédure : implémenter un formulaire qui utilise une opération en arrière-plan](/dotnet/desktop/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation)
 - [Choix du moment auquel implémenter le modèle asynchrone basé sur les événements](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
-- [Meilleures pratiques pour implémenter le modèle asynchrone basé sur les événements](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
+- [Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
 - [Modèle asynchrone basé sur les événements (EAP)](event-based-asynchronous-pattern-eap.md)

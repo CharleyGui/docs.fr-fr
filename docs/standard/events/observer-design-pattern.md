@@ -13,12 +13,12 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 4edcd2645b28095f4bd18f4918b9afa5c893bd39
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 80dac36199dd13abeab295d4b53a52615e7ae625
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662730"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559159"
 ---
 # <a name="observer-design-pattern"></a>Modèle de design observateur
 
@@ -47,7 +47,7 @@ Vous devez fournir les éléments suivants pour l’implémentation du modèle 
 - Un objet qui contient les données que le fournisseur envoie à ses observateurs. Le type de cet objet correspond au paramètre de type générique des interfaces <xref:System.IObservable%601> et <xref:System.IObserver%601>. Bien que cet objet puisse être le même que l'implémentation de <xref:System.IObservable%601>, il s'agit généralement d'un type distinct.
 
 > [!NOTE]
-> En plus d’implémenter le modèle de design Observateur, vous pouvez être intéressé par l’exploration des bibliothèques générées à l’aide des interfaces <xref:System.IObservable%601> et <xref:System.IObserver%601>. Par exemple, les [Extensions réactives pour .NET (Rx)](https://docs.microsoft.com/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)) se composent d’un ensemble de méthodes d’extension et d’opérateurs de séquence standard LINQ pour prendre en charge la programmation asynchrone.
+> En plus d’implémenter le modèle de design Observateur, vous pouvez être intéressé par l’exploration des bibliothèques générées à l’aide des interfaces <xref:System.IObservable%601> et <xref:System.IObserver%601>. Par exemple, les [Extensions réactives pour .NET (Rx)](/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)) se composent d’un ensemble de méthodes d’extension et d’opérateurs de séquence standard LINQ pour prendre en charge la programmation asynchrone.
 
 ## <a name="implementing-the-pattern"></a>Implémentation du modèle
 
@@ -92,7 +92,7 @@ L'exemple suivant contient le point d'entrée de l'application qui instancie la 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
 |[Meilleures pratiques du modèle de design observateur](observer-design-pattern-best-practices.md)|Décrit les meilleures pratiques à adopter lors du développement d'applications qui implémentent le modèle de design Observateur.|
 |[Comment : implémenter un fournisseur](how-to-implement-a-provider.md)|Fournit une implémentation pas à pas d'un fournisseur pour une application de surveillance de la température.|

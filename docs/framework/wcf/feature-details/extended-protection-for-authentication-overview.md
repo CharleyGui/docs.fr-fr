@@ -2,12 +2,12 @@
 title: Vue d'ensemble de la protection étendue de l'authentification
 ms.date: 03/30/2017
 ms.assetid: 3d2ceffe-a7bf-4bd9-a5a2-9406423bd7f8
-ms.openlocfilehash: 400bf7987b5fcd4ec75628d19a30739dd5f23b08
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: fdc42228077bbc703e2e7557c8d7fdb3ff57a150
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964601"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559263"
 ---
 # <a name="extended-protection-for-authentication-overview"></a>Vue d'ensemble de la protection étendue de l'authentification
 La protection étendue de l'authentification contribue à la protection contre les attaques de l'intercepteur (« man-in-the-middle ») au cours desquelles un intrus intercepte les informations d'identification d'un client et les transmet à un serveur.  
@@ -26,7 +26,7 @@ La protection étendue de l'authentification contribue à la protection contre l
   
 - Aucun. Aucune validation de liaison de canal n’est exécutée. Il s'agit du comportement de tous les serveurs qui n'ont pas été mis à jour.  
   
-- Partiel. Tous les clients qui ont été mis à jour doivent fournir les informations de liaison de canal au serveur. Les clients qui n'ont pas été mis à jour n'ont pas à le faire. Il s'agit d'une option intermédiaire qui permet la compatibilité des applications.  
+- Partial. Tous les clients qui ont été mis à jour doivent fournir les informations de liaison de canal au serveur. Les clients qui n'ont pas été mis à jour n'ont pas à le faire. Il s'agit d'une option intermédiaire qui permet la compatibilité des applications.  
   
 - Complet. Tous les clients doivent fournir des informations de liaison de canal. Le serveur rejette les demandes d'authentification émanant des clients qui ne se soumettent pas à cette obligation.  
   
@@ -34,4 +34,4 @@ La protection étendue de l'authentification contribue à la protection contre l
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

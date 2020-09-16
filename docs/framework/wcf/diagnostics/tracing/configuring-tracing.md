@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: 55d701ee6769099698d2fd869a1502d94237b5a8
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 7b0cc58975ee145e5234adf51e24109898853e1c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245347"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558899"
 ---
 # <a name="configuring-tracing"></a>Configuration du traçage
 Cette rubrique décrit comment activer le suivi, configurer des sources de suivi pour émettre des suivis et définir des niveaux de suivi, définir le suivi et la propagation d'activité afin de prendre en charge la corrélation de suivi de bout en bout, et définir des écouteurs de suivi pour accéder aux suivis.  
@@ -143,7 +143,7 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
   
  Vous pouvez configurer un écouteur de suivi personnalisé pour envoyer des suivis sur le câble, par exemple à une base de données distante. En tant que responsable du déploiement d'applications, vous devez appliquer un contrôle d'accès approprié sur les journaux de suivi sur l'ordinateur distant.  
   
- Vous pouvez également configurer un écouteur de suivi par programmation. Pour plus d’informations, consultez [Comment : créer et initialiser des écouteurs de suivi](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md) et [créer un TraceListener personnalisé](https://docs.microsoft.com/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics).  
+ Vous pouvez également configurer un écouteur de suivi par programmation. Pour plus d’informations, consultez [Comment : créer et initialiser des écouteurs de suivi](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md) et [créer un TraceListener personnalisé](/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics).  
   
 > [!CAUTION]
 > `System.Diagnostics.XmlWriterTraceListener` n'étant pas thread-safe, la source de suivi peut verrouiller des ressources exclusivement lors de la sortie de suivis. Lorsque de nombreux threads sortent des suivis vers une source de suivi configurée pour utiliser cet écouteur, un conflit de ressource peut se produire, provoquant une dégradation significative des performances. Pour résoudre ce problème, vous devez implémenter un écouteur personnalisé thread-safe.  
@@ -155,7 +155,7 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
 |-----------------|----------------------------------|-----------------------------------|--------------------|-----------------|  
 |Désactivé|N/A|N/A|Aucun suivi n'est émis.|N/A|  
 |Critique|Événements « négatifs » : événements qui indiquent un traitement inattendu ou une condition d’erreur.||Les exceptions non prises en charge, notamment les suivantes, sont enregistrées :<br /><br /> -OutOfMemoryException<br />-ThreadAbortException (le CLR appelle tout ThreadAbortExceptionHandler)<br />-StackOverflowException (ne peut pas être intercepté)<br />-ConfigurationErrorsException<br />-SEHException<br />-Erreurs de démarrage de l’application<br />-Événements FailFast<br />-Blocage du système<br />-Messages incohérents : suivis des messages qui provoquent l’échec de l’application.|Administrateurs<br /><br /> Développeurs d’applications|  
-|Erreur|Événements « négatifs » : événements qui indiquent un traitement inattendu ou une condition d’erreur.|Un traitement inattendu s'est produit. L’application n’a pas pu effectuer une tâche comme prévu. Toutefois, l'application s'exécute encore.|Toutes les exceptions sont enregistrées.|Administrateurs<br /><br /> Développeurs d’applications|  
+|Error|Événements « négatifs » : événements qui indiquent un traitement inattendu ou une condition d’erreur.|Un traitement inattendu s'est produit. L’application n’a pas pu effectuer une tâche comme prévu. Toutefois, l'application s'exécute encore.|Toutes les exceptions sont enregistrées.|Administrateurs<br /><br /> Développeurs d’applications|  
 |Avertissement|Événements « négatifs » : événements qui indiquent un traitement inattendu ou une condition d’erreur.|Un problème possible s'est produit ou peut se produire, mais l'application fonctionne encore correctement. Toutefois, elle risque de ne plus fonctionner correctement.|-L’application reçoit davantage de demandes que ses paramètres de limitation autorisent.<br />-La file d’attente de réception est proche de sa capacité maximale configurée.<br />-Dépassement du délai d’attente.<br />-Les informations d’identification sont rejetées.|Administrateurs<br /><br /> Développeurs d’applications|  
 |Information|Événements « positifs » : événements qui marquent des jalons réussis|Jalons importants et atteints relatifs à l'exécution d'application, indépendamment du fonctionnement correct de l'application.|En général, des messages d'aide au contrôle et au diagnostic de l'état système, à la mesure des performances ou au profilage sont générés. Vous pouvez utiliser ces informations pour la planification de capacité et la gestion des performances :<br /><br /> -Les canaux sont créés.<br />-Les écouteurs de point de terminaison sont créés.<br />-Le message entre/quitte le transport.<br />-Le jeton de sécurité est récupéré.<br />-Le paramètre de configuration est lu.|Administrateurs<br /><br /> Développeurs d’applications<br /><br /> Développeurs de produits.|  
 |Commentaires|Événements « positifs » : événements qui marquent des jalons réussis.|Les événements de bas niveau pour le code utilisateur et la maintenance sont émis.|En général, vous pouvez utiliser ce niveau pour le débogage ou l'optimisation d'application.<br /><br /> -En-tête de message compris.|Administrateurs<br /><br /> Développeurs d’applications<br /><br /> Développeurs de produits.|  
@@ -185,5 +185,5 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
 
 - [Suivi](index.md)
 - [Administration et diagnostics](../index.md)
-- [Comment : créer et initialiser les écouteurs de la trace](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md)
-- [Création d'un TraceListener personnalisé](https://docs.microsoft.com/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics)
+- [Procédure : Créer et initialiser les écouteurs de trace](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md)
+- [Création d'un TraceListener personnalisé](/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics)

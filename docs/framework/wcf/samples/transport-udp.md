@@ -2,12 +2,12 @@
 title: 'Transport : UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: 44e47dd2d291ffc27d1777a04b645d57984919cd
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: dcf2d9896ab7c95101e224521174b54c88ca3fc2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591434"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558999"
 ---
 # <a name="transport-udp"></a>Transport : UDP
 L’exemple de transport UDP montre comment implémenter la monodiffusion et la multidiffusion UDP comme un transport Windows Communication Foundation (WCF) personnalisé. L’exemple décrit la procédure recommandée pour créer un transport personnalisé dans WCF, en utilisant l’infrastructure de canal et les meilleures pratiques WCF suivantes. Les étapes de la création d'un transport personnalisé sont les suivantes :  
@@ -141,7 +141,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
  Il contient également des membres permettant de cloner `BindingElement` et de retourner notre schéma (soap.udp).  
   
 ## <a name="adding-metadata-support-for-a-transport-binding-element"></a>Ajout de la prise en charge des métadonnées pour un élément de liaison de transport  
- Pour intégrer notre transport dans le système de métadonnées, nous devons prendre à la fois en charge l'importation et l'exportation de stratégie. Cela nous permet de générer des clients de notre liaison via l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
+ Pour intégrer notre transport dans le système de métadonnées, nous devons prendre à la fois en charge l'importation et l'exportation de stratégie. Cela nous permet de générer des clients de notre liaison via l' [outil ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ### <a name="adding-wsdl-support"></a>Ajout de la prise en charge WSDL  
  L’élément de liaison de transport d’une liaison est chargé d’exporter et d’importer les informations d’adressage dans les métadonnées. Lors de l'utilisation d'une liaison SOAP, l'élément de liaison de transport doit également exporter un URI de transport correct dans les métadonnées.  
@@ -185,7 +185,7 @@ if (soapBinding != null)
   
  Lorsque vous exécutez Svcutil.exe, deux méthodes permettent de faire en sorte que Svcutil.exe charge les extensions d’importation WSDL :  
   
-1. Pointez Svcutil. exe vers notre fichier de configuration à l’aide du en utilisant/svcutilConfig : \<file> .  
+1. Pointez Svcutil.exe vers notre fichier de configuration à l’aide du en utilisant/svcutilConfig : \<file> .  
   
 2. Ajoutez la section de configuration à Svcutil.exe.config dans le répertoire où se trouve Svcutil.exe.  
   
@@ -247,7 +247,7 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
   
  Puis nous implémentons `IPolicyImporterExtension` à partir de la classe enregistrée (`UdpBindingElementImporter`). Dans `ImportPolicy()`, nous examinons les assertions dans notre espace de noms, puis traitons celles permettant de générer le transport et vérifions s'il est multicast. Nous devons également supprimer les assertions que nous gérons de la liste des assertions de liaison. Une fois encore, il existe deux méthodes d'intégration possibles lorsque vous exécutez Svcutil.exe :  
   
-1. Pointez Svcutil. exe vers notre fichier de configuration à l’aide du en utilisant/svcutilConfig : \<file> .  
+1. Pointez Svcutil.exe vers notre fichier de configuration à l’aide du en utilisant/svcutilConfig : \<file> .  
   
 2. Ajoutez la section de configuration à Svcutil.exe.config dans le répertoire où se trouve Svcutil.exe.  
   
@@ -394,7 +394,7 @@ protected override void OnApplyConfiguration(string configurationName)
 ```  
   
 ## <a name="the-udp-test-service-and-client"></a>Client et service de test UDP  
- Le code de test permettant d'utiliser cet exemple de transport est disponible dans les répertoires UdpTestService et UdpTestClient. Le code de service se compose de deux tests : le premier définit les liaisons et les points de terminaison à partir du code, et le deuxième le fait via la configuration. Ces deux tests utilisent deux points de terminaison. Un point de terminaison utilise la `SampleUdpProfileBinding` avec la [\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) valeur `true` . L'autre utilise une liaison personnalisée avec `UdpTransportBindingElement`. Cela équivaut à utiliser `SampleUdpProfileBinding` avec avec la [\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) valeur `false` . Ces deux tests créent un service, ajoutent  un point de terminaison pour chaque liaison, ouvrent le service, puis attendent que l'utilisateur tape ENTER avant de fermer le service.  
+ Le code de test permettant d'utiliser cet exemple de transport est disponible dans les répertoires UdpTestService et UdpTestClient. Le code de service se compose de deux tests : le premier définit les liaisons et les points de terminaison à partir du code, et le deuxième le fait via la configuration. Ces deux tests utilisent deux points de terminaison. Un point de terminaison utilise la `SampleUdpProfileBinding` avec la [\<reliableSession>](/previous-versions/ms731375(v=vs.90)) valeur `true` . L'autre utilise une liaison personnalisée avec `UdpTransportBindingElement`. Cela équivaut à utiliser `SampleUdpProfileBinding` avec avec la [\<reliableSession>](/previous-versions/ms731375(v=vs.90)) valeur `false` . Ces deux tests créent un service, ajoutent  un point de terminaison pour chaque liaison, ouvrent le service, puis attendent que l'utilisateur tape ENTER avant de fermer le service.  
   
  Lorsque vous démarrez l'application de test de service, la sortie suivante doit s'afficher.  
   

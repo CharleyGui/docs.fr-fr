@@ -14,16 +14,16 @@ helpviewer_keywords:
 - TargetType attribute [XAML Services]
 - Type markup extension in XAML [XAML Services]
 ms.assetid: e0e0ce6f-e873-49c7-8ad7-8b840eb353ec
-ms.openlocfilehash: f75d4e30dc41bbce995e466466c96c1a2830949b
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: 00e6684f6ad1eb8d96f72f49bd5e0d211c8166c3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "82071359"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559068"
 ---
 # <a name="xtype-markup-extension"></a>x:Type, extension de balisage
 
-Fournit l’objet CLR <xref:System.Type> qui est le type sous-jacent pour un type XAML spécifié.
+Fournit l' <xref:System.Type> objet CLR qui est le type sous-jacent pour un type XAML spécifié.
 
 ## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML
 
@@ -41,52 +41,52 @@ Fournit l’objet CLR <xref:System.Type> qui est le type sous-jacent pour un typ
 
 |||
 |-|-|
-|`prefix`|facultatif. Un préfixe qui cartographie un espace de nom XAML non par défaut. Spécifier un préfixe n’est souvent pas nécessaire. Consultez la section Notes.|
-|`typeNameValue`|Obligatoire. Un nom de type résolvable à l’espace de nom XAML par défaut actuel; ou le préfixe `prefix` cartographié spécifié s’il est fourni.|
+|`prefix`|Optionnel. Préfixe qui mappe un espace de noms XAML non défini par défaut. La spécification d’un préfixe n’est souvent pas nécessaire. Consultez la section Notes.|
+|`typeNameValue`|Obligatoire. Nom de type pouvant être résolu dans l’espace de noms XAML par défaut actuel ; ou le préfixe mappé spécifié si `prefix` est fourni.|
 
 ## <a name="remarks"></a>Notes
 
-L’extension `x:Type` de balisage `typeof()` a une fonction `GetType` similaire à celle de l’opérateur dans C ou l’opérateur de Microsoft Visual Basic.
+L' `x:Type` extension de balisage a une fonction similaire à l' `typeof()` opérateur en C# ou à l' `GetType` opérateur dans Microsoft Visual Basic.
 
-L’extension `x:Type` de balisage fournit un comportement de <xref:System.Type>conversion à partir de la corde pour les propriétés qui prennent le type . L’entrée est un type XAML. La relation entre le type XAML <xref:System.Type> d’entrée <xref:System.Type> et <xref:System.Xaml.XamlType.UnderlyingType%2A> le CLR de sortie est que la sortie est l’entrée, <xref:System.Xaml.XamlType>après avoir examiné le nécessaire <xref:System.Xaml.XamlType> basé sur le contexte schéma XAML et le <xref:System.Windows.Markup.IXamlTypeResolver> service que le contexte fournit.
+L' `x:Type` extension de balisage fournit un comportement de conversion à partir d’une chaîne pour les propriétés qui prennent le type <xref:System.Type> . L’entrée est un type XAML. La relation entre le type XAML d’entrée et le CLR <xref:System.Type> de sortie est que la sortie <xref:System.Type> est le <xref:System.Xaml.XamlType.UnderlyingType%2A> de l’entrée <xref:System.Xaml.XamlType> , après avoir cherché le nécessaire <xref:System.Xaml.XamlType> en fonction du contexte de schéma XAML et du <xref:System.Windows.Markup.IXamlTypeResolver> service fourni par le contexte.
 
-Dans .NET XAML Services, la manipulation de cette <xref:System.Windows.Markup.TypeExtension> extension de balisage est définie par la classe.
+Dans les services XAML .NET, la gestion de cette extension de balisage est définie par la <xref:System.Windows.Markup.TypeExtension> classe.
 
-Dans des implémentations <xref:System.Type> de cadres spécifiques, certaines propriétés qui prennent comme `Name`valeur peuvent accepter directement le nom du type (la valeur de la chaîne du type). Cependant, la mise en œuvre de ce comportement est un scénario complexe. Pour des exemples, consultez la section « Notes d’utilisation du FMM » qui suit.
+Dans les implémentations d’infrastructure spécifiques, certaines propriétés qui prennent <xref:System.Type> comme valeur peuvent accepter directement le nom du type (la valeur de chaîne du type `Name` ). Toutefois, l’implémentation de ce comportement est un scénario complexe. Pour obtenir des exemples, consultez la section « Remarques sur l’utilisation de WPF » qui suit.
 
-La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d’identificateur `x:Type` est assigné en tant que valeur <xref:System.Windows.Markup.TypeExtension.TypeName%2A> de la classe d’extension <xref:System.Windows.Markup.TypeExtension> sous-jacente. Dans le contexte de schéma XAML par défaut pour .NET XAML Services, qui est <xref:System.Reflection.MemberInfo.Name%2A> basé sur les types <xref:System.Reflection.MemberInfo.Name%2A> CLR, la valeur de cet attribut est soit le type souhaité, ou contient celui précédé d’un préfixe pour une cartographie sans défaut XAML namespace.
+La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d’identificateur `x:Type` est assigné en tant que valeur <xref:System.Windows.Markup.TypeExtension.TypeName%2A> de la classe d’extension <xref:System.Windows.Markup.TypeExtension> sous-jacente. Dans le contexte de schéma XAML par défaut pour les services XAML .NET, qui est basé sur les types CLR, la valeur de cet attribut est le <xref:System.Reflection.MemberInfo.Name%2A> du type souhaité ou contient ce qui est <xref:System.Reflection.MemberInfo.Name%2A> précédé d’un préfixe pour un mappage d’espace de noms XAML autre que celui par défaut.
 
-L’extension `x:Type` de balisage peut être utilisée dans la syntaxe d’élément d’objet. Dans ce cas, il est <xref:System.Windows.Markup.TypeExtension.TypeName%2A> nécessaire de préciser la valeur de la propriété pour initialiser correctement l’extension.
+L' `x:Type` extension de balisage peut être utilisée dans la syntaxe d’élément objet. Dans ce cas, la spécification de la valeur de la <xref:System.Windows.Markup.TypeExtension.TypeName%2A> propriété est requise pour initialiser correctement l’extension.
 
-L’extension `x:Type` de balisage peut également être utilisée comme attribut verbeux; toutefois, cette utilisation n’est pas typique :`<object property="{x:Type TypeName=typeNameValue}" .../>`
+L' `x:Type` extension de balisage peut également être utilisée en tant qu’attribut détaillé ; Toutefois, cette utilisation n’est pas courante : `<object property="{x:Type TypeName=typeNameValue}" .../>`
 
 ## <a name="wpf-usage-notes"></a>Remarques sur l'utilisation de WPF
 
-### <a name="default-xaml-namespace-and-type-mapping"></a>Par défaut XAML Namespace et Type Mapping
+### <a name="default-xaml-namespace-and-type-mapping"></a>Mappage de type et espace de noms XAML par défaut
 
-L’espace de nom XAML par défaut pour la programmation WPF contient la plupart des types XAML dont vous avez besoin pour des scénarios XAML typiques; par conséquent, vous pouvez souvent éviter les préfixes lors du référencement des valeurs de type XAML. Vous devrez peut-être cartographier un préfixe si vous faites référence à un type d’assemblage personnalisé ou pour les types qui existent dans un assemblage WPF, mais qui proviennent d’un espace de nom CLR qui n’a pas été cartographié pour l’espace de nom XAML par défaut. Pour plus d’informations sur les préfixes, les espaces nominaux XAML et la cartographie des espaces nominaux CLR, voir [XAML Namespaces et Namespace Mapping pour WPF XAML](../../framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).
+L’espace de noms XAML par défaut pour la programmation WPF contient la plupart des types XAML dont vous avez besoin pour les scénarios XAML standard. par conséquent, vous pouvez souvent éviter des préfixes lors du référencement de valeurs de type XAML. Vous devrez peut-être mapper un préfixe si vous référencez un type à partir d’un assembly personnalisé ou pour des types qui existent dans un assembly WPF, mais qu’ils proviennent d’un espace de noms CLR qui n’a pas été mappé à l’espace de noms XAML par défaut. Pour plus d’informations sur les préfixes, les espaces de noms XAML et le mappage des espaces de noms CLR, consultez [espaces de noms XAML et mappage d’espace de noms pour XAML WPF](/dotnet/desktop/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml).
 
-### <a name="type-properties-that-support-typename-as-string"></a>Propriétés de type qui prennent en charge Typename-as-String
+### <a name="type-properties-that-support-typename-as-string"></a>Propriétés de type qui prennent en charge TypeName-As-String
 
-WPF prend en charge les techniques qui <xref:System.Type> permettent de `x:Type` spécifier la valeur de certaines propriétés de type sans nécessiter une utilisation d’extension de balisage. Au lieu de cela, vous pouvez spécifier la valeur comme une chaîne qui nomme le type. Exemples de <xref:System.Windows.Controls.ControlTemplate.TargetType%2A?displayProperty=nameWithType> <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>ceci sont et . Le soutien à ce comportement n’est pas fourni par des convertisseurs de type ou des extensions de balisage. Au lieu de cela, il <xref:System.Windows.FrameworkElementFactory>s’agit d’un comportement de report mis en œuvre par .
+WPF prend en charge les techniques qui permettent de spécifier la valeur de certaines propriétés de type <xref:System.Type> sans nécessiter une `x:Type` utilisation d’extension de balisage. Au lieu de cela, vous pouvez spécifier la valeur sous la forme d’une chaîne qui nomme le type. Voici des exemples <xref:System.Windows.Controls.ControlTemplate.TargetType%2A?displayProperty=nameWithType> : et <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType> . La prise en charge de ce comportement n’est pas assurée par le biais de convertisseurs de type ou d’extensions de balisage. Au lieu de cela, il s’agit d’un comportement de report implémenté via <xref:System.Windows.FrameworkElementFactory> .
 
-Silverlight soutient une convention similaire. En fait, Silverlight ne `{x:Type}` prend pas actuellement en charge dans `{x:Type}` son support linguistique XAML, et n’accepte pas les utilisations en dehors de quelques circonstances qui sont destinées à soutenir la migration WPF-Silverlight XAML. Par conséquent, le comportement de typename-as-string est intégré à <xref:System.Type> toute évaluation de propriété indigène de Silverlight où un est la valeur.
+Silverlight prend en charge une convention similaire. En fait, Silverlight ne prend pas en charge actuellement `{x:Type}` dans sa prise en charge du langage XAML et n’accepte pas les `{x:Type}` utilisations en dehors de quelques circonstances qui sont destinées à prendre en charge la migration XAML WPF-Silverlight. Par conséquent, le comportement de type TypeName-As-String est intégré à toutes les évaluations de propriétés natives Silverlight où a <xref:System.Type> est la valeur.
 
 ## <a name="xaml-2009"></a>XAML 2009
 
-XAML 2009 fournit un support supplémentaire pour les `x:TypeArguments` `x:Type` types génériques et modifie le comportement des fonctionnalités et de fournir ce support.
+XAML 2009 fournit une prise en charge supplémentaire pour les types génériques et modifie le comportement de la fonctionnalité de `x:TypeArguments` et `x:Type` pour fournir cette prise en charge.
 
-- `x:TypeArguments`et l’élément objet associé pour une instantanéisation d’objet générique peut être sur des éléments autres que la racine. Pour plus d’informations, voir la section "XAML 2009" de [la directive x:TypeArguments](xtypearguments-directive.md).
+- `x:TypeArguments` et l’élément objet associé pour une instanciation d’objet générique peut être sur des éléments autres que la racine. Pour plus d’informations, consultez la section « XAML 2009 » de [la directive x :TypeArguments](xtypearguments-directive.md).
 
-- XAML 2009 prend en charge une syntaxe pour spécifier la contrainte d’un type générique dans la balisage. Cela peut être `x:TypeArguments`utilisé `x:Type`par , par , ou par les deux caractéristiques en combinaison.
+- XAML 2009 prend en charge une syntaxe pour spécifier la contrainte d’un type générique dans le balisage. Cela peut être utilisé par `x:TypeArguments` , par `x:Type` ou par les deux fonctionnalités en combinaison.
 
-- WPF XAML implémentation lors du traitement XAML 2009 pour la charge ajoute <xref:System.Type>également cette capacité au comportement implicite de conversion de type pour certaines propriétés-cadres qui utilisent le type .
+- L’implémentation XAML WPF lors du traitement du code XAML 2009 pour le chargement ajoute également cette fonctionnalité au comportement de conversion de type implicite pour certaines propriétés de l’infrastructure qui utilisent le type <xref:System.Type> .
 
-Dans WPF, vous pouvez utiliser les fonctionnalités XAML 2009 mais uniquement pour XAML (XAML en vrac qui n’est pas compilée). Le code XAML compilé par balisage pour WPF et la forme BAML du code XAML ne prennent actuellement pas en charge les mots clés et les fonctionnalités XAML 2009.
+Dans WPF, vous pouvez utiliser les fonctionnalités XAML 2009, mais uniquement pour le XAML libre (XAML qui n’est pas compilé par balisage). Le code XAML compilé par balisage pour WPF et la forme BAML du code XAML ne prennent actuellement pas en charge les mots clés et les fonctionnalités XAML 2009.
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Style>
-- [Application d’un style et création de modèles](../fundamentals/styles-templates-overview.md)
+- [Application d'un style et création de modèles](../fundamentals/styles-templates-overview.md)
 - [Vue d’ensemble du langage XAML (WPF)](../fundamentals/xaml.md)
-- [Extensions de balisage et XAML WPF](../../framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [Extensions de balisage et XAML WPF](/dotnet/desktop/wpf/advanced/markup-extensions-and-wpf-xaml)

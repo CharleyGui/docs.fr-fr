@@ -11,12 +11,12 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-ms.openlocfilehash: 2761d17846009ba06a2ffb1fc58b430f3ec9a949
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 2f7da6bd967abce8c2fefdc54a0043b5505e22e3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662717"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558938"
 ---
 # <a name="file-and-stream-io"></a>Fichier et flux de données E/S
 
@@ -46,7 +46,7 @@ Vous devez toujours fournir une gestion des exceptions robuste lors de l’appel
 
 En plus d'utiliser ces classes, les utilisateurs de Visual Basic peuvent utiliser les méthodes et les propriétés fournies par la classe <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> pour l'E/S de fichier.
 
-Voir [Comment : copier des répertoires](how-to-copy-directories.md), [Comment : créer une liste de répertoires](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100)) et [Comment : énumérer des répertoires et des fichiers](how-to-enumerate-directories-and-files.md).
+Voir [Comment : copier des répertoires](how-to-copy-directories.md), [Comment : créer une liste de répertoires](/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100)) et [Comment : énumérer des répertoires et des fichiers](how-to-enumerate-directories-and-files.md).
 
 ## <a name="streams"></a>Flux
 
@@ -128,7 +128,7 @@ Voir [Comment : compresser et extraire des fichiers](how-to-compress-and-extrac
 
 Le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. Le stockage fournit un système de fichiers virtuel qui est isolé par utilisateur, assembly et (éventuellement) domaine. Le stockage isolé est particulièrement utile lorsque votre application n'a pas l'autorisation d'accès aux fichiers utilisateur. Enregistrez les paramètres ou les fichiers de votre application d'une façon contrôlée par la stratégie de sécurité de l'ordinateur.
 
-Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store ; au lieu de cela, utilisez les classes de données d’application dans l' <xref:Windows.Storage?displayProperty=nameWithType> espace de noms. Pour plus d’informations, consultez [Données de l’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29).
+Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store ; au lieu de cela, utilisez les classes de données d’application dans l' <xref:Windows.Storage?displayProperty=nameWithType> espace de noms. Pour plus d’informations, consultez [Données de l’application](/previous-versions/windows/apps/hh464917(v=win.10)).
 
 Les classes suivantes sont fréquemment utilisées lors d'une implémentation de stockage isolé :
 
@@ -148,7 +148,7 @@ Voici quelques différences importantes à noter lors de l’utilisation d’op�
 
 - Les types spécifiquement associés à des opérations de fichier, tels que <xref:System.IO.File> , <xref:System.IO.FileInfo> <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo> , ne sont pas inclus dans .net pour les applications du Windows 8. x Store. À la place, utilisez les types dans l’espace de noms <xref:Windows.Storage?displayProperty=nameWithType> de Windows Runtime, par exemple <xref:Windows.Storage.StorageFile> et <xref:Windows.Storage.StorageFolder>.
 
-- Le stockage isolé n'est pas disponible ; à la place, utilisez les [données d'application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)).
+- Le stockage isolé n'est pas disponible ; à la place, utilisez les [données d'application](/previous-versions/windows/apps/hh464917(v=win.10)).
 
 - Utilisez les méthodes asynchrones, telles que <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A> pour empêcher le blocage du thread d'interface utilisateur.
 
@@ -156,13 +156,13 @@ Voici quelques différences importantes à noter lors de l’utilisation d’op�
 
 Vous pouvez convertir entre les flux .NET Framework et les flux Windows Runtime, si nécessaire. Pour plus d’informations, consultez [Comment : effectuer une conversion entre des flux de .NET Framework et des flux de Windows Runtime](how-to-convert-between-dotnet-streams-and-winrt-streams.md) ou <xref:System.IO.WindowsRuntimeStreamExtensions> .
 
-Pour plus d’informations sur les opérations d’e/s dans une application du Windows 8. x Store, consultez [démarrage rapide : lecture et écriture de fichiers](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)).
+Pour plus d’informations sur les opérations d’e/s dans une application du Windows 8. x Store, consultez [démarrage rapide : lecture et écriture de fichiers](/previous-versions/windows/apps/hh758325(v=win.10)).
 
 ## <a name="io-and-security"></a>E/S et sécurité
 
 Lorsque vous utilisez les classes de l’espace de noms <xref:System.IO?displayProperty=nameWithType>, vous devez suivre les exigences de sécurité du système d’exploitation telles que les listes de contrôle d’accès (ACL) pour contrôler l’accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](how-to-add-or-remove-access-control-list-entries.md).
 
-Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. Au lieu de cela, utilisez le [stockage isolé](isolated-storage.md) pour les applications de .NET Framework traditionnelles ou utilisez les [données d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) pour les applications du Windows 8. x Store.
+Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. Au lieu de cela, utilisez le [stockage isolé](isolated-storage.md) pour les applications de .NET Framework traditionnelles ou utilisez les [données d’application](/previous-versions/windows/apps/hh464917(v=win.10)) pour les applications du Windows 8. x Store.
 
 La vérification de sécurité n'est exécutée qu'à la création du flux. Par conséquent, n'ouvrez pas de flux pour le passer ensuite à du code ou à des domaines d'application d'un niveau de sécurité inférieur.
 

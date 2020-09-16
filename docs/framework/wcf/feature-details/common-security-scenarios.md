@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], scenarios
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
-ms.openlocfilehash: f36ebdb5ea248ec8134c688f89eb5d0be38dfe38
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cfd29f8cae8ac362a5fa1709864dce4ae11b5af6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579734"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558886"
 ---
 # <a name="common-security-scenarios"></a>Scénarios de sécurité courants
 Les rubriques de cette section présentent un certain nombre de configurations de sécurité de service et client possibles. Les configurations varient selon un certain nombre de facteurs. Par exemple, si un service ou un client est sur un intranet, ou si la sécurité est fournie par Windows ou un transport (tel que HTTPS).  
@@ -24,7 +24,7 @@ Les rubriques de cette section présentent un certain nombre de configurations d
  [Sécurité de transport avec l'authentification de base](transport-security-with-basic-authentication.md)  
  L'application autorise les clients à se connecter à l'aide de l'authentification personnalisée.  
   
- [Sécurité de transport avec authentification Windows](transport-security-with-windows-authentication.md)  
+ [Sécurité de transport avec l'authentification Windows](transport-security-with-windows-authentication.md)  
  Présente un client/service sécurisé par la sécurité Windows.  
   
  [Sécurité de transport avec un client anonyme](transport-security-with-an-anonymous-client.md)  
@@ -69,7 +69,7 @@ Les rubriques de cette section présentent un certain nombre de configurations d
   
  [Liaisons et sécurité](bindings-and-security.md)  
   
- [Securing Services and Clients](securing-services-and-clients.md)  
+ [Sécurisation des services et des clients](securing-services-and-clients.md)  
   
  [Authentification](authentication-in-wcf.md)  
   
@@ -82,4 +82,4 @@ Les rubriques de cette section présentent un certain nombre de configurations d
 ## <a name="see-also"></a>Voir aussi
 
 - [Aide sur la sécurité et meilleures pratiques](security-guidance-and-best-practices.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

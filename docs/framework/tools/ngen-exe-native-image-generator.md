@@ -19,12 +19,12 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-ms.openlocfilehash: ae86aed773a9a13f102b1ad111cac5a3ee563508
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 12ef6724a76ec59bd412427a0a353565b1be2c8e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517267"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558415"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (Native Image Generator)
 
@@ -56,13 +56,13 @@ Sur Windows 8, consultez [Tâche d’image native](#native-image-task).
 Pour plus d’informations sur l’utilisation de Ngen.exe et du service d’images natives, consultez [Service d’images natives](#native-image-service).
 
 > [!NOTE]
-> Vous trouverez la syntaxe de Ngen.exe pour les versions 1.0 et 1.1 du .NET Framework dans [Syntaxe héritée du générateur d’images natives (Ngen.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms165073(v=vs.100)).
+> Vous trouverez la syntaxe de Ngen.exe pour les versions 1.0 et 1.1 du .NET Framework dans [Syntaxe héritée du générateur d’images natives (Ngen.exe)](/previous-versions/dotnet/netframework-4.0/ms165073(v=vs.100)).
 
 Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 À l'invite de commandes, tapez :
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Syntaxe
 
 ```console
 ngen action [options]
@@ -82,7 +82,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Supprimer les images natives d'un assembly et ses dépendances du cache des images natives.<br /><br /> Pour désinstaller une seule image et ses dépendances, utilisez les mêmes arguments de ligne de commande que ceux utilisés pour installer l’image. **Remarque :**  À partir du .NET Framework 4, l’action `uninstall` * n’est plus prise en charge.|
 |`update` [`/queue`]|Mettre à jour des images natives qui sont devenues non valides.<br /><br /> Si `/queue` est spécifié, les mises à jour sont mises en file d'attente pour le service d'images natives. Les mises à jour sont toujours planifiées à la priorité 3, de sorte qu'elles s'exécutent lorsque l'ordinateur est inactif.|
 |`display` [`assemblyName` &#124; `assemblyPath`]|Afficher l'état des images natives pour un assembly et ses dépendances.<br /><br /> Si aucun argument n’est fourni, tout dans le cache des images natives est affiché.|
-|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> -ou-<br /><br /> `eqi` [1&#124;2&#124;3]|Exécuter les travaux de compilation en attente.<br /><br /> Si une priorité est spécifiée, les travaux de compilation présentant une priorité supérieure ou égale sont exécutés. Si aucune priorité n'est spécifiée, tous les travaux de compilation en attente sont exécutés.|
+|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> - ou -<br /><br /> `eqi` [1&#124;2&#124;3]|Exécuter les travaux de compilation en attente.<br /><br /> Si une priorité est spécifiée, les travaux de compilation présentant une priorité supérieure ou égale sont exécutés. Si aucune priorité n'est spécifiée, tous les travaux de compilation en attente sont exécutés.|
 |`queue` {`pause` &#124; `continue` &#124; `status`}|Suspendre le service d'images natives, reprendre le service suspendu ou interroger l'état du service.|
 
 <a name="ArgumentTable"></a>
@@ -98,7 +98,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 
 ## <a name="priority-levels"></a>Niveaux de priorité
 
-|Priority|Description|
+|Priorité|Description|
 |--------------|-----------------|
 |`1`|Les images natives sont générées et installées immédiatement, sans attendre la durée d'inactivité.|
 |`2`|Les images natives sont générées et installées sans attendre la durée d'inactivité, mais après la fin de toutes les actions de priorité 1 (et de leurs dépendances).|
@@ -134,7 +134,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |`/verbose`|Afficher des informations détaillées sur le débogage. **Remarque :** En raison des limitations du système d'exploitation, cette option n'affiche pas autant d'informations supplémentaires sur Windows 98 et Windows Millennium.|
 |`/help`, `/?`|Afficher la syntaxe de commande et les options de la version actuelle.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Pour exécuter Ngen.exe, vous devez disposer de privilèges d'administrateur.
 
@@ -395,7 +395,7 @@ Ngen.exe enregistre ces informations lorsqu'il génère une image native. Lorsqu
 
 <a name="Troubleshooting"></a>
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Les rubriques de résolution de problèmes suivantes vous permettent d’identifier les images natives qui sont utilisées par votre application et celles qui ne le peuvent pas, de déterminer quand le compilateur JIT commence à compiler une méthode, et montrent comment désactiver la compilation d’images natives des méthodes spécifiées.
 
@@ -462,7 +462,7 @@ Pour désinstaller une dépendance, utilisez les mêmes options de ligne de comm
 ngen uninstall c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe
 ```
 
-Pour créer une image native d'un assembly dans le Global Assembly Cache, utilisez le nom complet de l'assembly. Par exemple :
+Pour créer une image native d'un assembly dans le Global Assembly Cache, utilisez le nom complet de l'assembly. Exemple :
 
 ```console
 ngen install "ClientApp, Version=1.0.0.0, Culture=neutral,
@@ -567,7 +567,7 @@ La tâche d’image native est enregistrée une seule fois pour chaque architect
 
 |Nom de la tâche|ordinateur 32 bits|Ordinateur 64 bits|
 |---------------|----------------------|----------------------|
-|.NET Framework NGEN v4.0.30319|Oui|Yes|
+|.NET Framework NGEN v4.0.30319|Oui|Oui|
 |NET Framework NGEN v4.0.30319 64|Non|Oui|
 
 La tâche d’image native est disponible dans le .NET Framework 4.5 et versions ultérieures, dans le cadre d’une exécution sur Windows 8 ou version ultérieure. Dans les versions antérieures de Windows, le .NET Framework utilise le [Service d’images natives](#native-image-service).

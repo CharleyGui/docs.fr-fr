@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Self hosted service
 - Self Host Sample [Windows Communication Foundation]
 ms.assetid: 05e68661-1ddf-4abf-a899-9bb1b8272a5b
-ms.openlocfilehash: f5c46bc486e03cf86ada3a565a3c282cd81db286
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 544ae8c0bc88d49c281810714225dbadecfd443b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599943"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558405"
 ---
 # <a name="self-host"></a>Self-Host
 Cet exemple montre comment implémenter un service auto-hébergé dans une application console. Cet exemple est basé sur le [prise en main](getting-started-sample.md). Le fichier de configuration de service Web.config a été renommé App.config et modifié pour configurer une adresse de base que l'hôte utilise. Le code source du service a été modifié pour implémenter une fonction `Main` statique qui crée et ouvre un hôte de service qui fournit l'adresse de base configurée. L'implémentation du service a été modifiée pour écrire la sortie dans la console à chaque opération. Le client n'a été pas modifié, excepté pour configurer l'adresse de point de terminaison correcte du service.  
@@ -77,4 +77,4 @@ public static void Main()
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Hébergement AppFabric et exemples de persistance](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [Hébergement AppFabric et exemples de persistance](/previous-versions/appfabric/ff383418(v=azure.10))

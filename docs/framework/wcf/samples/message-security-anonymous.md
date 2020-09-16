@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: c321cbf9-8c05-4cce-b5a5-4bf7b230ee03
-ms.openlocfilehash: 95101b8ec4f5a7fc60d0233ab6685b5c6851b44e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7ba64f28d621dad51957438025de22827405dd87
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584977"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558665"
 ---
 # <a name="message-security-anonymous"></a>Message Security Anonymous
 Cet exemple montre comment implémenter une application Windows Communication Foundation (WCF) qui utilise la sécurité au niveau du message sans authentification du client, mais qui requiert l’authentification du serveur à l’aide du certificat X. 509 du serveur. Tous les messages d'application échangés entre le client et le serveur sont signés et chiffrés. Cet exemple est basé sur l’exemple [WSHttpBinding](wshttpbinding.md) . Cet exemple se compose d'un programme de console client (.exe) et d'une bibliothèque de service (.dll) hébergés par les services IIS (Internet Information Services). Le service implémente un contrat qui définit un modèle de communication demande-réponse.
@@ -174,7 +174,7 @@ Press <ENTER> to terminate client.
 
 - Octroi d'autorisations sur la clé privée du certificat.
 
-     Les lignes suivantes du fichier de commandes Setup. bat rendent le certificat de serveur stocké dans le magasin LocalMachine accessible au compte du processus de travail ASP.NET.
+     Les lignes suivantes du fichier de commandes Setup.bat rendent le certificat de serveur stocké dans le magasin LocalMachine accessible au compte du processus de travail ASP.NET.
 
     ```bat
     echo ************
@@ -187,7 +187,7 @@ Press <ENTER> to terminate client.
     ```
 
 > [!NOTE]
-> Si vous utilisez une édition non américaine de Windows, vous devez modifier le fichier Setup. bat et remplacer le `NT AUTHORITY\NETWORK SERVICE` nom du compte par votre équivalent régional.
+> Si vous utilisez un non-U. S. Édition anglaise de Windows vous devez modifier le fichier Setup.bat et remplacer le `NT AUTHORITY\NETWORK SERVICE` nom du compte par votre équivalent régional.
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
@@ -199,7 +199,7 @@ Press <ENTER> to terminate client.
 
 1. Assurez-vous que le chemin d’accès contient le dossier dans lequel Makecert.exe et FindPrivateKey.exe se trouvent.
 
-2. Exécutez setup. bat à partir du dossier d’installation de l’exemple dans un Invite de commandes développeur pour Visual Studio exécuter avec des privilèges d’administrateur. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.
+2. Exécutez Setup.bat à partir du dossier d’installation de l’exemple dans une Invite de commandes développeur pour Visual Studio exécuter avec des privilèges d’administrateur. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.
 
     > [!NOTE]
     > Le fichier de commandes d’installation est conçu pour être exécuté à partir d’un Invite de commandes développeur pour Visual Studio. La variable d'environnement PATH doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable d’environnement est définie automatiquement dans un Invite de commandes développeur pour Visual Studio.  
@@ -208,7 +208,7 @@ Press <ENTER> to terminate client.
   
 4. Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
-5. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+5. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
@@ -222,15 +222,15 @@ Press <ENTER> to terminate client.
   
 5. Sur le serveur, exécutez `setup.bat service` dans un invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. `setup.bat`L’exécution avec l' `service` argument crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé service. cer.  
   
-6. Modifiez le fichier Web. config pour refléter le nouveau nom de certificat (dans l' `findValue` attribut de [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), qui est le même que le nom de domaine complet de l’ordinateur.  
+6. Modifiez Web.config pour refléter le nouveau nom de certificat (dans l' `findValue` attribut de [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), qui est le même que le nom de domaine complet de l’ordinateur.  
   
 7. Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.  
   
 8. Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.  
   
-9. Sur le client, exécutez ImportServiceCert. bat dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
+9. Sur le client, exécutez ImportServiceCert.bat dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
   
-10. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   
