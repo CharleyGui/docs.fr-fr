@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 0024b2a53444319788b8cdd312d537f994070b5e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5b566dd89801caff7a253abc2fb62c5fd79591f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614510"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606512"
 ---
 ### <a name="sslstream-supports-tls-alerts"></a>SslStream prend en charge les alertes TLS
 
 #### <a name="details"></a>Détails
 
-Après l’échec d’une négociation TLS, un <xref:System.IO.IOException?displayProperty=fullName> avec une exception <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> interne est levé par la première opération d’E/S de lecture/écriture. Le <xref:System.ComponentModel.Win32Exception.NativeErrorCode?displayProperty=fullName> Code du <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> peut être mappé à l’alerte TLS à partir du tiers distant à l’aide des [codes d’erreur Schannel pour les alertes TLS et SSL](https://docs.microsoft.com/windows/desktop/SecAuthN/schannel-error-codes-for-tls-and-ssl-alerts). Pour plus d’informations, consultez [RFC 2246 : section 7.2.2 alertes d’erreur](https://tools.ietf.org/html/rfc2246#section-7.2.2). <br/>Dans .NET Framework 4.6.2 et les versions antérieures, le comportement est l’expiration du canal de transport (généralement une connexion TCP) pendant une opération de lecture ou d’écriture si l’autre partie n’est pas parvenue à négocier la connexion et l’a rejetée immédiatement après.
+Après l’échec d’une négociation TLS, un <xref:System.IO.IOException?displayProperty=fullName> avec une exception <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> interne est levé par la première opération d’E/S de lecture/écriture. Le <xref:System.ComponentModel.Win32Exception.NativeErrorCode?displayProperty=fullName> Code du <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> peut être mappé à l’alerte TLS à partir du tiers distant à l’aide des [codes d’erreur Schannel pour les alertes TLS et SSL](/windows/desktop/SecAuthN/schannel-error-codes-for-tls-and-ssl-alerts). Pour plus d’informations, consultez [RFC 2246 : section 7.2.2 alertes d’erreur](https://tools.ietf.org/html/rfc2246#section-7.2.2). <br/>Dans .NET Framework 4.6.2 et les versions antérieures, le comportement est l’expiration du canal de transport (généralement une connexion TCP) pendant une opération de lecture ou d’écriture si l’autre partie n’est pas parvenue à négocier la connexion et l’a rejetée immédiatement après.
 
 #### <a name="suggestion"></a>Suggestion
 
@@ -42,7 +42,7 @@ Les applications qui appellent des API d’E/S réseau comme <xref:System.IO.Str
     - Value: "true"
     ```
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   | Edge        |
 | Version | 4,7         |

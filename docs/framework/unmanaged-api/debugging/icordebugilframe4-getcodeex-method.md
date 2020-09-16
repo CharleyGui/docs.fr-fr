@@ -12,12 +12,12 @@ api_type:
 ms.assetid: aeda0e42-29ee-4ca8-9f21-ac4641677a62
 topic_type:
 - apiref
-ms.openlocfilehash: 582e28c18f36b253425b1e0a2034cdd262fddd57
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 06a0a4c788155d6fb909e4537b980f0ba740f21a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213736"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554812"
 ---
 # <a name="icordebugilframe4getcodeex-method"></a>ICorDebugILFrame4::GetCodeEx, méthode
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -40,7 +40,7 @@ HRESULT GetCodeEx(
  `ppCode`  
  à Pointeur vers l’adresse d’un objet « ICorDebugCode » qui représente le code exécuté par ce frame de pile.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Notes  
  Cette méthode est similaire à la méthode [ICorDebugFrame :: GetCode](icordebugframe-getcode-method.md) , à ceci près qu’elle accède éventuellement au code défini par la requête ReJIT du profileur. L’appel de cette méthode avec une `flags` valeur `ILCODE_ORIGINAL_IL` équivaut à l’appel de [GetCode](icordebugframe-getcode-method.md); si la méthode est INSTRUMENTée, son il n’est pas accessible. `ILCODE_REJIT_IL` permet au débogueur d'accéder au langage intermédiaire défini par la demande ReJIT du profileur. Si le langage intermédiaire n’est pas instrumenté, `ppCode` a la **valeur null**et la méthode retourne `S_OK` .  
   
 ## <a name="requirements"></a>Spécifications  
@@ -56,4 +56,4 @@ HRESULT GetCodeEx(
 
 - [ICorDebugILFrame4, interface](icordebugilframe4-interface.md)
 - [Interfaces de débogage](debugging-interfaces.md)
-- [ReJIT : Guide pratique](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT : Guide pratique](/archive/blogs/davbr/rejit-a-how-to-guide)

@@ -3,12 +3,12 @@ title: Guide pratique pour choisir un algorithme ML.NET
 description: Découvrez comment choisir un algorithme ML.NET pour votre modèle Machine Learning
 ms.topic: overview
 ms.date: 06/05/2019
-ms.openlocfilehash: 0fed33203c02303e37e47f548e08ec131eeb1c77
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8af89800485f8f8ac35ee17df10a5e3c039da42d
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75739993"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679636"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Guide pratique pour choisir un algorithme ML.NET
 
@@ -34,7 +34,7 @@ Préalablement à l’entraînement avec un algorithme linéaire, les caractéri
 
 En général, les algorithmes linéaires sont scalables, rapides à exécuter, et peu coûteux à entraîner et à prédire. Ils s’adaptent selon le nombre de caractéristiques et approximativement selon la taille du jeu de données d’entraînement.
 
-Les algorithmes linéaires font plusieurs passages sur les données d’entraînement. Si votre jeu de données tient en mémoire, l’ajout d’un [point de contrôle du cache](xref:Microsoft.ML.LearningPipelineExtensions.AppendCacheCheckpoint*) à votre pipeline ML.NET avant d’ajouter l’entraîneur accélère le processus d’entraînement.
+Les algorithmes linéaires font plusieurs passages sur les données d’entraînement. Si votre jeu de données tient en mémoire, l’ajout d’un [point de contrôle du cache](xref:Microsoft.ML.LearningPipelineExtensions.AppendCacheCheckpoint%2A) à votre pipeline ML.NET avant d’ajouter l’entraîneur accélère le processus d’entraînement.
 
 **Entraîneurs linéaires**
 

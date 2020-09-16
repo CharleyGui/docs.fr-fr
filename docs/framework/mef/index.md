@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Managed Extensibility Framework, overview
 - MEF, overview
 ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
-ms.openlocfilehash: 00ed48f2202d4c04039ac264b1fe71474a02432e
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: b743a26dd401e7015c588be2a197551aa891a687
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281249"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555573"
 ---
 # <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -62,7 +62,7 @@ Les versions précédentes du .NET Framework ont introduit Managed Add-in Framew
 
 Le meilleur moyen de découvrir les possibilités de MEF consiste à créer une application MEF simple. Dans cet exemple, vous allez créer une calculatrice très simple nommée SimpleCalculator. L'objectif de SimpleCalculator est de créer une application console qui accepte des commandes arithmétiques de base (de type « 5 + 3 » ou « 6 - 2 ») et retourne des résultats corrects. Grâce à MEF, vous pourrez ajouter de nouveaux opérateurs sans avoir à modifier le code de l'application.
 
-Pour télécharger le code complet de cet exemple, consultez l' [exemple SimpleCalculator (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/simple-calculator-vb/).
+Pour télécharger le code complet de cet exemple, consultez l' [exemple SimpleCalculator (Visual Basic)](/samples/dotnet/samples/simple-calculator-vb/).
 
 > [!NOTE]
 > L'objectif de SimpleCalculator est avant tout de montrer les concepts et la syntaxe de MEF, et non de fournir un scénario d'utilisation réaliste. La plupart des applications qui tirent le meilleur parti de MEF sont plus complexes que SimpleCalculator. Pour obtenir des exemples plus détaillés, consultez [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef) sur GitHub.
@@ -388,7 +388,7 @@ private int FindFirstNonDigit(string s)
 }
 ```
 
-Vous devez maintenant être en mesure de compiler et d'exécuter le projet. Dans Visual Basic, assurez-vous d'avoir ajouté le mot clé `Public` au module `Module1`. Dans la fenêtre de console, tapez une addition, par exemple « 5 + 3 », et la calculatrice retourne le résultat. L’utilisation d’un autre opérateur entraîne l’affichage du message « Hello World ! ».
+Vous devez maintenant être en mesure de compiler et d'exécuter le projet. Dans Visual Basic, assurez-vous d'avoir ajouté le mot clé `Public` au module `Module1`. Dans la fenêtre de console, tapez une addition, par exemple « 5 + 3 », et la calculatrice retourne le résultat. L’utilisation d’un autre opérateur entraîne l’affichage du message .
 
 ## <a name="extending-simplecalculator-using-a-new-class"></a>Extension de SimpleCalculator à l’aide d’une nouvelle classe
 
@@ -426,7 +426,7 @@ L'ajout de classes au code source est une opération relativement simple, mais M
 
 Ajoutez un nouveau répertoire nommé `Extensions` au projet SimpleCalculator. Assurez-vous de l'ajouter au niveau du projet et pas au niveau de la solution. Ajoutez ensuite un nouveau projet de bibliothèque de classes, appelé `ExtendedOperations`, à la solution. Le nouveau projet sera compilé dans un assembly distinct.
 
-Ouvrez le concepteur de propriétés du projet pour le projet ExtendedOperations, puis cliquez sur l’onglet **compiler** ou **générer** . modifiez le chemin de sortie de la **génération** ou le **chemin de sortie** pour qu’il pointe vers le répertoire extensions dans le répertoire du projet SimpleCalculator (*.. \SimpleCalculator\Extensions \\ *).
+Ouvrez le concepteur de propriétés du projet pour le projet ExtendedOperations, puis cliquez sur l’onglet **compiler** ou **générer** . Modifiez le **chemin** de sortie de la génération ou le **chemin de sortie** pour qu’il pointe vers le répertoire extensions dans le répertoire du projet SimpleCalculator (*.. \SimpleCalculator\Extensions \\ *).
 
  Dans *Module1. vb* ou *Program.cs*, ajoutez la ligne suivante au `Program` constructeur :
 
@@ -438,7 +438,7 @@ catalog.Catalogs.Add(New DirectoryCatalog("C:\SimpleCalculator\SimpleCalculator\
 catalog.Catalogs.Add(new DirectoryCatalog("C:\\SimpleCalculator\\SimpleCalculator\\Extensions"));
 ```
 
-Remplacez le chemin d’accès de l’exemple par le chemin d’accès à votre répertoire Extensions. (Ce chemin d'accès absolu sert uniquement au débogage. Dans une application de production, vous utiliseriez un chemin d’accès relatif.) <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog>Ajoute à présent toutes les parties trouvées dans les assemblys du répertoire extensions au conteneur de composition.
+Remplacez le chemin d’accès de l’exemple par le chemin d’accès à votre répertoire Extensions. (Ce chemin d'accès absolu sert uniquement au débogage. Dans une application de production, vous utiliseriez un chemin d’accès relatif.) <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog> Ajoute à présent toutes les parties trouvées dans les assemblys du répertoire extensions au conteneur de composition.
 
 Dans le projet ExtendedOperations, ajoutez des références à SimpleCalculator et à System.ComponentModel.Composition. Dans le fichier de classe ExtendedOperations, ajoutez une instruction `Imports` ou `using` pour System.ComponentModel.Composition. Dans Visual Basic, ajoutez également une instruction `Imports` pour SimpleCalculator. Ajoutez ensuite la classe suivante au fichier de classe ExtendedOperations :
 
@@ -484,6 +484,6 @@ Cette rubrique a couvert les concepts de base de MEF.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Pour télécharger le code complet de cet exemple, consultez l' [exemple SimpleCalculator (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/simple-calculator-vb/).
+Pour télécharger le code complet de cet exemple, consultez l' [exemple SimpleCalculator (Visual Basic)](/samples/dotnet/samples/simple-calculator-vb/).
 
  Pour obtenir plus d’informations et des exemples de code, consultez [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef). Pour obtenir une liste des types MEF, consultez l'espace de noms <xref:System.ComponentModel.Composition?displayProperty=nameWithType>.

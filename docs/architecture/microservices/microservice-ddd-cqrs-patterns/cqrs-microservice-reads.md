@@ -2,12 +2,12 @@
 title: Implémentation de lectures/requêtes dans un microservice CQRS
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre l’implémentation du côté requêtes de CQRS sur le microservice Ordering dans eShopOnContainers avec Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: 41932122326cf4c49b9c9e2c344d2ac17da7466b
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: e6ea7b4b7b37df9ee972319f597ab045bf3bd215
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89358893"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678801"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implémenter les lectures/requêtes dans un microservice CQRS
 
@@ -173,7 +173,7 @@ public class OrderSummary
 }
 ```
 
-C’est une autre raison pour laquelle les types retournés explicites sont, à long terme, préférables aux types dynamiques. Quand vous utilisez l’attribut `ProducesResponseType`, vous pouvez également spécifier le résultat attendu en ce qui concerne les erreurs/codes HTTP possibles, comme 200, 400, etc.
+C’est une autre raison pour laquelle les types retournés explicites sont, à long terme, préférables aux types dynamiques. Lorsque vous utilisez l' `ProducesResponseType` attribut, vous pouvez également spécifier le résultat attendu en ce qui concerne les erreurs/codes http possibles, tels que 200, 400, etc.
 
 Dans l’image suivante, vous pouvez voir comment l’interface utilisateur de Swagger affiche les informations ResponseType.
 
@@ -183,7 +183,7 @@ Dans l’image suivante, vous pouvez voir comment l’interface utilisateur de S
 
 L’image montre des exemples de valeurs en fonction des types ViewModel et des codes d’état HTTP possibles qui peuvent être retournés.
 
-## <a name="additional-resources"></a>Ressources complémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Dapper**  
  <https://github.com/StackExchange/dapper-dot-net>

@@ -2,12 +2,12 @@
 title: Modifications avec rupture WPF
 description: Répertorie les dernières modifications apportées à Windows Presentation Framework pour .NET Core et .NET 5.
 ms.date: 09/08/2020
-ms.openlocfilehash: babacb0e080e165d16e40e8d44f3afa0dce7664a
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: 3bd5cb585509118fbc3ca9ca08c6ed15b4853b93
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656421"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679303"
 ---
 # <a name="breaking-changes-in-windows-presentation-framework-wpf"></a>Modifications avec rupture dans Windows Presentation Framework (WPF)
 
@@ -17,9 +17,14 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [OutputType défini sur WinExe pour les applications WPF et WinForms](#outputtype-set-to-winexe-for-wpf-and-winforms-apps) | 5.0 |
 | [WinForms et les applications WPF utilisent Microsoft. NET. Sdk](#winforms-and-wpf-apps-use-microsoftnetsdk) | 5.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [automatically-infer-winexe-output-type](../../../includes/core-changes/windowsforms/5.0/automatically-infer-winexe-output-type.md)]
+
+***
 
 [!INCLUDE [sdk-and-target-framework-change](../../../includes/core-changes/windowsforms/5.0/sdk-and-target-framework-change.md)]
 

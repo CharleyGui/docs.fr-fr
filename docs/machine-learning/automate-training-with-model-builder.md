@@ -3,12 +3,12 @@ title: Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 description: Comment utiliser Model Builder ML.NET pour entraîner automatiquement un modèle Machine Learning
 ms.date: 06/01/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 2ed4a0c3c94ae9f46bb1cf6ddb1e9774baf82367
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 80f5f5d064c4e0c4097dacc6022d4624c1516ab9
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289497"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679675"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 
@@ -27,7 +27,7 @@ Vous n’avez pas besoin d’une expertise en machine learning pour utiliser Mod
 
 Vous pouvez soumettre de nombreux scénarios différents à Model Builder pour générer un modèle Machine Learning pour votre application.
 
-Un scénario est une description du type de prédiction que vous voulez faire avec vos données. Par exemple :
+Un scénario est une description du type de prédiction que vous voulez faire avec vos données. Exemple :
 
 - prédire le volume futur des ventes d’un produit en fonction de l’historique des données des ventes
 - classer des sentiments en positif ou en négatif en fonction d’avis émis par les utilisateurs
@@ -52,7 +52,7 @@ La régression est utilisée pour prédire des nombres.
 
 ![Diagramme montrant des exemples de régression, comme la prédiction de prix, les prévisions de ventes et la maintenance prédictive](media/regression-examples.png)
 
-#### <a name="image-classification"></a>Classification d’image
+#### <a name="image-classification"></a>Classification d’images
 
 La classification d’images peut être utilisée pour identifier les images de différentes catégories. Par exemple, différents types de terrain ou d’animaux ou de défauts de fabrication.
 
@@ -107,14 +107,14 @@ L’étiquette est l’historique des prix des maisons pour cette ligne de valeu
 
 Si vous n’avez pas encore vos propres données, essayez un de ces jeux de données :
 
-|Scénario|Exemple|Données|Etiquette|Fonctionnalités|
+|Scénario| Exemple|Données|Etiquette|Fonctionnalités|
 |-|-|-|-|-|
 |classification ;|Prédire les anomalies de vente|[Données de ventes de produits](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Ventes de produits|Month|
 ||Prédiction des sentiments de commentaires sur le site Web|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
-||Prédire les transactions de carte de crédit frauduleuse|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
+||Prédire les transactions de carte de crédit frauduleuse|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CCFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
 ||Prédire le type de problème dans un dépôt GitHub|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Domaine|Titre, Description|
 |Prédiction de valeur|Prédire le tarif des taxis|[Données de courses de taxi](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Fare|Heure, distance du trajet|
-|Classification d’image|Prédire la catégorie d’une fleur |[images de fleurs](http://download.tensorflow.org/example_images/flower_photos.tgz)|Type de fleur : marguerites, dandelion, roses, tournesols, tulipes|Données d’image elles-mêmes|
+|Classification d’images|Prédire la catégorie d’une fleur |[images de fleurs](http://download.tensorflow.org/example_images/flower_photos.tgz)|Type de fleur : marguerites, dandelion, roses, tournesols, tulipes|Données d’image elles-mêmes|
 |Recommandation|Prédire les films que quelqu’un souhaitera|[évaluations des films](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)|Utilisateurs, films|Évaluations|
 
 ## <a name="train"></a>Former
@@ -205,7 +205,7 @@ Après la phase d’évaluation, Model Builder génère un fichier de modèle et
 
 En outre, Model Builder produit le code qui a généré le modèle, ce qui vous permet de comprendre les étapes utilisées pour cette génération. Vous pouvez également utiliser le code de l’entraînement du modèle pour réentraîner votre modèle avec de nouvelles données.
 
-## <a name="whats-next"></a>Quelle est l’étape suivante ?
+## <a name="whats-next"></a>Et ensuite ?
 
 [Installer](how-to-guides/install-model-builder.md) l’extension Visual Studio Model Builder
 

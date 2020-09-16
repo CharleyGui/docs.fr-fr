@@ -7,12 +7,12 @@ helpviewer_keywords:
 - 64-bit applications [C++]
 - 64-bit programming [C++]
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
-ms.openlocfilehash: 4589d7a070a477dcb229fbaea686f6c6ff7d7e08
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 49feb664531db4955a99324851aef5b49032be71
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84989987"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555508"
 ---
 # <a name="64-bit-applications"></a>Applications 64 bits
 Lorsque vous compilez une application, vous pouvez spécifier si elle doit être exécutée sur un système d'exploitation Windows 64 bits comme une application native ou sous WOW64 (Windows 32 bits sur Windows 64 bits). WOW64 est un environnement de compatibilité qui permet à une application 32 bits de s'exécuter sur un système 64 bits. WOW64 est inclus dans toutes les versions 64 bits du système d'exploitation Windows.  
@@ -37,7 +37,7 @@ Lorsque vous compilez une application, vous pouvez spécifier si elle doit être
   
 - Code renvoyant `IntPtr` à `Int32`.  
   
- Pour plus d’informations sur le portage d’une application 32 bits destinée à s’exécuter sur le CLR 64 bits, consultez [Migration du code managé 32 bits vers du code managé 64 bits](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
+ Pour plus d’informations sur le portage d’une application 32 bits destinée à s’exécuter sur le CLR 64 bits, consultez [Migration du code managé 32 bits vers du code managé 64 bits](/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
   
 ## <a name="general-64-bit-programming-information"></a>Informations générales sur la programmation 64 bits  
  Pour obtenir des informations générales sur la programmation 64 bits, consultez les documents suivants :  
@@ -52,7 +52,7 @@ Lorsque vous compilez une application, vous pouvez spécifier si elle doit être
 |Compilateur|Option du compilateur|  
 |--------------|---------------------|  
 |Visual Basic|[-plateforme (Visual Basic)](../visual-basic/reference/command-line-compiler/platform.md)|  
-|Visual C# |[-Platform (options du compilateur C#)](../csharp/language-reference/compiler-options/platform-compiler-option.md)|  
+|Visual C#|[-Platform (options du compilateur C#)](../csharp/language-reference/compiler-options/platform-compiler-option.md)|  
 |Visual C++|Vous pouvez créer des applications MSIL (Microsoft Intermediate Language) indépendantes des plateformes en utilisant **/clr:safe**. Pour plus d’informations, consultez [-clr (compilation pour le Common Language Runtime)](/cpp/build/reference/clr-common-language-runtime-compilation).<br /><br /> Visual C++ inclut un compilateur distinct pour chaque système d'exploitation 64 bits. Pour plus d'informations sur l'utilisation de Visual C++ pour créer des applications natives qui s'exécutent sur un système d'exploitation Windows 64 bits, consultez [Programmation 64 bits](/cpp/build/configuring-programs-for-64-bit-visual-cpp).|  
   
 ## <a name="determining-the-status-of-an-exe-file-or-dll-file"></a>Détermination de l'état d'un fichier .exe ou .dll  

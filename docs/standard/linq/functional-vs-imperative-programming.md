@@ -3,18 +3,18 @@ title: Programmation fonctionnelle et programmation impérative-LINQ to XML
 description: En savoir plus sur la programmation fonctionnelle et la façon dont elle diffère de la programmation impérative (procédurale) traditionnelle.
 ms.date: 07/20/2015
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
-ms.openlocfilehash: d6dddab9b288cfa820aa4ed9d800c29136edf772
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: c7d16d61f9865cda7c625f91c2c822be1a327fd6
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552445"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679367"
 ---
 # <a name="functional-programming-vs-imperative-programming-linq-to-xml"></a>Programmation fonctionnelle et programmation impérative (LINQ to XML)
 
 Cet article compare et contraste la programmation fonctionnelle avec la programmation impérative (procédurale) plus traditionnelle.
 
-## <a name="functional-programming-vs-imperative-programming"></a>Programmation fonctionnelle et programmation impérative
+## <a name="functional-programming-vs-imperative-programming"></a>Comparaison de la programmation fonctionnelle et de la programmation impérative
 
 Le paradigme *programmation fonctionnelle* a été créé explicitement afin de prendre en charge une approche fonctionnelle pure de la résolution des problèmes. La programmation fonctionnelle est une forme de *programmation déclarative*. Par contraste, la plupart des langages courants, y compris des langages de programmation orientés objets tels que C#, Visual Basic, C++ et Java, ont été conçus principalement pour prendre en charge la programmation *impérative* (procédurale).
 
@@ -32,7 +32,7 @@ Bien que la plupart des langages aient été conçus pour prendre en charge un p
 
 ## <a name="functional-programming-using-xslt"></a>Programmation fonctionnelle à l’aide de XSLT
 
-De nombreux développeurs XSLT connaissent l'approche fonctionnelle pure. La manière la plus efficace de développer une feuille de style XSLT consiste à traiter chaque modèle comme une transformation composable et isolée. L'ordre d'exécution n'est pas du tout mis en évidence. XSLT n’autorise pas les effets secondaires (à l’exception du fait que les mécanismes d’échappement pour l’exécution de code procédural peuvent introduire des effets secondaires qui entraînent une impureté fonctionnelle). Toutefois, bien que XSLT soit un outil efficace, certaines de ses caractéristiques ne sont pas optimales. Par exemple, l'expression de constructions de programmation en XML rend le code relativement détaillé, et par conséquent difficile à maintenir. En outre, la forte dépendance envers la récursivité pour le contrôle de Flow peut entraîner un code difficile à lire. Pour plus d’informations sur XSLT, consultez [Transformations XSLT](../../standard/data/xml/xslt-transformations.md).
+De nombreux développeurs XSLT connaissent l'approche fonctionnelle pure. La manière la plus efficace de développer une feuille de style XSLT consiste à traiter chaque modèle comme une transformation composable et isolée. L'ordre d'exécution n'est pas du tout mis en évidence. XSLT n’autorise pas les effets secondaires (à l’exception du fait que les mécanismes d’échappement pour l’exécution de code procédural peuvent introduire des effets secondaires qui entraînent une impureté fonctionnelle). Toutefois, bien que XSLT soit un outil efficace, certaines de ses caractéristiques ne sont pas optimales. Par exemple, l'expression de constructions de programmation en XML rend le code relativement détaillé, et par conséquent difficile à maintenir. En outre, la forte dépendance envers la récursivité pour le contrôle de Flow peut entraîner un code difficile à lire. Pour plus d’informations sur XSLT, consultez [Transformations XSLT](../data/xml/xslt-transformations.md).
 
 Toutefois, le langage XSLT a prouvé la valeur de l'utilisation d'une approche fonctionnelle pure pour la transformation de code XML d'une forme en une autre. La programmation fonctionnelle pure à l'aide de LINQ to XML est semblable en de nombreux points au langage XSLT. Toutefois, les constructions de programmation introduites par LINQ to XML, C# et Visual Basic vous permettent d’écrire des transformations fonctionnelles pures plus lisibles et gérables que XSLT.
 
@@ -56,6 +56,6 @@ Heureusement, C# et Visual Basic n’ont pas besoin d’une approche complète d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des transformations fonctionnelles pures](introduction-pure-functional-transformations.md)
+- [Introduction aux transformations fonctionnelles pures](introduction-pure-functional-transformations.md)
 - [Transformations XSLT](/../../standard/data/xml/xslt-transformations.md)
 - [Refactoriser dans des fonctions pures](refactor-pure-functions.md)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 04c4fb4c8e9da8c58a5e26f78a7b13aa6a0df4a0
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 7c4b9faf25853c1c7a546f06c329f6f153eef904
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614462"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606925"
 ---
 ### <a name="changes-in-path-normalization"></a>Changements dans la normalisation des chemins
 
@@ -17,7 +17,7 @@ ms.locfileid: "85614462"
 - L’évaluation du répertoire relatif (.) ou du répertoire parent (..) dans un chemin.
 - La suppression des caractères spécifiés.
 À partir des applications qui ciblent .NET Framework 4.6.2, les changements suivants apportés à la normalisation des chemins sont activés par défaut :
-  - Le runtime défère à la fonction [GetFullPathName](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamew) du système d’exploitation pour normaliser les chemins d’accès.
+  - Le runtime défère à la fonction [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamew) du système d’exploitation pour normaliser les chemins d’accès.
 - La normalisation n’implique plus la suppression de la fin des segments de répertoire (comme un espace à la fin d’un nom de répertoire).
 - Prise en charge de la syntaxe du chemin d’appareil avec une confiance totale, y compris `\\.\` et, pour les API d’E/S de fichiers dans mscorlib.dll, `\\?\`.
 - Le runtime ne valide pas les chemins d’accès de syntaxe de périphérique.
@@ -42,7 +42,7 @@ Les applications qui ciblent .NET Framework 4.6.1 ou une version antérieure ma
 </runtime>
 ```
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   | Secondaire       |
 | Version | 4.6.2       |

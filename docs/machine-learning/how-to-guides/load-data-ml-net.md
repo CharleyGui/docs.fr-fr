@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 5097632ca777403e6073d28b707bdbe653cda8ac
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: edcb1c4d00a09ba8404b08ddc3ca3447a52a81b6
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545023"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679584"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Charger des données depuis des fichiers et d’autres sources
 
@@ -66,7 +66,7 @@ ML.NET fonctionne par le biais des noms de colonne. Si vous souhaitez remplacer 
 
 ## <a name="load-data-from-a-single-file"></a>Charger des données à partir d’un fichier spécifique
 
-Pour charger des données à partir d’un fichier, utilisez la [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) méthode avec le modèle de données pour les données à charger. Le paramètre `separatorChar` étant par défaut défini sur le caractère de tabulation, changez-le pour votre fichier de données si cela est nécessaire. Si votre fichier a un en-tête, définissez le paramètre `hasHeader` sur `true` pour ignorer la première ligne du fichier et commencer à charger les données à partir de la deuxième ligne.
+Pour charger des données à partir d’un fichier, utilisez la [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%2A) méthode avec le modèle de données pour les données à charger. Le paramètre `separatorChar` étant par défaut défini sur le caractère de tabulation, changez-le pour votre fichier de données si cela est nécessaire. Si votre fichier a un en-tête, définissez le paramètre `hasHeader` sur `true` pour ignorer la première ligne du fichier et commencer à charger les données à partir de la deuxième ligne.
 
 ```csharp
 //Create MLContext
@@ -82,7 +82,7 @@ Si vos données sont stockées dans plusieurs fichiers, tant que le schéma de d
 
 ### <a name="load-from-files-in-a-single-directory"></a>Effectuer le chargement à partir de fichiers situés dans le même répertoire
 
-Lorsque tous vos fichiers de données se trouvent dans le même répertoire, utilisez des caractères génériques dans la [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) méthode.
+Lorsque tous vos fichiers de données se trouvent dans le même répertoire, utilisez des caractères génériques dans la [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%2A) méthode.
 
 ```csharp
 //Create MLContext
@@ -94,7 +94,7 @@ IDataView data = mlContext.Data.LoadFromTextFile<HousingData>("Data/*", separato
 
 ### <a name="load-from-files-in-multiple-directories"></a>Effectuer le chargement à partir de fichiers situés dans plusieurs répertoires
 
-Pour charger des données à partir de plusieurs répertoires, utilisez la [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader*) méthode pour créer un [`TextLoader`](xref:Microsoft.ML.Data.TextLoader) . Ensuite, utilisez la [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load*) méthode et spécifiez les chemins d’accès individuels des fichiers (les caractères génériques ne peuvent pas être utilisés).
+Pour charger des données à partir de plusieurs répertoires, utilisez la [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader%2A) méthode pour créer un [`TextLoader`](xref:Microsoft.ML.Data.TextLoader) . Ensuite, utilisez la [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load%2A) méthode et spécifiez les chemins d’accès individuels des fichiers (les caractères génériques ne peuvent pas être utilisés).
 
 ```csharp
 //Create MLContext
@@ -200,10 +200,10 @@ HousingData[] inMemoryCollection = new HousingData[]
 };
 ```
 
-Chargez la collection en mémoire dans un [`IDataView`](xref:Microsoft.ML.IDataView) avec la [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) méthode :
+Chargez la collection en mémoire dans un [`IDataView`](xref:Microsoft.ML.IDataView) avec la [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable%2A) méthode :
 
 > [!IMPORTANT]
-> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) suppose que le [`IEnumerable`](xref:System.Collections.IEnumerable) chargement à partir de est thread-safe.
+> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable%2A) suppose que le [`IEnumerable`](xref:System.Collections.IEnumerable) chargement à partir de est thread-safe.
 
 ```csharp
 // Create MLContext

@@ -7,12 +7,12 @@ ms.date: 08/12/2020
 no-loc:
 - Blazor
 - WebAssembly
-ms.openlocfilehash: f2f2a4706ea4deba39465d8697f78be58506a09c
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 826f9003852e47c093193bbbb717fd9e1f2e61c6
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89515867"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678938"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Utilisation de données dans les applications ASP.NET Core
 
@@ -373,7 +373,7 @@ Outre les options de stockage NoSQL et relationnel, les applications ASP.NET Cor
 
 **Références : Stockage Azure**
 
-- Présentation de stockage Azure <https://docs.microsoft.com/azure/storage/storage-introduction>
+- Présentation de stockage Azure <https://docs.microsoft.com/azure/storage/common/storage-introduction>
 
 ## <a name="caching"></a>Mise en cache
 

@@ -2,12 +2,12 @@
 title: Comportements de sécurité dans WCF
 ms.date: 03/30/2017
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
-ms.openlocfilehash: b25d476e9c9b4a70834274c6970dad1b056cecb9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1f15a5aec2f5da89e4069deec946cc20b54f414e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595204"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554063"
 ---
 # <a name="security-behaviors-in-wcf"></a>Comportements de sécurité dans WCF
 Dans Windows Communication Foundation (WCF), les comportements modifient le comportement au moment de l’exécution au niveau du service ou au niveau du point de terminaison. (Pour plus d’informations sur les comportements en général, consultez [spécification du comportement du service au moment](../specifying-service-run-time-behavior.md)de l’exécution.) Les *comportements de sécurité* permettent de contrôler les informations d’identification, l’authentification, l’autorisation et les journaux d’audit. Vous pouvez les utiliser via la programmation ou la configuration. Cette rubrique se concentre sur la configuration des comportements relatifs aux fonctions de sécurité suivants :  
@@ -55,10 +55,10 @@ Dans Windows Communication Foundation (WCF), les comportements modifient le comp
   
  Pour plus d’informations sur l’utilisation de l’élément, consultez Guide pratique [pour spécifier les valeurs d’informations d’identification du client](../how-to-specify-client-credential-values.md).  
   
-### <a name="certificate-of-clientcertificate-element"></a>\<certificate>d' \<clientCertificate> élément  
+### <a name="certificate-of-clientcertificate-element"></a>\<certificate> d' \<clientCertificate> élément  
  Utilisez l' [\<certificate>](../../configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md) élément lorsque le service doit disposer du certificat du client à l’avance pour communiquer en toute sécurité avec le client. Cela se produit lors de l'utilisation du modèle de communication duplex. Dans le modèle demande-réponse plus classique, le client inclut son certificat dans la demande, que le service utilise pour sécuriser de nouveau sa réponse au client. Toutefois, le modèle de communication duplex n’a pas de demande et de réponse. Le service ne peut pas déduire le certificat du client de la communication, et par conséquent, il en a besoin à l'avance pour sécuriser les messages au client. Vous devez obtenir le certificat du client hors bande et l'indiquer à l'aide de cet élément. Pour plus d’informations sur les services duplex, consultez [Comment : créer un contrat duplex](how-to-create-a-duplex-contract.md).  
   
-### <a name="authentication-of-clientcertificate-element"></a>\<authentication>d' \<clientCertificate> élément  
+### <a name="authentication-of-clientcertificate-element"></a>\<authentication> d' \<clientCertificate> élément  
  L' [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) élément vous permet de personnaliser la façon dont les clients sont authentifiés. Vous pouvez affecter `CertificateValidationMode`, `None`, `ChainTrust`, `PeerOrChainTrust` ou `PeerTrust` à l'attribut `Custom`. Par défaut, le niveau a la valeur `ChainTrust` , qui spécifie que chaque certificat doit se trouver dans une hiérarchie de certificats se terminant par une *autorité racine* au sommet de la chaîne. C’est le mode le plus sécurisé. Vous pouvez également affecter la valeur `PeerOrChainTrust`, laquelle spécifie que les certificats auto-émis (approbation homologue) sont acceptés, de même que les certificats qui se trouvent dans une chaîne approuvée. Cette valeur est utilisée lors du développement et du débogage des clients et des services car il n'est pas nécessaire d'acheter les certificats auto-émis auprès d'une autorité approuvée. Lorsque vous déployez un client, utilisez à la place la valeur `ChainTrust`. Vous pouvez également utiliser `Custom`. Lorsque vous utilisez `Custom`, vous devez également affecter l'assembly et le type utilisés pour valider le certificat à l'attribut `CustomCertificateValidatorType`. Pour créer votre propre validateur personnalisé, vous devez hériter de la classe <xref:System.IdentityModel.Selectors.X509CertificateValidator> abstraite.  
   
 ### <a name="issuedtokenauthentication-element"></a>Élément \<issuedTokenAuthentication>  
@@ -82,7 +82,7 @@ Dans Windows Communication Foundation (WCF), les comportements modifient le comp
   
 - Spécifiez le jeu d'URI valides en ajoutant les URI à cette collection. Pour ce faire, insérez un [\<add>](../../configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md) pour chaque URI  
   
- Pour plus d’informations, consultez <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.  
+ Pour plus d'informations, consultez <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.  
   
  Pour plus d’informations sur l’utilisation de cet élément de configuration, consultez [Comment : configurer des informations d’identification sur un service FS (Federation Service)](how-to-configure-credentials-on-a-federation-service.md).  
   
@@ -119,7 +119,7 @@ Dans Windows Communication Foundation (WCF), les comportements modifient le comp
  Définissez le certificat utilisé pour authentifier le client avec cet élément. Pour plus d’informations, consultez [Comment : spécifier les valeurs d’informations d’identification du client](../how-to-specify-client-credential-values.md).  
   
 #### \<httpDigest>  
- Cette fonction doit être activée avec Active Directory sur Windows et les services IIS (Internet Information Services). Pour plus d’informations, consultez [authentification Digest dans IIS 6,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)).  
+ Cette fonction doit être activée avec Active Directory sur Windows et les services IIS (Internet Information Services). Pour plus d’informations, consultez [authentification Digest dans IIS 6,0](/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)).  
   
 #### <a name="issuedtoken-element"></a>Élément \<issuedToken>  
  [\<issuedToken>](../../configure-apps/file-schema/wcf/issuedtoken.md)Contient les éléments utilisés pour configurer un émetteur local de jetons ou les comportements utilisés avec un service d’émission de jeton de sécurité. Pour obtenir des instructions sur la configuration d’un client pour qu’il utilise un émetteur local, consultez [procédure : configurer un émetteur local](how-to-configure-a-local-issuer.md).  
@@ -224,4 +224,4 @@ Dans Windows Communication Foundation (WCF), les comportements modifient le comp
 ## <a name="see-also"></a>Voir aussi
 
 - [Audit](auditing-security-events.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

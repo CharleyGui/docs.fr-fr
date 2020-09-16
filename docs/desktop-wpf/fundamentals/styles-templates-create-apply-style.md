@@ -7,12 +7,12 @@ ms.date: 09/12/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: de186cd6da83ffef8a5cd59df581e88b24bc474d
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: e1b1f75154431f61885d79db62b9ec289b69446e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325787"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555521"
 ---
 # <a name="create-a-style-for-a-control-in-wpf"></a>Créer un style pour un contrôle dans WPF
 
@@ -60,7 +60,7 @@ Voici le style de la section précédente, mais déclaré avec l' `x:Key` attrib
 
 [!code-xaml[ExplicitStyleDeclare](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/WindowExplicitStyle.xaml#ExplicitStyleDeclare)]
 
-Pour appliquer le style, affectez <xref:System.Windows.FrameworkElement.Style%2A> à la propriété de l’élément la `x:Key` valeur, à l’aide d’une [extension de balisage StaticResource](../../framework/wpf/advanced/staticresource-markup-extension.md), comme indiqué ici.
+Pour appliquer le style, affectez <xref:System.Windows.FrameworkElement.Style%2A> à la propriété de l’élément la `x:Key` valeur, à l’aide d’une [extension de balisage StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension), comme indiqué ici.
 
 [!code-xaml[ExplicitStyleReference](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/WindowExplicitStyle.xaml#ExplicitStyleReference)]
 

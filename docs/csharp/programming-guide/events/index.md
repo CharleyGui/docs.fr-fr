@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, events
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
-ms.openlocfilehash: f56de15dd2c7b0a10e40a886dbd82a4147a03014
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 86ded81de4b9191c50b993c08b0e87712ff69020
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466155"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545491"
 ---
 # <a name="events-c-programming-guide"></a>Événements (Guide de programmation C#)
 Les événements permettent à une [classe](../../language-reference/keywords/class.md) ou à un objet de notifier d’autres classes ou objets quand quelque chose de significatif se produit. La classe qui envoie (ou *déclenche*) l’événement est appelée *publieur* et les classes qui reçoivent (ou *gèrent*) l’événement sont appelées *abonnés*.  
@@ -39,7 +39,7 @@ Dans une application C# Windows Forms ou web classique, vous vous abonnez à des
   
 - [Comment s’abonner à des événements et s’en désabonner](./how-to-subscribe-to-and-unsubscribe-from-events.md)
 
-- [Comment publier des événements conformes aux instructions .NET](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+- [Comment publier des événements conformes aux indications de .NET](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 
 - [Comment déclencher des événements de la classe de base dans les classes dérivées](./how-to-raise-base-class-events-in-derived-classes.md)
 
@@ -52,13 +52,13 @@ Dans une application C# Windows Forms ou web classique, vous vous abonnez à des
 Pour plus d’informations, consultez [Événements](~/_csharplang/spec/classes.md#events) dans la [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
   
 ## <a name="featured-book-chapters"></a>Chapitres proposés  
- [Delegates, Events, and Lambda Expressions](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) (Délégués, événements et expressions lambda) dans [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
+ [Delegates, Events, and Lambda Expressions](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) (Délégués, événements et expressions lambda) dans [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))  
   
- [Delegates and Events](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
+ [Delegates and Events](/previous-versions/visualstudio/visual-studio-2008/ff652490(v=orm.10)) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](/previous-versions/visualstudio/visual-studio-2008/ff652493(v=orm.10))  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.EventHandler>
 - [Guide de programmation C#](../index.md)
 - [Délégués](../delegates/index.md)
-- [Création de gestionnaires d'événements dans les Windows Forms](../../../framework/winforms/creating-event-handlers-in-windows-forms.md)
+- [Création de gestionnaires d'événements dans les Windows Forms](/dotnet/desktop/winforms/creating-event-handlers-in-windows-forms)

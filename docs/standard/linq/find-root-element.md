@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4fd824e0-4d39-429b-b092-f6a5c046ee6c
-ms.openlocfilehash: 16217960b84276bd3bb4c5cb6b38d7cb56d2b41e
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 89247c19fc31add4e95f11742772cef1bdd2ce63
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552545"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679465"
 ---
 # <a name="how-to-find-the-root-element-linq-to-xml"></a>Comment Rechercher l’élément racine (LINQ to XML)
 
@@ -63,4 +63,4 @@ PurchaseOrders
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](/../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [Comparaison de XPath et LINQ to XML](comparison-xpath-linq-xml.md)

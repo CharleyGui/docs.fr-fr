@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: a2ebad329f583d35f110c5db053eebfa80ace6e2
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 8f0a9e7f2cc55ed649ee9569e945ed99671295fc
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359322"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679440"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Didacticiel : inspection visuelle automatisée à l’aide de l’apprentissage de transfert avec l’API de classification d’image ML.NET
 
@@ -116,7 +116,7 @@ Chacun de ces sous-répertoires contient deux sous-répertoires préfixés suppl
 
 Dans ce didacticiel, seules les images de pont de pont sont utilisées.
 
-1. Téléchargez le [jeu de données](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/assets.zip) et décompressez.
+1. Téléchargez le [jeu de données](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/assets.zip) et décompressez.
 1. Créez un répertoire nommé « ressources » dans votre projet pour enregistrer les fichiers de votre jeu de données.
 1. Copiez les sous-répertoires *CD* et *ud* à partir du répertoire décompressé récemment vers le répertoire *Assets* .
 
@@ -224,19 +224,19 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
     [!code-csharp [LoadImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L22)]
 
-1. Ensuite, chargez les images dans un [`IDataView`](xref:Microsoft.ML.IDataView) à l’aide de la [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) méthode.
+1. Ensuite, chargez les images dans un [`IDataView`](xref:Microsoft.ML.IDataView) à l’aide de la [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable%2A) méthode.
 
     [!code-csharp [CreateIDataView](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L24)]
 
-1. Les données sont chargées dans l’ordre dans lequel elles ont été lues à partir des répertoires. Pour équilibrer les données, vous pouvez les lire à l’aide de la [`ShuffleRows`](xref:Microsoft.ML.DataOperationsCatalog.ShuffleRows*) méthode.
+1. Les données sont chargées dans l’ordre dans lequel elles ont été lues à partir des répertoires. Pour équilibrer les données, vous pouvez les lire à l’aide de la [`ShuffleRows`](xref:Microsoft.ML.DataOperationsCatalog.ShuffleRows%2A) méthode.
 
     [!code-csharp [ShuffleRows](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L26)]
 
-1. Les modèles d’apprentissage automatique s’attendent à ce que l’entrée soit au format numérique. Par conséquent, un prétraitement doit être effectué sur les données avant l’apprentissage. Créez un [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) composé des [`MapValueToKey`](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey*) `LoadRawImageBytes` transformations et. La `MapValueToKey` transformation prend la valeur catégorique dans la `Label` colonne, la convertit en une `KeyType` valeur numérique et la stocke dans une nouvelle colonne appelée `LabelAsKey` . Le `LoadImages` prend les valeurs de la `ImagePath` colonne avec le `imageFolder` paramètre pour charger des images pour l’apprentissage.
+1. Les modèles d’apprentissage automatique s’attendent à ce que l’entrée soit au format numérique. Par conséquent, un prétraitement doit être effectué sur les données avant l’apprentissage. Créez un [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) composé des [`MapValueToKey`](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) `LoadRawImageBytes` transformations et. La `MapValueToKey` transformation prend la valeur catégorique dans la `Label` colonne, la convertit en une `KeyType` valeur numérique et la stocke dans une nouvelle colonne appelée `LabelAsKey` . Le `LoadImages` prend les valeurs de la `ImagePath` colonne avec le `imageFolder` paramètre pour charger des images pour l’apprentissage.
 
     [!code-csharp [PreprocessingPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L28-L34)]
 
-1. Utilisez la [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit*) méthode pour appliquer les données à l' `preprocessingPipeline` [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) suivie de la [`Transform`](xref:Microsoft.ML.Data.TransformerChain`1.Transform*) méthode, qui retourne un [`IDataView`](xref:Microsoft.ML.IDataView) contenant les données prétraitées.
+1. Utilisez la [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit%2A) méthode pour appliquer les données à l' `preprocessingPipeline` [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) suivie de la [`Transform`](xref:Microsoft.ML.Data.TransformerChain%601.Transform%2A) méthode, qui retourne un [`IDataView`](xref:Microsoft.ML.IDataView) contenant les données prétraitées.
 
     [!code-csharp [PreprocessData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L36-L38)]
 
@@ -276,7 +276,7 @@ L’apprentissage du modèle se compose de deux étapes. Tout d’abord, l’API
 
     [!code-csharp [TrainingPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L60-L61)]
 
-1. Utilisez la [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit*) méthode pour effectuer l’apprentissage de votre modèle.
+1. Utilisez la [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit%2A) méthode pour effectuer l’apprentissage de votre modèle.
 
     [!code-csharp [TrainModel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L63)]
 
@@ -303,11 +303,11 @@ Sous la `Main` méthode, créez une nouvelle méthode utilitaire appelée `Outpu
 
     [!code-csharp [CreatePredictionEngine](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L74)]
 
-1. Pour accéder à une `ModelInput` instance unique, convertissez le `data` [`IDataView`](xref:Microsoft.ML.IDataView) en un [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) à l’aide de la [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) méthode, puis récupérez la première observation.
+1. Pour accéder à une `ModelInput` instance unique, convertissez le `data` [`IDataView`](xref:Microsoft.ML.IDataView) en un [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) à l’aide de la [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable%2A) méthode, puis récupérez la première observation.
 
     [!code-csharp [GetTestInputData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L76)]
 
-1. Utilisez la [`Predict`](xref:Microsoft.ML.PredictionEngine%602.Predict*) méthode pour classifier l’image.
+1. Utilisez la [`Predict`](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) méthode pour classifier l’image.
 
     [!code-csharp [MakeSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L78)]
 
@@ -330,11 +330,11 @@ Sous la `Main` méthode, créez une nouvelle méthode utilitaire appelée `Outpu
     }
     ```
 
-1. Créez un [`IDataView`](xref:Microsoft.ML.IDataView) contenant les prédictions à l’aide de la [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) méthode. Ajoutez le code suivant dans la méthode `ClassifyImages`.
+1. Créez un [`IDataView`](xref:Microsoft.ML.IDataView) contenant les prédictions à l’aide de la [`Transform`](xref:Microsoft.ML.ITransformer.Transform%2A) méthode. Ajoutez le code suivant dans la méthode `ClassifyImages`.
 
     [!code-csharp [MakeMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L86)]
 
-1. Pour itérer au sein des prédictions, convertissez le `predictionData` [`IDataView`](xref:Microsoft.ML.IDataView) en un [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) à l’aide de la [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) méthode, puis récupérez les 10 premières observations.
+1. Pour itérer au sein des prédictions, convertissez le `predictionData` [`IDataView`](xref:Microsoft.ML.IDataView) en un [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) à l’aide de la [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable%2A) méthode, puis récupérez les 10 premières observations.
 
     [!code-csharp [IEnumerablePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification/Program.cs#L88)]
 
@@ -408,4 +408,4 @@ Dans ce didacticiel, vous avez appris à créer un modèle d’apprentissage pro
 Passez au tutoriel suivant pour en savoir plus.
 
 > [!div class="nextstepaction"]
-> [Détection d’objets](object-detection-onnx.md)
+> [Détection d’objet](object-detection-onnx.md)

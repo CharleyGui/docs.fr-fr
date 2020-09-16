@@ -2,12 +2,12 @@
 title: Impossible de supprimer le journal des événements système
 ms.date: 07/20/2015
 ms.assetid: 26ca8819-4ce5-49c6-98f3-27fe9e2e8e3d
-ms.openlocfilehash: 72f648751107db90449a085e1a49892927fcd29b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e00527300a77f6bc006555ee688e055e1a351056
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620477"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554955"
 ---
 # <a name="system-event-log-cannot-be-deleted"></a>Impossible de supprimer le journal des événements système
 Une tentative de suppression du journal des événements système, qui ne peut pas être supprimé, a été effectuée. Le journal système assure le suivi des événements système tels que le démarrage du système et les défaillances de matériel.  
@@ -20,5 +20,5 @@ Une tentative de suppression du journal des événements système, qui ne peut p
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Administration des journaux des événements](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4f69axw4(v=vs.90))
-- [Guide pratique pour Créer et supprimer des journaux des événements personnalisés](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/49dwckkz(v=vs.90))
+- [Administration des journaux des événements](/previous-versions/visualstudio/visual-studio-2008/4f69axw4(v=vs.90))
+- [Procédure : créer et supprimer des journaux des événements personnalisés](/previous-versions/visualstudio/visual-studio-2008/49dwckkz(v=vs.90))

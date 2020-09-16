@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 8cbb687b0c7cfb69d3f3807c083f1c25e9d39594
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: 36ecbe763ed47e95d9339d1d748b3faab100c15e
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271787"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679597"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -43,7 +43,7 @@ Si les trois composants sont présents, le chemin est absolu. Si aucune lettre d
 > [!IMPORTANT]
 > Notez la différence entre les deux derniers chemins. Les deux spécifient le spécificateur de volume facultatif ( `C:` dans les deux cas), mais le premier commence par la racine du volume spécifié, tandis que le second ne le fait pas. Par conséquent, le premier est un chemin d’accès absolu à partir du répertoire racine du lecteur `C:` , tandis que le second est un chemin d’accès relatif à partir du répertoire actif du lecteur `C:` . L’utilisation involontaire de la deuxième forme à la place de la première est une source courante de bogues impliquant des chemins de fichier Windows.
 
-Pour déterminer si un chemin de fichier est complet (autrement dit, si le chemin est indépendant du répertoire actif et qu’il reste inchangé quand le répertoire actif change), appelez la méthode <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType>. Notez qu’un tel chemin peut inclure des segments de répertoire relatifs (`.` et `..`) et toujours être complet si le chemin résolu pointe toujours vers le même emplacement.
+Pour déterminer si un chemin de fichier est complet (autrement dit, si le chemin est indépendant du répertoire actif et qu’il reste inchangé quand le répertoire actif change), appelez la méthode <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWithType>. Notez qu’un tel chemin peut inclure des segments de répertoire relatifs (`.` et `..`) et toujours être complet si le chemin résolu pointe toujours vers le même emplacement.
 
 L’exemple suivant illustre la différence entre les chemins absolus et relatifs. Il part du principe que le répertoire `D:\FY2018\` existe et que vous n’avez pas défini de répertoire actif pour `D:\` à partir de l’invite de commandes avant d’exécuter l’exemple.
 
@@ -96,7 +96,7 @@ Le chemin de périphérique DOS comprend les composants suivants :
 
    Le premier segment du chemin de périphérique DOS après le spécificateur de chemin de périphérique identifie le volume ou le lecteur. (Par exemple, `\\?\C:\` et `\\.\BootPartition\`.)
 
-   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Par exemple :
+   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Exemple :
 
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`

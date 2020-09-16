@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e528a41748d9353c96d443f68e15e7a98ee7f4ae
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 882c4c0455b7df538079ffe1b7d1d7ca8af1904a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85616249"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606248"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls-for-net-48"></a>Améliorations des fonctionnalités d’accessibilité dans les contrôles Windows Forms pour .NET 4.8
 
@@ -21,7 +21,7 @@ Windows Forms Framework continue d’améliorer la façon dont il utilise les te
 **Comment accepter ou refuser ces modifications** Pour que l’application tire parti de ces modifications, elle doit s’exécuter sur le .NET Framework 4,8. Pour que l’application bénéficie de ces changements, procédez de l’une des manières suivantes :
 
 - Recompilez-la pour qu’elle cible .NET Framework 4.8. Ces changements d’accessibilité sont activés par défaut sur les applications Windows Forms qui ciblent .NET Framework 4.8.
-- Faites-lui cibler .NET Framework version 4.7.2 ou antérieure et cessez d’adhérer aux comportements d’accessibilité existants, en ajoutant le [commutateur AppContext](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) suivant dans la section `<runtime>` du fichier de configuration de l’application et en lui affectant la valeur `false`, comme dans l’exemple suivant.
+- Faites-lui cibler .NET Framework version 4.7.2 ou antérieure et cessez d’adhérer aux comportements d’accessibilité existants, en ajoutant le [commutateur AppContext](../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant dans la section `<runtime>` du fichier de configuration de l’application et en lui affectant la valeur `false`, comme dans l’exemple suivant.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -72,7 +72,7 @@ Notez que l’activation de cette fonctionnalité demande d’adhérer aux fonct
 **Prise en charge améliorée de l’accessibilité de ProgressBar**
 
 - Activation de la prise en charge d’UI Automation pour le contrôle <xref:System.Windows.Forms.ProgressBar> avec la possibilité d’utiliser les notifications UI Automation et autres fonctionnalités UI Automation. Les développeurs peuvent maintenant utiliser les notifications UI Automation que le Narrateur peut annoncer pour indiquer la progression.
-Pour obtenir une vue d’ensemble de la vue d’ensemble des événements UI Automation, notamment les événements de notification UI Automation, consultez la [vue d’ensemble des événements UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-eventsoverview).
+Pour obtenir une vue d’ensemble de la vue d’ensemble des événements UI Automation, notamment les événements de notification UI Automation, consultez la [vue d’ensemble des événements UI Automation](/windows/desktop/WinAuto/uiauto-eventsoverview).
 
 **Prise en charge améliorée de l’accessibilité PropertyGrid**
 
@@ -89,13 +89,13 @@ Pour obtenir une vue d’ensemble de la vue d’ensemble des événements UI Aut
 **Amélioration des signaux visuels**
 
 - Un contrôle <xref:System.Windows.Forms.CheckedListBox> vide affiche maintenant un indicateur de focus quand il reçoit le focus.
-Remarque : la prise en charge d’UI Automation est activée pour les contrôles dans l’exécution, mais n’est pas utilisée au moment du Design. Pour une vue d’ensemble d’UI Automation, consultez la [Vue d’ensemble d’UI Automation](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-overview).
+Remarque : la prise en charge d’UI Automation est activée pour les contrôles dans l’exécution, mais n’est pas utilisée au moment du Design. Pour une vue d’ensemble d’UI Automation, consultez la [Vue d’ensemble d’UI Automation](../../../../docs/framework/ui-automation/ui-automation-overview.md).
 
 **Appel des info-bulles des contrôles au clavier**
 
 - Maintenant, vous pouvez utiliser le clavier pour appeler les info-bulles des contrôles en mettant le focus sur le contrôle souhaité. Cette fonctionnalité doit être activée explicitement pour l’application (voir la section ** &quot; Comment accepter ou refuser ces modifications &quot; **)
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   | Majeure       |
 | Version | 4.8         |

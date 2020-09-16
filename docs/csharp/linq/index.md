@@ -3,12 +3,12 @@ title: LINQ (Language-Integrated Query) dans C#
 description: Présente LINQ (Language-Integrated Query) dans C#.
 ms.date: 11/30/2016
 ms.assetid: 007cc736-f5cf-4919-b99b-0c00ab2814ce
-ms.openlocfilehash: fe408210b30b5f6118dc66b4c8f7057fb6654881
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b39aeffa4871d523679162497a7a4e81cf1293ca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399440"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545954"
 ---
 # <a name="language-integrated-query-linq"></a>LINQ (Language-Integrated Query)
 
@@ -34,7 +34,7 @@ L’exemple suivant montre l’opération de requête complète. L’opération 
 
 - En règle générale, lorsque vous écrivez des requêtes LINQ, nous vous recommandons d’utiliser la syntaxe de requête dans la mesure du possible et la syntaxe de méthode si nécessaire. Il n’y a aucune différence de sémantique ou de performances entre les deux formats. Les expressions de requête sont souvent plus lisibles que les expressions équivalentes écrites avec la syntaxe de méthode.
 
-- Certaines opérations de requête, comme <xref:System.Linq.Enumerable.Count%2A> ou <xref:System.Linq.Enumerable.Max%2A>, n’ont pas d’expression de requête équivalente et doivent par conséquent être exprimées sous la forme d’un appel de méthode. La syntaxe de méthode peut être combinée avec la syntaxe de requête de différentes manières. Pour plus d’informations, voir [Syntaxe De requête et syntaxe méthode dans LINQ](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).
+- Certaines opérations de requête, comme <xref:System.Linq.Enumerable.Count%2A> ou <xref:System.Linq.Enumerable.Max%2A>, n’ont pas d’expression de requête équivalente et doivent par conséquent être exprimées sous la forme d’un appel de méthode. La syntaxe de méthode peut être combinée avec la syntaxe de requête de différentes manières. Pour plus d’informations, consultez [syntaxe de requête et syntaxe de méthode dans LINQ](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).
 
 - Les expressions de requête peuvent être compilées dans des arborescences d’expressions ou des délégués, selon le type auquel la requête est appliquée. Les requêtes <xref:System.Collections.Generic.IEnumerable%601> sont compilées en délégués. Les requêtes <xref:System.Linq.IQueryable> et <xref:System.Linq.IQueryable%601> sont compilées en arborescences d’expression. Pour plus d’informations, consultez la page [Arborescences d’expressions](../expression-trees.md).
 
@@ -42,7 +42,7 @@ L’exemple suivant montre l’opération de requête complète. L’opération 
 
 Pour approfondir votre connaissance de LINQ, commencez par vous familiariser avec certains concepts de base expliqués sur la page [Principes de base des expressions de requête](query-expression-basics.md), puis lisez la documentation relative à la technologie LINQ qui vous intéresse :
 
-- Documents XML : [LINQ to XML](../programming-guide/concepts/linq/linq-to-xml-overview.md)
+- Documents XML : [LINQ to XML](../../standard/linq/linq-xml-overview.md)
 
 - ADO.NET Entity Framework : [LINQ to Entities](../../framework/data/adonet/ef/language-reference/linq-to-entities.md)
 
