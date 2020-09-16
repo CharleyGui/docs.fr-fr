@@ -6,22 +6,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
-ms.openlocfilehash: df4f6bcd52331a7b6c81cf816260df4355ebf987
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 2c51a790a2a8adef565f186992a6a3faa5f102ad
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89552421"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550459"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-linq-to-xml"></a><span data-ttu-id="1a19b-103">Comment écrire une requête qui recherche des éléments en fonction du contexte (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="1a19b-103">How to write a query that finds elements based on context (LINQ to XML)</span></span>
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-linq-to-xml"></a><span data-ttu-id="1bd28-103">Comment écrire une requête qui recherche des éléments en fonction du contexte (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="1bd28-103">How to write a query that finds elements based on context (LINQ to XML)</span></span>
 
-<span data-ttu-id="1a19b-104">Parfois, vous devez écrire une requête qui sélectionne des éléments en fonction de leur contexte.</span><span class="sxs-lookup"><span data-stu-id="1a19b-104">Sometimes you might have to write a query that selects elements based on their context.</span></span> <span data-ttu-id="1a19b-105">Par exemple, vous souhaiterez peut-être filtrer en fonction des éléments frères précédents ou suivants, ou sur des éléments enfants ou ancêtres.</span><span class="sxs-lookup"><span data-stu-id="1a19b-105">For example, you might want to filter based on preceding or following sibling elements, or on child or ancestor elements.</span></span>
+<span data-ttu-id="1bd28-104">Parfois, vous devez écrire une requête qui sélectionne des éléments en fonction de leur contexte.</span><span class="sxs-lookup"><span data-stu-id="1bd28-104">Sometimes you might have to write a query that selects elements based on their context.</span></span> <span data-ttu-id="1bd28-105">Par exemple, vous souhaiterez peut-être filtrer en fonction des éléments frères précédents ou suivants, ou sur des éléments enfants ou ancêtres.</span><span class="sxs-lookup"><span data-stu-id="1bd28-105">For example, you might want to filter based on preceding or following sibling elements, or on child or ancestor elements.</span></span>
 
-<span data-ttu-id="1a19b-106">Vous pouvez pour cela écrire une requête et utiliser ses résultats dans la clause `where`.</span><span class="sxs-lookup"><span data-stu-id="1a19b-106">You can do this by writing a query and using the results of the query in the `where` clause.</span></span> <span data-ttu-id="1a19b-107">Si vous devez d’abord effectuer un test par rapport à null, puis tester la valeur, il est plus pratique d’exécuter la requête dans une `let` clause, puis d’utiliser les résultats dans la `where` clause.</span><span class="sxs-lookup"><span data-stu-id="1a19b-107">If you have to first test against null, and then test the value, it's more convenient to do the query in a `let` clause, and then use the results in the `where` clause.</span></span>
+<span data-ttu-id="1bd28-106">Vous pouvez pour cela écrire une requête et utiliser ses résultats dans la clause `where`.</span><span class="sxs-lookup"><span data-stu-id="1bd28-106">You can do this by writing a query and using the results of the query in the `where` clause.</span></span> <span data-ttu-id="1bd28-107">Si vous devez d’abord effectuer un test par rapport à null, puis tester la valeur, il est plus pratique d’exécuter la requête dans une `let` clause, puis d’utiliser les résultats dans la `where` clause.</span><span class="sxs-lookup"><span data-stu-id="1bd28-107">If you have to first test against null, and then test the value, it's more convenient to do the query in a `let` clause, and then use the results in the `where` clause.</span></span>
 
-## <a name="example-select-p-elements-that-are-immediately-followed-by-a-ul-element"></a><span data-ttu-id="1a19b-108">Exemple : sélectionner `p` des éléments qui sont immédiatement suivis d’un `ul` élément</span><span class="sxs-lookup"><span data-stu-id="1a19b-108">Example: Select `p` elements that are immediately followed by a `ul` element</span></span>
+## <a name="example-select-p-elements-that-are-immediately-followed-by-a-ul-element"></a><span data-ttu-id="1bd28-108">Exemple : sélectionner `p` des éléments qui sont immédiatement suivis d’un `ul` élément</span><span class="sxs-lookup"><span data-stu-id="1bd28-108">Example: Select `p` elements that are immediately followed by a `ul` element</span></span>
 
-<span data-ttu-id="1a19b-109">L'exemple suivant sélectionne tous les éléments `p` qui sont suivis immédiatement d'un élément `ul`.</span><span class="sxs-lookup"><span data-stu-id="1a19b-109">The following example selects all `p` elements that are immediately followed by a `ul` element.</span></span>
+<span data-ttu-id="1bd28-109">L'exemple suivant sélectionne tous les éléments `p` qui sont suivis immédiatement d'un élément `ul`.</span><span class="sxs-lookup"><span data-stu-id="1bd28-109">The following example selects all `p` elements that are immediately followed by a `ul` element.</span></span>
 
 ```csharp
 XElement doc = XElement.Parse(@"<Root>
@@ -85,7 +85,7 @@ For Each e As XElement In items
 Next
 ```
 
-<span data-ttu-id="1a19b-110">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1a19b-110">This example produces the following output:</span></span>
+<span data-ttu-id="1bd28-110">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1bd28-110">This example produces the following output:</span></span>
 
 ```output
 id = 1
@@ -93,9 +93,9 @@ id = 3
 id = 6
 ```
 
-## <a name="example-in-a-namespace-select-p-elements-that-are-immediately-followed-by-a-ul-element"></a><span data-ttu-id="1a19b-111">Exemple : dans un espace de noms, sélectionnez `p` les éléments qui sont immédiatement suivis par un `ul` élément</span><span class="sxs-lookup"><span data-stu-id="1a19b-111">Example: In a namespace select `p` elements that are immediately followed by a `ul` element</span></span>
+## <a name="example-in-a-namespace-select-p-elements-that-are-immediately-followed-by-a-ul-element"></a><span data-ttu-id="1bd28-111">Exemple : dans un espace de noms, sélectionnez `p` les éléments qui sont immédiatement suivis par un `ul` élément</span><span class="sxs-lookup"><span data-stu-id="1bd28-111">Example: In a namespace select `p` elements that are immediately followed by a `ul` element</span></span>
 
-<span data-ttu-id="1a19b-112">L’exemple suivant illustre la même requête que ci-dessus, mais pour le code XML qui se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="1a19b-112">The following example shows the same query as above, but for XML that's in a namespace.</span></span> <span data-ttu-id="1a19b-113">Pour plus d’informations, consultez [vue d’ensemble des espaces de noms](namespaces-overview.md).</span><span class="sxs-lookup"><span data-stu-id="1a19b-113">For more information, see [Namespaces overview](namespaces-overview.md).</span></span>
+<span data-ttu-id="1bd28-112">L’exemple suivant illustre la même requête que ci-dessus, mais pour le code XML qui se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="1bd28-112">The following example shows the same query as above, but for XML that's in a namespace.</span></span> <span data-ttu-id="1bd28-113">Pour plus d’informations, consultez [vue d’ensemble des espaces de noms](namespaces-overview.md).</span><span class="sxs-lookup"><span data-stu-id="1bd28-113">For more information, see [Namespaces overview](namespaces-overview.md).</span></span>
 
 ```csharp
 XElement doc = XElement.Parse(@"<Root xmlns='http://www.adatum.com'>
@@ -167,7 +167,7 @@ Module Module1
 End Module
 ```
 
-<span data-ttu-id="1a19b-114">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1a19b-114">This example produces the following output:</span></span>
+<span data-ttu-id="1bd28-114">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1bd28-114">This example produces the following output:</span></span>
 
 ```output
 id = 1
@@ -175,10 +175,10 @@ id = 3
 id = 6
 ```
 
-## <a name="see-also"></a><span data-ttu-id="1a19b-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1a19b-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1bd28-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1bd28-115">See also</span></span>
 
 - <xref:System.Xml.Linq.XElement.Parse%2A>
 - <xref:System.Xml.Linq.XContainer.Descendants%2A>
 - <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>
 - <xref:System.Linq.Enumerable.FirstOrDefault%2A>
-- [<span data-ttu-id="1a19b-116">Requêtes de base (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1a19b-116">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="1bd28-116">Requêtes de base (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1bd28-116">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](./find-element-specific-attribute.md)

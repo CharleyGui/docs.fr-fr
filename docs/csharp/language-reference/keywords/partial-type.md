@@ -8,36 +8,36 @@ f1_keywords:
 helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-ms.openlocfilehash: 8ae98805eea7231e3a15cb74e636313e796796a2
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 0445ac33473c7e2d1916705893b22ba21bb981ff
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89117985"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536844"
 ---
-# <a name="partial-type-c-reference"></a><span data-ttu-id="9c504-103">partial, type (référence C#)</span><span class="sxs-lookup"><span data-stu-id="9c504-103">partial type (C# Reference)</span></span>
+# <a name="partial-type-c-reference"></a><span data-ttu-id="8c91b-103">partial, type (référence C#)</span><span class="sxs-lookup"><span data-stu-id="8c91b-103">partial type (C# Reference)</span></span>
 
-<span data-ttu-id="9c504-104">Les définitions de type partiel permettent le fractionnement de la définition d’une classe, d’un struct ou d’une interface entre plusieurs fichiers.</span><span class="sxs-lookup"><span data-stu-id="9c504-104">Partial type definitions allow for the definition of a class, struct, or interface to be split into multiple files.</span></span>
+<span data-ttu-id="8c91b-104">Les définitions de type partiel permettent le fractionnement de la définition d’une classe, d’un struct ou d’une interface entre plusieurs fichiers.</span><span class="sxs-lookup"><span data-stu-id="8c91b-104">Partial type definitions allow for the definition of a class, struct, or interface to be split into multiple files.</span></span>
 
-<span data-ttu-id="9c504-105">Dans *file1.cs*:</span><span class="sxs-lookup"><span data-stu-id="9c504-105">In *File1.cs*:</span></span>
+<span data-ttu-id="8c91b-105">Dans *file1.cs*:</span><span class="sxs-lookup"><span data-stu-id="8c91b-105">In *File1.cs*:</span></span>
 
 [!code-csharp[csrefKeywordsContextual#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#3)]  
 
-<span data-ttu-id="9c504-106">Dans *file2.cs* , la déclaration :</span><span class="sxs-lookup"><span data-stu-id="9c504-106">In *File2.cs* the declaration:</span></span>
+<span data-ttu-id="8c91b-106">Dans *file2.cs* , la déclaration :</span><span class="sxs-lookup"><span data-stu-id="8c91b-106">In *File2.cs* the declaration:</span></span>
 
 [!code-csharp[csrefKeywordsContextual#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#4)]  
 
-## <a name="remarks"></a><span data-ttu-id="9c504-107">Remarques</span><span class="sxs-lookup"><span data-stu-id="9c504-107">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="8c91b-107">Notes</span><span class="sxs-lookup"><span data-stu-id="8c91b-107">Remarks</span></span>
 
-<span data-ttu-id="9c504-108">Fractionner un type de classe, de struct ou d’interface entre plusieurs fichiers peut être utile si vous travaillez sur des projets volumineux ou des projets contenant du code généré automatiquement, comme celui fourni par le [Concepteur Windows Forms](../../../framework/winforms/controls/developing-windows-forms-controls-at-design-time.md).</span><span class="sxs-lookup"><span data-stu-id="9c504-108">Splitting a class, struct or interface type over several files can be useful when you are working with large projects, or with automatically generated code such as that provided by the [Windows Forms Designer](../../../framework/winforms/controls/developing-windows-forms-controls-at-design-time.md).</span></span> <span data-ttu-id="9c504-109">Un type partiel peut contenir une [méthode partielle](partial-method.md).</span><span class="sxs-lookup"><span data-stu-id="9c504-109">A partial type may contain a [partial method](partial-method.md).</span></span> <span data-ttu-id="9c504-110">Pour plus d’informations, consultez la page [Classes et méthodes partielles](../../programming-guide/classes-and-structs/partial-classes-and-methods.md).</span><span class="sxs-lookup"><span data-stu-id="9c504-110">For more information, see [Partial Classes and Methods](../../programming-guide/classes-and-structs/partial-classes-and-methods.md).</span></span>
+<span data-ttu-id="8c91b-108">Fractionner un type de classe, de struct ou d’interface entre plusieurs fichiers peut être utile si vous travaillez sur des projets volumineux ou des projets contenant du code généré automatiquement, comme celui fourni par le [Concepteur Windows Forms](/dotnet/desktop/winforms/controls/developing-windows-forms-controls-at-design-time).</span><span class="sxs-lookup"><span data-stu-id="8c91b-108">Splitting a class, struct or interface type over several files can be useful when you are working with large projects, or with automatically generated code such as that provided by the [Windows Forms Designer](/dotnet/desktop/winforms/controls/developing-windows-forms-controls-at-design-time).</span></span> <span data-ttu-id="8c91b-109">Un type partiel peut contenir une [méthode partielle](partial-method.md).</span><span class="sxs-lookup"><span data-stu-id="8c91b-109">A partial type may contain a [partial method](partial-method.md).</span></span> <span data-ttu-id="8c91b-110">Pour plus d’informations, consultez la page [Classes et méthodes partielles](../../programming-guide/classes-and-structs/partial-classes-and-methods.md).</span><span class="sxs-lookup"><span data-stu-id="8c91b-110">For more information, see [Partial Classes and Methods](../../programming-guide/classes-and-structs/partial-classes-and-methods.md).</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="9c504-111">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="9c504-111">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="8c91b-111">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="8c91b-111">C# language specification</span></span>
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="9c504-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9c504-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8c91b-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8c91b-112">See also</span></span>
 
-- [<span data-ttu-id="9c504-113">Référence C#</span><span class="sxs-lookup"><span data-stu-id="9c504-113">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="9c504-114">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="9c504-114">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="9c504-115">Modificateurs</span><span class="sxs-lookup"><span data-stu-id="9c504-115">Modifiers</span></span>](index.md)
-- [<span data-ttu-id="9c504-116">Introduction aux génériques</span><span class="sxs-lookup"><span data-stu-id="9c504-116">Introduction to Generics</span></span>](../../programming-guide/generics/index.md)
+- [<span data-ttu-id="8c91b-113">Référence C#</span><span class="sxs-lookup"><span data-stu-id="8c91b-113">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="8c91b-114">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="8c91b-114">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="8c91b-115">Modificateurs</span><span class="sxs-lookup"><span data-stu-id="8c91b-115">Modifiers</span></span>](index.md)
+- [<span data-ttu-id="8c91b-116">Introduction aux génériques</span><span class="sxs-lookup"><span data-stu-id="8c91b-116">Introduction to Generics</span></span>](../../programming-guide/generics/index.md)
