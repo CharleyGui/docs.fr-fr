@@ -2,12 +2,12 @@
 title: 'Tutoriel : Exécution différée'
 ms.date: 07/20/2015
 ms.assetid: c80d53a8-1a30-4115-b232-52f0d089fec5
-ms.openlocfilehash: 051d4a412ecd3ce53cc546f435f8ade1e15899b3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a1348d9c686b54777f9c40dea2589d3c03fb7b2d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406740"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541966"
 ---
 # <a name="tutorial-deferred-execution-visual-basic"></a>Didacticiel : exécution différée (Visual Basic)
 Ce didacticiel illustre le modèle de traitement lorsque vous chaînez des requêtes. Le chaînage de requêtes est un aspect essentiel de l'écriture des transformations fonctionnelles. Il est important de comprendre exactement comment fonctionnent les requêtes chaînées.  
@@ -18,9 +18,9 @@ Ce didacticiel illustre le modèle de traitement lorsque vous chaînez des requ�
   
 |Rubrique|Description|  
 |-----------|-----------------|  
-|[Exécution et évaluation différées en LINQ to XML (Visual Basic)](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)|Décrit les concepts d'évaluation et d'exécution différées.|  
-|[Exemple d’exécution différée (Visual Basic)](deferred-execution-example.md)|Fournit un exemple d'exécution différée.|  
+|[Exécution et évaluation différées en LINQ to XML (Visual Basic)](../../../../standard/linq/deferred-execution-lazy-evaluation.md)|Décrit les concepts d'évaluation et d'exécution différées.|  
+|[Exemple d’exécution différée (Visual Basic)](../../../../standard/linq/deferred-execution-example.md)|Fournit un exemple d'exécution différée.|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Transformations fonctionnelles pures de XML (Visual Basic)](pure-functional-transformations-of-xml.md)
+- [Transformations fonctionnelles pures de XML (Visual Basic)](../../../../standard/linq/introduction-pure-functional-transformations.md)

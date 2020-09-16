@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 487a974af2280a02b83fe685324c9464df705585
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 04f27729b5713c325a73cbdeb1c6c673fe749c00
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925629"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544204"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Didacticiel : créer une application de service Windows
 
@@ -163,7 +163,7 @@ Pour configurer un mécanisme d’interrogation simple, utilisez le composant <x
    Private eventId As Integer = 1
    ```
 
-Au lieu d’exécuter tout votre travail sur le thread principal, vous pouvez exécuter des tâches à l’aide de threads de travail en arrière-plan. Pour plus d’informations, consultez <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.
+Au lieu d’exécuter tout votre travail sur le thread principal, vous pouvez exécuter des tâches à l’aide de threads de travail en arrière-plan. Pour plus d'informations, consultez <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.
 
 ### <a name="define-what-occurs-when-the-service-is-stopped"></a>Définir les actions à effectuer lors de l'arrêt du service
 
@@ -297,7 +297,7 @@ Vous pouvez implémenter les paramètres d’état SERVICE_START_PENDING et SERV
 
 6. (Facultatif) Si <xref:System.ServiceProcess.ServiceBase.OnStop%2A> est une méthode durable, répétez cette procédure dans la méthode `OnStop`. Implémentez l’état SERVICE_STOP_PENDING et retournez l’état SERVICE_STOPPED avant la fin de la méthode `OnStop`.
 
-   Par exemple :
+   Exemple :
 
     ```csharp
     // Update the service state to Stop Pending.
@@ -471,7 +471,7 @@ Chaque service Windows a une entrée de Registre sous la sous-clé **HKEY_LOCAL_
 
 Maintenant que vous avez généré le service Windows, vous pouvez l'installer. Pour installer un service Windows, vous devez disposer d’informations d’identification d’administrateur sur l’ordinateur sur lequel il est installé.
 
-1. Ouvrez [Invite de commandes développeur pour Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs) avec des informations d'identification administratives. À partir du menu **Démarrer** de Windows, sélectionnez **Invite de commandes développeur pour VS 2017** dans le dossier Visual Studio, puis sélectionnez **Plus** > **Exécuter en tant qu’administrateur** dans le menu contextuel.
+1. Ouvrez [Invite de commandes développeur pour Visual Studio](../tools/developer-command-prompt-for-vs.md) avec des informations d'identification administratives. À partir du menu **Démarrer** de Windows, sélectionnez **Invite de commandes développeur pour VS 2017** dans le dossier Visual Studio, puis sélectionnez **Plus** > **Exécuter en tant qu’administrateur** dans le menu contextuel.
 
 2. Dans la fenêtre **Invite de commandes développeur pour Visual Studio**, accédez au dossier qui contient la sortie de votre projet (par défaut, le sous-répertoire *\bin\Debug* de votre projet).
 
@@ -543,7 +543,7 @@ Maintenant que vous avez créé le service, vous pouvez :
 
 - Explorer le composant <xref:System.ServiceProcess.ServiceController>, qui vous permet d’envoyer des commandes au service que vous avez installé.
 
-- Au lieu de créer le journal des événements quand l’application s’exécute, utilisez un programme d’installation pour créer un journal des événements quand vous installez l’application. Le journal des événements est supprimé par le programme d’installation quand vous désinstallez l’application. Pour plus d’informations, consultez <xref:System.Diagnostics.EventLogInstaller>.
+- Au lieu de créer le journal des événements quand l’application s’exécute, utilisez un programme d’installation pour créer un journal des événements quand vous installez l’application. Le journal des événements est supprimé par le programme d’installation quand vous désinstallez l’application. Pour plus d'informations, consultez <xref:System.Diagnostics.EventLogInstaller>.
 
 ## <a name="see-also"></a>Voir aussi
 

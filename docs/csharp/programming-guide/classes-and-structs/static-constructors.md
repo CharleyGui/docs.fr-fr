@@ -6,12 +6,12 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: e324b2aa968ff5fdf9c268fa3891f67e8530ff87
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 1bb494ded34065bb76b72db40375555ca1eb6953
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863980"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541849"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Constructeurs statiques (Guide de programmation C#)
 Un constructeur statique est utilisé pour initialiser des données [statiques](../../language-reference/keywords/static.md) ou pour effectuer une action particulière qui ne doit être effectuée qu’une seule fois. Il est automatiquement appelé avant la création de la première instance ou le référencement d’un membre statique.  
@@ -44,14 +44,14 @@ Les constructeurs statiques ont les propriétés suivantes :
 > [!Note]
 > S’il n’est pas directement accessible, la présence d’un constructeur statique explicite doit être documentée pour faciliter la résolution des exceptions de l’initialisation.
 
-### <a name="usage"></a>Usage
+### <a name="usage"></a>Utilisation
 
 - Généralement, on utilise des constructeurs statiques quand la classe utilise un fichier journal et que le constructeur sert à écrire des entrées dans ce fichier.  
 - Les constructeurs statiques sont également utiles pour la création de classes wrapper pour du code non managé, quand le constructeur peut appeler la méthode `LoadLibrary`.  
 
 - Les constructeurs statiques sont également un emplacement pratique pour appliquer des contrôles au moment de l’exécution sur le paramètre de type qui ne peuvent pas être vérifiés au moment de la compilation via des contraintes (contraintes de paramètre de type).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
  Dans cet exemple, la classe `Bus` possède un constructeur statique. Quand la première instance de `Bus` est créée (`bus1`), le constructeur statique est appelé pour initialiser la classe. L’exemple de sortie vérifie que le constructeur statique s’exécute une seule fois, même si deux instances de `Bus` sont créées, et qu’il s’exécute avant le constructeur d’instance.  
   
  [!code-csharp[csProgGuideObjects#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#15)]
@@ -67,4 +67,4 @@ Pour plus d’informations, voir la section [Constructeurs statiques](~/_csharpl
 - [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md)
 - [Finaliseurs](./destructors.md)
 - [Instructions de conception des constructeurs](../../../standard/design-guidelines/constructor.md#type-constructor-guidelines)
-- [Avertissement de sécurité-CA2121 : les constructeurs statiques doivent être privés](https://docs.microsoft.com/visualstudio/code-quality/ca2121-static-constructors-should-be-private)
+- [Avertissement de sécurité-CA2121 : les constructeurs statiques doivent être privés](/visualstudio/code-quality/ca2121-static-constructors-should-be-private)

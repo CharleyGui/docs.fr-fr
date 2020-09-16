@@ -2,12 +2,12 @@
 title: Membership and Role Provider
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
-ms.openlocfilehash: e77e353fba194cb25b466387cf9def6773635e00
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e532f35a2c4cd9f53006c088956eadff616d2005
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591759"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543587"
 ---
 # <a name="membership-and-role-provider"></a>Membership and Role Provider
 L’exemple de fournisseur d’appartenances et de rôles montre comment un service peut utiliser les fournisseurs d’appartenances et de rôles ASP.NET pour authentifier et autoriser des clients.  
@@ -123,7 +123,7 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
 2. Vérifiez que vous avez configuré la [base de données ASP.NET services d’application](https://go.microsoft.com/fwlink/?LinkId=94997).  
   
     > [!NOTE]
-    > Si vous exécutez SQL Server Express Edition, le nom de votre serveur est .\SQLEXPRESS. Ce serveur doit être utilisé lors de la configuration de la base de données ASP.NET Services d’application ainsi que dans la chaîne de connexion Web. config.  
+    > Si vous exécutez SQL Server Express Edition, le nom de votre serveur est .\SQLEXPRESS. Ce serveur doit être utilisé lors de la configuration de la base de données ASP.NET Services d’application ainsi que dans la chaîne de connexion Web.config.  
   
     > [!NOTE]
     > Le compte de processus de travail ASP.NET doit avoir des autorisations sur la base de données créée dans cette étape. Utilisez l'utilitaire sqlcmd ou SQL Server Management Studio pour ce faire.  
@@ -134,11 +134,11 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
 1. Assurez-vous que le chemin d'accès inclut le dossier dans lequel Makecert.exe se trouve.  
   
-2. Exécutez setup. bat à partir du dossier d’installation de l’exemple dans un Invite de commandes développeur pour Visual Studio exécuter avec des privilèges d’administrateur. Tous les certificats de service requis pour l'exécution de l'exemple sont ainsi installés.  
+2. Exécutez Setup.bat à partir du dossier d’installation de l’exemple dans une Invite de commandes développeur pour Visual Studio exécuter avec des privilèges d’administrateur. Tous les certificats de service requis pour l'exécution de l'exemple sont ainsi installés.  
   
 3. Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
-4. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
@@ -152,15 +152,15 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
 5. Sur le serveur, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez `setup.bat service` . `setup.bat`L’exécution avec l' `service` argument crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé service. cer.  
   
-6. Modifiez le fichier Web. config pour refléter le nouveau nom de certificat (dans l' `findValue` attribut de [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), qui est le même que le nom de domaine complet de l’ordinateur.  
+6. Modifiez Web.config pour refléter le nouveau nom de certificat (dans l' `findValue` attribut de [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), qui est le même que le nom de domaine complet de l’ordinateur.  
   
 7. Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.  
   
 8. Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.  
   
-9. Sur le client, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez ImportServiceCert. bat. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
+9. Sur le client, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez ImportServiceCert.bat. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
   
-10. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   
@@ -196,4 +196,4 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
     ```bat  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
-    ```  
+    ```

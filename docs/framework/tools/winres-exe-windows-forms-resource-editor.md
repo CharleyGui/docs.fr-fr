@@ -12,12 +12,12 @@ helpviewer_keywords:
 - resx files
 - .resx files
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
-ms.openlocfilehash: 8393eb44246ed1bbc0e4e6acc84ad7bd57041ec0
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 35d1324d5ea7a72ffd5ea594530d1312e717cd7c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87516903"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543223"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Windows Resource Localization Editor)
 
@@ -42,7 +42,7 @@ winres /?
 |------------|-----------------|
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 L'état des éléments d'interface d'un formulaire dans un projet Windows Forms est généralement stocké dans des fichiers de ressources, c'est-à-dire des fichiers XML portant l'extension .resx ou leurs versions binaires et compilées correspondantes, portant l'extension .resources. Winres.exe est un outil qui permet d'éditer de façon limitée les deux types de fichiers en dehors de l'environnement de design Visual Studio. Vous pouvez y effectuer les types de modifications suivants :
 
@@ -52,7 +52,7 @@ L'état des éléments d'interface d'un formulaire dans un projet Windows Forms 
 
 - Un fichier de ressources avec une culture spécifique peut être enregistré en tant que fichier de ressources d'une autre culture. Par exemple, un fichier de ressources anglais (États-Unis) peut être enregistré en tant que fichier de ressources polonais. En général, le nouveau fichier est modifié par la suite pour être compatible avec la nouvelle culture.
 
-Consultez également [Organisation hiérarchique des ressources pour la localisation](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/756hydy4(v=vs.110)) ou [Organisation hiérarchique des ressources pour la localisation](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/756hydy4(v=vs.120)).
+Consultez également [Organisation hiérarchique des ressources pour la localisation](/previous-versions/visualstudio/visual-studio-2012/756hydy4(v=vs.110)) ou [Organisation hiérarchique des ressources pour la localisation](/previous-versions/visualstudio/visual-studio-2013/756hydy4(v=vs.120)).
 
 Winres.exe ne peut pas convertir un fichier .resx en fichier .resources correspondant ; utilisez à la place l'outil Resgen.exe. Pour plus d’informations sur Resgen.exe, consultez [Resgen.exe (Générateur de fichier de ressources)](resgen-exe-resource-file-generator.md).
 
@@ -93,7 +93,7 @@ Vous devez utiliser la version de Winres.exe publiée avec le .NET Framework que
 |-------------------|--------------------|----------------|
 |Visual Studio .NET 2002|1.0|1.0|
 |Visual Studio .NET 2003|1.1|1.1|
-|Visual Studio 2005|2.0|2.0|
+|Visual Studio 2005 :|2.0|2.0|
 |Visual Studio 2008|3.0 et 3.5|3.0 et 3.5|
 |Visual Studio 2010|4.0|4.0|
 |Visual Studio 2017|4.6|4.6|
@@ -109,7 +109,7 @@ Vous devez utiliser la version de Winres.exe publiée avec le .NET Framework que
 
 2. Pour ouvrir les ressources par défaut d’un formulaire à localiser, cliquez sur la commande **Ouvrir** dans le menu **Fichier** et accédez au fichier pour l’ouvrir.
 
-     -ou-
+     - ou -
 
      Spécifiez le fichier à ouvrir dans la ligne de commande lorsque vous démarrez Winres.exe.
 

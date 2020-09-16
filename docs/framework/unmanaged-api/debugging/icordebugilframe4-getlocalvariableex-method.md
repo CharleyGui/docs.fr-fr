@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 0c8676f8-ca0d-4998-b64d-fefac7e38912
 topic_type:
 - apiref
-ms.openlocfilehash: 8d6ef550309ea7f8bae616a5f7e5c41b4f07374a
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 7c43c32e10d8e10b0f843795bbc3f0f3bc20529c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213723"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544243"
 ---
 # <a name="icordebugilframe4getlocalvariableex-method"></a>ICorDebugILFrame4::GetLocalVariableEx, méthode
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -44,7 +44,7 @@ HRESULT GetLocalVariableEx(
  `ppValue`  
  à Pointeur vers l’adresse d’un objet « ICorDebugValue » qui représente la valeur récupérée.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Notes  
  Cette méthode est similaire à la méthode [GetLocalVariable](icordebugilframe-getlocalvariable-method.md) , à ceci près qu’elle accède éventuellement à une variable ajoutée dans l’instrumentation ReJIT du profileur. L’appel de cette méthode avec une `flags` valeur `ILCODE_ORIGINAL_IL` équivaut à l’appel de [GetLocalVariable](icordebugilframe-getlocalvariable-method.md); si la méthode est instrumentée avec des variables locales supplémentaires, ces variables ne sont pas accessibles. `ILCODE_REJIT_IL` autorise le débogueur à accéder aux variables locales ajoutées dans l'instrumentation ReJIT du profileur. Si le langage intermédiaire n'est pas instrumenté, la méthode retourne `E_INVALIDARG`.  
   
 ## <a name="requirements"></a>Spécifications  
@@ -60,4 +60,4 @@ HRESULT GetLocalVariableEx(
 
 - [ICorDebugILFrame4, interface](icordebugilframe4-interface.md)
 - [Interfaces de débogage](debugging-interfaces.md)
-- [ReJIT : Guide pratique](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT : Guide pratique](/archive/blogs/davbr/rejit-a-how-to-guide)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 116087ac1aab57f2869b05f436801c7861c56eca
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 88d6cfd1b5262d4a4fae96cf53271467b5042319
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063703"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541940"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Méthodes d’extension (Guide de programmation C#)
 
@@ -61,7 +61,7 @@ using System.Linq;
 
 Vous pouvez utiliser des méthodes d'extension pour étendre une classe ou une interface, mais pas pour les remplacer. Une méthode d'extension avec le même nom et la même signature qu'une méthode d'interface ou de classe ne sera jamais appelée. Au moment de la compilation, les méthodes d'extension ont toujours la priorité la plus faible par rapport aux méthodes d'instance définies dans le type lui-même. En d'autres termes, si un type a une méthode nommée `Process(int i)` et que vous avez une méthode d'extension avec la même signature, le compilateur créera toujours une liaison avec la méthode d'instance. Lorsque le compilateur rencontre un appel de méthode, il recherche d'abord une correspondance dans les méthodes d'instance du type. Si aucune correspondance n'est trouvée, il recherche toutes les méthodes d'extension définies pour le type et crée une liaison avec la première méthode d'extension qu'il trouve. L’exemple suivant montre comment le compilateur détermine quelle méthode d’extension ou méthode d’instance est choisie pour créer une liaison.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre les règles que le compilateur C# suit pour déterminer s’il faut lier un appel de méthode à une méthode d’instance sur le type, ou à une méthode d’extension. Le classe statique `Extensions` contient des méthodes d'extension définies pour tout type qui implémente `IMyInterface`. Les classes `A`, `B` et `C` implémentent toutes l'interface.
 
@@ -123,7 +123,7 @@ Pour une bibliothèque de classes que vous avez implémentée, vous ne devez pas
 - [Exemples de programmation parallèle (il s’agit de nombreux exemples de méthodes d’extension)](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)
 - [Expressions lambda](../../language-reference/operators/lambda-expressions.md)
 - [Vue d'ensemble des opérateurs de requête standard](../concepts/linq/standard-query-operators-overview.md)
-- [Règles de conversion pour les paramètres Instance et leur impact](https://docs.microsoft.com/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)
-- [Interopérabilité des méthodes d’extension entre les langages](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)
-- [Méthodes d’extension et délégués curryfiés](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-and-curried-delegates)
-- [Extension method Binding and Error reporting](https://docs.microsoft.com/archive/blogs/sreekarc/extension-method-binding-and-error-reporting)
+- [Règles de conversion pour les paramètres Instance et leur impact](/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)
+- [Interopérabilité des méthodes d’extension entre les langages](/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)
+- [Méthodes d’extension et délégués curryfiés](/archive/blogs/sreekarc/extension-methods-and-curried-delegates)
+- [Extension method Binding and Error reporting](/archive/blogs/sreekarc/extension-method-binding-and-error-reporting)

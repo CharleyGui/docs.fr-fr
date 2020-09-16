@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 4f187d772d2f2e4375fbe3cfdc8c48af691f1c7c
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 019b36a328d4e9fb01b112ec79d8d8e0548142f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863875"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541875"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Classes statiques et membres de classe statique (Guide de programmation C#)
 
@@ -41,7 +41,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  Comme c’est le cas avec tous les types de classe, les informations de type pour une classe statique sont chargées par le Runtime .NET lorsque le programme qui référence la classe est chargé. Le programme ne peut pas spécifier exactement quand la classe est chargée. Toutefois, il est garanti qu’elle sera chargée, que ses champs seront initialisés et que son constructeur statique sera appelé avant que la classe soit référencée pour la première fois dans votre programme. Un constructeur statique est appelé une seule fois et une classe statique reste en mémoire pendant la durée de vie du domaine d’application dans lequel votre programme réside.  
   
 > [!NOTE]
-> Pour créer une classe non statique permettant la création d’une seule instance d’elle-même, consultez [Implémentation d’un singleton en C#](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29).  
+> Pour créer une classe non statique permettant la création d’une seule instance d’elle-même, consultez [Implémentation d’un singleton en C#](/previous-versions/msp-n-p/ff650316(v=pandp.10)).  
   
  La liste suivante fournit les fonctionnalités principales d’une classe statique :  
   
@@ -57,7 +57,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  Les classes statiques sont scellées (sealed) et ne peuvent par conséquent pas être héritées. Elles ne peuvent hériter d’aucune classe à part <xref:System.Object>. Les classes static ne peuvent pas contenir un constructeur d’instance. Toutefois, ils peuvent contenir un constructeur statique. Les classes non statiques doivent également définir un constructeur statique si la classe contient des membres statiques qui requièrent une initialisation non triviale. Pour plus d’informations, consultez [Constructeurs statiques](./static-constructors.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Voici un exemple d’une classe statique qui contient deux méthodes qui convertissent la température des degrés Celsius en degrés Fahrenheit et des degrés Fahrenheit en degrés Celsius :  
   
  [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
@@ -93,7 +93,7 @@ Pour plus d’informations, voir [Classes statiques](~/_csharplang/spec/classes.
 
 - [Guide de programmation C#](../index.md)
 - [static](../../language-reference/keywords/static.md)
-- [Catégories](./classes.md)
+- [Classes](./classes.md)
 - [class](../../language-reference/keywords/class.md)
 - [Constructeurs statiques](./static-constructors.md)
 - [Constructeurs d’instances](./instance-constructors.md)

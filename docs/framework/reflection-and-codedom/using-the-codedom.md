@@ -21,12 +21,12 @@ helpviewer_keywords:
 - code generators
 - CodeDOM, graphs
 ms.assetid: 0444ddf3-c3f6-44ed-a999-f710d9c3e0cf
-ms.openlocfilehash: 476d8c18f386f889855c664147b1ee20995dc6f9
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7a730a828488fd3ca04419588b3f32703dfda1c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865214"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541732"
 ---
 # <a name="using-the-codedom"></a>Utilisation du CodeDOM
 CodeDOM fournit des types qui représentent de nombreux types courants d’éléments du code source. Vous pouvez concevoir un programme qui génère un modèle de code source à l’aide d’éléments CodeDOM pour assembler un graphique d’objet. Ce graphique d’objet peut être rendu sous forme de code source à l’aide d’un générateur de code CodeDOM pour un langage de programmation pris en charge. CodeDOM permet également de compiler du code source dans un assembly binaire.  
@@ -126,4 +126,4 @@ CodeDOM fournit des types qui représentent de nombreux types courants d’élé
   
  Pour plus d’informations sur chacun des types CodeDOM, consultez la documentation de référence pour l’espace de noms <xref:System.CodeDom>.  
   
- Pour obtenir un graphique permettant de retrouver rapidement l’élément CodeDOM à utiliser pour représenter un type d’élément de code particulier, consultez [Aide-mémoire de CodeDOM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)).
+ Pour obtenir un graphique permettant de retrouver rapidement l’élément CodeDOM à utiliser pour représenter un type d’élément de code particulier, consultez [Aide-mémoire de CodeDOM](/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)).

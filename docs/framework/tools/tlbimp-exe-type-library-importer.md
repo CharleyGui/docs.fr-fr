@@ -11,12 +11,12 @@ helpviewer_keywords:
 - type libraries
 - converting type definitions
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
-ms.openlocfilehash: f1e50336e6c159ae56b393098868e4b8f5310b49
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 4c2cddd78e14d1ae0b04bab07b57fe0ce0f627ca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87516994"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543366"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (Type Library Importer)
 L''importateur de bibliothèques de types convertit les définitions de types présentes dans une bibliothèque de types COM en définitions équivalentes dans un assembly de Common Language Runtime. Le résultat de Tlbimp.exe est un fichier binaire (un assembly) qui contient les métadonnées de runtime pour les types définis dans la bibliothèque de types d'origines. Vous pouvez examiner ce fichier à l’aide d’outils comme [Ildasm.exe](ildasm-exe-il-disassembler.md).  
@@ -51,7 +51,7 @@ tlbimp tlbFile [options]
 |**/noclassmembers**|Empêche Tlbimp.exe d'ajouter des membres aux classes. Cela évite une <xref:System.TypeLoadException> potentielle.|  
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|  
 |**/out :** *NomFichier*|Spécifie le nom du fichier de sortie, de l'assembly et de l'espace de noms dans lesquels écrire les définitions de métadonnées. L’option **/out** n’a aucun effet sur l’espace de noms de l’assembly si la bibliothèque de types spécifie l’attribut personnalisé IDL (Interface Definition Language) qui contrôle explicitement l’espace de noms de l’assembly. Si vous ne spécifiez pas cette option, Tlbimp.exe écrit les métadonnées dans un fichier portant le même nom que la bibliothèque de types effective définie dans le fichier d’entrée, et lui assigne une extension .dll. Si le fichier de sortie porte le même nom que le fichier d'entrée, l'outil génère une erreur pour empêcher le remplacement de la bibliothèque de types.|  
-|**/Primary**|Produit un assembly PIA (Primary Interop Assembly) pour la bibliothèque de types spécifiée. Des informations sont ajoutées à l'assembly pour indiquer qu'il a été produit par l'éditeur de la bibliothèque de types. En spécifiant un assembly PIA, vous différenciez l'assembly d'un éditeur des autres assemblys créés à partir de la bibliothèque de types à l'aide de Tlbimp.exe. Vous devez utiliser uniquement l’option **/primary** si vous êtes l’éditeur de la bibliothèque de types que vous importez avec Tlbimp.exe. Notez que vous devez signer un assembly PIA (Primary Interop Assembly) avec un [nom fort](../../standard/assembly/strong-named.md). Pour plus d’informations, consultez [Assemblys PIA (Primary Interop Assembly)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).|  
+|**/Primary**|Produit un assembly PIA (Primary Interop Assembly) pour la bibliothèque de types spécifiée. Des informations sont ajoutées à l'assembly pour indiquer qu'il a été produit par l'éditeur de la bibliothèque de types. En spécifiant un assembly PIA, vous différenciez l'assembly d'un éditeur des autres assemblys créés à partir de la bibliothèque de types à l'aide de Tlbimp.exe. Vous devez utiliser uniquement l’option **/primary** si vous êtes l’éditeur de la bibliothèque de types que vous importez avec Tlbimp.exe. Notez que vous devez signer un assembly PIA (Primary Interop Assembly) avec un [nom fort](../../standard/assembly/strong-named.md). Pour plus d’informations, consultez [Assemblys PIA (Primary Interop Assembly)](/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).|  
 |**/Product :**`productinformation`|Ajoute les informations produit à l'assembly de sortie. Ces informations peuvent être affichées dans la boîte de dialogue **Propriétés du fichier** de l’assembly.|  
 |**/ProductVersion :**`productversioninformation`|Ajoute les informations de version du produit à l'assembly de sortie. Il n'existe aucune restriction de format. Ces informations peuvent être affichées dans la boîte de dialogue **Propriétés du fichier** de l’assembly.|  
 |**/publickey:** *filename*|Spécifie le fichier contenant la clé publique à utiliser pour signer l'assembly résultant. Si vous spécifiez l’option **/keyfile:** ou **/keycontainer:** au lieu de **/publickey:**, Tlbimp.exe génère la clé publique à partir de la paire de clés publique/privée fournie avec **/keyfile:** ou **/keycontainer:**. L’option **/publickey:** prend en charge les scénarios de clé de test et de signature différée. Le fichier est au format généré par Sn.exe. Pour plus d’informations, consultez l’option **-p** de Sn.exe dans l’[outil Strong Name (Sn.exe)](sn-exe-strong-name-tool.md).|  
@@ -72,7 +72,7 @@ tlbimp tlbFile [options]
 > [!NOTE]
 > Les options de ligne de commande de Tlbimp.exe ne font pas l'objet d'une distinction minuscules/majuscules et peuvent être fournies dans n'importe quel ordre. Il vous suffit de spécifier les éléments de l'option nécessaires à son identification de manière unique. Par conséquent, **/n** équivaut à **/nologo** et **/ou:** *outfile.dll* équivaut à **/out:** *outfile.dll*.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Tlbimp.exe effectue d'un seul tenant les conversions sur la totalité d'une bibliothèque de types. Vous ne pouvez pas utiliser cet outil dans le but de générer des informations de type pour un sous-ensemble de types définis dans une bibliothèque de types unique.  
   
  Il est souvent utile ou nécessaire d’assigner des [noms forts](../../standard/assembly/strong-named.md) aux assemblys. Par conséquent, Tlbimp.exe comprend des options permettant de fournir les informations nécessaires pour générer des assemblys portant un nom fort. Les options **/keyfile:** et **/keycontainer:** permettent de signer les assemblys avec des noms forts. Par conséquent, il est logique de fournir uniquement une seule de ces options à la fois.  
@@ -131,9 +131,9 @@ void SomeMethod(out bool x);
 - [outils](index.md)
 - [Tlbexp.exe (exportateur de bibliothèques de types)](tlbexp-exe-type-library-exporter.md)
 - [Importation d'une bibliothèque de types sous la forme d'un assembly](../interop/importing-a-type-library-as-an-assembly.md)
-- [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Récapitulatif de la conversion d’une bibliothèque de types en assembly](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Ildasm.exe (Désassembleur IL)](ildasm-exe-il-disassembler.md)
 - [Sn.exe (outil Strong Name Tool)](sn-exe-strong-name-tool.md)
-- [Assemblys avec nom fort](../../standard/assembly/strong-named.md)
-- [Attributs d’importation de bibliothèques de types dans les assemblys d’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y6a7ak23(v=vs.100))
+- [Assemblys avec noms forts](../../standard/assembly/strong-named.md)
+- [Attributs d’importation de bibliothèques de types dans les assemblys d’interopérabilité](/previous-versions/dotnet/netframework-4.0/y6a7ak23(v=vs.100))
 - [Invites de commandes](developer-command-prompt-for-vs.md)

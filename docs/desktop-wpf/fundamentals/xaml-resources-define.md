@@ -4,12 +4,12 @@ description: En savoir plus sur les ressources XAML dans WPF pour .NET Core. Com
 author: adegeo
 ms.author: adegeo
 ms.date: 08/21/2019
-ms.openlocfilehash: f8eaf3fd931aa6804b0b9a9c19c6bcc042678ebf
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 2393b3b2fabd0e900a99bf950d30e1744c754da5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325717"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541823"
 ---
 # <a name="overview-of-xaml-resources"></a>Vue d’ensemble des ressources XAML
 
@@ -40,9 +40,9 @@ Dans l’exemple précédent, lorsque le chargeur XAML traite la valeur `{Static
 
 ## <a name="static-and-dynamic-resources"></a>Ressources statiques et dynamiques
 
-Une ressource peut être référencée en tant que valeur statique ou dynamique. Les références sont créées à l’aide de l' [extension de balisage StaticResource](../../framework/wpf/advanced/staticresource-markup-extension.md) ou de l' [extension de balisage DynamicResource](../../framework/wpf/advanced/dynamicresource-markup-extension.md). Une extension de balisage est une fonctionnalité XAML qui vous permet de spécifier une référence d’objet en faisant en sorte que l’extension de balisage traite la chaîne d’attribut et retourne l’objet à un chargeur XAML. Pour plus d’informations sur le comportement de l’extension de balisage, consultez [extensions de balisage et XAML WPF](../../framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).
+Une ressource peut être référencée en tant que valeur statique ou dynamique. Les références sont créées à l’aide de l' [extension de balisage StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) ou de l' [extension de balisage DynamicResource](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension). Une extension de balisage est une fonctionnalité XAML qui vous permet de spécifier une référence d’objet en faisant en sorte que l’extension de balisage traite la chaîne d’attribut et retourne l’objet à un chargeur XAML. Pour plus d’informations sur le comportement de l’extension de balisage, consultez [extensions de balisage et XAML WPF](/dotnet/desktop/wpf/advanced/markup-extensions-and-wpf-xaml).
 
-Lorsque vous utilisez une extension de balisage, vous fournissez généralement un ou plusieurs paramètres sous forme de chaîne qui sont traités par cette extension de balisage particulière. L' [extension de balisage StaticResource](../../framework/wpf/advanced/staticresource-markup-extension.md) traite une clé en recherchant la valeur de cette clé dans tous les dictionnaires de ressources disponibles. Le traitement se produit pendant le chargement, ce qui est le cas lorsque le processus de chargement doit assigner la valeur de la propriété. L' [extension de balisage DynamicResource](../../framework/wpf/advanced/dynamicresource-markup-extension.md) traite à la place une clé en créant une expression, et cette expression reste non évaluée jusqu’à ce que l’application s’exécute, auquel cas l’expression est évaluée et fournit une valeur.
+Lorsque vous utilisez une extension de balisage, vous fournissez généralement un ou plusieurs paramètres sous forme de chaîne qui sont traités par cette extension de balisage particulière. L' [extension de balisage StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) traite une clé en recherchant la valeur de cette clé dans tous les dictionnaires de ressources disponibles. Le traitement se produit pendant le chargement, ce qui est le cas lorsque le processus de chargement doit assigner la valeur de la propriété. L' [extension de balisage DynamicResource](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) traite à la place une clé en créant une expression, et cette expression reste non évaluée jusqu’à ce que l’application s’exécute, auquel cas l’expression est évaluée et fournit une valeur.
 
 Quand vous faites référence à une ressource, les points suivants peuvent influer sur votre choix d’utiliser une référence de ressource statique ou à une ressource dynamique :
 
@@ -138,7 +138,7 @@ Les références de ressources dynamiques présentent quelques restrictions nota
 
 - La propriété qui est définie doit être une propriété sur un <xref:System.Windows.Freezable> qui est fourni en tant que valeur d' <xref:System.Windows.FrameworkElement> une <xref:System.Windows.FrameworkContentElement> propriété ou, ou d’une <xref:System.Windows.Setter> valeur.
 
-Étant donné que la propriété qui est définie doit être une <xref:System.Windows.DependencyProperty> <xref:System.Windows.Freezable> propriété ou, la plupart des modifications de propriétés peuvent se propager à l’interface utilisateur, car une modification de propriété (la valeur de ressource dynamique modifiée) est reconnue par le système de propriétés. La plupart des contrôles incluent une logique qui force une autre disposition d’un contrôle si une <xref:System.Windows.DependencyProperty> modification et cette propriété peuvent affecter la disposition. Toutefois, toutes les propriétés qui ont une [extension de balisage DynamicResource](../../framework/wpf/advanced/dynamicresource-markup-extension.md) comme valeur sont assurées de fournir des mises à jour en temps réel dans l’interface utilisateur. Cette fonctionnalité peut varier en fonction de la propriété, et en fonction du type qui possède la propriété, ou même de la structure logique de votre application.
+Étant donné que la propriété qui est définie doit être une <xref:System.Windows.DependencyProperty> <xref:System.Windows.Freezable> propriété ou, la plupart des modifications de propriétés peuvent se propager à l’interface utilisateur, car une modification de propriété (la valeur de ressource dynamique modifiée) est reconnue par le système de propriétés. La plupart des contrôles incluent une logique qui force une autre disposition d’un contrôle si une <xref:System.Windows.DependencyProperty> modification et cette propriété peuvent affecter la disposition. Toutefois, toutes les propriétés qui ont une [extension de balisage DynamicResource](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) comme valeur sont assurées de fournir des mises à jour en temps réel dans l’interface utilisateur. Cette fonctionnalité peut varier en fonction de la propriété, et en fonction du type qui possède la propriété, ou même de la structure logique de votre application.
 
 ## <a name="styles-datatemplates-and-implicit-keys"></a>Styles, DataTemplate et clés implicites
 
@@ -154,17 +154,17 @@ Ce style a vraiment une clé : la clé implicite `typeof(System.Windows.Control
 
 Par le biais des mécanismes de style de thème par défaut utilisés par WPF, ce style est appliqué comme style d’exécution d’un <xref:System.Windows.Controls.Button> sur la page, même si le <xref:System.Windows.Controls.Button> lui-même ne tente pas de spécifier sa <xref:System.Windows.FrameworkElement.Style%2A> propriété ou une référence de ressource spécifique au style. Votre style défini dans la page est trouvé précédemment dans la séquence de recherche que le style du dictionnaire de thèmes, en utilisant la même clé que celle du style du dictionnaire de thèmes. Vous pouvez simplement spécifier `<Button>Hello</Button>` n’importe où dans la page, et le style que vous avez défini avec la <xref:System.Windows.Style.TargetType%2A> `Button` valeur s’applique à ce bouton. Si vous le souhaitez, vous pouvez toujours appliquer explicitement le style avec la même valeur de type que <xref:System.Windows.Style.TargetType%2A> pour clarifier la balise, mais cela est facultatif.
 
-Les clés implicites pour les styles ne s’appliquent pas à un contrôle si <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> est `true` . (Notez également que <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> peut être défini dans le cadre du comportement natif de la classe de contrôle, plutôt que de manière explicite sur une instance du contrôle.) En outre, pour prendre en charge les clés implicites pour les scénarios de classe dérivée, le contrôle doit se substituer <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A> (tous les contrôles existants fournis dans le cadre de WPF incluent ce remplacement). Pour plus d’informations sur les styles, les thèmes et la conception de contrôles, consultez [instructions pour la conception de contrôles stylisés](../../framework/wpf/controls/guidelines-for-designing-stylable-controls.md).
+Les clés implicites pour les styles ne s’appliquent pas à un contrôle si <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> est `true` . (Notez également que <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> peut être défini dans le cadre du comportement natif de la classe de contrôle, plutôt que de manière explicite sur une instance du contrôle.) En outre, pour prendre en charge les clés implicites pour les scénarios de classe dérivée, le contrôle doit se substituer <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A> (tous les contrôles existants fournis dans le cadre de WPF incluent ce remplacement). Pour plus d’informations sur les styles, les thèmes et la conception de contrôles, consultez [instructions pour la conception de contrôles stylisés](/dotnet/desktop/wpf/controls/guidelines-for-designing-stylable-controls).
 
-<xref:System.Windows.DataTemplate>a également une clé implicite. La clé implicite pour un <xref:System.Windows.DataTemplate> est la valeur de la <xref:System.Windows.DataTemplate.DataType%2A> propriété. <xref:System.Windows.DataTemplate.DataType%2A>peut également être spécifié en tant que nom du type au lieu d’utiliser explicitement [{x :type...}](../xaml-services/xtype-markup-extension.md). Pour plus d’informations, consultez [vue d’ensemble des modèles de données](../../framework/wpf/data/data-templating-overview.md).
+<xref:System.Windows.DataTemplate> a également une clé implicite. La clé implicite pour un <xref:System.Windows.DataTemplate> est la valeur de la <xref:System.Windows.DataTemplate.DataType%2A> propriété. <xref:System.Windows.DataTemplate.DataType%2A> peut également être spécifié en tant que nom du type au lieu d’utiliser explicitement [{x :type...}](../xaml-services/xtype-markup-extension.md). Pour plus d’informations, consultez [vue d’ensemble des modèles de données](/dotnet/desktop/wpf/data/data-templating-overview).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.ResourceDictionary>
-- [Ressources d’application](../../framework/wpf/advanced/optimizing-performance-application-resources.md)
-- [Ressources et code](../../framework/wpf/advanced/resources-and-code.md)
-- [Définir et référencer une ressource](../../framework/wpf/advanced/how-to-define-and-reference-a-resource.md)
-- [Vue d’ensemble de la gestion des applications](../../framework/wpf/app-development/application-management-overview.md)
+- [Ressources d’application](/dotnet/desktop/wpf/advanced/optimizing-performance-application-resources)
+- [Ressources et code](/dotnet/desktop/wpf/advanced/resources-and-code)
+- [Définir et référencer une ressource](/dotnet/desktop/wpf/advanced/how-to-define-and-reference-a-resource)
+- [Vue d’ensemble de la gestion des applications](/dotnet/desktop/wpf/app-development/application-management-overview)
 - [x :Type (extension de balisage)](../xaml-services/xtype-markup-extension.md)
-- [Extension de balisage StaticResource](../../framework/wpf/advanced/staticresource-markup-extension.md)
-- [DynamicResource, extension de balisage](../../framework/wpf/advanced/dynamicresource-markup-extension.md)
+- [Extension de balisage StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension)
+- [DynamicResource, extension de balisage](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension)

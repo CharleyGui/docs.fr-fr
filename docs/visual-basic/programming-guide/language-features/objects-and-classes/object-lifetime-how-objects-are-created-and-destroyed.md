@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: e81e131933e0997756ed4185a3ceb12ad19b78de
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a32a5d075b5b1d02632c80216e7c2c12920bf4a2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392881"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544139"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Durée de vie d'un objet : création et destruction des objets (Visual Basic)
 
@@ -158,7 +158,7 @@ Les systèmes de garbage collection se distinguent aussi en ce qui concerne l’
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IDisposable.Dispose%2A>
-- [Initialisation et suppression des composants](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ws9dc6t6(v=vs.120))
+- [Initialisation et suppression des composants](/previous-versions/visualstudio/visual-studio-2013/ws9dc6t6(v=vs.120))
 - [Nouvel opérateur](../../../language-reference/operators/new-operator.md)
 - [Nettoyage des ressources non managées](../../../../standard/garbage-collection/unmanaged.md)
-- [Résultat](../../../language-reference/nothing.md)
+- [Nothing](../../../language-reference/nothing.md)

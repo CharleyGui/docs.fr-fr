@@ -3,12 +3,12 @@ title: Notifications de requête dans SQL Server
 description: Découvrez comment utiliser les notifications de requêtes pour notifier les applications lorsque les données ont changé dans une base de données SQL Server, par exemple, pour actualiser les affichages des applications.
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-ms.openlocfilehash: 1351c83b6cc5837115321d53e8779c0f364c3099
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 43b496db74f7e6fc9bc9f17d946bf34398b32312
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286221"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543983"
 ---
 # <a name="query-notifications-in-sql-server"></a>Notifications de requête dans SQL Server
 Basées sur l’infrastructure de Service Broker, les notifications de requêtes permettent aux applications d’être notifiées en cas de modification des données. Cette fonctionnalité est particulièrement utile pour les applications qui fournissent un cache d'informations à partir d'une base de données, par exemple une application Web, et qui doivent être notifiées en cas de modification des données sources.  
@@ -25,19 +25,19 @@ Basées sur l’infrastructure de Service Broker, les notifications de requêtes
   
  Vous pouvez configurer des notifications pour les instructions SELECT et EXECUTE. Lorsque vous utilisez une instruction EXECUTE, SQL Server enregistre une notification pour la commande exécutée plutôt que l’instruction EXECUTE elle-même. La commande doit satisfaire les exigences et limitations applicables aux instructions SELECT. Quand une commande qui enregistre une notification contient plusieurs instructions, le moteur de base de données crée une notification pour chaque instruction du traitement.  
   
- Si vous développez une application où vous avez besoin de notifications de sous-secondes fiables en cas de modification des données, consultez les sections **planification d’une stratégie de notifications de requêtes efficaces** et **alternatives aux notifications de requête** dans l’article [planification des notifications](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms187528(v=sql.105)) . Pour plus d’informations sur les notifications et les SQL Server Service Broker de requêtes, consultez les liens suivants vers les Articles de la documentation SQL Server.  
+ Si vous développez une application où vous avez besoin de notifications de sous-secondes fiables en cas de modification des données, consultez les sections **planification d’une stratégie de notifications de requêtes efficaces** et **alternatives aux notifications de requête** dans l’article [planification des notifications](/previous-versions/sql/sql-server-2008-r2/ms187528(v=sql.105)) . Pour plus d’informations sur les notifications et les SQL Server Service Broker de requêtes, consultez les liens suivants vers les Articles de la documentation SQL Server.  
   
  **Documentation SQL Server**  
   
-- [Utilisation des notifications de requêtes](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms175110(v=sql.105))  
+- [Utilisation des notifications de requêtes](/previous-versions/sql/sql-server-2008-r2/ms175110(v=sql.105))  
   
-- [Création d’une requête pour notification](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
+- [Création d’une requête pour notification](/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
   
-- [Développement (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522889(v=sql.105))  
+- [Développement (Service Broker)](/previous-versions/sql/sql-server-2008-r2/bb522889(v=sql.105))  
   
-- [Centre d’informations du développeur Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
+- [Centre d’informations du développeur Service Broker](/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
   
-- [Guide du développeur (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
+- [Guide du développeur (Service Broker)](/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Activation des notifications de requêtes](enabling-query-notifications.md)  
@@ -52,7 +52,7 @@ Basées sur l’infrastructure de Service Broker, les notifications de requêtes
  [Exécution de SqlCommand avec un SqlNotificationRequest](sqlcommand-execution-with-a-sqlnotificationrequest.md)  
  Illustre la configuration d’un objet <xref:System.Data.SqlClient.SqlCommand> pour utiliser une notification de requête.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Data.Sql.SqlNotificationRequest>  
  Décrit la classe <xref:System.Data.Sql.SqlNotificationRequest> et tous ses membres.  
   
