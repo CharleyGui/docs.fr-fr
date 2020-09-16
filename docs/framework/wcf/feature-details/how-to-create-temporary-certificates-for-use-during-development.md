@@ -1,19 +1,19 @@
 ---
-title: 'Comment : créer des certificats temporaires à utiliser au cours du développement'
+title: 'Procédure : créer des certificats temporaires à utiliser pendant le développement'
 description: Découvrez comment utiliser une applet de commande PowerShell pour créer deux certificats X. 509 temporaires à utiliser lors du développement d’un client ou service WCF sécurisé.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 0a21548386639a9f6a8c8572e5d7928ffdb270d6
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 0907f7f8a3767db9d83e5deaae1d86141fbee7b0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247037"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557409"
 ---
-# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Comment : créer des certificats temporaires à utiliser au cours du développement
+# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Procédure : créer des certificats temporaires à utiliser pendant le développement
 
 Lors du développement d’un service ou d’un client sécurisé à l’aide de Windows Communication Foundation (WCF), il est souvent nécessaire de fournir un certificat X. 509 à utiliser comme informations d’identification. Le certificat fait en général partie d'une chaîne de certificats dont l'autorité racine est présente dans le magasin d'Autorités de certification racines de confiance de l'ordinateur. Une chaîne de certificats vous permet de définir la portée d'un jeu de certificats où en général l'autorité racine provient de votre organisation ou votre division. Pour émuler ce scénario au moment du développement, vous pouvez créer deux certificats pour satisfaire les conditions de sécurité. Le premier est un certificat auto-signé placé dans le magasin d'Autorités de certification racines de confiance. Le deuxième certificat est créé à partir du premier et placé dans le magasin personnel de l'emplacement de l'ordinateur local ou dans le magasin personnel de l'emplacement de l'utilisateur actif. Cette rubrique décrit les étapes permettant de créer ces deux certificats à l’aide de l’applet de commande PowerShell [New-SelfSignedCertificate)](/powershell/module/pkiclient/new-selfsignedcertificate) .
 
@@ -22,7 +22,7 @@ Lors du développement d’un service ou d’un client sécurisé à l’aide de
 >
 > Par défaut, l’applet [de commande New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) crée des certificats auto-signés et ces certificats ne sont pas sécurisés. Le fait de placer les certificats auto-signés dans le magasin autorités de certification racines de confiance vous permet de créer un environnement de développement qui simule plus fidèlement votre environnement de déploiement.
 
- Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Pour plus d’informations sur l’utilisation d’un certificat en tant qu’informations d’identification, consultez [sécurisation des services et des clients](securing-services-and-clients.md). Pour obtenir un didacticiel à propos de l’utilisation de la technologie Authenticode de Microsoft, consultez [Authenticode Overviews and Tutorials](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85))(Vues d’ensemble et didacticiels relatifs à Authenticode).
+ Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Pour plus d’informations sur l’utilisation d’un certificat en tant qu’informations d’identification, consultez [sécurisation des services et des clients](securing-services-and-clients.md). Pour obtenir un didacticiel à propos de l’utilisation de la technologie Authenticode de Microsoft, consultez [Authenticode Overviews and Tutorials](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85))(Vues d’ensemble et didacticiels relatifs à Authenticode).
 
 ## <a name="to-create-a-self-signed-root-authority-certificate-and-export-the-private-key"></a>Pour créer un certificat d'autorité racine auto-signé et exporter la clé privée
 
@@ -115,6 +115,6 @@ Veillez à supprimer tous les certificats d'autorité racines temporaires des do
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Working with Certificates](working-with-certificates.md)
-- [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
-- [Securing Services and Clients](securing-services-and-clients.md)
+- [Utilisation des certificats](working-with-certificates.md)
+- [Procédure : voir les certificats avec le composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [Sécurisation des services et des clients](securing-services-and-clients.md)

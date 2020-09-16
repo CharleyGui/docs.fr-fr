@@ -7,12 +7,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: d7e367f3b4e9a6d88d2a13ca8727d2e2884bb97c
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 5d181f5bc9f7e16051f16ca68490744e9c0d3abd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810597"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557916"
 ---
 # <a name="c-walkthroughs"></a>Procédures pas à pas C#
 
@@ -34,19 +34,19 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
 - [Création et utilisation d’objets dynamiques (C# et Visual Basic)](./programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)\
   Montre comment créer un objet personnalisé qui expose dynamiquement le contenu d'un fichier texte et comment créer un projet qui utilise la bibliothèque `IronPython`.
 
-- [Création d’un contrôle composite à l’aide de Visual C #](../framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)\
+- [Création d’un contrôle composite à l’aide de Visual C #](/dotnet/desktop/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp)\
   Montre comment créer un contrôle composite simple et étendre ses fonctionnalités en se servant de l'héritage.
 
-- [Création d’un contrôle de Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](../framework/winforms/controls/creating-a-wf-control-design-time-features.md)\
+- [Création d’un contrôle de Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](/dotnet/desktop/winforms/controls/creating-a-wf-control-design-time-features)\
   Montre comment créer un concepteur personnalisé pour un contrôle personnalisé.
 
-- [Héritage d’un contrôle Windows Forms à l’aide de Visual C #](../framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)\
+- [Héritage d’un contrôle Windows Forms à l’aide de Visual C #](/dotnet/desktop/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp)\
   Montre comment créer un contrôle bouton hérité simple. Ce bouton hérite des fonctionnalités du bouton Windows Forms standard et expose un membre personnalisé.
 
-- [Débogage de contrôles Windows Forms personnalisés au moment du design](../framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)\
+- [Débogage de contrôles Windows Forms personnalisés au moment du design](/dotnet/desktop/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time)\
   Décrit comment déboguer le comportement au moment du design de votre contrôle personnalisé.
 
-- [Procédure pas à pas : effectuer des tâches courantes à l’aide d’actions de concepteur](../framework/winforms/controls/perform-common-tasks-design-actions.md)\
+- [Procédure pas à pas : effectuer des tâches courantes à l’aide d’actions de concepteur](/dotnet/desktop/winforms/controls/perform-common-tasks-design-actions)\
   Présente quelques tâches couramment exécutées, notamment l'ajout ou la suppression d'un onglet sur un `TabControl`, l'ancrage d'un contrôle à son parent et la modification de l'orientation d'un contrôle `SplitContainer`.
 
 - [Écriture de requêtes en C# (LINQ)](./programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)\

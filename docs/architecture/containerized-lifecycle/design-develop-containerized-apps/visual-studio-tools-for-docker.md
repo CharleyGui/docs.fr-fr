@@ -3,12 +3,12 @@ title: Visual Studio Tools pour Docker sur Windows
 description: Familiarisez-vous avec les outils Docker disponibles dans Visual Studio 2017 versions 15.7 et ultérieures.
 ms.date: 08/06/2020
 ms.custom: vs-dotnet
-ms.openlocfilehash: 74cffaae5885a7079ec774b1e8c68241cddda99a
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: ae20ebf7c3c27d7f2ebe51c33719b82048f86241
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915302"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678925"
 ---
 # <a name="use-docker-tools-in-visual-studio-on-windows"></a>Utiliser les outils de l’outil d’ancrage dans Visual Studio sur Windows
 
@@ -72,10 +72,10 @@ Le tableau suivant peut vous aider à déterminer comment définir ces options.
 | Démarrer le Bureau de l’arrimeur si nécessaire              |     Me demander      |
 | Approuver ASP.NET Core certificat SSL          |     Me demander      | Si le certificat SSL localhost n’a pas été marqué comme approuvé (avec `dotnet dev-certs https --trust` ), Visual Studio vous demandera chaque fois que vous exécuterez votre projet.                                                                                                                                                                                                                                                    |
 | **Page de projet unique**                     |
-| Extraire les images de l’ancrage requis sur le projet ouvert |        True        | Pour accroître les performances lors de l’exécution du projet, Visual Studio démarre une opération d’extraction de l’ancrage en arrière-plan. ainsi, lorsque vous êtes prêt à exécuter votre code, l’image est déjà téléchargée ou en cours de téléchargement. Si vous chargez simplement des projets et parcourez du code, vous pouvez désactiver cette option pour éviter le téléchargement des images conteneur dont vous n’avez pas besoin. Cela peut ralentir l’expérience utilisateur Open Project. |
+| Extraire les images de l’ancrage requis sur le projet ouvert |        Vrai        | Pour accroître les performances lors de l’exécution du projet, Visual Studio démarre une opération d’extraction de l’ancrage en arrière-plan. ainsi, lorsque vous êtes prêt à exécuter votre code, l’image est déjà téléchargée ou en cours de téléchargement. Si vous chargez simplement des projets et parcourez du code, vous pouvez désactiver cette option pour éviter le téléchargement des images conteneur dont vous n’avez pas besoin. Cela peut ralentir l’expérience utilisateur Open Project. |
 | Extraire les images ancrables mises à jour lors du chargement du projet  | Projets .NET Core | Extrayez les mises à jour des images existantes pour accéder aux dernières mises à jour sur le projet ouvert. Cela peut ralentir l’expérience utilisateur Open Project.                                                                                                                                                                                                                                                                                          |
-| Supprimer les conteneurs à la fermeture du projet          |        True        | Nettoyage à la fermeture du projet, cela peut ralentir l’expérience utilisateur du projet, mais elle est généralement rapide.                                                                                                                                                                                                                                                                                                            |
-| Exécuter les conteneurs sur le projet ouvert              |        True        | Pour de meilleures performances lors de l’exécution du projet, Visual Studio démarre tous les conteneurs de la solution. Cela peut ralentir l’expérience utilisateur Open Project.                                                                                                                                                                                                                                                        |
+| Supprimer les conteneurs à la fermeture du projet          |        Vrai        | Nettoyage à la fermeture du projet, cela peut ralentir l’expérience utilisateur du projet, mais elle est généralement rapide.                                                                                                                                                                                                                                                                                                            |
+| Exécuter les conteneurs sur le projet ouvert              |        Vrai        | Pour de meilleures performances lors de l’exécution du projet, Visual Studio démarre tous les conteneurs de la solution. Cela peut ralentir l’expérience utilisateur Open Project.                                                                                                                                                                                                                                                        |
 | **Docker Compose**                          |                    | La page Docker Compose contient les mêmes paramètres que la page de projet unique, mais elles s’appliquent aux solutions à plusieurs conteneurs.                                                                                                                                                                                                                                                                                           |
 
 > [!WARNING]
@@ -84,9 +84,9 @@ Le tableau suivant peut vous aider à déterminer comment définir ces options.
 > [!TIP]
 > Pour plus d’informations sur l’implémentation des services et l’utilisation des outils Visual Studio pour Docker, lisez les articles suivants :
 >
-> Déboguer des applications dans un conteneur d’ancrage local :<https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh>
+> Déboguer des applications dans un conteneur d’ancrage local : <https://docs.microsoft.com/visualstudio/containers/edit-and-refresh>
 >
-> Déployer un conteneur ASP.NET sur un registre de conteneurs avec Visual Studio : <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
+> Déployer un conteneur ASP.NET sur un registre de conteneurs avec Visual Studio : <https://docs.microsoft.com/visualstudio/containers/hosting-web-apps-in-docker>
 
 > [!div class="step-by-step"]
 > [Précédent](docker-apps-inner-loop-workflow.md) 

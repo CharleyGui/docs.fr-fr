@@ -3,12 +3,12 @@ title: Bienvenue dans .NET
 description: Bien démarrer avec la famille de technologies .NET.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 7b1c5eceefd1e108eabf17d5cb6f7552af00e0d5
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 707f83e912b6bd6999423949412cffba852093a0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495145"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558072"
 ---
 # <a name="welcome-to-net"></a>Bienvenue dans .NET
 
@@ -35,23 +35,23 @@ Pour plus d’informations sur les dernières fonctionnalités ajoutées aux imp
 
 - [Nouveautés de .NET Core 3.1](core/whats-new/dotnet-core-3-1.md)
 - [Nouveautés du .NET Framework](framework/whats-new/index.md)
-- [Nouveautés de C#](csharp/whats-new/index.md)
+- [Nouveautés de C#](./csharp/whats-new/csharp-9.md)
 - [Nouveautés de Visual Basic](visual-basic/whats-new/index.md)
 
 ## <a name="documentation"></a>Documentation
 
 Cette documentation couvre les plateformes et les langages compatibles avec .NET. Pour démarrer avec .NET et ses langages, consultez l’une des sections suivantes :
 
-- [Notions de base de .NET](fundamentals/index.yml)
-- [Guide de .NET Framework](framework/index.yml)
-- [Guide C#](csharp/index.yml)
-- [Guide F #](fsharp/index.yml)
-- [Guide de Visual Basic](visual-basic/index.yml)
-- [Guide ML.NET](machine-learning/index.yml)
+- [Concepts de base de .NET](fundamentals/index.yml)
+- [.NET Framework Guide](framework/index.yml)
+- [C# Guide](csharp/index.yml)
+- [F# Guide](fsharp/index.yml)
+- [Visual Basic Guide](visual-basic/index.yml)
+- [ML.NET Guide](machine-learning/index.yml)
 - [.NET pour Apache Spark](spark/index.yml)
 - [Architecture de l’application .NET](architecture/index.yml)
 
-Vous pouvez également parcourir les [informations de référence sur l’API .NET](/dotnet/api).
+Vous pouvez également parcourir les [informations de référence sur l’API .NET](../api/index.md).
 
 ## <a name="videos"></a>Vidéos
 

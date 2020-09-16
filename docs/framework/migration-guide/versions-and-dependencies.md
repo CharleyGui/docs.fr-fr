@@ -5,12 +5,12 @@ ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: fe652e4cc3a996586d01cdfc4c5749decb51e9db
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 74a1e244fa47cf7c6ea36454013b46b6e44f62c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557345"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557669"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Versions et dépendances de .NET Framework
 
@@ -36,9 +36,9 @@ Les tableaux qui suivent résument .NET Framework historique des versions et met
 
 | | |
 | - | - |
-| [.NET Framework 4,8](#net-framework-48) | [.NET Framework 4.7.2](#net-framework-472) | [.NET Framework 4.7.1](#net-framework-471) | [.NET Framework 4.7](#net-framework-47) |
+| [.NET Framework 4.8](#net-framework-48) | [.NET Framework 4.7.2](#net-framework-472) | [.NET Framework 4.7.1](#net-framework-471) | [.NET Framework 4.7](#net-framework-47) |
 | [.NET Framework 4.6.2](#net-framework-462) | [.NET Framework 4.6.1](#net-framework-461) | [.NET Framework 4.6](#net-framework-46) | [.NET Framework 4.5.2](#net-framework-452) |
-| [.NET Framework 4.5.1](#net-framework-451) | [.NET Framework 4.5](#net-framework-45) | [.NET Framework 4](#net-framework-4) | [.NET Framework 3.5](#net-framework-35) |
+| [.NET Framework 4.5.1](#net-framework-451) | [.NET Framework 4.5](#net-framework-45) | [.NET Framework 4](#net-framework-4) | [.NET Framework 3.5](#net-framework-35) |
 | [.NET Framework 3.0](#net-framework-30) | [.NET Framework 2.0](#net-framework-20) | [.NET Framework 1.1](#net-framework-11) | [.NET Framework 1.0](#net-framework-10) |
 
 ### <a name="net-framework-48"></a>.NET Framework 4.8
@@ -175,7 +175,7 @@ Les tableaux qui suivent résument .NET Framework historique des versions et met
 
 ### <a name="net-framework-4"></a>.NET Framework 4
 
-[Nouvelles fonctionnalités](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868(v=vs.100))
+[Nouvelles fonctionnalités](/previous-versions/dotnet/netframework-4.0/ms171868(v=vs.100))
 
 |||
 |-|-|
@@ -187,7 +187,7 @@ Les tableaux qui suivent résument .NET Framework historique des versions et met
 
 ### <a name="net-framework-35"></a>.NET Framework 3.5
 
-[Nouvelles fonctionnalités](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms171868\(v=vs.90\)) :
+[Nouvelles fonctionnalités](/previous-versions/visualstudio/visual-studio-2008/ms171868\(v=vs.90\)) :
 
 - LINQ
 - Arborescences de l’expression
@@ -208,7 +208,7 @@ Les tableaux qui suivent résument .NET Framework historique des versions et met
 
 ### <a name="net-framework-30"></a>.NET Framework 3.0
 
-[Nouvelles fonctionnalités](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb822048(v=vs.90)) :
+[Nouvelles fonctionnalités](/previous-versions/visualstudio/visual-studio-2008/bb822048(v=vs.90)) :
 
 - Windows Presentation Foundation
 - Windows Communication Foundation
@@ -224,7 +224,7 @@ Les tableaux qui suivent résument .NET Framework historique des versions et met
 
 ### <a name="net-framework-20"></a>.NET Framework 2.0
 
-[Nouvelles fonctionnalités](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/t357fb32%28v%3dvs.90%29) :
+[Nouvelles fonctionnalités](/previous-versions/visualstudio/visual-studio-2008/t357fb32(v=vs.90)) :
 
 - Génériques
 - Modifier & Continuer du débogueur
@@ -243,7 +243,7 @@ Les tableaux qui suivent résument .NET Framework historique des versions et met
 
 ### <a name="net-framework-11"></a>.NET Framework 1.1
 
-[Nouvelles fonctionnalités](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/h88tthh0%28v%3dvs.90%29) :
+[Nouvelles fonctionnalités](/previous-versions/visualstudio/visual-studio-2008/h88tthh0(v=vs.90)) :
 
 - Contrôles mobiles ASP.NET
 - Exécution côte à côte

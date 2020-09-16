@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: d93bdee8d5a057be0f405fe4334d7edbdc0649ec
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 214a368ba269103093a90431cdf9e77ab5989c07
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174404"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557214"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Didacticiel : prévoir la demande du service de location de vélos avec l’analyse de série chronologique et ML.NET
 
@@ -73,7 +73,7 @@ Le jeu de données d’origine contient plusieurs colonnes correspondant à cara
 
 Le DataSet d’origine est mappé à une table de base de données avec le schéma suivant dans une base de données SQL Server.
 
-```SQL
+```sql
 CREATE TABLE [Rentals] (
     [RentalDate] DATE NOT NULL,
     [Year] INT NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE [Rentals] (
 
 Voici un exemple de données :
 
-| RentalDate | Year (Année) | TotalRentals |
+| RentalDate | Year | TotalRentals |
 | --- | --- | --- |
 |1/1/2011|0|985|
 |1/2/2011|0|801|
@@ -217,7 +217,7 @@ Voici un exemple de données :
 
 Si vous êtes satisfait de votre modèle, enregistrez-le pour une utilisation ultérieure dans d’autres applications.
 
-1. Dans la `Main` méthode, créez un [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602) . [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602)est une méthode pratique pour effectuer des prédictions uniques.
+1. Dans la `Main` méthode, créez un [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602) . [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602) est une méthode pratique pour effectuer des prédictions uniques.
 
     [!code-csharp [CreateTimeSeriesEngine](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L51)]
 
@@ -248,13 +248,13 @@ Si vous êtes satisfait de votre modèle, enregistrez-le pour une utilisation ul
 
     [!code-csharp [DisplayForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L111-L116)]
 
-## <a name="run-the-application"></a>Exécuter l’application
+## <a name="run-the-application"></a>Exécution de l'application
 
 1. À l’intérieur de la `Main` méthode, appelez la `Forecast` méthode.
 
     [!code-csharp [BuildForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L54)]
 
-1. Exécutez l’application. Une sortie semblable à celle ci-dessous doit apparaître sur la console. Par souci de concision, la sortie a été condensée.
+1. Exécutez l'application. Une sortie semblable à celle ci-dessous doit apparaître sur la console. Par souci de concision, la sortie a été condensée.
 
     ```text
     Evaluation Metrics
@@ -283,7 +283,7 @@ L’inspection des valeurs réelles et prévues montre les relations suivantes 
 
 Bien que les valeurs prévues ne prédisent pas le nombre exact de loyers, elles fournissent une plage de valeurs plus étroite qui permet à une opération d’optimiser son utilisation des ressources.
 
-Félicitations ! Vous avez maintenant créé avec succès une série chronologique Machine Learning modèle pour prévoir la demande de location de bicyclette.
+Félicitations ! Vous avez maintenant créé avec succès une série chronologique Machine Learning modèle pour prévoir la demande de location de bicyclette.
 
 Vous pouvez trouver le code source de ce didacticiel dans le référentiel [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) .
 

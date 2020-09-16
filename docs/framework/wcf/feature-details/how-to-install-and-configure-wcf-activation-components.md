@@ -1,18 +1,18 @@
 ---
-title: "Comment : installer et configurer des composants d'activation WCF"
+title: 'Procédure : installer et configurer des composants d’activation WCF'
 description: Découvrez comment configurer le service d’activation des processus Windows (WAS) sur Windows Vista pour héberger des services WCF qui ne communiquent pas via HTTP.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: 84a0dcc4fed28ebd7a536bdabfcdc389be6072d8
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 085a69421f0aa7b763bd2222820ced4b4a7e1c81
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246881"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557864"
 ---
-# <a name="how-to-install-and-configure-wcf-activation-components"></a>Comment : installer et configurer des composants d'activation WCF
+# <a name="how-to-install-and-configure-wcf-activation-components"></a>Procédure : installer et configurer des composants d’activation WCF
 
 Cette rubrique décrit les étapes nécessaires à la configuration du service d’activation des processus Windows (également appelé WAS) sur Windows Vista pour héberger des services Windows Communication Foundation (WCF) qui ne communiquent pas sur les protocoles réseau HTTP. Les sections suivantes définissent les étapes pour cette configuration :
 
@@ -104,7 +104,7 @@ Après l’installation et la configuration de WAS, consultez [Comment : héber
 
 ## <a name="see-also"></a>Voir aussi
 
-- [TCP Activation](../samples/tcp-activation.md)
+- [Activation de TCP](../samples/tcp-activation.md)
 - [MSMQ Activation](../samples/msmq-activation.md)
 - [NamedPipe Activation](../samples/namedpipe-activation.md)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

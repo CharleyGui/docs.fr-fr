@@ -6,12 +6,12 @@ helpviewer_keywords:
 - examples [Visual Basic], coding conventions
 - Visual Basic code, conventions
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
-ms.openlocfilehash: 36cd3a927d2fdf197e6b496d9308fc43a555d59b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b71c1eeaa136d01c701191f1bb145674efccbc56
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346151"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551039"
 ---
 # <a name="visual-basic-coding-conventions"></a>Conventions de codage Visual Basic
 Microsoft développe des exemples et de la documentation qui suivent les instructions de cette rubrique. Si vous suivez les mêmes conventions de codage, vous pouvez bénéficier des avantages suivants :  
@@ -24,11 +24,11 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
 - Vous vous assurez que votre code illustre les « meilleures pratiques » pour Visual Basic.  
   
-## <a name="naming-conventions"></a>Conventions d'affectation des noms  
+## <a name="naming-conventions"></a>Conventions d'affectation de noms  
   
 - Pour plus d’informations sur les instructions d’affectation de noms, consultez la rubrique [règles d’affectation de noms](../../../standard/design-guidelines/naming-guidelines.md) .  
   
-- N’utilisez pas « My » ou « My » dans le nom d’une variable. Cette pratique crée une confusion avec les objets `My`.  
+- N’utilisez pas « My » ou « My » dans le nom d’une variable. Cette pratique crée une confusion avec les `My` objets.  
   
 - Vous n’avez pas besoin de modifier les noms des objets dans le code généré automatiquement pour qu’ils correspondent aux indications.  
   
@@ -67,7 +67,7 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
 ## <a name="program-structure"></a>Structure du programme  
   
-- Lorsque vous utilisez la méthode `Main`, utilisez la construction par défaut pour les nouvelles applications console et utilisez `My` pour les arguments de ligne de commande.  
+- Lorsque vous utilisez la `Main` méthode, utilisez la construction par défaut pour les nouvelles applications console et utilisez `My` pour les arguments de ligne de commande.  
   
      [!code-vb[VbVbalrGuidelines#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#3)]  
   
@@ -75,13 +75,13 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
 ### <a name="string-data-type"></a>String, type de données  
   
-- Utilisez une [interpolation de chaîne](https://docs.microsoft.com/dotnet/visual-basic/programming-guide/language-features/strings/interpolated-strings) pour concaténer les chaînes courtes, comme illustré dans le code suivant.
+- Utilisez une [interpolation de chaîne](../language-features/strings/interpolated-strings.md) pour concaténer les chaînes courtes, comme illustré dans le code suivant.
   
      ```vb
      MsgBox($"hello{vbCrLf}goodbye")
      ```
   
-- Pour ajouter des chaînes dans des boucles, utilisez l’objet <xref:System.Text.StringBuilder>.  
+- Pour ajouter des chaînes dans des boucles, utilisez l' <xref:System.Text.StringBuilder> objet.  
   
      [!code-vb[VbVbalrGuidelines#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#5)]  
   
@@ -92,7 +92,7 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
 ### <a name="unsigned-data-type"></a>Type de données non signé  
   
-- Utilisez `Integer` plutôt que des types non signés, sauf quand ils sont nécessaires.  
+- Utilisez `Integer` plutôt que des types non signés, sauf s’ils sont nécessaires.  
   
 ### <a name="arrays"></a>Tableaux  
   
@@ -121,7 +121,7 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
      [!code-vb[VbVbalrGuidelines#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#13)]  
   
 ### <a name="use-the-with-keyword"></a>Utiliser le mot clé with  
- Lorsque vous effectuez une série d’appels à un objet, envisagez d’utiliser le mot clé `With` :  
+ Lorsque vous effectuez une série d’appels à un objet, envisagez d’utiliser le `With` mot clé :  
   
  [!code-vb[VbVbalrGuidelines#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#15)]  
   
@@ -129,7 +129,7 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
  N’utilisez pas `On Error Goto`.  
   
 ### <a name="use-the-isnot-keyword"></a>Utiliser le mot clé IsNot  
- Utilisez le mot clé `IsNot` à la place de `Not...Is Nothing`.  
+ Utilisez le `IsNot` mot clé à la place de `Not...Is Nothing` .  
   
 ### <a name="new-keyword"></a>Mot clé New  
   
@@ -147,11 +147,11 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
 ### <a name="event-handling"></a>Gestion des événements  
   
-- Utilisez `Handles` plutôt que `AddHandler`:  
+- Utilisez `Handles` plutôt que `AddHandler` :  
   
      [!code-vb[VbVbalrGuidelines#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#24)]  
   
-- Utilisez `AddressOf`et n’instanciez pas le délégué explicitement :  
+- Utilisez `AddressOf` et n’instanciez pas le délégué explicitement :  
   
      [!code-vb[VbVbalrGuidelines#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#25)]  
   
@@ -159,10 +159,10 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
      [!code-vb[VbVbalrGuidelines#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#26)]  
   
-- Ne vérifiez pas si un événement est `Nothing` (null) avant d’appeler la méthode `RaiseEvent`. `RaiseEvent` recherche `Nothing` avant de déclencher l’événement.  
+- Ne vérifiez pas si un événement est `Nothing` (null) avant d’appeler la `RaiseEvent` méthode. `RaiseEvent` vérifie `Nothing` avant de déclencher l’événement.  
   
 ### <a name="using-shared-members"></a>Utilisation de membres partagés  
- Appelez `Shared` membres en utilisant le nom de la classe, et non d’une variable d’instance.  
+ Appelez `Shared` les membres à l’aide du nom de la classe, et non d’une variable d’instance.  
   
 ### <a name="use-xml-literals"></a>Utiliser des littéraux XML  
  Les littéraux XML simplifient les tâches les plus courantes que vous rencontrez lorsque vous travaillez avec XML (par exemple, charger, interroger et transformer). Lorsque vous développez avec XML, suivez ces instructions :  
@@ -173,7 +173,7 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
 - Utilisez les propriétés d’axe XML pour accéder aux éléments et aux attributs dans un document XML.  
   
-- Utilisez des expressions incorporées pour inclure des valeurs et créer du code XML à partir de valeurs existantes au lieu d’utiliser des appels d’API tels que la méthode `Add` :  
+- Utilisez des expressions incorporées pour inclure des valeurs et créer du code XML à partir de valeurs existantes au lieu d’utiliser des appels d’API tels que la `Add` méthode :  
   
      [!code-vb[VbVbalrGuidelines#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#27)]  
   
@@ -187,7 +187,7 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
      [!code-vb[VbVbalrGuidelines#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#29)]  
   
-- Renommez les propriétés lorsque les noms de propriétés dans le résultat sont ambigus. Par exemple, si votre requête retourne un nom de client et un ID de commande, renommez-les au lieu de les laisser en tant que `Name` et `ID` dans le résultat :  
+- Renommez les propriétés lorsque les noms de propriétés dans le résultat sont ambigus. Par exemple, si votre requête retourne un nom de client et un ID de commande, renommez-les au lieu de les laisser sous `Name` la forme et `ID` dans le résultat :  
   
      [!code-vb[VbVbalrGuidelines#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#30)]  
   
@@ -195,15 +195,15 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
   
      [!code-vb[VbVbalrGuidelines#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#31)]  
   
-- Alignez les clauses de requête sous l’instruction `From` :  
+- Alignez les clauses de requête sous l' `From` instruction :  
   
      [!code-vb[VbVbalrGuidelines#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#32)]  
   
-- Utilisez `Where` clauses avant les autres clauses de requête afin que les clauses de requête ultérieures fonctionnent sur l’ensemble de données filtré :  
+- Utilisez `Where` les clauses avant les autres clauses de requête afin que les clauses de requête ultérieures fonctionnent sur l’ensemble de données filtré :  
   
      [!code-vb[VbVbalrGuidelines#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#33)]  
   
-- Utilisez la clause `Join` pour définir explicitement une opération de jointure au lieu d’utiliser la clause `Where` pour définir implicitement une opération de jointure :  
+- Utilisez la `Join` clause pour définir explicitement une opération de jointure au lieu d’utiliser la `Where` clause pour définir implicitement une opération de jointure :  
   
      [!code-vb[VbVbalrGuidelines#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#34)]  
   

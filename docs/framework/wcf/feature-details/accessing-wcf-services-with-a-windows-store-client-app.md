@@ -2,12 +2,12 @@
 title: Accès aux services WCF avec une application cliente Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: ed13a88e3a534cd586d9386396802d7457de56e7
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d575907feea3d831b7e6f69410c8d4647e6ac95d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558970"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557955"
 ---
 # <a name="access-wcf-services-with-a-windows-store-client-app"></a>Accéder aux services WCF avec une application cliente Windows Store
 
@@ -56,7 +56,7 @@ Windows 8 introduit un nouveau type d'application appelé applications du Window
  Les encodages de texte et binaires sont pris en charge. Tous les modes de transfert WCF sont pris en charge. Pour plus d’informations, consultez [Streaming Message Transfer](streaming-message-transfer.md).  
   
 ### <a name="add-service-reference"></a>Ajouter une référence de service  
- Pour appeler un service WCF d'une application du Windows Store, utilisez la fonctionnalité Ajouter une référence de service de Visual Studio 2012. Vous remarquerez certaines modifications apportées à la fonctionnalité Ajouter une référence de service exécutée dans une application du Windows Store. Tout d'abord, aucun fichier de configuration n'est généré. Les applications du Windows Store n'utilisent pas les fichiers de configuration, elles doivent être configurées dans le code. Ce code de configuration se trouve dans le fichier References.cs généré par la fonctionnalité Ajouter une référence de service. Pour afficher ce fichier, veillez à sélectionner « Afficher tous les fichiers » dans l’Explorateur de solutions. Le fichier se trouve sous les nœuds Références de service et Reference.svcmap dans le projet. Toutes les opérations générées pour les services WCF dans une application du Windows Store seront des opérations asynchrones à l'aide du modèle asynchrone basé sur des tâches. Pour plus d’informations, consultez [tâches Async-simplifier la programmation asynchrone avec des tâches](https://docs.microsoft.com/archive/msdn-magazine/2010/september/async-tasks-simplify-asynchronous-programming-with-tasks).  
+ Pour appeler un service WCF d'une application du Windows Store, utilisez la fonctionnalité Ajouter une référence de service de Visual Studio 2012. Vous remarquerez certaines modifications apportées à la fonctionnalité Ajouter une référence de service exécutée dans une application du Windows Store. Tout d'abord, aucun fichier de configuration n'est généré. Les applications du Windows Store n'utilisent pas les fichiers de configuration, elles doivent être configurées dans le code. Ce code de configuration se trouve dans le fichier References.cs généré par la fonctionnalité Ajouter une référence de service. Pour afficher ce fichier, veillez à sélectionner « Afficher tous les fichiers » dans l’Explorateur de solutions. Le fichier se trouve sous les nœuds Références de service et Reference.svcmap dans le projet. Toutes les opérations générées pour les services WCF dans une application du Windows Store seront des opérations asynchrones à l'aide du modèle asynchrone basé sur des tâches. Pour plus d’informations, consultez [tâches Async-simplifier la programmation asynchrone avec des tâches](/archive/msdn-magazine/2010/september/async-tasks-simplify-asynchronous-programming-with-tasks).  
   
  Comme la configuration est maintenant générée dans le code, toutes les modifications effectuées dans le fichier Reference.cs sont remplacées à chaque mise à jour de la référence de service. Pour remédier à cette situation, le code de configuration est généré dans une méthode partielle, que vous pouvez implémenter dans votre classe proxy client. La méthode partielle est déclarée comme suit :  
   
@@ -140,7 +140,7 @@ Les types d’informations d’identification du client suivants sont pris en ch
  Pour que les applications du Windows Store accèdent aux informations d'identification Windows par défaut et les envoient, vous devez activer cette fonctionnalité dans le fichier Package.appmanifest. Ouvrez ce fichier et sélectionnez l’onglet capacités, puis sélectionnez « informations d’identification Windows par défaut ». Cela permet à l'application de se connecter aux ressources intranet qui nécessitent des informations d'identification de domaine.  
   
 > [!IMPORTANT]
-> Pour que les applications du Windows Store effectuent des appels inter-ordinateurs, vous devez activer une autre fonctionnalité appelée « mise en réseau pour le Bureau à distance ». Ce paramètre se trouve également dans le fichier Package. AppManifest sous l’onglet capacités. activez la case à cocher Bureau à distance/travail. Cela donne à votre application un accès entrant et sortant aux réseaux des lieux de confiance de l’utilisateur, tels que les points de départ et de travail. Les ports entrants critiques sont toujours bloqués. Pour accéder aux services sur Internet, vous devez également activer la fonction Internet (client).  
+> Pour que les applications du Windows Store effectuent des appels inter-ordinateurs, vous devez activer une autre fonctionnalité appelée « mise en réseau pour le Bureau à distance ». Ce paramètre se trouve également dans le fichier Package. AppManifest sous l’onglet capacités. Activez la case à cocher réseau privé/professionnel. Cela donne à votre application un accès entrant et sortant aux réseaux des lieux de confiance de l’utilisateur, tels que les points de départ et de travail. Les ports entrants critiques sont toujours bloqués. Pour accéder aux services sur Internet, vous devez également activer la fonction Internet (client).  
   
 ### <a name="misc"></a>Divers  
  L'utilisation des classes suivantes est prise en charge pour les applications du Windows Store :  

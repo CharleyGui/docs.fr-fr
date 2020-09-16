@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-ms.openlocfilehash: aa3e58d559121aaca401e7b851a4b4fd8e7753cd
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 3c391e641df52d9143630406a40e17c6bc853865
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900843"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551749"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>Utilisation de données binaires (services de données WCF)
 
@@ -23,25 +23,25 @@ La bibliothèque cliente WCF Data Services vous permet de récupérer et de mett
 
 - Comme un flux distinct de ressources binaires. Ceci est la méthode conseillée pour l'accès et la modification de données d'objet BLOB (binary large object) qui peuvent représenter des photos, des vidéos ou tout autre type de données binaires encodées.
 
-WCF Data Services implémente la diffusion en continu de données binaires à l’aide du protocole HTTP, tel que défini dans OData. Dans ce mécanisme, les données binaires sont traitées comme une ressource multimédia distincte de mais associées à une entité, appelée entrée de lien média. Pour plus d’informations, consultez la page [fournisseur de streaming](streaming-provider-wcf-data-services.md).
+WCF Data Services implémente la diffusion en continu de données binaires à l’aide du protocole HTTP, tel que défini dans OData. Dans ce mécanisme, les données binaires sont traitées comme une ressource multimédia distincte mais liée à une entité, appelée une entrée de lien média. Pour plus d’informations, consultez la page [fournisseur de streaming](streaming-provider-wcf-data-services.md).
 
 > [!TIP]
-> Pour obtenir un exemple pas à pas de création d’une application cliente Windows Presentation Foundation (WPF) qui télécharge des fichiers image binaires à partir d’un service OData qui stocke des photos, consultez la série publication d’un [fournisseur de diffusion en continu Data Services, partie 2 : accès à un flux de ressources multimédia à partir du client](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client). Pour télécharger l’exemple de code pour le service Stream Photo service dans le billet de blog, consultez l' [exemple streaming photo service](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample) dans github.
+> Pour obtenir un exemple pas à pas de création d’une application cliente Windows Presentation Foundation (WPF) qui télécharge des fichiers image binaires à partir d’un service OData qui stocke des photos, consultez la série publication d’un [fournisseur de diffusion en continu Data Services, partie 2 : accès à un flux de ressources multimédia à partir du client](/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client). Pour télécharger l’exemple de code pour le service Stream Photo service dans le billet de blog, consultez l' [exemple streaming photo service](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample) dans github.
 
 ## <a name="entity-metadata"></a>Métadonnées d'entité
 
-Une entité qui possède un flux de ressources multimédia lié est signalée dans les métadonnées du service de données par l'attribut `HasStream` appliqué à un type d'entité qui est l'entrée de lien média. Dans l’exemple suivant, l’entité `PhotoInfo` est une entrée de lien média qui a une ressource multimédia associée, indiquée par l’attribut `HasStream`.
+Une entité qui possède un flux de ressources multimédia lié est signalée dans les métadonnées du service de données par l'attribut `HasStream` appliqué à un type d'entité qui est l'entrée de lien média. Dans l’exemple suivant, l' `PhotoInfo` entité est une entrée de lien média qui a une ressource multimédia associée, indiquée par l' `HasStream` attribut.
 
 [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]
 
-Les autres exemples de cette rubrique indiquent comment accéder et modifier le flux de ressources multimédia. Pour obtenir un exemple complet de consommation d’un flux de ressources multimédia dans une application cliente .NET Framework à l’aide de la WCF Data Services bibliothèque cliente, consultez la publication [accès à un flux de ressources multimédia à partir du client](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client).
+Les autres exemples de cette rubrique indiquent comment accéder et modifier le flux de ressources multimédia. Pour obtenir un exemple complet de consommation d’un flux de ressources multimédia dans une application cliente .NET Framework à l’aide de la WCF Data Services bibliothèque cliente, consultez la publication [accès à un flux de ressources multimédia à partir du client](/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client).
 
 ## <a name="accessing-the-binary-resource-stream"></a>Accès au flux de ressources binaires
 
 La bibliothèque cliente WCF Data Services fournit des méthodes permettant d’accéder aux flux de ressources binaires à partir d’un service de données basé sur OData. Lors du téléchargement d'une ressource multimédia, vous pouvez utiliser l'URI de la ressource multimédia ou bien vous pouvez obtenir un flux binaire qui contient les données de la ressource multimédia elle-même. Vous pouvez également télécharger les données de la ressource multimédia sous la forme d'un flux binaire.
 
 > [!TIP]
-> Pour obtenir un exemple pas à pas de création d’une application cliente Windows Presentation Foundation (WPF) qui télécharge des fichiers image binaires à partir d’un service OData qui stocke des photos, consultez la série publication d’un [fournisseur de diffusion en continu Data Services, partie 2 : accès à un flux de ressources multimédia à partir du client](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client). Pour télécharger l’exemple de code pour le service Stream Photo service dans le billet de blog, consultez l' [exemple streaming photo service](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample) dans github.
+> Pour obtenir un exemple pas à pas de création d’une application cliente Windows Presentation Foundation (WPF) qui télécharge des fichiers image binaires à partir d’un service OData qui stocke des photos, consultez la série publication d’un [fournisseur de diffusion en continu Data Services, partie 2 : accès à un flux de ressources multimédia à partir du client](/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client). Pour télécharger l’exemple de code pour le service Stream Photo service dans le billet de blog, consultez l' [exemple streaming photo service](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample) dans github.
 
 ### <a name="getting-the-uri-of-the-binary-stream"></a>Obtenir l'URI du flux binaire
 
@@ -74,5 +74,5 @@ Dans cet exemple, la méthode <xref:System.Data.Services.Client.DataServiceConte
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Bibliothèque cliente WCF Data Services](wcf-data-services-client-library.md)
-- [Liaison de données aux contrôles](binding-data-to-controls-wcf-data-services.md)
+- [Bibliothèque client services de données WCF](wcf-data-services-client-library.md)
+- [Liaison de données à des contrôles](binding-data-to-controls-wcf-data-services.md)

@@ -2,12 +2,12 @@
 title: Implémentation de passerelles d’API avec Ocelot
 description: Découvrez comment implémenter des passerelles d’API avec Ocelot et comment utiliser Ocelot dans un environnement basé sur un conteneur.
 ms.date: 03/02/2020
-ms.openlocfilehash: cd776b2fa31a630d9b58530605966ed2431912a2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5cee56e6b68bc08f9e1de41605951989a55dc0df
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539552"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679225"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implémenter des passerelles API avec Ocelot
 

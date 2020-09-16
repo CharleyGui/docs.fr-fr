@@ -2,12 +2,12 @@
 title: Workflow de développement des applications Docker
 description: Découvrez les détails du workflow de développement des applications Docker. Commencez étape par étape et entrez dans les détails pour optimiser les fichiers Dockerfile, puis terminez par le workflow simplifié disponible avec Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: 489f44a2742900d6ce5f77e24dd3d719ec9cda2b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d32134a10fb9b56e874bbc6218ca2c4d822adb90
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539725"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678847"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Workflow de développement des applications Docker
 
@@ -496,7 +496,7 @@ Le point important ici est que, comme illustré dans la figure 5-12, dans Visual
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Déployer un conteneur ASP.NET sur un hôte de l’arrimeur distant** \
-  <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
+  <https://docs.microsoft.com/visualstudio/containers/hosting-web-apps-in-docker>
 
 ### <a name="a-note-about-testing-and-deploying-with-orchestrators"></a>Note sur le test et le déploiement avec des orchestrateurs
 

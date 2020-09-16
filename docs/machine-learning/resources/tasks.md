@@ -2,12 +2,12 @@
 title: Tâches d’apprentissage automatique
 description: Explorez les différentes tâches Machine Learning ainsi que les tâches associées prises en charge dans ML.NET.
 ms.date: 12/23/2019
-ms.openlocfilehash: e6e36bd65dbadb8cb7b8edbf9e2e82071c208378
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 56cdb5f3162614d0bf2fb1e5bd9e774b5548b238
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144446"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679480"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Tâches Machine Learning dans ML.NET
 
@@ -160,7 +160,7 @@ Cet entraîneur génère la sortie suivante :
 
 Cette tâche crée un modèle de détection d’anomalie à l’aide de la méthode Principal Component Analysis (PCA). La détection d’anomalie PCA vous permet de créer un modèle dans des scénarios où il est facile d’obtenir des données d’apprentissage à partir d’une classe, notamment des transactions valides, mais où il est difficile d’obtenir suffisamment d’échantillons d’anomalies ciblées.
 
-Technique éprouvée dans l’apprentissage automatique (Machine Learning), la méthode PCA est fréquemment utilisée dans l’analyse exploratoire des données car elle révèle la structure interne des données et explique la variance dans les données. PCA fonctionne en analysant les données contenant plusieurs variables. Elle recherche des corrélations entre les variables et détermine la combinaison de valeurs qui identifie le mieux les différences dans les résultats. Ces valeurs de fonctionnalité combinées sont utilisées pour créer un espace de fonctionnalités plus compact, appelé principaux composants.
+Technique éprouvée dans l’apprentissage automatique (Machine Learning), la méthode PCA est fréquemment utilisée dans l’analyse exploratoire des données car elle révèle la structure interne des données et explique la variance dans les données. L’ACP fonctionne en analysant les données qui contiennent plusieurs variables. Elle recherche les corrélations entre les variables et détermine la combinaison des valeurs qui capturent le mieux les différences dans les résultats. Ces valeurs de fonctionnalité combinées sont utilisées pour créer un espace de fonctionnalités plus compact, appelé principaux composants.
 
 La détection d’anomalie englobe de nombreuses tâches importantes pour l’apprentissage automatique :
 
@@ -229,4 +229,4 @@ La tâche de prévision utilise les données de série chronologique antérieure
 
 Vous pouvez effectuer l’apprentissage d’un modèle de prévision avec l’algorithme suivant :
 
-<xref:Microsoft.ML.TimeSeriesCatalog.ForecastBySsa*>
+<xref:Microsoft.ML.TimeSeriesCatalog.ForecastBySsa%2A>

@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Creating GenericPrincipal Objects
 - GenericIdentity Objects
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-ms.openlocfilehash: 903d636938c47850951330d7936d95470441607e
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 57ffe3fd2d446b4a7364aa531e785bfb79520a0a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557214"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558210"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Procédure : créer des objets GenericPrincipal et GenericIdentity
 
 > [!NOTE]
 > Cet article s’applique à Windows.
 >
-> Pour plus d’informations sur la ASP.NET Core, consultez [vue d’ensemble de la sécurité ASP.net Core](https://docs.microsoft.com/aspnet/core/security/).
+> Pour plus d’informations sur la ASP.NET Core, consultez [vue d’ensemble de la sécurité ASP.net Core](/aspnet/core/security/).
 
 Vous pouvez utiliser la <xref:System.Security.Principal.GenericIdentity> classe conjointement avec la <xref:System.Security.Principal.GenericPrincipal> classe pour créer un schéma d’autorisation qui existe indépendamment d’un domaine Windows.
 
@@ -61,7 +61,7 @@ Vous pouvez utiliser la <xref:System.Security.Principal.GenericIdentity> classe 
     Thread.CurrentPrincipal = myPrincipal;
     ```
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple de code suivant montre comment créer une instance d’un **GenericPrincipal** et d’un **GenericIdentity**. Ce code affiche les valeurs de ces objets dans la console.
 

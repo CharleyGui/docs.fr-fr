@@ -28,12 +28,12 @@ helpviewer_keywords:
 - skinning controls [WPF]
 - controls [WPF], appearance specified by state
 - templates [WPF], custom for existing controls
-ms.openlocfilehash: c372659676b450cde789c96e45c7ec5de2aea194
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 8be38a2b4f046a43ab187ea3517335437ec49b08
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325732"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551892"
 ---
 # <a name="create-a-template-for-a-control"></a>Créer un modèle pour un contrôle
 
@@ -55,7 +55,7 @@ En revanche, si vous avez besoin d’un contrôle avec de nouvelles fonctionnali
 
 ## <a name="prerequisites"></a>Prérequis
 
-Créez une application WPF et dans *MainWindow. Xaml* (ou une autre fenêtre de votre choix) définissez les propriétés suivantes sur l' **\<Window>** élément :
+Créez une application WPF et dans *MainWindow. Xaml* (ou une autre fenêtre de votre choix) définissez les propriétés suivantes sur l’élément ** \: :: No-Loc ( <Window> ) :::** :
 
 |     |     |
 | --- | --- |
@@ -63,7 +63,7 @@ Créez une application WPF et dans *MainWindow. Xaml* (ou une autre fenêtre de 
 | **SizeToContent** | `WidthAndHeight` |
 | **MinWidth**      | `250` |
 
-Définissez le contenu de l' **\<Window>** élément sur le code XAML suivant :
+Définissez le contenu de l’élément ** \: :: No-Loc ( <Window> ) :::** dans le code XAML suivant :
 
 [!code-xaml[Initial](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window1.xaml#Initial)]
 
@@ -83,7 +83,7 @@ Pour commencer, ajoutez un `Window.Resources` élément à votre fichier *MainWi
 
 [!code-xaml[WindowResStart](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window2.xaml#WindowResStart)]
 
-Créez un nouveau **\<ControlTemplate>** avec les propriétés suivantes définies :
+Créez un nouveau ** \: :: No-Loc ( <ControlTemplate> ) :::** avec les propriétés suivantes définies :
 
 |     |     |
 | --- | --- |
@@ -92,7 +92,7 @@ Créez un nouveau **\<ControlTemplate>** avec les propriétés suivantes défini
 
 Ce modèle de contrôle sera simple :
 
-- élément racine pour le contrôle, un<xref:System.Windows.Controls.Grid>
+- élément racine pour le contrôle, un <xref:System.Windows.Controls.Grid>
 - <xref:System.Windows.Shapes.Ellipse>pour dessiner l’apparence arrondie du bouton
 - <xref:System.Windows.Controls.ContentPresenter>pour afficher le contenu du bouton spécifié par l’utilisateur
 
@@ -100,15 +100,15 @@ Ce modèle de contrôle sera simple :
 
 ### <a name="templatebinding"></a>TemplateBinding
 
-Quand vous créez un nouveau <xref:System.Windows.Controls.ControlTemplate> , vous pouvez toujours utiliser les propriétés publiques pour modifier l’apparence du contrôle. L’extension de balisage [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md) lie une propriété d’un élément qui se trouve dans <xref:System.Windows.Controls.ControlTemplate> à une propriété publique définie par le contrôle. Quand vous utilisez un [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md), vous activez les propriétés du contrôle pour agir en tant que paramètres du modèle. Autrement dit, quand une propriété sur un contrôle est définie, cette valeur est passée à l’élément qui a le [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md).
+Quand vous créez un nouveau <xref:System.Windows.Controls.ControlTemplate> , vous pouvez toujours utiliser les propriétés publiques pour modifier l’apparence du contrôle. L’extension de balisage [TemplateBinding](/dotnet/desktop/wpf/advanced/templatebinding-markup-extension) lie une propriété d’un élément qui se trouve dans <xref:System.Windows.Controls.ControlTemplate> à une propriété publique définie par le contrôle. Quand vous utilisez un [TemplateBinding](/dotnet/desktop/wpf/advanced/templatebinding-markup-extension), vous activez les propriétés du contrôle pour agir en tant que paramètres du modèle. Autrement dit, quand une propriété sur un contrôle est définie, cette valeur est passée à l’élément qui a le [TemplateBinding](/dotnet/desktop/wpf/advanced/templatebinding-markup-extension).
 
 ### <a name="ellipse"></a>Ellipse
 
-Notez que les **:::no-loc text="Fill":::** **:::no-loc text="Stroke":::** Propriétés et de l' **\<Ellipse>** élément sont liées aux <xref:System.Windows.Controls.Control.Foreground> Propriétés et du contrôle <xref:System.Windows.Controls.Control.Background> .
+Notez que les **:::no-loc text="Fill":::** **:::no-loc text="Stroke":::** Propriétés et de l’élément ** \: :: No-Loc ( <Ellipse> ) :::** sont liées aux <xref:System.Windows.Controls.Control.Foreground> Propriétés et du contrôle <xref:System.Windows.Controls.Control.Background> .
 
 ### <a name="contentpresenter"></a>ContentPresenter
 
-Un [\<ContentPresenter>](xref:System.Windows.Controls.ContentPresenter) élément est également ajouté au modèle. Étant donné que ce modèle est conçu pour un bouton, prenez en considération le fait que le bouton hérite de <xref:System.Windows.Controls.ContentControl> . Le bouton présente le contenu de l’élément. Vous pouvez définir tout ce qui se trouve à l’intérieur du bouton, comme du texte brut ou même un autre contrôle. Les deux types de boutons valides sont les suivants :
+Un élément [ \: :: No-Loc ( <ContentPresenter> ) :](xref:System.Windows.Controls.ContentPresenter) :: ELEMENT est également ajouté au modèle. Étant donné que ce modèle est conçu pour un bouton, prenez en considération le fait que le bouton hérite de <xref:System.Windows.Controls.ContentControl> . Le bouton présente le contenu de l’élément. Vous pouvez définir tout ce qui se trouve à l’intérieur du bouton, comme du texte brut ou même un autre contrôle. Les deux types de boutons valides sont les suivants :
 
 ```xaml
 <Button>My Text</Button>
@@ -120,7 +120,7 @@ Un [\<ContentPresenter>](xref:System.Windows.Controls.ContentPresenter) élémen
 </Button>
 ```
 
-Dans les deux exemples précédents, le texte et la case à cocher sont définis en tant que propriété [Button. Content](xref:System.Windows.Controls.ContentControl.Content) . Tout ce qui est défini en tant que contenu peut être présenté à l’aide d’un **\<ContentPresenter>** , ce que fait le modèle.
+Dans les deux exemples précédents, le texte et la case à cocher sont définis en tant que propriété [Button. Content](xref:System.Windows.Controls.ContentControl.Content) . Tout ce qui est défini comme contenu peut être présenté à l’aide d’un ** \: :: No-Loc ( <ContentPresenter> ) ::**:, qui est ce que fait le modèle.
 
 Si le <xref:System.Windows.Controls.ControlTemplate> est appliqué à un <xref:System.Windows.Controls.ContentControl> type, tel qu’un `Button` , une <xref:System.Windows.Controls.ContentPresenter> est recherchée dans l’arborescence d’éléments. Si le `ContentPresenter` est trouvé, le modèle lie automatiquement la propriété du contrôle <xref:System.Windows.Controls.ContentControl.Content> à `ContentPresenter` .
 
@@ -138,7 +138,7 @@ Si vous exécutez le projet et regardez le résultat, vous verrez que le bouton 
 
 ![Fenêtre WPF avec un bouton ovale de modèle](media/create-apply-template/styled-button.png)
 
-Vous avez peut-être remarqué que le bouton n’est pas un cercle, mais qu’il est incliné. En raison de la façon dont l' **\<Ellipse>** élément fonctionne, il se développe toujours pour occuper l’espace disponible. Définissez le cercle comme uniforme en remplaçant les propriétés et du bouton par **:::no-loc text="width":::** **:::no-loc text="height":::** la même valeur :
+Vous avez peut-être remarqué que le bouton n’est pas un cercle, mais qu’il est incliné. En raison de la façon dont le : ** \: : No-Loc ( <Ellipse> ) :::** Element fonctionne, il se développe toujours pour occuper l’espace disponible. Définissez le cercle comme uniforme en remplaçant les propriétés et du bouton par  **:::no-loc text="width":::** **:::no-loc text="height":::** la même valeur :
 
 [!code-xaml[StyledButtonSize](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window3.xaml#StyledButtonSize)]
 
@@ -148,9 +148,9 @@ Vous avez peut-être remarqué que le bouton n’est pas un cercle, mais qu’il
 
 Même si un bouton avec un modèle appliqué semble différent, il se comporte comme n’importe quel autre bouton. Si vous appuyez sur le bouton, l' <xref:System.Windows.Controls.Primitives.ButtonBase.Click> événement se déclenche. Toutefois, vous avez peut-être remarqué que lorsque vous déplacez votre souris sur le bouton, les éléments visuels du bouton ne changent pas. Ces interactions visuelles sont toutes définies par le modèle.
 
-Avec les systèmes d’événements et de propriétés dynamiques fournis par WPF, vous pouvez surveiller une propriété spécifique pour une valeur, puis restyleer le modèle lorsque cela est approprié. Dans cet exemple, vous allez surveiller la propriété du bouton <xref:System.Windows.UIElement.IsMouseOver> . Lorsque la souris se trouve sur le contrôle, Stylez **\<Ellipse>** avec une nouvelle couleur. Ce type de déclencheur est appelé *PropertyTrigger*.
+Avec les systèmes d’événements et de propriétés dynamiques fournis par WPF, vous pouvez surveiller une propriété spécifique pour une valeur, puis restyleer le modèle lorsque cela est approprié. Dans cet exemple, vous allez surveiller la propriété du bouton <xref:System.Windows.UIElement.IsMouseOver> . Lorsque la souris se trouve sur le contrôle, style ** \: :: No-Loc ( <Ellipse> ) ::** : avec une nouvelle couleur. Ce type de déclencheur est appelé *PropertyTrigger*.
 
-Pour que cela fonctionne, vous devez ajouter un nom au **\<Ellipse>** que vous pouvez référencer. Donnez-lui le nom de **backgroundElement**.
+Pour que cela fonctionne, vous devez ajouter un nom à ** \: :: No-Loc ( <Ellipse> ) :::** que vous pouvez référencer. Donnez-lui le nom de **backgroundElement**.
 
 [!code-xaml[EllipseName](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window4.xaml#EllipseName)]
 
@@ -158,27 +158,27 @@ Ensuite, ajoutez un nouveau <xref:System.Windows.Trigger> à la collection [Cont
 
 [!code-xaml[ControlTemplate](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window4.xaml?name=ControlTemplate&highlight=6-10)]
 
-Ajoutez ensuite un **\<Setter>** au **\<Trigger>** qui modifie la propriété **Fill** du **\<Ellipse>** en une nouvelle couleur.
+Ensuite, ajoutez un ** \: :: No-Loc ( <Setter> ) :::** à :: No-Loc ** \: ( <Trigger> ) :** :: qui modifie la propriété **Fill** de ** \: :: No-Loc ( <Ellipse> ) :** :: en une nouvelle couleur.
 
 [!code-xaml[MouseOver](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window5.xaml#MouseOver)]
 
-Exécutez le projet. Notez que lorsque vous placez le pointeur de la souris sur le bouton, la couleur des **\<Ellipse>** modifications.
+Exécutez le projet. Notez que lorsque vous placez le pointeur de la souris sur le bouton, la couleur du ** \: :: No-Loc ( <Ellipse> ) ::** : changes.
 
 ![la souris se déplace sur le bouton WPF pour modifier la couleur de remplissage](media/create-apply-template/mouse-move-over-button.gif)
 
 ## <a name="use-a-visualstate"></a>Utiliser un VisualState
 
-Les États visuels sont définis et déclenchés par un contrôle. Par exemple, lorsque la souris est déplacée au-dessus du contrôle, l' `CommonStates.MouseOver` État est déclenché. Vous pouvez animer les modifications de propriété en fonction de l’état actuel du contrôle. Dans la section précédente, **\<PropertyTrigger>** a était utilisé pour remplacer le premier plan du bouton par `AliceBlue` lorsque la `IsMouseOver` propriété était `true` . Au lieu de cela, créez un état visuel qui anime la modification de cette couleur, en fournissant une transition lisse. Pour plus d’informations sur *VisualStates*, consultez [styles et modèles dans WPF](../fundamentals/styles-templates-overview.md#visual-states).
+Les États visuels sont définis et déclenchés par un contrôle. Par exemple, lorsque la souris est déplacée au-dessus du contrôle, l' `CommonStates.MouseOver` État est déclenché. Vous pouvez animer les modifications de propriété en fonction de l’état actuel du contrôle. Dans la section précédente, a ** \: :: No-Loc ( <PropertyTrigger> ) :::** a été utilisé pour remplacer le premier plan du bouton par `AliceBlue` lorsque la `IsMouseOver` propriété était `true` . Au lieu de cela, créez un état visuel qui anime la modification de cette couleur, en fournissant une transition lisse. Pour plus d’informations sur *VisualStates*, consultez [styles et modèles dans WPF](../fundamentals/styles-templates-overview.md#visual-states).
 
-Pour convertir le **\<PropertyTrigger>** en un état visuel animé, commencez par supprimer l' **\<ControlTemplate.Triggers>** élément de votre modèle.
+Pour convertir le ** \: :: No-Loc ( <PropertyTrigger> ) :::** en un état visuel animé, commencez par supprimer l' **\<ControlTemplate.Triggers>** élément de votre modèle.
 
 [!code-xaml[CleanTemplate](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window5.xaml#CleanTemplate)]
 
-Ensuite, à la **\<Grid>** racine du modèle de contrôle, ajoutez l' **\<VisualStateManager.VisualStateGroups>** élément avec un **\<VisualStateGroup>** pour `CommonStates` . Définissez deux États, `Normal` et `MouseOver` .
+Ensuite, dans la racine ** \: :: No-Loc ( <Grid> ) :::** root du modèle de contrôle, ajoutez le :: ** \: No-Loc (<VisualStateManager. VisualStateGroups>) :::** Element avec a ** \: :: No-Loc ( <VisualStateGroup> ) :::** for `CommonStates` . Définissez deux États, `Normal` et `MouseOver` .
 
 [!code-xaml[VisualState](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window6.xaml#VisualState)]
 
-Les animations définies dans un **\<VisualState>** sont appliquées lorsque cet État est déclenché. Créez des animations pour chaque État. Les animations sont placées à l’intérieur d’un **\<Storyboard>** élément. Pour plus d’informations sur les storyboards, consultez [vue d’ensemble des storyboards](../../framework/wpf/graphics-multimedia/storyboards-overview.md).
+Les animations définies dans a ** \: :: No-Loc ( <VisualState> ) :::** sont appliquées lorsque cet État est déclenché. Créez des animations pour chaque État. Les animations sont placées à l’intérieur d’un élément ** \: :: No-Loc ( <Storyboard> ) :::** . Pour plus d’informations sur les storyboards, consultez [vue d’ensemble des storyboards](/dotnet/desktop/wpf/graphics-multimedia/storyboards-overview).
 
 - Normal
 
@@ -192,11 +192,11 @@ Les animations définies dans un **\<VisualState>** sont appliquées lorsque cet
 
   [!code-xaml[MouseOverState](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window6.xaml#MouseOverState)]
 
-Le **\<ControlTemplate>** doit maintenant ressembler à ce qui suit.
+Le ** \: :: No-Loc ( <ControlTemplate> ) ::** : doit maintenant ressembler à ce qui suit.
 
 [!code-xaml[FinalTemplate](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window7.xaml#FinalTemplate)]
 
-Exécutez le projet. Notez que lorsque vous placez le pointeur de la souris sur le bouton, la couleur de l' **\<Ellipse>** Animation.
+Exécutez le projet. Notez que lorsque vous placez le pointeur de la souris sur le bouton, la couleur de ** \: :: No-Loc ( <Ellipse> ) ::** : animes.
 
 ![la souris se déplace sur le bouton WPF pour modifier la couleur de remplissage](media/create-apply-template/mouse-move-over-button-visualstate.gif)
 

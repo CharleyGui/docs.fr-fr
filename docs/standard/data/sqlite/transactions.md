@@ -1,13 +1,13 @@
 ---
 title: Transactions
-ms.date: 12/13/2019
+ms.date: 09/08/2020
 description: Découvrez comment utiliser des transactions.
-ms.openlocfilehash: 4b72a1573a560ffd1bfd0f54d46ab3b135280976
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 50c4cd1023eac892cafc3ae4395e9168bd8e9f36
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447138"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678860"
 ---
 # <a name="transactions"></a>Transactions
 
@@ -15,7 +15,7 @@ Les transactions vous permettent de regrouper plusieurs instructions SQL en une 
 
 ## <a name="concurrency"></a>Accès concurrentiel
 
-Dans SQLite, une seule transaction peut avoir des modifications en attente dans la base de données à la fois. Pour cette raison, les <xref:Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction%2A> `Execute` appels à et aux méthodes <xref:Microsoft.Data.Sqlite.SqliteCommand> sur peuvent expirer si une autre transaction prend trop de temps pour s’exécuter.
+Dans SQLite, une seule transaction peut avoir des modifications en attente dans la base de données à la fois. Pour cette raison, les appels à <xref:Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction%2A> et aux `Execute` méthodes sur <xref:Microsoft.Data.Sqlite.SqliteCommand> peuvent expirer si une autre transaction prend trop de temps pour s’exécuter.
 
 Pour plus d’informations sur le verrouillage, les nouvelles tentatives et les délais d’attente, consultez [Erreurs de base de données](database-errors.md).
 
@@ -33,6 +33,15 @@ SQLite prend également en charge la **lecture non validée** lors de l’utilis
 
 Microsoft. Data. sqlite traite la valeur IsolationLevel transmise à <xref:Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction%2A> comme un niveau minimal. Le niveau d’isolation réel sera promu en lecture non validée ou sérialisable.
 
-Le code suivant simule une lecture incorrecte. Notez que la chaîne de connexion doit `Cache=Shared`inclure.
+Le code suivant simule une lecture incorrecte. Notez que la chaîne de connexion doit inclure `Cache=Shared` .
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DirtyReadSample/Program.cs?name=snippet_DirtyRead)]
+
+## <a name="deferred-transactions"></a>Transactions différées
+
+À compter de Microsoft. Data. SQLite version 5,0, les transactions peuvent être différées. Cela diffère la création de la transaction réelle dans la base de données jusqu’à ce que la première commande soit exécutée. Cela entraîne également la mise à niveau progressive de la transaction d’une transaction de lecture vers une transaction d’écriture en fonction des besoins de ses commandes. Cela peut être utile pour permettre l’accès simultané à la base de données pendant la transaction.
+
+[!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DeferredTransactionSample/Program.cs?name=snippet_DeferredTransaction)]
+
+> [!WARNING]
+> Les commandes à l’intérieur d’une transaction différée peuvent échouer si elles provoquent la mise à niveau de la transaction d’une transaction de lecture vers une transaction d’écriture alors que la base de données est verrouillée. Dans ce cas, l’application doit retenter l’intégralité de la transaction.

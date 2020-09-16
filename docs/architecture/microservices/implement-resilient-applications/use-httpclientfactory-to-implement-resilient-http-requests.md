@@ -2,12 +2,12 @@
 title: Utiliser IHttpClientFactory pour implémenter des requêtes HTTP résilientes
 description: Découvrez comment utiliser IHttpClientFactory, disponible depuis .NET Core 2,1, pour la création d' `HttpClient` instances, ce qui vous permet de l’utiliser facilement dans vos applications.
 ms.date: 08/31/2020
-ms.openlocfilehash: 1df5432f215371b60722212cf706c28a4a5bb5f6
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: c54965a9bbb700cfb1f14150773c2df45d109c39
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271826"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678814"
 ---
 # <a name="use-ihttpclientfactory-to-implement-resilient-http-requests"></a>Utiliser IHttpClientFactory pour implémenter des requêtes HTTP résilientes
 
@@ -65,9 +65,9 @@ Le diagramme suivant montre comment les clients typés sont utilisés avec `IHtt
 
 **Figure 8-4**. Utilisation `IHttpClientFactory` de avec les classes clientes typées.
 
-Dans l’image ci-dessus, une `ClientService` (utilisée par un contrôleur ou un code client) utilise un `HttpClient` créé par l’inscrit `IHttpClientFactory` . Cette fabrique assigne un `HttpMessageHandler` à partir d’un pool à `HttpClient` . Le `HttpClient` peut être configuré avec les stratégies de Polly lors de l’inscription du `IHttpClientFactory` dans le conteneur d’injection de règles avec la méthode d’extension <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*> .
+Dans l’image ci-dessus, une `ClientService` (utilisée par un contrôleur ou un code client) utilise un `HttpClient` créé par l’inscrit `IHttpClientFactory` . Cette fabrique assigne un `HttpMessageHandler` à partir d’un pool à `HttpClient` . Le `HttpClient` peut être configuré avec les stratégies de Polly lors de l’inscription du `IHttpClientFactory` dans le conteneur d’injection de règles avec la méthode d’extension <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient%2A> .
 
-Pour configurer la structure ci-dessus, ajoutez-la <xref:System.Net.Http.IHttpClientFactory> dans votre application en installant le `Microsoft.Extensions.Http` package NuGet qui comprend la <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*> méthode d’extension pour <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection> . Cette méthode d’extension inscrit la `DefaultHttpClientFactory` classe interne à utiliser comme singleton pour l’interface `IHttpClientFactory` . Elle définit une configuration temporaire pour <xref:Microsoft.Extensions.Http.HttpMessageHandlerBuilder>. Ce gestionnaire de messages (objet <xref:System.Net.Http.HttpMessageHandler>), obtenu à partir d’un pool, est utilisé par le `HttpClient` retourné à partir de la fabrique.
+Pour configurer la structure ci-dessus, ajoutez-la <xref:System.Net.Http.IHttpClientFactory> dans votre application en installant le `Microsoft.Extensions.Http` package NuGet qui comprend la <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient%2A> méthode d’extension pour <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection> . Cette méthode d’extension inscrit la `DefaultHttpClientFactory` classe interne à utiliser comme singleton pour l’interface `IHttpClientFactory` . Elle définit une configuration temporaire pour <xref:Microsoft.Extensions.Http.HttpMessageHandlerBuilder>. Ce gestionnaire de messages (objet <xref:System.Net.Http.HttpMessageHandler>), obtenu à partir d’un pool, est utilisé par le `HttpClient` retourné à partir de la fabrique.
 
 Dans le code suivant, vous pouvez voir comment utiliser `AddHttpClient()` pour enregistrer les clients typés (agents de service) qui ont besoin d’utiliser `HttpClient`.
 
@@ -124,7 +124,7 @@ Chaque client typé peut avoir sa propre valeur de durée de vie de gestionnaire
 
 ### <a name="implement-your-typed-client-classes-that-use-the-injected-and-configured-httpclient"></a>Implémenter les classes de client typé qui utilisent l’objet HttpClient injecté et configuré
 
-Au cours d’une étape précédente, vous devez définir vos classes clientes typées, telles que les classes dans l’exemple de code, telles que « BasketService », « CatalogService », « OrderingService », etc. : un client typé est une classe qui accepte un `HttpClient` objet (injecté par le biais de son constructeur) et l’utilise pour appeler un service http distant. Par exemple :
+Au cours d’une étape précédente, vous devez définir vos classes clientes typées, telles que les classes dans l’exemple de code, telles que « BasketService », « CatalogService », « OrderingService », etc. : un client typé est une classe qui accepte un `HttpClient` objet (injecté par le biais de son constructeur) et l’utilise pour appeler un service http distant. Exemple :
 
 ```csharp
 public class CatalogService : ICatalogService

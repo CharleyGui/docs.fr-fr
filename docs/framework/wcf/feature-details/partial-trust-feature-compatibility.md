@@ -2,12 +2,12 @@
 title: Compatibilité des fonctionnalités dans un environnement de confiance partielle
 ms.date: 03/30/2017
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-ms.openlocfilehash: 85e34e365d125fe4f00756549ba5bda4311b78f8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6d009482037efac8e0f90d255e198f10a1234187
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579161"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551970"
 ---
 # <a name="partial-trust-feature-compatibility"></a>Compatibilité des fonctionnalités dans un environnement de confiance partielle
 Windows Communication Foundation (WCF) prend en charge un sous-ensemble limité de fonctionnalités lors de l’exécution dans un environnement de confiance partielle. Les fonctionnalités de confiance partielle prises en charge sont conçues autour d’un ensemble spécifique de scénarios, comme décrit dans la rubrique [Supported Deployment Scenarios](supported-deployment-scenarios.md) .  
@@ -90,12 +90,12 @@ Windows Communication Foundation (WCF) prend en charge un sous-ensemble limité 
   
 - Marquez votre comportement courant avec l'attribut <xref:System.Security.AllowPartiallyTrustedCallersAttribute> afin qu'il soit exécuté lorsqu'il est déployé comme une application de confiance partielle. Notez qu'une entrée de Registre peut être définie sur l'ordinateur pour interdire l'exécution des assemblys marqués avec l'attribut APTCA. .  
   
-- Si l'application est déployée comme une application de confiance partielle, vérifiez que les utilisateurs ne peuvent pas modifier les paramètres de sécurité d'accès du code pour exécuter l'application dans un environnement de confiance partielle. S'ils peuvent le faire, le comportement ne s'exécute pas et aucune exception n'est levée. Pour ce faire, consultez l’option **LevelFinal** à l’aide de [Caspol. exe (outil stratégie de sécurité d’accès du code)](../../tools/caspol-exe-code-access-security-policy-tool.md).  
+- Si l'application est déployée comme une application de confiance partielle, vérifiez que les utilisateurs ne peuvent pas modifier les paramètres de sécurité d'accès du code pour exécuter l'application dans un environnement de confiance partielle. S'ils peuvent le faire, le comportement ne s'exécute pas et aucune exception n'est levée. Pour ce faire, consultez l’option **LevelFinal** à l’aide de [Caspol.exe (outil stratégie de sécurité d’accès du code)](../../tools/caspol-exe-code-access-security-policy-tool.md).  
   
  Pour obtenir un exemple de comportement courant, consultez [Comment : verrouiller des points de terminaison dans l’entreprise](../extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
   
 ## <a name="configuration"></a>Configuration  
- À une exception près, le code d’un niveau de confiance partiel ne peut charger que les sections de configuration WCF dans le `app.config` fichier local. Pour charger des sections de configuration WCF qui référencent des sections WCF dans machine. config ou dans un fichier Web. config racine, vous devez disposer de une autorisation ConfigurationPermission (sans restriction). Sans cette autorisation, les références aux sections de configuration WCF (comportements, liaisons) en dehors du fichier de configuration local entraînent une exception lorsque la configuration est chargée.  
+ À une exception près, le code d’un niveau de confiance partiel ne peut charger que les sections de configuration WCF dans le `app.config` fichier local. Pour charger des sections de configuration WCF qui font référence à des sections WCF dans machine.config ou dans un fichier racine web.config requiert une autorisation ConfigurationPermission (sans restriction). Sans cette autorisation, les références aux sections de configuration WCF (comportements, liaisons) en dehors du fichier de configuration local entraînent une exception lorsque la configuration est chargée.  
   
  L'unique exception est la configuration de type connu pour la sérialisation, comme décrit à la section Sérialisation de cette rubrique.  
   
@@ -119,7 +119,7 @@ Windows Communication Foundation (WCF) prend en charge un sous-ensemble limité 
   
 - <xref:System.Runtime.Serialization>  
   
-- <xref:System.IdentityModel.Claims>, <xref:System.IdentityModel.Policy>, <xref:System.IdentityModel.Selectors>et <xref:System.IdentityModel.Tokens>.  
+- <xref:System.IdentityModel.Claims>, <xref:System.IdentityModel.Policy>, <xref:System.IdentityModel.Selectors> et <xref:System.IdentityModel.Tokens>.  
   
  Les sources de suivi suivantes ne sont pas prises en charge :  
   
@@ -127,7 +127,7 @@ Windows Communication Foundation (WCF) prend en charge un sous-ensemble limité 
   
 - <xref:System.IO.Log>  
 
-- [System. ServiceModel. Internal. TransactionBridge](https://docs.microsoft.com/previous-versions/aa346556(v=vs.110))]
+- [System. ServiceModel. Internal. TransactionBridge](/previous-versions/aa346556(v=vs.110))]
   
  Les membres suivants de l'énumération <xref:System.Diagnostics.TraceOptions> ne doivent pas être spécifiés:  
   
@@ -145,7 +145,7 @@ Windows Communication Foundation (WCF) prend en charge un sous-ensemble limité 
   
 ## <a name="other-limitations"></a>Autres limitations  
 
-  WCF est généralement limité aux considérations de sécurité imposées par l’application d’hébergement. Par exemple, si WCF est hébergé dans une application de navigateur XAML (XBAP), il est soumis aux limitations XBAP, comme décrit dans [Windows Presentation Foundation sécurité de confiance partielle](../../wpf/wpf-partial-trust-security.md).  
+  WCF est généralement limité aux considérations de sécurité imposées par l’application d’hébergement. Par exemple, si WCF est hébergé dans une application de navigateur XAML (XBAP), il est soumis aux limitations XBAP, comme décrit dans [Windows Presentation Foundation sécurité de confiance partielle](/dotnet/desktop/wpf/wpf-partial-trust-security).  
   
  Les fonctionnalités supplémentaires suivantes ne sont pas activées en cas d’exécution d’indigo2 dans un environnement de confiance partielle :  
   
@@ -166,5 +166,5 @@ Windows Communication Foundation (WCF) prend en charge un sous-ensemble limité 
 - <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>
 - <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>
 - <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>
-- [Supported Deployment Scenarios](supported-deployment-scenarios.md)
-- [Partial Trust Best Practices](partial-trust-best-practices.md)
+- [Scénarios de déploiement pris en charge](supported-deployment-scenarios.md)
+- [Meilleures pratiques dans un environnement de confiance partielle](partial-trust-best-practices.md)

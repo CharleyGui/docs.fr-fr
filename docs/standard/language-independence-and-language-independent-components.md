@@ -13,16 +13,16 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: aa569c0da5b963243596ef440ef37c08b4fae37f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b440bce7ad73cfd526b1589e7f19b4cc06be238c
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288236"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679610"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
-Le .NET Framework est indépendant du langage. Cela signifie qu'en tant que développeur, vous pouvez développer dans l'un des nombreux langages qui ciblent le .NET Framework, tels que C#, C++/CLI, Eiffel, F#, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL et Windows PowerShell. Vous pouvez accéder aux types et aux membres des bibliothèques de classes développées pour le .NET Framework sans avoir à connaître le langage dans lequel ils ont été initialement écrits ni à suivre les conventions du langage d'origine. Si vous développez des composants, votre composant est accessible par toute application .NET Framework, indépendamment de son langage.
+.NET Framework est indépendant de la langue. Cela signifie que, en tant que développeur, vous pouvez développer dans l’un des nombreux langages qui ciblent .NET Framework, tels que C#, C++/CLI, Eiffel, F #, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL et Windows PowerShell. Vous pouvez accéder aux types et aux membres des bibliothèques de classes développées pour le .NET Framework sans avoir à connaître le langage dans lequel ils ont été initialement écrits ni à suivre les conventions du langage d'origine. Si vous développez des composants, votre composant est accessible par toute application .NET Framework, indépendamment de son langage.
 
 > [!NOTE]
 > La première partie de cet article décrit la création de composants indépendants du langage, c'est-à-dire de composants qui peuvent être utilisés par des applications écrites dans n'importe quel langage. Vous pouvez également créer un composant ou une application unique à partir de code source écrit dans plusieurs langages. Consultez [Interopérabilité multilingue](#CrossLang) dans la deuxième partie de cet article.
@@ -37,7 +37,7 @@ Contenu de cet article :
 
   - [Types et signatures de membres de types](#Types)
 
-  - [Conventions d’affectation de noms](#naming)
+  - [Conventions d'attribution d'un nom](#naming)
 
   - [Conversion de type](#conversion)
 
@@ -135,15 +135,15 @@ Les règles de conformité CLS sont répertoriées dans le tableau suivant. Le t
 |Membres|[Membres de types en général](#members)|Les méthodes et les champs static globaux ne sont pas conformes CLS.|36|
 |Membres|--|La valeur d'un champ statique littéral est spécifiée via l'utilisation de métadonnées d'initialisation de champ. Un littéral conforme à CLS doit avoir une valeur spécifiée dans les métadonnées d'initialisation de champ qui est exactement du même type que le littéral (ou du type sous-jacent, si ce littéral est une `enum`).|13|
 |Membres|[Membres de types en général](#members)|La contrainte vararg ne fait pas partie de la spécification CLS, et la seule convention d’appel prise en charge par la spécification CLS est la convention d’appel managée standard.|15|
-|Conventions d’affectation de noms|[Conventions d’affectation de noms](#naming)|Les assemblys doivent suivre l’Annexe 7 du Rapport technique 15 du standard Unicode 3.0 régissant l’ensemble des caractères autorisés au début et dans les identificateurs. Cette annexe est disponible en ligne à l’adresse <https://www.unicode.org/unicode/reports/tr15/tr15-18.html>. Les identificateurs doivent être dans un format canonique défini par la forme C de normalisation Unicode. Dans le cadre de la spécification CLS, deux identificateurs sont les mêmes si leurs mappages en minuscules (comme spécifié par les mappages en minuscules un-à-un insensibles aux paramètres régionaux Unicode) sont identiques. Autrement dit, pour que deux identificateurs soient considérés comme différents dans le cadre de la spécification CLS, ils doivent être différenciés par d’autres éléments que leur casse. Toutefois, pour remplacer une définition héritée, l’infrastructure CLI nécessite l’utilisation de l’encodage exact de la déclaration d’origine.|4|
-|Surcharge|[Conventions d’affectation de noms](#naming)|Tous les noms introduits dans une portée conforme CLS doivent être distincts, indépendamment de leur type, sauf quand les noms sont identiques et résolus par surcharge. Par exemple, alors que CTS autorise un type à utiliser le même nom pour une méthode et un champ, CLS ne l'autorise pas.|5|
-|Surcharge|[Conventions d’affectation de noms](#naming)|Les champs et les types imbriqués seront distincts par comparaison d'identificateurs seule, même si CTS autorise la distinction de signatures différentes. Les méthodes, les propriétés et les événements qui portent le même nom (par comparaison d’identificateurs) doivent différer par d’autres éléments que le seul type de retour, sauf dans les cas spécifiés dans la règle 39 de la spécification CLS.|6|
+|Conventions d'attribution d'un nom|[Conventions d'attribution d'un nom](#naming)|Les assemblys doivent suivre l’Annexe 7 du Rapport technique 15 du standard Unicode 3.0 régissant l’ensemble des caractères autorisés au début et dans les identificateurs. Cette annexe est disponible en ligne à l’adresse <https://www.unicode.org/reports/tr15/tr15-18.html>. Les identificateurs doivent être dans un format canonique défini par la forme C de normalisation Unicode. Dans le cadre de la spécification CLS, deux identificateurs sont les mêmes si leurs mappages en minuscules (comme spécifié par les mappages en minuscules un-à-un insensibles aux paramètres régionaux Unicode) sont identiques. Autrement dit, pour que deux identificateurs soient considérés comme différents dans le cadre de la spécification CLS, ils doivent être différenciés par d’autres éléments que leur casse. Toutefois, pour remplacer une définition héritée, l’infrastructure CLI nécessite l’utilisation de l’encodage exact de la déclaration d’origine.|4|
+|Surcharge|[Conventions d'attribution d'un nom](#naming)|Tous les noms introduits dans une portée conforme CLS doivent être distincts, indépendamment de leur type, sauf quand les noms sont identiques et résolus par surcharge. Par exemple, alors que CTS autorise un type à utiliser le même nom pour une méthode et un champ, CLS ne l'autorise pas.|5|
+|Surcharge|[Conventions d'attribution d'un nom](#naming)|Les champs et les types imbriqués seront distincts par comparaison d'identificateurs seule, même si CTS autorise la distinction de signatures différentes. Les méthodes, les propriétés et les événements qui portent le même nom (par comparaison d’identificateurs) doivent différer par d’autres éléments que le seul type de retour, sauf dans les cas spécifiés dans la règle 39 de la spécification CLS.|6|
 |Surcharge|[Surcharges](#overloads)|Seules les propriétés et les méthodes peuvent être surchargées.|37|
 |Surcharge|[Surcharges](#overloads)|Les propriétés et les méthodes peuvent être surchargées en fonction du nombre et des types de leurs paramètres uniquement, à l'exception des opérateurs de conversion nommés `op_Implicit` et `op_Explicit`, qui peuvent également être surchargés selon leur type de retour.|38|
 |Surcharge|--|Si deux ou plusieurs méthodes conformes CLS déclarées dans un type ont le même nom et, pour un jeu spécifique d’instanciations de types, ont le même paramètre et les mêmes types de retour, alors toutes ces méthodes sont sémantiquement équivalentes à ces instanciations de type.|48|
 |Types|[Types et signatures de membres de types](#Types)|<xref:System.Object?displayProperty=nameWithType> est conforme à CLS. Toute autre classe conforme à CLS héritera d'une classe conforme à CLS.|23|
 |Propriétés|[Propriétés](#properties)|Les méthodes qui implémentent les méthodes getter et setter d’une propriété doivent être marquées `SpecialName` dans les métadonnées.|24|
-|Propriétés|[Propriétés](#properties)|Les accesseurs d’une propriété devront tous être statiques, virtuels ou être des instances.|26|
+|Propriétés|[Propriétés](#properties)|Les accesseurs d’une propriété doivent tous être statiques, virtuels ou être des instances.|26|
 |Propriétés|[Propriétés](#properties)|Le type d’une propriété devra correspondre au type de retour de la méthode getter et au type du dernier argument de la méthode setter. Les types des paramètres de la propriété devront correspondre aux types des paramètres de la méthode getter et aux types de tous les paramètres de la méthode setter, sauf le dernier. Tous ces types devront être conformes à CLS et ne pas être des pointeurs managés (à savoir, ils ne doivent pas être passés par référence).|27|
 |Propriétés|[Propriétés](#properties)|Les propriétés adhéreront à un modèle d’attribution de nom spécifique. L'attribut `SpecialName` dont il est question dans la règle 24 de la spécification CLS sera ignoré dans les comparaisons de noms appropriées et respectera les règles d'identificateur. Une propriété aura une méthode getter, une méthode setter ou les deux.|28|
 |Conversion de type|[Conversion de type](#conversion)|Si `op_Implicit` ou `op_Explicit` est fourni, un autre moyen sera utilisé pour fournir la contrainte.|39|
@@ -191,7 +191,7 @@ Les types intrinsèques répertoriés dans le tableau suivant ne sont pas confor
 |Type non conforme|Description|Alternative à la conformité CLS|
 |-------------------------|-----------------|--------------------------------|
 |<xref:System.SByte>|Type de données entier signé 8 bits|<xref:System.Int16>|
-|<xref:System.TypedReference>|Pointeur vers un objet et son type au moment de l'exécution|None|
+|<xref:System.TypedReference>|Pointeur vers un objet et son type au moment de l'exécution|Aucun|
 |<xref:System.UInt16>|Entier 16 bits non signé|<xref:System.Int32>|
 |<xref:System.UInt32>|Entier non signé 32 bits|<xref:System.Int64>|
 |<xref:System.UInt64>|Entier non signé 64 bits|<xref:System.Int64> (peut dépasser la capacité), <xref:System.Numerics.BigInteger> ou <xref:System.Double>|
@@ -225,7 +225,7 @@ Pour les classes abstraites conformes à CLS (autrement dit, les classes marqué
 
 <a name="naming"></a>
 
-### <a name="naming-conventions"></a>Conventions d’affectation de noms
+### <a name="naming-conventions"></a>Conventions d'attribution d'un nom
 
 Étant donné que certains langages de programmation ne respectent pas la casse, les identificateurs (tels que les noms d'espaces de noms, de types et de membres) doivent se différencier par autre chose que la casse. Deux identificateurs sont considérés comme équivalents si leurs mappages en minuscules sont identiques. L'exemple C# suivant définit deux classes publiques : `Person` et `person`. Étant donné qu'elles ne diffèrent que par leur casse, le compilateur C# les signale comme étant non conformes à CLS.
 

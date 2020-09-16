@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: eb11f0b8ddd34df7c6970c275d4b83cb95f59a53
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6a8fd644e6f9132bf93277ae9928788f236a7bd1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84287491"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558197"
 ---
 # <a name="serialization-guidelines"></a>Indications concernant la sérialisation
 Ce document répertorie les indications à prendre en compte lors de la conception d'une API à sérialiser.  
@@ -23,7 +23,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
  .NET offre trois technologies de sérialisation principales qui sont optimisées pour différents scénarios de sérialisation. Le tableau suivant répertorie ces technologies et les principaux types .NET qui leur sont associés.  
   
-|Technology|Classes concernées|Notes|  
+|Technologie|Classes concernées|Notes|  
 |----------------|----------------------|-----------|  
 |Sérialisation du contrat de données|<xref:System.Runtime.Serialization.DataContractAttribute><br /><br /> <xref:System.Runtime.Serialization.DataMemberAttribute><br /><br /> <xref:System.Runtime.Serialization.DataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.NetDataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer><br /><br /> <xref:System.Runtime.Serialization.ISerializable>|Persistance générale<br /><br /> Services Web<br /><br /> JSON|  
 |Sérialisation XML|<xref:System.Xml.Serialization.XmlSerializer>|Format XML <br />avec contrôle total|  
@@ -31,7 +31,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
  Lorsque vous concevez de nouveaux types, vous devez décider laquelle de ces technologies, le cas échéant, doit être prise en charge par ces types. Les indications suivantes expliquent comment effectuer ce choix et fournir cette prise en charge. Elles ne sont pas destinées à vous aider à choisir la technologie de sérialisation que vous devez utiliser dans l'implémentation de votre application ou bibliothèque. Elles ne sont pas non plus directement liées à la conception d'une API et par conséquent, elles ne relèvent pas du propos de cette rubrique.  
   
-## <a name="guidelines"></a>Recommandations  
+## <a name="guidelines"></a>Consignes  
   
 - PENSEZ à la sérialisation lorsque vous concevez de nouveaux types.  
   
@@ -140,10 +140,10 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Using Data Contracts](../../framework/wcf/feature-details/using-data-contracts.md)
+- [Utilisation de contrats de données](../../framework/wcf/feature-details/using-data-contracts.md)
 - [Sérialiseur de contrat de données](../../framework/wcf/feature-details/data-contract-serializer.md)
 - [Types pris en charge par le sérialiseur de contrat de données](../../framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Sérialisation binaire](binary-serialization.md)
-- [.NET Remoting](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
-- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
+- [.NET Remoting](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
+- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
 - [Sécurité et sérialisation](../../framework/misc/security-and-serialization.md)

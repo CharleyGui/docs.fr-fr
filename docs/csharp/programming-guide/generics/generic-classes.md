@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 308f4328540e1001018942738d931be3d8be53ed
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: a885ae042eef939021d3a9b75616505c289bd43c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301916"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558085"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Classes génériques (guide de programmation C#)
 Les classes génériques encapsulent des opérations qui ne sont pas spécifiques à un type de données particulier. Les classes génériques sont le plus souvent utilisées avec les collections telles que les listes liées, les tables de hachage, les piles, les files d’attente, les arborescences, etc. Les opérations telles que l’ajout et la suppression d’éléments dans la collection sont exécutées fondamentalement de la même manière quel que soit le type des données stockées.  
@@ -71,5 +71,5 @@ Les classes génériques encapsulent des opérations qui ne sont pas spécifique
 - <xref:System.Collections.Generic>
 - [Guide de programmation C#](../index.md)
 - [Génériques](./index.md)
-- [Enregistrement de l’état des énumérateurs](https://docs.microsoft.com/archive/blogs/wesdyer/saving-the-state-of-enumerators)
-- [An Inheritance Puzzle, Part One](https://docs.microsoft.com/archive/blogs/ericlippert/an-inheritance-puzzle-part-one)
+- [Enregistrement de l’état des énumérateurs](/archive/blogs/wesdyer/saving-the-state-of-enumerators)
+- [An Inheritance Puzzle, Part One](/archive/blogs/ericlippert/an-inheritance-puzzle-part-one)

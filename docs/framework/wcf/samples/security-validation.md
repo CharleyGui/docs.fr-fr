@@ -2,12 +2,12 @@
 title: Security Validation
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
-ms.openlocfilehash: 70408976469b1cbcf9c4679bd91d81872ec74ae1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ec7b7f96c1f6489f677970164f74c176b301f55b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599969"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557383"
 ---
 # <a name="security-validation"></a>Validation de la sécurité
 Cet exemple montre comment utiliser un comportement personnalisé pour valider des services sur un ordinateur afin de garantir qu'ils répondent à des critères spécifiques. Dans cet exemple, les services sont validés par le comportement personnalisé en analysant chaque point de terminaison sur le service et en vérifiant s'ils contiennent des éléments de liaison sécurisés. Cet exemple est basé sur le [prise en main](getting-started-sample.md).  
@@ -109,4 +109,4 @@ public void Validate(ServiceDescription serviceDescription,
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples d'analyse AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Exemples d'analyse AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

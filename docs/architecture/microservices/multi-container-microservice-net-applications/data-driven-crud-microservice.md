@@ -2,12 +2,12 @@
 title: Création d’un microservice CRUD simple piloté par les données
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Comprendre la création d’un microservice CRUD simple (piloté par les données) dans le contexte d’une application de microservices.
 ms.date: 08/14/2020
-ms.openlocfilehash: 4d475ba42cb0f86b57b2467549635556cab1136d
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 46654b9e6283d913910b62621d056e034c18870e
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267956"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679147"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Création d’un microservice CRUD simple piloté par les données
 
@@ -288,7 +288,7 @@ La gestion de version permet à une API web d’indiquer les fonctionnalités et
 
 - Contrôle de version d’en-tête
 
-La gestion des versions de chaîne de requête et d’URI sont les plus simples à implémenter. La gestion des versions d’en-tête est une bonne méthode. Toutefois, elle n’est pas aussi explicite et directe que la gestion des versions d’URI. Étant donné que la gestion des versions d’URI est la plus simple et la plus explicite, c’est elle qu’utilise l’exemple d’application eShopOnContainers.
+La gestion des versions de chaîne de requête et d’URI sont les plus simples à implémenter. La gestion des versions d’en-tête est une bonne méthode. Toutefois, le contrôle de version d’en-tête n’est pas aussi explicite et simple que le contrôle de version d’URI. Étant donné que la gestion des versions d’URI est la plus simple et la plus explicite, c’est elle qu’utilise l’exemple d’application eShopOnContainers.
 
 Avec la gestion des versions d’URI (comme dans l’exemple d’application eShopOnContainers), chaque fois que vous modifiez l’API web ou que vous modifiez le schéma des ressources, vous ajoutez un numéro de version à l’URI de chaque ressource. Les URI existants continuent de fonctionner comme avant, en retournant des ressources conformes au schéma de la version demandée.
 

@@ -5,12 +5,12 @@ ms.date: 09/18/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 182350cc5143155133385c6fd77986b271f6db91
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2e8263db289bed50e7437b695134458b8c07e0e5
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73977046"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679571"
 ---
 # <a name="make-predictions-with-a-trained-model"></a>Effectuer des prédictions avec un modèle entraîné
 
@@ -40,7 +40,7 @@ public class HousingData
 
 Comme les noms de colonne d’entrée `Features` et `Label`, ML.NET a des noms par défaut pour les colonnes de valeur prédite produites par un modèle. Selon la tâche, le nom peut différer.
 
-Parce que l’algorithme utilisé dans cet échantillon est un algorithme de `Score` régression linéaire, le nom par défaut de la colonne de sortie est qui est défini par l’attribut [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) sur la `PredictedPrice` propriété.
+Étant donné que l’algorithme utilisé dans cet exemple est un algorithme de régression linéaire, le nom par défaut de la colonne de sortie est `Score` défini par l' [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) attribut sur la `PredictedPrice` propriété.
 
 ```csharp
 class HousingPrediction
@@ -65,14 +65,14 @@ ITransformer predictionPipeline = mlContext.Model.Load("model.zip", out predicti
 
 ## <a name="single-prediction"></a>Prédiction unique
 
-Pour faire une seule [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) prédiction, créez un pipeline de prédiction chargé.
+Pour effectuer une prédiction unique, créez un [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) à l’aide du pipeline de prédiction chargé.
 
 ```csharp
 // Create PredictionEngines
 PredictionEngine<HousingData, HousingPrediction> predictionEngine = mlContext.Model.CreatePredictionEngine<HousingData, HousingPrediction>(predictionPipeline);
 ```
 
-Ensuite, utilisez [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) la méthode et passez dans vos données d’entrée comme paramètre. Notez que [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) l’utilisation de la [`IDataView`](xref:Microsoft.ML.IDataView)méthode ne nécessite pas l’entrée d’être un ). En effet, elle internalise facilement la manipulation du type de données d’entrée afin que vous puissiez passer un objet du type de données d’entrée. De plus, `CurrentPrice` étant la cible ou l’étiquette que vous tentez de prédire à l’aide de nouvelles données, aucune valeur correspondante n’est censée exister pour le moment.
+Ensuite, utilisez la [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict%2A) méthode et transmettez vos données d’entrée en tant que paramètre. Notez que l’utilisation de la [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict%2A) méthode ne requiert pas que l’entrée soit un [`IDataView`](xref:Microsoft.ML.IDataView) ). En effet, elle internalise facilement la manipulation du type de données d’entrée afin que vous puissiez passer un objet du type de données d’entrée. De plus, `CurrentPrice` étant la cible ou l’étiquette que vous tentez de prédire à l’aide de nouvelles données, aucune valeur correspondante n’est censée exister pour le moment.
 
 ```csharp
 // Input Data
@@ -88,9 +88,9 @@ HousingPrediction prediction = predictionEngine.Predict(inputData);
 
 Si vous accédez à la propriété `Score` de l’objet `prediction`, vous devez obtenir une valeur similaire à `150079`.
 
-## <a name="multiple-predictions"></a>Prévisions multiples
+## <a name="multiple-predictions"></a>Prédictions multiples
 
-Compte tenu des données suivantes, chargez-les en [`IDataView`](xref:Microsoft.ML.IDataView). Dans ce cas, le [`IDataView`](xref:Microsoft.ML.IDataView) `inputData`nom de l’est . `CurrentPrice` étant la cible ou l’étiquette que vous tentez de prédire à l’aide de nouvelles données, aucune valeur correspondante n’est censée exister pour le moment.
+À partir des données suivantes, chargez-les dans un [`IDataView`](xref:Microsoft.ML.IDataView) . Dans ce cas, le nom du [`IDataView`](xref:Microsoft.ML.IDataView) est `inputData` . `CurrentPrice` étant la cible ou l’étiquette que vous tentez de prédire à l’aide de nouvelles données, aucune valeur correspondante n’est censée exister pour le moment.
 
 ```csharp
 // Actual data
@@ -114,14 +114,14 @@ HousingData[] housingData = new HousingData[]
 };
 ```
 
-Ensuite, utilisez [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) la méthode pour appliquer les transformations de données et générer des prédictions.
+Utilisez ensuite la [`Transform`](xref:Microsoft.ML.ITransformer.Transform%2A) méthode pour appliquer les transformations de données et générer des prédictions.
 
 ```csharp
 // Predicted Data
 IDataView predictions = predictionPipeline.Transform(inputData);
 ```
 
-Inspectez les valeurs [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) prévues en utilisant la méthode.
+Inspectez les valeurs prédites à l’aide de la [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn%2A) méthode.
 
 ```csharp
 // Get Predictions

@@ -2,12 +2,12 @@
 title: dotnet-symbol-.NET Core
 description: Installation et utilisation de l’outil en ligne de commande dotnet-symbol.
 ms.date: 08/26/2020
-ms.openlocfilehash: feaa64ad756878f85b829ab0cecf6ea2736014ba
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 5a96306fc96525b00e57eda089a45b730a7e3e8c
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598339"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679186"
 ---
 # <a name="symbol-downloader-dotnet-symbol"></a>Téléchargeur de symboles (dotnet-Symbol)
 
@@ -97,4 +97,4 @@ dotnet-symbol --host-only --debugging <dump file path>
 
 - 404 introuvable lors du téléchargement des symboles.
 
-   Le téléchargement de symboles n’est pris en charge que pour les versions officielles du Runtime .NET Core acquises par le biais de canaux officiels tels que [le site Web officiel](https://dotnet.microsoft.com/download/dotnet-core) et les [sources par défaut dans les scripts d’installation dotnet](https://docs.microsoft.com/dotnet/core/tools/dotnet-install-scripts). Une erreur 404 lors du téléchargement des fichiers de débogage peut indiquer que le dump a été créé avec un Runtime .NET Core à partir d’une autre source, telle que celle générée à partir de la source localement ou pour un distribution Linux particulier, ou à partir de sites de la communauté tels que Archlinux. Dans ce cas, le fichier nécessaire pour le débogage (dotnet, libcoreclr.so et libmscordaccore.so) doit être copié à partir de ces sources ou de l’environnement dans lequel le fichier de vidage a été créé.
+   Le téléchargement de symboles n’est pris en charge que pour les versions officielles du Runtime .NET Core acquises par le biais de canaux officiels tels que [le site Web officiel](https://dotnet.microsoft.com/download/dotnet-core) et les [sources par défaut dans les scripts d’installation dotnet](../tools/dotnet-install-script.md). Une erreur 404 lors du téléchargement des fichiers de débogage peut indiquer que le dump a été créé avec un Runtime .NET Core à partir d’une autre source, telle que celle générée à partir de la source localement ou pour un distribution Linux particulier, ou à partir de sites de la communauté tels que Archlinux. Dans ce cas, le fichier nécessaire pour le débogage (dotnet, libcoreclr.so et libmscordaccore.so) doit être copié à partir de ces sources ou de l’environnement dans lequel le fichier de vidage a été créé.

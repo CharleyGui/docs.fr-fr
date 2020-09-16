@@ -8,21 +8,21 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 3eba676a4134415f0e2981d5094c0b0f6a1651be
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 15350f93ffabb10136af1b9a4d12d5301e661b29
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559022"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551710"
 ---
 # <a name="whats-new-in-net-framework"></a>Nouveautés de .NET Framework
 
 Cet article résume les principales nouvelles fonctionnalités et améliorations des versions suivantes du .NET Framework :
 
-- [.NET Framework 4,8](#v48)
+- [.NET Framework 4.8](#v48)
 - [.NET Framework 4.7.2](#v472)
 - [.NET Framework 4.7.1](#v471)
-- [.NET Framework 4.7](#v47)
+- [.NET Framework 4,7](#v47)
 - [.NET Framework 4.6.2](#v462)
 - [.NET Framework 4.6.1](#v461)
 - [.NET 2015 et .NET Framework 4.6](#v46)
@@ -102,7 +102,7 @@ Les points de terminaison d’intégrité sont couramment utilisés par les outi
 
 Deux méthodes permettent d’exposer le point de terminaison d’intégrité et de publier les informations d’intégrité du service WCF :
 
-- Par le biais du code. Par exemple :
+- Par le biais du code. Exemple :
 
   ```csharp
   ServiceHost host = new ServiceHost(typeof(Service1),
@@ -124,7 +124,7 @@ Deux méthodes permettent d’exposer le point de terminaison d’intégrité et
   host.Description.Behaviors.Add(healthBehavior)
   ```
 
-- À l’aide d’un fichier de configuration. Par exemple :
+- À l’aide d’un fichier de configuration. Exemple :
 
   ```xml
   <behaviors>
@@ -136,7 +136,7 @@ Deux méthodes permettent d’exposer le point de terminaison d’intégrité et
   </behaviors>
   ```
 
-L’état d’intégrité d’un service peut être interrogé à l’aide de paramètres de requête tels que `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`, et un code de réponse HTTP peut être spécifié pour chaque paramètre de requête. Si le code de réponse HTTP est omis pour un paramètre de requête, un code de réponse HTTP 503 est utilisé par défaut. Par exemple :
+L’état d’intégrité d’un service peut être interrogé à l’aide de paramètres de requête tels que `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`, et un code de réponse HTTP peut être spécifié pour chaque paramètre de requête. Si le code de réponse HTTP est omis pour un paramètre de requête, un code de réponse HTTP 503 est utilisé par défaut. Exemple :
 
 - OnServiceFailure : `https://contoso:81/Service1?health&OnServiceFailure=450`
 
@@ -252,7 +252,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-Les méthodes <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> et <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> vous permettent de générer de nouvelles clés <xref:System.Security.Cryptography.DSA> ou <xref:System.Security.Cryptography.RSA> avec une taille de clé spécifique. Par exemple :
+Les méthodes <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> et <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> vous permettent de générer de nouvelles clés <xref:System.Security.Cryptography.DSA> ou <xref:System.Security.Cryptography.RSA> avec une taille de clé spécifique. Exemple :
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -350,7 +350,7 @@ La prise en charge de la décompression à l’aide des API Windows est activée
 
 **API de collection supplémentaires**
 
-.NET Framework 4.7.2 ajoute de nouvelles API aux types <xref:System.Collections.Generic.SortedSet%601> et <xref:System.Collections.Generic.HashSet%601>. notamment :
+.NET Framework 4.7.2 ajoute de nouvelles API aux types <xref:System.Collections.Generic.SortedSet%601> et <xref:System.Collections.Generic.HashSet%601>. Elles incluent notamment :
 
 - Des méthodes `TryGetValue` qui étendent le modèle try utilisé dans d’autres types de collection à ces deux types. Ces méthodes sont les suivantes :
 
@@ -389,9 +389,9 @@ Public GetOrAdd(Of TArg)(key As TKey, valueFactory As Func(Of TKey, TArg, TValue
 
 L’[injection de dépendances](/aspnet/core/fundamentals/dependency-injection#overview-of-dependency-injection) dissocie les objets et leurs dépendances afin qu’il ne soit plus obligatoire de modifier le code d’un objet simplement parce qu’une dépendance a changé. Lors du développement d’applications ASP.NET qui ciblent .NET Framework 4.7.2, vous pouvez :
 
-- Utiliser l’injection basée sur méthode setter, sur interface et sur constructeur dans des [gestionnaires et des modules](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), des [instances de pages](xref:System.Web.UI.Page) et des [contrôles utilisateur](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) de projets d’applications web ASP.NET.
+- Utiliser l’injection basée sur méthode setter, sur interface et sur constructeur dans des [gestionnaires et des modules](/previous-versions/aspnet/bb398986(v=vs.100)), des [instances de pages](xref:System.Web.UI.Page) et des [contrôles utilisateur](/previous-versions/aspnet/y6wb1a0e(v=vs.100)) de projets d’applications web ASP.NET.
 
-- Utiliser l’injection basée sur méthode setter et sur interface dans des [gestionnaires et des modules](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), des [instances de pages](xref:System.Web.UI.Page) et des [contrôles utilisateur](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) de projets de sites web ASP.NET.
+- Utiliser l’injection basée sur méthode setter et sur interface dans des [gestionnaires et des modules](/previous-versions/aspnet/bb398986(v=vs.100)), des [instances de pages](xref:System.Web.UI.Page) et des [contrôles utilisateur](/previous-versions/aspnet/y6wb1a0e(v=vs.100)) de projets de sites web ASP.NET.
 
 - Raccorder différents frameworks d’injection de dépendances.
 
@@ -467,7 +467,7 @@ Pour plus d’informations et pour obtenir un exemple, consultez « SQL -- Azur
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, qui fournit les paramètres d’attestation utilisés par SQL Server afin d’obtenir les informations requises pour exécuter un protocole d’attestation spécifique.
 
-Le fichier de configuration d’application spécifie ensuite une implémentation concrète de la classe <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> abstraite qui fournit la fonctionnalité pour le fournisseur d’enclave. Par exemple :
+Le fichier de configuration d’application spécifie ensuite une implémentation concrète de la classe <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> abstraite qui fournit la fonctionnalité pour le fournisseur d’enclave. Exemple :
 
 ```xml
 <configuration>
@@ -517,9 +517,9 @@ La méthode retourne un énumérable vide, sauf si  <xref:System.Windows.Diagno
 
 **Recherche de propriétaires de ResourceDictionary**
 
-À compter de .NET Framework 4.7.2, un Assistant de diagnostic peut localiser les propriétaires d’un <xref:Windows.UI.Xaml.ResourceDictionary> donné.(Cette fonctionnalité est destinée aux assistants de diagnostic et non aux applications de production.) Chaque fois qu’une modification est apportée à un <xref:Windows.UI.Xaml.ResourceDictionary> , WPF recherche automatiquement toutes les références [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) qui peuvent être affectées par la modification.
+À compter de .NET Framework 4.7.2, un Assistant de diagnostic peut localiser les propriétaires d’un <xref:Windows.UI.Xaml.ResourceDictionary> donné.(Cette fonctionnalité est destinée aux assistants de diagnostic et non aux applications de production.) Chaque fois qu’une modification est apportée à un <xref:Windows.UI.Xaml.ResourceDictionary> , WPF recherche automatiquement toutes les références [DynamicResource](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) qui peuvent être affectées par la modification.
 
-Un assistant de diagnostic, tel que la fonctionnalité « modifier et continuer » de Visual Studio, peut souhaiter l’étendre pour gérer les références [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . La première étape de ce processus consiste à rechercher les propriétaires du dictionnaire, autrement dit à rechercher tous les objets dont la propriété `Resources` fait référence au dictionnaire (directement ou indirectement par le biais de la propriété <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType>). Trois nouvelles méthodes statiques implémentées sur la classe <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType>, une pour chacun des types de base ayant une propriété `Resources`, prennent en charge cette étape :
+Un assistant de diagnostic, tel que la fonctionnalité « modifier et continuer » de Visual Studio, peut souhaiter l’étendre pour gérer les références [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) . La première étape de ce processus consiste à rechercher les propriétaires du dictionnaire, autrement dit à rechercher tous les objets dont la propriété `Resources` fait référence au dictionnaire (directement ou indirectement par le biais de la propriété <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType>). Trois nouvelles méthodes statiques implémentées sur la classe <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType>, une pour chacun des types de base ayant une propriété `Resources`, prennent en charge cette étape :
 
 - [`public static IEnumerable<FrameworkElement> GetFrameworkElementOwners(ResourceDictionary dictionary);`](xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetFrameworkElementOwners%2A)
 
@@ -531,7 +531,7 @@ Ces méthodes retournent un énumérable vide, sauf si  <xref:System.Windows.Di
 
 **Recherche de références StaticResource**
 
-Un Assistant de diagnostic peut maintenant recevoir une notification chaque fois qu’une référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md) est résolue.(Cette fonctionnalité est destinée aux assistants de diagnostic, et non aux applications de production.) Un assistant de diagnostic, tel que la fonctionnalité « modifier et continuer » de Visual Studio, peut souhaiter mettre à jour toutes les utilisations d’une ressource lorsque sa valeur dans un <xref:Windows.UI.Xaml.ResourceDictionary> change. WPF le fait automatiquement pour les références [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md), mais il ne le fait pas (intentionnellement) pour les références [StaticResource](../wpf/advanced/staticresource-markup-extension.md). À compter de .NET Framework 4.7.2, l’Assistant de diagnostic peut utiliser ces notifications pour localiser ces utilisations de la ressource statique.
+Un Assistant de diagnostic peut maintenant recevoir une notification chaque fois qu’une référence [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) est résolue.(Cette fonctionnalité est destinée aux assistants de diagnostic, et non aux applications de production.) Un assistant de diagnostic, tel que la fonctionnalité « modifier et continuer » de Visual Studio, peut souhaiter mettre à jour toutes les utilisations d’une ressource lorsque sa valeur dans un <xref:Windows.UI.Xaml.ResourceDictionary> change. WPF le fait automatiquement pour les références [DynamicResource](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension), mais il ne le fait pas (intentionnellement) pour les références [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension). À compter de .NET Framework 4.7.2, l’Assistant de diagnostic peut utiliser ces notifications pour localiser ces utilisations de la ressource statique.
 
 La notification est implémentée par le nouvel événement <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.StaticResourceResolved?displayProperty=nameWithType> :
 
@@ -543,7 +543,7 @@ public static event EventHandler<StaticResourceResolvedEventArgs> StaticResource
 Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
 ```
 
-Cet événement est déclenché chaque fois que le runtime résout une référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md).Les arguments <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> décrivent la résolution et indiquent l’objet et la propriété qui hébergent la référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md) ainsi que la clé  <xref:Windows.UI.Xaml.ResourceDictionary> utilisée pour la résolution :
+Cet événement est déclenché chaque fois que le runtime résout une référence [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension).Les arguments <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> décrivent la résolution et indiquent l’objet et la propriété qui hébergent la référence [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) ainsi que la clé  <xref:Windows.UI.Xaml.ResourceDictionary> utilisée pour la résolution :
 
 ```csharp
 public class StaticResourceResolvedEventArgs : EventArgs
@@ -650,7 +650,7 @@ ASP.NET traite les demandes dans un pipeline prédéfini comprenant 23 événeme
 
 **Options de hachage SHA-2 pour les informations d’identification de l’authentification par formulaires ASP.NET**
 
-Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux développeurs de stocker les informations d’identification des utilisateurs avec des mots de passe hachés dans des fichiers de configuration en utilisant MD5 ou SHA-1. À compter de .NET Framework 4.7.1, ASP.NET prend en charge de nouvelles options de hachage SHA-2 sécurisées, notamment SHA256, SHA384 et SHA512. SHA1 reste la valeur par défaut, et un algorithme de hachage autre que celui par défaut peut être défini dans le fichier de configuration web. Par exemple :
+Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux développeurs de stocker les informations d’identification des utilisateurs avec des mots de passe hachés dans des fichiers de configuration en utilisant MD5 ou SHA-1. À compter de .NET Framework 4.7.1, ASP.NET prend en charge de nouvelles options de hachage SHA-2 sécurisées, notamment SHA256, SHA384 et SHA512. SHA1 reste la valeur par défaut, et un algorithme de hachage autre que celui par défaut peut être défini dans le fichier de configuration web. Exemple :
 
 ```xml
 <system.web>
@@ -741,7 +741,7 @@ Windows Communication Foundation (WCF) ajoute les fonctionnalités et les modifi
 
 **Amélioration de la fiabilité des applications WCF et de la sérialisation WCF**
 
-WCF inclut plusieurs modifications du code qui éliminent la concurrence critique, améliorant ainsi les performances et la fiabilité des options de sérialisation. notamment :
+WCF inclut plusieurs modifications du code qui éliminent la concurrence critique, améliorant ainsi les performances et la fiabilité des options de sérialisation. Elles incluent notamment :
 
 - Meilleure prise en charge pour le mélange de code synchrone et asynchrone dans les appels à **SocketConnection.BeginRead** et à **SocketConnection.Read**.
 - Meilleure fiabilité lors de l’abandon d’une connexion avec **SharedConnectionListener** et **DuplexChannelBinder**.
@@ -758,7 +758,7 @@ Dans .NET Framework 4.7, Windows Forms améliore la prise en charge pour les mon
 
 À partir des applications qui ciblent .NET Framework 4.7, le .NET Framework prend en charge la haute résolution et la haute résolution dynamique pour les applications Windows Forms. La prise en charge de la haute résolution améliore la disposition et l’apparence des formulaires et des contrôles sur les moniteurs à haute résolution. La haute résolution dynamique change la disposition et l’apparence des formulaires et contrôles lorsque l’utilisateur modifie la haute résolution ou le facteur d’échelle d’affichage d’une application en cours d’exécution.
 
-La prise en charge de la haute résolution est une fonctionnalité d’abonnement que vous configurez en définissant une [\<System.Windows.Forms.ConfigurationSection>](../configure-apps/file-schema/winforms/index.md) section dans le fichier de configuration de votre application. Pour plus d’informations sur l’ajout de la prise en charge de la haute résolution et de la haute résolution dynamique à votre application Windows Forms, consultez [Prise en charge de la haute résolution dans Windows Forms](../winforms/high-dpi-support-in-windows-forms.md).
+La prise en charge de la haute résolution est une fonctionnalité d’abonnement que vous configurez en définissant une [\<System.Windows.Forms.ConfigurationSection>](../configure-apps/file-schema/winforms/index.md) section dans le fichier de configuration de votre application. Pour plus d’informations sur l’ajout de la prise en charge de la haute résolution et de la haute résolution dynamique à votre application Windows Forms, consultez [Prise en charge de la haute résolution dans Windows Forms](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms).
 
 <a name="WPF47"></a>
 
@@ -768,7 +768,7 @@ Dans .NET Framework 4.7, WPF propose les améliorations suivantes :
 
 **Prise en charge d’une pile tactile/de stylet basée sur les messages Windows WM_POINTER**
 
-Vous pouvez désormais utiliser une fonction tactile ou stylet basée sur les [messages WM_POINTER](https://docs.microsoft.com/previous-versions/windows/desktop/InputMsg/messages), au lieu de la plateforme WISP (Windows Ink Services Platform). Il s’agit d’une fonctionnalité d’abonnement dans .NET Framework. Pour plus d’informations, consultez la section [compatibilité des applications](../migration-guide/application-compatibility.md) .
+Vous pouvez désormais utiliser une fonction tactile ou stylet basée sur les [messages WM_POINTER](/previous-versions/windows/desktop/InputMsg/messages), au lieu de la plateforme WISP (Windows Ink Services Platform). Il s’agit d’une fonctionnalité d’abonnement dans .NET Framework. Pour plus d’informations, consultez la section [compatibilité des applications](../migration-guide/application-compatibility.md) .
 
 **Nouvelle implémentation pour l’impression d’API WPF**
 
@@ -841,7 +841,7 @@ End Class
 
 Vous pouvez ensuite créer un fichier de ressources DataAnnotation.Localization.fr.resx, dont la clé est la chaîne de message d’erreur et dont la valeur est le message d’erreur localisé. Le fichier doit se trouver dans le dossier `App.LocalResources`. Par exemple, voici la clé et sa valeur dans un message d’erreur localisé en français (fr) :
 
-| Nom                                 | Valeur                                     |
+| Name                                 | Valeur                                     |
 | ------------------------------------ | ----------------------------------------- |
 | The rating must be between 1 and 10. | La note doit être comprise entre 1 et 10. |
 
@@ -965,7 +965,7 @@ Pour résoudre ce problème dans .NET Framework 4.6.2, les trois méthodes suiv
 
 La bibliothèque de chiffrement Windows (CNG) a ajouté la prise en charge du stockage de clés symétriques persistantes et de l’utilisation des clés symétriques stockées sur du matériel, et .NET Framework 4.6.2 a permis aux développeurs d’utiliser cette fonctionnalité.  Sachant que la notion de noms de clés et de fournisseurs de clés est spécifique à l’implémentation, cette fonctionnalité impose l’utilisation du constructeur des types d’implémentation concrets plutôt que l’approche par défaut privilégiée (comme l’appel de `Aes.Create`).
 
-La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Par exemple :
+La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Exemple :
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1037,7 +1037,7 @@ L’ajout du `PoolBlockingPeriod` mot clé New vous permet de sélectionner la p
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
-La période de blocage de pool de connexions d’une application qui se connecte à une base de données Azure SQL Database est désactivée, pendant que celle d’une application qui se connecte à une autre instance SQL Server est activée. Valeur par défaut. Si le nom de point de terminaison d’un serveur se termine par l’un des éléments suivants, il est considéré comme une base de données Azure SQL Database :
+La période de blocage de pool de connexions d’une application qui se connecte à une base de données Azure SQL Database est désactivée, pendant que celle d’une application qui se connecte à une autre instance SQL Server est activée. Il s’agit de la valeur par défaut. Si le nom de point de terminaison d’un serveur se termine par l’un des éléments suivants, il est considéré comme une base de données Azure SQL Database :
 
 - .database.windows.net
 
@@ -1196,7 +1196,7 @@ Dans le .NET Framework 4.6.2, Windows Workflow Foundation a été amélioré dan
 
 **Prise en charge des expressions C# et d’IntelliSense dans le concepteur WF réhébergé**
 
-À compter de .NET Framework 4,5, WF prend en charge les expressions C# dans le concepteur Visual Studio et dans les flux de travail de code. Le Concepteur de flux de travail réhébergé est une fonctionnalité clé de WF qui permet aux Concepteur de flux de travail d’être dans une application en dehors de Visual Studio (par exemple, dans WPF).  Windows Workflow Foundation offre la possibilité de prendre en charge les expressions C# et IntelliSense dans le Concepteur de flux de travail réhébergé. Pour plus d’informations, consultez le [blog Windows Workflow Foundation](https://docs.microsoft.com/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
+À compter de .NET Framework 4,5, WF prend en charge les expressions C# dans le concepteur Visual Studio et dans les flux de travail de code. Le Concepteur de flux de travail réhébergé est une fonctionnalité clé de WF qui permet aux Concepteur de flux de travail d’être dans une application en dehors de Visual Studio (par exemple, dans WPF).  Windows Workflow Foundation offre la possibilité de prendre en charge les expressions C# et IntelliSense dans le Concepteur de flux de travail réhébergé. Pour plus d’informations, consultez le [blog Windows Workflow Foundation](/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
 
 `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` Dans les versions du .NET Framework antérieures à la version 4.6.2, la fonctionnalité IntelliSense du concepteur WF est rompue quand un client reconstruit un projet de flux de travail à partir de Visual Studio. Quand la génération du projet aboutit, les types de flux de travail ne se trouvent pas dans le concepteur, et IntelliSense affiche des avertissements dans la fenêtre **Liste d’erreurs** par rapport aux types de flux de travail manquants. .NET Framework 4.6.2 résout ce problème et rend IntelliSense disponible.
 
@@ -1743,7 +1743,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
 - **Prise en charge des encodages de pages de codes**
 
-  .NET Core prend en charge principalement les codages Unicode, et fournit par défaut une prise en charge limitée des codages de pages de codes. Vous pouvez ajouter la prise en charge des encodages de pages de codes disponibles dans .NET Framework, mais non pris en charge dans .NET Core, en inscrivant les encodages de pages de codes avec la méthode <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
+  .NET Core prend en charge principalement les codages Unicode, et fournit par défaut une prise en charge limitée des codages de pages de codes. Vous pouvez ajouter la prise en charge des encodages de pages de codes disponibles dans .NET Framework, mais non pris en charge dans .NET Core, en inscrivant les encodages de pages de codes avec la méthode <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>. Pour plus d'informations, consultez <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
 
 - **.NET Native**
 
@@ -1886,7 +1886,7 @@ Les améliorations apportées à Windows Forms incluent :
 
 Les améliorations lors du débogage de vos applications .NET Framework dans Visual Studio 2013 incluent :
 
-- Valeurs de retour dans le débogueur Visual Studio. Lorsque vous déboguez une application managée dans Visual Studio 2013, la Fenêtre Automatique affiche les types et les valeurs de retour pour les méthodes. Ces informations sont disponibles pour les applications de bureau, Windows Store et Windows Phone. Pour plus d’informations, consultez [Examiner les valeurs de retour des appels de méthode](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/dn323257(v=vs.120)).
+- Valeurs de retour dans le débogueur Visual Studio. Lorsque vous déboguez une application managée dans Visual Studio 2013, la Fenêtre Automatique affiche les types et les valeurs de retour pour les méthodes. Ces informations sont disponibles pour les applications de bureau, Windows Store et Windows Phone. Pour plus d’informations, consultez [Examiner les valeurs de retour des appels de méthode](/previous-versions/visualstudio/visual-studio-2013/dn323257(v=vs.120)).
 
 - Modifier & Continuer pour applications 64 bits. Visual Studio 2013 prend en charge la fonctionnalité Modifier & Continuer pour les applications managées 64 bits pour le Bureau, Windows Store et Windows Phone. Les limitations existantes restent effectives pour les applications 32 bits et 64 bits (consultez la dernière section de l’article [Modifications de code prises en charge (C#)](/visualstudio/debugger/supported-code-changes-csharp)).
 
@@ -1972,7 +1972,7 @@ Le .NET Framework 4.5 fournit plusieurs nouvelles fonctionnalités et améliorat
 
 ASP.NET 4.5 et 4.5.1 ajoutent la liaison de modèle pour Web Forms, la prise en charge de WebSocket, les gestionnaires asynchrones, les améliorations de performances et de nombreuses autres fonctionnalités. Pour plus d’informations, consultez les ressources suivantes :
 
-- [ASP.NET 4.5 et Visual Studio 2012](https://docs.microsoft.com/previous-versions/aspnet/hh420390(v=vs.110))
+- [ASP.NET 4.5 et Visual Studio 2012](/previous-versions/aspnet/hh420390(v=vs.110))
 
 - [ASP.NET et Web Tools pour Visual Studio 2013 - Notes de publication](/aspnet/visual-studio/overview/2013/release-notes)
 
@@ -2066,7 +2066,7 @@ Pour plus d’informations, consultez [Nouveautés dans Windows Communication Fo
 
 Dans le .NET Framework 4.5, plusieurs nouvelles fonctionnalités ont été ajoutées à Windows Workflow Foundation (WF), notamment :
 
-- Flux de travail de la machine à états, qui ont été introduits pour la première fois dans le cadre de .NET Framework 4.0.1 ([Mise à jour 1 de la plateforme .NET Framework 4](https://docs.microsoft.com/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1)). Cette mise à jour comprenait plusieurs classes et activités nouvelles qui permettaient aux développeurs de créer des flux de travail de machine à états. Ces classes et activités ont été mises à jour pour que le .NET Framework 4.5 inclue les fonctionnalités suivantes :
+- Flux de travail de la machine à états, qui ont été introduits pour la première fois dans le cadre de .NET Framework 4.0.1 ([Mise à jour 1 de la plateforme .NET Framework 4](/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1)). Cette mise à jour comprenait plusieurs classes et activités nouvelles qui permettaient aux développeurs de créer des flux de travail de machine à états. Ces classes et activités ont été mises à jour pour que le .NET Framework 4.5 inclue les fonctionnalités suivantes :
 
   - Possibilité de définir des points d'arrêt sur les états.
 
@@ -2118,7 +2118,7 @@ Pour plus d’informations, consultez [Nouveautés de Windows Workflow Foundatio
 
 ### <a name="net-for-windows-8x-store-apps"></a>.NET pour les applications Windows 8.x Store
 
-Les applications Windows 8.x Store sont conçues pour des facteurs de forme spécifiques et tirent parti de la puissance du système d'exploitation Windows. Un sous-ensemble du .NET Framework 4.5 ou 4.5.1 est disponible pour générer des applications Windows 8.x Store pour Windows à l'aide de C# ou de Visual Basic. Ce sous-ensemble est appelé .NET pour les applications du Windows 8. x Store et est abordé dans une [vue d’ensemble](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
+Les applications Windows 8.x Store sont conçues pour des facteurs de forme spécifiques et tirent parti de la puissance du système d'exploitation Windows. Un sous-ensemble du .NET Framework 4.5 ou 4.5.1 est disponible pour générer des applications Windows 8.x Store pour Windows à l'aide de C# ou de Visual Basic. Ce sous-ensemble est appelé .NET pour les applications du Windows 8. x Store et est abordé dans une [vue d’ensemble](/previous-versions/windows/apps/br230302(v=vs.140)).
 
 ### <a name="portable-class-libraries"></a>Bibliothèques de classes portables<a name="portable"></a>
 

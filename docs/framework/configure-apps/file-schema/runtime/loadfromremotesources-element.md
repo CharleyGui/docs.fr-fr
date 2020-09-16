@@ -5,18 +5,18 @@ helpviewer_keywords:
 - loadFromRemoteSources element
 - <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
-ms.openlocfilehash: a0dcffe378cdd09de0fbd8f0a6ef0635c033fd9c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 48da852bd1e209aed5ed5e75d8e510027a96d6d7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154060"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558007"
 ---
 # <a name="loadfromremotesources-element"></a>\<loadFromRemoteSources>, élément
 Spécifie si les assemblys chargés à partir de sources distantes doivent bénéficier d’une confiance totale dans .NET Framework 4 et versions ultérieures.
   
 > [!NOTE]
-> Si vous êtes redirigé vers cet article en raison d’un message d’erreur dans la liste d’erreurs d’un projet Visual Studio ou d’une erreur de génération, consultez [Comment : utiliser un assembly à partir du Web dans Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee890038(v=vs.100)).  
+> Si vous êtes redirigé vers cet article en raison d’un message d’erreur dans la liste d’erreurs d’un projet Visual Studio ou d’une erreur de génération, consultez [Comment : utiliser un assembly à partir du Web dans Visual Studio](/previous-versions/visualstudio/visual-studio-2010/ee890038(v=vs.100)).  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
@@ -40,9 +40,9 @@ Spécifie si les assemblys chargés à partir de sources distantes doivent bén�
   
 ## <a name="enabled-attribute"></a>attribut activé  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
-|`false`|N’accordez pas une confiance totale aux applications à partir de sources distantes. Il s'agit de la valeur par défaut.|  
+|`false`|N’accordez pas une confiance totale aux applications à partir de sources distantes. Il s’agit de la valeur par défaut.|  
 |`true`|Accordez une confiance totale aux applications à partir de sources distantes.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -55,7 +55,7 @@ Spécifie si les assemblys chargés à partir de sources distantes doivent bén�
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Dans le .NET Framework 3,5 et les versions antérieures, si vous chargez un assembly à partir d’un emplacement distant, le code de l’assembly s’exécute en confiance partielle avec un jeu d’autorisations qui dépend de la zone à partir de laquelle il est chargé. Par exemple, si vous chargez un assembly à partir d’un site Web, il est chargé dans la zone Internet et reçoit le jeu d’autorisations Internet. En d’autres termes, il s’exécute dans un bac à sable (sandbox) Internet.
 
@@ -99,9 +99,9 @@ La définition de l' `<loadFromRemoteSources>` élément pour `true` empêche la
 
 ## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément est généralement utilisé dans le fichier de configuration de l’application, mais peut être utilisé dans d’autres fichiers de configuration en fonction du contexte. Pour plus d’informations, consultez l’article [utilisations plus implicites de la stratégie cas : loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources) dans le blog sur la sécurité .net.  
+Cet élément est généralement utilisé dans le fichier de configuration de l’application, mais peut être utilisé dans d’autres fichiers de configuration en fonction du contexte. Pour plus d’informations, consultez l’article [utilisations plus implicites de la stratégie cas : loadFromRemoteSources](/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources) dans le blog sur la sécurité .net.  
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment accorder une confiance totale aux assemblys chargés à partir de sources distantes.
 
@@ -115,8 +115,8 @@ L’exemple suivant montre comment accorder une confiance totale aux assemblys c
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisations plus implicites de la stratégie CAS : loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources)
-- [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
+- [Utilisations plus implicites de la stratégie CAS : loadFromRemoteSources](/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources)
+- [Comment : exécuter du code de confiance partielle dans un bac à sable (sandbox)](../../../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma du fichier de configuration](../index.md)
 - <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>
