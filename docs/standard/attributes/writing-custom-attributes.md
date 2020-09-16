@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-ms.openlocfilehash: 3cae8de9b76aa9953b21ad2e23ad003e97555aa9
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: f047e18531b46f0c89be9a6feaa9aa50341205e3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768480"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550923"
 ---
 # <a name="writing-custom-attributes"></a>Écriture des attributs personnalisés
 Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de maîtriser les nombreux nouveaux concepts. Si vous êtes familiarisé avec la programmation orientée objet et savez concevoir des classes, vous possédez déjà la plupart des connaissances nécessaires. Les attributs personnalisés sont essentiellement des classes traditionnelles qui dérivent directement ou indirectement de <xref:System.Attribute?displayProperty=nameWithType>. Tout comme les classes traditionnelles, les attributs personnalisés contiennent des méthodes qui stockent et récupèrent les données.  
@@ -117,7 +117,7 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
  [!code-csharp[Conceptual.Attributes.Usage#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#15)]
  [!code-vb[Conceptual.Attributes.Usage#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#15)]  
   
- Vous pouvez surcharger le constructeur pour qu’il reçoive différentes combinaisons de valeurs. Si vous définissez également une [propriété](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) pour votre classe d’attributs personnalisés, vous pouvez utiliser une combinaison de paramètres nommés et positionnels lors de l’initialisation de l’attribut. En général, vous définissez tous les paramètres obligatoires comme des paramètres positionnels et tous les paramètres facultatifs comme des paramètres nommés. Dans ce cas, l’attribut ne peut pas être initialisé sans le paramètre obligatoire. Tous les autres paramètres sont facultatifs. Notez que dans Visual Basic, les constructeurs d’une classe d’attributs ne doivent pas utiliser d’argument ParamArray.  
+ Vous pouvez surcharger le constructeur pour qu’il reçoive différentes combinaisons de valeurs. Si vous définissez également une [propriété](/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) pour votre classe d’attributs personnalisés, vous pouvez utiliser une combinaison de paramètres nommés et positionnels lors de l’initialisation de l’attribut. En général, vous définissez tous les paramètres obligatoires comme des paramètres positionnels et tous les paramètres facultatifs comme des paramètres nommés. Dans ce cas, l’attribut ne peut pas être initialisé sans le paramètre obligatoire. Tous les autres paramètres sont facultatifs. Notez que dans Visual Basic, les constructeurs d’une classe d’attributs ne doivent pas utiliser d’argument ParamArray.  
   
  L’exemple de code suivant montre comment un attribut qui utilise le constructeur précédent peut être appliqué à l’aide de paramètres obligatoires et facultatifs. Il suppose que l’attribut a une valeur booléenne obligatoire et une propriété de chaîne facultative.  
   
@@ -126,7 +126,7 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
  [!code-vb[Conceptual.Attributes.Usage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#17)]  
   
 ## <a name="declaring-properties"></a>Déclaration des propriétés  
- Si vous voulez définir un paramètre nommé ou fournir un moyen facile de retourner les valeurs stockées par votre attribut, déclarez une [propriété](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Les propriétés d’attribut doivent être déclarées comme des entités publiques avec une description du type de données à retourner. Définissez la variable qui contient la valeur de votre propriété et associez-la aux méthodes **get** et **set** . L’exemple de code suivant montre comment implémenter une propriété simple dans votre attribut.  
+ Si vous voulez définir un paramètre nommé ou fournir un moyen facile de retourner les valeurs stockées par votre attribut, déclarez une [propriété](/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Les propriétés d’attribut doivent être déclarées comme des entités publiques avec une description du type de données à retourner. Définissez la variable qui contient la valeur de votre propriété et associez-la aux méthodes **get** et **set** . L’exemple de code suivant montre comment implémenter une propriété simple dans votre attribut.  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
  [!code-csharp[Conceptual.Attributes.Usage#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#16)]

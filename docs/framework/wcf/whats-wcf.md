@@ -7,12 +7,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 84cb45d62409769a79fa6a401fdb1aa6934c4099
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 898211ec4504225413769f2f0dbf2f2c70110c14
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245607"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556061"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Présentation de Windows Communication Foundation
 Windows Communication Foundation (WCF) est une infrastructure permettant de créer des applications orientées service. À l’aide de WCF, vous pouvez envoyer des données sous forme de messages asynchrones d’un point de terminaison de service à un autre. Un point de terminaison de service peut faire partie d'un service disponible en continu et hébergé par IIS, ou il peut s'agir d'un service hébergé dans une application. Un point de terminaison peut être un client d'un service qui demande des données auprès d'un point de terminaison de service. Les messages peuvent être simplement constitués d'un caractère ou d'un mot unique envoyé au format XML, ou se présenter sous la forme d'un flux de données binaires plus complexe. Voici quelques exemples de scénarios :
@@ -98,10 +98,10 @@ Les fonctionnalités d’hébergement du serveur d’applications Windows Server
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel>
-- [Concepts fondamentaux de Windows Communication Foundation](fundamental-concepts.md)
+- [Concepts fondamentaux concernant Windows Communication Foundation](fundamental-concepts.md)
 - [Architecture Windows Communication Foundation](architecture.md)
-- [Conseils et bonnes pratiques](guidelines-and-best-practices.md)
+- [Indications et meilleures pratiques](guidelines-and-best-practices.md)
 - [Didacticiel Prise en main](getting-started-tutorial.md)
 - [Guide de la documentation](guide-to-the-documentation.md)
 - [Programmation WCF de base](basic-wcf-programming.md)
-- [Exemples Windows Communication Foundation](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751514%28v=vs.90%29)
+- [Exemples Windows Communication Foundation](/previous-versions/dotnet/netframework-3.5/ms751514(v=vs.90))

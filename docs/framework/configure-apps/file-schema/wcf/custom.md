@@ -2,12 +2,12 @@
 title: <custom>
 ms.date: 03/30/2017
 ms.assetid: a6f65a00-bd1a-4d4a-955a-fe009ec02ab8
-ms.openlocfilehash: 598b341e8b09acd11ba215e6add3adf9e44b2b81
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4077aacab1c1c4594db76cc6663bfc0245d345d7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400463"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555495"
 ---
 # \<custom>
 Spécifie les paramètres pour un service de programme de résolution d'homologue personnalisé.  
@@ -53,8 +53,8 @@ Spécifie les paramètres pour un service de programme de résolution d'homologu
 |-------------|-----------------|  
 |[\<resolver>](resolver.md)|Un programme de résolution d'homologue est utilisé pour résoudre un ID de maille d'homologues en un jeu d'adresses de nœuds homologues représentant plusieurs nœuds faisant partie de la maille.|  
   
-## <a name="remarks"></a>Remarques  
- Cet élément définit les paramètres de base pour un service de programme de résolution d'homologue personnalisé, y compris l'adresse de point de terminaison de l'homologue qui héberge le service et tous les paramètres de liaison spécifiques. Pour plus d’informations sur la création d’un programme de résolution personnalisé, consultez [Ajout d’un programme de résolution personnalisé à une application PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90)).  
+## <a name="remarks"></a>Notes  
+ Cet élément définit les paramètres de base pour un service de programme de résolution d'homologue personnalisé, y compris l'adresse de point de terminaison de l'homologue qui héberge le service et tous les paramètres de liaison spécifiques. Pour plus d’informations sur la création d’un programme de résolution personnalisé, consultez [Ajout d’un programme de résolution personnalisé à une application PeerChannel](/previous-versions/ms730105(v=vs.90)).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -63,4 +63,4 @@ Spécifie les paramètres pour un service de programme de résolution d'homologu
 - <xref:System.ServiceModel.Configuration.PeerResolverElement.Custom%2A>
 - <xref:System.ServiceModel.Configuration.PeerCustomResolverElement>
 - [Programmes de résolution d'homologue](../../../wcf/feature-details/peer-resolvers.md)
-- [Ajout d'un programme de résolution personnalisé à une application PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))
+- [Ajout d'un programme de résolution personnalisé à une application PeerChannel](/previous-versions/ms730105(v=vs.90))

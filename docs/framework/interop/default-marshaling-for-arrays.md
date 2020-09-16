@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interop marshaling, arrays
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
-ms.openlocfilehash: eafed0e0a0150923aae0fa68a1b96e6d9d66b07a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 6bfe95576a6460efac75fd392e24acf42e36f2de
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622560"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555261"
 ---
 # <a name="default-marshaling-for-arrays"></a>Marshaling par défaut pour les tableaux
 Dans une application composée dans son ensemble de code managé, le common language runtime passe des types tableau comme paramètres en entrée/sortie. Par contre, le marshaleur d’interopérabilité passe un tableau comme paramètre en entrée par défaut.  
@@ -79,7 +79,7 @@ void New3([MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VT_BSTR)]
    ref String[] ar);  
 ```  
   
- Les tableaux sécurisés multidimensionnels ou non limités par zéro peuvent être marshalés dans du code managé si la signature de méthode produite par Tlbimp.exe est modifiée pour indiquer un type d’élément **ELEMENT_TYPE_ARRAY** au lieu d’**ELEMENT_TYPE_SZARRAY**. Vous pouvez également utiliser le commutateur **/sysarray** avec Tlbimp.exe pour importer tous les tableaux en tant qu’objets <xref:System.Array?displayProperty=nameWithType>. Pour les cas où le tableau passé se révèle être multidimensionnel, vous pouvez modifier le code MSIL (Microsoft Intermediate Language) produit par Tlimb.exe, puis le recompiler. Pour plus d’informations sur la manière de modifier du code MSIL, consultez [Personnalisation des wrappers RCW](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100)).  
+ Les tableaux sécurisés multidimensionnels ou non limités par zéro peuvent être marshalés dans du code managé si la signature de méthode produite par Tlbimp.exe est modifiée pour indiquer un type d’élément **ELEMENT_TYPE_ARRAY** au lieu d’**ELEMENT_TYPE_SZARRAY**. Vous pouvez également utiliser le commutateur **/sysarray** avec Tlbimp.exe pour importer tous les tableaux en tant qu’objets <xref:System.Array?displayProperty=nameWithType>. Pour les cas où le tableau passé se révèle être multidimensionnel, vous pouvez modifier le code MSIL (Microsoft Intermediate Language) produit par Tlimb.exe, puis le recompiler. Pour plus d’informations sur la manière de modifier du code MSIL, consultez [Personnalisation des wrappers RCW](/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100)).  
   
 ### <a name="c-style-arrays"></a>Tableaux de style C  
  Quand un tableau de style C est importé à partir d’une bibliothèque de types vers un assembly .NET, le tableau est converti en **ELEMENT_TYPE_SZARRAY**.  
@@ -119,7 +119,7 @@ void New2([MarshalAs(UnmanagedType.LPArray,
    ArraySubType=UnmanagedType.LPWStr, SizeConst=10)] String[] ar);  
 ```  
   
- Bien qu’il vous soit possible d’appliquer les attributs **size_is** ou **length_is** à un tableau dans la source IDL (Interface Definition Language) pour décrire la taille au client, le compilateur MIDL (Microsoft Interface Definition Language) ne propage pas ces informations à la bibliothèque de types. Sans connaissance de la taille, le service marshaling d’interopérabilité ne peut pas marshaler les éléments du tableau. Par conséquent, les tableaux de longueur variable sont importés comme arguments de référence. Par exemple :  
+ Bien qu’il vous soit possible d’appliquer les attributs **size_is** ou **length_is** à un tableau dans la source IDL (Interface Definition Language) pour décrire la taille au client, le compilateur MIDL (Microsoft Interface Definition Language) ne propage pas ces informations à la bibliothèque de types. Sans connaissance de la taille, le service marshaling d’interopérabilité ne peut pas marshaler les éléments du tableau. Par conséquent, les tableaux de longueur variable sont importés comme arguments de référence. Exemple :  
   
  **Signature non managée**  
   
@@ -143,7 +143,7 @@ void New2(ref double ar);
 void New3(ref String ar);
 ```  
   
- Vous pouvez fournir la taille du tableau au marshaleur en éditant le code MSIL produit par Tlbimp.exe, puis en le recompilant. Pour plus d’informations sur la manière de modifier du code MSIL, consultez [Personnalisation des wrappers RCW](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100)). Pour indiquer le nombre d’éléments figurant dans le tableau, appliquez le type <xref:System.Runtime.InteropServices.MarshalAsAttribute> au paramètre de tableau de la définition de méthode managée en procédant de l’une des manières suivantes :  
+ Vous pouvez fournir la taille du tableau au marshaleur en éditant le code MSIL produit par Tlbimp.exe, puis en le recompilant. Pour plus d’informations sur la manière de modifier du code MSIL, consultez [Personnalisation des wrappers RCW](/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100)). Pour indiquer le nombre d’éléments figurant dans le tableau, appliquez le type <xref:System.Runtime.InteropServices.MarshalAsAttribute> au paramètre de tableau de la définition de méthode managée en procédant de l’une des manières suivantes :  
   
 - Identifiez un autre paramètre qui contient le nombre d’éléments figurant dans le tableau. Les paramètres sont identifiés par position, le premier portant le numéro 0.
   
@@ -159,7 +159,7 @@ void New3(ref String ar);
        [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=0)] int[] ar );  
     ```  
   
-- Définissez la taille du tableau comme constante. Par exemple :  
+- Définissez la taille du tableau comme constante. Exemple :  
   
     ```vb  
     Sub [New](\<MarshalAs(UnmanagedType.LPArray, SizeConst:=128)> _  
@@ -190,7 +190,7 @@ void New3(ref String ar);
  Il existe une restriction dans OLE Automation concernant les tableaux de structures qui contiennent LPSTR ou LPWSTR.  Par conséquent, les champs **String** doivent être marshalés comme **UnmanagedType.BSTR**. Sinon, une exception est levée.  
   
 ### <a name="element_type_szarray"></a>ELEMENT_TYPE_SZARRAY  
- Quand une méthode contenant un paramètre **ELEMENT_TYPE_SZARRAY** (tableau unidimensionnel) est exportée à partir d’un assembly .NET vers une bibliothèque de types, le paramètre de tableau est converti en un **SAFEARRAY** d’un type donné. Les mêmes règles de conversion s’appliquent aux types d’éléments de tableau. Le contenu du tableau managé est automatiquement copié à partir de la mémoire managée dans le **SAFEARRAY**. Par exemple :  
+ Quand une méthode contenant un paramètre **ELEMENT_TYPE_SZARRAY** (tableau unidimensionnel) est exportée à partir d’un assembly .NET vers une bibliothèque de types, le paramètre de tableau est converti en un **SAFEARRAY** d’un type donné. Les mêmes règles de conversion s’appliquent aux types d’éléments de tableau. Le contenu du tableau managé est automatiquement copié à partir de la mémoire managée dans le **SAFEARRAY**. Exemple :  
   
 #### <a name="managed-signature"></a>Signature managée  
   
@@ -213,7 +213,7 @@ HRESULT New([in] SAFEARRAY( BSTR ) ar);
   
  Le rang des tableaux sécurisés est toujours 1 et la limite inférieure est toujours 0. La taille est déterminée au moment de l’exécution par la taille du tableau managé qui est passé.  
   
- Le tableau peut également être marshalé en tant que tableau de style C en utilisant l’attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Par exemple :  
+ Le tableau peut également être marshalé en tant que tableau de style C en utilisant l’attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Exemple :  
   
 #### <a name="managed-signature"></a>Signature managée  
   
@@ -248,7 +248,7 @@ HRESULT New(LPStr ar[]);
  Bien que le marshaleur possède les informations de longueur nécessaires pour marshaler le tableau, la longueur du tableau est généralement passée comme argument séparé afin de l’envoyer à l’appelé.  
   
 ### <a name="element_type_array"></a>ELEMENT_TYPE_ARRAY  
- Quand une méthode contenant un paramètre **ELEMENT_TYPE_ARRAY** est exportée à partir d’un assembly .NET vers une bibliothèque de types, le paramètre de tableau est converti en un **SAFEARRAY** d’un type donné. Le contenu du tableau managé est automatiquement copié à partir de la mémoire managée dans le **SAFEARRAY**. Par exemple :  
+ Quand une méthode contenant un paramètre **ELEMENT_TYPE_ARRAY** est exportée à partir d’un assembly .NET vers une bibliothèque de types, le paramètre de tableau est converti en un **SAFEARRAY** d’un type donné. Le contenu du tableau managé est automatiquement copié à partir de la mémoire managée dans le **SAFEARRAY**. Exemple :  
   
 #### <a name="managed-signature"></a>Signature managée  
   
@@ -271,7 +271,7 @@ HRESULT New([in] SAFEARRAY( BSTR ) ar);
   
  Le rang, la taille et les limites des tableaux sécurisés sont déterminés au moment de l’exécution par les caractéristiques du tableau managé.  
   
- Le tableau peut également être marshalé en tant que tableau de style C en appliquant l’attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Par exemple :  
+ Le tableau peut également être marshalé en tant que tableau de style C en appliquant l’attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Exemple :  
   
 #### <a name="managed-signature"></a>Signature managée  
   
@@ -310,8 +310,8 @@ Sub [New](ar()()() As Long)
 void New(long [][][] ar );  
 ```  
   
-### <a name="element_type_class-systemarray"></a>ELEMENT_TYPE_CLASS\<System.Array>  
- Quand une méthode contenant un paramètre <xref:System.Array?displayProperty=nameWithType> est exportée à partir d’un assembly .NET vers une bibliothèque de types, le paramètre de tableau est converti en une interface **_Array**. Le contenu du tableau managé est accessible uniquement par les méthodes et les propriétés de l’interface **_Array**. La méthode **System.Array** peut également être marshalée comme un **SAFEARRAY** à l’aide de l’attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Quand ils sont marshalés comme tableau sécurisé, les éléments du tableau sont marshalés comme variants. Par exemple :  
+### <a name="element_type_class-systemarray"></a>ELEMENT_TYPE_CLASS \<System.Array>  
+ Quand une méthode contenant un paramètre <xref:System.Array?displayProperty=nameWithType> est exportée à partir d’un assembly .NET vers une bibliothèque de types, le paramètre de tableau est converti en une interface **_Array**. Le contenu du tableau managé est accessible uniquement par les méthodes et les propriétés de l’interface **_Array**. La méthode **System.Array** peut également être marshalée comme un **SAFEARRAY** à l’aide de l’attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute>. Quand ils sont marshalés comme tableau sécurisé, les éléments du tableau sont marshalés comme variants. Exemple :  
   
 #### <a name="managed-signature"></a>Signature managée  
   
@@ -363,5 +363,5 @@ public struct MyStruct {
 
 - [comportement de marshaling par défaut](default-marshaling-behavior.md)
 - [types blittable et non blittable](blittable-and-non-blittable-types.md)
-- [Attributs directionnels](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
+- [Attributs directionnels](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [copie et épinglage](copying-and-pinning.md)

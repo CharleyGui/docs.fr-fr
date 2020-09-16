@@ -6,18 +6,18 @@ helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: aa55fa97-ccec-431f-b5e9-5ac789fd32b7
-ms.openlocfilehash: f58f9a23f26bde7e80d834528d94e38af1231e7b
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 72f774d84266292412be9b954fc206debc8ac55e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474473"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555898"
 ---
 # <a name="auto-implemented-properties-c-programming-guide"></a>Propriétés implémentées automatiquement (Guide de programmation C#)
 
 En C# 3.0 et versions ultérieures, les propriétés implémentées automatiquement rendent la déclaration de propriété plus concise quand aucune logique supplémentaire n’est requise dans les accesseurs de propriété. Elles permettent également au code client de créer des objets. Quand vous déclarez une propriété comme indiqué dans l'exemple suivant, le compilateur crée un champ de stockage privé et anonyme uniquement accessible via les accesseurs `get` et `set` de la propriété.
   
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L'exemple suivant montre une classe simple qui a des propriétés implémentées automatiquement :  
 
@@ -36,4 +36,4 @@ La classe qui est illustrée dans l'exemple précédent est mutable. Le code cli
 ## <a name="see-also"></a>Voir aussi
 
 - [Propriétés](./properties.md)
-- [Modificateurs](/dotnet/csharp/language-reference/keywords)
+- [Modificateurs](../../language-reference/keywords/index.md)

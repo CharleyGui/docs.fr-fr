@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
-ms.openlocfilehash: 7845bc45d0baecb07e4c03531f21d900c4e23bf7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3e5838c474a4f13136ed29baab440dc1559b95f5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595243"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551091"
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>Sécurité de message avec un client Windows sans négociation d'informations d'identification
 
@@ -36,7 +36,7 @@ Le service et le client appartiennent au même domaine ou domaines approuvés.
 
 ## <a name="service"></a>Service
 
-La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :
+La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :
 
 - Créez un service autonome à l'aide du code sans configuration.
 
@@ -53,7 +53,7 @@ Le code ci-dessous crée un point de terminaison de service qui utilise la sécu
 
 2. Utilisez un compte de domaine Active Directory arbitraire pour exécuter votre service. Dans ce cas, vous devez établir un nom de principal du service pour ce compte de domaine. Une façon de procéder consiste à faire appel à l'utilitaire Setspn.exe. Une fois le nom de principal du service créé pour le compte de service, configurez WCF pour publier ce SPN sur les clients du service par le biais de ses métadonnées (WSDL). Cette opération s'effectue en définissant l'identité de point de terminaison pour le point de terminaison exposé, par le biais d'un fichier de configuration de l'application ou du code. L'exemple suivant publie l'identité par programme.
 
-Pour plus d’informations sur les noms de principal du service, le protocole Kerberos et Active Directory, consultez [supplément technique Kerberos pour Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)). Pour plus d’informations sur les identités de point de terminaison, consultez [modes d’authentification SecurityBindingElement](securitybindingelement-authentication-modes.md).
+Pour plus d’informations sur les noms de principal du service, le protocole Kerberos et Active Directory, consultez [supplément technique Kerberos pour Windows](/previous-versions/msp-n-p/ff649429(v=pandp.10)). Pour plus d’informations sur les identités de point de terminaison, consultez [modes d’authentification SecurityBindingElement](securitybindingelement-authentication-modes.md).
 
 [!code-csharp[C_SecurityScenarios#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#12)]
 [!code-vb[C_SecurityScenarios#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#12)]
@@ -98,11 +98,11 @@ La configuration ci-dessous peut être utilisée à la place du code.
 
 ## <a name="client"></a>Client
 
-La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :
+La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :
 
 - Créez un client autonome à l'aide du code (et du code client).
 
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :
 
   [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
   [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
@@ -112,9 +112,9 @@ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendam
 Le code ci-dessous configure le client. Le mode de sécurité a la valeur Message, et le type d'informations d'identification du client a la valeur Windows. Notez que les propriétés <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> et <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> ont la valeur `false`.
 
 > [!NOTE]
-> Pour utiliser le type d'informations d'identification Windows sans négociation, le client doit être configuré avec le compte SPN du service avant de commencer la communication avec le service. Le client utilise le nom de principal du service pour obtenir le jeton Kerberos afin d'authentifier et de sécuriser la communication avec le service. L'exemple suivant montre comment configurer le client avec le nom principal du service. Si vous utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer le client, le SPN du service sera propagé automatiquement au client à partir des métadonnées du service (WSDL), si les métadonnées du service contiennent ces informations. Pour plus d’informations sur la configuration du service pour inclure son nom de principal du service dans les métadonnées du service, consultez la section « service » plus loin dans cette rubrique.
+> Pour utiliser le type d'informations d'identification Windows sans négociation, le client doit être configuré avec le compte SPN du service avant de commencer la communication avec le service. Le client utilise le nom de principal du service pour obtenir le jeton Kerberos afin d'authentifier et de sécuriser la communication avec le service. L'exemple suivant montre comment configurer le client avec le nom principal du service. Si vous utilisez l' [outil ServiceModel Metadata Utility (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer le client, le SPN du service sera propagé automatiquement au client à partir des métadonnées du service (WSDL), si les métadonnées du service contiennent ces informations. Pour plus d’informations sur la configuration du service pour inclure son nom de principal du service dans les métadonnées du service, consultez la section « service » plus loin dans cette rubrique.
 >
-> Pour plus d’informations sur les SPN, Kerberos et Active Directory, consultez le [supplément technique Kerberos pour Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)). Pour plus d’informations sur les identités de point de terminaison, consultez la rubrique [modes d’authentification SecurityBindingElement](securitybindingelement-authentication-modes.md) .
+> Pour plus d’informations sur les SPN, Kerberos et Active Directory, consultez le [supplément technique Kerberos pour Windows](/previous-versions/msp-n-p/ff649429(v=pandp.10)). Pour plus d’informations sur les identités de point de terminaison, consultez la rubrique [modes d’authentification SecurityBindingElement](securitybindingelement-authentication-modes.md) .
 
 [!code-csharp[C_SecurityScenarios#19](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#19)]
 [!code-vb[C_SecurityScenarios#19](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#19)]
@@ -157,4 +157,4 @@ Le code ci-dessous configure le client. Notez que l' [\<servicePrincipalName>](.
 
 - [Présentation de la sécurité](security-overview.md)
 - [Identité du service et authentification](service-identity-and-authentication.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

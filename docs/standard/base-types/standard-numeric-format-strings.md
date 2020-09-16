@@ -17,12 +17,12 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET Framework]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: 605438a5f0e4b5bd9ade96c9db0416ee8611f311
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 857e8803d27ae634dec6e19c6d183943e1c4cc41
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447119"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557370"
 ---
 # <a name="standard-numeric-format-strings"></a>Chaînes de format numériques standard
 
@@ -48,9 +48,9 @@ Les chaînes de format numériques standard sont prises en charge par :
 - Les [chaînes interpolées](../../csharp/language-reference/tokens/interpolated.md) en C# et Visual Basic, qui fournissent une syntaxe simplifiée par rapport aux de chaînes de format composite.
 
 > [!TIP]
-> Vous pouvez télécharger l’**utilitaire de mise en forme**, application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Vous pouvez télécharger l’**utilitaire de mise en forme**, application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
-<a name="table"></a>Le tableau suivant décrit les spécificateurs de format numériques standard et affiche un exemple de sortie produite par chaque spécificateur de format. Consultez la section [Remarques](#NotesStandardFormatting) pour plus d’informations sur l’utilisation de chaînes de format numériques standard, et la section [Exemple](#example) pour obtenir une illustration complète de leur utilisation.
+<a name="table"></a> Le tableau suivant décrit les spécificateurs de format numériques standard et affiche un exemple de sortie produite par chaque spécificateur de format. Consultez la section [Remarques](#NotesStandardFormatting) pour plus d’informations sur l’utilisation de chaînes de format numériques standard, et la section [Exemple](#example) pour obtenir une illustration complète de leur utilisation.
 
 |Spécificateur de format|Nom|Description|Exemples|
 |----------------------|----------|-----------------|--------------|
@@ -59,7 +59,7 @@ Les chaînes de format numériques standard sont prises en charge par :
 |"E" ou "e"|Exponentiel (scientifique)|Résultat : notation exponentielle.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : 6.<br /><br /> Informations supplémentaires : [Spécificateur de format exponentiel ("E")](#EFormatString).|1052.0329112756 ("E", en-US) -> 1.052033E+003<br /><br /> 1052.0329112756 ("e", fr-FR) -> 1,052033e+003<br /><br /> -1052.0329112756 ("e2", en-US) -> -1.05e+003<br /><br /> -1052.0329112756 ("E2", fr-FR) -> -1,05E+003|
 |"F" ou "f"|Virgule fixe|Résultat : chiffres intégraux et décimaux avec un signe négatif facultatif.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations supplémentaires : [Spécificateur de format à virgule fixe ("F")](#FFormatString).|1234.567 ("F", en-US) -> 1234.57<br /><br /> 1234.567 ("F", de-DE) -> 1234,57<br /><br /> 1234 ("F1", en-US) -> 1234.0<br /><br /> 1234 ("F1", de-DE) -> 1234,0<br /><br /> -1234.56 ("F4", en-US) -> -1234.5600<br /><br /> -1234.56 ("F4", de-DE) -> -1234,5600|
 |"G" ou "g"|Général|Résultat : format le plus compact (notation à virgule fixe ou scientifique).<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre de chiffres significatifs.<br /><br /> Spécificateur de précision par défaut : dépend du type numérique.<br /><br /> Informations supplémentaires : [Spécificateur de format standard ("G")](#GFormatString).|-123.456 ("G", en-US) -> -123.456<br /><br /> -123.456 ("G", sv-SE) -> -123,456<br /><br /> 123.4546 ("G4", en-US) -> 123.5<br /><br /> 123.4546 ("G4", sv-SE) -> 123,5<br /><br /> -1.234567890e-25 ("G", en-US) -> -1.23456789E-25<br /><br /> -1.234567890e-25 ("G", sv-SE) -> -1,23456789E-25|
-|"N" ou "n"|Nombre|Résultat : chiffres intégraux et décimaux, séparateurs de groupes et séparateur décimal avec un signe négatif facultatif.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre souhaité de décimales.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations supplémentaires : [Spécificateur de format numérique ("N")](#NFormatString).|1234.567 ("N", en-US) -> 1,234.57<br /><br /> 1234.567 ("N", ru-RU) -> 1 234,57<br /><br /> 1234 ("N1", en-US) -> 1,234.0<br /><br /> 1234 ("N1", ru-RU) -> 1 234,0<br /><br /> -1234.56 ("N3", en-US) -> -1,234.560<br /><br /> -1234.56 ("N3", ru-RU) -> -1 234,560|
+|"N" ou "n"|Number|Résultat : chiffres intégraux et décimaux, séparateurs de groupes et séparateur décimal avec un signe négatif facultatif.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre souhaité de décimales.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations supplémentaires : [Spécificateur de format numérique ("N")](#NFormatString).|1234.567 ("N", en-US) -> 1,234.57<br /><br /> 1234.567 ("N", ru-RU) -> 1 234,57<br /><br /> 1234 ("N1", en-US) -> 1,234.0<br /><br /> 1234 ("N1", ru-RU) -> 1 234,0<br /><br /> -1234.56 ("N3", en-US) -> -1,234.560<br /><br /> -1234.56 ("N3", ru-RU) -> -1 234,560|
 |"P" ou "p"|Pourcentage|Résultat : nombre multiplié par 100 et affiché avec un symbole de pourcentage.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre souhaité de décimales.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations supplémentaires : [Spécificateur de format pourcentage ("P")](#PFormatString).|1 ("P", en-US) -> 100.00 %<br /><br /> 1 ("P", fr-FR) -> 100,00 %<br /><br /> -0.39678 ("P1", en-US) -> -39.7 %<br /><br /> -0.39678 ("P1", fr-FR) -> -39,7 %|
 |"R" ou "r"|Aller-retour|Résultat : chaîne qui peut effectuer un aller-retour vers un nombre identique.<br /><br /> Pris en charge par : <xref:System.Single>, <xref:System.Double> et <xref:System.Numerics.BigInteger>.<br /><br /> Remarque : recommandé pour le type <xref:System.Numerics.BigInteger> uniquement. Pour les types <xref:System.Double>, utilisez "G17" ; pour les types <xref:System.Single>, utilisez "G9". <br> Spécificateur de précision : ignoré.<br /><br /> Informations supplémentaires : [Spécificateur de format aller-retour ("R")](#RFormatString).|123456789.12345678 ("R") -> 123456789.12345678<br /><br /> -1234567890.12345678 ("R") -> -1234567890.1234567|
 |"X" ou "x"|Valeur hexadécimale|Résultat : chaîne hexadécimale.<br /><br /> Pris en charge par : les types intégraux uniquement.<br /><br /> Spécificateur de précision : nombre de chiffres dans la chaîne de résultat.<br /><br /> Informations supplémentaires : [Spécificateur de format hexadécimal ("X")](#XFormatString).|255 ("X") -> FF<br /><br /> -1 ("x") -> ff<br /><br /> 255 ("x4") -> 00ff<br /><br /> -1 ("X4") -> 00FF|
@@ -373,7 +373,7 @@ Certaines descriptions de spécificateurs de format numériques standard font r�
 
 Quelle que soit la chaîne de format, si la valeur d'un type à virgule flottante <xref:System.Single> ou <xref:System.Double> est l'infini positif, l'infini négatif ou une valeur non numérique (NaN), la chaîne mise en forme est la valeur de la propriété <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A> ou <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> qui est spécifiée par l'objet <xref:System.Globalization.NumberFormatInfo> actuellement applicable.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-partial-note.md)]
 
@@ -387,7 +387,7 @@ L'exemple suivant met en forme une valeur numérique intégrale et à virgule fl
 - <xref:System.Globalization.NumberFormatInfo>
 - [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)
 - [Mise en forme des types](formatting-types.md)
-- [Procédure : remplir un nombre avec des zéros non significatifs](how-to-pad-a-number-with-leading-zeros.md)
+- [Comment : remplir un nombre avec des zéros non significatifs](how-to-pad-a-number-with-leading-zeros.md)
 - [Mise en forme composite](composite-formatting.md)
-- [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
-- [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)
+- [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](/samples/dotnet/samples/windowsforms-formatting-utility-cs)
+- [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](/samples/dotnet/samples/windowsforms-formatting-utility-vb)

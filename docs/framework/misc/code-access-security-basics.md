@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - security [.NET Framework], code access security
 ms.assetid: 4eaa6535-d9fe-41a1-91d8-b437cfc16921
-ms.openlocfilehash: 9d1f2e35c79ca32595711316885991717c4c1696
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 9f6049913a2e8cf3e3f220b0148598a236b60bef
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281745"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557069"
 ---
 # <a name="code-access-security-basics"></a>Notions fondamentales de la sécurité d'accès du code
 
@@ -54,7 +54,7 @@ La sécurité d'accès du code n'élimine pas la possibilité d'une erreur humai
 La syntaxe de sécurité déclarative utilise des [attributs](../../standard/attributes/index.md) pour placer des informations de sécurité dans les [métadonnées](../../standard/metadata-and-self-describing-components.md) de votre code. Les attributs peuvent être placés au niveau de l'assembly, de la classe ou du membre pour indiquer le type de demande, d'exigence ou de substitution que vous souhaitez utiliser. Les demandes sont utilisées dans les applications qui ciblent le Common Language Runtime pour informer le système de sécurité du runtime des autorisations dont votre application a besoin ou qu'elle refuse. Les exigences et les substitutions sont utilisées dans les bibliothèques pour protéger les ressources des appelants ou substituer le comportement de sécurité par défaut.
 
 > [!NOTE]
-> Dans le .NET Framework 4, des modifications importantes ont été apportées à la terminologie et au modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).
+> Dans le .NET Framework 4, des modifications importantes ont été apportées à la terminologie et au modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](/previous-versions/dotnet/framework/security/security-changes).
 
 Pour utiliser des appels de sécurité déclarative, vous devez initialiser les données d'état de l'objet d'autorisation afin qu'elles représentent la forme particulière de l'autorisation dont vous avez besoin. Chaque autorisation intégrée a un attribut auquel une énumération <xref:System.Security.Permissions.SecurityAction> est passée pour décrire le type d'opération de sécurité que vous souhaitez effectuer. Les autorisations acceptent toutefois aussi leurs propres paramètres qui leur sont exclusifs.
 
@@ -165,6 +165,6 @@ Si vous souhaitez que votre application effectue une opération qui nécessite l
 - <xref:System.Security.Permissions.SecurityAction>
 - [Assert](using-the-assert-method.md)
 - [Sécurité d’accès du code](code-access-security.md)
-- [Notions fondamentales de la sécurité d’accès du code](code-access-security-basics.md)
+- [Notions fondamentales de la sécurité d'accès du code](code-access-security-basics.md)
 - [Attributs](../../standard/attributes/index.md)
 - [Métadonnées et composants autodescriptifs](../../standard/metadata-and-self-describing-components.md)

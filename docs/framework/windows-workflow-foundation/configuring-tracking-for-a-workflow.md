@@ -2,12 +2,12 @@
 title: Configuration du suivi d'un workflow
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: 5ec94d6b8e58012d0c5c8ca8593c3cef81cd9ec3
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 098b295be00b1b8283e26e79ea14e78634fdb504
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80248210"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557552"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Configuration du suivi d'un workflow
 
@@ -50,9 +50,9 @@ instance.Extensions.Add(trackingParticipant);
 
 ### <a name="configuring-workflow-service-tracking"></a>Configuration du suivi de service de workflow
 
-Un flux de travail peut être exposé comme un <xref:System.ServiceModel.Activities.WorkflowServiceHost> service WCF lorsqu’il est hébergé dans l’hôte de service. <xref:System.ServiceModel.Activities.WorkflowServiceHost> est une implémentation spécialisée de ServiceHost .NET pour un service basé sur un workflow. Cette section explique comment configurer le suivi pour un service de workflow [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] s'exécutant dans <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Il est configuré via un fichier Web.config (pour un service hébergé sur le Web) ou un fichier App.config (pour un service hébergé dans une application autonome, telle qu’une application console) en spécifiant un comportement de service ou via du code en ajoutant, à la collection <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A>, un comportement spécifique au suivi pour l’hôte de service.
+Un flux de travail peut être exposé en tant que service WCF lorsqu’il est hébergé dans l' <xref:System.ServiceModel.Activities.WorkflowServiceHost> hôte de service. <xref:System.ServiceModel.Activities.WorkflowServiceHost> est une implémentation spécialisée de ServiceHost .NET pour un service basé sur un workflow. Cette section explique comment configurer le suivi pour un service de workflow [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] s'exécutant dans <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Il est configuré via un fichier Web.config (pour un service hébergé sur le Web) ou un fichier App.config (pour un service hébergé dans une application autonome, telle qu’une application console) en spécifiant un comportement de service ou via du code en ajoutant, à la collection <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A>, un comportement spécifique au suivi pour l’hôte de service.
 
-Pour un service de flux <xref:System.ServiceModel.WorkflowServiceHost>de travail <xref:System.Activities.Tracking.EtwTrackingParticipant> hébergé, vous pouvez `behavior` ajouter l’utilisation de l'<> élément dans un fichier de configuration, comme indiqué dans l’exemple suivant.
+Pour un service de workflow hébergé dans <xref:System.ServiceModel.WorkflowServiceHost> , vous pouvez ajouter <xref:System.Activities.Tracking.EtwTrackingParticipant> à l’aide de l' `behavior` élément <> dans un fichier de configuration, comme indiqué dans l’exemple suivant.
 
 ```xml
 <behaviors>
@@ -67,7 +67,7 @@ Pour un service de flux <xref:System.ServiceModel.WorkflowServiceHost>de travail
 Pour un service de workflow hébergé dans <xref:System.ServiceModel.WorkflowServiceHost>, vous pouvez également ajouter l’extension de comportement <xref:System.Activities.Tracking.EtwTrackingParticipant> dans le code. Pour ajouter un participant au suivi personnalisé, créez une extension de comportement et ajoutez-le au <xref:System.ServiceModel.ServiceHost> comme indiqué dans l'exemple de code suivant.
 
 > [!NOTE]
-> Si vous souhaitez afficher le code de l’échantillon qui montre comment créer un élément de comportement personnalisé qui ajoute un participant de suivi personnalisé, consultez les échantillons [de suivi.](./samples/tracking.md)
+> Si vous souhaitez afficher un exemple de code qui montre comment créer un élément de comportement personnalisé qui ajoute un participant de suivi personnalisé, reportez-vous aux exemples de [suivi](./samples/tracking.md) .
 
 ```csharp
 ServiceHost svcHost = new ServiceHost(typeof(WorkflowService), new
@@ -134,11 +134,11 @@ if (null != workflowServiceHost)
 ```
 
 > [!NOTE]
-> Pour plus d’informations sur les profils de suivi, consultez [les profils de suivi](tracking-profiles.md).
+> Pour plus d’informations sur les profils de suivi, consultez la rubrique [profils de suivi](tracking-profiles.md).
 
 ### <a name="configuring-tracking-using-workflowinvoker"></a>Configuration du suivi à l'aide de WorkflowInvoker
 
-Pour configurer le suivi pour un workflow exécuté à l’aide de <xref:System.Activities.WorkflowInvoker>, ajoutez le fournisseur de suivi en tant qu’extension à une instance <xref:System.Activities.WorkflowInvoker>. L’exemple de code suivant provient de l’échantillon [de suivi personnalisé.](./samples/custom-tracking.md)
+Pour configurer le suivi pour un workflow exécuté à l’aide de <xref:System.Activities.WorkflowInvoker>, ajoutez le fournisseur de suivi en tant qu’extension à une instance <xref:System.Activities.WorkflowInvoker>. L’exemple de code suivant provient de l’exemple de [suivi personnalisé](./samples/custom-tracking.md) .
 
 ```csharp
 WorkflowInvoker invoker = new WorkflowInvoker(BuildSampleWorkflow());
@@ -148,41 +148,41 @@ invoker.Invoke();
 
 ### <a name="viewing-tracking-records-in-event-viewer"></a>Affichage des enregistrements de suivi dans l'observateur d'événements
 
-Il existe deux journaux de l'Observateur d'événements particulièrement intéressants à consulter lors de l'exécution de WF : le journal d'analyse et le journal de débogage. Tous deux résident sous le nœud Microsoft&#124;Windows&#124;Application Server-Applications. Les journaux de cette section contiennent des événements d'une application unique plutôt que des événements qui ont un impact sur le système entier.
+Il existe deux journaux de l'Observateur d'événements particulièrement intéressants à consulter lors de l'exécution de WF : le journal d'analyse et le journal de débogage. Les deux se trouvent sous le nœud Microsoft&#124;Windows&#124;Application Server-applications. Les journaux de cette section contiennent des événements d'une application unique plutôt que des événements qui ont un impact sur le système entier.
 
 Les événements de trace de débogage sont écrits dans le journal de débogage. Pour collecter les événements de trace de débogage WF dans l'Observateur d'événements, activez le journal de débogage.
 
-1. Pour ouvrir event Viewer, cliquez sur **Démarrer,** puis cliquez sur **Run.** Dans le dialogue Run, type `eventvwr`.
+1. Pour ouvrir observateur d’événements, cliquez sur **Démarrer**, puis sur **exécuter.** Dans la boîte de dialogue Exécuter, tapez `eventvwr` .
 
-2. Dans le dialogue Event Viewer, élargissez le nœud **des journaux des applications et des services.**
+2. Dans la boîte de dialogue observateur d’événements, développez le nœud **journaux des applications et des services** .
 
-3. Élargissez les nœuds **Microsoft,** **Windows**et **Application Server-Applications.**
+3. Développez les nœuds **Microsoft**, **Windows**et serveur d’applications **-applications** .
 
-4. Cliquez à droite sur le nœud **Debug** sous le nœud **Serveur-Applications d’application** et **sélectionnez Active Log**.
+4. Cliquez avec le bouton droit sur le nœud **débogage** sous le nœud serveur d’applications **-applications** , puis sélectionnez **activer le journal**.
 
 5. Exécutez votre application avec le suivi activé pour générer des événements de suivi.
 
-6. Cliquez à droite sur le nœud **Debug** et **sélectionnez Refresh.** Les événements de suivi doivent être visibles dans le volet central.
+6. Cliquez avec le bouton droit sur le nœud **débogage** , puis sélectionnez **Actualiser.** Les événements de suivi doivent être visibles dans le volet central.
 
 WF 4 fournit un participant de suivi qui écrit des enregistrements de suivi dans une session ETW (suivi d'événements pour Windows). Le participant de suivi ETW est configuré avec un modèle de suivi pour s'abonner aux enregistrements de suivi. Lorsque le suivi est activé, les enregistrements de suivi des erreurs sont émis dans ETW. Les événements de suivi ETW (entre la plage 100-113) correspondant aux événements de suivi émis par le participant de suivi ETW sont écrits dans le journal analytique.
 
 Pour afficher des enregistrements de suivi, procédez comme suit :
 
-1. Pour ouvrir event Viewer, cliquez sur **Démarrer,** puis cliquez sur **Run.** Dans le dialogue Run, type `eventvwr`.
+1. Pour ouvrir observateur d’événements, cliquez sur **Démarrer**, puis sur **exécuter.** Dans la boîte de dialogue Exécuter, tapez `eventvwr` .
 
-2. Dans le dialogue Event Viewer, élargissez le nœud **des journaux des applications et des services.**
+2. Dans la boîte de dialogue observateur d’événements, développez le nœud **journaux des applications et des services** .
 
-3. Élargissez les nœuds **Microsoft,** **Windows**et **Application Server-Applications.**
+3. Développez les nœuds **Microsoft**, **Windows**et serveur d’applications **-applications** .
 
-4. Cliquez à droite sur le nœud **Analytic** sous le nœud **Serveur-Applications d’application** et **sélectionnez Active Log**.
+4. Cliquez avec le bouton droit sur le nœud **analyse** sous le nœud serveur d’applications **-applications** , puis sélectionnez **activer le journal**.
 
 5. Exécutez votre application avec le suivi activé pour générer des enregistrements de suivi.
 
-6. Cliquez à droite sur le nœud **Analytic** et **sélectionnez Refresh.** Les enregistrements de suivi doivent être visibles dans le volet central.
+6. Cliquez avec le bouton droit sur le nœud **analyse** et sélectionnez **Actualiser.** Les enregistrements de suivi doivent être visibles dans le volet central.
 
-L’image suivante montre des événements de suivi dans le spectateur de l’événement:
+L’illustration suivante montre les événements de suivi dans l’observateur d’événements :
 
-![Capture d’écran du Visual event montrant des enregistrements de suivi.](./media/configuring-tracking-for-a-workflow/tracking-event-viewer.png)
+![Capture d’écran de l’observateur d’événements montrant des enregistrements de suivi.](./media/configuring-tracking-for-a-workflow/tracking-event-viewer.png)
 
 ### <a name="registering-an-application-specific-provider-id"></a>Enregistrement d'un ID de fournisseur spécifique à l'application
 
@@ -196,7 +196,7 @@ Si des événements doivent être écrits dans un journal des applications spéc
     </system.serviceModel>
     ```
 
-2. Copiez le fichier manifeste de %windir%-Microsoft.NET-Framework\\\<dernière version de [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]>-Microsoft.Windows.ApplicationServer.Applications.man à un emplacement temporaire, et renommez-le à Microsoft.Windows.ApplicationServer.Applications_Provider1.man
+2. Copiez le fichier manifeste de%windir%\Microsoft.NET\Framework \\ \<latest version of [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.applications.Man dans un emplacement temporaire, puis renommez-le Microsoft. Windows. ApplicationServer. Applications_Provider1. Man
 
 3. Remplacez le GUID dans le fichier manifeste par le nouveau GUID.
 
@@ -222,7 +222,7 @@ Si des événements doivent être écrits dans un journal des applications spéc
 
 6. Générez la DLL de ressource en procédant comme suit.
 
-    1. Installez le Kit de développement logiciel (SDK) Windows. Le Windows SDK comprend le compilateur de messages ([mc.exe](/windows/win32/wes/message-compiler--mc-exe-)) et compilateur de ressources ([rc.exe](/windows/win32/menurc/using-rc-the-rc-command-line-)).
+    1. Installez le Kit de développement logiciel (SDK) Windows. Le SDK Windows comprend le compilateur de messages ([mc.exe](/windows/win32/wes/message-compiler--mc-exe-)) et le compilateur de ressources ([rc.exe](/windows/win32/menurc/using-rc-the-rc-command-line-)).
 
     2. Dans une invite de commandes du Kit de développement logiciel (SDK) Windows, exécutez mc.exe sur le nouveau fichier manifeste.
 
@@ -244,13 +244,13 @@ Si des événements doivent être écrits dans un journal des applications spéc
         csc /target:library /win32res:Microsoft.Windows.ApplicationServer.Applications_Provider1.res NewProviderReg.cs /out:Microsoft.Windows.ApplicationServer.Applications_Provider1.dll
         ```
 
-    6. Modifier le nom de la ressource et `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` du message dans le fichier manifeste de vers le nouveau nom dll.
+    6. Remplacez la ressource et le nom de la dll de message dans le fichier manifeste par `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` le nouveau nom de la dll.
 
         ```xml
         <provider name="Microsoft-Windows-Application Server-Applications_Provider1" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}" symbol="Microsoft_Windows_ApplicationServer_ApplicationEvents" resourceFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" messageFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" />
         ```
 
-    7. Utilisez [wevtutil](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732848(v=ws.10)) pour enregistrer le manifeste.
+    7. Utilisez [wevtutil](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732848(v=ws.10)) pour inscrire le manifeste.
 
         ```console
         wevtutil im Microsoft.Windows.ApplicationServer.Applications_Provider1.man
@@ -258,5 +258,5 @@ Si des événements doivent être écrits dans un journal des applications spéc
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Surveillance du tissu de l’application Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
-- [Surveillance des applications avec le tissu d’application](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))
+- [Analyse Windows Server App Fabric](/previous-versions/appfabric/ee677251(v=azure.10))
+- [Surveillance des applications avec application Fabric](/previous-versions/appfabric/ee677276(v=azure.10))

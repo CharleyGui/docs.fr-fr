@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 2b2717bc68da9f07cd38e10a5d75b2a7df9add45
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6221f253746ac304115fe844966e2cf552263d04
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602633"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551143"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Sécurité de message avec un client de certificat
 Le scénario suivant montre un client et un service Windows Communication Foundation (WCF) sécurisés à l’aide du mode de sécurité message. Le client et le service sont tous les deux authentifiés à l'aide de certificats. Pour plus d’informations, consultez [sécurité des applications distribuées](distributed-application-security.md).
@@ -31,7 +31,7 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -85,11 +85,11 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :  
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -147,5 +147,5 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 
 - [Présentation de la sécurité](security-overview.md)
 - [Identité du service et authentification](service-identity-and-authentication.md)
-- [Working with Certificates](working-with-certificates.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Utilisation des certificats](working-with-certificates.md)
+- [Modèle de sécurité pour Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))

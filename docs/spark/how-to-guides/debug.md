@@ -4,12 +4,12 @@ description: Découvrez comment déboguer votre application .NET pour Apache Spa
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 9209d5bdec6dd85f6d21a502fb07204effef1934
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 249b4bccbf1378d8ef8c824f39151c33fb9f875a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617754"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557149"
 ---
 # <a name="debug-a-net-for-apache-spark-application"></a>Déboguer une application .NET pour Apache Spark
 
@@ -61,7 +61,7 @@ if (EnvironmentUtils.GetEnvironmentVariableAsBool("DOTNET_WORKER_DEBUG"))
 }
 ```
 
-Accédez au fichier *. cs* contenant l’UDF que vous envisagez de déboguer, puis [définissez un point d’arrêt](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2019). Le point d’arrêt indique `The breakpoint will not currently be hit` que le thread de travail n’a pas encore chargé l’assembly qui contient la fonction définie par l’employé.
+Accédez au fichier *. cs* contenant l’UDF que vous envisagez de déboguer, puis [définissez un point d’arrêt](/visualstudio/debugger/using-breakpoints?view=vs-2019). Le point d’arrêt indique `The breakpoint will not currently be hit` que le thread de travail n’a pas encore chargé l’assembly qui contient la fonction définie par l’employé.
 
 Appuyez `F5` sur pour continuer votre application et le point d’arrêt finira par être atteint.
 

@@ -2,12 +2,12 @@
 title: Chaînes de connexion
 ms.date: 12/13/2019
 description: Les mots clés et les valeurs de chaîne de connexion pris en charge.
-ms.openlocfilehash: bb54d152bac62a86c2a49192cf678a745159164e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3c50b31689abf6d47aa8f83a6f6f755bcfec0ea3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400448"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555391"
 ---
 # <a name="connection-strings"></a>Chaînes de connexion
 
@@ -25,9 +25,9 @@ SQLite traite les chemins d’accès par rapport au répertoire de travail actue
 
 S’il est **vide**, SQLite crée une base de données sur disque temporaire qui est supprimée lorsque la connexion est fermée.
 
-Si `:memory:`, une base de données en mémoire est utilisée. Pour plus d’informations, consultez [bases de données en mémoire](in-memory-databases.md).
+Si `:memory:` , une base de données en mémoire est utilisée. Pour plus d’informations, consultez [bases de données en mémoire](in-memory-databases.md).
 
-Les chemins d’accès qui `|DataDirectory|` commencent par la chaîne de substitution sont traités de la même façon que les chemins d’accès relatifs. Si cette valeur est définie, les chemins d’accès sont définis par rapport à la valeur de la propriété de domaine d’application DataDirectory.
+Les chemins d’accès qui commencent par la `|DataDirectory|` chaîne de substitution sont traités de la même façon que les chemins d’accès relatifs. Si cette valeur est définie, les chemins d’accès sont définis par rapport à la valeur de la propriété de domaine d’application DataDirectory.
 
 Ce mot clé prend également en charge les noms de fichiers [URI](https://www.sqlite.org/uri.html).
 
@@ -49,12 +49,12 @@ Mode de mise en cache utilisé par la connexion.
 | Value   | Description                                                                                    |
 | ------- | ---------------------------------------------------------------------------------------------- |
 | Default | Utilise le mode par défaut de la bibliothèque SQLite sous-jacente. Il s’agit de la valeur par défaut.                   |
-| Privé | Chaque connexion utilise un cache privé.                                                          |
+| Private | Chaque connexion utilise un cache privé.                                                          |
 | Partagé  | Les connexions partagent un cache. Ce mode peut modifier le comportement du verrouillage de la transaction et de la table. |
 
 ### <a name="password"></a>Mot de passe
 
-Clé de chiffrement. Lorsqu’il est `PRAGMA key` spécifié, est envoyé immédiatement après l’ouverture de la connexion.
+Clé de chiffrement. Lorsqu' `PRAGMA key` il est spécifié, est envoyé immédiatement après l’ouverture de la connexion.
 
 > [!WARNING]
 > Le mot de passe n’a aucun effet lorsque le chiffrement n’est pas pris en charge par la bibliothèque SQLite native.
@@ -66,8 +66,8 @@ Valeur indiquant s’il faut activer les contraintes de clé étrangère.
 | Value   | Description
 | ------- | --- |
 | True    | Envoie `PRAGMA foreign_keys = 1` immédiatement après l’ouverture de la connexion.
-| False   | Envoie `PRAGMA foreign_keys = 0` immédiatement après l’ouverture de la connexion.
-| (empty) | N’envoie `PRAGMA foreign_keys`pas. Il s’agit de la valeur par défaut. |
+| Faux   | Envoie `PRAGMA foreign_keys = 0` immédiatement après l’ouverture de la connexion.
+| (empty) | N’envoie pas `PRAGMA foreign_keys` . Il s’agit de la valeur par défaut. |
 
 Il n’est pas nécessaire d’activer les clés étrangères si, comme dans e_sqlite3, SQLITE_DEFAULT_FOREIGN_KEYS a été utilisé pour compiler la bibliothèque SQLite native.
 
@@ -78,7 +78,7 @@ Valeur qui indique s’il faut activer les déclencheurs récursifs.
 | Value | Description                                                                 |
 | ----- | --------------------------------------------------------------------------- |
 | True  | Envoie `PRAGMA recursive_triggers` immédiatement après l’ouverture de la connexion. |
-| False | N’envoie `PRAGMA recursive_triggers`pas. Il s’agit de la valeur par défaut.              |
+| Faux | N’envoie pas `PRAGMA recursive_triggers` . Il s’agit de la valeur par défaut.              |
 
 ## <a name="connection-string-builder"></a>Générateur de chaînes de connexion
 
@@ -88,11 +88,11 @@ Vous pouvez utiliser <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> 
 
 ## <a name="examples"></a>Exemples
 
-### <a name="basic"></a>De base
+### <a name="basic"></a>Basic
 
 Chaîne de connexion de base avec un cache partagé pour améliorer la concurrence.
 
-```ConnectionString
+```connectionstring
 Data Source=Application.db;Cache=Shared
 ```
 
@@ -100,7 +100,7 @@ Data Source=Application.db;Cache=Shared
 
 Base de données chiffrée.
 
-```ConnectionString
+```connectionstring
 Data Source=Encrypted.db;Password=MyEncryptionKey
 ```
 
@@ -108,7 +108,7 @@ Data Source=Encrypted.db;Password=MyEncryptionKey
 
 Base de données en lecture seule qui ne peut pas être modifiée par l’application.
 
-```ConnectionString
+```connectionstring
 Data Source=Reference.db;Mode=ReadOnly
 ```
 
@@ -116,7 +116,7 @@ Data Source=Reference.db;Mode=ReadOnly
 
 Base de données en mémoire privée.
 
-```ConnectionString
+```connectionstring
 Data Source=:memory:
 ```
 
@@ -124,7 +124,7 @@ Data Source=:memory:
 
 Base de données en mémoire partageable identifiée par le nom *partageable*.
 
-```ConnectionString
+```connectionstring
 Data Source=Sharable;Mode=Memory;Cache=Shared
 ```
 

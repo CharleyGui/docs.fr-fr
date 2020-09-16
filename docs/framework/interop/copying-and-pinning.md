@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-ms.openlocfilehash: b7931813cd5254375eda81515f388c85c78fa284
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1f748da740ce76024495d6fe7968df3be3891e80
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618777"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557082"
 ---
 # <a name="copying-and-pinning"></a>copie et épinglage
 
@@ -82,5 +82,5 @@ Quand <xref:System.Text.StringBuilder?displayProperty=nameWithType> est passé p
 ## <a name="see-also"></a>Voir aussi
 
 - [comportement de marshaling par défaut](default-marshaling-behavior.md)
-- [Attributs directionnels](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
+- [Attributs directionnels](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [Marshaling d’interopérabilité](interop-marshaling.md)

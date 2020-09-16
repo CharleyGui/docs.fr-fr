@@ -2,12 +2,12 @@
 title: Collections
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-ms.openlocfilehash: f264a0f9ee15707daf4bece5651b9f5f07ebbc39
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 91c6048caf622f21a02032bac31cb2ba5565c54c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400653"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551065"
 ---
 # <a name="collections-visual-basic"></a>Collections (Visual Basic)
 
@@ -173,7 +173,7 @@ Vous pouvez créer une collection générique en utilisant l’une des classes d
 
 Le tableau suivant liste quelques classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> fréquemment utilisées :
 
-|Class|Description|
+|Classe|Description|
 |---|---|
 |<xref:System.Collections.Generic.Dictionary%602>|Représente une collection de paires clé/valeur organisées en fonction de la clé.|
 |<xref:System.Collections.Generic.List%601>|Représente une liste d’objets accessibles par index. Fournit des méthodes de recherche, de tri et de modification de listes.|
@@ -203,7 +203,7 @@ Si possible, vous devez utiliser les collections génériques dans l’espace de
 
 Le tableau suivant répertorie certaines des classes fréquemment utilisées de l’espace de noms `System.Collections` :
 
-|Class|Description|
+|Classe|Description|
 |---|---|
 |<xref:System.Collections.ArrayList>|Représente un tableau d’objets dont la taille est augmentée de manière dynamique selon les besoins.|
 |<xref:System.Collections.Hashtable>|Représente une collection de paires clé/valeur qui sont organisées en fonction du code de hachage de la clé.|
@@ -224,7 +224,7 @@ Quand vous utilisez la classe Visual Basic `Collection`, le premier élément d�
 
 Si possible, vous devez utiliser les collections génériques dans l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> ou <xref:System.Collections.Concurrent> à la place de la classe Visual Basic `Collection`.
 
-Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.Collection>.
+Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Collection>.
 
 <a name="BKMK_KeyValuePairs"></a>
 
@@ -458,7 +458,7 @@ End Class
 
 ## <a name="defining-a-custom-collection"></a>Définition d’une collection personnalisée
 
-Vous pouvez définir une collection en implémentant l’interface <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.IEnumerable>. Pour plus d’informations, consultez [énumération d’une collection](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100)).
+Vous pouvez définir une collection en implémentant l’interface <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.IEnumerable>. Pour plus d’informations, consultez [énumération d’une collection](/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100)).
 
 Même si vous pouvez définir une collection personnalisée, il est généralement préférable d’utiliser les collections comprises dans le .NET Framework, lesquelles sont décrites dans [Types de collections](#kinds-of-collections), plus haut dans cette rubrique.
 

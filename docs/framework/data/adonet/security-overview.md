@@ -1,15 +1,15 @@
 ---
-title: Vue d’ensemble de la sécurité
+title: Présentation de la sécurité
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: 8a036a40d2b1728f39037018c3672551b8b67bd9
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: 4222dd36fe2f693bb16216e01d5e06a8176a7801
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75545024"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550688"
 ---
-# <a name="security-overview"></a>Vue d’ensemble de la sécurité
+# <a name="security-overview"></a>Présentation de la sécurité
 
 La sécurisation d'une application est un processus permanent. Un développeur ne peut à aucun moment garantir qu'une application est à l'abri de toute attaque car il est impossible de prédire les types d'attaques futures que les nouvelles technologies permettront de faire apparaître. Inversement, le fait que personne n'a encore découvert (ou révélé) les défaillances de la sécurité d'un système ne signifie pas qu'il n'en existe pas ou qu'il ne peut pas en exister. Vous devez planifier la sécurité au cours de la phase de conception du projet, ainsi que la manière dont la sécurité sera maintenue tout au long de la durée de vie de l'application.
 
@@ -25,7 +25,7 @@ La sécurisation d'une application est un processus permanent. Un développeur n
 
  La modélisation des menaces représente une approche itérative pour évaluer les vulnérabilités de votre application, afin de déceler les plus dangereuses, qui exposent les données les plus sensibles. Une fois ces vulnérabilités identifiées, vous les classez par ordre de gravité et créez un ensemble de contre-mesures pour contrer les menaces selon leurs niveaux de priorité respectifs.
 
-Pour plus d'informations, voir les ressources suivantes :
+Pour plus d’informations, consultez les ressources suivantes :
 
 |Ressource|Description|
 |--------------|-----------------|
@@ -44,7 +44,7 @@ Pour plus d’informations sur la sécurisation de vos applications, consultez l
 |--------------|-----------------|
 |[Sécurisation des applications](/visualstudio/ide/securing-applications)|Contient des liens vers des rubriques de sécurité générales. Contient également des liens vers des rubriques pour sécuriser des applications distribuées, des applications Web, des applications mobiles et des applications de bureau.|
 
-## <a name="code-access-security-cas"></a>sécurité d'accès du code (CAS, Code Access Security)
+## <a name="code-access-security-cas"></a>Sécurité d'accès du code
 
 La sécurité d'accès au code est un mécanisme qui aide à limiter l'accès dont dispose le code aux ressources et opérations protégées. Dans le .NET Framework, la sécurité d'accès du code remplit les fonctions suivantes :
 
@@ -64,14 +64,14 @@ La sécurité d'accès au code est un mécanisme qui aide à limiter l'accès do
 
 Pour réduire l'étendue des dommages pouvant se produire en cas d'attaque réussie, choisissez un contexte de sécurité pour votre code, qui accorde un accès uniquement aux ressources dont il a besoin pour effectuer son travail et à aucune autre.
 
-Pour plus d'informations, voir les ressources suivantes :
+Pour plus d’informations, consultez les ressources suivantes :
 
 |Ressource|Description|
 |--------------|-----------------|
-|[Sécurité d’accès du code et ADO.NET](code-access-security.md)|Décrit les interactions entre la sécurité d'accès du code, la sécurité basée sur les rôles et les environnements avec un niveau de confiance partielle depuis la perspective d'une application ADO.NET.|
+|[Sécurité d'accès du code et ADO.NET](code-access-security.md)|Décrit les interactions entre la sécurité d'accès du code, la sécurité basée sur les rôles et les environnements avec un niveau de confiance partielle depuis la perspective d'une application ADO.NET.|
 |[Sécurité d’accès du code](../../misc/code-access-security.md)|Contient des liens vers des rubriques supplémentaires qui décrivent la sécurité d'accès du code dans le .NET Framework.|
 
-## <a name="database-security"></a>Sécurité de la base de données
+## <a name="database-security"></a>Sécurité de base de données
 
 Le principe des privilèges minimum s'applique également à votre source de données. Ci-dessous figurent quelques-unes des instructions générales concernant la sécurité de la base de données :
 
@@ -87,27 +87,27 @@ Le principe des privilèges minimum s'applique également à votre source de don
 
 - Activez l'audit de sécurité et la journalisation pour la base de données que vous utilisez, afin d'être alerté en cas de brèches de sécurité.
 
-Pour plus d'informations, voir les ressources suivantes :
+Pour plus d’informations, consultez les ressources suivantes :
 
 |Ressource|Description|
 |--------------|-----------------|
 |[Sécurité SQL Server](./sql/sql-server-security.md)|Fournit une vue d'ensemble de la sécurité de SQL Server avec des scénarios d'application qui fournissent des conseils pour créer des applications ADO.NET sécurisées qui ciblent SQL Server.|
-|[Recommandations pour les stratégies d’accès aux données](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Fournit des recommandations pour l'accès aux données et l'exécution d'opérations de base de données.|
+|[Recommandations pour les stratégies d’accès aux données](/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Fournit des recommandations pour l'accès aux données et l'exécution d'opérations de base de données.|
 
 ## <a name="security-policy-and-administration"></a>Stratégie et administration de sécurité
 
 Une administration incorrecte de la sécurité d'accès du code peut potentiellement créer des failles en matière de sécurité. Une fois qu'une application a été déployée, des techniques de surveillance de la sécurité doivent être utilisées et les risques évalués à mesure que de nouvelles menaces émergent.
 
-Pour plus d'informations, voir les ressources suivantes :
+Pour plus d’informations, consultez les ressources suivantes :
 
 |Ressource|Description|
 |--------------|-----------------|
-|[Gestion des stratégies de sécurité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|Fournit des informations sur la création et l'administration de la stratégie de sécurité.|
-|[Meilleures pratiques pour la stratégie de sécurité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|Fournit des liens qui décrivent comment administrer la stratégie de sécurité.|
+|[Gestion des stratégies de sécurité](/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|Fournit des informations sur la création et l'administration de la stratégie de sécurité.|
+|[Meilleures pratiques pour la stratégie de sécurité](/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|Fournit des liens qui décrivent comment administrer la stratégie de sécurité.|
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurisation des applications ADO.NET](securing-ado-net-applications.md)
 - [Sécurité dans .NET](../../../standard/security/index.md)
 - [Sécurité SQL Server](./sql/sql-server-security.md)
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

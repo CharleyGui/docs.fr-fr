@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], persistence
 ms.assetid: 39e69d1f-b771-4c16-9e18-696fa43b65b2
-ms.openlocfilehash: 1178bd3800fce95be96e601a17bfeff2c05cfceb
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c609ec5e67ce3bb0605f543806085f893acba37c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419302"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557526"
 ---
 # <a name="workflow-persistence"></a>Persistance du workflow
 La persistance de workflow est la capture durable de l'état d'une instance de workflow, indépendamment des informations sur le processus ou l'ordinateur. Cela permet d'abord de fournir, en cas de défaillance du système, un point connu de récupération de l'instance de workflow. Ensuite, la mémoire est conservée en déchargeant les instances de workflow qui ne fonctionnent pas activement. Enfin, l'état de l'instance de workflow peut être déplacé d'un nœud vers un autre dans une batterie de serveurs.  
@@ -23,7 +23,7 @@ La persistance de workflow est la capture durable de l'état d'une instance de w
   
  Pour stocker et charger vos données spécifiques à l'application, ainsi que les informations sur l'instance de workflow, vous pouvez créer des participants de persistance qui étendent la classe <xref:System.Activities.Persistence.PersistenceParticipant>. Un participant de persistance participe au processus de persistance pour les fins suivantes : enregistrer des données sérialisables personnalisées dans le magasin de persistance ; charger des données, du magasin d’instances vers la mémoire ; et effectuer toute logique supplémentaire dans le cadre d’une transaction de persistance. Pour plus d’informations, consultez [participants de persistance](persistence-participants.md).  
   
- Windows Server AppFabric simplifie le processus de configuration de la persistance. Pour plus d’informations, consultez [concepts de persistance avec Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677272(v=azure.10)) .  
+ Windows Server AppFabric simplifie le processus de configuration de la persistance. Pour plus d’informations, consultez [concepts de persistance avec Windows Server App Fabric](/previous-versions/appfabric/ee677272(v=azure.10)) .  
   
 ## <a name="implicit-persistence-points"></a>Points de persistance implicites  
  La liste suivante comprend des exemples de conditions selon lesquelles un workflow est rendu persistant, lors de l'association d'un magasin d'instances à un workflow.  
@@ -44,14 +44,14 @@ La persistance de workflow est la capture durable de l'état d'une instance de w
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-- [Magasin d’instances de workflow SQL](sql-workflow-instance-store.md)  
+- [Magasin d'instances de workflow SQL](sql-workflow-instance-store.md)  
   
-- [Magasins d’instances](instance-stores.md)  
+- [Magasins d'instances](instance-stores.md)  
   
 - [Participants de persistance](persistence-participants.md)  
   
-- [Bonnes pratiques sur la persistance](persistence-best-practices.md)  
+- [Meilleures pratiques de persistance](persistence-best-practices.md)  
   
 - [Instances de workflow non persistantes](non-persisted-workflow-instances.md)  
   
-- [Suspension et reprise d’un workflow](pausing-and-resuming-a-workflow.md)
+- [Suspension et reprise d'un workflow](pausing-and-resuming-a-workflow.md)

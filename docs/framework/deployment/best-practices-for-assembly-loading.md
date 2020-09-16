@@ -13,12 +13,12 @@ helpviewer_keywords:
 - LoadWithPartialName method
 - load-from context
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
-ms.openlocfilehash: 03d2cacea4d2c0e7452240df30350d93ce79282d
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: 11ac4277081392b1e7ac79147f621ff67d699fe5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656143"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555300"
 ---
 # <a name="best-practices-for-assembly-loading"></a>Meilleures pratiques pour le chargement d'assembly
 Cet article explique les moyens d’éviter les problèmes d’identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d’autres erreurs. L’article aborde les recommandations suivantes :  
@@ -153,7 +153,7 @@ Cet article explique les moyens d’éviter les problèmes d’identités de typ
  S’il n’est pas possible de placer tous vos assemblys dans le chemin de recherche, considérez les solutions alternatives, comme utiliser le modèle de complément du .NET Framework, placer les assemblys dans le Global Assembly Cache ou créer des domaines d’application.  
   
 ### <a name="consider-using-the-net-framework-add-in-model"></a>Envisager d’utiliser le modèle de complément du .NET Framework  
- Si vous utilisez le contexte de chargement source pour implémenter des compléments, qui ne sont généralement pas installés dans la base de l’application, utilisez le modèle de complément du .NET Framework. Ce modèle fournit une isolation au niveau du domaine d’application ou du processus, sans qu’il soit nécessaire de gérer vous-même les domaines d’application. Pour plus d’informations sur le modèle de complément, consultez [Compléments et extensibilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).  
+ Si vous utilisez le contexte de chargement source pour implémenter des compléments, qui ne sont généralement pas installés dans la base de l’application, utilisez le modèle de complément du .NET Framework. Ce modèle fournit une isolation au niveau du domaine d’application ou du processus, sans qu’il soit nécessaire de gérer vous-même les domaines d’application. Pour plus d’informations sur le modèle de complément, consultez [Compléments et extensibilité](/previous-versions/dotnet/netframework-4.0/bb384200(v=vs.100)).  
   
 ### <a name="consider-using-the-global-assembly-cache"></a>Envisager d’utiliser le Global Assembly Cache  
  Placez les assemblys dans le Global Assembly Cache pour bénéficier d’un chemin d’assembly partagé qui est en dehors de l’application de base, sans perdre les avantages du contexte de chargement par défaut ou subir les inconvénients des autres contextes.  

@@ -2,12 +2,12 @@
 title: Limitation de la distribution de messages
 ms.date: 03/30/2017
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
-ms.openlocfilehash: 188d7bd365caad7d4cd438744c78ae8e7cd95e7e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e736aba60d7d2b39d1b8eb958a8c72e6e8d55e13
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586310"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555014"
 ---
 # <a name="limiting-message-distribution"></a>Limitation de la distribution de messages
 
@@ -19,7 +19,7 @@ Le concept de `PeerHopCount` est semblable à la valeur TTL (durée de vie) util
 
 Le nombre de sauts peut être ajouté à un message en ajoutant `PeerHopCount` en tant qu'attribut à la propriété ou au champ applicable dans l'implémentation de la classe de message. Vous pouvez affecter à cet attribut une valeur spécifique avant d'envoyer le message à la maille. Vous pouvez ainsi utiliser le nombre de sauts pour limiter la distribution des messages sur la maille lorsque cela est nécessaire, ce qui évite la duplication de messages superflus. Cela est utile dans les cas où la maille comprend un grand nombre de données redondantes ou pour envoyer un message aux voisins immédiats ou voisins se trouvant à quelques sauts.
 
-- Pour obtenir des extraits de code et des informations connexes, consultez l’article [PeerHopCount : contrôle](https://docs.microsoft.com/archive/blogs/peerchan/the-peerhopcount-attribute-controlling-message-distribution) de la publication de distribution de messages sur le canal homologue blog.
+- Pour obtenir des extraits de code et des informations connexes, consultez l’article [PeerHopCount : contrôle](/archive/blogs/peerchan/the-peerhopcount-attribute-controlling-message-distribution) de la publication de distribution de messages sur le canal homologue blog.
 
 ## <a name="message-propagation-filter"></a>Filtre de propagation de messages
 
@@ -27,7 +27,7 @@ Le nombre de sauts peut être ajouté à un message en ajoutant `PeerHopCount` e
 
 <xref:System.ServiceModel.PeerMessagePropagationFilter> est une classe abstraite de base avec une fonction unique, <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A>. Le premier argument de l’appel de méthode passe dans une copie complète du message. La modification du message n'entraîne pas le changement du message proprement dit. Le dernier argument de l'appel de méthode identifie l'origine du message (`PeerMessageOrigination.Local` ou `PeerMessageOrigination.Remote`). Les implémentations concrètes de cette méthode doivent retourner une constante à partir de l'énumération <xref:System.ServiceModel.PeerMessagePropagation> indiquant que le message doit être transféré à l'application locale (`Local`), à des clients distants (`Remote`), aux deux (`LocalAndRemote`), ou ni à l'un ni à l'autre (`None`). Vous pouvez appliquer ce filtre en accédant à l'objet `PeerNode` correspondant et en spécifiant une instance de la classe de filtre de propagation dérivée dans la propriété `PeerNode.MessagePropagationFilter`. Assurez-vous que le filtre de propagation est joint avant d'ouvrir le canal homologue.
 
-- Pour obtenir des extraits de code et des informations connexes, consultez le [canal homologue et](https://docs.microsoft.com/archive/blogs/peerchan/peer-channel-and-messagepropagationfilter) le billet MessagePropagationFilter sur le blog canal homologue.
+- Pour obtenir des extraits de code et des informations connexes, consultez le [canal homologue et](/archive/blogs/peerchan/peer-channel-and-messagepropagationfilter) le billet MessagePropagationFilter sur le blog canal homologue.
 
 ## <a name="contacting-an-individual-node-in-the-mesh"></a>Contacter un nœud individuel dans la maille
 

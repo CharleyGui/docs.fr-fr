@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: 6feaa801610fa0ffbbf47575f25aff29fa46a66c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ca474cdcaeaac7b1c32efa5c58f4b5bb5b7f7895
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152852"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557240"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool>, élément (paramètres web)
 Spécifie les paramètres de configuration utilisés par ASP.NET pour gérer le comportement au niveau du processus quand une application ASP.NET s’exécute en mode intégré sur IIS 7,0 ou une version ultérieure.  
@@ -52,22 +52,22 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |-------------|-----------------|  
 |[\<system.web>](system-web-element-web-settings.md)|Contient des informations sur la façon dont ASP.NET interagit avec une application hôte.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
 
 Lorsque vous exécutez IIS 7,0 ou une version ultérieure en mode intégré, cette combinaison d’éléments vous permet de configurer la manière dont ASP.NET gère les demandes de threads et de files d’attente lorsque l’application est hébergée dans un pool d’applications IIS. Si vous exécutez IIS 6 ou IIS 7,0 en mode classique ou en mode ISAPI, ces paramètres sont ignorés.  
   
-Les `applicationPool` paramètres s’appliquent à tous les pools d’applications qui s’exécutent sur une version particulière du .NET Framework. Les paramètres sont contenus dans un fichier Aspnet. config. Il existe une version de ce fichier pour les versions 2,0 et 4,0 du .NET Framework. (Les versions 3,0 et 3,5 du .NET Framework partagent le fichier Aspnet. config avec la version 2,0.)  
+Les `applicationPool` paramètres s’appliquent à tous les pools d’applications qui s’exécutent sur une version particulière du .NET Framework. Les paramètres sont contenus dans un fichier aspnet.config. Il existe une version de ce fichier pour les versions 2,0 et 4,0 du .NET Framework. (Les versions 3,0 et 3,5 du .NET Framework partagent le fichier aspnet.config avec la version 2,0.)  
   
 > [!IMPORTANT]
-> Si vous exécutez IIS 7,0 sur Windows 7, vous pouvez configurer un fichier Aspnet. config distinct pour chaque pool d’applications. Cela vous permet de personnaliser les performances des threads pour chaque pool d’applications.  
+> Si vous exécutez IIS 7,0 sur Windows 7, vous pouvez configurer un fichier de aspnet.config distinct pour chaque pool d’applications. Cela vous permet de personnaliser les performances des threads pour chaque pool d’applications.  
   
 Pour le `maxConcurrentRequestsPerCPU` paramètre, le paramètre par défaut « 5000 » dans le .NET Framework 4 désactive efficacement la limitation des demandes qui est contrôlée par ASP.net, à moins que vous n’ayez au moins 5000 demandes par UC. Le paramètre par défaut dépend plutôt du pool de threads CLR pour gérer automatiquement l’accès concurrentiel par UC. Les applications qui utilisent de manière intensive le traitement des demandes asynchrones, ou qui ont de nombreuses requêtes à long terme bloquées sur les e/s réseau, tireront parti de l’augmentation de la limite par défaut dans le .NET Framework 4. `maxConcurrentRequestsPerCPU`La définition de la valeur zéro désactive l’utilisation de threads managés pour le traitement des demandes ASP.net. Quand une application s’exécute dans un pool d’applications IIS, les demandes sont conservées sur le thread d’e/s IIS et par conséquent, la concurrence est limitée par les paramètres de thread IIS.  
   
-Le `requestQueueLimit` paramètre fonctionne de la même façon que l' `requestQueueLimit` attribut de l’élément [processModel](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) , qui est défini dans les fichiers Web. config pour les applications ASP.net. Toutefois, le `requestQueueLimit` paramètre dans un fichier Aspnet. config remplace le `requestQueueLimit` paramètre dans un fichier Web. config. En d’autres termes, si les deux attributs sont définis (par défaut, cela est vrai), le `requestQueueLimit` paramètre dans le fichier Aspnet. config est prioritaire.  
+Le `requestQueueLimit` paramètre fonctionne de la même façon que l' `requestQueueLimit` attribut de l’élément [processModel](/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) , qui est défini dans les fichiers Web.config pour les applications ASP.net. Toutefois, le `requestQueueLimit` paramètre dans un fichier de aspnet.config remplace le `requestQueueLimit` paramètre dans un fichier Web.config. En d’autres termes, si les deux attributs sont définis (par défaut, cela est vrai), le `requestQueueLimit` paramètre dans le fichier aspnet.config est prioritaire.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
 
-L’exemple suivant montre comment configurer le comportement à l’ensemble du processus ASP.NET dans le fichier Aspnet. config dans les circonstances suivantes :  
+L’exemple suivant montre comment configurer le comportement à l’ensemble du processus ASP.NET dans le fichier aspnet.config dans les circonstances suivantes :  
   
 - L’application est hébergée dans un pool d’applications IIS 7,0.  
   
@@ -99,4 +99,4 @@ Les valeurs de l’exemple sont les valeurs par défaut.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<system.web>, Élément (paramètres Web)](system-web-element-web-settings.md)
+- [\<system.web> , Élément (paramètres Web)](system-web-element-web-settings.md)

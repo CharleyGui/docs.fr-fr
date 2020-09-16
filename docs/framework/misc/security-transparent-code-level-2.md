@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security-transparent code
 - security-critical code
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
-ms.openlocfilehash: 3b87a48ac3f9925fd868be9e58d5904014ca6c09
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: bbff7b53bacd50746de56c8dba85cdc9e4b1ad9b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309207"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556406"
 ---
 # <a name="security-transparent-code-level-2"></a>Code transparent de sécurité, niveau 2
 
@@ -180,5 +180,5 @@ La valeur par défaut de la propriété <xref:System.Security.SecurityRulesAttri
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Code transparent de sécurité, niveau 1](security-transparent-code-level-1.md)
-- [Modifications de sécurité](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)
+- [Code transparent de sécurité, niveau 1](security-transparent-code-level-1.md)
+- [Modifications de sécurité](/previous-versions/dotnet/framework/security/security-changes)

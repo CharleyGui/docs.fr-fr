@@ -4,12 +4,12 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e6b2fdd1818250c47ce6cb64439ecab58ae99ad8
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 9a4ca80463de41a50d103c696b2108d0cef023fc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617637"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548375"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Azure HDInsight
 
@@ -53,7 +53,7 @@ Avant de commencer, effectuez les tâches suivantes :
 
 1. Visitez le [portail Azure](https://portal.azure.com).
 
-2. Sélectionnez **+ Créer une ressource**. Ensuite, sélectionnez **HDInsight** dans la catégorie **Analytics** .
+2. Sélectionnez **+ Créer une ressource**. Ensuite, sélectionnez **HDInsight** dans la catégorie **Analytics** .
 
     ![Créer une ressource HDInsight à partir d’Portail Azure](./media/hdinsight-deployment/create-hdinsight-resource.png)
 
@@ -62,7 +62,7 @@ Avant de commencer, effectuez les tâches suivantes :
     |Propriété  |Description  |
     |---------|---------|
     |Abonnement  | Dans la liste déroulante, choisissez l’un de vos abonnements Azure actifs. |
-    |Groupe de ressources | Indiquez si vous souhaitez créer un groupe de ressources Azure ou utiliser un groupe existant. Un groupe de ressources est un conteneur réunissant les ressources associées d’une solution Azure. |
+    |Resource group | Indiquez si vous souhaitez créer un groupe de ressources Azure ou utiliser un groupe existant. Un groupe de ressources est un conteneur réunissant les ressources associées d’une solution Azure. |
     |Nom du cluster | Attribuez un nom à votre cluster HDInsight Spark.|
     |Emplacement   | Sélectionnez l’emplacement du groupe de ressources. Le modèle utilise cet emplacement pour créer le cluster, ainsi que pour stocker le cluster par défaut. |
     |Type de cluster| Sélectionnez **Spark** comme type de cluster.|
@@ -152,15 +152,15 @@ Une fois que votre cluster est en cours d’exécution et que vous avez téléch
 
    |Propriété  |Description  |
    |---------|---------|
-   | Type de script |Personnalisé|
-   | Nom | Installer Worker|
+   | Type de script |Custom|
+   | Name | Installer Worker|
    | URI de script bash |`https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh` </br> Pour confirmer cet URI, cliquez avec le bouton droit sur install-worker.sh dans Explorateur Stockage Azure, puis sélectionnez Propriétés. |
    | Type(s) de nœud| Worker|
    | Paramètres | azure </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin
 
 3. Sélectionnez **créer** pour soumettre votre script.
 
-## <a name="run-your-app"></a>Exécutez l'application.
+## <a name="run-your-app"></a>Exécuter l’application
 
 1. Accédez à votre cluster HDInsight Spark dans Portail Azure, puis sélectionnez **SSH + connexion au cluster**.
 
@@ -189,4 +189,4 @@ Vous pouvez également sélectionner le nom du groupe de ressources pour ouvrir 
 Dans ce tutoriel, vous avez déployé votre application .NET pour Apache Spark sur Azure HDInsight. Pour plus d’informations sur HDInsight, consultez la documentation d’Azure HDInsight.
 
 > [!div class="nextstepaction"]
-> [Documentation Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/)
+> [Documentation Azure HDInsight](/azure/hdinsight/)

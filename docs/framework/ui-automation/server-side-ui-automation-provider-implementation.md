@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: ea1b5e668e29d854233d4dde4c0e6152d591da97
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: ee9fe5b3180abcc9ecbc4515e0af1e1c4b2e8b87
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903894"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555430"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté serveur
 
@@ -35,7 +35,7 @@ En particulier, n'utilisez pas de champs provenant de classes d'UIAutomationClie
 
 ## <a name="provider-implementation-by-windows-presentation-foundation-elements"></a>Implémentation de fournisseur par les éléments Windows Presentation Foundation
 
-Pour plus d'informations sur ce sujet, consultez [UI Automation d'un contrôle personnalisé WPF](../wpf/controls/ui-automation-of-a-wpf-custom-control.md).
+Pour plus d'informations sur ce sujet, consultez [UI Automation d'un contrôle personnalisé WPF](/dotnet/desktop/wpf/controls/ui-automation-of-a-wpf-custom-control).
 
 <a name="Provider_Implementation_by_non_WPF_Elements"></a>
 
@@ -116,7 +116,7 @@ Habituellement, les fournisseurs de contrôles basés sur HWND n'ont pas besoin 
 - <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty>
 
 > [!NOTE]
-> La <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> d'un simple élément ou d'une racine de fragment hébergé dans une fenêtre est obtenue depuis la fenêtre ; toutefois, les éléments fragments sous la racine (tels que des éléments de liste dans une zone de liste) doivent fournir leurs propres identificateurs. Pour plus d’informations, consultez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.
+> La <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> d'un simple élément ou d'une racine de fragment hébergé dans une fenêtre est obtenue depuis la fenêtre ; toutefois, les éléments fragments sous la racine (tels que des éléments de liste dans une zone de liste) doivent fournir leurs propres identificateurs. Pour plus d'informations, consultez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.
 >
 > La <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> doit être retournée pour les fournisseurs hébergés dans un contrôle de Windows Forms. Dans ce cas, le fournisseur de fenêtre par défaut ne pourra peut-être pas récupérer la bonne valeur.
 >

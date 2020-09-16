@@ -12,12 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: 273c688d7e9d3fb86d4baece75193ce6d112b62f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 97602b7341636219382b6a405c678bc458ef146a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404912"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556744"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Introduction à LINQ dans Visual Basic
 LINQ (Language-Integrated Query) ajoute des fonctionnalités de requête à Visual Basic et fournit des fonctionnalités simples et puissantes quand vous travaillez avec tous les types de données. Plutôt que d’envoyer une requête à une base de données à traiter, ou d’utiliser une syntaxe de requête différente pour chaque type de données que vous recherchez, LINQ introduit des requêtes dans le cadre du langage de Visual Basic. Il utilise une syntaxe unifiée indépendamment du type de données.  
@@ -76,13 +76,13 @@ Les classes de l'espace de noms <xref:System.Linq> et des autres espaces de noms
 
 ### <a name="from-clause"></a>Clause From
 
-Une [ `From` clause](../../../language-reference/queries/from-clause.md) ou une `Aggregate` clause est nécessaire pour commencer une requête. Une clause `From` spécifie une collection de sources et une variable d'itération pour une requête. Par exemple :
+Une [ `From` clause](../../../language-reference/queries/from-clause.md) ou une `Aggregate` clause est nécessaire pour commencer une requête. Une clause `From` spécifie une collection de sources et une variable d'itération pour une requête. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#7)]
 
 ### <a name="select-clause"></a>Select (clause)
 
-Facultatif. Une [ `Select` clause](../../../language-reference/queries/select-clause.md) déclare un ensemble de variables d’itération pour une requête. Par exemple :
+Optionnel. Une [ `Select` clause](../../../language-reference/queries/select-clause.md) déclare un ensemble de variables d’itération pour une requête. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#8)]
 
@@ -90,31 +90,31 @@ Si une clause `Select` n'est pas spécifiée, les variables d'itération de la r
 
 ### <a name="where-clause"></a>Clause Where
 
-Facultatif. Une [ `Where` clause](../../../language-reference/queries/where-clause.md) spécifie une condition de filtrage pour une requête. Par exemple :
+Optionnel. Une [ `Where` clause](../../../language-reference/queries/where-clause.md) spécifie une condition de filtrage pour une requête. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#9)]
 
 ### <a name="order-by-clause"></a>Order By (clause)
 
-Facultatif. Une [ `Order By` clause](../../../language-reference/queries/order-by-clause.md) spécifie l’ordre de tri des colonnes dans une requête. Par exemple :
+Optionnel. Une [ `Order By` clause](../../../language-reference/queries/order-by-clause.md) spécifie l’ordre de tri des colonnes dans une requête. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#10)]
 
 ### <a name="join-clause"></a>Join (clause)
 
-Facultatif. Une [ `Join` clause](../../../language-reference/queries/join-clause.md) combine deux collections en une collection unique. Par exemple :
+Optionnel. Une [ `Join` clause](../../../language-reference/queries/join-clause.md) combine deux collections en une collection unique. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#11)]
 
 ### <a name="group-by-clause"></a>Group By (clause)
 
-Facultatif. Une [ `Group By` clause](../../../language-reference/queries/group-by-clause.md) regroupe les éléments d’un résultat de requête. Elle peut être utilisée pour appliquer des fonctions d’agrégation à chaque groupe. Par exemple :
+Optionnel. Une [ `Group By` clause](../../../language-reference/queries/group-by-clause.md) regroupe les éléments d’un résultat de requête. Elle peut être utilisée pour appliquer des fonctions d’agrégation à chaque groupe. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#12)]
 
 ### <a name="group-join-clause"></a>Group Join (clause)
 
-Facultatif. Une [ `Group Join` clause](../../../language-reference/queries/group-join-clause.md) combine deux collections en une collection hiérarchique unique. Par exemple :
+Optionnel. Une [ `Group Join` clause](../../../language-reference/queries/group-join-clause.md) combine deux collections en une collection hiérarchique unique. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#13)]
 
@@ -124,43 +124,43 @@ Une [ `Aggregate` clause](../../../language-reference/queries/aggregate-clause.m
 
  [!code-vb[VbVbalrIntroToLINQ#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#14)]
 
-Vous pouvez également utiliser la clause `Aggregate` pour modifier une requête. Par exemple, vous pouvez utiliser la clause `Aggregate` pour effectuer un calcul sur une collection de requêtes connexe. Par exemple :
+Vous pouvez également utiliser la clause `Aggregate` pour modifier une requête. Par exemple, vous pouvez utiliser la clause `Aggregate` pour effectuer un calcul sur une collection de requêtes connexe. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#15)]
 
 ### <a name="let-clause"></a>Let (clause)
 
-Facultatif. Une [ `Let` clause](../../../language-reference/queries/let-clause.md) calcule une valeur et l’assigne à une nouvelle variable dans la requête. Par exemple :
+Optionnel. Une [ `Let` clause](../../../language-reference/queries/let-clause.md) calcule une valeur et l’assigne à une nouvelle variable dans la requête. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#16)]
 
 ### <a name="distinct-clause"></a>Distinct (clause)
 
-Facultatif. Une `Distinct` clause restreint les valeurs de la variable d’itération actuelle pour éliminer les valeurs en double dans les résultats de la requête. Par exemple :
+Optionnel. Une `Distinct` clause restreint les valeurs de la variable d’itération actuelle pour éliminer les valeurs en double dans les résultats de la requête. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#17)]
 
 ### <a name="skip-clause"></a>Skip (clause)
 
-Facultatif. Une [ `Skip` clause](../../../language-reference/queries/skip-clause.md) ignore un nombre spécifié d’éléments dans une collection, puis retourne les éléments restants. Par exemple :
+Optionnel. Une [ `Skip` clause](../../../language-reference/queries/skip-clause.md) ignore un nombre spécifié d’éléments dans une collection, puis retourne les éléments restants. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#18)]
 
 ### <a name="skip-while-clause"></a>SkipWhile (clause)
 
-Facultatif. Une [ `Skip While` clause](../../../language-reference/queries/skip-while-clause.md) ignore les éléments d’une collection tant qu’une condition spécifiée a `true` la valeur, puis retourne les éléments restants. Par exemple :
+Optionnel. Une [ `Skip While` clause](../../../language-reference/queries/skip-while-clause.md) ignore les éléments d’une collection tant qu’une condition spécifiée a `true` la valeur, puis retourne les éléments restants. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#19)]
 
 ### <a name="take-clause"></a>Take (clause)
 
-Facultatif. Une [ `Take` clause](../../../language-reference/queries/take-clause.md) retourne un nombre spécifié d’éléments contigus à partir du début d’une collection. Par exemple :
+Optionnel. Une [ `Take` clause](../../../language-reference/queries/take-clause.md) retourne un nombre spécifié d’éléments contigus à partir du début d’une collection. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#20)]
 
 ### <a name="take-while-clause"></a>Take While (clause)
 
-Facultatif. Une [ `Take While` clause](../../../language-reference/queries/take-while-clause.md) comprend des éléments dans une collection tant qu’une condition spécifiée a `true` la valeur et ignore les éléments restants. Par exemple :
+Optionnel. Une [ `Take While` clause](../../../language-reference/queries/take-while-clause.md) comprend des éléments dans une collection tant qu’une condition spécifiée a `true` la valeur et ignore les éléments restants. Exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#21)]
   
@@ -180,7 +180,7 @@ Vous pouvez utiliser des fonctionnalités de requête LINQ supplémentaires en a
  Pour obtenir des exemples d’instructions pas à pas, consultez [Comment : interroger une base de données](how-to-query-a-database-by-using-linq.md) et [Comment : appeler une procédure stockée](how-to-call-a-stored-procedure-by-using-linq.md).  
   
 ## <a name="visual-basic-features-that-support-linq"></a>Fonctionnalités Visual Basic qui prennent en charge LINQ  
- Visual Basic comprend d’autres fonctionnalités notables qui facilitent l’utilisation de LINQ et réduisent la quantité de code que vous devez écrire pour effectuer des requêtes LINQ. Ces options en question sont les suivantes :  
+ Visual Basic comprend d’autres fonctionnalités notables qui facilitent l’utilisation de LINQ et réduisent la quantité de code que vous devez écrire pour effectuer des requêtes LINQ. Elles sont associées aux limitations suivantes :  
   
 - Les **types anonymes**, qui vous permettent de créer un nouveau type basé sur un résultat de requête.  
   
@@ -221,7 +221,7 @@ Vous pouvez utiliser des fonctionnalités de requête LINQ supplémentaires en a
 |[LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)|Inclut des informations générales, un guide de programmation et des exemples de LINQ to SQL.|  
 |[LINQ to Objects](../../concepts/linq/linq-to-objects.md)|Inclut des informations générales, un guide de programmation et des exemples de LINQ to Objects.|  
 |[LINQ to ADO.NET (page de portail)](../../concepts/linq/linq-to-adonet-portal-page.md)|Contient des liens vers des informations générales, des conseils de programmation et des exemples pour LINQ to ADO.NET.|  
-|[LINQ to XML](../../concepts/linq/linq-to-xml.md)|Inclut des informations générales, un guide de programmation et des exemples de LINQ to XML.|  
+|[LINQ to XML](../../../../standard/linq/linq-xml-overview.md)|Inclut des informations générales, un guide de programmation et des exemples de LINQ to XML.|  
   
 ## <a name="how-to-and-walkthrough-topics"></a>Rubriques de procédures et procédures pas à pas
  [Guide pratique : interroger une base de données](how-to-query-a-database-by-using-linq.md)  
@@ -243,7 +243,7 @@ Vous pouvez utiliser des fonctionnalités de requête LINQ supplémentaires en a
  [Guide pratique pour affecter des procédures stockées pour effectuer des mises à jour, des insertions et des suppressions (Concepteur O/R)](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)  
   
 ## <a name="featured-book-chapters"></a>Chapitres de livres proposés  
- [Chapitre 17 : LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652502(v=orm.10)) en [programmation Visual Basic 2008](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652504(v=orm.10))  
+ [Chapitre 17 : LINQ](/previous-versions/visualstudio/visual-studio-2008/ff652502(v=orm.10)) en [programmation Visual Basic 2008](/previous-versions/visualstudio/visual-studio-2008/ff652504(v=orm.10))  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -251,5 +251,5 @@ Vous pouvez utiliser des fonctionnalités de requête LINQ supplémentaires en a
 - [Vue d’ensemble de LINQ to XML en Visual Basic](../xml/overview-of-linq-to-xml.md)
 - [Vue d'ensemble de LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset-overview.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
-- [Outils de LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)
-- [Méthode DataContext (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [LINQ to SQL Tools dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)
+- [DataContext, méthodes (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

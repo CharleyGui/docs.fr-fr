@@ -9,12 +9,12 @@ helpviewer_keywords:
 - elements, finding by property conditions
 - UI Automation, finding elements by property conditions
 ms.assetid: 3acaee5a-6ce8-4c3e-81c8-67e59eb74477
-ms.openlocfilehash: 5e5fa4fde9049bd87b2722fa9b7d084d96ff6f42
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 112f38d6bef726f92dbf13da70b88732929175dd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87168431"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557682"
 ---
 # <a name="find-a-ui-automation-element-based-on-a-property-condition"></a>Rechercher un élément UI Automation basé sur une condition de propriété
 > [!NOTE]
@@ -22,7 +22,7 @@ ms.locfileid: "87168431"
   
  Cette rubrique contient un exemple de code qui montre comment rechercher un élément dans l' [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] arborescence en fonction d’une propriété ou de propriétés spécifiques.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Dans l’exemple suivant, un ensemble de conditions de propriété est spécifié, qui identifient un certain (e) élément (ou) d’intérêt dans l' <xref:System.Windows.Automation.AutomationElement> arborescence. Une recherche de tous les éléments correspondants est ensuite effectuée avec la <xref:System.Windows.Automation.AutomationElement.FindAll%2A> méthode qui incorpore une série d' <xref:System.Windows.Automation.AndCondition> opérations booléennes pour limiter le nombre d’éléments correspondants.  
   
 > [!NOTE]
@@ -33,6 +33,6 @@ ms.locfileid: "87168431"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemple d’élément de menu InvokePattern et ExpandCollapsePattern](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771636(v=vs.90))
+- [Exemple d’élément de menu InvokePattern et ExpandCollapsePattern](/previous-versions/dotnet/netframework-3.5/ms771636(v=vs.90))
 - [Obtention d'éléments UI Automation](obtaining-ui-automation-elements.md)
 - [Utiliser la propriété AutomationID](use-the-automationid-property.md)

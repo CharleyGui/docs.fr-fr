@@ -2,12 +2,12 @@
 title: 'Modèles de conception : Publication/Abonnement par liste'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 5aaea5b0def544f8b3e963d71e269592b9b40784
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 02668962afff5f760fc02692a92e72e765089545
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84592344"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545577"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Modèles de conception : Publication/Abonnement par liste
 Cet exemple illustre le modèle de publication/abonnement basé sur une liste implémenté en tant que programme Windows Communication Foundation (WCF).  
@@ -15,7 +15,7 @@ Cet exemple illustre le modèle de publication/abonnement basé sur une liste im
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Le modèle de conception de publication/abonnement basé sur une liste est décrit dans la publication Microsoft Patterns & Practices, [modèles d’intégration](https://docs.microsoft.com/previous-versions/msp-n-p/ff647309(v=pandp.10)). Le modèle de publication/abonnement transmet des informations à une collection des destinataires qui se sont abonnés une rubrique d'informations. Ce modèle gère une liste d'abonnés. Lorsque des informations doivent être partagées, une copie est envoyée à chaque abonné de la liste. Cet exemple illustre un modèle de publication/abonnement basé sur liste dynamique, où les clients peuvent s’abonner ou annuler leur abonnement aussi souvent que nécessaire.  
+ Le modèle de conception de publication/abonnement basé sur une liste est décrit dans la publication Microsoft Patterns & Practices, [modèles d’intégration](/previous-versions/msp-n-p/ff647309(v=pandp.10)). Le modèle de publication/abonnement transmet des informations à une collection des destinataires qui se sont abonnés une rubrique d'informations. Ce modèle gère une liste d'abonnés. Lorsque des informations doivent être partagées, une copie est envoyée à chaque abonné de la liste. Cet exemple illustre un modèle de publication/abonnement basé sur liste dynamique, où les clients peuvent s’abonner ou annuler leur abonnement aussi souvent que nécessaire.  
   
  Il se compose d'un client, d'un service et d'un programme de source de données. Il peut y avoir plusieurs clients et plusieurs programmes de source de données en cours d'exécution. Les clients s'abonnent au service, reçoivent des notifications et annulent leur abonnement. Les programmes de source de données envoient des informations au service à partager avec tous les abonnés actuels.  
   
@@ -120,17 +120,17 @@ public class PriceChangeEventArgs : EventArgs
   
 1. Vérifiez que vous pouvez accéder au service à l’aide d’un navigateur en entrant l’adresse suivante : `http://localhost/servicemodelsamples/service.svc` . Une page de confirmation doit s'afficher en réponse.  
   
-2. Exécutez client. exe à partir de \client\bin \\ , dans le dossier propre à la langue. L'activité du client s'affiche dans sa fenêtre de console. Lancez plusieurs clients.  
+2. Exécutez Client.exe à partir de \client\bin \\ , dans le dossier propre à la langue. L'activité du client s'affiche dans sa fenêtre de console. Lancez plusieurs clients.  
   
-3. Exécutez DataSource. exe à partir de \datasource\bin \\ , dans le dossier propre à la langue. L'activité de source de données est affichée sur la fenêtre de console. Une fois que la source de données envoie des informations au service, elles doivent être transmises à chaque client.  
+3. Exécutez Datasource.exe à partir de \datasource\bin \\ , dans le dossier propre à la langue. L'activité de source de données est affichée sur la fenêtre de console. Une fois que la source de données envoie des informations au service, elles doivent être transmises à chaque client.  
   
-4. Si le client, la source de données et les programmes de service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Si le client, la source de données et les programmes de service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-machines"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
 1. Installez l'ordinateur de service:  
   
-    1. Créez un répertoire virtuel nommé ServiceModelSamples sur l'ordinateur de service. Le fichier de commandes Setupvroot. bat de la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md) peut être utilisé pour créer le répertoire de disque et le répertoire virtuel.  
+    1. Créez un répertoire virtuel nommé ServiceModelSamples sur l'ordinateur de service. Le fichier de commandes Setupvroot.bat de la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md) peut être utilisé pour créer le répertoire de disque et le répertoire virtuel.  
   
     2. Copiez les fichiers du programme de service depuis %SystemDrive%\Inetpub\wwwroot\servicemodelsamples vers le répertoire virtuel ServiceModelSamples. Assurez-vous d'intégrer les fichiers au répertoire \bin.  
   
@@ -159,4 +159,4 @@ public class PriceChangeEventArgs : EventArgs
 >
 > Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`

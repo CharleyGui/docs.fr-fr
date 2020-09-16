@@ -2,12 +2,12 @@
 title: Attribution d'autorisations de niveau ligne dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: a55aaa12-34ab-41cd-9dec-fd255b29258c
-ms.openlocfilehash: df5fcb4a6c73e12bec2ab17501fdfb02cf672324
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0b34eaee4b66a2be82049816f0a98b9f53012303
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782353"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554851"
 ---
 # <a name="granting-row-level-permissions-in-sql-server"></a>Attribution d'autorisations de niveau ligne dans SQL Server
 
@@ -23,7 +23,7 @@ L’exemple suivant décrit comment configurer le filtrage au niveau des lignes 
 
 - Activez le filtrage au niveau des lignes :
 
-  - Si vous utilisez SQL Server 2016 ou version ultérieure, ou [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/), créez une stratégie de sécurité qui ajoute un prédicat sur la table pour limiter les lignes retournées à celles qui correspondent à l’utilisateur de base de données actuel (à l’aide de la fonction intégrée CURRENT_USER()) ou au nom de connexion actuel (à l’aide de la fonction intégrée SUSER_SNAME()) :
+  - Si vous utilisez SQL Server 2016 ou version ultérieure, ou [Azure SQL Database](/azure/sql-database/), créez une stratégie de sécurité qui ajoute un prédicat sur la table pour limiter les lignes retournées à celles qui correspondent à l’utilisateur de base de données actuel (à l’aide de la fonction intégrée CURRENT_USER()) ou au nom de connexion actuel (à l’aide de la fonction intégrée SUSER_SNAME()) :
 
       ```sql
       CREATE SCHEMA Security
@@ -65,8 +65,8 @@ L’exemple suivant décrit comment configurer le filtrage au niveau des lignes 
 
 - [Sécurité au niveau des lignes](/sql/relational-databases/security/row-level-security)
 - [Sécurisation des applications ADO.NET](../securing-ado-net-applications.md)
-- [Vue d’ensemble de la sécurité SQL Server](overview-of-sql-server-security.md)
+- [Vue d'ensemble de la sécurité SQL Server](overview-of-sql-server-security.md)
 - [Scénarios de sécurité des applications dans SQL Server](application-security-scenarios-in-sql-server.md)
 - [Gestion des autorisations avec les procédures stockées dans SQL Server](managing-permissions-with-stored-procedures-in-sql-server.md)
-- [Écriture de code SQL dynamique sécurisé dans SQL Server](writing-secure-dynamic-sql-in-sql-server.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Écriture d’une instruction SQL dynamique sécurisée dans SQL Server](writing-secure-dynamic-sql-in-sql-server.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

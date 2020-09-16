@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: 1c1778ace6abc332517786f910d0442eeed577c9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 29798a73ec69b7f695068343d9c7b5593eeba4fa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599267"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557578"
 ---
 # <a name="denial-of-service"></a>Déni de service
 Un déni de service se produit lorsqu'un système est saturé au point que le traitement des messages est impossible ou extrêmement lent.  
@@ -44,7 +44,7 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
 ## <a name="auditing-event-log-can-be-filled"></a>Risque de saturation du journal des événements d'audit  
  Si un utilisateur malveillant se rend compte que l'audit est activé, l'intrus peut envoyer des messages non valides pour forcer l'écriture d'entrées d'audit. Si le journal d'audit se remplit de cette manière, le système d'audit échoue.  
   
- Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations sur l’utilisation de l’observateur d’événements pour afficher et gérer les journaux des événements, consultez [Observateur d’événements](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11)). Pour plus d’informations, consultez [audit](auditing-security-events.md).  
+ Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations sur l’utilisation de l’observateur d’événements pour afficher et gérer les journaux des événements, consultez [Observateur d’événements](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11)). Pour plus d’informations, consultez [audit](auditing-security-events.md).  
   
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Les implémentations non valides de IAuthorizationPolicy peuvent provoquer le blocage du service  
  L’appel <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> de la méthode sur une implémentation défaillante de l' <xref:System.IdentityModel.Policy.IAuthorizationPolicy> interface peut provoquer le blocage du service.  
@@ -61,7 +61,7 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
   
  Pour atténuer ce risque, référencez le certificat exact à utiliser à l’aide d’un critère de recherche plus précis sur le [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) . Par exemple, utilisez l'option <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> et spécifiez le certificat par son empreinte numérique unique (hachage).  
   
- Pour plus d’informations sur la fonctionnalité d’inscription automatique, consultez [inscription automatique des certificats dans Windows Server 2003](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc778954(v%3dws.10)).  
+ Pour plus d’informations sur la fonctionnalité d’inscription automatique, consultez [inscription automatique des certificats dans Windows Server 2003](/previous-versions/windows/it-pro/windows-server-2003/cc778954(v=ws.10)).  
   
 ## <a name="last-of-multiple-alternative-subject-names-used-for-authorization"></a>Dernier des noms de sujet de remplacement utilisés pour l'autorisation  
  Dans les rares cas où un certificat X.509 contient plusieurs noms de sujet de remplacement, et que vous autorisez l'utilisation du nom de sujet de remplacement, l'autorisation peut échouer.  

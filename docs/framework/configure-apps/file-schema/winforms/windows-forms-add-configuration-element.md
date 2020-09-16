@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Forms Add configuration element
 - configuring Windows Forms applications
 ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
-ms.openlocfilehash: 26b806f84c3e1bc44e0437a8f8806316b14897b8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: dc1786f1f2dcc7bd01488dd24c6ef454f7e1cfbd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73109662"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557630"
 ---
 # <a name="windows-forms-add-configuration-element"></a>Windows Forms ajouter un élément de configuration
 
@@ -35,7 +35,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 | `key`     | Attribut requis. Nom de clé prédéfini qui correspond à une fonctionnalité spécifique Windows Forms personnalisable. |
 | `value`   | Attribut requis. Valeur à assigner à `key`. |
 
-### <a name="key-attribute-names-and-associated-values"></a>`key`noms d’attributs et valeurs associées
+### <a name="key-attribute-names-and-associated-values"></a>`key` noms d’attributs et valeurs associées
 
 | Nom `key` | Valeurs | Description |
 | ---------- | ------ | ----------- |
@@ -59,23 +59,23 @@ Aucun.
 | ------- | ----------- |
 | [`<System.Windows.Forms.ApplicationConfigurationSection>`](index.md) | Configure la prise en charge des nouvelles fonctionnalités de l’application Windows Forms. |
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 À compter du .NET Framework 4.7, l’élément `<System.Windows.Forms.ApplicationConfigurationSection>` vous permet de configurer des applications Windows Forms pour tirer parti des fonctionnalités ajoutées dans les dernières versions du .NET Framework.
 
 L' `<System.Windows.Forms.ApplicationConfigurationSection>` élément vous permet d’ajouter un ou plusieurs `<add>` éléments enfants, chacun d’eux définissant un paramètre de configuration spécifique.
 
-Pour obtenir une vue d’ensemble de la prise en charge de Windows Forms haute résolution, consultez [prise en charge des résolutions élevées dans Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md).
+Pour obtenir une vue d’ensemble de la prise en charge de Windows Forms haute résolution, consultez [prise en charge des résolutions élevées dans Windows Forms](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms).
 
 ### <a name="dpiawareness"></a>DpiAwareness
 
-Windows Forms les applications qui s’exécutent sous les versions de Windows à partir de Windows 10 Creators Edition et les versions cibles du .NET Framework à compter de la .NET Framework 4,7 peuvent être configurées pour tirer parti des améliorations des résolutions élevées introduites dans le .NET Framework 4,7. notamment :
+Windows Forms les applications qui s’exécutent sous les versions de Windows à partir de Windows 10 Creators Edition et les versions cibles du .NET Framework à compter de la .NET Framework 4,7 peuvent être configurées pour tirer parti des améliorations des résolutions élevées introduites dans le .NET Framework 4,7. Elles incluent notamment :
 
 - Prise en charge des scénarios PPP dynamiques dans lesquels l’utilisateur modifie la résolution ou le facteur d’échelle après le lancement d’une application Windows Forms.
 
 - Améliorations de la mise à l’échelle et de la disposition d’un certain nombre de contrôles Windows Forms, tels que le <xref:System.Windows.Forms.MonthCalendar> contrôle et le <xref:System.Windows.Forms.CheckedListBox> contrôle.
 
-La reconnaissance haute résolution est une fonctionnalité d’abonnement. par défaut, la valeur de `DpiAwareness` est `false` . Vous pouvez opter pour la prise en charge d’Windows Forms pour la prise en charge de DPI en affectant à la valeur de cette clé la valeur `PerMonitorV2` dans le fichier de configuration de l’application. Si la reconnaissance DPI est activée, toutes les fonctionnalités PPP individuelles sont également activées. notamment :
+La reconnaissance haute résolution est une fonctionnalité d’abonnement. par défaut, la valeur de `DpiAwareness` est `false` . Vous pouvez opter pour la prise en charge d’Windows Forms pour la prise en charge de DPI en affectant à la valeur de cette clé la valeur `PerMonitorV2` dans le fichier de configuration de l’application. Si la reconnaissance DPI est activée, toutes les fonctionnalités PPP individuelles sont également activées. Elles incluent notamment :
 
 - PPP messages modifiés, qui sont contrôlés par la `DisableDpiChangedMessageHandling` clé.
 
@@ -97,7 +97,7 @@ Le paramètre d’abonnement par défaut unique fourni par le paramètre `DpiAwa
 
 En règle générale, vous désabonnez une fonctionnalité particulière, car vous avez choisi de la gérer par programmation.
 
-Pour plus d’informations sur la prise en charge de la haute résolution dans les applications Windows Forms, consultez [prise en charge des résolutions élevées dans Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md).
+Pour plus d’informations sur la prise en charge de la haute résolution dans les applications Windows Forms, consultez [prise en charge des résolutions élevées dans Windows Forms](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms).
 
 ### <a name="disabledpichangedmessagehandling"></a>DisableDpiChangedMessageHandling
 
@@ -109,5 +109,5 @@ La mise à l’échelle à une ou plusieurs passes influence la réactivité per
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Section de configuration de Windows Forms](index.md)
-- [Prise en charge des résolutions élevées en Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md)
+- [Section de configuration Windows Forms](index.md)
+- [Prise en charge des résolutions élevées en Windows Forms](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms)

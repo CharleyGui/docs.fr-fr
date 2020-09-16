@@ -1,19 +1,19 @@
 ---
-title: "Comment : créer une information d'identification de prise en charge"
+title: 'Procédure : créer des informations d’identification de prise en charge'
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: b8e7ddcd6118c77e14e090a0b1fa8d65aeb8e3df
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b181ac72c9f197e9e404f7aa0f04e254abac10da
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597148"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557396"
 ---
-# <a name="how-to-create-a-supporting-credential"></a>Comment : créer une information d'identification de prise en charge
+# <a name="how-to-create-a-supporting-credential"></a>Procédure : créer des informations d’identification de prise en charge
 Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plusieurs informations d'identification. Par exemple, un service peut exiger du client non seulement un nom d'utilisateur et un mot de passe, mais également une information d'identification qui prouve que le client a plus de 18 ans. La deuxième information d’identification est une *information d’identification de prise en charge*. Cette rubrique explique comment implémenter ces informations d’identification dans un client Windows Communication Foundation (WCF).  
   
 > [!NOTE]
-> La spécification pour la prise en charge d'informations d'identification fait partie de la spécification WS-SecurityPolicy. Pour plus d’informations, consultez [spécifications de Web Services Security](https://docs.microsoft.com/previous-versions/dotnet/articles/ms951273(v=msdn.10)).  
+> La spécification pour la prise en charge d'informations d'identification fait partie de la spécification WS-SecurityPolicy. Pour plus d’informations, consultez [spécifications de Web Services Security](/previous-versions/dotnet/articles/ms951273(v=msdn.10)).  
   
 ## <a name="supporting-tokens"></a>Supporting Tokens  
  En résumé, lorsque vous utilisez la sécurité de message, les *informations d’identification principales* sont toujours utilisées pour sécuriser le message (par exemple, un certificat X. 509 ou un ticket Kerberos).  
@@ -68,11 +68,11 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
   
 #### <a name="to-create-a-custom-binding-that-includes-supporting-credentials"></a>Pour créer une liaison personnalisée qui inclut des informations d’identification de prise en charge  
   
-1. Créez un élément de liaison de sécurité. L'exemple suivant crée un <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> avec le mode d'authentification `UserNameForCertificate`. Utilisez la méthode <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A>.  
+1. Créez un élément de liaison de sécurité. L'exemple suivant crée un <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> avec le mode d'authentification `UserNameForCertificate`. Utiliser la méthode <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A>.  
   
 2. Ajoutez le paramètre de prise en charge à la collection de types retournée par la propriété appropriée (`Endorsing`, `Signed`, `SignedEncrypted` ou `SignedEndorsed`). Les types dans l'espace de noms <xref:System.ServiceModel.Security.Tokens> incluent des types couramment utilisés, tels que <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ### <a name="description"></a>Description  
  L’exemple suivant crée une instance du <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> et ajoute une instance de la classe <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> à la collection retournée par la propriété Endorsing.  
@@ -82,4 +82,4 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

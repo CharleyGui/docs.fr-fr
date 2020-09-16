@@ -8,12 +8,12 @@ helpviewer_keywords:
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: 6beedb8e3fd03049cd58ce1d2dac78d1adb820ef
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3577a3ad13d9ef6935a1bed8a29e3d594857928e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618751"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557760"
 ---
 # <a name="overview-of-net-framework"></a>Vue d’ensemble de .NET Framework
 
@@ -76,9 +76,9 @@ Comme vous le feriez pour une bibliothèque de classes orientée objet, les type
 
 - Applications de console. Consultez [Génération d'applications console](../../standard/building-console-apps.md).
 
-- Applications GUI Windows (Windows Forms). Consultez [Windows Forms](../winforms/index.md).
+- Applications GUI Windows (Windows Forms). Consultez [Windows Forms](/dotnet/desktop/winforms/).
 
-- Applications Windows Presentation Foundation (WPF). Consultez [Windows Presentation Foundation](../wpf/index.md).
+- Applications Windows Presentation Foundation (WPF). Consultez [Windows Presentation Foundation](/dotnet/desktop/wpf/).
 
 - Applications ASP.NET. Consultez [Applications web avec ASP.NET](../develop-web-apps-with-aspnet.md).
 
@@ -92,7 +92,7 @@ Les classes Windows Forms sont un ensemble complet de types réutilisables qui s
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration système requise](system-requirements.md)
+- [Configuration requise](system-requirements.md)
 - [Guide d'installation](../install/index.md)
 - [Guide de développement](../development-guide.md)
 - [outils](../tools/index.md)

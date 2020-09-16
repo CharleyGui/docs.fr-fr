@@ -2,12 +2,12 @@
 title: Configuration des services Internet (IIS) 7.0 pour Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1050d395-092e-44d3-b4ba-66be3b039ffb
-ms.openlocfilehash: 6343049e2a21b06965a8c7851d891303a49c82b5
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6b0cc48c7a817f71339fb6d7eea35baf1d97b245
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597564"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556653"
 ---
 # <a name="configuring-internet-information-services-70-for-windows-communication-foundation"></a>Configuration des services Internet (IIS) 7.0 pour Windows Communication Foundation
 
@@ -70,5 +70,5 @@ Les services Internet (IIS) 7.0 sont conçus de manière modulaire vous permett
 
 - [Architecture d'activation WAS](was-activation-architecture.md)
 - [Configuration du service WAS pour une utilisation avec WCF](configuring-the-wpa--service-for-use-with-wcf.md)
-- [Guide pratique pour installer et configurer des composants d’activation WCF](how-to-install-and-configure-wcf-activation-components.md)
-- [Fonctionnalités d’hébergement de Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Procédure : installer et configurer des composants d’activation WCF](how-to-install-and-configure-wcf-activation-components.md)
+- [Fonctionnalités d’hébergement de Windows Server AppFabric](/previous-versions/appfabric/ee677189(v=azure.10))

@@ -2,15 +2,15 @@
 title: Opérateurs de requête standard dans les requêtes LINQ to Entities
 ms.date: 08/21/2018
 ms.assetid: 7fa55a9b-6219-473d-b1e5-2884a32dcdff
-ms.openlocfilehash: 76d32db5c81d88db28194da19e722b1a80c1a870
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: a61296d924ab1ff32b5bee523d6f0a06dda95db3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249145"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557773"
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Opérateurs de requête standard dans les requêtes LINQ to Entities
-Dans une requête, vous indiquez les informations que vous voulez extraire de la source de données. Une requête peut également spécifier la manière dont ces informations doivent être triées, regroupées et mises en forme avant d'être retournées. LINQ fournit un ensemble de méthodes de requête standard utilisables dans une requête. La plupart de ces méthodes fonctionnent sur des séquences. dans ce contexte, une séquence est un objet dont le type implémente <xref:System.Collections.Generic.IEnumerable%601> l’interface ou <xref:System.Linq.IQueryable%601> l’interface. Les fonctionnalités de requête des opérateurs de requête standard incluent le filtrage, la projection, l'agrégation, le tri, le regroupement, la pagination, etc. Certains des opérateurs de requête standard les plus couramment utilisés ont une syntaxe de mots clés dédiée qui leur permet d'être appelés à l'aide d'une syntaxe d'expression de requête. Une expression de requête est une façon différente et plus lisible d'exprimer une requête que son équivalent fondé sur une méthode. Les clauses d'expression de requête sont traduites en appels aux méthodes de requête lors de la compilation. Pour obtenir la liste des opérateurs de requête standard qui ont des clauses d’expression de requête équivalentes, consultez [vue d’ensemble des opérateurs de requête standard](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb397896(v=vs.120)).  
+Dans une requête, vous indiquez les informations que vous voulez extraire de la source de données. Une requête peut également spécifier la manière dont ces informations doivent être triées, regroupées et mises en forme avant d'être retournées. LINQ fournit un ensemble de méthodes de requête standard utilisables dans une requête. La plupart de ces méthodes fonctionnent sur des séquences. dans ce contexte, une séquence est un objet dont le type implémente l' <xref:System.Collections.Generic.IEnumerable%601> interface ou l' <xref:System.Linq.IQueryable%601> interface. Les fonctionnalités de requête des opérateurs de requête standard incluent le filtrage, la projection, l'agrégation, le tri, le regroupement, la pagination, etc. Certains des opérateurs de requête standard les plus couramment utilisés ont une syntaxe de mots clés dédiée qui leur permet d'être appelés à l'aide d'une syntaxe d'expression de requête. Une expression de requête est une façon différente et plus lisible d'exprimer une requête que son équivalent fondé sur une méthode. Les clauses d'expression de requête sont traduites en appels aux méthodes de requête lors de la compilation. Pour obtenir la liste des opérateurs de requête standard qui ont des clauses d’expression de requête équivalentes, consultez [vue d’ensemble des opérateurs de requête standard](/previous-versions/visualstudio/visual-studio-2013/bb397896(v=vs.120)).  
   
  Les opérateurs de requête standard ne sont pas tous pris en charge dans les requêtes LINQ to Entities. Pour plus d’informations, consultez [Méthodes LINQ prises en charge et non prises en charge (LINQ to Entities)](supported-and-unsupported-linq-methods-linq-to-entities.md). Cette rubrique fournit des informations sur les opérateurs de requête standard qui sont spécifiques à LINQ to Entities. Pour plus d’informations sur les problèmes connus dans les requêtes LINQ to Entities, consultez [problèmes connus et considérations dans LINQ to Entities](known-issues-and-considerations-in-linq-to-entities.md).  
   
@@ -29,7 +29,7 @@ Dans une requête, vous indiquez les informations que vous voulez extraire de la
 ## <a name="set-methods"></a>Définir des méthodes  
  Les opérations de définition dans LINQ sont des opérations de requête qui basent leurs jeux de résultats sur la présence ou l'absence d'éléments équivalents dans une collection (ou un ensemble) identique ou distincte. Les méthodes de définition sont `All`, `Any`, `Concat`, `Contains`, `DefaultIfEmpty`, `Distinct`, `EqualAll`, `Except`, `Intersect` et `Union`.  
   
- La plupart des surcharges des méthodes Set sont prises en charge dans LINQ to Entities, bien qu’il existe des différences de comportement par rapport à LINQ to Objects. Toutefois, les méthodes Set qui utilisent <xref:System.Collections.Generic.IEqualityComparer%601> un ne sont pas prises en charge, car le comparateur ne peut pas être traduit dans la source de données.  
+ La plupart des surcharges des méthodes Set sont prises en charge dans LINQ to Entities, bien qu’il existe des différences de comportement par rapport à LINQ to Objects. Toutefois, les méthodes Set qui utilisent un ne <xref:System.Collections.Generic.IEqualityComparer%601> sont pas prises en charge, car le comparateur ne peut pas être traduit dans la source de données.  
   
 ## <a name="ordering-methods"></a>Méthodes de classement  
  Le classement, ou tri, fait référence au classement des éléments d'un jeu de résultats en fonction d'un ou de plusieurs attributs. En spécifiant plus d'un critère de classement, vous pouvez rompre les liens au sein d'un groupe.  
@@ -58,7 +58,7 @@ Dans une requête, vous indiquez les informations que vous voulez extraire de la
   
  Le comportement par défaut des méthodes d'agrégation pour des valeurs NULL/non NULL est indiqué dans le tableau suivant :  
   
-|Méthode|Absence de données|Toutes les valeurs sont NULL|Certaines valeurs sont NULL|Aucune valeur n'est NULL|  
+|Méthode|Pas de données|Toutes les valeurs sont NULL|Certaines valeurs sont NULL|Aucune valeur n'est NULL|  
 |------------|-------------|---------------------|----------------------|--------------------|  
 |`Average`|Retourne la valeur NULL.|Retourne la valeur NULL.|Retourne la moyenne des valeurs non NULL dans une séquence.|Calcule la moyenne d'une séquence de valeurs numériques.|  
 |`Count`|Retourne 0|Retourne le nombre de valeurs NULL dans la séquence.|Retourne le nombre de valeurs NULL et non NULL dans la séquence.|Retourne le nombre d'éléments dans la séquence.|  
@@ -72,11 +72,11 @@ Dans une requête, vous indiquez les informations que vous voulez extraire de la
  La méthode `OfType` est prise en charge pour les types d'entités. La méthode `Convert` est prise en charge pour les types primitifs de modèle conceptuel.  Les méthodes C# `is` et `as` sont également prises en charge.  
   
 ## <a name="paging-methods"></a>Méthodes de pagination  
- Les opérations de pagination retournent un seul élément ou plusieurs éléments d’une séquence. Les méthodes de pagination prises `First`en `FirstOrDefault`charge sont `SingleOrDefault`, `Skip`, `Single`, `Take`, et.  
+ Les opérations de pagination retournent un seul élément ou plusieurs éléments d’une séquence. Les méthodes de pagination prises en charge sont `First` ,,,, `FirstOrDefault` `Single` `SingleOrDefault` `Skip` et `Take` .  
   
  Un certain nombre de méthodes de pagination ne sont pas prises en charge, en raison soit de l’incapacité à mapper des fonctions à la source de données, soit à l’absence de classement implicite des jeux sur la source de données. Les méthodes qui retournent une valeur par défaut sont limitées aux types primitifs de modèle conceptuel et aux types référence avec des valeurs par défaut NULL. Les méthodes de pagination qui sont exécutées sur une séquence vide retourneront la valeur NULL.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Méthodes LINQ prises en charge et non prises en charge (LINQ to Entities)](supported-and-unsupported-linq-methods-linq-to-entities.md)
-- [Vue d’ensemble des opérateurs de requête standard](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb397896(v=vs.120))
+- [Vue d'ensemble des opérateurs de requête standard](/previous-versions/visualstudio/visual-studio-2013/bb397896(v=vs.120))

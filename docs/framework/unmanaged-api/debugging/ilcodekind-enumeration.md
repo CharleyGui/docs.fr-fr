@@ -12,12 +12,12 @@ api_type:
 ms.assetid: b91765e4-82db-46f9-a6dc-6b80610276af
 topic_type:
 - apiref
-ms.openlocfilehash: 0586b9e184a0958b978837601db002e035881cbc
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: b9d27c3e3cd42039aeefcb517ecc81eadeb5c183
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421031"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557422"
 ---
 # <a name="ilcodekind-enumeration"></a>ILCodeKind, énumération
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -35,7 +35,7 @@ typedef enum ILCodeKind {
   
 ## <a name="members"></a>Membres  
   
-|Nom de membre|Description|  
+|Nom du membre|Description|  
 |-----------------|-----------------|  
 |`ILCODE_ORIGINAL_IL`|Le débogueur n'a pas accès aux informations de l'instrumentation ReJIT.|  
 |`ILCODE_REJIT_IL`|Le débogueur a accès aux informations de l'instrumentation ReJIT.|  
@@ -43,7 +43,7 @@ typedef enum ILCodeKind {
 ## <a name="remarks"></a>Notes  
  Un membre de l' `ILCodeKind` énumération peut être passé aux méthodes [Enumeratelocalvariablesex,](icordebugilframe4-enumeratelocalvariablesex-method.md) et [getlocalvariableex,](icordebugilframe4-getlocalvariableex-method.md) pour déterminer si le débogueur peut accéder aux variables ajoutées dans l’instrumentation ReJIT du profileur, et à la méthode [getcodeex,](icordebugilframe4-getcodeex-method.md) pour déterminer si le débogueur peut accéder au langage intermédiaire instrumenté.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -56,4 +56,4 @@ typedef enum ILCodeKind {
 
 - [Énumérations de débogage](debugging-enumerations.md)
 - [ICorDebugILFrame4, interface](icordebugilframe4-interface.md)
-- [ReJIT : Guide pratique](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT : Guide pratique](/archive/blogs/davbr/rejit-a-how-to-guide)

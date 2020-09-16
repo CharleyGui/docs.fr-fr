@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4b5c886ad35afbbf0a68e03b3174ab9ea1f5524f
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 12ba3bd3c9e9e00b88cab0e568a1ce0f4f8bbb05
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614515"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606411"
 ---
 ### <a name="cspparametersparentwindowhandle-now-expects-hwnd-value"></a>CspParameters.ParentWindowHandle attend maintenant une valeur HWND
 
@@ -16,7 +16,7 @@ La valeur <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle>, 
 cspParameters.ParentWindowHandle = form.Handle;
 ```
 
-Dans les versions précédentes du .NET Framework, la valeur devait être un <xref:System.IntPtr?displayProperty=fullName> représentant un emplacement en mémoire où se trouvait la valeur [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types#HWND). La définition de la propriété sur form.Handle sur Windows 7 et les versions antérieures n’avait aucun effet, mais sur Windows 8 et les versions ultérieures, cela entraîne un &quot;<xref:System.Security.Cryptography.CryptographicException?displayProperty=fullName> : Le paramètre est incorrect.&quot;
+Dans les versions précédentes du .NET Framework, la valeur devait être un <xref:System.IntPtr?displayProperty=fullName> représentant un emplacement en mémoire où se trouvait la valeur [HWND](/windows/desktop/WinProg/windows-data-types#HWND). La définition de la propriété sur form.Handle sur Windows 7 et les versions antérieures n’avait aucun effet, mais sur Windows 8 et les versions ultérieures, cela entraîne un &quot;<xref:System.Security.Cryptography.CryptographicException?displayProperty=fullName> : Le paramètre est incorrect.&quot;
 
 #### <a name="suggestion"></a>Suggestion
 
@@ -39,7 +39,7 @@ Les utilisateurs qui avaient identifié que la bonne valeur à passer était l�
 
 À l’inverse, les utilisateurs qui souhaitent adopter ce nouveau comportement sur le runtime .NET Framework 4.7 quand l’application se charge sur des versions antérieures du .NET Framework peuvent définir le commutateur AppContext sur `false`.
 
-| Nom    | Valeur       |
+| Name    | Valeur       |
 |:--------|:------------|
 | Étendue   | Secondaire       |
 | Version | 4,7         |

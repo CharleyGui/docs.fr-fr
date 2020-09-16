@@ -9,12 +9,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 7f8d3695a36a43ca6bf796b141c07f6d2d088354
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 91e7ea8df5c32329f0eb8d12943ce5f816ff0e5a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245074"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557591"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Délégation et emprunt d'identité avec WCF
 L'*emprunt d'identité* est une technique courante utilisée par les services pour restreindre l'accès du client aux ressources d'un domaine de service. Les ressources de domaine de service peuvent être des ressources d'ordinateur, telles que des fichiers locaux (emprunt d'identité), ou une ressource sur un autre ordinateur, tel qu'un partage de fichiers (délégation). Pour obtenir un exemple d'application, consultez [Impersonating the Client](../samples/impersonating-the-client.md). Pour obtenir un exemple sur l’utilisation de l’emprunt d’identité, consultez [How to: Impersonate a Client on a Service](../how-to-impersonate-a-client-on-a-service.md).  
@@ -119,25 +119,25 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
 |Identification|n/a|n/a|Identification|  
 |Emprunt d'identité|Oui|n/a|Emprunt d'identité|  
 |Emprunt d'identité|Non|n/a|Identification|  
-|Delegation|Yes|Yes|Delegation|  
-|Delegation|Yes|No|Emprunt d'identité|  
-|Delegation|Non|n/a|Identification|  
+|La délégation|Oui|Oui|La délégation|  
+|La délégation|Oui|Non|Emprunt d'identité|  
+|La délégation|Non|n/a|Identification|  
   
 ## <a name="impersonation-level-obtained-from-user-name-credentials-and-cached-token-impersonation"></a>Niveau d'emprunt d'identité obtenu à partir des informations d'identification de nom d'utilisateur et emprunt d'identité avec jeton mis en cache  
  En passant le service à son nom d’utilisateur et son mot de passe, un client permet à WCF de se connecter en tant qu’utilisateur, ce qui équivaut à affecter à la propriété la valeur `AllowedImpersonationLevel` <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> . (Le `AllowedImpersonationLevel` est disponible sur les <xref:System.ServiceModel.Security.WindowsClientCredential> <xref:System.ServiceModel.Security.HttpDigestClientCredential> classes et.) Le tableau suivant indique le niveau d’emprunt d’identité obtenu lorsque le service reçoit les informations d’identification de nom d’utilisateur.  
   
 |`AllowedImpersonationLevel`|Le Service a `SeImpersonatePrivilege`|Le Service et le client sont capables de délégation|Jeton `ImpersonationLevel`mis en cache|  
 |---------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|n/a|Yes|Yes|Delegation|  
-|n/a|Yes|No|Emprunt d'identité|  
+|n/a|Oui|Oui|La délégation|  
+|n/a|Oui|Non|Emprunt d'identité|  
 |n/a|Non|n/a|Identification|  
   
 ## <a name="impersonation-level-obtained-from-s4u-based-impersonation"></a>Niveau d'emprunt d'identité obtenu à partir de l'emprunt d'identité basé sur S4U  
   
 |Le Service a `SeTcbPrivilege`|Le Service a `SeImpersonatePrivilege`|Le Service et le client sont capables de délégation|Jeton `ImpersonationLevel`mis en cache|  
 |----------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|Yes|Oui|n/a|Emprunt d'identité|  
-|Yes|Non|n/a|Identification|  
+|Oui|Oui|n/a|Emprunt d'identité|  
+|Oui|Non|n/a|Identification|  
 |Non|n/a|n/a|Identification|  
   
 ## <a name="mapping-a-client-certificate-to-a-windows-account"></a>Mappage d'un certificat client à un compte Windows  
@@ -170,8 +170,8 @@ ServiceHost sh = new ServiceHost(typeof(HelloService), httpUri);
 sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAccount = true;  
 ```  
   
-## <a name="delegation"></a>Delegation  
- Pour déléguer à un service principal, un service doit effectuer une authentification Kerberos multi-leg (SSPI sans NTLM) ou une authentification directe Kerberos au service principal à l'aide de l'identité Windows du client. Pour déléguer à un service principal, créez un <xref:System.ServiceModel.ChannelFactory%601> et un canal, puis communiquez par le biais du canal lors de l'emprunt d'identité du client. Avec cette forme de délégation, la distance entre l'emplacement du service principal et le service frontal dépend du niveau d'emprunt d'identité atteint par le service frontal. Lorsque le niveau d'emprunt d'identité est <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, les services frontaux et principaux doivent s'exécuter sur le même ordinateur. Lorsque le niveau d'emprunt d'identité est <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, les services frontaux et principaux peuvent être présents sur des ordinateurs séparés ou sur le même ordinateur. L'activation de l'emprunt d'identité au niveau délégation nécessite que la stratégie du domaine Windows soit configurée pour permettre la délégation. Pour plus d’informations sur la configuration d’Active Directory pour la prise en charge de la délégation, consultez [Enabling Delegated Authentication](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780217(v=ws.10))(Activation de l’authentification déléguée).  
+## <a name="delegation"></a>La délégation  
+ Pour déléguer à un service principal, un service doit effectuer une authentification Kerberos multi-leg (SSPI sans NTLM) ou une authentification directe Kerberos au service principal à l'aide de l'identité Windows du client. Pour déléguer à un service principal, créez un <xref:System.ServiceModel.ChannelFactory%601> et un canal, puis communiquez par le biais du canal lors de l'emprunt d'identité du client. Avec cette forme de délégation, la distance entre l'emplacement du service principal et le service frontal dépend du niveau d'emprunt d'identité atteint par le service frontal. Lorsque le niveau d'emprunt d'identité est <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, les services frontaux et principaux doivent s'exécuter sur le même ordinateur. Lorsque le niveau d'emprunt d'identité est <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, les services frontaux et principaux peuvent être présents sur des ordinateurs séparés ou sur le même ordinateur. L'activation de l'emprunt d'identité au niveau délégation nécessite que la stratégie du domaine Windows soit configurée pour permettre la délégation. Pour plus d’informations sur la configuration d’Active Directory pour la prise en charge de la délégation, consultez [Enabling Delegated Authentication](/previous-versions/windows/it-pro/windows-server-2003/cc780217(v=ws.10))(Activation de l’authentification déléguée).  
   
 > [!NOTE]
 > Lorsqu'un client s'authentifie auprès du service frontal à l'aide d'un nom d'utilisateur et d'un mot de passe qui correspondent à un compte Windows, le service frontal peut s'authentifier auprès du service principal en réutilisant le nom et le mot de passe du client. Il s'agit d'une forme très puissante de flux d'identité, car la transmission d'un nom d'utilisateur et d'un mot de passe au service principal permet à ce service d'effectuer l'emprunt d'identité, mais elle ne constitue pas une délégation en l'absence de l'utilisation de Kerberos. Les contrôles Active Directory sur la délégation ne s'appliquent pas à l'authentification par nom d'utilisateur et par mot de passe.  
@@ -181,8 +181,8 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 |Niveau d'emprunt d'identité|Le service peut effectuer une délégation interprocessus|Le service peut effectuer une délégation sur plusieurs ordinateurs|  
 |-------------------------|---------------------------------------------------|---------------------------------------------------|  
 |<xref:System.Security.Principal.TokenImpersonationLevel.Identification>|Non|Non|  
-|<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>|Oui|No|  
-|<xref:System.Security.Principal.TokenImpersonationLevel.Delegation>|Oui|Yes|  
+|<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>|Oui|Non|  
+|<xref:System.Security.Principal.TokenImpersonationLevel.Delegation>|Oui|Oui|  
   
  L'exemple de code suivant montre comment utiliser la délégation.  
   
@@ -190,7 +190,7 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
  [!code-vb[c_delegation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_delegation/vb/source.vb#1)]  
   
 ### <a name="how-to-configure-an-application-to-use-constrained-delegation"></a>Comment configurer une Application pour utiliser la délégation contrainte  
- Avant de pouvoir utiliser la délégation contrainte, l'expéditeur, le destinataire et le contrôleur de domaine doivent être configurés en conséquence. La procédure suivante répertorie les étapes qui permettent d'activer la délégation contrainte. Pour des informations sur les différences entre la délégation et la délégation contrainte, consultez la section [Windows Server 2003 Kerberos Extensions](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738207(v=ws.10)) (Kerberos dans Windows Server 2003) qui traite de la délégation contrainte.  
+ Avant de pouvoir utiliser la délégation contrainte, l'expéditeur, le destinataire et le contrôleur de domaine doivent être configurés en conséquence. La procédure suivante répertorie les étapes qui permettent d'activer la délégation contrainte. Pour des informations sur les différences entre la délégation et la délégation contrainte, consultez la section [Windows Server 2003 Kerberos Extensions](/previous-versions/windows/it-pro/windows-server-2003/cc738207(v=ws.10)) (Kerberos dans Windows Server 2003) qui traite de la délégation contrainte.  
   
 1. Dans le contrôleur de domaine, désactivez la case à cocher **Le compte est sensible et ne peut pas être délégué** pour le compte sous lequel s'exécute l'application cliente.  
   
@@ -200,7 +200,7 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
   
 4. Dans le contrôleur de domaine, configurez l'ordinateur intermédiaire pour utiliser la délégation contrainte en cliquant sur l'option **N'approuver cet ordinateur que pour la délégation aux services spécifiés** .  
   
- Pour obtenir des instructions plus détaillées sur la configuration de la délégation avec restriction, consultez [transition de protocole Kerberos et délégation avec restriction](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10)).
+ Pour obtenir des instructions plus détaillées sur la configuration de la délégation avec restriction, consultez [transition de protocole Kerberos et délégation avec restriction](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10)).
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -217,7 +217,7 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
 - <xref:System.ServiceModel.ChannelFactory%601>
 - <xref:System.Security.Principal.TokenImpersonationLevel.Identification>
-- [Utilisation d'emprunt d'identité avec sécurité du transport](using-impersonation-with-transport-security.md)
+- [Utilisation de l'emprunt d'identité avec la sécurité de transport](using-impersonation-with-transport-security.md)
 - [Emprunt de l'identité du client](../samples/impersonating-the-client.md)
-- [Guide pratique pour emprunter l’identité d’un client sur un service](../how-to-impersonate-a-client-on-a-service.md)
+- [Procédure : emprunter l’identité d’un client sur un service](../how-to-impersonate-a-client-on-a-service.md)
 - [Outil Service Model Metadata Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)

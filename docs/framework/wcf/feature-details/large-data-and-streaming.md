@@ -3,12 +3,12 @@ title: Données volumineuses et diffusion en continu
 description: En savoir plus sur les considérations relatives à la communication basée sur XML WCF, aux encodeurs et aux données de diffusion en continu, y compris le transfert de données binaires.
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 2eb57e2f57bebb2e765ea798b3dff27e0187e8c7
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 58ef2ea1fd4f9aa800a91edbaabeb80f989b38f4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246582"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555027"
 ---
 # <a name="large-data-and-streaming"></a>Données volumineuses et diffusion en continu
 
@@ -58,7 +58,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
   
  Pour les données qui ne présentent pas ces contraintes, il est en général préférable d'envoyer des séquences de messages au sein de la portée d'une session plutôt qu'un message volumineux. Pour plus d’informations, consultez la section « données de streaming » plus loin dans cette rubrique.  
   
- Lors de l’envoi de grandes quantités de données, vous devez définir le `maxAllowedContentLength` paramètre IIS (pour plus d’informations, consultez [Configuration des limites des demandes IIS](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/)) et le `maxReceivedMessageSize` paramètre de liaison (par exemple, [System. ServiceModel. BasicHttpBinding. MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) ou <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A> ). La `maxAllowedContentLength` valeur par défaut de la propriété est de 28,6 Mo et la `maxReceivedMessageSize` valeur par défaut de 64 Ko.  
+ Lors de l’envoi de grandes quantités de données, vous devez définir le `maxAllowedContentLength` paramètre IIS (pour plus d’informations, consultez [Configuration des limites des demandes IIS](/iis/configuration/system.webServer/security/requestFiltering/requestLimits/)) et le `maxReceivedMessageSize` paramètre de liaison (par exemple, [System. ServiceModel. BasicHttpBinding. MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) ou <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A> ). La `maxAllowedContentLength` valeur par défaut de la propriété est de 28,6 Mo et la `maxReceivedMessageSize` valeur par défaut de 64 Ko.  
   
 ## <a name="encodings"></a>Encodages  
  Un *encodage* définit un ensemble de règles sur la façon de présenter des messages sur le câble. Un *encodeur* implémente ce type d’encodage et est responsable, du côté de l’expéditeur, de la transformation d’un en mémoire <xref:System.ServiceModel.Channels.Message> en un flux d’octets ou une mémoire tampon d’octets qui peut être envoyé sur le réseau. Du côté destinataire, l'encodeur transforme une séquence d'octets en un message en mémoire.  
@@ -242,4 +242,4 @@ public class UploadStreamMessage
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : activer la diffusion en continu](how-to-enable-streaming.md)
+- [Procédure : activer le streaming](how-to-enable-streaming.md)

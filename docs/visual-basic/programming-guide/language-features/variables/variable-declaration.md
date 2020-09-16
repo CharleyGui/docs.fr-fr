@@ -17,12 +17,12 @@ helpviewer_keywords:
 - local variables [Visual Basic], declarations
 - scope [Visual Basic], variables
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
-ms.openlocfilehash: 587cb84faa09b686361c255c413ad852780b8971
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e3e2b6173a36490328801afd7fe711f1a003e2ae
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410294"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557474"
 ---
 # <a name="variable-declaration-in-visual-basic"></a>Déclaration de variable en Visual Basic
 Vous déclarez une variable pour spécifier son nom et ses caractéristiques. L’instruction de déclaration pour les variables est l' [instruction Dim](../../../language-reference/statements/dim-statement.md). Son emplacement et son contenu déterminent les caractéristiques de la variable.  
@@ -42,15 +42,15 @@ Vous déclarez une variable pour spécifier son nom et ses caractéristiques. L�
 ## <a name="declaring-data-type"></a>Déclaration du type de données  
  La clause [As](../../../language-reference/statements/as-clause.md) dans l’instruction de déclaration vous permet de définir le type de données ou le type d’objet de la variable que vous déclarez. Vous pouvez spécifier l’un des types suivants pour une variable :  
   
-- Type de données élémentaire, tel que `Boolean` , `Long` ou`Decimal`  
+- Type de données élémentaire, tel que `Boolean` , `Long` ou `Decimal`  
   
 - Type de données composite, tel qu’un tableau ou une structure  
   
 - Un type d’objet, ou classe, défini dans votre application ou dans une autre application  
   
-- Une classe .NET Framework, telle que <xref:System.Windows.Forms.Label> ou<xref:System.Windows.Forms.TextBox>  
+- Une classe .NET Framework, telle que <xref:System.Windows.Forms.Label> ou <xref:System.Windows.Forms.TextBox>  
   
-- Type d’interface, tel que <xref:System.IComparable> ou<xref:System.IDisposable>  
+- Type d’interface, tel que <xref:System.IComparable> ou <xref:System.IDisposable>  
   
  Vous pouvez déclarer plusieurs variables dans une instruction sans avoir à répéter le type de données. Dans les instructions suivantes, les variables `i` , `j` et `k` sont déclarées en tant que type `Integer` , `l` et sous la forme `m` , et `Long` `x` et `y` comme `Single` suit :  
   
@@ -61,7 +61,7 @@ Dim l, m As Long, x, y As Single
 ' In the preceding statement, l and m are Long, x and y are Single.  
 ```  
   
- Pour plus d’informations sur les types de données, consultez [types de données](../data-types/index.md). Pour plus d’informations sur les objets, consultez [objets et classes](../objects-and-classes/index.md) et [programmation à l’aide de composants](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
+ Pour plus d’informations sur les types de données, consultez [types de données](../data-types/index.md). Pour plus d’informations sur les objets, consultez [objets et classes](../objects-and-classes/index.md) et [programmation à l’aide de composants](/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
   
 ## <a name="local-type-inference"></a>Inférence de type local  
  L' *inférence de type* est utilisée pour déterminer les types de données des variables locales déclarées sans `As` clause. Le compilateur déduit le type de la variable à partir du type de l’expression d’initialisation. Cela vous permet de déclarer des variables sans déclarer explicitement un type. Dans l’exemple suivant, `num1` et `num2` sont fortement typés en tant qu’entiers.  
@@ -81,9 +81,9 @@ Dim l, m As Long, x, y As Single
 
 - [Comment : créer une variable](how-to-create-a-new-variable.md)
 - [Comment : placer des données dans et en dehors d'une variable](how-to-move-data-into-and-out-of-a-variable.md)
-- [Types de données](../../../language-reference/data-types/index.md)
+- [Data types](../../../language-reference/data-types/index.md)
 - [Protect](../../../language-reference/modifiers/protected.md)
-- [Contact](../../../language-reference/modifiers/friend.md)
+- [Friend](../../../language-reference/modifiers/friend.md)
 - [Statique](../../../language-reference/modifiers/static.md)
 - [Caractéristiques des éléments déclarés](../declared-elements/declared-element-characteristics.md)
 - [Inférence de type local](local-type-inference.md)

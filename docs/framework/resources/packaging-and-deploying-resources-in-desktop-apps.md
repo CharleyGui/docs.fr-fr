@@ -27,12 +27,12 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-ms.openlocfilehash: 7b06ca4444b75f0a7002323b32732dd4f855f692
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 056569f86afcbdf124f9e617e4ad07b09a194681
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166180"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553998"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Packager et déployer des ressources dans des applications .NET
 
@@ -51,7 +51,7 @@ Ce modèle présente plusieurs avantages :
 
 ## <a name="resource-naming-conventions"></a>Conventions de nommage des ressources
 
-Quand vous empaquetez les ressources de votre application, vous devez les nommer en utilisant les conventions d’affectation de noms pour les ressources que le Common Language Runtime attend. Le runtime identifie une ressource par son nom de culture. Chaque culture a un nom unique, qui est en général une combinaison d’un nom de culture à deux lettres en minuscules associé à une langue et, si nécessaire, un nom de sous-culture à deux lettres en majuscules associé à un pays ou une région. Le nom de la sous-culture suit le nom de la culture, séparés par un tiret (-). Les exemples incluent ja-JP pour le japonais tel qu’il est parlé au Japon, en-US pour l’anglais tel qu’il est parlé aux États-Unis, de-DE pour l’allemand tel qu’il est parlé en Allemagne ou de-AT pour l’allemand tel qu’il est parlé en Autriche. Consultez la colonne **Balise de langue** dans la [liste des noms de langue/région pris en charge par Windows](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Les noms de culture respectent la norme définie par [BCP 47](https://tools.ietf.org/html/bcp47).
+Quand vous empaquetez les ressources de votre application, vous devez les nommer en utilisant les conventions d’affectation de noms pour les ressources que le Common Language Runtime attend. Le runtime identifie une ressource par son nom de culture. Chaque culture a un nom unique, qui est en général une combinaison d’un nom de culture à deux lettres en minuscules associé à une langue et, si nécessaire, un nom de sous-culture à deux lettres en majuscules associé à un pays ou une région. Le nom de la sous-culture suit le nom de la culture, séparés par un tiret (-). Les exemples incluent ja-JP pour le japonais tel qu’il est parlé au Japon, en-US pour l’anglais tel qu’il est parlé aux États-Unis, de-DE pour l’allemand tel qu’il est parlé en Allemagne ou de-AT pour l’allemand tel qu’il est parlé en Autriche. Consultez la colonne **Balise de langue** dans la [liste des noms de langue/région pris en charge par Windows](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Les noms de culture respectent la norme définie par [BCP 47](https://tools.ietf.org/html/bcp47).
 
 > [!NOTE]
 > Il existe des exceptions pour les noms de culture à deux lettres, par exemple `zh-Hans` pour le chinois (simplifié).

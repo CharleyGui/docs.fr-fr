@@ -7,12 +7,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: e14bdc12598d0aa6cdd2789b09a04ab8ed134169
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 3b24ff99eee9027d507ef89ca855162f221f826a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141702"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555118"
 ---
 # <a name="specifying-an-assemblys-location"></a>Spécification de l'emplacement d'un assembly
 Il existe deux façons de spécifier l’emplacement d’un assembly :  
@@ -21,7 +21,7 @@ Il existe deux façons de spécifier l’emplacement d’un assembly :
   
 - À l’aide de l' [\<probing>](./file-schema/runtime/probing-element.md) élément.  
   
- Vous pouvez également utiliser l' [outil de Configuration .NET Framework (Mscorcfg. msc)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) pour spécifier des emplacements d’assembly ou spécifier des emplacements pour le Common Language Runtime pour détecter les assemblys.  
+ Vous pouvez également utiliser l' [outil de Configuration .NET Framework (Mscorcfg. msc)](/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) pour spécifier des emplacements d’assembly ou spécifier des emplacements pour le Common Language Runtime pour détecter les assemblys.  
   
 ## <a name="using-the-codebase-element"></a>Utilisation de l' \<codeBase> élément  
  Vous pouvez utiliser l' **\<codeBase>** élément uniquement dans la configuration de l’ordinateur ou dans les fichiers de stratégie de l’éditeur qui redirigent également la version de l’assembly. Lorsque le runtime détermine la version de l’assembly à utiliser, il applique le paramètre de base du code à partir du fichier qui détermine la version. Si aucune base de code n’est indiquée, le runtime détecte l’assembly de manière normale. Pour plus d’informations, consultez [Comment le runtime localise les assemblys](../deployment/how-the-runtime-locates-assemblies.md).  
