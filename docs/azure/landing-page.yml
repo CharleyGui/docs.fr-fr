@@ -10,18 +10,18 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.prod: azure-dotnet
-  ms.openlocfilehash: a7b9b909e500979750d57cc6047153123cd192e5
-  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+  ms.openlocfilehash: 8d1fb12e3edeb75db7e11316db1063c0bcd63a8e
+  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 07/09/2020
-  ms.locfileid: "86174932"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90539097"
 landingContent:
 - title: Prise en main de .NET sur Azure
   linkLists:
   - linkListType: overview
     links:
-    - text: Introduction à Azure et .NET
+    - text: Présentation d’Azure et de .NET
       url: intro.md
   - linkListType: get-started
     links:
@@ -75,7 +75,7 @@ landingContent:
       url: /azure/app-service/app-service-web-tutorial-connect-msi
     - text: API web avec CORS dans Azure App Service
       url: /azure/app-service/app-service-web-tutorial-rest-api
-- title: Créer des applications Cloud natives
+- title: Générer des applications cloud natives
   linkLists:
   - linkListType: quickstart
     links:
@@ -143,7 +143,7 @@ landingContent:
       url: /learn/modules/build-cosmos-db-app-with-vscode/
     - text: Stocker des données d’application avec Stockage Blob Azure
       url: /learn/modules/store-app-data-with-azure-blob-storage/
-    - text: Stocker et extraire des données relationnelles avec Entity Framework Core
+    - text: Conserver et récupérer des données relationnelles avec Entity Framework Core
       url: /learn/modules/persist-data-ef-core/
   - linkListType: tutorial
     links:
@@ -214,10 +214,10 @@ landingContent:
   - linkListType: architecture
     links:
     - text: 'Microservices .NET : Architecture pour les applications .NET conteneurisées'
-      url: /dotnet/architecture/microservices/
+      url: ../architecture/microservices/index.md
     - text: Architecturer des applications web modernes avec ASP.NET Core et Azure
-      url: /dotnet/architecture/modern-web-apps-azure/
+      url: ../architecture/modern-web-apps-azure/index.md
     - text: Cycle de vie des applications Docker conteneurisées avec la plateforme et les outils Microsoft
-      url: /dotnet/architecture/containerized-lifecycle/
+      url: ../architecture/containerized-lifecycle/index.md
     - text: Moderniser des applications .NET existantes avec le cloud Azure et des conteneurs Windows
       url: /dotnet/architecture/modernize-with-azure-containers/
