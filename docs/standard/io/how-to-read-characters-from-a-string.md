@@ -14,12 +14,12 @@ helpviewer_keywords:
 - reading data, strings
 - streams, reading characters from string
 ms.assetid: 27ea5e52-6db8-42d8-980a-50bcfc7fd270
-ms.openlocfilehash: 40ff144e0899f3560805a31fa76f391afaeccd67
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: fa03d13036e9e245b8ca3f8c3218ae80a2762a12
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594840"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553946"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>Comment : lire les caractères d’une chaîne
 Les exemples de code suivants montrent comment lire des caractères de façon synchrone et asynchrone à partir d’une chaîne.  
@@ -41,7 +41,7 @@ Les exemples de code suivants montrent comment lire des caractères de façon sy
 - <xref:System.IO.StringReader>  
 - <xref:System.IO.StringReader.Read%2A?displayProperty=nameWithType>  
 - [E/S sur fichier asynchrones](asynchronous-file-i-o.md)  
-- [Procédure : créer une liste de répertoires](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100))  
+- [Procédure : créer une liste de répertoires](/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100))  
 - [Comment : lire et écrire dans un fichier de données nouvellement créé](how-to-read-and-write-to-a-newly-created-data-file.md)  
 - [Procédure : ouvrir un fichier journal et y ajouter des éléments](how-to-open-and-append-to-a-log-file.md)  
 - [Comment : lire du texte à partir d’un fichier](how-to-read-text-from-a-file.md)  

@@ -2,12 +2,12 @@
 title: Migration des services Web WSE 3.0 vers WCF
 ms.date: 03/30/2017
 ms.assetid: 7bc5fff7-a2b2-4dbc-86cc-ecf73653dcdc
-ms.openlocfilehash: ecf27c227b3e39d0c449a1d2ff32dc5bd59c750b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c7feac0a44883e8019acfeaa288752fb051c667f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598786"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554089"
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>Migration des services Web WSE 3.0 vers WCF
 Les avantages de la migration des services Web WSE 3,0 vers Windows Communication Foundation (WCF) incluent des performances améliorées et la prise en charge de transports supplémentaires, de scénarios de sécurité supplémentaires et de spécifications WS-*. Un service Web qui est migré de WSE 3,0 à WCF peut bénéficier d’une amélioration des performances de 200% à 400%. Pour plus d’informations sur les transports pris en charge par WCF, consultez [choix d’un transport](choosing-a-transport.md). Pour obtenir la liste des scénarios pris en charge par WCF, consultez [scénarios de sécurité courants](common-security-scenarios.md). Pour obtenir la liste des spécifications prises en charge par WCF, consultez le [Guide d’interopérabilité des protocoles de services Web](web-services-protocols-interoperability-guide.md).  
@@ -20,7 +20,7 @@ Les avantages de la migration des services Web WSE 3,0 vers Windows Communicatio
  Bien qu’il existe de nombreux aspects similaires entre les modèles de programmation WCF et ASP.NET ou WSE 3,0, ils sont différents. Pour plus d’informations sur le modèle de programmation WCF, consultez [cycle de vie de programmation de base](../basic-programming-lifecycle.md).  
   
 > [!NOTE]
-> Pour migrer un service Web WSE vers WCF, vous pouvez utiliser l’outil [ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer un client. Ce client contient des interfaces et des classes qui peuvent être utilisées également comme point de départ pour un service WCF. Les interfaces générées ont l'attribut <xref:System.ServiceModel.OperationContractAttribute> appliqué aux membres du contrat avec la propriété <xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> définie à `*`. Lorsqu’un client WSE appelle un service Web avec ce paramètre, l’exception suivante est levée : **Web. services3. ResponseProcessingException : WSE910 : une erreur s’est produite lors du traitement d’un message de réponse, et vous pouvez trouver l’erreur dans l’exception interne**. À des fins d'atténuation, affectez à la propriété <xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> de l'attribut <xref:System.ServiceModel.OperationContractAttribute> une valeur non `null`, telle que `http://Microsoft.WCF.Documentation/ResponseToOCAMethod`.  
+> Pour migrer un service Web WSE vers WCF [, l’outil ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) peut être utilisé pour générer un client. Ce client contient des interfaces et des classes qui peuvent être utilisées également comme point de départ pour un service WCF. Les interfaces générées ont l'attribut <xref:System.ServiceModel.OperationContractAttribute> appliqué aux membres du contrat avec la propriété <xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> définie à `*`. Lorsqu’un client WSE appelle un service Web avec ce paramètre, l’exception suivante est levée : **Web. services3. ResponseProcessingException : WSE910 : une erreur s’est produite lors du traitement d’un message de réponse, et vous pouvez trouver l’erreur dans l’exception interne**. À des fins d'atténuation, affectez à la propriété <xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> de l'attribut <xref:System.ServiceModel.OperationContractAttribute> une valeur non `null`, telle que `http://Microsoft.WCF.Documentation/ResponseToOCAMethod`.  
   
 ## <a name="security"></a>Sécurité  
   
@@ -66,7 +66,7 @@ Les avantages de la migration des services Web WSE 3,0 vers Windows Communicatio
  Pour plus d’informations sur la création de liaisons personnalisées dans WCF, consultez [liaisons personnalisées](../extending/custom-bindings.md).  
   
 ### <a name="wse-30-web-services-that-are-secured-using-application-code"></a>Services Web WSE 3.0 sécurisés à l'aide du code d'application  
- Que WSE 3,0 ou WCF soit utilisé, les exigences de sécurité peuvent être spécifiées dans le code d’application plutôt que dans la configuration. Dans WSE 3.0, cette tâche est accomplie en créant une classe qui dérive de la classe `Policy`, puis en ajoutant les spécifications en appelant la méthode `Add`. Pour plus d’informations sur la spécification des exigences de sécurité dans le code, consultez [Comment : sécuriser un service Web sans utiliser de fichier de stratégie](https://docs.microsoft.com/previous-versions/dotnet/netframework-2.0/aa528763(v=msdn.10)). Dans WCF, pour spécifier des exigences de sécurité dans le code, créez une instance de la <xref:System.ServiceModel.Channels.BindingElementCollection> classe et ajoutez une instance d’un <xref:System.ServiceModel.Channels.SecurityBindingElement> au <xref:System.ServiceModel.Channels.BindingElementCollection> . Les exigences de l’assertion de sécurité sont définies à l’aide des méthodes d’assistance de mode d’authentification statiques de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>. Pour plus d’informations sur la spécification des exigences de sécurité dans le code à l’aide de WCF, consultez [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md) et [Comment : créer un SecurityBindingElement pour un mode d’authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
+ Que WSE 3,0 ou WCF soit utilisé, les exigences de sécurité peuvent être spécifiées dans le code d’application plutôt que dans la configuration. Dans WSE 3.0, cette tâche est accomplie en créant une classe qui dérive de la classe `Policy`, puis en ajoutant les spécifications en appelant la méthode `Add`. Pour plus d’informations sur la spécification des exigences de sécurité dans le code, consultez [Comment : sécuriser un service Web sans utiliser de fichier de stratégie](/previous-versions/dotnet/netframework-2.0/aa528763(v=msdn.10)). Dans WCF, pour spécifier des exigences de sécurité dans le code, créez une instance de la <xref:System.ServiceModel.Channels.BindingElementCollection> classe et ajoutez une instance d’un <xref:System.ServiceModel.Channels.SecurityBindingElement> au <xref:System.ServiceModel.Channels.BindingElementCollection> . Les exigences de l’assertion de sécurité sont définies à l’aide des méthodes d’assistance de mode d’authentification statiques de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>. Pour plus d’informations sur la spécification des exigences de sécurité dans le code à l’aide de WCF, consultez [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md) et [Comment : créer un SecurityBindingElement pour un mode d’authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
 ### <a name="wse-30-custom-policy-assertion"></a>Assertion de stratégie personnalisée WSE 3.0  
  Dans WSE 3.0, il existe deux types d'assertions de stratégie personnalisées : celles qui sécurisent un message SOAP et celles qui ne le font pas. Les assertions de stratégie qui sécurisent les messages SOAP dérivent de la classe WSE 3,0 et de l' `SecurityPolicyAssertion` équivalent conceptuel dans WCF est la <xref:System.ServiceModel.Channels.SecurityBindingElement> classe.  
@@ -78,7 +78,7 @@ Les avantages de la migration des services Web WSE 3,0 vers Windows Communicatio
  Pour convertir une assertion de stratégie personnalisée qui ne sécurise pas un message SOAP, consultez [filtrage](filtering.md) et l’exemple d' [intercepteur de message personnalisé](../samples/custom-message-interceptor.md).  
   
 ### <a name="wse-30-custom-security-token"></a>Jeton de sécurité personnalisé WSE 3.0  
- Le modèle de programmation WCF pour la création d’un jeton personnalisé est différent de WSE 3,0. Pour plus d’informations sur la création d’un jeton personnalisé dans WSE, consultez [création de jetons de sécurité personnalisés](https://docs.microsoft.com/previous-versions/dotnet/netframework-2.0/aa529304(v=msdn.10)). Pour plus d’informations sur la création d’un jeton personnalisé dans WCF, consultez [How to : Create a Custom Token](../extending/how-to-create-a-custom-token.md).  
+ Le modèle de programmation WCF pour la création d’un jeton personnalisé est différent de WSE 3,0. Pour plus d’informations sur la création d’un jeton personnalisé dans WSE, consultez [création de jetons de sécurité personnalisés](/previous-versions/dotnet/netframework-2.0/aa529304(v=msdn.10)). Pour plus d’informations sur la création d’un jeton personnalisé dans WCF, consultez [How to : Create a Custom Token](../extending/how-to-create-a-custom-token.md).  
   
 ### <a name="wse-30-custom-token-manager"></a>Gestionnaire de jetons personnalisés WSE 3.0  
  Le modèle de programmation pour la création d’un gestionnaire de jetons personnalisé est différent dans WCF par rapport à WSE 3,0. Pour plus d’informations sur la création d’un gestionnaire de jetons personnalisé et sur les autres composants requis pour un jeton de sécurité personnalisé, consultez [Comment : créer un jeton personnalisé](../extending/how-to-create-a-custom-token.md).  
@@ -111,7 +111,7 @@ Les avantages de la migration des services Web WSE 3,0 vers Windows Communicatio
   
 ### <a name="wse-30-applications-that-use-the-wse-messaging-api"></a>Applications WSE 3.0 qui utilisent l'API de messagerie WSE  
 
- Lorsque l'API de messagerie WSE est utilisée pour obtenir un accès direct au XML communiqué entre le client et le service Web, l'application peut être convertie de façon à utiliser le « Plain Old XML » (POX). Pour plus d’informations sur POX, consultez [interopérabilité avec les applications POX](interoperability-with-pox-applications.md). Pour plus d’informations sur l’API de messagerie WSE, consultez [envoi et réception de messages SOAP à l’aide de l’API de messagerie WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-2.0/aa529293(v=msdn.10)).  
+ Lorsque l'API de messagerie WSE est utilisée pour obtenir un accès direct au XML communiqué entre le client et le service Web, l'application peut être convertie de façon à utiliser le « Plain Old XML » (POX). Pour plus d’informations sur POX, consultez [interopérabilité avec les applications POX](interoperability-with-pox-applications.md). Pour plus d’informations sur l’API de messagerie WSE, consultez [envoi et réception de messages SOAP à l’aide de l’API de messagerie WSE](/previous-versions/dotnet/netframework-2.0/aa529293(v=msdn.10)).  
   
 ## <a name="transports"></a>Transports  
   
@@ -127,5 +127,5 @@ Les avantages de la migration des services Web WSE 3,0 vers Windows Communicatio
 
 - [Cycle de vie de la programmation de base](../basic-programming-lifecycle.md)
 - [Liaisons personnalisées](../extending/custom-bindings.md)
-- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Comment : créer un SecurityBindingElement pour un mode d'authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+- [Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Procédure : créer un SecurityBindingElement pour un mode d’authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

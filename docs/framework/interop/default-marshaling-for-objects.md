@@ -9,12 +9,12 @@ helpviewer_keywords:
 - objects, interop marshaling
 - interop marshaling, objects
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
-ms.openlocfilehash: 7b8f94f4dfd8e8b9e8e04df8de5f8266a8581a92
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3e07ceef62d97db4206f530aa0859b101fe41a11
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618450"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555092"
 ---
 # <a name="default-marshaling-for-objects"></a>Marshaling par défaut pour les objets
 
@@ -324,5 +324,5 @@ Le tableau suivant résume les règles de propagation pour les variants et les o
 
 - [comportement de marshaling par défaut](default-marshaling-behavior.md)
 - [types blittable et non blittable](blittable-and-non-blittable-types.md)
-- [Attributs directionnels](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
+- [Attributs directionnels](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [copie et épinglage](copying-and-pinning.md)

@@ -2,12 +2,12 @@
 title: OFTYPE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 6d259ca7-bbf0-40f8-a154-181d25c0d67e
-ms.openlocfilehash: f1dd5ba92c7b1eaf7117c9732a78e04e5d5a317a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 375fe9ce52ae290c175e42276b6b526766f6699c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319455"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547510"
 ---
 # <a name="oftype-entity-sql"></a>OFTYPE (Entity SQL)
 Retourne une collection d'objets à partir d'une expression de requête d'un type spécifique.  
@@ -53,14 +53,14 @@ OfType(executives, NamespaceName.Manager)
   
  Le tableau suivant montre le comportement de l'opérateur `OFTYPE` sur certains modèles. Toutes les exceptions sont levées du côté client avant que le fournisseur ne soit appelé :  
   
-|Motif|Comportement|  
+|Modèle|Comportement|  
 |-------------|--------------|  
 |OFTYPE(Collection(EntityType), EntityType)|Collection(EntityType)|  
 |OFTYPE(Collection(ComplexType), ComplexType)|Exception|  
 |OFTYPE(Collection(RowType), RowType)|Exception|  
   
-## <a name="example"></a>Exemple  
- La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] suivante utilise l'opérateur OFTYPE pour retourner une collection d'objets OnsiteCourse à partir d'une collection d'objets Course. Cette requête est basée sur le modèle [School](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
+## <a name="example"></a> Exemple  
+ La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] suivante utilise l'opérateur OFTYPE pour retourner une collection d'objets OnsiteCourse à partir d'une collection d'objets Course. Cette requête est basée sur le modèle [School](/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
   
  [!code-sql[DP EntityServices Concepts#OFTYPE](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#oftype)]  
   

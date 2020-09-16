@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec50083d-44f4-4093-9b23-5eacd601f96e
-ms.openlocfilehash: 83d6fc1294f6aa37389db9e517b02866ef000b50
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 040ecc1473a4674ab0bb26ad0081563f55a726ea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854222"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553868"
 ---
 # <a name="working-with-data-definition-language"></a>Utilisation du langage de définition de données
 À partir du .NET Framework version 4, le Entity Framework prend en charge le langage de définition de données (DDL). Cela vous permet de créer ou de supprimer une instance de base de données selon la chaîne de connexion et les métadonnées du modèle de stockage (SSDL).  
@@ -40,11 +40,11 @@ ms.locfileid: "70854222"
   
 2. Ajoutez un modèle existant à votre application.  
   
-    1. Ajoutez un modèle vide nommé `SchoolModel`. Pour créer un modèle vide, reportez-vous à la [procédure : Créer un nouveau fichier](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) . edmx.  
+    1. Ajoutez un modèle vide nommé `SchoolModel` . Pour créer un modèle vide, consultez la rubrique [How to : Create a New. edmx file](/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) .  
   
      Le fichier SchoolModel.edmx est ajouté à votre projet.  
   
-    1. Copiez le contenu conceptuel, de stockage et de mappage pour le modèle School à partir de la rubrique [modèle School](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)) .  
+    1. Copiez le contenu conceptuel, de stockage et de mappage pour le modèle School à partir de la rubrique [modèle School](/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)) .  
   
     2. Ouvrez le fichier SchoolModel.edmx et collez le contenu dans les balises `edmx:Runtime`.  
   

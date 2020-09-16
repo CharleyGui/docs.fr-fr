@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: 25905d7ac3ca4bb66a22ad1df421b400eaa6b08f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c2abca183f1241cff314a4367c7bd9f1b9f239ea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413269"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554591"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Procédure pas à pas : écriture de requêtes dans Visual Basic
 
@@ -32,7 +32,7 @@ Cette procédure pas à pas montre comment vous pouvez utiliser des fonctionnali
 
 4. Dans la liste des types de projets, cliquez sur **application console**. Dans la zone **nom** , tapez un nom pour le projet, puis cliquez sur **OK**.
 
-    Un projet est créé. Par défaut, il contient une référence à System. Core. dll. En outre, la liste des **espaces de noms importés** sur la [page références, le concepteur de projets (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic) comprend l' <xref:System.Linq?displayProperty=nameWithType> espace de noms.
+    Un projet est créé. Par défaut, il contient une référence à System.Core.dll. En outre, la liste des **espaces de noms importés** sur la [page références, le concepteur de projets (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic) comprend l' <xref:System.Linq?displayProperty=nameWithType> espace de noms.
 
 5. Sur la [page compiler, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic), vérifiez que **Option Infer** a la valeur **on**.
 
@@ -145,7 +145,7 @@ Une fois que vous êtes familiarisé avec les concepts de base de l’utilisatio
 
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 
-- [LINQ to XML](linq-to-xml.md)
+- [LINQ to XML](../../../../standard/linq/linq-xml-overview.md)
 
 - [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
 

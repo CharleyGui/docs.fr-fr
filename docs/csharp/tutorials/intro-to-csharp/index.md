@@ -3,12 +3,12 @@ title: Présentation de C# - Tutoriels interactifs
 description: Découvrez C# dans votre navigateur et prenez en main votre propre environnement de développement
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 965fa9dba559b967d3d1ce8d661cd08235c59f70
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 9a93e34f7b54d12b3f69589d7bb2181fc240403c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202431"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554565"
 ---
 # <a name="introduction-to-c"></a>Présentation de C\#
 
@@ -22,15 +22,15 @@ Les premières leçons expliquent les concepts de C# à l’aide de petits extra
 Vous pouvez essayer ces didacticiels dans différents environnements. Les concepts que vous allez apprendre sont les mêmes. La différence réside dans l’expérience que vous préférez :
 
 - [Dans votre navigateur, sur la plateforme docs](hello-world.yml): cette expérience incorpore une fenêtre de code C# exécutable dans les pages docs. Vous écrivez et exécutez du code C# dans le navigateur.
-- [Dans l’expérience Microsoft Learn](https://docs.microsoft.com/learn/paths/csharp-first-steps/). Ce parcours d’apprentissage contient plusieurs modules qui enseignent les principes fondamentaux de C#.
+- [Dans l’expérience Microsoft Learn](/learn/paths/csharp-first-steps/). Ce parcours d’apprentissage contient plusieurs modules qui enseignent les principes fondamentaux de C#.
 - [Dans Jupyter sur Binder](https://mybinder.org/v2/gh/dotnet/try-samples/master?filepath=hello-csharp%2Fhello-world.ipynb). Vous pouvez expérimenter le code C# dans un bloc-notes Jupyter sur Binder.
 - [Sur votre ordinateur local](numbers-in-csharp-local.md). Une fois que vous avez exploré en ligne, vous pouvez [Télécharger](https://dotnet.microsoft.com/download) le kit SDK .net Core et générer des programmes sur votre ordinateur.
 
 Tous les tutoriels de présentation proposés après la leçon Hello World sont disponibles en ligne dans le navigateur ou [dans votre propre environnement de développement local](local-environment.md). À la fin de chaque tutoriel, vous décidez si vous souhaitez effectuer la leçon suivante en ligne ou sur votre propre ordinateur. Vous trouverez également des liens pour vous aider à configurer votre environnement et passer au tutoriel suivant sur votre ordinateur.
 
-## <a name="hello-world"></a>[Hello World](hello-world.yml)
+## <a name="hello-world"></a>[Salut tout le monde](hello-world.yml)
 
-Dans le tutoriel [Hello world](hello-world.yml), vous allez créer le programme le plus basique en C#. Vous explorerez le type `string` et l’utilisation de texte. Vous pouvez également utiliser le chemin d’accès sur [Microsoft Learn](https://docs.microsoft.com/learn/paths/csharp-first-steps/) ou [Jupyter sur Binder](https://mybinder.org/v2/gh/dotnet/try-samples/master?filepath=hello-csharp%2Fhello-world.ipynb).
+Dans le tutoriel [Hello world](hello-world.yml), vous allez créer le programme le plus basique en C#. Vous explorerez le type `string` et l’utilisation de texte. Vous pouvez également utiliser le chemin d’accès sur [Microsoft Learn](/learn/paths/csharp-first-steps/) ou [Jupyter sur Binder](https://mybinder.org/v2/gh/dotnet/try-samples/master?filepath=hello-csharp%2Fhello-world.ipynb).
 
 ## <a name="numbers-in-c"></a>[Nombres en C#](numbers-in-csharp.yml)
 

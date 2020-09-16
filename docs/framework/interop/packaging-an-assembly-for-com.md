@@ -17,12 +17,12 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - Reqasm.exe
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
-ms.openlocfilehash: 4963892419fd1caec4483123f820d62967a87dd6
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5fde7f7f00aadf4d941d4ffe522453970b67e9e2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620831"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554128"
 ---
 # <a name="packaging-a-net-framework-assembly-for-com"></a>Empaquetage d’un assembly .NET Framework pour COM
 
@@ -60,7 +60,7 @@ Les développeurs COM peuvent tirer parti des informations suivantes sur les typ
 
   Quel que soit le mécanisme que vous choisissez, seuls les types publics définis dans l’assembly que vous fournissez sont inclus dans la bibliothèque de types générée.
 
-Pour obtenir des instructions, consultez [Guide pratique pour incorporer des bibliothèques de types comme des ressources Win32 dans les applications](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100)).
+Pour obtenir des instructions, consultez [Guide pratique pour incorporer des bibliothèques de types comme des ressources Win32 dans les applications](/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100)).
 
 <a name="cpconpackagingassemblyforcomanchor1"></a>
 
@@ -98,4 +98,4 @@ L’[Outil .NET Services Installation (Regsvcs.exe)](../tools/regsvcs-exe-net-se
 - [Considérations sur la sécurité des assemblys](../../standard/assembly/security-considerations.md)
 - [Tlbexp.exe (exportateur de bibliothèques de types)](../tools/tlbexp-exe-type-library-exporter.md)
 - [Inscription d'assemblys dans COM](registering-assemblies-with-com.md)
-- [Guide pratique pour incorporer des bibliothèques de types comme des ressources Win32 dans les applications](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))
+- [Guide pratique pour incorporer des bibliothèques de types comme des ressources Win32 dans les applications](/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

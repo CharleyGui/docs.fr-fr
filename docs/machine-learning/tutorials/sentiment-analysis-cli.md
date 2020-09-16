@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 06/03/2020
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: fcd325d518b276ccb042f3702db978e9189715b8
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 89fc5169eee539aa857a9be03c82bf084fe4b60d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326021"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554434"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -52,7 +52,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
 2. Copiez le fichier `yelp_labelled.txt` dans un dossier que vous avez créé précédemment (par exemple, `/cli-test`).
 
-3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Par exemple :
+3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Exemple :
 
     ```console
     cd /cli-test
@@ -199,7 +199,7 @@ Pour le deuxième objet, l’objet `PredictionEngine`, l’optimisation n’est 
 
 Toutefois, les choses sont heureusement beaucoup plus simples pour vous que ce qui est expliqué dans ce billet de blog. Dans un souci de vous proposer une approche plus simple, nous avons créé un **« package d’intégration .NET Core »** très utile. Vous pouvez facilement vous en servir dans vos applications et services ASP.NET Core en l’inscrivant auprès des services DI, puis en l’utilisant directement à partir de votre code. Consultez le tutoriel et l’exemple ci-dessous pour savoir comment faire :
 
-- [Didacticiel : exécution de modèles ML.NET sur des applications Web et des API Web ASP.NET Core évolutives](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Didacticiel : exécution de modèles ML.NET sur des applications Web et des API Web ASP.NET Core évolutives](../how-to-guides/serve-model-web-api-ml-net.md)
 - [Exemple : modèle ML.NET évolutif sur ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
 ## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Explorer le code C# généré ayant servi à entraîner le modèle de « meilleure qualité »
@@ -226,7 +226,7 @@ Dans ce didacticiel, vous avez appris à :
 ## <a name="see-also"></a>Voir aussi
 
 - [Automatiser l’entraînement du modèle avec la CLI ML.NET](../automate-training-with-cli.md)
-- [Didacticiel : exécution de modèles ML.NET sur des applications Web et des API Web ASP.NET Core évolutives](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Didacticiel : exécution de modèles ML.NET sur des applications Web et des API Web ASP.NET Core évolutives](../how-to-guides/serve-model-web-api-ml-net.md)
 - [Exemple : modèle ML.NET évolutif sur ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 - [Informations de référence sur la commande auto-train de la CLI ML.NET](../reference/ml-net-cli-reference.md)
 - [Télémétrie dans la CLI ML.NET](../resources/ml-net-cli-telemetry.md)

@@ -21,12 +21,12 @@ helpviewer_keywords:
 - configuration settings [.NET Framework], applications
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
-ms.openlocfilehash: 35ed53fc480e218df595794f80af2458f3ecec38
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ab6f12be01899f5b7e54a7ec2d9675d502d88bc3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73039157"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555131"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma des fichiers de configuration pour le .NET Framework
 
@@ -37,7 +37,7 @@ Pour plus d’informations sur les types, le format et l’emplacement des fichi
 > [!IMPORTANT]
 > Les étiquettes et attributs XML des fichiers de configuration respectent la casse.
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 [**\<configuration>** Appartient](configuration-element.md)\
 Élément de niveau supérieur pour tous les fichiers de configuration.
@@ -92,14 +92,14 @@ Tous les éléments du schéma de configuration de Windows Identity Foundation (
 
 ## <a name="related-sections"></a>Sections connexes
 
-[Schéma des paramètres de communication à distance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100))\
+[Schéma des paramètres de communication à distance](/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100))\
 Décrit les éléments qui configurent les applications client-serveur qui implémentent la communication à distance.
 
-[Schéma des paramètres ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))\
+[Schéma des paramètres ASP.NET](/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))\
 Décrit les éléments qui contrôlent le comportement d'applications web ASP.NET.
 
-[Schéma des paramètres des services Web](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))\
+[Schéma des paramètres des services Web](/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))\
 Décrit les éléments qui contrôlent le comportement des services web ASP.NET et de leurs clients.
 
-[Configuration des applications .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\
+[Configuration des applications .NET Framework](/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\
 Décrit comment configurer la sécurité, les liaisons d’assembly et la communication à distance dans le .NET Framework.

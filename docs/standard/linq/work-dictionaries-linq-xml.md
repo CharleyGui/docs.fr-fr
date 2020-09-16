@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
-ms.openlocfilehash: ea61a79549488765526f45852dae7a4df7cacb64
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 9f6304dde828b3269f1cf369c3a6f14368676a48
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553215"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554485"
 ---
 # <a name="how-to-work-with-dictionaries-using-linq-to-xml"></a>Comment utiliser des dictionnaires à l’aide de LINQ to XML
 
@@ -111,4 +111,4 @@ Child4:Value4
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Projections et transformations (LINQ to XML) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Opérations de projection (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/projection-operations.md)

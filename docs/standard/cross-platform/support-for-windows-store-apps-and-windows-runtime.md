@@ -9,18 +9,18 @@ helpviewer_keywords:
 - .NET Framework, and Windows Store apps
 - .NET Framework, and Windows Runtime
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
-ms.openlocfilehash: 7ca5a1259f970f2db5400837eb7d20998dd824cb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2d1b35181f508a616ab264c859119da7512e5f23
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288860"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547569"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime
 
 Le .NET Framework 4,5 prend en charge un certain nombre de scénarios de développement logiciel avec le Windows Runtime. Ces scénarios se répartissent en trois catégories :
 
-- Développement d’applications du Windows 8. x Store avec des contrôles XAML, comme décrit dans feuille [de route pour les applications du Windows Store en C# ou Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10)), présentation des procédures [(XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10))et [.net pour les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
+- Développement d’applications du Windows 8. x Store avec des contrôles XAML, comme décrit dans feuille [de route pour les applications du Windows Store en C# ou Visual Basic](/previous-versions/windows/apps/br229583(v=win.10)), présentation des procédures [(XAML)](/previous-versions/windows/apps/br229566(v=win.10))et [.net pour les applications du Windows Store](/previous-versions/windows/apps/br230302(v=vs.140)).
 
 - Développement de bibliothèques de classes à utiliser dans les applications du Windows 8. x Store que vous créez avec le .NET Framework.
 
@@ -32,7 +32,7 @@ Cette rubrique décrit la prise en charge fournie par le .NET Framework pour les
 
 Le .NET Framework prend en charge les trois scénarios de développement répertoriés précédemment en fournissant .NET pour les applications du Windows 8. x Store et en prenant en charge le Windows Runtime lui-même.
 
-- Les [espaces de noms .NET Framework et Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)#net-framework-and-windows-runtime-namespaces) fournissent une vue simplifiée des bibliothèques de classes .NET Framework et incluent uniquement les types et les membres que vous pouvez utiliser pour créer des applications du Windows 8. x Store et des composants de Windows Runtime.
+- Les [espaces de noms .NET Framework et Windows Runtime](/previous-versions/windows/apps/br230302(v=vs.140)#net-framework-and-windows-runtime-namespaces) fournissent une vue simplifiée des bibliothèques de classes .NET Framework et incluent uniquement les types et les membres que vous pouvez utiliser pour créer des applications du Windows 8. x Store et des composants de Windows Runtime.
 
   - Quand vous utilisez Visual Studio (Visual Studio 2012 ou version ultérieure) pour développer une application Windows 8. x Store ou un composant Windows Runtime, un ensemble d’assemblys de référence garantit que seuls les types et membres pertinents sont visibles.
 
@@ -40,7 +40,7 @@ Le .NET Framework prend en charge les trois scénarios de développement répert
 
   - Les fonctionnalités qui encapsulent simplement l’API du système d’exploitation sont également supprimées, car le Windows Runtime est facile à appeler à partir du code managé.
 
-  Pour en savoir plus sur le .NET pour les applications du Windows 8. x Store, consultez la [vue d’ensemble de .net pour les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)). Pour en savoir plus sur le processus de sélection d’API, consultez l’entrée [.net for Metro style Apps](https://devblogs.microsoft.com/dotnet/net-for-metro-style-apps/) dans le blog .net.
+  Pour en savoir plus sur le .NET pour les applications du Windows 8. x Store, consultez la [vue d’ensemble de .net pour les applications du Windows Store](/previous-versions/windows/apps/br230302(v=vs.140)). Pour en savoir plus sur le processus de sélection d’API, consultez l’entrée [.net for Metro style Apps](https://devblogs.microsoft.com/dotnet/net-for-metro-style-apps/) dans le blog .net.
 
 - Le [Windows Runtime](/uwp/api/) fournit les éléments d’interface utilisateur pour la génération d’applications du Windows 8. x Store et donne accès aux fonctionnalités du système d’exploitation. À l’instar de la .NET Framework, le Windows Runtime a des métadonnées qui permettent aux compilateurs C# et Visual Basic d’utiliser le Windows Runtime la manière dont ils utilisent les bibliothèques de classes .NET Framework. Le .NET Framework simplifie l’utilisation du Windows Runtime en masquant certaines différences :
 
@@ -110,7 +110,7 @@ D’autres types de Windows Runtime couramment utilisés qui apparaissent dans d
 
 ### <a name="other-differences"></a>Autres différences
 
-Dans certains cas, le fait que les types de .NET Framework apparaissent dans votre code au lieu des types de Windows Runtime nécessite une action de votre part. Par exemple, la <xref:Windows.Foundation.Uri?displayProperty=nameWithType> classe apparaît comme <xref:System.Uri?displayProperty=nameWithType> dans .NET Framework code. <xref:System.Uri?displayProperty=nameWithType>autorise un URI relatif, mais <xref:Windows.Foundation.Uri?displayProperty=nameWithType> requiert un URI absolu. Par conséquent, lorsque vous transmettez un URI à une méthode Windows Runtime, vous devez vous assurer qu’il est absolu. Voir [Transmission d’un URI au Windows Runtime](passing-a-uri-to-the-windows-runtime.md).
+Dans certains cas, le fait que les types de .NET Framework apparaissent dans votre code au lieu des types de Windows Runtime nécessite une action de votre part. Par exemple, la <xref:Windows.Foundation.Uri?displayProperty=nameWithType> classe apparaît comme <xref:System.Uri?displayProperty=nameWithType> dans .NET Framework code. <xref:System.Uri?displayProperty=nameWithType> autorise un URI relatif, mais <xref:Windows.Foundation.Uri?displayProperty=nameWithType> requiert un URI absolu. Par conséquent, lorsque vous transmettez un URI à une méthode Windows Runtime, vous devez vous assurer qu’il est absolu. Voir [Transmission d’un URI au Windows Runtime](passing-a-uri-to-the-windows-runtime.md).
 
 <a name="WindowsRuntimeComponents"></a>
 
@@ -155,11 +155,11 @@ Vous pouvez empaqueter du code managé à partir de vos applications de bureau e
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
-|[Vue d’ensemble de .NET pour les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))|Décrit les types de .NET Framework et les membres que vous pouvez utiliser pour créer des applications Windows 8. x Store et des RuntimeComponents Windows. (Dans le Centre de développement Windows.)|
-|[Feuille de route pour les applications du Windows Store en C# ou Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))|Fournit des ressources clés pour vous aider à commencer à développer des applications Windows 8. x Store à l’aide de C# ou de Visual Basic, y compris de nombreux sujets de démarrage rapide, des instructions et des pratiques recommandées. (Dans le Centre de développement Windows.)|
-|[Procédures (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10))|Fournit des ressources clés pour vous aider à commencer à développer des applications Windows 8. x Store à l’aide de C# ou de Visual Basic, y compris de nombreux sujets de démarrage rapide, des instructions et des pratiques recommandées. (Dans le Centre de développement Windows.)|
+|[Vue d’ensemble de .NET pour les applications du Windows Store](/previous-versions/windows/apps/br230302(v=vs.140))|Décrit les types de .NET Framework et les membres que vous pouvez utiliser pour créer des applications Windows 8. x Store et des RuntimeComponents Windows. (Dans le Centre de développement Windows.)|
+|[Feuille de route pour les applications du Windows Store en C# ou Visual Basic](/previous-versions/windows/apps/br229583(v=win.10))|Fournit des ressources clés pour vous aider à commencer à développer des applications Windows 8. x Store à l’aide de C# ou de Visual Basic, y compris de nombreux sujets de démarrage rapide, des instructions et des pratiques recommandées. (Dans le Centre de développement Windows.)|
+|[Procédures (XAML)](/previous-versions/windows/apps/br229566(v=win.10))|Fournit des ressources clés pour vous aider à commencer à développer des applications Windows 8. x Store à l’aide de C# ou de Visual Basic, y compris de nombreux sujets de démarrage rapide, des instructions et des pratiques recommandées. (Dans le Centre de développement Windows.)|
 |[Création de composants Windows Runtime en C# et Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)|Décrit comment créer un composant Windows Runtime à l’aide du .NET Framework, explique comment l’utiliser dans le cadre d’une application Windows 8. x Store générée pour Windows à l’aide de JavaScript, et décrit comment déboguer la combinaison avec Visual Studio. (Dans le Centre de développement Windows.)|
 |[Informations de référence sur Windows Runtime](/uwp/api/)|La documentation de référence pour le Windows Runtime. (Dans le Centre de développement Windows.)|
 |[Passage d’un URI au Windows Runtime](passing-a-uri-to-the-windows-runtime.md)|Décrit un problème qui peut se produire quand vous transmettez un URI à partir du code managé à la Windows Runtime, et comment l’éviter.|

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-ms.openlocfilehash: 22a2f027462d67d5a933972a7420c5f0e38353e5
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 4184b2b34c4503eaf4e9513a85e6c018f6de7366
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309831"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553816"
 ---
 # <a name="clr-etw-events"></a>Événements ETW du CLR
 Les rubriques de cette section décrivent le suivi d’événements pour les événements Windows (ETW). Chaque événement est associé à un mot clé et à un niveau, qui sont décrits dans la rubrique [Niveaux et mots clés ETW du CLR](clr-etw-keywords-and-levels.md). Le CLR a deux fournisseurs pour les événements :  
@@ -24,13 +24,13 @@ Les rubriques de cette section décrivent le suivi d’événements pour les év
  Pour plus d’informations sur les fournisseurs, consultez [Fournisseurs ETW du CLR](clr-etw-providers.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Événements d'information du runtime](runtime-information-etw-events.md)  
+ [Événements d’information du runtime](runtime-information-etw-events.md)  
  Capture des informations sur l’exécution, notamment la référence, le numéro de version, le mode d’activation du runtime, les paramètres de ligne de commande avec lesquels il a été démarré, le GUID (le cas échéant) et d’autres informations pertinentes.  
   
- [Événement d'exception Thrown_V1](exception-thrown-v1-etw-event.md)  
+ [Événement d’exception Thrown_V1](exception-thrown-v1-etw-event.md)  
  Capture des informations sur les exceptions levées.  
   
- [Événements de conflit](contention-etw-events.md)  
+ [Événements de contention](contention-etw-events.md)  
  Capture des informations sur les conflits de verrous du moniteur ou de verrous natifs utilisés par le runtime.  
   
  [Événements de pool de threads](thread-pool-etw-events.md)  
@@ -48,7 +48,7 @@ Les rubriques de cette section décrivent le suivi d’événements pour les év
  [Événements de traçage JIT](jit-tracing-etw-events.md)  
  Capture des informations sur l’incorporation (inlining) juste à temps (JIT) et les appels tail JIT.  
   
- [Événements d'interopérabilité](interop-etw-events.md)  
+ [Événements d’interopérabilité](interop-etw-events.md)  
  Capture des informations sur la mise en cache et la génération du stub MSIL (Microsoft Intermediate Language).  
   
  [Événements ARM](application-domain-resource-monitoring-arm-etw-events.md)  
@@ -62,7 +62,7 @@ Les rubriques de cette section décrivent le suivi d’événements pour les év
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Améliorer le débogage et le réglage des performances à l'aide du suivi ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
+- [Améliorer le débogage et le réglage des performances à l'aide du suivi ETW](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
 - [Contrôle de l'enregistrement .NET Framework](controlling-logging.md)
 - [Fournisseurs ETW du CLR](clr-etw-providers.md)
 - [Niveaux et mots clés ETW du CLR](clr-etw-keywords-and-levels.md)

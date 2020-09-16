@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: e6dc32274cc3b0d7ec9d66a837a422c87fb2468b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: d4f4d5d34698fbb9a7986f4628b282d4425da3f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416212"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554695"
 ---
 # <a name="consume-a-dataset-from-an-xml-web-service"></a>Consommer un DataSet à partir d’un service Web XML
 
@@ -271,5 +271,5 @@ L'objet <xref:System.Data.DataSet> a été conçu avec une architecture déconne
 - [Remplissage d'un DataSet à partir d'un DataAdapter](../populating-a-dataset-from-a-dataadapter.md)
 - [Mise à jour des sources de données avec les DataAdapter](../updating-data-sources-with-dataadapters.md)
 - [Paramètres DataAdapter](../dataadapter-parameters.md)
-- [Outil Web Services Description Language Tool (Wsdl.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7h3ystb6(v=vs.100))
+- [Outil Web Services Description Language Tool (Wsdl.exe)](/previous-versions/dotnet/netframework-4.0/7h3ystb6(v=vs.100))
 - [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

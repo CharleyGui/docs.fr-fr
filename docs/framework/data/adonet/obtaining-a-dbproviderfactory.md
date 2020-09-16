@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: b790c87cc3ec293c18bf730567f92b490c7c6594
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0c7c89a9104ac72bf03f2900e7ca474b709be40c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286713"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554460"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Obtention d'un DbProviderFactory
 Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> implique de passer des informations à propos d'un fournisseur de données à la classe <xref:System.Data.Common.DbProviderFactories>. En fonction de ces informations, la méthode <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> crée une fabrique de fournisseurs fortement typée. Par exemple, pour créer un objet <xref:System.Data.SqlClient.SqlClientFactory>, vous pouvez passer à `GetFactory` une chaîne avec le nom du fournisseur spécifié comme « System.Data.SqlClient ». L'autre surcharge de `GetFactory` prend un objet <xref:System.Data.DataRow>. Une fois que vous avez créé la fabrique de fournisseurs, vous pouvez ensuite utiliser ses méthodes pour créer des objets supplémentaires. Parmi les méthodes d'un `SqlClientFactory`, citons <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A> et <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  
@@ -20,7 +20,7 @@ Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> 
 > Les objets <xref:System.Data.OracleClient.OracleClientFactory>, <xref:System.Data.Odbc.OdbcFactory> .NET Framework et les classes <xref:System.Data.OleDb.OleDbFactory> fournissent des fonctionnalités similaires.  
   
 ## <a name="registering-dbproviderfactories"></a>Inscription de DbProviderFactories  
- Chaque .NET Framework fournisseur de données qui prend en charge une classe basée sur des fabriques inscrit des informations de configuration dans la section **DbProviderFactories** du fichier **machine. config** sur l’ordinateur local. Le fragment de fichier de configuration suivant montre la syntaxe et le format de <xref:System.Data.SqlClient>.  
+ Chaque .NET Framework fournisseur de données qui prend en charge une classe basée sur des fabriques inscrit des informations de configuration dans la section **DbProviderFactories** du fichier **machine.config** sur l’ordinateur local. Le fragment de fichier de configuration suivant montre la syntaxe et le format de <xref:System.Data.SqlClient>.  
   
 ```xml  
 <system.data>  
@@ -56,7 +56,7 @@ Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> 
  [!code-vb[DataWorks DbProviderFactories#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories/VB/source.vb#1)]  
   
 ## <a name="using-application-configuration-files-to-store-factory-information"></a>Utilisation de fichiers de configuration d'application pour stocker des informations sur les fabriques  
- Le modèle de conception utilisé pour travailler avec les fabriques implique le stockage des informations de fournisseur et de chaîne de connexion dans un fichier de configuration d’application, tel que **app. config** pour une application Windows et **Web. config** pour une application ASP.net.  
+ Le modèle de conception utilisé pour travailler avec les fabriques implique le stockage des informations de fournisseur et de chaîne de connexion dans un fichier de configuration d’application, par exemple **app.config** pour une application Windows, et **web.config** pour une application ASP.net.  
   
  Le fragment de fichier de configuration suivant montre comment enregistrer deux chaînes de connexion nommées : « NorthwindSQL » pour une connexion dans la base de données Northwind dans SQL Server, et « NorthwindAccess » pour une connexion dans la base de données Northwind dans Access/Jet. Le nom **invariant** est utilisé pour l’attribut **providerName** .  
   
@@ -100,5 +100,5 @@ Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> 
 
 - [DbProviderFactories](dbproviderfactories.md)
 - [Chaînes de connexion](connection-strings.md)
-- [Utilisation des classes de configuration](https://docs.microsoft.com/previous-versions/aspnet/ms228063(v=vs.100))
+- [Utilisation des classes de configuration](/previous-versions/aspnet/ms228063(v=vs.100))
 - [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

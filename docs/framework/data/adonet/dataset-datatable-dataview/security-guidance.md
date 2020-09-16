@@ -3,12 +3,12 @@ title: Aide sur la sécurité des jeux de données et des DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: 4fe8a062c762cc70d33243e3443aa9bf55635f98
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 34fb95e35e169ca0b72735a16539ecfdec037f87
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89137615"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554539"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Aide sur la sécurité des jeux de données et des DataTable
 
@@ -18,9 +18,9 @@ Cet article s’applique à :
 * .NET Core et versions ultérieures
 * .NET 5,0 et versions ultérieures
 
-Les types [DataSet](/dotnet/api/system.data.dataset) et [DataTable](/dotnet/api/system.data.datatable) sont des composants .net hérités qui permettent de représenter les jeux de données comme des objets managés. Ces composants ont été introduits dans .NET 1,0 dans le cadre de l' [infrastructure ADO.net](/dotnet/framework/data/adonet/dataset-datatable-dataview/)d’origine. Son objectif était de fournir une vue managée sur un jeu de données relationnelles, en faisant abstraction de la source de données sous-jacente XML, SQL ou une autre technologie.
+Les types [DataSet](/dotnet/api/system.data.dataset) et [DataTable](/dotnet/api/system.data.datatable) sont des composants .net hérités qui permettent de représenter les jeux de données comme des objets managés. Ces composants ont été introduits dans .NET 1,0 dans le cadre de l' [infrastructure ADO.net](./index.md)d’origine. Son objectif était de fournir une vue managée sur un jeu de données relationnelles, en faisant abstraction de la source de données sous-jacente XML, SQL ou une autre technologie.
 
-Pour plus d’informations sur ADO.NET, y compris des paradigmes d’affichage de données plus modernes, consultez [la documentation de ADO.net](/dotnet/framework/data/adonet/).
+Pour plus d’informations sur ADO.NET, y compris des paradigmes d’affichage de données plus modernes, consultez [la documentation de ADO.net](../index.md).
 
 ## <a name="default-restrictions-when-deserializing-a-dataset-or-datatable-from-xml"></a>Restrictions par défaut lors de la désérialisation d’un DataSet ou d’un DataTable à partir de XML
 
@@ -49,7 +49,7 @@ Lors du chargement de données XML dans une `DataSet` instance ou existante `Dat
 > [!NOTE]
 > Une fois que vous avez ajouté des colonnes à un `DataTable` , `ReadXml` ne lit pas le schéma à partir du XML, et si le schéma ne correspond pas, il ne lit pas non plus les enregistrements. vous devrez donc ajouter toutes les colonnes vous-même pour utiliser cette méthode.
 
-```cs
+```csharp
 XmlReader xmlReader = GetXmlReader();
 
 // Assume the XML blob contains data for type MyCustomClass.
@@ -105,7 +105,7 @@ L’exemple suivant illustre l’extension de la liste des types autorisés en a
 
 Pour récupérer le nom qualifié d’assembly d’un type, utilisez la propriété [type. AssemblyQualifiedName](/dotnet/api/system.type.assemblyqualifiedname) , comme illustré dans le code suivant.
 
-```cs
+```csharp
 string assemblyQualifiedName = typeof(Fabrikam.CustomType).AssemblyQualifiedName;
 ```
 
@@ -136,7 +136,7 @@ Si votre application cible .NET Framework 2,0 ou 3,5, vous pouvez toujours utili
 
 La liste des types autorisés peut également être étendue par programme en utilisant [AppDomain. SetData](/dotnet/api/system.appdomain.setdata) avec la clé connue _System. Data. DataSetDefaultAllowedTypes_, comme illustré dans le code suivant.
 
-```cs
+```csharp
 Type[] extraAllowedTypes = new Type[]
 {
     typeof(Fabrikam.CustomType),
@@ -260,11 +260,11 @@ Dans .NET Core, .NET 5 et ASP.NET Core, ce paramètre est contrôlé par _runtim
 }
 ```
 
-Pour plus d’informations, consultez [« paramètres de configuration du Runtime .net Core »](/dotnet/core/run-time-config/).
+Pour plus d’informations, consultez [« paramètres de configuration du Runtime .net Core »](../../../../core/run-time-config/index.md).
 
 `AllowArbitraryDataSetTypeInstantiation` vous pouvez également définir par programme par le biais de [AppContext. SetSwitch](/dotnet/api/system.appcontext.setswitch) au lieu d’utiliser un fichier de configuration, comme indiqué dans le code suivant :
 
-```cs
+```csharp
 // Warning: setting the following switch can introduce a security problem.
 AppContext.SetSwitch("Switch.System.Data.AllowArbitraryDataSetTypeInstantiation", true);
 ```
@@ -278,7 +278,7 @@ Si `AppContext` n’est pas disponible, les contrôles de limite de type peuvent
 * Un administrateur doit configurer le registre.
 * L’utilisation du Registre est une modification à l’ensemble de l’ordinateur et affecte _toutes les_ applications qui s’exécutent sur l’ordinateur.
 
-| Type  |  Valeur |
+| Type  |  Value |
 |---|---|
 | **Clé de Registre** | `HKLM\SOFTWARE\Microsoft\.NETFramework\AppContext` |
 | **Nom de la valeur** | `Switch.System.Data.AllowArbitraryDataSetTypeInstantiation` |
@@ -308,13 +308,13 @@ Ce document aborde les considérations de sécurité pour les scénarios précé
 
 Une `DataSet` instance peut être remplie à partir d’un à `DataAdapter` l’aide de [la `DataAdapter.Fill` méthode](/dotnet/api/system.data.common.dataadapter.fill), comme indiqué dans l’exemple suivant.
 
-```cs
-// Assumes that connection is a valid SqlConnection object.  
+```csharp
+// Assumes that connection is a valid SqlConnection object.
 string queryString =
-  "SELECT CustomerID, CompanyName FROM dbo.Customers";  
-SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);  
-  
-DataSet customers = new DataSet();  
+  "SELECT CustomerID, CompanyName FROM dbo.Customers";
+SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);
+
+DataSet customers = new DataSet();
 adapter.Fill(customers, "Customers");
 ```
 
@@ -355,7 +355,7 @@ La seule responsabilité du consommateur est de déterminer s’il faut utiliser
 
 Il est possible d’accepter une `DataSet` instance ou `DataTable` dans un service Web ASP.net (SOAP), comme illustré dans le code suivant :
 
-```cs
+```csharp
 using System.Data;
 using System.Web.Services;
 
@@ -372,7 +372,7 @@ public class MyService : WebService
 
 Une variante de cette valeur n’accepte pas `DataSet` ou `DataTable` directement en tant que paramètre, mais plutôt de l’accepter dans le cadre du graphique d’objets sérialisés SOAP global, comme illustré dans le code suivant :
 
-```cs
+```csharp
 using System.Data;
 using System.Web.Services;
 
@@ -396,7 +396,7 @@ public class MyClass
 
 Ou, à l’aide de WCF au lieu de services Web ASP.NET :
 
-```cs
+```csharp
 using System.Data;
 using System.ServiceModel;
 
@@ -423,7 +423,7 @@ Dans tous ces cas, le modèle de menace et les garanties de sécurité sont les 
 
 Les développeurs peuvent utiliser `XmlSerializer` pour désérialiser les `DataSet` `DataTable` instances et, comme illustré dans le code suivant :
 
-```cs
+```csharp
 using System.Data;
 using System.IO;
 using System.Xml.Serialization;
@@ -452,7 +452,7 @@ Dans ce cas, le modèle de menace et les garanties de sécurité sont les mêmes
 
 Le [JSON.net](https://www.newtonsoft.com/json) de la bibliothèque Newtonsoft tiers populaire peut être utilisé pour désérialiser `DataSet` les `DataTable` instances et, comme le montre le code suivant :
 
-```cs
+```csharp
 using System.Data;
 using Newtonsoft.Json;
 
@@ -497,27 +497,27 @@ Envisagez de remplacer le modèle objet pour utiliser [Entity Framework](/ef). E
 * Apporte [un vaste écosystème](/ef/core/providers/) de fournisseurs de bases de données pour faciliter le projet de requêtes de base de données via vos modèles objet Entity Framework.
 * Offre des protections intégrées lors de la désérialisation de données provenant de sources non approuvées.
 
-Pour les applications qui utilisent des `.aspx` points de terminaison SOAP, pensez à modifier ces points de terminaison pour utiliser [WCF](/dotnet/framework/wcf/). WCF est un substitut plus complet pour les `.asmx` services Web. Les points de terminaison WCF [peuvent être exposés via SOAP](../../../wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) à des fins de compatibilité avec les appelants existants.
+Pour les applications qui utilisent des `.aspx` points de terminaison SOAP, pensez à modifier ces points de terminaison pour utiliser [WCF](../../../wcf/index.md). WCF est un substitut plus complet pour les `.asmx` services Web. Les points de terminaison WCF [peuvent être exposés via SOAP](../../../wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) à des fins de compatibilité avec les appelants existants.
 
 ## <a name="code-analyzers"></a>Analyseurs de code
 
 Les règles de sécurité de l’analyseur de code, qui s’exécutent lors de la compilation de votre code source, peuvent aider à identifier les vulnérabilités liées à ce problème de sécurité en C# et Visual Basic code. Microsoft. CodeAnalysis. FxCopAnalyzers est un package NuGet d’analyseurs de code qui est distribué sur [NuGet.org](https://www.nuget.org/).
 
-Pour obtenir une vue d’ensemble des analyseurs de code, consultez [vue d’ensemble des analyseurs de code source](https://docs.microsoft.com/visualstudio/code-quality/roslyn-analyzers-overview).
+Pour obtenir une vue d’ensemble des analyseurs de code, consultez [vue d’ensemble des analyseurs de code source](/visualstudio/code-quality/roslyn-analyzers-overview).
 
 Activez les règles Microsoft. CodeAnalysis. FxCopAnalyzers suivantes :
 
-- [Ca2350](https://docs.microsoft.com/visualstudio/code-quality/ca2350): n’utilisez pas DataTable. ReadXml () avec des données non fiables
-- [Ca2351](https://docs.microsoft.com/visualstudio/code-quality/ca2351): n’utilisez pas DataSet. ReadXml () avec des données non fiables
-- [CA2352](https://docs.microsoft.com/visualstudio/code-quality/ca2352): un jeu de données ou un DataTable non sécurisé dans un type sérialisable peut être vulnérable aux attaques par exécution de code à distance
-- [CA2353](https://docs.microsoft.com/visualstudio/code-quality/ca2353): jeu de données ou DataTable non sécurisés dans le type sérialisable
-- [CA2354](https://docs.microsoft.com/visualstudio/code-quality/ca2354): un jeu de données ou un DataTable non sécurisé dans un graphique d’objets désérialisé peut être vulnérable aux attaques d’exécution de code à distance
-- [CA2355](https://docs.microsoft.com/visualstudio/code-quality/ca2355): type DataSet ou DataTable non sécurisé trouvé dans le graphique d’objets désérialisable
-- [CA2356](https://docs.microsoft.com/visualstudio/code-quality/ca2356): DataSet ou type DataTable non sécurisé dans le graphique d’objets désérialisable Web
-- [CA2361](https://docs.microsoft.com/visualstudio/code-quality/ca2361): Vérifiez que la classe générée automatiquement contenant DataSet. ReadXml () n’est pas utilisée avec des données non fiables
-- [CA2362](https://docs.microsoft.com/visualstudio/code-quality/ca2362): un jeu de données ou un DataTable non sécurisé dans un type sérialisable généré automatiquement peut être vulnérable aux attaques d’exécution de code à distance
+- [Ca2350](/visualstudio/code-quality/ca2350): n’utilisez pas DataTable. ReadXml () avec des données non fiables
+- [Ca2351](/visualstudio/code-quality/ca2351): n’utilisez pas DataSet. ReadXml () avec des données non fiables
+- [CA2352](/visualstudio/code-quality/ca2352): un jeu de données ou un DataTable non sécurisé dans un type sérialisable peut être vulnérable aux attaques par exécution de code à distance
+- [CA2353](/visualstudio/code-quality/ca2353): jeu de données ou DataTable non sécurisés dans le type sérialisable
+- [CA2354](/visualstudio/code-quality/ca2354): un jeu de données ou un DataTable non sécurisé dans un graphique d’objets désérialisé peut être vulnérable aux attaques d’exécution de code à distance
+- [CA2355](/visualstudio/code-quality/ca2355): type DataSet ou DataTable non sécurisé trouvé dans le graphique d’objets désérialisable
+- [CA2356](/visualstudio/code-quality/ca2356): DataSet ou type DataTable non sécurisé dans le graphique d’objets désérialisable Web
+- [CA2361](/visualstudio/code-quality/ca2361): Vérifiez que la classe générée automatiquement contenant DataSet. ReadXml () n’est pas utilisée avec des données non fiables
+- [CA2362](/visualstudio/code-quality/ca2362): un jeu de données ou un DataTable non sécurisé dans un type sérialisable généré automatiquement peut être vulnérable aux attaques d’exécution de code à distance
 
-Pour plus d’informations sur la configuration des règles, consultez [utiliser des analyseurs de code](https://docs.microsoft.com/visualstudio/code-quality/use-roslyn-analyzers).
+Pour plus d’informations sur la configuration des règles, consultez [utiliser des analyseurs de code](/visualstudio/code-quality/use-roslyn-analyzers).
 
 Les nouvelles règles de sécurité sont disponibles dans les packages NuGet suivants :
 

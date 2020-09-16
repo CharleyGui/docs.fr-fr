@@ -3,30 +3,30 @@ title: Bien démarrer avec le stockage Blob Azure en F#
 description: Stockez des données non structurées dans le Cloud avec le stockage d’objets BLOB Azure.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 79f6a559ac603b0544916764126a988d3f3f43d7
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 0dda2e04f0052823e9ea35051855d677cd19ea92
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77092627"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548473"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Prise en main du stockage d’objets BLOB Azure à l’aide de F\#
 
 Le stockage d’objets blob Azure est un service qui stocke des données non structurées dans le cloud en tant qu’objets/blobs. Ce service peut stocker tout type de données texte ou binaires, par exemple, un document, un fichier multimédia ou un programme d’installation d’application. Le stockage d’objets blob est également appelé Stockage Blob.
 
-Cet article explique comment effectuer des tâches courantes à l’aide du stockage d’objets BLOB. Les exemples sont écrits à F# l’aide de la bibliothèque cliente de stockage Azure pour .net. Les tâches traitées incluent le chargement, la liste, le téléchargement et la suppression d’objets BLOB.
+Cet article explique comment effectuer des tâches courantes à l’aide du stockage d’objets BLOB. Les exemples sont écrits à l’aide de F # à l’aide de la bibliothèque cliente Azure Storage pour .NET. Les tâches traitées incluent le chargement, la liste, le téléchargement et la suppression d’objets BLOB.
 
 Pour obtenir une vue d’ensemble conceptuelle du stockage d’objets BLOB, consultez [le guide .net pour le stockage d’objets BLOB](/azure/storage/blobs/storage-quickstart-blobs-dotnet).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser ce guide, vous devez d’abord [créer un compte de stockage Azure](/azure/storage/common/storage-account-create). Vous avez également besoin de votre clé d’accès de stockage pour ce compte.
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Créer un F# script et démarrer F# interactive
+## <a name="create-an-f-script-and-start-f-interactive"></a>Créer un script F # et démarrer F# Interactive
 
-Les exemples de cet article peuvent être utilisés dans une F# application ou un F# script. Pour créer un F# script, créez un fichier avec l’extension `.fsx`, par exemple `blobs.fsx`, dans votre F# environnement de développement.
+Les exemples de cet article peuvent être utilisés dans une application F # ou un script F #. Pour créer un script F #, créez un fichier avec l' `.fsx` extension, par exemple `blobs.fsx` , dans votre environnement de développement f #.
 
-Ensuite, utilisez un [Gestionnaire de package](package-management.md) comme [Paket](https://fsprojects.github.io/Paket/) ou [NuGet](https://www.nuget.org/) pour installer les packages `WindowsAzure.Storage` et `Microsoft.WindowsAzure.ConfigurationManager`, ainsi que les `WindowsAzure.Storage.dll` de référence et `Microsoft.WindowsAzure.Configuration.dll` dans votre script à l’aide d’une directive `#r`.
+Ensuite, utilisez un [Gestionnaire de package](package-management.md) comme [Paket](https://fsprojects.github.io/Paket/) ou [NuGet](https://www.nuget.org/) pour installer les `WindowsAzure.Storage` `Microsoft.WindowsAzure.ConfigurationManager` packages et et référence et `WindowsAzure.Storage.dll` `Microsoft.WindowsAzure.Configuration.dll` dans votre script à l’aide d’une `#r` directive.
 
 ### <a name="add-namespace-declarations"></a>Ajout de déclarations d'espaces de noms
 
@@ -34,7 +34,7 @@ Ajoutez les instructions `open` suivantes au début du fichier `blobs.fsx` :
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L1-L5)]
 
-### <a name="get-your-connection-string"></a>Obtenir votre chaîne de connexion
+### <a name="get-your-connection-string"></a>Obtention de votre chaîne de connexion
 
 Vous avez besoin d’une chaîne de connexion de stockage Azure pour ce didacticiel. Pour plus d’informations sur les chaînes de connexion, consultez [configurer des chaînes de connexion de stockage](/azure/storage/storage-configure-connection-string).
 
@@ -48,7 +48,7 @@ Pour les applications réelles, la meilleure façon de gérer votre chaîne de c
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L13-L15)]
 
-L’utilisation d’Azure Configuration Manager est facultative. Vous pouvez également utiliser une API telle que le type de `ConfigurationManager` du .NET Framework.
+L’utilisation d’Azure Configuration Manager est facultative. Vous pouvez également utiliser une API telle que le type de .NET Framework `ConfigurationManager` .
 
 ### <a name="parse-the-connection-string"></a>Analyse de la chaîne de connexion
 
@@ -56,7 +56,7 @@ Pour analyser la chaîne de connexion, utilisez :
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L21-L22)]
 
-Cela retourne un `CloudStorageAccount`.
+Cela retourne un `CloudStorageAccount` .
 
 ### <a name="create-some-local-dummy-data"></a>Créer des données fictives locales
 
@@ -66,7 +66,7 @@ Avant de commencer, créez des données locales factices dans le répertoire de 
 
 ### <a name="create-the-blob-service-client"></a>Créer le client du service Blob
 
-Le type de `CloudBlobClient` vous permet de récupérer des conteneurs et des objets BLOB stockés dans le stockage d’objets BLOB. Voici un moyen de créer le client du service :
+Le `CloudBlobClient` type vous permet de récupérer des conteneurs et des objets BLOB stockés dans le stockage d’objets BLOB. Voici un moyen de créer le client du service :
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L36-L36)]
 
@@ -88,30 +88,30 @@ Tous les utilisateurs d’Internet peuvent afficher des objets blob d’un conte
 
 Le service de stockage d’objets blob Azure prend en charge les objets blob de blocs et de page. Dans la plupart des cas, un objet blob de blocs est le type recommandé à utiliser.
 
-Pour télécharger un fichier vers un objet blob de blocs, obtenez une référence de conteneur et utilisez-la pour obtenir une référence d’objet blob de blocs. Une fois que vous avez une référence d’objet BLOB, vous pouvez charger n’importe quel flux de données en appelant la méthode `UploadFromFile`. Cette opération crée l’objet BLOB s’il n’existe pas déjà, ou le remplace s’il existe.
+Pour télécharger un fichier vers un objet blob de blocs, obtenez une référence de conteneur et utilisez-la pour obtenir une référence d’objet blob de blocs. Une fois que vous avez une référence d’objet BLOB, vous pouvez charger n’importe quel flux de données en appelant la `UploadFromFile` méthode. Cette opération crée l’objet BLOB s’il n’existe pas déjà, ou le remplace s’il existe.
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L55-L59)]
 
 ## <a name="list-the-blobs-in-a-container"></a>Créer la liste des objets blob d’un conteneur
 
-Pour créer une liste d’objets blob dans un conteneur, commencez par obtenir une référence pointant vers un conteneur. Vous pouvez ensuite utiliser la méthode `ListBlobs` du conteneur pour récupérer les objets BLOB et/ou les répertoires qu’il contient. Pour accéder à l’ensemble complet de propriétés et de méthodes pour une `IListBlobItem`retournée, vous devez effectuer un cast de celui-ci en objet `CloudBlockBlob`, `CloudPageBlob`ou `CloudBlobDirectory`. Si vous ne connaissez pas le type, vous pouvez lancer une vérification de type pour déterminer la cible de l’appel. Le code suivant illustre la récupération et la génération de l’URI de chaque élément du conteneur `mydata` :
+Pour créer une liste d’objets blob dans un conteneur, commencez par obtenir une référence pointant vers un conteneur. Vous pouvez ensuite utiliser la méthode du conteneur `ListBlobs` pour récupérer les objets BLOB et/ou les répertoires qu’il contient. Pour accéder à l’ensemble complet de propriétés et de méthodes pour un retourné `IListBlobItem` , vous devez effectuer un cast de celui-ci en un `CloudBlockBlob` `CloudPageBlob` objet, ou `CloudBlobDirectory` . Si vous ne connaissez pas le type, vous pouvez lancer une vérification de type pour déterminer la cible de l’appel. Le code suivant illustre la récupération et la génération de l’URI de chaque élément du conteneur `mydata` :
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L67-L80)]
 
-Vous pouvez également nommer des objets BLOB avec des informations de chemin d’accès dans leurs noms. Vous obtenez alors une structure de répertoires virtuels que vous pouvez organiser et parcourir de la même manière qu’un système de fichiers traditionnel. Notez que la structure de répertoires est uniquement virtuelle : les seules ressources disponibles dans le stockage d’objets blob sont des conteneurs et des objets blob. Toutefois, la bibliothèque cliente de stockage offre un objet `CloudBlobDirectory` pour faire référence à un répertoire virtuel et simplifier le processus d’utilisation des objets BLOB organisés de cette façon.
+Vous pouvez également nommer des objets BLOB avec des informations de chemin d’accès dans leurs noms. Vous obtenez alors une structure de répertoires virtuels que vous pouvez organiser et parcourir de la même manière qu’un système de fichiers traditionnel. Notez que la structure de répertoires est uniquement virtuelle : les seules ressources disponibles dans le stockage d’objets blob sont des conteneurs et des objets blob. Toutefois, la bibliothèque cliente de stockage offre un `CloudBlobDirectory` objet pour faire référence à un répertoire virtuel et simplifier le processus d’utilisation des objets BLOB organisés de cette façon.
 
 Par exemple, prenez l’ensemble d’objets blob de blocs suivant, situé dans un conteneur nommé `photos`:
 
-*PHOTO1. jpg*\
-*2015/architecture/Description. txt*\
-*2015/architecture/Photo3. jpg*\
-*2015/architecture/Photo4. jpg*\
-*2016/architecture/Photo5. jpg*\
-*2016/architecture/Photo6. jpg*\
-*2016/architecture/Description. txt*\
-\ *2016/Photo7. jpg*
+*photo1.jpg*\
+*2015/architecture/description.txt*\
+*2015/architecture/photo3.jpg*\
+*2015/architecture/photo4.jpg*\
+*2016/architecture/photo5.jpg*\
+*2016/architecture/photo6.jpg*\
+*2016/architecture/description.txt*\
+*2016/photo7.jpg*\
 
-Lorsque vous appelez `ListBlobs` sur un conteneur (comme dans l’exemple ci-dessus), une liste hiérarchique est retournée. S’il contient à la fois des objets `CloudBlobDirectory` et `CloudBlockBlob`, représentant respectivement les répertoires et les objets BLOB du conteneur, le résultat obtenu ressemble à ceci :
+Lorsque vous appelez `ListBlobs` sur un conteneur (comme dans l’exemple ci-dessus), une liste hiérarchique est retournée. S’il contient à la fois des `CloudBlobDirectory` `CloudBlockBlob` objets et, représentant respectivement les répertoires et les objets BLOB du conteneur, le résultat obtenu ressemble à ceci :
 
 ```console
 Directory: https://<accountname>.blob.core.windows.net/photos/2015/
@@ -119,7 +119,7 @@ Directory: https://<accountname>.blob.core.windows.net/photos/2016/
 Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/photo1.jpg
 ```
 
-Si vous le souhaitez, vous pouvez définir le paramètre `UseFlatBlobListing` de la méthode `ListBlobs` sur `true`. Dans ce cas, tous les objets BLOB du conteneur sont retournés en tant qu’objet `CloudBlockBlob`. L’appel à `ListBlobs` pour retourner une liste plate ressemble à ceci :
+Si vous le souhaitez, vous pouvez définir le `UseFlatBlobListing` paramètre de la `ListBlobs` méthode sur `true` . Dans ce cas, tous les objets BLOB du conteneur sont retournés en tant qu' `CloudBlockBlob` objet. L’appel à `ListBlobs` pour retourner une liste plate ressemble à ceci :
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L82-L89)]
 
@@ -138,17 +138,17 @@ Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/
 
 ## <a name="download-blobs"></a>Télécharger des objets blob
 
-Pour télécharger des objets BLOB, commencez par récupérer une référence d’objet BLOB, puis appelez la méthode `DownloadToStream`. L’exemple suivant utilise la méthode `DownloadToStream` pour transférer le contenu de l’objet BLOB vers un objet de flux que vous pouvez ensuite conserver dans un fichier local.
+Pour télécharger des objets BLOB, commencez par récupérer une référence d’objet BLOB, puis appelez la `DownloadToStream` méthode. L’exemple suivant utilise la `DownloadToStream` méthode pour transférer le contenu de l’objet BLOB vers un objet de flux que vous pouvez ensuite conserver dans un fichier local.
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L95-L101)]
 
-Vous pouvez également utiliser la méthode `DownloadToStream` pour télécharger le contenu d’un objet blob sous la forme d’une chaîne de texte.
+Vous pouvez également utiliser la `DownloadToStream` méthode pour télécharger le contenu d’un objet blob sous la forme d’une chaîne de texte.
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L103-L106)]
 
 ## <a name="delete-blobs"></a>Suppression d’objets blob
 
-Pour supprimer un objet BLOB, commencez par obtenir une référence d’objet BLOB, puis appelez la méthode `Delete` dessus.
+Pour supprimer un objet BLOB, commencez par obtenir une référence d’objet BLOB, puis appelez la `Delete` méthode sur celui-ci.
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L112-L116)]
 
@@ -156,9 +156,9 @@ Pour supprimer un objet BLOB, commencez par obtenir une référence d’objet BL
 
 Si vous répertoriez un grand nombre d’objets blob ou que vous souhaitez contrôler le nombre de résultats renvoyés lors d’une opération de création de liste, vous pouvez répertorier les objets blob dans des pages de résultats. Cet exemple montre comment renvoyer les résultats dans des pages de manière asynchrone afin que l’exécution ne soit pas bloquée lorsqu’un ensemble volumineux de résultats est attendu.
 
-Cet exemple montre une liste d’objets BLOB plats, mais vous pouvez également effectuer une liste hiérarchique en définissant le paramètre `useFlatBlobListing` de la méthode `ListBlobsSegmentedAsync` sur `false`.
+Cet exemple montre une liste d’objets BLOB plats, mais vous pouvez également effectuer une liste hiérarchique en affectant au `useFlatBlobListing` paramètre de la méthode la valeur `ListBlobsSegmentedAsync` `false` .
 
-L’exemple définit une méthode asynchrone à l’aide d’un bloc `async`. Le mot clé ``let!`` interrompt l’exécution de l’exemple de méthode jusqu’à ce que la tâche de listage se termine.
+L’exemple définit une méthode asynchrone à l’aide d’un `async` bloc. Le ``let!`` mot clé interrompt l’exécution de l’exemple de méthode jusqu’à ce que la tâche de liste se termine.
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L122-L160)]
 
@@ -180,7 +180,7 @@ L’exemple suivant crée un nouvel objet blob d’ajout et y ajoute des donnée
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L174-L203)]
 
-Pour plus d’informations sur les différences entre les trois types d’objets blob, consultez la page [Présentation des objets blob de blocs, des objets blob d’ajout et des objets blob de pages](https://msdn.microsoft.com/library/azure/ee691964.aspx) .
+Pour plus d’informations sur les différences entre les trois types d’objets blob, consultez la page [Présentation des objets blob de blocs, des objets blob d’ajout et des objets blob de pages](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) .
 
 ## <a name="concurrent-access"></a>Accès simultané
 
@@ -226,24 +226,24 @@ Maintenant que vous connaissez les bases du stockage d’objets blob, consultez 
 
 ### <a name="tools"></a>Outils
 
-- [ F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/)\
-Fournisseur F# de type qui peut être utilisé pour explorer des ressources de stockage Azure d’objets BLOB, de table et de file d’attente et pour appliquer facilement des opérations CRUD sur ceux-ci.
+- [AzureStorageTypeProvider F #](https://fsprojects.github.io/AzureStorageTypeProvider/)\
+Fournisseur de type F # qui peut être utilisé pour explorer des ressources de stockage Azure d’objets BLOB, de table et de file d’attente et pour appliquer facilement des opérations CRUD sur ces derniers.
 
 - [FSharp. Azure. Storage](https://github.com/fsprojects/FSharp.Azure.Storage)\
-F# API pour l’utilisation du service de stockage de table Microsoft Azure
+API F # pour l’utilisation du service de stockage de table Microsoft Azure
 
-- [Explorateur stockage Microsoft Azure (Mase)](/azure/vs-azure-tools-storage-manage-with-storage-explorer)\
+- [Explorateur Stockage Microsoft Azure (MASE)](/azure/vs-azure-tools-storage-manage-with-storage-explorer)\
 Une application autonome et gratuite de Microsoft qui vous permet de travailler visuellement avec les données de stockage Azure sur Windows, OS X et Linux.
 
 ### <a name="blob-storage-reference"></a>Documentation de référence sur le stockage d’objets blob
 
 - [API de stockage Azure pour .NET](/dotnet/api/overview/azure/storage)
-- [Azure Storage Services REST API Reference](/rest/api/storageservices/) (Informations de référence de l’API REST des services Stockage Azure)
+- [Référence de l'API REST des services de Stockage Azure](/rest/api/storageservices/)
 
 ### <a name="related-guides"></a>Guides connexes
 
-- [Exemples de stockage d’objets blob Azure pour .NET](https://docs.microsoft.com/samples/azure-samples/storage-blob-dotnet-getting-started/storage-blob-dotnet-getting-started/)
+- [Exemples de stockage d’objets blob Azure pour .NET](/samples/azure-samples/storage-blob-dotnet-getting-started/storage-blob-dotnet-getting-started/)
 - [Bien démarrer avec AzCopy](/azure/storage/common/storage-use-azcopy-v10)
 - [Configuration des chaînes de connexion du Stockage Azure](/azure/storage/common/storage-configure-connection-string)
-- [Blog de l'équipe Azure Storage](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
-- [Démarrage rapide : utiliser .NET pour créer un objet BLOB dans le stockage d’objets](/azure/storage/blobs/storage-quickstart-blobs-dotnet)
+- [Blog de l'équipe Azure Storage](/archive/blogs/windowsazurestorage/)
+- [Démarrage rapide : Utiliser .NET pour créer un objet blob dans le stockage d’objets](/azure/storage/blobs/storage-quickstart-blobs-dotnet)

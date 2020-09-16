@@ -2,12 +2,12 @@
 title: Conventions de codage F#
 description: 'Découvrez des instructions générales et des idiomes lors de l’écriture de code F #.'
 ms.date: 01/15/2020
-ms.openlocfilehash: 748a9c26794f46dcc67fdcfcf21f41847a462a19
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 8c7fedf429ecba6e01b26f37972ffa4eeba6d8af
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053009"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554024"
 ---
 # <a name="f-coding-conventions"></a>Conventions de codage F#
 
@@ -174,7 +174,7 @@ La gestion des erreurs dans les systèmes de grande taille est un effort complex
 
 ### <a name="represent-error-cases-and-illegal-state-in-types-intrinsic-to-your-domain"></a>Représenter des cas d’erreur et un État non conforme dans des types intrinsèques à votre domaine
 
-Avec les [unions discriminées](../language-reference/discriminated-unions.md), F # vous donne la possibilité de représenter un état de programme défectueux dans votre système de type. Par exemple :
+Avec les [unions discriminées](../language-reference/discriminated-unions.md), F # vous donne la possibilité de représenter un état de programme défectueux dans votre système de type. Exemple :
 
 ```fsharp
 type MoneyWithdrawalResult =
@@ -703,7 +703,7 @@ Par exemple, voici le code qui est exécuté dans [Ionide](https://ionide.io/) p
 
 ## <a name="consider-type-abbreviations-to-shorten-signatures"></a>Considérer les abréviations de type pour raccourcir les signatures
 
-Les [abréviations de type](../language-reference/type-abbreviations.md) sont un moyen pratique d’assigner une étiquette à un autre type, tel qu’une signature de fonction ou un type plus complexe. Par exemple, l’alias suivant affecte une étiquette à ce qui est nécessaire pour définir un calcul avec [CNTK](https://docs.microsoft.com/cognitive-toolkit/), une bibliothèque d’apprentissage approfondi :
+Les [abréviations de type](../language-reference/type-abbreviations.md) sont un moyen pratique d’assigner une étiquette à un autre type, tel qu’une signature de fonction ou un type plus complexe. Par exemple, l’alias suivant affecte une étiquette à ce qui est nécessaire pour définir un calcul avec [CNTK](/cognitive-toolkit/), une bibliothèque d’apprentissage approfondi :
 
 ```fsharp
 open CNTK

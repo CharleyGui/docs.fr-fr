@@ -3,12 +3,12 @@ title: Nouveautés
 description: Découvrez les nouvelles fonctionnalités de ADO.NET dans le .NET Framework 4,5, y compris les nouvelles fonctionnalités pour le fournisseur de données SqlClient et ADO.NET Entity Framework.
 ms.date: 03/30/2017
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-ms.openlocfilehash: 536b9314dd83366202f7fd9b489759681021fd9e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b34a27574b6aab75539f9ab30e2978e45b4ad9e3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286169"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553855"
 ---
 # <a name="whats-new-in-adonet"></a>Nouveautés dans ADO.NET
 
@@ -46,17 +46,17 @@ Les fonctionnalités suivantes sont nouvelles dans le Fournisseur de données .N
 
 - `Type System Version=SQL Server 2012;` est une nouvelle valeur à passer à la propriété de connexion `Type System Version`. La valeur `Type System Version=Latest;` est désormais obsolète et a été rendue équivalente à `Type System Version=SQL Server 2008;`. Pour plus d'informations, consultez <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.
 
-- SqlClient fournit la prise en charge supplémentaire des colonnes éparses, une fonctionnalité ajoutée dans SQL Server 2008. Si votre application accède déjà aux données dans un table qui utilise des colonnes éparses, vous devez constater une augmentation des performances. La colonne IsColumnSet de <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> indique si une colonne est une colonne éparse qui est membre d'un jeu de colonnes. <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>indique si une colonne est une colonne éparse (pour plus d’informations, consultez [SQL Server collections de schémas](sql-server-schema-collections.md) ). Pour plus d’informations sur les colonnes éparses, consultez [utiliser des colonnes éparses](/sql/relational-databases/tables/use-sparse-columns).
+- SqlClient fournit la prise en charge supplémentaire des colonnes éparses, une fonctionnalité ajoutée dans SQL Server 2008. Si votre application accède déjà aux données dans un table qui utilise des colonnes éparses, vous devez constater une augmentation des performances. La colonne IsColumnSet de <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> indique si une colonne est une colonne éparse qui est membre d'un jeu de colonnes. <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> indique si une colonne est une colonne éparse (pour plus d’informations, consultez [SQL Server collections de schémas](sql-server-schema-collections.md) ). Pour plus d’informations sur les colonnes éparses, consultez [utiliser des colonnes éparses](/sql/relational-databases/tables/use-sparse-columns).
 
-- L'assembly Microsoft.SqlServer.Types.dll, contenant les types de données spatiales, a été mis à niveau de la version 10.0 vers la version 11.0. Les applications qui référencent cet assembly peuvent échouer. Pour plus d’informations, consultez [modifications critiques apportées aux fonctionnalités de moteur de base de données](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/ms143179(v=sql.110)).
+- L'assembly Microsoft.SqlServer.Types.dll, contenant les types de données spatiales, a été mis à niveau de la version 10.0 vers la version 11.0. Les applications qui référencent cet assembly peuvent échouer. Pour plus d’informations, consultez [modifications critiques apportées aux fonctionnalités de moteur de base de données](/previous-versions/sql/sql-server-2012/ms143179(v=sql.110)).
 
 ## <a name="adonet-entity-framework"></a>ADO.NET Entity Framework
 
-Le .NET Framework 4,5 ajoute des API qui permettent de nouveaux scénarios lors de l’utilisation du Entity Framework 5,0. Pour plus d’informations sur les améliorations et les fonctionnalités qui ont été ajoutées au Entity Framework 5,0, consultez les rubriques suivantes : [Nouveautés](https://docs.microsoft.com/previous-versions/gg696190(v=vs.103)) et mises en production [Entity Framework et](/ef/ef6/what-is-new/past-releases)contrôle de version.
+Le .NET Framework 4,5 ajoute des API qui permettent de nouveaux scénarios lors de l’utilisation du Entity Framework 5,0. Pour plus d’informations sur les améliorations et les fonctionnalités qui ont été ajoutées au Entity Framework 5,0, consultez les rubriques suivantes : [Nouveautés](/previous-versions/gg696190(v=vs.103)) et mises en production [Entity Framework et](/ef/ef6/what-is-new/past-releases)contrôle de version.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [ADO.NET](index.md)
 - [Vue d'ensemble d’ADO.NET](ado-net-overview.md)
 - [SQL Server et ADO.NET](./sql/index.md)
-- [Nouveautés de WCF Data Services 5,0](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
+- [Nouveautés de WCF Data Services 5,0](/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))

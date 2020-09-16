@@ -16,12 +16,12 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-ms.openlocfilehash: e5187e3c2ce533f25a38e93bc3715dd3e2e47c11
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bc1b921fea5aff086e21c046369f1d461f553bc7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622716"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554682"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Importation d'une bibliothèque de types sous la forme d'un assembly
 
@@ -31,7 +31,7 @@ Il existe deux façons de mettre ces informations de type à la disposition de v
 
 - À l’aide des assemblys d’interopérabilité au moment du design : à partir du .NET Framework 4, vous pouvez indiquer au compilateur d’incorporer les informations de type de l’assembly d’interopérabilité dans votre fichier exécutable. Le compilateur incorpore uniquement les informations de type que votre application utilise. Vous n’avez pas à déployer l’assembly d’interopérabilité avec votre application. Il s’agit de la technique recommandée.
 
-- En déployant des assemblys d’interopérabilité : vous pouvez créer une référence standard à l’assembly d’interopérabilité. Dans ce cas, l’assembly d’interopérabilité doit être déployé avec votre application. Si vous utilisez cette technique et que vous n’utilisez pas un composant COM privé, référencez toujours l’assembly PIA (Primary Interop Assembly) publié par l’auteur du composant COM que vous prévoyez d’incorporer dans votre code managé. Pour plus d’informations sur la production et l’utilisation d’assemblys PIA (Primary Interop Assembly), consultez [Assemblys PIA (Primary Interop Assembly)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).
+- En déployant des assemblys d’interopérabilité : vous pouvez créer une référence standard à l’assembly d’interopérabilité. Dans ce cas, l’assembly d’interopérabilité doit être déployé avec votre application. Si vous utilisez cette technique et que vous n’utilisez pas un composant COM privé, référencez toujours l’assembly PIA (Primary Interop Assembly) publié par l’auteur du composant COM que vous prévoyez d’incorporer dans votre code managé. Pour plus d’informations sur la production et l’utilisation d’assemblys PIA (Primary Interop Assembly), consultez [Assemblys PIA (Primary Interop Assembly)](/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).
 
 Quand vous utilisez des assemblys d’interopérabilité au moment du design, vous pouvez incorporer les informations de type de l’assembly PIA publié par l’auteur du composant COM. Toutefois, vous n’avez pas à déployer l’assembly PIA avec votre application.
 
@@ -67,18 +67,18 @@ Une fois que vous avez trouvé la bibliothèque de types qui contient l’implé
 
   - une connaissance des règles de conversion de bibliothèque de types en assembly.
 
-  L’écriture d’un wrapper personnalisé est une technique avancée. Pour obtenir des informations supplémentaires sur la manière de générer un wrapper personnalisé, consultez [Personnalisation de wrappers standard](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100)).
+  L’écriture d’un wrapper personnalisé est une technique avancée. Pour obtenir des informations supplémentaires sur la manière de générer un wrapper personnalisé, consultez [Personnalisation de wrappers standard](/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100)).
 
- Pour plus d’informations sur le processus d’importation COM Interop, consultez [Résumé de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)).
+ Pour plus d’informations sur le processus d’importation COM Interop, consultez [Résumé de la conversion d’une bibliothèque de types en assembly](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - [Exposition de composants COM au .NET Framework](exposing-com-components.md)
-- [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Récapitulatif de la conversion d’une bibliothèque de types en assembly](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md)
-- [Personnaliser des wrappers standard](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
-- [Utiliser des types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [Personnaliser des wrappers standard](/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
+- [Utiliser des types COM dans du code managé](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Compilation d'un projet d'interopérabilité](compiling-an-interop-project.md)
 - [Déploiement d'une application d'interopérabilité](deploying-an-interop-application.md)
 - [Procédure : ajouter des références aux bibliothèques de types](how-to-add-references-to-type-libraries.md)

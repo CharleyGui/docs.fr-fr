@@ -11,19 +11,19 @@ helpviewer_keywords:
 - permissions [.NET]
 - security [.NET], about security
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
-ms.openlocfilehash: 259723b903377f7e79731e1ff79b3d512581102f
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 5dedf6df8e6cf2cf886e68cc132a44abfb201c49
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555265"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554395"
 ---
 # <a name="key-security-concepts"></a>Concepts fondamentaux sur la sécurité
 
 > [!NOTE]
 > Cet article s’applique à Windows.
 >
-> Pour plus d’informations sur la ASP.NET Core, consultez [vue d’ensemble de la sécurité ASP.net Core](https://docs.microsoft.com/aspnet/core/security/).
+> Pour plus d’informations sur la ASP.NET Core, consultez [vue d’ensemble de la sécurité ASP.net Core](/aspnet/core/security/).
 
 .NET offre une sécurité basée sur les rôles pour aider à résoudre les problèmes de sécurité liés au code mobile et à fournir une prise en charge permettant aux composants de déterminer ce que les utilisateurs sont autorisés à faire.  
   
@@ -54,7 +54,7 @@ Le processus d'authentification consiste à établir et à vérifier l'identité
   
 Un grand nombre de mécanismes d’authentification sont utilisés aujourd’hui, dont la plupart peuvent être utilisés avec la sécurité basée sur les rôles .NET. Parmi les mécanismes les plus courants figurent notamment Basic, Digest, Passport, les mécanismes liés aux systèmes d'exploitation (tels que NTLM ou Kerberos) ou encore ceux définis par les applications.  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a> Exemple  
 
 L'exemple suivant nécessite que le principal actif soit un administrateur. Le paramètre `name` est `null`, qui autorise tout utilisateur ayant la qualité d'administrateur à passer la demande.  
   

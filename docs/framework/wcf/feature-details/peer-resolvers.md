@@ -2,12 +2,12 @@
 title: Programmes de résolution d'homologue
 ms.date: 03/30/2017
 ms.assetid: d86d12a1-7358-450f-9727-b6afb95adb9c
-ms.openlocfilehash: a1f5bcfb721ccbc98856e81198a3f7e0b45abe93
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ef72f44a7dd7f3e8f3108e4f77dcdbdf8ef1b1b7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600774"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554630"
 ---
 # <a name="peer-resolvers"></a>Programmes de résolution d'homologue
 Pour se connecter à une maille, un nœud d'homologue requiert les adresses IP d'autres nœuds. Les adresses IP sont obtenues en contactant un service de résolution, qui prend l'ID de la maille et retourne une liste d'adresses correspondant aux nœuds enregistrés sous cet ID de maille particulier. Le programme de résolution conserve une liste des adresses inscrites, qu'il crée en inscrivant chaque nœud de la maille avec le service.  
@@ -32,10 +32,10 @@ Pour se connecter à une maille, un nœud d'homologue requiert les adresses IP d
 > [!NOTE]
 > Lors de l'utilisation de réseaux locaux et impromptus avec un programme de résolution personnalisé, il est fortement recommandé que les applications utilisant ou prenant en charge des réseaux de liaison locale ou impromptus incluent une logique qui sélectionne une adresse de liaison locale unique à utiliser lors de la connexion. Cela empêche tout risque de confusion provoquée par des ordinateurs dotés de plusieurs adresses de liaison locale. Ainsi, le canal homologue ne peut utiliser qu'une seule adresse de liaison locale à la fois. Vous pouvez spécifier cette adresse à l'aide de la propriété `ListenIpAddress` sur <xref:System.ServiceModel.NetPeerTcpBinding>.  
   
- Pour une démonstration de l’implémentation d’un programme de résolution personnalisé, consultez canal homologue programme de [résolution d’homologue personnalisé](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751466(v=vs.90)).  
+ Pour une démonstration de l’implémentation d’un programme de résolution personnalisé, consultez canal homologue programme de [résolution d’homologue personnalisé](/previous-versions/dotnet/netframework-3.5/ms751466(v=vs.90)).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Dans CustomPeerResolverService : Inscriptions des clients](inside-the-custompeerresolverservice-client-registrations.md)  
+ [Dans CustomPeerResolverService : Inscription de clients](inside-the-custompeerresolverservice-client-registrations.md)  
   
 ## <a name="see-also"></a>Voir aussi
 

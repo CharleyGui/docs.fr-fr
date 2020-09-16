@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: 2d4c513b7a4b0e111f2b7e7384c6ee4970d5665f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2be58251c767c937e817edf1ba19309f0c62ac33
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286997"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554734"
 ---
 # <a name="net-framework-data-providers"></a>Fournisseur de données .NET Framework
 Un fournisseur de données .NET Framework est utilisé pour la connexion à une base de données, l’exécution de commandes et l’extraction de résultats. Ces résultats sont traités directement, placés dans un objet <xref:System.Data.DataSet> pour pouvoir être exposés à l'utilisateur le cas échéant, combinés aux données de différentes sources ou accessibles à distance entre couches. .NET Framework les fournisseurs de données sont légers et créent une couche minimale entre la source de données et le code, ce qui améliore les performances sans sacrifier les fonctionnalités.  
@@ -25,7 +25,7 @@ Un fournisseur de données .NET Framework est utilisé pour la connexion à une 
 |fournisseur de données .NET Framework pour ODBC|Pour les sources de données exposées à l'aide de ODBC. Utilise l'espace de noms <xref:System.Data.Odbc> .|  
 |fournisseur de données .NET Framework pour Oracle|Pour les sources de données Oracle. La .NET Framework Fournisseur de données pour Oracle prend en charge le logiciel client Oracle version 8.1.7 et ultérieure, et utilise l' <xref:System.Data.OracleClient> espace de noms.|  
 |fournisseur EntityClient|Fournit un accès aux données pour les applications EDM (Entity Data Model). Utilise l'espace de noms <xref:System.Data.EntityClient> .|  
-|.NET Framework Fournisseur de données pour SQL Server Compact 4,0.|Fournit l’accès aux données pour Microsoft SQL Server Compact 4,0. Utilise l’espace de noms [System.Data.SqlServerCe](https://docs.microsoft.com/previous-versions/sql/compact/sql-server-compact-4.0/ec4st0e3(v=vs.100)) .|  
+|.NET Framework Fournisseur de données pour SQL Server Compact 4,0.|Fournit l’accès aux données pour Microsoft SQL Server Compact 4,0. Utilise l’espace de noms [System.Data.SqlServerCe](/previous-versions/sql/compact/sql-server-compact-4.0/ec4st0e3(v=vs.100)) .|  
   
 ## <a name="core-objects-of-net-framework-data-providers"></a>Objets principaux des fournisseurs de données .NET Framework  
  Le tableau suivant présente les quatre principaux objets qui composent un fournisseur de données .NET Framework.  

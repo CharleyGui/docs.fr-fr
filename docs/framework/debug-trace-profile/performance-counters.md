@@ -7,16 +7,16 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: 3702e9d2e0a369f5391c16088202caf5d7ced7ea
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 1b5ca6484f45dcee33009d8b8c12a43fa41f63de
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803701"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554447"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
 
-Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans l' [Analyseur de performances Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
+Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans l' [Analyseur de performances Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)).  
 
 ## <a name="exception-performance-counters"></a>Compteurs de performance des exceptions  
  La catégorie Exceptions CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les exceptions levées par une application. Le tableau suivant décrit ces compteurs de performance.  
@@ -37,8 +37,8 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Nombre CCW**|Affiche le nombre actuel de wrappers CCW (COM Callable Wrapper). Un wrapper CCW est un proxy pour un objet managé qui est référencé à partir d'un client COM non managé. Ce compteur indique le nombre d'objets managés référencés par un code COM non managé.|  
 |**Nombre de marshaling**|Affiche le nombre total de fois où des arguments et des valeurs de retour ont été marshalés du code managé vers le code non managé, et vice versa, depuis le démarrage de l'application. Ce compteur n'est pas incrémenté pour les stubs inline. (Les stubs sont chargés de marshaler les arguments et les valeurs de retour.) Les stubs sont généralement inline quand la surcharge de marshaling est faible.|  
 |**Nombre de stubs**|Affiche le nombre actuel de stubs créés par le common language runtime. Les stubs sont chargés de marshaler les arguments et les valeurs de retour du code managé vers le code non managé, et vice versa, pendant un appel COM Interop ou un appel de code non managé.|  
-|**Nombre d’exportations TLB/s**|Réservé pour un usage futur.|  
-|**Nombre d’importations TLB/s**|Réservé pour un usage futur.|  
+|**Nombre d’exportations TLB/s**|Réservé à un usage ultérieur.|  
+|**Nombre d’importations TLB/s**|Réservé à un usage ultérieur.|  
 
 ## <a name="jit-performance-counters"></a>compteurs de performance JIT  
  La catégorie JIT CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur du code ayant été compilé juste-à-temps (JIT). Le tableau suivant décrit ces compteurs de performance.  
@@ -57,8 +57,8 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
   
 |Compteur de performances|Description|  
 |-------------------------|-----------------|  
-|**% temps chargement**|Réservé pour un usage futur.|  
-|**Longueur de la recherche de l’assembly**|Réservé pour un usage futur.|  
+|**% temps chargement**|Réservé à un usage ultérieur.|  
+|**Longueur de la recherche de l’assembly**|Réservé à un usage ultérieur.|  
 |**Octets dans le tas du chargeur**|Affiche la taille actuelle, en octets, de la mémoire validée par le chargeur de classes à tous les domaines d’application. La mémoire allouée représente l'espace physique réservé dans le fichier d'échange du disque.|  
 |**Appdomains actuels**|Affiche le nombre actuel de domaines d'application chargés dans cette application.|  
 |**Assemblys actuels**|Affiche le nombre actuel d'assemblys chargés pour l'ensemble des domaines d'application dans l'application en cours d'exécution. Si l'assembly est chargé comme étant indépendant du domaine à partir de plusieurs domaines d'application, ce compteur n'est incrémenté qu'une seule fois.|  
@@ -114,7 +114,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Octets promus de la génération 1/s**|Affiche le nombre d'octets par seconde promus de la génération 1 à la génération 2. Les objets promus uniquement parce qu'ils attendent d'être finalisés sont ignorés par ce compteur.<br /><br /> La mémoire est promue quand elle survit à un garbage collection. La génération 2 étant la plus ancienne, les promotions depuis celle-ci ne sont pas possibles. Ce compteur est un indicateur du nombre d'objets à durée de vie très longue qui sont créés par seconde.<br /><br /> Ce compteur affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Taille du tas de la génération 2**|Affiche le nombre d'octets actuellement alloués à la génération 2. Les objets ne sont pas alloués directement à cette génération : ils sont promus à partir de la génération 1 durant les précédents garbage collection de la génération 1. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
 |**Taille du tas d’objets volumineux**|Affiche la taille actuelle, en octets, du tas d’objets volumineux. Les objets qui sont supérieurs à environ 85 000 octets sont traités comme des objets volumineux par le garbage collector et sont directement alloués dans un tas spécial. Ils ne sont pas promus via les générations. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
-|**ID du processus**|Affiche l'ID de processus de l'instance de CLR qui est surveillée.|  
+|**ID de processus**|Affiche l'ID de processus de l'instance de CLR qui est surveillée.|  
 |**Finalisation-mémoire promues de la génération 0**|Affiche le nombre d'octets de mémoire qui sont promus de la génération 0 à la génération 1 uniquement parce qu'ils sont en attente de finalisation. Ce compteur n’est pas cumulatif : il affiche la valeur observée à la fin du dernier garbage collection uniquement.|  
 |**Mémoire promue de la génération 0**|Affiche le nombre d'octets de mémoire qui survivent au garbage collection et sont promus de la génération 0 à la génération 1. Les objets promus uniquement parce qu'ils attendent d'être finalisés sont ignorés par ce compteur. Ce compteur n’est pas cumulatif : il affiche la valeur observée à la fin du dernier garbage collection uniquement.|  
 |**Mémoire promue de la génération 1**|Affiche le nombre d’octets de mémoire qui survivent au garbage collection et sont promus de la génération 1 à la génération 2. Les objets promus uniquement parce qu'ils attendent d'être finalisés sont ignorés par ce compteur. Ce compteur n’est pas cumulatif : il affiche la valeur observée à la fin du dernier garbage collection uniquement. Ce compteur est remis à 0 uniquement si le dernier garbage collection était de la génération 0.|  
@@ -224,7 +224,7 @@ for (int i = 0; i < Array.Length; i++)
 |-------------------------|-----------------|  
 |**Nombre de vérifications durant l’édition de liens**|Affiche le nombre total de vérifications de sécurité d'accès du code durant l'édition de liens qui ont été effectuées depuis le démarrage de l'application. Les vérifications de sécurité d'accès du code durant l'édition de liens sont effectuées quand un appelant demande une autorisation particulière au moment de la compilation juste-à-temps (JIT). Une vérification durant l'édition de liens est effectuée une seule fois par appelant. Ce compteur n'indique pas de graves problèmes de performance ; il renseigne simplement sur l'activité du système de sécurité.|  
 |**% temps pour les vérifications RT**|Affiche le pourcentage du la durée calendaire passé à effectuer des vérifications de sécurité d’accès du code à l’exécution depuis le dernier intervalle échantillon. Ce compteur est actualisé à la fin de chaque vérification de sécurité de .NET Framework. Il n'établit pas une moyenne ; il affiche la dernière valeur observée.|  
-|**% temps authentification de la signature**|Réservé pour un usage futur.|  
+|**% temps authentification de la signature**|Réservé à un usage ultérieur.|  
 |**Épaisseur de la pile**|Affiche l'épaisseur de la pile pendant la dernière vérification de la sécurité d'accès du code à l'exécution. Les vérifications de sécurité d'accès du code à l'exécution sont effectuées en parcourant la pile. Ce compteur n'établit pas une moyenne ; il affiche uniquement la dernière valeur observée.|  
 |**Total de vérifications à l’exécution**|Affiche le nombre total de vérifications de sécurité d'accès du code à l'exécution effectuées depuis le démarrage de l'application. Les vérifications de sécurité d'accès du code à l'exécution sont effectuées quand un appelant demande une autorisation particulière. La vérification à l'exécution se produit à chaque appel par l'appelant, en examinant la pile de threads actuelle de l'appelant. Utilisé avec le compteur **Épaisseur de la pile**, ce compteur indique la diminution de performances due aux vérifications de sécurité.|  
   
