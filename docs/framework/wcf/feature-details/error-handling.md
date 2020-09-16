@@ -2,16 +2,16 @@
 title: Gestion des erreurs
 ms.date: 03/30/2017
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-ms.openlocfilehash: f6c0d676a37648678b2b726a46a6238ccc1b3331
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 9c7d6814a6bf1189fd85de5eb440ec4a6840447e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004891"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539981"
 ---
 # <a name="error-handling-in-windows-communication-foundation-wcf"></a>Gestion des erreurs dans les Windows Communication Foundation (WCF)
 
-Lorsqu'un service rencontre une exception ou une erreur inattendue, il existe plusieurs manières de concevoir une solution de gestion des exceptions. Bien qu’il n’existe aucune solution de gestion des erreurs « correcte » ou « meilleure pratique », il existe plusieurs chemins valides à prendre en compte. Il est généralement recommandé d’implémenter une solution hybride qui associe plusieurs approches de la liste ci-dessous, en fonction de la complexité de l’implémentation WCF, du type et de la fréquence des exceptions, de la nature gérée par rapport à la nature non gérée du les exceptions et les exigences de suivi, de journalisation ou de stratégie associées.
+Lorsqu'un service rencontre une exception ou une erreur inattendue, il existe plusieurs manières de concevoir une solution de gestion des exceptions. Bien qu’il n’existe aucune solution de gestion des erreurs « correcte » ou « meilleure pratique », il existe plusieurs chemins valides à prendre en compte. Il est généralement recommandé d’implémenter une solution hybride qui associe plusieurs approches de la liste ci-dessous, en fonction de la complexité de l’implémentation WCF, du type et de la fréquence des exceptions, de la nature gérée et non gérée des exceptions, ainsi que des exigences de suivi, de journalisation ou de stratégie associées.
 
 Ces solutions sont expliquées plus en détail dans le reste de cette section.
 
@@ -21,13 +21,13 @@ Le bloc d’application de gestion des exceptions Microsoft Enterprise Library p
 
 Cette bibliothèque comprend un gestionnaire d'exceptions du contrat d'erreur prêt à l'emploi. Ce gestionnaire d’exceptions est conçu pour être utilisé dans les limites de service WCF et génère un nouveau contrat d’erreur à partir de l’exception.
 
-Les blocs d'application visent à incorporer les meilleures pratiques fréquemment utilisées et à fournir une approche commune pour la gestion des exceptions dans votre application. D'autre part, les gestionnaires d'erreurs personnalisés et les contrats d'erreur développés s'avèrent également très utiles. Par exemple, les gestionnaires d’erreurs personnalisés offrent la possibilité de promouvoir automatiquement toutes les exceptions en FaultExceptions et également d’ajouter des fonctionnalités de journalisation à votre application.
+Les blocs d'application visent à incorporer les meilleures pratiques fréquemment utilisées et à fournir une approche commune pour la gestion des exceptions dans votre application. D'autre part, les gestionnaires d'erreurs personnalisés et les contrats d'erreur développés s'avèrent également très utiles. Par exemple, les gestionnaires d'erreurs personnalisés offrent la possibilité de promouvoir automatiquement toutes les exceptions en FaultExceptions et également d'ajouter des fonctions d'enregistrement à votre application.
 
-Pour plus d’informations, consultez [Microsoft Enterprise Library](https://docs.microsoft.com/previous-versions/msp-n-p/ff632023(v=pandp.10)).
+Pour plus d’informations, consultez [Microsoft Enterprise Library](/previous-versions/msp-n-p/ff632023(v=pandp.10)).
 
 ## <a name="dealing-with-expected-exceptions"></a>Traitement des exceptions attendues
 
-La bonne marche à suivre consiste à intercepter les exceptions attendues dans chaque opération ou point d’extensibilité approprié, à déterminer si elles peuvent être récupérées à partir de et à retourner l’erreur personnalisée appropriée dans un FaultException\<T >.
+La bonne marche à suivre consiste à intercepter les exceptions attendues dans chaque opération ou point d’extensibilité approprié, à déterminer si elles peuvent être récupérées à partir de et à retourner l’erreur personnalisée appropriée dans un FaultException \<T> .
   
 ## <a name="dealing-with-unexpected-exceptions-using-an-ierrorhandler"></a>Traitement des exceptions inattendues à l’aide d’un IErrorHandler
 
@@ -35,7 +35,7 @@ Pour traiter les exceptions inattendues, il est recommandé de « raccorder »
 
 Une « exception inattendue » n’est généralement ni une exception irrécupérable ni une exception de traitement ; au lieu de cela, il s’agit d’une exception d’utilisateur inattendue. Une exception irrécupérable (telle qu’une exception de mémoire insuffisante), généralement gérée automatiquement par le [Gestionnaire d’exceptions de modèle de service](xref:System.ServiceModel.Dispatcher.ExceptionHandler) , ne peut généralement pas être gérée correctement, et la seule raison de gérer une telle exception peut être d’effectuer une journalisation supplémentaire ou de retourner une exception standard au client. Une exception de traitement se produit dans le traitement du message (par exemple, au niveau de la sérialisation, de l'encodeur ou du formateur), généralement elle ne peut pas être gérée dans un IErrorHandler, car il est trop tôt ou trop tard pour que le gestionnaire d'erreurs intervienne lorsque ces exceptions se produisent. De même, les exceptions de transport ne peuvent pas être gérées dans un IErrorHandler.
 
-Avec un IErrorHandler, vous pouvez explicitement contrôler le comportement de votre application lorsqu'une exception est levée. Vous pouvez :  
+Avec un IErrorHandler, vous pouvez explicitement contrôler le comportement de votre application lorsqu'une exception est levée. Ces options sont les suivantes :  
 
 1. Décidez si vous souhaitez envoyer une erreur au client ou non.
 

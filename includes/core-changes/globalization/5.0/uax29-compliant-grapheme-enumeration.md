@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c0c1c9c9d8e3aeb6f689f754d09b50b208b54112
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 70b71fc55f76514dd17e5b9ba0e76151a966eebb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702317"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539463"
 ---
 ### <a name="stringinfo-and-textelementenumerator-are-now-uax29-compliant"></a>StringInfo et TextElementEnumerator sont désormais conformes à UAX29
 
@@ -16,8 +16,8 @@ En outre, la <xref:Microsoft.VisualBasic.Strings.StrReverse%2A?displayProperty=f
 
 Un [cluster graphèmes](https://www.unicode.org/glossary/#extended_grapheme_cluster) [graphèmes](https://www.unicode.org/glossary/#grapheme) ou étendu est un caractère identifié par un utilisateur unique qui peut être composé de plusieurs points de code Unicode. Par exemple, la chaîne contenant le caractère thaï « Kam » ( :::no-loc text="กำ"::: ) se compose des deux caractères suivants :
 
-- :::no-loc text="ก":::(= ' \u0e01 ') CARACTÈRE THAÏ KO KAI
-- :::no-loc text=" ำ":::(= ' \u0e33 ') CARACTÈRE THAÏ SARA AM
+- :::no-loc text="ก"::: (= ' \u0e01 ') CARACTÈRE THAÏ KO KAI
+- :::no-loc text=" ำ"::: (= ' \u0e33 ') CARACTÈRE THAÏ SARA AM
 
 Lorsqu’il est affiché à l’utilisateur, le système d’exploitation combine les deux caractères pour former le seul caractère d’affichage (ou graphèmes) « Kam » ou :::no-loc text="กำ"::: . L’Emoji peut également être constitué de plusieurs caractères combinés pour l’affichage de la même façon.
 
@@ -30,7 +30,7 @@ Les <xref:System.Globalization.StringInfo> <xref:System.Globalization.TextElemen
 
 Prenons le code C# suivant :
 
-```cs
+```csharp
 using System.Globalization;
 
 static void Main(string[] args)

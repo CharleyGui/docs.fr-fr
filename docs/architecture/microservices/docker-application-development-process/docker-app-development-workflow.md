@@ -2,12 +2,12 @@
 title: Workflow de développement des applications Docker
 description: Découvrez les détails du workflow de développement des applications Docker. Commencez étape par étape et entrez dans les détails pour optimiser les fichiers Dockerfile, puis terminez par le workflow simplifié disponible avec Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: 98dc931e10d5e1a3265ebd6f4e1919a6416e9b27
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: 489f44a2742900d6ce5f77e24dd3d719ec9cda2b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022933"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539725"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Workflow de développement des applications Docker
 
@@ -103,7 +103,7 @@ L’utilisation d’un dépôt d’images .NET officiel fourni dans le Docker Hu
 
 L’extrait de code suivant est un exemple de fichier Dockerfile pour un conteneur ASP.NET Core.
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 ARG source
 WORKDIR /app
@@ -173,7 +173,7 @@ Vraisemblablement, la meilleure façon de comprendre le concept du multi-étape 
 
 Le fichier Dockerfile initial peut ressembler à ceci :
 
-```Dockerfile
+```dockerfile
  1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
@@ -244,7 +244,7 @@ Vous allez tirer parti de la fonctionnalité de cache de couches de Docker, qui 
 
 Par conséquent, prenons l’étape **build**, les lignes 5 et 6 sont quasiment les mêmes, mais les lignes 7 à 17 sont différentes pour chaque service d’eShopOnContainers, et doivent donc être exécutées à chaque fois, mais si vous remplacez les lignes 7 à 16 par :
 
-```Dockerfile
+```dockerfile
 COPY . .
 ```
 
@@ -256,7 +256,7 @@ Elles sont alors identiques pour chaque service, la solution entière est copié
 
 L’optimisation importante suivante implique la commande `restore` exécutée à la ligne 17, qui est également différente pour chaque service d’eShopOnContainers. Si vous remplacez cette ligne simplement par :
 
-```Dockerfile
+```dockerfile
 RUN dotnet restore
 ```
 
@@ -276,7 +276,7 @@ Voyons maintenant l’optimisation finale : la ligne 20 est redondante et, com
 
 Le fichier résultant est alors :
 
-```Dockerfile
+```dockerfile
  1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
@@ -559,7 +559,7 @@ De plus, notez que vous devez effectuer l’étape 2 (ajout de la prise en charg
 
 Les [conteneurs Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/index) vous permettent de convertir vos applications Windows existantes en images Docker, puis de les déployer avec les mêmes outils que le reste de l’écosystème Docker. Pour utiliser les conteneurs Windows, vous exécutez des commandes PowerShell dans le fichier Dockerfile, comme indiqué dans l’exemple suivant :
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/servercore
 LABEL Description="IIS" Vendor="Microsoft" Version="10"
 RUN powershell -Command Add-WindowsFeature Web-Server
@@ -568,7 +568,7 @@ CMD [ "ping", "localhost", "-t" ]
 
 Dans ce cas, nous utilisons une image de base Windows Server Core (le paramètre FROM) et nous installons IIS à l’aide d’une commande PowerShell (le paramètre RUN). De la même façon, vous pouvez également utiliser des commandes PowerShell pour configurer des composants supplémentaires comme ASP.NET 4.x, .NET 4.6 ou tout autre logiciel Windows. Par exemple, la commande suivante dans un fichier Dockerfile configure ASP.NET 4.5 :
 
-```Dockerfile
+```dockerfile
 RUN powershell add-windowsfeature web-asp-net45
 ```
 

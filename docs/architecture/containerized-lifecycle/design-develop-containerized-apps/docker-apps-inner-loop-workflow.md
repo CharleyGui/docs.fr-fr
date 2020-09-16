@@ -2,12 +2,12 @@
 title: Workflow de développement de la boucle interne pour les applications Docker
 description: En savoir plus sur le flux de travail de développement « boucle interne » pour les applications Dockr.
 ms.date: 08/06/2020
-ms.openlocfilehash: bf837ab53fff2b53cf141b2e621d484cff9b6889
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 071e16afede91f4cfd6cbe8662fa68814ffdcdd7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916204"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539760"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Workflow de développement de la boucle interne pour les applications Docker
 
@@ -118,7 +118,7 @@ L’utilisation du dépôt officiel d’une pile de langages avec numéro de ver
 
 Voici un exemple de fichier DockerFile pour un conteneur .NET Core :
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
 EXPOSE 80
@@ -284,7 +284,7 @@ Notez qu’il utilise le port 50080, mais qu’en interne il est redirigé vers 
 
 Vous pouvez tester cela en utilisant le navigateur à l’aide de la boucle, comme illustré à la figure 4-30.
 
-![Résultat de la boucle obtenu à partir dehttp://localhost:51080/WeatherForecast](media/docker-apps-inner-loop-workflow/test-docker-app-locally-curl.png)
+![Résultat de la boucle obtenu à partir de http://localhost:51080/WeatherForecast](media/docker-apps-inner-loop-workflow/test-docker-app-locally-curl.png)
 
 **Figure 4-30**. Test de l’application Docker localement avec CURL
 

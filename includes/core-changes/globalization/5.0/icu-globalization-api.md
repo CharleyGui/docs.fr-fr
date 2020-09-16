@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 74c3d3247912dcd638a9379d54e682967c5e400b
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 18718ebc934e0175c20411055b8c0a90ef6b175f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302705"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539464"
 ---
 ### <a name="globalization-apis-use-icu-libraries-on-windows"></a>Les API de globalisation utilisent des bibliothèques ICU sur Windows
 
@@ -27,7 +27,7 @@ Cette modification a été introduite pour deux raisons :
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Aucune action n’est requise de la part du développeur. Toutefois, si vous souhaitez continuer à utiliser les API de globalisation NLS, vous pouvez définir un [commutateur au moment](../../../../docs/core/run-time-config/globalization.md#nls) de l’exécution pour revenir à ce comportement. Pour plus d’informations sur les commutateurs disponibles, consultez l’article présentation de la [globalisation et de la bibliothèque .net](/dotnet/standard/globalization-localization/globalization-icu) .
+Aucune action n’est requise de la part du développeur. Toutefois, si vous souhaitez continuer à utiliser les API de globalisation NLS, vous pouvez définir un [commutateur au moment](../../../../docs/core/run-time-config/globalization.md#nls) de l’exécution pour revenir à ce comportement. Pour plus d’informations sur les commutateurs disponibles, consultez l’article présentation de la [globalisation et de la bibliothèque .net](../../../../docs/standard/globalization-localization/globalization-icu.md) .
 
 #### <a name="category"></a>Category
 

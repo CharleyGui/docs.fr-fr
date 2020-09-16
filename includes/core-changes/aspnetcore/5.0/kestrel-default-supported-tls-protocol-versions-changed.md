@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3244a36808fb687663241e704d08775ea5c96720
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: 97870553d4ec66a569ba63cd945639b03bbbd6df
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803245"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539466"
 ---
 ### <a name="kestrel-default-supported-tls-protocol-versions-changed"></a>Kestrel : les versions de protocole TLS prises en charge par défaut ont été modifiées
 
@@ -27,7 +27,7 @@ Kestrel a demandé que les connexions utilisent TLS 1,1 ou TLS 1,2 par défaut.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Kestrel permet au système d’exploitation de choisir le meilleur protocole à utiliser et de bloquer les protocoles non sécurisés. <xref:Microsoft.AspNetCore.Server.Kestrel.Https.HttpsConnectionAdapterOptions.SslProtocols%2A?displayProperty=nameWithType>la valeur par défaut est à la `SslProtocols.None` place de `SslProtocols.Tls12 | SslProtocols.Tls11` .
+Kestrel permet au système d’exploitation de choisir le meilleur protocole à utiliser et de bloquer les protocoles non sécurisés. <xref:Microsoft.AspNetCore.Server.Kestrel.Https.HttpsConnectionAdapterOptions.SslProtocols%2A?displayProperty=nameWithType> la valeur par défaut est à la `SslProtocols.None` place de `SslProtocols.Tls12 | SslProtocols.Tls11` .
 
 #### <a name="reason-for-change"></a>Motif de modification
 
@@ -39,7 +39,7 @@ La modification a été apportée pour prendre en charge les versions TLS 1,3 et
 
 Pour désactiver les anciens protocoles, effectuez l’une des actions suivantes :
 
-* Désactivez les protocoles plus anciens, tels que TLS 1,0, à l’ensemble du système avec les [instructions Windows](/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry). Elle est actuellement activée par défaut sur toutes les versions de Windows.
+* Désactivez les protocoles plus anciens, tels que TLS 1,0, à l’ensemble du système avec les [instructions Windows](../../../../docs/framework/network-programming/tls.md#configuring-schannel-protocols-in-the-windows-registry). Elle est actuellement activée par défaut sur toutes les versions de Windows.
 * Sélectionnez manuellement les protocoles que vous souhaitez prendre en charge dans le code comme suit :
 
     ```csharp

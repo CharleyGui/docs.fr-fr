@@ -3,12 +3,12 @@ title: Guide pratique pour utiliser l’API de ML automatisé ML.NET
 description: L’API de ML automatisé ML.NET automatise le processus de génération de modèle prêt pour le déploiement. Découvrez les options que vous pouvez utiliser pour configurer des tâches de machine learning automatisé.
 ms.date: 12/18/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: b322c484282d025033d747d2093f7b5b4d216fde
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b1ef526301e01e1e75e71e0646f4d11e68215d69
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75636560"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540730"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Guide pratique pour utiliser l’API de machine learning automatisé ML.NET
 
@@ -70,7 +70,7 @@ Créez les paramètres de l’expérience pour le type de tâche de ML détermin
 
 ## <a name="configure-experiment-settings"></a>Configurer les paramètres de l’expérience
 
-Les expériences sont largement configurables. Consultez la [documentation sur l’API AutoML](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview) pour obtenir la liste complète des paramètres de configuration.
+Les expériences sont largement configurables. Consultez la [documentation sur l’API AutoML](/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview) pour obtenir la liste complète des paramètres de configuration.
 
 Voici quelques exemples :
 
@@ -117,7 +117,7 @@ Vous trouverez la liste des entraîneurs pris en charge par tâche de ML en cliq
 * [Algorithmes de classification binaire pris en charge](xref:Microsoft.ML.AutoML.BinaryClassificationTrainer)
 * [Algorithmes de classification multiclasse pris en charge](xref:Microsoft.ML.AutoML.MulticlassClassificationTrainer)
 * [Algorithmes de régression pris en charge](xref:Microsoft.ML.AutoML.RegressionTrainer)
-* [Algorithmes de recommandation soutenus](xref:Microsoft.ML.AutoML.RecommendationTrainer)
+* [Algorithmes de recommandation pris en charge](xref:Microsoft.ML.AutoML.RecommendationTrainer)
 
 ## <a name="optimizing-metric"></a>Métrique d’optimisation
 
@@ -137,7 +137,7 @@ La métrique d’optimisation, comme illustré dans l’exemple ci-dessus, déte
 ## <a name="data-pre-processing-and-featurization"></a>Prétraitement et caractérisation des données
 
 > [!NOTE]
-> La colonne de fonctionnalités <xref:System.Single>ne <xref:System.String>supportait que les types de <xref:System.Boolean>, , et .
+> La colonne de fonctionnalité prend uniquement en charge les types <xref:System.Boolean> , <xref:System.Single> et <xref:System.String> .
 
 Le prétraitement des données a lieu par défaut et les étapes suivantes sont effectuées automatiquement :
 
@@ -151,9 +151,9 @@ Le prétraitement des données a lieu par défaut et les étapes suivantes sont 
 
 1. Générer des caractéristiques supplémentaires
 
-    Pour les fonctions de texte : Caractéristiques du sac de mot à l’aide d’unigrammes et de tri-caractère-grammes.
+    Pour les fonctionnalités de texte : fonctionnalités de conteneur de mots utilisant unigrammes et trois caractères-grammes.
 
-    Pour les caractéristiques catégoriques: Un-chaud codage pour les caractéristiques de faible cardinalité, et un-chaud-hachage codage pour les caractéristiques catégoriques de haute cardinalité.
+    Pour les fonctionnalités catégoriques : l’encodage à chaud pour les fonctionnalités de cardinalité faible et l’encodage à hachage à chaud pour les fonctionnalités catégoriques de cardinalité élevée.
 
 1. Transformations et encodages
 
@@ -227,7 +227,7 @@ Voici toutes les métriques disponibles par tâche de ML :
 
 * [Métriques de classification binaire](xref:Microsoft.ML.AutoML.BinaryClassificationMetric)
 * [Métriques de classification multiclasse](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric)
-* [Mesures de recommandation & de régression](xref:Microsoft.ML.AutoML.RegressionMetric)
+* [Mesure de la régression & les mesures de recommandation](xref:Microsoft.ML.AutoML.RegressionMetric)
 
 ## <a name="see-also"></a>Voir aussi
 

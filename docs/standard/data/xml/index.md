@@ -3,12 +3,12 @@ title: Documents et données XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-ms.openlocfilehash: a752d634141a56df1caa61eb5d375dd2a402832f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6d2a52567a1fc8bdbbb1d039ac583c889d77d4af
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287686"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540132"
 ---
 # <a name="xml-documents-and-data"></a>Documents et données XML
 
@@ -24,9 +24,9 @@ Le .NET Framework fournit un jeu de classes complet et intégré qui vous perme
 
 - <xref:System.Xml.Linq>
 
-Pour obtenir la liste complète, recherchez « System.Xml » sur le [navigateur de l’API .NET](https://docs.microsoft.com/dotnet/api/?term=system.xml).
+Pour obtenir la liste complète, recherchez « System.Xml » sur le [navigateur de l’API .NET](../../../../api/index.md?term=system.xml).
 
-Les classes dans ces espaces de noms prennent en charge les recommandations World Wide Web Consortium (W3C). Par exemple :
+Les classes dans ces espaces de noms prennent en charge les recommandations World Wide Web Consortium (W3C). Exemple :
 
 - La classe <xref:System.Xml.XmlDocument?displayProperty=nameWithType> implémente les recommandations du [W3C relatives aux modèles objet de documents (DOM) de niveau 1](https://www.w3.org/TR/REC-DOM-Level-1/) et [2 (standard)](https://www.w3.org/TR/DOM-Level-2-Core/).
 
@@ -38,7 +38,7 @@ Les classes dans ces espaces de noms prennent en charge les recommandations Worl
 
 Les classes XML du .NET Framework offrent les avantages suivants :
 
-- **Améliorer.** [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) facilitent la programmation avec XML et offrent une expérience de requête similaire à SQL.
+- **Améliorer.** [LINQ to XML (C#)](../../linq/linq-xml-overview.md) et [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md) facilitent la programmation avec XML et offrent une expérience de requête similaire à SQL.
 
 - **Amélioré.** Les classes XML du .NET Framework sont extensibles grâce à l'utilisation de classes de base abstraites et de méthodes virtuelles. Par exemple, vous pouvez créer une classe dérivée de la classe <xref:System.Xml.XmlUrlResolver> qui stocke le flux mis en cache sur le disque local.
 
@@ -60,7 +60,7 @@ Les classes XML du .NET Framework offrent les avantages suivants :
 
 [Options de traitement XML](xml-processing-options.md) Présente les options de traitement des données XML.
 
-[Traitement des données XML en mémoire](processing-xml-data-in-memory.md) Présente les trois modèles pour le traitement des données XML en mémoire : [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md), la <xref:System.Xml.XmlDocument> classe (basée sur le document Object Model W3C) et la <xref:System.Xml.XPath.XPathDocument> classe (basée sur le modèle de données XPath).
+[Traitement des données XML en mémoire](processing-xml-data-in-memory.md) Présente les trois modèles pour le traitement des données XML en mémoire : [LINQ to XML (C#)](../../linq/linq-xml-overview.md) et [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md), la <xref:System.Xml.XmlDocument> classe (basée sur le document Object Model W3C) et la <xref:System.Xml.XPath.XPathDocument> classe (basée sur le modèle de données XPath).
 
 [Transformations XSLT](xslt-transformations.md)\
 Décrit comment utiliser le processeur XSLT.
@@ -74,7 +74,7 @@ Décrit comment le .NET Framework permet un accès synchrone en temps réel aux
 [Gestion des espaces de noms dans un document XML](managing-namespaces-in-an-xml-document.md)\
 Décrit comment la classe <xref:System.Xml.XmlNamespaceManager> est utilisée pour stocker et gérer des informations d'espace de noms.
 
-[Prise en charge des types dans les classes System. Xml](type-support-in-the-system-xml-classes.md)\
+[Prise en charge des types dans les classes System.Xml](type-support-in-the-system-xml-classes.md)\
 Décrit comment les types de données XML sont mappés aux types CLR, comment convertir des types de données XML, ainsi que d’autres fonctionnalités de prise en charge des types dans les classes <xref:System.Xml>.
 
 ## <a name="related-sections"></a>Sections connexes

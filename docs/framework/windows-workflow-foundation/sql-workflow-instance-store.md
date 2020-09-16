@@ -2,12 +2,12 @@
 title: Magasin d'instances de workflow SQL
 ms.date: 03/30/2017
 ms.assetid: 8cd2f8a5-4bf8-46ea-8909-c7fdb314fabc
-ms.openlocfilehash: 1764017369e82cfbed38be06b4a36847576b5fc0
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 38cf83ebb8417009c6aa205aa29cd633d1232f0a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837634"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540230"
 ---
 # <a name="sql-workflow-instance-store"></a>Magasin d'instances de workflow SQL
 Le [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] est fourni avec le magasin d'instances de workflow SQL, qui permet aux workflows de rendre les informations d'état persistantes à propos des instances de workflow dans SQL Server 2005 ou dans une base de données SQL Server 2008. Cette fonctionnalité est implémentée principalement dans le formulaire de la classe <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, qui dérive de la classe <xref:System.Runtime.DurableInstancing.InstanceStore> abstraite de l'infrastructure de persistance. La fonctionnalité de magasin d’instances de workflow SQL constitue un fournisseur de persistance SQL, qui est une implémentation concrète de l’API de persistance qu’un hôte utilise pour envoyer des commandes de persistance au magasin.  
@@ -18,24 +18,24 @@ Le [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] 
   
  Les rubriques de cette section décrivent les propriétés et fonctionnalités du magasin d’instances de workflow SQL et vous fournissent des détails sur la configuration du magasin.  
   
- Windows Server AppFabric fournit son propre magasin d'instances et des outils pour simplifier la configuration et l'utilisation du magasin d'instances. Pour plus d’informations, consultez [magasin d’instances Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10)). Pour plus d’informations sur l’application Fabric SQL Server base de données de persistance, consultez [application fabric SQL Server base de données de persistance](https://docs.microsoft.com/previous-versions/appfabric/ee790819(v=azure.10))  
+ Windows Server AppFabric fournit son propre magasin d'instances et des outils pour simplifier la configuration et l'utilisation du magasin d'instances. Pour plus d’informations, consultez [magasin d’instances Windows Server App Fabric](/previous-versions/appfabric/ff383417(v=azure.10)). Pour plus d’informations sur l’application Fabric SQL Server base de données de persistance, consultez [application fabric SQL Server base de données de persistance](/previous-versions/appfabric/ee790819(v=azure.10))  
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-- [Propriétés du magasin d’instances de workflow SQL](properties-of-sql-workflow-instance-store.md)  
+- [Propriétés du magasin d'instances de workflow SQL](properties-of-sql-workflow-instance-store.md)  
   
-- [Guide pratique pour activer la persistance SQL dans les workflows et les services de workflow](how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)  
+- [Procédure : activer la persistance SQL pour les workflow et les services de workflow](how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)  
   
-- [Activation d’instance](instance-activation.md)  
+- [Activation d'instance](instance-activation.md)  
   
 - [Prise en charge des requêtes](support-for-queries.md)  
   
-- [Stocker l’extensibilité](store-extensibility.md)  
+- [Stocker l'extensibilité](store-extensibility.md)  
   
-- [Security](security.md)  
+- [Sécurité](security.md)  
   
 - [Base de données de persistance SQL Server](sql-server-persistence-database.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de persistance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd699769(v=vs.100))
+- [Exemples de persistance](/previous-versions/dotnet/netframework-4.0/dd699769(v=vs.100))

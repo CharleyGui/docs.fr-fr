@@ -1,13 +1,13 @@
 ---
 title: Modèles d’observabilité
 description: Modèles d’observation pour les applications Cloud natives
-ms.date: 05/13/2020
-ms.openlocfilehash: db6a56358923025cbcca9478908474227e5da96d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.date: 08/10/2020
+ms.openlocfilehash: 2a6ef0e58f1e20667167042614768b099f640858
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613809"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539851"
 ---
 # <a name="observability-patterns"></a>Modèles d’observabilité
 
@@ -15,7 +15,7 @@ Tout comme les modèles ont été développés pour faciliter la mise en page du
 
 ## <a name="when-to-use-logging"></a>Quand utiliser la journalisation
 
-Quelle que soit la prudence, les applications se comportent presque toujours de manière inattendue en production. Quand les utilisateurs signalent des problèmes avec une application, il est très utile de pouvoir voir ce qui se passe avec l’application lorsque le problème s’est produit. L’une des méthodes les plus éprouvées et les plus vraies pour capturer des informations sur ce que fait une application en cours d’exécution est de faire en sorte que l’application consigne ce qu’elle fait. Ce processus porte le nom de journalisation. À chaque défaillance ou problème de temps, l’objectif doit être de reproduire les conditions dans lesquelles les défaillances se sont produites, dans un environnement hors production. Le fait de disposer d’une bonne connexion permet aux développeurs de suivre le programme afin de dupliquer les problèmes dans un environnement qui peut être testé et expérimenté.
+Quelle que soit la prudence, les applications se comportent presque toujours de manière inattendue en production. Lorsque les utilisateurs signalent des problèmes avec une application, il est utile de pouvoir voir ce qui se passe avec l’application lorsque le problème s’est produit. L’une des méthodes les plus éprouvées et les plus vraies pour capturer des informations sur ce que fait une application en cours d’exécution est de faire en sorte que l’application consigne ce qu’elle fait. Ce processus porte le nom de journalisation. À chaque fois que des échecs ou des problèmes surviennent en production, l’objectif doit être de reproduire les conditions dans lesquelles les défaillances se sont produites, dans un environnement hors production. Le fait de disposer d’une bonne connexion permet aux développeurs de suivre le programme afin de dupliquer les problèmes dans un environnement qui peut être testé et expérimenté.
 
 ### <a name="challenges-when-logging-with-cloud-native-applications"></a>Défis liés à la journalisation avec des applications Cloud natives
 
@@ -44,7 +44,7 @@ Chaque langage de programmation dispose d’outils qui autorisent l’écriture 
 * Débogage
 * Information
 * Avertissement
-* Erreur
+* Error
 * Erreur irrécupérable
 
 Ces différents niveaux de journalisation fournissent la granularité de la journalisation. Lorsque l’application fonctionne correctement en production, elle peut être configurée pour enregistrer uniquement les messages importants. Lorsque l’application ne fonctionne pas correctement, le niveau de journalisation peut être augmenté pour que les journaux plus détaillés soient collectés. Cela équilibre les performances par rapport à la facilité de débogage.

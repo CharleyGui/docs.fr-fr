@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4354e5eb-dd45-469d-97fb-1c495705ee59
-ms.openlocfilehash: f3177ab98382506770c4655c62573da5c1d96c69
-ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
+ms.openlocfilehash: 9879803c970b7965bf152c216367b216e201af38
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78848754"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540306"
 ---
 # <a name="how-to-call-custom-database-functions"></a>Comment : appeler des fonctions de base de données personnalisées
 
@@ -24,11 +24,11 @@ La procédure ci-dessous fournit un plan de haut niveau pour l'appel d'une fonct
 
 1. Créez une fonction personnalisée dans votre base de données.
 
-     Pour plus d’informations sur la création de fonctions personnalisées dans SQL Server, voir [CREATE FUNCTION (Transact-SQL)](/sql/t-sql/statements/create-function-transact-sql).
+     Pour plus d’informations sur la création de fonctions personnalisées dans SQL Server, consultez [CREATE FUNCTION (Transact-SQL)](/sql/t-sql/statements/create-function-transact-sql).
 
 2. Déclarez une fonction dans la partie SSDL (Store Schema Definition Language) de votre fichier .edmx. Le nom de la fonction doit être le même que le nom de la fonction déclarée dans la base de données.
 
-     Pour plus d’informations, voir [Élément fonction fonction (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#function-element-ssdl).
+     Pour plus d’informations, consultez [Function, élément (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#function-element-ssdl).
 
 3. Ajoutez une méthode correspondante à une classe dans votre code d'application et appliquez un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> à la méthode. Notez que les paramètres <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> et <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> de l'attribut sont respectivement le nom de l'espace de noms du modèle conceptuel et le nom de la fonction dans le modèle conceptuel. La résolution des noms de fonctions pour LINQ respecte la casse.
 
@@ -36,7 +36,7 @@ La procédure ci-dessous fournit un plan de haut niveau pour l'appel d'une fonct
 
 ## <a name="example"></a> Exemple
 
-L'exemple suivant montre comment appeler une fonction de base de données personnalisée dans une requête LINQ to Entities. L'exemple utilise le modèle School. Pour plus d’informations sur le modèle de l’école, voir [Créer la base de données sur les échantillons scolaires](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) et générer le fichier [.edmx de l’école](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100)).
+L'exemple suivant montre comment appeler une fonction de base de données personnalisée dans une requête LINQ to Entities. L'exemple utilise le modèle School. Pour plus d’informations sur le modèle School, consultez [création de l’exemple de base de données School](/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) et [génération du fichier School. edmx](/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100)).
 
 Le code suivant ajoute la fonction `AvgStudentGrade` à l'exemple de base de données School.
 
@@ -47,13 +47,13 @@ Le code suivant ajoute la fonction `AvgStudentGrade` à l'exemple de base de don
 
 ## <a name="example"></a> Exemple
 
-Ensuite, déclarez une fonction dans le langage de définition du schéma de magasin (SSDL) de votre fichier *.edmx.* Le code suivant `AvgStudentGrade` déclare la fonction dans SSDL :
+Ensuite, déclarez une fonction dans le Store Schema Definition Language (SSDL) de votre fichier *. edmx* . Le code suivant déclare la `AvgStudentGrade` fonction en SSDL :
 
 [!code-xml[DP L2E MapToDBFunction#2](~/samples/snippets/csharp/VS_Snippets_Data/dp l2e maptodbfunction/cs/school.edmx#2)]
 
 ## <a name="example"></a> Exemple
 
-Maintenant, créez une méthode et cartographiez-la à la fonction déclarée dans le SSDL. La méthode dans la classe suivante est mappée à la fonction définie dans le langage SSDL (ci-dessus) à l'aide d'un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>. Lorsque cette méthode est appelée, la fonction correspondante dans la base de données est exécutée.
+À présent, créez une méthode et mappez-la à la fonction déclarée dans le langage SSDL. La méthode dans la classe suivante est mappée à la fonction définie dans le langage SSDL (ci-dessus) à l'aide d'un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>. Lorsque cette méthode est appelée, la fonction correspondante dans la base de données est exécutée.
 
 [!code-csharp[DP L2E MapToDBFunction#3](~/samples/snippets/csharp/VS_Snippets_Data/dp l2e maptodbfunction/cs/program.cs#3)]
 [!code-vb[DP L2E MapToDBFunction#3](~/samples/snippets/visualbasic/VS_Snippets_Data/dp l2e maptodbfunction/vb/module1.vb#3)]
@@ -67,5 +67,5 @@ Enfin, appelez la méthode dans une requête LINQ to Entities. Le code suivant a
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation d'un fichier .edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [Présentation d'un fichier .edmx](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
 - [Requêtes dans LINQ to Entities](queries-in-linq-to-entities.md)

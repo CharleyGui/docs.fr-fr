@@ -3,12 +3,12 @@ title: Communication de service à service
 description: Découvrez comment les microservices dorsaux Cloud-natives communiquent avec d’autres microservices back-end.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: dec06cc28ac177381b882f9e441e19e5c51bd5ad
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 88d7dfabee14419978889f5d9ea30b12f36837de
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613705"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539803"
 ---
 # <a name="service-to-service-communication"></a>Communication de service à service
 
@@ -90,7 +90,7 @@ Une file d’attente de messages est une construction intermédiaire par le biai
 
 Dans le chapitre 1, nous avons parlé des *services de stockage*. Les services de stockage sont des ressources auxiliaires dont dépendent les systèmes natifs du Cloud. Les files d’attente de messages sont des services de stockage. Le Cloud Azure prend en charge deux types de files d’attente de messages que vos systèmes natifs du Cloud peuvent utiliser pour implémenter la messagerie de commandes : les files d’attente de stockage Azure et les files d’attente de Azure Service Bus.
 
-### <a name="azure-storage-queues"></a>Files d’attente Stockage Azure
+### <a name="azure-storage-queues"></a>files d’attente de stockage Azure
 
 Les files d’attente de stockage Azure offrent une infrastructure de mise en file d’attente simple, rapide et abordable, avec les comptes de stockage Azure.
 
@@ -164,7 +164,7 @@ Avec l’événement, nous passons de la technologie de mise en file d’attente
 
 **Figure 4-16**. Architecture des rubriques
 
-Dans la figure précédente, les éditeurs envoient des messages à la rubrique. À la fin, les abonnés reçoivent des messages des abonnements. Au milieu, la rubrique transfère les messages aux abonnements en fonction d’un ensemble de *règles*, affichées dans des zones bleu foncé. Les règles agissent comme un filtre qui transfère des messages spécifiques à un abonnement. Ici, un événement « CreateOrder » est envoyé à l’abonnement \# 1 et à l’abonnement \# 3, mais pas à l’abonnement \# 2. Un événement « OrderCompleted » est envoyé à l’abonnement \# 2 et à l’abonnement \# 3.
+Dans la figure précédente, les éditeurs envoient des messages à la rubrique. À la fin, les abonnés reçoivent des messages des abonnements. Au milieu, la rubrique transfère les messages aux abonnements en fonction d’un ensemble de règles, affichées dans des zones bleu foncé. Les règles agissent comme un filtre qui transfère des messages spécifiques à un abonnement. Ici, un événement « GetPrice » est envoyé au prix et aux abonnements de journalisation lorsque l’abonnement à la journalisation a choisi de recevoir tous les messages.  Un événement « GetInformation » est envoyé aux informations et aux abonnements de journalisation.
 
 Le Cloud Azure prend en charge deux services de rubrique différents : Azure Service Bus rubriques et Azure EventGrid.
 
@@ -218,7 +218,7 @@ Event Hub prend en charge la faible latence et la durée de rétention configura
 
 Event Hub prend en charge les protocoles de publication d’événements courants, notamment HTTPs et AMQP. Il prend également en charge Kafka 1,0. Les [applications Kafka existantes peuvent communiquer avec Event Hub](https://docs.microsoft.com/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) à l’aide du protocole Kafka, qui offre une alternative à la gestion des clusters Kafka volumineux. De nombreux systèmes Cloud natifs Open source intègrent Kafka.
 
-Event Hubs implémente la diffusion de messages via un [modèle de consommateur partitionné](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) dans lequel chaque consommateur lit uniquement un sous-ensemble spécifique, ou partition, du flux de message. Ce modèle permet de disposer d'une échelle horizontale considérable pour le traitement des événements, et offre d'autres fonctionnalités axées sur le flux, qui ne sont pas disponibles dans les rubriques et les files d'attente. Une partition est une séquence ordonnée d’événements qui est conservée dans un concentrateur d’événements. À mesure que des événements plus récents arrivent, ils sont ajoutés à la fin de cette séquence.La figure 4-19 illustre le partitionnement dans un hub d’événements.
+Event Hubs implémente la diffusion de messages via un [modèle de consommateur partitionné](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) dans lequel chaque consommateur lit uniquement un sous-ensemble spécifique, ou partition, du flux de message. Ce modèle permet de disposer d'une échelle horizontale considérable pour le traitement des événements, et offre d'autres fonctionnalités axées sur le flux, qui ne sont pas disponibles dans les rubriques et les files d'attente. Une partition est une séquence ordonnée d’événements qui est conservée dans un concentrateur d’événements. Les événements les plus récents sont ajoutés à la fin de cette séquence.La figure 4-19 illustre le partitionnement dans un hub d’événements.
 
 ![Partitionnement de hub d’événements](./media/event-hub-partitioning.png)
 

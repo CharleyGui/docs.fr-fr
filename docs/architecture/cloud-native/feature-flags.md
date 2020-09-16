@@ -3,16 +3,16 @@ title: Indicateurs de fonctionnalités
 description: Implémenter des indicateurs de fonctionnalités dans les applications natives du Cloud en tirant parti de la configuration de Azure App
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 607bd14a415a25b382f550e697542cf749a21772
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: be4ab307069065975dc22d6bd984e12a2ea1457d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614069"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540463"
 ---
 # <a name="feature-flags"></a>Indicateurs de fonctionnalités
 
-Dans le chapitre 1, nous avons affirmé que le Cloud native est bien plus rapide que la vitesse et l’agilité. Les utilisateurs attendent une réactivité rapide, des fonctionnalités novatrices et des temps d’arrêt nuls. `Feature flags`est une technique de déploiement moderne qui permet d’accroître l’agilité des applications Cloud natives. Elles vous permettent de déployer de nouvelles fonctionnalités dans un environnement de production, mais de limiter leur disponibilité. Avec le raccourci d’un commutateur, vous pouvez activer une nouvelle fonctionnalité pour des utilisateurs spécifiques sans redémarrer l’application ou déployer un nouveau code. Ils séparent la publication de nouvelles fonctionnalités du déploiement de code.
+Dans le chapitre 1, nous avons affirmé que le Cloud native est bien plus rapide que la vitesse et l’agilité. Les utilisateurs attendent une réactivité rapide, des fonctionnalités novatrices et des temps d’arrêt nuls. `Feature flags` est une technique de déploiement moderne qui permet d’accroître l’agilité des applications Cloud natives. Elles vous permettent de déployer de nouvelles fonctionnalités dans un environnement de production, mais de limiter leur disponibilité. Avec le raccourci d’un commutateur, vous pouvez activer une nouvelle fonctionnalité pour des utilisateurs spécifiques sans redémarrer l’application ou déployer un nouveau code. Ils séparent la publication de nouvelles fonctionnalités du déploiement de code.
 
 Les indicateurs de fonctionnalités sont basés sur la logique conditionnelle qui contrôlent la visibilité des fonctionnalités pour les utilisateurs au moment de l’exécution. Dans les systèmes modernes Cloud natifs, il est courant de déployer de nouvelles fonctionnalités en production tôt, mais de les tester avec un public limité. À mesure que la confiance augmente, la fonctionnalité peut être déployée de manière incrémentielle pour un public plus étendu.
 
@@ -29,7 +29,7 @@ Les indicateurs de fonctionnalité favorisent également le `trunk-based` dével
 
 À son cœur, un indicateur de fonctionnalité est une référence à un simple `decision object` . Elle retourne un état booléen de `on` ou `off` . L’indicateur encapsule généralement un bloc de code qui encapsule une fonctionnalité de fonctionnalité. L’état de l’indicateur détermine si ce bloc de code s’exécute pour un utilisateur donné. La figure 10-11 illustre l’implémentation.
 
-```c#
+```csharp
 if (featureFlag) {
     // Run this code block if the featureFlag value is true
 } else {
@@ -49,7 +49,7 @@ Les indicateurs de fonctionnalités peuvent être facilement implémentés dans 
 
 Une fois configuré dans votre classe de démarrage, vous pouvez ajouter la fonctionnalité d’indicateur de fonctionnalité au niveau du contrôleur, de l’action ou de l’intergiciel (middleware). La figure 10-12 illustre l’implémentation du contrôleur et de l’action :
 
-```c#
+```csharp
 [FeatureGate(MyFeatureFlags.FeatureA)]
 public class ProductController : Controller
 {
@@ -57,7 +57,7 @@ public class ProductController : Controller
 }
 ```
 
-```c#
+```csharp
 [FeatureGate(MyFeatureFlags.FeatureA)]
 public IActionResult UpdateProductStatus()
 {
@@ -71,7 +71,7 @@ Si un indicateur de fonctionnalité est désactivé, l’utilisateur recevra un 
 
 Les indicateurs de fonctionnalités peuvent également être injectés directement dans des classes C#. La figure 10-13 illustre l’injection d’indicateurs de fonctionnalités :
 
-```c#
+```csharp
 public class ProductController : Controller
 {
     private readonly IFeatureManager _featureManager;

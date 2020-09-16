@@ -5,16 +5,16 @@ helpviewer_keywords:
 - Windows Communication Foundation, endpoints
 - Windows Communication Foundation, configuration
 ms.assetid: 58532b6d-4eea-4a4f-854f-a1c8c842564d
-ms.openlocfilehash: a4b3abfe9be25c9080a362eb4a6e4c7b070528f1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 062aba26227fedeea3e5f462ebf5d55cf0cba56c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797223"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539995"
 ---
 # <a name="custom-bindings"></a>Liaisons personnalisées
 
-Vous pouvez utiliser la classe <xref:System.ServiceModel.Channels.CustomBinding> lorsque l’une des liaisons fournies par le système ne répond pas aux spécifications de votre service. Toutes les liaisons sont construites à partir d’un ensemble ordonné d’éléments de liaison. Les liaisons personnalisées peuvent être construites à partir d’un jeu d’éléments de liaison fournis par le système ou peuvent inclure des éléments de liaison personnalisés définis par l’utilisateur. Vous pouvez utiliser des éléments de liaison personnalisés pour activer, par exemple, l’utilisation de nouveaux transports ou encodeurs au niveau d’un point de terminaison de service. Pour obtenir des exemples fonctionnels, consultez [exemples de liaisons personnalisées](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751479(v=vs.90)). Pour plus d’informations, consultez [ \<CustomBinding >](../../configure-apps/file-schema/wcf/custombinding.md).
+Vous pouvez utiliser la classe <xref:System.ServiceModel.Channels.CustomBinding> lorsque l’une des liaisons fournies par le système ne répond pas aux spécifications de votre service. Toutes les liaisons sont construites à partir d’un ensemble ordonné d’éléments de liaison. Les liaisons personnalisées peuvent être construites à partir d’un jeu d’éléments de liaison fournis par le système ou peuvent inclure des éléments de liaison personnalisés définis par l’utilisateur. Vous pouvez utiliser des éléments de liaison personnalisés pour activer, par exemple, l’utilisation de nouveaux transports ou encodeurs au niveau d’un point de terminaison de service. Pour obtenir des exemples fonctionnels, consultez [exemples de liaisons personnalisées](/previous-versions/dotnet/netframework-3.5/ms751479(v=vs.90)). Pour plus d’informations, consultez [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md).
 
 ## <a name="construction-of-a-custom-binding"></a>Construction d’une liaison personnalisée
 
@@ -76,9 +76,9 @@ De plus, vous pouvez définir vos propres éléments de liaison et les insérer 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la création de points de terminaison](../endpoint-creation-overview.md)
+- [Vue d'ensemble de la création de points de terminaison](../endpoint-creation-overview.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../using-bindings-to-configure-services-and-clients.md)
 - [Liaisons fournies par le système](../system-provided-bindings.md)
-- [Guide pratique pour Personnaliser une liaison fournie par le système](how-to-customize-a-system-provided-binding.md)
+- [Procédure : personnaliser une liaison fournie par le système](how-to-customize-a-system-provided-binding.md)
 - [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md)
 - [Liaison personnalisée](../samples/custom-binding.md)
