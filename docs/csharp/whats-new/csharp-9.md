@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 80d636db04655650c7448590cd1042cdb1b17de1
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: a8b66d21514b57d8bee3ff54b2a707af391fe7a9
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065030"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738721"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -224,7 +224,7 @@ Une autre utilisation intéressante de cette fonctionnalité est de l’associer
 
 Vous pouvez retourner une instance créée par le constructeur par défaut à l’aide d’une `return new();` expression.
 
-Une fonctionnalité similaire améliore la résolution de type cible des expressions conditionnelles. Avec cette modification, les deux expressions n’ont pas besoin d’une conversion implicite de l’une à l’autre, mais elles peuvent toutes deux avoir des conversions implicites en un type commun. Vous ne remarquerez probablement pas cette modification. Ce que vous remarquerez, c’est que certaines expressions conditionnelles qui nécessitaient auparavant des casts ou ne seraient pas compilées.
+Une fonctionnalité similaire améliore la résolution de type cible des expressions conditionnelles. Avec cette modification, les deux expressions n’ont pas besoin d’une conversion implicite de l’une à l’autre, mais elles peuvent toutes deux avoir des conversions implicites en un type cible. Vous ne remarquerez probablement pas cette modification. Ce que vous remarquerez, c’est que certaines expressions conditionnelles qui nécessitaient auparavant des casts ou ne seraient pas compilées.
 
 À compter de C# 9,0, vous pouvez ajouter le `static` modificateur aux expressions lambda ou aux méthodes anonymes. Les expressions lambda statiques sont analogues aux `static` fonctions locales : une fonction lambda statique ou une fonction anonyme ne peut pas capturer les variables locales ou l’état de l’instance. Le `static` modificateur empêche la capture accidentelle d’autres variables.
 

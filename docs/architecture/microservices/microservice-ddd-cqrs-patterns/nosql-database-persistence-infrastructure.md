@@ -2,12 +2,12 @@
 title: Utilisation de bases de données NoSQL comme infrastructure de persistance
 description: Comprenez l’utilisation des bases de données NoSql en général et Azure Cosmos DB en particulier, en tant qu’option d’implémentation de la persistance.
 ms.date: 01/30/2020
-ms.openlocfilehash: a478809895b0c20824f08f20558f2d47e10223d0
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: c4f9199b9e88a39581437eca340e92f4fd450003
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100806"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738799"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>Utiliser des bases de données NoSQL comme infrastructure de persistance
 
@@ -156,7 +156,7 @@ Pour obtenir une comparaison supplémentaire entre utiliser simplement MongoDB e
 
 Dans eShopOnContainers, nous utilisons l’API MongoDB, car notre priorité était fondamentalement d’avoir un environnement de développement/test cohérent utilisant une base de données NoSQL qui pouvait également fonctionner avec Azure Cosmos DB.
 
-Toutefois, si vous envisagez d’utiliser l’API MongoDB pour accéder à Azure Cosmos DB dans Azure pour des applications de production, vous devez analyser les différences de capacités et de performances lors de l’utilisation de l’API MongoDB pour accéder aux bases de données Azure Cosmos DB par rapport à l’API Azure Cosmos DB native. S’il n’y a pas de différence, vous pouvez utiliser l’API MongoDB, ce qui vous permet de bénéficier de la prise en charge de deux moteurs de base de données NoSQL en même temps.
+Toutefois, si vous envisagez d’utiliser l’API MongoDB pour accéder à Azure Cosmos DB dans Azure pour les applications de production, vous devez analyser les différences de capacités et de performances lors de l’utilisation de l’API MongoDB pour accéder aux bases de données Azure Cosmos DB par rapport à l’utilisation de l’API Azure Cosmos DB Native. S’il n’y a pas de différence, vous pouvez utiliser l’API MongoDB, ce qui vous permet de bénéficier de la prise en charge de deux moteurs de base de données NoSQL en même temps.
 
 Vous pouvez également utiliser des clusters MongoDB comme base de données de production dans le Cloud d’Azure, également avec le [service Azure MongoDB](https://www.mongodb.com/scale/mongodb-azure-service). Mais il ne s’agit pas d’un service PaaS fourni par Microsoft. Dans ce cas, Azure héberge simplement cette solution provenant de MongoDB.
 

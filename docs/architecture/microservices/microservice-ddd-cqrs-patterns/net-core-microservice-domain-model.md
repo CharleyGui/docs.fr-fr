@@ -2,12 +2,12 @@
 title: Implémentation d’un modèle de domaine de microservice avec .NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Accéder aux détails d’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 0b42ecc2440faf5870b2d99e31d03cda00b21ce0
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 4017d9d658ff73fd935507dad79e9ffab7973de1
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306905"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738747"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implémenter un modèle de domaine de microservice avec .NET Core
 
@@ -154,7 +154,7 @@ En outre, la nouvelle opération OrderItem(params) sera également contrôlée e
 
 Quand vous utilisez Entity Framework Core 1.1 ou version ultérieure, une entité DDD peut être mieux exprimée, car elle permet un [mappage à des champs](https://docs.microsoft.com/ef/core/modeling/backing-field) en plus des propriétés. Cela est utile quand vous protégez des collections d’entités enfants ou d’objets de valeur. Avec cette amélioration, vous pouvez utiliser de simples champs privés au lieu de propriétés, et vous pouvez implémenter toute mise à jour de la collection de champs dans les méthodes publiques et fournir un accès en lecture seule via la méthode AsReadOnly.
 
-Dans DDD, vous souhaitez mettre à jour l’entité uniquement par le biais des méthodes de l’entité (ou du constructeur) afin de contrôler tout invariant et la cohérence des données, de sorte que les propriétés sont définies uniquement avec un accesseur Get. Les propriétés sont associées à des champs privés. Les membres privés sont uniquement accessibles à partir de la classe. Toutefois, il existe une exception : EF Core doit également définir ces champs (afin qu’il puisse retourner l’objet avec les valeurs appropriées).
+Dans DDD, vous souhaitez mettre à jour l’entité uniquement par le biais des méthodes de l’entité (ou du constructeur) afin de contrôler tout invariant et la cohérence des données, de sorte que les propriétés sont définies uniquement avec un accesseur Get. Les propriétés sont associées à des champs privés. Les membres privés sont uniquement accessibles à partir de la classe. Toutefois, il existe une exception : EF Core doit également définir ces champs (afin de pouvoir retourner l’objet avec les valeurs appropriées).
 
 ### <a name="map-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>Mapper des propriétés avec uniquement des accesseurs get aux champs de la table de base de données
 

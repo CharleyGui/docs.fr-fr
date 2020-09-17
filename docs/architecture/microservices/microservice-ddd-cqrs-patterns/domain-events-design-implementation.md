@@ -2,12 +2,12 @@
 title: Événements de domaine. Conception et implémentation
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Obtenir une vue détaillée des événements de domaine, un concept essentiel pour établir la communication entre les agrégats.
 ms.date: 10/08/2018
-ms.openlocfilehash: 0cc2072408e110d94b47bd47a9c337a604d4c1a3
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: e786af9b5cd005573dcc9d08a3ccd19f25f13813
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271774"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738773"
 ---
 # <a name="domain-events-design-and-implementation"></a>Événements de domaine : conception et implémentation
 
@@ -71,7 +71,7 @@ En revanche, si vous utilisez des événements de domaine, vous pouvez créer un
 2. Recevez la commande dans un gestionnaire de commandes.
    - Exécutez la transaction d’un seul agrégat.
    - (Facultatif) Déclenchez des événements de domaine pour les effets secondaires (par exemple, OrderStartedDomainEvent).
-3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Par exemple :
+3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Exemple :
    - Vérifiez ou créez l’acheteur et la méthode de paiement.
    - Créez et envoyez un événement d’intégration associé au bus d’événements pour propager les états sur les microservices ou déclencher des actions externes, comme l’envoi d’un e-mail à l’acheteur.
    - Gérez les autres effets secondaires.
@@ -132,7 +132,7 @@ L’étape suivante consiste à déclencher un événement de domaine pour qu’
 
 Udi Dahan proposait à l’origine (dans plusieurs billets de blog comme, par exemple, [Domain Events – Take 2](https://udidahan.com/2008/08/25/domain-events-take-2/)) d’utiliser une classe statique pour gérer et déclencher les événements. Ceci peut inclure une classe statique nommée DomainEvents qui déclenche des événements de domaine immédiatement quand elle est appelée, en utilisant une syntaxe comme `DomainEvents.Raise(Event myEvent)`. Jimmy Bogard a écrit un billet de blog ([Strengthening your domain: Domain Events](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)) qui recommande une approche similaire.
 
-Toutefois, lorsque la classe d’événements de domaine est statique, elle distribue aussi les événements aux gestionnaires immédiatement. Les tests et le débogage deviennent alors plus difficiles, car les gestionnaires d’événements avec une logique d’effets secondaires sont exécutés immédiatement après le déclenchement de l’événement. Lorsque vous effectuez des tests et des débogages, vous devez vous concentrer uniquement sur ce qui se passe actuellement dans les classes d’agrégats. Vous ne voulez pas être soudainement redirigé vers d’autres gestionnaires d’événements pour des effets secondaires liés à d’autres agrégats ou à une autre logique d’application. C’est pour cela que les autres approches ont évolué, comme nous allons le voir dans la section suivante.
+Toutefois, lorsque la classe d’événements de domaine est statique, elle distribue aussi les événements aux gestionnaires immédiatement. Les tests et le débogage deviennent alors plus difficiles, car les gestionnaires d’événements avec une logique d’effets secondaires sont exécutés immédiatement après le déclenchement de l’événement. Lorsque vous testez et déboguez, vous souhaitez simplement vous concentrer sur ce qui se passe dans les classes d’agrégation actuelles. vous ne souhaitez pas être soudainement redirigé vers d’autres gestionnaires d’événements pour les effets secondaires liés à d’autres agrégats ou à la logique d’application. C’est pour cela que les autres approches ont évolué, comme nous allons le voir dans la section suivante.
 
 #### <a name="the-deferred-approach-to-raise-and-dispatch-events"></a>Approche différée pour déclencher et distribuer des événements
 
