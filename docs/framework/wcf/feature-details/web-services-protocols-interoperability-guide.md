@@ -2,16 +2,16 @@
 title: Guide d’interopérabilité des protocoles de services Web
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-ms.openlocfilehash: 4169a796311c402a97358de5d52c52562b6ed357
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f35ca629da65af749897d28d28808d06eced7aa8
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553172"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720112"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Guide d’interopérabilité des protocoles de services Web
 
-Windows Communication Foundation (WCF) implémente un certain nombre de protocoles de services Web. Un grand nombre de ces protocoles incluent plusieurs options et points d'extensibilité qui sont laissés à la discrétion de l'implémenteur. Cette rubrique fournit une liste des protocoles de services Web implémentés par WCF. Des détails d'implémentation pour chaque protocole pris en charge sont fournis dans les autres rubriques de cette section.
+Windows Communication Foundation (WCF) implémente un certain nombre de protocoles de services Web. Un grand nombre de ces protocoles incluent plusieurs options et points d'extensibilité qui sont laissés à la discrétion de l'implémenteur. Cet article fournit la liste des protocoles de services Web implémentés par WCF. D’autres Articles de cette section fournissent des détails d’implémentation pour chaque protocole pris en charge.
 
 ## <a name="web-services-protocols-implemented-by-wcf"></a>Protocoles de services Web implémentés par WCF
 
@@ -64,9 +64,9 @@ L'interopérabilité des protocoles d'infrastructure est fournie par la famille 
 |WSS : X509 Token Profile 1.1|[Web Services Security X.509 Certificate Token Profile 1.1](https://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf)|
 |WSS: Kerberos Token Profile 1.1|[Web Services Security Kerberos Token Profile 1.1](https://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf)|
 |WSS: SAML 1.1 Token Profile 1.1|[Web Services Security SAML Token Profile 1.1](https://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf)|
-|WS-Secure Conversation|[Langage de conversation sécurisé des services Web](https://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)|
+|WS-Secure Conversation|[Langage de conversation sécurisé des services Web](http://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)|
 |WS-Trust 1.4 (page pouvant être en anglais)|[Langage d'approbation des services Web](https://docs.oasis-open.org/ws-sx/ws-trust/200802)|
-|WS-SecurityPolicy 2005/07|[Langage de conversation sécurisé des services Web](https://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)<br /><br /> Selon les corrections des errata soumis au comité technique OASIS WS-SX.<br /><br /> [message ws-sx](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html)|
+|WS-SecurityPolicy 2005/07|[Langage de conversation sécurisé des services Web](http://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)<br /><br /> Selon les corrections des errata soumis au comité technique OASIS WS-SX.<br /><br /> [message ws-sx](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html)|
 |WS-ReliableMessaging 1.1|[Protocole de messagerie fiable version 1,1](reliable-messaging-protocol-version-1-1.md)|
 
 <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> prend en charge les spécifications présentées dans le tableau suivant :
@@ -74,7 +74,7 @@ L'interopérabilité des protocoles d'infrastructure est fournie par la famille 
 |Spécification/Document|Lien|
 |-----------------------------|----------|
 |WS-Coordination|[Coordination de services Web](/previous-versions/ms951231(v=msdn.10))|
-|WS-AtomicTransaction|[Transaction atomique de services Web](https://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf)|
+|WS-AtomicTransaction|[Transaction atomique de services Web](http://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf)|
 
 Les classes  <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <xref:System.ServiceModel.Description.WsdlExporter>, <xref:System.ServiceModel.Description.WsdlImporter> et <xref:System.ServiceModel.Description.MetadataResolver> fournissent la prise en charge des spécifications de métadonnées suivantes.
 
@@ -90,7 +90,7 @@ Les classes  <xref:System.ServiceModel.Description.MetadataExporter>, <xref:Syst
 
 - [WS-PolicyAttachment 1.2](https://www.w3.org/Submission/2006/SUBM-WS-PolicyAttachment-20060425/)
 
-- [WS-MetadataExchange 1.1](https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)
+- [WS-MetadataExchange 1.1](http://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)
 
 - [WS-Transfer Get pour la récupération de métadonnées](https://www.w3.org/Submission/2006/SUBM-WS-Transfer-20060315/)
 

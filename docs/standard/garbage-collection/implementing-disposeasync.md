@@ -3,19 +3,19 @@ title: Implémenter une méthode DisposeAsync
 description: Découvrez comment implémenter des méthodes DisposeAsync et DisposeAsyncCore pour effectuer un nettoyage asynchrone des ressources.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 88adf9e484baa0e65e2ff093b4649cf35b8c86dc
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: 6ddfd860571d883e20fdb18985fe2bc2d9477dec
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022907"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720281"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implémenter une méthode DisposeAsync
 
@@ -77,15 +77,15 @@ Vous devrez peut-être implémenter à la fois les <xref:System.IDisposable> <xr
 
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/dispose-and-disposeasync.cs":::
 
-Les <xref:System.IDisposable.Dispose?displayProperty=nameWithType> <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> implémentations et sont à la fois du code réutilisable simple. Les `Dispose(bool)` `DisposeAsyncCore()` méthodes et commencent par vérifier si `_disposed` est `true` et s’exécutent uniquement quand elle est `false` .
+Les <xref:System.IDisposable.Dispose?displayProperty=nameWithType> <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> implémentations et sont à la fois du code réutilisable simple.
 
-Dans la `Dispose(bool)` méthode de surcharge, l' <xref:System.IDisposable> instance est supprimée de manière conditionnelle, si ce n’est pas le cas `null` . L' <xref:System.IAsyncDisposable> instance est castée en tant que <xref:System.IDisposable> , et si elle ne l’est pas non plus, elle est également `null` supprimée. Les deux instances sont ensuite affectées à `null` .
+Dans la `Dispose(bool)` méthode de surcharge, l' <xref:System.IDisposable> instance est supprimée de manière conditionnelle, si ce n’est pas le cas `null` . L' <xref:System.IAsyncDisposable> instance est castée en <xref:System.IDisposable> et, si ce n’est pas le cas `null` , elle est également supprimée. Les deux instances sont ensuite affectées à `null` .
 
 Avec la `DisposeAsyncCore()` méthode, la même approche logique est suivie. Si l' <xref:System.IAsyncDisposable> instance n’est pas `null` , son appel à `DisposeAsync().ConfigureAwait(false)` est attendu. Si l' <xref:System.IDisposable> instance est également une implémentation de <xref:System.IAsyncDisposable> , elle est également supprimée de manière asynchrone. Les deux instances sont ensuite affectées à `null` .
 
 ## <a name="using-async-disposable"></a>Utilisation de Async jetable
 
-Pour utiliser correctement un objet qui implémente l' <xref:System.IAsyncDisposable> interface, vous utilisez l' [expression await](../../csharp/language-reference/operators/await.md)et les mots clés [en](../../csharp/language-reference/keywords/using-statement.md) même temps. Prenons l’exemple suivant, où la `ExampleAsyncDisposable` classe est instanciée puis encapsulée dans une `await using` instruction.
+Pour utiliser correctement un objet qui implémente l' <xref:System.IAsyncDisposable> interface, vous utilisez conjointement les mots clés [await](../../csharp/language-reference/operators/await.md) et [using](../../csharp/language-reference/keywords/using-statement.md) . Prenons l’exemple suivant, où la `ExampleAsyncDisposable` classe est instanciée puis encapsulée dans une `await using` instruction.
 
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/proper-await-using.cs":::
 
