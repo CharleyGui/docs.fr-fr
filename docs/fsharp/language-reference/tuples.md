@@ -2,12 +2,12 @@
 title: Tuples
 description: 'En savoir plus sur le tuple F #, un regroupement de valeurs sans nom, mais ordonnées, peut-être de types différents.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 5d26fd5d7ec5b4939a895a6d2a6a0d7fc6c6c733
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 6f4adf7e10e22d8b7a8cf697baee15962adf3630
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173287"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720359"
 ---
 # <a name="tuples"></a>Tuples
 
@@ -36,7 +36,7 @@ Vous pouvez utiliser des critères spéciaux pour accéder et assigner des noms 
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L27-L29)]
 
-Vous pouvez également déconstruire un tuple via des critères spéciaux en dehors d’une `match` expression via la `let` liaison :
+Vous pouvez également déconstruire un tuple via des critères spéciaux en dehors d’une `match` expression via la  `let` liaison :
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L34-L37)]
 
@@ -118,7 +118,7 @@ let struct (newX, newY) = Example.AddOneToXAndY(struct (1, 2))
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/interop.fsx#L5-L12)]
 
-Vous devez créer un modèle de correspondance sur un tuple et construire l’autre avec les parties constituantes.  Par exemple :
+Vous devez créer un modèle de correspondance sur un tuple et construire l’autre avec les parties constituantes.  Par exemple :
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/interop.fsx#L18-L22)]
 
@@ -126,7 +126,7 @@ Vous devez créer un modèle de correspondance sur un tuple et construire l’au
 
 Cette section explique la forme des tuples lorsqu’elles sont compilées.  Les informations ici ne sont pas nécessaires pour la lecture, sauf si vous ciblez .NET Framework 3,5 ou une valeur inférieure.
 
-Les tuples sont compilés dans des objets de l’un des différents types génériques, tous nommés `System.Tuple` , qui sont surchargés sur l’arité, ou le nombre de paramètres de type. Les types de tuples apparaissent dans ce formulaire quand vous les affichez à partir d’un autre langage, tel que C# ou Visual Basic, ou lorsque vous utilisez un outil qui n’est pas informé des constructions F #. Les `Tuple` types ont été introduits dans .NET Framework 4. Si vous ciblez une version antérieure du .NET Framework, le compilateur utilise les versions de [System. Tuple](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3) de la version 2,0 de la bibliothèque principale F #. Les types de cette bibliothèque sont utilisés uniquement pour les applications qui ciblent les versions 2,0, 3,0 et 3,5 du .NET Framework. Le transfert de type est utilisé pour garantir la compatibilité binaire entre les composants .NET Framework 2,0 et .NET Framework 4 F #.
+Les tuples sont compilés dans des objets de l’un des différents types génériques, tous nommés `System.Tuple` , qui sont surchargés sur l’arité, ou le nombre de paramètres de type. Les types de tuples apparaissent dans ce formulaire quand vous les affichez à partir d’un autre langage, tel que C# ou Visual Basic, ou lorsque vous utilisez un outil qui n’est pas informé des constructions F #. Les `Tuple` types ont été introduits dans .NET Framework 4. Si vous ciblez une version antérieure de .NET Framework, le compilateur utilise des versions de `System.Tuple` à partir de la version 2,0 de la bibliothèque principale F #. Les types de cette bibliothèque sont utilisés uniquement pour les applications qui ciblent les versions 2,0, 3,0 et 3,5 de .NET Framework. Le transfert de type est utilisé pour garantir la compatibilité binaire entre les composants .NET Framework 2,0 et .NET Framework 4 F #.
 
 ### <a name="compiled-form-of-struct-tuples"></a>Forme compilée de tuples de struct
 

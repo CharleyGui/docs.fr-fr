@@ -2,12 +2,12 @@
 title: Listes
 description: 'En savoir plus sur les listes F #, une série immuable et ordonnée d’éléments du même type.'
 ms.date: 08/13/2020
-ms.openlocfilehash: 16d7195039d25cf63630f5cc3be6563b1bf45c44
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 567731eb57b77d60d3dd847630d5676e8d047d09
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559165"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720346"
 ---
 # <a name="lists"></a>Listes
 
@@ -61,7 +61,7 @@ Le type de liste prend en charge les propriétés suivantes :
 
 |Propriété|Type|Description|
 |--------|----|-----------|
-|[Siège](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Head)|`'T`|Premier élément.|
+|[Head](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Head)|`'T`|Premier élément.|
 |[Vide](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Empty)|`'T list`|Propriété statique qui retourne une liste vide du type approprié.|
 |[IsEmpty](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#IsEmpty)|`bool`|`true` si la liste ne comporte aucun élément.|
 |[Item](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Item)|`'T`|Élément au niveau de l'index spécifié (de base zéro).|
@@ -233,13 +233,13 @@ Le code suivant montre l'utilisation de `List.sum`, `List.sumBy` et `List.averag
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet11.fs)]
 
-Le résultat est `1.000000`.
+La sortie est `1.000000`.
 
 Le code suivant illustre l'utilisation de `List.averageBy`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet12.fs)]
 
-Le résultat est `5.5`.
+La sortie est `5.5`.
 
 ### <a name="lists-and-tuples"></a>Listes et tuples
 
@@ -265,7 +265,7 @@ La sortie se présente comme suit :
 
 Les versions de décompression correspondantes, [List. unzip](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip) et [List. unzip3](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip3), prennent des listes de tuples et des listes de retour dans un tuple, où la première liste contient tous les éléments qui étaient en premier dans chaque tuple, et la deuxième liste contient le deuxième élément de chaque tuple, et ainsi de suite.
 
-L’exemple de code suivant illustre l’utilisation de [List. unzip](https://msdn.microsoft.com/library/639db80c-41b5-45bb-a6b4-1eaa04d61d21).
+L’exemple de code suivant illustre l’utilisation de [List. unzip](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip).
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet15.fs)]
 
@@ -276,7 +276,7 @@ La sortie se présente comme suit :
 [1; 3] [2; 4]
 ```
 
-L’exemple de code suivant illustre l’utilisation de [List. unzip3](https://msdn.microsoft.com/library/43078c77-32ec-4342-85b3-c31ccf984db4).
+L’exemple de code suivant illustre l’utilisation de [List. unzip3](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip3).
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet16.fs)]
 

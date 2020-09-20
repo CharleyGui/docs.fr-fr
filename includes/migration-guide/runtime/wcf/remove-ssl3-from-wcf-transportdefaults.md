@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 23987c300ac4fbad401de180b63106cd234f8d27
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: a5f4047d70276a90c9d72918a2559fd795feb26e
+ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89496757"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90770777"
 ---
 ### <a name="remove-ssl3-from-the-wcf-transportdefaults"></a>Suppression de Ssl3 de TransportDefaults dans WCF
 
@@ -14,13 +14,18 @@ Quand vous utilisez NetTcp avec la sécurité du transport et un type d’inform
 
 #### <a name="suggestion"></a>Suggestion
 
-Si Ssl3 est exigé, utilisez l’un des mécanismes de configuration suivants pour l’ajouter à la liste des protocoles négociés.<ul><li><xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols></li><li>[<](~/docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)</li><li>[section &lt;sslStreamSecurity&gt; de &lt;customBinding&gt;]~/docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)</li></ul>
+Si Ssl3 est exigé, utilisez l’un des mécanismes de configuration suivants pour l’ajouter à la liste des protocoles négociés.
 
-| Name    | Valeur       |
-|:--------|:------------|
-| Étendue   |Edge|
-|Version|4.6.2|
-|Type|Runtime|
+- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols>
+- <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols>
+- [\<transport> of \<netTcpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)
+- [\<sslStreamSecurity>](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)
+
+| Nom    | Valeur   |
+|:--------|:--------|
+| Étendue   | Edge    |
+| Version | 4.6.2   |
+| Type    | Runtime |
 
 #### <a name="affected-apis"></a>API affectées
 

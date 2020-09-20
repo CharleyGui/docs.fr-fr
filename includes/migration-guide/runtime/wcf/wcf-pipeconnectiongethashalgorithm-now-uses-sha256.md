@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d32725b0d3063d3320b73e02039ff567090da932
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 3cf1740565343558a85fdfa68957773468c28231
+ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89497264"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90770809"
 ---
 ### <a name="wcf-pipeconnectiongethashalgorithm-now-uses-sha256"></a>PipeConnection.GetHashAlgorithm dans WCF utilise maintenant SHA256
 
@@ -14,17 +14,24 @@ ms.locfileid: "89497264"
 
 #### <a name="suggestion"></a>Suggestion
 
-Si vous rencontrez des problèmes de compatibilité avec cette modification dans .NET Framework 4.7.1 ou version ultérieure, vous pouvez choisir de ne pas y adhérer en ajoutant la ligne suivante à la section <code>&lt;runtime&gt;</code> de votre fichier app.config :<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.UseSha1InPipeConnectionGetHashAlgorithm=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+Si vous rencontrez des problèmes de compatibilité avec cette modification dans .NET Framework 4.7.1 ou version ultérieure, vous pouvez choisir de ne pas y adhérer en ajoutant la ligne suivante à la section `<runtime>` de votre fichier app.config :
 
-| Name    | Valeur       |
-|:--------|:------------|
-| Étendue   |Secondaire|
-|Version|4.7.1|
-|Type|Runtime|
+```xml
+<configuration>
+  <runtime>
+    <AppContextSwitchOverrides value="Switch.System.ServiceModel.UseSha1InPipeConnectionGetHashAlgorithm=true" />
+  </runtime>
+</configuration>
 
-#### <a name="affected-apis"></a>API affectées
+| Name    | Value   |
+|:--------|:--------|
+| Scope   | Minor   |
+| Version | 4.7.1   |
+| Type    | Runtime |
 
-Non détectable via l’analyse des API.
+#### Affected APIs
+
+Not detectable via API analysis.
 
 <!--
 

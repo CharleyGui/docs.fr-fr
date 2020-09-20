@@ -30,6 +30,8 @@
   items:
     - name: ASP.NET Core
       href: aspnetcore.md
+    - name: Analyse du code
+      href: code-analysis.md
     - name: Bibliothèques .NET Core
       href: corefx.md
     - name: Chiffrement

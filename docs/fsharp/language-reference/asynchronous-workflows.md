@@ -2,12 +2,12 @@
 title: Workflows asynchrones
 description: 'En savoir plus sur la prise en charge dans le langage de programmation F # pour effectuer des calculs de manière asynchrone, qui s’exécutent sans bloquer l’exécution d’autres travaux.'
 ms.date: 08/15/2020
-ms.openlocfilehash: ac727fc630f13db01da964131ab39dc242a12cd1
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 14146cc8a643f31831475075212cc06da5f8d6ff
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557709"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720268"
 ---
 # <a name="asynchronous-workflows"></a>Flux de travail asynchrones
 
@@ -44,7 +44,7 @@ En plus de `let!` , vous pouvez utiliser `use!` pour effectuer des liaisons asyn
 
 Une méthode qui effectue une seule tâche asynchrone et retourne le résultat est appelée une *primitive asynchrone*, et celles-ci sont conçues spécifiquement pour une utilisation avec `let!` . Plusieurs primitives asynchrones sont définies dans la bibliothèque principale F #. Deux de ces méthodes pour les applications Web sont définies dans le module [`FSharp.Control.WebExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html) : [`WebRequest.AsyncGetResponse`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html#AsyncGetResponse) et [`WebClient.AsyncDownloadString`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html#AsyncDownloadString) . Les deux primitives téléchargent des données à partir d’une page Web, en fonction d’une URL. `AsyncGetResponse` produit un `System.Net.WebResponse` objet et `AsyncDownloadString` produit une chaîne qui représente le code HTML d’une page Web.
 
-Plusieurs primitives pour les opérations d’e/s asynchrones sont incluses dans le [`FSharp.Control.CommonExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html) module. Ces méthodes d’extension de la `System.IO.Stream` classe sont [`Stream.AsyncRead`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncRead) et [`Stream.AsyncWrite`](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncWrite) .
+Plusieurs primitives pour les opérations d’e/s asynchrones sont incluses dans le [`FSharp.Control.CommonExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html) module. Ces méthodes d’extension de la `System.IO.Stream` classe sont [`Stream.AsyncRead`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncRead) et [`Stream.AsyncWrite`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncWrite) .
 
 Vous pouvez également écrire vos propres primitives asynchrones en définissant une fonction dont le corps complet est placé dans un bloc Async.
 
@@ -66,4 +66,4 @@ La `runAll` fonction lance trois workflows asynchrones en parallèle et attend l
 
 - [Informations de référence sur le langage F #](index.md)
 - [Expressions de calcul](computation-expressions.md)
-- [Control. Async, classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.async-class-%5bfsharp%5d)
+- [Control. Async, classe](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html)

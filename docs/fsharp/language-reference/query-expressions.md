@@ -2,12 +2,12 @@
 title: Expressions de requête
 description: 'En savoir plus sur la prise en charge des expressions de requête pour LINQ dans le langage de programmation F #.'
 ms.date: 08/15/2020
-ms.openlocfilehash: afcc6e92818b1648a210ad9cfc3f1dcfa46037b5
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: b2380bbc448aca06a40896582f3d4e7f701c6184
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559061"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720476"
 ---
 # <a name="query-expressions"></a>Expressions de requête
 
@@ -45,7 +45,7 @@ query1
 
 Dans l’exemple de code précédent, l’expression de requête est entre accolades. La signification du code dans l’expression est, retourne chaque client de la table Customers dans la base de données dans les résultats de la requête. Les expressions de requête retournent un type qui implémente <xref:System.Linq.IQueryable%601> et <xref:System.Collections.Generic.IEnumerable%601> , et elles peuvent donc être itérées à l’aide du [module Seq](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html) comme le montre l’exemple.
 
-Chaque type d’expression de calcul est construit à partir d’une classe de générateur. La classe du générateur pour l’expression de calcul de la requête est `QueryBuilder` . Pour plus d’informations, consultez [expressions de calcul](computation-expressions.md) et [classe querybuilder](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html).
+Chaque type d’expression de calcul est construit à partir d’une classe de générateur. La classe du générateur pour l’expression de calcul de la requête est `QueryBuilder` . Pour plus d’informations, consultez [expressions de calcul](computation-expressions.md) et [classe querybuilder](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html).
 
 ## <a name="query-operators"></a>Opérateurs de requête
 

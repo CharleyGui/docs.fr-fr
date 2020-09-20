@@ -4,12 +4,12 @@ description: Découvrez comment supprimer les applications autonomes pour rédui
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 9c2994c98a2ebe6f45b056256c2bda28db017fbf
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 1ebcac51331407069e26b49e40bb6e071cefb752
+ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465479"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90770453"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Supprimer les exécutables et les déploiements autonomes
 
@@ -24,7 +24,7 @@ Le moteur d’analyse de la durée de génération fournit des avertissements au
 Le mode de découpage des applications est configuré avec le `TrimMode` paramètre. La valeur par défaut est `copyused` et regroupe les assemblys référencés avec l’application. La `link` valeur est utilisée avec les applications de Webassembly éblouissantes et supprime le code inutilisé dans les assemblys. Les avertissements d’analyse de suppression fournissent des informations sur les modèles de code où une analyse de dépendance complète n’était pas possible. Ces avertissements sont supprimés par défaut et peuvent être activés en affectant à l’indicateur la valeur `SuppressTrimAnalysisWarnings` `false` . Pour plus d’informations sur les options de suppression disponibles, consultez [options de suppression](trimming-options.md).
 
 > [!NOTE]
-> Le découpage est une fonctionnalité expérimentale de .NET Core 3,1, 5,0, qui est _uniquement_ disponible pour les applications qui sont publiées de façon autonome.
+> Le découpage est une fonctionnalité expérimentale de .NET Core 3,1 et .NET 5,0. Le découpage est _uniquement_ disponible pour les applications qui sont publiées de façon autonome.
 
 ## <a name="prevent-assemblies-from-being-trimmed"></a>Empêcher la troncation des assemblys
 
