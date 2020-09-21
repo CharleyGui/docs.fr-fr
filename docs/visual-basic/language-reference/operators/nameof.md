@@ -2,14 +2,17 @@
 title: Opérateur NameOf
 description: Découvrez comment utiliser l’opérateur NameOf dans Visual Basic
 ms.date: 10/27/2019
+f1_keywords:
+- NameOf
+- vb.NameOf
 helpviewer_keywords:
 - NameOf operator [Visual Basic]
-ms.openlocfilehash: e7dd55bfd98b34449b9f1a35375198598f57b46f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 0e72c4cb0c10113e53067ea4a743ca5ee77bcc95
+ms.sourcegitcommit: 43ed174f085840ca18a791dc89fe833174da766d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347016"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90828901"
 ---
 # <a name="nameof-operator---visual-basic"></a>Opérateur NameOf-Visual Basic
 
@@ -48,7 +51,7 @@ Public Property Name As String
 End Property
 ```
 
-L’opérateur `NameOf` est disponible dans Visual Basic 14 et versions ultérieures.
+L' `NameOf` opérateur est disponible dans Visual Basic 14 et versions ultérieures.
 
 ## <a name="see-also"></a>Voir aussi
 
