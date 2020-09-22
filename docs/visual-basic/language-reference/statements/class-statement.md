@@ -13,14 +13,15 @@ helpviewer_keywords:
 - classes [Visual Basic], data members
 - data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
-ms.openlocfilehash: bdb73772dfe0e6d49d89a4ef006b1bceac14c8ee
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3b64597fcd7453c20ed295fe263eeaa8783b20ae
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397153"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866030"
 ---
 # <a name="class-statement-visual-basic"></a>Class, instruction (Visual Basic)
+
 Déclare le nom d’une classe et introduit la définition des variables, propriétés, événements et procédures que la classe comprend.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,23 +39,24 @@ End Class
   
 |Terme|Définition|  
 |---|---|  
-|`attributelist`|Facultatif. Consultez la [liste des attributs](attribute-list.md).|  
-|`accessmodifier`|Facultatif. Il peut s'agir d'une des méthodes suivantes :<br /><br /> -   [Publique](../modifiers/public.md)<br />-   [Protect](../modifiers/protected.md)<br />-   [Contact](../modifiers/friend.md)<br />-   [Priv](../modifiers/private.md)<br />-   [Ami protégé](../modifiers/protected-friend.md)<br />- [Protégé privé](../modifiers/private-protected.md)<br/><br/> Consultez [niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|  
-|`Shadows`|Facultatif. Consultez [Shadows](../modifiers/shadows.md).|  
-|`MustInherit`|Facultatif. Consultez [MustInherit](../modifiers/mustinherit.md).|  
-|`NotInheritable`|Facultatif. Voir [NotInheritable](../modifiers/notinheritable.md).|  
-|`Partial`|Facultatif. Indique une définition partielle de la classe. Voir [Partial](../modifiers/partial.md).|  
+|`attributelist`|Optionnel. Consultez la [liste des attributs](attribute-list.md).|  
+|`accessmodifier`|Optionnel. Il peut s'agir d'une des méthodes suivantes :<br /><br /> -   [Publique](../modifiers/public.md)<br />-   [Protect](../modifiers/protected.md)<br />-   [Contact](../modifiers/friend.md)<br />-   [Priv](../modifiers/private.md)<br />-   [Ami protégé](../modifiers/protected-friend.md)<br />- [Protégé privé](../modifiers/private-protected.md)<br/><br/> Consultez [niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|  
+|`Shadows`|Optionnel. Consultez [Shadows](../modifiers/shadows.md).|  
+|`MustInherit`|Optionnel. Consultez [MustInherit](../modifiers/mustinherit.md).|  
+|`NotInheritable`|Optionnel. Voir [NotInheritable](../modifiers/notinheritable.md).|  
+|`Partial`|Optionnel. Indique une définition partielle de la classe. Voir [Partial](../modifiers/partial.md).|  
 |`name`|Obligatoire. Nom de cette classe. Consultez [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`Of`|Facultatif. Spécifie qu’il s’agit d’une classe générique.|  
+|`Of`|Optionnel. Spécifie qu’il s’agit d’une classe générique.|  
 |`typelist`|Obligatoire si vous utilisez le mot clé [of](of-clause.md) . Liste des paramètres de type pour cette classe. Consultez la [liste des types](type-list.md).|  
-|`Inherits`|Facultatif. Indique que cette classe hérite des membres d’une autre classe. Consultez [Inherits (instruction](inherits-statement.md)).|  
+|`Inherits`|Optionnel. Indique que cette classe hérite des membres d’une autre classe. Consultez [Inherits (instruction](inherits-statement.md)).|  
 |`classname`|Obligatoire si vous utilisez l' `Inherits` instruction. Nom de la classe dont cette classe est dérivée.|  
-|`Implements`|Facultatif. Indique que cette classe implémente les membres d’une ou de plusieurs interfaces. Consultez [Implements, instruction](implements-statement.md).|  
+|`Implements`|Optionnel. Indique que cette classe implémente les membres d’une ou de plusieurs interfaces. Consultez [Implements, instruction](implements-statement.md).|  
 |`interfacenames`|Obligatoire si vous utilisez l' `Implements` instruction. Noms des interfaces implémentées par cette classe.|  
-|`statements`|Facultatif. Les instructions qui définissent les membres de cette classe.|  
+|`statements`|Optionnel. Les instructions qui définissent les membres de cette classe.|  
 |`End Class`|Obligatoire. Met fin à la `Class` définition.|  
   
 ## <a name="remarks"></a>Notes  
+
  Une `Class` instruction définit un nouveau type de données. Une *classe* est un bloc de construction fondamental de la programmation orientée objet (OOP). Pour plus d’informations, consultez [objets et classes](../../programming-guide/language-features/objects-and-classes/index.md).  
   
  Vous pouvez utiliser `Class` uniquement au niveau de l’espace de noms ou du module. Cela signifie que le *contexte de déclaration* pour une classe doit être un fichier source, un espace de noms, une classe, une structure, un module ou une interface, et ne peut pas être une procédure ou un bloc. Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](declaration-contexts-and-default-access-levels.md).  
@@ -94,15 +96,17 @@ End Class
      Si du code à l’intérieur d’une classe imbriquée crée une référence non qualifiée à un élément de programmation, Visual Basic recherche l’élément en premier dans la classe imbriquée, puis dans sa classe conteneur, et ainsi de suite jusqu’à l’élément conteneur le plus à l’extérieur.  
   
 ## <a name="classes-and-modules"></a>Classes et modules  
+
  Ces éléments présentent de nombreuses similitudes, mais il existe également des différences importantes.  
   
-- **Correspondance.** Les versions précédentes de Visual Basic reconnaissent deux types de modules : les *modules de classe* (fichiers. CLS) et les *modules standard* (fichiers. bas). La version actuelle appelle ces *classes* et ces *modules*, respectivement.  
+- **Terminologie.** Les versions précédentes de Visual Basic reconnaissent deux types de modules : les *modules de classe* (fichiers. CLS) et les *modules standard* (fichiers. bas). La version actuelle appelle ces *classes* et ces *modules*, respectivement.  
   
 - **Membres partagés.** Vous pouvez contrôler si un membre d’une classe est un membre d’instance ou partagé.  
   
 - **Orientation de l’objet.** Les classes sont orientées objet, mais les modules ne le sont pas. Vous pouvez créer une ou plusieurs instances d’une classe. Pour plus d’informations, consultez [objets et classes](../../programming-guide/language-features/objects-and-classes/index.md).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant utilise une `Class` instruction pour définir une classe et plusieurs membres.  
   
  [!code-vb[VbVbalrStatements#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#62)]  

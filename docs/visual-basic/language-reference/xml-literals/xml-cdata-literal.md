@@ -8,14 +8,15 @@ helpviewer_keywords:
 - XML CDATA literal [Visual Basic]
 - XML literals [Visual Basic], CDATA
 ms.assetid: 9eafb6a4-dd9d-4866-85e8-0654c65abc44
-ms.openlocfilehash: b9cc830d27625f192d8f5e059bd3783d05d8ba3b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4447ad6cf0fb251b0d2d1387c109b06d32f69cb8
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400226"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866098"
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>Littéral CDATA XML (Visual Basic)
+
 Littéral représentant un <xref:System.Xml.Linq.XCData> objet.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,6 +26,7 @@ Littéral représentant un <xref:System.Xml.Linq.XCData> objet.
 ```  
   
 ## <a name="parts"></a>Éléments  
+
  `<![CDATA[`  
  Obligatoire. Indique le début de la section CDATA XML.  
   
@@ -34,10 +36,12 @@ Littéral représentant un <xref:System.Xml.Linq.XCData> objet.
  `]]>`  
  Obligatoire. Indique la fin de la section.  
   
-## <a name="return-value"></a>Valeur renvoyée  
+## <a name="return-value"></a>Valeur de retour  
+
  Objet <xref:System.Xml.Linq.XCData>.  
   
 ## <a name="remarks"></a>Notes  
+
  Les sections CDATA XML contiennent du texte brut qui doit être inclus, mais pas analysé, avec le code XML qui le contient. Une section CDATA XML peut contenir n’importe quel texte. Cela comprend les caractères XML réservés. La section CDATA XML se termine par la séquence « ]] > ». Cela implique les points suivants :  
   
 - Vous ne pouvez pas utiliser une expression incorporée dans un littéral CDATA XML, car les délimiteurs d’expressions incorporées sont du contenu CDATA XML valide.  
@@ -52,6 +56,7 @@ Littéral représentant un <xref:System.Xml.Linq.XCData> objet.
  Le compilateur Visual Basic convertit le littéral CDATA XML en un appel au <xref:System.Xml.Linq.XCData.%23ctor%2A> constructeur.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant crée une section CDATA qui contient le texte « peut contenir des \<XML> balises littérales ».  
   
  [!code-vb[VbXMLSamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#23)]  

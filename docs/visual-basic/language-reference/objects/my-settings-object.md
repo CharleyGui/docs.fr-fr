@@ -7,20 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - My.Settings object
 ms.assetid: 41f30dc1-202a-4273-b9b7-5728941f996c
-ms.openlocfilehash: c905ff85c8e9729dd4d6068f0d34f729962bbb57
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f3348e9eea5bdd7f4fd911150877c9aefdd66bcc
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372399"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867295"
 ---
 # <a name="mysettings-object"></a>My.Settings, objet
+
 Fournit des propriétés et des méthodes pour accéder aux paramètres de l’application.  
   
 ## <a name="remarks"></a>Notes  
+
  L' `My.Settings` objet fournit l’accès aux paramètres de l’application et vous permet de stocker et de récupérer dynamiquement des paramètres de propriété et d’autres informations pour votre application. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="properties"></a>Propriétés  
+
  Les propriétés de l’objet `My.Settings` fournissent l’accès aux paramètres de votre application. Pour ajouter ou supprimer des paramètres, utilisez le **Concepteur de paramètres**.  
   
  Chaque paramètre a un **nom**, un **type**, une **étendue**et une **valeur**, et ces paramètres déterminent la façon dont la propriété pour accéder à chaque paramètre apparaît dans l' `My.Settings` objet :  
@@ -43,6 +46,7 @@ Fournit des propriétés et des méthodes pour accéder aux paramètres de l’a
  L' `My.Settings` objet fournit également des propriétés et des méthodes avancées, héritées de la <xref:System.Configuration.ApplicationSettingsBase> classe.  
   
 ## <a name="tasks"></a>Tâches  
+
  Le tableau suivant répertorie des exemples de tâches impliquant l' `My.Settings` objet.  
   
 |À|Consultez|  
@@ -53,6 +57,7 @@ Fournit des propriétés et des méthodes pour accéder aux paramètres de l’a
 |Créer une grille des propriétés pour les paramètres utilisateur|[Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic](../../developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple affiche la valeur du paramètre `Nickname`.  
   
  [!code-vb[VbVbalrMyResources#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#14)]  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 - Partial keyword [Visual Basic]
 - type promotion
 ms.assetid: 7adaef80-f435-46e1-970a-269fff63b448
-ms.openlocfilehash: 650ead2f0deb9813b26241a6a4676907de3f263d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2482facadd0e0528ed1b71df6edb4a447947a902
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84362240"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867778"
 ---
 # <a name="partial-visual-basic"></a>Partial (Visual Basic)
+
 Indique qu'une déclaration de type est une définition partielle du type.  
   
  Vous pouvez diviser la définition d'un type entre plusieurs déclarations à l'aide du mot clé `Partial`. Vous pouvez utiliser autant de déclarations partielles que vous le souhaitez, dans autant de fichiers sources que vous le souhaitez. Toutefois, toutes les déclarations doivent être dans le même assembly et le même espace de noms.  
@@ -45,23 +46,24 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
   
 |Terme|Définition|  
 |---|---|  
-|`attrlist`|Facultatif. Liste des attributs qui s'appliquent à ce type. Vous devez placer la [liste des attributs](../statements/attribute-list.md) entre crochets pointus ( `< >` ).|  
-|`accessmodifier`|Facultatif. Spécifie le code pouvant accéder à ce type. Consultez [niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|  
-|`Shadows`|Facultatif. Consultez [Shadows](shadows.md).|  
-|`MustInherit`|Facultatif. Consultez [MustInherit](mustinherit.md).|  
-|`NotInheritable`|Facultatif. Voir [NotInheritable](notinheritable.md).|  
+|`attrlist`|Optionnel. Liste des attributs qui s'appliquent à ce type. Vous devez placer la [liste des attributs](../statements/attribute-list.md) entre crochets pointus ( `< >` ).|  
+|`accessmodifier`|Optionnel. Spécifie le code pouvant accéder à ce type. Consultez [niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|  
+|`Shadows`|Optionnel. Consultez [Shadows](shadows.md).|  
+|`MustInherit`|Optionnel. Consultez [MustInherit](mustinherit.md).|  
+|`NotInheritable`|Optionnel. Voir [NotInheritable](notinheritable.md).|  
 |`name`|Obligatoire. Nom de ce type. Doit correspondre au nom défini dans toutes les autres déclarations partielles du même type.|  
-|`Of`|Facultatif. Spécifie qu'il s'agit d'un type générique. Consultez [types génériques dans Visual Basic](../../programming-guide/language-features/data-types/generic-types.md).|  
+|`Of`|Optionnel. Spécifie qu'il s'agit d'un type générique. Consultez [types génériques dans Visual Basic](../../programming-guide/language-features/data-types/generic-types.md).|  
 |`typelist`|Obligatoire si [vous utilisez.](../statements/of-clause.md) Consultez la [liste des types](../statements/type-list.md).|  
-|`Inherits`|Facultatif. Consultez [Inherits (instruction](../statements/inherits-statement.md)).|  
+|`Inherits`|Optionnel. Consultez [Inherits (instruction](../statements/inherits-statement.md)).|  
 |`classname`|Requis si vous utilisez `Inherits`. Nom de la classe ou de l'interface dont cette classe dérive.|  
-|`Implements`|Facultatif. Consultez [Implements, instruction](../statements/implements-statement.md).|  
+|`Implements`|Optionnel. Consultez [Implements, instruction](../statements/implements-statement.md).|  
 |`interfacenames`|Requis si vous utilisez `Implements`. Noms des interfaces que ce type implémente.|  
-|`variabledeclarations`|Facultatif. Instructions qui déclarent des variables et des événements supplémentaires pour ce type.|  
-|`proceduredeclarations`|Facultatif. Instructions qui déclarent et définissent des procédures supplémentaires pour ce type.|  
+|`variabledeclarations`|Optionnel. Instructions qui déclarent des variables et des événements supplémentaires pour ce type.|  
+|`proceduredeclarations`|Optionnel. Instructions qui déclarent et définissent des procédures supplémentaires pour ce type.|  
 |`End Class` ou `End Structure`|Met fin à cette définition partielle de `Class` ou de `Structure`.|  
   
 ## <a name="remarks"></a>Notes  
+
  Visual Basic utilise des définitions de classe partielle pour séparer le code généré du code créé par l'utilisateur dans des fichiers sources distincts. Par exemple, le **Concepteur Windows Form** définit des classes partielles pour des contrôles tels que <xref:System.Windows.Forms.Form>. Vous ne devez pas modifier le code généré dans ces contrôles.  
   
  Toutes les règles de création de classes, structures, interfaces et modules, telles que celles relatives à l'héritage et à l'utilisation de modificateurs, s'appliquent lors de la création d'un type partiel.  
@@ -87,6 +89,7 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
  [Structure, instruction](../statements/structure-statement.md)  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant fractionne la définition de la classe `sampleClass` en deux déclarations, dont chacune définit une procédure `Sub` différente.  
   
  [!code-vb[VbVbalrKeywords#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#3)]  

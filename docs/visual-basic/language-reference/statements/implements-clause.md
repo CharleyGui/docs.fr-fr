@@ -17,22 +17,25 @@ helpviewer_keywords:
 - members [Visual Basic], Implements keyword
 - reimplementation
 ms.assetid: 5252cdf9-964d-4fc6-af0f-0449b7126b5a
-ms.openlocfilehash: 46ab1a1148e8d73d91293aedfc407e5efdc7cfb4
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7c95cf76b1bac24e2a0f20857b8984d54ebbea85
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404561"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866159"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements, clause (Visual Basic)
+
 Indique qu’un membre de classe ou de structure fournit l’implémentation d’un membre défini dans une interface.  
   
 ## <a name="remarks"></a>Notes  
+
 Le `Implements` mot clé n’est pas le même que l' [instruction Implements](implements-statement.md). Utilisez l' `Implements` instruction pour spécifier qu’une classe ou une structure implémente une ou plusieurs interfaces, puis, pour chaque membre, vous utilisez le `Implements` mot clé pour spécifier l’interface et le membre qu’elle implémente.
 
 Si une classe ou une structure implémente une interface, elle doit inclure l' `Implements` instruction immédiatement après l’instruction de la [classe](class-statement.md) ou de la [structure](structure-statement.md), et elle doit implémenter tous les membres définis par l’interface.
 
 ## <a name="reimplementation"></a>Réimplémentation  
+
 Dans une classe dérivée, vous pouvez réimplémenter un membre d’interface que la classe de base a déjà implémenté. Cela diffère de la substitution du membre de classe de base dans les aspects suivants :
 
 - Le membre de la classe de base n’a pas besoin d’être [substituable](../modifiers/overridable.md) pour être réimplémenté.

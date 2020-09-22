@@ -10,17 +10,19 @@ helpviewer_keywords:
 - Narrowing keyword [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: a207ee91-aca4-4771-b4e2-713f029bf2bb
-ms.openlocfilehash: f7724053e3732c909523e4e2d3b65bb1918c29d3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 77515357ac9dc972992df09c471695aad13985c4
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84362357"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867929"
 ---
 # <a name="narrowing-visual-basic"></a>Narrowing (Visual Basic)
+
 Indique qu’un opérateur de conversion ( `CType` ) convertit une classe ou une structure en un type qui peut ne pas pouvoir contenir certaines des valeurs possibles de la classe ou de la structure d’origine.  
   
 ## <a name="converting-with-the-narrowing-keyword"></a>Conversion avec le mot clé restrictive  
+
  La procédure de conversion doit spécifier `Public Shared` en plus de `Narrowing` .  
   
  Les conversions restrictives ne réussissent pas toujours au moment de l’exécution et peuvent échouer ou entraîner une perte de données. Exemples : `Long` à `Integer` , `String` à `Date` et un type de base à un type dérivé. Cette dernière conversion est restrictive, car le type de base ne peut pas contenir tous les membres du type dérivé et, par conséquent, n’est pas une instance du type dérivé.  

@@ -7,17 +7,19 @@ helpviewer_keywords:
 - static modifier
 - Static keyword [Visual Basic]
 ms.assetid: 19013910-4658-47b6-a22e-1744b527979e
-ms.openlocfilehash: 3b323d5fb1c4f1357b9f476213793c69d29b7208
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2b7113424969b0b18c981b0c8932aeef3795ca4a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402692"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867675"
 ---
 # <a name="static-visual-basic"></a>Static (Visual Basic)
+
 Spécifie qu’une ou plusieurs variables locales déclarées doivent continuer à exister et conserver leurs valeurs les plus récentes après l’arrêt de la procédure dans laquelle elles sont déclarées.  
   
 ## <a name="remarks"></a>Notes  
+
  Normalement, une variable locale dans une procédure cesse d’exister dès que la procédure s’arrête. Une variable statique continue d’exister et conserve sa valeur la plus récente. La prochaine fois que votre code appellera la procédure, la variable n’est pas réinitialisée et contient toujours la valeur la plus récente que vous lui avez assignée. Une variable statique continue d’exister pendant la durée de vie de la classe ou du module dans lequel elle est définie.  
   
 ## <a name="rules"></a>Règles  
@@ -31,11 +33,13 @@ Spécifie qu’une ou plusieurs variables locales déclarées doivent continuer 
 - **Modificateurs combinés.** Vous ne pouvez pas spécifier `Static` avec `ReadOnly` , `Shadows` ou `Shared` dans la même déclaration.  
   
 ## <a name="behavior"></a>Comportement  
+
  Lorsque vous déclarez une variable statique dans une `Shared` procédure, une seule copie de la variable statique est disponible pour l’ensemble de l’application. Vous appelez une `Shared` procédure en utilisant le nom de la classe, et non une variable qui pointe vers une instance de la classe.  
   
  Quand vous déclarez une variable statique dans une procédure qui n’est pas `Shared` , une seule copie de la variable est disponible pour chaque instance de la classe. Vous appelez une procédure non partagée à l’aide d’une variable qui pointe vers une instance spécifique de la classe.  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant montre l'utilisation de `Static`.  
   
  [!code-vb[VbVbalrKeywords#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#5)]  

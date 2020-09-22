@@ -11,14 +11,15 @@ helpviewer_keywords:
 - Get keyword [Visual Basic]
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-ms.openlocfilehash: 31936fb2c8f658203a43702a2b5fa4ee2481beb5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3da6c099b3f43a144484eaddf58605609eb0bbfe
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404600"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866203"
 ---
 # <a name="get-statement"></a>Get, instruction
+
 Déclare une `Get` procédure de propriété utilisée pour récupérer la valeur d’une propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,12 +34,13 @@ End Get
   
 |Terme|Définition|  
 |---|---|  
-|`attributelist`|Facultatif. Consultez la [liste des attributs](attribute-list.md).|  
+|`attributelist`|Optionnel. Consultez la [liste des attributs](attribute-list.md).|  
 |`accessmodifier`|Facultatif sur au plus une des `Get` instructions et `Set` dans cette propriété. Il peut s'agir d'une des méthodes suivantes :<br /><br /> -   [Protect](../modifiers/protected.md)<br />-   [Contact](../modifiers/friend.md)<br />-   [Priv](../modifiers/private.md)<br />-   `Protected Friend`<br /><br /> Consultez [niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|  
-|`statements`|Facultatif. Une ou plusieurs instructions qui s’exécutent lorsque la `Get` procédure de propriété est appelée.|  
+|`statements`|Optionnel. Une ou plusieurs instructions qui s’exécutent lorsque la `Get` procédure de propriété est appelée.|  
 |`End Get`|Obligatoire. Met fin à la définition de la `Get` procédure de propriété.|  
   
 ## <a name="remarks"></a>Notes  
+
  Chaque propriété doit avoir une `Get` procédure de propriété, sauf si la propriété est marquée `WriteOnly` . La `Get` procédure est utilisée pour retourner la valeur actuelle de la propriété.  
   
  Visual Basic appelle automatiquement la procédure d’une propriété `Get` lorsqu’une expression demande la valeur de la propriété.  
@@ -61,7 +63,7 @@ End Get
   
 - **Retour d’une procédure.** Lorsque la `Get` procédure revient au code appelant, l’exécution continue dans l’instruction qui a demandé la valeur de la propriété.  
   
-     `Get`les procédures de propriété peuvent retourner une valeur à l’aide de l' [instruction return](return-statement.md) ou en affectant la valeur de retour au nom de la propriété. Pour plus d’informations, consultez « valeur de retour » dans l' [instruction de fonction](function-statement.md).  
+     `Get` les procédures de propriété peuvent retourner une valeur à l’aide de l' [instruction return](return-statement.md) ou en affectant la valeur de retour au nom de la propriété. Pour plus d’informations, consultez « valeur de retour » dans l' [instruction de fonction](function-statement.md).  
   
      Les `Exit Property` `Return` instructions et provoquent une sortie immédiate d’une procédure de propriété. Un nombre quelconque `Exit Property` d' `Return` instructions et peuvent apparaître n’importe où dans la procédure, et vous pouvez mélanger des `Exit Property` `Return` instructions et.  
   
@@ -78,6 +80,7 @@ End Get
      [!code-vb[VbVbalrStatements#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#29)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant utilise l' `Get` instruction pour retourner la valeur d’une propriété.  
   
  [!code-vb[VbVbalrStatements#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#30)]  

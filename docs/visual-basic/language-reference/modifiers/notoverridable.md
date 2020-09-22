@@ -16,17 +16,19 @@ helpviewer_keywords:
 - methods [Visual Basic], sealed
 - properties [Visual Basic], overriding
 ms.assetid: 66ec6984-f5f5-4857-b362-6a3907aaf9e0
-ms.openlocfilehash: 463dd2454aafebf11554fb7bacdb73724c3130d8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8eec54a12c7fb748df46e8c48a8b07eab983cc72
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392156"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867864"
 ---
 # <a name="notoverridable-visual-basic"></a>NotOverridable (Visual Basic)
+
 Spécifie qu’une propriété ou procédure ne peut pas être substituée dans une classe dérivée.  
   
 ## <a name="remarks"></a>Notes  
+
  Le `NotOverridable` modificateur empêche une propriété ou une méthode d’être substituée dans une classe dérivée.  Le modificateur [Overridable](overridable.md) permet à une propriété ou à une méthode d’une classe d’être substituée dans une classe dérivée. Pour plus d’informations, consultez [Concepts de base de l’héritage](../../programming-guide/language-features/objects-and-classes/inheritance-basics.md).  
   
  Si le `Overridable` `NotOverridable` modificateur ou n’est pas spécifié, le paramètre par défaut varie selon que la propriété ou la méthode substitue une propriété ou une méthode de classe de base. Si la propriété ou la méthode substitue une propriété ou une méthode de classe de base, la valeur par défaut est `Overridable` ; sinon, elle a la valeur `NotOverridable` .  
@@ -36,11 +38,13 @@ Spécifie qu’une propriété ou procédure ne peut pas être substituée dans 
  Vous pouvez utiliser `NotOverridable` uniquement dans une instruction de déclaration de propriété ou de procédure. Vous pouvez spécifier `NotOverridable` uniquement sur une propriété ou une procédure qui remplace une autre propriété ou procédure, autrement dit, uniquement en association avec `Overrides` .  
   
 ## <a name="combined-modifiers"></a>Modificateurs combinés  
+
  Vous ne pouvez pas spécifier `Overridable` ou `NotOverridable` pour une `Private` méthode.  
   
  Vous ne pouvez pas spécifier `NotOverridable` avec `MustOverride` , `Overridable` ou `Shared` dans la même déclaration.  
   
-## <a name="usage"></a>Utilisation  
+## <a name="usage"></a>Usage  
+
  Le modificateur `NotOverridable` peut être utilisé dans les contextes suivants :  
   
  [Function (instruction)](../statements/function-statement.md)  

@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: a8b66d21514b57d8bee3ff54b2a707af391fe7a9
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 13da712e9421bbfe593e5945b80bb3636ebe05f3
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738721"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866439"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -224,15 +224,15 @@ Une autre utilisation intéressante de cette fonctionnalité est de l’associer
 
 Vous pouvez retourner une instance créée par le constructeur par défaut à l’aide d’une `return new();` expression.
 
-Une fonctionnalité similaire améliore la résolution de type cible des expressions conditionnelles. Avec cette modification, les deux expressions n’ont pas besoin d’une conversion implicite de l’une à l’autre, mais elles peuvent toutes deux avoir des conversions implicites en un type cible. Vous ne remarquerez probablement pas cette modification. Ce que vous remarquerez, c’est que certaines expressions conditionnelles qui nécessitaient auparavant des casts ou ne seraient pas compilées.
+Une fonctionnalité similaire améliore la résolution de type cible des [expressions conditionnelles](../language-reference/operators/conditional-operator.md). Avec cette modification, les deux expressions n’ont pas besoin d’une conversion implicite de l’une à l’autre, mais elles peuvent toutes deux avoir des conversions implicites en un type cible. Vous ne remarquerez probablement pas cette modification. Ce que vous remarquerez, c’est que certaines expressions conditionnelles qui nécessitaient auparavant des casts ou ne seraient pas compilées.
 
 À compter de C# 9,0, vous pouvez ajouter le `static` modificateur aux expressions lambda ou aux méthodes anonymes. Les expressions lambda statiques sont analogues aux `static` fonctions locales : une fonction lambda statique ou une fonction anonyme ne peut pas capturer les variables locales ou l’état de l’instance. Le `static` modificateur empêche la capture accidentelle d’autres variables.
 
 Les types de retour covariants fournissent la flexibilité pour les types de retour des fonctions substituées. Une fonction virtuelle substituée peut retourner un type dérivé du type de retour déclaré dans la méthode de la classe de base. Cela peut être utile pour les enregistrements et pour d’autres types qui prennent en charge les méthodes de fabrique ou de clonage virtuel.
 
-En outre, la `foreach` boucle reconnaît et utilise une méthode d’extension `GetEnumerator` qui, autrement, satisfait le `foreach` modèle. Ce changement signifie `foreach` qu’il est cohérent avec d’autres constructions basées sur des modèles, telles que le modèle asynchrone et la déconstruction basée sur des modèles. Dans la pratique, cette modification signifie que vous pouvez ajouter la `foreach` prise en charge à n’importe quel type. Vous devez limiter son utilisation à lorsque l’énumération d’un objet est logique dans votre conception.
+En outre, la [ `foreach` boucle](../language-reference/keywords/foreach-in.md) reconnaît et utilise une méthode d’extension `GetEnumerator` qui, autrement, satisfait le `foreach` modèle. Ce changement signifie `foreach` qu’il est cohérent avec d’autres constructions basées sur des modèles, telles que le modèle asynchrone et la déconstruction basée sur des modèles. Dans la pratique, cette modification signifie que vous pouvez ajouter la `foreach` prise en charge à n’importe quel type. Vous devez limiter son utilisation à lorsque l’énumération d’un objet est logique dans votre conception.
 
-Ensuite, vous pouvez utiliser des éléments ignorés comme paramètres pour les expressions lambda. Cela vous permet d’éviter de nommer l’argument et le compilateur peut ne pas l’utiliser. Vous utilisez `_` pour n’importe quel argument.
+Ensuite, vous pouvez utiliser des éléments ignorés comme paramètres pour les expressions lambda. Cela vous permet d’éviter de nommer l’argument et le compilateur peut ne pas l’utiliser. Vous utilisez `_` pour n’importe quel argument. Pour plus d’informations, consultez la section [paramètres d’entrée d’une expression lambda](../language-reference/operators/lambda-expressions.md#input-parameters-of-a-lambda-expression) de l’article [expressions lambda](../language-reference/operators/lambda-expressions.md) .
 
 Enfin, vous pouvez maintenant appliquer des attributs à des fonctions locales. Par exemple, vous pouvez appliquer des annotations d’attribut Nullable aux fonctions locales.
 
