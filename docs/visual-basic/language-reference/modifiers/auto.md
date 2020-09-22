@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Auto keyword [Visual Basic]
 - Auto keyword [Visual Basic], marshaling strings
 ms.assetid: bf79ba95-a62c-48a5-916f-0ac7a52c13ec
-ms.openlocfilehash: b9bdeed55788252c71b8fb1c995c140cbfdf60eb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 799a7320b701384dc5f4b4b46fef8544f6b15b02
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373126"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875508"
 ---
 # <a name="auto-visual-basic"></a>Auto (Visual Basic)
+
 Spécifie que Visual Basic doit marshaler des chaînes d’après les règles de .NET Framework en fonction du nom externe de la procédure externe déclarée.  
   
  Quand vous appelez une procédure définie à l’extérieur de votre projet, le compilateur Visual Basic n’a pas accès aux informations qu’il doit avoir pour appeler correctement la procédure. Ces informations incluent l’emplacement de la procédure, son identification, sa séquence d’appel et son type de retour, ainsi que le jeu de caractères de chaîne qu’elle utilise. L' [instruction DECLARE](../statements/declare-statement.md) crée une référence à une procédure externe et fournit ces informations nécessaires.  
@@ -26,15 +27,17 @@ Spécifie que Visual Basic doit marshaler des chaînes d’après les règles de
  Si aucun modificateur de jeu de caractères n’est spécifié, `Ansi` est la valeur par défaut.  
   
 ## <a name="remarks"></a>Notes  
+
  Le `Auto` modificateur peut être utilisé dans ce contexte :  
   
  [Declare Statement](../statements/declare-statement.md)  
   
 ## <a name="smart-device-developer-notes"></a>Notes de développement Smart Device  
+
  Ce mot clé n’est pas pris en charge.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Ansi](ansi.md)
+- [Caractères](ansi.md)
 - [Unicode](unicode.md)
 - [Mots clés](../keywords/index.md)

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Inherits statement [Visual Basic]
 - Inherits statement [Visual Basic], syntax
 ms.assetid: 9e6fe042-9af3-4341-8093-fc3537770cf2
-ms.openlocfilehash: 5d88a01f90bc91a88229d19aa2368f8c71075b2f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: dd8fbc71fdc859bb127764951464278267c0984c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404497"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875221"
 ---
 # <a name="inherits-statement"></a>Inherits Statement
+
 Fait en sorte que la classe ou l’interface actuelle hérite des attributs, variables, propriétés, procédures et événements d’une autre classe ou d’un ensemble d’interfaces.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,9 +29,10 @@ Inherits basetypenames
   
 |Terme|Définition|  
 |---|---|  
-|`basetypenames`|Obligatoire. Nom de la classe dont cette classe est dérivée.<br /><br /> -ou-<br /><br /> Noms des interfaces à partir desquelles cette interface est dérivée. Utilisez des virgules pour séparer plusieurs noms.|  
+|`basetypenames`|Obligatoire. Nom de la classe dont cette classe est dérivée.<br /><br /> - ou -<br /><br /> Noms des interfaces à partir desquelles cette interface est dérivée. Utilisez des virgules pour séparer plusieurs noms.|  
   
 ## <a name="remarks"></a>Notes  
+
  Si elle est utilisée, l' `Inherits` instruction doit être la première ligne non vide et sans commentaire dans une définition de classe ou d’interface. Elle doit suivre immédiatement l' `Class` `Interface` instruction ou.  
   
  Vous pouvez utiliser `Inherits` uniquement dans une classe ou une interface. Cela signifie que le contexte de déclaration pour un héritage ne peut pas être un fichier source, un espace de noms, une structure, un module, une procédure ou un bloc.  
@@ -52,11 +54,13 @@ Inherits basetypenames
  Un exemple d’héritage d’interface dans le .NET Framework est l' <xref:System.Collections.ICollection> interface, qui hérite de l' <xref:System.Collections.IEnumerable> interface. Cela a <xref:System.Collections.ICollection> pour effet d’hériter de la définition de l’énumérateur requis pour parcourir une collection.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant utilise l' `Inherits` instruction pour montrer comment une classe nommée `thisClass` peut hériter de tous les membres d’une classe de base nommée `anotherClass` .  
   
  [!code-vb[VbVbalrStatements#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#37)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant illustre l’héritage de plusieurs interfaces.  
   
  [!code-vb[VbVbalrStatements#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#38)]  

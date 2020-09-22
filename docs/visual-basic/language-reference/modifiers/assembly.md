@@ -10,17 +10,19 @@ helpviewer_keywords:
 - Assembly keyword [Visual Basic]
 - attribute blocks, Assembly keyword
 ms.assetid: 925e7471-3bdf-4b51-bb93-cbcfc6efc52f
-ms.openlocfilehash: 7d313dee1015362bd0215ed98ab7e898312cfbcd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 34d6b94f31336e3e99b8ca981a9c4899e5a3d912
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373158"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875529"
 ---
 # <a name="assembly-visual-basic"></a>Assembly (Visual Basic)
+
 Spécifie qu’un attribut au début d’un fichier source s’applique à l’assembly entier.  
   
 ## <a name="remarks"></a>Notes  
+
  De nombreux attributs se rapportent à un élément de programmation individuel, tel qu’une classe ou une propriété. Vous appliquez ce type d’attribut en attachant le bloc d’attributs, entre crochets pointus ( `< >` ), directement à l’instruction de déclaration.  
   
  Si un attribut se rapporte non seulement à l’élément suivant mais à l’assembly entier, vous placez le bloc d’attributs au début du fichier source et identifiez l’attribut à l’aide du `Assembly` mot clé. S’il s’applique au module d’assembly actuel, vous utilisez le mot clé [module](module-keyword.md) .  
@@ -29,5 +31,5 @@ Spécifie qu’un attribut au début d’un fichier source s’applique à l’a
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modules\<keyword>](module-keyword.md)
+- [Modules \<keyword>](module-keyword.md)
 - [Vue d’ensemble des attributs](../../programming-guide/concepts/attributes/index.md)

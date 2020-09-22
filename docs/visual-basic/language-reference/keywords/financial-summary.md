@@ -5,14 +5,15 @@ helpviewer_keywords:
 - financial functions
 - payment
 ms.assetid: 474f973e-7103-42b7-aa4d-367c935e07e1
-ms.openlocfilehash: 3b96dbfb3c5c218e1d63ef56735c9887ba28b489
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: abbb522798528ca5c2f19cf069277f35d9f110f9
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373717"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875624"
 ---
 # <a name="financial-summary-visual-basic"></a>Liste des mots clés financiers (Visual Basic)
+
 Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
 |Action|Élément du langage|  

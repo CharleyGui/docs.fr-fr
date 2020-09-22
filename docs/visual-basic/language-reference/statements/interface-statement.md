@@ -7,14 +7,15 @@ helpviewer_keywords:
 - interface statement [Visual Basic]
 - interfaces [Visual Basic], interface definition
 ms.assetid: 8997af73-bda3-4f79-bd41-ca396b610260
-ms.openlocfilehash: 02d258084aaaa53dcc559cfaa0dec27556351037
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3025adfe8c881a08df3b5f03253510c263c624d1
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404484"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873228"
 ---
 # <a name="interface-statement-visual-basic"></a>Interface, instruction (Visual Basic)
+
 Déclare le nom d’une interface et introduit les définitions des membres que l’interface comprend.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,26 +38,27 @@ End Interface
   
 |Terme|Définition|  
 |---|---|  
-|`attributelist`|Facultatif. Consultez la [liste des attributs](attribute-list.md).|  
-|`accessmodifier`|Facultatif. Il peut s'agir d'une des méthodes suivantes :<br /><br /> -   [Publique](../modifiers/public.md)<br />-   [Protect](../modifiers/protected.md)<br />-   [Contact](../modifiers/friend.md)<br />-   [Priv](../modifiers/private.md)<br />-  [Ami protégé](../modifiers/protected-friend.md)<br/>- [Protégé privé](../modifiers/private-protected.md)<br /><br /> Consultez [niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|  
-|`Shadows`|Facultatif. Consultez [Shadows](../modifiers/shadows.md).|  
+|`attributelist`|Optionnel. Consultez la [liste des attributs](attribute-list.md).|  
+|`accessmodifier`|Optionnel. Il peut s'agir d'une des méthodes suivantes :<br /><br /> -   [Publique](../modifiers/public.md)<br />-   [Protect](../modifiers/protected.md)<br />-   [Contact](../modifiers/friend.md)<br />-   [Priv](../modifiers/private.md)<br />-  [Ami protégé](../modifiers/protected-friend.md)<br/>- [Protégé privé](../modifiers/private-protected.md)<br /><br /> Consultez [niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|  
+|`Shadows`|Optionnel. Consultez [Shadows](../modifiers/shadows.md).|  
 |`name`|Obligatoire. Nom de cette interface. Consultez [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`Of`|Facultatif. Spécifie qu’il s’agit d’une interface générique.|  
+|`Of`|Optionnel. Spécifie qu’il s’agit d’une interface générique.|  
 |`typelist`|Obligatoire si vous utilisez le mot clé [of](of-clause.md) . Liste des paramètres de type pour cette interface. Éventuellement, chaque paramètre de type peut être déclaré variant à l’aide `In` des `Out` modificateurs génériques et. Consultez la [liste des types](type-list.md).|  
-|`Inherits`|Facultatif. Indique que cette interface hérite des attributs et des membres d’une autre interface ou d’interfaces. Consultez [Inherits (instruction](inherits-statement.md)).|  
+|`Inherits`|Optionnel. Indique que cette interface hérite des attributs et des membres d’une autre interface ou d’interfaces. Consultez [Inherits (instruction](inherits-statement.md)).|  
 |`interfacenames`|Obligatoire si vous utilisez l' `Inherits` instruction. Noms des interfaces à partir desquelles cette interface est dérivée.|  
-|`modifiers`|Facultatif. Modificateurs appropriés pour le membre d’interface qui est défini.|  
-|`Property`|Facultatif. Définit une propriété qui est un membre de l’interface.|  
-|`Function`|Facultatif. Définit une `Function` procédure qui est un membre de l’interface.|  
-|`Sub`|Facultatif. Définit une `Sub` procédure qui est un membre de l’interface.|  
-|`Event`|Facultatif. Définit un événement qui est membre de l’interface.|  
-|`Interface`|Facultatif. Définit une interface qui est imbriquée dans cette interface. La définition de l’interface imbriquée doit se terminer par une `End Interface` instruction.|  
-|`Class`|Facultatif. Définit une classe qui est un membre de l’interface. La définition de la classe membre doit se terminer par une `End Class` instruction.|  
-|`Structure`|Facultatif. Définit une structure qui est un membre de l’interface. La définition de la structure du membre doit se terminer par une `End Structure` instruction.|  
+|`modifiers`|Optionnel. Modificateurs appropriés pour le membre d’interface qui est défini.|  
+|`Property`|Optionnel. Définit une propriété qui est un membre de l’interface.|  
+|`Function`|Optionnel. Définit une `Function` procédure qui est un membre de l’interface.|  
+|`Sub`|Optionnel. Définit une `Sub` procédure qui est un membre de l’interface.|  
+|`Event`|Optionnel. Définit un événement qui est membre de l’interface.|  
+|`Interface`|Optionnel. Définit une interface qui est imbriquée dans cette interface. La définition de l’interface imbriquée doit se terminer par une `End Interface` instruction.|  
+|`Class`|Optionnel. Définit une classe qui est un membre de l’interface. La définition de la classe membre doit se terminer par une `End Class` instruction.|  
+|`Structure`|Optionnel. Définit une structure qui est un membre de l’interface. La définition de la structure du membre doit se terminer par une `End Structure` instruction.|  
 |`membername`|Obligatoire pour chaque propriété, procédure, événement, interface, classe ou structure définie en tant que membre de l’interface. Nom du membre.|  
 |`End Interface`|Met fin à la `Interface` définition.|  
   
 ## <a name="remarks"></a>Notes  
+
  Une *interface* définit un ensemble de membres, tels que des propriétés et des procédures, que les classes et les structures peuvent implémenter. L’interface définit uniquement les signatures des membres et non leurs mécanismes internes.  
   
  Une classe ou une structure implémente l’interface en fournissant du code pour chaque membre défini par l’interface. Enfin, lorsque l’application crée une instance à partir de cette classe ou de cette structure, un objet existe et s’exécute en mémoire. Pour plus d’informations, consultez [objets et classes](../../programming-guide/language-features/objects-and-classes/index.md) et [interfaces](../../programming-guide/language-features/interfaces/index.md).  
@@ -106,6 +108,7 @@ End Interface
 - **Cycle.** Une interface n’a pas elle-même une durée de vie, ni ses membres. Lorsqu’une classe implémente une interface et qu’un objet est créé en tant qu’instance de cette classe, l’objet a une durée de vie au sein de l’application dans laquelle il s’exécute. Pour plus d’informations, consultez « Lifetime » dans l' [instruction de classe](class-statement.md).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant utilise l' `Interface` instruction pour définir une interface nommée `thisInterface` , qui doit être implémentée avec une `Property` instruction et une `Function` instruction.  
   
  [!code-vb[VbVbalrStatements#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#40)]  
@@ -124,4 +127,4 @@ End Interface
 - [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
 - [Variance dans les interfaces génériques](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
 - [Dans](../modifiers/in-generic-modifier.md)
-- [À](../modifiers/out-generic-modifier.md)
+- [Sortie](../modifiers/out-generic-modifier.md)

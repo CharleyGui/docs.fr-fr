@@ -14,14 +14,15 @@ helpviewer_keywords:
 - Xor keyword [Visual Basic]
 - bitwise comparison [Visual Basic]
 ms.assetid: 036000a9-3934-4e7f-a9d0-a816de3d84a6
-ms.openlocfilehash: 999050314d674fa98833083d84796e471c22971d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ce7592c73f387d6ddbfd328abce8555cb7dcd303
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406338"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875293"
 ---
 # <a name="xor-operator-visual-basic"></a>Xor, opérateur (Visual Basic)
+
 Effectue une exclusion logique sur deux `Boolean` expressions ou une exclusion de bits sur deux expressions numériques.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,6 +32,7 @@ result = expression1 Xor expression2
 ```  
   
 ## <a name="parts"></a>Éléments  
+
  `result`  
  Obligatoire. Toute `Boolean` variable ou numérique. Pour la comparaison booléenne, `result` est l’exclusion logique (disjonction logique exclusive) de deux `Boolean` valeurs. Pour les opérations au niveau du bit, `result` est une valeur numérique qui représente l’exclusion au niveau du bit (disjonction de bits exclusive) de deux modèles binaires numériques.  
   
@@ -41,6 +43,7 @@ result = expression1 Xor expression2
  Obligatoire. Toute expression `Boolean` ou numérique.  
   
 ## <a name="remarks"></a>Notes  
+
  Pour la comparaison booléenne, `result` est `True` si et seulement si un seul de et a la `expression1` `expression2` valeur `True` . Autrement dit, si et seulement si `expression1` et `expression2` correspondent à des `Boolean` valeurs opposées. Le tableau suivant illustre la façon dont `result` est déterminé.  
   
 |Si `expression1` est |Et `expression2` est|La valeur de `result` est|  
@@ -68,14 +71,17 @@ result = expression1 Xor expression2
  Par exemple, 5 `Xor` 3 est 6. Pour comprendre pourquoi c’est le cas, convertissez 5 et 3 en leurs représentations binaires, 101 et 011. Utilisez ensuite le tableau précédent pour déterminer que 101 XOR 011 est 110, qui est la représentation binaire du nombre décimal 6.  
   
 ## <a name="data-types"></a>Types de données  
+
  Si les opérandes se composent d’une `Boolean` expression et d’une expression numérique, Visual Basic convertit l' `Boolean` expression en une valeur numérique (– 1 pour `True` et 0 pour `False` ) et effectue une opération au niveau du bit.  
   
  Pour une `Boolean` comparaison, le type de données du résultat est `Boolean` . Pour une comparaison au niveau du bit, le type de données de résultat est un type numérique approprié pour les types de données de `expression1` et `expression2` . Consultez la table « comparaisons et comparaisons au niveau du bit » dans [types de données des résultats d’opérateur](data-types-of-operator-results.md).  
   
 ## <a name="overloading"></a>Surcharge  
+
  L' `Xor` opérateur peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur ce type de classe ou de structure, assurez-vous que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant utilise l' `Xor` opérateur pour effectuer une exclusion logique (disjonction logique exclusive) sur deux expressions. Le résultat est une `Boolean` valeur qui indique si exactement une des expressions est `True` .  
   
  [!code-vb[VbVbalrOperators#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#40)]  
@@ -83,6 +89,7 @@ result = expression1 Xor expression2
  L’exemple précédent produit les résultats de `False` , `True` et `False` , respectivement.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant utilise l' `Xor` opérateur pour effectuer une exclusion logique (disjonction logique exclusive) sur les bits individuels de deux expressions numériques. Le bit dans le modèle de résultat est défini si exactement l’un des bits correspondants dans les opérandes a la valeur 1.  
   
  [!code-vb[VbVbalrOperators#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#41)]  

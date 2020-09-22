@@ -1,19 +1,20 @@
 ---
-title: Liste des manipulations de chaîne
+title: Liste des manipulations de chaînes
 ms.date: 07/20/2015
 helpviewer_keywords:
 - string functions
 - manipulating strings [Visual Basic]
 - strings [Visual Basic], manipulating
 ms.assetid: 5d3197eb-fe66-417e-9e2a-20450660c9c6
-ms.openlocfilehash: 1006dd889d8cdf51070a67236378dc6223e220b2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f9916fb00b4073e6b0b6ebfc4bb420975b320747
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373211"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875534"
 ---
 # <a name="string-manipulation-summary-visual-basic"></a>Liste des manipulations de chaînes (Visual Basic)
+
 Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
 |Action|Élément du langage|  

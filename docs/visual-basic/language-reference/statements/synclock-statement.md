@@ -9,14 +9,15 @@ helpviewer_keywords:
 - SyncLock statement [Visual Basic]
 - locks, threads
 ms.assetid: 14501703-298f-4d43-b139-c4b6366af176
-ms.openlocfilehash: fd932a20af274faf2b56136a94675b28399989b8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cc8706b95e0785459e36abe27ce915b5bab8711a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404159"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875196"
 ---
 # <a name="synclock-statement"></a>SyncLock, instruction
+
 Acquiert un verrou exclusif pour un bloc d’instructions avant d’exécuter le bloc.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,17 +29,19 @@ End SyncLock
 ```  
   
 ## <a name="parts"></a>Éléments  
+
  `lockobject`  
  Obligatoire. Expression qui prend la valeur d’une référence d’objet.  
   
  `block`  
- Facultatif. Bloc d’instructions à exécuter lorsque le verrou est acquis.  
+ Optionnel. Bloc d’instructions à exécuter lorsque le verrou est acquis.  
   
  `End SyncLock`  
  Met fin à un `SyncLock` bloc.  
   
 ## <a name="remarks"></a>Notes  
- L' `SyncLock` instruction garantit que plusieurs threads n’exécutent pas le bloc d’instructions en même temps. `SyncLock`empêche chaque thread d’entrer dans le bloc jusqu’à ce qu’aucun autre thread l’exécute.  
+
+ L' `SyncLock` instruction garantit que plusieurs threads n’exécutent pas le bloc d’instructions en même temps. `SyncLock` empêche chaque thread d’entrer dans le bloc jusqu’à ce qu’aucun autre thread l’exécute.  
   
  L’utilisation la plus courante de `SyncLock` est de protéger les données contre la mise à jour simultanée de plusieurs threads. Si les instructions qui manipulent les données doivent se terminer sans interruption, placez-les à l’intérieur d’un `SyncLock` bloc.  
   
@@ -67,6 +70,7 @@ End SyncLock
 - Appels au Framework. Le `SyncLock` bloc acquiert et libère le verrou exclusif en appelant les `Enter` `Exit` méthodes et de la `Monitor` classe dans l' <xref:System.Threading> espace de noms.  
   
 ## <a name="programming-practices"></a>Pratiques de programmation  
+
  L' `lockobject` expression doit toujours prendre la valeur d’un objet qui appartient exclusivement à votre classe. Vous devez déclarer une `Private` variable objet pour protéger les données appartenant à l’instance actuelle, ou une `Private Shared` variable objet pour protéger les données communes à toutes les instances.  
   
  Vous ne devez pas utiliser le `Me` mot clé pour fournir un objet Lock pour les données d’instance. Si le code externe à votre classe contient une référence à une instance de votre classe, il peut utiliser cette référence comme objet de verrouillage pour un `SyncLock` bloc complètement différent de la vôtre, protégeant les données différentes. De cette façon, votre classe et l’autre classe peuvent se bloquer l’exécution de leurs blocs non liés `SyncLock` . De même, le verrouillage sur une chaîne peut être problématique, car tout autre code dans le processus qui utilise la même chaîne partagera le même verrou.  
@@ -76,17 +80,21 @@ End SyncLock
 ## <a name="examples"></a>Exemples  
   
 ### <a name="description"></a>Description  
+
  L’exemple suivant illustre une classe qui gère une simple liste de messages. Elle contient les messages d’un tableau et le dernier élément utilisé de ce tableau dans une variable. La `addAnotherMessage` procédure incrémente le dernier élément et stocke le nouveau message. Ces deux opérations sont protégées par les `SyncLock` `End SyncLock` instructions et, car une fois que le dernier élément a été incrémenté, le nouveau message doit être stocké avant que tout autre thread puisse incrémenter à nouveau le dernier élément.  
   
  Si la `simpleMessageList` classe a partagé une liste de messages parmi toutes ses instances, les variables `messagesList` et `messagesLast` seraient déclarées comme `Shared` . Dans ce cas, la variable `messagesLock` doit également être `Shared` , afin qu’il y ait un seul objet de verrouillage utilisé par chaque instance.  
   
 ### <a name="code"></a>Code  
+
  [!code-vb[VbVbalrThreading#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrThreading/VB/Class1.vb#1)]  
   
 ### <a name="description"></a>Description  
+
  L’exemple suivant utilise des threads et `SyncLock` . Tant que l' `SyncLock` instruction est présente, le bloc d’instructions est une section critique et `balance` ne devient jamais un nombre négatif. Vous pouvez commenter les `SyncLock` `End SyncLock` instructions et pour voir l’effet de la sortie du `SyncLock` mot clé.  
   
 ### <a name="code"></a>Code  
+
  [!code-vb[VbVbalrThreading#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrThreading/VB/class2.vb#21)]  
   
 ### <a name="comments"></a>Commentaires  

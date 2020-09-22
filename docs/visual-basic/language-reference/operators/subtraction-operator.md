@@ -17,14 +17,15 @@ helpviewer_keywords:
 - operators [Visual Basic], negation
 - minus operator [Visual Basic]
 ms.assetid: bff2c368-662d-4c92-ac87-1d9bdfd3426a
-ms.openlocfilehash: 6539beb5cf8078281357445e2391fac189208087
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b5129c2dbb361940fa6da2cb424ee23736ba72c5
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406351"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875330"
 ---
 # <a name="--operator-visual-basic"></a>-, opérateur (Visual Basic)
+
 Retourne la différence entre deux expressions numériques ou la valeur négative d’une expression numérique.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,14 @@ Retourne la différence entre deux expressions numériques ou la valeur négativ
 expression1 – expression2
 ```
   
-ou
+or
 
 ```vb  
 –expression1  
 ```  
   
 ## <a name="parts"></a>Éléments  
+
  `expression1`  
  Obligatoire. Toute expression numérique.  
   
@@ -47,14 +49,17 @@ ou
  Obligatoire, sauf si l' `–` opérateur calcule une valeur négative. Toute expression numérique.  
   
 ## <a name="result"></a>Résultats  
+
  Le résultat est la différence entre `expression1` et `expression2` , ou la valeur négative de `expression1` .  
   
  Le type de données de résultat est un type numérique approprié pour les types de données de `expression1` et `expression2` . Consultez les tables « arithmétiques sur les entiers » dans [types de données des résultats d’opérateur](data-types-of-operator-results.md).  
   
 ## <a name="supported-types"></a>Types pris en charge  
+
  tous les types numériques Cela comprend les types à virgule flottante non signée et `Decimal` .  
   
 ## <a name="remarks"></a>Notes  
+
  Dans la première utilisation indiquée dans la syntaxe indiquée précédemment, l' `–` opérateur est l’opérateur de soustraction arithmétique *binaire* pour la différence entre deux expressions numériques.  
   
  Dans la deuxième utilisation indiquée dans la syntaxe indiquée précédemment, l' `–` opérateur est l’opérateur de négation *unaire* pour la valeur négative d’une expression. Dans ce sens, la négation consiste à inverser le signe de `expression1` afin que le résultat soit positif si `expression1` est négatif.  
@@ -65,6 +70,7 @@ ou
 > L' `–` opérateur peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur ce type de classe ou de structure, assurez-vous que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant utilise l' `–` opérateur pour calculer et retourner la différence entre deux nombres, puis pour nier un nombre.  
   
  [!code-vb[VbVbalrOperators#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#10)]  

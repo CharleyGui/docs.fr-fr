@@ -10,14 +10,15 @@ helpviewer_keywords:
 - From clause [Visual Basic]
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
-ms.openlocfilehash: 33680f49247b3b2a6082b3a6b27ca64f8401e42d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 120ba6da11bffc3a0e81873d1fd606633724723d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396179"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875252"
 ---
 # <a name="from-clause-visual-basic"></a>From, clause (Visual Basic)
+
 Spécifie une ou plusieurs variables de plage et une collection à interroger.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,10 +33,11 @@ From element [ As type ] In collection [ _ ]
 |Terme|Définition|  
 |---|---|  
 |`element`|Obligatoire. *Variable de portée* utilisée pour itérer au sein des éléments de la collection. Une variable de portée est utilisée pour faire référence à chaque membre du au `collection` fur et à mesure que la requête itère au sein de `collection` . Doit être un type énumérable.|  
-|`type`|Facultatif. Type d'élément `element`. Si aucun `type` n’est spécifié, le type de `element` est déduit à partir de `collection` .|  
+|`type`|Optionnel. Type d'élément `element`. Si aucun `type` n’est spécifié, le type de `element` est déduit à partir de `collection` .|  
 |`collection`|Obligatoire. Fait référence à la collection à interroger. Doit être un type énumérable.|  
   
 ## <a name="remarks"></a>Notes  
+
  La `From` clause est utilisée pour identifier les données sources d’une requête et les variables utilisées pour faire référence à un élément de la collection source. Ces variables sont appelées *variables de portée*. La `From` clause est requise pour une requête, sauf lorsque la `Aggregate` clause est utilisée pour identifier une requête qui retourne uniquement des résultats agrégés. Pour plus d’informations, consultez [Aggregate, clause](aggregate-clause.md).  
   
  Vous pouvez spécifier plusieurs `From` clauses dans une requête pour identifier plusieurs collections à joindre. Lorsque plusieurs regroupements sont spécifiés, ils sont itérés indépendamment ou vous pouvez les joindre s’ils sont liés. Vous pouvez joindre implicitement des collections à l’aide de la `Select` clause, ou explicitement à l’aide des `Join` `Group Join` clauses ou. En guise d’alternative, vous pouvez spécifier plusieurs variables de plage et collections dans une seule `From` clause, chaque variable de portée et collection étant séparée des autres par une virgule. L’exemple de code suivant montre les deux options de syntaxe pour la `From` clause.  
@@ -65,6 +67,7 @@ From element [ As type ] In collection [ _ ]
 - Identifiez les parties du résultat à retourner à l’aide des `Skip` `Take` `Skip While` clauses,, et `Take While` .  
   
 ## <a name="example"></a>Exemple  
+
  L’expression de requête suivante utilise une `From` clause pour déclarer une variable `cust` de portée pour chaque `Customer` objet de la `customers` collection. La `Where` clause utilise la variable de portée pour limiter la sortie aux clients de la région spécifiée. La `For Each` boucle affiche le nom de la société pour chaque client dans le résultat de la requête.  
   
  [!code-vb[VbSimpleQuerySamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#23)]  
@@ -81,7 +84,7 @@ From element [ As type ] In collection [ _ ]
 - [Distinct (clause)](distinct-clause.md)
 - [Join (clause)](join-clause.md)
 - [Group Join (clause)](group-join-clause.md)
-- [Order By (clause)](order-by-clause.md)
+- [Clause ORDER BY](order-by-clause.md)
 - [Clause let](let-clause.md)
 - [Skip (clause)](skip-clause.md)
 - [Take (clause)](take-clause.md)

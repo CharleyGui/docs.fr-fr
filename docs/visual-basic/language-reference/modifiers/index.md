@@ -2,24 +2,26 @@
 title: Modificateurs
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 80adc4521dcb1bb0c65981dae6f842168194eae7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6ee477e8d09ea7c8ea559ff8245784b2d0123141
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372893"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875445"
 ---
 # <a name="modifiers-visual-basic"></a>Modificateurs (Visual Basic)
+
 Les rubriques de cette section documentent les modificateurs du runtime Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Ansi](ansi.md)  
+
+ [Caractères](ansi.md)  
   
  [Assembly](assembly.md)  
   
  [Asynchrone](async.md)  
   
- [Auto](auto.md)  
+ [Automatique](auto.md)  
   
  [ByRef](byref.md)  
   
@@ -27,15 +29,15 @@ Les rubriques de cette section documentent les modificateurs du runtime Visual B
   
  [Par défaut](default.md)  
   
- [Contact](friend.md)  
+ [Friend](friend.md)  
   
  [Dans](in-generic-modifier.md)  
   
- [Itérateur](iterator.md)  
+ [Iterator](iterator.md)  
   
  [Clé](key.md)  
   
- [Modules\<keyword>](module-keyword.md)  
+ [Modules \<keyword>](module-keyword.md)  
   
  [MustInherit](mustinherit.md)  
   
@@ -49,7 +51,7 @@ Les rubriques de cette section documentent les modificateurs du runtime Visual B
   
  [Facultatif](optional.md)  
   
- [À](out-generic-modifier.md)  
+ [Sortie](out-generic-modifier.md)  
   
  [Surcharges](overloads.md)  
   
@@ -71,7 +73,7 @@ Les rubriques de cette section documentent les modificateurs du runtime Visual B
   
  [Public](public.md)  
   
- [Seulement](readonly.md)  
+ [Lecture seule](readonly.md)  
   
  [Shadows](shadows.md)  
   
@@ -88,4 +90,5 @@ Les rubriques de cette section documentent les modificateurs du runtime Visual B
  [WriteOnly](writeonly.md)  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Informations de référence sur le langage Visual Basic](../index.md)  

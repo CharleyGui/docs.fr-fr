@@ -5,14 +5,15 @@ helpviewer_keywords:
 - My feature
 - My reference
 ms.assetid: 6f803bd7-21ff-4569-b1fe-b00a6678b1e3
-ms.openlocfilehash: f54ecf4f60a620818ea57093d8c2325cf2ed0d04
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 60dadc2918d4926c2b8bf1004a09d9b3a1ec56ab
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373341"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875579"
 ---
 # <a name="my-reference-visual-basic"></a>Référence My (Visual Basic)
+
 La `My` fonctionnalité facilite et accélère la programmation en vous donnant un accès intuitif aux méthodes, propriétés et événements couramment utilisés. Ce tableau répertorie les objets contenus dans `My` , ainsi que les actions qui peuvent être effectuées avec chacun d’entre eux.  
   
 |**Action**|**Object**|  

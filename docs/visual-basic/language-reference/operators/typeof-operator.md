@@ -12,14 +12,15 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: 0cce36073b53442bce63f966f3bd94bd5d70d2a8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0a01b49cf1e0bf9ad7b2ce541cee39cba83025ca
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406324"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875306"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf, opérateur (Visual Basic)
+
 Vérifie si le type d’exécution du résultat d’une expression est compatible avec le type spécifié.
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,6 +34,7 @@ result = TypeOf objectexpression IsNot typename
 ```  
   
 ## <a name="parts"></a>Éléments  
+
  `result`  
  Retourné. Valeur `Boolean`.  
   
@@ -43,11 +45,12 @@ result = TypeOf objectexpression IsNot typename
  Obligatoire. Tout nom de type de données.  
   
 ## <a name="remarks"></a>Notes  
+
  L'opérateur `TypeOf` détermine si le type d'exécution de `objectexpression` est compatible avec `typename`. La compatibilité dépend de la catégorie du type de `typename`. Le tableau suivant illustre la manière dont la compatibilité est déterminée.  
   
 |Catégorie de type de `typename`|Critère de compatibilité|  
 |---------------------------------|-----------------------------|  
-|Class|`objectexpression` est de type `typename` ou hérite de `typename`|  
+|Classe|`objectexpression` est de type `typename` ou hérite de `typename`|  
 |Structure|`objectexpression` est de type `typename`|  
 |Interface|`objectexpression` implémente `typename` ou hérite d'une classe qui implémente `typename`|  
   
@@ -56,6 +59,7 @@ result = TypeOf objectexpression IsNot typename
  `TypeOf` est toujours utilisé avec le mot clé `Is` pour construire une expression `TypeOf`...`Is`, ou avec le mot clé `IsNot` pour construire une expression `TypeOf`...`IsNot`.  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant utilise des expressions `TypeOf`...`Is` pour tester la compatibilité du type de deux variables de référence d'objet avec différents types de données.  
   
  [!code-vb[VbVbalrOperators#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#39)]  

@@ -10,17 +10,19 @@ helpviewer_keywords:
 - Default keyword [Visual Basic]
 - default properties
 ms.assetid: 45fce9b9-d212-4b2d-ab86-6e359b8b57af
-ms.openlocfilehash: 0c2808795d6fcbad7892369fd7f460ebf0406093
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: bc213c3b5564d1833136df8f5b8dab1c6b012296
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372970"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875489"
 ---
 # <a name="default-visual-basic"></a>Default (Visual Basic)
+
 Identifie une propriété en tant que propriété par défaut de sa classe, structure ou interface.  
   
 ## <a name="remarks"></a>Notes  
+
  Une classe, une structure ou une interface peut désigner au plus l’une de ses propriétés comme *propriété par défaut*, à condition que la propriété prenne au moins un paramètre. Si le code fait référence à une classe ou à une structure sans spécifier de membre, Visual Basic résout cette référence à la propriété par défaut.  
   
  Les propriétés par défaut peuvent entraîner une petite réduction des caractères de code source, mais elles peuvent rendre votre code plus difficile à lire. Si le code appelant n’est pas familiarisé avec votre classe ou structure, lorsqu’il fait référence au nom de la classe ou de la structure, il ne peut pas être certain que cette référence accède à la classe ou à la structure elle-même, ou à une propriété par défaut. Cela peut entraîner des erreurs de compilation ou des erreurs de logique d’exécution subtiles.  
