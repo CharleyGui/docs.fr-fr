@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC32053
 ms.assetid: 281564b7-99f7-451f-b10d-f985e831bb25
-ms.openlocfilehash: bac5f9a88df719bc64a8b0541f65e5912275866e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 971110c505800b0ceba73506f2b2702516a7a23a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409749"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874548"
 ---
 # <a name="copying-the-value-of-byref-parameter-parametername-back-to-the-matching-argument-narrows-from-type-typename1-to-type-typename2"></a>La copie de la valeur du paramètre 'ByRef' '\<parametername>' dans l'argument correspondant passe du type '\<typename1>' au type '\<typename2>'
+
 Une procédure est appelée avec un argument qui s’étend au type de paramètre correspondant, et la conversion du paramètre en argument est restrictive.  
   
  Quand vous définissez une classe ou une structure, vous pouvez définir un ou plusieurs opérateurs de conversion pour convertir le type de la classe ou de la structure en d’autres types. Vous pouvez également définir des opérateurs de conversion inverse pour convertir ces autres types vers le type de votre classe ou de votre structure. Quand vous utilisez votre type de classe ou de structure dans un appel de procédure, Visual Basic pouvez utiliser ces opérateurs de conversion pour convertir le type d’un argument vers le type de son paramètre correspondant.  

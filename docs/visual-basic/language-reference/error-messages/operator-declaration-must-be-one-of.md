@@ -7,20 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-ms.openlocfilehash: 3fb2cf392611e5ca83818e3bf173513be031085d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c388b1b0762dd7475ca365a8a62228d0b5d59414
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409332"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873613"
 ---
 # <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>La déclaration d’opérateur doit être l’une des suivantes : +,-, *, \, /, ^, &amp; , like, mod, and, or, Xor, not, \<\<, >>...
+
 Vous pouvez déclarer uniquement un opérateur éligible pour la surcharge. Le tableau suivant répertorie les opérateurs que vous pouvez déclarer.  
   
 |Type|Opérateurs|  
 |----------|---------------|  
 |Unaire|`+`, `-`, `IsFalse`, `IsTrue`, `Not`|  
-|Binaire|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
+|Binary|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
 |Conversion (unaire)|`CType`|  
   
  Notez que l’opérateur `=` dans la liste binaire est l’opérateur de comparaison, et non l’opérateur d’assignation.  

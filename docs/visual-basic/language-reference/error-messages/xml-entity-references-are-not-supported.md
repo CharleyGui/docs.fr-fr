@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC31180
 ms.assetid: 2a393327-d8e2-4187-85b1-642b4f53b4ae
-ms.openlocfilehash: ae997d853a93999a3b29215ea1257da7a1d48c84
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 470e5577654ce8b6bbc2732a41c130a85ddc96e5
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406454"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874994"
 ---
 # <a name="xml-entity-references-are-not-supported"></a>Les références d'entité XML ne sont pas prises en charge
+
 Une référence d’entité (par exemple, `©` ) qui n’est pas définie dans la spécification xml 1,0 est incluse comme valeur pour un LITTÉRAL XML. Seules `&` `"` `<` `>` `'` les références d’entité XML,,, et sont prises en charge dans les littéraux XML.  
   
  **ID d’erreur :** BC31180  

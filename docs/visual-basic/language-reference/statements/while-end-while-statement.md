@@ -9,14 +9,15 @@ helpviewer_keywords:
 - While statement [Visual Basic]
 - While...End While statements [Visual Basic]
 ms.assetid: b931d1ce-e8ed-44d8-a13d-92a4f5458a1e
-ms.openlocfilehash: d9eb8cb95d46e860aa127954d7b44e37991d4a13
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e3ab95f43e101a9ad8abe6fa61b94ae7542e409c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84391584"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869484"
 ---
 # <a name="whileend-while-statement-visual-basic"></a>While...End While, instruction (Visual Basic)
+
 Exécute une série d’instructions tant qu’une condition donnée a la valeur `True` .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,12 +37,13 @@ End While
 |Terme|Définition|  
 |---|---|  
 |`condition`|Obligatoire. Expression `Boolean`. Si `condition` est `Nothing` , Visual Basic le traite comme `False` .|  
-|`statements`|Facultatif. Une ou plusieurs instructions `While` qui suivent sont exécutées à chaque fois `condition` `True` .|  
-|`Continue While`|Facultatif. Transfère le contrôle à l’itération suivante du `While` bloc.|  
-|`Exit While`|Facultatif. Transfère le contrôle hors du `While` bloc.|  
+|`statements`|Optionnel. Une ou plusieurs instructions `While` qui suivent sont exécutées à chaque fois `condition` `True` .|  
+|`Continue While`|Optionnel. Transfère le contrôle à l’itération suivante du `While` bloc.|  
+|`Exit While`|Optionnel. Transfère le contrôle hors du `While` bloc.|  
 |`End While`|Obligatoire. Met fin à la définition du bloc `While`.|  
   
 ## <a name="remarks"></a>Notes  
+
  Utilisez une `While...End While` structure lorsque vous souhaitez répéter un ensemble d’instructions un nombre infini de fois, tant qu’une condition est conservée `True` . Si vous souhaitez plus de flexibilité lorsque vous testez la condition ou le résultat pour lequel vous la Testez, vous pouvez préférer le [... Instruction de boucle](do-loop-statement.md). Si vous souhaitez répéter les instructions un nombre défini de fois, le [... L’instruction suivante](for-next-statement.md) est généralement un meilleur choix.  
   
 > [!NOTE]
@@ -56,7 +58,8 @@ End While
  Vous pouvez imbriquer `While` des boucles en plaçant une boucle dans une autre. Vous pouvez également imbriquer différents genres de structures de contrôle dans l’un l’autre. Pour plus d’informations, consultez [structures de contrôle imbriquées](../../programming-guide/language-features/control-flow/nested-control-structures.md).  
   
 ## <a name="exit-while"></a>Quitter pendant  
- L’instruction [Exit while](exit-statement.md) peut fournir une autre façon de quitter une `While` boucle. `Exit While`transfère immédiatement le contrôle à l’instruction qui suit l' `End While` instruction.  
+
+ L’instruction [Exit while](exit-statement.md) peut fournir une autre façon de quitter une `While` boucle. `Exit While` transfère immédiatement le contrôle à l’instruction qui suit l' `End While` instruction.  
   
  Vous utilisez généralement `Exit While` une fois que certaines conditions ont été évaluées (par exemple, dans une `If...Then...Else` structure). Vous pouvez quitter une boucle si vous détectez une condition qui le rend inutile ou impossible de poursuivre l’itération, telle qu’une valeur erronée ou une demande d’arrêt. Vous pouvez utiliser `Exit While` lorsque vous testez une condition susceptible de provoquer une *boucle infinie*, qui est une boucle qui peut exécuter un nombre de fois très long, voire infini. Vous pouvez ensuite utiliser `Exit While` pour échapper la boucle.  
   
@@ -67,16 +70,19 @@ End While
  L' `Continue While` instruction transfère immédiatement le contrôle à l’itération suivante de la boucle. Pour plus d’informations, consultez [instruction continue](continue-statement.md).  
   
 ## <a name="example"></a>Exemple  
+
  Dans l’exemple suivant, les instructions de la boucle continuent à s’exécuter jusqu’à ce que la `index` variable soit supérieure à 10.  
   
  [!code-vb[VbVbalrStatements#171](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#171)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant illustre l’utilisation des `Continue While` `Exit While` instructions et.  
   
  [!code-vb[VbVbalrStatements#172](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#172)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant lit toutes les lignes d’un fichier texte. La <xref:System.IO.File.OpenText%2A> méthode ouvre le fichier et retourne un <xref:System.IO.StreamReader> qui lit les caractères. Dans la `While` condition, la <xref:System.IO.StreamReader.Peek%2A> méthode de `StreamReader` détermine si le fichier contient des caractères supplémentaires.  
   
  [!code-vb[VbVbalrStatements#173](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#173)]  

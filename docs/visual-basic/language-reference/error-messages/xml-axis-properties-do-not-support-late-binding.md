@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC31168
 ms.assetid: 45707363-55e4-4151-892d-d8729106355b
-ms.openlocfilehash: 6c263abe7710157338a795639cca8fd73103d47d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: caa0934ba4ab7e80ae9598b4772e5e49c1ec7f41
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406493"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875016"
 ---
 # <a name="xml-axis-properties-do-not-support-late-binding"></a>Les propriétés d'axe XML ne prennent pas en charge la liaison tardive
+
 Une propriété d’axe XML a été référencée pour un objet non typé.  
   
  **ID d’erreur :** BC31168  

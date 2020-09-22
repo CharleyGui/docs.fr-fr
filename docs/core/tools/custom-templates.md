@@ -3,12 +3,12 @@ title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
 author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: 1d2e5ffcb0b279f1686855834c2357827a4dc7d5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 55091ef9bb9f7a2aa24f585c94aa2a47960b1829
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538093"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874723"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
@@ -63,10 +63,12 @@ Le fichier *template.json* est placé dans un dossier *.template.config* dans le
 | `identity`        | string        | Nom unique pour ce modèle. |
 | `name`            | string        | Nom de modèle que les utilisateurs doivent voir. |
 | `shortName`       | string        | Nom de raccourci par défaut pour sélectionner le modèle qui s’applique aux environnements où le nom du modèle est spécifié par l’utilisateur (non sélectionné par le biais d’une interface graphique utilisateur). Par exemple, le nom court est utile si les modèles sont utilisés à partir d’une invite de commandes avec des commandes CLI. |
+| `sourceName`       | string        | Nom de l’arborescence source à remplacer par le nom que l’utilisateur spécifie. Le moteur de modèle recherchera toutes les occurrences des `sourceName` éléments mentionnés dans le fichier de configuration et les remplacera dans les noms de fichiers et les fichiers. La valeur à remplacer par peut être donnée à l’aide `-n` des `--name` options ou lors de l’exécution d’un modèle. Si aucun nom n’est spécifié, le répertoire actif est utilisé.|
+| `preferNameDirectory`       | boolean        | Indique s’il faut créer un répertoire pour le modèle si nom est spécifié, mais qu’aucun répertoire de sortie n’est défini (au lieu de créer le contenu directement dans le répertoire actif). La valeur par défaut est false.|
 
 Le schéma complet pour le fichier *template.json* se trouve dans le [magasin de schémas JSON](http://json.schemastore.org/template). Pour plus d’informations sur le fichier *template.json*, consultez le [Wiki de création de modèles dotnet](https://github.com/dotnet/templating/wiki).
 
-#### <a name="example"></a> Exemple
+#### <a name="example"></a>Exemple
 
 Par exemple, voici un dossier de modèle qui contient deux fichiers de contenu : *console.cs* et *readme.txt*. Notez que la présence du dossier requis nommé *.template.config*, qui contient le fichier *template.json*.
 

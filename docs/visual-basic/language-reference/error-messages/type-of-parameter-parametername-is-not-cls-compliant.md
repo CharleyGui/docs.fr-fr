@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40028
 ms.assetid: dfa1f6f9-bb88-44ad-b85f-149144363d41
-ms.openlocfilehash: edbcadf271c4ccafc11e5b64eb103a0290976179
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a4617d3550cfb48f32a19a4c70809141173c6147
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413012"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875117"
 ---
 # <a name="type-of-parameter-parametername-is-not-cls-compliant"></a>Le type de paramètre '\<parametername>' n'est pas conforme CLS
+
 Une procédure est marquée comme `<CLSCompliant(True)>` , mais déclare un paramètre avec un type qui est marqué comme `<CLSCompliant(False)>` , qui n’est pas marqué ou qui n’est pas qualifié car il s’agit d’un type non conforme.  
   
  Pour qu’une procédure soit conforme à CLS ([Indépendance du langage et composants indépendants du langage](../../../standard/language-independence-and-language-independent-components.md)), elle doit utiliser uniquement des types conformes à CLS. Cette règle s’applique aux types des paramètres, au type de retour et aux types de toutes ses variables locales.  

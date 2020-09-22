@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC31122
 ms.assetid: 6911f0d1-641a-473b-906d-8ee5681194be
-ms.openlocfilehash: 0c5a4188fedf9685afdd1cde4c1de93a0b43b919
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 88cdeccd7a3411b57a77116bde64d0a2cf8e537d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409779"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874539"
 ---
 # <a name="custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types"></a>Le modificateur 'Custom' n'est pas valide pour les événements déclarés sans types délégués explicites
+
 Contrairement à un événement non personnalisé, une `Custom Event` déclaration requiert une `As` clause qui suit le nom de l’événement qui spécifie explicitement le type délégué de l’événement.  
   
  Les événements non personnalisés peuvent être définis à l’aide d’une `As` clause et d’un type délégué explicite, ou avec une liste de paramètres qui suit immédiatement le nom de l’événement.  
@@ -36,6 +37,7 @@ Contrairement à un événement non personnalisé, une `Custom Event` déclarati
      [!code-vb[VbVbalrEventError#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEventError/VB/VbVbalrEventError.vb#19)]  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple déclare un `Custom Event` et spécifie la `As` clause requise avec un type délégué.  
   
  [!code-vb[VbVbalrEventError#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEventError/VB/VbVbalrEventError.vb#2)]  

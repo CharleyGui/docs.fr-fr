@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 09/16/2020
 ms.topic: overview
-ms.openlocfilehash: f97bd3fd4881c6b0939635ec2372aee21c670d5d
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: f6b3bcd6633665d837360384f3610fe51b7fd8cd
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720812"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874730"
 ---
 # <a name="configuration-in-net"></a>Configuration dans .NET
 

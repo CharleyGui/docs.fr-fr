@@ -26,14 +26,15 @@ helpviewer_keywords:
 - declaration statements [Visual Basic]
 - scalar variables [Visual Basic]
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
-ms.openlocfilehash: 82f19762865fdf3c3f32a0349e21e3b97bebd567
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 17bc806f2e92c61f1dd7425de40b1a68f926a583
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404276"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872029"
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim, instruction (Visual Basic)
+
 Réalloue l'espace de stockage d'une variable tableau.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -46,11 +47,12 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 |Terme|Définition|  
 |----------|----------------|  
-|`Preserve`|Facultatif. Modificateur utilisé pour conserver les données du tableau existant quand vous modifiez la taille de la dernière dimension uniquement.|  
+|`Preserve`|Optionnel. Modificateur utilisé pour conserver les données du tableau existant quand vous modifiez la taille de la dernière dimension uniquement.|  
 |`name`|Obligatoire. Nom de la variable de tableau. Consultez [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).|  
 |`boundlist`|Obligatoire. Liste des limites de chaque dimension du tableau redéfini.|  
   
 ## <a name="remarks"></a>Notes  
+
  Vous pouvez utiliser l'instruction `ReDim` pour modifier la taille d'une ou plusieurs dimensions d'un tableau qui a déjà été déclaré. Si vous possédez un grand tableau et que vous n'avez plus besoin de certains de ses éléments, `ReDim` peut libérer de la mémoire en réduisant la taille du tableau. En revanche, si votre tableau a besoin d'éléments supplémentaires, `ReDim` peut les ajouter.  
   
  L'instruction `ReDim` est destinée uniquement aux tableaux. Il n'est pas valide sur les scalaires (variables contenant une seule valeur), les collections ou les structures. Notez que si vous déclarez une variable de type `Array`, l'instruction `ReDim` ne dispose pas d'informations de type suffisantes pour créer le tableau.  
@@ -79,13 +81,14 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 ## <a name="behavior"></a>Comportement  
   
-- **Remplacement de tableau.** `ReDim`libère le tableau existant et crée un nouveau tableau avec le même rang. Le nouveau tableau remplace le tableau libéré dans la variable tableau.  
+- **Remplacement de tableau.** `ReDim` libère le tableau existant et crée un nouveau tableau avec le même rang. Le nouveau tableau remplace le tableau libéré dans la variable tableau.  
   
 - **Initialisation sans Preserve.** Si vous ne spécifiez pas `Preserve` , `ReDim` Initialise les éléments du nouveau tableau en utilisant la valeur par défaut pour leur type de données.  
   
 - **Initialisation avec Preserve.** Si vous spécifiez `Preserve` , Visual Basic copie les éléments du tableau existant dans le nouveau tableau.  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant augmente la taille de la dernière dimension d'un tableau dynamique sans perte de données existantes dans le tableau, puis réduit la taille avec une perte de données partielle. Enfin, il réduit la taille à sa valeur d'origine et réinitialise tous les éléments du tableau.  
   
  [!code-vb[VbVbalrStatements#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#52)]  
@@ -106,5 +109,5 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
 - [Const (instruction)](const-statement.md)
 - [Dim (instruction)](dim-statement.md)
 - [Erase (instruction)](erase-statement.md)
-- [Résultat](../nothing.md)
+- [Nothing](../nothing.md)
 - [Tableaux](../../programming-guide/language-features/arrays/index.md)

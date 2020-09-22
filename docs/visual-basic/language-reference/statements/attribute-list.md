@@ -5,14 +5,15 @@ helpviewer_keywords:
 - attribute list
 - attributes [Visual Basic], applying
 ms.assetid: 5880073a-68a4-4b6b-8a07-ace32959a4e2
-ms.openlocfilehash: f2400334182d373ea49c130fd17bc4f9943248d3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e566239c56efa8ca8e83bff92486fec4c434e92b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408443"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874739"
 ---
 # <a name="attribute-list-visual-basic"></a>Liste d'attributs (Visual Basic)
+
 Spécifie les attributs à appliquer à un élément de programmation déclaré. Les attributs multiples sont séparés par des virgules. Voici la syntaxe d’un attribut.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,14 +23,16 @@ Spécifie les attributs à appliquer à un élément de programmation déclaré.
 ```  
   
 ## <a name="parts"></a>Éléments  
+
 |||
 |---|---|
 |`attributemodifier`|Obligatoire pour les attributs appliqués au début d’un fichier source. Il peut s’agir d’un [assembly](../modifiers/assembly.md) ou d’un [module](../modifiers/module-keyword.md).|
 |`attributename`| Obligatoire. Nom de l'attribut.|
-|`attributearguments`|Facultatif. Liste des arguments positionnels pour cet attribut. Les arguments multiples sont séparés par des virgules.|
-|`attributeinitializer`|Facultatif. Liste d’initialiseurs de variable ou de propriété pour cet attribut. Plusieurs initialiseurs sont séparés par des virgules.|
+|`attributearguments`|Optionnel. Liste des arguments positionnels pour cet attribut. Les arguments multiples sont séparés par des virgules.|
+|`attributeinitializer`|Optionnel. Liste d’initialiseurs de variable ou de propriété pour cet attribut. Plusieurs initialiseurs sont séparés par des virgules.|
   
 ## <a name="remarks"></a>Notes  
+
  Vous pouvez appliquer un ou plusieurs attributs à presque n’importe quel élément de programmation (types, procédures, propriétés, etc.). Les attributs apparaissent dans les métadonnées de votre assembly. ils peuvent vous aider à annoter votre code ou à spécifier comment utiliser un élément de programmation particulier. Vous pouvez appliquer des attributs définis par Visual Basic et le .NET Framework, et vous pouvez définir vos propres attributs.  
 
  Pour plus d’informations sur l’utilisation des attributs, consultez [vue d’ensemble des attributs](../../programming-guide/concepts/attributes/index.md). Pour plus d’informations sur les noms d’attributs, consultez [noms d’éléments déclarés](../../programming-guide/language-features/declared-elements/declared-element-names.md).  
@@ -47,15 +50,16 @@ Spécifie les attributs à appliquer à un élément de programmation déclaré.
 - **Arguments.** Tous les arguments positionnels d’un attribut doivent précéder tout initialiseur de variable ou de propriété.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant applique l' <xref:System.Runtime.InteropServices.DllImportAttribute> attribut à une définition squelette d’une `Function` procédure.  
   
  [!code-vb[VbVbalrStatements#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#1)]  
   
- <xref:System.Runtime.InteropServices.DllImportAttribute>indique que la procédure avec attributs représente un point d’entrée dans une bibliothèque de liens dynamiques (DLL) non managée. L’attribut fournit le nom de la DLL comme argument positionnel et les autres informations sous forme d’initialiseurs de variables.  
+ <xref:System.Runtime.InteropServices.DllImportAttribute> indique que la procédure avec attributs représente un point d’entrée dans une bibliothèque de liens dynamiques (DLL) non managée. L’attribut fournit le nom de la DLL comme argument positionnel et les autres informations sous forme d’initialiseurs de variables.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Assembly](../modifiers/assembly.md)
-- [Modules\<keyword>](../modifiers/module-keyword.md)
+- [Modules \<keyword>](../modifiers/module-keyword.md)
 - [Vue d’ensemble des attributs](../../programming-guide/concepts/attributes/index.md)
 - [Procédure : Diviser et combiner des instructions dans le code](../../programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)

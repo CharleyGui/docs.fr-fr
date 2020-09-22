@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30961
 ms.assetid: 8be5aa0d-d236-4ac3-aa9c-5044f9f6562b
-ms.openlocfilehash: 25008f05979638e050b74fc659fdc0a6d13b3c31
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4b74fdc5584fd296d4bbe36034920d4b467dbb7a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406584"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875066"
 ---
 # <a name="value-of-type-typename1-cannot-be-converted-to-typename2-multiple-file-references"></a>La valeur du type '\<typename1>' ne peut pas être convertie en '\<typename2>' (plusieurs références de fichier)
+
 Impossible de convertir la valeur de type' ' \<typename1> en' \<typename2> '. Une incompatibilité de type peut être due à la combinaison d’une référence de fichier à' \<filepath1> 'dans le projet' \<projectname1> 'avec une référence de fichier à' \<filepath2> 'dans le projet' \<projectname2> '. Si les deux assemblys sont identiques, essayez de remplacer ces deux références pour qu’elles se situent au même emplacement.  
   
  Dans le cas où un projet crée plusieurs références de fichier à un assembly, le compilateur ne peut pas garantir qu’un type peut être converti en un autre.  

@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC31103
 ms.assetid: 3c346c32-7669-4b04-841d-7a9df9cb703e
-ms.openlocfilehash: cb953671e624d5b9170aa0b3a9dd80c7ba8337e3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 08986cde7151cac5e70083705f38a83837bedb93
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402912"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874044"
 ---
 # <a name="get-accessor-of-property-propertyname-is-not-accessible"></a>L'accesseur 'Get' de la propriété '\<propertyname>' n'est pas accessible
+
 Une instruction tente de récupérer la valeur d’une propriété lorsqu’elle n’a pas accès à la procédure de la propriété `Get` .  
   
  Si l' [instruction d’extraction](../statements/get-statement.md) est marquée avec un niveau d’accès plus restrictif que son [instruction Property](../statements/property-statement.md), une tentative de lecture de la valeur de la propriété peut échouer dans les cas suivants :  

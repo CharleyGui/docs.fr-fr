@@ -4,12 +4,12 @@ description: Découvrez comment l’API du fournisseur de configuration est util
 author: IEvangelist
 ms.author: dapine
 ms.date: 09/16/2020
-ms.openlocfilehash: fe90ba9aee08ec9c1316335a5b3fd8dd6e90a811
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: d5333e8e52feb7d28e2149a988dc7ce53a926a50
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720845"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874749"
 ---
 # <a name="configuration-providers-in-net"></a>Fournisseurs de configuration dans .NET
 
@@ -203,8 +203,9 @@ set CustomPrefix_TransientFaultHandlingOptions__AutoRetryDelay=00:00:21
 dotnet run
 ```
 
-La configuration par défaut charge les variables d’environnement et les arguments de ligne de commande précédés du préfixe `DOTNET_` . Le `DOTNET_` préfixe est utilisé par .net pour la configuration de l’hôte et de l’application, mais pas pour la configuration de l’utilisateur.
-<!-- For more information on host and app configuration, see .NET Generic Host. -->
+La configuration par défaut charge les variables d’environnement et les arguments de ligne de commande précédés du préfixe `DOTNET_` . Le `DOTNET_` préfixe est utilisé par .net pour la [configuration](generic-host.md#app-configuration)de l' [hôte](generic-host.md#host-configuration) et de l’application, mais pas pour la configuration de l’utilisateur.
+
+Pour plus d’informations sur la configuration de l’hôte et de l’application, consultez [hôte générique .net](generic-host.md).
 
 Dans [Azure App service](https://azure.microsoft.com/services/app-service), sélectionnez **nouveau paramètre d’application** dans la page **paramètres > configuration** . Azure App Service paramètres de l’application sont les suivants :
 
@@ -313,4 +314,5 @@ Dans le code précédent, <xref:Microsoft.Extensions.Configuration.MemoryConfigu
 ## <a name="see-also"></a>Voir aussi
 
 - [Configuration dans .NET](configuration.md)
+- [Hôte générique .NET](generic-host.md)
 - [Implémenter un fournisseur de configuration personnalisé](custom-configuration-provider.md)

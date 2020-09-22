@@ -4,12 +4,12 @@ description: Vue d’ensemble des méthodes, des paramètres de méthode et des 
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 879c553f8df560a3e2f3dccdbbf0d7e8a05c50cd
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 520aeed85ee00127c2bd3eee681b980d05f46d05
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495536"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874704"
 ---
 # <a name="methods-in-c"></a>Méthodes dans (C#)
 
@@ -24,7 +24,7 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 
 Les méthodes sont déclarées dans une `class` ou une `struct` en spécifiant :
 
-- Un niveau d’accès facultatif, comme `public` ou `private`. Par défaut, il s’agit de `private`.
+- Un niveau d’accès facultatif, comme `public` ou `private`. La valeur par défaut est `private`.
 - Des modificateurs facultatifs, comme `abstract` ou `sealed`.
 - La valeur de retour, ou `void` si la méthode n’en a pas.
 - Nom de la méthode.
@@ -121,13 +121,14 @@ Passer un paramètre de type référence vous permet de changer la valeur de la 
 
 Parfois, l’obligation de spécifier le nombre exact d’arguments de votre méthode est restrictive. En utilisant le mot clé `params` pour indiquer qu’un paramètre est un tableau de paramètres, vous permettez que votre méthode soit appelée avec un nombre variable d’arguments. Le paramètre marqué avec le mot clé `params` doit être un type tableau. Ce doit être le dernier paramètre de la liste de paramètres de la méthode.
 
-Un appelant peut alors appeler la méthode de trois façons :
+Un appelant peut ensuite appeler la méthode de l’une des quatre manières suivantes :
 
 - En passant un tableau du type approprié, qui contient le nombre d’éléments souhaité.
 - En passant une liste d’arguments individuels séparés par des virgules et du type approprié à la méthode.
+- En passant `null` .
 - En ne fournissant pas d’argument au tableau de paramètres.
 
-L’exemple suivant définit une méthode nommée `GetVowels` qui retourne toutes les voyelles à partir d’un tableau de paramètres. La méthode `Main` montre les trois façons d’appeler la méthode. Les appelants n’ont pas nécessairement à fournir tous les arguments pour les paramètres qui incluent le modificateur `params`. Dans ce cas, le paramètre est `null`.
+L’exemple suivant définit une méthode nommée `GetVowels` qui retourne toutes les voyelles à partir d’un tableau de paramètres. La `Main` méthode illustre les quatre façons d’appeler la méthode. Les appelants n’ont pas nécessairement à fournir tous les arguments pour les paramètres qui incluent le modificateur `params`. Dans ce cas, le paramètre est un tableau vide.
 
 [!code-csharp[csSnippets.Methods#75](~/samples/snippets/csharp/concepts/methods/params75.cs#75)]
 
@@ -292,4 +293,4 @@ Pour plus d’informations, consultez [itérateurs](programming-guide/concepts/i
 - [à](language-reference/keywords/out-parameter-modifier.md)
 - [ref](language-reference/keywords/ref.md)
 - [in](language-reference/keywords/in-parameter-modifier.md)
-- [Passage de paramètres](programming-guide/classes-and-structs/passing-parameters.md)
+- [Passer des paramètres](programming-guide/classes-and-structs/passing-parameters.md)

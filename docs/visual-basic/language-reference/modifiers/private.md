@@ -1,5 +1,5 @@
 ---
-title: Private
+title: Privées
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Private
@@ -7,17 +7,19 @@ helpviewer_keywords:
 - Private keyword [Visual Basic]
 - Private keyword [Visual Basic], syntax
 ms.assetid: aba74a2e-5824-4613-bf63-b9ec7787f4e6
-ms.openlocfilehash: 524f03e77e075bef08a1b41b563985de41baacb6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 59f1c1666ce38923a2861244fb377007cd0fa992
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404808"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874975"
 ---
 # <a name="private-visual-basic"></a>Private (Visual Basic)
+
 Spécifie qu’un ou plusieurs éléments de programmation déclarés sont accessibles uniquement à partir de leur contexte de déclaration, y compris à partir de tous les types contenus.  
   
 ## <a name="remarks"></a>Notes  
+
  Si un élément de programmation représente une fonctionnalité propriétaire ou contient des données confidentielles, vous souhaitez généralement limiter l’accès à celui-ci aussi strictement que possible. Vous atteignez la limite maximale en autorisant uniquement le module, la classe ou la structure qui le définit à y accéder. Pour limiter l’accès à un élément de cette manière, vous pouvez le déclarer avec `Private` .  
 
 > [!NOTE]
@@ -63,7 +65,7 @@ Spécifie qu’un ou plusieurs éléments de programmation déclarés sont acces
 
 - [Public](public.md)
 - [Protect](protected.md)
-- [Contact](friend.md)
+- [Friend](friend.md)
 - [Protégé privé](./private-protected.md)
 - [Protected Friend](./protected-friend.md)
 - [Niveaux d’accès dans Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)

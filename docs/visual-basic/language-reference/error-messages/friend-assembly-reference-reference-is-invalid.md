@@ -7,23 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC31535
 ms.assetid: 6540c1d0-bb19-4051-a579-2e4f9094585e
-ms.openlocfilehash: 6eb46c6479adc69eaf65b34c69aa69977b4d62ef
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 72c030d18d5339908c5088e104f6a8ad3e76943b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972394"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874096"
 ---
-# <a name="friend-assembly-reference-reference-is-invalid"></a>Le > de \<référence de l’assembly friend n’est pas valide
-Le > de \<référence d’assembly friend n’est pas valide. Les assemblys signés avec un nom fort doivent spécifier une clé publique dans leurs déclarations InternalsVisibleTo.  
+# <a name="friend-assembly-reference-reference-is-invalid"></a>La référence d'assembly Friend \<reference> n'est pas valide
+
+La référence d’assembly friend \<reference> n’est pas valide. Les assemblys signés avec un nom fort doivent spécifier une clé publique dans leurs déclarations InternalsVisibleTo.  
   
- Le nom d’assembly passé <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> au constructeur d’attribut identifie un assembly avec nom fort, mais il n' `PublicKey` inclut pas d’attribut.  
+ Le nom d’assembly passé au <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> constructeur d’attribut identifie un assembly avec nom fort, mais il n’inclut pas d' `PublicKey` attribut.  
   
  **ID d’erreur :** BC31535  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1. Déterminez la clé publique de l’assembly friend avec nom fort. Incluez la clé publique dans le nom de l’assembly passé <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> au constructeur d’attribut à `PublicKey` l’aide de l’attribut.  
+1. Déterminez la clé publique de l’assembly friend avec nom fort. Incluez la clé publique dans le nom de l’assembly passé au <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> constructeur d’attribut à l’aide de l' `PublicKey` attribut.  
   
 ## <a name="see-also"></a>Voir aussi
 

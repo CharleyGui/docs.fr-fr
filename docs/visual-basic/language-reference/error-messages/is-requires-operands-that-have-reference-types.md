@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30020
 ms.assetid: 228afebd-1203-4bd3-8d7a-c5c56f3cedc4
-ms.openlocfilehash: e5acc94a3738fca3a43740bdba727fc843132aa1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: daf9724fef81b4d7adb4f571ee950723aec09d8d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402809"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873912"
 ---
 # <a name="is-requires-operands-that-have-reference-types-but-this-operand-has-the-value-type-typename"></a>'Is' requiert des opérandes ayant des types référence, mais cet opérande a le type valeur '\<typename>'
+
 L' `Is` opérateur de comparaison détermine si deux variables objets font référence à la même instance. Cette comparaison n’est pas définie pour les types valeur.  
   
  **ID d’erreur :** BC30020  

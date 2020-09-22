@@ -4,21 +4,22 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID62
 ms.assetid: 65292704-6e7d-4622-9f50-eb655a59b016
-ms.openlocfilehash: 5da14c7a28ecdcd023fc6439cb6ed64444c1183b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c0cb0373fb0652e9600ac8651661708414561aca
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013788"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873964"
 ---
 # <a name="input-past-end-of-file"></a>L'entrée dépasse la fin du fichier
-Soit un `Input` instruction lit à partir d’un fichier qui est vide ou une dans laquelle toutes les données est utilisé, ou vous avez utilisé le `EOF` fonction avec un fichier ouvert pour un accès binaire.  
+
+Soit une `Input` instruction lit à partir d’un fichier vide, soit une instruction dans laquelle toutes les données sont utilisées, ou vous avez utilisé la `EOF` fonction avec un fichier ouvert pour un accès binaire.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1. Utilisez le `EOF` fonction immédiatement avant la `Input` instruction pour détecter la fin du fichier.  
+1. Utilisez la `EOF` fonction immédiatement avant l' `Input` instruction pour détecter la fin du fichier.  
   
-2. Si le fichier est ouvert pour un accès binaire, utilisez `Seek` et `Loc`.  
+2. Si le fichier est ouvert pour un accès binaire, utilisez `Seek` et `Loc` .  
   
 ## <a name="see-also"></a>Voir aussi
 

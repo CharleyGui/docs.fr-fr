@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30188
 ms.assetid: da6b1df3-fe6b-4415-88e6-0977e5189e0b
-ms.openlocfilehash: 237622d0dc6c57f66d402f491a6191a5911574e2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ee8f1f9ec26dc6c938f0b412dfe30832e3cfe165
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409736"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874521"
 ---
 # <a name="declaration-expected"></a>Déclaration attendue
+
 Une instruction non déclarative, telle qu’une instruction d’assignation ou de boucle, se produit en dehors de toute procédure. Seules les déclarations sont autorisées en dehors des procédures.  
   
  Un élément de programmation est également déclaré sans mot clé de déclaration, tel que `Dim` ou `Const` .  

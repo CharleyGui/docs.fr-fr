@@ -1,16 +1,16 @@
 ---
 description: opérateur délégué - Référence C#
 title: opérateur délégué - Référence C#
-ms.date: 07/18/2019
+ms.date: 09/22/2020
 helpviewer_keywords:
 - delegate [C#]
 - anonymous method [C#]
-ms.openlocfilehash: 1dfaaf40c0f5a19534adef3be7e3c917bc95c4a8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6c087d9bdb2f526cf7d94c3a0f2c1a929b0343ef
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89122249"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874911"
 ---
 # <a name="delegate-operator-c-reference"></a>opérateur délégué (Référence C#)
 
@@ -30,6 +30,12 @@ Lorsque vous utilisez l’opérateur `delegate`, vous pouvez omettre la liste de
 [!code-csharp-interactive[no parameter list](snippets/shared/DelegateOperator.cs#WithoutParameterList)]
 
 C’est la seule fonctionnalité des méthodes anonymes qui n’est pas prise en charge par les expressions lambda. Dans tous les autres cas, une expression lambda est le moyen préféré pour écrire du code incorporé.
+
+À compter de C# 9,0, vous pouvez utiliser des éléments [ignorés](../../discards.md) pour spécifier au moins deux paramètres d’entrée d’une méthode anonyme qui ne sont pas utilisés par la méthode :
+
+:::code language="csharp" source="snippets/shared/DelegateOperator.cs" id="SnippetDiscards" :::
+
+À des fins de compatibilité descendante, si un seul paramètre est nommé `_` , `_` est traité comme le nom de ce paramètre dans une méthode anonyme.
 
 Vous utilisez également le mot clé `delegate` pour déclarer un [type délégué](../builtin-types/reference-types.md#the-delegate-type).
 

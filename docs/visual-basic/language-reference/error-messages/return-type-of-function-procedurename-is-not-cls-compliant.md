@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40027
 ms.assetid: 33c088c7-48e7-400c-920e-6d8967e1f3fc
-ms.openlocfilehash: 9cc7e25ef1be21ff2f6a71dcb61bc29ec92da30f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8ced0b6e06edadd9aed787aab2e715a2853e73a9
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400355"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870839"
 ---
 # <a name="return-type-of-function-procedurename-is-not-cls-compliant"></a>Le type de retour de la fonction '\<procedurename>' n'est pas conforme CLS
+
 Une `Function` procédure est marquée comme `<CLSCompliant(True)>` mais retourne un type qui est marqué comme `<CLSCompliant(False)>` , qui n’est pas marqué ou qui n’est pas qualifié car il s’agit d’un type non conforme.  
   
  Pour qu’une procédure soit conforme à CLS ([Indépendance du langage et composants indépendants du langage](../../../standard/language-independence-and-language-independent-components.md)), elle doit utiliser uniquement des types conformes à CLS. Cette règle s’applique aux types des paramètres, au type de retour et aux types de toutes ses variables locales.  

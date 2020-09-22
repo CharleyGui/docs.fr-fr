@@ -14,17 +14,19 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
-ms.openlocfilehash: eef6314f5fc1f5a7fffa7997559f697130f6f755
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b5649cd2a58fd8d300df58c563aebeed8976c4f5
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401444"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874790"
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Priorité des opérateurs en Visual Basic
+
 Lorsque plusieurs opérations se produisent dans une expression, chaque composant est évalué et résolu dans un ordre prédéterminé appelé *priorité d’opérateur*.
 
 ## <a name="precedence-rules"></a>Règles de précédence
+
  Lorsque des expressions contiennent des opérateurs issus de plusieurs catégories, elles sont évaluées en fonction des règles suivantes :
 
 - Les opérateurs arithmétiques et de concaténation ont l’ordre de priorité décrit dans la section suivante, et tous ont une priorité plus élevée que les opérateurs de comparaison, logiques et au niveau du bit.
@@ -36,12 +38,15 @@ Lorsque plusieurs opérations se produisent dans une expression, chaque composan
 - Les opérateurs de même priorité sont évalués de gauche à droite dans l’ordre dans lequel ils apparaissent dans l’expression.
 
 ## <a name="precedence-order"></a>Ordre de priorité
+
  Les opérateurs sont évalués dans l’ordre de priorité suivant :
 
 ### <a name="await-operator"></a>Await, opérateur
+
  Await
 
 ### <a name="arithmetic-and-concatenation-operators"></a>Opérateurs arithmétiques et de concaténation
+
  Élévation à la puissance ( `^` )
 
  Négation et identité unaire ( `+` , `–` )
@@ -59,9 +64,11 @@ Lorsque plusieurs opérations se produisent dans une expression, chaque composan
  Décalage binaire arithmétique ( `<<` , `>>` )
 
 ### <a name="comparison-operators"></a>Opérateurs de comparaison
+
  Tous les opérateurs de comparaison ( `=` , `<>` , `<` , `<=` , `>` , `>=` , `Is` , `IsNot` , `Like` , `TypeOf` ... `Is` )
 
 ### <a name="logical-and-bitwise-operators"></a>Opérateurs de bits et opérateurs logiques
+
  Négation ( `Not` )
 
  Conjonction ( `And` , `AndAlso` )
@@ -71,6 +78,7 @@ Lorsque plusieurs opérations se produisent dans une expression, chaque composan
  Disjonction exclusive ( `Xor` )
 
 ### <a name="comments"></a>Commentaires
+
  L' `=` opérateur est uniquement l’opérateur de comparaison d’égalité, et non l’opérateur d’assignation.
 
  L’opérateur de concaténation de chaînes ( `&` ) n’est pas un opérateur arithmétique, mais en priorité il est groupé avec les opérateurs arithmétiques.
@@ -78,6 +86,7 @@ Lorsque plusieurs opérations se produisent dans une expression, chaque composan
  Les `Is` `IsNot` opérateurs et sont des opérateurs de comparaison de référence d’objet. Elles ne comparent pas les valeurs de deux objets ; ils vérifient uniquement si deux variables d’objet font référence à la même instance d’objet.
 
 ## <a name="associativity"></a>Associativité
+
  Lorsque des opérateurs de priorité égale apparaissent ensemble dans une expression, par exemple multiplication et Division, le compilateur évalue chaque opération à mesure qu’elle le rencontre de gauche à droite. L'exemple suivant illustre ce comportement.
 
 ```vb
@@ -91,6 +100,7 @@ Dim n3 As Integer = 96 / (8 / 4)
  En raison de ce comportement, on dit que les opérateurs sont *associatifs à gauche* dans Visual Basic.
 
 ## <a name="overriding-precedence-and-associativity"></a>Substitution de la priorité et de l’associativité
+
  Vous pouvez utiliser des parenthèses pour forcer l’évaluation de certaines parties d’une expression avant d’autres. Cela peut remplacer l’ordre de priorité et l’associativité à gauche. Visual Basic effectue toujours des opérations placées entre parenthèses avant celles extérieures à. Toutefois, entre parenthèses, il gère la priorité et l’associativité ordinaires, sauf si vous utilisez des parenthèses entre parenthèses. L'exemple suivant illustre ce comportement.
 
 ```vb

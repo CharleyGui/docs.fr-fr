@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30616
 ms.assetid: e7658ebc-da45-451b-a409-a0f8915f0beb
-ms.openlocfilehash: 474a920c9cfdfba7a8157320d9c88b8677958425
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 04538be3431fb06518051db4378e986ea5711219
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406519"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875052"
 ---
 # <a name="variable-variablename-hides-a-variable-in-an-enclosing-block"></a>La variable '\<variablename>'masque une variable dans un bloc englobant
+
 Une variable comprise dans un bloc porte le même nom qu’une autre variable locale.  
   
  **ID d’erreur :** BC30616  

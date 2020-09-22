@@ -9,14 +9,15 @@ helpviewer_keywords:
 - XML comment literal [Visual Basic]
 - XML literals [Visual Basic], comment
 ms.assetid: 634c1cee-5e01-48d0-88d7-2dd55e4a9e52
-ms.openlocfilehash: 93c1346e54106b93f3932a494dea85d082ec994d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3272cc0f976d6e8819e51bb5d5fce73066007963
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400213"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875183"
 ---
 # <a name="xml-comment-literal-visual-basic"></a>Littéraux de commentaires XML (Visual Basic)
+
 Littéral représentant un <xref:System.Xml.Linq.XComment> objet.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,10 +34,12 @@ Littéral représentant un <xref:System.Xml.Linq.XComment> objet.
 |`content`|Obligatoire. Texte à afficher dans le commentaire XML. Ne peut pas contenir une série de deux traits d’Union (--) ou se terminer par un trait d’Union adjacent à la balise de fermeture.|  
 |`-->`|Obligatoire. Désigne la fin du commentaire XML.|  
   
-## <a name="return-value"></a>Valeur renvoyée  
+## <a name="return-value"></a>Valeur de retour  
+
  Objet <xref:System.Xml.Linq.XComment>.  
   
 ## <a name="remarks"></a>Notes  
+
  Les littéraux de commentaire XML ne contiennent pas de contenu de document ; elles contiennent des informations sur le document. La section de commentaire XML se termine par la séquence « --> ». Cela implique les points suivants :  
   
 - Vous ne pouvez pas utiliser une expression incorporée dans un littéral de commentaire XML, car les délimiteurs d’expressions incorporées sont du contenu de commentaire XML valide.  
@@ -51,6 +54,7 @@ Littéral représentant un <xref:System.Xml.Linq.XComment> objet.
  Le compilateur Visual Basic convertit le littéral de commentaire XML en un appel au <xref:System.Xml.Linq.XComment.%23ctor%2A> constructeur.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant crée un commentaire XML qui contient le texte « This is a comments ».  
   
  [!code-vb[VbXMLSamples#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples4.vb#9)]  

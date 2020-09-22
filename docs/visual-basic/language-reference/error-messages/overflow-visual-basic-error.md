@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30036
 ms.assetid: b2c83de9-a132-449a-870b-e7c409d4d7ee
-ms.openlocfilehash: c11c78292301cf837ec8d4003b6434cd968abe16
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3db6a4b15444d8cfab264d41fb8395ec8679dead
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387346"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871228"
 ---
 # <a name="overflow-visual-basic-error"></a>Dépassement de capacité (erreur Visual Basic)
+
 Un littéral représente une valeur en dehors des limites du type de données auquel il est assigné.  
   
  **ID d’erreur :** BC30036  
@@ -25,4 +26,4 @@ Un littéral représente une valeur en dehors des limites du type de données au
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](../data-types/index.md)
+- [Data types](../data-types/index.md)

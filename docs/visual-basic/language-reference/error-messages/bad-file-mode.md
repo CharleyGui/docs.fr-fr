@@ -4,21 +4,22 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID54
 ms.assetid: 74891e96-884b-4c8d-872d-cd11ae272372
-ms.openlocfilehash: 534ea2d8316dc29cace798c5ad9b7697a290026f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 99b84902ddf032f2ecb6e26400e200bea862dfdf
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409867"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875144"
 ---
 # <a name="bad-file-mode"></a>Mode de fichier incorrect
+
 Les instructions utilisées pour manipuler le contenu d’un fichier doivent être appropriées au mode dans lequel le fichier a été ouvert. Les causes possibles sont les suivantes :  
   
 - Une `FilePutObject` `FileGetObject` instruction ou spécifie un fichier séquentiel.  
   
 - Une `Print` instruction spécifie un fichier ouvert pour un mode d’accès autre que `Output` ou `Append` .  
   
-- Une `Input` instruction spécifie un fichier ouvert pour un mode d’accès autre que`Input`  
+- Une `Input` instruction spécifie un fichier ouvert pour un mode d’accès autre que `Input`  
   
 - Tentative d’écriture dans un fichier en lecture seule.  
   
