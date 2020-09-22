@@ -5,23 +5,26 @@ helpviewer_keywords:
 - My.User property
 - My.User object
 ms.assetid: caa7462e-2149-4bdb-8850-802b80b93cbf
-ms.openlocfilehash: 342c9ccaefb041ddd80039046e1927857654ad7d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f8004045b68dd7102aa85292e8e60c3ca38cbbe3
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372412"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870000"
 ---
 # <a name="myuser-object"></a>My.User, objet
+
 Permet d’accéder aux informations relatives à l’utilisateur actuel.  
   
 ## <a name="remarks"></a>Notes  
+
  Pour plus d’informations sur les méthodes et les propriétés de l’objet `My.User` , consultez <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType>.  
   
  Pour plus d’informations, consultez [accès aux données utilisateur](../../developing-apps/programming/accessing-user-data.md).  
   
 ## <a name="requirements"></a>Spécifications  
- **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
+
+ **Assembly :** Visual Basic la bibliothèque Runtime (dans Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

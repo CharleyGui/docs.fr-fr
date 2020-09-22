@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC32025
 ms.assetid: 43707bf1-1c6b-4d82-b081-e5a17dca51c1
-ms.openlocfilehash: 5652139ab139ea93258eb116f97ba21b76986a24
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e3147b6192f54ce85d0fecd6b67f7d80f6281b54
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400381"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870888"
 ---
 # <a name="region-and-end-region-statements-are-not-valid-within-method-bodiesmultiline-lambdas"></a>Les instructions '#Region' et '#End Region' ne sont pas valides dans le corps des méthodes ou les expressions lambda multiligne
+
 Le `#Region` bloc doit être déclaré au niveau d’un classe, d’un module ou d’un espace de noms. Une région réductible peut inclure une ou plusieurs procédures, mais elle ne peut pas commencer ni se terminer à l’intérieur d’une procédure.  
   
  **ID d’erreur :** BC32025  

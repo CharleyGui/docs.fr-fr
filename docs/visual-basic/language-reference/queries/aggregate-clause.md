@@ -10,14 +10,15 @@ helpviewer_keywords:
 - Aggregate statement [Visual Basic]
 - queries [Visual Basic], Aggregate
 ms.assetid: 1315a814-5db6-4077-b34b-b141e11cc0eb
-ms.openlocfilehash: 326c3306368ceca2122e912556efd84e4bfef1f1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: be2e401c7931b2637c14a3ea3b742a2c09917939
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84412999"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869980"
 ---
 # <a name="aggregate-clause-visual-basic"></a>Aggregate, clause (Visual Basic)
+
 Applique une ou plusieurs fonctions d’agrégation à une collection.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,12 +35,13 @@ Aggregate element [As type] In collection _
 |Terme|Définition|  
 |---|---|  
 |`element`|Obligatoire. Variable utilisée pour itérer au sein des éléments de la collection.|  
-|`type`|Facultatif. Type d'élément `element`. Si aucun type n’est spécifié, le type de `element` est déduit à partir de `collection` .|  
+|`type`|Optionnel. Type d'élément `element`. Si aucun type n’est spécifié, le type de `element` est déduit à partir de `collection` .|  
 |`collection`|Obligatoire. Fait référence à la collection sur laquelle opérer.|  
-|`clause`|Facultatif. Une ou plusieurs clauses de requête, telles qu’une `Where` clause, pour affiner le résultat de la requête afin d’appliquer la ou les clauses d’agrégation à.|  
+|`clause`|Optionnel. Une ou plusieurs clauses de requête, telles qu’une `Where` clause, pour affiner le résultat de la requête afin d’appliquer la ou les clauses d’agrégation à.|  
 |`expressionList`|Obligatoire. Une ou plusieurs expressions délimitées par des virgules qui identifient une fonction d’agrégation à appliquer à la collection. Vous pouvez appliquer un alias à une fonction d’agrégation pour spécifier un nom de membre pour le résultat de la requête. Si aucun alias n’est fourni, le nom de la fonction d’agrégation est utilisé. Pour obtenir des exemples, consultez la section relative aux fonctions d’agrégation plus loin dans cette rubrique.|  
   
 ## <a name="remarks"></a>Notes  
+
  La `Aggregate` clause peut être utilisée pour inclure des fonctions d’agrégation dans vos requêtes. Les fonctions d’agrégation effectuent des vérifications et des calculs sur un ensemble de valeurs et retournent une valeur unique. Vous pouvez accéder à la valeur calculée à l’aide d’un membre du type de résultat de la requête. Les fonctions d’agrégation standard que vous pouvez utiliser sont `All` les `Any` fonctions,, `Average` ,,,, `Count` `LongCount` `Max` `Min` et `Sum` . Ces fonctions sont familières aux développeurs qui sont familiarisés avec les agrégats dans SQL. Ils sont décrits dans la section suivante de cette rubrique.  
   
  Le résultat d’une fonction d’agrégation est inclus dans le résultat de la requête en tant que champ du type de résultat de la requête. Vous pouvez fournir un alias pour le résultat de la fonction d’agrégation afin de spécifier le nom du membre du type de résultat de la requête qui contiendra la valeur d’agrégation. Si aucun alias n’est fourni, le nom de la fonction d’agrégation est utilisé.  
@@ -52,29 +54,29 @@ Les fonctions d’agrégation standard qui peuvent être utilisées avec la clau
   
 ### <a name="all"></a>Tous
 
-Retourne `true` si tous les éléments de la collection satisfont à une condition spécifiée ; sinon, retourne `false` . Voici un exemple :
+Retourne `true` si tous les éléments de la collection satisfont à une condition spécifiée ; sinon, retourne `false` . Par exemple :
 
  [!code-vb[VbSimpleQuerySamples#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#5)]
 
 ### <a name="any"></a>Quelconque
 
-Retourne `true` si un élément de la collection satisfait à une condition spécifiée ; sinon, retourne `false` . Voici un exemple :
+Retourne `true` si un élément de la collection satisfait à une condition spécifiée ; sinon, retourne `false` . Par exemple :
 
  [!code-vb[VbSimpleQuerySamples#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#6)]
 
-### <a name="average"></a>Average
+### <a name="average"></a>Moyenne
 
-Calcule la moyenne de tous les éléments de la collection ou calcule une expression fournie pour tous les éléments de la collection. Voici un exemple :
+Calcule la moyenne de tous les éléments de la collection ou calcule une expression fournie pour tous les éléments de la collection. Par exemple :
 
  [!code-vb[VbSimpleQuerySamples#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#7)]
 
-### <a name="count"></a>Count
+### <a name="count"></a>Nombre
 
-Compte le nombre d’éléments dans la collection. Vous pouvez fournir une `Boolean` expression facultative pour compter uniquement le nombre d’éléments de la collection qui satisfont à une condition. Voici un exemple :
+Compte le nombre d’éléments dans la collection. Vous pouvez fournir une `Boolean` expression facultative pour compter uniquement le nombre d’éléments de la collection qui satisfont à une condition. Par exemple :
 
  [!code-vb[VbSimpleQuerySamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#8)]
 
-### <a name="group"></a>Groupe
+### <a name="group"></a>Group
 
 Fait référence aux résultats de requête regroupés à la suite d' `Group By` une `Group Join` clause ou. La `Group` fonction est valide uniquement dans la `Into` clause d’une `Group By` `Group Join` clause ou. Pour plus d’informations et d’exemples, consultez [Group by](group-by-clause.md) , clause et Group [join clause](group-join-clause.md).
 
@@ -84,19 +86,19 @@ Compte le nombre d’éléments dans la collection. Vous pouvez fournir une `Boo
 
 ### <a name="max"></a>Max
 
-Calcule la valeur maximale de la collection ou calcule une expression fournie pour tous les éléments de la collection. Voici un exemple :
+Calcule la valeur maximale de la collection ou calcule une expression fournie pour tous les éléments de la collection. Par exemple :
 
  [!code-vb[VbSimpleQuerySamples#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#9)]
 
 ### <a name="min"></a>Min
 
-Calcule la valeur minimale de la collection ou calcule une expression fournie pour tous les éléments de la collection. Voici un exemple :
+Calcule la valeur minimale de la collection ou calcule une expression fournie pour tous les éléments de la collection. Par exemple :
 
  [!code-vb[VbSimpleQuerySamples#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#10)]
 
 ### <a name="sum"></a>SUM
 
-Calcule la somme de tous les éléments de la collection ou calcule une expression fournie pour tous les éléments de la collection. Voici un exemple :
+Calcule la somme de tous les éléments de la collection ou calcule une expression fournie pour tous les éléments de la collection. Par exemple :
 
  [!code-vb[VbSimpleQuerySamples#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#15)]
 
@@ -125,4 +127,4 @@ L’exemple suivant montre comment utiliser la `Aggregate` clause pour appliquer
 - [Clause SELECT](select-clause.md)
 - [From, clause](from-clause.md)
 - [Clause WHERE](where-clause.md)
-- [Group by, clause](group-by-clause.md)
+- [Group By (clause)](group-by-clause.md)

@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30451
 ms.assetid: 765f099b-e21e-47c6-a906-a065444e56b3
-ms.openlocfilehash: 6fa4639b97e4314d8752ae520e94a58a189b7cbb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 76c1ab4fb5f1f8e4c76a06110f4b0f9026cca201
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397166"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871549"
 ---
 # <a name="name-name-is-not-declared"></a>Le nom '\<name>' n'est pas déclaré
+
 Une instruction fait référence à un élément de programmation, mais le compilateur ne peut pas trouver un élément avec ce nom exact.  
   
  **ID d’erreur :** BC30451  
@@ -31,7 +32,7 @@ Une instruction fait référence à un élément de programmation, mais le compi
 
 5. Si vous n’utilisez pas un type qualifié complet ou un nom de type et de membre (par exemple, votre code fait référence à une propriété au `MethodInfo.Name` lieu de `System.Reflection.MethodInfo.Name` ), ajoutez une [instruction Imports](../statements/imports-statement-net-namespace-and-type.md).
 
-6. Si vous essayez de compiler un projet de type SDK (un projet avec un \* fichier. vbproj qui commence par la ligne `<Project Sdk="Microsoft.NET.Sdk">` ) et que le message d’erreur fait référence à un type ou un membre de l’assembly Microsoft. VisualBasic. dll, configurez votre application pour qu’elle soit compilée avec une référence à la bibliothèque Runtime Visual Basic. Par défaut, un sous-ensemble de la bibliothèque est incorporé dans votre assembly dans un projet de type SDK.
+6. Si vous essayez de compiler un projet de type SDK (un projet avec un \* fichier. vbproj qui commence par la ligne `<Project Sdk="Microsoft.NET.Sdk">` ) et que le message d’erreur fait référence à un type ou un membre de l’assembly Microsoft.VisualBasic.dll, configurez votre application pour qu’elle soit compilée avec une référence à la bibliothèque d’exécution Visual Basic. Par défaut, un sous-ensemble de la bibliothèque est incorporé dans votre assembly dans un projet de type SDK.
 
    Par exemple, la compilation de l’exemple suivant échoue, car la <xref:Microsoft.VisualBasic.CompilerServices.Conversions.ChangeType%2A?displayProperty=fullName> méthode est introuvable. Il n’est pas incorporé dans le sous-ensemble du runtime Visual Basic inclus avec votre application.  
 
