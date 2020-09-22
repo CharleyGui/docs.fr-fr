@@ -18,14 +18,15 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-ms.openlocfilehash: a136a517c7ce865b4e1d349270696e2704d61592
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0575a67f89f734c79259036fe48d6e2671c2d1ed
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404665"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873260"
 ---
 # <a name="event-statement"></a>Event, instruction
+
 Déclare un événement défini par l'utilisateur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -59,15 +60,15 @@ End Event
 |Élément|Description|  
 |---|---|  
 |`attrlist`|facultatif. Liste des attributs qui s'appliquent à cet événement. Les attributs multiples sont séparés par des virgules. Vous devez placer la [liste des attributs](attribute-list.md) entre crochets pointus (« `<` » et «» `>` ).|  
-|`accessmodifier`|Facultatif. Spécifie le code pouvant accéder à l'événement. Il peut s'agir d'une des méthodes suivantes :<br /><br /> -   [Public](../modifiers/public.md): tout code pouvant accéder à l’élément qui le déclare peut y accéder.<br />-   [Protégé](../modifiers/protected.md): seul le code dans sa classe ou une classe dérivée peut y accéder.<br />-   [Friend](../modifiers/friend.md): seul le code dans le même assembly peut y accéder.<br />-   [Privé](../modifiers/private.md): seul le code de l’élément qui le déclare peut y accéder.<br /> -   Le code [Protected Friend](../modifiers/protected-friend.md)uniquement dans la classe de l’événement, une classe dérivée ou le même assembly peut y accéder. <br />- Le code [privé protégé](../modifiers/private-protected.md)uniquement dans la classe de l’événement ou une classe dérivée dans le même assembly peut y accéder.|  
-|`Shared`|Facultatif. Spécifie que cet événement n'est pas associé à une instance spécifique d'une classe ou d'une structure.|  
-|`Shadows`|Facultatif. Indique que cet élément redéclare et masque un élément de programmation du même nom ou un ensemble d'éléments surchargés dans une classe de base. Vous pouvez occulter tout type d'élément déclaré par un autre type.<br /><br /> Un élément occulté n'est pas disponible à partir de la classe dérivée qui l'occulte, sauf à partir de l'emplacement où l'élément d'occultation est inaccessible. Par exemple, si un élément `Private` occulte un élément de la classe de base, le code qui n'est pas autorisé à accéder à l'élément `Private` accède à la place à l'élément de la classe de base.|  
+|`accessmodifier`|Optionnel. Spécifie le code pouvant accéder à l'événement. Il peut s'agir d'une des méthodes suivantes :<br /><br /> -   [Public](../modifiers/public.md): tout code pouvant accéder à l’élément qui le déclare peut y accéder.<br />-   [Protégé](../modifiers/protected.md): seul le code dans sa classe ou une classe dérivée peut y accéder.<br />-   [Friend](../modifiers/friend.md): seul le code dans le même assembly peut y accéder.<br />-   [Privé](../modifiers/private.md): seul le code de l’élément qui le déclare peut y accéder.<br /> -   Le code [Protected Friend](../modifiers/protected-friend.md)uniquement dans la classe de l’événement, une classe dérivée ou le même assembly peut y accéder. <br />- Le code [privé protégé](../modifiers/private-protected.md)uniquement dans la classe de l’événement ou une classe dérivée dans le même assembly peut y accéder.|  
+|`Shared`|Optionnel. Spécifie que cet événement n'est pas associé à une instance spécifique d'une classe ou d'une structure.|  
+|`Shadows`|Optionnel. Indique que cet élément redéclare et masque un élément de programmation du même nom ou un ensemble d'éléments surchargés dans une classe de base. Vous pouvez occulter tout type d'élément déclaré par un autre type.<br /><br /> Un élément occulté n'est pas disponible à partir de la classe dérivée qui l'occulte, sauf à partir de l'emplacement où l'élément d'occultation est inaccessible. Par exemple, si un élément `Private` occulte un élément de la classe de base, le code qui n'est pas autorisé à accéder à l'élément `Private` accède à la place à l'élément de la classe de base.|  
 |`eventname`|Obligatoire. Nom de l'événement. Ce nom respecte les conventions standard d'affectation de noms aux variables.|  
-|`parameterlist`|Facultatif. Liste des variables locales qui représentent les paramètres de cet événement. Vous devez placer la [liste de paramètres](parameter-list.md) entre parenthèses.|  
-|`Implements`|Facultatif. Indique que cet événement implémente un événement d'une interface.|  
-|`implementslist`|Obligatoire si `Implements` est utilisé. Liste des procédures `Sub` en cours d'implémentation. Les procédures multiples sont séparées par des virgules :<br /><br /> *implementedprocedure* [, *implementedprocedure* ...]<br /><br /> Chaque `implementedprocedure` emploie la syntaxe et les éléments suivants :<br /><br /> `interface`.`definedname`<br /><br /> -   `interface`Souhaitée. Nom d'une interface que la classe ou la structure qui contient cette procédure implémente.<br />-   `Definedname`Souhaitée. Nom par lequel la procédure est définie dans `interface`. Il ne doit pas être identique à `name`, le nom que cette procédure utilise pour implémenter la procédure définie.|  
+|`parameterlist`|Optionnel. Liste des variables locales qui représentent les paramètres de cet événement. Vous devez placer la [liste de paramètres](parameter-list.md) entre parenthèses.|  
+|`Implements`|Optionnel. Indique que cet événement implémente un événement d'une interface.|  
+|`implementslist`|Obligatoire si `Implements` est utilisé. Liste des procédures `Sub` en cours d'implémentation. Les procédures multiples sont séparées par des virgules :<br /><br /> *implementedprocedure* [, *implementedprocedure* ...]<br /><br /> Chaque `implementedprocedure` emploie la syntaxe et les éléments suivants :<br /><br /> `interface`.`definedname`<br /><br /> -   `interface` Souhaitée. Nom d'une interface que la classe ou la structure qui contient cette procédure implémente.<br />-   `Definedname` Souhaitée. Nom par lequel la procédure est définie dans `interface`. Il ne doit pas être identique à `name`, le nom que cette procédure utilise pour implémenter la procédure définie.|  
 |`Custom`|Obligatoire. Les événements déclarés comme `Custom` doivent définir des accesseurs `AddHandler`, `RemoveHandler` et `RaiseEvent` personnalisés.|  
-|`delegatename`|Facultatif. Nom d'un délégué qui spécifie la signature du gestionnaire d'événements.|  
+|`delegatename`|Optionnel. Nom d'un délégué qui spécifie la signature du gestionnaire d'événements.|  
 |`AddHandler`|Obligatoire. Déclare un accesseur `AddHandler`, qui spécifie les instructions à exécuter quand un gestionnaire d’événements est ajouté, soit explicitement en utilisant l’instruction `AddHandler`, soit implicitement en utilisant la clause `Handles`.|  
 |`End AddHandler`|Obligatoire. Met fin au bloc `AddHandler`.|  
 |`value`|Obligatoire. Nom du paramètre.|  
@@ -76,10 +77,11 @@ End Event
 |`RaiseEvent`|Obligatoire. Déclare un accesseur `RaiseEvent`, qui spécifie les instructions à exécuter quand l’événement est déclenché à l’aide de l’instruction `RaiseEvent`. En général, il appelle une liste de délégués gérée par les accesseurs `AddHandler` et `RemoveHandler`.|  
 |`End RaiseEvent`|Obligatoire. Met fin au bloc `RaiseEvent`.|  
 |`delegatesignature`|Obligatoire. Liste des paramètres correspondant aux paramètres requis par le délégué `delegatename`. Vous devez placer la [liste de paramètres](parameter-list.md) entre parenthèses.|  
-|`statements`|Facultatif. Instructions qui contiennent les corps des méthodes `AddHandler`, `RemoveHandler` et `RaiseEvent`.|  
+|`statements`|Optionnel. Instructions qui contiennent les corps des méthodes `AddHandler`, `RemoveHandler` et `RaiseEvent`.|  
 |`End Event`|Obligatoire. Met fin au bloc `Event`.|  
   
 ## <a name="remarks"></a>Notes  
+
  Une fois que l'événement a été déclaré, utilisez l'instruction `RaiseEvent` pour le déclencher. Les fragments de code suivants illustrent la déclaration et le déclenchement possibles d'un événement standard :  
   
  [!code-vb[VbVbalrEvents#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#13)]  
@@ -94,6 +96,7 @@ End Event
  Dans la plupart des cas, vous pouvez utiliser la première syntaxe présente dans la section Syntaxe de cette rubrique pour déclarer des événements. Toutefois, certains scénarios nécessitent un plus grand contrôle sur le comportement détaillé de l'événement. La dernière syntaxe présente dans la section Syntaxe de cette rubrique, qui utilise le mot clé `Custom`, fournit ce contrôle en vous permettant de définir des événements personnalisés. Dans un événement personnalisé, vous spécifiez exactement ce qui se passe quand le code ajoute ou supprime un gestionnaire d'événements pour l'événement, ou quand le code déclenche l'événement. Pour obtenir des exemples, consultez [Comment : déclarer des événements personnalisés pour économiser de la mémoire](../../programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md) et [Comment : déclarer des événements personnalisés pour éviter les blocages](../../programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md).  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant utilise des événements pour décompter les secondes de 10 à 0. Le code illustre plusieurs méthodes, propriétés et instructions liées à des événements. Cela inclut l'instruction `RaiseEvent`.  
   
  La classe qui déclenche un événement est la source de l'événement, et les méthodes qui traitent l'événement sont les gestionnaires d'événements. Une source d'événement peut avoir plusieurs gestionnaires pour les événements qu'elle génère. Quand la classe déclenche l'événement, celui-ci se produit pour chaque classe ayant choisi de gérer les événements pour cette instance de l'objet.  

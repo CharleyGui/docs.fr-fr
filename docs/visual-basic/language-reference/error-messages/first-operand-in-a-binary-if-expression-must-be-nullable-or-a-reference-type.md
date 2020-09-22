@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC33107
 ms.assetid: 493c8899-3f6b-4471-8eb6-9284e8492768
-ms.openlocfilehash: ca16c6604ee071668a5c65d7e9052b233e2313c7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a93dd0a5422ce2a01a01c6fc77224e3ee946910e
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403016"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874148"
 ---
 # <a name="first-operand-in-a-binary-if-expression-must-be-nullable-or-a-reference-type"></a>Le premier opérande d'une expression binaire 'If' doit être de type nullable ou référence
+
 Une `If` expression peut accepter deux ou trois arguments. Lorsque vous envoyez uniquement deux arguments, le premier argument doit être un type référence ou un type valeur Nullable. Si le premier argument est évalué à une valeur autre que `Nothing` , sa valeur est retournée. Si le premier argument a la valeur `Nothing` , le deuxième argument est évalué et retourné.  
   
  Par exemple, le code suivant contient deux `If` expressions, une avec trois arguments et une avec deux arguments. Les expressions calculent et retournent la même valeur.  

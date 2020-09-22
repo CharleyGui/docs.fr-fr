@@ -10,14 +10,15 @@ helpviewer_keywords:
 - write-only properties
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-ms.openlocfilehash: 49d4c36805b64d7232a94e818256723a0437b6ef
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b3524769567a56a87184bf916a3e5ccb1fd4fa1c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404185"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871750"
 ---
 # <a name="set-statement-visual-basic"></a>Set, instruction (Visual Basic)
+
 Déclare une `Set` procédure de propriété utilisée pour assigner une valeur à une propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,15 +30,16 @@ End Set
 ```  
   
 ## <a name="parts"></a>Éléments  
+
  `attributelist`  
- Facultatif. Consultez la [liste des attributs](attribute-list.md).  
+ Optionnel. Consultez la [liste des attributs](attribute-list.md).  
   
  `accessmodifier`  
  Facultatif sur au plus une des `Get` instructions et `Set` dans cette propriété. Il peut s'agir d'une des méthodes suivantes :  
   
 - [Protect](../modifiers/protected.md)  
   
-- [Contact](../modifiers/friend.md)  
+- [Friend](../modifiers/friend.md)  
   
 - [Privé](../modifiers/private.md)  
   
@@ -52,12 +54,13 @@ End Set
  Obligatoire si `Option Strict` est `On` . Type de données du `value` paramètre. Le type de données spécifié doit être le même que le type de données de la propriété où cette `Set` instruction est déclarée.  
   
  `statements`  
- Facultatif. Une ou plusieurs instructions qui s’exécutent lorsque la `Set` procédure de propriété est appelée.  
+ Optionnel. Une ou plusieurs instructions qui s’exécutent lorsque la `Set` procédure de propriété est appelée.  
   
  `End Set`  
  Obligatoire. Met fin à la définition de la `Set` procédure de propriété.  
   
 ## <a name="remarks"></a>Notes  
+
  Chaque propriété doit avoir une `Set` procédure de propriété, sauf si la propriété est marquée `ReadOnly` . La `Set` procédure est utilisée pour définir la valeur de la propriété.  
   
  Visual Basic appelle automatiquement la procédure d’une propriété `Set` lorsqu’une instruction d’assignation fournit une valeur à stocker dans la propriété.  
@@ -78,11 +81,12 @@ End Set
   
 - **Retour d’une procédure de propriété.** Lorsque la `Set` procédure revient au code appelant, l’exécution continue à suivre l’instruction qui a fourni la valeur à stocker.  
   
-     `Set`les procédures de propriété peuvent être retournées à l’aide de l' [instruction return](return-statement.md) ou de l' [instruction Exit](exit-statement.md).  
+     `Set` les procédures de propriété peuvent être retournées à l’aide de l' [instruction return](return-statement.md) ou de l' [instruction Exit](exit-statement.md).  
   
      Les `Exit Property` `Return` instructions et provoquent une sortie immédiate d’une procédure de propriété. Un nombre quelconque `Exit Property` d' `Return` instructions et peuvent apparaître n’importe où dans la procédure, et vous pouvez mélanger des `Exit Property` `Return` instructions et.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant utilise l' `Set` instruction pour définir la valeur d’une propriété.  
   
  [!code-vb[VbVbalrStatements#55](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#55)]  

@@ -2,13 +2,13 @@
 title: Éléments ignorés - Guide C#
 description: Décrit la prise en charge par C# des éléments ignorés, qui sont des variables qui peuvent être ignorées, et les différentes façons dont les éléments ignorés peuvent être utilisés.
 ms.technology: csharp-fundamentals
-ms.date: 07/21/2017
-ms.openlocfilehash: a76e7fc13f92ec0de87153bb35eb3924bb317616
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 09/22/2020
+ms.openlocfilehash: 4de48aebaeb896b198b2e9f2431c6a38ba11469e
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73100640"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869326"
 ---
 # <a name="discards---c-guide"></a>Éléments ignorés - Guide C#
 
@@ -20,12 +20,14 @@ Vous indiquez qu’une variable est un élément ignoré en lui affectant comme 
 (_, _, area) = city.GetCityInformation(cityName);
 ```
 
-Dans C# 7.0, les éléments ignorés sont pris en charge dans les affectations dans les contextes suivants :
+Dans C# 7,0 et versions ultérieures, les éléments ignorés sont pris en charge dans les affectations dans les contextes suivants :
 
-- Tuple et [la déconstruction d’objets](deconstruct.md).
+- Déconstruction d' [deconstruction](deconstruct.md)un tuple et d’un objet.
 - Critères spéciaux avec [is](language-reference/keywords/is.md) et [switch](language-reference/keywords/switch.md).
 - Appels à des méthodes avec des paramètres `out`.
 - Un `_` autonome quand aucun `_` n’est dans l’étendue.
+
+À compter de C# 9,0, vous pouvez utiliser des éléments ignorés pour spécifier les paramètres d’entrée inutilisés d’une expression lambda. Pour plus d’informations, consultez la section [paramètres d’entrée d’une expression lambda](language-reference/operators/lambda-expressions.md#input-parameters-of-a-lambda-expression) de l’article [expressions lambda](language-reference/operators/lambda-expressions.md) .
 
 Quand `_` est un élément ignoré valide, une tentative de récupérer sa valeur ou de l’utiliser dans une opération d’affectation génère l’erreur de compilateur CS0301, « Le nom '\_' n’existe pas dans le contexte actuel ». La raison en est qu’aucune valeur n’est affectée à `_` et qu’il n’est même pas possible de lui affecter un emplacement de stockage. S’il s’agissait d’une variable réelle, vous ne pourriez pas ignorer plus d’une valeur, comme l’a fait l’exemple précédent.
 
@@ -81,6 +83,6 @@ Notez que `_` est aussi un identificateur valide. Quand il est utilisé en dehor
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Déconstruction de tuples et autres types](deconstruct.md)
-- [`is`Mot-clé](language-reference/keywords/is.md)
-- [`switch`Mot-clé](language-reference/keywords/switch.md)
+- [Déconstruction de tuples et d’autres types](deconstruct.md)
+- [`is` mot](language-reference/keywords/is.md)
+- [`switch` mot](language-reference/keywords/switch.md)

@@ -4,12 +4,12 @@ description: Découvrez comment utiliser le fichier global.json pour définir la
 ms.topic: how-to
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: a9558090b1ef48f376334fbc826f6265a58908da
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 7e372c75812e79f85bb8965895d5fef694d9af1a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062793"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872388"
 ---
 # <a name="globaljson-overview"></a>Vue d’ensemble de global.json
 
@@ -31,7 +31,7 @@ Entrez : `object`
 
 Spécifie des informations sur le kit SDK .NET Core à sélectionner.
 
-#### <a name="version"></a>version
+#### <a name="version"></a>Version
 
 - Entrez : `string`
 
@@ -67,10 +67,10 @@ Stratégie de restauration par progression à utiliser lors de la sélection d�
 
 Pour comprendre les stratégies disponibles et leur comportement, considérez les définitions suivantes pour une version du kit de développement logiciel (SDK) au format `x.y.znn` :
 
-- `x`est la version principale.
-- `y`est la version mineure.
-- `z`est la plage de fonctionnalités.
-- `nn`est la version du correctif.
+- `x` est la version principale.
+- `y` est la version mineure.
+- `z` est la plage de fonctionnalités.
+- `nn` est la version du correctif.
 
 Le tableau suivant indique les valeurs possibles pour la `rollForward` clé :
 
@@ -81,9 +81,9 @@ Le tableau suivant indique les valeurs possibles pour la `rollForward` clé :
 | `minor`       | Utilise le niveau de correctif le plus récent pour la plage de fonctionnalités, mineure et principale spécifiée. <br> S’il est introuvable, restaure la bande de fonctionnalités supérieure suivante au sein de la même version majeure/mineure et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, restaure par progression jusqu’à la bande de fonctionnalités et mineure supérieure suivante au sein du même principal et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, échoue. |
 | `major`       | Utilise le niveau de correctif le plus récent pour la plage de fonctionnalités, mineure et principale spécifiée. <br> S’il est introuvable, restaure la bande de fonctionnalités supérieure suivante au sein de la même version majeure/mineure et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, restaure par progression jusqu’à la bande de fonctionnalités et mineure supérieure suivante au sein du même principal et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, restaure les versions ultérieures principales, secondaires et de fonctionnalités suivantes et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, échoue. |
 | `latestPatch` | Utilise le dernier niveau de correctif installé qui correspond à la bande principale, mineure et de fonctionnalité demandée avec un niveau de correctif et qui est supérieur ou égal à la valeur spécifiée. <br> S’il est introuvable, échoue. |
-| `latestFeature` | Utilise la bande de fonctionnalités et le niveau de correctifs les plus élevés qui correspondent aux principaux et mineurs demandés avec une plage de fonctionnalités supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échoue. |
-| `latestMinor` | Utilise le niveau le plus élevé, la bande de fonctionnalités et le niveau de correctif logiciel qui correspond à la valeur principale demandée, avec une valeur mineure supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échoue. |
-| `latestMajor` | Utilise le kit SDK .NET Core installé le plus élevé avec une valeur Major supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échec. |
+| `latestFeature` | Utilise la bande de fonctionnalités et le niveau de correctifs les plus élevés qui correspondent aux principaux et mineurs demandés, avec une bande de fonctionnalités et un niveau de correctif supérieur ou égal à la valeur spécifiée. <br> S’il est introuvable, échoue. |
+| `latestMinor` | Utilise le niveau le plus élevé, la bande de fonctionnalités et le niveau de correctif logiciel les plus élevés qui correspond à la valeur principale demandée, avec un niveau de plage de fonctionnalités et de correctifs supérieur ou égal à la valeur spécifiée. <br> S’il est introuvable, échoue. |
+| `latestMajor` | Utilise le kit SDK .NET Core installé le plus élevé avec une version supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échec. |
 | `disable`     | Ne restaure pas par progression. Correspondance exacte requise. |
 
 ### <a name="msbuild-sdks"></a>MSBuild-SDK
@@ -172,10 +172,10 @@ dotnet new globaljson --sdk-version 3.0.100
 - Si aucun *global.jssur* le fichier n’est trouvé, ou si *global.js* ne spécifie pas de version du kit de développement logiciel (SDK) ni de `allowPrerelease` valeur, la version la plus récente du kit de développement logiciel (SDK) est utilisée (équivalent à la valeur `rollForward` `latestMajor` ). La prise en compte des versions du kit de développement logiciel (SDK) préliminaire dépend de la méthode d' `dotnet` appel.
   - Si vous **n’êtes pas** dans Visual Studio, les versions préliminaires sont prises en compte.
   - Si vous êtes dans Visual Studio, il utilise l’état de préversion demandé. Autrement dit, si vous utilisez une préversion de Visual Studio ou que vous définissez l’option utiliser les aperçus **de l’kit SDK .net Core** (sous **Outils**  >  **options**environnement préversion  >  **Environment**  >  **Preview Features**), les versions préliminaires sont prises en compte ; sinon, seules les versions release sont prises en compte.
-- Si vous trouvez un *global.jssur* le fichier qui ne spécifie pas une version du kit de développement logiciel (SDK), mais qu’il spécifie une `allowPrerelease` valeur, la version la plus récente du kit de développement logiciel (SDK) est utilisée (équivalent à `rollForward` `latestMajor` ). La version la plus récente du kit de développement logiciel (SDK) peut être Release ou la version préliminaire dépend de la valeur de `allowPrerelease` . `true`indique que les versions préliminaires sont prises en compte. `false`indique que seules les versions release sont prises en compte.
+- Si vous trouvez un *global.jssur* le fichier qui ne spécifie pas une version du kit de développement logiciel (SDK), mais qu’il spécifie une `allowPrerelease` valeur, la version la plus récente du kit de développement logiciel (SDK) est utilisée (équivalent à `rollForward` `latestMajor` ). La version la plus récente du kit de développement logiciel (SDK) peut être Release ou la version préliminaire dépend de la valeur de `allowPrerelease` . `true` indique que les versions préliminaires sont prises en compte. `false` indique que seules les versions release sont prises en compte.
 - Si un *global.jssur le* fichier est trouvé et qu’il spécifie une version du kit de développement logiciel (SDK) :
 
-  - Si aucune `rollFoward` valeur n’est définie, elle utilise `latestPatch` comme stratégie par défaut `rollForward` . Sinon, vérifiez chaque valeur et son comportement dans la section [restauration par progression](#rollforward) .
+  - Si aucune `rollForward` valeur n’est définie, elle utilise `latestPatch` comme stratégie par défaut `rollForward` . Sinon, vérifiez chaque valeur et son comportement dans la section [restauration par progression](#rollforward) .
   - Si les versions préliminaires sont prises en compte et quel est le comportement par défaut lorsque `allowPrerelease` n’est pas défini est décrit dans la section [allowPrerelease](#allowprerelease) .
 
 ## <a name="net-core-2x"></a>[.NET Core 2.x](#tab/netcore2x)

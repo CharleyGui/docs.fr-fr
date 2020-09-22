@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30033
 ms.assetid: 3d07f6d0-9a2f-49ca-94e8-1e354932e855
-ms.openlocfilehash: 52d69bc1681c387fc686f2b4b223336286e82259
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 084e3d9306ad84d7e6e36e5fe4bbfc868b8dfac6
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402873"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873999"
 ---
 # <a name="identifier-is-too-long"></a>Identificateur trop long
+
 Le nom ou l’identificateur de chaque élément de programmation est limité à 1023 caractères. En outre, un nom qualifié complet ne peut pas dépasser 1023 caractères. Cela signifie que la totalité de la chaîne d’identificateur ( `<namespace>.<...>.<namespace>.<class>.<element>` ) ne peut pas comporter plus de 1023 caractères, y compris les caractères de l’opérateur d’accès aux membres ( `.` ).  
   
  **ID d’erreur :** BC30033  

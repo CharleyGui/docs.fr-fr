@@ -5,17 +5,19 @@ helpviewer_keywords:
 - queries [Visual Basic]
 - LINQ, queries
 ms.assetid: 8edc717c-4a24-4cbc-9c16-11f479c935db
-ms.openlocfilehash: 8fb245309170d4b9adf7458bb3bcfde3e28c0538
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 006a4b67094b258d440c2046fe3ae02274e1c337
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84359827"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869894"
 ---
 # <a name="queries-visual-basic"></a>Requêtes (Visual Basic)
+
 Visual Basic vous permet de créer des expressions LINQ (Language-Integrated Query) dans votre code.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Aggregate Clause](aggregate-clause.md)  
  Décrit la `Aggregate` clause, qui applique une ou plusieurs fonctions d’agrégation à une collection.  
   
@@ -25,7 +27,7 @@ Visual Basic vous permet de créer des expressions LINQ (Language-Integrated Que
  [From, clause](from-clause.md)  
  Décrit la `From` clause, qui spécifie une collection et une variable de portée pour une requête.  
   
- [Group by, clause](group-by-clause.md)  
+ [Group By (clause)](group-by-clause.md)  
  Décrit la `Group By` clause, qui regroupe les éléments d’un résultat de requête et peut être utilisée pour appliquer des fonctions d’agrégation à chaque groupe.  
   
  [Group Join (clause)](group-join-clause.md)  
@@ -37,7 +39,7 @@ Visual Basic vous permet de créer des expressions LINQ (Language-Integrated Que
  [Clause let](let-clause.md)  
  Décrit la `Let` clause, qui calcule une valeur et l’assigne à une nouvelle variable dans la requête.  
   
- [Order By (clause)](order-by-clause.md)  
+ [Clause ORDER BY](order-by-clause.md)  
  Décrit la `Order By` clause, qui spécifie l’ordre de tri des colonnes dans une requête.  
   
  [Clause SELECT](select-clause.md)  

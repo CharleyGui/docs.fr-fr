@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40032
 ms.assetid: 32bf1949-fd73-456c-a323-bf1ffe1320ed
-ms.openlocfilehash: 79faf0038b2b313bdc21e12c8ae76854bcd6957f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8d27039c28cd3f680e441db9182dd415bd8e91ba
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406571"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870260"
 ---
 # <a name="underlying-type-typename-of-enum-is-not-cls-compliant"></a>Le type sous-jacent \<typename> d'Enum n'est pas conforme CLS
+
 Le type de données spécifié pour cette énumération ne fait pas partie de l' [indépendance du langage et des composants indépendants du langage](../../../standard/language-independence-and-language-independent-components.md) (CLS). Il ne s’agit pas d’une erreur au sein de votre composant, car les .NET Framework et Visual Basic prennent en charge ce type de données. Toutefois, un autre composant écrit dans du code strictement conforme CLS peut ne pas prendre en charge ce type de données. Un tel composant peut ne pas être en mesure d’interagir correctement avec votre composant.  
   
  Les types de données Visual Basics suivants ne sont pas conformes CLS :  

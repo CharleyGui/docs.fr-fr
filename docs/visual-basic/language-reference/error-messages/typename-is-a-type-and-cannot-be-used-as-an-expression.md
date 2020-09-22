@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30108
 ms.assetid: 7931361d-78e2-40ca-ac69-e3374273b248
-ms.openlocfilehash: f9a4dc9904f7875f0405227014e2238fe91f4c69
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b990fe1b5374bfad71abe1ae4ebdd8c3465b542d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402783"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870367"
 ---
 # <a name="typename-is-a-type-and-cannot-be-used-as-an-expression"></a>'\<typename>' est un type et ne peut pas être utilisé en tant qu'expression
+
 Un nom de type se produit lorsqu’une expression est requise. Une expression doit se composer d’une combinaison de variables, de constantes, de littéraux, de propriétés et d’appels de procédure `Function` .  
   
  **ID d’erreur :** BC30108  

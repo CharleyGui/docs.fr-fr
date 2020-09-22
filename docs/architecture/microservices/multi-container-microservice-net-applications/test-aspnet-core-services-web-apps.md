@@ -2,12 +2,12 @@
 title: Test d’applications web et de services ASP.NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer une architecture pour le test d’applications web et de services ASP.NET Core dans des conteneurs.
 ms.date: 08/07/2020
-ms.openlocfilehash: a27b3b8d392c5e1a7d1961307e6de95659cd823e
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: f76f502adf8321c9015cc6cfd0e12214a7576b5c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024600"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872459"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Test d’applications web et de services ASP.NET Core
 
@@ -99,7 +99,7 @@ public class PrimeWebDefaultRequestShould
 }
 ```
 
-#### <a name="additional-resources"></a>Ressources complémentaires
+#### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Steve Smith. Contrôleurs de test** (ASP.net Core) \
     [https://docs.microsoft.com/aspnet/core/mvc/controllers/testing](/aspnet/core/mvc/controllers/testing)
@@ -140,7 +140,7 @@ Les tests de l’application de référence (eShopOnContainers) ont été récem
 
 3. Les **tests fonctionnels et d’intégration des applications**, qui se concentrent sur l’intégration des microservices, avec des cas de test qui exercent plusieurs microservices. Ces tests se trouvent dans le projet **Application.FunctionalTests**.
 
-Les tests unitaires et les tests d’intégration par microservice se trouvent dans le dossier de test de chaque microservice, et les tests d’application et de charge sont contenus sous le dossier de test du dossier de solution, comme l’illustre la figure 6-25.
+Tandis que les tests d’unité et d’intégration sont organisés dans un dossier de test au sein du projet de microservice, les tests d’application et de charge sont gérés séparément dans le dossier racine, comme illustré dans la figure 6-25.
 
 ![Capture d’écran de VS désignant certains des projets de test dans la solution.](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
 
@@ -196,7 +196,7 @@ docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 
 Comme on peut le constater, ces fichiers Docker Compose lancent seulement les microservices Redis, RabbitMQ, SQL Server et MongoDB.
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Test d’intégration d’unité &** sur eShopOnContainers \
     <https://github.com/dotnet-architecture/eShopOnContainers/wiki/Unit-and-integration-testing>

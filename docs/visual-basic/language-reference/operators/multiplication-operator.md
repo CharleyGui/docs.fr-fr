@@ -10,14 +10,15 @@ helpviewer_keywords:
 - multiplication operator [Visual Basic], syntax
 - math operators [Visual Basic]
 ms.assetid: 2b210382-99da-4195-89ba-b1d06f5e89ad
-ms.openlocfilehash: f1a7653fb3006ab3c9736ec168a8c5ea028f4763
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7038fef4258d190b726a851b26f2a2840ff3c0ea
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409315"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873365"
 ---
 # <a name="-operator-visual-basic"></a>*, opérateur (Visual Basic)
+
 Multiplie deux nombres.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,12 +35,15 @@ number1 * number2
 |`number2`|Obligatoire. Toute expression numérique.|  
   
 ## <a name="result"></a>Résultats  
+
  Le résultat est le produit de `number1` et `number2` .  
   
 ## <a name="supported-types"></a>Types pris en charge  
+
  Tous les types numériques, y compris les types à virgule flottante non signée et `Decimal` .  
   
 ## <a name="remarks"></a>Notes  
+
  Le type de données du résultat dépend des types des opérandes. Le tableau suivant montre comment le type de données du résultat est déterminé.  
   
 |Types de données des opérandes|Type de données de résultat|  
@@ -52,9 +56,11 @@ number1 * number2
  Si une expression prend la valeur [Nothing](../nothing.md), elle est considérée comme égale à zéro.  
   
 ## <a name="overloading"></a>Surcharge  
+
  L' `*` opérateur peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur une classe ou une structure de ce type, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple utilise l' `*` opérateur pour multiplier deux nombres. Le résultat est le produit des deux opérandes.  
   
  [!code-vb[VbVbalrOperators#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#4)]  

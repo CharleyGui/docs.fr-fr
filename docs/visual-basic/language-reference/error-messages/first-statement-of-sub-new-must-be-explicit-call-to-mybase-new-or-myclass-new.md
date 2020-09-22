@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30920
 ms.assetid: e47dc755-4294-4368-b813-2177b7677957
-ms.openlocfilehash: 33dd15e3f5f5538963597f2b00f4214895e1f47a
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4918ac2e11dfaf682b1c00275f30c171bf241fe3
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403003"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874118"
 ---
 # <a name="first-statement-of-this-sub-new-must-be-an-explicit-call-to-mybasenew-or-myclassnew-because-the-constructorname-in-the-base-class-baseclassname-of-derivedclassname-is-marked-obsolete-errormessage"></a>La première instruction de ce 'Sub New' doit être un appel explicite à 'MyBase.New' ou 'MyClass.New', car le '\<constructorname>' dans la classe de base '\<baseclassname>' de '\<derivedclassname>' est marqué comme obsolète : '\<errormessage>'
+
 Un constructeur de classe n’appelle pas explicitement un constructeur de classe de base et le constructeur de classe de base implicite est marqué avec l’attribut <xref:System.ObsoleteAttribute> et la directive pour le traiter comme une erreur.  
   
  Lorsqu’un constructeur de classe dérivée n’appelle pas de constructeur de classe de base, Visual Basic tente de générer un appel implicite à un constructeur de classe de base sans paramètre. S’il n’existe aucun constructeur accessible dans la classe de base qui peut être appelé sans arguments, Visual Basic ne peut pas générer un appel implicite. Dans ce cas, le constructeur requis est marqué avec l' <xref:System.ObsoleteAttribute> attribut, donc Visual Basic ne peut pas l’appeler.  

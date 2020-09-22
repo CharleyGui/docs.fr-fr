@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30154
 ms.assetid: 259afdfa-3608-4760-adcb-88ec0da5020d
-ms.openlocfilehash: 4ffe18e11c388a8c69ef0592bde1b78f5b219680
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7b74ee3a05000f5d6cd94176b48dea116b647a2a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84386852"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872177"
 ---
 # <a name="type1typename-must-implement-membername-for-interface-interfacename"></a>\<type1>\<typename> doit implémenter \<membername> pour l’interface \<interfacename>
+
 ' \<typename> 'doit implémenter' \<membername> 'pour l’interface' \<interfacename> '. La propriété d’implémentation doit avoir des spécificateurs’ReadOnly'/'WriteOnly’correspondants.  
   
  Une classe ou une structure prétend implémenter une interface, mais n’implémente pas une procédure, une propriété ou un événement défini par l’interface. Chaque membre de l’interface doit être implémenté.  

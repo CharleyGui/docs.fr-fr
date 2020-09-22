@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40033
 ms.assetid: 060c4b08-798e-40f1-94cf-c05c524f1b8a
-ms.openlocfilehash: e572189b958612bf9527c82ce702df3ab929a23f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d8394fb995bb7b009b4ee40dccc41e3435ae7309
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409398"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873689"
 ---
 # <a name="non-cls-compliant-membername-is-not-allowed-in-a-cls-compliant-interface"></a>Le \<membername> non conforme CLS n'est pas autorisé dans une interface conforme CLS
+
 Une propriété, une procédure ou un événement dans une interface est marqué comme `<CLSCompliant(True)>` lorsque l’interface elle-même est marquée comme `<CLSCompliant(False)>` ou n’est pas marquée.  
   
  Pour qu’une interface soit conforme à l' [indépendance du langage et aux composants indépendants du langage (CLS, Language-Independent Components](../../../standard/language-independence-and-language-independent-components.md) ), tous ses membres doivent être conformes.  

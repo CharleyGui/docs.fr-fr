@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30996
 ms.assetid: 6e183fe0-8888-43ed-a062-01571079455f
-ms.openlocfilehash: 13fa8917f228661fc44f5e0920d91c596e250c38
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2c5a65443dc16a600e25fcf6dfd11c4597b3a086
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402835"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873947"
 ---
 # <a name="initializer-expected"></a>Initialiseur attendu
+
 Vous avez tenté de déclarer une instance d’une classe à l’aide d’un initialiseur d’objet dans lequel la liste d’initialisation est vide, comme illustré dans l’exemple suivant.  
   
  `' Not valid.`  
