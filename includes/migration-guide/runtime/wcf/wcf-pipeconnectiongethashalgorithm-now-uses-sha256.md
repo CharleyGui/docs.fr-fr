@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3cf1740565343558a85fdfa68957773468c28231
-ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
+ms.openlocfilehash: 9f5f238e3d4222af1da3a1713e1b3e65de6e6f49
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90770809"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91025019"
 ---
 ### <a name="wcf-pipeconnectiongethashalgorithm-now-uses-sha256"></a>PipeConnection.GetHashAlgorithm dans WCF utilise maintenant SHA256
 
@@ -22,16 +22,17 @@ Si vous rencontrez des problèmes de compatibilité avec cette modification dans
     <AppContextSwitchOverrides value="Switch.System.ServiceModel.UseSha1InPipeConnectionGetHashAlgorithm=true" />
   </runtime>
 </configuration>
+```
 
-| Name    | Value   |
+| Nom    | Valeur   |
 |:--------|:--------|
-| Scope   | Minor   |
+| Étendue   | Secondaire   |
 | Version | 4.7.1   |
 | Type    | Runtime |
 
-#### Affected APIs
+#### <a name="affected-apis"></a>API affectées
 
-Not detectable via API analysis.
+Non détectable via l’analyse des API.
 
 <!--
 
