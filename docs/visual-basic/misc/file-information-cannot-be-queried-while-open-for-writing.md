@@ -2,14 +2,15 @@
 title: Impossible d’interroger les informations du fichier quand ce dernier est ouvert en écriture
 ms.date: 07/20/2015
 ms.assetid: 2198af10-f128-4b1d-baba-a251e1369146
-ms.openlocfilehash: a6d2602d88f23183e63c7624c17e0b8ab05fffdc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: fa1bf4c16e475bc1cac4a52f743d810f5006a15d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553907"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090896"
 ---
 # <a name="file-information-cannot-be-queried-while-open-for-writing"></a>Impossible d’interroger les informations du fichier quand ce dernier est ouvert en écriture
+
 Une tentative a été effectuée pour obtenir des informations sur un fichier qui est actuellement ouvert en écriture.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
