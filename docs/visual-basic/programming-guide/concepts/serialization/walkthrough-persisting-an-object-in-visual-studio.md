@@ -2,14 +2,15 @@
 title: Persistance d’un objet dans Visual Studio
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: 3febd3f74510d11a7103edbd52bcae8043a5edc0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0b2fff171164a29e6066839371fc95ad41b452f1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558600"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086463"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Procédure pas à pas : persistance d’un objet dans Visual Studio (Visual Basic)
+
 Bien qu’il soit possible de définir des valeur par défaut pour les propriétés d’un objet au moment du design, les valeurs entrées lors de l’exécution sont perdues en cas de destruction de l’objet. Vous pouvez utiliser la sérialisation pour rendre les données d’un objet persistantes entre les instances, ce qui vous permet de stocker des valeurs et de les récupérer lors de la prochaine instanciation de l’objet.  
   
 > [!NOTE]
@@ -27,6 +28,7 @@ Bien qu’il soit possible de définir des valeur par défaut pour les propriét
 > Les boîtes de dialogue et les commandes de menu affichées peuvent différer de celles décrites dans l'Aide selon les paramètres actifs ou le mode d'édition. Pour modifier ces paramètres, cliquez sur **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ## <a name="creating-the-loan-object"></a>Création de l’objet Loan  
+
  La première étape consiste à créer une classe `Loan` et une application de test qui utilise cette classe.  
   
 ### <a name="to-create-the-loan-class"></a>Pour créer la classe Loan  
@@ -123,6 +125,7 @@ Bien qu’il soit possible de définir des valeur par défaut pour les propriét
  Dans la réalité, les taux d’intérêt changent régulièrement, mais pas nécessairement chaque fois que l’application est exécutée. Plutôt que d’imposer à l’utilisateur de mettre à jour le taux d’intérêt chaque fois qu’il exécute l’application, il peut être plus judicieux de conserver le taux d’intérêt le plus récent entre les instances de l’application. C’est ce que vous ferez à l’étape suivante, en ajoutant la sérialisation à la classe Loan.  
   
 ## <a name="using-serialization-to-persist-the-object"></a>Utilisation de la sérialisation pour rendre l’objet persistant  
+
  Pour rendre les valeurs de la classe Loan persistantes, vous devez d’abord marquer la classe avec l’attribut `Serializable`.  
   
 ### <a name="to-mark-a-class-as-serializable"></a>Pour marquer une classe comme étant sérialisable  

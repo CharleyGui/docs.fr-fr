@@ -10,17 +10,19 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-ms.openlocfilehash: 5561812a53e2fe45c3ad4d12d0e18a8a1e948559
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 724407fed5bf90ed6e3e470cbabc9e42856cb99a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411764"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087477"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Initialiseurs d'objets : types nommés et anonymes (Visual Basic)
+
 Les initialiseurs d’objets vous permettent de spécifier des propriétés pour un objet complexe à l’aide d’une expression unique. Elles peuvent être utilisées pour créer des instances de types nommés et de types anonymes.  
   
 ## <a name="declarations"></a>Déclarations  
+
  Les déclarations d’instances de types nommés et anonymes peuvent paraître presque identiques, mais leurs effets ne sont pas les mêmes. Chaque catégorie possède des capacités et des restrictions propres. L’exemple suivant montre un moyen pratique de déclarer et d’initialiser une instance d’une classe nommée, `Customer` , à l’aide d’une liste d’initialiseurs d’objets. Notez que le nom de la classe est spécifié après le mot clé `New` .  
   
  [!code-vb[VbVbalrObjectInit#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#1)]  
@@ -32,6 +34,7 @@ Les initialiseurs d’objets vous permettent de spécifier des propriétés pour
  Les exigences et les résultats des deux déclarations ne sont pas identiques. Pour `namedCust` , une `Customer` classe qui a une `Name` propriété doit déjà exister, et la déclaration crée une instance de cette classe. Pour `anonymousCust` , le compilateur définit une nouvelle classe qui a une propriété, une chaîne appelée `Name` et crée une nouvelle instance de cette classe.  
   
 ## <a name="named-types"></a>Types nommés  
+
  Les initialiseurs d’objets fournissent un moyen simple d’appeler le constructeur d’un type, puis de définir les valeurs de certaines ou de toutes les propriétés dans une même instruction. Le compilateur appelle le constructeur approprié pour l’instruction : le constructeur sans paramètre si aucun argument n’est présenté, ou un constructeur paramétrable si un ou plusieurs arguments sont envoyés. Après cela, les propriétés spécifiées sont initialisées dans l’ordre dans lequel elles sont présentées dans la liste d’initialiseurs.  
   
  Chaque initialisation dans la liste d’initialiseurs se compose de l’assignation d’une valeur initiale à un membre de la classe. Les noms et types de données des membres sont déterminés lorsque la classe est définie. Dans les exemples suivants, la `Customer` classe doit exister et doit avoir des membres nommés `Name` et `City` qui peuvent accepter des valeurs de chaîne.  
@@ -57,6 +60,7 @@ Les initialiseurs d’objets vous permettent de spécifier des propriétés pour
  Toutefois, la liste d’initialisation ne peut pas être vide. Les propriétés non initialisées conservent leurs valeurs par défaut.  
   
 ### <a name="type-inference-with-named-types"></a>Inférence de type avec des types nommés  
+
  Vous pouvez raccourcir le code pour la déclaration de `cust1` en combinant des initialiseurs d’objets et l’inférence de type local. Cela vous permet d’omettre la `As` clause dans la déclaration de la variable. Le type de données de la variable est déduit du type de l’objet créé par l’assignation. Dans l’exemple suivant, le type de `cust6` est `Customer` .  
   
  [!code-vb[VbVbalrObjectInit#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#8)]  
@@ -94,6 +98,7 @@ Les initialiseurs d’objets vous permettent de spécifier des propriétés pour
      `' Dim c2 = New Customer with {.Address.City = "Springfield"}`  
   
 ## <a name="anonymous-types"></a>Types anonymes  
+
  Les types anonymes utilisent des initialiseurs d’objets pour créer des instances de nouveaux types que vous ne définissez pas explicitement et que vous nommez. Au lieu de cela, le compilateur génère un type en fonction des propriétés que vous désignez dans la liste d’initialiseurs d’objets. Étant donné que le nom du type n’est pas spécifié, il est appelé *type anonyme*. Par exemple, comparez la déclaration suivante à la précédente pour `cust6` .  
   
  [!code-vb[VbVbalrObjectInit#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#13)]  

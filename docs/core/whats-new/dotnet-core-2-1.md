@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 94f3db14046ad5d63975d0ca44425abed5d52062
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: f125a6a8d9287cb515478a10c2679c07817ae9a6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281535"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087360"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -21,7 +21,7 @@ ms.locfileid: "86281535"
 - [Déploiement](#deployment)
 - [Pack de compatibilité Windows](#windows-compatibility-pack)
 - [Améliorations de la compilation JIT](#jit-compiler-improvements)
-- [Modifications d'API](#api-changes)
+- [Modifications de l’API](#api-changes)
 
 ## <a name="tooling"></a>Outillage
 
@@ -79,13 +79,13 @@ Une fois installé, l’outil peut être exécuté à partir de la ligne de comm
 
 Dans le SDK .NET Core 2.1, toutes les opérations avec les outils utilisent la commande `dotnet tool`. Les options suivantes sont disponibles :
 
-- [`dotnet tool install`](../tools/dotnet-tool-install.md)pour installer un outil.
+- [`dotnet tool install`](../tools/dotnet-tool-install.md) pour installer un outil.
 
-- [`dotnet tool update`](../tools/dotnet-tool-update.md)pour désinstaller et réinstaller un outil qui le met à jour.
+- [`dotnet tool update`](../tools/dotnet-tool-update.md) pour désinstaller et réinstaller un outil qui le met à jour.
 
-- [`dotnet tool list`](../tools/dotnet-tool-list.md)pour répertorier les outils actuellement installés.
+- [`dotnet tool list`](../tools/dotnet-tool-list.md) pour répertorier les outils actuellement installés.
 
-- [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md)pour désinstaller les outils actuellement installés.
+- [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md) pour désinstaller les outils actuellement installés.
 
 ## <a name="roll-forward"></a>Restauration par progression
 
@@ -131,6 +131,7 @@ La publication autonome s’appuie sur les versions du Runtime sur NuGet.org. Vo
 À l’aide du Kit de développement logiciel .NET Core 2.0, les applications autonomes sont publiées avec le runtime .NET Core 2.0.0, sauf si une version différente est spécifiée via la propriété `RuntimeFrameworkVersion`. Avec ce nouveau comportement, vous n’avez plus besoin de définir cette propriété pour sélectionner une version de Runtime plus élevée pour une application autonome. Dorénavant, l’approche la plus simple consiste à toujours publier avec le Kit de développement .NET Core 2.1 (2.1.300).
 
 Pour plus d’informations, voir [Restauration par progression du runtime de déploiement autonome](../deploying/runtime-patch-selection.md).
+
 ## <a name="windows-compatibility-pack"></a>Pack de compatibilité Windows
 
 Lorsque vous portez du code existant de .NET Framework vers .NET Core, vous pouvez utiliser le [pack de compatibilité Windows](https://www.nuget.org/packages/Microsoft.Windows.Compatibility). Il permet d’accéder aux plus de 20 000 API disponibles dans .NET Core. Ces API incluent les types dans l’espace de noms <xref:System.Drawing?displayProperty=nameWithType>, la classe <xref:System.Diagnostics.EventLog>, WMI, les compteurs de performances, les services Windows, ainsi que les types et membres de registre Windows.
@@ -169,9 +170,9 @@ Vous pouvez activer la compilation à plusieurs niveaux de deux manières.
 
 .NET Core 2.1 inclut certains nouveaux types qui facilitent l’utilisation de tableaux et d’autres types de mémoire beaucoup plus efficaces. Ces nouveaux types incluent :
 
-- <xref:System.Span%601?displayProperty=nameWithType> et <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>.
+- Voir <xref:System.Span%601?displayProperty=nameWithType> et <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>.
 
-- <xref:System.Memory%601?displayProperty=nameWithType> et <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType>.
+- Voir <xref:System.Memory%601?displayProperty=nameWithType> et <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType>.
 
 Sans ces types, lorsque vous passez des éléments de ce type comme une partie d’un tableau ou d’une section d’une mémoire tampon, vous devez créer une copie d’une partie des données avant de les passer à une méthode. Ces types fournissent une représentation virtuelle des données, qui supprime les opérations supplémentaires d’allocation de mémoire et de copie.
 
@@ -245,7 +246,7 @@ Sous Windows, vous pouvez également choisir d’utiliser <xref:System.Net.Http.
 
 Sous Linux et macOS, vous pouvez uniquement configurer <xref:System.Net.Http.HttpClient> par processus. Sous Linux, vous devez déployer [libcurl](https://curl.haxx.se/libcurl/) si vous souhaitez utiliser l’ancienne implémentation <xref:System.Net.Http.HttpClient>. (Il est installé avec .NET Core 2.0.)
 
-### <a name="breaking-changes"></a>Modifications avec rupture
+### <a name="breaking-changes"></a>Changements cassants
 
 Pour plus d’informations sur les modifications avec rupture, consultez [modifications avec rupture pour la migration de la version 2,0 vers 2,1](../compatibility/2.0-2.1.md).
 

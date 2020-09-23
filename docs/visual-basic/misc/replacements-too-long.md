@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID746
 ms.assetid: 398ff5eb-b580-456f-8f24-b7a8318e1193
-ms.openlocfilehash: 4ac66aa6e48a81c49ac21d6d4a15ba0fe278bf29
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3c9cbdf1c1317ff8bdea073896f4d959ac9908b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965085"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086671"
 ---
 # <a name="replacements-too-long"></a>Remplacements trop longs
+
 Vous avez spécifié un remplacement qui dépasse la longueur autorisée.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

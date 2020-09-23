@@ -10,14 +10,15 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
-ms.openlocfilehash: 4de5d94a94e764d1fc543ffae41b00a9bb729c94
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 21aa6e6a9bba23d767b9d1fac610eaac3265550d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388152"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087451"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Comment : déclarer et appeler une propriété par défaut en Visual Basic
+
 Une *propriété par défaut* est une propriété de classe ou de structure à laquelle votre code peut accéder sans la spécifier. Quand le code appelant nomme une classe ou une structure, mais pas une propriété, et que le contexte autorise l’accès à une propriété, Visual Basic résout l’accès à la propriété par défaut de cette classe ou de cette structure, le cas échéant.  
   
  Une classe ou une structure peut avoir au plus une propriété par défaut. Toutefois, vous pouvez surcharger une propriété par défaut et avoir plusieurs versions de celle-ci.  
@@ -61,11 +62,13 @@ Une *propriété par défaut* est une propriété de classe ou de structure à l
      [!code-vb[VbVbcnProcedures#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#19)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant déclare une propriété par défaut sur une classe.  
   
  [!code-vb[VbVbcnProcedures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#12)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment appeler la propriété default `myProperty` sur la classe `class1` . Les trois instructions d’assignation stockent des valeurs dans `myProperty` , et l' <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> appel lit les valeurs.  
   
  [!code-vb[VbVbcnProcedures#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#13)]  
@@ -73,6 +76,7 @@ Une *propriété par défaut* est une propriété de classe ou de structure à l
  L’utilisation la plus courante d’une propriété par défaut est la <xref:Microsoft.VisualBasic.Collection.Item%2A> propriété sur différentes classes de collection.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Les propriétés par défaut peuvent entraîner une petite réduction des caractères de code source, mais elles peuvent rendre votre code plus difficile à lire. Si le code appelant n’est pas familiarisé avec votre classe ou structure, lorsqu’il fait référence au nom de la classe ou de la structure, il ne peut pas être certain que cette référence accède à la classe ou à la structure elle-même, ou à une propriété par défaut. Cela peut entraîner des erreurs de compilation ou des erreurs de logique d’exécution subtiles.  
   
  Vous pouvez réduire légèrement les risques d’erreurs de propriété par défaut en utilisant toujours l' [instruction Option Strict](../../../language-reference/statements/option-strict-statement.md) pour définir la vérification du type de compilateur sur `On` .  

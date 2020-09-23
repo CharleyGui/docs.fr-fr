@@ -2,14 +2,15 @@
 title: L’argument ne peut pas être inférieur à zéro
 ms.date: 07/20/2015
 ms.assetid: ce004a9a-5fb5-4aa9-8717-63bdc101a639
-ms.openlocfilehash: 0bcbe8c254f81c56f99da3771bc1cad66d1ece17
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 3b2c847f771c0e6bab4d597b25a74a4d35c035f3
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197766"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087256"
 ---
 # <a name="argument-cannot-be-less-than-zero"></a>L’argument ne peut pas être inférieur à zéro
+
 Une valeur inférieure à zéro a été fournie, mais l’argument ne peut pas être inférieur à zéro.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
