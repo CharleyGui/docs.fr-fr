@@ -8,14 +8,15 @@ helpviewer_keywords:
 - XML [Visual Basic], axis properties
 - XML [Visual Basic], accessing
 ms.assetid: c47f88b2-3cbc-4bb1-b4b9-be60f71ffc6a
-ms.openlocfilehash: 282b7d91ec7cfe2f587c67bc9a982f0da22ad925
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8ffe6d5ed368aee6d6984ec6ab28c8832921a3f8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410307"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91080177"
 ---
 # <a name="accessing-xml-in-visual-basic"></a>Accès au code XML dans Visual Basic
+
 Visual Basic fournit des propriétés d’axe XML pour accéder aux structures et les parcourir [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Ces propriétés utilisent une syntaxe spéciale pour vous permettre d’accéder aux éléments et aux attributs en spécifiant les noms XML.  
   
  Le tableau suivant répertorie les fonctionnalités de langage qui vous permettent d’accéder aux éléments et attributs XML dans Visual Basic.  
@@ -31,6 +32,7 @@ Visual Basic fournit des propriétés d’axe XML pour accéder aux structures e
 |*value*|`contacts...<name>.Value`|Obtient la représentation sous forme de chaîne du premier objet dans la séquence, ou `Nothing` si la séquence est vide.|  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Guide pratique : accéder à des éléments descendants XML](how-to-access-xml-descendant-elements.md)  
  Montre comment utiliser une propriété d’axe descendant pour accéder à tous les éléments XML portant un nom spécifié et contenus sous un élément XML spécifié.  
   
@@ -44,6 +46,7 @@ Visual Basic fournit des propriétés d’axe XML pour accéder aux structures e
  Montre comment déclarer un préfixe d’espace de noms XML et l’utiliser pour créer des éléments XML et y accéder.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Propriétés d'axe XML](../../../language-reference/xml-axis/index.md)  
  Fournit des liens vers des sections décrivant les différentes propriétés d’accès XML.  
   
