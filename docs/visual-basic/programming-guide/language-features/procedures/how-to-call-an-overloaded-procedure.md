@@ -8,14 +8,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure calls [Visual Basic], overloaded
 ms.assetid: 3bb331fb-f6bc-406f-9ca0-9609b497014c
-ms.openlocfilehash: de101309fa1edaaddc3defc5759d9293fbef684c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 68b8a9898cba846b63ed8ce9d8329516f12e90cb
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388541"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075172"
 ---
 # <a name="how-to-call-an-overloaded-procedure-visual-basic"></a>Comment : appeler une procédure surchargée (Visual Basic)
+
 L’avantage de la surcharge d’une procédure est de la flexibilité de l’appel. Le code appelant peut obtenir les informations qu’il doit passer à la procédure, puis appeler un nom de procédure unique, quels que soient les arguments transmis.  
   
 ### <a name="to-call-a-procedure-that-has-more-than-one-version-defined"></a>Pour appeler une procédure qui a plusieurs versions définies  

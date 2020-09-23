@@ -2,14 +2,15 @@
 title: 'Procédure : interroger les métadonnées d’un assembly avec la réflexion (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 53caa336-ab83-4181-b0f6-5c87c5f9e4ee
-ms.openlocfilehash: a4f73bd2c8c01cbf92fac67991f01a1cb3dee932
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: fda27f41d31bf8aa3931bf5923ff4011628107fe
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396452"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075328"
 ---
 # <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-visual-basic"></a>Comment : interroger les métadonnées d’un assembly avec la réflexion (LINQ) (Visual Basic)
+
 L’exemple suivant montre comment utiliser LINQ avec la réflexion pour récupérer des métadonnées spécifiques concernant des méthodes qui correspondent à un critère de recherche spécifié. Ici, la requête va rechercher les noms de toutes les méthodes dans l’assembly qui retournent des types énumérables tels que des tableaux.  
   
 ## <a name="example"></a>Exemple  

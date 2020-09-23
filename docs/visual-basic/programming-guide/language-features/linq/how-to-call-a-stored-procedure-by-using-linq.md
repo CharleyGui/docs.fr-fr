@@ -7,14 +7,15 @@ helpviewer_keywords:
 - stored procedures [LINQ to SQL]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 6436d384-d1e0-40aa-8afd-451007477260
-ms.openlocfilehash: b451642a16f36c4f7fd19c853fdfd2282f5bede5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7e5fecf0c4c0d3a561ec7d0c4ac03c9d9ce7f759
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405028"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075133"
 ---
 # <a name="how-to-call-a-stored-procedure-by-using-linq-visual-basic"></a>Comment : appeler une procédure stockée à l'aide de LINQ (Visual Basic)
+
 LINQ (Language-Integrated Query) facilite l’accès aux informations de la base de données, notamment les objets de base de données tels que les procédures stockées.  
   
  L’exemple suivant montre comment créer une application qui appelle une procédure stockée dans une base de données SQL Server. L’exemple montre comment appeler deux procédures stockées différentes dans la base de données. Chaque procédure retourne les résultats d’une requête. Une procédure accepte les paramètres d’entrée, et l’autre procédure n’accepte pas de paramètres.  
@@ -73,5 +74,5 @@ LINQ (Language-Integrated Query) facilite l’accès aux informations de la base
 - [LINQ](index.md)
 - [Requêtes](../../../language-reference/queries/index.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
-- [Méthode DataContext (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [DataContext, méthodes (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
 - [Guide pratique pour affecter des procédures stockées pour effectuer des mises à jour, des insertions et des suppressions (Concepteur O/R)](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)

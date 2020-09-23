@@ -8,14 +8,15 @@ helpviewer_keywords:
 - anonymous types [Visual Basic]
 - types [Visual Basic], anonymous
 ms.assetid: 7b87532c-4b3e-4398-8503-6ea9d67574a4
-ms.openlocfilehash: bbe84ce8a62705027c00bc26db74a3c21fa34fd9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5ab3cf8c3c02ff35890f71ad6c7f314b51b87133
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411795"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075237"
 ---
 # <a name="anonymous-types-visual-basic"></a>Types anonymes (Visual Basic)
+
 Visual Basic prend en charge les types anonymes, qui vous permettent de créer des objets sans écrire de définition de classe pour le type de données. À la place, le compilateur se charge de générer une classe. La classe n’a pas de nom utilisable, hérite directement de <xref:System.Object> et contient les propriétés que vous spécifiez lors de la déclaration de l’objet. Étant donné que le nom du type de données n’est pas spécifié, il est appelé *type anonyme*.  
   
  L’exemple suivant déclare et crée une variable `product` comme une instance d’un type anonyme qui a deux propriétés, `Name` et `Price` .  
@@ -38,6 +39,7 @@ Visual Basic prend en charge les types anonymes, qui vous permettent de créer d
 > Le nom du type anonyme est généré par le compilateur et peut varier de la compilation à la compilation. Votre code ne doit pas utiliser ou s’appuyer sur le nom d’un type anonyme, car le nom peut changer quand un projet est recompilé.  
   
 ## <a name="declaring-an-anonymous-type"></a>Déclaration d’un type anonyme  
+
  La déclaration d’une instance d’un type anonyme utilise une liste d’initialiseurs pour spécifier les propriétés du type. Vous pouvez spécifier uniquement des propriétés lorsque vous déclarez un type anonyme, et non d’autres éléments de classe tels que des méthodes ou des événements. Dans l’exemple suivant, `product1` est une instance d’un type anonyme qui a deux propriétés : `Name` et `Price` .  
   
  [!code-vb[VbVbalrAnonymousTypes#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#4)]  
@@ -51,6 +53,7 @@ Visual Basic prend en charge les types anonymes, qui vous permettent de créer d
  Pour plus d’informations sur d’autres façons de spécifier des propriétés de type anonyme, consultez [Comment : déduire les types et les noms de propriétés dans des déclarations de type anonyme](how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).  
   
 ## <a name="key-properties"></a>Propriétés de clé  
+
  Les propriétés de clé diffèrent des propriétés non-clés de plusieurs façons :  
   
 - Seules les valeurs des propriétés de clé sont comparées afin de déterminer si deux instances sont égales.  
@@ -60,6 +63,7 @@ Visual Basic prend en charge les types anonymes, qui vous permettent de créer d
 - Seules les valeurs de propriété de clé sont incluses dans l’algorithme de code de hachage généré par le compilateur pour un type anonyme.  
   
 ### <a name="equality"></a>Égalité  
+
  Les instances de types anonymes peuvent être égales uniquement si elles sont des instances du même type anonyme. Le compilateur traite deux instances comme des instances du même type s’ils remplissent les conditions suivantes :  
   
 - Ils sont déclarés dans le même assembly.  
@@ -79,18 +83,20 @@ Visual Basic prend en charge les types anonymes, qui vous permettent de créer d
  [!code-vb[VbVbalrAnonymousTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#7)]  
   
 ### <a name="read-only-values"></a>Valeurs en lecture seule  
+
  Les valeurs des propriétés de clé ne peuvent pas être modifiées. Par exemple, dans `prod8` dans l’exemple précédent, les `Name` `Price` champs et sont `read-only` , mais ils `OnHand` peuvent être modifiés.  
   
  [!code-vb[VbVbalrAnonymousTypes#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#8)]  
   
 ## <a name="anonymous-types-from-query-expressions"></a>Types anonymes à partir d’expressions de requête  
+
  Les expressions de requête ne nécessitent pas toujours la création de types anonymes. Lorsque cela est possible, ils utilisent un type existant pour contenir les données de la colonne. Cela se produit lorsque la requête retourne des enregistrements entiers de la source de données ou un seul champ de chaque enregistrement. Dans les exemples de code suivants, `customers` est une collection d’objets d’une `Customer` classe. La classe possède de nombreuses propriétés, et vous pouvez inclure une ou plusieurs d’entre elles dans le résultat de la requête, dans n’importe quel ordre. Dans les deux premiers exemples, aucun type anonyme n’est nécessaire, car les requêtes sélectionnent des éléments de types nommés :  
   
-- `custs1`contient une collection de chaînes, car `cust.Name` est une chaîne.  
+- `custs1` contient une collection de chaînes, car `cust.Name` est une chaîne.  
   
      [!code-vb[VbVbalrAnonymousTypes#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#30)]  
   
-- `custs2`contient une collection d' `Customer` objets, car chaque élément de `customers` est un `Customer` objet et la totalité de l’élément est sélectionnée par la requête.  
+- `custs2` contient une collection d' `Customer` objets, car chaque élément de `customers` est un `Customer` objet et la totalité de l’élément est sélectionnée par la requête.  
   
      [!code-vb[VbVbalrAnonymousTypes#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#31)]  
   
@@ -107,6 +113,7 @@ Visual Basic prend en charge les types anonymes, qui vous permettent de créer d
  Pour plus d’informations, consultez [Introduction à LINQ dans Visual Basic](../linq/introduction-to-linq.md).  
   
 ## <a name="deciding-whether-to-use-anonymous-types"></a>Choix de l’utilisation des types anonymes  
+
  Avant de créer un objet en tant qu’instance d’une classe anonyme, déterminez s’il s’agit de la meilleure option. Par exemple, si vous souhaitez créer un objet temporaire pour contenir des données associées et que vous n’avez pas besoin d’autres champs et méthodes qu’une classe complète peut contenir, un type anonyme est une bonne solution. Les types anonymes sont également pratiques si vous souhaitez une sélection de propriétés différente pour chaque déclaration, ou si vous souhaitez modifier l’ordre des propriétés. Toutefois, si votre projet comprend plusieurs objets qui ont les mêmes propriétés, dans un ordre fixe, vous pouvez les déclarer plus facilement en utilisant un type nommé avec un constructeur de classe. Par exemple, avec un constructeur approprié, il est plus facile de déclarer plusieurs instances d’une `Product` classe que de déclarer plusieurs instances d’un type anonyme.  
   
  [!code-vb[VbVbalrAnonymousTypes#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#9)]  
@@ -118,6 +125,7 @@ Visual Basic prend en charge les types anonymes, qui vous permettent de créer d
  Plus important encore, il existe des limitations sur l’utilisation de types anonymes qui ne s’appliquent pas aux instances de types nommés. `firstProd2`, `secondProd2` et `thirdProd2` sont des instances du même type anonyme. Toutefois, le nom du type anonyme partagé n’est pas disponible et ne peut pas apparaître lorsqu’un nom de type est attendu dans votre code. Par exemple, un type anonyme ne peut pas être utilisé pour définir une signature de méthode, pour déclarer une autre variable ou un autre champ, ou dans une déclaration de type. Par conséquent, les types anonymes ne sont pas appropriés lorsque vous devez partager des informations entre les méthodes.  
   
 ## <a name="an-anonymous-type-definition"></a>Définition de type anonyme  
+
  En réponse à la déclaration d’une instance d’un type anonyme, le compilateur crée une nouvelle définition de classe qui contient les propriétés spécifiées.  
   
  Si le type anonyme contient au moins une propriété de clé, la définition remplace trois membres hérités de <xref:System.Object> : <xref:System.Object.Equals%2A> , <xref:System.Object.GetHashCode%2A> et <xref:System.Object.ToString%2A> . Le code produit pour tester l’égalité et déterminer la valeur de code de hachage ne prend en compte que les propriétés de clé. Si le type anonyme ne contient aucune propriété de clé, seul <xref:System.Object.ToString%2A> est substitué. Les propriétés explicitement nommées d’un type anonyme ne peuvent pas entrer en conflit avec ces méthodes générées. Autrement dit, vous ne pouvez pas utiliser `.Equals` , `.GetHashCode` ou `.ToString` pour nommer une propriété.  

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - joining [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
-ms.openlocfilehash: de8c4ec3ab8a0f2335c034231c661380420fd31b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ebda8d3b7fa2e712c337ed2c1fadc580bed7fe61
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405002"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075068"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Comment : combiner des données avec LINQ à l'aide de jointures (Visual Basic)
+
 Visual Basic fournit les `Join` `Group Join` clauses de requête et pour vous permettre de combiner le contenu de plusieurs collections en fonction de valeurs communes entre les collections. Ces valeurs sont appelées valeurs de *clés* . Les développeurs familiarisés avec les concepts de base de données relationnelle reconnaissent la `Join` clause comme une jointure interne et la `Group Join` clause comme, en fait, une jointure externe gauche.  
   
  Les exemples de cette rubrique illustrent les différentes façons de combiner des données à l’aide des `Join` `Group Join` clauses de requête et.  
@@ -33,6 +34,7 @@ Visual Basic fournit les `Join` `Group Join` clauses de requête et pour vous pe
     [!code-vb[VbLINQHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#2)]  
   
 ## <a name="perform-an-inner-join-by-using-the-join-clause"></a>Effectuer une jointure interne à l’aide de la clause join  
+
  Une jointure interne combine les données de deux collections. Les éléments pour lesquels les valeurs de clé spécifiées correspondent sont inclus. Tous les éléments de l’une des collections qui n’ont pas d’élément correspondant dans l’autre collection sont exclus.  
   
  Dans Visual Basic, LINQ fournit deux options pour effectuer une jointure interne : une jointure implicite et une jointure explicite.  
@@ -48,6 +50,7 @@ Visual Basic fournit les `Join` `Group Join` clauses de requête et pour vous pe
      [!code-vb[VbLINQHowTos#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#4)]  
   
 ## <a name="perform-a-left-outer-join-by-using-the-group-join-clause"></a>Effectuer une jointure externe gauche à l’aide de la clause Group Join  
+
  Une jointure externe gauche comprend tous les éléments de la collection du côté gauche de la jointure et uniquement les valeurs correspondantes de la collection de droite de la jointure. Tous les éléments de la collection située à droite de la jointure qui n’ont pas d’élément correspondant dans la collection de gauche sont exclus du résultat de la requête.  
   
  La `Group Join` clause effectue, en effet, une jointure externe gauche. La différence entre ce qui est généralement appelé jointure externe gauche et ce que la `Group Join` clause retourne est que la `Group Join` clause regroupe les résultats de la collection de droite de la jointure pour chaque élément de la collection de gauche. Dans une base de données relationnelle, une jointure externe gauche retourne un résultat non groupé dans lequel chaque élément du résultat de la requête contient des éléments correspondants des deux collections de la jointure. Dans ce cas, les éléments de la collection du côté gauche de la jointure sont répétés pour chaque élément correspondant de la collection de droite. Vous verrez à quoi cela ressemble quand vous effectuez la procédure suivante.  
@@ -61,6 +64,7 @@ Visual Basic fournit les `Join` `Group Join` clauses de requête et pour vous pe
      [!code-vb[VbLINQHowTos#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#3)]  
   
 ## <a name="perform-a-join-by-using-a-composite-key"></a>Effectuer une jointure à l’aide d’une clé composite  
+
  Vous pouvez utiliser le `And` mot clé dans `Join` une `Group Join` clause ou pour identifier plusieurs champs clés à utiliser lors de la mise en correspondance des valeurs des collections jointes. Le `And` mot clé spécifie que tous les champs clés spécifiés doivent correspondre pour les éléments à joindre.  
   
 #### <a name="to-perform-a-join-by-using-a-composite-key"></a>Pour effectuer une jointure à l’aide d’une clé composite  

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-ms.openlocfilehash: 6ff23f73af384a1440bcebd4b6bac21714e01756
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 90a21b70b45902a9f4fd559a97e777f26043fffb
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051478"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075614"
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Procédure pas à pas : création d'objets COM avec Visual Basic
+
 Lors de la création d’applications ou de composants, il est préférable de créer des assemblys .NET Framework. Toutefois, Visual Basic permet également d’exposer facilement un composant .NET Framework à COM. Cela vous permet de fournir de nouveaux composants pour les suites d’applications antérieures qui requièrent des composants COM. Cette procédure pas à pas montre comment utiliser Visual Basic pour exposer des objets .NET Framework en tant qu’objets COM, avec et sans le modèle de classe COM.  
   
  Le moyen le plus simple d’exposer des objets COM consiste à utiliser le modèle de classe COM. Ce modèle crée une nouvelle classe, configure votre projet pour générer la classe avec une couche d’interopérabilité comme un objet COM et l’enregistre auprès du système d’exploitation.  
@@ -40,6 +41,7 @@ Lors de la création d’applications ou de composants, il est préférable de c
 6. Sélectionnez **générer ClassLibrary1** dans le menu **générer** . Visual Basic génère l’assembly et inscrit l’objet COM auprès du système d’exploitation.  
   
 ## <a name="creating-com-objects-without-the-com-class-template"></a>Création d’objets COM sans le modèle de classe COM  
+
  Vous pouvez également créer une classe COM manuellement au lieu d’utiliser le modèle de classe COM. Cette procédure est utile lorsque vous travaillez à partir de la ligne de commande ou lorsque vous souhaitez plus de contrôle sur la façon dont les objets COM sont définis.  
   
 #### <a name="to-set-up-your-project-to-generate-a-com-object"></a>Pour configurer votre projet afin de générer un objet COM  

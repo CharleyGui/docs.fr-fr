@@ -7,14 +7,15 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - Video How tos, Visual Basic
 ms.assetid: 0f53a553-efd6-466d-80bf-6b679e5cd174
-ms.openlocfilehash: cf4954059a4b0bf015bed82a74357ecfd5f5987e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 61f520a528c3d40b9d34807d517a9bf27ad40da8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404873"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075224"
 ---
 # <a name="how-to-declare-an-object-by-using-an-object-initializer-visual-basic"></a>Comment : déclarer un objet à l'aide d'un initialiseur d'objet (Visual Basic)
+
 Les initialiseurs d’objets vous permettent de déclarer et d’instancier une instance d’une classe dans une instruction unique. En outre, vous pouvez initialiser un ou plusieurs membres de l’instance en même temps, sans appeler un constructeur paramétrable.  
   
  Lorsque vous utilisez un initialiseur d’objet pour créer une instance d’un type nommé, le constructeur sans paramètre de la classe est appelé, suivi de l’initialisation des membres désignés dans l’ordre que vous spécifiez.  

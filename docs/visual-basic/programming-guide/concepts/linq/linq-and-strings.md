@@ -2,14 +2,15 @@
 title: LINQ et chaînes
 ms.date: 07/20/2015
 ms.assetid: 75ddb201-d97a-4f98-8cdf-4ad51714529a
-ms.openlocfilehash: ee2a44175e8546f879473a3af6bf1a2de92d2501
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 28c11dcc3c788ea85516e8b3fbafe2677b6d9b54
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549847"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075341"
 ---
 # <a name="linq-and-strings-visual-basic"></a>LINQ et chaînes (Visual Basic)
+
 LINQ peut être utilisé pour interroger et transformer des chaînes et des collections de chaînes. Il peut être particulièrement utile avec des données semi-structurées dans des fichiers texte. Les requêtes LINQ peuvent être combinées avec les fonctions de chaîne traditionnelles et les expressions régulières. Par exemple, vous pouvez utiliser la méthode <xref:System.String.Split%2A> ou <xref:System.Text.RegularExpressions.Regex.Split%2A> pour créer un tableau de chaînes que vous pouvez ensuite interroger ou modifier à l’aide de LINQ. Vous pouvez utiliser la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> dans la clause `where` d’une requête LINQ. Et vous pouvez utiliser LINQ pour interroger ou modifier les résultats <xref:System.Text.RegularExpressions.MatchCollection> retournés par une expression régulière.  
   
  Vous pouvez également utiliser les techniques décrites dans cette section pour transformer des données texte semi-structurées en XML. Pour plus d’informations, consultez [Comment : générer du code XML à partir de fichiers CSV](../../../../standard/linq/generate-xml-csv-files.md).  
@@ -17,6 +18,7 @@ LINQ peut être utilisé pour interroger et transformer des chaînes et des coll
  Les exemples de cette section se répartissent en deux catégories :  
   
 ## <a name="querying-a-block-of-text"></a>Interrogation d’un bloc de texte  
+
  Vous pouvez interroger, analyser et modifier des blocs de texte en les fractionnant en tableau requêtable de chaînes plus petites à l’aide de la méthode <xref:System.String.Split%2A> ou de la méthode <xref:System.Text.RegularExpressions.Regex.Split%2A>. Vous pouvez fractionner le texte source en mots, en phrases, en paragraphes, en pages ou selon d’autres critères, puis effectuer des fractionnements supplémentaires s’ils sont nécessaires dans votre requête.  
   
  [Comment : compter les occurrences d’un mot dans une chaîne (LINQ) (Visual Basic)](how-to-count-occurrences-of-a-word-in-a-string-linq.md)  
@@ -33,6 +35,7 @@ LINQ peut être utilisé pour interroger et transformer des chaînes et des coll
  Montre comment utiliser des expressions régulières dans les requêtes LINQ pour des correspondances de modèle complexes sur des résultats de requête filtrés.  
   
 ## <a name="querying-semi-structured-data-in-text-format"></a>Interrogation de données semi-structurées au format texte  
+
  De nombreux types différents de fichiers texte sont constitués d’une série de lignes, souvent avec la même mise en forme, comme les fichiers délimités par des tabulations ou des virgules, ou des lignes de longueur fixe. Après avoir lu un tel fichier texte dans la mémoire, vous pouvez utiliser LINQ pour interroger et/ou modifier les lignes. Les requêtes LINQ simplifient également la combinaison de données provenant de plusieurs sources.  
   
  [Comment : Rechercher la différence définie entre deux listes (LINQ) (Visual Basic)](how-to-find-the-set-difference-between-two-lists-linq.md)  

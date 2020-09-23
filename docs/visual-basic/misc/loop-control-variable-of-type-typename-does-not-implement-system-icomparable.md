@@ -1,17 +1,18 @@
 ---
-title: Variable de contrôle de boucle de type '<typename>' n’implémente pas l’interface 'System.IComparable'
+title: La variable de contrôle de boucle de type '<typename>' n’implémente pas l’interface 'System.IComparable'
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_IComparable2
 ms.assetid: 8dba1270-380a-4f05-8bad-1031e6a9cc90
-ms.openlocfilehash: a227e367c71d37abd86430979881d1412ff76efc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 463dffbb008e60fb30cbe456146196be7a633b19
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62023648"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91076147"
 ---
-# <a name="loop-control-variable-of-type-typename-does-not-implement-the-systemicomparable-interface"></a>Variable de contrôle de boucle de type '\<nom_type >' n’implémente pas l’interface 'System.IComparable'
+# <a name="loop-control-variable-of-type-typename-does-not-implement-the-systemicomparable-interface"></a>La variable de contrôle de boucle de type '\<typename>' n’implémente pas l’interface 'System.IComparable'
+
 Une variable est d’un type qui n’implémente pas l’interface `System.IComparable` . `System.IComparable` doit être implémentée par un type valeur ou une classe.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
