@@ -2,14 +2,15 @@
 title: 'Procédure : rechercher des fichiers ayant un attribut ou un nom donné'
 ms.date: 07/20/2015
 ms.assetid: b26026a3-3f43-448f-a582-259997af6be0
-ms.openlocfilehash: 4a6a5630f4ac0eb0cb08aed0dc8a390225194675
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: eeacd94fb303a439e8034b84d285ab11b2333581
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396413"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059312"
 ---
 # <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a>Comment : interroger des fichiers ayant un attribut ou un nom spécifié (Visual Basic)
+
 Cet exemple montre comment rechercher tous les fichiers ayant une extension de nom de fichier spécifiée (par exemple « .txt ») dans une arborescence de répertoires spécifiée. Il montre également comment retourner le fichier le plus récent ou le plus ancien dans l’arborescence en fonction de l’heure de création.  
   
 ## <a name="example"></a>Exemple  
@@ -61,6 +62,7 @@ End Module
 ```  
   
 ## <a name="compile-the-code"></a>Compiler le code  
+
 Créez un projet d’application console Visual Basic, avec une `Imports` instruction pour l’espace de noms System. Linq.
   
 ## <a name="see-also"></a>Voir aussi

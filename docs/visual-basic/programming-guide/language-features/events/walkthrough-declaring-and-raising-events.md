@@ -9,17 +9,19 @@ helpviewer_keywords:
 - events [Visual Basic], raising
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
-ms.openlocfilehash: 3da60014d7ac95189c5d56c3e339ff1b054a40dc
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 07ef611b50cfa13f77fa168d58dd3b43e97eeec6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405091"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91057986"
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Procédure pas à pas : déclaration et déclenchement des événements (Visual Basic)
+
 Cette procédure pas à pas montre comment déclarer et déclencher des événements pour une classe nommée `Widget` . Une fois les étapes terminées, vous souhaiterez peut-être lire la rubrique d’accompagnement, [procédure pas à pas : gestion des événements](walkthrough-handling-events.md), qui montre comment utiliser des événements d' `Widget` objets pour fournir des informations d’État dans une application.  
   
 ## <a name="the-widget-class"></a>Classe widget  
+
  Supposons que vous ayez une `Widget` classe. Votre `Widget` classe a une méthode qui peut prendre beaucoup de temps pour s’exécuter, et vous souhaitez que votre application puisse mettre en place un type d’indicateur d’achèvement.  
   
  Bien entendu, vous pouvez faire `Widget` en sorte que l’objet affiche une boîte de dialogue de pourcentage de réalisation, mais vous serez alors bloqué avec cette boîte de dialogue dans chaque projet dans lequel vous avez utilisé la `Widget` classe. Un bon principe de la conception d’objets est de permettre à l’application qui utilise un objet de gérer l’interface utilisateur, à moins que l’objectif entier de l’objet ne soit de gérer un formulaire ou une boîte de dialogue.  
@@ -53,7 +55,7 @@ Cette procédure pas à pas montre comment déclarer et déclencher des événem
 > [!NOTE]
 > Vous pouvez déclarer des arguments d’événement de la même façon que des arguments de procédures, avec les exceptions suivantes : les événements ne peuvent pas avoir d' `Optional` `ParamArray` arguments ou, et les événements n’ont pas de valeurs de retour.  
   
- L' `PercentDone` événement est déclenché par la `LongTask` méthode de la `Widget` classe. `LongTask`accepte deux arguments : la durée pendant laquelle la méthode prétend exécuter le travail, et l’intervalle de temps minimal avant les `LongTask` pauses pour déclencher l' `PercentDone` événement.  
+ L' `PercentDone` événement est déclenché par la `LongTask` méthode de la `Widget` classe. `LongTask` accepte deux arguments : la durée pendant laquelle la méthode prétend exécuter le travail, et l’intervalle de temps minimal avant les `LongTask` pauses pour déclencher l' `PercentDone` événement.  
   
 #### <a name="to-raise-the-percentdone-event"></a>Pour déclencher l’événement PercentDone  
   

@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrNetwork_NetworkNotAvailable
 ms.assetid: 8d2bac12-bc6a-42ae-b28b-80b026dfabce
-ms.openlocfilehash: 82a2acf8c496e93b99daa266794d55edff7d4fc2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: afdfc677e717283a1d0234abec1b00aff38f6ad6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553452"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059442"
 ---
 # <a name="unable-to-ping-because-a-network-connection-is-not-available"></a>Impossible d’exécuter la commande PING, car une connexion réseau n’est pas disponible.
+
 Impossible d’effectuer l’opération, car aucune connexion réseau n’est disponible.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

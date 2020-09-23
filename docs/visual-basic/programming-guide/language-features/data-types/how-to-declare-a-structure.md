@@ -7,14 +7,15 @@ helpviewer_keywords:
 - statements [Visual Basic], structure
 - structures [Visual Basic], declaring
 ms.assetid: d5e98381-eb81-47d4-af83-48cc534a2572
-ms.openlocfilehash: a6b70d0973e92db90e35e61b7fed2279c5b0bac3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: bffdc5974eff6b71e0abc4780a61aa300769eed6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393972"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058545"
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>Comment : déclarer une structure (Visual Basic)
+
 Vous commencez une déclaration de structure par l' [instruction structure](../../../language-reference/statements/structure-statement.md)et vous la terminez par l' `End Structure` instruction. Entre ces deux instructions, vous devez déclarer au moins un *élément*. Les éléments peuvent être de n’importe quel type de données, mais au moins un doit être une variable non partagée ou un événement non personnalisé non partagé.  
   
  Vous ne pouvez pas initialiser l’un des éléments de structure dans la déclaration de structure. Quand vous déclarez une variable comme étant d’un type structure, vous assignez des valeurs aux éléments en y accédant via la variable.  
@@ -57,7 +58,7 @@ Vous commencez une déclaration de structure par l' [instruction structure](../.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](index.md)
+- [Data types](index.md)
 - [Types de données élémentaires](elementary-data-types.md)
 - [Types de données composites](composite-data-types.md)
 - [Types valeur et types référence](value-types-and-reference-types.md)
@@ -66,4 +67,4 @@ Vous commencez une déclaration de structure par l' [instruction structure](../.
 - [Variables de structure](structure-variables.md)
 - [Structures et autres éléments de programmation](structures-and-other-programming-elements.md)
 - [Structures et classes](structures-and-classes.md)
-- [Type de données défini par l’utilisateur](../../../language-reference/data-types/user-defined-data-type.md)
+- [Type de données défini par l'utilisateur](../../../language-reference/data-types/user-defined-data-type.md)

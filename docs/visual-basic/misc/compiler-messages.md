@@ -5,12 +5,13 @@ helpviewer_keywords:
 - compiler errors
 - errors [Visual Basic], compiler
 ms.assetid: d50addfb-0683-45e5-8c3c-69a2eb510a19
-ms.openlocfilehash: 057718d3ecf44546d96b9e507798f0f601fc3eb4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ed03bf6d12c6f10cc132459e71b96332cde16f9d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353310"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059832"
 ---
 # <a name="visual-basic-compiler-messages"></a>Messages du compilateur Visual Basic
+
 Cette section contient les messages d’erreur Visual Basic qui se produisent au moment de la compilation.

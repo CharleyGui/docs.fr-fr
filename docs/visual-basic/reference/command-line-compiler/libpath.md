@@ -6,14 +6,15 @@ helpviewer_keywords:
 - /libpath compiler option [Visual Basic]
 - -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
-ms.openlocfilehash: dff7e0c3eb696b9b18f4c4e59240a26c1cb9782c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a91bd74d0be4f1cb223091ee2527f9567b4ca5db
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408547"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058467"
 ---
 # <a name="-libpath"></a>-libpath
+
 Spécifie l’emplacement des assemblys référencés.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,6 +30,7 @@ Spécifie l’emplacement des assemblys référencés.
 |`dirList`|Obligatoire. Liste de répertoires délimités par des points-virgules pour le compilateur à examiner si un assembly référencé est introuvable dans le répertoire de travail actuel (le répertoire à partir duquel vous appelez le compilateur) ou le répertoire système de l’common language runtime. Si le nom du répertoire contient un espace, mettez-le entre guillemets ("").|  
   
 ## <a name="remarks"></a>Notes  
+
  L' `-libpath` option spécifie l’emplacement des assemblys référencés par l’option [-Reference](reference.md) .  
   
  Le compilateur recherche les références d’assembly qui ne sont pas complètes dans l’ordre suivant :  
@@ -50,6 +52,7 @@ Spécifie l’emplacement des assemblys référencés.
 |1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **références** .<br />3. cliquez sur le bouton **chemins d’accès des références..** ..<br />4. dans la boîte de dialogue **chemins d’accès des références** , entrez le nom du répertoire dans la zone **dossier :** .<br />5. cliquez sur **Ajouter un dossier**.|  
   
 ## <a name="example"></a>Exemple  
+
  Le code suivant compile `T2.vb` pour créer un fichier. exe. Le compilateur recherche les références d’assembly dans le répertoire de travail, dans le répertoire racine du lecteur C : et dans le nouveau répertoire des assemblys du lecteur C :.  
   
 ```console  

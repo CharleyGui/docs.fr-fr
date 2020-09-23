@@ -7,14 +7,15 @@ helpviewer_keywords:
 - arrays [Visual Basic], initializing
 - arrays [Visual Basic], declaring
 ms.assetid: aadd7a60-7ca4-4608-b986-091f19e7fc10
-ms.openlocfilehash: 7feaf71fa1c59c24aa751f2b9e28328d47ba357c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1add054a6cb6468f4581f92ca3a258c5b0cdc77d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413064"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058857"
 ---
 # <a name="how-to-initialize-an-array-variable-in-visual-basic"></a>Comment : initialiser une variable tableau en Visual Basic
+
 Vous initialisez une variable tableau en incluant un littéral de tableau dans une `New` clause et en spécifiant les valeurs initiales du tableau. Vous pouvez spécifier le type ou l’autoriser à être déduit à partir des valeurs du littéral de tableau. Pour plus d’informations sur la façon dont le type est déduit, consultez « remplissage d’un tableau avec des valeurs initiales » dans les [tableaux](index.md).  
   
 ### <a name="to-initialize-an-array-variable-by-using-an-array-literal"></a>Pour initialiser une variable tableau à l’aide d’un littéral de tableau  
@@ -33,7 +34,7 @@ Vous initialisez une variable tableau en incluant un littéral de tableau dans u
   
      [!code-vb[VbVbalrArrays#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#17)]  
   
-- Vous pouvez spécifier explicitement les limites du tableau ou les conserver et faire en sorte que le compilateur déduit les limites du tableau en fonction des valeurs du littéral de tableau. Si vous fournissez à la fois les limites supérieures et les valeurs, vous devez inclure une valeur pour chaque élément de l’index 0 jusqu’à la limite supérieure dans chaque dimension. L’exemple suivant montre plusieurs façons de déclarer, de créer et d’initialiser une variable qui contient un tableau à deux dimensions qui contient des éléments de type.`Short`  
+- Vous pouvez spécifier explicitement les limites du tableau ou les conserver et faire en sorte que le compilateur déduit les limites du tableau en fonction des valeurs du littéral de tableau. Si vous fournissez à la fois les limites supérieures et les valeurs, vous devez inclure une valeur pour chaque élément de l’index 0 jusqu’à la limite supérieure dans chaque dimension. L’exemple suivant montre plusieurs façons de déclarer, de créer et d’initialiser une variable qui contient un tableau à deux dimensions qui contient des éléments de type. `Short`  
   
      [!code-vb[VbVbalrArrays#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#18)]  
   

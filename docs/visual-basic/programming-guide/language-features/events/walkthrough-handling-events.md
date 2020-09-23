@@ -9,14 +9,15 @@ helpviewer_keywords:
 - WithEvents keyword [Visual Basic], walkthroughs
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
-ms.openlocfilehash: 29d878afbe3669fc88e62b1fec98b306918c303d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4489f75e50a783a9b1acfb9c30568fdec6614488
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405078"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91057908"
 ---
 # <a name="walkthrough-handling-events-visual-basic"></a>Procédure pas à pas : gestion des événements (Visual Basic)
+
 Il s’agit de la deuxième des deux rubriques qui montrent comment utiliser les événements. La première rubrique, [procédure pas à pas : déclaration et déclenchement d’événements](walkthrough-declaring-and-raising-events.md), montre comment déclarer et déclencher des événements. Cette section utilise le formulaire et la classe de cette procédure pas à pas pour montrer comment gérer les événements lorsqu’ils se produisent.  
   
  L' `Widget` exemple de classe utilise des instructions de gestion des événements traditionnelles. Visual Basic fournit d’autres techniques pour l’utilisation des événements. En guise d’exercice, vous pouvez modifier cet exemple pour utiliser les `AddHandler` `Handles` instructions et.  
@@ -34,6 +35,7 @@ Il s’agit de la deuxième des deux rubriques qui montrent comment utiliser les
      La variable `mblnCancel` est utilisée pour annuler la `LongTask` méthode.  
   
 ## <a name="writing-code-to-handle-an-event"></a>Écriture de code pour gérer un événement  
+
  Dès que vous déclarez une variable à l’aide `WithEvents` de, le nom de la variable apparaît dans la liste déroulante de gauche de l' **éditeur de code**de la classe. Lorsque vous sélectionnez `mWidget` , les `Widget` événements de la classe s’affichent dans la liste déroulante de droite. La sélection d’un événement affiche la procédure d’événement correspondante, avec le préfixe `mWidget` et un trait de soulignement. Toutes les procédures d’événement associées à une `WithEvents` variable reçoivent le nom de la variable en tant que préfixe.  
   
 #### <a name="to-handle-an-event"></a>Pour gérer un événement  
@@ -58,7 +60,8 @@ Il s’agit de la deuxième des deux rubriques qui montrent comment utiliser les
  Si l’utilisateur clique sur le bouton **Annuler** pendant que `LongTask` est en cours d’exécution, l' `Button2_Click` événement est exécuté dès que l' `DoEvents` instruction autorise le traitement de l’événement. La variable au niveau de la classe `mblnCancel` a la valeur `True` , et l' `mWidget_PercentDone` événement la teste, puis définit l' `ByRef Cancel` argument sur `True` .  
   
 ## <a name="connecting-a-withevents-variable-to-an-object"></a>Connexion d’une variable WithEvents à un objet  
- `Form1`est maintenant configuré pour gérer les `Widget` événements d’un objet. Il ne reste plus qu’à trouver `Widget` quelque part.  
+
+ `Form1` est maintenant configuré pour gérer les `Widget` événements d’un objet. Il ne reste plus qu’à trouver `Widget` quelque part.  
   
  Quand vous déclarez une variable `WithEvents` au moment de la conception, aucun objet n’est associé à celle-ci. Une `WithEvents` variable est semblable à toute autre variable objet. Vous devez créer un objet et lui assigner une référence avec la `WithEvents` variable.  
   
@@ -82,7 +85,7 @@ Il s’agit de la deuxième des deux rubriques qui montrent comment utiliser les
   
  Avant que la `LongTask` méthode ne soit appelée, l’étiquette qui affiche le pourcentage d’achèvement doit être initialisée et l' `Boolean` indicateur de niveau classe pour annuler la méthode doit avoir la valeur `False` .  
   
- `LongTask`est appelé avec une durée de tâche de 12,2 secondes. L' `PercentDone` événement est déclenché une fois tous les tiers un seconde. Chaque fois que l’événement est déclenché, la `mWidget_PercentDone` procédure événementielle est exécutée.  
+ `LongTask` est appelé avec une durée de tâche de 12,2 secondes. L' `PercentDone` événement est déclenché une fois tous les tiers un seconde. Chaque fois que l’événement est déclenché, la `mWidget_PercentDone` procédure événementielle est exécutée.  
   
  Lorsque `LongTask` est terminé, `mblnCancel` est testé pour voir si l’opération s’est `LongTask` terminée normalement ou si elle s’est arrêtée car `mblnCancel` a la valeur `True` . Le pourcentage d’achèvement est mis à jour uniquement dans le cas précédent.  
   

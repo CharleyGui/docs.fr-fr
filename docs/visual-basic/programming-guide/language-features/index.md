@@ -5,14 +5,15 @@ helpviewer_keywords:
 - Visual Basic code, elements of
 - Visual Basic code
 ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
-ms.openlocfilehash: 2a2e8d0a08fda5783fa20e7403ea215133d0514e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ae226520ecd7dff09023bcc88e610ff400c4019d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405053"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91057856"
 ---
 # <a name="visual-basic-language-features"></a>Fonctionnalités du langage Visual Basic
+
 Les rubriques suivantes présentent et présentent les composants essentiels de Visual Basic, un langage de programmation orienté objet. Après avoir créé l’interface utilisateur de votre application à l’aide des formulaires et des contrôles, vous avez besoin d’écrire le code qui définit le comportement de l’application. Comme pour n’importe quel langage de programmation moderne, Visual Basic prend en charge un certain nombre d’éléments de langage et de constructions de programmation courants.  
   
  Si vous avez déjà programmé dans d’autres langages, la plupart des informations présentées dans cette section vous seront familières. Alors que la plupart des constructions sont similaires à celles d’autres langages, la nature pilotée par les événements de Visual Basic introduit quelques différences subtiles.  
@@ -20,6 +21,7 @@ Les rubriques suivantes présentent et présentent les composants essentiels de 
  Si vous êtes novice en programmation, les éléments de cette section servent d’introduction aux blocs de construction de base pour l’écriture de code. Une fois que vous avez compris les principes de base, vous pouvez créer des applications puissantes à l’aide de Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Tableaux](arrays/index.md)  
  Explique comment rendre le code plus compact et plus puissant en déclarant et en utilisant des tableaux, qui contiennent plusieurs valeurs liées.  
   
@@ -29,10 +31,10 @@ Les rubriques suivantes présentent et présentent les composants essentiels de 
  [Constantes et énumérations](constants-enums/index.md)  
  Décrit le stockage de valeurs inchangées en vue d’une utilisation répétée, y compris des ensembles de valeurs constantes liées.  
   
- [Workflow de contrôle](control-flow/index.md)  
+ [Flux de contrôle](control-flow/index.md)  
  Montre comment contrôler le flux d’exécution d’un programme.  
   
- [Types de données](data-types/index.md)  
+ [Data types](data-types/index.md)  
  Décrit les types de données qu’un élément de programmation peut contenir et la façon dont ces données sont stockées.  
   
  [Éléments déclarés](declared-elements/index.md)  
@@ -65,7 +67,7 @@ Les rubriques suivantes présentent et présentent les composants essentiels de 
  [Procédures](procedures/index.md)  
  Décrit les procédures `Sub`, `Function`, `Property` et `Operator`, ainsi que des sujets avancés tels que les procédures récursives et surchargées.  
   
- [Instructions](statements.md)  
+ [Publication](statements.md)  
  Décrit les instructions déclaratives et exécutables.  
   
  [Chaînes](strings/index.md)  

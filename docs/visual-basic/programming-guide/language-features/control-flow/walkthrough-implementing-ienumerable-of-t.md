@@ -7,14 +7,15 @@ helpviewer_keywords:
 - loop structures [Visual Basic], optimizing performance
 - control flow [Visual Basic]
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
-ms.openlocfilehash: 582957c91eac63cf7f72dd2f6c0cf40e627be686
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f1f0036c38299f2392f8c8705e67b7bb6b7db068
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402029"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058636"
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Procédure pas à pas : implémentation d'IEnumerable(Of T) en Visual Basic
+
 L' <xref:System.Collections.Generic.IEnumerable%601> interface est implémentée par les classes qui peuvent retourner une séquence de valeurs un élément à la fois. L’avantage de retourner des données un élément à la fois est que vous n’avez pas besoin de charger l’ensemble complet de données en mémoire pour l’utiliser. Vous devez uniquement utiliser suffisamment de mémoire pour charger un seul élément à partir des données. Les classes qui implémentent l' `IEnumerable(T)` interface peuvent être utilisées avec des `For Each` boucles ou des requêtes LINQ.  
   
  Par exemple, considérez une application qui doit lire un grand fichier texte et retourner chaque ligne du fichier qui correspond aux critères de recherche particuliers. L’application utilise une requête LINQ pour retourner les lignes du fichier qui correspondent aux critères spécifiés. Pour interroger le contenu du fichier à l’aide d’une requête LINQ, l’application peut charger le contenu du fichier dans un tableau ou une collection. Toutefois, le chargement de l’ensemble du fichier dans un tableau ou une collection consomme beaucoup plus de mémoire que nécessaire. La requête LINQ peut à la place interroger le contenu du fichier à l’aide d’une classe énumérable, en retournant uniquement les valeurs qui correspondent aux critères de recherche. Les requêtes qui retournent uniquement quelques valeurs correspondantes consomment beaucoup moins de mémoire.  
@@ -96,6 +97,6 @@ L' <xref:System.Collections.Generic.IEnumerable%601> interface est implémentée
 ## <a name="see-also"></a>Voir aussi
 
 - [Introduction à LINQ en Visual Basic](../linq/introduction-to-linq.md)
-- [Workflow de contrôle](index.md)
+- [Flux de contrôle](index.md)
 - [Structures de boucle](loop-structures.md)
 - [For Each...Next (instruction)](../../../language-reference/statements/for-each-next-statement.md)

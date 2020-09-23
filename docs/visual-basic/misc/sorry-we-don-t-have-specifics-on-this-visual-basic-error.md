@@ -3044,14 +3044,15 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-ms.openlocfilehash: 12af447d053e84347ddc3a2c1ecad1cde4ff3428
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d96f2512e2fae038853baedfb78fcf2feb84542b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357802"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059637"
 ---
 # <a name="sorry-we-dont-have-specifics-on-this-visual-basic-error"></a>Désolé, nous n'avons pas détails concernant cette erreur Visual Basic
+
 Nous sommes désolés, mais nous n'avons pas d'informations spécifiques sur cette erreur. Pour plus d'informations, vous pouvez rechercher le numéro d'erreur et le texte du message sur le web. Ou bien, vous pouvez interroger d'autres développeurs au travers des forums suivants :  
   
  [Langage Visual Basic](https://social.msdn.microsoft.com/Forums/home?forum=vblanguage)  

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - strings [Visual Basic], enumeration values
 - values [Visual Basic], enumeration members
 ms.assetid: 9253e7c8-579c-49a2-8f26-392b20ea99eb
-ms.openlocfilehash: 525da9206472afefa9f85b49ceee0775cbd168c3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4138759bfbb049b77406fc536219b40d3ed9e2a5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414464"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058767"
 ---
 # <a name="how-to-determine-the-string-associated-with-an-enumeration-value-visual-basic"></a>Comment : déterminer la chaîne associée à une valeur d'énumération (Visual Basic)
+
 Les <xref:System.Enum.GetValues%2A> <xref:System.Enum.GetNames%2A> méthodes et vous permettent de déterminer les chaînes et les valeurs associées aux membres de l’énumération.  
   
 ### <a name="to-determine-the-string-associated-with-an-enumeration"></a>Pour déterminer la chaîne associée à une énumération  

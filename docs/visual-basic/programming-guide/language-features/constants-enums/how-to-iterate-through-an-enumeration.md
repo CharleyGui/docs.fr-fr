@@ -6,14 +6,15 @@ helpviewer_keywords:
 - enumerations [Visual Basic], iterating
 - ListBox control [Windows Forms], populating from an enumeration
 ms.assetid: e5aa10eb-cfcd-4a3b-8e76-f06b8f2002be
-ms.openlocfilehash: fb6fbdd45ca0e84ccb9fc55296d78e3867d5fe25
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 21c170d4708b90987a3f1e9c18969b8803fcdbe0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414425"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058714"
 ---
 # <a name="how-to-iterate-through-an-enumeration-in-visual-basic"></a>Comment : itérer au sein d'une énumération dans Visual Basic
+
 Les énumérations offrent un moyen pratique de travailler avec des ensembles de constantes connexes et d’associer des valeurs de constantes à des noms. Pour itérer au sein d’une énumération, vous pouvez la déplacer dans un tableau à l’aide de la <xref:System.Enum.GetValues%2A> méthode. Vous pouvez également itérer au sein d’une énumération à l’aide d’une `For...Each` instruction, en utilisant la <xref:System.Enum.GetNames%2A> <xref:System.Enum.GetValues%2A> méthode ou pour extraire la chaîne ou la valeur numérique.  
   
 ### <a name="to-iterate-through-an-enumeration"></a>Pour itérer au sein d’une énumération  

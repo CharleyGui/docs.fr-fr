@@ -8,14 +8,15 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], embedded expressions
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: bf2eb779-b751-4b7c-854f-9f2161482352
-ms.openlocfilehash: d4ff9442aa82a3eb46d56500159562174646ea58
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 44a6c3408b57fa7f89e2834aa677fe8801ef21f3
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410255"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058311"
 ---
 # <a name="embedded-expressions-in-xml-visual-basic"></a>Expressions incorporées en XML (Visual Basic)
+
 Les expressions incorporées vous permettent de créer des littéraux XML qui contiennent des expressions évaluées au moment de l’exécution. La syntaxe d’une expression incorporée est `<%=` `expression` `%>` , qui est identique à la syntaxe utilisée dans ASP.net.  
   
  Par exemple, vous pouvez créer un littéral d’élément XML, en combinant des expressions incorporées avec un contenu de texte littéral.  
@@ -31,16 +32,17 @@ Les expressions incorporées vous permettent de créer des littéraux XML qui co
 ```  
   
 ## <a name="embedded-expression-location-and-validation"></a>Emplacement et validation de l’expression incorporée  
+
  Les expressions incorporées peuvent apparaître uniquement à certains emplacements dans des expressions de littéral XML. L’emplacement de l’expression contrôle les types que l’expression peut retourner et la façon dont `Nothing` est géré. Le tableau suivant décrit les emplacements et types d’expressions incorporés autorisés.  
   
-|Emplacement dans le littéral|Type d’expression|Gestion de`Nothing`|  
+|Emplacement dans le littéral|Type d’expression|Gestion de `Nothing`|  
 |---|---|---|  
 |Nom d’élément XML|<xref:System.Xml.Linq.XName>|Error|  
-|Contenu de l’élément XML|`Object`ou tableau de`Object`|Ignoré|  
-|Nom de l’attribut d’élément XML|<xref:System.Xml.Linq.XName>|Erreur, sauf si la valeur de l’attribut est également`Nothing`|  
+|Contenu de l’élément XML|`Object` ou tableau de `Object`|Ignoré|  
+|Nom de l’attribut d’élément XML|<xref:System.Xml.Linq.XName>|Erreur, sauf si la valeur de l’attribut est également `Nothing`|  
 |Valeur de l’attribut d’élément XML|`Object`|Déclaration d’attribut ignorée|  
-|Attribut d’élément XML|<xref:System.Xml.Linq.XAttribute>ou une collection de<xref:System.Xml.Linq.XAttribute>|Ignoré|  
-|Élément racine du document XML|<xref:System.Xml.Linq.XElement>ou une collection d’un <xref:System.Xml.Linq.XElement> objet et d’un nombre arbitraire <xref:System.Xml.Linq.XProcessingInstruction> d' <xref:System.Xml.Linq.XComment> objets et|Ignoré|  
+|Attribut d’élément XML|<xref:System.Xml.Linq.XAttribute> ou une collection de <xref:System.Xml.Linq.XAttribute>|Ignoré|  
+|Élément racine du document XML|<xref:System.Xml.Linq.XElement> ou une collection d’un <xref:System.Xml.Linq.XElement> objet et d’un nombre arbitraire <xref:System.Xml.Linq.XProcessingInstruction> d' <xref:System.Xml.Linq.XComment> objets et|Ignoré|  
   
 - Exemple d’expression incorporée dans un nom d’élément XML :  
   
@@ -73,6 +75,7 @@ Les expressions incorporées vous permettent de créer des littéraux XML qui co
  Pour plus d’informations sur l’utilisation d’une expression incorporée dans un type particulier de littéral, consultez [littéral de document XML](../../../language-reference/xml-literals/xml-document-literal.md), [littéral d’élément XML](../../../language-reference/xml-literals/xml-element-literal.md).  
   
 ## <a name="scoping-rules"></a>Règles de portée  
+
  Le compilateur convertit chaque littéral XML en un appel de constructeur pour le type de littéral approprié. Le contenu littéral et les expressions incorporées dans un littéral XML sont passés comme arguments au constructeur. Cela signifie que tous les éléments de programmation Visual Basic disponibles pour un littéral XML sont également disponibles pour ses expressions incorporées.  
   
  Dans un littéral XML, vous pouvez accéder aux préfixes d’espaces de noms XML déclarés avec l' `Imports` instruction. Vous pouvez déclarer un nouveau préfixe d’espace de noms XML ou occulter un préfixe d’espace de noms XML existant dans un élément à l’aide de l' `xmlns` attribut. Le nouvel espace de noms est disponible pour les nœuds enfants de cet élément, mais pas pour les littéraux XML dans les expressions incorporées.  

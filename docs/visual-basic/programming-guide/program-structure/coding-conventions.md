@@ -6,14 +6,15 @@ helpviewer_keywords:
 - examples [Visual Basic], coding conventions
 - Visual Basic code, conventions
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
-ms.openlocfilehash: b71c1eeaa136d01c701191f1bb145674efccbc56
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: eae283c757ddeb1290c15d82a41c8028a8941e63
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551039"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059156"
 ---
 # <a name="visual-basic-coding-conventions"></a>Conventions de codage Visual Basic
+
 Microsoft développe des exemples et de la documentation qui suivent les instructions de cette rubrique. Si vous suivez les mêmes conventions de codage, vous pouvez bénéficier des avantages suivants :  
   
 - Votre code aura un aspect cohérent, afin que les lecteurs puissent mieux se concentrer sur le contenu, pas sur la disposition.  
@@ -86,6 +87,7 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
      [!code-vb[VbVbalrGuidelines#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#5)]  
   
 ### <a name="relaxed-delegates-in-event-handlers"></a>Délégués souples dans les gestionnaires d’événements  
+
  Ne qualifiez pas explicitement les arguments (Object et EventArgs) aux gestionnaires d’événements. Si vous n’utilisez pas les arguments d’événement passés à un événement (par exemple, sender As Object, e As EventArgs), utilisez des délégués souples et ignorez les arguments d’événement dans votre code :  
   
  [!code-vb[VbVbalrGuidelines#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#7)]  
@@ -121,14 +123,17 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
      [!code-vb[VbVbalrGuidelines#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#13)]  
   
 ### <a name="use-the-with-keyword"></a>Utiliser le mot clé with  
+
  Lorsque vous effectuez une série d’appels à un objet, envisagez d’utiliser le `With` mot clé :  
   
  [!code-vb[VbVbalrGuidelines#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#15)]  
   
 ### <a name="use-the-trycatch-and-using-statements-when-you-use-exception-handling"></a>Utilisez le bloc try... Instructions catch et Using lorsque vous utilisez la gestion des exceptions  
+
  N’utilisez pas `On Error Goto`.  
   
 ### <a name="use-the-isnot-keyword"></a>Utiliser le mot clé IsNot  
+
  Utilisez le `IsNot` mot clé à la place de `Not...Is Nothing` .  
   
 ### <a name="new-keyword"></a>Mot clé New  
@@ -162,9 +167,11 @@ Microsoft développe des exemples et de la documentation qui suivent les instruc
 - Ne vérifiez pas si un événement est `Nothing` (null) avant d’appeler la `RaiseEvent` méthode. `RaiseEvent` vérifie `Nothing` avant de déclencher l’événement.  
   
 ### <a name="using-shared-members"></a>Utilisation de membres partagés  
+
  Appelez `Shared` les membres à l’aide du nom de la classe, et non d’une variable d’instance.  
   
 ### <a name="use-xml-literals"></a>Utiliser des littéraux XML  
+
  Les littéraux XML simplifient les tâches les plus courantes que vous rencontrez lorsque vous travaillez avec XML (par exemple, charger, interroger et transformer). Lorsque vous développez avec XML, suivez ces instructions :  
   
 - Utilisez des littéraux XML pour créer des fragments et des documents XML au lieu d’appeler directement des API XML.  

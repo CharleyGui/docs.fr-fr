@@ -15,14 +15,15 @@ helpviewer_keywords:
 - query samples [Visual Basic]
 - count operator [LINQ in Visual Basic]
 ms.assetid: 51ca1f59-7770-4884-8b76-113002e54fc0
-ms.openlocfilehash: 8be585c3e11bc3637b2dd1cfaf3437620aa2ba09
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 617c6959e2d3add6d36266b0827ef7281b0c77a9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405015"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059247"
 ---
 # <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>Comment : compter, additionner ou faire la moyenne de données à l'aide de LINQ (Visual Basic)
+
 LINQ (Language-Integrated Query) facilite l’accès aux informations de la base de données et à l’exécution des requêtes.  
   
  L’exemple suivant montre comment créer une application qui exécute des requêtes sur une base de données SQL Server. L’exemple compte, additionne et calcule la moyenne des résultats à l’aide des `Aggregate` `Group By` clauses et. Pour plus d’informations, consultez clause [Aggregate](../../../language-reference/queries/aggregate-clause.md) et [clause Group by](../../../language-reference/queries/group-by-clause.md).  
@@ -82,6 +83,6 @@ LINQ (Language-Integrated Query) facilite l’accès aux informations de la base
 - [LINQ](index.md)
 - [Requêtes](../../../language-reference/queries/index.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
-- [Méthode DataContext (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [DataContext, méthodes (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
 - [Aggregate Clause](../../../language-reference/queries/aggregate-clause.md)
-- [Group by, clause](../../../language-reference/queries/group-by-clause.md)
+- [Group By (clause)](../../../language-reference/queries/group-by-clause.md)

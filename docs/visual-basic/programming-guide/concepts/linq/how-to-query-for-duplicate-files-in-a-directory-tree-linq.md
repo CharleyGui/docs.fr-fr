@@ -2,14 +2,15 @@
 title: 'Procédure : rechercher les fichiers dupliqués dans une arborescence de répertoires (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: b37da0a26c8bb4abc885faa7bb0c467e2d7d2347
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 71c656fba3962f08733e27279ac9bfa94d957aa8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396426"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058909"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Comment : interroger des Fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic)
+
 Parfois, plusieurs dossiers peuvent contenir des fichiers ayant le même nom. Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm. Cet exemple montre comment rechercher ces noms de fichiers dupliqués sous un dossier racine spécifié. Le deuxième exemple montre comment rechercher des fichiers dont la taille et l’heure de création correspondent également.  
   
 ## <a name="example"></a>Exemple  
@@ -101,6 +102,7 @@ End Module
  La première requête utilise une clé simple pour déterminer une correspondance ; elle trouve les fichiers qui ont le même nom mais dont le contenu peut être différent. La deuxième requête utilise une clé composée à comparer à trois propriétés de l’objet <xref:System.IO.FileInfo>. Cette requête est beaucoup plus susceptible de trouver les fichiers ayant le même nom et un contenu similaire ou identique.  
   
 ## <a name="compile-the-code"></a>Compiler le code  
+
 Créez un projet d’application console Visual Basic, avec une `Imports` instruction pour l’espace de noms System. Linq.
   
 ## <a name="see-also"></a>Voir aussi

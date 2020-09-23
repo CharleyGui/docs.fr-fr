@@ -6,17 +6,18 @@ helpviewer_keywords:
 - enumerations [Visual Basic], declaring
 - declaring enumerations [Visual Basic]
 ms.assetid: db4ca1c3-f429-4c81-ae81-29e0157b29fd
-ms.openlocfilehash: c8f228c205c93adf7f2f555dc840a7daac61950b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 752b425ba32efe41a1ab1aa75de20039d36f5e50
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414451"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058896"
 ---
 # <a name="how-to-declare-enumerations-visual-basic"></a>Comment : déclarer des énumérations (Visual Basic)
+
 Vous créez une énumération avec l' `Enum` instruction dans la section déclarations d’une classe ou d’un module. Vous ne pouvez pas déclarer une énumération dans une méthode. Pour spécifier le niveau d’accès approprié, utilisez `Private` , `Protected` , `Friend` ou `Public` .  
   
- Un `Enum` type a un nom, un type sous-jacent et un ensemble de champs, chacun représentant une constante. Le nom doit être un qualificateur Visual Basic .NET valide. Le type sous-jacent doit être l’un des types d’entiers, `Byte` , `Short` `Long` ou `Integer` . La valeur par défaut est `Integer`. Les énumérations sont toujours fortement typées et ne sont pas interchangeables avec des types de nombres entiers.  
+ Un `Enum` type a un nom, un type sous-jacent et un ensemble de champs, chacun représentant une constante. Le nom doit être un qualificateur Visual Basic .NET valide. Le type sous-jacent doit être l’un des types d’entiers, `Byte` , `Short` `Long` ou `Integer` . `Integer` est la valeur par défaut. Les énumérations sont toujours fortement typées et ne sont pas interchangeables avec des types de nombres entiers.  
   
  Les énumérations ne peuvent pas avoir de valeurs à virgule flottante. Si une valeur à virgule flottante est assignée à une énumération avec `Option Strict On` , une erreur de compilateur se produit. Si `Option Strict` est `Off` , la valeur est automatiquement convertie en `Enum` type.  
   
