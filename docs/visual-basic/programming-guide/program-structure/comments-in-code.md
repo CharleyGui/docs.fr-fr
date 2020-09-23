@@ -14,14 +14,15 @@ helpviewer_keywords:
 - comments
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
-ms.openlocfilehash: 9f9174896181e427c73936a1bb91fa13235e70be
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b0077bdae3bad1d67c3d26e503d05f318982eb80
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550987"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91099019"
 ---
 # <a name="comments-in-code-visual-basic"></a>Commentaires dans le code (Visual Basic)
+
 Lorsque vous lisez les exemples de code, vous rencontrez souvent le symbole de commentaire (`'`). Ce symbole indique au compilateur Visual Basic d’ignorer le texte qui le suit ou le *Commentaire*. Les commentaires sont de courtes explications destinées à éclairer ceux qui lisent le code.  
   
  En programmation, il est hautement recommandé de faire précéder toutes les procédures d'un commentaire court qui décrit les caractéristiques fonctionnelles de la procédure (ce qu'elle fait). Ceci est utile tant pour l'auteur du code lui-même que pour toute autre personne amenée à consulter le code. Vous devez séparer les détails relatifs à l'implémentation (comment la procédure fait ce qu'elle doit faire) des commentaires décrivant les caractéristiques fonctionnelles. Si vous fournissez des informations d'implémentation dans la description, n'oubliez pas de les mettre à jour lors de la mise à jour de la fonction.  
@@ -35,6 +36,7 @@ Lorsque vous lisez les exemples de code, vous rencontrez souvent le symbole de c
  [!code-vb[VbVbcnConventions#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#17)]  
   
 ## <a name="commenting-guidelines"></a>Recommandations sur le commentaire  
+
  Le tableau suivant fournit des recommandations générales sur les types de commentaires qui peuvent précéder une section de code. Il s’agit de suggestions ; Visual Basic n’applique pas les règles d’ajout de commentaires. Procédez de la façon que vous jugez la plus efficace pour vous et toute personne amenée à lire votre code.  
   
 |||  
@@ -44,7 +46,7 @@ Lorsque vous lisez les exemples de code, vous rencontrez souvent le symbole de c
 |Hypothèses|Répertorie chaque variable externe, contrôle, fichier ouvert ou autre élément auquel la procédure accède.|  
 |Effets|Répertorie chaque variable externe, contrôle ou fichier affecté, ainsi que ses effets (uniquement si ce n'est pas évident)|  
 |Entrées|Spécifie l’objectif attaché à l’argument|  
-|Retours|Explique les valeurs retournées par la procédure.|  
+|retourne :|Explique les valeurs retournées par la procédure.|  
   
  N'oubliez pas :  
   

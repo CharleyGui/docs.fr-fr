@@ -6,14 +6,15 @@ helpviewer_keywords:
 - win32manifest compiler option [Visual Basic]
 - -win32manifest compiler option [Visual Basic]
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
-ms.openlocfilehash: 6f77649365f8ca7b163cd55854aa9960d88f2984
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f8329ce2e7597f802d75ec85a580f1a3bd5cfc97
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414257"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098876"
 ---
 # <a name="-win32manifest-visual-basic"></a>-win32manifest (Visual Basic)
+
 Identifie un fichier manifeste d'application Win32 défini par l'utilisateur à incorporer dans le fichier exécutable portable (PE) d'un projet.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,6 +30,7 @@ Identifie un fichier manifeste d'application Win32 défini par l'utilisateur à 
 |`fileName`|Chemin d’accès du fichier manifeste personnalisé.|  
   
 ## <a name="remarks"></a>Notes  
+
  Par défaut, le compilateur Visual Basic incorpore un manifeste d’application qui spécifie le niveau d’exécution demandé asInvoker. Il crée le manifeste dans le même dossier que celui dans lequel le fichier exécutable est généré, en général le dossier bin\Debug ou bin\Release lorsque vous utilisez Visual Studio. Si vous souhaitez fournir un manifeste personnalisé, par exemple pour spécifier le niveau d’exécution demandé de highestAvailable ou requireAdministrator, utilisez cette option pour spécifier le nom du fichier.  
   
 > [!NOTE]
@@ -47,6 +49,7 @@ Identifie un fichier manifeste d'application Win32 défini par l'utilisateur à 
  Vous pouvez fournir le manifeste d’application en tant qu’étape de publication personnalisée ou dans le cadre d’un fichier de ressources Win32 à l’aide de l' `-nowin32manifest` option. Utilisez cette même option pour que votre application soit soumise à la virtualisation des fichiers ou des registres dans Windows Vista. Cela empêchera le compilateur de créer et d’incorporer un manifeste par défaut dans le fichier PE.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre le manifeste par défaut que le compilateur Visual Basic insère dans un fichier PE.  
   
 > [!NOTE]

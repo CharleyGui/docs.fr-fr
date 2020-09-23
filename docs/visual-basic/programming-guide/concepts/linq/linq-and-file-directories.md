@@ -2,14 +2,15 @@
 title: LINQ et répertoires de fichiers
 ms.date: 07/20/2015
 ms.assetid: 159fd5c3-3926-4071-ae78-d8e423287eb7
-ms.openlocfilehash: 9738dc2b07b33b2d96f8134e8418c54aae53e6a1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 670611cd285a1b1f2602e2c700c2bdeb56db943f
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397517"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91100163"
 ---
 # <a name="linq-and-file-directories-visual-basic"></a>LINQ et répertoires de fichiers (Visual Basic)
+
 De nombreuses opérations du système de fichiers sont des requêtes et l’approche de LINQ leur convient donc bien.  
   
  Notez que les requêtes de cette section sont non destructives. Elles ne sont pas utilisées pour modifier le contenu des fichiers ou des dossiers d’origine. La règle suivie est que les requêtes ne doivent pas provoquer des effets secondaires. En règle générale, tout code (y compris les requêtes qui utilisent des opérateurs de création / mise à jour / suppression) qui modifie les données sources doit rester distinct du code qui interroge simplement les données.  
@@ -38,6 +39,7 @@ De nombreuses opérations du système de fichiers sont des requêtes et l’appr
  Montre comment itérer au sein des dossiers d’une arborescence, ouvrir chaque fichier et interroger le contenu du fichier.  
   
 ## <a name="comments"></a>Commentaires  
+
  La création d’une source de données représentant avec précision le contenu du système de fichiers et la gestion correcte des exceptions induisent une certaine complexité. Les exemples de cette section créent une collection d’instantanés d’objets <xref:System.IO.FileInfo> qui représente tous les fichiers d’un dossier racine spécifié et de tous ses sous-dossiers. L’état réel de chaque <xref:System.IO.FileInfo> peut changer dans le temps entre le début et la fin de l’exécution d’une requête. Par exemple, vous pouvez créer une liste d’objets <xref:System.IO.FileInfo> à utiliser comme source de données. Si vous essayez d’accéder à la propriété `Length` dans une requête, l’objet <xref:System.IO.FileInfo> tente d’accéder au système de fichiers pour mettre à jour la valeur de `Length`. Si le fichier n’existe plus, vous obtenez une exception <xref:System.IO.FileNotFoundException> dans votre requête, même si vous n’interrogez pas directement le système de fichiers. Certaines requêtes de cette section utilisent une méthode distincte qui consomme ces exceptions particulières dans certains cas. Une autre option consiste à conserver votre source de données à jour dynamiquement en utilisant <xref:System.IO.FileSystemWatcher>.  
   
 ## <a name="see-also"></a>Voir aussi

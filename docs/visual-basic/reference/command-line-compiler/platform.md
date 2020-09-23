@@ -6,14 +6,15 @@ helpviewer_keywords:
 - /platform compiler option [Visual Basic]
 - -platform compiler option [Visual Basic]
 ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
-ms.openlocfilehash: a6226b73d5d5d4d48a71afe39e8a546019d4c0bc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 488a1da6b25bcb4b42f0d355c6faee542046d0f5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352347"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098889"
 ---
 # <a name="-platform-visual-basic"></a>-plateforme (Visual Basic)
+
 Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut exécuter le fichier de sortie.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut ex�
 |`anycpu32bitpreferred`|Compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. L'application s'exécutera en tant qu'application 32 bits sur les versions 32 et 64 bits de Windows. Cet indicateur n’est valide que pour les fichiers exécutables (. EXE) et requiert .NET Framework 4,5.|  
   
 ## <a name="remarks"></a>Notes  
+
  Utilisez l'option `-platform` pour spécifier le type de processeur ciblé par le fichier de sortie.  
   
  En général, les assemblys .NET Framework écrits en Visual Basic s'exécutent de la même façon, quelle que soit la plateforme. Cependant, dans certains cas, leur comportement peut varier d'une plateforme à une autre. Voici les cas les plus courants :  
@@ -75,6 +77,7 @@ Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut ex�
      Pour plus d’informations, consultez [compiler, page du concepteur de projets (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant montre comment utiliser l'option de compilateur `-platform`.  
   
 ```console

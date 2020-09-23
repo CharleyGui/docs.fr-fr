@@ -5,14 +5,15 @@ helpviewer_keywords:
 - conditional compilation [Visual Basic], about conditional compilation
 - compilation [Visual Basic], conditional
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
-ms.openlocfilehash: c3eb1eb57b3d76e762ed53edb3b168ad96abec39
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e59296882edc018259816c73b6ae861b3b296783
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403263"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098967"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a>Compilation conditionnelle en Visual Basic
+
 Dans la *compilation conditionnelle*, les blocs de code particuliers d’un programme sont compilés de manière sélective, tandis que d’autres sont ignorés.  
   
  Par exemple, vous pouvez écrire des instructions de débogage qui comparent la vitesse des différentes approches de la même tâche de programmation, ou vous pouvez souhaiter localiser une application pour plusieurs langues. Les instructions de compilation conditionnelle sont conçues pour s’exécuter pendant la compilation, et non au moment de l’exécution.  
@@ -27,6 +28,7 @@ Dans la *compilation conditionnelle*, les blocs de code particuliers d’un prog
 > La saisie semi-automatique ne fonctionne pas lors de la modification du code et de l’utilisation de directives de compilation conditionnelle si le code ne fait pas partie de la branche active.  
   
 ## <a name="declaring-conditional-compilation-constants"></a>Déclaration des constantes de compilation conditionnelle  
+
  Vous pouvez définir des constantes de compilation conditionnelle de l’une des trois façons suivantes :  
   
 - Dans le **Concepteur de projets**  
@@ -41,7 +43,7 @@ Dans la *compilation conditionnelle*, les blocs de code particuliers d’un prog
 |---|---|  
 |**Concepteur de projets**|Public pour tous les fichiers du projet|  
 |Ligne de commande|Public pour tous les fichiers passés au compilateur de ligne de commande|  
-|`#Const`instruction dans le code|Privé pour le fichier dans lequel il est déclaré|  
+|`#Const` instruction dans le code|Privé pour le fichier dans lequel il est déclaré|  
   
 |Pour définir des constantes dans le concepteur de projets|  
 |---|  
@@ -61,7 +63,8 @@ Dans la *compilation conditionnelle*, les blocs de code particuliers d’un prog
 |---|---|  
 |[Structure de programme et conventions de code](program-structure-and-code-conventions.md)|Fournit des suggestions pour faciliter la lecture et la maintenance de votre code.|  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
+
  [#Const directive](../../language-reference/directives/const-directive.md)  
   
  [#If... Then... #Else directives](../../language-reference/directives/if-then-else-directives.md)  

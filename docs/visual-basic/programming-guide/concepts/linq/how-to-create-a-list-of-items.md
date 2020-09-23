@@ -5,17 +5,19 @@ helpviewer_keywords:
 - list [LINQ in Visual Basic]
 - objects [Visual Basic], list of items
 ms.assetid: fe941aba-6340-455c-8b1f-ffd9c3eb1ac5
-ms.openlocfilehash: 7b3df58fb3d56a1eb3ac6efcca57c76be470e4bf
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6b1adea2aa8b51a8cb5d863fd1eb2d5adb0274c5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414619"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91100228"
 ---
 # <a name="how-to-create-a-list-of-items"></a>Procédure : créer une liste d’éléments
+
 Le code fourni dans cette rubrique définit une classe `Student` et crée une liste d'instances de la classe. La liste est conçue pour prendre en charge la rubrique [procédure pas à pas : écriture de requêtes dans Visual Basic](walkthrough-writing-queries.md). Elle peut également être utilisée pour toute application qui requiert une liste d'objets. Le code définit les éléments de la liste d'étudiants en utilisant des initialiseurs d'objets.  
   
 ## <a name="example"></a>Exemple  
+
  Si vous travaillez sur la procédure pas à pas, vous pouvez utiliser ce code pour le fichier Module1.vb du projet créé. Remplacez simplement les lignes marquées de *** dans la méthode `Main` par les requêtes et les exécutions de requête qui sont fournies dans la procédure pas à pas.  
   
  [!code-vb[VbLINQHowToCreateList#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowToCreateList/VB/Class1.vb#1)]  

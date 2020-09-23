@@ -9,14 +9,15 @@ helpviewer_keywords:
 - optionexplicit compiler option [Visual Basic]
 - -optionexplicit compiler option [Visual Basic]
 ms.assetid: 5d296ab3-bafe-4c4d-9887-78f162ed86c7
-ms.openlocfilehash: b004acb0c1c7d145c59a1e3a88ef7f1d405a91c6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 65cc3fb1b2fa9daa04013caa2b93a3949d0a15b9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400555"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098934"
 ---
 # <a name="-optionexplicit"></a>-optionexplicit
+
 Fait en sorte que le compilateur signale des erreurs si les variables ne sont pas déclarées avant d’être utilisées.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,10 +27,12 @@ Fait en sorte que le compilateur signale des erreurs si les variables ne sont pa
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `+` &#124; `-`  
- Facultatif. Spécifiez `-optionexplicit+` pour exiger une déclaration explicite de variables. L' `-optionexplicit+` option est la valeur par défaut et est identique à `-optionexplicit` . L' `-optionexplicit-` option active la déclaration implicite de variables.  
+ Optionnel. Spécifiez `-optionexplicit+` pour exiger une déclaration explicite de variables. L' `-optionexplicit+` option est la valeur par défaut et est identique à `-optionexplicit` . L' `-optionexplicit-` option active la déclaration implicite de variables.  
   
 ## <a name="remarks"></a>Notes  
+
  Si le fichier de code source contient une [instruction Option Explicit](../../language-reference/statements/option-explicit-statement.md), l’instruction remplace le `-optionexplicit` paramètre du compilateur de ligne de commande.  
   
 ### <a name="to-set--optionexplicit-in-the-visual-studio-ide"></a>Pour définir-optionexplicit dans l’IDE de Visual Studio  
@@ -41,6 +44,7 @@ Fait en sorte que le compilateur signale des erreurs si les variables ne sont pa
 3. Modifiez la valeur dans la zone **Option Explicit** .  
   
 ## <a name="example"></a>Exemple  
+
  Le code suivant compile lorsque `-optionexplicit-` est utilisé.  
   
  [!code-vb[VbVbalrCompiler#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionExplicitOff.vb#5)]  
