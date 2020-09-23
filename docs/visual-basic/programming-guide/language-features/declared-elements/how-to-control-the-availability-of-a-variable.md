@@ -11,14 +11,15 @@ helpviewer_keywords:
 - declared elements [Visual Basic], access level
 - Protected keyword [Visual Basic], accessing variables
 ms.assetid: eaf4f073-7922-43ce-ae1e-90ff376ae947
-ms.openlocfilehash: 0bfa7fa2bdac4746827884c1dad62734c549a48e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e6173a0eaa0bf84abb1979711c6df932533c5ce9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357385"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086112"
 ---
 # <a name="how-to-control-the-availability-of-a-variable-visual-basic"></a>Comment : contrôler la disponibilité d'une variable (Visual Basic)
+
 Vous contrôlez la disponibilité d’une variable en spécifiant son *niveau d’accès*. Le niveau d’accès détermine le code qui a l’autorisation de lire ou d’écrire dans la variable.  
   
 - Les *variables membres* (définies au niveau du module et en dehors de toute procédure) sont par défaut accessibles au public, ce qui signifie que tout code qui peut les voir peut y accéder. Vous pouvez modifier ce paramétrage en spécifiant un modificateur d’accès.  
@@ -45,7 +46,7 @@ Vous contrôlez la disponibilité d’une variable en spécifiant son *niveau d�
   
      Vous pouvez lire ou écrire dans la variable à partir de n’importe quel code qui interagit avec votre assembly.  
   
- -ou-  
+ - ou -  
   
 1. Pour une variable locale, placez l' `Dim` instruction de la variable à l’intérieur d’une procédure.  
   
@@ -54,6 +55,7 @@ Vous contrôlez la disponibilité d’une variable en spécifiant son *niveau d�
      Vous pouvez lire ou écrire dans la variable à n’importe quel endroit de la procédure, mais pas en dehors de celle-ci.  
   
 ## <a name="protected-and-friend-access"></a>Accès protégé et ami  
+
  Vous pouvez limiter le niveau d’accès d’une variable à sa classe et à ses classes dérivées, ou à son assembly. Vous pouvez également spécifier l’Union de ces limitations, qui autorise l’accès à partir du code dans toute classe dérivée ou à tout autre emplacement dans le même assembly. Vous spécifiez cette Union en combinant `Protected` les `Friend` Mots clés et dans la même déclaration.  
   
 #### <a name="to-make-a-variable-accessible-only-from-within-its-class-and-any-derived-classes"></a>Pour rendre une variable accessible uniquement à partir de sa classe et de toutes les classes dérivées  
@@ -73,6 +75,7 @@ Vous contrôlez la disponibilité d’une variable en spécifiant son *niveau d�
      Vous pouvez lire ou écrire dans la variable depuis n’importe quel endroit du module, de la classe ou de la structure, ainsi que depuis n’importe quel code dans le même assembly, mais pas à l’extérieur de l’assembly.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre des déclarations de variables avec des niveaux d’accès,,, `Public` `Protected` `Friend` `Protected Friend` et `Private` . Notez que lorsque l' `Dim` instruction spécifie un niveau d’accès, vous n’avez pas besoin d’inclure le `Dim` mot clé.  
   
 ```vb  
@@ -84,6 +87,7 @@ Private numberForMeOnly As Integer
 ```  
   
 ## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+
  Plus le niveau d’accès d’une variable est restrictif, plus les risques de mauvaise utilisation du code malveillant sont faibles.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -92,5 +96,5 @@ Private numberForMeOnly As Integer
 - [Dim (instruction)](../../../language-reference/statements/dim-statement.md)
 - [Public](../../../language-reference/modifiers/public.md)
 - [Protect](../../../language-reference/modifiers/protected.md)
-- [Contact](../../../language-reference/modifiers/friend.md)
+- [Friend](../../../language-reference/modifiers/friend.md)
 - [Privé](../../../language-reference/modifiers/private.md)

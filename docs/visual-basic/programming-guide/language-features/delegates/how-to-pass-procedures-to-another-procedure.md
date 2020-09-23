@@ -5,14 +5,15 @@ helpviewer_keywords:
 - AddressOf operator [Visual Basic]
 - delegates [Visual Basic], passing procedures
 ms.assetid: 5adbba15-5a1d-413f-ab3e-3ff6cc0a4669
-ms.openlocfilehash: 36f623068372614ae034a8a7b31bffb7496f98b1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3a7a653bbf238b50e3c7339da76df0f68ab9b59f
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410693"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085787"
 ---
 # <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a>Comment : passer des procédures à une autre procédure en Visual Basic
+
 Cet exemple montre comment utiliser des délégués pour passer une procédure à une autre procédure.  
   
  Un délégué est un type que vous pouvez utiliser comme tout autre type dans Visual Basic. L' `AddressOf` opérateur retourne un objet délégué lorsqu’il est appliqué à un nom de procédure.  

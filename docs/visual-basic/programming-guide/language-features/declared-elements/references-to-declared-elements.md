@@ -6,14 +6,15 @@ helpviewer_keywords:
 - references [Visual Basic], declared elements
 - qualified names [Visual Basic]
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
-ms.openlocfilehash: 23bff2eb098982f67ecb1b709e59096d5259a644
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: af5be47335b6d48bd6c0bccc30b8db15c9912807
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405181"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085878"
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>Références aux éléments déclarés (Visual Basic)
+
 Quand votre code fait référence à un élément déclaré, le compilateur Visual Basic correspond au nom dans votre référence à la déclaration appropriée de ce nom. Si plusieurs éléments sont déclarés avec le même nom, vous pouvez contrôler lequel de ces éléments doit être référencé en *qualifiant* son nom.  
   
  Le compilateur tente de faire correspondre une référence de nom à une déclaration de nom avec l’étendue la plus *étroite*. Cela signifie qu’elle commence par le code qui fait la référence et fonctionne vers l’extérieur à travers les niveaux successifs des éléments contenants.  
@@ -42,6 +43,7 @@ End Module
 ```  
   
 ## <a name="qualifying-an-element-name"></a>Qualification d’un nom d’élément  
+
  Si vous souhaitez remplacer ce processus de recherche et spécifier un nom déclaré dans une étendue plus large, vous devez *qualifier* le nom avec l’élément conteneur de la portée plus large. Dans certains cas, vous devrez peut-être également qualifier l’élément conteneur.  
   
  Qualifier un nom signifie le précéder dans votre instruction source avec des informations qui identifient l’emplacement de définition de l’élément cible. Ces informations sont appelées une *chaîne de qualification*. Il peut inclure un ou plusieurs espaces de noms et un module, une classe ou une structure.  
@@ -105,6 +107,7 @@ Dim winLabel As New win.Label()
 ```  
   
 ## <a name="members-of-other-containing-elements"></a>Membres d’autres éléments conteneur  
+
  Quand vous utilisez un membre non partagé d’une autre classe ou structure, vous devez d’abord qualifier le nom du membre à l’aide d’une variable ou d’une expression qui pointe vers une instance de la classe ou de la structure. Dans l’exemple suivant, `demoClass` est une instance d’une classe nommée `class1` .  
   
 ```vb  
@@ -150,6 +153,7 @@ End Module
 ```  
   
 ## <a name="references-to-projects"></a>Références aux projets  
+
  Pour utiliser des éléments [publics](../../../language-reference/modifiers/public.md) définis dans un autre projet, vous devez d’abord définir une *référence* à l’assembly ou la bibliothèque de types de ce projet. Pour définir une référence, cliquez sur **Ajouter une référence** dans le menu **projet** ou utilisez l’option du compilateur de ligne [de commande-Reference (Visual Basic)](../../../reference/command-line-compiler/reference.md) .  
   
  Par exemple, vous pouvez utiliser le modèle objet XML de l' .NET Framework. Si vous définissez une référence à l' <xref:System.Xml> espace de noms, vous pouvez déclarer et utiliser l’une de ses classes, par exemple <xref:System.Xml.XmlDocument> . L'exemple suivant utilise <xref:System.Xml.XmlDocument>.  
@@ -161,6 +165,7 @@ Dim xDoc As System.Xml.XmlDocument
 ```  
   
 ## <a name="importing-containing-elements"></a>Importation d’éléments contenants  
+
  Vous pouvez utiliser l' [instruction Imports (espace de noms et type .net)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md) pour *Importer* les espaces de noms qui contiennent les modules ou les classes que vous souhaitez utiliser. Cela vous permet de faire référence aux éléments définis dans un espace de noms importé sans qualification complète de leurs noms. L’exemple suivant réécrit l’exemple précédent pour importer l' <xref:System.Xml> espace de noms.  
   
 ```vb  
@@ -186,11 +191,13 @@ Dim xDoc As xD.XmlDocument
  Vous pouvez également utiliser l' `Imports` instruction pour importer des modules, des classes, des structures et des énumérations. Vous pouvez ensuite utiliser les membres de ces éléments importés sans qualification. Toutefois, vous devez toujours qualifier les membres non partagés des classes et des structures à l’aide d’une variable ou d’une expression qui prend la valeur d’une instance de la classe ou de la structure.  
   
 ## <a name="naming-guidelines"></a>Indications concernant l'attribution d'un nom  
+
  Lorsque vous définissez deux ou plusieurs éléments de programmation portant le même nom, une *ambiguïté de nom* peut se produire lorsque le compilateur tente de résoudre une référence à ce nom. Si plusieurs définitions sont dans la portée, ou si aucune définition n’est dans la portée, la référence est insoluble. Pour obtenir un exemple, consultez « exemple de référence qualifiée » dans cette page d’aide.  
   
  Vous pouvez éviter toute ambiguïté de nom en attribuant à tous vos éléments des noms uniques. Vous pouvez ensuite faire référence à n’importe quel élément sans avoir à qualifier son nom avec un espace de noms, un module ou une classe. Vous réduisez également le risque de faire référence à un élément incorrect.  
   
 ## <a name="shadowing"></a>Copie shadow  
+
  Lorsque deux éléments de programmation partagent le même nom, l’un d’eux peut masquer ou *occulter*l’autre. Un élément occulté n’est pas disponible à des fins de référence ; au lieu de cela, lorsque votre code utilise le nom d’élément occulté, le compilateur Visual Basic le résout en l’élément occultant. Pour obtenir une explication plus détaillée des exemples, consultez [occultation dans Visual Basic](shadowing.md).  
   
 ## <a name="see-also"></a>Voir aussi

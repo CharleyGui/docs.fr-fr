@@ -12,17 +12,19 @@ helpviewer_keywords:
 - properties [Visual Basic], setting at run time
 - CallByName function
 ms.assetid: 79a7b8b4-b8c7-4ad8-aca8-12a9a2b32f03
-ms.openlocfilehash: 29072479db36f9f8a81ffd7f3f5b10208ebaa984
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9f28548c27545d94dde38cef3e9c56f98a69b259
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410655"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086086"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>Appel d'une propriété ou méthode à l'aide d'un nom de chaîne (Visual Basic)
+
 Dans la plupart des cas, vous pouvez découvrir les propriétés et les méthodes d’un objet au moment du design, et écrire du code pour les gérer. Toutefois, dans certains cas, il se peut que vous ne connaissiez pas les propriétés et les méthodes d’un objet à l’avance, ou que vous souhaitiez simplement permettre à un utilisateur final de spécifier des propriétés ou d’exécuter des méthodes au moment de l’exécution.  
   
 ## <a name="callbyname-function"></a>Fonction CallByName  
+
  Prenons l’exemple d’une application cliente qui évalue les expressions entrées par l’utilisateur en passant un opérateur à un composant COM. Supposons que vous ajoutez constamment de nouvelles fonctions au composant qui nécessitent de nouveaux opérateurs. Lorsque vous utilisez des techniques d’accès aux objets standard, vous devez recompiler et redistribuer l’application cliente avant de pouvoir utiliser les nouveaux opérateurs. Pour éviter cela, vous pouvez utiliser la `CallByName` fonction pour passer les nouveaux opérateurs en tant que chaînes, sans modifier l’application.  
   
  La `CallByName` fonction vous permet d’utiliser une chaîne pour spécifier une propriété ou une méthode au moment de l’exécution. La signature de la `CallByName` fonction se présente comme suit :  

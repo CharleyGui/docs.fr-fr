@@ -4,14 +4,15 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-ms.openlocfilehash: 19e14953c08f90ea1ab245fa3124a462ccba162f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d0dbe785edf7a9aa029d4be08a9b854cf1fb2b79
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408736"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085293"
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Visual Basic options du compilateur classées par ordre alphabétique
+
 Le compilateur de ligne de commande Visual Basic est fourni comme alternative à la compilation de programmes à partir de l’environnement de développement intégré (IDE) de Visual Studio. La liste suivante répertorie les Visual Basic options du compilateur de ligne de commande triées par ordre alphabétique.  
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
@@ -26,11 +27,11 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 |[-baseaddress](baseaddress.md)|Spécifie l'adresse de base d'une DLL.|  
 |[-bugreport](bugreport.md)|Crée un fichier qui contient des informations qui facilitent le signalement d'un bogue.|  
 |`-checksumalgorithm:<alg>`|Spécifiez l'algorithme de calcul de la somme de contrôle du fichier source stockée dans le fichier PDB.  Les valeurs prises en charge sont : SHA1 (par défaut) ou SHA256. <br>En raison de problèmes de collision avec SHA1, Microsoft recommande SHA256 ou une meilleure solution.|  
-|[-codepage](codepage.md)|Spécifie la page de codes à utiliser pour tous les fichiers de code source inclus dans la compilation.|  
+|[-CodePage](codepage.md)|Spécifie la page de codes à utiliser pour tous les fichiers de code source inclus dans la compilation.|  
 |[-débogage](debug.md)|Génère des informations de débogage.|  
-|[-define](define.md)|Définit des symboles de compilation conditionnelle.|  
+|[-définir](define.md)|Définit des symboles de compilation conditionnelle.|  
 |[-delaysign](delaysign.md)|Spécifie si l'assembly sera complètement ou partiellement signé.|  
-|[-deterministic](deterministic.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
+|[-déterministe](deterministic.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
 |[-doc](doc.md)|Traite les commentaires de documentation pour les diriger vers un fichier XML.|  
 |[-errorreport](errorreport.md)|Spécifie comment le compilateur Visual Basic doit signaler les erreurs internes du compilateur.|  
 |[-filealign](filealign.md)|Spécifie où les sections du fichier de sortie doivent être alignées.|  

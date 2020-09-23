@@ -6,17 +6,19 @@ helpviewer_keywords:
 - Visual Basic code, XML
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
-ms.openlocfilehash: fca6c05b4baae4689e9d5e5698cee75f0c5470ec
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 52c8822c34a85af81dde505d36e6e159745a0d12
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84374744"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085688"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Manipulation de code XML dans Visual Basic
+
 Vous pouvez utiliser des *littéraux XML* pour charger du code XML à partir d’une source externe, telle qu’une chaîne, un fichier ou un flux. Vous pouvez ensuite utiliser [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour manipuler le XML et utiliser LINQ (Language-Integrated Query) pour interroger le XML.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Guide pratique : charger du code XML à partir d’un fichier, d’une chaîne ou d’un flux](how-to-load-xml-from-a-file-string-or-stream.md)  
  Montre comment charger du code XML dans <xref:System.Xml.Linq.XDocument> un <xref:System.Xml.Linq.XElement> objet ou à partir d’un fichier texte, d’une chaîne ou d’un flux.  
   
@@ -27,6 +29,7 @@ Vous pouvez utiliser des *littéraux XML* pour charger du code XML à partir d�
  Montre comment modifier les éléments, les attributs et les valeurs dans un littéral XML.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Propriétés d'axe XML](../../../language-reference/xml-axis/index.md)  
  Fournit des liens vers des sections qui décrivent les différentes propriétés d’accès XML.  
   

@@ -9,17 +9,19 @@ helpviewer_keywords:
 - TypeName function
 - objects [Visual Basic], type determining
 ms.assetid: d95e7ad1-cd63-41d6-9a28-d7a1380d49c1
-ms.openlocfilehash: 3b1c4ad0ab4fd8d2897aff6ad9097cdc81272455
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ae338bc9bad9646abc045a652d4ef33a8863354b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410642"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086060"
 ---
 # <a name="determining-object-type-visual-basic"></a>Détermination du type Object (Visual Basic)
+
 Les variables objets génériques (autrement dit, les variables que vous déclarez comme `Object` ) peuvent contenir des objets de n’importe quelle classe. Lorsque vous utilisez des variables de type `Object` , vous devrez peut-être effectuer des actions différentes en fonction de la classe de l’objet ; par exemple, certains objets peuvent ne pas prendre en charge une propriété ou une méthode particulière. Visual Basic fournit deux méthodes pour déterminer le type d’objet qui est stocké dans une variable objet : la `TypeName` fonction et l' `TypeOf...Is` opérateur.  
   
 ## <a name="typename-and-typeofis"></a>TypeName et TypeOf... Non  
+
  La `TypeName` fonction retourne une chaîne et constitue le meilleur choix lorsque vous avez besoin de stocker ou d’afficher le nom de classe d’un objet, comme indiqué dans le fragment de code suivant :  
   
  [!code-vb[VbVbalrOOP#92](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#92)]  
@@ -51,4 +53,4 @@ Les variables objets génériques (autrement dit, les variables que vous déclar
 - [Object Data Type](../../../language-reference/data-types/object-data-type.md)
 - [If...Then...Else (instruction)](../../../language-reference/statements/if-then-else-statement.md)
 - [String, type de données](../../../language-reference/data-types/string-data-type.md)
-- [Entier (type de données)](../../../language-reference/data-types/integer-data-type.md)
+- [Integer (type de données)](../../../language-reference/data-types/integer-data-type.md)

@@ -17,19 +17,21 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], naming conflicts
 - declarations [Visual Basic], namespaces
 ms.assetid: 08ba2738-df52-4140-bc55-f57c871c9b73
-ms.openlocfilehash: 4b09284b8282c481e406050d37cbdb2f3c8686bc
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6e067d72e557b97f8626b148e173e3d1583f92b8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414503"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086268"
 ---
 # <a name="enumerations-and-name-qualification-visual-basic"></a>Énumérations et qualification de noms (Visual Basic)
+
 Normalement, lorsque vous faites référence à un membre d’une énumération, vous devez qualifier le nom du membre avec le nom de l’énumération. Par exemple, pour faire référence au `Sunday` membre de votre `Days` énumération, vous devez utiliser la syntaxe suivante :  
   
  [!code-vb[VbEnumsTask#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#18)]  
   
 ## <a name="using-the-imports-statement"></a>Utilisation de l’instruction Imports  
+
  Vous pouvez éviter d’utiliser des noms qualifiés complets en ajoutant une `Imports` instruction à la section déclarations d’espace de noms de votre code, comme dans l’exemple suivant :  
   
  [!code-vb[VbEnumsTask#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#22)]  
@@ -59,4 +61,4 @@ Normalement, lorsque vous faites référence à un membre d’une énumération,
 - [Constantes et types de données littérales](constant-and-literal-data-types.md)
 - [Enum (instruction)](../../../language-reference/statements/enum-statement.md)
 - [Imports, instruction (espace de noms et type .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [Types de données](../../../language-reference/data-types/index.md)
+- [Data types](../../../language-reference/data-types/index.md)

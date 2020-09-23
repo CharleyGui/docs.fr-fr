@@ -6,14 +6,15 @@ helpviewer_keywords:
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-ms.openlocfilehash: 3f476f6b6db1a788002a938eb5ae4bbbed7a5dae
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c81486243195f7d022bd474ef6db20d069b3a018
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408573"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085150"
 ---
 # <a name="-keyfile"></a>-keyfile
+
 Spécifie un fichier contenant une clé ou une paire de clés afin d'attribuer un nom fort à un assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,11 +24,13 @@ Spécifie un fichier contenant une clé ou une paire de clés afin d'attribuer u
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `file`  
  Obligatoire. Fichier qui contient la clé. Si le nom de fichier contient un espace, mettez-le entre guillemets ("").  
   
 ## <a name="remarks"></a>Notes  
- Le compilateur insère la clé publique dans le manifeste de l’assembly, puis signe l’assembly final avec la clé privée. Pour générer un fichier de clé, tapez `sn -k file` à la ligne de commande. Pour plus d’informations, consultez [sn. exe (outil Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
+
+ Le compilateur insère la clé publique dans le manifeste de l’assembly, puis signe l’assembly final avec la clé privée. Pour générer un fichier de clé, tapez `sn -k file` à la ligne de commande. Pour plus d’informations, consultez [Sn.exe (outil Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
   
  Si vous compilez avec `-target:module` , le nom du fichier de clé est conservé dans le module et incorporé dans l’assembly créé quand vous compilez un assembly avec [-addmodule](addmodule.md).  
   

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - literals [Visual Basic], coercing data type
 - declarations [Visual Basic], data types
 ms.assetid: 057206d2-3a5b-40b9-b3af-57446f9b52fa
-ms.openlocfilehash: b94259326b42104db05d9fc5bb09f686075d0759
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 03d693653cd166bbf1096031f1a864b492e2e896
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414529"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086294"
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>Constantes et types de données littérales (Visual Basic)
+
 Un littéral est une valeur qui est exprimée comme étant elle-même plutôt que comme une valeur de variable ou le résultat d’une expression, tel que le numéro 3 ou la chaîne « Hello ». Une constante est un nom explicite qui prend la place d’un littéral et conserve cette même valeur dans tout le programme, par opposition à une variable, dont la valeur peut changer.  
   
  Quand [Option Infer](../../../language-reference/statements/option-infer-statement.md) est `Off` et [option strict](../../../language-reference/statements/option-strict-statement.md) est `On` , vous devez déclarer toutes les constantes explicitement avec un type de données. Dans l’exemple suivant, le type de données de `MyByte` est déclaré explicitement comme type de données `Byte` :  
@@ -26,6 +27,7 @@ Un littéral est une valeur qui est exprimée comme étant elle-même plutôt qu
  Lorsque `Option Infer` est `On` ou `Option Strict` a `Off` la clause, vous pouvez déclarer une constante sans spécifier de type de données avec une `As` clause. Le compilateur détermine le type de la constante à partir du type de l’expression. Un littéral d’entier numérique est converti par défaut en `Integer` type de données. Le type de données par défaut pour les nombres à virgule flottante est `Double` , et les mots clés `True` et `False` spécifient une `Boolean` constante.  
   
 ## <a name="literals-and-type-coercion"></a>Littéraux et forçage de type  
+
  Dans certains cas, vous souhaiterez peut-être forcer un littéral à un type de données particulier ; par exemple, lors de l’assignation d’une valeur littérale intégrale particulièrement importante à une variable de type `Decimal` . L’exemple suivant génère une erreur :  
   
 ```vb  
@@ -71,5 +73,5 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
 - [Vue d'ensemble des énumérations](enumerations-overview.md)
 - [How to: Declare an, énumération](how-to-declare-enumerations.md)
 - [Énumérations et qualification de noms](enumerations-and-name-qualification.md)
-- [Types de données](../../../language-reference/data-types/index.md)
+- [Data types](../../../language-reference/data-types/index.md)
 - [Constantes et énumérations](../../../language-reference/constants-and-enumerations.md)

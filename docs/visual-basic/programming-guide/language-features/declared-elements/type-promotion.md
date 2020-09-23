@@ -10,14 +10,15 @@ helpviewer_keywords:
 - type promotion
 - declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
-ms.openlocfilehash: 1e284b99a36cdf0f62aee2c45fd9f3bf544d1d81
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6c28ca22e96616ff09e147400bfdb2adb922ff0e
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410706"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085800"
 ---
 # <a name="type-promotion-visual-basic"></a>Promotion de type (Visual Basic)
+
 Quand vous déclarez un élément de programmation dans un module, Visual Basic promeut son étendue vers l’espace de noms contenant le module. C’est ce que l’on appelle la *promotion de type*.  
   
  L’exemple suivant montre une définition squelette d’un module et de deux membres de ce module.  
@@ -27,6 +28,7 @@ Quand vous déclarez un élément de programmation dans un module, Visual Basic 
  Dans `projModule` , les éléments de programmation déclarés au niveau du module sont promus en `projNamespace` . Dans l’exemple précédent, `basicEnum` et `innerClass` sont promus, mais `numberSub` n’est pas, car il n’est pas déclaré au niveau du module.  
   
 ## <a name="effect-of-type-promotion"></a>Effet de la promotion de type  
+
  L’effet de la promotion de type est qu’une chaîne de qualification n’a pas besoin d’inclure le nom du module. L’exemple suivant effectue deux appels à la procédure dans l’exemple précédent.  
   
  [!code-vb[VbVbalrDeclaredElements#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#2)]  
@@ -34,6 +36,7 @@ Quand vous déclarez un élément de programmation dans un module, Visual Basic 
  Dans l’exemple précédent, le premier appel utilise des chaînes de qualification complètes. Toutefois, cela n’est pas nécessaire en raison de la promotion de type. Le deuxième appel accède également aux membres du module sans inclure `projModule` dans les chaînes de qualification.  
   
 ## <a name="defeat-of-type-promotion"></a>Invalidation de la promotion de type  
+
  Si l’espace de noms a déjà un membre portant le même nom qu’un membre de module, la promotion de type est invalidée pour ce membre de module. L’exemple suivant montre une définition squelette d’une énumération et d’un module au sein du même espace de noms.  
   
  [!code-vb[VbVbalrDeclaredElements#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#3)]  
@@ -41,6 +44,7 @@ Quand vous déclarez un élément de programmation dans un module, Visual Basic 
  Dans l’exemple précédent, Visual Basic ne peut pas `abc` promouvoir `thisNameSpace` la classe vers, car il existe déjà une énumération portant le même nom au niveau de l’espace de noms. Pour accéder à `abcSub` , vous devez utiliser la chaîne de qualification complète `thisNamespace.thisModule.abc.abcSub` . Toutefois, `xyz` la classe est toujours promue et vous pouvez y accéder `xyzSub` avec la chaîne de qualification plus petite `thisNamespace.xyz.xyzSub` .  
   
 ### <a name="defeat-of-type-promotion-for-partial-types"></a>Non-manipulation de la promotion de type pour les types partiels  
+
  Si une classe ou une structure à l’intérieur d’un module utilise le mot clé [Partial](../../../language-reference/modifiers/partial.md) , la promotion de type est automatiquement invalidée pour cette classe ou structure, que l’espace de noms ait ou non un membre avec le même nom. D’autres éléments du module sont toujours éligibles pour la promotion de type.  
   
  **Incidences.** L’invalidation de la promotion de type d’une définition partielle peut provoquer des résultats inattendus et même des erreurs du compilateur. L’exemple suivant illustre le squelette des définitions partielles d’une classe, dont l’une est à l’intérieur d’un module.  
@@ -52,6 +56,7 @@ Quand vous déclarez un élément de programmation dans un module, Visual Basic 
  Le compilateur fusionne des définitions partielles uniquement lorsque leurs chemins qualifiés complets sont identiques.  
   
 ## <a name="recommendations"></a>Recommandations  
+
  Les recommandations suivantes représentent une bonne pratique de programmation.  
   
 - **Noms uniques.** Lorsque vous avez un contrôle total sur le nom des éléments de programmation, il est toujours judicieux d’utiliser des noms uniques partout. Des noms identiques nécessitent une qualification supplémentaire et peuvent rendre votre code plus difficile à lire. Ils peuvent également entraîner des erreurs subtiles et des résultats inattendus.  
