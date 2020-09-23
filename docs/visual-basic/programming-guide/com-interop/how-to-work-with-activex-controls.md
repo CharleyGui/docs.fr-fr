@@ -5,14 +5,15 @@ helpviewer_keywords:
 - Toolbox, adding controls
 - ActiveX controls, adding to Toolbox
 ms.assetid: ec675027-866f-4c05-aaf2-92fca5200f9a
-ms.openlocfilehash: 11b8eb446395b4d35b9b7b689e30549b2b00f94a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d1346d362bf030e794212d74040f1ff0845eb704
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90548037"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91083252"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>Comment : utiliser les contrôles ActiveX (Visual Basic)
+
 Les contrôles ActiveX sont des composants COM ou des objets que vous pouvez insérer dans une page Web ou une autre application pour réutiliser les fonctionnalités empaquetées que quelqu’un d’autre a programmées. Vous pouvez utiliser des contrôles ActiveX développés pour Visual Basic 6,0 et des versions antérieures afin d’ajouter des fonctionnalités à la **boîte à outils** de Visual Studio.  
   
 ### <a name="to-add-activex-controls-to-the-toolbox"></a>Pour ajouter des contrôles ActiveX à la boîte à outils  

@@ -8,20 +8,22 @@ helpviewer_keywords:
 - arrays [Visual Basic], structure elements
 - nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-ms.openlocfilehash: dbd24065a954e5611663963371d5a9f4bbbaea68
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 26c98adda7305783b0220141db35b08285b21554
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393492"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084084"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>Structures et autres éléments de programmation (Visual Basic)
+
 Vous pouvez utiliser des structures conjointement avec des tableaux, des objets et des procédures, ainsi qu’entre eux. Les interactions utilisent la même syntaxe que celles que ces éléments utilisent individuellement.  
   
 > [!NOTE]
 > Vous ne pouvez pas initialiser l’un des éléments de structure dans la déclaration de structure. Vous pouvez assigner des valeurs uniquement aux éléments d’une variable déclarée comme étant d’un type structure.  
   
 ## <a name="structures-and-arrays"></a>Structures et tableaux  
+
  Une structure peut contenir un tableau comme un ou plusieurs de ses éléments. L'exemple suivant illustre ce comportement.  
   
 ```vb  
@@ -56,6 +58,7 @@ allSystems(5).diskDrives(2) = "100M SCSI"
 ```  
   
 ## <a name="structures-and-objects"></a>Structures et objets  
+
  Une structure peut contenir un objet comme un ou plusieurs de ses éléments. L'exemple suivant illustre ce comportement.  
   
 ```vb  
@@ -69,6 +72,7 @@ End Structure
  Vous devez utiliser une classe d’objet spécifique dans une telle déclaration, plutôt que `Object` .  
   
 ## <a name="structures-and-procedures"></a>Structures et procédures  
+
  Vous pouvez passer une structure en tant qu’argument de procédure. L'exemple suivant illustre ce comportement.  
   
 ```vb  
@@ -97,6 +101,7 @@ End Function
 ```  
   
 ## <a name="structures-within-structures"></a>Structures dans les structures  
+
  Les structures peuvent contenir d’autres structures. L'exemple suivant illustre ce comportement.  
   
 ```vb  
@@ -124,7 +129,7 @@ allSystems(1).diskDrives(0).type = "Floppy"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](index.md)
+- [Data types](index.md)
 - [Types de données élémentaires](elementary-data-types.md)
 - [Types de données composites](composite-data-types.md)
 - [Types valeur et types référence](value-types-and-reference-types.md)

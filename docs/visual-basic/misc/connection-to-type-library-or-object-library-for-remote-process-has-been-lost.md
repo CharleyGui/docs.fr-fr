@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID442
 ms.assetid: 9e3544e2-cfc9-463a-8c0c-ed82e5e6462f
-ms.openlocfilehash: d442d582f392ea4e2a074136740f9705d50b8d55
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5d94c20688e6fc2efda6b0febc3d89d0039214c0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84376766"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084487"
 ---
 # <a name="connection-to-type-library-or-object-library-for-remote-process-has-been-lost"></a>La connexion à la bibliothèque de types ou d’objets pour le processus distant a été perdue
+
 Vous avez perdu votre connexion à la bibliothèque d’objets ou à la bibliothèque de types du processus distant.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

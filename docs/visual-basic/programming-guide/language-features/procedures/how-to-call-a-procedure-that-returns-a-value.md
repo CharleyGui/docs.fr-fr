@@ -7,14 +7,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - procedures [Visual Basic], returning a value
 ms.assetid: a445127b-0f5f-465a-98fb-3e514b93d115
-ms.openlocfilehash: a110cf9f3b42c7244d8d5bf7b49d5e6dac8c2e21
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 53589f84c6675d1e7ae2a593341e5dac747132a9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388762"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91083975"
 ---
 # <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>Comment : appeler une procédure qui retourne une valeur (Visual Basic)
+
 Une `Function` procédure retourne une valeur au code appelant. Vous l’appelez en incluant son nom et ses arguments sur le côté droit d’une instruction d’assignation ou dans une expression.  
   
 ### <a name="to-call-a-function-procedure-within-an-expression"></a>Pour appeler une procédure de fonction dans une expression  
@@ -40,7 +41,8 @@ Une `Function` procédure retourne une valeur au code appelant. Vous l’appelez
 4. La valeur retournée par la procédure est stockée dans la variable ou la propriété sur le côté gauche de l’instruction d’assignation.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant appelle la Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> pour récupérer la valeur d’une variable d’environnement de système d’exploitation. La première ligne appelle `Environ` dans une expression, et la deuxième ligne l’appelle dans une instruction d’assignation. `Environ`prend le nom de la variable en tant qu’argument unique. Elle retourne la valeur de la variable au code appelant.  
+
+ L’exemple suivant appelle la Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> pour récupérer la valeur d’une variable d’environnement de système d’exploitation. La première ligne appelle `Environ` dans une expression, et la deuxième ligne l’appelle dans une instruction d’assignation. `Environ` prend le nom de la variable en tant qu’argument unique. Elle retourne la valeur de la variable au code appelant.  
   
  [!code-vb[VbVbcnProcedures#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#7)]  
   

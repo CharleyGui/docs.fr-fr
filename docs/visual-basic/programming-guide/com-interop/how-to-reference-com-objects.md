@@ -8,14 +8,15 @@ helpviewer_keywords:
 - COM objects, referencing
 - interop assemblies
 ms.assetid: 9c518fb4-27d9-4112-9e6a-5a7d0210af6f
-ms.openlocfilehash: 2e2cbac6fad5e1686b7383c44619b8c6f5326483
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 43ba068663db9f8c3816a6f731395a6682a130e6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396802"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91083291"
 ---
 # <a name="how-to-reference-com-objects-from-visual-basic"></a>Comment : référencer les objets COM à partir de Visual Basic
+
 Dans Visual Basic, l’ajout de références à des objets COM qui ont des bibliothèques de types requiert la création d’un assembly d’interopérabilité pour la bibliothèque COM. Les références aux membres de l’objet COM sont routées vers l’assembly d’interopérabilité, puis transmises à l’objet COM réel. Les réponses de l’objet COM sont routées vers l’assembly d’interopérabilité et transmises à votre application .NET Framework.  
   
  Vous pouvez référencer un objet COM sans utiliser d’assembly d’interopérabilité en incorporant les informations de type de l’objet COM dans un assembly .NET. Pour incorporer des informations de type, affectez à la propriété la valeur `Embed Interop Types` `True` pour la référence à l’objet com. Si vous compilez à l’aide du compilateur de ligne de commande, utilisez l' `/link` option pour référencer la bibliothèque com. Pour plus d’informations, consultez [-Link (Visual Basic)](../../reference/command-line-compiler/link.md).  
@@ -55,8 +56,8 @@ Dans Visual Basic, l’ajout de références à des objets COM qui ont des bibli
 ## <a name="see-also"></a>Voir aussi
 
 - [COM Interop](index.md)
-- [Tlbimp. exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
-- [Tlbexp. exe (exportateur de bibliothèques de types)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
+- [Tlbimp.exe (Type Library Importer)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
+- [Tlbexp.exe (exportateur de bibliothèques de types)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
 - [Procédure pas à pas : Implémentation de l’héritage avec les objets COM](walkthrough-implementing-inheritance-with-com-objects.md)
 - [Dépannage de l’interopérabilité](troubleshooting-interoperability.md)
 - [Imports, instruction (espace de noms et type .NET)](../../language-reference/statements/imports-statement-net-namespace-and-type.md)

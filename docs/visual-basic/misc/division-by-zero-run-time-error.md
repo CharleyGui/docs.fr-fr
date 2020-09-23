@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID11
 ms.assetid: 5b9bc5d6-792e-48bc-a974-012e07ad95f3
-ms.openlocfilehash: 31efe395e17dfc7382abf2478139e1a2d36cc31d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2dc36123478c0946b3ba5931dcc283acc08920cc
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84394646"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084357"
 ---
 # <a name="division-by-zero-visual-basic-run-time-error"></a>Division par zéro (erreur d’exécution Visual Basic)
+
 Une expression utilisée en tant que diviseur possède une valeur égale à zéro.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
