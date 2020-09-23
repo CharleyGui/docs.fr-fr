@@ -12,14 +12,15 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: 8b21f22edea84448e3f2969c3e4b07c08a17a338
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2ce7c1700eec54542719e6e0880466ca136e86f6
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357346"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91095431"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Comment : contrôler la portée d'une variable (Visual Basic)
+
 Normalement, une variable est dans la *portée*, ou visible à des fins de référence, dans toute la région dans laquelle vous la déclarez. Dans certains cas, le niveau d' *accès* de la variable peut influencer son étendue.  
   
  Pour plus d'informations, consultez [Scope in Visual Basic](scope.md).  
@@ -39,6 +40,7 @@ Normalement, une variable est dans la *portée*, ou visible à des fins de réf�
      Vous ne pouvez faire référence à la variable qu’à partir de la procédure, y compris à l’intérieur de n’importe quel bloc contenu dans la procédure.  
   
 ## <a name="scope-at-module-or-namespace-level"></a>Portée au niveau du module ou de l’espace de noms  
+
  Pour plus de commodité, le *niveau de module* à simple terme s’applique de la même manière aux modules, aux classes et aux structures. Le niveau d’accès d’une variable de niveau module détermine sa portée. L’espace de noms qui contient le module, la classe ou la structure influence également la portée.  
   
 #### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Pour rendre une variable visible dans l’ensemble d’un module, d’une classe ou d’une structure  
@@ -58,6 +60,7 @@ Normalement, une variable est dans la *portée*, ou visible à des fins de réf�
 3. Vous pouvez faire référence à la variable depuis n’importe quel emplacement de l’espace de noms contenant le module, la classe ou la structure.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant déclare une variable au niveau du module et limite sa visibilité au code dans le module.  
   
 ```vb  
@@ -81,9 +84,11 @@ Public strMsg As String
 ```  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Plus la portée d’une variable est restreinte, moins vous avez d’opportunités pour y faire référence par mégarde à la place d’une autre variable portant le même nom. Vous pouvez également réduire les problèmes de correspondance de référence.  
   
 ## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+
  Plus la portée d’une variable est restreinte, plus les probabilités de code malveillant peuvent être utilisées de manière incorrecte.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -5,17 +5,19 @@ helpviewer_keywords:
 - shadowing, vs. overriding
 - overriding, vs. shadowing
 ms.assetid: 2d014a0b-7630-407d-8f4e-24bd87987923
-ms.openlocfilehash: a6ea83fadf18ef3be778e6de31c0eb4e65e74824
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 98c073f8fa403416b2425431ff4334b990726f44
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392868"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91095445"
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a>Différences entre l'occultation et la substitution (Visual Basic)
+
 Quand vous définissez une classe qui hérite d’une classe de base, vous souhaitez parfois redéfinir un ou plusieurs des éléments de la classe de base dans la classe dérivée. L’occultation et la substitution sont toutes deux disponibles à cet effet.  
   
 ## <a name="comparison"></a>Comparaison  
+
  L’occultation et la substitution sont toutes deux utilisées lorsqu’une classe dérivée hérite d’une classe de base, et toutes deux redéfinissent un élément déclaré avec un autre. Mais il existe des différences significatives entre les deux.  
   
  Le tableau suivant compare l’occultation et la substitution.  
@@ -28,8 +30,8 @@ Quand vous définissez une classe qui hérite d’une classe de base, vous souha
 |Redéfinissant l’élément|Tout type d’élément déclaré|Seule une procédure ou une propriété avec la séquence d’appel<sup>1</sup> identique|  
 |Niveau d’accès de l’élément redéfinissant|Tout niveau d’accès|Impossible de modifier le niveau d’accès de l’élément substitué|  
 |Lisibilité et accessibilité de l’élément redéfinissant|Toute combinaison|Impossible de modifier la lisibilité ou l’écriture dans la propriété substituée|  
-|Contrôle de la redéfinition|L’élément de classe de base ne peut pas appliquer ou interdire l’occultation|L’élément de classe de base peut spécifier `MustOverride` , `NotOverridable` ou`Overridable`|  
-|Utilisation des mots clés|`Shadows`recommandé dans la classe dérivée ; `Shadows`pris par défaut si ni `Shadows` ni `Overrides` spécifié<sup>2</sup>|`Overridable`ou `MustOverride` requis dans la classe de base ; `Overrides` obligatoire dans la classe dérivée|  
+|Contrôle de la redéfinition|L’élément de classe de base ne peut pas appliquer ou interdire l’occultation|L’élément de classe de base peut spécifier `MustOverride` , `NotOverridable` ou `Overridable`|  
+|Utilisation des mots clés|`Shadows` recommandé dans la classe dérivée ; `Shadows` pris par défaut si ni `Shadows` ni `Overrides` spécifié<sup>2</sup>|`Overridable` ou `MustOverride` requis dans la classe de base ; `Overrides` obligatoire dans la classe dérivée|  
 |Héritage de la redéfinition d’un élément par des classes dérivant de votre classe dérivée|Élément occultant hérité par des classes dérivées supplémentaires ; élément occulté toujours masqué<sup>3</sup>|Substitution d’un élément hérité par des classes dérivées supplémentaires ; élément substitué toujours substitué|  
   
  <sup>1</sup> la *séquence appelante* se compose du type d’élément ( `Function` , `Sub` , `Operator` ou `Property` ), du nom, de la liste de paramètres et du type de retour. Vous ne pouvez pas substituer une procédure avec une propriété, ou l’inverse. Vous ne pouvez pas remplacer un genre de procédure ( `Function` , `Sub` ou `Operator` ) par un autre type.  
@@ -38,7 +40,8 @@ Quand vous définissez une classe qui hérite d’une classe de base, vous souha
   
  <sup>3</sup> si l’élément d’occultation est inaccessible dans une classe dérivée supplémentaire, l’occultation n’est pas héritée. Par exemple, si vous déclarez l’élément d’occultation comme `Private` , une classe dérivant de votre classe dérivée hérite de l’élément d’origine au lieu de l’élément d’occultation.  
   
-## <a name="guidelines"></a>Recommandations  
+## <a name="guidelines"></a>Consignes  
+
  Normalement, vous utilisez la substitution dans les cas suivants :  
   
 - Vous définissez des classes dérivées polymorphes.  
