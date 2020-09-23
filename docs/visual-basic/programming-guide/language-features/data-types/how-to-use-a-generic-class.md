@@ -21,14 +21,15 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 242dd2a6-86c4-4ce7-83f2-f2661803f752
-ms.openlocfilehash: 01f1f7ef5963feeb3fe2b5390244e4e516773bad
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 87ba5132afe9f5a7cd6fb33d716c670f4812c7e2
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393842"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077109"
 ---
 # <a name="how-to-use-a-generic-class-visual-basic"></a>Comment : utiliser une classe générique (Visual Basic)
+
 Une classe qui accepte des *paramètres de type* est appelée *classe générique*. Si vous utilisez une classe générique, vous pouvez générer une *classe construite* à partir de celle-ci en fournissant un *argument de type* pour chacun de ces paramètres. Vous pouvez ensuite déclarer une variable du type classe construite, et vous pouvez créer une instance de la classe construite et l’assigner à cette variable.  
   
  En plus des classes, vous pouvez définir et utiliser des structures, interfaces, procédures et délégués génériques.  
@@ -47,10 +48,10 @@ Une classe qui accepte des *paramètres de type* est appelée *classe génériqu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](index.md)
+- [Data types](index.md)
 - [Generic Types in Visual Basic](generic-types.md)
 - [Indépendance du langage et composants indépendants du langage](../../../../standard/language-independence-and-language-independent-components.md)
 - [Of](../../../language-reference/statements/of-clause.md)
 - [Imports, instruction (espace de noms et type .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md)
 - [Procédure : Définir une classe qui fournisse des fonctionnalités identiques pour différents types de données](how-to-define-a-class-that-can-provide-identical-functionality.md)
-- [Itérateurs](../../concepts/iterators.md)
+- [Iterators](../../concepts/iterators.md)

@@ -11,29 +11,33 @@ helpviewer_keywords:
 - classes [Visual Basic], composite types
 - types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
-ms.openlocfilehash: 3e8df5ccfeca4bc0a19237ba6d59e9d0747080ea
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 842b74aa7cc99c8196fdfb1eb6c976d9e72a4fa4
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84394296"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077161"
 ---
 # <a name="composite-data-types-visual-basic"></a>Types de données composites (Visual Basic)
+
 En plus des types de données élémentaires fournis par Visual Basic, vous pouvez également assembler des éléments de types différents pour créer des *types de données composites* , tels que des structures, des tableaux et des classes. Vous pouvez générer des types de données composites à partir de types élémentaires et d’autres types composites. Par exemple, vous pouvez définir un tableau d’éléments de structure ou une structure avec des membres de tableau.  
   
 ## <a name="data-types"></a>Types de données  
+
  Un type composite est différent du type de données de l’un de ses composants. Par exemple, un tableau d' `Integer` éléments n’est pas du `Integer` type de données.  
   
  Un type de données de tableau est normalement représenté à l’aide du type d’élément, des parenthèses et des virgules, si nécessaire. Par exemple, un tableau unidimensionnel d' `String` éléments est représenté sous `String()` la forme et un tableau à deux dimensions d' `Boolean` éléments est représenté sous la forme `Boolean(,)` .  
   
 ## <a name="structure-types"></a>Types de structures  
+
  Il n’existe pas de type de données unique comprenant toutes les structures. Au lieu de cela, chaque définition d’une structure représente un type de données unique, même si deux structures définissent des éléments identiques dans le même ordre. Toutefois, si vous créez deux instances ou plus de la même structure, Visual Basic les considère comme étant du même type de données.  
   
 ## <a name="tuples"></a>Tuples
 
 Un tuple est une structure légère qui contient au moins deux champs dont les types sont prédéfinis. Les tuples sont pris en charge à partir de Visual Basic 2017. Les tuples sont généralement utilisés pour retourner plusieurs valeurs à partir d’un seul appel de méthode sans avoir à passer d’arguments par référence ou à empaqueter les champs retournés dans une classe ou une structure plus lourde. Pour plus d’informations sur les tuples, consultez la rubrique [tuples](tuples.md) .
 
-## <a name="array-types"></a>Types tableau  
+## <a name="array-types"></a>Types de tableaux  
+
  Il n’existe pas de type de données unique comprenant tous les tableaux. Le type de données d’une instance particulière d’un tableau est déterminé par les éléments suivants :  
   
 - Le fait qu’il s’agit d’un tableau  
@@ -57,13 +61,14 @@ Dim arrayE( , ) As Short = New Short(4, 10) {}
  Pour plus d’informations sur les tableaux, consultez [tableaux](../arrays/index.md).  
   
 ## <a name="class-types"></a>Types de classes  
+
  Il n’existe pas de type de données unique comprenant toutes les classes. Même si une classe peut hériter d’une autre classe, chacun d’eux est un type de données distinct. Plusieurs instances de la même classe sont du même type de données. Si vous assignez une variable d’instance de classe à une autre, non seulement elles ont le même type de données, mais elles pointent vers la même instance de classe en mémoire.  
   
  Pour plus d’informations sur les classes, consultez [objets et classes](../objects-and-classes/index.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](index.md)
+- [Data types](index.md)
 - [Types de données élémentaires](elementary-data-types.md)
 - [Generic Types in Visual Basic](generic-types.md)
 - [Types valeur et types référence](value-types-and-reference-types.md)

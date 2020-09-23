@@ -13,14 +13,15 @@ helpviewer_keywords:
 - parentheses [Visual Basic], complex expressions
 - numeric expressions
 ms.assetid: bd22340e-b5be-458b-8772-3916c02309a4
-ms.openlocfilehash: 3088072646278dac13e4d483cb4f99297eaad9ca
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9ba6be8e1dd03c0589f712b0e9b39258953cd223
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403470"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077083"
 ---
 # <a name="efficient-combination-of-operators-visual-basic"></a>Association efficace d'opérateurs (Visual Basic)
+
 Les expressions complexes peuvent contenir de nombreux opérateurs différents. L'exemple suivant illustre ce comportement.  
   
  `x = (45 * (y + z)) ^ (2 / 85) * 5 + z`  
@@ -28,6 +29,7 @@ Les expressions complexes peuvent contenir de nombreux opérateurs différents. 
  La création d’expressions complexes, telles que celle de l’exemple précédent, requiert une compréhension approfondie des règles de priorité des opérateurs. Pour plus d’informations, consultez [priorité des opérateurs dans Visual Basic](../../../language-reference/operators/operator-precedence.md).  
   
 ## <a name="parenthetical-expressions"></a>Expressions entre parenthèses  
+
  Souvent, vous souhaitez que les opérations se déroulent dans un ordre différent de celui déterminé par la priorité des opérateurs. Considérez l'exemple suivant.  
   
  `x = z * y + 4`  
@@ -39,6 +41,7 @@ Les expressions complexes peuvent contenir de nombreux opérateurs différents. 
  L’exemple précédent ajoute `y` et `4` , puis multiplie cette somme par `z` .  
   
 ### <a name="nested-parenthetical-expressions"></a>Expressions entre parenthèses imbriquées  
+
  Vous pouvez imbriquer des expressions à plusieurs niveaux de parenthèses pour remplacer la précédence encore plus loin. Les expressions les plus profondément imbriquées entre parenthèses sont évaluées en premier, suivies du plus profondément imbriqué, et ainsi de suite jusqu’au moins profondément imbriqué, et enfin des expressions en dehors des parenthèses. L'exemple suivant illustre ce comportement.  
   
  `x = (z * 4) ^ (y * (z + 2))`  

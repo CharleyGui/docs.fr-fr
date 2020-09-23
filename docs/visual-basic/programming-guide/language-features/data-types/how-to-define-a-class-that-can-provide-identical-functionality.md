@@ -26,14 +26,15 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-ms.openlocfilehash: 3b1f47250453c32735d633b98da0bd0ddb1ed5b9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 268daf333dc5463e5436304cec188a9e6d477166
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393855"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077122"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Comment : définir une classe qui fournisse des fonctionnalités identiques pour différents types de données (Visual Basic)
+
 Vous pouvez définir une classe à partir de laquelle vous créez des objets qui fournissent les mêmes fonctions pour des types de données différents. Pour cela, vous spécifiez un ou plusieurs *paramètres de type* dans la définition. La classe peut ensuite servir de modèle pour les objets qui utilisent différents types de données. Une classe définie de cette façon est appelée *classe générique*.  
   
  L’avantage de définir une classe générique est que vous la définissez une seule fois. Votre code peut ensuite l’utiliser pour créer divers objets qui utilisent différents types de données. Cette approche offre de meilleures performances que la définition d’une classe avec le type `Object` .  
@@ -76,7 +77,7 @@ Vous pouvez définir une classe à partir de laquelle vous créez des objets qui
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](index.md)
+- [Data types](index.md)
 - [Generic Types in Visual Basic](generic-types.md)
 - [Indépendance du langage et composants indépendants du langage](../../../../standard/language-independence-and-language-independent-components.md)
 - [Of](../../../language-reference/statements/of-clause.md)

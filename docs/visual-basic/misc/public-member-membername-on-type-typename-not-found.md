@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrMissingMember_MemberNotFoundOnType2
 ms.assetid: 6300feb8-78ac-4dd0-9653-1d03e1f5bc20
-ms.openlocfilehash: 9c1015c7ab8e53daeb6902066b953de6c5f1fc11
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f0f76db8acffaa4a6715a6b23bd6ee1a76956bd5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411003"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077434"
 ---
 # <a name="public-member-membername-on-type-typename-not-found"></a>Le membre public '\<membername>' du type '\<typename>' est introuvable
+
 Le membre auquel vous essayez d’accéder est introuvable. Cette erreur peut se produire lors de l’accès à des membres non publics d’objets à liaison tardive.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

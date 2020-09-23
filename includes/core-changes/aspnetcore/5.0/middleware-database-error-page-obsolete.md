@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f1129500c9b779256b2650fe6fa855152cb3ae80
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 10521759d31c3183232cdb1793d78d139f13ce41
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811261"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077564"
 ---
 ### <a name="middleware-database-error-page-marked-as-obsolete"></a>Intergiciel : page d’erreurs de base de données marquée comme obsolète
 
@@ -55,6 +55,8 @@ Procédez comme suit :
         }
     }
     ```
+
+1. Ajoutez le package NuGet [Microsoft. AspNetCore. Diagnostics. EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore) au fichier projet.
 
 1. Ajoutez le filtre d’exception de page développeur de bases de données à la collection de services. Par exemple, appelez la `AddDatabaseDeveloperPageExceptionFilter` méthode dans `Startup.ConfigureServices` :
 

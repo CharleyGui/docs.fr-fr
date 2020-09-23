@@ -8,19 +8,21 @@ helpviewer_keywords:
 - Char data type [Visual Basic], character data types
 - data types [Visual Basic], choosing
 ms.assetid: 902479ef-1679-47fc-9911-0c1c5008226c
-ms.openlocfilehash: 33dd4c62776ae8c5ec0ce0a6d0858a7ed0d047fb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5fde5eff40d83bdd7d90cd611bd6749106db6e16
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401990"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077174"
 ---
 # <a name="character-data-types-visual-basic"></a>Types de données caractères (Visual Basic)
+
 Visual Basic fournit des *types de données caractères* pour gérer les caractères imprimables et affichables. Bien qu’ils traitent tous deux des caractères Unicode, contient `Char` un caractère unique, tandis que `String` contient un nombre indéfini de caractères.  
   
  Pour obtenir une table qui affiche une comparaison côte à côte des types de données Visual Basic, consultez [types de données](../../../language-reference/data-types/index.md).  
   
 ## <a name="char-type"></a>Char, type  
+
  Le `Char` type de données est un caractère Unicode codé sur deux octets (16 bits). Si une variable stocke toujours un caractère exactement, déclarez-la comme `Char` . Par exemple :  
   
  [!code-vb[VbVbalrCharTypes#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrchartypes/vb/module1.vb#1)]
@@ -33,6 +35,7 @@ Visual Basic fournit des *types de données caractères* pour gérer les caract�
  Pour plus d’informations, consultez [type de données char](../../../language-reference/data-types/char-data-type.md).  
   
 ## <a name="string-type"></a>Type de chaîne  
+
  Le `String` type de données est une séquence de zéro, un ou plusieurs caractères Unicode (16 bits) de 2 octets. Si une variable peut contenir un nombre indéfini de caractères, déclarez-la comme `String` . Par exemple :  
   
  [!code-vb[VbVbalrCharTypes#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrchartypes/vb/module1.vb#2)]

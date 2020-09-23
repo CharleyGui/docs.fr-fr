@@ -6,19 +6,21 @@ helpviewer_keywords:
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: 9d85f9c0390a659e59e372ad949cffdd17715189
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c7d0595b991bdad6ef05b567f95ead8c7fccdbc2
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413256"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077278"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Écriture de votre première requête LINQ (Visual Basic)
+
 Une *requête* est une expression qui récupère des données à partir d’une source de données. Les requêtes sont exprimées dans un langage de requête dédié. Au fil du temps, des langages différents ont été développés pour différents types de sources de données, par exemple, SQL pour les bases de données relationnelles et XQuery pour XML. Cela oblige le développeur d’applications à apprendre un nouveau langage de requête pour chaque type de source de données ou format de données pris en charge.  
   
  LINQ (Language-Integrated Query) simplifie la situation en offrant un modèle cohérent pour l’utilisation des données dans différents types de sources et de formats de données. Dans une requête LINQ, vous travaillez toujours avec des objets. Vous utilisez les mêmes modèles de codage de base pour interroger et transformer des données dans des documents XML, des bases de données SQL, des jeux de données ADO.NET et des entités, des collections .NET Framework et toute autre source ou format pour lequel un fournisseur LINQ est disponible. Ce document décrit les trois phases de création et d’utilisation de requêtes LINQ de base.  
   
 ## <a name="three-stages-of-a-query-operation"></a>Trois étapes d’une opération de requête  
+
  Les opérations de requête LINQ consistent en trois actions :  
   
 1. Obtenez la ou les sources de données.  
@@ -41,6 +43,7 @@ Une *requête* est une expression qui récupère des données à partir d’une 
  `0 2 4 6`  
   
 ## <a name="the-data-source"></a>Source de données  
+
  Étant donné que la source de données dans l’exemple précédent est un tableau, elle prend en charge implicitement l' <xref:System.Collections.Generic.IEnumerable%601> interface générique. C’est ce fait qui vous permet d’utiliser un tableau comme source de données pour une requête LINQ. Les types qui prennent en charge <xref:System.Collections.Generic.IEnumerable%601> ou une interface dérivée, comme l’interface générique <xref:System.Linq.IQueryable%601>, sont appelés des *types requêtables*.  
   
  En tant que type implicitement interrogeable, le tableau ne nécessite aucune modification ni traitement spécial pour servir de source de données LINQ. Il en va de même pour tout type de collection qui prend en charge <xref:System.Collections.Generic.IEnumerable%601> , y compris les <xref:System.Collections.Generic.List%601> classes génériques, <xref:System.Collections.Generic.Dictionary%602> , et autres dans la bibliothèque de classes .NET Framework.  
@@ -63,6 +66,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
 > Les types tels que <xref:System.Collections.ArrayList> qui prennent en charge l' <xref:System.Collections.IEnumerable> interface non générique peuvent également être utilisés en tant que sources de données Linq. Pour obtenir un exemple qui utilise un <xref:System.Collections.ArrayList> , consultez [Comment : interroger un ARRAYLIST avec LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  
   
 ## <a name="the-query"></a>La requête  
+
  Dans la requête, vous spécifiez les informations que vous souhaitez récupérer à partir de la ou des sources de données. Vous avez également la possibilité de spécifier la façon dont ces informations doivent être triées, regroupées ou structurées avant d’être retournées. Pour permettre la création de requêtes, Visual Basic a incorporé une nouvelle syntaxe de requête dans le langage.  
   
  Lorsqu’elle est exécutée, la requête de l’exemple suivant retourne tous les nombres pairs d’un tableau d’entiers, `numbers` .  
@@ -74,9 +78,11 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  Il est important de se souvenir que la variable de requête elle-même n’effectue aucune action et ne retourne aucune donnée. Il stocke uniquement la définition de la requête. Dans l’exemple précédent, il s’agit de la `For Each` boucle qui exécute la requête.  
   
 ## <a name="query-execution"></a>Exécution des requêtes  
+
  L’exécution de la requête est distincte de la création de la requête. La création de requête définit la requête, mais l’exécution est déclenchée par un mécanisme différent. Une requête peut être exécutée dès qu’elle est définie (*exécution immédiate*), ou la définition peut être stockée et la requête peut être exécutée ultérieurement (*exécution différée*).  
   
 ### <a name="deferred-execution"></a>Exécution différée  
+
  Une requête LINQ classique ressemble à celle de l’exemple précédent, dans laquelle `evensQuery` est défini. Elle crée la requête, mais ne l’exécute pas immédiatement. Au lieu de cela, la définition de la requête est stockée dans la variable de requête `evensQuery` . Vous exécutez la requête ultérieurement, en général à l’aide d’une `For Each` boucle, qui retourne une séquence de valeurs, ou en appliquant un opérateur de requête standard, tel que `Count` ou `Max` . Ce processus est appelé « *exécution différée*».  
   
  [!code-vb[VbLINQFirstQuery#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#7)]  
@@ -98,6 +104,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  `0  10  2  22  8`  
   
 ### <a name="immediate-execution"></a>Exécution immédiate  
+
  Dans l’exécution différée des requêtes, la définition de la requête est stockée dans une variable de requête pour une exécution ultérieure. En cours d’exécution, la requête est exécutée au moment de sa définition. L’exécution est déclenchée lorsque vous appliquez une méthode qui requiert l’accès à des éléments individuels du résultat de la requête. L’exécution immédiate est souvent forcée à l’aide de l’un des opérateurs de requête standard qui retournent des valeurs uniques. Les exemples sont `Count` ,, `Max` `Average` et `First` . Ces opérateurs de requête standard exécutent la requête dès qu’ils sont appliqués pour calculer et retourner un résultat Singleton. Pour plus d’informations sur les opérateurs de requête standard qui retournent des valeurs uniques, consultez opérations d' [agrégation](aggregation-operations.md), [opérations d’élément](element-operations.md)et [opérations de quantificateur](quantifier-operations.md).  
   
  La requête suivante retourne le nombre de nombres pairs dans un tableau d’entiers. La définition de la requête n’est pas enregistrée et `numEvens` est un simple `Integer` .  

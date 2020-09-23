@@ -10,14 +10,15 @@ helpviewer_keywords:
 - Using statement [Visual Basic], Using...End Using
 - Using block
 ms.assetid: 8be2b239-8090-419b-8e7e-bcaa75b0ecc8
-ms.openlocfilehash: dd15c6746628f45b072d46eea40051ed9afb7921
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c430bc7744f5aefaa65f2a86f3e5e22743ffed57
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403496"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077200"
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>Comment : supprimer une ressource système (Visual Basic)
+
 Vous pouvez utiliser un `Using` bloc pour garantir que le système supprime une ressource quand votre code quitte le bloc. Cela est utile si vous utilisez une ressource système qui consomme une grande quantité de mémoire ou que d’autres composants souhaitent également utiliser.  
   
 ### <a name="to-dispose-of-a-database-connection-when-your-code-is-finished-with-it"></a>Pour supprimer une connexion de base de données lorsque votre code en a terminé  
@@ -47,7 +48,7 @@ Vous pouvez utiliser un `Using` bloc pour garantir que le système supprime une 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Data.SqlClient.SqlConnection>
-- [Workflow de contrôle](index.md)
+- [Flux de contrôle](index.md)
 - [Structures de décision](decision-structures.md)
 - [Structures de boucle](loop-structures.md)
 - [Autres structures de contrôle](other-control-structures.md)

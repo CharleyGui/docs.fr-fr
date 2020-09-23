@@ -2,14 +2,15 @@
 title: 'Comment : lire des données d’objet à partir d’un fichier XML'
 ms.date: 07/20/2015
 ms.assetid: 1e1423bf-74a4-4dde-a3bb-ae1bfc0a68ed
-ms.openlocfilehash: 7097ec146987aea7855da40dd30f9cd3c17d8ce4
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7677b32f76bee3fe579f96715b6c748c08c83a82
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413165"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077239"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a>Guide pratique : lire des données d’objet à partir d’un fichier XML (Visual Basic)
+
 Cet exemple lit des données d’objet écrites précédemment dans un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Exemple  
@@ -30,6 +31,7 @@ End Sub
 ```  
   
 ## <a name="compile-the-code"></a>Compiler le code  
+
  Remplacez le nom du fichier « c:\temp\SerializationOverview.xml » par le nom du fichier qui contient les données sérialisées. Pour plus d’informations sur la sérialisation des données, consultez [Comment : écrire des données d’objet dans un fichier XML (Visual Basic)](how-to-write-object-data-to-an-xml-file.md).  
   
  La classe doit disposer d’un constructeur public sans paramètres.  
@@ -37,6 +39,7 @@ End Sub
  Seuls les propriétés et les champs publics sont désérialisés.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Les conditions ci-dessous peuvent générer une exception.  
   
 - La classe qui est sérialisée n’a pas de constructeur public sans paramètres.  
@@ -46,6 +49,7 @@ End Sub
 - Le fichier n'existe pas (<xref:System.IO.IOException>).  
   
 ## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+
  Vérifiez toujours les entrées et ne désérialisez jamais les données provenant d’une source non fiable. L’objet recréé s’exécute sur un ordinateur local avec les autorisations du code qui l’a désérialisé. Vérifiez toutes les entrées avant d'utiliser les données dans votre application.  
   
 ## <a name="see-also"></a>Voir aussi

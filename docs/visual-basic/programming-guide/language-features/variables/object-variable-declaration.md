@@ -12,14 +12,15 @@ helpviewer_keywords:
 - declaring classes [Visual Basic]
 - late binding [Visual Basic]
 ms.assetid: 2a5a41a3-1aa8-4236-b1f0-2382af7bf715
-ms.openlocfilehash: b6de52cf738a56a42c82978b54cef31574ab0bcb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 74b1401df3dbb2d744de74734d10cbcd92e9689e
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410359"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077044"
 ---
 # <a name="object-variable-declaration-visual-basic"></a>Déclaration des variables objets (Visual Basic)
+
 Vous utilisez une instruction de déclaration normale pour déclarer une variable objet. Pour le type de données, vous spécifiez `Object` (autrement dit, le [type de données Object](../../../language-reference/data-types/object-data-type.md)) ou une classe plus spécifique à partir de laquelle l’objet doit être créé.  
   
  La déclaration d’une variable comme `Object` revient à la déclarer comme <xref:System.Object?displayProperty=nameWithType> .  
@@ -27,6 +28,7 @@ Vous utilisez une instruction de déclaration normale pour déclarer une variabl
  Quand vous déclarez une variable avec une classe d’objet spécifique, elle peut accéder à toutes les méthodes et propriétés exposées par cette classe et les classes dont elle hérite. Si vous déclarez la variable avec <xref:System.Object> , elle ne peut accéder qu’aux membres de la <xref:System.Object> classe, sauf si vous activez la `Option Strict Off` liaison tardive.  
   
 ## <a name="declaration-syntax"></a>Syntaxe de déclaration  
+
  Pour déclarer une variable objet, utilisez la syntaxe ci-après :  
   
 ```vb  
@@ -42,11 +44,13 @@ Dim objC As System.OperatingSystem
 ```  
   
 ## <a name="late-binding-and-early-binding"></a>Liaison tardive et liaison précoce  
+
  Parfois, la classe spécifique est inconnue jusqu’à ce que votre code s’exécute. Dans ce cas, vous devez déclarer la variable objet avec le `Object` type de données. Cela crée une référence générale à tout type d’objet, et la classe spécifique est assignée au moment de l’exécution. C’est ce que l’on appelle la *liaison tardive*. La liaison tardive requiert une durée d’exécution supplémentaire. Il limite également votre code aux méthodes et aux propriétés de la classe que vous avez récemment assignée. Cela peut provoquer des erreurs au moment de l’exécution si votre code tente d’accéder aux membres d’une classe différente.  
   
  Lorsque vous connaissez la classe spécifique au moment de la compilation, vous devez déclarer la variable objet comme étant de cette classe. Il s’agit de la *liaison anticipée*. La liaison précoce améliore les performances et garantit que votre code accède à toutes les méthodes et propriétés de la classe spécifique. Dans les exemples de déclarations précédents, si la variable `objA` utilise uniquement des objets de classe <xref:System.Windows.Forms.Label?displayProperty=nameWithType> , vous devez spécifier `As System.Windows.Forms.Label` dans sa déclaration.  
   
 ### <a name="advantages-of-early-binding"></a>Avantages de la liaison anticipée  
+
  La déclaration d’une variable objet en tant que classe spécifique vous offre plusieurs avantages :  
   
 - Vérification automatique des types  
@@ -64,6 +68,7 @@ Dim objC As System.OperatingSystem
 - Exécution de code plus rapide  
   
 ## <a name="access-to-object-variable-members"></a>Accès aux membres d’une variable objet  
+
  Lorsque `Option Strict` est activé `On` , une variable objet peut accéder uniquement aux méthodes et aux propriétés de la classe avec laquelle vous la déclarez. L'exemple suivant illustre ce comportement.  
   
 ```vb  
@@ -87,6 +92,7 @@ End Sub
  Dans cet exemple, `p` peut utiliser uniquement les membres de la <xref:System.Object> classe proprement dite, qui n’incluent pas la propriété `Left` . En revanche, `q` a été déclaré comme étant de type <xref:System.Windows.Forms.Label>. Il peut donc utiliser toutes les méthodes et propriétés de la classe <xref:System.Windows.Forms.Label> dans l’espace de noms <xref:System.Windows.Forms> .  
   
 ## <a name="flexibility-of-object-variables"></a>Flexibilité des variables d’objet  
+
  Lorsque vous utilisez des objets dans une hiérarchie d’héritage, vous avez le choix de la classe à utiliser pour déclarer vos variables d’objet. Dans ce choix, vous devez équilibrer la flexibilité de l’assignation d’objet par rapport à l’accès aux membres d’une classe. Par exemple, considérez la hiérarchie d’héritage qui amène à la <xref:System.Windows.Forms.Form?displayProperty=nameWithType> classe :  
   
  <xref:System.Object>  
