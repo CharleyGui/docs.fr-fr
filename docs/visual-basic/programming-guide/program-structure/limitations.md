@@ -8,14 +8,15 @@ helpviewer_keywords:
 - limits, Visual Basic code
 - Visual Basic code, limitations
 ms.assetid: cf1646b7-5d24-48c6-9616-bda8a4849d91
-ms.openlocfilehash: 46294b68bda8a5d2d21c0e4efea6a78e6a265ffe
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: abe4acd5850aa6065bf4f6fd41bc610ede7ad13f
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403185"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097954"
 ---
 # <a name="visual-basic-limitations"></a>Restrictions liées à Visual Basic
+
 Les versions antérieures de Visual Basic des limites appliquées dans le code, telles que la longueur des noms de variables, le nombre de variables autorisées dans les modules et la taille du module. Dans Visual Basic .NET, ces restrictions ont été assouplies, ce qui vous offre une plus grande liberté dans l’écriture et l’organisation de votre code.  
   
  Les limites physiques dépendent davantage de la mémoire au moment de l’exécution que des considérations relatives à la compilation. Si vous utilisez des pratiques de programmation prudentes et que vous divisez des applications volumineuses en plusieurs classes et modules, il y a très peu de chance de rencontrer une limitation de Visual Basic interne.  
