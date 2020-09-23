@@ -6,14 +6,15 @@ helpviewer_keywords:
 - /nowarn compiler option [Visual Basic]
 - -nowarn compiler option [Visual Basic]
 ms.assetid: 7ebf2106-0652-4fdc-bf60-70fc86465d83
-ms.openlocfilehash: 37851f99eb88543e939ce48995ded41958e57cc3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cde96fff975a65d6303ee62e6a811bfd83d5ff97
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397486"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097681"
 ---
 # <a name="-nowarn"></a>-nowarn
+
 Supprime la capacité du compilateur à générer des avertissements.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,9 +27,10 @@ Supprime la capacité du compilateur à générer des avertissements.
   
 |Terme|Définition|  
 |---|---|  
-|`numberList`|Facultatif. Liste délimitée par des virgules des numéros d’ID d’avertissement que le compilateur doit supprimer. Si les ID d’avertissement ne sont pas spécifiés, tous les avertissements sont supprimés.|  
+|`numberList`|Optionnel. Liste délimitée par des virgules des numéros d’ID d’avertissement que le compilateur doit supprimer. Si les ID d’avertissement ne sont pas spécifiés, tous les avertissements sont supprimés.|  
   
 ## <a name="remarks"></a>Notes  
+
  `-nowarn`Avec l’option, le compilateur ne génère pas d’avertissements. Pour supprimer un avertissement individuel, fournissez l’ID d’avertissement à l' `-nowarn` option qui suit le signe deux-points. Séparez les numéros d’avertissement par des virgules.  
   
  Vous devez spécifier uniquement la partie numérique de l’identificateur d’avertissement. Par exemple, si vous souhaitez supprimer BC42024, l’avertissement pour les variables locales inutilisées, spécifiez `-nowarn:42024` .  
@@ -40,6 +42,7 @@ Supprime la capacité du compilateur à générer des avertissements.
 |1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. activez la case à cocher **Désactiver tous les avertissements** pour désactiver tous les avertissements.<br />     - ou -<br />     Pour désactiver un avertissement spécifique, cliquez sur **aucun** dans la liste déroulante adjacente à l’avertissement.|  
   
 ## <a name="example"></a>Exemple  
+
  Le code suivant compile `T2.vb` et n’affiche aucun avertissement.  
   
 ```console
@@ -47,6 +50,7 @@ vbc -nowarn t2.vb
 ```  
   
 ## <a name="example"></a>Exemple  
+
  Le code suivant compile `T2.vb` et n’affiche pas les avertissements pour les variables locales inutilisées (42024).  
   
 ```console

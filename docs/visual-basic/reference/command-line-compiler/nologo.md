@@ -7,14 +7,15 @@ helpviewer_keywords:
 - nologo compiler option [Visual Basic]
 - /nologo compiler option [Visual Basic]
 ms.assetid: 25ef54b6-d676-4639-a2d2-a747a158bc07
-ms.openlocfilehash: d1307603ebc06b4eb4c3786f1cd2fb432c0cf636
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5557d681c5e6901592936efd35b3c552d43e39b0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84360460"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097668"
 ---
 # <a name="-nologo-visual-basic"></a>-nologo (Visual Basic)
+
 Supprime l’affichage de la bannière de copyright et des messages d’information pendant la compilation.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,12 +25,14 @@ Supprime l’affichage de la bannière de copyright et des messages d’informat
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Si vous spécifiez `-nologo` , le compilateur n’affiche pas de bannière de copyright. Par défaut, l'option `-nologo` n'est pas activée.  
   
 > [!NOTE]
 > L' `-nologo` option n’est pas disponible dans l’environnement de développement Visual Studio ; elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
+
  Le code suivant compile `T2.vb` et n’affiche pas de bannière de copyright.  
   
 ```console

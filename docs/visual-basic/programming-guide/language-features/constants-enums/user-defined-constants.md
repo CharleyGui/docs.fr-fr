@@ -9,19 +9,21 @@ helpviewer_keywords:
 - constants [Visual Basic], user-defined
 - circular references between constants [Visual Basic]
 ms.assetid: a1206d5c-c45e-4ac2-970a-4a0be6a05fdd
-ms.openlocfilehash: 14f3de39eb8d8e6820e2b40792a8e8e57217e410
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 351bdb6963e278341c13e53ef19aea0876010aa9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414374"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91095640"
 ---
 # <a name="user-defined-constants-visual-basic"></a>Constantes définies par l'utilisateur (Visual Basic)
+
 Une constante est un nom explicite qui prend la place d’un nombre ou d’une chaîne qui ne change pas. Les constantes stockent des valeurs qui, comme leur nom l’indique, demeurent constantes tout au long de l’exécution d’une application. Vous pouvez utiliser des constantes définies par les contrôles ou les composants avec lesquels vous travaillez, ou vous pouvez créer les vôtres. Les constantes que vous créez vous-même sont décrites comme étant *définies par l’utilisateur*.  
   
  Vous déclarez une constante avec l' `Const` instruction, en utilisant les mêmes instructions que pour la création d’un nom de variable. Si `Option Strict` est `On` , vous devez déclarer explicitement le type de constante.  
   
 ## <a name="const-statement-usage"></a>Utilisation de l’instruction Const  
+
  Une `Const` instruction peut représenter une quantité mathématique ou de date/heure :  
   
  [!code-vb[VbEnumsTask#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#10)]  
@@ -35,6 +37,7 @@ Une constante est un nom explicite qui prend la place d’un nombre ou d’une c
  [!code-vb[VbEnumsTask#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#15)]  
   
 ## <a name="scope-of-user-defined-constants"></a>Étendue des constantes définies par l’utilisateur  
+
  `Const`La portée d’une instruction est identique à celle d’une variable déclarée au même emplacement. Vous pouvez spécifier l’étendue de l’une des manières suivantes :  
   
 - Pour créer une constante qui existe uniquement dans une procédure, déclarez-la dans cette procédure.  
@@ -48,6 +51,7 @@ Une constante est un nom explicite qui prend la place d’un nombre ou d’une c
  Pour plus d’informations, consultez [Comment : déclarer une constante](how-to-declare-a-constant.md).  
   
 ### <a name="avoiding-circular-references"></a>Éviter les références circulaires  
+
  Étant donné que les constantes peuvent être définies en termes d’autres constantes, il est possible de créer par inadvertance un *cycle*, ou référence circulaire, entre deux constantes ou plus. Un cycle se produit lorsque vous avez au moins deux constantes publiques, chacune d’elles étant définie d’après les autres, comme dans l’exemple suivant :  
   
  [!code-vb[VbEnumsTask#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#16)]  

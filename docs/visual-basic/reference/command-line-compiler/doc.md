@@ -6,14 +6,15 @@ helpviewer_keywords:
 - -doc compiler option [Visual Basic]
 - /doc compiler option [Visual Basic]
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
-ms.openlocfilehash: 57a81983278c26090c62995f4da55c5cbfd66047
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8b80629ce9b2cd62f10d9a53279b83ba41bc4ece
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408671"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097707"
 ---
 # <a name="-doc"></a>-doc
+
 Traite les commentaires de documentation pour les diriger vers un fichier XML.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,7 +23,7 @@ Traite les commentaires de documentation pour les diriger vers un fichier XML.
 -doc[+ | -]  
 ```
 
-ou  
+or  
 
 ```console
 -doc:file  
@@ -32,10 +33,11 @@ ou
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|Facultatif. Si vous spécifiez +, ou simplement `-doc`, le compilateur génère des informations de documentation et les place dans un fichier XML. Si vous spécifiez `-`, ce qui équivaut à ne pas spécifier `-doc`, aucune information de documentation n’est créée.|  
+|`+` &#124; `-`|Optionnel. Si vous spécifiez +, ou simplement `-doc`, le compilateur génère des informations de documentation et les place dans un fichier XML. Si vous spécifiez `-`, ce qui équivaut à ne pas spécifier `-doc`, aucune information de documentation n’est créée.|  
 |`file`|Obligatoire si l'option `-doc:` est utilisée. Spécifie le fichier XML de sortie, qui est renseigné avec les commentaires des fichiers de code source de la compilation. Si le nom de fichier contient un espace, placez-le entre des guillemets (" ").|  
   
 ## <a name="remarks"></a>Notes  
+
  L’option `-doc` contrôle si le compilateur génère un fichier XML contenant les commentaires de documentation. Si vous utilisez la syntaxe `-doc:file`, le paramètre `file` spécifie le nom du fichier XML. Si vous utilisez `-doc` ou `-doc+`, le compilateur prend le nom de fichier XML du fichier exécutable ou de la bibliothèque en cours de création. Si vous utilisez `-doc-` ou que vous ne spécifiez pas l’option `-doc`, le compilateur ne crée pas de fichier XML.  
   
  Dans les fichiers de code source, des commentaires de documentation peuvent précéder les définitions suivantes :  
@@ -55,6 +57,7 @@ ou
 |1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. Définissez la valeur dans la zone **générer le fichier de documentation XML** .|  
   
 ## <a name="example"></a>Exemple  
+
  Pour obtenir un exemple, consultez [Documentation de votre code avec le langage XML](../../programming-guide/program-structure/documenting-your-code-with-xml.md).  
   
 ## <a name="see-also"></a>Voir aussi
