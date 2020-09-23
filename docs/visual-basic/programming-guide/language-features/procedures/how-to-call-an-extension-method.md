@@ -5,12 +5,12 @@ helpviewer_keywords:
 - calling extension methods [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: df07750f-40f4-4c07-a79e-1113a27cfbea
-ms.openlocfilehash: 54419c99ae08c9ca2e3cfa86993dc99bc02bbb64
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 38d6e8534283f475be2409f4b7c74ef48f1f248b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388658"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91074990"
 ---
 # <a name="how-to-call-an-extension-method-visual-basic"></a>Comment : appeler une méthode d’extension (Visual Basic)
 
@@ -64,6 +64,7 @@ La méthode doit être dans la portée quand elle est appelée.
      Le résultat est le suivant : `or not!!!` .
 
 ## <a name="example"></a>Exemple
+
  Le code suivant est un exemple complet de la création et de l’utilisation d’une méthode d’extension simple.
 
 ```vb
