@@ -6,14 +6,15 @@ helpviewer_keywords:
 - /moduleassemblyname compiler option [Visual Basic]
 - -moduleassemblyname compiler option [Visual Basic]
 ms.assetid: 013a57b6-f425-4dd3-b333-512d72c42f55
-ms.openlocfilehash: 99f2b9d65f3c2a128e026666c5efb384e22643f9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9fb9287f9472d4b33eff4cb601aff5eed370b2c0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403146"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91065565"
 ---
 # <a name="-moduleassemblyname"></a>-moduleassemblyname
+
 Spécifie le nom de l’assembly dont ce module doit faire partie.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,6 +30,7 @@ Spécifie le nom de l’assembly dont ce module doit faire partie.
 |`assembly_name`|Nom de l'assembly dont ce module fera partie.|  
   
 ## <a name="remarks"></a>Notes  
+
  Le compilateur traite l' `-moduleassemblyname` option uniquement si l' `-target:module` option a été spécifiée. Le compilateur crée alors un module. Le module créé par le compilateur est valide uniquement pour l’assembly spécifié avec l' `-moduleassemblyname` option. Si vous placez le module dans un assembly différent, des erreurs d’exécution se produisent.  
   
  L' `-moduleassemblyname` option est requise uniquement lorsque les conditions suivantes sont remplies :  
