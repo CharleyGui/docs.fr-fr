@@ -10,14 +10,15 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - naming conventions [Visual Basic], classes
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
-ms.openlocfilehash: 20531e379ddf9b93a278795e9b3c0eb91b47e077
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b25d246bd31147b7a9ba2c72214926fdb5ca8895
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398342"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072143"
 ---
 # <a name="visual-basic-naming-conventions"></a>Conventions d'affectation de noms Visual Basic
+
 Lorsque vous nommez un élément dans votre application Visual Basic, le premier caractère de ce nom doit être un caractère alphabétique ou un trait de soulignement. Notez, toutefois, que les noms commençant par un trait de soulignement ne sont pas conformes à l' [indépendance du langage et aux composants indépendants du langage](../../../standard/language-independence-and-language-independent-components.md) (CLS).  
   
  Les suggestions suivantes s’appliquent à l’affectation de noms.  

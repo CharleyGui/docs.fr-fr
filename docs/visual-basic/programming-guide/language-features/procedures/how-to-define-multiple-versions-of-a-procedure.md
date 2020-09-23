@@ -8,14 +8,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure overloading [Visual Basic], multiple versions
 ms.assetid: 71ccdd66-1b00-4b66-bee4-6926c0d696f4
-ms.openlocfilehash: 870a18dbf3a7e28b7d7b612e853beeec6908cf6f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2661603ba33dd0bc28ac1a192794a4534225b641
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387931"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071636"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>Comment : définir plusieurs versions d'une procédure (Visual Basic)
+
 Vous pouvez définir une procédure dans plusieurs versions en la *surchargeant* , à l’aide du même nom mais d’une liste de paramètres différente pour chaque version. L’objectif de la surcharge est de définir plusieurs versions étroitement liées d’une procédure sans avoir à les différencier par nom.  
   
  Pour plus d'informations, consultez [Procedure Overloading](./procedure-overloading.md).  
@@ -31,6 +32,7 @@ Vous pouvez définir une procédure dans plusieurs versions en la *surchargeant*
 4. Mettez fin à chaque version de la procédure avec l' `End Sub` `End Function` instruction ou, le cas échéant.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant définit une `Sub` procédure pour la publication d’une transaction sur le solde d’un client. Elle utilise le `Overloads` mot clé pour définir deux versions de la procédure, une qui accepte le client par nom et l’autre par numéro de compte.  
   
  [!code-vb[VbVbcnProcedures#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#72)]  
@@ -40,6 +42,7 @@ Vous pouvez définir une procédure dans plusieurs versions en la *surchargeant*
  Pour plus d’informations sur l’appel de ces versions de la `post` procédure, consultez [Comment : appeler une procédure surchargée](./how-to-call-an-overloaded-procedure.md).  
   
 ## <a name="compile-the-code"></a>Compiler le code  
+
  Vérifiez que chaque version surchargée a le même nom de procédure, mais une autre liste de paramètres.  
   
 ## <a name="see-also"></a>Voir aussi

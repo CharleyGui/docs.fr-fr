@@ -6,17 +6,19 @@ helpviewer_keywords:
 - strings [Visual Basic], Visual Basic
 - strings [Visual Basic], regular expressions
 ms.assetid: 5674418d-f00d-4f72-9f98-d15897793350
-ms.openlocfilehash: 935926b8b83afa47c20ea68aecd6bc8c40bd0234
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 44736f4db9977d9f69a0571cc80fa327dcf96581
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363694"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072507"
 ---
 # <a name="string-basics-in-visual-basic"></a>Concepts de base des chaînes en Visual Basic
+
 Le type de données `String` représente une série de caractères (chacun représentant à son tour une instance du type de données `Char`). Cette rubrique présente les concepts de base des chaînes dans Visual Basic.  
   
 ## <a name="string-variables"></a>Variables de chaîne  
+
  Il est possible d'assigner à une instance de chaîne une valeur littérale représentant une série de caractères. Par exemple :  
   
  [!code-vb[VbVbalrStrings#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#63)]  
@@ -50,6 +52,7 @@ World]]></xml>.Value
 ```  
   
 ## <a name="characters-in-strings"></a>Caractères dans des chaînes  
+
  Une chaîne peut être considérée comme une série de valeurs `Char` et le type `String` possède des fonctions intégrées qui vous permettent d'exécuter de nombreuses manipulations sur une chaîne qui ressemblent aux manipulations autorisées par les tableaux. Comme tous les tableaux dans .NET Framework, il s’agit de tableaux de base zéro. Vous pouvez vous référer à un caractère spécifique dans une chaîne via la propriété `Chars`, ce qui permet d'accéder à un caractère à la position où il apparaît dans la chaîne. Par exemple :  
   
  [!code-vb[VbVbalrStrings#67](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#67)]  
@@ -61,6 +64,7 @@ World]]></xml>.Value
  La variable `myArray` contient à présent un tableau de valeurs `Char`, dont chacune représente un caractère issu de `myString`.  
   
 ## <a name="the-immutability-of-strings"></a>Immuabilité des chaînes  
+
  Une chaîne est *immuable*, ce qui signifie que sa valeur ne peut pas être modifiée une fois qu’elle a été créée. Toutefois, cela ne vous empêche pas d'assigner plusieurs valeurs à une variable de chaîne. Prenons l’exemple suivant :  
   
  [!code-vb[VbVbalrStrings#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#69)]  

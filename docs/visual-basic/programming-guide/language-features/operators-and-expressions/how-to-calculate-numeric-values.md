@@ -11,14 +11,15 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
-ms.openlocfilehash: 94b02693f308dcfcfa6983f2750a26d9d419f7be
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 452a8392b46f0c25b6ad2a8a30c51071f2ae1d93
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403457"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071714"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>Comment : calculer des valeurs numériques (Visual Basic)
+
 Vous pouvez calculer des valeurs numériques à l’aide d’expressions numériques. Une *expression numérique* est une expression qui contient des littéraux, des constantes et des variables représentant des valeurs numériques, ainsi que des opérateurs qui agissent sur ces valeurs.  
   
 ## <a name="calculating-numeric-values"></a>Calcul de valeurs numériques  
@@ -50,6 +51,7 @@ Vous pouvez calculer des valeurs numériques à l’aide d’expressions numéri
      Pour plus d’informations, consultez [Instructions](../../../language-reference/statements/index.md).  
   
 ## <a name="multiple-operators"></a>Opérateurs multiples  
+
  Si l’expression numérique contient plusieurs opérateurs, l’ordre dans lequel ils sont évalués est déterminé par les règles de priorité des opérateurs. Pour remplacer les règles de priorité des opérateurs, vous devez placer les expressions entre parenthèses, comme dans l’exemple ci-dessus. les expressions entre parenthèses sont évaluées en premier.  
   
 #### <a name="to-override-normal-operator-precedence"></a>Pour remplacer la priorité d’un opérateur normal  
@@ -66,7 +68,7 @@ Vous pouvez calculer des valeurs numériques à l’aide d’expressions numéri
 
 - [Opérateurs et expressions](index.md)
 - [Comparaisons de valeurs](value-comparisons.md)
-- [Instructions](../../../language-reference/statements/index.md)
+- [Publication](../../../language-reference/statements/index.md)
 - [Priorité des opérateurs en Visual Basic](../../../language-reference/operators/operator-precedence.md)
 - [Opérateurs arithmétiques](../../../language-reference/operators/arithmetic-operators.md)
 - [Association efficace d’opérateurs](efficient-combination-of-operators.md)

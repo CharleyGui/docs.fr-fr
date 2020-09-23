@@ -9,14 +9,15 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 - query samples [Visual Basic]
 ms.assetid: 621bb10a-e5d7-44fb-a025-317964b19d92
-ms.openlocfilehash: c8ed792bf3ffefd903d60522f621958e44546d32
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 249c3eebaeec3d09a297fead07ab056caff1b618
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404950"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071805"
 ---
 # <a name="how-to-return-a-linq-query-result-as-a-specific-type-visual-basic"></a>Comment : retourner un résultat de requête LINQ en tant que type spécifique (Visual Basic)
+
 LINQ (Language-Integrated Query) facilite l’accès aux informations de la base de données et à l’exécution des requêtes. Par défaut, les requêtes LINQ retournent une liste d’objets en tant que type anonyme. Vous pouvez également spécifier qu’une requête retourne une liste d’un type spécifique à l’aide de la `Select` clause.  
   
  L’exemple suivant montre comment créer une application qui exécute des requêtes sur une base de données SQL Server et projette les résultats sous la forme d’un type nommé spécifique. Pour plus d’informations, consultez [types anonymes](../objects-and-classes/anonymous-types.md) et [clause SELECT](../../../language-reference/queries/select-clause.md).  
@@ -80,4 +81,4 @@ LINQ (Language-Integrated Query) facilite l’accès aux informations de la base
 - [LINQ](index.md)
 - [Requêtes](../../../language-reference/queries/index.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
-- [Méthode DataContext (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [DataContext, méthodes (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

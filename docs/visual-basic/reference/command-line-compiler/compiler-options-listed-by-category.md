@@ -4,14 +4,15 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-ms.openlocfilehash: 533d3da2f76854d311262ce97b43f240acab5f7d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 77a130b684d26cf7e4b9df9382348a371a60bc5d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408749"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072039"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic options du compilateur classées par catégorie
+
 Le compilateur de ligne de commande Visual Basic est fourni comme alternative à la compilation de programmes à partir de l’environnement de développement intégré (IDE) de Visual Studio. La liste suivante répertorie les Visual Basic options du compilateur de ligne de commande triées par catégorie fonctionnelle.  
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
@@ -38,7 +39,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 |Option|Objectif|  
 |---|---|  
 |[-doc](doc.md)|Traite les commentaires de documentation pour les diriger vers un fichier XML.|  
-|[-deterministic](deterministic.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
+|[-déterministe](deterministic.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
 |[-netcf](netcf.md)|Définit le compilateur pour cibler le .NET Compact Framework.|  
 |[-out](out.md)|Spécifie un fichier de sortie.|  
 |[-refonly](refonly-compiler-option.md)|Génère uniquement un assembly de référence.|
@@ -93,7 +94,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
   
 |Option|Objectif|  
 |---|---|  
-|[-define](define.md)|Définit des symboles de compilation conditionnelle.|  
+|[-définir](define.md)|Définit des symboles de compilation conditionnelle.|  
   
 ## <a name="resources"></a>Ressources  
   
@@ -110,7 +111,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 |---|---|  
 |[@ (spécifier un fichier réponse)](specify-response-file.md)|Spécifie un fichier réponse.|  
 |[-baseaddress](baseaddress.md)|Spécifie l'adresse de base d'une DLL.|  
-|[-codepage](codepage.md)|Spécifie la page de codes à utiliser pour tous les fichiers de code source inclus dans la compilation.|  
+|[-CodePage](codepage.md)|Spécifie la page de codes à utiliser pour tous les fichiers de code source inclus dans la compilation.|  
 |[-errorreport](errorreport.md)|Spécifie comment le compilateur Visual Basic doit signaler les erreurs internes du compilateur.|  
 |[-highentropyva](highentropyva.md)|Indique au noyau Windows si un fichier exécutable particulier prend en charge la randomisation du format d'espace d'adresse (ASLR) de forte entropie.|  
 |[-main](main.md)|Spécifie la classe qui contient la `Sub Main` procédure à utiliser au démarrage.|  

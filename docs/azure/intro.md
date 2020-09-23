@@ -2,14 +2,14 @@
 title: Prise en main d’Azure et .NET
 description: Découvrez les principes de base que vous devez savoir sur Azure et .NET.
 ms.date: 06/20/2020
-ms.openlocfilehash: c64de800f47035b22cc62b6d08cb7b71246984a7
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 9f1766176740ede5aa40dd894497f2aa719efe23
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174320"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071103"
 ---
-# <a name="introduction-to-azure-and-net"></a>Introduction à Azure et .NET
+# <a name="introduction-to-azure-and-net"></a>Présentation d’Azure et de .NET
 
 Ce document fournit une vue d’ensemble des principaux concepts et services que les développeurs .NET doivent connaître pour commencer à développer des applications à l’aide des services Azure.
 
@@ -28,7 +28,7 @@ Ce document fournit une vue d’ensemble des principaux concepts et services que
 
 **Services managés** : Azure fournit des services où vous fournissez des données ou des informations à Azure, puis les implémentations d’Azure prennent les mesures appropriées. Par exemple, le stockage Blob Azure, où vous fournissez des fichiers tandis qu’Azure gère leur lecture, leur écriture et leur persistance.
 
-**Kit de développement logiciel (SDK) Azure pour .net**: parfois appelé **bibliothèques Azure pour .net**, il fait référence aux [packages NuGet](https://www.nuget.org/profiles/azure-sdk) que vous installez dans votre projet, qui fournissent diverses interactions et fonctionnalités avec les services Azure. Ces packages incluent également des bibliothèques de gestion utilisées pour approvisionner et gérer les ressources.
+Le **Kit de développement logiciel (SDK) Azure pour .net** fait collectivement référence aux [packages NuGet](packages.md) que vous installez dans votre projet, qui fournissent diverses interactions et fonctionnalités avec les services Azure. Ces packages incluent également des bibliothèques de gestion utilisées pour approvisionner et gérer les ressources.
 
 ## <a name="choosing-a-hosting-option"></a>Choisir une option d'hébergement
 

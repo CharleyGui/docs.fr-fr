@@ -7,14 +7,15 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic]
 ms.assetid: 4d229712-6be8-4c5c-bac5-06995ce9185a
-ms.openlocfilehash: fa220998d12206e620c242b9b39df3dc1b639d29
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: bd138177d5f4b7ee1eb63833360d227baa54f66d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388256"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072741"
 ---
 # <a name="how-to-create-a-property-visual-basic"></a>Comment : créer une propriété (Visual Basic)
+
 Vous devez placer une définition de propriété entre une `Property` instruction et une `End Property` instruction. Dans cette définition, vous définissez une `Get` procédure, une `Set` procédure ou les deux. Tout le code de la propriété se trouve dans ces procédures.  
   
  La `Get` procédure récupère la valeur de la propriété, et la `Set` procédure stocke une valeur. Si vous souhaitez que la propriété dispose d’un accès en lecture/écriture, vous devez définir les deux procédures. Pour une propriété en lecture seule, vous définissez uniquement `Get` , et pour une propriété en écriture seule, vous définissez uniquement `Set` .  
@@ -52,6 +53,7 @@ Vous devez placer une définition de propriété entre une `Property` instructio
  Vous devez écrire une `Set` procédure pour une propriété en lecture-écriture et pour une propriété en écriture seule. Vous ne devez pas définir une `Set` procédure pour une propriété en lecture seule.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant crée une propriété en lecture/écriture qui stocke un nom complet comme deux noms constitutifs, le prénom et le nom. Lorsque le code appelant lit `fullName` , la `Get` procédure combine les deux noms constitutifs et retourne le nom complet. Lorsque le code appelant assigne un nouveau nom complet, la `Set` procédure tente de la décomposer en deux noms constitutifs. S’il ne trouve pas d’espace, il le stocke comme premier nom.  
   
  [!code-vb[VbVbcnProcedures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#8)]  

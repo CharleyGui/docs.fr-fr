@@ -11,14 +11,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - argument passing [Visual Basic], procedures
 ms.assetid: 08723588-3890-4ddc-8249-79e049e0f241
-ms.openlocfilehash: 903e05facccd1f2afdf4bb51b200531feb64aa79
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 816d6388a0dbb7ae346074d258ff651c793c5e0e
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387775"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071506"
 ---
 # <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a>Comment : passer des arguments à une procédure (Visual Basic)
+
 Lorsque vous appelez une procédure, vous devez suivre le nom de la procédure avec une liste d’arguments entre parenthèses. Vous fournissez un argument correspondant à chaque paramètre requis que la procédure définit et vous pouvez éventuellement fournir des arguments aux `Optional` paramètres. Si vous ne fournissez pas `Optional` de paramètre dans l’appel, vous devez inclure une virgule pour marquer son emplacement dans la liste d’arguments si vous fournissez des arguments suivants.  
   
  Si vous envisagez de passer un argument d’un type de données différent de celui de son paramètre correspondant, par exemple `Byte` à `String` , vous pouvez définir le commutateur de vérification de type ([Option Strict Statement](../../../language-reference/statements/option-strict-statement.md)) sur `Off` . Si `Option Strict` est `On` , vous devez utiliser des conversions étendues ou des mots clés de conversion explicite. Pour plus d’informations, consultez [conversions étendues et restrictives](../data-types/widening-and-narrowing-conversions.md) et [fonctions de conversion de type](../../../language-reference/functions/type-conversion-functions.md).  

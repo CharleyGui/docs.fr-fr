@@ -8,14 +8,15 @@ helpviewer_keywords:
 - properties [Visual Basic], property procedures
 - procedure calls [Visual Basic], property procedures
 ms.assetid: 96bc4d74-d9c3-4b7a-954d-58ac8553cd94
-ms.openlocfilehash: 006961a0f1d4be6b0d52be5bc273dad9733bfe56
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0b35751136937d4cee5b3ca9669b43d3fbdf71a1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388697"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071949"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>Comment : appeler une procédure de propriété (Visual Basic)
+
 Vous appelez une procédure de propriété en stockant une valeur dans la propriété ou en récupérant sa valeur. Vous accédez à une propriété de la même façon que vous accédez à une variable.  
   
  La procédure de la propriété `Set` stocke une valeur et sa `Get` procédure récupère la valeur. Toutefois, vous n’appelez pas explicitement ces procédures par nom. Vous utilisez la propriété dans une instruction d’assignation ou une expression, de la même façon que vous stockez ou récupérez la valeur d’une variable. Visual Basic effectue les appels aux procédures de la propriété.  
@@ -24,7 +25,7 @@ Vous appelez une procédure de propriété en stockant une valeur dans la propri
   
 1. Utilisez le nom de la propriété dans une expression de la même façon que vous utilisez un nom de variable. Vous pouvez utiliser une propriété partout où vous pouvez utiliser une variable ou une constante.  
   
-     -ou-  
+     - ou -  
   
      Utilisez le nom de propriété après le signe égal ( `=` ) dans une instruction d’assignation.  
   

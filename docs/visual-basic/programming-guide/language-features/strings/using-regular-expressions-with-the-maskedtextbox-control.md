@@ -5,17 +5,19 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: 1bb5ac5381dc85f598ef46638fbc8cd1a8643825
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 493da7b8583b5cc73a9832afa81b7b1d84742f2d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555742"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072429"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Utilisation d'expressions régulières avec le contrôle MaskedTextBox en Visual Basic
+
 Cet exemple montre comment convertir des expressions régulières simples pour qu’elles fonctionnent avec le <xref:System.Windows.Forms.MaskedTextBox> contrôle.  
   
 ## <a name="description-of-the-masking-language"></a>Description du langage de masquage  
+
  Le <xref:System.Windows.Forms.MaskedTextBox> langage de masquage standard est basé sur celui utilisé par le `Masked Edit` contrôle dans Visual Basic 6,0 et doit être familiarisé avec les utilisateurs qui migrent à partir de cette plateforme.  
   
  La <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> propriété du <xref:System.Windows.Forms.MaskedTextBox> contrôle spécifie le masque de saisie à utiliser. Le masque doit être une chaîne composée d’un ou plusieurs des éléments de masquage du tableau suivant.  
@@ -44,6 +46,7 @@ Cet exemple montre comment convertir des expressions régulières simples pour q
  Les symboles décimal (.), millièmes (,), heure ( :), date (/) et devise ($) affichent par défaut les symboles tels que définis par la culture de l’application. Vous pouvez les forcer à afficher des symboles pour une autre culture à l’aide de la <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> propriété.  
   
 ## <a name="regular-expressions-and-masks"></a>Expressions régulières et masques  
+
  Bien que vous puissiez utiliser des expressions régulières et des masques pour valider l’entrée d’utilisateur, ils ne sont pas complètement équivalents. Les expressions régulières peuvent exprimer des modèles plus complexes que les masques, mais les masques peuvent exprimer les mêmes informations de façon plus succincte et dans un format culturellement pertinent.  
   
  Le tableau suivant compare quatre expressions régulières et le masque équivalent pour chacune d’elles.  

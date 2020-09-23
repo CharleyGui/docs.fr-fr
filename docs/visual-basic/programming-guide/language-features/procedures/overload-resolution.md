@@ -10,17 +10,18 @@ helpviewer_keywords:
 - signatures [Visual Basic], procedure
 - overloads [Visual Basic], resolution
 ms.assetid: 766115d1-4352-45fb-859f-6063e0de0ec0
-ms.openlocfilehash: bcb99ef3845c1ce3998dc9dc8d9f1d335515c0a9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9b83eba8efc8dfe14b6ec1cbab270984977198e5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84364368"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071363"
 ---
 # <a name="overload-resolution-visual-basic"></a>Résolution de surcharge (Visual Basic)
+
 Lorsque le compilateur Visual Basic rencontre un appel à une procédure qui est définie dans plusieurs versions surchargées, le compilateur doit décider de la surcharge à appeler. Pour ce faire, il effectue les étapes suivantes :  
   
-1. **Aux.** Elle élimine toute surcharge avec un niveau d’accès qui empêche le code appelant de l’appeler.  
+1. **Accessibilité.** Elle élimine toute surcharge avec un niveau d’accès qui empêche le code appelant de l’appeler.  
   
 2. **Nombre de paramètres.** Elle élimine toutes les surcharges qui définissent un nombre de paramètres différent de ceux fournis dans l’appel.  
   
@@ -49,6 +50,7 @@ Lorsque le compilateur Visual Basic rencontre un appel à une procédure qui est
  Dans le deuxième appel, le compilateur ne peut pas éliminer les surcharges sur la base de la fonction restrictive. Elle élimine la troisième surcharge pour la même raison que dans le premier appel, car elle peut appeler la deuxième surcharge avec moins d’élargissement des types d’arguments. Toutefois, le compilateur ne peut pas résoudre entre la première et la deuxième surcharge. Chaque possède un type de paramètre défini qui s’étend au type correspondant dans l’autre ( `Byte` à `Short` , mais `Single` à `Double` ). Par conséquent, le compilateur génère une erreur de résolution de surcharge.  
   
 ## <a name="overloaded-optional-and-paramarray-arguments"></a>Arguments facultatifs et ParamArray surchargés  
+
  Si deux surcharges d’une procédure ont des signatures identiques, sauf que le dernier paramètre est déclaré [facultatif](../../../language-reference/modifiers/optional.md) dans un et [ParamArray](../../../language-reference/modifiers/paramarray.md) dans l’autre, le compilateur résout un appel à cette procédure comme suit :  
   
 |Si l’appel fournit le dernier argument comme|Le compilateur résout l’appel à la surcharge en déclarant le dernier argument comme|  

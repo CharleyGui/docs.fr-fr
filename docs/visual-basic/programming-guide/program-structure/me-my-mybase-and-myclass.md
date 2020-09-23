@@ -21,18 +21,20 @@ helpviewer_keywords:
 - current instance [Visual Basic], Me keyword
 - MyBase keyword [Visual Basic], relationship to similar programming elements
 ms.assetid: f8e241ae-b1ed-4886-9aa0-08c632154029
-ms.openlocfilehash: b4470e5c178c0f66dc33956ea0131d4eabc51d46
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cc96f39d9dc37b7f1a5d8205e145869fb1b5ecef
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397465"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072234"
 ---
 # <a name="me-my-mybase-and-myclass-in-visual-basic"></a>Me, My, MyBase et MyClass dans Visual Basic
+
 `Me`, `My` , `MyBase` et `MyClass` dans Visual Basic ont des noms similaires, mais à des fins différentes. Cette rubrique décrit chacune de ces entités afin de les distinguer.  
   
 ## <a name="me"></a>Moi  
- Le `Me` mot clé permet de faire référence à l’instance spécifique d’une classe ou d’une structure dans laquelle le code est en cours d’exécution. `Me`se comporte comme une variable objet ou une variable de structure faisant référence à l’instance actuelle. L’utilisation de `Me` est particulièrement utile pour transmettre des informations sur l’instance en cours d’exécution d’une classe ou d’une structure à une procédure d’une autre classe, structure ou module.  
+
+ Le `Me` mot clé permet de faire référence à l’instance spécifique d’une classe ou d’une structure dans laquelle le code est en cours d’exécution. `Me` se comporte comme une variable objet ou une variable de structure faisant référence à l’instance actuelle. L’utilisation de `Me` est particulièrement utile pour transmettre des informations sur l’instance en cours d’exécution d’une classe ou d’une structure à une procédure d’une autre classe, structure ou module.  
   
  Par exemple, supposons que vous ayez la procédure suivante dans un module.  
   
@@ -50,13 +52,16 @@ ChangeFormColor(Me)
 ```  
   
 ## <a name="my"></a>My  
+
  Cette `My` fonctionnalité offre un accès facile et intuitif à plusieurs classes de .NET Framework, ce qui permet à l’utilisateur Visual Basic d’interagir avec l’ordinateur, l’application, les paramètres, les ressources, etc.  
   
 ## <a name="mybase"></a>MyBase  
- Le `MyBase` mot clé se comporte comme une variable objet qui fait référence à la classe de base de l’instance actuelle d’une classe. `MyBase`est couramment utilisé pour accéder aux membres de la classe de base qui sont substitués ou occultés dans une classe dérivée. `MyBase.New`est utilisé pour appeler explicitement un constructeur de classe de base à partir d’un constructeur de classe dérivée.  
+
+ Le `MyBase` mot clé se comporte comme une variable objet qui fait référence à la classe de base de l’instance actuelle d’une classe. `MyBase` est couramment utilisé pour accéder aux membres de la classe de base qui sont substitués ou occultés dans une classe dérivée. `MyBase.New` est utilisé pour appeler explicitement un constructeur de classe de base à partir d’un constructeur de classe dérivée.  
   
 ## <a name="myclass"></a>MyClass  
- Le `MyClass` mot clé se comporte comme une variable objet qui fait référence à l’instance actuelle d’une classe telle qu’elle a été implémentée à l’origine. `MyClass`est semblable à `Me` , mais tous les appels de méthode sur celui-ci sont traités comme si la méthode avait la valeur `NotOverridable` .  
+
+ Le `MyClass` mot clé se comporte comme une variable objet qui fait référence à l’instance actuelle d’une classe telle qu’elle a été implémentée à l’origine. `MyClass` est semblable à `Me` , mais tous les appels de méthode sur celui-ci sont traités comme si la méthode avait la valeur `NotOverridable` .  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,17 +5,19 @@ helpviewer_keywords:
 - Visual Basic code, strings
 - strings [Visual Basic], Visual Basic
 ms.assetid: 7e4c777c-ad69-46e2-8b9e-9be4033b1c96
-ms.openlocfilehash: 302805f8b9a83fceeeaa050332140c157a7a786f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 60755b7aa8911f9c13eba80080b388a812f29475
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410553"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072585"
 ---
 # <a name="strings-in-visual-basic"></a>Chaînes en Visual Basic
+
 Cette section décrit les concepts de base qui sous-tendent l’utilisation de chaînes dans Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Introduction aux chaînes en Visual Basic](introduction-to-strings.md)  
  Répertorie les rubriques qui décrivent les concepts de base de l’utilisation de chaînes dans Visual Basic.  
   

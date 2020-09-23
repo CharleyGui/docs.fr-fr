@@ -10,14 +10,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: c7042de2-2422-4039-94e8-ac298896af69
-ms.openlocfilehash: ddff8c8cd82593b7d89fb0847e56123c287e364b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 10cd7d11b0efe9fa5eb3ae24269a4cdbe33bc08a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387879"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071545"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters-visual-basic"></a>Comment : surcharger une procédure qui accepte un nombre indéfini de paramètres (Visual Basic)
+
 Si une procédure a un paramètre [ParamArray](../../../language-reference/modifiers/paramarray.md) , vous ne pouvez pas définir une version surchargée qui prend un tableau unidimensionnel pour le tableau de paramètres. Pour plus d’informations, consultez « surcharges implicites pour un paramètre ParamArray » dans [Considérations sur la surcharge des procédures](./considerations-in-overloading-procedures.md).  
   
 ### <a name="to-overload-a-procedure-that-takes-a-variable-number-of-parameters"></a>Pour surcharger une procédure qui accepte un nombre variable de paramètres  
@@ -35,6 +36,7 @@ Si une procédure a un paramètre [ParamArray](../../../language-reference/modif
 6. Mettez fin à chaque procédure avec l' `End Sub` `End Function` instruction ou, le cas échéant.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre une procédure définie avec un paramètre [ParamArray](../../../language-reference/modifiers/paramarray.md) , puis un ensemble équivalent de procédures surchargées.  
   
  [!code-vb[VbVbcnProcedures#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#69)]  
@@ -48,9 +50,11 @@ Si une procédure a un paramètre [ParamArray](../../../language-reference/modif
  Le code dans les versions surchargées n’a pas besoin de tester si le code appelant a fourni une ou plusieurs valeurs pour le `ParamArray` paramètre, ou le cas échéant, combien. Visual Basic passe le contrôle à la version correspondant à la liste d’arguments d’appel.  
   
 ## <a name="compile-the-code"></a>Compiler le code  
+
  Étant donné qu’une procédure avec un `ParamArray` paramètre est équivalente à un ensemble de versions surchargées, vous ne pouvez pas surcharger une telle procédure avec une liste de paramètres correspondant à l’une de ces surcharges implicites. Pour plus d’informations, consultez [Considérations sur la surcharge des procédures](./considerations-in-overloading-procedures.md).  
   
 ## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+
  Chaque fois que vous traitez un tableau qui peut être indéfiniment volumineux, il existe un risque de surexécution de la capacité interne de votre application. Si vous acceptez un tableau de paramètres, vous devez tester la longueur du tableau auquel le code appelant est passé et prendre les mesures appropriées s’il est trop grand pour votre application.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -11,14 +11,15 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 - query samples [Visual Basic]
 ms.assetid: 07a4584d-9fd8-4a1d-b7d9-ccf2efa5c84e
-ms.openlocfilehash: c1bc6ab863f9de118d59e102d3d5d251d326f497
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 94c2907f05aa9b5b2bc8659cef6f523187f1ef6b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404937"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071792"
 ---
 # <a name="how-to-sort-query-results-by-using-linq-visual-basic"></a>Comment : trier les résultats d'une requête à l'aide de LINQ (Visual Basic)
+
 LINQ (Language-Integrated Query) facilite l’accès aux informations de la base de données et à l’exécution des requêtes.  
   
  L’exemple suivant montre comment créer une application qui exécute des requêtes sur une base de données SQL Server et trie les résultats en fonction de plusieurs champs à l’aide de la `Order By` clause. L’ordre de tri de chaque champ peut être ordre croissant ou décroissant. Pour plus d’informations, consultez [clause ORDER BY](../../../language-reference/queries/order-by-clause.md).  
@@ -78,4 +79,4 @@ LINQ (Language-Integrated Query) facilite l’accès aux informations de la base
 - [LINQ](index.md)
 - [Requêtes](../../../language-reference/queries/index.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
-- [Méthode DataContext (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [DataContext, méthodes (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

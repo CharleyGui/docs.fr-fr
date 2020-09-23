@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [Visual Basic], inheritance
 - object variables [Visual Basic], determining relation
 ms.assetid: da002e3f-6616-4bad-a229-f842d06652bb
-ms.openlocfilehash: 30e88a21e737aa57513745899577381ed34151a2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b33815d58b0ef40f7f75a6a41bb4b1eeef591859
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410462"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072221"
 ---
 # <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a>Comment : déterminer si deux objets sont liés (Visual Basic)
 
@@ -25,9 +25,10 @@ Vous pouvez comparer deux objets pour déterminer la relation, le cas échéant,
 
 3. Dans la liste d’arguments pour <xref:System.Type.IsInstanceOfType%2A> , spécifiez l’objet que vous pensez peut être du type dérivé.
 
-    <xref:System.Type.IsInstanceOfType%2A>retourne `True` si son type d’argument hérite du <xref:System.Type?displayProperty=nameWithType> type d’objet.
+    <xref:System.Type.IsInstanceOfType%2A> retourne `True` si son type d’argument hérite du <xref:System.Type?displayProperty=nameWithType> type d’objet.
 
 ## <a name="example"></a>Exemple
+
  L’exemple suivant détermine si un objet représente une classe dérivée de la classe d’un autre objet.
 
 ```vb

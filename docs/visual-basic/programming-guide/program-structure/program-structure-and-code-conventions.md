@@ -13,14 +13,15 @@ helpviewer_keywords:
 - Visual Basic code
 - programming [Visual Basic], Visual Basic coding conventions
 ms.assetid: dd9be76f-6944-4e78-ad72-0b6084a3fc13
-ms.openlocfilehash: c8d851afc33e7e898ab16abc941d8680f74145e3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ee61c676f3ff554267f6659453ec55e45df69aee
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398303"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072117"
 ---
 # <a name="program-structure-and-code-conventions-visual-basic"></a>Structure de programme et conventions de codage (Visual Basic)
+
 Cette section présente la structure de programme Visual Basic classique, fournit un programme de Visual Basic simple, « Hello, World », et traite des conventions de code Visual Basic. Les conventions de code sont des suggestions qui se concentrent pas sur la logique d’un programme, mais sur sa structure et son apparence physiques. Le fait de les suivre rend votre code plus facile à lire, à comprendre et à entretenir. Les conventions de code peuvent inclure, entre autres :  
   
 - Formats standardisés pour l’étiquetage et la commentaires du code.  
@@ -32,6 +33,7 @@ Cette section présente la structure de programme Visual Basic classique, fourni
  Les rubriques suivantes présentent un ensemble d’instructions de programmation pour Visual Basic programmes, ainsi que des exemples d’utilisation correcte.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Structure d'un programme Visual Basic](structure-of-a-visual-basic-program.md)  
  Fournit une vue d’ensemble des éléments qui composent un programme Visual Basic.  
   
@@ -78,6 +80,7 @@ Cette section présente la structure de programme Visual Basic classique, fourni
  Décrit la suppression des limites de codage connues dans Visual Basic.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Conventions typographiques et de code](../../language-reference/typographic-and-code-conventions.md)  
  Fournit des conventions de codage standard pour Visual Basic.  
   

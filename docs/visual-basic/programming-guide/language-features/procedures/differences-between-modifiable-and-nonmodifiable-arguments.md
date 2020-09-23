@@ -8,17 +8,19 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - arguments [Visual Basic], modifiable
 ms.assetid: 87b2df69-e1f7-4657-9caf-b3f48d693428
-ms.openlocfilehash: 733f92cc2cdaa6e923c57649774ceb64de172c18
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 662ad3039bb3fd5c44847d5b2a97a033a18ad063
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403341"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071960"
 ---
 # <a name="differences-between-modifiable-and-nonmodifiable-arguments-visual-basic"></a>Différences entre les arguments modifiables et non modifiables (Visual Basic)
+
 Lorsque vous appelez une procédure, vous lui transmettez généralement un ou plusieurs arguments. Chaque argument correspond à un élément de programmation sous-jacent. Les éléments sous-jacents et les arguments peuvent eux-mêmes être modifiables ou non modifiables.  
   
 ## <a name="modifiable-and-nonmodifiable-elements"></a>Éléments modifiables et non modifiables  
+
  Un élément de programmation peut être un *élément modifiable*, dont la valeur peut être modifiée ou un *élément non modifiable*, qui a une valeur fixe une fois qu’il a été créé.  
   
  Le tableau suivant répertorie les éléments de programmation modifiables et non modifiables.  
@@ -31,6 +33,7 @@ Lorsque vous appelez une procédure, vous lui transmettez généralement un ou p
 |Éléments de tableau|Expressions (même si leurs éléments sont modifiables)|  
   
 ## <a name="modifiable-and-nonmodifiable-arguments"></a>Arguments modifiables et non modifiables  
+
  Un *argument modifiable* est un argument avec un élément sous-jacent modifiable. Le code appelant peut stocker une nouvelle valeur à tout moment, et si vous transmettez l’argument [ByRef](../../../language-reference/modifiers/byref.md), le code de la procédure peut également modifier l’élément sous-jacent dans le code appelant.  
   
  Un *argument non modifiable* a un élément sous-jacent non modifiable ou est passé avec la valeur [ByVal](../../../language-reference/modifiers/byval.md). La procédure ne peut pas modifier l’élément sous-jacent dans le code appelant, même s’il s’agit d’un élément modifiable. S’il s’agit d’un élément non modifiable, le code appelant lui-même ne peut pas le modifier.  
