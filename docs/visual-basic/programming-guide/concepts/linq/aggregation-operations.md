@@ -2,14 +2,15 @@
 title: Opérations d’agrégation
 ms.date: 07/20/2015
 ms.assetid: 0f47e92c-5dd2-4007-baf4-c5fe5dc3b4a8
-ms.openlocfilehash: 8e2c9698de67dc4def348a03c9d69713a6130f31
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1cf82d8acfdb1f8b0fc33c324064574b0dd01f4a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84383791"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078396"
 ---
 # <a name="aggregation-operations-visual-basic"></a>Opérations d’agrégation (Visual Basic)
+
 Une opération d’agrégation calcule une valeur unique à partir d’une collection de valeurs. Par exemple, une opération d'agrégation peut être le calcul de la température quotidienne moyenne à partir des valeurs de température quotidiennes relevées sur un mois.  
   
  L’illustration suivante montre les résultats de deux opérations d’agrégation différentes sur une séquence de nombres. La première opération additionne les nombres. La deuxième opération retourne la valeur maximale dans la séquence.  
@@ -33,31 +34,37 @@ Une opération d’agrégation calcule une valeur unique à partir d’une colle
 ## <a name="query-expression-syntax-examples"></a>Exemples de syntaxe d'expression de requête  
   
 ### <a name="average"></a>Average  
+
  L’exemple de code suivant utilise la `Aggregate Into Average` clause dans Visual Basic pour calculer la température moyenne dans un tableau de nombres qui représentent des températures.  
   
  [!code-vb[CsLINQAggregating#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQAggregating/VB/Aggregating.vb#1)]  
   
 ### <a name="count"></a>Count  
+
  L’exemple de code suivant utilise la `Aggregate Into Count` clause dans Visual Basic pour compter le nombre de valeurs dans un tableau qui sont supérieures ou égales à 80.  
   
  [!code-vb[CsLINQAggregating#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQAggregating/VB/Aggregating.vb#2)]  
   
 ### <a name="longcount"></a>LongCount  
+
  L’exemple de code suivant utilise la `Aggregate Into LongCount` clause pour compter le nombre de valeurs dans un tableau.  
   
  [!code-vb[CsLINQAggregating#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQAggregating/VB/Aggregating.vb#3)]  
   
 ### <a name="max"></a>Max  
+
  L’exemple de code suivant utilise la `Aggregate Into Max` clause pour calculer la température maximale dans un tableau de nombres qui représentent des températures.  
   
  [!code-vb[CsLINQAggregating#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQAggregating/VB/Aggregating.vb#4)]  
   
 ### <a name="min"></a>Min  
+
  L’exemple de code suivant utilise la `Aggregate Into Min` clause pour calculer la température minimale dans un tableau de nombres qui représentent des températures.  
   
  [!code-vb[CsLINQAggregating#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQAggregating/VB/Aggregating.vb#5)]  
   
 ### <a name="sum"></a>SUM  
+
  L’exemple de code suivant utilise la `Aggregate Into Sum` clause pour calculer le montant total des dépenses à partir d’un tableau de valeurs qui représentent des dépenses.  
   
  [!code-vb[CsLINQAggregating#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQAggregating/VB/Aggregating.vb#6)]  

@@ -3,12 +3,12 @@ title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: 7760dc095fa894b1f356c939eb030e675f58a876
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 3ef6a89a8cd4f811bcdd41b9c9bedbc45da78098
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810883"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078214"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -75,7 +75,7 @@ Le tableau suivant montre les éléments et les modèles [Glob](https://en.wikip
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
 | Compiler           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                      |
 | EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                      |
-| Aucun              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx   |
+| None              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx   |
 
 > [!NOTE]
 > **Exclure Glob** exclut toujours les dossiers `./bin` et `./obj`, respectivement représentés par les propriétés MSBuild `$(BaseOutputPath)` et `$(BaseIntermediateOutputPath)`. Dans l’ensemble, toutes les exclusions sont représentées par `$(DefaultItemExcludes)`.
@@ -271,7 +271,7 @@ Spécifie la version du package obtenu. Accepte toutes les formes de la chaîne 
 
 Spécifie le nom du package obtenu. Si non spécifié, l’opération `pack` utilise par défaut le `AssemblyName` ou le nom du répertoire comme nom du package.
 
-### <a name="title"></a>Titre
+### <a name="title"></a>Intitulé
 
 Titre convivial du package, généralement utilisé dans les affichages de l’interface utilisateur comme sur nuget.org et dans le gestionnaire de package de Visual Studio. Si non spécifié, l’ID de package est utilisé à la place.
 
@@ -364,9 +364,11 @@ Liste de balises séparées par un point-virgule qui désigne le package.
 Détermine le chemin de sortie dans lequel le package compressé est déposé. La valeur par défaut est `$(OutputPath)`.
 
 ### <a name="includesymbols"></a>IncludeSymbols
+
 Cette valeur booléenne indique si le package doit créer un package de symboles supplémentaire quand le projet est compressé. Le format du package de symboles est contrôlé par la propriété `SymbolPackageFormat`.
 
 ### <a name="symbolpackageformat"></a>SymbolPackageFormat
+
 Spécifie le format du package de symboles. Si la valeur est « symbols.nupkg », un package de symboles hérité est créé avec une extension *.symbols.nupkg* contenant des fichiers PDB, DLL et d’autres fichiers de sortie. Si la valeur est « snupkg », un package de symboles snupkg est créé, contenant les fichiers PDB portables. La valeur par défaut est « symbols.nupkg ».
 
 ### <a name="includesource"></a>IncludeSource
@@ -386,9 +388,11 @@ Spécifie l’URL du dépôt où réside le code source du package et/ou à part
 Spécifie le type de dépôt. La valeur par défaut est « git ».
 
 ### <a name="repositorybranch"></a>RepositoryBranch
+
 Spécifie le nom de la branche source dans le référentiel. Lorsque le projet est empaqueté dans un package NuGet, il est ajouté aux métadonnées du package.
 
 ### <a name="repositorycommit"></a>RepositoryCommit
+
 Validation ou ensemble de modifications de référentiel facultatif pour indiquer la source à partir de laquelle le package a été généré. `RepositoryUrl` doit également être spécifié pour que cette propriété soit incluse. Lorsque le projet est empaqueté dans un package NuGet, cette validation ou cet ensemble de modifications est ajouté aux métadonnées du package.
 
 ### <a name="nopackageanalysis"></a>NoPackageAnalysis

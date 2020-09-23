@@ -3,12 +3,12 @@ title: Présentation de l’outil WCF svcutil
 description: Vue d’ensemble de l’outil dotnet-svcutil Microsoft WCF, qui ajoute des fonctionnalités pour les projets .NET Core et ASP.NET Core, de manière similaire à l’outil svcutil WCF pour les projets .NET Framework.
 author: mlacouture
 ms.date: 02/22/2019
-ms.openlocfilehash: fde42f7d040fba91f51ce6faa58282ed0206a853
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 403bcf78ccebd983d378cfdd7965c4ca5097ccc9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396218"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078253"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Outil WCF dotnet-svcutil pour .NET Core
 
@@ -75,6 +75,7 @@ Supposons dans cet exemple que le service web sera hébergé à l’adresse suiv
     ```
 
     # <a name="dotnet-svcutil-1x"></a>[dotnet-svcutil 1.x](#tab/dotnetsvcutil1x)
+
     Ouvrez le `HelloSvcutil.csproj` fichier projet dans votre éditeur, modifiez l' `Project` élément et ajoutez le [ `dotnet-svcutil` package NuGet](https://nuget.org/packages/dotnet-svcutil) en tant que référence d’outil CLI, en utilisant le code suivant :
 
     ```xml
@@ -156,6 +157,7 @@ Le fichier généré est enregistré sous _HelloSvcutil/ServiceReference/Referen
 La sortie suivante devrait s'afficher : « Hello dotnet-svcutil! »
 
 Pour obtenir une description détaillée des paramètres de l’outil `dotnet-svcutil`, appelez l’outil en passant le paramètre d’aide comme suit :
+
 # <a name="dotnet-svcutil-2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
 ```dotnetcli
@@ -178,6 +180,6 @@ Si vous avez des questions ou des commentaires, [ouvrez un problème sur GitHub]
 
 - Pour obtenir des informations à jour sur les versions, notamment les problèmes connus, consultez les [Notes de publication](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md).
 
-## <a name="information"></a>Information
+## <a name="information"></a>Informations
 
 - [Package NuGet dotnet-svcutil](https://nuget.org/packages/dotnet-svcutil)

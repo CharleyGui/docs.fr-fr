@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID999
 ms.assetid: 4ef7216c-761a-41dc-a20c-ba133f4f1d18
-ms.openlocfilehash: 1fb378253c9840d480b6932758e8cd3c029b8b8e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3ec7e78638f83bb63b573e3541769963bc2bec47
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84361058"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078708"
 ---
 # <a name="stop-statement-encountered"></a>Instruction Stop rencontrée
+
 Une instruction `Stop` (qui suspend l’exécution) a été rencontrée.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

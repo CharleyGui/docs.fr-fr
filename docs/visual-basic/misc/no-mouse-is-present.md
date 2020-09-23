@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrMouse_NoMouseIsPresent
 ms.assetid: 4472fd57-4217-4463-9d3c-dc4a8fe88f1b
-ms.openlocfilehash: 748661cae35292968aae989789a96d1df855b6ce
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ceb850d98d29c232da304fbdfaddf5611714ef1a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84376119"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078851"
 ---
 # <a name="no-mouse-is-present"></a>Absence de souris
+
 L’une des propriétés de l’objet `My.Computer.Mouse` a été appelée, mais aucune souris ou aucun port de souris n’est installé sur l’ordinateur.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

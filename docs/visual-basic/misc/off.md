@@ -7,17 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - Off keyword [Visual Basic]
 ms.assetid: e0b5aa68-bde1-4cdd-b9e4-152798ae1b8b
-ms.openlocfilehash: 51a8b6ae4f7b9c99094636f7aa79d74f14336fe6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 85cae6d54b7a78dc94819816726affed5b6d5dbf
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84376093"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078773"
 ---
 # <a name="off-visual-basic"></a>Off (Visual Basic)
+
 Désactive une option du compilateur.  
   
 ## <a name="remarks"></a>Notes  
+
  Le mot clé `Off` peut être utilisé dans les contextes suivants :  
   
  [Option Explicit (instruction)](../language-reference/statements/option-explicit-statement.md)  

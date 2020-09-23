@@ -1,17 +1,17 @@
 ---
 title: Scripts dotnet-install
 description: En savoir plus sur les scripts dotnet-install pour installer les kit SDK .NET Core et le runtime partagé.
-ms.date: 04/30/2020
-ms.openlocfilehash: 8f27b8a7794e84e6e2b288d6cc2ec33ffcb7600f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 09/22/2020
+ms.openlocfilehash: 35161edd2a4862e064373d75f1e19396983f3a64
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538040"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078201"
 ---
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet-install.ps1` | `dotnet-install.sh` -Script utilisé pour installer le kit SDK .NET Core et le runtime partagé.
 
@@ -185,7 +185,6 @@ Les scripts d’installation ne mettent pas à jour le registre sur Windows. Ils
   Représente une version spécifique. Les valeurs possibles sont les suivantes :
 
   - `latest` : dernière version sur le canal (utilisée avec l’option `-Channel`).
-  - `coherent` : dernière version cohérente sur le canal ; utilise la dernière combinaison de packages stable (utilisée avec les options `-Channel` de nom de branche).
   - Version en trois parties au format X.Y.Z représentant une version spécifique ; remplace l’option `-Channel`. Par exemple : `2.0.0-preview2-006120`.
 
   Si aucune valeur n’est spécifiée, `-Version` est définie par défaut sur `latest`.

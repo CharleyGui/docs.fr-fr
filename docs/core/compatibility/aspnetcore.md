@@ -2,15 +2,15 @@
 title: Modifications avec rupture ASP.NET Core
 titleSuffix: ''
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 09/11/2020
+ms.date: 09/18/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 4c3167e9cad193b6a5a11be399e8be529df3be55
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 33d8d1f7a6179229b3218d0102550a64bfc35a87
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539581"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078864"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -37,6 +37,8 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 - [Azure : packages d’intégration Azure préfixés par Microsoft supprimés](#azure-microsoft-prefixed-azure-integration-packages-removed)
 - [Les méthodes de sérialisation BinaryFormatter sont obsolètes et interdites dans les applications ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps)
 - [Éblouissante : espace blanc non significatif tronqué des composants au moment de la compilation](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
+- [Éblouissant : les types JSObjectReference et JSInProcessObjectReference sont devenus internes](#blazor-jsobjectreference-and-jsinprocessobjectreference-types-changed-to-internal)
+- [Éblouissant : fonctionnalité ProtectedBrowserStorage déplacée vers le Framework partagé](#blazor-protectedbrowserstorage-feature-moved-to-shared-framework)
 - [Éblouissant : les champs publics ReadOnly RenderTreeFrame sont devenus des propriétés](#blazor-rendertreeframe-readonly-public-fields-have-become-properties)
 - [Éblouissante : version cible du .NET Framework des packages NuGet modifiée](#blazor-target-framework-of-nuget-packages-changed)
 - [Caching : propriété CompactOnMemoryPressure supprimée](#caching-compactonmemorypressure-property-removed)
@@ -123,6 +125,14 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 ***
 
 [!INCLUDE[Blazor: Insignificant whitespace trimmed from components at compile time](~/includes/core-changes/aspnetcore/5.0/blazor-components-trim-insignificant-whitespace.md)]
+
+***
+
+[!INCLUDE[Blazor: JSObjectReference and JSInProcessObjectReference types changed to internal](~/includes/core-changes/aspnetcore/5.0/blazor-jsobjectreference-to-internal.md)]
+
+***
+
+[!INCLUDE[Blazor: ProtectedBrowserStorage feature moved to shared framework](~/includes/core-changes/aspnetcore/5.0/blazor-protectedbrowserstorage-moved.md)]
 
 ***
 

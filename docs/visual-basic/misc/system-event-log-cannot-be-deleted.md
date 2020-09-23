@@ -2,14 +2,15 @@
 title: Impossible de supprimer le journal des événements système
 ms.date: 07/20/2015
 ms.assetid: 26ca8819-4ce5-49c6-98f3-27fe9e2e8e3d
-ms.openlocfilehash: e00527300a77f6bc006555ee688e055e1a351056
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 444c18f24f63c0c8e206ebf6fe3c77632df2fbd0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554955"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078669"
 ---
 # <a name="system-event-log-cannot-be-deleted"></a>Impossible de supprimer le journal des événements système
+
 Une tentative de suppression du journal des événements système, qui ne peut pas être supprimé, a été effectuée. Le journal système assure le suivi des événements système tels que le démarrage du système et les défaillances de matériel.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

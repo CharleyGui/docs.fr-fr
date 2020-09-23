@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrTextFieldParser_WhitespaceInToken
 ms.assetid: 55107656-270e-4bbb-841a-478904df8e07
-ms.openlocfilehash: 51dc2b82d7f04c652e18173b8450b65c15ee6ec2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 825f999f8eab3563dd77039ef19ae5e329bb4240
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411894"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078500"
 ---
 # <a name="textfieldparser-does-not-support-comment-tokens-that-contain-white-space"></a>TextFieldParser ne prend pas en charge les jetons de commentaires qui contiennent un espace blanc
+
 Un jeton de commentaire qui contient un espace blanc a été fourni. `TextFieldParser` ne prend pas en charge les jetons de commentaires qui contiennent un espace blanc, sauf si ce dernier se trouve au début du jeton. Un espace blanc situé au début d’un jeton est ignoré.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
