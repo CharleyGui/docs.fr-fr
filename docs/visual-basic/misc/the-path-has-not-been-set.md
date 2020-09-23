@@ -2,14 +2,15 @@
 title: Le chemin n’a pas été défini
 ms.date: 07/20/2015
 ms.assetid: 2e61146f-1b42-4798-b823-bd1041d9d248
-ms.openlocfilehash: 2d65b9ba2eec67dce74721cd1355190bd86dbb1f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9a2ee516fe4e2a1801a4d7172024905553764865
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398589"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090402"
 ---
 # <a name="the-path-has-not-been-set"></a>Le chemin n’a pas été défini
+
 Une tentative d’opération de fichier, comme le déplacement ou la copie d’un fichier, a été effectuée sans préciser le chemin nécessaire. Cela peut être dû à une analyse incorrecte du chemin.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

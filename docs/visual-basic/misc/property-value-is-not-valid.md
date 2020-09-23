@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID380
 ms.assetid: 38540ad2-e02c-49aa-a2b7-b4c82d719cf1
-ms.openlocfilehash: cf7275f1f94fb8df1ea846e9335cadf9570cb0a2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: edf91cc62867b922a4c9fae69f19be5e38fc21c8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396893"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090545"
 ---
 # <a name="property-value-is-not-valid"></a>Valeur de propriété non valide
+
 Une des propriétés d’un objet ou contrôle a été définie sur une valeur en dehors de sa plage.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  

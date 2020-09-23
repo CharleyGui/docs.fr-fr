@@ -8,14 +8,15 @@ helpviewer_keywords:
 - properties [Visual Basic], auto-implemented
 - auto-implemented properties [Visual Basic]
 ms.assetid: 5c669f0b-cf95-4b4e-ae84-9cc55212ca87
-ms.openlocfilehash: d991a385e537c43daeb708e96e712acd92110379
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f50b1f40ef9843391c6622561bfd8a8eaae6fc17
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403380"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090052"
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>Propriétés implémentées automatiquement (Visual Basic)
+
 Les *Propriétés implémentées automatiquement* vous permettent de spécifier rapidement une propriété d’une classe sans avoir à écrire du code dans `Get` et à `Set` la propriété. Quand vous écrivez du code pour une propriété implémentée automatiquement, le compilateur Visual Basic crée automatiquement un champ privé pour stocker la variable de propriété en plus de créer les procédures `Get` et `Set` associées.  
   
  Avec les propriétés implémentées automatiquement, une propriété, y compris une valeur par défaut, peut être déclarée en une seule ligne. L'exemple suivant montre trois déclarations de propriété.  
@@ -47,6 +48,7 @@ End Class
  Vous pouvez assigner la propriété avec des expressions d'initialisation, comme illustré dans cet exemple, ou vous pouvez assigner les propriétés dans le constructeur du type conteneur.  Vous pouvez assigner les champs de stockage des propriétés en lecture seule à tout moment.  
   
 ## <a name="backing-field"></a>Champ de stockage  
+
  Quand vous déclarez une propriété implémentée automatiquement, Visual Basic crée automatiquement un champ privé masqué appelé *champ de stockage* pour contenir la valeur de la propriété. Le nom du champ de stockage correspond au nom de la propriété implémentée automatiquement précédé d'un trait de soulignement (_). Par exemple, si vous déclarez une propriété implémentée automatiquement nommée `ID`, le champ de stockage est nommé `_ID`. Si vous incluez un membre de votre classe également nommé `_ID`, vous créez un conflit de noms et Visual Basic signale une erreur du compilateur.  
   
  Le champ de stockage possède également les caractéristiques suivantes :  
@@ -60,6 +62,7 @@ End Class
 - Le champ de stockage est accessible à partir du code dans la classe et des outils de débogage tels que la fenêtre Espion. Toutefois, le champ de stockage ne s'affiche pas dans une liste de saisie semi-automatique IntelliSense.  
   
 ## <a name="initializing-an-auto-implemented-property"></a>Initialisation d'une propriété implémentée automatiquement  
+
  Toute expression pouvant être utilisée pour initialiser un champ est valide pour l'initialisation d'une propriété implémentée automatiquement. Quand vous initialisez une propriété implémentée automatiquement, l'expression est évaluée et passée à la procédure `Set` pour la propriété. Les exemples de code suivants montrent certaines propriétés implémentées automatiquement qui incluent des valeurs initiales.  
   
  [!code-vb[VbVbalrAutoImplementedProperties#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#3)]  
@@ -73,6 +76,7 @@ End Class
  [!code-vb[VbVbalrAutoImplementedProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#4)]  
   
 ## <a name="property-definitions-that-require-standard-syntax"></a>Définitions de propriétés qui requièrent la syntaxe standard  
+
  Les propriétés implémentées automatiquement sont pratiques et prennent en charge de nombreux scénarios de programmation. Toutefois, il existe des situations où vous ne pouvez pas utiliser une propriété implémentée automatiquement et que vous devez utiliser la syntaxe de propriété standard, ou *développée*.  
   
  Vous devez utiliser la syntaxe de définition de propriété développée pour effectuer les opérations suivantes :  
@@ -90,6 +94,7 @@ End Class
 - Fournir des commentaires XML pour le champ de stockage.  
   
 ## <a name="expanding-an-auto-implemented-property"></a>Développement d’une propriété implémentée automatiquement  
+
  Si vous devez convertir une propriété implémentée automatiquement en une propriété développée qui contient une procédure `Get` ou `Set`, l’éditeur de code de Visual Basic peut générer automatiquement les procédures `Get` et `Set`, et l’instruction `End Property` pour la propriété. Le code est généré si vous placez le curseur sur une ligne vide après l' `Property` instruction, que vous tapez un `G` (pour `Get` ) ou un `S` (pour `Set` ) et que vous appuyez sur entrée. L'éditeur de code de Visual Basic génère automatiquement la procédure `Get` ou `Set` pour les propriétés en lecture seule et en écriture seule quand vous appuyez sur Entrée à la fin d'une instruction `Property`.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -97,6 +102,6 @@ End Class
 - [Comment : déclarer et appeler une propriété par défaut en Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Comment : déclarer une propriété avec des niveaux d'accès mixtes](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [Property Statement](../../../language-reference/statements/property-statement.md)
-- [Seulement](../../../language-reference/modifiers/readonly.md)
+- [Lecture seule](../../../language-reference/modifiers/readonly.md)
 - [WriteOnly](../../../language-reference/modifiers/writeonly.md)
 - [Objets et classes](../objects-and-classes/index.md)

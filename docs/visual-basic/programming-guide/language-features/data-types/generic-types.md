@@ -36,14 +36,15 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: b14c7a3f1f667e7c13ec0ae46185ed3ece92beb8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f9b343c664baaf316e5cd6df72da8dcf56222382
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84394050"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090259"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Types génériques Visual Basic (Visual Basic)
+
 Un *type générique* est un élément de programmation unique qui s’adapte pour exécuter la même fonction sur différents types de données. Quand vous définissez une classe ou procédure générique, vous n’avez pas besoin de définir une version distincte pour chaque type de données pour lequel vous voulez exécuter la fonction.  
   
  On pourrait comparer cet élément de programmation à un tournevis à têtes interchangeables. Vous examinez quel type de vis vous devez serrer et vous choisissez la tête de vis adaptée (fendue, cruciforme, en étoile). Quelle que soit la tête insérée dans le manche du tournevis, vous exécutez toujours la même fonction : vous serrez une vis.  
@@ -61,6 +62,7 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
  Pour plus d’informations sur l’utilisation d’un type générique, consultez [How to: Use a Generic Class](how-to-use-a-generic-class.md).  
   
 ## <a name="example-of-a-generic-class"></a>Exemple d’une classe générique  
+
  L’exemple suivant présente une définition squelette d’une classe générique.  
   
  [!code-vb[VbVbalrDataTypes#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#2)]  
@@ -76,11 +78,13 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
  Pour obtenir un exemple plus complet, consultez [Comment : définir une classe qui peut fournir des fonctionnalités identiques sur différents types de données](how-to-define-a-class-that-can-provide-identical-functionality.md).  
   
 ## <a name="eligible-programming-elements"></a>Éléments de programmation disponibles  
+
  Vous pouvez définir et utiliser des délégués, structures, interfaces, procédures et classes génériques. Notez que le .NET Framework définit plusieurs classes, structures et interfaces génériques qui représentent des éléments génériques couramment utilisés. L’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> fournit des dictionnaires, des listes, des files d’attente et des piles. Avant de définir votre propre élément générique, vérifiez s’il est disponible dans <xref:System.Collections.Generic?displayProperty=nameWithType>.  
   
  Les procédures ne sont pas des types, mais vous pouvez définir et utiliser des procédures génériques. Consultez [Generic Procedures in Visual Basic](generic-procedures.md).  
   
 ## <a name="advantages-of-generic-types"></a>Avantages des types génériques  
+
  Un type générique sert de base de déclaration de plusieurs éléments de programmation différents, chacun agissant sur un type de données spécifique. À la place d’un type générique, vous pouvez utiliser :  
   
 1. un type unique pour le type de données `Object` ;  
@@ -104,9 +108,11 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
 - **Algorithmes génériques** . Les types génériques sont conseillés pour les algorithmes abstraits qui sont indépendants du type. Par exemple, une procédure générique qui trie des éléments à l’aide de l’interface <xref:System.IComparable> peut être utilisée avec n’importe quel type de données implémentant <xref:System.IComparable>.  
   
 ## <a name="constraints"></a>Contraintes  
+
  Dans la mesure du possible, le code d’une définition de type générique doit être indépendant du type. Toutefois, vous pouvez avoir besoin d’une fonction agissant sur tous les types de données fournis à votre type générique. Par exemple, si vous voulez comparer deux éléments pour les trier ou les classer, leur type de données doit implémenter l’interface <xref:System.IComparable> . Vous pouvez appliquer cette exigence en ajoutant une *contrainte* au paramètre de type.  
   
 ### <a name="example-of-a-constraint"></a>Exemple de contrainte  
+
  L’exemple suivant présente une définition squelette d’une classe avec une contrainte qui exige que l’argument de type implémente <xref:System.IComparable>.  
   
  [!code-vb[VbVbalrDataTypes#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#5)]  
@@ -114,6 +120,7 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
  Si du code tente ensuite de construire une classe de `itemManager` en fournissant un type qui n’implémente pas <xref:System.IComparable>, le compilateur signale une erreur.  
   
 ### <a name="types-of-constraints"></a>Types de contraintes  
+
  Une contrainte peut spécifier les exigences suivantes dans n’importe quelle combinaison :  
   
 - L’argument de type doit implémenter une ou plusieurs interfaces  
@@ -129,11 +136,13 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
  Pour plus d’informations sur les contraintes, consultez [Type List](../../../language-reference/statements/type-list.md).  
   
 ### <a name="example-of-multiple-constraints"></a>Exemple de liste de contraintes  
+
  L’exemple suivant présente une définition squelette d’une classe générique avec une liste de contraintes sur le paramètre de type. Dans le code qui crée une instance de cette classe, l’argument de type doit implémenter les deux interfaces <xref:System.IComparable> et <xref:System.IDisposable> , être un type référence et exposer un constructeur sans paramètre accessible.  
   
  [!code-vb[VbVbalrDataTypes#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#6)]  
   
 ## <a name="important-terms"></a>Termes importants  
+
  La terminologie suivante s’applique aux types génériques :  
   
 - *Type générique*. Définition d’une classe, structure, interface, procédure ou délégué pour laquelle vous fournissez au moins un type de données lors de sa déclaration.  
@@ -148,14 +157,14 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types de données](index.md)
+- [Data types](index.md)
 - [Caractères de type](type-characters.md)
 - [Types valeur et types référence](value-types-and-reference-types.md)
 - [Conversions de type en Visual Basic](type-conversions.md)
 - [Dépannage des types de données](troubleshooting-data-types.md)
-- [Types de données](../../../language-reference/data-types/index.md)
+- [Data types](../../../language-reference/data-types/index.md)
 - [Of](../../../language-reference/statements/of-clause.md)
 - [Servir](../../../language-reference/statements/as-clause.md)
 - [Object Data Type](../../../language-reference/data-types/object-data-type.md)
 - [Covariance et contravariance](../../concepts/covariance-contravariance/index.md)
-- [Itérateurs](../../concepts/iterators.md)
+- [Iterators](../../concepts/iterators.md)

@@ -2,14 +2,15 @@
 title: Informations relatives à l'appelant
 ms.date: 07/20/2015
 ms.assetid: 15d556eb-4d0c-4497-98a3-7f60abb7d6a1
-ms.openlocfilehash: 93fb1e327d65ac19f293a2f77b7d5712fc5e8d2f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 33c7367626d66d1db2705fc2882ca0780d1b867f
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400666"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090350"
 ---
 # <a name="caller-information-visual-basic"></a>Informations relatives à l’appelant (Visual Basic)
+
 À l'aide des attributs d'informations de l'appelant, vous pouvez obtenir des informations sur l'appelant d'une méthode. Vous pouvez obtenir le chemin d'accès du fichier de code source, le numéro de ligne dans le code source, puis le nom du membre de l'appelant. Ces informations sont utiles pour suivre, déboguer, et créer des outils de diagnostic.  
   
  Pour obtenir ces informations, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs, qui a une valeur par défaut. Le tableau suivant répertorie les attributs d'informations de l'appelant définis dans l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> :  
@@ -21,6 +22,7 @@ ms.locfileid: "84400666"
 |<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Méthode ou nom de la propriété de l'appelant. Consultez [Noms de membres](#MEMBERNAMES), plus loin dans cette rubrique.|`String`|  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant indique comment utiliser des attributs d'informations de l'appelant. À chaque appel à la méthode `TraceMessage`, les informations d'appel sont remplacées par des arguments pour les paramètres optionnels.  
   
 ```vb  
@@ -47,6 +49,7 @@ End Sub
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Vous devez spécifier une valeur par défaut explicite pour chaque paramètre optionnel. Vous ne pouvez pas appliquer des attributs d'informations de l'appelant aux paramètres qui ne sont pas spécifiés comme facultatifs.  
   
  Les attributs d'informations de l'appelant ne rendent pas un paramètre facultatif. À la place, ils affectent la valeur par défaut qui est passée si l'argument est oublié.  
@@ -55,7 +58,8 @@ End Sub
   
  Vous pouvez fournir explicitement les arguments facultatifs pour contrôler ou masquer des informations de l'appelant.  
   
-### <a name="member-names"></a><a name="MEMBERNAMES"></a>Noms de membres  
+### <a name="member-names"></a><a name="MEMBERNAMES"></a> Noms de membres  
+
  Vous pouvez utiliser l'attribut `CallerMemberName` pour éviter de spécifier le nom du membre comme argument de `String` à la méthode appelée. Vous évitez ainsi le problème que la **refactorisation de changement de nom** ne modifie pas les valeurs `String`. Cet avantage est particulièrement utile pour les tâches suivantes :  
   
 - Utilisation du traçage et des programmes de diagnostic.  

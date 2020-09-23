@@ -2,14 +2,15 @@
 title: Le dossier ne peut pas être créé, car un fichier existe déjà avec le même chemin
 ms.date: 07/20/2015
 ms.assetid: 1085c60d-4d38-4d67-a149-d3923eef0cfd
-ms.openlocfilehash: 3407d7e85cfeb406d17fd05850c293604188fece
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 216b39bbbd4da478ba1dc4796a0b183d4eb1d9d9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398615"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090454"
 ---
 # <a name="the-folder-cannot-be-created-since-a-file-already-exists-with-the-same-path"></a>Le dossier ne peut pas être créé, car un fichier existe déjà avec le même chemin
+
 Une tentative a été effectuée pour créer un répertoire, mais il existe déjà un fichier avec ce chemin. Cela peut provenir d’une analyse incorrecte des chemins, en particulier quand vous utilisez des chemins relatifs.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
