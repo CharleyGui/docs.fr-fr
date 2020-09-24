@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9d98a7be-b110-4edb-8eba-bed10f250b6d
-ms.openlocfilehash: b31cd881f1307ec734c026d3c873d7a650e19a20
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 163f73a7682d444214caa213751cb35f8f0e8743
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251129"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153038"
 ---
 # <a name="constant-expressions"></a>Expressions constantes
+
 Une expression constante est composée d'une valeur constante. Les valeurs constantes sont converties directement en expressions d’arborescence de commandes constantes, sans aucune traduction sur le client. Cela inclut les expressions qui génèrent une valeur constante. Par conséquent, le comportement de la source de données doit être prévu pour toutes les expressions impliquant des constantes. Il peut en résulter un comportement différent du comportement CLR.  
   
  L'exemple suivant illustre une expression constante qui est évaluée sur le serveur.  

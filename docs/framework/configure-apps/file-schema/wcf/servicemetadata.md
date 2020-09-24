@@ -2,14 +2,15 @@
 title: <serviceMetadata>
 ms.date: 03/30/2017
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
-ms.openlocfilehash: c421273d1d08db047a51f1f1e4f9d6c908f12986
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2236361316254d065abd1fb62fd2e509be289a4c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84201782"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153857"
 ---
 # \<serviceMetadata>
+
 Spécifie la publication de métadonnées de service et des informations associées.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Spécifie la publication de métadonnées de service et des informations associ�
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -53,7 +55,8 @@ Spécifie la publication de métadonnées de service et des informations associ�
 |policyVersion|Chaîne indiquant la version de la spécification WS-Policy utilisée. Cet attribut est de type <xref:System.ServiceModel.Description.PolicyVersion>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -61,7 +64,8 @@ Spécifie la publication de métadonnées de service et des informations associ�
 |-------------|-----------------|  
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Cet élément de configuration permet de contrôler les métadonnées qui publient les fonctionnalités d’un service. Pour empêcher la divulgation non intentionnelle de métadonnées de service potentiellement sensibles, la configuration par défaut pour les services Windows Communication Foundation (WCF) désactive la publication de métadonnées. Ce comportement est sécurisé par défaut, mais il signifie également que vous ne pouvez pas utiliser d'outil d'importation de métadonnées (tel que Svcutil.exe) pour générer le code client requis pour appeler le service, à moins que le comportement de publication des métadonnées du service soit activé explicitement dans la configuration. À l'aide de cet élément de configuration, vous pouvez activer ce comportement de publication pour votre service.  
   
  Pour obtenir un exemple détaillé de la configuration de ce comportement, consultez [comportement de publication des métadonnées](../../../wcf/samples/metadata-publishing-behavior.md).  
@@ -82,6 +86,7 @@ Spécifie la publication de métadonnées de service et des informations associ�
 ```  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant configure un service pour exposer des métadonnées à l’aide de l' \<serviceMetadata> élément. Il configure également un point de terminaison afin d'exposer le contrat `IMetadataExchange` comme implémentation d'un protocole WS-MetadataExchange (MEX). L’exemple utilise `mexHttpBinding`, qui est une liaison standard équivalente à `wsHttpBinding` dans laquelle le mode de sécurité a la valeur `None`. Une adresse relative de « MEX » est utilisée dans le point de terminaison, qui, lorsqu’elle est résolue par rapport à l’adresse de base des services, se traduit par une adresse de point de terminaison `http://localhost/servicemodelsamples/service.svc/mex` .  
   
 ```xml  

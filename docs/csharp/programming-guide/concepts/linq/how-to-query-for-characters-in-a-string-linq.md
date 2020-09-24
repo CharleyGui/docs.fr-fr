@@ -3,17 +3,19 @@ title: Comment interroger des caractères dans une chaîne (LINQ) (C#)
 description: Vous pouvez interroger une chaîne sous la forme d’une séquence de caractères dans LINQ. Cet exemple C# interroge une chaîne pour déterminer le nombre de chiffres numériques qu’elle contient.
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: 3512be7c30843fcd8e881eab59761706a84a3ac8
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 73288924d057e720a744b853998a52437b9db481
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104547"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153935"
 ---
 # <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Comment interroger des caractères dans une chaîne (LINQ) (C#)
+
 La classe <xref:System.String> implémente l’interface <xref:System.Collections.Generic.IEnumerable%601> générique. De ce fait, il est possible d’interroger n’importe quelle chaîne comme une séquence de caractères. Toutefois, ceci n’est pas une utilisation courante de LINQ. Pour les opérations de critères spéciaux complexes, utilisez la classe <xref:System.Text.RegularExpressions.Regex>.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant interroge une chaîne pour déterminer le nombre de chiffres qu’elle contient. Notez que la requête est « réutilisée » après sa première exécution. Ceci est possible car la requête proprement dite ne stocke pas de résultats réels.  
   
 ```csharp  
@@ -56,6 +58,7 @@ class QueryAString
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi

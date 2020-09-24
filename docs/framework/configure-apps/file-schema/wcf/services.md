@@ -2,14 +2,15 @@
 title: <services>
 ms.date: 03/30/2017
 ms.assetid: 80d76ba9-2058-48ad-9b91-5e4be7e5c113
-ms.openlocfilehash: 02d1d530f37f5082153c9aa6b9993fc4009917f5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b8cb5075ba41bed5a22b152a231c7213b326a62f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854979"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153714"
 ---
 # \<services>
+
 Les services sont définis dans la section `services` du fichier de configuration. Chacun dispose de sa propre section de configuration de `service`.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,10 +29,12 @@ Les services sont définis dans la section `services` du fichier de configuratio
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucune  
+
+ None  
   
 ### <a name="child-elements"></a>Éléments enfants  
   

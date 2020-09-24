@@ -2,12 +2,12 @@
 title: Utiliser IHttpClientFactory pour implémenter des requêtes HTTP résilientes
 description: Découvrez comment utiliser IHttpClientFactory, disponible depuis .NET Core 2,1, pour la création d' `HttpClient` instances, ce qui vous permet de l’utiliser facilement dans vos applications.
 ms.date: 08/31/2020
-ms.openlocfilehash: c54965a9bbb700cfb1f14150773c2df45d109c39
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: ae093ef960b2540bf4916bf72ad3bec51fa33ebe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90678814"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152570"
 ---
 # <a name="use-ihttpclientfactory-to-implement-resilient-http-requests"></a>Utiliser IHttpClientFactory pour implémenter des requêtes HTTP résilientes
 
@@ -23,7 +23,7 @@ Par conséquent, `HttpClient` est destiné à être instancié une seule fois et
 
 L’utilisation d’une instance partagée de dans des processus de longue durée constitue un autre problème que les développeurs peuvent rencontrer `HttpClient` . Dans le cas où le HttpClient est instancié comme un singleton ou un objet statique, il ne parvient pas à gérer les modifications DNS comme décrit dans ce [numéro](https://github.com/dotnet/runtime/issues/18348) du référentiel dotnet/Runtime github.
 
-Toutefois, le problème n’est pas vraiment avec `HttpClient` par se, mais avec le [constructeur par défaut pour httpclient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=netcore-3.1#System_Net_Http_HttpClient__ctor), car il crée une nouvelle instance concrète de <xref:System.Net.Http.HttpMessageHandler> , qui est celle qui a des problèmes d' *épuisement des sockets* et des modifications DNS mentionnées ci-dessus.
+Toutefois, le problème n’est pas vraiment avec `HttpClient` par se, mais avec le [constructeur par défaut pour httpclient](/dotnet/api/system.net.http.httpclient.-ctor?view=netcore-3.1#System_Net_Http_HttpClient__ctor), car il crée une nouvelle instance concrète de <xref:System.Net.Http.HttpMessageHandler> , qui est celle qui a des problèmes d' *épuisement des sockets* et des modifications DNS mentionnées ci-dessus.
 
 Pour résoudre les problèmes mentionnés ci-dessus et rendre les `HttpClient` instances gérables, .net Core 2,1 <xref:System.Net.Http.IHttpClientFactory> a introduit l’interface qui peut être utilisée pour configurer et créer des `HttpClient` instances dans une application via l’injection de dépendances (di). Il fournit également des extensions pour l’intergiciel (middleware) basé sur Polly afin de tirer parti des gestionnaires de délégation dans HttpClient.
 
@@ -124,7 +124,7 @@ Chaque client typé peut avoir sa propre valeur de durée de vie de gestionnaire
 
 ### <a name="implement-your-typed-client-classes-that-use-the-injected-and-configured-httpclient"></a>Implémenter les classes de client typé qui utilisent l’objet HttpClient injecté et configuré
 
-Au cours d’une étape précédente, vous devez définir vos classes clientes typées, telles que les classes dans l’exemple de code, telles que « BasketService », « CatalogService », « OrderingService », etc. : un client typé est une classe qui accepte un `HttpClient` objet (injecté par le biais de son constructeur) et l’utilise pour appeler un service http distant. Exemple :
+Au cours d’une étape précédente, vous devez définir vos classes clientes typées, telles que les classes dans l’exemple de code, telles que « BasketService », « CatalogService », « OrderingService », etc. : un client typé est une classe qui accepte un `HttpClient` objet (injecté par le biais de son constructeur) et l’utilise pour appeler un service http distant. Par exemple :
 
 ```csharp
 public class CatalogService : ICatalogService

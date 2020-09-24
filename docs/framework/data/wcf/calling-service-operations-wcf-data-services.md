@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-ms.openlocfilehash: 63c6e903fa811d5c61550d086b4f1ce84973f2bc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ac1b28665dcaaa9f8c6ae6a6611757f6c4969adb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553621"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152843"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Appel des opérations de service (WCF Data Services)
+
 Le Open Data Protocol (OData) définit des opérations de service pour un service de données. WCF Data Services vous permet de définir des opérations telles que des méthodes sur le service de données. Comme les autres ressources du service de données, ces opérations de service sont adressées via les URI. Une opération de service peut retourner des collections de types d’entité, des instances uniques de type d’entité et des types primitifs, comme des entiers et des chaînes. Une opération de service peut également retourner `null` (`Nothing` en Visual Basic). La bibliothèque cliente WCF Data Services peut être utilisée pour accéder aux opérations de service qui prennent en charge les requêtes HTTP. Ces types d'opérations de service sont définis en tant que méthodes ayant <xref:System.ServiceModel.Web.WebGetAttribute> appliqué. Pour plus d’informations, consultez [opérations de service](service-operations-wcf-data-services.md).  
   
  Les opérations de service sont exposées dans les métadonnées retournées par un service de données qui implémente le OData. Dans les métadonnées, les opérations de service sont représentées sous la forme d'éléments `FunctionImport`. Lors de la génération du fortement typé <xref:System.Data.Services.Client.DataServiceContext> , les outils ajouter une référence de service et DataSvcUtil.exe ignorent cet élément. De ce fait, vous ne trouverez pas de méthode dans le contexte pouvant être utilisée pour appeler une opération de service directement. Toutefois, vous pouvez toujours utiliser le client WCF Data Services pour appeler des opérations de service de l’une des deux manières suivantes :  
@@ -22,6 +23,7 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
 - À l'aide de la méthode <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> sur <xref:System.Data.Services.Client.DataServiceContext> pour créer un objet <xref:System.Data.Services.Client.DataServiceQuery%601>. En appelant <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A>, le nom de l'opération de service est fourni au paramètre `entitySetName`. Cette méthode retourne un objet <xref:System.Data.Services.Client.DataServiceQuery%601> qui appelle l'opération de service si elle est énumérée ou lorsque la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A> est appelée. Cette méthode est utilisée pour appeler les opérations de service GET qui retournent une collection. Un seul paramètre peut être fourni à l'aide de la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A>. L'objet <xref:System.Data.Services.Client.DataServiceQuery%601> retourné par cette méthode peut être davantage composé comme n'importe quel objet de requête. Pour plus d’informations, consultez [interrogation du service de données](querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="considerations-for-calling-service-operations"></a>Considérations sur l'appel des opérations de service  
+
  Les considérations suivantes s’appliquent lors de l’utilisation du client WCF Data Services pour appeler des opérations de service.  
   
 - Lorsque vous accédez au service de données de façon asynchrone, vous devez utiliser les méthodes asynchrones équivalentes <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> / <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> sur <xref:System.Data.Services.Client.DataServiceContext> ou <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> / <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> sur les méthodes sur <xref:System.Data.Services.Client.DataServiceQuery%601> .  
@@ -37,6 +39,7 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
 - Lorsque vous utilisez <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> pour appeler une opération de service, la bibliothèque cliente place automatiquement dans une séquence d’échappement les caractères fournis à la <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> en effectuant un encodage en pourcentage des caractères réservés, tels que l’esperluette (&) et l’échappement des guillemets simples dans les chaînes. Toutefois, lorsque vous appelez l’une des méthodes *Execute* pour appeler une opération de service, vous devez penser à effectuer cette séquence d’échappement de toutes les valeurs de chaîne fournies par l’utilisateur. Les guillemets simples des URI sont placés dans une séquence d'échappement comme guillemets doubles.  
   
 ## <a name="examples-of-calling-service-operations"></a>Exemples d'appel d'opérations de service  
+
  Cette section contient les exemples suivants illustrant comment appeler des opérations de service à l’aide de la bibliothèque cliente WCF Data Services :  
   
 - [Appel d’EXECUTE &lt; T &gt; pour retourner une collection d’entités](calling-service-operations-wcf-data-services.md#ExecuteIQueryable)  
@@ -54,7 +57,9 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
 - [Appel d'une opération de service de façon asynchrone](calling-service-operations-wcf-data-services.md#ExecuteAsync)  
   
 <a name="ExecuteIQueryable"></a>
+
 ### <a name="calling-executet-to-return-a-collection-of-entities"></a>Appel d’EXECUTE \<T> pour retourner une collection d’entités  
+
  L'exemple suivant appelle une opération de service nommée GetOrdersByCity, qui accepte un paramètre de chaîne `city` et retourne un <xref:System.Linq.IQueryable%601> :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationIQueryable](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationiqueryable)]
@@ -63,7 +68,9 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
  Dans cet exemple, l’opération de service retourne une collection d’objets `Order` avec les objets `Order_Detail` associés.  
   
 <a name="CreateQueryIQueryable"></a>
+
 ### <a name="using-createqueryt-to-return-a-collection-of-entities"></a>Utilisation de CreateQuery \<T> pour retourner une collection d’entités  
+
  L'exemple suivant utilise <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> pour retourner un <xref:System.Data.Services.Client.DataServiceQuery%601>, utilisé pour appeler la même opération de service GetOrdersByCity :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationCreateQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationcreatequery)]
@@ -72,7 +79,9 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
  Dans cet exemple, la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> est utilisée pour ajouter le paramètre à la requête et la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> est utilisée pour inclure les objets Order_Details associés dans les résultats.  
   
 <a name="ExecuteSingleEntity"></a>
+
 ### <a name="calling-executet-to-return-a-single-entity"></a>Appel d’EXECUTE \<T> pour retourner une seule entité  
+
  L'exemple suivant appelle une opération de service nommée GetNewestOrder, qui retourne une seule entité Order :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleEntity](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationsingleentity)]
@@ -81,13 +90,17 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
  Dans cet exemple, la méthode <xref:System.Linq.Enumerable.FirstOrDefault%2A> permet de demander l'exécution d'une seule entité Order.  
   
 <a name="ExecutePrimitiveCollection"></a>
+
 ### <a name="calling-executet-to-return-a-collection-of-primitive-values"></a>Appel d’EXECUTE \<T> pour retourner une collection de valeurs primitives  
+
  L'exemple suivant appelle une opération de service qui retourne une collection de valeurs de chaîne :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationEnumString](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationenumstring)]  
   
 <a name="ExecutePrimitiveValue"></a>
+
 ### <a name="calling-executet-to-return-a-single-primitive-value"></a>Appel d’EXECUTE \<T> pour retourner une seule valeur primitive  
+
  L'exemple suivant appelle une opération de service qui retourne une valeur de chaîne unique :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleInt](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationsingleint)]
@@ -96,7 +109,9 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
  Dans cet exemple également, la méthode <xref:System.Linq.Enumerable.FirstOrDefault%2A> permet de demander l'exécution d'une seule valeur entière.  
   
 <a name="ExecuteVoid"></a>
+
 ### <a name="calling-a-service-operation-that-returns-no-data"></a>Appel d'une opération de service qui ne retourne pas de données  
+
  L'exemple suivant appelle une opération de service qui ne retourne aucune donnée :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationVoid](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationvoid)]
@@ -105,7 +120,9 @@ Le Open Data Protocol (OData) définit des opérations de service pour un servic
  Étant donné qu'aucune donnée n'est retournée, la valeur de l'exécution n'est pas assignée. Le seul élément indiquant que la requête a réussi est qu'aucune exception <xref:System.Data.Services.Client.DataServiceQueryException> n'est levée.  
   
 <a name="ExecuteAsync"></a>
+
 ### <a name="calling-a-service-operation-asynchronously"></a>Appel d'une opération de service de façon asynchrone  
+
  L'exemple suivant appelle une opération de service de façon asynchrone en appelant <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> et <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationAsync](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationasync)]

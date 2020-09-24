@@ -2,12 +2,12 @@
 title: Implémentation d’un modèle de domaine de microservice avec .NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Accéder aux détails d’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 4017d9d658ff73fd935507dad79e9ffab7973de1
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: e24f4e643d258450a2b33ed4dc4aded718bebd82
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738747"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152544"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implémenter un modèle de domaine de microservice avec .NET Core
 
@@ -152,7 +152,7 @@ Dans cet extrait, une grande partie des validations ou de la logique relatives �
 
 En outre, la nouvelle opération OrderItem(params) sera également contrôlée et effectuée par la méthode AddOrderItem à partir de la racine d’agrégat Order. Par conséquent, une grande partie des validations ou de la logique liées à cette opération (en particulier tout ce qui a un impact sur la cohérence entre les autres entités enfants) est regroupée à un seul endroit au sein de la racine d’agrégat. Il s’agit de l’objectif ultime du modèle de racine d’agrégat.
 
-Quand vous utilisez Entity Framework Core 1.1 ou version ultérieure, une entité DDD peut être mieux exprimée, car elle permet un [mappage à des champs](https://docs.microsoft.com/ef/core/modeling/backing-field) en plus des propriétés. Cela est utile quand vous protégez des collections d’entités enfants ou d’objets de valeur. Avec cette amélioration, vous pouvez utiliser de simples champs privés au lieu de propriétés, et vous pouvez implémenter toute mise à jour de la collection de champs dans les méthodes publiques et fournir un accès en lecture seule via la méthode AsReadOnly.
+Quand vous utilisez Entity Framework Core 1.1 ou version ultérieure, une entité DDD peut être mieux exprimée, car elle permet un [mappage à des champs](/ef/core/modeling/backing-field) en plus des propriétés. Cela est utile quand vous protégez des collections d’entités enfants ou d’objets de valeur. Avec cette amélioration, vous pouvez utiliser de simples champs privés au lieu de propriétés, et vous pouvez implémenter toute mise à jour de la collection de champs dans les méthodes publiques et fournir un accès en lecture seule via la méthode AsReadOnly.
 
 Dans DDD, vous souhaitez mettre à jour l’entité uniquement par le biais des méthodes de l’entité (ou du constructeur) afin de contrôler tout invariant et la cohérence des données, de sorte que les propriétés sont définies uniquement avec un accesseur Get. Les propriétés sont associées à des champs privés. Les membres privés sont uniquement accessibles à partir de la classe. Toutefois, il existe une exception : EF Core doit également définir ces champs (afin de pouvoir retourner l’objet avec les valeurs appropriées).
 

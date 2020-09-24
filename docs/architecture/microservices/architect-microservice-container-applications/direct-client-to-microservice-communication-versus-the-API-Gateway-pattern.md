@@ -2,12 +2,12 @@
 title: Modèle de passerelle API et communication directe de client à microservice
 description: Découvrez les différences et les utilisations du modèle de passerelle API et de la communication directe de client à microservice.
 ms.date: 01/07/2019
-ms.openlocfilehash: 089b6302132437e4bb733653b3edb401ff81a164
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 90761605dde197e44658e3ba0b0a3a2c06b5942c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306953"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152700"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Modèle de passerelle API et communication directe de client à microservice
 
@@ -25,7 +25,7 @@ Avec cette approche, chaque microservice a un point de terminaison public, parfo
 
 `http://eshoponcontainers.westus.cloudapp.azure.com:88/`
 
-Dans un environnement de production basé sur un cluster, cette URL serait mappée à l’équilibreur de charge utilisé dans le cluster, qui à son tour distribue les demandes entre les microservices. Dans les environnements de production, vous pouvez avoir un contrôleur de livraison d’application comme [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction) entre vos microservices et Internet. Ceci fonctionne comme un niveau transparent qui non seulement effectue l’équilibrage de charge, mais permet aussi de sécuriser vos services en offrant un processus de terminaison SSL. Ceci allège la charge de vos hôtes en transférant à Azure Application Gateway les processus de terminaison SSL et d’autres tâches de routage qui consomment une grande quantité de ressources de l’UC. Dans tous les cas, un équilibreur de charge et un contrôleur de livraison d’application sont transparents du point de vue de l’architecture logique d’une application.
+Dans un environnement de production basé sur un cluster, cette URL serait mappée à l’équilibreur de charge utilisé dans le cluster, qui à son tour distribue les demandes entre les microservices. Dans les environnements de production, vous pouvez avoir un contrôleur de livraison d’application comme [Azure Application Gateway](/azure/application-gateway/application-gateway-introduction) entre vos microservices et Internet. Ceci fonctionne comme un niveau transparent qui non seulement effectue l’équilibrage de charge, mais permet aussi de sécuriser vos services en offrant un processus de terminaison SSL. Ceci allège la charge de vos hôtes en transférant à Azure Application Gateway les processus de terminaison SSL et d’autres tâches de routage qui consomment une grande quantité de ressources de l’UC. Dans tous les cas, un équilibreur de charge et un contrôleur de livraison d’application sont transparents du point de vue de l’architecture logique d’une application.
 
 Une architecture de communication directe de client à microservice peut être suffisante pour une petite application basée sur des microservices, surtout si l’application cliente est une application web côté serveur, comme une application ASP.NET MVC. Cependant, quand vous créez des applications basées sur les microservices de grande taille et complexes (par exemple quand vous gérez des dizaines de types de microservice), et en particulier quand les applications clientes sont des applications mobiles distantes ou des applications web SPA, cette approche doit faire face à quelques problèmes.
 
@@ -95,13 +95,13 @@ Une passerelle d’API peut offrir plusieurs fonctionnalités. Selon le produit,
 
 **Proxy inversé ou routage de passerelle**. La passerelle d’API offre un proxy inversé pour rediriger ou acheminer les requêtes (routage de couche 7, généralement les requêtes HTTP) vers les points de terminaison des microservices internes. La passerelle fournit un point de terminaison ou une URL unique pour les applications clientes puis mappe en interne les requêtes à un groupe de microservices internes. Cette fonctionnalité de routage permet de découpler les applications clientes des microservices, mais elle est également pratique lors de la modernisation d’une API monolithique en assiste la passerelle d’API entre l’API monolithique et les applications clientes. vous pouvez alors ajouter de nouvelles API en tant que nouveaux microservices tout en continuant à utiliser l’API monolithique héritée jusqu’à ce qu’elle soit Avec la passerelle API, les applications clientes ne sauront pas si les API utilisées sont implémentées comme des microservices internes ou comme une API monolithique et, plus important encore, lors du développement et de la refactorisation de l’API monolithique en microservices, grâce au routage de la passerelle API, les applications clientes ne seront pas impactées par les modifications d’URI.
 
-Pour plus d’informations, consultez [Modèle de routage de passerelle](https://docs.microsoft.com/azure/architecture/patterns/gateway-routing).
+Pour plus d’informations, consultez [Modèle de routage de passerelle](/azure/architecture/patterns/gateway-routing).
 
 **Agrégation de requêtes**. Dans le cadre du modèle de passerelle, vous pouvez agréger plusieurs requêtes de client (généralement des requêtes HTTP) ciblant plusieurs microservices internes dans une requête de client unique. Ce modèle est particulièrement pratique lorsqu’une page ou un écran d’un client a besoin d’informations provenant de plusieurs microservices. Avec cette approche, l’application cliente envoie une demande unique à la passerelle d’API qui répartit plusieurs requêtes aux microservices internes, puis agrège les résultats et envoie le tout à l’application cliente. Le principal avantage et l’objectif de ce modèle de conception est de réduire les échanges excessifs entre les applications clientes et l’API backend, ce qui est particulièrement important pour les applications distantes en dehors du centre de code, où les microservices sont actifs, comme les applications mobiles ou les demandes provenant des applications SPA provenant de JavaScript dans les navigateurs distants client. Pour les applications web normales effectuant les requêtes dans l’environnement du serveur (par exemple, une application web ASP.NET Core MVC), ce modèle n’est pas si important car la latence est bien plus faible que pour les applications clientes à distance.
 
 Selon le produit Passerelle d’API que vous utilisez, il sera en mesure d’effectuer cette agrégation. Toutefois, dans de nombreux cas, il est plus simple de créer des microservices d’agrégation dans le cadre de la passerelle API. Vous définissez alors l’agrégation directement dans le code (code C#) :
 
-Pour plus d’informations, consultez [Modèle d’agrégation de passerelle](https://docs.microsoft.com/azure/architecture/patterns/gateway-aggregation).
+Pour plus d’informations, consultez [Modèle d’agrégation de passerelle](/azure/architecture/patterns/gateway-aggregation).
 
 **Problèmes transversaux ou déchargement de passerelle**. Selon les fonctionnalités offertes par chaque produit Passerelle d’API, vous pouvez décharger des fonctionnalités de microservices individuels vers la passerelle, ce qui simplifie l’implémentation de chaque microservice en consolidant les problèmes transversaux dans un seul niveau. Ceci est particulièrement pratique pour les fonctionnalités spécialisées qui peuvent être difficiles à implémenter correctement dans chaque microservice interne, par exemple les fonctionnalités suivantes :
 
@@ -115,7 +115,7 @@ Pour plus d’informations, consultez [Modèle d’agrégation de passerelle](ht
 - Transformation des en-têtes, chaînes de requête et revendications
 - Liste verte d’adresses IP
 
-Pour plus d’informations, consultez [Modèle de déchargement de passerelle](https://docs.microsoft.com/azure/architecture/patterns/gateway-offloading).
+Pour plus d’informations, consultez [Modèle de déchargement de passerelle](/azure/architecture/patterns/gateway-offloading).
 
 ## <a name="using-products-with-api-gateway-features"></a>Utilisation de produits avec les fonctionnalités de la Passerelle d’API
 

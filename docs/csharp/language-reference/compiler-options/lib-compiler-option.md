@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -lib compiler option [C#]
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
-ms.openlocfilehash: e53c54dc446d9fea87a9b7a336a38ffaa31704e9
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9478501ea98ec1b9d3ec2761bc4ebf3f6bef656c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125447"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152440"
 ---
 # <a name="-lib-c-compiler-options"></a>-lib (Options du compilateur C#)
+
 L’option **-lib** spécifie l’emplacement des assemblys référencés au moyen de l’option [-Reference (options du compilateur C#)](./reference-compiler-option.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,13 +27,15 @@ L’option **-lib** spécifie l’emplacement des assemblys référencés au moy
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `dir1`  
  Un répertoire dans lequel le compilateur doit effectuer la recherche si un assembly référencé ne se trouve pas dans le répertoire de travail actuel (le répertoire à partir duquel vous appelez le compilateur) ou dans le répertoire système du common language runtime.  
   
  `dir2`  
  Un ou plusieurs répertoires supplémentaires où rechercher des références d’assembly. Séparez les noms des répertoires supplémentaires par une virgule, sans espace.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Le compilateur recherche les références d’assembly qui ne sont pas complètes dans l’ordre suivant :  
   
 1. Répertoire de travail actuel. Il s’agit du répertoire à partir duquel le compilateur est appelé.  
@@ -62,6 +65,7 @@ L’option **-lib** spécifie l’emplacement des assemblys référencés au moy
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez t2.cs pour créer un fichier .exe. Le compilateur recherche les références d’assembly dans le répertoire de travail et dans le répertoire racine du lecteur C.  
   
 ```console  

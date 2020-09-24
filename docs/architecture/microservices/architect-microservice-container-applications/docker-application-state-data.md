@@ -2,18 +2,18 @@
 title: État et données dans les applications Docker
 description: Gestion des états et des données dans les applications Docker. Les instances de microservice sont extensibles, mais PAS LES DONNÉES. Comment prendre cela en charge à l’aide des microservices ?
 ms.date: 09/20/2018
-ms.openlocfilehash: 1157ea3c4ca8fc389769308cc0a1141b5f92bb88
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 10271d41dcd0574cd212663c2ee22ae06c2c1269
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72771437"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152622"
 ---
 # <a name="state-and-data-in-docker-applications"></a>État et données dans les applications Docker
 
 Dans la plupart des cas, vous pouvez considérer qu’un conteneur est une instance d’un processus. Un processus ne conserve pas un état persistant. Si un conteneur peut écrire dans son stockage local, supposer qu’une instance sera présente indéfiniment revient à supposer qu’un seul emplacement en mémoire pourra perdurer. Vous devez partir de l’hypothèse que les images conteneur, par exemple les processus, ont plusieurs instances ou qu’elles vont finir par être tuées. Si elles sont managées à l’aide d’un orchestrateur de conteneurs, vous devez supposer qu’elles peuvent être déplacés d’un nœud (ou d’une machine virtuelle) vers un autre.
 
-Les solutions suivantes sont utilisées pour gérer les données des applications Docker :
+Les solutions suivantes sont utilisées pour gérer les données dans les applications de l’ancrage :
 
 À partir de l’hôte Docker, sous forme de [volumes Docker](https://docs.docker.com/engine/admin/volumes/) :
 
@@ -27,13 +27,13 @@ Les solutions suivantes sont utilisées pour gérer les données des application
 
 - Le service [Stockage Azure](https://azure.microsoft.com/documentation/services/storage/), qui fournit un stockage géographiquement distribuable, offrant une bonne solution de persistance à long terme pour les conteneurs.
 
-- Des bases de données relationnelles distantes, comme [Azure SQL Database](https://azure.microsoft.com/services/sql-database/), ou des bases de données NoSQL, comme [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction), ou des services de cache, comme [Redis](https://redis.io/).
+- Des bases de données relationnelles distantes, comme [Azure SQL Database](https://azure.microsoft.com/services/sql-database/), ou des bases de données NoSQL, comme [Azure Cosmos DB](/azure/cosmos-db/introduction), ou des services de cache, comme [Redis](https://redis.io/).
 
 À partir du conteneur Docker :
 
-- **Système de fichiers superposés**. Cette fonctionnalité Docker implémente une tâche de copie sur l’écriture qui stocke les informations mises à jour sur le système de fichiers racinaires du conteneur. Cette information est "en haut" de l’image originale sur laquelle le conteneur est basé. Si le conteneur est supprimé du système, ces modifications sont perdues. Ainsi, bien qu’il soit possible d’enregistrer l’état d’un conteneur dans son stockage local, la conception d’un système selon cette solution est en conflit avec le principe de conception des conteneurs, lesquels sont par défaut sans état.
+- **Système de fichiers de superposition**. Cette fonctionnalité d’ancrage implémente une tâche de copie sur écriture qui stocke les informations mises à jour dans le système de fichiers racine du conteneur. Ces informations sont « en haut » de l’image d’origine sur laquelle le conteneur est basé. Si le conteneur est supprimé du système, ces modifications sont perdues. Ainsi, bien qu’il soit possible d’enregistrer l’état d’un conteneur dans son stockage local, la conception d’un système selon cette solution est en conflit avec le principe de conception des conteneurs, lesquels sont par défaut sans état.
 
-Cependant, l’utilisation de Docker Volumes est maintenant le moyen préféré de gérer les données locales dans Docker. Pour plus d’informations sur le stockage dans les conteneurs, consultez [Pilotes de stockage Docker](https://docs.docker.com/storage/storagedriver/select-storage-driver/) et [À propos des pilotes de stockage](https://docs.docker.com/storage/storagedriver/).
+Toutefois, l’utilisation des volumes de l’arrimeur est désormais la meilleure façon de gérer les données locales dans l’outil d’ancrage. Pour plus d’informations sur le stockage dans les conteneurs, consultez [Pilotes de stockage Docker](https://docs.docker.com/storage/storagedriver/select-storage-driver/) et [À propos des pilotes de stockage](https://docs.docker.com/storage/storagedriver/).
 
 Ces options sont détaillées ci-dessous :
 
@@ -43,11 +43,11 @@ Les volumes peuvent être nommés ou anonymes (par défaut). Les volumes nommés
 
 Les **montages de liaison** existent depuis longtemps. Ils permettent de mapper des dossiers à un point de montage d’un conteneur. Les montages de liaison ont plus de limitations que les volumes et présentent certains problèmes de sécurité importants. Les volumes sont donc l’option recommandée.
 
-Les **montages tmpfs** sont essentiellement des dossiers virtuels qui résident uniquement dans la mémoire de l’hôte et qui ne sont jamais écrits dans le système de fichiers. Ils sont rapides et sécurisés, mais utilisent la mémoire et ne sont destinés qu’à des données temporaires et non persistantes.
+Les **montages tmpfs** sont essentiellement des dossiers virtuels qui résident uniquement dans la mémoire de l’hôte et qui ne sont jamais écrits dans le système de fichiers. Elles sont rapides et sécurisées, mais utilisent la mémoire et sont uniquement destinées aux données temporaires et non persistantes.
 
 Comme le montre la figure 4-5, les volumes Docker standard peuvent être stockés en dehors des conteneurs eux-mêmes, mais dans les limites physiques du serveur ou de la machine virtuelle hôte. Toutefois, les conteneurs Docker ne peuvent pas accéder à un volume d’un serveur hôte ou d’une machine virtuelle depuis un autre serveur hôte ou une autre machine virtuelle. En d’autres termes, avec ces volumes, il n’est pas possible de gérer les données partagées entre des conteneurs qui s’exécutent sur des hôtes Docker distincts. Toutefois, cela est possible avec un pilote de volume qui prend en charge les hôtes distants.
 
-![Diagramme montrant les volumes et les sources externes de données pour les applications basées sur les conteneurs.](./media/docker-application-state-data/volumes-external-data-sources.png)
+![Diagramme montrant les volumes et les sources de données externes pour les applications basées sur des conteneurs.](./media/docker-application-state-data/volumes-external-data-sources.png)
 
 **Figure 4-5**. Volumes et sources de données externes pour applications conteneurisées
 
@@ -63,8 +63,8 @@ Des **sources de données distantes et des outils de mise en cache**, comme Azur
 
 - Le stockage de tables stocke les jeux de données structurés. Stockage Table est un magasin de données clé-attribut NoSQL, qui permet le développement rapide et un accès rapide à de grandes quantités de données.
 
-**Bases de données relationnelles et bases de données NoSQL.** Il existe de nombreux choix pour les bases de données externes, à partir de bases de données relationnelles comme SQL Server, PostgreSQL, Oracle, ou NoSQL bases de données comme Azure Cosmos DB, MongoDB, etc. Ces bases de données ne seront pas expliquées dans le cadre de ce guide puisqu’elles sont dans un sujet complètement différent.
+**Bases de données relationnelles et bases de données NoSQL.** Il existe de nombreuses options pour les bases de données externes, à partir de bases de données relationnelles telles que SQL Server, PostgreSQL, Oracle ou des bases de données NoSQL comme Azure Cosmos DB, MongoDB, etc. Ces bases de données ne seront pas expliquées dans le cadre de ce guide, car elles se trouvent dans un objet complètement différent.
 
 >[!div class="step-by-step"]
->[Suivant précédent](containerize-monolithic-applications.md)
->[Next](service-oriented-architecture.md)
+>[Précédent](containerize-monolithic-applications.md) 
+> [Suivant](service-oriented-architecture.md)

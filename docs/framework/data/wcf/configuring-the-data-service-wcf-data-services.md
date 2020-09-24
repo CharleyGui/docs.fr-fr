@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
-ms.openlocfilehash: 57830421eee3c94f9785a2c603eb31b96f99f4d5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a30a8c2c731e8c5cb2b22c8d7f34ec32d149803c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552841"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152791"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Configuration du service de données (services de données WCF)
+
 Avec WCF Data Services, vous pouvez créer des services de données qui exposent des flux Open Data Protocol (OData). Les données de ces flux peuvent provenir de diverses sources. WCF Data Services utilise des fournisseurs de données pour exposer ces données sous forme de flux OData. Ces fournisseurs comprennent un fournisseur Entity Framework, un fournisseur de réflexion et un jeu d'interfaces de fournisseur de services de données personnalisé. L'implémentation de fournisseur définit le modèle de données du service. Pour plus d’informations, consultez [Data Services des fournisseurs](data-services-providers-wcf-data-services.md).  
   
  Dans WCF Data Services, un service de données est une classe qui hérite de la <xref:System.Data.Services.DataService%601> classe, où le type du service de données est le conteneur d’entités du modèle de données. Ce conteneur d'entités a une ou plusieurs propriétés qui retournent un objet <xref:System.Linq.IQueryable%601> utilisé pour accéder aux jeux d'entités dans le modèle de données.  
@@ -25,6 +26,7 @@ Avec WCF Data Services, vous pouvez créer des services de données qui exposent
 [!code-vb[Astoria Northwind Service#DataServiceConfigComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind.svc.vb#dataserviceconfigcomplete)]  
   
 ## <a name="data-service-configuration-settings"></a>Paramètres de la configuration du service de données  
+
  La classe <xref:System.Data.Services.DataServiceConfiguration> vous permet de spécifier les comportements de service de données suivants :  
   
 |Membre|Comportement|  
@@ -48,7 +50,9 @@ Avec WCF Data Services, vous pouvez créer des services de données qui exposent
 |<xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A>|Cette propriété de configuration vous permet de dépanner plus facilement un service de données en retournant plus d'informations dans le message de réponse d'erreur. L'utilisation de cette option n'est pas destinée à un environnement de production. Pour plus d’informations, consultez [développement et déploiement d’WCF Data Services](developing-and-deploying-wcf-data-services.md).|  
   
 <a name="accessRequirements"></a>
+
 ## <a name="minimum-resource-access-requirements"></a>Spécifications minimales pour l'accès aux ressources  
+
  Le tableau suivant détaille les droits minimaux de jeu d'entités qui doivent être accordés pour exécuter une opération spécifique. Les exemples de chemin d’accès sont basés sur le service de données Northwind créé lorsque vous effectuez le [démarrage rapide](quickstart-wcf-data-services.md). Puisque l'énumération <xref:System.Data.Services.EntitySetRights> et l'énumération <xref:System.Data.Services.ServiceOperationRights> sont toutes deux définies à l'aide de l'objet <xref:System.FlagsAttribute>, vous pouvez utiliser un opérateur OR logique pour spécifier plusieurs autorisations pour un jeu d'entités ou une opération unique. Pour plus d’informations, consultez [Comment : activer l’accès au service de données](how-to-enable-access-to-the-data-service-wcf-data-services.md).  
   
 |Chemin d'accès/action|`GET`|`DELETE`|`MERGE`|`POST`|`PUT`|  
@@ -63,9 +67,9 @@ Avec WCF Data Services, vous pouvez créer des services de données qui exposent
 |`/Orders(10643)/$links/Customer`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> -et-<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle> et <xref:System.Data.Services.EntitySetRights.WriteMerge> ou <xref:System.Data.Services.EntitySetRights.WriteReplace>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> -et-<br /><br /> `Orders` : <xref:System.Data.Services.EntitySetRights.ReadSingle> et <xref:System.Data.Services.EntitySetRights.WriteMerge>|Non pris en charge|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle>;<br /><br /> -et-<br /><br /> `Orders` : <xref:System.Data.Services.EntitySetRights.ReadSingle> et <xref:System.Data.Services.EntitySetRights.WriteReplace>|  
 |`/Customers/$count`|<xref:System.Data.Services.EntitySetRights.ReadMultiple>|Non pris en charge|Non pris en charge|Non pris en charge|Non pris en charge|  
 |`/Customers('ALFKI')/ContactName`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|Non pris en charge|<xref:System.Data.Services.EntitySetRights.WriteMerge>|Non pris en charge|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
-|`/Customers('ALFKI')/Address/StreetAddress/$value` <sup>1</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.WriteDelete>|Non pris en charge|Non pris en charge|Non pris en charge|  
+|`/Customers('ALFKI')/Address/StreetAddress/$value`<sup>1</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.WriteDelete>|Non pris en charge|Non pris en charge|Non pris en charge|  
 |`/Customers('ALFKI')/ContactName/$value`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.ReadSingle> et <xref:System.Data.Services.EntitySetRights.WriteDelete>|<xref:System.Data.Services.EntitySetRights.WriteMerge>|Non pris en charge|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
-|`/Customers('ALFKI')/$value` <sup>2</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|Non pris en charge|Non pris en charge|Non pris en charge|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
+|`/Customers('ALFKI')/$value`<sup>2</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|Non pris en charge|Non pris en charge|Non pris en charge|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
 |`/Customers?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> -et-<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Non pris en charge|Non pris en charge|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend>|Non pris en charge|  
 |`/Customers('ALFKI')?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> -et-<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Non pris en charge|Non pris en charge|Non pris en charge|Non pris en charge|  
   
@@ -74,7 +78,9 @@ Avec WCF Data Services, vous pouvez créer des services de données qui exposent
  <sup>2</sup> cet URI est pris en charge lorsqu’une propriété qui retourne un objet BLOB (Binary Large Object) est définie en tant que ressource multimédia appartenant à une entité qui est une entrée de lien média, qui, dans ce cas, a la valeur `Customers` . Pour plus d’informations, consultez la page [fournisseur de streaming](streaming-provider-wcf-data-services.md).  
   
 <a name="versioning"></a>
+
 ## <a name="versioning-requirements"></a>Exigences pour le contrôle de version  
+
  Les comportements de configuration de service de données suivants nécessitent la version 2 du protocole OData ou les versions ultérieures :  
   
 - Prise en charge des demandes relatives au nombre de lignes.  

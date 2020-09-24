@@ -2,12 +2,12 @@
 title: Problématiques et solutions pour la gestion des données distribuées
 description: Découvrez les défis et les solutions spécifiques à la gestion des données distribuée dans le monde des microservices.
 ms.date: 09/20/2018
-ms.openlocfilehash: 8b91879e879db293ed61bd5f3c49dc391b9d8f5a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 1439dd5a04c3991a2b3b2ef12763843f9f339a29
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144316"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152649"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Problématiques et solutions pour la gestion des données distribuées
 
@@ -25,7 +25,7 @@ Une deuxième problématique est la façon d’implémenter des requêtes qui ex
 
 **Passerelle d’API.** Pour une agrégation de données simples provenant de plusieurs microservices qui ont des bases de données différentes, l’approche recommandée est un microservice d’agrégation, connu sous le nom de passerelle d’API. Vous devez cependant être prudent dans l’implémentation de ce modèle, car il peut être un goulot d’étranglement dans votre système, et il peut violer le principe d’autonomie des microservices. Pour atténuer ce risque, vous pouvez avoir plusieurs passerelles d’API réduites, chacune étant consacrée à une « section » verticale ou un domaine d’activité du système. Le modèle de passerelle d’API est détaillé plus loin dans la [section relative à la passerelle d’API](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md#why-consider-api-gateways-instead-of-direct-client-to-microservice-communication).
 
-**CQRS avec des tables de requête/lecture.** Une autre solution pour agréger des données provenant de plusieurs microservices est le [modèle de vue matérialisée](https://docs.microsoft.com/azure/architecture/patterns/materialized-view). Dans cette approche, vous générez à l’avance (vous préparez des données dénormalisées avant que les requêtes réelles ne soient effectuées) une table en lecture seule avec les données détenues par plusieurs microservices. La table a un format adapté aux besoins de l’application cliente.
+**CQRS avec des tables de requête/lecture.** Une autre solution pour agréger des données provenant de plusieurs microservices est le [modèle de vue matérialisée](/azure/architecture/patterns/materialized-view). Dans cette approche, vous générez à l’avance (vous préparez des données dénormalisées avant que les requêtes réelles ne soient effectuées) une table en lecture seule avec les données détenues par plusieurs microservices. La table a un format adapté aux besoins de l’application cliente.
 
 Considérons par exemple l’écran d’une application mobile. Si vous avez une seule base de données, vous pouvez extraire en une seule fois les données pour cet écran en utilisant une requête SQL qui effectue une jointure complexe impliquant plusieurs tables. Cependant, quand vous avez plusieurs bases de données et que chaque base de données est détenue par un microservice différent, vous ne pouvez pas interroger ces bases de données et créer une jointure SQL. Votre requête complexe devient un vrai défi. Vous pouvez répondre à cette exigence à l’aide d’une approche CQRS : vous créez une table dénormalisée dans une autre base de données, utilisée seulement pour les requêtes. La table peut être conçue spécifiquement pour les données dont vous avez besoin pour la requête complexe, avec une relation un-à-un entre les champs nécessaires à l’écran de votre application et les colonnes de la table de requête. Elle peut également servir pour la création de rapports.
 

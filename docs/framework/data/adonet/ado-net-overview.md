@@ -3,14 +3,15 @@ title: Vue d’ensemble
 description: Lisez une vue d’ensemble de ADO.NET dans .NET Framework et consultez les ressources pour obtenir des explications plus détaillées et des exemples.
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: 2ff3b7ad197bfe1e1c12e382f3a59bd470c57a75
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 459e4a548a4d1358b196dc41ec495921833728d4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287153"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153493"
 ---
 # <a name="adonet-overview"></a>Vue d'ensemble d'ADO.NET
+
 ADO.NET propose un accès cohérent à des sources de données, telles que SQL Server et XML, ainsi qu'à des sources de données exposées via OLE DB et ODBC. Des applications grand public de partage de données peuvent utiliser ADO.NET pour se connecter à des sources de données et extraire, manipuler et mettre à jour les données qu'elles contiennent.  
   
  ADO.NET sépare l'accès aux données de leur manipulation en composants distincts qui peuvent être utilisés individuellement ou en tandem. ADO.NET comprend des fournisseurs de données .NET Framework pour la connexion à une base de données, l'exécution de commandes et l'extraction de résultats. Ces résultats sont traités directement, placés dans un objet <xref:System.Data.DataSet> ADO.NET pour pouvoir être exposés à l'utilisateur de manière adéquate, combinés aux données de différentes sources ou passées entre couches. L'objet `DataSet`peut également être utilisé indépendamment d'un fournisseur de données .NET Framework pour gérer des données locales pour l'application ou provenant de XML.  
@@ -21,9 +22,10 @@ ADO.NET propose un accès cohérent à des sources de données, telles que SQL S
   
  ADO.NET fournit la méthode la plus directe d'accès aux données dans le .NET Framework. Pour une abstraction de niveau supérieur qui permet aux applications de travailler sur un modèle conceptuel au lieu du modèle de stockage sous-jacent, consultez la [Entity Framework ADO.net](./ef/index.md).  
   
- **Déclaration de confidentialité**: les assemblys System. Data. dll, System. Data. Design. dll, System. Data. OracleClient. dll, System. Data. SQLXML. dll, System. Data. Linq. dll, System. Data. SqlServerCe. dll et System. Data. DataSetExtensions. dll ne font pas la distinction entre les données privées d’un utilisateur et les données non privées.  Ces assemblys ne collectent pas les données privées d'un utilisateur, ne les stockent pas et ne les transportent pas. Toutefois, les applications tierces peuvent collecter, stocker ou transporter les données privées d'un utilisateur à l'aide de ces assemblys.  
+ **Déclaration de confidentialité**: les assemblys System.Data.dll, System.Data.Design.dll, System.Data.OracleClient.dll, System.Data.SqlXml.dll, System.Data.Linq.dll, System.Data.SqlServerCe.dll et System.Data.DataSetExtensions.dll ne font pas la distinction entre les données privées d’un utilisateur et les données non privées.  Ces assemblys ne collectent pas les données privées d'un utilisateur, ne les stockent pas et ne les transportent pas. Toutefois, les applications tierces peuvent collecter, stocker ou transporter les données privées d'un utilisateur à l'aide de ces assemblys.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Architecture ADO.NET](ado-net-architecture.md)  
  Propose une vue d'ensemble de l'architecture et des composants d'ADO.NET.  
   
@@ -33,10 +35,10 @@ ADO.NET propose un accès cohérent à des sources de données, telles que SQL S
  [LINQ et ADO.NET](linq-and-ado-net.md)  
  Décrit comment les requêtes LINQ (Language-Integrated Query) sont implémentées dans ADO.NET et propose des liens vers les rubriques associées.  
   
- [Fournisseurs de données .NET Framework](data-providers.md)  
+ [Fournisseur de données .NET Framework](data-providers.md)  
  Propose une vue d'ensemble du design du fournisseur de données .NET Framework et des fournisseurs de données .NET Framework inclus dans ADO.NET.  
   
- [DataSets ADO.NET](ado-net-datasets.md)  
+ [Datasets ADO.NET](ado-net-datasets.md)  
  Fournit une vue d'ensemble du design et des composants du `DataSet`.  
   
  [Exécution côte à côte dans ADO.NET](side-by-side-execution.md)  
@@ -46,6 +48,7 @@ ADO.NET propose un accès cohérent à des sources de données, telles que SQL S
  Fournit des exemples de code qui récupèrent des données à l'aide des fournisseurs de données ADO.NET.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Nouveautés dans ADO.NET](whats-new.md)  
  Introduit des fonctionnalités nouvelles dans ADO.NET.  
   

@@ -2,12 +2,12 @@
 title: Implémentation de la communication basée sur les événements entre les microservices (événements d’intégration)
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les événements d’intégration pour implémenter la communication basée sur les événements entre les microservices.
 ms.date: 10/02/2018
-ms.openlocfilehash: cbc9d28f9fbcaea528eabc4930476545cb919bb4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a778acba3e17b084840b77d903533f9180ca01d9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539344"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152531"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implémentation de la communication basée sur les événements entre les microservices (événements d’intégration)
 
@@ -76,7 +76,7 @@ Dans le [modèle Observateur](https://en.wikipedia.org/wiki/Observer_pattern), v
 
 ### <a name="publishsubscribe-pubsub-pattern"></a>Modèle Publication/Abonnement
 
-L’objectif du [modèle Publication/Abonnement](https://docs.microsoft.com/previous-versions/msp-n-p/ff649664(v=pandp.10)) est le même que celui du modèle Observateur, c’est-à-dire que vous souhaitez informer les autres services de certains événements. Toutefois, il existe une différence importante entre ces deux modèles. Dans le modèle d’observateur, la diffusion est effectuée directement à partir de l’observable vers les observateurs, de sorte qu’ils se « identifient » les uns les autres. En revanche, lorsque vous utilisez un modèle Publication/Abonnement, un troisième élément est impliqué. Il s’agit du répartiteur (de messages) ou du bus d’événements, qui est connu à la fois de celui qui publie et de celui qui s’abonne. Par conséquent, lorsque vous utilisez le modèle Publication/Abonnement, celui qui publie et ses abonnés sont dissociés grâce au bus d’événements ou au répartiteur de messages.
+L’objectif du [modèle Publication/Abonnement](/previous-versions/msp-n-p/ff649664(v=pandp.10)) est le même que celui du modèle Observateur, c’est-à-dire que vous souhaitez informer les autres services de certains événements. Toutefois, il existe une différence importante entre ces deux modèles. Dans le modèle d’observateur, la diffusion est effectuée directement à partir de l’observable vers les observateurs, de sorte qu’ils se « identifient » les uns les autres. En revanche, lorsque vous utilisez un modèle Publication/Abonnement, un troisième élément est impliqué. Il s’agit du répartiteur (de messages) ou du bus d’événements, qui est connu à la fois de celui qui publie et de celui qui s’abonne. Par conséquent, lorsque vous utilisez le modèle Publication/Abonnement, celui qui publie et ses abonnés sont dissociés grâce au bus d’événements ou au répartiteur de messages.
 
 ### <a name="the-middleman-or-event-bus"></a>L’intermédiaire ou le bus d’événements
 

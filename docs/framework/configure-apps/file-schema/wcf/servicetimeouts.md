@@ -2,14 +2,15 @@
 title: <serviceTimeouts>
 ms.date: 03/30/2017
 ms.assetid: ada536cf-97dc-4cd7-89ec-ed1466c1c557
-ms.openlocfilehash: 801a7aaf1f0d0fa267fa8cca3d2e7fd02919c475
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 92d3de42daf6f7baf288e3e74242381a60e76618
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399546"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153597"
 ---
 # \<serviceTimeouts>
+
 Spécifie le délai d'attente pour un service.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,9 +27,11 @@ Spécifie le délai d'attente pour un service.
 ```  
   
 ## <a name="type"></a>Type  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -38,6 +41,7 @@ Spécifie le délai d'attente pour un service.
 |`transactionTimeout`|Valeur <xref:System.TimeSpan> qui spécifie l’intervalle de temps pour le transfert d’une transaction du client au serveur. La valeur par défaut est « 00:00:00 ».|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
