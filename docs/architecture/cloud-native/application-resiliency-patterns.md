@@ -3,12 +3,12 @@ title: Modèles de résilience d’application
 description: Architecture des applications .NET natives Cloud pour Azure | Modèles de résilience d’application
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: bb72e47704c833a2ce86f103a66b0414ce3a37ff
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e81d6e1d6b95cf0053de3ba557068ff458a59dc9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614320"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161150"
 ---
 # <a name="application-resiliency-patterns"></a>Modèles de résilience d’application
 
@@ -46,7 +46,7 @@ Nous allons ensuite développer les modèles de réessai et de disjoncteur.
 
 Dans un environnement Cloud natif distribué, les appels aux services et aux ressources de Cloud peuvent échouer en raison d’échecs temporaires (éphémères), qui se corrigent généralement après une courte période de temps. L’implémentation d’une stratégie de nouvelle tentative aide un service Cloud-native à atténuer ces scénarios.
 
-Le [modèle de nouvelle tentative](https://docs.microsoft.com/azure/architecture/patterns/retry) permet à un service de retenter une opération de demande ayant échoué (configurable) un nombre de fois avec un délai d’attente qui croît de manière exponentielle. La figure 6-2 montre une nouvelle tentative en action.
+Le [modèle de nouvelle tentative](/azure/architecture/patterns/retry) permet à un service de retenter une opération de demande ayant échoué (configurable) un nombre de fois avec un délai d’attente qui croît de manière exponentielle. La figure 6-2 montre une nouvelle tentative en action.
 
 ![Modèle de nouvelle tentative en action](./media/retry-pattern.png)
 
@@ -70,7 +70,7 @@ Pour compliquer les choses, l’exécution d’opérations de nouvelle tentative
 
 Dans ces situations, il serait préférable que l’opération échoue immédiatement et tente uniquement d’appeler le service si elle est susceptible de réussir.
 
-Le [modèle disjoncteur](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker) peut empêcher une application de tenter d’exécuter à plusieurs reprises une opération qui risque d’échouer. Après un nombre prédéfini d’appels ayant échoué, il bloque tout le trafic vers le service. Périodiquement, il permet à un appel d’essai de déterminer si l’erreur a été résolue. La figure 6-3 illustre le modèle de disjoncteur en action.
+Le [modèle disjoncteur](/azure/architecture/patterns/circuit-breaker) peut empêcher une application de tenter d’exécuter à plusieurs reprises une opération qui risque d’échouer. Après un nombre prédéfini d’appels ayant échoué, il bloque tout le trafic vers le service. Périodiquement, il permet à un appel d’essai de déterminer si l’erreur a été résolue. La figure 6-3 illustre le modèle de disjoncteur en action.
 
 ![Modèle disjoncteur en action](./media/circuit-breaker-pattern.png)
 

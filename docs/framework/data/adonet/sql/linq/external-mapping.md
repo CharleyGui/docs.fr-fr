@@ -2,24 +2,26 @@
 title: Mappage externe
 ms.date: 03/30/2017
 ms.assetid: 076606b8-d889-4ba0-b5da-ae577b146f23
-ms.openlocfilehash: ba5af75ae34b233354fec6e9074f3cc96d924c7f
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 79427cde0784746480e851cf1be56c8bce854919
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003047"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161384"
 ---
 # <a name="external-mapping"></a>Mappage externe
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge le *mappage externe*, processus par lequel vous utilisez un fichier XML distinct pour spécifier le mappage entre le modèle de données de la base de données et votre modèle objet. Les avantages de l'utilisation d'un fichier de mappage externe sont notamment les suivants :  
+
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge le *mappage externe*, un processus par lequel vous utilisez un fichier XML distinct pour spécifier le mappage entre le modèle de données de la base de données et votre modèle objet. Les avantages de l'utilisation d'un fichier de mappage externe sont notamment les suivants :  
   
 - Vous pouvez conserver votre code de mappage en dehors de votre code d'application. Cette méthode permet de réduire l'encombrement dans votre code d'application.  
   
 - Vous pouvez traiter un fichier de mappage externe un peu comme un fichier de configuration. Par exemple, vous pouvez modifier la manière dont votre application se comporte après l'envoi des binaires par la simple permutation du fichier binaire externe.  
   
-## <a name="requirements"></a>Configuration requise  
- Le fichier de mappage doit être un fichier XML et le fichier doit être validé par rapport à un fichier de définition de schéma (. xsd) [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+## <a name="requirements"></a>Spécifications  
+
+ Le fichier de mappage doit être un fichier XML et le fichier doit être validé par rapport à un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fichier de définition de schéma (. xsd).  
   
- Les règles suivantes s'appliquent :  
+ Les règles suivantes s’appliquent :  
   
 - Le fichier de mappage doit être un fichier XML.  
   
@@ -27,9 +29,10 @@ ms.locfileid: "72003047"
   
 - Le mappage externe substitue le mappage basé sur les attributs. En d'autres termes, lorsque vous utilisez une source de mappage externe pour créer un <xref:System.Data.Linq.DataContext>, le <xref:System.Data.Linq.DataContext> ignore tous les attributs de mappage que vous avez créés sur les classes. Ce comportement est vrai si la classe est incluse dans le fichier de mappage externe.  
   
-- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne prend pas en charge l’utilisation hybride des deux approches de mappage (basée sur les attributs et externe).  
+- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne prend pas en charge l'utilisation hybride des deux approches de mappage (basé sur les attributs et externe).  
   
 ## <a name="xml-schema-definition-file"></a>Fichier de définition de schéma XML  
+
  Le mappage externe dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] doit être valide par rapport à la définition de schéma XML suivante.  
   
  Ce fichier de définition de schéma est différent du fichier de définition de schéma utilisé pour valider un fichier DBML. Pour plus d’informations, consultez [génération de code dans LINQ to SQL](code-generation-in-linq-to-sql.md)).  
@@ -145,4 +148,4 @@ elementFormDefault="qualified" >
 
 - [Génération de code dans LINQ to SQL](code-generation-in-linq-to-sql.md)
 - [Référence](reference.md)
-- [Guide pratique pour générer le modèle objet sous forme de fichier externe](how-to-generate-the-object-model-as-an-external-file.md)
+- [Procédure : Générer le modèle objet sous forme de fichier externe](how-to-generate-the-object-model-as-an-external-file.md)

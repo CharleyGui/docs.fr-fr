@@ -2,14 +2,15 @@
 title: <transportConfigurationTypes>
 ms.date: 03/30/2017
 ms.assetid: 929c8b0a-5460-4f66-a098-2cb8d4e10b69
-ms.openlocfilehash: 4be08f780c1095b0016bd130b5719a2a7307d019
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6545e1f1be2695d165b89a38c7218e0acdc88bfc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854926"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162021"
 ---
 # \<transportConfigurationTypes>
+
 Représente une collection d’éléments de configuration identifiant le type d’un transport particulier. Peut être utilisé pour ajouter des protocoles WAS personnalisés.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Représente une collection d’éléments de configuration identifiant le type d
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  

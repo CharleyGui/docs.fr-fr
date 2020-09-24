@@ -2,12 +2,12 @@
 title: Azure Active Directory
 description: Architecture des applications .NET natives Cloud pour Azure | Azure Active Directory
 ms.date: 06/30/2019
-ms.openlocfilehash: 03f5ea8e84bc3c4a2a88a63d4b109aabf0c64f36
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 55787f3565fc15bb25cf1a101aa5c1e3ddefe5e7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614277"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161111"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 
@@ -17,9 +17,9 @@ Azure AD est conçu pour le Cloud. Il s’agit véritablement d’une solution d
 
 Azure AD prend en charge les écrans de connexion de la société, l’authentification multilingue et les proxys d’applications basés sur le Cloud qui sont utilisés pour fournir l’authentification unique pour les applications hébergées localement. Il offre différents types de rapports de sécurité et de fonctionnalités d’alerte.
 
-## <a name="references"></a>References
+## <a name="references"></a>Références
 
-- [Plateforme d’identité Microsoft](https://docs.microsoft.com/azure/active-directory/develop/)
+- [Plateforme d’identité Microsoft](/azure/active-directory/develop/)
 
 >[!div class="step-by-step"]
 >[Précédent](authentication-authorization.md) 

@@ -2,12 +2,12 @@
 title: Configuration centralisée
 description: Centralisation de la configuration des applications Cloud natives à l’aide de Azure App configuration et du coffre AzureKey.
 ms.date: 05/13/2020
-ms.openlocfilehash: d389d29dcdb1db5162d95370d181ab5a85d72dc8
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 0d40c5b2d70f30beb17489dfd55900f7c5fc1a75
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614225"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160877"
 ---
 # <a name="centralized-configuration"></a>Configuration centralisée
 
@@ -19,7 +19,7 @@ Le Cloud Azure présente plusieurs options intéressantes.
 
 ## <a name="azure-app-configuration"></a>Azure App Configuration
 
-[Azure App configuration](https://docs.microsoft.com/azure/azure-app-configuration/overview) est un service Azure entièrement géré qui stocke les paramètres de configuration non-secret dans un emplacement centralisé et sécurisé. Les valeurs stockées peuvent être partagées entre plusieurs services et applications.
+[Azure App configuration](/azure/azure-app-configuration/overview) est un service Azure entièrement géré qui stocke les paramètres de configuration non-secret dans un emplacement centralisé et sécurisé. Les valeurs stockées peuvent être partagées entre plusieurs services et applications.
 
 Le service est simple à utiliser et offre plusieurs avantages :
 
@@ -33,9 +33,9 @@ Azure App configuration conserve les modifications apportées aux paramètres de
 
 La configuration d’application met automatiquement en cache chaque paramètre pour éviter des appels excessifs au magasin de configurations. L’opération d’actualisation attend que la valeur mise en cache d’un paramètre ait expiré avant de mettre ce dernier à jour, même si sa valeur change dans le magasin de configuration. Le délai d’expiration du cache par défaut est de 30 secondes. Vous pouvez remplacer le délai d’expiration.
 
-La configuration d’application chiffre toutes les valeurs de configuration en transit et au repos. Les noms de clés et les étiquettes sont utilisés comme index pour la récupération des données de configuration et ne sont pas chiffrés.
+La configuration d’application chiffre toutes les valeurs de configuration en transit et au repos. Les noms de clés et les étiquettes servent d’index pour récupérer les données de configuration et ne sont pas chiffrés.
 
-Bien que la configuration des applications offre une sécurité renforcée, Azure Key Vault est toujours le meilleur emplacement pour le stockage des secrets d’application. Key Vault fournit un chiffrement au niveau matériel, des stratégies d’accès granulaires et des opérations de gestion telles que la rotation des certificats. Vous pouvez créer des valeurs de configuration d’application qui font référence à des secrets stockés dans un Key Vault.
+Bien que la configuration des applications offre une sécurité renforcée, Azure Key Vault est toujours le meilleur emplacement pour le stockage des secrets d’application. Key Vault propose un chiffrement au niveau du matériel, des stratégies d’accès précises, ainsi que des opérations de gestion, comme la rotation des certificats. Vous pouvez créer des valeurs de configuration d’application qui font référence à des secrets stockés dans un Key Vault.
 
 ## <a name="azure-key-vault"></a>Azure Key Vault
 
@@ -51,19 +51,19 @@ L’accès à Key Vault nécessite une authentification et une autorisation appr
 
 L’application eShopOnContainers comprend des fichiers de paramètres d’application locaux avec chaque microservice. Ces fichiers sont archivés dans le contrôle de code source, mais n’incluent pas les secrets de production tels que les chaînes de connexion ou les clés API. En production, des paramètres individuels peuvent être remplacés par des variables d’environnement par service. L’injection de secrets dans les variables d’environnement est une pratique courante pour les applications hébergées, mais elle ne fournit pas de magasin de configuration centralisé. Pour prendre en charge la gestion centralisée des paramètres de configuration, chaque microservice comprend un paramètre permettant de basculer entre l’utilisation des paramètres locaux et des paramètres de Azure Key Vault.
 
-## <a name="references"></a>References
+## <a name="references"></a>Références
 
 - [Architecture eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Architecture)
-- [Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité](https://docs.microsoft.com/dotnet/architecture/microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications)
-- [Gestion des API Azure](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)
-- [Présentation de Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
+- [Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité](../microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications.md)
+- [Gestion des API Azure](/azure/api-management/api-management-key-concepts)
+- [Présentation de Azure SQL Database](/azure/sql-database/sql-database-technical-overview)
 - [Cache Azure pour Redis](https://azure.microsoft.com/services/cache/)
-- [API pour MongoDB d’Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
-- [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)
-- [Vue d’ensemble d’Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
+- [API pour MongoDB d’Azure Cosmos DB](/azure/cosmos-db/mongodb-introduction)
+- [Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview)
+- [Vue d’ensemble d’Azure Monitor](/azure/azure-monitor/overview)
 - [eShopOnContainers : créer un cluster Kubernetes dans AKS](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Deploy-to-Azure-Kubernetes-Service-(AKS)#create-kubernetes-cluster-in-aks)
 - [eShopOnContainers : Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)
-- [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
+- [Azure Dev Spaces](/azure/dev-spaces/about)
 
 >[!div class="step-by-step"]
 >[Précédent](deploy-eshoponcontainers-azure.md) 

@@ -2,14 +2,15 @@
 title: <security> de <wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: a8e5e854-b8dc-4921-843d-34b6a4a6a8ba
-ms.openlocfilehash: ea029444cee331a235c7a2fc140b4321d7530063
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 650483099c7d70450cfc56a9a28efac076d64675
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736329"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162232"
 ---
 # <a name="security-of-wsfederationhttpbinding"></a>\<security> de \<wsFederationHttpBinding>
+
 Définit les paramètres de sécurité du [\<wsFederationHttpBinding>](wsfederationhttpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -80,13 +81,14 @@ Définit les paramètres de sécurité du [\<wsFederationHttpBinding>](wsfederat
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|Mode|facultatif. Spécifie le type de sécurité appliqué. La valeur par défaut est `Message`. Cet attribut est de type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
+|Mode|Optionnel. Spécifie le type de sécurité appliqué. La valeur par défaut est `Message`. Cet attribut est de type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
   
 ## <a name="mode-attribute"></a>Attribut Mode  
   
@@ -114,8 +116,8 @@ Définit les paramètres de sécurité du [\<wsFederationHttpBinding>](wsfederat
 - <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>
-- [Guide pratique pour créer une liaison WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Procédure : créer un WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Sélection d'un type d'informations d'identification](../../../wcf/feature-details/selecting-a-credential-type.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)

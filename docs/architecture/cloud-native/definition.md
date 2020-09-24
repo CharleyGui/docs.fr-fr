@@ -3,12 +3,12 @@ title: Définition du Cloud Native
 description: En savoir plus sur les piliers fondamentaux qui fournissent le socle pour les systèmes natifs du Cloud
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: f50c144d99fae0c4702965342fd76ec22e8bd8c8
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: dce8da57b90519880e322a26de403d8e7cb718c2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87427032"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160903"
 ---
 # <a name="defining-cloud-native"></a>Définition du Cloud Native
 
@@ -77,7 +77,7 @@ Le tableau suivant met en évidence la méthodologie à douze facteurs :
 |    |  Facteur | Explication  |
 | :-------- | :-------- | :-------- |
 | 1 | Base de code | Une seule base de code pour chaque microservice, stockée dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements (AQ, intermédiaire, production). |
-| 2 | Les dépendances | Chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système. |
+| 2 | Dépendances | Chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système. |
 | 3 | Configurations  | Les informations de configuration sont déplacées hors du microservice et sont externalisées à l’aide d’un outil de gestion de la configuration en dehors du code. Le même déploiement peut se propager dans les environnements avec la configuration correcte appliquée.  |
 | 4 | Services de stockage | Les ressources auxiliaires (magasins de données, caches, courtiers de messages) doivent être exposées via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.  |
 | 5 | Build, Release, exécuter | Chaque version doit appliquer une séparation stricte entre les étapes de génération, de mise en œuvre et d’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration. Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. |
@@ -95,7 +95,7 @@ Dans le livre, [au-delà de l’application à douze facteurs](https://content.
 | :-------- | :-------- | :-------- |
 | 13 | Priorité aux API | Faites de tout un service. Supposons que votre code sera consommé par un client frontal, une passerelle ou un autre service. |
 | 14 | Télémétrie | Sur une station de travail, vous bénéficiez d’une visibilité détaillée de votre application et de son comportement. Dans le Cloud, vous ne le pouvez pas. Assurez-vous que votre conception comprend la collecte des données de surveillance, spécifiques à un domaine et à l’intégrité/au système. |
-| 15 | Authentification/autorisation  | Implémentez l’identité à partir du début. Envisagez [les fonctionnalités RBAC (contrôle d’accès en fonction du rôle)](https://docs.microsoft.com/azure/role-based-access-control/overview) disponibles dans les clouds publics.  |
+| 15 | Authentification/autorisation  | Implémentez l’identité à partir du début. Envisagez [les fonctionnalités RBAC (contrôle d’accès en fonction du rôle)](/azure/role-based-access-control/overview) disponibles dans les clouds publics.  |
 
 Nous allons nous référer à la plupart des plus de 12 facteurs dans ce chapitre et dans le livre.
 
@@ -209,7 +209,7 @@ Vous pouvez déployer ce même conteneur dans n’importe quel environnement aya
 
 En partageant le système d’exploitation sous-jacent et les ressources de l’hôte, les conteneurs ont un encombrement bien plus faible qu’une machine virtuelle complète. La taille plus petite augmente la *densité*, ou le nombre de microservices, qu’un hôte donné peut exécuter en même temps.
 
-### <a name="container-orchestration"></a>Orchestration des conteneurs
+### <a name="container-orchestration"></a>Orchestration de conteneurs
 
 Tandis que les outils tels que l’amarrage créent des images et exécutent des conteneurs, vous avez également besoin d’outils pour les gérer. La gestion des conteneurs s’effectue à l’aide d’un programme logiciel spécial appelé Orchestrator de conteneur. En cas de fonctionnement à l’échelle, l’orchestration de conteneur est essentielle.
 
@@ -227,7 +227,7 @@ Le tableau suivant décrit les tâches d’orchestration courantes.
 | Affinité/anti-affinité | Approvisionner des conteneurs à proximité ou éloignés les uns des autres, ce qui contribue à la disponibilité et aux performances. |
 | Surveillance de l’intégrité | Détectez et corrigez automatiquement les défaillances.|
 | Basculement | Reconfigurer automatiquement l’instance défaillante sur des machines saines.|
-| Mise à l'échelle | Ajoutez ou supprimez automatiquement l’instance de conteneur pour répondre à la demande.|
+| Mise à l’échelle | Ajoutez ou supprimez automatiquement l’instance de conteneur pour répondre à la demande.|
 | Mise en réseau | Gérez une superposition de mise en réseau pour la communication de conteneur.|
 | Découverte de service | Activez les conteneurs pour les localiser.|
 | Mises à niveau propagées | Coordonner les mises à niveau incrémentielles avec un déploiement sans temps d’arrêt. Annule automatiquement les modifications problématiques.|
@@ -280,17 +280,17 @@ Les services de stockage sont présentés en détail dans le chapitre 5, les *mo
 
 Comme vous l’avez vu, les systèmes Cloud natifs intègrent des microservices, des conteneurs et une conception de système moderne pour obtenir une vitesse et une agilité. Mais ce n’est qu’une partie de l’histoire. Comment approvisionner les environnements Cloud sur lesquels ces systèmes s’exécutent ? Comment déployez-vous rapidement des fonctionnalités et des mises à jour d’application ? Comment faire pour arrondir l’image complète ?
 
-Entrez la pratique d' [infrastructure en tant que code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code)ou IaC.
+Entrez la pratique d' [infrastructure en tant que code](/azure/devops/learn/what-is-infrastructure-as-code)ou IaC.
 
 Avec IaC, vous automatisez l’approvisionnement de la plateforme et le déploiement d’applications. Vous appliquez essentiellement des pratiques de conception de logiciels, telles que le test et la gestion des versions, à vos pratiques DevOps. Votre infrastructure et vos déploiements sont automatisés, cohérents et reproductibles.
 
 ### <a name="automating-infrastructure"></a>Automatisation de l’infrastructure
 
-Des outils comme [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraform et [Azure CLI](https://docs.microsoft.com/cli/azure/), vous permettent de générer un script de façon déclarative de l’infrastructure cloud dont vous avez besoin. Les noms de ressources, les emplacements, les capacités et les secrets sont paramétrables et dynamiques. Le script est géré et archivé dans le contrôle de code source en tant qu’artefact de votre projet. Vous appelez le script pour approvisionner une infrastructure cohérente et reproductible dans des environnements système, comme l’assurance qualité, la mise en lots et la production.
+Des outils comme [Azure Resource Manager](/azure/azure-resource-manager/management/overview), Terraform et [Azure CLI](/cli/azure/), vous permettent de générer un script de façon déclarative de l’infrastructure cloud dont vous avez besoin. Les noms de ressources, les emplacements, les capacités et les secrets sont paramétrables et dynamiques. Le script est géré et archivé dans le contrôle de code source en tant qu’artefact de votre projet. Vous appelez le script pour approvisionner une infrastructure cohérente et reproductible dans des environnements système, comme l’assurance qualité, la mise en lots et la production.
 
 En coulisses, IaC est idempotent, ce qui signifie que vous pouvez exécuter le même script sur et sans effets secondaires. Si l’équipe doit apporter une modification, elle modifie et réexécute le script. Seules les ressources mises à jour sont affectées.
 
-Dans l’article [qu’est-ce que l’infrastructure en tant que code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), l’auteur Sam Guckenheimer décrit comment, les équipes qui implémentent IaC peuvent fournir rapidement et à grande échelle des environnements stables. Les équipes évitent la configuration manuelle des environnements et appliquent la cohérence en représentant l’état souhaité de leurs environnements via du code. Les déploiements d’infrastructure avec IaC sont reproductibles et évitent les problèmes d’exécution dus à une dérive de la configuration ou à des dépendances manquantes. Les équipes DevOps peuvent collaborer avec un ensemble unifié de pratiques et d’outils pour fournir des applications et leur infrastructure de prise en charge rapidement, de manière fiable et à grande échelle.»
+Dans l’article [qu’est-ce que l’infrastructure en tant que code](/azure/devops/learn/what-is-infrastructure-as-code), l’auteur Sam Guckenheimer décrit comment, les équipes qui implémentent IaC peuvent fournir rapidement et à grande échelle des environnements stables. Les équipes évitent la configuration manuelle des environnements et appliquent la cohérence en représentant l’état souhaité de leurs environnements via du code. Les déploiements d’infrastructure avec IaC sont reproductibles et évitent les problèmes d’exécution dus à une dérive de la configuration ou à des dépendances manquantes. Les équipes DevOps peuvent collaborer avec un ensemble unifié de pratiques et d’outils pour fournir des applications et leur infrastructure de prise en charge rapidement, de manière fiable et à grande échelle.»
 
 ### <a name="automating-deployments"></a>Automatisation des déploiements
 

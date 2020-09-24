@@ -2,12 +2,12 @@
 title: Authentification et autorisation dans les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Authentification et autorisation dans les applications Cloud natives
 ms.date: 05/13/2020
-ms.openlocfilehash: e5254560ac82662e5e3ea6a25997516cd2b478b0
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: bbd2df110dd7a7dc7363e9c07d87f1fa12f4e464
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614303"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161137"
 ---
 # <a name="authentication-and-authorization-in-cloud-native-apps"></a>Authentification et autorisation dans les applications cloud natives
 
@@ -19,10 +19,10 @@ De nombreuses organisations s’appuient toujours sur des services d’authentif
 - La plupart des organisations utilisent déjà Azure AD dans une certaine mesure.
 - Le hachage double des hachages NTLM garantit que la compromission n’autorise pas les informations d’identification qui fonctionnent dans les Active Directory locales.
 
-## <a name="references"></a>References
+## <a name="references"></a>Références
 
-- [Principes fondamentaux de l’authentification](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios)
-- [Jetons d’accès et revendications](https://docs.microsoft.com/azure/active-directory/develop/access-tokens)
+- [Principes fondamentaux de l’authentification](/azure/active-directory/develop/authentication-scenarios)
+- [Jetons d’accès et revendications](/azure/active-directory/develop/access-tokens)
 - [Il peut être temps d’abandonner vos services d’authentification locaux](https://oxfordcomputergroup.com/resources/o365-security-native-cloud-authentication/)
 
 >[!div class="step-by-step"]

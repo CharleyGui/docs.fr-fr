@@ -2,12 +2,12 @@
 title: Déploiement d’eShopOnContainers sur Azure
 description: Déploiement de l’application eShopOnContainers à l’aide du service Azure Kubernetes, Helm et DevSpaces.
 ms.date: 05/13/2020
-ms.openlocfilehash: 93a2848f095d7593e1e169f4a6c6c1818a76217d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b3871dae2b414709bfe24b6f7bdbf06de1689d12
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614095"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160721"
 ---
 # <a name="deploying-eshoponcontainers-to-azure"></a>Déploiement d’eShopOnContainers sur Azure
 
@@ -78,7 +78,7 @@ En même temps, le développeur John souhaite personnaliser le microservice de r
 ![eShopOnContainers architecture de la ](./media/azure-devspaces-two.png)
  **figure 2-8**. Le développeur John déploie sa propre version du microservice de réservations et le teste sans conflit avec d’autres développeurs.
 
-À l’aide de Azure Dev Spaces, les équipes peuvent travailler directement avec AKS tout en modifiant, déployant et testant leurs modifications de manière indépendante. Cette approche réduit le besoin d’environnements hébergés dédiés distincts, car chaque développeur a son propre environnement AKS. Les développeurs peuvent travailler avec Azure Dev Spaces à l’aide de l’interface CLI ou lancer leur application pour Azure Dev Spaces directement à partir de Visual Studio. [En savoir plus sur le fonctionnement de Azure Dev Spaces et sur la configuration.](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works)
+À l’aide de Azure Dev Spaces, les équipes peuvent travailler directement avec AKS tout en modifiant, déployant et testant leurs modifications de manière indépendante. Cette approche réduit le besoin d’environnements hébergés dédiés distincts, car chaque développeur a son propre environnement AKS. Les développeurs peuvent travailler avec Azure Dev Spaces à l’aide de l’interface CLI ou lancer leur application pour Azure Dev Spaces directement à partir de Visual Studio. [En savoir plus sur le fonctionnement de Azure Dev Spaces et sur la configuration.](/azure/dev-spaces/how-dev-spaces-works)
 
 ## <a name="azure-functions-and-logic-apps-serverless"></a>Azure Functions et Logic Apps (sans serveur)
 

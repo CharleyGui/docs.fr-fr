@@ -3,12 +3,12 @@ title: Modèles de communication cloud natifs
 description: En savoir plus sur les problèmes de communication de service clés dans les applications Cloud natives
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 3d678df44b5fef68427846e59f446b7408795625
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 5ce789924e828865f7bdf717b081b9112203293a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614212"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160916"
 ---
 # <a name="cloud-native-communication-patterns"></a>Modèles de communication cloud natifs
 
@@ -20,7 +20,7 @@ Dans une application monolithique, la communication est simple. Les modules de c
 
 Les systèmes Cloud natifs implémentent une architecture basée sur des microservices avec de nombreux microservices indépendants. Chaque microservice s’exécute dans un processus distinct et s’exécute généralement à l’intérieur d’un conteneur déployé sur un *cluster*.
 
-Un cluster regroupe un pool de machines virtuelles ensemble pour former un environnement hautement disponible. Ils sont gérés à l’aide d’un outil d’orchestration, qui est chargé de déployer et de gérer les microservices en conteneur. La figure 4-1 illustre un cluster [Kubernetes](https://kubernetes.io) déployé dans le Cloud Azure avec les [services Azure Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)entièrement gérés.
+Un cluster regroupe un pool de machines virtuelles ensemble pour former un environnement hautement disponible. Ils sont gérés à l’aide d’un outil d’orchestration, qui est chargé de déployer et de gérer les microservices en conteneur. La figure 4-1 illustre un cluster [Kubernetes](https://kubernetes.io) déployé dans le Cloud Azure avec les [services Azure Kubernetes](/azure/aks/intro-kubernetes)entièrement gérés.
 
 ![Un cluster Kubernetes dans Azure](./media/kubernetes-cluster-in-azure.png)
 

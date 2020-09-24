@@ -2,14 +2,15 @@
 title: <protocolMapping>
 ms.date: 03/30/2017
 ms.assetid: 5076644b-1f33-4f26-9488-87de9fcda04c
-ms.openlocfilehash: be4224ef1a8b17653df8123aaf89e105a496355a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0a79aa18c74ddb8ec47f02620d16d391b4a36b68
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400022"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162294"
 ---
 # \<protocolMapping>
+
 Représente une section de configuration permettant de définir un ensemble de mappages de protocole par défaut entre des schémas de protocole de transport (par exemple, http, net.tcp, net.pipe, etc.) et des liaisons WCF. Lors de la création de points de terminaison par défaut au moment de l’exécution, Windows Communication Foundation (WCF) examine les mappages configurés et décide de la liaison à utiliser pour une adresse de base particulière.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,9 +28,11 @@ Représente une section de configuration permettant de définir un ensemble de m
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -45,6 +48,7 @@ Représente une section de configuration permettant de définir un ensemble de m
 |[\<system.serviceModel>](system-servicemodel.md)|Élément racine de tous les éléments de configuration WCF.|  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple de configuration suivant montre le mappage de protocole par défaut dans le fichier machine.config. Vous pouvez remplacer ce mappage par défaut au niveau de l'ordinateur en modifiant le fichier machine.config. Ou, si vous souhaitez uniquement le remplacer dans la portée d'une application, vous pouvez remplacer cette section dans le fichier de configuration de votre application et modifier le mappage pour les schémas de protocole individuels.  
   
 ```xml  

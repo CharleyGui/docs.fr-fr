@@ -2,12 +2,12 @@
 title: Combinaison de conteneurs et d’approches sans serveur pour les services Cloud natifs
 description: Combinaison de conteneurs et de Kubernetes avec des approches sans serveur
 ms.date: 05/13/2020
-ms.openlocfilehash: 67eee89659026db06eb16ef6f1154ab6935725a4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b1b85519ce02ddd1d69735d872cf24fadcc81ef7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614199"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160890"
 ---
 # <a name="combining-containers-and-serverless-approaches"></a>Combinaison de conteneurs et d’approches serverless
 
@@ -29,11 +29,11 @@ Pour inclure dans un wrapper une fonction Azure dans un conteneur d’ancrage, i
 func init ProjectName --worker-runtime dotnet --docker
 ```
 
-Lorsque le projet est créé, il inclut un fichier dockerfile et le runtime du Worker configurés sur `dotnet` . À présent, vous pouvez créer et tester votre fonction localement. Générez et exécutez-le à l’aide des `docker build` `docker run` commandes et. Pour obtenir des instructions détaillées pour commencer à créer des Azure Functions avec la prise en charge de l’ancrage, consultez le didacticiel [créer une fonction sur Linux à l’aide d’une image personnalisée](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image) .
+Lorsque le projet est créé, il inclut un fichier dockerfile et le runtime du Worker configurés sur `dotnet` . À présent, vous pouvez créer et tester votre fonction localement. Générez et exécutez-le à l’aide des  `docker build` `docker run` commandes et. Pour obtenir des instructions détaillées pour commencer à créer des Azure Functions avec la prise en charge de l’ancrage, consultez le didacticiel [créer une fonction sur Linux à l’aide d’une image personnalisée](/azure/azure-functions/functions-create-function-linux-custom-image) .
 
 ## <a name="how-to-combine-serverless-and-kubernetes-with-keda"></a>Comment combiner sans serveur et Kubernetes avec KEDA
 
-Dans ce chapitre, vous avez vu que la plateforme Azure Functions est automatiquement mise à l’échelle pour répondre à la demande. Toutefois, lorsque vous déployez des fonctions en conteneur vers AKS, vous perdez la fonctionnalité de mise à l’échelle intégrée. L’Kubernetes de la récupération est [basée sur des événements (Keda)](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda). Il permet une mise à l’échelle automatique fine pour `event-driven Kubernetes workloads,` inclure des fonctions en conteneur.
+Dans ce chapitre, vous avez vu que la plateforme Azure Functions est automatiquement mise à l’échelle pour répondre à la demande. Toutefois, lorsque vous déployez des fonctions en conteneur vers AKS, vous perdez la fonctionnalité de mise à l’échelle intégrée. L’Kubernetes de la récupération est [basée sur des événements (Keda)](/azure/azure-functions/functions-kubernetes-keda). Il permet une mise à l’échelle automatique fine pour `event-driven Kubernetes workloads,` inclure des fonctions en conteneur.
 
 KEDA fournit une fonctionnalité de mise à l’échelle pilotée par les événements au runtime des fonctions dans un conteneur d’ancrage. KEDA peut être mis à l’échelle à partir de zéro instance (quand aucun événement ne se produit) vers `n instances` , en fonction de la charge. Il permet la mise à l’échelle automatique en exposant des métriques personnalisées à l’échelle automatique Kubernetes (la barre verticale du Pod). L’utilisation de conteneurs Functions avec KEDA permet de répliquer des fonctionnalités de fonction serverless dans n’importe quel cluster Kubernetes.
 

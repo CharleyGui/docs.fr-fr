@@ -2,12 +2,12 @@
 title: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 description: Bénéficiez d’une vue d’ensemble du processus de développement et de déploiement pour le développement et le déploiement d’applications en conteneur avec l’arrimeur et la plateforme et les outils Microsoft.
 ms.date: 07/30/2020
-ms.openlocfilehash: d8055315b25f73d7b0b355026ab6b2c4767f9d89
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: c506a3423ac4511f23452192e361e88dce6efec4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915161"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160695"
 ---
 # <a name="containerized-docker-application-lifecycle-with-microsoft-platform-and-tools"></a>Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 
@@ -17,7 +17,7 @@ ms.locfileid: "87915161"
 
 Ce guide est une vue d’ensemble générale du développement et du déploiement d’applications ASP.NET Core en conteneur avec l’outil d’amarrage, à l’aide de la plateforme et des outils Microsoft. Ce guide comprend une présentation générale d’Azure DevOps, pour l’implémentation de pipelines CI/CD, ainsi que Azure Container Registry (ACR) et les services Azure Kubernetes AKS pour le déploiement.
 
-Pour obtenir des informations de bas niveau sur le développement, vous pouvez consulter le guide [.net microservices : architecture pour les applications .net en conteneur](https://docs.microsoft.com/dotnet/architecture/microservices/) et l’application de référence [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers).
+Pour obtenir des informations de bas niveau sur le développement, vous pouvez consulter le guide [.net microservices : architecture pour les applications .net en conteneur](../microservices/index.md) et l’application de référence [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers).
 
 ## <a name="send-us-your-feedback"></a>Envoyez-nous vos commentaires !
 

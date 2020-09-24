@@ -2,14 +2,15 @@
 title: <security> de <wsDualHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
-ms.openlocfilehash: 4969c041678bbf3490975bc0ec53507b6cf762bb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7398cd538bb240e78413575f7c28abe7f797d05c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738606"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162203"
 ---
 # <a name="security-of-wsdualhttpbinding"></a>\<security> de \<wsDualHttpBinding>
+
 Définit les fonctionnalités de sécurité de [\<wsDualHttpBinding>](wsdualhttpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Définit les fonctionnalités de sécurité de [\<wsDualHttpBinding>](wsdualhttp
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -57,14 +59,15 @@ Définit les fonctionnalités de sécurité de [\<wsDualHttpBinding>](wsdualhttp
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|Définit toutes les fonctions de liaison de [\<wsDualHttpBinding>](wsdualhttpbinding.md) .|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Une liaison double expose l'adresse IP du client au service. Ce client doit utiliser un mode de sécurité qui vérifiera qu'il se connecte uniquement à des services de confiance.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.WSDualHttpSecurity>
 - <xref:System.ServiceModel.BasicHttpSecurity>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

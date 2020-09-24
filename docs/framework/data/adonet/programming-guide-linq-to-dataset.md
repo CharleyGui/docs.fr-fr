@@ -2,17 +2,19 @@
 title: Guide de programmation (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: 977aedd7-0084-46a0-b56f-345787a55da1
-ms.openlocfilehash: dc13af06cf6c439d739d76904f206ebc50ba3187
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 720d9a90583a0dcf3453689a362f6043157a326c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634805"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161557"
 ---
 # <a name="programming-guide-linq-to-dataset"></a>Guide de programmation (LINQ to DataSet)
+
 Cette section fournit des informations conceptuelles et des exemples pour la programmation avec LINQ to DataSet.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Requêtes dans LINQ to DataSet](queries-in-linq-to-dataset.md)  
  Fournit des informations sur la façon d’écrire des requêtes de LINQ to DataSet.  
   
@@ -23,9 +25,9 @@ Cette section fournit des informations conceptuelles et des exemples pour la pro
  Explique comment utiliser l'objet <xref:System.Data.DataRowComparer> pour comparer des lignes de données.  
   
  [Création d’un DataTable à partir d’une requête](creating-a-datatable-from-a-query-linq-to-dataset.md)  
- Fournit des informations sur la création d’un <xref:System.Data.DataTable> à partir d’une requête LINQ to DataSet à l’aide de la méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A>.  
+ Fournit des informations sur <xref:System.Data.DataTable> la création d’un à partir d’une requête LINQ to DataSet à l’aide de la <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> méthode.  
   
- [Comment : implémenter CopyToDataTable\<T > où le type générique T n’est pas un DataRow](implement-copytodatatable-where-type-not-a-datarow.md)  
+ [Comment : implémenter CopyToDataTable \<T> où le type générique T n’est pas un DataRow](implement-copytodatatable-where-type-not-a-datarow.md)  
  Explique comment implémenter une méthode `CopyToDataTable<T>` personnalisée dans laquelle le paramètre générique T n'est pas du type <xref:System.Data.DataRow>.  
   
  [Méthodes génériques Field et SetField](generic-field-and-setfield-methods-linq-to-dataset.md)  
@@ -37,13 +39,14 @@ Cette section fournit des informations conceptuelles et des exemples pour la pro
  [Débogage des requêtes LINQ to DataSet](debugging-linq-to-dataset-queries.md)  
  Fournit des informations sur le débogage et la résolution des problèmes de LINQ to DataSet des requêtes.  
   
- [Security](security-linq-to-dataset.md)  
+ [Sécurité](security-linq-to-dataset.md)  
  Décrit les problèmes de sécurité dans LINQ to DataSet.  
   
- [Exemples LINQ to DataSet](linq-to-dataset-examples.md)  
+ [Exemples de LINQ to DataSet](linq-to-dataset-examples.md)  
  Fournit des exemples de requêtes qui utilisent des opérateurs LINQ.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Informations de référence  
+
  <xref:System.Data.DataRowComparer>  
   
  <xref:System.Data.DataRowExtensions>  
@@ -55,4 +58,4 @@ Cette section fournit des informations conceptuelles et des exemples pour la pro
 ## <a name="see-also"></a>Voir aussi
 
 - [LINQ et ADO.NET](linq-and-ado-net.md)
-- [LINQ (Language Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md)
+- [LINQ (Language-Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md)

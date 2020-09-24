@@ -2,14 +2,15 @@
 title: Génération de code dans LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: 551322637e6e04b9be7d558c51e063fead7f84f4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: f58448e0fc0c22795005b55a737b42374a750ec3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70247961"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161527"
 ---
 # <a name="code-generation-in-linq-to-sql"></a>Génération de code dans LINQ to SQL
+
 Vous pouvez générer du code pour représenter une base de données à l’aide de l’Concepteur Objet Relationnel ou de l’outil en ligne de commande SQLMetal. Dans l'un et l'autre cas, la génération du code de bout en bout s'effectue en trois étapes :  
   
 1. L' *extracteur dbml* extrait les informations de schéma de la base de données et réassemble les informations dans un fichier DBML au format XML.  
@@ -21,18 +22,21 @@ Vous pouvez générer du code pour représenter une base de données à l’aide
  Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md). Les développeurs qui utilisent Visual Studio peuvent également utiliser le Concepteur Objet Relationnel pour générer du code. Consultez [LINQ to SQL Tools dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="dbml-extractor"></a>Extracteur DBML  
- L’extracteur dbml est [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] un composant qui prend les métadonnées de base de données comme entrée et génère un fichier DBML en sortie.  
+
+ L’extracteur DBML est un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] composant qui prend les métadonnées de base de données comme entrée et génère un fichier DBML en sortie.  
   
 ## <a name="code-generator"></a>Générateur de code  
- Le générateur de code est [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] un composant qui traduit des fichiers dbml en Visual Basic, C#ou des fichiers de mappage XML.  
+
+ Le générateur de code est un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] composant qui traduit les fichiers dbml en fichiers de mappage Visual Basic, C# ou XML.  
   
 ## <a name="xml-schema-definition-file"></a>Fichier de définition de schéma XML  
+
  Le fichier DBML doit être valide par rapport à la définition de schéma suivante en tant que fichier XSD.  
   
  Distinguez ce fichier de définition de schéma du fichier de définition de schéma utilisé pour valider un fichier de mappage externe. Pour plus d’informations, consultez [mappage externe](external-mapping.md)).  
   
 > [!NOTE]
-> Les utilisateurs de Visual Studio trouveront également ce fichier XSD dans la boîte de dialogue schémas XML en tant que « DbmlSchema. xsd ». Pour utiliser correctement le fichier XSD pour valider un fichier DBML, consultez [procédure : Validez les fichiers](how-to-validate-dbml-and-external-mapping-files.md)de mappage dbml et externe.  
+> Les utilisateurs de Visual Studio trouveront également ce fichier XSD dans la boîte de dialogue schémas XML en tant que « DbmlSchema. xsd ». Pour utiliser correctement le fichier XSD pour valider un fichier DBML, consultez [Comment : valider dbml et les fichiers de mappage externes](how-to-validate-dbml-and-external-mapping-files.md).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -243,6 +247,7 @@ elementFormDefault="qualified" >
 ```  
   
 ## <a name="sample-dbml-file"></a>Exemple de fichier DBML  
+
  Le code suivant est un extrait du fichier DBML créé à partir de la base de données d'exemple Northwind. Vous pouvez générer le fichier entier en utilisant SQLMetal avec l’option **/XML** . Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   
 ```xml  
@@ -273,6 +278,6 @@ elementFormDefault="qualified" >
 
 - [Informations générales](background-information.md)
 - [Mappage externe](external-mapping.md)
-- [Guide pratique : Générer le modèle objet en tant que fichier externe](how-to-generate-the-object-model-as-an-external-file.md)
+- [Procédure : Générer le modèle objet sous forme de fichier externe](how-to-generate-the-object-model-as-an-external-file.md)
 - [Téléchargement d’exemples de base de données](downloading-sample-databases.md)
 - [Référence](reference.md)
