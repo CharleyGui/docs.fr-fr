@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
-ms.openlocfilehash: 77715913c24423c1dc95478977f4e3821e4c247b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0920acac2c82677cfce37703b7027dedce91a535
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545309"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166805"
 ---
 # <a name="loading-a-dataset-from-xml"></a>Chargement d'un DataSet à partir de XML
+
 Le contenu d'un objet <xref:System.Data.DataSet> ADO.NET peut être recréé à partir d'un flux ou d'un document XML. En outre, le .NET Framework vous offre une grande souplesse en ce qui concerne les informations qui seront chargées à partir de XML et le mode de création du schéma ou de la structure relationnelle de l'objet <xref:System.Data.DataSet>.  
   
  Pour remplir un <xref:System.Data.DataSet> avec des données de XML, utilisez la méthode **ReadXml** de l' <xref:System.Data.DataSet> objet. La méthode **ReadXml** lit à partir d’un fichier, d’un flux ou d’un **XmlReader**et prend comme arguments la source du code XML plus un argument **XmlReadMode** facultatif. Pour plus d’informations sur **XmlReader**, consultez [lecture de données XML avec XmlTextReader](/previous-versions/dotnet/netframework-4.0/tfz3cz6w(v=vs.100)). La méthode **ReadXml** lit le contenu du flux ou du document XML et charge le <xref:System.Data.DataSet> avec des données. Elle crée également le schéma relationnel de <xref:System.Data.DataSet> en fonction du **XmlReadMode** spécifié et de la présence ou non d’un schéma relationnel.  
@@ -33,6 +34,7 @@ Le contenu d'un objet <xref:System.Data.DataSet> ADO.NET peut être recréé à 
 > Si vous transmettez un **XmlReader** à **ReadXml** qui est positionné dans un document XML, **ReadXml** lit le nœud d’élément suivant et le traite comme l’élément racine, en lisant jusqu’à la fin du nœud d’élément uniquement. Cela ne s’applique pas si vous spécifiez **XmlReadMode. fragment**.  
   
 ## <a name="dtd-entities"></a>Entités DTD  
+
  Si votre XML contient des entités définies dans un schéma de définition de type de document (DTD), une exception est levée si vous tentez de charger un <xref:System.Data.DataSet> en passant un nom de fichier, un flux ou un **XmlReader** non validant à **ReadXml**. Au lieu de cela, vous devez créer un **XmlValidatingReader**, avec **EntityHandling** défini sur **EntityHandling. ExpandEntities**, et passer votre **XmlValidatingReader** à **ReadXml**. Le **XmlValidatingReader** développera les entités avant la lecture par <xref:System.Data.DataSet> .  
   
  Les exemples de code suivants montrent comment charger un objet <xref:System.Data.DataSet> à partir d'un flux XML. Le premier exemple montre un nom de fichier passé à la méthode **ReadXml** . Le second illustre le cas d'une chaîne contenant le XML chargé à l'aide d'un objet <xref:System.IO.StringReader>.  
@@ -101,7 +103,7 @@ foreach (DataTable dataTable in dataSet.Tables)
 ```  
   
 > [!NOTE]
-> Si le schéma XSD de votre <xref:System.Data.DataSet> inclut un **targetNamespace**, il est possible que les données ne soient pas lues et que vous rencontriez des exceptions lors de l’appel de **ReadXml** pour charger l' <xref:System.Data.DataSet> élément with XML qui contient des éléments sans espace de noms éligible. Pour lire des éléments non qualifiés dans ce cas, affectez à **elementFormDefault** la valeur « qualified » dans votre schéma XSD. Exemple :  
+> Si le schéma XSD de votre <xref:System.Data.DataSet> inclut un **targetNamespace**, il est possible que les données ne soient pas lues et que vous rencontriez des exceptions lors de l’appel de **ReadXml** pour charger l' <xref:System.Data.DataSet> élément with XML qui contient des éléments sans espace de noms éligible. Pour lire des éléments non qualifiés dans ce cas, affectez à **elementFormDefault** la valeur « qualified » dans votre schéma XSD. Par exemple :  
   
 ```xml  
 <xsd:schema id="customDataSet"
@@ -114,6 +116,7 @@ foreach (DataTable dataTable in dataSet.Tables)
 ```  
   
 ## <a name="merging-data-from-xml"></a>Fusion de données provenant de XML  
+
  Si l'objet <xref:System.Data.DataSet> contient déjà des données, les nouvelles données provenant de XML sont ajoutées aux données déjà présentes dans l'objet <xref:System.Data.DataSet>. **ReadXml** ne fusionne pas le XML avec les <xref:System.Data.DataSet> informations de ligne avec les clés primaires correspondantes. Pour remplacer les informations de ligne existantes par de nouvelles informations à partir de XML, utilisez **ReadXml** pour créer un nouveau <xref:System.Data.DataSet> , puis <xref:System.Data.DataSet.Merge%2A> le nouveau <xref:System.Data.DataSet> dans le existant <xref:System.Data.DataSet> . Notez que le chargement d’un DiffGram à l’aide de **ReadXml** avec un **XmlReadMode** de **DiffGram** fusionne les lignes qui ont le même identificateur unique.  
   
 ## <a name="see-also"></a>Voir aussi

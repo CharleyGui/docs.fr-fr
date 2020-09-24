@@ -3,14 +3,15 @@ title: Comment combiner et comparer des collections de chaînes (LINQ) (C#)
 description: Cet exemple fusionne les fichiers qui contiennent des lignes de texte. Découvrez comment effectuer une concaténation simple, une Union et une intersection sur les ensembles de lignes dans LINQ en C#.
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: bfbdb9a0a3d531b56578b242c91596d9e41b6cd6
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 7bc2b2fbc6a6ce09305f870275f2f0ea5379d4fc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105355"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167598"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Comment combiner et comparer des collections de chaînes (LINQ) (C#)
+
 Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de texte, puis comment trier les résultats. Il montre plus précisément comment effectuer une concaténation simple, une union et une intersection avec les deux ensembles de lignes de texte.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Pour configurer le projet et les fichiers texte  
@@ -170,6 +171,7 @@ class MergeStrings
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi

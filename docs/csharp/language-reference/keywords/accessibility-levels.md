@@ -6,12 +6,12 @@ helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-ms.openlocfilehash: 26b8f78595b1406deb371113cf491b80ad7c1474
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6e1a5bddc0d40b0b62c7b07dbc6b4134a3447a95
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89127020"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168788"
 ---
 # <a name="accessibility-levels-c-reference"></a>Niveaux d’accessibilité (référence C#)
 
@@ -46,6 +46,7 @@ Utilisez les modificateurs d’accès `public`, `protected`, `internal` ou `priv
  L’accessibilité d’un type imbriqué dépend de son [domaine d’accessibilité](./accessibility-domain.md), qui est déterminé à la fois par l’accessibilité déclarée du membre et par le domaine d’accessibilité du type conteneur immédiat. Toutefois, le domaine d'accessibilité d'un type imbriqué ne peut pas dépasser celui du type conteneur.  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
@@ -60,4 +61,4 @@ Utilisez les modificateurs d’accès `public`, `protected`, `internal` ou `priv
 - [public](./public.md)
 - [priv](./private.md)
 - [protected](./protected.md)
-- [intérieurs](./internal.md)
+- [internal](./internal.md)

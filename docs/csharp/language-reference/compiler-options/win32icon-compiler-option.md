@@ -9,14 +9,15 @@ helpviewer_keywords:
 - /win32icon compiler option [C#]
 - -win32icon compiler option [C#]
 ms.assetid: 756d9b6d-ab07-41b7-ba58-5bd88f711138
-ms.openlocfilehash: 76a54f9011371492bdc15f15c3e40d51082deed3
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5b62bbfe28bb5aa82605a88a83cf82eff9278807
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89138408"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168866"
 ---
 # <a name="-win32icon-c-compiler-options"></a>-win32icon (Options du compilateur C#)
+
 L’option **-win32icon** insère un fichier .ico dans le fichier de sortie, ce qui lui donne l’apparence souhaitée dans l’Explorateur de fichiers.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,10 +27,12 @@ L’option **-win32icon** insère un fichier .ico dans le fichier de sortie, ce 
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `filename`  
  Fichier .ico que vous voulez ajouter à votre fichier de sortie.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Un fichier .ico peut être créé avec le [compilateur de ressources](/windows/desktop/menurc/resource-compiler). Le compilateur de ressources est appelé quand vous compilez un programme Visual C++ ; un fichier .ico est alors créé à partir du fichier .rc.  
   
  Consultez [-linkresource](./linkresource-compiler-option.md) pour référencer ou [-resource](./resource-compiler-option.md) pour attacher un fichier de ressources .NET Framework. Consultez [-win32res](./win32res-compiler-option.md) pour importer un fichier .res.  
@@ -45,6 +48,7 @@ L’option **-win32icon** insère un fichier .ico dans le fichier de sortie, ce 
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.ApplicationIcon%2A>.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez `in.cs` et attachez un fichier .ico `rf.ico` afin de générer le fichier `in.exe` :  
   
 ```console  

@@ -5,19 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2ea85959-e763-4669-8bd9-46a9dab894bd
-ms.openlocfilehash: 159b23eb4ef5ca38ebce6e488080d315ec3be081
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 94b033d58061e3d2e48a352d782eec7c4202fa43
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151180"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166831"
 ---
 # <a name="defining-primary-keys"></a>Définition des clés primaires
+
 Une table de base de données a généralement une colonne ou un groupe de colonnes identifiant de façon unique chaque ligne de la table. Cette colonne ou ce groupe de colonnes d'identification s'appelle la clé primaire.  
   
- Lorsque vous identifiez <xref:System.Data.DataTable.PrimaryKey%2A> un <xref:System.Data.DataTable>single <xref:System.Data.DataColumn> comme le pour un , la <xref:System.Data.DataColumn.Unique%2A> table définit automatiquement la <xref:System.Data.DataColumn.AllowDBNull%2A> propriété de la colonne à **faux** et la propriété à **vrai**. Pour les touches primaires à colonnes multiples, seule la propriété **AllowDBNull** est automatiquement **fausse.**  
+ Lorsque vous identifiez un unique <xref:System.Data.DataColumn> comme <xref:System.Data.DataTable.PrimaryKey%2A> pour un <xref:System.Data.DataTable> , la table affecte automatiquement <xref:System.Data.DataColumn.AllowDBNull%2A> à la propriété de la colonne la **valeur false** et <xref:System.Data.DataColumn.Unique%2A> à la propriété la **valeur true**. Pour les clés primaires à plusieurs colonnes, seule la propriété **AllowDBNull** a automatiquement la valeur **false**.  
   
- La propriété **PrimaryKey** d’un <xref:System.Data.DataTable> reçoit comme valeur un tableau d’un ou plusieurs objets **DataColumn,** comme le montrent les exemples suivants. Le premier exemple définit une colonne unique comme clé primaire.  
+ La propriété **PrimaryKey** d’un <xref:System.Data.DataTable> objet reçoit comme valeur un tableau d’un ou plusieurs objets **DataColumn** , comme indiqué dans les exemples suivants. Le premier exemple définit une colonne unique comme clé primaire.  
   
 ```vb  
 workTable.PrimaryKey = New DataColumn() {workTable.Columns("CustID")}  

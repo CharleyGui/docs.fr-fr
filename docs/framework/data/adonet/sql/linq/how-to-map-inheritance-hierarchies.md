@@ -1,18 +1,19 @@
 ---
-title: "Comment : mapper des hiérarchies d'héritage"
+title: 'Procédure : Mapper des hiérarchies d’héritage'
 ms.date: 03/30/2017
 ms.assetid: b27c779b-9355-4dc7-b95f-7dfd504b6e48
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 737cb8743d8fd9c93cd46ebf50fba3fe554a35f2
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: c0709fde96a5d2f39f04a08ccd24ddf90c782f30
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634662"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166415"
 ---
-# <a name="how-to-map-inheritance-hierarchies"></a>Comment : mapper des hiérarchies d'héritage
+# <a name="how-to-map-inheritance-hierarchies"></a>Procédure : Mapper des hiérarchies d’héritage
+
 Pour implémenter le mappage d’héritage dans LINQ, vous devez spécifier les attributs et les propriétés d’attribut sur la classe racine de la hiérarchie d’héritage, comme décrit dans les étapes suivantes. Les développeurs qui utilisent Visual Studio peuvent utiliser le Concepteur Objet Relationnel pour mapper des hiérarchies d’héritage. Consultez [Comment : configurer l’héritage à l’aide du Concepteur O/R](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer).  
   
 > [!NOTE]
@@ -34,7 +35,7 @@ Pour implémenter le mappage d’héritage dans LINQ, vous devez spécifier les 
   
 5. Ajoutez une propriété <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> à un seul des attributs <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A>.  
   
-     Cette propriété sert à désigner un mappage de *secours* lorsque la valeur de discriminateur de la table de base de données ne correspond à aucune valeur de <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> dans les mappages d’héritage.  
+     Cette propriété sert à désigner un mappage de *secours* lorsque la valeur de discriminateur de la table de base de données ne correspond à aucune <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> valeur dans les mappages d’héritage.  
   
 6. Ajoutez une propriété <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A> pour un attribut <xref:System.Data.Linq.Mapping.ColumnAttribute>.  
   
@@ -45,12 +46,12 @@ Pour implémenter le mappage d’héritage dans LINQ, vous devez spécifier les 
 > [!NOTE]
 > Si vous utilisez Visual Studio, vous pouvez utiliser la Concepteur Objet Relationnel pour configurer l’héritage. Consultez [Comment : configurer l’héritage à l’aide du Concepteur O/R](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer)  
   
- Dans l’exemple de code suivant, `Vehicle` est défini en tant que classe racine, et les étapes précédentes ont été implémentées pour décrire la hiérarchie pour LINQ.  
+ Dans l’exemple de code suivant, `Vehicle` est défini en tant que classe racine, et les étapes précédentes ont été implémentées pour décrire la hiérarchie pour Linq.  
   
  [!code-csharp[DLinqCustomize#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#4)]
  [!code-vb[DLinqCustomize#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#4)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en charge de l’héritage](inheritance-support.md)
-- [Guide pratique pour personnaliser des classes d’entité à l’aide de l’éditeur de code](how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Prise en charge de l'héritage](inheritance-support.md)
+- [Procédure : Personnaliser des classes d’entité à l’aide de l’éditeur de code](how-to-customize-entity-classes-by-using-the-code-editor.md)

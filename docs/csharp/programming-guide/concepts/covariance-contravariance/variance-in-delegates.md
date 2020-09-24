@@ -3,14 +3,15 @@ title: Variance dans les délégués (C#)
 description: Découvrez comment la prise en charge de l’écart dans .NET vous permet de faire correspondre les signatures de méthode avec les types délégués dans tous les délégués.
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: 02b59dd97cedc6ab35c3122912ee528f7ca29238
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 359f7051aa2eeb5d2dc9fef3d9ccb1e4aaebfb5c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466129"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167741"
 ---
 # <a name="variance-in-delegates-c"></a>Variance dans les délégués (C#)
+
 .NET Framework 3.5 a introduit la prise en charge de la variance pour faire correspondre les signatures de méthode aux types délégués pour tous les délégués dans C#. Cela signifie que vous pouvez assigner aux délégués non seulement les méthodes ayant des signatures correspondantes, mais également des méthodes qui retournent des types plus dérivés (covariance) ou qui acceptent des paramètres ayant des types moins dérivés (contravariance) que ceux spécifiés par le type délégué. Cela inclut à la fois des délégués génériques et non génériques.  
   
  Par exemple, considérez le code suivant, qui a deux classes et deux délégués : génériques et non génériques.  
@@ -66,6 +67,7 @@ SampleGenericDelegate<Second, First> dGenericConversion = AFirstRSecond;
  Pour obtenir d’autres exemples, consultez [Utilisation de la variance dans les délégués (C#)](./using-variance-in-delegates.md) et [Utilisation de la variance pour les délégués génériques Func et Action (C#)](./using-variance-for-func-and-action-generic-delegates.md).  
   
 ## <a name="variance-in-generic-type-parameters"></a>Variance dans les paramètres de type générique  
+
  Dans .NET Framework 4 ou version ultérieure, vous pouvez activer la conversion implicite entre les délégués afin que les délégués génériques ayant des types différents spécifiés par les paramètres de type générique puissent être assignés les uns aux autres, si les types sont hérités les uns des autres comme requis par la variance.  
   
  Pour activer la conversion implicite, vous devez déclarer explicitement les paramètres génériques dans un délégué comme covariant ou contravariant à l’aide du mot clé `in` ou `out`.  
@@ -127,6 +129,7 @@ public static void Test()
  Pour obtenir plus d’informations et d’exemples, consultez [Utilisation de la variance pour les délégués génériques Func et Action (C#)](./using-variance-for-func-and-action-generic-delegates.md).  
   
 ### <a name="declaring-variant-type-parameters-in-generic-delegates"></a>Déclaration de paramètres de type variant dans les délégués génériques  
+
  Si un délégué générique possède des paramètres de type générique covariant ou contravariant, il peut être désigné sous le nom de *délégué générique variant*.  
   
  Vous pouvez déclarer un paramètre de type générique covariant dans un délégué générique à l’aide du mot clé `out`. Le type covariant peut être utilisé uniquement comme type de retour de méthode et non comme type d’arguments de méthode. L’exemple de code suivant indique comment déclarer un délégué générique covariant.  
@@ -151,6 +154,7 @@ public delegate R DVariant<in A, out R>(A a);
 ```  
   
 ### <a name="instantiating-and-invoking-variant-generic-delegates"></a>Instanciation et appel de délégués génériques variants  
+
  Vous pouvez instancier et appeler des délégués variants de la même façon que vous instanciez et appelez des délégués invariants. Dans l’exemple suivant, le délégué est instancié par une expression lambda.  
   
 ```csharp  
@@ -172,6 +176,7 @@ Action<string> actStr = x => Console.WriteLine("string: {0}", x);
 ```  
   
 ## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a>Variance dans les paramètres de type générique pour les types valeur et référence  
+
  La variance pour les paramètres de type générique est prise en charge uniquement pour les types référence. Par exemple, `DVariant<int>` ne peut pas être converti implicitement en `DVariant<Object>` ni `DVariant<long>` parce que l’entier est un type valeur.  
   
  L’exemple suivant montre que la variance dans les paramètres de type générique n’est pas prise en charge pour les types valeur.  

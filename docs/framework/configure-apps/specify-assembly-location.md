@@ -7,14 +7,15 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: 3b24ff99eee9027d507ef89ca855162f221f826a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6f9e41584ca36fcead06b73a485cb879c45705fa
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555118"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166883"
 ---
 # <a name="specifying-an-assemblys-location"></a>Spécification de l'emplacement d'un assembly
+
 Il existe deux façons de spécifier l’emplacement d’un assembly :  
   
 - À l’aide de l' [\<codeBase>](./file-schema/runtime/codebase-element.md) élément.  
@@ -24,6 +25,7 @@ Il existe deux façons de spécifier l’emplacement d’un assembly :
  Vous pouvez également utiliser l' [outil de Configuration .NET Framework (Mscorcfg. msc)](/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) pour spécifier des emplacements d’assembly ou spécifier des emplacements pour le Common Language Runtime pour détecter les assemblys.  
   
 ## <a name="using-the-codebase-element"></a>Utilisation de l' \<codeBase> élément  
+
  Vous pouvez utiliser l' **\<codeBase>** élément uniquement dans la configuration de l’ordinateur ou dans les fichiers de stratégie de l’éditeur qui redirigent également la version de l’assembly. Lorsque le runtime détermine la version de l’assembly à utiliser, il applique le paramètre de base du code à partir du fichier qui détermine la version. Si aucune base de code n’est indiquée, le runtime détecte l’assembly de manière normale. Pour plus d’informations, consultez [Comment le runtime localise les assemblys](../deployment/how-the-runtime-locates-assemblies.md).  
   
  L’exemple suivant montre comment spécifier l’emplacement d’un assembly.  
@@ -50,6 +52,7 @@ Il existe deux façons de spécifier l’emplacement d’un assembly :
 > Si vous fournissez un indicateur de base de code pour un assembly qui n’a pas un nom fort, l’indicateur doit pointer vers la base de l’application ou vers un sous-répertoire du répertoire de base de l’application.  
   
 ## <a name="using-the-probing-element"></a>Utilisation de l' \<probing> élément  
+
  Le runtime localise les assemblys qui n’ont pas de base de code en procédant à une détection. Pour plus d’informations sur la détection, voir [Comment le runtime localise les assemblys](../deployment/how-the-runtime-locates-assemblies.md).  
   
  Vous pouvez utiliser l' [\<probing>](./file-schema/runtime/probing-element.md) élément dans le fichier de configuration de l’application pour spécifier les sous-répertoires que le runtime doit rechercher lors de la localisation d’un assembly. L’exemple suivant montre comment spécifier les répertoires dans lesquels le runtime doit effectuer des recherches.  

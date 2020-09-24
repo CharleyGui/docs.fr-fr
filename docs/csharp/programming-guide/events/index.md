@@ -7,19 +7,21 @@ helpviewer_keywords:
 - C# language, events
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
-ms.openlocfilehash: 86ded81de4b9191c50b993c08b0e87712ff69020
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 14c18006e393dece5d32d30c2a727d797515c779
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545491"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167455"
 ---
 # <a name="events-c-programming-guide"></a>Événements (Guide de programmation C#)
+
 Les événements permettent à une [classe](../../language-reference/keywords/class.md) ou à un objet de notifier d’autres classes ou objets quand quelque chose de significatif se produit. La classe qui envoie (ou *déclenche*) l’événement est appelée *publieur* et les classes qui reçoivent (ou *gèrent*) l’événement sont appelées *abonnés*.  
   
 Dans une application C# Windows Forms ou web classique, vous vous abonnez à des événements déclenchés par des contrôles, comme des boutons et des zones de liste. Vous pouvez utiliser l’IDE Visual C# pour parcourir les événements publiés par un contrôle et sélectionner ceux que vous voulez gérer. L’IDE permet d’ajouter automatiquement une méthode de gestionnaire d’événements vide et le code pour vous abonner à l’événement. Pour plus d’informations, consultez [Comment s’abonner et annuler l’abonnement à des événements](./how-to-subscribe-to-and-unsubscribe-from-events.md).
   
 ## <a name="events-overview"></a>Vue d'ensemble des événements  
+
  Les événements ont les propriétés suivantes :  
   
 - Le publieur détermine quand un événement est déclenché ; les abonnés déterminent l’action entreprise en réponse à l’événement.  
@@ -35,6 +37,7 @@ Dans une application C# Windows Forms ou web classique, vous vous abonnez à des
 - Dans la bibliothèque de classes .NET, les événements sont basés sur le <xref:System.EventHandler> délégué et la <xref:System.EventArgs> classe de base.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  Pour plus d'informations, consultez les pages suivantes :  
   
 - [Comment s’abonner à des événements et s’en désabonner](./how-to-subscribe-to-and-unsubscribe-from-events.md)
@@ -52,6 +55,7 @@ Dans une application C# Windows Forms ou web classique, vous vous abonnez à des
 Pour plus d’informations, consultez [Événements](~/_csharplang/spec/classes.md#events) dans la [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
   
 ## <a name="featured-book-chapters"></a>Chapitres proposés  
+
  [Delegates, Events, and Lambda Expressions](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) (Délégués, événements et expressions lambda) dans [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))  
   
  [Delegates and Events](/previous-versions/visualstudio/visual-studio-2008/ff652490(v=orm.10)) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](/previous-versions/visualstudio/visual-studio-2008/ff652493(v=orm.10))  

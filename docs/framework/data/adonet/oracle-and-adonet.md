@@ -7,14 +7,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: 8757352a7444fad802ea88ba58e0fe643c86cbb8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 736b8dc5179a15ec219c1dae06b9ee6b5d6c3ef3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286687"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166623"
 ---
 # <a name="oracle-and-adonet"></a>Oracle et ADO.NET
+
 > [!NOTE]
 > Les types dans <xref:System.Data.OracleClient> sont déconseillés. Les types restent pris en charge dans la version actuelle du .NET Framework, mais seront supprimés dans une mise en production ultérieure. Microsoft recommande l'utilisation d'un fournisseur Oracle tiers.  
   
@@ -39,6 +40,7 @@ csc /r:System.Data.OracleClient.dll
 ```  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Configuration requise](system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
  Décrit la configuration requise pour l’utilisation du Fournisseur de données .NET Framework pour Oracle et décrit un certain nombre de problèmes à prendre en compte lors de son utilisation.  
   
@@ -57,13 +59,14 @@ csc /r:System.Data.OracleClient.dll
  [Séquences Oracle](oracle-sequences.md)  
  Décrit la prise en charge de l'extraction des valeurs de séquence Oracle générées par le serveur.  
   
- [Mappages de types de données Oracle](oracle-data-type-mappings.md)  
+ [Mappages des types de données Oracle](oracle-data-type-mappings.md)  
  Répertorie les types de données Oracle et leurs mappages sur le <xref:System.Data.OracleClient.OracleDataReader>.  
   
  [Transactions distribuées Oracle](oracle-distributed-transactions.md)  
  Décrit la manière dont l’objet <xref:System.Data.OracleClient.OracleConnection> s’inscrit automatiquement dans une transaction distribuée existante s’il détermine qu’une transaction est active.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Sécurisation des applications ADO.NET](securing-ado-net-applications.md)  
  Décrit des pratiques de codage sécurisées dans ADO.NET.  
   

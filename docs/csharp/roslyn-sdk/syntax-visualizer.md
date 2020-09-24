@@ -3,12 +3,12 @@ title: Explorer le code avec le visualiseur de syntaxe Roslyn dans Visual Studio
 description: Le visualiseur de syntaxe offre un outil visuel qui permet d’explorer les modèles que le SDK .NET Compiler Platform génère pour le code.
 ms.date: 03/07/2018
 ms.custom: mvc, vs-dotnet
-ms.openlocfilehash: c7a34fda909bd044a9e65a8353d5626b533730e3
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: a911a99e78ad5a5f4c6771b91a3c541b1812d67c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975925"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167572"
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Explorer le code avec le visualiseur de syntaxe Roslyn dans Visual Studio
 
@@ -20,7 +20,7 @@ Familiarisez-vous avec les concepts utilisés dans le SDK .NET Compiler Platform
 
 ## <a name="syntax-visualizer"></a>Visualiseur de syntaxe
 
-Le **Syntax Visualizer** permet l’inspection de l’arborescence de syntaxe pour le fichier de code C# ou Visual Basic dans la fenêtre active de l’éditeur à l’intérieur de l’IDE de Visual Studio. Le visualiseur peut être lancé en cliquant sur **Afficher** > **autres fenêtres** > **Syntax Visualizer**.  Vous pouvez également utiliser la barre d’outils **Lancement rapide** dans le coin supérieur droit. Tapez « syntaxe » pour faire apparaître la commande permettant d’ouvrir le **visualiseur de syntaxe**.
+Le **Syntax Visualizer** permet l’inspection de l’arborescence de syntaxe pour le fichier de code C# ou Visual Basic dans la fenêtre active de l’éditeur à l’intérieur de l’IDE de Visual Studio. Le visualiseur peut être lancé en cliquant sur **Afficher**  >  **autres fenêtres**  >  **Syntax Visualizer**.  Vous pouvez également utiliser la barre d’outils **Lancement rapide** dans le coin supérieur droit. Tapez « syntaxe » pour faire apparaître la commande permettant d’ouvrir le **visualiseur de syntaxe**.
 
 Cette commande ouvre ce dernier dans une fenêtre Outil flottante. Si aucune fenêtre d’éditeur de code n’est ouverte, l’affichage est vide, comme l’illustre la figure suivante.
 
@@ -28,14 +28,16 @@ Cette commande ouvre ce dernier dans une fenêtre Outil flottante. Si aucune fen
 
 Ancrez cette fenêtre Outil à un emplacement pratique dans Visual Studio, comme le côté gauche. Le visualiseur indique des informations sur le fichier de code actuel.
 
-Créez un projet à l’aide de la commande **fichier** > **nouveau projet** . Vous pouvez créer un projet Visual Basic ou C#. Quand Visual Studio ouvre le fichier de code principal de ce projet, le visualiseur en présente l’arborescence de syntaxe. Vous pouvez ouvrir n’importe quel fichier C#/Visual Basic existant dans cette instance de Visual Studio, et le visualiseur affiche l’arborescence de syntaxe de ce fichier. Si plusieurs fichiers de code sont ouverts dans Visual Studio, le visualiseur présente l’arborescence de syntaxe du fichier de code actif (celui qui a le focus clavier.)
+Créez un projet à l’aide de la commande **fichier**  >  **nouveau projet** . Vous pouvez créer un projet Visual Basic ou C#. Quand Visual Studio ouvre le fichier de code principal de ce projet, le visualiseur en présente l’arborescence de syntaxe. Vous pouvez ouvrir n’importe quel fichier C#/Visual Basic existant dans cette instance de Visual Studio, et le visualiseur affiche l’arborescence de syntaxe de ce fichier. Si plusieurs fichiers de code sont ouverts dans Visual Studio, le visualiseur présente l’arborescence de syntaxe du fichier de code actif (celui qui a le focus clavier.)
 
 <!-- markdownlint-disable MD025 -->
 
 # <a name="c"></a>[C#](#tab/csharp)
+
 ![Visualisation d’une arborescence de syntaxe C#](media/syntax-visualizer/visualize-csharp.png)
 
 # <a name="visual-basic"></a>[Visual Basic](#tab/vb)
+
 ![Visualisation d’une arborescence de syntaxe Visual Basic](media/syntax-visualizer/visualize-visual-basic.png)
 
 ---
@@ -69,7 +71,7 @@ Le visualiseur affiche une représentation graphique de la sous-arborescence don
 
 # <a name="visual-basic"></a>[Visual Basic](#tab/vb)
 
-Essayez le même pour le nœud de sous- **bloc** correspondant `Main()` à la méthode dans l’exemple de Visual Basic précédent. Le visualiseur affiche un graphique de syntaxe qui ressemble à celui-ci :
+Essayez le même pour le nœud de sous- **bloc** correspondant à la `Main()` méthode dans l’exemple de Visual Basic précédent. Le visualiseur affiche un graphique de syntaxe qui ressemble à celui-ci :
 
 ![Affichage d’un graphique de syntaxe Visual Basic](media/syntax-visualizer/visual-basic-syntax-graph.png)
 

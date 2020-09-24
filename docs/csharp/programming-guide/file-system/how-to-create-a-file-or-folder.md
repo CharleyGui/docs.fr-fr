@@ -8,17 +8,19 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: f5641dc765b1a2d62adb76babe3f111730d4550b
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 4d60b8c6c0f9d4ea66125374327f5e1ad2098694
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302683"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167442"
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Comment créer un fichier ou un dossier (Guide de programmation C#)
+
 Vous pouvez par programmationcréer un dossier sur votre ordinateur, créer un sous-dossier, créer un fichier dans le sous-dossier et écrire des données dans le fichier.  
   
 ## <a name="example"></a>Exemple  
+
  [!code-csharp[csFilesandFolders#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#10)]  
   
  Si le dossier existe déjà, <xref:System.IO.Directory.CreateDirectory%2A> est sans effet et aucune exception n’est levée. Toutefois, <xref:System.IO.File.Create%2A?displayProperty=nameWithType> remplace un fichier existant par un nouveau fichier. L’exemple utilise une instruction `if`-`else` pour éviter qu’un fichier existant soit pas remplacé.  
@@ -64,6 +66,7 @@ Vous pouvez par programmationcréer un dossier sur votre ordinateur, créer un s
 - Le nom du dossier est uniquement un signe deux-points, « : » (classe <xref:System.IO.PathTooLongException>).  
   
 ## <a name="net-security"></a>Sécurité .NET  
+
  Une instance de la classe <xref:System.Security.SecurityException> peut être levée dans les situations de confiance partielle.  
   
  Si vous n’êtes pas autorisé à créer le dossier, l’exemple lève une instance de la <xref:System.UnauthorizedAccessException> classe.  

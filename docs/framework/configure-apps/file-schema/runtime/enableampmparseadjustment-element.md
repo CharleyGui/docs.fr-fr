@@ -2,14 +2,15 @@
 title: Élément <EnableAmPmParseAdjustment>
 ms.date: 03/30/2017
 ms.assetid: fda998a5-f538-4f8b-a18c-ee7f35e16938
-ms.openlocfilehash: 8920e51fcaaca5cb78b80a99ea321163c9b5240f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f935f213e1bca8dac7a5401970bc6183575e2301
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117374"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167227"
 ---
 # <a name="enableampmparseadjustment-element"></a>Élément \<EnableAmPmParseAdjustment>
+
 Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemble de règles ajusté pour analyser les chaînes de date qui contiennent un jour, un mois, une heure et un indicateur AM/PM.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -23,6 +24,7 @@ Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemb
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -39,6 +41,7 @@ Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemb
 |1|Les méthodes d’analyse de date et d’heure utilisent des règles ajustées pour analyser les chaînes de date qui contiennent uniquement un jour, un mois, une heure et un indicateur AM/PM.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -48,7 +51,8 @@ Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemb
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `<EnableAmPmParseAdjustment>` élément contrôle la façon dont les méthodes suivantes analysent une chaîne de date contenant un jour et un mois numériques suivis d’une heure et d’un indicateur AM/PM (par exemple, « 4/10 6 AM ») :  
   
 - <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>  
@@ -63,7 +67,7 @@ Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemb
   
  Aucun autre modèle n’est affecté.  
   
- L' `<EnableAmPmParseAdjustment>` élément n’a aucun effet sur <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> les <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType> méthodes,, <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType> et <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> .  
+ L' `<EnableAmPmParseAdjustment>` élément n’a aucun effet sur  <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> les  <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType> méthodes,, <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType> et <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> .  
   
 > [!IMPORTANT]
 > Dans .NET Core et .NET Native, les règles d’analyse AM/PM ajustées sont activées par défaut.  
@@ -81,5 +85,5 @@ Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<runtime>Appartient](runtime-element.md)
-- [\<configuration>Appartient](../configuration-element.md)
+- [\<runtime> Appartient](runtime-element.md)
+- [\<configuration> Appartient](../configuration-element.md)

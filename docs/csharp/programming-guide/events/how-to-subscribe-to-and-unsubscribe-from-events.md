@@ -7,14 +7,15 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 4aecbbd58268e7b50a34f503160edd1eca4fe659
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 1e090301982a785fed2a8a6a95ee48bd1c7457ab
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063623"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167481"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Comment s’abonner et annuler l’abonnement à des événements (Guide de programmation C#)
+
 Vous vous abonnez à un événement publié par une autre classe lorsque vous voulez écrire du code personnalisé qui doit être appelé quand cet événement est déclenché. Par exemple, vous pouvez vous abonner à l’événement `click` d’un bouton pour permettre à votre application de réagir lorsque l’utilisateur clique sur le bouton.  
   
 ### <a name="to-subscribe-to-events-by-using-the-visual-studio-ide"></a>Pour s’abonner aux événements à l’aide de l’IDE de Visual Studio  
@@ -86,6 +87,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
      Il est important de noter que vous ne pourrez pas vous désabonner facilement d’un événement si vous avez utilisé une fonction anonyme pour vous y inscrire. Pour vous désinscrire dans ce scénario, accédez au code dans lequel vous vous êtes abonné à l’événement, stockez la méthode anonyme dans une variable de délégué, puis ajoutez le délégué à l’événement. En général, nous recommandons de ne pas utiliser de fonctions anonymes pour vous abonner aux événements si vous devez vous en désabonner plus tard dans votre code. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](../statements-expressions-operators/anonymous-functions.md).  
   
 ## <a name="unsubscribing"></a>Désabonnement  
+
  Pour éviter que votre gestionnaire d’événements ne soit appelé lorsque l’événement est déclenché, désabonnez-vous de l’événement. Pour empêcher les fuites de ressources, vous devez vous désabonner des événements avant d’éliminer un objet d’abonné. Tant que vous êtes abonné à un événement, le délégué de multidiffusion qui se trouve sous l’événement, dans l’objet de publication, comporte une référence au délégué qui encapsule le gestionnaire d’événements de l’abonné. Tant que l’objet de publication contient cette référence, le garbage collection ne supprime pas l’objet d’abonné.  
   
 #### <a name="to-unsubscribe-from-an-event"></a>Pour se désabonner d’un événement  
@@ -102,6 +104,6 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
 
 - [Événements](./index.md)
 - [event](../../language-reference/keywords/event.md)
-- [Comment publier des événements conformes aux instructions .NET](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+- [Comment publier des événements conformes aux indications de .NET](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 - [opérateurs-and-=](../../language-reference/operators/subtraction-operator.md)
 - [opérateurs + et + =](../../language-reference/operators/addition-operator.md)
