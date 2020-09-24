@@ -2,14 +2,15 @@
 title: <certificateReference> pour <identity>
 ms.date: 03/30/2017
 ms.assetid: ac359c65-c22d-42d2-97de-db53b77cebdb
-ms.openlocfilehash: 93a6290d780ff61756f7315cd0c32f0e199ca00f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f3daa2dcdf9b464b51cfb9c883cbb828bccb42df
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70849984"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148995"
 ---
 # <a name="certificatereference-for-identity"></a>\<certificateReference> pour \<identity>
+
 Spécifie les paramètres de validation du certificat X.509. Un client Windows Communication Foundation sécurisé (WCF) qui se connecte à un point de terminaison avec cette identité vérifie que les revendications présentées par le serveur contiennent la revendication d’identité utilisée pour construire cette identité.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Spécifie les paramètres de validation du certificat X.509. Un client Windows C
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -44,6 +46,7 @@ Spécifie les paramètres de validation du certificat X.509. Un client Windows C
 |X509FindType|Indique le type de recherche X.509 à exécuter. Le type contenu dans l'attribut `findValue` doit satisfaire les spécifications du X509FindType spécifié.<br /><br /> Les valeurs valides sont les suivantes :<br /><br /> -FindByThumbPrint<br />-FindBySubjectName<br />-FindBySubjectDistinguishedName<br />- FindByIssuerName<br />- FindByIssuerDistinguishedName<br />-FindBySerialNumber<br />- FindByTimeValid<br />- FindByTimeNotYetValid<br />- FindByTemplateName<br />- FindByApplicationPolicy<br />- FindByCertificatePolicy<br />- FindByExtension<br />- FindByKeyUsage<br />- FindBySubjectKeyIdentifier<br /><br /> La valeur par défaut est FindBySubjectDistinguishedName.<br /><br /> Cet attribut est de type <xref:System.Security.Cryptography.X509Certificates.X509FindType>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

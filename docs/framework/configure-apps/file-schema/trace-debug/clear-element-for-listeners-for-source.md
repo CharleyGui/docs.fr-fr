@@ -1,5 +1,5 @@
 ---
-title: <clear>, Élément de <listeners> pour<source>
+title: <clear> , Élément de <listeners> pour <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear
@@ -7,14 +7,15 @@ helpviewer_keywords:
 - <clear> element for <listeners> for <source>
 - clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-ms.openlocfilehash: 7f9ddd93d27c3619119702c82c9e8752dab1af7b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d3e76496c82b508feabf8a46cf7bce7e3d54e8cf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153579"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149281"
 ---
-# <a name="clear-element-for-listeners-for-source"></a>\<clear>, Élément de \<listeners> pour\<source>
+# <a name="clear-element-for-listeners-for-source"></a>\<clear> , Élément de \<listeners> pour \<source>
+
 Efface la collection `Listeners` pour une source de trace.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -31,12 +32,15 @@ Efface la collection `Listeners` pour une source de trace.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -49,13 +53,16 @@ Efface la collection `Listeners` pour une source de trace.
 |`source`|Spécifie une source de trace qui lance des messages de traçage.|  
 |`listeners`|Spécifie les écouteurs qui collectent, stockent et acheminent les messages.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `<clear>` élément supprime tous les écouteurs de la `Listeners` collection pour une source de suivi, y compris <xref:System.Diagnostics.DefaultTraceListener> . Vous pouvez utiliser l' `<clear>` élément avant d’utiliser l' `<add>` élément pour être certain qu’il n’existe aucun autre écouteur actif dans la collection.  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
+
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (Machine.config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment utiliser l' `<clear>` élément avant d’utiliser les `<add>` éléments pour ajouter les écouteurs `console` et `textListener` la `Listeners` collection pour la source de trace `TraceSourceApp` .  
   
 ```xml  
@@ -89,4 +96,4 @@ Efface la collection `Listeners` pour une source de trace.
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TraceListener>
 - [Schéma des paramètres de traçage et de débogage](index.md)
-- [Écouteurs de suivi](../../../debug-trace-profile/trace-listeners.md)
+- [Écouteurs de la trace](../../../debug-trace-profile/trace-listeners.md)

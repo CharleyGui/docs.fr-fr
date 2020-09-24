@@ -2,28 +2,30 @@
 title: LOB Oracle
 ms.date: 03/30/2017
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
-ms.openlocfilehash: 62525fed85525e26b7c61208fe44b108de562fb0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 072e3e3514c2dd32ddff0bac941da30788feae16
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149425"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147838"
 ---
 # <a name="oracle-lobs"></a>LOB Oracle
-Le fournisseur de données cadre <xref:System.Data.OracleClient.OracleLob> .NET pour Oracle inclut la classe, qui est utilisée pour travailler avec les types de données Oracle **LOB.**  
+
+La .NET Framework Fournisseur de données pour Oracle comprend la <xref:System.Data.OracleClient.OracleLob> classe, qui est utilisée pour travailler avec des types de données **LOB** Oracle.  
   
- **OracleLob** peut être l’un de ces <xref:System.Data.OracleClient.OracleType> types de données :  
+ Un **OracleLob** peut être l’un des <xref:System.Data.OracleClient.OracleType> types de données suivants :  
   
 |Type de données|Description|  
 |---------------|-----------------|  
-|**Objet blob**|Un type de données Oracle **BLOB** qui contient des données binaires d’une taille maximale de 4 gigaoctets. Cette carte à un **tableau** de type **Byte**.|  
-|**Clob**|Un type de données Oracle **CLOB** qui contient des données de caractère, basées sur le caractère par défaut défini sur le serveur, avec une taille maximale de 4 gigaoctets. Cette carte à **String**.|  
-|**NClob (NClob)**|Un type de données Oracle **NCLOB** qui contient des données de caractère, basées sur le caractère national défini sur le serveur avec une taille maximale de 4 gigaoctets. Cette carte à **String**.|  
+|**Objet blob**|Type de données **BLOB** Oracle qui contient des données binaires d’une taille maximale de 4 gigaoctets. Correspond à un **tableau** de type **Byte**.|  
+|**CLOB**|Type de données **CLOB** Oracle qui contient des données caractères, en fonction du jeu de caractères par défaut sur le serveur, avec une taille maximale de 4 gigaoctets. Correspond à **String**.|  
+|**NClob**|Type de données Oracle **NCLOB** qui contient des données caractères, en fonction du jeu de caractères national sur le serveur, avec une taille maximale de 4 gigaoctets. Correspond à **String**.|  
   
- **OracleLob** diffère d’un <xref:System.Data.OracleClient.OracleBFile> en ce que les données sont stockées sur le serveur au lieu d’un fichier physique dans le système d’exploitation. Il peut également être un objet de lecture-écriture, contrairement à un **OracleBFile**, qui est toujours lu uniquement.  
+ Un **OracleLob** diffère d’un <xref:System.Data.OracleClient.OracleBFile> dans le cas où les données sont stockées sur le serveur plutôt que dans un fichier physique dans le système d’exploitation. Il peut également s’agir d’un objet en lecture-écriture, contrairement à **OracleBFile**, qui est toujours en lecture seule.  
   
 ## <a name="creating-retrieving-and-writing-to-a-lob"></a>Création d'un LOB, extraction à partir d'un LOB et écriture dans un LOB  
- L’exemple CMD suivant montre comment vous pouvez créer des LOB dans une table Oracle, puis récupérer et leur écrire sous la forme d’objets **OracleLob.** L’exemple montre <xref:System.Data.OracleClient.OracleDataReader> l’utilisation de l’objet et des méthodes **OracleLob** **Read** and **Write.** L’exemple utilise Oracle **BLOB**, **CLOB**, et **NCLOB** types de données.  
+
+ L’exemple C# suivant montre comment vous pouvez créer des LOB dans une table Oracle, puis les récupérer et y écrire sous la forme d’objets **OracleLob** . L’exemple illustre l’utilisation de l' <xref:System.Data.OracleClient.OracleDataReader> objet et des méthodes de **lecture** et d' **écriture** du **OracleLob** . L’exemple utilise les types de données Oracle **BLOB**, **CLOB**et **NCLOB** .  
   
 ```csharp  
 using System;  
@@ -216,6 +218,7 @@ public class LobExample
 ```  
   
 ## <a name="creating-a-temporary-lob"></a>Création d'un LOB temporaire  
+
  L'exemple C# suivant illustre le mode de création d'un LOB temporaire.  
   
 ```csharp  

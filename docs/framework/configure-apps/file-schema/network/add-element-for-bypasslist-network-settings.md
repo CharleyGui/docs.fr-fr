@@ -10,14 +10,15 @@ helpviewer_keywords:
 - <add> element, bypasslist
 - add element, bypasslist
 ms.assetid: a0b86e28-86b4-4497-abe8-d5fd614c7926
-ms.openlocfilehash: 652b8738a201aaa98fa2c5c435fee1a6da91673b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 927a43f352fd776d9e6ba52ebea6ba2a1ccd4d48
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155075"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149489"
 ---
 # <a name="add-element-for-bypasslist-network-settings"></a>\<add>, élément de bypasslist (paramètres réseau)
+
 Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -35,6 +36,7 @@ Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -44,15 +46,17 @@ Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.
 |**address**|Expression régulière décrivant une adresse IP ou un nom DNS.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[BypassList](bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas de proxy.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `add` élément insère des expressions régulières décrivant des adresses IP ou des noms de serveurs DNS à la liste des adresses qui contournent un serveur proxy.  
   
  La valeur de l' `address` attribut doit être une expression régulière qui décrit un ensemble d’adresses IP ou de noms d’hôtes.  
@@ -62,9 +66,11 @@ Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.
  Pour plus d’informations sur les expressions régulières, consultez. [.NET Framework des expressions régulières](../../../../standard/base-types/regular-expressions.md).  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant ajoute deux adresses à la liste de contournement. La première contourne le proxy pour tous les serveurs dans le domaine contoso.com. la deuxième contourne le proxy pour tous les serveurs dont l’adresse IP commence par 192,168.  
   
 ```xml  

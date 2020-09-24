@@ -2,14 +2,15 @@
 title: <baseAddressPrefixFilters>
 ms.date: 03/30/2017
 ms.assetid: 8cab2a9a-c51f-4283-bb60-2ad0c274fd46
-ms.openlocfilehash: 635e4f02f4d286b63c4f4845563ba1953d23592a
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: ce224a2a1d6d96f2bc72e9291e7256d264d86d50
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811897"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149025"
 ---
 # \<baseAddressPrefixFilters>
+
 Représente une collection d’éléments de configuration qui spécifient des filtres de passage, qui fournissent un mécanisme permettant de sélectionner les liaisons d’Internet Information Services (IIS) appropriées lors de l’hébergement de l’application Windows Communication Foundation (WCF) dans IIS.  
   
 > [!WARNING]
@@ -31,9 +32,11 @@ Représente une collection d’éléments de configuration qui spécifient des f
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -49,6 +52,7 @@ Représente une collection d’éléments de configuration qui spécifient des f
 |[\<serviceHostingEnvironment>](servicehostingenvironment.md)|Définit le type instancié par l'environnement d'hébergement du service pour un transport particulier.|  
   
 ## <a name="remarks"></a>Notes  
+
  Un filtre de préfixe permet aux fournisseurs d'hébergement partagé de spécifier les URI que le service doit utiliser. Il permet aux hôtes partagés d'héberger plusieurs applications avec différentes adresses de base pour la même méthode sur le même site.  
   
  Les sites Web IIS sont des conteneurs d'applications virtuelles qui contiennent des répertoires virtuels. L’application dans un site est accessible par le biais d’une ou de plusieurs liaisons IIS. Les liaisons IIS fournissent deux informations : un protocole de liaison et des informations de liaison. Le protocole de liaison (par exemple, HTTP) définit le modèle sur lequel la communication se produit, tandis que les informations de liaison (par exemple, adresse IP, port, en-tête de l'hôte) contiennent les données servant à accéder au site.  

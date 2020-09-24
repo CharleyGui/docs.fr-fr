@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
-ms.openlocfilehash: e493140b4cf5a939e8ae8f42b617fb739ed09dec
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e8ab0fa98eeb8ec8966c52c87c4d7aea1fbd8efc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287062"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148462"
 ---
 # <a name="connection-string-builders"></a>Builders de chaînes de connexion
+
 Dans les versions antérieures de ADO.NET, la vérification au moment de la compilation des chaînes de connexion avec des valeurs de chaîne concaténées ne s’est pas produite, de sorte qu’au moment de l’exécution, un mot clé incorrect a généré un <xref:System.ArgumentException> . Chacun des fournisseurs de données .NET Framework prenait en charge une syntaxe différente pour les mots clés de chaîne de connexion, ce qui rendait la construction de chaînes de connexion valides difficile si elle est effectuée manuellement. Pour résoudre ce problème, ADO.NET 2,0 a introduit de nouveaux générateurs de chaînes de connexion pour chaque .NET Framework fournisseur de données. Chaque fournisseur de données inclut une classe de générateur de chaînes de connexion fortement typée qui hérite de <xref:System.Data.Common.DbConnectionStringBuilder>. Le tableau suivant répertorie les fournisseurs de données .NET Framework et les classes de générateur de chaînes de connexion qui leur sont associées.  
   
 |Fournisseur|Classe ConnectionStringBuilder|  
@@ -24,6 +25,7 @@ Dans les versions antérieures de ADO.NET, la vérification au moment de la comp
 |<xref:System.Data.OracleClient>|<xref:System.Data.OracleClient.OracleConnectionStringBuilder?displayProperty=nameWithType>|  
   
 ## <a name="connection-string-injection-attacks"></a>Attaques par injection de chaîne de connexion  
+
  Une attaque par injection de chaîne de connexion peut se produire lorsqu'une concaténation de chaîne dynamique est utilisée pour générer des chaînes de connexion se basant sur l'entrée d'utilisateur. Si la chaîne n'est pas validée et que du texte ou des caractères malveillants ne font pas l'objet d'un échappement, un attaquant peut éventuellement accéder à des données sensibles ou à d'autres ressources sur le serveur. Par exemple, un attaquant peut organiser une attaque en fournissant un point-virgule et en ajoutant une valeur supplémentaire. La chaîne de connexion est alors analysée à l'aide de l'algorithme « last one wins », de sorte que l'entrée hostile soit remplacée par une valeur légitime.  
   
  Les classes de générateur de chaînes de connexion sont conçues pour éliminer le travail de recherche et pour se protéger contre les erreurs de syntaxe et les failles en matière de sécurité. Elles fournissent des méthodes et des propriétés qui correspondent aux paires clé/valeur connues autorisées par chaque fournisseur de données. La classe maintient une collection fixe de synonymes et peut traduire un synonyme vers le nom de la clé connue correspondante. Des vérifications sont effectuées pour contrôler la validité des paires clé/valeur et une paire non valide lève une exception. En outre, les valeurs injectées sont gérées de manière sécurisée.  
@@ -55,6 +57,7 @@ initial catalog="AdventureWorks;NewValue=Bad"
 ```  
   
 ## <a name="building-connection-strings-from-configuration-files"></a>Génération de chaînes de connexion à partir de fichiers de configuration  
+
  Si certains éléments d'une chaîne de connexion sont connus à l'avance, ils peuvent être stockés dans un fichier de configuration et récupérés au moment de l'exécution pour générer une chaîne de connexion complète. Par exemple, le nom de la base de données peut être connue à l'avance, mais pas celui du serveur. Ou bien, vous pouvez souhaiter qu'un utilisateur fournisse un nom et un mot de passe au moment de l'exécution mais sans pouvoir injecter d'autres valeurs dans la chaîne de connexion.  
   
  L’un des constructeurs surchargés d’un générateur de chaînes de connexion prend <xref:System.String> en tant qu’argument, ce qui vous permet de fournir une chaîne de connexion partielle qui pourra ensuite être complétée à partir de l’entrée d’utilisateur. La chaîne de connexion partielle peut être stockée dans un fichier de configuration et récupérée au moment de l'exécution.  
@@ -63,6 +66,7 @@ initial catalog="AdventureWorks;NewValue=Bad"
 > L'espace de noms <xref:System.Configuration> autorise l'accès par programme aux fichiers de configuration qui utilisent <xref:System.Web.Configuration.WebConfigurationManager> pour les applications Web et <xref:System.Configuration.ConfigurationManager> pour les applications Windows. Pour plus d’informations sur l’utilisation des chaînes de connexion et des fichiers de configuration, consultez [chaînes de connexion et fichiers de configuration](connection-strings-and-configuration-files.md).  
   
 ### <a name="example"></a>Exemple  
+
  Cet exemple montre comment récupérer une chaîne de connexion partielle d'un fichier de configuration et comment la compléter en définissant les propriétés <xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A>, <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserID%2A> et <xref:System.Data.SqlClient.SqlConnectionStringBuilder.Password%2A> de <xref:System.Data.SqlClient.SqlConnectionStringBuilder>. Le fichier de configuration est défini comme suit.  
   
 ```xml  

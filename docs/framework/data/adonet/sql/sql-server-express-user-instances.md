@@ -5,23 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-ms.openlocfilehash: 71f42cb2707c27be6c1a761d09d3a2dae1791680
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 401b62f56918e8ac406a5ee2dda2252d328592bc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552672"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147578"
 ---
 # <a name="sql-server-express-user-instances"></a>Instances utilisateur SQL Server Express
+
 Microsoft SQL Server Express Edition (SQL Server Express) prend en charge une nouvelle fonctionnalité, l’instance utilisateur, disponible uniquement avec le fournisseur de données .NET Framework pour SQL Server (`SqlClient`). Une instance utilisateur est une instance distincte du moteur de base de données SQL Server Express générée par une instance parente. Les instances utilisateur permettent aux utilisateurs qui ne sont pas des administrateurs sur leurs ordinateurs locaux de joindre et de se connecter à des bases de données SQL Server Express. Chaque instance s’exécute dans le contexte de sécurité de l’utilisateur individuel, sur la base d’une instance par utilisateur.  
   
 ## <a name="user-instance-capabilities"></a>Fonctionnalités de l'instance utilisateur  
+
  Les instances utilisateur sont utiles pour les utilisateurs qui exécutent Windows dans le cadre d’un compte d’utilisateur disposant de privilèges minimum (LUA). Chaque utilisateur a SQL Server `sysadmin` des privilèges d’administrateur système sur l’instance en cours d’exécution sur son ordinateur sans avoir à s’exécuter en tant qu’administrateur Windows. Les logiciels qui s’exécutent sur une instance utilisateur avec des autorisations limitées ne peuvent pas apporter de modifications à l’ensemble du système, car l’instance SQL Server Express s’exécute sous le compte Windows non administrateur de l’utilisateur, pas en tant que service. Chaque instance utilisateur est isolée de l’instance parente et de toutes les autres instances utilisateur exécutées sur le même ordinateur. Les bases de données qui s’exécutent sur une instance utilisateur sont ouvertes uniquement en mode mono-utilisateur, et il n’est pas possible pour plusieurs utilisateurs de se connecter aux bases de données qui s’exécutent sur une instance utilisateur. La réplication et les requêtes distribuées sont également désactivées pour les instances utilisateur.
   
 > [!NOTE]
 > Les instances utilisateur ne sont pas nécessaires pour les utilisateurs qui sont déjà administrateurs sur leurs propres ordinateurs ou pour les scénarios impliquant plusieurs utilisateurs de base de données.  
   
 ## <a name="enabling-user-instances"></a>Activation des instances utilisateur  
+
  Pour générer des instances d’utilisateur, une instance parente de SQL Server Express doit être en cours d’exécution. Les instances utilisateur sont activées par défaut lors de l’installation de SQL Server Express, et elles peuvent être activées ou désactivées de manière explicite par un administrateur système qui exécute la procédure stockée **système sp_configure** sur l’instance parente.  
   
 ```sql  
@@ -35,13 +38,14 @@ sp_configure 'user instances enabled','0'
  Le protocole réseau pour les instances utilisateur doit être un canal nommé local. Une instance utilisateur ne peut pas être démarrée sur une instance distante de SQL Server, et les connexions SQL Server ne sont pas autorisées.  
   
 ## <a name="connecting-to-a-user-instance"></a>Connexion à une instance utilisateur  
+
  Les mots clés `User Instance` et `AttachDBFilename`<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> autorisent <xref:System.Data.SqlClient.SqlConnection> à se connecter à une instance utilisateur. Les instances utilisateur sont également prises en charge par les propriétés <xref:System.Data.SqlClient.SqlConnectionStringBuilder>`UserInstance` et `AttachDBFilename`.  
   
  Notez les points suivants à propos de l’exemple de chaîne de connexion présenté ci-dessous :  
   
 - Le mot clé `Data Source` fait référence à l’instance parente de SQL Server Express qui génère l’instance utilisateur. L'instance par défaut est .\sqlexpress.  
   
-- `Integrated Security` a la valeur `true`. Pour se connecter à une instance utilisateur, l’authentification Windows est requise ; les connexions SQL Server ne sont pas prises en charge.  
+- `Integrated Security` est défini sur `true`. Pour se connecter à une instance utilisateur, l’authentification Windows est requise ; les connexions SQL Server ne sont pas prises en charge.  
   
 - La valeur `User Instance` est définie sur `true`, ce qui appelle une instance utilisateur. (La valeur par défaut est `false`.)  
   
@@ -59,6 +63,7 @@ Initial Catalog=InstanceDB;
 > Vous pouvez également utiliser les propriétés <xref:System.Data.SqlClient.SqlConnectionStringBuilder><xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A> et <xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A> pour générer une chaîne de connexion au moment de l’exécution.  
   
 ### <a name="using-the-124datadirectory124-substitution-string"></a>Utilisation de la chaîne de substitution &#124;DataDirectory&#124;  
+
  `AttachDbFileName` a été étendu dans ADO.NET 2.0 avec l'introduction de la chaîne de substitution `|DataDirectory|` (dans les symboles de barre verticale). `DataDirectory` est utilisé conjointement à `AttachDbFileName` pour indiquer un chemin relatif à un fichier de données, ce qui permet aux développeurs de créer des chaînes de connexion basées sur un chemin relatif à la source de données au lieu de devoir spécifier un chemin complet.  
   
  L’emplacement physique vers lequel `DataDirectory` pointe dépend du type d’application. Dans cet exemple, le fichier Northwind.mdf à joindre se trouve dans le dossier \app_data de l’application.  
@@ -117,12 +122,14 @@ private static void OpenSqlConnection()
 > Les instances utilisateur ne sont pas prises en charge dans le Common Language Runtime (CLR) qui s’exécute dans SQL Server. Une <xref:System.InvalidOperationException> est levée si `Open` est appelé sur une <xref:System.Data.SqlClient.SqlConnection> qui a `User Instance=true` dans la chaîne de connexion.  
   
 ## <a name="lifetime-of-a-user-instance-connection"></a>Durée de vie d'une connexion à une instance utilisateur  
+
  Contrairement aux versions de SQL Server qui s’exécutent en tant que service, les instances SQL Server Express n’ont pas besoin d’être démarrées et arrêtées manuellement. Chaque fois qu’un utilisateur s’identifie et se connecte à une instance utilisateur, l’instance utilisateur est démarrée si elle n’est pas déjà en cours d’exécution. L’option `AutoClose` est définie pour les bases de données d’instance utilisateur afin que la base de données s’arrête automatiquement après une période d’inactivité. Le processus sqlservr.exe démarré reste en cours d’exécution pendant un délai d’attente limité après la fermeture de la dernière connexion à l’instance ; il n’est donc pas nécessaire de redémarrer si une autre connexion est ouverte avant l’expiration du délai d’attente. L’instance utilisateur s’arrête automatiquement si aucune nouvelle connexion n’est ouverte avant l’expiration du délai d’attente. Un administrateur système sur l’instance parente peut définir la durée du délai d’attente pour une instance utilisateur à l’aide de **sp_configure** afin de modifier l’option de **délai d’attente de l’instance utilisateur**. La valeur par défaut est de 60 minutes.  
   
 > [!NOTE]
 > Si `Min Pool Size` est utilisé dans la chaîne de connexion avec une valeur supérieure à zéro, le dispositif de regroupement garde toujours quelques connexions ouvertes et l’instance utilisateur ne s’arrête pas automatiquement.  
   
 ## <a name="how-user-instances-work"></a>Fonctionnement des instances utilisateur  
+
  La première fois qu’une instance utilisateur est générée pour chaque utilisateur, les bases de données système **master** et **msdb** sont copiées du dossier Template Data vers un chemin sous le répertoire de stockage des données d’application local de l’utilisateur pour être utilisées exclusivement par l’instance utilisateur. Ce chemin d’accès est généralement `C:\Documents and Settings\<UserName>\Local Settings\Application Data\Microsoft\Microsoft SQL Server Data\SQLEXPRESS`. Quand une instance utilisateur démarre, les fichiers **tempdb**, journaux et de suivi sont aussi écrits dans ce répertoire. Un nom est généré pour l’instance, et son unicité est garantie pour chaque utilisateur.  
   
  Par défaut, tous les membres du groupe Windows Builtin\Users disposent des autorisations pour se connecter à l’instance locale, ainsi que des autorisations de lecture et d’exécution sur les fichiers binaires de SQL Server. Une fois que les informations d’identification de l’utilisateur appelant qui héberge l’instance utilisateur ont été vérifiées, cet utilisateur devient le `sysadmin` sur cette instance. Seule la mémoire partagée est activée pour les instances utilisateur, ce qui signifie que seules les opérations sur l’ordinateur local sont possibles.  
@@ -135,6 +142,7 @@ private static void OpenSqlConnection()
  Pour éviter tout endommagement des données, une base de données de l’instance utilisateur est ouverte avec un accès exclusif. Si deux instances utilisateur différentes partagent la même base de données sur le même ordinateur, l’utilisateur sur la première instance doit fermer la base de données avant de pouvoir l’ouvrir dans une deuxième instance.  
   
 ## <a name="user-instance-scenarios"></a>Scénarios d'instance utilisateur  
+
  Les instances utilisateur fournissent aux développeurs d’applications de base de données un magasin de données SQL Server qui ne nécessite pas que les développeurs disposent de comptes d’administration sur leurs ordinateurs de développement. Les instances utilisateur sont basées sur le modèle Access/Jet, où l’application de base de données se connecte simplement à un fichier, et l’utilisateur dispose automatiquement d’autorisations complètes sur tous les objets de base de données sans avoir besoin de l’intervention d’un administrateur système pour accorder des autorisations. Ce comportement est prévu pour fonctionner dans des situations où l’utilisateur s’exécute sous un compte d’utilisateur avec des privilèges minimum et ne dispose pas de privilèges d’administrateur sur le serveur ou l’ordinateur local, mais a besoin de créer des objets et applications de base de données. Les instances utilisateur permettent aux utilisateurs de créer des instances au moment de l’exécution qui s’exécutent sous le contexte de sécurité de l’utilisateur, et non dans le contexte de sécurité d’un service système plus privilégié.  
   
 > [!IMPORTANT]

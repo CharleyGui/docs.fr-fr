@@ -5,19 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-ms.openlocfilehash: 571904d36293caa6d4330b2ffda2cff5aca8e6b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de925afd071a5c92dfa3f6a5e35e62a8ba734cd8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174457"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147617"
 ---
 # <a name="windows-applications-using-callbacks"></a>Applications Windows utilisant des rappels
+
 Dans la plupart des scénarios de traitement asynchrone, vous souhaitez démarrer une opération de base de données et continuer à exécuter d’autres processus sans attendre la fin de l’opération de base de données. Toutefois, de nombreux scénarios requièrent une action une fois l’opération de base de données terminée. Dans une application Windows, par exemple, vous pouvez souhaiter la délégation de l’opération de longue durée à un thread d’arrière-plan permet au thread d’interface utilisateur de rester réactif. Toutefois, lorsque l’opération de base de données est terminée, vous souhaitez utiliser les résultats pour remplir le formulaire. Ce type de scénario est le mieux implémenté avec un rappel.  
   
  Vous définissez un rappel en spécifiant un délégué <xref:System.AsyncCallback> dans la méthode <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> ou <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A>. Le délégué est appelé une fois l’opération terminée. Vous pouvez transmettre au délégué une référence à la <xref:System.Data.SqlClient.SqlCommand> elle-même, ce qui facilite l’accès à l’objet <xref:System.Data.SqlClient.SqlCommand> et l’appel de la méthode `End` appropriée sans avoir à utiliser une variable globale.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  L’application Windows suivante illustre l’utilisation de la méthode <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, en exécutant une instruction Transact-SQL qui comprend un délai de quelques secondes (en émulant une commande longue).  
   
  Cet exemple illustre un certain nombre de techniques importantes, notamment l’appel d’une méthode qui interagit avec le formulaire à partir d’un thread distinct. En outre, cet exemple montre comment vous devez empêcher les utilisateurs d’exécuter simultanément une commande plusieurs fois et comment vous devez vous assurer que le formulaire ne se ferme pas avant l’appel de la procédure de rappel.  

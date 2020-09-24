@@ -11,14 +11,15 @@ helpviewer_keywords:
 - <authenticationModules>, add element
 - <add> element, authenticationModules
 ms.assetid: 333c5fb0-a2ab-4db8-8531-a7fe37bb9b5b
-ms.openlocfilehash: 1a6d0f79f076a69cec33ac14f0e0f33f7c3c6577
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f679a43ed1851e9681a2a57ca1639f8aa75aa8b3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504639"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149502"
 ---
 # <a name="add-element-for-authenticationmodules-network-settings"></a>\<add>, élément d’authenticationModules (paramètres réseau)
+
 Ajoute un module d’authentification à l’application.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Ajoute un module d’authentification à l’application.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -44,23 +46,27 @@ Ajoute un module d’authentification à l’application.
 |`type`|Nom de type qualifié complet (indiqué par la <xref:System.Type.FullName%2A> propriété) et nom de l’assembly (indiqué par la <xref:System.Reflection.Assembly.FullName%2A> propriété), séparés par une virgule.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[authenticationModules](authenticationmodules-element-network-settings.md)|Spécifie les modules utilisés pour authentifier les demandes réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `add` élément ajoute un module d’authentification à la fin de la liste des modules d’authentification inscrits. Les modules d’authentification sont appelés dans l’ordre dans lequel ils ont été ajoutés à la liste.  
   
  La valeur de l' `type` attribut doit être un nom de type valide et le nom d’assembly correspondant, séparés par une virgule.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant active les modules d’authentification par défaut. Vous devez remplacer les valeurs de version et PublicKeyToken par les valeurs correctes pour le module spécifié.  
   
 ```xml  

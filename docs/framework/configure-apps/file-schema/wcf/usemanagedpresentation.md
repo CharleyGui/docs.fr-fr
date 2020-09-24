@@ -2,14 +2,15 @@
 title: <useManagedPresentation>
 ms.date: 03/30/2017
 ms.assetid: 17a0dd77-af54-41db-a9d0-4b17ff42878f
-ms.openlocfilehash: bb2989ed52a88d805510d65e1dc1740df7bb55eb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 86a6f975b05133d5f9f21fcfb82ef4c23d2ffaba
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73735939"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148810"
 ---
 # \<useManagedPresentation>
+
 Élément de liaison utilisé pour communiquer avec un service d’émission de jeton de sécurité CardSpace qui prend en charge le profil CardSpace de WS-Trust. Cet élément n'a aucun attribut et est présent en tant que commutateur vide.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,13 +27,16 @@ ms.locfileid: "73735939"
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -40,7 +44,8 @@ ms.locfileid: "73735939"
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Cet élément est utilisé par un fournisseur d'identité pour exprimer dans sa stratégie le fait qu'il prend en charge le profil CardSpace de WS-Trust. Les fournisseurs d'identité qui publient une telle assertion de stratégie doivent être en mesure de publier des jetons selon ce profil CardSpace.  
   
 ## <a name="see-also"></a>Voir aussi

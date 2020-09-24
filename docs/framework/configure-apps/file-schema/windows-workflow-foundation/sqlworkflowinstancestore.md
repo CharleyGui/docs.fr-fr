@@ -3,14 +3,15 @@ title: <sqlWorkflowInstanceStore>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 8a4e4214-fc51-4f4d-b968-0427c37a9520
-ms.openlocfilehash: 56a44fdb62062903ca3ad00f8105a66ccab02cca
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d6c86d02e14a38c2a35ba4858c4abfea73268fd8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79151960"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148709"
 ---
 # \<sqlWorkflowInstanceStore>
+
 Comportement de service qui vous permet de configurer la fonctionnalité <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, qui prend en charge les informations d'état persistantes pour les instances de service du flux de travail dans une base de données SQL Server 2005 ou SQL Server 2008. Pour plus d’informations sur cette fonctionnalité, consultez [magasin d’instances de workflow SQL](../../../windows-workflow-foundation/sql-workflow-instance-store.md).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,6 +39,7 @@ Comportement de service qui vous permet de configurer la fonctionnalité <xref:S
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -53,17 +55,18 @@ Comportement de service qui vous permet de configurer la fonctionnalité <xref:S
 |runnableInstancesDetectionPeriod||  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behavior>of\<serviceBehaviors>](behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
+|[\<behavior> of \<serviceBehaviors>](behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.SqlWorkflowInstanceStoreElement>
 - <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>
-- [Magasin d’instances de workflow SQL](../../../windows-workflow-foundation/sql-workflow-instance-store.md)
+- [Magasin d'instances de workflow SQL](../../../windows-workflow-foundation/sql-workflow-instance-store.md)

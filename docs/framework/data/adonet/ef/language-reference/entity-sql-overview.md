@@ -2,15 +2,16 @@
 title: Vue d'ensemble d'Entity SQL
 ms.date: 03/30/2017
 ms.assetid: f0bb8120-e709-40a3-ac1e-5520dc47477d
-ms.openlocfilehash: b4fe852847d8b1b4bc0b80e3ba8e1f5b4aae9ff7
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: e9a5117984380938e48e0cd1113107c74389480f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202248"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148125"
 ---
 # <a name="entity-sql-overview"></a>Vue d'ensemble d'Entity SQL
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]est un langage de type SQL qui vous permet d’interroger des modèles conceptuels dans le Entity Framework. Les modèles conceptuels représentent des données sous forme d’entités et de relations, et [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vous permettent d’interroger ces entités et relations dans un format familier à ceux qui ont utilisé SQL.  
+
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] est un langage de type SQL qui vous permet d’interroger des modèles conceptuels dans le Entity Framework. Les modèles conceptuels représentent des données sous forme d’entités et de relations, et [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vous permettent d’interroger ces entités et relations dans un format familier à ceux qui ont utilisé SQL.  
 
  Le Entity Framework fonctionne avec les fournisseurs de données spécifiques au stockage pour traduire le générique [!INCLUDE[esql](../../../../../../includes/esql-md.md)] en requêtes spécifiques au stockage. Le fournisseur EntityClient fournit une méthode pour exécuter une commande [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sur un modèle d'entité et retourner des types de données enrichis, y compris des résultats scalaires, des jeux de résultats et des graphiques d'objets. Lorsque vous construisez des objets <xref:System.Data.EntityClient.EntityCommand>, vous pouvez spécifier un nom de procédure stockée ou le texte d'une requête en assignant une chaîne de requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] à sa propriété <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType>. <xref:System.Data.EntityClient.EntityDataReader> expose les résultats de l'exécution d'un <xref:System.Data.EntityClient.EntityCommand> sur un modèle EDM. Pour exécuter la commande qui retourne l'objet <xref:System.Data.EntityClient.EntityDataReader>, appelez la méthode <xref:System.Data.EntityClient.EntityCommand.ExecuteReader%2A>.  
   
@@ -19,6 +20,7 @@ ms.locfileid: "84202248"
  Cette section fournit des informations conceptuelles sur [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Différences entre Entity SQL et Transact-SQL](how-entity-sql-differs-from-transact-sql.md)  
   
  [Aide-mémoire Entity SQL](entity-sql-quick-reference.md)  
@@ -53,7 +55,7 @@ ms.locfileid: "84202248"
   
  [Priorité des opérateurs](operator-precedence-entity-sql.md)  
   
- [Déplacement](paging-entity-sql.md)  
+ [Pagination](paging-entity-sql.md)  
   
  [Sémantique de comparaison](comparison-semantics-entity-sql.md)  
   

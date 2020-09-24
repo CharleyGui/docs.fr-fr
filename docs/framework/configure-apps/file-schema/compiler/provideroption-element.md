@@ -8,14 +8,15 @@ helpviewer_keywords:
 - providerOptions
 - provideroption element
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
-ms.openlocfilehash: 7e006adb86886d22ec08dc61fa092bf677b4da96
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9374fbaf7ceb61e5b72335417d32a08525477e0d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544737"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149632"
 ---
 # <a name="provideroption-element"></a>Élément \<providerOption>
+
 Spécifie les attributs de version du compilateur pour un fournisseur de langages.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Spécifie les attributs de version du compilateur pour un fournisseur de langage
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -44,6 +46,7 @@ Spécifie les attributs de version du compilateur pour un fournisseur de langage
 |`value`|Attribut requis.<br /><br /> Spécifie la valeur de l’option. par exemple, « v 3.5 ».|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -56,6 +59,7 @@ Spécifie les attributs de version du compilateur pour un fournisseur de langage
 |[\<compiler> Appartient](compiler-element.md)|Spécifie les attributs de configuration du compilateur pour un fournisseur de langage.|  
   
 ## <a name="remarks"></a>Notes  
+
  Dans la version 3,5, .NET Framework les fournisseurs de code Code Document Object Model (CodeDOM) peuvent prendre en charge des options spécifiques au fournisseur à l’aide de l' `<providerOption>` élément.  
   
  Le .NET Framework 3,5 inclut des assemblys .NET Framework 2,0 mis à jour et fournit de nouveaux assemblys de version 3,5 qui contiennent de nouveaux types. Les fournisseurs de code Microsoft C# et Visual Basic sont contenus dans les assemblys .NET Framework 2,0, mais ils ont été mis à jour pour prendre en charge les compilateurs de version 3,5. Par défaut, les fournisseurs de code mis à jour génèrent du code pour la version 2,0 des compilateurs. Vous pouvez utiliser l' `<providerOption>` élément pour remplacer la version du compilateur cible par 3,5. Pour ce faire, spécifiez « CompilerVersion » pour l' `name` attribut et « v 3.5 » pour l' `value` attribut. Vous devez faire précéder le numéro de version d’un « v » en minuscules.  
@@ -64,7 +68,8 @@ Spécifie les attributs de version du compilateur pour un fournisseur de langage
   
  Les implémenteurs de fournisseurs de code CodeDOM peuvent traiter des options personnalisées en fournissant un constructeur qui accepte un `providerOptions` paramètre de type <xref:System.Collections.Generic.IDictionary%602> .  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment spécifier que la version 3,5 du fournisseur de code C# doit être utilisée.  
   
 ```xml  

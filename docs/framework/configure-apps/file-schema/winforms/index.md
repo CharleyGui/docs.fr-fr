@@ -2,14 +2,15 @@
 title: Section de configuration de Windows Forms
 ms.date: 04/07/2017
 ms.assetid: 6eb142d5-fc98-40e2-9d90-84733f2a27ba
-ms.openlocfilehash: 8a6f13da9bf05d87c45d86a09261d0c7245f5b00
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2d518ec03602580f3c5d00ef2901ff7d7ac1d81b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546906"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148501"
 ---
 # <a name="windows-forms-configuration-section"></a>Section de configuration de Windows Forms
+
 Les paramètres de configuration de Windows Forms permettent à une application Windows Forms de stocker et d’extraire des informations sur les paramètres d’application personnalisés, par exemple la prise en charge de plusieurs écrans, la prise en charge de la haute résolution et d’autres paramètres de configuration prédéfinis.
 
 Les paramètres de configuration de l’application Windows Forms sont stockés dans l’élément `System.Windows.Forms.ApplicationConfigurationSection` d’un fichier de configuration de l’application.

@@ -2,14 +2,15 @@
 title: <add> de <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: 3713bf25-20c8-455f-bb85-de46b6487932
-ms.openlocfilehash: 8328b6d08c1b57ad7a899c8cb489e07037e5af09
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 11be233d846f9025f041a26174e5b3bd2abdab55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558159"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149190"
 ---
 # <a name="add-of-commonparameters"></a>\<add> de \<commonParameters>
+
 Spécifie une paire nom-valeur de paramètres utilisés globalement dans plusieurs services. Ce paramètre inclut généralement la chaîne de connexion de base de données pouvant être partagée par les services fiables.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Spécifie une paire nom-valeur de paramètres utilisés globalement dans plusieu
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -39,9 +41,10 @@ Spécifie une paire nom-valeur de paramètres utilisés globalement dans plusieu
 |Attribut|Description|  
 |---------------|-----------------|  
 |name|Nom du paramètre spécifié pour un service.|  
-|value|Valeur du paramètre spécifié pour un service.|  
+|valeur|Valeur du paramètre spécifié pour un service.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -51,6 +54,7 @@ Spécifie une paire nom-valeur de paramètres utilisés globalement dans plusieu
 |[\<commonParameters>](commonparameters.md)|Collection de paramètres communs utilisée par les services. Cette collection inclut généralement la chaîne de connexion de base de données pouvant être partagée par les services fiables.|  
   
 ## <a name="remarks"></a>Notes  
+
  L'élément `<commonParameters>` définit tous les paramètres utilisés globalement dans plusieurs services, par exemple `ConnectionString` lors de l'utilisation de <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService>.  
   
  Pour les services qui valident des lots de travail dans des magasins de persistance, comme <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> et <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>, vous pouvez les activer pour effectuer de nouvelles tentatives de transaction à l'aide du paramètre `EnableRetries` tel qu'indiqué dans l'exemple suivant :  

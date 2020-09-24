@@ -3,14 +3,15 @@ title: <workflow>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 560aa9b6-9cf3-460e-b798-f87d14b1d2de
-ms.openlocfilehash: e2df5d83375b2daa2e39ba1ee990c47a6a04f6fb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fdfaf234b5dda5703da7fc1ca1fe4554d57405f5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79151856"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148683"
 ---
 # \<workflow>
+
 Élément de configuration qui contient toutes les requêtes d'un flux de travail spécifique identifié par la propriété <xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement.ActivityDefinitionId?displayProperty=nameWithType>.  
   
  Pour plus d’informations sur le suivi de workflow et sa configuration, consultez [suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) et [profils](../../../windows-workflow-foundation/tracking-profiles.md)de suivi.  
@@ -80,6 +81,7 @@ ms.locfileid: "79151856"
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -106,7 +108,8 @@ ms.locfileid: "79151856"
 |-------------|-----------------|  
 |[\<trackingProfile>](trackingprofile.md)|Représente une section de configuration pour la création d'un abonnement à des enregistrements de suivi de flux de travail dans un participant au suivi. Un modèle de suivi contient des requêtes de suivi qui permettent à un participant au suivi de s'abonner à des événements de flux de travail émis lorsque l'état d'une instance de flux de travail change au moment de l'exécution. Les requêtes définies dans la section de modèle de suivi déterminent les types d'événements retournés par l'abonnement.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les modèles de suivi contiennent des requêtes de suivi qui permettent à un participant au suivi de s'abonner à des événements de flux de travail émis lorsque l'état d'une instance de flux de travail particulière change au moment de l'exécution. L'instance de flux de travail faisant l'objet d'un suivi est identifiée par cet élément de configuration.  
   
  Selon vos exigences d’analyse, vous pouvez écrire un profil très général, qui s’abonne à un petit jeu de modifications d’état de haut niveau d’un workflow. Inversement, vous pouvez créer un profil très spécifique dont les événements résultants sont suffisamment riches pour reconstruire ultérieurement un flux d'exécution détaillé.  
@@ -140,4 +143,4 @@ ms.locfileid: "79151856"
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement>
 - <xref:System.Activities.Tracking.TrackingProfile>
 - [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)
+- [Modèles de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

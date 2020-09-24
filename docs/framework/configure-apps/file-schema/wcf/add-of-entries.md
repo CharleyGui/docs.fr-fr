@@ -2,14 +2,15 @@
 title: <add> de <entries>
 ms.date: 03/30/2017
 ms.assetid: 3af4805b-dc72-4f68-b168-da4fba8c6170
-ms.openlocfilehash: 23b0a825ea593f85ade870d5b93367571eaa3ec0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 156d8b8d9d0eb05efbf306434ab4555a98bc317e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850507"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149047"
 ---
 # <a name="add-of-entries"></a>\<add> de \<entries>
+
 Représente une entrée de routage qui mappe un filtre à un point de terminaison client défini précédemment. Les messages correspondant à ce filtre sont envoyés à cette destination.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,6 +39,7 @@ Représente une entrée de routage qui mappe un filtre à un point de terminaiso
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -50,6 +52,7 @@ Représente une entrée de routage qui mappe un filtre à un point de terminaiso
 |priority|Entier qui spécifie la priorité de cette entrée.<br /><br /> Les entrées dans la table de routage sont évaluées selon leur priorité, 0 correspondant à la priorité la plus basse. Toutes les entrées d'une priorité donnée sont évaluées simultanément, si aucune entrée correspondante n'est trouvée pour la priorité actuelle, le niveau de priorité suivant est évalué.<br /><br /> Cette valeur est facultative.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

@@ -5,14 +5,15 @@ f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.ServiceModel/client
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#client
 ms.assetid: bf0f7031-76c8-4e7e-a6c6-9ad9119134be
-ms.openlocfilehash: 7aa3755be97a839cb576d53852b75cfe50e39276
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b3234bfa60cd1e3c88778951fc27301c615c84ba
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "72773945"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148956"
 ---
 # \<client>
+
 L'élément `client` définit une liste de points de terminaison auxquels un client peut se connecter.
 
 [**\<configuration>**](../configuration-element.md)\
@@ -33,10 +34,12 @@ L'élément `client` définit une liste de points de terminaison auxquels un cli
 ```
 
 ## <a name="attributes-and-elements"></a>Attributs et éléments
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.
 
 ### <a name="attributes"></a>Attributs
- Aucune
+
+ None
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -51,7 +54,8 @@ L'élément `client` définit une liste de points de terminaison auxquels un cli
 |-------------|-----------------|
 |[\<system.serviceModel>](system-servicemodel.md)|Élément racine de tous les éléments de configuration Windows Communication Foundation (WCF).|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
+
  La section `client` définit une liste de points de terminaison auxquels un client peut se connecter. Chaque point de terminaison répertorié dans la section client définit ses propres liaison, comportement et contrat. Il est identifié uniquement par la combinaison des attributs `name` et `contract`. Le code client spécifie le `name` permettant de se connecter à un point de terminaison pour le service que le client implémente. Si l'attribut `name` est omis, le point de terminaison agit comme point de terminaison par défaut pour le contrat qu'il implémente.
 
  De plus, cette section spécifie également des paramètres pour le traitement des métadonnées.
@@ -77,5 +81,5 @@ L'élément `client` définit une liste de points de terminaison auxquels un cli
 
 - <xref:System.ServiceModel.Configuration.ClientSection>
 - <xref:System.ServiceModel.Configuration.MetadataElement>
-- [Configuration client WCF](../../../wcf/feature-details/client-configuration.md)
+- [Configuration du client WCF](../../../wcf/feature-details/client-configuration.md)
 - [Clients](../../../wcf/feature-details/clients.md)
