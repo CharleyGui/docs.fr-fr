@@ -2,15 +2,16 @@
 title: <resolver>
 ms.date: 03/30/2017
 ms.assetid: 0c00200c-f135-4e5c-a024-76b72bcbc021
-ms.openlocfilehash: c6f5db96ded422493b819d4d75dda6abc9a1676e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6b1fd8e916aef2425377c45a0c85e37773f3ca28
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558860"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150893"
 ---
 # \<resolver>
-<span data-ttu-id="1477c-101">Spécifie un programme de résolution d'homologue utilisé pour résoudre un ID de maille d'homologues en un jeu d'adresses de nœuds d'homologues représentant plusieurs nœuds faisant partie de la maille.</span><span class="sxs-lookup"><span data-stu-id="1477c-101">Specifies a peer resolver that is used to resolve a peer mesh ID to a set of peer node addresses that represents several nodes that participate in the mesh.</span></span>  
+
+<span data-ttu-id="f3698-101">Spécifie un programme de résolution d'homologue utilisé pour résoudre un ID de maille d'homologues en un jeu d'adresses de nœuds d'homologues représentant plusieurs nœuds faisant partie de la maille.</span><span class="sxs-lookup"><span data-stu-id="f3698-101">Specifies a peer resolver that is used to resolve a peer mesh ID to a set of peer node addresses that represents several nodes that participate in the mesh.</span></span>  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
@@ -19,7 +20,7 @@ ms.locfileid: "90558860"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<resolver>**  
   
-## <a name="syntax"></a><span data-ttu-id="1477c-102">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1477c-102">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f3698-102">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f3698-102">Syntax</span></span>  
   
 ```xml  
 <resolver mode="Auto/Custom/Pnrp"
@@ -27,37 +28,39 @@ ms.locfileid: "90558860"
 </resolver>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="1477c-103">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="1477c-103">Attributes and Elements</span></span>  
- <span data-ttu-id="1477c-104">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="1477c-104">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="f3698-103">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="f3698-103">Attributes and Elements</span></span>  
+
+ <span data-ttu-id="f3698-104">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="f3698-104">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="1477c-105">Attributs</span><span class="sxs-lookup"><span data-stu-id="1477c-105">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="f3698-105">Attributs</span><span class="sxs-lookup"><span data-stu-id="f3698-105">Attributes</span></span>  
   
-|<span data-ttu-id="1477c-106">Attribut</span><span class="sxs-lookup"><span data-stu-id="1477c-106">Attribute</span></span>|<span data-ttu-id="1477c-107">Description</span><span class="sxs-lookup"><span data-stu-id="1477c-107">Description</span></span>|  
+|<span data-ttu-id="f3698-106">Attribut</span><span class="sxs-lookup"><span data-stu-id="f3698-106">Attribute</span></span>|<span data-ttu-id="f3698-107">Description</span><span class="sxs-lookup"><span data-stu-id="f3698-107">Description</span></span>|  
 |---------------|-----------------|  
-|`mode`|<span data-ttu-id="1477c-108">Chaîne qui spécifie si l'instance du programme de résolution d'homologue associée à ce service est spécifique au PNRP, à un programme de résolution personnalisé ou si elle est déterminée automatiquement.</span><span class="sxs-lookup"><span data-stu-id="1477c-108">A string that specifies whether the peer resolver instance associated with this service is either PNRP-specific, a custom resolver, or automatically determined.</span></span> <span data-ttu-id="1477c-109">Cet attribut est de type <xref:System.ServiceModel.PeerResolvers.PeerResolverMode>.</span><span class="sxs-lookup"><span data-stu-id="1477c-109">This attribute is of type <xref:System.ServiceModel.PeerResolvers.PeerResolverMode>.</span></span>|  
-|`referralPolicy`|<span data-ttu-id="1477c-110">Chaîne qui spécifie la manière dont les références sont partagées parmi des homologues.</span><span class="sxs-lookup"><span data-stu-id="1477c-110">A string that specifies the way referrals are shared among peers.</span></span> <span data-ttu-id="1477c-111">Cet attribut est de type <xref:System.ServiceModel.PeerResolvers.PeerReferralPolicy>.</span><span class="sxs-lookup"><span data-stu-id="1477c-111">This attribute is of type <xref:System.ServiceModel.PeerResolvers.PeerReferralPolicy>.</span></span>|  
+|`mode`|<span data-ttu-id="f3698-108">Chaîne qui spécifie si l'instance du programme de résolution d'homologue associée à ce service est spécifique au PNRP, à un programme de résolution personnalisé ou si elle est déterminée automatiquement.</span><span class="sxs-lookup"><span data-stu-id="f3698-108">A string that specifies whether the peer resolver instance associated with this service is either PNRP-specific, a custom resolver, or automatically determined.</span></span> <span data-ttu-id="f3698-109">Cet attribut est de type <xref:System.ServiceModel.PeerResolvers.PeerResolverMode>.</span><span class="sxs-lookup"><span data-stu-id="f3698-109">This attribute is of type <xref:System.ServiceModel.PeerResolvers.PeerResolverMode>.</span></span>|  
+|`referralPolicy`|<span data-ttu-id="f3698-110">Chaîne qui spécifie la manière dont les références sont partagées parmi des homologues.</span><span class="sxs-lookup"><span data-stu-id="f3698-110">A string that specifies the way referrals are shared among peers.</span></span> <span data-ttu-id="f3698-111">Cet attribut est de type <xref:System.ServiceModel.PeerResolvers.PeerReferralPolicy>.</span><span class="sxs-lookup"><span data-stu-id="f3698-111">This attribute is of type <xref:System.ServiceModel.PeerResolvers.PeerReferralPolicy>.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="1477c-112">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="1477c-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="f3698-112">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="f3698-112">Child Elements</span></span>  
   
-|<span data-ttu-id="1477c-113">Élément</span><span class="sxs-lookup"><span data-stu-id="1477c-113">Element</span></span>|<span data-ttu-id="1477c-114">Description</span><span class="sxs-lookup"><span data-stu-id="1477c-114">Description</span></span>|  
+|<span data-ttu-id="f3698-113">Élément</span><span class="sxs-lookup"><span data-stu-id="f3698-113">Element</span></span>|<span data-ttu-id="f3698-114">Description</span><span class="sxs-lookup"><span data-stu-id="f3698-114">Description</span></span>|  
 |-------------|-----------------|  
-|[\<headers>](headers.md)|<span data-ttu-id="1477c-115">Spécifie les paramètres pour un service de programme de résolution d'homologue personnalisé.</span><span class="sxs-lookup"><span data-stu-id="1477c-115">Specifies settings for a custom peer resolver service.</span></span>|  
+|[\<headers>](headers.md)|<span data-ttu-id="f3698-115">Spécifie les paramètres pour un service de programme de résolution d'homologue personnalisé.</span><span class="sxs-lookup"><span data-stu-id="f3698-115">Specifies settings for a custom peer resolver service.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="1477c-116">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="1477c-116">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="f3698-116">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="f3698-116">Parent Elements</span></span>  
   
-|<span data-ttu-id="1477c-117">Élément</span><span class="sxs-lookup"><span data-stu-id="1477c-117">Element</span></span>|<span data-ttu-id="1477c-118">Description</span><span class="sxs-lookup"><span data-stu-id="1477c-118">Description</span></span>|  
+|<span data-ttu-id="f3698-117">Élément</span><span class="sxs-lookup"><span data-stu-id="f3698-117">Element</span></span>|<span data-ttu-id="f3698-118">Description</span><span class="sxs-lookup"><span data-stu-id="f3698-118">Description</span></span>|  
 |-------------|-----------------|  
-|[\<binding>](bindings.md)|<span data-ttu-id="1477c-119">Définit toutes les fonctions de liaison de [\<netPeerTcpBinding>](netpeertcpbinding.md) .</span><span class="sxs-lookup"><span data-stu-id="1477c-119">Defines all binding capabilities of the [\<netPeerTcpBinding>](netpeertcpbinding.md).</span></span>|  
+|[\<binding>](bindings.md)|<span data-ttu-id="f3698-119">Définit toutes les fonctions de liaison de [\<netPeerTcpBinding>](netpeertcpbinding.md) .</span><span class="sxs-lookup"><span data-stu-id="f3698-119">Defines all binding capabilities of the [\<netPeerTcpBinding>](netpeertcpbinding.md).</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="1477c-120">Notes</span><span class="sxs-lookup"><span data-stu-id="1477c-120">Remarks</span></span>  
- <span data-ttu-id="1477c-121">Un programme de résolution de nom d'homologue est un service de découverte utilisé par les canaux homologues afin de rechercher des nœuds d'homologues faisant partie d'une maille d'homologues.</span><span class="sxs-lookup"><span data-stu-id="1477c-121">A peer name resolver is a discovery service used by peer channels to find peer nodes that participate in a peer mesh.</span></span> <span data-ttu-id="1477c-122">Il est également utilisé pour « inscrire » un nœud avec un maillage d'homologue, le mécanisme par lequel le nœud homologue est connu et disponible à partir du maillage d'homologue.</span><span class="sxs-lookup"><span data-stu-id="1477c-122">It is also used to "register" a node with a peer mesh, the mechanism by which the peer node becomes known and available from the peer mesh.</span></span> <span data-ttu-id="1477c-123">Pour plus d’informations sur les programmes de résolution d’homologue, consultez programmes de [résolution d’homologue](../../../wcf/feature-details/peer-resolvers.md).</span><span class="sxs-lookup"><span data-stu-id="1477c-123">For more information on peer resolvers, see [Peer Resolvers](../../../wcf/feature-details/peer-resolvers.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f3698-120">Notes</span><span class="sxs-lookup"><span data-stu-id="f3698-120">Remarks</span></span>  
+
+ <span data-ttu-id="f3698-121">Un programme de résolution de nom d'homologue est un service de découverte utilisé par les canaux homologues afin de rechercher des nœuds d'homologues faisant partie d'une maille d'homologues.</span><span class="sxs-lookup"><span data-stu-id="f3698-121">A peer name resolver is a discovery service used by peer channels to find peer nodes that participate in a peer mesh.</span></span> <span data-ttu-id="f3698-122">Il est également utilisé pour « inscrire » un nœud avec un maillage d'homologue, le mécanisme par lequel le nœud homologue est connu et disponible à partir du maillage d'homologue.</span><span class="sxs-lookup"><span data-stu-id="f3698-122">It is also used to "register" a node with a peer mesh, the mechanism by which the peer node becomes known and available from the peer mesh.</span></span> <span data-ttu-id="f3698-123">Pour plus d’informations sur les programmes de résolution d’homologue, consultez programmes de [résolution d’homologue](../../../wcf/feature-details/peer-resolvers.md).</span><span class="sxs-lookup"><span data-stu-id="f3698-123">For more information on peer resolvers, see [Peer Resolvers](../../../wcf/feature-details/peer-resolvers.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1477c-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1477c-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f3698-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f3698-124">See also</span></span>
 
 - <xref:System.ServiceModel.PeerResolver>
 - <xref:System.ServiceModel.PeerResolvers.PeerResolverSettings>
 - <xref:System.ServiceModel.NetPeerTcpBinding.Resolver%2A>
 - <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement.Resolver%2A>
 - <xref:System.ServiceModel.Configuration.PeerResolverElement>
-- [<span data-ttu-id="1477c-125">Programmes de résolution d'homologue</span><span class="sxs-lookup"><span data-stu-id="1477c-125">Peer Resolvers</span></span>](../../../wcf/feature-details/peer-resolvers.md)
-- <span data-ttu-id="1477c-126">[Ajout d'un programme de résolution personnalisé à une application PeerChannel](/previous-versions/ms730105(v=vs.90))</span><span class="sxs-lookup"><span data-stu-id="1477c-126">[Adding a Custom Resolver to a PeerChannel Application](/previous-versions/ms730105(v=vs.90))</span></span>
+- [<span data-ttu-id="f3698-125">Programmes de résolution d'homologue</span><span class="sxs-lookup"><span data-stu-id="f3698-125">Peer Resolvers</span></span>](../../../wcf/feature-details/peer-resolvers.md)
+- <span data-ttu-id="f3698-126">[Ajout d'un programme de résolution personnalisé à une application PeerChannel](/previous-versions/ms730105(v=vs.90))</span><span class="sxs-lookup"><span data-stu-id="f3698-126">[Adding a Custom Resolver to a PeerChannel Application](/previous-versions/ms730105(v=vs.90))</span></span>
