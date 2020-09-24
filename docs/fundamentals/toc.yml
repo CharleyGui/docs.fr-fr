@@ -715,7 +715,7 @@ items:
       - name: Injection de dépendances
         href: /aspnet/core/fundamentals/dependency-injection
       - name: Hôte générique
-        href: /aspnet/core/fundamentals/host/generic-host
+        href: ../core/extensions/generic-host.md
       - name: Journalisation
         href: /aspnet/core/fundamentals/logging
       - name: Modèle d’options
