@@ -2,12 +2,12 @@
 title: Applications monolithiques
 description: Comprenez les principes de base de la mise en conteneur des applications monolithiques.
 ms.date: 08/06/2020
-ms.openlocfilehash: f188a2ff576436d9378030e0a858ffb8110dad17
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: c9a5baf209a47f62f421a236c0b04fe5dae37e3a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915449"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163542"
 ---
 # <a name="monolithic-applications"></a>Applications monolithiques
 
@@ -37,7 +37,7 @@ Du point de vue de l’infrastructure, chaque serveur peut exécuter de nombreus
 
 Enfin, du point de vue de la disponibilité, les applications monolithiques doivent être déployées dans leur intégralité ; autrement dit, si vous devez les *arrêter et démarrer*, toutes les fonctionnalités et tous les utilisateurs seront affectés pendant la fenêtre de déploiement. Dans certaines situations, l’utilisation d’Azure et de conteneurs peut en limiter les effets et réduire la probabilité que votre application subisse des temps d’arrêt, comme le montre la figure 4-3.
 
-Vous pouvez déployer les applications monolithiques dans Azure en utilisant des machines virtuelles dédiées pour chaque instance. En utilisant [Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), vous pouvez facilement mettre à l’échelle les machines virtuelles.
+Vous pouvez déployer les applications monolithiques dans Azure en utilisant des machines virtuelles dédiées pour chaque instance. En utilisant [Azure Virtual Machine Scale Sets](/azure/virtual-machine-scale-sets/), vous pouvez facilement mettre à l’échelle les machines virtuelles.
 
 Vous pouvez aussi utiliser [Azure App Services](https://azure.microsoft.com/services/app-service/) pour exécuter des applications monolithiques et mettre facilement à l’échelle les instances sans avoir à gérer les machines virtuelles. Azure App Services peut également exécuter des instances uniques de conteneurs Docker, ce qui simplifie le déploiement.
 

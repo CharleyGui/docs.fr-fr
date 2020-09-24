@@ -2,14 +2,15 @@
 title: <transport> de <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
-ms.openlocfilehash: b975015a9c9a0af53117900c45d917ce1c1a53e9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 996b3655b0698595256c9a7197f705d46e6e9fcf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73732811"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169815"
 ---
 # <a name="transport-of-nethttpbinding"></a>\<transport> de \<netHttpBinding>
+
 Définit les propriétés qui déterminent les paramètres d'authentification pour le transport HTTP.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,6 +42,7 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -58,7 +60,7 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
 |Valeur|Description|  
 |-----------|-----------------|  
 |None|Les messages ne sont pas sécurisés pendant le transfert.|  
-|De base|Spécifie l'authentification de base.|  
+|Basic|Spécifie l'authentification de base.|  
 |Digest|Spécifie l’authentification Digest.|  
 |Ntlm|Spécifie l'authentification NTLM le cas échéant et en cas d'échec d'authentification Windows.|  
 |Windows|Spécifie l'authentification intégrée Windows.|  
@@ -68,14 +70,15 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
 |Valeur|Description|  
 |-----------|-----------------|  
 |None|-Les messages ne sont pas sécurisés lors du transfert.|  
-|De base|Spécifie l’authentification de base telle que définie par RFC 2617 – Authentification HTTP : Authentification de base et Digest.|  
+|Basic|Spécifie l’authentification de base telle que définie par RFC 2617 – Authentification HTTP : Authentification de base et Digest.|  
 |Digest|Spécifie l'authentification Digest telle que définie par RFC 2617 – Authentification HTTP : Authentification de base et Digest.|  
 |Ntlm|Spécifie l'authentification NTLM le cas échéant et en cas d'échec d'authentification Windows.|  
 |Windows|Spécifie l'authentification intégrée Windows.|  
 |Certificat|Effectue l'authentification du client à l'aide d'un certificat. Cette option fonctionne uniquement si l'attribut `Mode` de l'élément `security` parent est configuré pour le transport et ne fonctionnera pas s'il a la valeur TransportCredentialOnly.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -84,6 +87,7 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
 |[\<security>](security-of-nethttpbinding.md)|Définit les fonctionnalités de sécurité pour [\<netHttpBinding>](nethttpbinding.md) .|  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant montre l'utilisation de la sécurité de transport SSL avec la liaison de base. Par défaut, la liaison de base prend en charge la communication HTTP.  
   
 ```xml  
@@ -123,7 +127,7 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
 - <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>
 - <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
 - <xref:System.ServiceModel.HttpTransportSecurity>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

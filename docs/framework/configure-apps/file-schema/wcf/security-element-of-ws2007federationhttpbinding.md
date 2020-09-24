@@ -1,15 +1,16 @@
 ---
-title: <security>élément de<ws2007FederationHttpBinding>
+title: <security> élément de <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 826219b4-3a16-45fc-832d-0cd7cbbd3b84
-ms.openlocfilehash: b85c54c6507313522286e0c66504cfd0c8afb2b0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 943ccc241aef15b58661699408b085d98cf86c3b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738726"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183700"
 ---
-# <a name="security-element-of-ws2007federationhttpbinding"></a>\<security>élément de\<ws2007FederationHttpBinding>
+# <a name="security-element-of-ws2007federationhttpbinding"></a>\<security> élément de \<ws2007FederationHttpBinding>
+
 Définit les paramètres de sécurité de l' [\<ws2007FederationHttpBinding>](ws2007federationhttpbinding.md) élément.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Définit les paramètres de sécurité de l' [\<ws2007FederationHttpBinding>](ws
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -71,8 +73,8 @@ Définit les paramètres de sécurité de l' [\<ws2007FederationHttpBinding>](ws
 - <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>
-- [Guide pratique pour créer une liaison WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Procédure : créer un WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Sélection d'un type d'informations d'identification](../../../wcf/feature-details/selecting-a-credential-type.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)

@@ -2,12 +2,12 @@
 title: État et données dans les applications Docker
 description: Découvrez l’option disponible pour enregistrer l’état dans des applications conteneurisées.
 ms.date: 08/06/2020
-ms.openlocfilehash: dc9a1a3eccb77e9fd67e69fd3295f3db1edf5e66
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: d55519e9340ec06588c2dae3e7363d03f263ce39
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915313"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163464"
 ---
 # <a name="state-and-data-in-docker-applications"></a>État et données dans les applications Docker
 
@@ -27,7 +27,7 @@ Les solutions suivantes sont utilisées pour gérer les données persistantes da
 
 - Le service [Stockage Azure](https://azure.microsoft.com/documentation/services/storage/) fournit un stockage géographiquement distribuable, offrant une bonne solution de persistance à long terme pour les conteneurs.
 
-- Des bases de données relationnelles distantes, comme [Azure SQL Database](https://azure.microsoft.com/services/sql-database/), des bases de données NoSQL, comme [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) ou des services de cache, comme [Redis](https://redis.io/).
+- Des bases de données relationnelles distantes, comme [Azure SQL Database](https://azure.microsoft.com/services/sql-database/), des bases de données NoSQL, comme [Azure Cosmos DB](/azure/cosmos-db/introduction) ou des services de cache, comme [Redis](https://redis.io/).
 
 À partir du conteneur Docker :
 

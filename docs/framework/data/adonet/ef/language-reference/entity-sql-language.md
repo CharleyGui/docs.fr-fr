@@ -2,14 +2,15 @@
 title: Langage d'Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 9e7d8837-28c5-429d-a824-7bafb59724cf
-ms.openlocfilehash: 2600b7626ebc5196c702f2d1e3159fd9549227f7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 721a4cd9d4e5618c083392bbe1ae203f285f8feb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553380"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148112"
 ---
 # <a name="entity-sql-language"></a>Langage d'Entity SQL
+
 Entity SQL est un langage de requête indépendant du stockage et semblable à SQL. Entity SQL vous permet d'interroger des données d'entité, en tant qu'objets ou sous une forme tabulaire. Vous devez envisager d'utiliser Entity SQL dans les cas suivants :  
   
 - Lorsqu'une requête doit être construite dynamiquement au moment de l'exécution. Dans ce cas, vous devez également envisager d'utiliser les méthodes du Générateur de requêtes d'<xref:System.Data.Objects.ObjectQuery%601> au lieu de construire une chaîne de requête Entity SQL au moment de l'exécution.  
@@ -21,6 +22,7 @@ Entity SQL est un langage de requête indépendant du stockage et semblable à S
 - Si vous êtes déjà un expert des langages de requête basés sur SQL, Entity SQL peut vous sembler le choix le plus naturel.  
   
 ## <a name="using-entity-sql-with-the-entityclient-provider"></a>Utilisation de Entity SQL avec le fournisseur EntityClient  
+
  Pour plus d'informations sur l'utilisation de Entity SQL avec le fournisseur EntityClient, consultez les rubriques suivantes :  
   
  [Fournisseur EntityClient pour Entity Framework](../entityclient-provider-for-the-entity-framework.md)  
@@ -46,6 +48,7 @@ Entity SQL est un langage de requête indépendant du stockage et semblable à S
  [Procédure : Parcourir les relations avec l’opérateur Navigate](../how-to-navigate-relationships-with-the-navigate-operator.md)  
   
 ## <a name="using-entity-sql-with-object-queries"></a>Utilisation de Entity SQL avec des requêtes d'objet  
+
  Pour plus d'informations sur l'utilisation de Entity SQL avec des requêtes d'objet, consultez les rubriques suivantes :  
   
  [Comment : exécuter une requête qui retourne les objets de type entity](/previous-versions/dotnet/netframework-4.0/bb738694(v=vs.100))  
@@ -75,6 +78,7 @@ Entity SQL est un langage de requête indépendant du stockage et semblable à S
  [Procédure : pagination dans les résultats d’une requête](/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Vue d'ensemble d'Entity SQL](entity-sql-overview.md)  
   
  [Référence Entity SQL](entity-sql-reference.md)  
