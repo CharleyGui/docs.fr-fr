@@ -7,58 +7,62 @@ helpviewer_keywords:
 - C# language, events
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
-ms.openlocfilehash: 86ded81de4b9191c50b993c08b0e87712ff69020
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 14c18006e393dece5d32d30c2a727d797515c779
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545491"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167455"
 ---
-# <a name="events-c-programming-guide"></a><span data-ttu-id="83fd2-104">Événements (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="83fd2-104">Events (C# Programming Guide)</span></span>
-<span data-ttu-id="83fd2-105">Les événements permettent à une [classe](../../language-reference/keywords/class.md) ou à un objet de notifier d’autres classes ou objets quand quelque chose de significatif se produit.</span><span class="sxs-lookup"><span data-stu-id="83fd2-105">Events enable a [class](../../language-reference/keywords/class.md) or object to notify other classes or objects when something of interest occurs.</span></span> <span data-ttu-id="83fd2-106">La classe qui envoie (ou *déclenche*) l’événement est appelée *publieur* et les classes qui reçoivent (ou *gèrent*) l’événement sont appelées *abonnés*.</span><span class="sxs-lookup"><span data-stu-id="83fd2-106">The class that sends (or *raises*) the event is called the *publisher* and the classes that receive (or *handle*) the event are called *subscribers*.</span></span>  
-  
-<span data-ttu-id="83fd2-107">Dans une application C# Windows Forms ou web classique, vous vous abonnez à des événements déclenchés par des contrôles, comme des boutons et des zones de liste.</span><span class="sxs-lookup"><span data-stu-id="83fd2-107">In a typical C# Windows Forms or Web application, you subscribe to events raised by controls such as buttons and list boxes.</span></span> <span data-ttu-id="83fd2-108">Vous pouvez utiliser l’IDE Visual C# pour parcourir les événements publiés par un contrôle et sélectionner ceux que vous voulez gérer.</span><span class="sxs-lookup"><span data-stu-id="83fd2-108">You can use the Visual C# integrated development environment (IDE) to browse the events that a control publishes and select the ones that you want to handle.</span></span> <span data-ttu-id="83fd2-109">L’IDE permet d’ajouter automatiquement une méthode de gestionnaire d’événements vide et le code pour vous abonner à l’événement.</span><span class="sxs-lookup"><span data-stu-id="83fd2-109">The IDE provides an easy way to automatically add an empty event handler method and the code to subscribe to the event.</span></span> <span data-ttu-id="83fd2-110">Pour plus d’informations, consultez [Comment s’abonner et annuler l’abonnement à des événements](./how-to-subscribe-to-and-unsubscribe-from-events.md).</span><span class="sxs-lookup"><span data-stu-id="83fd2-110">For more information, see [How to subscribe to and unsubscribe from events](./how-to-subscribe-to-and-unsubscribe-from-events.md).</span></span>
-  
-## <a name="events-overview"></a><span data-ttu-id="83fd2-111">Vue d'ensemble des événements</span><span class="sxs-lookup"><span data-stu-id="83fd2-111">Events Overview</span></span>  
- <span data-ttu-id="83fd2-112">Les événements ont les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="83fd2-112">Events have the following properties:</span></span>  
-  
-- <span data-ttu-id="83fd2-113">Le publieur détermine quand un événement est déclenché ; les abonnés déterminent l’action entreprise en réponse à l’événement.</span><span class="sxs-lookup"><span data-stu-id="83fd2-113">The publisher determines when an event is raised; the subscribers determine what action is taken in response to the event.</span></span>  
-  
-- <span data-ttu-id="83fd2-114">Un événement peut avoir plusieurs abonnés.</span><span class="sxs-lookup"><span data-stu-id="83fd2-114">An event can have multiple subscribers.</span></span> <span data-ttu-id="83fd2-115">Un abonné peut gérer plusieurs événements provenant de plusieurs publieurs.</span><span class="sxs-lookup"><span data-stu-id="83fd2-115">A subscriber can handle multiple events from multiple publishers.</span></span>  
-  
-- <span data-ttu-id="83fd2-116">Les événements qui n’ont aucun abonné ne sont jamais déclenchés.</span><span class="sxs-lookup"><span data-stu-id="83fd2-116">Events that have no subscribers are never raised.</span></span>  
-  
-- <span data-ttu-id="83fd2-117">Les événements sont généralement utilisés pour signaler des actions de l’utilisateur, comme les clics de bouton ou les sélections de menu dans les interfaces utilisateur graphiques.</span><span class="sxs-lookup"><span data-stu-id="83fd2-117">Events are typically used to signal user actions such as button clicks or menu selections in graphical user interfaces.</span></span>  
-  
-- <span data-ttu-id="83fd2-118">Quand un événement a plusieurs abonnés, les gestionnaires d’événements sont appelées de façon synchrone quand un événement est déclenché.</span><span class="sxs-lookup"><span data-stu-id="83fd2-118">When an event has multiple subscribers, the event handlers are invoked synchronously when an event is raised.</span></span> <span data-ttu-id="83fd2-119">Pour appeler des événements de façon asynchrone, consultez [Calling Synchronous Methods Asynchronously](../../../standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).</span><span class="sxs-lookup"><span data-stu-id="83fd2-119">To invoke events asynchronously, see [Calling Synchronous Methods Asynchronously](../../../standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).</span></span>  
-  
-- <span data-ttu-id="83fd2-120">Dans la bibliothèque de classes .NET, les événements sont basés sur le <xref:System.EventHandler> délégué et la <xref:System.EventArgs> classe de base.</span><span class="sxs-lookup"><span data-stu-id="83fd2-120">In the .NET class library, events are based on the <xref:System.EventHandler> delegate and the <xref:System.EventArgs> base class.</span></span>  
-  
-## <a name="related-sections"></a><span data-ttu-id="83fd2-121">Sections connexes</span><span class="sxs-lookup"><span data-stu-id="83fd2-121">Related Sections</span></span>  
- <span data-ttu-id="83fd2-122">Pour plus d'informations, consultez les pages suivantes :</span><span class="sxs-lookup"><span data-stu-id="83fd2-122">For more information, see:</span></span>  
-  
-- [<span data-ttu-id="83fd2-123">Comment s’abonner à des événements et s’en désabonner</span><span class="sxs-lookup"><span data-stu-id="83fd2-123">How to subscribe to and unsubscribe from events</span></span>](./how-to-subscribe-to-and-unsubscribe-from-events.md)
+# <a name="events-c-programming-guide"></a><span data-ttu-id="6ee1b-104">Événements (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="6ee1b-104">Events (C# Programming Guide)</span></span>
 
-- [<span data-ttu-id="83fd2-124">Comment publier des événements conformes aux indications de .NET</span><span class="sxs-lookup"><span data-stu-id="83fd2-124">How to publish events that conform to .NET Guidelines</span></span>](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
-
-- [<span data-ttu-id="83fd2-125">Comment déclencher des événements de la classe de base dans les classes dérivées</span><span class="sxs-lookup"><span data-stu-id="83fd2-125">How to raise base class events in derived classes</span></span>](./how-to-raise-base-class-events-in-derived-classes.md)
-
-- [<span data-ttu-id="83fd2-126">Comment implémenter des événements d’interface</span><span class="sxs-lookup"><span data-stu-id="83fd2-126">How to implement interface events</span></span>](./how-to-implement-interface-events.md)
-
-- [<span data-ttu-id="83fd2-127">Comment implémenter des accesseurs d’événement personnalisés</span><span class="sxs-lookup"><span data-stu-id="83fd2-127">How to implement custom event accessors</span></span>](./how-to-implement-custom-event-accessors.md)
-
-## <a name="c-language-specification"></a><span data-ttu-id="83fd2-128">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="83fd2-128">C# Language Specification</span></span>  
-
-<span data-ttu-id="83fd2-129">Pour plus d’informations, consultez [Événements](~/_csharplang/spec/classes.md#events) dans la [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).</span><span class="sxs-lookup"><span data-stu-id="83fd2-129">For more information, see [Events](~/_csharplang/spec/classes.md#events) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction).</span></span> <span data-ttu-id="83fd2-130">La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.</span><span class="sxs-lookup"><span data-stu-id="83fd2-130">The language specification is the definitive source for C# syntax and usage.</span></span>
+<span data-ttu-id="6ee1b-105">Les événements permettent à une [classe](../../language-reference/keywords/class.md) ou à un objet de notifier d’autres classes ou objets quand quelque chose de significatif se produit.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-105">Events enable a [class](../../language-reference/keywords/class.md) or object to notify other classes or objects when something of interest occurs.</span></span> <span data-ttu-id="6ee1b-106">La classe qui envoie (ou *déclenche*) l’événement est appelée *publieur* et les classes qui reçoivent (ou *gèrent*) l’événement sont appelées *abonnés*.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-106">The class that sends (or *raises*) the event is called the *publisher* and the classes that receive (or *handle*) the event are called *subscribers*.</span></span>  
   
-## <a name="featured-book-chapters"></a><span data-ttu-id="83fd2-131">Chapitres proposés</span><span class="sxs-lookup"><span data-stu-id="83fd2-131">Featured Book Chapters</span></span>  
- <span data-ttu-id="83fd2-132">[Delegates, Events, and Lambda Expressions](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) (Délégués, événements et expressions lambda) dans [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))</span><span class="sxs-lookup"><span data-stu-id="83fd2-132">[Delegates, Events, and Lambda Expressions](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) in [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))</span></span>  
+<span data-ttu-id="6ee1b-107">Dans une application C# Windows Forms ou web classique, vous vous abonnez à des événements déclenchés par des contrôles, comme des boutons et des zones de liste.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-107">In a typical C# Windows Forms or Web application, you subscribe to events raised by controls such as buttons and list boxes.</span></span> <span data-ttu-id="6ee1b-108">Vous pouvez utiliser l’IDE Visual C# pour parcourir les événements publiés par un contrôle et sélectionner ceux que vous voulez gérer.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-108">You can use the Visual C# integrated development environment (IDE) to browse the events that a control publishes and select the ones that you want to handle.</span></span> <span data-ttu-id="6ee1b-109">L’IDE permet d’ajouter automatiquement une méthode de gestionnaire d’événements vide et le code pour vous abonner à l’événement.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-109">The IDE provides an easy way to automatically add an empty event handler method and the code to subscribe to the event.</span></span> <span data-ttu-id="6ee1b-110">Pour plus d’informations, consultez [Comment s’abonner et annuler l’abonnement à des événements](./how-to-subscribe-to-and-unsubscribe-from-events.md).</span><span class="sxs-lookup"><span data-stu-id="6ee1b-110">For more information, see [How to subscribe to and unsubscribe from events](./how-to-subscribe-to-and-unsubscribe-from-events.md).</span></span>
   
- <span data-ttu-id="83fd2-133">[Delegates and Events](/previous-versions/visualstudio/visual-studio-2008/ff652490(v=orm.10)) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](/previous-versions/visualstudio/visual-studio-2008/ff652493(v=orm.10))</span><span class="sxs-lookup"><span data-stu-id="83fd2-133">[Delegates and Events](/previous-versions/visualstudio/visual-studio-2008/ff652490(v=orm.10)) in [Learning C# 3.0: Master the fundamentals of C# 3.0](/previous-versions/visualstudio/visual-studio-2008/ff652493(v=orm.10))</span></span>  
+## <a name="events-overview"></a><span data-ttu-id="6ee1b-111">Vue d'ensemble des événements</span><span class="sxs-lookup"><span data-stu-id="6ee1b-111">Events Overview</span></span>  
+
+ <span data-ttu-id="6ee1b-112">Les événements ont les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="6ee1b-112">Events have the following properties:</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="83fd2-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="83fd2-134">See also</span></span>
+- <span data-ttu-id="6ee1b-113">Le publieur détermine quand un événement est déclenché ; les abonnés déterminent l’action entreprise en réponse à l’événement.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-113">The publisher determines when an event is raised; the subscribers determine what action is taken in response to the event.</span></span>  
+  
+- <span data-ttu-id="6ee1b-114">Un événement peut avoir plusieurs abonnés.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-114">An event can have multiple subscribers.</span></span> <span data-ttu-id="6ee1b-115">Un abonné peut gérer plusieurs événements provenant de plusieurs publieurs.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-115">A subscriber can handle multiple events from multiple publishers.</span></span>  
+  
+- <span data-ttu-id="6ee1b-116">Les événements qui n’ont aucun abonné ne sont jamais déclenchés.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-116">Events that have no subscribers are never raised.</span></span>  
+  
+- <span data-ttu-id="6ee1b-117">Les événements sont généralement utilisés pour signaler des actions de l’utilisateur, comme les clics de bouton ou les sélections de menu dans les interfaces utilisateur graphiques.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-117">Events are typically used to signal user actions such as button clicks or menu selections in graphical user interfaces.</span></span>  
+  
+- <span data-ttu-id="6ee1b-118">Quand un événement a plusieurs abonnés, les gestionnaires d’événements sont appelées de façon synchrone quand un événement est déclenché.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-118">When an event has multiple subscribers, the event handlers are invoked synchronously when an event is raised.</span></span> <span data-ttu-id="6ee1b-119">Pour appeler des événements de façon asynchrone, consultez [Calling Synchronous Methods Asynchronously](../../../standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).</span><span class="sxs-lookup"><span data-stu-id="6ee1b-119">To invoke events asynchronously, see [Calling Synchronous Methods Asynchronously](../../../standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).</span></span>  
+  
+- <span data-ttu-id="6ee1b-120">Dans la bibliothèque de classes .NET, les événements sont basés sur le <xref:System.EventHandler> délégué et la <xref:System.EventArgs> classe de base.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-120">In the .NET class library, events are based on the <xref:System.EventHandler> delegate and the <xref:System.EventArgs> base class.</span></span>  
+  
+## <a name="related-sections"></a><span data-ttu-id="6ee1b-121">Sections connexes</span><span class="sxs-lookup"><span data-stu-id="6ee1b-121">Related Sections</span></span>  
+
+ <span data-ttu-id="6ee1b-122">Pour plus d'informations, consultez les pages suivantes :</span><span class="sxs-lookup"><span data-stu-id="6ee1b-122">For more information, see:</span></span>  
+  
+- [<span data-ttu-id="6ee1b-123">Comment s’abonner à des événements et s’en désabonner</span><span class="sxs-lookup"><span data-stu-id="6ee1b-123">How to subscribe to and unsubscribe from events</span></span>](./how-to-subscribe-to-and-unsubscribe-from-events.md)
+
+- [<span data-ttu-id="6ee1b-124">Comment publier des événements conformes aux indications de .NET</span><span class="sxs-lookup"><span data-stu-id="6ee1b-124">How to publish events that conform to .NET Guidelines</span></span>](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+
+- [<span data-ttu-id="6ee1b-125">Comment déclencher des événements de la classe de base dans les classes dérivées</span><span class="sxs-lookup"><span data-stu-id="6ee1b-125">How to raise base class events in derived classes</span></span>](./how-to-raise-base-class-events-in-derived-classes.md)
+
+- [<span data-ttu-id="6ee1b-126">Comment implémenter des événements d’interface</span><span class="sxs-lookup"><span data-stu-id="6ee1b-126">How to implement interface events</span></span>](./how-to-implement-interface-events.md)
+
+- [<span data-ttu-id="6ee1b-127">Comment implémenter des accesseurs d’événement personnalisés</span><span class="sxs-lookup"><span data-stu-id="6ee1b-127">How to implement custom event accessors</span></span>](./how-to-implement-custom-event-accessors.md)
+
+## <a name="c-language-specification"></a><span data-ttu-id="6ee1b-128">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="6ee1b-128">C# Language Specification</span></span>  
+
+<span data-ttu-id="6ee1b-129">Pour plus d’informations, consultez [Événements](~/_csharplang/spec/classes.md#events) dans la [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).</span><span class="sxs-lookup"><span data-stu-id="6ee1b-129">For more information, see [Events](~/_csharplang/spec/classes.md#events) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction).</span></span> <span data-ttu-id="6ee1b-130">La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.</span><span class="sxs-lookup"><span data-stu-id="6ee1b-130">The language specification is the definitive source for C# syntax and usage.</span></span>
+  
+## <a name="featured-book-chapters"></a><span data-ttu-id="6ee1b-131">Chapitres proposés</span><span class="sxs-lookup"><span data-stu-id="6ee1b-131">Featured Book Chapters</span></span>  
+
+ <span data-ttu-id="6ee1b-132">[Delegates, Events, and Lambda Expressions](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) (Délégués, événements et expressions lambda) dans [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))</span><span class="sxs-lookup"><span data-stu-id="6ee1b-132">[Delegates, Events, and Lambda Expressions](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) in [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))</span></span>  
+  
+ <span data-ttu-id="6ee1b-133">[Delegates and Events](/previous-versions/visualstudio/visual-studio-2008/ff652490(v=orm.10)) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](/previous-versions/visualstudio/visual-studio-2008/ff652493(v=orm.10))</span><span class="sxs-lookup"><span data-stu-id="6ee1b-133">[Delegates and Events](/previous-versions/visualstudio/visual-studio-2008/ff652490(v=orm.10)) in [Learning C# 3.0: Master the fundamentals of C# 3.0](/previous-versions/visualstudio/visual-studio-2008/ff652493(v=orm.10))</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="6ee1b-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6ee1b-134">See also</span></span>
 
 - <xref:System.EventHandler>
-- [<span data-ttu-id="83fd2-135">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="83fd2-135">C# Programming Guide</span></span>](../index.md)
-- [<span data-ttu-id="83fd2-136">Délégués</span><span class="sxs-lookup"><span data-stu-id="83fd2-136">Delegates</span></span>](../delegates/index.md)
-- [<span data-ttu-id="83fd2-137">Création de gestionnaires d'événements dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="83fd2-137">Creating Event Handlers in Windows Forms</span></span>](/dotnet/desktop/winforms/creating-event-handlers-in-windows-forms)
+- [<span data-ttu-id="6ee1b-135">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="6ee1b-135">C# Programming Guide</span></span>](../index.md)
+- [<span data-ttu-id="6ee1b-136">Délégués</span><span class="sxs-lookup"><span data-stu-id="6ee1b-136">Delegates</span></span>](../delegates/index.md)
+- [<span data-ttu-id="6ee1b-137">Création de gestionnaires d'événements dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="6ee1b-137">Creating Event Handlers in Windows Forms</span></span>](/dotnet/desktop/winforms/creating-event-handlers-in-windows-forms)
