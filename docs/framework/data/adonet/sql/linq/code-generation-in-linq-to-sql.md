@@ -2,37 +2,41 @@
 title: Génération de code dans LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: 551322637e6e04b9be7d558c51e063fead7f84f4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: f58448e0fc0c22795005b55a737b42374a750ec3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70247961"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161527"
 ---
-# <a name="code-generation-in-linq-to-sql"></a><span data-ttu-id="76e1c-102">Génération de code dans LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="76e1c-102">Code Generation in LINQ to SQL</span></span>
-<span data-ttu-id="76e1c-103">Vous pouvez générer du code pour représenter une base de données à l’aide de l’Concepteur Objet Relationnel ou de l’outil en ligne de commande SQLMetal.</span><span class="sxs-lookup"><span data-stu-id="76e1c-103">You can generate code to represent a database by using either the Object Relational Designer or the SQLMetal command-line tool.</span></span> <span data-ttu-id="76e1c-104">Dans l'un et l'autre cas, la génération du code de bout en bout s'effectue en trois étapes :</span><span class="sxs-lookup"><span data-stu-id="76e1c-104">In either case, end-to-end code generation occurs in three stages:</span></span>  
+# <a name="code-generation-in-linq-to-sql"></a><span data-ttu-id="20f5c-102">Génération de code dans LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="20f5c-102">Code Generation in LINQ to SQL</span></span>
+
+<span data-ttu-id="20f5c-103">Vous pouvez générer du code pour représenter une base de données à l’aide de l’Concepteur Objet Relationnel ou de l’outil en ligne de commande SQLMetal.</span><span class="sxs-lookup"><span data-stu-id="20f5c-103">You can generate code to represent a database by using either the Object Relational Designer or the SQLMetal command-line tool.</span></span> <span data-ttu-id="20f5c-104">Dans l'un et l'autre cas, la génération du code de bout en bout s'effectue en trois étapes :</span><span class="sxs-lookup"><span data-stu-id="20f5c-104">In either case, end-to-end code generation occurs in three stages:</span></span>  
   
-1. <span data-ttu-id="76e1c-105">L' *extracteur dbml* extrait les informations de schéma de la base de données et réassemble les informations dans un fichier DBML au format XML.</span><span class="sxs-lookup"><span data-stu-id="76e1c-105">The *DBML Extractor* extracts schema information from the database and reassembles the information into an XML-formatted DBML file.</span></span>  
+1. <span data-ttu-id="20f5c-105">L' *extracteur dbml* extrait les informations de schéma de la base de données et réassemble les informations dans un fichier DBML au format XML.</span><span class="sxs-lookup"><span data-stu-id="20f5c-105">The *DBML Extractor* extracts schema information from the database and reassembles the information into an XML-formatted DBML file.</span></span>  
   
-2. <span data-ttu-id="76e1c-106">Le fichier DBML est analysé par le *validateur dbml* pour rechercher les erreurs.</span><span class="sxs-lookup"><span data-stu-id="76e1c-106">The DBML file is scanned by the *DBML Validator* for errors.</span></span>  
+2. <span data-ttu-id="20f5c-106">Le fichier DBML est analysé par le *validateur dbml* pour rechercher les erreurs.</span><span class="sxs-lookup"><span data-stu-id="20f5c-106">The DBML file is scanned by the *DBML Validator* for errors.</span></span>  
   
-3. <span data-ttu-id="76e1c-107">Si aucune erreur de validation n’apparaît, le fichier est passé au Générateur de code.</span><span class="sxs-lookup"><span data-stu-id="76e1c-107">If no validation errors appear, the file is passed to the Code Generator.</span></span>  
+3. <span data-ttu-id="20f5c-107">Si aucune erreur de validation n’apparaît, le fichier est passé au Générateur de code.</span><span class="sxs-lookup"><span data-stu-id="20f5c-107">If no validation errors appear, the file is passed to the Code Generator.</span></span>  
   
- <span data-ttu-id="76e1c-108">Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="76e1c-108">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="76e1c-109">Les développeurs qui utilisent Visual Studio peuvent également utiliser le Concepteur Objet Relationnel pour générer du code.</span><span class="sxs-lookup"><span data-stu-id="76e1c-109">Developers using Visual Studio can also use the Object Relational Designer to generate code.</span></span> <span data-ttu-id="76e1c-110">Consultez [LINQ to SQL Tools dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span><span class="sxs-lookup"><span data-stu-id="76e1c-110">See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span></span>  
+ <span data-ttu-id="20f5c-108">Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="20f5c-108">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="20f5c-109">Les développeurs qui utilisent Visual Studio peuvent également utiliser le Concepteur Objet Relationnel pour générer du code.</span><span class="sxs-lookup"><span data-stu-id="20f5c-109">Developers using Visual Studio can also use the Object Relational Designer to generate code.</span></span> <span data-ttu-id="20f5c-110">Consultez [LINQ to SQL Tools dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span><span class="sxs-lookup"><span data-stu-id="20f5c-110">See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span></span>  
   
-## <a name="dbml-extractor"></a><span data-ttu-id="76e1c-111">Extracteur DBML</span><span class="sxs-lookup"><span data-stu-id="76e1c-111">DBML Extractor</span></span>  
- <span data-ttu-id="76e1c-112">L’extracteur dbml est [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] un composant qui prend les métadonnées de base de données comme entrée et génère un fichier DBML en sortie.</span><span class="sxs-lookup"><span data-stu-id="76e1c-112">The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.</span></span>  
+## <a name="dbml-extractor"></a><span data-ttu-id="20f5c-111">Extracteur DBML</span><span class="sxs-lookup"><span data-stu-id="20f5c-111">DBML Extractor</span></span>  
+
+ <span data-ttu-id="20f5c-112">L’extracteur DBML est un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] composant qui prend les métadonnées de base de données comme entrée et génère un fichier DBML en sortie.</span><span class="sxs-lookup"><span data-stu-id="20f5c-112">The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.</span></span>  
   
-## <a name="code-generator"></a><span data-ttu-id="76e1c-113">Générateur de code</span><span class="sxs-lookup"><span data-stu-id="76e1c-113">Code Generator</span></span>  
- <span data-ttu-id="76e1c-114">Le générateur de code est [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] un composant qui traduit des fichiers dbml en Visual Basic, C#ou des fichiers de mappage XML.</span><span class="sxs-lookup"><span data-stu-id="76e1c-114">The Code Generator is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that translates DBML files to Visual Basic, C#, or XML mapping files.</span></span>  
+## <a name="code-generator"></a><span data-ttu-id="20f5c-113">Générateur de code</span><span class="sxs-lookup"><span data-stu-id="20f5c-113">Code Generator</span></span>  
+
+ <span data-ttu-id="20f5c-114">Le générateur de code est un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] composant qui traduit les fichiers dbml en fichiers de mappage Visual Basic, C# ou XML.</span><span class="sxs-lookup"><span data-stu-id="20f5c-114">The Code Generator is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that translates DBML files to Visual Basic, C#, or XML mapping files.</span></span>  
   
-## <a name="xml-schema-definition-file"></a><span data-ttu-id="76e1c-115">Fichier de définition de schéma XML</span><span class="sxs-lookup"><span data-stu-id="76e1c-115">XML Schema Definition File</span></span>  
- <span data-ttu-id="76e1c-116">Le fichier DBML doit être valide par rapport à la définition de schéma suivante en tant que fichier XSD.</span><span class="sxs-lookup"><span data-stu-id="76e1c-116">The DBML file must be valid against the following schema definition as an XSD file.</span></span>  
+## <a name="xml-schema-definition-file"></a><span data-ttu-id="20f5c-115">Fichier de définition de schéma XML</span><span class="sxs-lookup"><span data-stu-id="20f5c-115">XML Schema Definition File</span></span>  
+
+ <span data-ttu-id="20f5c-116">Le fichier DBML doit être valide par rapport à la définition de schéma suivante en tant que fichier XSD.</span><span class="sxs-lookup"><span data-stu-id="20f5c-116">The DBML file must be valid against the following schema definition as an XSD file.</span></span>  
   
- <span data-ttu-id="76e1c-117">Distinguez ce fichier de définition de schéma du fichier de définition de schéma utilisé pour valider un fichier de mappage externe.</span><span class="sxs-lookup"><span data-stu-id="76e1c-117">Distinguish this schema definition file from the schema definition file that is used to validate an external mapping file.</span></span> <span data-ttu-id="76e1c-118">Pour plus d’informations, consultez [mappage externe](external-mapping.md)).</span><span class="sxs-lookup"><span data-stu-id="76e1c-118">For more information, see [External Mapping](external-mapping.md)).</span></span>  
+ <span data-ttu-id="20f5c-117">Distinguez ce fichier de définition de schéma du fichier de définition de schéma utilisé pour valider un fichier de mappage externe.</span><span class="sxs-lookup"><span data-stu-id="20f5c-117">Distinguish this schema definition file from the schema definition file that is used to validate an external mapping file.</span></span> <span data-ttu-id="20f5c-118">Pour plus d’informations, consultez [mappage externe](external-mapping.md)).</span><span class="sxs-lookup"><span data-stu-id="20f5c-118">For more information, see [External Mapping](external-mapping.md)).</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="76e1c-119">Les utilisateurs de Visual Studio trouveront également ce fichier XSD dans la boîte de dialogue schémas XML en tant que « DbmlSchema. xsd ».</span><span class="sxs-lookup"><span data-stu-id="76e1c-119">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "DbmlSchema.xsd".</span></span> <span data-ttu-id="76e1c-120">Pour utiliser correctement le fichier XSD pour valider un fichier DBML, consultez [procédure : Validez les fichiers](how-to-validate-dbml-and-external-mapping-files.md)de mappage dbml et externe.</span><span class="sxs-lookup"><span data-stu-id="76e1c-120">To use the XSD file correctly for validating a DBML file, see [How to: Validate DBML and External Mapping Files](how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
+> <span data-ttu-id="20f5c-119">Les utilisateurs de Visual Studio trouveront également ce fichier XSD dans la boîte de dialogue schémas XML en tant que « DbmlSchema. xsd ».</span><span class="sxs-lookup"><span data-stu-id="20f5c-119">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "DbmlSchema.xsd".</span></span> <span data-ttu-id="20f5c-120">Pour utiliser correctement le fichier XSD pour valider un fichier DBML, consultez [Comment : valider dbml et les fichiers de mappage externes](how-to-validate-dbml-and-external-mapping-files.md).</span><span class="sxs-lookup"><span data-stu-id="20f5c-120">To use the XSD file correctly for validating a DBML file, see [How to: Validate DBML and External Mapping Files](how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -242,8 +246,9 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="sample-dbml-file"></a><span data-ttu-id="76e1c-121">Exemple de fichier DBML</span><span class="sxs-lookup"><span data-stu-id="76e1c-121">Sample DBML File</span></span>  
- <span data-ttu-id="76e1c-122">Le code suivant est un extrait du fichier DBML créé à partir de la base de données d'exemple Northwind.</span><span class="sxs-lookup"><span data-stu-id="76e1c-122">The following code is an excerpt from the DBML file created from the Northwind sample database.</span></span> <span data-ttu-id="76e1c-123">Vous pouvez générer le fichier entier en utilisant SQLMetal avec l’option **/XML** .</span><span class="sxs-lookup"><span data-stu-id="76e1c-123">You can generate the whole file by using SQLMetal with the **/xml** option.</span></span> <span data-ttu-id="76e1c-124">Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="76e1c-124">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
+## <a name="sample-dbml-file"></a><span data-ttu-id="20f5c-121">Exemple de fichier DBML</span><span class="sxs-lookup"><span data-stu-id="20f5c-121">Sample DBML File</span></span>  
+
+ <span data-ttu-id="20f5c-122">Le code suivant est un extrait du fichier DBML créé à partir de la base de données d'exemple Northwind.</span><span class="sxs-lookup"><span data-stu-id="20f5c-122">The following code is an excerpt from the DBML file created from the Northwind sample database.</span></span> <span data-ttu-id="20f5c-123">Vous pouvez générer le fichier entier en utilisant SQLMetal avec l’option **/XML** .</span><span class="sxs-lookup"><span data-stu-id="20f5c-123">You can generate the whole file by using SQLMetal with the **/xml** option.</span></span> <span data-ttu-id="20f5c-124">Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="20f5c-124">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -269,10 +274,10 @@ elementFormDefault="qualified" >
 </Database>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="76e1c-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="76e1c-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="20f5c-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="20f5c-125">See also</span></span>
 
-- [<span data-ttu-id="76e1c-126">Informations générales</span><span class="sxs-lookup"><span data-stu-id="76e1c-126">Background Information</span></span>](background-information.md)
-- [<span data-ttu-id="76e1c-127">Mappage externe</span><span class="sxs-lookup"><span data-stu-id="76e1c-127">External Mapping</span></span>](external-mapping.md)
-- [<span data-ttu-id="76e1c-128">Guide pratique : Générer le modèle objet en tant que fichier externe</span><span class="sxs-lookup"><span data-stu-id="76e1c-128">How to: Generate the Object Model as an External File</span></span>](how-to-generate-the-object-model-as-an-external-file.md)
-- [<span data-ttu-id="76e1c-129">Téléchargement d’exemples de base de données</span><span class="sxs-lookup"><span data-stu-id="76e1c-129">Downloading Sample Databases</span></span>](downloading-sample-databases.md)
-- [<span data-ttu-id="76e1c-130">Référence</span><span class="sxs-lookup"><span data-stu-id="76e1c-130">Reference</span></span>](reference.md)
+- [<span data-ttu-id="20f5c-126">Informations générales</span><span class="sxs-lookup"><span data-stu-id="20f5c-126">Background Information</span></span>](background-information.md)
+- [<span data-ttu-id="20f5c-127">Mappage externe</span><span class="sxs-lookup"><span data-stu-id="20f5c-127">External Mapping</span></span>](external-mapping.md)
+- [<span data-ttu-id="20f5c-128">Procédure : Générer le modèle objet sous forme de fichier externe</span><span class="sxs-lookup"><span data-stu-id="20f5c-128">How to: Generate the Object Model as an External File</span></span>](how-to-generate-the-object-model-as-an-external-file.md)
+- [<span data-ttu-id="20f5c-129">Téléchargement d’exemples de base de données</span><span class="sxs-lookup"><span data-stu-id="20f5c-129">Downloading Sample Databases</span></span>](downloading-sample-databases.md)
+- [<span data-ttu-id="20f5c-130">Référence</span><span class="sxs-lookup"><span data-stu-id="20f5c-130">Reference</span></span>](reference.md)
