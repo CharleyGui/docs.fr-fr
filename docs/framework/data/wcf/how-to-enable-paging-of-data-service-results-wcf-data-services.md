@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - paging output [WCF Data Services]
 ms.assetid: 9a316cbd-9612-4482-a541-a10bc78b2635
-ms.openlocfilehash: 6b7cea2475a5c11091a04ef3044bbc958e55fc5d
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 1c8bb8fe757c35f6096b139da6ca939b1ce1c283
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569091"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150620"
 ---
 # <a name="how-to-enable-paging-of-data-service-results-wcf-data-services"></a>Comment : activer la pagination des résultats de services de données (services de données WCF)
+
 WCF Data Services vous permet de limiter le nombre d’entités retournées par une requête de service de données. Les limites de page sont définies dans la méthode appelée lorsque le service est initialisé et peuvent être définies séparément pour chaque jeu d'entités.  
   
  Lorsque la pagination est activée, la dernière entrée dans le flux contient un lien vers la page suivante de données. Pour plus d’informations, consultez [configuration du service de données](configuring-the-data-service-wcf-data-services.md).  
@@ -31,4 +32,4 @@ WCF Data Services vous permet de limiter le nombre d’entités retournées par 
 ## <a name="see-also"></a>Voir aussi
 
 - [Chargement de contenu différé](loading-deferred-content-wcf-data-services.md)
-- [Guide pratique pour charger les résultats paginés](how-to-load-paged-results-wcf-data-services.md)
+- [Procédure : Charger des résultats paginés](how-to-load-paged-results-wcf-data-services.md)

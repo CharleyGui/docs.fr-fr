@@ -2,14 +2,15 @@
 title: Élément <certificate>
 ms.date: 03/30/2017
 ms.assetid: 9b3d9233-ef35-477a-bf5d-efd1e80a52f4
-ms.openlocfilehash: c5fd156904ed30035991a8391c8f975da2a97ea7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8cc0404a5896dd23cffce6f1f77b91a2f01f23d2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554369"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151088"
 ---
 # <a name="certificate-element"></a>Élément \<certificate>
+
 Spécifie un certificat X.509 à utiliser pour signer et chiffrer des messages pour les clients de réseau pair à pair.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Spécifie un certificat X.509 à utiliser pour signer et chiffrer des messages 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -43,6 +45,7 @@ Spécifie un certificat X.509 à utiliser pour signer et chiffrer des messages 
 |`X509FindType`|Définit le type de recherche X.509 à exécuter. Les valeurs valides sont les suivantes :<br /><br /> -FindByThumbPrint<br />-FindBySubjectName<br />-FindBySubjectDistinguishedName<br />- FindByIssuerName<br />- FindByIssuerDistinguishedName<br />-FindBySerialNumber<br />- FindByTimeValid<br />- FindByTimeNotYetValid<br />- FindByTemplateName<br />- FindByApplicationPolicy<br />- FindByCertificatePolicy<br />- FindByExtension<br />- FindByKeyUsage<br />- FindBySubjectKeyIdentifier<br /><br /> Le type contenu dans l'attribut `findValue` doit répondre aux spécifications du `X509FindType` spécifié.<br /><br /> La valeur par défaut est FindBySubjectDistinguishedName.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -52,11 +55,13 @@ Spécifie un certificat X.509 à utiliser pour signer et chiffrer des messages 
 |[\<peer>](peer-of-clientcredentials-element.md)|Spécifie les informations d'identification utilisées lors de l'authentification de clients de réseau pair à pair.|  
   
 ## <a name="remarks"></a>Notes  
+
  Cet élément de configuration contient une instance de X509Certificate2 utilisée lors de l'authentification de voisins dans la maille d'homologues.  
   
  Pour plus d’informations sur la programmation d’égal à égal, consultez [mise en réseau pair à pair](../../../wcf/feature-details/peer-to-peer-networking.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code suivant spécifie comment rechercher le certificat utilisé dans un scénario de réseau pair à pair.  
   
 ```xml  

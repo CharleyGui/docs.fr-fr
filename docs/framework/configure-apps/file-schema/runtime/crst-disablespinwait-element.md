@@ -5,12 +5,12 @@ f1_keywords:
 - Crst_DisableSpinWait
 helpviewer_keywords:
 - Crst_DisableSpinWait element
-ms.openlocfilehash: 0683081183081e249b2a9c89e1a6a15f638fb339
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 45052d99bb297ac39d058fa405fe57a7c991f738
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117636"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151348"
 ---
 # <a name="crst_disablespinwait-element"></a>\<Crst_DisableSpinWait> (élément)
 
@@ -34,16 +34,17 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|**désactivé**|Spécifie si la rotation en attente des sections critiques lorsqu’elles sont confrontées est désactivée.|  
+|**activé**|Spécifie si la rotation en attente des sections critiques lorsqu’elles sont confrontées est désactivée.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
 |-----------|-----------------|  
 |1|Désactivez l’attente de spin quand une section critique ne peut pas être acquise.|  
-|0|Ne désactivez pas l’attente de spin quand une section critique ne peut pas être acquise. Il s’agit de la valeur par défaut.|  
+|0|Ne désactivez pas l’attente de spin quand une section critique ne peut pas être acquise. Valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -67,5 +68,5 @@ L’exemple suivant désactive l’attente de spin-Wait dans les sections critiq
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des paramètres d'exécution](index.md)
 - [Schéma du fichier de configuration](../index.md)

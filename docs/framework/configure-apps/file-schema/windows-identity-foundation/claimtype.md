@@ -3,14 +3,15 @@ title: <claimType>
 ms.date: 03/30/2017
 ms.assetid: d17b5831-9a2c-45c4-b0d1-68f48e72e861
 author: BrucePerlerMS
-ms.openlocfilehash: a46e9129bd27319abb4d7519444568af622170fc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1b5427210142c70c31c5f736c9b5e281dca53f33
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70252069"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150867"
 ---
 # \<claimType>
+
 Spécifie une revendication unique ou facultative pour les jetons de sécurité entrants.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Spécifie une revendication unique ou facultative pour les jetons de sécurité 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -40,10 +42,11 @@ Spécifie une revendication unique ou facultative pour les jetons de sécurité 
 |Attribut|Description|  
 |---------------|-----------------|  
 |type|Type de revendication. Généralement un URI. Obligatoire.|  
-|facultatif|Valeur booléenne qui spécifie si le type de revendication est facultatif. facultatif.|  
+|facultatif|Valeur booléenne qui spécifie si le type de revendication est facultatif. Optionnel.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <CompatSortNLSVersion> element
 - CompatSortNLSVersion element
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
-ms.openlocfilehash: 30afeb2ab9380db75cbeb723ea15a23e4313c9e8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 27d532633f08a5a560da61e904917c1faa35126c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154268"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151361"
 ---
 # <a name="compatsortnlsversion-element"></a>Élément \<CompatSortNLSVersion>
+
 Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'exécution de comparaisons de chaînes.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -45,6 +47,7 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
 |4096|ID de paramètres régionaux qui représente un ordre de tri secondaire. Dans ce cas, 4096 représente l’ordre de tri des .NET Framework 3,5 et des versions antérieures.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -54,7 +57,8 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Étant donné que les opérations de comparaison de chaînes, de tri et de respect de la casse effectuées par la <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> classe dans le .NET Framework 4 sont conformes à la norme Unicode 5,1, les résultats des méthodes de comparaison de chaînes telles que <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> et <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> peuvent différer des versions précédentes du .NET Framework. Si votre application dépend d’un comportement hérité, vous pouvez restaurer la comparaison de chaînes et les règles de tri utilisées dans le .NET Framework 3,5 et les versions antérieures en incluant l' `<CompatSortNLSVersion>` élément dans le fichier de configuration de votre application.  
   
 > [!IMPORTANT]
@@ -63,6 +67,7 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
  Vous pouvez également utiliser des règles de tri et de comparaison de chaîne héritées dans un domaine d'application spécifique en passant la chaîne « NetFx40_Legacy20SortingBehavior » à la méthode <xref:System.AppDomainSetup.SetCompatibilitySwitches%2A> lorsque vous créez le domaine d'application.  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant instancie deux objets <xref:System.String> et appelle la méthode <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> pour les comparer en utilisant les conventions de la culture actuelle.  
   
  [!code-csharp[String.BreakingChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/string.breakingchanges/cs/example1.cs#1)]
@@ -93,5 +98,5 @@ sta equals a in the sort order.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des paramètres d'exécution](index.md)
 - [Schéma du fichier de configuration](../index.md)

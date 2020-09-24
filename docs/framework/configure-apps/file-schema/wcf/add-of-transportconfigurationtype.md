@@ -2,14 +2,15 @@
 title: <add> de <transportConfigurationType>
 ms.date: 03/30/2017
 ms.assetid: 03d79db9-571d-4534-acef-d05e5467b257
-ms.openlocfilehash: adf4cd7f02db6535c5950443d09476a9a5ff63fb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9bef44ed39ee892080342058206f779b38fb460d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850309"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151153"
 ---
 # <a name="add-of-transportconfigurationtype"></a>\<add> de \<transportConfigurationType>
+
 Cet élément est une paire clé/valeur, qui identifie le type d'un transport particulier.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Cet élément est une paire clé/valeur, qui identifie le type d'un transport pa
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -40,7 +42,8 @@ Cet élément est une paire clé/valeur, qui identifie le type d'un transport pa
 |transportConfigurationType|Chaîne contenant le type qui implémente le transport spécifique.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

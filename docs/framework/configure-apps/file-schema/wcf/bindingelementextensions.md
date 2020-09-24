@@ -2,14 +2,15 @@
 title: <bindingElementExtensions>
 ms.date: 03/30/2017
 ms.assetid: bb597fc0-c947-451c-afda-bf23d42f4f4d
-ms.openlocfilehash: c323a65ace332d2ecd1e03330dddbe7ca17ff5bd
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6ba97adfa696e00b4d6b75faf104c31436e25447
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69926370"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151128"
 ---
 # \<bindingElementExtensions>
+
 Cette section active l'utilisation d'un élément de liaison personnalisé à partir d'un ordinateur ou d'un fichier de configuration de l'application. Vous pouvez ajouter un élément de liaison personnalisé à cette collection en utilisant le mot clé `add` et affecter à l’attribut `type` de l’élément une extension d’élément de liaison, ainsi que l’attribut `name` à l’élément de liaison personnalisé.  
   
  Les extensions de liaison permettent la création d’éléments de liaison définis par l’utilisateur à utiliser dans le cadre de liaisons personnalisées. Par programme, une extension de liaison est un type qui implémente la classe abstraite <xref:System.ServiceModel.Channels.BindingElement>. Dans le fichier de configuration, la section `bindingElementExtensions` est utilisée pour définir un élément d’extension.  

@@ -2,15 +2,16 @@
 title: <clientVia>
 ms.date: 03/30/2017
 ms.assetid: c27ee94e-babd-459b-9574-2a6d67d11314
-ms.openlocfilehash: a1c2ee68fb039e24e1462148cb52daf1bb57f8ed
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5e62201a38dc4dc251996531a4af5f294dd2395f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398108"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151101"
 ---
 # \<clientVia>
-Spécifie l'URI pour lequel le canal de transport doit être créé. Pour plus d’informations, consultez <xref:System.ServiceModel.Description.ClientViaBehavior>.  
+
+Spécifie l'URI pour lequel le canal de transport doit être créé. Pour plus d'informations, consultez <xref:System.ServiceModel.Description.ClientViaBehavior>.  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
@@ -26,6 +27,7 @@ Spécifie l'URI pour lequel le canal de transport doit être créé. Pour plus d
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -35,7 +37,8 @@ Spécifie l'URI pour lequel le canal de transport doit être créé. Pour plus d
 |`viaUri`|Chaîne qui spécifie un URI indiquant l'itinéraire d'un message.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

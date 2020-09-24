@@ -1,15 +1,16 @@
 ---
-title: <certificate>d' <clientCertificate> élément
+title: <certificate> d' <clientCertificate> élément
 ms.date: 03/30/2017
 ms.assetid: 00297efb-a7f2-4e03-bc2b-943d545610fc
-ms.openlocfilehash: d0c4ef9d3657d2dfa787feb3576beda09d1997a3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 35ea3814e208921abaf44e6ef431c4e1b44cde60
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400542"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151139"
 ---
-# <a name="certificate-of-clientcertificate-element"></a>\<certificate>d' \<clientCertificate> élément
+# <a name="certificate-of-clientcertificate-element"></a>\<certificate> d' \<clientCertificate> élément
+
 Spécifie un certificat X.509 utilisé pour signer et chiffrer des messages.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Spécifie un certificat X.509 utilisé pour signer et chiffrer des messages.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -43,6 +45,7 @@ Spécifie un certificat X.509 utilisé pour signer et chiffrer des messages.
 |`X509FindType`|Définit le type de recherche X.509 à exécuter. Les valeurs valides sont les suivantes :<br /><br /> -FindByThumbPrint<br />-FindBySubjectName<br />-FindBySubjectDistinguishedName<br />- FindByIssuerName<br />- FindByIssuerDistinguishedName<br />-FindBySerialNumber<br />- FindByTimeValid<br />- FindByTimeNotYetValid<br />- FindByTemplateName<br />- FindByApplicationPolicy<br />- FindByCertificatePolicy<br />- FindByExtension<br />- FindByKeyUsage<br />- FindBySubjectKeyIdentifier<br /><br /> Le type contenu dans l'attribut `findValue` doit satisfaire les spécifications du X509FindType spécifié.<br /><br /> La valeur par défaut est FindBySubjectDistinguishedName.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -52,9 +55,11 @@ Spécifie un certificat X.509 utilisé pour signer et chiffrer des messages.
 |[\<clientCertificate>](clientcertificate-of-servicecredentials.md)||  
   
 ## <a name="remarks"></a>Notes  
+
  L'élément `<certificate>` est utilisé lorsque le service doit disposer du certificat du client à l'avance afin de communiquer de manière sécurisée avec le client. Cela se produit lors de l'utilisation du modèle de communication duplex. Dans le modèle demande-réponse classique, le client inclut son certificat dans la demande que le service utilise pour sécuriser à nouveau sa réponse au client. Dans le modèle de communication duplex, toutefois, le service ne dispose pas de demande du client et, par conséquent, requiert le certificat du client à l'avance pour sécuriser l'envoi du message au client. C'est pourquoi vous devez obtenir le certificat du client dans une négociation hors bande et l'indiquer à l'aide de cet élément. Pour plus d’informations sur les services duplex, consultez [Comment : créer un contrat duplex](../../../wcf/feature-details/how-to-create-a-duplex-contract.md).  
   
 ## <a name="example"></a>Exemple  
+
  Le code suivant indique comment rechercher un certificat X.509 approprié ainsi qu’un type de validation personnalisé dans l’élément `<authentication>`.  
   
 ```xml  
@@ -81,5 +86,5 @@ Spécifie un certificat X.509 utilisé pour signer et chiffrer des messages.
 - <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement.Certificate%2A>
 - <xref:System.ServiceModel.Configuration.X509ClientCertificateCredentialsElement>
 - [Comportements de sécurité](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [Guide pratique pour créer un service qui utilise un validateur de certificat personnalisé](../../../wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)
-- [Working with Certificates](../../../wcf/feature-details/working-with-certificates.md)
+- [Procédure : créer un service qui utilise un validateur de certificat personnalisé](../../../wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)
+- [Utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md)
