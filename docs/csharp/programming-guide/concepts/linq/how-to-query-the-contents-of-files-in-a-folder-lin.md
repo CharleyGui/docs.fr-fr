@@ -3,14 +3,15 @@ title: Comment interroger le contenu de fichiers texte dans un dossier (LINQ) (C
 description: Découvrez comment utiliser LINQ en C# pour interroger tous les fichiers d’une arborescence de répertoires, ouvrir chaque fichier et inspecter son contenu.
 ms.date: 07/20/2015
 ms.assetid: f5b4dce7-1a34-4eb4-9bf1-60d5bdda264c
-ms.openlocfilehash: 216edc2ee6fc43fd06a3c89b1b6b73f693f752f8
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a1f3e29751cd91ac1fd8e6601aa078d967776f5a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104269"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159018"
 ---
 # <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Comment interroger le contenu de fichiers texte dans un dossier (LINQ) (C#)
+
 Cet exemple montre comment interroger tous les fichiers d’une arborescence de répertoires spécifiée, comment ouvrir chaque fichier et comment inspecter son contenu. Ce type de technique peut être utilisé pour créer des index ou des index inversés à partir du contenu d’une arborescence de répertoires. Dans cet exemple, une recherche de chaîne simple est effectuée. Toutefois, il est possible d’effectuer une recherche avec des critères spéciaux plus complexes à l’aide d’une expression régulière. Pour plus d’informations, consultez Guide pratique [pour combiner des requêtes LINQ avec des expressions régulières (C#)](./how-to-combine-linq-queries-with-regular-expressions.md).  
   
 ## <a name="example"></a>Exemple  
@@ -72,6 +73,7 @@ class QueryContents
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
 Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.
   
 ## <a name="see-also"></a>Voir aussi

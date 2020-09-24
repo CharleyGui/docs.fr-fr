@@ -3,19 +3,20 @@ title: Concepts de programmation (C#)
 description: Utilisez les ressources de cette section pour comprendre les concepts de programmation en langage C#, notamment la programmation orientée objet.
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 8b0b69abd3c23a968e34905cea93f99e044668ce
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 0e11fb3a184cb828be58cd43dde281366ed533d4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924914"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159330"
 ---
 # <a name="programming-concepts-c"></a>Concepts de programmation (C#)
+
 Cette section explique les concepts de programmation du langage C#.  
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Assemblys dans .NET](../../../standard/assembly/index.md)|Explique comment créer et utiliser des assemblys.|  
 |[Programmation asynchrone avec Async et Await (C#)](./async/index.md)|Explique comment écrire des solutions asynchrones à l’aide des mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/operators/await.md) en C#. Comprend une procédure pas à pas.|  

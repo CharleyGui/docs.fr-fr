@@ -2,14 +2,15 @@
 title: <textMessageEncoding>
 ms.date: 03/30/2017
 ms.assetid: e6d834d0-356e-45eb-b530-bbefbb9ec3f0
-ms.openlocfilehash: c5cd8e9e2002f44fd9feebdc6bb7ede023de459a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 159c581955336575af87a66a796cb78dd35d09c7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556445"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158654"
 ---
 # \<textMessageEncoding>
+
 Spécifie l'encodage de caractères et le suivi des versions de message utilisés pour les messages XML textuels.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Spécifie l'encodage de caractères et le suivi des versions de message utilisé
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -53,6 +55,7 @@ Spécifie l'encodage de caractères et le suivi des versions de message utilisé
 |[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
 ## <a name="remarks"></a>Notes  
+
  L'encodage est le processus de transformation d'un message en une séquence d'octets. Le décodage est le processus inverse. Windows Communication Foundation (WCF) inclut trois types d'encodage des messages SOAP : Texte, Binaire et MTOM (Message Transmission Optimization Mechanism).  
   
  L'encodage de texte représenté par l'élément `textMessageEncoding` est l'encodeur le plus interopérable, mais le moins efficace pour les messages XML.  L'encodeur de texte crée des messages textuels sur le câble. Les messages produits par cet encodeur sont adaptés à l'interopérabilité basée sur WS-*. Les services Web ou les clients de ces services comprennent généralement le XML textuel. Toutefois, la transmission de grands blocs de données binaires sous forme de texte est la méthode d'encodage de messages XML la moins efficace.  

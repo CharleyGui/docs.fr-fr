@@ -2,14 +2,15 @@
 title: <localClientSettings> (élément)
 ms.date: 03/30/2017
 ms.assetid: 4680ace5-f4e1-4fcb-b9d8-a4a4af5cd7ae
-ms.openlocfilehash: 3ec0394943c030a8866087c98a912682a2a2112e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 19eaea71fdaad1b945524cca5cf15634e0b0fa14
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400318"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158732"
 ---
 # <a name="localclientsettings-element"></a>\<localClientSettings>, élément
+
 Spécifie les paramètres de sécurité d’un client local pour cette liaison.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,6 +40,7 @@ Spécifie les paramètres de sécurité d’un client local pour cette liaison.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -58,7 +60,8 @@ Spécifie les paramètres de sécurité d’un client local pour cette liaison.
 |`timestampValidityDuration`|<xref:System.TimeSpan> positif qui spécifie la durée de validité d'un horodatage. La valeur par défaut est « 00:15:00 ».|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -67,7 +70,8 @@ Spécifie les paramètres de sécurité d’un client local pour cette liaison.
 |[\<security>](security-of-custombinding.md)|Spécifie les options de sécurité d’une liaison personnalisée.|  
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|Spécifie les valeurs par défaut utilisées pour initialiser un service de conversation sécurisé.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les paramètres sont locaux dans le sens où ils ne dérivent pas de la stratégie de sécurité du service.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -81,5 +85,5 @@ Spécifie les paramètres de sécurité d’un client local pour cette liaison.
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Custom Binding Security](../../../wcf/samples/custom-binding-security.md)

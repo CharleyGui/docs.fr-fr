@@ -18,19 +18,20 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: d9653be8b67ef4d971c157b8dd8d82b2ae3c2287
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 9f5d39e396e9be3e633326d4034a89d874373d75
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105523"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159291"
 ---
 # <a name="basic-linq-query-operations-c"></a>Opérations de requête LINQ de base (C#)
+
 Cette rubrique fournit une brève introduction aux expressions de requête LINQ et à certains genres classiques d’opérations que vous effectuez dans une requête. Vous trouverez des informations plus détaillées dans les rubriques suivantes :  
   
  [Expressions de requête LINQ](../../../linq/index.md)  
   
- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)  
+ [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)  
   
  [Procédure pas à pas : écriture de requêtes en C#](./walkthrough-writing-queries-linq.md)  
   
@@ -38,6 +39,7 @@ Cette rubrique fournit une brève introduction aux expressions de requête LINQ 
 > Si vous êtes déjà familiarisé avec un langage de requête tel que SQL ou XQuery, vous pouvez ignorer la plupart des informations de cette rubrique. `from`Pour en savoir plus sur l’ordre des clauses dans les expressions de requête LINQ, consultez la section suivante.  
   
 ## <a name="obtaining-a-data-source"></a>Obtention d’une source de données  
+
  Dans une requête LINQ, la première étape consiste à spécifier la source de données. Dans C#, comme dans la plupart des langages de programmation, une variable doit être déclarée avant de pouvoir être utilisée. Dans une requête LINQ, la `from` clause est d’abord introduite pour introduire la source de données ( `customers` ) et la *variable de portée* ( `cust` ).  
   
  [!code-csharp[csLINQGettingStarted#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#23)]  
@@ -48,6 +50,7 @@ Cette rubrique fournit une brève introduction aux expressions de requête LINQ 
 > Pour les sources de données non génériques telles que <xref:System.Collections.ArrayList>, la variable de portée doit être explicitement typée. Pour plus d’informations, consultez [Comment interroger un ArrayList avec LINQ (C#) et la](./how-to-query-an-arraylist-with-linq.md) [clause from](../../../language-reference/keywords/from-clause.md).  
   
 ## <a name="filtering"></a>Filtrage  
+
  L'opération de requête la plus courante est probablement l'application d'un filtre sous forme d'expression booléenne. Du fait du filtre, la requête retourne uniquement les éléments pour lesquels l’expression a la valeur true. Le résultat est produit à l'aide de la clause `where`. En effet, le filtre spécifie les éléments à exclure de la séquence source. Dans l’exemple suivant, seuls les clients (`customers`) qui ont une adresse à Londres sont retournés.  
   
  [!code-csharp[csLINQGettingStarted#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#24)]  
@@ -63,6 +66,7 @@ Cette rubrique fournit une brève introduction aux expressions de requête LINQ 
  Pour plus d’informations, consultez [where, clause](../../../language-reference/keywords/where-clause.md).  
   
 ## <a name="ordering"></a>Classement  
+
  Il est souvent utile de trier les données retournées. La clause `orderby` permet de trier les éléments de la séquence retournée en fonction du comparateur par défaut pour le type qui est trié. Par exemple, la requête suivante peut être étendue pour trier les résultats selon la propriété `Name`. Comme `Name` est une chaîne, le comparateur par défaut effectue un tri alphabétique de A à Z.  
   
  [!code-csharp[csLINQGettingStarted#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#27)]  
@@ -72,6 +76,7 @@ Cette rubrique fournit une brève introduction aux expressions de requête LINQ 
  Pour plus d’informations, consultez [orderby, clause](../../../language-reference/keywords/orderby-clause.md).  
   
 ## <a name="grouping"></a>Regroupement  
+
  La clause `group` vous permet de grouper vos résultats selon une clé que vous spécifiez. Par exemple, vous pouvez spécifier un regroupement des résultats par ville (`City`) pour que tous les clients de Londres ou Paris soient dans des groupes individuels. Dans ce cas, utilisez la clé `cust.City`.  
   
  [!code-csharp[csLINQGettingStarted#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#28)]  
@@ -85,6 +90,7 @@ Cette rubrique fournit une brève introduction aux expressions de requête LINQ 
  Pour plus d’informations, consultez [Group, clause](../../../language-reference/keywords/group-clause.md).  
   
 ## <a name="joining"></a>Jonction  
+
  Les opérations de jointure créent des associations entre les séquences qui ne sont pas explicitement modélisées dans les sources de données. Par exemple, effectuez une jointure pour rechercher tous les clients et distributeurs qui se trouvent au même endroit. Dans LINQ, la `join` clause fonctionne toujours sur les collections d’objets plutôt que sur les tables de base de données directement.  
   
  [!code-csharp[csLINQGettingStarted#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#36)]  
@@ -98,6 +104,7 @@ from order in Customer.Orders...
  Pour plus d’informations, consultez [join, clause](../../../language-reference/keywords/join-clause.md).  
   
 ## <a name="selecting-projections"></a>Sélection (projections)  
+
  La clause `select` produit les résultats de la requête et spécifie la « forme » ou le type de chaque élément retourné. Par exemple, spécifiez si les résultats doivent contenir des objets `Customer` complets, un seul membre, un sous-ensemble de membres ou un type de résultat complètement différent basé sur un calcul ou une création d’objet. Quand la clause `select` produit autre chose qu’une copie de l’élément source, l’opération est appelée *projection*. L’utilisation de projections pour transformer des données est une fonctionnalité puissante des expressions de requête LINQ. Pour plus d’informations, consultez [Transformations de données avec LINQ (C#)](./data-transformations-with-linq.md) et [select, clause](../../../language-reference/keywords/select-clause.md).  
   
 ## <a name="see-also"></a>Voir aussi

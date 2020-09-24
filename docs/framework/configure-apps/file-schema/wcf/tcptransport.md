@@ -2,14 +2,15 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 987dcad5e239b35f5ff367ab668d40526593f970
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6d4302e1840f58e2daad855942493cc96b7d5e34
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556458"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158667"
 ---
 # \<tcpTransport>
+
 Définit un transport TCP qui peut être utilisé par un canal pour transférer des messages pour une liaison personnalisée.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -44,6 +45,7 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -61,12 +63,13 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 |maxPendingAccepts|Obtient ou définit le nombre maximal d'opérations d'acception asynchrones en attente qui sont disponibles pour traiter les connexions entrantes au service.|  
 |maxPendingConnections|Obtient ou définit le nombre maximal de connexions en attente de distribution sur le service.|  
 |maxReceivedMessageSize|Obtient et définit la taille de message maximale autorisée qui peut être reçue.|  
-|portSharingEnabled|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si la valeur affectée est `false`, chaque liaison utilisera son propre port exclusif. La valeur par défaut est `false`.<br /><br /> Ce paramètre ne concerne que les services. Les clients ne sont pas affectés.<br /><br /> L'utilisation de ce paramètre requiert l'activation du service de partage de port TCP de Windows Communication Foundation (WCF) en modifiant son type de démarrage sur Manuel ou Automatique|  
-|teredoEnabled|Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé. La valeur par défaut est `false`.<br /><br /> Cette propriété active Teredo pour le socket TCP sous-jacent. Pour plus d’informations, voir [vue d’ensemble de Teredo](/previous-versions/windows/it-pro/windows-xp/bb457011(v=technet.10)).<br /><br /> Cette propriété s’applique uniquement à Windows XP SP2 et Windows Server 2003. Windows Vista possède une option de configuration au niveau de l’ordinateur pour Teredo. par conséquent, lors de l’exécution de Vista, cette propriété est ignorée. Pour que Teredo fonctionne, la pile Microsoft IPv6 doit être installée et configurée correctement sur les ordinateurs clients et de service.|  
+|portSharingEnabled|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si la valeur affectée est `false`, chaque liaison utilisera son propre port exclusif. Par défaut, il s’agit de `false`.<br /><br /> Ce paramètre ne concerne que les services. Les clients ne sont pas affectés.<br /><br /> L'utilisation de ce paramètre requiert l'activation du service de partage de port TCP de Windows Communication Foundation (WCF) en modifiant son type de démarrage sur Manuel ou Automatique|  
+|teredoEnabled|Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé. Par défaut, il s’agit de `false`.<br /><br /> Cette propriété active Teredo pour le socket TCP sous-jacent. Pour plus d’informations, voir [vue d’ensemble de Teredo](/previous-versions/windows/it-pro/windows-xp/bb457011(v=technet.10)).<br /><br /> Cette propriété s’applique uniquement à Windows XP SP2 et Windows Server 2003. Windows Vista possède une option de configuration au niveau de l’ordinateur pour Teredo. par conséquent, lors de l’exécution de Vista, cette propriété est ignorée. Pour que Teredo fonctionne, la pile Microsoft IPv6 doit être installée et configurée correctement sur les ordinateurs clients et de service.|  
 |transferMode|Obtient ou définit une valeur qui indique si les messages sont mis en mémoire tampon ou transmis en continu par le transport orienté connexion.|  
 |connectionPoolSettings|Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  None  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -76,6 +79,7 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 |[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
 ## <a name="remarks"></a>Notes  
+
  Ce transport utilise des URI au format "net.tcp://nom_hôte:port/chemin". Les autres composants URI sont facultatifs.  
   
  L'élément `tcpTransport` constitue le point de départ pour créer une liaison personnalisée qui implémente le protocole de transport TCP. Ce transport est optimisé pour les communications entre WCF et WCF.  

@@ -3,12 +3,12 @@ title: Indicateurs de fonctionnalités
 description: Implémenter des indicateurs de fonctionnalités dans les applications natives du Cloud en tirant parti de la configuration de Azure App
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: be4ab307069065975dc22d6bd984e12a2ea1457d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ee45c9f187b056887ea6dd3a08da508afca51987
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540463"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158095"
 ---
 # <a name="feature-flags"></a>Indicateurs de fonctionnalités
 
@@ -43,9 +43,9 @@ Notez comment cette approche sépare la logique de décision du code de la fonct
 
 Dans le chapitre 1, nous avons abordé le `Twelve-Factor App` . L’aide recommandée pour conserver les paramètres de configuration externes du code exécutable de l’application. Si nécessaire, les paramètres peuvent être lus à partir de la source externe. Les valeurs de configuration de l’indicateur de fonctionnalité doivent également être indépendantes de leur code base. En externalant la configuration de l’indicateur dans un dépôt distinct, vous pouvez modifier l’état de l’indicateur sans modifier et redéployer l’application.
 
-[Azure App configuration](https://docs.microsoft.com/azure/azure-app-configuration/overview) fournit un référentiel centralisé pour les indicateurs de fonctionnalité. Il vous permet de définir différents types d’indicateurs de fonctionnalités et de manipuler leurs États rapidement et en toute confiance. Vous ajoutez les bibliothèques clientes de configuration d’application à votre application pour activer la fonctionnalité d’indicateur de fonctionnalité. Différents frameworks de langage de programmation sont pris en charge.
+[Azure App configuration](/azure/azure-app-configuration/overview) fournit un référentiel centralisé pour les indicateurs de fonctionnalité. Il vous permet de définir différents types d’indicateurs de fonctionnalités et de manipuler leurs États rapidement et en toute confiance. Vous ajoutez les bibliothèques clientes de configuration d’application à votre application pour activer la fonctionnalité d’indicateur de fonctionnalité. Différents frameworks de langage de programmation sont pris en charge.
 
-Les indicateurs de fonctionnalités peuvent être facilement implémentés dans un [service ASP.net Core](https://docs.microsoft.com/azure/azure-app-configuration/use-feature-flags-dotnet-core). L’installation des bibliothèques de gestion des fonctionnalités .NET et du fournisseur de configuration d’application vous permet d’ajouter des indicateurs de fonctionnalités de façon déclarative à votre code. Ils activent les `FeatureGate` attributs afin que vous n’ayez pas à écrire manuellement les instructions if dans votre code base.
+Les indicateurs de fonctionnalités peuvent être facilement implémentés dans un [service ASP.net Core](/azure/azure-app-configuration/use-feature-flags-dotnet-core). L’installation des bibliothèques de gestion des fonctionnalités .NET et du fournisseur de configuration d’application vous permet d’ajouter des indicateurs de fonctionnalités de façon déclarative à votre code. Ils activent les `FeatureGate` attributs afin que vous n’ayez pas à écrire manuellement les instructions if dans votre code base.
 
 Une fois configuré dans votre classe de démarrage, vous pouvez ajouter la fonctionnalité d’indicateur de fonctionnalité au niveau du contrôleur, de l’action ou de l’intergiciel (middleware). La figure 10-12 illustre l’implémentation du contrôleur et de l’action :
 

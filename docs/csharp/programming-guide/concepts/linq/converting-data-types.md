@@ -3,14 +3,15 @@ title: Conversion des types de données (C#)
 description: Les méthodes de conversion changent le type d’objets en entrée. Consultez opérations de conversion dans les requêtes LINQ en C#, telles que Enumerable. AsEnumerable et Enumerable. OfType.
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
-ms.openlocfilehash: 3291690f9aaee945ca7feb04ebbc676db2612894
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: f9e3b354fd6eeba6564067550ea3821e4946d92f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105491"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159135"
 ---
 # <a name="converting-data-types-c"></a>Conversion des types de données (C#)
+
 Les méthodes de conversion changent le type d’objets en entrée.
 
  Les opérations de conversion dans les requêtes LINQ sont utiles dans diverses applications. En voici quelques exemples :
@@ -22,6 +23,7 @@ Les méthodes de conversion changent le type d’objets en entrée.
 - Les méthodes <xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>, <xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>, <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> et <xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType> peuvent être utilisées pour forcer l’exécution immédiate de la requête au lieu de la différer jusqu’à ce que la requête soit énumérée.
 
 ## <a name="methods"></a>Méthodes
+
  Le tableau suivant répertorie les méthodes d’opérateur de requête standard qui effectuent des conversions de types de données.
 
  Les méthodes de conversion de ce tableau dont les noms commencent par "As" modifient le type statique de la collection source mais ne l’énumèrent pas. Les méthodes dont les noms commencent par "To" énumèrent la collection source et placent les éléments dans le type de collection correspondant.
@@ -79,7 +81,7 @@ static void Cast()
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [from, clause](../../../language-reference/keywords/from-clause.md)
 - [Expressions de requête LINQ](../../../linq/index.md)
 - [Comment interroger un ArrayList avec LINQ (C#)](./how-to-query-an-arraylist-with-linq.md)

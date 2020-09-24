@@ -3,14 +3,15 @@ title: Guide pratique pour rechercher la différence définie entre deux listes 
 description: Découvrez comment utiliser LINQ en C# pour comparer deux listes de chaînes et sortir les lignes qui se trouvent dans une liste, mais pas dans l’autre.
 ms.date: 07/20/2015
 ms.assetid: 8e8945f0-4aba-439d-8d5d-c8d1eeef4e71
-ms.openlocfilehash: 24509488d91f9861ee9bf84277238bea7031e5f6
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 01aba16b3489e4bf21a76bc715b6d4d2c9d250dd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105081"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159057"
 ---
 # <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a>Guide pratique pour rechercher la différence définie entre deux listes (LINQ) (C#)
+
 Cet exemple montre comment utiliser LINQ pour comparer deux listes de chaînes et sortir les lignes qui sont présentes dans names1.txt, mais pas dans names2.txt.  
   
 ### <a name="to-create-the-data-files"></a>Pour créer le fichier de données  
@@ -56,6 +57,7 @@ class CompareLists
  Certains types d’opérations de requête en C#, tels que <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Union%2A> et <xref:System.Linq.Enumerable.Concat%2A>, peuvent uniquement être exprimés dans une syntaxe basée sur une méthode.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi

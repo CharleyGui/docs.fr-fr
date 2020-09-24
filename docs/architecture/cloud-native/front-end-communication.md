@@ -3,12 +3,12 @@ title: Communication client et front-end
 description: Découvrez comment les clients frontaux communiquent avec les systèmes natifs du Cloud
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 97421e9b90b19c720b1ab0ff8dd1e5f029cba5e4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 147adb3d0375f8bf5dadf14e1237aa93e9e42908
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614056"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158108"
 ---
 # <a name="front-end-client-communication"></a>Communication client et front-end
 
@@ -35,13 +35,13 @@ Au lieu de cela, un modèle de conception de Cloud largement accepté consiste �
 
 ![Modèle de passerelle d’API](./media/api-gateway-pattern.png)
 
-**Figure 4-3.** Modèle de passerelle d’API
+**Figure 4-3.** Modèle de passerelle API
 
 Dans la figure précédente, notez la manière dont le service de passerelle d’API soustrait les microservices principaux principaux. Implémenté comme une API Web, il agit comme un *proxy inverse*, acheminant le trafic entrant vers les microservices internes.
 
 La passerelle isole le client du partitionnement de service interne et de la refactorisation. Si vous modifiez un service principal, vous pouvez l’inclure dans la passerelle sans rompre le client. C’est également votre première ligne de défense pour les problèmes transversaux, tels que l’identité, la mise en cache, la résilience, le contrôle et la limitation. La plupart de ces problèmes de coupe croisée peuvent être déchargés à partir des services principaux de la passerelle, ce qui simplifie les services principaux.
 
-Vous devez veiller à garder la passerelle d’API simple et rapide. En règle générale, la logique métier est conservée hors de la passerelle. Une passerelle complexe risque de devenir un goulot d’étranglement et de finir un monolithique. Les systèmes plus grands exposent souvent plusieurs passerelles d’API segmentées par type de client (mobile, Web, ordinateur de bureau) ou les fonctionnalités principales. Le modèle [backend pour les serveurs frontaux](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends) fournit une direction pour l’implémentation de plusieurs passerelles. Le modèle est illustré dans la figure 4-4.
+Vous devez veiller à garder la passerelle d’API simple et rapide. En règle générale, la logique métier est conservée hors de la passerelle. Une passerelle complexe risque de devenir un goulot d’étranglement et de finir un monolithique. Les systèmes plus grands exposent souvent plusieurs passerelles d’API segmentées par type de client (mobile, Web, ordinateur de bureau) ou les fonctionnalités principales. Le modèle [backend pour les serveurs frontaux](/azure/architecture/patterns/backends-for-frontends) fournit une direction pour l’implémentation de plusieurs passerelles. Le modèle est illustré dans la figure 4-4.
 
 ![Modèle de passerelle d’API](./media/backend-for-frontend-pattern.png)
 
@@ -75,7 +75,7 @@ Envisagez Ocelot pour les applications Cloud natives simples qui ne nécessitent
 
 ## <a name="azure-application-gateway"></a>Azure Application Gateway
 
-Pour les exigences de passerelle simples, vous pouvez envisager [Azure application passerelle](https://docs.microsoft.com/azure/application-gateway/overview). Disponible en tant que [service PaaS](https://azure.microsoft.com/overview/what-is-paas/)Azure, il comprend des fonctionnalités de passerelle de base telles que le routage d’URL, la terminaison SSL et un pare-feu d’applications Web. Le service prend en charge les fonctionnalités d' [équilibrage de charge de couche 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) . Avec la couche 7, vous pouvez acheminer les demandes en fonction du contenu réel d’un message HTTP, pas seulement des paquets réseau TCP de bas niveau.
+Pour les exigences de passerelle simples, vous pouvez envisager [Azure application passerelle](/azure/application-gateway/overview). Disponible en tant que [service PaaS](https://azure.microsoft.com/overview/what-is-paas/)Azure, il comprend des fonctionnalités de passerelle de base telles que le routage d’URL, la terminaison SSL et un pare-feu d’applications Web. Le service prend en charge les fonctionnalités d' [équilibrage de charge de couche 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) . Avec la couche 7, vous pouvez acheminer les demandes en fonction du contenu réel d’un message HTTP, pas seulement des paquets réseau TCP de bas niveau.
 
 Tout au long de ce document, nous nous contribuons à l’hébergement des systèmes Cloud natifs dans [Kubernetes](https://www.infoworld.com/article/3268073/what-is-kubernetes-your-next-application-platform.html). Un Orchestrator de conteneur, Kubernetes automatise le déploiement, la mise à l’échelle et les problèmes opérationnels des charges de travail en conteneur. Azure Application passerelle peut être configurée en tant que passerelle d’API pour le cluster de [service Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/) .
 
@@ -99,7 +99,7 @@ Pour commencer, la gestion des API expose un serveur de passerelle qui permet un
 
 Pour les développeurs, la gestion des API offre un portail des développeurs qui permet d’accéder aux services, à la documentation et à des exemples de code pour les appeler. Les développeurs peuvent utiliser l’API Swagger/Open pour inspecter les points de terminaison de service et analyser leur utilisation. Le service fonctionne sur les principales plateformes de développement : .NET, Java, Golang et bien plus encore.
 
-Le portail des éditeurs expose un tableau de bord de gestion dans lequel les administrateurs exposent les API et gèrent leur comportement. L’accès au service peut être accordé, surveillé par l’intégrité du service et les télémétries de service collectées. Les administrateurs appliquent des *stratégies* à chaque point de terminaison pour affecter le comportement. Les [stratégies](https://docs.microsoft.com/azure/api-management/api-management-howto-policies) sont des instructions prégénérées qui s’exécutent de façon séquentielle pour chaque appel de service.  Les stratégies sont configurées pour un appel entrant, sortant, ou appelées en cas d’erreur. Les stratégies peuvent être appliquées à différentes étendues de service pour activer l’ordonnancement déterministe lors de la combinaison de stratégies. Le produit est fourni avec un grand nombre de [stratégies](https://docs.microsoft.com/azure/api-management/api-management-policies)prédéfinies.
+Le portail des éditeurs expose un tableau de bord de gestion dans lequel les administrateurs exposent les API et gèrent leur comportement. L’accès au service peut être accordé, surveillé par l’intégrité du service et les télémétries de service collectées. Les administrateurs appliquent des *stratégies* à chaque point de terminaison pour affecter le comportement. Les [stratégies](/azure/api-management/api-management-howto-policies) sont des instructions prégénérées qui s’exécutent de façon séquentielle pour chaque appel de service.  Les stratégies sont configurées pour un appel entrant, sortant, ou appelées en cas d’erreur. Les stratégies peuvent être appliquées à différentes étendues de service pour activer l’ordonnancement déterministe lors de la combinaison de stratégies. Le produit est fourni avec un grand nombre de [stratégies](/azure/api-management/api-management-policies)prédéfinies.
 
 Voici des exemples de la façon dont les stratégies peuvent affecter le comportement de vos services Cloud natifs :  
 
@@ -117,22 +117,22 @@ La gestion des API Azure est disponible sur [quatre niveaux différents](https:/
 
 - Développeur
 - De base
-- standard
+- Standard
 - Premium
 
-Le niveau développeur est conçu pour les charges de travail de non-production et l’évaluation. Les autres niveaux offrent progressivement plus de puissance, de fonctionnalités et de contrats de niveau de service (SLA) plus élevés. Le niveau Premium offre une [prise en charge de plusieurs régions](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region)et d’un [réseau virtuel Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) . Tous les niveaux ont un prix fixe par heure.
+Le niveau développeur est conçu pour les charges de travail de non-production et l’évaluation. Les autres niveaux offrent progressivement plus de puissance, de fonctionnalités et de contrats de niveau de service (SLA) plus élevés. Le niveau Premium offre une [prise en charge de plusieurs régions](/azure/api-management/api-management-howto-deploy-multi-region)et d’un [réseau virtuel Azure](/azure/virtual-network/virtual-networks-overview) . Tous les niveaux ont un prix fixe par heure.
 
 Le Cloud Azure offre également un [niveau sans serveur](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/) pour la gestion des API Azure. Appelé « niveau de *tarification*de la consommation », le service est une variante de la gestion des API conçue autour du modèle de calcul sans serveur. Contrairement aux niveaux tarifaires « pré-alloués » précédemment affichés, le niveau de consommation fournit un approvisionnement instantané et une tarification par action.
 
 Il active les fonctionnalités de la passerelle API pour les cas d’utilisation suivants :
 
-- Microservices implémentés à l’aide de technologies sans serveur telles que [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) et [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
+- Microservices implémentés à l’aide de technologies sans serveur telles que [Azure Functions](/azure/azure-functions/functions-overview) et [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
 - Les ressources du service de sauvegarde Azure, telles que les Service Bus files d’attente et les rubriques, le stockage Azure et d’autres.
 - Les microservices où le trafic a des pics de grande ampleur, mais qui reste peu la plupart du temps.
 
 Le niveau de consommation utilise les mêmes composants de gestion des API de service sous-jacents, mais utilise une architecture entièrement différente basée sur des ressources allouées dynamiquement. Il s’aligne parfaitement avec le modèle de calcul sans serveur :
 
-- Aucune infrastructure à gérer.
+- Aucune infrastructure à gérer
 - Aucune capacité inactive.
 - Haute disponibilité.
 - Mise à l’échelle automatique.

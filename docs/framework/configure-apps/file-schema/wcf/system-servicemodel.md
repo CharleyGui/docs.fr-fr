@@ -9,20 +9,21 @@ helpviewer_keywords:
 - <system.serviceModel> element
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
-ms.openlocfilehash: 567cbd2cc07ee82e795daa067b9034b2b8dc1974
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 44966ed9ee3abb3d1babdf09dd44f087376ada55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243956"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158680"
 ---
 # \<system.serviceModel>
+
 Cette section de configuration contient tous les éléments de configuration de l’Windows Communication Foundation (WCF) ServiceModel.  
 
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;**\<system.serviceModel>**  
   
-## <a name="syntax"></a>Syntax  
+## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <system.serviceModel>
@@ -56,9 +57,11 @@ Cette section de configuration contient tous les éléments de configuration de 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  None  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -85,7 +88,8 @@ Cette section de configuration contient tous les éléments de configuration de 
 |-------------|-----------------|  
 |\<configuration>|Élément racine correspondant à tous les éléments de configuration qui se trouvent dans un fichier de configuration .NET.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  WCF n’ajoute pas d’éléments aux sections de configuration d’autres produits.  
   
  Les services WCF sont définis dans la `services` section du fichier de configuration. Un assembly peut contenir n'importe quel nombre de services. Chacun dispose de sa propre section de configuration de `service`. Cette section et son contenu définissent le contrat, le comportement et les points de terminaison du service en question.  
@@ -99,6 +103,7 @@ Cette section de configuration contient tous les éléments de configuration de 
  Les liaisons sont liées aux points de terminaison grâce à la combinaison des attributs `name` et `bindingConfiguration`. L’attribut `binding` définit la section dans laquelle la liaison est définie. L'attribut `bindingConfiguration` définit parmi les liaisons configurées figurant dans la section de liaison celle qui est utilisée. Une section de liaison peut définir plusieurs liaisons configurées.  
   
 ## <a name="example"></a>Exemple  
+
  Voici un exemple de fichier de configuration WCF.  
   
 ```xml  

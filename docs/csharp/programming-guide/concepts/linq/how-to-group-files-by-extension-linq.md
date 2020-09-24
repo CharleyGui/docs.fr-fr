@@ -3,17 +3,19 @@ title: Guide pratique pour regrouper des fichiers par extension (LINQ) (C#)
 description: Découvrez comment utiliser LINQ pour effectuer des opérations de regroupement et de tri avancées sur des listes de fichiers ou de dossiers en C#. L’exemple montre comment paginer la sortie dans la console.
 ms.date: 07/20/2015
 ms.assetid: 21a98320-a5a1-4981-82d8-6a637e7d9018
-ms.openlocfilehash: 6113392170063cac1fd89017efaf0c7dad3ba34b
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: c17328980c20dd6ec32e8d0ce176081122443344
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105034"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159044"
 ---
 # <a name="how-to-group-files-by-extension-linq-c"></a>Guide pratique pour regrouper des fichiers par extension (LINQ) (C#)
+
 Cet exemple montre comment utiliser LINQ pour effectuer des opérations de regroupement et de tri avancées sur des listes de fichiers ou de dossiers. Il montre également comment parcourir les résultats dans la fenêtre de console à l’aide des méthodes <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A>.  
   
 ## <a name="example"></a>Exemple  
+
  La requête suivante montre comment regrouper le contenu d’une arborescence de répertoires spécifiée en fonction de l’extension de nom de fichier.  
   
 ```csharp  
@@ -106,6 +108,7 @@ class GroupByExtension
  La sortie de ce programme peut être longue, en fonction des détails du système de fichiers local et de la valeur de `startFolder`. Pour permettre l’affichage de tous les résultats, cet exemple montre comment parcourir les résultats. Les mêmes techniques sont applicables aux applications Windows et web. Notez qu’étant donné que le code organise les éléments dans un groupe, une boucle `foreach` imbriquée est nécessaire. Il existe également une logique supplémentaire pour calculer la position actuelle dans la liste et pour permettre aux utilisateurs d’arrêter la pagination et de quitter le programme. Dans ce cas particulier, la requête de pagination est exécutée par rapport aux résultats de la requête d’origine mis en cache. Dans d’autres contextes, tels que LINQ to SQL, ce type de mise en cache n’est pas nécessaire.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi

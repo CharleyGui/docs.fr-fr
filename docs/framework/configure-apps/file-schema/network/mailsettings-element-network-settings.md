@@ -9,14 +9,15 @@ helpviewer_keywords:
 - mailSettings element
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
-ms.openlocfilehash: ce7b8564e4ee5ea73d42259612c077420d36645b
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a146874acc21f52507b37b1751c648792e23c8bb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504561"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158849"
 ---
 # <a name="mailsettings-element-network-settings"></a>\<mailSettings>, élément (paramètres réseau)
+
 Configure les options d’envoi de courrier.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,24 +33,27 @@ Configure les options d’envoi de courrier.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|[\<smtp>, Élément (paramètres réseau)](smtp-element-network-settings.md)|Configure les options de protocole de transport de messagerie simple.|  
+|[\<smtp> , Élément (paramètres réseau)](smtp-element-network-settings.md)|Configure les options de protocole de transport de messagerie simple.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
-|[\<system.Net>, Élément (paramètres réseau)](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
+|[\<system.Net> , Élément (paramètres réseau)](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant spécifie les paramètres SMTP appropriés pour envoyer des messages électroniques à l’aide des informations d’identification réseau par défaut.  
   
 ```xml  

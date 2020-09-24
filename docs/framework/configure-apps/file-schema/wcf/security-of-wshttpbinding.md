@@ -2,14 +2,15 @@
 title: <security> de <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8658b162-2ddf-4162-a869-aa517a42288a
-ms.openlocfilehash: b66b5228cab9dbc35502a13a2d0fe56ce4c6a18d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9f984759fb52242bf8030a101b567c14627dd314
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738580"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158693"
 ---
 # <a name="security-of-wshttpbinding"></a>\<security> de \<wsHttpBinding>
+
 Représente les fonctionnalités de sécurité de [\<wsHttpBinding>](wshttpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Représente les fonctionnalités de sécurité de [\<wsHttpBinding>](wshttpbindi
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -67,7 +69,8 @@ Représente les fonctionnalités de sécurité de [\<wsHttpBinding>](wshttpbindi
 |-------------|-----------------|  
 |[\<wsHttpBinding>](wshttpbinding.md)|Liaison sécurisée pour les applications de transport HTTP.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  La classe WSHttpBinding est conçue pour interagir avec les services qui implémentent les spécifications WS-*. La sécurité de transport de cette liaison correspond à Secure Sockets Layer (SSL) sur HTTP, c'est-à-dire à HTTPS.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -76,7 +79,7 @@ Représente les fonctionnalités de sécurité de [\<wsHttpBinding>](wshttpbindi
 - <xref:System.ServiceModel.WSHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

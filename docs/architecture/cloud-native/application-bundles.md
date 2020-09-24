@@ -2,12 +2,12 @@
 title: Bundles d’applications cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Lots d’applications Cloud natives
 ms.date: 05/13/2020
-ms.openlocfilehash: fc6ee96078650dccd2ebeb3e65a0a00c4e05ecdb
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 7f1fcd448f3299a31043bf269717f7b777329c62
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614342"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158121"
 ---
 # <a name="cloud-native-application-bundles"></a>Bundles d’applications cloud natives
 
@@ -78,12 +78,12 @@ Le format CNAB est également flexible, ce qui lui permet d’être utilisé sur
 
 Il y a tellement de nombreux outils exceptionnels dans l’espace DevOps ces journées et encore plus fantastiques de livres et de documents sur la manière de mener à bien. Un livre favori pour la prise en main du parcours DevOps est [le projet Phoenix](https://www.oreilly.com/library/view/the-phoenix-project/9781457191350/), qui suit la transformation d’une société fictive de NoOps en DevOps. Une chose est pour certains : DevOps n’est plus un « joli à avoir » lors du déploiement d’applications natives du Cloud. Elle est obligatoire et doit être planifiée et Resource au début de tout projet.
 
-## <a name="references"></a>References
+## <a name="references"></a>Références
 
 - [Azure DevOps](https://azure.microsoft.com/services/devops/)
-- [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/)
+- [Azure Resource Manager](/azure/azure-resource-manager/management/overview)
 - [Terraform](https://www.terraform.io/)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/)
+- [Azure CLI](/cli/azure/)
 
 >[!div class="step-by-step"]
 >[Précédent](infrastructure-as-code.md) 

@@ -6,20 +6,20 @@ no-loc:
 - Blazor
 - Blazor WebAssembly
 ms.date: 05/13/2020
-ms.openlocfilehash: 4a0c88472d2b19efb2ff0f58395003b1b6409131
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 9ed6906bd388a1ddef7f97bbaac001b4274853f9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87914889"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158082"
 ---
 # <a name="grpc"></a>gRPC
 
-Jusqu’ici, dans cet ouvrage, nous nous sommes concentrés sur la communication [basée sur REST](https://docs.microsoft.com/azure/architecture/best-practices/api-design) . Nous avons vu que REST est un style architectural flexible qui définit les opérations CRUD sur les ressources d’entité. Les clients interagissent avec les ressources sur HTTP avec un modèle de communication de demande/réponse. Bien que REST soit largement implémenté, une technologie de communication plus récente, gRPC, a gagné un énorme dynamisme au sein de la communauté Cloud-native.
+Jusqu’ici, dans cet ouvrage, nous nous sommes concentrés sur la communication [basée sur REST](/azure/architecture/best-practices/api-design) . Nous avons vu que REST est un style architectural flexible qui définit les opérations CRUD sur les ressources d’entité. Les clients interagissent avec les ressources sur HTTP avec un modèle de communication de demande/réponse. Bien que REST soit largement implémenté, une technologie de communication plus récente, gRPC, a gagné un énorme dynamisme au sein de la communauté Cloud-native.
 
 ## <a name="what-is-grpc"></a>Qu’est-ce que gRPC ?
 
-gRPC est une infrastructure moderne et hautement performante qui fait évoluer le protocole d' [appel de procédure distante (RPC)](https://en.wikipedia.org/wiki/Remote_procedure_call) Age Old. Au niveau de l’application, gRPC simplifie la messagerie entre les clients et les services principaux. En provenance de Google, gRPC est open source et fait partie de l’écosystème [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) des offres Cloud natives. CNCF considère gRPC un [projet en incubation](https://github.com/cncf/toc/blob/master/process/graduation_criteria.adoc). L’incubation signifie que les utilisateurs finaux utilisent la technologie dans les applications de production et que le projet a un nombre sain de contributeurs.
+gRPC est une infrastructure moderne et hautement performante qui fait évoluer le protocole d' [appel de procédure distante (RPC)](https://en.wikipedia.org/wiki/Remote_procedure_call) Age Old. Au niveau de l’application, gRPC simplifie la messagerie entre les clients et les services principaux. En provenance de Google, gRPC est open source et fait partie de l’écosystème  [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) des offres Cloud natives. CNCF considère gRPC un [projet en incubation](https://github.com/cncf/toc/blob/master/process/graduation_criteria.adoc). L’incubation signifie que les utilisateurs finaux utilisent la technologie dans les applications de production et que le projet a un nombre sain de contributeurs.
 
 Une application cliente gRPC standard expose une fonction in-process locale qui implémente une opération commerciale. En coulisses, cette fonction locale appelle une autre fonction sur un ordinateur distant. Ce qui semble être un appel local devient essentiellement un appel out-of-process transparent à un service distant. L’infrastructure RPC fait abstraction de la communication réseau point à point, de la sérialisation et de l’exécution entre les ordinateurs.
 
@@ -37,7 +37,7 @@ gRPC utilise HTTP/2 pour son protocole de transport. Bien qu’compatible avec H
 - Streaming intégré permettant des demandes et des réponses pour diffuser de manière asynchrone des jeux de données volumineux.
 - Compression d’en-tête qui réduit l’utilisation du réseau.
 
-gRPC est léger et très performant. Elle peut être jusqu’à 8 fois plus rapide que la sérialisation JSON avec des messages de 60-80% de plus. Dans le jargon de Microsoft [Windows Communication Foundation (WCF)](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) , les performances de gRPC dépassent la vitesse et l’efficacité des [liaisons NetTcp](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8)hautement optimisées. Contrairement à NetTCP, qui privilégie la pile Microsoft, gRPC est multiplateforme.
+gRPC est léger et très performant. Elle peut être jusqu’à 8 fois plus rapide que la sérialisation JSON avec des messages de 60-80% de plus. Dans le jargon de Microsoft [Windows Communication Foundation (WCF)](../../framework/wcf/whats-wcf.md) , les performances de gRPC dépassent la vitesse et l’efficacité des [liaisons NetTcp](/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8)hautement optimisées. Contrairement à NetTCP, qui privilégie la pile Microsoft, gRPC est multiplateforme.
 
 ## <a name="protocol-buffers"></a>Mémoires tampon de protocole
 
@@ -51,7 +51,7 @@ gRPC adopte une technologie open source appelée [mémoires tampons de protocole
 
 Lors de l’exécution, chaque message est sérialisé en tant que représentation Protobuf standard et échangé entre le client et le service distant. Contrairement à JSON ou XML, les messages Protobuf sont sérialisés en tant qu’octets binaires compilés.
 
-Le livre, [gRPC pour les développeurs WCF](https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers/), disponible sur le site de l’architecture Microsoft, fournit une couverture approfondie des gRPC et des mémoires tampons de protocole.
+Le livre, [gRPC pour les développeurs WCF](../grpc-for-wcf-developers/index.md), disponible sur le site de l’architecture Microsoft, fournit une couverture approfondie des gRPC et des mémoires tampons de protocole.
 
 ## <a name="grpc-support-in-net"></a>prise en charge de gRPC dans .NET
 
@@ -99,7 +99,7 @@ L’architecture de référence des microservices, [eShop on containers](https:/
 
 **Figure 4-22**. Architecture backend pour eShop sur les conteneurs
 
-Dans l’illustration précédente, vous remarquerez comment eShop adopte le [modèle backend pour les serveurs frontaux](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends) (BFF) en exposant plusieurs passerelles d’API. Nous avons abordé le modèle BFF plus haut dans ce chapitre. Portez une attention particulière au microservice de l’agrégateur (en gris) qui se situe entre la passerelle d’API d’achat Web et les microservices d’achat principaux. L’agrégation reçoit une requête unique d’un client, la distribue à différents microservices, agrège les résultats et les renvoie au client demandeur. Ces opérations nécessitent généralement une communication synchrone en ce qui concerne la génération d’une réponse immédiate. Dans eShop, les appels backend de l’agrégateur sont effectués à l’aide de gRPC, comme le montre la figure 4-23.
+Dans l’illustration précédente, vous remarquerez comment eShop adopte le [modèle backend pour les serveurs frontaux](/azure/architecture/patterns/backends-for-frontends) (BFF) en exposant plusieurs passerelles d’API. Nous avons abordé le modèle BFF plus haut dans ce chapitre. Portez une attention particulière au microservice de l’agrégateur (en gris) qui se situe entre la passerelle d’API d’achat Web et les microservices d’achat principaux. L’agrégation reçoit une requête unique d’un client, la distribue à différents microservices, agrège les résultats et les renvoie au client demandeur. Ces opérations nécessitent généralement une communication synchrone en ce qui concerne la génération d’une réponse immédiate. Dans eShop, les appels backend de l’agrégateur sont effectués à l’aide de gRPC, comme le montre la figure 4-23.
 
 ![gRPC dans eShop sur les conteneurs](./media/grpc-implementation.png)
 

@@ -11,14 +11,15 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: af08938b6b8f169ded2180529c2b4aadebefef55
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2fb4166b9dbcecebf06b9dc3a780b02751dd4dc7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558808"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159148"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformations de données avec LINQ (C#)
+
 LINQ (Language-Integrated Query) n’est pas seulement la récupération des données. C’est également un outil puissant pour la transformation de données. À l’aide d’une requête LINQ, vous pouvez utiliser une séquence source comme entrée et la modifier de nombreuses façons pour créer une séquence de sortie. Vous pouvez modifier la séquence elle-même sans modifier les éléments eux-mêmes en les triant et en les regroupant. Mais la fonctionnalité la plus puissante des requêtes LINQ est peut-être la possibilité de créer des types. Cette opération est effectuée dans la clause [select](../../../language-reference/keywords/select-clause.md). Par exemple, il est possible de réaliser les tâches suivantes :  
   
 - Fusionner plusieurs séquences d’entrée en une séquence de sortie unique ayant un nouveau type.  
@@ -32,6 +33,7 @@ LINQ (Language-Integrated Query) n’est pas seulement la récupération des don
  Voici une liste non exhaustive d’exemples. Bien sûr, ces transformations peuvent être combinées de plusieurs façons dans la même requête. Par ailleurs, la séquence de sortie d’une requête peut être utilisée comme séquence d’entrée pour une nouvelle requête.  
   
 ## <a name="joining-multiple-inputs-into-one-output-sequence"></a>Combinaison de plusieurs entrées en une séquence de sortie  
+
  Vous pouvez utiliser une requête LINQ pour créer une séquence de sortie qui contient des éléments issus de plusieurs séquences d’entrée. L’exemple suivant montre comment combiner deux structures de données en mémoire, mais les mêmes principes peuvent être appliqués pour combiner des données provenant de sources XML, SQL ou DataSet. Prenons l’exemple des deux types de classe suivants :  
   
  [!code-csharp[CsLINQGettingStarted#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#7)]  
@@ -43,6 +45,7 @@ LINQ (Language-Integrated Query) n’est pas seulement la récupération des don
  Pour plus d’informations, consultez [join, clause](../../../language-reference/keywords/join-clause.md) et [select, clause](../../../language-reference/keywords/select-clause.md).  
   
 ## <a name="selecting-a-subset-of-each-source-element"></a>Sélection d’un sous-ensemble de chaque élément source  
+
  Pour sélectionner un sous-ensemble de chaque élément de la séquence source, deux méthodes principales s’offrent à vous :  
   
 1. Pour sélectionner un seul membre de l’élément source, utilisez l’opérateur point. Dans l’exemple suivant, supposons qu’un objet `Customer` contienne plusieurs propriétés publiques comprenant une chaîne nommée `City`. Une fois exécutée, cette requête génère une séquence de sortie de chaînes.  
@@ -62,6 +65,7 @@ LINQ (Language-Integrated Query) n’est pas seulement la récupération des don
  Pour plus d’informations, consultez [Initialiseurs d’objets et de collections](../../classes-and-structs/object-and-collection-initializers.md) et [Types anonymes](../../classes-and-structs/anonymous-types.md).  
   
 ## <a name="transforming-in-memory-objects-into-xml"></a>Transformation d’objets en mémoire en XML  
+
  Les requêtes LINQ facilitent la transformation des données entre les structures de données en mémoire, les bases de données SQL, les jeux de données ADO.NET et les flux ou documents XML. L’exemple suivant transforme des objets d’une structure de données en mémoire en éléments XML.  
   
  [!code-csharp[CsLINQGettingStarted#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#9)]  
@@ -91,6 +95,7 @@ LINQ (Language-Integrated Query) n’est pas seulement la récupération des don
  Pour plus d’informations, consultez [Création d’arborescences XML en C# (LINQ to XML)](../../../../standard/linq/create-xml-trees.md).  
   
 ## <a name="performing-operations-on-source-elements"></a>Exécution d’opérations sur les éléments sources  
+
  Une séquence de sortie ne contient pas toujours des éléments ou des propriétés d’élément de la séquence source. La sortie peut être plutôt une séquence de valeurs calculée en utilisant les éléments sources comme arguments d’entrée.
 
  La requête suivante prend une séquence de nombres représentant des rayons de cercles, calcule la zone pour chaque rayon et retourne une séquence de sortie contenant des chaînes mises en forme avec la zone calculée.

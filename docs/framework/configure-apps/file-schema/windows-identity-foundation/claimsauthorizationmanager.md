@@ -3,14 +3,15 @@ title: <claimsAuthorizationManager>
 ms.date: 03/30/2017
 ms.assetid: 9354eee3-f692-4ad6-8427-3169686b8bcc
 author: BrucePerlerMS
-ms.openlocfilehash: ddbe8a862940272e4192a3f4c0abdc1f9e8b5d48
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0718f789ff4d99fb4e2651a9a704da4248cd5f49
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70252085"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158433"
 ---
 # \<claimsAuthorizationManager>
+
 Inscrit un gestionnaire d’autorisations des revendications pour les revendications entrantes.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Inscrit un gestionnaire d’autorisations des revendications pour les revendicat
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -40,6 +42,7 @@ Inscrit un gestionnaire d’autorisations des revendications pour les revendicat
 |type|Type personnalisé qui dérive de la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe. Pour plus d’informations sur la spécification de l' `type` attribut, consultez [références de types personnalisés](../windows-workflow-foundation/index.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  S’il n’y a aucun `type` attribut, ou si l' `type` attribut fait référence <xref:System.Security.Claims.ClaimsAuthenticationManager> à la classe, l' `<claimsAuthorizationManager>` élément ne prend pas d’éléments enfants ; Toutefois, les classes dérivées de <xref:System.Security.Claims.ClaimsAuthorizationManager> peuvent définir des éléments de configuration enfants.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -48,7 +51,8 @@ Inscrit un gestionnaire d’autorisations des revendications pour les revendicat
 |-------------|-----------------|  
 |[\<identityConfiguration>](identityconfiguration.md)|Spécifie les paramètres d’identité au niveau du service.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Le comportement par défaut fourni par la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe autorise toujours les revendications entrantes. Si aucun `type` attribut n’est spécifié ou si l' `type` attribut spécifie la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe, l' `<claimsAuthorizationManager>` élément ne prend pas d’éléments enfants. Vous pouvez spécifier l' `type` attribut pour inscrire un type dérivé de la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe afin d’implémenter un comportement personnalisé. Les classes dérivées peuvent prendre en charge la configuration par le biais d’éléments enfants de l' `<claimsAuthorizationManager>` élément en substituant la <xref:System.Security.Claims.ClaimsAuthorizationManager.LoadCustomConfiguration%2A> méthode pour gérer ces éléments. Le schéma défini pour les éléments enfants est jusqu’au concepteur de la classe.  
   
 > [!IMPORTANT]
@@ -57,6 +61,7 @@ Inscrit un gestionnaire d’autorisations des revendications pour les revendicat
  Cet élément définit la <xref:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthorizationManager%2A?displayProperty=nameWithType> propriété.  
   
 ## <a name="example"></a>Exemple  
+
  Le code XML suivant montre la configuration d’un gestionnaire d’autorisations pour les revendications qui implémente une stratégie composée de paires ressource-action chacune spécifiant des combinaisons booléennes des revendications qu’un demandeur doit posséder pour exécuter l’action sur la ressource. Le code qui implémente le gestionnaire d’autorisations des revendications capable d’utiliser cette stratégie est disponible dans l' `ClaimsBasedAuthorization` exemple.  
   
 ```xml  
