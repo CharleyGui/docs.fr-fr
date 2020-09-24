@@ -3,12 +3,12 @@ title: Vue d’ensemble d’Entity Framework
 description: Le Entity Framework dans ADO.NET prend en charge le développement d’applications orientées données qui fonctionnent à un niveau d’abstraction plus élevé que les applications traditionnelles.
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: e6b7a605f88aecc76cb182473d9dd9f925a4d5a9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1e38670678a6f9985bc36de5586760450a880cb0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557981"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177499"
 ---
 # <a name="entity-framework-overview"></a>Présentation de Entity Framework
 
@@ -17,6 +17,7 @@ Le Entity Framework est un ensemble de technologies ADO.NET qui prennent en char
 Le Entity Framework permet aux développeurs de travailler avec des données sous la forme d’objets et de propriétés spécifiques à un domaine, tels que des clients et des adresses de clients, sans avoir à se préoccuper des tables et des colonnes de base de données sous-jacentes dans lesquelles sont stockées ces données. Avec Entity Framework, les développeurs peuvent travailler à un niveau supérieur d’abstraction lorsqu’ils traitent les données, et peuvent créer et maintenir des applications orientées données avec moins de code que dans les applications traditionnelles. Étant donné que le Entity Framework est un composant du .NET Framework, Entity Framework applications peuvent s’exécuter sur n’importe quel ordinateur sur lequel le .NET Framework à partir de la version 3,5 SP1 est installé.
 
 ## <a name="give-life-to-models"></a>Donnez vie aux modèles
+
  La division de l'application ou du service en trois parties (modèle de domaine, modèle logique et modèle physique) constitue une approche de conception commune et utilisé de longue date pour la construction d'une application ou d'un service. Le modèle de domaine définit les entités et les relations dans le système qui est en cours de modélisation. Le modèle logique d'une base de données relationnelle normalise les entités et les relations dans des tables avec des contraintes de clé étrangère. Le modèle physique s'occupe des fonctionnalités d'un moteur de données particulier en spécifiant des détails de stockage tels que le partitionnement et l'indexation.
 
  Le modèle physique est perfectionné par les administrateurs de bases de données pour améliorer les performances, mais les programmeurs qui écrivent du code d'application limitent principalement leur utilisation du modèle logique à l'écriture de requêtes SQL et à l'appel de procédures stockées. Les modèles de domaine sont généralement utilisés comme un outil permettant de capturer et de communiquer les besoins d’une application, fréquemment sous la forme de diagrammes inertes qui sont consultés et passés en revue dans les phases préliminaires d’un projet, puis abandonnés. De nombreuses équipes de développement ne créent pas de modèle conceptuel et commencent en spécifiant des tables, des colonnes et des clés dans une base de données relationnelle.
@@ -38,6 +39,7 @@ Le modèle de stockage et les mappages peuvent être modifiés le cas échéant,
 Le Entity Framework utilise ces fichiers de modèle et de mappage pour créer, lire, mettre à jour et supprimer des opérations sur les entités et les relations dans le modèle conceptuel à des opérations équivalentes dans la source de données. Le Entity Framework prend même en charge le mappage d’entités du modèle conceptuel à des procédures stockées dans la source de données. Pour plus d’informations, consultez [spécifications CSDL, SSDL et MSL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec).
 
 ## <a name="map-objects-to-data"></a>Mapper des objets à des données
+
  La programmation orientée objet présente une difficulté pour l'interaction avec les systèmes de stockage des données. Bien que l'organisation des classes reflète souvent l'organisation des tables de bases de données relationnelles, l'adéquation n'est pas parfaite. Plusieurs tables normalisées correspondent fréquemment à une seule classe, et les relations entre les classes sont souvent représentées différemment des relations entre les tables. Par exemple, pour représenter le client d'une commande, une classe `Order` peut utiliser une propriété qui contient une référence à une instance d'une classe `Customer`, tandis qu'une ligne de la table `Order` d'une base de données contient une colonne (ou un ensemble de colonnes) de clé étrangère avec une valeur qui correspond à une valeur de clé primaire dans la table `Customer`. Une classe `Customer` peut avoir une propriété nommée `Orders` qui contient une collection d'instances de la classe `Order` alors que la table `Customer` d'une base de données n'a aucune colonne comparable. L’Entity Framework offre aux développeurs la possibilité de représenter les relations de cette manière, ou de modéliser plus étroitement les relations lorsqu’elles sont représentées dans la base de données.
 
  Les solutions existantes ont essayé de rétablir la continuité de ce qu'on appelle fréquemment « défaut d'adaptation d'impédance », en mappant uniquement des classes et des propriétés orientées objet à des colonnes et à des tables relationnelles. Au lieu d’aborder cette approche traditionnelle, le Entity Framework mappe les tables relationnelles, les colonnes et les contraintes de clé étrangère dans des modèles logiques à des entités et des relations dans des modèles conceptuels. Cela permet une plus grande souplesse dans la définition des objets et l'optimisation du modèle logique. Les outils de Entity Data Model génèrent des classes de données extensibles basées sur le modèle conceptuel. Ces classes sont des classes partielles qui peuvent être étendues avec des membres supplémentaires que le développeur ajoute. Par défaut, les classes générées pour un modèle conceptuel particulier dérivent de classes de base qui fournissent des services de matérialisation d'entités sous forme d'objets, ainsi que de suivi et d'enregistrement des modifications. Les développeurs peuvent utiliser ces classes pour travailler avec les entités et les relations sous forme d'objets liés par des associations. Les développeurs peuvent également personnaliser les classes générées pour un modèle conceptuel. Pour plus d’informations, consultez [utilisation des objets](working-with-objects.md).

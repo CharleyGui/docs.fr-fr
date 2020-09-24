@@ -5,24 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 441e8ef3-998c-4d12-8825-ce66a178f90f
-ms.openlocfilehash: a242ecdc774d67721aee640e75847317c1b815d6
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 78db5cf448a19056d7265ab84d97d055748c3faa
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70247545"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164322"
 ---
 # <a name="customizing-operations-by-using-stored-procedures-exclusively"></a>Personnalisation d'opérations à l'aide de procédures stockées uniquement
+
 L'accès aux données se fait couramment à l'aide de procédures stockées uniquement.  
   
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
+
  Vous pouvez modifier l’exemple fourni dans [Personnalisation des opérations à l’aide de procédures stockées](customizing-operations-by-using-stored-procedures.md) en remplaçant même la première requête (qui provoque une exécution SQL dynamique) par un appel de méthode qui encapsule une procédure stockée.  
   
  Supposons que `CustomersByCity` est la méthode, comme illustré dans l'exemple suivant.  
   
 ### <a name="code"></a>Code  
+
  [!code-csharp[DLinqOverrideDefaultSproc#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqOverrideDefaultSproc/cs/northwind.cs#4)]
  [!code-vb[DLinqOverrideDefaultSproc#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqOverrideDefaultSproc/vb/northwind.vb#4)]  
   

@@ -2,24 +2,24 @@
 title: Infrastructure as code
 description: Adopter l’infrastructure en tant que code (IaC) avec des applications Cloud natives
 ms.date: 05/13/2020
-ms.openlocfilehash: cfc9e1f0b2733048d5921de5a0400998c282b1fa
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d130705e19e0d3d7a9e15c73f4758a22ee8ecd43
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613952"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163737"
 ---
 # <a name="infrastructure-as-code"></a>Infrastructure as code
 
 Les systèmes Cloud natifs intègrent des microservices, des conteneurs et une conception de système moderne pour obtenir une vitesse et une agilité. Ils fournissent des étapes de génération et de publication automatisées pour garantir un code cohérent et de qualité. Mais ce n’est qu’une partie de l’histoire. Comment approvisionner les environnements Cloud sur lesquels ces systèmes s’exécutent ?
 
-Les applications Cloud natives modernes adoptent la pratique d' [infrastructure en tant que code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), ou `IaC` .  Avec IaC, vous automatisez l’approvisionnement de la plateforme. Vous appliquez essentiellement des pratiques de conception de logiciels, telles que le test et la gestion des versions, à vos pratiques DevOps. Votre infrastructure et vos déploiements sont automatisés, cohérents et reproductibles. Tout comme la livraison continue automatisée, le modèle traditionnel de déploiements manuels, l’infrastructure en tant que code (IaC) évolue dans le mode de gestion des environnements d’application.
+Les applications Cloud natives modernes adoptent la pratique d' [infrastructure en tant que code](/azure/devops/learn/what-is-infrastructure-as-code), ou `IaC` .  Avec IaC, vous automatisez l’approvisionnement de la plateforme. Vous appliquez essentiellement des pratiques de conception de logiciels, telles que le test et la gestion des versions, à vos pratiques DevOps. Votre infrastructure et vos déploiements sont automatisés, cohérents et reproductibles. Tout comme la livraison continue automatisée, le modèle traditionnel de déploiements manuels, l’infrastructure en tant que code (IaC) évolue dans le mode de gestion des environnements d’application.
 
 Des outils comme Azure Resource Manager (ARM), Terraform et l’interface de ligne de commande (CLI) Azure vous permettent de générer un script de façon déclarative de l’infrastructure cloud dont vous avez besoin.
 
 ## <a name="azure-resource-manager-templates"></a>Modèles Microsoft Azure Resource Manager
 
-ARM est l’acronyme de [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/). Il s’agit d’un moteur d’approvisionnement d’API qui est intégré à Azure et exposé en tant que service API. ARM vous permet de déployer, mettre à jour, supprimer et gérer les ressources contenues dans le groupe de ressources Azure en une seule opération coordonnée. Vous fournissez au moteur un modèle JSON qui spécifie les ressources dont vous avez besoin et leur configuration. ARM orchestre automatiquement le déploiement dans le bon ordre respectant les dépendances. Le moteur garantit idempotence. Si une ressource souhaitée existe déjà avec la même configuration, l’approvisionnement sera ignoré.
+ARM est l’acronyme de [Azure Resource Manager](/azure/azure-resource-manager/management/overview). Il s’agit d’un moteur d’approvisionnement d’API qui est intégré à Azure et exposé en tant que service API. ARM vous permet de déployer, mettre à jour, supprimer et gérer les ressources contenues dans le groupe de ressources Azure en une seule opération coordonnée. Vous fournissez au moteur un modèle JSON qui spécifie les ressources dont vous avez besoin et leur configuration. ARM orchestre automatiquement le déploiement dans le bon ordre respectant les dépendances. Le moteur garantit idempotence. Si une ressource souhaitée existe déjà avec la même configuration, l’approvisionnement sera ignoré.
 
 Les modèles Azure Resource Manager sont un langage JSON qui vous aide à définir diverses ressources dans Azure. Le schéma de base ressemble à ce qui suit : figure 10-14.
 
@@ -102,7 +102,7 @@ Parfois, les modèles Terraform et ARM génèrent des valeurs significatives, te
 
 ## <a name="azure-cli-scripts-and-tasks"></a>Azure CLI des scripts et des tâches
 
-Enfin, vous pouvez tirer parti de [Azure CLI](https://docs.microsoft.com/cli/azure/) pour générer un script de façon déclarative de votre infrastructure en nuage. Azure CLI scripts peuvent être créés, trouvés et partagés pour approvisionner et configurer presque n’importe quelle ressource Azure. L’interface CLI est simple à utiliser avec une courbe d’apprentissage doucement. Les scripts sont exécutés dans PowerShell ou bash. Ils sont également faciles à déboguer, en particulier en cas de comparaison avec les modèles ARM.
+Enfin, vous pouvez tirer parti de [Azure CLI](/cli/azure/) pour générer un script de façon déclarative de votre infrastructure en nuage. Azure CLI scripts peuvent être créés, trouvés et partagés pour approvisionner et configurer presque n’importe quelle ressource Azure. L’interface CLI est simple à utiliser avec une courbe d’apprentissage doucement. Les scripts sont exécutés dans PowerShell ou bash. Ils sont également faciles à déboguer, en particulier en cas de comparaison avec les modèles ARM.
 
 Azure CLI scripts fonctionnent bien lorsque vous devez détruire et redéployer votre infrastructure. La mise à jour d’un environnement existant peut être délicate. De nombreuses commandes CLI ne sont pas idempotent. Cela signifie qu’ils recréent la ressource chaque fois qu’ils sont exécutés, même si la ressource existe déjà. Il est toujours possible d’ajouter du code qui vérifie l’existence de chaque ressource avant de la créer. Toutefois, votre script peut devenir encombré et difficile à gérer.
 
@@ -124,7 +124,7 @@ La figure 10-17 montre un extrait de code YAML qui répertorie la version de Azu
 
 **Figure 10-17** -script Azure CLI
 
-Dans l’article [qu’est-ce que l’infrastructure en tant que code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), l’auteur Sam Guckenheimer décrit comment, les équipes qui implémentent IaC peuvent fournir rapidement et à grande échelle des environnements stables. Les équipes évitent la configuration manuelle des environnements et appliquent la cohérence en représentant l’état souhaité de leurs environnements via du code. Les déploiements d’infrastructure avec IaC sont reproductibles et évitent les problèmes d’exécution dus à une dérive de la configuration ou à des dépendances manquantes. Les équipes DevOps peuvent collaborer avec un ensemble unifié de pratiques et d’outils pour fournir des applications et leur infrastructure de prise en charge rapidement, de manière fiable et à grande échelle.»
+Dans l’article [qu’est-ce que l’infrastructure en tant que code](/azure/devops/learn/what-is-infrastructure-as-code), l’auteur Sam Guckenheimer décrit comment, les équipes qui implémentent IaC peuvent fournir rapidement et à grande échelle des environnements stables. Les équipes évitent la configuration manuelle des environnements et appliquent la cohérence en représentant l’état souhaité de leurs environnements via du code. Les déploiements d’infrastructure avec IaC sont reproductibles et évitent les problèmes d’exécution dus à une dérive de la configuration ou à des dépendances manquantes. Les équipes DevOps peuvent collaborer avec un ensemble unifié de pratiques et d’outils pour fournir des applications et leur infrastructure de prise en charge rapidement, de manière fiable et à grande échelle.»
 
 >[!div class="step-by-step"]
 >[Précédent](feature-flags.md) 

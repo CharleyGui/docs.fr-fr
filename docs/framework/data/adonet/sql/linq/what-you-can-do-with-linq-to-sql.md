@@ -5,18 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 061d98b2-baa7-4336-8ad2-c14de8134d91
-ms.openlocfilehash: e84047843aff4044c75ba1b971a9e2f061e2e8d6
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: a2e65cb558eec3cec21ea0efbcc66bb8c56ec7b5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75633999"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163919"
 ---
 # <a name="what-you-can-do-with-linq-to-sql"></a>Que faire avec LINQ to SQL
+
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge toutes les fonctions clés que recherchent les développeurs SQL. Vous pouvez demander des informations et insérer, mettre à jour et supprimer des informations dans des tables.  
   
-## <a name="selecting"></a>Sélection  
- Pour cela, il suffit d’écrire une requête LINQ dans votre propre langage de programmation, puis d’exécuter cette requête pour récupérer les résultats. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] traduit lui-même toutes les opérations requises dans les opérations SQL nécessaires que vous connaissez. Pour plus d’informations, consultez [LINQ to SQL](index.md).  
+## <a name="selecting"></a>Sélectionnez  
+
+ Pour cela*projection*, il suffit d’écrire une requête LINQ dans votre propre langage de programmation, puis d’exécuter cette requête pour récupérer les résultats. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] traduit lui-même toutes les opérations requises dans les opérations SQL nécessaires que vous connaissez. Pour plus d’informations, consultez [LINQ to SQL](index.md).  
   
  Dans l'exemple suivant, les noms de société des clients de Londres sont récupérés et affichés dans la fenêtre de console.  
   
@@ -24,6 +26,7 @@ ms.locfileid: "75633999"
  [!code-vb[DLinqGettingStarted#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqGettingStarted/vb/Module1.vb#1)]  
   
 ## <a name="inserting"></a>Insertion  
+
  Pour exécuter une `Insert`SQL, il vous suffit d'ajouter des objets au modèle objet que vous avez créé et d'appeler <xref:System.Data.Linq.DataContext.SubmitChanges%2A> sur le <xref:System.Data.Linq.DataContext>.  
   
  Dans l'exemple suivant, un nouveau client et des informations le concernant sont ajoutés à la table `Customers` à l'aide de <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>.  
@@ -32,6 +35,7 @@ ms.locfileid: "75633999"
  [!code-vb[DLinqGettingStarted#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqGettingStarted/vb/Module1.vb#2)]  
   
 ## <a name="updating"></a>Mise à jour  
+
  Pour `Update` une entrée d'une base de données, récupérez d'abord l'élément et modifiez-le directement dans le modèle objet. Après avoir modifié l'objet, appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A> sur le <xref:System.Data.Linq.DataContext> pour mettre la base de données à jour.  
   
  Dans l'exemple suivant, tous les clients de Londres sont récupérés. Le nom de ville "London" est ensuite remplacé par "London - Metro". Enfin, <xref:System.Data.Linq.DataContext.SubmitChanges%2A> est appelée pour envoyer les modifications à la base de données.  
@@ -40,6 +44,7 @@ ms.locfileid: "75633999"
  [!code-vb[DLinqGettingStarted#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqGettingStarted/vb/Module1.vb#3)]  
   
 ## <a name="deleting"></a>Suppression  
+
  Pour `Delete` un élément, supprimez-le de la collection à laquelle il appartient, puis appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A> sur le <xref:System.Data.Linq.DataContext> pour valider la modification.  
   
 > [!NOTE]
@@ -54,4 +59,4 @@ ms.locfileid: "75633999"
 
 - [Guide de programmation](programming-guide.md)
 - [Modèle objet LINQ to SQL](the-linq-to-sql-object-model.md)
-- [Bien démarrer](getting-started.md)
+- [Prise en main](getting-started.md)

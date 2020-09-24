@@ -5,20 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-ms.openlocfilehash: 18bb03e17b19243ee1bc6e3f7ebd70afb4d4c60b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6b0234337c85ace0797d75b72560ccb55635daae
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174444"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177265"
 ---
 # <a name="updating-data-in-a-data-source"></a>Mise à jour des données dans une source de données
-Les instructions SQL qui modifient les données (comme INSERT, UPDATE ou DELETE) ne retournent pas de ligne. De même, de nombreuses procédures stockées effectuent une action mais ne retournent pas de ligne. Pour exécuter des commandes qui ne renvoient pas les lignes, créez un objet **de commande** avec la commande SQL appropriée et une **connexion,** y compris les **paramètres**requis. Exécutez la commande avec la méthode **ExecuteNonQuery** de l’objet **de commande.**  
+
+Les instructions SQL qui modifient les données (comme INSERT, UPDATE ou DELETE) ne retournent pas de ligne. De même, de nombreuses procédures stockées effectuent une action mais ne retournent pas de ligne. Pour exécuter des commandes qui ne retournent pas de lignes, créez un objet **Command** avec la commande SQL appropriée et une **connexion**, y compris tous les **paramètres**requis. Exécutez la commande avec la méthode **ExecuteNonQuery** de l’objet **Command** .  
   
- La méthode **ExecuteNonQuery** renvoie un intégriste qui représente le nombre de lignes affectées par la déclaration ou la procédure stockée qui a été exécutée. Si plusieurs instructions sont exécutées, la valeur retournée est la somme des enregistrements affectés par toutes ces instructions.  
+ La méthode **ExecuteNonQuery** retourne un entier qui représente le nombre de lignes affectées par l’instruction ou la procédure stockée qui a été exécutée. Si plusieurs instructions sont exécutées, la valeur retournée est la somme des enregistrements affectés par toutes ces instructions.  
   
-## <a name="example"></a> Exemple  
- L’exemple de code suivant exécute une déclaration INSERT pour insérer un enregistrement dans une base de données à l’aide **d’ExecuteNonQuery**.  
+## <a name="example"></a>Exemple  
+
+ L’exemple de code suivant exécute une instruction INSERT pour insérer un enregistrement dans une base de données à l’aide de **ExecuteNonQuery**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -42,9 +44,9 @@ SqlCommand command = new SqlCommand(queryString, connection);
 Int32 recordsAffected = command.ExecuteNonQuery();  
 ```  
   
- L’exemple de code suivant exécute la procédure stockée créée par le code d’échantillon dans [Performing Catalog Operations](performing-catalog-operations.md). Aucune ligne n’est retournée par la procédure stockée, de sorte que la méthode **ExecuteNonQuery** est utilisée, mais la procédure stockée ne reçoivent un paramètre d’entrée et retourne un paramètre de sortie et une valeur de retour.  
+ L’exemple de code suivant exécute la procédure stockée créée par l’exemple de code lors de l' [exécution d’opérations de catalogue](performing-catalog-operations.md). Aucune ligne n’est retournée par la procédure stockée. la méthode **ExecuteNonQuery** est donc utilisée, mais la procédure stockée ne reçoit pas de paramètre d’entrée et retourne un paramètre de sortie et une valeur de retour.  
   
- Pour <xref:System.Data.OleDb.OleDbCommand> l’objet, le paramètre **ReturnValue** doit d’abord être ajouté à la collection **Paramètres.**  
+ Pour l' <xref:System.Data.OleDb.OleDbCommand> objet, le paramètre **returnValue** doit être d’abord ajouté à la collection **Parameters** .  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  

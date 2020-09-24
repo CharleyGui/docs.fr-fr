@@ -2,14 +2,15 @@
 title: Déduction de tables
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-ms.openlocfilehash: 52ffd3fe90eb491dd01acf8538276cc828fdb309
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4a3d7b239dbc405cf2acae967b5be401dc772e38
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784494"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177551"
 ---
 # <a name="inferring-tables"></a>Déduction de tables
+
 Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir d'un document XML, ADO.NET identifie d'abord les éléments XML qui représentent des tables. Les structures XML suivantes aboutissent à une table pour le schéma du **DataSet** :  
   
 - éléments avec attributs ;  
@@ -19,6 +20,7 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
 - éléments qui se répètent.  
   
 ## <a name="elements-with-attributes"></a>Éléments avec attributs  
+
  Les éléments contenant des attributs spécifiés donnent des tables déduites. Examinons, par exemple, le code XML suivant :  
   
 ```xml  
@@ -30,9 +32,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d'inférence produit une table nommée « Element1 ».  
   
- **Ensemble** DocumentElement  
+ **Jeu de données :** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Élément1  
   
 |attr1|Element1_Text|  
 |-----------|--------------------|  
@@ -40,6 +42,7 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
 |valeur2|Text1|  
   
 ## <a name="elements-with-child-elements"></a>Éléments avec éléments enfants  
+
  Les éléments possédant des éléments enfants donnent des tables déduites. Examinons, par exemple, le code XML suivant :  
   
 ```xml  
@@ -52,9 +55,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d'inférence produit une table nommée « Element1 ».  
   
- **Ensemble** DocumentElement  
+ **Jeu de données :** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Élément1  
   
 |ChildElement1|  
 |-------------------|  
@@ -71,9 +74,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d'inférence produit une table nommée « DocumentElement ».  
   
- **Ensemble** NewDataSet  
+ **Jeu de données :** NewDataSet  
   
- **Table :** DocumentElement  
+ **Table :** DocumentElement  
   
 |Element1|Element2|  
 |--------------|--------------|  
@@ -89,15 +92,16 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d’inférence produit un **DataSet** nommé « DocumentElement » qui contient une table nommée « Element1 ».  
   
- **Ensemble** DocumentElement  
+ **Jeu de données :** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Élément1  
   
 |attr1|attr2|  
 |-----------|-----------|  
 |valeur1|valeur2|  
   
 ## <a name="repeating-elements"></a>Éléments qui se répètent  
+
  Les éléments qui se répètent donnent une seule table déduite. Examinons, par exemple, le code XML suivant :  
   
 ```xml  
@@ -109,9 +113,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d'inférence produit une table nommée « Element1 ».  
   
- **Ensemble** DocumentElement  
+ **Jeu de données :** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Élément1  
   
 |Element1_Text|  
 |--------------------|  
@@ -120,9 +124,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Inférence de la structure relationnelle d’un DataSet à partir de XML](inferring-dataset-relational-structure-from-xml.md)
-- [Chargement d’un DataSet à partir de XML](loading-a-dataset-from-xml.md)
+- [Déduction de la structure relationnelle des DataSet à partir de XML](inferring-dataset-relational-structure-from-xml.md)
+- [Chargement d'un DataSet à partir de XML](loading-a-dataset-from-xml.md)
 - [Chargement des informations de schéma de DataSet à partir de XML](loading-dataset-schema-information-from-xml.md)
 - [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
 - [DataSets, DataTables et DataViews](index.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

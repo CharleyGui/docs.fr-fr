@@ -3,12 +3,12 @@ title: Données distribuées
 description: Le contraste du stockage des données dans les applications monolithiques et Cloud natives.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 28513f8691c06cf58ed14d57bf7830bb35d94852
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: b7c8c43b16f2f70f9009c4fe4a8d19c52fa7ea2a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144394"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163932"
 ---
 # <a name="distributed-data"></a>Données distribuées
 
@@ -22,7 +22,7 @@ La figure 5-1 compare les différences.
 
 Les développeurs expérimentés reconnaîtront facilement l’architecture sur le côté gauche de la figure 5-1. Dans cette *application monolithique*, les composants de service métier colocaliser ensemble dans un niveau de services partagés, en partageant des données à partir d’une base de données relationnelle unique.
 
-À bien des égards, une seule base de données conserve la gestion des données simple. L’interrogation de données entre plusieurs tables est simple. Modifications apportées à la mise à jour des données ensemble ou restauration. Les [transactions ACID](https://docs.microsoft.com/windows/desktop/cossdk/acid-properties) garantissent une cohérence forte et immédiate.
+À bien des égards, une seule base de données conserve la gestion des données simple. L’interrogation de données entre plusieurs tables est simple. Modifications apportées à la mise à jour des données ensemble ou restauration. Les [transactions ACID](/windows/desktop/cossdk/acid-properties) garantissent une cohérence forte et immédiate.
 
 En concevant pour le Cloud natif, nous prenons une approche différente. Dans la partie droite de la figure 5-1, notez la manière dont les fonctionnalités métier sont séparées en microservices indépendants et petits. Chaque microservice encapsule une fonctionnalité métier spécifique et ses propres données. La base de données monolithique est décomposée en un modèle de données distribué avec de nombreuses bases de données plus petites, chacune correspondant à un microservice. Lorsque la fumée disparaît, nous avons découvert une conception qui expose une *base de données par Microservice*.
 
@@ -68,7 +68,7 @@ L’une des options présentées dans le chapitre 4 est un [appel http direct](s
 Nous pourrions également implémenter un modèle de demande-réponse avec des files d’attente entrantes et sortantes distinctes pour chaque service. Toutefois, ce modèle est complexe et nécessite la mise en corrélation des messages de demande et de réponse.
 S’il dissocie les appels du microservice principal, le service appelant doit toujours attendre que l’appel se termine. La congestion du réseau, les erreurs temporaires ou un microservice surchargé et peuvent entraîner des opérations de longue durée et même en échec.
 
-Au lieu de cela, un modèle largement accepté pour la suppression des dépendances entre les services est le [modèle de vue matérialisée](https://docs.microsoft.com/azure/architecture/patterns/materialized-view), illustré à la figure 5-4.
+Au lieu de cela, un modèle largement accepté pour la suppression des dépendances entre les services est le [modèle de vue matérialisée](/azure/architecture/patterns/materialized-view), illustré à la figure 5-4.
 
 ![Modèle de vue matérialisée](./media/materialized-view-pattern.png)
 
@@ -92,7 +92,7 @@ Dans la figure précédente, cinq microservices indépendants participent à une
 
 Au lieu de cela, vous devez construire cette transaction distribuée *par programme*.
 
-Un modèle répandu pour l’ajout de la prise en charge transactionnelle distribuée est le modèle saga. Elle est implémentée en regroupant les transactions locales ensemble par programmation et en appelant séquentiellement chacune. Si l’une des transactions locales échoue, le saga abandonne l’opération et appelle un ensemble de [transactions de compensation](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction). Les transactions de compensation annulent les modifications apportées par les transactions locales précédentes et la cohérence des données de restauration. La figure 5-6 montre une transaction ayant échoué avec le modèle saga.
+Un modèle répandu pour l’ajout de la prise en charge transactionnelle distribuée est le modèle saga. Elle est implémentée en regroupant les transactions locales ensemble par programmation et en appelant séquentiellement chacune. Si l’une des transactions locales échoue, le saga abandonne l’opération et appelle un ensemble de [transactions de compensation](/azure/architecture/patterns/compensating-transaction). Les transactions de compensation annulent les modifications apportées par les transactions locales précédentes et la cohérence des données de restauration. La figure 5-6 montre une transaction ayant échoué avec le modèle saga.
 
 ![Revenir en arrière dans le modèle saga](./media/saga-rollback-operation.png)
 
@@ -108,7 +108,7 @@ Les grandes applications Cloud natives prennent souvent en charge des exigences 
 
 ### <a name="cqrs"></a>CQRS
 
-[CQRS](https://docs.microsoft.com/azure/architecture/patterns/cqrs)est un modèle architectural qui peut aider à optimiser les performances, l’évolutivité et la sécurité. Le modèle sépare les opérations qui lisent les données des opérations qui écrivent des données.
+[CQRS](/azure/architecture/patterns/cqrs)est un modèle architectural qui peut aider à optimiser les performances, l’évolutivité et la sécurité. Le modèle sépare les opérations qui lisent les données des opérations qui écrivent des données.
 
 Pour les scénarios normaux, le même modèle d’entité et l’objet de référentiel de données sont utilisés pour *les* opérations de lecture et d’écriture.
 
@@ -124,11 +124,11 @@ Dans la figure précédente, des modèles de commande et de requête distincts s
 
 Cette séparation permet de mettre à l’échelle indépendamment les lectures et les écritures. Les opérations de lecture utilisent un schéma optimisé pour les requêtes, tandis que les écritures utilisent un schéma optimisé pour les mises à jour. Les requêtes de lecture dépassent les données dénormalisées, tandis que la logique métier complexe peut être appliquée au modèle d’écriture. En outre, vous pouvez imposer une sécurité plus étroite sur les opérations d’écriture que celles qui exposent des lectures.
 
-L’implémentation de CQRS peut améliorer les performances des applications pour les services Cloud natifs. Toutefois, cela se traduit par une conception plus complexe. Appliquez ce principe avec soin et stratégiquement à ces sections de votre application Cloud native qui en tireront parti. Pour plus d’informations sur CQRS, consultez les [microservices .NET Microsoft Book : architecture pour les applications .net en conteneur](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns).
+L’implémentation de CQRS peut améliorer les performances des applications pour les services Cloud natifs. Toutefois, cela se traduit par une conception plus complexe. Appliquez ce principe avec soin et stratégiquement à ces sections de votre application Cloud native qui en tireront parti. Pour plus d’informations sur CQRS, consultez les [microservices .NET Microsoft Book : architecture pour les applications .net en conteneur](../microservices/microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns.md).
 
 ### <a name="event-sourcing"></a>Provisionnement en événements
 
-Une autre approche de l’optimisation des scénarios de données volumineuses implique l' [approvisionnement des événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
+Une autre approche de l’optimisation des scénarios de données volumineuses implique l' [approvisionnement des événements](/azure/architecture/patterns/event-sourcing).
 
 Un système stocke généralement l’état actuel d’une entité de données. Si un utilisateur modifie son numéro de téléphone, par exemple, l’enregistrement du client est mis à jour avec le nouveau numéro. Nous connaissons toujours l’état actuel d’une entité de données, mais chaque mise à jour remplace l’état précédent.
 

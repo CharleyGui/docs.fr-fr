@@ -3,14 +3,15 @@ title: Fonctionnalités SQL Server et ADO.NET
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 2839529b-a79b-4450-be5d-07a98dbc7a0f
-ms.openlocfilehash: 743e0eb9761cdc58018aab8aaed50a99b197116c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 121381114fadd8b20978d2e932bf3ec8bdcdb193
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552620"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177317"
 ---
 # <a name="sql-server-features-and-adonet"></a>Fonctionnalités SQL Server et ADO.NET
+
 Les rubriques de cette section traitent des fonctionnalités dans SQL Server qui ont pour but le développement d’applications de bases de données avec ADO.NET.  
   
  Pour plus d'informations, consultez la documentation en ligne de SQL Server correspondant à la version que vous utilisez, comme répertorié dans le tableau suivant.  
@@ -20,6 +21,7 @@ Les rubriques de cette section traitent des fonctionnalités dans SQL Server qui
 1. [Développement (moteur de base de données)](/previous-versions/sql/sql-server-2008/bb500155(v=sql.100))  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Énumération des instances de SQL Server (ADO.NET)](enumerating-instances-of-sql-server.md)  
  Décrit comment énumérer des instances actives de SQL Server.  
   

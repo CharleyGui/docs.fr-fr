@@ -3,19 +3,21 @@ title: Traces de diagnostic
 description: En savoir plus sur les suivis de diagnostic dans .NET. Les suivis correspondent à la publication de messages spécifiques générés au cours de l'exécution de l'application.
 ms.date: 03/30/2017
 ms.assetid: 28e77a63-d20d-4b6a-9caf-ddad86550427
-ms.openlocfilehash: 5de8fdf7b95cf01b119118dac75d373c32949dcd
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 1999cd922b9e7299cbf3c10a702eb4d2dc6c3fbb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141809"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177239"
 ---
 # <a name="diagnostic-traces"></a>Traces de diagnostic
+
 Les suivis correspondent à la publication de messages spécifiques générés au cours de l'exécution de l'application. Pour utiliser le suivi, vous devez disposer d'un mécanisme de collecte et d'enregistrement des messages envoyés. Les messages de suivi sont reçus par des écouteurs. Le but d'un écouteur est de collecter, de stocker et de router les messages de suivi. Les écouteurs dirigent la sortie de suivi vers une cible appropriée, telle qu'un journal, une fenêtre ou un fichier de texte.  
   
  L'un de ces écouteurs, le <xref:System.Diagnostics.DefaultTraceListener>, est automatiquement créé et initialisé lorsque le suivi est activé. Pour que la sortie de suivi soit dirigée vers d'autres sources, créez et initialisez des écouteurs de suivi supplémentaires. Les écouteurs que vous créez doivent refléter vos besoins individuels. Par exemple, vous pouvez avoir besoin d'un enregistrement texte de toutes les données de sortie de suivi. Dans ce cas, vous devez créer un écouteur qui écrit toutes les données de sortie dans un nouveau fichier texte lorsque celui-ci est activé. En revanche, il est possible que vous ayez seulement besoin de consulter la sortie lors de l'exécution de l'application. Dans ce cas, vous pouvez créer un écouteur qui dirige toutes les données de sortie vers une fenêtre de console. <xref:System.Diagnostics.EventLogTraceListener> permet de diriger la sortie de suivi vers un journal des événements et <xref:System.Diagnostics.TextWriterTraceListener> permet de l'écrire dans un flux.  
   
 ## <a name="enabling-tracing"></a>Activation du traçage  
+
  Pour activer les suivis lors du traitement transactionnel, vous devez modifier le fichier de configuration de votre application. Voici un exemple.  
   
 ```xml  
@@ -43,9 +45,10 @@ Les suivis correspondent à la publication de messages spécifiques générés a
 |Critique|Des défaillances sérieuses, telles que les défaillances suivantes, se sont produites :<br /><br /> -Erreur qui peut entraîner une perte immédiate des fonctionnalités utilisateur.<br />: Événement qui oblige un administrateur à prendre des mesures pour éviter la perte de fonctionnalités.<br />-Le code se bloque.<br />: Ce niveau de suivi peut également fournir un contexte suffisant pour interpréter d’autres traces critiques. Cela peut aider à l'identification de la séquence d'opérations causant une défaillance sérieuse.|  
 |Erreur|Une erreur (par exemple, une configuration invalide ou un comportement du réseau) susceptible d'entraîner une perte des fonctionnalités utilisateur s'est produite.|  
 |Avertissement|Il existe une condition susceptible d'entraîner une erreur ou une défaillance critique (par exemple, un échec d'allocation ou l'approche d'une limite). Le traitement normal d'erreurs dans le code utilisateur (par exemple, l'abandon d'une transaction, l'expiration d'un délai d'attente, un échec d'authentification) peut également entraîner la génération d'un avertissement.|  
-|Information|Des messages d'aide au contrôle et au diagnostic de l'état système, à la mesure des performances ou au profilage sont générés. Ils peuvent inclure des événements de durée de vie de transaction et d'inscription, tels qu'une transaction en cours de création ou de validation, le dépassement d'une limite importante ou l'allocation de ressources significatives. Un développeur peut ensuite utiliser ces informations pour la planification de capacité et la gestion des performances.|  
+|Informations|Des messages d'aide au contrôle et au diagnostic de l'état système, à la mesure des performances ou au profilage sont générés. Ils peuvent inclure des événements de durée de vie de transaction et d'inscription, tels qu'une transaction en cours de création ou de validation, le dépassement d'une limite importante ou l'allocation de ressources significatives. Un développeur peut ensuite utiliser ces informations pour la planification de capacité et la gestion des performances.|  
   
 ## <a name="trace-codes"></a>Codes de suivi  
+
  Le tableau suivant répertorie les codes de suivi générés par l'infrastructure <xref:System.Transactions>. L’identificateur de code de trace, le <xref:System.Diagnostics.EventTypeFilter.EventType%2A> niveau d’énumération pour la trace et les données supplémentaires contenues dans le **TraceRecord** pour la trace, sont inclus dans le tableau. En outre, le niveau de suivi correspondant de la trace est également stocké dans le **TraceRecord**.  
   
 |TraceCode|Type d’événement|Données supplémentaires contenues dans TraceRecord|  
@@ -78,6 +81,7 @@ Les suivis correspondent à la publication de messages spécifiques générés a
  Le schéma XML des éléments de données supplémentaires précédents se présente au format suivant.  
   
 ### <a name="transactiontraceidentifier"></a>TransactionTraceIdentifier  
+
  `<TransactionTraceIdentifier>`  
   
  `<TransactionIdentifier >`  
@@ -95,6 +99,7 @@ Les suivis correspondent à la publication de messages spécifiques générés a
  `</TransactionTraceIdentifier>`  
   
 ### <a name="enlistmenttraceidentifier"></a>EnlistmentTraceIdentifier  
+
  `<EnlistmentTraceIdentifier>`  
   
  `<ResourceManagerId>`  
@@ -128,6 +133,7 @@ Les suivis correspondent à la publication de messages spécifiques générés a
  `</EnlistmentTraceIdentifier>`  
   
 ### <a name="resource-manager-identifier"></a>Identificateur de gestionnaire de ressources  
+
  `<ResourceManagerId>`  
   
  `string form of guid`  
@@ -135,4 +141,5 @@ Les suivis correspondent à la publication de messages spécifiques générés a
  `</ResourceManagerId>`  
   
 ## <a name="security-issues-for-tracing"></a>Problèmes de sécurité liés au suivi  
+
  Lorsque vous activez le suivi en tant qu'administrateur, il se peut que des informations sensibles soient écrites dans un journal de suivi à consultation publique par défaut. Pour éviter toute menace de sécurité, pensez à stocker le journal de suivi à un emplacement sécurisé contrôlé par des autorisations de partage et d'accès au système de fichiers.

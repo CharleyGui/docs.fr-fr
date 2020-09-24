@@ -8,14 +8,15 @@ helpviewer_keywords:
 - ThrowUnobservedTaskExceptions element
 - <ThrowUnobservedTaskExceptions> element
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
-ms.openlocfilehash: de5a686bcbd88fc52173b488103f033575623d62
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 012c2e70e66015bc317606a7eea07812b5df26e7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153813"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183921"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>Élément \<ThrowUnobservedTaskExceptions>
+
 Indique si les exceptions de tâches non gérées doivent arrêter un processus en cours d’exécution.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -42,10 +44,11 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|`false`|N’arrête pas le processus en cours d’exécution pour une exception de tâche non gérée. Il s'agit de la valeur par défaut.|  
+|`false`|N’arrête pas le processus en cours d’exécution pour une exception de tâche non gérée. Il s’agit de la valeur par défaut.|  
 |`true`|Met fin au processus en cours d’exécution pour une exception de tâche non gérée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -56,7 +59,8 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
 |||  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Si une exception associée à un n' <xref:System.Threading.Tasks.Task> a pas été observée, il n’y a aucune <xref:System.Threading.Tasks.Task.Wait%2A> opération, le parent n’est pas attaché et la <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> propriété n’a pas été lue. l’exception de tâche est considérée comme non prise en compte.  
   
  Dans le .NET Framework 4, par défaut, si un <xref:System.Threading.Tasks.Task> qui a une exception non prise en compte est récupéré par le garbage collector, le finaliseur lève une exception et met fin au processus. L’arrêt du processus est déterminé par le minutage de la garbage collection et de la finalisation.  
@@ -72,6 +76,7 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
 - En définissant la valeur de Registre DWORD ThrowUnobservedTaskExceptions = 1 dans le HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \\ . Clé NETFramework.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment activer la levée d’exceptions dans des tâches à l’aide d’un fichier de configuration de l’application.  
   
 ```xml  
@@ -83,6 +88,7 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
 ```  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment une exception non détectée est levée à partir d’une tâche. Le code doit être exécuté comme un programme libéré pour fonctionner correctement.  
   
  [!code-csharp[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/throwunobservedtaskexceptions/cs/program.cs#1)]
@@ -90,5 +96,5 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des paramètres d'exécution](index.md)
 - [Schéma du fichier de configuration](../index.md)

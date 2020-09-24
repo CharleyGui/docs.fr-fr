@@ -2,24 +2,27 @@
 title: 'Procédure pas à pas : Interrogation entre relations (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-ms.openlocfilehash: ebf96bc575ef68e1190c5b9be7111902c0f69fef
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9dfe34136f2d0a14a12f72e22a96d1882ddbce49
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780991"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164010"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Procédure pas à pas : Interrogation entre relations (C#)
-Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] comment utiliser des *associations* pour représenter les relations de clé étrangère dans la base de données.  
+
+Cette procédure pas à pas montre comment utiliser des [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *associations* pour représenter les relations de clé étrangère dans la base de données.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
  Cette procédure pas à pas a été écrite à l'aide des paramètres de développement Visual C#.  
   
 ## <a name="prerequisites"></a>Prérequis  
- Vous devez avoir terminé [la procédure pas à pas : Modèle objet simple et requête (C#)](walkthrough-simple-object-model-and-query-csharp.md). Cette procédure pas à pas est basée sur cette dernière, y compris la présence du fichier northwnd.mdf dans c:\linqtest5.  
+
+ Vous devez avoir terminé la [procédure pas à pas : requête et modèle objet simples (C#)](walkthrough-simple-object-model-and-query-csharp.md). Cette procédure pas à pas est basée sur cette dernière, y compris la présence du fichier northwnd.mdf dans c:\linqtest5.  
   
-## <a name="overview"></a>Présentation  
+## <a name="overview"></a>Vue d’ensemble  
+
  Cette procédure pas à pas se compose de trois tâches principales :  
   
 - Ajout d'une classe d'entité pour représenter la table Orders dans l'exemple de base de données Northwind.  
@@ -29,6 +32,7 @@ Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../inclu
 - Création et exécution d'une requête pour tenter d'obtenir des informations `Order` en utilisant la classe `Customer`.  
   
 ## <a name="mapping-relationships-across-tables"></a>Mappage de relations entre des tables  
+
  Une fois la définition de classe `Customer` terminée, créez la définition de classe d'entité `Order` qui inclut le code suivant indiquant que `Order.Customer` est une clé étrangère de `Customer.CustomerID`.  
   
 ### <a name="to-add-the-order-entity-class"></a>Pour ajouter la classe d'entité Order  
@@ -38,6 +42,7 @@ Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../inclu
      [!code-csharp[DLinqWalk2CS#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#1)]  
   
 ## <a name="annotating-the-customer-class"></a>Annotation de la classe Customer  
+
  Dans cette étape, annotez la classe `Customer` pour indiquer sa relation avec la classe `Order`. Cet ajout n'est pas strictement nécessaire étant donné que la définition de la relation dans chacune des directions est suffisante pour créer le lien. Cependant, l'ajout de cette annotation vous permet de naviguer facilement parmi les objets dans chacune des directions.  
   
 ### <a name="to-annotate-the-customer-class"></a>Pour annoter la classe Customer  
@@ -47,6 +52,7 @@ Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../inclu
      [!code-csharp[DLinqWalk2CS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#2)]  
   
 ## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Création et exécution d'une requête dans la relation entre les classes Order et Customer  
+
  Vous pouvez désormais accéder aux objets `Order` directement à partir des objets `Customer` ou inversement. Vous n’avez pas besoin d’une *jointure* explicite entre les clients et les commandes.  
   
 ### <a name="to-access-order-objects-by-using-customer-objects"></a>Pour accéder aux objets Order à l'aide d'objets Customer  
@@ -63,6 +69,7 @@ Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../inclu
 3. Appuyez sur Entrée dans la fenêtre de console pour arrêter le débogage.  
   
 ## <a name="creating-a-strongly-typed-view-of-your-database"></a>Création d'une vue fortement typée de votre base de données  
+
  Il est beaucoup plus facile de démarrer avec une vue fortement typée de votre base de données. En effectuant un typage fort de l'objet <xref:System.Data.Linq.DataContext>, vous n'avez pas besoin d'effectuer des appels à <xref:System.Data.Linq.DataContext.GetTable%2A>. Vous pouvez utiliser des tables fortement typées dans toutes vos requêtes lorsque vous utilisez l'objet <xref:System.Data.Linq.DataContext> fortement typé.  
   
  Dans les étapes suivantes, vous créerez `Customers` comme table fortement typée qui mappe à la table Customers dans la base de données.  
@@ -86,7 +93,8 @@ Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../inclu
 4. Appuyez sur Entrée dans la fenêtre de console pour arrêter le débogage.  
   
 ## <a name="next-steps"></a>Étapes suivantes  
- La procédure pas à[pas suivante (procédure pas à pas : La manipulation de donnéesC#(](walkthrough-manipulating-data-csharp.md))) montre comment manipuler les données. Cette procédure pas à pas ne requiert pas d'enregistrer les deux procédures pas à pas de cette série que vous avez déjà terminées.  
+
+ La procédure pas à pas suivante ([procédure pas à pas : manipulation de données (C#)](walkthrough-manipulating-data-csharp.md)) montre comment manipuler les données. Cette procédure pas à pas ne requiert pas d'enregistrer les deux procédures pas à pas de cette série que vous avez déjà terminées.  
   
 ## <a name="see-also"></a>Voir aussi
 

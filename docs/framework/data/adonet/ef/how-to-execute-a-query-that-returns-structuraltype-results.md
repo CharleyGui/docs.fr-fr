@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2314f2a2-b1c3-40c4-95bb-cdf9b21a7b53
-ms.openlocfilehash: e9b9c806dd77ea90399aaefdaa751cbd0ab938e9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4b3a63cb23851c6545f330ebd2371e1a34ff13e8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546742"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198312"
 ---
 # <a name="how-to-execute-a-query-that-returns-structuraltype-results"></a>Procédure : Exécuter une requête qui retourne des résultats StructuralType
+
 Cette rubrique montre comment exécuter une commande par rapport à un modèle conceptuel en utilisant un objet <xref:System.Data.EntityClient.EntityCommand> et comment récupérer les résultats de <xref:System.Data.Metadata.Edm.StructuralType> en utilisant un objet <xref:System.Data.EntityClient.EntityDataReader>. Les classes <xref:System.Data.Metadata.Edm.EntityType>, <xref:System.Data.Metadata.Edm.RowType> et <xref:System.Data.Metadata.Edm.ComplexType> sont dérivées de la classe <xref:System.Data.Metadata.Edm.StructuralType>.  
   
 ### <a name="to-run-the-code-in-this-example"></a>Pour exécuter le code de cet exemple  
@@ -24,7 +25,8 @@ Cette rubrique montre comment exécuter une commande par rapport à un modèle c
      [!code-csharp[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#namespaces)]
      [!code-vb[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#namespaces)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Cet exemple exécute une requête qui retourne des résultats <xref:System.Data.Metadata.Edm.EntityType>. Si vous transmettez la requête suivante en tant qu’argument à la fonction `ExecuteStructuralTypeQuery`, celle-ci affiche des détails sur l’objet `Products` :  
   
  [!code-csharp[DP EntityServices Concepts 2#SelectProduct](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#selectproduct)]  

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - container tags, <assemblyIdentity> element
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
-ms.openlocfilehash: b026dafbde796bbd8726de56b532ed6710ba2290
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f3e74b05ac0fd7c57963f2aad047ba3f2d63a10a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154307"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170179"
 ---
 # <a name="assemblyidentity-element-for-runtime"></a>\<assemblyIdentity>, élément de \<runtime>
+
 Contient des informations d’identification sur l’assembly.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ culture="assembly culture"/>
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -56,6 +58,7 @@ culture="assembly culture"/>
 |`x86`|Processeur x86 32 bits, natif ou dans l’environnement Windows sur Windows (WOW) sur une plateforme 64 bits.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -67,7 +70,8 @@ culture="assembly culture"/>
 |`dependentAssembly`|Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez un seul `<dependentAssembly>` élément pour chaque assembly.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Chaque **\<dependentAssembly>** élément doit avoir un **\<assemblyIdentity>** élément enfant.  
   
  Si l' `processorArchitecture` attribut est présent, l' `<assemblyIdentity>` élément s’applique uniquement à l’assembly avec l’architecture de processeur correspondante. Si l' `processorArchitecture` attribut n’est pas présent, l' `<assemblyIdentity>` élément peut s’appliquer à un assembly avec toute architecture de processeur.  
@@ -102,6 +106,7 @@ culture="assembly culture"/>
  Si un fichier de configuration contient un `<assemblyIdentity>` élément sans `processorArchitecture` attribut et qu’il ne contient pas d’élément qui correspond à la plateforme, l’élément sans l' `processorArchitecture` attribut est utilisé.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment fournir des informations sur un assembly.  
   
 ```xml  
@@ -121,6 +126,6 @@ culture="assembly culture"/>
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma des paramètres d'exécution](index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Redirection des versions d'assemblys](../../redirect-assembly-versions.md)

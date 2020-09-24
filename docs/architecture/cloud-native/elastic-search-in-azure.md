@@ -3,12 +3,12 @@ title: Elasticsearch dans les applications Cloud natives
 description: En savoir plus sur l’ajout de fonctionnalités de recherche élastique aux applications Cloud natives.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 70d1925d6b8c7bbe515ee4f178513dc61212ebce
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: fa46f3387eecb3fccd63fdea10c11e92923ae862
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271800"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155378"
 ---
 # <a name="elasticsearch-in-a-cloud-native-app"></a>Elasticsearch dans une application Cloud Native
 
@@ -32,29 +32,29 @@ Pour les applications Cloud plus volumineuses avec des exigences de recherche co
 
 Du Place de marché Microsoft Azure, les développeurs peuvent utiliser des modèles préconfigurés pour déployer rapidement un cluster Elasticsearch sur Azure. À l’aide de l’offre gérée par Azure, vous pouvez déployer jusqu’à 50 nœuds de données, 20 nœuds de coordination et trois nœuds principaux dédiés.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce chapitre a présenté une vue détaillée des données dans les systèmes Cloud natifs. Nous avons commencé par comparer le stockage des données dans les applications monolithiques avec les modèles de stockage des données dans les systèmes natifs du Cloud. Nous avons examiné les modèles de données implémentés dans les systèmes Cloud natifs, notamment les requêtes entre services, les transactions distribuées et les modèles pour gérer les systèmes à volume élevé. Nous avons comparé SQL avec les données NoSQL. Nous avons examiné les options de stockage de données disponibles dans Azure qui incluent des options orientées Microsoft et open source. Enfin, nous avons abordé Caching et Elasticsearch dans une application Cloud native.
 
 ### <a name="references"></a>Références
 
-- [Modèle séparation des responsabilités en matière de commande et de requête (CQRS)](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
+- [Modèle séparation des responsabilités en matière de commande et de requête (CQRS)](/azure/architecture/patterns/cqrs)
 
-- [Modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
+- [Modèle d’approvisionnement en événements](/azure/architecture/patterns/event-sourcing)
 
 - [Pourquoi la partition de SGBDR n’est-elle pas tolérante dans le CAP CAP et pourquoi est-elle disponible ?](https://stackoverflow.com/questions/36404765/why-isnt-rdbms-partition-tolerant-in-cap-theorem-and-why-is-it-available)
 
-- [Vue matérialisée](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
+- [Vue matérialisée](/azure/architecture/patterns/materialized-view)
 
 - [Tout ce que vous devez savoir sur les bases de données Open source](https://www.ibm.com/blogs/systems/all-you-really-need-to-know-about-open-source-databases/)
 
-- [Modèle de transaction de compensation](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
+- [Modèle de transaction de compensation](/azure/architecture/patterns/compensating-transaction)
 
 - [Modèle saga](https://microservices.io/patterns/data/saga.html)
 
 - [Modèles saga | Comment implémenter des transactions commerciales à l’aide de microservices](https://blog.couchbase.com/saga-pattern-implement-business-transactions-using-microservices-part/)
 
-- [Modèle de transaction de compensation](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
+- [Modèle de transaction de compensation](/azure/architecture/patterns/compensating-transaction)
 
 - [En arrière-plan des niveaux de cohérence 9 Ball : Cosmos DB expliqués](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)
 
