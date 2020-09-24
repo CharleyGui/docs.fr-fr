@@ -3,12 +3,12 @@ title: Communication résiliente
 description: Architecture des applications .NET natives Cloud pour Azure | Communication résiliente
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 33e4c03c1f3d8c01f72c588326fbb0bdfa512cdd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 18b26223634efc5c05f680d0cbb7c8cbc2490a59
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613744"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166038"
 ---
 # <a name="resilient-communications"></a>Communications résilientes
 
@@ -16,11 +16,11 @@ Tout au long de ce document, nous avons adopté une approche architecturale bas�
 
 - *Communication réseau hors processus.* Chaque microservice communique via un protocole réseau qui introduit une congestion du réseau, une latence et des erreurs temporaires.
 
-- *Détection du service.* Comment les microservices découvrent et communiquent les uns avec les autres lorsqu’ils s’exécutent sur un cluster de machines avec leurs propres ports et adresses IP ?
+- *Découverte des services.* Comment les microservices découvrent et communiquent les uns avec les autres lorsqu’ils s’exécutent sur un cluster de machines avec leurs propres ports et adresses IP ?
 
 - *Résilience.* Comment gérer les défaillances de courte durée de vie et assurer la stabilité du système ?
 
-- *Équilibrage de charge.* Comment le trafic entrant est-il distribué entre plusieurs instances d’un microservice ?
+- *Équilibrage de la charge.* Comment le trafic entrant est-il distribué entre plusieurs instances d’un microservice ?
 
 - *Sécurité.* Comment les problèmes de sécurité tels que le chiffrement au niveau du transport et la gestion des certificats sont-ils appliqués ?
 
@@ -30,7 +30,7 @@ Vous pouvez résoudre ces problèmes avec des bibliothèques et des infrastructu
 
 ## <a name="service-mesh"></a>Maille de service
 
-Une meilleure approche est une technologie en constante évolution intitulée *Mesh service*. Une [maille de service](https://www.nginx.com/blog/what-is-a-service-mesh/) est une couche d’infrastructure configurable avec des fonctionnalités intégrées pour gérer la communication de service et les autres difficultés mentionnées ci-dessus. Il dissocie ces préoccupations en les déplaçant dans un proxy de service. Le proxy est déployé dans un processus séparé (appelé [side-car](https://docs.microsoft.com/azure/architecture/patterns/sidecar)) pour assurer l’isolation à partir du code d’entreprise. Toutefois, le side-car est lié au service, il est créé avec lui et partage son cycle de vie. La figure 6-7 illustre ce scénario.
+Une meilleure approche est une technologie en constante évolution intitulée *Mesh service*. Une [maille de service](https://www.nginx.com/blog/what-is-a-service-mesh/) est une couche d’infrastructure configurable avec des fonctionnalités intégrées pour gérer la communication de service et les autres difficultés mentionnées ci-dessus. Il dissocie ces préoccupations en les déplaçant dans un proxy de service. Le proxy est déployé dans un processus séparé (appelé [side-car](/azure/architecture/patterns/sidecar)) pour assurer l’isolation à partir du code d’entreprise. Toutefois, le side-car est lié au service, il est créé avec lui et partage son cycle de vie. La figure 6-7 illustre ce scénario.
 
 ![Maille de service avec une voiture latérale](./media/service-mesh-with-side-car.png)
 
@@ -74,28 +74,28 @@ Comme indiqué précédemment, Envoy est déployé en tant que side-car pour cha
 
 Le Cloud Azure prend en charge Istio et fournit un support direct pour celui-ci dans les services Azure Kubernetes. Les liens suivants peuvent vous aider à vous lancer :
 
-- [Installation de Istio dans AKS](https://docs.microsoft.com/azure/aks/istio-install)
-- [Utilisation de AKS et Istio](https://docs.microsoft.com/azure/aks/istio-scenario-routing)
+- [Installation de Istio dans AKS](/azure/aks/istio-install)
+- [Utilisation de AKS et Istio](/azure/aks/istio-scenario-routing)
 
-### <a name="references"></a>References
+### <a name="references"></a>Références
 
 - [Polly](http://www.thepollyproject.org/)
 
-- [Modèle Nouvelle tentative](https://docs.microsoft.com/azure/architecture/patterns/retry)
+- [Modèle de nouvelle tentative](/azure/architecture/patterns/retry)
 
-- [Modèle disjoncteur](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker)
+- [Modèle Disjoncteur](/azure/architecture/patterns/circuit-breaker)
 
 - [Livre blanc sur la résilience dans Azure](https://azure.microsoft.com/mediahandler/files/resourcefiles/resilience-in-azure-whitepaper/Resilience%20in%20Azure.pdf)
 
 - [latence du réseau](https://www.techopedia.com/definition/8553/network-latency)
 
-- [Redondance](https://docs.microsoft.com/azure/architecture/guide/design-principles/redundancy)
+- [Redondance](/azure/architecture/guide/design-principles/redundancy)
 
-- [géo-réplication](https://docs.microsoft.com/azure/sql-database/sql-database-active-geo-replication)
+- [géo-réplication](/azure/sql-database/sql-database-active-geo-replication)
 
-- [Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)
+- [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview)
 
-- [Recommandations en matière de mise à l’échelle automatique](https://docs.microsoft.com/azure/architecture/best-practices/auto-scaling)
+- [Guide de mise à l’échelle automatique](/azure/architecture/best-practices/auto-scaling)
 
 - [Istio](https://istio.io/docs/concepts/what-is-istio/)
 

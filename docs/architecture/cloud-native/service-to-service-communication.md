@@ -3,12 +3,12 @@ title: Communication de service à service
 description: Découvrez comment les microservices dorsaux Cloud-natives communiquent avec d’autres microservices back-end.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 88d7dfabee14419978889f5d9ea30b12f36837de
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9761b99cd9ad076eb82a23a00ec3099e8913168b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539803"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166077"
 ---
 # <a name="service-to-service-communication"></a>Communication de service à service
 
@@ -54,7 +54,7 @@ Le grand degré de couplage dans l’image précédente suggère que les service
 
 ### <a name="materialized-view-pattern"></a>Modèle de vue matérialisée
 
-Une option courante pour supprimer le couplage de microservices est le [modèle de vue matérialisée](https://docs.microsoft.com/azure/architecture/patterns/materialized-view). Avec ce modèle, un microservice stocke sa propre copie locale dénormalisée des données détenues par d’autres services. Au lieu que le microservice du panier d’achat interroge le catalogue de produits et les microservices de tarification, il gère sa propre copie locale de ces données. Ce modèle élimine le couplage inutile et améliore la fiabilité et le temps de réponse. La totalité de l’opération s’exécute à l’intérieur d’un processus unique. Nous explorons ce modèle et les autres problèmes liés aux données dans le chapitre 5.
+Une option courante pour supprimer le couplage de microservices est le [modèle de vue matérialisée](/azure/architecture/patterns/materialized-view). Avec ce modèle, un microservice stocke sa propre copie locale dénormalisée des données détenues par d’autres services. Au lieu que le microservice du panier d’achat interroge le catalogue de produits et les microservices de tarification, il gère sa propre copie locale de ces données. Ce modèle élimine le couplage inutile et améliore la fiabilité et le temps de réponse. La totalité de l’opération s’exécute à l’intérieur d’un processus unique. Nous explorons ce modèle et les autres problèmes liés aux données dans le chapitre 5.
 
 ### <a name="service-aggregator-pattern"></a>Modèle d’agrégateur de service
 
@@ -94,7 +94,7 @@ Dans le chapitre 1, nous avons parlé des *services de stockage*. Les services d
 
 Les files d’attente de stockage Azure offrent une infrastructure de mise en file d’attente simple, rapide et abordable, avec les comptes de stockage Azure.
 
-Les [files d’attente de stockage Azure](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction) disposent d’un mécanisme de mise en file d’attente Rest avec une messagerie fiable et persistante. Ils fournissent un ensemble de fonctionnalités minimal, mais sont peu coûteux et stockent des millions de messages. Leur capacité est allant jusqu’à 500 to. Un message peut avoir une taille maximale de 64 Ko.
+Les [files d’attente de stockage Azure](/azure/storage/queues/storage-queues-introduction) disposent d’un mécanisme de mise en file d’attente Rest avec une messagerie fiable et persistante. Ils fournissent un ensemble de fonctionnalités minimal, mais sont peu coûteux et stockent des millions de messages. Leur capacité est allant jusqu’à 500 to. Un message peut avoir une taille maximale de 64 Ko.
 
 Vous pouvez accéder aux messages de n’importe où dans le monde via des appels authentifiés à l’aide du protocole HTTP ou HTTPs. Les files d’attente de stockage peuvent évoluer vers un grand nombre de clients simultanés pour gérer les pics de trafic.
 
@@ -122,13 +122,13 @@ Les files d’attente de stockage Azure sont une option économique pour implém
 
 Pour des exigences de messagerie plus complexes, envisagez Azure Service Bus files d’attente.
 
-Au-dessus d’une infrastructure de messages robuste, [Azure Service bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) prend en charge un *modèle de messagerie*répartie. Les messages sont stockés de manière fiable dans un répartiteur (la file d’attente) jusqu’à leur réception par le consommateur. La file d’attente garantit la remise des messages premier entré/premier sorti (FIFO), en respectant l’ordre dans lequel les messages ont été ajoutés à la file d’attente.
+Au-dessus d’une infrastructure de messages robuste, [Azure Service bus](/azure/service-bus-messaging/service-bus-messaging-overview) prend en charge un *modèle de messagerie*répartie. Les messages sont stockés de manière fiable dans un répartiteur (la file d’attente) jusqu’à leur réception par le consommateur. La file d’attente garantit la remise des messages premier entré/premier sorti (FIFO), en respectant l’ordre dans lequel les messages ont été ajoutés à la file d’attente.
 
-La taille d’un message peut être plus importante, jusqu’à 256 Ko. Les messages sont conservés dans la file d’attente pendant une durée illimitée. Service Bus prend en charge non seulement les appels basés sur HTTP, mais fournit également une prise en charge complète du [protocole AMQP](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-amqp-overview). AMQP est une norme ouverte pour les fournisseurs qui prend en charge un protocole binaire et de plus hauts niveaux de fiabilité.
+La taille d’un message peut être plus importante, jusqu’à 256 Ko. Les messages sont conservés dans la file d’attente pendant une durée illimitée. Service Bus prend en charge non seulement les appels basés sur HTTP, mais fournit également une prise en charge complète du [protocole AMQP](/azure/service-bus-messaging/service-bus-amqp-overview). AMQP est une norme ouverte pour les fournisseurs qui prend en charge un protocole binaire et de plus hauts niveaux de fiabilité.
 
-Service Bus fournit un ensemble complet de fonctionnalités, notamment la [prise en charge des transactions](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-transactions) et une [fonctionnalité de détection des doublons](https://docs.microsoft.com/azure/service-bus-messaging/duplicate-detection). La file d’attente garantit « au plus une fois la remise » par message. Il ignore automatiquement un message qui a déjà été envoyé. Si un producteur est incertain, il peut renvoyer le même message et Service Bus garantit qu’une seule copie sera traitée. La détection des doublons vous évite d’avoir à créer des mécanismes d’infrastructure supplémentaires.
+Service Bus fournit un ensemble complet de fonctionnalités, notamment la [prise en charge des transactions](/azure/service-bus-messaging/service-bus-transactions) et une [fonctionnalité de détection des doublons](/azure/service-bus-messaging/duplicate-detection). La file d’attente garantit « au plus une fois la remise » par message. Il ignore automatiquement un message qui a déjà été envoyé. Si un producteur est incertain, il peut renvoyer le même message et Service Bus garantit qu’une seule copie sera traitée. La détection des doublons vous évite d’avoir à créer des mécanismes d’infrastructure supplémentaires.
 
-Deux autres fonctionnalités d’entreprise sont le partitionnement et les sessions. Une file d’attente de Service Bus conventionnelle est gérée par un seul courtier de messages et stockée dans une seule banque de messages. Toutefois, le [partitionnement service bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-partitioning) répartit la file d’attente entre plusieurs courtiers de messages et banques de messages. Le débit global n’est plus limité par les performances d’un seul courtier de messages ou d’une seule banque de messagerie. Une panne temporaire d’une banque de messagerie ne rend pas une file d’attente partitionnée indisponible.
+Deux autres fonctionnalités d’entreprise sont le partitionnement et les sessions. Une file d’attente de Service Bus conventionnelle est gérée par un seul courtier de messages et stockée dans une seule banque de messages. Toutefois, le [partitionnement service bus](/azure/service-bus-messaging/service-bus-partitioning) répartit la file d’attente entre plusieurs courtiers de messages et banques de messages. Le débit global n’est plus limité par les performances d’un seul courtier de messages ou d’une seule banque de messagerie. Une panne temporaire d’une banque de messagerie ne rend pas une file d’attente partitionnée indisponible.
 
 Les [Sessions service bus](https://codingcanvas.com/azure-service-bus-sessions/) offrent un moyen de regrouper les messages liés à. Imaginez un scénario de flux de travail dans lequel les messages doivent être traités ensemble et l’opération se termine à la fin. Pour tirer parti, les sessions doivent être activées explicitement pour la file d’attente et chaque message associé doit contenir le même ID de session.
 
@@ -148,7 +148,7 @@ Message Queuing est un moyen efficace d’implémenter une communication dans la
 
 Pour traiter ce scénario, nous allons passer au troisième type d’interaction de message, l' *événement*. Un microservice annonce qu’une action s’est produite. D’autres microservices, s’ils le souhaitent, réagissent à l’action ou à l’événement.
 
-L’événement est un processus en deux étapes. Pour un changement d’État donné, un microservice publie un événement dans un courtier de messages, ce qui le rend disponible pour tout autre microservice intéressé. Le microservice intéressé est averti en s’abonnant à l’événement dans le courtier de messages. Vous utilisez le modèle de [publication/abonnement](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber) pour implémenter la [communication basée sur les événements](https://docs.microsoft.com/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications).
+L’événement est un processus en deux étapes. Pour un changement d’État donné, un microservice publie un événement dans un courtier de messages, ce qui le rend disponible pour tout autre microservice intéressé. Le microservice intéressé est averti en s’abonnant à l’événement dans le courtier de messages. Vous utilisez le modèle de [publication/abonnement](/azure/architecture/patterns/publisher-subscriber) pour implémenter la [communication basée sur les événements](/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications).
 
 La figure 4-15 montre un microservice de panier d’achat publiant un événement avec deux autres microservices s’abonnant à ce dernier.
 
@@ -158,7 +158,7 @@ La figure 4-15 montre un microservice de panier d’achat publiant un événemen
 
 Notez le composant *bus d’événements* qui se trouve au milieu du canal de communication. Il s’agit d’une classe personnalisée qui encapsule le courtier de messages et le dissocie de l’application sous-jacente. Les microservices de classement et d’inventaire opèrent indépendamment l’événement sans aucune connaissance de l’un l’autre, ni le microservice du panier d’achat. Lorsque l’événement Registered est publié dans le bus d’événements, il agit sur celui-ci.
 
-Avec l’événement, nous passons de la technologie de mise en file d’attente aux *rubriques*. Une [rubrique](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions) est semblable à une file d’attente, mais prend en charge un modèle de messagerie un-à-plusieurs. Un microservice publie un message. Plusieurs microservices d’abonnement peuvent choisir de recevoir et d’agir sur ce message. La figure 4-16 illustre une architecture de rubrique.
+Avec l’événement, nous passons de la technologie de mise en file d’attente aux *rubriques*. Une [rubrique](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions) est semblable à une file d’attente, mais prend en charge un modèle de messagerie un-à-plusieurs. Un microservice publie un message. Plusieurs microservices d’abonnement peuvent choisir de recevoir et d’agir sur ce message. La figure 4-16 illustre une architecture de rubrique.
 
 ![Architecture des rubriques](./media/topic-architecture.png)
 
@@ -170,17 +170,17 @@ Le Cloud Azure prend en charge deux services de rubrique différents : Azure Se
 
 ### <a name="azure-service-bus-topics"></a>Rubriques Azure Service Bus
 
-Sur le même modèle de message répartie robuste de Azure Service Bus files d’attente se trouvent [Azure Service bus rubriques](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Une rubrique peut recevoir des messages de plusieurs éditeurs indépendants et envoyer des messages à jusqu’à 2 000 abonnés. Les abonnements peuvent être ajoutés ou supprimés de manière dynamique au moment de l’exécution sans arrêter le système ou recréer la rubrique.
+Sur le même modèle de message répartie robuste de Azure Service Bus files d’attente se trouvent [Azure Service bus rubriques](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Une rubrique peut recevoir des messages de plusieurs éditeurs indépendants et envoyer des messages à jusqu’à 2 000 abonnés. Les abonnements peuvent être ajoutés ou supprimés de manière dynamique au moment de l’exécution sans arrêter le système ou recréer la rubrique.
 
-De nombreuses fonctionnalités avancées des files d’attente Azure Service Bus sont également disponibles pour les rubriques, notamment la [détection des doublons](https://docs.microsoft.com/azure/service-bus-messaging/duplicate-detection) et la [prise en charge des transactions](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-transactions). Par défaut, les rubriques de Service Bus sont gérées par un seul courtier de messages et stockées dans une seule banque de messages. Toutefois, [service bus le partitionnement](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-partitioning) met à l’échelle une rubrique en la répartissant entre plusieurs courtiers de messages et banques de messages.
+De nombreuses fonctionnalités avancées des files d’attente Azure Service Bus sont également disponibles pour les rubriques, notamment la [détection des doublons](/azure/service-bus-messaging/duplicate-detection) et la [prise en charge des transactions](/azure/service-bus-messaging/service-bus-transactions). Par défaut, les rubriques de Service Bus sont gérées par un seul courtier de messages et stockées dans une seule banque de messages. Toutefois, [service bus le partitionnement](/azure/service-bus-messaging/service-bus-partitioning) met à l’échelle une rubrique en la répartissant entre plusieurs courtiers de messages et banques de messages.
 
-La [remise planifiée des messages](https://docs.microsoft.com/azure/service-bus-messaging/message-sequencing) marque un message avec un temps de traitement spécifique. Le message ne s’affiche pas dans la rubrique avant ce moment. Le [Report de message](https://docs.microsoft.com/azure/service-bus-messaging/message-deferral) vous permet de différer une récupération d’un message à un moment ultérieur. Les deux sont couramment utilisés dans les scénarios de traitement de workflow où les opérations sont traitées dans un ordre particulier. Vous pouvez différer le traitement des messages reçus jusqu’à ce que le travail précédent soit terminé.
+La [remise planifiée des messages](/azure/service-bus-messaging/message-sequencing) marque un message avec un temps de traitement spécifique. Le message ne s’affiche pas dans la rubrique avant ce moment. Le [Report de message](/azure/service-bus-messaging/message-deferral) vous permet de différer une récupération d’un message à un moment ultérieur. Les deux sont couramment utilisés dans les scénarios de traitement de workflow où les opérations sont traitées dans un ordre particulier. Vous pouvez différer le traitement des messages reçus jusqu’à ce que le travail précédent soit terminé.
 
 Service Bus rubriques sont une technologie robuste et éprouvée permettant d’activer la communication de publication/abonnement dans vos systèmes natifs dans le Cloud.
 
 ### <a name="azure-event-grid"></a>Azure Event Grid
 
-Bien que Azure Service Bus soit un courtier de messagerie testé avec un ensemble complet de fonctionnalités d’entreprise, [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) est le nouvel enfant du bloc.
+Bien que Azure Service Bus soit un courtier de messagerie testé avec un ensemble complet de fonctionnalités d’entreprise, [Azure Event Grid](/azure/event-grid/overview) est le nouvel enfant du bloc.
 
 À première vue, Event Grid peut se présenter comme un autre système de messagerie basé sur des rubriques. Toutefois, il est différent de nombreuses façons. Axé sur les charges de travail pilotées par les événements, il permet le traitement d’événements en temps réel, l’intégration Azure profonde et une infrastructure ouverte et complète sur une infrastructure sans serveur. Il est conçu pour les applications Cloud natives et sans serveur.
 
@@ -206,9 +206,9 @@ Event Grid est un service Cloud sans serveur entièrement géré. Elle est mise 
 
 ### <a name="streaming-messages-in-the-azure-cloud"></a>Diffusion en continu de messages dans le Cloud Azure
 
-Azure Service Bus et Event Grid offrent une excellente prise en charge des applications qui exposent des événements simples et discrets tels qu’un nouveau document a été inséré dans un Cosmos DB. Mais, que se passe-t-il si votre système Cloud natif doit traiter un *flux d’événements connexes*? Les [flux d’événements](https://docs.microsoft.com/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems) sont plus complexes. Ils sont généralement classés dans le temps, interdépendants et doivent être traités en tant que groupe.
+Azure Service Bus et Event Grid offrent une excellente prise en charge des applications qui exposent des événements simples et discrets tels qu’un nouveau document a été inséré dans un Cosmos DB. Mais, que se passe-t-il si votre système Cloud natif doit traiter un *flux d’événements connexes*? Les [flux d’événements](/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems) sont plus complexes. Ils sont généralement classés dans le temps, interdépendants et doivent être traités en tant que groupe.
 
-[Azure Event Hub](https://azure.microsoft.com/services/event-hubs/) est une plateforme de diffusion de données et un service d’ingestion d’événements qui collecte, transforme et stocke des événements. Il est affiné pour capturer les données de streaming, telles que les notifications d’événements continus émises à partir d’un contexte de télémétrie. Le service est hautement évolutif et peut stocker et [traiter des millions d’événements par seconde](https://docs.microsoft.com/azure/event-hubs/event-hubs-about). Comme illustré à la figure 4-18, il s’agit souvent d’une porte d’entrée pour un pipeline d’événements, ce qui permet de découpler le flux de réception de la consommation d’événements.
+[Azure Event Hub](https://azure.microsoft.com/services/event-hubs/) est une plateforme de diffusion de données et un service d’ingestion d’événements qui collecte, transforme et stocke des événements. Il est affiné pour capturer les données de streaming, telles que les notifications d’événements continus émises à partir d’un contexte de télémétrie. Le service est hautement évolutif et peut stocker et [traiter des millions d’événements par seconde](/azure/event-hubs/event-hubs-about). Comme illustré à la figure 4-18, il s’agit souvent d’une porte d’entrée pour un pipeline d’événements, ce qui permet de découpler le flux de réception de la consommation d’événements.
 
 ![Azure Event Hub](./media/azure-event-hub.png)
 
@@ -216,9 +216,9 @@ Azure Service Bus et Event Grid offrent une excellente prise en charge des appli
 
 Event Hub prend en charge la faible latence et la durée de rétention configurable. Contrairement aux files d’attente et aux rubriques, Event Hubs conserver les données d’événement après qu’elles ont été lues par un consommateur. Cette fonctionnalité permet à d’autres services d’analyse de données, internes et externes, de relire les données pour une analyse plus poussée. Les événements stockés dans Event Hub sont supprimés uniquement à l’expiration de la période de rétention, ce qui correspond à un jour par défaut, mais configurable.
 
-Event Hub prend en charge les protocoles de publication d’événements courants, notamment HTTPs et AMQP. Il prend également en charge Kafka 1,0. Les [applications Kafka existantes peuvent communiquer avec Event Hub](https://docs.microsoft.com/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) à l’aide du protocole Kafka, qui offre une alternative à la gestion des clusters Kafka volumineux. De nombreux systèmes Cloud natifs Open source intègrent Kafka.
+Event Hub prend en charge les protocoles de publication d’événements courants, notamment HTTPs et AMQP. Il prend également en charge Kafka 1,0. Les [applications Kafka existantes peuvent communiquer avec Event Hub](/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) à l’aide du protocole Kafka, qui offre une alternative à la gestion des clusters Kafka volumineux. De nombreux systèmes Cloud natifs Open source intègrent Kafka.
 
-Event Hubs implémente la diffusion de messages via un [modèle de consommateur partitionné](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) dans lequel chaque consommateur lit uniquement un sous-ensemble spécifique, ou partition, du flux de message. Ce modèle permet de disposer d'une échelle horizontale considérable pour le traitement des événements, et offre d'autres fonctionnalités axées sur le flux, qui ne sont pas disponibles dans les rubriques et les files d'attente. Une partition est une séquence ordonnée d’événements qui est conservée dans un concentrateur d’événements. Les événements les plus récents sont ajoutés à la fin de cette séquence.La figure 4-19 illustre le partitionnement dans un hub d’événements.
+Event Hubs implémente la diffusion de messages via un [modèle de consommateur partitionné](/azure/event-hubs/event-hubs-features) dans lequel chaque consommateur lit uniquement un sous-ensemble spécifique, ou partition, du flux de message. Ce modèle permet de disposer d'une échelle horizontale considérable pour le traitement des événements, et offre d'autres fonctionnalités axées sur le flux, qui ne sont pas disponibles dans les rubriques et les files d'attente. Une partition est une séquence ordonnée d’événements qui est conservée dans un concentrateur d’événements. Les événements les plus récents sont ajoutés à la fin de cette séquence.La figure 4-19 illustre le partitionnement dans un hub d’événements.
 
 ![Partitionnement de hub d’événements](./media/event-hub-partitioning.png)
 

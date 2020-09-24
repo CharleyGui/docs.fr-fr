@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: 94ebc97d5f90b5bb92186ba6f33015633bd01127
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: aac2d90cc57a4af823c42f8c7eb2adcd43c63caf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286932"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164816"
 ---
 # <a name="adding-data-to-a-datatable"></a>Ajout de données à un DataTable
+
 Après avoir créé un objet <xref:System.Data.DataTable> et défini sa structure à l'aide de colonnes et de contraintes, vous pouvez ajouter de nouvelles lignes de données à la table. Pour ajouter une nouvelle ligne, déclarez une nouvelle variable comme type <xref:System.Data.DataRow>. Un nouvel objet **DataRow** est retourné lorsque vous appelez la <xref:System.Data.DataTable.NewRow%2A> méthode. Le **DataTable** crée ensuite l’objet **DataRow** en fonction de la structure de la table, comme défini par <xref:System.Data.DataColumnCollection> .  
   
  L’exemple suivant montre comment créer une nouvelle ligne en appelant la méthode **NewRow** .  

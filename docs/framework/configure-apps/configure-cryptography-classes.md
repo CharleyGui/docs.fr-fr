@@ -10,17 +10,19 @@ helpviewer_keywords:
 - .NET Framework application configuration, cryptography
 - default cryptography
 ms.assetid: eee3ccb8-2c0d-4f35-b38d-6892a46c14e5
-ms.openlocfilehash: 5d12aae31ec78f80bea7df1bb0f37ac78dc37de2
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: 5262dfca914fd5306297ea9535bcef3d2088d107
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105060"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165206"
 ---
 # <a name="configuring-cryptography-classes"></a>Configuration de classes de chiffrement
+
 Le SDK Windows permet aux administrateurs de l’ordinateur de configurer les algorithmes de chiffrement par défaut et les implémentations d’algorithme que le .NET Framework et les applications écrites de manière appropriée utilisent.  Par exemple, une entreprise qui a sa propre implémentation d’un algorithme de chiffrement peut faire de cette implémentation la valeur par défaut au lieu de l’implémentation fournie dans le SDK Windows. Bien que les applications managées qui utilisent le chiffrement puissent toujours choisir de se lier explicitement à une implémentation particulière, il est recommandé de créer des objets de chiffrement à l’aide du système de configuration de chiffrement.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Mappage de noms d'algorithmes à des classes de chiffrement](map-algorithm-names-to-cryptography-classes.md)  
  Décrit comment mapper un nom d’algorithme à une classe de chiffrement.  
   
@@ -28,7 +30,8 @@ Le SDK Windows permet aux administrateurs de l’ordinateur de configurer les al
  Décrit comment mapper un identificateur d’objet à un algorithme de chiffrement.  
   
 ## <a name="related-sections"></a>Sections connexes  
- [Services de chiffrement](../../standard/security/cryptographic-services.md)  
+
+ [services de chiffrement](../../standard/security/cryptographic-services.md)  
  Fournit une vue d’ensemble des services de chiffrement fournis par le SDK Windows.  
   
  [Schéma des paramètres de chiffrement](./file-schema/cryptography/index.md)  

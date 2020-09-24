@@ -2,14 +2,15 @@
 title: Analyse du code source LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: cba3eef8-e108-4478-b588-ad59580e133e
-ms.openlocfilehash: dda19800a9aea0d644740c5378f6d5065181993e
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: e39b1686269442044beb73bb7e572738832bec27
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248083"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164582"
 ---
 # <a name="analyzing-linq-to-sql-source-code"></a>Analyse du code source LINQ to SQL
+
 En exécutant les étapes suivantes, vous pouvez générer le code source [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] à partir de l'exemple de base de données Northwind. Vous pouvez comparer des éléments du modèle objet avec des éléments de la base de données pour mieux comprendre comment les différents éléments sont mappés.  
   
 > [!NOTE]

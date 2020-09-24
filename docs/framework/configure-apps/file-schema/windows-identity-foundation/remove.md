@@ -3,14 +3,15 @@ title: <remove>
 ms.date: 03/30/2017
 ms.assetid: 4058e2f1-7db4-4d1a-84dd-1b52836f2ae6
 author: BrucePerlerMS
-ms.openlocfilehash: 7581f581c4b97a07eb4bdeb49eb5ae5ce72c2aa7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c4ba7b6f2a9b9092c5f24d424c6de2b0f510ac88
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90535714"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164998"
 ---
 # \<remove>
+
 Supprime le gestionnaire de jetons de sécurité spécifié de la collection de gestionnaires de jetons.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Supprime le gestionnaire de jetons de sécurité spécifié de la collection de 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -42,6 +44,7 @@ Supprime le gestionnaire de jetons de sécurité spécifié de la collection de 
 |type|Nom de type CLR du gestionnaire de jetons à supprimer. Pour plus d’informations sur la spécification de l' `type` attribut, consultez [références de types personnalisés](/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references). Obligatoire.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  None  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -50,7 +53,8 @@ Supprime le gestionnaire de jetons de sécurité spécifié de la collection de 
 |-------------|-----------------|  
 |[\<securityTokenHandlers>](securitytokenhandlers.md)|Spécifie une collection de gestionnaires de jetons de sécurité inscrits auprès du point de terminaison.|  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code XML suivant montre l’utilisation des `<add>` `<remove>` éléments et pour remplacer le gestionnaire de jetons de session par défaut par un gestionnaire de jetons de session personnalisé. Le code XML est extrait de l' `ClaimsAwareWebFarm` exemple.  
   
 ```xml  

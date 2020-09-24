@@ -2,12 +2,12 @@
 title: Mise à l'échelle de conteneurs et d’applications serverless
 description: Mise à l’échelle d’applications Cloud natives avec le service Azure Kubernetes pour répondre à la demande de l’utilisateur.
 ms.date: 05/13/2020
-ms.openlocfilehash: a5e1e8df785fd08901d9be41c0a06db35e09296b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: edf56ba50ba391e06e588d682918cd473a2cf374
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613718"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165977"
 ---
 # <a name="scaling-containers-and-serverless-applications"></a>Mise à l'échelle de conteneurs et d’applications serverless
 
@@ -17,17 +17,17 @@ Il existe deux façons de mettre à l’échelle une application. Le premier fai
 
 La mise à niveau d’un serveur hôte existant avec augmentation du processeur, de la mémoire, de la vitesse d’e/s disque et de la vitesse d’e/s réseau est appelée *montée*en puissance. La montée en puissance d’une application Cloud Native implique de choisir des ressources plus performantes du fournisseur du Cloud. Par exemple, vous pouvez créer un pool de nœuds avec des machines virtuelles plus volumineuses dans votre cluster Kubernetes. Ensuite, migrez vos services en conteneur vers le nouveau pool.
 
-Les applications sans serveur sont mises à l’échelle en choisissant le [plan fonctions Premium](https://docs.microsoft.com/azure/azure-functions/functions-scale) ou tailles d’instance Premium à partir d’un plan App service dédié.
+Les applications sans serveur sont mises à l’échelle en choisissant le [plan fonctions Premium](/azure/azure-functions/functions-scale) ou tailles d’instance Premium à partir d’un plan App service dédié.
 
 ## <a name="scaling-out-cloud-native-apps"></a>Montée en charge des applications Cloud natives
 
-Les applications Cloud natives subissent souvent des fluctuations importantes de la demande et requièrent une mise à l’échelle à l’avis d’un moment. Ils privilégient la montée en charge. La montée en charge est effectuée horizontalement en ajoutant des ordinateurs supplémentaires (appelés nœuds) ou des instances d’application à un cluster existant. Dans Kubernetes, vous pouvez mettre à l’échelle manuellement en ajustant les paramètres de configuration de l’application (par exemple, en [mettant à l’échelle un pool de nœuds](https://docs.microsoft.com/azure/aks/use-multiple-node-pools#scale-a-node-pool-manually)) ou en passant par la mise à l’échelle automatique.
+Les applications Cloud natives subissent souvent des fluctuations importantes de la demande et requièrent une mise à l’échelle à l’avis d’un moment. Ils privilégient la montée en charge. La montée en charge est effectuée horizontalement en ajoutant des ordinateurs supplémentaires (appelés nœuds) ou des instances d’application à un cluster existant. Dans Kubernetes, vous pouvez mettre à l’échelle manuellement en ajustant les paramètres de configuration de l’application (par exemple, en [mettant à l’échelle un pool de nœuds](/azure/aks/use-multiple-node-pools#scale-a-node-pool-manually)) ou en passant par la mise à l’échelle automatique.
 
 Les clusters AKS peuvent être mis à l’échelle de deux manières :
 
-Tout d’abord, le module de mise à l’échelle automatique du [Pod horizontal](https://docs.microsoft.com/azure/aks/tutorial-kubernetes-scale#autoscale-pods) surveille la demande des ressources et met automatiquement à l’échelle vos réplicas Pod pour les satisfaire. Lorsque le trafic augmente, des réplicas supplémentaires sont automatiquement approvisionnés pour monter en charge vos services. De même, lorsque la demande diminue, elles sont supprimées pour mettre à l’échelle vos services. Vous définissez la mesure sur laquelle mettre à l’échelle, par exemple l’utilisation de l’UC. Vous pouvez également spécifier le nombre minimal et le nombre maximal de réplicas à exécuter. AKS surveille cette mesure et la met à l’échelle en conséquence.
+Tout d’abord, le module de mise à l’échelle automatique du [Pod horizontal](/azure/aks/tutorial-kubernetes-scale#autoscale-pods) surveille la demande des ressources et met automatiquement à l’échelle vos réplicas Pod pour les satisfaire. Lorsque le trafic augmente, des réplicas supplémentaires sont automatiquement approvisionnés pour monter en charge vos services. De même, lorsque la demande diminue, elles sont supprimées pour mettre à l’échelle vos services. Vous définissez la mesure sur laquelle mettre à l’échelle, par exemple l’utilisation de l’UC. Vous pouvez également spécifier le nombre minimal et le nombre maximal de réplicas à exécuter. AKS surveille cette mesure et la met à l’échelle en conséquence.
 
-Ensuite, la fonctionnalité de mise à l’échelle automatique du [cluster AKS](https://docs.microsoft.com/azure/aks/cluster-autoscaler) vous permet de mettre automatiquement à l’échelle des nœuds de calcul dans un cluster Kubernetes pour répondre à la demande. Avec elle, vous pouvez ajouter automatiquement de nouvelles machines virtuelles au groupe de machines virtuelles identiques Azure sous-jacent chaque fois que la capacité de calcul est nécessaire. Elle supprime également les nœuds quand ils ne sont plus nécessaires.
+Ensuite, la fonctionnalité de mise à l’échelle automatique du [cluster AKS](/azure/aks/cluster-autoscaler) vous permet de mettre automatiquement à l’échelle des nœuds de calcul dans un cluster Kubernetes pour répondre à la demande. Avec elle, vous pouvez ajouter automatiquement de nouvelles machines virtuelles au groupe de machines virtuelles identiques Azure sous-jacent chaque fois que la capacité de calcul est nécessaire. Elle supprime également les nœuds quand ils ne sont plus nécessaires.
 
 La figure 3-13 montre la relation entre ces deux services de mise à l’échelle.
 

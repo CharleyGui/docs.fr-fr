@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
-ms.openlocfilehash: 3edafa6c6a1bc3da2abc0598f329caf0e2f21e8b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c00e5e42508160a210d16f058c46afbf62ae0ee0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786251"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164725"
 ---
 # <a name="handling-datatable-events"></a>Gestion des événements de DataTable
+
 L'objet <xref:System.Data.DataTable> fournit une série d'événements pouvant être traités par une application. Le tableau ci-dessous décrit les événements `DataTable`.  
   
 |Événement|Description|  
@@ -27,7 +28,7 @@ L'objet <xref:System.Data.DataTable> fournit une série d'événements pouvant �
 |<xref:System.Data.DataTable.TableCleared>|Se produit après qu'un appel à la méthode <xref:System.Data.DataTable.Clear%2A> du `DataTable` a effacé avec succès chaque `DataRow`.|  
 |<xref:System.Data.DataTable.TableClearing>|Se produit après que la méthode `Clear` a été appelée mais avant que l'opération `Clear` commence.|  
 |<xref:System.Data.DataTable.TableNewRow>|Se produit après la création d'un nouveau `DataRow` par un appel à la méthode `NewRow` du `DataTable`.|  
-|<xref:System.ComponentModel.MarshalByValueComponent.Disposed>|Se produit lorsque le `DataTable` a la valeur `Disposed`. Hérité de l'objet <xref:System.ComponentModel.MarshalByValueComponent>.|  
+|<xref:System.ComponentModel.MarshalByValueComponent.Disposed>|Se produit lorsque le `DataTable` a la valeur `Disposed`. Hérité de <xref:System.ComponentModel.MarshalByValueComponent>.|  
   
 > [!NOTE]
 > La plupart des opérations qui ajoutent ou suppriment des lignes ne déclenchent pas les événements `ColumnChanged` et `ColumnChanging`. Toutefois, la méthode `ReadXml` déclenche les événements `ColumnChanged` et `ColumnChanging`, à moins que `XmlReadMode` ait la valeur `DiffGram` ou `Auto` lorsque le document XML lu est un `DiffGram`.  
@@ -36,6 +37,7 @@ L'objet <xref:System.Data.DataTable> fournit une série d'événements pouvant �
 > Les données peuvent être endommagées si elles sont modifiées dans un `DataSet` à partir duquel l'événement `RowChanged` est déclenché. Aucune exception n'est levée en cas d'endommagement de ce type.  
   
 ## <a name="additional-related-events"></a>Autres événements liés  
+
  La propriété <xref:System.Data.DataTable.Constraints%2A> détient une instance <xref:System.Data.ConstraintCollection>. La classe <xref:System.Data.ConstraintCollection> expose un événement <xref:System.Data.ConstraintCollection.CollectionChanged>. Cet événement se déclenche lorsqu'une contrainte est ajoutée, modifiée ou supprimée dans `ConstraintCollection`.  
   
  La propriété <xref:System.Data.DataTable.Columns%2A> détient une instance <xref:System.Data.DataColumnCollection>. La classe `DataColumnCollection` expose un événement <xref:System.Data.DataColumnCollection.CollectionChanged>. Cet événement se déclenche lorsqu'un `DataColumn` est ajouté, modifié ou supprimé dans `DataColumnCollection`. Les modifications à l'origine du déclenchement de l'événement incluent des modifications du nom, du type, de l'expression ou de la position ordinale d'une colonne.  
@@ -45,6 +47,7 @@ L'objet <xref:System.Data.DataTable> fournit une série d'événements pouvant �
  Les modifications apportées aux `DataRows` peuvent également déclencher des événements pour un <xref:System.Data.DataView> associé. La classe `DataView` expose un événement <xref:System.Data.DataView.ListChanged> qui se déclenche lorsqu'une valeur `DataColumn` change ou lorsque la composition ou l'ordre de tri de la vue changent. La classe <xref:System.Data.DataRowView> expose un événement <xref:System.Data.DataRowView.PropertyChanged> qui se déclenche lorsqu'une valeur `DataColumn` associée change.  
   
 ## <a name="sequence-of-operations"></a>Ordre des opérations  
+
  Voici l'ordre des opérations qui se produisent lorsqu'un `DataRow` est ajouté, modifié ou supprimé :  
   
 1. Créez l'enregistrement proposé et appliquez les modifications éventuelles.  
@@ -74,6 +77,7 @@ L'objet <xref:System.Data.DataTable> fournit une série d'événements pouvant �
 > Ne levez pas de <xref:System.NullReferenceException> à l'intérieur du gestionnaire d'événements `RowChanged`. Si une <xref:System.NullReferenceException> est levée à l'intérieur de l'événement `RowChanged` d'une `DataTable`, `DataTable` sera corrompue.  
   
 ### <a name="example"></a>Exemple  
+
  L'exemple ci-dessous montre comment créer des gestionnaires d'événements pour les événements `RowChanged`, `RowChanging`, `RowDeleted`, `RowDeleting`, `ColumnChanged`, `ColumnChanging`, `TableNewRow`, `TableCleared` et `TableClearing`. Chaque gestionnaire d'événements affiche la sortie dans la fenêtre de console lorsqu'il est déclenché.  
   
  [!code-csharp[DataWorks DataTable.Events#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTable.Events/CS/source.cs#1)]
@@ -84,4 +88,4 @@ L'objet <xref:System.Data.DataTable> fournit une série d'événements pouvant �
 - [Manipulation des données dans un DataTable](manipulating-data-in-a-datatable.md)
 - [Gestion des événements DataAdapter](../handling-dataadapter-events.md)
 - [Gestion des événements de DataSet](handling-dataset-events.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

@@ -2,12 +2,12 @@
 title: DevOps
 description: Considérations relatives à DevOps pour les applications Cloud natives
 ms.date: 05/13/2020
-ms.openlocfilehash: ce814595245d49e409e780cb0f63c436299c2e4e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e6e093a1847d3aec37ac5d4ca56f64e0091a9b6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614113"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163997"
 ---
 # <a name="devops"></a>DevOps
 
@@ -154,7 +154,7 @@ Les étapes dans les tableaux ne sont pas le seul outil organisationnel. En fonc
 
 Le champ Description prend en charge les styles normaux attendus (gras, trait de soulignement italique et barré) et la possibilité d’insérer des images. Cela en fait un outil puissant à utiliser lors de la spécification du travail ou des bogues.
 
-Les tâches peuvent être regroupées en fonctionnalités, qui définissent une plus grande unité de travail. Les fonctionnalités, à leur tour, peuvent être [reportées dans des Epics](https://docs.microsoft.com/azure/devops/boards/backlogs/define-features-epics?view=azure-devops). La classification des tâches de cette hiérarchie facilite grandement la compréhension de la fermeture d’une grande fonctionnalité.
+Les tâches peuvent être regroupées en fonctionnalités, qui définissent une plus grande unité de travail. Les fonctionnalités, à leur tour, peuvent être [reportées dans des Epics](/azure/devops/boards/backlogs/define-features-epics?view=azure-devops). La classification des tâches de cette hiérarchie facilite grandement la compréhension de la fermeture d’une grande fonctionnalité.
 
 ![Figure 10-6 types d’éléments de travail configurés par défaut dans le modèle de processus de base](./media/board-issue-types.png)
 

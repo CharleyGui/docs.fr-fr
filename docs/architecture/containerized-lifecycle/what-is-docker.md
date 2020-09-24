@@ -1,15 +1,15 @@
 ---
-title: Qu’est-ce que Docker ?
+title: Présentation de Docker
 description: Approfondissez un peu votre connaissance de Docker ; une analogie simple peut vous y aider.
 ms.date: 08/06/2020
-ms.openlocfilehash: 73b6032465583861169a8ac2bed81585027f42ec
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: b23a8719170deca706ee44d10337c340d72605fb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915061"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165921"
 ---
-# <a name="what-is-docker"></a>Qu’est-ce que Docker ?
+# <a name="what-is-docker"></a>Présentation de Docker
 
 [Docker](https://www.docker.com/) est un [projet open source](https://github.com/docker/docker) permettant d’automatiser le déploiement d’applications en tant que conteneurs portables et autonomes exécutables sur le cloud ou localement. Docker est également une [entreprise](https://www.docker.com/) qui développe et diffuse cette technologie, en collaboration avec des fournisseurs de services cloud, Linux et Windows, notamment Microsoft.
 
@@ -29,7 +29,7 @@ Les [conteneurs Windows](/virtualization/windowscontainers/about/) fonctionnent 
 
 - Les **conteneurs Hyper-V** étendent l’isolation fournie par les conteneurs Windows Server en exécutant chaque conteneur sur une machine virtuelle hautement optimisée. Dans cette configuration, le noyau de l’hôte conteneur n’est pas partagé avec les conteneurs Hyper-V, ce qui garantit une meilleure isolation.
 
-Les images de ces deux types de conteneurs sont créées et fonctionnent exactement de la même façon. La différence réside dans la façon dont le conteneur est créé à partir de l’image, l’exécution d’un conteneur Hyper-V nécessitant un paramètre supplémentaire. Pour plus d’informations, consultez [Conteneurs Hyper-V](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/hyperv-container).
+Les images de ces deux types de conteneurs sont créées et fonctionnent exactement de la même façon. La différence réside dans la façon dont le conteneur est créé à partir de l’image, l’exécution d’un conteneur Hyper-V nécessitant un paramètre supplémentaire. Pour plus d’informations, consultez [Conteneurs Hyper-V](/virtualization/windowscontainers/manage-containers/hyperv-container).
 
 ## <a name="comparing-docker-containers-with-virtual-machines"></a>Comparaison entre les conteneurs Docker et les machines virtuelles
 

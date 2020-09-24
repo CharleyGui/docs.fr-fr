@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
-ms.openlocfilehash: 7acce3f8483fab3c2978de7cbd1b9d875900f1d3
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: dbf18273e69ff0977f5d16ff179b8659865ef696
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003397"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164049"
 ---
 # <a name="walkthrough-manipulating-data-visual-basic"></a>Procédure pas à pas : Manipulation de données (Visual Basic)
+
 Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] complet essentiel pour l'ajout, la modification et la suppression de données dans une base de données. Vous utiliserez une copie de l'exemple de base de données Northwind pour ajouter un client, modifier le nom d'un client et supprimer une commande.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
@@ -19,6 +20,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
  Cette procédure pas à pas a été écrite à l'aide des paramètres de développement Visual Basic.  
   
 ## <a name="prerequisites"></a>Prérequis  
+
  Elle requiert les éléments suivants :  
   
 - Les fichiers sont stockés dans un dossier dédié, c:\linqtest2. Vous devez créer ce dossier avant de commencer la procédure pas à pas.  
@@ -35,10 +37,11 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Vue d’ensemble  
+
  Cette procédure pas à pas se compose de six tâches principales :  
   
-- Création de la solution [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dans Visual Studio.  
+- Création [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] de la solution dans Visual Studio.  
   
 - Ajout du fichier de code de base de données au projet.  
   
@@ -51,7 +54,8 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 - Soumission de ces modifications à la base de données Northwind.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Création d'une solution LINQ to SQL  
- Dans cette première tâche, vous allez créer une solution Visual Studio qui contient les références nécessaires pour générer et exécuter un projet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+
+ Dans cette première tâche, vous allez créer une solution Visual Studio qui contient les références nécessaires pour générer et exécuter un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projet.  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>Pour créer une solution LINQ to SQL  
   
@@ -66,6 +70,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 5. Cliquez sur **OK**.  
   
 ## <a name="adding-linq-references-and-directives"></a>Ajout de références et de directives LINQ  
+
  Cette procédure pas à pas utilise des assemblys qui ne sont pas nécessairement installés par défaut dans votre projet. Si `System.Data.Linq` n’est pas listé comme une référence dans votre projet (cliquez sur **Afficher tous les fichiers** dans **Explorateur de solutions** et développez le nœud **références** ), ajoutez-le, comme expliqué dans les étapes suivantes.  
   
 #### <a name="to-add-systemdatalinq"></a>Pour ajouter System.Data.Linq  
@@ -81,17 +86,19 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
      [!code-vb[DLinqWalk3VB#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#1)]  
   
 ## <a name="adding-the-northwind-code-file-to-the-project"></a>Ajout du fichier de code Northwind au projet  
+
  Ces étapes supposent que vous avez utilisé l'outil SQLMetal pour générer un fichier de code à partir de l'exemple de base de données Northwind. Pour plus d'informations, consultez la section Composants requis au début de cette procédure pas à pas.  
   
 #### <a name="to-add-the-northwind-code-file-to-the-project"></a>Pour ajouter le fichier de code Northwind au projet  
   
-1. Dans le menu **projet** , cliquez sur **Ajouter un élément existant**.  
+1. Dans le menu **Projet** , cliquez sur **Ajouter un élément existant**.  
   
 2. Dans la boîte de dialogue **Ajouter un élément existant** , accédez à c:\linqtest2\northwind.vb, puis cliquez sur **Ajouter**.  
   
      Le fichier northwind.vb est ajouté au projet.  
   
 ## <a name="setting-up-the-database-connection"></a>Paramétrage de la connexion de base de données  
+
  Commencez par tester votre connexion à la base de données. Notez en particulier que le nom de la base de données (Northwnd) ne comporte pas de caractère i. Si vous générez des erreurs au cours des étapes suivantes, examinez le fichier northwind.vb pour déterminer comment la classe partielle Northwind est orthographiée.  
   
 #### <a name="to-set-up-and-test-the-database-connection"></a>Pour paramétrer et tester la connexion de base de données  
@@ -107,6 +114,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
      Fermez l’application en appuyant sur entrée dans la fenêtre de la **console** , ou en cliquant sur **arrêter le débogage** dans le menu **Déboguer** de Visual Studio.  
   
 ## <a name="creating-a-new-entity"></a>Création d'une entité  
+
  La création d'une entité est une opération simple. Vous pouvez créer des objets (`Customer`, par exemple) à l'aide du mot clé `New`.  
   
  Dans cette section et les suivantes, vous apporterez des modifications uniquement au cache local. Aucune modification n'est envoyée à la base de données tant que vous n'avez pas appelé <xref:System.Data.Linq.DataContext.SubmitChanges%2A> vers la fin de cette procédure pas à pas.  
@@ -132,6 +140,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 3. Appuyez sur entrée dans la fenêtre de **console** pour arrêter le débogage.  
   
 ## <a name="updating-an-entity"></a>Mise à jour d'une entité  
+
  Au cours des étapes suivantes, vous allez récupérer un objet `Customer` et modifier l'une de ses propriétés.  
   
 #### <a name="to-change-the-name-of-a-customer"></a>Pour modifier le nom d'un client  
@@ -140,7 +149,8 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      [!code-vb[DLinqWalk3VB#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#4)]  
   
-## <a name="deleting-an-entity"></a>Suppression d'une entité  
+## <a name="deleting-an-entity"></a>Suppression d’une entité  
+
  Vous pouvez supprimer la première commande à l'aide du même objet Customer.  
   
  Le code suivant montre comment couper les relations entre les lignes et supprimer une ligne de la base de données.  
@@ -152,6 +162,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
      [!code-vb[DLinqWalk3VB#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#5)]  
   
 ## <a name="submitting-changes-to-the-database"></a>Soumission des modifications à la base de données  
+
  La dernière étape requise pour la création, la mise à jour et la suppression d'objets consiste à soumettre les modifications à la base de données. Sans cette étape, vos modifications restent locales et n'apparaissent pas dans les résultats de requêtes.  
   
 #### <a name="to-submit-changes-to-the-database"></a>Pour soumettre les modifications à la base de données  

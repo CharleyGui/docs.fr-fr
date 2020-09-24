@@ -2,12 +2,12 @@
 title: Gestion des performances des applications-gRPC pour les développeurs WCF
 description: La journalisation, les métriques et le suivi des applications ASP.NET Core gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: 98da6c5391f021011e281a57e8f775709fa128ef
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: bccb5ba92e2dc8fa2def4dc192b0ca58b332861a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740975"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165908"
 ---
 # <a name="application-performance-management"></a>Gestion des performances des applications
 
@@ -25,7 +25,7 @@ Les *métriques* font référence à des données numériques conçues pour êtr
 
 ## <a name="logging-in-aspnet-core-grpc"></a>Connexion ASP.NET Core gRPC
 
-ASP.NET Core fournit une prise en charge intégrée de la journalisation, sous la forme du package NuGet [Microsoft. extensions. Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging) . Les principales parties de cette bibliothèque sont incluses dans le kit de développement logiciel (SDK) Web. il n’est donc pas nécessaire de l’installer manuellement. Par défaut, les messages de journal sont écrits dans la sortie standard (« console ») et dans tout débogueur attaché. Pour écrire des journaux dans des magasins de données externes persistants, vous devrez peut-être importer des [packages de récepteur de journalisation facultatifs](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-3.0#third-party-logging-providers).
+ASP.NET Core fournit une prise en charge intégrée de la journalisation, sous la forme du package NuGet [Microsoft. extensions. Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging) . Les principales parties de cette bibliothèque sont incluses dans le kit de développement logiciel (SDK) Web. il n’est donc pas nécessaire de l’installer manuellement. Par défaut, les messages de journal sont écrits dans la sortie standard (« console ») et dans tout débogueur attaché. Pour écrire des journaux dans des magasins de données externes persistants, vous devrez peut-être importer des [packages de récepteur de journalisation facultatifs](/aspnet/core/fundamentals/logging/?view=aspnetcore-3.0#third-party-logging-providers).
 
 Le ASP.NET Core Framework gRPC écrit des messages de journalisation de diagnostic détaillés dans cette infrastructure de journalisation, afin qu’ils puissent être traités et stockés avec les messages de votre application.
 
@@ -47,13 +47,13 @@ public class StockData : Stocks.StocksBase
 
 De nombreux messages de journal, tels que les demandes et les exceptions, sont fournis par les composants de l’infrastructure ASP.NET Core et gRPC. Ajoutez vos propres messages de journalisation pour fournir des détails et du contexte sur la logique d’application, plutôt que sur des problèmes de niveau inférieur.
 
-Pour plus d’informations sur l’écriture de messages de journal et sur les récepteurs de journalisation et les cibles disponibles, consultez [journalisation dans .net Core et ASP.net Core](/aspnet/core/fundamentals/logging/).
+Pour plus d’informations sur l’écriture de messages de journal et sur les récepteurs de journalisation et les cibles disponibles, consultez  [journalisation dans .net Core et ASP.net Core](/aspnet/core/fundamentals/logging/).
 
 ## <a name="metrics-in-aspnet-core-grpc"></a>Mesures dans ASP.NET Core gRPC
 
-Le Runtime .NET Core fournit un ensemble de composants pour émettre et observer les métriques. Celles-ci incluent des API telles que les classes <xref:System.Diagnostics.Tracing.EventSource> et <xref:System.Diagnostics.Tracing.EventCounter>. Ces API peuvent émettre des données numériques de base qui peuvent être consommées par des processus externes, par exemple l' [outil Global dotnet-Counters](../../core/diagnostics/dotnet-counters.md), ou suivi d’v nements pour Windows. Pour plus d’informations sur l’utilisation de `EventCounter` dans votre propre code, consultez [Introduction à EventCounter](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
+Le Runtime .NET Core fournit un ensemble de composants pour émettre et observer les métriques. Celles-ci incluent des API telles que les <xref:System.Diagnostics.Tracing.EventSource> <xref:System.Diagnostics.Tracing.EventCounter> classes et. Ces API peuvent émettre des données numériques de base qui peuvent être consommées par des processus externes, par exemple l' [outil Global dotnet-Counters](../../core/diagnostics/dotnet-counters.md), ou suivi d’v nements pour Windows. Pour plus d’informations sur l’utilisation `EventCounter` de dans votre propre code, consultez [Introduction à EventCounter](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
 
-Pour obtenir des métriques plus avancées et pour écrire des données de métriques dans un plus grand nombre de magasins de données, vous pouvez essayer un projet open source appelé [métriques](https://www.app-metrics.io)de l’application. Cette suite de bibliothèques fournit un ensemble complet de types pour instrumenter votre code. Il offre également des packages pour écrire des métriques sur différents types de cibles qui incluent des bases de données de séries chronologiques, telles que Prometheus et InfluxDB, et [application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Le package NuGet [app. Metrics. AspNetCore. Mvc](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) ajoute même un ensemble complet de métriques de base qui sont générées automatiquement par le biais de l’intégration avec l’infrastructure ASP.net core. Le site Web du projet fournit des [modèles](https://www.app-metrics.io/samples/grafana/) pour l’affichage de ces métriques avec la plateforme de visualisation [Grafana](https://grafana.com/) .
+Pour obtenir des métriques plus avancées et pour écrire des données de métriques dans un plus grand nombre de magasins de données, vous pouvez essayer un projet open source appelé [métriques](https://www.app-metrics.io)de l’application. Cette suite de bibliothèques fournit un ensemble complet de types pour instrumenter votre code. Il offre également des packages pour écrire des métriques sur différents types de cibles qui incluent des bases de données de séries chronologiques, telles que Prometheus et InfluxDB, et [application Insights](/azure/azure-monitor/app/app-insights-overview). Le package NuGet [app. Metrics. AspNetCore. Mvc](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) ajoute même un ensemble complet de métriques de base qui sont générées automatiquement par le biais de l’intégration avec l’infrastructure ASP.net core. Le site Web du projet fournit des [modèles](https://www.app-metrics.io/samples/grafana/) pour l’affichage de ces métriques avec la plateforme de visualisation [Grafana](https://grafana.com/) .
 
 ### <a name="produce-metrics"></a>Produire des métriques
 
@@ -63,11 +63,11 @@ La plupart des plateformes de métriques prennent en charge les types suivants 
 | ----------- | ----------- |
 | Counter     | Effectue le suivi du nombre de fois où un événement se produit, par exemple les demandes et les erreurs. |
 | Jauge       | Enregistre une valeur unique qui change au fil du temps, par exemple des connexions actives. |
-| Histogramme   | Mesure une distribution de valeurs à travers des limites arbitraires. Par exemple, un histogramme peut suivre la taille d’un jeu de données, compter le nombre d’enregistrements contenus < 10, le nombre d’enregistrements 11-100, le nombre d’enregistrements 101-1000 contenus et le nombre d’enregistrements contenus > 1 000. |
+| Histogramme   | Mesure une distribution de valeurs à travers des limites arbitraires. Par exemple, un histogramme peut suivre la taille d’un jeu de données, compter le nombre d’enregistrements contenus <10, le nombre d’enregistrements 11-100, le nombre d’enregistrements 101-1000 contenus et le nombre d’enregistrements contenus >1000. |
 | Compteur       | Mesure le taux auquel un événement se produit dans différents intervalles de temps. |
-| Minuteur       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
+| Minuterie       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
 
-En utilisant les *métriques d’application*, une interface de `IMetrics` peut être obtenue via l’injection de dépendances et utilisée pour enregistrer l’une de ces métriques pour un service gRPC. L’exemple suivant montre comment compter le nombre de demandes de `Get` effectuées dans le temps :
+En utilisant des *métriques d’application*, une `IMetrics` interface peut être obtenue via l’injection de dépendances et utilisée pour enregistrer l’une de ces métriques pour un service gRPC. L’exemple suivant montre comment compter le nombre de `Get` demandes effectuées dans le temps :
 
 ```csharp
 public class StockData : Stocks.StocksBase
@@ -98,7 +98,7 @@ public class StockData : Stocks.StocksBase
 
 ### <a name="store-and-visualize-metrics-data"></a>Stocker et visualiser les données de métriques
 
-La meilleure façon de stocker les données de métriques se trouve dans une *base de données de série chronologique*, une banque de données spécialisée conçue pour enregistrer des séries de données numériques marquées avec des horodateurs. Les bases de données les plus populaires sont [Prometheus](https://prometheus.io/) et [InfluxDB](https://www.influxdata.com/products/influxdb-overview/). Microsoft Azure fournit également un stockage de métriques dédié par le biais du service [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) .
+La meilleure façon de stocker les données de métriques se trouve dans une *base de données de série chronologique*, une banque de données spécialisée conçue pour enregistrer des séries de données numériques marquées avec des horodateurs. Les bases de données les plus populaires sont [Prometheus](https://prometheus.io/) et [InfluxDB](https://www.influxdata.com/products/influxdb-overview/). Microsoft Azure fournit également un stockage de métriques dédié par le biais du service [Azure Monitor](/azure/azure-monitor/overview) .
 
 La solution actuelle de visualisation des données de métriques est [Grafana](https://grafana.com), qui fonctionne avec un large éventail de fournisseurs de stockage. L’image suivante montre un exemple de tableau de bord Grafana qui affiche les métriques de la maille du service Linkerd exécutant l’exemple StockData :
 
@@ -120,11 +120,11 @@ Le traçage distribué est basé sur le concept d' *étendues*: les opérations 
 
 ### <a name="distributed-tracing-with-diagnosticsource"></a>Traçage distribué avec `DiagnosticSource`
 
-.NET Core possède un module interne qui s’adapte bien aux traces et aux étendues distribuées : [DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide). En plus de fournir un moyen simple de produire et de consommer les Diagnostics au sein d’un processus, le module `DiagnosticSource` a le concept d’une *activité*. Une activité est effectivement une implémentation d’une trace distribuée ou d’une étendue dans une trace. Les éléments internes du module prennent en charge les activités parent/enfant, y compris l’allocation des identificateurs. Pour plus d’informations sur l’utilisation du type de `Activity`, consultez le [Guide de l’utilisateur de l’activité sur GitHub](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide).
+.NET Core possède un module interne qui s’adapte bien aux traces et aux étendues distribuées : [DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide). En plus de fournir un moyen simple de produire et de consommer les Diagnostics au sein d’un processus, le `DiagnosticSource` module a le concept d' *activité*. Une activité est effectivement une implémentation d’une trace distribuée ou d’une étendue dans une trace. Les éléments internes du module prennent en charge les activités parent/enfant, y compris l’allocation des identificateurs. Pour plus d’informations sur l’utilisation du `Activity` type, consultez le [Guide de l’utilisateur de l’activité sur GitHub](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide).
 
-Étant donné que `DiagnosticSource` fait partie de l’infrastructure de base, il est pris en charge par plusieurs composants principaux. Celles-ci incluent <xref:System.Net.Http.HttpClient>, Entity Framework Core et ASP.NET Core, y compris la prise en charge explicite dans l’infrastructure gRPC. Lorsque ASP.NET Core reçoit une demande, il recherche une paire d’en-têtes HTTP correspondant à la norme du [contexte de trace W3C](https://www.w3.org/TR/trace-context) . Si les en-têtes sont trouvés, une activité est démarrée à l’aide des valeurs d’identité et du contexte des en-têtes. Si aucun en-tête n’est trouvé, une activité est démarrée avec des valeurs d’identité générées qui correspondent au format standard. Les diagnostics générés par l’infrastructure ou par le code d’application pendant la durée de vie de cette activité peuvent être marqués avec les identificateurs de trace et d’étendue. La prise en charge de la `HttpClient` étend ce délai en vérifiant une activité en cours à chaque demande et en ajoutant automatiquement les en-têtes de trace à la demande sortante.
+Étant donné que `DiagnosticSource` fait partie de l’infrastructure de base, il est pris en charge par plusieurs composants de base. Ces derniers incluent <xref:System.Net.Http.HttpClient> , Entity Framework Core et ASP.net Core, notamment la prise en charge explicite dans l’infrastructure gRPC. Lorsque ASP.NET Core reçoit une demande, il recherche une paire d’en-têtes HTTP correspondant à la norme du [contexte de trace W3C](https://www.w3.org/TR/trace-context) . Si les en-têtes sont trouvés, une activité est démarrée à l’aide des valeurs d’identité et du contexte des en-têtes. Si aucun en-tête n’est trouvé, une activité est démarrée avec des valeurs d’identité générées qui correspondent au format standard. Les diagnostics générés par l’infrastructure ou par le code d’application pendant la durée de vie de cette activité peuvent être marqués avec les identificateurs de trace et d’étendue. La `HttpClient` prise en charge s’étend davantage en vérifiant une activité en cours à chaque demande et en ajoutant automatiquement les en-têtes de trace à la demande sortante.
 
-Les bibliothèques clientes et serveur ASP.NET Core gRPC incluent une prise en charge explicite des `DiagnosticSource` et des `Activity`, ainsi que la création d’activités et l’application automatique et l’utilisation des informations d’en-tête.
+Les bibliothèques clientes et serveur ASP.NET Core gRPC incluent une prise en charge explicite de `DiagnosticSource` et `Activity` , et créent des activités et appliquent et utilisent automatiquement les informations d’en-tête.
 
 > [!NOTE]
 > Tout cela se produit uniquement si un écouteur utilise les informations de diagnostic. S’il n’y a pas d’écouteur, aucun diagnostic n’est écrit et aucune activité n’est créée.
@@ -141,7 +141,7 @@ L’API OpenTracing est décrite dans la section suivante. Si vous souhaitez uti
 
 #### <a name="use-the-opentracing-package-to-store-distributed-trace-data"></a>Utiliser le package OpenTracing pour stocker les données de trace distribuées
 
-Le [package NuGet OpenTracing](https://www.nuget.org/packages/OpenTracing/) prend en charge tous les back-end conformes à OpenTracing (qui peuvent être utilisés indépendamment de `DiagnosticSource`). Il existe un package supplémentaire du projet contributions de l’API OpenTracing, [OpenTracing. satrib. Netcore](https://www.nuget.org/packages/OpenTracing.Contrib.NetCore/). Ce package ajoute un écouteur `DiagnosticSource` et écrit automatiquement des événements et des activités dans une back end. L’activation de ce package est aussi simple que son installation à partir de NuGet et son ajout en tant que service dans votre classe de `Startup`.
+Le [package NuGet OpenTracing](https://www.nuget.org/packages/OpenTracing/) prend en charge tous les back-end conformes à OpenTracing (qui peuvent être utilisés indépendamment de `DiagnosticSource` ). Il existe un package supplémentaire du projet contributions de l’API OpenTracing, [OpenTracing. satrib. Netcore](https://www.nuget.org/packages/OpenTracing.Contrib.NetCore/). Ce package ajoute un `DiagnosticSource` écouteur et écrit automatiquement des événements et des activités dans un back end. L’activation de ce package est aussi simple que son installation à partir de NuGet et son ajout en tant que service dans votre `Startup` classe.
 
 ```csharp
 public class Startup
@@ -155,13 +155,13 @@ public class Startup
 
 Le package OpenTracing est une couche d’abstraction, et en tant que tel, il requiert une implémentation spécifique à l’back end. Les implémentations de l’API OpenTracing sont disponibles pour les back-end Open source suivants.
 
-| Name | Package | Site web |
+| Nom | Package | Site web |
 | ---- | ------- | -------- |
 | Jaeger | [Jaeger](https://www.nuget.org/packages/Jaeger/) | [jaegertracing.io](https://jaegertracing.io) |
 | APM élastique | [Élastique. APM. NetCoreAll](https://www.nuget.org/packages/Elastic.Apm.NetCoreAll/) | [elastic.co/products/apm](https://www.elastic.co/products/apm) |
 
-Pour plus d’informations sur l’API OpenTracing pour .net, consultez les référentiels [OpenTracing pour C# ](https://github.com/opentracing/opentracing-csharp) et [OpenTracing C#contrib/.net Core](https://github.com/opentracing-contrib/csharp-netcore) sur GitHub.
+Pour plus d’informations sur l’API OpenTracing pour .NET, consultez [OpenTracing for c#](https://github.com/opentracing/opentracing-csharp) and the [OpenTracing contrib c#/.net Core](https://github.com/opentracing-contrib/csharp-netcore) dépôts sur GitHub.
 
 >[!div class="step-by-step"]
->[Précédent](load-balancing.md)
->[Suivant](appendix.md)
+>[Précédent](load-balancing.md) 
+> [Suivant](appendix.md)

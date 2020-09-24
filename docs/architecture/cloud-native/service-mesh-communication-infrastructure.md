@@ -3,12 +3,12 @@ title: Infrastructure de communication Service Mesh
 description: En savoir plus sur la façon dont les technologies de maillage de service rationalisent la communication des microservices natives Cloud
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 1b11024cd029433c756812850e2665b7836a13d3
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 39dc1ded06eb0b92a2a1b40cfe981d9bd49bf381
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613683"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165947"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Infrastructure de communication Service Mesh
 
@@ -18,7 +18,7 @@ Nous avons exploré différentes approches pour implémenter une communication H
 
 Une approche plus moderne des centres de communication des microservices autour d’une technologie nouvelle et en constante évolution, intitulée *maille du service*. Une [maille de service](https://www.nginx.com/blog/what-is-a-service-mesh/) est une couche d’infrastructure configurable avec des fonctionnalités intégrées pour gérer la communication entre les services, la résilience et de nombreux problèmes transversaux. Il déplace la responsabilité de ces problèmes sur les microservices et dans la couche de maillage de service. La communication est extraite de vos microservices.
 
-Un composant clé d’une maille de service est un proxy. Dans une application Cloud native, une instance d’un proxy est généralement colocalisée avec chaque microservice. Bien qu’ils s’exécutent dans des processus distincts, les deux sont étroitement liés et partagent le même cycle de vie. Ce modèle, connu sous le nom de [modèle de side-car](https://docs.microsoft.com/azure/architecture/patterns/sidecar), est illustré à la figure 4-24.
+Un composant clé d’une maille de service est un proxy. Dans une application Cloud native, une instance d’un proxy est généralement colocalisée avec chaque microservice. Bien qu’ils s’exécutent dans des processus distincts, les deux sont étroitement liés et partagent le même cycle de vie. Ce modèle, connu sous le nom de [modèle de side-car](/azure/architecture/patterns/sidecar), est illustré à la figure 4-24.
 
 ![Maille de service avec une voiture latérale](./media/service-mesh-with-side-car.png)
 
@@ -40,21 +40,21 @@ Dans ce chapitre, nous avons abordé les modèles de communication natifs dans l
 
 Une mise en évidence spéciale s’est produite sur les services Azure gérés qui peuvent aider à implémenter la communication dans les systèmes natifs du Cloud :
 
-- [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/overview)
+- [Application Gateway Azure](/azure/application-gateway/overview)
 - [Gestion des API Azure](https://azure.microsoft.com/services/api-management/)
-- [Service Azure SignalR](https://azure.microsoft.com/services/signalr-service/)
-- [Files d’attente Stockage Azure](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction)
-- [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)
-- [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
+- [Azure SignalR Service](https://azure.microsoft.com/services/signalr-service/)
+- [Files d’attente Stockage Azure](/azure/storage/queues/storage-queues-introduction)
+- [Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview)
+- [Azure Event Grid](/azure/event-grid/overview)
 - [Azure Event Hub](https://azure.microsoft.com/services/event-hubs/)
 
 Nous allons ensuite passer aux données distribuées dans les systèmes natifs du Cloud et aux avantages et défis qu’il présente.
 
-### <a name="references"></a>References
+### <a name="references"></a>Références
 
 - [Microservices .NET : architecture pour les applications .NET en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
 
-- [Conception de la communication interservice pour les microservices](https://docs.microsoft.com/azure/architecture/microservices/design/interservice-communication)
+- [Conception de la communication interservice pour les microservices](/azure/architecture/microservices/design/interservice-communication)
 
 - [Service Azure Signalr, service entièrement géré pour l’ajout de fonctionnalités en temps réel](https://azure.microsoft.com/blog/azure-signalr-service-a-fully-managed-service-to-add-real-time-functionality/)
 
@@ -64,9 +64,9 @@ Nous allons ensuite passer aux données distribuées dans les systèmes natifs d
 
 - [Documentation gRPC](https://grpc.io/docs/guides/)
 
-- [gRPC pour les développeurs WCF](https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers/)
+- [gRPC pour les développeurs WCF](../grpc-for-wcf-developers/index.md)
 
-- [Comparaison des services gRPC avec les API HTTP](https://docs.microsoft.com/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
+- [Comparaison des services gRPC avec les API HTTP](/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
 
 - [Génération de services gRPC avec la vidéo .NET](https://channel9.msdn.com/Shows/The-Cloud-Native-Show/Building-Microservices-with-gRPC-and-NET)
 

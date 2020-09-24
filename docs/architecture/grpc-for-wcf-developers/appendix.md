@@ -2,16 +2,16 @@
 title: Annexe-gRPC pour les développeurs WCF
 description: Présentation des transactions distribuées et de leur implémentation dans les architectures de microservices modernes.
 ms.date: 09/02/2019
-ms.openlocfilehash: 9931681727f921e007c2f80852ad0e69cd7288de
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: f60899463a13e9f740f6ae63150d18eab3069124
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711466"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165856"
 ---
 # <a name="appendix-a---transactions"></a>Annexe A-transactions
 
-Windows Communication Foundation (WCF) prend en charge les transactions distribuées, ce qui vous permet d’effectuer des opérations atomiques sur plusieurs services. Cette fonctionnalité est basée sur le [Distributed Transaction Coordinator Microsoft](https://docs.microsoft.com/previous-versions/windows/desktop/ms684146(v=vs.85)).
+Windows Communication Foundation (WCF) prend en charge les transactions distribuées, ce qui vous permet d’effectuer des opérations atomiques sur plusieurs services. Cette fonctionnalité est basée sur le [Distributed Transaction Coordinator Microsoft](/previous-versions/windows/desktop/ms684146(v=vs.85)).
 
 Dans le paysage des microservices plus récents, ce type de traitement automatisé des transactions distribuées n’est pas possible. Le nombre de technologies impliquées est trop important, notamment les bases de données relationnelles, les magasins de données NoSQL et les systèmes de messagerie. Il peut également y avoir une combinaison de systèmes d’exploitation, de langages de programmation et d’infrastructures en cours d’utilisation dans un environnement unique.
 
@@ -21,7 +21,7 @@ Si possible, il est préférable d’éviter totalement les transactions distrib
 
 Si ce n’est pas possible, une alternative consiste à utiliser le [modèle saga](https://microservices.io/patterns/data/saga.html). Dans un saga, les mises à jour sont traitées de manière séquentielle. à mesure que chaque mise à jour est réussie, le suivant est déclenché. Ces déclencheurs peuvent être propagés du service au service, ou gérés par un coordinateur saga ou Orchestrator. Si une mise à jour échoue à tout moment pendant le processus, les services qui ont déjà effectué leurs mises à jour appliquent une logique spécifique pour les inverser.
 
-Une autre option consiste à utiliser la conception pilotée par domaine (DDD) et la séparation des responsabilités de commande/requête (CQRS), comme décrit dans le [livre électronique sur les microservices .net](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/). En particulier, l’utilisation d’événements de domaine ou d’une [source d’événements](https://martinfowler.com/eaaDev/EventSourcing.html) peut aider à garantir que les mises à jour sont cohérentes, si elles ne sont pas appliquées immédiatement.
+Une autre option consiste à utiliser la conception pilotée par domaine (DDD) et la séparation des responsabilités de commande/requête (CQRS), comme décrit dans le [livre électronique sur les microservices .net](../microservices/microservice-ddd-cqrs-patterns/index.md). En particulier, l’utilisation d’événements de domaine ou d’une [source d’événements](https://martinfowler.com/eaaDev/EventSourcing.html) peut aider à garantir que les mises à jour sont cohérentes, si elles ne sont pas appliquées immédiatement.
 
 >[!div class="step-by-step"]
 >[Précédent](application-performance-management.md)
