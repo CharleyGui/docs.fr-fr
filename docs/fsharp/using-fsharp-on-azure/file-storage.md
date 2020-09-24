@@ -3,12 +3,13 @@ title: Bien démarrer avec le stockage Fichier Azure en F#
 description: Stockez des données de fichier dans le cloud à l’aide du stockage de fichiers Azure, puis montez le partage de fichiers cloud à partir d’une machine virtuelle Azure ou d’une application locale exécutant Windows.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 04bee82fd9d3c652cd99b9c951880f6ba89610ee
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.custom: devx-track-fsharp
+ms.openlocfilehash: dd19b156e73774f4eca63afd3f4c10a4a7b8d46c
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90548460"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91100124"
 ---
 # <a name="get-started-with-azure-file-storage-using-f"></a>Prise en main du stockage de fichiers Azure à l’aide de F\#
 

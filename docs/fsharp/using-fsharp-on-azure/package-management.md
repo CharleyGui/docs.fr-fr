@@ -1,14 +1,15 @@
 ---
-title: Utilisation de Package Management F# avec pour Azure
-description: Utiliser Paket ou NuGet pour gérer F# les dépendances Azure
+title: 'Utilisation de Package Management avec F # pour Azure'
+description: 'Utiliser Paket ou NuGet pour gérer les dépendances Azure F #'
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 4aa32ace91f30d0e43b9c40067f5f0f456cc4069
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.custom: devx-track-fsharp
+ms.openlocfilehash: 011a363b264079599e8b7d402fe9896045b1fe04
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214230"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91100111"
 ---
 # <a name="package-management-for-f-azure-dependencies"></a>Gestion des packages pour les dépendances F# Azure
 
@@ -16,7 +17,7 @@ L’obtention de packages pour le développement Azure est facile lorsque vous u
 
 ## <a name="using-paket"></a>Utilisation de Paket
 
-Si vous utilisez [Paket](https://fsprojects.github.io/Paket/) comme gestionnaire de dépendances, vous pouvez utiliser l' `paket.exe` outil pour ajouter des dépendances Azure. Par exemple :
+Si vous utilisez [Paket](https://fsprojects.github.io/Paket/) comme gestionnaire de dépendances, vous pouvez utiliser l' `paket.exe` outil pour ajouter des dépendances Azure. Exemple :
 
 ```console
 > paket add nuget WindowsAzure.Storage
@@ -28,7 +29,7 @@ Ou, si vous utilisez [mono](https://www.mono-project.com/) pour le développemen
 > mono paket.exe add nuget WindowsAzure.Storage
 ```
 
-Cela ajoute `WindowsAzure.Storage` à votre ensemble de dépendances de package pour le projet dans le répertoire actif, modifie `paket.dependencies` le fichier et télécharge le package. Si vous avez déjà configuré des dépendances ou si vous travaillez avec un projet dans lequel des dépendances ont été configurées par un autre développeur, vous pouvez résoudre et installer les dépendances localement comme suit :
+Cela ajoute `WindowsAzure.Storage` à votre ensemble de dépendances de package pour le projet dans le répertoire actif, modifie le `paket.dependencies` fichier et télécharge le package. Si vous avez déjà configuré des dépendances ou si vous travaillez avec un projet dans lequel des dépendances ont été configurées par un autre développeur, vous pouvez résoudre et installer les dépendances localement comme suit :
 
 ```console
 > paket install
@@ -54,7 +55,7 @@ Ou, pour le développement mono :
 
 ## <a name="using-nuget"></a>Utilisation de NuGet
 
-Si vous utilisez [NuGet](https://www.nuget.org/) comme gestionnaire de dépendances, vous pouvez utiliser l' `nuget.exe` outil pour ajouter des dépendances Azure. Par exemple :
+Si vous utilisez [NuGet](https://www.nuget.org/) comme gestionnaire de dépendances, vous pouvez utiliser l' `nuget.exe` outil pour ajouter des dépendances Azure. Exemple :
 
 ```console
 > nuget install WindowsAzure.Storage -ExcludeVersion
@@ -92,7 +93,7 @@ Ou, pour le développement mono :
 
 ## <a name="referencing-assemblies"></a>Référencement d'assemblys
 
-Pour pouvoir utiliser vos packages dans votre F# script, vous devez référencer les assemblys inclus dans les packages à l’aide `#r` d’une directive. Par exemple :
+Pour pouvoir utiliser vos packages dans votre script F #, vous devez référencer les assemblys inclus dans les packages à l’aide d’une `#r` directive. Exemple :
 
 ```fsharp
 > #r "packages/WindowsAzure.Storage/lib/net40/Microsoft.WindowsAzure.Storage.dll"
