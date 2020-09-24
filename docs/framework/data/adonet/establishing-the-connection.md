@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3af512f3-87d9-4005-9e2f-abb1060ff43f
-ms.openlocfilehash: 0da74b4896ad5434e46df336183db89054198134
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bf38475711a193bc69176993154f87d455aefe7d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540964"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156470"
 ---
 # <a name="establishing-the-connection"></a>Établissement de la connexion
+
 Pour vous connecter à Microsoft SQL Server, utilisez l'objet <xref:System.Data.SqlClient.SqlConnection> du fournisseur de données .NET Framework pour SQL Server. Pour vous connecter à une source de données OLE DB, utilisez l'objet <xref:System.Data.OleDb.OleDbConnection> du fournisseur de données .NET Framework pour OLE DB. Pour vous connecter à une source de données ODBC, utilisez l'objet <xref:System.Data.Odbc.OdbcConnection> du fournisseur de données .NET Framework pour ODBC. Pour vous connecter à une source de données Oracle, utilisez l'objet <xref:System.Data.OracleClient.OracleConnection> du fournisseur de données .NET Framework pour Oracle. Pour stocker et récupérer en toute sécurité des chaînes de connexion, consultez [protection des informations de connexion](protecting-connection-information.md).  
   
 ## <a name="closing-connections"></a>Fermeture de connexions  
+
  Nous vous recommandons de toujours fermer la connexion lorsque vous avez fini de l'utiliser, de façon à ce qu'elle puisse être retournée au pool. Le bloc `Using` dans Visual Basic ou C# supprime automatiquement la connexion lorsque le code quitte le bloc, même dans le cas d'une exception non traitée. Pour plus d’informations, consultez Utilisation de l' [instruction using](../../../csharp/language-reference/keywords/using-statement.md) et de [l’instruction using](../../../visual-basic/language-reference/statements/using-statement.md) .  
   
  Vous pouvez également utiliser la méthode `Close` ou `Dispose` de l'objet de connexion pour le fournisseur que vous utilisez. Les connexions qui ne sont pas explicitement fermées risquent de ne pas être ajoutées ni retournées au pool. Par exemple, une connexion devenue hors de portée mais qui n'a pas été explicitement fermée sera retournée au pool de connexion seulement si la taille maximale de celui-ci a été atteinte et si la connexion est toujours valide. Pour plus d’informations, consultez [OLE DB, ODBC et regroupement de connexions Oracle](ole-db-odbc-and-oracle-connection-pooling.md).  
@@ -27,6 +29,7 @@ Pour vous connecter à Microsoft SQL Server, utilisez l'objet <xref:System.Data.
 > Les événements de connexion et de déconnexion ne seront pas déclenchés sur le serveur si une connexion est récupérée depuis le pool de connexions ou qu’elle est retournée au pool, car elle n’est pas réellement fermée lorsqu’elle est retournée au pool. Pour plus d’informations, consultez [Regroupement de connexions SQL Server (ADO.NET)](sql-server-connection-pooling.md).  
   
 ## <a name="connecting-to-sql-server"></a>Connexion à SQL Server  
+
  Le fournisseur de données .NET Framework pour SQL Server prend en charge un format de chaîne de connexion similaire à celui de la chaîne de connexion OLE DB (ADO). Pour obtenir les noms et les valeurs de format de chaîne valides, voir la propriété <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> de l'objet <xref:System.Data.SqlClient.SqlConnection>. Vous pouvez également utiliser la classe <xref:System.Data.SqlClient.SqlConnectionStringBuilder> pour créer des chaînes de connexion valides du point de vue de la syntaxe au moment de l'exécution. Pour plus d’informations, consultez [Builders de chaînes de connexion](connection-string-builders.md).  
   
  L'exemple de code suivant illustre la création et l'ouverture d'une connexion à une base de données SQL Server.  
@@ -49,11 +52,13 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 ```  
   
 ### <a name="integrated-security-and-aspnet"></a>Sécurité intégrée et ASP.NET  
+
  La sécurité intégrée SQL Server (également appelée « connexions approuvées ») fournit une protection lors de la connexion à SQL Server car elle n'expose pas d'ID utilisateur et de mot de passe dans la chaîne de connexion, et elle est la méthode recommandée pour l'authentification d'une connexion. La sécurité intégrée utilise l'identité de sécurité active, ou jeton, du processus en cours d'exécution. Dans les applications bureautiques, il s'agit généralement de l'identité de l'utilisateur actuellement connecté.  
   
  Dans les applications ASP.NET, l'identité de sécurité peut être définie à l'aide d'une option parmi plusieurs options différentes. Pour mieux comprendre l’identité de sécurité qu’une application ASP.NET utilise pour se connecter à SQL Server, consultez [emprunt d’identité ASP.net](/previous-versions/aspnet/xh507fc5(v=vs.100)), [authentification ASP.net](/previous-versions/aspnet/eeyk640h(v=vs.100))et [Comment : accéder à SQL Server à l’aide de la sécurité intégrée de Windows](/previous-versions/aspnet/bsz5788z(v=vs.100)).  
   
 ## <a name="connecting-to-an-ole-db-data-source"></a>Connexion à une source de données OLE DB  
+
  La .NET Framework Fournisseur de données pour OLE DB fournit la connectivité aux sources de données exposées à l’aide de OLE DB (via SQLOLEDB, le fournisseur OLE DB pour SQL Server), à l’aide de l’objet **OleDbConnection** .  
   
  Pour le fournisseur de données .NET Framework pour OLE DB, le format de chaîne de connexion est identique à celui utilisé dans ADO, avec les exceptions suivantes :  
@@ -88,9 +93,11 @@ using (OleDbConnection connection =
 ```  
   
 ## <a name="do-not-use-universal-data-link-files"></a>N'utilisez pas de fichiers UDL (Universal Data Link)  
+
  Il est possible de fournir des informations de connexion pour un **OleDbConnection** dans un fichier Universal Data Link (UDL); Toutefois, vous devez éviter de le faire. Les fichiers UDL n'étant pas chiffrés, ils exposent les informations de chaîne de connexion en texte brut. Comme un fichier UDL est une ressource basée sur un fichier externe pour votre application, il n'est pas possible de le sécuriser à l'aide du .NET Framework.  
   
 ## <a name="connecting-to-an-odbc-data-source"></a>Connexion à une source de données ODBC  
+
  La .NET Framework Fournisseur de données pour ODBC assure la connectivité aux sources de données exposées à l’aide d’ODBC à l’aide de l’objet **OdbcConnection** .  
   
  Pour le fournisseur de données .NET Framework pour ODBC, le format de la chaîne de connexion est conçu pour être aussi proche que possible du format de la chaîne de connexion ODBC. Vous pouvez également fournir un nom de source de données ODBC (DSN). Pour plus d’informations sur **OdbcConnection** , consultez <xref:System.Data.Odbc.OdbcConnection> .  
@@ -116,6 +123,7 @@ using (OdbcConnection connection =
 ```  
   
 ## <a name="connecting-to-an-oracle-data-source"></a>Connexion à une source de données Oracle  
+
  La .NET Framework Fournisseur de données pour Oracle assure la connectivité aux sources de données Oracle à l’aide de l’objet **OracleConnection** .  
   
  Pour le fournisseur de données .NET Framework pour Oracle, le format de la chaîne de connexion est conçu pour être aussi proche que possible du format de la chaîne de connexion du fournisseur de données OLE DB pour Oracle (MSDAORA). Pour plus d’informations sur le **OracleConnection**, consultez <xref:System.Data.OracleClient.OracleConnection> .  

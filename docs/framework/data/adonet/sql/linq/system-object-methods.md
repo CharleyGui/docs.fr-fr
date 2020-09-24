@@ -2,15 +2,16 @@
 title: System.Object, méthodes
 ms.date: 03/30/2017
 ms.assetid: 5397fca0-689e-443e-802f-e1cbdc866427
-ms.openlocfilehash: d1a36798ef789bbc44f581dfc631feee19e1f66b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d2b96ca9e7bedd0e0438b47698d4b963844c92f3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781065"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155638"
 ---
 # <a name="systemobject-methods"></a>System.Object, méthodes
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]prend en charge <xref:System.Object> les méthodes suivantes.  
+
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge les <xref:System.Object> méthodes suivantes.  
   
 |||  
 |-|-|  
@@ -26,7 +27,8 @@ ms.locfileid: "70781065"
 |<xref:System.Object.ToString?displayProperty=nameWithType> pour les types binaires tels que `BINARY`, `VARBINARY`, `IMAGE` et `TIMESTAMP`.||  
   
 ## <a name="differences-from-net"></a>Différences par rapport à .NET  
- La sortie de <xref:System.Object.ToString?displayProperty=nameWithType> pour double utilise SQL `CONVERT`(nvarchar (30), @x, 2) sur SQL. SQL utilise toujours 16 chiffres et une notation scientifique dans ce cas (par exemple, "0.000000000000000e+000" pour 0). Par conséquent, la conversion <xref:System.Object.ToString?displayProperty=nameWithType> ne génère pas la même chaîne que <xref:System.Convert.ToString%2A?displayProperty=nameWithType> dans le .NET Framework.  
+
+ La sortie de <xref:System.Object.ToString?displayProperty=nameWithType> pour double utilise SQL `CONVERT` (nvarchar (30), @x , 2) sur SQL. SQL utilise toujours 16 chiffres et une notation scientifique dans ce cas (par exemple, "0.000000000000000e+000" pour 0). Par conséquent, la conversion <xref:System.Object.ToString?displayProperty=nameWithType> ne génère pas la même chaîne que <xref:System.Convert.ToString%2A?displayProperty=nameWithType> dans le .NET Framework.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: a885ae042eef939021d3a9b75616505c289bd43c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 62e6e7afe0e795819b82c6c7a4f99260a8080efb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558085"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157419"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Classes génériques (guide de programmation C#)
+
 Les classes génériques encapsulent des opérations qui ne sont pas spécifiques à un type de données particulier. Les classes génériques sont le plus souvent utilisées avec les collections telles que les listes liées, les tables de hachage, les piles, les files d’attente, les arborescences, etc. Les opérations telles que l’ajout et la suppression d’éléments dans la collection sont exécutées fondamentalement de la même manière quel que soit le type des données stockées.  
   
  Pour la plupart des scénarios qui nécessitent des classes de collections, l’approche recommandée consiste à utiliser celles fournies dans la bibliothèque de classes .NET. Pour plus d’informations sur l’utilisation de ces classes, consultez [Collections génériques dans .NET](../../../standard/generics/collections.md).  

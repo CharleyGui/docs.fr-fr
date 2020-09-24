@@ -3,14 +3,15 @@ title: Comment combiner des requêtes LINQ avec des expressions régulières (C#
 description: Cet exemple crée une expression régulière pour la correspondance dans les chaînes de texte à l’aide de la classe Regex en C#.
 ms.date: 07/20/2015
 ms.assetid: 6b003b65-20a4-4ca2-929e-2ee3f215aecc
-ms.openlocfilehash: af63d096e3c2f19ed557180d82d606989a016120
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: e423261961c25c6aae62483d332ce053d7b6f963
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105340"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157497"
 ---
 # <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>Comment combiner des requêtes LINQ avec des expressions régulières (C#)
+
 Cet exemple montre comment utiliser la classe <xref:System.Text.RegularExpressions.Regex> afin de créer une expression régulière pour les correspondances plus complexes des chaînes de texte. La requête LINQ facilite le filtrage des fichiers à parcourir à l’aide de l’expression régulière, et facilite également la personnalisation des résultats.  
   
 ## <a name="example"></a>Exemple  
@@ -97,6 +98,7 @@ class QueryWithRegEx
  Notez que vous pouvez également interroger l’objet <xref:System.Text.RegularExpressions.MatchCollection> qui est retourné par une recherche `RegEx`. Dans cet exemple, seule la valeur de chaque correspondance est générée dans les résultats. Toutefois, il est également possible d’utiliser LINQ pour effectuer toutes sortes de filtrage, de tri et de regroupement au sein de cette collection. Étant donné que <xref:System.Text.RegularExpressions.MatchCollection> est une collection <xref:System.Collections.IEnumerable> non générique, vous devez déclarer explicitement le type de la variable de portée dans la requête.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi

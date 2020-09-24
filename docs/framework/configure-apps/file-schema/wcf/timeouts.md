@@ -2,14 +2,15 @@
 title: <timeOuts>
 ms.date: 03/30/2017
 ms.assetid: 7fccd436-b326-48ec-8de1-c16817a09e0d
-ms.openlocfilehash: b9c67ac03f0eb73a2a4cdd43ab48fe12871a1cc3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f7e513bb5c486fa5f7c39c9b2e3cfcd26bd7c219
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854962"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157094"
 ---
 # \<timeOuts>
+
 Représente un élément de configuration qui spécifie l'intervalle de temps pendant lequel l'ouverture ou la fermeture de l'hôte de service est autorisée.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Représente un élément de configuration qui spécifie l'intervalle de temps pe
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -37,6 +39,7 @@ Représente un élément de configuration qui spécifie l'intervalle de temps pe
 |`openTimeout`|Valeur de type <xref:System.TimeSpan> qui spécifie l'intervalle de temps pendant lequel l'ouverture de l'hôte de service est autorisée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

@@ -2,12 +2,12 @@
 title: Exploitation des fonctions serverless
 description: Tirer parti des Azure Functions sans serveur dans les applications natives du Cloud
 ms.date: 05/13/2020
-ms.openlocfilehash: 53a0fdd29630b2a4368f3aa37ddfc5f93df10a24
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8e5c60d29cd8d635f79f42c232b33f060949e2b5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613861"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155365"
 ---
 # <a name="leveraging-serverless-functions"></a>Exploitation des fonctions serverless
 
@@ -40,7 +40,7 @@ Les microservices sont généralement construits pour répondre aux demandes, so
 
 Sans serveur expose des fonctions individuelles à exécution réduite qui sont appelées en réponse à un déclencheur. Cela les rend idéaux pour le traitement des tâches en arrière-plan.
 
-Une application peut être amenée à envoyer un message électronique en tant qu’étape dans un flux de travail. Au lieu d’envoyer la notification dans le cadre d’une demande de microservice, placez les détails du message dans une file d’attente. Une fonction Azure peut mettre le message en file d’attente et l’envoyer de façon asynchrone. Cela pourrait améliorer les performances et l’extensibilité du microservice. Le nivellement de la [charge basé sur une file d’attente](https://docs.microsoft.com/azure/architecture/patterns/queue-based-load-leveling) peut être mis en œuvre pour éviter les goulots d’étranglement liés à l’envoi des e-mails. En outre, ce service autonome peut être réutilisé en tant qu’utilitaire dans de nombreuses applications différentes.
+Une application peut être amenée à envoyer un message électronique en tant qu’étape dans un flux de travail. Au lieu d’envoyer la notification dans le cadre d’une demande de microservice, placez les détails du message dans une file d’attente. Une fonction Azure peut mettre le message en file d’attente et l’envoyer de façon asynchrone. Cela pourrait améliorer les performances et l’extensibilité du microservice. Le nivellement de la [charge basé sur une file d’attente](/azure/architecture/patterns/queue-based-load-leveling) peut être mis en œuvre pour éviter les goulots d’étranglement liés à l’envoi des e-mails. En outre, ce service autonome peut être réutilisé en tant qu’utilitaire dans de nombreuses applications différentes.
 
 La messagerie asynchrone à partir des files d’attente et des rubriques est un modèle courant pour déclencher des fonctions sans serveur. Toutefois, les Azure Functions peuvent être déclenchés par d’autres événements, tels que les modifications apportées au stockage d’objets BLOB Azure. Un service qui prend en charge les chargements d’image peut avoir une fonction Azure chargée de l’optimisation de la taille de l’image. La fonction peut être déclenchée directement par les insertions dans le stockage d’objets BLOB Azure, ce qui complique les opérations de microservice.
 
@@ -55,9 +55,9 @@ La figure 3-10 montre un modèle de démarrage à froid. Notez les étapes suppl
 ![Le démarrage à froid et à chaud ](./media/cold-start-warm-start.png)
  **figure 3-10**. Démarrage à froid et démarrage à chaud.
 
-Pour éviter tout démarrage à froid, vous pouvez passer d’un [plan de consommation à un plan dédié](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Vous pouvez également configurer une ou plusieurs [instances préchauffées](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances) avec la mise à niveau du plan Premium. Dans ce cas, lorsque vous devez ajouter une autre instance, celle-ci est déjà opérationnelle et prête à l’emploi. Ces options peuvent aider à atténuer le problème de démarrage à froid associé à l’informatique sans serveur.
+Pour éviter tout démarrage à froid, vous pouvez passer d’un [plan de consommation à un plan dédié](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Vous pouvez également configurer une ou plusieurs [instances préchauffées](/azure/azure-functions/functions-premium-plan#pre-warmed-instances) avec la mise à niveau du plan Premium. Dans ce cas, lorsque vous devez ajouter une autre instance, celle-ci est déjà opérationnelle et prête à l’emploi. Ces options peuvent aider à atténuer le problème de démarrage à froid associé à l’informatique sans serveur.
 
-Les fournisseurs de Cloud facturent des factures sans serveur en fonction du temps d’exécution du calcul et de la mémoire consommée. Les opérations de longue durée ou de consommation de mémoire élevée ne sont pas toujours les meilleurs candidats pour l’exécution sans serveur. Les fonctions sans serveur favorisent de petits segments de travail qui peuvent se terminer rapidement. La plupart des plates-formes sans serveur requièrent l’exécution de fonctions individuelles en quelques minutes. Azure Functions est défini par défaut sur une durée de délai d’attente de 5 minutes, qui peut être configurée jusqu’à 10 minutes. Le plan Azure Functions Premium peut également atténuer ce problème, et les délais d’expiration par défaut sont de 30 minutes avec une limite supérieure illimitée pouvant être configurée. L’heure de calcul n’est pas une heure de calendrier. Les fonctions plus avancées utilisant [Azure durable Functions Framework](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview?tabs=csharp) peuvent suspendre l’exécution pendant plusieurs jours. La facturation est basée sur la durée d’exécution réelle-lorsque la fonction sort de veille et reprend le traitement.
+Les fournisseurs de Cloud facturent des factures sans serveur en fonction du temps d’exécution du calcul et de la mémoire consommée. Les opérations de longue durée ou de consommation de mémoire élevée ne sont pas toujours les meilleurs candidats pour l’exécution sans serveur. Les fonctions sans serveur favorisent de petits segments de travail qui peuvent se terminer rapidement. La plupart des plates-formes sans serveur requièrent l’exécution de fonctions individuelles en quelques minutes. Azure Functions est défini par défaut sur une durée de délai d’attente de 5 minutes, qui peut être configurée jusqu’à 10 minutes. Le plan Azure Functions Premium peut également atténuer ce problème, et les délais d’expiration par défaut sont de 30 minutes avec une limite supérieure illimitée pouvant être configurée. L’heure de calcul n’est pas une heure de calendrier. Les fonctions plus avancées utilisant [Azure durable Functions Framework](/azure/azure-functions/durable/durable-functions-overview?tabs=csharp) peuvent suspendre l’exécution pendant plusieurs jours. La facturation est basée sur la durée d’exécution réelle-lorsque la fonction sort de veille et reprend le traitement.
 
 Enfin, tirer parti de Azure Functions pour les tâches d’application complique la tâche. Il est judicieux de commencer par concevoir votre application avec une conception modulaire et faiblement couplée. Ensuite, déterminez s’il existe des avantages sans serveur qui justifient la complexité supplémentaire.
 

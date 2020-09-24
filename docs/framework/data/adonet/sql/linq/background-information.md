@@ -2,14 +2,15 @@
 title: Informations générales
 ms.date: 03/30/2017
 ms.assetid: 724888f2-d3f1-4bea-b9a1-a0adb8a00f3b
-ms.openlocfilehash: fc7c68fe2dba266e056feb459038a060a055e175
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 56ba323aee3b559fbb8afd506be4c23595df6d2d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542109"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156093"
 ---
 # <a name="background-information"></a>Informations générales
+
 Les rubriques de cette section présentent des concepts et des procédures plus approfondis sur l'utilisation de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  Suivez ces étapes pour rechercher des exemples supplémentaires de code et d'applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] :  
@@ -21,6 +22,7 @@ Les rubriques de cette section présentent des concepts et des procédures plus 
 - Étudiez le livre blanc qui détaille la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, avec Visual Basic et des exemples de code C#. Pour plus d’informations, consultez [LINQ to SQL : requête intégrée au langage .net pour les données relationnelles](/previous-versions/dotnet/articles/bb425822(v=msdn.10)).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [ADO.NET et LINQ to SQL](ado-net-and-linq-to-sql.md)  
  Décrit la relation entre ADO.NET et [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .  
   
@@ -82,5 +84,6 @@ Les rubriques de cette section présentent des concepts et des procédures plus 
  Décrit comment mapper des fonctions définies par l'utilisateur au moment du design et comment les appeler de votre application.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Guide de programmation](programming-guide.md)  
  Inclut des liens vers les sections qui expliquent les différents aspects de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].

@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7dd6829e-79a5-4480-9023-9e588cb0bf2e
-ms.openlocfilehash: 40caa07488cb40ca8e9e3eb3a570c325b92de491
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4848ef69914f0520d2365538faea7fa064c1a15c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793307"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155807"
 ---
 # <a name="how-to-retrieve-member-conflict-information"></a>Procédure : Récupérer des informations sur les conflits entre membres
-Vous pouvez utiliser la classe <xref:System.Data.Linq.MemberChangeConflict> pour récupérer des informations sur des membres individuels en conflit. Dans ce contexte, vous pouvez assurer la gestion personnalisée du conflit pour un membre quelconque. Pour plus d’informations, [consultez accès concurrentiel optimiste : Vue](optimistic-concurrency-overview.md)d’ensemble.  
+
+Vous pouvez utiliser la classe <xref:System.Data.Linq.MemberChangeConflict> pour récupérer des informations sur des membres individuels en conflit. Dans ce contexte, vous pouvez assurer la gestion personnalisée du conflit pour un membre quelconque. Pour plus d’informations, consultez [accès concurrentiel optimiste : vue d’ensemble](optimistic-concurrency-overview.md).  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
+
  Le code suivant itère au sein des objets <xref:System.Data.Linq.ObjectChangeConflict>. Pour chacun de ces objets, il itère ensuite au sein des objets <xref:System.Data.Linq.MemberChangeConflict>.  
   
 > [!NOTE]
@@ -26,4 +28,4 @@ Vous pouvez utiliser la classe <xref:System.Data.Linq.MemberChangeConflict> pour
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Gérer les conflits de modification](how-to-manage-change-conflicts.md)
+- [Procédure : Gérer les conflits de changement](how-to-manage-change-conflicts.md)

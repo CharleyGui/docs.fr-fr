@@ -2,20 +2,22 @@
 title: System.String, méthodes
 ms.date: 03/30/2017
 ms.assetid: ce307f14-87e6-4816-8694-8a4147f6b784
-ms.openlocfilehash: 583c0d58562c1605f24b61489d481e19248ebed4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 44d32ed1000ca49d9fc29ffcde4506b44fc975b6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792495"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155664"
 ---
 # <a name="systemstring-methods"></a>System.String, méthodes
+
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne prend pas en charge les méthodes <xref:System.String> suivantes.  
   
 ## <a name="unsupported-systemstring-methods-in-general"></a>Méthodes System.String non prises en charge en général  
+
  Méthodes <xref:System.String> non prises en charge en général :  
   
-- Surcharges prenant en charge la culture (méthodes qui `CultureInfo`acceptent un  /   /  `StringComparison` `IFormatProvider`).  
+- Surcharges prenant en charge la culture (méthodes qui acceptent un `CultureInfo`  /  `StringComparison`  /  `IFormatProvider` ).  
   
 - Méthodes qui acceptent ou génèrent un tableau de `char`.  
   

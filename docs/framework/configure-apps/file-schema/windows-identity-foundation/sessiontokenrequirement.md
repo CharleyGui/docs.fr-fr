@@ -3,14 +3,15 @@ title: <sessionTokenRequirement>
 ms.date: 03/30/2017
 ms.assetid: 496a1735-cbb7-49d5-a6aa-dd5550462073
 author: BrucePerlerMS
-ms.openlocfilehash: ade55a5b26826633faf2e7ef7598a4071d613bbc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4560c55cee5caf975e83ce9d4dc0b379ab905f8d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152539"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156847"
 ---
 # \<sessionTokenRequirement>
+
 Fournit la configuration pour la <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> classe ou les classes dérivées.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -36,6 +37,7 @@ Fournit la configuration pour la <xref:System.IdentityModel.Tokens.SessionSecuri
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -45,7 +47,8 @@ Fournit la configuration pour la <xref:System.IdentityModel.Tokens.SessionSecuri
 |lifetime|Spécifie la durée de vie des jetons de session.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

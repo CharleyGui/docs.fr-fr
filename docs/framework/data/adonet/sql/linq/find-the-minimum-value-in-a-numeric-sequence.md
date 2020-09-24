@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 78203093-f242-4572-9b31-9495b10926aa
-ms.openlocfilehash: d8aee43f13ec92f649b4df20505ac56c336fe07a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2ffff8b69839d5c1e70e81f9fc6f3a97f57ac6c6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793835"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155976"
 ---
 # <a name="find-the-minimum-value-in-a-numeric-sequence"></a>Comment : rechercher la valeur minimale dans une séquence numérique
+
 Utilisez l'opérateur <xref:System.Linq.Enumerable.Min%2A> pour retourner la valeur minimale d'une séquence de valeurs numériques.  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant recherche le prix unitaire le plus bas parmi les produits.  
   
  Si vous exécutez cette requête sur l'exemple de base de données Northwind, vous obtenez le résultat suivant : `2.5000`.  
@@ -23,7 +25,8 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Min%2A> pour retourner la val
  [!code-csharp[DLinqQueryExamples#9](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#9)]
  [!code-vb[DLinqQueryExamples#9](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#9)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
+
  L'exemple suivant recherche le montant de fret le plus bas parmi les commandes.  
   
  Si vous exécutez cette requête sur l'exemple de base de données Northwind, vous obtenez le résultat suivant : `0.0200`.  
@@ -32,6 +35,7 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Min%2A> pour retourner la val
  [!code-vb[DLinqQueryExamples#10](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#10)]  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant utilise Min pour trouver les `Products` qui ont le prix unitaire le plus bas dans chaque catégorie. La sortie est classée par catégorie.  
   
  [!code-csharp[DLinqQueryExamples#11](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#11)]
@@ -73,5 +77,5 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Min%2A> pour retourner la val
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes d’agrégation](aggregate-queries.md)
+- [Requêtes d'agrégation](aggregate-queries.md)
 - [Téléchargement d’exemples de base de données](downloading-sample-databases.md)

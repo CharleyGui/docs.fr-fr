@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 1a95aab9e09d69a3d26b3404d4cb2b70371a3fe8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 96d9e9a7e43f71dc30bd2d7a7f1902238941d471
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286557"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156353"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Regroupement de connexions SQL Server (ADO.NET)
+
 La connexion à un serveur de base de données consiste généralement en plusieurs étapes de longue durée. Un canal physique tel qu’un socket ou un canal nommé doit être établi, le contrôle initial avec le serveur doit avoir lieu, les informations de chaîne de connexion doivent être analysées, la connexion doit être authentifiée par le serveur, des contrôles doivent être effectués pour l’inscription dans la transaction en cours, etc.  
   
  Dans la pratique, la plupart des applications utilisent une seule des quelques configurations pour les connexions. Cela signifie que, durant l'exécution de l'application, de nombreuses connexions identiques seront ouvertes et fermées à plusieurs reprises. Pour réduire le coût de l’ouverture des connexions, ADO.NET utilise une technique d’optimisation appelée *regroupement de connexions*.  
@@ -28,6 +29,7 @@ La connexion à un serveur de base de données consiste généralement en plusie
 > Lorsque le regroupement de connexions est activé, et si une erreur de délai d'attente ou toute autre erreur de connexion se produit, une exception est levée et les tentatives de connexion suivantes échouent pendant les cinq secondes suivantes, « la période de blocage ». Si l'application essaie de se connecter au cours de la période de blocage, la première exception sera levée de nouveau. Les échecs suivants à l'issue d'une période de blocage entraînent de nouvelles périodes de blocage deux fois plus longues que la période de blocage précédente, d'une durée maximale d'une minute.  
   
 ## <a name="pool-creation-and-assignment"></a>Création et assignation d'un pool  
+
  Lorsqu'une connexion est ouverte pour la première fois, un pool de connexions est créé sur la base d'un algorithme à correspondance exacte qui associe le pool à la chaîne de connexion dans la connexion. Chaque pool de connexions est associé à une chaîne de connexion distincte. Lorsqu'une nouvelle connexion est ouverte, si la chaîne de connexion ne correspond pas exactement à un pool existant, un nouveau pool est créé. Les connexions sont regroupées par processus, par domaine d'application, par chaîne de connexion et, en cas d'utilisation de la sécurité intégrée, par identité Windows. Les chaînes de connexion doivent également parfaitement correspondre ; les mots clés fournis dans un ordre différent pour la même connexion sont regroupés séparément.  
   
  Dans l'exemple C# suivant, trois nouveaux objets <xref:System.Data.SqlClient.SqlConnection> sont créés mais seuls deux pools sont nécessaires pour les gérer. Notez que les première et deuxième chaînes de connexion diffèrent par la valeur assignée pour `Initial Catalog`.  
@@ -61,6 +63,7 @@ using (SqlConnection connection = new SqlConnection(
 > Le pool est automatiquement effacé si une erreur irrécupérable survient, telle qu'un basculement.  
   
 ## <a name="adding-connections"></a>Ajout de connexions  
+
  Un pool de connexions est créé pour chaque chaîne de connexion unique. Lorsqu’un pool est créé, plusieurs objets de connexion sont créés et ajoutés au pool de sorte que l’exigence de taille minimale du pool soit remplie. Les connexions sont ajoutées au pool jusqu'à ce que sa taille maximale spécifiée soit atteinte (la valeur par défaut est 100). Les connexions sont libérées et retournées au pool en cas de fermeture ou de suppression.  
   
  Quand un objet <xref:System.Data.SqlClient.SqlConnection> est demandé, il est obtenu du pool si une connexion utilisable est disponible. Pour être utilisable, la connexion ne doit pas être en cours d’utilisation, doit avoir un contexte de transaction correspondant ou ne pas être associée à un contexte de transaction et doit avoir un lien valide vers le serveur.  
@@ -76,28 +79,35 @@ using (SqlConnection connection = new SqlConnection(
 Pour plus d’informations sur les événements associés à l’ouverture et à la fermeture des connexions, consultez classe [d’événements Audit login](/sql/relational-databases/event-classes/audit-login-event-class) et [classe d’événements Audit logout](/sql/relational-databases/event-classes/audit-logout-event-class) dans la documentation SQL Server.  
   
 ## <a name="removing-connections"></a>Suppression de connexions  
+
  Le dispositif de regroupement de connexions supprime une connexion du pool restée inactive pendant environ 4 à 8 minutes ou s'il détecte que la connexion au serveur a été interrompue. Notez qu'une connexion interrompue ne peut être détectée qu'après une tentative de communication avec le serveur. Si une connexion n'est plus reliée au serveur, elle est marquée comme étant non valide. Les connexions non valides ne sont supprimées du pool de connexions que lorsqu'elles sont fermées ou récupérées.  
   
  Si une connexion existante à un serveur a disparu, il est possible de la retirer du pool même si le dispositif de regroupement de connexions n'a pas détecté d'interruption de la connexion et ne l'a pas marquée comme non valide. C'est le cas parce que la charge de vérifier que la connexion est encore valide éliminerait les avantages liés au fait de disposer d'une fonction de regroupement de connexions en entraînant un aller-retour supplémentaire vers le serveur. Lorsque cela se produit, la première tentative d'utilisation de la connexion détecte que la connexion a été interrompue et une exception est levée.  
   
 ## <a name="clearing-the-pool"></a>Effacement du pool  
+
  ADO.NET 2,0 a introduit deux nouvelles méthodes pour effacer le pool : <xref:System.Data.SqlClient.SqlConnection.ClearAllPools%2A> et <xref:System.Data.SqlClient.SqlConnection.ClearPool%2A> . `ClearAllPools` efface les pools de connexions pour un fournisseur donné et `ClearPool` efface le pool de connexions associé à une connexion spécifique. Si des connexions sont utilisées au moment de l'appel, elles sont marquées de façon appropriée. Lors de leur fermeture, elles sont écartées au lieu d'être retournées au pool.  
   
 ## <a name="transaction-support"></a>Prise en charge des transactions  
+
  Les connexions sont retirées du pool et assignées en fonction du contexte de transaction. À moins que `Enlist=false` ne soit spécifié dans la chaîne de connexion, le pool de connexions s'assure que la connexion est inscrite dans le contexte <xref:System.Transactions.Transaction.Current%2A>. Lorsqu’une connexion est fermée et retournée au pool avec une transaction `System.Transactions` inscrite, elle est mise de côté de sorte que la demande suivante de ce pool de connexions avec la même transaction `System.Transactions` retourne la même connexion, si elle est disponible. Si une telle demande est émise et qu'aucune connexion regroupée n'est disponible, une connexion est retirée de la partie non traitée du pool et est inscrite. Si aucune connexion n'est disponible où que ce soit dans le pool, une nouvelle connexion est créée et inscrite.  
   
  Lorsqu'une connexion est fermée, elle est libérée à nouveau vers le pool et dans la sous-division appropriée en fonction de son contexte de transaction. Par conséquent, vous pouvez fermer la connexion sans générer d'erreur, même si une transaction distribuée est toujours en attente. Cela vous permet de valider ou d’abandonner ultérieurement la transaction distribuée.  
   
 ## <a name="controlling-connection-pooling-with-connection-string-keywords"></a>Contrôle des pools de connexions avec les mots clés des chaînes de connexion  
+
  La propriété `ConnectionString` de l'objet <xref:System.Data.SqlClient.SqlConnection> prend en charge les paires clé-valeur des chaînes de connexion qui peuvent être utilisées pour ajuster le comportement de la logique de regroupement des connexions. Pour plus d'informations, consultez <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
   
 ## <a name="pool-fragmentation"></a>Fragmentation de pool  
+
  La fragmentation de pool est un problème courant dans de nombreuses applications Web où l'application peut créer un grand nombre de pools qui ne sont pas libérés tant que le processus n'est pas terminé. Cela laisse un grand nombre de connexions ouvertes qui consomment de la mémoire et altèrent les performances.  
   
 ### <a name="pool-fragmentation-due-to-integrated-security"></a>Fragmentation de pool due à une sécurité intégrée  
+
  Les connexions sont regroupées en fonction de la chaîne de connexion et de l'identité de l'utilisateur. C’est pourquoi, si vous utilisez une authentification de base ou une authentification Windows sur le site web ainsi qu’une connexion sécurisée intégrée, vous obtenez un pool par utilisateur. Bien que cela améliore les performances des requêtes de base de données suivantes pour un utilisateur donné, ce dernier ne peut pas tirer parti des connexions établies par d'autres utilisateurs. Cela génère également au moins une connexion au serveur de base de données par utilisateur. Il s’agit d’un effet secondaire d’une architecture d’application Web particulière que les développeurs doivent soupeser par rapport aux exigences de sécurité et d’audit.  
   
 ### <a name="pool-fragmentation-due-to-many-databases"></a>Fragmentation de pool due à un trop grand nombre de base de données  
+
  De nombreux fournisseurs de services Internet hébergent plusieurs sites web sur un seul serveur. Ils peuvent utiliser une seule base de données pour confirmer une connexion d'authentification Forms, puis ouvrir une connexion à une base de données spécifique pour cet utilisateur ou ce groupe d'utilisateurs. La connexion à la base de données d'authentification est regroupée et utilisée par tout le monde. Toutefois, il existe un pool de connexions distinct à chaque base de données, ce qui augmente le nombre de connexions au serveur.  
   
  Cela est également un effet secondaire de la conception de l'application. Il existe une méthode relativement simple pour éviter cet effet secondaire sans compromettre la sécurité lors de la connexion à SQL Server. Au lieu d'établir une connexion à une base de données distincte pour chaque utilisateur ou groupe d'utilisateurs, établissez une connexion à la même base de données sur le serveur, puis exécutez l'instruction Transact-SQL USE pour accéder à la base de données souhaitée. Le fragment de code suivant montre comment créer une connexion initiale à la base de données `master`, puis basculer vers la base de données souhaitée spécifiée dans la variable chaîne `databaseName`.  
@@ -125,14 +135,16 @@ using (SqlConnection connection = new SqlConnection(
 ```  
   
 ## <a name="application-roles-and-connection-pooling"></a>Rôles d'application et regroupement de connexions  
+
  Après qu'un rôle d'application SQL Server a été activé en appelant la procédure stockée système `sp_setapprole`, le contexte de sécurité de cette connexion ne peut pas être rétabli. Toutefois, lorsque le regroupement est activé, la connexion est retournée au pool et une erreur se produit en cas de réutilisation de la connexion regroupée. Pour plus d’informations, consultez l’article de la base de connaissances, «[Erreurs de rôle d’application SQL avec OLE DB regroupement de ressources](https://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)».  
   
 ### <a name="application-role-alternatives"></a>Alternatives aux rôles d'application  
+
  Il est recommandé de tirer parti des mécanismes de sécurité qui peuvent être employés à la place des rôles d'application. Pour plus d’informations, consultez [création de rôles d’application dans SQL Server](./sql/creating-application-roles-in-sql-server.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Regroupement de connexions](connection-pooling.md)
 - [SQL Server et ADO.NET](./sql/index.md)
-- [Compteurs de performances](performance-counters.md)
+- [Compteurs de performance](performance-counters.md)
 - [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

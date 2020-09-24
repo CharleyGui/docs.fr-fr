@@ -2,14 +2,15 @@
 title: <issuedToken>
 ms.date: 03/30/2017
 ms.assetid: b6eae4b7-a6cd-4e1a-b0f6-f407022550b0
-ms.openlocfilehash: 56439748926ada642018f48a5787634a50d0f180
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9f3feb11fbe45cbb4b952c70feaa99f9c481dd2b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "72846857"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157367"
 ---
 # \<issuedToken>
+
 Spécifie un jeton personnalisé utilisé pour authentifier un client auprès d'un service.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Spécifie un jeton personnalisé utilisé pour authentifier un client auprès d'
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -59,7 +61,8 @@ Spécifie un jeton personnalisé utilisé pour authentifier un client auprès d'
 |-------------|-----------------|  
 |[\<clientCredentials>](clientcredentials.md)|Spécifie les informations d'identification utilisées pour authentifier un client auprès d'un service.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Un jeton émis est un type d'informations d'identification personnalisé utilisé, par exemple, lors d'une authentification à l'aide d'un service STS dans un scénario fédéré. Par défaut, le jeton est un jeton SAML. Pour plus d’informations, consultez [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md), ainsi que [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md).  
   
  Cette section contient les éléments permettant de configurer un émetteur local de jetons ou les comportements utilisés avec un service d'émission de jeton de sécurité. Pour obtenir des instructions sur la configuration d’un client pour qu’il utilise un émetteur local, consultez [procédure : configurer un émetteur local](../../../wcf/feature-details/how-to-configure-a-local-issuer.md).  
@@ -73,9 +76,9 @@ Spécifie un jeton personnalisé utilisé pour authentifier un client auprès d'
 - <xref:System.ServiceModel.Description.ClientCredentials.IssuedToken%2A>
 - <xref:System.ServiceModel.Security.IssuedTokenClientCredential>
 - [Comportements de sécurité](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md)
 - [Sécurisation des clients](../../../wcf/securing-clients.md)
-- [Comment : créer un client fédéré](../../../wcf/feature-details/how-to-create-a-federated-client.md)
-- [Comment : configurer un émetteur local](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)
+- [Procédure : créer un client fédéré](../../../wcf/feature-details/how-to-create-a-federated-client.md)
+- [Procédure : configurer un émetteur local](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)
 - [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md)

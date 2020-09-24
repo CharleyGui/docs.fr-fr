@@ -2,14 +2,15 @@
 title: <issuer>
 ms.date: 03/30/2017
 ms.assetid: 8c49c6ae-fa1a-4179-a84b-613c3216dcde
-ms.openlocfilehash: 74f5f2fc1a0fa1ffbbb510e4e700c33a13d02ab3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9e92bbcacf529a97e1ae936e93e38c98eab19cab
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70397918"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157263"
 ---
 # \<issuer>
+
 Spécifie le service d'émission de jeton de sécurité (STS) qui émet des jetons de sécurité.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -45,6 +46,7 @@ Spécifie le service d'émission de jeton de sécurité (STS) qui émet des jeto
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  

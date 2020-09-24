@@ -2,14 +2,15 @@
 title: <issuedTokenParameters>
 ms.date: 03/30/2017
 ms.assetid: 120b3f37-7331-4816-b712-d6aab39655a4
-ms.openlocfilehash: 8432463ff62e4b5e54a491b574cc6a5285efe220
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c90024a0629f39d160967ca00434e48f682d8933
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70397950"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157315"
 ---
 # \<issuedTokenParameters>
+
 Indique les paramètres d'un jeton de sécurité émis dans un scénario de sécurité fédéré.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -40,9 +41,11 @@ Indique les paramètres d'un jeton de sécurité émis dans un scénario de séc
 ```  
   
 ## <a name="type"></a>Type  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -81,7 +84,7 @@ Indique les paramètres d'un jeton de sécurité émis dans un scénario de séc
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Custom Binding Security](../../../wcf/samples/custom-binding-security.md)
 - [Identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md)
 - [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md)
