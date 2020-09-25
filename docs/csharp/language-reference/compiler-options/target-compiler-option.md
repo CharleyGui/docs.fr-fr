@@ -10,45 +10,46 @@ helpviewer_keywords:
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-ms.openlocfilehash: 5bfd988e8e399273dbd3292543a3730234c022d6
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: bcae4b64bdd2a939e35666a9068611b273c261da
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128554"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91188419"
 ---
-# <a name="-target-c-compiler-options"></a><span data-ttu-id="95719-103">-target (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="95719-103">-target (C# Compiler Options)</span></span>
-<span data-ttu-id="95719-104">L’option du compilateur **-target** peut être spécifiée dans l’une des formes suivantes :</span><span class="sxs-lookup"><span data-stu-id="95719-104">The **-target** compiler option can be specified in one of the following forms:</span></span>  
+# <a name="-target-c-compiler-options"></a><span data-ttu-id="2a318-103">-target (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="2a318-103">-target (C# Compiler Options)</span></span>
+
+<span data-ttu-id="2a318-104">L’option du compilateur **-target** peut être spécifiée dans l’une des formes suivantes :</span><span class="sxs-lookup"><span data-stu-id="2a318-104">The **-target** compiler option can be specified in one of the following forms:</span></span>  
   
- [<span data-ttu-id="95719-105">-target:appcontainerexe</span><span class="sxs-lookup"><span data-stu-id="95719-105">-target:appcontainerexe</span></span>](./target-appcontainerexe-compiler-option.md)  
- <span data-ttu-id="95719-106">Pour créer un fichier. exe pour les applications du Windows 8. x Store.</span><span class="sxs-lookup"><span data-stu-id="95719-106">To create an .exe file for Windows 8.x Store apps.</span></span>  
+ [<span data-ttu-id="2a318-105">-target:appcontainerexe</span><span class="sxs-lookup"><span data-stu-id="2a318-105">-target:appcontainerexe</span></span>](./target-appcontainerexe-compiler-option.md)  
+ <span data-ttu-id="2a318-106">Pour créer un fichier. exe pour les applications du Windows 8. x Store.</span><span class="sxs-lookup"><span data-stu-id="2a318-106">To create an .exe file for Windows 8.x Store apps.</span></span>  
   
- [<span data-ttu-id="95719-107">-target:exe</span><span class="sxs-lookup"><span data-stu-id="95719-107">-target:exe</span></span>](./target-exe-compiler-option.md)  
- <span data-ttu-id="95719-108">Pour créer un fichier .exe.</span><span class="sxs-lookup"><span data-stu-id="95719-108">To create an .exe file.</span></span>  
+ [<span data-ttu-id="2a318-107">-target:exe</span><span class="sxs-lookup"><span data-stu-id="2a318-107">-target:exe</span></span>](./target-exe-compiler-option.md)  
+ <span data-ttu-id="2a318-108">Pour créer un fichier .exe.</span><span class="sxs-lookup"><span data-stu-id="2a318-108">To create an .exe file.</span></span>  
   
- [<span data-ttu-id="95719-109">-target:library</span><span class="sxs-lookup"><span data-stu-id="95719-109">-target:library</span></span>](./target-library-compiler-option.md)  
- <span data-ttu-id="95719-110">Pour créer une bibliothèque de code.</span><span class="sxs-lookup"><span data-stu-id="95719-110">To create a code library.</span></span>  
+ [<span data-ttu-id="2a318-109">-target:library</span><span class="sxs-lookup"><span data-stu-id="2a318-109">-target:library</span></span>](./target-library-compiler-option.md)  
+ <span data-ttu-id="2a318-110">Pour créer une bibliothèque de code.</span><span class="sxs-lookup"><span data-stu-id="2a318-110">To create a code library.</span></span>  
   
- [<span data-ttu-id="95719-111">-target:module</span><span class="sxs-lookup"><span data-stu-id="95719-111">-target:module</span></span>](./target-module-compiler-option.md)  
- <span data-ttu-id="95719-112">Pour créer un module.</span><span class="sxs-lookup"><span data-stu-id="95719-112">To create a module.</span></span>  
+ [<span data-ttu-id="2a318-111">-target:module</span><span class="sxs-lookup"><span data-stu-id="2a318-111">-target:module</span></span>](./target-module-compiler-option.md)  
+ <span data-ttu-id="2a318-112">Pour créer un module.</span><span class="sxs-lookup"><span data-stu-id="2a318-112">To create a module.</span></span>  
   
- [<span data-ttu-id="95719-113">-target:winexe</span><span class="sxs-lookup"><span data-stu-id="95719-113">-target:winexe</span></span>](./target-winexe-compiler-option.md)  
- <span data-ttu-id="95719-114">Pour créer un programme Windows.</span><span class="sxs-lookup"><span data-stu-id="95719-114">To create a Windows program.</span></span>  
+ [<span data-ttu-id="2a318-113">-target:winexe</span><span class="sxs-lookup"><span data-stu-id="2a318-113">-target:winexe</span></span>](./target-winexe-compiler-option.md)  
+ <span data-ttu-id="2a318-114">Pour créer un programme Windows.</span><span class="sxs-lookup"><span data-stu-id="2a318-114">To create a Windows program.</span></span>  
   
- [<span data-ttu-id="95719-115">-target:winmdobj</span><span class="sxs-lookup"><span data-stu-id="95719-115">-target:winmdobj</span></span>](./target-winmdobj-compiler-option.md)  
- <span data-ttu-id="95719-116">Pour créer un fichier .winmdobj intermédiaire.</span><span class="sxs-lookup"><span data-stu-id="95719-116">To create an intermediate .winmdobj file.</span></span>  
+ [<span data-ttu-id="2a318-115">-target:winmdobj</span><span class="sxs-lookup"><span data-stu-id="2a318-115">-target:winmdobj</span></span>](./target-winmdobj-compiler-option.md)  
+ <span data-ttu-id="2a318-116">Pour créer un fichier .winmdobj intermédiaire.</span><span class="sxs-lookup"><span data-stu-id="2a318-116">To create an intermediate .winmdobj file.</span></span>  
   
- <span data-ttu-id="95719-117">À moins que vous ne spécifiiez **-target : module**, **-target** entraîne le placement d’un manifeste d’assembly .NET Framework dans un fichier de sortie.</span><span class="sxs-lookup"><span data-stu-id="95719-117">Unless you specify **-target:module**, **-target** causes a .NET Framework assembly manifest to be placed in an output file.</span></span> <span data-ttu-id="95719-118">Pour plus d’informations, consultez [assemblys dans .net](../../../standard/assembly/index.md) et [attributs communs](../attributes/global.md).</span><span class="sxs-lookup"><span data-stu-id="95719-118">For more information, see [Assemblies in .NET](../../../standard/assembly/index.md) and [Common Attributes](../attributes/global.md).</span></span>  
+ <span data-ttu-id="2a318-117">À moins que vous ne spécifiiez **-target : module**, **-target** entraîne le placement d’un manifeste d’assembly .NET Framework dans un fichier de sortie.</span><span class="sxs-lookup"><span data-stu-id="2a318-117">Unless you specify **-target:module**, **-target** causes a .NET Framework assembly manifest to be placed in an output file.</span></span> <span data-ttu-id="2a318-118">Pour plus d’informations, consultez [assemblys dans .net](../../../standard/assembly/index.md) et [attributs communs](../attributes/global.md).</span><span class="sxs-lookup"><span data-stu-id="2a318-118">For more information, see [Assemblies in .NET](../../../standard/assembly/index.md) and [Common Attributes](../attributes/global.md).</span></span>  
   
- <span data-ttu-id="95719-119">Le manifeste de l’assembly est placé dans le premier fichier de sortie .exe dans la compilation ou dans le premier fichier DLL, en l’absence de fichier de sortie .exe.</span><span class="sxs-lookup"><span data-stu-id="95719-119">The assembly manifest is placed in the first .exe output file in the compilation or in the first DLL, if there is no .exe output file.</span></span> <span data-ttu-id="95719-120">Par exemple, dans la ligne de commande suivante, le manifeste est placé dans `1.exe` :</span><span class="sxs-lookup"><span data-stu-id="95719-120">For example, in the following command line, the manifest will be placed in `1.exe`:</span></span>  
+ <span data-ttu-id="2a318-119">Le manifeste de l’assembly est placé dans le premier fichier de sortie .exe dans la compilation ou dans le premier fichier DLL, en l’absence de fichier de sortie .exe.</span><span class="sxs-lookup"><span data-stu-id="2a318-119">The assembly manifest is placed in the first .exe output file in the compilation or in the first DLL, if there is no .exe output file.</span></span> <span data-ttu-id="2a318-120">Par exemple, dans la ligne de commande suivante, le manifeste est placé dans `1.exe` :</span><span class="sxs-lookup"><span data-stu-id="2a318-120">For example, in the following command line, the manifest will be placed in `1.exe`:</span></span>  
   
 ```console  
 csc -out:1.exe t1.cs -out:2.netmodule t2.cs  
 ```  
   
- <span data-ttu-id="95719-121">Le compilateur crée un seul manifeste d’assembly par compilation.</span><span class="sxs-lookup"><span data-stu-id="95719-121">The compiler creates only one assembly manifest per compilation.</span></span> <span data-ttu-id="95719-122">Les informations sur tous les fichiers d’une compilation sont placées dans le manifeste de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="95719-122">Information about all files in a compilation is placed in the assembly manifest.</span></span> <span data-ttu-id="95719-123">Tous les fichiers de sortie sauf ceux créés avec **-target : module** peuvent contenir un manifeste d’assembly.</span><span class="sxs-lookup"><span data-stu-id="95719-123">All output files except those created with **-target:module** can contain an assembly manifest.</span></span> <span data-ttu-id="95719-124">Lorsque vous générez plusieurs fichiers de sortie sur la ligne de commande, un seul manifeste d’assembly peut être créé et il doit aller dans le premier fichier de sortie spécifié sur la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="95719-124">When producing multiple output files at the command line, only one assembly manifest can be created and it must go into the first output file specified on the command line.</span></span> <span data-ttu-id="95719-125">Quel que soit le premier fichier de sortie (**-target:exe**, **-target:winexe**, **-target:library** ou **-target:module**), tous les autres fichiers de sortie générés dans la même compilation doivent être des modules (**-target:module**).</span><span class="sxs-lookup"><span data-stu-id="95719-125">No matter what the first output file is (**-target:exe**, **-target:winexe**, **-target:library** or **-target:module**), any other output files produced in the same compilation must be modules (**-target:module**).</span></span>  
+ <span data-ttu-id="2a318-121">Le compilateur crée un seul manifeste d’assembly par compilation.</span><span class="sxs-lookup"><span data-stu-id="2a318-121">The compiler creates only one assembly manifest per compilation.</span></span> <span data-ttu-id="2a318-122">Les informations sur tous les fichiers d’une compilation sont placées dans le manifeste de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="2a318-122">Information about all files in a compilation is placed in the assembly manifest.</span></span> <span data-ttu-id="2a318-123">Tous les fichiers de sortie sauf ceux créés avec **-target : module** peuvent contenir un manifeste d’assembly.</span><span class="sxs-lookup"><span data-stu-id="2a318-123">All output files except those created with **-target:module** can contain an assembly manifest.</span></span> <span data-ttu-id="2a318-124">Lorsque vous générez plusieurs fichiers de sortie sur la ligne de commande, un seul manifeste d’assembly peut être créé et il doit aller dans le premier fichier de sortie spécifié sur la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="2a318-124">When producing multiple output files at the command line, only one assembly manifest can be created and it must go into the first output file specified on the command line.</span></span> <span data-ttu-id="2a318-125">Quel que soit le premier fichier de sortie (**-target:exe**, **-target:winexe**, **-target:library** ou **-target:module**), tous les autres fichiers de sortie générés dans la même compilation doivent être des modules (**-target:module**).</span><span class="sxs-lookup"><span data-stu-id="2a318-125">No matter what the first output file is (**-target:exe**, **-target:winexe**, **-target:library** or **-target:module**), any other output files produced in the same compilation must be modules (**-target:module**).</span></span>  
   
- <span data-ttu-id="95719-126">Si vous créez un assembly, vous pouvez indiquer que tout ou partie de votre code est conforme CLS avec l’attribut <xref:System.CLSCompliantAttribute>.</span><span class="sxs-lookup"><span data-stu-id="95719-126">If you create an assembly, you can indicate that all or part of your code is CLS compliant with the <xref:System.CLSCompliantAttribute> attribute.</span></span>  
+ <span data-ttu-id="2a318-126">Si vous créez un assembly, vous pouvez indiquer que tout ou partie de votre code est conforme CLS avec l’attribut <xref:System.CLSCompliantAttribute>.</span><span class="sxs-lookup"><span data-stu-id="2a318-126">If you create an assembly, you can indicate that all or part of your code is CLS compliant with the <xref:System.CLSCompliantAttribute> attribute.</span></span>  
   
 ```csharp  
 // target_clscompliant.cs  
@@ -61,10 +62,10 @@ public class TestClass
 }  
 ```  
   
- <span data-ttu-id="95719-127">Pour plus d’informations sur la définition de cette option de compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.</span><span class="sxs-lookup"><span data-stu-id="95719-127">For more information about setting this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.</span></span>  
+ <span data-ttu-id="2a318-127">Pour plus d’informations sur la définition de cette option de compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.</span><span class="sxs-lookup"><span data-stu-id="2a318-127">For more information about setting this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="95719-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="95719-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2a318-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2a318-128">See also</span></span>
 
-- [<span data-ttu-id="95719-129">Options du compilateur C#</span><span class="sxs-lookup"><span data-stu-id="95719-129">C# Compiler Options</span></span>](./index.md)
-- [<span data-ttu-id="95719-130">Gestion des propriétés des projets et des solutions</span><span class="sxs-lookup"><span data-stu-id="95719-130">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
-- [<span data-ttu-id="95719-131">-subsystemversion (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="95719-131">-subsystemversion (C# Compiler Options)</span></span>](./subsystemversion-compiler-option.md)
+- [<span data-ttu-id="2a318-129">Options du compilateur C#</span><span class="sxs-lookup"><span data-stu-id="2a318-129">C# Compiler Options</span></span>](./index.md)
+- [<span data-ttu-id="2a318-130">Gestion des propriétés des projets et des solutions</span><span class="sxs-lookup"><span data-stu-id="2a318-130">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+- [<span data-ttu-id="2a318-131">-subsystemversion (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="2a318-131">-subsystemversion (C# Compiler Options)</span></span>](./subsystemversion-compiler-option.md)
