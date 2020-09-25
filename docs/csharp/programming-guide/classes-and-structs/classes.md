@@ -6,16 +6,17 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: d726ab3a882d2e6913fa69c7b82f1d6db78dd47d
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 93fc0296eeb410ba7ca0e781bededbe79820506d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102045"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178864"
 ---
 # <a name="classes-c-programming-guide"></a>Classes (Guide de programmation C#)
 
 ## <a name="reference-types"></a>Types référence  
+
 Un type défini comme [class](../../language-reference/keywords/class.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [Null](../../language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de la classe à l’aide de l’opérateur [new](../../language-reference/operators/new-operator.md), ou que vous ne lui avez pas assigné un objet existant d’un type compatible, comme indiqué dans l’exemple suivant :
 
 ```csharp
@@ -42,7 +43,7 @@ Quand l’objet est créé, une quantité de mémoire suffisante est allouée su
 
  Le mot clé `class` est précédé du niveau d’accès. Comme [public](../../language-reference/keywords/public.md) est utilisé dans ce cas, n’importe qui peut créer des instances de cette classe. Le nom de la classe suit le mot clé `class`. Le nom de la classe doit être un [nom d’identificateur](../inside-a-program/identifier-names.md) C# valide. Le reste de la définition est le corps de la classe, où le comportement et les données sont définis. Les champs, propriétés, méthodes et événements d’une classe sont désignés collectivement par le terme « *membres de classe* ».  
   
-## <a name="creating-objects"></a>Création d’objets
+## <a name="creating-objects"></a>Création d'objets
 
 Bien qu’ils soient parfois employés indifféremment, une classe et un objet sont deux choses différentes. Une classe définit un type d’objet, mais il ne s’agit pas d’un objet en soi. Un objet, qui est une entité concrète basée sur une classe, est parfois désigné par le terme « instance de classe ».  
   
@@ -105,7 +106,7 @@ L’exemple suivant définit une classe publique qui contient une [propriété i
 - [Programmation orientée objet dans Visual Basic](../concepts/object-oriented-programming.md)
 - [Polymorphisme](polymorphism.md)
 - [Noms d’identificateurs](../inside-a-program/identifier-names.md)
-- [Membres](members.md)
+- [Members](members.md) (Membres)
 - [Méthodes](methods.md)
 - [Constructeurs](constructors.md)
 - [Finaliseurs](destructors.md)

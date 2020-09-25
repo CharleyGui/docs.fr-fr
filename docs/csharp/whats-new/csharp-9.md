@@ -2,21 +2,21 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 13da712e9421bbfe593e5945b80bb3636ebe05f3
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: f309f5fb2e705d220b8b0b743ec2f68901ee8f53
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90866439"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178396"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
 C# 9,0 ajoute les fonctionnalités et améliorations suivantes au langage C# :
 
-- Enregistrements
-- Setter init uniquement
-- Instructions de niveau supérieur
-- Améliorations des critères spéciaux
+- [Enregistrements](#record-types)
+- [Setter init uniquement](#init-only-setters)
+- [Instructions de niveau supérieur](#top-level-statements)
+- [Améliorations des critères spéciaux](#pattern-matching-enhancements)
 - Entiers dimensionnés natifs
 - Pointeurs fonction
 - Supprimer l’émission de l’indicateur localsinit

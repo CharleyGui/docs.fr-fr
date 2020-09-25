@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: cf6b90a606d13e3196e3114e84971451a9a322c9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7365cb89ad617148fb26d5a01c07f13a7888bbf8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553569"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178695"
 ---
 # <a name="delegates-c-programming-guide"></a>Délégués (Guide de programmation C#)
+
 Un [délégué](../../language-reference/builtin-types/reference-types.md) est un type qui représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Lorsque vous instanciez un délégué, vous pouvez associer son instance à toute méthode ayant une signature et un type de retour compatibles. Vous pouvez appeler la méthode par le biais l'instance de délégué.  
   
  Les délégués sont utilisés pour passer des méthodes comme arguments à d'autres méthodes. Les gestionnaires d'événements sont tout simplement des méthodes appelées par le biais de délégués. Vous créez une méthode personnalisée, et une classe telle qu'un contrôle Windows peut appeler votre méthode lorsqu'un certain événement se produit. L'exemple suivant illustre une déclaration de délégué :  
@@ -28,6 +29,7 @@ Un [délégué](../../language-reference/builtin-types/reference-types.md) est u
  Cette capacité à faire référence à une méthode en tant que paramètre fait des délégués les instruments idéaux pour définir des méthodes de rappel. Par exemple, une référence à une méthode qui compare deux objets peut être passée comme argument à un algorithme de tri. Étant donné que le code de comparaison est dans une procédure distincte, l'algorithme de tri peut être écrit de façon plus générale.  
   
 ## <a name="delegates-overview"></a>Vue d'ensemble des délégués  
+
  Les délégués ont les propriétés suivantes :  
   
 - Les délégués sont comparables aux pointeurs de fonction C++, sauf que les délégués sont totalement orientés objet, et contrairement aux pointeurs C++ vers les fonctions membres, les délégués encapsulent une instance d’objet et une méthode.
@@ -61,6 +63,7 @@ Un [délégué](../../language-reference/builtin-types/reference-types.md) est u
 Pour plus d’informations, consultez [Délégués](~/_csharplang/spec/delegates.md) dans la [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
   
 ## <a name="featured-book-chapters"></a>Chapitres proposés  
+
  [Delegates, Events, and Lambda Expressions](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10)) (Délégués, événements et expressions lambda) dans [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))  
   
  [Delegates and Events](/previous-versions/visualstudio/visual-studio-2008/ff652490(v=orm.10)) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](/previous-versions/visualstudio/visual-studio-2008/ff652493(v=orm.10))  

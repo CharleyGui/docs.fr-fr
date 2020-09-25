@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 297878d0-685b-4c01-b2e0-9d731b7322bc
-ms.openlocfilehash: 1675e4c6a610373e1c981b383ae0229739d96dd0
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 24ab13a1d67eac39c7b3d7be8cb1c16ec7265d5e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003326"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184878"
 ---
 # <a name="querying-across-relationships"></a>Interrogation de relations
+
 Les références à d’autres objets ou collections d’autres objets dans vos définitions de classe correspondent directement à des relations de clé étrangère dans la base de données. Vous pouvez utiliser ces relations lorsque vous effectuez une interrogation avec la notation par point pour accéder aux propriétés de relation et naviguer entre les objets. Ces opérations d'accès sont traduites en jointures complexes ou en sous-requêtes corrélées plus complexes dans le SQL équivalent.  
   
  Par exemple, la requête suivante navigue des commandes aux clients afin de limiter les résultats aux commandes des clients localisés à Londres.  
@@ -33,7 +34,7 @@ Les références à d’autres objets ou collections d’autres objets dans vos 
   
  Pour aider à maintenir cette illusion, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implémente une technique appelée *chargement différé*. Pour plus d’informations, consultez [différé et chargement immédiat](deferred-versus-immediate-loading.md).  
   
- Considérez la requête SQL suivante pour projeter une liste de paires d' `OrderID` de `CustomerID`-:  
+ Considérez la requête SQL suivante pour projeter une liste de `CustomerID` - `OrderID` paires :  
   
 ```sql
 SELECT t0.CustomerID, t1.OrderID  
@@ -42,12 +43,12 @@ FROM   Customers AS t0 INNER JOIN
 WHERE  (t0.City = @p0)  
 ```  
   
- Pour obtenir les mêmes résultats avec [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vous utilisez la référence de propriété `Orders` qui existe déjà dans la classe `Customer`. La référence `Orders` fournit les informations nécessaires pour exécuter la requête et projeter le `CustomerID`-paires de `OrderID`, comme dans le code suivant :  
+ Pour obtenir les mêmes résultats avec [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vous utilisez la référence de propriété `Orders` qui existe déjà dans la classe `Customer`. La `Orders` référence fournit les informations nécessaires pour exécuter la requête et projeter les `CustomerID` - `OrderID` paires, comme dans le code suivant :  
   
  [!code-csharp[DLinqQueryConcepts#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#5)]
  [!code-vb[DLinqQueryConcepts#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#5)]  
   
- Vous pouvez également effectuer l'opération inverse. Vous pouvez en effet interroger `Orders` et utiliser sa référence de relation `Customer` pour accéder aux informations sur l'objet `Customer` associé. Le code suivant projette le même `CustomerID`-`OrderID` paires qu’auparavant, mais cette fois en interrogeant les `Orders` au lieu de `Customers`.  
+ Vous pouvez également effectuer l'opération inverse. Vous pouvez en effet interroger `Orders` et utiliser sa référence de relation `Customer` pour accéder aux informations sur l'objet `Customer` associé. Le code suivant projette les mêmes `CustomerID` - `OrderID` paires qu’auparavant, mais cette fois-ci en interrogeant `Orders` au lieu de `Customers` .  
   
  [!code-csharp[DLinqQueryConcepts#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#6)]
  [!code-vb[DLinqQueryConcepts#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#6)]  

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: c49a9d1eaea9d4d8967b105d753f2a611d80e795
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 9d927e8517ddbdb1c5a9a8aa8ca3c321bf7e8d9c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301981"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178539"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Comment itérer au sein d’une arborescence de répertoires (Guide de programmation C#)
+
 L’expression « itérer au sein d’une arborescence de répertoires » signifie accéder à chaque fichier dans chaque sous-répertoire imbriqué sous un dossier racine spécifié, à n’importe quelle profondeur. Vous ne devez pas nécessairement ouvrir chaque fichier. Vous pouvez simplement récupérer le nom du fichier ou du sous-répertoire sous forme de `string`, ou vous pouvez récupérer des informations supplémentaires sous la forme d’un objet <xref:System.IO.FileInfo?displayProperty=nameWithType> ou <xref:System.IO.DirectoryInfo?displayProperty=nameWithType>.  
   
 > [!NOTE]
@@ -37,6 +38,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
 > Les systèmes de fichiers NTFS peuvent contenir des *points d’analyse* sous la forme de *points de jonction*, de *liens symboliques* et de *liens physiques*. Les méthodes .NET telles que <xref:System.IO.DirectoryInfo.GetFiles%2A> et <xref:System.IO.DirectoryInfo.GetDirectories%2A> ne retournent pas de sous-répertoires sous un point d’analyse. Ce comportement vous protège contre le risque d’entrer dans une boucle infinie quand deux points d’analyse se référencent l’un l’autre. En général, lors de l’utilisation de points d’analyse vous devez faire attention à ne pas involontairement modifier ou supprimer des fichiers. Si vous avez besoin d’un contrôle précis sur les points d’analyse, utilisez du code natif ou un appel de code non managé pour appeler directement les méthodes de système de fichiers Win32 appropriées.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment parcourir une arborescence de répertoires à l’aide de la récurrence. L’approche récursive est élégante, mais susceptible de provoquer une exception de dépassement de capacité de la pile si l’arborescence de répertoires est volumineuse et profondément imbriquée.  
   
  Les exceptions particulières gérées et les actions qui sont effectuées sur chaque fichier ou dossier sont fournies à titre d’exemple uniquement. Vous devez modifier ce code pour répondre à vos besoins spécifiques. Pour plus d’informations, consultez les commentaires du code.  
@@ -44,6 +46,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  [!code-csharp[csFilesandFolders#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#1)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment itérer au sein des fichiers et des dossiers dans une arborescence de répertoires sans utiliser la récurrence. Cette technique utilise le type de collection <xref:System.Collections.Generic.Stack%601> générique, qui est une pile LIFO (dernier entré, premier sorti).  
   
  Les exceptions particulières gérées et les actions qui sont effectuées sur chaque fichier ou dossier sont fournies à titre d’exemple uniquement. Vous devez modifier ce code pour répondre à vos besoins spécifiques. Pour plus d’informations, consultez les commentaires du code.  
@@ -55,6 +58,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  Si vous devez stocker le contenu d’une arborescence de répertoires en mémoire ou sur disque, la meilleure option consiste à stocker uniquement la propriété <xref:System.IO.FileSystemInfo.FullName%2A> (de type `string`) pour chaque fichier. Vous pouvez ensuite utiliser cette chaîne pour créer un objet <xref:System.IO.FileInfo> ou <xref:System.IO.DirectoryInfo>, si nécessaire, ou ouvrir les fichiers qui nécessitent un traitement supplémentaire.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Tout code d’itération de fichiers fiable doit tenir compte de nombreuses complexités du système de fichiers. Pour plus d’informations sur le système de fichiers Windows, consultez [Vue d’ensemble de NTFS](/windows-server/storage/file-server/ntfs-overview).  
   
 ## <a name="see-also"></a>Voir aussi

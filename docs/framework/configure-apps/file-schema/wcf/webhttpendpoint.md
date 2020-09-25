@@ -2,14 +2,15 @@
 title: <webHttpEndpoint>
 ms.date: 03/30/2017
 ms.assetid: ecaaeb6f-ebd0-411d-8b53-92477cd45347
-ms.openlocfilehash: 8d4f55fd5b51ea77839b7fdbb930e937f5700417
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3282871bf8dbd25726ada7003d3066b9a42e2366
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854799"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177980"
 ---
 # \<webHttpEndpoint>
+
 Cet élément de configuration définit un point de terminaison standard avec une [\<webHttpBinding>](webhttpbinding.md) liaison fixe qui ajoute automatiquement le [\<webHttp>](webhttp.md) comportement. Utilisez ce point de terminaison lors de l'écriture d'un service REST.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Cet élément de configuration définit un point de terminaison standard avec un
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -45,6 +47,7 @@ Cet élément de configuration définit un point de terminaison standard avec un
 |webEndpointType|Chaîne qui spécifie le type du point de terminaison.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

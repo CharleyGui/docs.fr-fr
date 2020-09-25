@@ -2,19 +2,21 @@
 title: Considérations sur la migration (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: b0274504fb2b83f7961d4444a8f8e601ba375a8d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d5151f0215cde1c5e35cc87c3cd667e16a23a1df
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554968"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91175471"
 ---
 # <a name="migration-considerations-entity-framework"></a>Considérations sur la migration (Entity Framework)
+
 L’Entity Framework ADO.NET offre plusieurs avantages pour une application existante. La possibilité d'utiliser un modèle conceptuel pour séparer des structures de données utilisées par l'application du schéma de la source de données constitue l'un de ces avantages les plus importants. Cela vous permet d'apporter facilement des modifications à venir au modèle de stockage ou à la source de données eux-mêmes sans apporter de modifications de compensation à l'application. Pour plus d’informations sur les avantages de l’utilisation de la Entity Framework, consultez [Entity Framework vue d’ensemble](overview.md) et [Entity Data Model](../entity-data-model.md).  
   
  Pour tirer parti des avantages de la Entity Framework, vous pouvez migrer une application existante vers le Entity Framework. Certaines tâches sont communes à toutes les applications migrées. Ces tâches courantes incluent la mise à niveau de l’application pour utiliser le .NET Framework à partir de la version 3,5 du Service Pack 1 (SP1), la définition des modèles et du mappage, et la configuration du Entity Framework. Lorsque vous migrez une application vers le Entity Framework, des considérations supplémentaires s’appliquent. Ces points dépendent du type d'application qui est migrée et des fonctionnalités spécifiques de l'application. Cette rubrique fournit des informations vous permettant de choisir la meilleure approche à utiliser lorsque vous mettez à niveau une application existante.  
   
 ## <a name="general-migration-considerations"></a>Considérations générales sur la migration  
+
  Les considérations suivantes s’appliquent lorsque vous migrez une application vers l’Entity Framework :  
   
 - Toute application qui utilise le .NET Framework à partir de la version 3,5 SP1 peut être migrée vers le Entity Framework, à condition que le fournisseur de données de la source de données utilisée par l’application prenne en charge l’Entity Framework.  
@@ -26,6 +28,7 @@ L’Entity Framework ADO.NET offre plusieurs avantages pour une application exis
 - La connexion du fournisseur de données utilisée par le Entity Framework peut être partagée avec d’autres parties de votre application, car le Entity Framework utilise des fournisseurs de données ADO.NET pour accéder à la source de données. Par exemple, le fournisseur SqlClient est utilisé par Entity Framework pour accéder à une base de données SQL Server. Pour plus d’informations, consultez la page [Fournisseur EntityClient pour Entity Framework](entityclient-provider-for-the-entity-framework.md).  
   
 ## <a name="common-migration-tasks"></a>Tâches de migration communes  
+
  Le chemin d’accès à la migration d’une application existante vers le Entity Framework dépend à la fois du type d’application et de la stratégie d’accès aux données existante. Toutefois, vous devez toujours effectuer les tâches suivantes lorsque vous migrez une application existante vers le Entity Framework.  
   
 > [!NOTE]
@@ -53,9 +56,11 @@ L’Entity Framework ADO.NET offre plusieurs avantages pour une application exis
      Les références aux assemblys Entity Framework et aux fichiers de modèle et de mappage doivent être ajoutées au projet Visual Studio. Vous pouvez ajouter ces fichiers de mappage au projet pour garantir qu'ils sont déployés avec l'application dans l'emplacement indiqué dans la chaîne de connexion. Pour plus d’informations, consultez [procédure : configurer manuellement un projet de Entity Framework](/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).  
   
 ## <a name="considerations-for-applications-with-existing-objects"></a>Considérations relatives aux applications comportant des objets existants  
+
  À partir du .NET Framework 4, le Entity Framework prend en charge les objets CLR « Plain Old » (POCO), également appelés objets ignorant la persistance. Dans la plupart des cas, vos objets existants peuvent fonctionner avec le Entity Framework en apportant des modifications mineures. Pour plus d’informations, consultez [utilisation des entités POCO](/previous-versions/dotnet/netframework-4.0/dd456853(v=vs.100)). Vous pouvez également migrer une application vers le Entity Framework et utiliser les classes de données générées par les outils de Entity Framework. Pour plus d’informations, consultez [Comment : utiliser l’assistant Entity Data Model](/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>Considérations relatives aux applications qui utilisent des fournisseurs ADO.NET  
+
  Les fournisseurs ADO.NET, tels que SqlClient, vous permettent d’interroger une source de données pour retourner des données tabulaires. Les données peuvent également être chargées dans un jeu de données ADO.NET. La liste suivante décrit les éléments à prendre en compte pour la mise à niveau d’une application qui utilise un fournisseur ADO.NET existant :  
   
 - Affichage de données tabulaires à l'aide d'un lecteur de données.  
@@ -69,6 +74,7 @@ L’Entity Framework ADO.NET offre plusieurs avantages pour une application exis
   Si le Entity Framework ne fournit pas les fonctionnalités du jeu de données nécessaire à votre application, vous pouvez toujours tirer parti des avantages des requêtes LINQ à l’aide de LINQ to DataSet. Pour plus d’informations, [consultez LINQ to DataSet](../linq-to-dataset.md).  
   
 ## <a name="considerations-for-applications-that-bind-data-to-controls"></a>Considérations relatives aux applications qui lient des données à des contrôles  
+
  La .NET Framework vous permet d’encapsuler des données dans une source de données, telle qu’un DataSet ou un contrôle de source de données ASP.NET, puis de lier des éléments d’interface utilisateur à ces contrôles de données. La liste suivante décrit les considérations concernant la liaison de contrôles à des données Entity Framework.  
   
 - Liaison de données à des contrôles.  
@@ -84,6 +90,7 @@ L’Entity Framework ADO.NET offre plusieurs avantages pour une application exis
   Le Entity Framework comprend un contrôle de source de données conçu pour simplifier la liaison de données dans les applications Web ASP.NET. Pour plus d’informations, consultez [vue d’ensemble du contrôle serveur Web EntityDataSource](/previous-versions/aspnet/cc488502(v=vs.100)).  
   
 ## <a name="other-considerations"></a>Autres considérations  
+
  Les remarques suivantes peuvent s’appliquer lorsque vous effectuez une migration de types spécifiques d’applications vers Entity Framework.  
   
 - Applications qui exposent des services de données.  

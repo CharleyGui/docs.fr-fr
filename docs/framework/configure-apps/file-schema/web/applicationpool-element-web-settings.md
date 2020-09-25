@@ -5,14 +5,15 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: ca474cdcaeaac7b1c32efa5c58f4b5bb5b7f7895
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 963b25e57ae8c2cc59dcc3e50ae2a52cc04f54a8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557240"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185637"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool>, élément (paramètres web)
+
 Spécifie les paramètres de configuration utilisés par ASP.NET pour gérer le comportement au niveau du processus quand une application ASP.NET s’exécute en mode intégré sur IIS 7,0 ou une version ultérieure.  
   
 > [!IMPORTANT]
@@ -44,6 +45,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |`requestQueueLimit`|Spécifie le nombre maximal de demandes qui peuvent être mises en file d’attente pour ASP.NET dans un même processus. Quand plusieurs applications ASP.NET s’exécutent dans un seul pool d’applications, l’ensemble cumulé des demandes adressées à une application dans le pool d’applications est soumis à ce paramètre.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -65,7 +67,7 @@ Pour le `maxConcurrentRequestsPerCPU` paramètre, le paramètre par défaut « 
   
 Le `requestQueueLimit` paramètre fonctionne de la même façon que l' `requestQueueLimit` attribut de l’élément [processModel](/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) , qui est défini dans les fichiers Web.config pour les applications ASP.net. Toutefois, le `requestQueueLimit` paramètre dans un fichier de aspnet.config remplace le `requestQueueLimit` paramètre dans un fichier Web.config. En d’autres termes, si les deux attributs sont définis (par défaut, cela est vrai), le `requestQueueLimit` paramètre dans le fichier aspnet.config est prioritaire.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
 L’exemple suivant montre comment configurer le comportement à l’ensemble du processus ASP.NET dans le fichier aspnet.config dans les circonstances suivantes :  
   

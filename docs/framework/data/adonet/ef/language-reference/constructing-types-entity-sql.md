@@ -2,18 +2,20 @@
 title: Construction de types (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 41fa7bde-8d20-4a3f-a3d2-fb791e128010
-ms.openlocfilehash: 7113aaf1c2caa982a8ab4751928856c1271570cb
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 82c8e3f2bac0d13da4870e90878e0de6fc9ec063
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251124"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177522"
 ---
 # <a name="constructing-types-entity-sql"></a>Construction de types (Entity SQL)
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]fournit trois genres de constructeurs : des constructeurs de ligne, des constructeurs de type nommé et des constructeurs de collection.  
+
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] fournit trois genres de constructeurs : des constructeurs de ligne, des constructeurs de type nommé et des constructeurs de collection.  
   
 ## <a name="row-constructors"></a>Constructeurs de ligne  
- Les constructeurs de ligne s'avèrent utiles dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pour construire des enregistrements anonymes structurellement typés à partir d'une ou plusieurs valeurs. Le type de résultat d'un constructeur de ligne est un type de ligne dont les types de champs correspondent aux types des valeurs qui ont servi à construire la ligne. Par exemple, l’expression suivante construit une valeur de type `Record(a int, b string, c int)`:  
+
+ Les constructeurs de ligne s'avèrent utiles dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pour construire des enregistrements anonymes structurellement typés à partir d'une ou plusieurs valeurs. Le type de résultat d'un constructeur de ligne est un type de ligne dont les types de champs correspondent aux types des valeurs qui ont servi à construire la ligne. Par exemple, l’expression suivante construit une valeur de type `Record(a int, b string, c int)` :  
   
  `ROW(1 AS a, "abc" AS b, a + 34 AS c)`  
   
@@ -28,6 +30,7 @@ ms.locfileid: "70251124"
  Pour plus d’informations sur les constructeurs de ligne, consultez [ligne](row-entity-sql.md).  
   
 ## <a name="collection-constructors"></a>Constructeurs de collection  
+
  Les constructeurs de collection dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] permettent de créer une instance d’un multiensemble à partir d’une liste de valeurs. Toutes les valeurs du constructeur doivent être de type `T` mutuellement compatible et le constructeur produit une collection de type `Multiset<T>`. Par exemple, l'expression suivante crée une collection d'entiers :  
   
  `Multiset(1, 2, 3)`  
@@ -41,6 +44,7 @@ ms.locfileid: "70251124"
  Pour plus d’informations, [consultez](multiset-entity-sql.md)multiensemble.  
   
 ## <a name="named-type-constructors-namedtype-initializers"></a>Constructeurs de type nommé (initialiseurs NamedType)  
+
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] permet aux constructeurs de type (initialiseurs) de créer des instances de types complexes nommés et de types d'entités. Par exemple, l'expression suivante crée une instance d'un type `Person`.  
   
  `Person("abc", 12)`  
@@ -66,5 +70,5 @@ ms.locfileid: "70251124"
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence Entity SQL](entity-sql-reference.md)
-- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)
-- [Système de type](type-system-entity-sql.md)
+- [Vue d'ensemble d'Entity SQL](entity-sql-overview.md)
+- [Système de types](type-system-entity-sql.md)

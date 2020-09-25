@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <smtp> element
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-ms.openlocfilehash: b30b82922a69ea660f4c4abfd808e89fa9945183
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 58f496b4a07f7d5531df897dd54bb6176111f1c4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504509"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178318"
 ---
 # <a name="smtp-element-network-settings"></a>\<smtp>, élément (paramètres réseau)
+
 Configure le format de remise, la méthode de remise et l’adresse d’expéditeur pour l’envoi d’e-mails.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Configure le format de remise, la méthode de remise et l’adresse d’expédit
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -56,11 +58,12 @@ Configure le format de remise, la méthode de remise et l’adresse d’expédit
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
-|[\<mailSettings>, Élément (paramètres réseau)](mailsettings-element-network-settings.md)|Configure les options d’envoi de courrier.|  
+|[\<mailSettings> , Élément (paramètres réseau)](mailsettings-element-network-settings.md)|Configure les options d’envoi de courrier.|  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant spécifie les paramètres SMTP appropriés pour envoyer des messages électroniques à l’aide des informations d’identification réseau par défaut.  
   
 ```xml  
