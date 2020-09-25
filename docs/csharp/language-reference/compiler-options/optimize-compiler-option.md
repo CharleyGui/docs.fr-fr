@@ -13,14 +13,15 @@ helpviewer_keywords:
 - compiler optimization [C#]
 - o compiler option [C#]
 ms.assetid: 6dd5b6f2-cd1d-4593-a9f4-1c2ed9404ca0
-ms.openlocfilehash: 6fd268414c4e54e7b4865733480f8917389015d0
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1862794e4d823e38ce19780300a0b04f4e57dc44
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125031"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193983"
 ---
 # <a name="-optimize-c-compiler-options"></a>-optimize (Options du compilateur C#)
+
 L’option **-optimize** active ou désactive les optimisations effectuées par le compilateur pour réduire la taille de votre fichier de sortie et le rendre plus rapide et plus efficace.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -30,6 +31,7 @@ L’option **-optimize** active ou désactive les optimisations effectuées par 
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  **-optimize** indique aussi au Common Language Runtime d’optimiser le code au moment de l’exécution.  
   
  Par défaut, les optimisations sont désactivées. Pour activer les optimisations, spécifiez **-optimize+**.  
@@ -51,6 +53,7 @@ L’option **-optimize** active ou désactive les optimisations effectuées par 
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez `t2.cs` et activez les optimisations du compilateur :  
   
 ```console  

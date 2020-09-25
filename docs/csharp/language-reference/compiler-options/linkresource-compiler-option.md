@@ -12,14 +12,15 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-ms.openlocfilehash: cd1150f3fa0dd0eca4e9352ce3809e73a15126c7
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 4efa0cbf286b40ad971bad66a7acce15e553eb39
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466103"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194100"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource (Options du compilateur C#)
+
 Crée un lien vers une ressource .NET dans le fichier de sortie. Le fichier de ressources n’est pas ajouté au fichier de sortie. Cette option diffère de l’option [-resource](./resource-compiler-option.md) qui incorpore un fichier de ressources dans le fichier de sortie.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,6 +30,7 @@ Crée un lien vers une ressource .NET dans le fichier de sortie. Le fichier de r
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `filename`  
  Fichier de ressources .NET auquel vous souhaitez lier l’assembly.  
   
@@ -38,7 +40,8 @@ Crée un lien vers une ressource .NET dans le fichier de sortie. Le fichier de r
  `accessibility-modifier` (facultatif)  
  Accessibilité de la ressource : publique ou privée. La valeur par défaut est public.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Par défaut, les ressources liées sont publiques dans l’assembly quand elles sont créées avec le compilateur C#. Pour rendre les ressources privées, spécifiez le modificateur d’accessibilité `private`. Aucun autre modificateur que `public` ou `private` n’est autorisé.  
   
  **-linkresource** nécessite une option [-target](./target-compiler-option.md) autre que **-target:module**.  
@@ -52,6 +55,7 @@ Crée un lien vers une ressource .NET dans le fichier de sortie. Le fichier de r
  Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
   
 ## <a name="example"></a>Exemple  
+
  Compiler `in.cs` et créer un lien vers le fichier de ressources `rf.resource` :  
   
 ```console  
@@ -59,6 +63,7 @@ csc -linkresource:rf.resource in.cs
 ```  
   
 ## <a name="example"></a>Exemple  
+
  Compiler `A.cs` dans une DLL, créer un lien vers une DLL native N.dll et placer la sortie dans le Global Assembly Cache (GAC). Dans cet exemple, A.dll et N.dll résident dans le GAC.  
   
 ```console  
@@ -67,6 +72,7 @@ gacutil -i A.dll
 ```  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple obtient le même résultat, mais en utilisant des options Assembly Linker.  
   
 ```console  

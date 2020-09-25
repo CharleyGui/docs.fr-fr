@@ -12,14 +12,15 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-ms.openlocfilehash: 1e2de095b460b684fb06faf46731283a1304906e
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 6f90ce6c1590784cefbd5f15ca8a36941aad77ed
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465687"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193775"
 ---
 # <a name="-resource-c-compiler-options"></a>-resource (Options du compilateur C#)
+
 Incorpore la ressource spécifiée dans le fichier de sortie.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,6 +30,7 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `filename`  
  Fichier de ressources .NET que vous souhaitez incorporer dans le fichier de sortie.  
   
@@ -38,7 +40,8 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
  `accessibility-modifier` (facultatif)  
  Accessibilité de la ressource : publique ou privée. La valeur par défaut est public.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Utilisez [-linkresource](./linkresource-compiler-option.md) pour lier une ressource à un assembly sans ajouter le fichier de ressources au fichier de sortie.  
   
  Par défaut, les ressources sont publiques dans l’assembly quand elles sont créées à l’aide du compilateur C#. Pour rendre les ressources privées, spécifiez le modificateur d’accessibilité `private`. Aucune accessibilité autre `public` ou `private` n’est autorisée.  
@@ -62,6 +65,7 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.FileProperties2.BuildAction%2A>.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez `in.cs` et attachez le fichier de ressources `rf.resource` :  
   
 ```console  

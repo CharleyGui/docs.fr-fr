@@ -2,14 +2,15 @@
 title: conteneur d'entités
 ms.date: 03/30/2017
 ms.assetid: 16e80405-2c75-42fc-b0e4-b1df53b1c584
-ms.openlocfilehash: 0c194d86e6276c948a545f830e569cbc68f86a14
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 95fb59c86f951e75f0988f45219fd07cbb003c01
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737869"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200821"
 ---
 # <a name="entity-container"></a>conteneur d'entités
+
 Un *conteneur d’entités* est un regroupement logique de [jeux d’entités](entity-set.md), d' [ensembles d’associations](association-set.md)et d’importations de [fonctions](model-declared-function.md).  
   
  Un conteneur d'entités défini dans un modèle conceptuel doit répondre aux spécifications suivantes :  
@@ -21,6 +22,7 @@ Un *conteneur d’entités* est un regroupement logique de [jeux d’entités](e
  Un conteneur d'entités peut définir des jeux d'entités ou des ensembles d'associations qui utilisent des types d'entité ou des associations définis dans un ou plusieurs espaces de noms. Pour plus d’informations, consultez [Entity Data Model : Namespaces](entity-data-model-namespaces.md).  
   
 ## <a name="example"></a>Exemple  
+
  Le diagramme suivant montre un modèle conceptuel avec trois types d'entités : `Book`, `Publisher` et `Author`.  Pour plus d'informations, consultez l'exemple suivant.  
   
  ![Exemple de modèle avec trois types d’entité](./media/entity-container/example-model-three-entity-types.gif)  
@@ -31,5 +33,5 @@ Un *conteneur d’entités* est un regroupement logique de [jeux d’entités](e
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts clés d’Entity Data Model](entity-data-model-key-concepts.md)
+- [Concepts clés d'Entity Data Model](entity-data-model-key-concepts.md)
 - [Entity Data Model](entity-data-model.md)

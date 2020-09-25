@@ -2,14 +2,15 @@
 title: <host>
 ms.date: 03/30/2017
 ms.assetid: be566d55-9d50-4b2e-985d-52a5cc26cbbb
-ms.openlocfilehash: b764bc21e9c4555b39c3d096212b6e6bcabb62ff
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 524226cbb826486def18c1b3b66c5b4a3c456dec
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855215"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185676"
 ---
 # \<host>
+
 Spécifie les paramètres d'un hôte de service.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,12 +32,15 @@ Spécifie les paramètres d'un hôte de service.
 ```  
   
 ## <a name="type"></a>Type  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  

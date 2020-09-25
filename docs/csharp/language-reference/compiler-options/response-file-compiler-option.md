@@ -8,14 +8,15 @@ helpviewer_keywords:
 - response files, specifying for compilation [C#]
 - '@ compiler option'
 ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
-ms.openlocfilehash: 89a057cba6e0d23c15fc9b652e5bfbc89b6ecbaa
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 8f7e222e194fc4ba96159ecd792765f64b4d1c57
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128645"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193750"
 ---
 # <a name="-c-compiler-options"></a>@ (Options du compilateur C#)
+
 L’option @ vous permet de spécifier un fichier qui contient les options du compilateur et les fichiers de code source à compiler.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,10 +26,12 @@ L’option @ vous permet de spécifier un fichier qui contient les options du co
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `response_file`  
  Fichier qui répertorie des options du compilateur ou des fichiers de code source à compiler.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les options du compilateur et les fichiers de code source seront traités par le compilateur exactement comme s’ils avaient été spécifiés sur la ligne de commande.  
   
  Pour spécifier plusieurs fichiers réponse dans une compilation, spécifiez plusieurs options de fichier réponse. Par exemple :  
@@ -48,6 +51,7 @@ L’option @ vous permet de spécifier un fichier qui contient les options du co
  Cette option du compilateur ne peut pas être définie dans l’environnement de développement Visual Studio, ni être modifiée par programmation.  
   
 ## <a name="example"></a>Exemple  
+
  Voici quelques lignes extraites d’un exemple de fichier réponse :  
   
 ```console  

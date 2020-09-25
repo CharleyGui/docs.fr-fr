@@ -2,14 +2,15 @@
 title: Terminologie Entity Framework
 ms.date: 03/30/2017
 ms.assetid: fa2a1bd1-6118-487b-8673-eebc66b92945
-ms.openlocfilehash: ea889cfbc04e06e3308e31c6e282d8f2359ddeb9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: dbe03de44b8ae2a857b923cd9dc74c42ea18f4e8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556536"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200938"
 ---
 # <a name="entity-framework-terminology"></a>Terminologie Entity Framework
+
 Cette rubrique définit les termes fréquemment référencés dans Entity Framework documentation. Des liens vers des rubriques pertinentes dans lesquelles des informations supplémentaires sont disponibles sont fournis.  
   
 |Terme|Définition|  

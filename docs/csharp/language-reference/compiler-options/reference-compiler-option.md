@@ -14,14 +14,15 @@ helpviewer_keywords:
 - public type information [C#]
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
-ms.openlocfilehash: 7b84953f85545c0400c7136c258849f259e8b48a
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: cd7346ae4094a84a398306394f771e040dd7b72f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124797"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193788"
 ---
 # <a name="-reference-c-compiler-options"></a>-reference (Options du compilateur C#)
+
 L’option **-reference** indique au compilateur d’importer des informations de type [public](../keywords/public.md) dans le fichier spécifié du projet actuel, ce qui vous permet de référencer les métadonnées des fichiers d’assembly spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,13 +33,15 @@ L’option **-reference** indique au compilateur d’importer des informations d
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `filename`  
  Nom d'un fichier comportant un manifeste d'assembly. Pour importer plusieurs fichiers, incluez une option **-reference** distincte pour chaque fichier.  
   
  `alias`  
  Un identificateur C# valide représentant un espace de noms racine qui contient tous les espaces de noms dans l’assembly.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Pour importer à partir de plusieurs fichiers, incluez une option **-reference** pour chaque fichier.  
   
  Les fichiers que vous importez doivent contenir un manifeste ; le fichier de sortie doit être compilé avec une option [-target](./target-compiler-option.md) autre que [-target:module](./target-module-compiler-option.md).  
@@ -65,6 +68,7 @@ L’option **-reference** indique au compilateur d’importer des informations d
 > Dans Visual Studio, utilisez la boîte de dialogue **Ajouter une référence**. Pour plus d’informations, consultez [Guide pratique pour ajouter ou supprimer des références à l’aide du gestionnaire de références](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager). Pour garantir un comportement équivalent selon que vous ajoutez des références à l’aide de `-reference` ou à l’aide de la boîte de dialogue **Ajouter une référence**, définissez la propriété **Incorporer les types interop** sur **False** pour l’assembly que vous ajoutez. La valeur par défaut de la propriété est **True**.  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple montre comment utiliser la fonctionnalité de l’[alias extern](../keywords/extern-alias.md).  
   
  Vous compilez le fichier source et importez les métadonnées à partir de `grid.dll` et `grid20.dll`, qui ont été compilés au préalable. Les deux DLL contiennent des versions séparées du même composant et vous devez utiliser deux **-reference** avec des options d’alias pour compiler le fichier source. Les options ressemblent à ce qui suit :  

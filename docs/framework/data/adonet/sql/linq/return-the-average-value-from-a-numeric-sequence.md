@@ -5,20 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ee3b8673-a2e7-4b2d-9b5c-4972ff9e665d
-ms.openlocfilehash: 8d6f5f76787c1110e91b245a3dd2425450b4db7e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1f113a475bb350640aef7a6b4d7a70b32509d1e0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781392"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200405"
 ---
 # <a name="return-the-average-value-from-a-numeric-sequence"></a>Retourner la valeur moyenne d'une séquence numérique
+
 L'opérateur <xref:System.Linq.Enumerable.Average%2A> calcule la moyenne d'une séquence de valeurs numériques.  
   
 > [!NOTE]
 > La traduction [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] de la `Average` de valeurs entières est calculée comme un entier, non comme un double.  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant retourne la moyenne de valeurs `Freight` dans la table `Orders`.  
   
  Les résultats de l'exemple de base de données Northwind seraient `78.2442`.  
@@ -26,7 +28,8 @@ L'opérateur <xref:System.Linq.Enumerable.Average%2A> calcule la moyenne d'une s
  [!code-csharp[DLinqQueryExamples#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#1)]
  [!code-vb[DLinqQueryExamples#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#1)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
+
  L'exemple suivant retourne le prix unitaire moyen de tous les produits (`Products`) dans la table `Products`.  
   
  Les résultats de l'exemple de base de données Northwind seraient `28.8663`.  
@@ -35,6 +38,7 @@ L'opérateur <xref:System.Linq.Enumerable.Average%2A> calcule la moyenne d'une s
  [!code-vb[DLinqQueryExamples#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#2)]  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant utilise l'opérateur `Average` pour rechercher ces `Products` dont le prix unitaire est plus élevé que le prix unitaire moyen de la catégorie à laquelle il appartient. L'exemple affiche ensuite les résultats par groupes.  
   
  Notez que cet exemple requiert l’utilisation du mot clé `var` en C#, car le type de retour est anonyme.  
@@ -116,4 +120,4 @@ L'opérateur <xref:System.Linq.Enumerable.Average%2A> calcule la moyenne d'une s
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes d’agrégation](aggregate-queries.md)
+- [Requêtes d'agrégation](aggregate-queries.md)

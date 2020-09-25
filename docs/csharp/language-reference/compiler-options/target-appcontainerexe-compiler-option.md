@@ -3,14 +3,15 @@ description: -target:appcontainerexe (Options du compilateur C#)
 title: -target:appcontainerexe (Options du compilateur C#)
 ms.date: 07/20/2015
 ms.assetid: e7e62229-23ea-4e53-bef5-380d951bf95f
-ms.openlocfilehash: 8c3b85c2f5a20788bd311e9bf3b300c32967da77
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: e4aa60ebc9dcc1a63b63863385b0ee9f13d6d78d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128580"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193736"
 ---
 # <a name="-targetappcontainerexe-c-compiler-options"></a>-target:appcontainerexe (Options du compilateur C#)
+
 Si vous utilisez l’option du compilateur **-target:appcontainerexe**, le compilateur crée un fichier exécutable Windows (.exe) qui doit être exécuté dans un conteneur d’application. Cette option est équivalente à [-target : winexe,](./target-winexe-compiler-option.md) mais elle est conçue pour les applications du Windows 8. x Store.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -20,6 +21,7 @@ Si vous utilisez l’option du compilateur **-target:appcontainerexe**, le compi
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Pour exiger que l’application s’exécute dans un conteneur d’application, cette option définit un bit dans le fichier [Portable Executable](/windows/desktop/Debug/pe-format) (PE). Lorsque ce bit est défini, une erreur se produit si la méthode CreateProcess tente de lancer l'exécutable en dehors d'un conteneur d'application.  
   
  À moins que vous utilisiez l’option [-out](./out-compiler-option.md), le fichier de sortie prend le nom du fichier d’entrée qui contient la méthode [Main](../../programming-guide/main-and-command-args/index.md).  
@@ -37,6 +39,7 @@ Si vous utilisez l’option du compilateur **-target:appcontainerexe**, le compi
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
 ## <a name="example"></a>Exemple  
+
  La commande suivante compile `filename.cs` dans un fichier exécutable Windows qui peut être exécuté uniquement dans un conteneur d'application.  
   
 ```console  

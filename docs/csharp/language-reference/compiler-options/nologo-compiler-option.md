@@ -10,14 +10,15 @@ helpviewer_keywords:
 - banners, suppressing startup
 - /nologo compiler option [C#]
 ms.assetid: 426afb36-a8fb-469d-9c45-a35d9512557c
-ms.openlocfilehash: 5107563b5133c183dca7626281ad11df9d09a8d8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 4834fd1888c25c282b146b6c0c26cec898bc0680
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125213"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194061"
 ---
 # <a name="-nologo-c-compiler-options"></a>-nologo (Options du compilateur C#)
+
 L’option **-nologo** supprime l’affichage de la bannière d’authentification lors du démarrage du compilateur et de l’affichage des messages d’information pendant la compilation.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -27,6 +28,7 @@ L’option **-nologo** supprime l’affichage de la bannière d’authentificati
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Cette option n’est pas disponible dans l’environnement de développement ; elle l’est uniquement au moment de compiler à partir de la ligne de commande.  
   
  Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  

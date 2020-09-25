@@ -9,12 +9,12 @@ helpviewer_keywords:
 - main compiler option [C#]
 - /main compiler option [C#]
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
-ms.openlocfilehash: 61e63de8082a335b448ffee1ae35170d3a1cf6b4
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: c27898de2a7cc2f3c01c51f8de1122e81b2233b4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125265"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194113"
 ---
 # <a name="-main-c-compiler-options"></a>-main (Options du compilateur C#)
 
@@ -27,11 +27,12 @@ Cette option spécifie la classe qui contient le point d’entrée du programme 
 ```
 
 ## <a name="arguments"></a>Arguments
+
  `class`  
  Type contenant la méthode **Main**.  
  Le nom de classe fourni doit être complet, c’est-à-dire qu’il doit inclure l’espace de noms complet contenant la classe, suivi du nom de classe. Par exemple, si la méthode `Main` se trouve dans la classe `Program` dans l’espace de noms `MyApplication.Core`, l’option du compilateur doit être `-main:MyApplication.Core.Program`.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Si votre compilation comprend plusieurs types avec une méthode [Main](../../programming-guide/main-and-command-args/index.md), vous pouvez spécifier le type qui contient la méthode **Main** à utiliser comme point d’entrée dans le programme.
 

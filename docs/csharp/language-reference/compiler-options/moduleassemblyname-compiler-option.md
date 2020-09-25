@@ -9,14 +9,15 @@ helpviewer_keywords:
 - /moduleassemblyname compiler option [C#]
 - .moduleassemblyname compiler option [C#]
 ms.assetid: d464d9b9-f18d-423b-95e9-66c7878fd53a
-ms.openlocfilehash: d669a1687abe496b921d5670b9149b0e933b2d95
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9131db17d767c76fe6a57f5d5353474153e0c269
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125252"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194087"
 ---
 # <a name="-moduleassemblyname-c-compiler-option"></a>-moduleassemblyname (Options du compilateur C#)
+
 Spécifie un assembly dont les types non publics sont accessibles par un .netmodule.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,10 +27,12 @@ Spécifie un assembly dont les types non publics sont accessibles par un .netmod
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `assembly_name`  
  Nom de l’assembly dont les types non publics sont accessibles au fichier .netmodule.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  **-moduleassemblyname** doit être utilisée au moment de créer un fichier .netmodule et quand les conditions suivantes sont réunies :  
   
 - Le fichier .netmodule doit accéder à des types non publics dans un assembly existant.  
@@ -47,6 +50,7 @@ Spécifie un assembly dont les types non publics sont accessibles par un .netmod
  Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple génère un assembly avec un type privé, ce qui octroie un accès d’assembly friend à un assembly appelé csman_an_assembly.  
   
 ```csharp  
@@ -67,6 +71,7 @@ class An_Internal_Class
 ```  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple génère un fichier .netmodule qui accède à un type non public dans l’assembly moduleassemblyname_1.dll. En sachant que ce. netmodule sera intégré à un assembly appelé csman_an_assembly, nous pouvons spécifier **-moduleassemblyname**, ce qui permet au. netmodule d’accéder aux types non publics dans un assembly qui a accordé un accès d’assembly friend à csman_an_assembly.  
   
 ```csharp  
@@ -81,6 +86,7 @@ class B {
 ```  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple de code génère l’assembly csman_an_assembly en faisant référence à l’assembly et au fichier .netmodule générés précédemment.  
   
 ```csharp  

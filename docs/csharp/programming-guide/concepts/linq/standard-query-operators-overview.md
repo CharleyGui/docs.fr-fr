@@ -3,14 +3,15 @@ title: Présentation des opérateurs de requête standard (C#)
 description: Les opérateurs de requête standard LINQ fournissent des fonctionnalités de requête, notamment le filtrage, la projection, l’agrégation et le tri en C#.
 ms.date: 07/20/2015
 ms.assetid: 812fa119-5f65-4139-b4fa-55dccd8dc3ac
-ms.openlocfilehash: 8a399f52881e10f8d94263843b5992101f96a5ea
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 1ff98e47641dbe7a884b7d6c7758c1fe61b95091
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302319"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178773"
 ---
 # <a name="standard-query-operators-overview-c"></a>Présentation des opérateurs de requête standard (C#)
+
 Les *opérateurs de requête standard* sont les méthodes qui forment le modèle de requête LINQ. La plupart de ces méthodes fonctionnent sur des séquences, où une séquence est un objet dont le type implémente l’interface <xref:System.Collections.Generic.IEnumerable%601> ou l’interface <xref:System.Linq.IQueryable%601>. Les opérateurs de requête standard fournissent des fonctionnalités de requête, dont notamment le filtrage, la projection, l’agrégation, le tri, etc.  
   
  Il existe deux ensembles d’opérateurs de requête standard LINQ : un qui opère sur des objets de type <xref:System.Collections.Generic.IEnumerable%601> , un autre qui opère sur des objets de type <xref:System.Linq.IQueryable%601> . Les méthodes qui composent chaque ensemble sont des membres statiques des classes <xref:System.Linq.Enumerable> et <xref:System.Linq.Queryable>, respectivement. Elles sont définies en tant que *méthodes d’extension* du type sur lequel elles opèrent. Les méthodes d’extension peuvent être appelées à l’aide de la syntaxe de méthode statique ou de la syntaxe de méthode d’instance.  
@@ -68,12 +69,15 @@ foreach (var obj in query)
 ```  
   
 ## <a name="query-expression-syntax"></a>Syntaxe d’expression de requête  
+
  Certains des opérateurs de requête standard les plus fréquemment utilisés ont une syntaxe de mot clé C# et Visual Basic Language dédiée qui leur permet d’être appelés dans le cadre d’une *expression*de *requête* . Pour plus d’informations sur les opérateurs de requête standard qui ont des mots clés dédiés et sur leurs syntaxes correspondantes, consultez [Syntaxe des expressions de requête pour les opérateurs de requête standard (C#)](./query-expression-syntax-for-standard-query-operators.md).  
   
 ## <a name="extending-the-standard-query-operators"></a>Extension des opérateurs de requête standard  
+
  Vous pouvez augmenter l’ensemble d’opérateurs de requête standard en créant des méthodes spécifiques au domaine appropriées pour votre domaine ou technologie cible. Vous pouvez également remplacer les opérateurs de requête standard par vos propres implémentations qui fournissent des services supplémentaires, tels que l’évaluation à distance, la traduction des requêtes et l’optimisation. Pour obtenir un exemple, consultez <xref:System.Linq.Enumerable.AsEnumerable%2A>.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  Les liens suivants vous permettent d’accéder à des articles qui fournissent des informations supplémentaires sur les différents opérateurs de requête standard en fonction de leur fonctionnalité.  
   
  [Tri des données (C#)](./sorting-data.md)  

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - pdb compiler option [C#]
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
-ms.openlocfilehash: 0dcafd0fd260488922c74a2330b312e80467e779
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: ced1ee1f4f079830a032a628da96a389ba27da90
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124914"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193853"
 ---
 # <a name="-pdb-c-compiler-options"></a>-pdb (Options du compilateur C#)
+
 L’option de compilateur **-pdb** spécifie le nom et l’emplacement du fichier de symboles de débogage.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,10 +27,12 @@ L’option de compilateur **-pdb** spécifie le nom et l’emplacement du fichie
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `filename`  
  Nom et emplacement du fichier de symboles de débogage.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Quand vous spécifiez [-debug (Options du compilateur C#)](./debug-compiler-option.md), le compilateur crée un fichier .pdb dans le même répertoire que celui dans lequel le compilateur va créer le fichier de sortie (.exe ou .dll) avec un nom de fichier identique à celui du fichier de sortie.  
   
  **-pdb** vous permet de spécifier un nom de fichier autre que celui par défaut et un emplacement pour le fichier .pdb.  
@@ -37,6 +40,7 @@ L’option de compilateur **-pdb** spécifie le nom et l’emplacement du fichie
  Cette option du compilateur ne peut pas être définie dans l’environnement de développement Visual Studio, ni être modifiée par programmation.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez `t.cs` et créez un fichier .pdb sous le nom tt.pdb :  
   
 ```console  

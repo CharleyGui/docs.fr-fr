@@ -2,17 +2,19 @@
 title: Mise en cache d'un plan de requête (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 90b0c685-5ef2-461b-98b4-c3c0a2b253c7
-ms.openlocfilehash: a0e84f40aed2cff146e4e203cca73a9110de0e2f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 51c5de8365819065f8e505468f37a47370ec502f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149984"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91175549"
 ---
 # <a name="query-plan-caching-entity-sql"></a>Mise en cache d'un plan de requête (Entity SQL)
+
 À chaque tentative d'exécution d'une requête, le pipeline de la requête recherche son cache de plan de requête pour voir si la requête exacte est déjà compilée et disponible. Si tel est le cas, il réutilise le plan mis en cache plutôt que d'en générer un nouveau. Si aucune correspondance n'est trouvée dans le cache du plan de requête, la requête est compilée et mise en cache. Une requête est identifiée par son texte [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et sa collection de paramètres (noms et types). Toutes les comparaisons de texte respectent la casse.  
   
 ## <a name="configuration"></a>Configuration  
+
  La mise en cache du plan de requête est configurable par le biais de <xref:System.Data.EntityClient.EntityCommand>.  
   
  Pour activer ou désactiver la mise en cache du plan de requête par le biais de <xref:System.Data.EntityClient.EntityCommand.EnablePlanCaching%2A?displayProperty=nameWithType>, affectez à cette propriété la valeur `true` ou `false`. La désactivation de la mise en cache du plan pour les requêtes dynamiques individuelles qui ne seront probablement pas utilisées plus d'une fois améliore les performances.  
@@ -20,6 +22,7 @@ ms.locfileid: "79149984"
  Vous pouvez activer la mise en cache du plan de requête via <xref:System.Data.Objects.ObjectQuery.EnablePlanCaching%2A>.  
   
 ## <a name="recommended-practice"></a>Pratique recommandée  
+
  Les requêtes dynamiques doivent être évitées, en général. L’exemple de requête dynamique suivant est vulnérable aux attaques par injection de code SQL, car il accepte directement l’entrée utilisateur sans aucune validation.  
   
  ```csharp

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: d1b79879639e1cbdc3dc040977d9fcd0c3a73602
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 409760ee0b147065a2128c62c304fb5d70cfcf42
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125018"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193879"
 ---
 # <a name="-out-c-compiler-options"></a>-out (Options du compilateur C#)
+
 L’option **-out** spécifie le nom du fichier de sortie.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,10 +27,12 @@ L’option **-out** spécifie le nom du fichier de sortie.
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `filename`  
  Nom du fichier de sortie créé par le compilateur.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Sur la ligne de commande, il est possible de spécifier plusieurs fichiers de sortie pour une même compilation. Le compilateur s’attend à trouver un ou plusieurs fichiers de code source à la suite de l’option **-out**. Ensuite, tous les fichiers de code source sont compilés dans le fichier de sortie spécifié par cette option **-out**.  
   
  Spécifiez le nom complet et l’extension du fichier que vous voulez créer.  
@@ -59,6 +62,7 @@ L’option **-out** spécifie le nom du fichier de sortie.
      Pour définir cette option de compilateur par programmation : <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> est une propriété en lecture seule, qui est déterminée par une combinaison du type de projet (exe, bibliothèque, etc.) et le nom de l’assembly. Il est nécessaire de modifier l’une de ces propriétés (ou les deux) pour définir le nom du fichier de sortie.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez `t.cs` et créez le fichier de sortie `t.exe`, puis générez `t2.cs` et créez le fichier de sortie de module `mymodule.netmodule` :  
   
 ```console  
