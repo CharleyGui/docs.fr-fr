@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: f309f5fb2e705d220b8b0b743ec2f68901ee8f53
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 6a0227b408b894fe450c2a6bb6017d9059d229c0
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91178396"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247616"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -48,7 +48,6 @@ La définition d’enregistrement crée un `Person` type qui contient deux propr
 - Remplacer pour <xref:System.Object.GetHashCode>
 - Copier et cloner des membres
 - `PrintMembers` et <xref:System.Object.ToString>
-- Méthode `Deconstruct`
 
 Les enregistrements prennent en charge l’héritage. Vous pouvez déclarer un nouvel enregistrement dérivé de `Person` comme suit :
 
@@ -64,7 +63,6 @@ Le compilateur synthétise différentes versions des méthodes ci-dessus. Les si
 - Une représentation sous forme de chaîne cohérente est générée pour les enregistrements.
 - Les enregistrements prennent en charge la construction de copie. La bonne construction de copie doit inclure des hiérarchies d’héritage et des propriétés ajoutées par les développeurs.
 - Les enregistrements peuvent être copiés avec modification. Ces opérations de copie et de modification prennent en charge la mutation non destructrice.
-- Tous les enregistrements prennent en charge la déconstruction.
 
 En plus des `Equals` surcharges familières, `operator ==` et `operator !=` , le compilateur synthétise une nouvelle `EqualityContract` propriété. La propriété retourne un `Type` objet qui correspond au type de l’enregistrement. Si le type de base est `object` , la propriété est `virtual` . Si le type de base est un autre type d’enregistrement, la propriété est un `override` . Si le type d’enregistrement est `sealed` , la propriété est `sealed` . La synthèse `GetHashCode` utilise le `GetHashCode` de toutes les propriétés et les champs déclarés dans le type de base et le type d’enregistrement. Ces méthodes synthétisées appliquent l’égalité basée sur les valeurs dans une hiérarchie d’héritage. Cela signifie qu’un `Student` ne sera jamais considéré comme égal à un `Person` portant le même nom. Les types des deux enregistrements doivent correspondre, et toutes les propriétés partagées entre les types d’enregistrements sont égales.
 
@@ -226,7 +224,7 @@ Vous pouvez retourner une instance créée par le constructeur par défaut à l�
 
 Une fonctionnalité similaire améliore la résolution de type cible des [expressions conditionnelles](../language-reference/operators/conditional-operator.md). Avec cette modification, les deux expressions n’ont pas besoin d’une conversion implicite de l’une à l’autre, mais elles peuvent toutes deux avoir des conversions implicites en un type cible. Vous ne remarquerez probablement pas cette modification. Ce que vous remarquerez, c’est que certaines expressions conditionnelles qui nécessitaient auparavant des casts ou ne seraient pas compilées.
 
-À compter de C# 9,0, vous pouvez ajouter le `static` modificateur aux expressions lambda ou aux méthodes anonymes. Les expressions lambda statiques sont analogues aux `static` fonctions locales : une fonction lambda statique ou une fonction anonyme ne peut pas capturer les variables locales ou l’état de l’instance. Le `static` modificateur empêche la capture accidentelle d’autres variables.
+À compter de C# 9,0, vous pouvez ajouter le `static` modificateur aux [expressions lambda](../language-reference/operators/lambda-expressions.md) ou aux [méthodes anonymes](../language-reference/operators/delegate-operator.md). Les expressions lambda statiques sont analogues aux `static` fonctions locales : une méthode lambda statique ou anonyme ne peut pas capturer les variables locales ou l’état de l’instance. Le `static` modificateur empêche la capture accidentelle d’autres variables.
 
 Les types de retour covariants fournissent la flexibilité pour les types de retour des fonctions substituées. Une fonction virtuelle substituée peut retourner un type dérivé du type de retour déclaré dans la méthode de la classe de base. Cela peut être utile pour les enregistrements et pour d’autres types qui prennent en charge les méthodes de fabrique ou de clonage virtuel.
 

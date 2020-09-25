@@ -1,16 +1,16 @@
 ---
 description: opérateur délégué - Référence C#
 title: opérateur délégué - Référence C#
-ms.date: 09/22/2020
+ms.date: 09/25/2020
 helpviewer_keywords:
 - delegate [C#]
 - anonymous method [C#]
-ms.openlocfilehash: 6c087d9bdb2f526cf7d94c3a0f2c1a929b0343ef
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: db2bf673db12e4a10741a26112820726a4b8aaee
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874911"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247655"
 ---
 # <a name="delegate-operator-c-reference"></a>opérateur délégué (Référence C#)
 
@@ -36,6 +36,12 @@ C’est la seule fonctionnalité des méthodes anonymes qui n’est pas prise en
 :::code language="csharp" source="snippets/shared/DelegateOperator.cs" id="SnippetDiscards" :::
 
 À des fins de compatibilité descendante, si un seul paramètre est nommé `_` , `_` est traité comme le nom de ce paramètre dans une méthode anonyme.
+
+À compter de C# 9,0, vous pouvez également utiliser le `static` modificateur au niveau de la déclaration d’une méthode anonyme :
+
+:::code language="csharp" source="snippets/shared/DelegateOperator.cs" id="SnippetStatic" :::
+
+Une méthode anonyme statique ne peut pas capturer les variables locales ou l’état de l’instance à partir des étendues englobantes.
 
 Vous utilisez également le mot clé `delegate` pour déclarer un [type délégué](../builtin-types/reference-types.md#the-delegate-type).
 

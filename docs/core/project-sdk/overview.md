@@ -1,39 +1,41 @@
 ---
-title: Vue d’ensemble du SDK de projet .NET Core
+title: Vue d’ensemble du SDK de projet .NET
 titleSuffix: ''
-description: En savoir plus sur les kits de développement logiciel (SDK) de projet .NET Core.
-ms.date: 02/02/2020
+description: Découvrez les kits de développement logiciel (SDK) de projet .NET.
+ms.date: 09/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 873c06007307c5892c4828f987486b4dd98dc9ae
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 6b6651f674f09d5d0d18ddb873096037ad3b2ba5
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187922"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247569"
 ---
-# <a name="net-core-project-sdks"></a>Kits de développement logiciel (SDK) de projet .NET Core
+# <a name="net-project-sdks"></a>SDK de projet .NET
 
-Les projets .NET Core sont associés à un kit de développement logiciel (SDK). Chaque *Kit de développement logiciel (SDK) de projet* est un ensemble de [cibles](/visualstudio/msbuild/msbuild-targets) MSBuild et de [tâches](/visualstudio/msbuild/msbuild-tasks) associées qui sont responsables de la compilation, de l’empaquetage et de la publication de code. Un projet qui fait référence à un kit de développement logiciel (SDK) de projet est parfois appelé *projet de style SDK*.
+Les projets .NET Core et .NET 5,0 et versions ultérieures sont associés à un kit de développement logiciel (SDK). Chaque *Kit de développement logiciel (SDK) de projet* est un ensemble de [cibles](/visualstudio/msbuild/msbuild-targets) MSBuild et de [tâches](/visualstudio/msbuild/msbuild-tasks) associées qui sont responsables de la compilation, de l’empaquetage et de la publication de code. Un projet qui fait référence à un kit de développement logiciel (SDK) de projet est parfois appelé *projet de style SDK*.
 
 ## <a name="available-sdks"></a>Kits de développement logiciel disponibles
 
-Les kits de développement logiciel (SDK) suivants sont disponibles pour .NET Core :
+Les kits de développement logiciel (SDK) suivants sont disponibles :
 
 | id | Description | Dépôt|
 | - | - | - |
-| `Microsoft.NET.Sdk` | Kit SDK .NET Core | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Web` | Le kit de [développement logiciel (SDK) Web](/aspnet/core/razor-pages/web-sdk) .net Core | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Razor` | Le kit de [développement logiciel (SDK)](/aspnet/core/razor-pages/sdk) .net Core Razor |
-| `Microsoft.NET.Sdk.Worker` | Kit de développement logiciel (SDK) .NET Core Worker service |
-| `Microsoft.NET.Sdk.WindowsDesktop` | Le kit de développement logiciel (SDK) .NET Core WinForms et WPF |
+| `Microsoft.NET.Sdk` | Le kit de développement logiciel (SDK) .NET | <https://github.com/dotnet/sdk> |
+| `Microsoft.NET.Sdk.Web` | [SDK Web](/aspnet/core/razor-pages/web-sdk) .net | <https://github.com/dotnet/sdk> |
+| `Microsoft.NET.Sdk.Razor` | Le [Kit de développement logiciel (SDK) .net Razor](/aspnet/core/razor-pages/sdk) |
+| `Microsoft.NET.Sdk.Worker` | Le kit de développement logiciel (SDK) .NET Worker service |
+| `Microsoft.NET.Sdk.WindowsDesktop` | Le kit de développement logiciel (SDK) WinForms et WPF\* | <https://github.com/dotnet/winforms> et <https://github.com/dotnet/wpf> |
 
-Le kit SDK .NET Core est le kit de développement logiciel (SDK) de base pour .NET Core. Les autres kits de développement logiciel (SDK) référencent les kit SDK .NET Core, et les propriétés de kit SDK .NET Core associées aux autres kits de développement logiciel (SDK) sont disponibles. Le kit de développement logiciel (SDK) Web, par exemple, dépend à la fois du kit SDK .NET Core et du kit de développement logiciel (SDK) Razor.
+Le kit de développement logiciel (SDK) .NET est le kit de développement logiciel de base pour .NET. Les autres SDK référencent le kit de développement logiciel (SDK) .NET, et les projets associés aux autres SDK disposent de toutes les propriétés du SDK .NET. Le SDK Web, par exemple, dépend à la fois du kit de développement logiciel (SDK) .NET et du kit de développement logiciel (SDK) Razor.
 
 Vous pouvez également créer votre propre kit de développement logiciel (SDK) qui peut être distribué via NuGet.
 
+\* À compter de .NET 5,0, les projets Windows Forms et Windows Presentation Foundation (WPF) doivent spécifier le kit de développement logiciel (SDK) .NET ( `Microsoft.NET.Sdk` ) au lieu de `Microsoft.NET.Sdk.WindowsDesktop` . Pour ces projets, `TargetFramework` l’affectation de la valeur à `net5.0-windows` et `UseWPF` ou `UseWindowsForms` à `true` entraîne l’importation automatique du kit de développement logiciel (SDK) Windows. Si votre projet cible .NET 5,0 ou une version ultérieure et spécifie le `Microsoft.NET.Sdk.WindowsDesktop` Kit de développement logiciel (SDK), vous obtiendrez un avertissement de génération NETSDK1137.
+
 ## <a name="project-files"></a>Fichiers projet
 
-Les projets .NET Core sont basés sur le format [MSBuild](/visualstudio/msbuild/msbuild) . Les fichiers projet, qui ont des extensions telles que *. csproj* pour les projets C# et *. fsproj* pour les projets F #, sont au format XML. L’élément racine d’un fichier projet MSBuild est l’élément de [projet](/visualstudio/msbuild/project-element-msbuild) . L' `Project` élément possède un `Sdk` attribut facultatif qui spécifie le kit de développement logiciel (SDK) (et la version) à utiliser. Pour utiliser les outils .NET Core et générer votre code, affectez `Sdk` à l’attribut l’un des ID figurant dans la table kits de développement logiciel ( [SDK) disponibles](#available-sdks) .
+Les projets .NET sont basés sur le format [MSBuild](/visualstudio/msbuild/msbuild) . Les fichiers projet, qui ont des extensions telles que *. csproj* pour les projets C# et *. fsproj* pour les projets F #, sont au format XML. L’élément racine d’un fichier projet MSBuild est l’élément de [projet](/visualstudio/msbuild/project-element-msbuild) . L' `Project` élément possède un `Sdk` attribut facultatif qui spécifie le kit de développement logiciel (SDK) (et la version) à utiliser. Pour utiliser les outils .NET et générer votre code, affectez `Sdk` à l’attribut l’un des ID dans le tableau [Kits de développement](#available-sdks) logiciel (SDK) disponibles.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -58,7 +60,7 @@ Vous pouvez également spécifier le kit de développement logiciel (SDK) à l�
 </Project>
 ```
 
-Le référencement d’un kit de développement logiciel (SDK) de l’une de ces manières simplifie grandement les fichiers projet pour .NET Core. Lors de l’évaluation du projet, MSBuild ajoute des importations implicites pour `Sdk.props` en haut du fichier projet et `Sdk.targets` en bas.
+Le référencement d’un kit de développement logiciel (SDK) de l’une de ces manières simplifie grandement les fichiers projet pour .NET. Lors de l’évaluation du projet, MSBuild ajoute des importations implicites pour `Sdk.props` en haut du fichier projet et `Sdk.targets` en bas.
 
 ```xml
 <Project>
@@ -85,13 +87,13 @@ Si le projet comporte plusieurs frameworks cibles, vous ne concentrez les résul
 
 Les éléments include et Exclude par défaut pour les éléments de compilation, les ressources incorporées et `None` les éléments sont définis dans le kit de développement logiciel (SDK). Contrairement aux projets de .NET Framework non SDK, vous n’avez pas besoin de spécifier ces éléments dans votre fichier projet, car les valeurs par défaut couvrent les cas d’utilisation les plus courants. Cela rend le fichier projet plus petit et plus facile à comprendre et à modifier manuellement, si nécessaire.
 
-Le tableau suivant indique les éléments et les [modèles glob](https://en.wikipedia.org/wiki/Glob_(programming)) inclus et exclus dans le kit SDK .net Core :
+Le tableau suivant répertorie les éléments et les [modèles glob](https://en.wikipedia.org/wiki/Glob_(programming)) inclus et exclus dans le kit de développement logiciel (SDK) .net :
 
 | Élément           | Inclure Glob                              | Exclure Glob                                                  | Supprimer Glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
 | Compiler           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                      |
 | EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                      |
-| Aucun              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx |
+| Aucune              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx |
 
 > [!NOTE]
 > Les `./bin` `./obj` dossiers et, représentés par les `$(BaseOutputPath)` `$(BaseIntermediateOutputPath)` Propriétés et MSBuild, sont exclus par défaut de modèles glob. Les exclusions sont représentées par la propriété `$(DefaultItemExcludes)` .
@@ -132,11 +134,11 @@ Pour résoudre les erreurs, effectuez l’une des opérations suivantes :
 
 ## <a name="customize-the-build"></a>Personnaliser la Build
 
-Il existe plusieurs façons de [personnaliser une build](/visualstudio/msbuild/customize-your-build). Vous souhaiterez peut-être substituer une propriété en la passant comme argument à une commande [MSBuild](/visualstudio/msbuild/msbuild-command-line-reference) ou [dotnet](../tools/index.md) . Vous pouvez également ajouter la propriété au fichier projet ou à un fichier *Directory. Build. props* . Pour obtenir la liste des propriétés utiles pour les projets .NET Core, consultez [référence MSBuild pour les projets kit SDK .net Core](msbuild-props.md).
+Il existe plusieurs façons de [personnaliser une build](/visualstudio/msbuild/customize-your-build). Vous souhaiterez peut-être substituer une propriété en la passant comme argument à une commande [MSBuild](/visualstudio/msbuild/msbuild-command-line-reference) ou [dotnet](../tools/index.md) . Vous pouvez également ajouter la propriété au fichier projet ou à un fichier *Directory. Build. props* . Pour obtenir la liste des propriétés utiles pour les projets .NET, consultez informations de [référence sur MSBuild pour les projets SDK .net](msbuild-props.md).
 
 ### <a name="custom-targets"></a>Cibles personnalisées
 
-Les projets .NET Core peuvent empaqueter des cibles et des propriétés MSBuild personnalisées pour une utilisation par des projets qui utilisent le package. Utilisez ce type d’extensibilité lorsque vous souhaitez :
+Les projets .NET peuvent empaqueter des cibles et des propriétés MSBuild personnalisées pour une utilisation par les projets qui utilisent le package. Utilisez ce type d’extensibilité lorsque vous souhaitez :
 
 - Étendez le processus de génération.
 - Accédez aux artefacts du processus de génération, tels que les fichiers générés.

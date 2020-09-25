@@ -1,25 +1,27 @@
 ---
 description: static, modificateur - Référence C#
 title: static, modificateur - Référence C#
-ms.date: 04/22/2020
+ms.date: 09/25/2020
 f1_keywords:
 - static
 - static_CSharpKeyword
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-ms.openlocfilehash: f42636d1bbdf4342297f46f50ec6dfc2a70eacad
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: ccd575748c2286fa7348e2880acbfadd036d9ccd
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142061"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247720"
 ---
 # <a name="static-c-reference"></a>static (référence C#)
 
 Cette page couvre le `static` mot clé de modificateur. Le `static` mot clé fait également partie de la [`using static`](using-static.md) directive.
 
 Utilisez le modificateur `static` pour déclarer un membre statique, qui appartient au type lui-même plutôt qu’à un objet spécifique. Le `static` modificateur peut être utilisé pour déclarer des `static` classes. Dans les classes, les interfaces et les structs, vous pouvez ajouter le `static` modificateur à des champs, des méthodes, des propriétés, des opérateurs, des événements et des constructeurs. Le `static` modificateur ne peut pas être utilisé avec des indexeurs ou des finaliseurs. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
+
+À compter de C# 9,0, vous pouvez ajouter le `static` modificateur à une [expression lambda](../operators/lambda-expressions.md) ou une [méthode anonyme](../operators/delegate-operator.md). Une méthode lambda statique ou anonyme ne peut pas capturer les variables locales ou l’état de l’instance.
 
 ## <a name="example---static-class"></a>Exemple : classe statique
 

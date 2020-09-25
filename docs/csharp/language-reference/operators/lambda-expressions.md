@@ -1,7 +1,7 @@
 ---
 title: Expressions lambda-référence C#
 description: En savoir plus sur les expressions lambda. Il existe des lambdas d’expression qui ont une expression comme corps, ou des lambdas d’instruction qui ont un bloc d’instruction comme corps.
-ms.date: 09/22/2020
+ms.date: 09/25/2020
 helpviewer_keywords:
 - lambda expressions [C#]
 - outer variables [C#]
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: afabca0b4ba4d5f7c6f4a7ba8aa97301456b0941
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: a3a753ccea45193c57f31453d7318c14f4898864
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90871713"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247707"
 ---
 # <a name="lambda-expressions-c-reference"></a>Expressions lambda (référence C#)
 
@@ -68,7 +68,7 @@ Une instruction lambda ressemble à une expression lambda, sauf que ses instruct
 
 Le corps d'une instruction lambda peut se composer d'un nombre illimité d'instructions ; toutefois, en pratique, leur nombre est généralement de deux ou trois.
 
-:::code interactive="try-dotnet" source="snippets/lambda-expressions/ExpressionAndStatementLambdas.cs" id="SnippetStatementLambda":::
+:::code language="csharp" interactive="try-dotnet-method" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetStatementLambda":::
 
 Vous ne pouvez pas utiliser des lambdas d’instruction pour créer des arborescences d’expressions.
 
@@ -76,25 +76,25 @@ Vous ne pouvez pas utiliser des lambdas d’instruction pour créer des arboresc
 
 Placez les paramètres d’entrée d’une expression lambda entre parenthèses. Spécifiez des paramètres d'entrée de zéro avec des parenthèses vides :  
 
-[!code-csharp[zero parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ZeroParameters)]
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetZeroParameters":::
 
 Si une expression lambda a un seul paramètre d’entrée, les parenthèses sont facultatives :
 
-[!code-csharp[one parameter](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#OneParameter)]
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetOneParameter":::
 
 Deux ou plusieurs paramètres d’entrée sont séparés par des virgules :
 
-[!code-csharp[two parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#TwoParameters)]
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetTwoParameters":::
 
 Parfois, le compilateur ne peut pas déduire les types de paramètres d’entrée. Vous pouvez spécifier les types explicitement comme dans l’exemple suivant :
 
-[!code-csharp[explicitly typed parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ExplicitlyTypedParameters)]
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetExplicitlyTypedParameters":::
 
 Les types de paramètres d’entrée doivent être tous explicites ou tous implicites ; sinon, une erreur de compilateur [CS0748](../../misc/cs0748.md) se produit.
 
 À compter de C# 9,0, vous pouvez utiliser des éléments [ignorés](../../discards.md) pour spécifier au moins deux paramètres d’entrée d’une expression lambda qui ne sont pas utilisés dans l’expression :
 
-:::code language="csharp" source="snippets/lambda-expressions/ExpressionAndStatementLambdas.cs" id="SnippetDiscards":::
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetDiscards":::
 
 Les paramètres d’abandon lambda peuvent être utiles lorsque vous utilisez une expression lambda pour [fournir un gestionnaire d’événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
@@ -231,11 +231,20 @@ Les règles suivantes s'appliquent à la portée des variables dans les expressi
 
 - Une expression lambda ne peut pas contenir d’instruction [goto](../keywords/goto.md), [break](../keywords/break.md) ou [continue](../keywords/continue.md) si la cible de cette instruction de saut se trouve en dehors du bloc de l’expression lambda. Il est également incorrect d’avoir une instruction de saut en dehors du bloc de l’expression lambda si la cible se trouve à l’intérieur du bloc.
 
+À compter de C# 9,0, vous pouvez appliquer le `static` modificateur à une expression lambda pour empêcher la capture non intentionnelle de variables locales ou l’état de l’instance par le lambda :
+
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetStatic":::
+
+Une expression lambda statique ne peut pas capturer les variables locales ou l’état de l’instance à partir des étendues englobantes, mais peut référencer des membres statiques et des définitions de constantes.
+
 ## <a name="c-language-specification"></a>spécification du langage C#
 
 Pour plus d’informations, consultez la section [Expressions de fonction anonyme](~/_csharplang/spec/expressions.md#anonymous-function-expressions) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
-Pour plus d’informations sur les paramètres de rejet lambda, consultez la [Remarque relative](~/_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md) à la proposition de fonctionnalité.
+Pour plus d’informations sur les fonctionnalités ajoutées dans C# 9,0, consultez les notes de proposition de fonctionnalités suivantes :
+
+- [Paramètres d’abandon lambda](~/_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md)
+- [Fonctions anonymes statiques](~/_csharplang/proposals/csharp-9.0/static-anonymous-functions.md)
 
 ## <a name="see-also"></a>Voir aussi
 
