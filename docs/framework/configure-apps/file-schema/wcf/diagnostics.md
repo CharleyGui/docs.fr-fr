@@ -2,14 +2,15 @@
 title: <diagnostics>
 ms.date: 03/30/2017
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
-ms.openlocfilehash: 2749bc6c66d491a8a160d98b508fb43aa027b806
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 775ec3a4d3dd8709c61fb46155b5085a3343d218
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398039"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192267"
 ---
 # \<diagnostics>
+
 L'élément `diagnostics` définit des paramètres qui peuvent être utilisés par un administrateur à des fins d'inspection et de contrôle au moment de l'exécution.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,6 +42,7 @@ L'élément `diagnostics` définit des paramètres qui peuvent être utilisés p
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -64,7 +66,8 @@ L'élément `diagnostics` définit des paramètres qui peuvent être utilisés p
 |-------------|-----------------|  
 |serviceModel|Élément racine de tous les éléments de configuration WCF.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  La section `diagnostics` définit les paramètres de diagnostic pour tous les services situés dans un assembly. Il est impossible de définir des paramètres de diagnostic distincts au niveau du service à moins qu'il n'y ait qu'un seul service dans l'assembly. Les attributs sont définis d’après les exigences de la section.  
   
 ## <a name="example"></a>Exemple  

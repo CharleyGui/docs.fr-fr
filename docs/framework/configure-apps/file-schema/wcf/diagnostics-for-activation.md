@@ -1,15 +1,16 @@
 ---
-title: <diagnostics>pour l’activation
+title: <diagnostics> pour l’activation
 ms.date: 03/30/2017
 ms.assetid: 1486e0eb-fe2a-46c3-b584-c924889477dd
-ms.openlocfilehash: 33b2cd4c5ae1b4076892a61aa7e2b927efa1ddc1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c16f32357d40b9b69d52c525ce8a395a3de8fdb1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400407"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192319"
 ---
-# <a name="diagnostics-for-activation"></a>\<diagnostics>pour l’activation
+# <a name="diagnostics-for-activation"></a>\<diagnostics> pour l’activation
+
 Configure les fonctionnalités de diagnostics de l’écouteur Windows Communication Foundation (WCF).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,9 +28,11 @@ Configure les fonctionnalités de diagnostics de l’écouteur Windows Communica
 ```  
   
 ## <a name="type"></a>Type  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -39,6 +42,7 @@ Configure les fonctionnalités de diagnostics de l’écouteur Windows Communica
 |`performanceCountersEnabled`|Valeur booléenne qui indique si les compteurs de performance sont activés à des fins de diagnostic.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

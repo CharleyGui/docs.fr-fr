@@ -8,14 +8,15 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: 8ab10dbf686def8d169ef3239492e3b618e9d297
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 77a1e8eb4d442e66f8b9ed17a5881661a5990a35
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302046"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195491"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Création et levée d'exceptions (Guide de programmation C#)
+
 Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pendant l’exécution du programme. Les objets d’exception qui décrivent une erreur sont créés, puis *levés* avec le mot clé [throw](../../language-reference/keywords/throw.md). Le runtime recherche ensuite le gestionnaire d’exceptions le plus compatible.  
   
  Les programmeurs doivent lever des exceptions quand une ou plusieurs des conditions suivantes sont vérifiées :  
@@ -45,6 +46,7 @@ Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pe
  Les méthodes publiques et protégées doivent lever des exceptions chaque fois qu’elles ne parviennent pas à remplir leurs fonctions habituelles. La classe d’exception qui est levée doit être l’exception la plus spécifique disponible qui répond aux conditions d’erreur. Ces exceptions doivent être documentées dans le cadre de la fonctionnalité de la classe. De plus, les classes dérivées ou les mises à jour de la classe d’origine doivent conserver le même comportement afin d’assurer la compatibilité descendante.  
   
 ## <a name="things-to-avoid-when-throwing-exceptions"></a>Pratiques à éviter lors de la levée d’exceptions  
+
  La liste suivante identifie les pratiques à éviter lors de la levée d’exceptions :  
   
 - Les exceptions ne doivent pas être utilisées pour changer le flux d’un programme dans le cadre d’une exécution ordinaire. Elles doivent être utilisées uniquement pour signaler et gérer les conditions d’erreur.  
@@ -56,6 +58,7 @@ Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pe
 - Ne créez pas d’exceptions qui peuvent être levées en mode Debug mais pas en mode Release. Pour identifier des erreurs d’exécution pendant la phase de développement, utilisez plutôt Debug Assert.  
   
 ## <a name="defining-exception-classes"></a>Définition de classes d’exceptions  
+
  Les programmes peuvent lever une classe d’exceptions prédéfinie dans l’espace de noms <xref:System> (sauf dans les endroits préalablement signalés) ou créer leurs propres classes d’exceptions en les dérivant d’<xref:System.Exception>. Les classes dérivées doivent définir au moins trois constructeurs : un constructeur sans paramètre, un qui définit la propriété du message et un qui définit à la fois la propriété <xref:System.Exception.Message%2A> et la propriété <xref:System.Exception.InnerException%2A>. Le quatrième constructeur est utilisé pour sérialiser l’exception. Les nouvelles classes d’exception doivent être sérialisables. Par exemple :  
   
  [!code-csharp[csProgGuideExceptions#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#15)]  

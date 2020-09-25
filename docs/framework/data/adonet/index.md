@@ -4,18 +4,19 @@ description: Découvrez les ADO.NET, les classes qui exposent les services d’a
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: 4f9b2ca42a2c25c1463b7d1ca38b4b8920b2dafd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 503977ab2bef6f03ab13fab168319d350aad9471
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286726"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194568"
 ---
 # <a name="adonet"></a>ADO.NET
 
 ADO.NET est un ensemble de classes qui exposent les services d'accès aux données pour les programmeurs .NET Framework. ADO.NET propose un large ensemble de composants pour la création d'applications distribuées avec partage de données. Partie intégrante du .NET Framework, il permet d'accéder à des données relationnelles, XML et d'application. ADO.NET répond à divers besoins en matière de développement, en permettant notamment de créer des clients de bases de données frontaux et des objets métier de couche intermédiaire utilisés par des applications, outils, langages ou navigateurs Internet.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Nouveautés dans ADO.NET](whats-new.md)  
  Introduit des fonctionnalités nouvelles dans ADO.NET.  
   
@@ -47,6 +48,7 @@ ADO.NET est un ensemble de classes qui exposent les services d'accès aux donné
  Décrit des fonctions et des comportements spécifiques au fournisseur de données .NET Framework pour Oracle.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [LINQ (Language-Integrated Query) - C#](../../../csharp/programming-guide/concepts/linq/index.md)  
  Fournit des liens vers des rubriques et des exemples LINQ à l’aide de C#.  
   
