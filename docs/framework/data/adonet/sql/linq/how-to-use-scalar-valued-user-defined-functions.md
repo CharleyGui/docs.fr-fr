@@ -1,24 +1,26 @@
 ---
-title: "Comment : utiliser des fonctions scalaires définies par l'utilisateur"
+title: 'Procédure : Utiliser des fonctions scalaires définies par l’utilisateur'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 714e252f-c053-4bbb-b1f3-924111cd4d97
-ms.openlocfilehash: dfe82fd50eb3eedeaff9082a4288901f72197795
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: faf8d6e94c88575f6cb73003fa5bed87650d7d54
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003237"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91196934"
 ---
-# <a name="how-to-use-scalar-valued-user-defined-functions"></a>Comment : utiliser des fonctions scalaires définies par l'utilisateur
+# <a name="how-to-use-scalar-valued-user-defined-functions"></a>Procédure : Utiliser des fonctions scalaires définies par l’utilisateur
+
 Vous pouvez mapper une méthode cliente définie sur une classe à une fonction définie par l'utilisateur à l'aide de l'attribut <xref:System.Data.Linq.Mapping.FunctionAttribute>. Notez que le corps de la méthode construit une expression qui capture l'intention de l'appel de méthode et passe cette expression au <xref:System.Data.Linq.DataContext> pour la traduire et l'exécuter.  
   
 > [!NOTE]
 > L'exécution directe se produit uniquement si la fonction est appelée à l'extérieur d'une requête. Pour plus d’informations, consultez [Comment : appeler des fonctions définies par l’utilisateur Inline](how-to-call-user-defined-functions-inline.md).  
   
 ## <a name="example"></a>Exemple  
+
  Le code SQL suivant présente une fonction scalaire `ReverseCustName()` définie par l'utilisateur.  
   
 ```sql  
@@ -39,4 +41,4 @@ END
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions définies par l’utilisateur](user-defined-functions.md)
+- [Fonctions définies par l'utilisateur](user-defined-functions.md)

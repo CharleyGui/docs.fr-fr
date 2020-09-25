@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -bugreport compiler option [C#]
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
-ms.openlocfilehash: 2c358b2dda400f6077ffb5ba1dfc8e6e1127fa52
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 2afab44eec0c7bcc9809b458be0348093cb6dd07
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125993"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91196817"
 ---
 # <a name="-bugreport-c-compiler-options"></a>-bugreport (Options du compilateur C#)
+
 Spécifie que les informations de débogage doivent être placées dans un fichier pour une future analyse.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,10 +27,12 @@ Spécifie que les informations de débogage doivent être placées dans un fichi
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `file`  
  Nom du fichier qui doit contenir votre rapport de bogues.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L’option **-bugreport** spécifie que les informations suivantes doivent être placées dans `file` :  
   
 - Une copie de tous les fichiers de code source de la compilation.  
