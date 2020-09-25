@@ -2,12 +2,12 @@
 title: Utilisation de bases de données NoSQL comme infrastructure de persistance
 description: Comprenez l’utilisation des bases de données NoSql en général et Azure Cosmos DB en particulier, en tant qu’option d’implémentation de la persistance.
 ms.date: 01/30/2020
-ms.openlocfilehash: c4f9199b9e88a39581437eca340e92f4fd450003
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 2877c7eaf08dccfdf6126939b195a6a9a7195dfa
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738799"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173377"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>Utiliser des bases de données NoSQL comme infrastructure de persistance
 
@@ -52,7 +52,7 @@ Par exemple, le code JSON suivant est un exemple d’implémentation d’un agr�
 
 ## <a name="introduction-to-azure-cosmos-db-and-the-native-cosmos-db-api"></a>Introduction à Azure Cosmos DB et à l’API Cosmos DB native
 
-[Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) est le service de base de données de Microsoft distribué à l’échelle mondiale pour les applications stratégiques. Azure Cosmos DB fournit la [distribution mondiale clés en main](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally), la [mise à l’échelle élastique du débit et du stockage](https://docs.microsoft.com/azure/cosmos-db/partition-data), des latences de l’ordre de quelques millisecondes dans le monde entier dans plus de 99 pour cent des cas, [cinq niveaux de cohérence bien définis](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) et une garantie d’une haute disponibilité, le tout soutenu par nos [contrats SLA de pointe](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [indexe automatiquement les données](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) sans avoir à s’occuper de la gestion des schémas et des index. Il est multi-modèle et prend en charge les modèles de données en colonnes, documents, graphes et clé-valeur.
+[Azure Cosmos DB](/azure/cosmos-db/introduction) est le service de base de données de Microsoft distribué à l’échelle mondiale pour les applications stratégiques. Azure Cosmos DB fournit la [distribution mondiale clés en main](/azure/cosmos-db/distribute-data-globally), la [mise à l’échelle élastique du débit et du stockage](/azure/cosmos-db/partition-data), des latences de l’ordre de quelques millisecondes dans le monde entier dans plus de 99 pour cent des cas, [cinq niveaux de cohérence bien définis](/azure/cosmos-db/consistency-levels) et une garantie d’une haute disponibilité, le tout soutenu par nos [contrats SLA de pointe](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [indexe automatiquement les données](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) sans avoir à s’occuper de la gestion des schémas et des index. Il est multi-modèle et prend en charge les modèles de données en colonnes, documents, graphes et clé-valeur.
 
 ![Diagramme montrant la distribution globale Azure Cosmos DB.](./media/nosql-database-persistence-infrastructure/azure-cosmos-db-global-distribution.png)
 
@@ -122,7 +122,7 @@ Toutefois, quand vous rendez votre modèle persistant dans la base de données N
 
 Vous pouvez accéder aux bases de données Azure Cosmos DB à partir du code .NET en cours d’exécution dans des conteneurs, comme à partir de n’importe quelle autre application .NET. Par exemple, les microservices Locations.API et Marketing.API dans eShopOnContainers sont implémentés afin de pouvoir consommer des bases de données Azure Cosmos DB.
 
-Toutefois, il existe une limitation dans Azure Cosmos DB du point de vue de l’environnement de développement Docker. Même s’il existe un [émulateur Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) local qui peut s’exécuter sur un ordinateur de développement local, il prend uniquement en charge Windows. Linux et macOS ne sont pas pris en charge.
+Toutefois, il existe une limitation dans Azure Cosmos DB du point de vue de l’environnement de développement Docker. Même s’il existe un [émulateur Azure Cosmos DB](/azure/cosmos-db/local-emulator) local qui peut s’exécuter sur un ordinateur de développement local, il prend uniquement en charge Windows. Linux et macOS ne sont pas pris en charge.
 
 Il est également possible d’exécuter cet émulateur sur l’arrimeur, mais uniquement sur des conteneurs Windows, et non avec des conteneurs Linux. Il s’agit d’un handicap initial pour l’environnement de développement si votre application est déployée en tant que conteneurs Linux, puisque, actuellement, vous ne pouvez pas déployer des conteneurs Linux et Windows sur Docker pour Windows en même temps. Tous les conteneurs en cours de déploiement doivent être soit pour Linux, soit pour Windows.
 
@@ -138,7 +138,7 @@ Les bases de données Cosmos DB prennent en charge l’API MongoDB pour .NET, 
 
 C’est une approche très pratique pour les preuves de concept dans les environnements Docker avec des conteneurs Linux, car l’[image Docker MongoDB](https://hub.docker.com/r/_/mongo/) est une image multi-arch qui prend en charge les conteneurs Docker Linux et Docker Windows.
 
-Comme le montre l’image suivante, en utilisant l’API MongoDB, eShopOnContainers prend en charge les conteneurs MongoDB Linux et Windows pour l’environnement de développement local, mais ensuite, vous pouvez passer à une solution cloud PaaS scalable, comme Azure Cosmos DB, simplement en [changeant la chaîne de connexion MongoDB pour pointer vers Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
+Comme le montre l’image suivante, en utilisant l’API MongoDB, eShopOnContainers prend en charge les conteneurs MongoDB Linux et Windows pour l’environnement de développement local, mais ensuite, vous pouvez passer à une solution cloud PaaS scalable, comme Azure Cosmos DB, simplement en [changeant la chaîne de connexion MongoDB pour pointer vers Azure Cosmos DB](/azure/cosmos-db/connect-mongodb-account).
 
 ![Diagramme montrant que le microservice d’emplacement dans eShopOnContainers peut utiliser Cosmos DB ou Mongo DB.](./media/nosql-database-persistence-infrastructure/eshoponcontainers-mongodb-containers.png)
 
@@ -150,7 +150,7 @@ Vos conteneurs .NET Core personnalisés peuvent s’exécuter sur un hôte Dock
 
 Le fait que votre solution puisse s’exécuter dans les deux moteurs de base de données, MongoDB ou Azure Cosmos DB, constitue un avantage indéniable de l’utilisation de l’API MongoDB, car les migrations vers d’autres environnements devraient être faciles. Toutefois, il est parfois utile d’utiliser une API native (c’est-à-dire l’API Cosmos DB native) pour tirer pleinement parti des fonctionnalités d’un moteur de base de données spécifique.
 
-Pour obtenir une comparaison supplémentaire entre utiliser simplement MongoDB et utiliser Cosmos DB dans le cloud, consultez les [avantages de l’utilisation d’Azure Cosmos DB dans cette page](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction).
+Pour obtenir une comparaison supplémentaire entre utiliser simplement MongoDB et utiliser Cosmos DB dans le cloud, consultez les [avantages de l’utilisation d’Azure Cosmos DB dans cette page](/azure/cosmos-db/mongodb-introduction).
 
 ### <a name="analyze-your-approach-for-production-applications-mongodb-api-vs-cosmos-db-api"></a>Analyser votre approche pour les applications de production : API MongoDB et API Cosmos DB
 
@@ -299,7 +299,7 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
 #ESHOP_AZURE_SERVICE_BUS=<YourAzureServiceBusInfo>
 ```
 
-Supprimez les marques de commentaire de la ligne de ESHOP_AZURE_COSMOSDB et mettez-la à jour avec votre chaîne de connexion Azure Cosmos DB obtenue à partir de la Portail Azure, comme expliqué dans [connecter une application MongoDB à Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
+Supprimez les marques de commentaire de la ligne de ESHOP_AZURE_COSMOSDB et mettez-la à jour avec votre chaîne de connexion Azure Cosmos DB obtenue à partir de la Portail Azure, comme expliqué dans [connecter une application MongoDB à Azure Cosmos DB](/azure/cosmos-db/connect-mongodb-account).
 
 Si la `ESHOP_AZURE_COSMOSDB` variable globale est vide, ce qui signifie qu’elle est commentée dans le `.env` fichier, le conteneur utilise une chaîne de connexion MongoDB par défaut. Cette chaîne de connexion pointe vers le conteneur MongoDB local déployé dans eShopOnContainers qui est nommé `nosqldata` et qui a été défini dans le fichier dockr-compose, comme indiqué dans le code suivant. yml :
 

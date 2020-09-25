@@ -2,14 +2,15 @@
 title: Procédures stockées CLR
 ms.date: 03/30/2017
 ms.assetid: fd7eea9b-218a-4988-8c9a-8abcc6031c66
-ms.openlocfilehash: 736020695ae40a8884057ddee8aac8abe6e8c1fd
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: aa14c96ed226ac80a9613d3e229f35dbf5085f3b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554193"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173612"
 ---
 # <a name="clr-stored-procedures"></a>Procédures stockées CLR
+
 Les procédures stockées sont des routines que vous ne pouvez pas utiliser dans des expressions scalaires. Elles peuvent retourner des résultats tabulaires et des messages au client, invoquer des instructions DDL (Data Definition Language) et DML (Data Manipulation Language) et retourner des paramètres de sortie.  
   
 > [!NOTE]

@@ -13,14 +13,15 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-ms.openlocfilehash: 366bad1029904b3571be0a76d827ff0213d776bb
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: b1d7fbbe98aaad16454fdd71c161f2a17a2f4f2e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125746"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173254"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (Options du compilateur C#)
+
 L’option **-doc** vous permet de placer des commentaires de documentation dans un fichier XML.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -30,10 +31,12 @@ L’option **-doc** vous permet de placer des commentaires de documentation dans
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `file`  
  Fichier de sortie XML, qui est rempli avec les commentaires des fichiers de code source de la compilation.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Dans les fichiers de code source, les commentaires de documentation qui précèdent les éléments suivants peuvent être traités et ajoutés au fichier XML :  
   
 - Types définis par l’utilisateur, tels qu’une [classe](../keywords/class.md), un [délégué](../builtin-types/reference-types.md#the-delegate-type) ou une [interface](../keywords/interface.md)  

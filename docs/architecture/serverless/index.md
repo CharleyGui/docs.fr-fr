@@ -4,12 +4,12 @@ description: Guide sur l’architecture serverless. Découvrez quand, pourquoi e
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/22/2020
-ms.openlocfilehash: 16e658a99feda6537189a45b53da514e67766999
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 867765d29a7c50694a5de7b1de56346d86600a83
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135687"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171817"
 ---
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Applications serverless : architecture, modèles et implémentation Azure
 
@@ -47,7 +47,7 @@ Auteur :
 
 > **[Jeremy Likness](https://twitter.com/jeremylikness)**, responsable de programme de données .NET senior, Microsoft Corp.
 
-Collaborateur :
+Contributeur :
 
 > **[Cecil Phillip](https://twitter.com/cecilphillip)**, avocat du Cloud senior, Microsoft Corp.
 
@@ -74,7 +74,7 @@ Sans [serveur](https://azure.microsoft.com/solutions/serverless/) est l’évolu
 
 Ce guide se concentre sur le développement natif cloud des applications qui utilisent le modèle serverless. Il met en avant les avantages, présente les éventuels inconvénients de développer des applications serverless et fournit une étude des architectures serverless. De nombreux exemples d’utilisation du modèle serverless sont illustrés avec différents modèles de conception serverless.
 
-Ce guide décrit les composants de la plateforme serverless Azure et se concentre en particulier sur l’implémentation du modèle serverless avec [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview). Vous allez non seulement découvrir les déclencheurs et les liaisons, mais aussi comment implémenter des applications serverless qui s’appuient sur l’état à l’aide de fonctions durables. Enfin, des exemples et des études de cas en entreprise vont vous permettre d’avoir du contexte et un cadre de référence pour déterminer si le modèle serverless est la bonne approche pour vos projets.
+Ce guide décrit les composants de la plateforme serverless Azure et se concentre en particulier sur l’implémentation du modèle serverless avec [Azure Functions](/azure/azure-functions/functions-overview). Vous allez non seulement découvrir les déclencheurs et les liaisons, mais aussi comment implémenter des applications serverless qui s’appuient sur l’état à l’aide de fonctions durables. Enfin, des exemples et des études de cas en entreprise vont vous permettre d’avoir du contexte et un cadre de référence pour déterminer si le modèle serverless est la bonne approche pour vos projets.
 
 ## <a name="evolution-of-cloud-platforms"></a>Évolution des plateformes cloud
 
@@ -116,12 +116,12 @@ Une autre fonctionnalité du modèle serverless est la micro-facturation. Il est
 
 ## <a name="what-this-guide-doesnt-cover"></a>Ce que ce guide ne couvre pas
 
-Ce guide met avant tout l’accent sur les approches d’architecture et les modèles de conception, mais ne rentre pas dans les détails d’implémentation d’Azure Functions, de [Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps) ou autres plateformes serverless. Par exemple, il ne couvre ni les flux de travail avancés avec Logic Apps ni les fonctionnalités Azure Functions, telles que la configuration du partage des ressources Cross-Origin (CORS), l’application de domaines personnalisés ou le chargement de certificats SSL. Ces détails sont disponibles en ligne dans la [documentation Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-reference).
+Ce guide met avant tout l’accent sur les approches d’architecture et les modèles de conception, mais ne rentre pas dans les détails d’implémentation d’Azure Functions, de [Logic Apps](/azure/logic-apps/logic-apps-what-are-logic-apps) ou autres plateformes serverless. Par exemple, il ne couvre ni les flux de travail avancés avec Logic Apps ni les fonctionnalités Azure Functions, telles que la configuration du partage des ressources Cross-Origin (CORS), l’application de domaines personnalisés ou le chargement de certificats SSL. Ces détails sont disponibles en ligne dans la [documentation Azure Functions](/azure/azure-functions/functions-reference).
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Centre d’architecture Azure](https://docs.microsoft.com/azure/architecture/)
-- [Meilleures pratiques pour les applications cloud](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
+- [Centre d’architecture Azure](/azure/architecture/)
+- [Bonnes pratiques pour les applications cloud](/azure/architecture/best-practices/api-design)
 
 ## <a name="who-should-use-the-guide"></a>Public visé par ce guide
 
@@ -140,4 +140,4 @@ La première partie de ce guide examine pourquoi le modèle serverless est une o
 Le guide et les exemples associés sont en constante évolution, donc votre feedback est le bienvenu ! Si vous avez des commentaires sur la façon dont ce guide peut être amélioré, utilisez la section de feedback au bas des pages reposant sur [GitHub issues](https://github.com/dotnet/docs/issues).
 
 >[!div class="step-by-step"]
->[Suivant](architecture-approaches.md)
+>[Next](architecture-approaches.md)

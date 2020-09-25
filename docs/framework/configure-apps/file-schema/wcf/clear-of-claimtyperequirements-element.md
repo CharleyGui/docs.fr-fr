@@ -1,15 +1,16 @@
 ---
-title: <clear>d' <claimTypeRequirements> élément
+title: <clear> d' <claimTypeRequirements> élément
 ms.date: 03/30/2017
 ms.assetid: ef42fde7-f292-4610-9111-9fea382c3b5f
-ms.openlocfilehash: 01f101f7d0dd5da6a834a4ffb2c7e09df0e23cd8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: aa94a012da11bcec6fb5fe270ad9f3574f88e6d7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400526"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172903"
 ---
-# <a name="clear-of-claimtyperequirements-element"></a>\<clear>d' \<claimTypeRequirements> élément
+# <a name="clear-of-claimtyperequirements-element"></a>\<clear> d' \<claimTypeRequirements> élément
+
 Indique que tous les types de revendications doivent être supprimés dans les informations d'identification fédérées. Cela garantit que la collection est vide au démarrage.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,12 +32,15 @@ Indique que tous les types de revendications doivent être supprimés dans les i
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

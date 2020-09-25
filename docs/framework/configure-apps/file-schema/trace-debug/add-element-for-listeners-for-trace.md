@@ -1,5 +1,5 @@
 ---
-title: <add>, Élément de <listeners> pour<trace>
+title: <add> , Élément de <listeners> pour <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <add> element for <listeners>
 - add element for <listeners>
 ms.assetid: 81e804a3-ef11-4d39-bbde-bfa012c179e2
-ms.openlocfilehash: c64673908dc9afe67d97c08f93e5b9d9533bd34d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: da5c0ccae08a32c324a1633b5a7ff7592efa6e2d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153670"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174041"
 ---
-# <a name="add-element-for-listeners-for-trace"></a>\<add>, Élément de \<listeners> pour\<trace>
+# <a name="add-element-for-listeners-for-trace"></a>\<add> , Élément de \<listeners> pour \<trace>
+
 Ajoute un écouteur à la collection d' **écouteurs** .  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Ajoute un écouteur à la collection d' **écouteurs** .
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -58,7 +60,8 @@ Ajoute un écouteur à la collection d' **écouteurs** .
 |`system.diagnostics`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
 |`trace`|Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les <xref:System.Diagnostics.Debug> <xref:System.Diagnostics.Trace> classes et partagent la même collection d' **écouteurs** . Si vous ajoutez un objet écouteur à la collection dans l’une de ces classes, l’autre classe utilise le même écouteur. Les classes d’écouteur dérivent de <xref:System.Diagnostics.TraceListener> .  
   
  Si vous ne spécifiez pas l' `name` attribut de l’écouteur de la trace, la <xref:System.Diagnostics.TraceListener.Name%2A> valeur par défaut de l’écouteur de la trace est une chaîne vide (""). Si votre application n’a qu’un seul écouteur, vous pouvez l’ajouter sans spécifier de nom et la supprimer en spécifiant une chaîne vide pour le nom. Toutefois, si votre application a plusieurs écouteurs, vous devez spécifier des noms uniques pour chaque écouteur de suivi, ce qui vous permet d’identifier et de gérer des écouteurs de suivi individuels dans les <xref:System.Diagnostics.Debug.Listeners%2A> <xref:System.Diagnostics.Trace.Listeners%2A> collections et.  
@@ -83,7 +86,8 @@ Ajoute un écouteur à la collection d' **écouteurs** .
 |<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|Nom du fichier <xref:System.Diagnostics.XmlWriterTraceListener> dans lequel écrit.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser des **\<add>** éléments pour ajouter les écouteurs `MyListener` et `MyEventListener` la collection d' **écouteurs** . `MyListener`crée un fichier appelé `MyListener.log` et écrit la sortie dans le fichier. `MyEventListener`crée une entrée dans le journal des événements.  
+
+ L’exemple suivant montre comment utiliser des **\<add>** éléments pour ajouter les écouteurs `MyListener` et `MyEventListener` la collection d' **écouteurs** . `MyListener` crée un fichier appelé `MyListener.log` et écrit la sortie dans le fichier. `MyEventListener` crée une entrée dans le journal des événements.  
   
 ```xml  
 <configuration>  
@@ -109,4 +113,4 @@ Ajoute un écouteur à la collection d' **écouteurs** .
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - [Schéma des paramètres de traçage et de débogage](index.md)
-- [Écouteurs de suivi](../../../debug-trace-profile/trace-listeners.md)
+- [Écouteurs de la trace](../../../debug-trace-profile/trace-listeners.md)

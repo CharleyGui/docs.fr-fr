@@ -2,14 +2,15 @@
 title: ORDER BY (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c0b61572-ecee-41eb-9d7f-74132ec8a26c
-ms.openlocfilehash: 1233971b172079aa48227d0ec520068afbdf0952
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e1c418a7f2bd40a42b259fb3784794b13098d7f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150067"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173677"
 ---
 # <a name="order-by-entity-sql"></a>ORDER BY (Entity SQL)
+
 Spécifie l'ordre de classement utilisé sur les objets retournés dans une instruction SELECT.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,6 +27,7 @@ Spécifie l'ordre de classement utilisé sur les objets retournés dans une inst
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `order_by_expression`  
  Toute expression de requête valide qui spécifie une propriété sur laquelle doit porter le tri. Vous pouvez spécifier plusieurs expressions de classement. L'ordre des expressions de classement dans la clause ORDER BY détermine l'organisation de l'ensemble de résultats trié.  
   
@@ -44,7 +46,8 @@ Spécifie l'ordre de classement utilisé sur les objets retournés dans une inst
  SKIP `n`  
  Ignore les `n` premiers éléments.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
+
  La clause ORDER BY est logiquement appliquée au résultat de la clause SELECT. La clause ORDER BY peut faire référence aux éléments de la liste de sélection avec leurs alias. La clause ORDER BY peut également faire référence à d'autres variables qui se trouvent actuellement dans l'étendue. Toutefois, si la clause SELECT a été spécifiée avec un modificateur DISTINCT, la clause ORDER BY ne peut faire référence qu'à des alias de la clause SELECT.  
   
  `SELECT c AS c1 FROM cs AS c ORDER BY c1.e1, c.e2`  
@@ -53,7 +56,7 @@ Spécifie l'ordre de classement utilisé sur les objets retournés dans une inst
   
  Si votre code effectue une itération sur un ensemble ordonné autre qu'une projection de niveau supérieur, il n'est pas garanti que le résultat conservera son ordre de classement.  
 
-Dans l’échantillon suivant, l’ordre est garanti pour être conservé :
+Dans l’exemple suivant, la conservation de l’ordre est garantie :
 
 ```sql  
 SELECT C1.FirstName, C1.LastName  
@@ -61,7 +64,7 @@ SELECT C1.FirstName, C1.LastName
         ORDER BY C1.LastName  
 ```  
 
-Dans la requête suivante, la commande de la requête imbriquée est ignorée :  
+Dans la requête suivante, le classement de la requête imbriquée est ignoré :  
 
 ```sql  
 SELECT C2.FirstName, C2.LastName  
@@ -79,6 +82,7 @@ ORDER BY ...
 ```  
   
 ## <a name="restricted-keywords"></a>Mots clés restreints  
+
  Les mots clés suivants doivent être mis entre guillemets lorsqu'ils sont utilisés dans une clause `ORDER BY` :  
   
 - CROSS  
@@ -100,9 +104,10 @@ ORDER BY ...
 - VALEUR  
   
 ## <a name="ordering-nested-queries"></a>Ordre de tri des requêtes imbriquées  
+
  Dans Entity Framework, une expression imbriquée peut être placée n'importe où dans la requête ; l'ordre d'une requête imbriquée n'est pas conservé.  
 
-La requête suivante commandera les résultats par le nom de famille :  
+La requête suivante classe les résultats par nom de famille :  
 
 ```sql  
 SELECT C1.FirstName, C1.LastName  
@@ -110,7 +115,7 @@ SELECT C1.FirstName, C1.LastName
         ORDER BY C1.LastName  
 ```  
 
-Dans la requête suivante, la commande de la requête imbriquée est ignorée :  
+Dans la requête suivante, le classement de la requête imbriquée est ignoré :  
 
 ```sql  
 SELECT C2.FirstName, C2.LastName  
@@ -119,7 +124,8 @@ SELECT C2.FirstName, C2.LastName
         ORDER BY C1.LastName) as C2  
 ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur ORDER BY pour spécifier l'ordre de tri employé sur les objets retournés dans une instruction SELECT. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
 1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
@@ -132,6 +138,6 @@ SELECT C2.FirstName, C2.LastName
 
 - [Expressions de requête](query-expressions-entity-sql.md)
 - [Référence Entity SQL](entity-sql-reference.md)
-- [PASSER](skip-entity-sql.md)
-- [Limite](limit-entity-sql.md)
-- [Retour au début](top-entity-sql.md)
+- [SAUT](skip-entity-sql.md)
+- [SÉPAR](limit-entity-sql.md)
+- [TOP](top-entity-sql.md)

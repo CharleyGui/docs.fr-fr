@@ -2,12 +2,12 @@
 title: Implémentation de la couche de persistance de l’infrastructure avec Entity Framework Core
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Explorez les détails d’implémentation de la couche de persistance de l’infrastructure, à l’aide de Entity Framework Core.
 ms.date: 01/30/2020
-ms.openlocfilehash: f9d97319d378b6fd3eb681fd2873e5fbeead787f
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: 878d4d64e92ca92fd2393d60d496f1c5671e7029
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100997"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172350"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implémenter la couche de persistance de l’infrastructure avec Entity Framework Core
 
@@ -190,7 +190,7 @@ Si vous utilisez DbContext directement, vous devez le simuler ou exécuter des t
 
 L’objet `DbContext` (exposé comme objet `IUnitOfWork`) doit être partagé entre plusieurs référentiels au sein de la même étendue de requête HTTP. Par exemple, cela est vrai quand l’opération en cours d’exécution doit gérer plusieurs agrégats ou simplement parce que vous utilisez plusieurs instances de dépôt. Il est également important de mentionner que l’interface `IUnitOfWork` fait partie de votre couche de domaine, et qu’elle n’est pas un type EF Core.
 
-Pour cela, l’instance de l’objet `DbContext` doit avoir sa durée de vie de service définie sur ServiceLifetime.Scoped. Il s’agit de la durée de vie par défaut lors de l’inscription d’un `DbContext` auprès de `services.AddDbContext` dans votre conteneur IoC à partir de la méthode ConfigureServices du fichier `Startup.cs` dans votre projet d’API web ASP.NET Core. Le code suivant illustre ce comportement :
+Pour cela, l’instance de l’objet `DbContext` doit avoir sa durée de vie de service définie sur ServiceLifetime.Scoped. Il s’agit de la durée de vie par défaut lors de l’inscription d’un `DbContext` auprès de `services.AddDbContext` dans votre conteneur IoC à partir de la méthode ConfigureServices du fichier `Startup.cs` dans votre projet d’API web ASP.NET Core. Le code suivant illustre cela.
 
 ```csharp
 public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -367,7 +367,7 @@ Pour ce faire, utilisez des champs uniques, mais également des collections, com
 
 ### <a name="use-shadow-properties-in-ef-core-hidden-at-the-infrastructure-level"></a>Utiliser des propriétés fantômes dans EF Core, masquées au niveau de l’infrastructure
 
-Les propriétés cachées dans EF Core sont des propriétés qui n’existent pas dans votre modèle de classe d’entité. Les valeurs et les états de ces propriétés sont conservés uniquement dans la classe [ChangeTracker](https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker) au niveau de l’infrastructure.
+Les propriétés cachées dans EF Core sont des propriétés qui n’existent pas dans votre modèle de classe d’entité. Les valeurs et les états de ces propriétés sont conservés uniquement dans la classe [ChangeTracker](/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker) au niveau de l’infrastructure.
 
 ## <a name="implement-the-query-specification-pattern"></a>Implémenter le modèle de spécification de requête
 

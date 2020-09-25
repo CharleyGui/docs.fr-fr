@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: aedbecc1-c33c-4fb4-8861-fdf7e1dc6b8a
-ms.openlocfilehash: 63f4cb3cbb90afc37629b336972b5e09d20346b3
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 3034af783f754a0fa044f13cba0df21e277bc1da
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70247527"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173508"
 ---
 # <a name="customizing-operations-by-using-stored-procedures"></a>Personnalisation d'opérations à l'aide de procédures stockées
+
 Les procédures stockées représentent une approche courante de la substitution du comportement par défaut. Les exemples de cette rubrique vous indiquent comment utiliser des wrappers de méthodes générés pour les procédures stockées et comment appeler directement des procédures stockées.  
   
  Si vous utilisez Visual Studio, vous pouvez utiliser la Concepteur Objet Relationnel pour assigner des procédures stockées afin d’effectuer des insertions, des mises à jour et des suppressions.  
@@ -23,27 +24,33 @@ Les procédures stockées représentent une approche courante de la substitution
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
+
  Dans l'exemple suivant, supposez que la classe `Northwind` contient deux méthodes pour appeler des procédures stockées qui sont utilisées pour les substitutions dans une classe dérivée.  
   
 ### <a name="code"></a>Code  
+
  [!code-csharp[DLinqOverrideDefaultSproc#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqOverrideDefaultSproc/cs/northwind.cs#1)]
  [!code-vb[DLinqOverrideDefaultSproc#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqOverrideDefaultSproc/vb/northwind.vb#1)]  
   
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
+
  La classe suivante utilise ces méthodes pour la substitution.  
   
 ### <a name="code"></a>Code  
+
  [!code-csharp[DLinqOverrideDefaultSproc#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqOverrideDefaultSproc/cs/northwind.cs#2)]
  [!code-vb[DLinqOverrideDefaultSproc#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqOverrideDefaultSproc/vb/northwind.vb#2)]  
   
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
+
  Vous pouvez utiliser `NorthwindThroughSprocs` exactement comme vous utiliseriez `Northwnd`.  
   
 ### <a name="code"></a>Code  
+
  [!code-csharp[DLinqOverrideDefaultSproc#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqOverrideDefaultSproc/cs/Program.cs#3)]
  [!code-vb[DLinqOverrideDefaultSproc#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqOverrideDefaultSproc/vb/Module1.vb#3)]  
   

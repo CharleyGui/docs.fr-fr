@@ -4,12 +4,12 @@ description: Azure Functions offre des fonctionnalités sans serveur dans plusie
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/06/2020
-ms.openlocfilehash: 2dee60e3635be94a55ee26a7f04942bc59cb8dec
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 7625b2a0dafb90dc1bf2fb7fe680d53b20764c09
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135722"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171804"
 ---
 # <a name="azure-functions"></a>Azure Functions
 
@@ -19,7 +19,7 @@ Azure Functions offre une expérience de calcul sans serveur. Une fonction est a
 
 La version de Runtime actuelle 3,0 prend en charge les applications .NET Core 3,1 multiplateforme. Des langages supplémentaires en plus de C#, tels que JavaScript, F # et Java, sont pris en charge. Les fonctions créées dans le portail fournissent une syntaxe de script riche. Les fonctions créées en tant que projets autonomes peuvent être déployées avec une prise en charge complète des plateformes et des fonctionnalités.
 
-Pour plus d’informations, consultez [la documentation Azure Functions](https://docs.microsoft.com/azure/azure-functions).
+Pour plus d’informations, consultez [la documentation Azure Functions](/azure/azure-functions).
 
 ## <a name="programming-language-support"></a>Prise en charge des langages de programmation
 
@@ -35,15 +35,15 @@ Les langues suivantes sont toutes prises en charge dans la disponibilité géné
 |**TypeScript**|Nœud 10 & 12 (via JavaScript)|
 |**PowerShell**|PowerShell Core 6|
 
-Pour en savoir plus, consultez [Langages pris en charge](https://docs.microsoft.com/azure/azure-functions/supported-languages).
+Pour en savoir plus, consultez [Langages pris en charge](/azure/azure-functions/supported-languages).
 
 ## <a name="app-service-plans"></a>Plans App service
 
 Les fonctions sont associées à un *plan App service*. Le plan définit les ressources utilisées par l’application functions. Vous pouvez affecter des plans à une région, déterminer la taille et le nombre d’ordinateurs virtuels qui seront utilisés, et choisir un niveau tarifaire. Pour une véritable approche sans serveur, les applications de fonction peuvent utiliser le plan de **consommation** . Le plan de consommation met automatiquement à l’échelle le back end en fonction de la charge.
 
-Le [plan Premium](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan)est une autre option d’hébergement pour les applications de fonction. Ce plan fournit une instance « Always on » pour éviter le démarrage à froid, prend en charge des fonctionnalités avancées telles que la connectivité de réseau virtuel et s’exécute sur du matériel Premium.
+Le [plan Premium](/azure/azure-functions/functions-premium-plan)est une autre option d’hébergement pour les applications de fonction. Ce plan fournit une instance « Always on » pour éviter le démarrage à froid, prend en charge des fonctionnalités avancées telles que la connectivité de réseau virtuel et s’exécute sur du matériel Premium.
 
-Pour plus d’informations, consultez [plans App service](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview).
+Pour plus d’informations, consultez [plans App service](/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview).
 
 ## <a name="create-your-first-function"></a>Créer votre première fonction
 
@@ -53,15 +53,15 @@ Il existe trois méthodes courantes pour créer des applications de fonction.
 - Créez les ressources nécessaires à l’aide de l’Azure CLI.
 - Créez des fonctions localement à l’aide de votre IDE favori et publiez-les sur Azure.
 
-Pour plus d’informations sur la création d’une fonction de script dans le portail, consultez [créer votre première fonction dans la portail Azure](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function).
+Pour plus d’informations sur la création d’une fonction de script dans le portail, consultez [créer votre première fonction dans la portail Azure](/azure/azure-functions/functions-create-first-azure-function).
 
-Pour générer à partir de la Azure CLI, consultez [créer votre première fonction à l’aide de l’Azure CLI](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli).
+Pour générer à partir de la Azure CLI, consultez [créer votre première fonction à l’aide de l’Azure CLI](/azure/azure-functions/functions-create-first-azure-function-azure-cli).
 
-Pour créer une fonction à partir de Visual Studio, consultez [créer votre première fonction à l’aide de Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).
+Pour créer une fonction à partir de Visual Studio, consultez [créer votre première fonction à l’aide de Visual Studio](/azure/azure-functions/functions-create-your-first-function-visual-studio).
 
 ## <a name="understand-triggers-and-bindings"></a>Comprendre les déclencheurs et les liaisons
 
-Les fonctions sont appelées par un *déclencheur* et ne peuvent en avoir qu’une seule. Outre l’appel de la fonction, certains déclencheurs servent également de liaisons. Vous pouvez également définir plusieurs liaisons en plus du déclencheur. Les *liaisons* offrent un moyen déclaratif de connecter des données à votre code. Ils peuvent être transmis (entrée) ou recevoir des données (sortie). Les déclencheurs et les liaisons rendent les fonctions faciles à utiliser. Les liaisons suppriment la surcharge liée à la création manuelle de connexions de base de données ou de système de fichiers. Toutes les informations nécessaires pour les liaisons sont contenues dans un fichier *functions. JSON* spécial pour les scripts ou déclarés avec des attributs dans le code.
+Les fonctions sont appelées par un *déclencheur* et ne peuvent en avoir qu’une seule. Outre l’appel de la fonction, certains déclencheurs servent également de liaisons. Vous pouvez également définir plusieurs liaisons en plus du déclencheur. Les *liaisons* offrent un moyen déclaratif de connecter des données à votre code. Ils peuvent être transmis (entrée) ou recevoir des données (sortie). Les déclencheurs et les liaisons rendent les fonctions faciles à utiliser. Les liaisons suppriment la surcharge liée à la création manuelle de connexions de base de données ou de système de fichiers. Toutes les informations nécessaires pour les liaisons sont contenues dans unfunctions.jsspécial * sur* le fichier pour les scripts ou déclarés avec des attributs dans le code.
 
 Parmi les déclencheurs les plus courants, citons :
 
@@ -76,7 +76,7 @@ Voici quelques exemples de liaisons :
 - Stockage table : travaillez avec le stockage clé/valeur à partir de votre application de fonction.
 - Stockage file d’attente : récupérer facilement des éléments d’une file d’attente ou placer de nouveaux éléments dans la file d’attente.
 
-L’exemple de fichier *functions. JSON* suivant définit un déclencheur et une liaison :
+L’exemple suivant *functions.jssur* le fichier définit un déclencheur et une liaison :
 
 ```json
 {
@@ -100,7 +100,7 @@ L’exemple de fichier *functions. JSON* suivant définit un déclencheur et une
 }
 ```
 
-Dans cet exemple, la fonction est déclenchée par une modification du stockage d’objets BLOB `images` dans le conteneur. Les informations relatives au fichier étant transmises, le déclencheur joue également le rôle de liaison. Il existe une autre liaison pour placer des informations dans `images`une file d’attente nommée.
+Dans cet exemple, la fonction est déclenchée par une modification du stockage d’objets BLOB dans le `images` conteneur. Les informations relatives au fichier étant transmises, le déclencheur joue également le rôle de liaison. Il existe une autre liaison pour placer des informations dans une file d’attente nommée `images` .
 
 Voici le script C# pour la fonction :
 
@@ -114,8 +114,8 @@ public static string Run(Stream myBlob, string name, TraceWriter log)
 
 L’exemple est une fonction simple qui prend le nom du fichier qui a été modifié ou téléchargé dans le stockage d’objets BLOB, et la place dans une file d’attente pour un traitement ultérieur.
 
-Pour obtenir la liste complète des déclencheurs et des liaisons, consultez [Azure Functions les concepts de déclencheurs et de liaisons](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings).
+Pour obtenir la liste complète des déclencheurs et des liaisons, consultez [Azure Functions les concepts de déclencheurs et de liaisons](/azure/azure-functions/functions-triggers-bindings).
 
 >[!div class="step-by-step"]
->[Précédent](azure-serverless-platform.md)
->[suivant](application-insights.md)
+>[Précédent](azure-serverless-platform.md) 
+> [Suivant](application-insights.md)

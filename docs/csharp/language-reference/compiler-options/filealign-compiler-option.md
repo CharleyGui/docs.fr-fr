@@ -17,14 +17,15 @@ helpviewer_keywords:
 - -alignment compiler option [C#]
 - section alignment [C#]
 ms.assetid: 15cf1c98-3798-4ced-9f08-60619308a073
-ms.openlocfilehash: d4abe6c3825de211d737f402a745c8953adca4b8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 4b61217a3d6812ea3ab036f82d49bba05c20629e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125707"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173241"
 ---
 # <a name="-filealign-c-compiler-options"></a>-filealign (Options du compilateur C#)
+
 L’option **-filealign** permet de spécifier la taille des sections de votre fichier de sortie.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ L’option **-filealign** permet de spécifier la taille des sections de votre f
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `number`  
  Valeur qui spécifie la taille des sections dans le fichier de sortie. Les valeurs valides sont 512, 1024, 2048, 4096 et 8192. Ces valeurs sont exprimées en octets.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Chaque section est alignée sur une limite qui est un multiple de la valeur **-filealign**. Il n’existe aucune valeur fixe par défaut. Si la valeur **-filealign** n’est pas spécifiée, le Common Language Runtime choisit une valeur par défaut au moment de la compilation.  
   
  En spécifiant la taille de la section, vous affectez la taille du fichier de sortie. Il peut être utile de modifier la taille de la section pour les programmes qui sont exécutés sur des appareils de petite taille.  

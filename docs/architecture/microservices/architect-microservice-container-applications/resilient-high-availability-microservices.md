@@ -2,12 +2,12 @@
 title: Résilience et haute disponibilité dans les microservices
 description: Les microservices doivent être conçus pour gérer les pannes de dépendances et de réseau temporaires auxquelles ils doivent être résilients pour assurer une haute disponibilité.
 ms.date: 09/20/2018
-ms.openlocfilehash: 28f8b124cd59b2c3d621267cb437872af42c9ea8
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 601255c1e6941b2de9fdb34098dea7edf6d8b987
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988919"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172448"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Résilience et haute disponibilité dans les microservices
 
@@ -23,7 +23,7 @@ De plus, la résilience est liée à la façon dont les systèmes basés sur le 
 
 Un microservice doit communiquer son intégrité et ses diagnostics. Cela peut sembler évident, mais ce point est souvent négligé. Sinon, peu d’informations ressortent des opérations. Corréler des événements de diagnostic sur un ensemble de services indépendants et gérer les variations d’horloges des machines afin de déterminer l’ordre des événements représente un défi. De la même façon que vous interagissez avec un microservice via des protocoles et des formats de données convenus, il est nécessaire de standardiser la journalisation de l’intégrité et des événements de diagnostic, qui sont au final stockés dans un magasin d’événements pour être interrogés et consultés. Dans une approche de microservices, il est essentiel que les différentes équipes soient d’accord sur un format de journalisation unique. Il est nécessaire d’avoir une approche cohérente pour consulter les événements de diagnostic de l’application.
 
-### <a name="health-checks"></a>Contrôles d'intégrité
+### <a name="health-checks"></a>Contrôles d’intégrité
 
 L’intégrité diffère des diagnostics. L’intégrité fait référence aux rapports du microservice sur son état actuel de sorte que des actions appropriées puissent être prises. Un bon exemple de cela est l’utilisation de mécanismes de mise à niveau et de déploiement pour garantir la disponibilité. Bien qu’un service puisse être défectueux à un instant donné en raison du blocage d’un processus ou du redémarrage de l’ordinateur, le service peut néanmoins rester opérationnel. La dernière chose dont vous avez besoin est d’empirer les choses en effectuant une mise à niveau. La meilleure solution est de commencer par mener une enquête ou de laisser le temps au microservice de récupérer. Les événements d’intégrité d’un microservice nous aident à prendre des décisions avisées et nous aident effectivement à créer des services de réparation spontanée.
 
@@ -31,8 +31,8 @@ Dans la section [Implémentation de vérifications d’intégrité dans les serv
 
 Vous avez aussi la possibilité d’utiliser une excellente bibliothèque open source appelée Beat Pulse, disponible sur [GitHub](https://github.com/Xabaril/BeatPulse) et comme [package NuGet](https://www.nuget.org/packages/BeatPulse/). Cette bibliothèque effectue également des vérifications d’intégrité et gère étonnamment deux types de vérifications :
 
-- **Liveness**: Vérifie si le microservice est vivant, c’est-à-dire s’il est capable d’accepter les demandes et de répondre.
-- **Préparation**: Vérifie si les dépendances du microservice (Base de données, services de file d’attente, etc.) sont elles-mêmes prêtes, de sorte que le microservice peut faire ce qu’il est censé faire.
+- **Activité**: vérifie si le microservice est actif, c’est-à-dire s’il est en mesure d’accepter des demandes et de répondre.
+- **Readiness**: vérifie si les dépendances du microservice (base de données, services de file d’attente, etc.) sont elles-mêmes prêtes, de sorte que le microservice peut faire ce qu’il est supposé faire.
 
 ### <a name="using-diagnostics-and-logs-event-streams"></a>Utilisation des diagnostics et des flux d’événements des journaux
 
@@ -40,13 +40,13 @@ Les journaux fournissent des informations sur la façon dont une application ou 
 
 Dans les applications serveur monolithiques, vous pouvez simplement écrire les journaux dans un fichier sur disque (un fichier journal), puis les analyser avec n’importe quel outil. Comme l’exécution de l’application est limitée à un serveur ou une machine virtuelle fixe, il n’est généralement pas trop complexe d’analyser le flux des événements. Cependant, dans une application distribuée où plusieurs services sont exécutés sur de nombreux nœuds d’un cluster orchestrateur, mettre en corrélation les événements distribués peut être difficile.
 
-Une application basée sur des microservices ne doit pas tenter de stocker elle-même le flux de sortie des événements ou des fichiers journaux, ni même tenter de gérer le routage des événements vers un emplacement central. Ce doit être transparent, ce qui signifie que chaque processus doit simplement écrire son flux d’événements vers une sortie standard, qui sera collectée plus tard par l’infrastructure de l’environnement d’exécution où il s’exécute. [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow) est un exemple de ces routeurs de flux d’événements, qui collecte les flux d’événements provenant de plusieurs sources et les publie sur des systèmes de sortie. Ces systèmes peuvent être des sorties standard simples pour un environnement de développement, ou des systèmes cloud comme [Azure Monitor](https://azure.microsoft.com/services/monitor//) et [Diagnostics Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-overview). Il existe également des plateformes et des outils de tiers performants pour l’analyse des journaux, qui permettent de rechercher, alerter, communiquer et surveiller les journaux, même en temps réel, comme [Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA).
+Une application basée sur des microservices ne doit pas tenter de stocker elle-même le flux de sortie des événements ou des fichiers journaux, ni même tenter de gérer le routage des événements vers un emplacement central. Ce doit être transparent, ce qui signifie que chaque processus doit simplement écrire son flux d’événements vers une sortie standard, qui sera collectée plus tard par l’infrastructure de l’environnement d’exécution où il s’exécute. [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow) est un exemple de ces routeurs de flux d’événements, qui collecte les flux d’événements provenant de plusieurs sources et les publie sur des systèmes de sortie. Ces systèmes peuvent être des sorties standard simples pour un environnement de développement, ou des systèmes cloud comme [Azure Monitor](https://azure.microsoft.com/services/monitor//) et [Diagnostics Azure](/azure/azure-monitor/platform/diagnostics-extension-overview). Il existe également des plateformes et des outils de tiers performants pour l’analyse des journaux, qui permettent de rechercher, alerter, communiquer et surveiller les journaux, même en temps réel, comme [Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA).
 
 ### <a name="orchestrators-managing-health-and-diagnostics-information"></a>Orchestrateurs gérant les informations d’intégrité et de diagnostic
 
 Quand vous créez une application basée sur des microservices, vous devez gérer la complexité. Bien sûr, s’il est simple de traiter avec un seul microservice, le problème est bien complexe avec des dizaines ou des centaines de types de microservices, et des milliers d’instances de microservices. Il ne s’agit pas seulement de créer l’architecture de vos microservices : vous avez aussi besoin d’une haute disponibilité, d’adressabilité, de résilience, d’intégrité et de diagnostics si vous voulez avoir d’un système stable et cohésif.
 
-![Diagramme de clusters fournissant une plate-forme de support pour les microservices.](./media/resilient-high-availability-microservices/microservice-platform.png)
+![Diagramme des clusters fournissant une plateforme de prise en charge pour les microservices.](./media/resilient-high-availability-microservices/microservice-platform.png)
 
 **Figure 4-22**. Une plateforme de microservices est essentielle pour la gestion de l’intégrité d’une application
 
@@ -56,19 +56,19 @@ Les différents orchestrateurs peuvent sembler similaires, mais les diagnostics 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **L’application Douze Facteurs XI. Journaux : Traitez les journaux comme des flux d’événements** \
+- **App. XI à 12 facteurs. Journaux : traiter les journaux comme des flux d’événements** \
   <https://12factor.net/logs>
 
 - Dépôt GitHub **Microsoft Diagnostic EventFlow Library**. \
   <https://github.com/Azure/diagnostics-eventflow>
 
-- **Qu’est-ce qu’Azure Diagnostics** \
+- **Qu’est-ce que Azure Diagnostics** \
   <https://docs.microsoft.com/azure/azure-diagnostics>
 
-- **Connectez les ordinateurs Windows au service Azure Monitor** \
+- **Connecter des ordinateurs Windows au service Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows>
 
-- **Enregistrer ce que vous voulez dire: En utilisant le bloc d’application d’exploitation forestière sémantique** \
+- **Journalisation de ce que vous voulez dire : utilisation du bloc d’application de journalisation sémantique** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/dn440729(v=pandp.60)>
 
 - Site officiel de **Splunk**. \
@@ -78,5 +78,5 @@ Les différents orchestrateurs peuvent sembler similaires, mais les diagnostics 
   [https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource](xref:System.Diagnostics.Tracing.EventSource)
 
 >[!div class="step-by-step"]
->[Suivant précédent](microservice-based-composite-ui-shape-layout.md)
->[Next](scalable-available-multi-container-microservice-applications.md)
+>[Précédent](microservice-based-composite-ui-shape-layout.md) 
+> [Suivant](scalable-available-multi-container-microservice-applications.md)

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: afee69eb894518b1c88483e34a1d64d452019244
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3eb32b7ae643efdb19892410b669c1e7ff80e0ad
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74802130"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174158"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching>, élément (paramètres réseau)
+
 Contrôle le mécanisme de mise en cache pour les demandes réseau.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -36,6 +37,7 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -65,7 +67,7 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
 |Élément|Description|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Indique si la mise en cache HTTP est active et décrit la stratégie de mise en cache par défaut.|  
-|[\<defaultFtpCachePolicy>, Élément (paramètres réseau)](defaultftpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Indique si la mise en cache FTP est active et décrit la stratégie de mise en cache par défaut.|  
+|[\<defaultFtpCachePolicy> , Élément (paramètres réseau)](defaultftpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Indique si la mise en cache FTP est active et décrit la stratégie de mise en cache par défaut.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -74,6 +76,7 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
 |[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment désactiver toute la mise en cache.  
   
 ```xml  

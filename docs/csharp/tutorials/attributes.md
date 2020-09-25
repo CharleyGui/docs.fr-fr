@@ -1,16 +1,16 @@
 ---
-title: 'Tutorial: Utiliser des attributs - C #'
+title: 'Didacticiel : utiliser les attributs-C #'
 description: Découvrez comment les attributs fonctionnent en C#.
 author: mgroves
 ms.technology: csharp-fundamentals
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: 24cb7d35a89fda78511dc4ba725b69c5d601a008
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4e2c0126d0920df18271f8889d8e117cd374d979
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937471"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174184"
 ---
 # <a name="use-attributes-in-c"></a>Utiliser des attributs en C\#
 
@@ -20,8 +20,9 @@ Considérez l’attribut `[Obsolete]`. Vous pouvez l’appliquer aux classes, st
 
 Dans ce didacticiel, vous allez voir comment ajouter des attributs à votre code, comment créer et utiliser vos propres attributs et comment utiliser des attributs qui sont intégrés à .NET Core.
 
-## <a name="prerequisites"></a>Conditions préalables requises
-Vous devez configurer votre ordinateur pour exécuter .NET core. Vous pouvez trouver les instructions d’installation sur la page [.NET Core Downloads.](https://dotnet.microsoft.com/download)
+## <a name="prerequisites"></a>Prérequis
+
+Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) .
 Vous pouvez exécuter cette application sur Windows, Ubuntu Linux, Mac OS ou dans un conteneur Docker.
 Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), un éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 
@@ -31,7 +32,7 @@ Maintenant que vous avez installé tous les outils, créez une nouvelle applicat
 
 `dotnet new console`
 
-Cette commande créera des fichiers de projets de base .NET à os nus. Vous devez exécuter `dotnet restore` pour restaurer les dépendances nécessaires à la compilation de ce projet.
+Cette commande permet de créer des fichiers de projet .NET Core. Vous devez exécuter `dotnet restore` pour restaurer les dépendances nécessaires à la compilation de ce projet.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -85,8 +86,8 @@ Les attributs peuvent être utilisés sur plusieurs « cibles ». Les exemples
 * Assembly
 * Classe
 * Constructeur
-* Déléguer
-* Enum
+* Délégué
+* Énumération
 * Événement
 * Champ
 * GenericParameter
@@ -96,7 +97,7 @@ Les attributs peuvent être utilisés sur plusieurs « cibles ». Les exemples
 * Paramètre
 * Propriété
 * ReturnValue
-* Struct
+* Structure
 
 Lorsque vous créez une classe d’attributs, par défaut, C# vous permettra d’utiliser cet attribut sur une des cibles d’attribut possibles. Si vous souhaitez limiter votre attribut à certaines cibles, vous pouvez le faire à l’aide de `AttributeUsageAttribute` sur votre classe d’attributs. C’est exact, un attribut sur un attribut !
 

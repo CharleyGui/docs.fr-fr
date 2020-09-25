@@ -1,5 +1,5 @@
 ---
-title: <remove>, Élément de <listeners> pour<trace>
+title: <remove> , Élément de <listeners> pour <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
@@ -7,14 +7,15 @@ helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-ms.openlocfilehash: f06973ec30d5061e4a200d6bf7e68adcf6302018
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 01b797e1fb62d32e9f0d44c54b803dd969615361
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088843"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173833"
 ---
-# <a name="remove-element-for-listeners-for-trace"></a>\<remove>, Élément de \<listeners> pour\<trace>
+# <a name="remove-element-for-listeners-for-trace"></a>\<remove> , Élément de \<listeners> pour \<trace>
+
 Supprime un écouteur de la collection d' **écouteurs** .  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Supprime un écouteur de la collection d' **écouteurs** .
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -39,6 +41,7 @@ Supprime un écouteur de la collection d' **écouteurs** .
 |**name**|Attribut requis.<br /><br /> Nom de l’écouteur à supprimer de la collection d' **écouteurs** .|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -50,12 +53,13 @@ Supprime un écouteur de la collection d' **écouteurs** .
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
 |`trace`|Configuration du service de trace ASP.NET.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > La suppression du <xref:System.Diagnostics.DefaultTraceListener> de la `Listeners` collection altère le comportement des <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> méthodes,, <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType> et <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> . L’appel d’une `Assert` `Fail` méthode ou entraîne normalement l’affichage d’une boîte de message, mais la boîte de message ne s’affiche pas si le <xref:System.Diagnostics.DefaultTraceListener> n’est pas dans la `Listeners` collection.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment supprimer l’écouteur de suivi par défaut de la collection d' **écouteurs** de trace.  
   
 ```xml  

@@ -3,14 +3,15 @@ title: Vue d'ensemble de la sécurité SQL Server
 description: En savoir plus sur l’architecture de sécurité SQL Server pour comprendre quelles fonctionnalités et fonctionnalités sont des menaces connues et pour anticiper les menaces futures.
 ms.date: 03/30/2017
 ms.assetid: ae66dd75-5c16-4cc0-9e12-774dd26d3fb9
-ms.openlocfilehash: c423a408e607c51c048ad08b91122a1fe06e31b2
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ba396774e760a550246d0f0507984d3f7212204b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286273"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172656"
 ---
 # <a name="overview-of-sql-server-security"></a>Vue d'ensemble de la sécurité SQL Server
+
 Une stratégie de défense en profondeur avec chevauchement des couches de sécurité est le meilleur moyen de contrer les menaces de sécurité. SQL Server propose une architecture de sécurité conçue pour permettre aux administrateurs et aux développeurs de bases de données de créer des applications de base de données sécurisées et de contrer les menaces. Chaque version de SQL Server offre des améliorations par rapport aux versions précédentes avec l’introduction de nouvelles fonctions et fonctionnalités. Pour autant, il ne peut exister de plan de sécurité prêt à l'emploi. Chaque application a des spécifications de sécurité uniques. Les développeurs doivent comprendre quelle combinaison de fonctions et fonctionnalités est la plus adéquate pour contrer les menaces identifiées et pour anticiper les menaces qui risquent de voir le jour dans l’avenir.  
   
  Une instance SQL Server contient une collection hiérarchique d'entités, qui commence par le serveur. Chaque serveur contient plusieurs bases de données et chaque base de données contient une collection d'objets sécurisables. Chaque SQL Server élément sécurisable a des *autorisations* associées qui peuvent être accordées à un *principal*, qui est un individu, un groupe ou un processus autorisé à accéder à SQL Server. L’infrastructure de sécurité SQL Server gère l’accès aux entités sécurisables par le biais de *l’authentification* et de l' *autorisation*.  
@@ -22,6 +23,7 @@ Une stratégie de défense en profondeur avec chevauchement des couches de sécu
  Les rubriques de cette section présentent les concepts fondamentaux de la sécurité SQL Server et fournissent des liens vers la version appropriée de la documentation complète en ligne de SQL Server.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Authentification dans SQL Server](authentication-in-sql-server.md)  
  Décrit les connexions et l’authentification dans SQL Server et fournit des liens vers des ressources supplémentaires.  
   

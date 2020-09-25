@@ -2,12 +2,12 @@
 title: Implémentation de la couche Application de microservices à l’aide de l’API web
 description: Comprendre l’injection de dépendances et les modèles de médiateur et leurs détails d’implémentation dans la couche d’application de l’API Web.
 ms.date: 08/17/2020
-ms.openlocfilehash: 72395acafb403a4e34858eb2b982ec83b9f3cee1
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 56d4eecb2831a57460b01ff4da8150d6dcce5bc5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608105"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173417"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
 
@@ -23,7 +23,7 @@ La vue Explorateur de solutions du microservice Ordering. API, qui affiche les s
 
 **Figure 7-23**. Couche Application dans le projet d’API web ASP.NET Core Ordering.API
 
-ASP.NET Core inclut un simple [conteneur IoC intégré](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) (représenté par l’interface IserviceProvider) qui prend en charge l’injection de constructeurs par défaut, et ASP.NET rend certains services disponibles par le biais de l’injection de dépendances. ASP.NET Core utilise le terme *service* pour tous les types que vous inscrivez, qui seront injectés par injection de dépendances. Vous configurez les services du conteneur intégré dans la méthode ConfigureServices de la classe Startup de votre application. Vos dépendances sont implémentées dans les services dont un type a besoin et que vous inscrivez dans le conteneur IoC.
+ASP.NET Core inclut un simple [conteneur IoC intégré](/aspnet/core/fundamentals/dependency-injection) (représenté par l’interface IserviceProvider) qui prend en charge l’injection de constructeurs par défaut, et ASP.NET rend certains services disponibles par le biais de l’injection de dépendances. ASP.NET Core utilise le terme *service* pour tous les types que vous inscrivez, qui seront injectés par injection de dépendances. Vous configurez les services du conteneur intégré dans la méthode ConfigureServices de la classe Startup de votre application. Vos dépendances sont implémentées dans les services dont un type a besoin et que vous inscrivez dans le conteneur IoC.
 
 En règle générale, vous injectez des dépendances qui implémentent des objets d’infrastructure. Une dépendance classique à injecter est un référentiel. Mais vous pouvez injecter toutes vos autres dépendances d’infrastructure. Pour simplifier les implémentations, vous pouvez injecter directement votre objet de modèle Unité de travail (objet DbContext EF), car DBContext est également l’implémentation de vos objets de persistance d’infrastructure.
 

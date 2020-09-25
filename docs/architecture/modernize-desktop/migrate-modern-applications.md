@@ -2,12 +2,12 @@
 title: Migration d’applications de bureau modernes
 description: Tout ce que vous devez savoir sur le processus de migration pour les applications de bureau modernes.
 ms.date: 05/12/2020
-ms.openlocfilehash: a015b266dc5c36fcef38dad04b9f4f048ee5906a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f7862d6379eeeb737c386b5ffeaab938d258b046
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446916"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173331"
 ---
 # <a name="migrating-modern-desktop-applications"></a>Migration d’applications de bureau modernes
 
@@ -23,13 +23,13 @@ Les fichiers de configuration offrent la possibilité de stocker des ensembles d
 
 ### <a name="configuration-on-net-framework"></a>Configuration sur .NET Framework
 
-Si vous disposez d’une application de bureau .NET Framework, il est probable que vous ayez un fichier *app. config* accessible via la <xref:System.Configuration.AppSettingsSection> classe à partir de l' `System.Configuration` espace de noms.
+Si vous disposez d’une application de bureau .NET Framework, il est probable que vous ayez un fichier *app.config* accessible via la <xref:System.Configuration.AppSettingsSection> classe à partir de l' `System.Configuration` espace de noms.
 
-Dans l’infrastructure .NET Framework, il existe une hiérarchie de fichiers de configuration qui héritent des propriétés de ses parents. Vous pouvez trouver un fichier *machine. config* qui définit de nombreuses propriétés et sections de configuration qui peuvent être utilisées ou remplacées dans n’importe quel fichier de configuration descendant.
+Dans l’infrastructure .NET Framework, il existe une hiérarchie de fichiers de configuration qui héritent des propriétés de ses parents. Vous pouvez trouver un fichier de *machine.config* qui définit de nombreuses propriétés et sections de configuration qui peuvent être utilisées ou remplacées dans n’importe quel fichier de configuration descendant.
 
 ### <a name="configuration-on-net-core"></a>Configuration sur .NET Core
 
-Dans le monde .NET Core, il n’y a aucun fichier *machine. config* . Et même si vous pouvez continuer à utiliser l’ancien <xref:System.Configuration> espace de noms, vous pouvez envisager de passer à la version moderne <xref:Microsoft.Extensions.Configuration> , ce qui offre un bon nombre d’améliorations.
+Dans le monde .NET Core, il n’y a pas de fichier *machine.config* . Et même si vous pouvez continuer à utiliser l’ancien <xref:System.Configuration> espace de noms, vous pouvez envisager de passer à la version moderne <xref:Microsoft.Extensions.Configuration> , ce qui offre un bon nombre d’améliorations.
 
 L’API de configuration prend en charge le concept de fournisseur de configuration, qui définit la source de données à utiliser pour charger la configuration. Il existe différents types de fournisseurs intégrés, tels que :
 
@@ -49,15 +49,15 @@ L' <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> objet vous per
 
 ### <a name="migrating-configuration-files"></a>Migration des fichiers de configuration
 
-Vous pouvez continuer à utiliser votre fichier XML App. config existant. Toutefois, vous pouvez prendre cette occasion de migrer votre configuration pour tirer parti des nombreuses améliorations apportées à .NET Core.
+Vous pouvez continuer à utiliser votre fichier app.config XML existant. Toutefois, vous pouvez prendre cette occasion de migrer votre configuration pour tirer parti des nombreuses améliorations apportées à .NET Core.
 
-Pour migrer d’un fichier *app. config* de style ancien vers un nouveau fichier de configuration, vous devez choisir entre un format XML et un format JSON.
+Pour migrer d’un ancien *app.config* vers un nouveau fichier de configuration, vous devez choisir entre un format XML et un format JSON.
 
-Si vous choisissez XML, la conversion est simple. Étant donné que le contenu est identique, il vous suffit de renommer le fichier *app. config* en un fichier avec l’extension XML. Ensuite, modifiez le code qui référence AppSettings pour utiliser la `ConfigurationBuilder` classe. Cette modification doit être facile.
+Si vous choisissez XML, la conversion est simple. Étant donné que le contenu est identique, il vous suffit de renommer le fichier *app.config* dans un fichier avec l’extension XML. Ensuite, modifiez le code qui référence AppSettings pour utiliser la `ConfigurationBuilder` classe. Cette modification doit être facile.
 
-Si vous souhaitez utiliser un format JSON et que vous ne souhaitez pas migrer manuellement, il existe un outil appelé [dotnet-config2json](https://www.nuget.org/packages/dotnet-config2json/) disponible sur .net Core, qui peut convertir un fichier *app. config* en fichier de configuration JSON.
+Si vous souhaitez utiliser un format JSON et que vous ne souhaitez pas migrer manuellement, il existe un outil appelé [dotnet-config2json](https://www.nuget.org/packages/dotnet-config2json/) disponible sur .net Core, qui peut convertir un fichier *app.config* en fichier de configuration JSON.
 
-Vous pouvez également rencontrer certains problèmes lors de l’utilisation des sections de configuration qui ont été définies dans le fichier *machine. config* . Par exemple, considérez la configuration suivante :
+Vous pouvez également rencontrer certains problèmes lors de l’utilisation des sections de configuration qui ont été définies dans le fichier *machine.config* . Par exemple, considérez la configuration suivante :
 
 ```xml
 <configuration>
@@ -82,9 +82,9 @@ Si vous utilisez cette configuration dans .NET Core, vous obtenez une exception�
 
 Section de configuration non reconnue System. Diagnostics
 
-Cette exception se produit parce que cette section et l’assembly responsable de la gestion de cette section ont été définis dans le fichier *machine. config* , qui n’existe pas.
+Cette exception se produit parce que cette section et l’assembly responsable de la gestion de cette section ont été définis dans le fichier *machine.config* , qui n’existe pas.
 
-Pour résoudre facilement le problème, vous pouvez copier la définition de la section à partir de votre ancien fichier *machine. config* vers votre nouveau fichier de configuration :
+Pour résoudre facilement le problème, vous pouvez copier la définition de la section à partir de votre ancien *machine.config* vers votre nouveau fichier de configuration :
 
 ```xml
 <configSections>
@@ -108,7 +108,7 @@ Vous pouvez continuer à utiliser ODBC sur .NET Core, car Microsoft fournit la `
 
 ### <a name="ole-db"></a>OLE DB
 
-[OLE DB](https://docs.microsoft.com/previous-versions/windows/desktop/ms722784(v=vs.85))   est un excellent moyen d’accéder à diverses sources de données de manière uniforme. Mais il était basé sur COM, qui est une technologie Windows uniquement et, comme cela n’était pas le mieux adapté pour une technologie multiplateforme telle que .NET Core. Il n’est pas non plus pris en charge dans les versions 2014 et ultérieures de SQL Server. Pour ces raisons, OLE DB ne sera pas pris en charge par .NET Core.
+[OLE DB](/previous-versions/windows/desktop/ms722784(v=vs.85))   est un excellent moyen d’accéder à diverses sources de données de manière uniforme. Mais il était basé sur COM, qui est une technologie Windows uniquement et, comme cela n’était pas le mieux adapté pour une technologie multiplateforme telle que .NET Core. Il n’est pas non plus pris en charge dans les versions 2014 et ultérieures de SQL Server. Pour ces raisons, OLE DB ne sera pas pris en charge par .NET Core.
 
 ### <a name="adonet"></a>ADO.NET
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: e8758d7322d7fde45ccbd9eaf9248a3168980bd3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e26c5100691bb313e0b68e1d1dab4209bd5d5da9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555339"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174314"
 ---
 # <a name="constructors-c-programming-guide"></a>Constructeurs (guide de programmation C#)
 
@@ -47,6 +47,7 @@ Vous pouvez également définir un constructeur statique avec une définition de
 Pour obtenir plus d’informations et d’exemples, consultez [Constructeurs statiques](./static-constructors.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Utilisation de constructeurs](./using-constructors.md)  
   
  [Constructeurs d’instances](./instance-constructors.md)  

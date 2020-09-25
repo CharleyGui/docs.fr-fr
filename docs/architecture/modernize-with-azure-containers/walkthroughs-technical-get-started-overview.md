@@ -2,12 +2,12 @@
 title: Procédures pas à pas et vue d’ensemble technique pour le démarrage
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Procédures pas à pas et présentation technique de la prise en main
 ms.date: 04/28/2018
-ms.openlocfilehash: 4db6d449d27dcd4316d61305c8c2a8c2aa0bc65b
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 98d33b13d2b28bfe1c35894df45e525cff0520c1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89516123"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172142"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Procédures pas à pas et vue d’ensemble technique pour le démarrage
 
@@ -190,7 +190,7 @@ La procédure pas à pas complète technique est disponible dans le wiki eShopMo
 
 ### <a name="overview"></a>Vue d’ensemble
 
-[Azure Container instances (ACI)](https://docs.microsoft.com/azure/container-instances/) est le moyen le plus rapide de disposer d’un environnement de développement/test/intermédiaire de conteneurs dans lequel vous pouvez déployer des instances uniques de conteneurs.
+[Azure Container instances (ACI)](/azure/container-instances/) est le moyen le plus rapide de disposer d’un environnement de développement/test/intermédiaire de conteneurs dans lequel vous pouvez déployer des instances uniques de conteneurs.
 
 ### <a name="goals"></a>Objectifs
 

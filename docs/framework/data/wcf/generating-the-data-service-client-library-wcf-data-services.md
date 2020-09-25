@@ -6,14 +6,15 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: a6a388f837d00d63a39212843c3fa88b28482b26
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 050a791736e90b5daf46fd272197ca21a220afb0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545805"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172617"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Génération de la bibliothèque client service de données (services de données WCF)
+
 Un service de données qui implémente le Open Data Protocol (OData) peut retourner un document de métadonnées de service qui décrit le modèle de données exposé par le flux OData. Pour plus d’informations, consultez la section document de métadonnées de service dans l’article [OData : Overview](https://www.odata.org/documentation/odata-version-2-0/overview/) . Vous pouvez utiliser la boîte de dialogue **Ajouter une référence de service** dans Visual Studio pour ajouter une référence à un service OData. Lorsque vous utilisez cet outil pour ajouter une référence aux métadonnées retournées par un flux OData dans un projet client, il effectue les actions suivantes :  
   
 - Demande le document de métadonnées du service de données et interprète les métadonnées retournées.  
@@ -32,6 +33,7 @@ Un service de données qui implémente le Open Data Protocol (OData) peut retour
  Les classes de service de données client peuvent également être générées à l’aide de l’outil [DataSvcUtil.exe](wcf-data-service-client-utility-datasvcutil-exe.md) à partir de l’invite de commandes. Pour plus d’informations, consultez [Comment : générer manuellement des classes de service de données client](how-to-manually-generate-client-data-service-classes-wcf-data-services.md).  
   
 ## <a name="client-data-type-mapping"></a>Mappage de type de données client  
+
  Quand vous utilisez la boîte de dialogue **Ajouter une référence de service** dans Visual Studio ou l' `DataSvcUtil.exe` outil pour générer des classes de données clientes basées sur un flux OData, les types de données .NET Framework sont mappés aux types primitifs à partir du modèle de données comme suit :  
   
 |Type de modèle de données|Type de données .NET Framework.|  

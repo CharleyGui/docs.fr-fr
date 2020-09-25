@@ -2,14 +2,15 @@
 title: <comContract>
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
-ms.openlocfilehash: b499294af71ba230dcf985d4af1d013b1ca260cf
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 35596f32bf0e0de9081bc0d4c33fb370c7ab708b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850029"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173781"
 ---
 # \<comContract>
+
 Spécifie un contrat de service d'intégration COM+.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -45,6 +46,7 @@ Spécifie un contrat de service d'intégration COM+.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -70,7 +72,8 @@ Spécifie un contrat de service d'intégration COM+.
 |-------------|-----------------|  
 |comContracts|Contient une collection d’éléments `comContract`.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les contrats de service d’intégration COM+ sont actuellement restreints à l' `http://tempuri.org` espace de noms et le nom de contrat est dérivé de l’interface com de prise en charge. Toutefois, vous pouvez spécifier des alternatives à l'aide de la section `comContracts`, ainsi que l'élément `comContract` dans le fichier de configuration. Par exemple, vous pouvez utiliser la configuration suivante pour spécifier l'espace de noms, le nom de contrat et les types définis par l'utilisateur à inclure, ainsi que d'autres paramètres pour un contrat de service.  
   
 ```xml  
@@ -96,4 +99,4 @@ Spécifie un contrat de service d'intégration COM+.
 - <xref:System.ServiceModel.Configuration.ComContractElement>
 - [\<comContracts>](comcontracts.md)
 - [Intégration à des applications COM+](../../../wcf/feature-details/integrating-with-com-plus-applications.md)
-- [Comment : configurer des paramètres de service COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)
+- [Procédure : configurer des paramètres de service COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)

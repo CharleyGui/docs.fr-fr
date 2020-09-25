@@ -8,14 +8,15 @@ helpviewer_keywords:
 - UseRandomizedStringHashAlgorithm element
 - <UseRandomizedStringHashAlgorithm> element
 ms.assetid: c08125d6-56cc-4b23-b482-813ff85dc630
-ms.openlocfilehash: a9afa0db516a542b74d08a4c3754a3244abbbea7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 148d55c8b8a63737867c4bfdf3ab118dfdefd6f9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153775"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174093"
 ---
 # <a name="userandomizedstringhashalgorithm-element"></a>Élément \<UseRandomizedStringHashAlgorithm>
+
 Détermine si le common language runtime calcule les codes de hachage pour les chaînes par domaine d’application.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ Détermine si le common language runtime calcule les codes de hachage pour les c
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -42,10 +44,11 @@ Détermine si le common language runtime calcule les codes de hachage pour les c
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|`0`|Le common language runtime ne calcule pas les codes de hachage pour les chaînes par domaine d’application ; un seul algorithme est utilisé pour calculer les codes de hachage de chaîne. Il s'agit de la valeur par défaut.|  
+|`0`|Le common language runtime ne calcule pas les codes de hachage pour les chaînes par domaine d’application ; un seul algorithme est utilisé pour calculer les codes de hachage de chaîne. Il s’agit de la valeur par défaut.|  
 |`1`|Le common language runtime calcule les codes de hachage pour les chaînes par domaine d’application. Les chaînes identiques dans différents domaines d’application et dans des processus différents auront des codes de hachage différents.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -55,7 +58,8 @@ Détermine si le common language runtime calcule les codes de hachage pour les c
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Par défaut, la <xref:System.StringComparer> classe et la <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> méthode utilisent un algorithme de hachage unique qui produit un code de hachage cohérent entre les domaines d’application. Cela équivaut à affecter à l' `enabled` attribut de l' `<UseRandomizedStringHashAlgorithm>` élément la valeur `0` . Il s’agit de l’algorithme de hachage utilisé dans le .NET Framework 4.  
   
  La <xref:System.StringComparer> classe et la <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> méthode peuvent également utiliser un algorithme de hachage différent qui calcule les codes de hachage pour chaque domaine d’application. Par conséquent, les codes de hachage pour les chaînes équivalentes diffèrent entre les domaines d’application. Il s’agit d’une fonctionnalité d’abonnement. pour en tirer parti, vous devez affecter la valeur à l' `enabled` attribut de l' `<UseRandomizedStringHashAlgorithm>` élément `1` .  
@@ -63,6 +67,7 @@ Détermine si le common language runtime calcule les codes de hachage pour les c
  La recherche de chaîne dans une table de hachage est généralement une opération O (1). Toutefois, lorsqu’un grand nombre de collisions se produisent, la recherche peut devenir une opération O (n<sup>2</sup>). Vous pouvez utiliser l' `<UseRandomizedStringHashAlgorithm>` élément de configuration pour générer un algorithme de hachage aléatoire par domaine d’application, qui, à son tour, limite le nombre de collisions potentielles, en particulier lorsque les clés à partir desquelles les codes de hachage sont calculés sont basées sur les données entrées par les utilisateurs.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant définit une `DisplayString` classe qui comprend une constante de chaîne privée, `s` , dont la valeur est « This is a String ». Il inclut également une méthode `ShowStringHashCode` qui affiche la valeur de chaîne et son code de hachage avec le nom du domaine d'application dans lequel la méthode est exécutée.  
   
  [!code-csharp[System.String.GetHashCode#2](../../../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.String.GetHashCode/CS/perdomain.cs#2)]

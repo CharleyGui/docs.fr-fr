@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <requiredRuntime> element
 - container tags, <requiredRuntime> element
 ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
-ms.openlocfilehash: fe96673b95f48cb75d36662a680bf56a59363f9f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 19fa1561ca3acd845918d952379c5227121465b4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71697488"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174067"
 ---
 # <a name="requiredruntime-element"></a>\<requiredRuntime>, élément
 
@@ -47,7 +47,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Valeur|Description|
 |-----------|-----------------|
-|`false`|Le code de démarrage du runtime recherche dans le registre. Il s’agit de la valeur par défaut.|
+|`false`|Le code de démarrage du runtime recherche dans le registre. Valeur par défaut.|
 |`true`|Le code de démarrage du runtime n’examine pas le registre.|
 
 ### <a name="child-elements"></a>Éléments enfants
@@ -61,7 +61,8 @@ Aucun.
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 |`startup`|Contient l' `<requiredRuntime>` élément.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
+
  Les applications générées pour prendre en charge uniquement la version 1,0 du Runtime doivent utiliser l' `<requiredRuntime>` élément. Les applications générées à l’aide de la version 1,1 ou ultérieure du Runtime doivent utiliser l' `<supportedRuntime>` élément.
 
 > [!NOTE]
@@ -87,5 +88,5 @@ L’exemple suivant montre comment spécifier la version du runtime dans un fich
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des paramètres de démarrage](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

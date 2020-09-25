@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: 8a077c56f4de5a88e9c2a6f932c9a8b5ffc6b974
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4748740379df689669ee87f66dce58a7015d1217
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556965"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172695"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Modification de données de valeurs élevées (max) dans ADO.NET
+
 Les types de données LOB (Large Object) sont ceux dont la taille maximale de ligne dépasse huit kilo-octets (Ko). SQL Server fournit un spécificateur `max` pour les types de données `varchar`, `nvarchar` et `varbinary` afin de permettre le stockage de valeurs pouvant atteindre 2^32 octets. Les colonnes de table et les variables Transact-SQL peuvent spécifier des types de données `varchar(max)`, `nvarchar(max)` ou `varbinary(max)`. Dans ADO.NET, les types de données `max` peuvent être extraits par un `DataReader` et spécifiés comme valeurs de paramètre d'entrée ou de sortie sans que cela nécessite une manipulation particulière. Pour les types de données `varchar` de valeur élevée, les données peuvent être récupérées et mises à jour de façon incrémentielle.  
   
  Les types de données `max` peuvent être utilisés pour effectuer des comparaisons, en tant que variables Transact-SQL, ainsi que des concaténations. Elles peuvent également être utilisées dans les clauses DISTINCT, ORDER BY et GROUP BY d’une instruction SELECT, ainsi que dans les agrégats, jointures et sous-requêtes.  
@@ -24,6 +25,7 @@ Les types de données LOB (Large Object) sont ceux dont la taille maximale de li
 1. [Utilisation de types de données de valeur élevée](/previous-versions/sql/sql-server-2008/ms178158(v=sql.100))  
   
 ## <a name="large-value-type-restrictions"></a>Restrictions relatives aux types de valeur élevée  
+
  Les restrictions suivantes s’appliquent aux types de données `max`, et n’existent pas pour les types de données plus petits :  
   
 - Un `sql_variant` ne peut pas contenir un type de données `varchar` de valeur élevée.  
@@ -33,6 +35,7 @@ Les types de données LOB (Large Object) sont ceux dont la taille maximale de li
 - Les colonnes `varchar` de valeur élevée ne peuvent pas être utilisées en tant que colonnes clés de partitionnement.  
   
 ## <a name="working-with-large-value-types-in-transact-sql"></a>Utilisation de types de valeur élevée dans Transact-SQL  
+
  La fonction Transact-SQL `OPENROWSET` est une méthode unique de connexion et d’accès aux données distantes. Elle inclut toutes les informations de connexion nécessaires pour accéder à des données distantes à partir d'une source de données OLE DB. Il est possible de référencer `OPENROWSET` dans la clause FROM d’une requête comme s’il s’agissait du nom d’une table. Il peut également être référencé comme table cible d'une instruction INSERT, UPDATE ou DELETE, sujette aux capacités du fournisseur OLE DB.  
   
  La fonction `OPENROWSET` comprend le fournisseur de jeu de lignes `BULK`, qui permet de lire directement les données d'un fichier sans devoir les charger dans une table cible. Cela vous permet d’utiliser `OPENROWSET` dans une simple instruction INSERT SELECT.  
@@ -53,6 +56,7 @@ FROM OPENROWSET
 ```  
   
 ## <a name="updating-data-using-update-write"></a>Mise à jour de données à l'aide de UPDATE .WRITE  
+
  L’instruction Transact-SQL UPDATE possède une nouvelle syntaxe WRITE permettant de modifier le contenu des colonnes `varchar(max)`, `nvarchar(max)` ou `varbinary(max)`. Cela vous permet d’effectuer des mises à jour partielles des données. La syntaxe UPDATE .WRITE est présentée ici sous forme abrégée :  
   
  UPDATE  
@@ -75,7 +79,8 @@ FROM OPENROWSET
 > [!NOTE]
 > Ni `@Offset` ni `@Length` ne peuvent être un nombre négatif.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Cet exemple Transact-SQL met à jour une valeur partielle dans DocumentSummary, une colonne `nvarchar(max)` dans la table Document de la base de données AdventureWorks. Le terme « components » est remplacé par le terme « features », en spécifiant le terme de remplacement, la position de départ (décalage) du terme à remplacer dans les données existantes et le nombre de caractères à remplacer (longueur). L’exemple comprend des instructions SELECT avant et après l’instruction UPDATE pour comparer les résultats.  
   
 ```sql
@@ -104,9 +109,11 @@ GO
 ```  
   
 ## <a name="working-with-large-value-types-in-adonet"></a>Utilisation de types de valeur élevée dans ADO.NET  
+
  Vous pouvez utiliser des types de valeur élevée dans ADO.NET en spécifiant des types de valeur élevée comme objets <xref:System.Data.SqlClient.SqlParameter> d’un objet <xref:System.Data.SqlClient.SqlDataReader> afin de retourner un jeu de résultats, ou en utilisant un objet <xref:System.Data.SqlClient.SqlDataAdapter> pour remplir un `DataSet`/`DataTable`. Il n’y a aucune différence entre la façon dont vous travaillez avec un type de valeur élevée et le type de données de plus petite valeur associé.  
   
 ### <a name="using-getsqlbytes-to-retrieve-data"></a>Utilisation de GetSqlBytes pour récupérer des données  
+
  La méthode `GetSqlBytes` du <xref:System.Data.SqlClient.SqlDataReader> peut être utilisée pour récupérer le contenu d’une colonne `varbinary(max)`. Le fragment de code suivant suppose un objet <xref:System.Data.SqlClient.SqlCommand> nommé `cmd` qui sélectionne des données `varbinary(max)` d’une table et un objet <xref:System.Data.SqlClient.SqlDataReader> nommé `reader` qui récupère les données en tant que <xref:System.Data.SqlTypes.SqlBytes>.  
   
 ```vb  
@@ -125,6 +132,7 @@ while (reader.Read())
 ```  
   
 ### <a name="using-getsqlchars-to-retrieve-data"></a>Utilisation de GetSqlChars pour extraire des données  
+
  La méthode `GetSqlChars` du <xref:System.Data.SqlClient.SqlDataReader> peut être utilisée pour récupérer le contenu d’une colonne `varchar(max)` ou `nvarchar(max)`. Le fragment de code suivant suppose un objet <xref:System.Data.SqlClient.SqlCommand> nommé `cmd` qui sélectionne des données `nvarchar(max)` d’une table et un objet <xref:System.Data.SqlClient.SqlDataReader> nommé `reader` qui récupère les données.  
   
 ```vb  
@@ -143,6 +151,7 @@ while (reader.Read())
 ```  
   
 ### <a name="using-getsqlbinary-to-retrieve-data"></a>Utilisation de GetSqlBinary pour extraire des données  
+
  La méthode `GetSqlBinary` d’un <xref:System.Data.SqlClient.SqlDataReader> peut être utilisée pour récupérer le contenu d’une colonne `varbinary(max)`. Le fragment de code suivant suppose un objet <xref:System.Data.SqlClient.SqlCommand> nommé `cmd` qui sélectionne des données `varbinary(max)` d’une table et un objet <xref:System.Data.SqlClient.SqlDataReader> nommé `reader` qui récupère les données en tant que flux <xref:System.Data.SqlTypes.SqlBinary>.  
   
 ```vb  
@@ -161,6 +170,7 @@ while (reader.Read())
 ```  
   
 ### <a name="using-getbytes-to-retrieve-data"></a>Utilisation de GetBytes pour extraire des données  
+
  La méthode `GetBytes` d’un <xref:System.Data.SqlClient.SqlDataReader> lit un flux d'octets à partir de l'offset de colonne spécifié dans un tableau d’octets commençant à l’offset de tableau donné. Le fragment de code suivant suppose un objet <xref:System.Data.SqlClient.SqlDataReader> nommé `reader` qui récupère les octets dans un tableau d’octets. Notez que, contrairement à `GetSqlBytes`, `GetBytes` nécessite une taille pour la mémoire tampon du tableau.  
   
 ```vb  
@@ -180,6 +190,7 @@ while (reader.Read())
 ```  
   
 ### <a name="using-getvalue-to-retrieve-data"></a>Utilisation de GetValue pour extraire des données  
+
  La méthode `GetValue` d’un <xref:System.Data.SqlClient.SqlDataReader> lit la valeur à partir de l’offset de colonne spécifié dans un tableau. Le fragment de code suivant suppose un objet <xref:System.Data.SqlClient.SqlDataReader> nommé `reader` qui récupère les données binaires à partir de l’offset de la première colonne, puis les données de chaîne à partir du deuxième offset de colonne.  
   
 ```vb  
@@ -204,6 +215,7 @@ while (reader.Read())
 ```  
   
 ## <a name="converting-from-large-value-types-to-clr-types"></a>Conversion de types de valeur élevée en types CLR  
+
  Vous pouvez convertir le contenu d’une colonne `varchar(max)` ou `nvarchar(max)` à l’aide d’une des méthodes de conversion de chaînes, comme `ToString`. Le fragment de code suivant suppose un objet <xref:System.Data.SqlClient.SqlDataReader> nommé `reader` qui récupère les données.  
   
 ```vb  
@@ -221,13 +233,15 @@ while (reader.Read())
 }  
 ```  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
+
  Le code suivant récupère le nom et l’objet `LargePhoto` à partir de la table `ProductPhoto` dans la base de données `AdventureWorks` et l’enregistre dans un fichier. L’assembly doit être compilé avec une référence à l’espace de noms <xref:System.Drawing>.  La méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlBytes%2A> du <xref:System.Data.SqlClient.SqlDataReader> retourne un objet <xref:System.Data.SqlTypes.SqlBytes> qui expose une propriété `Stream`. Le code utilise celle-ci pour créer un nouvel objet `Bitmap`, puis l’enregistre dans le Gif `ImageFormat`.  
   
  [!code-csharp[DataWorks LargeValueType.Photo#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Photo/CS/source.cs#1)]
  [!code-vb[DataWorks LargeValueType.Photo#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks LargeValueType.Photo/VB/source.vb#1)]  
   
 ## <a name="using-large-value-type-parameters"></a>Utilisation de paramètres de types de valeur élevée  
+
  Les types de valeur élevée peuvent être utilisés dans des objets <xref:System.Data.SqlClient.SqlParameter> de la même façon que vous utilisez des types de valeur plus petits dans des objets <xref:System.Data.SqlClient.SqlParameter>. Vous pouvez extraire des types de valeur élevée en tant que valeurs <xref:System.Data.SqlClient.SqlParameter>, comme illustré dans l’exemple suivant. Le code suppose que la procédure stockée GetDocumentSummary suivante existe dans l’exemple de base de données AdventureWorks. La procédure stockée prend un caractère d’entrée nommé @DocumentID et retourne le contenu de la colonne DocumentSummary dans le paramètre de sortie @DocumentSummary.  
   
 ```sql
@@ -243,7 +257,8 @@ FROM    Production.Document
 WHERE   DocumentID=@DocumentID  
 ```  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
+
  Le code ADO.NET crée des objets <xref:System.Data.SqlClient.SqlConnection> et <xref:System.Data.SqlClient.SqlCommand> pour exécuter la procédure stockée GetDocumentSummary et récupérer le résumé du document, qui est stocké en tant que type de valeur élevée. Le code transmet une valeur pour le paramètre d’entrée @DocumentID et affiche les résultats retournés dans le paramètre de sortie @DocumentSummary dans la fenêtre de console.  
   
  [!code-csharp[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/CS/source.cs#1)]

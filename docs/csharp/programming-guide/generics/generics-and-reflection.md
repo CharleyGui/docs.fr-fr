@@ -6,14 +6,15 @@ helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 6e4387fe7e78cd0e970531ae42f323efa8f181db
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 5439412231ab1bf9ed523d6786af67984ab2d0c3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299303"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172968"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Génériques et réflexion (Guide de programmation C#)
+
 Étant donné que le common language runtime (CLR) a accès aux informations concernant les types génériques au moment de l’exécution, vous pouvez utiliser la réflexion pour obtenir des informations sur les types génériques de la même manière que pour les types non génériques. Pour plus d’informations, consultez [Génériques dans le runtime](./generics-in-the-run-time.md).  
   
  Dans .NET Framework 2,0, plusieurs nouveaux membres ont été ajoutés à la <xref:System.Type> classe pour activer les informations d’exécution pour les types génériques. Pour plus d’informations sur l’utilisation de ces méthodes et de ces propriétés, consultez la documentation relative à ces classes. L’espace de noms <xref:System.Reflection.Emit> contient également de nouveaux membres qui prennent en charge les génériques. Consultez [Comment : définir un type générique avec l’émission de réflexion](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  

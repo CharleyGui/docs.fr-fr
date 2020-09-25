@@ -2,14 +2,14 @@
 title: Créez des services résilients prêts pour le Cloud. gérer les échecs passagers dans le cloud
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Créez des services résilients prêts pour le Cloud. gérer les échecs passagers dans le cloud
 ms.date: 04/30/2018
-ms.openlocfilehash: 899084ac00d9be0df47ef88c026f4e8c19722bb6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 8e9f1eda71e4b98a56cbfc1c7a4ff34e67bee3f4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144250"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172155"
 ---
-# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Créer des services résilients prêts pour le cloud : gérer les défaillances transitoires dans le cloud
+# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Créer des services résilients compatibles avec le cloud : gérer les échecs passagers dans le cloud
 
 La résilience est la capacité à récupérer après des défaillances et à continuer de fonctionner. La résilience ne permet pas d’éviter les défaillances, mais accepte le fait que des échecs se produisent, puis répond à celles-ci de manière à éviter les temps d’arrêt ou la perte de données. La résilience vise à remettre l’application dans un état entièrement fonctionnel après une défaillance.
 
@@ -33,7 +33,7 @@ Une application résiliente telle que celle illustrée dans la figure 4-9 doit i
 
 Vous pouvez utiliser ces techniques à la fois dans les ressources HTTP et dans les ressources de base de données. Dans la figure 4-9, l’application est basée sur une architecture à trois niveaux. vous avez donc besoin de ces techniques au niveau des services (HTTP) et au niveau de la couche données (TCP). Dans une application monolithique qui n’utilise qu’un seul niveau d’application en plus de la base de données (pas de services ou de microservices supplémentaires), la gestion des échecs temporaires au niveau de la connexion de base de données peut suffire. Dans ce scénario, une seule configuration particulière de la connexion de base de données est requise.
 
-Lors de l’implémentation de communications résilientes qui accèdent à la base de données, en fonction de la version de .NET que vous utilisez, elle peut être simple (par exemple, [avec Entity Framework 6 ou version ultérieure](/ef/ef6/fundamentals/connection-resiliency/retry-logic)). Il suffit de configurer la connexion à la base de données. Ou bien, vous devrez peut-être utiliser des bibliothèques supplémentaires telles que le [bloc applicatif de gestion des erreurs temporaires](https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)) (pour les versions antérieures de .net) ou même implémenter votre propre bibliothèque.
+Lors de l’implémentation de communications résilientes qui accèdent à la base de données, en fonction de la version de .NET que vous utilisez, elle peut être simple (par exemple, [avec Entity Framework 6 ou version ultérieure](/ef/ef6/fundamentals/connection-resiliency/retry-logic)). Il suffit de configurer la connexion à la base de données. Ou bien, vous devrez peut-être utiliser des bibliothèques supplémentaires telles que le [bloc applicatif de gestion des erreurs temporaires](/previous-versions/msp-n-p/hh680934(v=pandp.50)) (pour les versions antérieures de .net) ou même implémenter votre propre bibliothèque.
 
 Lors de l’implémentation de nouvelles tentatives HTTP et de disjoncteurs, la recommandation pour .NET consiste à utiliser la bibliothèque [Polly](https://github.com/App-vNext/Polly) , qui cible .NET Framework 4,0, .NET Framework 4,5 et .NET standard 1,1, qui comprend la prise en charge de .net core.
 

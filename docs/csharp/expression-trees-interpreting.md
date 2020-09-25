@@ -4,12 +4,12 @@ description: Découvrez comment écrire du code pour analyser la structure d’u
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: ea205d42b02ea7b38c04cb70d322329cf7c1d495
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 960d72384a7e5f570fc1f94200a7d3b2179343fd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004645"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173306"
 ---
 # <a name="interpreting-expressions"></a>Interprétation des expressions
 
@@ -22,6 +22,7 @@ Grâce à cette conception, visiter tous les nœuds d’une arborescence d’exp
 Si le type de nœud a des enfants, visitez-les de manière récursive. Sur chaque nœud enfant, répétez le processus utilisé au niveau du nœud racine : déterminez le type et, s’il a des enfants, visitez chacun d’eux.
 
 ## <a name="examining-an-expression-with-no-children"></a>Examen d’une expression sans enfants
+
 Commençons par visiter chaque nœud dans une arborescence d’expressions simple.
 Voici le code qui crée une expression constante, puis examine ses propriétés :
 

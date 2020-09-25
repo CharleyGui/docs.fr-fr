@@ -12,14 +12,15 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-ms.openlocfilehash: 3b7a1c6e92d2c60ce289f29044774c3aa42ca84f
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 74c9a23cd1b3a691063c2976a593c9b3a63ca618
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125876"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173267"
 ---
 # <a name="-define-c-compiler-options"></a>-define (Options du compilateur C#)
+
 L’option **-define** définit `name` comme symbole dans tous les fichiers de code source de votre programme.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,10 +30,12 @@ L’option **-define** définit `name` comme symbole dans tous les fichiers de c
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `name`, `name2`  
  Nom de chaque symbole que vous souhaitez définir.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L’option **-define** revient à utiliser une directive de préprocesseur [#define](../preprocessor-directives/preprocessor-define.md), sauf que l’option de compilateur est appliquée à tous les fichiers du projet. Un symbole reste défini dans un fichier source jusqu’à ce qu’une directive [#undef](../preprocessor-directives/preprocessor-undef.md) dans le fichier source en supprime la définition. Quand vous utilisez l’option -define, une directive `#undef` dans un fichier n’a aucun effet sur les autres fichiers de code source du projet.  
   
  Vous pouvez utiliser les symboles créés par cette option avec [#if](../preprocessor-directives/preprocessor-if.md), [#else](../preprocessor-directives/preprocessor-else.md), [#elif](../preprocessor-directives/preprocessor-elif.md) et [#endif](../preprocessor-directives/preprocessor-endif.md) pour effectuer une compilation conditionnelle des fichiers sources.  

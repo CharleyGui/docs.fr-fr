@@ -1,5 +1,5 @@
 ---
-title: <filter>, Élément de <add> pour<sharedListeners>
+title: <filter> , Élément de <add> pour <sharedListeners>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners/add/filter
@@ -10,14 +10,15 @@ helpviewer_keywords:
 - filters, trace listeners
 - trace listeners, filters
 ms.assetid: 7d4e7faa-2e4e-4379-ac76-f6cd7f2f8fac
-ms.openlocfilehash: 6fb52cdfa5792ab6059b60d8dbb91c107cd666ca
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e140148a342e31d6ade7def8849d8a7738301704
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153451"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173924"
 ---
-# <a name="filter-element-for-add-for-sharedlisteners"></a>\<filter>, Élément de \<add> pour\<sharedListeners>
+# <a name="filter-element-for-add-for-sharedlisteners"></a>\<filter> , Élément de \<add> pour \<sharedListeners>
+
 Ajoute un filtre à un écouteur dans la collection `sharedListeners`.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Ajoute un filtre à un écouteur dans la collection `sharedListeners`.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -44,6 +46,7 @@ Ajoute un filtre à un écouteur dans la collection `sharedListeners`.
 |**initializeData**|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe spécifiée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -55,12 +58,14 @@ Ajoute un filtre à un écouteur dans la collection `sharedListeners`.
 |`sharedListeners`|Collection d’écouteurs qui peut faire référence à n’importe quel élément source ou trace.|  
 |`add`|Ajoute un écouteur à la collection **sharedListeners** .|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Si un écouteur est défini dans un `<add>` élément de l' `<sharedListeners>` élément, le filtre de cet écouteur doit être défini dans un `<filter>` élément qui est un enfant de l' `<add>` élément.  
   
- Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (Machine.config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment utiliser l' `<filter>` élément pour ajouter un filtre à l’écouteur `console` de la trace dans la `sharedListeners` collection.  
   
 ```xml  

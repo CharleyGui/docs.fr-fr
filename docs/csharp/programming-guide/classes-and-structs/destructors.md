@@ -7,14 +7,15 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 392b69633e596f0682fdfb4a5875f46755203ff7
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 61a00e766b0f975691b9f2a7c7561bb4f1d33c02
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474889"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174301"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
+
 Les finaliseurs (également appelés **destructeurs**) servent à effectuer les derniers nettoyages nécessaires lorsqu’une instance de classe est collectée par le récupérateur de mémoire.  
   
 ## <a name="remarks"></a>Notes  
@@ -65,20 +66,23 @@ protected override void Finalize()
  Il est possible de forcer l’garbage collection en appelant <xref:System.GC.Collect%2A> , mais la plupart du temps, cet appel doit être évité, car il peut créer des problèmes de performances.  
   
 ## <a name="using-finalizers-to-release-resources"></a>Utiliser des finaliseurs pour libérer des ressources  
+
  En général, C# ne nécessite pas autant de gestion de la mémoire de la part du développeur que de langages qui ne ciblent pas un Runtime avec garbage collection. Cela est dû au fait que le garbage collector .NET gère implicitement l’allocation et la libération de mémoire pour vos objets. Toutefois, quand votre application encapsule des ressources non managées, telles que des fenêtres, des fichiers et des connexions réseau, vous devez utiliser des finaliseurs pour libérer ces ressources. Quand l’objet peut être finalisé, le récupérateur de mémoire exécute la méthode `Finalize` de l’objet.
   
 ## <a name="explicit-release-of-resources"></a>Libération explicite de ressources  
+
  Si votre application utilise une ressource externe coûteuse, nous vous recommandons également de proposer un moyen de libérer explicitement la ressource avant que le récupérateur de mémoire ne libère l’objet. Pour libérer la ressource, implémentez une `Dispose` méthode à partir de l' <xref:System.IDisposable> interface qui effectue le nettoyage nécessaire pour l’objet. Cela peut améliorer considérablement les performances de l’application. Même avec ce contrôle explicite sur les ressources, le finaliseur devient un dispositif de protection pour nettoyer les ressources si l’appel à la `Dispose` méthode échoue.  
   
  Pour plus d’informations sur le nettoyage des ressources, consultez les articles suivants :  
   
-- [Nettoyage des ressources non managées](../../../standard/garbage-collection/unmanaged.md)  
+- [Nettoyage de ressources non managées](../../../standard/garbage-collection/unmanaged.md)  
   
 - [Implémentation d’une méthode dispose](../../../standard/garbage-collection/implementing-dispose.md)  
   
 - [using, instruction](../../language-reference/keywords/using-statement.md)  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant crée trois classes qui forment une chaîne d’héritage. La classe `First` est la classe de base, `Second` est dérivée de `First`, et `Third` est dérivée de `Second`. Toutes trois ont des finaliseurs. Dans `Main`, une instance de la classe la plus dérivée est créée. Quand le programme s’exécute, notez que les finaliseurs des trois classes sont appelés automatiquement, et dans l’ordre, de la plus dérivée à la moins dérivée.  
   
  [!code-csharp[csProgGuideObjects#85](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#85)]  

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - errorreport compiler option [C#]
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
-ms.openlocfilehash: 5b3143f4da81ac693626778263c277e3a484c45e
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6238ac392ff99d18d9cc7ea07e23b08ff235c14f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125720"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173228"
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport (Options du compilateur C#)
+
 Cette option fournit un moyen pratique de signaler une erreur interne du compilateur C# à Microsoft.
 
 > [!NOTE]
@@ -29,6 +30,7 @@ Cette option fournit un moyen pratique de signaler une erreur interne du compila
 ```
 
 ## <a name="arguments"></a>Arguments
+
  **Aucune**  
  Les rapports sur les erreurs internes du compilateur ne seront pas collectés ni envoyés à Microsoft.
 
@@ -38,7 +40,8 @@ Cette option fournit un moyen pratique de signaler une erreur interne du compila
 
  **Envoyer** Envoie automatiquement des rapports d’erreurs internes du compilateur à Microsoft. Pour activer cette option, vous devez tout d’abord accepter la politique de collecte de données de Microsoft. La première fois que vous spécifiez **-errorreport:send** sur un ordinateur, un message du compilateur vous dirige vers un site web qui affiche la politique de collecte de données de Microsoft.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
+
  Une erreur interne du compilateur se produit quand le compilateur ne peut pas traiter un fichier de code source. Quand une telle erreur se produit, le compilateur ne génère pas de fichier de sortie ni de diagnostic utile que vous pouvez utiliser pour corriger votre code.
 
  Dans les versions précédentes, quand vous receviez une erreur interne du compilateur, vous étiez invité à contacter le Support technique Microsoft pour signaler le problème. En utilisant **-errorreport**, vous pouvez fournir des informations sur l’erreur interne du compilateur à l’équipe Visual C#. Vos rapports d’erreurs peuvent aider à améliorer les versions ultérieures du compilateur.

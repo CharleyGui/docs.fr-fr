@@ -2,12 +2,12 @@
 title: Création d’un microservice CRUD simple piloté par les données
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Comprendre la création d’un microservice CRUD simple (piloté par les données) dans le contexte d’une application de microservices.
 ms.date: 08/14/2020
-ms.openlocfilehash: 46654b9e6283d913910b62621d056e034c18870e
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 056ba37965cf831e0fb176eb585042c440530c6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679147"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172363"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Création d’un microservice CRUD simple piloté par les données
 
@@ -27,7 +27,7 @@ Il peut s’agir, par exemple, du microservice de catalogue de l’exemple d’a
 
 **Figure 6-5.** Conception d’un microservice CRUD simple piloté par les données
 
-Le diagramme précédent montre le microservice de catalogue logique, qui comprend sa base de données de catalogue, qui peut être ou non dans le même hôte de station d’accueil. Le fait de disposer de la base de données dans le même hôte de station d’accueil peut être idéal pour le développement, mais pas pour la production. Lorsque vous développez ce type de service, vous avez seulement besoin [d’ASP.NET Core](https://docs.microsoft.com/aspnet/core/) et d’une API ou d’un outil ORM d’accès aux données, comme, par exemple, [Entity Framework Core](https://docs.microsoft.com/ef/core/index). Vous pouvez également générer automatiquement des métadonnées [Swagger](https://swagger.io/) par le biais de [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore), afin de fournir une description de votre service, comme l’explique la section suivante.
+Le diagramme précédent montre le microservice de catalogue logique, qui comprend sa base de données de catalogue, qui peut être ou non dans le même hôte de station d’accueil. Le fait de disposer de la base de données dans le même hôte de station d’accueil peut être idéal pour le développement, mais pas pour la production. Lorsque vous développez ce type de service, vous avez seulement besoin [d’ASP.NET Core](/aspnet/core/) et d’une API ou d’un outil ORM d’accès aux données, comme, par exemple, [Entity Framework Core](/ef/core/index). Vous pouvez également générer automatiquement des métadonnées [Swagger](https://swagger.io/) par le biais de [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore), afin de fournir une description de votre service, comme l’explique la section suivante.
 
 Notez que les serveurs de base de données, tels que SQL Server, qui sont situés dans un conteneur Docker constituent la solution idéale pour les environnements de développement. En effet, vous pouvez utiliser directement toutes vos dépendances, sans avoir à provisionner une base de données locale ou cloud. Ceci est très utile lorsque vous effectuez des tests d’intégration. Toutefois, pour les environnements de production, l’exécution d’un serveur de base de données dans un conteneur est déconseillée, car elle ne permet pas d’obtenir une haute disponibilité. Pour un environnement de production Azure, il est recommandé d’utiliser Azure SQL DB ou une autre technologie de base de données capable de fournir une haute disponibilité et une scalabilité importante. Par exemple, pour une approche NoSQL, vous pouvez utiliser CosmosDB.
 
@@ -301,7 +301,7 @@ public class CatalogController : ControllerBase
     // Implementation ...
 ```
 
-Ce mécanisme de gestion de version est simple et dépend du serveur qui achemine la demande vers le point de terminaison approprié. Toutefois, pour une gestion de version plus sophistiquée et pour une utilisation optimale avec REST, vous devez utiliser des hypermédias et implémenter [HATEOAS](https://docs.microsoft.com/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources).
+Ce mécanisme de gestion de version est simple et dépend du serveur qui achemine la demande vers le point de terminaison approprié. Toutefois, pour une gestion de version plus sophistiquée et pour une utilisation optimale avec REST, vous devez utiliser des hypermédias et implémenter [HATEOAS](/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources).
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -330,13 +330,13 @@ Voici pourquoi il est utile de générer des métadonnées Swagger pour votre AP
 
 **Les autres produits peuvent consommer et intégrer automatiquement vos API**. Swagger est pris en charge par des dizaines de produits et [d’outils professionnels](https://swagger.io/commercial-tools/), ainsi que par un grand nombre de [bibliothèques et de frameworks](https://swagger.io/open-source-integrations/). Microsoft propose des produits et des outils de niveau supérieur qui peuvent consommer automatiquement les API Swagger, comme celles qui suivent :
 
-- [AutoRest](https://github.com/Azure/AutoRest). Vous pouvez générer automatiquement des classes client .NET pour appeler Swagger. Cet outil peut être utilisé à partir de l’interface CLI. En outre, il s’intègre à Visual Studio pour une utilisation facilitée via l’interface utilisateur graphique.
+- [Rest](https://github.com/Azure/AutoRest). Vous pouvez générer automatiquement des classes client .NET pour appeler Swagger. Cet outil peut être utilisé à partir de l’interface CLI. En outre, il s’intègre à Visual Studio pour une utilisation facilitée via l’interface utilisateur graphique.
 
 - [Microsoft Flow](https://flow.microsoft.com/). Vous pouvez [utiliser et intégrer votre API](https://flow.microsoft.com/blog/integrating-custom-api/) automatiquement dans un flux de travail Microsoft Flow de haut niveau, sans avoir de compétences en programmation.
 
 - [Microsoft PowerApps](https://powerapps.microsoft.com/). Vous pouvez consommer automatiquement votre API à partir [d’applications mobiles PowerApps](https://powerapps.microsoft.com/blog/register-and-use-custom-apis-in-powerapps/) créées dans [PowerApps Studio](https://powerapps.microsoft.com/build-powerapps/), sans avoir de compétences en programmation.
 
-- [Applications logiques Azure App Service](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-what-are-logic-apps). Vous pouvez [utiliser et intégrer votre API dans une application logique Azure App Service](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-custom-hosted-api) automatiquement, sans avoir de compétences en programmation.
+- [Applications logiques Azure App Service](/azure/app-service-logic/app-service-logic-what-are-logic-apps). Vous pouvez [utiliser et intégrer votre API dans une application logique Azure App Service](/azure/app-service-logic/app-service-logic-custom-hosted-api) automatiquement, sans avoir de compétences en programmation.
 
 **Vous pouvez générer automatiquement la documentation de l’API**. Lorsque vous créez des API RESTful à grande échelle, telles que des applications de microservice complexes, vous devez gérer de nombreux points de terminaison avec les différents modèles de données utilisés dans les charges utiles de demande et de réponse. Une documentation appropriée et un explorateur d’API solide (comme ceux fournis par Swagger) sont essentiels au succès de votre API et à son adoption par les développeurs.
 

@@ -2,12 +2,12 @@
 title: Événements de domaine. Conception et implémentation
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Obtenir une vue détaillée des événements de domaine, un concept essentiel pour établir la communication entre les agrégats.
 ms.date: 10/08/2018
-ms.openlocfilehash: e786af9b5cd005573dcc9d08a3ccd19f25f13813
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 651d9cb98444c0729b97f523cc3d688f0f8d51d5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738773"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173366"
 ---
 # <a name="domain-events-design-and-implementation"></a>Événements de domaine : conception et implémentation
 
@@ -71,7 +71,7 @@ En revanche, si vous utilisez des événements de domaine, vous pouvez créer un
 2. Recevez la commande dans un gestionnaire de commandes.
    - Exécutez la transaction d’un seul agrégat.
    - (Facultatif) Déclenchez des événements de domaine pour les effets secondaires (par exemple, OrderStartedDomainEvent).
-3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Exemple :
+3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Par exemple :
    - Vérifiez ou créez l’acheteur et la méthode de paiement.
    - Créez et envoyez un événement d’intégration associé au bus d’événements pour propager les états sur les microservices ou déclencher des actions externes, comme l’envoi d’un e-mail à l’acheteur.
    - Gérez les autres effets secondaires.
@@ -342,7 +342,7 @@ Enfin, il est important de mentionner qu’il est parfois utile de propager des 
 
 Comme nous l’avons vu, les événements de domaine permettent d’implémenter explicitement les effets secondaires des modifications apportées à votre domaine. Pour utiliser la terminologie DDD, les événements de domaine permettent d’implémenter explicitement des effets secondaires sur un ou plusieurs agrégats. Si vous le souhaitez, pour une meilleure scalabilité et un impact moindre sur les verrous de base de données, utilisez la cohérence à terme entre les agrégats d’un même domaine.
 
-L’application de référence utilise [médiateur](https://github.com/jbogard/MediatR) pour propager les événements de domaine de façon synchrone entre les agrégats, au sein d’une même transaction. Toutefois, vous pouvez également utiliser une implémentation AMQP comme [RabbitMQ](https://www.rabbitmq.com/) ou [Azure Service bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) pour propager les événements de domaine de manière asynchrone, en utilisant la cohérence éventuelle, mais comme indiqué ci-dessus, vous devez prendre en compte le besoin d’actions compensatoires en cas de défaillance.
+L’application de référence utilise [médiateur](https://github.com/jbogard/MediatR) pour propager les événements de domaine de façon synchrone entre les agrégats, au sein d’une même transaction. Toutefois, vous pouvez également utiliser une implémentation AMQP comme [RabbitMQ](https://www.rabbitmq.com/) ou [Azure Service bus](/azure/service-bus-messaging/service-bus-messaging-overview) pour propager les événements de domaine de manière asynchrone, en utilisant la cohérence éventuelle, mais comme indiqué ci-dessus, vous devez prendre en compte le besoin d’actions compensatoires en cas de défaillance.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

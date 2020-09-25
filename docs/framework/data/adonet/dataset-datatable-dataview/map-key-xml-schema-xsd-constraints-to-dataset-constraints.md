@@ -2,28 +2,29 @@
 title: Mapper les contraintes clés de schéma XML (XSD) aux contraintes de DataSet
 ms.date: 03/30/2017
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-ms.openlocfilehash: 5ebf333b065157fa9497cc1471a45698663638e5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b55b232faa01bf36788276caaf8bc2e97dddf697
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150933"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172786"
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapper les contraintes clés de schéma XML (XSD) aux contraintes de DataSet
-Dans un schéma, vous pouvez spécifier une contrainte clé sur un élément ou un attribut à l’aide de **l’élément clé.** L'élément ou attribut sur lequel une contrainte de clé est spécifiée doit avoir des valeurs uniques dans toute instance du schéma et ne peut pas avoir de valeurs null.  
+
+Dans un schéma, vous pouvez spécifier une contrainte de clé sur un élément ou un attribut à l’aide de l’élément **Key** . L'élément ou attribut sur lequel une contrainte de clé est spécifiée doit avoir des valeurs uniques dans toute instance du schéma et ne peut pas avoir de valeurs null.  
   
  La contrainte de clé est similaire à la contrainte unique, si ce n'est que la colonne sur laquelle une contrainte de clé est définie ne peut pas comporter de valeurs null.  
   
- Le tableau suivant décrit les attributs **msdata** que vous pouvez spécifier dans l’élément **clé.**  
+ Le tableau suivant présente les attributs **msdata** que vous pouvez spécifier dans l’élément **Key** .  
   
 |Nom de l’attribut|Description|  
 |--------------------|-----------------|  
-|**msdata:ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, l’attribut de **nom** fournit la valeur du nom de contrainte.|  
-|**msdata:PrimaryKey**|Si `PrimaryKey="true"` elle est présente, la propriété de contrainte **IsPrimaryKey** est définie pour **vrai,** ce qui en fait une clé principale. La propriété de colonne **AllowDBNull** est réglée à **faux,** parce que les clés primaires ne peuvent pas avoir des valeurs nulles.|  
+|**msdata:ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, l’attribut **Name** fournit la valeur du nom de la contrainte.|  
+|**msdata:PrimaryKey**|Si `PrimaryKey="true"` est présent, la propriété de contrainte **IsPrimaryKey** a la valeur **true**, ce qui en fait une clé primaire. La propriété de la colonne **AllowDBNull** a la valeur **false**, car les clés primaires ne peuvent pas avoir de valeurs NULL.|  
   
- En convertissant le schéma dans lequel une contrainte clé est spécifiée, le processus de cartographie crée une contrainte unique sur la table avec la propriété de colonne **AllowDBNull** réglée à **faux** pour chaque colonne dans la contrainte. La propriété **IsPrimaryKey** de la contrainte **false** unique est également `msdata:PrimaryKey="true"` définie à faux à moins que vous avez spécifié sur l’élément **clé.** Ce mode de fonctionnement est identique à celui d'une contrainte unique dans le schéma faisant apparaître `PrimaryKey="true"`.  
+ Lors de la conversion d’un schéma dans lequel une contrainte de clé est spécifiée, le processus de mappage crée une contrainte unique sur la table avec la propriété de colonne **AllowDBNull** définie sur **false** pour chaque colonne de la contrainte. La propriété **IsPrimaryKey** de la contrainte unique a également la valeur **false** , sauf si vous avez spécifié `msdata:PrimaryKey="true"` sur l’élément **Key** . Ce mode de fonctionnement est identique à celui d'une contrainte unique dans le schéma faisant apparaître `PrimaryKey="true"`.  
   
- Dans l’exemple de schéma suivant, l’élément **clé** spécifie la contrainte clé sur l’élément **CustomerID.**  
+ Dans l’exemple de schéma suivant, l’élément **Key** spécifie la contrainte de clé sur l’élément **CustomerID** .  
   
 ```xml  
 <xs:schema id="cod"  
@@ -54,13 +55,13 @@ Dans un schéma, vous pouvez spécifier une contrainte clé sur un élément ou 
 </xs:schema>
 ```  
   
- **L’élément clé** précise que les valeurs de **l’élément enfant ClientID** de **l’élément Clients** doivent avoir des valeurs uniques et ne peuvent pas avoir de valeurs nulles. En convertissant le schéma en langage XSD (XML Schema Definition), le processus de mappage crée la table suivante :  
+ L’élément **Key** spécifie que les valeurs de l’élément enfant **CustomerID** de l’élément **Customers** doivent avoir des valeurs uniques et ne peuvent pas avoir de valeurs NULL. En convertissant le schéma en langage XSD (XML Schema Definition), le processus de mappage crée la table suivante :  
   
 ```text  
 Customers(CustomerID, CompanyName, Phone)  
 ```  
   
- La cartographie XML Schema crée également un **UniqueConstraint** sur la <xref:System.Data.DataSet>colonne **CustomerID,** comme le montre ce qui suit . (Par souci de simplicité, seules les propriétés pertinentes sont représentées.)  
+ Le mappage de schéma XML crée également un **UniqueConstraint** sur la colonne **CustomerID** , comme indiqué dans le code suivant <xref:System.Data.DataSet> . (Par souci de simplicité, seules les propriétés pertinentes sont représentées.)  
   
 ```text  
       DataSetName: MyDataSet  
@@ -74,9 +75,9 @@ TableName: customers
       IsPrimaryKey: True  
 ```  
   
- Dans le **DataSet** qui est généré, la propriété **IsPrimaryKey** de **l’UniqueConstraint** est définie pour **vrai** parce que le schéma spécifie `msdata:PrimaryKey="true"` dans **l’élément clé.**  
+ Dans le **DataSet** généré, la propriété **IsPrimaryKey** de **UniqueConstraint** a la valeur **true** car le schéma spécifie `msdata:PrimaryKey="true"` dans l’élément **Key** .  
   
- La valeur de la propriété **ConstraintName** de **l’UniqueConstraint** dans le **DataSet** est la valeur de **l’attribut msdata:ConstraintName** spécifié dans **l’élément clé** du schéma.  
+ La valeur de la propriété **ConstraintName** de **UniqueConstraint** dans le **DataSet** est la valeur de l’attribut **msdata : ConstraintName** spécifié dans l’élément **Key** du schéma.  
   
 ## <a name="see-also"></a>Voir aussi
 
