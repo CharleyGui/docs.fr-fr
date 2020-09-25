@@ -8,17 +8,18 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - query interceptors [WCF Data Services]
 ms.assetid: e33ae8dc-8069-41d0-99a0-75ff28db7050
-ms.openlocfilehash: c9799037ae0ea8b29b5e989859aff29c310593d4
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 64c5c82f33daf677e58d49655897c392f1f7b7f9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568973"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204396"
 ---
 # <a name="interceptors-wcf-data-services"></a>Intercepteurs (services de données WCF)
-WCF Data Services permet à une application d’intercepter des messages de demande afin que vous puissiez ajouter une logique personnalisée à une opération. Vous pouvez utiliser cette logique personnalisée pour valider les données dans les messages entrants. Vous pouvez également l'utiliser pour restreindre davantage l'étendue d'une requête d'interrogation, comme l'insertion d'une stratégie d'autorisation personnalisée sur la base de chaque demande.  
+
+WCF Data Services permet à une application d’intercepter des messages de demande afin que vous puissiez ajouter une logique personnalisée à une opération. Vous pouvez utiliser cette logique personnalisée pour valider des données dans les messages entrants. Vous pouvez également l'utiliser pour restreindre davantage l'étendue d'une requête d'interrogation, comme l'insertion d'une stratégie d'autorisation personnalisée sur la base de chaque demande.  
   
- L'interception est effectuée par les méthodes attribuées spécialement dans le service de données. Ces méthodes sont appelées par WCF Data Services au point approprié dans le traitement du message. Les intercepteurs sont définis pour chaque jeu d’entités, et les méthodes d’intercepteur ne peuvent pas accepter de paramètres de la demande, comme les opérations de service. Les méthodes d’intercepteur de requête, qui sont appelées lors du traitement d’une requête HTTP obtient, doivent retourner une expression lambda qui détermine si une instance du jeu d’entités de l’intercepteur doit être retournée par les résultats de la requête. Cette expression est utilisée par le service de données pour affiner davantage l'opération demandée. L'exemple suivant illustre la définition d'un intercepteur de requête.  
+ L'interception est effectuée par les méthodes attribuées spécialement dans le service de données. Ces méthodes sont appelées par WCF Data Services au point approprié dans le traitement du message. Les intercepteurs sont définis sur une base définie par entité, et les méthodes d'intercepteur ne peuvent pas accepter de paramètres de la demande comme le peuvent les opérations de service. Les méthodes d’intercepteur de requête, appelées lors du traitement d’une demande HTTP GET, doivent retourner une expression lambda qui détermine si une instance du jeu d’entités de l’intercepteur doit être retournée par les résultats de la requête. Cette expression est utilisée par le service de données pour affiner davantage l'opération demandée. L'exemple suivant illustre la définition d'un intercepteur de requête.  
   
  [!code-csharp[Astoria Northwind Service#QueryInterceptorDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#queryinterceptordef)]
  [!code-vb[Astoria Northwind Service#QueryInterceptorDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#queryinterceptordef)]  

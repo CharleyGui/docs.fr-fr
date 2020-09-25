@@ -1,15 +1,16 @@
 ---
-title: <message>élément de<netTcpBinding>
+title: <message> élément de <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
-ms.openlocfilehash: 76c4a0a30b637bc168855b091029a959b858401e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ab767a5a1179de81bf9a8adc61799ede2d915ac1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73739014"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204903"
 ---
-# <a name="message-element-of-nettcpbinding"></a>\<message>élément de\<netTcpBinding>
+# <a name="message-element-of-nettcpbinding"></a>\<message> élément de \<netTcpBinding>
+
 Définit le type d’exigences de sécurité au niveau du message pour un point de terminaison configuré avec le [\<netTcpBinding>](nettcpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,6 +29,7 @@ Définit le type d’exigences de sécurité au niveau du message pour un point 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -69,7 +71,8 @@ Définit le type d’exigences de sécurité au niveau du message pour un point 
 |IssuedToken|Spécifie un jeton personnalisé, généralement émis par un service de jeton de sécurité (STS).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -77,7 +80,8 @@ Définit le type d’exigences de sécurité au niveau du message pour un point 
 |-------------|-----------------|  
 |[\<security>](security-of-nettcpbinding.md)|Définit les fonctionnalités de sécurité pour le <xref:System.ServiceModel.Configuration.NetTcpBindingElement>.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Le message utilise la sécurité au niveau du message pour l'intégrité et la confidentialité du message SOAP, ainsi que pour l'authentification mutuelle des homologues de communication. Si ce mode de sécurité est sélectionné sur une liaison, la pile de canaux est configurée avec les éléments de liaison de sécurité du message et les messages SOAP sont sécurisés conformément aux normes WS-Security*.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -86,7 +90,7 @@ Définit le type d’exigences de sécurité au niveau du message pour un point 
 - <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Message%2A>
 - <xref:System.ServiceModel.NetTcpSecurity.Message%2A>
 - <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

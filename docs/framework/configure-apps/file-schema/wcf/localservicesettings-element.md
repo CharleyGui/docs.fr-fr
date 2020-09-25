@@ -2,14 +2,15 @@
 title: <localServiceSettings> (élément)
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
-ms.openlocfilehash: 4883fd563ecf989d67c369085df4fc43d0c5f078
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3043c07afd316d90cc5525a67bef144f33d9b136
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400305"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204929"
 ---
 # <a name="localservicesettings-element"></a>\<localServiceSettings>, élément
+
 Spécifie les paramètres de sécurité d’un service local pour cette liaison.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -42,6 +43,7 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -64,6 +66,7 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
 |`timestampValidityDuration`|<xref:System.TimeSpan> positif qui spécifie la durée de validité d'un horodatage. La valeur par défaut est « 00:15:00 ».|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -73,7 +76,8 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
 |[\<security>](security-of-custombinding.md)|Spécifie les options de sécurité d’une liaison personnalisée.|  
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|Spécifie les valeurs par défaut utilisées pour initialiser un service de conversation sécurisé.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les paramètres sont locaux car ils ne sont pas publiés dans le cadre de la stratégie de sécurité du service et n'affectent pas la liaison du client.  
   
  Les attributs suivants de l'élément `localServiceSecuritySettings` peuvent aider à atténuer une attaque de sécurité par déni de service (DOS) :  
@@ -99,5 +103,5 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Custom Binding Security](../../../wcf/samples/custom-binding-security.md)

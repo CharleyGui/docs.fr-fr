@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2e6642c9-bfc6-425c-b3a7-e4912ffa6c1f
-ms.openlocfilehash: 70596d6acb62fa01092e5e55dd3b6c84eb162b5d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1b80ae78fad22989f99fb1e992d4978a192e0c66
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784330"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204526"
 ---
 # <a name="row-states-and-row-versions"></a>États des lignes et versions des lignes
+
 ADO.NET gère les lignes des tables à l'aide des états et des versions de ligne. Un état de ligne indique le statut d'une ligne ; les versions de ligne conservent les valeurs stockées dans une ligne pendant leur modification, notamment les valeurs actuelles, d'origine et par défaut. Par exemple, une fois qu'une modification a été apportée à une colonne dans une ligne, la ligne possède un état de ligne `Modified` et deux versions de ligne : `Current`, qui contient les valeurs de ligne actuelles et `Original`, qui renferme les valeurs de ligne avant la modification de la colonne.  
   
  Chaque objet <xref:System.Data.DataRow> a la propriété <xref:System.Data.DataRow.RowState%2A> que vous pouvez examiner pour déterminer l'état actuel de la ligne. Le tableau suivant fournit une brève description de chacune des valeurs d'énumération `RowState`.  
@@ -99,4 +100,4 @@ foreach (DataRow delRow in delRows)
 - [Manipulation des données dans un DataTable](manipulating-data-in-a-datatable.md)
 - [DataSets, DataTables et DataViews](index.md)
 - [DataAdapters et DataReaders](../dataadapters-and-datareaders.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

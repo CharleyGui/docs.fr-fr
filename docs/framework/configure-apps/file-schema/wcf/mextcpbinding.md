@@ -2,14 +2,15 @@
 title: <mexTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 01baba8d-d784-4255-9ea2-7afff1482bf0
-ms.openlocfilehash: 8d0ae2a1848eaf28c2e408542b8209cf968de4c1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0d12f886eaee6283ee686209dfc129e397a8e1fe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74430304"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204695"
 ---
 # \<mexTcpBinding>
+
 Spécifie les paramètres pour une liaison utilisée dans le cadre de l’échange de messages WS-MetadataExchange (WS-MEX) sur TCP.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Spécifie les paramètres pour une liaison utilisée dans le cadre de l’échan
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -44,6 +46,7 @@ Spécifie les paramètres pour une liaison utilisée dans le cadre de l’échan
 |`sendTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -56,7 +59,7 @@ Spécifie les paramètres pour une liaison utilisée dans le cadre de l’échan
 
 - <xref:System.ServiceModel.Configuration.MexTcpBindingElement>
 - <xref:System.ServiceModel.Description.MetadataExchangeBindings.CreateMexTcpBinding%2A>
-- [Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration](../../../wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
+- [Procédure : publier des métadonnées pour un service à l’aide d’un fichier de configuration](../../../wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
 - [Publication et récupération de métadonnées sur une liaison personnalisée](../../../wcf/extending/publishing-and-retrieving-metadata-over-a-custom-binding.md)
 - [Métadonnées](../../../wcf/feature-details/metadata.md)
 - [Liaisons](../../../wcf/bindings.md)

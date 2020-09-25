@@ -2,14 +2,15 @@
 title: <message> de <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9ffd8db6-84a8-4b38-a9fe-2cb1a87a1c97
-ms.openlocfilehash: 3396f74f76d790759f4c32de2907607486701b1a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0979bd1c74061bb13a240bb46e1a37cd7ea1129c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738947"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204838"
 ---
 # <a name="message-of-ws2007httpbinding"></a>\<message> de \<ws2007HttpBinding>
+
 Définit des paramètres pour la sécurité au niveau du message de l' [\<ws2007HttpBinding>](ws2007httpbinding.md) élément.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,9 +38,11 @@ Définit des paramètres pour la sécurité au niveau du message de l' [\<ws2007
 ```  
   
 ## <a name="type"></a>Type  
+
  <xref:System.ServiceModel.NonDualMessageSecurityOverHttp>  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -47,9 +50,9 @@ Définit des paramètres pour la sécurité au niveau du message de l' [\<ws2007
 |Attribut|Description|  
 |---------------|-----------------|  
 |`algorithmSuite`|Définit les algorithmes de chiffrement de message et de clé de type WRAP. Les algorithmes et les tailles de clé sont déterminés par la classe <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. Ces algorithmes sont associés à ceux définis dans la spécification Security Policy Language (WS-SecurityPolicy).<br /><br /> La valeur par défaut est Basic256.|  
-|`clientCredentialType`|facultatif. Spécifie le type d'informations d'identification à utiliser lorsque l'exécution de l'authentification du client à l'aide du mode de sécurité a la valeur `Message` ou `TransportWithMessageCredentials`. Consultez les valeurs d'énumération dans le tableau suivant. Le paramètre par défaut est Windows.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.MessageCredentialType>.|  
+|`clientCredentialType`|Optionnel. Spécifie le type d'informations d'identification à utiliser lorsque l'exécution de l'authentification du client à l'aide du mode de sécurité a la valeur `Message` ou `TransportWithMessageCredentials`. Consultez les valeurs d'énumération dans le tableau suivant. Le paramètre par défaut est Windows.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.MessageCredentialType>.|  
 |`establishSecurityContext`|Valeur indiquant si le canal de sécurité établit une session sécurisée. Une session sécurisée établit un jeton de contexte de sécurité (SCT) avant d'échanger les messages d'application. Lorsque le jeton SCT est établi, le canal de sécurité offre une interface <xref:System.ServiceModel.Channels.ISession> aux canaux supérieurs. Pour plus d’informations sur l’utilisation de sessions sécurisées, consultez [procédure : créer une session sécurisée](../../../wcf/feature-details/how-to-create-a-secure-session.md).<br /><br /> La valeur par défaut est `true`.|  
-|`negotiateServiceCredential`|facultatif. Valeur indiquant si les informations d'identification du service sont configurées auprès du client hors bande ou transférées du service au client via un processus de négociation. Ce type de négociation précède l'échange habituel de messages.<br /><br /> Si l' `clientCredentialType` attribut est égal à None, username ou Certificate, l’affectation de la valeur à cet attribut `false` implique que le certificat de service est disponible sur le client hors bande et que le client doit spécifier le certificat de service (à l’aide de [\<serviceCertificate>](servicecertificate-of-servicecredentials.md) ) dans le [\<serviceCredentials>](servicecredentials.md) comportement du service. Ce mode est interopérable avec les piles SOAP qui implémentent WS-Trust et WS-SecureConversation.<br /><br /> Si l'attribut `ClientCredentialType` a la valeur `Windows`, l'affectation de la valeur `false` à cet attribut spécifie l'authentification basée sur Kerberos. Cela signifie que le client et le service doivent faire partie du même domaine Kerberos. Ce mode est interopérable avec les piles SOAP qui implémentent le profil de jeton Kerberos (comme défini dans OASIS WSS TC) ainsi que WS-Trust et WS-SecureConversation.<br /><br /> Lorsque cet attribut a la valeur `true`, il entraîne une négociation SOAP .NET qui tunnelle l'échange <xref:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.Spnego%2A> par des messages SOAP.<br /><br /> Par défaut, il s’agit de `true`.|  
+|`negotiateServiceCredential`|Optionnel. Valeur indiquant si les informations d'identification du service sont configurées auprès du client hors bande ou transférées du service au client via un processus de négociation. Ce type de négociation précède l'échange habituel de messages.<br /><br /> Si l' `clientCredentialType` attribut est égal à None, username ou Certificate, l’affectation de la valeur à cet attribut `false` implique que le certificat de service est disponible sur le client hors bande et que le client doit spécifier le certificat de service (à l’aide de [\<serviceCertificate>](servicecertificate-of-servicecredentials.md) ) dans le [\<serviceCredentials>](servicecredentials.md) comportement du service. Ce mode est interopérable avec les piles SOAP qui implémentent WS-Trust et WS-SecureConversation.<br /><br /> Si l'attribut `ClientCredentialType` a la valeur `Windows`, l'affectation de la valeur `false` à cet attribut spécifie l'authentification basée sur Kerberos. Cela signifie que le client et le service doivent faire partie du même domaine Kerberos. Ce mode est interopérable avec les piles SOAP qui implémentent le profil de jeton Kerberos (comme défini dans OASIS WSS TC) ainsi que WS-Trust et WS-SecureConversation.<br /><br /> Lorsque cet attribut a la valeur `true`, il entraîne une négociation SOAP .NET qui tunnelle l'échange <xref:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.Spnego%2A> par des messages SOAP.<br /><br /> Par défaut, il s’agit de `true`.|  
   
 ## <a name="algorithmsuite-attribute"></a>Attribut algorithmSuite  
   
@@ -83,7 +86,8 @@ Définit des paramètres pour la sécurité au niveau du message de l' [\<ws2007
 |`Windows`|Permet aux échanges SOAP d'être placés dans le contexte authentifié d'informations d'identification `Windows`. Si l'attribut `negotiateServiceCredential` a la valeur `true`, une négociation SSPI ou Kerberos (norme interopérable) est exécutée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -97,7 +101,7 @@ Définit des paramètres pour la sécurité au niveau du message de l' [\<ws2007
 - <xref:System.ServiceModel.Configuration.WSHttpSecurityElement.Message%2A>
 - <xref:System.ServiceModel.WSHttpSecurity.Message%2A>
 - <xref:System.ServiceModel.Configuration.NonDualMessageSecurityOverHttpElement>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

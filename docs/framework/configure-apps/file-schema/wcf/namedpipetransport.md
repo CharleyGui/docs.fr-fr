@@ -2,14 +2,15 @@
 title: <namedPipeTransport>
 ms.date: 03/30/2017
 ms.assetid: 9fc3f42f-43e2-4ab1-8bc7-3c95a9220df1
-ms.openlocfilehash: 00631ad88d771ed8f45638f28c84df05917fd3a0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4582066098feaf50b33b083de56bcb8c3e04df0f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736586"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204617"
 ---
 # \<namedPipeTransport>
+
 Définit un transport qui entraîne un canal à transférer des messages à l’aide de canaux nommés lorsqu’il est inclus dans une liaison personnalisée.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -40,9 +41,11 @@ Définit un transport qui entraîne un canal à transférer des messages à l’
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
 Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
 Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -60,7 +63,7 @@ Aucun.
 |maxPendingConnections|Obtient ou définit le nombre maximal de connexions en attente de distribution sur le service.|  
 |maxReceivedMessageSize|Obtient et définit la taille maximale autorisée pour le message, en octets, qui peut être reçue.|  
 |transferMode|Obtient ou définit une valeur qui indique si les messages sont mis en mémoire tampon ou transmis en continu par le transport orienté connexion.|  
-|[\<connectionPoolSettings>of\<namedPipeTransport>](connectionpoolsettings.md)|Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.|  
+|[\<connectionPoolSettings> of \<namedPipeTransport>](connectionpoolsettings.md)|Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -68,7 +71,8 @@ Aucun.
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
 Ce transport utilise des URI au format "net.pipe://nom_hôte/chemin". Les autres composants URI sont facultatifs.  
   
 L’élément `namedPipeTransport` constitue le point de départ pour créer une liaison personnalisée qui implémente le protocole de transport des canaux nommés. Ce transport est utilisé pour la communication entre WCF (Windows Communication Foundation) et WCF sur des ordinateurs.  

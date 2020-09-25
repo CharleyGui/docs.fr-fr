@@ -2,14 +2,15 @@
 title: GROUP BY (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: cf4f4972-4724-4945-ba44-943a08549139
-ms.openlocfilehash: 711fbdc2d51177037cf349150c3431de14b11974
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 281d5d2df389f0952f0552747fa12b67b14d470c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833781"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204487"
 ---
 # <a name="group-by-entity-sql"></a>GROUP BY (Entity SQL)
+
 Indique les groupes dans lesquels doivent être placés les objets retournés par une expression de requête ([SELECT](select-entity-sql.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -19,11 +20,13 @@ Indique les groupes dans lesquels doivent être placés les objets retournés pa
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `aliasedExpression`  
  Toute expression de requête valide sur laquelle le regroupement est effectué. `expression` peut être une propriété ou une expression non agrégée qui référence une propriété retournée par la clause FROM. Chaque expression contenue dans une clause GROUP BY doit être évaluée à un type pouvant être comparé en égalité. Ces types sont généralement des primitives scalaires telles que des nombres, des chaînes et des dates. Vous ne pouvez pas effectuer de regroupement sur une collection.  
   
-## <a name="remarks"></a>Remarques  
- Si les fonctions d’agrégation sont incluses dans la clause SELECT \<liste de sélection >, GROUP BY calcule une valeur de synthèse pour chaque groupe. Lorsque la clause GROUP BY est spécifiée, vous devez inclure dans la liste GROUP BY chaque nom de propriété des expressions de non-agrégation figurant dans la liste de sélection, ou l'expression GROUP BY doit correspondre exactement à l'expression figurant dans la liste de sélection.  
+## <a name="remarks"></a>Notes  
+
+ Si les fonctions d’agrégation sont incluses dans la clause SELECT \<select list> , Group by calcule une valeur de synthèse pour chaque groupe. Lorsque la clause GROUP BY est spécifiée, vous devez inclure dans la liste GROUP BY chaque nom de propriété des expressions de non-agrégation figurant dans la liste de sélection, ou l'expression GROUP BY doit correspondre exactement à l'expression figurant dans la liste de sélection.  
   
 > [!NOTE]
 > Si la clause ORDER BY n'est pas spécifiée, les groupes retournés par la clause GROUP BY ne sont pas triés dans un ordre particulier. Nous vous recommandons de toujours utiliser la clause ORDER BY pour définir un ordre de classement des données particulier.  
@@ -60,6 +63,7 @@ GROUP BY 1   -- BAD, a constant is not allowed
  Pour obtenir un exemple d’utilisation de GROUP BY, consultez [HAVING](having-entity-sql.md).  
   
 ## <a name="example"></a>Exemple  
+
  La requête Entity SQL suivante utilise l'opérateur GROUP BY pour spécifier les groupes dans lesquels les objets sont retournés par une requête. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
 1. Suivez la procédure décrite dans [Comment : exécuter une requête qui retourne des résultats PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md).  

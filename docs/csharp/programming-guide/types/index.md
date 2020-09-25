@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 5a9eb3747a6b4da316bca3f1d450c1ea0f774ada
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: ad14c3367809c16268abedc99596089514986e3f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382046"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91205111"
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
 
@@ -64,7 +64,7 @@ Pour plus d’informations, consultez [Cast et conversions de types](./casting-a
 
 ## <a name="built-in-types"></a>Types intégrés
 
-C# fournit un jeu standard de types numériques intégrés pour représenter les nombres entiers, les valeurs à virgule flottante, les expressions booléennes, les caractères de texte, les valeurs décimales et d’autres types de données. Il existe également des types `string` et `object` intégrés. que vous pouvez utiliser dans n’importe quel programme C#. Pour obtenir la liste complète des types intégrés, consultez [types intégrés](../../language-reference/builtin-types/built-in-types.md).
+C# fournit un jeu standard de types intégrés pour représenter les entiers, les valeurs à virgule flottante, les expressions booléennes, les caractères de texte, les valeurs décimales et d’autres types de données. Il existe également des types `string` et `object` intégrés. que vous pouvez utiliser dans n’importe quel programme C#. Pour obtenir la liste complète des types intégrés, consultez [types intégrés](../../language-reference/builtin-types/built-in-types.md).
 
 ## <a name="custom-types"></a>Types personnalisés
 
@@ -120,7 +120,7 @@ L’autre catégorie de types valeur est [enum](../../language-reference/builtin
 
 [!code-csharp[csProgGuideTypes#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#44)]
 
-La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d’informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.
+La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d'informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.
 
 Toutes les énumérations héritent de <xref:System.Enum?displayProperty=nameWithType>, qui hérite de <xref:System.ValueType?displayProperty=nameWithType>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [types énumération](../../language-reference/builtin-types/enum.md).
 
@@ -182,7 +182,7 @@ Pour plus d'informations, voir les rubriques suivantes :
 
 - [Cast et conversions de types](./casting-and-type-conversions.md)
 
-- [Boxing et unboxing](./boxing-and-unboxing.md)
+- [Conversion boxing et unboxing](./boxing-and-unboxing.md)
 
 - [Utilisation du type dynamic](./using-type-dynamic.md)
 

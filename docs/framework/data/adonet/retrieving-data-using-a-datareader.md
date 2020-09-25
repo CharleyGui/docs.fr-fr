@@ -6,15 +6,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
-ms.openlocfilehash: 6e5161cc325bf0379bb9241b99c473c539ad1081
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 96cc6444b6e4dc2806abffd456d0c2f7533f0009
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286596"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204370"
 ---
 # <a name="retrieve-data-using-a-datareader"></a>Récupérer des données à l’aide d’un DataReader
-Pour récupérer des données à l’aide d’un **DataReader**, créez une instance de l’objet de **commande** , puis créez un **DataReader** en appelant **Command. ExecuteReader** pour récupérer des lignes d’une source de données. Le **DataReader** fournit un flux de données non mis en mémoire tampon qui permet à la logique procédurale de traiter efficacement les résultats d’une source de données de manière séquentielle. Le **DataReader** est un bon choix lorsque vous récupérez de grandes quantités de données, car les données ne sont pas mises en cache dans la mémoire.
+
+Pour récupérer des données à l’aide d’un **DataReader**, créez une instance de l’objet de **commande** , puis créez un **DataReader** en appelant **Command.ExecuteReader** pour récupérer des lignes d’une source de données. Le **DataReader** fournit un flux de données non mis en mémoire tampon qui permet à la logique procédurale de traiter efficacement les résultats d’une source de données de manière séquentielle. Le **DataReader** est un bon choix lorsque vous récupérez de grandes quantités de données, car les données ne sont pas mises en cache dans la mémoire.
 
 L’exemple suivant illustre l’utilisation d’un **DataReader**, où `reader` représente un DataReader valide et `command` représente un objet Command valide.  
 
@@ -34,6 +35,7 @@ Utilisez la méthode **DataReader. Read** pour obtenir une ligne à partir des r
  [!code-vb[DataWorks SqlClient.HasRows#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.HasRows/VB/source.vb#1)]  
   
 ## <a name="closing-the-datareader"></a>Fermeture du DataReader  
+
  Appelez toujours la méthode **Close** lorsque vous avez fini d’utiliser l’objet **DataReader** .  
   
  Si votre **commande** contient des paramètres de sortie ou des valeurs de retour, ces valeurs ne sont pas disponibles tant que le **DataReader** n’est pas fermé.  
@@ -44,18 +46,21 @@ Utilisez la méthode **DataReader. Read** pour obtenir une ligne à partir des r
 > N’appelez pas **Close** ou **dispose** sur une **connexion**, un **DataReader**ou tout autre objet managé dans la méthode **Finalize** de votre classe. Dans un finaliseur, libérez seulement les ressources non managées que votre classe possède directement. Si votre classe ne possède pas de ressources non managées, n’incluez pas de méthode **Finalize** dans votre définition de classe. Pour plus d’informations, consultez [garbage collection](../../../standard/garbage-collection/index.md).  
   
 ## <a name="retrieving-multiple-result-sets-using-nextresult"></a>Récupération de plusieurs jeux de résultats à l’aide de NextResult  
+
  Si le **DataReader** retourne plusieurs jeux de résultats, appelez la méthode **NextResult** pour effectuer une itération dans les jeux de résultats de manière séquentielle. L'exemple suivant montre l'objet <xref:System.Data.SqlClient.SqlDataReader> traitant les résultats de deux instructions SELECT utilisant la méthode <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A>.  
   
  [!code-csharp[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/VB/source.vb#1)]  
   
 ## <a name="getting-schema-information-from-the-datareader"></a>Obtention d’informations de schéma à partir du DataReader  
+
  Lorsqu’un **DataReader** est ouvert, vous pouvez récupérer des informations de schéma sur le jeu de résultats actuel à l’aide de la méthode **GetSchemaTable** . **GetSchemaTable** retourne un <xref:System.Data.DataTable> objet rempli avec les lignes et les colonnes qui contiennent les informations de schéma pour le jeu de résultats actuel. Le **DataTable** contient une ligne pour chaque colonne du jeu de résultats. Chaque colonne de la table de schéma est mappée à une propriété des colonnes retournées dans les lignes du jeu de résultats, où **ColumnName** est le nom de la propriété et la valeur de la colonne est la valeur de la propriété. L’exemple suivant écrit les informations de schéma pour **DataReader**.  
   
  [!code-csharp[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/VB/source.vb#1)]  
   
 ## <a name="working-with-ole-db-chapters"></a>Utilisation des chapitres OLE DB  
+
  Les ensembles de lignes hiérarchiques ou chapitres (OLE DB type **DBTYPE_HCHAPTER**, type ADO **adChapter**), peuvent être récupérés à l’aide du <xref:System.Data.OleDb.OleDbDataReader> . Lorsqu’une requête qui comprend un chapitre est retournée en tant que **DataReader**, le chapitre est retourné en tant que colonne dans ce **DataReader** et est exposé en tant qu’objet **DataReader** .  
   
  Le **jeu de données** ADO.net peut également être utilisé pour représenter des ensembles de lignes hiérarchiques à l’aide de relations parent-enfant entre les tables. Pour plus d’informations, consultez [DataSets, DataTables et DataView](./dataset-datatable-dataview/index.md).  
@@ -135,6 +140,7 @@ using (OleDbConnection connection = new OleDbConnection(
 ```  
   
 ## <a name="returning-results-with-oracle-ref-cursors"></a>Retour de résultats avec des REF CURSOR Oracle  
+
  Le fournisseur de données .NET Framework pour Oracle prend en charge l'utilisation des REF CURSOR Oracle pour retourner le résultat d'une requête. Un REF CURSOR Oracle est retourné en tant qu'objet <xref:System.Data.OracleClient.OracleDataReader>.  
   
  Vous pouvez récupérer un <xref:System.Data.OracleClient.OracleDataReader> objet qui représente un REF CURSOR Oracle à l’aide de la <xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A> méthode. Vous pouvez également spécifier un <xref:System.Data.OracleClient.OracleCommand> qui retourne un ou plusieurs REF CURSOR Oracle comme **SelectCommand** pour un <xref:System.Data.OracleClient.OracleDataAdapter> utilisé pour remplir un <xref:System.Data.DataSet> .  
@@ -262,5 +268,5 @@ adapter.Fill(ds);
 
 - [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
 - [Commandes et paramètres](commands-and-parameters.md)
-- [Récupération des informations de schéma de base de données](retrieving-database-schema-information.md)
+- [Extraction des informations de schéma de base de données](retrieving-database-schema-information.md)
 - [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

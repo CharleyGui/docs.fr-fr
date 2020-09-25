@@ -2,14 +2,15 @@
 title: <messageSenderAuthentication>
 ms.date: 03/30/2017
 ms.assetid: ea62fc06-55fb-42e0-aa2b-8867bdf4b415
-ms.openlocfilehash: 035f3c95fc876f0d451e6b2146e754cfe0959a85
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e7888d01838312aa51397ca39133edb9318fac80
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546983"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204773"
 ---
 # \<messageSenderAuthentication>
+
 Spécifie les paramètres d'authentification pour le certificat homologue utilisé par l'expéditeur d'un message.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Spécifie les paramètres d'authentification pour le certificat homologue utilis
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -43,6 +45,7 @@ Spécifie les paramètres d'authentification pour le certificat homologue utilis
 |`trustedStoreLocation`|Énumération facultative. Spécifie l’emplacement du magasin de confiance dans lequel le certificat homologue est validé par le système de sécurité WCF. Cet attribut est de type <xref:System.Security.Cryptography.X509Certificates.StoreLocation>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -52,6 +55,7 @@ Spécifie les paramètres d'authentification pour le certificat homologue utilis
 |[\<peer>](peer-of-servicecredentials.md)|Spécifie les informations d'identification actuelles d'un nœud homologue.|  
   
 ## <a name="remarks"></a>Notes  
+
  Cet élément doit être configuré si l'authentification des messages est sélectionnée. Pour les canaux de sortie, chaque message est signé à l’aide du certificat fourni par [\<certificate>](certificate-element.md) . Avant d'être remis à l'application, tous les messages sont vérifiés par rapport aux informations d'identification de message à l'aide du validateur spécifié par l'attribut `customCertificateValidatorType` de cet élément. Le validateur peut accepter ou rejeter les informations d'identification.  
   
 ## <a name="see-also"></a>Voir aussi

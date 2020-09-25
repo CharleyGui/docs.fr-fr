@@ -2,14 +2,15 @@
 title: <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: 00a8580b-face-47a4-838d-b9fed48e72df
-ms.openlocfilehash: 2364eb9d82fd17bd0b80b01070a0f1d789be3d90
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f1ec6091d72c1d1c6d75c44dd1f98d6d4e10ea12
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556152"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204565"
 ---
 # \<netNamedPipeBinding>
+
 Définit une liaison qui est sécurisée, fiable, optimisée pour la communication interprocessus sur l'ordinateur. Par défaut, elle génère une pile de communication du runtime avec WS-ReliableMessaging pour la fiabilité, la sécurité du transport pour la sécurité du transfert, des canaux nommés pour la remise de messages et l'encodage binaire de messages.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -47,6 +48,7 @@ Définit une liaison qui est sécurisée, fiable, optimisée pour la communicati
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -63,7 +65,7 @@ Définit une liaison qui est sécurisée, fiable, optimisée pour la communicati
 |openTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'ouverture. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
 |receiveTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de réception. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:10:00.|  
 |sendTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
-|transactionFlow|Valeur booléenne qui spécifie si la liaison prend en charge le flux WS-Transactions. La valeur par défaut est `false`.|  
+|transactionFlow|Valeur booléenne qui spécifie si la liaison prend en charge le flux WS-Transactions. Par défaut, il s’agit de `false`.|  
 |transactionProtocol|Spécifie le protocole de transaction à utiliser avec cette liaison. Les valeurs valides sont les suivantes :<br /><br /> -OleTransactions<br />-WS-AtomicTransactionOctober2004<br /><br /> La valeur par défaut est OleTransactions. Cet attribut est de type <xref:System.ServiceModel.TransactionProtocol>.|  
 |transferMode|Valeur <xref:System.ServiceModel.TransferMode> qui spécifie si les messages sont mis en mémoire tampon ou transmis en continu ou s'il s'agit d'une demande ou d'une réponse.|  
   
@@ -81,11 +83,13 @@ Définit une liaison qui est sécurisée, fiable, optimisée pour la communicati
 |[\<bindings>](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
 ## <a name="remarks"></a>Notes  
+
  `NetNamedPipeBinding` génère par défaut une pile de communication au moment de l'exécution, qui utilise la sécurité de transport, des canaux nommés pour la remise des messages et un encodage de message binaire. Cette liaison est une solution fournie par le système WCF (Windows Communication Foundation) adaptée à la communication sur les ordinateurs. Elle prend en outre en charge des transactions.  
   
  La configuration par défaut de `NetNamedPipeBinding` est similaire à celle fournie par `NetTcpBinding`, mais en plus simple, car l’implémentation de WCF est uniquement destinée à être utilisée sur un ordinateur, de sorte qu’il y a moins de fonctionnalités exposées. La différence la plus notable est que le paramètre `securityMode` offre uniquement les options `None` et `Transport`. La prise en charge de la sécurité SOAP ne fait pas partie des options incluses. Le comportement de sécurité est configurable à l'aide de l'attribut facultatif `securityMode`.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  L’exemple suivant montre la liaison netNamedPipeBinding, qui fournit la communication interprocessus sur le même ordinateur. Les canaux nommés ne fonctionnent pas sur plusieurs ordinateurs.  
   
  La liaison est spécifiée dans les fichiers de configuration pour le client et le service. Le type de liaison est spécifié dans l’attribut `binding` de l’élément `<endpoint>`. Si vous souhaitez configurer la liaison netNamedPipeBinding et modifier quelques-uns de ses paramètres, vous devez définir une configuration de liaison. Le point de terminaison doit référencer la configuration de liaison par nom avec un attribut `bindingConfiguration`. Dans cet exemple, la configuration de liaison est nommée Binding1.  

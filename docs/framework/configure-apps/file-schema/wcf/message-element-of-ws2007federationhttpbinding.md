@@ -1,15 +1,16 @@
 ---
-title: <message>élément de<ws2007FederationHttpBinding>
+title: <message> élément de <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
-ms.openlocfilehash: dde763687dbc62d6fb342a21a4c614208f28d7e8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d71bce5e94568bdad3c52226fa1029a1dd87bfd9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738996"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204916"
 ---
-# <a name="message-element-of-ws2007federationhttpbinding"></a>\<message>élément de\<ws2007FederationHttpBinding>
+# <a name="message-element-of-ws2007federationhttpbinding"></a>\<message> élément de \<ws2007FederationHttpBinding>
+
 Définit des paramètres pour la sécurité au niveau du message pour l' [\<ws2007FederationHttpBinding>](ws2007federationhttpbinding.md) élément.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -81,6 +82,7 @@ Définit des paramètres pour la sécurité au niveau du message pour l' [\<ws20
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -134,7 +136,7 @@ Définit des paramètres pour la sécurité au niveau du message pour l' [\<ws20
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement.Message%2A>
 - <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

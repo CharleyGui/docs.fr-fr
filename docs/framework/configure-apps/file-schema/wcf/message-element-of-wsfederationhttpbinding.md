@@ -1,15 +1,16 @@
 ---
-title: <message>élément de<wsFederationHttpBinding>
+title: <message> élément de <wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9d710389-d9d8-4454-9bf2-da4ccda31cec
-ms.openlocfilehash: 8e0903dd1313e68e2de65730e129079199ebe2f2
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ea320b1d97e742d4f90ec55502f3bd429803283d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738983"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204890"
 ---
-# <a name="message-element-of-wsfederationhttpbinding"></a>\<message>élément de\<wsFederationHttpBinding>
+# <a name="message-element-of-wsfederationhttpbinding"></a>\<message> élément de \<wsFederationHttpBinding>
+
 Définit les paramètres pour la sécurité au niveau du message pour [\<wsFederationHttpBinding>](wsfederationhttpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -81,6 +82,7 @@ Définit les paramètres pour la sécurité au niveau du message pour [\<wsFeder
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -134,7 +136,7 @@ Définit les paramètres pour la sécurité au niveau du message pour [\<wsFeder
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement.Message%2A>
 - <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
