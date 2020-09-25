@@ -2,14 +2,15 @@
 title: <add> de <backupList>
 ms.date: 03/30/2017
 ms.assetid: bc5939fc-314a-4ea4-a533-c96958da7173
-ms.openlocfilehash: 80726cc22cb56013c85c7704c28579b1337666c9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6d8fd26170059226583a300b1b48b849666db929
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850543"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181620"
 ---
 # <a name="add-of-backuplist"></a>\<add> de \<backupList>
+
 Représente un élément de configuration qui définit un élément de point de terminaison de sauvegarde.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Représente un élément de configuration qui définit un élément de point de 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -41,6 +43,7 @@ Représente un élément de configuration qui définit un élément de point de 
 |name|Chaîne qui spécifie le nom du point de terminaison de sauvegarde.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

@@ -2,12 +2,12 @@
 title: Test d’une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio pour Mac
 description: Créez un projet de test unitaire pour une bibliothèque de classes .NET Core. Vérifiez que la bibliothèque de classes .NET Core fonctionne correctement avec les tests unitaires.
 ms.date: 06/08/2020
-ms.openlocfilehash: d3c8a5e01d16047949e977f3af6a429970d996d0
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 3adcddc96abf77012f89a28c1cf60ea57ae506a2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359218"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180528"
 ---
 # <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio
 
@@ -165,9 +165,11 @@ Pour tester la version Release :
 
 ## <a name="debug-tests"></a>Déboguer les tests
 
-Vous pouvez utiliser le même processus que celui présenté dans [Didacticiel : déboguer une application console .net core à l’aide de Visual Studio pour Mac](debugging-with-visual-studio-mac.md) pour déboguer le code à l’aide de votre projet de test unitaire. Au lieu de démarrer le projet d’application <kbd>Showcase, cliquez</kbd>sur le projet **StringLibraryTests** , puis sélectionnez **Démarrer le débogage du projet** dans le menu contextuel. Visual Studio démarre le projet de test avec le débogueur attaché. L’exécution s’arrêtera à un point d’arrêt que vous avez ajouté au projet de test ou au code de bibliothèque sous-jacent.
+Si vous utilisez Visual Studio pour Mac comme IDE, vous pouvez utiliser le même processus que celui présenté dans [Didacticiel : déboguer une application de console .net core à l’aide de Visual Studio pour Mac](debugging-with-visual-studio-mac.md) pour déboguer du code à l’aide de votre projet de test unitaire. Au lieu de démarrer le projet d’application *Showcase* <kbd>, cliquez</kbd>sur le projet **StringLibraryTests** , puis sélectionnez **Démarrer le débogage du projet** dans le menu contextuel.
 
-## <a name="additional-resources"></a>Ressources complémentaires
+Visual Studio démarre le projet de test avec le débogueur attaché. L’exécution s’arrêtera à un point d’arrêt que vous avez ajouté au projet de test ou au code de bibliothèque sous-jacent.
+
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
 

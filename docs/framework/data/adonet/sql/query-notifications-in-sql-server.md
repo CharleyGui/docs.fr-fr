@@ -3,14 +3,15 @@ title: Notifications de requête dans SQL Server
 description: Découvrez comment utiliser les notifications de requêtes pour notifier les applications lorsque les données ont changé dans une base de données SQL Server, par exemple, pour actualiser les affichages des applications.
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-ms.openlocfilehash: 43b496db74f7e6fc9bc9f17d946bf34398b32312
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8001f75d7e278a965b6e8e00e4b9af7b770a8bb5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90543983"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183089"
 ---
 # <a name="query-notifications-in-sql-server"></a>Notifications de requête dans SQL Server
+
 Basées sur l’infrastructure de Service Broker, les notifications de requêtes permettent aux applications d’être notifiées en cas de modification des données. Cette fonctionnalité est particulièrement utile pour les applications qui fournissent un cache d'informations à partir d'une base de données, par exemple une application Web, et qui doivent être notifiées en cas de modification des données sources.  
   
  Il existe trois façons d’implémenter des notifications de requête à l’aide de ADO.NET :  
@@ -40,6 +41,7 @@ Basées sur l’infrastructure de Service Broker, les notifications de requêtes
 - [Guide du développeur (Service Broker)](/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Activation des notifications de requêtes](enabling-query-notifications.md)  
  Explique comment utiliser les notifications de requêtes, notamment les exigences pour les activer et les utiliser.  
   
@@ -53,6 +55,7 @@ Basées sur l’infrastructure de Service Broker, les notifications de requêtes
  Illustre la configuration d’un objet <xref:System.Data.SqlClient.SqlCommand> pour utiliser une notification de requête.  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.Data.Sql.SqlNotificationRequest>  
  Décrit la classe <xref:System.Data.Sql.SqlNotificationRequest> et tous ses membres.  
   

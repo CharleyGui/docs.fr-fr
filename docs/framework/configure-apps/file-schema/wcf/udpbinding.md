@@ -2,14 +2,15 @@
 title: <udpBinding>
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
-ms.openlocfilehash: b2ff39e1292cfaad1165e14e693acda2518477a6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 730a051e6823a89c05f8eb894b261e93c0511dcc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559042"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183635"
 ---
 # \<udpBinding>
+
 Élément de configuration utilisé pour configurer la liaison <xref:System.ServiceModel.UdpBinding>.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -45,6 +46,7 @@ ms.locfileid: "90559042"
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -79,9 +81,11 @@ ms.locfileid: "90559042"
 |[\<bindings>](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
 ## <a name="remarks"></a>Notes  
+
  UdpBinding permet aux services WCF de communiquer sur le transport UDP. Cela permet l’échange de messages « incendie et oubli » où un client envoie un message à un service et n’attend aucune réponse.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment configurer à l' <xref:System.ServiceModel.UdpBinding> aide de l' `udpBinding` élément <>.  
   
 ```xml  

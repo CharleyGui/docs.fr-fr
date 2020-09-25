@@ -8,14 +8,15 @@ helpviewer_keywords:
 - cryptographic algorithms
 - names [.NET Framework], algorithm mapping
 ms.assetid: 01327c69-c5e1-4ef6-b73f-0a58351f0492
-ms.openlocfilehash: 5a1d7acdd34182dd82f4dce66d136c4ef4de6e95
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: b67db612496e56a341dab2e5fc4b52c954ff02b4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105354"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183388"
 ---
 # <a name="mapping-algorithm-names-to-cryptography-classes"></a>Mappage de noms d'algorithmes à des classes de chiffrement
+
 Un développeur peut créer un objet de chiffrement à l’aide de l’SDK Windows de quatre façons :  
   
 - Créez un objet à l’aide de l’opérateur **New** .  
@@ -33,6 +34,7 @@ Un développeur peut créer un objet de chiffrement à l’aide de l’SDK Windo
  Si l’algorithme de hachage utilisé n’a pas d’importance, le développeur peut appeler la <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> méthode, qui retourne un objet qui implémente une transformation de hachage.  
   
 ## <a name="mapping-algorithm-names-in-configuration-files"></a>Mappage des noms d’algorithmes dans les fichiers de configuration  
+
  Par défaut, le runtime retourne un <xref:System.Security.Cryptography.SHA1CryptoServiceProvider> objet pour les quatre scénarios. Toutefois, un administrateur d’ordinateur peut modifier le type d’objet retourné par les méthodes dans les deux derniers scénarios. Pour ce faire, vous devez mapper un nom d’algorithme convivial à la classe que vous souhaitez utiliser dans le fichier de configuration de l’ordinateur (Machine.config).  
   
  L’exemple suivant montre comment configurer le runtime afin que **System. Security. Cryptography. SHA1. Create**, **System. Security. CryptoConfig. CREATEFROMNAME ("SHA1")** et **System. Security. Cryptography. HashAlgorithm. Create** retournent un `MySHA1HashClass` objet.  
@@ -70,5 +72,5 @@ Un développeur peut créer un objet de chiffrement à l’aide de l’SDK Windo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Services de chiffrement](../../standard/security/cryptographic-services.md)
+- [services de chiffrement](../../standard/security/cryptographic-services.md)
 - [Configuration de classes de chiffrement](configure-cryptography-classes.md)

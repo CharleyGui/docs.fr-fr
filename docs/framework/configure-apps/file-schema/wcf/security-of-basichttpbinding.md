@@ -2,14 +2,15 @@
 title: <security> de <basicHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 6432708d-5465-4bd9-bfc2-466742db99cb
-ms.openlocfilehash: c8e4f2d000a155eecd2a6c7faaaf4af525b24ca3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6144e5448526d7f2a7c89693f70f71a7f26c4a22
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738716"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183661"
 ---
 # <a name="security-of-basichttpbinding"></a>\<security> de \<basicHttpBinding>
+
 Définit les fonctionnalités de sécurité de [\<basicHttpBinding>](basichttpbinding.md) .  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,13 +33,14 @@ Définit les fonctionnalités de sécurité de [\<basicHttpBinding>](basichttpbi
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|mode|facultatif. Spécifie le type de sécurité qui est utilisé. Par défaut, il s’agit de `None`. Cet attribut est de type <xref:System.ServiceModel.BasicHttpSecurityMode>.|  
+|mode|Optionnel. Spécifie le type de sécurité qui est utilisé. Par défaut, il s’agit de `None`. Cet attribut est de type <xref:System.ServiceModel.BasicHttpSecurityMode>.|  
   
 ## <a name="mode-attribute"></a>Attribut Mode  
   
@@ -63,7 +65,8 @@ Définit les fonctionnalités de sécurité de [\<basicHttpBinding>](basichttpbi
 |-------------|-----------------|  
 |binding|Élément de liaison de [\<basicHttpBinding>](basichttpbinding.md) .|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Par défaut, le message SOAP n'est pas sécurisé et le client n'est pas authentifié. Cet élément permet de configurer des paramètres de sécurité supplémentaires pour l'élément `basicHttpBinding`.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -72,7 +75,7 @@ Définit les fonctionnalités de sécurité de [\<basicHttpBinding>](basichttpbi
 - <xref:System.ServiceModel.Configuration.BasicHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>
 - <xref:System.ServiceModel.BasicHttpSecurity>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Sélection d'un type d'informations d'identification](../../../wcf/feature-details/selecting-a-credential-type.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)

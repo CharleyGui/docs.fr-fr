@@ -25,14 +25,15 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 92ecc4a430aa3c238a7cd8705dc0cec5a9d0cb11
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e40744c9c73e02fe96864d6b1320eb3dde4d1144
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559289"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183453"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Configuration des applications à l'aide de fichiers de configuration
+
 Le .NET Framework, par le biais de fichiers de configuration, permet aux développeurs et administrateurs de contrôler la façon dont les applications s'exécutent avec la souplesse requise. Les fichiers de configuration sont des fichiers XML qui peuvent être modifiés selon les besoins. Un administrateur peut exercer un contrôle sur les ressources protégées auxquelles une application peut accéder, les versions d'assemblys utilisées par une application et l'endroit où sont situés les applications et objets distants. Les développeurs peuvent stocker des paramètres dans des fichiers de configuration, de façon à ce qu'il ne leur soit pas nécessaire de recompiler une application chaque fois qu'un paramètre change. Cette section décrit les éléments qui peuvent être configurés et explique en quoi la configuration d'une application peut se révéler utile.  
   
 > [!NOTE]
@@ -41,6 +42,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
  Cette rubrique décrit la syntaxe des fichiers de configuration et fournit des informations sur les trois types de fichiers de configuration : ordinateur, application et sécurité.  
   
 ## <a name="configuration-file-format"></a>Format des fichiers de configuration  
+
  Les fichiers de configuration contiennent des éléments qui sont des structures de données logiques qui définissent des informations de configuration. Dans un fichier de configuration, vous utilisez des balises pour indiquer le début et la fin d'un élément. Par exemple, l' `<runtime>` élément se compose d' `<runtime>` *éléments enfants* `</runtime>` . Un élément vide s’écrirait ainsi : `<runtime/>` ou `<runtime></runtime>`.  
   
  Comme avec tous les fichiers XML, la syntaxe des fichiers de configuration respecte la casse.  
@@ -53,6 +55,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 ```  
   
 ## <a name="machine-configuration-files"></a>Fichiers de configuration machine  
+
  Le fichier de configuration machine, Machine.config, contient des paramètres qui s'appliquent à l'ordinateur tout entier. Ce fichier se trouve dans le répertoire %*chemin d'installation du runtime*%\Config. Machine.config contient les paramètres de configuration d’une liaison d’assembly à l’échelle de l’ordinateur, de [canaux de communication à distance ](/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100)) intégrés et d’ASP.NET.  
   
  Le système de configuration recherche d’abord dans le fichier de configuration de l’ordinateur l' [ **\<appSettings>** élément](./file-schema/appsettings/index.md) et les autres sections de configuration qu’un développeur peut définir. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
@@ -63,6 +66,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
  Pour plus d’informations sur la façon dont le Common Language Runtime utilise le fichier de configuration machine pour la liaison d’assembly, consultez [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md).  
   
 ## <a name="application-configuration-files"></a>Fichiers de configuration des applications  
+
  Un fichier de configuration d'application contient les paramètres spécifiques à une application. Ce fichier comprend des paramètres de configuration que le Common Language Runtime lit (comme la stratégie de liaison d'assembly, les objets de communication à distance, etc.), et des paramètres que l'application peut lire.  
   
  Le nom et l'emplacement du fichier de configuration de l'application dépendent de l'hôte de l'application, qui peut être l'un des hôtes suivants :  
@@ -88,6 +92,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
      Dans cette balise, `location` représente une URL vers le fichier de configuration. Ceci définit la base de l'application. Le fichier de configuration doit être situé sur le même site web que l'application.  
   
 ## <a name="security-configuration-files"></a>Fichiers de configuration de sécurité  
+
  Les fichiers de configuration de sécurité contiennent des informations sur la hiérarchie du groupe de codes et des jeux d'autorisations associée à un niveau de stratégie. Nous vous recommandons vivement d’utiliser l’[outil Stratégie de sécurité d’accès du code (Caspol.exe)](../tools/caspol-exe-code-access-security-policy-tool.md) pour modifier la stratégie de sécurité et éviter que les modifications de stratégie corrompent les fichiers de configuration de sécurité.  
   
 > [!NOTE]
@@ -102,6 +107,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 - Fichier de configuration de la stratégie de l’utilisateur : %USERPROFILE%\Application data\Microsoft\CLR security config\v*xx.xx*\Security.config  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Procédure : Localiser des assemblys à l’aide de DEVPATH](how-to-locate-assemblies-by-using-devpath.md)  
  Explique comment demander au runtime d'utiliser la variable d'environnement DEVPATH pour rechercher les assemblys.  
   

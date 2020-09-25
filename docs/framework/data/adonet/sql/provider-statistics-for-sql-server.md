@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
-ms.openlocfilehash: 5e37a04ff731a99664d636e0d4175f99214c2646
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 21bf7662094d5bc8948a1ce6378c454713cacc62
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174509"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183115"
 ---
 # <a name="provider-statistics-for-sql-server"></a>Fournisseur de statistiques pour SQL Server
+
 À partir du .NET Framework version 2.0, le fournisseur de données .NET Framework pour SQL Server prend en charge des statistiques d'exécution. Vous devez activer les statistiques en affectant à la propriété <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> de l’objet <xref:System.Data.SqlClient.SqlConnection> la valeur `True` une fois que vous avez créé un objet de connexion valide. Une fois les statistiques activées, vous pouvez les examiner comme un « instantané dans le temps » en extrayant une référence <xref:System.Collections.IDictionary> via la méthode <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> de l’objet <xref:System.Data.SqlClient.SqlConnection>. Vous énumérez la liste sous la forme d’un ensemble d’entrées de dictionnaire avec des paires nom/valeur. Ces paires nom/valeur ne sont pas ordonnées. À tout moment, vous pouvez appeler la méthode <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> de l’objet <xref:System.Data.SqlClient.SqlConnection> pour réinitialiser les compteurs. Si la collecte de statistiques n’a pas été activée, aucune exception n’est générée. En outre, si <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> est appelé sans que <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> ait été appelé au préalable, les valeurs récupérées sont les valeurs initiales de chaque entrée. Si vous activez les statistiques, exécutez votre application pendant un certain temps, puis désactivez les statistiques, les valeurs récupérées reflètent les valeurs collectées jusqu’au point où les statistiques ont été désactivées. Toutes les valeurs statistiques rassemblées sont basées sur une connexion individuelle.  
   
 ## <a name="statistical-values-available"></a>Valeurs statistiques disponibles  
+
  Actuellement, il existe 18 éléments différents disponibles auprès du fournisseur Microsoft SQL Server. Le nombre d’éléments disponibles est accessible par le biais de la propriété **Count** de la référence d’interface <xref:System.Collections.IDictionary> retournée par <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A>. Tous les compteurs relatifs aux statistiques de fournisseur utilisent le type Common Language Runtime <xref:System.Int64> (**long** en C# et Visual Basic), dont la taille est de 64 bits. La valeur maximale du type de données **int64**, telle que définie par le champ **int64.MaxValue**, est ((2^63)-1)). Lorsque les valeurs des compteurs atteignent cette valeur maximale, elles ne doivent plus être considérées comme exactes. Cela signifie que **int64.MaxValue**-1((2^63)-2) est effectivement la valeur valide la plus élevée pour toute statistique.  
   
 > [!NOTE]
@@ -45,6 +47,7 @@ ms.locfileid: "79174509"
 |`UnpreparedExecs`|Retourne le nombre d’instructions non préparées exécutées via la connexion une fois que l’application a démarré à l’aide du fournisseur et activé les statistiques.|  
   
 ### <a name="retrieving-a-value"></a>Extraction d'une valeur  
+
  L’application console suivante montre comment activer les statistiques sur une connexion, récupérer quatre valeurs de statistiques individuelles et les écrire dans la fenêtre de la console.  
   
 > [!NOTE]
@@ -201,6 +204,7 @@ namespace CS_Stats_Console_GetValue
 ```  
   
 ### <a name="retrieving-all-values"></a>Extraction de toutes les valeurs  
+
  L’application console suivante montre comment activer les statistiques sur une connexion, récupérer toutes les valeurs statistiques disponibles à l’aide de l’énumérateur et les écrire dans la fenêtre de la console.  
   
 > [!NOTE]

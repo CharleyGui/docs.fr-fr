@@ -5,19 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
-ms.openlocfilehash: 0cefca33bde94855a2bb20a6404dfd4e75a954c2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 35275206e0486c35f262116fa1deb06b9f285723
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174522"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183128"
 ---
 # <a name="polling-in-console-applications"></a>Interrogation dans les applications console
+
 Les opérations asynchrones dans ADO.NET vous permettent de lancer des opérations de base de données qui prennent du temps sur un thread tout en effectuant d’autres tâches sur un autre thread. Dans la plupart des scénarios, toutefois, vous finira par atteindre un point où votre application ne doit pas continuer jusqu’à ce que l’opération de base de données soit terminée. Dans ce cas, il est utile d’interroger l’opération asynchrone pour déterminer si l’opération est terminée ou non.  
   
  Vous pouvez utiliser la propriété <xref:System.IAsyncResult.IsCompleted%2A> pour déterminer si l’opération est terminée ou non.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  L’application console suivante met à jour des données dans l’exemple de base de données **AdventureWorks**, en opérant de façon asynchrone. Afin d’émuler un processus de longue durée, cet exemple insère une instruction WAITFOR dans le texte de la commande. Normalement, vous ne devez pas essayer de ralentir vos commandes, mais dans ce cas, cela simplifie l’illustration du comportement asynchrone.  
   
 ```vb  

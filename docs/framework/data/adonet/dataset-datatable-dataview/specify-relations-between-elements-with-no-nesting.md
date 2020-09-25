@@ -2,17 +2,18 @@
 title: Spécifier les relations entre éléments sans imbrication
 ms.date: 03/30/2017
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
-ms.openlocfilehash: bee427c6cdf76792773ea827c8772b276ff29c31
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6684e992242d5c695f3c237f70de61b4dae1c48f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150816"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183401"
 ---
 # <a name="specify-relations-between-elements-with-no-nesting"></a>Spécifier les relations entre éléments sans imbrication
-Lorsque des éléments ne sont pas imbriqués, aucune relation implicite n'est créée. Vous pouvez cependant spécifier explicitement les relations entre les éléments qui ne sont pas imbriqués en utilisant **l’annotation msdata:Relation.**  
+
+Lorsque des éléments ne sont pas imbriqués, aucune relation implicite n'est créée. Toutefois, vous pouvez spécifier explicitement des relations entre des éléments qui ne sont pas imbriqués à l’aide de l’annotation **msdata : Relationship** .  
   
- L’exemple suivant montre un schéma XML dans lequel **l’annotation msdata:Relation** est spécifiée entre les éléments **Order** et **OrderDetail,** qui ne sont pas imbriqués. **L’annotation msdata:Relation** est spécifiée comme l’élément enfant de l’élément **Schema.**  
+ L’exemple suivant illustre un schéma XML dans lequel l’annotation **msdata : Relationship** est spécifiée entre les éléments **Order** et **OrderDetail** , qui ne sont pas imbriqués. L’annotation **msdata : Relationship** est spécifiée en tant qu’élément enfant de l’élément **Schema** .  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""
@@ -53,7 +54,7 @@ Lorsque des éléments ne sont pas imbriqués, aucune relation implicite n'est c
 </xs:schema>  
 ```  
   
- Le processus de cartographie des schémas de définition XML Schema (XSD) crée une <xref:System.Data.DataSet> relation avec les tables **Order** and **OrderDetail** et une relation spécifiée entre ces deux tableaux, comme indiqué ci-dessous.  
+ Le processus de mappage de schéma en langage XSD (XML Schema Definition) crée un <xref:System.Data.DataSet> avec les tables **Order** et **OrderDetail** , ainsi qu’une relation entre ces deux tables, comme indiqué ci-dessous.  
   
 ```text  
 RelationName: OrdOrderDetailRelation  

@@ -4,17 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: a0160b1b-3d9c-4cc8-8391-cb0986a60a41
-ms.openlocfilehash: eb7d92b1605c6ced8319e0372c8471cd4e388cb8
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: dcca6023349148ac7f65f97028d876514ef31163
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569239"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91182833"
 ---
 # <a name="data-services-providers-wcf-data-services"></a>Fournisseurs de services de données (services de données WCF)
+
 WCF Data Services prend en charge plusieurs modèles de fournisseur pour exposer des données en tant que flux Open Data Protocol (OData). Cette rubrique fournit des informations pour vous permettre de sélectionner le meilleur fournisseur de WCF Data Services pour votre source de données.  
   
 ## <a name="data-source-providers"></a>Fournisseurs de sources de données  
+
  WCF Data Services prend en charge les fournisseurs suivants pour définir le modèle de données d’un service de données.  
   
 |Fournisseur|Description|  
@@ -24,6 +26,7 @@ WCF Data Services prend en charge plusieurs modèles de fournisseur pour exposer
 |Fournisseurs de services de données personnalisés|WCF Data Services comprend un ensemble de fournisseurs qui vous permettent de définir dynamiquement un modèle de données basé sur des types de données à liaison tardive. Vous devez implémenter ces interfaces lorsque les données exposées sont inconnues au moment de la conception de l’application ou lorsque les fournisseurs d’Entity Framework ou de réflexion ne sont pas suffisants. Pour plus d’informations, consultez [fournisseurs de services de données personnalisés](custom-data-service-providers-wcf-data-services.md).|  
   
 ## <a name="other-data-service-providers"></a>Autres fournisseurs de services de données  
+
  WCF Data Services dispose du fournisseur de services de données supplémentaire suivant qui améliore les performances d’une source de données définie à l’aide de l’un des autres fournisseurs.  
   
 |Fournisseur|Description|  
@@ -32,6 +35,6 @@ WCF Data Services prend en charge plusieurs modèles de fournisseur pour exposer
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Définition de WCF Data Services](defining-wcf-data-services.md)
+- [Définition des services de données WCF](defining-wcf-data-services.md)
 - [Configuration du service de données](configuring-the-data-service-wcf-data-services.md)
 - [Hébergement du service de données](hosting-the-data-service-wcf-data-services.md)

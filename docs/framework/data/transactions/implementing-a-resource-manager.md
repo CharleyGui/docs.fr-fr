@@ -3,14 +3,15 @@ title: Implémentation d'un gestionnaire des ressources
 description: Implémentez un gestionnaire de ressources dans .NET. Un gestionnaire de ressources gère les ressources utilisées dans les transactions. Un gestionnaire de transactions coordonne les actions du gestionnaire de ressources.
 ms.date: 03/30/2017
 ms.assetid: d5c153f6-4419-49e3-a5f1-a50ae4c81bf3
-ms.openlocfilehash: bf40c6eaee35a5a548c6de4a286e46c4d4a66aca
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: e6370f6b544255ebdc402f06b7977d4a3a587c32
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141847"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91182894"
 ---
 # <a name="implementing-a-resource-manager"></a>Implémentation d'un gestionnaire des ressources
+
 Les ressources utilisées dans une transaction sont managées par un gestionnaire de ressources, dont les actions sont coordonnées par un gestionnaire de transactions. Les gestionnaires de ressources travaillent en coopération avec le gestionnaire de transactions pour fournir à l'application la garantie de l'atomicité et de l'isolation. Microsoft SQL Server, les files d'attente de messages durables et les tables de hachage en mémoire sont des gestionnaires de ressources.  
   
  Les gestionnaires de ressources gèrent des données durables ou volatiles. La durabilité (ou à l'inverse la volatilité) d'un gestionnaire de ressources indique s'il prend en charge la récupération après défaillance. Si un gestionnaire de ressources prend en charge la récupération après défaillance, il conserve les données par stockage durable lors de la Phase1 (préparation). Ainsi, s'il connaît une défaillance, il peut à nouveau s'inscrire à la transaction après récupération et procéder aux actions indiquées par les notifications envoyées par le gestionnaire de transactions. En général, les gestionnaires de ressources volatiles gèrent les ressources volatiles, comme une structure de données en mémoire (par exemple, une table de hachage traitée en mémoire), et les gestionnaires de ressources durables gèrent les ressources qui disposent d'un magasin de stockage plus persistant (par exemple, une base de données ayant un disque comme magasin de stockage).  
@@ -34,13 +35,14 @@ Les ressources utilisées dans une transaction sont managées par un gestionnair
  La classe <xref:System.Transactions.Transaction> fournit également la méthode <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> permettant de s'inscrire à une PSPE (Promotable Single Phase Enlistment). Cela permet à un gestionnaire de ressources durables d'héberger et de « posséder » une transaction qui peut, si nécessaire, être ensuite remontée pour être managée par le MSDTC. Pour plus d’informations, consultez [optimisation à l’aide de la validation à phase unique et de la notification à phase unique pouvant être promue](optimization-spc-and-promotable-spn.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  Les étapes généralement suivies par un gestionnaire de ressources sont détaillées dans les rubriques suivantes.  
   
  [Inscription de ressources comme participants à une transaction](enlisting-resources-as-participants-in-a-transaction.md)  
   
  Décrit comment inscrire une ressource durable ou volatile à une transaction.  
   
- [Validation d’une transaction en une phase unique et en plusieurs phases](committing-a-transaction-in-single-phase-and-multi-phase.md)  
+ [Validation d'une transaction en une phase unique et en plusieurs phases](committing-a-transaction-in-single-phase-and-multi-phase.md)  
   
  Décrit la façon dont un gestionnaire de ressources répond à la notification de validation et prépare la validation.  
   
@@ -48,10 +50,10 @@ Les ressources utilisées dans une transaction sont managées par un gestionnair
   
  Décrit comment un gestionnaire de ressources durables récupère après la défaillance.  
   
- [Niveaux de confiance de sécurité dans l’accès aux ressources](security-trust-levels-in-accessing-resources.md)  
+ [Niveaux de confiance de sécurité dans l'accès aux ressources](security-trust-levels-in-accessing-resources.md)  
   
  Décrit comment les trois niveaux de confiance de System.Transactions permettent de restreindre l'accès aux types de ressources que <xref:System.Transactions> expose.  
   
- [Optimisation à l’aide de la validation à phase unique et de la notification de phase unique pouvant être promue](optimization-spc-and-promotable-spn.md)  
+ [Optimisation à l'aide de la validation à phase unique et de la notification de phase unique pouvant être promue](optimization-spc-and-promotable-spn.md)  
   
  Décrit les pratiques d'optimisation disponibles pour l'implémentations des gestionnaires de ressources.

@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
-ms.openlocfilehash: acb94efd8b6b6b66d0cc84309c2d68ad692b08d3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 20a573da0221704451f10138cb854523d5a17f17
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174496"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183050"
 ---
 # <a name="specifying-xml-values-as-parameters"></a>Spécification de valeurs XML comme paramètres
+
 Si une requête demande un paramètre dont la valeur est une chaîne XML, les développeurs peuvent fournir cette valeur à l’aide d’une instance du type de données **SqlXml**. Il n’y a réellement pas d’astuces ; les colonnes XML dans SQL Server acceptent les valeurs de paramètres exactement de la même manière que d’autres types de données.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  L’application console suivante crée une table dans la base de données **AdventureWorks**. La nouvelle table inclut une colonne nommée **SalesID** et une colonne XML nommée **SalesInfo**.  
   
 > [!NOTE]
