@@ -3,14 +3,15 @@ title: <add>
 ms.date: 03/30/2017
 ms.assetid: 4712a888-f154-4395-8887-ef14a88a6497
 author: BrucePerlerMS
-ms.openlocfilehash: 7c2b6bdc62da63905d7ff33a9984808e7b7d114f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2f37019fa0787f5c5553dbd3debc173ec0a047ee
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544538"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189953"
 ---
 # \<add>
+
 Ajoute le gestionnaire de jetons de sécurité spécifié à la collection de gestionnaires de jetons.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Ajoute le gestionnaire de jetons de sécurité spécifié à la collection de ge
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -59,6 +61,7 @@ Ajoute le gestionnaire de jetons de sécurité spécifié à la collection de ge
 |[\<securityTokenHandlers>](securitytokenhandlers.md)|Spécifie une collection de gestionnaires de jetons de sécurité inscrits auprès du point de terminaison.|  
   
 ## <a name="remarks"></a>Notes  
+
  L' `<add>` élément peut accepter un seul élément enfant qui spécifie la configuration du gestionnaire de jetons. Cela dépend du fait que la classe de gestionnaire référencée par l' `type` attribut de l' `<add>` élément assure la prise en charge de cette fonctionnalité. Les classes de gestionnaire de jetons qui fournissent cette fonctionnalité doivent exposer un constructeur qui prend un <xref:System.Xml.XmlElement> objet.  
 
 ```csharp  
@@ -77,7 +80,8 @@ public class CustomTokenHandler : Microsoft.IdentityModel.Tokens.SecurityTokenHa
   
  Les paramètres spécifiés sur un gestionnaire substituent les paramètres équivalents spécifiés dans la collection de gestionnaires de jetons sous l' [\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md) élément et ceux spécifiés au niveau du service sous l' [\<identityConfiguration>](identityconfiguration.md) élément.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code XML suivant montre l’utilisation des `<add>` `<remove>` éléments et pour remplacer le gestionnaire de jetons de session par défaut par un gestionnaire de jetons de session personnalisé. Le code XML est extrait de l' `ClaimsAwareWebFarm` exemple.  
   
 ```xml  

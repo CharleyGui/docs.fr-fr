@@ -1,15 +1,16 @@
 ---
-title: <dataContractSerializer>de <System. Runtime. Serialization>
+title: <dataContractSerializer> de <System. Runtime. Serialization>
 ms.date: 03/30/2017
 ms.assetid: d9b3d625-be3f-4768-8e0d-1b7e6929f6a8
-ms.openlocfilehash: eb556f533af1f99049382e9a2e34465f88d563db
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a8d379e7a37bca0cdb58836a6afdf814320e2411
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398077"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190187"
 ---
 # <a name="datacontractserializer-of-systemruntimeserialization"></a>\<dataContractSerializer> de \<system.runtime.serialization>
+
 Contient les données de configuration correspondant au <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ Contient les données de configuration correspondant au <xref:System.Runtime.Ser
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -58,7 +60,8 @@ Contient les données de configuration correspondant au <xref:System.Runtime.Ser
 |-------------|-----------------|  
 |[\<system.runtime.serialization>](system-runtime-serialization.md)|Représente l'élément racine correspondant à la section d'espace de noms <xref:System.Runtime.Serialization> et contient des éléments permettant de définir les options du <xref:System.Runtime.Serialization.DataContractSerializer>.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Pour plus d’informations sur les types connus, consultez <xref:System.Runtime.Serialization.DataContractSerializer> et [types connus de contrat de données](../../../wcf/feature-details/data-contract-known-types.md).  
   
 ## <a name="see-also"></a>Voir aussi

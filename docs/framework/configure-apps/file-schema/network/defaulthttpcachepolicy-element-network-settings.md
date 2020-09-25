@@ -8,14 +8,15 @@ helpviewer_keywords:
 - defaultHttpCachePolicy element
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
-ms.openlocfilehash: c5029a7d1e53c28d0abb232efdc3e0bd2c9658d4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4120c57fbb65da1c124414cbe9cfba7ae64388f8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088417"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190317"
 ---
 # <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy>, élément (paramètres réseau)
+
 Indique si la mise en cache HTTP est active et décrit la stratégie de mise en cache par défaut.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Indique si la mise en cache HTTP est active et décrit la stratégie de mise en 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -47,7 +49,8 @@ Indique si la mise en cache HTTP est active et décrit la stratégie de mise en 
 |`policyLevel`|Spécifie si la stratégie de mise en cache est automatique ou si le cache est contourné. La valeur par défaut est `BypassCache`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -55,15 +58,18 @@ Indique si la mise en cache HTTP est active et décrit la stratégie de mise en 
 |-------------|-----------------|  
 |[requestCaching](requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  La valeur de l' `policyLevel` attribut est `BypassCache` ou `Default` .  
   
  Les valeurs des `maximumAge` `maximumStale` éléments, et `minimumFresh` sont soit un intervalle de temps explicite avec un format *d*.* HH*:*mm*:*SS* (jours, heures, minutes et secondes), ou les constantes `minValue` ou `maxValue` , selon le cas.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment spécifier une heure de nouvelle actualisation minimale de six heures, une durée d’ancienneté maximale de deux jours et une durée d’obsolescence maximale de quatre heures.  
   
 ```xml  

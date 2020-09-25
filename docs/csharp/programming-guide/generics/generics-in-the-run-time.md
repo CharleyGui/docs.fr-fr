@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], at run time
 ms.assetid: 119df7e6-9ceb-49df-af36-24f8f8c0747f
-ms.openlocfilehash: 8e072e7aa53177929dda0be931beb85863b6a12e
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 1d2afd34d1a80841ba711897492cd4cd6412fa53
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299225"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184116"
 ---
 # <a name="generics-in-the-run-time-c-programming-guide"></a>Génériques dans le runtime (Guide de programmation C#)
+
 Quand une méthode ou un type générique est compilé dans le langage intermédiaire Microsoft (MSIL), il ou elle contient des métadonnées qui l’identifient comme ayant des paramètres de type. La façon dont le langage MSIL d’un type générique est utilisé diffère selon que le paramètre de type fourni est un type valeur ou référence.  
   
  Quand un type générique est construit en premier avec un type valeur comme paramètre, le runtime crée un type générique spécialisé avec le paramètre fourni ou les paramètres substitués aux emplacements appropriés dans le langage MSIL. Des types génériques spécialisés sont créés une fois pour chaque type valeur unique qui est utilisé comme paramètre.  

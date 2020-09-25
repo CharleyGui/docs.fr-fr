@@ -10,14 +10,15 @@ helpviewer_keywords:
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-ms.openlocfilehash: 5bfd988e8e399273dbd3292543a3730234c022d6
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: bcae4b64bdd2a939e35666a9068611b273c261da
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128554"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91188419"
 ---
 # <a name="-target-c-compiler-options"></a>-target (Options du compilateur C#)
+
 L’option du compilateur **-target** peut être spécifiée dans l’une des formes suivantes :  
   
  [-target:appcontainerexe](./target-appcontainerexe-compiler-option.md)  

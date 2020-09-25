@@ -5,14 +5,15 @@ helpviewer_keywords:
 - supportPortability element
 - <supportPortability> element
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
-ms.openlocfilehash: 99fa51238040f21d998a8c6c2aef7c13d288104a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 05ce6943b9456d4fd380ea8d6cf354d197b92f96
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551583"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183947"
 ---
 # <a name="supportportability-element"></a>Élément \<supportPortability>
+
 Spécifie qu’une application peut référencer le même assembly dans deux implémentations différentes du .NET Framework, en désactivant le comportement par défaut qui traite les assemblys de façon équivalente à des fins de portabilité des applications.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,7 +40,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |true|Active la prise en charge de la portabilité entre les implémentations de l’assembly de .NET Framework spécifié. Il s’agit de la valeur par défaut.|  
 |false|Désactive la prise en charge de la portabilité entre les implémentations de l’assembly de .NET Framework spécifié. Cela permet à l’application d’avoir des références à plusieurs implémentations de l’assembly spécifié.|  
@@ -65,7 +66,7 @@ Un tel scénario est un assembly qui doit référencer à la fois l’implément
 > [!IMPORTANT]
 > Pour que le compilateur passe les informations à la logique de liaison d’assembly du common language runtime, vous devez utiliser l' `/appconfig` option du compilateur pour spécifier l’emplacement du fichier app.config qui contient cet élément.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
 
 L’exemple suivant permet à une application d’avoir des références à l’implémentation de .NET Framework et à la .NET Framework pour l’implémentation Silverlight de tout assembly .NET Framework qui existe dans les deux implémentations. L' `/appconfig` option de compilateur doit être utilisée pour spécifier l’emplacement de ce fichier app.config.  
   

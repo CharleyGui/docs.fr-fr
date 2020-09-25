@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 0d62c8d3c4669673d26f2d5535d7940fce702f66
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ea063b333ea0680071b880f26753bfd74b71d80f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547445"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91188874"
 ---
 # <a name="table-valued-parameters"></a>Paramètres table
+
 Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes de données d’une application cliente vers SQL Server sans avoir recours à plusieurs allers-retours ou à une logique spéciale côté serveur pour traiter les données. Vous pouvez utiliser des paramètres table pour encapsuler des lignes de données dans une application cliente et envoyer les données au serveur dans une commande paramétrable unique. Les lignes de données entrantes sont stockées dans une variable de table que vous pouvez ensuite utiliser à l’aide de Transact-SQL.  
   
  Les valeurs de colonne dans les paramètres table sont accessibles à l’aide d’instructions Transact-SQL SELECT standard. Les paramètres table sont fortement typés et leur structure est validée automatiquement. La taille des paramètres table est limitée uniquement par la mémoire du serveur.  
@@ -29,6 +30,7 @@ Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes 
 |[Types de tables définis par l'utilisateur](/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))|Décrit les types de tables définis par l’utilisateur qui permettent de déclarer des paramètres table.|  
   
 ## <a name="passing-multiple-rows-in-previous-versions-of-sql-server"></a>Passage de plusieurs lignes dans les versions précédentes de SQL Server  
+
  Avant l’introduction des paramètres table dans SQL Server 2008, les options permettant de passer plusieurs lignes de données à une procédure stockée ou à une commande SQL paramétrée étaient limitées. Un développeur peut choisir parmi les options suivantes pour transmettre plusieurs lignes au serveur :  
   
 - Utilisez une série de paramètres individuels pour représenter les valeurs dans plusieurs colonnes et lignes de données. La quantité de données transmissibles selon cette méthode est limitée par le nombre de paramètres autorisés. Les procédures SQL Server peuvent contenir jusqu’à 2 100 paramètres. Une logique côté serveur est requise pour assembler ces différentes valeurs dans une variable de table ou une table temporaire à des fins de traitement.  
@@ -40,6 +42,7 @@ Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes 
 - Utilisez le programme utilitaire `bcp` ou l’objet <xref:System.Data.SqlClient.SqlBulkCopy> pour charger de nombreuses lignes de données dans une table. Bien que cette technique soit très efficace, elle ne prend pas en charge le traitement côté serveur à moins que les données ne soient chargées dans une table temporaire ou une variable table.  
   
 ## <a name="creating-table-valued-parameter-types"></a>Création de types de paramètre table  
+
  Les paramètres table sont basés sur des structures de table fortement typées qui sont définies à l’aide des instructions Transact-SQL CREATe TYPE. Vous devez créer un type de table et définir la structure dans SQL Server avant de pouvoir utiliser les paramètres table dans vos applications clientes. Pour plus d’informations sur la création de types de table, consultez [types de tables définis par l’utilisateur](/previous-versions/sql/sql-server-2008/bb522526(v=sql.100)).  
   
  L’instruction suivante crée un type table nommé CategoryTableType qui se compose de colonnes CategoryID et CategoryName :  
@@ -57,6 +60,7 @@ CREATE PROCEDURE usp_UpdateCategories
 ```  
   
 ## <a name="modifying-data-with-table-valued-parameters-transact-sql"></a>Modification des données à l'aide des paramètres table (Transact-SQL)  
+
  Les paramètres table peuvent être utilisés dans des modifications de données basées sur des jeux qui affectent plusieurs lignes en exécutant une instruction unique. Par exemple, vous pouvez sélectionner toutes les lignes d’un paramètre table et les insérer dans une table de base de données, ou créer une instruction de mise à jour en joignant un paramètre table à la table à mettre à jour.  
   
  L’instruction Transact-SQL UPDATE suivante montre comment utiliser un paramètre table en le joignant à la table Categories. Si vous utilisez un paramètre table avec un JOIN dans une clause FROM, vous devez également créer un alias pour celui-ci (ici, le paramètre table a pour alias « ec ») :  
@@ -76,6 +80,7 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
 ```  
   
 ## <a name="limitations-of-table-valued-parameters"></a>Limites des paramètres table  
+
  Les paramètres table présentent plusieurs limitations :  
   
 - Vous ne pouvez pas passer de paramètres table aux [fonctions CLR définies par l’utilisateur](/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions).  
@@ -87,6 +92,7 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
 - Vous ne pouvez pas utiliser d’instructions ALTER TABLE pour modifier la conception de paramètres table.  
   
 ## <a name="configuring-a-sqlparameter-example"></a>Exemple : configuration d'un SqlParameter  
+
  <xref:System.Data.SqlClient> prend en charge le remplissage des paramètres table à partir d’objets <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> ou <xref:System.Collections.Generic.IEnumerable%601> \ <xref:Microsoft.SqlServer.Server.SqlDataRecord>. Vous devez spécifier un nom de type pour le paramètre table à l’aide de la propriété <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> d’un objet <xref:System.Data.SqlClient.SqlParameter>. Le `TypeName` doit correspondre au nom d’un type compatible précédemment créé sur le serveur. Le fragment de code suivant montre comment configurer <xref:System.Data.SqlClient.SqlParameter> pour insérer des données.  
 
 Dans l’exemple ci-dessous, la variable `addedCategories` contient un <xref:System.Data.DataTable>. Pour voir comment la variable est remplie, consultez les exemples de la section suivante, [Passage d'un paramètre table à une procédure stockée](#passing).
@@ -130,6 +136,7 @@ tvpParam.SqlDbType = SqlDbType.Structured
 ```  
   
 ## <a name="passing-a-table-valued-parameter-to-a-stored-procedure"></a><a name="passing"></a> Passage d’un paramètre table à une procédure stockée  
+
  Cet exemple montre comment passer des données de paramètre table à une procédure stockée. Le code extrait des lignes ajoutées dans une nouvelle <xref:System.Data.DataTable> à l’aide de la méthode <xref:System.Data.DataTable.GetChanges%2A>. Le code définit ensuite une <xref:System.Data.SqlClient.SqlCommand>, en définissant la propriété <xref:System.Data.SqlClient.SqlCommand.CommandType%2A> sur la valeur <xref:System.Data.CommandType.StoredProcedure>. <xref:System.Data.SqlClient.SqlParameter> est rempli à l’aide de la méthode <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A> et le <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> est défini sur `Structured`. La <xref:System.Data.SqlClient.SqlCommand> est ensuite exécutée à l’aide de la méthode <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A>.  
   
 ```csharp  
@@ -172,6 +179,7 @@ End Using
 ```  
   
 ### <a name="passing-a-table-valued-parameter-to-a-parameterized-sql-statement"></a>Passage d'un paramètre table à une instruction SQL paramétrée  
+
  L’exemple suivant montre comment insérer des données dans la table dbo.Categories à l’aide d’une instruction INSERT avec une sous-requête SELECT qui a un paramètre table comme source de données. Lors du passage d’un paramètre table à une instruction SQL paramétrable, vous devez spécifier un nom de type pour le paramètre table à l’aide de la nouvelle propriété <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> d’un <xref:System.Data.SqlClient.SqlParameter>. Ce `TypeName` doit correspondre au nom d’un type compatible précédemment créé sur le serveur. Le code de cet exemple utilise la propriété `TypeName` pour référencer la structure de type définie dans dbo.CategoryTableType.  
   
 > [!NOTE]
@@ -228,6 +236,7 @@ End Using
 ```  
   
 ## <a name="streaming-rows-with-a-datareader"></a>Diffusion en continu des lignes à l'aide d'un objet DataReader  
+
  Vous pouvez également utiliser n’importe quel objet dérivé de l’objet <xref:System.Data.Common.DbDataReader> pour transmettre en continu des lignes de données à un paramètre table. Le fragment de code suivant montre comment récupérer des données d’une base de données Oracle à l’aide d’une <xref:System.Data.OracleClient.OracleCommand> et d’un <xref:System.Data.OracleClient.OracleDataReader>. Le code configure ensuite une <xref:System.Data.SqlClient.SqlCommand> pour appeler une procédure stockée avec un seul paramètre d’entrée. La propriété <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> du <xref:System.Data.SqlClient.SqlParameter> a la valeur `Structured`. <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A> transmet le jeu de résultats `OracleDataReader` à la procédure stockée en tant que paramètre table.  
   
 ```csharp  

@@ -2,14 +2,15 @@
 title: <dynamicEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 929f223d-176d-4205-9505-234ddb6dbff4
-ms.openlocfilehash: da57ca3ba3bc0036727a749f1cab9ec3657a4fda
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6f9cb127deb5651ed27a0ef5802512fb5b6c7b54
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855342"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190096"
 ---
 # \<dynamicEndpoint>
+
 Cet élément de configuration définit un point de terminaison standard qui contient des informations pour permettre à une application de fonctionner en tant que programme client qui peut rechercher l'adresse du point de terminaison de manière dynamique au moment de l'exécution.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -45,9 +46,11 @@ Cet élément de configuration définit un point de terminaison standard qui con
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  

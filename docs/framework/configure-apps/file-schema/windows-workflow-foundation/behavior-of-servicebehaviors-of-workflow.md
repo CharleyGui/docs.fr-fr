@@ -1,16 +1,17 @@
 ---
-title: <behavior>de <serviceBehaviors> Workflow
+title: <behavior> de <serviceBehaviors> Workflow
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 6a4b718a-1b40-4957-935a-f6122819ab3c
-ms.openlocfilehash: 071cff8e9f6ec3fa0546a07d19160869d8b43f60
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 14c528746963a3078e0ab377d095414d2fca0dbe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152318"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189615"
 ---
-# <a name="behavior-of-servicebehaviors-of-workflow"></a>\<behavior>de \<serviceBehaviors> Workflow
+# <a name="behavior-of-servicebehaviors-of-workflow"></a>\<behavior> de \<serviceBehaviors> Workflow
+
 L’élément **Behavior** contient une collection de paramètres pour le comportement d’un service. Chaque comportement est indexé par son **nom**. Les services peuvent être liés à chaque comportement via ce nom à l’aide de l’attribut **behaviorConfiguration** de l' [\<endpoint>](../wcf/endpoint-element.md) élément. Ceci permet aux points de terminaison de partager des configurations de comportement communes sans redéfinir les paramètres.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -52,6 +53,7 @@ L’élément **Behavior** contient une collection de paramètres pour le compor
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  

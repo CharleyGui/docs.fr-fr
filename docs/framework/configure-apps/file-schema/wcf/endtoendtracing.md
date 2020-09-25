@@ -2,14 +2,15 @@
 title: <endToEndTracing>
 ms.date: 03/30/2017
 ms.assetid: 5034f5de-bb60-4157-9ad4-58aaade094e0
-ms.openlocfilehash: 1a274f15800c6a132994a2437943c83982de9de0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6b50c0c3db644787fe41ee58ced7eb640e7295f1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855297"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190018"
 ---
 # \<endToEndTracing>
+
 Élément de configuration qui vous permet d'activer et désactiver différents aspects du suivi de bout en bout pendant l'exécution d'une application de service.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ ms.locfileid: "70855297"
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -41,6 +43,7 @@ ms.locfileid: "70855297"
 |`propagateActivity`|Valeur booléenne qui spécifie si l'attribut de propagation a la valeur True.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

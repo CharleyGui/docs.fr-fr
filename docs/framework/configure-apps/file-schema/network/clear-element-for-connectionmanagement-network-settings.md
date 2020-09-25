@@ -10,14 +10,15 @@ helpviewer_keywords:
 - clear element, connectionManagement
 - <connectionManagement>, clear element
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
-ms.openlocfilehash: a76df48a9de084e1121a5e96b22edf7aa3acba23
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 446bec116118ee8b604ef3664a6eb0452e6d5a38
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088484"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184103"
 ---
 # <a name="clear-element-for-connectionmanagement-network-settings"></a>\<clear>, élément de connectionManagement (paramètres réseau)
+
 Efface la liste de gestion des connexions.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,27 +33,33 @@ Efface la liste de gestion des connexions.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[connectionManagement](connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `clear` élément efface toutes les entrées de la liste de gestion des connexions.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant efface la liste de gestion des connexions, puis ajoute de nouvelles entrées de gestion des connexions pour le serveur `www.contoso.com` et tous les autres hôtes réseau.  
   
 ```xml  

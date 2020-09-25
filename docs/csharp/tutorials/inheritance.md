@@ -4,12 +4,12 @@ description: Apprenez à utiliser l’héritage dans les bibliothèques et appli
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 70db8716bea84984ad56d79fa9e26aab3a8182fa
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: b0d6a4a3db4d6606375cc3364ee7abc3029f1d9b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063508"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190460"
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 
@@ -277,6 +277,7 @@ Vous pouvez maintenant instancier un objet `Book`, appeler ses membres uniques e
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
 
 ## <a name="designing-abstract-base-classes-and-their-derived-classes"></a>Conception de classes de base abstraites et de leurs classes dérivées
+
 <a name="abstract"></a>
 
 Dans l’exemple précédent, vous avez défini une classe de base qui a fourni une implémentation d’un certain nombre de méthodes pour permettre aux classes dérivées de partager du code. Dans de nombreux cas, toutefois, la classe de base n'est pas censée fournir une implémentation. Au lieu de cela, la classe de base est une *classe abstraite* qui déclare des *méthodes abstraites* ; elle sert de modèle qui définit les membres que chaque classe dérivée doit implémenter. En général, dans une classe de base abstraite, l’implémentation de chaque type dérivé est unique pour ce type. Vous avez marqué la classe avec le mot clé abstract, car il n’était pas judicieux d’instancier un objet `Publication`, même si la classe fournissait des implémentations de fonctionnalités communes aux publications.

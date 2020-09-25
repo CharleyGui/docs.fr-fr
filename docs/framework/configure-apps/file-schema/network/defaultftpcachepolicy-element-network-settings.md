@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <defaultFtpCachePolicy> element
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-ms.openlocfilehash: 9261a430642cb4d5ac4507835bd0fd3561bd8c02
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e081882aa8df89c0a1bf5d4c60f1395a3319c417
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088425"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190369"
 ---
 # <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy>, élément (paramètres réseau)
+
 Indique si la mise en cache FTP est active et décrit la stratégie de mise en cache par défaut.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Indique si la mise en cache FTP est active et décrit la stratégie de mise en c
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -54,6 +56,7 @@ Indique si la mise en cache FTP est active et décrit la stratégie de mise en c
 |`Revalidate`|Satisfait une demande en utilisant la copie mise en cache de la ressource si l'horodatage est le même que celui de la ressource sur le serveur ; sinon, la ressource est téléchargée à partir du serveur, présentée à l'appelant et stockée dans le cache.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -62,9 +65,10 @@ Indique si la mise en cache FTP est active et décrit la stratégie de mise en c
 |-------------|-----------------|  
 |[requestCaching](requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple suivant montre comment spécifier une stratégie de mise en cache FTP de `NoCacheNoStore` .  
   
 ```xml  

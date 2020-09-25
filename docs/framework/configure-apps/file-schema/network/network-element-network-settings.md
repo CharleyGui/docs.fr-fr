@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <network> element
 - network element
 ms.assetid: 2c2c6ad4-ed11-48ab-b28e-2bc0ba9b42c7
-ms.openlocfilehash: 36857e63871b4672df349934594f0887a042609e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: cd142febc0b3aacf1be7978178a6a05d9b9aebbf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504548"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190278"
 ---
 # <a name="network-element-network-settings"></a>\<network>, élément (paramètres réseau)
+
 Configure les options réseau pour un serveur SMTP (simple mail transport Protocol) externe.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -41,6 +42,7 @@ Configure les options réseau pour un serveur SMTP (simple mail transport Protoc
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -57,15 +59,17 @@ Configure les options réseau pour un serveur SMTP (simple mail transport Protoc
 |`userName`|Spécifie le nom d’utilisateur à utiliser pour l’authentification auprès du serveur de messagerie SMTP. Cet attribut n’a aucune valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<smtp>, Élément (paramètres réseau)](smtp-element-network-settings.md)|Configure les options d’envoi de courrier SMTP (simple mail transport Protocol).|  
+|[\<smtp> , Élément (paramètres réseau)](smtp-element-network-settings.md)|Configure les options d’envoi de courrier SMTP (simple mail transport Protocol).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Certains serveurs SMTP nécessitent que vous vous authentifiez auprès du serveur avant de l’utiliser. Si vous souhaitez vous authentifier à l’aide des informations d’identification réseau par défaut sur votre ordinateur hôte, affectez la valeur `defaultCredentials` à l’attribut `true` . La <xref:System.Net.Configuration.SmtpNetworkElement.DefaultCredentials%2A?displayProperty=nameWithType> propriété peut être utilisée pour récupérer la valeur actuelle de l' `defaultCredentials` attribut à partir des fichiers de configuration applicables.  
   
  Vous pouvez également utiliser l’authentification de base (un nom d’utilisateur et un mot de passe) pour vous authentifier auprès du serveur SMTP. Pour utiliser cette option, vous devez spécifier un nom d’utilisateur et un mot de passe valides pour le serveur SMTP spécifié.  
@@ -90,6 +94,7 @@ Configure les options réseau pour un serveur SMTP (simple mail transport Protoc
  La <xref:System.Net.Configuration.SmtpNetworkElement.EnableSsl%2A?displayProperty=nameWithType> propriété peut être utilisée pour récupérer la valeur actuelle de l' `enableSsl` attribut à partir des fichiers de configuration applicables.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant spécifie les paramètres SMTP appropriés pour envoyer des messages électroniques à l’aide des informations d’identification réseau par défaut.  
   
 ```xml  
