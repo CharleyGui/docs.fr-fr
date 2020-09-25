@@ -8,14 +8,15 @@ helpviewer_keywords:
 - authenticationModules element
 - <authenticationModules> element
 ms.assetid: 10fcfaad-82ef-4692-871a-0aec9dfbe75e
-ms.openlocfilehash: b502cc4a0958f074018d4b0ce6b3fb118b811c2f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 154a73a5fe3fa9e2b6b1c9e5c462b76bdc1ba640
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154970"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201744"
 ---
 # <a name="authenticationmodules-element-network-settings"></a>\<authenticationModules>, élément (paramètres réseau)
+
 Spécifie les modules utilisés pour authentifier les demandes réseau.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -30,14 +31,16 @@ Spécifie les modules utilisés pour authentifier les demandes réseau.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[add](add-element-for-authenticationmodules-network-settings.md)|Ajoute un module d’authentification à l’application.|  
 |[clear](clear-element-for-authenticationmodules-network-settings.md)|Efface tous les modules d’authentification de l’application.|  
@@ -45,17 +48,20 @@ Spécifie les modules utilisés pour authentifier les demandes réseau.
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `authenticationModule` élément spécifie les modules d’authentification qui exécutent le processus d’authentification avec un serveur. Un module d’authentification doit implémenter l' <xref:System.Net.IAuthenticationModule> interface.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant active un module d’authentification. Vous devez remplacer les valeurs de version et PublicKeyToken par les valeurs correctes pour le module spécifié.  
   
 ```xml  

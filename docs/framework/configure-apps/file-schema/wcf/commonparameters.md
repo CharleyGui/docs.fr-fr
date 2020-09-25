@@ -2,14 +2,15 @@
 title: <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: ffc20832-34d6-4622-8174-81924fd53514
-ms.openlocfilehash: d4b912d003af201b19697854a67943e3d87e3734
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 16d7a983f0f55801248cb01ea235322250b76625
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558483"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176030"
 ---
 # \<commonParameters>
+
 Représente une collection de paramètres utilisés globalement dans plusieurs services. Cette collection inclut généralement la chaîne de connexion de base de données pouvant être partagée par les services fiables.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,9 +33,11 @@ Représente une collection de paramètres utilisés globalement dans plusieurs s
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -50,6 +53,7 @@ Représente une collection de paramètres utilisés globalement dans plusieurs s
 |[\<workflowRuntime>](workflowruntime.md)|Spécifie les paramètres d’une instance de <xref:System.Workflow.Runtime.WorkflowRuntime> pour l’hébergement de services WCF (Windows Communication Foundation basés sur le flux de travail).|  
   
 ## <a name="remarks"></a>Notes  
+
  L'élément `<commonParameters>` définit tous les paramètres utilisés globalement dans plusieurs services, par exemple `ConnectionString` lors de l'utilisation de <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService>.  
   
 > [!NOTE]

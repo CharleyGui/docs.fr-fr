@@ -8,14 +8,15 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: cfd2917d330a9229338790c35911502be5cd9391
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bdf91f6f52a68309cfcd276b222083c8cb67a0cc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559146"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176238"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Procédure pas à pas : Écrire des requêtes en C# (LINQ)
+
 Cette procédure pas à pas présente les fonctionnalités du langage C# utilisées pour écrire des expressions de requête LINQ.  
   
 ## <a name="create-a-c-project"></a>Créer un projet C#  
@@ -40,6 +41,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
 5. Notez que votre projet a une référence à System.Core.dll et une directive `using` pour l’espace de noms <xref:System.Linq?displayProperty=nameWithType>.  
   
 ## <a name="create-an-in-memory-data-source"></a>Créer une source de données en mémoire  
+
  La source de données pour les requêtes est une simple liste d’objets `Student`. Chaque enregistrement `Student` comporte un prénom, un nom et un tableau d’entiers représentant les notes d’examens en classe. Copiez ce code dans votre projet. Notez les caractéristiques suivantes :  
   
 - La classe `Student` se compose de propriétés implémentées automatiquement.  
@@ -173,6 +175,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
      [!code-csharp[csLINQGettingStarted#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#21)]  
   
 ## <a name="next-steps"></a>Étapes suivantes  
+
  Une fois que vous êtes familiarisé avec les aspects de base de l’utilisation de requêtes en C#, vous êtes prêt à lire la documentation et les exemples pour le type spécifique de fournisseur LINQ qui vous intéresse :  
   
  [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  

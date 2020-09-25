@@ -2,14 +2,15 @@
 title: <announcementEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 034b7c69-a770-4502-8cef-38007bbcd025
-ms.openlocfilehash: decaaa1cea5345ff971b16cbb20a85dd803a52d5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f68972cdf0e55f92fd4856aff912f00db7c62be4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850288"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201614"
 ---
 # \<announcementEndpoint>
+
 Cet élément de configuration définit un point de terminaison standard avec un contrat d'annonce fixe. Un service peut éventuellement annoncer sa disponibilité en envoyant un message d'annonce en ligne ou hors connexion selon qu'il est respectivement ouvert ou fermé. Un service Windows Communication Foundation (WCF) spécifie les points de terminaison d’annonce dans l' [\<serviceDiscovery>](servicediscovery.md) élément et utilise AnnouncementClient pour effectuer les annonces. Un client qui souhaite écouter l’annonce d’un autre service joue en fait le rôle de service WCF. vous devez donc configurer les points de terminaison d’annonce pour ce client dans la [\<services>](services.md) section.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Cet élément de configuration définit un point de terminaison standard avec un
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -43,6 +45,7 @@ Cet élément de configuration définit un point de terminaison standard avec un
 |name|Chaîne qui spécifie le nom de la configuration du point de terminaison standard. Le nom est utilisé dans l'attribut `endpointConfiguration` du point de terminaison de service pour lier un point de terminaison standard à sa configuration.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -52,6 +55,7 @@ Cet élément de configuration définit un point de terminaison standard avec un
 |[\<standardEndpoints>](standardendpoints.md)|Collection de points de terminaison standard qui sont des points de terminaison prédéfinis dont une ou plusieurs propriétés (adresse, liaison, contrat) sont fixes.|  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant montre un client qui écoute des messages d'annonce sur HTTP et Peernet.  
   
 ```xml  

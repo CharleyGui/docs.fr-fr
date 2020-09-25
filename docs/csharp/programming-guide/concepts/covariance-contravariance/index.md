@@ -3,14 +3,15 @@ title: Covariance et contravariance (C#)
 description: En savoir plus sur la covariance et la contravariance et sur la manière dont elles affectent la compatibilité des affectations. Consultez un exemple de code qui illustre les différences entre eux.
 ms.date: 07/20/2015
 ms.assetid: 066d9a3c-aab7-4ea6-826d-0b1a85399c74
-ms.openlocfilehash: ad4b2a7d7925d7893eb5a8e1d2d7c9ee3dcbd527
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: d0309ec1bb3161412433e1b44e8e35410911b38d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465661"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176329"
 ---
 # <a name="covariance-and-contravariance-c"></a>Covariance et contravariance (C#)
+
 En C#, la covariance et la contravariance permettent la conversion de références implicite pour les types tableau, les types délégués et les arguments de type générique. La covariance conserve la compatibilité d’assignation et la contravariance l’inverse.  
   
  Le code suivant illustre la différence entre la compatibilité d’assignation, la covariance et la contravariance.  

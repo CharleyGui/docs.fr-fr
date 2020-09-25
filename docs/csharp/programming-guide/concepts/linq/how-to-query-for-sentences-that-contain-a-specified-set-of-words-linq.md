@@ -3,14 +3,15 @@ title: Comment interroger des phrases qui contiennent un ensemble de mots spéci
 description: Découvrez comment utiliser LINQ en C# pour rechercher des phrases dans un fichier texte qui contiennent des correspondances pour chacun d’un ensemble de mots, qui peut être rempli au moment de l’exécution.
 ms.date: 07/20/2015
 ms.assetid: 0724b429-4b87-4d26-a7b1-409358f3fc20
-ms.openlocfilehash: daf86d6641b82fb77ca237e8a190b4f60b9dea4d
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 7c5979fc42b6446948ae974e599807b5cb8db04a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465648"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176277"
 ---
 # <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>Comment interroger des phrases qui contiennent un ensemble de mots spécifié (LINQ) (C#)
+
 Cet exemple montre comment rechercher dans un fichier texte les phrases qui contiennent des correspondances pour chaque ensemble de mots spécifié. Même si le tableau des termes de recherche est codé en dur dans cet exemple, il pourrait aussi être rempli dynamiquement lors de l’exécution. Dans cet exemple, la requête retourne les phrases qui contiennent les mots « Historically », « data » et « integrated ».  
   
 ## <a name="example"></a>Exemple  
@@ -68,6 +69,7 @@ Historically, the world of data and the world of objects have not been well inte
  Dans l’appel à <xref:System.String.Split%2A>, les signes de ponctuation sont utilisés comme séparateurs pour être supprimés de la chaîne. Si vous ne l’avez pas fait, vous pourriez avoir, par exemple, la chaîne « Historically, », qui ne correspondrait pas au mot « Historically » du tableau `wordsToMatch`. Vous devrez peut-être utiliser des séparateurs supplémentaires, selon le type des signes de ponctuation qui se trouvent dans le texte source.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
 Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.
 
 ## <a name="see-also"></a>Voir aussi

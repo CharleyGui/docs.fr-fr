@@ -8,14 +8,15 @@ helpviewer_keywords:
 - webRequestModules element
 - <webRequestModules> element
 ms.assetid: 1263de11-3e0a-4f94-97c9-710b2ae53817
-ms.openlocfilehash: 7f2805283f89e6165d336b3e593d34054e02115d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9396ca393523dce5593531f332e5c07241987947
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154541"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91187002"
 ---
 # <a name="webrequestmodules-element-network-settings"></a>\<webRequestModules>, élément (paramètres réseau)
+
 Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -30,14 +31,16 @@ Spécifie les modules à utiliser pour demander des informations à des hôtes r
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[add](add-element-for-webrequestmodules-network-settings.md)|Ajoute un module de demande Web personnalisé à l’application.|  
 |[clear](clear-element-for-webrequestmodules-network-settings.md)|Supprime tous les modules de demande Web inscrits de l’application.|  
@@ -45,19 +48,22 @@ Spécifie les modules à utiliser pour demander des informations à des hôtes r
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `webRequestModules` élément inscrit les descendants de la <xref:System.Net.WebRequest> classe pour gérer les demandes d’informations aux hôtes réseau. Les modules de demande Web doivent implémenter l' <xref:System.Net.IWebRequestCreate> interface.  
   
  Le .NET Framework comprend des modules de demande Web pour les URI qui commencent par `http://` , `https://` et `file://` . Vous pouvez remplacer les modules par défaut uniquement en inscrivant un module personnalisé dans le fichier de configuration.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant enregistre le module HTTP par défaut. Vous devez remplacer les valeurs de version et PublicKeyToken par les valeurs correctes pour le module spécifié.  
   
 ```xml  

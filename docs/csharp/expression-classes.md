@@ -4,12 +4,12 @@ description: En savoir plus sur les types de frameworks prenant en charge les ar
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-ms.openlocfilehash: 8483c46dde3ea97138e55ab84a5924a3d2578730
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 548f5ba6a2de00d9556621791515555b6f6a325c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146084"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180437"
 ---
 # <a name="framework-types-supporting-expression-trees"></a>Types de frameworks prenant en charge les arborescences d’expressions
 
@@ -58,6 +58,7 @@ var addition = Expression.Add(one, two);
 Vous pouvez constater d’après cet exemple simple que de nombreux types sont impliqués dans la création et l’utilisation des arborescences d’expressions. Cette complexité est nécessaire pour fournir les fonctionnalités du vocabulaire enrichi fourni par le langage C#.
 
 ## <a name="navigating-the-apis"></a>Navigation dans les API
+
 Il existe des types de nœuds Expression qui mappent à presque tous les éléments de syntaxe du langage C#. Chaque type a des méthodes spécifiques pour ce type d’élément de langage. Cela fait beaucoup de choses à mémoriser en même temps. Plutôt que d’essayer de mémoriser tout, voici les techniques que je vous conseille d’appliquer quand vous travaillez avec des arborescences d’expressions :
 
 1. Examinez les membres de l’énumération `ExpressionType` pour déterminer les éventuels nœuds à examiner. Cela aide vraiment quand vous souhaitez parcourir et comprendre une arborescence d’expressions.

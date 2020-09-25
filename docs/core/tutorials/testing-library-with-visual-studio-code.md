@@ -2,12 +2,12 @@
 title: Test d’une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio Code
 description: Créez un projet de test unitaire pour une bibliothèque de classes .NET Core. Vérifiez que la bibliothèque de classes .NET Core fonctionne correctement avec les tests unitaires.
 ms.date: 06/08/2020
-ms.openlocfilehash: f49974e1b918424ae5b5d7f3969f52c371e37154
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 6ae8f6637319cd2c8c24f3e673fb6094f36b9f2f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359166"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180450"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>Didacticiel : tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio Code
 
@@ -21,7 +21,7 @@ Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un pro
 
 Les tests unitaires effectuent des tests logiciels automatisés pendant le développement et la publication. L’infrastructure de test que vous utilisez dans ce didacticiel est MSTest. [MSTest](https://github.com/Microsoft/testfx-docs) est l’un des trois frameworks de test que vous pouvez choisir. Les autres sont [xUnit](https://xunit.net/) et [nunit](https://nunit.org/).
 
-1. Démarrer Visual Studio Code
+1. Démarrez Visual Studio Code.
 
 1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio code](library-with-visual-studio-code.md).
 
@@ -120,7 +120,7 @@ Pour créer les méthodes de test:
    Test Run Successful.
    Total tests: 3
         Passed: 3
-   Total time: 5.1116 Seconds
+    Total time: 5.1116 Seconds
    ```
 
 ## <a name="handle-test-failures"></a>Gérer les échecs de test
@@ -150,14 +150,14 @@ Si vous effectuez un développement piloté par les tests (TDD), vous écrivez d
      Error Message:
       Assert.IsFalse failed. Expected for 'Error': false; Actual: True
      Stack Trace:
-     at StringLibraryTest.UnitTest1.TestDoesNotStartWithUpper()
-       in C:\Projects\ClassLibraryProjects\StringLibraryTest\UnitTest1.cs:line 33
+        at StringLibraryTest.UnitTest1.TestDoesNotStartWithUpper() in C:\
+   Projects\ClassLibraryProjects\StringLibraryTest\UnitTest1.cs:line 33
 
    Test Run Failed.
    Total tests: 3
         Passed: 2
         Failed: 1
-   Total time: 1.7825 Seconds
+    Total time: 1.7825 Seconds
    ```
 
 1. Supprimez la chaîne « Error » que vous avez ajoutée à l’étape 1. Réexécutez le test et les tests réussissent.
@@ -174,7 +174,13 @@ Maintenant que les tests ont tous réussi lors de l’exécution de la version D
 
    Les tests réussissent.
 
-## <a name="additional-resources"></a>Ressources complémentaires
+## <a name="debug-tests"></a>Déboguer les tests
+
+Si vous utilisez Visual Studio Code comme IDE, vous pouvez utiliser le même processus que celui présenté dans [déboguer une application de console .net core à l’aide de Visual Studio code](debugging-with-visual-studio-code.md) pour déboguer le code à l’aide de votre projet de test unitaire. Au lieu de démarrer le projet d’application *Showcase* , ouvrez *StringLibraryTest/UnitTest1. cs*, puis sélectionnez **exécuter tous les tests entre les** lignes 7 et 8. Si vous ne parvenez pas à la trouver, appuyez sur <kbd>CTRL</kbd> + <kbd>MAJ</kbd> + <kbd>P</kbd> pour ouvrir la palette de commandes et entrez **recharger la fenêtre**.
+
+Visual Studio Code démarre le projet de test avec le débogueur attaché. L’exécution s’arrêtera à un point d’arrêt que vous avez ajouté au projet de test ou au code de bibliothèque sous-jacent.
+
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
 

@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-ms.openlocfilehash: 971a1bddc40521dc7381ecb2e39709c0fed282ed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 8db75f486c7c08b6a02401af35c9edf9969f9063
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785983"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201276"
 ---
 # <a name="nesting-datarelations"></a>Imbrication de DataRelations
+
 Dans une représentation relationnelle des données, chaque table contient des lignes reliées aux lignes d'autres tables par une colonne ou un ensemble de colonnes. Dans l'objet <xref:System.Data.DataSet> ADO.NET, la relation entre les tables est implémentée à l'aide d'un objet <xref:System.Data.DataRelation>. Lorsque vous créez un **DataRelation**, les relations parent-enfant des colonnes sont gérées uniquement par le biais de la relation. Les tables et les colonnes constituent des entités distinctes. Dans la représentation hiérarchique des données proposée par XML, les relations parent-enfant sont représentés sous forme d'éléments parents contenant des éléments enfants imbriqués.  
   
- Pour faciliter l’imbrication des objets enfants lorsqu’un **DataSet** est synchronisé <xref:System.Xml.XmlDataDocument> avec un objet ou écrit sous forme de données XML à l’aide de **WriteXml**, le **DataRelation** expose une propriété **imbriquée** . L’affectation de la **valeur true** à la propriété **Nested** d’un **DataRelation** entraîne l’imbrication des lignes enfants de la relation dans la colonne parente lors de l’écriture sous forme de données XML ou de la synchronisation avec un **XmlDataDocument**. La propriété **Nested** du **DataRelation** a la **valeur false**par défaut.  
+ Pour faciliter l’imbrication des objets enfants lorsqu’un **DataSet** est synchronisé avec un objet <xref:System.Xml.XmlDataDocument> ou écrit sous forme de données XML à l’aide de **WriteXml**, le **DataRelation** expose une propriété **imbriquée** . L’affectation de la **valeur true** à la propriété **Nested** d’un **DataRelation** entraîne l’imbrication des lignes enfants de la relation dans la colonne parente lors de l’écriture sous forme de données XML ou de la synchronisation avec un **XmlDataDocument**. La propriété **Nested** du **DataRelation** a la **valeur false**par défaut.  
   
  Par exemple, considérez le **jeu de données**suivant.  
   
@@ -136,4 +137,4 @@ customerOrders.Nested = true;
 - [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
 - [Ajout de DataRelations](adding-datarelations.md)
 - [DataSets, DataTables et DataViews](index.md)
-- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

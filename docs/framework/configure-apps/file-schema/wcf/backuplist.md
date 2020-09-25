@@ -2,14 +2,15 @@
 title: <backupList>
 ms.date: 03/30/2017
 ms.assetid: a3d9d1f9-4a53-45e9-a880-86c8bee0b833
-ms.openlocfilehash: 478211755b9131c03b72777ee95ff7223b9092c9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8f4dcf8f7d71cfa2ed9944822d7cce974e7f1979
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850275"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201562"
 ---
 # \<backupList>
+
 Représente une section de configuration permettant de définir une liste de sauvegarde qui énumère un ensemble de points de terminaison que le service de routage doit utiliser au cas où il est impossible d'atteindre le point de terminaison primaire. Si le premier point de terminaison de la liste est inactif, le service de routage bascule automatiquement sur le suivant dans la liste.  Vous disposez ainsi d’une méthode rapide pour renforcer la fiabilité de votre application sans avoir à apprendre à votre application cliente à gérer des modèles complexes ou à rechercher l’emplacement de tous vos services déployés.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Représente une section de configuration permettant de définir une liste de sau
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -51,7 +53,8 @@ Représente une section de configuration permettant de définir une liste de sau
 |-------------|-----------------|  
 |[\<routing>](routing.md)|Liste de points de terminaison de sauvegarde.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Cette section contient une collection ordonnée de points de terminaison auxquels un message sera transmis si une exception de communication se produit lors de l'envoi au point de terminaison primaire.  
   
  Si un envoi au point de terminaison principal listé dans l' `endpointName` attribut de [\<add>](add-of-entries.md) échoue avec une exception de communication, le service de routage tente d’envoyer le message au premier point de terminaison de cette section de configuration. Si l’opération échoue également avec une exception de communication, le service de routage essaie d’envoyer le message au point de terminaison suivant contenu dans cette section jusqu’à ce que la tentative d’envoi aboutisse, retourne une erreur autre qu’une exception de communication, ou que tous les points de terminaison de la collection retournent une erreur.  

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-ms.openlocfilehash: afa1aef8ea71f43a136987ec5b6e1925c6d9fb40
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 65e8b1f2088015b86d4f981f07875d236a11a617
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154723"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176186"
 ---
 # <a name="remove-element-for-webrequestmodules-network-settings"></a>\<remove>, élément de webRequestModules (paramètres réseau)
+
 Supprime un module de demande Web personnalisé de l’application.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Supprime un module de demande Web personnalisé de l’application.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -43,20 +45,23 @@ Supprime un module de demande Web personnalisé de l’application.
 |`prefix`|Préfixe URI pour les requêtes gérées par ce module de demande Web.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[webRequestModules](webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `remove` élément supprime le module de demande Web inscrit pour le préfixe URI spécifié.  
   
  La valeur de l' `prefix` attribut doit être les caractères de début d’un URI valide, par exemple, « `http` » ou « `http://www.contoso.com` ».  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  

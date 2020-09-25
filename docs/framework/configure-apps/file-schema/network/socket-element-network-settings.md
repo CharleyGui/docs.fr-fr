@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <socket> element
 - socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
-ms.openlocfilehash: 0e2b369eccfbc658a790ef61a961315a88361669
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b8df32745007b2a145d35b8cfcc4cbd2bd17eb33
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74089088"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201731"
 ---
 # <a name="socket-element-network-settings"></a>\<socket>, élément (paramètres réseau)
+
 Spécifie si les opérations de socket utilisent des ports de terminaison.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Spécifie si les opérations de socket utilisent des ports de terminaison.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -45,15 +47,17 @@ Spécifie si les opérations de socket utilisent des ports de terminaison.
 |`ipProtectionLevel`|Spécifie la valeur par défaut <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> à utiliser pour un Socket. La valeur par défaut dépend de la version de Windows.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[settings](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les `alwaysUseCompletionPortsForAccept` `alwaysUseCompletionPortsForConnect` attributs et sont utilisés pour spécifier le comportement par défaut en ce qui concerne l’utilisation des ports de terminaison par les classes dans l' <xref:System.Net.Sockets?displayProperty=nameWithType> espace de noms. Les ports de terminaison sont recommandés pour les applications serveur hautes performances.  
   
  La valeur par défaut pour `alwaysUseCompletionPortsForAccept` les `alwaysUseCompletionPortsForConnect` attributs et est **false**.  
@@ -84,9 +88,11 @@ Spécifie si les opérations de socket utilisent des ports de terminaison.
  La <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> propriété peut être utilisée pour récupérer la valeur actuelle de l' `ipProtectionLevel` attribut à partir des fichiers de configuration applicables.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment spécifier que les ports de terminaison doivent être utilisés et que la valeur par défaut <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> doit être illimitée.  
   
 ```xml  

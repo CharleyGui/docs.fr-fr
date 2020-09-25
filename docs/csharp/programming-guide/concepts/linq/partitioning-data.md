@@ -3,14 +3,15 @@ title: Partitionnement des données (C#)
 description: Découvrez comment partitionner des données dans LINQ. Affichez une illustration montrant les résultats des opérations de partitionnement.
 ms.date: 07/20/2015
 ms.assetid: 2a5c507b-fe22-443c-a768-dec7f9ec568d
-ms.openlocfilehash: 3c85eaec2dc01b683234a27714750354982be440
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 31beacd672addb3eb38ade8f2bf9cfae25f4d27a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302605"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176264"
 ---
 # <a name="partitioning-data-c"></a>Partitionnement des données (C#)
+
 Le partitionnement dans LINQ désigne l’opération consistant à diviser une séquence d’entrée en deux sections, sans réorganiser les éléments, puis à retourner l’une des sections.  
   
  L’illustration suivante montre les résultats de trois opérations de partitionnement différentes sur une séquence de caractères. La première opération retourne les trois premiers éléments de la séquence. La deuxième opération ignore les trois premiers éléments et retourne les éléments restants. La troisième opération ignore les deux premiers éléments de la séquence et retourne les trois éléments suivants.  
@@ -31,4 +32,4 @@ Le partitionnement dans LINQ désigne l’opération consistant à diviser une s
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)

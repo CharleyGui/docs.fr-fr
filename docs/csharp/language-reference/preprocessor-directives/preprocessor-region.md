@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#region directive [C#]'
 ms.assetid: 672c87d1-9771-4f64-ab3f-0ad3d4ffb2b4
-ms.openlocfilehash: ed40d895fedb9be271bb389a4f8de69d7ae3f266
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: dcb806a213bea9d7c782eeddc712f1eb76257e80
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89137940"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186404"
 ---
 # <a name="region-c-reference"></a>#region (référence C#)
+
 `#region` vous permet de spécifier un bloc de code que vous pouvez développer ou réduire lors de l’utilisation de la fonctionnalité [mode plan](/visualstudio/ide/outlining) de l’éditeur de code. Dans les fichiers de code volumineux, il peut être pratique de réduire ou masquer une ou plusieurs régions pour vous concentrer sur la partie du fichier sur laquelle vous êtes en train de travailler. L’exemple suivant montre comment définir une région :  
   
 ```csharp
@@ -28,7 +29,8 @@ public class MyClass
 #endregion  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Un bloc `#region` doit se terminer par une directive [#endregion](./preprocessor-endregion.md).  
   
  Un bloc `#region` ne peut pas chevaucher un bloc [#if](./preprocessor-if.md). Toutefois, un bloc `#region` peut être imbriqué dans un bloc `#if` et, inversement, un bloc `#if` peut être imbriqué dans un bloc `#region`.  

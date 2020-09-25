@@ -2,14 +2,15 @@
 title: TREAT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 5b77f156-55de-4cb4-8154-87f707d4c635
-ms.openlocfilehash: 566ac875aec17e4d0aa22ec1962053aeb6ae2a2e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bb41c0fed944ce4db11878b9213a62c6f851418e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558847"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201042"
 ---
 # <a name="treat-entity-sql"></a>TREAT (Entity SQL)
+
 Traite un objet d'un type de base déterminé en tant qu'objet du type dérivé spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -19,6 +20,7 @@ TREAT ( expression as type)
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `expression`  
  Toute expression de requête valide qui retourne une entité.  
   
@@ -31,10 +33,12 @@ TREAT ( expression as type)
 > [!NOTE]
 > L'expression spécifiée doit être un sous-type du type de données spécifié, ou le type de données doit être un sous-type de l'expression.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Valeur du type de données spécifié.  
   
 ## <a name="remarks"></a>Notes  
+
  TREAT est utilisé pour effectuer un upcast entre des classes connexes. Par exemple, si `Employee` est dérivé de `Person` et que p est de type `Person`, `TREAT(p AS NamespaceName.Employee)` effectue un upcast d'une instance générique de `Person` vers `Employee`; autrement dit, cela vous permet de traiter p en tant que `Employee`.  
   
  TREAT est utilisé dans des scénarios d'héritage dans lesquels vous pouvez exécuter une requête de ce type :  
@@ -61,7 +65,8 @@ WHERE p IS OF (NamespaceName.Employee)
 |`TREAT (ComplexType AS ComplexType)`|Lève une exception.|  
 |`TREAT (RowType AS RowType)`|Lève une exception.|  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur TREAT pour convertir un objet du type Course en collection d'objets du type OnsiteCourse. Cette requête est basée sur le modèle [School](/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
   
  [!code-sql[DP EntityServices Concepts#TREAT_ISOF](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#treat_isof)]  

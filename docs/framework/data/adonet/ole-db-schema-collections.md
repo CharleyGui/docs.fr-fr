@@ -2,18 +2,20 @@
 title: Collections de schémas OLE DB
 ms.date: 03/30/2017
 ms.assetid: 6380c36b-658e-4d67-91e8-7131ef4a7c2c
-ms.openlocfilehash: 2d5718c12100ebea49a6b6fab29a3790918c6ad3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 90899a123b3dafcd47a50ef8f6eb003938b22a03
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783451"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186937"
 ---
 # <a name="ole-db-schema-collections"></a>Collections de schémas OLE DB
+
 Cette section traite de la prise en charge des collections de schémas pour les fournisseurs OLE DB de Microsoft SQL Server, Oracle et Microsoft Jet.  
   
 ## <a name="microsoft-sql-server-ole-db-provider"></a>Fournisseur Microsoft SQL Server OLE DB  
- Le pilote Microsoft SQL Server OLE DB prend en charge les collections de schémas spécifiques suivantes en plus des collections de schémas courantes :  
+
+ Le pilote Microsoft SQL Server OLE DB prend en charge les collections de schémas spécifiques suivantes en plus des collections de schémas courantes :  
   
 - Tables  
   
@@ -29,7 +31,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="tables"></a>Tables  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -43,7 +45,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="columns"></a>Colonnes  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -81,7 +83,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="procedures"></a>Procédures  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
@@ -94,7 +96,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="procedureparameters"></a>ProcedureParameters  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
@@ -116,14 +118,14 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="catalog"></a>Catalogue  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |CATALOG_NAME|String|  
 |Description|String|  
   
 ### <a name="indexes"></a>Index  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -152,6 +154,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
 |INTEGRATED|Boolean|  
   
 ## <a name="microsoft-oracle-ole-db-provider"></a>Fournisseur Microsoft Oracle OLE DB  
+
  Le pilote Microsoft Oracle OLE DB prend en charge les collections de schémas spécifiques suivantes en plus des collections de schémas courantes :  
   
 - Tables  
@@ -164,13 +167,13 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 - ProcedureParameters  
   
-- Affichages  
+- Les vues  
   
 - Index  
   
 ### <a name="tables"></a>Tables  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -184,7 +187,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="columns"></a>Colonnes  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -217,7 +220,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="procedures"></a>Procédures  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
@@ -230,7 +233,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
@@ -250,9 +253,9 @@ Cette section traite de la prise en charge des collections de schémas pour les 
 |Description|String|  
 |OVERLOAD|Int16|  
   
-### <a name="views"></a>Affichages  
+### <a name="views"></a>Les vues  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -266,7 +269,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="indexes"></a>Index  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -295,6 +298,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
 |INTEGRATED|Boolean|  
   
 ## <a name="microsoft-jet-ole-db-provider"></a>Fournisseur Microsoft Jet OLE DB  
+
  Le pilote Microsoft Jet OLE DB prend en charge les collections de schémas spécifiques suivantes en plus des collections de schémas courantes :  
   
 - Tables  
@@ -303,13 +307,13 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 - Procédures  
   
-- Affichages  
+- Les vues  
   
 - Index  
   
 ### <a name="tables"></a>Tables  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -323,7 +327,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="columns"></a>Colonnes  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -356,7 +360,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="procedures"></a>Procédures  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
@@ -367,9 +371,9 @@ Cette section traite de la prise en charge des collections de schémas pour les 
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
-### <a name="views"></a>Affichages  
+### <a name="views"></a>Les vues  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -383,7 +387,7 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="indexes"></a>Index  
   
-|ColumnName|Type de données|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -413,4 +417,4 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)
+- [Vue d'ensemble d’ADO.NET](ado-net-overview.md)

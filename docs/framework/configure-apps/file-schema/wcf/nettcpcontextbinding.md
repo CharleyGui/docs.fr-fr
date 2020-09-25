@@ -2,14 +2,15 @@
 title: <netTcpContextBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d4715e1-5fff-4c3d-a226-18f21d0b30c4
-ms.openlocfilehash: 88b3da6c81d771db255f6c0a4e86984c9ba294fe
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bb6094b962c0f1199f0a16eb7d0821a95eba4c77
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546150"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195026"
 ---
 # \<netTcpContextBinding>
+
 Indique un contexte pour le <xref:System.ServiceModel.NetTcpBinding> qui requiert la signature du niveau de protection. Le contextExchangeMechanism pour NetTcpContextBinding est SOAPHeader.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -62,6 +63,7 @@ Indique un contexte pour le <xref:System.ServiceModel.NetTcpBinding> qui requier
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -81,7 +83,7 @@ Indique un contexte pour le <xref:System.ServiceModel.NetTcpBinding> qui requier
 |portSharingEnabled|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si elle est définie à `false`, chaque de liaison utilise son propre port exclusif. Ce paramètre est uniquement pertinent aux services, du fait que les clients ne sont pas affectés.|  
 |receiveTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de réception. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:10:00.|  
 |sendTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
-|transactionFlow|Valeur booléenne qui spécifie si la liaison prend en charge le flux WS-Transactions. La valeur par défaut est `false`.|  
+|transactionFlow|Valeur booléenne qui spécifie si la liaison prend en charge le flux WS-Transactions. Par défaut, il s’agit de `false`.|  
 |transactionProtocol|Spécifie le protocole de transaction à utiliser avec cette liaison. Les valeurs valides sont les suivantes :<br /><br /> -OleTransactions<br />-WSAtomicTransactionOctober2004<br /><br /> La valeur par défaut est OleTransactions. Cet attribut est de type <xref:System.ServiceModel.TransactionProtocol>.|  
 |transferMode|Valeur <xref:System.ServiceModel.TransferMode> qui spécifie si les messages sont mis en mémoire tampon ou transmis en continu ou s'il s'agit d'une demande ou d'une réponse.|  
   

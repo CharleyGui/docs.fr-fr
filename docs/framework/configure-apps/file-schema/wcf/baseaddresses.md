@@ -2,14 +2,15 @@
 title: <baseAddresses>
 ms.date: 03/30/2017
 ms.assetid: 78918102-2898-46e0-9ea8-6b8afe65603e
-ms.openlocfilehash: 9b3ed6b39f1743249925d5b6d9a47845c87983bc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3b6cebd178ac5cd30fa034bd961d2d08075771d2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850206"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201536"
 ---
 # \<baseAddresses>
+
 Représente une collection d’éléments `baseAddress`, qui sont les adresses de base d’un hôte de service dans un environnement auto-hébergé. Si une adresse de base est présente, les points de terminaison peuvent être configurés avec des adresses relatives à l'adresse de base.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,12 +29,15 @@ Représente une collection d’éléments `baseAddress`, qui sont les adresses d
 ```  
   
 ## <a name="type"></a>Type  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  

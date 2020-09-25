@@ -11,14 +11,15 @@ helpviewer_keywords:
 - configuration sections [.NET Framework]
 - elements [.NET Framework], trace and debug settings
 ms.assetid: 277ca5f6-e1c4-41b6-a47f-3a67ce5b94ac
-ms.openlocfilehash: 037d08b33e9aa6a64d236b36ebcf821b604b03df
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ae089e941d75df7ba1cd87b5b92a514a33bfbf85
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69927118"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195192"
 ---
 # <a name="trace-and-debug-settings-schema"></a>Schéma des paramètres de traçage et de débogage
+
 Les paramètres de traçage et débogage spécifient les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.  
   
  Le tableau suivant décrit la fonction de chaque élément des paramètres de traçage et de débogage.  

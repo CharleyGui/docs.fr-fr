@@ -9,14 +9,15 @@ helpviewer_keywords:
 - specifiedPickupDirectory element
 - <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
-ms.openlocfilehash: f0c4c1845e9542d0f3b836ff03f16bdf2979ebd8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5bb7fc5405b1ee2f0f054bc6e9f043a3f9fcd1ec
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504496"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176160"
 ---
 # <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedPickupDirectory>, élément (paramètres réseau)
+
 Configure le répertoire local pour un serveur SMTP (simple mail transport Protocol).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Configure le répertoire local pour un serveur SMTP (simple mail transport Proto
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -43,18 +45,21 @@ Configure le répertoire local pour un serveur SMTP (simple mail transport Proto
 |`pickupDirectoryLocation`|Répertoire dans lequel les applications enregistrent des messages électroniques en vue d’un traitement ultérieur par le serveur SMTP.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<smtp>, Élément (paramètres réseau)](smtp-element-network-settings.md)|Configure les options d’envoi de courrier SMTP (simple mail transport Protocol).|  
+|[\<smtp> , Élément (paramètres réseau)](smtp-element-network-settings.md)|Configure les options d’envoi de courrier SMTP (simple mail transport Protocol).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `specifiedPickupDirectory` attribut définit le répertoire dans lequel les applications enregistrent les messages électroniques à traiter par le serveur SMTP.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant spécifie c:\maildrop comme répertoire de collecte des messages.  
   
 ```xml  

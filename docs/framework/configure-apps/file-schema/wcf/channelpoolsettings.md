@@ -2,14 +2,15 @@
 title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
-ms.openlocfilehash: 26537980a6be5c0fe12661d93a6ba5fe862ceb4e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8638d56ccb4aaa1c5ac735aa268823af2b1fbc6d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398156"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176069"
 ---
 # \<channelPoolSettings>
+
 Spécifie les paramètres du pool du canal pour une liaison personnalisée.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Spécifie les paramètres du pool du canal pour une liaison personnalisée.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -40,6 +42,7 @@ Spécifie les paramètres du pool du canal pour une liaison personnalisée.
 |`maxOutboundChannelsPerEndpoint`|Entier positif qui spécifie le nombre maximal de canaux qui peuvent être stockés dans le pool pour chaque point de terminaison distant. La valeur par défaut est de 10.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -48,7 +51,8 @@ Spécifie les paramètres du pool du canal pour une liaison personnalisée.
 |-------------|-----------------|  
 |[\<oneWay>](oneway.md)|Active le routage de paquets pour une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les quotas sont utilisés comme un mécanisme de stratégie pour empêcher une consommation excessive de ressources. Ils empêchent les attaques par déni de service (DOS) qui sont malveillantes ou involontaires. Utilisez cet élément lors de la définition de quotas de canal sur un canal personnalisé.  
   
  `ChannelPoolSettings` spécifie trois quotas :  

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <cryptoNameMapping> element
 - cryptoNameMapping element
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
-ms.openlocfilehash: d31c5cd52ffe0e2a6eb5784735e76436d216444b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9ffae33a3c8a06d6cfcabf5a58b7d72baeda79c5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155217"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201796"
 ---
 # <a name="cryptonamemapping-element"></a>Élément \<cryptoNameMapping>
+
 Contient des mappages de classes à des noms conviviaux.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -31,9 +32,11 @@ Contient des mappages de classes à des noms conviviaux.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -53,6 +56,7 @@ Contient des mappages de classes à des noms conviviaux.
 |`mscorlib`|Contient l' \<cryptographySettings> élément.|  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment utiliser l' **\<cryptoNameMapping>** élément pour référencer une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne « RSA » à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et utiliser la <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
   
 ```xml  
@@ -76,7 +80,7 @@ Contient des mappages de classes à des noms conviviaux.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)
+- [services de chiffrement](../../../../standard/security/cryptographic-services.md)
 - [Configuration de classes de chiffrement](../../configure-cryptography-classes.md)

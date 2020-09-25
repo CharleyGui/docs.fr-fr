@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2b73d60a-6049-446a-85a7-3e5a68b183e2
-ms.openlocfilehash: cbae5453be485896e27a5039ece20bb3bcec9913
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: cf2a47c5d29c0af680ee4ccae503e92d3a9124d8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556978"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194711"
 ---
 # <a name="how-to-bind-a-dataview-object-to-a-windows-forms-datagridview-control"></a>Procédure : Lier un objet DataView à un contrôle DataGridView Windows Forms
+
 Le contrôle <xref:System.Windows.Forms.DataGridView> offre un moyen puissant et flexible d'afficher des données sous forme de tableau. Le contrôle <xref:System.Windows.Forms.DataGridView> prend en charge le modèle de liaison de données Windows Forms standard ; il peut donc créer une liaison avec <xref:System.Data.DataView> et diverses autres sources de données. Dans la plupart des cas, toutefois, vous créerez une liaison avec un composant <xref:System.Windows.Forms.BindingSource> qui gérera les détails de l'interaction avec la source de données.  
   
  Pour plus d’informations sur le <xref:System.Windows.Forms.DataGridView> contrôle, consultez [vue d’ensemble du contrôle DataGridView](/dotnet/desktop/winforms/controls/datagridview-control-overview-windows-forms).  

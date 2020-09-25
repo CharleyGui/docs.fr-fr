@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <filter> element for <add> for <listeners> for <source>
 - filter element for <add> for <listeners> for <source>
 ms.assetid: 15808b80-4579-4c25-b385-178cfdf154ba
-ms.openlocfilehash: 0cb668782de263d5f784691f46cb8b74541d942b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2b83fd10da506202427aaeee454411822ff1ae5b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153514"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201679"
 ---
 # <a name="filter-element-for-add-for-listeners-for-source"></a>\<filter>, Élément \<add> de pour pour \<listeners>\<source>
+
 Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source de trace.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -36,6 +37,7 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -46,6 +48,7 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
 |`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe de filtre spécifiée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -59,12 +62,14 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
 |`listeners`|Contient des écouteurs qui collectent, stockent et acheminent des messages. Les écouteurs dirigent la sortie de suivi vers une cible appropriée.|  
 |`add`|Ajoute un écouteur à la collection `Listeners` pour une source de trace.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `<filter>` élément doit être contenu dans un `<add>` élément pour un écouteur de source de suivi qui spécifie le type de l’écouteur, pas seulement le nom d’un écouteur défini dans un [\<sharedListeners>](sharedlisteners-element.md) . Si l’écouteur est défini dans un [\<sharedListeners>](sharedlisteners-element.md) , le filtre de cet écouteur doit être défini dans cet élément.  
   
- Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (Machine.config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment utiliser l' `<filter>` élément pour ajouter un filtre à l’écouteur `console` dans la `Listeners` collection pour la source de suivi `myTraceSource` , en spécifiant le niveau d’événement de filtre en tant que `Error` .  
   
 ```xml  

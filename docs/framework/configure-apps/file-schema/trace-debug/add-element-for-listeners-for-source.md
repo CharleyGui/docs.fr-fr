@@ -1,5 +1,5 @@
 ---
-title: <add>, Élément de <listeners> pour<source>
+title: <add> , Élément de <listeners> pour <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/add
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - add element for <listeners> for <source>
 - <add> element for <listeners> for <source>
 ms.assetid: 4ce36ac1-81ef-48e8-b8b2-b5a5b0e2adcb
-ms.openlocfilehash: 883eef32172c5a7f900197995b4c57c3d5a84e19
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a5abaffbad986785b8879297883da9614f0a8103
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153683"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201692"
 ---
-# <a name="add-element-for-listeners-for-source"></a>\<add>, Élément de \<listeners> pour\<source>
+# <a name="add-element-for-listeners-for-source"></a>\<add> , Élément de \<listeners> pour \<source>
+
 Ajoute un écouteur à la collection `Listeners` pour une source de trace.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -44,7 +46,7 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
 |`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe spécifiée. Une <xref:System.Configuration.ConfigurationException> exception est levée si la classe n’a pas de constructeur qui prend une chaîne.|  
 |`name`|Attribut facultatif.<br /><br /> Spécifie le nom de l’écouteur.|  
 |`traceOutputOptions`|Attribut facultatif.<br /><br /> Spécifie la <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> valeur de la propriété pour l’écouteur de la trace.|  
-|[attributs personnalisés]|Attributs facultatifs.<br /><br /> Spécifie la valeur des attributs spécifiques de l’écouteur identifiés par la <xref:System.Diagnostics.TraceListener.GetSupportedAttributes%2A> méthode pour cet écouteur. <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>est un exemple d’attribut supplémentaire unique à la <xref:System.Diagnostics.DelimitedListTraceListener> classe.|  
+|[attributs personnalisés]|Attributs facultatifs.<br /><br /> Spécifie la valeur des attributs spécifiques de l’écouteur identifiés par la <xref:System.Diagnostics.TraceListener.GetSupportedAttributes%2A> méthode pour cet écouteur. <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A> est un exemple d’attribut supplémentaire unique à la <xref:System.Diagnostics.DelimitedListTraceListener> classe.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -62,7 +64,8 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
 |`source`|Spécifie une source de trace qui lance des messages de traçage.|  
 |`listeners`|Spécifie les écouteurs qui collectent, stockent et acheminent les messages.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les classes d’écouteur fournies avec le .NET Framework dérivent de la <xref:System.Diagnostics.TraceListener> classe.  
   
  Si vous ne spécifiez pas l' `name` attribut de l’écouteur de la trace, la <xref:System.Diagnostics.TraceListener.Name%2A> propriété de l’écouteur de la trace est définie par défaut sur une chaîne vide (""). Si votre application n’a qu’un seul écouteur, vous pouvez l’ajouter sans spécifier de nom et vous pouvez la supprimer en spécifiant une chaîne vide pour le nom. Toutefois, si votre application a plusieurs écouteurs, vous devez spécifier un nom unique pour chaque écouteur de suivi, ce qui vous permet d’identifier et de gérer des écouteurs de suivi individuels dans la <xref:System.Diagnostics.TraceSource.Listeners%2A?displayProperty=nameWithType> collection.  
@@ -87,9 +90,11 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
 |<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|Nom du fichier <xref:System.Diagnostics.XmlWriterTraceListener> dans lequel écrit.|  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
+
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (Machine.config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment utiliser des `<add>` éléments pour ajouter les écouteurs `console` et `textListener` la `Listeners` collection pour la source de trace `TraceSourceApp` . L' `textListener` écouteur écrit la sortie de trace dans le fichier myListener. log.  
   
 ```xml  
@@ -123,4 +128,4 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TraceListener>
 - [Schéma des paramètres de traçage et de débogage](index.md)
-- [Écouteurs de suivi](../../../debug-trace-profile/trace-listeners.md)
+- [Écouteurs de la trace](../../../debug-trace-profile/trace-listeners.md)

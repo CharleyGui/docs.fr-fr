@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <nameEntry> element
 - nameEntry element
 ms.assetid: 7d7535e9-4b4a-4b8c-82e2-e40dff5a7821
-ms.openlocfilehash: a339638587f8b544bbc1b0073553f6232ce09694
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4341b1fcd3762e5aa55f0ba988f7f49d4b5cacd6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71699781"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201770"
 ---
 # <a name="nameentry-element"></a>Élément \<nameEntry>
+
 Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une classe d’avoir plusieurs noms conviviaux.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -31,6 +32,7 @@ Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -38,9 +40,10 @@ Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une 
 |Attribut|Description|  
 |---------------|-----------------|  
 |**name**|Attribut requis.<br /><br /> Spécifie le nom convivial de l’algorithme que la classe de chiffrement implémente.|  
-|**type**|Attribut requis.<br /><br /> Spécifie la valeur de l’attribut **Name** dans l' [\<cryptoClass>](cryptoclass-element.md) élément.|  
+|**class**|Attribut requis.<br /><br /> Spécifie la valeur de l’attribut **Name** dans l' [\<cryptoClass>](cryptoclass-element.md) élément.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -50,10 +53,12 @@ Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une 
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.web`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L’attribut **Name** peut être le nom de l’une des classes abstraites trouvées dans l' <xref:System.Security.Cryptography> espace de noms. Quand vous appelez la méthode **Create** sur une classe de chiffrement abstraite, le nom de la classe abstraite est passé à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A> méthode. **CreateFromName** retourne une instance du type indiqué par l’attribut de **classe** . Si l’attribut **Name** est un nom abrégé, tel que RSA, vous pouvez utiliser ce nom lors de l’appel de la méthode **CreateFromName** .  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment utiliser l' **\<nameEntry>** élément pour référencer une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne « RSA » à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et utiliser la <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
   
 ```xml  
@@ -77,7 +82,7 @@ Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)
+- [services de chiffrement](../../../../standard/security/cryptographic-services.md)
 - [Configuration de classes de chiffrement](../../configure-cryptography-classes.md)

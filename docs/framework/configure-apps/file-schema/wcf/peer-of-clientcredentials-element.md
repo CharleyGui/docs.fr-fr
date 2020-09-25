@@ -2,14 +2,15 @@
 title: <peer> d' <clientCredentials> élément
 ms.date: 03/30/2017
 ms.assetid: 505bd987-0042-4622-b68e-94f439729d53
-ms.openlocfilehash: a8144ca7bad5654bf8f77259ea1717442665fc81
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 75d8543d7db5eee1345d54f934fc89c9593b85ac
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555456"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186989"
 ---
 # <a name="peer-of-clientcredentials-element"></a>\<peer> d' \<clientCredentials> élément
+
 Spécifie les informations d'identification utilisées lors de l'authentification de clients de réseau pair à pair.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,9 +32,11 @@ Spécifie les informations d'identification utilisées lors de l'authentificatio
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -51,6 +54,7 @@ Spécifie les informations d'identification utilisées lors de l'authentificatio
 |[\<clientCredentials>](clientcredentials.md)|Spécifie les informations d'identification utilisées pour authentifier un client auprès d'un service.|  
   
 ## <a name="remarks"></a>Notes  
+
  Cet élément de configuration spécifie les informations d'identification qu'un nœud homologue utilise pour s'authentifier sur les autres nœuds de la maille, ainsi que les paramètres d'authentification qu'un nœud homologue utilise pour authentifier les autres nœuds homologues. Pour plus d’informations, consultez [canal homologue l’authentification des messages](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90)) et la [sécurisation des applications canal homologue](../../../wcf/feature-details/securing-peer-channel-applications.md).  
   
 ## <a name="see-also"></a>Voir aussi

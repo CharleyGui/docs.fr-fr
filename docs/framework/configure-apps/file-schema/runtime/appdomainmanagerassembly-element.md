@@ -5,14 +5,15 @@ helpviewer_keywords:
 - <appDomainManagerAssembly> element
 - appDomainManagerAssembly element
 ms.assetid: c7c56e39-a700-44f5-b94e-411bfce339d9
-ms.openlocfilehash: 4c4ea35bff17a0e5188f26884e93cf77173a7df8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1716b11106775bed2c0d6ccb62e8d5b032b6e8be
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154422"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176134"
 ---
 # <a name="appdomainmanagerassembly-element"></a>Élément \<appDomainManagerAssembly>
+
 Spécifie l’assembly qui fournit le Gestionnaire du domaine d’application par défaut du processus.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Spécifie l’assembly qui fournit le Gestionnaire du domaine d’application pa
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -36,6 +38,7 @@ Spécifie l’assembly qui fournit le Gestionnaire du domaine d’application pa
 |`value`|Attribut requis. Spécifie le nom complet de l’assembly qui fournit le gestionnaire de domaine d’application pour le domaine d’application par défaut dans le processus.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -45,7 +48,8 @@ Spécifie l’assembly qui fournit le Gestionnaire du domaine d’application pa
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Pour spécifier le type du gestionnaire de domaine d’application, vous devez spécifier à la fois cet élément et l' [\<appDomainManagerType>](appdomainmanagertype-element.md) élément. Si l’un de ces éléments n’est pas spécifié, l’autre est ignorée.  
   
  Quand le domaine d’application par défaut est chargé, <xref:System.TypeLoadException> est levé si l’assembly spécifié n’existe pas ou si l’assembly ne contient pas le type spécifié par l' [\<appDomainManagerType>](appdomainmanagertype-element.md) élément et que le processus ne peut pas démarrer. Si l’assembly est trouvé, mais que les informations de version ne correspondent pas, une <xref:System.IO.FileLoadException> exception est levée.  
@@ -59,6 +63,7 @@ Spécifie l’assembly qui fournit le Gestionnaire du domaine d’application pa
  Cet élément de configuration n’est disponible que dans le .NET Framework 4 et versions ultérieures.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment spécifier que le gestionnaire de domaine d’application pour le domaine d’application par défaut d’un processus est le `MyMgr` type dans l' `AdMgrExample` assembly.  
   
 ```xml  
@@ -75,7 +80,7 @@ Spécifie l’assembly qui fournit le Gestionnaire du domaine d’application pa
 
 - <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType>
-- [\<appDomainManagerType>Appartient](appdomainmanagertype-element.md)
-- [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [\<appDomainManagerType> Appartient](appdomainmanagertype-element.md)
+- [Schéma des paramètres d'exécution](index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [SetAppDomainManagerType, méthode](../../../unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)
