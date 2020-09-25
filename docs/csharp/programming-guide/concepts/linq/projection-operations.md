@@ -3,14 +3,15 @@ title: Opérations de projection (C#)
 description: En savoir plus sur les opérations de projection. Ces opérations transforment un objet en une nouvelle forme qui se compose souvent uniquement de propriétés qui seront utilisées ultérieurement.
 ms.date: 07/20/2015
 ms.assetid: 98df573a-aad9-4b8c-9a71-844be2c4fb41
-ms.openlocfilehash: 289100ac9afcfc0d5b93b5f963adc0a123e0a5af
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 6128b1bb2e7ba3dbb1b428d475acc307ba931013
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299160"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186001"
 ---
 # <a name="projection-operations-c"></a>Opérations de projection (C#)
+
 La projection désigne l’opération de transformation d’un objet en une nouvelle forme qui se compose souvent uniquement des propriétés à utiliser ensuite. À l'aide de la projection, vous pouvez créer un nouveau type qui est généré à partir de chaque objet. Vous pouvez projeter une propriété et effectuer une fonction mathématique sur celle-ci. Vous pouvez également projeter l’objet d’origine sans le modifier.  
   
  Les méthodes d’opérateurs de requête standard qui effectuent des opérations de projection sont répertoriées dans la section suivante.  
@@ -25,6 +26,7 @@ La projection désigne l’opération de transformation d’un objet en une nouv
 ## <a name="query-expression-syntax-examples"></a>Exemples de syntaxe d'expression de requête  
   
 ### <a name="select"></a>Sélectionnez  
+
  L’exemple suivant utilise la clause `select` pour projeter la première lettre de chaque chaîne dans une liste de chaînes.  
   
 ```csharp  
@@ -46,6 +48,7 @@ foreach (string s in query)
 ```  
   
 ### <a name="selectmany"></a>SelectMany  
+
  L’exemple suivant utilise plusieurs clauses `from` pour projeter tous les mots de chaque chaîne dans une liste de chaînes.  
   
 ```csharp  
@@ -72,6 +75,7 @@ foreach (string s in query)
 ```  
   
 ## <a name="select-versus-selectmany"></a>Comparaison de Select et SelectMany  
+
  Les deux clauses `Select()` et `SelectMany()` retournent une valeur de résultat (ou des valeurs) à partir des valeurs sources. `Select()` retourne une seule valeur de résultat pour chaque valeur source. Le résultat global est donc une collection qui a le même nombre d’éléments que la collection source. En revanche, `SelectMany()` retourne un résultat global unique qui contient des sous-collections concaténées à partir de chaque valeur source. La fonction de transformation qui est passée comme argument à `SelectMany()` doit retourner une séquence énumérable de valeurs pour chaque valeur source. Ces séquences énumérables sont ensuite concaténées par `SelectMany()` pour créer une seule grande séquence.  
   
  Les deux illustrations suivantes montrent en quoi les actions de ces deux méthodes sont différentes d’un point de vue conceptuel. Dans chaque cas, supposons que la fonction (de transformation) du sélecteur sélectionne le tableau de fleurs (Flowers) à partir de chaque valeur source.  
@@ -85,6 +89,7 @@ foreach (string s in query)
  ![Graphique montrant l’action de SelectMany&#40;&#41;.](./media/projection-operations/select-many-action-graphic.png )  
   
 ### <a name="code-example"></a>Exemple de code  
+
  L’exemple suivant compare le comportement de `Select()` et de `SelectMany()`. Le code crée un « bouquet » de fleurs en prenant les deux premiers éléments de chaque liste de noms de fleurs de la collection source. Dans cet exemple, la « valeur unique » que la fonction de transformation <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29> utilise est elle-même une collection de valeurs. Cela nécessite d’utiliser la boucle `foreach` supplémentaire pour énumérer chaque chaîne dans chaque sous-séquence.  
   
 ```csharp  
@@ -163,7 +168,7 @@ static void SelectVsSelectMany()
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [clause SELECT](../../../language-reference/keywords/select-clause.md)
 - [Comment remplir des collections d’objets à partir de plusieurs sources (LINQ) (C#)](./how-to-populate-object-collections-from-multiple-sources-linq.md)
 - [Comment fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (C#)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)

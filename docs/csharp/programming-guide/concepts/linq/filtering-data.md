@@ -3,14 +3,15 @@ title: Filtrage des données (C#)
 description: Le filtrage, également appelé « sélection », limite les résultats en fonction d’une condition. En savoir plus sur les méthodes d’opérateur de requête standard dans LINQ en C# qui effectuent le filtrage.
 ms.date: 07/20/2015
 ms.assetid: fbaece0d-0f23-47f7-89c5-f3ea8db692b6
-ms.openlocfilehash: f9f6d691da73b566e5135f6692c87ba3a8978005
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 51bf9f930ba67ba07c7c0f357910d5e36014138d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103934"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186040"
 ---
 # <a name="filtering-data-c"></a>Filtrage des données (C#)
+
 Le filtrage fait référence à l’opération de restriction du jeu de résultats pour que celui-ci contienne uniquement les éléments qui répondent à une condition spécifiée. Cette opération est également appelée « sélection ».  
   
  L’illustration suivante montre les résultats du filtrage d’une séquence de caractères. Le prédicat de l’opération de filtrage spécifie que le caractère doit être « A ».  
@@ -27,6 +28,7 @@ Le filtrage fait référence à l’opération de restriction du jeu de résulta
 |Where|Sélectionne les valeurs qui sont basées sur une fonction de prédicat.|`where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête  
+
  L’exemple suivant utilise la clause `where` pour filtrer les chaînes d’un tableau qui ont une longueur spécifique.  
   
 ```csharp  
@@ -49,7 +51,7 @@ foreach (string str in query)
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [clause WHERE](../../../language-reference/keywords/where-clause.md)
 - [Spécifier dynamiquement des filtres de prédicat au moment de l’exécution](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
 - [Comment interroger les métadonnées d’un assembly avec la réflexion (LINQ) (C#)](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
