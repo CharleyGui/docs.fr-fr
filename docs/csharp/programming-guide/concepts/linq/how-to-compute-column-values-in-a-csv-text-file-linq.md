@@ -3,14 +3,15 @@ title: Comment calculer des valeurs de colonnes dans un fichier texte CSV (LINQ)
 description: Cet exemple montre comment effectuer des calculs d’agrégation à l’aide de LINQ en C#, tels que SUM, Average, min et Max, sur les colonnes d’un fichier. csv.
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 9137779f9767c8a9531489f7894ba3e69eb1faee
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a475de9c769a66fdded490a3f7eccdb74a434186
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105322"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195595"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Comment calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (C#)
+
 Cet exemple montre comment effectuer des calculs d’agrégation tels que Sum, Average, Min et Max, avec les colonnes d’un fichier .csv. Les exemples de principes montrés ici sont applicables à d’autres types de texte structuré.  
   
 ## <a name="to-create-the-source-file"></a>Pour créer le fichier source  
@@ -160,6 +161,7 @@ class SumColumns
  La requête fonctionne à l’aide de la méthode <xref:System.String.Split%2A> pour convertir chaque ligne de texte en un tableau. Chaque élément du tableau représente une colonne. Enfin, le texte de chaque colonne est converti en sa représentation numérique. Si votre fichier est un fichier séparé par des tabulations, remplacez l’argument de la méthode `Split` par `\t`.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - container tags, <probing> element
 - probing element
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
-ms.openlocfilehash: e9e48ea97e1b70fef7fcc78a113e18c5fec23b7c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1435ee8ea887b5d7d3e785eef0f25ffed14b1b97
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73115864"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195270"
 ---
 # <a name="probing-element"></a>Élément \<probing>
+
 Spécifie les sous-répertoires de base de l’application pour le common language runtime à rechercher lors du chargement des assemblys.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Spécifie les sous-répertoires de base de l’application pour le common langua
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -52,6 +54,7 @@ Aucun.
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment spécifier les sous-répertoires de base de l’application que le runtime doit rechercher pour les assemblys.  
   
 ```xml  
@@ -67,6 +70,6 @@ Aucun.
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des paramètres d’exécution](index.md)
-- [Schéma du fichier de configuration](../index.md)
+- [Schéma des fichiers de configuration](../index.md)
 - [Spécifier l’emplacement d’un assembly](../../../../standard/assembly/location.md)
 - [Comment le runtime localise les assemblys](../../../deployment/how-the-runtime-locates-assemblies.md)

@@ -3,14 +3,15 @@ title: Tri des données (C#)
 description: En savoir plus sur les opérations de tri et les méthodes d’opérateur de requête standard qui effectuent des opérations de tri dans LINQ en C#.
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
-ms.openlocfilehash: 5feeb0e2229fc370fdcb9608817f41832bffd7cc
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 0665e5dec95fd2929d24d82568de66597df1c0bd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302332"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195504"
 ---
 # <a name="sorting-data-c"></a>Tri des données (C#)
+
 Une opération de tri ordonne les éléments d’une séquence en fonction d’un ou de plusieurs attributs. Le premier critère de tri effectue un tri principal sur les éléments. En spécifiant un deuxième critère de tri, vous pouvez trier les éléments dans chaque groupe de tri principal.  
   
  L’illustration suivante montre les résultats d’une opération de tri par ordre alphabétique sur une séquence de caractères :
@@ -34,6 +35,7 @@ Une opération de tri ordonne les éléments d’une séquence en fonction d’u
 ### <a name="primary-sort-examples"></a>Exemples de tri principal  
   
 #### <a name="primary-ascending-sort"></a>Tri principal croissant  
+
  L’exemple suivant montre comment utiliser la clause `orderby` dans une requête LINQ pour trier les chaînes dans un tableau par longueur de chaîne, dans l’ordre croissant.  
   
 ```csharp  
@@ -57,6 +59,7 @@ foreach (string str in query)
 ```  
   
 #### <a name="primary-descending-sort"></a>Tri principal décroissant  
+
  L’exemple suivant montre comment utiliser la clause `orderby descending` dans une requête LINQ pour trier les chaînes selon leur première lettre, dans l’ordre décroissant.  
   
 ```csharp  
@@ -82,6 +85,7 @@ foreach (string str in query)
 ### <a name="secondary-sort-examples"></a>Exemples de tri secondaire  
   
 #### <a name="secondary-ascending-sort"></a>Tri secondaire croissant  
+
  L’exemple suivant montre comment utiliser la clause `orderby` dans une requête LINQ pour effectuer un tri principal et un tri secondaire des chaînes dans un tableau. Les chaînes sont triées en premier lieu selon leur longueur, puis secondairement en fonction de la première lettre de la chaîne, chaque fois dans l’ordre croissant.  
   
 ```csharp  
@@ -105,6 +109,7 @@ foreach (string str in query)
 ```  
   
 #### <a name="secondary-descending-sort"></a>Tri secondaire décroissant  
+
  L’exemple suivant montre comment utiliser la clause `orderby descending` dans une requête LINQ pour effectuer un tri principal dans l’ordre croissant et un tri secondaire dans l’ordre décroissant. Les chaînes sont triées en premier lieu selon leur longueur, puis secondairement en fonction de la première lettre de la chaîne.  
   
 ```csharp  
@@ -130,7 +135,7 @@ foreach (string str in query)
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [orderby, clause](../../../language-reference/keywords/orderby-clause.md)
 - [Classer les résultats d’une clause join](../../../linq/order-the-results-of-a-join-clause.md)
 - [Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

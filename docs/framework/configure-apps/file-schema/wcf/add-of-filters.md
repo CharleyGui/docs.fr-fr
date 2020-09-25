@@ -2,14 +2,15 @@
 title: <add> de <filters>
 ms.date: 03/30/2017
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
-ms.openlocfilehash: 280c516b17a133930bc4b6621a8c9bc7f4781085
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c1de0605bc8afc502a85d9b2917b975ee45a3d26
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850564"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201653"
 ---
 # <a name="add-of-filters"></a>\<add> de \<filters>
+
 Filtre XPath qui spécifie le type de message à enregistrer.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,15 +29,17 @@ Filtre XPath qui spécifie le type de message à enregistrer.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|Filter|Chaîne qui spécifie une requête sur un document XML défini par une expression XPath 1.0. Pour plus d’informations, consultez <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.|  
+|Filter|Chaîne qui spécifie une requête sur un document XML défini par une expression XPath 1.0. Pour plus d'informations, consultez <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -45,7 +48,8 @@ Filtre XPath qui spécifie le type de message à enregistrer.
 |-------------|-----------------|  
 |[\<filters>](filters.md)|Contient une collection de filtres XPath utilisés pour contrôler le type de message enregistré.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les filtres sont appliqués uniquement à la couche de transport, spécifiée par `logMessagesAtTransportLevel` (valeur `true`). Le niveau de service et l'enregistrement du message incorrect ne sont pas affectés par les filtres.  
   
  Pour ajouter un filtre à la collection, utilisez le mot clé `add`. Lorsqu'un ou plusieurs filtres sont définis, seuls les messages qui correspondent au moins à l'un des filtres sont enregistrés. Si aucun filtre n'est défini, tous les messages passent.  
@@ -55,6 +59,7 @@ Filtre XPath qui spécifie le type de message à enregistrer.
  L'exemple de code suivant illustre comment configurer un filtre afin que seuls les messages contenant une section d'en-tête SOAP soient enregistrés.  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple de code suivant illustre comment configurer un filtre afin que seuls les messages contenant une section d'en-tête SOAP soient enregistrés.  
   
 ```xml  

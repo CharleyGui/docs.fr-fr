@@ -1,5 +1,5 @@
 ---
-title: <add>d' <declaredTypes> élément
+title: <add> d' <declaredTypes> élément
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts
@@ -7,14 +7,15 @@ helpviewer_keywords:
 - DataContractSerializer
 - DataContractAttribute
 ms.assetid: c3d37ae4-8f1c-463f-b195-658c5a7e90a1
-ms.openlocfilehash: a001e8743b2c24f68b1b23cbccf3e5ac162c4e71
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9af47848b03074ec88f38a5884089bc50239ee50
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400660"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201666"
 ---
-# <a name="add-of-declaredtypes-element"></a>\<add>d' \<declaredTypes> élément
+# <a name="add-of-declaredtypes-element"></a>\<add> d' \<declaredTypes> élément
+
 Ajoute un type utilisé par le <xref:System.Runtime.Serialization.DataContractSerializer> pendant la désérialisation. Chaque type déclaré inclut les types connus qui seront renvoyés comme champ ou propriété du type déclaré.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ Ajoute un type utilisé par le <xref:System.Runtime.Serialization.DataContractSe
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -55,7 +57,8 @@ Ajoute un type utilisé par le <xref:System.Runtime.Serialization.DataContractSe
 |-------------|-----------------|  
 |[\<declaredTypes>](declaredtypes.md)|Contient les types qui requièrent des types connus pendant la désérialisation effectuée par le <xref:System.Runtime.Serialization.DataContractSerializer>.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Pour plus d’informations sur les types connus, consultez [types connus de contrat de données](../../../wcf/feature-details/data-contract-known-types.md) et <xref:System.Runtime.Serialization.DataContractSerializer> .  
   
  [\<dataContractSerializer>](datacontractserializer-element.md)Pour obtenir un exemple d’utilisation de cet élément, consultez.  
@@ -81,4 +84,4 @@ Ajoute un type utilisé par le <xref:System.Runtime.Serialization.DataContractSe
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - [Types connus de contrats de données](../../../wcf/feature-details/data-contract-known-types.md)
 - [\<dataContractSerializer>](datacontractserializer-element.md)
-- [\<add>of\<declaredTypes>](add-of-declaredtypes-element.md)
+- [\<add> of \<declaredTypes>](add-of-declaredtypes-element.md)

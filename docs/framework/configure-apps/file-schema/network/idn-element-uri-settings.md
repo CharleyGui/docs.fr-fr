@@ -2,12 +2,12 @@
 title: <idn>, élément (paramètres d’URI)
 ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
-ms.openlocfilehash: 533b2562f6e5c8d6c2bf452e56dff9a8bf8ab376
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f45922ecd5f7476362aab5348d91415d8e31c53f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71698170"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195400"
 ---
 # <a name="idn-element-uri-settings"></a>\<idn>, élément (paramètres d’URI)
 
@@ -26,31 +26,32 @@ Spécifie si l’analyse des IDN (Internationalized Domain Name) est appliquée 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
 
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |`enabled`|Spécifie si l’analyse des IDN (Internationalized Domain Name) est appliquée à un nom de domaine. la valeur par défaut est None.|  
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune
+None
   
 ### <a name="parent-elements"></a>Éléments parents
 
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[uri](uri-element-uri-settings.md)|Contient des paramètres qui spécifient comment le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier).|  
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 La <xref:System.Uri> classe existante a été étendue dans .NET Framework 3,5. 3,0 SP1 et 2,0 SP1 avec prise en charge des IRI (International Resource Identifiers) et des noms de domaine internationaux (IDN). Les utilisateurs actuels ne voient aucune modification du comportement .NET Framework 2,0, sauf s’ils activent spécifiquement la prise en charge des IRI et des IDN. Cela garantit la compatibilité des applications avec les versions antérieures de .NET Framework.
 
 Pour activer la prise en charge des IRI, les deux modifications suivantes sont requises :
 
-1. Ajoutez la ligne suivante au fichier machine. config dans le répertoire .NET Framework 2,0 :
+1. Ajoutez la ligne suivante au fichier machine.config sous le répertoire .NET Framework 2,0 :
   
     ```xml  
     <section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  

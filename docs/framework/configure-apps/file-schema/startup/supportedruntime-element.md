@@ -8,12 +8,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: 4517aab98235ec2172da355ad0e05d95ebee46c5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 79b49cbc9b122e6591d07643a341841b262edff4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554037"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201705"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime>, élément
 
@@ -55,7 +55,9 @@ Si l' **\<supportedRuntime>** élément avec l' `sku` attribut est présent dans
 Nous vous recommandons de tester les applications avec toutes les versions du .NET Framework sur lesquelles elles peuvent s'exécuter.
 
 <a name="version"></a>
+
 ## <a name="runtime-version-values"></a>valeurs de "runtime version"
+
 L' `runtime` attribut spécifie la version du Common Language Runtime (CLR) qui est requise pour une application donnée. Notez que toutes les versions .NET Framework v4. x spécifient le `v4.0` CLR. Le tableau suivant répertorie les valeurs valides pour la valeur de la *version du runtime* de l' `version` attribut.
 
 |Version du .NET Framework|Attribut `version`|
@@ -73,7 +75,7 @@ L' `sku` attribut utilise un moniker de Framework cible (TFM) pour indiquer la v
 
 |Version du .NET Framework|Attribut `sku`|
 |----------------------------|---------------------|
-|4,0|".NETFramework,Version=v4.0"|
+|4.0|".NETFramework,Version=v4.0"|
 |4.0, Client Profile|".NETFramework,Version=v4.0,Profile=Client"|
 |4.0, Platform Update 1|". NETFramework, version = v 4.0.1 "|
 |4.0, Client Profile, Update 1|". NETFramework, version = v 4.0.1, Profile = client "|
@@ -92,7 +94,7 @@ L' `sku` attribut utilise un moniker de Framework cible (TFM) pour indiquer la v
 |4.7.2|". NETFramework, version = v 4.7.2 "|
 |4.8|". NETFramework, version = v 4.8|
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre comment spécifier la version du runtime prise en charge dans un fichier de configuration. Le fichier de configuration indique que l’application cible le .NET Framework 4,7.
 

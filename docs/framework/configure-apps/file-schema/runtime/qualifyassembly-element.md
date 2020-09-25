@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <qualifyAssembly> element
 - qualifyAssembly element
 ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
-ms.openlocfilehash: 0479b966abd0cfa3c570355e62e4b42264a3114f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 26b265996a059d8e52901557603bcf5e7636e596
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554552"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195218"
 ---
 # <a name="qualifyassembly-element"></a>Élément \<qualifyAssembly>
+
 Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quand un nom partiel est utilisé.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quan
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -43,6 +45,7 @@ Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quan
 |`fullName`|Attribut requis.<br /><br /> Spécifie le nom complet de l’assembly tel qu’il apparaît dans la Global Assembly Cache.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -54,11 +57,13 @@ Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quan
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
+
  L’appel de la <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> méthode à l’aide de noms d’assemblys partiels amène le Common Language Runtime à Rechercher l’assembly uniquement dans le répertoire de base de l’application. Utilisez l' **\<qualifyAssembly>** élément dans votre fichier de configuration de l’application pour fournir les informations complètes de l’assembly (nom, version, jeton de clé publique et culture) et faites en sorte que l’Common Language Runtime recherche l’assembly dans le global assembly cache.  
   
  L’attribut **FullName** doit inclure les quatre champs d’identité d’assembly : nom, version, jeton de clé publique et culture. L’attribut **partialName** doit référencer partiellement un assembly. Vous devez spécifier au moins le nom du texte de l’assembly (le cas le plus courant), mais vous pouvez également inclure la version, le jeton de clé publique ou la culture (ou n’importe quelle combinaison des quatre, mais pas les quatre). L' **partialName** doit correspondre au nom spécifié dans votre appel. Par exemple, vous ne pouvez pas spécifier `"math"` comme attribut **partialName** dans votre fichier de configuration et appeler `Assembly.Load("math, Version=3.3.3.3")` dans votre code.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  L’exemple suivant transforme logiquement l’appel `Assembly.Load("math")` en `Assembly.Load("math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral")` .  
   
 ```xml  
@@ -75,6 +80,6 @@ Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quan
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des paramètres d'exécution](index.md)
 - [Méthode de localisation des assemblys par le runtime](../../../deployment/how-the-runtime-locates-assemblies.md)
 - [Références d'assembly partielles](/previous-versions/dotnet/netframework-4.0/0a7zy9z5(v=vs.100))
