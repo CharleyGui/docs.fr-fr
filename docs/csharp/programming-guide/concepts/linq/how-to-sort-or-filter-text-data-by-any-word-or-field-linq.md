@@ -3,14 +3,15 @@ title: Guide pratique pour trier ou filtrer des données texte par mot ou par ch
 description: Découvrez comment trier ou filtrer des données texte par mot ou par champ. Consultez un exemple de tri des lignes de texte structuré par n’importe quel champ de la ligne.
 ms.date: 07/20/2015
 ms.assetid: 7c04d42f-4a78-42c8-9ec8-57ef18fe13a9
-ms.openlocfilehash: f27ce44f4b0b05bc9094b7e108af8f65170bb58a
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 05858cc787d3916b204910df10d3291796cebc02
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301318"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203941"
 ---
 # <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)
+
 L’exemple suivant montre comment trier les lignes d’un texte structuré, telles que des valeurs séparées par des virgules, à l’aide d’un champ de la ligne. Le champ peut être spécifié de manière dynamique lors de l’exécution. Supposons que les champs du fichier scores.csv correspondent au numéro d’identification d’un étudiant, suivi d’une série de quatre notes d’examen.  
   
 ### <a name="to-create-a-file-that-contains-data"></a>Pour créer un fichier contenant des données  

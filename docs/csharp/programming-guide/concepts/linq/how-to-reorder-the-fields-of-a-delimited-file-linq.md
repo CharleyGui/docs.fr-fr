@@ -3,14 +3,15 @@ title: Comment réorganiser les champs d’un fichier délimité (LINQ) (C#)
 description: Découvrez comment réorganiser des champs dans un fichier. csv dans LINQ en C#. L’exemple modifie les ordres des colonnes, fusionne les colonnes et trie les lignes par valeur de colonne.
 ms.date: 07/20/2015
 ms.assetid: 4e62d82c-61b7-4f18-b9a1-86723746d7d2
-ms.openlocfilehash: a3bbc2690ded24629b313b24ee7a604bcacce850
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 674e6a62112e17107eff690d7656f52488cd08c1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547295"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203954"
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Comment réorganiser les champs d’un fichier délimité (LINQ) (C#)
+
 Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui est souvent utilisé pour stocker des données de feuille de calcul ou autres données tabulaires qui sont représentées sous forme de lignes et de colonnes. En utilisant la méthode <xref:System.String.Split%2A> pour séparer les champs, il est très facile d’interroger et de manipuler des fichiers CSV à l’aide de LINQ. En fait, la même technique peut servir à réorganiser les sections de n’importe quelle ligne de texte structurée et ne se limite donc pas aux fichiers CSV.  
   
  Dans l’exemple suivant, supposons que les trois colonnes représentent le nom, le prénom et l’ID de l’étudiant. Les champs sont classés par ordre alphabétique, selon le nom des étudiants. La requête produit une séquence dans laquelle la colonne ID apparaît en premier, suivie d’une deuxième colonne qui comprend à la fois le prénom et le nom de l’étudiant. Les lignes sont réorganisées d’après le champ ID. Les résultats sont enregistrés dans un nouveau fichier et les données d’origine ne sont pas modifiées.  
@@ -34,7 +35,7 @@ Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui
     Zabokritski,Eugene,121  
     ```  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 class CSVFiles  
@@ -77,6 +78,7 @@ class CSVFiles
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
 Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.
   
 ## <a name="see-also"></a>Voir aussi

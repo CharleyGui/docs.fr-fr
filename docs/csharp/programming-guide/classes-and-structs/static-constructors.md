@@ -6,19 +6,21 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 1bb494ded34065bb76b72db40375555ca1eb6953
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 07b3e54c9ffeb1abacaf5ddd04d2058697e653e4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541849"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203967"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Constructeurs statiques (Guide de programmation C#)
+
 Un constructeur statique est utilisé pour initialiser des données [statiques](../../language-reference/keywords/static.md) ou pour effectuer une action particulière qui ne doit être effectuée qu’une seule fois. Il est automatiquement appelé avant la création de la première instance ou le référencement d’un membre statique.  
   
  [!code-csharp[csProgGuideObjects#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#14)]  
 
 ## <a name="remarks"></a>Notes
+
 Les constructeurs statiques ont les propriétés suivantes :  
   
 - Un constructeur statique n’accepte pas de modificateur d’accès et n’a pas de paramètre.  
@@ -44,19 +46,21 @@ Les constructeurs statiques ont les propriétés suivantes :
 > [!Note]
 > S’il n’est pas directement accessible, la présence d’un constructeur statique explicite doit être documentée pour faciliter la résolution des exceptions de l’initialisation.
 
-### <a name="usage"></a>Utilisation
+### <a name="usage"></a>Usage
 
 - Généralement, on utilise des constructeurs statiques quand la classe utilise un fichier journal et que le constructeur sert à écrire des entrées dans ce fichier.  
 - Les constructeurs statiques sont également utiles pour la création de classes wrapper pour du code non managé, quand le constructeur peut appeler la méthode `LoadLibrary`.  
 
 - Les constructeurs statiques sont également un emplacement pratique pour appliquer des contrôles au moment de l’exécution sur le paramètre de type qui ne peuvent pas être vérifiés au moment de la compilation via des contraintes (contraintes de paramètre de type).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
+
  Dans cet exemple, la classe `Bus` possède un constructeur statique. Quand la première instance de `Bus` est créée (`bus1`), le constructeur statique est appelé pour initialiser la classe. L’exemple de sortie vérifie que le constructeur statique s’exécute une seule fois, même si deux instances de `Bus` sont créées, et qu’il s’exécute avant le constructeur d’instance.  
   
  [!code-csharp[csProgGuideObjects#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#15)]
 
 ## <a name="c-language-specification"></a>spécification du langage C#
+
 Pour plus d’informations, voir la section [Constructeurs statiques](~/_csharplang/spec/classes.md#static-constructors) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
   
 ## <a name="see-also"></a>Voir aussi

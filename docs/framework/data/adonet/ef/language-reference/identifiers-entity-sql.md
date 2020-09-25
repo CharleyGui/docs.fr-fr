@@ -2,20 +2,23 @@
 title: Identificateurs (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: d58a5edd-7b5c-48e1-b5d7-a326ff426aa4
-ms.openlocfilehash: b467a42ed0a0083b9e72037f437dd70aa6b46390
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 7e9b12ca351b021fab62988969cb98310cb55cc2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833706"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203694"
 ---
 # <a name="identifiers-entity-sql"></a>Identificateurs (Entity SQL)
+
 Les identificateurs sont utilisés dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pour représenter des alias d'expression de requête, des références de variables, des propriétés d'objets, des fonctions, etc. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] fournit deux types d’identificateurs : les identificateurs simples et les identificateurs entre guillemets.  
   
 ## <a name="simple-identifiers"></a>Identificateurs simples  
+
  Un identificateur simple dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] est une séquence de caractères alphanumériques et de traits de soulignement. Le premier caractère de l'identificateur doit être un caractère alphabétique (a-z ou A-Z).  
   
 ## <a name="quoted-identifiers"></a>Identificateurs entre guillemets  
+
  Un identificateur entre guillemets est une séquence quelconque de caractères entre crochets ([]). Les identificateurs entre guillemets vous permettent de spécifier des identificateurs avec des caractères qui ne sont pas valides dans des identificateurs. Tous les caractères entre les crochets deviennent partie intégrante de l’identificateur, y compris tous les espaces blancs.  
   
  Un identificateur entre guillemets ne peut pas inclure les caractères suivants :  
@@ -51,7 +54,8 @@ Les identificateurs sont utilisés dans [!INCLUDE[esql](../../../../../../includ
  Pour la sémantique de comparaison des identificateurs entre guillemets, consultez [jeu de caractères d’entrée](input-character-set-entity-sql.md).  
   
 ## <a name="aliasing-rules"></a>Règles d'alias  
- Nous vous recommandons de spécifier des alias dans des requêtes [!INCLUDE[esql](../../../../../../includes/esql-md.md)] chaque fois que nécessaire, y compris les constructions [!INCLUDE[esql](../../../../../../includes/esql-md.md)] suivantes :  
+
+ Nous vous recommandons de spécifier des alias dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] les requêtes chaque fois que nécessaire, y compris les [!INCLUDE[esql](../../../../../../includes/esql-md.md)] constructions suivantes :  
   
 - Champs d'un constructeur de ligne  
   
@@ -62,14 +66,16 @@ Les identificateurs sont utilisés dans [!INCLUDE[esql](../../../../../../includ
 - Éléments dans la clause GROUP BY d'une expression de requête  
   
 ### <a name="valid-aliases"></a>Alias valides  
+
  Les alias valides dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sont des identificateurs simples ou des identificateurs entre guillemets.  
   
 ### <a name="alias-generation"></a>Génération d'alias  
- Si aucun alias n’est spécifié dans une expression de requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)], [!INCLUDE[esql](../../../../../../includes/esql-md.md)] tente de générer un alias en fonction des règles simples suivantes :  
+
+ Si aucun alias n’est spécifié dans une [!INCLUDE[esql](../../../../../../includes/esql-md.md)] expression de requête, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] tente de générer un alias en fonction des règles simples suivantes :  
   
-- Si l'expression de requête (pour laquelle l'alias n'est pas spécifié) est un identificateur simple ou entre guillemets, cet identificateur est utilisé comme alias. Par exemple, `ROW(a, [b])` devient `ROW(a AS a, [b] AS [b])` ;  
+- Si l'expression de requête (pour laquelle l'alias n'est pas spécifié) est un identificateur simple ou entre guillemets, cet identificateur est utilisé comme alias. Par exemple, `ROW(a, [b])` devient `ROW(a AS a, [b] AS [b])`.  
   
-- Si l'expression de requête est une expression plus complexe, mais que le dernier composant de cette expression de requête est un identificateur simple, cet identificateur est utilisé comme alias. Par exemple, `ROW(a.a1, b.[b1])` devient `ROW(a.a1 AS a1, b.[b1] AS [b1])` ;  
+- Si l'expression de requête est une expression plus complexe, mais que le dernier composant de cette expression de requête est un identificateur simple, cet identificateur est utilisé comme alias. Par exemple, `ROW(a.a1, b.[b1])` devient `ROW(a.a1 AS a1, b.[b1] AS [b1])`.  
   
  Nous vous recommandons de ne pas utiliser d'alias implicite si vous souhaitez utiliser le nom d'alias ultérieurement. Chaque fois que des alias (implicites ou explicites) sont en conflit ou sont répétés dans la même étendue, il se produit une erreur de compilation. Un alias implicite passera la compilation même s'il existe un alias explicite ou implicite du même nom.  
   
@@ -86,11 +92,12 @@ SELECT 1 AS X, 2 AS X …
 ```  
   
 ## <a name="scoping-rules"></a>Règles de portée  
+
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] définit des règles de portée qui déterminent quand des variables particulières sont visibles dans le langage de requête. Certaines expressions ou instructions introduisent de nouveaux noms. Les règles de portée déterminent où ces noms peuvent être utilisés, ainsi que quand et où une nouvelle déclaration du même nom qu'une autre peut masquer son prédécesseur.  
   
- Lorsque des noms sont définis dans une requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)], on dit qu’ils sont définis dans une étendue. Une étendue couvre une région entière de la requête. Toutes les expressions ou les références de nom dans une certaine étendue peuvent voir les noms définis dans cette étendue. Avant le début d'une étendue et après sa fin, il n'est pas possible de référencer les noms définis dans l'étendue.  
+ Lorsque des noms sont définis dans une [!INCLUDE[esql](../../../../../../includes/esql-md.md)] requête, ils sont considérés comme étant définis dans une étendue. Une étendue couvre une région entière de la requête. Toutes les expressions ou les références de nom dans une certaine étendue peuvent voir les noms définis dans cette étendue. Avant le début d'une étendue et après sa fin, il n'est pas possible de référencer les noms définis dans l'étendue.  
   
- Les étendues peuvent être imbriquées. Les parties de [!INCLUDE[esql](../../../../../../includes/esql-md.md)] introduisent de nouvelles étendues qui couvrent des régions entières, et ces régions peuvent contenir d’autres expressions [!INCLUDE[esql](../../../../../../includes/esql-md.md)] qui introduisent également des étendues. Lorsque des étendues sont imbriquées, des références peuvent être faites aux noms définis dans l'étendue la plus intérieure, qui contient la référence. Des références peuvent également être faites à tous les noms définis dans toutes les étendues extérieures. Deux étendues quelconques définies dans une même étendue sont considérées comme des étendues sœurs. Il n'est pas possible d'effectuer des références à des noms définis dans des étendues sœurs.  
+ Les étendues peuvent être imbriquées. Les parties de [!INCLUDE[esql](../../../../../../includes/esql-md.md)] introduisent de nouvelles étendues qui couvrent des régions entières, et ces régions peuvent contenir d’autres [!INCLUDE[esql](../../../../../../includes/esql-md.md)] expressions qui introduisent également des étendues. Lorsque des étendues sont imbriquées, des références peuvent être faites aux noms définis dans l'étendue la plus intérieure, qui contient la référence. Des références peuvent également être faites à tous les noms définis dans toutes les étendues extérieures. Deux étendues quelconques définies dans une même étendue sont considérées comme des étendues sœurs. Il n'est pas possible d'effectuer des références à des noms définis dans des étendues sœurs.  
   
  Si un nom déclaré dans une étendue intérieure correspond à un nom déclaré dans une étendue extérieure, les références dans l'étendue intérieure ou dans les étendues déclarées dans cette étendue font référence uniquement au nom nouvellement déclaré. Le nom dans l'étendue extérieure est masqué.  
   
@@ -101,7 +108,8 @@ SELECT 1 AS X, 2 AS X …
  Les paramètres ne sont pas inclus dans une étendue. Comme les références aux paramètres incluent une syntaxe spéciale, les noms des paramètres n'entrent jamais en collision avec d'autres noms dans la requête.  
   
 ### <a name="query-expressions"></a>Expressions de requête  
- Une expression de requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] introduit une nouvelle étendue. Les noms définis dans la clause FROM sont introduits dans l'étendue from dans l'ordre de leur apparition, de gauche à droite. Dans la liste de jointure, les expressions peuvent faire référence aux noms définis précédemment dans la liste. Les propriétés publiques (champs, etc.) des éléments identifiés dans la clause FROM ne sont pas ajoutées à l'étendue from. Elles doivent toujours être référencées par le nom qualifié par un alias. En général, toutes les parties de l'expression SELECT sont considérées dans l'étendue from.  
+
+ Une [!INCLUDE[esql](../../../../../../includes/esql-md.md)] expression de requête introduit une nouvelle étendue. Les noms définis dans la clause FROM sont introduits dans l'étendue from dans l'ordre de leur apparition, de gauche à droite. Dans la liste de jointure, les expressions peuvent faire référence aux noms définis précédemment dans la liste. Les propriétés publiques (champs, etc.) des éléments identifiés dans la clause FROM ne sont pas ajoutées à l'étendue from. Elles doivent toujours être référencées par le nom qualifié par un alias. En général, toutes les parties de l'expression SELECT sont considérées dans l'étendue from.  
   
  La clause GROUP BY introduit également une nouvelle étendue sœur. Chaque groupe peut avoir un nom de groupe qui fait référence à la collection d’éléments dans le groupe. Chaque expression de regroupement introduira également un nouveau nom dans l'étendue de groupe. De plus, l'agrégat d'imbrication (ou le groupe nommé) est également ajouté à l'étendue. Les expressions de regroupement elles-mêmes sont incluses dans l'étendue from. Toutefois, lorsqu'une clause GROUP BY est utilisée, la liste de sélection (projection), la clause HAVING et la clause ORDER BY sont considérées incluses dans l'étendue de groupe et non dans l'étendue from. Les agrégats reçoivent un traitement spécial, tel que cela est décrit dans la liste à puce ci-dessous.  
   
@@ -114,14 +122,15 @@ SELECT 1 AS X, 2 AS X …
 - L'ordre d'évaluation des clauses au sein de l'expression SELECT détermine l'ordre dans lequel les noms sont introduits dans l'étendue. La clause FROM est évaluée en premier, suivie de la clause WHERE, de la clause GROUP BY, de la clause HAVING, de la clause SELECT et enfin de la clause ORDER BY.  
   
 ### <a name="aggregate-handling"></a>Gestion des agrégats  
+
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge deux formes d’agrégats : les agrégats basés sur des collections et les agrégats basés sur des groupes. Les agrégats basés sur les collections correspondent à la construction privilégiée dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)], alors que les agrégats basés sur les groupes sont pris en charge pour la compatibilité avec SQL.  
   
- Lors de la résolution d’un agrégat, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] essaie d’abord de le traiter comme un agrégat basé sur une collection. En cas d’échec, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] transforme l’entrée d’agrégation en une référence à l’agrégat d’imbrication et tente de résoudre cette nouvelle expression, comme illustré dans l’exemple suivant.  
+ Lors de la résolution d’un agrégat, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] tente d’abord de le traiter comme un agrégat basé sur une collection. En cas d’échec, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] transforme l’entrée d’agrégation en une référence à l’agrégat d’imbrication et tente de résoudre cette nouvelle expression, comme illustré dans l’exemple suivant.  
   
  `AVG(t.c) becomes AVG(group..(t.c))`  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence Entity SQL](entity-sql-reference.md)
-- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)
-- [Jeu de caractères en entrée](input-character-set-entity-sql.md)
+- [Vue d'ensemble d'Entity SQL](entity-sql-overview.md)
+- [Jeu de caractères d’entrée](input-character-set-entity-sql.md)

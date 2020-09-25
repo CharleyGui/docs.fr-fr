@@ -1,22 +1,24 @@
 ---
-title: "Comment : utiliser des fonctions table définies par l'utilisateur"
+title: 'Procédure : Utiliser des fonctions tables définies par l’utilisateur'
 description: Utilisez ces exemples pour apprendre à créer une fonction table, qui retourne un ensemble de lignes unique. Utilisez une telle fonction table comme une table.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5a4ae2b4-3290-4aa1-bc95-fc70c51b54cf
-ms.openlocfilehash: 44866367393e321d7dd2db965e2fad8a2e6b63e9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 68a2b54c8fd541595d36bf9c864257b1be1f7856
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286324"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203577"
 ---
-# <a name="how-to-use-table-valued-user-defined-functions"></a>Comment : utiliser des fonctions table définies par l'utilisateur
+# <a name="how-to-use-table-valued-user-defined-functions"></a>Procédure : Utiliser des fonctions tables définies par l’utilisateur
+
 Une fonction table retourne un jeu de lignes unique (contrairement aux procédures stockées qui peuvent retourner plusieurs formes de résultats). Étant donné que le type de retour d’une fonction table est `Table`, vous pouvez utiliser une fonction table à tout endroit dans SQL où il est possible d’utiliser une table. Vous pouvez également utiliser la fonction table comme une table.  
   
 ## <a name="example"></a>Exemple  
+
  La fonction SQL suivante déclare explicitement qu'elle retourne un `TABLE`. Par conséquent, la structure de jeu de lignes retournée est définie implicitement.  
   
 ```sql
@@ -35,6 +37,7 @@ RETURN
  [!code-vb[DLinqUDFS#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqUDFS/vb/northwind-tfunc.vb#1)]  
   
 ## <a name="example"></a>Exemple  
+
  Le code SQL suivant montre que vous pouvez spécifier la jointure à la table que la fonction retourne et l'utiliser également comme n'importe quelle autre table :  
   
 ```sql
@@ -50,4 +53,4 @@ AS p1 INNER JOIN Products AS p2 ON p1.ProductID = p2.ProductID
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions définies par l’utilisateur](user-defined-functions.md)
+- [Fonctions définies par l'utilisateur](user-defined-functions.md)

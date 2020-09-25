@@ -2,14 +2,15 @@
 title: DataViews
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
-ms.openlocfilehash: fe6adac35c157b454f5e33d3526196d4f408fd89
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c5692fcfd1863642bcdf87cbd495d793bce0cbe4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546866"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203707"
 ---
 # <a name="dataviews"></a>DataViews
+
 Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des données stockées dans un objet <xref:System.Data.DataTable>, possibilité qui est souvent utilisée dans les applications de liaison de données. À l’aide d’un **DataView**, vous pouvez exposer les données d’une table avec différents ordres de tri, et vous pouvez filtrer les données par État de ligne ou en fonction d’une expression de filtre.
 
  Un **DataView** fournit une vue dynamique des données dans le **DataTable**sous-jacent : le contenu, le classement et l’appartenance reflètent les modifications à mesure qu’elles se produisent. Ce comportement diffère de la méthode **Select** du **DataTable**, qui retourne un <xref:System.Data.DataRow> tableau à partir d’une table en fonction d’un filtre et/ou d’un ordre de tri particulier : ce contenu reflète les modifications apportées à la table sous-jacente, mais son appartenance et son ordre restent statiques. Les fonctionnalités dynamiques du **DataView** la rendent idéale pour les applications de liaison de données.
@@ -19,6 +20,7 @@ Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des
  Vous pouvez utiliser un <xref:System.Data.DataView.DataViewManager%2A> pour gérer les paramètres de vue pour toutes les tables d’un **DataSet**. Le **DataViewManager** vous offre un moyen pratique de gérer les paramètres d’affichage par défaut pour chaque table. Lors de la liaison d’un contrôle à plusieurs tables d’un **DataSet**, la liaison à un **DataViewManager** est le choix idéal.
 
 ## <a name="in-this-section"></a>Dans cette section
+
  [Création d’un DataView](creating-a-dataview.md) Décrit comment créer un **DataView** pour un **DataTable**.
 
  [Tri et filtrage des données](sorting-and-filtering-data.md) Décrit comment définir les propriétés d’un **DataView** pour retourner des sous-ensembles de lignes de données répondant à des critères de filtre spécifiques ou pour retourner des données dans un ordre de tri particulier.
@@ -36,6 +38,7 @@ Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des
  [Gestion des DataView](managing-dataviews.md) Décrit comment utiliser un **DataViewManager** pour gérer les paramètres **DataView** pour chaque table d’un **DataSet**.
 
 ## <a name="related-sections"></a>Sections connexes
+
  [Applications Web ASP.net](/previous-versions/655cec97(v=vs.100)) Fournit des vues d’ensemble et des procédures pas à pas détaillées pour la création d’applications ASP.NET, de Web Forms et de services Web.
 
  [Applications Windows](/previous-versions/ms184421(v=vs.100)) Fournit des informations détaillées sur l’utilisation des Windows Forms et des applications console.

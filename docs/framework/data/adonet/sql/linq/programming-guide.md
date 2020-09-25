@@ -2,19 +2,21 @@
 title: Guide de programmation
 ms.date: 03/30/2017
 ms.assetid: ed1012d4-3ff2-4877-af27-93125c4180ea
-ms.openlocfilehash: 0746d14d7be0b67bc9966ae0c5a4af0a3226c1e9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 50c4370e23faf8400eb23f1e8c0cc74cd4dce80e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546560"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203564"
 ---
 # <a name="programming-guide"></a>Guide de programmation
+
 Cette section contient des informations sur la création et l'utilisation de votre modèle objet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Si vous utilisez Visual Studio, vous pouvez également utiliser le Concepteur Objet Relationnel pour effectuer un grand nombre de ces mêmes tâches.  
   
  Vous pouvez également rechercher des problèmes spécifiques dans Microsoft Docs, et vous pouvez participer au [Forum LINQ](https://social.msdn.microsoft.com/forums/home?forum=linqtosql), où vous pouvez aborder des sujets plus complexes avec des experts. Enfin, le livre blanc [LINQ to SQL : LINQ (Language-Integrated Query) .net pour les données relationnelles](/previous-versions/dotnet/articles/bb425822(v=msdn.10)) décrit en détail la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, ainsi que des exemples de code Visual Basic et C#.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Création du modèle objet](creating-the-object-model.md)  
  Explique comment générer un modèle objet.  
   
@@ -34,6 +36,7 @@ Cette section contient des informations sur la création et l'utilisation de vot
  Inclut des éléments supplémentaires tels que la résolution de conflit d’accès concurrentiel, la création de nouvelles bases de données, etc., pour les utilisateurs plus expérimentés.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [LINQ to SQL](index.md)  
  Fournit des liens vers les rubriques qui expliquent la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] et les fonctionnalités.  
   

@@ -2,24 +2,27 @@
 title: Sécurité SQL Server Express
 ms.date: 03/30/2017
 ms.assetid: cf9cf6d9-4b05-43e9-ac7b-6cefbfcd6d4e
-ms.openlocfilehash: 503b23602752375006b1a32a342af8a7789596b2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b34e0aff4b460be2dd33b1a5e73d001c79f48f1f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552724"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203447"
 ---
 # <a name="sql-server-express-security"></a>Sécurité SQL Server Express
+
 Microsoft SQL Server Express Edition (SQL Server Express) repose sur Microsoft SQL Server et prend en charge la plupart des fonctionnalités du moteur de base de données. Il est conçu de sorte que les fonctionnalités non essentielles et la connectivité réseau soient désactivées par défaut. Cela réduit la surface d’exposition disponible pour les attaques par un utilisateur malveillant.  
   
  SQL Server Express est généralement installé en tant qu’instance nommée. Le nom par défaut de l’instance est `SQLExpress`. Une instance nommée est identifiée par le nom réseau de l’ordinateur plus le nom de l’instance que vous spécifiez pendant l’installation.  
   
 ## <a name="network-access"></a>Accès réseau  
+
  Pour des raisons de sécurité, les protocoles réseau sont désactivés par défaut dans SQL Server Express. Cela empêche les attaques d’utilisateurs extérieurs qui peuvent compromettre l’ordinateur qui héberge l’instance de SQL Server Express. Vous devez explicitement activer la connectivité réseau et démarrer le service SQL Server Browser pour vous connecter à une instance de SQL Server Express à partir d’un autre ordinateur.  
   
  Une fois la connectivité réseau activée, une instance de SQL Server Express a les mêmes exigences de sécurité que les autres éditions de SQL Server.  
   
 ## <a name="user-instances"></a>Instances utilisateur  
+
  Une instance utilisateur est une instance distincte du moteur de base de données SQL Server Express générée par une instance parente de SQL Server Express. L’objectif principal d’une instance utilisateur est de permettre aux utilisateurs qui exécutent Windows dans le cadre d’un compte d’utilisateur doté de privilèges minimum d’avoir des privilèges d’administrateur système (`sysadmin`) sur l’instance SQL Server Express sur leur ordinateur local. Les instances utilisateur ne sont pas destinées aux utilisateurs qui sont des administrateurs système sur leurs propres ordinateurs.  
   
  Une instance utilisateur est générée à partir d’une instance principale de SQL Server ou SQL Server Express pour le compte d’un utilisateur. Cela s'exécute en tant que processus utilisateur dans le contexte de sécurité Windows de cet utilisateur et non en tant que service. Les connexions SQL Server ne sont pas autorisées ; seules les connexions Windows sont prises en charge. Cela empêche les logiciels en cours d’exécution sur une instance utilisateur d’apporter des modifications à l’ensemble du système que l’utilisateur ne serait pas autorisé à effectuer. Une instance utilisateur est également appelée instance enfant ou client et est parfois appelée à l’aide de l’acronyme RANU (« exécuter en tant qu’utilisateur normal »).  
@@ -27,6 +30,7 @@ Microsoft SQL Server Express Edition (SQL Server Express) repose sur Microsoft 
  Chaque instance utilisateur est isolée de l’instance parente et de toutes les autres instances utilisateur exécutées sur le même ordinateur. Les bases de données installées sur des instances utilisateur sont ouvertes en mode mono-utilisateur uniquement. Plusieurs utilisateurs ne peuvent pas s’y connecter. La réplication, les requêtes distribuées et les connexions à distance sont désactivées pour les instances utilisateur. En cas de connexion à une instance utilisateur, les utilisateurs ne disposent pas de privilèges spéciaux sur l’instance parent SQL Server Express.  
   
 ## <a name="external-resources"></a>Ressources externes  
+
  Pour plus d’informations sur SQL Server Express, consultez les ressources suivantes.  
   
 |||  

@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-ms.openlocfilehash: 757a87f92d8dc6049de1844fed892d95dc57c990
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 79d3913827d5df6f0ac4e77bfdb8f37b553a86d2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151518"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203746"
 ---
 # <a name="annotating-typed-datasets"></a>Annotation de DataSet typés
-Les annotations vous permettent de modifier le nom des éléments de votre objet <xref:System.Data.DataSet> typé sans pour autant modifier le schéma sous-jacent. Modifier les noms des éléments de votre schéma sous-jacent ferait en sorte que le **DataSet** dactylographie se réfère à des objets qui n’existent pas dans la source de données, ainsi que de perdre une référence aux objets qui existent dans la source de données.  
+
+Les annotations vous permettent de modifier le nom des éléments de votre objet <xref:System.Data.DataSet> typé sans pour autant modifier le schéma sous-jacent. Si vous modifiez les noms des éléments dans votre schéma sous-jacent, le **DataSet** typé fait référence aux objets qui n’existent pas dans la source de données, ainsi qu’à la perte d’une référence aux objets qui existent dans la source de données.  
   
- À l’aide d’annotations, vous pouvez personnaliser les noms d’objets de votre **DataSet** dactylographue avec des noms plus significatifs, ce qui rend le code plus lisible et votre **DataSet** dactylographier plus facile à utiliser pour les clients, tout en laissant intact le schéma sous-jacent. Par exemple, l’élément schéma suivant pour le tableau **des clients** de la base de données **Northwind** donnerait lieu à un nom d’objet **DataRow** de **CustomersRow** et à un <xref:System.Data.DataRowCollection> **client**nommé .  
+ À l’aide des annotations, vous pouvez personnaliser les noms des objets de votre **DataSet** typé avec des noms plus explicites, ce qui rend le code plus lisible et le **jeu de données** typé plus facile à utiliser par les clients, tout en laissant intact le schéma sous-jacent. Par exemple, l’élément de schéma suivant pour la table **Customers** de la base de données **Northwind** entraînerait un nom d’objet **DataRow** **CustomersRow** et un <xref:System.Data.DataRowCollection> nommé **Customers**.  
   
 ```xml  
 <xs:element name="Customers">  
@@ -27,7 +28,7 @@ Les annotations vous permettent de modifier le nom des éléments de votre objet
 </xs:element>  
 ```  
   
- Un nom **DataRowCollection** des **clients** est significatif dans le code client, mais un nom **DataRow** de **CustomersRow** est trompeur parce qu’il s’agit d’un seul objet. En outre, dans des scénarios courants, l’objet serait mentionné sans l’identifiant **Row** et serait plutôt simplement appelé un objet **client.** La solution consiste à annoter le schéma et à identifier de nouveaux noms pour les objets **DataRow** et **DataRowCollection.** Voici une version annotée du précédent schéma.  
+ Le nom du **DataRowCollection** des **clients** est explicite dans le code client, mais un nom **DataRow** de **CustomersRow** est trompeur, car il s’agit d’un objet unique. En outre, dans les scénarios courants, l’objet est référencé sans l’identificateur de **ligne** et il est simplement désigné comme un objet **client** . La solution consiste à annoter le schéma et à identifier les nouveaux noms des objets **DataRow** et **DataRowCollection** . Voici une version annotée du précédent schéma.  
   
 ```xml  
 <xs:element name="Customers" codegen:typedName="Customer" codegen:typedPlural="Customers">  
@@ -39,7 +40,7 @@ Les annotations vous permettent de modifier le nom des éléments de votre objet
 </xs:element>  
 ```  
   
- Spécifier une valeur **dactylographiée** du **Client** se traduira par un nom d’objet **DataRow** du **client**. Spécifier une valeur **dactylographie** des **clients** conserve le nom **DataRowCollection** des **clients**.  
+ Si vous spécifiez une valeur **typedName** de **client** , le nom d’objet **DataRow** est **Customer**. Si vous spécifiez une valeur **typedPlural** , les **clients** préservent le nom du **DataRowCollection** des **clients**.  
   
  Le tableau suivant présente les différentes annotations disponibles.  
   
@@ -49,38 +50,38 @@ Les annotations vous permettent de modifier le nom des éléments de votre objet
 |**typedPlural**|Nom d’une collection d’objets.|  
 |**typedParent**|Nom de l'objet lorsqu'il y est fait référence dans une relation parente.|  
 |**typedChildren**|Nom de la méthode permettant de retourner des objets d'une relation enfant.|  
-|**nullValue (en)**|Valeur si la valeur sous-jacente est **DBNull**. Voir le tableau suivant pour les annotations **nullValue.** La valeur par défaut est **_throw**.|  
+|**nullValue**|Valeur si la valeur sous-jacente est **DBNull**. Consultez le tableau suivant pour les annotations **NullValue** . La valeur par défaut est **_throw**.|  
   
- Le tableau suivant montre les valeurs qui peuvent être spécifiées pour l’annotation **nullValue.**  
+ Le tableau suivant indique les valeurs qui peuvent être spécifiées pour l’annotation **NullValue** .  
   
 |Valeur nullValue|Description|  
 |---------------------|-----------------|  
 |*Valeur de remplacement*|Spécifier une valeur à retourner. La valeur retournée doit correspondre au type de l'élément. Par exemple, utilisez `nullValue="0"` pour retourner 0 pour les champs de type null integer (entier nul).|  
 |**_throw**|Levée d'une exception. Il s’agit de la valeur par défaut.|  
 |**_null**|Retourner une référence null ou lever une exception si un type primitif est rencontré.|  
-|**_empty**|Pour les cordes, retourner **String.Empty**, sinon retourner un objet créé à partir d’un constructeur vide. Si un type primitif est rencontré, lever une exception.|  
+|**_empty**|Pour les chaînes, retourne **String. Empty**, sinon retourne un objet créé à partir d’un constructeur vide. Si un type primitif est rencontré, lever une exception.|  
   
- Le tableau suivant affiche les valeurs par défaut pour les objets dans un **DataSet** dactylographe et les annotations disponibles.  
+ Le tableau suivant présente les valeurs par défaut pour les objets d’un **DataSet** typé et les annotations disponibles.  
   
 |Objet/méthode/événement|Default|Annotation|  
 |---------------------------|-------------|----------------|  
-|**Datatable**|TableNameDataTable|typedPlural|  
-|**DataTable (en)** Méthodes|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typedName|  
+|**Tables**|TableNameDataTable|typedPlural|  
+|**DataTable** Leurs|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typedName|  
 |**DataRowCollection**|TableName|typedPlural|  
-|**Datarow**|TableNameRow|typedName|  
+|**DataRow**|TableNameRow|typedName|  
 |**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|typedName|  
 |**Propriété**|PropertyName|typedName|  
 |**Enfant** Accesseur|GetChildTableNameRows|typedChildren|  
 |**Parent** Accesseur|TableNameRow|typedParent|  
-|**Ensemble de données** Événements|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typedName|  
+|**Jeu de données** Événements|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typedName|  
   
- Pour utiliser les annotations **DataSet** typées, vous devez inclure la référence **xmlns** suivante dans votre langage de définition XML Schema (XSD). Pour créer un xsd à <xref:System.Data.DataSet.WriteXmlSchema%2A> partir de tables de base de données, voir ou [travailler avec des jeux de données dans Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
+ Pour utiliser des annotations de **DataSet** typé, vous devez inclure la référence **xmlns** suivante dans votre schéma en langage XSD (XML Schema Definition). Pour créer un XSD à partir de tables de base de données, consultez <xref:System.Data.DataSet.WriteXmlSchema%2A> ou [utilisation de datasets dans Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
   
 ```xml  
 xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
 ```  
   
- Voici un exemple de schéma annoté qui expose la table **des clients** de la base de données **Northwind** avec une relation avec le tableau **des commandes** inclus.  
+ Voici un exemple de schéma annoté qui expose la table **Customers** de la base de données **Northwind** avec une relation avec la table **Orders** incluse.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -134,7 +135,7 @@ codegen:typedParent="Customer" codegen:typedChildren="GetOrders">
 </xs:schema>  
 ```  
   
- L’exemple de code suivant utilise un **DataSet** fortement typé créé à partir du schéma de l’échantillon. Il utilise <xref:System.Data.SqlClient.SqlDataAdapter> l’un pour peupler la table **des clients** et un autre <xref:System.Data.SqlClient.SqlDataAdapter> pour remplir la table des **commandes.** Le **DataSet** fortement tapé définit les **DataRelations**.  
+ L’exemple de code suivant utilise un **DataSet** fortement typé créé à partir de l’exemple de schéma. Elle en utilise une <xref:System.Data.SqlClient.SqlDataAdapter> pour remplir la table **Customers** et une autre <xref:System.Data.SqlClient.SqlDataAdapter> pour remplir la table **Orders** . Le **DataSet** fortement typé définit le **DataRelations**.  
   
 ```vb  
 ' Assumes a valid SqlConnection object named connection.  

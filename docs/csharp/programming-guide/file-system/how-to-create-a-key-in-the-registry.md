@@ -7,14 +7,15 @@ helpviewer_keywords:
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-ms.openlocfilehash: 6db076bc22e098c285b74a8c10e8b5f456c2c55e
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: c51fa61aa4c501921d5c7ace99a8c5aaf7b29f58
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299979"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203915"
 ---
 # <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>Comment créer une clé dans le registre (Guide de programmation C#)
+
 Cet exemple ajoute la paire de valeurs « Name » et « Isabella » dans le Registre de l’utilisateur actuel, sous la clé « Names ».  
   
 ## <a name="example"></a>Exemple  
@@ -35,6 +36,7 @@ key.Close();
 - Remplacez le paramètre `Name` par le nom d’une valeur qui existe directement sous le nœud Names.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Examinez la structure du Registre pour rechercher un emplacement approprié pour votre clé. Par exemple, vous souhaiterez peut-être ouvrir la clé Software de l’utilisateur actuel et créer une clé avec le nom de votre société. Ensuite, ajoutez les valeurs de Registre à la clé de votre société.  
   
  Les conditions ci-dessous peuvent générer une exception :  
@@ -50,6 +52,7 @@ key.Close();
 - La clé de Registre est en lecture seule.  
   
 ## <a name="net-security"></a>Sécurité .NET  
+
  Il est plus sûr d’écrire des données dans le dossier utilisateur (`Microsoft.Win32.Registry.CurrentUser`) que sur l’ordinateur local (`Microsoft.Win32.Registry.LocalMachine`).  
   
  Quand vous créez une valeur de Registre, vous devez déterminer ce qu’il faut faire si cette valeur existe déjà. Il est possible qu’un autre processus, éventuellement malveillant, ait déjà créé la valeur et y ait accès. Quand vous placez des données dans la valeur de Registre, ces données sont accessibles à l’autre processus. Pour éviter ce problème, utilisez la méthode `Overload:Microsoft.Win32.RegistryKey.GetValue` . Elle retourne null si la clé n’existe pas encore.  

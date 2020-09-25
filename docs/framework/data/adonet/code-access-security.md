@@ -5,19 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: aad8de53c455fbbdfa96ae948c670b199492a179
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c4c18e8026dc230db896103d29d40426dbd11f16
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553751"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203837"
 ---
 # <a name="code-access-security-and-adonet"></a>Sécurité d'accès du code et ADO.NET
+
 Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécurité d'accès du code (CAS, Code Access Security) implémentées à l'aide d'une infrastructure commune fournie par le Common Language Runtime (CLR). Dans l'univers du code non managé, la plupart des applications s'exécutent avec les autorisations de l'utilisateur ou d'une principal de sécurité. C'est pourquoi les systèmes informatiques peuvent être endommagés et des données privées compromises lorsqu'un utilisateur bénéficiant de privilèges élevés exécute des logiciels malveillants ou remplis d'erreurs.  
   
  En revanche, le code managé exécuté dans le .NET Framework inclut une sécurité d'accès du code qui s'applique au code seul. L'autorisation ou l'interdiction pour le code de s'exécuter dépend de son origine et d'autres aspects de son identité, et pas seulement de l'identité de la principal de sécurité. Cela réduit la probabilité que du code managé puisse être utilisé de façon abusive.  
   
 ## <a name="code-access-permissions"></a>Autorisations d’accès du code  
+
  Lors de l'exécution du code, ce dernier présente une preuve qui est évaluée par le système de sécurité CLR. Généralement, cette preuve comprend l'origine du code, notamment l'URL, le site, la zone et les signatures numériques qui garantissent l'identité de l'assembly.  
   
  Le CLR permet au code d'effectuer uniquement les opérations pour lesquelles il dispose d'une autorisation. Le code peut demander des autorisations qui lui sont accordées en fonction de la stratégie de sécurité définie par un administrateur.  
@@ -36,11 +38,13 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
  Pour déterminer si le code est autorisé à accéder à une ressources ou effectuer une opération, le système de sécurité du runtime parcourt la pile des appels, en comparant les autorisations de chaque appelant à l'autorisation faisant l'objet d'une demande. Si un appelant dans la pile des appels ne possède pas l'autorisation demandée, une exception <xref:System.Security.SecurityException> est levée et l'accès est refusé.  
   
 ### <a name="requesting-permissions"></a>Demande d’autorisations  
+
  Les demandes d'autorisations ont pour but d'indiquer au runtime les autorisations dont votre application a besoin pour s'exécuter et de garantir que seules les autorisations requises lui sont octroyées. Par exemple, si votre application doit écrire des données sur le disque local, elle nécessite <xref:System.Security.Permissions.FileIOPermission>. Si cette autorisation n'a pas été accordée, l'application échoue lorsqu'elle tente d'écrire sur le disque. Cependant, si l'application demande `FileIOPermission` et que cette autorisation lui a été refusée, l'application génère l'exception dès le départ et ne se charge pas.  
   
  Dans un scénario dans lequel l'application a seulement besoin de lire des données du disque, vous pouvez demander à ce qu'aucune autorisation d'accès en écriture ne lui soit jamais octroyée. En cas de bogue ou d'attaque malveillante, votre code ne peut pas altérer les données sur lesquelles il opère. Pour plus d’informations, consultez [demande d’autorisations](/previous-versions/dotnet/netframework-4.0/yd267cce(v=vs.100)).  
   
 ## <a name="role-based-security-and-cas"></a>Sécurité basée sur les rôles et sécurité d'accès du code (CAS)  
+
  L'implémentation de la sécurité basée sur les rôles et de la sécurité d'accès du code (CAS) améliore la sécurité globale de votre application. La sécurité basée sur les rôles peut utiliser un compte Windows ou une identité personnalisée, en mettant à la disposition du thread actuel des informations sur la principal de sécurité. Par ailleurs, les applications doivent souvent accorder l'accès aux données et aux ressources en fonction des informations d'identification fournies par l'utilisateur. Généralement, ces applications vérifient le rôle de l'utilisateur afin de lui donner accès aux ressources correspondant à ce rôle.  
   
  La sécurité basée sur les rôles permet à un composant d'identifier les utilisateurs actuels et leurs rôles associés au moment de l'exécution. Ces informations sont ensuite mappées à l'aide d'une stratégie de sécurité d'accès du code pour déterminer le jeu d'autorisations octroyées au moment de l'exécution. Pour un domaine d'application spécifié, l'hôte peut modifier la stratégie de sécurité basée sur les rôles par défaut et définir une principal de sécurité par défaut qui représente un utilisateur et les rôles qui lui sont associés.  
@@ -50,19 +54,23 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
  En fonction du type d'application en cours de construction, vous devez également envisager d'implémenter des autorisations basées sur les rôles dans la base de données. Pour plus d’informations sur la sécurité basée sur les rôles dans SQL Server, consultez [SQL Server sécurité](./sql/sql-server-security.md).  
   
 ## <a name="assemblies"></a>Assemblys  
+
  Les assemblys constituent l'unité fondamentale dans le déploiement, le contrôle de version, la portée d'activation et les autorisations de sécurité d'une application .NET Framework. Ils fournissent une collection de types et de ressources qui sont générés pour fonctionner ensemble et former une unité logique de fonctionnalités. Pour le CLR, un type n'existe pas en dehors du contexte d'un assembly. Pour plus d’informations sur la création et le déploiement d’assemblys, consultez [programmation avec des assemblys](../../../standard/assembly/index.md).  
   
 ### <a name="strong-naming-assemblies"></a>Attribution d'un nom fort à des assemblys  
+
  Un nom fort, ou signature numérique, est constitué de l'identité de l'assembly (son simple nom textuel, son numéro de version et des informations de culture, le cas échéant) ainsi que d'une clé publique et d'une signature numérique. La signature numérique est générée à partir un fichier d'assembly à l'aide de la clé privée correspondante. Le fichier d'assembly contient le manifeste d'assembly, qui à son tour comporte les noms et les hachages de tous les fichiers qui composent l'assembly.  
   
  L'attribution d'un nom fort à un assembly donne à une application ou un composant une identité unique que d'autres logiciels peuvent utiliser pour s'y référer explicitement. L'attribution de noms forts aux assemblys les protège contre des falsifications par un assembly contenant un code hostile. Elle garantit également la cohérence du contrôle des versions d'un composant. Vous devez attribuer un nom fort aux assemblys qui seront déployés sur le cache GAC (Global Assembly Cache). Pour plus d’informations, consultez [Création et utilisation d’assemblys avec nom fort](../../../standard/assembly/create-use-strong-named.md).  
   
 ## <a name="partial-trust-in-adonet-20"></a>Confiance partielle dans ADO.NET 2.0  
+
  Dans ADO.NET 2.0, le fournisseur de données .NET Framework pour SQL Server , le fournisseur de données .NET Framework pour OLE DB, le fournisseur de données .NET Framework pour ODBC et le fournisseur de données .NET Framework pour Oracle peuvent tous s'exécuter dans des environnements bénéficiant d'une confiance partielle. Dans les mises en production précédentes du .NET Framework, seul <xref:System.Data.SqlClient> était pris en charge dans des applications ne bénéficiant pas d’une confiance totale.  
   
  Au minimum, une application avec confiance partielle utilisant le fournisseur SQL Server doit disposer d'autorisations d'exécution et de l'objet <xref:System.Data.SqlClient.SqlClientPermission>.  
   
 ### <a name="permission-attribute-properties-for-partial-trust"></a>Propriétés d'attribut d'autorisation pour la confiance partielle  
+
  Pour des scénarios de confiance partielle, vous pouvez utiliser des membres de l'objet <xref:System.Data.SqlClient.SqlClientPermissionAttribute> pour restreindre davantage les capacités disponibles pour le fournisseur de données .NET Framework pour SQL Server.  
   
  Le tableau suivant répertorie les propriétés de l'objet <xref:System.Data.SqlClient.SqlClientPermissionAttribute> disponibles et leurs descriptions :  
@@ -78,6 +86,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 |`Unrestricted`|Indique si une autorisation illimitée à la ressource est déclarée. Hérité de <xref:System.Security.Permissions.SecurityAttribute>.|  
   
 #### <a name="connectionstring-syntax"></a>Syntaxe de ConnectionString  
+
  L'exemple suivant illustre l'utilisation de l'élément `connectionStrings` d'un fichier de configuration pour n'autoriser l'utilisation que d'une seule chaîne de connexion spécifique. Consultez [chaînes de connexion](connection-strings.md) pour plus d’informations sur le stockage et la récupération des chaînes de connexion à partir des fichiers de configuration.  
   
 ```xml  
@@ -89,6 +98,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 ```  
   
 #### <a name="keyrestrictions-syntax"></a>Syntaxe de KeyRestrictions  
+
  L’exemple suivant active la même chaîne de connexion, active l’utilisation des `Encrypt` `Packet Size` options de chaîne de connexion et, mais restreint l’utilisation de toute autre option de chaîne de connexion.  
   
 ```xml  
@@ -102,6 +112,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 ```  
   
 #### <a name="keyrestrictionbehavior-with-preventusage-syntax"></a>KeyRestrictionBehavior avec la syntaxe de PreventUsage  
+
  L'exemple suivant active la même chaîne de connexion et autorise tous les autres paramètres de connexion à l'exception de `User Id`, `Password` et `Persist Security Info`.  
   
 ```xml  
@@ -115,6 +126,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 ```  
   
 #### <a name="keyrestrictionbehavior-with-allowonly-syntax"></a>KeyRestrictionBehavior avec la syntaxe de AllowOnly  
+
  L'exemple suivant active deux chaînes de connexion qui contiennent également des paramètres `Initial Catalog`, `Connection Timeout`, `Encrypt` et `Packet Size`. L'utilisation de tous les autres paramètres de chaîne de connexion est restreinte.  
   
 ```xml  
@@ -136,9 +148,11 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 ```  
   
 ### <a name="enabling-partial-trust-with-a-custom-permission-set"></a>Activation de confiance partielle avec un jeu d'autorisations personnalisé  
+
  Pour activer l'utilisation d'autorisations <xref:System.Data.SqlClient> pour une zone particulière, un administrateur système doit créer un jeu d'autorisations personnalisé et le définir comme jeu d'autorisations pour une zone particulière. Les jeux d'autorisations par défaut, tels que `LocalIntranet`, ne peuvent pas être modifiés. Par exemple, pour inclure des <xref:System.Data.SqlClient> autorisations pour du code qui a un <xref:System.Security.Policy.Zone> de `LocalIntranet` , un administrateur système peut copier le jeu d’autorisations pour `LocalIntranet` , le renommer « CustomLocalIntranet », ajouter les <xref:System.Data.SqlClient> autorisations, importer le jeu d’autorisations CustomLocalIntranet à l’aide de l' [Caspol.exe (outil stratégie de sécurité d’accès du code)](../../tools/caspol-exe-code-access-security-policy-tool.md)et définir le jeu d’autorisations de `LocalIntranet_Zone` sur CustomLocalIntranet.  
   
 ### <a name="sample-permission-set"></a>Exemple de jeu d'autorisations  
+
  Voici un exemple de jeu d'autorisations destiné au fournisseur de données .NET Framework pour SQL Serveur dans un scénario à confiance partielle. Pour plus d’informations sur la création de jeux d’autorisations personnalisés, consultez [Configuration des jeux d’autorisations à l’aide de Caspol.exe](/previous-versions/dotnet/netframework-4.0/4ybs46y6(v=vs.100)).  
   
 ```xml  
@@ -160,9 +174,11 @@ AllowBlankPassword="False">
 ```  
   
 ## <a name="verifying-adonet-code-access-using-security-permissions"></a>Vérification de l'accès du code ADO.NET à l'aide des autorisations de sécurité  
+
  Dans les scénarios avec confiance partielle, vous pouvez exiger des privilèges de sécurité d'accès du code (CAS) pour des méthodes particulières dans votre code en spécifiant un objet <xref:System.Data.SqlClient.SqlClientPermissionAttribute>. Si ce privilège n'est pas autorisé par la stratégie de sécurité limitée en vigueur, une exception est levée avant que votre code soit exécuté. Pour plus d’informations sur la stratégie de sécurité, consultez [meilleures pratiques](/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))pour la stratégie de sécurité et la [gestion des stratégies](/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100)) de sécurité.  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
+
  L'exemple suivant montre comment écrire un code requérant une chaîne de connexion particulière. Il simule le refus d'autorisations illimitées à <xref:System.Data.SqlClient>, qu'un administrateur système implémenterait à l'aide d'une stratégie de sécurité d'accès du code dans la réalité.  
   
 > [!IMPORTANT]
@@ -190,6 +206,7 @@ Failed, as expected: Request failed.
 ```  
   
 ## <a name="interoperability-with-unmanaged-code"></a>Interopérabilité avec du code non managé  
+
  Le code qui s'exécute en dehors du CLR est appelé code non managé. Par conséquent, les mécanismes de sécurité, tels que la sécurité d'accès du code, ne peuvent pas être appliqués à du code non managé. Les composants COM, les interfaces ActiveX et les fonctions API Windows sont des exemples de code non managé. Des considérations de sécurité particulières s'appliquent lors de l'exécution de code non managé pour éviter de compromettre la sécurité globale des applications. Pour plus d’informations, consultez [Interopération avec du code non managé](../../interop/index.md).  
   
  Le .NET Framework prend également en charge la compatibilité descendante avec des composants COM existants en offrant un accès via COM Interop. Vous pouvez incorporer des composants COM dans une application .NET Framework en utilisant des outils de COM Interop pour importer les types COM pertinents. Une fois importés, les types COM sont prêts à être utilisés. COM Interop permet également aux clients COM d'accéder à du code managé en exportant des métadonnées d'assembly dans une bibliothèque de types et en inscrivant le composant managé en tant que composant COM. Pour plus d’informations, consultez [interopérabilité COM avancée](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100)).  

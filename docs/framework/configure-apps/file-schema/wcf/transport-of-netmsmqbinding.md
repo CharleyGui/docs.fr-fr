@@ -2,14 +2,15 @@
 title: <transport> de <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
-ms.openlocfilehash: cc47c01cccc931e81ba57ab37ad9e3accfaa693b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 84a5437de851ecdb96d0463ec574186ba5f91d9e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152929"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203876"
 ---
 # <a name="transport-of-netmsmqbinding"></a>\<transport> de \<netMsmqBinding>
+
 Définit les paramètres de sécurité de transport.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -36,6 +37,7 @@ Définit les paramètres de sécurité de transport.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -48,7 +50,8 @@ Définit les paramètres de sécurité de transport.
 |msmqSecureHashAlgorithm|Spécifie l’algorithme de hachage à utiliser pour calculer le condensat de message. Les valeurs valides sont les suivantes :<br /><br /> -MD5<br />-SHA1<br />-SHA256<br />-SHA512<br /><br /> Par défaut, il s’agit de `SHA1`. Cet attribut est de type <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.<br>En raison de problèmes de collision avec MD5 et SHA1, Microsoft recommande SHA256 ou une meilleure solution.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -62,8 +65,8 @@ Définit les paramètres de sécurité de transport.
 - <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Transport%2A>
 - <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A>
 - <xref:System.ServiceModel.MsmqTransportSecurity>
-- [Files d'attente dans WCF](../../../wcf/feature-details/queues-in-wcf.md)
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Files d’attente dans WCF](../../../wcf/feature-details/queues-in-wcf.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

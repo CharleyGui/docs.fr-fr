@@ -3,14 +3,15 @@ title: Prise en charge de SqlClient pour la haute disponibilité et la récupér
 description: En savoir plus sur la prise en charge des applications SqlClient pour la haute disponibilité et la récupération d’urgence dans SQL Server, à l’aide de groupes de disponibilité AlwaysOn.
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: eba243d37db8262970d161cfa786d3aee4462950
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7693210b7d9387e9b58fcc95febd3df0c70b4743
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286208"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203434"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
+
 Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Framework 4,5) pour la haute disponibilité et la récupération d’urgence--groupes de disponibilité AlwaysOn.  La fonctionnalité Groupes de disponibilité AlwaysOn a été ajoutée à SQL Server 2012. Pour plus d’informations sur les groupes de disponibilité AlwaysOn, consultez la documentation en ligne de SQL Server.  
   
  Vous pouvez à présent spécifier l’écouteur du groupe de disponibilité (haute disponibilité, reprise d’activité) ou une instance de cluster de basculement SQL Server 2012 dans la propriété de connexion. Si une application SqlClient est connectée à une base de données AlwaysOn sur laquelle un basculement est effectué, la connexion d’origine sera interrompue. L’application devra alors établir une nouvelle connexion pour poursuivre la tâche après le basculement.  
@@ -36,6 +37,7 @@ Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Fra
 > Le `MultiSubnetFailover` paramètre `true` n’est pas requis avec .NET Framework 4.6.1 ou versions ultérieures.
   
 ## <a name="connecting-with-multisubnetfailover"></a>Connexion à MultiSubnetFailover  
+
  Spécifiez toujours `MultiSubnetFailover=True` lors de la connexion à un écouteur du groupe de disponibilité SQL Server 2012 ou à une instance de cluster de basculement SQL Server 2012. `MultiSubnetFailover` permet un basculement plus rapide pour tous les groupes de disponibilité et l’instance de cluster de basculement dans SQL Server 2012, et réduit considérablement le temps de basculement pour les topologies AlwaysOn mono- ou multi-sous-réseaux. Lors d'un basculement de sous-réseaux multiples, le client tente les connexions en parallèle. Lors d’un basculement de sous-réseau, il retente de façon intensive la connexion TCP.  
   
  La propriété de connexion `MultiSubnetFailover` indique que l’application est déployée dans un groupe de disponibilité ou une instance de cluster de basculement SQL Server 2012 et que SqlClient tente de se connecter à la base de données sur l’instance SQL Server principale quand vous essayez de vous connecter à toutes les adresses IP. Quand `MultiSubnetFailover=True` est spécifié dans le cadre d’une connexion, le client retente d’établir une connexion TCP plus rapidement que les intervalles de retransmission TCP par défaut du système d’exploitation. Cela permet une reconnexion plus rapide après le basculement d'un groupe de disponibilité AlwaysOn ou d'une instance de cluster de basculement AlwaysOn et s'applique aux groupes de disponibilité et aux instances de cluster de basculement uniques et à plusieurs sous-réseaux.  
@@ -69,6 +71,7 @@ Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Fra
  Une connexion échoue si un réplica principal est configuré pour rejeter des charges de travail en lecture seule et si la chaîne de connexion contient `ApplicationIntent=ReadOnly`.  
   
 ## <a name="upgrading-to-use-multi-subnet-clusters-from-database-mirroring"></a>Mise à niveau pour utiliser des clusters de sous-réseaux multiples à partir de la mise en miroir de bases de données  
+
  Une erreur de connexion (<xref:System.ArgumentException>) se produit si les mots clés de connexion `MultiSubnetFailover` et `Failover Partner` sont présents dans la chaîne de connexion ou si `MultiSubnetFailover=True` et un protocole autre que TCP est utilisé. Une erreur (<xref:System.Data.SqlClient.SqlException>) se produit également si `MultiSubnetFailover` est utilisé et que SQL Server retourne une réponse de partenaire de basculement qui indique qu’il fait partie d’une paire de mise en miroir de bases de données.  
   
  Si vous faites passer une application SqlClient qui utilise actuellement la mise en miroir de bases de données à un scénario multi-sous-réseau, vous devez supprimer la propriété de connexion `Failover Partner` et la remplacer par `MultiSubnetFailover` avec la valeur `True`, et remplacer le nom du serveur dans la chaîne de connexion par un écouteur du groupe de disponibilité. Si une chaîne de connexion utilise `Failover Partner` et `MultiSubnetFailover=True`, le pilote génère une erreur. Toutefois, si une chaîne de connexion utilise `Failover Partner` et `MultiSubnetFailover=False` (ou `ApplicationIntent=ReadWrite`), l'application utilise la mise en miroir de bases de données.  
@@ -76,6 +79,7 @@ Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Fra
  Le pilote retourne une erreur si la mise en miroir de bases de données est utilisée pour la base de données principale au sein du groupe de disponibilité, et si `MultiSubnetFailover=True` est utilisé dans la chaîne de connexion qui établit une connexion avec une base de données principale au lieu d’un écouteur de groupe de disponibilité.  
   
 ## <a name="specifying-application-intent"></a>Spécification de l'intention d'application  
+
  Lorsque `ApplicationIntent=ReadOnly`, le client demande une charge de travail en lecture lors de la connexion à une base de données prenant en charge AlwaysOn. Le serveur applique l'intention au moment de la connexion et pendant une instruction de base de données USE mais uniquement sur une base de données prenant en charge AlwaysOn.  
   
  Le mot clé `ApplicationIntent` ne fonctionne pas avec les bases de données en lecture seule existantes.  
@@ -85,6 +89,7 @@ Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Fra
  Le mot clé `ApplicationIntent` est utilisé pour activer le routage en lecture seule.  
   
 ## <a name="read-only-routing"></a>Routage en lecture seule  
+
  Le routage en lecture seule est une fonctionnalité qui peut garantir la disponibilité d'un réplica en lecture seule d'une base de données. Pour activer le routage en lecture seule :  
   
 1. Vous devez vous connecter à un écouteur du groupe de disponibilité Always On.  

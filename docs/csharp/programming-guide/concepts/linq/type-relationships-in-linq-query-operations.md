@@ -13,14 +13,15 @@ helpviewer_keywords:
 - data transformations [LINQ in C#]
 - LINQ [C#], type relationships
 ms.assetid: 99118938-d47c-4d7e-bb22-2657a9f95268
-ms.openlocfilehash: 20f0b37a156e3b3f9c63f14cb83d678d26f685ee
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 78cdb550e59bc82386d34f0e2bf6b1cae11d72de
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302280"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203980"
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a>Relations des types dans des opérations de requête LINQ (C#)
+
 Pour écrire efficacement des requêtes, vous devez comprendre comment les types des variables dans une opération de requête complète sont liés les uns aux autres. Si vous comprenez ces relations, vous comprendrez plus facilement les exemples LINQ et les exemples de code dans la documentation. En outre, vous comprendrez ce qui se passe en arrière-plan lorsque des variables sont implicitement typées à l’aide de `var`.  
   
  Les opérations de requête LINQ sont fortement typées dans la source de données, dans la requête elle-même et dans l’exécution de la requête. Le type des variables dans la requête doit être compatible avec le type des éléments dans la source de données, ainsi qu’avec le type de la variable d’itération dans l’instruction `foreach`. Ce typage fort garantit l’interception des erreurs de type au moment de la compilation lorsqu’elles peuvent être corrigées avant que les utilisateurs ne les rencontrent.  
@@ -28,6 +29,7 @@ Pour écrire efficacement des requêtes, vous devez comprendre comment les types
  Pour illustrer ces relations de types, la plupart des exemples qui suivent utilisent le typage explicite pour toutes les variables. Le dernier exemple montre comment les mêmes principes s’appliquent même si vous utilisez le typage implicite à l’aide de [var](../../../language-reference/keywords/var.md).  
   
 ## <a name="queries-that-do-not-transform-the-source-data"></a>Requêtes qui ne transforment pas les données sources  
+
  L’illustration suivante montre une opération de requête LINQ to Objects qui n’exécute aucune transformation sur les données. La source contient une séquence de chaînes et le résultat de la requête est également une séquence de chaînes.  
   
  ![Diagramme illustrant la relation entre les types de données dans une requête LINQ.](./media/type-relationships-in-linq-query-operations/linq-query-data-type-relation.png)  
@@ -39,6 +41,7 @@ Pour écrire efficacement des requêtes, vous devez comprendre comment les types
 3. La variable de requête fait l’objet d’une itération dans l’instruction `foreach`. Comme la variable de requête est une séquence de chaînes, la variable d’itération est également une chaîne.  
   
 ## <a name="queries-that-transform-the-source-data"></a>Requêtes qui transforment les données sources  
+
  L’illustration suivante montre une opération de requête [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] qui effectue une transformation simple des données. La requête accepte une séquence d’objets `Customer` en entrée et sélectionne uniquement la propriété `Name` dans le résultat. Comme `Name` est une chaîne, la requête produit une séquence de chaînes en sortie.  
   
  ![Diagramme montrant une requête qui transforme le type de données.](./media/type-relationships-in-linq-query-operations/linq-query-transform-data-type.png)  
@@ -60,6 +63,7 @@ Pour écrire efficacement des requêtes, vous devez comprendre comment les types
 3. Comme le type de la variable de requête est implicite, la variable d’itération dans la boucle `foreach` doit également être implicite.  
   
 ## <a name="letting-the-compiler-infer-type-information"></a>Laisser le compilateur déduire les informations de type  
+
  Vous devez comprendre les relations des types dans une opération de requête. Toutefois, vous avez la possibilité de laisser le compilateur faire tout le travail à votre place. Le mot clé [var](../../../language-reference/keywords/var.md) peut être utilisé pour toute variable locale dans une opération de requête. L’illustration suivante est similaire à l’exemple numéro 2 qui a été abordé précédemment. Toutefois, le compilateur fournit le type fort pour chaque variable dans l’opération de requête.  
   
  ![Diagramme illustrant le flux de type avec typage implicite.](./media/type-relationships-in-linq-query-operations/linq-type-flow-implicit-typing.png)  

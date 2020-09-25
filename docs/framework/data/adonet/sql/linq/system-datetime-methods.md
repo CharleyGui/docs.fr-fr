@@ -2,17 +2,19 @@
 title: System.DateTime, méthodes
 ms.date: 03/30/2017
 ms.assetid: 4f80700c-e83f-4ab6-af0f-1c9a606e1133
-ms.openlocfilehash: fba695975645ecb86a06b17f0664fdf37f8866a0
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e3bffb1f47c19ccf7ea59151cd3545a15d59f1f2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792420"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203486"
 ---
 # <a name="systemdatetime-methods"></a>System.DateTime, méthodes
+
 Les méthodes, propriétés et opérateurs pris en charge par LINQ to SQL suivants peuvent être utilisés dans les requêtes LINQ to SQL. Lorsqu'une méthode, une propriété ou un opérateur n'est pas pris en charge, LINQ to SQL ne peut pas traduire le membre à des fins d'exécution sur SQL Server. Vous pouvez utiliser ces membres dans votre code, ceux-ci devant toutefois être évalués avant la traduction de la requête en données Transact-SQL ou après l'extraction des résultats de la base de données.  
   
 ## <a name="supported-systemdatetime-members"></a>Membres System.DateTime pris en charge  
+
  Une fois mappés dans le modèle objet ou le fichier de mappage externe, LINQ to SQL vous permet d'appeler les membres <xref:System.DateTime?displayProperty=nameWithType> suivants à l'intérieur des requêtes LINQ to SQL.  
   
 |Méthodes <xref:System.DateTime> prises en charge|Opérateurs <xref:System.DateTime> pris en charge|Propriétés <xref:System.DateTime> prises en charge|  
@@ -32,6 +34,7 @@ Les méthodes, propriétés et opérateurs pris en charge par LINQ to SQL suiv
 |||<xref:System.DateTime.Year%2A>|  
   
 ## <a name="members-not-supported-by-linq-to-sql"></a>Membres non pris en charge par LINQ to SQL  
+
  Les membres suivants ne sont pas pris en charge à l'intérieur des requêtes LINQ to SQL.  
   
 |||  
@@ -47,6 +50,7 @@ Les méthodes, propriétés et opérateurs pris en charge par LINQ to SQL suiv
 |<xref:System.DateTime.FromOADate%2A>|<xref:System.DateTime.GetDateTimeFormats%2A>|  
   
 ## <a name="method-translation-example"></a>Exemple de traduction de méthode  
+
  Toutes les méthodes prises en charge par LINQ to SQL sont traduites en données Transact-SQL avant d'être envoyées à SQL Server. Prenons l'exemple du modèle suivant :  
   
  `(dateTime1 – dateTime2).{Days, Hours, Milliseconds, Minutes, Months, Seconds, Years}`  
@@ -56,6 +60,7 @@ Les méthodes, propriétés et opérateurs pris en charge par LINQ to SQL suiv
  `DATEDIFF({DatePart}, @dateTime1, @dateTime2)`  
   
 ## <a name="sqlmethods-date-and-time-methods"></a>Méthodes de date et d'heure SQLMethods  
+
  Outre les méthodes proposées par la structure <xref:System.DateTime>, LINQ to SQL fournit également celles répertoriées dans le tableau suivant à partir de la classe <xref:System.Data.Linq.SqlClient.SqlMethods?displayProperty=nameWithType> pour l'utilisation des données de date et d'heure.  
   
 ||||  

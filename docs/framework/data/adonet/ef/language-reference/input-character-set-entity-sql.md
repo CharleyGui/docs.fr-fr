@@ -2,14 +2,15 @@
 title: Jeu de caractères en entrée (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 13d291d3-e6bc-4719-b953-758b61a590b6
-ms.openlocfilehash: b1c6475704ec384800af0b678edd943246bf8044
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 94615a8f4aec51347f451d6f6a53b9d5b459a336
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250642"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203655"
 ---
 # <a name="input-character-set-entity-sql"></a>Jeu de caractères en entrée (Entity SQL)
+
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] accepte les caractères UNICODE encodés en UTF-16.  
   
  Les littéraux de chaîne peuvent contenir tout caractère UTF-16 placé entre guillemets simples. Par exemple, N'文字列リテラル'. Lorsque les littéraux de chaîne sont comparés, les valeurs UTF-16 d'origine sont utilisées. Par exemple, N'ABC est différent dans les pages de code du japonais et du latin.  
@@ -24,10 +25,10 @@ ms.locfileid: "70250642"
   
  Les mots clés, les expressions et la ponctuation peuvent être tout caractère UTF-16 qui est normalisé en latin. Par exemple, SELECT dans une page de codes pour le japonais est un mot clé valide.  
   
- Les mots clés, les expressions et la ponctuation peuvent être uniquement des caractères latins. `SELECT` dans une page de codes japonaise n'est pas un mot clé. +,-, \*,/, =, (,), ', [,] et toute autre construction de langage non citée ici ne peuvent être que des caractères latins.  
+ Les mots clés, les expressions et la ponctuation peuvent être uniquement des caractères latins. `SELECT` dans une page de codes japonaise n'est pas un mot clé. +,-, \* ,/, =, (,), ', [,] et toute autre construction de langage non citée ici ne peuvent être que des caractères latins.  
   
  Les identificateurs simples ne peuvent être que des caractères latins. Cela évite l'ambiguïté pendant la comparaison, car les valeurs d'origine sont comparées. Par exemple, ABC serait différent dans les pages de codes japonais et latin.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)
+- [Vue d'ensemble d'Entity SQL](entity-sql-overview.md)

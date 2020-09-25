@@ -8,19 +8,21 @@ helpviewer_keywords:
 - C# language, abstract classes
 - C# language, sealed
 ms.assetid: 99aa52f7-b435-43f9-936e-2470af734c4e
-ms.openlocfilehash: 391a8ccbb1fbe6626d1cd5a4b6fcfd9ace3506e6
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: ccbc6734d4e9bafe059dd45bfdf82af7c84438a2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474486"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204032"
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>Classes abstract et sealed et membres de classe (Guide de programmation C#)
+
 Le mot clé [abstract](../../language-reference/keywords/abstract.md) vous permet de créer des classes et des membres de [class](../../language-reference/keywords/class.md) qui sont incomplets et doivent être implémentés dans une classe dérivée.  
   
  Le mot clé [sealed](../../language-reference/keywords/sealed.md) vous permet d’empêcher l’héritage d’une classe ou de certains membres de classe qui étaient précédemment marqués comme [virtual](../../language-reference/keywords/virtual.md).  
   
 ## <a name="abstract-classes-and-class-members"></a>Classes abstraites et membres de classe  
+
  Les classes peuvent être déclarées comme abstraites en plaçant le mot clé `abstract` avant la définition de classe. Par exemple :  
   
  [!code-csharp[csProgGuideInheritance#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#13)]  
@@ -38,6 +40,7 @@ Le mot clé [abstract](../../language-reference/keywords/abstract.md) vous perm
  Si une méthode `virtual` est déclarée `abstract`, elle demeure virtuelle pour toutes les classes qui héritent de la classe abstraite. Une classe qui hérite d’une méthode abstraite ne peut pas accéder à l’implémentation d’origine de la méthode. Dans l’exemple précédent, `DoWork` sur la classe F ne peut pas appeler `DoWork` sur la classe D. De cette manière, une classe abstraite peut forcer les classes dérivées à fournir de nouvelles implémentations de méthode pour les méthodes virtuelles.  
   
 ## <a name="sealed-classes-and-class-members"></a>Classes sealed et membres de classe  
+
  Les classes peuvent être déclarées comme [sealed](../../language-reference/keywords/sealed.md) en plaçant le mot clé `sealed` avant la définition de classe. Par exemple :  
   
  [!code-csharp[csProgGuideInheritance#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#16)]  

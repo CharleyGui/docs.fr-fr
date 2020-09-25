@@ -1,13 +1,13 @@
 ---
 title: Chiffrement
-ms.date: 12/13/2019
+ms.date: 09/08/2020
 description: Découvrez comment chiffrer votre fichier de base de données.
-ms.openlocfilehash: ccdd4b6b8642b3cde1c2667c9ca432a9b0ef21f2
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1b33e1510a269aba87caba2cd39faab33791aa55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447264"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203408"
 ---
 # <a name="encryption"></a>Chiffrement
 
@@ -37,14 +37,17 @@ Pour plus d’informations sur l’utilisation d’une bibliothèque Native diff
 
 ## <a name="specify-the-key"></a>Spécifier la clé
 
-Pour activer le chiffrement, spécifiez la `Password` clé à l’aide du mot clé de chaîne de connexion. Permet <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> d’ajouter ou de mettre à jour la valeur de l’entrée d’utilisateur et d’éviter les attaques par injection de chaîne de connexion.
+Pour activer le chiffrement sur une nouvelle base de données, spécifiez la clé à l’aide du `Password` mot clé de chaîne de connexion. Permet <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> d’ajouter ou de mettre à jour la valeur de l’entrée d’utilisateur et d’éviter les attaques par injection de chaîne de connexion.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/EncryptionSample/Program.cs?name=snippet_ConnectionStringBuilder)]
 
+> [!TIP]
+> La méthode de chiffrement et de déchiffrement des bases de données existantes varie selon la solution que vous utilisez. Par exemple, vous devez utiliser la `sqlcipher_export()` fonction sur SQLCipher. Pour plus d’informations, consultez la documentation de votre solution.
+
 ## <a name="rekeying-the-database"></a>Regénération du clé de la base de données
 
-Si vous souhaitez modifier la clé de chiffrement d’une base de données `PRAGMA rekey` , émettez une instruction. Pour déchiffrer la base `NULL`de données, spécifiez.
+Si vous souhaitez modifier la clé d’une base de données chiffrée, émettez une `PRAGMA rekey` instruction.
 
-Malheureusement, SQLite ne prend pas en `PRAGMA` charge les paramètres dans les instructions. Utilisez plutôt la fonction `quote()` pour empêcher l’injection SQL.
+Malheureusement, SQLite ne prend pas en charge les paramètres dans les `PRAGMA` instructions. Utilisez plutôt la `quote()` fonction pour empêcher l’injection SQL.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/EncryptionSample/Program.cs?name=snippet_Rekey)]
