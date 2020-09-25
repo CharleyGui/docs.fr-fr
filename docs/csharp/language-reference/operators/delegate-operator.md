@@ -1,50 +1,56 @@
 ---
 description: opérateur délégué - Référence C#
 title: opérateur délégué - Référence C#
-ms.date: 09/22/2020
+ms.date: 09/25/2020
 helpviewer_keywords:
 - delegate [C#]
 - anonymous method [C#]
-ms.openlocfilehash: 6c087d9bdb2f526cf7d94c3a0f2c1a929b0343ef
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: db2bf673db12e4a10741a26112820726a4b8aaee
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874911"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247655"
 ---
-# <a name="delegate-operator-c-reference"></a><span data-ttu-id="27585-103">opérateur délégué (Référence C#)</span><span class="sxs-lookup"><span data-stu-id="27585-103">delegate operator (C# reference)</span></span>
+# <a name="delegate-operator-c-reference"></a><span data-ttu-id="f6c42-103">opérateur délégué (Référence C#)</span><span class="sxs-lookup"><span data-stu-id="f6c42-103">delegate operator (C# reference)</span></span>
 
-<span data-ttu-id="27585-104">L’opérateur `delegate` crée une méthode anonyme qui peut être convertie en un type délégué :</span><span class="sxs-lookup"><span data-stu-id="27585-104">The `delegate` operator creates an anonymous method that can be converted to a delegate type:</span></span>
+<span data-ttu-id="f6c42-104">L’opérateur `delegate` crée une méthode anonyme qui peut être convertie en un type délégué :</span><span class="sxs-lookup"><span data-stu-id="f6c42-104">The `delegate` operator creates an anonymous method that can be converted to a delegate type:</span></span>
 
 [!code-csharp-interactive[anonymous method](snippets/shared/DelegateOperator.cs#AnonymousMethod)]
 
 > [!NOTE]
-> <span data-ttu-id="27585-105">À partir C# 3, les expressions lambda offrent un moyen plus concis et plus expressif de créer une fonction anonyme.</span><span class="sxs-lookup"><span data-stu-id="27585-105">Beginning with C# 3, lambda expressions provide a more concise and expressive way to create an anonymous function.</span></span> <span data-ttu-id="27585-106">Utilisez [=> opérateur](lambda-operator.md) pour construire une expression lambda :</span><span class="sxs-lookup"><span data-stu-id="27585-106">Use the [=> operator](lambda-operator.md) to construct a lambda expression:</span></span>
+> <span data-ttu-id="f6c42-105">À partir C# 3, les expressions lambda offrent un moyen plus concis et plus expressif de créer une fonction anonyme.</span><span class="sxs-lookup"><span data-stu-id="f6c42-105">Beginning with C# 3, lambda expressions provide a more concise and expressive way to create an anonymous function.</span></span> <span data-ttu-id="f6c42-106">Utilisez [=> opérateur](lambda-operator.md) pour construire une expression lambda :</span><span class="sxs-lookup"><span data-stu-id="f6c42-106">Use the [=> operator](lambda-operator.md) to construct a lambda expression:</span></span>
 >
 > [!code-csharp-interactive[lambda expression](snippets/shared/DelegateOperator.cs#Lambda)]
 >
-> <span data-ttu-id="27585-107">Pour plus d’informations sur les fonctionnalités des expressions lambda, par exemple la capture de variables externes, consultez [Expressions lambda](lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="27585-107">For more information about features of lambda expressions, for example, capturing outer variables, see [Lambda expressions](lambda-expressions.md).</span></span>
+> <span data-ttu-id="f6c42-107">Pour plus d’informations sur les fonctionnalités des expressions lambda, par exemple la capture de variables externes, consultez [Expressions lambda](lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="f6c42-107">For more information about features of lambda expressions, for example, capturing outer variables, see [Lambda expressions](lambda-expressions.md).</span></span>
 
-<span data-ttu-id="27585-108">Lorsque vous utilisez l’opérateur `delegate`, vous pouvez omettre la liste de paramètres.</span><span class="sxs-lookup"><span data-stu-id="27585-108">When you use the `delegate` operator, you might omit the parameter list.</span></span> <span data-ttu-id="27585-109">Dans ce cas, la méthode anonyme créée peut être convertie en un type délégué avec n’importe quelle liste de paramètres, comme le montre l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="27585-109">If you do that, the created anonymous method can be converted to a delegate type with any list of  parameters, as the following example shows:</span></span>
+<span data-ttu-id="f6c42-108">Lorsque vous utilisez l’opérateur `delegate`, vous pouvez omettre la liste de paramètres.</span><span class="sxs-lookup"><span data-stu-id="f6c42-108">When you use the `delegate` operator, you might omit the parameter list.</span></span> <span data-ttu-id="f6c42-109">Dans ce cas, la méthode anonyme créée peut être convertie en un type délégué avec n’importe quelle liste de paramètres, comme le montre l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="f6c42-109">If you do that, the created anonymous method can be converted to a delegate type with any list of  parameters, as the following example shows:</span></span>
 
 [!code-csharp-interactive[no parameter list](snippets/shared/DelegateOperator.cs#WithoutParameterList)]
 
-<span data-ttu-id="27585-110">C’est la seule fonctionnalité des méthodes anonymes qui n’est pas prise en charge par les expressions lambda.</span><span class="sxs-lookup"><span data-stu-id="27585-110">That's the only functionality of anonymous methods that is not supported by lambda expressions.</span></span> <span data-ttu-id="27585-111">Dans tous les autres cas, une expression lambda est le moyen préféré pour écrire du code incorporé.</span><span class="sxs-lookup"><span data-stu-id="27585-111">In all other cases, a lambda expression is a preferred way to write inline code.</span></span>
+<span data-ttu-id="f6c42-110">C’est la seule fonctionnalité des méthodes anonymes qui n’est pas prise en charge par les expressions lambda.</span><span class="sxs-lookup"><span data-stu-id="f6c42-110">That's the only functionality of anonymous methods that is not supported by lambda expressions.</span></span> <span data-ttu-id="f6c42-111">Dans tous les autres cas, une expression lambda est le moyen préféré pour écrire du code incorporé.</span><span class="sxs-lookup"><span data-stu-id="f6c42-111">In all other cases, a lambda expression is a preferred way to write inline code.</span></span>
 
-<span data-ttu-id="27585-112">À compter de C# 9,0, vous pouvez utiliser des éléments [ignorés](../../discards.md) pour spécifier au moins deux paramètres d’entrée d’une méthode anonyme qui ne sont pas utilisés par la méthode :</span><span class="sxs-lookup"><span data-stu-id="27585-112">Beginning with C# 9.0, you can use [discards](../../discards.md) to specify two or more input parameters of an anonymous method that aren't used by the method:</span></span>
+<span data-ttu-id="f6c42-112">À compter de C# 9,0, vous pouvez utiliser des éléments [ignorés](../../discards.md) pour spécifier au moins deux paramètres d’entrée d’une méthode anonyme qui ne sont pas utilisés par la méthode :</span><span class="sxs-lookup"><span data-stu-id="f6c42-112">Beginning with C# 9.0, you can use [discards](../../discards.md) to specify two or more input parameters of an anonymous method that aren't used by the method:</span></span>
 
 :::code language="csharp" source="snippets/shared/DelegateOperator.cs" id="SnippetDiscards" :::
 
-<span data-ttu-id="27585-113">À des fins de compatibilité descendante, si un seul paramètre est nommé `_` , `_` est traité comme le nom de ce paramètre dans une méthode anonyme.</span><span class="sxs-lookup"><span data-stu-id="27585-113">For backwards compatibility, if only a single parameter is named `_`, `_` is treated as the name of that parameter within an anonymous method.</span></span>
+<span data-ttu-id="f6c42-113">À des fins de compatibilité descendante, si un seul paramètre est nommé `_` , `_` est traité comme le nom de ce paramètre dans une méthode anonyme.</span><span class="sxs-lookup"><span data-stu-id="f6c42-113">For backwards compatibility, if only a single parameter is named `_`, `_` is treated as the name of that parameter within an anonymous method.</span></span>
 
-<span data-ttu-id="27585-114">Vous utilisez également le mot clé `delegate` pour déclarer un [type délégué](../builtin-types/reference-types.md#the-delegate-type).</span><span class="sxs-lookup"><span data-stu-id="27585-114">You also use the `delegate` keyword to declare a [delegate type](../builtin-types/reference-types.md#the-delegate-type).</span></span>
+<span data-ttu-id="f6c42-114">À compter de C# 9,0, vous pouvez également utiliser le `static` modificateur au niveau de la déclaration d’une méthode anonyme :</span><span class="sxs-lookup"><span data-stu-id="f6c42-114">Also beginning with C# 9.0, you can use the `static` modifier at the declaration of an anonymous method:</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="27585-115">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="27585-115">C# language specification</span></span>
+:::code language="csharp" source="snippets/shared/DelegateOperator.cs" id="SnippetStatic" :::
 
-<span data-ttu-id="27585-116">Pour plus d’informations, consultez la section [Expressions de fonction anonyme](~/_csharplang/spec/expressions.md#anonymous-function-expressions) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="27585-116">For more information, see the [Anonymous function expressions](~/_csharplang/spec/expressions.md#anonymous-function-expressions) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
+<span data-ttu-id="f6c42-115">Une méthode anonyme statique ne peut pas capturer les variables locales ou l’état de l’instance à partir des étendues englobantes.</span><span class="sxs-lookup"><span data-stu-id="f6c42-115">A static anonymous method can't capture local variables or instance state from enclosing scopes.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="27585-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="27585-117">See also</span></span>
+<span data-ttu-id="f6c42-116">Vous utilisez également le mot clé `delegate` pour déclarer un [type délégué](../builtin-types/reference-types.md#the-delegate-type).</span><span class="sxs-lookup"><span data-stu-id="f6c42-116">You also use the `delegate` keyword to declare a [delegate type](../builtin-types/reference-types.md#the-delegate-type).</span></span>
 
-- [<span data-ttu-id="27585-118">Informations de référence sur C#</span><span class="sxs-lookup"><span data-stu-id="27585-118">C# reference</span></span>](../index.md)
-- [<span data-ttu-id="27585-119">Opérateurs et expressions C#</span><span class="sxs-lookup"><span data-stu-id="27585-119">C# operators and expressions</span></span>](index.md)
-- [<span data-ttu-id="27585-120">=> opérateur</span><span class="sxs-lookup"><span data-stu-id="27585-120">=> operator</span></span>](lambda-operator.md)
+## <a name="c-language-specification"></a><span data-ttu-id="f6c42-117">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="f6c42-117">C# language specification</span></span>
+
+<span data-ttu-id="f6c42-118">Pour plus d’informations, consultez la section [Expressions de fonction anonyme](~/_csharplang/spec/expressions.md#anonymous-function-expressions) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="f6c42-118">For more information, see the [Anonymous function expressions](~/_csharplang/spec/expressions.md#anonymous-function-expressions) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="f6c42-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f6c42-119">See also</span></span>
+
+- [<span data-ttu-id="f6c42-120">Informations de référence sur C#</span><span class="sxs-lookup"><span data-stu-id="f6c42-120">C# reference</span></span>](../index.md)
+- [<span data-ttu-id="f6c42-121">Opérateurs et expressions C#</span><span class="sxs-lookup"><span data-stu-id="f6c42-121">C# operators and expressions</span></span>](index.md)
+- [<span data-ttu-id="f6c42-122">=> opérateur</span><span class="sxs-lookup"><span data-stu-id="f6c42-122">=> operator</span></span>](lambda-operator.md)
