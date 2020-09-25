@@ -2,14 +2,15 @@
 title: <userNameAuthentication>
 ms.date: 03/30/2017
 ms.assetid: 24d8b398-770f-418f-ba23-c4325419cfa6
-ms.openlocfilehash: dc5c00a2204646863ae2570bb97b8d70e22a72d4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 30fd78d6c56e8b22e0e744a38f18ac076dc70162
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399186"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178032"
 ---
 # \<userNameAuthentication>
+
 Spécifie les informations d'identification d'un service selon le nom d'utilisateur et le mot de passe.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Spécifie les informations d'identification d'un service selon le nom d'utilisat
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -48,6 +50,7 @@ Spécifie les informations d'identification d'un service selon le nom d'utilisat
 |`userNamePasswordValidationMode`|Spécifie la manière dont le mot de passe de nom d'utilisateur est validé. Les valeurs autorisées sont :<br /><br /> -Windows<br />-MembershipProvider<br />-Personnalisé<br /><br /> Le paramètre par défaut est Windows. Cet attribut est de type <xref:System.ServiceModel.Security.UserNamePasswordValidationMode>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -56,7 +59,8 @@ Spécifie les informations d'identification d'un service selon le nom d'utilisat
 |-------------|-----------------|  
 |[\<serviceCredentials>](servicecredentials.md)|Spécifie l’information d’identification à utiliser pour authentifier le service, ainsi que les paramètres liés à la validation de l’information d’identification du client.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Si aucune des liaisons utilisées par un service n'est configurée pour l'authentification par nom d'utilisateur/mot de passe, les attributs de cet élément sont ignorés. Il s'agit notamment de `customUserNamePasswordValidatorType`, `includeWindowsGroups`, `membershipProviderName` et `userNamePasswordValidationMode`.  
   
  Si aucun des liaisons utilisées par un service n’est configurée pour utiliser l’authentification Windows par nom d’utilisateur/mot de passe, les paramètres en rapport avec la mise en cache des jetons d’ouverture de session sont ignorés. Il s'agit notamment de `cacheLogonTokenLifetime`, `cacheLogonTokens` et `maxCacheLogonTokens`.  

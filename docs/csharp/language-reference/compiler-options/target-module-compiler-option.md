@@ -9,14 +9,15 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-ms.openlocfilehash: 2074e170ab177c39fdf3954fa93ae4b666bf853d
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: d8691e5e4477dbbe989344469b44382d5e0e7c8b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466051"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193606"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target:module (Options du compilateur C#)
+
 Cette option empêche le compilateur de générer un manifeste d’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,6 +27,7 @@ Cette option empêche le compilateur de générer un manifeste d’assembly.
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Par défaut, le fichier de sortie créé en effectuant une compilation avec cette option porte l’extension .netmodule.  
   
  Un fichier qui n’a pas de manifeste d’assembly ne peut pas être chargé par le Runtime .NET. Cependant, un tel fichier peut être incorporé dans le manifeste d’un assembly au moyen de [-addmodule](./addmodule-compiler-option.md).  
@@ -37,6 +39,7 @@ Cette option empêche le compilateur de générer un manifeste d’assembly.
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez `in.cs`, en créant `in.netmodule` :  
   
 ```console  

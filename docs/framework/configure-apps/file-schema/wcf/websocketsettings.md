@@ -2,14 +2,15 @@
 title: <webSocketSettings>
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
-ms.openlocfilehash: fa87a1b0961425d6a9bc84769bef6e87cbc2ce96
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6cfddfb9ebfc7c3447af977e14738baabebc8fe9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73732553"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177849"
 ---
 # \<webSocketSettings>
+
 Élément de configuration utilisé pour spécifier des paramètres WebSocket.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,6 +38,7 @@ ms.locfileid: "73732553"
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -57,11 +59,12 @@ ms.locfileid: "73732553"
 |Valeur|Description|  
 |-----------|-----------------|  
 |WhenDuplex|Utilisez le protocole WebSocket lorsque le contrat est en duplex.|  
-|Always (Toujours)|Utilisez toujours le protocole WebSocket indépendamment du contrat.|  
+|Toujours|Utilisez toujours le protocole WebSocket indépendamment du contrat.|  
 |Jamais|N'utilisez jamais le protocole WebSocket.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -70,6 +73,7 @@ ms.locfileid: "73732553"
 |\<netHttpBinding>|Spécifie le NetHttpBinding|  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant montre comment utiliser l'élément \<webSocketSettings>.  
   
 ```xml  

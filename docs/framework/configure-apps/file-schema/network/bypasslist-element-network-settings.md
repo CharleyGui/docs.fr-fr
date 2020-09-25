@@ -9,14 +9,15 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: 42b6ddf4c3d09bcf8ef0ada105cefedccc63b505
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 58cdcf046b2a5a292493c5704739b22aa4ec4f17
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504626"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178409"
 ---
 # <a name="bypasslist-element-network-settings"></a>\<bypasslist>, élément (paramètres réseau)
+
 Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas de proxy.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,14 +33,16 @@ Fournit un ensemble d’expressions régulières qui décrivent les adresses qui
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[add](add-element-for-bypasslist-network-settings.md)|Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.|  
 |[clear](clear-element-for-bypasslist-network-settings.md)|Efface la liste de contournement.|  
@@ -47,11 +50,12 @@ Fournit un ensemble d’expressions régulières qui décrivent les adresses qui
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[defaultProxy](defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  La liste de contournement contient des expressions régulières qui décrivent les URI qui <xref:System.Net.WebRequest> excèdent directement l’accès au serveur proxy.  
   
  Vous devez faire attention lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière "[a-z] + \\ . contoso \\ . com" correspond à n’importe quel hôte dans le domaine contoso.com, mais correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour correspondre uniquement à un hôte dans le domaine contoso.com, utilisez un point d’ancrage (« $ ») : « [a-z] + \\ . contoso \\ . com $ ».  
@@ -59,9 +63,11 @@ Fournit un ensemble d’expressions régulières qui décrivent les adresses qui
  Pour plus d’informations sur les expressions régulières, consultez. [.NET Framework des expressions régulières](../../../../standard/base-types/regular-expressions.md).  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant ajoute deux adresses à la liste de contournement. La première contourne le proxy pour tous les serveurs dans le domaine contoso.com. la deuxième contourne le proxy pour tous les serveurs dont les adresses IP commencent par 192,168.  
   
 ```xml  
