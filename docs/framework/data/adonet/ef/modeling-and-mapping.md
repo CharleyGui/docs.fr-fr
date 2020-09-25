@@ -2,14 +2,15 @@
 title: Modélisation et mappage
 ms.date: 03/30/2017
 ms.assetid: ec8a9515-3708-4cde-a688-4d8e6975f150
-ms.openlocfilehash: 1488b2f6bd9dde5538144f886f1fb5e01ac0de3f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5592ce5301216c8c3e74231480997d9e44d71a7d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554929"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197753"
 ---
 # <a name="modeling-and-mapping"></a>Modélisation et mappage
+
 Dans l’Entity Framework, vous pouvez définir le modèle conceptuel, le modèle de stockage et le mappage entre les deux de la manière la mieux adaptée à votre application. Les outils de Entity Data Model dans Visual Studio vous permettent de créer un. [fichier edmx](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)) à partir d’une base de données ou d’un modèle graphique, puis mettez à jour ce fichier lorsque la base de données ou le modèle change.  
   
  Depuis Entity Framework 4.1, vous pouvez également créer un modèle par programme à l'aide du développement Code First. Il existe deux scénarios différents pour le développement Code First. Dans les deux cas, le développeur définit un modèle lors du codage des définitions de classe .NET Framework, puis spécifie éventuellement un mappage supplémentaire ou une configuration supplémentaire à l'aide des annotations de données ou de l'API Fluent.  

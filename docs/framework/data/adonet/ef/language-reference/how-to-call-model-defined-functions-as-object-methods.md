@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 33bae8a8-4ed8-4a1f-85d1-c62ff288cc61
-ms.openlocfilehash: f53577b9cee640a4a13bd61f60bdbaa695130576
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5e5ae2fd838a34d7f665b23a14db2a599367e801
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542514"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197792"
 ---
 # <a name="how-to-call-model-defined-functions-as-object-methods"></a>Comment : appeler des fonctions définies par modèle comme méthodes d'objet
+
 Cette rubrique décrit comment appeler une fonction définie par modèle comme une méthode sur un objet <xref:System.Data.Objects.ObjectContext> ou comme une méthode statique sur une classe personnalisée. Une *fonction définie par modèle* est une fonction définie dans le modèle conceptuel. Les procédures décrites dans cette rubrique montrent comment appeler directement ces fonctions au lieu de les appeler à partir de requêtes LINQ to Entities. Pour plus d’informations sur l’appel des fonctions définies par modèle dans les requêtes LINQ to Entities, consultez [Comment : appeler des fonctions définies par modèle dans des requêtes](how-to-call-model-defined-functions-in-queries.md).  
   
  Si vous appelez une fonction définie par modèle comme une méthode <xref:System.Data.Objects.ObjectContext> ou comme une méthode statique sur une classe personnalisée, vous devez mapper en premier la méthode à la fonction définie par modèle avec un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>. Toutefois, lorsque vous définissez une méthode sur la classe <xref:System.Data.Objects.ObjectContext>, vous devez utiliser la propriété <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> pour exposer le fournisseur LINQ, alors que lorsque vous définissez une méthode statique sur une classe personnalisée, vous devez utiliser la propriété <xref:System.Linq.IQueryable.Provider%2A> pour exposer le fournisseur LINQ. Pour plus d'informations, consultez les exemples qui suivent les procédures ci-dessous.  
@@ -43,7 +44,8 @@ Cette rubrique décrit comment appeler une fonction définie par modèle comme u
   
 2. Appelez la méthode comme méthode statique sur la classe personnalisée.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  **Appel d'une fonction définie par modèle comme une méthode sur un objet ObjectContext**  
   
  L'exemple suivant montre comment appeler une fonction définie par modèle comme une méthode sur un objet <xref:System.Data.Objects.ObjectContext>. L’exemple utilise le [modèle de vente AdventureWorks Sales Model](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks).  
@@ -52,36 +54,42 @@ Cette rubrique décrit comment appeler une fonction définie par modèle comme u
   
  [!code-xml[DP L2E Methods on ObjectContext#4](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#4)]  
 
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code suivant ajoute une méthode à la classe `AdventureWorksEntities` qui est mappée à la fonction de modèle conceptuel ci-dessus.  
   
  [!code-csharp[DP L2E Methods on ObjectContext#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#2)]
  [!code-vb[DP L2E Methods on ObjectContext#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#2)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code suivant appelle la méthode ci-dessus pour afficher le revenu généré par un produit donné :  
   
  [!code-csharp[DP L2E Methods on ObjectContext#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#3)]
  [!code-vb[DP L2E Methods on ObjectContext#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/module1.vb#3)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment appeler une fonction définie par modèle qui retourne une collection (en tant qu’objet <xref:System.Linq.IQueryable%601>). Considérez la fonction de modèle conceptuel ci-dessous qui retourne tous les détails `SalesOrderDetails` pour un ID de produit donné.  
   
  [!code-xml[DP L2E Methods on ObjectContext#7](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#7)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code suivant ajoute une méthode à la classe `AdventureWorksEntities` qui est mappée à la fonction de modèle conceptuel ci-dessus.  
   
  [!code-csharp[DP L2E Methods on ObjectContext#8](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#8)]
  [!code-vb[DP L2E Methods on ObjectContext#8](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#8)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code suivant appelle la méthode. Notez que la requête <xref:System.Linq.IQueryable%601> retournée est encore affinée pour retourner les totaux de ligne pour chaque `SalesOrderDetail`.  
   
  [!code-csharp[DP L2E Methods on ObjectContext#9](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#9)]
  [!code-vb[DP L2E Methods on ObjectContext#9](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/module1.vb#9)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  **Appel d'une fonction définie par modèle comme une méthode statique sur une classe personnalisée**  
   
  L'exemple suivant montre comment appeler une fonction définie par modèle comme une méthode statique sur une classe personnalisée. L’exemple utilise le [modèle de vente AdventureWorks Sales Model](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks).  
@@ -93,13 +101,15 @@ Cette rubrique décrit comment appeler une fonction définie par modèle comme u
   
  [!code-xml[DP L2E Methods on ObjectContext#1](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#1)]
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code suivant ajoute une classe à votre application qui contient une méthode statique mappée à la fonction de modèle conceptuel ci-dessus.  
   
  [!code-csharp[DP L2E Methods on ObjectContext#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#5)]
  [!code-vb[DP L2E Methods on ObjectContext#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#5)]  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
+
  Le code suivant appelle la méthode ci-dessus pour afficher le revenu produit pour une collection SalesOrderDetail :  
   
  [!code-csharp[DP L2E Methods on ObjectContext#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#6)]

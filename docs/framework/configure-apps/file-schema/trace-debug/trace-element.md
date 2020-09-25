@@ -10,14 +10,15 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-ms.openlocfilehash: 7d8a989219d84e8604e767456c84c0092bc73b22
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 617b42a0be2be272a78b33be997cce632d1c6dcb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153164"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198923"
 ---
 # <a name="trace-element"></a>Élément \<trace>
+
 Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -33,6 +34,7 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -47,7 +49,7 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|`false`|N’efface pas automatiquement la mémoire tampon de sortie. Il s'agit de la valeur par défaut.|  
+|`false`|N’efface pas automatiquement la mémoire tampon de sortie. Il s’agit de la valeur par défaut.|  
 |`true`|Vide automatiquement la mémoire tampon de sortie.|  
   
 ## <a name="usegloballock-attribute"></a>Attribut useGlobalLock  
@@ -55,7 +57,7 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 |Valeur|Description|  
 |-----------|-----------------|  
 |`false`|N’utilise pas le verrou global si l’écouteur est thread-safe ; dans le cas contraire, utilise le verrou global.|  
-|`true`|Utilise le verrou global indépendamment du fait que l’écouteur soit thread-safe. Il s'agit de la valeur par défaut.|  
+|`true`|Utilise le verrou global indépendamment du fait que l’écouteur soit thread-safe. Il s’agit de la valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -71,7 +73,8 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l' `<trace>` élément pour ajouter l’écouteur `MyListener` à la `Listeners` collection. `MyListener`crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. L' `useGlobalLock` attribut a la valeur `false` , ce qui empêche l’utilisation du verrou global si l’écouteur de la trace est thread-safe. L' `autoflush` attribut a la valeur `true` , ce qui amène l’écouteur de la trace à écrire dans le fichier, que la <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> méthode soit appelée ou non. L' `indentsize` attribut a la valeur 0 (zéro), ce qui amène l’écouteur à mettre en retrait les espaces nuls lorsque la <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> méthode est appelée.  
+
+ L’exemple suivant montre comment utiliser l' `<trace>` élément pour ajouter l’écouteur `MyListener` à la `Listeners` collection. `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. L' `useGlobalLock` attribut a la valeur `false` , ce qui empêche l’utilisation du verrou global si l’écouteur de la trace est thread-safe. L' `autoflush` attribut a la valeur `true` , ce qui amène l’écouteur de la trace à écrire dans le fichier, que la <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> méthode soit appelée ou non. L' `indentsize` attribut a la valeur 0 (zéro), ce qui amène l’écouteur à mettre en retrait les espaces nuls lorsque la <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> méthode est appelée.  
   
 ```xml  
 <configuration>  

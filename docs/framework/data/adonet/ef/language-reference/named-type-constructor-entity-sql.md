@@ -2,14 +2,15 @@
 title: Constructeur de type nommé (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 549dea04-d93d-4c87-a292-f81b1598dbfd
-ms.openlocfilehash: f40adce1a9e031ed0b7cd5d03d9c63db255aa610
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c673b58ee5811e3d3b74b3744d3f5291888e2253
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319573"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197779"
 ---
 # <a name="named-type-constructor-entity-sql"></a>Constructeur de type nommé (Entity SQL)
+
 Permet de créer des instances des types nominaux de modèle conceptuel, tels que les types d'entités ou complexes.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -19,16 +20,19 @@ Permet de créer des instances des types nominaux de modèle conceptuel, tels qu
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `identifier`  
  Valeur correspondant à un identificateur simple ou entre guillemets. Pour plus d’informations, consultez [identificateurs](identifiers-entity-sql.md)  
   
  `expression`  
  Attributs du type supposés se trouver dans le même ordre d'apparition que dans la déclaration du type.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Instances de types complexes et de types d'entités nommés.  
   
 ## <a name="remarks"></a>Notes  
+
  Les exemples suivants montrent comment construire des types nominaux et des types complexes :  
   
  L'expression ci-dessous crée une instance de type `Person` :  
@@ -50,6 +54,7 @@ Permet de créer des instances des types nominaux de modèle conceptuel, tels qu
  L'exemple suivant montre comment initialiser une propriété d'un type complexe en valeur null :`MyModel.ZipCode(‘98118’, null)`  
   
 ## <a name="example"></a>Exemple  
+
  La requête Entity SQL ci-dessous utilise le constructeur de type nommé pour créer une instance d'un type de modèle conceptuel. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
 1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  

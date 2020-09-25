@@ -2,14 +2,15 @@
 title: CAST (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 07b6d750-dfd4-48a9-b86c-3badcbba6f70
-ms.openlocfilehash: b7778d6a2e0b0dd15b2911f2d1cee36208e13328
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 5591f1947963dde45d34ad2342485af476765709
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738516"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198013"
 ---
 # <a name="cast-entity-sql"></a>CAST (Entity SQL)
+
 Convertit une expression d'un type de données à un autre.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -19,16 +20,19 @@ CAST ( expression AS data_type )
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `expression`  
  Toute expression valide convertible en `data_type`.  
   
  `data_type`  
  Type de données cible fourni par le système. Il doit s'agir d'un type primitif (scalaire). Le type de données `data_type` utilisé dépend de l'espace de requête. Si une requête est exécutée avec la classe <xref:System.Data.EntityClient.EntityCommand>, le type de données est un type défini dans le modèle conceptuel. Pour plus d'informations, consultez [CSDL Specification](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec). Si une requête est exécutée avec la classe <xref:System.Data.Objects.ObjectQuery%601>, le type de données est un type CLR (Common Language Runtime).  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne la même valeur que `data_type`.  
   
 ## <a name="remarks"></a>Notes  
+
  L’expression de cast a une sémantique similaire à l’expression de conversion Transact-SQL. L'expression de cast sert à convertir une valeur d'un type en valeur d'un autre type.  
   
 ```csharp
@@ -51,6 +55,7 @@ CAST( e as T )
 > CAST n'est pris en charge que sur les types primitifs et les types de membres d'énumération.  
   
 ## <a name="example"></a>Exemple  
+
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur CAST pour convertir une expression d'un type de données à une autre. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
 1. Suivez la procédure décrite dans [Comment : exécuter une requête qui retourne des résultats PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md).  

@@ -5,21 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b1cc02d1-23b1-4439-a998-0da1899f3442
-ms.openlocfilehash: 9d21b17068ff3ce5b0bd3990144383d7f9ded2f9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 539e9763c8aa4affdb6f3bd219a99dbca50cee01
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151336"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202341"
 ---
 # <a name="creating-a-dataview"></a>Création d'un DataView
-Il existe deux façons de créer un objet <xref:System.Data.DataView>. Vous pouvez utiliser le constructeur **DataView,** ou vous <xref:System.Data.DataTable.DefaultView%2A> pouvez <xref:System.Data.DataTable>créer une référence à la propriété de la . Le constructeur **DataView** peut être vide, soit il peut prendre soit un **DataTable** comme un seul argument, ou un **DataTable** avec des critères de filtre, des critères de tri, et un filtre d’état de ligne. Pour plus d’informations sur les arguments supplémentaires disponibles pour une utilisation avec le **DataView**, voir [Les données de tri et de filtrage](sorting-and-filtering-data.md).  
+
+Il existe deux façons de créer un objet <xref:System.Data.DataView>. Vous pouvez utiliser le constructeur **DataView** , ou vous pouvez créer une référence à la <xref:System.Data.DataTable.DefaultView%2A> propriété de <xref:System.Data.DataTable> . Le constructeur **DataView** peut être vide, ou il peut accepter soit un **DataTable** comme argument unique, soit un **DataTable** avec des critères de filtre, des critères de tri et un filtre d’état de ligne. Pour plus d’informations sur les arguments supplémentaires disponibles pour une utilisation avec le **DataView**, consultez [Tri et filtrage des données](sorting-and-filtering-data.md).  
   
- Parce que l’index d’un **DataView** est construit à la fois lorsque le **DataView** est créé, et lorsque l’une des propriétés **Sort**, **RowFilter**, ou **RowStateFilter** sont modifiées, vous obtenez les meilleures performances en fournissant n’importe quel ordre de tri initial ou des critères de filtrage comme arguments constructeurs lorsque vous créez le **DataView**. La création **d’un DataView** sans spécifier les critères de tri ou de filtre, puis la définition des propriétés **Sort,** **RowFilter**, ou **RowStateFilter** provoque plus tard l’index à être construit au moins deux fois: une fois lorsque le **DataView** est créé, et encore une fois lorsque l’une des propriétés de type ou de filtre sont modifiées.  
+ Étant donné que l’index d’un **DataView** est construit à la fois lors de la création du **DataView** et lorsque l’une des propriétés **sort**, **RowFilter**ou **RowStateFilter** est modifiée, vous obtenez des performances optimales en fournissant des critères d’ordre de tri ou de filtrage initiaux comme arguments de constructeur lorsque vous créez le **DataView**. La création d’un **DataView** sans spécifier de critère de tri ou de filtre et la définition ultérieure des propriétés **sort**, **RowFilter**ou **RowStateFilter** entraînent la génération ultérieure de l’index au moins deux fois : une fois lors de la création du **DataView** , et à nouveau lorsque l’une des propriétés de tri ou de filtre est modifiée.  
   
- Notez que si vous créez un **DataView** à l’aide du constructeur qui ne prend aucun argument, vous ne serez pas en mesure d’utiliser le **DataView** jusqu’à ce que vous avez défini la propriété **Table.**  
+ Notez que si vous créez un **DataView** à l’aide du constructeur qui ne prend aucun argument, vous ne pourrez pas utiliser le **DataView** tant que vous n’aurez pas défini la propriété de **table** .  
   
- L’exemple de code suivant montre comment créer un **DataView** à l’aide du constructeur **DataView.** A **RowFilter**, **Sort** column, et **DataViewRowState** sont fournis avec le **DataTable**.  
+ L’exemple de code suivant montre comment créer un **DataView** à l’aide du constructeur **DataView** . Un **RowFilter**, une colonne de **Tri** et un **DataViewRowState** sont fournis avec le **DataTable**.  
   
 ```vb  
 Dim custDV As DataView = New DataView(custDS.Tables("Customers"), _  
@@ -35,7 +36,7 @@ DataView custDV = new DataView(custDS.Tables["Customers"],
     DataViewRowState.CurrentRows);  
 ```  
   
- L’exemple de code suivant montre comment obtenir une référence à la **DataView** par défaut d’un **DataTable** utilisant la propriété **DefaultView** de la table.  
+ L’exemple de code suivant montre comment obtenir une référence au **DataView** par défaut d’un **DataTable** à l’aide de la propriété **DefaultView** de la table.  
   
 ```vb  
 Dim custDV As DataView = custDS.Tables("Customers").DefaultView  
