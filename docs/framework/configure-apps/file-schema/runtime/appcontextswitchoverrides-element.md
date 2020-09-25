@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 0ead35559a17eb06304e6c251d2fe388ca178a30
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ab74886edcc86c900c56017867a3b81c9cb7886e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552282"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176147"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides>, élément
 
@@ -29,6 +29,7 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 ```
 
 ## <a name="attributes-and-elements"></a>Attributs et éléments
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.
 
 ### <a name="attributes"></a>Attributs
@@ -39,11 +40,12 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 
 ### <a name="value-attribute"></a>Attribut de valeur
 
-|Value|Description|
+|Valeur|Description|
 |-----------|-----------------|
 |« nom = valeur »|Nom de commutateur prédéfini avec sa valeur ( `true` ou `false` ). Plusieurs paires nom/valeur de commutateur sont séparées par des points-virgules (« ; »). Pour obtenir la liste des noms de commutateur prédéfinis pris en charge par le .NET Framework, consultez la section Notes.|
 
 ### <a name="child-elements"></a>Éléments enfants
+
  Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
@@ -54,6 +56,7 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|
 
 ## <a name="remarks"></a>Notes
+
  À compter de .NET Framework 4,6, l' `<AppContextSwitchOverrides>` élément d’un fichier de configuration permet aux appelants d’une API de déterminer si leur application peut tirer parti de nouvelles fonctionnalités ou préserver la compatibilité avec les versions précédentes d’une bibliothèque. Par exemple, si le comportement d’une API a changé entre deux versions d’une bibliothèque, l' `<AppContextSwitchOverrides>` élément permet aux appelants de cette API de refuser le nouveau comportement sur les versions de la bibliothèque qui prennent en charge la nouvelle fonctionnalité. Pour les applications qui appellent des API dans le .NET Framework, l' `<AppContextSwitchOverrides>` élément peut également autoriser des appelants dont les applications ciblent une version antérieure du .NET Framework à choisir de nouvelles fonctionnalités si leur application s’exécute sur une version du .NET Framework qui inclut cette fonctionnalité.
 
  L' `value` attribut de l' `<AppContextSwitchOverrides>` élément se compose d’une chaîne unique qui se compose d’une ou de plusieurs paires nom/valeur délimitées par des points-virgules.  Chaque nom identifie un commutateur de compatibilité, et sa valeur correspondante est une valeur booléenne ( `true` ou `false` ) qui indique si le commutateur est défini. Par défaut, le commutateur est `false` , et les bibliothèques fournissent la nouvelle fonctionnalité. Ils fournissent uniquement les fonctionnalités précédentes si le commutateur est défini (autrement dit, sa valeur est `true` ). Cela permet aux bibliothèques de fournir un nouveau comportement pour une API existante tout en permettant aux appelants qui dépendent du comportement précédent de refuser les nouvelles fonctionnalités.
@@ -153,7 +156,7 @@ L’exemple suivant utilise l' `<add>` élément pour ajouter deux paramètres �
 </appSettings>
 ```
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
  L’exemple suivant utilise l' `AppContextSwitchOverrides` élément pour définir un commutateur de compatibilité d’application unique, `Switch.System.Globalization.NoAsyncCurrentCulture` , qui empêche la culture de circuler entre les threads dans les appels de méthode asynchrones.
 

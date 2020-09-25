@@ -1,18 +1,19 @@
 ---
-title: 'Gestion des événements DataAdapter '
+title: Gestion des événements DataAdapter
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 11515b25-ee49-4b1d-9294-a142147c1ec5
-ms.openlocfilehash: d01198d158c4e1c64f12e8a0756c3d4e599fce74
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a2c2dc71cc9e5c445fd05534dad5ad47fd66f436
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149542"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194724"
 ---
-# <a name="handling-dataadapter-events"></a>Gestion des événements DataAdapter 
+# <a name="handling-dataadapter-events"></a>Gestion des événements DataAdapter
+
 <xref:System.Data.Common.DataAdapter> ADO.NET expose trois événements que vous pouvez utiliser pour répondre aux modifications apportées aux données au niveau de la source de données. Le tableau ci-dessous répertorie les événements `DataAdapter`.  
   
 |Événement|Description|  
@@ -22,6 +23,7 @@ ms.locfileid: "79149542"
 |`FillError`|Une erreur est survenue pendant une opération `Fill`.|  
   
 ## <a name="rowupdating-and-rowupdated"></a>RowUpdating et RowUpdated  
+
  `RowUpdating` est déclenché avant le traitement d'une mise à jour d'une ligne de l'objet <xref:System.Data.DataSet> au niveau de la source de données. `RowUpdated` est déclenché après le traitement d'une mise à jour d'une ligne de l'objet `DataSet` au niveau de la source de données. En conséquence, vous pouvez utiliser `RowUpdating` pour modifier le comportement de la mise à jour avant qu'elle ne survienne, pour fournir une gestion supplémentaire lors d'une mise à jour, pour conserver une référence à une ligne mise à jour, pour annuler la mise à jour en cours et la programmer pour un traitement par lots à traiter ultérieurement, etc. `RowUpdated` est utile pour réagir aux erreurs et aux exceptions qui surviennent pendant la mise à jour. Vous pouvez ajouter des informations d'erreur au `DataSet`, ainsi qu'une logique pour les nouvelles tentatives et ainsi de suite.  
   
  Les arguments <xref:System.Data.Common.RowUpdatingEventArgs> et <xref:System.Data.Common.RowUpdatedEventArgs> passés aux événements `RowUpdating` et `RowUpdated` comprennent les élément suivants : une propriété `Command` qui référence l’objet `Command` utilisé pour effectuer la mise à jour ; une propriété `Row` qui référence l’objet `DataRow` contenant les informations mises à jour ; une propriété `StatementType` pour le type de mise à jour effectuée ; le `TableMapping`, le cas échéant ; et le `Status` de l’opération.  
@@ -39,7 +41,7 @@ ms.locfileid: "79149542"
   
  Vous pouvez aussi utiliser la propriété `ContinueUpdateOnError` pour gérer les erreurs des lignes mises à jour. Si `DataAdapter.ContinueUpdateOnError` a la valeur `true`, lorsqu'une mise à jour de ligne entraîne la levée d'une exception, le texte de celle-ci est placé dans les informations `RowError` de la ligne particulière et le traitement continue sans lever d'exception. Vous pouvez ainsi répondre aux erreurs lorsque `Update` est terminé, contrairement à l'événement `RowUpdated`, qui vous permet d'y répondre au moment de l'erreur.  
   
- L'exemple de code suivant montre comment ajouter et supprimer les gestionnaires d'événements. Le gestionnaire d'événements `RowUpdating` écrit un journal de tous les enregistrements supprimés avec un horodatage. Le `RowUpdated` gestionnaire d’événements `RowError` ajoute des informations `DataSet`d’erreur à la propriété de la rangée `ContinueUpdateOnError`  =  `true`dans le , supprime l’exception, et continue le traitement (reflétant le comportement de ).  
+ L'exemple de code suivant montre comment ajouter et supprimer les gestionnaires d'événements. Le gestionnaire d'événements `RowUpdating` écrit un journal de tous les enregistrements supprimés avec un horodatage. Le `RowUpdated` Gestionnaire d’événements ajoute des informations d’erreur à la `RowError` propriété de la ligne dans le `DataSet` , supprime l’exception et continue le traitement (en miroir le comportement de `ContinueUpdateOnError`  =  `true` ).  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -125,6 +127,7 @@ protected static void OnRowUpdated(
 ```  
   
 ## <a name="fillerror"></a>FillError  
+
  Le `DataAdapter` émet l'événement `FillError` en cas d'erreur pendant une opération `Fill`. Ce type d'erreur se produit habituellement lorsque les données ajoutées dans la ligne n'ont pas pu être converties en type .NET Framework sans perte de précision.  
   
  En cas d'erreur pendant une opération `Fill`, la ligne actuelle n'est pas ajoutée au `DataTable`. L'événement `FillError` vous permet de résoudre l'erreur et d'ajouter la ligne, ou d'ignorer la ligne exclue et de poursuivre l'opération `Fill`.  

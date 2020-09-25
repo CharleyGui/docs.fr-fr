@@ -2,14 +2,15 @@
 title: <connectionPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 6fa7fa65-2c6e-4eab-b8cf-7690112c0be5
-ms.openlocfilehash: 842173c7bd9673a1e08c93d5ed650a42b9d979e5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d8787bc2ef8da4fdc01237ac9b041dfdd66fce03
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400479"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91175991"
 ---
 # \<connectionPoolSettings>
+
 Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Spécifie des paramètres de pool de connexions supplémentaires pour une liaiso
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -40,6 +42,7 @@ Spécifie des paramètres de pool de connexions supplémentaires pour une liaiso
 |`maxOutboundConnectionsPerEndpoint`|Entier positif qui spécifie le nombre maximal de connexions à un point de terminaison distant initié par le service. Toute connexion dépassant cette limite est mise en file d'attente jusqu'à ce qu'une place se libère. `idleTimeout` limite la durée pendant laquelle les connexions restent dans la file d'attente avant qu'une exception soit levée. La valeur par défaut est de 10.<br /><br /> Cet attribut limite le nombre de connexions actives simultanées entre le client et un point de terminaison de service particulier. Si cette valeur est dépassée, il est possible que le service ne semble pas répondre au client. Dans ce cas, cette valeur doit être ajustée de façon à être supérieure au nombre maximal de connexions simultanées prévues à un point de terminaison spécifique.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
