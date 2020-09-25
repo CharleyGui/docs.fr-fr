@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 640cfebea3c70314be4a597bc07b0dc6854f5848
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 8907c63f8dcd57ec22c3c196cbb1db52d91a3b5f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607891"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169035"
 ---
 # <a name="development-process-for-azure"></a>Processus de développement pour Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "81607891"
 
 Que vous préfériez un IDE complet et puissant ou un éditeur léger et agile, Microsoft met à votre disposition tout ce dont vous avez besoin pour développer des applications ASP.NET Core.
 
-**Studio visuel 2019.** Visual Studio 2019 est l’IDE le meilleur de sa catégorie pour le développement d’applications pour ASP.NET Core. Il offre une foule de fonctionnalités qui augmentent la productivité des développeurs. Vous pouvez l’utiliser pour développer l’application, puis analyser ses performances et d’autres caractéristiques. Le débbuggeur intégré vous permet de mettre en pause l’exécution du code et de faire des allers-retours à travers le code à la volée pendant qu’il est en cours d’exécution. Le coureur d’essai intégré vous permet d’organiser vos tests et leurs résultats et peut même effectuer des tests d’unité en direct pendant que vous codez. Grâce à Live Share, vous pouvez collaborer en temps réel avec d’autres développeurs, en partageant votre session de code de manière transparente sur le réseau. Et lorsque vous êtes prêt, Visual Studio inclut tout ce dont vous avez besoin pour publier votre application sur Azure ou où que vous l’hébergez.
+**Visual Studio 2019.** Visual Studio 2019 est l’IDE idéal pour le développement d’applications pour ASP.NET Core. Il offre un hôte de fonctionnalités qui améliorent la productivité des développeurs. Vous pouvez l’utiliser pour développer l’application, puis analyser ses performances et d’autres caractéristiques. Le débogueur intégré vous permet de suspendre l’exécution du code et d’effectuer un pas à pas détaillé dans le code à la volée lors de son exécution. Test Runner intégré vous permet d’organiser vos tests et leurs résultats, et peut même effectuer des tests unitaires en direct pendant le codage. À l’aide de Live Share, vous pouvez collaborer en temps réel avec d’autres développeurs, en partageant votre session de code en toute transparence sur le réseau. Et quand vous êtes prêt, Visual Studio inclut tout ce dont vous avez besoin pour publier votre application sur Azure ou à l’endroit où vous pouvez l’héberger.
 
 [Télécharger Visual Studio 2019](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
@@ -46,9 +46,9 @@ Pour commencer à développer une application ASP.NET Core à l’aide de CI/CD,
 
 Pour créer un pipeline de mise en production pour votre application, vous devez avoir votre code d’application dans le contrôle de code source. Configurez un référentiel local et connectez-le à un référentiel distant dans un projet d’équipe. Suivez ces instructions :
 
-- [Partager votre code avec Git et Visual Studio](https://docs.microsoft.com/azure/devops/git/share-your-code-in-git-vs) ou
+- [Partager votre code avec Git et Visual Studio](/azure/devops/git/share-your-code-in-git-vs) ou
 
-- [Partager votre code avec TFVC et Visual Studio](https://docs.microsoft.com/azure/devops/tfvc/share-your-code-in-tfvc-vs)
+- [Partager votre code avec TFVC et Visual Studio](/azure/devops/tfvc/share-your-code-in-tfvc-vs)
 
 Créez un service d’application Azure où vous déploierez votre application. Créez une application web en accédant au panneau App Services dans le portail Azure. Cliquez sur +Ajouter, sélectionnez le modèle Application web, cliquez sur Créer et spécifiez un nom et d’autres détails. L’application web sera accessible à partir de {nom}.azurewebsites.net.
 
@@ -58,19 +58,19 @@ Créez un service d’application Azure où vous déploierez votre application. 
 
 Votre processus de génération CI effectue une génération automatique chaque fois que du nouveau code est validé dans le référentiel de contrôle de code source du projet. Ainsi, vous savez immédiatement que le code a été généré (et, dans l’idéal, réussit les tests automatisés) et peut être déployé. Cette build CI génère un artefact de package de déploiement web et le publie en vue de sa consommation par votre processus CD.
 
-[Définir votre processus de build CI](https://docs.microsoft.com/azure/devops/pipelines/ecosystems/dotnet-core)
+[Définir votre processus de build CI](/azure/devops/pipelines/ecosystems/dotnet-core)
 
 Veillez à activer l’intégration continue afin que le système mette en file d’attente une build chaque fois qu’un membre de votre équipe valide du nouveau code. Testez la build et vérifiez qu’elle produit un package de déploiement web comme l’un de ses artefacts.
 
 Quand une build réussit, votre processus CD déploie les résultats de votre build CI sur votre application web Azure. Pour configurer cela, créez et configurez une *Mise en production*, qui sera déployée sur votre service d’application Azure.
 
-[Déployer une application web Azure](https://docs.microsoft.com/azure/devops/pipelines/targets/webapp)
+[Déployer une application Web Azure](/azure/devops/pipelines/targets/webapp)
 
 Une fois que votre pipeline CI/CD est configuré, vous pouvez simplement effectuer des mises à jour de votre application web et les valider dans le contrôle de code source afin de les déployer.
 
 ### <a name="workflow-for-developing-azure-hosted-aspnet-core-applications"></a>Flux de travail de développement d’applications ASP.NET Core hébergées par Azure
 
-Une fois que vous avez configuré votre compte Azure et votre processus CI/CD, le développement d’applications ASP.NET Core hébergées par Azure est simple. Voici les mesures de base que vous prenez habituellement lors de la construction d’une application ASP.NET Core, hébergée dans Azure App Service en tant qu’application Web, comme l’illustre la figure 10-2.
+Une fois que vous avez configuré votre compte Azure et votre processus CI/CD, le développement d’applications ASP.NET Core hébergées par Azure est simple. Voici les étapes de base que vous prenez habituellement lors de la création d’une application ASP.NET Core, hébergée dans Azure App Service en tant qu’application Web, comme illustré dans la figure 10-2.
 
 ![EndToEndDevDeployWorkflow](./media/image10-3.png)
 
@@ -82,7 +82,7 @@ Le développement d’une application ASP.NET Core pour le déploiement sur Azur
 
 #### <a name="step-2-application-code-repository"></a>Étape 2. Référentiel de code d’application
 
-Chaque fois que vous êtes prêt à partager votre code avec votre équipe, vous devez envoyer vos modifications de votre référentiel de code source local vers le référentiel de code source partagé de votre équipe. Si vous travaillez dans une branche personnalisée, cette étape nécessite généralement la fusion de votre code dans une branche partagée (par exemple au moyen d’une [demande de tirage (pull request)](https://docs.microsoft.com/azure/devops/git/pull-requests)).
+Chaque fois que vous êtes prêt à partager votre code avec votre équipe, vous devez envoyer vos modifications de votre référentiel de code source local vers le référentiel de code source partagé de votre équipe. Si vous travaillez dans une branche personnalisée, cette étape nécessite généralement la fusion de votre code dans une branche partagée (par exemple au moyen d’une [demande de tirage (pull request)](/azure/devops/git/pull-requests)).
 
 #### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Étape 3. Serveur de builds : Intégration continue. Générer, tester, empaqueter
 
@@ -100,11 +100,11 @@ Une fois déployée, l’application ASP.NET Core s’exécute dans le contexte 
 
 Pendant l’exécution de l’application web, vous pouvez surveiller son intégrité et recueillir des données de diagnostic et de comportement de l’utilisateur. Application Insights, qui est fourni avec Visual Studio, offre une instrumentation automatique pour les applications ASP.NET. Il peut vous fournir des informations sur l’utilisation, les exceptions, les requêtes, les performances et les journaux.
 
-## <a name="references"></a>References
+## <a name="references"></a>Références
 
 **Générer et déployer votre application ASP.NET Core sur Azure**  
 <https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core>
 
 >[!div class="step-by-step"]
->[Suivant précédent](test-asp-net-core-mvc-apps.md)
->[Next](azure-hosting-recommendations-for-asp-net-web-apps.md)
+>[Précédent](test-asp-net-core-mvc-apps.md) 
+> [Suivant](azure-hosting-recommendations-for-asp-net-web-apps.md)

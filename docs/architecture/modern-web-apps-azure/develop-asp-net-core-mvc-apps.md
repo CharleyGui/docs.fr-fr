@@ -7,12 +7,12 @@ ms.date: 08/12/2020
 no-loc:
 - Blazor
 - WebAssembly
-ms.openlocfilehash: 255a7f9b34752b3480ba5a8ffc5d506e6d7b05d3
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: e746362657a25487e98ddac09fa4337b00dfe805
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89515972"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169126"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -241,7 +241,7 @@ Une autre approche pour découpler l’application des détails d’implémentat
 
 ### <a name="feature-organization"></a>Organisation par fonctionnalité
 
-Par défaut, les applications ASP.NET Core organisent leur structure de dossiers de manière à inclure Controllers et Views, et couramment ViewModels. Le code côté client utilisé pour prendre en charge ces structures côté serveur est généralement stocké séparément dans le dossier wwwroot. Toutefois, cette organisation peut poser des problèmes pour les applications volumineuses dans la mesure où le développement d’une fonctionnalité donnée nécessite souvent de passer d’un dossier à un autre. Le niveau de complexité croît à mesure que le nombre de fichiers et de sous-dossiers dans chaque dossier augmente, occasionnant de nombreuses opérations de défilement dans l’Explorateur de solutions. Une solution à ce problème consiste à organiser le code de l’application par _fonctionnalité_ plutôt que par type de fichier. Ce style organisationnel est généralement désigné sous le terme de dossiers de fonctionnalités ou de [tranches de fonctionnalités](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) (voir aussi : [tranches verticales](https://deviq.com/vertical-slices/)).
+Par défaut, les applications ASP.NET Core organisent leur structure de dossiers de manière à inclure Controllers et Views, et couramment ViewModels. Le code côté client utilisé pour prendre en charge ces structures côté serveur est généralement stocké séparément dans le dossier wwwroot. Toutefois, cette organisation peut poser des problèmes pour les applications volumineuses dans la mesure où le développement d’une fonctionnalité donnée nécessite souvent de passer d’un dossier à un autre. Le niveau de complexité croît à mesure que le nombre de fichiers et de sous-dossiers dans chaque dossier augmente, occasionnant de nombreuses opérations de défilement dans l’Explorateur de solutions. Une solution à ce problème consiste à organiser le code de l’application par _fonctionnalité_ plutôt que par type de fichier. Ce style organisationnel est généralement désigné sous le terme de dossiers de fonctionnalités ou de [tranches de fonctionnalités](/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) (voir aussi : [tranches verticales](https://deviq.com/vertical-slices/)).
 
 À cet effet, ASP.NET Core MVC prend en charge Areas. Les zones vous permettent de créer des jeux distincts de dossiers Controllers et Views (ainsi que tout modèle associé) dans chaque dossier Area. La Figure 7-1 montre un exemple de structure de dossiers avec Areas.
 
@@ -301,7 +301,7 @@ Vous pouvez ensuite spécifier cette convention comme option quand vous ajoutez 
 services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 ```
 
-ASP.NET Core MVC utilise également une convention pour localiser les vues. Vous pouvez la remplacer par une convention personnalisée de manière à ce que les vues soient établies dans les dossiers de fonctionnalité (en utilisant le nom de fonctionnalité fourni par FeatureConvention ci-dessus). Vous pouvez en savoir plus sur cette approche et télécharger un exemple fonctionnel à partir de l’article de MSDN Magazine, [Feature Slice for ASP.net Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
+ASP.NET Core MVC utilise également une convention pour localiser les vues. Vous pouvez la remplacer par une convention personnalisée de manière à ce que les vues soient établies dans les dossiers de fonctionnalité (en utilisant le nom de fonctionnalité fourni par FeatureConvention ci-dessus). Vous pouvez en savoir plus sur cette approche et télécharger un exemple fonctionnel à partir de l’article de MSDN Magazine, [Feature Slice for ASP.net Core MVC](/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
 
 ### <a name="apis-and-no-locblazor-applications"></a>API et Blazor applications
 
@@ -313,7 +313,7 @@ L’ajout d’une Blazor WebAssembly interface d’administration à eShopOnWeb 
 
 Vous pouvez demander pourquoi ajouter un projet distinct `BlazorShared` lorsqu’il existe déjà un projet courant `ApplicationCore` pouvant être utilisé pour partager les types requis par `PublicApi` et `BlazorAdmin` ? La réponse est que ce projet comprend l’ensemble de la logique métier de l’application et qu’il est donc nettement plus grand que nécessaire et qu’il est également plus susceptible de devoir être sécurisé sur le serveur. N’oubliez pas que toutes les bibliothèques référencées par `BlazorAdmin` seront téléchargées dans les navigateurs des utilisateurs lors du chargement de l' Blazor application.
 
-Selon que l’un utilise le [modèle BFF (backend-for-frontends)](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends), les API consommées par l' Blazor WebAssembly application peuvent ne pas partager leurs types 100% avec Blazor . En particulier, une API publique destinée à être utilisée par de nombreux clients différents peut définir ses propres types de demande et de résultat, plutôt que de les partager dans un projet partagé propre au client. Dans l’exemple eShopOnWeb, l’hypothèse est faite que le `PublicApi` projet est en fait l’hébergement d’une API publique, donc tous ses types de demande et de réponse ne proviennent pas du `BlazorShared` projet.
+Selon que l’un utilise le [modèle BFF (backend-for-frontends)](/azure/architecture/patterns/backends-for-frontends), les API consommées par l' Blazor WebAssembly application peuvent ne pas partager leurs types 100% avec Blazor . En particulier, une API publique destinée à être utilisée par de nombreux clients différents peut définir ses propres types de demande et de résultat, plutôt que de les partager dans un projet partagé propre au client. Dans l’exemple eShopOnWeb, l’hypothèse est faite que le `PublicApi` projet est en fait l’hébergement d’une API publique, donc tous ses types de demande et de réponse ne proviennent pas du `BlazorShared` projet.
 
 ### <a name="cross-cutting-concerns"></a>Problèmes transversaux
 
@@ -387,7 +387,7 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Pour plus d’informations sur l’implémentation de filtres et sur le téléchargement d’un exemple fonctionnel, consultez l’article de MSDN Magazine, [Real-World ASP.net Core MVC Filters](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
+Pour plus d’informations sur l’implémentation de filtres et sur le téléchargement d’un exemple fonctionnel, consultez l’article de MSDN Magazine, [Real-World ASP.net Core MVC Filters](/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
 
 > ### <a name="references--structuring-applications"></a>Références – Structuration des applications
 >

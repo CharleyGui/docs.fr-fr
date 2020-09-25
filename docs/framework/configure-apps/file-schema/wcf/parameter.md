@@ -2,14 +2,15 @@
 title: <parameter>
 ms.date: 03/30/2017
 ms.assetid: 0fb41e2d-64f7-44ab-993e-05892eac6d82
-ms.openlocfilehash: 07fa410109a7bd2fa315132c4737301698bb3a93
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2ef674dc8601bc9afaf6b547265988bb8a99f943
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400109"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170166"
 ---
 # \<parameter>
+
 Indique le paramètre générique lorsqu'un type déclaré est générique.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,6 +29,7 @@ Indique le paramètre générique lorsqu'un type déclaré est générique.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -45,6 +47,7 @@ Indique le paramètre générique lorsqu'un type déclaré est générique.
 |"1"|Second paramètre d'un type générique. Par exemple, <xref:System.Collections.Generic.Dictionary%602> dispose de deux paramètres. Si le type connu est renvoyé par le second paramètre, affectez à l'attribut d'index la valeur « 1 ».|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -53,7 +56,8 @@ Indique le paramètre générique lorsqu'un type déclaré est générique.
 |-------------|-----------------|  
 |[\<knownType>](knowntype.md)|Spécifie un type connu pouvant être renvoyé par un champ ou une propriété du type déclaré.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Pour plus d’informations sur les types connus, consultez [types connus de contrat de données](../../../wcf/feature-details/data-contract-known-types.md) et <xref:System.Runtime.Serialization.DataContractSerializer> .  
   
  [\<dataContractSerializer>](datacontractserializer-element.md)Pour obtenir un exemple d’utilisation de cet élément, consultez.  

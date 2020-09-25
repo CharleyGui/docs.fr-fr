@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 8497892b88c313cde0a604ad3967507300e5154a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ca86388b9f5dfe5e63ead1b5f84486ba2181af57
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539241"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169074"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Tester des applications ASP.NET Core MVC
 
@@ -149,7 +149,7 @@ Dans la plupart des cas, vous souhaiterez utiliser des gestionnaires d’excepti
 
 ## <a name="integration-testing-aspnet-core-apps"></a>Tests d’intégration dans les applications ASP.NET Core
 
-La plupart des tests d’intégration figurant dans vos applications ASP.NET Core doivent tester les services et les autres types d’implémentation définis dans votre projet Infrastructure. Par exemple, vous pouvez [tester qu’EF Core a été correctement mis à jour et a récupéré les données que vous attendez](https://docs.microsoft.com/ef/core/miscellaneous/testing/) à partir de vos classes d’accès aux données résidant dans le projet Infrastructure. La meilleure façon de vérifier le bon comportement de votre projet ASP.NET Core MVC consiste à utiliser les tests fonctionnels qui s’exécutent par rapport à votre application en cours d’exécution dans un hôte de test.
+La plupart des tests d’intégration figurant dans vos applications ASP.NET Core doivent tester les services et les autres types d’implémentation définis dans votre projet Infrastructure. Par exemple, vous pouvez [tester qu’EF Core a été correctement mis à jour et a récupéré les données que vous attendez](/ef/core/miscellaneous/testing/) à partir de vos classes d’accès aux données résidant dans le projet Infrastructure. La meilleure façon de vérifier le bon comportement de votre projet ASP.NET Core MVC consiste à utiliser les tests fonctionnels qui s’exécutent par rapport à votre application en cours d’exécution dans un hôte de test.
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Tests fonctionnels dans les applications ASP.NET Core
 

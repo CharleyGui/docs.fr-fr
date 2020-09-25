@@ -3,12 +3,12 @@ title: Migrer une application Web ASP.NET vers une machine virtuelle Azure
 description: Découvrez comment migrer une application web ASP.NET se trouvant sur site vers une machine virtuelle Azure.
 ms.topic: how-to
 ms.date: 06/20/2020
-ms.openlocfilehash: 5ef340d020b72bebe46fe598fe68e7d02d0c0363
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 940243310c5e6ed13d2a42c8d9d87244200479f5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174242"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171557"
 ---
 # <a name="migrate-an-aspnet-web-application-to-an-azure-virtual-machine"></a>Migrer une application web ASP.NET vers une machine virtuelle Azure
 
@@ -60,6 +60,7 @@ Grâce aux réseaux virtuels Azure vous pouvez :
 Pour commencer, consultez la [documentation relative au réseau virtuel](/azure/virtual-network/).
 
 ### <a name="active-directory"></a>Active Directory
+
 De nombreuses applications utilisent Active Directory pour la gestion de l’authentification et des identités.
 
 - Azure AD Connect permet d’intégrer vos répertoires locaux à Azure Active Directory. Pour commencer, consultez [Intégrer vos répertoires locaux à Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
@@ -74,12 +75,14 @@ Si votre application utilise une base de données locale, il se peut qu’elle n
 
 ### <a name="high-availability-and-scalability"></a>Haute disponibilité et extensibilité
 
-#### <a name="virtual-machine-scale-sets"></a>Groupes de machines virtuelles identiques
+#### <a name="virtual-machine-scale-sets"></a>Virtual Machine Scale Sets
+
 Vous souhaitez vous assurer que votre application est hautement disponible et peut évoluer, migrez l’image de votre machine virtuelle vers un groupe de machines virtuelles identiques pour améliorer la disponibilité et l’évolutivité de votre application. VM Scale Sets offrir la possibilité d’utiliser une machine virtuelle existante que vous avez déjà configurée ou de configurer un pipeline de build pour générer une image avec votre application.
 
 Pour commencer, consultez [Déployer votre application sur des groupes de machines virtuelles identiques](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app).
 
 #### <a name="centralized-logging"></a>Journalisation centralisée
+
 Lorsque vous exécutez votre application sur plusieurs instances, envisagez de stocker vos journaux d’activité à un emplacement centralisé, comme le [Stockage Azure](/azure/storage/).
 
 ## <a name="next-steps"></a>Étapes suivantes

@@ -2,12 +2,12 @@
 title: Implémentation d’objets de valeur
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Découvrez les explications détaillées et les options disponibles pour implémenter des objets de valeur à l’aide des nouvelles fonctionnalités d’Entity Framework.
 ms.date: 08/21/2020
-ms.openlocfilehash: 02eed7baaa364c62aa2df599f1d8b0e700dd215f
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 1cb7ce04b3ab2f6da25f398e016baf60b863fb6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811117"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169204"
 ---
 # <a name="implement-value-objects"></a>Implémenter des objets de valeur
 
@@ -126,7 +126,7 @@ Vous venez de voir comment définir un objet de valeur dans votre modèle de dom
 
 ### <a name="background-and-older-approaches-using-ef-core-11"></a>Informations générales et anciennes approches avec EF Core 1.1
 
-En arrière-plan, une limitation lors de l’utilisation de EF Core 1,0 et 1,1 était que vous ne pouviez pas utiliser de [types complexes](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute) tels que définis dans EF 6. x dans le .NET Framework traditionnel. Si vous utilisez EF Core 1.0 ou 1.1, vous devez donc stocker votre objet de valeur sous la forme d’une entité EF avec un champ ID. Ensuite, pour qu’il ressemble plus à un objet de valeur sans identité, vous pouvez masquer son ID pour indiquer clairement que l’identité d’un objet de valeur n’est pas importante dans le modèle de domaine. Vous pouvez masquer cet ID en l’utilisant comme [propriété cachée](https://docs.microsoft.com/ef/core/modeling/shadow-properties ). Cette configuration consistant à masquer l’ID dans le modèle étant configurée dans le niveau d’infrastructure EF, elle est en quelque sorte transparente pour votre modèle de domaine.
+En arrière-plan, une limitation lors de l’utilisation de EF Core 1,0 et 1,1 était que vous ne pouviez pas utiliser de [types complexes](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute) tels que définis dans EF 6. x dans le .NET Framework traditionnel. Si vous utilisez EF Core 1.0 ou 1.1, vous devez donc stocker votre objet de valeur sous la forme d’une entité EF avec un champ ID. Ensuite, pour qu’il ressemble plus à un objet de valeur sans identité, vous pouvez masquer son ID pour indiquer clairement que l’identité d’un objet de valeur n’est pas importante dans le modèle de domaine. Vous pouvez masquer cet ID en l’utilisant comme [propriété cachée](/ef/core/modeling/shadow-properties). Cette configuration consistant à masquer l’ID dans le modèle étant configurée dans le niveau d’infrastructure EF, elle est en quelque sorte transparente pour votre modèle de domaine.
 
 Dans la version initiale d’eShopOnContainers (.NET Core 1.1), l’ID masqué exigé par l’infrastructure EF Core est implémenté de la manière suivante dans le niveau DbContext, à l’aide de l’API Fluent au niveau du projet d’infrastructure. L’ID est donc masqué du point de vue du modèle de domaine, mais il est toujours présent dans l’infrastructure.
 

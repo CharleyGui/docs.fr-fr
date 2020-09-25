@@ -14,14 +14,15 @@ helpviewer_keywords:
 - warn compiler option [C#]
 ms.custom: updateeachrelease
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
-ms.openlocfilehash: 55e80d0bd05e2119154210503bb277d743050e18
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d59274423e6f9844d3ab22f3ac513ba1a05d7f07
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89139071"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171349"
 ---
 # <a name="-warn-c-compiler-options"></a>-warn (Options du compilateur C#)
+
 L’option **-warn** spécifie le niveau d’avertissement que le compilateur doit afficher.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,6 +32,7 @@ L’option **-warn** spécifie le niveau d’avertissement que le compilateur do
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `option`  
  Niveau d’avertissement que vous souhaitez afficher pour la compilation : les nombres inférieurs affichent uniquement les avertissements ayant un niveau de gravité élevé ; les nombres supérieurs affichent davantage d’avertissements. La valeur doit être zéro ou un entier positif :
 
@@ -44,7 +46,8 @@ L’option **-warn** spécifie le niveau d’avertissement que le compilateur do
 |5|Affiche les avertissements de niveau 4 et des [avertissements supplémentaires](https://github.com/dotnet/roslyn/blob/a6013f3213c902c0973b2d371c3007217d610533/docs/compilers/CSharp/Warnversion%20Warning%20Waves.md) du compilateur fournis avec C# 9,0.|
 |Supérieur à 5|Toute valeur supérieure à 5 sera traitée comme 5. En général, vous placez une valeur élevée arbitraire (par exemple, `9999` ) pour vous assurer que vous avez toujours tous les avertissements si le compilateur est mis à jour avec de nouveaux niveaux d’avertissement.|
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Pour obtenir des informations sur une erreur ou un avertissement, vous pouvez rechercher le code d’erreur dans l’index de l’aide. Il existe d’autres façons d’obtenir des informations sur une erreur ou un avertissement, qui sont décrites dans [Erreurs du compilateur C#](../compiler-messages/index.md).  
   
  Utilisez [-warnaserror](./warnaserror-compiler-option.md) pour traiter tous les avertissements comme des erreurs. Utilisez [-nowarn](./nowarn-compiler-option.md) pour désactiver certains avertissements.  
@@ -62,6 +65,7 @@ L’option **-warn** spécifie le niveau d’avertissement que le compilateur do
  Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.WarningLevel%2A>.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez `in.cs` et faites en sorte que le compilateur n’affiche que les avertissements de niveau 1 :  
   
 ```console  

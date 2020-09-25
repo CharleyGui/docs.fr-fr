@@ -2,14 +2,15 @@
 title: <security> de <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 001d11a9-7439-498c-b09d-fca20eaf8cd3
-ms.openlocfilehash: 7877fd59aff581eee5b62a1ca224dbf51c956069
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 32b066fdf4d8edbbd36fdff7b14bdec87ddc970d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738669"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170075"
 ---
 # <a name="security-of-netmsmqbinding"></a>\<security> de \<netMsmqBinding>
+
 Définit les paramètres de sécurité pour une liaison MSMQ. Elle spécifie si le transport ou la sécurité SOAP sont activés et, si c'est le cas, le mode d'authentification et les niveaux de protection utilisés.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Définit les paramètres de sécurité pour une liaison MSMQ. Elle spécifie si 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -52,7 +54,7 @@ Définit les paramètres de sécurité pour une liaison MSMQ. Elle spécifie si 
   
 |Élément|Description|  
 |-------------|-----------------|  
-|binding|Élément de liaison de l’élément[\<netMsmqBinding>](netmsmqbinding.md)|  
+|binding|Élément de liaison de l’élément [\<netMsmqBinding>](netmsmqbinding.md)|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -60,9 +62,9 @@ Définit les paramètres de sécurité pour une liaison MSMQ. Elle spécifie si 
 - <xref:System.ServiceModel.NetMsmqBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.NetMsmqBindingElement.Security%2A>
 - <xref:System.ServiceModel.NetMsmqSecurity>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<binding>](bindings.md)
-- [Files d'attente dans WCF](../../../wcf/feature-details/queues-in-wcf.md)
+- [Files d’attente dans WCF](../../../wcf/feature-details/queues-in-wcf.md)

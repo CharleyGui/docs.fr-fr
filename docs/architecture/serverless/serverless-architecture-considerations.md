@@ -4,12 +4,12 @@ description: Comprenez les défis liés à l’architecture des applications san
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/06/2020
-ms.openlocfilehash: 3c07e1149e6af41a6b9a9317238e5c71015d2c4e
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: fbbb0c38cea58902124743fb99f9ab31b3d09be9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135670"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171648"
 ---
 # <a name="serverless-architecture-considerations"></a>Considérations relatives à l’architecture serverless
 
@@ -23,7 +23,7 @@ Il existe plusieurs solutions pour adopter l’État sans compromettre les avant
 
 - Utiliser un magasin de données temporaire ou un cache distribué, comme ReDim
 - Stocker l’État dans une base de données, comme SQL ou CosmosDB
-- Gérer l’état via un moteur de workflow comme des [fonctions durables](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview)
+- Gérer l’état via un moteur de workflow comme des [fonctions durables](/azure/azure-functions/durable/durable-functions-overview)
 
 En fin de compte, vous devez être conscient de la nécessité de gérer les États au sein des processus que vous envisagez d’implémenter avec sans serveur.
 
@@ -55,7 +55,7 @@ La séquence de modifications garantit que le code hérité continue à s’exé
 
 Pour plus d’informations sur les données des architectures sans serveur, consultez [défis et solutions pour la gestion des données distribuées](../microservices/architect-microservice-container-applications/distributed-data-management.md).
 
-## <a name="scaling"></a>Mise à l'échelle
+## <a name="scaling"></a>Mise à l’échelle
 
 Il s’agit d’une idée fausse de l’absence de serveur. Il s’agit en fait de « moins de serveurs ». Le fait qu’il y ait une infrastructure de sauvegarde est important de comprendre quand il s’agit d’une mise à l’échelle. La plupart des plateformes sans serveur fournissent un ensemble de contrôles pour gérer la mise à l’échelle de l’infrastructure en cas d’augmentation de la densité d’événements. Vous pouvez choisir parmi diverses options, mais votre stratégie peut varier en fonction de la fonction. En outre, les fonctions sont généralement exécutées sous un hôte connexe, de sorte que les fonctions sur le même hôte ont les mêmes options d’échelle. Par conséquent, il est nécessaire d’organiser et de déterminer les fonctions qui sont hébergées ensemble en fonction des exigences de mise à l’échelle.
 
@@ -63,7 +63,7 @@ Les règles spécifient souvent la mise à l’échelle (augmentation des ressou
 
 ## <a name="monitoring-tracing-and-logging"></a>Surveillance, suivi et journalisation
 
-Un aspect souvent négligé de DevOps est l’analyse des applications une fois qu’elles sont déployées. Il est important de disposer d’une stratégie pour la surveillance des fonctions sans serveur. Le plus grand défi est souvent la corrélation ou la reconnaissance lorsqu’un utilisateur appelle plusieurs fonctions dans le cadre de la même interaction. La plupart des plateformes sans serveur autorisent la journalisation de la console qui peut être importée dans des outils tiers. Il existe également des options pour automatiser la collecte des données de télémétrie, générer et suivre des ID de corrélation et surveiller des actions spécifiques pour fournir des informations détaillées. Azure fournit la [plateforme de application Insights](https://docs.microsoft.com/azure/azure-functions/functions-monitoring) avancée pour la surveillance et l’analyse.
+Un aspect souvent négligé de DevOps est l’analyse des applications une fois qu’elles sont déployées. Il est important de disposer d’une stratégie pour la surveillance des fonctions sans serveur. Le plus grand défi est souvent la corrélation ou la reconnaissance lorsqu’un utilisateur appelle plusieurs fonctions dans le cadre de la même interaction. La plupart des plateformes sans serveur autorisent la journalisation de la console qui peut être importée dans des outils tiers. Il existe également des options pour automatiser la collecte des données de télémétrie, générer et suivre des ID de corrélation et surveiller des actions spécifiques pour fournir des informations détaillées. Azure fournit la [plateforme de application Insights](/azure/azure-functions/functions-monitoring) avancée pour la surveillance et l’analyse.
 
 ## <a name="inter-service-dependencies"></a>Dépendances entre les services
 
@@ -82,5 +82,5 @@ Pour plus d’informations, consultez [implémentation du modèle disjoncteur](.
 L’un des principaux avantages de l’absence de serveur est la possibilité de mettre à niveau une fonction spécifique sans avoir à redéployer l’application entière. Pour que les mises à niveau soient réussies, les fonctions doivent être gérées de manière à ce que les services qui les appellent soient acheminés vers la version correcte du code. Une stratégie de déploiement de nouvelles versions est également importante. Une approche courante consiste à utiliser des « déploiements verts/bleus ». Le déploiement vert est la fonction active. Une nouvelle version « Blue » est déployée en production et testée. Lorsque le test réussit, les versions vert et bleu sont échangées de sorte que la nouvelle version est publiée. Si des problèmes sont rencontrés, ils peuvent être permutés. La prise en charge du contrôle de version et des déploiements verts/bleus requiert une combinaison de la création des fonctions pour prendre en charge les modifications de version et l’utilisation de la plateforme sans serveur pour gérer les déploiements.
 
 >[!div class="step-by-step"]
->[Précédent](serverless-architecture.md)
->[suivant](serverless-design-examples.md)
+>[Précédent](serverless-architecture.md) 
+> [Suivant](serverless-design-examples.md)

@@ -9,22 +9,25 @@ helpviewer_keywords:
 - files [C#], text files
 - text, writing to files [C#]
 ms.assetid: 2e99f184-d88b-4719-a7f1-d9ec482aa809
-ms.openlocfilehash: 4108163121d56268b810121ca3ae2b2c1338aeab
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 48739852cd1730d71c3b20ae6a9394b57785faa6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301643"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170400"
 ---
 # <a name="how-to-write-to-a-text-file-c-programming-guide"></a>Comment écrire dans un fichier texte (Guide de programmation C#)
+
 Ces exemples montrent différentes manières d'écrire du texte dans un fichier. Les deux premiers exemples utilisent des méthodes pratiques statiques au niveau de la classe <xref:System.IO.File?displayProperty=nameWithType> pour écrire chaque élément de tout `IEnumerable<string>` et une chaîne dans un fichier texte. L'exemple 3 indique comment ajouter du texte à un fichier quand vous devez traiter chaque ligne individuellement pendant que vous écrivez dans le fichier. Les exemples 1 à 3 remplacent tout le contenu existant dans le fichier, alors que l'exemple 4 montre comment ajouter du texte à un fichier existant.  
   
  Ces exemples écrivent tous des littéraux de chaîne dans des fichiers. Pour mettre en forme le texte écrit dans un fichier, utilisez la méthode <xref:System.String.Format%2A> ou la fonctionnalité d’[interpolation de chaîne](../../language-reference/tokens/interpolated.md) C#.  
   
 ## <a name="example"></a>Exemple  
+
  [!code-csharp[csFilesandFolders#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#3)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Les conditions ci-dessous peuvent générer une exception.  
   
 - Le fichier existe déjà et est en lecture seule.  

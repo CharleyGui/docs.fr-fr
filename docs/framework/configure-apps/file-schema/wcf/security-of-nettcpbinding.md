@@ -2,14 +2,15 @@
 title: <security> de <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 286cd191-4fd5-4c4e-a223-9c71cf7fdead
-ms.openlocfilehash: aa01e906ddd2f15007c72bfc2a45122cfb15ba2c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d39e3e5e655817aa91c5301274a860a00a6ab7ef
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736374"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169984"
 ---
 # <a name="security-of-nettcpbinding"></a>\<security> de \<netTcpBinding>
+
 Définit les paramètres de sécurité d’une liaison.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,13 +32,14 @@ Définit les paramètres de sécurité d’une liaison.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|mode|facultatif. Spécifie le type de sécurité appliqué. Les valeurs autorisées sont présentées ci-dessous. La valeur par défaut est `Transport`.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.SecurityMode>.|  
+|mode|Optionnel. Spécifie le type de sécurité appliqué. Les valeurs autorisées sont présentées ci-dessous. La valeur par défaut est `Transport`.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.SecurityMode>.|  
   
 ## <a name="mode-attribute"></a>Attribut Mode  
   
@@ -61,7 +63,8 @@ Définit les paramètres de sécurité d’une liaison.
 |-------------|-----------------|  
 |binding|Élément de liaison de [\<netTcpBinding>](nettcpbinding.md) .|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Chaque liaison standard fournit des paramètres pour le contrôle des conditions de sécurité de transfert. Ces paramètres incluent généralement le mode de sécurité qui indique si la sécurité au niveau du message ou du transport est utilisée et le choix du type d'informations d'identification du client. Selon le choix d'options présentées par ces paramètres, une pile de canaux est construite avec la sécurité appropriée.  
   
  Les liaisons fournies par le système par Windows Communication Foundation (WCF) constituent un ensemble conçu pour satisfaire aux exigences de scénario les plus courants. Chaque liaison permet la spécification des conditions de sécurité pour des scénarios spécifiques.  
@@ -74,7 +77,7 @@ Définit les paramètres de sécurité d’une liaison.
 - <xref:System.ServiceModel.NetTcpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.NetTcpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>
-- [Securing Services and Clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: dc907e57adba0dd81e5cf27c2798759cee12bed2
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: dd9cdf3cdda0605d9454fe096be01655e67a0d0a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539357"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169295"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
@@ -205,7 +205,7 @@ L’approche architecturale monolithique est fréquemment choisie pour le dével
 
 ![Figure 5-14](./media/image5-14.png)
 
-Le déploiement d’applications monolithiques dans Microsoft Azure est possible en utilisant des machines virtuelles dédiées pour chaque instance. Avec [Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), vous pouvez facilement mettre à l’échelle les machines virtuelles. [Azure App Service](https://azure.microsoft.com/services/app-service/) peut également exécuter des applications monolithiques et facilement mettre à l’échelle des instances sans nécessiter une gestion des machines virtuelles. Azure App Service peut également exécuter des instances uniques de conteneurs Docker, ce qui simplifie le déploiement. Avec Docker, vous pouvez déployer une seule machine virtuelle comme hôte Docker et exécuter plusieurs instances. Vous pouvez gérer la mise à l’échelle à l’aide de l’équilibreur de charge Azure, comme indiqué dans la figure 5-14.
+Le déploiement d’applications monolithiques dans Microsoft Azure est possible en utilisant des machines virtuelles dédiées pour chaque instance. Avec [Azure Virtual Machine Scale Sets](/azure/virtual-machine-scale-sets/), vous pouvez facilement mettre à l’échelle les machines virtuelles. [Azure App Service](https://azure.microsoft.com/services/app-service/) peut également exécuter des applications monolithiques et facilement mettre à l’échelle des instances sans nécessiter une gestion des machines virtuelles. Azure App Service peut également exécuter des instances uniques de conteneurs Docker, ce qui simplifie le déploiement. Avec Docker, vous pouvez déployer une seule machine virtuelle comme hôte Docker et exécuter plusieurs instances. Vous pouvez gérer la mise à l’échelle à l’aide de l’équilibreur de charge Azure, comme indiqué dans la figure 5-14.
 
 Le déploiement sur les différents hôtes peut être géré avec les techniques de déploiement traditionnelles. Les hôtes Docker peuvent être gérés à l’aide de commandes exécutées manuellement, telles que **docker run**, ou de manière automatisée, comme les pipelines de livraison continue.
 

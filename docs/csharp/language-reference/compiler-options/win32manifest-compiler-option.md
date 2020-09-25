@@ -9,14 +9,15 @@ helpviewer_keywords:
 - win32manifest compiler option [C#]
 - -win32manifest compiler option [C#]
 ms.assetid: 9460ea1b-6c9f-44b8-8f73-301b30a01de1
-ms.openlocfilehash: 4ce4033323eb938caff1d769198ca69782b470ab
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1d2eefdab433f67e1cba5f709a2db8ec6b9a5dc7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89140826"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171310"
 ---
 # <a name="-win32manifest-c-compiler-options"></a>-win32manifest (Options du compilateur C#)
+
 Utilisez l’option **-win32manifest** pour spécifier un fichier manifeste d’application Win32 défini par l’utilisateur à incorporer dans le fichier exécutable portable (PE) d’un projet.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,10 +27,12 @@ Utilisez l’option **-win32manifest** pour spécifier un fichier manifeste d’
 ```  
   
 ## <a name="arguments"></a>Arguments  
+
  `filename`  
  Nom et emplacement du fichier manifeste personnalisé.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Par défaut, le compilateur Visual C# incorpore un manifeste d’application qui spécifie le niveau d’exécution requis « asInvoker ». Il crée le manifeste dans le même dossier que celui dans lequel l’exécutable est généré, normalement le dossier bin\Debug ou bin\Release quand vous utilisez Visual Studio. Pour fournir un manifeste personnalisé, par exemple pour spécifier le niveau d’exécution requis « highestAvailable » ou « requireAdministrator », utilisez cette option pour indiquer le nom du fichier.  
   
 > [!NOTE]
@@ -48,6 +51,7 @@ Utilisez l’option **-win32manifest** pour spécifier un fichier manifeste d’
  Vous pouvez fournir le manifeste d’application en tant qu’étape après génération personnalisée ou en tant que partie d’un fichier de ressources Win32 à l’aide de l’option [-nowin32manifest (Options du compilateur C#)](./nowin32manifest-compiler-option.md). Utilisez cette même option pour que votre application soit soumise à la virtualisation des fichiers ou des registres dans Windows Vista. Cela empêche le compilateur de créer et d’incorporer un manifeste par défaut dans le fichier exécutable portable (PE).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant présente le manifeste par défaut que le compilateur Visual C# insère dans un fichier PE.  
   
 > [!NOTE]

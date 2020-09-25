@@ -2,12 +2,12 @@
 title: Communication dans une architecture de microservices
 description: Explorez les différents modes de communication entre les microservices, et découvrez les implications des modes synchrone et asynchrone.
 ms.date: 01/30/2020
-ms.openlocfilehash: f2d6e78966bb7d5f481de6db0ab1dcfe2812a1b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f1a240609b898fe8f365c39ba0c95f486377c445
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401654"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169256"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Communication dans une architecture de microservices
 
@@ -35,7 +35,7 @@ Le deuxième axe définit si la communication a un ou plusieurs destinataires :
 
 - Destinataire unique. Chaque demande doit être traitée par exactement un récepteur ou un service. Le [modèle Commande](https://en.wikipedia.org/wiki/Command_pattern) est un exemple de cette communication.
 
-- Plusieurs destinataires. Chaque demande peut être traitée par zéro à plusieurs destinataires. Ce type de communication doit être asynchrone. Le mécanisme de [publication/abonnement](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) utilisé dans des modèles comme [Event-driven architecture](https://microservices.io/patterns/data/event-driven-architecture.html) en est un exemple. Il s’appuie sur une interface de bus d’événements ou un répartiteur de messages durant la propagation des mises à jour des données entre plusieurs microservices via des événements. Il est généralement implémenté via un bus de service ou un artefact similaire, par exemple [Azure Service Bus](https://azure.microsoft.com/services/service-bus/), à l’aide des [rubriques et abonnements](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions).
+- Plusieurs destinataires. Chaque demande peut être traitée par zéro à plusieurs destinataires. Ce type de communication doit être asynchrone. Le mécanisme de [publication/abonnement](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) utilisé dans des modèles comme [Event-driven architecture](https://microservices.io/patterns/data/event-driven-architecture.html) en est un exemple. Il s’appuie sur une interface de bus d’événements ou un répartiteur de messages durant la propagation des mises à jour des données entre plusieurs microservices via des événements. Il est généralement implémenté via un bus de service ou un artefact similaire, par exemple [Azure Service Bus](https://azure.microsoft.com/services/service-bus/), à l’aide des [rubriques et abonnements](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions).
 
 Une application basée sur des microservices utilise souvent une combinaison de ces styles de communication. Le type le plus courant est une communication avec un seul destinataire, avec un protocole synchrone comme HTTP/HTTPS lors de l’appel d’un service web HTTP d’API ordinaire. Les microservices utilisent aussi en général des protocoles de messagerie pour la communication asynchrone entre microservices.
 
@@ -51,17 +51,17 @@ De plus, l’existence de dépendances HTTP entre microservices, par exemple dur
 
 Plus vous ajoutez des dépendances synchrones entre microservices, comme des demandes avec des requêtes, plus le temps de réponse global se dégrade pour les applications clientes.
 
-![Diagramme montrant trois types de communications dans les microservices.](./media/communication-in-microservice-architecture/sync-vs-async-patterns-across-microservices.png)
+![Diagramme montrant trois types de communications entre les microservices.](./media/communication-in-microservice-architecture/sync-vs-async-patterns-across-microservices.png)
 
 **Figure 4-15**. Antimodèles et modèles de communication entre microservices
 
-Comme le montre le diagramme ci-dessus, dans la communication synchrone, une « chaîne » de demandes est créée entre les microservices tout en répondant à la demande du client. Ceci est un antimodèle. Dans une communication asynchrone, les microservices utilisent des messages asynchrones ou une interrogation HTTP pour communiquer avec d’autres microservices, mais la requête cliente est immédiatement traitée.
+Comme indiqué dans le diagramme ci-dessus, dans la communication synchrone, une « chaîne » de demandes est créée entre les microservices tout en desservant la demande du client. Ceci est un antimodèle. Dans une communication asynchrone, les microservices utilisent des messages asynchrones ou une interrogation HTTP pour communiquer avec d’autres microservices, mais la requête cliente est immédiatement traitée.
 
 Si votre microservice doit déclencher une action supplémentaire dans un autre microservice, si possible, n’effectuez pas cette action de façon synchrone ni dans le cadre de l’opération de requête et réponse du microservice d’origine. Au lieu de cela, effectuez l’opération de façon asynchrone (en utilisant une messagerie asynchrone ou des événements d’intégration, des files d’attente, etc.). Cependant, autant que possible, n’appelez pas l’action de façon synchrone dans le cadre de l’opération de requête et de réponse synchrone d’origine.
 
 Enfin (et c’est là que la plupart des problèmes se posent durant la génération de microservices), si votre microservice initial a besoin de données détenues à l’origine par d’autres microservices, ne vous fiez pas à l’utilisation de requêtes synchrones pour ces données. À la place, répliquez ou propagez ces données (seulement les attributs nécessaires) dans la base de données du service initial en utilisant une cohérence à terme (généralement à l’aide d’événements d’intégration, comme cela est expliqué dans les prochaines sections).
 
-Comme indiqué précédemment dans les [limites du modèle de domaine d’identification pour chaque section de microservice,](identify-microservice-domain-model-boundaries.md) dupliquer certaines données dans plusieurs microservices n’est pas une conception incorrecte— au contraire, lorsque vous pouvez traduire les données dans la langue ou les termes spécifiques de ce domaine supplémentaire ou contexte lié. Par exemple, dans l’application [eShopOnContainers,](https://github.com/dotnet-architecture/eShopOnContainers) vous avez un microservice nommé `identity-api` qui est en `User`charge de la plupart des données de l’utilisateur avec une entité nommée . Cependant, lorsque vous avez besoin de `Ordering` stocker des données sur l’utilisateur `Buyer`dans le microservice, vous les stockez comme une entité différente nommée . L’entité `Buyer` partage la même `User` identité avec l’entité d’origine, `Ordering` mais elle pourrait n’avoir que les quelques attributs nécessaires par le domaine, et non l’ensemble du profil utilisateur.
+Comme indiqué plus haut dans la section [identification des limites du modèle de domaine pour chaque microservice](identify-microservice-domain-model-boundaries.md) , la duplication de certaines données sur plusieurs microservices n’est pas une conception incorrecte, en revanche, lorsque vous procédez ainsi, vous pouvez convertir les données dans la langue ou les termes de ce domaine ou de ce contexte limité supplémentaires. Par exemple, dans l' [application eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) , vous avez un microservice nommé `identity-api` qui est responsable de la plupart des données de l’utilisateur avec une entité nommée `User` . Toutefois, lorsque vous avez besoin de stocker des données relatives à l’utilisateur dans le `Ordering` microservice, vous le stockez sous la forme d’une autre entité nommée `Buyer` . L' `Buyer` entité partage la même identité avec l’entité d’origine `User` , mais elle ne peut avoir que les quelques attributs requis par le `Ordering` domaine, et non l’ensemble du profil utilisateur.
 
 Vous pouvez utiliser n’importe quel protocole pour communiquer et propager des données de façon asynchrone entre les microservices pour avoir une cohérence à terme. Comme cela a été mentionné, vous pouvez utiliser des événements d’intégration avec un bus d’événements ou un courtier de messages, ou vous pouvez même utiliser HTTP en interrogeant les autres services. Cela n’a pas d’importance. La règle importante est de ne pas créer de dépendances synchrones entre vos microservices.
 
@@ -77,11 +77,11 @@ Il existe également plusieurs formats de message, comme JSON ou XML, ou même d
 
 Quand un client utilise une communication demande/réponse, il envoie une demande à un service, puis le service traite la demande et renvoie une réponse. La communication demande/réponse est particulièrement bien adaptée pour interroger des données pour une interface utilisateur en temps réel (une interface utilisateur dynamique) à partir d’applications clientes. Dans une architecture de microservices, vous allez donc probablement utiliser ce mécanisme de communication pour la plupart des requêtes, comme indiqué sur la figure 4-16.
 
-![Diagramme montrant les demandes/réponses pour les requêtes et mises à jour en direct.](./media/communication-in-microservice-architecture/request-response-comms-live-queries-updates.png)
+![Diagramme montrant les comms de requête/réponse pour les requêtes et les mises à jour actives.](./media/communication-in-microservice-architecture/request-response-comms-live-queries-updates.png)
 
 **Figure 4-16**. Utilisation d’une communication demande/réponse HTTP (synchrone ou asynchrone)
 
-Quand un client utilise une communication demande/réponse, il suppose que la réponse arrivera dans un délai court, en général en moins d’une seconde ou au plus en quelques secondes. Pour les réponses différées, vous devez implémenter une communication asynchrone basée sur des [modèles de messagerie](https://docs.microsoft.com/azure/architecture/patterns/category/messaging) et des [technologies de messagerie](https://en.wikipedia.org/wiki/Message-oriented_middleware), qui est une approche différente que nous expliquons dans la section suivante.
+Quand un client utilise une communication demande/réponse, il suppose que la réponse arrivera dans un délai court, en général en moins d’une seconde ou au plus en quelques secondes. Pour les réponses différées, vous devez implémenter une communication asynchrone basée sur des [modèles de messagerie](/azure/architecture/patterns/category/messaging) et des [technologies de messagerie](https://en.wikipedia.org/wiki/Message-oriented_middleware), qui est une approche différente que nous expliquons dans la section suivante.
 
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) est un style d’architecture répandu pour la communication demande/réponse. Cette approche est basée sur le protocole [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) et y est étroitement couplée ; elle utilise des verbes HTTP comme GET, POST et PUT. REST est l’approche architecturale de communication la plus couramment utilisée pour la création de services. Vous pouvez implémenter des services REST quand vous développez des services d’API web ASP.NET Core.
 
@@ -89,7 +89,7 @@ Vous profitez d’autres avantages si vous utilisez les services HTTP REST en ta
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Martin Fowler. Modèle de maturité Richardson** Une description du modèle REST. \
+- **Martin Fowler. Richardson Maturity Model** une description du modèle Rest. \
   <https://martinfowler.com/articles/richardsonMaturityModel.html>
 
 - **Swagger** : site officiel. \
@@ -101,12 +101,12 @@ Une autre possibilité (généralement utilisée à des fins différentes de RES
 
 Comme le montre la figure 4-17, la communication HTTP en temps réel signifie que le code serveur peut envoyer (push) du contenu à des clients connectés à mesure que les données sont disponibles, au lieu que le serveur attende qu’un client demande de nouvelles données.
 
-![Diagramme montrant la poussée et les comms en temps réel basés sur SignalR.](./media/communication-in-microservice-architecture/one-to-many-communication.png)
+![Diagramme montrant des comms push et en temps réel basées sur Signalr.](./media/communication-in-microservice-architecture/one-to-many-communication.png)
 
 **Figure 4-17**. Communication par messages asynchrones un-à-un en temps réel
 
 SignalR est un bon moyen d’effectuer une communication en temps réel pour envoyer (push) du contenu aux clients à partir d’un serveur back-end. Étant donné que la communication est en temps réel, les applications clientes montrent les modifications quasi instantanément. Ceci est généralement géré par un protocole comme WebSockets, avec de nombreuses connexions WebSockets (une par client). Un exemple classique est quand un service communique un changement de score d’une rencontre sportive simultanément à de nombreuses d’applications web clientes.
 
 >[!div class="step-by-step"]
->[Suivant précédent](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)
->[Next](asynchronous-message-based-communication.md)
+>[Précédent](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md) 
+> [Suivant](asynchronous-message-based-communication.md)

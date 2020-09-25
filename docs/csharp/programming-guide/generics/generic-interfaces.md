@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, generic interfaces
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
-ms.openlocfilehash: b7225e295268a3e46e4e9bd446372ae87bbbbb10
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: ec86395a41baea75694572b59b2c76cbde24fedf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466142"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170387"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>Interfaces génériques (guide de programmation C#)
+
 Il est souvent utile de définir des interfaces pour les classes de collections génériques, ou pour les classes génériques qui représentent des éléments dans la collection. Pour les classes génériques, il est préférable d’utiliser des interfaces génériques, comme <xref:System.IComparable%601> à la place d’<xref:System.IComparable>, pour éviter les opérations de boxing et d’unboxing sur les types valeur. La bibliothèque de classes .NET définit plusieurs interfaces génériques à utiliser avec les classes de collection dans l' <xref:System.Collections.Generic> espace de noms.  
   
  Quand une interface est spécifiée comme une contrainte sur un paramètre de type, seuls les types qui implémentent l’interface peuvent être utilisés. L’exemple de code suivant illustre une classe `SortedList<T>` qui dérive de la classe `GenericList<T>`. Pour plus d’informations, consultez [Introduction aux génériques](./index.md). `SortedList<T>` ajoute la contrainte `where T : IComparable<T>`. Ceci permet à la méthode `BubbleSort` dans `SortedList<T>` d’utiliser la méthode générique <xref:System.IComparable%601.CompareTo%2A> sur les éléments de liste. Dans cet exemple, les éléments de liste sont une classe simple, `Person`, qui implémente `IComparable<Person>`.  

@@ -4,17 +4,17 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
-ms.openlocfilehash: 547654e77812481daffc9a03ccd28d3d2f6b5f09
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 19626aea07fb26222af575a709b54577ca12589b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164432"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169217"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Recommandations sur l’hébergement Azure pour les applications web ASP.NET Core
 
 > « Les leaders métier ne passent plus par les départements informatiques pour obtenir des applications du cloud (également appelées SaaS) et les paient comme ils paient un abonnement à un magazine. Quand ils n’ont plus besoin du service, ils peuvent annuler l’abonnement sans se retrouver avec du matériel inutilisé dans un coin. »  
-> _\-Daryl Plummer, analyste Gartner_
+> _\- Daryl Plummer, analyste Gartner_
 
 Quels que soient les besoins et l’architecture de votre application, Microsoft Azure peut la prendre en charge. Vos besoins d’hébergement peuvent être aussi simples que ceux d’un site web statique ou aussi complexes que ceux d’une application sophistiquée constituée de dizaines de services. Pour les applications ASP.NET Core monolithiques et les services qui les prennent en charge, il existe plusieurs configurations connues qui sont recommandées. Les suggestions présentées dans cet article sont regroupées en fonction du type de ressource à héberger, qu’il s’agisse d’applications complètes, de processus individuels ou de données.
 
@@ -54,7 +54,7 @@ En plus des applications qui ne sont pas optimisées pour le cloud, Azure App Se
 
 ![Architecture Azure de base](./media/image1-5.png)
 
-Un petit nombre de ressources dans un seul groupe de ressources suffit généralement pour gérer une telle application. Les applications qui sont généralement déployées en tant qu’unité unique, plutôt que celles constituées de nombreux processus distincts, sont de bonnes candidates pour cette [approche architecturale de base](https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app). Bien que simple d’un point de vue architectural, cette approche permet quand même d’effectuer un scale up (plus de ressources par nœud) et un scale out (plus de nœuds hébergés) de l’application hébergée afin de répondre à toute augmentation de la demande. Avec la mise à l’échelle automatique, l’application peut être configurée pour ajuster automatiquement le nombre de nœuds qui l’hébergent en fonction de la demande et de la charge moyenne entre les nœuds.
+Un petit nombre de ressources dans un seul groupe de ressources suffit généralement pour gérer une telle application. Les applications qui sont généralement déployées en tant qu’unité unique, plutôt que celles constituées de nombreux processus distincts, sont de bonnes candidates pour cette [approche architecturale de base](/azure/architecture/reference-architectures/app-service-web-app/basic-web-app). Bien que simple d’un point de vue architectural, cette approche permet quand même d’effectuer un scale up (plus de ressources par nœud) et un scale out (plus de nœuds hébergés) de l’application hébergée afin de répondre à toute augmentation de la demande. Avec la mise à l’échelle automatique, l’application peut être configurée pour ajuster automatiquement le nombre de nœuds qui l’hébergent en fonction de la demande et de la charge moyenne entre les nœuds.
 
 ### <a name="app-service-web-apps-for-containers"></a>App Service Web Apps for Containers
 
@@ -74,7 +74,7 @@ Le développement avec des conteneurs offre de nombreux avantages, notamment qua
 
 ![Exemple d’architecture de microservices avec plusieurs modèles de conception courants indiqués.](./media/image1-10.png)
 
-[Apprenez-en davantage sur les modèles de conception à prendre en compte lors de la création de systèmes basés sur des microservices.](https://docs.microsoft.com/azure/architecture/microservices/design/patterns)
+[Apprenez-en davantage sur les modèles de conception à prendre en compte lors de la création de systèmes basés sur des microservices.](/azure/architecture/microservices/design/patterns)
 
 ### <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
@@ -100,7 +100,7 @@ Azure Dev Spaces :
 - Réduit le nombre d’environnements d’intégration nécessaires par équipe.
 - Élimine la nécessité de simuler certains services dans un système distribué lors du développement ou des tests.
 
-[En savoir plus sur Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
+[En savoir plus sur Azure Dev Spaces](/azure/dev-spaces/about)
 
 ### <a name="azure-virtual-machines"></a>Machines virtuelles Azure
 

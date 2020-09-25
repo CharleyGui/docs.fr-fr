@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -warnaserror compiler option [C#]
 - warnaserror compiler option [C#]
 ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
-ms.openlocfilehash: 3ccd4546402dbc8e5d9245af6411ba2d831d4959
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9c3b307668968865b401aedc04c79f95d4f32513
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89127241"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171336"
 ---
 # <a name="-warnaserror-c-compiler-options"></a>-warnaserror (Options du compilateur C#)
+
 L’option **-warnaserror+** considère tous les avertissements comme des erreurs.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,6 +27,7 @@ L’option **-warnaserror+** considère tous les avertissements comme des erreur
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Les messages qui d’ordinaire auraient été signalés comme des avertissements s’affichent en tant qu’erreurs, et le processus de génération est arrêté (aucun fichier de sortie n’est généré).  
   
  Comme **-warnaserror** est activé par défaut, les avertissements n’empêchent pas la génération d’un fichier de sortie. Du fait de **-warnaserror**, qui est identique à **-warnaserror+**, les avertissements sont considérés comme des erreurs.  
@@ -45,6 +47,7 @@ L’option **-warnaserror+** considère tous les avertissements comme des erreur
  Pour définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors>.  
   
 ## <a name="example"></a>Exemple  
+
  Compilez `in.cs` et faites en sorte que le compilateur n’affiche aucun avertissement :  
   
 ```console  

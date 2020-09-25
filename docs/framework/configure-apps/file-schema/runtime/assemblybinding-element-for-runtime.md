@@ -8,14 +8,15 @@ helpviewer_keywords:
 - assemblyBinding element
 - container tags, <assemblyBinding> element
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
-ms.openlocfilehash: 202b063ad3f0f9696cdc12aff434d61fe5a813e6
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b6a39bcecfd2485481677496adcf026d986c283b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154320"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170244"
 ---
 # <a name="assemblybinding-element-for-runtime"></a>\<assemblyBinding>, élément de \<runtime>
+
 Contient des informations à propos de la redirection des versions d'assemblys et de l'emplacement de ces derniers.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Contient des informations à propos de la redirection des versions d'assemblys e
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -57,6 +59,7 @@ Contient des informations à propos de la redirection des versions d'assemblys e
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant montre comment rediriger une version d'assembly vers une autre et fournir une base de code.  
   
 ```xml  
@@ -92,6 +95,6 @@ Contient des informations à propos de la redirection des versions d'assemblys e
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma des paramètres d'exécution](index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Redirection des versions d'assemblys](../../redirect-assembly-versions.md)

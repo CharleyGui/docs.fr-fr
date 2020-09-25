@@ -7,12 +7,12 @@ ms.date: 08/12/2020
 no-loc:
 - Blazor
 - WebAssembly
-ms.openlocfilehash: 826f9003852e47c093193bbbb717fd9e1f2e61c6
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 4668922de8f0efc775acf6e505d56143b7ead8e7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90678938"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169061"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Utilisation de données dans les applications ASP.NET Core
 
@@ -209,7 +209,7 @@ En savoir plus sur la [prise en charge des entités](/ef/core/modeling/owned-ent
 
 ### <a name="resilient-connections"></a>Connexions résilientes
 
-Les ressources externes telles que les bases de données SQL peuvent parfois être indisponibles. En cas d’indisponibilité temporaire, les applications peuvent utiliser une logique de nouvelle tentative pour éviter de lever une exception. Cette technique est communément appelée _résilience de la connexion_. Vous pouvez implémenter votre [propre technique de nouvelle tentative avec interruption exponentielle](https://docs.microsoft.com/azure/architecture/patterns/retry) en retentant une opération après un temps d’attente qui augmente de manière exponentielle, jusqu’à ce que le nombre maximal de tentatives configuré ait été atteint. Cette technique prend en compte le fait que les ressources du cloud peuvent être indisponibles par intermittence pendant de brèves périodes, ce qui entraîne l’échec de certaines requêtes.
+Les ressources externes telles que les bases de données SQL peuvent parfois être indisponibles. En cas d’indisponibilité temporaire, les applications peuvent utiliser une logique de nouvelle tentative pour éviter de lever une exception. Cette technique est communément appelée _résilience de la connexion_. Vous pouvez implémenter votre [propre technique de nouvelle tentative avec interruption exponentielle](/azure/architecture/patterns/retry) en retentant une opération après un temps d’attente qui augmente de manière exponentielle, jusqu’à ce que le nombre maximal de tentatives configuré ait été atteint. Cette technique prend en compte le fait que les ressources du cloud peuvent être indisponibles par intermittence pendant de brèves périodes, ce qui entraîne l’échec de certaines requêtes.
 
 Pour Azure SQL DB, Entity Framework Core fournit déjà la logique de résilience et de nouvelle tentative de connexion de base de données interne. Par contre, vous devez autoriser la stratégie d’exécution d’Entity Framework pour chaque connexion DbContext si vous voulez avoir des connexions EF Core résilientes.
 
@@ -285,7 +285,7 @@ Le premier DbContext est le \_catalogContext et le second DbContext se trouve da
 
 Bien que EF Core soit un bon choix pour la gestion de la persistance, et, pour la plupart, encapsule les détails de la base de données à partir des développeurs d’applications, ce n’est pas le seul choix. Une autre solution open source populaire est [dapper](https://github.com/StackExchange/Dapper), appelée micro-ORM. Un micro-ORM est un outil allégé, avec moins de fonctionnalités, qui permet de mapper des objets à des structures de données. Dans le cas de Dapper, ses objectifs de conception sont axés sur les performances, plutôt que sur l’encapsulation entière des requêtes sous-jacentes qu’il utilise afin de récupérer et de mettre à jour des données. Comme il n’effectue pas d’abstraction de SQL par rapport au développeur, Dapper est « au plus proche du métal » et permet aux développeurs d’écrire les requêtes exactes qu’ils souhaitent utiliser pour une opération d’accès aux données spécifique.
 
-EF Core offre deux fonctionnalités importantes qui le distinguent de Dapper, mais qui ajoutent également à sa surcharge de performances. La première est la conversion des expressions LINQ en SQL. Ces conversions sont mises en cache, mais leur exécution initiale implique tout de même une surcharge. La deuxième est le suivi des modifications sur les entités (afin que des instructions de mise à jour efficaces puissent être générées). Ce comportement peut être désactivé pour des requêtes spécifiques à l’aide de l’extension AsNotTracking. EF Core génère aussi des requêtes SQL qui sont en général très efficaces et dans tous les cas parfaitement acceptables du point de vue des performances, mais si vous avez besoin d’un contrôle affiné de la requête précise à exécuter, vous pouvez également passer du code SQL personnalisé (ou exécuter une procédure stockée) à l’aide d’EF Core. Dans ce cas, les performances de Dapper sont encore supérieures à celles d’EF Core, mais seulement légèrement. Julie Lerman présente certaines données de performances dans son article MSDN de mai 2016 intitulé [Dapper, Entity Framework, and Hybrid Apps (Dapper, Entity Framework et applications hybrides)](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Vous trouverez des données de point de référence de performances supplémentaires pour diverses méthodes d’accès aux données sur [le site de Dapper](https://github.com/StackExchange/Dapper).
+EF Core offre deux fonctionnalités importantes qui le distinguent de Dapper, mais qui ajoutent également à sa surcharge de performances. La première est la conversion des expressions LINQ en SQL. Ces conversions sont mises en cache, mais leur exécution initiale implique tout de même une surcharge. La deuxième est le suivi des modifications sur les entités (afin que des instructions de mise à jour efficaces puissent être générées). Ce comportement peut être désactivé pour des requêtes spécifiques à l’aide de l’extension AsNotTracking. EF Core génère aussi des requêtes SQL qui sont en général très efficaces et dans tous les cas parfaitement acceptables du point de vue des performances, mais si vous avez besoin d’un contrôle affiné de la requête précise à exécuter, vous pouvez également passer du code SQL personnalisé (ou exécuter une procédure stockée) à l’aide d’EF Core. Dans ce cas, les performances de Dapper sont encore supérieures à celles d’EF Core, mais seulement légèrement. Julie Lerman présente certaines données de performances dans son article MSDN de mai 2016 intitulé [Dapper, Entity Framework, and Hybrid Apps (Dapper, Entity Framework et applications hybrides)](/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Vous trouverez des données de point de référence de performances supplémentaires pour diverses méthodes d’accès aux données sur [le site de Dapper](https://github.com/StackExchange/Dapper).
 
 Pour comparer les syntaxes de Dapper et d’EF, examinez ces deux versions de la même méthode servant à récupérer une liste d’éléments :
 

@@ -3,12 +3,12 @@ title: LINQ et répertoires de fichiers (C#)
 description: Ces ressources LINQ C# pour les opérations de système de fichiers ne sont pas utilisées pour modifier le contenu des fichiers ou des dossiers.
 ms.date: 07/20/2015
 ms.assetid: b66c55e4-0f72-44e5-b086-519f9962335c
-ms.openlocfilehash: ac00e29f90ee1c04ab9978b6ada3ae5f28991a1c
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: d8ef8ac8a8ff25f0bbac417c07e39f516eee27f2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165667"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170478"
 ---
 # <a name="linq-and-file-directories-c"></a>LINQ et répertoires de fichiers (C#)
 
@@ -40,6 +40,7 @@ De nombreuses opérations du système de fichiers sont essentiellement des requ�
  Montre comment itérer au sein des dossiers d’une arborescence, ouvrir chaque fichier et interroger le contenu du fichier.  
   
 ## <a name="comments"></a>Commentaires  
+
  La création d’une source de données représentant avec précision le contenu du système de fichiers et la gestion correcte des exceptions induisent une certaine complexité. Les exemples de cette section créent une collection d’instantanés d’objets <xref:System.IO.FileInfo> qui représente tous les fichiers d’un dossier racine spécifié et de tous ses sous-dossiers. L’état réel de chaque <xref:System.IO.FileInfo> peut changer dans le temps entre le début et la fin de l’exécution d’une requête. Par exemple, vous pouvez créer une liste d’objets <xref:System.IO.FileInfo> à utiliser comme source de données. Si vous essayez d’accéder à la propriété `Length` dans une requête, l’objet <xref:System.IO.FileInfo> tente d’accéder au système de fichiers pour mettre à jour la valeur de `Length`. Si le fichier n’existe plus, vous obtenez une exception <xref:System.IO.FileNotFoundException> dans votre requête, même si vous n’interrogez pas directement le système de fichiers. Certaines requêtes de cette section utilisent une méthode distincte qui consomme ces exceptions particulières dans certains cas. Une autre option consiste à conserver votre source de données à jour dynamiquement en utilisant <xref:System.IO.FileSystemWatcher>.  
   
 ## <a name="see-also"></a>Voir aussi
