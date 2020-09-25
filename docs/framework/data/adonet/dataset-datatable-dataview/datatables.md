@@ -3,14 +3,15 @@ title: DataTables
 description: En savoir plus sur un DataTable ADO.NET, qui représente une table de données relationnelles en mémoire, locale à l'. Application réseau dans laquelle elle réside.
 ms.date: 03/30/2017
 ms.assetid: 52ff0e32-3e5a-41de-9a3b-7b04ea52b83e
-ms.openlocfilehash: da6c9201951a6c7916067011c0a4f01ef9fdeffd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d501096b4abe94653acdc5249c120abff94534d1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286906"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202303"
 ---
 # <a name="datatables"></a>DataTables
+
 Un objet <xref:System.Data.DataSet> est constitué d’une collection de tables, de relations et de contraintes. Dans ADO.NET, <xref:System.Data.DataTable> les objets sont utilisés pour représenter les tables dans un **DataSet**. Un **DataTable** représente une table de données relationnelles en mémoire ; les données sont locales au. Application .net dans laquelle elle réside, mais peut être remplie à partir d’une source de données telle que Microsoft SQL Server à l’aide d’un **DataAdapter** pour plus d’informations, consultez [remplissage d’un DataSet à partir d’un DataAdapter](../populating-a-dataset-from-a-dataadapter.md).  
   
  La classe **DataTable** est un membre de l’espace de noms **System. Data** dans la bibliothèque de classes .NET Framework. Vous pouvez créer et utiliser un **DataTable** indépendamment ou en tant que membre d’un **DataSet**, et les objets **DataTable** peuvent également être utilisés conjointement avec d’autres objets .NET Framework, y compris le <xref:System.Data.DataView> . Vous accédez à la collection de tables d’un **DataSet** via la propriété **tables** de l’objet **DataSet** .  
@@ -22,6 +23,7 @@ Un objet <xref:System.Data.DataSet> est constitué d’une collection de tables,
  Vous pouvez créer des relations parent-enfant entre des tables à l'aide d'une ou plusieurs colonnes connexes de ces tables. Vous créez une relation entre des objets **DataTable** à l’aide d’un <xref:System.Data.DataRelation> . Les objets **DataRelation** peuvent ensuite être utilisés pour retourner les lignes enfants ou parentes associées d’une ligne particulière. Pour plus d’informations, consultez [Ajout de DataRelations](adding-datarelations.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Création d'un DataTable](creating-a-datatable.md)  
  Explique comment créer un **DataTable** et l’ajouter à un **DataSet**.  
   
@@ -35,6 +37,7 @@ Un objet <xref:System.Data.DataSet> est constitué d’une collection de tables,
  Fournit des informations sur les événements disponibles pour une utilisation avec un **DataTable**, y compris les événements lorsque les valeurs de colonne sont modifiées et que les lignes sont ajoutées ou supprimées.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [ADO.NET](../index.md)  
  Décrit l'architecture et les composants d'ADO.NET ainsi que la façon de les utiliser pour accéder à des sources de données existantes et pour gérer des données d'application.  
   

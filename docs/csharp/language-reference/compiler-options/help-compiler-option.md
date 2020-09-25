@@ -13,14 +13,15 @@ helpviewer_keywords:
 - /help compiler option [C#]
 - -? compiler option [C#]
 ms.assetid: 8d53f6ba-5c3b-4183-976e-9c0f26fd3680
-ms.openlocfilehash: 7e51f8848bbd0b57ac083dccb6813e3f39fd9a74
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: c8d6c868db03ba58a7e7a6c3795eaca4a3b4fba2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125681"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91188380"
 ---
 # <a name="-help---c-compiler-options"></a>-help, -? (Options du compilateur C#)
+
 Cette option envoie une liste d’options du compilateur, accompagnée d’une brève description de chaque option, à stdout.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,6 +32,7 @@ Cette option envoie une liste d’options du compilateur, accompagnée d’une b
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Si cette option est incluse dans une compilation, aucun fichier de sortie n’est créé et aucune compilation ne se produit.  
   
  Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  

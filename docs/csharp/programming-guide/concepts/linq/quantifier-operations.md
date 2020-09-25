@@ -3,14 +3,15 @@ title: Opérations de quantificateur (C#)
 description: En savoir plus sur les opérations de quantificateur. Ces opérations retournent une valeur booléenne indiquant si certains ou tous les éléments d’une séquence satisfont à une condition.
 ms.date: 07/20/2015
 ms.assetid: 84ac2ac2-7a63-4581-bc4c-14e34be1493b
-ms.openlocfilehash: ce06f887d3ad7b10cbdedf9e33072df2c0819ef1
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: ffefe1715fd8a074692967e825e0f55673bb2b27
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299147"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202537"
 ---
 # <a name="quantifier-operations-c"></a>Opérations de quantificateur (C#)
+
 Les opérations de quantificateur retournent une valeur <xref:System.Boolean> qui indique si certains ou tous les éléments d’une séquence remplissent une condition.  
   
  L’illustration suivante représente deux opérations de quantificateur différentes sur deux séquences sources différentes. La première opération demande si un ou plusieurs des éléments sont le caractère 'A' et le résultat est `true`. La deuxième opération demande si tous les éléments sont le caractère 'A' et le résultat est `true`.  
@@ -30,16 +31,19 @@ Les opérations de quantificateur retournent une valeur <xref:System.Boolean> qu
 ## <a name="query-expression-syntax-examples"></a>Exemples de syntaxe d'expression de requête  
   
 ### <a name="all"></a>Tous  
+
 L’exemple suivant utilise `All` pour vérifier que toutes les chaînes ont une longueur spécifique.
   
 [!code-csharp[All](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQQuantifier/CS/Quantifier.cs#All)]  
   
 ### <a name="any"></a>Quelconque  
+
 L’exemple suivant utilise `Any` pour vérifier que toutes les chaînes commencent par « o ».  
   
 [!code-csharp[Any](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQQuantifier/CS/Quantifier.cs#Any)]  
   
 ### <a name="contains"></a>Contient  
+
 L’exemple suivant utilise `Contains` pour vérifier qu’un tableau a un élément spécifique.  
   
 [!code-csharp[Contains](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQQuantifier/CS/Quantifier.cs#Contains)]  
@@ -47,6 +51,6 @@ L’exemple suivant utilise `Contains` pour vérifier qu’un tableau a un élé
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [Spécifier dynamiquement des filtres de prédicat au moment de l’exécution](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
 - [Comment interroger des phrases qui contiennent un ensemble de mots spécifié (LINQ) (C#)](./how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq.md)

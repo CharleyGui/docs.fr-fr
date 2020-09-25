@@ -5,12 +5,12 @@ ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: 613be9248e6ce9b974bcab1b59abd30469e9e180
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: b9cd308a1eaf2ae8f4e3e89b1a4770933b3978cc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89118402"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91188406"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>in, modificateur de paramètre (référence C#)
 
@@ -121,6 +121,7 @@ Vous ne pouvez pas utiliser les mots clés `in`, `ref` ou `out` pour les types d
 - Le premier argument d’une méthode d’extension où cet argument est un type générique (même si ce type est imposé comme struct).
 
 ## <a name="c-language-specification"></a>Spécification du langage C#  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
