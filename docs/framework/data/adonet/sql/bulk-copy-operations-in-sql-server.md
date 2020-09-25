@@ -3,14 +3,15 @@ title: Opérations de copie en bloc dans SQL Server
 description: Apprenez à utiliser la classe SqlBulkCopy pour écrire des solutions de code managé qui copient en bloc des fichiers volumineux dans des tables ou des vues dans des bases de données SQL Server.
 ms.date: 03/30/2017
 ms.assetid: 83a7a0d2-8018-4354-97b9-0b1d99f8342b
-ms.openlocfilehash: 4f877836aa45efe162cce3c42cb5733f86deab2c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 43d63f3671ea8ff05da3e10580c2784fa3aae581
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286518"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197428"
 ---
 # <a name="bulk-copy-operations-in-sql-server"></a>Opérations de copie en bloc dans SQL Server
+
 Microsoft SQL Server inclut un utilitaire en ligne de commande connu, **bcp**, pour rapidement copier en bloc des fichiers volumineux dans des tables ou des vues de bases de données SQL Server. La classe <xref:System.Data.SqlClient.SqlBulkCopy> vous permet d’écrire des solutions de code managé, qui fournissent des fonctionnalités similaires. Il existe d’autres façons de charger des données dans une table SQL Server (instructions INSERT, par exemple) mais <xref:System.Data.SqlClient.SqlBulkCopy> offre de meilleures performances.  
   
  La classe <xref:System.Data.SqlClient.SqlBulkCopy> peut être utilisée pour écrire des données uniquement sur les tables SQL Server. Toutefois, la source de données n'est pas limitée à SQL Server ; n'importe quelle source de données peut être utilisée, pour autant que les données puissent être chargées dans une instance de <xref:System.Data.DataTable> ou lues avec une instance de <xref:System.Data.IDataReader>.  
@@ -27,6 +28,7 @@ Microsoft SQL Server inclut un utilitaire en ligne de commande connu, **bcp**, 
 > Quand vous utilisez .NET Framework version 1.1 ou antérieure (ne prenant pas en charge la classe <xref:System.Data.SqlClient.SqlBulkCopy>), vous pouvez exécuter l’instruction SQL Server Transact-SQL **BULK INSERT** à l’aide de l’objet <xref:System.Data.SqlClient.SqlCommand>.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Configuration de l’exemple de copie en bloc](bulk-copy-example-setup.md)  
  Décrit les tables utilisées dans les exemples de copie en bloc et fournit des scripts SQL pour créer les tables dans la base de données AdventureWorks.  
   
