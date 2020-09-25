@@ -2,14 +2,15 @@
 title: <reliableSession>
 ms.date: 03/30/2017
 ms.assetid: 129b4a59-37f0-4030-b664-03795d257d29
-ms.openlocfilehash: 95f6646041dc2dd7bae7691a0a9f748c844f50b6
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ec69d9194d98302a4744e290f23fbb150b2e87cc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738745"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181311"
 ---
 # \<reliableSession>
+
 Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery).  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -49,7 +51,8 @@ Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est
 |reliableMessagingVersion|Valeur autorisée de <xref:System.ServiceModel.ReliableMessagingVersion> qui spécifie la version de messagerie WS-Reliable à utiliser.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -57,7 +60,8 @@ Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les sessions fiables fournissent des fonctionnalités pour une messagerie et des sessions fiables. La messagerie fiable réessaie d'établir la communication en cas d'échec et permet de spécifier des assurances de remise telles que l'ordre d'arrivée des messages. Les sessions conservent l'état pour les clients entre les appels. Cet élément assure également en option la remise de messages ordonnés. Cette session implémentée peut croiser des intermédiaires SOAP et de transport.  
   
  Chaque élément de liaison représente une étape de traitement lors de l’envoi ou de la réception des messages. Au moment de l’exécution, les éléments de liaison créent les fabrications de canal et les écouteurs nécessaires pour générer les piles de canaux sortants et entrants requis pour envoyer et recevoir des messages. Le `reliableSession` fournit une couche facultative dans la pile capable d'établir une session fiable entre des points de terminaison et de configurer le comportement de cette session.  
@@ -65,6 +69,7 @@ Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est
  Pour plus d’informations, consultez [sessions fiables](../../../wcf/feature-details/reliable-sessions.md).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment configurer une liaison personnalisée avec plusieurs éléments de transport et d’encodage de message, en activant surtout des sessions fiables qui maintiennent l’état du client et spécifient des assurances de remise dans l’ordre. Cette fonctionnalité est configurée dans les fichiers de configuration de l'application pour le client et le service. L'exemple présente la configuration du service.  
   
 ```xml  

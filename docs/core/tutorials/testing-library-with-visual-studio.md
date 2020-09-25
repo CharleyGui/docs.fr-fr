@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 049f0636b1c2c2df33461714aea5a11810ef00ad
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 04d0120622697d1e0c84fc169dfc50951cb8aa3c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359192"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177291"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Didacticiel : tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio
 
@@ -187,7 +187,13 @@ Pour tester la version Release :
 
 1. Exécutez les tests unitaires en choisissant **test exécuter**  >  **tous les tests** dans la barre de menus. Les tests réussissent.
 
-## <a name="additional-resources"></a>Ressources complémentaires
+## <a name="debug-tests"></a>Déboguer les tests
+
+Si vous utilisez Visual Studio comme IDE, vous pouvez utiliser le même processus que celui présenté dans [Didacticiel : déboguer une application de console .net core à l’aide de Visual Studio](debugging-with-visual-studio.md) pour déboguer le code à l’aide de votre projet de test unitaire. Au lieu de démarrer le projet d’application *Showcase* , cliquez avec le bouton droit sur le projet **StringLibraryTests** , puis sélectionnez **déboguer les tests** dans le menu contextuel.
+
+Visual Studio démarre le projet de test avec le débogueur attaché. L’exécution s’arrêtera à un point d’arrêt que vous avez ajouté au projet de test ou au code de bibliothèque sous-jacent.
+
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Concepts de base des tests unitaires-Visual Studio](/visualstudio/test/unit-test-basics)
 * [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)

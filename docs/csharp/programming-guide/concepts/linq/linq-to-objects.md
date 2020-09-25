@@ -3,12 +3,12 @@ title: LINQ to Objects (C#)
 description: En savoir plus sur LINQ to Objects en C#, qui utilise des requêtes LINQ avec n’importe quelle collection IEnumerable ou IEnumerable <T> sans fournisseur LINQ ou API intermédiaire.
 ms.date: 07/20/2015
 ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
-ms.openlocfilehash: f8e65f129dc002d9615b01e3a3a123514754b886
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 575708f14487670a4371d470dcdcf650b03c3175
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557004"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202524"
 ---
 # <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
 
@@ -29,6 +29,7 @@ ms.locfileid: "90557004"
  Cette section a pour objectif de montrer l’approche basée sur LINQ avec quelques exemples sélectionnés. Elle n’est pas destinée à être exhaustive.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [LINQ et chaînes (C#)](./linq-and-strings.md)  
  Explique comment LINQ peut être utilisé pour interroger et transformer des chaînes et des collections de chaînes. Contient également des liens vers des articles qui illustrent ces principes.  
   

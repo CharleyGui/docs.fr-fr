@@ -3,14 +3,15 @@ title: <> System. serviceModel du flux de travail
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 6a8eb2bf-f925-40e1-ba5c-a49b1d3a3ac6
-ms.openlocfilehash: 9aa2bf0fdfd6fe4528a3fda4d05b3ba8f23637d3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c18cc4886d3e7a19b750a005b27d00a841b9fc5d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79151947"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194854"
 ---
-# <a name="systemservicemodel-of-workflow"></a>\<system.serviceModel>de flux de travail
+# <a name="systemservicemodel-of-workflow"></a>\<system.serviceModel> de flux de travail
+
 Cette section de configuration contient tous les éléments de configuration de flux de travail.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -95,10 +96,12 @@ Cette section de configuration contient tous les éléments de configuration de 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucune  
+
+ None  
   
 ### <a name="child-elements"></a>Éléments enfants  
   

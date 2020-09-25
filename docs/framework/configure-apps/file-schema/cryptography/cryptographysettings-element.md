@@ -8,14 +8,15 @@ helpviewer_keywords:
 - cryptographySettings element
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-ms.openlocfilehash: fe6de09213c6f980e8eb205a318aae50033b2a84
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3c3513c05485550202f2fc5bcae1faabb0e75d47
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155230"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201809"
 ---
 # <a name="cryptographysettings-element"></a>Élément \<cryptographySettings>
+
 Contient des paramètres de chiffrement.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -30,9 +31,11 @@ Contient des paramètres de chiffrement.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -50,6 +53,7 @@ Contient des paramètres de chiffrement.
 |`mscorlib`|Contient l' `cryptographySettings` élément.|  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment utiliser l' **\<cryptographySettings>** élément pour contenir des mappages de noms de chiffrement et des mappages OID. Cet exemple configure le runtime afin que <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> retourne un `MyHashClass` objet et que la `MyCryptoClass` classe soit mappée à l’identificateur d’objet 1.3.36.2.1.  
   
 ```xml  
@@ -78,6 +82,6 @@ Contient des paramètres de chiffrement.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)
+- [services de chiffrement](../../../../standard/security/cryptographic-services.md)

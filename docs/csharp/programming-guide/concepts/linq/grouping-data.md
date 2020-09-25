@@ -3,14 +3,15 @@ title: Regroupement des données (C#)
 description: Le regroupement place les données dans des groupes d’éléments qui partagent un attribut. En savoir plus sur les méthodes d’opérateur de requête standard dans LINQ en C# qui regroupent les éléments de données.
 ms.date: 07/20/2015
 ms.assetid: e414e9e4-343a-4e6e-858f-4a30c5e64492
-ms.openlocfilehash: 5e1bca1d360b0f44a081cf2770118a0551629b5b
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 584d50fc15dd8b4ce1cfdf4766f3bc8b8383eb12
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103677"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202563"
 ---
 # <a name="grouping-data-c"></a>Regroupement des données (C#)
+
 Le regroupement consiste à placer des données dans des groupes afin que les éléments de chaque groupe partagent un attribut commun.  
   
  L’illustration suivante montre les résultats du regroupement d’une séquence de caractères. La clé de chaque groupe est le caractère.  
@@ -27,6 +28,7 @@ Le regroupement consiste à placer des données dans des groupes afin que les é
 |ToLookup|Insère des éléments dans un <xref:System.Linq.Lookup%602> (un dictionnaire de type un-à-plusieurs) basé sur une fonction de sélecteur de clés.|Non applicable.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête  
+
  L’exemple de code suivant utilise la clause `group by` pour regrouper des entiers dans une liste selon qu’ils sont pairs ou impairs.  
   
 ```csharp  
@@ -63,7 +65,7 @@ foreach (var group in query)
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [group, clause](../../../language-reference/keywords/group-clause.md)
 - [Créer un groupe imbriqué](../../../linq/create-a-nested-group.md)
 - [Guide pratique pour regrouper des fichiers par extension (LINQ) (C#)](./how-to-group-files-by-extension-linq.md)

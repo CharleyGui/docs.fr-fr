@@ -1,15 +1,16 @@
 ---
-title: <remove>d' <claimTypeRequirements> élément
+title: <remove> d' <claimTypeRequirements> élément
 ms.date: 03/30/2017
 ms.assetid: 8ef05bc4-1950-4ee4-95c5-1c6a394eff7e
-ms.openlocfilehash: 84f4208d3f4581cf7e8c4455bf3f5d78f7e13b9f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 773f37156969f64f02711e6a60764aeb7e50a840
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399995"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181321"
 ---
-# <a name="remove-of-claimtyperequirements-element"></a>\<remove>d' \<claimTypeRequirements> élément
+# <a name="remove-of-claimtyperequirements-element"></a>\<remove> d' \<claimTypeRequirements> élément
+
 Spécifie les types de revendications à supprimer dans les informations d'identification fédérées.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ Spécifie les types de revendications à supprimer dans les informations d'ident
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -40,6 +42,7 @@ Spécifie les types de revendications à supprimer dans les informations d'ident
 |claimType|URI qui définit le type de revendication à supprimer.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  

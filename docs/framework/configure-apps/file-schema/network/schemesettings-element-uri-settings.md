@@ -2,14 +2,15 @@
 title: <schemeSettings>, élément (paramètres d’URI)
 ms.date: 03/30/2017
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-ms.openlocfilehash: c745c90bb61b9ee393687d7f6db4fd11565c7dc7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5a146b854239fd516125e66e05312e27b90c73ec
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154645"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91187015"
 ---
 # <a name="schemesettings-element-uri-settings"></a>\<schemeSettings>, élément (paramètres d’URI)
+
 Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -24,14 +25,16 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucune  
+
+ None  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[add](add-element-for-schemesettings-uri-settings.md)|Ajoute un paramètre de schéma pour un nom de schéma.|  
 |[clear](clear-element-for-schemesettings-uri-settings.md)|Efface tous les paramètres de schéma existants.|  
@@ -39,11 +42,12 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
   
 ### <a name="parent-elements"></a>Éléments parents  
   
-|**Appartient**|**Description**|  
+|**Element**|**Description**|  
 |-----------------|---------------------|  
 |[uri](uri-element-uri-settings.md)|Contient des paramètres qui spécifient comment le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Par défaut, la <xref:System.Uri?displayProperty=nameWithType> classe annule l’échappement des délimiteurs de chemin d’accès encodés en pourcentage avant d’exécuter la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
@@ -59,9 +63,11 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
  Ce comportement par défaut peut être modifié pour éviter les délimiteurs de chemin d’accès encodés de pourcentage à l’aide de l’option de configuration schemeSettings pour un schéma spécifique.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
+
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant illustre une configuration utilisée par la <xref:System.Uri> classe pour prendre en charge la non-échappement des délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
   
 ```xml  

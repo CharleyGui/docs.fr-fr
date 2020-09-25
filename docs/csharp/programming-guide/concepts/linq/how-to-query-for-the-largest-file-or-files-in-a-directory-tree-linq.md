@@ -3,14 +3,15 @@ title: Comment interroger les fichiers les plus volumineux dans une arborescence
 description: Cet exemple C# montre cinq requêtes LINQ relatives à la taille de fichier en octets. Vous pouvez les modifier pour effectuer une requête sur une autre propriété de l’objet FileInfo.
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: c06c6017d6fd1efd6412729c5df63a2b819908a6
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 049db9bf104af1593ba9807c307008e8e760da32
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104371"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176251"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Comment interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)
+
 Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :  
   
 - Comment récupérer la taille en octets du plus grand fichier.  
@@ -24,6 +25,7 @@ Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :
 - Comment regrouper des fichiers selon leur taille en octets, en ignorant les fichiers qui sont inférieurs à une taille spécifiée.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant contient cinq requêtes distinctes qui montrent comment interroger et regrouper des fichiers selon leur taille en octets. Vous pouvez facilement modifier ces exemples pour baser la requête sur une autre propriété de l’objet <xref:System.IO.FileInfo>.  
   
 ```csharp  
@@ -144,6 +146,7 @@ class QueryBySize
  La requête appelle une méthode distincte pour obtenir la taille du fichier en octets et ainsi permettre l’utilisation de l’exception éventuellement levée si un fichier a été supprimé sur un autre thread depuis la création de l’objet <xref:System.IO.FileInfo> dans l’appel à `GetFiles`. Même si l’objet <xref:System.IO.FileInfo> a déjà été créé, l’exception peut être levée, car un objet <xref:System.IO.FileInfo> essaiera d’actualiser sa propriété <xref:System.IO.FileInfo.Length%2A> en utilisant la taille en octets la plus récente lors du premier accès à la propriété. En plaçant cette opération dans un bloc try-catch en dehors de la requête, nous respectons la règle qui consiste à éviter les opérations dans les requêtes qui peuvent avoir des effets secondaires. En règle générale, il faut faire très attention lors de l’utilisation d’exceptions et s’assurer que l’application ne reste pas dans un état inconnu.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
 Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.
 
 ## <a name="see-also"></a>Voir aussi

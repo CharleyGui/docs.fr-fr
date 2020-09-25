@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <system.diagnostics> element
 - system.diagnostics element
 ms.assetid: 3f348f42-fa72-4ff2-aa1c-bb9eecad4bb2
-ms.openlocfilehash: 4f831592d7d178276b1625e1ef7d8512085342af
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: aff324ac9952c95c78d7ca15572651dba23b79b7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153205"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195166"
 ---
 # <a name="systemdiagnostics-element"></a>Élément \<system.diagnostics>
+
 Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -29,9 +30,11 @@ Spécifie les écouteurs de trace qui collectent, stockent et acheminent les mes
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -52,6 +55,7 @@ Spécifie les écouteurs de trace qui collectent, stockent et acheminent les mes
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment incorporer un commutateur de trace et un écouteur de suivi à l’intérieur de l' **\<system.diagnostics>** élément. Le `General` commutateur de trace est défini sur le <xref:System.Diagnostics.TraceLevel> niveau. L’écouteur de suivi `myListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier.  
   
 > [!NOTE]

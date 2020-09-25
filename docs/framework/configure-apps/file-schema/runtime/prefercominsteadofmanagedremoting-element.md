@@ -5,14 +5,15 @@ helpviewer_keywords:
 - <PreferComInsteadOfManagedRemoting> element
 - PreferComInsteadOfManagedRemoting element
 ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
-ms.openlocfilehash: 1376df4efd56734f2b8da9bd76033afcce8a285b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2fb0d94f91d28f9d9d4f247411d273f786f7b63b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "77452251"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195283"
 ---
 # <a name="prefercominsteadofmanagedremoting-element"></a>Élément \<PreferComInsteadOfManagedRemoting>
+
 Spécifie si le runtime utilisera COM Interop au lieu de la communication à distance pour tous les appels au-delà des limites du domaine d’application.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,6 +27,7 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -38,10 +40,11 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|`false`|Le runtime utilise la communication à distance au-delà des limites du domaine d’application. Il s'agit de la valeur par défaut.|  
+|`false`|Le runtime utilise la communication à distance au-delà des limites du domaine d’application. Il s’agit de la valeur par défaut.|  
 |`true`|Le runtime utilisera COM Interop à travers les limites du domaine d’application.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -51,7 +54,8 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Lorsque vous affectez `enabled` à l’attribut la valeur `true` , le runtime se comporte comme suit :  
   
 - Le runtime n’appelle pas [IUnknown :: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pour une interface [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) lorsqu’une interface [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) entre dans le domaine via une interface com. Au lieu de cela, il construit un wrapper RCW ( [Runtime Callable Wrapper](../../../../standard/native-interop/runtime-callable-wrapper.md) ) autour de l’objet.  
@@ -61,6 +65,7 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
  Ces deux comportements garantissent que tous les appels sur les interfaces COM entre les objets gérés au-delà des limites du domaine d’application utilisent COM et COM Interop au lieu de la communication à distance.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment spécifier que le runtime doit utiliser COM Interop à travers les limites d’isolation :  
   
 ```xml  
@@ -73,5 +78,5 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des paramètres d'exécution](index.md)
 - [Schéma du fichier de configuration](../index.md)

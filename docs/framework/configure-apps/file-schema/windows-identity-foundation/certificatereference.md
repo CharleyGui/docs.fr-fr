@@ -3,14 +3,15 @@ title: <certificateReference>
 ms.date: 03/30/2017
 ms.assetid: 2ac8bc14-e9f1-48fb-b662-f5991558fbe4
 author: BrucePerlerMS
-ms.openlocfilehash: 47d432a84d070476ddffd9b98a4ba46d8163bdc3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c21e5186b8afdf8c72cbfc605af94c95bc2bc0d5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152812"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201373"
 ---
 # \<certificateReference>
+
 Spécifie les paramètres utilisés pour rechercher et valider un certificat X. 509 dans un magasin de certificats.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,20 +39,22 @@ Spécifie les paramètres utilisés pour rechercher et valider un certificat X. 
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|storeName|Nom du magasin de certificats X.509. La valeur par défaut est « My ». facultatif.|  
-|storeLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation>Valeur qui spécifie l’emplacement du magasin de certificats X. 509. La valeur par défaut est « LocalMachine ». facultatif.|  
-|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType>Valeur qui spécifie le type de recherche à exécuter. La valeur par défaut est « FindBySubjectDistinguishedName ». facultatif.|  
-|findValue|Valeur à rechercher dans le magasin de certificats X.509. facultatif.|  
-|isChainIncluded|Spécifie si la validation doit être effectuée à l’aide de la chaîne de certificats. La valeur par défaut est « true ». la validation est effectuée à l’aide de la chaîne de certificats. facultatif.|  
+|storeName|Nom du magasin de certificats X.509. La valeur par défaut est « My ». Optionnel.|  
+|storeLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation>Valeur qui spécifie l’emplacement du magasin de certificats X. 509. La valeur par défaut est « LocalMachine ». Optionnel.|  
+|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType>Valeur qui spécifie le type de recherche à exécuter. La valeur par défaut est « FindBySubjectDistinguishedName ». Optionnel.|  
+|findValue|Valeur à rechercher dans le magasin de certificats X.509. Optionnel.|  
+|isChainIncluded|Spécifie si la validation doit être effectuée à l’aide de la chaîne de certificats. La valeur par défaut est « true ». la validation est effectuée à l’aide de la chaîne de certificats. Optionnel.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -59,5 +62,6 @@ Spécifie les paramètres utilisés pour rechercher et valider un certificat X. 
 |-------------|-----------------|  
 |[\<serviceCertificate>](servicecertificate.md)|Configure le certificat utilisé pour chiffrer et déchiffrer les jetons.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `<certificateReference>` élément spécifie les paramètres utilisés pour rechercher et valider un certificat X. 509 dans un magasin de certificats. Lorsqu’il est spécifié en tant qu’élément enfant de l' `<serviceCertificate>` élément, il spécifie l’emplacement et les paramètres de vérification du certificat X. 509 utilisé pour chiffrer et déchiffrer les jetons. L' `<certificateReference>` élément est représenté par la <xref:System.ServiceModel.Configuration.CertificateReferenceElement> classe.

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - mscorlib element
 - <mscorlib> element
 ms.assetid: d549668f-31f1-4b92-8021-a9135c09ca3c
-ms.openlocfilehash: d1d805f7154c18dba2dcd4eb7228cc200d8da811
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1788205997d0dc49df172c9dfe48faceb8fc3290
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155179"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201783"
 ---
 # <a name="mscorlib-element-for-cryptography-settings"></a>Élément \<mscorlib> pour les paramètres de chiffrement
+
 Contient l' [ \<cryptographySettings> élément](cryptographysettings-element.md).  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -29,9 +30,11 @@ Contient l' [ \<cryptographySettings> élément](cryptographysettings-element.md
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
+
  Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -47,6 +50,7 @@ Contient l' [ \<cryptographySettings> élément](cryptographysettings-element.md
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre comment utiliser l' **\<mscorlib>** élément pour référencer une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne « RSA » à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et utiliser la <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
   
 ```xml  
@@ -72,7 +76,7 @@ Contient l' [ \<cryptographySettings> élément](cryptographysettings-element.md
 
 - <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A>
 - <xref:System.Security.Cryptography>
-- [Schéma des fichiers de configuration](../index.md)
+- [Schéma du fichier de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)
+- [services de chiffrement](../../../../standard/security/cryptographic-services.md)
 - [Configuration de classes de chiffrement](../../configure-cryptography-classes.md)

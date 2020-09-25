@@ -2,14 +2,15 @@
 title: <persistenceProvider>
 ms.date: 03/30/2017
 ms.assetid: a37049c5-a7ea-4519-94f2-912eeb010380
-ms.openlocfilehash: 7c4d9ae29ca1e543217d444e05a661b48e2cbb62
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: dbf0ba565d4e3e2d65b4a81eb5d345fa90fb43c7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400078"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181425"
 ---
 # \<persistenceProvider>
+
 Indique le type d'implémentation de fournisseur de persistance à utiliser, ainsi que le délai d'expiration à utiliser pour les opérations de persistance.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ Indique le type d'implémentation de fournisseur de persistance à utiliser, ain
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -37,6 +39,7 @@ Indique le type d'implémentation de fournisseur de persistance à utiliser, ain
 |type|Chaîne indiquant le type à utiliser pour la fabrique de fournisseurs de persistance.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -45,7 +48,8 @@ Indique le type d'implémentation de fournisseur de persistance à utiliser, ain
 |-------------|-----------------|  
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Cet élément spécifie le fournisseur de persistance à utiliser pour sérialiser l'état d'un service WCF. Il doit être utilisé avec le `wsHttpContextBinding` qui transmet les informations d'état dans les en-têtes HTTP.  
   
 ## <a name="see-also"></a>Voir aussi

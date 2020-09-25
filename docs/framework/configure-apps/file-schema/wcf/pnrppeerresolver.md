@@ -2,14 +2,15 @@
 title: <pnrpPeerResolver>
 ms.date: 03/30/2017
 ms.assetid: c1b34f3b-68e5-4911-a367-de49fb61dbc6
-ms.openlocfilehash: d3e88d7f2dd991091d3d7abdc715e125ddc9ac56
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0a8cc60226b13552d47faec3a156ed1f59acacb9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738782"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181399"
 ---
 # \<pnrpPeerResolver>
+
 Spécifie que le programme de résolution PNRP (Peer Name Resolution Protocol) doit être utilisé comme un programme de résolution. Cet élément est facultatif parce que PNRP est le programme de résolution par défaut.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -26,6 +27,7 @@ Spécifie que le programme de résolution PNRP (Peer Name Resolution Protocol) d
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -35,7 +37,8 @@ Spécifie que le programme de résolution PNRP (Peer Name Resolution Protocol) d
 |resolverType|Chaîne qui spécifie le programme de résolution à utiliser. Cet attribut est facultatif. S'il n'est pas défini ou s'il a pour valeur une chaîne vide, PNRP est utilisé.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
