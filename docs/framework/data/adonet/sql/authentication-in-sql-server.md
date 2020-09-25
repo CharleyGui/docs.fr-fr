@@ -3,14 +3,15 @@ title: Authentification dans SQL Server
 description: En savoir plus sur l’authentification avec SQL Server pour ADO.NET, notamment le mode d’authentification Windows et le mode mixte.
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: e9915598acfbdefb59069d6a9c6ef4b7c824e4c6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2c4f62391a0d9b5ada27f56eef4c3467d99b4c6d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286544"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197527"
 ---
 # <a name="authentication-in-sql-server"></a>Authentification dans SQL Server
+
 SQL Server prend en charge deux modes d’authentification : le mode d’authentification Windows et le mode mixte.  
   
 - L’authentification Windows correspond au mode par défaut, et il est souvent qualifié de sécurité intégrée car ce modèle de sécurité SQL Server est étroitement intégré à Windows. Des comptes d’utilisateur et groupes Windows spécifiques sont approuvés pour se connecter à SQL Server. Les utilisateurs Windows qui ont déjà été authentifiés n’ont pas besoin de présenter des informations d’identification supplémentaires.  
@@ -30,6 +31,7 @@ SQL Server prend en charge deux modes d’authentification : le mode d’authen
 > Les connexions sont différentes des utilisateurs de base de données. Vous devez mapper des connexions ou des groupes Windows à des utilisateurs ou des rôles de base de données dans une opération distincte. Vous accordez ensuite des autorisations aux utilisateurs ou aux rôles pour accéder aux objets de base de données.  
   
 ## <a name="authentication-scenarios"></a>Scénarios d'authentification  
+
  L’authentification Windows est généralement le meilleur choix dans les situations suivantes :  
   
 - Il y a un contrôleur de domaine.  
@@ -50,6 +52,7 @@ SQL Server prend en charge deux modes d’authentification : le mode d’authen
 > La spécification de l’authentification Windows ne désactive pas les connexions SQL Server. Utilisez l’instruction Transact-SQL ALTER LOGIN DISABLE pour désactiver des connexions SQL Server dotées de privilèges élevés.  
   
 ## <a name="login-types"></a>Types de connexions  
+
  SQL Server prend en charge trois types de connexions :  
   
 - Un compte d’utilisateur Windows local ou un compte de domaine approuvé. SQL Server s’appuie sur Windows pour authentifier les comptes d’utilisateur Windows.  
@@ -62,6 +65,7 @@ SQL Server prend en charge deux modes d’authentification : le mode d’authen
 > SQL Server fournit des connexions créées à partir de certificats ou de clés asymétriques qui sont utilisées seulement pour la signature de code. Elles ne peuvent pas être utilisées pour se connecter à SQL Server.  
   
 ## <a name="mixed-mode-authentication"></a>Authentification en mode mixte  
+
  Si vous devez utiliser l’authentification en mode mixte, vous devez créer des connexions SQL Server, qui sont stockées dans SQL Server. Vous devez ensuite fournir le nom d’utilisateur et le mot de passe SQL Server au moment de l’exécution.  
   
 > [!IMPORTANT]
@@ -73,6 +77,7 @@ SQL Server prend en charge deux modes d’authentification : le mode d’authen
 > La concaténation de chaînes de connexion à partir d’entrées utilisateur peut vous rendre vulnérable à une attaque par injection de chaîne de connexion. Utilisez le <xref:System.Data.SqlClient.SqlConnectionStringBuilder> pour créer des chaînes de connexion syntaxiquement valides au moment de l’exécution. Pour plus d’informations, consultez [Builders de chaînes de connexion](../connection-string-builders.md).  
   
 ## <a name="external-resources"></a>Ressources externes  
+
  Pour plus d'informations, consultez les ressources ci-dessous.  
   
 |Ressource|Description|  

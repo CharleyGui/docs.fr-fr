@@ -2,14 +2,15 @@
 title: 'Procédure : Utiliser EdmGen.exe pour générer le code de couche objet'
 ms.date: 03/30/2017
 ms.assetid: c44d2ebe-f66f-42cb-9741-4a3f0c2dcffb
-ms.openlocfilehash: 9a73a803d310ebd847e49f4bd71609f8ef9f2944
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a243a588dcb6f7e7001de331cb9011a23ee2fdbe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546638"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198221"
 ---
 # <a name="how-to-use-edmgenexe-to-generate-object-layer-code"></a>Procédure : Utiliser EdmGen.exe pour générer le code de couche objet
+
 Cette rubrique montre comment utiliser l’outil [EDM Generator (EdmGen.exe)](edm-generator-edmgen-exe.md) pour générer le code de couche objet basé sur le fichier. csdl.  
   
 ### <a name="to-generate-object-layer-code-for-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a>Pour générer le code de couche objet pour le modèle School à l'aide d'EdmGen.exe dans le cadre d'un projet Visual Basic  

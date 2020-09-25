@@ -1,18 +1,19 @@
 ---
-title: Comparaison des expressions
+title: Expressions de comparaison
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ec7637a9-01d5-4a95-8bb0-478311cd263b
-ms.openlocfilehash: d0926bb1a0e35caa058f268f0a0c414e805a8674
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: d92020f353393eee683e578f4306cd4a2f214152
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251170"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197844"
 ---
-# <a name="comparison-expressions"></a>Comparaison des expressions
+# <a name="comparison-expressions"></a>Expressions de comparaison
+
 Une expression de comparaison définit une valeur constante, une valeur de propriété ou un résultat de méthode par rapport à une autre valeur (égal, différent de, supérieur à ou inférieur à). Si une comparaison particulière n’est pas valide pour LINQ to Entities, une exception est levée. Toutes les comparaisons, implicites et explicites, requièrent que tous les composants soient comparables dans la source de données. Des expressions de comparaison sont souvent utilisées dans des clauses `Where` pour restreindre les résultats d'une requête.  
   
  L'exemple suivant dans la syntaxe d'expression de requête présente une requête qui retourne des résultats dans lesquels le numéro de commande client est égal à SO43663 :  

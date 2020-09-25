@@ -3,14 +3,15 @@ title: <customCookieHandler>
 ms.date: 03/30/2017
 ms.assetid: a03b153d-5ec6-4915-9031-6f0c3fd348be
 author: BrucePerlerMS
-ms.openlocfilehash: e1f32e17cf0da5e948d778e8b61aca6053eff4ef
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a8ee23ac6facaea18cd7f1820616cb9b16afa336
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70252015"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189849"
 ---
 # \<customCookieHandler>
+
 Définit le type de gestionnaire de cookies personnalisé. Cet élément ne peut être présent que si l' `mode` attribut de l' `<cookieHandler>` élément est « Custom ». Le type personnalisé doit être dérivé de la <xref:System.IdentityModel.Services.CookieHandler> classe.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -33,6 +34,7 @@ Définit le type de gestionnaire de cookies personnalisé. Cet élément ne peut
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -42,7 +44,8 @@ Définit le type de gestionnaire de cookies personnalisé. Cet élément ne peut
 |type|Spécifie un type personnalisé qui dérive de la <xref:System.IdentityModel.Services.CookieHandler> classe. Pour plus d’informations sur la spécification de l' `type` attribut, consultez [références de types personnalisés](../windows-workflow-foundation/index.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucune  
+
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -50,12 +53,14 @@ Définit le type de gestionnaire de cookies personnalisé. Cet élément ne peut
 |-------------|-----------------|  
 |[\<cookieHandler>](cookiehandler.md)|Configure le <xref:System.IdentityModel.Services.CookieHandler> que <xref:System.IdentityModel.Services.SessionAuthenticationModule> utilise pour lire et écrire des cookies.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Quand vous spécifiez un gestionnaire de cookies personnalisé en affectant `mode` à l’attribut de l’élément la valeur `<cookieHandler>` « Custom », vous devez spécifier le type du gestionnaire de cookies personnalisé en incluant un `<customCookieHandler>` élément enfant qui référence le type de gestionnaire de cookie. Cet élément ne peut pas être spécifié lorsque l' `mode` attribut a la valeur « chunked » ou « default ». Les gestionnaires de cookies personnalisés doivent dériver de la <xref:System.IdentityModel.Services.CookieHandler> classe.  
   
  L' `<customCookieHandler>` élément est représenté par la <xref:System.IdentityModel.Configuration.CustomTypeElement> classe.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant configure le SAM pour utiliser un gestionnaire de cookies personnalisé de type `MyNamespace.MyCustomCookieHandler` .  
   
 ```xml  

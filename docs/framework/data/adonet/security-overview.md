@@ -2,23 +2,25 @@
 title: Présentation de la sécurité
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: 4222dd36fe2f693bb16216e01d5e06a8176a7801
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ede9b24828da74c043bed103595073c4607c51f2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550688"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91188991"
 ---
 # <a name="security-overview"></a>Présentation de la sécurité
 
 La sécurisation d'une application est un processus permanent. Un développeur ne peut à aucun moment garantir qu'une application est à l'abri de toute attaque car il est impossible de prédire les types d'attaques futures que les nouvelles technologies permettront de faire apparaître. Inversement, le fait que personne n'a encore découvert (ou révélé) les défaillances de la sécurité d'un système ne signifie pas qu'il n'en existe pas ou qu'il ne peut pas en exister. Vous devez planifier la sécurité au cours de la phase de conception du projet, ainsi que la manière dont la sécurité sera maintenue tout au long de la durée de vie de l'application.
 
 ## <a name="design-for-security"></a>Concevoir la sécurité
+
  L'un des principaux problèmes liés au développement d'applications sécurisées est que la sécurité constitue souvent un aspect pris en considération après coup, après qu'un projet a été complètement codé. Le fait de ne pas concevoir la sécurité dans une application au début engendre des applications non sécurisées, car ce qui rend une application sûre n'a pas été pris en compte.
 
  La mise en œuvre de la sécurité de dernière minute entraîne davantage de bogues, car les logiciels s’interrompent sous les nouvelles restrictions ou doivent être réécrits pour tenir compte des fonctionnalités imprévues. Chaque ligne de code révisé ouvre la possibilité d'introduire un nouveau bogue. C’est pourquoi vous devez songer à la sécurité à un stade précoce du processus de développement, de façon à pouvoir la développer en même temps que les nouvelles fonctionnalités.
 
 ### <a name="threat-modeling"></a>Modélisation des menaces
+
  Vous ne pouvez pas protéger un système contre une attaque si vous ne comprenez pas toutes les attaques potentielles auxquelles il est exposé. Le processus d’évaluation des menaces de sécurité, appelé *modélisation des menaces*, est nécessaire pour déterminer la probabilité et les ramifications des failles de sécurité dans votre application ADO.net.
 
  La modélisation des menaces est constituée de trois étapes principales : compréhension de la perspective de l'adversaire, caractérisation de la sécurité du système et détermination des menaces.
@@ -32,6 +34,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 |Le site de [modélisation des menaces](https://www.microsoft.com/securityengineering/sdl/threatmodeling) sur le portail ingénierie de sécurité|Les ressources de cette page vous aideront à comprendre le processus de modélisation des menaces et à construire des modèles de menaces que vous pouvez utiliser pour sécuriser vos propres applications|
 
 ## <a name="the-principle-of-least-privilege"></a>Principe des privilèges minimum
+
  Lorsque vous concevez, générez et déployez votre application, vous devez partir du principe qu'elle va être attaquée. Souvent, ces attaques proviennent de code malveillant qui s'exécute avec les autorisations de l'utilisateur exécutant le code. D'autres peuvent provenir de code bien intentionné qui a été exploité par un pirate. Lorsque vous planifiez la sécurité, supposez toujours que le pire scénario va se produire.
 
  Vous pouvez employer une contre-mesure qui consiste à tenter d'ériger autant de murs autour de votre code que possible, en l'exécutant avec des privilèges minimum. Le principe des privilèges minimum consiste à accorder des droits sur un minimum de code pendant la durée de temps la plus courte nécessaire pour effectuer le travail.
@@ -69,7 +72,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 |Ressource|Description|
 |--------------|-----------------|
 |[Sécurité d'accès du code et ADO.NET](code-access-security.md)|Décrit les interactions entre la sécurité d'accès du code, la sécurité basée sur les rôles et les environnements avec un niveau de confiance partielle depuis la perspective d'une application ADO.NET.|
-|[Sécurité d’accès du code](../../misc/code-access-security.md)|Contient des liens vers des rubriques supplémentaires qui décrivent la sécurité d'accès du code dans le .NET Framework.|
+|[Sécurité d'accès du code](../../misc/code-access-security.md)|Contient des liens vers des rubriques supplémentaires qui décrivent la sécurité d'accès du code dans le .NET Framework.|
 
 ## <a name="database-security"></a>Sécurité de base de données
 

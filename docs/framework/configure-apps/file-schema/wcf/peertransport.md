@@ -2,14 +2,15 @@
 title: <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: c1a5013a-9dd4-4a27-b114-795b8b323177
-ms.openlocfilehash: 99fb013e052329ae4b99c4db89565ace8935c456
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 68832c3a5bd4cc423642a6272e70cbecab86d6a8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736510"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181542"
 ---
 # \<peerTransport>
+
 Définit un transport d’homologue pour une liaison personnalisée.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +33,7 @@ Définit un transport d’homologue pour une liaison personnalisée.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -55,7 +57,8 @@ Définit un transport d’homologue pour une liaison personnalisée.
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Ce transport ne peut pas être utilisé avec les contrats comportant des opérations de demande/réponse.  
   
 ## <a name="see-also"></a>Voir aussi

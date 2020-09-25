@@ -2,17 +2,19 @@
 title: Applications clientes sécurisées
 ms.date: 03/30/2017
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
-ms.openlocfilehash: 8a946ab9b4cb75f7f890a01f0647f8a719c7bc03
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 96b43d28d3e22df66cb7f7010916b5c7f7a86b77
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551541"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189004"
 ---
 # <a name="secure-client-applications"></a>Applications clientes sécurisées
+
 Les applications se composent généralement de nombreuses parties qui doivent toutes être protégées face aux vulnérabilités susceptibles d'entraîner une perte de données ou compromettre d'une autre manière le système. La création d'interfaces utilisateur sécurisées peut empêcher de nombreux problèmes en bloquant les attaquants avant qu'ils puissent accéder aux données ou aux ressources système.  
   
 ## <a name="validate-user-input"></a>Valider les entrées d'utilisateur  
+
  Lors de la construction d'une application qui accède à des données, vous devez vous baser sur l'hypothèse que toute entrée d'utilisateur est malveillante jusqu'à preuve du contraire. Si vous ne le faites pas, votre application sera vulnérable aux attaques. Le .NET Framework contient des classes pour vous aider à appliquer un domaine de valeurs pour les contrôles d'entrées, comme la limitation du nombre de caractères qui peuvent être entrés. Les connexions d'événement vous permettent d'écrire des procédures pour contrôler la validité des valeurs. Les données d'entrée d'utilisateur peuvent être validées et fortement typées, ce qui limite l'exposition d'une application aux attaques de script et par injection de code SQL.  
   
 > [!IMPORTANT]
@@ -31,6 +33,7 @@ Les applications se composent généralement de nombreuses parties qui doivent t
  Explique comment utiliser la classe <xref:System.Text.RegularExpressions.Regex> pour vérifier la validité des entrées d'utilisateur.  
   
 ## <a name="windows-applications"></a>Applications Windows  
+
  Auparavant, les applications Windows s'exécutaient généralement avec toutes les autorisations. Le .NET Framework fournit l'infrastructure permettant de restreindre l'exécution du code dans une application Windows en utilisant la sécurité d'accès du code. Toutefois, la sécurité d'accès du code seule n'est pas suffisante pour protéger votre application.  
   
  [Sécurité des Windows Forms](/dotnet/desktop/winforms/windows-forms-security)  
@@ -43,6 +46,7 @@ Les applications se composent généralement de nombreuses parties qui doivent t
  Explique comment utiliser un déploiement `ClickOnce` dans une application Windows Forms et traite des implications en matière de sécurité.  
   
 ## <a name="aspnet-and-xml-web-services"></a>ASP.NET et services web XML  
+
  Les applications ASP.NET doivent généralement restreindre l’accès à certaines portions du site web et fournissent d’autres mécanismes de protection des données et de sécurité du site. Ces liens fournissent des informations utiles pour sécuriser votre application ASP.NET.  
   
  Un service web XML fournit des données qui peuvent être consommées par une application ASP.NET, une application Windows Forms ou un autre service web. Vous devez gérer la sécurité pour le service Web lui-même, ainsi que la sécurité pour l'application cliente.  
@@ -57,6 +61,7 @@ Les applications se composent généralement de nombreuses parties qui doivent t
 |[Pratiques de base relatives à la sécurité des applications Web](/previous-versions/aspnet/zdh19h94(v=vs.100))|Informations générales sur la sécurité et liens vers une présentation additionnelle.|  
   
 ## <a name="remoting"></a>Communication à distance  
+
  .NET Remoting vous permet de créer aisément des applications largement distribuées, que les composants d'application se trouvent tous sur un même ordinateur ou soient dispersés dans le monde entier. Vous pouvez générer des applications clientes qui utilisent des objets dans d'autres processus sur le même ordinateur ou sur tout autre ordinateur qui est accessible sur son réseau. Vous pouvez également utiliser .NET Remoting pour communiquer avec d'autres domaines d'application dans le même processus.  
   
 |Ressource|Description|  

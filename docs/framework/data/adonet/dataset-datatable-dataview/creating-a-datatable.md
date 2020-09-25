@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: eecf9d78-60e3-4fdc-8de0-e56c13a89414
-ms.openlocfilehash: 335137eeef02e590539c6d83e46cb39901a1e03f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 75c9bcf0e0b6180030825b4d1e7dd9e1f9686712
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286919"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198637"
 ---
 # <a name="creating-a-datatable"></a>Création d'un DataTable
+
 Un objet <xref:System.Data.DataTable>, qui représente une table de données relationnelles en mémoire, peut être créé et utilisé de façon indépendante. Il peut également être utilisé par d'autres objets .NET Framework, la plupart du temps comme membre d'un objet <xref:System.Data.DataSet>.  
   
  Vous pouvez créer un objet **DataTable** à l’aide du constructeur **DataTable** approprié. Vous pouvez l’ajouter au **DataSet** à l’aide de la méthode **Add** pour l’ajouter à la collection **tables** de l’objet **DataTable** .  
@@ -55,7 +56,7 @@ DataTable customersTable = customers.Tables.Add("CustomersTable");
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataTableCollection>
 - [DataTables](datatables.md)
-- [Remplissage d’un DataSet à partir d’un DataAdapter](../populating-a-dataset-from-a-dataadapter.md)
+- [Remplissage d'un DataSet à partir d'un DataAdapter](../populating-a-dataset-from-a-dataadapter.md)
 - [Chargement d'un DataSet à partir de XML](loading-a-dataset-from-xml.md)
 - [Chargement des informations de schéma de DataSet à partir de XML](loading-dataset-schema-information-from-xml.md)
 - [Vue d'ensemble d’ADO.NET](../ado-net-overview.md)

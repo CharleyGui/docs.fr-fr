@@ -2,14 +2,15 @@
 title: <add> de <baseAddressPrefixFilter>
 ms.date: 03/30/2017
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-ms.openlocfilehash: 2572a6ee6763ae26fe5c56669e10f8c9aef8a280
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: fefe85381aec113da123e6f2246aee340b0cf97a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811793"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181594"
 ---
 # <a name="add-of-baseaddressprefixfilter"></a>\<add> de \<baseAddressPrefixFilter>
+
 Représente un élément de configuration qui spécifie un filtre direct, qui fournit un mécanisme permettant de sélectionner les liaisons d’Internet Information Services (IIS) appropriées lors de l’hébergement d’une application Windows Communication Foundation (WCF) dans IIS.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Représente un élément de configuration qui spécifie un filtre direct, qui fo
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -38,6 +40,7 @@ Représente un élément de configuration qui spécifie un filtre direct, qui fo
 |prefix|URI utilisé pour correspondre à une partie d'une adresse de base.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -47,6 +50,7 @@ Représente un élément de configuration qui spécifie un filtre direct, qui fo
 |[\<baseAddressPrefixFilters>](baseaddressprefixfilters.md)|Collection d’éléments de configuration qui spécifient des filtres directs qui fournissent un mécanisme pour choisir les liaisons IIS appropriées lors de l’hébergement d’une application Windows Communication Foundation (WCF) dans IIS.|  
   
 ## <a name="remarks"></a>Notes  
+
  Un filtre de préfixe permet aux fournisseurs d'hébergement partagé de spécifier les URI que le service doit utiliser. Il permet aux hôtes partagés d'héberger plusieurs applications avec différentes adresses de base pour la même méthode sur le même site.  
   
  Les sites Web IIS sont des conteneurs d'applications virtuelles qui contiennent des répertoires virtuels. L’application dans un site est accessible par le biais d’une ou de plusieurs liaisons IIS. Les liaisons IIS fournissent deux informations : un protocole de liaison et des informations de liaison. Le protocole de liaison (par exemple, HTTP) définit le modèle sur lequel la communication se produit, tandis que les informations de liaison (par exemple, adresse IP, port, en-tête de l'hôte) contiennent les données servant à accéder au site.  
