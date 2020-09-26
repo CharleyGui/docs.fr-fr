@@ -4,12 +4,12 @@ description: Référence pour les propriétés et les éléments MSBuild compris
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: faa0dc0e94800a49b56af8810562ee0540f118d2
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: ac5d082acae582352680782deadb71a86f977f3b
+ms.sourcegitcommit: 2e4adc490c1d2a705a0592b295d606b10b9f51f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247568"
+ms.locfileid: "91354451"
 ---
 # <a name="msbuild-reference-for-net-sdk-projects"></a>Référence MSBuild pour les projets SDK .NET
 
@@ -190,7 +190,7 @@ Le tableau suivant présente les options disponibles.
 
 ### <a name="analysismode"></a>AnalysisMode
 
-À compter de .NET 5,0 RC2, le kit de développement logiciel (SDK) .NET est fourni avec toutes les [règles de qualité du code « ca »](../../fundamentals/code-analysis/rules/quality-rules-reference.md). Par défaut, seules [certaines règles sont activées](../../fundamentals/code-analysis/overview.md#enabled-rules) en tant qu’avertissements de génération. La `AnalysisMode` propriété vous permet de personnaliser l’ensemble des règles qui sont activées par défaut. Vous pouvez basculer vers un mode d’analyse plus agressif ou un mode d’analyse plus prudent (abonnement). Par exemple, si vous souhaitez activer toutes les règles par défaut en tant qu’avertissements de build, affectez la valeur à `AllEnabledByDefault` .
+À compter de .NET 5,0 RC2, le kit de développement logiciel (SDK) .NET est fourni avec toutes les [règles de qualité du code « ca »](../../fundamentals/code-analysis/quality-rules/index.md). Par défaut, seules [certaines règles sont activées](../../fundamentals/code-analysis/overview.md#enabled-rules) en tant qu’avertissements de génération. La `AnalysisMode` propriété vous permet de personnaliser l’ensemble des règles qui sont activées par défaut. Vous pouvez basculer vers un mode d’analyse plus agressif ou un mode d’analyse plus prudent (abonnement). Par exemple, si vous souhaitez activer toutes les règles par défaut en tant qu’avertissements de build, affectez la valeur à `AllEnabledByDefault` .
 
 ```xml
 <PropertyGroup>
