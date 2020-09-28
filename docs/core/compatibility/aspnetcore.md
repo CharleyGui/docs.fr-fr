@@ -5,12 +5,12 @@ description: Répertorie les dernières modifications apportées à ASP.NET Core
 ms.date: 09/18/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 33d8d1f7a6179229b3218d0102550a64bfc35a87
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: a4534367184127604ed53bf1fdafabbf8ff575d1
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91078864"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406191"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -104,6 +104,7 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 - [SPAs : SpaServices et NodeServices-modification de l’enregistreur d’événements de console par défaut](#spas-spaservices-and-nodeservices-no-longer-fall-back-to-console-logger)
 - [SPAs : SpaServices et NodeServices marqués comme obsolètes](#spas-spaservices-and-nodeservices-marked-obsolete)
 - [Fichiers statiques : le type de contenu CSV est passé à conforme aux normes](#static-files-csv-content-type-changed-to-standards-compliant)
+- [API System. Security. Cryptography non prises en charge sur le webassembly éblouissant](#systemsecuritycryptography-apis-not-supported-on-blazor-webassembly)
 - [Framework cible : .NET Framework pas pris en charge](#target-framework-net-framework-support-dropped)
 
 ## <a name="aspnet-core-50"></a>ASP.NET Core 5,0
@@ -216,6 +217,10 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 ***
 
 [!INCLUDE[SignalR: UseSignalR and UseConnections methods removed](~/includes/core-changes/aspnetcore/5.0/signalr-usesignalr-useconnections-removed.md)]
+
+***
+
+[!INCLUDE[Cryptography APIs not supported on Blazor WebAssembly](~/includes/core-changes/cryptography/5.0/cryptography-apis-not-supported-on-blazor-webassembly.md)]
 
 ***
 

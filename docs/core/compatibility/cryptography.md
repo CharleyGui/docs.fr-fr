@@ -2,12 +2,12 @@
 title: Modifications avec rupture de chiffrement
 description: Répertorie les modifications avec rupture liées au chiffrement dans .NET Core.
 ms.date: 04/22/2020
-ms.openlocfilehash: 621a3dad28b67ee33056dce3df0379efaeb90776
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: 667d983fc6f2592c2169f97d328cd7947c8bcc81
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065100"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406143"
 ---
 # <a name="cryptography-breaking-changes"></a>Modifications avec rupture de chiffrement
 
@@ -15,6 +15,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [API System. Security. Cryptography non prises en charge sur le webassembly éblouissant](#systemsecuritycryptography-apis-not-supported-on-blazor-webassembly) | 5.0 |
 | [System. Security. Cryptography. OID est fonctionnellement init-only](#systemsecuritycryptographyoid-is-functionally-init-only) | 5.0 |
 | [La syntaxe de début de certificat approuvé n’est plus prise en charge sur Linux](#begin-trusted-certificate-syntax-no-longer-supported-for-root-certificates-on-linux) | 3.0 |
 | [La valeur par défaut de EnvelopedCms est le chiffrement AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
@@ -24,6 +25,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Le paramètre booléen de SignedCms. ComputeSignature est respecté](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE[Cryptography APIs not supported on Blazor WebAssembly](~/includes/core-changes/cryptography/5.0/cryptography-apis-not-supported-on-blazor-webassembly.md)]
+
+***
 
 [!INCLUDE [cryptography-oid-init-only](../../../includes/core-changes/cryptography/5.0/cryptography-oid-init-only.md)]
 

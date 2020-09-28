@@ -4,12 +4,12 @@ description: Découvrez comment l’analyseur d’API .NET peut aider à détect
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 8da4b2add206daa431124a7d24efc2676cbcaa69
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: f1268d5f208e19f1b69ed487370fb4c96723a204
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598091"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406243"
 ---
 # <a name="net-api-analyzer"></a>Analyseur d’API .NET
 
@@ -85,6 +85,9 @@ La suppression globale est la méthode recommandée pour garantir une utilisatio
 
 ## <a name="discover-cross-platform-issues"></a>Détection des problèmes inter-plateformes
 
+> [!NOTE]
+> .NET 5,0 introduit l' [Analyseur de compatibilité de plateforme](platform-compat-analyzer.md) comme remplacement de cette fonctionnalité. L’analyseur de compatibilité de la plateforme est inclus dans le kit de développement logiciel (SDK) .NET (inutile de l’installer séparément) et est activé par défaut.
+
 Tout comme les API déconseillées, l’analyseur identifie toutes les API non multiplateformes. Par exemple, <xref:System.Console.WindowWidth?displayProperty=nameWithType> fonctionne sous Windows, mais pas sous Linux ou macOS. L’ID de diagnostic apparaît dans la fenêtre **Liste d’erreurs**. Vous pouvez supprimer cet avertissement en cliquant avec le bouton droit et en sélectionnant **Actions rapides et refactorisations**. Contrairement au cas des API déconseillées, dans lequel deux options sont proposées (continuer d’utiliser le membre déconseillé et supprimer les avertissements, ou ne pas l’utiliser du tout), ici, si vous développez votre code pour certaines plateformes seulement, vous pouvez supprimer les avertissements de toutes les autres plateformes sur lesquelles vous n’envisagez pas d’exécuter votre code. Il vous suffit pour cela de modifier votre fichier projet et d’ajouter la propriété `PlatformCompatIgnore`, qui liste toutes les plateformes à ignorer. Les valeurs acceptées sont les suivantes : `Linux`, `macOS` et `Windows`.
 
 ```xml
@@ -129,3 +132,4 @@ L’utilisateur choisit le mode de traitement des diagnostics : en tant qu’av
 
 - Billet de blog [Présentation de l’analyseur d’API](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/).
 - Vidéo de démonstration sur YouTube de [l’analyseur d’API](https://youtu.be/eeBEahYXGd0).
+- [Analyseur de compatibilité de plateforme](platform-compat-analyzer.md)
