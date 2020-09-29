@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: a44c3692dc9ed9b3de37955191edfb279403f152
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 0cfd9d6da2c53b46c04773f429ab2e52f2b65c7f
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89516019"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438082"
 ---
 # <a name="tour-of-net"></a>Présentation de .NET
 
@@ -33,7 +33,7 @@ Microsoft développe et prend en charge activement trois langages .NET : C#, F 
 
 * F# est un langage de programmation multiplateforme et fonctionnel qui prend également en charge la programmation orientée objet et impérative traditionnelle. Consultez le [Guide F#](../fsharp/index.yml) pour en savoir plus sur F#.
 
-* Visual Basic est un langage facile à apprendre que vous utilisez pour créer une variété d’applications qui s’exécutent sur .NET. Dans les langages .NET, la syntaxe de Visual Basic est la plus proche de la langue de l’utilisateur ordinaire, ce qui facilite le développement logiciel.
+* Visual Basic est un langage facile à apprendre que vous utilisez pour créer une variété d’applications qui s’exécutent sur .NET. Dans les langages .NET, la syntaxe de Visual Basic est la plus proche de la langue de l’utilisateur ordinaire, ce qui facilite le développement logiciel. Consultez le [Guide d’Visual Basic](../visual-basic/index.yml) pour en savoir plus sur Visual Basic.
 
 ## <a name="automatic-memory-management"></a>Gestion automatique de la mémoire
 

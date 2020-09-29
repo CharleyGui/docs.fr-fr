@@ -4,12 +4,12 @@ description: En savoir plus sur les expressions de critères spéciaux en langag
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 2dd1401e3ef22a02f327e44ff884182ee3e22278
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: aabd8afe9a94022557275adb313ca3bf95da7548
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414992"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438024"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -139,4 +139,4 @@ Comparez le code de cet exemple avec la conception qui résulterait de la créat
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : utilisation des fonctionnalités de critères spéciaux pour étendre des types de données](tutorials/pattern-matching.md)
+- [Didacticiel : utiliser des critères spéciaux pour générer des algorithmes pilotés par type et pilotés par les données](tutorials/pattern-matching.md)

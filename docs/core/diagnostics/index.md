@@ -3,12 +3,12 @@ title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: e97acccbe3bdd577ee600cefb9f1f0528d3c1ac0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d78b73e53637927ecb877dd69054f75a1f5ac91f
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538525"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438001"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -24,9 +24,13 @@ Les [débogueurs managés](managed-debuggers.md) vous permettent d’interagir a
 
 La [journalisation et le suivi](logging-tracing.md) sont des techniques associées. Elles se réfèrent au code d'instrumentation permettant de créer des fichiers journaux. Les fichiers consignent le détail des tâches exécutées par un programme. Ces informations peuvent être utilisées pour diagnostiquer les problèmes les plus complexes. Combinées à l'horodatage, ces techniques sont également très utiles dans les analyses de performances.
 
-## <a name="unit-testing"></a>Test unitaire
+## <a name="unit-testing"></a>Effectuer des tests unitaires
 
 Le [test unitaire](../testing/index.md) est un composant clé de l’intégration et du déploiement continus de logiciels de haute qualité. Les tests unitaires sont conçus pour vous prévenir d’un problème survenu.
+
+## <a name="collect-diagnostics-in-containers"></a>Collecter les diagnostics dans les conteneurs
+
+Les outils de diagnostic utilisés dans les environnements Linux non conteneurs peuvent également être utilisés pour [collecter les diagnostics dans des conteneurs](diagnostics-in-containers.md). Il n’y a que quelques modifications d’utilisation nécessaires pour s’assurer que les outils fonctionnent dans un conteneur d’ancrage.
 
 ## <a name="debug-linux-dumps"></a>Déboguer des vidages Linux
 

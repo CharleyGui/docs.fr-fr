@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: ac2b4193849c56002c5bba35932f2882b987a0d6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: fae6ffc56c90ef8f5340d3d7fd34cda82e3b4ca4
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537494"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437969"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -27,7 +27,13 @@ Pour plus d’informations sur la version, consultez l' [annonce de .net Core 3,
 
 ## <a name="language-improvements-c-80"></a>Améliorations du langage C# 8,0
 
-C# 8,0 fait également partie de cette version, qui comprend la fonctionnalité de [types de référence Nullable](../../csharp/tutorials/nullable-reference-types.md) , les [flux asynchrones](../../csharp/tutorials/generate-consume-asynchronous-stream.md)et [plus de modèles](../../csharp/tutorials/pattern-matching.md). Pour plus d’informations sur les fonctionnalités de C# 8.0, consultez [Nouveautés de C# 8.0](../../csharp/whats-new/csharp-8.md).
+C# 8,0 fait également partie de cette version, qui comprend la fonctionnalité de [types de référence Nullable](../../csharp/language-reference/builtin-types/nullable-reference-types.md) , les flux asynchrones et plus de modèles. Pour plus d’informations sur les fonctionnalités de C# 8.0, consultez [Nouveautés de C# 8.0](../../csharp/whats-new/csharp-8.md).
+
+Didacticiels relatifs aux fonctionnalités du langage C# 8,0 :
+
+- [Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable](../../csharp/tutorials/nullable-reference-types.md)
+- [Didacticiel : générer et utiliser des flux asynchrones à l’aide de C# 8,0 et .NET Core 3,0](../../csharp/tutorials/generate-consume-asynchronous-stream.md)
+- [Didacticiel : utiliser des critères spéciaux pour générer des algorithmes pilotés par type et pilotés par les données](../../csharp/tutorials/pattern-matching.md)
 
 Des améliorations ont été apportées au langage pour prendre en charge les fonctionnalités d’API suivantes, détaillées ci-dessous :
 
@@ -102,7 +108,7 @@ Pour publier un exécutable monofichier, définissez `PublishSingleFile` dans vo
 </PropertyGroup>
 ```
 
-- ou -
+-ou-
 
 ```dotnetcli
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
@@ -512,7 +518,7 @@ Pour plus d’informations, consultez [intrinsèques dépendants de la plateform
 
 ### <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 
-À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Exemple :
+À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Par exemple :
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");
