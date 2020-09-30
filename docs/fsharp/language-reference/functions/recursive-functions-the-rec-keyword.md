@@ -2,12 +2,12 @@
 title: 'Fonctions récursives : mot clé rec'
 description: "Découvrez comment le mot clé F # 'Rec’est utilisé avec le mot clé’Let’pour définir une fonction récursive."
 ms.date: 08/12/2020
-ms.openlocfilehash: 389357bd13cef39b1d07972c1a3167320b61612b
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 1ab00ff9400129e531fd7320861b3d9625cad08c
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558710"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438071"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Fonctions récursives : mot clé rec
 
@@ -36,7 +36,7 @@ Fonctions récursives : les fonctions qui s’appellent elles-mêmes sont ident
 L’exemple suivant montre une fonction récursive qui calcule le *n*<sup>ième</sup> nombre de Fibonacci à l’aide de la définition mathématique.
 
 ```fsharp
-let fib n =
+let rec fib n =
     match n with
     | 0 | 1 -> 1
     | n -> fib (n-1) + fib (n-2)
