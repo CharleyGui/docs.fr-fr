@@ -4,12 +4,12 @@ description: Découvrez ce qu’est une application à fichier unique et pourquo
 author: lakshanf
 ms.author: lakshanf
 ms.date: 08/28/2020
-ms.openlocfilehash: 795ea98a9fd9d672b199eb2d9b24151340ef8246
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 8149f912c2d92c3eff8d248353e11c01bcfc24ba
+ms.sourcegitcommit: 665f8fc55258356f4d2f4a6585b750c974b26675
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495798"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91573668"
 ---
 # <a name="single-file-deployment-and-executable"></a>Déploiement et exécutable d’un seul fichier
 
@@ -17,9 +17,39 @@ L’empaquetage de tous les fichiers dépendants de l’application dans un seul
 
 Le déploiement d’un seul fichier est disponible pour le [modèle de déploiement dépendant du Framework](index.md#publish-framework-dependent) et pour les [applications autonomes](index.md#publish-self-contained). La taille du fichier unique dans une application autonome est importante, car elle inclut le runtime et les bibliothèques de Framework. L’option de déploiement de fichier unique peut être combinée avec [ReadyToRun](../tools/dotnet-publish.md) et [Trim (une fonctionnalité expérimentale dans .net 5,0) options de](trim-self-contained.md) publication.
 
-Vous devez tenir compte de certains points à prendre en compte lors de l’utilisation d’un fichier unique, qui consiste à utiliser des informations de chemin d’accès pour localiser un fichier relatif à l’emplacement de votre application. L' <xref:System.Reflection.Assembly.Location?displayProperty=nameWithType> API retourne une chaîne vide, qui est le comportement par défaut pour les assemblys chargés à partir de la mémoire. Le compilateur émet un avertissement pour cette API pendant la génération pour signaler au développeur le comportement spécifique. Si le chemin d’accès au répertoire de l’application est nécessaire, l' <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType> API retourne le répertoire dans lequel réside le apphost (le bundle de fichier unique lui-même). Les applications C++ managées ne conviennent pas au déploiement de fichier unique et nous vous recommandons d’écrire des applications en C# pour qu’elles soient compatibles avec un seul fichier.
+## <a name="api-incompatibility"></a>Incompatibilité d’API
+
+Certaines API ne sont pas compatibles avec le déploiement à fichier unique et les applications peuvent nécessiter une modification si elles utilisent ces API. Si vous utilisez un Framework ou un package tiers, il est possible qu’ils puissent également utiliser l’une de ces API et qu’il soit nécessaire de les modifier. La cause la plus courante de problèmes dépend des chemins d’accès aux fichiers ou dll livrés avec l’application.
+
+Le tableau ci-dessous contient les détails de l’API de la bibliothèque Runtime appropriée pour une utilisation à fichier unique.
+
+| API                            | Notes                                                                   |
+|--------------------------------|------------------------------------------------------------------------|
+| `Assembly.Location`            | Retourne une chaîne vide.                                               |
+| `Module.FullyQualifiedName`    | Retourne une chaîne avec la valeur de `<Unknown>` ou lève une exception. |
+| `Module.Name`                  | Retourne une chaîne avec la valeur de `<Unknown>` .                        |
+| `Assembly.GetFile`             | Lève <xref:System.IO.IOException>.                                   |
+| `Assembly.GetFiles`            | Lève <xref:System.IO.IOException>.                                   |
+| `Assembly.CodeBase`            | Lève <xref:System.PlatformNotSupportedException>.                    |
+| `Assembly.EscapedCodeBase`     | Lève <xref:System.PlatformNotSupportedException>.                    |
+| `AssemblyName.CodeBase`        | Retourne `null`.                                                        |
+| `AssemblyName.EscapedCodeBase` | Retourne `null`.                                                        |
+
+Nous avons des recommandations pour la résolution des scénarios courants :
+
+* Pour accéder aux fichiers à côté de l’exécutable, utilisez <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType>
+
+* Pour rechercher le nom de fichier de l’exécutable, utilisez le premier élément de <xref:System.Environment.GetCommandLineArgs()?displayProperty=nameWithType>
+
+* Pour éviter d’expédier entièrement des fichiers libres, envisagez d’utiliser des [ressources incorporées](https://docs.microsoft.com/en-us/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
+
+## <a name="other-considerations"></a>Autres considérations
 
 Un fichier unique ne regroupe pas les bibliothèques natives par défaut. Sur Linux, nous prévoyons le runtime dans le bundle et seules les bibliothèques natives de l’application sont déployées dans le même répertoire que l’application à fichier unique. Sur Windows, nous prévoyons uniquement le code d’hébergement et les bibliothèques Runtime et application natives sont déployées dans le même répertoire que l’application à fichier unique. Cela permet de garantir une bonne expérience de débogage, qui requiert que les fichiers natifs soient exclus du fichier unique. Il existe une option pour définir un indicateur, `IncludeNativeLibrariesForSelfExtract` , pour inclure les bibliothèques natives dans le groupe de fichiers unique, mais ces fichiers seront extraits dans un répertoire temporaire de l’ordinateur client lors de l’exécution de l’application à fichier unique.
+
+Une application à fichier unique aura tous les fichiers PDB associés et ne sera pas regroupée par défaut. Si vous souhaitez inclure des fichiers PDB à l’intérieur de l’assembly pour les projets que vous générez, affectez la valeur `DebugType` `embedded` décrite [ci-dessous](#include-pdb-files-inside-the-bundle) en détail.
+
+Les composants C++ managés ne sont pas adaptés au déploiement à fichier unique et nous vous recommandons d’écrire des applications en C# ou un autre langage C++ non managé pour qu’ils soient compatibles avec un seul fichier.
 
 ## <a name="exclude-files-from-being-embedded"></a>Exclure des fichiers de l’incorporation
 
@@ -38,6 +68,22 @@ Par exemple, pour placer certains fichiers dans le répertoire de publication, m
     <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
   </Content>
 </ItemGroup>
+```
+
+## <a name="include-pdb-files-inside-the-bundle"></a>Inclure des fichiers PDB dans le bundle
+
+Le fichier PDB d’un assembly peut être incorporé dans l’assembly lui-même (le `.dll` ) à l’aide du paramètre ci-dessous. Étant donné que les symboles font partie de l’assembly, ils feront également partie de l’application à fichier unique :
+
+```xml
+<DebugType>embedded</DebugType>
+```
+
+Par exemple, ajoutez la propriété suivante au fichier projet d’un assembly pour incorporer le fichier PDB à cet assembly :
+
+```xml
+<PropertyGroup>
+  <DebugType>embedded</DebugType>
+</PropertyGroup>
 ```
 
 ## <a name="publish-a-single-file-app---cli"></a>Publier une application à fichier unique-CLI
@@ -73,7 +119,7 @@ Visual Studio crée des profils de publication réutilisables qui contrôlent la
 
 01. Choisissez **Modifier**.
 
-    :::image type="content" source="media/single-file/visual-studio-publish-edit-settings.png" alt-text="Profil de publication Visual Studio avec le bouton modifier.":::
+    :::image type="content" source="media/single-file/visual-studio-publish-edit-settings.png" alt-text="Explorateur de solutions avec un menu contextuel, sélectionnez l’option publier.":::
 
 01. Dans la boîte de dialogue **paramètres de profil** , définissez les options suivantes :
 
@@ -83,7 +129,7 @@ Visual Studio crée des profils de publication réutilisables qui contrôlent la
 
     Choisissez **Enregistrer** pour enregistrer les paramètres et revenir à la boîte de dialogue **publier** .
 
-    :::image type="content" source="media/single-file/visual-studio-publish-single-file-properties.png" alt-text="Boîte de dialogue Paramètres de profil avec le mode de déploiement, le runtime cible et les options à fichier unique mis en surbrillance.":::
+    :::image type="content" source="media/single-file/visual-studio-publish-single-file-properties.png" alt-text="Explorateur de solutions avec un menu contextuel, sélectionnez l’option publier.":::
 
 01. Choisissez **publier** pour publier votre application en tant que fichier unique.
 
