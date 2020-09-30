@@ -331,6 +331,8 @@ items:
             href: ../core/diagnostics/event-counters.md
           - name: Journalisation et suivi
             href: ../core/diagnostics/logging-tracing.md
+          - name: Collecter les diagnostics dans les conteneurs
+            href: ../core/diagnostics/diagnostics-in-containers.md
           - name: Outils .NET Core généraux
             items:
               - name: dotnet-counters

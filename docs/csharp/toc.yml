@@ -56,7 +56,7 @@
       href: tutorials/upgrade-to-nullable-references.md
     - name: Générer et consommer des flux asynchrones
       href: tutorials/generate-consume-asynchronous-stream.md
-    - name: Étendre les fonctionnalités de données à l’aide de critères spéciaux
+    - name: Créer des algorithmes pilotés par les données avec des critères spéciaux
       href: tutorials/pattern-matching.md
     - name: Application console
       href: tutorials/console-teleprompter.md
