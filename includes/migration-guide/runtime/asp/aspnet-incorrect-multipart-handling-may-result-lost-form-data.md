@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: ed669364efe9dd8f57d831a3764dd3fc68cd5e05
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: d61a3b3dd855d783d7bff7cb74e5b84969e60860
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89497017"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608044"
 ---
 ### <a name="aspnet-incorrect-multipart-handling-may-result-in-lost-form-data"></a>La mauvaise gestion multipartite d’ASP.NET peut entraîner la perte de données de formulaire.
 
 #### <a name="details"></a>Détails
 
-Dans les applications qui ciblent .NET Framework 4.7.2 et versions antérieures, ASP.Net risque de mal analyser les valeurs limites multipartites, ce qui entraîne l’indisponibilité de données de formulaire pendant l’exécution de la requête. Les applications qui ciblent .NET Framework 4.8 ou versions ultérieures analysent correctement les données multipartites pour que les valeurs de formulaire soient disponibles lors de l’exécution de la requête.
+Dans les applications qui ciblent .NET Framework 4.7.2 et les versions antérieures, ASP.NET peut analyser de manière incorrecte des valeurs limites en plusieurs parties, ce qui entraîne l’indisponibilité des données de formulaire lors de l’exécution de la requête. Les applications qui ciblent .NET Framework 4.8 ou versions ultérieures analysent correctement les données multipartites pour que les valeurs de formulaire soient disponibles lors de l’exécution de la requête.
 
 #### <a name="suggestion"></a>Suggestion
 

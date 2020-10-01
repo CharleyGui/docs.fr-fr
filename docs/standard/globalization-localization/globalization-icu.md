@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: 6ea848d4a60069e6702b9d60fd90a55f572fb043
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: b52afd80c10afb6723679b2a74f11c7a4f59091f
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842526"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608372"
 ---
 # <a name="net-globalization-and-icu"></a>Globalisation et ICU .NET
 
@@ -33,7 +33,7 @@ Dans le passé, les API de globalisation .NET utilisaient des bibliothèques sou
 
 ## <a name="icu-on-windows"></a>ICU sur Windows
 
-La mise à jour de Windows 10 mai 2019 et les versions ultérieures incluent [ICU. dll](/windows/win32/intl/international-components-for-unicode--icu-) dans le cadre du système d’exploitation et .net 5,0 et versions ultérieures utilisent ICU par défaut. Lors de l’exécution sous Windows, .NET 5,0 et versions ultérieures essaient de charger `icu.dll` et, s’il est disponible, les utilise pour l’implémentation de la globalisation.  Si cette bibliothèque est introuvable ou ne peut pas être chargée, par exemple lors de l’exécution sur des versions antérieures de Windows, .NET 5,0 et versions ultérieures reviennent à l’implémentation basée sur NLS.
+La mise à jour de Windows 10 mai 2019 et les versions ultérieures incluent [icu.dll](/windows/win32/intl/international-components-for-unicode--icu-) dans le cadre du système d’exploitation, et .net 5,0 et versions ultérieures utilisent ICU par défaut. Lors de l’exécution sous Windows, .NET 5,0 et versions ultérieures essaient de charger `icu.dll` et, s’il est disponible, les utilise pour l’implémentation de la globalisation.  Si cette bibliothèque est introuvable ou ne peut pas être chargée, par exemple lors de l’exécution sur des versions antérieures de Windows, .NET 5,0 et versions ultérieures reviennent à l’implémentation basée sur NLS.
 
 > [!NOTE]
 > Même quand vous utilisez ICU, `CurrentCulture` les `CurrentUICulture` membres, et `CurrentRegion` continuent d’utiliser les API du système d’exploitation Windows pour honorer les paramètres utilisateur.
@@ -107,7 +107,7 @@ Pour les applications autonomes, aucune action spéciale n’est requise de la p
 
 Si vous utilisez ICU via un package NuGet, cela fonctionne dans les applications dépendantes du Framework. NuGet résout les ressources natives et les comprend dans le `deps.json` fichier et dans le répertoire de sortie de l’application sous le `runtimes` répertoire. .NET le charge à partir de là.
 
-Pour les applications dépendantes du Framework (non autonomes) où ICU est consommé à partir d’une build locale, vous devez effectuer des étapes supplémentaires. Le kit de développement logiciel (SDK) .NET ne dispose pas encore d’une fonctionnalité pour les fichiers binaires natifs « libres » à incorporer dans `deps.json` (consultez [ce problème du SDK](https://github.com/dotnet/sdk/issues/11373)). Au lieu de cela, vous pouvez l’activer en ajoutant des informations supplémentaires dans le fichier projet de l’application. Par exemple :
+Pour les applications dépendantes du Framework (non autonomes) où ICU est consommé à partir d’une build locale, vous devez effectuer des étapes supplémentaires. Le kit de développement logiciel (SDK) .NET ne dispose pas encore d’une fonctionnalité pour les fichiers binaires natifs « libres » à incorporer dans `deps.json` (consultez [ce problème du SDK](https://github.com/dotnet/sdk/issues/11373)). Au lieu de cela, vous pouvez l’activer en ajoutant des informations supplémentaires dans le fichier projet de l’application. Exemple :
 
 ```xml
 <ItemGroup>
@@ -120,7 +120,7 @@ Cela doit être fait pour tous les fichiers binaires ICU pour les runtimes pris 
 
 ### <a name="macos-behavior"></a>comportement macOS
 
-`macOS`a un comportement différent pour la résolution des bibliothèques dynamiques dépendantes à partir des commandes de chargement spécifiées dans le `match-o` fichier que le chargeur Linux. Dans le chargeur Linux, .NET peut essayer `libicudata` , `libicuuc` et `libicui18n` (dans cet ordre) pour satisfaire le graphique de dépendance ICU. Toutefois, sur macOS, cela ne fonctionne pas. Lors de la création d’une ICU sur macOS, vous pouvez, par défaut, obtenir une bibliothèque dynamique avec ces commandes de chargement dans `libicuuc` . Par exemple :
+`macOS` a un comportement différent pour la résolution des bibliothèques dynamiques dépendantes à partir des commandes de chargement spécifiées dans le `match-o` fichier que le chargeur Linux. Dans le chargeur Linux, .NET peut essayer `libicudata` , `libicuuc` et `libicui18n` (dans cet ordre) pour satisfaire le graphique de dépendance ICU. Toutefois, sur macOS, cela ne fonctionne pas. Lors de la création d’une ICU sur macOS, vous pouvez, par défaut, obtenir une bibliothèque dynamique avec ces commandes de chargement dans `libicuuc` . Par exemple :
 
 ```sh
 ~/ % otool -L /Users/santifdezm/repos/icu-build/icu/install/lib/libicuuc.67.1.dylib
@@ -145,10 +145,28 @@ install_name_tool -change "libicudata.67.dylib" "@loader_path/libicudata.67.dyli
 install_name_tool -change "libicuuc.67.dylib" "@loader_path/libicuuc.67.dylib" /path/to/libicui18n.67.1.dylib
 ```
 
-- Mise à jour corrective de la bibliothèque pour produire les noms d’installation`@loader_path`
+- Mise à jour corrective de la bibliothèque pour produire les noms d’installation `@loader_path`
 
   Avant d’exécuter autoconf ( `./runConfigureICU` ), remplacez [ces lignes](https://github.com/unicode-org/icu/blob/ef91cc3673d69a5e00407cda94f39fcda3131451/icu4c/source/config/mh-darwin#L32-L37) par :
 
 ```
 LD_SONAME = -Wl,-compatibility_version -Wl,$(SO_TARGET_VERSION_MAJOR) -Wl,-current_version -Wl,$(SO_TARGET_VERSION) -install_name @loader_path/$(notdir $(MIDDLE_SO_TARGET))
 ```
+
+## <a name="icu-on-webassembly"></a>ICU sur webassembly
+
+Une version d’ICU est disponible spécifiquement pour les charges de travail webassembly. Cette version offre une compatibilité de globalisation avec les profils de bureau. Pour réduire la taille du fichier de données ICU de 24 Mo à 1,4 Mo (ou ~ 0,3 Mo s’ils sont compressés avec Brotli), cette charge de travail présente quelques limitations.
+
+Les API suivantes ne sont pas prises en charge :
+
+- <xref:System.Globalization.CultureInfo.EnglishName?displayProperty=nameWithType>
+- <xref:System.Globalization.CultureInfo.NativeName?displayProperty=nameWithType>
+- <xref:System.Globalization.DateTimeFormatInfo.NativeCalendarName?displayProperty=nameWithType>
+- <xref:System.Globalization.RegionInfo.NativeName?displayProperty=nameWithType>
+
+Les API suivantes sont prises en charge avec des limitations :
+
+- <xref:System.String.Normalize(System.Text.NormalizationForm)?displayProperty=nameWithType> et <xref:System.String.IsNormalized(System.Text.NormalizationForm)?displayProperty=nameWithType> ne prennent pas en charge les formulaires et les rarement utilisés <xref:System.Text.NormalizationForm.FormKC?displayProperty=nameWithType> <xref:System.Text.NormalizationForm.FormKD?displayProperty=nameWithType> .
+- <xref:System.Globalization.RegionInfo.CurrencyNativeName?displayProperty=nameWithType> retourne la même valeur que <xref:System.Globalization.RegionInfo.CurrencyEnglishName?displayProperty=nameWithType>.
+
+En outre, une liste des paramètres régionaux pris en charge est disponible sur la [référentiel dotnet/ICU](https://github.com/dotnet/icu/blob/0f49268ddfd3331ca090f1c51d2baa2f75f6c6c0/icu-filters/optimal.json#L6-L54) .

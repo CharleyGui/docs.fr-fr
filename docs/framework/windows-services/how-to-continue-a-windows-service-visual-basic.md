@@ -10,18 +10,17 @@ helpviewer_keywords:
 - Windows Service applications, pausing
 - pausing Windows Service applications
 ms.assetid: e5d13760-4c83-4b0d-abef-39852677cd7a
-author: ghogen
-ms.openlocfilehash: 2a04e330ea7dc37552053b2a7915909c011727f8
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 9e672a19cec814694eddb35672c5c669efd40eb2
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925785"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608606"
 ---
 # <a name="how-to-continue-a-windows-service-visual-basic"></a>Procédure : poursuivre un service Windows (Visual Basic)
 Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> pour continuer le service d’administration IIS sur l’ordinateur local.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  [!code-vb[VbRadconService#11](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#11)]  
 [!code-vb[VbRadconService#13](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#13)]  
   
@@ -45,7 +44,7 @@ Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> 
   
 - Une erreur s'est produite lors de l'accès à une API système. (<xref:System.ComponentModel.Win32Exception>)  
   
-## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
  Vous pouvez restreindre le contrôle des services sur l’ordinateur à l’aide de l’énumération <xref:System.ServiceProcess.ServiceControllerPermissionAccess>, qui permet de définir des autorisations dans la classe <xref:System.ServiceProcess.ServiceControllerPermission>.  
   
  Vous pouvez restreindre l’accès aux informations de service à l’aide de l’énumération <xref:System.Security.Permissions.PermissionState>, qui permet de définir des autorisations dans la classe <xref:System.Security.Permissions.SecurityPermission>.  

@@ -1,18 +1,18 @@
 ---
 description: new, opérateur - Référence C#
 title: new, opérateur - Référence C#
-ms.date: 06/25/2019
+ms.date: 10/02/2020
 f1_keywords:
 - new_CSharpKeyword
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 88ec929317d4e6c6651233c1a1aa0ce8a8cce611
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 3125f3d2c694dcfc5682ee482f3f76072ac3726d
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89118271"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609380"
 ---
 # <a name="new-operator-c-reference"></a>new, opérateur (Référence C#)
 
@@ -29,6 +29,14 @@ Pour créer une nouvelle instance d’un type, vous appelez généralement l’u
 Vous pouvez utiliser un [initialiseur d’objet ou de collection](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) avec l’opérateur `new` pour instancier et initialiser un objet dans une instruction, comme dans l’exemple suivant :
 
 [!code-csharp-interactive[constructor with initializer](snippets/shared/NewOperator.cs#ConstructorWithInitializer)]
+
+À compter de C# 9,0, les expressions d’appel de constructeur sont de type cible. Autrement dit, si un type cible d’une expression est connu, vous pouvez omettre un nom de type, comme le montre l’exemple suivant :
+
+:::code language="csharp" source="snippets/shared/NewOperator.cs" id="SnippetTargetTyped":::
+
+Comme le montre l’exemple précédent, vous utilisez toujours des parenthèses dans une expression de type cible `new` .
+
+Si le type cible d’une `new` expression est inconnu (par exemple, lorsque vous utilisez le [`var`](../keywords/var.md) mot clé), vous devez spécifier un nom de type.
 
 ## <a name="array-creation"></a>Création de tableau
 
@@ -61,6 +69,8 @@ Un type défini par l’utilisateur ne peut pas surcharger l’opérateur `new`.
 ## <a name="c-language-specification"></a>spécification du langage C#
 
 Pour plus d’informations, consultez la section [Opérateur new](~/_csharplang/spec/expressions.md#the-new-operator) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
+
+Pour plus d’informations sur une expression de type cible `new` , consultez la [Remarque relative](~/_csharplang/proposals/csharp-9.0/target-typed-new.md)à la proposition de fonctionnalité.
 
 ## <a name="see-also"></a>Voir aussi
 

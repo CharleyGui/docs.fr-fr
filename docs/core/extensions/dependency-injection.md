@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 09/23/2020
 ms.topic: overview
-ms.openlocfilehash: b986f414dcc0e81578e6cf57304f6e5c31578e88
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: 2aaa24e54dad7b765781bf7c790890a57a77af14
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247897"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608351"
 ---
 # <a name="dependency-injection-in-net"></a>Injection de dépendances dans .NET
 
@@ -290,7 +290,8 @@ Les services Scoped sont supprimés par le conteneur qui les a créés. Si un se
 ## <a name="see-also"></a>Voir aussi
 
 - [Utiliser l’injection de dépendances dans .NET](dependency-injection-usage.md)
-- [Instructions relatives à l’injection de dépendances](dependency-injection-guidelines.md)
+- [Recommandations relatives à l’injection de dépendances](dependency-injection-guidelines.md)
 - [Modèles de conférence norvégiens pour le développement d’applications DI](https://www.youtube.com/watch?v=x-C-CNBVTaY)
 - [Principe des dépendances explicites](../../architecture/modern-web-apps-azure/architectural-principles.md#explicit-dependencies)
 - [Inversion des conteneurs de contrôle et le modèle d’injection de dépendances (Martin Fowler)](https://www.martinfowler.com/articles/injection.html)
+- Les bogues DI doivent être créés dans [github.com/dotnet/extensions](https://github.com/dotnet/extensions/issues) référentiel

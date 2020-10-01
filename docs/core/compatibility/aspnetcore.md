@@ -2,15 +2,15 @@
 title: Modifications avec rupture ASP.NET Core
 titleSuffix: ''
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 09/18/2020
+ms.date: 09/29/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: a4534367184127604ed53bf1fdafabbf8ff575d1
-ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
+ms.openlocfilehash: 0c7ed795868ad4a03dd52e2e23014a3d0f220c86
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91406191"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609328"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -83,6 +83,7 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 - [Intergiciel : l’intergiciel (middleware) du gestionnaire d’exceptions lève une exception d’origine si le gestionnaire est introuvable](#middleware-exception-handler-middleware-throws-original-exception-if-handler-not-found)
 - [MVC : suffixe asynchrone d’action de contrôleur supprimé](#mvc-async-suffix-trimmed-from-controller-action-names)
 - [MVC : JsonResult déplacé vers Microsoft. AspNetCore. Mvc. Core](#mvc-jsonresult-moved-to-microsoftaspnetcoremvccore)
+- [MVC : ObjectModelValidator appelle une nouvelle surcharge de ValidationVisitor. Validate](#mvc-objectmodelvalidator-calls-a-new-overload-of-validationvisitorvalidate)
 - [MVC : outil de précompilation déconseillé](#mvc-precompilation-tool-deprecated)
 - [MVC : types modifiés en interne](#mvc-pubternal-types-changed-to-internal)
 - [MVC : Shim de compatibilité de l’API Web supprimé](#mvc-web-api-compatibility-shim-removed)
@@ -197,6 +198,10 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 ***
 
 [!INCLUDE[Middleware: Exception Handler Middleware throws original exception if handler not found](~/includes/core-changes/aspnetcore/5.0/middleware-exception-handler-throws-original-exception.md)]
+
+***
+
+[!INCLUDE[MVC: ObjectModelValidator calls a new overload of ValidationVisitor.Validate](~/includes/core-changes/aspnetcore/5.0/mvc-objectmodelvalidator-calls-new-overload.md)]
 
 ***
 

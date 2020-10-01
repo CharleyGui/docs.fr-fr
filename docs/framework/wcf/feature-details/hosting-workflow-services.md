@@ -2,12 +2,12 @@
 title: Hébergement de services de workflow
 ms.date: 03/30/2017
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-ms.openlocfilehash: 95d8d8b8ea15ef543471afb19462ccb424e8e39b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0b89eb05513d6b3973de50cd6360711c4f967f68
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555807"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609458"
 ---
 # <a name="hosting-workflow-services"></a>Hébergement de services de workflow
 
@@ -46,7 +46,7 @@ Un service de workflow doit être hébergé pour pouvoir répondre aux messages 
  Un fichier. xamlx qui définit un service de Workflow doit contenir un <`Service` élément racine> ou un élément racine qui contient un type dérivé de <xref:System.Workflow.ComponentModel.Activity> . Lorsque vous utilisez le modèle d’activité Visual Studio, un fichier. xamlx est créé. Lors de l’utilisation du modèle de service de flux de travail WCF, un fichier. xamlx est créé.
 
 ## <a name="hosting-workflow-services-under-windows-server-app-fabric"></a>Hébergement des services de workflow sous Windows Server App Fabric
- L'hébergement d'un service de workflow sous Windows Server App Fabric est similaire à l'hébergement sous IIS/WAS. La seule différence est que Windows Server App Fabric est installé. Windows Server App Fabric fournit des outils qui sont ajoutés au Gestionnaire des services IIS, ainsi que des applets de commande powershell. Ces outils simplifient le déploiement, la gestion et le suivi des services de workflow et des services WCF.
+ L'hébergement d'un service de workflow sous Windows Server App Fabric est similaire à l'hébergement sous IIS/WAS. La seule différence est que Windows Server App Fabric est installé. Windows Server App Fabric fournit des outils qui sont ajoutés à Internet Information Services Manager, ainsi qu’aux applets PowerShell. Ces outils simplifient le déploiement, la gestion et le suivi des services de workflow et des services WCF.
 
 ## <a name="referencing-custom-activities"></a>Référencement d'activités personnalisées
  Les références aux activités personnalisées doivent être ajoutées à la `Assemblies` section <> sous <`System.Web.Compilation`> afin qu’elles soient chargées dans le domaine d’application et que le désérialiseur XAML soit en mesure de localiser les types. Ces paramètres peuvent être effectués au niveau de l'application ou dans le Web.config racine si les paramètres doivent s'appliquer à toutes les applications sur l'ordinateur.

@@ -3,12 +3,12 @@ title: Présentation de C# - Tutoriels interactifs
 description: Découvrez C# dans votre navigateur et prenez en main votre propre environnement de développement
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 9a93e34f7b54d12b3f69589d7bb2181fc240403c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 52b680ffe8c477624f3b5e085b7f2de13c271d81
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554565"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609178"
 ---
 # <a name="introduction-to-c"></a>Présentation de C\#
 
@@ -52,7 +52,13 @@ Ce didacticiel part du principe que vous avez terminé les leçons mentionnées 
 
 ## <a name="introduction-to-classes"></a>[Introduction aux classes](introduction-to-classes.md)
 
-Ce dernier tutoriel, qui s’exécute sur votre ordinateur, fait appel à votre propre environnement de développement local et à .NET Core.
+Ce didacticiel est disponible uniquement pour s’exécuter sur votre ordinateur, à l’aide de votre propre environnement de développement local et de .NET Core.
 Vous allez créer une application console et voir les fonctionnalités orientées objet de base qui font partie du langage C#.
 
 Ce tutoriel prend pour acquis que vous avez terminé les tutoriels de présentation en ligne et que vous avez installé le [SDK .NET Core](https://dotnet.microsoft.com/download) et [Visual Studio Code](https://code.visualstudio.com/).
+
+## <a name="object-oriented-programming"></a>[Programmation orientée objet](object-oriented-programming.md)
+
+Ce didacticiel enseigne les concepts utilisés dans la programmation orientée objet. Vous apprendrez les concepts d' *abstraction*, d' *encapsulation*, d' *héritage*et de *polymorphisme* à l’aide d’exemples C#.
+
+Ce didacticiel part du principe que vous avez terminé les didacticiels d’introduction en ligne et que vous avez installé [Kit SDK .net Core](https://dotnet.microsoft.com/download) et [Visual Studio code](https://code.visualstudio.com/) ou [Visual Studio](https://visualstudio.com) sur votre ordinateur de développement.

@@ -2,12 +2,12 @@
 title: Prise en charge de la diffusion en continu pour SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: 9dc7ee573bd011bd18d6c4b8bbd2d147b1fe907f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a396e3e172c63b0b71b085d4694184c42cc42f3e
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791399"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609243"
 ---
 # <a name="sqlclient-streaming-support"></a>Prise en charge de la diffusion en continu pour SqlClient
 
@@ -20,13 +20,13 @@ La prise en charge de la diffusion en continu facilite la montée en charge des 
 > [!WARNING]
 > Les appels asynchrones ne sont pas pris en charge si une application utilise également le mot clé de chaîne de connexion `Context Connection`.
 >
-> Les membres ajoutés pour la prise en charge de la diffusion en continu sont utilisés pour récupérer des données de requêtes et passer des paramètres aux requêtes et aux procédures stockées. La fonctionnalité de diffusion en continu répond à des scénarios OLTP de base et de migration des données et s’applique aux environnements de migration des données sur site et hors site.
+> Les membres ajoutés pour la prise en charge de la diffusion en continu sont utilisés pour récupérer des données de requêtes et passer des paramètres aux requêtes et aux procédures stockées. La fonctionnalité de diffusion en continu résout les scénarios OLTP de base et de migration des données et s’applique aux environnements de migration de données locaux et locaux.
 
 ## <a name="streaming-support-from-sql-server"></a>Prise en charge de la diffusion en continu depuis SQL Server
 
-La prise en charge <xref:System.Data.Common.DbDataReader> de la diffusion en continu à partir de SQL Server introduit de nouvelles fonctionnalités dans et dans les <xref:System.Data.SqlClient.SqlDataReader> classes pour récupérer <xref:System.IO.Stream>des objets, <xref:System.Xml.XmlReader>et <xref:System.IO.TextReader> et y réagir. Ces classes sont utilisées pour récupérer les données des requêtes. Par conséquent, la prise en charge de la diffusion en continu à partir de SQL Server résout les scénarios OLTP et s’applique aux environnements locaux et hors site.
+La prise en charge de la diffusion en continu à partir de SQL Server introduit de nouvelles fonctionnalités dans <xref:System.Data.Common.DbDataReader> et dans les <xref:System.Data.SqlClient.SqlDataReader> classes pour récupérer des <xref:System.IO.Stream> <xref:System.Xml.XmlReader> objets, et et <xref:System.IO.TextReader> y réagir. Ces classes sont utilisées pour récupérer les données des requêtes. Par conséquent, la prise en charge de la diffusion en continu à partir de SQL Server résout les scénarios OLTP et s’applique aux environnements locaux et locaux.
 
-Les membres suivants ont été ajoutés <xref:System.Data.SqlClient.SqlDataReader> à pour activer la prise en charge de la diffusion en continu à partir de SQL Server :
+Les membres suivants ont été ajoutés à <xref:System.Data.SqlClient.SqlDataReader> pour activer la prise en charge de la diffusion en continu à partir de SQL Server :
 
 1. <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>
 
@@ -40,7 +40,7 @@ Les membres suivants ont été ajoutés <xref:System.Data.SqlClient.SqlDataReade
 
 6. <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>
 
-Les membres suivants ont été ajoutés <xref:System.Data.Common.DbDataReader> à pour activer la prise en charge de la diffusion en continu à partir de SQL Server :
+Les membres suivants ont été ajoutés à <xref:System.Data.Common.DbDataReader> pour activer la prise en charge de la diffusion en continu à partir de SQL Server :
 
 1. <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>
 
@@ -50,13 +50,13 @@ Les membres suivants ont été ajoutés <xref:System.Data.Common.DbDataReader> �
 
 ## <a name="streaming-support-to-sql-server"></a>Prise en charge de la diffusion en continu vers SQL Server
 
-La prise en charge de la diffusion en continu <xref:System.Data.SqlClient.SqlParameter> vers SQL Server introduit de nouvelles fonctionnalités dans la classe <xref:System.IO.Stream>afin qu' <xref:System.IO.TextReader> elle puisse accepter et réagir aux <xref:System.Xml.XmlReader>objets, et. <xref:System.Data.SqlClient.SqlParameter> est utilisé pour passer des paramètres aux requêtes et aux procédures stockées.
+La prise en charge de la diffusion en continu vers SQL Server introduit de nouvelles fonctionnalités dans la <xref:System.Data.SqlClient.SqlParameter> classe afin qu’elle puisse accepter et réagir aux <xref:System.Xml.XmlReader> <xref:System.IO.Stream> objets, et <xref:System.IO.TextReader> . <xref:System.Data.SqlClient.SqlParameter> est utilisé pour passer des paramètres aux requêtes et aux procédures stockées.
 
 Supprimer un objet <xref:System.Data.SqlClient.SqlCommand> ou appeler <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> doit annuler toute opération en continu. Si une application envoie <xref:System.Threading.CancellationToken>, l'annulation n'est pas garantie.
 
 Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.Stream> :
 
-- **Binary**
+- **Binaire**
 
 - **VarBinary**
 
@@ -70,7 +70,7 @@ Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> accept
 
 - **Xml**
 
-Le type **XML** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> accepte un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.Xml.XmlReader>.
+Le type **XML** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> accepte un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.Xml.XmlReader> .
 
 <xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> accepte des valeurs de type <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader> et <xref:System.IO.Stream>.
 

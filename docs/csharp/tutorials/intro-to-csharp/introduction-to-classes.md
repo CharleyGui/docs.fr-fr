@@ -3,18 +3,18 @@ title: Classes et objets – Présentation du tutoriel C#
 description: Créez votre premier programme C# et explorez les concepts orientés objet
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 5edb2d7b11caace2d794b7958dfeb75ef502ee2b
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 57394ecb02745d69e22f4d9f1dbd4213f290cd5a
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396861"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609048"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Explorez la programmation orientée objet avec des classes et des objets
 
 Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
-## <a name="create-your-application"></a>Créer votre application
+## <a name="create-your-application"></a>Créer une application
 
 Dans une fenêtre de terminal, créez un répertoire nommé *classes*. Vous y créerez votre application. Sélectionnez ce répertoire et tapez `dotnet new console` dans la fenêtre de console. Cette commande crée votre application. Ouvrez *Program.cs*. Il doit se présenter comme suit :
 
@@ -121,11 +121,11 @@ La classe de votre compte bancaire doit accepter les dépôts et les retraits po
 
 Commençons par créer un type pour représenter une transaction. Il s’agit d’un type simple qui n’a aucune responsabilité. Il a besoin de quelques propriétés. Créez un fichier nommé *Transaction.cs*. Ajoutez-lui le code suivant :
 
-[!code-csharp[Transaction](~/samples/snippets/csharp/classes-quickstart/Transaction.cs)]
+:::code language="csharp" source="./snippets/introduction-to-classes/Transaction.cs":::
 
 Nous allons maintenant ajouter une <xref:System.Collections.Generic.List%601> d’objets `Transaction` à la classe `BankAccount`. Ajoutez la déclaration suivante après le constructeur dans votre fichier *BankAccount.cs* :
 
-[!code-csharp[TransactionDecl](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#TransactionDeclaration)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="TransactionDeclaration":::
 
 Avec la classe <xref:System.Collections.Generic.List%601>, vous devez importer un espace de noms différent. Ajoutez le code suivant au début de *BankAccount.cs* :
 
@@ -135,7 +135,7 @@ using System.Collections.Generic;
 
 Nous allons à présent modifier la façon dont le `Balance` est présenté.  Il peut être obtenu en additionnant les valeurs de toutes les transactions. Modifiez la déclaration de `Balance` dans la classe `BankAccount` comme suit :
 
-[!code-csharp[BalanceComputation](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#BalanceComputation)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="BalanceComputation":::
 
 Cet exemple montre un aspect important des ***propriétés***. Vous calculez à présent le solde quand un autre programmeur en demande la valeur. Votre calcul énumère toutes les transactions et retourne la somme en tant que solde actuel.
 
@@ -143,13 +143,13 @@ Implémentez ensuite les méthodes `MakeDeposit` et `MakeWithdrawal`. Ces métho
 
 Cela introduit le concept d’***exceptions***. Le moyen typique d’indiquer qu’une méthode ne peut pas effectuer correctement son travail consiste à lever une exception. Le type d’exception et le message associé décrivent l’erreur. Ici, la méthode `MakeDeposit` lève une exception si le montant du dépôt est négatif. La `MakeWithdrawal` méthode lève une exception si le montant du retrait est négatif ou si l’application du retrait entraîne un solde négatif. Ajoutez le code suivant après la déclaration de la `allTransactions` liste :
 
-[!code-csharp[DepositAndWithdrawal](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#DepositAndWithdrawal)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="DepositAndWithdrawal":::
 
 L' [`throw`](../../language-reference/keywords/throw.md) instruction **lève** une exception. L’exécution du bloc actuel se termine et le contrôle est transféré au premier bloc correspondant `catch` trouvé dans la pile des appels. Vous ajouterez un bloc `catch` pour tester ce code un peu plus tard.
 
 Le constructeur devrait obtenir une modification lui permettant d’ajouter une transaction initiale au lieu de mettre directement le solde à jour. Étant donné que vous avez déjà écrit la méthode `MakeDeposit`, appelez-la à partir de votre constructeur. Le constructeur terminé doit être semblable à ce qui suit :
 
-[!code-csharp[Constructor](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#Constructor)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="Constructor":::
 
 <xref:System.DateTime.Now?displayProperty=nameWithType> est une propriété qui retourne la date et l'heure actuelles. Pour tester cela, ajoutez quelques dépôts et retraits dans votre `Main` méthode, à la suite du code qui crée un `BankAccount` :
 
@@ -196,7 +196,7 @@ Enregistrez le fichier et tapez `dotnet run` pour effectuer un essai.
 
 Pour terminer ce tutoriel, vous pouvez écrire la méthode `GetAccountHistory` qui crée une `string` pour l’historique des transactions. Ajoutez cette méthode au type `BankAccount` :
 
-[!code-csharp[History](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#History)]
+:::code language="csharp" source="./snippets/introduction-to-classes/BankAccount.cs" id="History":::
 
 Cette méthode utilise la classe <xref:System.Text.StringBuilder> pour mettre en forme une chaîne contenant une ligne par transaction. Vous avez vu le code de mise en forme de chaîne précédemment dans ces tutoriels. Vous pouvez observer le nouveau caractère `\t`. Celui-ci insère une tabulation pour mettre en forme la sortie.
 
@@ -212,4 +212,11 @@ Exécutez votre programme pour voir les résultats.
 
 Si vous vous êtes bloqué, vous pouvez voir la source de ce didacticiel [dans notre référentiel GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/classes-quickstart/).
 
-Félicitations, vous avez terminé toute notre présentation des tutoriels C#. Si vous souhaitez en savoir plus, essayez d’autres [didacticiels](../index.md).
+Vous pouvez poursuivre le didacticiel sur la [programmation orientée objet](object-oriented-programming.md) .
+
+Pour plus d’informations sur ces concepts, consultez les articles suivants :
+
+- [Instruction if et else](../../language-reference/keywords/if-else.md)
+- [While (instruction)](../../language-reference/keywords/while.md)
+- [Instruction do](../../language-reference/keywords/do.md)
+- [Instruction for](../../language-reference/keywords/for.md)

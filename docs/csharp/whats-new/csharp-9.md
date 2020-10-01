@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 6a0227b408b894fe450c2a6bb6017d9059d229c0
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: e109deaa26b33a7780df11031c1f3e0477cd5431
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247616"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609191"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -204,11 +204,11 @@ Ces fonctionnalités peuvent améliorer les performances dans certains scénario
 
 ## <a name="fit-and-finish-features"></a>Fonctionnalités d’ajustement et de fin
 
-La plupart des autres fonctionnalités vous aident à écrire du code plus efficacement. En C# 9,0, vous pouvez omettre le type dans une nouvelle expression lorsque le type de l’objet créé est déjà connu. L’utilisation la plus courante est dans les déclarations de champ :
+La plupart des autres fonctionnalités vous aident à écrire du code plus efficacement. En C# 9,0, vous pouvez omettre le type dans une [ `new` expression](../language-reference/operators/new-operator.md) lorsque le type de l’objet créé est déjà connu. L’utilisation la plus courante est dans les déclarations de champ :
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="WeatherStationField":::
 
-Le type de cible nouveau peut également être utilisé lorsque vous devez créer un nouvel objet à passer en tant que paramètre à une méthode. Envisagez une `ForecastFor()` méthode avec la signature suivante :
+Le type cible `new` peut également être utilisé lorsque vous devez créer un nouvel objet à passer en tant qu’argument à une méthode. Envisagez une `ForecastFor()` méthode avec la signature suivante :
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="ForecastSignature":::
 
@@ -220,7 +220,7 @@ Une autre utilisation intéressante de cette fonctionnalité est de l’associer
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="InitWeatherStation":::
 
-Vous pouvez retourner une instance créée par le constructeur par défaut à l’aide d’une `return new();` expression.
+Vous pouvez retourner une instance créée par le constructeur par défaut à l’aide d’une `return new();` instruction.
 
 Une fonctionnalité similaire améliore la résolution de type cible des [expressions conditionnelles](../language-reference/operators/conditional-operator.md). Avec cette modification, les deux expressions n’ont pas besoin d’une conversion implicite de l’une à l’autre, mais elles peuvent toutes deux avoir des conversions implicites en un type cible. Vous ne remarquerez probablement pas cette modification. Ce que vous remarquerez, c’est que certaines expressions conditionnelles qui nécessitaient auparavant des casts ou ne seraient pas compilées.
 

@@ -4,12 +4,12 @@ author: IEvangelist
 description: En savoir plus sur l’hôte générique .NET, qui est responsable du démarrage et de la gestion de la durée de vie des applications.
 ms.author: dapine
 ms.date: 09/18/2020
-ms.openlocfilehash: c1b22b4490dc54d462482976d1c2e512f812c9a9
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: a1f82f6c6b5d250d6e81351aa02e50e23636280b
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90875856"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608272"
 ---
 # <a name="net-generic-host"></a>Hôte générique .NET
 
@@ -142,3 +142,4 @@ Pour plus d’informations, consultez [configuration dans .net](configuration.md
 
 - [Configuration dans .NET](configuration.md)
 - [Hôte web ASP.NET Core](/aspnet/core/fundamentals/host/web-host)
+- Les bogues d’hôte générique doivent être créés dans [github.com/dotnet/extensions](https://github.com/dotnet/extensions/issues) référentiel

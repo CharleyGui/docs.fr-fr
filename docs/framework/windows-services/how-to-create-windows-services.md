@@ -6,13 +6,12 @@ helpviewer_keywords:
 - Windows Service applications, creating
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
-author: ghogen
-ms.openlocfilehash: 6918225e39c15a52710fd0d56342aae869b42325
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 35d78acd4fae7bf98a2b3f4ce6ac8a32393c35d4
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925772"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608593"
 ---
 # <a name="how-to-create-windows-services"></a>Procédure : créer des services Windows
 Quand vous créez un service, vous pouvez utiliser un modèle de projet Visual Studio appelé **Service Windows**. Ce modèle accomplit automatiquement pour vous une grande part du travail : il référence les classes et les espaces de noms appropriés, définit l'héritage à partir de la classe de base des services et substitue les méthodes que vous êtes le plus susceptible de vouloir substituer.  
@@ -44,7 +43,7 @@ Quand vous créez un service, vous pouvez utiliser un modèle de projet Visual S
   
 3. Définissez le fonctionnement de votre service à l'aide des propriétés suivantes.  
   
-    |Propriété|Paramètre|  
+    |Property|Paramètre|  
     |--------------|-------------|  
     |<xref:System.ServiceProcess.ServiceBase.CanStop%2A>|`True` pour indiquer que le service acceptera des demandes d'arrêt ; `false` pour empêcher tout arrêt du service.|  
     |<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>|`True` pour indiquer que le service doit recevoir une notification en cas d'arrêt de l'ordinateur sur lequel il s'exécute, ce qui lui permet d'appeler la procédure <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A>.|  

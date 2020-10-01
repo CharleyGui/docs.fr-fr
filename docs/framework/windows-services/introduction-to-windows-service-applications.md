@@ -22,13 +22,12 @@ helpviewer_keywords:
 - Win32ShareProcess service type
 - Windows Service applications, lifetime
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
-author: ghogen
-ms.openlocfilehash: 13bd1f42776ac76a43a83667465ac0ca277e3452
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: b177673d8904a3c40e41cd0f92b1ea7408641186
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925668"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609315"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Introduction aux applications de service Windows
 Les services Microsoft Windows, anciennement « services NT », vous permettent de créer des applications exécutables longue durée qui s’exécutent au sein de leurs propres sessions Windows. Ces services peuvent être lancés automatiquement au démarrage de l’ordinateur, et peuvent être suspendus et redémarrés. Ils n’affichent aucune interface utilisateur. Les services sont donc parfaitement adaptés à une utilisation sur un serveur ou chaque fois que vous avez besoin de fonctionnalités longue durée qui n’interfèrent pas avec d’autres utilisateurs travaillant sur le même ordinateur. Vous pouvez également exécuter des services dans le contexte de sécurité d’un compte d’utilisateur spécifique (différent de l’utilisateur connecté ou du compte d’ordinateur par défaut). Pour plus d’informations sur les services et sessions Windows, consultez la documentation du kit SDK Windows.  
@@ -73,9 +72,9 @@ Les services Microsoft Windows, anciennement « services NT », vous permettent 
 ## <a name="services-and-the-servicecontroller-component"></a>Services et composant ServiceController  
  Le composant <xref:System.ServiceProcess.ServiceController> permet d’établir une connexion à un service installé et de manipuler son état. À l’aide d’un composant <xref:System.ServiceProcess.ServiceController>, vous pouvez démarrer et arrêter un service, suspendre et poursuivre son exécution, et envoyer des commandes personnalisées à un service. Toutefois, il est inutile de recourir à un composant <xref:System.ServiceProcess.ServiceController> quand vous créez une application de service. En fait, dans la plupart des cas, votre composant <xref:System.ServiceProcess.ServiceController> doit se trouver dans une application séparée de l’application de service Windows qui définit votre service.  
   
- Pour plus d’informations, consultez <xref:System.ServiceProcess.ServiceController>.  
+ Pour plus d'informations, consultez <xref:System.ServiceProcess.ServiceController>.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Exigences  
   
 - Les services doivent être créés dans un projet d’application **Service Windows** ou un autre projet compatible .NET Framework qui crée un fichier .exe au moment de la génération et qui hérite de la classe <xref:System.ServiceProcess.ServiceBase>.  
   

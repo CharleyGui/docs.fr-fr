@@ -372,11 +372,15 @@ items:
                     href: code-analysis/code-quality-rule-options.md
                   - name: Configurations prédéfinies
                     href: code-analysis/predefined-configurations.md
+              - name: Règles de style de code
+                items:
+                  - name: Options de règle
+                    href: code-analysis/code-style-rule-options.md
           - name: Référence de règle
             items:
               - name: Règles de qualité du code
                 items:
-                  - name: Vue d’ensemble
+                  - name: Vue d'ensemble
                     href: code-analysis/quality-rules/index.md
                   - name: Règles de conception
                     items:
@@ -930,7 +934,24 @@ items:
                       - name: CA2249
                         href: code-analysis/quality-rules/ca2249.md
               - name: Règles de style de code
-                href: /visualstudio/ide/editorconfig-language-conventions
+                items:
+                  - name: Vue d’ensemble
+                    href: code-analysis/style-rules/index.md
+                  - name: Règles de langage
+                    items:
+                      - name: Vue d’ensemble
+                        displayName: language rules
+                        href: code-analysis/style-rules/language-rules.md
+                  - name: Règles de mise en forme
+                    items:
+                      - name: Vue d’ensemble
+                        displayName: formatting rules
+                        href: code-analysis/style-rules/formatting-rules.md
+                  - name: Règles d’affectation des noms
+                    items:
+                      - name: Vue d'ensemble
+                        displayName: naming rules
+                        href: code-analysis/style-rules/naming-rules.md
           - name: Analyseur de compatibilité de plateforme
             href: ../standard/analyzers/platform-compat-analyzer.md
           - name: Analyseur d’API

@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: c679cb2603d39f580203d9373d76481e904e6c1d
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 8b70df0fb2072fd5243d9e46a4a20c22cc7fd677
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89497546"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91607788"
 ---
-### <a name="profiling-aspnet-mvc4-apps-can-lead-to-fatal-execution-engine-error"></a>Le profilage des applications ASP.NET MVC4 peut aboutir à une erreur irrécupérable du moteur d’exécution
+### <a name="profiling-aspnet-mvc4-apps-can-lead-to-fatal-execution-engine-error"></a>Le profilage des applications MVC4 ASP.NET peut provoquer une erreur irrécupérable du moteur d’exécution
 
 #### <a name="details"></a>Détails
 
@@ -19,7 +19,7 @@ Ce problème a été résolu dans .NET Framework 4.5.2. Le profileur peut aussi 
 | Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
-|Version|4,5|
+|Version|4.5|
 |Type|Runtime|
 
 #### <a name="affected-apis"></a>API affectées

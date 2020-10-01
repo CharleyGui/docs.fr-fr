@@ -10,18 +10,17 @@ helpviewer_keywords:
 - Windows Service applications, pausing
 - pausing Windows Service applications
 ms.assetid: eddb9409-942b-46b6-a2ce-fbd4c65f2790
-author: ghogen
-ms.openlocfilehash: 628cc2e896f7f8a289e52674b721c4aef605854c
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 19919a8b0a289f0e88eb136d8c010a036e84cbec
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925564"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608502"
 ---
 # <a name="how-to-pause-a-windows-service-visual-basic"></a>Procédure : interrompre un service Windows (Visual Basic)
 Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> pour interrompre le service d’administration IIS sur l’ordinateur local.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  [!code-vb[VbRadconService#11](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#11)]  
 [!code-vb[VbRadconService#12](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#12)]  
   
@@ -43,7 +42,7 @@ Cet exemple utilise le composant <xref:System.ServiceProcess.ServiceController> 
   
 - Une erreur s'est produite lors de l'accès à une API système. (<xref:System.ComponentModel.Win32Exception>)  
   
-## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
  Vous pouvez restreindre le contrôle des services sur l’ordinateur à l’aide de <xref:System.ServiceProcess.ServiceControllerPermissionAccess>, qui permet de définir des autorisations dans <xref:System.ServiceProcess.ServiceControllerPermission>.  
   
  Vous pouvez restreindre l’accès aux informations de service à l’aide de <xref:System.Security.Permissions.PermissionState>, qui permet de définir des autorisations dans <xref:System.Security.Permissions.SecurityPermission>.  

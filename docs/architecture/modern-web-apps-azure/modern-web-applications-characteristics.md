@@ -7,12 +7,12 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 12/04/2019
-ms.openlocfilehash: a4d7558039d64b21a2744f74d037369ea8c6c923
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6241a9a3a51bd4d5228841caeaf3a7b652fc6eaa
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539266"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608359"
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Caractéristiques des applications web modernes
 

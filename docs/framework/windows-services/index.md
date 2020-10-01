@@ -11,13 +11,12 @@ helpviewer_keywords:
 - services
 - .NET applications, Windows applications
 ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
-author: ghogen
-ms.openlocfilehash: 1f02b8229c0d62fa6c0e74ae1e670831b0becb0b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2aea73267f05340930a9591f430de59677c1cb11
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557799"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609575"
 ---
 # <a name="develop-windows-service-apps"></a>Développer des applications de service Windows
 
@@ -26,7 +25,7 @@ Utilisez Visual Studio ou le SDK .NET Framework pour créer facilement des servi
 > [!NOTE]
 > Dans Visual Studio, vous pouvez créer un service dans le code managé en Visual C# ou Visual Basic, qui peut interagir avec le code C++ existant, si nécessaire. Ou, vous pouvez créer un service Windows en C++ natif à l’aide de [l’Assistant Projet ATL](/cpp/atl/reference/atl-project-wizard).
 
-## <a name="in-this-section"></a>Contenu de cette section
+## <a name="in-this-section"></a>Dans cette section
 
 [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
 

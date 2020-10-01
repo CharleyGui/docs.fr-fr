@@ -6,12 +6,12 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: 93fc0296eeb410ba7ca0e781bededbe79820506d
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 68b41eef0b604b80a9659eddf45d6512eac44fd6
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91178864"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91607731"
 ---
 # <a name="classes-c-programming-guide"></a>Classes (Guide de programmation C#)
 
@@ -90,7 +90,7 @@ Une classe peut être déclarée [abstract](../../language-reference/keywords/ab
   
 Les définitions de classe peuvent être fractionnées entre différents fichiers sources. Pour plus d’informations, consultez la page [Classes et méthodes partielles](partial-classes-and-methods.md).  
   
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant définit une classe publique qui contient une [propriété implémentée automatiquement](auto-implemented-properties.md), une méthode et une méthode spéciale appelée un constructeur. Pour plus d’informations, consultez les rubriques [Propriétés](properties.md), [Méthodes](methods.md) et [Constructeurs](constructors.md). Les instances de la classe sont ensuite instanciées à l’aide du mot clé `new`.  
   
@@ -103,7 +103,7 @@ L’exemple suivant définit une classe publique qui contient une [propriété i
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Programmation orientée objet dans Visual Basic](../concepts/object-oriented-programming.md)
+- [Programmation orientée objet dans Visual Basic](../../tutorials/intro-to-csharp/object-oriented-programming.md)
 - [Polymorphisme](polymorphism.md)
 - [Noms d’identificateurs](../inside-a-program/identifier-names.md)
 - [Members](members.md) (Membres)

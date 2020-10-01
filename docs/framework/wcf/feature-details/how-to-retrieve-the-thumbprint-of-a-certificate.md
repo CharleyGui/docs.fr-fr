@@ -1,18 +1,18 @@
 ---
-title: "Comment : récupérer l'empreinte numérique d'un certificat"
+title: 'Procédure : récupérer l’empreinte d’un certificat'
 description: Découvrez comment spécifier des revendications trouvées dans un certificat X. 509, ce qui est nécessaire lors du développement d’une application WCF qui utilise des certificats pour l’authentification.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], retrieving thumbprint
 ms.assetid: da3101aa-78cd-4c34-9652-d1f24777eeab
-ms.openlocfilehash: 87c696323af442021af267f0d8c523418e2234f7
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 0622ff9b990dd9d8fe14c4a4c1d48cc8530d5a61
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246777"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609471"
 ---
-# <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>Comment : récupérer l'empreinte numérique d'un certificat
+# <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>Procédure : récupérer l’empreinte d’un certificat
 Lors de l’écriture d’une application Windows Communication Foundation (WCF) qui utilise un certificat X. 509 pour l’authentification, il est souvent nécessaire de spécifier les revendications trouvées dans le certificat. Par exemple, vous devez fournir une revendication d'empreinte numérique lors de l'utilisation de l'énumération <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> dans la méthode <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> . La recherche de la valeur de revendication s'effectue en deux étapes. En premier lieu, ouvrez le composant logiciel enfichable MMC (Microsoft Management Console) pour les certificats. (Consultez [Comment : afficher des certificats avec le composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md).) Deuxièmement, comme décrit ici, Rechercher un certificat approprié et copier son empreinte numérique (ou d’autres valeurs de revendication).  
   
  Si vous utilisez un certificat pour l'authentification du service, il est important de noter la valeur de la colonne **Délivré à** (la première colonne dans la console). Lors de l'utilisation du protocole SSL (Secure Sockets Layer) comme sécurité de transport, l'un des premiers contrôles effectués consiste à comparer l'URI (Uniform Resource Identifier) d'adresse de base d'un service à la valeur **Délivré à** . Les valeurs doivent correspondre ou le processus d'authentification s'interrompt.  
@@ -43,6 +43,6 @@ Lors de l’écriture d’une application Windows Communication Foundation (WCF)
 
 - <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>
-- [Comment : configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md)
-- [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
-- [Guide pratique pour créer des certificats temporaires à utiliser au cours du développement](how-to-create-temporary-certificates-for-use-during-development.md)
+- [Procédure : configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md)
+- [Procédure : voir les certificats avec le composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [Procédure : créer des certificats temporaires à utiliser pendant le développement](how-to-create-temporary-certificates-for-use-during-development.md)

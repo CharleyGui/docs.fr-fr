@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 76425ca03c98cd6a23b8366257f9e0d53b486edb
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: e450c53008e7562e37518fdfd6872ff9b63b6ac3
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89497708"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609130"
 ---
-### <a name="sharing-session-state-with-aspnet-stateserver-requires-all-servers-in-the-web-farm-to-use-the-same-net-framework-version"></a>Le partage de l’état de session avec Asp.Net StateServer nécessite que tous les serveurs de la batterie de serveurs web utilisent la même version du .NET Framework
+### <a name="sharing-session-state-with-aspnet-stateserver-requires-all-servers-in-the-web-farm-to-use-the-same-net-framework-version"></a>L’état de session de partage avec ASP.NET StateServer nécessite que tous les serveurs de la batterie de serveurs Web utilisent la même version de .NET Framework
 
 #### <a name="details"></a>Détails
 
@@ -19,7 +19,7 @@ Veillez à mettre à niveau les versions du .NET Framework sur les serveurs web 
 | Name    | Valeur       |
 |:--------|:------------|
 | Étendue   |Edge|
-|Version|4,5|
+|Version|4.5|
 |Type|Runtime
 
 #### <a name="affected-apis"></a>API affectées

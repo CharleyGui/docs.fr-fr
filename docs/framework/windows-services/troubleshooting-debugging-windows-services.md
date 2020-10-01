@@ -12,13 +12,12 @@ helpviewer_keywords:
 - services, debugging
 - Windows Service applications, troubleshooting
 ms.assetid: cf859d4c-f04c-4cb7-81e3-bc7de8bea190
-author: ghogen
-ms.openlocfilehash: 935f5dcbd369ba5d723cc0e947ba708afdd590ea
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 5846692fa0d90a62dd569253abbd81aa63b5798d
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925538"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608892"
 ---
 # <a name="troubleshooting-debugging-windows-services"></a>Résolution des problèmes : débogage des services Windows
 Quand vous déboguez une application de service Windows, votre service et le **Gestionnaire des services Windows** interagissent. Le **Gestionnaire des services** démarre votre service en appelant la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A>, puis attend 30 secondes que la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> retourne une valeur. Si la méthode ne retourne aucune valeur au terme de ce délai, le gestionnaire affiche une erreur indiquant que le service ne peut pas être démarré.  
