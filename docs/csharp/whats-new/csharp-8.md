@@ -2,12 +2,12 @@
 title: Nouveautés de C# 8,0-Guide C#
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
 ms.date: 04/07/2020
-ms.openlocfilehash: eee395c33585028cd81861045f05f7790d8db949
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 43b9c69c649b83d4cf78ef4c7d131ce900a49d11
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414888"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654866"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
@@ -322,7 +322,7 @@ Dans les deux cas, le compilateur génère l’appel à `Dispose()`. Le compilat
 
 ## <a name="static-local-functions"></a>Fonctions locales statiques
 
-Il est maintenant possible d’ajouter le modificateur `static` à des fonctions locales pour éviter qu’elles ne capturent (fassent référence à) des variables au sein de la portée englobante. Cela génère `CS8421`, « A static local function can't contain a reference to \<variable> ».
+Vous pouvez maintenant ajouter le `static` modificateur aux [fonctions locales](../programming-guide/classes-and-structs/local-functions.md) pour vous assurer que la fonction locale ne capture pas (référence) les variables de la portée englobante. Cela génère `CS8421`, « A static local function can't contain a reference to \<variable> ».
 
 Prenons le code suivant. La fonction locale `LocalFunction` accède à la variable `y`, déclarée dans la portée englobante (la méthode `M`). Par conséquent, `LocalFunction` ne peut pas être déclarée avec le modificateur `static` :
 

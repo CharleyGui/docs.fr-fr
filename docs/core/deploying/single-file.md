@@ -4,12 +4,12 @@ description: Découvrez ce qu’est une application à fichier unique et pourquo
 author: lakshanf
 ms.author: lakshanf
 ms.date: 08/28/2020
-ms.openlocfilehash: 8149f912c2d92c3eff8d248353e11c01bcfc24ba
-ms.sourcegitcommit: 665f8fc55258356f4d2f4a6585b750c974b26675
+ms.openlocfilehash: b7693d6c119d00a798ef03ed1019f2f04c1828cf
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91573668"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654650"
 ---
 # <a name="single-file-deployment-and-executable"></a>Déploiement et exécutable d’un seul fichier
 
@@ -37,11 +37,11 @@ Le tableau ci-dessous contient les détails de l’API de la bibliothèque Runti
 
 Nous avons des recommandations pour la résolution des scénarios courants :
 
-* Pour accéder aux fichiers à côté de l’exécutable, utilisez <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType>
+* Pour accéder aux fichiers à côté de l’exécutable, utilisez <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType> .
 
-* Pour rechercher le nom de fichier de l’exécutable, utilisez le premier élément de <xref:System.Environment.GetCommandLineArgs()?displayProperty=nameWithType>
+* Pour rechercher le nom de fichier de l’exécutable, utilisez le premier élément de <xref:System.Environment.GetCommandLineArgs?displayProperty=nameWithType> .
 
-* Pour éviter d’expédier entièrement des fichiers libres, envisagez d’utiliser des [ressources incorporées](https://docs.microsoft.com/en-us/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
+* Pour éviter d’expédier entièrement des fichiers libres, envisagez d’utiliser des [ressources incorporées](../../framework/resources/creating-resource-files-for-desktop-apps.md).
 
 ## <a name="other-considerations"></a>Autres considérations
 

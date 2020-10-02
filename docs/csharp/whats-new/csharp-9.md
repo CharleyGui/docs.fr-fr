@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: e109deaa26b33a7780df11031c1f3e0477cd5431
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: c165ca764d93b74aac21028ed3e55e80f2a23ee0
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609191"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654905"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -194,7 +194,7 @@ L’un de ces modèles peut être utilisé dans n’importe quel contexte où le
 
 Trois nouvelles fonctionnalités améliorent la prise en charge de l’interopérabilité native et des bibliothèques de bas niveau qui requièrent des performances élevées : les entiers de taille native, les pointeurs de fonction et l’omission de l' `localsinit` indicateur.
 
-Les entiers de taille native, `nint` et `nuint` , sont des types entiers. Elles sont exprimées par les types sous-jacents <xref:System.IntPtr?displayProperty=nameWithType> et <xref:System.UIntPtr?displayProperty=nameWithType> . Le compilateur recadre les conversions et les opérations supplémentaires pour ces types comme des ints natifs. Les ints dimensionnés natifs n’ont pas de constantes pour `MaxValue` ou `MinValue` , à l’exception de `nuint.MinValue` , qui a un `MinValue` de `0` . D’autres valeurs ne peuvent pas être exprimées sous forme de constantes, car elles dépendent de la taille native d’un entier sur l’ordinateur cible. Vous pouvez utiliser des valeurs constantes pour `nint` dans la plage [ `int.MinValue` .. `int.MaxValue`]. Vous pouvez utiliser des valeurs constantes pour `nuint` dans la plage [ `uint.MinValue` .. `uint.MaxValue`]. Le compilateur exécute un repli constant pour tous les opérateurs unaires et binaires à l’aide des <xref:System.Int32?displayProperty=nameWithType> <xref:System.UInt32?displayProperty=nameWithType> types et. Si le résultat ne tient pas dans 32 bits, l’opération est exécutée au moment de l’exécution et n’est pas considérée comme une constante. Les entiers de taille native peuvent augmenter les performances dans les scénarios où les calculs d’entiers sont largement utilisés et doivent avoir les performances les plus rapides possibles.
+Les entiers de taille native, `nint` et `nuint` , sont des types entiers. Elles sont exprimées par les types sous-jacents <xref:System.IntPtr?displayProperty=nameWithType> et <xref:System.UIntPtr?displayProperty=nameWithType> . Le compilateur recadre les conversions et les opérations supplémentaires pour ces types comme des ints natifs. Les entiers de taille native définissent des propriétés pour `MaxValue` ou `MinValue` . Ces valeurs ne peuvent pas être exprimées comme des constantes de compilation, car elles dépendent de la taille native d’un entier sur l’ordinateur cible. Ces valeurs sont en lecture seule au moment de l’exécution. Vous pouvez utiliser des valeurs constantes pour `nint` dans la plage [ `int.MinValue` .. `int.MaxValue`]. Vous pouvez utiliser des valeurs constantes pour `nuint` dans la plage [ `uint.MinValue` .. `uint.MaxValue`]. Le compilateur exécute un repli constant pour tous les opérateurs unaires et binaires à l’aide des <xref:System.Int32?displayProperty=nameWithType> <xref:System.UInt32?displayProperty=nameWithType> types et. Si le résultat ne tient pas dans 32 bits, l’opération est exécutée au moment de l’exécution et n’est pas considérée comme une constante. Les entiers de taille native peuvent augmenter les performances dans les scénarios où les calculs d’entiers sont largement utilisés et doivent avoir les performances les plus rapides possibles.
 
 Les pointeurs fonction fournissent une syntaxe simple pour accéder aux opcodes IL `ldftn` et `calli` . Vous pouvez déclarer des pointeurs de fonction à l’aide de la nouvelle `delegate*` syntaxe. Un `delegate*` type est un type pointeur. L’appel du `delegate*` type utilise `calli` , contrairement à un délégué qui utilise `callvirt` sur la `Invoke()` méthode. Syntaxiquement, les appels sont identiques. L’appel du pointeur de fonction utilise la `managed` Convention d’appel. Vous ajoutez le `unmanaged` mot clé après la `delegate*` syntaxe pour déclarer que vous souhaitez la `unmanaged` Convention d’appel. D’autres conventions d’appel peuvent être spécifiées à l’aide d’attributs sur la `delegate*` déclaration.
 

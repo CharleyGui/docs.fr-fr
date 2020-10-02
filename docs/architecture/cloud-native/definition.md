@@ -3,12 +3,12 @@ title: Définition du Cloud Native
 description: En savoir plus sur les piliers fondamentaux qui fournissent le socle pour les systèmes natifs du Cloud
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: dce8da57b90519880e322a26de403d8e7cb718c2
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 1f0d842a2369ae04ffc1c634f9de60398a88e86f
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91160903"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654690"
 ---
 # <a name="defining-cloud-native"></a>Définition du Cloud Native
 
@@ -26,7 +26,7 @@ La Fondation Cloud Native Computing fournit une [définition officielle](https:/
 
 Les applications sont devenues de plus en plus complexes avec les utilisateurs qui demandent de plus en plus. Les utilisateurs attendent une réactivité rapide, des fonctionnalités novatrices et des temps d’arrêt nuls. Les problèmes de performances, les erreurs récurrentes et l’incapacité à se déplacer rapidement ne sont plus acceptables. Ils seront facilement déplacés vers votre concurrent.
 
-Cloud native est une grande partie de la *Vitesse* et de l' *agilité*. Les systèmes d’entreprise évoluent de l’activation des fonctionnalités métier aux armes de transformation stratégique, accélérant ainsi la rapidité et la croissance de l’entreprise. Il est impératif de mettre les idées sur le marché immédiatement.
+Cloud Native concerne la *Vitesse* et l' *agilité*. Les systèmes d’entreprise évoluent de l’activation des fonctionnalités métier aux armes de transformation stratégique qui accélèrent la rapidité et la croissance de l’entreprise. Il est impératif de mettre les idées sur le marché immédiatement.
 
 Voici quelques sociétés qui ont implémenté ces techniques. Réfléchissez à la vitesse, à l’agilité et à l’évolutivité qu’ils ont atteints.
 
@@ -77,7 +77,7 @@ Le tableau suivant met en évidence la méthodologie à douze facteurs :
 |    |  Facteur | Explication  |
 | :-------- | :-------- | :-------- |
 | 1 | Base de code | Une seule base de code pour chaque microservice, stockée dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements (AQ, intermédiaire, production). |
-| 2 | Dépendances | Chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système. |
+| 2 | Les dépendances | Chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système. |
 | 3 | Configurations  | Les informations de configuration sont déplacées hors du microservice et sont externalisées à l’aide d’un outil de gestion de la configuration en dehors du code. Le même déploiement peut se propager dans les environnements avec la configuration correcte appliquée.  |
 | 4 | Services de stockage | Les ressources auxiliaires (magasins de données, caches, courtiers de messages) doivent être exposées via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.  |
 | 5 | Build, Release, exécuter | Chaque version doit appliquer une séparation stricte entre les étapes de génération, de mise en œuvre et d’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration. Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. |
@@ -177,7 +177,7 @@ La plateforme Microsoft .NET Core est un excellent choix. Gratuit et open source
 
 .NET Core est géré par Microsoft et la communauté .NET sur GitHub.
 
-## <a name="containers"></a>Containers
+## <a name="containers"></a>Conteneurs
 
 De nos jours, il est naturel d’entendre le terme *conteneur* mentionné dans toute conversation concernant le *Cloud Native*. Dans le livre, le [Cloud Native patterns](https://www.manning.com/books/cloud-native-patterns), auteur Cornelia Davis observe cela, « les conteneurs sont un excellent activateur des logiciels natifs du Cloud ». Le Cloud Native Computing Foundation place le conteneur de microservices en tant que première étape de leur [carte de piste Cloud Native](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) pour les entreprises qui commencent leur parcours Cloud-native.
 
@@ -227,7 +227,7 @@ Le tableau suivant décrit les tâches d’orchestration courantes.
 | Affinité/anti-affinité | Approvisionner des conteneurs à proximité ou éloignés les uns des autres, ce qui contribue à la disponibilité et aux performances. |
 | Surveillance de l’intégrité | Détectez et corrigez automatiquement les défaillances.|
 | Basculement | Reconfigurer automatiquement l’instance défaillante sur des machines saines.|
-| Mise à l’échelle | Ajoutez ou supprimez automatiquement l’instance de conteneur pour répondre à la demande.|
+| Mise à l'échelle | Ajoutez ou supprimez automatiquement l’instance de conteneur pour répondre à la demande.|
 | Mise en réseau | Gérez une superposition de mise en réseau pour la communication de conteneur.|
 | Découverte de service | Activez les conteneurs pour les localiser.|
 | Mises à niveau propagées | Coordonner les mises à niveau incrémentielles avec un déploiement sans temps d’arrêt. Annule automatiquement les modifications problématiques.|

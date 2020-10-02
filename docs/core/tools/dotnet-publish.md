@@ -2,18 +2,18 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 53dc6010352d92489017c3aa776bcb6a3601ec2d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2c33f99ce652dadc6e0c1a4c5e9e78fff9f54254
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537767"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654892"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet publish` -Publie l’application et ses dépendances dans un dossier pour le déploiement sur un système d’hébergement.
 
@@ -53,7 +53,7 @@ La commande `dotnet publish` appelle MSBuild, qui appelle la cible de `Publish`.
 
 La `dotnet publish` commande accepte les options MSBuild, comme `-p` pour définir des propriétés et `-l` pour définir un enregistreur d’événements. Par exemple, vous pouvez définir une propriété MSBuild en utilisant le format : `-p:<NAME>=<VALUE>` .
 
-Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* (disponible depuis le kit de développement logiciel (SDK) .net Core 3,1). Exemple :
+Vous pouvez également définir des propriétés relatives à la publication en faisant référence à un fichier *. pubxml* (disponible depuis le kit de développement logiciel (SDK) .net Core 3,1). Par exemple :
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -145,7 +145,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 - **`-p:PublishReadyToRun=true`**
 
-  Compile les assemblys d’application au format ReadyToRun (R2R). R2R est une forme de compilation ahead-of-time (AOT). Pour plus d’informations, consultez [images ReadyToRun](../whats-new/dotnet-core-3-0.md#readytorun-images). Option disponible à partir du kit SDK .NET Core 3.0.
+  Compile les assemblys d’application au format ReadyToRun (R2R). R2R est une forme de compilation ahead-of-time (AOT). Pour plus d’informations, consultez [images ReadyToRun](../deploying/ready-to-run.md). Option disponible à partir du kit SDK .NET Core 3.0.
 
   Nous vous recommandons de spécifier cette option dans un profil de publication plutôt que sur la ligne de commande. Pour plus d’informations, consultez [MSBuild](#msbuild).
 

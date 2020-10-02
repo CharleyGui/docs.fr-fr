@@ -2,18 +2,18 @@
 title: Affectation de noms forts et bibliothèques .NET
 description: Meilleures pratiques recommandées pour l’affectation de noms forts aux bibliothèques .NET.
 ms.date: 10/16/2018
-ms.openlocfilehash: db268093b07a2ece7cdb8329fd789b52da9c5c32
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b72d4a8c320ac857fbcd6abe44f467805f72b5b3
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76744537"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654558"
 ---
 # <a name="strong-naming"></a>Affectation de noms forts
 
 L’affectation de noms forts fait référence à la signature d’un assembly avec une clé, produisant un [assembly avec un nom fort](../assembly/strong-named.md). Lorsqu’un assembly a un nom fort, cela crée une identité unique basée sur le nom et le numéro de version de l’assembly, et cela peut aider à éviter les conflits de l’assembly.
 
-L’inconvénient de l’utilisation de noms forts est que le .NET Framework sur Windows permet le chargement strict des assemblys une fois qu’un assembly possède un nom fort. Une référence d’assembly avec un nom fort doit correspondre exactement à la version référencée par un assembly, ce qui force les développeurs à [configurer des redirections de liaison](../../framework/configure-apps/redirect-assembly-versions.md) lors de l’utilisation de l’assembly :
+L’inconvénient de l’utilisation de noms forts est que le .NET Framework sur Windows permet le chargement strict des assemblys une fois qu’un assembly possède un nom fort. Une référence d’assembly avec nom fort doit correspondre exactement à la version de l’assembly chargé, forçant les développeurs à [configurer les redirections de liaison](../../framework/configure-apps/redirect-assembly-versions.md) lors de l’utilisation de l’assembly :
 
 ```xml
 <configuration>
@@ -43,7 +43,7 @@ Les avantages de l’affectation de noms forts sont les suivants :
 Vous devez donner à vos bibliothèques .NET open source des noms forts. L’affectation d’un nom fort à un assembly garantit que la plupart des personnes peuvent l’utiliser, et le chargement d’assembly strict affecte uniquement le .NET Framework.
 
 > [!NOTE]
-> Ces directives sont spécifiques aux bibliothèques .NET distribuées publiquement, telles que les bibliothèques .NET publiées sur NuGet.org. La plupart des applications .NET ne sont pas requises par la plupart des applications .NET et ne doivent pas être faites par défaut.
+> Ce guide est spécifique aux bibliothèques .NET publiquement distribuées, telles que les bibliothèques .NET publiées sur NuGet.org. L’attribution d’un nom fort n’est pas requise par la plupart des applications .NET et ne doit pas être effectuée par défaut.
 
 ✔️ ENVISAGEZ de donner un nom fort aux assemblys de votre bibliothèque.
 
@@ -60,14 +60,14 @@ Vous devez donner à vos bibliothèques .NET open source des noms forts. L’aff
 
 > En savoir plus sur [le contrôle de version et la version de l’assembly](./versioning.md#assembly-version).
 
-❌NE PAS ajouter, supprimer ou modifier la clé de nommage forte.
+❌ N’ajoutez pas, ne supprimez pas ou ne modifiez pas la clé de nom fort.
 
 > La modification de la clé d’affectation de noms forts d’un assembly modifie l’identité de l’assembly et altère le code compilé qui l’utilise. Pour plus d'informations, consultez [Modifications importantes binaires](./breaking-changes.md#binary-breaking-change).
 
-❌NE publiez PAS de versions de votre bibliothèque, nommées en force et non. Par exemple, `Contoso.Api` et `Contoso.Api.StrongNamed`.
+❌ NE publiez pas de versions avec nom fort et non avec nom fort de votre bibliothèque. Par exemple, `Contoso.Api` et `Contoso.Api.StrongNamed`.
 
 > La publication deux packages duplique (fork) votre écosystème de développeur. En outre, si une application dépend des deux packages, le développeur peut rencontrer des conflits de noms de type. En ce qui concerne .NET, il existe des types différents dans des assemblys différents.
 
 >[!div class="step-by-step"]
->[Suivant précédent](cross-platform-targeting.md)
->[Next](nuget.md)
+>[Précédent](cross-platform-targeting.md) 
+> [Suivant](nuget.md)

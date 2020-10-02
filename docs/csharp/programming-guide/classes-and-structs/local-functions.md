@@ -1,15 +1,15 @@
 ---
 title: Fonctions locales - Guide de programmation C#
 description: Les fonctions locales en C# sont des méthodes privées qui sont imbriquées dans un autre membre et peuvent être appelées à partir de leur membre conteneur.
-ms.date: 06/14/2017
+ms.date: 10/02/2020
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: c1c6c6becb3894b05cb9ed89f7f33dcf249b20eb
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: a91995757048c8c54253d7f4b923d5194f69bc7b
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656183"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654918"
 ---
 # <a name="local-functions-c-programming-guide"></a>Fonctions locales (Guide de programmation C#)
 
@@ -36,17 +36,19 @@ Les fonctions locales permettent de clarifier l’objectif de votre code. Toute 
 Une fonction locale est définie en tant que méthode imbriquée à l’intérieur d’un membre conteneur. Sa définition présente la syntaxe suivante :
 
 ```csharp
-<modifiers: async | unsafe> <return-type> <method-name> <parameter-list>
+<modifiers> <return-type> <method-name> <parameter-list>
 ```
 
-Les fonctions locales peuvent utiliser les modificateurs [async](../../language-reference/keywords/async.md) et [unsafe](../../language-reference/keywords/unsafe.md).
+Vous pouvez utiliser les modificateurs suivants avec une fonction locale :
 
-Notez que toutes les variables locales définies dans le membre conteneur, y compris ses paramètres de méthode, sont accessibles dans la fonction locale.
+- [`async`](../../language-reference/keywords/async.md)
+- [`unsafe`](../../language-reference/keywords/unsafe.md)
+- [`static`](../../language-reference/keywords/static.md) (en C# 8,0 et versions ultérieures). Une fonction locale statique ne peut pas capturer les variables locales ou l’état de l’instance.
+- [`extern`](../../language-reference/keywords/extern.md) (en C# 9,0 et versions ultérieures). Une fonction locale externe doit être `static` .
+
+Toutes les variables locales définies dans le membre conteneur, y compris ses paramètres de méthode, sont accessibles dans une fonction locale non statique.
 
 Contrairement à une définition de méthode, une définition de fonction locale ne peut pas inclure le modificateur d’accès au membre. Comme toutes les fonctions locales sont privées, l’inclusion d’un modificateur d’accès, tel que le mot clé `private`, génère l’erreur de compilateur CS0106 : « Le modificateur « private » n’est pas valide pour cet élément ».
-
-> [!NOTE]
-> Avant C# 8,0, les fonctions locales ne peuvent pas inclure le `static` modificateur. L’inclusion du `static` mot clé génère l’erreur du compilateur CS0106, « le modificateur’static’n’est pas valide pour cet élément. » ou une erreur du compilateur qui indique que vous devez utiliser C# 8,0 ou une version ultérieure.
 
 Par ailleurs, les attributs ne peuvent pas être appliqués à la fonction locale ou à ses paramètres et paramètres de type.
 

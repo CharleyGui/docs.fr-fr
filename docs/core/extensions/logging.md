@@ -4,12 +4,12 @@ author: IEvangelist
 description: Découvrez comment utiliser le framework de journalisation fourni par le package NuGet Microsoft.Extensions.Logging.
 ms.author: dapine
 ms.date: 09/30/2020
-ms.openlocfilehash: a742e192f8e080e2c76ebeb005168647e440d8ef
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 2e6d8710015d8e998a9710f2cdeb86d925236196
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614721"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654832"
 ---
 # <a name="logging-in-net"></a>Journalisation dans .NET
 
@@ -222,7 +222,7 @@ public async Task<T> GetAsync<T>(string id)
 
 Dans le code précédent, le premier `Log{LogLevel}` paramètre, `AppLogEvents.Read` , est l' [ID d’événement du journal](#log-event-id). Le deuxième paramètre est un modèle de message contenant des espaces réservés pour les valeurs d’argument fournies par les autres paramètres de méthode. Les paramètres de méthode sont expliqués dans la section [modèle de message](#log-message-template) plus loin dans cet article.
 
-Configurez le niveau de journalisation approprié et appelez les `Log{LogLevel}` méthodes appropriées pour contrôler la quantité de sortie de journal écrite sur un support de stockage particulier. Exemple :
+Configurez le niveau de journalisation approprié et appelez les `Log{LogLevel}` méthodes appropriées pour contrôler la quantité de sortie de journal écrite sur un support de stockage particulier. Par exemple :
 
 - En production :
   - La journalisation au `Trace` niveau des ou de `Information` génère un volume important de messages journaux détaillés. Pour contrôler les coûts et ne pas dépasser les limites de stockage des données, `Trace` `Information` les messages de journal et de niveau dans un magasin de données volumineux et à faible coût. Envisagez `Trace` de limiter et `Information` à des catégories spécifiques.
@@ -433,7 +433,7 @@ class Program
 
 ## <a name="non-host-console-app"></a>Application console non-hôte
 
-La journalisation du code pour les applications sans [hôte générique](generic-host.md) diffère dans la façon dont les [fournisseurs sont ajoutés](#add-providers) et les [journaux sont créés](#create-logs). Dans une application de console non hôte, appelez la méthode d’extension `Add{provider name}` du fournisseur lors de la création d’un `LoggerFactory` :
+La journalisation du code pour les applications sans [hôte générique](generic-host.md) diffère dans la façon dont les [fournisseurs sont ajoutés](logging-providers.md#built-in-logging-providers) et les [journaux sont créés](#create-logs). Dans une application de console non hôte, appelez la méthode d’extension `Add{provider name}` du fournisseur lors de la création d’un `LoggerFactory` :
 
 ```csharp
 class Program

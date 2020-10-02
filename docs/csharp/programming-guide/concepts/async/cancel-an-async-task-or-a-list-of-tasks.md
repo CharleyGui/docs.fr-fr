@@ -4,12 +4,12 @@ description: Découvrez comment utiliser des jetons d’annulation pour signaler
 ms.date: 08/19/2020
 ms.topic: tutorial
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 30bef5d1a5082fbd3757377dbedb8f9b9d17e218
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 84cd1bb413d20b6c13be8415c13c72b57873b1cf
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053091"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654703"
 ---
 # <a name="cancel-a-list-of-tasks-c"></a>Annuler une liste de tâches (C#)
 
@@ -159,14 +159,14 @@ Ajoutez la méthode suivante en `ProcessUrlAsync` dessous de la `SumPageSizesAsy
 static async Task<int> ProcessUrlAsync(string url, HttpClient client, CancellationToken token)
 {
     HttpResponseMessage response = await client.GetAsync(url, token);
-    byte[] content = await response.Content.ReadAsByteArrayAsync(token);
+    byte[] content = await response.Content.ReadAsByteArrayAsync();
     Console.WriteLine($"{url,-60} {content.Length,10:#,#}");
 
     return content.Length;
 }
 ```
 
-Pour une URL donnée, la méthode utilise l' `client` instance fournie pour obtenir la réponse en tant que `byte[]` . L' <xref:System.Threading.CancellationToken> instance est passée dans les <xref:System.Net.Http.HttpClient.GetAsync(System.String,System.Threading.CancellationToken)?displayProperty=nameWithType> <xref:System.Net.Http.HttpContent.ReadAsByteArrayAsync(System.Threading.CancellationToken)?displayProperty=nameWithType> méthodes et. Le `token` est utilisé pour s’inscrire à l’annulation demandée. La longueur est retournée une fois que l’URL et la longueur sont écrites dans la console.
+Pour une URL donnée, la méthode utilise l' `client` instance fournie pour obtenir la réponse en tant que `byte[]` . L' <xref:System.Threading.CancellationToken> instance est passée dans les <xref:System.Net.Http.HttpClient.GetAsync(System.String,System.Threading.CancellationToken)?displayProperty=nameWithType> <xref:System.Net.Http.HttpContent.ReadAsByteArrayAsync?displayProperty=nameWithType> méthodes et. Le `token` est utilisé pour s’inscrire à l’annulation demandée. La longueur est retournée une fois que l’URL et la longueur sont écrites dans la console.
 
 ### <a name="example-application-output"></a>Exemple de sortie d’application
 

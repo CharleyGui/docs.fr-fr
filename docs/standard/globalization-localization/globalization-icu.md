@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: b52afd80c10afb6723679b2a74f11c7a4f59091f
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 60533fbb215ffe8baba7e2d200faa1c4937294b9
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91608372"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654879"
 ---
 # <a name="net-globalization-and-icu"></a>Globalisation et ICU .NET
 
@@ -107,7 +107,7 @@ Pour les applications autonomes, aucune action spéciale n’est requise de la p
 
 Si vous utilisez ICU via un package NuGet, cela fonctionne dans les applications dépendantes du Framework. NuGet résout les ressources natives et les comprend dans le `deps.json` fichier et dans le répertoire de sortie de l’application sous le `runtimes` répertoire. .NET le charge à partir de là.
 
-Pour les applications dépendantes du Framework (non autonomes) où ICU est consommé à partir d’une build locale, vous devez effectuer des étapes supplémentaires. Le kit de développement logiciel (SDK) .NET ne dispose pas encore d’une fonctionnalité pour les fichiers binaires natifs « libres » à incorporer dans `deps.json` (consultez [ce problème du SDK](https://github.com/dotnet/sdk/issues/11373)). Au lieu de cela, vous pouvez l’activer en ajoutant des informations supplémentaires dans le fichier projet de l’application. Exemple :
+Pour les applications dépendantes du Framework (non autonomes) où ICU est consommé à partir d’une build locale, vous devez effectuer des étapes supplémentaires. Le kit de développement logiciel (SDK) .NET ne dispose pas encore d’une fonctionnalité pour les fichiers binaires natifs « libres » à incorporer dans `deps.json` (consultez [ce problème du SDK](https://github.com/dotnet/sdk/issues/11373)). Au lieu de cela, vous pouvez l’activer en ajoutant des informations supplémentaires dans le fichier projet de l’application. Par exemple :
 
 ```xml
 <ItemGroup>
@@ -166,7 +166,7 @@ Les API suivantes ne sont pas prises en charge :
 
 Les API suivantes sont prises en charge avec des limitations :
 
-- <xref:System.String.Normalize(System.Text.NormalizationForm)?displayProperty=nameWithType> et <xref:System.String.IsNormalized(System.Text.NormalizationForm)?displayProperty=nameWithType> ne prennent pas en charge les formulaires et les rarement utilisés <xref:System.Text.NormalizationForm.FormKC?displayProperty=nameWithType> <xref:System.Text.NormalizationForm.FormKD?displayProperty=nameWithType> .
+- <xref:System.String.Normalize(System.Text.NormalizationForm)?displayProperty=nameWithType> et <xref:System.String.IsNormalized(System.Text.NormalizationForm)?displayProperty=nameWithType> ne prennent pas en charge les formulaires et les rarement utilisés <xref:System.Text.NormalizationForm.FormKC> <xref:System.Text.NormalizationForm.FormKD> .
 - <xref:System.Globalization.RegionInfo.CurrencyNativeName?displayProperty=nameWithType> retourne la même valeur que <xref:System.Globalization.RegionInfo.CurrencyEnglishName?displayProperty=nameWithType>.
 
-En outre, une liste des paramètres régionaux pris en charge est disponible sur la [référentiel dotnet/ICU](https://github.com/dotnet/icu/blob/0f49268ddfd3331ca090f1c51d2baa2f75f6c6c0/icu-filters/optimal.json#L6-L54) .
+En outre, une liste des paramètres régionaux pris en charge est disponible sur la [référentiel dotnet/ICU](https://github.com/dotnet/icu/blob/0f49268ddfd3331ca090f1c51d2baa2f75f6c6c0/icu-filters/optimal.json#L6-L54).

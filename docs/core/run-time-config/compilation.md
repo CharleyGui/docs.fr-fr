@@ -3,12 +3,12 @@ title: Paramètres de configuration de compilation
 description: En savoir plus sur les paramètres d’exécution qui configurent le fonctionnement du compilateur JIT pour les applications .NET Core.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: cfcf9b5fc8d11a4ae35ab9b152f32133cd6930bf
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: e5f9e1245b749864787fb808527d022665197edf
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762004"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654840"
 ---
 # <a name="run-time-configuration-options-for-compilation"></a>Options de configuration au moment de l’exécution pour la compilation
 
@@ -23,13 +23,13 @@ ms.locfileid: "83762004"
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig. JSON** | `System.Runtime.TieredCompilation` | `true`-activé<br/>`false`-désactivé |
-| **MSBuild, propriété** | `TieredCompilation` | `true`-activé<br/>`false`-désactivé |
-| **Variable d’environnement** | `COMPlus_TieredCompilation` | `1`-activé<br/>`0`-désactivé |
+| **runtimeconfig.js** | `System.Runtime.TieredCompilation` | `true` -activé<br/>`false` -désactivé |
+| **MSBuild, propriété** | `TieredCompilation` | `true` -activé<br/>`false` -désactivé |
+| **Variable d'environnement** | `COMPlus_TieredCompilation` | `1` -activé<br/>`0` -désactivé |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*runtimeconfig.jssur le* fichier :
 
 ```json
 {
@@ -63,13 +63,13 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig. JSON** | `System.Runtime.TieredCompilation.QuickJit` | `true`-activé<br/>`false`-désactivé |
-| **MSBuild, propriété** | `TieredCompilationQuickJit` | `true`-activé<br/>`false`-désactivé |
-| **Variable d’environnement** | `COMPlus_TC_QuickJit` | `1`-activé<br/>`0`-désactivé |
+| **runtimeconfig.js** | `System.Runtime.TieredCompilation.QuickJit` | `true` -activé<br/>`false` -désactivé |
+| **MSBuild, propriété** | `TieredCompilationQuickJit` | `true` -activé<br/>`false` -désactivé |
+| **Variable d'environnement** | `COMPlus_TC_QuickJit` | `1` -activé<br/>`0` -désactivé |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*runtimeconfig.jssur le* fichier :
 
 ```json
 {
@@ -102,13 +102,13 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig. JSON** | `System.Runtime.TieredCompilation.QuickJitForLoops` | `false`-désactivé<br/>`true`-activé |
-| **MSBuild, propriété** | `TieredCompilationQuickJitForLoops` | `false`-désactivé<br/>`true`-activé |
-| **Variable d’environnement** | `COMPlus_TC_QuickJitForLoops` | `0`-désactivé<br/>`1`-activé |
+| **runtimeconfig.js** | `System.Runtime.TieredCompilation.QuickJitForLoops` | `false` -désactivé<br/>`true` -activé |
+| **MSBuild, propriété** | `TieredCompilationQuickJitForLoops` | `false` -désactivé<br/>`true` -activé |
+| **Variable d'environnement** | `COMPlus_TC_QuickJitForLoops` | `0` -désactivé<br/>`1` -activé |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*runtimeconfig.jssur le* fichier :
 
 ```json
 {
@@ -135,9 +135,9 @@ Fichier projet :
 ## <a name="readytorun"></a>ReadyToRun
 
 - Configure si le Runtime .NET Core utilise du code précompilé pour les images avec les données ReadyToRun disponibles. La désactivation de cette option force le runtime à compiler le code d’infrastructure juste-à-temps.
-- Pour plus d’informations, consultez [ReadyToRun](../whats-new/dotnet-core-3-0.md#readytorun-images).
+- Pour plus d’informations, consultez [prêt pour l’exécution](../deploying/ready-to-run.md).
 - Si vous omettez ce paramètre, .NET utilise les données ReadyToRun lorsqu’elles sont disponibles. Cela équivaut à définir la valeur sur `1` .
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **Variable d’environnement** | `COMPlus_ReadyToRun` | `1`-activé<br/>`0`-désactivé |
+| **Variable d'environnement** | `COMPlus_ReadyToRun` | `1` -activé<br/>`0` -désactivé |

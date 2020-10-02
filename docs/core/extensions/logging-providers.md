@@ -4,12 +4,12 @@ description: Découvrez comment l’API du fournisseur de journalisation est uti
 author: IEvangelist
 ms.author: dapine
 ms.date: 09/25/2020
-ms.openlocfilehash: 936413be1514e6cea20e28a7d4431c572560d193
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 3bd10564f23744d4798d0a6a4b49a7a29be2bc19
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614718"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654682"
 ---
 # <a name="logging-providers-in-net"></a>Fournisseurs de journalisation dans .NET
 
@@ -79,7 +79,7 @@ Les fournisseurs de journalisation suivants sont fournis par Microsoft, mais pas
 
 ### <a name="console"></a>Console
 
-Le `Console` fournisseur journalise la sortie dans la console. Pour plus d’informations sur `Console` l’affichage des journaux dans le développement, consultez [journalisation de la sortie de dotnet Run et de Visual Studio](logging.md#logging-output-from-dotnet-run-and-visual-studio).
+Le `Console` fournisseur journalise la sortie dans la console.
 
 ### <a name="debug"></a>Débogage
 

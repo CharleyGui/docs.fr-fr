@@ -2,12 +2,12 @@
 title: Publication d’applications
 description: En savoir plus sur les méthodes de publication d’une application .NET Core. .NET Core peut publier des applications spécifiques à une plateforme ou multiplateforme. Vous pouvez publier une application comme autonome ou dépendante du Framework. Chaque mode affecte la façon dont un utilisateur exécute votre application.
 ms.date: 04/01/2020
-ms.openlocfilehash: ece5e46162fd4a8de0b996ba239e89cceca4dbca
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: 27206065c899e41a44685f72cfb35ae57986aa4c
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720109"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654670"
 ---
 # <a name="net-core-application-publishing-overview"></a>Vue d’ensemble de la publication d’applications .NET Core
 
@@ -149,6 +149,34 @@ Publiez une application autonome. Un fichier exécutable Windows 64 bits est cr�
 
 ```dotnet
 dotnet publish -r win-x64
+```
+
+## <a name="publish-with-readytorun-images"></a>Publier avec des images ReadyToRun
+
+La publication avec des images ReadyToRun améliore le temps de démarrage de votre application au prix de l’augmentation de la taille de votre application. Pour publier avec ReadyToRun, consultez [ReadyToRun](ready-to-run.md) pour plus d’informations.
+
+### <a name="advantages"></a>Avantages
+
+- **Amélioration du temps de démarrage**\
+L’application passera moins de temps à exécuter le JIT.
+
+### <a name="disadvantages"></a>Inconvénients
+
+- **Taille supérieure**\
+L’application sera plus volumineuse sur le disque.
+
+### <a name="examples"></a>Exemples
+
+Publiez une application autonome et ReadyToRun. Un fichier exécutable macOS 64 bits est créé.
+
+```dotnet
+dotnet publish -c Release -r osx-x64 -p:PublishReadyToRun=true
+```
+
+Publiez une application autonome et ReadyToRun. Un fichier exécutable Windows 64 bits est créé.
+
+```dotnet
+dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true
 ```
 
 ## <a name="see-also"></a>Voir aussi
