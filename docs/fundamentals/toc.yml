@@ -366,6 +366,8 @@ items:
             items:
               - name: Options générales
                 href: code-analysis/configuration-options.md
+              - name: Fichiers de configuration
+                href: code-analysis/configuration-files.md
               - name: Règles de qualité du code
                 items:
                   - name: Options de règle
@@ -1318,9 +1320,17 @@ items:
       - name: Hôte générique
         href: ../core/extensions/generic-host.md
       - name: Journalisation
-        href: /aspnet/core/fundamentals/logging
+        items:
+          - name: Vue d'ensemble
+            href: ../core/extensions/logging.md
+          - name: Fournisseurs de journalisation
+            href: ../core/extensions/logging-providers.md
+          - name: Implémenter un fournisseur de journalisation personnalisé
+            href: ../core/extensions/custom-logging-provider.md
+          - name: Journalisation haute performance
+            href: ../core/extensions/high-performance-logging.md
       - name: Modèle d’options
-        href: /aspnet/core/fundamentals/configuration/options
+        href: ../core/extensions/options.md
   - name: Accès aux données
     items:
       - name: LINQ
