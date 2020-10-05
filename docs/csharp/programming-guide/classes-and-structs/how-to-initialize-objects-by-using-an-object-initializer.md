@@ -6,18 +6,18 @@ helpviewer_keywords:
 - object initializers [C#], how to use
 - objects [C#], initializing
 ms.assetid: 4b75ebb2-2e29-43de-929c-d736a8f27ce6
-ms.openlocfilehash: 0781b168b0ae8b8383affe19d2721da67f662045
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 97f537a8361c612580cc9bb41cef327e310287c2
+ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865032"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712667"
 ---
 # <a name="how-to-initialize-objects-by-using-an-object-initializer-c-programming-guide"></a>Comment initialiser des objets à l’aide d’un initialiseur d’objet (Guide de programmation C#)
 
 Vous pouvez utiliser des initialiseurs d’objets pour initialiser des objets de type de façon déclarative sans appeler explicitement un constructeur pour le type.  
   
-Les exemples suivants montrent comment utiliser des initialiseurs d’objets avec des objets nommés. Le compilateur traite les initialiseurs d’objets en accédant d’abord au constructeur d’instance par défaut, puis en traitant les initialisations des membres. Ainsi, si le constructeur sans paramètre est déclaré comme `private` dans la classe, les initialiseurs d’objets qui nécessitent un accès public échoueront.
+Les exemples suivants montrent comment utiliser des initialiseurs d’objets avec des objets nommés. Le compilateur traite les initialiseurs d’objets en accédant tout d’abord au constructeur d’instance sans paramètre, puis en traitant les initialisations de membres. Ainsi, si le constructeur sans paramètre est déclaré comme `private` dans la classe, les initialiseurs d’objets qui nécessitent un accès public échoueront.
   
 Vous devez utiliser un initialiseur d’objet si vous définissez un type anonyme. Pour plus d’informations, consultez [Comment retourner des sous-ensembles de propriétés d’éléments dans une requête](how-to-return-subsets-of-element-properties-in-a-query.md).  
   

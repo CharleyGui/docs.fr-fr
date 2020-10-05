@@ -4,12 +4,12 @@ description: Découvrez ce qu’est une application à fichier unique et pourquo
 author: lakshanf
 ms.author: lakshanf
 ms.date: 08/28/2020
-ms.openlocfilehash: b7693d6c119d00a798ef03ed1019f2f04c1828cf
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 0167e62ea46e1c23c3d4ef6ea505ee051ffaf264
+ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654650"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712641"
 ---
 # <a name="single-file-deployment-and-executable"></a>Déploiement et exécutable d’un seul fichier
 
@@ -42,6 +42,16 @@ Nous avons des recommandations pour la résolution des scénarios courants :
 * Pour rechercher le nom de fichier de l’exécutable, utilisez le premier élément de <xref:System.Environment.GetCommandLineArgs?displayProperty=nameWithType> .
 
 * Pour éviter d’expédier entièrement des fichiers libres, envisagez d’utiliser des [ressources incorporées](../../framework/resources/creating-resource-files-for-desktop-apps.md).
+
+## <a name="attaching-a-debugger"></a>Attachement d’un débogueur
+
+Sur Linux, le seul débogueur pouvant être attaché à des processus de fichier unique autonomes ou à des vidages sur incident de débogage est [SOS avec LLDB](../diagnostics/dotnet-sos.md).
+
+Sur Windows et Mac, Visual Studio et VS Code peuvent être utilisés pour déboguer des vidages sur incident. L’attachement à un exécutable autonome à fichier unique en cours d’exécution requiert un fichier supplémentaire : _mscordbi. { dll, so}_.
+
+Sans ce fichier, Visual Studio peut générer l’erreur «Impossible d’attacher au processus. Un composant de débogage n’est pas installé.» et VS Code peut générer l’erreur « Échec de l’attachement au processus : erreur inconnue : 0x80131c3c ».
+
+Pour corriger ces erreurs, _mscordbi_ doit être copié en regard de l’exécutable. _mscordbi_ est `publish` Ed par défaut dans le sous-répertoire avec l’ID d’exécution de l’application. Ainsi, par exemple, s’il s’agit de publier un fichier exécutable à fichier unique autonome à l’aide `dotnet` de l’interface CLI pour Windows à l’aide des paramètres `-r win-x64` , l’exécutable est placé dans _bin/debug/net 5.0/Win-x64/Publish_. Une copie de _mscordbi.dll_ serait présente dans _bin/debug/net 5.0/Win-x64_.
 
 ## <a name="other-considerations"></a>Autres considérations
 

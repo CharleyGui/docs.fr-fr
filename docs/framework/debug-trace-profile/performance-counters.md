@@ -7,12 +7,12 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: 1b5ca6484f45dcee33009d8b8c12a43fa41f63de
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c5ee2fae9167dd508332d8e97a589a8ddb0394ac
+ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554447"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712628"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
 
@@ -130,8 +130,8 @@ La catégorie Réseau CLR .NET de la Console de performances comprend des compte
 |**Connexions établies**|Nombre total cumulatif d'objets <xref:System.Net.Sockets.Socket> pour les sockets de flux qui ont été connectés dans l'<xref:System.AppDomain> depuis le démarrage du processus.|  
 |**Datagrammes reçus**|Nombre total cumulatif de paquets de datagrammes qui ont été reçus par tous les objets <xref:System.Net.Sockets.Socket> dans l'<xref:System.AppDomain> depuis le démarrage du processus.|  
 |**Datagrammes envoyés**|Nombre total cumulatif de paquets de datagrammes qui ont été envoyés par tous les objets <xref:System.Net.Sockets.Socket> dans l'<xref:System.AppDomain> depuis le démarrage du processus.|  
-|**Durée de vie moyenne des requêtes HttpWebRequest**|Durée moyenne d'achèvement pour tous les objets <xref:System.Net.HttpWebRequest> qui se sont terminés dans le dernier intervalle dans l'<xref:System.AppDomain> depuis le démarrage du processus.|  
-|**Durée d’attente moyenne des requêtes HttpWebRequest**|Durée d'attente moyenne pour tous les objets <xref:System.Net.HttpWebRequest> qui ont quitté la file d'attente dans le dernier intervalle dans l'<xref:System.AppDomain> depuis le démarrage du processus.|  
+|**Durée de vie moyenne requêtes HttpWebRequest**|Durée moyenne d'achèvement pour tous les objets <xref:System.Net.HttpWebRequest> qui se sont terminés dans le dernier intervalle dans l'<xref:System.AppDomain> depuis le démarrage du processus.|  
+|**Durée moyenne de file d’attente requêtes HttpWebRequest**|Durée d'attente moyenne pour tous les objets <xref:System.Net.HttpWebRequest> qui ont quitté la file d'attente dans le dernier intervalle dans l'<xref:System.AppDomain> depuis le démarrage du processus.|  
 |**Nombre de requêtes HttpWebRequest créées/s**|Nombre d'objets <xref:System.Net.HttpWebRequest> créés par seconde dans l'<xref:System.AppDomain>.|  
 |**Nombre de requêtes HttpWebRequest mises en file d’attente/s**|Nombre d'objets <xref:System.Net.HttpWebRequest> ajoutés à la file d'attente par seconde dans l'<xref:System.AppDomain>.|  
 |**Nombre de requêtes HttpWebRequest abandonnées/s**|Nombre d'objets <xref:System.Net.HttpWebRequest> par seconde pour lesquels l'application a appelé la méthode <xref:System.Net.HttpWebRequest.Abort%2A> dans l'<xref:System.AppDomain>.|  
@@ -169,11 +169,11 @@ Les compteurs de performance réseau pour les événements sont les suivants :
   
  Les deux compteurs de durée suivants mesurent le temps nécessaire aux objets <xref:System.Net.HttpWebRequest> pour achever la totalité ou une partie de leur cycle de vie :  
   
-- **Durée de vie moyenne des requêtes HttpWebRequest**  
+- **Durée de vie moyenne requêtes HttpWebRequest**  
   
-- **Durée d’attente moyenne des requêtes HttpWebRequest**  
+- **Durée moyenne de file d’attente requêtes HttpWebRequest**  
   
- Le compteur **Durée de vie moyenne des requêtes HttpWebRequest** considère que la durée de vie de la plupart des objets <xref:System.Net.HttpWebRequest> s’étend toujours de la création de l’objet à la fermeture du flux de réponse par l’application. Il existe deux cas rares :  
+ Pour le compteur **durée de vie moyenne requêtes HttpWebRequest** , la durée de vie de la plupart des <xref:System.Net.HttpWebRequest> objets commence toujours par l’heure à laquelle l’objet est créé jusqu’au moment où le flux de réponse est fermé par l’application. Il existe deux cas rares :  
   
 - Si l'application n'appelle jamais la méthode <xref:System.Net.HttpWebRequest.GetResponse%2A> ou <xref:System.Net.HttpWebRequest.BeginGetResponse%2A>, la durée de vie de l'objet <xref:System.Net.HttpWebRequest> est ignorée.  
   
@@ -231,4 +231,4 @@ for (int i = 0; i < Array.Length; i++)
 ## <a name="see-also"></a>Voir aussi
 
 - [Compteurs de performance](performance-counters.md)
-- [Profilage d’exécution](runtime-profiling.md)
+- [Génération de profils d'exécution](runtime-profiling.md)
