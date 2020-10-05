@@ -382,7 +382,7 @@ items:
             items:
               - name: Règles de qualité du code
                 items:
-                  - name: Vue d'ensemble
+                  - name: Vue d’ensemble
                     href: code-analysis/quality-rules/index.md
                   - name: Règles de conception
                     items:
@@ -1028,6 +1028,8 @@ items:
         href: ../core/deploying/runtime-patch-selection.md
       - name: Déploiement et exécutable d’un seul fichier
         href: ../core/deploying/single-file.md
+      - name: ReadyToRun
+        href: ../core/deploying/ready-to-run.md
       - name: Supprimer les déploiements autonomes
         items:
           - name: Présentation et procédure
