@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 07/27/2020
-ms.openlocfilehash: c3207ac7630d794f77c793cc6d1d52e158c0c084
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: b86ceab784fd295acf500986f7e64731eb8ed0a3
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738817"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756107"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -17,6 +17,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [Ordre des balises dans Activity. les balises sont inversées](#order-of-tags-in-activitytags-is-reversed) | 5.0 |
 | [Noms de paramètres modifiés dans RC1](#parameter-names-changed-in-rc1) | 5.0 |
 | [Attributs OSPlatform renommés ou supprimés](#osplatform-attributes-renamed-or-removed) | 5.0 |
 | [Thread. Abort est obsolète](#threadabort-is-obsolete) | 5.0 |
@@ -55,6 +56,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Process. StartInfo lève une exception InvalidOperationException pour les processus que vous n’avez pas démarrés](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [reverse-order-of-tags-in-activity-property](../../../includes/core-changes/corefx/5.0/reverse-order-of-tags-in-activity-property.md)]
+
+***
 
 [!INCLUDE [reference-assembly-parameter-names-rc1](../../../includes/core-changes/corefx/5.0/reference-assembly-parameter-names-rc1.md)]
 

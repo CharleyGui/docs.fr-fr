@@ -3,12 +3,12 @@ title: Bien démarrer avec l’analyse de la syntaxe (API Roslyn)
 description: Une introduction à la façon de parcourir et d’interroger les arborescences de syntaxe.
 ms.date: 02/05/2018
 ms.custom: mvc
-ms.openlocfilehash: 22d1303c9daa2ae35cf130b0c857cd7a5efdbe76
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b9dd909a83877755dc1ebafd58aae892e460b93
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240514"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756154"
 ---
 # <a name="get-started-with-syntax-analysis"></a>Bien démarrer avec l’analyse de la syntaxe
 
@@ -51,12 +51,12 @@ Une arborescence de syntaxe est une structure de données utilisée par les comp
 
 Les quatre principaux blocs de construction des arborescences de syntaxe sont :
 
-* La classe <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>, une instance de celle-ci représentant une arborescence d’analyse entière. <xref:Microsoft.CodeAnalysis.SyntaxTree> est une classe abstraite avec des dérivés spécifiques à un langage. Vous utilisez les méthodes d’analyse <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxTree?displayProperty=nameWithType>de la classe (ou) pour analyser le <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree?displayProperty=nameWithType> texte en C ou Visual Basic.
+* La classe <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>, une instance de celle-ci représentant une arborescence d’analyse entière. <xref:Microsoft.CodeAnalysis.SyntaxTree> est une classe abstraite avec des dérivés spécifiques à un langage. Vous utilisez les méthodes parse de la <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree?displayProperty=nameWithType> classe (ou <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxTree?displayProperty=nameWithType> ) pour analyser le texte en C# (ou Visual Basic).
 * La classe <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType>, dont les instances représentent des constructions syntaxiques, comme des déclarations, des instructions, des clauses et des expressions.
 * La structure <xref:Microsoft.CodeAnalysis.SyntaxToken?displayProperty=nameWithType>, qui représente un mot clé, un identificateur, un opérateur ou un signe de ponctuation individuel.
 * Enfin, la structure <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType>, qui représente les éléments d’information non significatifs du point de vue syntaxique, comme l’espace entre des jetons, des directives de prétraitement et des commentaires.
 
-Tout cela, les jetons et les nœuds sont composés de façon hiérarchique pour former une arborescence représentant complètement tous les éléments d’un fragment de code Visual Basic ou C#. Vous pouvez voir cette structure en utilisant la fenêtre **Visualiseur de syntaxe**. Dans Visual Studio, choisissez **Voir** > **d’autres Visualizer Syntax Windows** > **Syntax Visualizer**. Par exemple, le fichier source C# précédent examiné avec le **Visualiseur de syntaxe** se présente comme dans la figure suivante :
+Tout cela, les jetons et les nœuds sont composés de façon hiérarchique pour former une arborescence représentant complètement tous les éléments d’un fragment de code Visual Basic ou C#. Vous pouvez voir cette structure en utilisant la fenêtre **Visualiseur de syntaxe**. Dans Visual Studio, choisissez **Afficher**  >  **les autres**  >  **Syntax Visualizer**Windows. Par exemple, le fichier source C# précédent examiné avec le **Visualiseur de syntaxe** se présente comme dans la figure suivante :
 
 **SyntaxNode** : Bleu | **SyntaxToken** : Vert | **SyntaxTrivia** : Rouge ![Fichier de code C#](media/walkthrough-csharp-syntax-figure1.png)
 
@@ -77,8 +77,8 @@ Vous pouvez trouver le code complet de cet exemple dans [notre dépôt GitHub](h
 
 Créez un projet C# **Outil d’analyse du code autonome** :
 
-* Dans Visual Studio, choisissez **File** > **New** > **Project** pour afficher le dialogue du nouveau projet.
-* Sous Visual C **'Extensibility** **Visual C#** > , choisissez **Un outil d’analyse de code autonome**.
+* Dans Visual Studio, choisissez **fichier**  >  **nouveau**  >  **projet** pour afficher la boîte de dialogue Nouveau projet.
+* Sous **extensibilité Visual C#**  >  **Extensibility**, choisissez **outil d’analyse du code autonome**.
 * Nommez votre projet « **SyntaxTreeManualTraversal** » et cliquez sur OK.
 
 Vous allez analyser le programme simple « Hello World! » montré précédemment.
@@ -172,7 +172,7 @@ Maintenant que vous avez défini le texte du programme, vous devez créer un `Sy
 
 [!code-csharp[Create the Syntax tree and access the root](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#2 "Create the Syntax tree and access the root node.")]
 
-Ensuite, créez une classe. Dans Visual Studio, choisissez **Project** > **Add New Item**. Dans la boîte de dialogue **Ajouter un nouvel élément**, tapez *UsingCollector.cs* comme nom de fichier.
+Ensuite, créez une classe. Dans Visual Studio, choisissez **projet**  >  **Ajouter un nouvel élément**. Dans la boîte de dialogue **Ajouter un nouvel élément**, tapez *UsingCollector.cs* comme nom de fichier.
 
 Vous implémentez la fonctionnalité de visiteur `using` dans la classe `UsingCollector`. Commencez par faire de la classe `UsingCollector` une dérivée <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker>.
 
@@ -192,7 +192,7 @@ Enfin, vous devez ajouter deux lignes de code pour créer le `UsingCollector` et
 
 [!code-csharp[Create the UsingCollector and visit the root node.](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#6 "Create the UsingCollector and visit the root node.")]
 
-Compilez et exécutez le programme. Vous devez normalement voir la sortie suivante.
+Compilez et exécutez le programme. Vous devez normalement voir la sortie suivante :
 
 ```console
         VisitUsingDirective called with System.
@@ -220,4 +220,4 @@ Microsoft.CSharp
 Press any key to continue . . .
 ```
 
-Félicitations ! Vous avez utilisé **l’API Syntaxe** pour rechercher des types spécifiques d’instructions et de déclarations C# dans du code source C#.
+Félicitations ! Vous avez utilisé **l’API Syntaxe** pour rechercher des types spécifiques d’instructions et de déclarations C# dans du code source C#.

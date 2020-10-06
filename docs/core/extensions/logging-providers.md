@@ -4,12 +4,12 @@ description: Découvrez comment l’API du fournisseur de journalisation est uti
 author: IEvangelist
 ms.author: dapine
 ms.date: 09/25/2020
-ms.openlocfilehash: 3bd10564f23744d4798d0a6a4b49a7a29be2bc19
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 96a5ece10068e39c991e67a36f22e725d6380af5
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654682"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755886"
 ---
 # <a name="logging-providers-in-net"></a>Fournisseurs de journalisation dans .NET
 
@@ -212,7 +212,7 @@ Voici quelques frameworks de journalisation tiers qui fonctionnent avec différe
 
 - [elmah.io](https://elmah.io) ([dépôt GitHub](https://github.com/elmahio/Elmah.Io.Extensions.Logging))
 - [Gelf](https://docs.graylog.org/en/2.3/pages/gelf.html) ([Dépôt GitHub](https://github.com/mattwcole/gelf-extensions-logging))
-- [JSNLog](https://jsnlog.com) ([dépôt GitHub](https://github.com/mperdeck/jsnlog))
+- [JSNLog](http://jsnlog.com) ([dépôt GitHub](https://github.com/mperdeck/jsnlog))
 - [KissLog.net](https://kisslog.net) ([référentiel GitHub](https://github.com/catalingavan/KissLog-net))
 - [Log4net](https://logging.apache.org/log4net) ([GitHub référentiel](https://github.com/apache/logging-log4net))
 - [Loggr](https://loggr.net) ([dépôt GitHub](https://github.com/imobile3/Loggr.Extensions.Logging))

@@ -4,12 +4,12 @@ description: Découvrez comment l’analyseur d’API .NET peut aider à détect
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: f1268d5f208e19f1b69ed487370fb4c96723a204
-ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
+ms.openlocfilehash: a689ae347efbc8c2dd933b2f6920ac6cc06cda7d
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91406243"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756193"
 ---
 # <a name="net-api-analyzer"></a>Analyseur d’API .NET
 
@@ -124,7 +124,7 @@ Tous ces diagnostics sont disponibles non seulement dans l’IDE, mais égalemen
 
 ## <a name="configuration"></a>Configuration
 
-L’utilisateur choisit le mode de traitement des diagnostics : en tant qu’avertissements, en tant qu’erreurs, en tant que suggestions ou désactivés. Par exemple, l’architecte peut décider que les problèmes de compatibilité doivent être traités comme des erreurs, que les appels à certaines API déconseillées génèrent des avertissements, tandis que les autres ne produiront que des suggestions. Vous pouvez configurer cela séparément, ID de diagnostic par ID de diagnostic et projet par projet. Pour cela, accédez au nœud **Dépendances** sous votre projet dans **l’Explorateur de solutions**. Développez les nœuds **dépendances**  >  **analyseurs**  >  **Microsoft. dotnet. Analyzers. Compatibility**. Cliquez avec le bouton droit sur l’ID de diagnostic, sélectionnez **Définir la gravité de l’ensemble de règles** et choisissez l’option souhaitée.
+L’utilisateur choisit le mode de traitement des diagnostics : en tant qu’avertissements, en tant qu’erreurs, en tant que suggestions ou désactivés. Par exemple, l’architecte peut décider que les problèmes de compatibilité doivent être traités comme des erreurs, que les appels à certaines API déconseillées génèrent des avertissements, tandis que les autres ne produiront que des suggestions. Vous pouvez configurer cela séparément, ID de diagnostic par ID de diagnostic et projet par projet. Pour cela, accédez au nœud **Dépendances** sous votre projet dans **l’Explorateur de solutions**. Développez les nœuds **dépendances**  >  **analyseurs**  >  **Microsoft. dotnet. Analyzers. Compatibility**. Cliquez avec le bouton droit sur l’ID de diagnostic, sélectionnez définir la gravité de l' **ensemble de règles**, puis choisissez l’option souhaitée.
 
 ![Capture d’écran de Explorateur de solutions montrant les diagnostics et les boîtes de dialogue contextuelles avec la gravité de l’ensemble de règles.](media/api-analyzer/disable-notifications.jpg)
 

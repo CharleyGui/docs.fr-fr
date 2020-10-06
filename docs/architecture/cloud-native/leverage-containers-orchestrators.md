@@ -2,12 +2,12 @@
 title: Exploitation des conteneurs et des orchestrateurs
 description: Tirer parti des conteneurs et orchestrateurs Kubernetes dans Azure
 ms.date: 05/31/2020
-ms.openlocfilehash: 4d1dfa17fe9b4a683ab71ef2c9f97373579197af
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: b4bdbe5c6b3946658e6c11a40cbbb2feb07cc951
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91155547"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755907"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Exploitation des conteneurs et des orchestrateurs
 
@@ -27,7 +27,7 @@ Bien qu’ils aient l’avantage de simplifier, les architectures monolithiques 
 
 Les applications monolithiques requièrent un déploiement complet de l’ensemble de l’application, même si une petite modification a été apportée. Les déploiements complets peuvent être coûteux et sujets aux erreurs. En outre, ils nécessitent un redémarrage de l’application, ce qui affecte temporairement l’indisponibilité.
 
-### <a name="scaling"></a>Mise à l’échelle
+### <a name="scaling"></a>Mise à l'échelle
 
 Une application monolithique est hébergée entièrement sur une seule instance de machine, ce qui nécessite souvent du matériel à capacité élevée. Si une partie du monolithe requiert une mise à l’échelle, une autre copie de l’application entière doit être déployée sur un autre ordinateur. Avec un monolithique, vous ne pouvez pas mettre à l’échelle des composants d’application individuellement. c’est tout ou rien. La mise à l’échelle des composants qui ne nécessitent pas de mise à l’échelle entraîne une utilisation inefficace et coûteuse des ressources.
 
@@ -216,7 +216,7 @@ Le comportement par défaut lors de l’exécution de l’application est égale
 
 En plus du développement local, [Azure dev Spaces](/azure/dev-spaces/) offre un moyen pratique à plusieurs développeurs de travailler avec leurs propres configurations Kubernetes dans Azure. Comme vous pouvez le voir dans la figure 3-7, vous pouvez également exécuter l’application dans Azure Dev Spaces.
 
-En outre, à tout moment, vous pouvez ajouter la prise en charge de l’ancrage à une application de ASP.NET Core existante. À partir de l’Explorateur de solutions Visual Studio, cliquez avec le bouton droit sur le projet et **Ajoutez**la  >  **prise en charge**de l’ancrage, comme illustré à la figure 3-8.
+En outre, à tout moment, vous pouvez ajouter la prise en charge de l’ancrage à une application de ASP.NET Core existante. À partir de l’Explorateur de solutions Visual Studio, cliquez avec le bouton droit sur le projet et sélectionnez **Ajouter**la  >  **prise en charge**de l’ancrage, comme illustré à la figure 3-8.
 
 ![Ajout de la prise en charge de l’ancrage à Visual Studio](./media/visual-studio-add-docker-support.png)
 

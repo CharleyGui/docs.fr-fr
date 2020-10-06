@@ -13,12 +13,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 20c1d9786eaa184088500cf1b37d33afc421b5e7
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d8fae870bb3a6fdda735a028dc1da20213a68a31
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142022"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756037"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
@@ -87,7 +87,7 @@ L’exécution de la liste d’instructions dans la section de commutation avec 
 
 Chaque étiquette case spécifie un modèle à comparer à l’expression de correspondance (la variable `caseSwitch` dans les exemples précédents). S’ils correspondent, le contrôle est transféré à la section de commutation qui contient la **première** étiquette case correspondante. Si aucun modèle d’étiquette case ne correspond à l’expression de correspondance, le contrôle est transféré à la section comportant l’étiquette case `default`, s’il y en a une. En l’absence de cas `default`, aucune instruction d’aucune section switch n’est exécutée et le contrôle est transféré hors de l’instruction `switch`.
 
-Pour plus d’informations sur l’instruction `switch` et les critères spéciaux, consultez la section [Critères spéciaux avec l’instruction `switch`](#pattern-matching with-the-switch-statement).
+Pour plus d’informations sur l’instruction `switch` et les critères spéciaux, consultez la section [Critères spéciaux avec l’instruction `switch`](#pattern-matching-with-the-switch-statement).
 
 Étant donné que C# 6 ne prend en charge que le modèle de constante et n’autorise pas la répétition de valeurs constantes, les étiquettes case définissent des valeurs qui s’excluent mutuellement, et un seul modèle peut correspondre à l’expression utilisée. Par conséquent, l’ordre dans lequel les instructions `case` apparaissent n’a pas d’importance.
 

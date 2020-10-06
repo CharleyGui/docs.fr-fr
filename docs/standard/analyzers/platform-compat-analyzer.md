@@ -3,12 +3,12 @@ title: Analyseur de compatibilité de plateforme
 description: Analyseur Roslyn qui peut aider à détecter les problèmes de compatibilité de plateforme dans les applications et les bibliothèques multiplateforme.
 author: buyaa-n
 ms.date: 09/17/2020
-ms.openlocfilehash: 4e842e5bbe90dd5006d9b27d0365f908b6441997
-ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
+ms.openlocfilehash: fcd5ec755789ff7f2472d8077dd52f321bf9f167
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91406602"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756180"
 ---
 # <a name="platform-compatibility-analyzer"></a>Analyseur de compatibilité de plateforme
 
@@ -70,7 +70,7 @@ Pour plus d’informations, consultez [des exemples de fonctionnement des attrib
     ```
 
   - **Liste uniquement non prise en charge**. Si la version la plus basse pour chaque plateforme de système d’exploitation est un `[UnsupportedOSPlatform]` attribut, l’API est considérée uniquement comme non prise en charge par les plateformes listées et prise en charge par toutes les autres plateformes. La liste peut avoir `[SupportedOSPlatform]` un attribut avec la même plateforme, mais une version plus récente, ce qui indique que l’API est prise en charge à partir de cette version.
-  
+
     ```csharp
     // The API was unsupported on Windows until version 10.0.19041.0.
     // The API is considered supported everywhere else without constraints.
@@ -79,16 +79,16 @@ Pour plus d’informations, consultez [des exemples de fonctionnement des attrib
     public void ApiSupportedFromWindows8UnsupportFromWindows10();
     ```
 
-  - **Liste incohérente**. Si la version la plus basse pour certaines plateformes est `[SupportedOSPlatform]` alors qu’elle est `[UnsupportedOSPlatform]` destinée à d’autres plateformes, est considérée comme étant incohérente, ce qui n’est pas pris en charge pour l’analyseur.
+  - **Liste incohérente**. Si la version la plus basse pour certaines plateformes est `[SupportedOSPlatform]` alors qu’elle est `[UnsupportedOSPlatform]` destinée à d’autres plateformes, elle est considérée comme étant incohérente, ce qui n’est pas pris en charge pour l’analyseur.
   - Si les versions les plus basses des `[SupportedOSPlatform]` `[UnsupportedOSPlatform]` attributs et sont égales, l’analyseur considère la plateforme comme faisant partie de la **liste uniquement prise en charge**.
-- Les attributs de plateforme peuvent être appliqués aux types, aux membres (méthodes, champs, propriétés et événements) et aux assemblys avec un nom et/ou une version de plateforme différents.
+- Les attributs de plateforme peuvent être appliqués à des types, des membres (méthodes, champs, propriétés et événements) et à des assemblys avec des noms ou des versions de plateforme différents.
   - Les attributs appliqués au niveau supérieur `target` affectent tous ses membres et types.
   - Les attributs de niveau enfant s’appliquent uniquement s’ils adhèrent à la règle. les annotations enfants peuvent limiter la prise en charge des plateformes, mais elles ne peuvent pas les élargir.
-    - Si le parent n’a que la liste des attributs **pris en charge** , les attributs du membre enfant n’ont pas pu ajouter une nouvelle prise en charge de plateforme, car cela permettrait d’étendre la prise en charge du parent. une nouvelle plateforme ne peut être ajoutée qu’au parent lui-même. Toutefois, elle peut avoir `Supported` un attribut pour la même plate-forme avec des versions ultérieures, car cela permet de réduire la prise en charge. De même, il peut avoir un `Unsupported` attribut avec la même plate-forme que cela permet également de réduire la prise en charge du parent.
-    - Lorsque le parent n’a qu’une liste **non prise en charge** , les attributs des membres enfants peuvent ajouter une nouvelle prise en charge de la plateforme, car cela permettrait de restreindre la prise en charge du parent, mais il ne peut pas avoir `Supported` d’attribut pour la même plateforme que dans le parent, ce qui permettrait d’étendre la prise en charge du parent. La prise en charge de la même plate-forme peut être ajoutée uniquement au niveau parent où l’attribut d’origine est `Unsupported` appliqué.
-  - Si `[SupportedOSPlatform("platformVersion")]` est appliqué plusieurs fois pour une API portant le même `platform` nom, seul celui avec la version minimale est pris en compte par l’analyseur.
-  - Si `[UnsupportedOSPlatform("platformVersion")]` est appliqué plus de deux fois pour une API portant le même `platform` nom, seuls les deux avec les versions les plus anciennes sont pris en compte par l’analyseur.
-  
+    - Si le parent n’a que la liste des attributs **pris en charge** , les attributs des membres enfants ne peuvent pas ajouter de nouvelle prise en charge de plateforme, car cela permettrait d’étendre la prise en charge du parent La prise en charge d’une nouvelle plateforme peut uniquement être ajoutée au parent lui-même. Toutefois, l’enfant peut avoir l' `Supported` attribut pour la même plate-forme avec les versions ultérieures, ce qui réduit la prise en charge. En outre, l’enfant peut avoir l' `Unsupported` attribut avec la même plateforme que celle qui restreint également la prise en charge du parent.
+    - Lorsque le parent n’a qu’une liste **non prise en charge** , les attributs des membres enfants peuvent ajouter la prise en charge d’une nouvelle plateforme, car cela réduit la prise en charge du parent. Mais il ne peut pas avoir l' `Supported` attribut pour la même plateforme que le parent, car cela étend la prise en charge du parent. La prise en charge de la même plate-forme peut être ajoutée uniquement au parent où l’attribut d’origine `Unsupported` a été appliqué.
+  - Si `[SupportedOSPlatform("platformVersion")]` est appliqué plus d’une fois pour une API portant le même `platform` nom, l’analyseur considère uniquement celui avec la version minimale.
+  - Si `[UnsupportedOSPlatform("platformVersion")]` est appliqué plus de deux fois pour une API portant le même `platform` nom, l’analyseur considère uniquement les deux avec les versions les plus anciennes.
+
   > [!NOTE]
   > Une API qui était prise en charge initialement mais non prise en charge (supprimée) dans une version ultérieure n’est pas censée être reprise dans une version ultérieure.
 
@@ -123,7 +123,7 @@ Pour plus d’informations, consultez [des exemples de fonctionnement des attrib
       // warns: 'SupportedOnWindowsAndLinuxOnly' is supported on 'Linux'
       SupportedOnWindowsAndLinuxOnly();
 
-      // warns: 'ApiSupportedFromWindows8UnsupportFromWindows10' is supported on 'windows' 8.0 and later  
+      // warns: 'ApiSupportedFromWindows8UnsupportFromWindows10' is supported on 'windows' 8.0 and later
       // warns: 'ApiSupportedFromWindows8UnsupportFromWindows10' is unsupported on 'windows' 10.0.19041.0 and later
       ApiSupportedFromWindows8UnsupportFromWindows10();
 
@@ -133,7 +133,7 @@ Pour plus d’informations, consultez [des exemples de fonctionnement des attrib
   }
 
   // an API not supported on android but supported on all other.
-  [UnsupportedOSPlatform("android")]  
+  [UnsupportedOSPlatform("android")]
   public void DoesNotWorkOnAndroid() { }
 
   // an API was unsupported on Windows until version 8.0.
@@ -154,11 +154,11 @@ Pour plus d’informations, consultez [des exemples de fonctionnement des attrib
   {
       DoesNotWorkOnAndroid(); // warns 'DoesNotWorkOnAndroid' is unsupported on 'android'
 
-      // warns:'StartedWindowsSupportFromVersion8' is unsupported on 'windows'  
+      // warns:'StartedWindowsSupportFromVersion8' is unsupported on 'windows'
       // warns:'StartedWindowsSupportFromVersion8' is supported on 'windows' 8.0 and later
       StartedWindowsSupportFromVersion8();
 
-      // warns:'StartedWindowsSupportFrom8UnsupportedFrom10' is unsupported on 'windows'  
+      // warns:'StartedWindowsSupportFrom8UnsupportedFrom10' is unsupported on 'windows'
       // warns:'StartedWindowsSupportFrom8UnsupportedFrom10' is supported on 'windows' 8.0 and later
       // even there were 3 diagnostics found analyzer warn only for the first 2.
       StartedWindowsSupportFrom8UnsupportedFrom10();
@@ -177,7 +177,7 @@ La méthode recommandée pour traiter ces diagnostics consiste à s’assurer qu
 
 - **Supprimez le code**. Ce n’est généralement pas ce que vous voulez, car cela signifie que vous perdez la fidélité lorsque votre code est utilisé par les utilisateurs Windows. Dans les cas où une alternative multiplateforme existe, il est probablement préférable de l’utiliser sur des API spécifiques à la plateforme.
 
-- **Supprimez l’avertissement**. Vous pouvez également simplement supprimer l’avertissement à l’aide de editor.config ou `#pragma warning disable ca1416` . Toutefois, cette option doit être en dernier recours lors de l’utilisation d’API spécifiques à la plateforme.
+- **Supprimez l’avertissement**. Vous pouvez également simplement supprimer l’avertissement à l’aide d’une entrée EditorConfig ou `#pragma warning disable ca1416` . Toutefois, cette option doit être en dernier recours lors de l’utilisation d’API spécifiques à la plateforme.
 
 ### <a name="guard-platform-specific-apis-with-guard-methods"></a>Protéger les API spécifiques à une plateforme avec des méthodes Guard
 
@@ -231,7 +231,7 @@ Le nom de la plateforme de la méthode Guard doit correspondre au nom de la plat
   }
   ```
 
-- Si vous devez protéger un code qui cible netstandard ou netcoreapp où de nouvelles <xref:System.OperatingSystem> API ne sont pas disponibles <xref:System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform%2A?displayProperty=nameWithType> , l’API peut être utilisée et sera respectée par l’analyseur. Mais elle n’est pas aussi optimisée que les nouvelles API ajoutées dans <xref:System.OperatingSystem> . Si la plateforme n’est pas prise en charge dans la <xref:System.Runtime.InteropServices.OSPlatform> structure, vous pouvez utiliser <xref:System.Runtime.InteropServices.OSPlatform.Create%2A?displayProperty=nameWithType> (« plateforme ») qui est également respecté par l’analyseur.
+- Si vous devez protéger du code qui cible `netstandard` ou `netcoreapp` où de nouvelles <xref:System.OperatingSystem> API ne sont pas disponibles, l' <xref:System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform%2A?displayProperty=nameWithType> API peut être utilisée et sera respectée par l’analyseur. Mais elle n’est pas aussi optimisée que les nouvelles API ajoutées dans <xref:System.OperatingSystem> . Si la plateforme n’est pas prise en charge dans la <xref:System.Runtime.InteropServices.OSPlatform> structure, vous pouvez appeler <xref:System.Runtime.InteropServices.OSPlatform.Create(System.String)?displayProperty=nameWithType> et passer le nom de la plateforme, que l’analyseur respecte également.
 
   ```csharp
   public void CallingSupportedOnlyApis()
@@ -316,7 +316,7 @@ Les noms de plateforme doivent correspondre à l’API dépendante de la platefo
   }
 
   // an API not supported on Android but supported on all other.
-  [UnsupportedOSPlatform("android")]  
+  [UnsupportedOSPlatform("android")]
   public void DoesNotWorkOnAndroid() { }
 
   // an API was unsupported on Windows until version 8.0.
