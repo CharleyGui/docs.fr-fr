@@ -4,96 +4,96 @@
     - name: '<system.Net>, élément (paramètres réseau)'
       href: system-net-element-network-settings.md
       items:
-        - name: '<authenticationModules>, élément (paramètres réseau)'
+        - name: '<authenticationModules>, élément'
           href: authenticationmodules-element-network-settings.md
           items:
-            - name: '<add>, élément d’authenticationModules (paramètres réseau)'
+            - name: '<add>, élément pour authenticationModules'
               href: add-element-for-authenticationmodules-network-settings.md
-            - name: '<remove>, élément d’authenticationModules (paramètres réseau)'
+            - name: '<remove>, élément pour authenticationModules'
               href: remove-element-for-authenticationmodules-network-settings.md
-            - name: '<clear>, élément d’authenticationModules (paramètres réseau)'
+            - name: '<clear>, élément pour authenticationModules'
               href: clear-element-for-authenticationmodules-network-settings.md
-        - name: '<connectionManagement>, élément (paramètres réseau)'
+        - name: '<connectionManagement>, élément'
           href: connectionmanagement-element-network-settings.md
           items:
-            - name: '<add>, élément de connectionManagement (paramètres réseau)'
+            - name: '<add>, élément pour connectionManagement'
               href: add-element-for-connectionmanagement-network-settings.md
-            - name: '<clear>, élément de connectionManagement (paramètres réseau)'
+            - name: '<clear>, élément pour connectionManagement'
               href: clear-element-for-connectionmanagement-network-settings.md
-            - name: '<remove>, élément de connectionManagement (paramètres réseau)'
+            - name: '<remove>, élément pour connectionManagement'
               href: remove-element-for-connectionmanagement-network-settings.md
-        - name: '<defaultProxy>, élément (paramètres réseau)'
+        - name: <defaultProxy> (élément)
           href: defaultproxy-element-network-settings.md
           items:
-            - name: '<bypasslist>, élément (paramètres réseau)'
+            - name: '<bypasslist>, élément'
               href: bypasslist-element-network-settings.md
               items:
-                - name: '<add>, élément de bypasslist (paramètres réseau)'
+                - name: '<add>, élément pour bypasslist'
                   href: add-element-for-bypasslist-network-settings.md
-                - name: '<clear>, élément de bypasslist (paramètres réseau)'
+                - name: '<clear>, élément pour bypasslist'
                   href: clear-element-for-bypasslist-network-settings.md
-                - name: '<remove>, élément de bypasslist (paramètres réseau)'
+                - name: '<remove>, élément pour bypasslist'
                   href: remove-element-for-bypasslist-network-settings.md
-            - name: '<module>, élément (paramètres réseau)'
+            - name: <module> (élément)
               href: module-element-network-settings.md
-            - name: '<proxy>, élément (paramètres réseau)'
+            - name: <proxy> (élément)
               href: proxy-element-network-settings.md
-        - name: '<mailSettings>, élément (paramètres réseau)'
+        - name: <mailSettings> (élément)
           href: mailsettings-element-network-settings.md
           items:
-            - name: '<smtp>, élément (paramètres réseau)'
+            - name: <smtp> (élément)
               href: smtp-element-network-settings.md
               items:
-                - name: '<specifiedPickupDirectory>, élément (paramètres réseau)'
+                - name: <specifiedPickupDirectory> (élément)
                   href: specifiedpickupdirectory-element-network-settings.md
-                - name: '<network>, élément (paramètres réseau)'
+                - name: <network> (élément)
                   href: network-element-network-settings.md
-        - name: '<requestCaching>, élément (paramètres réseau)'
+        - name: <requestCaching> (élément)
           href: requestcaching-element-network-settings.md
           items:
-            - name: '<defaultHttpCachePolicy>, élément (paramètres réseau)'
+            - name: <defaultHttpCachePolicy> (élément)
               href: defaulthttpcachepolicy-element-network-settings.md
-            - name: '<defaultFtpCachePolicy>, élément (paramètres réseau)'
+            - name: <defaultFtpCachePolicy> (élément)
               href: defaultftpcachepolicy-element-network-settings.md
-        - name: '<settings>, élément (paramètres réseau)'
+        - name: <settings> (élément)
           href: settings-element-network-settings.md
           items:
-            - name: '<httpWebRequest>, élément (paramètres réseau)'
+            - name: <httpWebRequest> (élément)
               href: httpwebrequest-element-network-settings.md
-            - name: '<ipv6>, élément (paramètres réseau)'
+            - name: <ipv6> (élément)
               href: ipv6-element-network-settings.md
-            - name: '<performanceCounter>, élément (paramètres réseau)'
+            - name: <performanceCounter> (élément)
               href: performancecounter-element-network-settings.md
-            - name: '<servicePointManager>, élément (paramètres réseau)'
+            - name: <servicePointManager> (élément)
               href: servicepointmanager-element-network-settings.md
-            - name: '<socket>, élément (paramètres réseau)'
+            - name: <socket> (élément)
               href: socket-element-network-settings.md
-            - name: '<webProxyScript>, élément (paramètres réseau)'
+            - name: <webProxyScript> (élément)
               href: webproxyscript-element-network-settings.md
-            - name: '<httpListener>, élément (paramètres réseau)'
+            - name: <httpListener> (élément)
               href: httplistener-element-network-settings.md
-        - name: '<webRequestModules>, élément (paramètres réseau)'
+        - name: '<webRequestModules>, élément'
           href: webrequestmodules-element-network-settings.md
           items:
-            - name: '<add>, élément de webRequestModules (paramètres réseau)'
+            - name: '<add>, élément pour webRequestModules'
               href: add-element-for-webrequestmodules-network-settings.md
-            - name: '<remove>, élément de webRequestModules (paramètres réseau)'
+            - name: '<remove>, élément pour webRequestModules'
               href: remove-element-for-webrequestmodules-network-settings.md
-            - name: '<clear>, élément de webRequestModules (paramètres réseau)'
+            - name: '<clear>, élément pour webRequestModules'
               href: clear-element-for-webrequestmodules-network-settings.md
     - name: '<uri>, élément (paramètres d’URI)'
       href: uri-element-uri-settings.md
       items:
-        - name: '<idn>, élément (paramètres d’URI)'
+        - name: <idn> (élément)
           href: idn-element-uri-settings.md
-        - name: '<iriParsing>, élément (paramètres d’URI)'
+        - name: <iriParsing> (élément)
           href: iriparsing-element-uri-settings.md
-        - name: '<schemeSettings>, élément (paramètres d’URI)'
+        - name: '<schemeSettings>, élément'
           href: schemesettings-element-uri-settings.md
           items:
-            - name: '<add>, élément de schemeSettings (paramètres d’URI)'
+            - name: '<add>, élément pour schemeSettings'
               href: add-element-for-schemesettings-uri-settings.md
-            - name: '<clear>, élément de schemeSettings (paramètres d’URI)'
+            - name: '<clear>, élément pour schemeSettings'
               href: clear-element-for-schemesettings-uri-settings.md
-            - name: '<remove>, élément de schemeSettings (paramètres d’URI)'
+            - name: '<remove>, élément pour schemeSettings'
               href: remove-element-for-schemesettings-uri-settings.md
