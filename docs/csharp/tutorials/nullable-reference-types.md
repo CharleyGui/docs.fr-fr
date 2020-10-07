@@ -4,12 +4,12 @@ description: Ce tutoriel avancé présente les types référence Nullable. Il ex
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 70e6a7a906bc9a35918cf3e26c3e23bd0cfdafde
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: bd575b226a2ff61e938719b064ff5ede0cf66013
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755848"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805178"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable
 
@@ -223,4 +223,4 @@ En savoir plus en migrant une application existante pour utiliser des types de r
 > [Mettre à niveau une application pour utiliser des types de référence nullable](upgrade-to-nullable-references.md)
 
 Découvrez comment utiliser le type de référence Nullable quand vous utilisez Entity Framework :
-> [Notions de base de l’Entity Framework Core : utilisation des types de référence Nullable](https://docs.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types)
+> [Notions de base de l’Entity Framework Core : utilisation des types de référence Nullable](/ef/core/miscellaneous/nullable-reference-types)

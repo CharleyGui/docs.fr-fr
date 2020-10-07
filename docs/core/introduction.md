@@ -4,20 +4,20 @@ description: Découvrez .NET, une plateforme de développement Open source gratu
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: c161daed58c94940734d057bb1b42f3b87caf97c
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 2b339db769c283ff21e6ad48d5b672794e43a76b
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756062"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804794"
 ---
-# <a name="introduction-to-net"></a>Présentation de .NET
+# <a name="introduction-to-net"></a>Introduction à .NET
 
 .NET est une plateforme de développement Open source gratuite pour la création de nombreux types d’applications, telles que :
 
 * [Applications Web, API Web et microservices](/aspnet/core/introduction-to-aspnet-core#recommended-learning-path)
 * [Fonctions sans serveur dans le Cloud](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-csharp)
-* [Applications cloud natives](/dotnet/architecture/cloud-native/)
+* [Applications cloud natives](../architecture/cloud-native/index.md)
 * [Applications mobiles](https://dotnet.microsoft.com/learn/xamarin/hello-world-tutorial/intro)
 * Applications de bureau
   * [WPF Windows](/dotnet/desktop/wpf/)
@@ -62,7 +62,7 @@ Pour plus d’informations, consultez [stratégie de cycle de vie du système d�
 
 Pour plus d’informations, consultez la [liste des dépôts de projet sur GitHub.com](https://github.com/dotnet/core/blob/master/Documentation/core-repos.md).
 
-## <a name="support"></a>Assistance
+## <a name="support"></a>Support
 
 .NET est pris en charge par Microsoft sur Windows, macOS et Linux. Il est régulièrement mis à jour pour la sécurité et la qualité, le deuxième mardi de chaque mois.
 

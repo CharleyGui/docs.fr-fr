@@ -2,15 +2,15 @@
 title: Modifications avec rupture ASP.NET Core
 titleSuffix: ''
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 09/29/2020
+ms.date: 10/06/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 0c7ed795868ad4a03dd52e2e23014a3d0f220c86
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 37a366e30f7dc25a5da430de777755b8c9f6dd38
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609328"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804944"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -41,6 +41,7 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 - [Éblouissant : fonctionnalité ProtectedBrowserStorage déplacée vers le Framework partagé](#blazor-protectedbrowserstorage-feature-moved-to-shared-framework)
 - [Éblouissant : les champs publics ReadOnly RenderTreeFrame sont devenus des propriétés](#blazor-rendertreeframe-readonly-public-fields-have-become-properties)
 - [Éblouissante : version cible du .NET Framework des packages NuGet modifiée](#blazor-target-framework-of-nuget-packages-changed)
+- [Éblouissant : prise en charge mise à jour du navigateur](#blazor-updated-browser-support)
 - [Caching : propriété CompactOnMemoryPressure supprimée](#caching-compactonmemorypressure-property-removed)
 - [Mise en cache : Microsoft. extensions. Caching. SqlServer utilise le nouveau package SqlClient](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
 - [Mise en cache : les types « pubternal » ResponseCaching sont devenus internes](#caching-responsecaching-pubternal-types-changed-to-internal)
@@ -122,7 +123,7 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 
 ***
 
-[!INCLUDE [binaryformatter-serialization-obsolete](../../../includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
+[!INCLUDE[Serialization: BinaryFormatter serialization obsolete](~/includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
 
 ***
 
@@ -143,6 +144,10 @@ Les modifications avec rupture suivantes dans ASP.NET Core 3,0, 3,1 et 5,0 sont 
 ***
 
 [!INCLUDE[Blazor: Target framework of NuGet packages changed](~/includes/core-changes/aspnetcore/5.0/blazor-packages-target-framework-changed.md)]
+
+***
+
+[!INCLUDE[Blazor: Updated browser support](~/includes/core-changes/aspnetcore/5.0/blazor-browser-support-updated.md)]
 
 ***
 

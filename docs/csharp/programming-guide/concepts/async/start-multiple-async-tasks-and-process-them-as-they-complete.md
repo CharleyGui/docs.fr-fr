@@ -3,12 +3,12 @@ title: Traiter les tâches asynchrones terminées
 description: Cet exemple montre comment utiliser Task. WhenAny en C# pour démarrer plusieurs tâches et traiter leurs résultats à mesure qu’ils se terminent, au lieu de les traiter dans l’ordre de début.
 ms.date: 08/19/2020
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: 520953eaf851dc82440e39b348aa4b246255e126
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 860e94a9c3973ce56e7321741a1136f752aa3d18
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557305"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805237"
 ---
 # <a name="process-asynchronous-tasks-as-they-complete-c"></a>Traiter les tâches asynchrones à mesure qu’elles se terminent (C#)
 
@@ -77,7 +77,7 @@ Le point d’entrée principal dans l’application console est la `Main` métho
 static Task Main() => SumPageSizesAsync();
 ```
 
-La méthode mise à jour `Main` est maintenant considérée comme une [main asynchrone](../../../whats-new/csharp-7-1.md#async-main), ce qui permet d’obtenir un point d’entrée asynchrone dans l’exécutable. Il s’agit d’un appel à `SumPageSizesAsync` .
+La méthode mise à jour `Main` est maintenant considérée comme une [main asynchrone](../../../whats-new/csharp-7.md#async-main), ce qui permet d’obtenir un point d’entrée asynchrone dans l’exécutable. Il s’agit d’un appel à `SumPageSizesAsync` .
 
 ## <a name="create-the-asynchronous-sum-page-sizes-method"></a>Créer la méthode de taille de page Sum asynchrone
 

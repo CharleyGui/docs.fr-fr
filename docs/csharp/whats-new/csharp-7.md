@@ -3,12 +3,12 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 10/02/2020
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 774bf9860d929d725f3a2bda4a52bc75ae3921fe
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 28f2d8f0b61d8f05e558834fc1a96fc020201a08
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755822"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805263"
 ---
 # <a name="whats-new-in-c-70-through-c-73"></a>Nouveautés de C# 7,0 par C# 7,3
 
@@ -41,9 +41,9 @@ C# 7.0-7.3 ajoute ces fonctionnalités et thèmes au langage C# :
   - Les arguments nommés peuvent être suivis par des arguments de position.
 - [`private protected` modificateur d’accès](#private-protected-access-modifier)
   - Le modificateur d’accès `private protected` active l’accès pour les classes dérivées dans le même assembly.
-- [Résolution de surcharge améliorée](#improved-overload-resolution)
+- [Résolution de surcharge améliorée](#improved-overload-candidates)
   - Nouvelles règles pour résoudre l’ambiguïté de résolution de surcharge.
-- [Techniques d’écriture de code safe et efficace](#safe-efficient-code-enhancements)
+- [Techniques d’écriture de code safe et efficace](#enabling-more-efficient-safe-code)
   - Une combinaison des améliorations de la syntaxe qui permettent d’utiliser les types valeur avec la sémantique de référence.
 
 Enfin, le compilateur a de nouvelles options :

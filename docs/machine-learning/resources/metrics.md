@@ -2,12 +2,12 @@
 title: Métriques ML.NET
 description: Découvrir les métriques qui sont utilisées pour évaluer les performances d’un modèle ML.NET
 ms.date: 12/17/2019
-ms.openlocfilehash: 4aca8dbdd9f137509ab9167ecc77f9ca6994e415
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 046e0a3feea2da702dfef5ca9ce4f498fce5fb26
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679506"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804820"
 ---
 # <a name="evaluate-your-mlnet-model-with-metrics"></a>Évaluer votre modèle ML.NET à l’aide de mesures
 
@@ -23,7 +23,7 @@ Par exemple, pour la tâche de classification, le modèle est évalué en mesura
 |-----------|-----------------------|-----------|
 | **Précision** |  La [précision](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification) est la proportion de prédictions correctes avec un jeu de données de test. Elle représente le rapport entre le nombre de prédictions correctes et le nombre total d’échantillons d’entrée. Il fonctionne bien s’il existe un nombre similaire d’exemples appartenant à chaque classe.| **Plus la précision est proche de 1,00, meilleure est la qualité**. Toutefois, la valeur exacte 1,00 indique un problème (en règle générale, une fuite d’étiquette/cible, un surapprentissage ou un test avec des données d’entraînement). Lorsque les données de test sont déséquilibrées (lorsque la plupart des instances appartiennent à l’une des classes), le jeu de données est petit, ou les scores sont 0,00 ou 1,00, la précision ne capture pas vraiment l’efficacité d’un classifieur et vous devez vérifier des métriques supplémentaires. |
 | **AUC** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) ou *Area sous la courbe* mesure la zone sous la courbe créée en balayant le taux réel positif par rapport au taux de faux positifs.  |   **Plus la précision est proche de 1,00, meilleure est la qualité**. Elle doit être supérieure à 0,50 pour qu’un modèle soit acceptable. Un modèle avec AUC de 0,50 ou moins est inutile. |
-| **Zone sous une courbe de précision/rappel** | [aucPR](https://www.coursera.org/lecture/ml-classification/precision-recall-curve-rENu8) ou *zone sous la courbe d’une courbe de rappel de précision*: mesure utile du succès de la prédiction lorsque les classes sont déséquilibrées (jeux de données très faussés). |  **Plus la précision est proche de 1,00, meilleure est la qualité**. Des scores élevés proches de 1,00 montrent que le classifieur retourne des résultats précis (précision élevée) ainsi que la majorité de tous les résultats positifs (rappel élevé). |
+| **Zone sous une courbe de précision/rappel** | aucPR ou *zone sous la courbe d’une courbe de rappel de précision*: mesure utile du succès de la prédiction lorsque les classes sont déséquilibrées (jeux de données très faussés). |  **Plus la précision est proche de 1,00, meilleure est la qualité**. Des scores élevés proches de 1,00 montrent que le classifieur retourne des résultats précis (précision élevée) ainsi que la majorité de tous les résultats positifs (rappel élevé). |
 | **Score F1** | [Score F1](https://en.wikipedia.org/wiki/F1_score) également appelé *balanced F-score or F-measure*. Il s’agit de la moyenne harmonique de la précision et du rappel. Le score F1 est utile quand vous souhaitez rechercher un équilibre entre la précision et le rappel.| **Plus la précision est proche de 1,00, meilleure est la qualité**.  Un score F1 atteint sa meilleure valeur à 1,00 et la pire à 0,00. Il vous indique le degré de précision de votre classifieur. |
 
 Pour plus d’informations sur les métriques de classification binaire, consultez les articles suivants :

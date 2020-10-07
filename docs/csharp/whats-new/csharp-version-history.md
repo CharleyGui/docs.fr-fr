@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: b5c320e4c55803547fa44793a46e4a3da65bd0cb
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 349f2cfbe0fc93060eb6927ee8c3528c16b99aca
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063469"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805087"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -19,11 +19,11 @@ Cet article fournit un historique de chaque version majeure du langage C#. L’�
 
 Les outils de build C# considèrent la dernière version majeure du langage comme la version du langage par défaut. Il peut exister des versions intermédiaires entre les versions majeures, détaillées dans d’autres articles de cette section. Pour utiliser les fonctionnalités les plus récentes dans une version mineure, vous devez [configurer la version du langage du compilateur](../language-reference/configure-language-version.md) et sélectionner la version. Il y a eu des mises en production à trois points depuis C# 7,0 :
 
-- [C# 7,3](csharp-7-3.md):
+- C# 7,3 :
   - C# 7.3 est disponible à compter de [Visual Studio 2017 version 15.7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit SDK .NET Core 2.1](../../core/whats-new/dotnet-core-2-1.md).
-- [C# 7,2](csharp-7-2.md):
+- C# 7,2 :
   - C# 7,2 est disponible à partir de [Visual Studio 2017 version 15,5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit de développement logiciel (SDK) .net Core 2,0](../../core/whats-new/dotnet-core-2-0.md).
-- [C# 7,1](csharp-7-1.md):
+- C# 7,1 :
   - C# 7.1 est disponible à compter de [Visual Studio 2017 version 15.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit SDK .NET Core 2.0](../../core/whats-new/dotnet-core-2-0.md).
 
 ## <a name="c-version-10"></a>C# version 1.0
@@ -157,7 +157,7 @@ Une autre nouveauté a été proposée avec cette version, même s’il ne s’a
 C# version 7,0 a été publié avec Visual Studio 2017. Cette version propose des évolutions intéressantes dans l’esprit de C# 6.0, mais sans le compilateur en tant que service. Voici quelques-unes des nouvelles fonctionnalités :
 
 - [Variables out](./csharp-7.md#out-variables)
-- [Tuples et déconstruction](./csharp-7.md#tuples)
+- [Tuples et déconstruction](./csharp-7.md#tuples-and-discards)
 - [Critères spéciaux](./csharp-7.md#pattern-matching)
 - [Fonctions locales](./csharp-7.md#local-functions)
 - [Membres expression-bodied étendus](./csharp-7.md#more-expression-bodied-members)
@@ -165,7 +165,7 @@ C# version 7,0 a été publié avec Visual Studio 2017. Cette version propose de
 
 Autres fonctionnalités disponibles :
 
-- [Éléments ignorés](./csharp-7.md#discards)
+- [Éléments ignorés](./csharp-7.md#tuples-and-discards)
 - [Littéraux binaires et séparateurs numériques](./csharp-7.md#numeric-literal-syntax-improvements)
 - [Expressions throw](./csharp-7.md#throw-expressions)
 
@@ -179,30 +179,30 @@ C# a démarré la publication de *versions point* avec c# 7,1. Cette version a a
 
 Les nouvelles fonctionnalités de langage de cette version sont :
 
-- [`async``Main`méthode](./csharp-7-1.md#async-main)
+- [`async``Main`méthode](./csharp-7.md#async-main)
   - Le point d’entrée pour une application peut avoir le modificateur `async`.
-- [`default`expressions littérales](./csharp-7-1.md#default-literal-expressions)
+- [`default` expressions littérales](./csharp-7.md#default-literal-expressions)
   - Vous pouvez utiliser des expressions littérales default dans les expressions de valeur par défaut quand le type cible peut être inféré.
-- [Noms des éléments de tuple inférés](./csharp-7-1.md#inferred-tuple-element-names)
+- [Noms des éléments de tuple inférés](./csharp-7.md#tuples-and-discards)
   - Les noms des éléments de tuple peuvent être inférés dans de nombreux cas à partir de l’initialisation du tuple.
-- [Critères spéciaux sur les paramètres de type générique](./csharp-7-1.md#pattern-matching-on-generic-type-parameters)
+- [Critères spéciaux sur les paramètres de type générique](./csharp-7.md#pattern-matching)
   - Il est possible d’utiliser des expressions de critères spéciaux sur les variables dont le type est un paramètre de type générique.
 
-Enfin, le compilateur a deux options, `-refout` et `-refonly`, qui contrôlent la [génération d’assemblys de références](./csharp-7-1.md#reference-assembly-generation).
+Enfin, le compilateur a deux options, `-refout` et `-refonly`, qui contrôlent la [génération d’assemblys de références](./csharp-7.md#reference-assembly-generation).
 
 ## <a name="c-version-72"></a>Version C# 7,2
 
 C# 7,2 a ajouté plusieurs fonctionnalités de langage de petite taille :
 
-- [Techniques d’écriture de code safe et efficace](./csharp-7-2.md#safe-efficient-code-enhancements)
+- [Techniques d’écriture de code safe et efficace](./csharp-7.md#enabling-more-efficient-safe-code)
   - Une combinaison des améliorations de la syntaxe qui permettent d’utiliser les types valeur avec la sémantique de référence.
-- [Arguments nommés non placés en position de fin](./csharp-7-2.md#non-trailing-named-arguments)
+- [Arguments nommés non placés en position de fin](./csharp-7.md#non-trailing-named-arguments)
   - Les arguments nommés peuvent être suivis par des arguments de position.
-- [Traits de soulignement de début dans les littéraux numériques](./csharp-7-2.md#leading-underscores-in-numeric-literals)
+- [Traits de soulignement de début dans les littéraux numériques](./csharp-7.md#numeric-literal-syntax-improvements)
   - Les littéraux numériques peuvent maintenant comporter des traits de soulignement de début avant tout chiffre affiché.
-- [`private protected`modificateur d’accès](./csharp-7-2.md#private-protected-access-modifier)
+- [`private protected` modificateur d’accès](./csharp-7.md#private-protected-access-modifier)
   - Le modificateur d’accès `private protected` active l’accès pour les classes dérivées dans le même assembly.
-- [Expressions conditionnelles `ref`](./csharp-7-2.md#conditional-ref-expressions)
+- [Expressions conditionnelles `ref`](./csharp-7.md#conditional-ref-expressions)
   - Le résultat d’une expression conditionnelle (`?:`) peut maintenant être une référence.
 
 ## <a name="c-version-73"></a>Version C# 7,3
@@ -211,24 +211,24 @@ Il existe deux thèmes principaux pour la version C# 7.3. Un thème fournit des 
 
 Les nouvelles fonctionnalités suivantes prennent en charge le thème de meilleures performances pour le code sécurisé :
 
-- [Vous pouvez accéder à des champs fixes sans épinglage.](csharp-7-3.md#indexing-fixed-fields-does-not-require-pinning)
-- [Vous pouvez réassigner des `ref` variables locales.](csharp-7-3.md#ref-local-variables-may-be-reassigned)
-- [Vous pouvez utiliser des initialiseurs sur des `stackalloc` tableaux.](csharp-7-3.md#stackalloc-arrays-support-initializers)
-- [Vous pouvez utiliser des `fixed` instructions avec n’importe quel type prenant en charge un modèle.](csharp-7-3.md#more-types-support-the-fixed-statement)
-- [Vous pouvez utiliser des contraintes génériques supplémentaires.](csharp-7-3.md#enhanced-generic-constraints)
+- [Vous pouvez accéder à des champs fixes sans épinglage.](csharp-7.md#indexing-fixed-fields-does-not-require-pinning)
+- [Vous pouvez réassigner des `ref` variables locales.](csharp-7.md#enabling-more-efficient-safe-code)
+- [Vous pouvez utiliser des initialiseurs sur des `stackalloc` tableaux.](csharp-7.md#stackalloc-arrays-support-initializers)
+- [Vous pouvez utiliser des `fixed` instructions avec n’importe quel type prenant en charge un modèle.](csharp-7.md#more-types-support-the-fixed-statement)
+- [Vous pouvez utiliser des contraintes génériques supplémentaires.](csharp-7.md#enhanced-generic-constraints)
 
 Les améliorations suivantes ont été apportées aux fonctionnalités existantes :
 
-- [Vous pouvez tester `==` et `!=` avec des types de Tuple.](csharp-7-3.md#tuples-support--and-)
-- [Vous pouvez utiliser des variables d’expression dans d’autres emplacements.](csharp-7-3.md#extend-expression-variables-in-initializers)
-- [Vous pouvez joindre des attributs à un champ de stockage de propriétés implémentées automatiquement.](csharp-7-3.md#attach-attributes-to-the-backing-fields-for-auto-implemented-properties)
-- [La résolution de méthode lorsque les arguments diffèrent par `in` a été améliorée.](csharp-7-3.md#in-method-overload-resolution-tiebreaker)
-- [La résolution de la surcharge comporte maintenant moins de cas ambigus.](csharp-7-3.md#improved-overload-candidates)
+- Vous pouvez tester `==` et `!=` avec des types de tuple.
+- Vous pouvez utiliser des variables d’expression dans d’autres emplacements.
+- Vous pouvez joindre des attributs à un champ de stockage de propriétés implémentées automatiquement.
+- La résolution de la méthode lorsque des arguments diffèrent de `in` a été améliorée.
+- La résolution de la surcharge comporte maintenant moins de cas ambigus.
 
 Les nouvelles options du compilateur sont les suivantes :
 
-- [`-publicsign`pour activer la signature du logiciel open source (OSS) des assemblys.](csharp-7-3.md#public-or-open-source-signing)
-- [`-pathmap`pour fournir un mappage pour les répertoires sources.](csharp-7-3.md#pathmap)
+- `-publicsign` pour activer la signature d’assemblys Open Source Software (OSS).
+- `-pathmap` pour fournir un mappage des répertoires sources.
 
 ## <a name="c-version-80"></a>Version C# 8,0
 
@@ -236,7 +236,7 @@ C# 8,0 est la première version majeure de C# qui cible spécifiquement .NET Cor
 
 - [Membres ReadOnly](./csharp-8.md#readonly-members)
 - [Méthodes d’interface par défaut](./csharp-8.md#default-interface-methods)
-- [Amélioration des critères spéciaux](./csharp-8.md#more-patterns-in-more-places) :
+- [Améliorations des critères spéciaux](./csharp-8.md#more-patterns-in-more-places):
   - [Expressions de commutateur](./csharp-8.md#switch-expressions)
   - [Modèles de propriétés](./csharp-8.md#property-patterns)
   - [Modèles de tuples](./csharp-8.md#tuple-patterns)

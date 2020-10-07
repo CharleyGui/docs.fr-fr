@@ -2,12 +2,12 @@
 title: Utiliser IHttpClientFactory pour implémenter des requêtes HTTP résilientes
 description: Découvrez comment utiliser IHttpClientFactory, disponible depuis .NET Core 2,1, pour la création d' `HttpClient` instances, ce qui vous permet de l’utiliser facilement dans vos applications.
 ms.date: 08/31/2020
-ms.openlocfilehash: ae093ef960b2540bf4916bf72ad3bec51fa33ebe
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 4ebb82395dd685d30846b3549b654abf7c41d43f
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91152570"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804807"
 ---
 # <a name="use-ihttpclientfactory-to-implement-resilient-http-requests"></a>Utiliser IHttpClientFactory pour implémenter des requêtes HTTP résilientes
 
@@ -194,7 +194,7 @@ Jusqu’à présent, l’extrait de code ci-dessus ne montre que l’exemple d�
   [https://docs.microsoft.com/aspnet/core/fundamentals/http-requests](/aspnet/core/fundamentals/http-requests)
 
 - **Code source HttpClientFactory dans le `dotnet/extensions` référentiel GitHub**  
-  <https://github.com/dotnet/extensions/tree/master/src/HttpClientFactory>
+  <https://github.com/dotnet/extensions/tree/v3.1.8/src/HttpClientFactory>
 
 - **Polly (Résilience .NET et bibliothèque de gestion des erreurs temporaires)**  
   <http://www.thepollyproject.org/>

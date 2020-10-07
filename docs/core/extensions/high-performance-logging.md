@@ -4,12 +4,12 @@ author: IEvangelist
 description: Découvrez comment utiliser LoggerMessage pour créer des délégués pouvant être mis en cache et nécessitant moins d’allocations d’objets pour les scénarios de journalisation à hautes performances.
 ms.author: dapine
 ms.date: 09/25/2020
-ms.openlocfilehash: d722a3a5cb38f33b6833a5c280687ce6c1e46bf9
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 9111b9553c913cff2937b574250b65e633250f4f
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614717"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804760"
 ---
 # <a name="high-performance-logging-in-net"></a>Journalisation hautes performances dans .NET
 
@@ -93,7 +93,7 @@ info: WorkerServiceOptions.Example.Worker[1]
 
 La méthode [DefineScope (String)](xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A) crée un <xref:System.Func%601> délégué pour définir une [étendue de journal](logging.md#log-scopes). Les surcharges <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> permettent de passer jusqu’à trois paramètres de type à une chaîne de format nommée (modèle).
 
-Comme c’est le cas avec la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.Define%2A>, la chaîne fournie à la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> est un modèle et non pas une chaîne interpolée. Les espaces réservés sont remplis dans l’ordre dans lequel les types sont spécifiés. Les noms d’espace réservé dans le modèle doivent être descriptifs et cohérents d’un modèle à l’autre. Ils servent de noms de propriété dans les données de journal structurées. Nous vous recommandons d’utiliser la [casse Pascal](/dotnet/standard/design-guidelines/capitalization-conventions) pour les noms d’espace réservé. Par exemple, `{Item}`, `{DateTime}`.
+Comme c’est le cas avec la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.Define%2A>, la chaîne fournie à la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> est un modèle et non pas une chaîne interpolée. Les espaces réservés sont remplis dans l’ordre dans lequel les types sont spécifiés. Les noms d’espace réservé dans le modèle doivent être descriptifs et cohérents d’un modèle à l’autre. Ils servent de noms de propriété dans les données de journal structurées. Nous vous recommandons d’utiliser la [casse Pascal](../../standard/design-guidelines/capitalization-conventions.md) pour les noms d’espace réservé. Par exemple, `{Item}`, `{DateTime}`.
 
 Définissez une [étendue de journal](logging.md#log-scopes) à appliquer à une série de messages de journal à l’aide de la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A>.
 

@@ -3,12 +3,12 @@ title: Programmation fonctionnelle et programmation impérative-LINQ to XML
 description: En savoir plus sur la programmation fonctionnelle et la façon dont elle diffère de la programmation impérative (procédurale) traditionnelle.
 ms.date: 07/20/2015
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
-ms.openlocfilehash: c7d16d61f9865cda7c625f91c2c822be1a327fd6
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: e99cffa9500c07c507962f41b17ab3f3b05c7781
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679367"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805288"
 ---
 # <a name="functional-programming-vs-imperative-programming-linq-to-xml"></a>Programmation fonctionnelle et programmation impérative (LINQ to XML)
 
@@ -57,5 +57,5 @@ Heureusement, C# et Visual Basic n’ont pas besoin d’une approche complète d
 ## <a name="see-also"></a>Voir aussi
 
 - [Introduction aux transformations fonctionnelles pures](introduction-pure-functional-transformations.md)
-- [Transformations XSLT](/../../standard/data/xml/xslt-transformations.md)
+- [Transformations XSLT](../data/xml/xslt-transformations.md)
 - [Refactoriser dans des fonctions pures](refactor-pure-functions.md)

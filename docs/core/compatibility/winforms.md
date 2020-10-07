@@ -2,12 +2,12 @@
 title: Modifications avec rupture Windows Forms
 description: Répertorie les dernières modifications apportées à Windows Forms pour .NET Core et .NET 5.
 ms.date: 09/08/2020
-ms.openlocfilehash: 3e7d077d07203d9c231ae4a7805e593c5432c135
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 2311faab026bf1dfde348e231937eff73ec46172
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90678996"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804857"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Modifications avec rupture dans Windows Forms
 
@@ -17,6 +17,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [DataGridView ne réinitialise plus les polices pour les styles de cellule personnalisés](#datagridview-no-longer-resets-fonts-for-customized-cell-styles) | 5.0 |
 | [OutputType défini sur WinExe pour les applications WPF et WinForms](#outputtype-set-to-winexe-for-wpf-and-winforms-apps) | 5.0 |
 | [Les API liées à DataGridView lèvent désormais InvalidOperationException](#datagridview-related-apis-now-throw-invalidoperationexception) | 5.0 |
 | [WinForms et les applications WPF utilisent Microsoft. NET. Sdk](#winforms-and-wpf-apps-use-microsoftnetsdk) | 5.0 |
@@ -39,6 +40,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Commutateur de compatibilité UseLegacyImages non pris en charge](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [datagridview-doesnt-reset-custom-font-settings](../../../includes/core-changes/windowsforms/5.0/datagridview-doesnt-reset-custom-font-settings.md)]
+
+***
 
 [!INCLUDE [automatically-infer-winexe-output-type](../../../includes/core-changes/windowsforms/5.0/automatically-infer-winexe-output-type.md)]
 

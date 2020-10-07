@@ -4,12 +4,12 @@ description: Informations sur les exemples et les didacticiels pour .NET Core, A
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/19/2020
-ms.openlocfilehash: 7e477683834b46439626e03e6ff411fabc52672d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 00718491df00e5747ba6e0043b70dc1019dd906b
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557188"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805009"
 ---
 # <a name="net-samples-and-tutorials"></a>Exemples et tutoriels .NET
 
@@ -23,7 +23,7 @@ La documentation .NET contient un ensemble d’exemples et de didacticiels qui v
 
 Ce guide montre comment créer une application web ASP.NET Core et les tests unitaires associés. Il commence par créer une application de service web simple, puis il ajoute des tests. Ensuite, il crée d’autres tests pour guider l’implémentation de nouvelles fonctionnalités. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test) est disponible dans le référentiel dotnet/samples sur GitHub.
 
-### <a name="tutorials"></a>Tutoriels
+### <a name="tutorials"></a>Didacticiels
 
 **[Didacticiel : créer une application console .NET Core à l’aide de Visual Studio Code](../core/tutorials/with-visual-studio-code.md)**
 
@@ -69,7 +69,7 @@ L’exemple de [serveur COM](https://github.com/dotnet/samples/tree/master/core/
 
 L’exemple [ExcelDemo](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo) illustre la consommation d’[assemblys PIA Microsoft Office](/visualstudio/vsto/office-primary-interop-assemblies) dans .NET Core.
 
-### <a name="tutorials"></a>Tutoriels
+### <a name="tutorials"></a>Didacticiels
 
 **[Application console](../csharp/tutorials/console-teleprompter.md)**
 
@@ -99,7 +99,7 @@ Ce tutoriel vous montre comment créer une application .NET Core simple qui pren
 
 **[Exécution d’applications ASP.NET MVC dans des conteneurs Docker Windows](/aspnet/mvc/overview/deployment/docker-aspnetmvc)**
 
-Ce didacticiel montre comment déployer une application MVC ASP.NET dans un conteneur Docker Windows. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator) est disponible dans le référentiel dotnet/samples sur GitHub.
+Ce didacticiel montre comment déployer une application MVC ASP.NET dans un conteneur Docker Windows.
 
 ## <a name="view-and-download-samples"></a>Afficher et télécharger des exemples
 

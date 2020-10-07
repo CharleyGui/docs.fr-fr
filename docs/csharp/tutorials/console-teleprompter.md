@@ -4,12 +4,12 @@ description: Ce didacticiel vous présente un certain nombre de fonctionnalités
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: dbe64fe0a01ddab9e7a3ad0a9118b3fe59fba8aa
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 4c32b08c3e7eeaedce687ea5bc572e6a7bee0d3e
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656981"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804892"
 ---
 # <a name="console-app"></a>Application console
 
@@ -25,7 +25,7 @@ Vous allez générer une application qui lit un fichier texte et renvoie le cont
 
 Il existe un grand nombre de fonctionnalités dans ce didacticiel. Créons-les un par un.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - Configurez votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Linux, macOS ou dans un conteneur d’ancrage.
 
@@ -187,7 +187,7 @@ ShowTeleprompter().Wait();
 Ici, dans `Main`, le code attend de façon synchrone. Vous devez utiliser l’opérateur `await` au lieu d’attendre de manière synchrone lorsque cela est possible. Toutefois, dans la méthode d’une application console `Main` , vous ne pouvez pas utiliser l' `await` opérateur. Cela entraînerait la fermeture de l’application avant la fin de toutes les tâches.
 
 > [!NOTE]
-> Si vous utilisez C# 7.1 ou une version ultérieure, vous pouvez créer des applications de console à l’aide de la méthode [`async` `Main`](../whats-new/csharp-7-1.md#async-main).
+> Si vous utilisez C# 7.1 ou une version ultérieure, vous pouvez créer des applications de console à l’aide de la méthode [`async` `Main`](../whats-new/csharp-7.md#async-main).
 
 Ensuite, vous devez écrire la deuxième méthode asynchrone pour lire à partir de la console et surveiller les clés « < » (inférieur à), « > » (supérieur à) et « X » ou « x ». Voici la méthode que vous ajoutez pour cette tâche :
 
