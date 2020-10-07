@@ -4,12 +4,12 @@ description: Stockez des données non structurées dans le Cloud avec le stockag
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: d9c587cdd21a1b81205d182652b3690b976687c0
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 91aec8fc2b57c71ce4ba47d62619912af6c71e59
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100150"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756245"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Prise en main du stockage d’objets BLOB Azure à l’aide de F\#
 
@@ -43,7 +43,7 @@ Pour le didacticiel, vous entrez votre chaîne de connexion dans votre script, c
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L11-L11)]
 
-Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine pour votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la communiquer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres personnes. Vous pouvez régénérer votre clé à l’aide du portail Azure si vous pensez qu’elle a peut-être été compromise.
+Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine pour votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la communiquer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres personnes. Vous pouvez régénérer votre clé à l’aide de la Portail Azure si vous pensez qu’elle a peut-être été compromise.
 
 Pour les applications réelles, la meilleure façon de gérer votre chaîne de connexion de stockage se trouve dans un fichier de configuration. Pour extraire la chaîne de connexion d’un fichier de configuration, procédez comme suit :
 
@@ -99,7 +99,7 @@ Pour créer une liste d’objets blob dans un conteneur, commencez par obtenir u
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L67-L80)]
 
-Vous pouvez également nommer des objets BLOB avec des informations de chemin d’accès dans leurs noms. Vous obtenez alors une structure de répertoires virtuels que vous pouvez organiser et parcourir de la même manière qu’un système de fichiers traditionnel. Notez que la structure de répertoires est uniquement virtuelle : les seules ressources disponibles dans le stockage d’objets blob sont des conteneurs et des objets blob. Toutefois, la bibliothèque cliente de stockage offre un `CloudBlobDirectory` objet pour faire référence à un répertoire virtuel et simplifier le processus d’utilisation des objets BLOB organisés de cette façon.
+Vous pouvez également nommer des objets BLOB avec des informations de chemin d’accès dans leurs noms. Vous obtenez alors une structure de répertoires virtuels que vous pouvez organiser et parcourir de la même manière qu’un système de fichiers traditionnel. La structure de répertoires est virtuelle uniquement-les seules ressources disponibles dans le stockage d’objets BLOB sont des conteneurs et des objets BLOB. Toutefois, la bibliothèque cliente de stockage offre un `CloudBlobDirectory` objet pour faire référence à un répertoire virtuel et simplifier le processus d’utilisation des objets BLOB organisés de cette façon.
 
 Par exemple, prenez l’ensemble d’objets blob de blocs suivant, situé dans un conteneur nommé `photos`:
 
@@ -173,7 +173,7 @@ Nous pouvons maintenant utiliser cette routine asynchrone comme suit. Tout d’a
 
 ## <a name="writing-to-an-append-blob"></a>Écriture dans un objet blob d’ajout
 
-Il est optimisé pour les opérations d’ajout, telles que la journalisation. Comme un objet blob de blocs, un objet blob d’ajout est composé de blocs. Mais lorsqu’il est ajouté à un objet blob d’ajout, un nouveau bloc l’est toujours à la fin. Vous ne pouvez pas mettre à jour ou supprimer un bloc dans un objet blob d’ajout. Les ID de bloc dans un objet blob d’ajout ne sont pas visibles, comme pour un objet blob de blocs.
+Il est optimisé pour les opérations d’ajout, telles que la journalisation. À l’instar d’un objet blob de blocs, un objet blob d’ajout est composé de blocs, mais lorsque vous ajoutez un nouveau bloc à un objet blob d’ajout, il est toujours ajouté à la fin de l’objet BLOB. Vous ne pouvez pas mettre à jour ou supprimer un bloc dans un objet blob d’ajout. Les ID de bloc dans un objet blob d’ajout ne sont pas visibles, comme pour un objet blob de blocs.
 
 Chaque bloc d’un objet blob d’ajout peut avoir une taille différente (jusqu’à 4 Mo), et un objet blob d’ajout peut contenir au maximum 50 000 blocs. La taille maximale d’un objet blob d’ajout est donc légèrement supérieure à 195 Go (4 Mo x 50 000 blocs).
 
@@ -189,7 +189,7 @@ Pour activer la prise en charge de l’accès simultané à un objet blob par pl
 
 - **Etag** : permet de détecter la modification de l’objet blob ou du conteneur par un autre processus
 
-- **Lease** : permet d’obtenir l’accès exclusif, renouvelable, en écriture ou en suppression à un objet blob pour une période donnée
+- **Bail** -fournit un moyen d’obtenir un accès exclusif, renouvelable, d’écriture ou de suppression à un objet BLOB pendant une période donnée.
 
 Pour plus d’informations, consultez [gestion de l’accès concurrentiel dans stockage Microsoft Azure](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/).
 
@@ -207,7 +207,7 @@ Un conteneur doit posséder un nom DNS valide, conforme aux règles de nommage s
 1. Toutes les lettres du conteneur doivent être minuscules.
 1. Les noms de conteneurs doivent comporter entre 3 et 63 caractères.
 
-Notez que le nom d'un conteneur doit toujours être en minuscules. Si vous incluez une majuscule dans un nom de conteneur ou si vous ne respectez pas les règles d'affectation de noms, vous pouvez recevoir une erreur 400 (demande incorrecte).
+Le nom d’un conteneur doit toujours être en minuscules. Si vous incluez une majuscule dans un nom de conteneur ou si vous ne respectez pas les règles d'affectation de noms, vous pouvez recevoir une erreur 400 (demande incorrecte).
 
 ## <a name="managing-security-for-blobs"></a>Gestion de la sécurité pour les objets blob
 
@@ -228,7 +228,7 @@ Maintenant que vous connaissez les bases du stockage d’objets blob, consultez 
 ### <a name="tools"></a>Outils
 
 - [AzureStorageTypeProvider F #](https://fsprojects.github.io/AzureStorageTypeProvider/)\
-Fournisseur de type F # qui peut être utilisé pour explorer des ressources de stockage Azure d’objets BLOB, de table et de file d’attente et pour appliquer facilement des opérations CRUD sur ces derniers.
+Fournisseur de type F # qui peut être utilisé pour explorer des ressources de stockage Azure d’objets BLOB, de tables et de files d’attente et pour appliquer facilement des opérations CRUD sur ces derniers.
 
 - [FSharp. Azure. Storage](https://github.com/fsprojects/FSharp.Azure.Storage)\
 API F # pour l’utilisation du service de stockage de table Microsoft Azure

@@ -4,12 +4,12 @@ description: Stockez des données structurées dans le cloud à l’aide du stoc
 author: sylvanc
 ms.date: 03/26/2018
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: f4a22ec14de6c92414fbcf3cca435e2b5c0805f1
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: bf4f2e63c847e18d253fe5b6cf5dd7773c320fb7
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100098"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756206"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Prise en main du stockage table Azure et du Azure Cosmos DB API Table à l’aide de F\#
 
@@ -55,13 +55,13 @@ Si vous vous connectez à un service de table de stockage Azure, vous aurez beso
 
 ### <a name="get-your-azure-cosmos-db-connection-string"></a>Obtient votre chaîne de connexion Azure Cosmos DB
 
-Si vous vous connectez à Azure Cosmos DB, vous aurez besoin de votre chaîne de connexion pour ce didacticiel. Vous pouvez copier votre chaîne de connexion à partir du Portail Azure. Dans le portail Azure, dans votre compte Cosmos dB, accédez à **paramètres**  >  **chaîne de connexion**, puis cliquez sur le bouton **copier** pour copier votre chaîne de connexion principale.
+Si vous vous connectez à Azure Cosmos DB, vous aurez besoin de votre chaîne de connexion pour ce didacticiel. Vous pouvez copier votre chaîne de connexion à partir du Portail Azure. Dans le portail Azure, dans votre compte Cosmos dB, accédez à **paramètres**  >  **chaîne de connexion**, puis sélectionnez le bouton **copier** pour copier votre chaîne de connexion principale.
 
 Pour le didacticiel, entrez votre chaîne de connexion dans votre script, comme dans l’exemple suivant :
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L11-L11)]
 
-Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine pour votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la communiquer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres personnes. Vous pouvez régénérer votre clé à l’aide du portail Azure si vous pensez qu’elle a peut-être été compromise.
+Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine pour votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la communiquer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres personnes. Vous pouvez régénérer votre clé à l’aide de la Portail Azure si vous pensez qu’elle a peut-être été compromise.
 
 Pour les applications réelles, la meilleure façon de gérer votre chaîne de connexion de stockage se trouve dans un fichier de configuration. Pour extraire la chaîne de connexion d’un fichier de configuration, procédez comme suit :
 
@@ -162,7 +162,7 @@ Parfois, vous ne savez pas si une entité existe dans la table. Et si c’est le
 
 ### <a name="query-a-subset-of-entity-properties"></a>Interrogation d'un sous-ensemble de propriétés d'entité
 
-Une requête de table peut récupérer uniquement quelques propriétés à partir d’une entité, et non pas toutes. Cette technique, appelée projection, peut améliorer les performances des requêtes, en particulier pour les entités volumineuses. Ici, vous retournez uniquement les adresses de messagerie à l’aide `DynamicTableEntity` de et `EntityResolver` . Notez que la projection n’est pas prise en charge sur l’émulateur de stockage local : ce code ne s’exécute donc que si vous utilisez un compte sur le service de Table.
+Une requête de table peut récupérer uniquement quelques propriétés à partir d’une entité, et non pas toutes. Cette technique, appelée projection, peut améliorer les performances des requêtes, en particulier pour les entités volumineuses. Ici, vous retournez uniquement les adresses de messagerie à l’aide `DynamicTableEntity` de et `EntityResolver` . La projection n’est pas prise en charge sur l’émulateur de stockage local, ce code s’exécute donc uniquement lorsque vous utilisez un compte sur le service de table.
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L147-L158)]
 

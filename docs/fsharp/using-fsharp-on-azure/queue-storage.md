@@ -4,12 +4,12 @@ description: Les files d’attente Azure fournissent une messagerie asynchrone f
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: 5d6074751f226f0587c4c73bfa9ff56d9aca2bc1
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: daa5372b7903f10c0d966c5c92e35c8bf9d362d8
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100085"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756219"
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>Prise en main du stockage de files d’attente Azure à l’aide de F\#
 
@@ -46,7 +46,7 @@ Pour le didacticiel, vous allez entrer votre chaîne de connexion dans votre scr
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L9-L9)]
 
-Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine pour votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la communiquer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres personnes. Vous pouvez régénérer votre clé à l’aide du portail Azure si vous pensez qu’elle a peut-être été compromise.
+Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine pour votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la communiquer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres personnes. Vous pouvez régénérer votre clé à l’aide de la Portail Azure si vous pensez qu’elle a peut-être été compromise.
 
 Pour les applications réelles, la meilleure façon de gérer votre chaîne de connexion de stockage se trouve dans un fichier de configuration. Pour extraire la chaîne de connexion d’un fichier de configuration, procédez comme suit :
 
@@ -117,7 +117,7 @@ Cet exemple montre comment utiliser un flux de travail asynchrone avec les API d
 ## <a name="additional-options-for-de-queuing-messages"></a>Options supplémentaires pour l'extraction de messages
 
 Il existe deux façons de personnaliser la récupération des messages à partir d'une file d'attente.
-Premièrement, vous pouvez obtenir un lot de messages (jusqu'à 32). Deuxièmement, vous pouvez définir un délai d'expiration de l'invisibilité plus long ou plus court afin d'accorder à votre code plus ou moins de temps pour traiter complètement chaque message. L’exemple de code suivant utilise `GetMessages` pour recevoir 20 messages dans un appel, puis traite chaque message. Il définit également le délai d'expiration de l'invisibilité sur cinq minutes pour chaque message. Notez que le délai de 5 minutes démarre en même temps pour tous les messages, donc une fois les 5 minutes écoulées après l’appel de `GetMessages`, tous les messages n’ayant pas été supprimés redeviennent visibles.
+Premièrement, vous pouvez obtenir un lot de messages (jusqu'à 32). Deuxièmement, vous pouvez définir un délai d'expiration de l'invisibilité plus long ou plus court afin d'accorder à votre code plus ou moins de temps pour traiter complètement chaque message. L’exemple de code suivant utilise `GetMessages` pour recevoir 20 messages dans un appel, puis traite chaque message. Il définit également le délai d'expiration de l'invisibilité sur cinq minutes pour chaque message. Les 5 minutes commencent pour tous les messages en même temps. par conséquent, après 5 minutes écoulées depuis l’appel à `GetMessages` , tous les messages qui n’ont pas été supprimés sont à nouveau visibles.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L97-L99)]
 

@@ -4,12 +4,12 @@ description: 'Utiliser Paket ou NuGet pour gérer les dépendances Azure F #'
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: 011a363b264079599e8b7d402fe9896045b1fe04
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 7816c82e87db113a35fef967886c8c3e27959332
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100111"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756232"
 ---
 # <a name="package-management-for-f-azure-dependencies"></a>Gestion des packages pour les dépendances F# Azure
 
@@ -17,7 +17,7 @@ L’obtention de packages pour le développement Azure est facile lorsque vous u
 
 ## <a name="using-paket"></a>Utilisation de Paket
 
-Si vous utilisez [Paket](https://fsprojects.github.io/Paket/) comme gestionnaire de dépendances, vous pouvez utiliser l' `paket.exe` outil pour ajouter des dépendances Azure. Exemple :
+Si vous utilisez [Paket](https://fsprojects.github.io/Paket/) comme gestionnaire de dépendances, vous pouvez utiliser l' `paket.exe` outil pour ajouter des dépendances Azure. Par exemple :
 
 ```console
 > paket add nuget WindowsAzure.Storage
@@ -55,7 +55,7 @@ Ou, pour le développement mono :
 
 ## <a name="using-nuget"></a>Utilisation de NuGet
 
-Si vous utilisez [NuGet](https://www.nuget.org/) comme gestionnaire de dépendances, vous pouvez utiliser l' `nuget.exe` outil pour ajouter des dépendances Azure. Exemple :
+Si vous utilisez [NuGet](https://www.nuget.org/) comme gestionnaire de dépendances, vous pouvez utiliser l' `nuget.exe` outil pour ajouter des dépendances Azure. Par exemple :
 
 ```console
 > nuget install WindowsAzure.Storage -ExcludeVersion
@@ -93,7 +93,7 @@ Ou, pour le développement mono :
 
 ## <a name="referencing-assemblies"></a>Référencement d'assemblys
 
-Pour pouvoir utiliser vos packages dans votre script F #, vous devez référencer les assemblys inclus dans les packages à l’aide d’une `#r` directive. Exemple :
+Pour pouvoir utiliser vos packages dans votre script F #, vous devez référencer les assemblys inclus dans les packages à l’aide d’une `#r` directive. Par exemple :
 
 ```fsharp
 > #r "packages/WindowsAzure.Storage/lib/net40/Microsoft.WindowsAzure.Storage.dll"
