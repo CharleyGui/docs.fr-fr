@@ -4,6 +4,8 @@ expanded: true
 items:
   - name: 2020
     items:
+      - name: Septembre
+        href: 2020-09.md
       - name: Août
         href: 2020-08.md
       - name: Juillet
@@ -14,5 +16,3 @@ items:
         href: dotnet-2020-05.md
       - name: avril
         href: dotnet-2020-04.md
-      - name: Mars
-        href: dotnet-2020-03.md
