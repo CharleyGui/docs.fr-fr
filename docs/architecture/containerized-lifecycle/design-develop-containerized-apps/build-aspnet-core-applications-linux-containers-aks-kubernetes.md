@@ -2,12 +2,12 @@
 title: Créer des applications ASP.NET Core déployées en tant que conteneurs Linux dans des clusters AKS/Kubernetes
 description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 ms.date: 08/06/2020
-ms.openlocfilehash: 4b04e5d56c73918c665ad6e2825205870aac9606
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 8b3141d79eeb252ec3721d57293bed0e335b41d3
+ms.sourcegitcommit: a6bd4cad438fe479cbd112eae10f2cd449f06e40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916454"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91844561"
 ---
 # <a name="build-aspnet-core-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Créez ASP.NET Core applications déployées en tant que conteneurs Linux dans un AKS/Kubernetes Orchestrator
 
@@ -128,7 +128,7 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 ```
 
-Pour que votre application s’exécute avec Docker Compose vous devez simplement apporter quelques ajustements à`docker-compose.override.yml`
+Pour que votre application s’exécute avec Docker Compose vous devez simplement apporter quelques ajustements à `docker-compose.override.yml`
 
 ```yml
 services:
@@ -148,7 +148,7 @@ services:
     #...
 ```
 
-Vous pouvez maintenant exécuter votre application avec la touche **F5** , ou en utilisant le bouton de **lecture** , ou la touche **CTRL + F5** , en sélectionnant le projet dockr-compose, comme illustré dans l’image 4-42.
+Vous pouvez maintenant exécuter votre application à l’aide de la touche **F5** , du bouton de **lecture** ou de la touche **CTRL + F5** , en sélectionnant le projet dockr-compose, comme illustré dans l’image 4-42.
 
 ![Exécution du projet dockr-compose avec Visual Studio](media/build-aspnet-core-applications-linux-containers-aks-kubernetes/running-docker-compose-with-visual-studio.png)
 
@@ -198,6 +198,9 @@ Exécutez la commande suivante à partir de la commande **AZ CLI**:
 ```powershell
 az acr create --name exploredocker --resource-group explore-docker-aks-rg --sku basic --admin-enabled
 ```
+
+> [!NOTE]
+> Le nom du registre de conteneurs (par exemple `exploredocker` ,) doit être unique dans Azure et contenir des caractères alphanumériques 5-50. Pour plus d’informations, consultez [créer un registre de conteneurs](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli#create-a-container-registry)
 
 ### <a name="create-the-image-in-release-mode"></a>Créer l’image en mode Mise en production
 
