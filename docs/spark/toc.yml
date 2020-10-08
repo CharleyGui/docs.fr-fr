@@ -1,6 +1,6 @@
 - name: Guide .NET pour Apache Spark
   href: index.yml
-- name: Vue d'ensemble
+- name: Vue d’ensemble
   expanded: true
   items:
     - name: "Qu’est-ce qu’Apache Spark\_?"
@@ -32,7 +32,7 @@
     - name: Déboguer votre application
       href: how-to-guides/debug.md
     - name: Envoyer des travaux à Azure Synapse Analytics
-      href: 'https://docs.microsoft.com/azure/synapse-analytics/spark/spark-dotnet'
+      href: /azure/synapse-analytics/spark/spark-dotnet
     - name: Envoyer des travaux à HDInsight
       href: how-to-guides/hdinsight-deploy-methods.md
     - name: Envoyer des travaux à Databricks
