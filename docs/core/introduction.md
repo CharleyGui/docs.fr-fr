@@ -4,12 +4,12 @@ description: Découvrez .NET, une plateforme de développement Open source gratu
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 2b339db769c283ff21e6ad48d5b672794e43a76b
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 0539519c2e1dd429983226065e8508ac148e25a8
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804794"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877559"
 ---
 # <a name="introduction-to-net"></a>Introduction à .NET
 
@@ -72,7 +72,7 @@ Les distributions binaires .NET de Microsoft sont générées et testées sur de
 
 [Tizen prend en charge .net](https://developer.tizen.org/development/training/.net-application) sur les plateformes Tizen.
 
-Pour plus d’informations, consultez la [stratégie de prise en charge](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
+Pour plus d’informations, consultez [Releases and support for .net Core and .net 5](releases-and-support.md).
 
 ## <a name="tools-and-productivity"></a>Outils et productivité
 
@@ -201,7 +201,7 @@ Pour plus d’informations, consultez [la documentation NuGet](/nuget/).
 
 Pour plus d’informations, consultez les ressources suivantes :
 
-* [Didacticiel .NET dans le navigateur](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1)
+* [Didacticiel de In-Browser .NET](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1)
 * [Utilisation de blocs-notes .NET avec Jupyter sur votre ordinateur](https://github.com/dotnet/interactive/blob/main/docs/NotebooksLocalExperience.md)
 * [Documentation interactive .NET](https://github.com/dotnet/interactive/blob/main/docs/README.md)
 

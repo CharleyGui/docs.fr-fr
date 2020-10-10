@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 58a4ce30e11ca023b50e5e53b1f1554a30d44390
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d2855738c723ba6d2437257793f18349b18629dc
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89137082"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877585"
 ---
 # <a name="ref-c-reference"></a>ref (référence C#)
 
@@ -100,7 +100,7 @@ Voici un exemple plus complet de retour de référence, qui illustre la signatur
 
 [!code-csharp[FindReturningRef](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#FindReturningRef "Find returning by reference")]
 
-La méthode appelée peut également déclarer la valeur renvoyée en tant que `ref readonly` pour renvoyer la valeur par référence et faire en sorte que le code d'appel ne puisse pas modifier la valeur renvoyée. La méthode d’appel peut éviter de copier la valeur renvoyée en stockant la valeur dans une variable [ref readonly](#ref-readonly-locals) locale.
+La méthode appelée peut également déclarer la valeur renvoyée en tant que `ref readonly` pour renvoyer la valeur par référence et faire en sorte que le code d'appel ne puisse pas modifier la valeur renvoyée. La méthode d’appel peut éviter de copier la valeur retournée en stockant la valeur dans une variable de référence locale en [lecture seule](#ref-readonly-locals) .
 
 Pour obtenir un exemple, consultez [un exemple de retours REF et de variables locales Ref](#a-ref-returns-and-ref-locals-example).
 
@@ -151,7 +151,7 @@ Quand l’appelant stocke la valeur retournée par la méthode `GetBookByTitle` 
 - [Écrire du code efficace sécurisé](../../write-safe-efficient-code.md)
 - [Retours ref et variables locales ref](../../programming-guide/classes-and-structs/ref-returns.md)
 - [Expression ref conditionnelle](../operators/conditional-operator.md#conditional-ref-expression)
-- [Passage de paramètres](../../programming-guide/classes-and-structs/passing-parameters.md)
+- [Passer des paramètres](../../programming-guide/classes-and-structs/passing-parameters.md)
 - [Paramètres de méthodes](method-parameters.md)
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)

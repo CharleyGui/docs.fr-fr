@@ -2,12 +2,12 @@
 title: Exploitation des conteneurs et des orchestrateurs
 description: Tirer parti des conteneurs et orchestrateurs Kubernetes dans Azure
 ms.date: 05/31/2020
-ms.openlocfilehash: b4bdbe5c6b3946658e6c11a40cbbb2feb07cc951
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 07e66ece1d1d1b3f252e56789461ae2922d9649a
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755907"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877572"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Exploitation des conteneurs et des orchestrateurs
 
@@ -25,7 +25,7 @@ Bien qu’ils aient l’avantage de simplifier, les architectures monolithiques 
 
 ### <a name="deployment"></a>Déploiement
 
-Les applications monolithiques requièrent un déploiement complet de l’ensemble de l’application, même si une petite modification a été apportée. Les déploiements complets peuvent être coûteux et sujets aux erreurs. En outre, ils nécessitent un redémarrage de l’application, ce qui affecte temporairement l’indisponibilité.
+En outre, ils nécessitent un redémarrage de l’application, ce qui peut avoir un impact temporaire sur la disponibilité si aucune technique de temps d’arrêt n’est appliquée lors du déploiement.
 
 ### <a name="scaling"></a>Mise à l'échelle
 
@@ -139,7 +139,7 @@ Les organisations qui déploient et maintiennent un grand nombre d’application
 
 ## <a name="when-should-you-avoid-using-containers-and-orchestrators"></a>Quand devez-vous éviter d’utiliser des conteneurs et des orchestrateurs ?
 
-Si vous ne parvenez pas à créer votre application en suivant les principes de l’application à douze facteurs, vous devez envisager d’éviter les conteneurs et les orchestrateurs. Dans ce cas, envisagez une plateforme d’hébergement basée sur une machine virtuelle, voire un système hybride. Avec elle, vous pouvez toujours faire tourner certains fragments de fonctionnalités dans des conteneurs distincts ou même des fonctions sans serveur.
+Si vous ne parvenez pas à créer votre application en suivant les principes de l’application Twelve-Factor, vous devez envisager d’éviter les conteneurs et les orchestrateurs. Dans ce cas, envisagez une plateforme d’hébergement basée sur une machine virtuelle, voire un système hybride. Avec elle, vous pouvez toujours faire tourner certains fragments de fonctionnalités dans des conteneurs distincts ou même des fonctions sans serveur.
 
 ## <a name="development-resources"></a>Ressources de développement
 

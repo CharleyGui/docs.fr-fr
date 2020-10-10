@@ -9,12 +9,12 @@ helpviewer_keywords:
 - out-of-band releases
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 ms.topic: conceptual
-ms.openlocfilehash: c6404df5d4f0be381bc0a9c1924fcf82cf078306
-ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
+ms.openlocfilehash: 55cb37cc2c9184eeb55ee0aab39e97f4a3f7b7d8
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88075473"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877637"
 ---
 # <a name="additional-class-libraries-and-apis"></a>API et bibliothèques de classes supplémentaires
 
@@ -24,25 +24,25 @@ Cet article répertorie les .NET Framework API qui ont été publiées hors band
 
 Pour améliorer le développement multiplateforme et introduire de nouvelles fonctionnalités dès le début, certaines fonctionnalités de .NET Framework ont été publiées hors bande (OOB).
 
-| Projet | Description |  
-| ------- | ----------- |  
+| Projet | Description |
+| ------- | ----------- |
 | <xref:System.Collections.Immutable> | Fournit des collections thread-safe dont le contenu est assuré de ne jamais changer. |
 | <xref:System.Net.Http.WinHttpHandler> | Fournit un gestionnaire de messages pour <xref:System.Net.Http.HttpClient> basé sur l’interface WinHTTP de Windows. |
 | <xref:System.Numerics> | Fournit une bibliothèque de types de vecteurs qui peuvent tirer parti de l’accélération matérielle SIMD.|
-| <xref:System.Threading.Tasks.Dataflow> | La bibliothèque de flux de données TPL fournit des composants de flux de données destinés à accroître la robustesse des applications prenant en charge l’accès concurrentiel. |  
+| <xref:System.Threading.Tasks.Dataflow> | La bibliothèque de flux de données TPL fournit des composants de flux de données destinés à accroître la robustesse des applications prenant en charge l’accès concurrentiel. |
 
 ## <a name="platform-specific-libraries"></a>Bibliothèques propres à une plateforme
 
 Certaines bibliothèques ciblent des plateformes spécifiques. Par exemple, la <xref:System.Text.CodePagesEncodingProvider> classe rend les encodages de pages de codes disponibles pour les applications UWP développées à l’aide de .NET Framework.
-  
-| Projet | Description |  
-| ------- | ----------- |  
-| <xref:System.Text.CodePagesEncodingProvider> | Étend la <xref:System.Text.EncodingProvider> classe pour mettre les encodages de pages de codes à la disposition des applications qui ciblent le plateforme Windows universelle. |  
-  
-## <a name="private-apis"></a>API privées  
 
-Ces API prennent en charge l’infrastructure du produit et ne sont pas conçues ou prises en charge pour être utilisées directement à partir de votre code.  
-  
+| Projet | Description |
+| ------- | ----------- |
+| <xref:System.Text.CodePagesEncodingProvider> | Étend la <xref:System.Text.EncodingProvider> classe pour mettre les encodages de pages de codes à la disposition des applications qui ciblent le plateforme Windows universelle. |
+
+## <a name="private-apis"></a>API privées
+
+Ces API prennent en charge l’infrastructure du produit et ne sont pas conçues ou prises en charge pour être utilisées directement à partir de votre code.
+
 * [Microsoft. SqlServer. Server. SmiOrderProperty. Item, propriété](microsoft.sqlserver.server.smiorderproperty.item.md)
 * [Méthode System. exception. PrepForRemoting](system.exception.prepforremoting.md)
 * [System. Data. SqlTypes. SqlChars. Stream, propriété](system.data.sqltypes.sqlchars.stream.md)
@@ -82,16 +82,19 @@ Ces API prennent en charge l’infrastructure du produit et ne sont pas conçues
 * [Champ System .net. ServicePoint. m \_ ConnectionGroupList](m_connectiongrouplist.md)
 * [System .net. ServicePointManager. CloseConnectionGroups, méthode](system.net.servicepointmanager.closeconnectiongroups.md)
 * [Champ System .net. ServicePointManager. s \_ ServicePointTable](s_servicepointtable.md)
-* [Champ System .net. TlsStream. m_Worker](system.net.tlsstream.m_worker.md)
+* [Champ System.Net.TlsStream.m_Worker](system.net.tlsstream.m_worker.md)
 * [Classe System .net. UnsafeNclNativeMethods](system.net.unsafenclnativemethods.md)
 * [System .net. WebHeaderCollection. AddInternal, méthode](system.net.webheadercollection.addinternal.md)
 * [System. ServiceModel. Channels. message. BodyToString, méthode](system.servicemodel.channels.message.bodytostring.md)
 * [System. ServiceModel. Channels. message. WriteStartHeaders, méthode](system.servicemodel.channels.message.writestartheaders.md)
 * [System. Web. Compilation. ControlBuilderInterceptor, classe](controlbuilderinterceptor-class.md)
+* [System. Windows. Controls. GridViewHeaderRowPresenter. FindHeaderByColumn, méthode](system.windows.controls.gridviewheaderrowpresenter.findheaderbycolumn.md)
+* [System. Windows. Controls. GridViewHeaderRowPresenter. MakeParentItemsControlGotFocus, méthode](system.windows.controls.gridviewheaderrowpresenter.makeparentitemscontrolgotfocus.md)
+* [System. Windows. Controls. GridViewHeaderRowPresenter. PrepareHeaderDrag, méthode](system.windows.controls.gridviewheaderrowpresenter.prepareheaderdrag.md)
 * [Champ System. Windows. Diagnostics. VisualDiagnostics. s \_ isDebuggerCheckDisabledForTestPurposes](s-isdebuggercheckdisabledfortestpurposes-field.md)
 * [Classe System. Windows. Forms. Design. DataMemberFieldEditor](datamemberfieldeditor-class.md)
 * [Classe System. Windows. Forms. Design. DataMemberListEditor](datamemberlisteditor-class.md)
-* [MéthodeSystem.Xml.XmlReader. CreateSqlReader](system.xml.xmlreader.createsqlreader.md)
+* [ MéthodeSystem.Xml.XmlReader. CreateSqlReader](system.xml.xmlreader.createsqlreader.md)
 * [ADODB. Interface de connexion](adodb.connection.md)
 * [ADODB. Énumération EventReason](adodb.eventreasonenum.md)
 * [ADODB. Énumération EventStatus](adodb.eventstatusenum.md)
@@ -103,7 +106,7 @@ Ces API prennent en charge l’infrastructure du produit et ne sont pas conçues
 * [stdole. IPictureDisp. handle (propriété)](stdole.ipicturedisp.handle.md)
 * [stdole. StdFont (interface)](stdole.stdfont.md)
 * [stdole. StdPicture, interface](stdole.stdpicture.md)
-  
+
 ## <a name="see-also"></a>Voir aussi
 
 * [Versions .NET Framework et hors plage](../get-started/the-net-framework-and-out-of-band-releases.md)
