@@ -57,6 +57,8 @@ items:
         href: ../standard/class-libraries.md
       - name: Vue d’ensemble de .NET Standard
         href: ../standard/net-standard.md
+      - name: 'Mises en production, correctifs et support'
+        href: ../core/releases-and-support.md
       - name: Glossaire .NET
         href: ../standard/glossary.md
       - name: Didacticiels
@@ -549,7 +551,7 @@ items:
                         href: code-analysis/quality-rules/ca1509.md
                   - name: Règles d’affectation des noms
                     items:
-                      - name: Vue d’ensemble
+                      - name: Vue d'ensemble
                         displayName: naming rules
                         href: code-analysis/quality-rules/naming-warnings.md
                       - name: CA1700
@@ -1352,7 +1354,7 @@ items:
                 displayName: regular expressions
               - name: Informations de référence sur le langage
                 items:
-                  - name: Vue d’ensemble
+                  - name: Vue d'ensemble
                     href: ../standard/base-types/regular-expression-language-quick-reference.md
                   - name: Caractères d’échappement
                     href: ../standard/base-types/character-escapes-in-regular-expressions.md

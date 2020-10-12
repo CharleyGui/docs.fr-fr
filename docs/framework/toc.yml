@@ -598,6 +598,16 @@ items:
         items:
           - name: Classe ControlBuilderInterceptor
             href: additional-apis/controlbuilderinterceptor-class.md
+      - name: System.Windows.Controls
+        items:
+          - name: 'GridViewHeaderRowPresenter, classe'
+            items:
+              - name: 'FindHeaderByColumn, méthode'
+                href: additional-apis/system.windows.controls.gridviewheaderrowpresenter.findheaderbycolumn.md
+              - name: 'MakeParentItemsControlGotFocus, méthode'
+                href: additional-apis/system.windows.controls.gridviewheaderrowpresenter.makeparentitemscontrolgotfocus.md
+              - name: 'PrepareHeaderDrag, méthode'
+                href: additional-apis/system.windows.controls.gridviewheaderrowpresenter.prepareheaderdrag.md
       - name: System.Windows.Diagnostics
         items:
           - name: 'VisualDiagnostics, classe'
