@@ -3,12 +3,12 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 10/02/2020
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 28f2d8f0b61d8f05e558834fc1a96fc020201a08
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 84f5961d573b99438320a75d7f89bc7fd94f6266
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805263"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955211"
 ---
 # <a name="whats-new-in-c-70-through-c-73"></a>Nouveautés de C# 7,0 par C# 7,3
 
@@ -57,7 +57,7 @@ Le reste de cet article présente une vue d’ensemble de chaque fonctionnalité
 1. Installez l’outil global [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup).
 1. Clonez le référentiel [dotnet/try-samples](https://github.com/dotnet/try-samples).
 1. Définissez le répertoire actuel sur le sous-répertoire *csharp7* pour le référentiel *try-samples*.
-1. Exécutez `dotnet try`.
+1. Exécuter `dotnet try`.
 
 ## <a name="tuples-and-discards"></a>Tuples et éléments ignorés
 
@@ -211,7 +211,7 @@ Pour plus d’informations, voir l’article [async main](../programming-guide/m
 
 ## <a name="local-functions"></a>Fonctions locales
 
-De nombreuses conceptions pour les classes incluent des méthodes qui sont appelées à partir d’un seul emplacement. Ces méthodes privées supplémentaires maintiennent chaque méthode réduite et focalisée. Les *fonctions locales* vous permettent d’utiliser des méthodes dans le contexte d’une autre méthode. Il est ainsi plus facile pour les lecteurs de la classe de voir que la méthode locale est appelée uniquement à partir du contexte dans lequel elle a été déclarée.
+De nombreuses conceptions pour les classes incluent des méthodes qui sont appelées à partir d’un seul emplacement. Ces méthodes privées supplémentaires maintiennent chaque méthode réduite et focalisée. Les *fonctions locales* vous permettent de déclarer des méthodes dans le contexte d’une autre méthode. Il est ainsi plus facile pour les lecteurs de la classe de voir que la méthode locale est appelée uniquement à partir du contexte dans lequel elle a été déclarée.
 
 Il existe deux cas d’utilisation courants pour les fonctions locales : les méthodes iterator publiques et les méthodes async publiques. Ces deux types de méthodes génèrent du code qui signale les erreurs plus tard que ce qu’attendent les programmeurs. Dans les méthodes iterator, toute exception est observée uniquement lors de l’appel de code qui énumère la séquence retournée. Dans les méthodes async, toute exception est observée uniquement quand le `Task` retourné est attendu. L’exemple suivant illustre la séparation entre la validation de paramètres et l’implémentation de l’itérateur à l’aide d’une fonction locale :
 

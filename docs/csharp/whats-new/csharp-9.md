@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: c165ca764d93b74aac21028ed3e55e80f2a23ee0
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 0ac3b410cd9ba886ee55aede952700f145f1b31b
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654905"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955165"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -232,7 +232,7 @@ En outre, la [ `foreach` boucle](../language-reference/keywords/foreach-in.md) r
 
 Ensuite, vous pouvez utiliser des éléments ignorés comme paramètres pour les expressions lambda. Cela vous permet d’éviter de nommer l’argument et le compilateur peut ne pas l’utiliser. Vous utilisez `_` pour n’importe quel argument. Pour plus d’informations, consultez la section [paramètres d’entrée d’une expression lambda](../language-reference/operators/lambda-expressions.md#input-parameters-of-a-lambda-expression) de l’article [expressions lambda](../language-reference/operators/lambda-expressions.md) .
 
-Enfin, vous pouvez maintenant appliquer des attributs à des fonctions locales. Par exemple, vous pouvez appliquer des annotations d’attribut Nullable aux fonctions locales.
+Enfin, vous pouvez maintenant appliquer des attributs à des [fonctions locales](../programming-guide/classes-and-structs/local-functions.md). Par exemple, vous pouvez appliquer des [annotations d’attribut Nullable](../language-reference/attributes/nullable-analysis.md) aux fonctions locales.
 
 ## <a name="support-for-code-generators"></a>Prise en charge des générateurs de code
 

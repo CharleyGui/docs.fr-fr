@@ -1,21 +1,21 @@
 ---
 title: Déployer une application .NET pour Apache Spark sur Azure HDInsight
 description: Découvrez comment déployer une application .NET pour Apache Spark sur HDInsight.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 9a4ca80463de41a50d103c696b2108d0cef023fc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8ef1429d265c87347bb8771dc01b319fcb9e84d0
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90548375"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955368"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Azure HDInsight
 
 Ce didacticiel vous apprend à déployer votre .NET pour Apache Spark application dans le Cloud par le biais d’un cluster Azure HDInsight. HDInsight facilite la création et la configuration d’un cluster Spark dans Azure, car les clusters Spark dans HDInsight sont compatibles avec le stockage Azure et les Azure Data Lake Storage.
 
-Dans ce tutoriel, vous allez apprendre à :
+Dans ce tutoriel, vous allez découvrir comment :
 
 > [!div class="checklist"]
 >
@@ -24,8 +24,6 @@ Dans ce tutoriel, vous allez apprendre à :
 > * Publiez votre application .NET pour Apache Spark.
 > * Créez et exécutez une action de script HDInsight.
 > * Exécutez un .NET pour Apache Spark application sur un cluster HDInsight.
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -153,7 +151,7 @@ Une fois que votre cluster est en cours d’exécution et que vous avez téléch
    |Propriété  |Description  |
    |---------|---------|
    | Type de script |Custom|
-   | Name | Installer Worker|
+   | Nom | Installer Worker|
    | URI de script bash |`https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh` </br> Pour confirmer cet URI, cliquez avec le bouton droit sur install-worker.sh dans Explorateur Stockage Azure, puis sélectionnez Propriétés. |
    | Type(s) de nœud| Worker|
    | Paramètres | azure </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin

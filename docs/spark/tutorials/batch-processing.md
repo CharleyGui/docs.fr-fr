@@ -3,14 +3,14 @@ title: Didacticiel sur le traitement par lots avec .NET pour Apache Spark
 description: Découvrez comment effectuer un traitement par lots à l’aide de .NET pour Apache Spark.
 author: mamccrea
 ms.author: mamccrea
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: dbc3ab5cc4bd7f438e9f3f8e5d36c764d785ce4b
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 666292fa2e9cecbd4e0aacd291f1008810eb257e
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618283"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955393"
 ---
 # <a name="tutorial-do-batch-processing-with-net-for-apache-spark"></a>Didacticiel : effectuer un traitement par lots avec .NET pour Apache Spark
 
@@ -18,15 +18,13 @@ Dans ce didacticiel, vous allez apprendre à effectuer un traitement par lots à
 
 Le traitement par lots est généralement effectué sur des jeux de données volumineux et plats qui doivent être préparés pour une analyse plus poussée. Le traitement des journaux et l’entreposage des données sont des scénarios courants de traitement par lots. Dans ce scénario, vous analysez des informations sur les projets GitHub, telles que le nombre de fois où différents projets ont été dupliqués ou la manière dont les projets récents ont été mis à jour.
 
-Dans ce tutoriel, vous allez apprendre à :
+Dans ce tutoriel, vous allez découvrir comment :
 
 > [!div class="checklist"]
 >
 > * Créer et exécuter un .NET pour Apache Spark application
 > * Lire des données dans un tableau et les préparer pour l’analyse
 > * Traitement des données à l’aide de Spark SQL
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Prérequis
 

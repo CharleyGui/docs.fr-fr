@@ -1,20 +1,20 @@
 ---
-title: Évolution de .NET Core vers .NET 5
+title: Nouveautés de .NET 5
 description: Découvrez .NET 5, une plateforme de développement multiplateforme et open source qui est la prochaine évolution de .NET Core.
 ms.date: 09/02/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 9318b1afbe22c97f056bd38732306c6a6b60ad00
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 9d4fc514c9de7a668f909286f10d6fe28ada7f90
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598118"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955203"
 ---
-# <a name="the-evolution-of-net-core-to-net-5"></a>Évolution de .NET Core vers .NET 5
+# <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
-Cet article détaille ce qui est inclus dans .NET 5, qui est la prochaine version de .NET Core suivant 3,1. Le numéro de version est 5,0 pour éviter toute confusion avec .NET Framework 4. x. « Core » est supprimé du nom, car il s’agit de l’implémentation principale de .NET à l’avenir. ASP.NET Core conserve le nom « Core » pour éviter qu’il ne soit confus avec ASP.NET MVC 5. En outre, Entity Framework Core conserve le nom « Core » pour éviter qu’il ne soit confus avec Entity Framework 5 et 6. .NET 5 prend en charge davantage de types d’applications et de plateformes que .NET Core ou .NET Framework.
+.NET 5 est l’évolution de .NET Core. Cet article détaille ce que vous trouverez dans .NET 5, prochaine version de .NET Core après la version 3.1. Le numéro de version est 5,0 pour éviter toute confusion avec .NET Framework 4. x. « Core » est supprimé du nom, car il s’agit de l’implémentation principale de .NET à l’avenir. ASP.NET Core conserve le nom « Core » pour éviter qu’il ne soit confus avec ASP.NET MVC 5. En outre, Entity Framework Core conserve le nom « Core » pour éviter qu’il ne soit confus avec Entity Framework 5 et 6. .NET 5 prend en charge davantage de types d’applications et de plateformes que .NET Core ou .NET Framework.
 
 L’avènement de .NET Core a évolué l’écosystème .NET de manière attrayante. Il a évolué en tant que projet open source sur GitHub, célébrant les contributions de la communauté et remarquer amélioré au fil du temps.
 
@@ -46,13 +46,13 @@ L’avènement de .NET Core a évolué l’écosystème .NET de manière attraya
 
 ### <a name="what-net-5-is-not"></a>Ce que .NET 5 n’est pas
 
-.NET 5 n’est pas un substitut pour .NET Framework. Il n’est pas prévu de porter les technologies suivantes de .NET Framework vers .NET 5, mais il existe des alternatives prises en charge incluses dans .NET 5 :
+.NET 5 n’est pas un remplacement complet de .NET Framework. Il n’est pas prévu de porter les technologies suivantes de .NET Framework à .NET 5, mais il existe des alternatives prises en charge :
 
-| Technologie                             | Recommandation                                              |
-|----------------------------------------|-------------------------------------------------------------|
-| Web Forms                              | [ASP.NET Core éblouissant](/aspnet/core/blazor)                  |
-| Windows Communication Foundation (WCF) | [gRPC](/aspnet/core/grpc)                                   |
-| Windows Workflow (WF)                  | [CoreWF Open source](https://github.com/UiPath-Open/corewf) |
+| Technologie                             | Alternative recommandée                                                                         |
+|----------------------------------------|-------------------------------------------------------------------------------------------------|
+| Web Forms                              | ASP.NET Core [éblouissant](/aspnet/core/blazor) ou [Razor pages](/aspnet/core/tutorials/razor-pages) |
+| Windows Communication Foundation (WCF) | [gRPC](/aspnet/core/grpc)                                                                       |
+| Windows Workflow (WF)                  | [CoreWF Open source](https://github.com/UiPath-Open/corewf)                                     |
 
 ## <a name="net-standard"></a>.NET Standard
 

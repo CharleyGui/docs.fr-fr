@@ -1,21 +1,19 @@
 ---
 title: Déboguer une application .NET pour Apache Spark sur Windows
 description: Découvrez comment déboguer votre application .NET pour Apache Spark sur Windows.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 249b4bccbf1378d8ef8c824f39151c33fb9f875a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 43531e6b2f9a79658f89b804dfa2bb97d6e9645b
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557149"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91954982"
 ---
 # <a name="debug-a-net-for-apache-spark-application"></a>Déboguer une application .NET pour Apache Spark
 
 Cette procédure fournit les étapes permettant de déboguer votre application .NET pour Apache Spark sur Windows.
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="debug-your-application"></a>Déboguer votre application
 

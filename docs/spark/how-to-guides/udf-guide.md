@@ -1,21 +1,19 @@
 ---
 title: Créer des fonctions définies par l’utilisateur (UDF) dans .NET pour Apache Spark
 description: Découvrez comment implémenter des fonctions définies par l’utilisateur (UDF) dans .NET pour les applications Apache Spark.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 97afda8ed17d3719c534d72ad3ad026745a70922
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 769bcf0a912d27e191dad82138648d1aefb3c3b6
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620922"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955034"
 ---
 # <a name="create-user-defined-functions-udf-in-net-for-apache-spark"></a>Créer des fonctions définies par l’utilisateur (UDF) dans .NET pour Apache Spark
 
 Dans cet article, vous allez apprendre à utiliser des fonctions définies par l’utilisateur (UDF) dans .NET pour Apache Spark. [Fonctions définies](https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/expressions/UserDefinedFunction.html) par l’utilisateur) est une fonctionnalité Spark qui vous permet d’utiliser des fonctions personnalisées pour étendre les fonctionnalités intégrées du système. Les fonctions définies par l’utilisateur transforment les valeurs d’une ligne unique dans une table pour produire une valeur de sortie correspondante unique par ligne en fonction de la logique définie dans la fonction définie par l’utilisateur.
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="define-udfs"></a>Définir des fonctions définies par l’utilisateur
 

@@ -2,18 +2,18 @@
 title: 'Attributs réservés C# : analyse statique Nullable'
 ms.date: 04/14/2020
 description: Ces attributs sont interprétés par le compilateur pour fournir une meilleure analyse statique pour les types de référence Nullable et non Nullable.
-ms.openlocfilehash: d2405162ece3df209111de65fdef54f70cc86d45
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: 6678cd21de23d4ed391eff089e33939b5adff0fa
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656304"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955601"
 ---
 # <a name="reserved-attributes-contribute-to-the-compilers-null-state-static-analysis"></a>Les attributs réservés contribuent à l’analyse statique d’État null du compilateur
 
 Dans un contexte Nullable, le compilateur effectue une analyse statique du code pour déterminer l’État null de toutes les variables de type référence :
 
-- *not null*: l’analyse statique a déterminé que la variable est assignée à une valeur non null.
+- *not null*: l’analyse statique détermine qu’une valeur non null est assignée à une variable.
 - *peut-être null*: l’analyse statique ne peut pas déterminer qu’une valeur non null est assignée à une variable.
 
 Vous pouvez appliquer un certain nombre d’attributs qui fournissent des informations au compilateur sur la sémantique de vos API. Ces informations permettent au compilateur d’effectuer une analyse statique et de déterminer quand une variable n’a pas la valeur null. Cet article fournit une brève description de chacun de ces attributs et explique comment les utiliser. Tous les exemples supposent C# 8,0 ou une version plus récente et le code se trouve dans un contexte Nullable.

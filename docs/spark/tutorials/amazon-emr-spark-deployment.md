@@ -1,30 +1,28 @@
 ---
 title: Déployer une application .NET pour Apache Spark sur Amazon EMR Spark
 description: Découvrez comment déployer une application .NET pour Apache Spark sur Amazon EMR Spark.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c6cf26044693c5d923d11e1bbc72232e7009fe73
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 0232896254e93525f2a6f0be05417107cf7f5432
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618257"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955471"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-amazon-emr-spark"></a>Déployer une application .NET pour Apache Spark sur Amazon EMR Spark
 
 Ce tutoriel explique comment déployer une application .NET pour Apache Spark sur Amazon EMR Spark.
 
-Dans ce tutoriel, vous allez apprendre à :
+Dans ce tutoriel, vous allez découvrir comment :
 
 > [!div class="checklist"]
 >
 > * Préparer Microsoft.Spark.Worker
 > * Publier votre application .NET Spark
 > * Déployer votre application sur Amazon EMR Spark
-> * Exécutez l'application.
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
+> * Exécuter l’application
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -96,7 +94,7 @@ aws emr create-cluster \
 --bootstrap-actions Path=s3://mybucket/<some dir>/install-worker.sh,Name="Install Microsoft.Spark.Worker",Args=["aws","s3://mybucket/<some dir>/Microsoft.Spark.Worker.<release>.tar.gz","/usr/local/bin"]
 ```
 
-## <a name="run-your-app"></a>Exécutez l'application.
+## <a name="run-your-app"></a>Exécuter l’application
 
 Il existe deux façons d’exécuter votre application dans Amazon EMR Spark : spark-submit et Amazon EMR Steps.
 
@@ -106,7 +104,7 @@ Vous pouvez utiliser la commande [spark-submit](https://spark.apache.org/docs/la
 
 1. `ssh` dans un des nœuds du cluster.
 
-2. Exécutez `spark-submit`.
+2. Exécuter `spark-submit`.
 
    ```bash
    spark-submit \

@@ -1,26 +1,26 @@
 ---
 title: Déployer .NET pour les fichiers binaires de fonctions définies par l’utilisateur et de Apache Spark Worker
 description: Découvrez comment déployer .NET pour les fichiers binaires de fonctions de Apache Spark Worker et de fonctions définies par l’utilisateur.
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 672a32c430bd702167a294d2b895ac1ac90bf67e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 001798bfda628ce979570bcd89e7c5553347b275
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617715"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91954956"
 ---
 # <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>Déployer .NET pour les fichiers binaires de fonctions définies par l’utilisateur et de Apache Spark Worker
 
 Cette procédure fournit des instructions générales sur le déploiement de .NET pour les fichiers binaires de fonction Apache Spark Worker et de fonction définie par l’utilisateur. Vous découvrez les variables d’environnement à configurer, ainsi que certains paramètres couramment utilisés pour lancer des applications avec `spark-submit` .
 
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
-
 ## <a name="configurations"></a>Configurations
+
 Les configurations affichent les paramètres variables et paramètres généraux de l’environnement afin de déployer .NET pour les fichiers binaires de fonction Apache Spark Worker et définie par l’utilisateur.
 
 ### <a name="environment-variables"></a>Variables d'environnement
+
 Lors du déploiement de Workers et de l’écriture de fonctions définies par l’utilisateur, il existe quelques variables d’environnement couramment utilisées que vous devrez peut-être définir :
 
 | Variable d’environnement         | Description
@@ -37,7 +37,7 @@ Une fois l’application Spark [regroupée](https://spark.apache.org/docs/latest
 | --classe               | Point d’entrée de votre application.</br>_exemple : org. Apache. Spark. deploy. dotnet. DotnetRunner_
 | --maître              | <a href="https://spark.apache.org/docs/latest/submitting-applications.html#master-urls">URL principale</a> du cluster.</br>_par exemple, fils_
 | --mode de déploiement         | Si vous souhaitez déployer votre pilote sur les nœuds Worker ( <code>cluster</code> ) ou localement en tant que client externe ( <code>client</code> ).</br>Valeur par défaut : <code>client</code>
-| --CONF                | Propriété de configuration Spark arbitraire au <code>key=value</code> format.</br>_par exemple, Spark. fils. appMasterEnv. DOTNET_WORKER_DIR = .\worker\Microsoft.Spark.Worker_
+| --CONF                | Propriété de configuration Spark arbitraire au <code>key=value</code> format.</br>_par exemple, spark.yarn.appMasterEnv.DOTNET_WORKER_DIR = .\worker\Microsoft.Spark.Worker_
 | --Files               | Liste de fichiers séparés par des virgules à placer dans le répertoire de travail de chaque exécuteur.<br/><ul><li>Notez que cette option s’applique uniquement au mode fils.</li><li>Il prend en charge la spécification de noms de fichiers avec # similaire à Hadoop.</br></ul>_par exemple, <code>myLocalSparkApp.dll#appSeen.dll</code> . Votre application doit utiliser le nom en tant que <code>appSeen.dll</code> référence <code>myLocalSparkApp.dll</code> lors de l’exécution sur un fil._</li>
 | --Archives          | Liste d’archives séparées par des virgules à extraire dans le répertoire de travail de chaque exécuteur.</br><ul><li>Notez que cette option s’applique uniquement au mode fils.</li><li>Il prend en charge la spécification de noms de fichiers avec # similaire à Hadoop.</br></ul>_par exemple, <code>hdfs://&lt;path to your worker file&gt;/Microsoft.Spark.Worker.zip#worker</code> . Cette opération copie et extrait le fichier zip dans le <code>worker</code> dossier._</li>
 | application-fichier jar       | Chemin d’accès à un fichier jar groupé incluant votre application et toutes les dépendances.</br>_par exemple, hdfs:// &lt; chemin d’accès à votre fichier jar &gt; /Microsoft-Spark- &lt; version &gt; . jar_

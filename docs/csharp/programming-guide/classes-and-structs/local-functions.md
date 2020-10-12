@@ -1,15 +1,15 @@
 ---
 title: Fonctions locales - Guide de programmation C#
 description: Les fonctions locales en C# sont des méthodes privées qui sont imbriquées dans un autre membre et peuvent être appelées à partir de leur membre conteneur.
-ms.date: 10/02/2020
+ms.date: 10/09/2020
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: e7c49554da56d8682d37a236024922b3fa3ec600
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: a2d389c8b1c687dc4885004fcdc33e0ed7ada977
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877533"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955679"
 ---
 # <a name="local-functions-c-programming-guide"></a>Fonctions locales (Guide de programmation C#)
 
@@ -50,11 +50,15 @@ Toutes les variables locales définies dans le membre conteneur, y compris ses p
 
 Contrairement à une définition de méthode, une définition de fonction locale ne peut pas inclure le modificateur d’accès au membre. Comme toutes les fonctions locales sont privées, l’inclusion d’un modificateur d’accès, tel que le mot clé `private`, génère l’erreur de compilateur CS0106 : « Le modificateur « private » n’est pas valide pour cet élément ».
 
-Par ailleurs, les attributs ne peuvent pas être appliqués à la fonction locale ou à ses paramètres et paramètres de type.
-
 L’exemple suivant définit une fonction locale nommée `AppendPathSeparator` qui est privée pour une méthode nommée `GetText` :
 
 :::code language="csharp" source="snippets/local-functions/Program.cs" id="Basic" :::
+
+À compter de C# 9,0, vous pouvez appliquer des attributs à une fonction locale, à ses paramètres et à ses paramètres de type, comme le montre l’exemple suivant :
+
+:::code language="csharp" source="snippets/local-functions/Program.cs" id="WithAttributes" :::
+
+L’exemple précédent utilise un [attribut spécial](../../language-reference/attributes/nullable-analysis.md) pour aider le compilateur dans une analyse statique dans un contexte Nullable.
 
 ## <a name="local-functions-and-exceptions"></a>Fonctions locales et exceptions
 

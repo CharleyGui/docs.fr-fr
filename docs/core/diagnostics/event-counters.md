@@ -2,12 +2,12 @@
 title: EventCounters dans .NET Core
 description: Dans cet article, vous allez découvrir les EventCounters, comment les implémenter et comment les utiliser.
 ms.date: 08/07/2020
-ms.openlocfilehash: fc2f945e3de732a81b9ce3fd82eff10e455cae87
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: be273776b888f13893fc694a111093cca1fa8a5e
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062962"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955315"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters dans .NET Core
 
@@ -103,7 +103,7 @@ var workingSetCounter = new PollingCounter(
 };
 ```
 
-Le <xref:System.Diagnostics.Tracing.PollingCounter> signale la quantité actuelle de mémoire physique mappée au processus (plage de travail) de l’application, car elle capture une mesure à un moment donné. Le rappel d’interrogation d’une valeur est l’expression lambda fournie, qui est simplement un appel à l' <xref:System.Environment.WorkingSet?displayProperty=fullName> API. <xref:System.Diagnostics.Tracing.DiagnosticCounter.DisplayName>et <xref:System.Diagnostics.Tracing.DiagnosticCounter.DisplayUnits> sont des propriétés facultatives qui peuvent être définies pour aider le côté client du compteur à afficher la valeur plus clairement. Par exemple, [dotnet-Counters](dotnet-counters.md) utilise ces propriétés pour afficher la version la plus conviviale des noms de compteurs.
+Le <xref:System.Diagnostics.Tracing.PollingCounter> signale la quantité actuelle de mémoire physique mappée au processus (plage de travail) de l’application, car elle capture une mesure à un moment donné. Le rappel d’interrogation d’une valeur est l’expression lambda fournie, qui est simplement un appel à l' <xref:System.Environment.WorkingSet?displayProperty=fullName> API. <xref:System.Diagnostics.Tracing.DiagnosticCounter.DisplayName> et <xref:System.Diagnostics.Tracing.DiagnosticCounter.DisplayUnits> sont des propriétés facultatives qui peuvent être définies pour aider le côté client du compteur à afficher la valeur plus clairement. Par exemple, [dotnet-Counters](dotnet-counters.md) utilise ces propriétés pour afficher la version la plus conviviale des noms de compteurs.
 
 > [!IMPORTANT]
 > Les `DisplayName` Propriétés ne sont pas localisées.
@@ -144,6 +144,16 @@ La `AddRequest()` méthode peut être appelée à partir d’un gestionnaire de 
 
 ```csharp
 public void AddRequest() => Interlocked.Increment(ref _requestCount);
+```
+
+Pour éviter les lectures endommagées (sur les architectures 32 bits) de l' `long` utilisation du champ-Field `_requestCount` <xref:System.Threading.Interlocked.Read%2A?displayProperty=nameWithType> .
+
+```csharp
+_requestRateCounter = new IncrementingPollingCounter("request-rate", this, () => Interlocked.Read(ref _requestCount))
+{
+    DisplayName = "Request Rate",
+    DisplayRateTimeScale = TimeSpan.FromSeconds(1)
+};
 ```
 
 ## <a name="consume-eventcounters"></a>Consommer EventCounters

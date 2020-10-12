@@ -3,28 +3,26 @@ title: Didacticiel de diffusion en continu structurée avec .NET pour Apache Spa
 description: Dans ce didacticiel, vous allez apprendre à utiliser .NET pour Apache Spark pour Spark Structured streaming.
 author: mamccrea
 ms.author: mamccrea
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 5420fe081db1704d7af647e8c88826c1bcf614d9
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 47c716db931dc912b80844fe69283b12d030c238
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617841"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955575"
 ---
 # <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>Didacticiel : diffusion en continu structurée avec .NET pour Apache Spark
 
 Ce didacticiel vous apprend à appeler Spark Structured streaming à l’aide de .NET pour Apache Spark. Spark Structured streaming est la prise en charge par Apache Spark du traitement des flux de données en temps réel. Le traitement des flux de données consiste à analyser les données actives à mesure qu’elles sont produites.
 
-Dans ce tutoriel, vous allez apprendre à :
+Dans ce tutoriel, vous allez découvrir comment :
 
 > [!div class="checklist"]
 >
 > * Créer et exécuter un .NET pour Apache Spark application
 > * Utiliser netcat pour créer un flux de données
 > * Utiliser des fonctions définies par l’utilisateur et SparkSQL pour analyser les données de streaming
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Prérequis
 
