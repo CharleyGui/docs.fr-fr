@@ -4,15 +4,14 @@ description: Utiliser les expressions de valeur par défaut pour obtenir la vale
 ms.date: 03/13/2020
 f1_keywords:
 - default_CSharpKeyword
-- default
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: f03971efa87bf03967c79512e44d22134dd80c17
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 92ad8e919567e1f9f57e6875d53c4055eb960829
+ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916872"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91997652"
 ---
 # <a name="default-value-expressions-c-reference"></a>expressions de valeur par défaut (référence C#)
 

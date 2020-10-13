@@ -1,7 +1,7 @@
 ---
 title: Comment sérialiser et désérialiser JSON à l’aide de C#-.NET
-description: Cet article explique comment utiliser l’espace de System.Text.Json noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
-ms.date: 05/13/2020
+description: Découvrez comment utiliser l' System.Text.Json espace de noms pour sérialiser et désérialiser à partir de JSON dans .net. Il comprend un exemple de code.
+ms.date: 10/09/2020
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
@@ -10,16 +10,16 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 72ba79784d3eb1beb43eab8db0a448a7e3b18eb6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0fda248b7d2e5a7cfa748447d0265565cb160b7e
+ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557838"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91997779"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
-Cet article explique comment utiliser l' <xref:System.Text.Json> espace de noms pour sérialiser et désérialiser vers et à partir de JavaScript Object Notation (JSON). Si vous transférez du code existant à partir de `Newtonsoft.Json` , consultez [Comment migrer vers `System.Text.Json` ](system-text-json-migrate-from-newtonsoft-how-to.md).
+Cet article explique comment utiliser l' <xref:System.Text.Json?displayProperty=fullName> espace de noms pour sérialiser et désérialiser à partir de JavaScript Object Notation (JSON). Si vous transférez du code existant à partir de `Newtonsoft.Json` , consultez [Comment migrer vers `System.Text.Json` ](system-text-json-migrate-from-newtonsoft-how-to.md).
 
 Les instructions et l’exemple de code utilisent directement la bibliothèque, et non un Framework comme [ASP.net Core](/aspnet/core/).
 
@@ -62,9 +62,12 @@ Les exemples précédents utilisent l’inférence de type pour le type en cours
 
 ### <a name="serialization-example"></a>Exemple de sérialisation
 
-Voici un exemple de classe qui contient des collections et une classe imbriquée :
+Voici un exemple de classe qui contient des propriétés de type collection et un type défini par l’utilisateur :
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPOCOs)]
+
+> [!TIP]
+> « POCO » signifie « [Plain Old CLR Object](https://en.wikipedia.org/wiki/Plain_old_CLR_object)». Un POCO est un type .NET qui ne dépend d’aucun type spécifique à l’infrastructure, par exemple par le biais de l’héritage ou des attributs.
 
 La sortie JSON de la sérialisation d’une instance du type précédent ressemble à l’exemple suivant. La sortie JSON est minimisés par défaut :
 
@@ -72,7 +75,7 @@ La sortie JSON de la sérialisation d’une instance du type précédent ressemb
 {"Date":"2019-08-01T00:00:00-07:00","TemperatureCelsius":25,"Summary":"Hot","DatesAvailable":["2019-08-01T00:00:00-07:00","2019-08-02T00:00:00-07:00"],"TemperatureRanges":{"Cold":{"High":20,"Low":-10},"Hot":{"High":60,"Low":20}},"SummaryWords":["Cool","Windy","Humid"]}
 ```
 
-L’exemple suivant montre le même JSON, mis en forme (autrement dit, avec un espace blanc et une mise en retrait) :
+L’exemple suivant montre le même JSON, mais formaté (autrement dit, avec un espace blanc et une mise en retrait) :
 
 ```json
 {
@@ -123,7 +126,7 @@ La sérialisation en UTF-8 est environ 5-10% plus rapide que l’utilisation des
 Les types pris en charge sont les suivants :
 
 * Primitives .NET qui sont mappées à des primitives JavaScript, telles que des types numériques, des chaînes et des valeurs booléennes.
-* [Objets CLR Plain Old](https://stackoverflow.com/questions/250001/poco-definition)définis par l’utilisateur (POCO).
+* [Objets CLR Plain Old](https://en.wikipedia.org/wiki/Plain_old_CLR_object)définis par l’utilisateur (POCO).
 * Tableaux unidimensionnels et en escalier ( `ArrayName[][]` ).
 * `Dictionary<string,TValue>` où `TValue` est `object` , `JsonElement` ou un poco.
 * Collections des espaces de noms suivants.
@@ -137,7 +140,7 @@ Vous pouvez [implémenter des convertisseurs personnalisés](system-text-json-co
 
 Pour désérialiser à partir d’une chaîne ou d’un fichier, appelez la <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> méthode.
 
-L’exemple suivant lit JSON à partir d’une chaîne et crée une instance de la `WeatherForecast` classe indiquée précédemment pour l' [exemple de sérialisation](#serialization-example):
+L’exemple suivant lit JSON à partir d’une chaîne et crée une instance de la `WeatherForecastWithPOCOs` classe indiquée précédemment pour l' [exemple de sérialisation](#serialization-example):
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetDeserialize)]
 
@@ -159,9 +162,13 @@ Pour désérialiser à partir d’UTF-8, appelez une <xref:System.Text.Json.Json
 
 ## <a name="deserialization-behavior"></a>Comportement de la désérialisation
 
+Les comportements suivants s’appliquent lors de la désérialisation de JSON :
+
 * Par défaut, la correspondance de nom de propriété respecte la casse. Vous pouvez [spécifier le non-respect de la casse](#case-insensitive-property-matching).
 * Si le JSON contient une valeur pour une propriété en lecture seule, la valeur est ignorée et aucune exception n’est levée.
-* La désérialisation en types référence sans constructeur sans paramètre n’est pas prise en charge.
+* Constructeurs pour la désérialisation :
+  - Sur .NET Core 3,0 et 3,1, un constructeur sans paramètre, qui peut être public, Internal ou Private, est utilisé pour la désérialisation.
+  - Dans .NET 5,0 et versions ultérieures, les constructeurs non publics sont ignorés par le sérialiseur. Toutefois, les constructeurs paramétrables peuvent être utilisés si aucun constructeur sans paramètre n’est disponible.
 * La désérialisation des objets immuables ou des propriétés en lecture seule n’est pas prise en charge.
 * Par défaut, les enums sont pris en charge en tant que nombres. Vous pouvez [sérialiser les noms d’enum en tant que chaînes](#enums-as-strings).
 * Les champs ne sont pas pris en charge.

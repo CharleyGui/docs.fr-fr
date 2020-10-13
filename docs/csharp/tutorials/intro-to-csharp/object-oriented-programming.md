@@ -2,14 +2,14 @@
 title: Programmation orientée objet (C#)
 description: C# fournit une prise en charge complète de la programmation orientée objet, notamment l’abstraction, l’encapsulation, l’héritage et le polymorphisme.
 ms.date: 09/30/2020
-ms.openlocfilehash: 8a8dc8dc6d40c539b988ea203654d994e88c357a
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 6e0155621be544b01453b8c107debb3a9b6c38f9
+ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614795"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91997663"
 ---
-# <a name="object-oriented-programming-c"></a>Programmation orientée objet (C#)
+# <a name="object-oriented-programming-c"></a>Programmation Object-Oriented (C#)
 
 C# est un langage orienté objet. Quatre des techniques clés utilisées dans la programmation orientée objet sont les suivantes :
 
@@ -162,7 +162,7 @@ Remplacez-le par le code suivant :
 
 :::code language="csharp" source="./snippets/object-oriented-programming/BankAccount.cs" ID="RefactoredMakeWithdrawal":::
 
-La méthode ajoutée est, ce qui signifie qu’elle ne peut être appelée qu’à partir de classes dérivées. Cette déclaration empêche d’autres clients d’appeler la méthode. Cela permet également `virtual` aux classes dérivées de modifier le comportement. Le type de retour est `Transaction?` . L' `?` annotation indique que la méthode peut retourner `null` . Ajoutez l’implémentation suivante dans le `LineOfCreditAccount` pour payer des frais lorsque la limite de retrait est dépassée :
+La méthode ajoutée est `protected` , ce qui signifie qu’elle ne peut être appelée qu’à partir de classes dérivées. Cette déclaration empêche d’autres clients d’appeler la méthode. Cela permet également `virtual` aux classes dérivées de modifier le comportement. Le type de retour est `Transaction?` . L' `?` annotation indique que la méthode peut retourner `null` . Ajoutez l’implémentation suivante dans le `LineOfCreditAccount` pour payer des frais lorsque la limite de retrait est dépassée :
 
 :::code language="csharp" source="./snippets/object-oriented-programming/LineOfCreditAccount.cs" ID="AddOverdraftFee":::
 
@@ -174,7 +174,7 @@ Exécutez le programme et vérifiez les résultats.
 
 ## <a name="summary"></a>Résumé
 
-Ce didacticiel a démontré de nombreuses techniques utilisées dans la programmation orientée objet :
+Ce didacticiel a démontré de nombreuses techniques utilisées dans la programmation de Object-Oriented :
 
 - Vous avez utilisé l' *abstraction* quand vous avez conservé de nombreux détails `private` dans chaque classe.
 - Vous avez utilisé l' *encapsulation* lorsque vous avez défini des classes pour chacun des différents types de compte. Ces classes décrivent le comportement de ce type de compte.
