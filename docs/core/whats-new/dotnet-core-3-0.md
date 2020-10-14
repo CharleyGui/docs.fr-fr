@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 8ba64a6e3bee4a5d27a07ab4ad4ef3a3f0749778
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: b0b1f4492d68ff2f2218b7c977f57cad3f582bb0
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804630"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050278"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -108,7 +108,7 @@ Pour publier un exécutable monofichier, définissez `PublishSingleFile` dans vo
 </PropertyGroup>
 ```
 
--ou-
+- ou -
 
 ```dotnetcli
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
@@ -395,7 +395,7 @@ Des [images Docker pour .NET Core sur ARM64](https://hub.docker.com/r/microsoft/
 .NET Core 3.0 utilise **OpenSSL 1.1.1**, **OpenSSL 1.1.0** ou **OpenSSL 1.0.2** sur un système Linux s’ils sont disponibles. Quand **OpenSSL 1.1.1** est disponible, les types <xref:System.Net.Security.SslStream?displayProperty=nameWithType> et <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> utilisent **TLS 1.3** (sous réserve que le client et le serveur prennent en charge **TLS 1.3**).
 
 > [!IMPORTANT]
-> Windows et macOS ne prennent pas encore en charge **TLS 1.3**. .NET Core 3.0 prendra en charge **TLS 1.3** sur ces systèmes d’exploitation dès que de la prise en charge sera disponible.
+> Windows et macOS ne prennent pas encore en charge **TLS 1.3**.
 
 L’exemple C# 8.0 suivant montre comment .NET Core 3.0 sur Ubuntu 18.10 se connecte à <https://www.cloudflare.com> :
 
@@ -516,7 +516,7 @@ Des API ont été ajoutées, qui permettent d’accéder à certaines instructio
 
 Le cas échéant, les bibliothèques .NET ont commencé à utiliser ces instructions pour améliorer les performances.
 
-Pour plus d’informations, consultez [intrinsèques dépendants de la plateforme .net](https://github.com/dotnet/designs/blob/master/accepted/2018/platform-intrinsics.md).
+Pour plus d’informations, consultez [fonctions intrinsèques de .net Platform-Dependent](https://github.com/dotnet/designs/blob/master/accepted/2018/platform-intrinsics.md).
 
 ### <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 

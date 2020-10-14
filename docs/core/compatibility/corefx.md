@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 07/27/2020
-ms.openlocfilehash: d4deef295479b1f32bd72a69369a11c7375835f4
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 3ecf0e81a3adef097aafb760dc44498d7263f0b6
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955554"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050561"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -17,6 +17,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [La valeur de FrameworkDescription est .NET au lieu de .NET Core](#frameworkdescriptions-value-is-net-instead-of-net-core) | 5.0 |
 | [Modifications du comportement des API liées à l’assembly pour le format de publication à fichier unique](#assembly-related-api-behavior-changes-for-single-file-publishing-format) | 5.0 |
 | [Ordre des balises dans Activity. les balises sont inversées](#order-of-tags-in-activitytags-is-reversed) | 5.0 |
 | [Noms de paramètres modifiés dans RC1](#parameter-names-changed-in-rc1) | 5.0 |
@@ -57,6 +58,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Process. StartInfo lève une exception InvalidOperationException pour les processus que vous n’avez pas démarrés](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [frameworkdescription-returns-net-not-net-core](../../../includes/core-changes/corefx/5.0/frameworkdescription-returns-net-not-net-core.md)]
+
+***
 
 [!INCLUDE [assembly-api-behavior-changes-for-single-file-publish](../../../includes/core-changes/corefx/5.0/assembly-api-behavior-changes-for-single-file-publish.md)]
 

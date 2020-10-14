@@ -4,18 +4,18 @@ description: Découvrez ce qu’est une application à fichier unique et pourquo
 author: lakshanf
 ms.author: lakshanf
 ms.date: 08/28/2020
-ms.openlocfilehash: 0167e62ea46e1c23c3d4ef6ea505ee051ffaf264
-ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
+ms.openlocfilehash: 16e9586cfc29072fa2ca70dc482272a5a0e7306a
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712641"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050414"
 ---
 # <a name="single-file-deployment-and-executable"></a>Déploiement et exécutable d’un seul fichier
 
 L’empaquetage de tous les fichiers dépendants de l’application dans un seul fichier binaire fournit à un développeur d’applications l’option intéressante pour déployer et distribuer l’application en tant que fichier unique. Ce modèle de déploiement est disponible depuis .NET Core 3,0 et a été amélioré dans .NET 5,0. Précédemment dans .NET Core 3,0, lorsqu’un utilisateur exécute votre application à fichier unique, l’hôte .NET Core extrait d’abord tous les fichiers dans un répertoire temporaire avant d’exécuter l’application. .NET 5,0 améliore cette expérience en exécutant directement le code sans avoir besoin d’extraire les fichiers de l’application.
 
-Le déploiement d’un seul fichier est disponible pour le [modèle de déploiement dépendant du Framework](index.md#publish-framework-dependent) et pour les [applications autonomes](index.md#publish-self-contained). La taille du fichier unique dans une application autonome est importante, car elle inclut le runtime et les bibliothèques de Framework. L’option de déploiement de fichier unique peut être combinée avec [ReadyToRun](../tools/dotnet-publish.md) et [Trim (une fonctionnalité expérimentale dans .net 5,0) options de](trim-self-contained.md) publication.
+Le déploiement d’un seul fichier est disponible pour le [modèle de déploiement dépendant du Framework](index.md#publish-framework-dependent) et pour les [applications autonomes](index.md#publish-self-contained). La taille du fichier unique dans une application autonome est importante, car elle inclut le runtime et les bibliothèques de Framework. L’option de déploiement de fichier unique peut être combinée avec [ReadyToRun](ready-to-run.md) et [Trim (une fonctionnalité expérimentale dans .net 5,0) options de](trim-self-contained.md) publication.
 
 ## <a name="api-incompatibility"></a>Incompatibilité d’API
 

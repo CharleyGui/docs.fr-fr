@@ -1,18 +1,18 @@
 ---
-title: Nouveautés de .NET 5
+title: Nouveautés de .NET 5
 description: Découvrez .NET 5, une plateforme de développement multiplateforme et open source qui est la prochaine évolution de .NET Core.
-ms.date: 09/02/2020
+ms.date: 10/13/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 9d4fc514c9de7a668f909286f10d6fe28ada7f90
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: cc86784e3fcac7e8a3b6f54c32f66763ae416d99
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955203"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050367"
 ---
-# <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
+# <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
 .NET 5 est l’évolution de .NET Core. Cet article détaille ce que vous trouverez dans .NET 5, prochaine version de .NET Core après la version 3.1. Le numéro de version est 5,0 pour éviter toute confusion avec .NET Framework 4. x. « Core » est supprimé du nom, car il s’agit de l’implémentation principale de .NET à l’avenir. ASP.NET Core conserve le nom « Core » pour éviter qu’il ne soit confus avec ASP.NET MVC 5. En outre, Entity Framework Core conserve le nom « Core » pour éviter qu’il ne soit confus avec Entity Framework 5 et 6. .NET 5 prend en charge davantage de types d’applications et de plateformes que .NET Core ou .NET Framework.
 
@@ -38,7 +38,7 @@ L’avènement de .NET Core a évolué l’écosystème .NET de manière attraya
   - [System.Text.RegularExpressions](https://devblogs.microsoft.com/dotnet/regex-performance-improvements-in-net-5)
   - [Regroupement ValueTask asynchrone](https://devblogs.microsoft.com/dotnet/async-valuetask-pooling-in-net-5)
   - [Beaucoup plus de zones](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5)
-- Optimisations de la taille du conteneur
+- [Optimisations de la taille du conteneur](https://github.com/dotnet/dotnet-docker/issues/1814#issuecomment-625294750)
 - [Suppression d’application](https://devblogs.microsoft.com/dotnet/app-trimming-in-net-5)
 - [Améliorations du compilateur C#](https://devblogs.microsoft.com/dotnet/automatically-find-latent-bugs-in-your-code-with-net-5)
 - Prise en charge des outils pour le débogage de vidage

@@ -1,14 +1,14 @@
 ---
 title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
-ms.date: 01/22/2019
+ms.date: 10/13/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: b79580baa12cc8081346678f06d49a9d0455375c
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 1d9330b68f80da934777cb3aee6d2b3cb52c8256
+ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89415007"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92050342"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -21,6 +21,18 @@ Compilateur Ahead Of Time.
 Semblable au compilateur [JIT](#jit), ce compilateur convertit également le langage [IL](#il) en code machine. Contrairement à la compilation JIT, la compilation AOT se produit avant que l’application ne soit exécutée et est généralement effectuée sur une autre machine. Étant donné que les chaînes d’outils AOA ne sont pas compilées au moment de l’exécution, elles n’ont pas à réduire le temps passé à compiler. Ainsi, elles peuvent dédier plus de temps à l’optimisation. Étant donné que le contexte d’AOT est l’ensemble de l’application, le compilateur AOT effectue également une liaison entre modules et une analyse de la totalité du programme, ce qui signifie que toutes les références sont suivies et qu’un seul exécutable est produit.
 
 Consultez [CoreRT](#corert) et [.NET Native](#net-native).
+
+## <a name="app-model"></a>modèle d’application
+
+Une API spécifique à la [charge de travail](#workload). Voici quelques exemples :
+
+* ASP.NET
+* API web ASP.NET
+* Entity Framework (EF)
+* Windows Presentation Foundation (WPF)
+* Windows Communication Foundation (WCF)
+* Windows Workflow Foundation (WF)
+* Windows Forms (WinForms)
 
 ## <a name="aspnet"></a>ASP.NET
 
@@ -94,7 +106,7 @@ En général, ensemble complet d’API qui facilite le développement et le dép
 
 Le terme « Framework » a une signification différente dans les termes suivants :
 
-- [.NET Framework](#net-framework)
+- [.NET Framework](#net-framework)
 - [Framework cible](#target-framework)
 - [TFM (moniker de la version cible de .Net Framework)](#tfm)
 - [application dépendante du Framework](../core/deploying/index.md#publish-framework-dependent)
@@ -132,7 +144,7 @@ Une implémentation de .NET comprend les éléments suivants :
 
 Exemples d’implémentations de .NET :
 
-- [.NET Framework](#net-framework)
+- [.NET Framework](#net-framework)
 - [.NET 5 et versions ultérieures (y compris .NET Core 2.1-3.1)](#net-5-and-later-versions)
 - [Plateforme Windows universelle (UWP)](#uwp)
 - [Mono](#mono)
@@ -181,7 +193,7 @@ Consultez la section [CLI .net](../core/tools/index.md).
 
 Consultez [.net 5 et versions ultérieures](#net-5-and-later-versions).
 
-## <a name="net-framework"></a>.NET Framework
+## <a name="net-framework"></a>.NET Framework
 
 Implémentation de .NET qui s’exécute uniquement sur Windows. Comprend le[CLR](#clr)(Common Language Runtime), la bibliothèque de classes de base ([BCL](#bcl)) et les bibliothèques de l’infrastructure d’application, telles que [ASP.net](#aspnet), Windows Forms et WPF.
 
@@ -292,9 +304,15 @@ Plateforme Windows universelle.
 
 Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Il est conçu pour unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites en C++, C#, Visual Basic et JavaScript. Lorsque vous utilisez C# et Visual Basic, les API .NET sont fournies par .NET 5 (et .NET Core) et les versions ultérieures.
 
+## <a name="workload"></a>charge de travail
+
+Un type d’application créé par une personne. Plus générique que le [modèle d’application](#app-model). Par exemple, en haut de chaque page de documentation .NET, y compris celle-ci, est une liste déroulante pour les **charges de travail**, qui vous permet de basculer vers la documentation des ** \& données** **Web**, **mobile**, **Cloud**, **Desktop**et machine learning.
+
+Dans certains contextes, la *charge de travail* fait référence à une collection de fonctionnalités Visual Studio que vous pouvez choisir d’installer pour prendre en charge un type d’application particulier. Pour obtenir un exemple, consultez [Sélectionner une charge de travail](../core/install/windows.md#select-a-workload).
+
 ## <a name="see-also"></a>Voir aussi
 
-- [Notions de base de .NET](../fundamentals/index.yml)
-- [Guide de .NET Framework](../framework/index.yml)
+- [Concepts de base de .NET](../fundamentals/index.yml)
+- [.NET Framework Guide](../framework/index.yml)
 - [Présentation de ASP.NET](/aspnet/index#pivot=aspnet)
 - [Présentation de ASP.NET Core](/aspnet/index#pivot=core)

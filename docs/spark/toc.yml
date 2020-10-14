@@ -1,6 +1,6 @@
 - name: Guide .NET pour Apache Spark
   href: index.yml
-- name: Vue d’ensemble
+- name: Vue d'ensemble
   expanded: true
   items:
     - name: "Qu’est-ce qu’Apache Spark\_?"
@@ -25,24 +25,46 @@
       href: tutorials/ml-sentiment-analysis.md
 - name: Guides pratiques
   items:
+    - name: Se connecter aux données
+      items:
+        - name: Stockage Azure
+          href: how-to-guides/connect-to-azure-storage.md
+        - name: Event Hubs
+          href: how-to-guides/connect-to-event-hub.md
+        - name: Mongo DB
+          href: how-to-guides/connect-to-mongo-db.md
+        - name: SQL Server
+          href: how-to-guides/connect-to-sql-server.md
+    - name: Créer des applications
+      items:
+        - name: Ubuntu
+          href: how-to-guides/ubuntu-instructions.md
+        - name: Windows
+          href: how-to-guides/windows-instructions.md
+    - name: Envoyer des travaux à distance
+      items:
+        - name: Envoyer des travaux à Azure Synapse Analytics
+          href: /azure/synapse-analytics/spark/spark-dotnet
+        - name: Envoyer des travaux à Databricks
+          href: how-to-guides/databricks-deploy-methods.md
+        - name: Envoyer des travaux à HDInsight
+          href: how-to-guides/hdinsight-deploy-methods.md
+    - name: Fonctions définies par l'utilisateur
+      items:
+        - name: Guide des fonctions UDF
+          href: how-to-guides/udf-guide.md
+        - name: Fonctions Java définies par l’utilisateur dans .NET
+          href: how-to-guides/java-udf-from-dotnet.md
+        - name: Fonctions définies par l’utilisateur dans .NET Interactive
+          href: how-to-guides/dotnet-interactive-udf-issue.md
+        - name: Déployer des fichiers binaires worker et UDF
+          href: how-to-guides/deploy-worker-udf-binaries.md
+    - name: Utiliser des blocs-notes Jupyter
+      href: how-to-guides/dotnet-spark-jupyter-notebooks.md
     - name: Guide de diffusion
       href: how-to-guides/broadcast-guide.md
-    - name: Guide des fonctions UDF
-      href: how-to-guides/udf-guide.md
     - name: Déboguer votre application
       href: how-to-guides/debug.md
-    - name: Envoyer des travaux à Azure Synapse Analytics
-      href: /azure/synapse-analytics/spark/spark-dotnet
-    - name: Envoyer des travaux à HDInsight
-      href: how-to-guides/hdinsight-deploy-methods.md
-    - name: Envoyer des travaux à Databricks
-      href: how-to-guides/databricks-deploy-methods.md
-    - name: Déployer des fichiers binaires worker et UDF
-      href: how-to-guides/deploy-worker-udf-binaries.md
-    - name: Créer une application sur Ubuntu
-      href: how-to-guides/ubuntu-instructions.md
-    - name: Créer une application sur Windows
-      href: how-to-guides/windows-instructions.md
     - name: Installer des notebooks interactifs sur Azure HDInsight
       href: how-to-guides/hdinsight-notebook-installation.md
 - name: Référence
@@ -53,7 +75,7 @@
   items:
     - name: Vue d’ensemble des ressources
       href: resources/index.md
-    - name: GitHub
+    - name: .NET pour Apache Spark GitHub
       href: 'https://github.com/dotnet/spark'
-    - name: Dépassement de capacité de la pile
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/.net-spark'
