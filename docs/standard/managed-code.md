@@ -4,26 +4,26 @@ description: Découvrez dans quelle mesure le code managé est du code dont l’
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-ms.openlocfilehash: 2d89fd48e4c05dc7ec7c27846a3580ee36b1886f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 950dd5c32663b0716247c2a31a2f729fcf85f97b
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290082"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92163101"
 ---
 # <a name="what-is-managed-code"></a>Qu’est-ce que le code managé ?
 
-Quand vous utilisez .NET Framework, vous rencontrez souvent le terme « code managé ». Ce document explique ce que signifie ce terme et fournit des informations supplémentaires sur le sujet.
+Lorsque vous travaillez avec .NET, vous rencontrerez souvent le terme « code managé ». Ce document explique ce que signifie ce terme et fournit des informations supplémentaires sur le sujet.
 
-Pour faire simple, le code managé est du code dont l’exécution est gérée par un runtime. Dans ce cas, le runtime en question est appelé le **Common Language Runtime** ou CLR, indépendamment de l’implémentation ([Mono](https://www.mono-project.com/) ou .NET Framework, ou .NET Core). CLR est chargé de prendre le code managé, de le compiler en code machine, puis de l’exécuter. Par ailleurs, le runtime fournit plusieurs services importants comme la gestion automatique de la mémoire, les limites de sécurité, la cohérence des types, etc.
+Pour faire simple, le code managé est du code dont l’exécution est gérée par un runtime. Dans ce cas, le runtime en question est appelé le **Common Language Runtime** ou CLR, indépendamment de l’implémentation (par exemple, [mono](https://www.mono-project.com/), .NET Framework ou .net core/. net 5 +). CLR est chargé de prendre le code managé, de le compiler en code machine, puis de l’exécuter. Par ailleurs, le runtime fournit plusieurs services importants comme la gestion automatique de la mémoire, les limites de sécurité, la cohérence des types, etc.
 
 Par opposition, le « code non managé » est la façon dont vous pouvez exécuter un programme C/C++. Dans un environnement non managé, le programmeur est responsable de presque tout. Le programme réel est, essentiellement, un fichier binaire que le système d’exploitation charge en mémoire et démarre. Tout le reste, depuis la gestion de la mémoire aux considérations de sécurité, est à la charge du programmeur.
 
-Le code managé est écrit dans un des langages de haut niveau qui peuvent être exécutés sur .NET, tels que C#, Visual Basic ou F#. Quand vous compilez le code écrit dans ces langages avec leur compilateur respectif, vous n’obtenez pas de code machine. Vous obtenez un code en **langage intermédiaire** que le runtime compile ensuite et exécute. C++ est la seule exception à cette règle, car il peut également produire des fichiers binaires natifs, non managés qui s’exécutent sur Windows.
+Le code managé est écrit dans un des langages de haut niveau qui peuvent être exécutés sur .NET, tels que C#, Visual Basic ou F#. Quand vous compilez du code écrit dans ces langages avec leur compilateur respectif, vous n’accédez pas au code machine. Vous obtenez un code en **langage intermédiaire** que le runtime compile ensuite et exécute. C++ est la seule exception à cette règle, car il peut également produire des fichiers binaires natifs, non managés qui s’exécutent sur Windows.
 
 ## <a name="intermediate-language--execution"></a>Langage intermédiaire et exécution
 
-Qu’est-ce que le « langage intermédiaire » (ou IL en abrégé) ? Il s’agit d’un produit de compilation de code écrit dans des langages .NET de haut niveau. Quand vous compilez votre code écrit dans un de ces langages, vous obtenez un fichier binaire constitué de langage intermédiaire. Notez que le langage intermédiaire est indépendant de tout langage spécifique qui s’exécute sur le runtime. Il existe même une spécification distincte pour ce langage, que vous pouvez lire si vous le souhaitez.
+Qu’est-ce que le « langage intermédiaire » (ou IL en abrégé) ? Il s’agit d’un produit de compilation de code écrit dans des langages .NET de haut niveau. Quand vous compilez votre code écrit dans un de ces langages, vous obtenez un fichier binaire constitué de langage intermédiaire. Il est important de noter que le langage intermédiaire est indépendant de tout langage spécifique qui s’exécute par-dessus le Runtime. Il existe même une spécification distincte, que vous pouvez lire si vous le souhaitez.
 
 Une fois que vous avez produit du langage intermédiaire à partir de votre code de haut niveau, vous pouvez l’exécuter. C’est là que le CLR intervient et démarre le processus de compilation **juste-à-temps**, ou **JIT-ing** de votre code à partir du langage intermédiaire en code machine qui peut être exécuté sur un processeur. De cette façon, le CLR sait exactement ce que votre code est en train de faire et peut donc le _gérer_ efficacement.
 
@@ -35,8 +35,8 @@ Bien entendu, le CLR permet de franchir les limites entre les environnements man
 
 De la même manière, C# est un langage qui vous permet d’utiliser des constructions non managées comme les pointeurs directement dans le code en utilisant ce que l’on appelle le **contexte unsafe**, qui désigne un élément de code dont l’exécution n’est pas gérée par le CLR.
 
-## <a name="more-resources"></a>Ressources complémentaires
+## <a name="more-resources"></a>Plus de ressources
 
-* [Vue d’ensemble de l' .NET Framework](../framework/get-started/overview.md)
+* [Vue d’ensemble de .NET Framework](../framework/get-started/overview.md)
 * [Pointeurs et code unsafe](../csharp/programming-guide/unsafe-code-pointers/index.md)
 * [Interopérabilité native](./native-interop/index.md)

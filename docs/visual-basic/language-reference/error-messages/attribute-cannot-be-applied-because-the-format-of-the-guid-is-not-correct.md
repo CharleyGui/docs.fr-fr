@@ -7,27 +7,27 @@ f1_keywords:
 helpviewer_keywords:
 - BC32500
 ms.assetid: 6fa34c55-368e-4d7d-b488-07a3fffe045f
-ms.openlocfilehash: 554c38c8f44999feba4cfa04d58ce2f07e955eb1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8e9ac019470685d9fc45342273096d678a29428d
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409918"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162646"
 ---
-# <a name="attribute-cannot-be-applied-because-the-format-of-the-guid-number-is-not-correct"></a>'\<attribute>' ne peut pas être appliqué, car le format du GUID '\<number>' n'est pas correct
+# <a name="bc32500-attribute-cannot-be-applied-because-the-format-of-the-guid-number-is-not-correct"></a>BC32500 : ' \<attribute> 'ne peut pas être appliqué, car le format du GUID' \<number> 'n’est pas correct
 
-Un `COMClassAttribute` bloc d’attributs spécifie un identificateur global unique (Guid) qui n’est pas conforme au format approprié pour un GUID. `COMClassAttribute`utilise des GUID pour identifier de manière unique la classe, l’interface et l’événement de création.  
-  
- Un GUID se compose de 16 octets, dont les huit premiers sont numériques et les huit derniers sont binaires. Elle est générée par des utilitaires Microsoft tels que uuidgen. exe et est garantie comme étant unique dans l’espace et dans le temps.  
-  
- **ID d’erreur :** BC32500  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-1. Déterminez le GUID ou les GUID appropriés nécessaires pour identifier l’objet COM.  
-  
-2. Vérifiez que les chaînes de GUID présentées au bloc d’attributs `COMClassAttribute` sont copiées correctement.  
-  
+Un `COMClassAttribute` bloc d’attributs spécifie un identificateur global unique (Guid) qui n’est pas conforme au format approprié pour un GUID. `COMClassAttribute` utilise des GUID pour identifier de manière unique la classe, l’interface et l’événement de création.
+
+ Un GUID se compose de 16 octets, dont les huit premiers sont numériques et les huit derniers sont binaires. Elle est générée par des utilitaires Microsoft tels que uuidgen.exe et est garantie comme étant unique dans l’espace et dans le temps.
+
+ **ID d’erreur :** BC32500
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+1. Déterminez le GUID ou les GUID appropriés nécessaires pour identifier l’objet COM.
+
+2. Vérifiez que les chaînes de GUID présentées au bloc d’attributs `COMClassAttribute` sont copiées correctement.
+
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Guid>

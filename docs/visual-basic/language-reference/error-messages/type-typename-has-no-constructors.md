@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - BC30251
 ms.assetid: aff3e1df-abe6-4bc0-9abc-a1e70514c561
-ms.openlocfilehash: 8fc173182d062c80ffde15b1e7210644d37f8f66
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 249bcb7020f26c7c43d560e91ef7a34e4dc64470
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90875108"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92161177"
 ---
-# <a name="type-typename-has-no-constructors"></a>Le type '\<typename>' n'a aucun constructeur
+# <a name="bc30251-type-typename-has-no-constructors"></a>BC30251 : le type' \<typename> 'n’a pas de constructeurs
 
-Un type ne prend pas en charge un appel à `Sub New()`. L'une des causes probables est un fichier compilateur ou binaire endommagé.  
-  
- **ID d’erreur :** BC30251  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-1. Si le type se trouve dans un projet différent ou dans un fichier référencé, réinstallez le projet ou le fichier.  
-  
-2. Si le type se trouve dans le même projet, recompilez l'assembly contenant le type.  
-  
-3. Si l’erreur se reproduit, réinstallez le compilateur Visual Basic.  
-  
-4. Si l'erreur persiste, rassemblez des informations sur ses circonstances et avertissez les services de support technique Microsoft.  
-  
+Un type ne prend pas en charge un appel à `Sub New()`. L'une des causes probables est un fichier compilateur ou binaire endommagé.
+
+ **ID d’erreur :** BC30251
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+1. Si le type se trouve dans un projet différent ou dans un fichier référencé, réinstallez le projet ou le fichier.
+
+2. Si le type se trouve dans le même projet, recompilez l'assembly contenant le type.
+
+3. Si l’erreur se reproduit, réinstallez le compilateur Visual Basic.
+
+4. Si l'erreur persiste, rassemblez des informations sur ses circonstances et avertissez les services de support technique Microsoft.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Objets et classes](../../programming-guide/language-features/objects-and-classes/index.md)
