@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30617
 ms.assetid: 5e9de8e5-d26b-4fb2-9e28-814413fe9cef
-ms.openlocfilehash: 91e6c81bb64c259411cbef8a36629b8b320ea584
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: b946a527d3de3a030ac03691c77afcf440f518ee
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90873752"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160312"
 ---
-# <a name="module-statements-can-occur-only-at-file-or-namespace-level"></a>Les instructions 'Module' ne peuvent intervenir qu'au niveau du fichier ou de l'espace de noms
+# <a name="bc30617-module-statements-can-occur-only-at-file-or-namespace-level"></a>BC30617 : les instructions’module’ne peuvent se produire qu’au niveau du fichier ou de l’espace de noms
 
-`Module` les instructions doivent apparaître en haut de votre fichier source immédiatement après `Option` et `Imports` les instructions, les attributs globaux et les déclarations d’espaces de noms, mais avant toutes les autres déclarations.  
-  
- **ID d’erreur :** BC30617  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-- Déplacez l’instruction `Module` en haut de votre déclaration d’espace de noms ou de votre fichier source.  
-  
+`Module` les instructions doivent apparaître en haut de votre fichier source immédiatement après `Option` et `Imports` les instructions, les attributs globaux et les déclarations d’espaces de noms, mais avant toutes les autres déclarations.
+
+ **ID d’erreur :** BC30617
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+- Déplacez l’instruction `Module` en haut de votre déclaration d’espace de noms ou de votre fichier source.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Module, instruction](../statements/module-statement.md)

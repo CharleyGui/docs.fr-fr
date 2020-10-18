@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC42110
 ms.assetid: ef4442eb-08d1-434f-a03b-4aa2ed4e4414
-ms.openlocfilehash: 1ad7b9d0a610842dd6c50ee198f5bb5fa3eb68cf
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 3e76ffea283de2843fc5586179074c01a053ece8
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90870475"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92161281"
 ---
-# <a name="the-type-for-variable-variablename-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>Le type pour la variable '\<variablename>' ne sera pas déduit, car il est lié à un champ d'une portée englobante
+# <a name="bc42110-the-type-for-variable-variablename-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>BC42110 : le type de la variable' \<variablename> 'ne sera pas déduit, car il est lié à un champ dans une portée englobante
 
 Le type de la variable' \<variablename> 'ne sera pas déduit, car il est lié à un champ dans une portée englobante. Modifiez le nom de « \<variablename> » ou utilisez le nom complet (par exemple, « me. NomVariable » ou « MyBase. NomVariable »).
 
@@ -43,7 +43,7 @@ Par défaut, ce message est un avertissement. Pour plus d’informations sur le 
 
 **ID d’erreur :** BC42110
 
-### <a name="to-address-this-warning"></a>Pour traiter cet avertissement
+## <a name="to-address-this-warning"></a>Pour traiter cet avertissement
 
 - Rendez la variable de contrôle de boucle locale en remplaçant son nom par un identificateur qui n’est pas également le nom d’un champ de la classe.
 
@@ -63,7 +63,7 @@ Par défaut, ce message est un avertissement. Pour plus d’informations sur le 
   For Index As Integer = 1 To 10
   ```
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
  Le code suivant montre l’exemple précédent avec la première correction sur place.
 

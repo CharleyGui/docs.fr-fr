@@ -1,57 +1,53 @@
 ---
-title: Bien démarrer - Guide C#
-description: Vous trouverez ici de petits didacticiels simples qui vous permettront d’apprendre les concepts de base de C# et d’écrire des applications .NET Core.
-helpviewer_keywords:
-- Visual C#, getting started
-- getting started, Visual C#
-ms.date: 04/05/2019
-ms.openlocfilehash: 769098134799800d45a31c22f4390734545ff6ff
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+title: Commencez-présentation du langage C# et de .NET»
+description: Apprenez les concepts de base de C# et .NET. Découvrez une vue d’ensemble du langage C# et de l’écosystème .NET.
+ms.date: 10/13/2020
+ms.openlocfilehash: 94d49be28fbdba8f58ca16e959a10643d6467c63
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465245"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160956"
 ---
-# <a name="get-started-with-c"></a>Bien démarrer avec C\#
+# <a name="introduction-to-the-c-language-and-net"></a>Introduction au langage C# et à .NET
 
-Cette section fournit des didacticiels courts et simples qui permettent de créer rapidement une application avec C# et .NET Core. Des rubriques de prise en main pour Visual Studio et Visual Studio Code. Ces articles supposent une expérience en programmation. Si vous êtes novice en programmation, essayez nos tutoriels interactifs de [présentation de C#](../tutorials/intro-to-csharp/index.md).
+C# est un langage orienté objet élégant et de type sécurisé. C# permet aux développeurs de créer de nombreux types d’applications sécurisées et fiables qui s’exécutent dans l’écosystème .NET.
 
-Les rubriques suivantes sont disponibles :
+## <a name="c-language"></a>langage C#
 
-- [Présentation du langage C# et de .NET](introduction-to-the-csharp-language-and-the-net-framework.md)
+La syntaxe C# est très expressif, mais elle est également simple et facile à apprendre. La syntaxe de l’accolade de C# sera immédiatement reconnaissable à toute personne connaissant le langage C, C++, Java ou JavaScript. Les développeurs qui connaissent l’un de ces langages sont généralement en mesure de travailler de manière productive en C# dans un laps de temps. C# fournit des fonctionnalités puissantes telles que les types Nullable, les délégués, les expressions lambda, les critères spéciaux et l’accès direct à la mémoire sécurisée. C# prend en charge des méthodes et des types génériques, ce qui améliore la sécurité et les performances de type. C# fournit des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements personnalisés pour le code client. Les expressions LINQ (Language-Integrated Query) font de la requête fortement typée une construction de langage de première classe.
 
-     Fournit une vue d’ensemble du langage C# et de .NET.
+En tant que langage orienté objet, C# prend en charge les concepts d’encapsulation, d’héritage et de polymorphisme. Une classe peut hériter directement d'une classe parent, mais peut implémenter un nombre quelconque d'interfaces. Les méthodes qui substituent des méthodes virtuelles dans une classe parente requièrent le mot-clé `override` pour éviter toute redéfinition accidentelle. En C#, un struct est semblable à une classe légère ; Il s’agit d’un type alloué par la pile qui peut implémenter des interfaces mais ne prend pas en charge l’héritage. C# fournit également des enregistrements, qui sont des types de classe dont l’objectif est principalement le stockage des valeurs de données.
 
-- [Créer une application de Hello World C# avec .NET Core dans Visual Studio](../../core/tutorials/with-visual-studio.md)
+C# facilite le développement de composants logiciels à travers plusieurs constructions de langage innovantes, notamment :
 
-   Visual Studio vous permet de coder, compiler, exécuter, déboguer, Profiler et publier vos applications à partir d’un environnement de développement intégré pour Windows ou Mac.
+- Des signatures de méthode encapsulées appelées *délégués*, qui activent les notifications d’événement de type sécurisé.
+- Les propriétés, qui sont utilisées comme accesseurs pour les variables de membre privé.
+- Les attributs, qui fournissent des métadonnées déclaratives sur les types au moment de l’exécution.
+- Commentaires de documentation XML inline.
+- Language-Integrated query (LINQ), qui fournit des fonctionnalités de requête intégrées sur différents types de sources de données.
+- Critères spéciaux, qui permettent de contrôler le workflow en inspectant les types de données et les valeurs.
 
-   La rubrique vous permet de créer et d’exécuter une application Hello World simple, puis de la modifier pour exécuter une application Hello World plus interactive. Une fois que vous aurez terminé la création et l’exécution de votre application, vous pourrez également apprendre à [la déboguer](../../core/tutorials/debugging-with-visual-studio.md) et [la publier](../../core/tutorials/publishing-with-visual-studio.md) afin qu’elle puisse s’exécuter sur n’importe quelle plateforme prise en charge par .NET Core.
+Vous interagissez avec les composants natifs à l’aide d’un processus appelé « Interop ». L’interopérabilité permet aux programmes C# de faire presque tout ce qu’une application native C++ peut faire. C# prend même en charge les pointeurs et le concept de code « unsafe » dans les cas où l’accès direct à la mémoire est essentiel.
 
-- [Créer une bibliothèque de classes avec C# et .NET Standard dans Visual Studio](../../core/tutorials/library-with-visual-studio.md)
+Le processus de génération de C# est simple par rapport à C et C++ et plus souple qu’avec Java. Il n’existe aucun fichier d’en-tête distinct, et les types et méthodes n’ont pas à être déclarés dans un ordre particulier. Un fichier source C# peut définir un nombre quelconque de classes, structs, interfaces et événements.
 
-   Une bibliothèque de classes permet de définir les types et membres de types qui peuvent être appelés à partir d’une autre application. Cette rubrique vous permet de créer une bibliothèque de classes avec une méthode unique qui détermine si une chaîne commence par une majuscule. Une fois que vous aurez terminé de créer la bibliothèque, vous pourrez développer un [test unitaire](../../core/tutorials/testing-library-with-visual-studio.md) pour vous assurer qu’elle fonctionne comme prévu, puis la rendre accessible aux [applications qui souhaitent l’utiliser](/nuget/quickstart/install-and-use-a-package-in-visual-studio).
+Voici des ressources C# supplémentaires :
 
-- [Prise en main de C# et Visual Studio Code](../../core/tutorials/with-visual-studio-code.md)
+- Pour une bonne présentation générale du langage, consultez la [visite guidée de C#](../tour-of-csharp/index.md).
+- Pour plus d’informations sur des aspects spécifiques du langage C#, consultez la [Référence de C#](../language-reference/index.md).
+- Pour plus d’informations sur LINQ, consultez [LINQ (Language-Integrated Query)](../programming-guide/concepts/linq/index.md).
 
-   Visual Studio Code est un éditeur de code gratuit optimisé pour la création et le débogage d’applications cloud et web modernes. Il prend en charge IntelliSense et est disponible pour Linux, macOS et Windows.
+## <a name="net-platform-architecture"></a>Architecture de la plateforme .NET
 
-   Cette rubrique vous montre comment créer et exécuter une application Hello World simple avec Visual Studio Code et .NET Core.
+Les programmes C# s’exécutent sur .NET, un système d’exécution virtuel appelé le common language runtime (CLR) et un ensemble unifié de bibliothèques de classes. Le CLR est l’implémentation commerciale de Microsoft de l’infrastructure de langage commun (CLI), une norme internationale. L’interface CLI est la base de la création d’environnements d’exécution et de développement dans lesquels les langages et les bibliothèques fonctionnent ensemble de façon transparente.
 
-## <a name="related-sections"></a>Sections connexes
+Le code source écrit en C# est compilé dans un [langage intermédiaire (il)](../../standard/managed-code.md) conforme à la spécification CLI. Le code de langage intermédiaire et les ressources, telles que les bitmaps et les chaînes, sont stockés dans un assembly, généralement avec une extension. dll. Un assembly contient un manifeste qui fournit des informations sur les types, la version et la culture de l’assembly.
 
-- [Guide de programmation C#](../programming-guide/index.md)
+Lorsque le programme C# est exécuté, l’assembly est chargé dans le CLR. Le CLR effectue une compilation juste-à-temps (JIT) pour convertir le code de langage intermédiaire en instructions machine natives. Le CLR fournit d’autres services liés à la garbage collection automatique, à la gestion des exceptions et à la gestion des ressources. Le code exécuté par le CLR est parfois appelé « code managé », contrairement à « code non managé », qui est compilé dans un langage machine natif ciblant un système spécifique.
 
-    Fournit des informations sur les concepts de la programmation C# et explique comment effectuer différentes tâches en C#.
+L’interopérabilité des langages est une fonctionnalité clé de .NET. Le code de langage intermédiaire produit par le compilateur C# est conforme à la spécification de type commun (CTS). Le code de langage intermédiaire généré à partir de C# peut interagir avec le code généré à partir des versions .NET de F #, Visual Basic, C++ ou l’un des plus de 20 autres langages compatibles CTS. Un seul assembly peut contenir plusieurs modules écrits dans différents langages .NET, et les types peuvent se référencer mutuellement comme s’ils avaient été écrits dans le même langage.
 
-- [Référence C#](../language-reference/index.md)
+Outre les services d’exécution, .NET comprend également des bibliothèques étendues. Ces bibliothèques prennent en charge de nombreuses charges de travail différentes. Elles sont organisées en espaces de noms qui fournissent un large éventail de fonctionnalités utiles pour tout, de l’entrée de fichier à la sortie de la manipulation de chaînes à l’analyse XML, aux infrastructures d’application Web pour Windows Forms contrôles. L’application C# classique utilise largement la bibliothèque de classes .NET pour gérer les tâches courantes de « plomberie ».
 
-    Fournit des informations de référence détaillées sur les mots clés C#, les opérateurs, les directives de préprocesseur, les options du compilateur, et les erreurs et avertissements du compilateur.
-
-- [Procédures pas à pas](../walkthroughs.md)
-
-    Fournit des liens vers des procédures pas-à-pas de programmation qui utilisent C# et une brève description de chaque procédure pas-à-pas.
-
-## <a name="see-also"></a>Voir aussi
-
-- [Développement en C# avec Visual Studio](/visualstudio/get-started/csharp/)
+Pour plus d’informations sur .NET, consultez [vue d’ensemble de .net](../../core/introduction.md).

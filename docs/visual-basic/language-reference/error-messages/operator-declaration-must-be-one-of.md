@@ -7,33 +7,33 @@ f1_keywords:
 helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-ms.openlocfilehash: c388b1b0762dd7475ca365a8a62228d0b5d59414
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: a94e62e33427987a302a6244b2b8ce8d295e4f11
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90873613"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159896"
 ---
-# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>La déclaration d’opérateur doit être l’une des suivantes : +,-, *, \, /, ^, &amp; , like, mod, and, or, Xor, not, \<\<, >>...
+# <a name="bc33000-operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>BC33000 : la déclaration d’opérateur doit être l’une des suivantes : +,-, *, \, /, ^, &amp; , like, mod, and, or, Xor, not, \<\<, >>...
 
-Vous pouvez déclarer uniquement un opérateur éligible pour la surcharge. Le tableau suivant répertorie les opérateurs que vous pouvez déclarer.  
-  
-|Type|Opérateurs|  
-|----------|---------------|  
-|Unaire|`+`, `-`, `IsFalse`, `IsTrue`, `Not`|  
-|Binary|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
-|Conversion (unaire)|`CType`|  
-  
- Notez que l’opérateur `=` dans la liste binaire est l’opérateur de comparaison, et non l’opérateur d’assignation.  
-  
- **ID d’erreur :** BC33000  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-1. Sélectionnez un opérateur dans le jeu d’opérateurs surchargeables.  
-  
-2. Si vous avez besoin des fonctionnalités de surcharge d’un opérateur que vous ne pouvez pas surcharger directement, créez une procédure `Function` qui accepte les paramètres appropriés et retourne la valeur adéquate.  
-  
+Vous pouvez déclarer uniquement un opérateur éligible pour la surcharge. Le tableau suivant répertorie les opérateurs que vous pouvez déclarer.
+
+|Type|Opérateurs|
+|----------|---------------|
+|Unaire|`+`, `-`, `IsFalse`, `IsTrue`, `Not`|
+|Binary|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|
+|Conversion (unaire)|`CType`|
+
+ Notez que l’opérateur `=` dans la liste binaire est l’opérateur de comparaison, et non l’opérateur d’assignation.
+
+ **ID d’erreur :** BC33000
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+- Sélectionnez un opérateur dans le jeu d’opérateurs surchargeables.
+
+- Si vous avez besoin des fonctionnalités de surcharge d’un opérateur que vous ne pouvez pas surcharger directement, créez une procédure `Function` qui accepte les paramètres appropriés et retourne la valeur adéquate.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Operator Statement](../statements/operator-statement.md)

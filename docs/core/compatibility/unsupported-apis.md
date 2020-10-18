@@ -1,25 +1,25 @@
 ---
-title: API non prises en charge sur .NET Core
+title: API non prises en charge sur .NET Core et .NET 5 +
 titleSuffix: ''
-description: Découvrez les API de la .NET Framework qui lèvent toujours une exception sur .NET Core.
-ms.date: 12/23/2019
-ms.openlocfilehash: 94f334d7e4b7daf407f489ba274172ced9eefa81
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+description: Découvrez les API .NET qui lèvent toujours une exception sur .NET Core et .NET 5,0 et versions ultérieures.
+ms.date: 10/13/2020
+ms.openlocfilehash: 0164ebff51de82d548a02f9fde754c1052a9c2b5
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414433"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159337"
 ---
-# <a name="apis-that-always-throw-exceptions-on-net-core"></a>API qui lèvent toujours des exceptions sur .NET Core
+# <a name="apis-that-always-throw-exceptions-on-net-core-and-net-5"></a>API qui lèvent toujours des exceptions sur .NET Core et .NET 5 +
 
-Les API suivantes lèvent toujours une <xref:System.PlatformNotSupportedException> sur .net Core sur tout ou partie des plateformes.
+Les API suivantes lèvent toujours une <xref:System.PlatformNotSupportedException> sur .net 5,0 et versions ultérieures (y compris toutes les versions de .net Core) sur l’ensemble ou sur un sous-ensemble de plateformes.
 
-Cet article organise les membres d’API affectés par espace de noms.
+Cet article organise les API affectées par espace de noms.
 
 > [!NOTE]
 >
-> - Cet article est un travail en cours. Il ne s’agit pas d’une liste complète des API qui lèvent des exceptions sur .NET Core.
-> - Cet article n’inclut pas les implémentations d’interface explicites pour la sérialisation binaire qui lèvent sur .NET Core. Pour plus d’informations, consultez [sérialisation binaire dans .net Core](../../standard/serialization/binary-serialization.md#net-core).
+> - Cet article est un travail en cours. Il ne s’agit pas d’une liste complète des API qui lèvent des exceptions sur .NET 5 +.
+> - Cet article n’inclut pas les implémentations d’interface explicites pour la sérialisation binaire qui lèvent sur .NET 5 +. Pour plus d’informations, consultez [sérialisation binaire dans .net Core](../../standard/serialization/binary-serialization.md#net-core).
 
 ## <a name="system"></a>Système
 

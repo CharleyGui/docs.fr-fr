@@ -3,12 +3,12 @@ title: Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 description: Comment utiliser Model Builder ML.NET pour entraîner automatiquement un modèle Machine Learning
 ms.date: 06/01/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 80f5f5d064c4e0c4097dacc6022d4624c1516ab9
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: da6348fb5dde83827558b66b6115d681f08948db
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679675"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92161138"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 
@@ -27,7 +27,7 @@ Vous n’avez pas besoin d’une expertise en machine learning pour utiliser Mod
 
 Vous pouvez soumettre de nombreux scénarios différents à Model Builder pour générer un modèle Machine Learning pour votre application.
 
-Un scénario est une description du type de prédiction que vous voulez faire avec vos données. Exemple :
+Un scénario est une description du type de prédiction que vous voulez faire avec vos données. Par exemple :
 
 - prédire le volume futur des ventes d’un produit en fonction de l’historique des données des ventes
 - classer des sentiments en positif ou en négatif en fonction d’avis émis par les utilisateurs
@@ -54,9 +54,15 @@ La régression est utilisée pour prédire des nombres.
 
 #### <a name="image-classification"></a>Classification d’images
 
-La classification d’images peut être utilisée pour identifier les images de différentes catégories. Par exemple, différents types de terrain ou d’animaux ou de défauts de fabrication.
+La classification d’image est utilisée pour identifier les images de différentes catégories. Par exemple, différents types de terrain ou d’animaux ou de défauts de fabrication.
 
 Vous pouvez utiliser le scénario de classification d’images si vous disposez d’un ensemble d’images et que vous souhaitez classer les images en différentes catégories.
+
+#### <a name="object-detection"></a>Détection d’objets
+
+La détection d’objets permet de rechercher et de classer les entités dans les images.  Par exemple, la localisation et l’identification des voitures et des personnes dans une image.
+
+Vous pouvez utiliser la détection d’objets quand les images contiennent plusieurs objets de types différents.
 
 #### <a name="recommendation"></a>Recommandation
 
@@ -66,13 +72,15 @@ Vous pouvez utiliser le scénario de recommandation lorsque vous disposez d’un
 
 ## <a name="environment"></a>Environnement
 
-Vous pouvez effectuer l’apprentissage de votre modèle de Machine Learning localement sur votre ordinateur ou dans le Cloud sur Azure.
+Vous pouvez effectuer l’apprentissage de votre modèle de Machine Learning localement sur votre ordinateur ou dans le Cloud sur Azure, selon le scénario.
 
 Lorsque vous formez localement, vous travaillez dans les contraintes des ressources de votre ordinateur (processeur, mémoire et disque). Lorsque vous formez dans le Cloud, vous pouvez mettre à l’échelle vos ressources pour répondre aux besoins de votre scénario, en particulier pour les jeux de données volumineux.
 
-La formation locale est prise en charge pour tous les scénarios.
+L’apprentissage de l’UC locale est pris en charge pour tous les scénarios à l’exception de la détection d’objets.
 
-La formation Azure est prise en charge pour la classification des images.
+La formation GPU locale est prise en charge pour la classification d’images.
+
+La formation Azure est prise en charge pour la classification d’images et la détection d’objets.
 
 ## <a name="data"></a>Données
 
@@ -107,7 +115,7 @@ L’étiquette est l’historique des prix des maisons pour cette ligne de valeu
 
 Si vous n’avez pas encore vos propres données, essayez un de ces jeux de données :
 
-|Scénario| Exemple|Données|Etiquette|Fonctionnalités|
+|Scénario| Exemple|Données|Étiquette|Fonctionnalités|
 |-|-|-|-|-|
 |classification ;|Prédire les anomalies de vente|[Données de ventes de produits](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Ventes de produits|Month|
 ||Prédiction des sentiments de commentaires sur le site Web|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
@@ -205,7 +213,7 @@ Après la phase d’évaluation, Model Builder génère un fichier de modèle et
 
 En outre, Model Builder produit le code qui a généré le modèle, ce qui vous permet de comprendre les étapes utilisées pour cette génération. Vous pouvez également utiliser le code de l’entraînement du modèle pour réentraîner votre modèle avec de nouvelles données.
 
-## <a name="whats-next"></a>Et ensuite ?
+## <a name="whats-next"></a>Quelle est l’étape suivante ?
 
 [Installer](how-to-guides/install-model-builder.md) l’extension Visual Studio Model Builder
 

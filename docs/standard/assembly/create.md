@@ -3,17 +3,17 @@ title: Créer des assemblys
 description: Découvrez comment créer des assemblys à fichier unique ou multifichiers à l’aide d’un IDE, tel que Visual Studio, ou les compilateurs et les outils fournis par le SDK Windows.
 ms.date: 08/19/2019
 helpviewer_keywords:
-- assemblies [.NET Framework], multifile
+- assemblies [.NET], multifile
 - single-file assemblies
-- assemblies [.NET Framework], creating
+- assemblies [.NET], creating
 - multifile assemblies
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
-ms.openlocfilehash: 3e17d6a066d937a161135b8b03c3f9258f3586b0
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: e1b08e40ae3b4c377cec52cb1ebf6db643af6429
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378510"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160579"
 ---
 # <a name="create-assemblies"></a>Créer des assemblys
 
@@ -31,7 +31,7 @@ Vous disposez de plusieurs options quand vous regroupez des modules de code et d
 
      Regroupez les modules de code et les ressources qui prennent en charge votre modèle de déploiement.
 
-- Réutilisation
+- Réutiliser
 
      Regroupez les modules s’ils peuvent être logiquement utilisés ensemble dans le même but. Par exemple, un assembly constitué de types et de classes peu utilisés pour la maintenance du programme peut être placé dans le même assembly. En outre, les types que vous prévoyez de partager avec plusieurs applications doivent être regroupés dans un assembly, et celui-ci doit être signé avec un nom fort.
 

@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - BC30971
 ms.assetid: 75d2e8b5-2fdc-4623-8b32-cba805dab7db
-ms.openlocfilehash: cd2c00bda5b63abbd6bf7069ef28d0a812b22044
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 9340c5c58c0cdb70c517534a339f57eb9ec1f906
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90873786"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162425"
 ---
-# <a name="message-this-error-could-also-be-due-to-mixing-a-file-reference-with-a-project-reference-to-assembly-assemblyname"></a>\<message> Cette erreur peut résulter de la combinaison d’une référence de fichier et d’une référence de projet pour l’assembly \<assemblyname>
+# <a name="bc30971-message-this-error-could-also-be-due-to-mixing-a-file-reference-with-a-project-reference-to-assembly-assemblyname"></a>BC30971 : \<message> cette erreur peut également être due à la combinaison d’une référence de fichier et d’une référence de projet à l’assembly' \<assemblyname> '
 
-\<message> Cette erreur peut également être due à la combinaison d’une référence de fichier et d’une référence de projet à l’assembly' \<assemblyname> . Dans ce cas, essayez de remplacer la référence de fichier à' \<assemblyfilename> 'dans le projet' \<projectname1> 'par une référence de projet à' \<projectname2> '.  
-  
- Le code de votre projet accède à un membre d’un autre projet, mais la configuration de votre solution n’autorise pas le compilateur Visual Basic à résoudre la référence.  
-  
- Pour accéder à un type défini dans un autre assembly, le compilateur Visual Basic doit avoir une référence à cet assembly. Cette référence doit être unique et non équivoque et elle ne doit pas provoquer de références circulaires entre les projets.  
-  
- **ID d’erreur :** BC30971  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-1. Identifiez le projet qui produit le meilleur assembly pour votre projet à référencer. Pour prendre cette décision, vous pouvez utiliser des critères, tels que la facilité d’accès au fichier et la fréquence des mises à jour.  
-  
-2. Dans les propriétés de votre projet, ajoutez une référence au projet contenant l’assembly qui définit le type que vous utilisez.  
-  
+\<message> Cette erreur peut également être due à la combinaison d’une référence de fichier et d’une référence de projet à l’assembly' \<assemblyname> . Dans ce cas, essayez de remplacer la référence de fichier à' \<assemblyfilename> 'dans le projet' \<projectname1> 'par une référence de projet à' \<projectname2> '.
+
+ Le code de votre projet accède à un membre d’un autre projet, mais la configuration de votre solution n’autorise pas le compilateur Visual Basic à résoudre la référence.
+
+ Pour accéder à un type défini dans un autre assembly, le compilateur Visual Basic doit avoir une référence à cet assembly. Cette référence doit être unique et non équivoque et elle ne doit pas provoquer de références circulaires entre les projets.
+
+ **ID d’erreur :** BC30971
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+1. Identifiez le projet qui produit le meilleur assembly pour votre projet à référencer. Pour prendre cette décision, vous pouvez utiliser des critères, tels que la facilité d’accès au fichier et la fréquence des mises à jour.
+
+2. Dans les propriétés de votre projet, ajoutez une référence au projet contenant l’assembly qui définit le type que vous utilisez.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Gestion des références dans un projet](/visualstudio/ide/managing-references-in-a-project)

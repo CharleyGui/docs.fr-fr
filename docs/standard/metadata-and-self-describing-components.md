@@ -13,18 +13,18 @@ helpviewer_keywords:
 - metadata, about metadata
 - common language runtime, metadata
 - PE files, metadata
-- components [.NET Framework], metadata
+- components [.NET], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-ms.openlocfilehash: 5327bd70b05bac8970fa9802fb15e94ba5f686c8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2ed09882ba722ace0b7f7be2a35fffc362af2742
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290056"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159350"
 ---
 # <a name="metadata-and-self-describing-components"></a>Métadonnées et composants autodescriptifs
 
-Par le passé, un composant logiciel (.exe or .dll) écrit dans un langage ne pouvait pas utiliser aisément un composant logiciel écrit dans un autre langage. COM a fourni une étape vers la résolution de ce problème. Le .NET Framework facilite encore plus l'interopérabilité des composants en autorisant les compilateurs à émettre des informations déclaratives supplémentaires dans tous les modules et assemblys. Ces informations, appelées métadonnées, aident les composants à interagir de façon transparente.
+Par le passé, un composant logiciel (.exe or .dll) écrit dans un langage ne pouvait pas utiliser aisément un composant logiciel écrit dans un autre langage. COM a fourni une étape vers la résolution de ce problème. .NET facilite encore plus l’interopérabilité des composants en autorisant les compilateurs à émettre des informations déclaratives supplémentaires dans tous les modules et assemblys. Ces informations, appelées métadonnées, aident les composants à interagir de façon transparente.
 
  Les métadonnées sont des informations binaires décrivant votre programme ; elles sont stockées dans un fichier exécutable portable (fichier PE) du Common Language Runtime ou en mémoire. Lorsque vous compilez votre code dans un fichier PE, les métadonnées sont insérées dans une partie du fichier, tandis que votre code est converti en langage MSIL (Microsoft Intermediate Language) et inséré dans une autre partie du fichier. Les types et membre définis et référencés dans un module ou un assembly sont décrits au sein des métadonnées. Quand le code est exécuté, le runtime charge les métadonnées en mémoire et y fait référence pour découvrir les informations concernant les classes de votre code, les membres, l'héritage, etc.
 
@@ -52,7 +52,7 @@ Par le passé, un composant logiciel (.exe or .dll) écrit dans un langage ne po
 
 ## <a name="benefits-of-metadata"></a>Avantages des métadonnées
 
-Les métadonnées sont la clé d'un modèle de programmation plus simple et suppriment la nécessité de fichiers IDL (Interface Definition Language), de fichiers d'en-tête ou de toute méthode externe de référence aux composants. Les métadonnées permettent aux langages du .NET Framework de se décrire eux-mêmes automatiquement d'une manière indépendante du langage, transparente aussi bien au développeur qu'à l'utilisateur. En outre, les métadonnées sont extensibles via l'utilisation d'attributs. Les métadonnées offrent les principaux avantages suivants :
+Les métadonnées sont la clé d'un modèle de programmation plus simple et suppriment la nécessité de fichiers IDL (Interface Definition Language), de fichiers d'en-tête ou de toute méthode externe de référence aux composants. Les métadonnées permettent aux langages .NET de se décrire eux-mêmes automatiquement dans une méthode indépendante du langage, invisible par le développeur et l’utilisateur. En outre, les métadonnées sont extensibles via l'utilisation d'attributs. Les métadonnées offrent les principaux avantages suivants :
 
 - Fichiers autodescriptifs.
 
@@ -64,11 +64,11 @@ Les métadonnées sont la clé d'un modèle de programmation plus simple et supp
 
 - Attributs.
 
-  Le .NET Framework vous permet de déclarer des types particuliers de métadonnées, appelés attributs, dans votre fichier compilé. Les attributs peuvent être recherchés via le .NET Framework et sont utilisés pour contrôler de façon plus détaillée comment votre programme se comporte au moment de l'exécution. En outre, vous pouvez émettre vos propres métadonnées personnalisées dans les fichiers .NET Framework via les attributs personnalisés définis par l'utilisateur. Pour plus d’informations, consultez [Attributs](attributes/index.md).
+  .NET vous permet de déclarer des types spécifiques de métadonnées, appelés attributs, dans votre fichier compilé. Les attributs sont accessibles dans .NET et sont utilisés pour contrôler plus en détail la façon dont votre programme se comporte au moment de l’exécution. En outre, vous pouvez émettre vos propres métadonnées personnalisées dans des fichiers .NET par le biais d’attributs personnalisés définis par l’utilisateur. Pour plus d’informations, consultez [Attributs](attributes/index.md).
 
 ## <a name="metadata-and-the-pe-file-structure"></a>Métadonnées et structure des fichiers PE
 
-Les métadonnées sont stockées dans une section du fichier exécutable portable (fichier PE) .NET Framework, tandis que le code MSIL (Microsoft Intermediate Language) est stocké dans une autre section. La partie métadonnées du fichier contient un ensemble de structures de données de table et de tas. La partie MSIL contient le code MSIL et les jetons de métadonnées qui font référence à la partie métadonnées du fichier PE. Vous pouvez rencontrer des jetons de métadonnées quand vous utilisez des outils tels que le [Désassembleur MSIL (Ildasm.exe)](../framework/tools/ildasm-exe-il-disassembler.md) pour consulter le MSIL de votre code, par exemple.
+Les métadonnées sont stockées dans une section d’un fichier exécutable portable (PE) .NET, tandis que le langage MSIL (Microsoft Intermediate Language) est stocké dans une autre section du fichier PE. La partie métadonnées du fichier contient un ensemble de structures de données de table et de tas. La partie MSIL contient le code MSIL et les jetons de métadonnées qui font référence à la partie métadonnées du fichier PE. Vous pouvez rencontrer des jetons de métadonnées quand vous utilisez des outils tels que le [Désassembleur MSIL (Ildasm.exe)](../framework/tools/ildasm-exe-il-disassembler.md) pour consulter le MSIL de votre code, par exemple.
 
 ### <a name="metadata-tables-and-heaps"></a>Tas et tables de métadonnées
 
@@ -134,7 +134,7 @@ public class MyApp
 
 Quand le code s'exécute, le runtime charge le module en mémoire et consulte les métadonnées correspondant à la classe. Une fois chargé, le runtime effectue une analyse complète du flux MSIL de la méthode pour le convertir en instructions machine natives rapides. Le runtime utilise un compilateur juste-à-temps (JIT, Just-In-Time) pour convertir les instructions MSIL en code machine natif, une méthode à la fois, selon les besoins.
 
-L'exemple suivant montre une partie du MSIL générée à partir de la fonction `Main` du code précédent. Vous pouvez afficher le code MSIL et les métadonnées de toute application .NET Framework à l’aide du [Désassembleur MSIL (Ildasm.exe)](../framework/tools/ildasm-exe-il-disassembler.md).
+L'exemple suivant montre une partie du MSIL générée à partir de la fonction `Main` du code précédent. Vous pouvez afficher le code MSIL et les métadonnées de n’importe quelle application .NET à l’aide du [désassembleur MSIL (Ildasm.exe)](../framework/tools/ildasm-exe-il-disassembler.md).
 
 ```console
 .entrypoint
@@ -171,6 +171,6 @@ Grâce aux métadonnées, le runtime a accès à toutes les informations dont il
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
 |[Attributs](attributes/index.md)|Décrit comment appliquer les attributs, écrire des attributs personnalisés et récupérer les informations stockées dans les attributs.|

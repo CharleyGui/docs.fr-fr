@@ -3,12 +3,12 @@ title: Présentation de C# - Tutoriels interactifs
 description: Découvrez C# dans votre navigateur et prenez en main votre propre environnement de développement
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 52b680ffe8c477624f3b5e085b7f2de13c271d81
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 6037862c52fd59ba540e1f65297d787f0a964762
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609178"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162152"
 ---
 # <a name="introduction-to-c"></a>Présentation de C\#
 
@@ -62,3 +62,7 @@ Ce tutoriel prend pour acquis que vous avez terminé les tutoriels de présentat
 Ce didacticiel enseigne les concepts utilisés dans la programmation orientée objet. Vous apprendrez les concepts d' *abstraction*, d' *encapsulation*, d' *héritage*et de *polymorphisme* à l’aide d’exemples C#.
 
 Ce didacticiel part du principe que vous avez terminé les didacticiels d’introduction en ligne et que vous avez installé [Kit SDK .net Core](https://dotnet.microsoft.com/download) et [Visual Studio code](https://code.visualstudio.com/) ou [Visual Studio](https://visualstudio.com) sur votre ordinateur de développement.
+
+## <a name="101-linq-samples"></a>[Exemples LINQ 101](https://github.com/dotnet/try-samples/tree/master/101-linq-samples)
+
+Cet exemple requiert l’outil [dotnet-try](https://github.com/dotnet/try/blob/main/README.md#setup) global. Une fois que vous avez installé l’outil et que vous avez cloné les référentiel [try-Samples](https://github.com/dotnet/try-samples) , vous pouvez apprendre LINQ (Language Integrated Query) à l’aide d’un ensemble d’exemples 101 que vous pouvez exécuter de manière interactive. Vous pouvez explorer les différentes méthodes d’interrogation, d’exploration et de transformation des séquences de données.

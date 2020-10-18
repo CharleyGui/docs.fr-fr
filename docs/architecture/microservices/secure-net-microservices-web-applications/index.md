@@ -3,12 +3,12 @@ title: Sécurisation des microservices .NET et des applications web
 description: 'Sécurité dans les microservices .NET et les applications web : Découvrez les options d’authentification dans les applications web ASP.NET Core.'
 author: mjrousos
 ms.date: 08/07/2020
-ms.openlocfilehash: 1dcdb5d2987360ac583fa700a387d977f498d1d9
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 01797189ce946c39bc7b8cafdff1e69ff9760e4e
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608090"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160670"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Sécuriser les microservices .NET et les applications web
 

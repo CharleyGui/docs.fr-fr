@@ -8,14 +8,14 @@ helpviewer_keywords:
 - overload resolution [Visual Basic], with late-bound argument
 - BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
-ms.openlocfilehash: 4500a177c7a4729fe5131af1b007fd38e77afe07
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 090ec6f3bbf56350fda2ab15c974b0bc6b15e3d3
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397335"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162516"
 ---
-# <a name="latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>La résolution de surcharge à liaison tardive ne peut pas être appliquée à '\<procedurename>', car l'instance d'accès est un type interface
+# <a name="bc30933-latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>BC30933 : la résolution de surcharge à liaison tardive ne peut pas être appliquée à' \<procedurename> ', car l’instance d’accès est un type interface
 
 Le compilateur tente de résoudre une référence à une propriété ou une procédure surchargée, mais la référence échoue parce qu’un argument est de type `Object` et que l’objet de référence a le type de données d’une interface. L' `Object` argument force le compilateur à résoudre la référence comme étant à liaison tardive.
 
@@ -29,7 +29,7 @@ Dans ces circonstances, le compilateur résout la surcharge par le biais de la c
 
   Notez qu’il ne permet pas d’effectuer un cast de l’objet de référence en interface sous-jacente. Vous devez effectuer un cast de l’argument pour éviter cette erreur.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre un appel à une procédure surchargée `Sub` qui provoque cette erreur au moment de la compilation.
 
