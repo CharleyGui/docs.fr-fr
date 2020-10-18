@@ -7,27 +7,27 @@ f1_keywords:
 helpviewer_keywords:
 - BC40008
 ms.assetid: 729e3eb5-76ac-4c55-9fdd-78350e0de55e
-ms.openlocfilehash: faad25c08a012674e9d5ba569025bead8ffdec90
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 555030d97434852eab64cc8b4bda2e901649d17d
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874430"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92163140"
 ---
-# <a name="elementname-is-obsolete-visual-basic-warning"></a>'\<elementname>' est obsolète (avertissement Visual Basic)
+# <a name="bc40008-elementname-is-obsolete-visual-basic-warning"></a>BC40008 : ' \<elementname> 'est obsolète (avertissement Visual Basic)
 
-Une instruction tente d’accéder à un élément de programmation qui a été marqué avec l’attribut <xref:System.ObsoleteAttribute> et la directive pour le traiter comme un avertissement.  
-  
- Vous pouvez marquer un élément de programmation comme n’étant plus utilisé en lui appliquant <xref:System.ObsoleteAttribute> . Dans ce cas, vous pouvez affecter à la propriété <xref:System.ObsoleteAttribute.IsError%2A> de l’attribut la valeur `True` ou `False`. Si vous lui affectez la valeur `True`, le compilateur traite une tentative d’utilisation de l’élément comme une erreur. Si vous lui affectez la valeur `False`ou si vous laissez la valeur par défaut `False`, le compilateur émet un avertissement en cas de tentative d’utilisation de l’élément.  
-  
- Par défaut, ce message est un avertissement, car la propriété <xref:System.ObsoleteAttribute.IsError%2A> de <xref:System.ObsoleteAttribute> a la valeur `False`. Pour plus d’informations sur le masquage des avertissements ou le traitement des avertissements en tant qu’erreurs, consultez [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
-  
- **ID d’erreur :** BC40008  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-- Vérifiez que le nom de l’élément est orthographié correctement dans la référence du code source.  
-  
+Une instruction tente d’accéder à un élément de programmation qui a été marqué avec l’attribut <xref:System.ObsoleteAttribute> et la directive pour le traiter comme un avertissement.
+
+ Vous pouvez marquer un élément de programmation comme n’étant plus utilisé en lui appliquant <xref:System.ObsoleteAttribute> . Dans ce cas, vous pouvez affecter à la propriété <xref:System.ObsoleteAttribute.IsError%2A> de l’attribut la valeur `True` ou `False`. Si vous lui affectez la valeur `True`, le compilateur traite une tentative d’utilisation de l’élément comme une erreur. Si vous lui affectez la valeur `False`ou si vous laissez la valeur par défaut `False`, le compilateur émet un avertissement en cas de tentative d’utilisation de l’élément.
+
+ Par défaut, ce message est un avertissement, car la propriété <xref:System.ObsoleteAttribute.IsError%2A> de <xref:System.ObsoleteAttribute> a la valeur `False`. Pour plus d’informations sur le masquage des avertissements ou le traitement des avertissements en tant qu’erreurs, consultez [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).
+
+ **ID d’erreur :** BC40008
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+- Vérifiez que le nom de l’élément est orthographié correctement dans la référence du code source.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble des attributs](../../programming-guide/concepts/attributes/index.md)

@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC42326
 ms.assetid: 63214dc6-0112-4245-8ebf-7c9e8f5a5782
-ms.openlocfilehash: 07ace3f1b9c5e512227dc1f718ef768b631c8303
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5a30e63044b51f8176dfeebdcc9eb8fd517739ae
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397374"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92163114"
 ---
-# <a name="lambda-expression-will-not-be-removed-from-this-event-handler"></a>L’expression lambda ne sera pas supprimée de ce gestionnaire d’événements
+# <a name="bc42326-lambda-expression-will-not-be-removed-from-this-event-handler"></a>BC42326 : l’expression lambda ne sera pas supprimée de ce gestionnaire d’événements
 
 L’expression lambda ne sera pas supprimée de ce gestionnaire d’événements. Assignez l’expression lambda à une variable et utilisez la variable pour ajouter et supprimer l’événement.
 

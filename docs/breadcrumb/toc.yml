@@ -317,6 +317,10 @@ items:
               - name: Prise en main
                 tocHref: /dotnet/csharp/getting-started/
                 topicHref: /dotnet/csharp/getting-started/index
+                items:
+                  - name: "Présentation de\_C#"
+                    tocHref: /dotnet/csharp/tour-of-csharp/
+                    topicHref: /dotnet/csharp/tour-of-csharp/index
               - name: Didacticiels
                 tocHref: /dotnet/csharp/tutorials/
                 topicHref: /dotnet/csharp/tutorials/index

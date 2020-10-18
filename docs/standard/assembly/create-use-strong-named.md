@@ -7,18 +7,18 @@ helpviewer_keywords:
 - strong-named assemblies, about strong-named assemblies
 - strong-named assemblies
 - signing assemblies
-- assemblies [.NET Framework], signing
+- assemblies [.NET], signing
 - strong-named assemblies, scenarios
-- assemblies [.NET Framework], strong-named
+- assemblies [.NET], strong-named
 - strong-named assemblies, loading into trusted application domains
 - assembly binding, strong-named
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
-ms.openlocfilehash: 79c8cf2c21210fd80392a8aacf92840c11a36e43
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 1d87edde97e77011b678662f61500c7acd8293b0
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378532"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162711"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Créer et utiliser des assemblys avec nom fort
 
@@ -46,7 +46,7 @@ Le scénario suivant met en avant le processus de signature d'un assembly avec n
 
 3. L’assembly B est un consommateur de l’Assembly A. La section de référence du manifeste de l’assembly B inclut un jeton qui représente la clé publique de l’assembly A. Un jeton est une partie de la clé publique complète. Il est utilisé à la place de la clé pour économiser de l'espace.
 
-4. Le Common Language Runtime vérifie la signature de nom fort quand l'assembly est placé dans le Global Assembly Cache. Lors de la liaison par nom fort au moment de l’exécution, le common language runtime compare la clé stockée dans le manifeste de l’Assembly B avec la clé utilisée pour générer le nom fort de l’Assembly A. Si les vérifications de la sécurité .NET Framework et la liaison réussissent, l’Assembly B a une garantie que les bits de l’Assembly A n’ont pas été falsifiés et qu’ils proviennent réellement des développeurs de l’Assembly A.
+4. Le Common Language Runtime vérifie la signature de nom fort quand l'assembly est placé dans le Global Assembly Cache. Lors de la liaison par nom fort au moment de l’exécution, le common language runtime compare la clé stockée dans le manifeste de l’assembly B avec la clé utilisée pour générer le nom fort de l’assembly A. Si les contrôles de sécurité .NET réussissent et que la liaison réussit, l’assembly B a la garantie que les bits de l’assembly a n’ont pas été falsifiés et que ces bits proviennent réellement des développeurs de l’assembly A.
 
 > [!NOTE]
 > Ce scénario ne traite pas des problèmes de confiance. Outre un nom fort, les assemblys peuvent posséder des signatures Microsoft Authenticode complètes. Les signatures Authenticode incluent un certificat établissant la confiance. Il est important de noter que les noms forts ne nécessitent pas que le code soit signé de cette manière. Les noms forts fournissent seulement une identité unique.
@@ -69,14 +69,14 @@ Cette fonctionnalité peut être désactivée pour des applications individuelle
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
-|[Guide pratique pour créer une paire de clés publique/privée](create-public-private-key-pair.md)|Décrit comment créer une paire de clés de chiffrement pour signer un assembly.|
+|[Comment : créer une paire de clés publique/privée](create-public-private-key-pair.md)|Décrit comment créer une paire de clés de chiffrement pour signer un assembly.|
 |[Comment : signer un assembly avec un nom fort](sign-strong-name.md)|Décrit comment créer un assembly avec nom fort.|
 |[Amélioration de l’utilisation de noms forts](enhanced-strong-naming.md)|Décrit les améliorations apportées aux noms forts dans .NET Framework 4.5.|
 |[Comment : référencer un assembly avec nom fort](reference-strong-named.md)|Décrit comment référencer des types ou des ressources dans un assembly avec nom fort au moment de la compilation ou de l'exécution.|
 |[Comment : désactiver la fonctionnalité de contournement de nom fort](disable-strong-name-bypass-feature.md)|Décrit comment désactiver la fonctionnalité qui ignore la validation des signatures avec nom fort. Cette fonctionnalité peut être désactivée pour toutes les applications ou pour des applications spécifiques.|
 |[Créer des assemblys](create.md)|Fournit une vue d'ensemble des assemblys multifichiers et à fichier unique.|
 |[Comment différer la signature d’un assembly dans Visual Studio](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|Explique comment signer un assembly avec un nom fort après la création de l'assembly.|
-|[SN. exe (outil Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md)|Décrit l'outil inclus dans le .NET Framework qui facilite la création d'assemblys avec des noms forts. Cet outil fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.|
+|[Sn.exe (outil Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md)|Décrit l'outil inclus dans le .NET Framework qui facilite la création d'assemblys avec des noms forts. Cet outil fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.|
 |[Al.exe (Assembly Linker)](../../framework/tools/al-exe-assembly-linker.md)|Décrit l'outil inclus dans le .NET Framework qui génère un fichier possédant un manifeste d'assembly à partir de modules ou de fichiers de ressources.|

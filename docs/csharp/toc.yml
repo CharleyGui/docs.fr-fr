@@ -2,11 +2,19 @@
   href: index.yml
 - name: Prise en main
   items:
-    - name: Vue d'ensemble
+    - name: Introduction au langage C# et à .NET
       displayName: get started
       href: getting-started/index.md
-    - name: Introduction au langage C# et à .NET
-      href: getting-started/introduction-to-the-csharp-language-and-the-net-framework.md
+    - name: "Présentation de\_C#"
+      items:
+        - name: Introduction
+          href: tour-of-csharp/index.md
+        - name: Types
+          href: tour-of-csharp/types.md
+        - name: Blocs de construction de programme
+          href: tour-of-csharp/program-building-blocks.md
+        - name: Principales zones de langue
+          href: tour-of-csharp/features.md
 - name: Didacticiels
   items:
     - name: Vue d'ensemble
@@ -70,16 +78,6 @@
       href: tutorials/working-with-linq.md
     - name: Utiliser des attributs
       href: tutorials/attributes.md
-- name: "Présentation de\_C#"
-  items:
-    - name: Introduction
-      href: tour-of-csharp/index.md
-    - name: Types
-      href: tour-of-csharp/types.md
-    - name: Blocs de construction de programme
-      href: tour-of-csharp/program-building-blocks.md
-    - name: Principales zones de langue
-      href: tour-of-csharp/features.md
 - name: Nouveautés de C#
   items:
     - name: C# 9.0

@@ -4,16 +4,16 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID91
 ms.assetid: 2f03e611-f0ed-465c-99a2-a816e034faa3
-ms.openlocfilehash: 0264a4235a056c93edb703ec2ef70e7124e0df4e
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 5eff7622ce2a35cf2846c5141cede98ea033d708
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90873623"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159883"
 ---
 # <a name="object-variable-or-with-block-variable-not-set"></a>Variable objet ou variable bloc With non définie
 
-Une variable objet non valide est référencée.   Cette erreur peut se produire pour plusieurs raisons :
+Une variable objet non valide est référencée. Cette erreur peut se produire pour plusieurs raisons :
 
 - Une variable a été déclarée sans spécifier de type. Si une variable est déclarée sans spécifier de type, la valeur par défaut est type `Object` .
 
@@ -31,7 +31,7 @@ Une variable objet non valide est référencée.   Cette erreur peut se produire
 - Vous tentez d’accéder au code dans un `With...End With` bloc avant que le bloc n’ait été initialisé.   Un `With...End With` bloc doit être initialisé en exécutant le point d' `With` entrée de l’instruction.
 
 > [!NOTE]
-> Dans les versions antérieures de Visual Basic ou VBA, cette erreur était également déclenchée en affectant une valeur à une variable sans utiliser le `Set` mot clé ( `x = "name"` au lieu de `Set x = "name"` ). Le `Set` mot clé n’est plus valide dans Visual Basic .net.
+> Dans les versions antérieures de Visual Basic ou de VBA, cette erreur était également déclenchée en affectant une valeur à une variable sans utiliser le `Set` mot clé ( `x = "name"` au lieu de `Set x = "name"` ). Le `Set` mot clé n’est plus valide dans Visual Basic .net.
 
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur
 

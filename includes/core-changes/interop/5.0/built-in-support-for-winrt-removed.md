@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d21b2e092d460fdfc367d0f490228ed44ad5c6cc
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: 47c676122df4f0990949a7bfbcd7af8c6144d870
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365643"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160535"
 ---
 ### <a name="built-in-support-for-winrt-is-removed-from-net"></a>La prise en charge intégrée de WinRT est supprimée de .NET
 
@@ -29,9 +29,13 @@ Cette modification avec rupture a été effectuée pour les raisons suivantes :
 
 #### <a name="recommended-action"></a>Action recommandée
 
-- Supprimez les références au [package Microsoft. Windows. Sdk. Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) et remplacez-les par des références au [package Microsoft.Windows.Sdk.net](https://www.nuget.org/packages/microsoft.windows.sdk.net).
+- Supprimez les références au [package Microsoft. Windows. Sdk. Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts).  Au lieu de cela, spécifiez la version des API Windows auxquelles vous souhaitez accéder via la `TargetFramework` propriété du projet.  Par exemple :
 
-- Utilisez la chaîne de l’outil [C#/WinRT](/windows/uwp/csharp-winrt/) pour générer ou personnaliser les types et les API WinRT dans .net 5,0 et versions ultérieures.
+  ```xml
+  <TargetFramework>net5.0-windows10.0.19041</TargetFramework>
+  ```
+
+- Utilisez la chaîne de l’outil [C#/WinRT](/windows/uwp/csharp-winrt/) pour générer ou personnaliser les types et les API WinRT pour .net 5,0 et versions ultérieures.
 
 #### <a name="category"></a>Category
 

@@ -7,27 +7,27 @@ f1_keywords:
 helpviewer_keywords:
 - BC30298
 ms.assetid: 2d77b7f4-0640-4f89-9c65-f101fd2847c0
-ms.openlocfilehash: dce98a4deef8fbb0e8bc024244b815e23d51c790
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: f40319cde8388b17e27cfaec2117ebd519ebd4ff
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874580"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160943"
 ---
-# <a name="constructor-name-cannot-call-itself"></a>Le constructeur '\<name>' ne peut pas s'appeler lui-même
+# <a name="bc30298-constructor-name-cannot-call-itself"></a>BC30298 : le constructeur' \<name> 'ne peut pas s’appeler lui-même
 
-Une `Sub New` procédure dans une classe ou une structure s’appelle elle-même.  
-  
- L’objectif d’un constructeur est d’initialiser une instance d’une classe ou d’une structure lorsqu’elle est créée pour la première fois. Une classe ou une structure peut avoir plusieurs constructeurs, à condition qu’ils aient tous des listes de paramètres différentes. Un constructeur est autorisé à appeler un autre constructeur pour exécuter ses fonctionnalités en plus de lui-même. Mais cela n’a pas de sens qu’un constructeur s’appelle lui-même et, en fait, cela entraînerait une récurrence infinie si elle était autorisée.  
-  
- **ID d’erreur :** BC30298  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-1. Vérifiez la liste des paramètres du constructeur appelé. Elle doit être différente de celle du constructeur qui effectue l’appel.  
-  
-2. Si vous n’envisagez pas d’appeler un autre constructeur, supprimez `Sub New` entièrement l’appel.  
-  
+Une `Sub New` procédure dans une classe ou une structure s’appelle elle-même.
+
+ L’objectif d’un constructeur est d’initialiser une instance d’une classe ou d’une structure lorsqu’elle est créée pour la première fois. Une classe ou une structure peut avoir plusieurs constructeurs, à condition qu’ils aient tous des listes de paramètres différentes. Un constructeur est autorisé à appeler un autre constructeur pour exécuter ses fonctionnalités en plus de lui-même. Mais cela n’a pas de sens qu’un constructeur s’appelle lui-même et, en fait, cela entraînerait une récurrence infinie si elle était autorisée.
+
+ **ID d’erreur :** BC30298
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+1. Vérifiez la liste des paramètres du constructeur appelé. Elle doit être différente de celle du constructeur qui effectue l’appel.
+
+2. Si vous n’envisagez pas d’appeler un autre constructeur, supprimez `Sub New` entièrement l’appel.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Durée de vie d’un objet : création et destruction des objets](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)

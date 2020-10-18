@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC36564
 ms.assetid: 21312807-e1cd-4ac1-ae1c-c28a9c25164d
-ms.openlocfilehash: 51b0bbf2e346acdd84a1bc2283db4a71adc9f7dc
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: f7937a34ab425da684f892250884d21e020e4c57
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90870431"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92161242"
 ---
-# <a name="type-arguments-could-not-be-inferred-from-the-delegate"></a>Les arguments de type ne peuvent pas être déduits à partir du délégué
+# <a name="bc36564-type-arguments-could-not-be-inferred-from-the-delegate"></a>BC36564 : impossible de déduire les arguments de type à partir du délégué
 
-Une instruction d’assignation utilise `AddressOf` pour assigner l’adresse d’une procédure générique à un délégué, mais elle ne fournit aucun argument de type à la procédure générique.  
-  
- En général, lorsque vous appelez un type générique, vous fournissez un argument de type pour chaque paramètre de type défini par le type générique. Si vous ne fournissez pas d’arguments de type, le compilateur tente de déduire les types à passer aux paramètres de type. Si le contexte ne fournit pas au compilateur des informations suffisantes pour déduire les types, une erreur est générée.  
-  
- **ID d’erreur :** BC36564  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-- Spécifiez les arguments de type pour la procédure générique dans l’expression `AddressOf` .  
-  
+Une instruction d’assignation utilise `AddressOf` pour assigner l’adresse d’une procédure générique à un délégué, mais elle ne fournit aucun argument de type à la procédure générique.
+
+ En général, lorsque vous appelez un type générique, vous fournissez un argument de type pour chaque paramètre de type défini par le type générique. Si vous ne fournissez pas d’arguments de type, le compilateur tente de déduire les types à passer aux paramètres de type. Si le contexte ne fournit pas au compilateur des informations suffisantes pour déduire les types, une erreur est générée.
+
+ **ID d’erreur :** BC36564
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+- Spécifiez les arguments de type pour la procédure générique dans l’expression `AddressOf` .
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)

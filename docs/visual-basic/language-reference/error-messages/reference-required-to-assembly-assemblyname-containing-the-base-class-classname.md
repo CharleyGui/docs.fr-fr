@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30007
 ms.assetid: 5f34cf47-6c6e-4954-bd8e-d6b020b75fb7
-ms.openlocfilehash: 07c09d0dfcb374b974fbda9099c4e85d6d054753
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: d2fb3498219dfe3318ec418ede250de818874ba9
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90870910"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162334"
 ---
-# <a name="reference-required-to-assembly-assemblyname-containing-the-base-class-classname"></a>Une référence à l'assembly '\<assemblyname>' contenant la classe de base '\<classname>' est requise
+# <a name="bc30007-reference-required-to-assembly-assemblyname-containing-the-base-class-classname"></a>BC30007 : une référence à l’assembly' \<assemblyname> 'contenant la classe de base' 'est requise \<classname>
 
-Une référence à l’assembly' \<assemblyname> 'contenant la classe de base' 'est requise \<classname> . Ajoutez-en une à votre projet.  
-  
- La classe est définie dans une bibliothèque de liens dynamiques (DLL) ou un assembly qui n’est pas directement référencé dans votre projet. Le compilateur Visual Basic requiert une référence pour éviter toute ambiguïté au cas où la classe serait définie dans plusieurs DLL ou assemblys.  
-  
- **ID d’erreur :** BC30007  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-- Incluez le nom de la DLL ou de l’assembly non référencé dans vos références de projet.  
-  
+Une référence à l’assembly' \<assemblyname> 'contenant la classe de base' 'est requise \<classname> . Ajoutez-en une à votre projet.
+
+ La classe est définie dans une bibliothèque de liens dynamiques (DLL) ou un assembly qui n’est pas directement référencé dans votre projet. Le compilateur Visual Basic requiert une référence pour éviter toute ambiguïté au cas où la classe serait définie dans plusieurs DLL ou assemblys.
+
+ **ID d’erreur :** BC30007
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+- Incluez le nom de la DLL ou de l’assembly non référencé dans vos références de projet.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Gestion des références dans un projet](/visualstudio/ide/managing-references-in-a-project)

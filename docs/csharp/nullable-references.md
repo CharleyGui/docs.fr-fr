@@ -3,12 +3,12 @@ title: Types références Nullables
 description: Cet article fournit une vue d’ensemble des types de référence Nullable, ajoutés en C# 8,0. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
 ms.technology: csharp-null-safety
 ms.date: 04/21/2020
-ms.openlocfilehash: 6d068760805a21e41712a4f70735bef41ce2052f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9c253d02c287d7a113536ac148b352486d450cc2
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446670"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160878"
 ---
 # <a name="nullable-reference-types"></a>Types références Nullables
 
@@ -124,6 +124,84 @@ Le compilateur génère des avertissements lorsque vous déréférencez une vari
 ## <a name="attributes-describe-apis"></a>Les attributs décrivent des API
 
 Vous ajoutez des attributs aux API qui fournissent au compilateur plus d’informations sur le moment où les arguments ou les valeurs de retour peuvent ou ne peuvent pas être null. Vous pouvez en savoir plus sur ces attributs dans notre article dans la référence du langage couvrant les [attributs Nullable](language-reference/attributes/nullable-analysis.md). Ces attributs sont ajoutés aux bibliothèques .NET sur les versions actuelles et à venir. Les API les plus couramment utilisées sont mises à jour en premier.
+
+## <a name="known-pitfalls"></a>Pièges connus
+
+Les tableaux et les structs qui contiennent des types référence sont des pièges connus dans la fonctionnalité de types référence Nullable.
+
+### <a name="structs"></a>Structures
+
+Un struct qui contient des types référence n’acceptant pas les valeurs NULL permet de l’assigner `default` sans avertissement. Prenons l’exemple suivant :
+
+```csharp
+using System;
+
+#nullable enable
+
+public struct Student
+{
+    public string FirstName;
+    public string? MiddleName;
+    public string LastName;
+}
+
+public static class Program
+{
+    public static void PrintStudent(Student student)
+    {
+        Console.WriteLine($"First name: {student.FirstName.ToUpper()}");
+        Console.WriteLine($"Middle name: {student.MiddleName.ToUpper()}");
+        Console.WriteLine($"Last name: {student.LastName.ToUpper()}");
+    }
+
+    public static void Main() => PrintStudent(default);
+}
+```
+
+Dans l’exemple précédent, il n’y a pas d’avertissement dans `PrintStudent(default)` tandis que les types de référence non Nullable `FirstName` et `LastName` sont null.
+
+Un autre cas plus courant est lorsque vous traitez des structs génériques. Prenons l’exemple suivant :
+
+```csharp
+#nullable enable
+
+public struct Foo<T>
+{
+    public T Bar { get; set; }
+}
+
+public static class Program
+{
+    public static void Main()
+    {
+        string s = default(Foo<string>).Bar;
+    }
+}
+```
+
+Dans l’exemple précédent, la propriété `Bar` va être `null` au moment de l’exécution et elle est assignée à une chaîne non Nullable sans avertissement.
+
+### <a name="arrays"></a>Tableaux
+
+Les tableaux sont également un piège connu dans les types de référence Nullable. Prenons l’exemple suivant qui ne génère pas d’avertissements :
+
+```csharp
+using System;
+
+#nullable enable
+
+public static class Program
+{
+    public static void Main()
+    {
+        string[] values = new string[10];
+        string s = values[0];
+        Console.WriteLine(s.ToUpper());
+    }
+}
+```
+
+Dans l’exemple précédent, la déclaration du tableau indique qu’elle contient des chaînes qui n’acceptent pas les valeurs NULL, tandis que ses éléments sont tous initialisés à la valeur null. Ensuite, `s` une valeur null est assignée à la variable (le premier élément du tableau). Enfin, la variable `s` est déréférencée et provoque une exception Runtime.
 
 ## <a name="see-also"></a>Voir aussi
 

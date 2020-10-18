@@ -2,15 +2,17 @@
 description: using static, directive - Référence C#
 title: using static, directive - Référence C#
 ms.date: 03/10/2017
+f1_keywords:
+- using-static_CSharpKeyword
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
-ms.openlocfilehash: a10c315a05c28bce9b5ddb65af67dde6446d031d
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d117d4423a2f7c782cd6365a73e6c18298d89abc
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89141918"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162230"
 ---
 # <a name="using-static-directive-c-reference"></a>using static, directive (référence C#)
 
@@ -26,7 +28,7 @@ La directive `using static` s’applique à tout type ayant des membres statique
 
 La directive `using static` a été introduite avec C# 6.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes 
 
 En général, quand vous appelez un membre statique, vous indiquez le nom du type, ainsi que le nom du membre. Entrer plusieurs fois le même nom de type pour appeler des membres du type peut produire du code détaillé et peu clair. Par exemple, la définition suivante d’une classe `Circle` référence un certain nombre de membres de la classe <xref:System.Math>.
 
@@ -42,7 +44,7 @@ En éliminant la nécessité de référencer explicitement la classe <xref:Syste
 
  Les méthodes portant le même nom et qui sont importées à partir de différents types par différentes directives `using static` dans la même unité de compilation ou le même espace de noms forment un groupe de méthodes.  La résolution de surcharge au sein de ces groupes de méthodes suit des règles C# normales.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant utilise la directive `using static` pour que les membres statiques des classes <xref:System.Console>, <xref:System.Math> et <xref:System.String> soient disponibles sans que vous ayez à spécifier leur nom de type.
 

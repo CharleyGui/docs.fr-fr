@@ -2,12 +2,12 @@
 title: Modifications avec rupture de chiffrement
 description: Répertorie les modifications avec rupture liées au chiffrement dans .NET Core.
 ms.date: 04/22/2020
-ms.openlocfilehash: c9405625cc4075c05468dc9b8502bf8c76587bad
-ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
+ms.openlocfilehash: 6f37e5caacadc276562e63a728162c6b26f2e435
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997745"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92159549"
 ---
 # <a name="cryptography-breaking-changes"></a>Modifications avec rupture de chiffrement
 
@@ -15,6 +15,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [L’instanciation des implémentations par défaut des abstractions de chiffrement n’est pas prise en charge](#instantiating-default-implementations-of-cryptographic-abstractions-is-not-supported) | 5.0 |
 | [Suites de chiffrement TLS par défaut pour .NET sur Linux](#default-tls-cipher-suites-for-net-on-linux) | 5.0 |
 | [API System. Security. Cryptography non prises en charge sur le webassembly éblouissant](#systemsecuritycryptography-apis-not-supported-on-blazor-webassembly) | 5.0 |
 | [System. Security. Cryptography. OID est fonctionnellement init-only](#systemsecuritycryptographyoid-is-functionally-init-only) | 5.0 |
@@ -26,6 +27,10 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [Le paramètre booléen de SignedCms. ComputeSignature est respecté](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [instantiating-default-implementations-of-cryptographic-abstractions-not-supported](../../../includes/core-changes/cryptography/5.0/instantiating-default-implementations-of-cryptographic-abstractions-not-supported.md)]
+
+***
 
 [!INCLUDE [default-cipher-suites-for-tls-on-linux](../../../includes/core-changes/cryptography/5.0/default-cipher-suites-for-tls-on-linux.md)]
 

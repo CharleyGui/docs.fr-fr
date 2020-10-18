@@ -7,12 +7,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: 813558299b40e0b90e8047f22b788c8f1419eb5e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 524f8dc9838d7c438e8155da683c4fa5b01f36a3
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504652"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162984"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
@@ -184,7 +184,7 @@ Index des sous-sections :
 
 ### <a name="types-and-type-member-signatures"></a>Types et signatures de membres de types
 
-Le type [System.Object](xref:System.Object) est conforme CLS et correspond au type de base de tous les types d’objets du système de types .Net Framework. Dans le .NET Framework, l’héritage est implicite (par exemple, la classe [String](xref:System.String) hérite implicitement de la classe `Object`) ou explicite (par exemple, la classe [CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) hérite explicitement de la classe [ArgumentException](xref:System.ArgumentException), qui hérite explicitement de la classe [Exception](xref:System.Exception). Pour qu'un type dérivé soit conforme à CLS, son type de base doit également être conforme à CLS.
+Le type [System. Object](xref:System.Object) est conforme CLS et est le type de base de tous les types d’objets dans le système de type .net. L’héritage dans .NET est implicite (par exemple, la classe [String](xref:System.String) hérite implicitement de la `Object` classe) ou explicite (par exemple, la classe [CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) hérite explicitement de la classe [ArgumentException](xref:System.ArgumentException) , qui hérite explicitement de la classe [exception](xref:System.Exception) . Pour qu'un type dérivé soit conforme à CLS, son type de base doit également être conforme à CLS.
 
 L'exemple suivant montre un type dérivé dont le type de base n'est pas conforme à CLS. Il définit une classe `Counter` de base qui utilise un entier 32 bits non signé en tant que compteur. La classe fournissant une fonctionnalité de compteur en encapsulant un entier non signé, elle est marquée comme non conforme à CLS. Par conséquent, une classe dérivée, `NonZeroCounter`, n'est pas non plus conforme à CLS.
 
@@ -297,7 +297,7 @@ Le [système de type commun](common-type-system.md) .NET inclut un certain nombr
 
 Type conforme à CLS | Description
 ------------------ | -----------
-[Poids](xref:System.Byte) | Entier 8 bits non signé
+[Byte](xref:System.Byte) | Entier 8 bits non signé
 [Int16](xref:System.Int16) | Entier 16 bits signé
 [Int32](xref:System.Int32) | Entier 32 bits signé
 [Int64](xref:System.Int64) | Entier 64 bits signé
@@ -319,7 +319,7 @@ Type non conforme | Description | Alternative à la conformité CLS
 [UInt64](xref:System.UInt64) | Entier non signé 64 bits | [Int64](xref:System.Int64) (peut déborder), [BigInteger](xref:System.Numerics.BigInteger) ou [Double](xref:System.Double)
 [UIntPtr](xref:System.UIntPtr) | Pointeur ou handle non signé | [IntPtr](xref:System.IntPtr)
 
-La bibliothèque de classes du .NET Framework ou toute autre bibliothèque de classes peut inclure d'autres types non conformes à CLS. Par exemple :
+La bibliothèque de classes .NET ou une autre bibliothèque de classes peut inclure d’autres types qui ne sont pas conformes à CLS ; par exemple :
 
 * Types de valeurs encadrés. L'exemple C# suivant crée une classe qui a une propriété publique de type `int*` nommée `Value`. Comme `int*` est un type de valeur encadré, le compilateur le signale comme non conforme à CLS.
 
@@ -2479,7 +2479,7 @@ End Module
 
 ### <a name="attributes"></a>Attributs
 
-Dans les assemblys .NET Framework, les attributs personnalisés fournissent un mécanisme extensible pour stocker des attributs personnalisés et récupérer les métadonnées concernant la programmation des objets, tels que les assemblys, les types, les membres et les paramètres de méthode. Les attributs personnalisés doivent dériver de [System.Attribute](xref:System.Attribute) ou d’un type dérivé de `System.Attribute`.
+Dans les assemblys .NET, les attributs personnalisés fournissent un mécanisme extensible pour stocker des attributs personnalisés et récupérer des métadonnées sur les objets de programmation, tels que les assemblys, les types, les membres et les paramètres de méthode. Les attributs personnalisés doivent dériver de [System.Attribute](xref:System.Attribute) ou d’un type dérivé de `System.Attribute`.
 
 L'exemple suivant enfreint cette règle. Il définit une classe `NumericAttribute` qui ne dérive pas de `System.Attribute`. Une erreur du compilateur se produit uniquement lorsque l’attribut non conforme CLS est appliqué, et non lorsque la classe est définie.
 
@@ -2546,7 +2546,7 @@ Le constructeur ou les propriétés d'un attribut conforme à CLS peuvent expos
 
 * [Booléen](xref:System.Boolean)
 
-* [Poids](xref:System.Byte)
+* [Byte](xref:System.Byte)
 
 * [Char](xref:System.Char)
 
@@ -2636,7 +2636,7 @@ Au moment de la compilation, le compilateur détecte les éléments non conforme
 
 Les développeurs de composants peuvent utiliser l'attribut `CLSCompliantAttribute` de deux façons :
 
-* Pour définir les parties de l'interface publique exposées par un composant qui sont conformes à CLS et celles qui ne sont pas conformes à CLS. Lorsque l'attribut est utilisé pour marquer des éléments de programme particuliers comme étant conformes à CLS, son utilisation garantit que ces éléments sont accessibles à partir de tous les langages et outils qui ciblent le .NET Framework.
+* Pour définir les parties de l'interface publique exposées par un composant qui sont conformes à CLS et celles qui ne sont pas conformes à CLS. Lorsque l’attribut est utilisé pour marquer des éléments de programme particuliers comme étant conformes à CLS, son utilisation garantit que ces éléments sont accessibles à partir de tous les langages et outils qui ciblent .NET.
 
 * Pour vérifier que l'interface publique de la bibliothèque de composants expose uniquement les éléments de programme conformes à CLS. Si les éléments ne sont pas conformes à CLS, les compilateurs publieront généralement un avertissement.
 
@@ -2788,7 +2788,7 @@ Si vous développez une application plutôt qu'une bibliothèque (autrement dit,
 
 ## <a name="cross-language-interoperability"></a>Interopérabilité interlangage
 
-L'indépendance du langage a plusieurs significations possibles. Une des significations implique la consommation de façon transparente des types écrits dans un langage à partir d’une application écrite dans un autre langage. Une deuxième signification, qui est le sujet de cet article, consiste à combiner du code écrit dans plusieurs langages dans un même assembly .NET Framework.
+L'indépendance du langage a plusieurs significations possibles. Une des significations implique la consommation de façon transparente des types écrits dans un langage à partir d’une application écrite dans un autre langage. Une deuxième signification, qui est le sujet de cet article, consiste à combiner du code écrit dans plusieurs langages dans un assembly .NET unique.
 
 L'exemple suivant illustre l'interopérabilité interlangage en créant une bibliothèque de classes nommée Utilities.dll qui comprend deux classes, `NumericLib` et `StringLib`. La classe `NumericLib` est écrite en C# et la classe `StringLib` est écrite en Visual Basic. Voici le code source de `StringUtil.vb`, qui comprend un seul membre, `ToTitleCase`, dans sa classe `StringLib`.
 

@@ -7,15 +7,15 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- .NET Framework regular expressions, best practices
+- .NET regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 03eda8a419dc60c75576e15da9b3595274894c75
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 727c3f2b8465c5d69244abe0f441d2a24e84dc5f
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554578"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162919"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Meilleures pratiques pour les expressions régulières dans .NET
 
@@ -61,7 +61,7 @@ Pour résoudre ce problème, vous pouvez effectuer les opérations suivantes :
 
 ## <a name="handle-object-instantiation-appropriately"></a>Gestion correcte de l’instanciation d’objet
 
-La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> est au cœur du modèle d'objet d'expression régulière de .NET. Elle représente le moteur d’expressions régulières. Souvent, la façon dont le moteur <xref:System.Text.RegularExpressions.Regex> est utilisé est le facteur principal ayant un impact sur les performances des expressions régulières. La définition d’une expression régulière implique une association étroite entre le moteur des expressions régulières et un modèle d’expression régulière. Ce processus est forcément onéreux, qu’il implique l’instanciation d’un objet <xref:System.Text.RegularExpressions.Regex> en passant à son constructeur un modèle d’expression régulière ou l’appel d’une méthode statique en lui passant le modèle d’expression régulière avec la chaîne à analyser.
+Au cœur de. Le modèle objet d’expression régulière du NET est la <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> classe, qui représente le moteur d’expression régulière. Souvent, la façon dont le moteur <xref:System.Text.RegularExpressions.Regex> est utilisé est le facteur principal ayant un impact sur les performances des expressions régulières. La définition d’une expression régulière implique une association étroite entre le moteur des expressions régulières et un modèle d’expression régulière. Ce processus est forcément onéreux, qu’il implique l’instanciation d’un objet <xref:System.Text.RegularExpressions.Regex> en passant à son constructeur un modèle d’expression régulière ou l’appel d’une méthode statique en lui passant le modèle d’expression régulière avec la chaîne à analyser.
 
 > [!NOTE]
 > Vous trouverez une présentation plus détaillée des répercussions sur les performances des expressions régulières interprétées et compilées sur la page [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) du blog de l'équipe BCL.
@@ -136,7 +136,7 @@ Le modèle d'expression régulière utilisé dans l'exemple, `\b(\w+((\r?\n)|,?\
 
 ### <a name="regular-expressions-compiled-to-an-assembly"></a>Expressions régulières : compilées dans un assembly
 
-.NET permet également de créer un assembly contenant des expressions régulières compilées. La baisse de performances des expressions régulières est alors ressentie au moment du design et non au moment de l'exécution. Toutefois, cela engendre également un travail supplémentaire : vous devez définir les expressions régulières à l'avance et les compiler dans un assembly. Le compilateur peut ensuite référencer cet assembly lors de la compilation du code source qui utilise les expressions régulières de l'assembly. Chaque expression régulière compilée dans l'assembly est représentée par une classe qui dérive de <xref:System.Text.RegularExpressions.Regex>.
+.NET permet également de créer un assembly contenant des expressions régulières compilées. La baisse de performances des expressions régulières est alors ressentie au moment du design et non au moment de l'exécution. Toutefois, cela engendre également un travail supplémentaire : vous devez définir les expressions régulières à l'avance et les compiler dans un assembly. Le compilateur peut ensuite référencer cet assembly lors de la compilation du code source qui utilise les expressions régulières de l’assembly. Chaque expression régulière compilée dans l'assembly est représentée par une classe qui dérive de <xref:System.Text.RegularExpressions.Regex>.
 
 Pour compiler des expressions régulières dans un assembly, vous appelez la méthode <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%28System.Text.RegularExpressions.RegexCompilationInfo%5B%5D%2CSystem.Reflection.AssemblyName%29?displayProperty=nameWithType> et vous lui passez un tableau d'objets <xref:System.Text.RegularExpressions.RegexCompilationInfo> représentant les expressions régulières à compiler, ainsi qu'un objet <xref:System.Reflection.AssemblyName> contenant des informations sur l'assembly à créer.
 

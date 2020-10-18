@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30068
 ms.assetid: d65141e1-f31e-4ac5-a3b8-0b2e02a71ebf
-ms.openlocfilehash: 9e4dbaf2f2800454c673cd58ddec4cf0f6e5c6b9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cd23e6c2beb2f93578a350bc41a780c9ab785f26
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409505"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160891"
 ---
-# <a name="expression-is-a-value-and-therefore-cannot-be-the-target-of-an-assignment"></a>Cette expression est une valeur et ne peut donc pas être la cible d'une assignation
+# <a name="bc30068-expression-is-a-value-and-therefore-cannot-be-the-target-of-an-assignment"></a>BC30068 : l’expression est une valeur et ne peut donc pas être la cible d’une assignation
 
 Une instruction tente d’affecter une valeur à une expression. Vous pouvez assigner une valeur uniquement à une variable, une propriété ou un élément de tableau accessible en écriture au moment de l’exécution. L’exemple suivant illustre la façon dont cette erreur peut se produire.
 
@@ -61,5 +61,5 @@ exitButton.Location = exitLocation
 ## <a name="see-also"></a>Voir aussi
 
 - [Opérateurs et expressions](../../programming-guide/language-features/operators-and-expressions/index.md)
-- [Instructions](../../programming-guide/language-features/statements.md)
+- [Publication](../../programming-guide/language-features/statements.md)
 - [Procédures de dépannage](../../programming-guide/language-features/procedures/troubleshooting-procedures.md)

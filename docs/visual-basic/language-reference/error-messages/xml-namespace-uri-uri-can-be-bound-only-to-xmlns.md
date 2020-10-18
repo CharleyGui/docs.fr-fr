@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC31183
 ms.assetid: 0ab1dbce-8397-4959-b2cd-f58798b051a0
-ms.openlocfilehash: 4793c7282043edb46b3d2f77a0f0a955c43ab34c
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 1aec6ac0a354bfe7e0378a2e46a70a7161bf6d36
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90870191"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92163244"
 ---
-# <a name="xml-namespace-uri-httpwwww3orgxml1998namespace-can-be-bound-only-to-xmlns"></a>URI d’espace `http://www.w3.org/XML/1998/namespace` de noms XML ; ne peut être lié qu’à’xmlns'
+# <a name="bc31183-xml-namespace-uri-httpwwww3orgxml1998namespace-can-be-bound-only-to-xmlns"></a>BC31183 : URI d’espace `http://www.w3.org/XML/1998/namespace` de noms XML ; ne peut être lié qu’à’xmlns'
 
-L’URI `http://www.w3.org/XML/1998/namespace` est utilisé dans une déclaration d’espace de noms XML. Cet URI est un espace de noms réservé et ne peut pas être inclus dans une déclaration d’espace de noms XML.  
-  
- **ID d’erreur :** BC31183  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-Supprimez la déclaration d’espace de noms XML ou remplacez l’URI `http://www.w3.org/XML/1998/namespace` par un URI d’espace de noms valide.  
-  
+L’URI `http://www.w3.org/XML/1998/namespace` est utilisé dans une déclaration d’espace de noms XML. Cet URI est un espace de noms réservé et ne peut pas être inclus dans une déclaration d’espace de noms XML.
+
+ **ID d’erreur :** BC31183
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+Supprimez la déclaration d’espace de noms XML ou remplacez l’URI `http://www.w3.org/XML/1998/namespace` par un URI d’espace de noms valide.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Imports, instruction (espace de noms XML)](../statements/imports-statement-xml-namespace.md)

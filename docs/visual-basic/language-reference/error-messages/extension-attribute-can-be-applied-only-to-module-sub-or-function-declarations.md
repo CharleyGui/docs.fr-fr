@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
-ms.openlocfilehash: 9b8f49c498699a8f7d1c4b329e82258501aa0c47
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: bd4d14721b93800831dbce897535b4f5956fe9c7
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363096"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160748"
 ---
-# <a name="extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations"></a>L'attribut 'Extension' ne peut être appliqué qu'aux déclarations 'Module', 'Sub' ou 'Function'
+# <a name="bc36550-extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations"></a>BC36550 : l’attribut’extension’ne peut être appliqué qu’aux déclarations’module', 'Sub’ou’Function'
 
 La seule façon d’étendre un type de données dans Visual Basic consiste à définir une méthode d’extension dans un module standard. La méthode d’extension peut être une `Sub` procédure ou une `Function` procédure. Toutes les méthodes d’extension doivent être marquées avec l’attribut d’extension, `<Extension()>` , à partir de l' <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> espace de noms. Éventuellement, un module qui contient une méthode d’extension peut être marqué de la même façon. Aucune autre utilisation de l’attribut d’extension n’est valide.
 
@@ -26,7 +26,7 @@ La seule façon d’étendre un type de données dans Visual Basic consiste à d
 
 - Reconcevez votre extension en tant que méthode, définie dans un module englobant.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant définit une `Print` méthode pour le `String` type de données.
 

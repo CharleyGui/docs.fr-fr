@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30506
 ms.assetid: 5b66f6a8-f050-4e03-a57f-a64e85f80cb5
-ms.openlocfilehash: 94c4229d4036382e344cffb09295e218642c55d4
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e16a157d0621d5baecb06ce118e3ab390bf68cf8
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402899"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92162880"
 ---
-# <a name="handles-clause-requires-a-withevents-variable-defined-in-the-containing-type-or-one-of-its-base-types"></a>La clause Handles requiert une variable WithEvents définie dans le type conteneur ou l'un de ses types de base
+# <a name="bc30506-handles-clause-requires-a-withevents-variable-defined-in-the-containing-type-or-one-of-its-base-types"></a>BC30506 : la clause Handles requiert une variable WithEvents définie dans le type conteneur ou l’un de ses types de base
 
 Vous n’avez pas fourni de `WithEvents` variable dans votre `Handles` clause. Le `Handles` mot clé à la fin d’une déclaration de procédure l’amène à gérer des événements déclenchés par une variable objet déclarée à l’aide du `WithEvents` mot clé.
 
@@ -24,7 +24,7 @@ Vous n’avez pas fourni de `WithEvents` variable dans votre `Handles` clause. L
 
 Fournissez la `WithEvents` variable nécessaire.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans l’exemple suivant, Visual Basic génère une erreur du compilateur `BC30506` , car le mot clé [WithEvents](../modifiers/withevents.md) n’est pas utilisé dans la définition de l' <xref:System.Timers.Timer?displayProperty=nameWithType> instance.
 

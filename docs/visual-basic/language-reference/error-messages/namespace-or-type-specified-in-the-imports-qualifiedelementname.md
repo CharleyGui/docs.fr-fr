@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC40056
 ms.assetid: b59f5754-444f-4378-9272-9678b437e84a
-ms.openlocfilehash: 8675d9c3b202200c89e12e7a5f51a19d9e3e0e64
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 284a8c71fee8835f78ca5435932819fded1b1f30
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409463"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92160130"
 ---
-# <a name="namespace-or-type-specified-in-the-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>L'espace de noms ou le type spécifié dans les Imports '\<qualifiedelementname>' ne contient aucun membre public ou est introuvable
+# <a name="bc40056-namespace-or-type-specified-in-the-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>BC40056 : l’espace de noms ou le type spécifié dans les Imports' \<qualifiedelementname> 'ne contient aucun membre public ou est introuvable
 
 L’espace de noms ou le type spécifié dans les Imports' \<qualifiedelementname> 'ne contient aucun membre public ou est introuvable. Assurez-vous que l’espace de noms ou le type est défini et contient au moins un membre public. Assurez-vous que le nom d’alias ne contient pas d’autres alias.
 

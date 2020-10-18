@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC32128
 ms.assetid: 1155b23a-ad75-4bab-b9da-73f35c767a36
-ms.openlocfilehash: fb61b04021bd844fade94413b4f3b28b82f6411b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 084978c1e047eebd60149af63c0ec9a1135225be
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402796"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92163335"
 ---
-# <a name="isnot-operand-of-type-typename-can-only-be-compared-to-nothing-because-typename-is-a-nullable-type"></a>L’opérande 'IsNot' du type 'NomType' ne peut être comparé qu’à 'Nothing', car 'NomType' est un type nullable
+# <a name="bc32128-isnot-operand-of-type-typename-can-only-be-compared-to-nothing-because-typename-is-a-nullable-type"></a>BC32128 : l’opérande’IsNot’de type’TypeName’ne peut être comparé qu’à’Nothing', car’TypeName’est un type Nullable
 
 Une variable déclarée en tant que type valeur Nullable a été comparée à une expression autre que l' `Nothing` `IsNot` opérateur.
 

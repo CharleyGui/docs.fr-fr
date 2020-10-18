@@ -10,14 +10,14 @@ helpviewer_keywords:
 - BC36644
 - BC36647
 ms.assetid: 0e0050f2-2039-4311-b260-f0ebfde84189
-ms.openlocfilehash: b278dcc10a8a4e9e67aacdb16dca2588d2ebd0f1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 85798e6453bc6cea6174ecc536b35835865e0459
+ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409780"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92163452"
 ---
-# <a name="data-types-of-the-type-parameters-cannot-be-inferred-from-these-arguments"></a>Impossible de déduire le ou les types de données du ou des paramètres de type à partir de ces arguments
+# <a name="bc36647-and-bc36644-data-types-of-the-type-parameters-cannot-be-inferred-from-these-arguments"></a>BC36647 et BC36644 : impossible de déduire le ou les types de données du ou des paramètres de type à partir de ces arguments
 
 Impossible de déduire le ou les types de données du ou des paramètres de type à partir de ces arguments. La spécification explicite du ou des types de données peut permettre de corriger cette erreur.
 
